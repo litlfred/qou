@@ -1,8 +1,8 @@
 {
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
- "scriptHash": "4e2d1f936b00",
- "commitSha": "11cb2ba535f10a5f1a196da0332a9aa0f3eba658",
+ "scriptHash": "a8333db18d04",
+ "commitSha": "70ad04a4400aee102a2a7031eb33c501af807d48",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
@@ -1703,8 +1703,8 @@
    {
     "witness": "computations/witness-staleness-triage.witness.json",
     "producer": "computations/witness_staleness_triage.py",
-    "recorded": "7967e9468ef0",
-    "current": "4e2d1f936b00"
+    "recorded": "4e2d1f936b00",
+    "current": "a8333db18d04"
    },
    {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",
@@ -1731,133 +1731,152 @@
     "producer": "computations/_deprecated/chi_inter_and_nchir_rank.py",
     "recorded": "9c7114d3adc9",
     "current": "df4e9732b29d",
-    "reason": "commit ee6c063f1 not in the repository"
+    "reason": "commit ee6c063f1 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/_deprecated/delta-lambda-dominant-pin-probe.witness.json",
     "producer": "computations/_deprecated/delta_lambda_dominant_pin_probe.py",
     "recorded": "61bb88840271",
     "current": "29e8d92d0876",
-    "reason": "commit 039fffdb7 not in the repository"
+    "reason": "commit 039fffdb7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/_deprecated/he4-canonical-tr-m-block-fingerprint.witness.json",
     "producer": "computations/probe_he4_canonical_tr_m_fingerprint.py",
     "recorded": "7f5b62330558",
     "current": "894ca24c903e",
-    "reason": "commit 8f1b43ef9 not in the repository"
+    "reason": "commit 8f1b43ef9 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/_deprecated/inter-knot-decoupling.witness.json",
     "producer": "computations/probe_inter_knot_decoupling.py",
     "recorded": "3ba85c54d9be",
     "current": "071c89a4939a",
-    "reason": "commit cdb516398 not in the repository"
+    "reason": "commit cdb516398 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/_deprecated/q-beta-operator-valued-N3.witness.json",
     "producer": "computations/probe_q_beta_operator_valued_N3.py",
     "recorded": "3a6962ad798e",
     "current": "520148a7cf6c",
-    "reason": "commit 99ecb186f not in the repository"
+    "reason": "commit 99ecb186f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/a_operator/A-operator-extract-h9-pn.witness.json",
     "producer": "computations/a_operator/A_operator_extract_at_level.py",
     "recorded": "35f8a8f58506",
     "current": "59a3b51b5694",
-    "reason": "commit 9ff4d4976 not in the repository"
+    "reason": "commit 9ff4d4976 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/a_operator/A-operator-extract-h9-pp.witness.json",
     "producer": "computations/a_operator/A_operator_extract_at_level.py",
     "recorded": "35f8a8f58506",
     "current": "59a3b51b5694",
-    "reason": "commit d7d7862f9 not in the repository"
+    "reason": "commit d7d7862f9 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/a_operator/A-operator-extract-reduced.witness.json",
     "producer": "computations/a_operator/A_operator_extract_reduced.py",
     "recorded": "c40b3d1941b5",
     "current": "3ae7bfa7af21",
-    "reason": "commit bbc410b27 not in the repository"
+    "reason": "commit bbc410b27 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/alpha/alpha-star-dominant-partitions.witness.json",
     "producer": "computations/alpha/alpha_star_dominant_partitions.py",
     "recorded": "2e8301788347",
     "current": "f07ad714515c",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/alpha_em/alpha-em-count-carrying-object.witness.json",
     "producer": "computations/alpha_em/alpha_em_count_carrying_object_probe.py",
     "recorded": "a57f005cecac",
     "current": "ad1cf6f7e1df",
-    "reason": "commit 5dee38b80 not in the repository"
+    "reason": "commit 5dee38b80 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/atomic-chirality-residue.witness.json",
     "producer": "computations/atomic_chirality_residue.py",
     "recorded": "94184bd90523",
     "current": "122cfe91a00b",
-    "reason": "commit b181e43f2 not in the repository"
+    "reason": "commit b181e43f2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/audits/canonical-a-k-magnitude-audit.witness.json",
     "producer": "computations/audits/canonical_a_k_magnitude_audit.py",
     "recorded": "0de8f9e3c625",
     "current": "cfd40b0929e2",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/audits/content-block-label-audit.witness.json",
     "producer": "computations/audits/content_block_label_audit.py",
     "recorded": "d86c5a63a3d7",
     "current": "021d27328aec",
-    "reason": "commit 18ac6def7 not in the repository"
+    "reason": "commit 18ac6def7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/audits/delta-n2-placeholder-audit.witness.json",
     "producer": "computations/audits/delta_n2_placeholder_audit.py",
     "recorded": "31c800a4611f",
     "current": "2a364b85863b",
-    "reason": "commit a73f90bed not in the repository"
+    "reason": "commit a73f90bed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/audits/deuteron-delta-i-audit.witness.json",
     "producer": "computations/audits/deuteron_delta_i_audit.py",
     "recorded": "8b48698c84c8",
     "current": "5b0b8b6d68d4",
-    "reason": "commit f1460b6ca not in the repository"
+    "reason": "commit f1460b6ca not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/audits/proton-m_e-anomaly-audit.witness.json",
     "producer": "computations/audits/proton_m_e_anomaly_audit.py",
     "recorded": "9b70aa04b632",
     "current": "eb84b01bc9de",
-    "reason": "commit c4c2d382d not in the repository"
+    "reason": "commit c4c2d382d not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/audits/witness-provenance-audit.witness.json",
     "producer": "computations/witness_provenance_audit.py",
     "recorded": "78954454e283",
     "current": "30de8676bd82",
-    "reason": "commit 65d2418d1 not in the repository"
+    "reason": "commit 65d2418d1 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/averaged-block-swap-binding.witness.json",
     "producer": "computations/averaged_block_swap_binding.py",
     "recorded": "fd0c223d783b",
     "current": "2458c2e7bd05",
-    "reason": "commit c48f3a75e not in the repository"
+    "reason": "commit c48f3a75e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/binding-depth-stratified-knot-weighted.witness.json",
     "producer": "computations/binding_depth_stratified_knot_weighted.py",
     "recorded": "913f7d0599bb",
     "current": "f53963cbdf39",
-    "reason": "commit 510ff119f not in the repository",
+    "reason": "commit 510ff119f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bed609a63",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1866,7 +1885,8 @@
     "producer": "computations/binding_depth_stratified_lr.py",
     "recorded": "fcaaaba66f3f",
     "current": "207b14568b60",
-    "reason": "commit 510ff119f not in the repository",
+    "reason": "commit 510ff119f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bed609a63",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1875,7 +1895,8 @@
     "producer": "computations/binding_depth_stratified_rust.py",
     "recorded": "a0d22b8ec5f3",
     "current": "03fcd852e727",
-    "reason": "commit 510ff119f not in the repository",
+    "reason": "commit 510ff119f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bed609a63",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1884,7 +1905,8 @@
     "producer": "computations/binding_depth_stratified_selfconj.py",
     "recorded": "51132c9dfee2",
     "current": "7063c16777f8",
-    "reason": "commit 510ff119f not in the repository",
+    "reason": "commit 510ff119f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bed609a63",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1893,7 +1915,8 @@
     "producer": "computations/binding_energy_categorical_deuteron.py",
     "recorded": "9c2aa88ec8bb",
     "current": "c474a2e7e96a",
-    "reason": "commit 56bd29634 not in the repository",
+    "reason": "commit 56bd29634 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "20af222c1",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1902,14 +1925,16 @@
     "producer": "computations/binding_fewbody_bondcount.py",
     "recorded": "ed5eb90593be",
     "current": "99446f42d2e0",
-    "reason": "commit faa944dd5 not in the repository"
+    "reason": "commit faa944dd5 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/binding-manybody-jet-filtration.witness.json",
     "producer": "computations/binding_manybody_jet_filtration.py",
     "recorded": "f6abde097aac",
     "current": "9443b5503471",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1918,7 +1943,8 @@
     "producer": "computations/binding_per_bond_decomposition.py",
     "recorded": "64918383fcf6",
     "current": "63cbbdd4e41b",
-    "reason": "commit 56bd29634 not in the repository",
+    "reason": "commit 56bd29634 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "20af222c1",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1927,14 +1953,16 @@
     "producer": "computations/binding_qhyperbolic_weight_probe.py",
     "recorded": "f31b92620570",
     "current": "daa58d41a31b",
-    "reason": "commit 4ce1621e4 not in the repository"
+    "reason": "commit 4ce1621e4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/binding-via-interface-knot.witness.json",
     "producer": "computations/binding_via_interface_knot.py",
     "recorded": "e440c7d9dcb9",
     "current": "b535d8e3764a",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1943,21 +1971,24 @@
     "producer": "computations/binding_wn_frobenius_dual_probe.py",
     "recorded": "4e82685cd967",
     "current": "d1b153de0f01",
-    "reason": "commit faa944dd5 not in the repository"
+    "reason": "commit faa944dd5 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/binding-wn-link-volume-probe.witness.json",
     "producer": "computations/binding_wn_link_volume_probe.py",
     "recorded": "7529a2b00607",
     "current": "606707977eeb",
-    "reason": "commit 784663830 not in the repository"
+    "reason": "commit 784663830 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/borromean-axial-coupling.witness.json",
     "producer": "computations/borromean-axial-coupling.py",
     "recorded": "909b6880c58d",
     "current": "fae28dc770c4",
-    "reason": "commit 073cc38ed not in the repository",
+    "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1966,7 +1997,8 @@
     "producer": "computations/borromean_chi_independent_crosscheck.py",
     "recorded": "4296c5b3da10",
     "current": "67f7dbba7043",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -1975,35 +2007,40 @@
     "producer": "computations/bring_chiral_fibre_figure.py",
     "recorded": "d69f21db359a",
     "current": "5fd7cb4cafaa",
-    "reason": "commit 780386648 not in the repository"
+    "reason": "commit 780386648 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/bring-trilog-zeta5-depth-3.witness.json",
     "producer": "computations/bring_trilog_zeta5_depth_3.py",
     "recorded": "99eb7a1b73c3",
     "current": "b0a5ac86ad74",
-    "reason": "commit 4f2075887 not in the repository"
+    "reason": "commit 4f2075887 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/bring-zero-mode-bloch-hunt.witness.json",
     "producer": "computations/bring_zero_mode_bloch_hunt.py",
     "recorded": "6b4c9ad93cf5",
     "current": "f40fdf5eb4bd",
-    "reason": "commit 77f2b68af not in the repository"
+    "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/build-six-term-substrate-model-b.witness.json",
     "producer": "computations/build_six_term_substrate_model_b.py",
     "recorded": "f91707b2624f",
     "current": "fd9182227dcf",
-    "reason": "commit 15dd1c2fc not in the repository"
+    "reason": "commit 15dd1c2fc not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/canonical-tr-m-via-rust.witness.json",
     "producer": "computations/canonical_tr_m_via_rust.py",
     "recorded": "d2c349f5d06c",
     "current": "2f4643fa1228",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2012,7 +2049,8 @@
     "producer": "computations/ch-bond-writhe-lp.py",
     "recorded": "aa1c88aa5fac",
     "current": "b1683895b8f9",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2021,14 +2059,16 @@
     "producer": "computations/chi_lambda_multi_block_first_measurement.py",
     "recorded": "37a17c3d707a",
     "current": "f5a4e690a9d9",
-    "reason": "commit 8cbb97fc3 not in the repository"
+    "reason": "commit 8cbb97fc3 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/chi-numpy-dtype-fix-benchmark.witness.json",
     "producer": "computations/chi_numpy_dtype_fix_benchmark.py",
     "recorded": "41e443db69f6",
     "current": "affea1db739a",
-    "reason": "commit 73f8fafac not in the repository"
+    "reason": "commit 73f8fafac not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)"
    },
    {
     "witness": "computations/chi-via-rust-lossless-general.witness.json",
@@ -2036,6 +2076,7 @@
     "recorded": "32fda59f59ef",
     "current": "6433a7b10bd7",
     "reason": "commit 49be20a30 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "2e7dc3ce3",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2044,28 +2085,32 @@
     "producer": "computations/chirality_braid_average.py",
     "recorded": "4d09353cee40",
     "current": "81d1e2b92f90",
-    "reason": "commit 2b2345de4 not in the repository"
+    "reason": "commit 2b2345de4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/cl-n-l-value-decomposition.witness.json",
     "producer": "computations/cl_n_l_value_decomposition.py",
     "recorded": "c1c8e3ca67e7",
     "current": "c9612c3bcc33",
-    "reason": "commit 83c5c0ce3 not in the repository"
+    "reason": "commit 83c5c0ce3 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/cl3-zeta5-orbit-sum.witness.json",
     "producer": "computations/cl3_zeta5_orbit_sum.py",
     "recorded": "d213ae649553",
     "current": "70303eeb3d6a",
-    "reason": "commit 77083bddb not in the repository"
+    "reason": "commit 77083bddb not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/confined-knot-binding.witness.json",
     "producer": "computations/confined_knot_binding.py",
     "recorded": "00043dba54e8",
     "current": "4c8ec0b1224b",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2074,14 +2119,16 @@
     "producer": "computations/constit_factor_residual_phase5k.py",
     "recorded": "a37f3f4f91e8",
     "current": "ddf116510b1f",
-    "reason": "commit 77f2b68af not in the repository"
+    "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/crystal-shift-nf-atomic.witness.json",
     "producer": "computations/crystal_shift_nf_atomic.py",
     "recorded": "66c9678b3a1d",
     "current": "7c6a94ecf3e7",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2090,21 +2137,24 @@
     "producer": "computations/cyclotomic_depth3_dimension_pslq.py",
     "recorded": "f3b3967c1fe6",
     "current": "38d967a66d58",
-    "reason": "commit 5e865af81 not in the repository"
+    "reason": "commit 5e865af81 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/d-from-scratch.witness.json",
     "producer": "computations/d_from_scratch.py",
     "recorded": "47e6b948cc26",
     "current": "bed6be39570a",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/delta-lambda-canonical-residual.witness.json",
     "producer": "computations/delta_lambda_canonical_residual.py",
     "recorded": "c8493283280b",
     "current": "116120d8b9cf",
-    "reason": "commit a04c07079 not in the repository",
+    "reason": "commit a04c07079 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "426a40fb5",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2113,7 +2163,8 @@
     "producer": "computations/delta_lambda_empirical_tabulation.py",
     "recorded": "8d24819408d1",
     "current": "4fb0d87e768d",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2122,7 +2173,8 @@
     "producer": "computations/delta_lambda_feed_analysis.py",
     "recorded": "263ae3991b7e",
     "current": "1a7d566b5f3d",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2131,21 +2183,24 @@
     "producer": "computations/delta_lambda_imme_quartet.py",
     "recorded": "36259da08bbb",
     "current": "f70b03d2e642",
-    "reason": "commit dbe953a9e not in the repository"
+    "reason": "commit dbe953a9e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/delta-lambda-z-coefficient-and-slope.witness.json",
     "producer": "computations/delta_lambda_z_coefficient_and_slope.py",
     "recorded": "16aa6892a75c",
     "current": "6f02ce3a10cb",
-    "reason": "commit a04c07079 not in the repository"
+    "reason": "commit a04c07079 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/delta-n2-lp-dual-extraction.witness.json",
     "producer": "computations/delta_n2_lp_dual_extraction.py",
     "recorded": "33bee9a1bc5b",
     "current": "dc776d2b437e",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2154,35 +2209,40 @@
     "producer": "computations/deltalambda/a4_brunnian_deficit_closed_form.py",
     "recorded": "a78199e32f8d",
     "current": "25a5de787c21",
-    "reason": "commit d81c639e5 not in the repository"
+    "reason": "commit d81c639e5 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/deltalambda/carrier-saturation-mechanism.witness.json",
     "producer": "computations/deltalambda/carrier_saturation_mechanism_probe.py",
     "recorded": "0d25fcf48239",
     "current": "501a19c13c1b",
-    "reason": "commit 0da5917d5 not in the repository"
+    "reason": "commit 0da5917d5 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/deltalambda/geometric-qdilog-lifted-amplitude.witness.json",
     "producer": "computations/deltalambda/geometric_qdilog_lifted_amplitude_probe.py",
     "recorded": "ea9c9c3ef707",
     "current": "f7747969ef4c",
-    "reason": "commit afb2cbb94 not in the repository"
+    "reason": "commit afb2cbb94 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/deltalambda/helium4-mu4-cluster-moment.witness.json",
     "producer": "computations/deltalambda/helium4_mu4_cluster_moment_probe.py",
     "recorded": "461823a1926a",
     "current": "3242736f183f",
-    "reason": "commit 9f85421be not in the repository"
+    "reason": "commit 9f85421be not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/deltalambda/li6-h18-amplification-discriminator.witness.json",
     "producer": "computations/deltalambda/li6_h18_amplification_discriminator_probe.py",
     "recorded": "603a8695984f",
     "current": "b67b75aa5051",
-    "reason": "commit a94700961 not in the repository"
+    "reason": "commit a94700961 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/deltalambda/mu3-frechet-perblock.witness.json",
@@ -2190,6 +2250,7 @@
     "recorded": "9987866e119c",
     "current": "4b35e1c4fba6",
     "reason": "commit c0b759503 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "a6f208806",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2198,35 +2259,40 @@
     "producer": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
     "recorded": "892dd50fa7d0",
     "current": "5482d558318e",
-    "reason": "commit 263d3ded2 not in the repository"
+    "reason": "commit 263d3ded2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/deltalambda/perknot-pn-bond-resolved-extensivity.witness.json",
     "producer": "computations/deltalambda/perknot_pn_bond_resolved_extensivity_probe.py",
     "recorded": "1ea9b59c1f08",
     "current": "e6fab0538229",
-    "reason": "commit 1a8841abf not in the repository"
+    "reason": "commit 1a8841abf not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/deltalambda/threerow-4he-completion.witness.json",
     "producer": "computations/deltalambda/threerow_4he_completion_probe.py",
     "recorded": "8f1ca94f93eb",
     "current": "3e45d7ccfe92",
-    "reason": "commit bc402561b not in the repository"
+    "reason": "commit bc402561b not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)"
    },
    {
     "witness": "computations/deltalambda/triangle-bond-submodularity.witness.json",
     "producer": "computations/deltalambda/triangle_bond_submodularity_probe.py",
     "recorded": "eaf6d31df84a",
     "current": "ee4ff5d6ca02",
-    "reason": "commit 7e159709f not in the repository"
+    "reason": "commit 7e159709f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/demazure-markov-trace.witness.json",
     "producer": "computations/demazure_markov_trace.py",
     "recorded": "f5171246af95",
     "current": "9a3af82f7874",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2235,14 +2301,16 @@
     "producer": "computations/demazure_sub_crystal_h5_h6_h7_prescreen.py",
     "recorded": "ab8f0d8ce38a",
     "current": "0538bdd6f073",
-    "reason": "commit 414b4fd90 not in the repository"
+    "reason": "commit 414b4fd90 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/derive-binding-bond-sum.witness.json",
     "producer": "computations/derive_binding_bond_sum.py",
     "recorded": "defec72ee992",
     "current": "4092d0c49752",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2251,7 +2319,8 @@
     "producer": "computations/derive_binding_bond_type.py",
     "recorded": "7359da319a6e",
     "current": "f9ce3deb4636",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2260,7 +2329,8 @@
     "producer": "computations/derive_binding_per_block_archimedean.py",
     "recorded": "ddad90f1becf",
     "current": "e68f394f9cf5",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2269,28 +2339,32 @@
     "producer": "computations/derived_chi_catalogue_matrix_m_mpfr.py",
     "recorded": "d208e3614591",
     "current": "713449137e2c",
-    "reason": "commit 3d1395f38 not in the repository"
+    "reason": "commit 3d1395f38 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/derived-chi-catalogue.witness.json",
     "producer": "computations/derived_chi_catalogue_build.py",
     "recorded": "f5718d9b2dda",
     "current": "9ff8994d3a9b",
-    "reason": "commit 3c5cc75df not in the repository"
+    "reason": "commit 3c5cc75df not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/e-0-lp-dual-h3.witness.json",
     "producer": "computations/derive_e_0_lp_dual_h3.py",
     "recorded": "bcfd5098d206",
     "current": "0bbee410c6f7",
-    "reason": "commit 575d1e2d7 not in the repository"
+    "reason": "commit 575d1e2d7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/e-hartree-mechanism-b-probe.witness.json",
     "producer": "computations/e_hartree_mechanism_b_probe.py",
     "recorded": "22c5dd6ae383",
     "current": "969926cd611a",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2299,7 +2373,8 @@
     "producer": "computations/e_hartree_round19_dressed_scalar_block.py",
     "recorded": "aa3c61a18f12",
     "current": "e893b0b3f77a",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2308,7 +2383,8 @@
     "producer": "computations/e_hartree_round20_trace_ratio.py",
     "recorded": "d99a23fcaad0",
     "current": "007c0c130077",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2317,7 +2393,8 @@
     "producer": "computations/e_hartree_round22_arch_bridge.py",
     "recorded": "b3067a869865",
     "current": "fb4516a00068",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2326,7 +2403,8 @@
     "producer": "computations/e_hartree_round23_normalization.py",
     "recorded": "d36fda8b85d6",
     "current": "81f30ae10678",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2335,7 +2413,8 @@
     "producer": "computations/derive_m_e_hecke_path_a.py",
     "recorded": "3b28bbb82880",
     "current": "d87ea303f3f3",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2344,14 +2423,16 @@
     "producer": "computations/family_a_per_partition_h_decomposition_50dps.py",
     "recorded": "1318643e53a3",
     "current": "97ac76ede17f",
-    "reason": "commit 48dc07914 not in the repository"
+    "reason": "commit 48dc07914 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/fr-pullback-k3-test.witness.json",
     "producer": "computations/fr_pullback_k3_test.py",
     "recorded": "222d5adb2c12",
     "current": "0bda260b59b2",
-    "reason": "commit 531dfeb68 not in the repository",
+    "reason": "commit 531dfeb68 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bed609a63",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2360,21 +2441,24 @@
     "producer": "computations/gb_depth_period_bring_fig8.py",
     "recorded": "7b79990a763a",
     "current": "a55345b39ef8",
-    "reason": "commit 77083bddb not in the repository"
+    "reason": "commit 77083bddb not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/gs-filtration-binding-components.witness.json",
     "producer": "computations/gs_filtration_binding_components.py",
     "recorded": "b60e3e7dd0ce",
     "current": "2122a3db08b2",
-    "reason": "commit b5087bafe not in the repository"
+    "reason": "commit b5087bafe not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/h2-molecular-binding.witness.json",
     "producer": "computations/h2-molecular-binding.py",
     "recorded": "2fc11de57c37",
     "current": "4de8c9313d11",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2383,7 +2467,8 @@
     "producer": "computations/h2s_chiral_residue_bar_antisymmetric.py",
     "recorded": "9b2ffd9d1805",
     "current": "c2d285d0abcb",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2392,7 +2477,8 @@
     "producer": "computations/h4_form_AB_cross_anchor_stability.py",
     "recorded": "e94ea69d1407",
     "current": "0cba7e9b02c9",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2401,7 +2487,8 @@
     "producer": "computations/h5_h3_functor_keystone.py",
     "recorded": "1ad9c683756c",
     "current": "9a39ef1c0bfb",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2411,6 +2498,7 @@
     "recorded": "3aae79b3b695",
     "current": "eea700f30297",
     "reason": "commit 06f7907c9 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "0026a0e63",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2419,21 +2507,24 @@
     "producer": "computations/habiro/habiro_correction_shadow_price_test.py",
     "recorded": "609d632e3fe6",
     "current": "fcc296a94244",
-    "reason": "commit bc44957b4 not in the repository"
+    "reason": "commit bc44957b4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/habiro/habiro-derivation-vs-fit-analysis.witness.json",
     "producer": "computations/habiro/habiro_derivation_vs_fit.py",
     "recorded": "bdf484a39e56",
     "current": "a0697bc06450",
-    "reason": "commit bc44957b4 not in the repository"
+    "reason": "commit bc44957b4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/habiro/habiro-interpolate-cross-validation.witness.json",
     "producer": "computations/habiro/habiro_interpolate_cross_validator.py",
     "recorded": "cb758d51cfff",
     "current": "9dbd2f4d982c",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2442,35 +2533,40 @@
     "producer": "computations/habiro/habiro_q_difference_fourier.py",
     "recorded": "bbf8afb38f7d",
     "current": "b8825329ee4f",
-    "reason": "commit 18ac6def7 not in the repository"
+    "reason": "commit 18ac6def7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/habiro/habiro-q-difference-mode-solve.witness.json",
     "producer": "computations/habiro/habiro_q_difference_mode_solve.py",
     "recorded": "be9023647225",
     "current": "068398cec474",
-    "reason": "commit 18ac6def7 not in the repository"
+    "reason": "commit 18ac6def7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/habiro/habiro-sub-ppm-third-factor.witness.json",
     "producer": "computations/habiro/habiro_sub_ppm_third_factor.py",
     "recorded": "f30d49f2f418",
     "current": "3d46ef27f219",
-    "reason": "commit bc44957b4 not in the repository"
+    "reason": "commit bc44957b4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/habiro/habiro-tail-in-ideal-validation.witness.json",
     "producer": "computations/habiro/habiro_witness_validator.py",
     "recorded": "1806168ee926",
     "current": "f68352b1e7bb",
-    "reason": "commit f8ba41365 not in the repository"
+    "reason": "commit f8ba41365 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/habiro/qbeta-h4-tower-branching-preflight.witness.json",
     "producer": "computations/habiro/qbeta_h4_tower_branching_preflight.py",
     "recorded": "6dd96a0a7332",
     "current": "9ff603be4fc0",
-    "reason": "commit 9506223ee not in the repository"
+    "reason": "commit 9506223ee not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/habiro-coefficients-beryllium-10.witness.json",
@@ -2478,6 +2574,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2487,6 +2584,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2496,6 +2594,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2505,6 +2604,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2514,6 +2614,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2523,6 +2624,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2532,6 +2634,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit 10dacb1d7 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "89f213471",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2541,6 +2644,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2550,6 +2654,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2559,6 +2664,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2568,6 +2674,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit 10dacb1d7 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "89f213471",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2577,6 +2684,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2586,6 +2694,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2595,6 +2704,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2604,6 +2714,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2613,6 +2724,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit 10dacb1d7 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "89f213471",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2622,6 +2734,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2631,6 +2744,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2640,6 +2754,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2649,6 +2764,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2658,6 +2774,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2667,6 +2784,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2676,6 +2794,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit 10dacb1d7 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "89f213471",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2685,6 +2804,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit 10dacb1d7 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "89f213471",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2694,6 +2814,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2703,6 +2824,7 @@
     "recorded": "38a8e150e5d2",
     "current": "2313bfea83ad",
     "reason": "commit b838c46c6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "fb0ce3fc8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2711,7 +2833,8 @@
     "producer": "computations/hbond_vdw_energy_ladder.py",
     "recorded": "a802a8c88121",
     "current": "c605b0c695eb",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2720,21 +2843,24 @@
     "producer": "computations/he3_pairknot_clambda_coulomb_probe.py",
     "recorded": "4505afe355fc",
     "current": "c3e01b320fa4",
-    "reason": "commit c55192aa2 not in the repository"
+    "reason": "commit c55192aa2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json",
     "producer": "computations/he3_tritium_cosh_asymmetry_diagnosis.py",
     "recorded": "c75b2dca14e0",
     "current": "46c8ef180fef",
-    "reason": "commit 6f9bbd5ee not in the repository"
+    "reason": "commit 6f9bbd5ee not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/hh-trefoil-corrected.witness.json",
     "producer": "computations/hh-trefoil-corrected.py",
     "recorded": "2b1449c83351",
     "current": "5465667a4159",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2743,7 +2869,8 @@
     "producer": "computations/hh-vertex-volume.py",
     "recorded": "626962872bb8",
     "current": "32eb2b8513da",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2752,7 +2879,8 @@
     "producer": "computations/homflypt_reference_qa.py",
     "recorded": "f4642850e085",
     "current": "d29123b9f9b1",
-    "reason": "commit 56e0d96d0 not in the repository",
+    "reason": "commit 56e0d96d0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2761,14 +2889,16 @@
     "producer": "computations/implied_h2_coefficient_audit_50dps.py",
     "recorded": "b15f563753ad",
     "current": "b656f6b1ab9d",
-    "reason": "commit c63457c87 not in the repository"
+    "reason": "commit c63457c87 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/iterative-lp-dual-levels.witness.json",
     "producer": "computations/iterative_lp_dual_levels.py",
     "recorded": "9613fd589e3d",
     "current": "ee30fbcfc6c2",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2777,7 +2907,8 @@
     "producer": "computations/run_jones_markov_atlas_all_atoms.py",
     "recorded": "a9d7f5de749a",
     "current": "7ddea9f45dae",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2786,105 +2917,120 @@
     "producer": "computations/jonquiere_cyclotomic_general.py",
     "recorded": "9cc891df3160",
     "current": "2f2cedeed3d8",
-    "reason": "commit a50e64794 not in the repository"
+    "reason": "commit a50e64794 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/kummer-reflection-zeta5.witness.json",
     "producer": "computations/kummer_reflection_zeta5.py",
     "recorded": "3b2351680358",
     "current": "b94cd006f5f6",
-    "reason": "commit 77083bddb not in the repository"
+    "reason": "commit 77083bddb not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/lambda-scale-derivation-probes-123.witness.json",
     "producer": "computations/lambda_scale_derivation_probes_123.py",
     "recorded": "871477cd633a",
     "current": "a28d09385993",
-    "reason": "commit 77f2b68af not in the repository"
+    "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/lambda-scale-h2-concrete-test.witness.json",
     "producer": "computations/lambda_scale_h2_concrete_test.py",
     "recorded": "b94d4cca9ca1",
     "current": "fd3a21e9ea28",
-    "reason": "commit 77f2b68af not in the repository"
+    "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/lambda-scale-rd-c4-categorical.witness.json",
     "producer": "computations/lambda_scale_rd_c4_categorical.py",
     "recorded": "04da1711cf2c",
     "current": "edd4b489d5d6",
-    "reason": "commit 77f2b68af not in the repository"
+    "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/lambda-scale-refinement-h4-correction-bring.witness.json",
     "producer": "computations/lambda_scale_refinement_h4_correction_bring.py",
     "recorded": "60ce56bb0a45",
     "current": "5aa68064d662",
-    "reason": "commit 77f2b68af not in the repository"
+    "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/landauer-crossing-energy-probe.witness.json",
     "producer": "computations/landauer_crossing_energy_probe.py",
     "recorded": "56c55fab33ae",
     "current": "93031c9c20b6",
-    "reason": "commit b90733420 not in the repository"
+    "reason": "commit b90733420 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/laurentq-a5-ceiling-measure.witness.json",
     "producer": "computations/laurentq_a5_ceiling_measure.py",
     "recorded": "e64ff2ec7cb1",
     "current": "be07455c5fad",
-    "reason": "commit 846b5400b not in the repository"
+    "reason": "commit 846b5400b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/lepton-tower-additive-screening.witness.json",
     "producer": "computations/lepton_tower_additive_screening.py",
     "recorded": "a08ad2c1570a",
     "current": "016d3c6c2f87",
-    "reason": "commit c867ef123 not in the repository"
+    "reason": "commit c867ef123 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)"
    },
    {
     "witness": "computations/li2q-fbor-expansion-probe.witness.json",
     "producer": "computations/li2q_fbor_expansion_probe.py",
     "recorded": "489a68ace842",
     "current": "7d3b072c18ce",
-    "reason": "commit db820b522 not in the repository"
+    "reason": "commit db820b522 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/li2q-phiq-bar-symmetry.witness.json",
     "producer": "computations/li2q_phiq_bar_symmetry_witness.py",
     "recorded": "6cfe667d9822",
     "current": "7ddb13e06bea",
-    "reason": "commit e118c2a5c not in the repository"
+    "reason": "commit e118c2a5c not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/log-delta-full-mass-subtract.witness.json",
     "producer": "computations/log_delta_full_mass_subtract.py",
     "recorded": "13ef8e4b2c0a",
     "current": "594ae667d338",
-    "reason": "commit 2a099a3af not in the repository"
+    "reason": "commit 2a099a3af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/log-delta-per-depth-binding.witness.json",
     "producer": "computations/log_delta_per_depth_binding.py",
     "recorded": "3f86c4f81581",
     "current": "cd1c006bb51a",
-    "reason": "commit 2a099a3af not in the repository"
+    "reason": "commit 2a099a3af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/log-ratio-binding-prototype.witness.json",
     "producer": "computations/log_ratio_binding_prototype.py",
     "recorded": "f0f7592a628c",
     "current": "cee8069b5241",
-    "reason": "commit 4b3569e5f not in the repository"
+    "reason": "commit 4b3569e5f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/m-baryon-volume-form.witness.json",
     "producer": "computations/derive_m_baryon_volume_form.py",
     "recorded": "1c42603b559d",
     "current": "315d7a8663c3",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2894,6 +3040,7 @@
     "recorded": "070ee5cbc2c1",
     "current": "f22518ca48d4",
     "reason": "commit 985015eea not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "dd0da55b3",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2902,7 +3049,8 @@
     "producer": "computations/markov/markov_trace_atomic_proton_full.py",
     "recorded": "d3e38be9191d",
     "current": "ac8a24dafeee",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2911,7 +3059,8 @@
     "producer": "computations/markov/markov_trace_axiomatic_proton.py",
     "recorded": "ca0321a8122e",
     "current": "e559ea78594a",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2920,14 +3069,16 @@
     "producer": "computations/markov/markov_trace_h4_natural_elements_prescreen.py",
     "recorded": "7a4233ae624a",
     "current": "713e55ef1ae3",
-    "reason": "commit be0f420da not in the repository"
+    "reason": "commit be0f420da not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/markov/markov-trace-via-wenzl-lr.witness.json",
     "producer": "computations/markov/markov_trace_via_wenzl_lr.py",
     "recorded": "a886018fc611",
     "current": "f0108a4c7fc1",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2936,7 +3087,8 @@
     "producer": "computations/markov/markov_identity_symbolic_probe.py",
     "recorded": "8c762139e330",
     "current": "84e17f3dbe66",
-    "reason": "commit 847c4435e not in the repository"
+    "reason": "commit 847c4435e not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)"
    },
    {
     "witness": "computations/markov-z-fibre-rank-bar-covariance.witness.json",
@@ -2944,6 +3096,7 @@
     "recorded": "47cacb3d249e",
     "current": "331cf8609599",
     "reason": "commit 457f4cc4a not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "805ca010a",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2952,14 +3105,16 @@
     "producer": "computations/markov_z_full_bar_condition_probe.py",
     "recorded": "d95a6783eaf6",
     "current": "cd17813bd2c6",
-    "reason": "commit 548a34b69 not in the repository"
+    "reason": "commit 548a34b69 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)"
    },
    {
     "witness": "computations/mass-sweep-bar-sym-h2-coefficient.witness.json",
     "producer": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
     "recorded": "62ceb262cb8d",
     "current": "d0f7a946dbca",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2968,7 +3123,8 @@
     "producer": "computations/mass_vol_density.py",
     "recorded": "7cd88839cff5",
     "current": "19c95569d5dc",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2977,7 +3133,8 @@
     "producer": "computations/mmu_kashiwara_cos_factor_probe.py",
     "recorded": "ed8c9efc26b8",
     "current": "b66f38990861",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2986,7 +3143,8 @@
     "producer": "computations/mmu_lepton_torus_tower_feasibility_probe.py",
     "recorded": "5e9ffac860f4",
     "current": "c0b53dcdc894",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
@@ -2995,7 +3153,8 @@
     "producer": "computations/mmu_simpler_form_search_probe.py",
     "recorded": "f78b81f5c82e",
     "current": "3d1b4321a918",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3004,7 +3163,8 @@
     "producer": "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
     "recorded": "02866d94263d",
     "current": "33f60046a0e4",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3013,7 +3173,8 @@
     "producer": "computations/molecular-frobenius-lp.py",
     "recorded": "569eacbb1559",
     "current": "90faf543267e",
-    "reason": "commit 073cc38ed not in the repository",
+    "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "656edfaeb",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3022,7 +3183,8 @@
     "producer": "computations/molecular-trefoil-scan.py",
     "recorded": "0bf20659e12f",
     "current": "aff731465625",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3031,7 +3193,8 @@
     "producer": "computations/native_5_strand_baryon.py",
     "recorded": "430f9aca3896",
     "current": "c34eb2dfda91",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3040,7 +3203,8 @@
     "producer": "computations/nucleus_operator_selection_sdp.py",
     "recorded": "f863d922715f",
     "current": "124067b7043f",
-    "reason": "commit a6297c619 not in the repository"
+    "reason": "commit a6297c619 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/ocneanu-cancellation-derivation.witness.json",
@@ -3048,6 +3212,7 @@
     "recorded": "f6e545d07306",
     "current": "5320e2f88997",
     "reason": "commit eced91dc7 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "2d4591687",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3056,28 +3221,32 @@
     "producer": "computations/gram_matrix_seminormal_h6.py",
     "recorded": "2d13fb480305",
     "current": "2aee1470d17f",
-    "reason": "commit 5d80bf9a7 not in the repository"
+    "reason": "commit 5d80bf9a7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/orbit-trace-identity.witness.json",
     "producer": "computations/orbit_trace_identity_proof.py",
     "recorded": "ed72d92fc741",
     "current": "41be5cbf4ef2",
-    "reason": "commit 0377240dc not in the repository"
+    "reason": "commit 0377240dc not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/path-c3-klr-prescreen-50dps.witness.json",
     "producer": "computations/path_c3_klr_prescreen_50dps.py",
     "recorded": "001141a8555c",
     "current": "0d70d950ba6b",
-    "reason": "commit b0abd866f not in the repository"
+    "reason": "commit b0abd866f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/per-atom-audit-witnesses.witness.json",
     "producer": "computations/per_atom_audit_witnesses.py",
     "recorded": "5f11b91fcf88",
     "current": "aab55f1a469f",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3086,14 +3255,16 @@
     "producer": "computations/per_atom_rho_deviation.py",
     "recorded": "79e8a73f7526",
     "current": "37e8b480c986",
-    "reason": "commit 9cea308a2 not in the repository"
+    "reason": "commit 9cea308a2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/per-basis-row-invariants-probe.witness.json",
     "producer": "computations/per_basis_row_invariants_probe.py",
     "recorded": "0f565d299d0c",
     "current": "028e67002df2",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3102,7 +3273,8 @@
     "producer": "computations/per_bond_growth_a3.py",
     "recorded": "cce2d55e0482",
     "current": "4f49cc327812",
-    "reason": "commit 56e0d96d0 not in the repository",
+    "reason": "commit 56e0d96d0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3111,14 +3283,16 @@
     "producer": "computations/per_irrep_pole_atom_crystal.py",
     "recorded": "26b39bf85022",
     "current": "c803172af497",
-    "reason": "commit 41f1b2a40 not in the repository"
+    "reason": "commit 41f1b2a40 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/per-irrep-pole-neutron-h3.witness.json",
     "producer": "computations/per_irrep_pole_atom.py",
     "recorded": "e1b63069c0fd",
     "current": "12c9329bd5a0",
-    "reason": "commit 802516eed not in the repository",
+    "reason": "commit 802516eed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "3550a361f",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3127,14 +3301,16 @@
     "producer": "computations/per_knot_density_per_block_wiring.py",
     "recorded": "ff10560725ae",
     "current": "47d5250ab415",
-    "reason": "commit 58d7abe89 not in the repository"
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/per-knot-mass-table-demonstration.witness.json",
     "producer": "computations/per_knot_mass_table_demonstration.py",
     "recorded": "cf81c650e944",
     "current": "ec78b68c1ebc",
-    "reason": "commit 56e0d96d0 not in the repository",
+    "reason": "commit 56e0d96d0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3144,6 +3320,7 @@
     "recorded": "6a2c3804473a",
     "current": "13eab7c662b2",
     "reason": "commit c0eb9e057 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "16a566a09",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3152,63 +3329,72 @@
     "producer": "computations/per_pair_wedderburn_enumeration.py",
     "recorded": "d50a60092ad2",
     "current": "5cd062dad4e6",
-    "reason": "commit e473d8c8c not in the repository"
+    "reason": "commit e473d8c8c not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/phase5/phase1b-two-row-transfer-matrix.witness.json",
     "producer": "computations/phase5/phase1b_two_row_closed_form_character.py",
     "recorded": "4b0310ac64aa",
     "current": "0a72242e3976",
-    "reason": "commit e20525c71 not in the repository"
+    "reason": "commit e20525c71 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/phase5/phase1d-f-bor-exact-h-expansion.witness.json",
     "producer": "computations/phase5/phase1d_f_bor_exact_h_expansion.py",
     "recorded": "e648bb8d965a",
     "current": "506d7f00006a",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/phase5/phase2b-dim-v21-bridge.witness.json",
     "producer": "computations/phase5/phase2b_dim_v21_bridge_derivation.py",
     "recorded": "6e2c45fd8b0e",
     "current": "7714193344c0",
-    "reason": "commit b2db0a426 not in the repository"
+    "reason": "commit b2db0a426 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/phase5/phase2b2-dim-v21-categorical-bridge.witness.json",
     "producer": "computations/phase5/phase2b2_dim_v21_categorical_bridge.py",
     "recorded": "fa95e43a9b03",
     "current": "2ab0f1fcf3ba",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/phase5/phase2c-derive-correction-tower.witness.json",
     "producer": "computations/phase5/phase2c_derive_correction_tower.py",
     "recorded": "958527466e25",
     "current": "6533ed685bbc",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/phase5/phase3-deuteron-tritium-h-expansion.witness.json",
     "producer": "computations/phase5/phase3_deuteron_tritium_h_expansion.py",
     "recorded": "a2f44ef6a7be",
     "current": "bbdc08574971",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/phase5/phase3c-a5-a7-knot-volume-targets.witness.json",
     "producer": "computations/phase5/phase3c_a5_a7_knot_volume_targets.py",
     "recorded": "54985b5ff731",
     "current": "5b53e1f3ce66",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/photon-ir-zero-mode-bring.witness.json",
     "producer": "computations/photon_ir_zero_mode_bring.py",
     "recorded": "7c81efce2452",
     "current": "064663dd67cc",
-    "reason": "commit f3841feed not in the repository",
+    "reason": "commit f3841feed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "42dcd1acf",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3217,7 +3403,8 @@
     "producer": "computations/photon_operator_table.py",
     "recorded": "912ac3bd013d",
     "current": "7e0be1143fdb",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3226,56 +3413,64 @@
     "producer": "computations/probe_4_li6_rectangular_python.py",
     "recorded": "34d94c2b8cdb",
     "current": "ffd9596ddbfc",
-    "reason": "commit e84339ede not in the repository"
+    "reason": "commit e84339ede not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probe-4b-li6-non-rectangular-scan.witness.json",
     "producer": "computations/probe_4b_li6_non_rectangular_scan.py",
     "recorded": "1197e5231e0a",
     "current": "042f6254f68f",
-    "reason": "commit 41f1b2a40 not in the repository"
+    "reason": "commit 41f1b2a40 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probe-4f-h3-sigma-avg-asymmetry.witness.json",
     "producer": "computations/probe_4f_h3_sigma_avg_asymmetry.py",
     "recorded": "b01958ca4052",
     "current": "a2086d673d7e",
-    "reason": "commit 22e1e6f8f not in the repository"
+    "reason": "commit 22e1e6f8f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probe-9b-alphak-structure.witness.json",
     "producer": "computations/probe_9b_alphak_structure.py",
     "recorded": "6b2e7dfd70bc",
     "current": "ade7fe590b72",
-    "reason": "commit 1d3cf6278 not in the repository"
+    "reason": "commit 1d3cf6278 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probe-9b-gate-interface-algebra.witness.json",
     "producer": "computations/probe_9b_gate_interface_algebra.py",
     "recorded": "d43e04543f1a",
     "current": "2c3eecce6a29",
-    "reason": "commit 55eeb01ba not in the repository"
+    "reason": "commit 55eeb01ba not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probe-9b-laurent-degree-10a5.witness.json",
     "producer": "computations/probe_9b_laurent_degree_10a5.py",
     "recorded": "ed66027ddebc",
     "current": "49ecf3394d0a",
-    "reason": "commit ba99d5562 not in the repository"
+    "reason": "commit ba99d5562 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probe-9b-manybody-expansion.witness.json",
     "producer": "computations/probe_9b_manybody_expansion.py",
     "recorded": "fbbe2b122555",
     "current": "b8273c2acdda",
-    "reason": "commit 49a93a93b not in the repository"
+    "reason": "commit 49a93a93b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probe-binding-measure-search.witness.json",
     "producer": "computations/probe_binding_measure_search.py",
     "recorded": "be555a8abe29",
     "current": "73972a52f40d",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3284,7 +3479,8 @@
     "producer": "computations/probe_full_theta_binding.py",
     "recorded": "1a7608f5536c",
     "current": "7c3af9574c99",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3293,7 +3489,8 @@
     "producer": "computations/probe_k_ud_bring_color_tube_empirical_baseline.py",
     "recorded": "3c83143d8e5e",
     "current": "80a93e02fb32",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3302,7 +3499,8 @@
     "producer": "computations/probe_k_ud_fractional_and_alt_ansatz.py",
     "recorded": "2a6fb4e19367",
     "current": "ac579efd42f5",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3311,63 +3509,72 @@
     "producer": "computations/probes/A_operator_per_interface_probe.py",
     "recorded": "88af2494619d",
     "current": "dc0e52474727",
-    "reason": "commit 7676454f7 not in the repository"
+    "reason": "commit 7676454f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/additive-composition-categorical-probe.witness.json",
     "producer": "computations/probes/additive_composition_categorical_probe.py",
     "recorded": "7a959bff7c02",
     "current": "2f396035f190",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/alpha-em-r2-quillen-curvature-probe.witness.json",
     "producer": "computations/probes/alpha_em_r2_quillen_curvature_probe.py",
     "recorded": "7366339fe196",
     "current": "033d45478e1f",
-    "reason": "commit e9fbe1107 not in the repository"
+    "reason": "commit e9fbe1107 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/b-pred-mirror-slope-closed-form.witness.json",
     "producer": "computations/probes/b_pred_mirror_slope_closed_form.py",
     "recorded": "b010429f3ec7",
     "current": "ab9a002b9b7f",
-    "reason": "commit 07d44efde not in the repository"
+    "reason": "commit 07d44efde not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
     "producer": "computations/probes/binding_depth_stratified_derived_alpha_probe.py",
     "recorded": "90ffe213cc9c",
     "current": "45627d2138e9",
-    "reason": "commit 49c6c5336 not in the repository"
+    "reason": "commit 49c6c5336 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/borromean-3d-index.witness.json",
     "producer": "computations/probes/borromean_3d_index.py",
     "recorded": "598dd0df8147",
     "current": "ebeb233a7177",
-    "reason": "commit 244e87220 not in the repository"
+    "reason": "commit 244e87220 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/borromean-angle-structure-lp-probe.witness.json",
     "producer": "computations/probes/borromean_angle_structure_lp_probe.py",
     "recorded": "6f59ed3fdd89",
     "current": "8647315b2101",
-    "reason": "commit 0ffdfb17f not in the repository"
+    "reason": "commit 0ffdfb17f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/borromean-per-lambda-fr-probe.witness.json",
     "producer": "computations/probes/borromean_per_lambda_fr_probe.py",
     "recorded": "d2084dd62ebc",
     "current": "6a2f67d50ea6",
-    "reason": "commit dbe953a9e not in the repository"
+    "reason": "commit dbe953a9e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/casimir-phi-q-markov-probe.witness.json",
     "producer": "computations/probes/casimir_phi_q_markov_probe.py",
     "recorded": "d740a286b42a",
     "current": "8773b28b26ac",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3376,28 +3583,32 @@
     "producer": "computations/probes/cyclotomic_cl3_orbit_sum_general_probe.py",
     "recorded": "d0c27cbddd6f",
     "current": "8ce02094e250",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/cyclotomic-orbit-sum-all-depths-probe.witness.json",
     "producer": "computations/probes/cyclotomic_orbit_sum_all_depths_probe.py",
     "recorded": "7fdab76cdc1f",
     "current": "14b90e2d5055",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
     "producer": "computations/probes/cyclotomic_trilog_imaginary_closed_form_probe.py",
     "recorded": "50af35049ee0",
     "current": "39ba6724ca1f",
-    "reason": "commit e6e9dbb14 not in the repository"
+    "reason": "commit e6e9dbb14 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/delta-lambda-bar-invariance-probe.witness.json",
     "producer": "computations/probes/delta_lambda_bar_invariance_probe.py",
     "recorded": "2e67342188c2",
     "current": "1d1c708f5144",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3406,28 +3617,32 @@
     "producer": "computations/probes/em_coupling_projection_probe.py",
     "recorded": "40864fbaa3c8",
     "current": "e8e8dbcceb38",
-    "reason": "commit 4ce89ca96 not in the repository"
+    "reason": "commit 4ce89ca96 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/eunit-g2-derivation.witness.json",
     "producer": "computations/probes/eunit_g2_derivation_probe.py",
     "recorded": "ea1a31982db1",
     "current": "2a217d47b99e",
-    "reason": "commit 43661aee7 not in the repository"
+    "reason": "commit 43661aee7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/eunit-magnus-order2.witness.json",
     "producer": "computations/probes/eunit_magnus_order2_probe.py",
     "recorded": "7a98e448f24e",
     "current": "c054a369a133",
-    "reason": "commit 0ffdfb17f not in the repository"
+    "reason": "commit 0ffdfb17f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/frobenius-gram-matrix-probe.witness.json",
     "producer": "computations/probes/frobenius_gram_matrix_probe.py",
     "recorded": "f71989f918b7",
     "current": "44f7ed7ffd87",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3436,7 +3651,8 @@
     "producer": "computations/probes/gap_a3_deuteron_p_lambda_channels_probe.py",
     "recorded": "3a6a732130c6",
     "current": "1df94bea6c2a",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3445,7 +3661,8 @@
     "producer": "computations/probes/gap_a3_plambda_bar_even_admissibility_probe.py",
     "recorded": "06ef4156d570",
     "current": "941ec31276a7",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3454,7 +3671,8 @@
     "producer": "computations/probes/gap_a3_transpose_invariant_plambda_probe.py",
     "recorded": "de5f5c250ec7",
     "current": "6de9cc1825f5",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3463,7 +3681,8 @@
     "producer": "computations/probes/gap_a4_T3_mass_pochhammer_probe.py",
     "recorded": "1fd5e83a0525",
     "current": "74c8da386496",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3472,7 +3691,8 @@
     "producer": "computations/probes/gauge_coupling_uniqueness_probe.py",
     "recorded": "1c1ea0d90629",
     "current": "1053605a2d91",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3481,21 +3701,24 @@
     "producer": "computations/probes/gg_production_bond_probe.py",
     "recorded": "8f612f57ff24",
     "current": "10affb22a484",
-    "reason": "commit b8f884c4f not in the repository"
+    "reason": "commit b8f884c4f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/gk-d5-cyclic-dilog-4one.witness.json",
     "producer": "computations/probes/gk_d5_cyclic_dilog_4one_probe.py",
     "recorded": "498abe400e0e",
     "current": "4dd9caf05815",
-    "reason": "commit 94bbe54b4 not in the repository"
+    "reason": "commit 94bbe54b4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/gram-norm-binding-probe.witness.json",
     "producer": "computations/probes/gram_norm_binding_probe.py",
     "recorded": "6c7ee3598bb0",
     "current": "1eae991d0341",
-    "reason": "commit b9074b889 not in the repository",
+    "reason": "commit b9074b889 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "9ef06f77f",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3504,7 +3727,8 @@
     "producer": "computations/probes/gram_qtrace_hutchinson_probe.py",
     "recorded": "e764bedd76ff",
     "current": "129e52b95827",
-    "reason": "commit a63d7029a not in the repository",
+    "reason": "commit a63d7029a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "09ff50af0",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3513,7 +3737,8 @@
     "producer": "computations/probes/h4_categorical_drivers_probe.py",
     "recorded": "5bf6e909c015",
     "current": "5a233090ddd5",
-    "reason": "commit 073cc38ed not in the repository",
+    "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "656edfaeb",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3522,56 +3747,64 @@
     "producer": "computations/probes/he4_9_3_trace_dominant_correction_probe.py",
     "recorded": "68da11ebed94",
     "current": "ba9b24bf6083",
-    "reason": "commit d0251cdd1 not in the repository"
+    "reason": "commit d0251cdd1 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/he4-channel-split-categorical-constraint-probe.witness.json",
     "producer": "computations/probes/he4_channel_split_categorical_constraint_probe.py",
     "recorded": "d0cd10149779",
     "current": "1e918760d8cb",
-    "reason": "commit 6871acfab not in the repository"
+    "reason": "commit 6871acfab not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/he4-partition-dominance-audit-probe.witness.json",
     "producer": "computations/probes/he4_partition_dominance_audit_probe.py",
     "recorded": "70b862376f4a",
     "current": "c2043a6c695c",
-    "reason": "commit aa01f679c not in the repository"
+    "reason": "commit aa01f679c not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/hecke-1d-irrep-closed-form-character-probe.witness.json",
     "producer": "computations/probes/hecke_1d_irrep_closed_form_character_probe.py",
     "recorded": "d0ebec34267b",
     "current": "78143693bf03",
-    "reason": "commit 71d15701e not in the repository"
+    "reason": "commit 71d15701e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/hecke-branching-trace-decomposition-probe.witness.json",
     "producer": "computations/probes/hecke_branching_trace_decomposition_probe.py",
     "recorded": "da015537af0a",
     "current": "011cf13b9c37",
-    "reason": "commit 1fb4c623e not in the repository"
+    "reason": "commit 1fb4c623e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/hecke-markov-transition-probe.witness.json",
     "producer": "computations/probes/hecke_markov_transition_probe.py",
     "recorded": "083c61bad192",
     "current": "785a214ab54c",
-    "reason": "commit 77251ee7b not in the repository"
+    "reason": "commit 77251ee7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/hoefsmit-seminormal-form-probe.witness.json",
     "producer": "computations/probes/hoefsmit_seminormal_form_probe.py",
     "recorded": "428a4f56b219",
     "current": "78509f15be55",
-    "reason": "commit c4b9049cf not in the repository"
+    "reason": "commit c4b9049cf not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/jonquiere-cyclotomic-tate-rationality-probe.witness.json",
     "producer": "computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py",
     "recorded": "6cec9e47e816",
     "current": "ce030fe9c125",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/keystone-colored-sigma235-wrt.witness.json",
@@ -3579,6 +3812,7 @@
     "recorded": "321f800776c0",
     "current": "0073377fa3ea",
     "reason": "commit 88292e03e not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "7f95cbf9c",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3587,91 +3821,104 @@
     "producer": "computations/probes/keystone_qbessel_tricomi_c0q_nodes.py",
     "recorded": "ad5574590fa0",
     "current": "ba093b5c1f39",
-    "reason": "commit 95cf7b962 not in the repository"
+    "reason": "commit 95cf7b962 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/keystone-qhankel-eq2-vacuum-row.witness.json",
     "producer": "computations/probes/keystone_qhankel_eq2_vacuum_row.py",
     "recorded": "43e5939111fa",
     "current": "528488ba923c",
-    "reason": "commit 95cf7b962 not in the repository"
+    "reason": "commit 95cf7b962 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/keystone-route1-sigma345-constancy-s013.witness.json",
     "producer": "computations/probes/keystone_route1_sigma345_constancy_s013.py",
     "recorded": "5f2e311fd113",
     "current": "9d0b5620c1f7",
-    "reason": "commit 50a85d770 not in the repository"
+    "reason": "commit 50a85d770 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json",
     "producer": "computations/probes/keystone_valuemap_genuine_smatrix_s013.py",
     "recorded": "9199fa6f48b5",
     "current": "78148d65a1c9",
-    "reason": "commit aabd63235 not in the repository"
+    "reason": "commit aabd63235 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/keystone-valuemap-target-is-compact-hecke.witness.json",
     "producer": "computations/probes/keystone_valuemap_target_is_compact_hecke.py",
     "recorded": "46b8589df21c",
     "current": "946f9078a64c",
-    "reason": "commit 95cf7b962 not in the repository"
+    "reason": "commit 95cf7b962 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/khovanov-at-q0-probe.witness.json",
     "producer": "computations/probes/khovanov_at_q0_probe.py",
     "recorded": "b1b787e73f9e",
     "current": "8c8b554a4e90",
-    "reason": "commit 630a828ed not in the repository"
+    "reason": "commit 630a828ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/khovanov-klr-rank-cohomology-probe.witness.json",
     "producer": "computations/probes/khovanov_klr_rank_cohomology_probe.py",
     "recorded": "0d3f018825df",
     "current": "2f47ee437b90",
-    "reason": "commit 90502dca9 not in the repository"
+    "reason": "commit 90502dca9 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/knot-factor-amphicheiral-BD-probe.witness.json",
     "producer": "computations/probes/knot_factor_amphicheiral_BD_probe.py",
     "recorded": "f6893569082f",
     "current": "ded77b450f57",
-    "reason": "commit d7246feed not in the repository"
+    "reason": "commit d7246feed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/knot-factor-borromean-composite-probe.witness.json",
     "producer": "computations/probes/knot_factor_borromean_composite_probe.py",
     "recorded": "b17cc82a77b1",
     "current": "fcb5dac9eb00",
-    "reason": "commit 1fb4c623e not in the repository"
+    "reason": "commit 1fb4c623e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/knot-id-volume-match-adjudication.witness.json",
     "producer": "computations/probes/knot_id_volume_match_adjudication.py",
     "recorded": "10ffd637c5aa",
     "current": "78703acf5003",
-    "reason": "commit adced7b0c not in the repository"
+    "reason": "commit adced7b0c not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/ksel2id-u1-promotion.witness.json",
     "producer": "computations/probes/ksel2id_u1_promotion_probe.py",
     "recorded": "3aa59061c8bb",
     "current": "4a030359e2ce",
-    "reason": "commit 98f4a7de2 not in the repository"
+    "reason": "commit 98f4a7de2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/lambda-scale-homflypt-skein-recursion-probe.witness.json",
     "producer": "computations/probes/lambda_scale_homflypt_skein_recursion_probe.py",
     "recorded": "ee4acbd22e53",
     "current": "d0d3e5de1907",
-    "reason": "commit 062f03d6b not in the repository"
+    "reason": "commit 062f03d6b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/lambda-scale-substrate-probe.witness.json",
     "producer": "computations/probes/lambda_scale_substrate_probe.py",
     "recorded": "e660aadc9cec",
     "current": "7ab1e0648d71",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3680,7 +3927,8 @@
     "producer": "computations/probes/option_a_vol_per_knot_light_series.py",
     "recorded": "5a5f3fe58e2b",
     "current": "deba4db8d032",
-    "reason": "commit 073cc38ed not in the repository",
+    "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "656edfaeb",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3689,7 +3937,8 @@
     "producer": "computations/probes/option_e_kashiwara_crystal_delta_lambda_probe.py",
     "recorded": "519225d8bcde",
     "current": "273adfcafcd6",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3698,56 +3947,64 @@
     "producer": "computations/probes/pauli_factor_wedderburn_probe.py",
     "recorded": "8648d013810b",
     "current": "ae78dedd1d6d",
-    "reason": "commit 2fcf166b5 not in the repository"
+    "reason": "commit 2fcf166b5 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/plancherel-weight-boundedness-probe.witness.json",
     "producer": "computations/probes/plancherel_weight_boundedness_probe.py",
     "recorded": "39856d40659b",
     "current": "f0577348a6c4",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/pn-pair-two-sector-split.witness.json",
     "producer": "computations/probes/pn_pair_two_sector_split.py",
     "recorded": "48b49769accb",
     "current": "9f3493e9c700",
-    "reason": "commit 53c2da0f0 not in the repository"
+    "reason": "commit 53c2da0f0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/probe-convention-d-vs-c-borromean.witness.json",
     "producer": "computations/probes/probe_convention_d_vs_c_borromean.py",
     "recorded": "b6b756357d91",
     "current": "194627f06147",
-    "reason": "commit d7c68e889 not in the repository"
+    "reason": "commit d7c68e889 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/probe-h3-central-idempotents-exact.witness.json",
     "producer": "computations/probes/probe_h3_central_idempotents_exact.py",
     "recorded": "67d7f15187f5",
     "current": "21dfe1977a0e",
-    "reason": "commit 1413f73da not in the repository"
+    "reason": "commit 1413f73da not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/q-hecke-seminormal-character-closure-probe.witness.json",
     "producer": "computations/probes/q_hecke_seminormal_character_closure_probe.py",
     "recorded": "288e79eb52eb",
     "current": "f1500e5ae843",
-    "reason": "commit 1fb4c623e not in the repository"
+    "reason": "commit 1fb4c623e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-3bp8-annihilator-continuation-w1.witness.json",
     "producer": "computations/probes/qbeta_3bp8_annihilator_continuation_probe.py",
     "recorded": "1f36cf6623d1",
     "current": "26fafbd3b5b0",
-    "reason": "commit a97e6b4fc not in the repository"
+    "reason": "commit a97e6b4fc not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-5two-colored-tower-barodd-qstar.witness.json",
     "producer": "computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py",
     "recorded": "d01f2e3c4ce5",
     "current": "ab2177d63433",
-    "reason": "commit ee28f7a77 not in the repository"
+    "reason": "commit ee28f7a77 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-5two-dilog-qsqrt7-closed-form.witness.json",
@@ -3755,6 +4012,7 @@
     "recorded": "fcea9f621e5b",
     "current": "77bba00212a6",
     "reason": "commit 0ae437572 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "0026a0e63",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3763,21 +4021,24 @@
     "producer": "computations/probes/qbeta_5two_habiro_polynomial_match_probe.py",
     "recorded": "19064d46774f",
     "current": "87b2d73614f5",
-    "reason": "commit 9582d4038 not in the repository"
+    "reason": "commit 9582d4038 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-5two-masbaum-cyclotomic.witness.json",
     "producer": "computations/probes/qbeta_5two_masbaum_cyclotomic_probe.py",
     "recorded": "44c4960b614a",
     "current": "4283bf319584",
-    "reason": "commit 76944209c not in the repository"
+    "reason": "commit 76944209c not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-5two-median-borel-resummation.witness.json",
     "producer": "computations/probes/qbeta_5two_median_borel_resummation_probe.py",
     "recorded": "b55158a38220",
     "current": "bfb3d0d36b51",
-    "reason": "commit afa12a689 not in the repository",
+    "reason": "commit afa12a689 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bd9e1ea7d",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3786,7 +4047,8 @@
     "producer": "computations/probes/qbeta_5two_quantum_volume_probe.py",
     "recorded": "9df4170995e7",
     "current": "df301d27a85a",
-    "reason": "commit 6c39ebd8d not in the repository"
+    "reason": "commit 6c39ebd8d not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-5two-saddle-sum-rule-and-provenance.witness.json",
@@ -3794,6 +4056,7 @@
     "recorded": "f97bd808108d",
     "current": "78b913d9e17f",
     "reason": "commit ef1da0bf5 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "bfe17ddee",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3802,21 +4065,24 @@
     "producer": "computations/probes/qbeta_5two_stokes_barodd_index_probe.py",
     "recorded": "d7c1bd5f8a7f",
     "current": "48dc8a689f68",
-    "reason": "commit 80bd9ad75 not in the repository"
+    "reason": "commit 80bd9ad75 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-5two-theorem3-shape-u.witness.json",
     "producer": "computations/probes/qbeta_5two_theorem3_shape_u_probe.py",
     "recorded": "9ada21a337ef",
     "current": "9569b6442de1",
-    "reason": "commit d98ac3af0 not in the repository"
+    "reason": "commit d98ac3af0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-c3-habiro-3rung-crossanchor-rigidity.witness.json",
     "producer": "computations/probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py",
     "recorded": "d79c91ed99e0",
     "current": "dfaf6bb02ed5",
-    "reason": "commit d7a30bb9a not in the repository",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3825,21 +4091,24 @@
     "producer": "computations/probes/qbeta_ck_qholonomic_recurrence_test.py",
     "recorded": "bede44e14e28",
     "current": "d48c02082bc0",
-    "reason": "commit 8012d26cc not in the repository"
+    "reason": "commit 8012d26cc not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-g3-deformed-blocks-41.witness.json",
     "producer": "computations/probes/qbeta_g3_deformed_blocks_41.py",
     "recorded": "9282db487407",
     "current": "96125c83db74",
-    "reason": "commit 86df9c49b not in the repository"
+    "reason": "commit 86df9c49b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-g3-deformed-saddle-exact-bridge.witness.json",
     "producer": "computations/probes/qbeta_g3_deformed_saddle_exact_bridge.py",
     "recorded": "50681cd1c941",
     "current": "ddc35d6a516a",
-    "reason": "commit 20dfbade8 not in the repository"
+    "reason": "commit 20dfbade8 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-g3-fourone-index-assembly.witness.json",
@@ -3847,6 +4116,7 @@
     "recorded": "843b06314dcc",
     "current": "0dd099e93b28",
     "reason": "commit 374eedf6d not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "a031a4037",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3855,14 +4125,16 @@
     "producer": "computations/probes/qbeta_g3_ggm_eq48_bridge_41.py",
     "recorded": "64b0854b0f33",
     "current": "d34ac5721cd1",
-    "reason": "commit b6ddbbe84 not in the repository"
+    "reason": "commit b6ddbbe84 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-g3-ggm-stokes-41.witness.json",
     "producer": "computations/probes/qbeta_g3_ggm_stokes_41.py",
     "recorded": "1e15485adc31",
     "current": "facbc46ee5da",
-    "reason": "commit 69c40ca8b not in the repository",
+    "reason": "commit 69c40ca8b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bb527823b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3871,14 +4143,16 @@
     "producer": "computations/probes/qbeta_habiro_integrality_kill_test.py",
     "recorded": "bb3c24b120f2",
     "current": "a3a021205a8d",
-    "reason": "commit 8012d26cc not in the repository"
+    "reason": "commit 8012d26cc not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-habiro-p8-identification.witness.json",
     "producer": "computations/probes/qbeta_habiro_p8_identification_probe.py",
     "recorded": "auto",
     "current": "2d4b",
-    "reason": "commit auto not in the repository"
+    "reason": "commit auto not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
@@ -3886,6 +4160,7 @@
     "recorded": "36bfe8f318e2",
     "current": "ed33de3d417b",
     "reason": "commit d89f444fd not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "4bb577bbe",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3894,35 +4169,40 @@
     "producer": "computations/probes/qbeta_habiro_recursion_probe.py",
     "recorded": "auto",
     "current": "7e22",
-    "reason": "commit auto not in the repository"
+    "reason": "commit auto not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-half-fill-probe.witness.json",
     "producer": "computations/probes/qbeta_half_fill_probe.py",
     "recorded": "1de396492169",
     "current": "fe44fe008d86",
-    "reason": "commit 581203c43 not in the repository"
+    "reason": "commit 581203c43 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/qbeta-operator-identification-probe.witness.json",
     "producer": "computations/probes/qbeta_operator_identification_probe.py",
     "recorded": "400e18c155e4",
     "current": "2a9abdb17a6d",
-    "reason": "commit 0c24a8509 not in the repository"
+    "reason": "commit 0c24a8509 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/quillen-anomaly-classification-probe.witness.json",
     "producer": "computations/probes/quillen_anomaly_classification_probe.py",
     "recorded": "85943fc6484a",
     "current": "873b6861b6f1",
-    "reason": "commit 453d7e292 not in the repository"
+    "reason": "commit 453d7e292 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
     "producer": "computations/probes/su4_occupancy_binding_probe.py",
     "recorded": "e93d96e4f75d",
     "current": "378e3484d119",
-    "reason": "commit 998433a48 not in the repository",
+    "reason": "commit 998433a48 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "135a9c4c8",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3931,56 +4211,64 @@
     "producer": "computations/probes/symbolic_character_table_probe.py",
     "recorded": "6e119485822b",
     "current": "60ea5e21a243",
-    "reason": "commit e43d064e4 not in the repository"
+    "reason": "commit e43d064e4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/tau-binding-hitchin-wzw-wall.witness.json",
     "producer": "computations/probes/tau_binding_hitchin_wzw_wall_probe.py",
     "recorded": "7edf04fec597",
     "current": "092dafa987f2",
-    "reason": "commit 317ea55ba not in the repository"
+    "reason": "commit 317ea55ba not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/tau-dictionary-fricke-spin-probe.witness.json",
     "producer": "computations/probes/tau_dictionary_fricke_spin_probe.py",
     "recorded": "61f0446e141a",
     "current": "f5ae54f9d9aa",
-    "reason": "commit 61f069e9e not in the repository"
+    "reason": "commit 61f069e9e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/tau-dictionary-hauptmodul-validator.witness.json",
     "producer": "computations/probes/tau_dictionary_hauptmodul_validator.py",
     "recorded": "45ac7a97d359",
     "current": "5e2d97717924",
-    "reason": "commit 6b04c69c0 not in the repository"
+    "reason": "commit 6b04c69c0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/three-parameters-wedderburn-probe.witness.json",
     "producer": "computations/probes/three_parameters_wedderburn_probe.py",
     "recorded": "03ed76c2df2e",
     "current": "40517ca5d114",
-    "reason": "commit b7a80f862 not in the repository"
+    "reason": "commit b7a80f862 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/vector2-a5-sprime-residue.witness.json",
     "producer": "computations/probes/vector2_a5_sprime_residue_probe.py",
     "recorded": "a424767e598d",
     "current": "1df3e22c9ab0",
-    "reason": "commit 94bbe54b4 not in the repository"
+    "reason": "commit 94bbe54b4 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/probes/x050-50a-hecke-gate-probe.witness.json",
     "producer": "computations/probes/x050_50a_hecke_gate_probe.py",
     "recorded": "864cbaee2de3",
     "current": "2e46c8d047d8",
-    "reason": "commit df6e09d84 not in the repository"
+    "reason": "commit df6e09d84 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/proton-mass-full-tower-50dps.witness.json",
     "producer": "computations/derive_m_p_hecke_full_tower_50dps.py",
     "recorded": "b32f4b5c69c7",
     "current": "f597b2ee422e",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3989,7 +4277,8 @@
     "producer": "computations/probe_q_beta_operator_valued_N3.py",
     "recorded": "8ce74e846c64",
     "current": "520148a7cf6c",
-    "reason": "commit 75362d0bd not in the repository",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -3998,7 +4287,8 @@
     "producer": "computations/q_beta_spectral_bridge_witness.py",
     "recorded": "26c9fab9e0d8",
     "current": "a3854862719f",
-    "reason": "commit 0ba1fe9fb not in the repository",
+    "reason": "commit 0ba1fe9fb not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "65db7f686",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4007,49 +4297,56 @@
     "producer": "computations/q_dirac_h5_lift_and_refinements_50dps.py",
     "recorded": "072c4283d3d9",
     "current": "edc720b6552d",
-    "reason": "commit b0d8a0e86 not in the repository"
+    "reason": "commit b0d8a0e86 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/q-dirac-linking-weight-extended-50dps.witness.json",
     "producer": "computations/q_dirac_linking_weight_extended_50dps.py",
     "recorded": "483fcb0c8723",
     "current": "c316fa6cee39",
-    "reason": "commit 193f561e2 not in the repository"
+    "reason": "commit 193f561e2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/q-dirac-linking-weight-h4-50dps.witness.json",
     "producer": "computations/q_dirac_linking_weight_probe_50dps.py",
     "recorded": "94104afdb266",
     "current": "2560fa4c9ab6",
-    "reason": "commit 5a6801138 not in the repository"
+    "reason": "commit 5a6801138 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/q-dirac-vs-empirical-dominant-lambda-50dps.witness.json",
     "producer": "computations/q_dirac_vs_empirical_dominant_lambda.py",
     "recorded": "a14a34cc7318",
     "current": "6e8022e09093",
-    "reason": "commit 0ac246fbf not in the repository"
+    "reason": "commit 0ac246fbf not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/q-spectral-truncation-tower.witness.json",
     "producer": "computations/q_spectral_truncation_tower.py",
     "recorded": "4bc97f978f46",
     "current": "c5715b7ee123",
-    "reason": "commit 77f2b68af not in the repository"
+    "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/apoly-census-ldegree-certification.witness.json",
     "producer": "computations/qbeta/apoly_census_ldegree_certification_probe.py",
     "recorded": "72c79ce3ccc8",
     "current": "3c8b12039ad5",
-    "reason": "commit b113c12d8 not in the repository"
+    "reason": "commit b113c12d8 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)"
    },
    {
     "witness": "computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",
     "producer": "computations/qbeta/qbeta_alpha_eff_hoefsmit_symbolic_probe.py",
     "recorded": "c36f9c0d878e",
     "current": "69838c2c228b",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4058,28 +4355,32 @@
     "producer": "computations/qbeta/qbeta_alpha_eff_ladder_reconciliation_probe.py",
     "recorded": "2f62245fc48d",
     "current": "6dcd1069d823",
-    "reason": "commit 72af368c0 not in the repository"
+    "reason": "commit 72af368c0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-c-k-recursion-depth-sweep.witness.json",
     "producer": "computations/qbeta/qbeta_c_k_recursion_depth_sweep.py",
     "recorded": "ac2002f19304",
     "current": "4c02f2553b45",
-    "reason": "commit 4a6d05a27 not in the repository"
+    "reason": "commit 4a6d05a27 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-c3-candidate-audit.witness.json",
     "producer": "computations/qbeta/qbeta_c3_candidate_audit.py",
     "recorded": "2e92944895e4",
     "current": "b596b3eae2f3",
-    "reason": "commit 42a41839d not in the repository"
+    "reason": "commit 42a41839d not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-c3-complex-habiro-cross-anchor-probe.witness.json",
     "producer": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
     "recorded": "38c11fa6947b",
     "current": "ae8dc2639f1d",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4088,28 +4389,32 @@
     "producer": "computations/qbeta/qbeta_c3_phib_quantum_saddle_probe.py",
     "recorded": "22e3cd87c410",
     "current": "58f02b9f9a1a",
-    "reason": "commit b89c0d1bc not in the repository"
+    "reason": "commit b89c0d1bc not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
     "producer": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
     "recorded": "de6bb2573274",
     "current": "0be21d58fd78",
-    "reason": "commit 78037d292 not in the repository"
+    "reason": "commit 78037d292 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-c4even-ladder-reconstruction.witness.json",
     "producer": "computations/qbeta/qbeta_c4even_ladder_reconstruction_probe.py",
     "recorded": "7ff98ca5ee61",
     "current": "bb30b505cb96",
-    "reason": "commit 9e557f4ea not in the repository"
+    "reason": "commit 9e557f4ea not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-chain4-kashiwara-crystal-scaffold.witness.json",
     "producer": "computations/qbeta/qbeta_chain4_kashiwara_crystal_scaffold.py",
     "recorded": "c07d7ac49404",
     "current": "136d4e5debcc",
-    "reason": "commit 0cc2c4a58 not in the repository"
+    "reason": "commit 0cc2c4a58 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-ck-cache.witness.json",
@@ -4117,6 +4422,7 @@
     "recorded": "88cb1da28b5e",
     "current": "9a13a19a1b52",
     "reason": "commit 87c627a7c not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "dfb620532",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4125,14 +4431,16 @@
     "producer": "computations/qbeta/qbeta_ck_closed_form_candidate_fits_probe.py",
     "recorded": "dfaf7c1d6250",
     "current": "4237aed14150",
-    "reason": "commit b9488a996 not in the repository"
+    "reason": "commit b9488a996 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-ck-from-operator-markov-trace-probe.witness.json",
     "producer": "computations/qbeta/qbeta_ck_from_operator_markov_trace_probe.py",
     "recorded": "ad510a146cb7",
     "current": "0ab814adaae2",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "c66d2004b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4141,7 +4449,8 @@
     "producer": "computations/qbeta/qbeta_ck_k_gt_3_habiro_extension_scoping.py",
     "recorded": "7a91a644d175",
     "current": "aaf4f4150c1e",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4150,7 +4459,8 @@
     "producer": "computations/qbeta/qbeta_ck_recursion_kernel_constraint_probe.py",
     "recorded": "e449a853fa49",
     "current": "c0a4a9cf7c51",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4159,21 +4469,24 @@
     "producer": "computations/qbeta/qbeta_ck_sseries_exact_rational.py",
     "recorded": "ac65a21d6684",
     "current": "2ef8bd8b5bc9",
-    "reason": "commit 45676495c not in the repository"
+    "reason": "commit 45676495c not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
     "producer": "computations/qbeta/qbeta_ck_sseries_operator_match_probe.py",
     "recorded": "77bcb895709c",
     "current": "f53deb839350",
-    "reason": "commit b19405a53 not in the repository"
+    "reason": "commit b19405a53 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-ck-wedderburn-decomposition-scope-probe.witness.json",
     "producer": "computations/qbeta/qbeta_ck_wedderburn_decomposition_scope_probe.py",
     "recorded": "3da3f29a68f4",
     "current": "1f42cab4252a",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4182,7 +4495,8 @@
     "producer": "computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py",
     "recorded": "7547d89eb7e7",
     "current": "9a5770232029",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4191,7 +4505,8 @@
     "producer": "computations/qbeta/qbeta_cosh_avatar_crossanchor_multicoeff_probe.py",
     "recorded": "24300987eb9d",
     "current": "aa553b2e87d9",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4200,28 +4515,32 @@
     "producer": "computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py",
     "recorded": "98da3545ea46",
     "current": "71c2aafb0445",
-    "reason": "commit e2b7bf648 not in the repository"
+    "reason": "commit e2b7bf648 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json",
     "producer": "computations/qbeta/qbeta_decay_sdp_full_ck.py",
     "recorded": "e55e6f5b8135",
     "current": "f18fad50827b",
-    "reason": "commit f7403a5ab not in the repository"
+    "reason": "commit f7403a5ab not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json",
     "producer": "computations/qbeta/qbeta_decay_sdp_solver.py",
     "recorded": "5c1669b7c4f1",
     "current": "08c7f27f56fb",
-    "reason": "commit 87f79876b not in the repository"
+    "reason": "commit 87f79876b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
     "producer": "computations/qbeta/qbeta_direction_sanity_gate_probe.py",
     "recorded": "26c85c4e2e49",
     "current": "71754152ba64",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4230,133 +4549,152 @@
     "producer": "computations/qbeta/qbeta_disc5_parity_probe.py",
     "recorded": "28c17f9d1306",
     "current": "e6f551b27faf",
-    "reason": "commit 9c4733b34 not in the repository"
+    "reason": "commit 9c4733b34 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-eigenphase-taylor-in-u.witness.json",
     "producer": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
     "recorded": "8db63b1d58b5",
     "current": "564a6616ed5a",
-    "reason": "commit 417e511ad not in the repository"
+    "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-fmap-phi-b-channel-separation.witness.json",
     "producer": "computations/qbeta/qbeta_fmap_phi_b_channel_separation_probe.py",
     "recorded": "2b859d7059f2",
     "current": "4eb0626b64af",
-    "reason": "commit 829bbbc82 not in the repository"
+    "reason": "commit 829bbbc82 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-fmap-phi-b-root-of-unity-reference.witness.json",
     "producer": "computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py",
     "recorded": "ee20f44a8478",
     "current": "a8dfdb70753f",
-    "reason": "commit 71dddb293 not in the repository"
+    "reason": "commit 71dddb293 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-h4-crossing-locus.witness.json",
     "producer": "computations/qbeta/qbeta_h4_crossing_locus_probe.py",
     "recorded": "946f0ce8d4df",
     "current": "70da41c3c97d",
-    "reason": "commit eae3496e0 not in the repository"
+    "reason": "commit eae3496e0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-h4-route-a-gate.witness.json",
     "producer": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
     "recorded": "1c4d79b4f061",
     "current": "a1ff75ce7d3d",
-    "reason": "commit 5f4341723 not in the repository"
+    "reason": "commit 5f4341723 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-h4-screen-calibration-verify.witness.json",
     "producer": "computations/qbeta/qbeta_h4_screen_calibration_verify.py",
     "recorded": "f027dce201a1",
     "current": "b870fa9037f6",
-    "reason": "commit 4022d4a02 not in the repository"
+    "reason": "commit 4022d4a02 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-habiro-all-10-pairs-phi8-universality.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_all_10_pairs_phi8_universality.py",
     "recorded": "6141de4b641f",
     "current": "defe6330b283",
-    "reason": "commit 85bf4f098 not in the repository"
+    "reason": "commit 85bf4f098 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-habiro-delta-a-m-pattern-probe.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_delta_a_m_pattern_probe.py",
     "recorded": "2675632fa031",
     "current": "e203f9193fe2",
-    "reason": "commit 479a91eb2 not in the repository"
+    "reason": "commit 479a91eb2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-habiro-partition-followup.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_partition_followup.py",
     "recorded": "e24c856c4194",
     "current": "86a7a49195c6",
-    "reason": "commit 18ac6def7 not in the repository"
+    "reason": "commit 18ac6def7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-habiro-phi8-squared-boundary-explained.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_phi8_squared_boundary_explained.py",
     "recorded": "64bc6f056afd",
     "current": "4cfd03f5c1d3",
-    "reason": "commit 85bf4f098 not in the repository"
+    "reason": "commit 85bf4f098 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json",
     "producer": "computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py",
     "recorded": "f0e4511dfeeb",
     "current": "79b66a3d2025",
-    "reason": "commit a106d5cfa not in the repository"
+    "reason": "commit a106d5cfa not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-ladder-verification-1ppq.witness.json",
     "producer": "computations/qbeta/qbeta_ladder_verification_1ppq.py",
     "recorded": "be532d756445",
     "current": "4cdcefc96139",
-    "reason": "commit 350db8d0f not in the repository"
+    "reason": "commit 350db8d0f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-phib-cyclotomic-fibre-reduction.witness.json",
     "producer": "computations/qbeta/qbeta_phib_cyclotomic_fibre_reduction_probe.py",
     "recorded": "ceb24b3e2214",
     "current": "64d8e93fab48",
-    "reason": "commit d423757c9 not in the repository"
+    "reason": "commit d423757c9 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-r12-trace-variable.witness.json",
     "producer": "computations/qbeta/qbeta_r12_trace_variable_probe.py",
     "recorded": "e1504576329b",
     "current": "4ba889541db5",
-    "reason": "commit 967dce177 not in the repository"
+    "reason": "commit 967dce177 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-reeb-sinh-fmap-brane-tower-probe.witness.json",
     "producer": "computations/qbeta/qbeta_reeb_sinh_fmap_brane_tower_probe.py",
     "recorded": "0b280be3ec2f",
     "current": "b5c40c0a9371",
-    "reason": "commit 75bb53314 not in the repository"
+    "reason": "commit 75bb53314 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-residue-categorical-id-probe.witness.json",
     "producer": "computations/qbeta/qbeta_residue_categorical_id_probe.py",
     "recorded": "13211a1b45c6",
     "current": "5adffe4f5cbc",
-    "reason": "commit 82e723a48 not in the repository"
+    "reason": "commit 82e723a48 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-residue-followup-pslq-periods.witness.json",
     "producer": "computations/qbeta/qbeta_residue_followup_pslq_periods.py",
     "recorded": "61b3959a21a1",
     "current": "95c62773fd34",
-    "reason": "commit 296c700d1 not in the repository"
+    "reason": "commit 296c700d1 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-rung2-hyp-a-markov-3strand-test.witness.json",
     "producer": "computations/qbeta/qbeta_rung2_hypA_markov_3strand_test.py",
     "recorded": "3d1dd8502fb2",
     "current": "cb48206a9cf2",
-    "reason": "commit ce39b659e not in the repository",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4365,21 +4703,24 @@
     "producer": "computations/qbeta/qbeta_silver_ratio_pell_lucas_ck.py",
     "recorded": "ce449238a317",
     "current": "7e0f16981655",
-    "reason": "commit 77dba8f76 not in the repository"
+    "reason": "commit 77dba8f76 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-singularity-type-probe.witness.json",
     "producer": "computations/qbeta/qbeta_singularity_type_probe.py",
     "recorded": "26f16fb9d8ee",
     "current": "ecd02eedcff3",
-    "reason": "commit 82e723a48 not in the repository"
+    "reason": "commit 82e723a48 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-symbolic-chain-alpha-b.witness.json",
     "producer": "computations/qbeta/qbeta_symbolic_chain_alpha_b.py",
     "recorded": "5331b7bfe32b",
     "current": "dece14987eae",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4388,28 +4729,32 @@
     "producer": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py",
     "recorded": "f09dc2352dc7",
     "current": "eb33b3d09306",
-    "reason": "commit b7f186ae9 not in the repository"
+    "reason": "commit b7f186ae9 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-uw-reparam-probe.witness.json",
     "producer": "computations/qbeta/qbeta_uw_reparam_probe.py",
     "recorded": "53d6b2121eaa",
     "current": "5392ec5ae119",
-    "reason": "commit aebde05f6 not in the repository"
+    "reason": "commit aebde05f6 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/reading-a-residual-at-50dps.witness.json",
     "producer": "computations/reading_a_residual_at_50dps.py",
     "recorded": "fb84703dbd1a",
     "current": "ddc0824eef73",
-    "reason": "commit 57dc60fc0 not in the repository"
+    "reason": "commit 57dc60fc0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/reeb-flow-garside-closed-form-verification.witness.json",
     "producer": "computations/reeb_flow_garside_closed_form_verification.py",
     "recorded": "b57646ade4be",
     "current": "03a14bec2210",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4418,7 +4763,8 @@
     "producer": "computations/rt_c23_singlet_sign_core.py",
     "recorded": "48fd0799ec50",
     "current": "e564ccf0de0a",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4427,7 +4773,8 @@
     "producer": "computations/rt_identity_chain_consolidation.py",
     "recorded": "6bcf2cf6da78",
     "current": "297763194963",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4436,7 +4783,8 @@
     "producer": "computations/shell_binding_transfer_matrix.py",
     "recorded": "5e2f53305739",
     "current": "c326fe9cc62d",
-    "reason": "commit dd7f0ed7b not in the repository",
+    "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4445,7 +4793,8 @@
     "producer": "computations/skein_proton_canonical.py",
     "recorded": "ea21a6ba8571",
     "current": "37c41677f2af",
-    "reason": "commit 131f4165e not in the repository",
+    "reason": "commit 131f4165e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "1ce51e058",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4454,14 +4803,16 @@
     "producer": "computations/staircase_ew_disjoint_spectrum.py",
     "recorded": "896720d5bfb4",
     "current": "905bf765e3a7",
-    "reason": "commit 1d068aa54 not in the repository"
+    "reason": "commit 1d068aa54 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/su2-spinor-multiplicity-resolution.witness.json",
     "producer": "computations/su2_spinor_multiplicity_resolution.py",
     "recorded": "1b4c4c3aa674",
     "current": "8df21bac3d2f",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4470,63 +4821,72 @@
     "producer": "computations/subgoal_1_frobenius_co_casimir_validation.py",
     "recorded": "014872cf81c3",
     "current": "b908522e378f",
-    "reason": "commit 055637512 not in the repository"
+    "reason": "commit 055637512 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/sublemma-2-1-A-operator-extract-h12-nn.witness.json",
     "producer": "computations/sublemma_2_1_A_operator_extract_h12_nn_streamed.py",
     "recorded": "e2bd271a32ba",
     "current": "b3beadb042ae",
-    "reason": "commit 69cfe08dc not in the repository"
+    "reason": "commit 69cfe08dc not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/sublemma-2-1-A-operator-extract-h9-pn.witness.json",
     "producer": "computations/sublemma_2_1_A_operator_extract_h9.py",
     "recorded": "4f660ca02920",
     "current": "1252148143ce",
-    "reason": "commit 297453170 not in the repository"
+    "reason": "commit 297453170 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/sublemma-2-1-h9-he3-verify.witness.json",
     "producer": "computations/sublemma_2_1_h9_tritium_verify.py",
     "recorded": "4ad6ca2b6bfa",
     "current": "41f771e387bb",
-    "reason": "commit 9c327c7d3 not in the repository"
+    "reason": "commit 9c327c7d3 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/sublemma-2-1-h9-tritium-verify.witness.json",
     "producer": "computations/sublemma_2_1_h9_tritium_verify.py",
     "recorded": "4ad6ca2b6bfa",
     "current": "41f771e387bb",
-    "reason": "commit 9c327c7d3 not in the repository"
+    "reason": "commit 9c327c7d3 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/substrate/binding-manybody-series.witness.json",
     "producer": "computations/substrate/binding_manybody_series.py",
     "recorded": "3ffa4bb347b0",
     "current": "9c7d7212851f",
-    "reason": "commit a5e1fb4cb not in the repository"
+    "reason": "commit a5e1fb4cb not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/sweeps/light-isotope-sweep.witness.json",
     "producer": "computations/sweeps/light_isotope_sweep.py",
     "recorded": "64be69537e0e",
     "current": "ea7603025a69",
-    "reason": "commit 219170700 not in the repository"
+    "reason": "commit 219170700 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/symmetrized-binding-probe.witness.json",
     "producer": "computations/symmetrized_binding_probe.py",
     "recorded": "7b0c4f927642",
     "current": "7730d30f29a0",
-    "reason": "commit e8b82252f not in the repository"
+    "reason": "commit e8b82252f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/term6-residues-at-roots.witness.json",
     "producer": "computations/term6_residues_at_roots.py",
     "recorded": "7d19a23ce84b",
     "current": "2283a3b86463",
-    "reason": "commit 073cc38ed not in the repository",
+    "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "d195cb3c5",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4535,21 +4895,24 @@
     "producer": "computations/theta_wn_jetfilt_linkvolume.py",
     "recorded": "1b07282503b8",
     "current": "5496e8ec14cd",
-    "reason": "commit 8ceb0af0d not in the repository"
+    "reason": "commit 8ceb0af0d not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/theta-wn-kernel-derive-or-refute.witness.json",
     "producer": "computations/theta_wn_kernel_derive_or_refute.py",
     "recorded": "57c77f4e7c56",
     "current": "dd686e8508fd",
-    "reason": "commit 8e4cc4f32 not in the repository"
+    "reason": "commit 8e4cc4f32 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/three-body-joint-trace-a3.witness.json",
     "producer": "computations/three_body_joint_trace_a3.py",
     "recorded": "7ac3273c213e",
     "current": "eeb3aed99cf8",
-    "reason": "commit 7e159709f not in the repository",
+    "reason": "commit 7e159709f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "f00fd3a98",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4558,21 +4921,24 @@
     "producer": "computations/orbit_reduction_crosscheck.py",
     "recorded": "8a15a284d0b0",
     "current": "9fc3aa297663",
-    "reason": "commit 36e895cca not in the repository"
+    "reason": "commit 36e895cca not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/tier-2-higher-bridge-pslq.witness.json",
     "producer": "computations/tier_2_higher_bridge_pslq.py",
     "recorded": "e4906f294ecf",
     "current": "6aa0f5bba066",
-    "reason": "commit 23fe9c986 not in the repository"
+    "reason": "commit 23fe9c986 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/tr-m-atom-via-transfer.witness.json",
     "producer": "computations/tr_m_atom_via_transfer.py",
     "recorded": "89b92db49080",
     "current": "22d9c1906ac3",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4581,14 +4947,16 @@
     "producer": "computations/tritium_h5_psd_feasibility_witness.py",
     "recorded": "323b41beade7",
     "current": "7d2901109036",
-    "reason": "commit 078d896bb not in the repository"
+    "reason": "commit 078d896bb not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/u1-hypercharge-assignment.witness.json",
     "producer": "computations/u1_hypercharge_assignment.py",
     "recorded": "c39c2af77b8e",
     "current": "72352830e062",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4597,7 +4965,8 @@
     "producer": "computations/unified_low_isotope_predictor.py",
     "recorded": "eba70b193ab6",
     "current": "a84f7373d484",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4606,7 +4975,8 @@
     "producer": "computations/unified-mass-molecular.py",
     "recorded": "06443f53ca39",
     "current": "da2e17a3a2c9",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4615,7 +4985,8 @@
     "producer": "computations/v_hat_to_chi_lambda_integrated.py",
     "recorded": "38e7bd52d92d",
     "current": "27b3f18e58ab",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4624,7 +4995,8 @@
     "producer": "computations/v_hat_to_delta_lambda_bridge.py",
     "recorded": "4ae51b1b1f68",
     "current": "4bec876bc2f2",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4633,7 +5005,8 @@
     "producer": "computations/vdw_pskew_sinh_probe.py",
     "recorded": "e3dbb4103394",
     "current": "1bf55601cde7",
-    "reason": "commit 58d7abe89 not in the repository",
+    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4643,6 +5016,7 @@
     "recorded": "97023a026b63",
     "current": "9f01ce0fa9f2",
     "reason": "commit 457f4cc4a not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
     "approx_anchor": "805ca010a",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4651,7 +5025,8 @@
     "producer": "computations/wenzl_lr_convention_adapter.py",
     "recorded": "258b74f8a97a",
     "current": "ffcbef9849ab",
-    "reason": "commit 6949424f7 not in the repository",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
@@ -4660,7 +5035,8 @@
     "producer": "computations/y_lambda_tower_infra.py",
     "recorded": "bb7a1798dc26",
     "current": "786ee6f5472d",
-    "reason": "commit e8b82252f not in the repository"
+    "reason": "commit e8b82252f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    }
   ],
   "unresolvable": [
