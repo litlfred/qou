@@ -262,9 +262,17 @@ def main() -> int:
         # read, so `q0_anchor_consistency_audit` scored it
         # Q0_INDEPENDENT_NO_REASON despite the reason being present.
         "q0AnchorReason": (
-            "No q0 is read. The peel's numeric (c, d) only SELECT one of five "
-            "crossing templates -- a q-independent combinatorial choice -- and "
-            "chi takes delta as the closed form flavor_split_leading(q)."
+            "No pin governs the result: the identity is checked SYMBOLICALLY, "
+            "as an equality of rational functions in q, and the sole assertion "
+            "reads only that symbolic check. The peel's numeric (c, d) only "
+            "SELECT one of five crossing templates -- a q-independent "
+            "combinatorial choice -- and chi takes delta as the closed form "
+            "flavor_split_leading(q). Both substrate values DO appear in the "
+            "source, as two of the five sample points in "
+            "`residual_evaluations` (beside q = 1.3, 0.7, 2); they are "
+            "reported, not depended on. Said explicitly because the earlier "
+            "wording here was 'No q0 is read', which a reader grepping for "
+            "1.1099 would find flatly contradicted by the file."
         ),
         "results": results,
         "assertions": [
