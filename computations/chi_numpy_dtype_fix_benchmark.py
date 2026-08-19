@@ -121,6 +121,8 @@ def main() -> int:
             "partition": str(lam),
             "t_fixed_sec": fmt(t_fast),
             "t_prefix_sec": fmt(t_slow),
+            # float64-intentional: a wall-clock ratio. The timings ARE
+            # doubles; there is no exact route to a benchmark measurement.
             "speedup": fmt(speedup),
             "t_mpmath_reference_sec": fmt(t_ref),
             "rel_diff_vs_mpmath": mp.nstr(rel, 6),
