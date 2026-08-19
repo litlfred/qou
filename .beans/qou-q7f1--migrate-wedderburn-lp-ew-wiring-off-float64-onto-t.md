@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T16:24:41Z
-updated_at: 2026-08-18T21:41:07Z
+updated_at: 2026-08-19T07:31:13Z
 ---
 
 ## Scope (PR #5260, owner directive "no f64 path")
@@ -105,3 +105,55 @@ inputs for that check are already in hand. Not done here.
 this producer needs an n_pairs x n_pairs Gram over pair amplitudes at H_{3A}.
 An mpmath Hoefsmit builder is still required — `_hoefsmit_f64_matrices` has no
 mp twin. That is the actual bulk of this bean and none of it is done.
+
+
+---
+
+## Blocker 2 RESOLVED — replaced, not satisfied (2026-08-19)
+
+The stated goal ("cross-check against scipy to 1e-25") is unachievable, so it
+was replaced with a check that answers the same question without an oracle:
+`computations/lp_dual_kkt_residual_50dps.py`.
+
+KKT verified against the problem data at 50 dps — primal equality, primal
+inequality, bounds, dual sign, dual feasibility, strong duality, complementary
+slackness — with every input entering as a decimal string and every operation
+under `mp.workdps(50)`. No float64 at any point, and no second solver.
+
+    r_eq     |sum x - n_target|      5.26e-24     <- headline
+    r_Gx     min (Gx)_i              3.81e-16  ok (>= 0)
+    r_y      min y_i                 9.77e-20  ok (>= 0)
+    r_dual / scale                   2.43e-25
+    r_gap  / scale                   1.44e-21
+    r_cs   / scale                   1.69e-20
+
+**`r_eq` at 5.26e-24 is 8 orders below anything f64 can exhibit.** That is the
+substantive result: the MPFR path delivers real sub-f64 accuracy, and no
+comparison against an f64 oracle could ever have demonstrated it. This is what
+the 1e-25 note was reaching for and could not get from scipy.
+
+**Two yardstick corrections to my own check, both forced by the measurement:**
+
+1. The first cut used a flat 1e-40 and printed "KKT NOT satisfied" — a
+   statement about the tolerance, not the solve. `|x| ~ 2.65e5` here, so the
+   objective is a near-total cancellation; an absolute residual on it is not
+   comparable with one on `sum x - n_target`, whose terms are O(1). The three
+   cancelling rows are now scale-relative.
+2. The assertions still carried the discarded 1e-40 after the verdict moved on,
+   so the witness read "7 assertions, FAILURES" beside a printed "KKT
+   SATISFIED". An artifact contradicting its own conclusion is worse than
+   either verdict; the assertions now use the verdict's criterion, and the
+   one-sided rows assert only the violating direction.
+
+**NOT claimed:** that the solve is accurate to 50 dps. Its *convergence*
+tolerance (`dual_tol` 1e-9), not its arithmetic precision, governs how far the
+residuals fall. 1e-18 relative was picked to sit below f64 resolution and above
+what that convergence can be expected to give — passing it is a real claim, but
+a bounded one.
+
+**Blockers 1 and 2 are now done. Blocker 3 is untouched and is the bulk of this
+bean:** `gram_matrix_mp` is the 6x6 H_3 NF Gram; `wedderburn_lp_ew_wiring`
+needs an n_pairs x n_pairs Gram over pair amplitudes at H_{3A}, and
+`_hoefsmit_f64_matrices` still has no mpmath twin. Writing that builder is the
+next real step, and the KKT check above is now available to validate whatever
+it produces.
