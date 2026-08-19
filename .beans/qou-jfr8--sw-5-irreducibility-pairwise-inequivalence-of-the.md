@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T13:41:54Z
+updated_at: 2026-08-19T14:06:07Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -66,3 +66,53 @@ falls out of the same separation: the L_k eigenvalue MULTISET is the multiset of
 cell contents of lambda, which determines lambda.
 
 CLAIMED by this session 2026-08-19.
+
+
+## Progress 2026-08-19 (PR #5307) — separation half LANDED sorry-free
+
+**Corpus-grep finding that changed the plan:** step 2 (content tuple determines
+the tableau) was ALREADY PROVED in the corpus as
+`BraidKnot.JucysMurphy.syt_content_tuple_injective` — the Okounkov-Vershik stack
+under BraidKnot/, sorry-free, 950 lines. I nearly rebuilt it. What was actually
+missing is the TRANSLATION between the repo's two StandardYoungTableau types
+(QOU.Mathlib.* used by SchurWeyl vs QOU.BraidKnot.* used by OV), which differ by
+an off-by-one label convention.
+
+Landed:
+- `SytContentTuple.lean`: `cellOf_eq_tableauCellEquiv` (the label
+  correspondence across the existing type bridge) + `syt_eq_of_cellContent_eq`
+  (separation in the cellOf API).
+- `SeminormalSimpleSpectrum.lean`: `zpow_injective_of_not_root_of_unity`,
+  `seminormalRep_qJM_diag`, and `seminormalRep_qJM_spectrum_injective` — the
+  joint L_k eigenvalue tuple determines T.
+
+All sorry-free, axioms [propext, Classical.choice, Quot.sound].
+
+**Sharpening of the plan:** 'Ram 4.1 gives diagonal' is NOT the separation. A
+diagonal matrix with a repeated entry has a plane of eigenvectors. Diagonal +
+simple spectrum is what forces joint eigenspaces to be single coordinate lines.
+The bean's step 1/step 2 split above was right but the writeup blurred them.
+
+## Remaining
+
+1. **Connectivity transport.** `syt_adjacentSwap_connected` /
+   `syt_all_connect_to_some` exist sorry-free on the BraidKnot side; transport
+   them the same way `SytContentTuple` transported separation.
+2. **The invariant-subspace step.** T in an invariant subspace => s_k.T in it,
+   because genMat's off-diagonal entry `offDiag` is nonzero.
+3. **DESIGN QUESTION, not yet settled:** what should 'irreducible' BE in Lean
+   here? `AlgHom.range (seminormalRep ...) = top` is the form SW-7 actually
+   consumes and avoids setting up a Module-over-the-algebra structure. Reaching
+   it needs Lagrange interpolation on the simple spectrum to build the diagonal
+   matrix units E_TT from the L_k images, then connectivity to get the
+   off-diagonal units. That interpolation is the largest single remaining piece.
+4. Pairwise inequivalence rho_lambda !=~ rho_mu — the eigenvalue MULTISET is the
+   content multiset of lambda, which determines lambda. Not started.
+
+## Do not duplicate
+
+The five `cellContent` definitions in the corpus (SchurWeyl/HoefsmitRep,
+BraidKnot/JucysMurphy, MathlibExt/QPartitionCombinatorics,
+MathlibExt/WenzlSchurElement, HeckeAlgebra/JonesMarkovWenzl) are a real
+consolidation target but are NOT part of this bean. Filed as an observation
+only.
