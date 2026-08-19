@@ -131,4 +131,159 @@ theorem jmStep_diag (q : ℝ) (hq : q ≠ 0) {d : ℤ} (hd0 : d ≠ 0) (hd : q ^
 
 end Seminormal
 
+/-! ## The diagonal of JM eigenvalues, and the base case -/
+
+namespace SeminormalRep
+
+open QOU.Mathlib (StandardYoungTableau)
+open TableauCells Seminormal
+
+variable {μ : YoungDiagram}
+
+/-- **The `q`-JM eigenvalue matrix at value `v`**: diagonal, with `q^{2·content}` read off the
+cell holding `v` in each tableau. -/
+noncomputable def jmDiagVal (q : ℝ) (v : ℕ) :
+    Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
+  Matrix.diagonal (fun T => q ^ (2 * cellContent (cellOf T v)))
+
+@[simp] theorem jmDiagVal_diag (q : ℝ) (v : ℕ) (T : StandardYoungTableau μ) :
+    jmDiagVal (μ := μ) q v T T = q ^ (2 * cellContent (cellOf T v)) := by
+  simp [jmDiagVal]
+
+theorem jmDiagVal_of_ne (q : ℝ) (v : ℕ) {T' T : StandardYoungTableau μ} (h : T' ≠ T) :
+    jmDiagVal (μ := μ) q v T' T = 0 := by
+  simp [jmDiagVal, Matrix.diagonal_apply_ne _ h]
+
+/-- **Base case.**  Value `1` sits at `(0,0)` in every standard tableau
+(`TableauCells.cellOf_one`), whose content is `0`, so the eigenvalue matrix is the identity —
+matching `ρ(L₀) = ρ(1) = 1`. -/
+theorem jmDiagVal_one (q : ℝ) (hcard : 0 < μ.cells.card) :
+    jmDiagVal (μ := μ) q 1 = 1 := by
+  unfold jmDiagVal
+  rw [← Matrix.diagonal_one]
+  congr 1
+  funext T
+  rw [cellOf_one T hcard]
+  norm_num [cellContent]
+
+/-- The content advances by the axial distance: `content(cell of k+1) = content(cell of k) + d`.
+Immediate from the definition of `axialDist` as a content difference. -/
+theorem cellContent_succ (T : StandardYoungTableau μ) (k : ℕ) :
+    cellContent (cellOf T (k + 1)) = cellContent (cellOf T k) + axialDist T k := by
+  unfold axialDist axialDistance
+  ring
+
+/-- **The inductive step, as a matrix identity.**  Conjugating the eigenvalue matrix at value
+`k` by the generator matrix `genMat q k` gives the eigenvalue matrix at value `k+1`.
+
+Every entry reduces to `Seminormal.jmStep_diag` / `jmStep_offDiag` (size-`2` orbits) or
+`Seminormal.seminormalParam_sq_mul` (size-`1` orbits). -/
+theorem genMat_conj_jmDiagVal (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card) :
+    genMat q k hk hkn * jmDiagVal q k * genMat q k hk hkn = jmDiagVal q (k + 1) := by
+  classical
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := ⟨by omega, hkn⟩
+  ext T' T
+  set d := axialDist T k with hd
+  have hd0 : d ≠ 0 := axialDist_ne_zero T hkI hkI'
+  have hdq : q ^ (2 * d) ≠ 1 := zpow_ne_one hq0 hq2 (by omega)
+  have hc : cellContent (cellOf T (k + 1)) = cellContent (cellOf T k) + d :=
+    cellContent_succ T k
+  -- collapse the inner product: the middle factor is diagonal
+  have hAD : ∀ U, (genMat q k hk hkn * jmDiagVal q k :
+        Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) T' U
+      = genMat q k hk hkn T' U * q ^ (2 * cellContent (cellOf U k)) := by
+    intro U
+    rw [Matrix.mul_apply, Finset.sum_eq_single U]
+    · rw [jmDiagVal_diag]
+    · intro b _ hb
+      rw [jmDiagVal_of_ne q k hb, mul_zero]
+    · intro h; exact absurd (Finset.mem_univ U) h
+  rw [Matrix.mul_apply]
+  simp only [hAD]
+  by_cases hadm : SwapAdmissible T k
+  · -- size-2 orbit
+    set S₀ := swapTableau T k hk hkn hadm with hS₀
+    have hne : S₀ ≠ T := swapTableau_ne T hk hkn hadm
+    have hadm' : SwapAdmissible S₀ k := swapAdmissible_swapTableau T hk hkn hadm
+    have hback : swapTableau S₀ k hk hkn hadm' = T := swapTableau_involutive T hk hkn hadm
+    have hdS : axialDist S₀ k = -d := axialDist_swapTableau T hk hkn hadm
+    have hcS : cellContent (cellOf S₀ k) = cellContent (cellOf T k) + d := by
+      rw [hS₀, cellOf_swapTableau_self T hk hkn hadm, hc]
+    rw [sum_mul_genMat_column q k hk hkn hadm
+      (fun U => genMat q k hk hkn T' U * q ^ (2 * cellContent (cellOf U k)))]
+    simp only [← hS₀, hcS, ← hd]
+    by_cases hT' : T' = T
+    · -- diagonal entry
+      have h1 : genMat q k hk hkn T' T = seminormalParam q d := by
+        rw [hT', genMat_diag, ← hd]
+      have h2 : genMat q k hk hkn T' S₀ = offDiag q (-d) := by
+        have hsw := genMat_swap q k hk hkn hadm' (by rw [hback]; exact hne.symm)
+        rw [hback, hdS] at hsw
+        rw [hT']; exact hsw
+      have h3 : jmDiagVal q (k + 1) T' T = q ^ (2 * (cellContent (cellOf T k) + d)) := by
+        rw [hT', jmDiagVal_diag, hc]
+      rw [h1, h2, h3]
+      have hstep := jmStep_diag q hq0 hd0 hdq (cellContent (cellOf T k))
+      linear_combination hstep
+    · by_cases hT'S : T' = S₀
+      · -- off-diagonal entry: vanishes
+        have h1 : genMat q k hk hkn T' T = offDiag q d := by
+          rw [hT'S]; exact genMat_swap q k hk hkn hadm hne
+        have h2 : genMat q k hk hkn T' S₀ = seminormalParam q (-d) := by
+          rw [hT'S, genMat_diag, hdS]
+        rw [h1, h2, jmDiagVal_of_ne q (k + 1) hT']
+        have hstep := jmStep_offDiag q hq0 hdq (cellContent (cellOf T k))
+        linear_combination hstep
+      · -- outside the orbit: both factors vanish
+        rw [genMat_apply_of_ne q k hk hkn hT' hadm hT'S,
+          genMat_apply_of_ne q k hk hkn hT'S hadm' (by rw [hback]; exact hT'),
+          jmDiagVal_of_ne q (k + 1) hT']
+        ring
+  · -- size-1 orbit: the column is the diagonal alone
+    have hdpm : d = 1 ∨ d = -1 := by
+      rcases axialDist_trichotomy T hkI hkI' with h | h | h
+      · exact Or.inl (by rw [hd]; exact h)
+      · exact Or.inr (by rw [hd]; exact h)
+      · exact absurd h hadm
+    rw [Finset.sum_eq_single T]
+    · by_cases hT' : T' = T
+      · have h1 : genMat q k hk hkn T' T = seminormalParam q d := by
+          rw [hT', genMat_diag, ← hd]
+        have h2 : genMat q k hk hkn T T = seminormalParam q d := by
+          rw [genMat_diag, ← hd]
+        have h3 : jmDiagVal q (k + 1) T' T = q ^ (2 * (cellContent (cellOf T k) + d)) := by
+          rw [hT', jmDiagVal_diag, hc]
+        rw [h1, h2, h3]
+        have hstep := seminormalParam_sq_mul q hq0 hq2 hdpm (cellContent (cellOf T k))
+        linear_combination hstep
+      · rw [genMat_of_not_admissible q k hk hkn hT' hadm,
+          jmDiagVal_of_ne q (k + 1) hT']
+        ring
+    · intro b _ hb
+      rw [genMat_of_not_admissible q k hk hkn hb hadm, mul_zero]
+    · intro h; exact absurd (Finset.mem_univ T) h
+
+/-- **Ram (1997) Thm 4.1, for this construction.**  The `q`-Jucys–Murphy element `L_k` acts on
+the seminormal representation as the diagonal matrix reading `q^{2·content}` at the cell holding
+value `k+1`.
+
+Induction on `k`: the base is `L₀ = 1` with value `1` at the corner (`jmDiagVal_one`), and the
+step is the conjugation identity `genMat_conj_jmDiagVal`, since `L_{k+1} = σ_k L_k σ_k`. -/
+theorem seminormalRep_qJM (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hN : μ.cells.card = n + 1) :
+    ∀ k : ℕ, k ≤ n →
+      seminormalRep q hq0 hq2 n hN (qJM ℝ q q⁻¹ n k) = jmDiagVal q (k + 1)
+  | 0, _ => by
+      rw [qJM_zero, map_one, jmDiagVal_one q (by omega)]
+  | (k + 1), hk => by
+      have hkn : k < n := by omega
+      rw [qJM_succ ℝ q q⁻¹ n hkn, map_mul, map_mul,
+        seminormalRep_σ, seminormalRep_qJM q hq0 hq2 n hN k (by omega)]
+      show genMat q (k + 1) _ _ * jmDiagVal q (k + 1) * genMat q (k + 1) _ _ = _
+      rw [genMat_conj_jmDiagVal q hq0 hq2 (k + 1) (by omega) (by omega)]
+
+end SeminormalRep
+
 end QOU.SchurWeyl
