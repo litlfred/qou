@@ -359,6 +359,20 @@ user's last message, not the most recently mentioned file.
         one *deletes the field this audit keys on* (measured: 15 keys in, 7
         and 9 out). Fix the producer to emit provenance first.
 
+      **And a `substantive` verdict is not a work order — measured, 39 %.**
+      Of 72 substantive producers actually re-run under a time budget, only
+      **28 moved a single mathematical field**; 44 were byte-identical, 3
+      crashed, 2 timed out. So "the code changed, therefore the payload can
+      move" over-flags by roughly 61 %, and the genuinely actionable queue is
+      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
+      Re-run to decide; do not treat the class as a to-do list.
+
+      **Producers write SIBLING witnesses.** The isotope producer rewrote 21
+      `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
+      Anything that re-runs producers to compare must restore the whole
+      `computations/` tree afterwards, not the one file it was looking at, or it
+      leaves a dirty tree that reads as real work.
+
       And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
       resolves to nothing, because rebase-merge (rule 8) rewrote the branch
       sha the witness was written under. This is the same effect the

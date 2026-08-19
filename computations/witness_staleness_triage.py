@@ -123,7 +123,23 @@ Three honest residual classes, reported separately rather than folded in:
     rebase-merge (AGENTS.md rule 8) rewrites every branch commit sha, so a
     witness produced on a feature branch records a sha the merge destroyed.
     AGENTS.md says this of `scriptCommitSha`; it is equally true of `commitSha`.
-    Consequence: "diff the producer first" is unrunnable for these.
+    At 366 of 751 this is **48.7 % of the backlog**, and the §4 remedy
+    (`git diff <witness.commitSha> -- <producer>`) is simply unrunnable on it.
+
+    Worth being precise about what is and is not broken here: `commitSha` is
+    **already** not an enforcement key — `witness_dependency_drift.py` keys
+    self-staleness on `scriptHash` alone. So nothing is *failing* because of
+    this; what is lost is the ability to *decide* half the queue.
+
+    These entries now carry a **heuristic timestamp anchor**: the nearest
+    `origin/main` commit at-or-before `computedAt` that still has the producer,
+    plus an `approx_verdict` from comparing normalised sources across it. It
+    resolves for ~43 % of the class. **It is advisory and must not be quoted as
+    a verdict** — the witness was produced on a branch, so main at that instant
+    may carry a different producer than the branch did, and it is wrong in both
+    directions. Use it to prioritise; use the runner
+    (`witness_producer_executes_audit.py`) to conclude, since running a producer
+    needs no sha at all and is the only sha-free answer available.
   * `unresolvable` — no `commitSha`, or the producer is not at that path there.
   * `unparseable`  — the old or new producer is not valid Python 3 here. Rare,
     and never silently counted as cosmetic.
@@ -335,6 +351,30 @@ def find_producer(script_file: str) -> Path | None:
     return hits[0] if len(hits) == 1 else None
 
 
+def approx_anchor(computed_at: str | None, producer_rel: str) -> str | None:
+    """Nearest `origin/main` commit at-or-before `computed_at` carrying the producer.
+
+    A HEURISTIC anchor for the `rewritten` class, whose recorded `commitSha` no
+    longer resolves. It makes "diff the producer first" runnable again for the
+    ~43% of that class where it succeeds -- but it is NOT a recovery of the true
+    parent and must never be reported as one: the witness was produced on a
+    BRANCH, so main at that instant may carry a different version of the producer
+    than the branch did. Wrong in both directions (the branch may have been ahead
+    on the producer; main may have moved between compute and merge).
+
+    Use it to triage, never to conclude.
+    """
+    if not computed_at:
+        return None
+    out = _git("rev-list", "-1", f"--before={computed_at}", "origin/main")
+    sha = (out or "").strip()
+    if not sha:
+        return None
+    if _git("cat-file", "-e", f"{sha}:{producer_rel}") is None:
+        return None
+    return sha
+
+
 def triage() -> dict:
     classes: dict[str, list] = {
         "cosmetic": [], "cosmetic_env_differs": [],
@@ -381,6 +421,20 @@ def triage() -> dict:
         # hides the dominant cause.
         if _git("cat-file", "-e", f"{sha}^{{commit}}") is None:
             entry["reason"] = f"commit {sha[:9]} not in the repository"
+            # Try the heuristic timestamp anchor so this half of the backlog is
+            # at least triageable. Advisory only -- see approx_anchor's caveat.
+            anchor = approx_anchor(w.get("computedAt"), rel_p)
+            if anchor:
+                entry["approx_anchor"] = anchor[:9]
+                old_src = _git("show", f"{anchor}:{rel_p}")
+                if old_src is not None:
+                    a, b = normalise(old_src), normalise(
+                        current_src.decode("utf-8", "replace"))
+                    if a is not None and b is not None:
+                        entry["approx_verdict"] = (
+                            "cosmetic (ADVISORY — anchor is approximate)"
+                            if a == b else
+                            "substantive (ADVISORY — anchor is approximate)")
             classes["rewritten"].append(entry)
             continue
 
