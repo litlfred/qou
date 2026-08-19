@@ -95,6 +95,40 @@ theorem seminormalParam_sq_mul (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {d :
   · rw [hcd, seminormalParam_sq_of_one q hq hq2]; ring
   · rw [hcd, seminormalParam_sq_of_neg_one q hq hq2]; ring
 
+/-! ## The full entry-level inductive step
+
+Both entries of `S · D · S` on a size-`2` orbit reduce to the *same* cancellation. Writing
+`c` for the content seen by `D` at `T` and `c + d` for the one at `s·T`:
+
+* the **off-diagonal** is `offDiag(d) · (a(d)q^{2c} + a(-d)q^{2(c+d)})`, which is `0`;
+* the **diagonal** is `a(d)²q^{2c} + offDiag(-d)offDiag(d)·q^{2(c+d)}`, and using
+  `offDiag_mul_neg` (`offDiag(d)offDiag(-d) = 1 + a(d)a(-d)`) it collapses to
+  `a(d)·(a(d)q^{2c} + a(-d)q^{2(c+d)}) + q^{2(c+d)} = q^{2(c+d)}`.
+
+So one identity governs the whole step — which is why the induction closes.
+-/
+
+open SeminormalRep in
+/-- **Off-diagonal entry of the step vanishes.** -/
+theorem jmStep_offDiag (q : ℝ) (hq : q ≠ 0) {d : ℤ} (hd : q ^ (2 * d) ≠ 1) (c : ℤ) :
+    offDiag q d * q ^ (2 * c) * seminormalParam q d
+      + seminormalParam q (-d) * q ^ (2 * (c + d)) * offDiag q d = 0 := by
+  have hcancel := seminormalParam_weighted_cancel q hq hd c
+  linear_combination offDiag q d * hcancel
+
+open SeminormalRep in
+/-- **Diagonal entry of the step is the shifted content.**  `a(d)²q^{2c}` plus the
+off-diagonal round trip equals `q^{2(c+d)}` exactly. -/
+theorem jmStep_diag (q : ℝ) (hq : q ≠ 0) {d : ℤ} (hd0 : d ≠ 0) (hd : q ^ (2 * d) ≠ 1)
+    (c : ℤ) :
+    seminormalParam q d ^ 2 * q ^ (2 * c)
+        + offDiag q (-d) * offDiag q d * q ^ (2 * (c + d))
+      = q ^ (2 * (c + d)) := by
+  have hcancel := seminormalParam_weighted_cancel q hq hd c
+  have hprod : offDiag q d * offDiag q (-d)
+      = 1 + seminormalParam q d * seminormalParam q (-d) := offDiag_mul_neg q hd0
+  linear_combination seminormalParam q d * hcancel + q ^ (2 * (c + d)) * hprod
+
 end Seminormal
 
 end QOU.SchurWeyl
