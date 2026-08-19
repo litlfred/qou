@@ -1,0 +1,73 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_v1_lift_and_value_probe",
+ "engine": "python3-int-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. eps_3 is computed from K = Q(alpha), alpha^3-alpha^2+1 = 0, in exact 5-adic arithmetic; the substrate modulus plays no role in CGZ's construction and no anchor is imported.",
+ "scriptFile": "gswz_epsm_v1_lift_and_value_probe.py",
+ "commitSha": "8060f7c0256851bc3e6b48bfefb2dbdfff7dde38",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 Theorem 1.2, Remark 1.9, Lemma 2.4, Proposition 2.5 and eqn (21); Addendum 32 (this repo)",
+ "checks": {
+  "setup_mu3_in_Q25": true,
+  "alpha_v1_is_a_root_in_Z5": true,
+  "v1_all_four_arguments_are_units_of_Z5": true,
+  "v1_identity_1_minus_z1_eq_alpha_sq": true,
+  "v1_satisfies_thm12_hypothesis_gcd_n_wF_eq_1": true,
+  "old_field_violated_thm12_hypothesis": true,
+  "v1_cube_roots_stay_in_Q5": true,
+  "v1_obstruction_vanishes_wedge2_is_zero": true,
+  "D_zeta_of_1_is_a_unit": true,
+  "cube_roots_exact_in_B": true,
+  "P_zeta_arguments_are_units": true,
+  "readout_is_not_the_identity_on_mu3": true,
+  "eps3_class_is_defined": true,
+  "eps3_in_zeta_basis_is_zeta_3": true,
+  "root_independence_holds_at_v1": true,
+  "zeta_convention_recorded_not_assumed": true,
+  "shift_ratio_is_a_cube_in_B_at_v1": true,
+  "lemma_24e_eigenvector_condition_holds": true,
+  "class_map_is_non_constant_at_v1": true,
+  "v2_disc_is_a_nonsquare_in_Q5": true,
+  "v2_disc_is_a_square_in_Q25": true,
+  "v2_alpha_is_a_root_in_Q25": true,
+  "v2_root_is_a_different_place_than_v1": true,
+  "v2_cube_roots_leave_the_field": true,
+  "v2_has_mu3_so_M_is_trivial_and_lift_is_ambiguous": true
+ },
+ "result": {
+  "w_F_at_v1": 4,
+  "eps3_raw_readout_in_the_mu24_generator_basis": 2,
+  "eps3_alpha_line_v1_as_zeta3_exponent": 1,
+  "eps3_over_all_9_root_choices": [
+   "2"
+  ],
+  "eps3_under_the_other_primitive_cube_root": 2,
+  "eps3_is_convention_independent": true,
+  "classes_seen_on_sampled_arguments": [
+   "0",
+   "1"
+  ],
+  "v2_arguments_that_are_cubes_in_Q25": [
+   true,
+   false,
+   false,
+   false
+  ],
+  "S_and_M_orders": {
+   "v1": {
+    "S": 3,
+    "M": 3
+   },
+   "v2": {
+    "S": 9,
+    "M": 1
+   }
+  }
+ },
+ "scope": "scope-(a) VALUE AT ONE PLACE. eps_3(2[z_1] + [z_2]) = zeta_3 (CORRECTED: the raw readout 2 is a power of the mu_24 generator, not of zeta_3; see gswz_epsm_five_term_validation_probe.py). It is computed at the degree-1 place of K = Q(alpha), alpha^3 - alpha^2 + 1 = 0, and is reported as an exponent of zeta_3 in the chi^{-1}-eigenspace of B^x/(B^x)^3, B = Q_25 = F_3. CGZ Prop 2.5 applies there: w_{Q_5} = 4 is coprime to 3 (Theorem 1.2's hypothesis, which the fields of Addenda 27-29 violated); Lambda^2(F^x/(F^x)^3) = 0 so the obstruction vanishes; and the lift is unique because S = F^x/F^{x3} sits in the trivial character while chi^{-1} is nontrivial. H is not needed: all four of z_1, z_2, 1 - z_1, 1 - z_2 are units of Z_5, hence cubes, so the cube roots stay in Q_5 and the eqn-(21) shift ratio is a cube in B -- which is why root-independence HOLDS here (measured over all 9 root choices) and failed in Addenda 27-29, where 1 - X was not a cube in the field used. The Lemma 2.4(e) eigenvector condition is verified. Control at the degree-2 place: K_v = Q_25 contains mu_3, M = 0, S is the whole order-9 group, the lift is ambiguous by all of it, and the cube roots genuinely leave the field. This is a value at ONE place of ONE field where the arithmetic is trivial; it does not construct CGZ's lift in general and does not revive the fields of Addenda 27-29. The m = 2 result of PR #4968 is untouched. Nothing is wired to production."
+}

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T15:24:48Z
+updated_at: 2026-08-19T17:41:59Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -156,3 +156,53 @@ BraidKnot's `AdjacentSwapStep` / `swapCellsSYT` against SchurWeyl's
 5-line bridge works.
 
 Pairwise inequivalence (rho_lambda !=~ rho_mu) still not started.
+
+
+## Connectivity LANDED (PR #5321) — and my cost estimate was wrong in the good direction
+
+`SytSwapTransport.lean`, sorry-free: `swapAdmissible_of_sq_axialDist_ne_one`,
+`SwapStep`, `swapStep_of_adjacentSwapStep`, `syt_swapStep_connected`.
+
+**Retracting the estimate in the previous entry.** I wrote that this transport
+would be 'strictly larger' than SytContentTuple because the SWAP CONSTRUCTIONS
+would have to be matched. They do not. `AdjacentSwapStep` is defined purely in
+terms of CONTENT VECTORS and never mentions how the stepped-to tableau is built,
+so the transport needs only swapTableau's content profile plus separation. The
+lesson generalises: check whether the upstream definition is stated
+extensionally before budgeting for a structural match.
+
+## NEW OBSTRUCTION — the plan in this bean was wrong about the last step
+
+Step 3 above says 'an invariant subspace containing T also contains s_k.T since
+genMat's off-diagonal entry is nonzero (offDiag)'. **That is not automatic.**
+
+    offDiag q d = if d < 0 then 1 + a(d).a(-d) else 1
+
+so the entry is the plain 1 only on the NON-NEGATIVE branch, and
+`offDiag q (-1) = 0`. SeminormalRep's own `genMat_ne_scalar` docstring flags
+this: *'this does not go through offDiag != 0 at the moved entry: that can
+genuinely vanish'*. Since axialDist (s_k.T) k = -axialDist T k, each admissible
+pair yields exactly ONE oriented edge for free -- and one orientation per edge
+does not give all ordered pairs single U V 1.
+
+**The missing lemma: `offDiag q d != 0` for |d| >= 2, real q != 0, q^2 != 1.**
+
+Derivation (do not re-derive): with y = q^2 > 0, the vanishing condition
+1 + a(d)a(-d) = 0 is equivalent to (y-1)^2 . y^(e-1) = (y^e - 1)^2 with e = |d|.
+Factoring y^e - 1 = (y-1)(1 + y + ... + y^(e-1)) reduces it to
+y^(e-1) = (1 + y + ... + y^(e-1))^2, and for y > 0 the sum exceeds y^((e-1)/2) --
+term-by-term when e is odd (the middle power IS a term and the others are
+positive), by AM-GM on the two middle terms when e is even. Only e = 1 solves it,
+which is exactly the NON-admissible distance.
+
+**Checked in EXACT RATIONALS, not floats** (121 rationals q x 12 distances):
+0 mismatches between the direct form and the reduction, 0 vanishings at |d| >= 2,
+and the driving inequality strictly positive throughout.
+
+This is load-bearing mathematics, not plumbing: if offDiag DID vanish at an
+admissible distance, the tableaux reachable in one direction would span an
+invariant subspace and the representation would not be irreducible.
+
+Formalising it is real analysis over zpow (the geometric-sum factorisation plus
+the AM-GM step), not a bookkeeping lemma. It is the single remaining gap between
+the current branch and range = top.

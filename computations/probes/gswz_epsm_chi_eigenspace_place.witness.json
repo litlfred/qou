@@ -1,0 +1,94 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_chi_eigenspace_place_probe",
+ "engine": "python3-int-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. The eps_m relocation is pure algebraic number theory in Z/5^W and the divisor lattice of 24; the substrate modulus never enters, and no pyhecke/Gram/Markov import exists in the cone.",
+ "scriptFile": "gswz_epsm_chi_eigenspace_place_probe.py",
+ "commitSha": "8060f7c0256851bc3e6b48bfefb2dbdfff7dde38",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 Remark 1.9 (p. 8), Lemma 2.3 and Lemma 2.4(a),(d),(e) (pp. 9-10); Addenda 27-31 (this repo)",
+ "checks": {
+  "alpha_poly_factors_as_predicted": true,
+  "alpha_v1_hensel_root_exact": true,
+  "nahm_line_elements_live_in_Q5_at_v1": true,
+  "z1_identity_1_minus_z1_eq_alpha_sq": true,
+  "mu3_not_in_Q5": true,
+  "mu24_generator_found_in_Q25": true,
+  "mu3_in_Q25": true,
+  "cube_root_search_finds_three_in_Q25": true,
+  "frobenius_has_order_2_on_mu24": true,
+  "frobenius_fixes_base_scalars": true,
+  "chi_inv_of_frob_is_minus_one": true,
+  "one_plus_5O_is_all_cubes": true,
+  "class_group_has_order_9": true,
+  "frobenius_acts_by_minus_one_on_teichmuller_line": true,
+  "frobenius_acts_by_plus_one_on_valuation_line": true,
+  "eigenspace_is_the_teichmuller_line_order_3": true,
+  "eigenspace_is_proper_5_is_outside": true,
+  "valuation_line_fails_eigen_condition": true,
+  "old_chi_B_is_the_eigenspace_projection": true,
+  "big_field_contains_mu3_so_condition_is_vacuous": true,
+  "place_v2_also_collapses": true
+ },
+ "result": {
+  "roots_of_alpha_poly_mod_5": [
+   2
+  ],
+  "alpha_at_v1_mod_5^4": 142,
+  "cube_roots_of_unity_in_Z_5^W": [
+   1
+  ],
+  "cube_roots_of_unity_in_F25": [
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    3,
+    2
+   ]
+  ],
+  "chi_of_frobenius": 2,
+  "chi_inv_of_frobenius": 2,
+  "frobenius_on_teichmuller_line": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    2,
+    1
+   ]
+  ],
+  "chi_inv_eigenspace": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  "eigenspace_size_at_v1": 3,
+  "eigenspace_size_over_big_field": 9
+ },
+ "scope": "scope-(a) RELOCATION of the target, not a value. CGZ Remark 1.9 puts the invariant in (F_n^x/(F_n^x)^n)^{chi^{-1}} -- the chi^{-1}-eigenspace of F_n = F(zeta_n) -- with P_zeta in H^x/H^{xn} only its image. An eigenspace is proper only when F does not contain mu_n; every field in my programme was Q_5(mu_{624m}), which does, so the condition of Lemma 2.4(e) was vacuous throughout. The alpha-line field K = Q(alpha), alpha^3 - alpha^2 + 1 = 0, has two places over 5: at v_1 (degree 1) K_v = Q_5 lacks mu_3 and F_3 = Q_25, giving Gal = Z/2 and an eigenspace of order 3 inside a group of order 9 -- non-vacuous, with 5 a witness outside it; at v_2 K_v = Q_25 already contains mu_3 and collapses. This REVERSES half of Addendum 31: B = Q_25 is not 'too small', it is exactly F_n at v_1, and my chi_B = teich(.)^8 is exactly the eigenspace projection. What failed at the B level was the lift of P_zeta from H to F_n -- the step Remark 1.9 flags as unchecked -- not the choice of field. Separately, Lemma 2.3 is an isomorphism F^x/F^{xn} = H^1(Phi, mu), so the Kummer-cocycle reformulation computes the same object as Addendum 31 and is not a new route; no probe was spent on it. No eps_m value is claimed at m >= 3; the m = 2 result of PR #4968 is untouched."
+}

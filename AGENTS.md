@@ -328,6 +328,58 @@ user's last message, not the most recently mentioned file.
       §0b-idle-time-backlog-policy-5-minute-trigger`](.claude/skills/local/integration-watcher.md#0b-idle-time-backlog-policy-5-minute-trigger).
       This sits above cross-cutting cleanups because stale
       sidecars mislead all four watcher children's reads.
+
+      **Before spending the witness half of that budget, run
+      [`witness_staleness_triage.py`](computations/witness_staleness_triage.py)
+      — measured, the answer is usually "spend it on sidecars instead."**
+      It normalises both producer versions through `ast.unparse` (comments,
+      docstrings and formatting gone) and reports which drifts can actually
+      move a number. Re-measured three times across 1564 commits of `main`,
+      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      identical is necessary but not sufficient, and the two extra gates are
+      the ones that bite:
+
+      - **Import-cone drift — the one that actually bites.** A producer's own
+        source can be byte-stable while the module it *calls* changed.
+        Measured: `binding_canonical.py` is source-stable across its drift
+        window, yet `tr_M_atom` moved `0.388 -> 0.575` (48 %) because
+        `tr_m_atom_via_transfer.py`, which computes that quantity, changed.
+        A file-local `git diff` cannot see this — use
+        [`witness_import_cone_staleness_audit.py`](computations/witness_import_cone_staleness_audit.py),
+        or the one-hop check the triage script now runs.
+      - **Environment (hazard, not yet measured here).** A producer *may*
+        branch on what is installed. I originally reported the
+        `binding_canonical` 48 % as an instance of this; **that was wrong** —
+        re-run with `pyhecke_native 0.9.0` and every recorded package matched,
+        it reproduces the committed value byte-identically. Still worth
+        checking the witness's `environment` block before re-running, but this
+        corpus has not yet produced a confirmed case.
+      - **Bare producers.** Some producers never emit provenance; the
+        `scriptHash` / `commitSha` on disk was added downstream. Re-running
+        one *deletes the field this audit keys on* (measured: 15 keys in, 7
+        and 9 out). Fix the producer to emit provenance first.
+
+      **And a `substantive` verdict is not a work order — measured, 39 %.**
+      Of 72 substantive producers actually re-run under a time budget, only
+      **28 moved a single mathematical field**; 44 were byte-identical, 3
+      crashed, 2 timed out. So "the code changed, therefore the payload can
+      move" over-flags by roughly 61 %, and the genuinely actionable queue is
+      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
+      Re-run to decide; do not treat the class as a to-do list.
+
+      **Producers write SIBLING witnesses.** The isotope producer rewrote 21
+      `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
+      Anything that re-runs producers to compare must restore the whole
+      `computations/` tree afterwards, not the one file it was looking at, or it
+      leaves a dirty tree that reads as real work.
+
+      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
+      sha the witness was written under. This is the same effect the
+      `scriptCommitSha` ruling above describes, one field over: **"diff the
+      producer first" is unrunnable for half the queue**, and hand-patching
+      the sha (13 such commits on `main` in one 8-day window) buys only the
+      interval until the next merge.
    5. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades,
       `validate-bib` deferred items, glossary backfills, doc
       currency. Lowest priority because they're not gated on any
@@ -3220,8 +3272,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
-| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
+| `tools/pyhecke/` | `pyhecke` — Layer 2b (Hecke / Gram / Markov trace). **Not on PyPI** (404). 70 in-repo importers. |
+| `tools/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine`. **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel but is `workflow_dispatch`-only and has no publish step. Build locally with `maturin build --release`. 89 in-repo importers. |
 | `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
 
 > **Importer counts are measured, not maintained.** The five above were
@@ -3234,11 +3286,23 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 >   | grep -v "^./tools/<pkg-dir>/" | grep -v _deprecated | wc -l
 > ```
 >
-> **`qou-mass` and `qou-substrate` are not published.** Both 404 on PyPI, with
-> no `dist/`, no tags and no publish workflow. Do not describe either as
-> shipped, and do not reason about external consumers of their data — there
-> are none. (Checked 2026-08-15; the `qou-mass` entry said "PyPI package"
-> while nothing had ever been uploaded.)
+> **None of `qou-mass`, `qou-substrate`, `pyhecke` or `pyhecke-native` are
+> published.** All four 404 on PyPI, with no `dist/` and no publish step. Do not
+> describe any of them as shipped, and do not reason about external consumers of
+> their data — there are none. (`qou-mass` / `qou-substrate` checked 2026-08-15;
+> the two `pyhecke` rows carried the same wrong claim until 2026-08-19 and were
+> corrected the same way. `pyhecke-native` has a wheel workflow, which is
+> probably how "PyPI wheel" got written, but it is `workflow_dispatch`-only and
+> uploads nothing — building an artifact is not publishing it.)
+>
+> **Consequence for agents.** `pyhecke_native` cannot be `pip install`ed, so a
+> container without it is the *default*, not an anomaly. Build it from
+> `tools/pyhecke-native/` with `maturin build --release` (works: produces
+> `pyhecke_native-0.9.0-cp311-...whl`) when a witness's `environment` block
+> records it. **Do not cite `binding_canonical` as evidence that its absence
+> changes results** — I did, and it was wrong: with the native extension
+> installed the producer reproduces the same `tr_M_atom` byte-identically. That
+> 48 % move was import-cone drift, not environment.
 >
 > **Never hand-edit `qou-mass/src/qou_mass/_internal/`.** It is generated from
 > `computations/` by [`scripts/sync-qou-mass-vendor.py`](scripts/sync-qou-mass-vendor.py)
