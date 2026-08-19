@@ -436,3 +436,42 @@ their abstract says so — **not** GZ's level `N` from Part E. Reading `6₁ ≤
 "`6₁` has level 3" would manufacture the fourth level-`>1` knot the open question
 asks for, out of an unrelated quantity. **Third instance of this conflation trap
 in this arc**; recorded so it is not walked into a fourth time.
+
+### The `6₁` prediction is CONFIRMED — from a second, unrelated object
+
+The conditional prediction above (`6₁ → r = 4`, `|P_K| = 5`, from DG's
+trace-field type `[0,2]`) was **independently certified by a sibling session**
+while this work was in progress: `main` `96d65d02e`, bean `qou-btvl`, probe
+`apoly_census_ldegree_certification_probe.py` (3/3), from the Culler
+A-polynomial census (`uploads/A_census.tgz`, owner-supplied).
+
+| knot | census name | geometric `L`-degree | full `L`-degree |
+|---|---|---|---|
+| `4₁` | `K2_1` | 2 | 3 |
+| `5₂` | `K3_2` | 3 | 4 |
+| `6₁` | `K4_1` | **4** | **5** |
+
+**Why it is a test.** The two sides are unrelated objects from unrelated sources:
+the prediction is the **degree of an algebraic number field**
+(`x⁴ − 2x³ + x² + 3x + 1`, signature `[0,2]`, disc `257`); the certification is
+the **`L`-degree of a Newton polygon** (the census A-polynomial of `K4_1`).
+Nothing forces those to agree. They do, on three knots, with three distinct
+values `2, 3, 4` — and `6₁` was predicted before its census value was in hand.
+
+**One half is not a test, and the sibling flagged it first.** `full = geom + 1`
+holds by construction (the `+1` is the abelian representation), so the
+`|P_K| = r + 1` leg corroborates nothing. The content is entirely in
+`deg F_K = geometric L-degree = r`.
+
+**The control fires.** At `(−2,3,7)` the identity **fails** — trace field degree
+`3` against rank `6` — precisely where `A_K^red ⊋ F_K`. A rule that fitted there
+too would be the worrying outcome; this one holds where its stated hypothesis
+holds and breaks where it does not.
+
+**Credit.** The census certification is the sibling's work. What belongs to this
+line is the prediction it confirms, and the hypothesis that made it a prediction
+rather than a fit.
+
+**Still open, and the sibling says the same:** an *independent resurgence DT
+count* for `6₁` — the piece that would turn `r = 4` into a third-knot test of the
+DT correspondence itself rather than of the number-field/Newton-polygon identity.
