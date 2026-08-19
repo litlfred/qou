@@ -9,7 +9,7 @@ tags:
     - route-c
     - literature
 created_at: 2026-08-19T12:10:00Z
-updated_at: 2026-08-19T12:30:00Z
+updated_at: 2026-08-19T12:45:00Z
 ---
 
 ## Context
@@ -118,9 +118,24 @@ geometric reading not. Nothing wired.
    coincidence of the one level-2 example. GZ ties level 2 to (-2,3,7)'s Newton
    polygon having HALF-INTEGER SLOPES, which is a searchable criterion for picking
    candidates rather than guessing knots.
-2. RE-RUN THE CORPUS SWEEP WITHOUT THE VOCABULARY BIAS. The "Stokes" keying cost this
-   arc one paper; sweep instead on knot names + structural terms (rank, weight space,
-   Galois orbit, trace field, quantum modularity). Cheap, and the same defect will
-   have hidden other things.
+2. [EXECUTED THIS SESSION] Re-ran the corpus sweep on structural vocabulary (knot
+   names, pretzel, weight space, Galois orbit, trace field, quantum modularity,
+   boundary-parabolic, level of a knot, A-polynomial) instead of "Stokes".
+   RESULT: 94 of 371 PDFs match; the ranking is materially different from the
+   Stokes ranking, and it surfaced a SECOND confirmed miss:
+
+     uploads/ki6c.pdf = Ohtsuki-Yokota, "On the asymptotic expansions of the Kashaev
+     invariant of the knots with 6 crossings" -- i.e. 6_1, 6_2, 6_3, with the volume
+     conjecture proved for them. It contains the string "Stokes" ZERO times, so it was
+     structurally invisible to the original sweep. Second instance of the same defect,
+     from the same cause.
+
+   HONEST YIELD, stated so this is not oversold: ki6c does NOT close open items 1 or 3.
+   It gives asymptotic expansions of the Kashaev invariant (the perturbative side) and
+   works with the SINGLE geometric critical point -- not the full set of
+   boundary-parabolic representations, so no |P_K| for 6-crossing knots -- and it
+   carries no Stokes matrices. It is a genuine fourth/fifth/sixth-knot resource on the
+   perturbative leg, and it is proof that the vocabulary bias hid more than one paper.
+   Other unopened high-rankers worth a look: 1511.05628, 2412.04241, 1303.5278.
 3. The H_Ad polynomial test is STILL open and still needs a genuine Stokes matrix for
    a third knot -- unchanged by this bean, and still not in the corpus.
