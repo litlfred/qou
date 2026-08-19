@@ -428,3 +428,55 @@ them is how a multi-day job gets scheduled as an afternoon.
 11 declarations in `GenWronskian.lean`, sorry-free, standard axioms. Combined with
 `RothIndex.lean` (18), that is **29 declarations of Roth prerequisites**, none of which
 existed in Mathlib.
+
+---
+
+## Progress, 2026-08-19
+
+Four of the prerequisites are now done and merged or in review.
+
+| prerequisite | status |
+|---|---|
+| Siegel's lemma | present in Mathlib (`exists_ne_zero_int_vec_norm_le`) |
+| index at a point, product law | done — `QOU/Mathlib/RothIndex.lean` |
+| generalized Wronskians, univariate | done, **with the full dependence iff** `genWronskian_eq_zero_iff` |
+| generalized Wronskians, several variables | done — `QOU/Mathlib/MvGenWronskian.lean` |
+| index under differentiation | done — PR #5316 |
+| several-variable Wronskian converse | **open** |
+| Roth's lemma | **open — the hard core** |
+| Roth's theorem | **open** |
+
+Merged in #4907: the general-`m` univariate converse and the multivariate Wronskian.
+In review as #5316: `index_le_index_pderiv_add` and its iterate.
+
+### Two recorded predictions this arc falsified — both mine
+
+**The `RatFunc` route was avoidable.** This file and `GenWronskian.lean` both recorded that
+the general-`m` converse "needs the ratio argument in the function field and is materially
+harder". It does not. `sum_wronskian_combo_eq_zero` multiplies by `c_l` where the classical
+proof divides by it, which keeps the entire argument inside `K[X]` — and the resulting
+entries are literally `wronskian (c l) (c j)`, so the `m = 2` converse applies directly.
+The "materially harder" estimate was wrong, and the scoping note above that called the
+remainder "bookkeeping in the sense of not conceptually new, not in the sense of short"
+was right on the first half and pessimistic on the second: steps 1, 2 and 5 needed no new
+mathematics and landed in one sitting.
+
+**The differentiation step needed no support filter.** The recorded note predicted the
+bound "is rescued only because `pderiv_monomial` carries a factor `s_i` that kills exactly
+those monomials" with `s_i = 0`. No rescue was needed: the statement is an *inequality*, so
+the degenerate case where truncated subtraction gives `s - e_i = s` is simply slack. Only
+the sharper equality would have forced the filter.
+
+### One real defect this arc caught in its own work
+
+The 5-step route committed for the converse had step 5 as "substituting,
+`c_m * (sum_j lam_j f_j) = 0`, and `c_m /= 0` in a domain gives the constant dependence".
+That yields the sum but establishes **nothing about `lam /= 0`** — and `lam = 0` satisfies
+the conclusion vacuously, so as written it would have licensed a proof of nothing. Repaired
+from a step already proved: applying the `m = 2` converse at `j = l` forces `lam_l = 1`.
+
+### Standing
+
+`RothIndex.lean` 27 declarations, `GenWronskian.lean` 18, `MvGenWronskian.lean` 8 — **53
+declarations of Roth prerequisites**, all sorry-free on the standard axiom set, none of
+which existed in Mathlib.
