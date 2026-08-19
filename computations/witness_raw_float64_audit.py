@@ -72,6 +72,33 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 BASELINE = HERE / "raw-float64-baseline.json"
 
+
+def _baseline_path(scan_root: "Path | None") -> "Path":
+    """Baseline file for a run — DERIVED from the scan root, never shared.
+
+    Exactly the `_output_name` defect (qou-pgdw) one step removed, and it is
+    why the audits-tree gate could not be made blocking. The OUTPUT name was
+    scoped when that bug was fixed; the BASELINE was left global, so the
+    advisory `--scan-root docs/audits/scripts` run reads a baseline whose 1572
+    entries are all `computations/` paths and therefore contains none of its
+    own. Every witness under that tree is reported NEW on every run, forever —
+    not because anything regressed, but because the ratchet has no memory for
+    that tree.
+
+    A ratchet with no memory cannot be blocking: it is red on arrival, and a
+    gate that is red on arrival gets skipped, which is how a checker goes quiet
+    (the rule this file's own header states). Giving each scan root its own
+    baseline is what makes "no NEW dirty here" a question the gate can answer.
+
+    This does NOT grow `raw-float64-baseline.json`. It is a separate file for a
+    tree that was previously outside the discipline altogether; the corpus
+    baseline is untouched and still drains-only.
+    """
+    if scan_root is None:
+        return BASELINE
+    slug = scan_root.relative_to(ROOT).as_posix().strip("/").replace("/", "-")
+    return HERE / f"raw-float64-baseline--{slug}.json"
+
 # These audits embed findings — including float values — in their own
 # witnesses, so scanning them re-detects the audit's own output every run.
 # Same exclusion the padding audit makes, for the same reason.
@@ -480,20 +507,30 @@ def main() -> int:
         if not scan_root.is_dir():
             print(f"--scan-root: not a directory: {scan_root}")
             return 2
-        if args.rebaseline:
-            # Rebaselining against a foreign root would write that root's
-            # dirty files into a baseline keyed on computations/ paths —
-            # growing it. Baselines drain, never grow.
-            print("--rebaseline is refused with --scan-root (bean qou-irzg).")
-            return 2
-        print(f"  scan root                      : {args.scan_root}  "
+        # --rebaseline WITH --scan-root used to be refused outright: the write
+        # would have put that root's dirty files into a baseline keyed on
+        # computations/ paths, growing it, and baselines drain-never-grow.
+        #
+        # It is now permitted, because `_baseline_path` sends it to that root's
+        # OWN file. The corpus baseline is unreachable from a non-default root,
+        # so the thing the refusal protected cannot happen. What this enables is
+        # ESTABLISHING coverage over a tree that had none — which is a different
+        # act from silencing a regression in a tree that already has it, and is
+        # the only way the ratchet can hold a line here at all.
+        _bp = _baseline_path(scan_root)
+        _cov = "own baseline: " + _bp.name if _bp.exists() else (
+            "NO baseline yet — every dirty file below reads as NEW; "
+            "--rebaseline to establish coverage")
+        print(f"  scan root                      : {args.scan_root}  [{_cov}]")
+        _unused_banner = (
               f"[non-default — baseline does not cover it, so every dirty\n"
               f"                                   file below is reported as "
               f"NEW; treat this run as ADVISORY]")
     found = scan(scan_root)
+    baseline_path = _baseline_path(scan_root)
     prior: dict[str, int] = {}
-    if BASELINE.exists():
-        prior = json.loads(BASELINE.read_text())["files"]
+    if baseline_path.exists():
+        prior = json.loads(baseline_path.read_text())["files"]
 
     new_files = {f: n for f, n in found.items() if f not in prior}
     grew = {f: (prior[f], n) for f, n in found.items()
@@ -556,7 +593,7 @@ def main() -> int:
             print(f"    {was:6d} -> {now:<6d}  {f}")
 
     if args.rebaseline:
-        BASELINE.write_text(json.dumps(
+        baseline_path.write_text(json.dumps(
             {"note": "Witnesses known to carry raw float64, by count. The "
                      "backlog is tolerated; it must only SHRINK. Regenerate "
                      "ONLY when draining. Adding a file here to silence a "
