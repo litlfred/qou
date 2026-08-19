@@ -772,6 +772,13 @@ arithmetic. This executes the "twisted test" queued on `qou-9p9y` by
 the classical gate run (`habiro_tail_membership_gate_probe.py`) and
 the U2 payoff promised on `qou-1hlh`.
 
+> **⚠ SCOPE ADDED by Addendum 26 (2026-08-18).** The gate verdicts below
+> are **VALID-immune** — exact Laurent/cyclotomic arithmetic, measured to
+> contain no trace parameter and no anchor. But the *identification* of
+> these elements as "the corpus's named c_k / α_EM candidates" is
+> **C-CONDITIONAL**: that provenance comes from the convention-C-frame
+> ladder, which the 2026-08-15 ruling leaves un-re-derived (`qou-cds1`).
+
 **Candidates (the corpus's actual named fibre-level objects):**
 J_Hopf(q) = −(q+1/q) (the c₃ fibre candidate); [2]_q (the α_EM
 element's q-factor); D(4) (binding Habiro tail control). Exact anchor:
@@ -1143,3 +1150,187 @@ strictly harder, and a per-element solution would imply the
 residue-level one — so the residue "yes" is *consistent with*, but no
 evidence for, a per-element solution. The ε_m values at m ≥ 3 remain
 uncomputed.
+
+## Addendum 26 (2026-08-18) — convention-immunity of this programme, measured; and the one C-conditional label in my merged wording
+
+`gswz_program_convention_immunity_probe.py`, **7/7** (both controls
+fire). Written after the week's rulings — convention **D** canonical and
+**C excised** (2026-08-15), proton pin reaffirmed, and the standing
+AGENTS.md warning that the Q_β `c_k` ladder is C-frame throughout and
+**not re-derived** (`qou-cds1`), so every `c_k` conclusion is
+C-conditional until it is.
+
+The question for this programme is whether *its* results inherit that
+conditionality. Answered by **measurement**, following the template of
+[`2026-08-15-c3-refutation-chain-convention-validity-audit.md`](2026-08-15-c3-refutation-chain-convention-validity-audit.md):
+
+| measured over the 20 programme probes | result |
+|---|---|
+| imports of `pyhecke` / a Gram module / Markov-trace machinery | **none** |
+| references to `z_C`, `z_D`, `√q/(q+1)`, `q³/(q²+1)` | **none** |
+| references to `q_parameter`, `q0`, the 50-digit pin, `qou_substrate` | **none** |
+
+Convention C vs D is a statement about the **Markov parameter z** and
+the Gram form built from it; a chain that never touches that layer
+cannot be C- or D-framed. Likewise, a chain that never evaluates at a
+substrate modulus is untouched by the proton-pin directive. The `q` that
+*does* appear in five probes is the **quantum variable, not z** — under
+C ↔ D it is z that changes *as a function of* q, while q is unchanged,
+so a Laurent element in q is the same element in both conventions
+(verified: the candidates are integer Laurent elements of ℤ[q,1/q], a
+ring in which no convention choice is even expressible).
+
+**Classification:**
+
+| result | verdict |
+|---|---|
+| ε_m descent chain, all layers (Addenda 17, 18, 21–25) | **VALID-immune** — no q, no z, no anchor |
+| the c_k membership **gates** (Addendum 19) | **VALID-immune** — exact Laurent/cyclotomic arithmetic |
+| the c_k candidate **provenance** (Addendum 19) | **C-CONDITIONAL** — the identification of J_Hopf(q) and [2]_q as *the corpus's named c_k / α_EM candidates* comes from the C-frame ladder; the gate verdicts are unaffected |
+
+Addendum 19 now carries that scope banner in place. This audit does
+**not** claim the c_k ladder survives convention D — that is
+`qou-cds1`'s question and is untouched here.
+
+**Kept as a standing gate**, not a one-off: the probe fires the moment a
+z-dependent or anchor-dependent input is wired into this chain, which is
+the drift it exists to catch.
+
+**Also this pass — a real defect a sibling found in my code.** `qou-kx04`
+(commit `0f50c3d2`) fixed `gswz_epsm_descent_m4to24_probe.py`, whose
+witness path was the repo-root-relative literal
+`computations/probes/…`: run from its own directory — which is how the
+regeneration harness invokes every producer — it died with
+`FileNotFoundError` **after** completing a 69-second compute. **Eleven
+more of my probes carried the same defect**; all are now anchored to
+`pathlib.Path(__file__).resolve().parent`, verified by running from
+`computations/probes/` (the failing cwd): 5/5, 7/7, 7/7, 18/18 green.
+Same cwd-assumption class as the `parents[2]` bug fixed in 12 scripts.
+
+## Addendum 27 (2026-08-18) — a per-element representative EXISTS at m = 3 and 6, the canonical cocycle closes there — and the value is still not an invariant
+
+`gswz_epsm_per_element_representative_probe.py`, **16/16**. Answers the
+question Addendum 25 reopened (bean `qou-w4gn`), and then finds the next
+obstruction rather than a value.
+
+**Why the earlier search found nothing.** The single-relation negative
+(bean note, 2026-08-11) placed z₂ only in the **seed** slot, used
+coefficient **1**, and assumed z₂ appears **once**. Widening all three:
+
+- **Position** — z₂ can occupy any of the five slots, each reachable by
+  construction (slot 3 via y = α/x, since 1−xy = 1−α = z₂ exactly;
+  slots 2 and 4 by solving for the partner seed).
+- **Coefficient** — with general c the demand is m | (1−ck)·e(z₂) plus
+  m | c·e(w), strictly weaker than the c = 1 case.
+- **Multiplicity** — z₂ can appear **twice** in one relation, and that
+  is exactly what the survivors do.
+
+**Result.** Of 550 relations built containing the actual z₂, exactly
+**2** contain it twice. For both, **c = 2** makes ξ′ = ξ − 2R
+per-element divisible at **m = 3 and m = 6**:
+
+| element | mult | e(w) | mult·e |
+|---|---|---|---|
+| z₁ | +2 | 3 | +6 |
+| z₂ | −3 | 22 | −66 |
+| w_a | −2 | 12 | −24 |
+| w_b | −4 | 15 | −60 |
+
+Four distinct field elements, every product divisible by 3 and by 6.
+**m = 4, 8, 12, 24 have no candidate** at this level — they also need z₁
+fixed (2·e(z₁) = 6 divides by none of them), which a relation touching
+only z₂ cannot do.
+
+**A trap avoided, having been caught by it once.** A residue-level
+search with seeds lifted afterwards produced five apparent m = 3
+candidates that **evaporated**: in the field their z₂ multiplicity was
+**0**, not 2 — lifting a residue yields *some* element of that class,
+not the specific z₂. Every candidate here is built so the slot **is**
+the actual z₂, and the representative is verified element-by-element in
+the p-adic ring.
+
+**The descent then closes — a first at m ≥ 3.** With every canonical
+exponent integral *by* the per-element property, the cocycle needs no
+root choice, and the gate **c_canon³ = σ(P)/P holds exactly**. The
+Hilbert-90 resolvent, the splice law, the σ-fixed certificate and χ_B
+all follow, giving **ε₃ = ω¹**.
+
+**But that value is not an invariant.** The m-th roots x_j remain
+choices, and re-running the *whole* canonical chain under
+x_j → ζ₃^t·x_j moves the class through **all of μ₃** (measured: twists
+on the e = 3 and e = 15 symbols give 0 and 2; twists on e = 22 and
+e = 12 leave it at 1). So **ε₃ = ω¹ is CONVENTIONAL** under the
+teich-dlog pinning — the same lesson as the m = 2 abstract layer, one
+construction deeper. Recorded as an asserted check, so a future
+construction that genuinely pins the x_j would break it and be noticed.
+
+**Net.** The per-element criterion was necessary but **not sufficient**
+for a well-defined value. What the canonical cocycle removed was the
+*U-root* choice; what remains is the *x_j* choice. That is now the
+precise remaining obstruction, and it is a different object from
+everything excluded so far — CGZ's square-argument η-elements (their
+Thm 7.4, whose arguments are squares precisely to sidestep root
+choices) are the natural candidate mechanism. The ε_m **values** at
+m ≥ 3 remain uncomputed as invariants.
+
+## Addendum 28 (2026-08-18) — the root ambiguity has a closed form: a second condition, an obstruction at m ≥ 4, and a door still open at m = 3
+
+`gswz_epsm_root_ambiguity_criterion_probe.py`, **9/9**. Explains
+Addendum 27's non-invariance exactly, and turns it into a criterion.
+
+**The closed form.** Twisting one root x_j → ζ_m·x_j changes D(x_j) by
+the Lean-proved shift law at r = 1, D(ζx)/D(x) = (1−x)^m/(1−w). So P
+changes by [(1−x_j)^m/(1−w_j)]^{n_j}, and χ_B kills the m-th power
+(χ_B(u^m) = teich(u)²⁴ = 1), leaving
+
+$$\Delta_j \;=\; -\,n_j\, e(1-w_j) \pmod m .$$
+
+**Verified against all four measured twists** of the Addendum-27
+representative — including the two that left the value fixed.
+
+**The criterion.** A well-defined ε_m needs **both**:
+
+| | condition | what it buys |
+|---|---|---|
+| **C1** | m \| n_j·e(w_j) | canonical cocycle integral (Addendum 27) |
+| **C2** | m \| n_j·e(1−w_j) | value root-choice invariant (**new**) |
+
+equivalently μ*_w \| n_w with μ*_w = m/gcd(m, gcd(e(w), e(1−w))).
+
+**This is the shape of CGZ's own construction.** Their Bloch elements
+are **D·[ζ_D]** (§7 circular units, p. 33) — a root-of-unity symbol
+carrying a *multiplicity*, whose R_ζ images are literally
+∏(1−ζᵏζ_D)ᵏ. The multiplier is not decoration: C2 is what it is for.
+
+**The obstruction, and why a residue-level negative is valid here.** The
+conditions depend only on residues, and an element-level representative
+**merges into** a residue-level one satisfying the same conditions
+(m | n_j·a for each j gives m | (Σ n_j)·a over a fixed residue). So
+*residue-infeasible ⟹ element-infeasible* — the sound direction. (The
+converse is unsound and is precisely the Addendum-25 error; it is not
+used.) Measured over 23 symbols and 506 relations:
+
+| m | 3 | 4 | 6 | 8 | 12 | 24 |
+|---|---|---|---|---|---|---|
+| ξ ∈ L*_m + R | **TRUE** | false | false | false | false | false |
+| special symbols (μ* = 1) | 3/23 | 2/23 | 3/23 | 0 | 0 | 0 |
+
+A control confirms the *weaker* C1-only condition still succeeds at
+m = 3 and 24, so the infeasibility is C2 biting rather than a broken
+test.
+
+**Scope (strict).** The m ≥ 4 result excludes **this construction** —
+the D_ζ descent with χ_B and freely chosen m-th roots — **not** the
+existence of ε_m as a map; a route that *pins* the roots rather than
+choosing them is untouched. And m = 3 having the necessary condition
+satisfied is **not a value**: an element-level representative meeting
+both conditions still has to be exhibited, and the single-relation
+family (550 relations containing the actual z₂, every coefficient)
+contains none.
+
+**A convention trap, caught by this probe's own check.** The first run
+compared measured twists (whose dlogs use the p-adic g₂₄ = ζ₆₂₄²⁶) with
+e(1−w) computed from a *different* 𝔽₂₅ generator — the two differ by a
+unit rescale, and the check went red. Fixed by doing that comparison in
+one convention. The lattice test is unaffected: μ* is invariant under
+the rescale, since gcd(m, u·g) = gcd(m, g) for a unit u mod 24.

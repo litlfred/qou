@@ -1,0 +1,98 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_per_element_representative_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_per_element_representative_probe.py",
+ "commitSha": "fb5ccd75dabb6339cf2f46dcf6849900f57f9aac",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3; GSWZ arXiv:2412.04241v2 eqn (270); shift law QOU.Machinery.CyclicQuantumDilog (#4964)",
+ "checks": {
+  "m3_probe_green": true,
+  "every_relation_contains_actual_z2": true,
+  "found_k2_relations": true,
+  "per_element_exists_at_m3_and_m6": true,
+  "per_element_absent_at_4_8_12_24": true,
+  "representative_rows_all_divisible_by_3": true,
+  "mth_roots_exact": true,
+  "shift_exponents_defined": true,
+  "canonical_exponents_integral": true,
+  "canonical_cocycle_pow_m_is_ratio": true,
+  "resolvent_and_splice": true,
+  "descent_certificate_sigma_fixed": true,
+  "base_teich_in_mu24": true,
+  "chi_B_lands_in_base_mu_m": true,
+  "chi_B_nonvacuous_on_base": true,
+  "root_choice_sweeps_mu_m_value_not_invariant": true
+ },
+ "result": {
+  "relations_built": 550,
+  "relations_with_actual_z2_twice": 2,
+  "residue_shortcut_control": "residue-lifted seeds do not reproduce the actual z_2 slots (measured in the retraction, Addendum 25)",
+  "per_element_representative_exists": {
+   "3": true,
+   "4": false,
+   "6": true,
+   "8": false,
+   "12": false,
+   "24": false
+  },
+  "representative_m3": {
+   "distinct_elements": 4,
+   "coefficient_c": 2,
+   "rows": [
+    {
+     "mult": 2,
+     "e": 3,
+     "product": 6
+    },
+    {
+     "mult": -3,
+     "e": 22,
+     "product": -66
+    },
+    {
+     "mult": -2,
+     "e": 12,
+     "product": -24
+    },
+    {
+     "mult": -4,
+     "e": 15,
+     "product": -60
+    }
+   ]
+  }
+ },
+ "descent": {
+  "shift_exponents": {
+   "3": 0,
+   "22": 1,
+   "12": 0,
+   "15": 0
+  },
+  "cocycle_gate": true,
+  "eps_m_dlog_conventional": 1,
+  "eps_m_value_conventional": "omega^1",
+  "root_choice_variants": {
+   "e3_twist1": 0,
+   "e3_twist2": 2,
+   "e22_twist1": 1,
+   "e22_twist2": 1,
+   "e12_twist1": 1,
+   "e12_twist2": 1,
+   "e15_twist1": 2,
+   "e15_twist2": 0
+  },
+  "value_status": "CONVENTIONAL under the teich-dlog root pinning \u2014 the x_j choices sweep chi_B through all of mu_m; NOT an invariant",
+  "root_choice_distinct_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "scope": "scope-(a): a PER-ELEMENT representative of xi exists at m = 3 and m = 6 and is constructed explicitly (four distinct field elements, every mult*e divisible), answering the question Addendum 25 reopened. Found by widening the earlier search in three ways the first attempt missed: z_2 in any of the five slots, a general coefficient, and z_2 appearing twice. Every candidate is built with the ACTUAL element z_2 in the slot, not a residue lift -- the shortcut that produced five candidates which evaporated in the field. m = 4, 8, 12, 24 have NO candidate at this level (they also need z_1 fixed). The canonical-cocycle gate on the m = 3 representative is reported as measured."
+}

@@ -1,10 +1,11 @@
 ---
 # qou-f09n
 title: 'SYMBOL COLLISION: three distinct quantities are all called c_2, and AGENTS.md calls the wrong one Taylor-exact'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-16T11:48:34Z
-updated_at: 2026-08-16T11:48:34Z
+updated_at: 2026-08-17T00:51:45Z
 ---
 
 
@@ -185,3 +186,88 @@ Sources: Ohtsuki, asymptotic expansions of the Kashaev invariant (RIMS);
 Garoufalidis-Le, Gevrey series in quantum topology; Habiro, unified quantum
 SO(3) invariant; Garoufalidis-Scholze-Wheeler-Zagier, The Habiro ring of a
 number field.
+
+
+## T2 landed (2026-08-16, PR #5258) — naming registered, backed by a theorem
+
+Item 1 (do not change any number): honoured — no number changed.
+
+Item 2 (register the three meanings): DONE, with SHORT names per the owner
+ruling rather than my proposed superscripts:
+
+  c_2        = -1        explicit-factor coefficient   (hardcoded)
+  c-tilde_2  = -9/8      normalised-series coefficient (measured)
+  c_2^even   ~ -8.00641  bar-even part, exact in Q(sqrt 3)
+
+Landed in ck-dk-canonical-registry §2 (rows), §9i (new subsection), and
+notation-collisions.md (the symbol-lookup point).
+
+**And the relation is now PROVED rather than measured** —
+QOU/QBeta/LadderCoeffNormalisation.lean, sorry-free, #print axioms clean:
+
+  normalisedQuadCoeff_eq         c-tilde_2 = c_2 - 1/8, for every A with cos A != 0
+  normalisedQuadCoeff_at_neg_one c_2 = -1  =>  c-tilde_2 = -9/8
+
+The -1/8 comes from the HALF-argument in cos(A - x/2): second derivative at 0
+is -cos A / 4, quadratic Taylor coefficient -cos A / 8.  The A-dependence
+CANCELS in the normalisation, which is the part worth a theorem -- the offset
+is a clean rational, not an anchor-dependent quantity.  That is what makes the
+two names legitimate rather than a papered-over discrepancy.
+
+Item 4 (withdraw the 'contradiction' framing): done here, on #5210, and now in
+the registry §9i itself.
+
+## Item 3 (AGENTS.md line 1062) — STILL OPEN, owner sign-off
+
+Not applied.  It is a STRICT banner in a contested channel.
+
+Partial, defensible action taken instead: notation-collisions.md carried the
+same 'proved Taylor-exact' phrase on the SYMBOL line, and that adjective is
+removed there as a symbol-level claim, with an explicit note saying so.  No
+tier changed anywhere -- the registry's c_2 row keeps its tier and its §9g
+convention scoping untouched.  AGENTS.md is unmodified and awaits the owner.
+
+## One correction to my own draft
+
+I first justified the tilde as 'following the register's existing w_lambda /
+w-tilde_lambda convention'.  That precedent is NOT available: the same register
+retired the w-tilde pairing on the same day (owner ruling, further down the
+same file).  The tilde device is fine; the citation was wrong and now says so.
+
+
+## RETRACTION of this bean's own central claim (2026-08-16, owner-authorised T3/T4)
+
+This bean said AGENTS.md line 1062 was 'wrong on both halves'.  Measured: only
+ONE half is.  The bean's wording was:
+
+  'Under the natural reading of "Taylor" -- the Taylor coefficient of the
+   ladder series -- the u^2 coefficient is -9/8, not -1.'
+
+That is A reading presented as THE reading.  Symbolically (sympy):
+
+  u^2 coeff of prod_{k>=2}(1 + c_k u^k)            =  c_2        <- trivially
+  u^2 coeff of [cos(A - u/2) * prod] / value_at_0  =  c_2 - 1/8
+
+So c_2 = -1 IS a genuine Taylor coefficient -- of the explicit-factor product.
+There is no k=1 factor, so nothing else contributes at order 2.  It is -9/8
+only when the cosine is inside the series.  'Taylor-exact' is therefore
+UNDER-SPECIFIED, not false, and the rule is SAY WHICH SERIES, never delete the
+word.  I nearly swept 12 published sites deleting a correct claim.
+
+The OTHER half stands and was the real defect.  Corpus-grepped: N2_factor is a
+bare def in QBetaCategoricalPrecisionLadder.lean with NO theorem deriving it --
+every use merely unfolds it, and the Kashiwara f-tilde_1 provenance lives in a
+docstring.  The Lean proves only the re-reading.  So 'PROVED' overstates;
+'structural' is right, and is what the source block itself already claimed.
+The over-compression happened in AGENTS.md, not in the block.
+
+## A third claim checked and deliberately LEFT ALONE
+
+The banner's '3.47%' looked stale.  It is not: 3.4671% = |-2 - c_3| / 2, while
+the ladder witness's own err_pct reports 3.3509% -- the SAME gap normalised by
+the extracted c_3 = -2.06934258.  Neither should be rewritten into the other.
+
+That this normalisation trap sits in the same banner as the c_2 / c-tilde_2 one
+is the lesson of this bean, and I walked into it twice in one session.
+
+The 'approx 3% cross-anchor' does measure loose: 2.3748% proton-normalised.

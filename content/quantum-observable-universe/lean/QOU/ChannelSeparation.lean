@@ -74,10 +74,24 @@ structure JetGradedChannelSeparation (C : Type u)
   /-- Adjoint vanishing at the base level. -/
   adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
 
-/-- **Theorem (Adjoint vanishing propagation).**
+/-- **Adjoint vanishing at the base level, restated.**
 
-    If `Hom(𝟙, Ad(A)) = 0` at the base level, then
-    `Hom(𝟙, Ad(J^k(A))) = 0` at all jet levels `k ≥ 0`.
+    ⚠ **This does NOT prove propagation, and the name overstates it.** The
+    conclusion below mentions `jgcs.adjointObj` — the *base* object — so the
+    `(k : ℕ)` binder is unused decoration and the statement carries no
+    `k`-dependence at all. The proof is `jgcs.adjoint_vanishing`: the
+    hypothesis returned verbatim, a `P → P`.
+
+    The reason it cannot say more is structural, not a proof gap:
+    `JetGradedChannelSeparation` carries exactly ONE `GradedFrobeniusHopf`
+    (`base`, level 0) and one `adjointObj`, despite its own docstring
+    promising "a graded Frobenius–Hopf object at each jet level". There is no
+    `Ad(J^k(A))` in the data to state a conclusion about. Stating genuine
+    propagation requires a jet-indexed family first.
+
+    Recorded rather than quietly renamed — the over-claim is in the name and
+    the docstring, and both are load-bearing for a reader skimming for what is
+    proved. Bean `qou-fav8`.
 
     **Proof outline:**
     1. The jet prolongation `J^1(A)` fits into the exact sequence
@@ -152,7 +166,13 @@ theorem jet_preserves_channel_separation
     (jfpg : @JetFiltrationPreservesGrading.{u, v} C _ _ _)
     (adjointObj : C)
     (adj_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)) :
-    -- The adjoint vanishing is preserved through the jet filtration
+    -- ⚠ Another `P → P`: the conclusion IS `adj_vanishing`, returned verbatim.
+    -- Both `jfpg` (the entire jet-filtration structure) and the prolongation
+    -- it is meant to supply are unused — the compiler says so, `warning:
+    -- unused variable 'jfpg'`.  Nothing here is "preserved through the jet
+    -- filtration"; there is one `adjointObj` and no prolonged object to
+    -- preserve it to.  Same structural gap as `adjoint_vanishing_propagation`
+    -- above.  Bean `qou-fav8`.
     Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
   adj_vanishing
 

@@ -47,16 +47,23 @@ attribute [local instance] QuantumUniverse.catInst QuantumUniverse.monInst
     perturbation `q ↦ q + δq` via the Hopf coaction.
 
     LaTeX: `\label{def:observation}` -/
-structure Observation {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k) where
+structure Observation {R : Type*} [CommRing R]
+    (qou : QuantumObservableUniverse.{u, v} R) where
   /-- The observation morphism `O : A → A` in `C`. -/
   morphism : qou.frobHopf.obj ⟶ qou.frobHopf.obj
   /-- **Frobenius compatibility**: `λ ∘ O = λ` — the observation preserves
       the Frobenius form. -/
   frobenius_compat :
     morphism ≫ qou.frobHopf.frobeniusForm = qou.frobHopf.frobeniusForm
-  /-- **Substrate perturbation**: the induced shift `δq` is determined by
-      the Hopf coaction.  Encoded as a morphism `𝟙 → 𝟙`. -/
+  /-- **Substrate perturbation** `δq`, carried as a morphism `𝟙 → 𝟙`.
+
+      Scope warning: this is *free data*, not a derived quantity.  The
+      narrative describes `δq` as **determined by** the Hopf coaction, but
+      nothing in this structure ties `substrate_shift` either to
+      `qou.frobHopf`'s comultiplication or to `morphism` — any endomorphism
+      of the unit inhabits the field.  Deriving it (or constraining it by a
+      coaction equation) is open; until then do not read an inhabitant of
+      `Observation` as evidence that the shift is coaction-induced. -/
   substrate_shift :
     (𝟙_ qou.C) ⟶ (𝟙_ qou.C)
 

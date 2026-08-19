@@ -80,7 +80,7 @@ def CategoricalMordellWeil (E : C) : Type v :=
     Stated directly: `Hom(𝟙, Ad(A))` is a subsingleton by the
     adjoint_vanishing axiom. -/
 theorem descartes_rank_zero
-    {k : Type*} [Field k]
+    {k : Type*} [CommRing k]
     (Q : QuantumObservableUniverse.{u, v} k) :
     @Subsingleton
       (@CategoricalMordellWeil Q.C Q.catInst Q.monInst Q.adjointObj) :=

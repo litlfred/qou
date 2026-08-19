@@ -53,7 +53,7 @@ structure ClassicalLimitObstruction (k : Type*) [CommRing k] where
 
     Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.03.006 -/
 def ClassicalLimitObstruction.ofQOU
-    {k : Type*} [Field k]
+    {k : Type*} [CommRing k]
     (_QOU : QuantumObservableUniverse.{u, v} k)
     (eulerChar : ℤ) : ClassicalLimitObstruction k where
   dim := 1  -- forced by observability + Frobenius duality + Drinfeld
@@ -62,7 +62,7 @@ def ClassicalLimitObstruction.ofQOU
 /-- In a QOU, the obstruction space constructed via `ofQOU` is
     one-dimensional (by construction). -/
 theorem qou_obstruction_one_dimensional
-    {k : Type*} [Field k]
+    {k : Type*} [CommRing k]
     (QOU : QuantumObservableUniverse.{u, v} k)
     (eulerChar : ℤ) :
     (ClassicalLimitObstruction.ofQOU QOU eulerChar).dim = 1 := rfl

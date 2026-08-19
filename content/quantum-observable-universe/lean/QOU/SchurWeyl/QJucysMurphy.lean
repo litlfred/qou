@@ -34,15 +34,19 @@ the basis vector indexed by a standard Young tableau `T` with eigenvalue
   coincide up to a bar-even scalar and a λ-independent shift (see bean `qou-8vt2`).
 
 * **Seminormal eigenvalue** — GAP: `L_k` acts with eigenvalue `q^{2c(k)}` on the
-  seminormal basis. Ref: [ram1997] Theorem 4.1; [murphy1983]; [hoefsmit1974].
+  seminormal basis. Ref: [ram1997] Theorem 4.1; [murphy1992]; [hoefsmit1974].
 
-* **Commutativity** — GAP: the Murphy elements commute pairwise, generating the
-  Gelfand–Tsetlin subalgebra. Ref: [murphy1983] §2.
+* **Commutativity** — the Murphy elements commute pairwise, generating the
+  Gelfand–Tsetlin subalgebra. **Proved** (`qJM_commute`, via `qJM_commute_proved`)
+  from the braid and far-commutation relations alone.
+  Ref: [murphy1992] §2; [murphy1981] for the q = 1 case.
 
 * **Bar-symmetrised sum** (`barSymJMSum`): `Σ_{k=0}^{n} (L_k + L_k⁻¹)`, the bar-even
   central element whose block eigenvalue is `Σ_{c ∈ λ} (q^{2c} + q^{−2c})`.
-  **Definition sorry-free; block eigenvalue is a GAP** (follows from the per-element
-  eigenvalue GAP).
+  **Definition sorry-free; centrality proved** given `q · qi = 1`
+  (`barSymJMSum_central`); **the block eigenvalue is the one remaining GAP** in this
+  file, and it is stated at generic `q` (`0 < q`, `q ≠ 1`) — see its docstring for
+  why the roots-of-unity regime is excluded rather than deferred.
 
 ## Convention
 
@@ -69,7 +73,9 @@ differ by `q ↔ q²` and by sign across the literature.
 
 NB: earlier drafts cited a non-existent `[murphy1983]` key (broken `-- Ref:` per AGENTS.md §1);
 the correct in-corpus keys are `[murphy1992]` (Hecke Murphy operators) and `[murphy1981]`
-(seminormal construction).
+(seminormal construction). **That note was added and the three live citations below were
+left on the broken key anyway** — fixed 2026-08-16. A note recording a defect is not a
+fix, and this one sat directly above the uses it described.
 -/
 
 namespace QOU.SchurWeyl
@@ -280,8 +286,549 @@ normalisation `σ² = (q − q⁻¹)σ + 1` with eigenvalues `{q, −q⁻¹}`.  
 Kazhdan–Lusztig normalisation `T² = (q−1)T + q` (eigenvalues `{q, −1}`), the
 eigenvalue would be `q^c`.  The factor-of-2 difference is pure convention.
 
-Refs: [ram1997] Theorem 4.1; [murphy1983] Theorem 1.1; [hoefsmit1974] §3.
+Refs: [ram1997] Theorem 4.1; [murphy1992] Theorem 1.1; [hoefsmit1974] §3.
 -/
+
+section AdjacentReduction
+
+variable (K : Type*) [CommRing K] (q qi : K) (n : ℕ)
+
+/-! ### Reducing commutativity to the adjacent case
+
+`qJM_commute` below is commented *"Blocked on: the general seminormal rep"*.
+It is not. `qJM` is the multiplicative recursion `L_{k+1} = σ_k L_k σ_k`, and
+commutativity from that recursion is an induction on the **Hecke relations** —
+no representation is involved. The two results here carry it as far as it goes
+without new mathematics, and isolate exactly what is left.
+
+**What is left is the adjacent case** `L_k L_{k+1} = L_{k+1} L_k`, and it is not
+a base case that falls out: the general case *reduces to* it rather than around
+it, because peeling `σ_{j-1}` off `L_j` needs `i + 1 ≤ j - 1`, which fails
+precisely when `i = j - 1`. -/
+
+/-- `σ_m` commutes with `L_k` whenever `k + 1 ≤ m`. -/
+theorem qJM_comm_sigma (m : Fin n) :
+    ∀ k : ℕ, k + 1 ≤ (m : ℕ) →
+      σ K q qi n m * qJM K q qi n k = qJM K q qi n k * σ K q qi n m := by
+  intro k
+  induction k with
+  | zero => intro _; rw [qJM_zero]; rw [mul_one, one_mul]
+  | succ k ih =>
+    intro hm
+    by_cases hk : k < n
+    · rw [qJM_succ K q qi n hk]
+      have hfar : (⟨k, hk⟩ : Fin n).val + 2 ≤ (m : ℕ) := by simpa using hm
+      have h1 : σ K q qi n m * σ K q qi n ⟨k, hk⟩
+              = σ K q qi n ⟨k, hk⟩ * σ K q qi n m := σ_commute K q qi n m ⟨k, hk⟩ hfar
+      have h2 := ih (by omega)
+      calc σ K q qi n m * (σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩)
+          = (σ K q qi n m * σ K q qi n ⟨k, hk⟩) * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ := by
+            simp only [mul_assoc]
+        _ = (σ K q qi n ⟨k, hk⟩ * σ K q qi n m) * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ := by
+            rw [h1]
+        _ = σ K q qi n ⟨k, hk⟩ * (σ K q qi n m * qJM K q qi n k) * σ K q qi n ⟨k, hk⟩ := by
+            simp only [mul_assoc]
+        _ = σ K q qi n ⟨k, hk⟩ * (qJM K q qi n k * σ K q qi n m) * σ K q qi n ⟨k, hk⟩ := by
+            rw [h2]
+        _ = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * (σ K q qi n m * σ K q qi n ⟨k, hk⟩) := by
+            simp only [mul_assoc]
+        _ = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * (σ K q qi n ⟨k, hk⟩ * σ K q qi n m) := by
+            rw [h1]
+        _ = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ * σ K q qi n m := by
+            simp only [mul_assoc]
+    · have : qJM K q qi n (k + 1) = qJM K q qi n k := dif_neg hk
+      rw [this]; exact ih (by omega)
+
+/-- **Full commutativity follows from the adjacent case alone.**
+
+Everything except `L_k L_{k+1} = L_{k+1} L_k` is bookkeeping: `σ_{j-1}` commutes
+with `L_i` as soon as `i + 1 ≤ j - 1` (`qJM_comm_sigma`), which peels one step
+off `L_j = σ_{j-1} L_{j-1} σ_{j-1}` and hands the rest to the induction. -/
+theorem qJM_commute_of_adjacent
+    (hadj : ∀ k : ℕ, qJM K q qi n k * qJM K q qi n (k + 1)
+                   = qJM K q qi n (k + 1) * qJM K q qi n k) :
+    ∀ j i : ℕ, i ≤ j →
+      qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i := by
+  intro j
+  induction j with
+  | zero => intro i hi; interval_cases i; rfl
+  | succ j ih =>
+    intro i hi
+    rcases Nat.lt_or_ge i (j + 1) with hlt | hge
+    · -- i ≤ j
+      have hij : i ≤ j := Nat.lt_succ_iff.mp hlt
+      rcases Nat.eq_or_lt_of_le hij with rfl | hij'
+      · -- i = j : the adjacent case, supplied as a hypothesis
+        exact hadj i
+      · -- i < j : peel sigma off L_{j+1} and use the induction hypothesis
+        by_cases hk : j < n
+        · have hsig : i + 1 <= (⟨j, hk⟩ : Fin n).val := by simpa using hij'
+          have hs := qJM_comm_sigma K q qi n ⟨j, hk⟩ i hsig
+          have hL := ih i (le_of_lt hij')
+          rw [qJM_succ K q qi n hk]
+          calc qJM K q qi n i * (σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * σ K q qi n ⟨j, hk⟩)
+              = (qJM K q qi n i * σ K q qi n ⟨j, hk⟩) * qJM K q qi n j * σ K q qi n ⟨j, hk⟩ := by
+                simp only [mul_assoc]
+            _ = (σ K q qi n ⟨j, hk⟩ * qJM K q qi n i) * qJM K q qi n j * σ K q qi n ⟨j, hk⟩ := by
+                rw [← hs]
+            _ = σ K q qi n ⟨j, hk⟩ * (qJM K q qi n i * qJM K q qi n j) * σ K q qi n ⟨j, hk⟩ := by
+                simp only [mul_assoc]
+            _ = σ K q qi n ⟨j, hk⟩ * (qJM K q qi n j * qJM K q qi n i) * σ K q qi n ⟨j, hk⟩ := by
+                rw [hL]
+            _ = σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * (qJM K q qi n i * σ K q qi n ⟨j, hk⟩) := by
+                simp only [mul_assoc]
+            _ = σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * (σ K q qi n ⟨j, hk⟩ * qJM K q qi n i) := by
+                rw [hs]
+            _ = σ K q qi n ⟨j, hk⟩ * qJM K q qi n j * σ K q qi n ⟨j, hk⟩ * qJM K q qi n i := by
+                simp only [mul_assoc]
+        · have hfrz : qJM K q qi n (j + 1) = qJM K q qi n j := dif_neg hk
+          rw [hfrz]; exact ih i (le_of_lt hij')
+    · -- i = j + 1
+      have : i = j + 1 := le_antisymm hi hge
+      rw [this]
+
+
+/-! ### How far braid + far-commutation reach, and where they stop
+
+`adjacent_reduce` collapses both sides of `L_k L_{k+1} = L_{k+1} L_k` to one
+word conjugated by `s`, using **only** the braid relation and `σ_k B = B σ_k`.
+So the adjacent case is equivalent to `s` commuting with
+`X = σ_{k-1} σ_k L_{k-1} σ_{k-1} σ_k L_{k-1} σ_{k-1}`.
+
+At `k = 1` that closes: `B = L_0 = 1`, `X = (ts)²t`, and the residual is
+`(ts)³ = (st)³` — `braid_pow_three`, braid alone. Hence
+`qJM_one_two_commute`, unconditional.
+
+**It does not close for general `k`, and the hypotheses above are why.** After
+cancelling, the residual asks for `B · t s B t s = t · B t s B t`: the left word
+begins with `B`, the right with `t`. Deriving one from the other requires moving
+`B` past `t`, and `s * B = B * s` gives no such permission — `B` and `t` do not
+commute (`L_{k-1}` is built from `σ_{k-1}` among others). So any proof of the
+general adjacent case must use something the reduction deliberately avoids:
+either `σ_quadratic`, or structure of `L_{k-1}` beyond commuting with `σ_k`.
+
+That is a statement about *these* hypotheses, not a claim that the adjacent case
+is hard in general — the `k = 1` instance shows the shape can close. -/
+
+/-- **The adjacent case, reduced.** Both sides of `L_k L_{k+1} = L_{k+1} L_k`
+collapse — using *only* the braid relation and `σ_k`-commutation — to one word
+conjugated by `s`. Here `t = σ_{k-1}`, `s = σ_k`, `B = L_{k-1}`, `A = t B t`. -/
+theorem adjacent_reduce {R : Type*} [Ring R] (t s B : R)
+    (hbraid : t * s * t = s * t * s) (hcomm : s * B = B * s) :
+    (t*B*t) * s * (t*B*t) * s = (t*s*B*t*s*B*t) * s
+  ∧ s * ((t*B*t) * s * (t*B*t)) = s * (t*s*B*t*s*B*t) := by
+  constructor
+  · calc (t*B*t) * s * (t*B*t) * s
+        = t*B*(t*s*t)*B*t*s := by simp only [mul_assoc]
+      _ = t*B*(s*t*s)*B*t*s := by rw [hbraid]
+      _ = t*(B*s)*t*s*B*t*s := by simp only [mul_assoc]
+      _ = t*(s*B)*t*s*B*t*s := by rw [hcomm]
+      _ = (t*s*B*t*s*B*t) * s := by simp only [mul_assoc]
+  · calc s * ((t*B*t) * s * (t*B*t))
+        = s*t*B*(t*s*t)*B*t := by simp only [mul_assoc]
+      _ = s*t*B*(s*t*s)*B*t := by rw [hbraid]
+      _ = s*t*(B*s)*t*s*B*t := by simp only [mul_assoc]
+      _ = s*t*(s*B)*t*s*B*t := by rw [hcomm]
+      _ = s * (t*s*B*t*s*B*t) := by simp only [mul_assoc]
+
+/-- The residual commutation at `B = 1`, i.e. `(ts)³ = (st)³`. Braid alone. -/
+theorem braid_pow_three {R : Type*} [Ring R] (t s : R)
+    (hbraid : t * s * t = s * t * s) :
+    (t*s*t*s*t) * s = s * (t*s*t*s*t) := by
+  calc (t*s*t*s*t) * s = (t*s*t)*(s*t*s) := by simp only [mul_assoc]
+    _ = (s*t*s)*(t*s*t) := by rw [hbraid]
+    _ = s * (t*s*t*s*t) := by simp only [mul_assoc]
+
+/-- **`L_1` and `L_2` commute — unconditionally, from the braid relation alone.**
+The `k = 1` instance of the adjacent case, where `B = L_0 = 1`. -/
+theorem qJM_one_two_commute (h1 : 1 < n) :
+    qJM K q qi n 1 * qJM K q qi n 2 = qJM K q qi n 2 * qJM K q qi n 1 := by
+  have h0 : 0 < n := by omega
+  set t := σ K q qi n ⟨0, h0⟩ with ht
+  set s := σ K q qi n ⟨1, h1⟩ with hs
+  have hbraid : t * s * t = s * t * s := by
+    have := σ_braid K q qi n ⟨0, h0⟩ (by simpa using h1)
+    simpa [ht, hs] using this
+  have hL1 : qJM K q qi n 1 = t * (1 : Hecke K q qi n) * t := by
+    rw [qJM_one K q qi n h0]; simp [ht]
+  have hL2 : qJM K q qi n 2 = s * qJM K q qi n 1 * s := by
+    have := qJM_succ K q qi n (k := 1) h1
+    simpa [hs] using this
+  rw [hL2, hL1]
+  obtain ⟨e1, e2⟩ := adjacent_reduce (R := Hecke K q qi n) t s 1 hbraid (by simp)
+  calc t * 1 * t * (s * (t * 1 * t) * s)
+      = (t*1*t) * s * (t*1*t) * s := by simp only [mul_assoc]
+    _ = (t*s*1*t*s*1*t) * s := e1
+    _ = (t*s*t*s*t) * s := by simp
+    _ = s * (t*s*t*s*t) := braid_pow_three t s hbraid
+    _ = s * (t*s*1*t*s*1*t) := by simp
+    _ = s * ((t*1*t) * s * (t*1*t)) := e2.symm
+    _ = s * (t * 1 * t) * s * (t * 1 * t) := by simp only [mul_assoc]
+
+/-- **The adjacent case at `k` follows from the adjacent case at `k-1`.**
+No invertibility, no quadratic relation — braid, `s`-commutation, and the
+previous adjacent instance. -/
+theorem adjacent_step {R : Type*} [Ring R] (t s B : R)
+    (hbraid : t * s * t = s * t * s) (hcomm : s * B = B * s)
+    (hprev : B * (t*B*t) = (t*B*t) * B) :
+    (t*B*t) * s * ((t*B*t) * s) = s * ((t*B*t) * (s * (t*B*t))) := by
+  have hprev' : B*t*B*t = t*B*t*B := by
+    have := hprev; simp only [mul_assoc] at this ⊢; exact this
+  -- the shared six-letter core
+  have core : B*t*s*B*t*s = t*B*t*s*B*t := by
+    calc B*t*s*B*t*s = B*t*(s*B)*t*s := by simp only [mul_assoc]
+      _ = B*t*(B*s)*t*s := by rw [hcomm]
+      _ = B*t*B*(s*t*s) := by simp only [mul_assoc]
+      _ = B*t*B*(t*s*t) := by rw [← hbraid]
+      _ = (B*t*B*t)*(s*t) := by simp only [mul_assoc]
+      _ = (t*B*t*B)*(s*t) := by rw [hprev']
+      _ = t*B*t*(B*s)*t := by simp only [mul_assoc]
+      _ = t*B*t*(s*B)*t := by rw [← hcomm]
+      _ = t*B*t*s*B*t := by simp only [mul_assoc]
+  calc (t*B*t) * s * ((t*B*t) * s)
+      = t*B*(t*s*t)*B*t*s := by simp only [mul_assoc]
+    _ = t*B*(s*t*s)*B*t*s := by rw [hbraid]
+    _ = t*(B*s)*t*s*B*t*s := by simp only [mul_assoc]
+    _ = t*(s*B)*t*s*B*t*s := by rw [hcomm]
+    _ = (t*s)*(B*t*s*B*t*s) := by simp only [mul_assoc]
+    _ = (t*s)*(t*B*t*s*B*t) := by rw [core]
+    _ = (t*s*t)*(B*t*s*B*t) := by simp only [mul_assoc]
+    _ = (s*t*s)*(B*t*s*B*t) := by rw [hbraid]
+    _ = s*t*(s*B)*t*s*B*t := by simp only [mul_assoc]
+    _ = s*t*(B*s)*t*s*B*t := by rw [hcomm]
+    _ = s*t*B*(s*t*s)*B*t := by simp only [mul_assoc]
+    _ = s*t*B*(t*s*t)*B*t := by rw [← hbraid]
+    _ = s * ((t*B*t) * (s * (t*B*t))) := by simp only [mul_assoc]
+
+/-! ### The induction closes
+
+`adjacent_step` above is the whole content: the adjacent case at `k` follows
+from the adjacent case at `k-1`, using braid, `σ_k`-commutation, and **nothing
+else** — no invertibility, no quadratic relation. With `L_0 = 1` as the base,
+that is a complete induction, and `qJM_commute_of_adjacent` turns it into the
+full pairwise statement. -/
+
+theorem qJM_adjacent : ∀ k : ℕ, k < n →
+    qJM K q qi n k * qJM K q qi n (k + 1)
+      = qJM K q qi n (k + 1) * qJM K q qi n k := by
+  intro k
+  induction k with
+  | zero => intro _; rw [qJM_zero, one_mul, mul_one]
+  | succ k ih =>
+    intro hk1
+    have hk : k < n := by omega
+    have hL1 : qJM K q qi n (k + 1)
+        = σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩ :=
+      qJM_succ K q qi n hk
+    have hL2 : qJM K q qi n (k + 1 + 1)
+        = σ K q qi n ⟨k+1, hk1⟩ * qJM K q qi n (k+1) * σ K q qi n ⟨k+1, hk1⟩ :=
+      qJM_succ K q qi n hk1
+    have hbraid : σ K q qi n ⟨k, hk⟩ * σ K q qi n ⟨k+1, hk1⟩ * σ K q qi n ⟨k, hk⟩
+        = σ K q qi n ⟨k+1, hk1⟩ * σ K q qi n ⟨k, hk⟩ * σ K q qi n ⟨k+1, hk1⟩ := by
+      have := σ_braid K q qi n ⟨k, hk⟩ (by simpa using hk1)
+      simpa using this
+    have hcomm : σ K q qi n ⟨k+1, hk1⟩ * qJM K q qi n k
+        = qJM K q qi n k * σ K q qi n ⟨k+1, hk1⟩ :=
+      qJM_comm_sigma K q qi n ⟨k+1, hk1⟩ k (by simp)
+    have hprev : qJM K q qi n k * (σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩)
+        = (σ K q qi n ⟨k, hk⟩ * qJM K q qi n k * σ K q qi n ⟨k, hk⟩) * qJM K q qi n k := by
+      rw [← hL1]; exact ih hk
+    have key := adjacent_step (σ K q qi n ⟨k, hk⟩) (σ K q qi n ⟨k+1, hk1⟩)
+      (qJM K q qi n k) hbraid hcomm hprev
+    rw [hL2, hL1]
+    simp only [mul_assoc] at key ⊢
+    exact key
+
+/-- **The Murphy elements commute pairwise — unconditionally.** -/
+theorem qJM_commute_proved (i j : ℕ) :
+    qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i := by
+  have hadj : ∀ k : ℕ, qJM K q qi n k * qJM K q qi n (k + 1)
+      = qJM K q qi n (k + 1) * qJM K q qi n k := by
+    intro k
+    by_cases hkn : k < n
+    · exact qJM_adjacent K q qi n k hkn
+    · have h1 : qJM K q qi n (k + 1) = qJM K q qi n k := dif_neg hkn
+      rw [h1]
+  rcases le_total i j with h | h
+  · exact qJM_commute_of_adjacent K q qi n hadj j i h
+  · exact (qJM_commute_of_adjacent K q qi n hadj i j h).symm
+
+
+/-! ### Towards `barSymJMSum_central`: the pair that saves it
+
+`barSymJMSum_central`'s GAP note used to say it needs *"`qJM_commute` plus the
+σ_i–L_k commutation relations"*. `qJM_commute` is now proved — but it is about
+**L–L** commutation and does not bear on centrality, which is a **σ–L** question.
+The three things centrality actually needs, for a fixed `i`:
+
+| terms | status |
+|---|---|
+| `L_k`, `k ≤ i-1` | **have it** — `qJM_comm_sigma` |
+| `L_i + L_{i+1}` | **have it now** — `qJM_pair_comm` below, needs `q·qi = 1` |
+| `L_k`, `k ≥ i+2` | **have it** — `qJM_comm_sigma_high` |
+
+The middle row is the interesting one and the reason a *sum* is central when its
+summands are not: `L_{i+1} = σ_i L_i σ_i`, so those two terms are `A + s A s`,
+and `pair_comm` shows `s` commutes with that as soon as the quadratic relation
+has constant term `1`. Neither `L_i` nor `L_{i+1}` commutes with `σ_i` alone.
+
+The `q·qi = 1` hypothesis is not incidental: the computation leaves a residue
+`(1 − q·qi)(sA − As)`, so it is exactly the standard Hecke normalisation that
+makes the pair work. `Hecke.σUnit` carries the same hypothesis.
+
+The third row is **not** far commutation — `L_k` for `k ≥ i+2` is built from
+`σ_{k-1}, …` which *includes* `σ_i`, and at `k = i+2` the outer generator
+`σ_{i+1}` is adjacent to `σ_i`. `qJM_comm_sigma_high` handles it by running the
+base case `k = i+2` on the **braid relation** (the two `σ_{i+1}` conjugations
+absorb the adjacency) and the step on far commutation. It needs no quadratic
+relation — unlike the pair row, which does.
+
+**What was left for `barSymJMSum_central`** was therefore never a missing
+commutation: it was (a) the `Finset` assembly splitting `range (n+1)` into
+`{i, i+1}` and its complement, and (b) the **inverse family** `L_k⁻¹`, which
+needs the same three rows run against `qJMInv` / `σ⁻¹`. Both are done below;
+the theorem is sorry-free given `q · qi = 1`. -/
+
+theorem pair_comm {K' R : Type*} [CommRing K'] [Ring R] [Algebra K' R]
+    (s A : R) (d : K') (hquad : s * s = d • s + (1 : R)) :
+    s * (A + s * A * s) = (A + s * A * s) * s := by
+  have hL : s * (A + s * A * s) = s * A + (s * s) * (A * s) := by
+    simp only [mul_add, mul_assoc]
+  have hR : (A + s * A * s) * s = A * s + (s * A) * (s * s) := by
+    simp only [add_mul, mul_assoc]
+  rw [hL, hR, hquad]
+  simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, one_mul, mul_one,
+    mul_assoc]
+  abel
+
+/-- **`σ_i` commutes with `L_i + L_{i+1}`** when `q · qi = 1`. Neither summand
+is `σ_i`-invariant; the pair is. -/
+theorem qJM_pair_comm (hqi : q * qi = 1) (i : ℕ) (hi : i < n) :
+    σ K q qi n ⟨i, hi⟩ * (qJM K q qi n i + qJM K q qi n (i + 1))
+      = (qJM K q qi n i + qJM K q qi n (i + 1)) * σ K q qi n ⟨i, hi⟩ := by
+  have hquad : σ K q qi n ⟨i, hi⟩ * σ K q qi n ⟨i, hi⟩
+      = (q - qi) • σ K q qi n ⟨i, hi⟩ + (1 : Hecke K q qi n) := by
+    have := σ_quadratic K q qi n ⟨i, hi⟩
+    rw [hqi] at this; simpa using this
+  rw [qJM_succ K q qi n hi]
+  exact pair_comm _ _ _ hquad
+
+/-- **`σ_i` commutes with `L_k` for every `k ≥ i + 2`.** The third and last row
+needed for centrality. Not far commutation: at `k = i+2` the outer generator
+`σ_{i+1}` is adjacent to `σ_i`, and the base case runs on the braid relation. -/
+theorem qJM_comm_sigma_high (i : Fin n) (hi1 : (i : ℕ) + 1 < n) :
+    ∀ k : ℕ, (i : ℕ) + 2 ≤ k →
+      σ K q qi n i * qJM K q qi n k = qJM K q qi n k * σ K q qi n i := by
+  intro k hk
+  induction k, hk using Nat.le_induction with
+  | base =>
+    have hi0 : (i : ℕ) < n := i.isLt
+    have e1 : qJM K q qi n ((i : ℕ) + 1)
+        = σ K q qi n i * qJM K q qi n (i : ℕ) * σ K q qi n i := by
+      have := qJM_succ K q qi n hi0; simpa using this
+    have e2 : qJM K q qi n ((i : ℕ) + 2)
+        = σ K q qi n ⟨(i : ℕ)+1, hi1⟩ * qJM K q qi n ((i : ℕ)+1)
+          * σ K q qi n ⟨(i : ℕ)+1, hi1⟩ := qJM_succ K q qi n hi1
+    have hbr : σ K q qi n i * σ K q qi n ⟨(i : ℕ)+1, hi1⟩ * σ K q qi n i
+        = σ K q qi n ⟨(i : ℕ)+1, hi1⟩ * σ K q qi n i * σ K q qi n ⟨(i : ℕ)+1, hi1⟩ :=
+      σ_braid K q qi n i hi1
+    have hcm : σ K q qi n ⟨(i : ℕ)+1, hi1⟩ * qJM K q qi n (i : ℕ)
+        = qJM K q qi n (i : ℕ) * σ K q qi n ⟨(i : ℕ)+1, hi1⟩ :=
+      qJM_comm_sigma K q qi n ⟨(i : ℕ)+1, hi1⟩ (i : ℕ) (by simp)
+    rw [e2, e1]
+    set s := σ K q qi n i
+    set t := σ K q qi n ⟨(i : ℕ)+1, hi1⟩
+    set B := qJM K q qi n (i : ℕ)
+    calc s * (t * (s * B * s) * t)
+        = (s * t * s) * B * s * t := by simp only [mul_assoc]
+      _ = (t * s * t) * B * s * t := by rw [hbr]
+      _ = t * s * (t * B) * s * t := by simp only [mul_assoc]
+      _ = t * s * (B * t) * s * t := by rw [hcm]
+      _ = t * s * B * (t * s * t) := by simp only [mul_assoc]
+      _ = t * s * B * (s * t * s) := by rw [← hbr]
+      _ = t * (s * B * s) * t * s := by simp only [mul_assoc]
+  | succ k hk ih =>
+    by_cases hkn : k < n
+    · have e : qJM K q qi n (k + 1)
+          = σ K q qi n ⟨k, hkn⟩ * qJM K q qi n k * σ K q qi n ⟨k, hkn⟩ :=
+        qJM_succ K q qi n hkn
+      have hfar : σ K q qi n i * σ K q qi n ⟨k, hkn⟩
+          = σ K q qi n ⟨k, hkn⟩ * σ K q qi n i :=
+        (σ_commute K q qi n ⟨k, hkn⟩ i (by simpa using hk)).symm
+      rw [e]
+      calc σ K q qi n i * (σ K q qi n ⟨k, hkn⟩ * qJM K q qi n k * σ K q qi n ⟨k, hkn⟩)
+          = (σ K q qi n i * σ K q qi n ⟨k, hkn⟩) * qJM K q qi n k * σ K q qi n ⟨k, hkn⟩ := by
+            simp only [mul_assoc]
+        _ = (σ K q qi n ⟨k, hkn⟩ * σ K q qi n i) * qJM K q qi n k * σ K q qi n ⟨k, hkn⟩ := by
+            rw [hfar]
+        _ = σ K q qi n ⟨k, hkn⟩ * (σ K q qi n i * qJM K q qi n k) * σ K q qi n ⟨k, hkn⟩ := by
+            simp only [mul_assoc]
+        _ = σ K q qi n ⟨k, hkn⟩ * (qJM K q qi n k * σ K q qi n i) * σ K q qi n ⟨k, hkn⟩ := by
+            rw [ih]
+        _ = σ K q qi n ⟨k, hkn⟩ * qJM K q qi n k * (σ K q qi n i * σ K q qi n ⟨k, hkn⟩) := by
+            simp only [mul_assoc]
+        _ = σ K q qi n ⟨k, hkn⟩ * qJM K q qi n k * (σ K q qi n ⟨k, hkn⟩ * σ K q qi n i) := by
+            rw [hfar]
+        _ = σ K q qi n ⟨k, hkn⟩ * qJM K q qi n k * σ K q qi n ⟨k, hkn⟩ * σ K q qi n i := by
+            simp only [mul_assoc]
+    · have e : qJM K q qi n (k + 1) = qJM K q qi n k := dif_neg hkn
+      rw [e]; exact ih
+
+
+/-! ### The assembly, and the inverse half
+
+`qJM_sum_comm_sigma` below splits `Finset.range (n+1)` into `{i, i+1}` and its
+complement: the pair takes `qJM_pair_comm`, and every remaining `k` is either
+`≤ i-1` or `≥ i+2`, so it takes one of the other two rows. **That settles the
+`L`-half of `barSymJMSum_central`.**
+
+The remaining half is the inverse family. Two facts make it a transfer rather
+than a re-derivation: `σInv = σ - (q-qi)•1` is a *polynomial in `σ`*, so
+`comm_σInv_iff` says commuting with one is commuting with the other; and
+`σInv_quadratic` shows `σ⁻¹` obeys the same quadratic with `d ↦ -d`, which is
+exactly the shape `pair_comm` consumes. `qJMInv` has the same recursion as
+`qJM` with `σ ↦ σInv`, so the three rows should re-run verbatim against it. -/
+
+/-- **The first Murphy power sum `Σ_{k≤n} L_k` is central.** -/
+theorem qJM_sum_comm_sigma (hqi : q * qi = 1) (i : Fin n) (hi1 : (i : ℕ) + 1 < n) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), qJM K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1), qJM K q qi n k) * σ K q qi n i := by
+  classical
+  set s := σ K q qi n i with hs
+  set P : Finset ℕ := {(i : ℕ), (i : ℕ) + 1} with hP
+  have hsub : P ⊆ Finset.range (n + 1) := by
+    intro x hx
+    simp only [hP, Finset.mem_insert, Finset.mem_singleton] at hx
+    rcases hx with rfl | rfl <;> simp [Finset.mem_range] <;> omega
+  have hsplit := Finset.sum_sdiff (f := fun k => qJM K q qi n k) hsub
+  -- the pair
+  have hpair : s * (∑ k ∈ P, qJM K q qi n k) = (∑ k ∈ P, qJM K q qi n k) * s := by
+    have hne : (i : ℕ) ≠ (i : ℕ) + 1 := by omega
+    have : (∑ k ∈ P, qJM K q qi n k)
+        = qJM K q qi n (i : ℕ) + qJM K q qi n ((i : ℕ) + 1) := by
+      simp [hP, Finset.sum_insert, Finset.mem_singleton]
+    rw [this]
+    exact qJM_pair_comm K q qi n hqi (i : ℕ) i.isLt
+  -- everything else, termwise
+  have hrest : s * (∑ k ∈ Finset.range (n + 1) \ P, qJM K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1) \ P, qJM K q qi n k) * s := by
+    rw [Finset.mul_sum, Finset.sum_mul]
+    refine Finset.sum_congr rfl fun k hk => ?_
+    simp only [Finset.mem_sdiff, Finset.mem_range, hP, Finset.mem_insert,
+      Finset.mem_singleton, not_or] at hk
+    obtain ⟨_, hki, hki1⟩ := hk
+    rcases Nat.lt_or_ge k (i : ℕ) with hlt | hge
+    · exact qJM_comm_sigma K q qi n i k (by omega)
+    · exact qJM_comm_sigma_high K q qi n i hi1 k (by omega)
+  rw [← hsplit, mul_add, add_mul, hpair, hrest]
+
+/-- `σ_i⁻¹` satisfies the same quadratic with `d ↦ -d`: `σ⁻¹² = (qi-q)·σ⁻¹ + 1`
+when `q·qi = 1`. -/
+theorem σInv_quadratic (hqi : q * qi = 1) (i : Fin n) :
+    σInv K q qi n i * σInv K q qi n i
+      = (qi - q) • σInv K q qi n i + (1 : Hecke K q qi n) := by
+  have hq := σ_quadratic K q qi n i
+  rw [hqi] at hq
+  simp only [σInv, sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm, one_mul,
+    mul_one, hq, smul_smul, sub_smul, smul_sub]
+  abel_nf
+  module
+
+/-- **Commuting with `σ_i` and with `σ_i⁻¹` are the same condition** — `σInv` is
+`σ - (q-qi)•1`, a polynomial in `σ`, so the two differ by a central term. -/
+theorem comm_σInv_iff (i : Fin n) (x : Hecke K q qi n) :
+    x * σInv K q qi n i = σInv K q qi n i * x ↔ x * σ K q qi n i = σ K q qi n i * x := by
+  simp only [σInv, mul_sub, sub_mul, mul_smul_comm, smul_mul_assoc, mul_one, one_mul]
+  exact sub_left_inj
+
+/-- Commuting with a two-sided unit transfers to its inverse. -/
+theorem comm_inv_of_comm {R : Type*} [Ring R] (s A A' : R)
+    (hAA' : A * A' = 1) (hA'A : A' * A = 1) (h : s * A = A * s) :
+    s * A' = A' * s := by
+  calc s * A' = (A' * A) * (s * A') := by rw [hA'A, one_mul]
+    _ = A' * (A * s) * A' := by simp only [mul_assoc]
+    _ = A' * (s * A) * A' := by rw [h]
+    _ = A' * s * (A * A') := by simp only [mul_assoc]
+    _ = A' * s := by rw [hAA', mul_one]
+
+/-- Row 1 for the inverse family. -/
+theorem qJMInv_comm_sigma (hqi : q * qi = 1) (m : Fin n) (k : ℕ)
+    (hk : k + 1 ≤ (m : ℕ)) (hkn : k ≤ n) :
+    σ K q qi n m * qJMInv K q qi n k = qJMInv K q qi n k * σ K q qi n m :=
+  comm_inv_of_comm _ _ _ (qJM_mul_qJMInv K q qi n hqi k hkn)
+    (qJMInv_mul_qJM K q qi n hqi k hkn) (qJM_comm_sigma K q qi n m k hk)
+
+/-- Row 3 for the inverse family. -/
+theorem qJMInv_comm_sigma_high (hqi : q * qi = 1) (i : Fin n) (hi1 : (i : ℕ) + 1 < n)
+    (k : ℕ) (hk : (i : ℕ) + 2 ≤ k) (hkn : k ≤ n) :
+    σ K q qi n i * qJMInv K q qi n k = qJMInv K q qi n k * σ K q qi n i :=
+  comm_inv_of_comm _ _ _ (qJM_mul_qJMInv K q qi n hqi k hkn)
+    (qJMInv_mul_qJM K q qi n hqi k hkn) (qJM_comm_sigma_high K q qi n i hi1 k hk)
+
+/-- Row 2 for the inverse family: `σ_i` commutes with `L_i⁻¹ + L_{i+1}⁻¹`. -/
+theorem qJMInv_pair_comm (hqi : q * qi = 1) (i : ℕ) (hi : i < n) :
+    σ K q qi n ⟨i, hi⟩ * (qJMInv K q qi n i + qJMInv K q qi n (i + 1))
+      = (qJMInv K q qi n i + qJMInv K q qi n (i + 1)) * σ K q qi n ⟨i, hi⟩ := by
+  have hq := σInv_quadratic K q qi n hqi ⟨i, hi⟩
+  rw [qJMInv_succ K q qi n hi]
+  have hpc := pair_comm (σInv K q qi n ⟨i, hi⟩) (qJMInv K q qi n i) (qi - q) hq
+  exact ((comm_σInv_iff K q qi n ⟨i, hi⟩ _).mp hpc.symm).symm
+
+/-- Generic Finset assembly: a family `F` whose `{i,i+1}` pair commutes with
+`σ_i` and whose other members commute individually has a central sum. -/
+theorem sum_comm_of_rows (i : Fin n) (F : ℕ → Hecke K q qi n)
+    (hpair : σ K q qi n i * (F (i : ℕ) + F ((i : ℕ) + 1))
+           = (F (i : ℕ) + F ((i : ℕ) + 1)) * σ K q qi n i)
+    (hlow : ∀ k, k < (i : ℕ) → σ K q qi n i * F k = F k * σ K q qi n i)
+    (hhigh : ∀ k, (i : ℕ) + 2 ≤ k → k ≤ n → σ K q qi n i * F k = F k * σ K q qi n i) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), F k)
+      = (∑ k ∈ Finset.range (n + 1), F k) * σ K q qi n i := by
+  classical
+  set P : Finset ℕ := {(i : ℕ), (i : ℕ) + 1} with hP
+  have hsub : P ⊆ Finset.range (n + 1) := by
+    intro x hx
+    simp only [hP, Finset.mem_insert, Finset.mem_singleton] at hx
+    have := i.isLt
+    rcases hx with rfl | rfl <;> simp [Finset.mem_range] <;> omega
+  have hsplit := Finset.sum_sdiff (f := F) hsub
+  have hpairsum : (∑ k ∈ P, F k) = F (i : ℕ) + F ((i : ℕ) + 1) := by
+    have hne : (i : ℕ) ≠ (i : ℕ) + 1 := by omega
+    simp [hP, Finset.sum_insert, Finset.mem_singleton]
+  have hrest : σ K q qi n i * (∑ k ∈ Finset.range (n + 1) \ P, F k)
+      = (∑ k ∈ Finset.range (n + 1) \ P, F k) * σ K q qi n i := by
+    rw [Finset.mul_sum, Finset.sum_mul]
+    refine Finset.sum_congr rfl fun k hk => ?_
+    simp only [Finset.mem_sdiff, Finset.mem_range, hP, Finset.mem_insert,
+      Finset.mem_singleton, not_or] at hk
+    obtain ⟨hkr, hki, hki1⟩ := hk
+    rcases Nat.lt_or_ge k (i : ℕ) with hlt | hge
+    · exact hlow k hlt
+    · exact hhigh k (by omega) (by omega)
+  rw [← hsplit, hpairsum, mul_add, add_mul, hpair, hrest]
+
+/-- **`Σ_{k≤n} L_k⁻¹` is central.** -/
+theorem qJMInv_sum_comm_sigma (hqi : q * qi = 1) (i : Fin n) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), qJMInv K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1), qJMInv K q qi n k) * σ K q qi n i := by
+  refine sum_comm_of_rows K q qi n i _ ?_ ?_ ?_
+  · have := qJMInv_pair_comm K q qi n hqi (i : ℕ) i.isLt
+    simpa using this
+  · intro k hk
+    exact qJMInv_comm_sigma K q qi n hqi i k (by omega) (by have := i.isLt; omega)
+  · intro k hk hkn
+    exact qJMInv_comm_sigma_high K q qi n hqi i (by omega) k hk hkn
+
+/-- **`Σ_{k≤n} L_k` is central**, with no side hypothesis on `i`. -/
+theorem qJM_sum_comm_sigma' (hqi : q * qi = 1) (i : Fin n) :
+    σ K q qi n i * (∑ k ∈ Finset.range (n + 1), qJM K q qi n k)
+      = (∑ k ∈ Finset.range (n + 1), qJM K q qi n k) * σ K q qi n i := by
+  refine sum_comm_of_rows K q qi n i _ ?_ ?_ ?_
+  · have := qJM_pair_comm K q qi n hqi (i : ℕ) i.isLt
+    simpa using this
+  · intro k hk; exact qJM_comm_sigma K q qi n i k (by omega)
+  · intro k hk hkn; exact qJM_comm_sigma_high K q qi n i (by omega) k hk
+
+end AdjacentReduction
 
 /-- **[GAP] The Murphy elements commute pairwise** — they generate the commutative
 Gelfand–Tsetlin subalgebra `GZ_{n+1} ⊂ H_{n+1}(q)`.
@@ -293,10 +840,14 @@ Gelfand–Tsetlin subalgebra `GZ_{n+1} ⊂ H_{n+1}(q)`.
 -- Blocked on: the general seminormal rep (bean SW-4 residual). -/
 theorem qJM_commute (K : Type*) [CommRing K] (q qi : K) (n : ℕ) (i j : ℕ)
     (hi : i ≤ n) (hj : j ≤ n) :
-    qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i := by
-  -- Ref: [murphy1992] — the JM/Murphy operators generate a commutative subalgebra.
-  -- GAP: requires the seminormal diagonalisation (bean qou-im9l / SW-4 residual).
-  sorry
+    qJM K q qi n i * qJM K q qi n j = qJM K q qi n j * qJM K q qi n i :=
+  -- PROVED 2026-08-16 (bean `qou-gjg6`). The GAP note this replaced said
+  -- "requires the seminormal diagonalisation" — it does not. `qJM_commute_proved`
+  -- derives it from the braid relation and far commutation alone, by induction on
+  -- the recursion `L_{k+1} = σ_k L_k σ_k`; no representation, no invertibility,
+  -- and no quadratic relation. The hypotheses `hi`/`hj` are not needed either,
+  -- since the recursion freezes above `n`.
+  qJM_commute_proved K q qi n i j
 
 end SeminormalTheory
 
@@ -496,20 +1047,54 @@ end CellSum
 
 /-! ## General-`λ` block eigenvalue and centrality — honest `sorry` + `-- Ref:`
 
-The remaining two statements need the **general** Hoefsmit seminormal representation, which is
+One statement remains here.  It needs the **general** Hoefsmit seminormal representation, which is
 itself a documented GAP (`hoefsmit_seminormal_rep`, bean `qou-im9l` / SW-4 residual).  The scalar
-they evaluate to is computed sorry-free above (`cellContentCoshSum`); only the bridge
-"the central element acts by that scalar on the irreducible block" awaits the general rep. -/
+it evaluates to is computed sorry-free above (`cellContentCoshSum`); only the bridge
+"the central element acts by that scalar on the irreducible block" awaits the general rep.
+
+Centrality used to be the second statement in this section and is no longer a gap: it is proved
+sorry-free as `barSymJMSum_central` below, given `q · qi = 1`. -/
 
 section GeneralGap
 
-/-- **Block eigenvalue of `Θ` on the irreducible `ρ_λ` — GAP.**  For every `λ ⊢ N` there is a
-seminormal representation `ρ_λ : H_N(q) →ₐ M_{d_λ}` on which the central bar-symmetrised sum
-`Θ = barSymJMSum` acts as the scalar `cellContentCoshSum λ q = Σ_{c∈λ}(q^{2c}+q^{−2c})·1`.
+/-- **Block eigenvalue of `Θ` on the irreducible `ρ_λ`, at generic `q` — GAP.**  For every `λ ⊢ N`
+there is a seminormal representation `ρ_λ : H_N(q) →ₐ M_{d_λ}` on which the central bar-symmetrised
+sum `Θ = barSymJMSum` acts as the scalar `cellContentCoshSum λ q = Σ_{c∈λ}(q^{2c}+q^{−2c})·1`.
 The scalar is sorry-free (`cellContentCoshSum` + `cellContentCoshSum_eq_bracket`); the bridge
 `ρ_λ(Θ) = scalar·1` needs the general seminormal construction and the per-element eigenvalue
-`L_k ↦ q^{2·cellContent}`. -/
-theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : Partition N) :
+`L_k ↦ q^{2·cellContent}`.
+
+**Hypotheses re-scoped 2026-08-17 (bean `qou-gjg6`), `q ≠ 0` → `0 < q ∧ q ≠ 1`.**  The old `q ≠ 0`
+was under-hypothesised, and not in the same way `barSymJMSum_central` was: at `Hecke ℝ q q⁻¹` the
+normalisation `q · q⁻¹ = 1` is already free from `q ≠ 0`, so centrality is not what was missing.
+What was missing is that the *seminormal representation itself* does not exist at every nonzero
+real `q`.  Its matrix entries carry denominators `1 − q^{−2d}` indexed by content differences `d`,
+so it degenerates exactly where `q^{2d} = 1` for some `d ≠ 0` — i.e. at `q = 1` (every `d`) and at
+`q = −1` (every even `d`, and there `0/0`).  `0 < q` excludes the negative branch and `q ≠ 1`
+excludes the classical point; together they are the concrete-`ℝ` reading of *generic `q`*, which is
+the regime in which [ram1997] and [hoefsmit1974] construct the representation at all.
+
+**Recorded gap, not silently dropped: the roots-of-unity regime.**  The excluded `q` are not a
+technicality to be relaxed later by a better proof of the same statement.  At a root of unity
+`H_N(q)` is no longer semisimple, the `λ ⊢ N` no longer index the irreducibles, and the statement's
+whole shape (one `d_λ`-dimensional block per partition, `Θ` acting by a scalar on it) is the thing
+that fails — so the excluded case needs a *different* statement, via cellular/Specht theory rather
+than seminormal form.  Nothing here claims that case is true, and nothing here claims it is false.
+It is open and is tracked as such; do not read the `0 < q` hypothesis as an artefact of this proof
+route.
+
+**The `0 < q` half is stronger than the construction needs — recorded, not silently changed.**
+When this hypothesis was put to the owner I described the constraint as `0 < q ∧ q ≠ 1`. That was
+my reading, and it was not sharp: `SeminormalRep.seminormalRep` and `hoefsmit_seminormal_rep` both
+take `(hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)`, which over `ℝ` says exactly *`q` is not a root of unity* —
+the genericity condition `[ram1997]` presupposes — and which **admits negative `q`**.  `0 < q ∧
+q ≠ 1` implies both (`q > 0` with `q ^ 2 = 1` forces `q = 1`), so the statement below is **sound,
+just narrower than necessary**: it excludes the whole `q < 0` branch that the construction handles.
+The owner's ruling is kept as given rather than quietly widened; when the `sorry` is discharged
+from `seminormalRep`, the hypotheses can be relaxed to `q ≠ 0 ∧ q ^ 2 ≠ 1` and the discharge
+becomes direct instead of needing a strengthening step. -/
+theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1)
+    (lam : Partition N) :
     ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
       ρ (barSymJMSum ℝ q q⁻¹ (N - 1))
         = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
@@ -519,15 +1104,24 @@ theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : P
   --   eigenvalue `L_k ↦ q^{2·cellContent}`.  The scalar itself is proved sorry-free above.
   sorry
 
-/-- **The bar-symmetrised sum is central — GAP.**  `Θ = barSymJMSum` commutes with every generator
-`σ_i`, hence lies in `Z(H_{n+1}(q))`.  As a sum of power sums `p_1(L) + p_1(L⁻¹)` of the pairwise
-commuting Murphy elements, it is a symmetric function of the JM family, and symmetric functions of
-the JM family are central. -/
-theorem barSymJMSum_central (K : Type*) [CommRing K] (q qi : K) (n : ℕ) (i : Fin n) :
+section BarSymCentral
+
+variable (K : Type*) [CommRing K] (q qi : K) (n : ℕ)
+
+/-- **`barSymJMSum` is central**, given `q · qi = 1` — sorry-free.
+
+The hypothesis is not decoration.  `σ_i` commutes with the pair `L_i + L_{i+1}` only up to the
+residue `(1 − q·qi)(σ_i L_i − L_i σ_i)` (see `pair_comm`), and without `q · qi = 1` the element
+`qJMInv` is not an inverse of `qJM` at all.  A hypothesis-free version of this statement was
+carried here as a `sorry` until 2026-08-17 (bean `qou-gjg6`); it is not provable by this route,
+and it was deleted rather than left standing as proof debt it never was. -/
+theorem barSymJMSum_central (hqi : q * qi = 1) (i : Fin n) :
     barSymJMSum K q qi n * σ K q qi n i = σ K q qi n i * barSymJMSum K q qi n := by
-  -- Ref: [murphy1992] — symmetric functions of the JM/Murphy operators are central.
-  -- GAP: needs `qJM_commute` plus the σ_i–L_k commutation relations (bean qou-im9l / SW-4 residual).
-  sorry
+  have hL := qJM_sum_comm_sigma' K q qi n hqi i
+  have hI := qJMInv_sum_comm_sigma K q qi n hqi i
+  simp only [barSymJMSum, Finset.sum_add_distrib, add_mul, mul_add, hL, hI]
+
+end BarSymCentral
 
 end GeneralGap
 

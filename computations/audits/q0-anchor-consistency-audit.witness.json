@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T07:27:57.536407+00:00",
-  "commitSha": "bbad48e70cda621bb403b867110528ae5a1a99c5",
+  "computedAt": "2026-08-19T11:49:30.533933+00:00",
+  "commitSha": "67ccee2d220f8dcf8444871ce94c28dd653922f0",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 17,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "805ec171e06b",
+  "scriptHash": "33ccaac86640",
   "scriptCommitSha": "05a3178ab90f8022188353adebe9d784dd7572dd",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -36,12 +36,13 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 655,
+      "Q0_OK": 656,
       "Q0_AMBIGUOUS": 15,
-      "Q0_INDEPENDENT": 6,
-      "Q0_ANCHOR_MISSING": 1889,
+      "Q0_INDEPENDENT": 8,
+      "Q0_INDEPENDENT_NO_REASON": 1,
+      "Q0_ANCHOR_MISSING": 1893,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 72,
+      "Q0_AUDIT_EXEMPT": 73,
       "Q0_PARSE_ERROR": 1,
       "Q0_FLIP": 0
     },
@@ -2525,10 +2526,6 @@
           "detail": ""
         },
         {
-          "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "jet-algebraic-independence.witness.json",
           "detail": ""
         },
@@ -4065,11 +4062,19 @@
           "detail": ""
         },
         {
+          "witness": "gswz_epsm_per_element_representative.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_representative_obstruction.witness.json",
           "detail": ""
         },
         {
           "witness": "gswz_epsm_residue_model_insufficient.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_root_ambiguity_criterion.witness.json",
           "detail": ""
         },
         {
@@ -4082,6 +4087,10 @@
         },
         {
           "witness": "gswz_padic_dilog_modp.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_program_convention_immunity.witness.json",
           "detail": ""
         },
         {
@@ -5597,6 +5606,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-crossanchor-swing-provenance.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-exact-volume-boost-enhancement.witness.json",
           "detail": ""
         },
@@ -6042,6 +6055,10 @@
         },
         {
           "witness": "qbeta-geometric-boost-udeform.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-h-frame-rungs.witness.json",
           "detail": ""
         },
         {
@@ -9055,6 +9072,10 @@
           "detail": ""
         },
         {
+          "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "iterative-lp-dual-h6-deuteron.witness.json",
           "detail": ""
         },
@@ -10499,6 +10520,10 @@
           "detail": ""
         },
         {
+          "witness": "mpf-mixed-arithmetic-audit.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "never-raises-dps-audit.witness.json",
           "detail": ""
         },
@@ -10591,9 +10616,23 @@
           "detail": "root is not an object"
         }
       ],
-      "Q0_INDEPENDENT": [
+      "Q0_INDEPENDENT_NO_REASON": [
         {
           "witness": "markov-identity-symbolic.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
+        }
+      ],
+      "Q0_INDEPENDENT": [
+        {
+          "witness": "aomega-m3-adjoint-index-set.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "knot-trace-field-degree-guard-counterexample.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-5two-trace-field-disc23-not-qsqrt7.witness.json",
           "detail": ""
         },
         {

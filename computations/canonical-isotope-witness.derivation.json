@@ -1,0 +1,82 @@
+{
+  "target": "per-Z isotope shard rows (layered framework predictions + AME 2020 reference)",
+  "target_value": "row(Z,N) = { layer L1: |tr_M(β_atom, q₀)| ; layer L2: B(nα) = n·B(⁴He) + C(n,2)·c_αα ; layer L4: M(A,Z) = N·m_n + Z·m_p − B(A,Z) } with AME 2020 reference attached",
+  "target_tolerance": 0.0,
+  "content_block": "prop:recursive-atom-knot-atlas",
+  "description": "COMPOSITION chain for the per-Z isotope shards emitted by canonical_isotope_witness.py (120 shard witnesses, canonical-isotope-witness-Z<NN>). The producer is deliberately a read-many/compute-little ORCHESTRATOR: it assembles layer predictions computed by upstream producers, attaches AME 2020 reference values, and records upstream witness sha256/commitSha provenance. This chain therefore records ASSEMBLY AND PROVENANCE — it is NOT a first-principles derivation, and its trust profile says so: {derived: 1, script-cited: 4, axiom: 0, mathlib-cited: 0}. The audit's own vocabulary carries the distinction: a chain with any SCRIPT_CITED step is `derivation-backed` (provenance is explicit), never `derivation-fully-trusted` (first-principles). The physics content lives in the upstream producers, whose own chains remain to be authored — draining this family makes the composition auditable, it does not make the inputs derived. Absolute-mass note (owner ruling 2026-08-11, qou-exam): the layer-L4 composite is an m_e-scaled realization of the dimensionless ratio, not a claimed absolute-mass prediction; the shard rows carry an `excised` field marking exactly that.",
+  "steps": [
+    {
+      "name": "L1 — canonical Markov trace |tr_M(β_atom, q₀)| per atom",
+      "operation": "For each atom reachable at A ≤ 6 (n_strands ≤ 18), evaluate the canonical Markov trace of the atom braid at the substrate q₀ via markov_peel + mpmath at 50 dps. The isotope orchestrator REUSES these values rather than recomputing them; the shard records the upstream witness sha256 so the reuse is auditable.",
+      "inputs": [
+        "Hecke.Energy",
+        "FiniteJones"
+      ],
+      "output_name": "L1_trace",
+      "output_value": "|tr_M(β_atom, q₀)| per atom (50 dps)",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript",
+      "notes": "script: computations/canonical_mass_table_extended.py — the upstream producer. Its witness canonical-mass-table-extended.witness.json is recorded by sha256 + commitSha in every shard's data.upstream_witness_hashes, so the composition is pinned to a specific upstream state. That producer's OWN derivation chain is not yet authored: this step cites the compute, it does not derive it."
+    },
+    {
+      "name": "L2 — α-cluster binding recursion",
+      "operation": "For the α-conjugate nuclides (Z = N, A = 4n: ⁴He, ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ²⁸Si, ³²S, ³⁶Ar, ⁴⁰Ca) apply the cluster recursion B(nα) = n·B(⁴He) + C(n,2)·c_αα — n copies of the ⁴He binding plus a pairwise α–α term over the C(n,2) cluster pairs.",
+      "inputs": [
+        "L1_trace",
+        "Wedderburn"
+      ],
+      "output_name": "L2_binding",
+      "output_value": "B(nα) = n·B(⁴He) + C(n,2)·c_αα",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript",
+      "notes": "script: computations/alpha/alpha_cluster_recursion.py — supplies B(nα) for the α-conjugate rows. Coverage is exactly Z = N with A = 4n; every other row falls back to L1 or has no layer coverage, which the shard marks per row."
+    },
+    {
+      "name": "Nucleon mass ratios (m_e-scaled)",
+      "operation": "Take the canonical nucleon values (m_p, m_n) from the single facade, i.e. the muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e) with m_μ = m_e·Vol(4₁)/ℏ_q². Under the 2026-08-11 excision these are m_e-scaled realizations of the dimensionless ratios m_p/m_e, m_n/m_e — the MeV rendering is not itself a framework prediction.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "nucleon_scale",
+      "output_value": "(m_p, m_n) as m_e-scaled ratio realizations",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript",
+      "notes": "script: computations/canonical_mass.py — the single entry point (proton_mass_mev / neutron_mass_mev). Routed through the facade rather than recomputed, which is what the canonical-mass guardrail requires."
+    },
+    {
+      "name": "L4 — composite mass M(A,Z)",
+      "operation": "Assemble the composite M(A,Z) = N·m_n + Z·m_p − B(A,Z), taking B from whichever layer covers the row (L1 or L2). Pure algebra over the previous three steps — no new physics enters here.",
+      "inputs": [
+        "L1_trace",
+        "L2_binding",
+        "nucleon_scale"
+      ],
+      "output_name": "L4_composite",
+      "output_value": "M(A,Z) = N·m_n + Z·m_p − B(A,Z)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "notes": "The only DERIVED step in the chain: the composite is a linear combination of the layer outputs. Per the absolute-mass excision it is reported as an m_e-scaled realization; the shard rows carry `excised` to mark rows where an absolute-mass reading would be the wrong one."
+    },
+    {
+      "name": "Per-Z shard assembly with AME 2020 reference",
+      "operation": "Group the covered (Z,N) rows by Z, attach the AME 2020 experimental reference value and the derived error columns (err_MeV, err_pct, err_ppm), record the upstream witness sha256/commitSha provenance, and emit one shard witness per element: canonical-isotope-witness-Z<NN>.witness.json.",
+      "inputs": [
+        "L4_composite"
+      ],
+      "output_name": "isotope_shards",
+      "output_value": "canonical-isotope-witness-Z<NN>.witness.json, one per element",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript",
+      "notes": "script: computations/canonical_isotope_witness.py — the orchestrator, and the step that claims this family for the trust audit (the audit matches producers by basename, so this one note covers all 120 shards). AME 2020 is an EXTERNAL experimental reference attached for comparison; it is never an input to any framework prediction above."
+    }
+  ]
+}

@@ -96,25 +96,28 @@ def main() -> int:
 
     from mass_at_3A_proper import atom_braid_word_3A
     import pyhecke.gram as G
-    hf = float(G.h)
+    # h at 50-dps mpmath, NOT the float64 module constant G.h (which differs
+    # from q0 - 1/q0 by 5.0e-17 and would pin this whole probe to double
+    # precision). AGENTS.md "PROBES ARE NOT EXEMPT"; bean qou-jtbo.
+    hf = G.h_mp()
 
     def esum(Z, N):
-        return sum(1.0 + 2.0 * float(d) / hf
-                   for (_c, d, _g) in atom_braid_word_3A(Z, N))
+        return mp.fsum([mp.mpf(1) + 2 * mp.mpf(str(d)) / hf
+                        for (_c, d, _g) in atom_braid_word_3A(Z, N)])
 
     E = {lbl: esum(Z, N) for lbl, Z, N in SYSTEMS}
 
-    thr = float(mp.log(1 / mup) / mp.log(q))
+    thr = (mp.log(1 / mup) / mp.log(q))
     print("Can the two-nucleon framing f be DERIVED? Attempt, and honest negative.\n")
-    print(f"  threshold: T=1 unbinds iff f > {thr:.4f}  ->  integer f >= 3")
-    print(f"  mu+ = {float(mup):.6f} is the T=1 projector scalar, CHANNEL-INDEPENDENT,")
+    print(f"  threshold: T=1 unbinds iff f > {mp.nstr(thr, 6)}  ->  integer f >= 3")
+    print(f"  mu+ = {mp.nstr(mup, 8)} is the T=1 projector scalar, CHANNEL-INDEPENDENT,")
     print("  so the same threshold applies to every system's T=1 channel.\n")
 
     print("The framework's own braid-word writhes (e = 1 + 2d/h per crossing):\n")
     for lbl, _Z, _N in SYSTEMS:
-        print(f"    {lbl:<3}  e = {E[lbl]:+.6f}")
-    print(f"\n  interface-only:  pp {E['pp'] - 2*E['p']:+.4f}   "
-          f"pn {E['pn'] - E['p'] - E['n']:+.4f}   nn {E['nn'] - 2*E['n']:+.4f}")
+        print(f"    {lbl:<3}  e = {mp.nstr(E[lbl], 8)}")
+    print(f"\n  interface-only:  pp {mp.nstr(E['pp'] - 2*E['p'], 6)}   "
+          f"pn {mp.nstr(E['pn'] - E['p'] - E['n'], 6)}   nn {mp.nstr(E['nn'] - 2*E['n'], 6)}")
     print("  (exactly +1 / ~0 / -1 — the intra-nucleon crossings cancel in the ratio)\n")
 
     cands = {
@@ -134,7 +137,7 @@ def main() -> int:
         cells = []
         for s in ("pp", "pn", "nn"):
             e1 = mup * q ** mp.mpf(f[s])
-            cells.append(f"{f[s]:+.0f} {'UNB' if e1 > 1 else 'bnd'}")
+            cells.append(f"{mp.nstr(f[s], 2)} {'UNB' if e1 > 1 else 'bnd'}")
         ok = all(mup * q ** mp.mpf(f[s]) > 1 for s in ("pp", "nn"))
         any_ok = any_ok or ok
         print(f"| {name:<28} | {cells[0]:<9} | {cells[1]:<9} | {cells[2]:<9} "
@@ -156,8 +159,8 @@ def main() -> int:
     print("  lambda-dependent framing.")
 
     print("\n## Coincidence recorded and declined\n")
-    print(f"  the proton's word writhe is EXACTLY 3 ({E['p']:+.4f}) and the threshold is")
-    print(f"  f > {thr:.4f}, so 3 is the smallest admissible integer. Suggestive, NOT")
+    print(f"  the proton's word writhe is EXACTLY 3 ({mp.nstr(E['p'], 6)}) and the threshold is")
+    print(f"  f > {mp.nstr(thr, 6)}, so 3 is the smallest admissible integer. Suggestive, NOT")
     print("  evidence: nothing connects a proton's internal writhe to the framing of a")
     print("  two-nucleon interface, and 'smallest integer above the threshold' produces")
     print("  the same 3 with no content. Declined, as the pi/4 near-miss was.")

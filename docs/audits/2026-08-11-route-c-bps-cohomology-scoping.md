@@ -115,3 +115,153 @@ milestones for a follow-up; M3 is the research horizon. Tracked in `qou-rtec`
 Nothing here derives `A_ω`; `A_ω=3` remains certified-as-GGM-DT-count,
 conditionally adopted. Route C's promise is to replace *import* with *derivation*
 — and its first honest step is M0.
+
+## 6. M3 executed (2026-08-18, PR #5275) — reframed, sharpened, still open
+
+M3's framing in §4 above ("build the CoHA / express `(Q,W)`, `H_BPS` from Hecke
+data") is **superseded by M2's own result** and is retained above only as the
+historical rung. M2 proved the spectrum would be *abelian*: every Borel ray
+distinct, trivial plethystic, all multiplicities `1`. A direct sum of
+one-dimensional spaces carries no information beyond **which rays exist** — so
+categorifying it is nearly content-free, and M3's real target is to **derive the
+index set `Ω`**. Sharper, and more tractable.
+
+### `H_Ad` — the hypothesis, and what it is NOT
+
+`H_Ad`: the knot-**independent** core of the index set is the weight set of the
+adjoint representation of `𝔰𝔩₂`. With `x = m²`, `Ad` has eigenvalues `(x,1,x⁻¹)`,
+so `χ_Ad(x) = x + 1 + x⁻¹ = s(x)` exactly and `χ_Ad(1) = 3 = dim 𝔰𝔩₂`. Mechanism
+(not a numerology pick): the Borel singularities are differences of complex
+volumes of flat connections, whose deformation theory is governed by
+`H¹(M, Ad ρ)` — the adjoint local system is the *canonical* coefficient object.
+QOU-side, `Ad ≅ Sym²V` = the partition-`(2)` Wedderburn block of `H₂(q)`.
+
+### The R1 discrimination — the finding that matters
+
+`H_Ad` is **not** a re-description of Route A's surviving `R1` reading. Using the
+certified chirality split (`4₁` amphichiral ⇒ `(S⁺,S⁻) = (3,3)`; `5₂` chiral ⇒
+`(4,3)`):
+
+| reading | projection | `4₁` | `5₂` |
+|---|---|---|---|
+| `R1` (#boundary-parabolic connections = A-poly `L`-degree) | `dtMax` | 3 | 4 |
+| `H_Ad` core (`s(1) = dim 𝔰𝔩₂`) | `dtMin` | 3 | 3 |
+
+Different halves of the same datum — and the **pair** reconstructs the 2-element
+set `{3,4}`. That is **not** in tension with
+`Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum`, which
+excludes *one* scalar equalling a 2-set, not two scalars naming it between them.
+This is the sharpest positive structural statement Route C has produced.
+
+### Two things that make it thinner than it sounds
+
+1. **The support is ONE observation.** `4₁`'s amphichirality collapses `dtMin`
+   onto `dtMax`, so `4₁` supplies no evidence for `H_Ad` independent of `R1`.
+   Everything rests on `S⁻(5₂) = 3`.
+2. **A rival survives — `H_floor`.** Take the core to be the `{0, g, ḡ}` triple
+   that *every* hyperbolic knot carries, i.e. `R1`'s own universal floor, with no
+   `𝔰𝔩₂` anywhere. Its core is also `3`, so it imposes identical constraints and
+   makes identical predictions; its Chern–Simons values `{0, +𝔙, −𝔙}` even supply
+   a palindromic 3-element grading, so the shape screen cannot arbitrate. **The
+   certified data cannot separate `H_Ad` from `H_floor`.** Only the grading
+   *variable* could — meridian `x = m²` (`H_Ad`) vs Chern–Simons value
+   (`H_floor`). GGM's `s(x)` is written in the meridian variable, which *weakly*
+   favours `H_Ad`; "weakly" is the honest word.
+
+### Two corrections this work forced, recorded at source
+
+- **`R1` does not fail knot-independence.** An earlier note in the M3 probe said
+  it did. Retracted: `R1` hits the `dtMax` vector `(3,4)` **exactly** (§5 of the
+  attack-options audit); its *proved* failure is single-valuedness against a
+  set-valued datum. Conflating the two failure modes hides the `dtMin`/`dtMax`
+  complementarity entirely.
+- **"`5₂` has one extra flat connection" IS `R1`.** That was proposed as the
+  completion of `H_Ad`; it is `R1` verbatim, so the completion *composes two
+  imported readings* rather than deriving anything from Hecke data. It must not
+  be presented as a derivation.
+
+### The meridian grading is derived (route (b), same PR)
+
+The one discriminator Part 2 named — the grading *variable* — is now supplied on
+the `H_Ad` side from QOU-native Schur–Weyl data. The shape-`(2)` **semistandard**
+Young tableaux over `{1,2}` are `{11, 12, 22}`, and their `m`-weights are
+`(2, 0, −2)` — exactly **twice** the adjoint `x`-exponents `(1, 0, −1)`, i.e.
+precisely `x = m²`. So `s(x) = x + 1 + x⁻¹` is the character of `S^{(2)}(ℂ²)` in
+the **meridian** variable, read off Young-tableau combinatorics with nothing
+fitted, and the three weights are distinct (so M2's `sMultiplicities = [1,1,1]`
+becomes combinatorial rather than asserted).
+
+**Scope (a), stated plainly:** this gives `H_Ad` a mechanism `H_floor` lacks. It
+does **not** exclude `H_floor` — "one hypothesis has a derivation the other
+lacks" is weaker and different from "the other is refuted".
+
+**Third correction, forced by doing this.** `Ad` is the Schur–Weyl **partner** of
+the partition-`(2)` Hecke block, *not* the block: `#SYT((2)) = 1` (the `H₂(q)`
+block is one-dimensional) while `#SSYT((2)) = 3` (the partner `S^{(2)}(ℂ²)` on the
+`U_q(𝔰𝔩₂)` side of `V^{⊗2} ≅ ⨁_λ S^λ(V) ⊗ M_λ`). Earlier text in the Lean
+docstring, the probe docstring and the bean all said "the partition-`(2)`
+Wedderburn block of `H₂(q)`" — a conflation of the two sides of Schur–Weyl
+duality, corrected at all three sources, with both dimensions now *derived* in
+Lean from the weakly- vs strictly-increasing filling conditions.
+
+### Part 4 — the remainder is derived from the trace field, and it is `H_floor`'s win
+
+Part 1 forced the `5₂` remainder to be `1` and said any completion "must derive
+it independently". `H_floor` **does**, from arithmetic already sitting in the
+corpus. Garoufalidis–Zagier (`uploads/2111.06645v3.pdf` §2.1, glyph-verified)
+give `P_K`, the boundary-parabolic `SL₂(ℂ)` representations, for three knots:
+
+| `K` | reduced trace algebra | real | pairs | `\|P_K\|` | core | remainder |
+|---|---|---|---|---|---|---|
+| `4₁` | `ℚ(√−3)` (imag. quadratic) | 0 | 1 | 3 | 3 | **0** |
+| `5₂` | cubic, disc `−23`, sig `(1,1)` | 1 | 1 | 4 | 3 | **1** |
+| `(−2,3,7)` | `ℚ(ξ) × ℚ(η)`, `η` totally real | 1+3 | 1 | 7 | 3 | **4** |
+
+`|P_K| = 3, 4, 7` reproduces `R1`'s `(4₁,5₂) ↦ (3,4)` **from a source independent
+of the A-polynomial** and extends it to a third knot. And the remainder is the
+count of **real embeddings** of the reduced trace algebra: `4₁`'s trace field is
+imaginary quadratic and has none (remainder 0); `5₂`'s disc `−23` cubic has
+exactly one — GZ even name it, the root with zero imaginary part (remainder 1).
+
+**This counts against `H_Ad`, not for it.** `H_floor` now explains the number `3`,
+*predicts* the remainder, and does so with no `𝔰𝔩₂` anywhere. `H_Ad`'s surviving
+distinct content is the Part-3 meridian **grading**, which `H_floor` says nothing
+about. Read them as answering different questions — `H_floor`: why that many;
+`H_Ad`: why that polynomial — rather than as rivals for one.
+
+**Retraction — route (a) as previously stated is wrong.** The earlier text said a
+knot with *more* than 3 boundary-parabolic connections would break `H_floor`. It
+would not: `H_floor`'s core is the universal **floor** `{σ₀, g, ḡ} = 3` for every
+hyperbolic knot, exactly as `H_Ad`'s is `dim 𝔰𝔩₂ = 3`. No third knot separates
+them at the core — now *proved* on all three (`core_is_three_on_all_three`). What
+a third knot actually buys: (i) a second non-degenerate data point against the
+one-observation problem, and (ii) a **one-sided** falsification test of `H_Ad`'s
+*polynomial* claim — if a rank-6 knot's Stokes entries are not built from
+`x+1+x⁻¹`, `H_Ad` breaks while `H_floor`, which makes no polynomial claim, cannot.
+
+**Literature status (measured, not assumed).** All 371 corpus PDFs were text-
+extracted and swept; 47 mention "Stokes". GGM 2012.00062 and GGMW 2111.04763 treat
+**only** `4₁` and `5₂` — GGMW §1.4 is literally "Illustration with the two
+simplest hyperbolic knots"; every `6₁`/`7₂` string in both is a page number.
+Garoufalidis–Zagier 2111.06645 covers `(−2,3,7)` but for *perturbative series and
+quantum modularity*, with two occurrences of "Stokes" and no Stokes matrices. So
+**no `q→0` Stokes matrix for a third hyperbolic knot exists in the corpus**, and
+the `(−2,3,7)` count `7` stands as a *prediction* of `R1`/`H_floor`, not a check.
+
+### Where M3 now stands
+
+**Open, with a named rival.** The live question is no longer "find the extra `5₂`
+ray" (that is `R1`) but **separate `H_Ad` from `H_floor`**. Route (b) — derive the
+meridian grading from Schur–Weyl — is delivered above. Route **(a)** is what
+remains: a *third* knot. A hyperbolic `K` with more than 3 boundary-parabolic
+connections whose `s(x)` core stays `x+1+x⁻¹` would break `H_floor` (whose core
+*is* the connection floor by construction) and leave `H_Ad` standing. GGM covers
+`4₁` and `5₂` only, so this is a **literature ask, not a compute**: published
+`q→0` Stokes constants for a third hyperbolic knot (Gu–Mariño-type data on `6₁` /
+`7₂`). The second remaining piece is unchanged — the extra `5₂` ray is `R1`, so a
+genuine derivation still needs that ray to come out of the Hecke side.
+
+Artifacts: `QOU.QBeta.AdjointIndexSetM3` (core `Int`, `lean`-direct exit 0,
+sorry-free), `computations/probes/aomega_m3_adjoint_index_set.py` (13/13, four
+adversarial). Bean `qou-m3ad`. Nothing wired; `A_ω = 3` remains
+certified-as-GGM-DT-count, conditionally adopted.

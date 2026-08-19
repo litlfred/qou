@@ -329,8 +329,17 @@ import QOU.SchurWeyl.HeckeInclusion
 import QOU.SchurWeyl.HeckeMarkov3
 import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.Irreducibility
+import QOU.SchurWeyl.SytAdmissible
+-- Umbrella gap found by the sibling PR #5282 (`claude/hoefsmit-finish-2026-08-18`):
+-- the general-lambda tree sat OUTSIDE the umbrella's import closure, so nothing
+-- type-checked it here.  HoefsmitRepGeneral pulls SeminormalRep -> TableauCells ->
+-- SeminormalParam transitively; these three are not in that cone and need naming.
+import QOU.SchurWeyl.Orbit3Braid
+import QOU.SchurWeyl.Orbit6Braid
+import QOU.SchurWeyl.HeckeWedderburnData3
 import QOU.SchurWeyl.YoungTableaux
 import QOU.QuantumObservableUniverses.VirtualProjection
 import QOU.QuantumObservableUniverses.QDifferentialGeometry

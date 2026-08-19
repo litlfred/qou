@@ -12,7 +12,11 @@ Verdicts:
   Q0_OK              anchor ∈ {muon,proton} and q0Value matches that anchor's pin
   Q0_FLIP            anchor and q0Value disagree  ← CI-FAILING (the flip)
   Q0_AMBIGUOUS       anchor == "ambiguous" (producer genuinely undetermined)
-  Q0_INDEPENDENT     anchor == "independent" (producer never reads q₀ at all)
+  Q0_INDEPENDENT     anchor == "independent" WITH a q0AnchorReason saying why
+  Q0_INDEPENDENT_NO_REASON
+                     anchor == "independent" but no q0AnchorReason — the claim
+                     is unverifiable without re-deriving the producer's import
+                     cone, which is the work the declaration should have saved
   Q0_ANCHOR_MISSING  no q0Anchor field yet (pre-backfill; not a failure)
   Q0_VALUE_MISSING   anchor present but no q0Value to check
   Q0_AUDIT_EXEMPT    audit/scan/compliance state-tracking witnesses
@@ -101,6 +105,19 @@ def classify(path: Path) -> tuple[str, str]:
                 "anchor=independent but a q0Value is recorded "
                 f"({str(body['q0Value'])[:16]}…) — the producer reads q₀ after all"
             )
+        # The token alone is a thin record. A reader who opens the witness and
+        # finds only `"independent"` has to re-derive the import cone to check
+        # it — the exact work the declaration exists to save. Counted apart so
+        # a thin declaration cannot pass as a complete one; same reasoning that
+        # keeps Q0_INDEPENDENT itself counted beside Q0_ANCHOR_MISSING rather
+        # than letting a declaration shrink the inventory into silence
+        # (bean qou-mw1p, from design advice on PR #5124).
+        if not str(body.get("q0AnchorReason") or "").strip():
+            return "Q0_INDEPENDENT_NO_REASON", (
+                "anchor=independent with no q0AnchorReason — states that q₀ is "
+                "never read, but not why, so the claim cannot be checked "
+                "without re-deriving the import cone"
+            )
         return "Q0_INDEPENDENT", ""
     if anchor not in ("muon", "proton"):
         return "Q0_FLIP", f"unknown anchor {anchor!r}"
@@ -135,7 +152,8 @@ def main(argv: list[str] | None = None) -> int:
             {"witness": wp.name, "detail": detail}
         )
 
-    order = ["Q0_OK", "Q0_AMBIGUOUS", "Q0_INDEPENDENT", "Q0_ANCHOR_MISSING",
+    order = ["Q0_OK", "Q0_AMBIGUOUS", "Q0_INDEPENDENT",
+             "Q0_INDEPENDENT_NO_REASON", "Q0_ANCHOR_MISSING",
              "Q0_VALUE_MISSING", "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR", "Q0_FLIP"]
     n = {k: len(by_verdict.get(k, [])) for k in order}
     n_flip = n["Q0_FLIP"]

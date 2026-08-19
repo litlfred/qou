@@ -206,6 +206,27 @@ the construction is *both* "exists" and "unique" purely axiomatically:
 - `categorical_coordinate_ring_universal_axiom` — `…/categorical-coordinate-ring.lean:120` — `∃! φ, …` (universal property by axiom)
 - `adjoint_exists_unique'` — `…/q-codifferential-formula-prop.lean:90` — `∃! L_star, …`
 
+> **Update 2026-08-16 — two Class-B rows are no longer accurate.** Appended
+> rather than edited: the findings above are a dated snapshot and stay as
+> recorded.
+>
+> - **`QuantumUniverse.exists_instance_axiom` — DELETED.** It is now a theorem,
+>   proved from a concrete witness (`ModuleCat R` with `A = 𝟙`) in
+>   [`QOU/QuantumObservableUniverse/TrivialWitness.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/TrivialWitness.lean).
+>   `#print axioms` reports only `propext`, `Classical.choice`, `Quot.sound`.
+>   The audit's concern was exactly right: the axiom's own docstring claimed a
+>   witness "requires category/monoidal-category instances not yet provided",
+>   and that was false — the instances were provided.
+> - **`QuantumObservableUniverse.exists_instance_axiom` — already gone when
+>   this row was written, or shortly after.** The file has carried a
+>   `theorem … := by sorry` with a `[kassel1995]` citation, not an `axiom`.
+>   A cited `sorry` is a weaker claim than an axiom (it is honestly marked as
+>   unproved rather than assumed), so this row overstated the current state.
+>   Its hypotheses were rewritten 2026-08-16 from `[Field k]` to `[CommRing R]`
+>   plus explicit unit and genericity conditions; the `sorry` is unchanged.
+>
+> Both tracked under bean `qou-fav8`.
+
 ### 4d. Class C — defensible / standard external (lower concern)
 
 Citing an established external theorem as an axiom with `-- Ref:` is the

@@ -88,6 +88,9 @@ DEFAULT_TOLERANCE = 0.30
 # durationMs is the single most diagnostic field for a partial write: a run that
 # was interrupted records the elapsed time *so far*. rho-k showed 2,552,837 -> 519.
 DURATION_COLLAPSE = 0.90
+# Below this, durationMs is rounding noise rather than evidence of a partial
+# write, so the collapse rule does not apply.
+DURATION_FLOOR_MS = 1000.0
 
 
 # Self-describing audit outputs: their payload IS a list of the corpus's
@@ -160,7 +163,15 @@ def compare(before: dict, after: dict, tolerance: float) -> list[str]:
             reasons.append(f"{field} dropped: {b} -> {a}")
 
     b, a = before["durationMs"], after["durationMs"]
-    if isinstance(b, float) and isinstance(a, float) and b > 0:
+    # Floor the rule at DURATION_FLOOR_MS. Below it the field carries no signal:
+    # a witness whose producer ran in 1 ms re-runs at 0 ms purely from rounding,
+    # which trips a relative-drop test every time. The failure mode this rule
+    # exists for is a long run cut off mid-write -- the docstring's own example
+    # is 2,552,837 -> 519 -- so a sub-second `before` cannot be an instance of
+    # it. Measured false positive: habiro-coefficients-oxygen-14 flagged
+    # COLLAPSED on 1 -> 0 while GAINING content (34 -> 35 coefficients, no key
+    # removed), which is the opposite of what the guard reports (qou-0ndb).
+    if isinstance(b, float) and isinstance(a, float) and b > DURATION_FLOOR_MS:
         if a < b * (1.0 - DURATION_COLLAPSE):
             reasons.append(
                 f"durationMs collapsed: {b:,.0f} -> {a:,.0f} "

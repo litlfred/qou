@@ -48,6 +48,8 @@ cross-referenced so they are never conflated again.
 | symbol | meaning | governed here? | where |
 |---|---|---|---|
 | **c_k** | Q_β β-decay **precision-ladder** coefficients: `Q_β = Q_base·∏_k(1 + c_k·u^k)`, `u = b·ℏ_q²` | **YES** (§3) | [`q-beta-c-k-recursion-from-habiro-q-difference.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md), [`appendix-mass-binding-algorithms/`](../../content/quantum-observable-universe/appendix-mass-binding-algorithms/) |
+| **`c̃_k`** | **normalised-series** coefficients of the *same* ladder model: the `u^k` Taylor coefficients of `Φ(u)/Φ(0)`, i.e. of `cos(α−u/2)·∏(1+c_j u^j)` divided by its own value at `u = 0`. Distinct from `c_k` because the cosine factor contributes at every order. `c̃₂ = c₂ − 1/8` **exactly and independently of `α`** (Lean, sorry-free: `QOU.QBeta.normalisedQuadCoeff_eq`) ⇒ at the committed `c₂ = −1`, `c̃₂ = −9/8`. **Both numbers are right**; they are one model read at two normalisations, not a discrepancy — see §9i | **YES** (§9i) | [`LadderCoeffNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean); `qbeta_alpha_eff_ladder_reconciliation_probe.py` (which measured `−9/8`) |
+| **`c₂^even`** | the **bar-even part** of the ladder's quadratic data, exact in `ℚ(√3)`, ≈ `−8.00641` | no — a third object; do **not** read it as either `c₂` or `c̃₂` | `qbeta_c3even_exact_sseries_probe.py`, bean `8we6` |
 | `c_k(n)` | exponents in the cyclotomic expansion `F_n(z) = ∏_k(1 − q^{−k}z)^{−c_k(n)}` | no — different object | [`braids-and-knots/`](../../content/quantum-observable-universe/braids-and-knots/) |
 | `(c_k, d_k)` | eigenvalue-factor **pair** in `χ_sym(β) = ∏_k(c_k q + d_k)` | no — different object | per-block character blocks |
 | **`cl_k`** (was `c_k`) | **cluster / Ursell** coefficients of the many-body expansion, MeV-valued. `cl_3 = −E₀·Δ²g` is the μ₃-door three-body coefficient (`μ₃ > 0 ⟺ Δ²g < 0`); the Borromean H₉ magnitude lift is the same family. **Renamed off `c_k` 2026-08-07** — it sat within ~12 % of the ladder `c_3 = −2` with no signal they were unrelated objects | no — different object | [`2026-08-07-mu3-door-status-consolidated.md`](../audits/2026-08-07-mu3-door-status-consolidated.md), `computations/deltalambda/` |
@@ -63,6 +65,23 @@ cross-referenced so they are never conflated again.
 ## 3. Q_β `c_k` precision ladder — per-rung registry
 
 `Q_β = Q_base · ∏_k (1 + c_k·u^k)`, `u = b·ℏ_q² ≈ 0.00852`, at proton-pinned q₀.
+
+> **Frame declaration (added 2026-08-16, bean `qou-cwin` T2).** Every rung in
+> the table below is in the **`u` frame** (`u = b·ℏ_q²`) and is the **factor**
+> coefficient `c_k`, not the normalised-series `c̃_k` of §2/§9i. A `c_k` number
+> is meaningless without both labels, and the two axes are independent:
+>
+> | axis | this table | the other value you may meet |
+> |---|---|---|
+> | expansion variable | `u = b·ℏ_q²` | `h = q − 1/q` — and `u^k = (b/(q+1)²)^k·h^{2k}` **exactly**, so a `u`-rung of order `k` is an `h`-rung of order `2k` and odd `h`-orders are unreachable from any `u`-ladder ([`LadderFrameChange.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderFrameChange.lean), sorry-free) |
+> | normalisation | explicit factor `(1 + c_k u^k)` | normalised series `Φ(u)/Φ(0)`, whose `c̃₂ = c₂ − 1/8` (§9i) |
+>
+> **A single declaration rather than a per-row column** because all rows are
+> currently in the same frame at the same normalisation — a column repeating
+> `u`/factor seven times carries no information. The discipline this replaces
+> it with: **any row added in a different frame or normalisation must say so in
+> its own cell.** The producer declares the frame mechanically at
+> `qbeta_utils.LADDER_FRAME` (PR #5235), and no rung below has moved.
 
 | rung | status | form / value | residual @ proton q₀ | anchor-stable? | authoritative producer |
 |---|---|---|---|---|---|
@@ -815,3 +834,69 @@ residual of a C-frame extraction; the `h·D(ũ)` bar-split is a separate claim
 from the `ε`-parity verified above and inherits none of its immunity.
 
 Audit: [2026-08-15 KC21 parity convention-immunity](../audits/2026-08-15-kc21-parity-convention-immunity-audit.md).
+
+### 9i. `c₂` vs `c̃₂` — one model, two normalisations, exact offset `1/8` (added 2026-08-16, `qou-f09n` + `qou-cwin` T2)
+
+Three live quantities in this channel were all written `c₂`. Two of them come
+from the **same model read two ways**, and the difference between them was
+reported (by me, on PR #5210) as *"two different ladders … a live
+contradiction"*. **That framing is withdrawn.** Nothing computes wrongly; it
+is a naming defect. Owner ruling (2026-08-16): short distinct names, with the
+tilde marking a different **normalisation of the same object**. (Note this is
+*not* an appeal to the old `w_λ` / `w̃_λ` pairing — the notation register
+retired that one on the same day, because the bare symbol's referent moved.
+The tilde device is fine; the precedent is not available.)
+
+| name | value | what it is | provenance |
+|---|---|---|---|
+| **`c₂`** | `−1` | coefficient of the **explicit factor** `(1 + c₂u²)` | **hardcoded** at [`qbeta_utils.py`](../../computations/qbeta/qbeta_utils.py) `c3_target_at` — definitional, not extracted |
+| **`c̃₂`** | `−9/8` | `u²` coefficient of the **normalised series** `Φ(u)/Φ(0)` | measured by `qbeta_alpha_eff_ladder_reconciliation_probe.py` |
+| **`c₂^even`** | ≈ `−8.00641` | the **bar-even part**, exact in `ℚ(√3)` | `qbeta_c3even_exact_sseries_probe.py`, bean `8we6` |
+
+**The relation is proved, not measured.**
+[`LadderCoeffNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderCoeffNormalisation.lean)
+(sorry-free, `#print axioms` clean, base ring `ℝ` per §7c since `Real.cos` is
+genuinely archimedean):
+
+    c̃₂ = c₂ − 1/8        (`normalisedQuadCoeff_eq`)
+    c₂ = −1  ⇒  c̃₂ = −9/8  (`normalisedQuadCoeff_at_neg_one`)
+
+The `−1/8` is contributed **entirely by the model's cosine factor**, and comes
+from the **half-argument** in `cos(α − u/2)`: the second derivative at `0` is
+`−cos α/4`, so the quadratic Taylor coefficient is `−cos α/8`. The
+`α`-dependence cancels in the normalisation — which is why the offset is a
+clean rational rather than an anchor-dependent quantity, and why this is worth
+a theorem instead of a measurement at one `q`.
+
+**The `c₁` discrepancy is the same defect, not a second one.** The normalised
+series has `c̃₁ = tan(α)/2 ≠ 0` while the #1887 reframe has `c₁ = 0`. The two
+parameterisations do not share a base point (`Φ(0) = cos α ≠ 1`), so their
+coefficients are not the same coefficients.
+
+**Scope.** No number changes and nothing is wired. This gives **no** `c₂`
+value (`−1` remains fixed by construction, not derived), **no** derivation of
+`α` (un-derived in both Markov conventions — §9g), and **no** accuracy claim.
+
+**The owed AGENTS.md item — done 2026-08-16 (owner-authorised), and half my
+diagnosis was wrong.** The `c_k` truncation-order banner said *"`c_2 = −1` is
+PROVED Taylor-exact"*. Bean `qou-f09n` claimed that was wrong on **both**
+halves. Measured, only one half is:
+
+- **"Taylor" is UNDER-SPECIFIED, not false — RETRACTED.** The `u²` coefficient
+  of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂`,
+  trivially, since there is no `k = 1` factor. So `c₂ = −1` **is** a Taylor
+  coefficient — of *that* series. The bean called the normalised-series reading
+  *"the natural reading"*; that was a reading presented as **the** reading. The
+  rule is therefore **say which series**, never delete the word.
+- **"PROVED" is wrong, and stands.** `N2_factor` is a bare `def` in
+  `QBetaCategoricalPrecisionLadder.lean` with **no** theorem deriving it —
+  every use `unfold`s it, and the Kashiwara provenance is a docstring. The Lean
+  identity proves only the re-reading. The banner now says **"structural"**,
+  which is what the source block itself claims and is defensible (no fit, no
+  CODATA, no q₀); the over-compression happened in AGENTS.md, not in the block.
+
+A third banner claim was checked and **left alone**: the `c_3 = −2` gap quoted
+as `3.47 %` is `|−2 − c₃|/2`, while the ladder witness reports `3.3509 %` for
+the same gap normalised by the extracted `c₃`. Neither is stale; neither should
+be "fixed" into the other. That this normalisation trap sits in the same banner
+as the `c₂`/`c̃₂` one is the whole lesson.

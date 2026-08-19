@@ -118,10 +118,13 @@ theorem adjoint_has_no_degree_zero
     [CategoryTheory.MonoidalCategory C]
     (adjointObj : C)
     (adj_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)) :
-    -- The adjoint vanishing implies: all morphisms 𝟙 → Ad(A) are equal
-    -- (i.e., there is at most one such morphism — the zero morphism in
-    -- a k-linear category).  This means the degree-0 (symmetric) component
-    -- of Ad(A) is trivial.
+    -- ⚠ The conclusion is the HYPOTHESIS, verbatim: this is a `P → P`, and
+    -- the trailing claim that it shows "the degree-0 (symmetric) component of
+    -- Ad(A) is trivial" is NOT proved here.  `adjointObj` is a bare `C` with
+    -- no graded structure, so it has no `symComponent` for the statement to be
+    -- about.  `GradedFrobeniusHopf` does carry one — the real statement is
+    -- expressible, but only once the adjoint object carries the grading too.
+    -- Bean `qou-fav8`.
     Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
   adj_vanishing
 

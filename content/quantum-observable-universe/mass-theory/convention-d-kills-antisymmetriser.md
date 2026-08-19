@@ -31,11 +31,13 @@ $\chi(1) = (1,2,1)$, $\chi(\sigma) = (q,\; q-r,\; -r)$,
 $\chi(\sigma_0\sigma_1) = (q^{2},\, -1,\, r^{2})$, the three normalisations read
 
 ```tex
+\[
 \begin{aligned}
   y_{(3)} + 2y_{(2,1)} + y_{(1^3)} &= 1, \\
   q\,y_{(3)} + (q-r)\,y_{(2,1)} - r\,y_{(1^3)} &= z, \\
   q^{2}y_{(3)} - y_{(2,1)} + r^{2}y_{(1^3)} &= z^{2}.
 \end{aligned}
+\]
 ```
 
 Eliminating $y_{(3)}$ and $y_{(2,1)}$ and clearing inverses with $qr = 1$ leaves the

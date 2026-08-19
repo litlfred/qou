@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Order.WellFounded
 import Mathlib.Data.List.Lex
 import Mathlib.Data.Fin.Basic
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -27,28 +28,87 @@ def DegLex [LT α] (w w' : List α) : Prop :=
   w.length < w'.length ∨
   (w.length = w'.length ∧ List.Lex (· < ·) w w')
 
-/-- DegLex on `List (Fin n)` is well-founded.
+/-- Base-`n` positional encoding of a word over `Fin n`:
+    `encode [a₀, a₁, …, a_{k-1}] = Σᵢ aᵢ · n^(k-1-i)`.
 
-    Strategy: embed into `ℕ ×ₗ List (Fin n)` via `w ↦ (w.length, w)`.
-    The lexicographic product of two well-founded relations is
-    well-founded. -/
+    This is the arithmetic stand-in for lexicographic comparison **at fixed
+    length**, and it is what makes `degLex_wellOrdered` provable. -/
+def encode {n : ℕ} : List (Fin n) → ℕ
+  | [] => 0
+  | a :: l => a.val * n ^ l.length + encode l
+
+/-- A word of length `L` encodes strictly below `n^L` — the carry bound that
+    keeps the leading digit dominant. -/
+theorem encode_lt {n : ℕ} (w : List (Fin n)) : encode w < n ^ w.length := by
+  induction w with
+  | nil => simp [encode]
+  | cons a l ih =>
+      have han : a.val + 1 ≤ n := a.isLt
+      have key : encode (a :: l) < n ^ (l.length + 1) :=
+        calc encode (a :: l)
+            = a.val * n ^ l.length + encode l := rfl
+          _ < a.val * n ^ l.length + n ^ l.length := add_lt_add_left ih _
+          _ = (a.val + 1) * n ^ l.length := by ring
+          _ ≤ n * n ^ l.length := mul_le_mul_right' han _
+          _ = n ^ (l.length + 1) := by ring
+      simpa using key
+
+/-- **At equal length, `List.Lex` is exactly `encode`-order.**
+
+    This is the step the previous proof was missing. It cannot be replaced by
+    a well-foundedness fact about `List.Lex` itself, because `List.Lex (· < ·)`
+    on `List (Fin n)` is **not** well-founded for `n ≥ 2`:
+    `[0,1] > [0,0,1] > [0,0,0,1] > …` descends forever. Restricting to equal
+    length is what rules those chains out, and `encode` is what converts the
+    restricted relation into `<` on `ℕ`. -/
+theorem encode_lt_of_lex {n : ℕ} {w w' : List (Fin n)}
+    (hlex : List.Lex (· < ·) w w') :
+    w.length = w'.length → encode w < encode w' := by
+  induction hlex with
+  | nil => intro h; simp at h
+  | @cons a l₁ l₂ _ ih =>
+      intro h
+      have hlen : l₁.length = l₂.length := by simpa using h
+      have hrec := ih hlen
+      show a.val * n ^ l₁.length + encode l₁ < a.val * n ^ l₂.length + encode l₂
+      rw [hlen]
+      exact add_lt_add_left hrec _
+  | @rel a l₁ b l₂ hab =>
+      intro h
+      have hlen : l₁.length = l₂.length := by simpa using h
+      have hb : a.val + 1 ≤ b.val := hab
+      show a.val * n ^ l₁.length + encode l₁ < b.val * n ^ l₂.length + encode l₂
+      calc a.val * n ^ l₁.length + encode l₁
+          < a.val * n ^ l₁.length + n ^ l₁.length := add_lt_add_left (encode_lt l₁) _
+        _ = (a.val + 1) * n ^ l₁.length := by ring
+        _ ≤ b.val * n ^ l₁.length := mul_le_mul_right' hb _
+        _ = b.val * n ^ l₂.length := by rw [hlen]
+        _ ≤ b.val * n ^ l₂.length + encode l₂ := Nat.le_add_right _ _
+
+/-- **DegLex on `List (Fin n)` is well-founded.**
+
+    Embed into `ℕ ×ₗ ℕ` via `w ↦ (w.length, encode w)`. Both components are
+    `<` on `ℕ`, so `WellFounded.prod_lex` applies.
+
+    The earlier proof embedded into `ℕ ×ₗ List (Fin n)` and appealed to
+    well-foundedness of `List.Lex` in the second slot. That is **false**
+    (see `encode_lt_of_lex`), so the route could not be repaired by fixing a
+    name — the second component has to be replaced by something that really
+    is well-founded, which is what `encode` provides. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
 theorem degLex_wellOrdered (n : ℕ) :
     WellFounded (DegLex (α := Fin n)) := by
-  -- DegLex is a subrelation of the inverse image of the lexicographic
-  -- product `Prod.Lex (· < ·) (List.Lex (· < ·))` under `w ↦ (w.length, w)`,
-  -- and the latter is well-founded.
   have hwf : WellFounded
-      (InvImage (Prod.Lex (· < ·) (List.Lex (· < ·)))
-        (fun w : List (Fin n) => (w.length, w))) :=
-    InvImage.wf _ (Prod.lex_wf Nat.lt_wfRel.wf List.wellFoundedLT.wf)
+      (InvImage (Prod.Lex (· < ·) (· < ·))
+        (fun w : List (Fin n) => (w.length, encode w))) :=
+    InvImage.wf _ (Nat.lt_wfRel.wf.prod_lex Nat.lt_wfRel.wf)
   apply Subrelation.wf _ hwf
   intro w w' h
   rcases h with h | ⟨he, hl⟩
   · exact Prod.Lex.left _ _ h
   · simp only [InvImage]
     rw [he]
-    exact Prod.Lex.right _ hl
+    exact Prod.Lex.right _ (encode_lt_of_lex hl he)
 
 /-- Admissibility (length component): concatenation preserves
     the length ordering. -/
@@ -58,8 +118,29 @@ theorem degLex_admissible_length {α : Type*} [LT α]
     (u ++ w ++ v).length < (u ++ w' ++ v).length := by
   simp [List.length_append]; omega
 
+/-- Appending a common **suffix** preserves `List.Lex`, provided the two
+    words have equal length.
+
+    Mathlib supplies only the common-*prefix* direction
+    (`List.Lex.append_left`); there is no suffix lemma, and the suffix
+    statement is **false** without the length hypothesis: with
+    `w = []`, `w' = [0]`, `v = [1]` we have `Lex (· < ·) [] [0]` by
+    `Lex.nil`, yet `Lex (· < ·) [1] [0, 1]` fails — the heads `1` and `0`
+    are unequal and `1 < 0` is false.  Equal length rules that case out:
+    the `Lex.nil` constructor forces `w = []` and `w' ≠ []`, which
+    contradicts `hlen`.  The remaining two constructors carry the suffix
+    through unchanged. -/
+-- Ref: [manuscript] §2/braiding-induced-ordering
+theorem lex_append_suffix {α : Type*} {R : α → α → Prop} :
+    ∀ {w w' : List α}, List.Lex R w w' → w.length = w'.length →
+      ∀ v : List α, List.Lex R (w ++ v) (w' ++ v)
+  | _, _, List.Lex.nil, hlen, _ => by simp at hlen
+  | _, _, List.Lex.cons h, hlen, v =>
+      List.Lex.cons (lex_append_suffix h (by simpa using hlen) v)
+  | _, _, List.Lex.rel h, _, _ => List.Lex.rel h
+
 /-- Admissibility (lex component): concatenation with a common
-    prefix preserves the lex ordering. -/
+    prefix and a common suffix preserves the lex ordering. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
 theorem degLex_admissible_lex {α : Type*} [LT α]
     (u v w w' : List α) (h : List.Lex (· < ·) w w')
@@ -68,7 +149,7 @@ theorem degLex_admissible_lex {α : Type*} [LT α]
   induction u with
   | nil =>
     simp only [List.nil_append]
-    exact List.append_left h v
+    exact lex_append_suffix h hlen v
   | cons a us ih =>
     simp only [List.cons_append]
     exact List.Lex.cons ih

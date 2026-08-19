@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T13:41:44.677997+00:00",
-  "commitSha": "da9fa2e0629916497b6ce92796641549c2c5ec65",
+  "computedAt": "2026-08-19T07:21:36.999717+00:00",
+  "commitSha": "4e867031980a1ce6b9fac830796126266fa331f8",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,6 +19,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -26,7 +27,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1339,
+    "files_scanned": 1343,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +41,7 @@
       "P15": 291,
       "P16": 638,
       "P21": 25,
-      "P30": 176,
+      "P30": 178,
       "P31": 6
     },
     "top_files": [
@@ -576,6 +577,13 @@
         "line": 381,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "alpha_5_lp_dual_crystal_closed_form.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P16",
@@ -5746,6 +5754,13 @@
       {
         "pattern": "P30",
         "file": "mpf_float_source_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "mpf_mixed_arithmetic_audit.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."

@@ -1,0 +1,33 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_program_convention_immunity_probe",
+ "engine": "python3-sympy-exact",
+ "scriptFile": "gswz_program_convention_immunity_probe.py",
+ "commitSha": "afb460ca13e06cccc8adb082c033e8f5f500a516",
+ "beans": [
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "owner ruling docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md; template docs/audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md; AGENTS.md c_k banner",
+ "checks": {
+  "no_markov_or_gram_layer_imported": true,
+  "no_trace_parameter_reference": true,
+  "no_substrate_anchor_reference": true,
+  "candidates_are_integer_laurent_in_q": true,
+  "c3_two_forms_still_identical": true,
+  "control_z_is_not_integer_laurent": true,
+  "control_detector_fires_on_planted_text": true
+ },
+ "result": {
+  "programme_probe_count": 20,
+  "trace_layer_hits": [],
+  "trace_parameter_hits": [],
+  "substrate_anchor_hits": [],
+  "classification": {
+   "epsm_descent_chain_addenda_17_18_21_25": "VALID-immune (no q, no z, no anchor)",
+   "ck_membership_gates_addendum_19": "VALID-immune (exact Laurent/cyclotomic arithmetic)",
+   "ck_candidate_provenance_addendum_19": "C-CONDITIONAL \u2014 the identification of J_Hopf and [2]_q as the corpus's named c_k / alpha_EM candidates comes from the C-frame ladder (qou-cds1); the gate verdicts are unaffected"
+  }
+ },
+ "scope": "scope-(a): MEASURED convention- and anchor-immunity of the eps_m/GSWZ programme (no Markov/Gram layer, no trace parameter, no substrate anchor; the q that appears is the quantum variable and the candidates are integer Laurent elements). Standing gate: it fires if a z- or anchor-dependent input is ever wired in. Does NOT claim the c_k ladder survives convention D (that is qou-cds1); flags the single C-CONDITIONAL item in my merged wording \u2014 the provenance label on the c_k candidates, not the gate verdicts."
+}

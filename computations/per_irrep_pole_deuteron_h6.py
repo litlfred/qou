@@ -38,6 +38,29 @@ word the maximizer is (4,2) at 46, and Path A is **inconclusive** at A=2
 (46 != predicted 40).  See
 `docs/audits/2026-08-16-chi-cache-drain-and-the-y-lambda-zero-saving.md`.
 Do not restore the old claim from git history without re-deriving it.
+
+MAIN'S q0-ANCHOR ANALYSIS, PRESERVED (commit 0f50c3d2, bean qou-kx04). While
+this shim was on a branch, main declared this stem's anchor on the version that
+still emitted:
+
+    q0Anchor: "ambiguous" — the manifest lists this stem under `ambiguous`
+    (both pin signatures present). q0 IS reachable — a 19-module import cone via
+    hoefsmit_symbolic / hecke_core / mass_at_3A_proper — so this is not q0-free,
+    it is q0-*undetermined*. No q0Value, because there is no single pin to
+    record and writing one would claim a ruling nobody has made. Bean qou-pin1
+    reached for `independent` here and was right to settle instead.
+
+That reasoning is correct and is kept for whoever rules on it. The DECLARATION
+is moot under delegation: this stem no longer emits a witness, so it has no
+anchor to stamp — `per_irrep_pole_atom.py` emits, and stamps its own. The open
+question main identified (which pin the H_6 per-irrep pole extraction actually
+evaluates at) is NOT answered here and survives on the atom producer.
+
+Note the interaction: main's version writes `per-irrep-pole-deuteron-h6`, a
+witness whose committed copy records `scriptFile: per_irrep_pole_atom.py`, with
+three fewer `data.*` fields. `WitnessBuilder._check_producer_takeover` now
+REFUSES that write. So main's version and this branch's guard are incompatible
+at runtime, and the shim is what reconciles them.
 """
 from __future__ import annotations
 

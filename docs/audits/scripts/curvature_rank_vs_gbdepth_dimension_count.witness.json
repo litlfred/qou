@@ -1,0 +1,157 @@
+{
+  "schema": "qou-audit-probe/v1",
+  "question": "Can the Coxeter-length filtration F_l = span{T_w : l(w) <= l} carry the partition grading Z^(k) = span{e_lambda : gbDepth(lambda) = k} that four content blocks read off prop:curvature-rank-gb-stratification?",
+  "retraction": "This probe retracts my own claim (PR #5205, bean wpdb) that the word-side rank is probably not well defined on the quotient. mba-step07-gb-filtration.md defines the filtration by Coxeter length on S_n, which is well defined by Matsumoto. The objection does not apply.",
+  "necessary_condition": "#{lambda |- n : gbDepth = k} <= #{w in S_n : l(w) = k} for all k, since the e_lambda are linearly independent and the T_w are a basis",
+  "verdict": "fails at n = 2 and n = 3; holds for 4 <= n <= 7",
+  "fails_at": [
+    2,
+    3
+  ],
+  "why_it_matters": "n = 3 is the single-nucleon case -- H_3 is where the framework's m_p / m_n results live. gbDepth is constant (= 3) on all three partitions of 3, so the reading needs dim gr_3 >= 3, but only the longest element of S_3 has length 3, so dim gr_3 = 1.",
+  "scope": "Scope-(b) where it fails -- a subspace cannot exceed the dimension of its ambient space, so this is a proved exclusion of the charitable reading of the identification, not a failed probe. It is NOT a refutation of the mass results, and other readings of Z^(k) are untouched.",
+  "rows": [
+    {
+      "n": 2,
+      "length_distribution": {
+        "0": 1,
+        "1": 1
+      },
+      "gbDepth_distribution": {
+        "2": 2
+      },
+      "violations": [
+        {
+          "k": 2,
+          "dim_Z_k_required": 2,
+          "dim_gr_k_available": 0,
+          "shortfall": 2
+        }
+      ],
+      "condition_holds": false
+    },
+    {
+      "n": 3,
+      "length_distribution": {
+        "0": 1,
+        "1": 2,
+        "2": 2,
+        "3": 1
+      },
+      "gbDepth_distribution": {
+        "3": 3
+      },
+      "violations": [
+        {
+          "k": 3,
+          "dim_Z_k_required": 3,
+          "dim_gr_k_available": 1,
+          "shortfall": 2
+        }
+      ],
+      "condition_holds": false
+    },
+    {
+      "n": 4,
+      "length_distribution": {
+        "0": 1,
+        "1": 3,
+        "2": 5,
+        "3": 6,
+        "4": 5,
+        "5": 3,
+        "6": 1
+      },
+      "gbDepth_distribution": {
+        "3": 1,
+        "4": 4
+      },
+      "violations": [],
+      "condition_holds": true
+    },
+    {
+      "n": 5,
+      "length_distribution": {
+        "0": 1,
+        "1": 4,
+        "2": 9,
+        "3": 15,
+        "4": 20,
+        "5": 22,
+        "6": 20,
+        "7": 15,
+        "8": 9,
+        "9": 4,
+        "10": 1
+      },
+      "gbDepth_distribution": {
+        "4": 2,
+        "5": 5
+      },
+      "violations": [],
+      "condition_holds": true
+    },
+    {
+      "n": 6,
+      "length_distribution": {
+        "0": 1,
+        "1": 5,
+        "2": 14,
+        "3": 29,
+        "4": 49,
+        "5": 71,
+        "6": 90,
+        "7": 101,
+        "8": 101,
+        "9": 90,
+        "10": 71,
+        "11": 49,
+        "12": 29,
+        "13": 14,
+        "14": 5,
+        "15": 1
+      },
+      "gbDepth_distribution": {
+        "4": 2,
+        "5": 3,
+        "6": 6
+      },
+      "violations": [],
+      "condition_holds": true
+    },
+    {
+      "n": 7,
+      "length_distribution": {
+        "0": 1,
+        "1": 6,
+        "2": 20,
+        "3": 49,
+        "4": 98,
+        "5": 169,
+        "6": 259,
+        "7": 359,
+        "8": 455,
+        "9": 531,
+        "10": 573,
+        "11": 573,
+        "12": 531,
+        "13": 455,
+        "14": 359,
+        "15": 259,
+        "16": 169,
+        "17": 98,
+        "18": 49,
+        "19": 20,
+        "20": 6,
+        "21": 1
+      },
+      "gbDepth_distribution": {
+        "5": 4,
+        "6": 4,
+        "7": 7
+      },
+      "violations": [],
+      "condition_holds": true
+    }
+  ]
+}

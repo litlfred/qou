@@ -61,6 +61,7 @@ wrong reduction would break the member rows).
 """
 
 import json
+import pathlib
 import sys
 from fractions import Fraction
 
@@ -270,7 +271,7 @@ witness = {
         "untouched: this is element-level arithmetic only."
     ),
 }
-with open("computations/probes/ck_membership_payoff_run.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "ck_membership_payoff_run.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

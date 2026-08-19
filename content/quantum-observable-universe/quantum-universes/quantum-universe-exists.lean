@@ -1,4 +1,5 @@
 import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.QuantumObservableUniverse.TrivialWitness
 
 
 /-!
@@ -16,23 +17,31 @@ LaTeX: `\label{prop:quantum-universe-exists}`
 
 namespace QOU
 
-/-- **External axiom (§3b-cond pattern): QuantumUniverse.exists_instance.**
+universe w
 
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor: a concrete witness (R-Mod or
-    Rep(SU_q(2))) requires category/monoidal-category instances not yet
-    provided. Ref: [kassel1995] Quantum Groups, §XI. -/
--- Ref: [kassel1995] Quantum Groups, §XI
-axiom QuantumUniverse.exists_instance_axiom (k : Type*) [Field k] :
-    Nonempty (QuantumUniverse k)
+/-- **Existence of a quantum universe over a commutative ring `R`.**
 
-/-- **Existence of a quantum universe over a base field `k`.**
+    **This was an `axiom` until 2026-08-16.**  The axiom's own docstring named
+    the witness — *"a concrete witness (R-Mod or Rep(SU_q(2))) requires
+    category/monoidal-category instances not yet provided"* — and that turned
+    out to be false: the instances are provided.  `ModuleCat R` with `A = 𝟙`
+    discharges every field, so the claim is now a theorem and the axiom is
+    retired.
 
-    Records the claim that a `QuantumUniverse k` term exists for every
-    field `k`, discharged via the external axiom above. -/
--- Ref: [kassel1995] Quantum Groups, §XI
-theorem QuantumUniverse.exists_instance (k : Type*) [Field k] :
-    Nonempty (QuantumUniverse k) :=
-  QuantumUniverse.exists_instance_axiom k
+    Built in
+    [`QOU/QuantumObservableUniverse/TrivialWitness.lean`](../lean/QOU/QuantumObservableUniverse/TrivialWitness.lean);
+    `#print axioms` reports only `propext`, `Classical.choice`, `Quot.sound`.
+
+    Note the hypothesis weakened from `[Field k]` to `[CommRing R]` — the
+    witness never needed a field, matching `def:quantum-universe`, which asks
+    for an `R`-linear category over a commutative ring.
+
+    This does **not** extend to `QuantumObservableUniverse`: at `A = 𝟙` the
+    augmentation ideal vanishes, so `adjoint_nontrivial` fails.  QOU existence
+    still rests on its own cited `sorry`. -/
+-- Ref: [manuscript] §1-quantum-universes/quantum-universe-exists
+theorem QuantumUniverse.exists_instance (R : Type w) [CommRing R] :
+    Nonempty (QuantumUniverse.{w + 1, w, w, w, w} R) :=
+  QOU.TrivialWitness.nonempty_quantumUniverse R
 
 end QOU

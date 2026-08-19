@@ -149,7 +149,15 @@ def main() -> int:
     # default would assert a pin the compute never read. Via save(extra=...)
     # and NOT add_data(), which nests under `data` where the audit reading
     # body["q0Anchor"] cannot see it. No q0Value — one here is a Q0_FLIP.
-    wb.save({"q0Anchor": "independent"})
+    wb.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "SnapPy cusp/slope geometry only — hyperbolic invariants of the "
+            "cross-knot census, computed from the manifolds themselves. No "
+            "substrate value is read; the 3-module import cone reaches "
+            "neither q_parameter nor qou_substrate.constants."
+        ),
+    })
 
     ok = ok_41 and ok_52 and ok_vol
     print(f"\n  RESULT: {'HARDENED — literature recall confirmed' if ok else 'MISMATCH — see above'}")

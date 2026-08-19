@@ -66,8 +66,11 @@ $$
 | $1$ ppQ ($10^{-15}$) | $7$ |
 
 **Coefficient tier (read with the truncation order).** The $c_k$ carry a
-provenance tier: $c_2 = -1$ is **proved** Taylor-exact (q$_0$-stable at
-compute precision); $c_k$ for $k \geq 3$ are at present **structural
+provenance tier: $c_2 = -1$ is **structural** — the exact $u^2$ coefficient
+of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, hence trivially
+q$_0$-independent. It is not **proved**: the Lean re-reads the $N{=}2$ factor
+rather than deriving it. And it is Taylor-exact *for that series* — the
+normalised series (cosine factor inside) has $\tilde c_2 = c_2 - 1/8 = -9/8$; $c_k$ for $k \geq 3$ are at present **structural
 near-matches** — their empirical value swings with the $q_0$ anchor
 (e.g. $c_3$: $-2.010$ at the muon-pin $q_0$, $-2.069$ at the $m_p$-pin
 $q_0$), so they are not yet Taylor-exact derivations. A near-match that

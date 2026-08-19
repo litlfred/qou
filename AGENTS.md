@@ -653,6 +653,47 @@ carry the value as `mpmath.mpf` from its source and serialize with
 `_precision.fmt`. Adding a file to `raw-float64-baseline.json`, `--rebaseline`,
 or hand-editing a number defeats the mechanism. Baselines drain, never grow.
 
+**PROBES ARE NOT EXEMPT. "It emits no witness" is not an exemption (STRICT,
+owner directive 2026-08-18).** A probe is a `computations/` script and is
+covered by every gate above. The reasoning *"no witness by design, so precision
+does not matter"* is **wrong and is banned** — it inverts the actual risk. A
+witness is a number that gets re-derived; a probe conclusion is an **argument**
+that gets written into a bean, an audit doc, a PR body and a content block,
+where nothing re-derives it. Float64 in a probe corrupts *analysis*, which is
+the expensive kind of wrong.
+
+Concretely, in any `computations/` script including probes:
+
+1. **Never compute in `float`.** Carry `mpmath.mpf` end to end. `float(x)` is
+   permitted **only** inside an f-string for display, and even then prefer
+   `mp.nstr`. `hf = float(G.h)` followed by arithmetic against it is a
+   computation, not a display, and is a defect.
+2. **Never aggregate with `statistics` / `math` over floats.** `st.mean`,
+   `st.pstdev`, `math.sqrt`, `sum()` over a list of `float` all accumulate
+   error across a large sample. Use `mpmath` equivalents, or `Fraction` when
+   the quantity is exact.
+3. **A float64 input poisons the whole result.** If a probe reads a float64
+   table (e.g. `pyhecke.trace.TR_M`), the output resolves to ~1e-16 **no matter
+   what is true**. Do not "note it as a limitation" and ship — either find the
+   exact-arithmetic route (symbolic `ℚ(q)`, `Fraction`, the NF/GS basis over an
+   exact ring) or state that the question is **unanswered**, not answered with a
+   caveat.
+4. **Never report a float64 agreement as "exact", "identical", or "to N
+   digits".** Agreement at 1e-16 in float64 is the *floor* of the arithmetic,
+   not evidence about the mathematics. The honest phrasing is "agrees to the
+   limit of the arithmetic used, which cannot distinguish X from Y".
+5. **Run [`scripts/precision-gates.sh`](scripts/precision-gates.sh) before
+   committing a probe**, exactly as for a producer. `--changed` makes it cheap.
+
+History: added 2026-08-18 after an agent shipped eight probes on the L2 binding
+axis with `float(G.h)` in the Coulomb-charge arithmetic and `statistics.mean`
+over 3519 float64 rows, and — the case that prompted the directive — ran a
+Markov-trace multiplicativity test against the **float64** `TR_M` table, wrote
+"the product formula is exact ... interleaved − product = 7.4e-17", and recorded
+the float64 resolution as a scope caveat rather than as a reason the test could
+not answer the question. The owner had asked for no-float multiple times before
+this.
+
 **Render-QA gate for math-bearing `.md` (STRICT, 2026-06-30).** Any commit
 that creates or edits a `.md` content block containing math (`$…$`,
 `$$…$$`, or fenced ` ```tex ` blocks) **must** be render-QA'd before commit
@@ -666,7 +707,43 @@ the pipeline render where available
 `\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
 `\mathrm{}`); no line starting with `+`/`-`/`*` inside `$$…$$` (markdown
 list-parser hijack); align-family environments (`aligned`, `align`) fenced as
-` ```tex `, not inline `$$`. Then run the **expository pass**: every symbol
+` ```tex `, not inline `$$`.
+
+> **Fencing an align-family env is only HALF the rule — the other half
+> is build-fatal (2026-08-16).** `aligned`/`gathered`/`split`/`cases`/
+> the matrix family/`array` are **inner** environments: legal only
+> *inside* math mode. A ` ```tex ` fence is raw passthrough, so a fence
+> that opens directly with `\begin{aligned}` lands in horizontal mode
+> and aborts pdflatex — `! Package amsmath Error: \begin{aligned}
+> allowed only in math mode` plus two `! Missing $ inserted`, three
+> errors from one slip. Wrap it in `\[ … \]`, or use the **outer**
+> `align`/`gather` form. This is now the mechanical criterion
+> **`render-math-mode-envelope`** (severity critical) — run
+> `qa-sweep … --only render-math-mode-envelope` rather than grepping by
+> hand: `\begin{align` is a *prefix* of `\begin{aligned}`, so the
+> obvious guard matches the very thing it should catch (a scan written
+> that way reported 0 hits against a true 2). Recurring class — fixed in
+> `afdf60d667`, returned in two further blocks.
+>
+> **Companion rule — unicode.** *"Unmapped" ≠ "crashes"*: LaTeX's own
+> `utf8.def` declares a large set, so `↑` is fine while `∇`/`ˣ` abort.
+> Inline **and** fenced code are transliterated as of
+> folio-assistant#129, so the residual risk is a crash-class char in
+> plain **prose** or a `.ts` **`title:`**, where nothing transliterates.
+>
+> **A char can be safe in prose and still break in math — the two
+> questions are separate.** "Crash-class" above is about chars `utf8.def`
+> never declares at all. A char it *does* declare can still fail, because
+> what it declares may be **text-mode only**: every accented Latin letter
+> maps to a text accent (`ï` → `\"i`), and `\"` is invalid in math. So
+> `naïve` in prose is fine while `$y^{\mathrm{naïve}}$` emits *"Command
+> `\"` invalid in math mode"* and then **drops the glyph** — a hole in the
+> typeset page, from markdown that looks correct. Fixed at the preamble as
+> of folio-assistant#129 (`\unitextsafe`, U+00C0–U+017F, all 161 verified
+> in text *and* math), so no authoring rule is needed for accented names —
+> recorded because the fix is easy to undo by "tidying" the block away.
+
+Then run the **expository pass**: every symbol
 and term is introduced before first use, and no symbol is silently reused for
 two meanings (e.g. `λ = ln q` vs the partition `λ ⊢ n`; rename one). When the
 pipeline render cannot run (e.g. the `folio-assistant` clone is firewalled in
@@ -1059,7 +1136,15 @@ When working on math-affecting code or content, **trace the change to a step in 
 > `m_p = 2·(m_μ·F_Bor − 6·m_e)`, `m_μ = m_e·Vol(4₁)/ℏ_q²`, `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` → **m_p ≈ 938.27, m_n ≈ 939.56 (CODATA)**. The `c_q²` belongs in the **muon** anchor `Vol(4₁)`, then dressed by the *dimensionless* `F_Bor` — not on `Vol(𝓑₃)`.
 > **Route every absolute nucleon/atom mass through the single facade [`computations/canonical_mass.py`](computations/canonical_mass.py)** (`proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev`). `mass_vol_density` / `vol_density_borromean` / `linking_weight_family_a` (=λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (scale cancels). Read first: [`docs/canonical-mass-formula-guardrail.md`](docs/canonical-mass-formula-guardrail.md). Why it recurred: this very banner read with `K=𝓑₃` *is* the wrong form — that's the trap the facade closes.
 
-> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is PROVED Taylor-exact; `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` swings up to 3.47 % at m_p-pin q₀ (≈ 3 % cross-anchor)), with the N=4 → N=5 non-monotonicity as the experimental signature. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
+> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is **structural** — no fit, no CODATA, no q₀ (see the correction immediately below, which restates two halves of this sentence's earlier wording); `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` is 3.47 % from the extracted `c_3` at m_p-pin q₀ — **or 3.35 %, the same gap normalised by the extracted value rather than by `-2`; see below**), with the N=4 → N=5 non-monotonicity as the experimental signature.
+>
+> **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
+>
+> 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
+>    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −8.006`) are separated in §2 and in the notation register.
+>    - **"PROVED" IS wrong.** The Lean is `1 − b²ℏ⁴ = 1 − (bℏ²)²`, a one-line `ring` identity: it proves only that *re-reading* the N=2 factor in the ansatz form yields `−1`. Corpus-grepped: `N2_factor` is a bare `def` with **no** theorem deriving it — every use in `QBetaCategoricalPrecisionLadder.lean` merely `unfold`s it, and its provenance ("Kashiwara `f̃_1†f̃_1`") lives in a docstring. **"Structural" is the defensible word** (no fit, no CODATA, no q₀) and is what the source block itself claims; the compression to "PROVED" happened here, not there.
+> 2. **"`N` is the truncation order chosen by target precision" does not describe the canonical producer.** `qbeta_ck_cache.py` extracts **one** rung by inverting the target; the residual at the next rung is then **exactly zero**, not merely below tolerance, so its guard fires and `c_4 … c_7` are **never computed** (`QOU.QBeta.greedy_rung_exact` / `greedy_later_rungs_vanish`, sorry-free). Whether some abstract ladder converges is a separate question this does not settle; the point is that no `N` is being *chosen* by an `ε` anywhere in the producer.
+> 3. **The "3.47 %" is NOT stale — I checked, expecting it to be.** It is `|−2 − c₃|/2 = 3.4671 %`; the ladder witness's own `err_pct` field reports `3.3509 %`, which is the **same gap** normalised by the extracted `c₃ = −2.06934258` instead. Do **not** "fix" either number into the other. That this trap sits in the same banner as defect 1 is the point: **a quantity differing only by normalisation, mistaken for a discrepancy, is the exact error class this correction is about.** The cross-anchor swing quoted as "≈ 3 %" measures **2.3748 %** (proton-normalised; 2.4571 % normalised by the candidate `-2`). That "≈ 3 %" traces to a **superseded** muon `c_3 = -2.0097` (pre-#1422; today's is `-2.02020024`), and the corpus's `2.98 %` / `2.88 %` are that one stale gap under the two normalisations — resolved in [`qbeta_c3_crossanchor_swing_provenance_probe.py`](computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py) (3/3). Verdict unaffected. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
 >
 > **🛑 CONVENTION LABEL (2026-08-15 ruling) — every number in this banner is
 > CONVENTION-C-frame.** `c_2 = -1`, `c_3 = -2 = J_Hopf(q=1)`, the 3.47 % swing,
@@ -1102,7 +1187,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 2/7 met (m_e, m_K/m_π) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1126,9 +1211,20 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` landed it on CODATA to 0.0004 ppb. That
   tower was a muon-era fit left applied to the proton-pinned q₀ (a live
   +242 ppb regression) and was **dropped**; the honest documented-pin
-  round-trip is +1.35 ppb, a ~437× miss. So the authoritative count is now
-  **2/7** (m_e, m_K/m_π), per `beats_100x_count=2`. Full analysis:
+  round-trip is +1.35 ppb, a ~437× miss. Full analysis:
   [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
+- **🛑 The authoritative count is 1/5 SCOREABLE, not 2/7 (corrected
+  2026-08-18).** `beats_100x_count = 2` counts **calibration inputs**
+  alongside predictions. The dashboard already excludes `m_p` from scoring
+  as an anchor round-trip ("the framework content cancels"), but **scores
+  `m_e`**, whose `err_ppb` is not measured but *defined* zero — `m_e` is the
+  CAL-1 input that fixes the MeV unit, so its ratio to itself is 1 by
+  construction. That is the same argument `m_p` is excluded for, only
+  stronger. Separating inputs from predictions, **1 of 5 scoreable
+  predictions meets L2, and it is `m_K/m_π`** — the only *ratio* among the
+  five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
+  **never** bare `beats_100x_count`. Full analysis:
+  [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
@@ -1373,9 +1469,14 @@ muon; muon-anchor → ~4000σ on proton).
    prediction (963.6×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
    value ≈ CODATA computed at the muon q₀ is the CAL-2 calibration
    tautology ("equality by construction"), **not** an accuracy win.
-   The canonical L2 count is **2/7** (m_e, m_K/m_π) since 2026-07-04
-   (m_p dropped when its fitted Habiro tower was removed — de-fitted
-   round-trip +1.35 ppb, ~437× miss); **not** 3/7 or 4/7.
+   **The same rule applies at CAL-1, and was not being applied.** `m_e` is
+   the CAL-1 input that fixes the MeV unit; its `err_ppb` is *defined*
+   zero, not measured. Scoring it as a "beat" is the identical tautology
+   this rule forbids one line above. The canonical L2 count is therefore
+   **1/5 scoreable** — `m_K/m_π` alone — **not** 2/7, and not 3/7 or 4/7.
+   Quote `beats_100x_scoreable` / `scoreable_total`; `beats_100x_count = 2`
+   is retained in the witness for consumer compatibility and **must not be
+   quoted as an accuracy result** (corrected 2026-08-18).
 2. **Two q₀ live in the repo; do not conflate them, and default to the
    proton one (owner directive above):**
    - **Package layer** `tools/qou-substrate/.../constants.py` (`Q`,

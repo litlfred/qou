@@ -84,7 +84,7 @@ export default conjecture({
       body:
         "**Base ring minimised (AGENTS.md §7c).** The q-bracket algebra in the " +
         "Lean sibling moved from `[Field R]` + `field_simp` to a generic " +
-        "`[CommRing R]` with the modulus carried as a unit `q : Rˣ`, so " +
+        "`[CommRing R]` with the modulus carried as a unit `q : Units R`, so " +
         "`↑q⁻¹` is a `Units` coercion rather than a ring inverse. The two ξ_m " +
         "closed forms are now division-free identities " +
         "(`muon_xi_cross_mul`, `tau_xi_cross_mul`) that hold in every " +

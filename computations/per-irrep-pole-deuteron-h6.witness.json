@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-16T21:16:43.380979+00:00",
-  "commitSha": "b3b311580447187553a7d02868e0e4d4b2a8261b",
+  "computedAt": "2026-08-19T11:48:57.759127+00:00",
+  "commitSha": "67ccee2d220f8dcf8444871ce94c28dd653922f0",
   "assertions": [
     {
       "name": "deuteron_full_tr_M_u_pole_eq_shift_NF",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 84,
+  "durationMs": 94,
   "computation": "per-irrep-pole-deuteron-h6",
   "scriptFile": "per_irrep_pole_atom.py",
-  "scriptHash": "12c9329bd5a0",
-  "scriptCommitSha": "45789ddfa066696835f4151fa3d95618edd6b191",
+  "scriptHash": "12a690fe9df3",
+  "scriptCommitSha": "01b79b383f2173a74c0adc71a9b067151a1fd317",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -1,11 +1,11 @@
 ---
 # qou-t7mt
 title: def:frobenius-hopf-substrate presupposes A-dual; its own Lean needs only MonoidalCategory
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:54:20Z
-updated_at: 2026-08-15T22:20:56Z
+updated_at: 2026-08-16T10:30:37Z
 ---
 
 

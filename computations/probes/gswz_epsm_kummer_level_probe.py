@@ -67,6 +67,7 @@ computation of the CGZ map on this class.
 """
 
 import json
+import pathlib
 import math
 import sys
 
@@ -427,7 +428,7 @@ witness = {
         "eps_m(xi) data for the harness"
     ),
 }
-with open("computations/probes/gswz_epsm_kummer_level.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_epsm_kummer_level.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

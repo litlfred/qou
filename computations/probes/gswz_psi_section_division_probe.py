@@ -75,6 +75,7 @@ The computed quotient digits are recorded for future adjudication.
 """
 
 import json
+import pathlib
 import sys
 
 P5 = 5
@@ -380,7 +381,7 @@ witness = {
         "CGZ [10] data)"
     ),
 }
-with open("computations/probes/gswz_psi_section_division.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_psi_section_division.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

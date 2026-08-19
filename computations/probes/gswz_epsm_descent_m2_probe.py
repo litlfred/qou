@@ -74,6 +74,7 @@ remaining m | 24 are the natural next increments on qou-y3xv.
 """
 
 import json
+import pathlib
 import sys
 import time
 
@@ -614,7 +615,7 @@ witness = {
         "computation; m = 3 and general m | 24 queued"
     ),
 }
-with open("computations/probes/gswz_epsm_descent_m2.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_epsm_descent_m2.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

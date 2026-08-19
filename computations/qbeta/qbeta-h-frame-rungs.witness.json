@@ -1,0 +1,130 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-17T01:40:49.494555+00:00",
+  "commitSha": "6fb0cfe112aeb8bb771bff2721f5b172b59d23d5",
+  "assertions": [
+    {
+      "name": "frame_change_is_an_exact_identity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy: ℏ_q(q+1) − h and u − b·h²/(q+1)² both simplify to 0 identically in q. Proved over a generic field in QOU.QBeta.hbar_mul_succ_eq_h / u_eq_b_mul_h_sq_div."
+    },
+    {
+      "name": "model_has_a_nonzero_ODD_h_rung_unreachable_from_u",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "nonzero odd-order rungs at h^[3, 5, 7]; h³ = −√3/64 is purely irrational. Since uᵏ ∝ h²ᵏ (QOU.QBeta.u_pow_eq_even_h_pow), no u-ladder can produce any of them — this is the exact form of 'odd rungs are structurally unrepresentable in u'."
+    },
+    {
+      "name": "conversion_factor_is_not_its_q_to_1_limit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "b/(q+1)² = 0.1948747063 at the proton anchor vs √3/8 = 0.2165063509, a -10.0% difference. Using the q→1 limit as the conversion is a ~10% error, which is why the exact identity matters rather than the asymptotic."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-h-frame-rungs",
+  "scriptFile": "qbeta_h_frame_rungs_probe.py",
+  "scriptHash": "c67e318d75e5",
+  "scriptCommitSha": "4cd9dd4033abf0c4c62ced013702a10751d8491d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "T1 of bean qou-cwin. Establishes that the u→h frame change is an exact identity (u = b·h²/(q+1)², from ℏ_q(q+1) = h) rather than the asymptotic 'u ∼ h² near q=1', and derives the consequence that uᵏ = (b/(q+1)²)ᵏ·h²ᵏ — so a u-rung of order k lands at h-order 2k and a u-ladder spans only EVEN h-orders. Odd h-orders are unreachable by any choice of u-coefficients, and the model's h³ rung (−√3/64) is nonzero and purely irrational. Also records the exact ℚ(√3) h-frame rungs through h⁷, and that the conversion factor b/(q+1)² ≈ 0.1949 differs from its q→1 limit √3/8 ≈ 0.2165 by ~10%. Companion to the sorry-free Lean in QOU/QBeta/LadderFrameChange.lean. No physical claim: no c_k value, no derivation of α, no accuracy improvement — the cross-anchor instability is 2.3748% in both frames.",
+  "data": {
+    "ladder_frame_source": "u",
+    "ladder_frame_target": "h",
+    "h_frame_rungs": [
+      {
+        "order": 0,
+        "exact": "1",
+        "numeric": "1.00000000000000000000000000000000000000000000000000000000000",
+        "reachable_from_u_ladder": true
+      },
+      {
+        "order": 1,
+        "exact": "0",
+        "numeric": "0.0",
+        "reachable_from_u_ladder": false
+      },
+      {
+        "order": 2,
+        "exact": "-1/32",
+        "numeric": "-0.0312500000000000000000000000000000000000000000000000000000000",
+        "reachable_from_u_ladder": true
+      },
+      {
+        "order": 3,
+        "exact": "-sqrt(3)/64",
+        "numeric": "-0.0270632938682637077113663490860292557334813320907871973133720",
+        "reachable_from_u_ladder": false
+      },
+      {
+        "order": 4,
+        "exact": "-47/6144 + sqrt(3)/128",
+        "numeric": "0.00588190735079852052234984120968129453340733271206026532335266",
+        "reachable_from_u_ladder": true
+      },
+      {
+        "order": 5,
+        "exact": "3/512 - sqrt(3)/512",
+        "numeric": "0.00247646326646703653607920636424634303331483348865160033582850",
+        "reachable_from_u_ladder": false
+      },
+      {
+        "order": 6,
+        "exact": "-6781/2949120",
+        "numeric": "-0.00229932996961805555555555555555555555555555555555555555555556",
+        "reachable_from_u_ladder": true
+      },
+      {
+        "order": 7,
+        "exact": "5/16384 + 317*sqrt(3)/983040",
+        "numeric": "0.000863708603921848655241089365903077738770415512550751402886648",
+        "reachable_from_u_ladder": false
+      }
+    ],
+    "odd_orders_with_nonzero_rung": [
+      3,
+      5,
+      7
+    ],
+    "anchors": [
+      {
+        "anchor": "proton",
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "b": "0.867584066965251155651162891536052395704979377394314188595950",
+        "conversion_b_over_qp1_sq": "0.194874706274703033484774837267534549469613978390191457648922",
+        "u_over_h_sq": "0.194874706274703033484774837267534549469613978390191457648922"
+      },
+      {
+        "anchor": "muon",
+        "q": "1.10997859555418057528159407960950937799328227995868622546675",
+        "b": "0.867584067307058178658333082523933446069696066774384267960404",
+        "conversion_b_over_qp1_sq": "0.194874703986581158512433472663898055022124553023052349362726",
+        "u_over_h_sq": "0.194874703986581158512433472663898055022124553023052349362726"
+      }
+    ],
+    "conversion_q_to_1_limit_sqrt3_over_8": "0.216506350946109661690930792688234045867850656726297578506976"
+  }
+}

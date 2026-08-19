@@ -2,9 +2,13 @@ import QOU.Basic
 import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import QOU.BraidKnot.KeystoneBalancedRibbon
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
+import Mathlib.CategoryTheory.Preadditive.Basic
+import Mathlib.CategoryTheory.Linear.Basic
+import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Fintype.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.CategoryTheory.Types.Basic
@@ -96,30 +100,78 @@ def rightTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
 
 end FrobeniusHopfData
 
-/-- **Quantum Universe** over a field `k`.
+/-- **Quantum Universe** over a commutative ring `R`.
 
     Re-declared from the library module
     `QOU.QuantumObservableUniverse.CategoricalFoundations` (see the note
     on `FrobeniusHopfData` above).  Keep field-for-field in sync.
 
     LaTeX: `\label{def:quantum-universe}` -/
-structure QuantumUniverse (k : Type*) [Field k] where
+structure QuantumUniverse (R : Type*) [CommRing R] where
   /-- The monoidal category `C`. Represented as an opaque type with
       `Category` and `MonoidalCategory` instances. -/
   C : Type u
   [catInst : CategoryTheory.Category.{v} C]
   [monInst : CategoryTheory.MonoidalCategory C]
-  /-- Zero morphisms, needed to state block orthogonality below. -/
-  [zeroInst : @CategoryTheory.Limits.HasZeroMorphisms C catInst]
+  /-- **Hom-sets are abelian groups.**  Carried because the paper's
+      `R`-linearity (below) presupposes it, and because two axiom-4 fields
+      need it: the zero morphism for block orthogonality, and a finite sum
+      for block completeness.
+
+      Note this REPLACES a bare `HasZeroMorphisms` field.  `Preadditive`
+      supplies zero morphisms already, so carrying both would put two
+      `HasZeroMorphisms` instances on `C` and make `p_b ≫ p_b' = 0`
+      ambiguous. -/
+  [preInst : @CategoryTheory.Preadditive C catInst]
+  /-- **`C` is `R`-linear.**  Every hom-set is an `R`-module and composition
+      is `R`-bilinear — verbatim `def:rigid-monoidal-category`, and what
+      `def:quantum-universe` means by "an `R`-linear braided monoidal
+      category".
+
+      This is `CategoryTheory.Linear`, which takes `Preadditive` as a
+      prerequisite; the two are a stack, not alternatives. -/
+  [linInst : @CategoryTheory.Linear R _ C catInst preInst]
   /-- **Temporal braiding.**  The exchange of two adjacent systems is a
       process with a direction: `c_{V,W} : V ⊗ W ≅ W ⊗ V`, not required to
       be symmetric.  Rigidity is deliberately NOT here — it belongs to
       `QuantumObservableUniverse` below. -/
   [braidedInst : @CategoryTheory.BraidedCategory C catInst monInst]
+  /-- **The balancing twist** `θ_X : X ⟶ X` (axiom 1, categorical half).
+
+      This is what makes the substrate parameter `q` *derivable rather than
+      carried*.  On the defining representation the twist axiom forces
+      `θ_V = q^{1/2} · id_V` (`rem:sqrt-q-ribbon-structure`), so `q` is read
+      off the structure; there is deliberately **no `q` field**, since a
+      distinguished element would smuggle in as data the thing the framework
+      claims to derive.
+
+      Three further things it supplies, none of which the previous
+      `[BraidedCategory]` alone gave:
+
+      1. **Framing.**  Without a twist a braid closure is only a *framed* link
+         invariant — `tr_M(β)` depends on the writhe of the braid word rather
+         than on the knot.  Since masses are read off knots, that dependence
+         would be fatal.
+      2. **Sphericality on all of `C`.**  Axiom 3 gives left-trace =
+         right-trace on `End(A)` only, but the Markov trace closes strands of
+         `V^{⊗n}`, not of `A`.  Ribbon = braided + spherical extends it to the
+         objects the knot theory actually uses.
+      3. **A legible classical boundary.**  `BalancedCategory.ofSymmetric`
+         proves every symmetric category is balanced with `θ = 𝟙`, so the
+         classical case is `θ = 𝟙`, i.e. `q = 1` — a *describable member*, not
+         an excluded one.  This is why the fix is "add the twist", not "forbid
+         symmetric": `q → 1` must stay inside the category it is a limit of.
+
+      Uses the in-repo `BalancedCategory` (bean `rtrb`, sorry-free) since
+      Mathlib has no ribbon layer. -/
+  [balancedInst : @QOU.BraidKnot.Balanced.BalancedCategory C catInst monInst braidedInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C catInst monInst
-  /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
-      An exact faithful `k`-linear monoidal functor. -/
+  /-- The fibre functor `τ : C → Type*` (abstracting `Vect_R` / `R-Mod`).
+      The paper asks for it to be exact, faithful, `R`-linear and monoidal;
+      NONE of those four is carried by this type, which is a bare functor to
+      `Type`.  Recorded rather than silently implied — the gap is real and
+      separate from the `R`-linearity of `C` now carried above. -/
   fibreFunctor : @CategoryTheory.Functor C catInst (Type w) inferInstance
   /-- **Symmetric Frobenius** (axiom 3).  A closed loop has one amplitude:
       closing a worldline on the left and closing it on the right compute the
@@ -132,22 +184,47 @@ structure QuantumUniverse (k : Type*) [Field k] where
       depend on a drawing convention. -/
   frobenius_symmetric : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
     frobHopf.leftTrace f = frobHopf.rightTrace f
+  /-- **The ground ring is `End(𝟙_C)`.**  The block data below lands in `R`
+      rather than in `End(𝟙_C)`, which presumes the two agree.  That is a
+      genuine extra assumption, NOT a consequence of `R`-linearity:
+      `Linear R C` supplies only a ring map `R → End(𝟙_C)`, `r ↦ r • 𝟙`,
+      and its being bijective needs `𝟙` simple.  Carried explicitly so the
+      assumption is visible instead of hiding in a docstring.
+
+      Surfaced on the paper side in `def:quantum-universe`. -/
+  unitEndEquiv : R ≃+* CategoryTheory.End (𝟙_ C)
   /-- **Wedderburn semisimplicity** (axiom 4).  The substrate has *channels*:
       `A` decomposes into finitely many blocks that do not mix, and no block
       is degenerate.
 
       Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
-      per block, their mutual orthogonality, and non-vanishing of each block's
-      Frobenius weight and quantum dimension.  Orthogonality needs only a zero
-      morphism, so `HasZeroMorphisms` is carried as an instance field.
+      per block, their mutual orthogonality, their completeness, and
+      invertibility of each block's Frobenius weight and quantum dimension.
 
-      STILL NOT encoded: completeness `Σ p_b = 𝟙`.  That needs additive
-      hom-sets and a finite sum (`Preadditive`), which is a larger change —
-      it would alter what a quantum universe is, and the paper's `R`-linear
-      phrasing may already imply it.  Tracked as `qou-w1g8`; do not add the
-      instance without settling that question.  `frobWeight` and `dimQ` land in `k`
-      via the standard identification of `End(𝟙)` with the ground ring of a
-      `k`-linear category.
+      **`blocks` indexes the NON-NEGLIGIBLE blocks, and vanishing elsewhere is
+      permitted.**  `dimQ_isUnit` below is therefore a specification of what
+      `blocks` ranges over, NOT a prohibition on the ambient category.  This
+      matters at a root of unity (and in char p), where some `dim_q(λ)` really
+      does vanish: those λ are *negligible* — they form a tensor ideal, the
+      categorical trace kills anything factoring through them, and the standard
+      construction quotients by that ideal (semisimplification) before reading
+      off blocks.  Read as a prohibition, the field would exclude the
+      root-of-unity categories outright; read as an index specification, it
+      says the decomposition is that of the semisimplified quotient.
+
+      The corpus already relies on this shape elsewhere: `y_(1^3) ≡ 0` in
+      `h3-markov-wenzl-weights` (the Temperley-Lieb quotient kills the 3-row
+      partition), and `tr_M = Σ_λ y_λ χ^λ` sums over all λ with zero weights on
+      some.  That vanishing is a DIFFERENT mechanism from negligibility — a row
+      cap at generic q, not a root-of-unity phenomenon — but it is the same
+      pattern, and it is why no sum over blocks needs re-indexing here.
+
+      Orthogonality needs a zero morphism and completeness needs a finite
+      sum; both come from the `Preadditive` instance field above.
+
+      `frobWeight` and `dimQ` land in `R` via `unitEndEquiv`, which is
+      carried as a field rather than left to a docstring — see its comment
+      for why `R`-linearity alone does not supply it (bean `qou-w1g8`).
 
       Given this axiom, the co-Casimir trace identity
       `tr_M(C_dimQ) = Σ_λ 1/dim_q(λ)` is a *consequence*, proved as
@@ -165,19 +242,32 @@ structure QuantumUniverse (k : Type*) [Field k] where
       state resolving into one channel has no component in another.  This is the
       half of semisimplicity that costs only a zero morphism. -/
   centralIdem_orthogonal : ∀ b b', b ≠ b' → centralIdem b ≫ centralIdem b' = 0
+  /-- **The blocks span.**  `Σ_λ p_λ = 𝟙_A`: every state resolves into the
+      channels, with nothing left over.  Together with orthogonality this is
+      what "Wedderburn decomposition" means; without it the blocks could sit
+      inside `A` without exhausting it.
+
+      This is the field the axiom's NAME promised and its TYPE did not
+      deliver.  It needs the finite sum that `Preadditive` supplies. -/
+  centralIdem_complete : ∑ b, centralIdem b = 𝟙 frobHopf.obj
   /-- The Frobenius weight `∫_A p_λ` of each block. -/
-  frobWeight : blocks → k
-  /-- No block has zero Frobenius weight: none is invisible to the trace. -/
-  frobWeight_ne_zero : ∀ b, frobWeight b ≠ 0
+  frobWeight : blocks → R
+  /-- Every block's Frobenius weight is a **unit**: none is invisible to the
+      trace.  `IsUnit`, not `≠ 0` — the paper says "invertible in `R`", and
+      over a ring those differ (`2 ≠ 0` in `ℤ`, and `2` is not a unit).  The
+      two coincide only over a field, which is why `≠ 0` survived while the
+      base ring was one. -/
+  frobWeight_isUnit : ∀ b, IsUnit (frobWeight b)
   /-- The quantum dimension `dim_q(λ)` of each block. -/
-  dimQ : blocks → k
-  /-- No block has zero quantum dimension: each can be normalised against. -/
-  dimQ_ne_zero : ∀ b, dimQ b ≠ 0
+  dimQ : blocks → R
+  /-- Every block's quantum dimension is a **unit**: each can be normalised
+      against.  `IsUnit` for the same reason as `frobWeight_isUnit`. -/
+  dimQ_isUnit : ∀ b, IsUnit (dimQ b)
   /-- `A` admits a differential calculus: the module of Kähler
       differentials `Ω¹(A)` exists in `C`. -/
   differentialForms : Type*
 
-/-- **Quantum Observable Universe** over a field `k`.
+/-- **Quantum Observable Universe** over a commutative ring `R`.
 
     A quantum universe that is **rigid** and satisfies three observability
     conditions.  Rigidity (condition 0) is imposed here, not on
@@ -193,8 +283,8 @@ structure QuantumUniverse (k : Type*) [Field k] where
           `ε : Λ²V → 𝟙` preserved by the rigid dualities.
 
     LaTeX: `\label{def:quantum-observable-universe}` -/
-structure QuantumObservableUniverse (k : Type*) [Field k]
-    extends QuantumUniverse k where
+structure QuantumObservableUniverse (R : Type*) [CommRing R]
+    extends QuantumUniverse R where
   /-- **Rigidity** (condition 0): every object of `C` has left and right
       duals, with `ev`/`coev` satisfying the snake identities.  A dual is a
       worldline read backwards, so this is the antiparticle condition; it is
@@ -202,14 +292,45 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
       knot. -/
   [rigidInst : @CategoryTheory.RigidCategory C catInst monInst]
   /-- The adjoint object `Ad(A)` in `C`, carrying the adjoint action of the
-      Hopf algebra `A` on itself.  In a braided monoidal category this is
-      constructed from `(A, μ, Δ, S)` and the braiding; here it is provided
-      abstractly. -/
+      Hopf algebra `A` on itself.  In a braided monoidal category it is
+      constructed from `(A, μ, Δ, S)` and the braiding; that construction is
+      not available here, so the object is provided together with the three
+      fields below, which pin down enough of its relationship to `A` that a
+      degenerate choice cannot satisfy them.
+
+      **This was previously a free field**, with nothing linking it to
+      `frobHopf`.  That made `adjoint_vanishing` satisfiable by taking
+      `adjointObj := 0` — the zero object has `Hom(𝟙, 0) = 0` trivially — so
+      an instance could satisfy "no hidden global symmetries" by having no
+      adjoint object at all.  See bean `qou-fav8`. -/
   adjointObj : C
+  /-- `Ad(A)` sits inside `A`.  The adjoint action is an action of `A` on
+      itself, so its carrier is part of `A` rather than an unrelated object. -/
+  adjointIncl : adjointObj ⟶ frobHopf.obj
+  /-- The inclusion is a subobject inclusion. -/
+  adjoint_mono : CategoryTheory.Mono adjointIncl
+  /-- **`Ad(A)` carries no trivial summand**: it lands in `ker ε`.
+
+      This is what makes condition (ii) a statement with content.  The full
+      `A` always contains the unit `η : 𝟙 → A`, so `Hom(𝟙, A) = 0` is false
+      for any nontrivial `A` and cannot be what the axiom means.  The corpus
+      is explicit that the trivial part is excluded: `Ad(A)` decomposes "with
+      no spin-0 summand" (`brings-qou-axiom-map.md`) and is `≅ V₂`, the
+      3-dimensional traceless part, for `SU_q(2)` (`brings-is-qou.lean`).
+      That reduced adjoint is the augmentation ideal `ker ε`, which the
+      adjoint action preserves because `ε` is an algebra map. -/
+  adjoint_augmented : adjointIncl ≫ frobHopf.counit = 0
+  /-- `Ad(A)` is not the zero object.  Together with the two fields above this
+      is what `adjointObj := 0` fails: the only morphism out of the zero
+      object is zero. -/
+  adjoint_nontrivial : adjointIncl ≠ 0
   /-- **Adjoint vanishing** (condition ii): all morphisms `𝟙 → Ad(A)` in
-      `C` are equal.  In a `k`-linear category this is equivalent to
+      `C` are equal.  In an `R`-linear category this is equivalent to
       `Hom_C(𝟙, Ad(A)) = 0`, since the zero morphism is always present
-      and all others must equal it. -/
+      and all others must equal it.
+
+      Read with the three fields above, this now says what the paper says:
+      the *reduced* adjoint has no invariants. -/
   adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
   /-- The fundamental object `V` of categorical dimension 2. -/
   fundamentalObj : C
@@ -238,8 +359,8 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
     group over `k`) that can be recovered from `ω`.
 
     Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
-noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
-    (QU : QuantumUniverse.{u, v, w} k) : Type (max u w) :=
+noncomputable def QuantumUniverse.gaugeGroup {R : Type*} [CommRing R]
+    (QU : QuantumUniverse.{u, v, w} R) : Type (max u w) :=
   letI := QU.catInst
   QU.fibreFunctor ≅ QU.fibreFunctor
 

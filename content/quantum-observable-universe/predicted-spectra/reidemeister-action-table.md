@@ -14,6 +14,7 @@ The gauge sector decomposes via the Iwahori–Hecke algebra: each crossing $\sig
 
 ```tex
 \begin{center}
+\begin{adjustbox}{max width=\linewidth}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{l|c|c|c|c|c|c}
 \toprule
@@ -90,5 +91,6 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
   \textbf{changes} \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{center}
 ```
