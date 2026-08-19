@@ -136,12 +136,21 @@ def _hoefsmit_mp_matrices(n: int, q_str: str) -> dict:
 
     MEMOISED on ``(n, q_str)``. The sweep called this again for the
     headline atom with identical arguments — triton is both the headline
-    and a sweep entry — so the H_9 build ran twice and dominated the
-    wall clock: 28 min becomes ~14. The existing ``hoefsmit_cache=``
-    parameter reuses a cache WITHIN one atom (supply vector + Gram); it
-    does nothing ACROSS the headline/sweep boundary, which is where the
-    duplication was. Pure function of its arguments, and callers only
-    read traces, so nothing mutates the cached matrices.
+    and a sweep entry — so the H_9 build ran twice. The existing
+    ``hoefsmit_cache=`` parameter reuses a cache WITHIN one atom (supply
+    vector + Gram); it does nothing ACROSS the headline/sweep boundary,
+    which is where the duplication was. Pure function of its arguments,
+    and callers only read traces, so nothing mutates the cached matrices.
+
+    MEASURED: 55.7 min -> 46.3 min, saving 9.4 min (17%). I first claimed
+    this "dominated the wall clock" and would halve the runtime; both
+    were wrong, and the correction is the useful part. One H_9 Hoefsmit
+    build is ~9 min, so the remaining ~46 min is dominated by the GRAM
+    ASSEMBLY — 406 unique pair-pair traces at n=9, each summing
+    tr(M_ij . M_i'j') over every partition of 9 — not by the build the
+    progress line names. Anyone optimising this further should start
+    there, not here. The lesson is the ordinary one: I inferred the
+    bottleneck from which step the log narrates rather than timing it.
 
     The caller then evaluates Markov traces of arbitrary 4-letter
     words via three matrix multiplications + one trace + sum over

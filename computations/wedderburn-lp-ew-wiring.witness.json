@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+clarabel-mpfr",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T18:08:04.689766+00:00",
-  "commitSha": "f3f57a0dd5bae9ea5dd872f3f1869d6b8383a98e",
+  "computedAt": "2026-08-19T19:08:59.106549+00:00",
+  "commitSha": "f58a9dd16d3b80dc614d52aca18bfa5dbb054aa9",
   "assertions": [
     {
       "name": "lp_strong_duality_all_klr_atoms",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 54,
+  "durationMs": 39,
   "computation": "wedderburn-lp-ew-wiring",
   "scriptFile": "wedderburn_lp_ew_wiring.py",
-  "scriptHash": "fae4702e4ef0",
-  "scriptCommitSha": "6cffd0b9ae1d0ab6b4d300f04f41aaa3dd0cff68",
+  "scriptHash": "b0bccb416b0a",
+  "scriptCommitSha": "f58a9dd16d3b80dc614d52aca18bfa5dbb054aa9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
