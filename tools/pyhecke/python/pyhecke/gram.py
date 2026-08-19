@@ -106,13 +106,19 @@ except ImportError:
 # note below for why the pseudoinverse is the honest object here and why
 # `G_INV` is left UNDEFINED rather than rebound.
 #
-# STILL DIVERGENT — the Rust mirror. tools/hecke-engine/src/gram.rs ends
-# `trace_weights` with `z*z*z` where `TR_M` below ends `h*z^2 + z` (the
-# 2026-05-19 fix). That bug is load-bearing there for exactly the reason it was
-# here: with the CORRECT TR_M[5] the form is singular, with `z^3` it is not
-# (proved on the same probe, three q). So the Rust side needs TR_M[5] AND the
-# quotient in ONE change — fixing the trace alone drops a singular Gram into
-# the native path. Tracked as qou-m7py.
+# CONVERGED — the Rust mirror, as of 2026-08-15 (qou-m7py RESOLVED, PR #5088).
+# This banner previously read "STILL DIVERGENT", describing a state that no
+# longer exists, while `_native_ok()` below already reported the path as
+# enabled: the file contradicted itself, and the banner is what a reader hits
+# first. tools/hecke-engine/src/gram.rs now ends `trace_weights` with
+# `h*z^2 + z`, matching `TR_M` below, and it took the trace fix AND the
+# quotient in ONE change exactly as the old note required — `gram_inverse` was
+# REMOVED in favour of `gram_quotient_inverse` + `gram_radical`, so the
+# singular Gram never reaches a caller expecting a 6x6 inverse. Verified
+# native == Python-D at q0: trace_weights and gram_matrix delta = 0,
+# gram_quotient_inverse vs G_PINV 4.4e-16, gram_determinant = 0. The dispatch
+# is ENABLED by default and guards an out-of-date wheel with the runtime
+# self-check in `_native_ok()`; `QOU_DISABLE_NATIVE=1` is the opt-out.
 #
 # ── historical record: what convention C measured here ───────────────
 #
