@@ -339,13 +339,21 @@ user's last message, not the most recently mentioned file.
       identical is necessary but not sufficient, and the two extra gates are
       the ones that bite:
 
-      - **Environment.** A producer may branch on what is *installed*, so the
-        same source writes a different payload with no crash and no warning.
-        Measured: `binding_canonical.py` without `pyhecke_native` gives
-        `tr_M_atom = 0.575` where the committed witness has `0.388` — a 48 %
-        move under an unchanged AST. Refreshing it replaces a Rust-backed
-        value with a pure-Python fallback under a `chore(witness)` message.
-        Check the witness's own `environment` block before re-running.
+      - **Import-cone drift — the one that actually bites.** A producer's own
+        source can be byte-stable while the module it *calls* changed.
+        Measured: `binding_canonical.py` is source-stable across its drift
+        window, yet `tr_M_atom` moved `0.388 -> 0.575` (48 %) because
+        `tr_m_atom_via_transfer.py`, which computes that quantity, changed.
+        A file-local `git diff` cannot see this — use
+        [`witness_import_cone_staleness_audit.py`](computations/witness_import_cone_staleness_audit.py),
+        or the one-hop check the triage script now runs.
+      - **Environment (hazard, not yet measured here).** A producer *may*
+        branch on what is installed. I originally reported the
+        `binding_canonical` 48 % as an instance of this; **that was wrong** —
+        re-run with `pyhecke_native 0.9.0` and every recorded package matched,
+        it reproduces the committed value byte-identically. Still worth
+        checking the witness's `environment` block before re-running, but this
+        corpus has not yet produced a confirmed case.
       - **Bare producers.** Some producers never emit provenance; the
         `scriptHash` / `commitSha` on disk was added downstream. Re-running
         one *deletes the field this audit keys on* (measured: 15 keys in, 7
@@ -3273,13 +3281,14 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 > probably how "PyPI wheel" got written, but it is `workflow_dispatch`-only and
 > uploads nothing — building an artifact is not publishing it.)
 >
-> **Consequence for agents, and it is not cosmetic.** `pyhecke_native` cannot be
-> `pip install`ed, so a container without it is the *default*, not an anomaly —
-> and producers that branch on its presence then write a different payload
-> silently. Measured: `binding_canonical.py` without it moves `tr_M_atom`
-> 0.388 -> 0.575 (48%), no crash, no warning. Build it from
-> `tools/pyhecke-native/` with `maturin build --release` before regenerating any
-> witness whose `environment` block records it.
+> **Consequence for agents.** `pyhecke_native` cannot be `pip install`ed, so a
+> container without it is the *default*, not an anomaly. Build it from
+> `tools/pyhecke-native/` with `maturin build --release` (works: produces
+> `pyhecke_native-0.9.0-cp311-...whl`) when a witness's `environment` block
+> records it. **Do not cite `binding_canonical` as evidence that its absence
+> changes results** — I did, and it was wrong: with the native extension
+> installed the producer reproduces the same `tr_M_atom` byte-identically. That
+> 48 % move was import-cone drift, not environment.
 >
 > **Never hand-edit `qou-mass/src/qou_mass/_internal/`.** It is generated from
 > `computations/` by [`scripts/sync-qou-mass-vendor.py`](scripts/sync-qou-mass-vendor.py)

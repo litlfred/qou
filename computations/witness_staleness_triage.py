@@ -28,14 +28,23 @@ If the two normalised sources differ, that is `substantive` — the code that
 computes the numbers changed, so the witness may report values the producer no
 longer produces. These are the real queue.
 
-If they are identical, **the source cannot explain a payload change — but the
-environment still can**, so a second gate applies. A producer may branch on what
-is *installed*, and then the same source in a different environment writes a
-different payload, silently, with no crash and no warning. Measured while
-building this: `binding_canonical.py` re-run without `pyhecke_native` gives
-`tr_M_atom = 0.575` where the committed witness has `0.388` — a 48 % move under
-an unchanged AST. Committing that would have replaced a Rust-backed value with a
-pure-Python fallback under a `chore(witness)` message. So:
+If they are identical, **the producer's own source cannot explain a payload
+change — but three other things still can**, so further gates apply.
+
+The first is the one that actually bites, and I originally misdiagnosed it.
+`binding_canonical.py` is source-stable across its drift window, yet its
+`tr_M_atom` moved `0.388 -> 0.575` — 48 %. I attributed that to a missing
+`pyhecke_native` and wrote it up as an environment effect. **That was wrong.**
+Re-run later with `pyhecke_native 0.9.0` installed and every recorded package
+matched, the producer reproduces `0.57517233101788385191` *byte-identically* —
+the same value it gives without the native extension. The environment was never
+the cause. What changed was `tr_m_atom_via_transfer.py`, the imported module
+that computes the quantity, which is invisible to a file-local AST comparison.
+
+The environment gate is kept because the hazard is real in principle — a
+producer *can* branch on what is installed — but it is retained **unproven**:
+this corpus has not yet given a measured instance of it, and the case I offered
+turned out to be an import-cone case wearing an environment costume.
 
 A third gate is subtler still: some producers write a **bare** witness and never
 emit provenance — the `scriptHash` / `commitSha` / `environment` block on disk
@@ -46,11 +55,24 @@ keys out. Rare — 1 of 80 sampled producers — but both `cosmetic` candidates 
 this corpus hit it, because bare producers are the old ones and old producers
 are what drift.
 
-  * `cosmetic`                   — source cosmetic, environment matches, and the
-    producer writes its own provenance. Safe to refresh; only provenance moves.
+  * `cosmetic`                   — producer source cosmetic, no drifted import
+    found, environment matches, and the producer writes its own provenance.
+    The nearest thing to safe — but "no drift found" is one hop, not a
+    transitive closure, so it is not a guarantee.
+  * `cosmetic_import_cone_drift` — **do not refresh.** A module it imports
+    changed; the payload can move even though this file did not.
   * `cosmetic_env_differs`       — **do not refresh.** Provision first, or leave.
   * `cosmetic_strips_provenance` — **do not refresh.** Fix the producer to emit
     provenance first; refreshing destroys the audit trail.
+
+**Gate order matters when reading the counts.** The import-cone check runs
+first, so a witness that would *also* fail the environment or bare-producer gate
+is reported only as `cosmetic_import_cone_drift`. That is why those two buckets
+read 0 here: all three surviving cases drifted an import. The bare-producer
+observation is independently true and still worth knowing —
+`d_u_closed_form_proof.py` and `yekutieli_volume_join.py` really do write 15
+keys and re-emit 7 and 9, deleting the `scriptHash` this audit reads — it is
+simply not the *first* reason those two must not be refreshed.
 
 **The measured result on this corpus is `cosmetic = 0`.** Of 700 self-stale
 witnesses, not one is safe to refresh by the naive "re-run the producer" advice.
@@ -191,6 +213,44 @@ def env_gap(w: dict) -> dict[str, str]:
     return gaps
 
 
+def local_import_drift(producer: Path, src: str, sha: str) -> list[str]:
+    """Local modules the producer imports that CHANGED since `sha`.
+
+    The producer's own AST being unchanged says nothing about the code it calls.
+    Measured: `binding_canonical.py` is byte-stable across its drift window while
+    `tr_m_atom_via_transfer.py` -- which computes the very quantity it reports --
+    changed, moving `tr_M_atom` 0.388 -> 0.575 (48%). Resolving only top-level
+    module names under computations/ is deliberately shallow: it is one hop, not
+    a transitive closure, so treat a clean result as "no drift found", never as
+    "no drift".
+    """
+    try:
+        tree = ast.parse(src)
+    except (SyntaxError, ValueError, RecursionError):
+        return []
+
+    names: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ImportFrom) and node.module and node.level == 0:
+            names.add(node.module.split(".")[0])
+        elif isinstance(node, ast.Import):
+            for a in node.names:
+                names.add(a.name.split(".")[0])
+
+    drifted = []
+    for n in sorted(names):
+        hits = [c for c in (COMPUTATIONS / f"{n}.py", *COMPUTATIONS.rglob(f"{n}.py"))
+                if c.is_file()]
+        if not hits:
+            continue
+        rel = hits[0].relative_to(ROOT).as_posix()
+        if rel == producer.relative_to(ROOT).as_posix():
+            continue
+        if _git("diff", "--quiet", sha, "HEAD", "--", rel) is None:
+            drifted.append(rel)
+    return drifted
+
+
 def find_producer(script_file: str) -> Path | None:
     """Resolve a witness `scriptFile` to a path under computations/."""
     direct = COMPUTATIONS / script_file
@@ -203,6 +263,7 @@ def find_producer(script_file: str) -> Path | None:
 def triage() -> dict:
     classes: dict[str, list] = {
         "cosmetic": [], "cosmetic_env_differs": [],
+        "cosmetic_import_cone_drift": [],
         "cosmetic_strips_provenance": [], "substantive": [],
         "rewritten": [], "unresolvable": [], "unparseable": [],
     }
@@ -280,6 +341,17 @@ def triage() -> dict:
         # permanently undecidable. Measured on d_u_closed_form_proof.py and
         # yekutieli_volume_join.py: 15 keys in, 7 and 9 keys out.
         src_text = current_src.decode("utf-8", "replace")
+
+        # A producer's own AST can be stable while the code it CALLS changed.
+        # This is the mechanism that actually moved binding_canonical, and it is
+        # invisible to a file-local comparison -- check it before believing any
+        # "cosmetic" verdict.
+        drifted = local_import_drift(producer, src_text, sha)
+        if drifted:
+            entry["import_drift"] = drifted
+            classes["cosmetic_import_cone_drift"].append(entry)
+            continue
+
         if not any(k in src_text for k in ("WitnessBuilder", "scriptHash", "commitSha")):
             entry["reason"] = "producer writes no provenance — a re-run would strip it"
             classes["cosmetic_strips_provenance"].append(entry)
@@ -298,6 +370,7 @@ def triage() -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", choices=["cosmetic", "cosmetic_env_differs",
+                                       "cosmetic_import_cone_drift",
                                        "cosmetic_strips_provenance",
                                        "substantive", "rewritten",
                                        "unresolvable", "unparseable"])
@@ -316,6 +389,7 @@ def main() -> int:
         ("substantive", "code changed — a re-run CAN move the payload"),
         ("cosmetic", "source cosmetic AND environment matches — safe to refresh"),
         ("cosmetic_env_differs", "source cosmetic BUT environment differs — DO NOT refresh"),
+        ("cosmetic_import_cone_drift", "source cosmetic BUT an imported module changed — DO NOT refresh"),
         ("cosmetic_strips_provenance", "source cosmetic BUT a re-run deletes provenance"),
         ("rewritten", "commitSha not in the repo — undecidable, see below"),
         ("unresolvable", "no commitSha, or producer moved since"),
