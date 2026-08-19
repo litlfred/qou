@@ -383,6 +383,87 @@ identification made by assignment, then reasoned from as though derived.
 the conjecture is *untested* by the compute that appears to test it, and that
 the transport route cannot start from that compute.
 
+## 3f. What actually blocks `tr_M((Π_free−1)∘ℳ)` for the imaginary channel
+
+§3e said this evaluation is the gating computation. It turns out the corpus
+already maps why it has not been done —
+[`frakV_descent_zeta4_partner_probe.py`](../../computations/substrate/frakV_descent_zeta4_partner_probe.py)
+carries a `descent_gap_map` with four entries. Reporting it rather than
+re-deriving it, per the corpus-grep discipline. **Four issues, and they are
+ordered — the first makes the naive computation not merely hard but
+ill-posed.**
+
+### 1. At the observable level the imaginary part is identically zero
+
+> `observable_level`: *"DEGENERATE (Im(q₀)=0) — must NOT be used to claim
+> closure (numerology guard, #2951)."*
+
+The substrate anchor `q₀` is **real** (`lusztig_q_0_imaginary_part_zero`, an
+archimedean constraint). The Markov weights `y_λ(q)` are real for real `q`, and
+the characters are real, so `tr_M` of a real operator at `q₀` is real. **`Im 𝔙 ≡
+0` there.** Confirmed three independent ways: the gap map says so; the witness's
+own `fibre_caveat` says *"Im(q₀)=0; complex structure is fibre-level
+(pre-τ)"*; and every trace the witness computed is a Python `float`.
+
+So you cannot obtain `Q_β = 0.7836 MeV` as the imaginary part of a real number.
+The computation §3e asked for **cannot be posed at the level where `Q_β`
+lives**. This is the AGENTS.md fibre-vs-archimedean distinction, and the
+identification `Q_β = Im 𝔙` straddles it.
+
+### 2. At fibre level, neither kernel exists and the assembly has never been made
+
+> `single_fibre_V`: *"**OPEN**: that Re and Im descend from ONE
+> `𝔙 = E₀·tr_M((Π_free−1)∘ℳ)`. Established: ζ₄ generator coupling + ζ₄-partner
+> relation + bar-parity class. **Missing: both fibre kernels AND their assembly
+> into one trace object.**"*
+
+So the operator has never been assembled as a single trace object, and *both*
+its kernels are missing — not one.
+
+### 3. The imaginary channel is gated, and its shortcut is forbidden
+
+> `Im_V_qbeta`: *"**GATED**: the `c_k` Habiro element / SW-residue
+> jet-prolongation symbol `R(q,ξ)` (`conj:qdifference-kernel-prolongation-symbol`);
+> fitting `Φ₂` is the forbidden 'seventh ansatz' (2026-06-09 scope)."*
+
+The imaginary channel depends on a *separate* conjecture, and the obvious
+shortcut is explicitly the forbidden fit.
+
+### 4. Even the real channel is not closed
+
+> `Re_V_binding`: *"characterized: q-Hermite/Rogers–Szegő MOMENT, Habiro
+> `(q−1)`·cyclotomic log-coeff tower — **NOT closed** (no finite low-order
+> q-difference operator; Stages 3–4)."*
+
+Consistent with §3e's measurement that the real part misses AME binding by
+21.8 %–69.3 %.
+
+### One filter is available, and it is proved
+
+The `ζ₄` orbit analysis is sorry-free (`vModel_zeta4_sq`, `vModel_zeta4_cube`,
+`vModel_orbit_sum_zero`, `vModel_sign_isotype_zero`, `vModel_eq_faithful_sum`),
+and yields a falsifier for any candidate:
+
+> *"the open single-`𝔙` assembly must be **ζ₄-faithful**: a nonzero orbit sum
+> (trivial isotype) or sign-isotype component falsifies a candidate assembly."*
+
+So an attempt is not unguided — it has a proved rejection test before any
+numerical comparison.
+
+### What this adds to §3e
+
+The gap map **corroborates** §3e from the corpus's own records: the identification
+is open on four fronts, and the observable-level evaluation is explicitly flagged
+as degenerate and *not* to be used for closure claims.
+
+The discrepancy worth recording is between two artifacts. A reader consulting
+`complex-volume-unification.witness.json` sees `allPassed: true` on a witness
+titled *"𝔙 = 𝔈_bind + i·𝔔_β"*, and would reasonably conclude the identification
+is verified. A reader consulting the gap map sees it open on four fronts. §3e
+showed why they differ: the witness assigns `Im` from the counit closed form and
+asserts nothing (`assertions: []`). **The gap map is the accurate artifact; the
+witness is the misleading one.**
+
 ## 4. Routes now pruned, and what remains
 
 | route | status | source |
