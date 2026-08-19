@@ -90,3 +90,54 @@ existence check at the commit you care about.
    `qou-t2sc` / `qou-dw20` / `qou-1gkf`.
 2. Cross-reference headers added so each program can find the other.
 3. Dates corrected in the two prior audits and five beans.
+
+---
+
+# Addendum: widening the sweep to the Clausen / Lobachevsky neighbourhood
+
+Asked to widen the sweep past the volume files into the shared analytic
+infrastructure. Result: **no further duplication of my own work**, and one
+genuine defect found in a neighbouring file.
+
+## No duplication
+
+* One `clausen` (`QOU/Knot/Clausen.lean`), one `Lob`
+  (`QOU/Archimedean/BlochWignerLobachevsky.lean`, `Lob t = Cl₂(2t)/2`). No
+  competing definitions.
+* `Λ′ = −log(2 sin)` is `RivinConcavity.hasDerivAt_Lob`; `Λ″ = −cot` is
+  `LobTaylorSaddle.hasDerivAt_Lob_deriv`. Both single-sourced — and note this
+  closes an item the `mlgp` bean still lists as an open "Mathlib gap this lane
+  needs" (Clausen/Lobachevsky, `Λ″ = −cot`).
+* The `*AngleStructure` / `FlatTetrahedra` / `MultiTetVolumeConcave` files are
+  the angle-structure lane, disjoint from the Kashaev-sum work.
+
+## The defect: two `catalanG`, one of them a truncated decimal
+
+| Declaration | Value |
+|---|---|
+| `QOU.Knot.WhiteheadVC.catalanG` | `∑' n, (-1)^n/(2n+1)^2` — exact |
+| `QOU.BraidKnot.…HiggsCategoricalMassFormula.catalanG` | `0.9159655941772190150546035149323841107741493742816721` — a decimal literal, i.e. a **rational** |
+
+Two objects under one name, which the notation register forbids; and the
+second's own docstring calls it "transcendental" while defining it as a
+rational.
+
+**Nothing in that file is currently false.** The only consequence drawn from
+it is `volBorromean / 4 = 2 * catalanG`, a `ring` identity that holds for any
+value. The defect is a **live trap**, not a live falsehood: the moment anyone
+asserts `volBorromean = Vol(𝓑₃)`, or links it to `BorromeanVolume`'s
+`8·Cl₂(π/2)`, that statement becomes false by ~1e-52.
+
+This is precisely the `VOL_4_1` bug that bean `qou-yf47` already repaired once
+— *"`VOL_4_1` was a truncated rational decimal ≈ 1e-30 away from `2·Cl₂(π/3)`,
+making the statement literally false"* — recurring under a different name in a
+different chapter. A class of defect that recurs is worth a checker, not just a
+second manual fix.
+
+**Action taken**: flagged in the declaration's docstring, naming the collision,
+the trap, and the available exact form (`QOU.Knot.clausen (π/2)`, with
+certified rational bounds in `CatalanValueBounds.lean`). **Not repaired here** —
+it is another lane's file and swapping the literal for the exact constant may
+move numerics downstream in the mass formula, which is that owner's call.
+`lean`-direct exit 0, 0 errors after the comment-only edit.
+
