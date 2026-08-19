@@ -101,7 +101,29 @@ def former_ideal_muon() -> list[str]:
     if out.returncode != 0:
         raise SystemExit("cannot read the pre-flip manifest from origin/main; "
                          "fetch first")
-    return json.loads(out.stdout).get("ideal_muon", [])
+    stems = json.loads(out.stdout).get("ideal_muon", [])
+    return [s for s in stems if s not in ANCHOR_DEFINING]
+
+
+# The producers that DEFINE the muon anchor rather than merely consume it.
+# Sweeping one of these does not migrate a consumer to the proton pin — it
+# destroys the muon layer, because `qou_substrate.witness._q0_value_for_anchor`
+# resolves the muon anchor by READING the witness they emit.
+#
+# This exclusion exists because the sweep did exactly that in 9a9c6b31c7
+# ("first 25 witnesses regenerated at the proton pin"), which re-pinned
+# computations/q-pinning-50-digit.witness.json to 1.10997858275… . Three
+# things broke at once on main:
+#   * _q0_value_for_anchor("muon") began returning the PROTON value, so both
+#     anchors resolved identically;
+#   * 262 correctly-stamped muon witnesses flipped to Q0_FLIP (Q0_OK 654 -> 392);
+#   * the anti-corruption guard at substrate/q_parameter.py:224 hard-failed
+#     EVERY ideal_muon producer — "Refusing to fall back to proton silently
+#     (bean yfvb / tnjb)" — so they could not be run at all, including the one
+#     that would regenerate the anchor.
+# The guard did its job; nothing silently corrupted. But the sweep had no
+# exclusion list, so a re-run would reproduce all three.
+ANCHOR_DEFINING = frozenset({"q_pinning_50_digit"})
 
 
 def build_graph(stems: set[str]):
