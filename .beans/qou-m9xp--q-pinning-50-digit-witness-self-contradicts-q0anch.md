@@ -1,11 +1,11 @@
 ---
 # qou-m9xp
 title: 'q-pinning-50-digit witness self-contradicts: q0Anchor=muon but calibration_inputs.anchor=m_p/m_e'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T17:19:14Z
-updated_at: 2026-08-19T18:48:01Z
+updated_at: 2026-08-19T20:54:15Z
 ---
 
 ## The contradiction
