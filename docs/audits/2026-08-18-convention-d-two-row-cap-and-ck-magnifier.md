@@ -199,6 +199,73 @@ width `𝔇_β` before inversion), it may hold there, and the defect is that the
 corpus attaches it to this form. Either way the statement as written does not
 hold of the computed object. Nothing here tests `m_π`'s claimed bar-evenness.
 
+## 3c. SETTLED: the "sinh partner" is `Im 𝔙` — and my §3b conclusion was wrong
+
+§3b concluded that a bar-parity constraint on `F` is *"not available from the
+chain as written"*. **That was wrong, and the correction matters** — the
+constraint is available; I had not found the object carrying it. It lives in
+q-hyperbolic geometry.
+
+### Where the description comes from
+
+`three-calibration-discipline.md:18` cites
+[`substrate-cohomology-calibration-story.md`](../../content/quantum-observable-universe/mass-theory/substrate-cohomology-calibration-story.md),
+whose line 11 gives the whole story:
+
+> *"A crossing has two eigenvalues, `q` and `−q⁻¹`. Setting `λ = log q`, these
+> split as `cosh λ ± sinh λ`. … The binding observables sit on the `cosh`,
+> bar-even side. The β-decay observable `𝔔_β` and its precision coefficients sit
+> on the `sinh`, bar-odd side. … That single element is the **complex volume**
+> `𝔙`. Its bar-even part is `Re 𝔙 = 𝔈_bind`. Its bar-odd part is `Im 𝔙 = 𝔔_β`,
+> forming the QOU analogue of the Neumann–Zagier `Vol + i CS`."*
+
+and `conj:binding-qbeta-complex-volume` states it:
+
+```
+𝔙(K) = E₀·tr_M((Π_free − 1)∘ℳ) ∈ ℂ,   𝔈_bind = Re 𝔙,   𝔔_β = Im 𝔙
+```
+
+So the sinh/cosh split is the `q = e^λ` split of the **crossing eigenvalues**,
+and `bar` (`q ↦ 1/q`) *is* `λ ↦ −λ`; sinh/cosh parity is exactly
+bar-odd/bar-even. **The "sinh partner" is `Im 𝔙`, the Chern–Simons-analogue
+part of the complex volume** — not the rational closed form.
+
+### It is conjectural, and the four sites omit that
+
+`conj:binding-qbeta-complex-volume` is a **conjecture**, class-axiomatised in
+Lean (`ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`). Per
+AGENTS.md §"Conditional-proved ≠ premise-established", the bar-odd property of
+`Q_β` is therefore **conditional on it**. The four sites assert it as
+established fact.
+
+### The constraint, and the chain fails it
+
+Writing the prediction `Q_β^pred(q) = Q_A(q)·F(q)`, the requirement is **not**
+that `F` be bar-even. It is:
+
+> **`Q_A·F` must be bar-odd**, i.e. `Q_β(1/q) = −Q_β(q)`.
+
+Measured, both anchors:
+
+| object | bar-ratio | required |
+|---|---|---|
+| `Q_A` alone | `+1.686826` | `−1` |
+| `Q_β^C = Q_A ·` ladder | `+1.687595` | `−1` |
+| **ladder's effect on the ratio** | **0.046 %** | — |
+
+Two readings, both worth keeping. The chain **violates** the conjecture's parity
+requirement outright (`+1.69`, not `−1`); and the **entire precision ladder
+moves the ratio by 0.05 %**, so the violation is inherited wholesale from `Q_A`
+and the ladder does essentially nothing to restore bar-oddness.
+
+So either `Q_A` is not `Im 𝔙` — the closed form is a different object from the
+one the parity claim is about — or the conjecture's parity claim fails for the
+computed object. **The corpus does not currently distinguish these**, and that
+is the thing to settle before another candidate `F` is tried.
+
+This is a far sharper filter than matching `1 − F(q₀) = 1.6748e-3` at a single
+point, and it is available to any D-frame attempt.
+
 ## 4. Routes now pruned, and what remains
 
 | route | status | source |
