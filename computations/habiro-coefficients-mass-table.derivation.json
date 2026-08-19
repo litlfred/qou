@@ -46,7 +46,7 @@
       "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "notes": "Exact rewriting: the trace is a ratio of Laurent polynomials in q^{1/2} by construction, so this step loses nothing and introduces no approximation."
+      "notes": "Exact rewriting: the trace is a ratio of Laurent polynomials in q^{1/2} by construction, so this step loses nothing and introduces no approximation. The per-atom witnesses record p_in_u/denom_in_u/deg_p_u/shift/n_nonzero; the two non-per-atom members of the family do NOT and are not claimed to — habiro-coefficients-mass-table-summary collates per-atom stats, and habiro-coefficients-extended comes from a different producer. Verified 25/25 per-atom witnesses serialize in `u`, none in `check_q`: the qou-0ndb to_u_polynomial caller-symbol defect (which mislabels p_in_u contents in habiro-coefficients-atomic) did NOT reach this family."
     },
     {
       "name": "Sequential cyclotomic division into the Habiro basis",
