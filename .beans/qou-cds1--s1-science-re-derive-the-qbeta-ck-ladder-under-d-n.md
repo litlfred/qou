@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T12:30:20Z
+updated_at: 2026-08-19T12:45:28Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -483,3 +483,57 @@ form'. Until it exists, the sinh/bar-odd story cannot support any derivation,
 because nothing in compute realises it.
 
 Probe: computations/qbeta/qbeta_frakv_transport_blocked_probe.py
+
+### 2026-08-19: WHAT BLOCKS tr_M((Pi_free-1).M) FOR THE IMAGINARY CHANNEL -- four issues
+
+The previous entry named this the gating computation. The corpus ALREADY MAPS
+why it has not been done: frakV_descent_zeta4_partner_probe.py carries a
+descent_gap_map with four entries. Reported, not re-derived.
+
+ORDERED -- the first makes the naive computation ILL-POSED, not merely hard:
+
+ 1. observable_level: 'DEGENERATE (Im(q_0)=0) -- must NOT be used to claim
+    closure (numerology guard, #2951)'. q_0 is real
+    (lusztig_q_0_imaginary_part_zero); the Markov weights y_lambda(q) and the
+    characters are real for real q; so tr_M of a real operator at q_0 is REAL
+    and Im(frak V) == 0 there. Confirmed 3 ways: the gap map; the witness's own
+    fibre_caveat ('Im(q_0)=0; complex structure is fibre-level (pre-tau)'); and
+    every trace the witness computed is a Python float.
+    => Q_beta = 0.7836 MeV CANNOT be the imaginary part of a real number. The
+    computation cannot be POSED at the level where Q_beta lives. This is the
+    AGENTS.md fibre-vs-archimedean distinction and Q_beta = Im(frak V)
+    straddles it.
+
+ 2. single_fibre_V: 'OPEN ... Missing: both fibre kernels AND their assembly
+    into one trace object.' Not one kernel -- BOTH, plus the assembly.
+
+ 3. Im_V_qbeta: 'GATED' on conj:qdifference-kernel-prolongation-symbol
+    (SW-residue jet-prolongation symbol R(q,xi)); fitting Phi_2 is the
+    FORBIDDEN seventh ansatz.
+
+ 4. Re_V_binding: 'NOT closed' either (no finite low-order q-difference
+    operator; Stages 3-4) -- consistent with the 21.8%-69.3% AME misses
+    measured in the previous entry.
+
+ONE FILTER IS AVAILABLE AND PROVED: the zeta_4 orbit analysis is sorry-free
+(vModel_zeta4_sq / _cube / _orbit_sum_zero / _sign_isotype_zero /
+_eq_faithful_sum) and gives a rejection test -- any candidate single-frak-V
+assembly must be zeta_4-FAITHFUL; a nonzero orbit sum (trivial isotype) or
+sign-isotype component falsifies it BEFORE any numerical comparison.
+
+WHAT THIS ADDS: the gap map CORROBORATES the previous entry from the corpus's
+own records. The discrepancy worth recording is between two artifacts --
+complex-volume-unification.witness.json reads allPassed:true under the title
+'frak V = E_bind + i Q_beta' and would be taken as verified, while the gap map
+has it open on four fronts. The witness assigns Im and asserts nothing.
+THE GAP MAP IS THE ACCURATE ARTIFACT; THE WITNESS IS THE MISLEADING ONE.
+
+CONSEQUENCE FOR THIS BEAN: the complex-volume route cannot supply the D-frame
+correction at the observable level AT ALL -- not 'not yet', but not in
+principle, because Im is identically zero there. Any use of the sinh/bar-odd
+story for a D-frame derivation must first close a FIBRE-level construction that
+is open on three further fronts. That is a much larger programme than the
+c_k re-derivation this bean is scoped to.
+
+SIBLING: main carries fcffeee2 'lean(qou-cds1): the D-frame Markov weights are
+two-row AND bar-even' -- another agent is on this bean. Coordinated on PR #5283.
