@@ -1,11 +1,11 @@
 ---
 # qou-x10g
 title: 'SW-5b: assemble range = top from connectivity and both-orientation matrix units'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T19:43:43Z
-updated_at: 2026-08-19T19:44:36Z
+updated_at: 2026-08-19T20:02:55Z
 parent: qou-59vq
 blocking:
     - qou-jfr8
@@ -48,3 +48,14 @@ admissibility is 'different row AND different column', and ruling out |d| = 1
 from that needs the standard-tableau argument in the other direction. Budget for
 it; it may already be somewhere in TableauCells under a different name — grep
 before writing.
+
+
+## CLOSED — `seminormalRep_range_eq_top` PROVED
+
+`SeminormalRangeTop.lean`: `single_swapTableau_mem_range`, `single_mem_range`,
+`seminormalRep_range_eq_top`. All sorry-free, axioms
+[propext, Classical.choice, Quot.sound].
+
+The assembly went as scoped once qou-qyy0 landed. The watch item was correct and
+is recorded there: the admissibility converse had to be proved, it was not free
+from the trichotomy.

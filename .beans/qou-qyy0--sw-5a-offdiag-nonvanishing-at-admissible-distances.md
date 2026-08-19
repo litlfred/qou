@@ -1,11 +1,11 @@
 ---
 # qou-qyy0
 title: 'SW-5a: offDiag nonvanishing at admissible distances (|d| >= 2)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T19:43:43Z
-updated_at: 2026-08-19T19:44:36Z
+updated_at: 2026-08-19T20:02:55Z
 parent: qou-59vq
 blocking:
     - qou-jfr8
@@ -71,3 +71,20 @@ throughout. No float64 anywhere.
 If offDiag DID vanish at an admissible distance, the tableaux reachable in one
 direction would span an invariant subspace and the seminormal representation
 would NOT be irreducible. The inequality is the mathematics, not the bookkeeping.
+
+
+## CLOSED — proved, sorry-free, axiom-clean
+
+`OffDiagNonvanishing.lean`: `sq_geom_lt`, `pow_ne_one_of_pos`,
+`one_add_param_mul_neg_ne_zero_of_le`, `offDiag_ne_zero_of_two_le_abs`.
+
+**Plus a lemma the plan did not have.** The watch item in qou-x10g was right:
+`SwapAdmissible T k -> |axialDist T k| >= 2` is the CONVERSE of
+`swapAdmissible_of_sq_axialDist_ne_one` and does NOT follow from
+`axialDist_trichotomy` (a disjunction does not exclude an admissible pair from
+ALSO sitting at distance +-1). Proved as
+`TableauCells.axialDist_ne_one_of_admissible` by the same squeezed-corner
+argument as `axialDist_ne_zero`, then `two_le_abs_axialDist_of_admissible` gets
+the -1 case for free by applying it to the SWAPPED tableau (admissible by
+`swapAdmissible_swapTableau`, negated distance by `axialDist_swapTableau`) --
+so only one of the two sign cases needed the corner argument.

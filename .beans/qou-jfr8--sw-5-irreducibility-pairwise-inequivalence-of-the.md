@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T17:41:59Z
+updated_at: 2026-08-19T20:02:55Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -206,3 +206,19 @@ invariant subspace and the representation would not be irreducible.
 Formalising it is real analysis over zpow (the geometric-sum factorisation plus
 the AM-GM step), not a bookkeeping lemma. It is the single remaining gap between
 the current branch and range = top.
+
+
+## SW-5 RANGE FORM PROVED (2026-08-19)
+
+`seminormalRep_range_eq_top`: for every shape mu of size n+1 and every real q
+with q != 0, q^2 != 1, the seminormal representation SURJECTS onto the full
+matrix algebra M_{#SYT mu}(R). Sorry-free, axiom-clean. Children qou-qyy0 and
+qou-x10g both closed.
+
+This is Burnside-equivalent to irreducibility, in the form SW-7 (`qou-0h5k`)
+consumes -- and it avoids standing up a module-over-the-algebra structure just to
+state 'irreducible'.
+
+**Still open in this bean:** pairwise inequivalence rho_lambda !=~ rho_mu for
+lambda != mu. Not started. The route is the same separation: the L_k eigenvalue
+MULTISET is the multiset of cell contents of lambda, which determines lambda.

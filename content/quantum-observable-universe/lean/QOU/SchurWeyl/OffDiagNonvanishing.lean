@@ -143,4 +143,81 @@ theorem offDiag_ne_zero_of_two_le_abs (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠
 
 end SeminormalRep
 
+/-! ## Admissible swaps have `|d| ≥ 2`
+
+`offDiag_ne_zero_of_two_le_abs` needs `|d| ≥ 2`, and `SwapAdmissible` is stated as *different row
+and different column*.  Getting from one to the other is the **converse** of
+`SytSwapTransport.swapAdmissible_of_sq_axialDist_ne_one`, and it is not free: `axialDist_trichotomy`
+is a disjunction, so it does not exclude an admissible pair from also sitting at distance `±1`.
+The exclusion is the same squeezed-corner argument that proves `axialDist_ne_zero`. -/
+
+namespace TableauCells
+
+variable {μ : YoungDiagram}
+
+open QOU.Mathlib (StandardYoungTableau)
+
+/-- **An admissible pair is never at distance `+1`.**  If the cells of `k` and `k+1` share neither
+row nor column and their contents differ by one, the corner completing their rectangle lies in `μ`
+and carries an entry strictly between `k` and `k+1`. -/
+theorem axialDist_ne_one_of_admissible (T : StandardYoungTableau μ) {k : ℕ}
+    (hk : k ∈ Set.Icc 1 μ.cells.card) (hk' : k + 1 ∈ Set.Icc 1 μ.cells.card)
+    (hadm : SwapAdmissible T k) : axialDist T k ≠ 1 := by
+  have hμ₁ : ((cellOf T k).1, (cellOf T k).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hk
+  have hμ₂ : ((cellOf T (k + 1)).1, (cellOf T (k + 1)).2) ∈ μ := by
+    rw [← YoungDiagram.mem_cells]; simpa using cellOf_mem T hk'
+  have he₁ : T.entry (cellOf T k).1 (cellOf T k).2 = k := entry_cellOf T hk
+  have he₂ : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 = k + 1 := entry_cellOf T hk'
+  intro hone
+  have hcontent : ((cellOf T (k + 1)).2 : ℤ) - ((cellOf T (k + 1)).1 : ℤ)
+      = ((cellOf T k).2 : ℤ) - ((cellOf T k).1 : ℤ) + 1 := by
+    have := hone
+    simp only [axialDist, axialDistance, cellContent] at this
+    omega
+  have hrow := hadm.1
+  have hcol := hadm.2
+  rcases Nat.lt_or_ge (cellOf T k).1 (cellOf T (k + 1)).1 with hlt | hge
+  · -- `k` strictly above `k+1`, hence strictly left too: the corner `(i₁, j₂)` is squeezed
+    have hjlt : (cellOf T k).2 < (cellOf T (k + 1)).2 := by omega
+    have hcorner : ((cellOf T k).1, (cellOf T (k + 1)).2) ∈ μ :=
+      μ.up_left_mem (le_of_lt hlt) (le_refl _) hμ₂
+    have hlo : T.entry (cellOf T k).1 (cellOf T k).2
+        < T.entry (cellOf T k).1 (cellOf T (k + 1)).2 := T.row_strict hjlt hcorner
+    have hhi : T.entry (cellOf T k).1 (cellOf T (k + 1)).2
+        < T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2 := T.toSsyt.col_strict hlt hμ₂
+    omega
+  · -- `k+1` strictly above `k`; the column disequality forces it strictly left as well
+    have hilt : (cellOf T (k + 1)).1 < (cellOf T k).1 := by omega
+    have hjlt : (cellOf T (k + 1)).2 < (cellOf T k).2 := by omega
+    have hcorner : ((cellOf T (k + 1)).1, (cellOf T k).2) ∈ μ :=
+      μ.up_left_mem (le_of_lt hilt) (le_refl _) hμ₁
+    have hlo : T.entry (cellOf T (k + 1)).1 (cellOf T (k + 1)).2
+        < T.entry (cellOf T (k + 1)).1 (cellOf T k).2 := T.row_strict hjlt hcorner
+    have hhi : T.entry (cellOf T (k + 1)).1 (cellOf T k).2
+        < T.entry (cellOf T k).1 (cellOf T k).2 := T.toSsyt.col_strict hilt hμ₁
+    omega
+
+/-- **An admissible pair has `|d| ≥ 2`.**  Distance `0` is `axialDist_ne_zero`, distance `+1` is
+the lemma above, and distance `−1` follows from it applied to the swapped tableau — which is
+admissible (`swapAdmissible_swapTableau`) and carries the negated distance
+(`axialDist_swapTableau`). -/
+theorem two_le_abs_axialDist_of_admissible (T : StandardYoungTableau μ) {k : ℕ} (hk : 1 ≤ k)
+    (hkn : k + 1 ≤ μ.cells.card) (hadm : SwapAdmissible T k) :
+    2 ≤ |axialDist T k| := by
+  have hkI : k ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨hk, by omega⟩
+  have hkI' : k + 1 ∈ Set.Icc 1 μ.cells.card := Set.mem_Icc.mpr ⟨by omega, hkn⟩
+  have h0 : axialDist T k ≠ 0 := axialDist_ne_zero T hkI hkI'
+  have h1 : axialDist T k ≠ 1 := axialDist_ne_one_of_admissible T hkI hkI' hadm
+  have hm1 : axialDist T k ≠ -1 := by
+    intro hcon
+    have hswapadm : SwapAdmissible (swapTableau T k hk hkn hadm) k :=
+      swapAdmissible_swapTableau T hk hkn hadm
+    have hswapd : axialDist (swapTableau T k hk hkn hadm) k = 1 := by
+      rw [axialDist_swapTableau T hk hkn hadm, hcon]; ring
+    exact axialDist_ne_one_of_admissible _ hkI hkI' hswapadm hswapd
+  rcases abs_cases (axialDist T k) with ⟨he, _⟩ | ⟨he, _⟩ <;> omega
+
+end TableauCells
+
 end QOU.SchurWeyl
