@@ -1425,6 +1425,22 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:27.871Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "'antiderivative exists, measure does not' / 'named values rather than formal processes' are substantive mathematical contrasts",
+        "notes": "pass-with-note"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1444,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:27.913Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no rhetorical pivot construction present."
       }
     ],
     "trap-em-dash": [
@@ -1463,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 495 words)"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:27.952Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no load-bearing em-dash construction present."
       }
     ],
     "trap-triples": [
@@ -1482,6 +1528,22 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 495 words)"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:27.991Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "'integration is categorical, decomposition is algebraic, analytic-looking quantities are rational' is a substantive three-part account",
+        "notes": "pass-with-note"
       }
     ],
     "trap-closing-aphorism": [
@@ -1501,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:28.031Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no closing aphorism construction present."
       }
     ],
     "trap-meta-commentary": [
@@ -1520,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:28.073Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no meta-commentary construction present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1539,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:28.116Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no thesis restatement construction present."
       }
     ],
     "trap-performed-warmth": [
@@ -1558,6 +1665,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:28.158Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no performed warmth construction present."
       }
     ],
     "trap-superlative": [
@@ -1577,6 +1699,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:28.198Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no superlative inflation construction present."
       }
     ],
     "trap-nonspeakable": [
@@ -1596,6 +1733,21 @@
         "reviewed_at": "2026-08-15T10:30:59.511Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "af4e8c1847e0",
+          "ts": "4a30d85a8145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:28.239Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no non-speakable syntax construction present."
       }
     ],
     "wall-base-ring-minimal": [

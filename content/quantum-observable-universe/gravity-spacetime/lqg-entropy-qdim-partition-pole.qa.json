@@ -1810,6 +1810,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a from-scratch derivation of black-hole entropy.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.047Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'an algebraic recasting ..., not a from-scratch derivation' is the conjecture's honest scope statement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1829,6 +1844,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.090Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1848,6 +1878,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 155 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.134Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1867,6 +1912,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 155 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.176Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Three numbered clauses are the conjecture's actual content (pole, Gauss constraint, Immirzi)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1886,6 +1946,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.218Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Closes on the q_0-dependence scope, factual."
       }
     ],
     "trap-meta-commentary": [
@@ -1905,6 +1980,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.261Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1924,6 +2014,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.305Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1943,6 +2048,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.347Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1962,6 +2082,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.393Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None; leading gamma explicitly stated q_0-independent."
       }
     ],
     "trap-nonspeakable": [
@@ -1981,6 +2116,21 @@
         "reviewed_at": "2026-08-15T10:31:00.963Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7a25807d59ef",
+          "ts": "e2bedf38bc90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.441Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Generating-function pole at Z_1(s*)=1 is the standard geometric-series criticality; readable."
       }
     ],
     "wall-base-ring-minimal": [
