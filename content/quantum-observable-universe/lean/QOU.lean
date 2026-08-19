@@ -333,6 +333,7 @@ import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.SytAdmissible
+import QOU.SchurWeyl.JMBlockEigenvalue
 -- Umbrella gap found by the sibling PR #5282 (`claude/hoefsmit-finish-2026-08-18`):
 -- the general-lambda tree sat OUTSIDE the umbrella's import closure, so nothing
 -- type-checked it here.  HoefsmitRepGeneral pulls SeminormalRep -> TableauCells ->

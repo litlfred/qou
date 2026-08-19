@@ -1100,8 +1100,25 @@ theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : 0 < q) (hq1 : q �
         = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
   -- Ref: [ram1997] Theorem 4.1 (seminormal eigenvalues q^{2c}); [murphy1992] (the Murphy operators
   --   are central and act by scalars on the irreducibles); [hoefsmit1974].
-  -- GAP: needs `hoefsmit_seminormal_rep` (bean qou-im9l, a documented sorry) plus the per-element
-  --   eigenvalue `L_k ↦ q^{2·cellContent}`.  The scalar itself is proved sorry-free above.
+  -- GAP, NARROWED 2026-08-19.  The note here used to name TWO inputs; one has landed and the
+  --   surrounding scaffolding is now proved, so what is left is a single statement:
+  --
+  --     `ρ(L_k + L_k⁻¹) = diagonal (fun T => q^{2c} + q^{-2c})  at  c = cellContent (cellOf T (k+1))`
+  --
+  --   i.e. [ram1997] Thm 4.1 itself.  Everything around it is discharged:
+  --     * `hoefsmit_seminormal_rep` — PROVED (bean qou-im9l, merged 45817bf516); no longer a gap.
+  --     * the scalar value — `cellContentCoshSum` + `cellContentCoshSum_eq_bracket`, above.
+  --     * that a DIAGONAL family sums to a SCALAR — `TableauCells.sum_diagonal_eq_scalar` in
+  --       `JMBlockEigenvalue.lean`, sorry-free.  This is the step that makes Θ central-looking:
+  --       `cellOf T` is a bijection `[1,|μ|] → cells`, so every column sums the same multiset of
+  --       contents and the T-dependence cancels (`sum_comp_cellOf`).  It assumes nothing about
+  --       the eigenvalue being `q^{2c}` — it holds for an arbitrary per-cell function.
+  --     * the `L_0 = 1` ↔ entry-1-at-(0,0) index alignment — `content_cellOf_one`, checked rather
+  --       than assumed, since an off-by-one would range the two sums over different cell multisets.
+  --
+  --   NOT claimed: that the per-element eigenvalue is close.  `L_k` is a product of `genMat`s under
+  --   `L_{k+1} = σ_k L_k σ_k`, and showing that product is diagonal is the substance of Ram's
+  --   theorem, not packaging around it.
   sorry
 
 section BarSymCentral
