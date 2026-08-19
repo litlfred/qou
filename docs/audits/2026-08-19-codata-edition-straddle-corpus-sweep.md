@@ -1,0 +1,155 @@
+# The corpus is one CODATA edition behind, in 1969 places
+
+**Date:** 2026-08-19 · **PR:** (this branch) · **Predecessor:** PR #5149
+**Producer:** [`codata_corpus_literal_scan.py`](../../computations/codata_corpus_literal_scan.py)
+**Witness:** [`codata-corpus-vintage-scan.witness.json`](../../computations/codata-corpus-vintage-scan.witness.json)
+
+## What prompted it
+
+The owner supplied the muon-electron mass ratio from NIST — `206.768 2827(46)`
+— with the instruction *"should already be in corpus… ALL CODATA… check
+first"*, together with the upload of `uploads/allascii.txt`, NIST's complete
+2022 listing (commit `9409cb1`).
+
+It was already in the corpus. **Twice, with two different values**, which is
+the finding.
+
+| value | edition | sites |
+|---|---|---|
+| `206.7682827` | CODATA-2022 ✓ | `codata_2022_source.py` |
+| `206.7682830` | one edition earlier, labelled "CODATA 2022" | production registry + ~128 others |
+
+`codata_2022_source.py` was corrected on 2026-08-09 (PR #4860, its own comment
+calls it a *"vintage correction"*). The production registry
+`qou_substrate.constants` — 309 in-repo importers — was not. The two registries
+disagreed with each other for six days and nothing could notice, because until
+`allascii.txt` landed **there was no authoritative table in the repository to
+check against**. Every CODATA value was a literal checked, at best, against
+another literal.
+
+## Fixed in PR #5149
+
+`qou_substrate.constants` now reads both mass ratios from the table
+(`qou_substrate/data/allascii.txt`, vendored byte-identical, guarded by a
+drift test). Two straddles were removed:
+
+1. `MASS_RATIO_MU_E` — the value, 1.451 ppb (0.065 σ).
+2. `MASS_RATIO_P_E_ERR` — the **uncertainty**: `1.1e-7` where 2022 says
+   `3.2e-8`, 3.4× too wide. The *value* prints identically in both editions,
+   so a value-only check passes while the error bar is a different vintage.
+   The first audit pass missed exactly this; the audit now compares
+   uncertainties too.
+
+Measured consequences, reported rather than smoothed:
+
+| | before | after |
+|---|---|---|
+| `Q` (proton pin) | `1.1099785827513808` | **unchanged** |
+| `Q_ERR` | 3.2e-12 | 9.2e-13 |
+| σ(q₀), proton anchor | 0.0029 ppb | 0.00083 ppb |
+| muon anchor looser by | 429× (stated) | 1474× |
+| μ–p tension | 11.534 ppb | **11.614 ppb — worse** |
+
+`Q` not moving is the load-bearing fact: **no witness needs regeneration.**
+And the tension getting *worse* independently reproduces the note already in
+`codata_2022_source.py` (m_μ L2 miss 963.6× → 970.2×). Two routes agreeing is
+a check on both.
+
+## The wider sweep — "other issues like this?"
+
+Yes. It is not a handful; it is close to the whole constant set.
+
+The scan compares every corpus literal of ≥7 significant digits against all
+293 table rows and reports those that are **near but not equal** — the exact
+signature of a stale edition. Result: **275 distinct literals across 1969
+sites.**
+
+| literal | table (2022) | sites | offset | σ |
+|---|---|---|---|---|
+| `938.27208816` (m_p) | `938.27208943` | 352 | 1.354 ppb | **4.38 σ** |
+| `939.56542052` (m_n) | `939.56542194` | 175 | 1.511 ppb | 2.96 σ |
+| `0.51099895…` (m_e) | `0.51099895069` | 174+82+53 | 1.35 ppb | 4.31 σ |
+| `137.035999084` (1/α) | `137.035999177` | 124 | 0.679 ppb | **4.43 σ** |
+| `206.7682830` (m_μ/m_e) | `206.7682827` | 77+52 | 1.451 ppb | 0.065 σ |
+| `1875.61294257` (m_d) | `1875.61294500` | 65 | 1.296 ppb | 4.19 σ |
+| `2808.39160743` (m_h) | `2808.39161112` | 49 | 1.314 ppb | 4.19 σ |
+| `2808.92113298` (m_t) | `2808.92113668` | 47 | 1.317 ppb | 4.20 σ |
+| `931.49410242` (u) | `931.49410372` | 23 | 1.396 ppb | **4.48 σ** |
+| `3727.3794066` (m_α) | `3727.3794118` | 19 | 1.395 ppb | 4.33 σ |
+
+Two things make this a single phenomenon rather than ten accidents: the
+offsets are all the **same sign** and the **same order** (1.3–1.5 ppb), and
+each literal is *full length* — not truncated, just from an earlier
+adjustment.
+
+Two outliers do **not** fit that pattern and want separate eyes:
+
+- `3727.379378` (m_α, 18 sites) — 9.068 ppb, **28.2 σ**. Two editions back,
+  not one.
+- `137.035944` (1/α, 18 sites) — 402.6 ppb, **2630 σ**. Not any CODATA
+  adjustment; something else is going on at those sites.
+
+## Why the existing audit could not catch this
+
+[`codata_truncation_audit.py`](../../computations/codata_truncation_audit.py)
+(2026-08-11) already covers hand-typed CODATA constants, and its framing is
+right — its own docstring says *"the canonical table is READ, not typed"*, and
+warns that a checker which hardcodes constants *"would go stale on the next
+CODATA revision in exactly the way it is meant to detect."*
+
+But the table it reads is `codata_constants`, an **in-repo module**. So it
+detects a literal that is a short *prefix* of the registry value, and is
+structurally blind to a literal that is full-length and from a different
+edition. `938.27208816` has all eleven significant digits; nothing about it
+looks truncated; it is 4.38 σ wrong.
+
+The two audits are complementary and both are wanted:
+
+| | compares against | catches |
+|---|---|---|
+| `codata_truncation_audit` | `codata_constants` (in-repo) | truncation |
+| `codata_corpus_literal_scan` | `uploads/allascii.txt` (NIST) | wrong edition |
+
+The general lesson is the one this session kept meeting: **a correction lands
+at one site and never reaches the consumers that restate it.** The defence is
+not more diligence, it is removing the restatement — read the authority, do
+not transcribe it.
+
+## Scope, and what is deliberately not claimed
+
+**Scope-(a), scope-limited.** No physical conclusion in the corpus moves. Every
+offset is ~1.3–1.5 ppb, far below the L2 100× targets that are missed by
+factors of 25–1000, and the μ–p tension (11.5 ppb) is an order of magnitude
+larger. Nothing here rescues or damages any prediction. What it fixes is that
+the corpus can now *tell*.
+
+**The "CODATA-2018" identification is not verified.** Only the 2022 table is in
+the repository. That these literals are specifically the 2018 adjustment is
+inferred from the coherence of the offsets plus recall, and PR #4860's own
+"vintage correction" wording. It is not checked against a 2018 table, because
+there is none here. The finding that does not depend on it — and is fully
+verified — is that **each literal disagrees with the committed 2022 table by
+3–4.5 σ**. If someone uploads the 2018 listing, the attribution becomes
+checkable; until then it is stated as inference.
+
+**1969 sites is not 1969 bugs.** The scan separates them:
+
+- **SOURCE** (`.py` / `.lean` / `.ts`) — code that computes a wrong number.
+  **443 sites.** These are the actionable set.
+- **RECORD** (`*.witness.json`, audit outputs, `.md` tables) — **1526 sites**,
+  history. A
+  committed witness records what a producer *actually computed*. Rewriting it
+  to match the new table would falsify the record. The fix is to correct the
+  producer and re-run it, which is a scoped, announced act — not an idle sweep.
+
+`computations/audits/hardcoded-literal-audit.witness.json` alone accounts for
+~550 of the raw hits: it is an audit's own *listing* of literals, not uses of
+them. Counting those as defects would be double-counting the detector.
+
+## Not done here
+
+The sweep itself. This PR delivers the **detector and the measurement**, not
+the drain. Correcting 443 source sites means re-running their producers and
+regenerating their witnesses, which is a large, announced tranche and needs
+its own scope — and per the standing directive, a witness is never edited to
+make a gate green.
