@@ -3250,8 +3250,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
-| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
+| `tools/pyhecke/` | `pyhecke` — Layer 2b (Hecke / Gram / Markov trace). **Not on PyPI** (404). 70 in-repo importers. |
+| `tools/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine`. **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel but is `workflow_dispatch`-only and has no publish step. Build locally with `maturin build --release`. 89 in-repo importers. |
 | `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
 
 > **Importer counts are measured, not maintained.** The five above were
@@ -3264,11 +3264,22 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 >   | grep -v "^./tools/<pkg-dir>/" | grep -v _deprecated | wc -l
 > ```
 >
-> **`qou-mass` and `qou-substrate` are not published.** Both 404 on PyPI, with
-> no `dist/`, no tags and no publish workflow. Do not describe either as
-> shipped, and do not reason about external consumers of their data — there
-> are none. (Checked 2026-08-15; the `qou-mass` entry said "PyPI package"
-> while nothing had ever been uploaded.)
+> **None of `qou-mass`, `qou-substrate`, `pyhecke` or `pyhecke-native` are
+> published.** All four 404 on PyPI, with no `dist/` and no publish step. Do not
+> describe any of them as shipped, and do not reason about external consumers of
+> their data — there are none. (`qou-mass` / `qou-substrate` checked 2026-08-15;
+> the two `pyhecke` rows carried the same wrong claim until 2026-08-19 and were
+> corrected the same way. `pyhecke-native` has a wheel workflow, which is
+> probably how "PyPI wheel" got written, but it is `workflow_dispatch`-only and
+> uploads nothing — building an artifact is not publishing it.)
+>
+> **Consequence for agents, and it is not cosmetic.** `pyhecke_native` cannot be
+> `pip install`ed, so a container without it is the *default*, not an anomaly —
+> and producers that branch on its presence then write a different payload
+> silently. Measured: `binding_canonical.py` without it moves `tr_M_atom`
+> 0.388 -> 0.575 (48%), no crash, no warning. Build it from
+> `tools/pyhecke-native/` with `maturin build --release` before regenerating any
+> witness whose `environment` block records it.
 >
 > **Never hand-edit `qou-mass/src/qou_mass/_internal/`.** It is generated from
 > `computations/` by [`scripts/sync-qou-mass-vendor.py`](scripts/sync-qou-mass-vendor.py)
