@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T18:16:01.194678+00:00",
-  "commitSha": "f3f57a0dd5bae9ea5dd872f3f1869d6b8383a98e",
+  "computedAt": "2026-08-19T20:11:12.416485+00:00",
+  "commitSha": "6800135a7d236ec9bf132c117c4b8eeadc845229",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "33ccaac86640",
@@ -42,7 +42,7 @@
       "Q0_INDEPENDENT_NO_REASON": 2,
       "Q0_ANCHOR_MISSING": 1903,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 73,
+      "Q0_AUDIT_EXEMPT": 74,
       "Q0_PARSE_ERROR": 1,
       "Q0_FLIP": 0
     },
@@ -10525,6 +10525,10 @@
         },
         {
           "witness": "compute-audit-scan.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "convention-frame-staleness-audit.witness.json",
           "detail": ""
         },
         {
