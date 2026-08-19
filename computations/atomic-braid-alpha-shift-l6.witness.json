@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-22T13:13:34.732453+00:00",
-  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
+  "computedAt": "2026-08-15T11:27:18.933592+00:00",
+  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
   "assertions": [
     {
       "name": "alpha_shift_equals_word_length_disjoint",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 16,
   "computation": "atomic-braid-alpha-shift-l6",
   "scriptFile": "atomic_braid_alpha_shift_l6.py",
   "scriptHash": "fd339d83491a",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "L6 advance: extends the AXKIA-style α_shift = k·(p−1) table from torus-knot interfaces to atomic-braid words for A=1..4. Per-atom α_shift_total (sum over cycle factors) is compared to ℓ(K, q) (max GS-filtration grade). For disjoint-cluster words their ratio is identically 1, validating the column-rich pole-order formula at the atomic-braid level.",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
@@ -46,7 +47,7 @@
     "conditional_on": [
       "conj:crystal-graph-realization"
     ],
-    "q_0": 1.1099785955573347,
+    "q_0": 1.1099785827513808,
     "atoms": [
       {
         "atom": "p",
@@ -116,6 +117,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
