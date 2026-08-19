@@ -115,3 +115,186 @@ as enumerator (a file mentioning ≥ 20 of the orphans — i.e. an inventory) ve
 real; then split real references into code (`.py`/`.ts`/`.lean`/`.sh`) and prose.
 Only the intersection of *no producer*, *no code reference*, *no prose reference*
 was moved.
+
+---
+
+# Part 2 — provenance investigation of the paper-feeding orphans
+
+Owner follow-up: *"if feeding paper that's bad. go to original commit/PR to
+investigate source."*
+
+## 0. Two corrections to Part 1 before the findings
+
+**(a) The tier-E count was still inflated.** Part 1 fixed three
+over-reporting defects in `derivation_gap_categorize.py`. There were two more,
+both larger:
+
+- The categorizer read only `scriptFile`. `witness_producer_executes_audit.py`
+  already resolves producers correctly — three spellings (`scriptFile` /
+  `producer` / `script`) plus `computation.script`, repo-wide, across Python,
+  Rust and Lean, with a prose guard. The categorizer now **reuses** that
+  resolver instead of keeping a second, worse one. Five of the twelve
+  "paper-feeding orphans" declared `producer: computations/deltalambda/*_probe.py`
+  and the file was on disk the whole time.
+- `.rs` was missing from the producer suffixes, so
+  `joint-tower-sdp-rust.witness.json` (`scriptFile: joint_tower_sdp.rs`, present
+  at `tools/hecke-engine/src/bin/`) read as an orphan.
+
+**E-orphan 186 → 137; paper-feeding 12 → 7.**
+
+**(b) `.claude/worktrees/` has now broken a third audit tool.**
+`witness_producer_executes_audit.resolve()` searches repo-wide and requires a
+**unique** hit. `joint_tower_sdp.rs` returned **six** — one real, five from
+stale sub-agent worktrees — so the uniqueness guard rejected the match and the
+producer resolved to `None`. Same root cause as `mpf_context_dps_audit.py`
+(Part 1 §4), different symptom. Fixed by excluding `.claude` there too.
+
+The pattern is worth stating once: **a gitignored directory holding checkouts
+of other branches silently corrupts every repo-wide `rglob` in the audit
+layer**, and it corrupts each one differently — a phantom RED in one tool, a
+false orphan in another. Any audit that globs the repo needs the exclusion.
+
+## 1. Local git cannot answer the provenance question — the clone is shallow
+
+`git log` on `4he-binding-full-pipeline.witness.json` shows **one** commit, a
+2026-07-25 alpha-EM probe touching 27,229 files and adding 2,782 witnesses.
+That is not a mass drive-by commit: `.git/shallow` exists, `git rev-parse
+--is-shallow-repository` is `true`, and that commit is simply the shallow
+boundary. **Nothing about the repository's history is damaged.** The real
+history is intact on the remote and was read through the GitHub API.
+
+Recorded because the intermediate reading — "the history was rewritten" — is
+alarming, wrong, and easy to reach from `git log` alone in this environment.
+
+## 2. `4he-binding-full-pipeline.witness.json` → `content/values/registry.ts`
+
+**Origin: commit [`e52487a2`](https://github.com/litlfred/qou/commit/e52487a21f4843c60d66d39256e0b00b3655bf37), 2026-04-20**, *"Address review comments + 4He result + derivation audit"*. Its own message records what the run produced:
+
+> 4He full-pipeline result (n=12 Ocneanu inversion, 10.6 min): … tower at
+> kahler_order=0: V̂ values 1.52, 1.60, 1.65 past Φ_q pole → **blows up to 1.98M
+> MeV**. Tower formula doesn't extend to 4He without a Kähler lift.
+
+A real 10.6-minute compute (`time_sec: 930.9`) whose *result was a documented
+failure* (`err_pct: 52959.6`, `precision: f64_numeric_fallback`). The producer
+script was never committed.
+
+The registry does not pin the result. It pins the run's **experimental
+reference by-product**, `B_AME_MeV`:
+
+```ts
+B_4He_AME_MeV: { witnessFile: "computations/4he-binding-full-pipeline.witness.json",
+                 witnessPath: "B_AME_MeV", defaultPrecision: 6, units: "MeV" }
+```
+
+### The defect: the paper and the compute layer disagree in the last digit
+
+| source | value |
+|---|---|
+| `content/values/registry.ts` → the rendered paper | **28.295674** |
+| `computations/ame-2020-binding-energies.witness.json` → `data.B_he4_MeV` | **28.295673** |
+
+Difference `1e-6 MeV`, at exactly the precision the registry renders
+(`defaultPrecision: 6`). Every compute consumer uses the AME source value —
+`alpha_cluster_binding_scaling_probe.py`, `binding_multibody_scaling_probe.py`,
+`rho_f_volume_binding_gap.py`, `atom_vhyp_closure_matrix_m.py`,
+`pauli_young_spin_isospin_delta_lambda_probe.py` all read `B_he4_MeV`. **The
+paper prints one last digit for ⁴He's experimental binding energy; the whole
+compute layer uses another.**
+
+This is precisely the class `ame-registry-routing-triage.witness.json` (bean
+`fvxq`) exists to catch: *"UNSAFE = near but not exact → routing changes the
+value … value-reconciliation decisions that must precede any route."*
+
+**Not asserted here: which digit is correct.** Reconciling against the actual
+AME2020 table is required — a back-of-envelope from mass excesses gave a
+*third* value (~28.29566), which is exactly why this needs the table and not an
+agent's recollection. What is established is that the corpus disagrees with
+itself and the paper is on the side with no producer.
+
+**Recommendation:** re-point `B_4He_AME_MeV` at
+`ame-2020-binding-energies.witness.json` → `data.B_he4_MeV` **after** the
+`fvxq` reconciliation decides the digit. An experimental constant should not be
+sourced from the by-product field of an abandoned probe run under any
+circumstances.
+
+## 3. `hecke-core-symbolic-migration.witness.json` → two appendix blocks
+
+**Origin: commit [`35f1ba7e`](https://github.com/litlfred/qou/commit/35f1ba7edfb66872da172d46c6fb483559e1859d), 2026-05-02 (PR #511)**, a commit whose stated purpose was addressing three Gemini review comments. From its message:
+
+> Also captures previously-uncommitted artifacts: `hecke-core-symbolic-migration.witness.json`
+> (**emitted by the §3·E subagent shortly after the original commit**)
+
+A sub-agent emitted it in-session; the script was never committed. Then on
+**2026-05-08 (`42934566`)** its assertions were **hand-written into the JSON**:
+
+> Hand-curated audit witnesses (**no producer script — assertions written
+> directly to JSON**) … hecke-core-symbolic-migration (0 → 4):
+> `alpha_em_inv_symbolic_vs_numerical_lt_1e_13`,
+> `alpha_em_inv_numerical_matches_codata_2pp_per_billion`, …
+
+Today two appendix blocks declare it as their evidence:
+
+- `mba-step02-gs-reduction.ts` — `computation.witness`, **`status: "verified"`**
+- `mba-step02-gs-reduction.md` — *"**Canonical witness**: … Records the input
+  braid, the output basis-decomposition vector … **and a hash of the rewriter
+  source for reproducibility**"*
+- `e-hartree-categorical-derivation.ts` — `computation.witness`, **`status: "verified"`**
+
+A block claiming `status: verified`, against a hand-curated JSON with no
+producer, whose `.md` advertises reproducibility. The witness's own `scriptFile`
+field says `"(legacy — no matching producer found; provenance pending manual
+triage)"`.
+
+## 4. How this reached a green gate: the I14 provenance campaign
+
+Both witnesses above are among the **3 witnesses** the provenance campaign
+could not resolve. Commit
+[`f893cc92`](https://github.com/litlfred/qou/commit/f893cc929fb6c862ab54fc9e3406fd550701cda3),
+2026-05-19, *"fix(I14 provenance): batch 3 — 56 → 0, completeness 1.0"*:
+
+> grep'd every `.py` … 53 of 56 had a real producer … **The 3 true orphans get
+> an explicit "no matching producer found" scriptFile marker** so future agents
+> can triage them. … The 3 orphan-marked witnesses are flagged for follow-up but
+> **no longer block the closure assertion**.
+
+| field | before | after |
+|---|---:|---:|
+| `prov_missing` | 56 | **0** |
+| `completeness_ratio` | 0.91 | **1.00** |
+| `no_missing_provenance` | FAIL | **PASS** |
+
+The 53 recoveries were real work and the marker was honest — it says exactly
+what is wrong, and this investigation found the witnesses *by* that marker. The
+defect is the **gate**: `prov_missing: 0` and `completeness_ratio: 1.00` are
+true of *the field being populated*, not of provenance existing. Three
+witnesses with no provenance were counted as complete, and the assertion that
+was supposed to notice went green. Two of the three now back paper values.
+
+This is the same shape as the trivial-`True` and axiomatization anti-patterns
+AGENTS.md already forbids: a check satisfied by a statement *about* the gap
+rather than by closing it. **A provenance field whose value is prose should
+count as missing, not present.**
+
+## 5. Remaining paper-feeding orphans (7)
+
+| witness | consumer | what it feeds |
+|---|---|---|
+| `4he-binding-full-pipeline` | `content/values/registry.ts` | **a rendered numeric value** (§2) |
+| `hecke-core-symbolic-migration` | 2 appendix blocks, `status: verified` | canonical-witness claim (§3) |
+| `canonical-mass-table-242ppb` | `mba-step09b-per-isotope-binding.ts` | `computation.witness`, `status: "experimental"` (honestly labelled) |
+| `rho-k-markov-multiplicativity` | `rho-k-graded-expansion.{ts,md}` | backs a **"PROVED via Markov multiplicativity"** status claim (3.2e-14) |
+| `wlambda-covariance-epic-A2-fractional-moment-family` | `YoungDiagramKernelPincer.lean` | docstring evidence for an FMP target |
+| `whitehead-volume-identification` | surreals audit block | prose evidence |
+| `one-loop-ambiguity-group` | `content/bib-qa-verifications.json` | needs re-check; the grep context did not confirm a functional use |
+
+## 6. Recommended next actions
+
+1. **Make a prose provenance field count as missing** in
+   `witness_provenance_audit.py`; re-measure `completeness_ratio` honestly.
+2. **Re-point `B_4He_AME_MeV`** at the AME source, gated on the `fvxq`
+   last-digit reconciliation (§2).
+3. **Downgrade `status: "verified"`** on the two `mba-step02` blocks, or
+   reconstruct the producer (§3).
+4. **Re-check the `rho-k-markov-multiplicativity` "PROVED" claim** — a proof
+   status resting on an unregenerable witness.
+5. The remaining 130 non-paper-feeding orphans stay as Part 1 left them.
