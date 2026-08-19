@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-19T08:12:59Z
+updated_at: 2026-08-19T12:07:20Z
 ---
 
 Parent dgap. 66 witnesses across producers that emit MORE THAN ONE witness. The audit matches
@@ -87,3 +87,33 @@ then 2s. **Yield has flattened**: batch 1 was 26/chain, batch 2 was 6-7,
 the rest are 2-4. Worth asking whether the tier-D boundary (1233
 singletons) or the tier-E provenance triage (186 orphans) is the better
 next spend before grinding 2-witness chains.
+
+
+## 2026-08-19 — tier-E orphan triage (owner: "move those without provenance into _deprecated/")
+
+**1711 -> 1698** computational-only; **E-orphan 186 -> 169**.
+
+- **13 deprecated** (`git mv`, never `git rm`): scriptFile null, no producer
+  under any name/suffix, zero refs outside the six inventory witnesses.
+- **4 recovered** as false orphans — the categorizer had three
+  over-reporting defects (scanned only `computations/`, only `*.py`,
+  and guessed `.py` unconditionally so `substrate/*.sage` producers
+  sitting beside their own witness did not match). Fixed.
+- **6 rescued from the move** by checking f-string templates, not just
+  literal basenames: `chi-{atom}(-free)-h{n}-at-qinv-50dps` is written AND
+  read by `bar_pairing_binding_observable.py`. **A witness whose name is
+  built by an f-string is invisible to basename analysis** — general lesson.
+- **1 frozen**: `binding-lp-delta-audit` scores dead but is named in an
+  OPEN devil's-advocate objection (wave4, `null-dual`).
+
+### The finding that needs its own bean
+
+**147 of the 186 orphans are read by live code** — `aK_via_lp_dual.py`,
+`low_isotopes_binding_sweep.py`, `binding_depth_stratified_lr.py`, a content
+block (`mba-step09b-per-isotope-binding.ts`), a Lean file, and
+`content/values/registry.ts` (the witnessed-values registry). A value flows
+into the paper from a file **nobody can regenerate**. Worse than either dead
+or healthy; not a retirement job. Needs: reconstruct the producer, or freeze
+the witness explicitly as a declared constant input.
+
+Audit: `docs/audits/2026-08-19-tier-e-orphan-triage.md`
