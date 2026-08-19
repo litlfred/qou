@@ -97,8 +97,43 @@ therefore NOT a dependency of this file; it stands on its own as
 upstreamable Mathlib material. Recorded so no false chain of necessity is
 inferred.
 
-REMAINING for L4-1's sharp statement (not yet done, do not overclaim):
-convert phi_interior_bracket's two envelopes into the LIMIT
-(h/2)(phi(nh) - phi(h)) -- both are (h/2) x Riemann sums of the monotone
-phi', so this is a monotone-Riemann-convergence step -- then add the
-collapsing i=0 cell and combine with L4-1c(i) + L4-1b.
+STEP 3 CONVERGENCE LANDED (same file, sorry-free) — the sharp statement:
+
+  phi_smooth_defect_sharp
+    | sum_{i=1..n-1} int_cell (phi(x_{i+1}) - phi(u)) du
+        - (h/2)(phi(nh) - phi(h)) |   <=   (h^2/2)(phi'(h) - phi'(nh))
+
+for every 0 < h and every n >= 1 with nh < pi. This IS van der Veen's
+missing 1/2, now identified rather than merely bracketed, and it is
+EFFECTIVE: no limit is taken, no modulus of continuity is carried.
+
+How the two envelopes collapsed onto the term (the step that was open):
+ - phi_sub_cell_bracket   — the SAME antitone MVT bracket, applied to phi
+                            instead of to the cell defect, gives
+                            h phi'(x_{i+1}) <= phi(x_{i+1}) - phi(x_i)
+                                            <= h phi'(x_i).
+ - phi_riemann_sum_bracket— summing + telescoping: phi(nh) - phi(h) is
+                            trapped between h*R and h*L, i.e. between the
+                            VERY SAME two Riemann sums that bracket the
+                            defect sum S. That common trapping is what
+                            turns two envelopes into one identified term.
+ - sum_phiDeriv_telescope — L - R = phi'(h) - phi'(nh) exactly, so the
+                            residual is O(h^2), not O(h).
+ - sum_Ico_one_telescope  — the Ico-1-n telescope helper both use.
+
+ROUTE NOTE: no integral comparison and no monotone-convergence argument
+was needed after all. I had scoped this step as "monotone Riemann
+convergence" (integrate phi' over each cell, FTC, sum). The shorter route
+is to never integrate phi' at all: apply the ALREADY-PROVED
+sub_bracket_of_antitoneOn_deriv a second time, to phi rather than to the
+defect. Recording it because it is the fourth time on this front that a
+step I flagged as the hard analytic one turned out to be a reuse of
+machinery already in hand (cf. the E-M / Lipschitz / sinc corrections
+above). The pattern is real: on this front my difficulty estimates run
+high whenever the target is a BOUND that a monotonicity argument already
+supplies, and only bite when the target is a genuine LIMIT.
+
+REMAINING for L4-1's full sharp statement (do not overclaim): add the
+collapsing i=0 cell (already bracketed by smooth_defect_squeeze between
+h(phi(h) - log 2) and 0) and combine with L4-1c(i)'s exact singular
+telescope + L4-1b's Stirling. The smooth half itself is now DONE.
