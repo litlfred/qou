@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T17:42:08.050481+00:00",
+  "commitSha": "e95e0ad1e959dce6176e975cd83796f22dc838d4",
+  "assertions": [
+    {
+      "name": "carrier_is_anchor_blind",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "empirical_S_varies_by_order_unity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "bridge_carries_essentially_all_anchor_dependence",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "bridge_changes_sign_between_anchors",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "two_anchors_cannot_constrain_the_bridge_form",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "hd-to-s-bridge-anchor-dependence",
+  "scriptFile": "hd_to_s_bridge_anchor_dependence_probe.py",
+  "scriptHash": "20a77abd624f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Measures where the c_3 anchor-dependence lives. The h*D carrier is anchor-blind (3.53e-7) while S varies by 1.245, so the bridge carries ~3.5e6 times more variation -- essentially all of it -- and changes sign between anchors. B is a defined quotient, not a derived decomposition; two anchors cannot constrain its form and none is proposed.",
+  "auditOnly": "docs/audits/2026-08-19-hd-to-s-bridge-carries-the-anchor-dependence.md",
+  "data": {
+    "carrier_proton": "-0.003486062405593",
+    "carrier_muon": "-0.0034860636358261",
+    "carrier_rel_variation": "3.529004811e-7",
+    "S_proton": "-0.0394593643",
+    "S_muon": "0.009682977798",
+    "S_rel_variation": "1.245391125",
+    "bridge_proton": "11.3191789787503",
+    "bridge_muon": "-2.77762508362972",
+    "variation_ratio": "3529015.096",
+    "bridge_sign_change": "True",
+    "n_anchors": "2",
+    "verdict": "LOCALISED (scope-(a) measurement). The anchor-dependence of c_3 lives ENTIRELY in the h*D -> S bridge: the carrier varies by 3.529e-7 between anchors while S varies by 1.245, a factor of 3.52902e+6. The bridge B := S/(h*D) is +11.319 at the proton anchor and -2.778 at the muon anchor -- it CHANGES SIGN, so 'S = h*D up to a factor' understates the gap and no positive rescaling of the carrier reaches S at both anchors. B is a QUOTIENT DEFINED HERE, not a derived decomposition: with exactly two anchors, any 2-parameter family fits it exactly, so its FORM is not constrained by this data and none is proposed. The contribution is negative-shaped and about direction: routes that hope to explain the anchor-dependence from the ladder are looking where the signal provably is not. No value derived, no c_k wired, no fit; nothing bears on q0 (forever-gated, qou-eic1)."
+  },
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "Deliberately BOTH pins: this probe compares the proton-anchored and muon-anchored evaluations against each other, so it is a cross-anchor measurement rather than a single-layer compute. Recorded as ambiguous rather than picking one, since picking one would misdescribe what is measured. Both values are read from the committed k=31 re-pin witness; no modulus is computed here."
+}
