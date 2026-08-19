@@ -238,3 +238,54 @@ observation about the ones I happened to check.
 Still open and unchanged: what DOES derive q^-3, given the numerics require it
 (dropping it moves m_p to +37.0 %). The Garside-element guess (l(w_0) = 3 =
 crossings of the B_3 half-twist Delta) remains recorded, not claimed.
+
+## Which normalisation is DERIVABLE? -- the option table, measured (2026-08-19)
+
+Owner asked which convention QOU can derive. Computed the required N (from
+F_Bor = |tr_M| . N and the m_p target) and tested every structurally-motivated
+candidate. Required N = 4.4755738777400674, |tr_M(b_Bor)| = 0.99856216383679.
+
+  option                              N          m_p (MeV)     vs CODATA   bar-sym  derivable
+  1 writhe rule (w=0), N=1            1.0000     204.88        -78.16 %    YES      YES (corpus rule)
+  2 Markov/TL delta^(n-1) = [2]^2     4.0437     847.14         -9.71 %    YES      YES (standard)
+  3 [3]_q! , no division              6.1206    1285.39        +37.00 %    YES      YES (Poincare/dim)
+  4 [3]_q!/q^3   CURRENT              4.4756     938.272089    -2.9e-10 %  no       NO (proved)
+  5 [3]_q!/q^(3/2) half-centering     5.2338    1098.28        +17.05 %    no       partly
+  6 q.[2]^2      near-miss            4.4884     940.98         +0.29 %    no       NO
+
+### The structural result
+
+Every DERIVABLE option is bar-symmetric, and every bar-symmetric option MISSES.
+The only option that hits is the one proved non-derivable. That is not a gap in
+the search -- it follows from the earlier theorems: tr_M and [3]_q! are both
+bar-symmetric, so any braid-derived N is bar-symmetric, and the required N is
+not (F_Bor(q^-1) = q^6 F_Bor(q)).
+
+Searched bar-symmetric products [2]^b [3]^c [4]^e over b,c,e in [-4,4]x[-4,4]x
+[-2,2] (~400 candidates). Closest is [2]^3[3]^2[4]^-2 at 0.34 %. That is
+NUMEROLOGY, not evidence: three free exponents over ~400 candidates spanning a
+wide range will produce a sub-percent hit by chance, which is the
+search-space-entropy argument AGENTS.md uses against the 12-constant PSLQ basis.
+It is recorded so nobody mistakes it for a find.
+
+### The one principled bar-symmetric candidate
+
+delta^(n-1) = [2]_q^2 -- the standard Markov/Temperley-Lieb strand
+normalisation, the loop value raised to (n-1). It is DERIVABLE, bar-symmetric,
+and misses by 9.71 %. That is the honest best available, and 9.71 % is far too
+large to be a residual.
+
+### What this means
+
+The question "which normalisation is derivable from QOU?" has a definite answer:
+  - DERIVABLE: the writhe rule (gives 1), and the Markov/TL strand
+    normalisation (gives [2]^2). Both bar-symmetric, both miss badly.
+  - NOT DERIVABLE: the one in use.
+
+So this is not a matter of finding the right derivation -- the derivable options
+are enumerated and none reproduces m_p. Either the mass identity needs a factor
+that is genuinely a declared convention (and should be labelled one), or
+something upstream of F_Bor -- the hbar_q convention, the muon anchor, or the
+trace convention -- is absorbing a q-power that belongs elsewhere. The second is
+worth checking: 1/hbar_q^2 is ALSO bar-asymmetric (hbar_q = 1 - 1/q), and the
+two asymmetries combine to a net q^-2 across m_mu . F_Bor.
