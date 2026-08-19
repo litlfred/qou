@@ -1,11 +1,11 @@
 ---
 # qou-e49n
 title: 'REGRESSION (main): the q0-anchor FLIP DETECTOR is blind — _q0_value_for_anchor(''muon'') returns the PROTON value, because the tnjb proton sweep (9a9c6b31c7) regenerated computations/q-pinning-50-digit.witness.json AT THE PROTON PIN and that file is the muon branch''s source. 262 honest muon witnesses now misclassify as Q0_FLIP, and a REAL muon->proton flip would read Q0_OK. Gate is BLOCKING as of 2c5776834a.'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T20:10:58Z
-updated_at: 2026-08-19T20:11:36Z
+updated_at: 2026-08-19T20:15:26Z
 ---
 
 ## Evidence (all read-only, reproducible in one line)
@@ -78,3 +78,31 @@ muon reference is now that the canonical q₀ witness has been migrated to proto
 Candidates: restore a dedicated muon-pinned reference witness; pin the muon
 string as a package constant beside `Q_50_DIGIT_STR`; or scope the detector to
 proton-only and record that muon-anchored witnesses are unchecked until migrated.
+
+
+## RE-SCOPED 2026-08-19 — found first by PR #5324; this bean is a confirmation, not a discovery
+
+Independently reproduced, but **not novel**. Sibling PR **#5324** ("Q0_FLIP 262
+was ONE corrupted reference, not a tranche — restored, guarded, and deliberately
+not drained") had already located the same corrupted reference and is landing the
+fix. Related: **#5317** (revert of the half-landed q-pinning change, "main is
+broken for 257 producers"), **#5334** (drift-audit refresh after the muon-anchor
+restore), **#5332**, **#5333**.
+
+Per AGENTS.md §"Parallel exploration": converge on landing. **#5324 owns the
+fix; this bean re-scopes to verification.** Do not attempt a competing fix here.
+
+What this bean still contributes, beyond the duplicate root-cause chain:
+
+1. **The gate is BLOCKING** as of `2c5776834a`, so every sibling running
+   `scripts/precision-gates.sh --changed` on a witness-touching tree takes a red
+   that is not theirs.
+2. **Main's committed `q0-anchor-consistency-audit.witness.json` is 278 commits
+   stale** (`Q0_FLIP: 0`, `Q0_OK: 653` vs a live `262 / 392`) — that staleness is
+   what kept the failure invisible.
+3. **The false-negative direction**: with both anchors resolving to one string a
+   *real* muon→proton flip reads `Q0_OK`. That is the failure mode `tnjb` built
+   the detector for.
+
+Posted as a comment on #5324. Verdict recorded so a later reader does not count
+this as a second, independent defect.
