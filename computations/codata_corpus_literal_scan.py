@@ -8,7 +8,7 @@ Method
 
 Every numeric literal in the corpus with enough significant digits to be a
 physical constant is compared against every value in the NIST CODATA-2022
-table (`uploads/allascii.txt`). A literal is reported when it is
+table (`library/allascii.txt`). A literal is reported when it is
 
     NEAR   a table value  (relative difference below `--near`, default 1e-5)
     BUT    not equal to it,
@@ -47,11 +47,11 @@ mp.mp.dps = 60
 
 REPO = Path(__file__).resolve().parent.parent
 
-# Where to look. `uploads/` is excluded: it holds the table itself plus 337
+# Where to look. `library/` is excluded: it holds the table itself plus the
 # source PDFs, so scanning it would report the authority as a suspect.
 SCAN_EXTS = {".py", ".ts", ".md", ".lean", ".json"}
 SKIP_DIRS = {
-    ".git", "node_modules", ".lake", "__pycache__", "uploads",
+    ".git", "node_modules", ".lake", "__pycache__", "library",
     ".beans", "build", "dist", ".pytest_cache", "_deprecated",
 }
 
@@ -260,7 +260,7 @@ def main() -> int:
                 "literals against the in-repo codata_constants module and so "
                 "catches short prefixes but is structurally blind to a "
                 "full-length literal from an earlier CODATA edition. Reference "
-                "values are READ from uploads/allascii.txt, never typed here."
+                "values are READ from library/allascii.txt, never typed here."
             ),
             "q0Anchor": "not-applicable",
             "q0AnchorReason": (
