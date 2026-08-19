@@ -26,6 +26,7 @@ export default chapter({
         "fivetwo-stokes-unimodular",
         "fivetwo-level-seven-ladder",
         "fivetwo-three-sevens",
+        "fivetwo-envelope-transport",
       ],
     },
     {
