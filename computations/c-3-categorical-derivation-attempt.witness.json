@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:18:25.104011+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-15T16:01:59.356986+00:00",
+  "commitSha": "ab9e6f3e4a2589e63b86c41d3ddae65c3865ca86",
   "assertions": [
     {
       "name": "c_3_taylor_exact_promotion",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "c-3-categorical-derivation-attempt",
   "scriptFile": "c_3_categorical_derivation_attempt.py",
-  "scriptHash": "3ca6c7011bf1",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "3ec320c91f55",
+  "scriptCommitSha": "b72b7c57f50269e3997e5f90c366be59997c0156",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Hard structural attempt to promote Q_β precision-ladder coefficient c_3 from q₀-dependent near-match to Taylor-exact. Evaluates SIX structural candidates (bar-symmetrization, J_Hopf at q₀, linking-number weighted, Wedderburn-block weighted, 3-strand Markov braids, Habiro binomial) at BOTH muon-pin and m_p-pin q₀ anchors and checks for ≤ 10 ppm match with the empirically extracted c_3(q₀). Negative result is informative: it confirms c_3 is intrinsically scale-dependent (the ladder is a running coupling, not a Taylor expansion at c_3 level).",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
@@ -53,12 +56,12 @@
       {
         "name": "a1) −2 · bar-sym(tr_M(σ_1²))",
         "formula": "−2 · (tr_M(σ_1²; q) + tr_M(σ_1²; q⁻¹))/2 — q-bar symmetrised Hopf trace times standard linking factor",
-        "pred_mp": "-2.0",
-        "pred_muon": "-2.0",
-        "miss_mp_mult_ppm": 33509.47198498039,
-        "miss_mp_add_ppm": 30300.65870240984,
-        "miss_muon_ppm": 4826.591033487585,
-        "best_mp_ppm": 30300.65870240984,
+        "pred_mp": "-2.04370620853",
+        "pred_muon": "-2.04370621823",
+        "miss_mp_mult_ppm": 12388.653703914522,
+        "miss_mp_add_ppm": 9109.717890108997,
+        "miss_muon_ppm": 16921.042061258904,
+        "best_mp_ppm": 9109.717890108997,
         "passes_10ppm": false
       },
       {
@@ -152,34 +155,34 @@
       {
         "name": "e1) −tr_M(σ_1²·σ_2²)",
         "formula": "−tr_M(σ_1²·σ_2²) = −(h·z + 1)²  — H_3 disjoint Hopf",
-        "pred_mp": "-1.21967298323",
-        "pred_muon": "-1.21967300874",
-        "miss_mp_mult_ppm": 410598.8072183732,
-        "miss_mp_add_ppm": 408641.95578389,
-        "miss_muon_ppm": 393106.92703547893,
-        "best_mp_ppm": 408641.95578389,
+        "pred_mp": "-1.2725842146",
+        "pred_muon": "-1.27258425298",
+        "miss_mp_mult_ppm": 385029.70524504164,
+        "miss_mp_add_ppm": 382987.96267954656,
+        "miss_muon_ppm": 366778.9953825329,
+        "best_mp_ppm": 382987.96267954656,
         "passes_10ppm": false
       },
       {
         "name": "e2) −2·tr_M(σ_1²·σ_2²)",
         "formula": "−2·tr_M(σ_1²·σ_2²) — doubled Hopf trace",
-        "pred_mp": "-2.43934596645",
-        "pred_muon": "-2.43934601747",
-        "miss_mp_mult_ppm": 178802.38556325372,
-        "miss_mp_add_ppm": 182716.0884322201,
-        "miss_muon_ppm": 213786.14592904213,
-        "best_mp_ppm": 178802.38556325372,
+        "pred_mp": "-2.54516842919",
+        "pred_muon": "-2.54516850596",
+        "miss_mp_mult_ppm": 229940.58950991678,
+        "miss_mp_add_ppm": 234024.07464090685,
+        "miss_muon_ppm": 266442.0092349343,
+        "best_mp_ppm": 229940.58950991678,
         "passes_10ppm": false
       },
       {
         "name": "e3) −tr_M(σ_1³)",
         "formula": "−tr_M(σ_1³) = −((h²+1)·z + h) — trefoil-like",
-        "pred_mp": "-0.73020403163",
-        "pred_muon": "-0.73020405951",
-        "miss_mp_mult_ppm": 647132.3599557601,
-        "miss_mp_add_ppm": 645960.81575792,
-        "miss_muon_ppm": 636660.1684282818,
-        "best_mp_ppm": 645960.81575792,
+        "pred_mp": "-0.848526607059",
+        "pred_muon": "-0.84852665018",
+        "miss_mp_mult_ppm": 589953.5357543724,
+        "miss_mp_add_ppm": 588592.1540306996,
+        "miss_muon_ppm": 577784.4204707962,
+        "best_mp_ppm": 588592.1540306996,
         "passes_10ppm": false
       },
       {
@@ -221,8 +224,8 @@
     "verdict": "NEGATIVE",
     "verdict_text": "No structural candidate at the c_3 level reproduces the empirical c_3 at both q₀ anchors to ≤ 10 ppm. The cross-anchor 3% swing CANNOT be absorbed by any single-formula candidate from the six tested. c_3 is intrinsically scale-dependent at this level — the Q_β ladder is a RUNNING coupling at c_3+, not a Taylor expansion. Promotion to Taylor-exact requires the Habiro-element identification per the truncation-order audit (which embeds the q-dependence into a generating function rather than a single closed coefficient). c_3 STAYS TIER 'near-match' per #1479 discipline; no wire/un-wire decision is required.",
     "best_miss_candidate": {
-      "name": "d3) −(q² + q⁻²)",
-      "formula": "−(q² + q⁻²) — un-weighted block-eigenvalue sum",
+      "name": "a1) −2 · bar-sym(tr_M(σ_1²))",
+      "formula": "−2 · (tr_M(σ_1²; q) + tr_M(σ_1²; q⁻¹))/2 — q-bar symmetrised Hopf trace times standard linking factor",
       "pred_mp": "-2.04370620853",
       "pred_muon": "-2.04370621823",
       "miss_mp_mult_ppm": 12388.653703914522,

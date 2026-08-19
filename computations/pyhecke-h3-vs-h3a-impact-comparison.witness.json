@@ -1,7 +1,7 @@
 {
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "commitSha": "6b2b40a99a2e6b88a07d547862b7689533f35b64",
   "compute": "pyhecke_h3_vs_h3a_impact_comparison",
-  "computedAt": "2026-07-18T17:46:03.392322+00:00",
+  "computedAt": "2026-08-16T15:01:27.418929+00:00",
   "description": "Diagnostic comparison of legacy atom_per_generator_volumes (H_3 weights) vs proper per_generator_V_hat_3A (H_{3A} weights) for atoms A = 1..6. Companion to PR #1238 audit. Quantifies the legacy bug's per-generator V\u0302_full impact.",
   "durationMs": 0,
   "engine": "python",
@@ -9,14 +9,16 @@
   "legacy_available": true,
   "next_steps": "Full migration sweep (separate PR): (1) update 15+ caller scripts to use per_generator_V_hat_3A; (2) regenerate affected witnesses; (3) compare before/after PDG-difference per atom.",
   "proper_available": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "results": [
     {
       "A": 1,
       "N": 0,
       "Z": 1,
       "flag": "(H_3 correct \u2713)",
-      "max_abs_delta": 0.31762140405498007,
-      "max_rel_pct": 32.1151751897538,
+      "max_abs_delta": 0.4088293681259543,
+      "max_rel_pct": 37.84703001381573,
       "n_gens": 2,
       "sym": "p"
     },
@@ -25,8 +27,8 @@
       "N": 1,
       "Z": 0,
       "flag": "(H_3 correct \u2713)",
-      "max_abs_delta": 0.3025541901479426,
-      "max_rel_pct": 35.41917131922317,
+      "max_abs_delta": 0.3894354624810862,
+      "max_rel_pct": 41.381253072182304,
       "n_gens": 2,
       "sym": "n"
     },
@@ -35,8 +37,8 @@
       "N": 1,
       "Z": 1,
       "flag": "(LARGE)",
-      "max_abs_delta": 0.3176214040549803,
-      "max_rel_pct": 32.11517518975383,
+      "max_abs_delta": 0.4088293681259544,
+      "max_rel_pct": 37.84703001381575,
       "n_gens": 5,
       "sym": "D"
     },
@@ -45,8 +47,8 @@
       "N": 2,
       "Z": 1,
       "flag": "(LARGE)",
-      "max_abs_delta": 0.3176214040549803,
-      "max_rel_pct": 32.11517518975383,
+      "max_abs_delta": 0.40882936812595216,
+      "max_rel_pct": 37.84703001381554,
       "n_gens": 8,
       "sym": "T"
     },
@@ -55,13 +57,13 @@
       "N": 1,
       "Z": 2,
       "flag": "(LARGE)",
-      "max_abs_delta": 0.31762140405498074,
-      "max_rel_pct": 32.11517518975387,
+      "max_abs_delta": 0.4088293681259544,
+      "max_rel_pct": 37.84703001381575,
       "n_gens": 8,
       "sym": "\u00b3He"
     }
   ],
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "scriptFile": "pyhecke_h3_vs_h3a_impact_comparison.py",
   "scriptHash": "2b01c1d6a433",
   "status": "exploratory",

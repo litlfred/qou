@@ -636,34 +636,42 @@ def _q0_50dps_str() -> str:
 
 
 def z_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
-    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64).
+    """z = q³/(q² + 1) at 50-dps mpmath — **convention D**, no float64.
 
-    **Convention C.** Held here deliberately, in lockstep with the module's
-    float64 `z` — see the blocking note at that definition. Splitting the
-    mpmath mirror from the f64 original would be strictly worse than the
-    stale convention. Under D this would be q³/(q²+1), and rational, so the
-    "irrational" note would no longer apply.
+    MIGRATED 2026-08-16 (bean qou-cds2). This returned convention C's
+    1/(q^½ + q^−½) = 0.4993203…, and its docstring justified that by being
+    "in lockstep with the module's float64 `z`". That stopped being true on
+    2026-08-15, when the float64 `z` moved to D (commit 6086572c4): the
+    justification outlived the fact it rested on. The mpmath mirror then sat
+    18.5 % from the float64 original behind one import — and note which way
+    that ran, because it is the opposite of the usual worry: the NO-FLOAT64
+    path was the WRONG-convention one, so the more precise answer was the
+    incorrect answer.
+
+    Now rational, so the former "irrational" caveat no longer applies.
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
-        qi_ = 1 / q
-        return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))  # unary + pins precision
+        return +(q ** 3 / (q ** 2 + 1))  # unary + pins precision
 
 
 def tr_m_mp(dps: int = _GRAM_MP_DPS) -> list:
     """Markov trace TR_M on the NF basis at 50-dps mpmath (NO float64).
 
     Mirrors the float64 `TR_M` exactly: [1, z, z, z², z², h·z²+z] with
-    h = q − q⁻¹ and z the irrational Markov weight at 50 dps.
+    h = q − q⁻¹ and z the Markov weight at 50 dps.
 
-    **Convention C**, in lockstep with the module's `z` — see the blocking
-    note at that definition (bean qou-wgta item 11).
+    **Convention D**, genuinely in lockstep with the module's `z` as of
+    2026-08-16 (bean qou-cds2) — the claim this docstring already made, now
+    true. It was written when both were C, and survived the float64 side
+    moving to D, which is how a module came to export two conventions while
+    every docstring in it said otherwise.
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
         qi_ = 1 / q
         hh = q - qi_
-        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        z_ = q ** 3 / (q ** 2 + 1)
         return [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
                 +(hh * z_ ** 2 + z_)]
 
@@ -759,7 +767,15 @@ def gram_matrix_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
         q = _mp.mpf(_q0_50dps_str()) if q is None else _mp.mpf(q)
         qi_ = 1 / q
         h_mp = q - qi_
-        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        # Convention D (migrated 2026-08-16, qou-cds2; was C's
+        # 1/(q^½ + q^−½)). Under D this Gram is SINGULAR on the full NF
+        # basis — that is the fact which forced `G_INV`'s deletion on the
+        # float64 side. It does not block anything here: this accessor only
+        # BUILDS G and never inverts it, so a corank-1 form is a correct
+        # return value rather than a hazard. The plan called this the
+        # highest-risk item by carrying the float64 inverse's problem across
+        # to a path that has no inverse.
+        z_ = q ** 3 / (q ** 2 + 1)
         trm = [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
                +(h_mp * z_ ** 2 + z_)]
         Gm = [[_mp.mpf(0)] * 6 for _ in range(6)]

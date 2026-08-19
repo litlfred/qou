@@ -115,6 +115,33 @@ const MARKER_WINDOW = 400;
 
 const LITERAL_MARKER = /<!--\s*literal-source:/i;
 
+/**
+ * Is this "decimal" actually part of an identifier rather than a quantity?
+ *
+ * `10.1017` is not a measurement — it is the Cambridge University Press DOI
+ * prefix, from `https://doi.org/10.1017/CBO9780511804441` in a citation link.
+ * It reached the orphan list (`prf:confinement-phase-stratification`, "one
+ * literal in NO witness") looking exactly like an unsourced physical value,
+ * and no witness will ever contain it.
+ *
+ * Two shapes, both checked against the surrounding text rather than the
+ * literal alone, because the literal itself is indistinguishable from a real
+ * number:
+ *
+ *   * a DOI — `10.NNNN/…`, i.e. immediately followed by `/`
+ *   * an arXiv id — `NNNN.NNNNN` immediately preceded by `arXiv:`
+ *
+ * Deliberately narrow. Anything followed by a slash could in principle be a
+ * ratio written inline, but this corpus writes those in LaTeX, and a decimal
+ * butted directly against `/` with no space is an identifier every time it
+ * occurs here.
+ */
+function isIdentifierNotQuantity(text: string, start: number, end: number): boolean {
+  if (text[end] === "/") return true; // DOI prefix: 10.1017/...
+  const before = text.slice(Math.max(0, start - 12), start);
+  return /arxiv:\s*$/i.test(before) || /doi:\s*$/i.test(before);
+}
+
 /** Exempts every literal in the file. For generated atlases and data dumps. */
 const BLOCK_MARKER = /<!--\s*literal-source-block:/i;
 
@@ -319,6 +346,7 @@ function scopedLiterals(
     const i = m.index!;
     if (frac.length < MIN_DECIMALS) continue;
     if (inFence(i)) continue;
+    if (isIdentifierNotQuantity(text, i, i + whole.length)) continue;
 
     const lineStart = text.lastIndexOf("\n", i) + 1;
     let lineEnd = text.indexOf("\n", i);
@@ -404,6 +432,55 @@ const WITNESS_FIXTURE = JSON.stringify({
   ],
 });
 
+/** How much is a `--suggest` proposal actually worth?
+ *
+ * Coverage alone is nearly worthless: on a single-literal block, ANY witness
+ * that happens to contain that decimal "covers" it. `def:jet-stratified-reduction`
+ * quotes `1.1097`, which 29 witnesses carry, and the greedy cover prints one of
+ * them as though it were the source.
+ *
+ * Two signals separate provenance from arithmetic, in descending strength:
+ *   CONFIDENT — the witness is NAMED AFTER the block. Not a coincidence.
+ *   UNIQUE    — every literal has exactly one candidate witness in the corpus.
+ *               Strong, but NOT proof: two blocks can independently quote the
+ *               same rare constant, and `rem:q-beta-gamma-gamma-canonical-derivation`
+ *               is UNIQUE against a helium-4 chi matrix it has nothing to do
+ *               with. Subject-matter coherence is the remaining human check.
+ *   AMBIGUOUS — everything else. Not actionable: declaring one attaches a
+ *               source that merely contains the number, and it passes this
+ *               axis forever after, because the axis only checks containment.
+ */
+/** Digits below which a match is arithmetic, not evidence.
+ *
+ * `ex:qvalue-benchmark-table` and three sibling Q-value blocks were UNIQUE
+ * against `sublemma-2-1-A-operator-extract-h9-pn.witness.json` on the literal
+ * `0.5904`. The block says that is "the Rosso-Jones weighted average over the
+ * two degree-2 torus knots"; the witness carries `0.5904453769109197` as an
+ * A-operator pair FROBENIUS NORM. Unrelated quantities, agreeing to four
+ * decimals, with only one candidate in the whole corpus — so uniqueness alone
+ * proposed a false source for four blocks at once.
+ *
+ * Contrast `prf:crystal-isospin-degeneracy`, UNIQUE on
+ * `0.0020612874779541296` against `.data.atoms[1].S_crystal_at_q_zero`.
+ * Seventeen digits do not coincide.
+ */
+const STRONG_MATCH_DECIMALS = 10;
+
+export function coverageTag(
+  covered: number,
+  total: number,
+  named: boolean,
+  worstCand: number,
+  minDecimals = Infinity,
+): "CONFIDENT" | "UNIQUE" | "WEAK" | "AMBIGUOUS" | "PARTIAL" | "ORPHAN" {
+  if (covered === 0) return "ORPHAN";
+  if (covered < total) return "PARTIAL";
+  if (named) return "CONFIDENT";
+  if (worstCand !== 1) return "AMBIGUOUS";
+  // Unique, but on too few digits to be evidence of anything.
+  return minDecimals >= STRONG_MATCH_DECIMALS ? "UNIQUE" : "WEAK";
+}
+
 function selftest(): number {
   const V = witnessDecimalsFromText(WITNESS_FIXTURE);
 
@@ -432,6 +509,20 @@ function selftest(): number {
       0,
     ],
     ["two literals on one line -> both in scope", "$1.633154$ and $1.248248$.", 2],
+    // Identifiers, not quantities. 10.1017 is the Cambridge UP DOI prefix and
+    // reached the orphan list looking like an unsourced physical value.
+    [
+      "a DOI prefix in a citation link -> not a quantity",
+      "see [Boyd-Vandenberghe](https://doi.org/10.1017/CBO9780511804441) for this.",
+      0,
+    ],
+    ["an arXiv id -> not a quantity", "Ref: arXiv:2601.05136 for the construction.", 0],
+    ["a bare `doi:` id -> not a quantity", "doi:10.1103/PhysRevD.98.030001", 0],
+    [
+      "a real value on a line that ALSO has a DOI -> still in scope",
+      "gives $1.633154\\ldots$; see https://doi.org/10.1017/CBO9780511804441",
+      1,
+    ],
   ];
 
   /** In scope, but attributed to something other than a witness. */
@@ -476,10 +567,47 @@ function selftest(): number {
   console.log(`  ${twoWitness ? "ok  " : "FAIL"}  a two-element witness array parses as two witnesses`);
   bad += twoWitness ? 0 : 1;
 
-  const total = matchCases.length + scopeCases.length + attributionCases.length + 2;
+  // `--suggest` triage. These exist because "151 fully coverable" read as a
+  // work queue when 138 of the 151 were arbitrary picks, and acting on it would
+  // have attached false provenance that this axis could never afterwards
+  // detect. The distinction is the whole value of the mode, so it gets tests.
+  const tagCases: Array<[string, ReturnType<typeof coverageTag>, ReturnType<typeof coverageTag>]> = [
+    ["a witness named after the block is CONFIDENT even if the literal is common",
+     coverageTag(1, 1, true, 57), "CONFIDENT"],
+    ["one candidate AND 17 matched decimals -> UNIQUE (crystal-isospin)",
+     coverageTag(1, 1, false, 1, 19), "UNIQUE"],
+    // The four Q-value blocks. One candidate in the whole corpus, and still a
+    // coincidence: `0.5904` is a Rosso-Jones average in the block and an
+    // A-operator Frobenius norm in the witness.
+    ["one candidate but only 4 decimals -> WEAK, not actionable",
+     coverageTag(1, 1, false, 1, 4), "WEAK"],
+    ["one candidate at exactly the threshold -> UNIQUE",
+     coverageTag(1, 1, false, 1, 10), "UNIQUE"],
+    ["one candidate one digit below the threshold -> WEAK",
+     coverageTag(1, 1, false, 1, 9), "WEAK"],
+    ["a named witness outranks a weak digit count",
+     coverageTag(1, 1, true, 1, 4), "CONFIDENT"],
+    ["one literal, 29 candidate witnesses -> AMBIGUOUS, not coverable work",
+     coverageTag(1, 1, false, 29), "AMBIGUOUS"],
+    ["a single ambiguous literal poisons an otherwise unique block",
+     coverageTag(3, 3, false, 12), "AMBIGUOUS"],
+    ["partial coverage is PARTIAL regardless of candidate count",
+     coverageTag(1, 2, false, 1), "PARTIAL"],
+    ["nothing covered is ORPHAN",
+     coverageTag(0, 2, false, 0), "ORPHAN"],
+  ];
+  for (const [name, got, want] of tagCases) {
+    const ok = got === want;
+    bad += ok ? 0 : 1;
+    console.log(`  ${ok ? "ok  " : "FAIL"}  ${name}${ok ? "" : ` (got ${got}, want ${want})`}`);
+  }
+
+  const total = matchCases.length + scopeCases.length + attributionCases.length
+    + tagCases.length + 2;
   console.log(
     `selftest: ${total - bad}/${total}` +
-      (bad ? "" : " — sources a literal the witness carries, flags one it does not."),
+      (bad ? "" : " — sources a literal the witness carries, flags one it does not,"
+        + " and separates provenance from a decimal coincidence."),
   );
   return bad;
 }
@@ -498,6 +626,7 @@ function main(): number {
   if (argv.includes("--selftest")) return selftest() ? 1 : 0;
 
   const wantList = argv.includes("--list");
+  const wantSuggest = argv.includes("--suggest");
   const jsonIdx = argv.indexOf("--json");
   const jsonOut = jsonIdx >= 0 ? argv[jsonIdx + 1] : null;
   const targets = argv.filter(
@@ -562,6 +691,205 @@ function main(): number {
       }
       if (findings.length > 8) console.log(`      … ${findings.length - 8} more`);
     }
+  }
+
+  if (wantSuggest) {
+    // Which witnesses would make an undeclared block's numbers traceable?
+    //
+    // 190 blocks quote high-precision values and declare no
+    // `computation.witness`. Triage showed ~115 of them are UNDER-declared --
+    // their numbers do exist in some witness, nobody named it -- and ~61 are
+    // orphans, quoting values that appear in no witness anywhere. Those are
+    // very different pieces of work, and hand-separating 190 blocks is the
+    // kind of survey this axis exists to avoid.
+    //
+    // So: index every decimal token in every witness (truncated to 8 decimal
+    // places, which is well past the 4-place scope threshold and cheap to
+    // hold), then greedily cover each block's literals. A block that ends up
+    // fully covered is a declaration away from being traceable; one that ends
+    // up mostly uncovered is a real finding.
+    //
+    // The output is a PROPOSAL, not an edit. A witness that happens to contain
+    // a matching decimal is not necessarily the witness the block means --
+    // 0.612688037146 is z at the proton pin and appears in dozens of unrelated
+    // files. Coverage narrows the candidates for a human; it does not decide.
+    // coarse key -> [(witness, full decimal token)]. The full token is what
+    // makes the prefix confirmation possible; the key only buckets.
+    const tokenIndex = new Map<string, Array<[string, string]>>();
+    const witnessFiles: string[] = [];
+    const collect = (dir: string) => {
+      let entries: string[];
+      try {
+        entries = readdirSync(dir);
+      } catch {
+        return;
+      }
+      for (const e of entries) {
+        if (e === "node_modules" || e === "__pycache__" || e === "_deprecated") continue;
+        const full = join(dir, e);
+        let st;
+        try {
+          st = statSync(full);
+        } catch {
+          continue;
+        }
+        if (st.isDirectory()) collect(full);
+        else if (e.endsWith(".witness.json")) witnessFiles.push(full);
+      }
+    };
+    collect(join(repoRoot, "computations"));
+    for (const wf of witnessFiles) {
+      let raw: string;
+      try {
+        raw = readFileSync(wf, "utf8");
+      } catch {
+        continue;
+      }
+      const rel = relative(repoRoot, wf);
+      const seen = new Set<string>();
+      for (const m of raw.matchAll(/(\d+)\.(\d{4,})/g)) {
+        // Bucket on MIN_DECIMALS, not 8. Keying both sides at 8 was a bug: a
+        // literal with 4-7 decimals produced a key of ITS OWN length while the
+        // index produced one of length 8, so `137.0359351` (7) could never
+        // match a witness token indexed as `137.03593513` (8). Every literal
+        // shorter than 8 decimals was therefore reported ORPHAN regardless of
+        // what the corpus contained -- which is most of them, and is why the
+        // first orphan list was full of 4-decimal values. Bucket coarsely,
+        // then confirm by full prefix below.
+        const k = `${m[1]}.${m[2].slice(0, MIN_DECIMALS)}`;
+        if (seen.has(k)) continue;
+        seen.add(k);
+        const full = `${m[1]}.${m[2]}`;
+        const arr = tokenIndex.get(k);
+        if (arr) {
+          if (arr.length < 200) arr.push([rel, full]);
+        } else tokenIndex.set(k, [[rel, full]]);
+      }
+    }
+    console.log(
+      `\n  suggest: indexed ${witnessFiles.length} witness(es), ${tokenIndex.size} distinct ${MIN_DECIMALS}-dp buckets\n`,
+    );
+
+    let fully = 0;
+    let partial = 0;
+    let orphan = 0;
+    let confident = 0;
+    let uniqueSrc = 0;
+    let weak = 0;
+    let ambiguous = 0;
+    for (const { block, findings } of failing) {
+      if (!findings.some((f) => f.detector === "no-witness-declared")) continue;
+      const lits = [...new Set(scopedLiterals(block.md).map((l) => l.lit))];
+      if (!lits.length) continue;
+      const keyOf = (l: string) => {
+        const [a, b] = l.split(".");
+        return `${a}.${b.slice(0, MIN_DECIMALS)}`;
+      };
+      // A bucket hit is necessary, not sufficient: confirm the witness really
+      // carries this literal as a prefix of one of its values.
+      const witnessesFor = (l: string) => {
+        // Prefix OR numeric, matching `isSourced`. Prefix alone was not
+        // enough: `1.1099786` in prop:alpha-em-categorical-trace-ratio is q0
+        // ROUNDED to eight significant figures, and no prefix of
+        // 1.1099785827... starts with it. The main detector already handled
+        // rounding and this triage did not, so it reported a rounded q0 as a
+        // value no producer emits.
+        const out = new Set<string>();
+        const decimals = l.split(".")[1].length;
+        const tol = 0.5 * Math.pow(10, -decimals) * 1.000001;
+        const x = Number(l);
+        for (const [w, full] of tokenIndex.get(keyOf(l)) ?? []) {
+          if (full.startsWith(l) || l.startsWith(full)) { out.add(w); continue; }
+          const y = Number(full);
+          if (Number.isFinite(x) && Number.isFinite(y) && Math.abs(x - y) <= tol) out.add(w);
+        }
+        return out;
+      };
+      const cover = new Map(lits.map((l) => [l, witnessesFor(l)]));
+      let uncovered = new Set(lits.filter((l) => cover.get(l)!.size > 0));
+      const missing = lits.filter((l) => cover.get(l)!.size === 0);
+      const chosen: Array<[string, number]> = [];
+      while (uncovered.size && chosen.length < 6) {
+        const tally = new Map<string, number>();
+        for (const l of uncovered)
+          for (const w of cover.get(l)!) tally.set(w, (tally.get(w) ?? 0) + 1);
+        let best = "";
+        let bestN = 0;
+        for (const [w, n] of tally) if (n > bestN) [best, bestN] = [w, n];
+        if (!best) break;
+        chosen.push([best, bestN]);
+        uncovered = new Set(
+          [...uncovered].filter((l) => !cover.get(l)!.has(best)),
+        );
+      }
+      const covered = lits.length - missing.length - uncovered.size;
+      if (covered === lits.length) fully++;
+      else if (covered === 0) orphan++;
+      else partial++;
+      // NAME CORRESPONDENCE is the only signal here that is not a decimal
+      // coincidence. Coverage alone proposes nonsense on single-literal
+      // blocks: rem:collatz-hausdorff-comparison and conj:diophantine-birthday
+      // are both "covered" by meson-mass-from-hecke.witness.json, because one
+      // shared decimal is all it takes. But when `prop:meson-em-sinh-closed-form`
+      // is covered by `meson-em-sinh-closed-form.witness.json`, the witness is
+      // named after the block, and that is provenance rather than arithmetic.
+      //
+      // So a proposal is CONFIDENT only when a chosen witness's basename
+      // matches the block's file root. Everything else stays a suggestion for
+      // a human, which is what the whole mode is for.
+      const rootOf = (w: string) =>
+        w.split("/").pop()!.replace(/\.witness\.json$/, "");
+      const named = chosen.find(([w]) => rootOf(w) === block.root);
+
+      // AMBIGUITY is the second non-coincidental signal, and without it the
+      // "fully coverable" count reads as a work queue when it is mostly noise.
+      // `def:jet-stratified-reduction` quotes one literal, `1.1097`, which
+      // occurs in 57 witnesses; the greedy cover above picks one of the 57 and
+      // prints it as though it were the source. Declaring that would attach
+      // FALSE PROVENANCE — and it would pass this axis forever after, because
+      // the axis only asks whether the declared witness CONTAINS the number.
+      //
+      // So report how many witnesses could have supplied each literal. One
+      // candidate is evidence; fifty-seven is a coin flip. `cover` already
+      // holds the candidate sets — the count was computed and thrown away.
+      const candCounts = lits
+        .filter((l) => cover.get(l)!.size > 0)
+        .map((l) => cover.get(l)!.size);
+      const worstCand = candCounts.length ? Math.max(...candCounts) : 0;
+      const coveredLits = lits.filter((l) => cover.get(l)!.size > 0);
+      const minDec = coveredLits.length
+        ? Math.min(...coveredLits.map((l) => (l.split(".")[1] ?? "").length))
+        : 0;
+      const verdict = coverageTag(covered, lits.length, !!named, worstCand, minDec);
+      const unique = verdict === "UNIQUE";
+      const tag = verdict.padEnd(9);
+      if (verdict === "CONFIDENT") confident++;
+      else if (unique) uniqueSrc++;
+      else if (verdict === "WEAK") weak++;
+      else if (verdict === "AMBIGUOUS") ambiguous++;
+      console.log(
+        `  ${tag}  ${block.label || block.root}  (${covered}/${lits.length} literals`
+        + `, ${minDec}dp`
+        + `${worstCand > 1 ? `, up to ${worstCand} candidates` : ""})`,
+      );
+      for (const [w, n] of chosen)
+        console.log(`             +${n} <- ${w}${rootOf(w) === block.root ? "   [named after the block]" : ""}`);
+      if (missing.length)
+        console.log(
+          `             ${missing.length} literal(s) in NO witness: ${missing.slice(0, 3).join(", ")}`,
+        );
+    }
+    console.log(
+      `\n  ${fully} fully coverable by declaration — but coverable is NOT a work queue:`
+      + `\n    ${confident} CONFIDENT  witness is named after the block (provenance, not arithmetic)`
+      + `\n    ${uniqueSrc} UNIQUE     one candidate witness AND >=${STRONG_MATCH_DECIMALS} matched decimals`
+      + `\n    ${weak} WEAK       one candidate, but too few decimals to be evidence`
+      + `\n    ${ambiguous} AMBIGUOUS  some literal occurs in several witnesses; the cover picks one arbitrarily`
+      + `\n  ${partial} partial, ${orphan} orphan`
+      + `\n\n  Only the first two are actionable. Declaring an AMBIGUOUS block attaches a`
+      + `\n  source that merely happens to contain the number — and it passes this axis`
+      + `\n  permanently afterwards, because the axis only checks containment.`,
+    );
   }
 
   if (jsonOut) {

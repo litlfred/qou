@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T22:26:29.592016+00:00",
-  "commitSha": "2b48a3bf718539b8f05027e54e402f42f6e3245a",
+  "computedAt": "2026-08-16T10:51:33.548151+00:00",
+  "commitSha": "7859043ba743d0c34bc31cd233ba03d1dbc11960",
   "assertions": [
     {
       "name": "writhe_pp_eq_+2",
@@ -36,15 +36,15 @@
     },
     {
       "name": "trM_block_sum_eq_full_pp_T(2,2)_positive_Hopf",
-      "computed": "1.128088761203510244463386490152775602377582632978612474",
-      "expected": "1.128088761203510244463386490152775602377582632978612474",
+      "computed": "1.128088744114353785593151654999246049283482818755237021",
+      "expected": "1.128088744114353785593151654999246049283482818755237021",
       "passed": true,
       "tolerance": 1e-50
     },
     {
       "name": "trM_block_sum_eq_full_nn_T(2,-2)_negative_Hopf",
-      "computed": "0.9156174570709526671651336296515738042249465105262059987",
-      "expected": "0.9156174570709526671651336296515738042249465105262059987",
+      "computed": "0.9156174644181682038088676806781422604847311419582851956",
+      "expected": "0.9156174644181682038088676806781422604847311419582851956",
       "passed": true,
       "tolerance": 1e-50
     },
@@ -64,18 +64,18 @@
     },
     {
       "name": "markov_destab_single_sigma1_eq_z",
-      "computed": "0.61268805060631329447954334950535299506602339264653",
-      "expected": "0.61268805060631329447954334950535299506602339264653",
+      "computed": "0.61268803714646525159582986394589924802630839154509",
+      "expected": "0.61268803714646525159582986394589924802630839154509",
       "passed": true,
       "tolerance": 1e-45
     }
   ],
   "allPassed": true,
-  "durationMs": 502,
+  "durationMs": 477,
   "computation": "inter-nucleon-linked-channel",
   "scriptFile": "inter_nucleon_linked_channel.py",
-  "scriptHash": "0b1ec4450e36",
-  "scriptCommitSha": "2b48a3bf718539b8f05027e54e402f42f6e3245a",
+  "scriptHash": "7ab4f5bd0065",
+  "scriptCommitSha": "b827a8bf9e1d083d89539601f6aecb5971c0ad41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -86,7 +86,7 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
@@ -94,7 +94,7 @@
   "description": "EXPLORATORY test of the knot-operator census DERIVED lead (PR #1677): the inter-nucleon LINKED channel = Hopf link T(2,+-2). Braid word (provenance: fermion-boson-knot-link.md 2-component link sector + inter-nucleon-channel-color-tube.md), Markov trace (symbolic + 60 dps, Wedderburn blocks), writhe (pp=+2/nn=-2) + linking number (+-1), Markov destabilizability of the 5<->3 bridge, U(1)_framing q^{w.c}. RAW; no fit.",
   "auditOnly": "docs/audits/2026-06-01-inter-nucleon-linked-channel.md",
   "parameters": {
-    "q0": "1.10997859561220225731080831999100762523924148",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 60,
     "m_n_minus_m_p_MeV_PDG_falsification_ref": "1.29333236"
   },
@@ -144,18 +144,18 @@
     "wenzl_markov_weights_symbolic": {
       "W_(2)": "(q**4 + q**2 + 1)/(q**4 + 2*q**2 + 1)",
       "W_(1,1)": "q**2/(q**4 + 2*q**2 + 1)",
-      "W_(2)_at_q0": "0.752702113847745923928276319692331768221530131391329144710139",
-      "W_(1,1)_at_q0": "0.247297886152254076071723680307668231778469868608670855289861",
+      "W_(2)_at_q0": "0.752702113251965401593779351620236137830175598874905666382316",
+      "W_(1,1)_at_q0": "0.247297886748034598406220648379763862169824401125094333617684",
       "convention": "Wenzl/Jones-Markov: fixed by tr_M(1)=1 and tr_M(sigma_1)=z"
     },
     "braid_word_provenance": "Hopf link T(2,+-2) = sigma_1^{+-2}. DERIVED from fermion-boson-knot-link.md (the 2-component LINK sector = T(2,n)-even, components winding +1/-1 around the Reeb direction) composed with the inter-nucleon arc of inter-nucleon-channel-color-tube.md. NOT chosen to hit any target.",
     "markov_trace_J_B_of_q": {
       "pp_T(2,2)_positive_Hopf": {
         "trM_symbolic_in_q": "(q**4 + 1)/(q**2 + 1)",
-        "trM_at_q0_60dps": "1.12808876120351024446338649015277560237758263297861247406159",
+        "trM_at_q0_60dps": "1.12808874411435378559315165499924604928348281875523702064112",
         "wedderburn_block_values_at_q0": {
-          "(2)": "0.927368508112627612416492224650209669005774975697587786452514",
-          "(1,1)": "0.200720253090882632046894265502565933371807657281024687609074"
+          "(2)": "0.92736848588859345683769873264720497923640652196123634718365",
+          "(1,1)": "0.200720258225760328755452922352041070047076296794000673457472"
         },
         "block_symbolic": {
           "(2)": "(q**6 + q**4 + q**2)/(q**4 + 2*q**2 + 1)",
@@ -164,10 +164,10 @@
       },
       "nn_T(2,-2)_negative_Hopf": {
         "trM_symbolic_in_q": "(q**4 + 1)/(q**4 + q**2)",
-        "trM_at_q0_60dps": "0.915617457070952667165133629651573804224946510526205998720443",
+        "trM_at_q0_60dps": "0.915617464418168203808867680678142260484731141958285195601725",
         "wedderburn_block_values_at_q0": {
-          "(2)": "0.610933482466343451355475255769476201153693905024572396909239",
-          "(1,1)": "0.304683974604609215809658373882097603071252605501633601811204"
+          "(2)": "0.610933496139997729376761899789711054871456241002474536294565",
+          "(1,1)": "0.30468396827817047443210578088843120561327490095581065930716"
         },
         "block_symbolic": {
           "(2)": "(q**4 + q**2 + 1)/(q**6 + 2*q**4 + q**2)",
@@ -178,8 +178,8 @@
         "trM_symbolic_in_q": "1",
         "trM_at_q0_60dps": "1",
         "wedderburn_block_values_at_q0": {
-          "(2)": "0.752702113847745923928276319692331768221530131391329144710139",
-          "(1,1)": "0.247297886152254076071723680307668231778469868608670855289861"
+          "(2)": "0.752702113251965401593779351620236137830175598874905666382316",
+          "(1,1)": "0.247297886748034598406220648379763862169824401125094333617684"
         },
         "block_symbolic": {
           "(2)": "(q**4 + q**2 + 1)/(q**4 + 2*q**2 + 1)",
@@ -187,23 +187,25 @@
         }
       }
     },
-    "trM_pp_minus_trM_nn_at_q0": "0.212471304132557577298252860501201798152636122452406475341145",
-    "trM_pp_nn_asymmetry_note": "tr_M(sigma_1^+2) != tr_M(sigma_1^-2): the Wenzl Jones-Markov trace is NOT bar-symmetric and carries the framing/writhe. tr_M(pp)=1.12808876120351024446338649015, tr_M(nn)=0.915617457070952667165133629652. This trace asymmetry between matter-matter and matter-antimatter linking is the RAW pp/nn distinction the channel supplies; it is reported, not tuned to any split.",
-    "census_hopf_closed_form_1+(q-1)/sqrt(q)_at_q0": "1.10438806986150216450416846162357930567269952229392323861048",
-    "trM_pp_vs_census_hopf_gap": "0.0237006913420080799592180285291962967048831106846892354511067",
+    "trM_pp_minus_trM_nn_at_q0": "0.212471279696185581784283974321103788798751676796951825039397",
+    "trM_pp_nn_asymmetry_note": "tr_M(sigma_1^+2) != tr_M(sigma_1^-2): the Wenzl Jones-Markov trace is NOT bar-symmetric and carries the framing/writhe. tr_M(pp)=1.128088744114353785593151655, tr_M(nn)=0.915617464418168203808867680678. This trace asymmetry between matter-matter and matter-antimatter linking is the RAW pp/nn distinction the channel supplies; it is reported, not tuned to any split.",
+    "census_hopf_closed_form_C_1+(q-1)/sqrt(q)_at_q0": "1.10438805825918163783311715934980660263366086125026105959305",
+    "hopf_closed_form_D_h_z_plus_1_at_q0": "1.12808874411435378559315165499924604928348281875523702064112",
+    "trM_pp_vs_census_hopf_C_gap": "0.0237006858551721477600344956494394466498219575049759610480762",
+    "trM_pp_vs_hopf_D_gap": "0.0",
     "non_brunnian": {
       "is_brunnian": false,
       "linking_number_nonzero": true,
       "reason": "Hopf link T(2,+-2) has linking number +-1 != 0: the two components are genuinely linked. Brunnianness (every proper sublink trivial) requires >=3 components AND lk=0 on each 2-sublink (as the Borromean has). The Hopf link fails both: it is a 2-component link with nonzero linking number. So it ESCAPES the Borromean Brunnian obstruction."
     },
-    "trM_single_sigma1_at_q0": "0.612688050606313294479543349505352995066023392646533102270099",
-    "z_factor_at_q0": "0.612688050606313294479543349505352995066023392646533102270099",
-    "trM_sigma1_sq_at_q0": "1.12808876120351024446338649015277560237758263297861247406159",
-    "z_times_trM_sigma1_destab_prediction": "0.375386647355764320535110170460443834156052501587283329351449",
-    "hopf_destab_residual_NOT_clean": "0.752702113847745923928276319692331768221530131391329144710139",
+    "trM_single_sigma1_at_q0": "0.612688037146465251595829863945899248026308391545087014074774",
+    "z_factor_at_q0": "0.612688037146465251595829863945899248026308391545087014074774",
+    "trM_sigma1_sq_at_q0": "1.12808874411435378559315165499924604928348281875523702064112",
+    "z_times_trM_sigma1_destab_prediction": "0.375386630862388383999372303379009911453307219880331354258806",
+    "hopf_destab_residual_NOT_clean": "0.752702113251965401593779351620236137830175598874905666382316",
     "markov_destabilization_finding": {
       "single_crossing_sigma1_destabilizes_cleanly": true,
-      "single_crossing_trace_invariant_factor_z": "0.612688050606313294479543349505352995066023392646533102270099",
+      "single_crossing_trace_invariant_factor_z": "0.612688037146465251595829863945899248026308391545087014074774",
       "hopf_sigma1_sq_destabilizes_in_one_move": false,
       "reason_hopf_not_one_move": "sigma_1^2 is two crossings on the same strand pair (Reidemeister-II / second-order), not beta.sigma_{n-1}^{+-1} with beta disjoint. It reduces by RII/conjugation within H_2, not by a single destabilization to H_1.",
       "contrast_with_borromean": "The Borromean (s1^-1 s2)^3 in B_3 uses BOTH generators and is Brunnian: NO trailing single sigma_2^{+-1} is disjoint, so it admits NO clean destabilization at all (census audit). The linked channel's word sigma_1^k DOES contain destabilizable single crossings (each sigma_1 alone destabilizes with factor z), so the linked channel ESCAPES the Brunnian destabilization block -- but its destabilization is the 2->1 strand move within the m=2 torus tower, NOT a derived 5->3 functor onto the Borromean H_3 trace."
@@ -211,19 +213,19 @@
     "u1_framing_factor": {
       "pp_T(2,2)_positive_Hopf": {
         "writhe": 2,
-        "framing_factor_q^{w.c}_at_q0_c=1": "1.23205248271723682822615059853230727207702758119922138826372"
+        "framing_factor_q^{w.c}_at_q0_c=1": "1.23205245416676393126980451353563618484968142291704700649081"
       },
       "nn_T(2,-2)_negative_Hopf": {
         "writhe": -2,
-        "framing_factor_q^{w.c}_at_q0_c=1": "0.811653735557226083402369521272042134525501562305597084518313"
+        "framing_factor_q^{w.c}_at_q0_c=1": "0.811653754365758058132214822141752124918532537796475209752038"
       },
       "pn_T(2,0)_unlink": {
         "writhe": 0,
         "framing_factor_q^{w.c}_at_q0_c=1": "1.0"
       }
     },
-    "framing_factor_pp_over_nn_at_q0": "1.51795332016970715331010167221893812343267339310615578385457",
-    "framing_factor_pp_minus_nn_at_q0": "0.420398747160010744823781077260265137551526018893624303745404",
+    "framing_factor_pp_over_nn_at_q0": "1.51795324981834593754711018277627363962078050951327153121135",
+    "framing_factor_pp_minus_nn_at_q0": "0.420398699801005873137589691393884059931148885120571796738772",
     "PDG_m_n_minus_m_p_over_m_p_falsification_ref": "0.00137841930349404190738701807405419072223590143417189763949813"
   },
   "caveats": [

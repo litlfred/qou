@@ -182,9 +182,18 @@ def J_hopf(q: mpf) -> mpf:
 
 # Hopf-link Markov trace (the framework's actual usage)
 def trM_hopf(q: mpf) -> mpf:
-    """tr_M(σ_1²) per the closed-form proposition (Hecke quadratic +
-    Markov axioms). Independent of n ≥ 2."""
-    return 1 + (q - 1) / mp_sqrt(q)
+    """tr_M(σ_1²) = h·z + 1 per the closed-form proposition (Hecke quadratic
+    + Markov axioms). Independent of n >= 2.
+
+    Written in terms of z. The body was 1 + (q-1)/q^{1/2}, which is this same
+    identity evaluated at z_C -- and this file had ALREADY migrated its z to
+    q**3/(q**2+1) at two other sites, so the module was internally split: the
+    production z was D while the Hopf closed form derived from it stayed C.
+    The producer audit keys on a target named z and could not see it; the
+    square root was z_C's, not the identity's.
+    """
+    from closed_form_tau_M import trM_sigma1_sq as _canonical
+    return _canonical(q)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -203,7 +212,7 @@ def hecke2_blocks(q: mpf):
     σ_1² eigenvalues in the (1)/(1,1) Wedderburn blocks:
         trivial channel:  σ_1 = q   → σ_1² = q²
         sign channel:     σ_1 = −1/q → σ_1² = 1/q²
-    Weights satisfying tr_M(1) = 1, tr_M(σ_1) = z = 1/(q^(1/2)+q^(−1/2)):
+    Weights satisfying tr_M(1) = 1, tr_M(σ_1) = z = q³/(q²+1):
         w_trivial = q / (q + 1)
         w_sign    = 1 / (q + 1)
     (Solving  w_t · q + w_s · (−1/q) = z  and  w_t + w_s = 1.)
@@ -420,7 +429,7 @@ def main() -> int:
     # trace at q₀ removes the q-swing and gives exactly −2". Apply the
     # bar involution to the simplest q-dependent candidate (tr_M(σ_1²)):
     #   (tr_M(σ_1²; q) + tr_M(σ_1²; q⁻¹)) / 2
-    # Closed form via trM_hopf(q) = 1 + (q − 1)/q^{1/2}:
+    # Closed form via trM_hopf(q) = h·z + 1 (convention D):
     #   bar-sym = 1 + ((q − 1)/q^{1/2} + (1/q − 1)·q^{1/2}) / 2
     #           = 1 + ((q − 1) − (q − 1)) / (2·q^{1/2})  for the simplest term
     # The result is q-dependent in general, so the hypothesis can be

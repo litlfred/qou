@@ -66,8 +66,12 @@ roots = sp.solve(sp.numer(sp.together(y[(1, 1, 1)])), z)
 print("  roots in z: %s" % [sp.simplify(r) for r in roots])
 print("  number of roots: %d" % len(roots))
 
+# Convention C is EXCISED (owner ruling 2026-08-09, re-affirmed 2026-08-15).
+# Printed beside the solved root because the POINT of this probe is that z_C is
+# NOT a root of y_(1^3) = 0 while z_D is -- i.e. the two-row forcing selects D.
+# The comparison needs the excised value present to be a comparison at all.
 z_C = 1/(sp.sqrt(qs) + 1/sp.sqrt(qs))
-print("\n  z_C (Wenzl/Ocneanu convention C) = %s   -> at q0: %s"
+print("\n  z_C (Wenzl/Ocneanu convention C, EXCISED 2026-08-09/15) = %s   -> at q0: %s"
       % (z_C, sp.N(z_C.subs(qs, q0), 20)))
 for r in roots:
     rs = sp.simplify(r)

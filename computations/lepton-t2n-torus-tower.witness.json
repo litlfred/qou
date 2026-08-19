@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T23:13:39.785562+00:00",
-  "commitSha": "6470b782c82298d5ae43894cf345ec37dca41c61",
+  "computedAt": "2026-08-16T10:57:09.785407+00:00",
+  "commitSha": "48bc73602fd380914423f8c4a35169b7d126d219",
   "assertions": [
     {
       "name": "trM_T2_3_symbolic_eq_numeric",
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 120,
+  "durationMs": 63,
   "computation": "lepton-t2n-torus-tower",
   "scriptFile": "lepton_t2n_torus_tower.py",
-  "scriptHash": "b7b5a91f2dec",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "44cb65cc8fcd",
+  "scriptCommitSha": "48bc73602fd380914423f8c4a35169b7d126d219",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -149,7 +149,7 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
@@ -275,7 +275,7 @@
       "production_path_note": "Production reads m_mu/m_e from the Skein/Kashaev identity Vol(4_1)/hbar_q^2 (calibrated to CODATA, conj:lepton-mass-tower-canonical). The direct trace ratio below is NOT that path -- it is the RAW operator-level ratio, reported as a falsification reference.",
       "ratio_mu_e_direct": "1.32164516050258351794420586573061305349441131733627239502947",
       "CODATA_mu_e": "206.768283",
-      "miss_factor_mu": "156.447652652374551393095880777411592005668395941468928300726",
+      "miss_factor_mu": "156.447652652374551393095880777411592005668395941468928300727",
       "ratio_tau_e_direct": "1.70105443281655083021154262569151636204652439447983922459613",
       "CODATA_tau_e": "3477.23",
       "miss_factor_tau": "2044.16151118839577554014088697890239932736246349240009896037",
