@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-10T19:02:23Z
-updated_at: 2026-08-16T11:30:00Z
+updated_at: 2026-08-19T20:29:54Z
 ---
 
 
@@ -129,3 +129,19 @@ item 2 needs. Its own notes flag the convention point that matters here: the JM
 eigenvalue `q^{2c}` is a per-cell *content* while `genMat`'s diagonal is a
 content *difference*. I am **not** attempting item 2; #5205 stops at the
 conditional class and says so.
+
+
+## Cross-reference (2026-08-19, PR #5331): the bar-even bracket is transpose-blind
+
+`QOU.SchurWeyl.coshSum_transpose` proves `sum_{c in lambda} (q^{2c} + q^{-2c})` is
+invariant under transposing the diagram, at every q — because transposition
+negates contents and the summand is even in c.
+
+This SHARPENS what `cellContentCoshSum_eq_bracket` records here. That says the
+two bar-even brackets are not independent spectral degrees of freedom. The
+stronger statement is that the invariant is strictly COARSER than the partition:
+it cannot distinguish lambda from lambda'. Measured in exact rationals, at n=7
+the 15 partitions collapse to 8 values, every collision a transpose pair.
+
+Relevant to any argument that treats a bar-even content bracket as carrying
+per-partition information — it carries at most per-transpose-class information.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T20:02:55Z
+updated_at: 2026-08-19T20:29:53Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -222,3 +222,34 @@ state 'irreducible'.
 **Still open in this bean:** pairwise inequivalence rho_lambda !=~ rho_mu for
 lambda != mu. Not started. The route is the same separation: the L_k eigenvalue
 MULTISET is the multiset of cell contents of lambda, which determines lambda.
+
+
+## Inequivalence half — the corpus's central element is DISPROVED for this purpose
+
+`SeminormalInequivalence.lean` (PR #5331), sorry-free:
+
+- `coshSum_transpose` — **`barSymJMSum` / `cellContentCoshSum` is TRANSPOSE-INVARIANT.**
+  Transposing negates every content and q^{2c}+q^{-2c} is even in c, so the
+  bar-symmetrised sum takes the same value on lambda and lambda' at EVERY q.
+  It therefore cannot be the separating central character. Now a theorem, not
+  an observation. Measured in exact rationals: at n=7 the 15 partitions give 8
+  distinct values and every collision is exactly a transpose pair.
+- `seminormalRep_jmSum` — the UNSYMMETRISED Murphy power sum acts by
+  sum_c q^{2c}. Central under the same hypothesis via `qJM_sum_comm_sigma'`
+  (already on main, sorry-free). Not even in c, so not transpose-blind.
+- `contentSum_eq_of_intertwiner` — any intertwining algebra isomorphism forces
+  the two content sums to agree. Contrapositive: differing content sums =>
+  inequivalent.
+
+## What is deliberately NOT claimed
+
+That distinct partitions of n have distinct `sum_c q^{2c}` **at a given real q**.
+The sums are distinct Laurent polynomials in q^2 (the content multiset
+determines the partition), but a nonzero integer Laurent polynomial CAN vanish
+at a real q that is not a root of unity, so `q != 0 and q^2 != 1` do not suffice.
+Separation held at every sampled q up to n=9 in exact arithmetic. That is
+evidence, not proof, and the file says so in those words.
+
+**This is the honest residual of SW-5.** The structural half (range = top) is
+proved; the arithmetic half is a separate question about when an integer Laurent
+polynomial vanishes at a real point, and it should not be waved through.

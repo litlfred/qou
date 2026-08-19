@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: critical
 created_at: 2026-08-08T00:00:00Z
-updated_at: 2026-08-08T00:00:00Z
+updated_at: 2026-08-19T20:29:54Z
 ---
 
 Successor to `qou-5nzf` (settled, PR #4513). That bean asked whether the T5
@@ -865,3 +865,19 @@ fixing the normalisation by matching the measured `c₃` would convert the whole
 chain into a fit.
 
 Status stays `todo`.
+
+
+## Cross-reference (2026-08-19, PR #5331): the bar-even bracket is transpose-blind
+
+`QOU.SchurWeyl.coshSum_transpose` proves `sum_{c in lambda} (q^{2c} + q^{-2c})` is
+invariant under transposing the diagram, at every q — because transposition
+negates contents and the summand is even in c.
+
+This SHARPENS what `cellContentCoshSum_eq_bracket` records here. That says the
+two bar-even brackets are not independent spectral degrees of freedom. The
+stronger statement is that the invariant is strictly COARSER than the partition:
+it cannot distinguish lambda from lambda'. Measured in exact rationals, at n=7
+the 15 partitions collapse to 8 values, every collision a transpose pair.
+
+Relevant to any argument that treats a bar-even content bracket as carrying
+per-partition information — it carries at most per-transpose-class information.
