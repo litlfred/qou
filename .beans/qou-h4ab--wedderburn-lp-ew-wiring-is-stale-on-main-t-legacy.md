@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T01:44:20Z
-updated_at: 2026-08-18T16:24:41Z
+updated_at: 2026-08-19T17:41:35Z
 ---
 
 ## Evidence (PR #5260)
@@ -76,3 +76,46 @@ strings) but it needs the `clarabel-operator-selection-lp` MPFR binary, which
 is not built here, and that path is labelled EXPERIMENTAL and "NOT yet
 cross-checked against the scipy backend to 1e-25". Not a drop-in, and not
 something to land inside this PR.
+
+
+## 2026-08-19 — DIAGNOSED: it is the convention C -> D migration, not drift
+
+The `t_legacy_matrix_entries` move (proton 0.6003377 -> 0.6803697, +13.3%;
+neutron 0.3727036 -> 0.4493842, +20.6%) is **not unexplained value drift**.
+`wedderburn_pair_volumes.py:179` reads
+
+    z_mark = q0**3 / (q0**2 + 1)          # convention D
+
+which is the canonical Markov parameter under the owner ruling of
+2026-08-15. The committed witness predates that migration and is
+**convention-C-frame** throughout.
+
+`full = w_sym*sym + w_std*(z_mark*mij_12 + mij_22) + w_alt*alt` is AFFINE in
+`z_mark`, so the frame is testable by swapping that one line. Re-evaluating
+the same function with `z_C = sqrt(q0)/(q0+1) = 0.499320` instead of
+`z_D = 0.612688`:
+
+| atom | committed | conv D | conv C |
+|---|---|---|---|
+| proton | 0.6003377241833765 | 0.68036969746 (rel 0.1333) | 0.60033772418337637 (**rel 2.1e-16**) |
+| neutron | 0.3727036271108378 | 0.44938418327 (rel 0.2057) | 0.37270362711083759 (**rel 5.7e-16**) |
+
+Convention C reproduces the committed numbers to machine zero. That is the
+whole explanation; nothing else moved.
+
+Two things follow:
+
+1. **The differing per-atom ratios (1.133 vs 1.206) were the clue, not a
+   puzzle.** A q0 re-pin would scale everything by the same 11.5 ppb; a
+   convention change enters affinely through `V_std_pair` alone, whose
+   `mij_12` coefficient differs per atom. The earlier note that this is "~7
+   orders too large to be the y_lambda straddle" was right to exclude that
+   cause and had no candidate to replace it.
+2. **Regenerating this witness is a C -> D frame migration, and must be
+   labelled as one.** It is the same class as the Q_beta `c_k` ladder
+   (bean `qou-cds1`), which AGENTS.md flags as C-conditional pending
+   re-derivation. The regenerated values are not "corrections" to the old
+   ones — both are correct in their own frame.
+
+Not claimed: whether every *downstream* consumer of this witness is
+D-ready. Only this producer's frame was established.

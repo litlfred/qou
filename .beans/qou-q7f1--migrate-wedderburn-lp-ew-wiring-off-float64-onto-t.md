@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T16:24:41Z
-updated_at: 2026-08-19T11:54:27Z
+updated_at: 2026-08-19T17:28:28Z
 ---
 
 ## Scope (PR #5260, owner directive "no f64 path")
@@ -197,3 +197,36 @@ Additive from this branch: their PR touches **no test files**, and the three
 lockstep regression tests are what close the hole the bug came through —
 `test_gram_values.py` pinned the f64 `z` to D (and asserts it is not C) while
 nothing pinned the mirror. Offered them the tests directly.
+
+
+## 2026-08-19 — the port surfaced two solver defects, both now fixed
+
+The float64 port is done (numpy no longer imported by the file). Two
+defects it exposed, neither of which was about float64:
+
+1. **The MPFR LP was stopping four significant figures short.**
+   `operator_selection_lp.rs` hardcodes ABSOLUTE Clarabel tolerances
+   (`tol_gap_abs = tol_feas = 1e-12`). The H_9 headline LP's optimum is
+   1.67e-9, so that is a *relative* 6e-4. Measured: 1.4e-5 primal /
+   6.4e-6 dual error while reporting `Solved` — i.e. WORSE than the f64
+   scipy answer the port was replacing. `prec_bits` was irrelevant
+   (identical from 167 to 384 bits): the arithmetic was never the limit.
+   Fixed by normalising the objective in `lp_dual_solver`
+   (`_rescale_mpfr_result`); 6.4e-6 -> 4.7e-11.
+
+2. **`active_set` came back as all 28 indices where scipy reported
+   none.** Absolute `dual_tol=1e-9` against IPM centring residue of
+   ~4e-8. Complementary slackness settles it: `min (Gx)_i = 2.4e-9` with
+   `(Gx)_i / sum_j |G_ij x_j| = 0.96..0.997`, i.e. no cancellation, so
+   every row is genuinely strictly slack and the true y is zero. Since
+   the active set IS the deliverable per AGENTS.md, 28 false binding
+   channels would have shipped as a "precision upgrade". Re-derived from
+   primal slack; clarabel path only.
+
+Commits: 6cffd0b9 (deliverable B port), 063eafd4 (solver), 9504ca4e
+(the KKT check's own normalisation — it passed the violated condition).
+
+**Caveat worth keeping:** on this degenerate LP scipy's simplex lands on
+the vertex exactly; the IPM converges to 4.7e-11 relative. The MPFR path
+is not uniformly more accurate than f64 here — it is more accurate where
+the arithmetic binds, and the arithmetic does not bind on this instance.
