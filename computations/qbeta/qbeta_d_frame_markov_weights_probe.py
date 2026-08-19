@@ -193,7 +193,21 @@ def main() -> int:
         # contradiction with `independent` (it would mean something did supply
         # a pin). Contrast the step-1 probe, which evaluates the ladder at both
         # anchors and so carries one.
+        #
+        # The prose below was this comment. A comment is not readable by
+        # `q0_anchor_consistency_audit`, which scored the witness
+        # Q0_INDEPENDENT_NO_REASON with the reason sitting right here — the
+        # exact shape bean qou-mw1p was opened for, missed by its drain.
         "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q-GENERIC: solves and factors over the symbol `q` and never "
+            "evaluates at any anchor, so there is no pin to record. "
+            "Deliberately carries no `q0Value` — the audit correctly reads "
+            "one alongside `independent` as a contradiction, since it would "
+            "mean something did supply a pin. Contrast the step-1 probe "
+            "`qbeta_d_frame_eigenphase_bar_parity_probe`, which evaluates the "
+            "ladder at both anchors and so does carry one."
+        ),
         "scope": "scope-(a), and NEGATIVE: this narrows where a D-frame ladder "
                  "derivation may look; it does not supply one. Nothing wired, no c_k "
                  "value or tier changes, channel stays `disputed`. It does NOT show "
