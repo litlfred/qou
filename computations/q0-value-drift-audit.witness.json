@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 311,
-      "proton-pin": 888,
+      "STALE": 310,
+      "proton-pin": 894,
       "unknown": 25,
       "canonical": 532
     },
-    "stale_total": 311,
+    "stale_total": 310,
     "new_stale": 0,
     "rows": [
       {
@@ -4852,9 +4852,9 @@
       {
         "file": "computations/compound-shift-nf.witness.json",
         "field": "data.alpha_em_chain.q0_50dps",
-        "value": "1.1099785955541805752815940796095093779932822799587",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416265239649993
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/compute-audit-scan.witness.json",
@@ -10352,6 +10352,20 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/qbeta/gram-convention-d-singularity-structural.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/gram-mp-path-convention-d-migration.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/qbeta/qbeta-F-coordinate-bridge-audit.witness.json",
         "field": "data.q0",
         "value": "1.10997858275138080759166909561076887987449912187357873607281",
@@ -10896,6 +10910,20 @@
         "value": "1.10997859556",
         "class": "STALE",
         "ppb_vs_canonical": 0.0024011995464637836
+      },
+      {
+        "file": "computations/qbeta/radical-pairing-sign-rep.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/sdp-offset-quotient-reposing.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta-c3-three-rung-probe.witness.json",
