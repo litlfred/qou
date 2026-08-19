@@ -4,9 +4,6 @@
   "computation": "gz-third-knot-rank-grading",
   "engine": "python",
   "scriptFile": "computations/probes/gz_third_knot_rank_grading.py",
-  "scriptCommitSha": "948b582c39fd9163fb5d9bf4ee89b4f1e6467786",
-  "computedAt": "2026-08-19T11:56:27Z",
-  "durationMs": 2,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
   "q0Anchor": "independent",
@@ -85,7 +82,7 @@
       "5_2": 4,
       "(-2,3,7)": 7
     },
-    "verdict": "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep missed because it keyed on 'Stokes' and that paper says it once. (ii) GZ S3.5 reports higher-multiplicity weight spaces for (-2,3,7) -- which reads exactly like the rank-6 refutation M3 asked for. It is not: the graded object has total r (=2 at 4_1) while s(1)=3, and 4_1's weight set has 2 elements against s(x)'s 3. DIFFERENT OBJECTS; the guard is T4. (iii) ERRATUM adjudicated: GZ S3.5's prose dims (1,4,1) contradict the paper's own decomposition and delta-degrees, which both give (4,1,1); the prose transposes the first two, and both readings total 6 so a sum-check cannot catch it. (iv) The ranks 2,3,6 CORROBORATE M3 Part 4's signature formula on three knots with three distinct values, via two independent GZ statements. (v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU Wedderburn indexing appearing in the third knot's modular data, with a chirality-flavoured asymmetry. Observed, not derived. Nothing wired."
+    "verdict": "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep missed because it keyed on 'Stokes' and that paper says it once. (ii) GZ S3.5 reports higher-multiplicity weight spaces for (-2,3,7) -- which reads exactly like the rank-6 refutation M3 asked for. It is not: the graded object has total r (=2 at 4_1) while s(1)=3, and 4_1's weight set has 2 elements against s(x)'s 3. DIFFERENT OBJECTS; the guard is T4. (iii) ERRATUM adjudicated: GZ S3.5's prose dims (1,4,1) contradict the paper's own decomposition and delta-degrees, which both give (4,1,1); the prose transposes the first two, and both readings total 6 so a sum-check cannot catch it. (iv) The ranks 2,3,6 CORROBORATE M3 Part 4's signature formula on three knots with three distinct values, via two independent GZ statements. (v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU Wedderburn indexing appearing in the third knot's modular data, with a chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. Nothing wired."
   },
   "assertions": [
     {
@@ -132,6 +129,27 @@
       "name": "T9-level-two-confined-to-w0",
       "passed": true,
       "note": "rho is the IDENTITY on W1 and W2, so the whole Gamma(2) phenomenon is confined to the 4-dimensional W0 -- which is precisely the weight space whose dimension the prose misreported. The erratum sits on the only interesting summand."
+    },
+    {
+      "name": "T10-w0-is-perm-module-plus-trivial",
+      "passed": true,
+      "note": "YES. chi(W_0) = [4,2,1] = [3,1,0] + [1,1,1]. Characters determine complex representations up to isomorphism, so W_0 = C[X] + C with X a 3-element S_3-set. This upgrades Part D from an observation to a structural identification. Lean: w0_is_perm_plus_trivial."
+    },
+    {
+      "name": "T11-sign-absence-is-forced-not-observed",
+      "passed": true,
+      "note": "A permutation module on 3 points contains NO sign component -- a general fact about S_3, nothing knot-specific: <perm,sign> = (1*3*1 + 3*1*(-1) + 2*0*1)/6 = 0. And a trivial summand contributes 0 to sign multiplicity, so adding any number of trivials cannot create one. The absence is therefore FORCED BY SHAPE, not an unexplained coincidence to be interpreted. Lean: perm_has_no_sign / addTrivial_preserves_signMult / sign_absence_is_forced."
+    },
+    {
+      "name": "T12-only-one-knot-can-even-be-asked",
+      "passed": true,
+      "note": "PASSES as an ADVERSARIAL check and it TEMPERS the finding. GZ introduces the level as 'a new phenomenon' at (-2,3,7) (N=2); 4_1 and 5_2 have N=1, so rho factors through the TRIVIAL quotient and there is no finite group acting -- hence no sign block to be absent. The absence is a ONE-KNOT statement among these three, by construction. What is general is the mechanism (T11), which holds for any permutation-type module; what is single-instance is the observation that W_0 is of that type. Both halves recorded so neither is quoted alone. Lean: sign_question_only_arises_at_level_two."
     }
-  ]
+  ],
+  "scriptHash": "7f5d48a45d71",
+  "scriptCommitSha": "f0a8a3039ad56f5dbe79dff445b9f80c092d8e6d",
+  "commitSha": "f0a8a3039ad56f5dbe79dff445b9f80c092d8e6d",
+  "computedAt": "2026-08-19T12:11:18.558350+00:00",
+  "durationMs": 60,
+  "engineVersion": "3.11.15"
 }

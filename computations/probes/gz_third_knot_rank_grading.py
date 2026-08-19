@@ -16,7 +16,7 @@ records why, plus three things that ARE new.
 
 Audit-only; scope-(a); nothing wired; no value claimed for A_omega.
 """
-import json, os, subprocess, time
+import json, os, sys, time
 
 def repo_root():
     d = os.path.dirname(os.path.abspath(__file__))
@@ -24,13 +24,6 @@ def repo_root():
         if os.path.exists(os.path.join(d, "AGENTS.md")): return d
         d = os.path.dirname(d)
     raise RuntimeError("no repo root")
-
-def head_sha(root):
-    for ev in ("GITHUB_SHA","GIT_COMMIT_SHA"):
-        v = os.environ.get(ev)
-        if v and v.strip(): return v.strip()
-    try: return subprocess.check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip()
-    except Exception: return "unknown"
 
 def main():
     t0=time.time(); root=repo_root(); A=[]
@@ -155,6 +148,56 @@ def main():
              "whose dimension the prose misreported. The erratum sits on the only "
              "interesting summand.")
 
+    # ---- T10-T12: the absent sign block is FORCED, and the scope of that claim ----
+    from fractions import Fraction as Frac
+    sizes = [1, 3, 2]                                  # |e|, |transpositions|, |3-cycles|
+    chi = {"trivial":[1,1,1], "sign":[1,-1,1], "standard":[2,0,-1]}
+    ip = lambda a,b: Frac(sum(s*x*y for s,x,y in zip(sizes,a,b)), 6)
+    perm = [3, 1, 0]                                   # permutation module on 3 points
+    w0   = [x + 2*y for x,y in zip(chi["standard"], chi["trivial"])]   # GZ: std + 2*triv
+
+    print("\n[T10] is W_0 a permutation module?")
+    print(f"     chi(W_0)          = {w0}   (GZ: standard + 2 x trivial)")
+    print(f"     chi(perm) + chi(triv) = {[a+b for a,b in zip(perm, chi['trivial'])]}")
+    chk("T10-w0-is-perm-module-plus-trivial",
+        w0 == [a+b for a,b in zip(perm, chi["trivial"])] and w0[0] == 4,
+        note="YES. chi(W_0) = [4,2,1] = [3,1,0] + [1,1,1]. Characters determine complex "
+             "representations up to isomorphism, so W_0 = C[X] + C with X a 3-element "
+             "S_3-set. This upgrades Part D from an observation to a structural "
+             "identification. Lean: w0_is_perm_plus_trivial.")
+
+    print("\n[T11] MECHANISM: why the sign block cannot appear")
+    print(f"     <perm, sign>  = {ip(perm, chi['sign'])}")
+    print(f"     <triv, sign>  = {ip(chi['trivial'], chi['sign'])}")
+    print(f"     <W_0,  sign>  = {ip(w0, chi['sign'])}")
+    chk("T11-sign-absence-is-forced-not-observed",
+        ip(perm, chi["sign"]) == 0 and ip(chi["trivial"], chi["sign"]) == 0
+        and ip(w0, chi["sign"]) == 0,
+        note="A permutation module on 3 points contains NO sign component -- a general "
+             "fact about S_3, nothing knot-specific: <perm,sign> = "
+             "(1*3*1 + 3*1*(-1) + 2*0*1)/6 = 0. And a trivial summand contributes 0 to "
+             "sign multiplicity, so adding any number of trivials cannot create one. "
+             "The absence is therefore FORCED BY SHAPE, not an unexplained coincidence "
+             "to be interpreted. Lean: perm_has_no_sign / "
+             "addTrivial_preserves_signMult / sign_absence_is_forced.")
+
+    print("\n[T12] ADVERSARIAL: how far does the claim reach?")
+    level = {"4_1": 1, "5_2": 1, "(-2,3,7)": 2}
+    nontrivial_quotient = {k: v > 1 for k,v in level.items()}
+    print(f"     level N        : {level}")
+    print(f"     has a group    : {nontrivial_quotient}")
+    chk("T12-only-one-knot-can-even-be-asked",
+        sum(nontrivial_quotient.values()) == 1 and nontrivial_quotient["(-2,3,7)"],
+        note="PASSES as an ADVERSARIAL check and it TEMPERS the finding. GZ introduces "
+             "the level as 'a new phenomenon' at (-2,3,7) (N=2); 4_1 and 5_2 have N=1, "
+             "so rho factors through the TRIVIAL quotient and there is no finite group "
+             "acting -- hence no sign block to be absent. The absence is a ONE-KNOT "
+             "statement among these three, by construction. What is general is the "
+             "mechanism (T11), which holds for any permutation-type module; what is "
+             "single-instance is the observation that W_0 is of that type. Both halves "
+             "recorded so neither is quoted alone. Lean: "
+             "sign_question_only_arises_at_level_two.")
+
     verdict = (
         "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in "
         "GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep "
@@ -171,7 +214,7 @@ def main():
         "(v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing "
         "into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU "
         "Wedderburn indexing appearing in the third knot's modular data, with a "
-        "chirality-flavoured asymmetry. Observed, not derived. Nothing wired."
+        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. Nothing wired."
     )
     print(f"\n verdict: {verdict}")
 
@@ -183,9 +226,7 @@ def main():
                        "decomposition of W0.",
          "computation":"gz-third-knot-rank-grading","engine":"python",
          "scriptFile":"computations/probes/gz_third_knot_rank_grading.py",
-         "scriptCommitSha":head_sha(root),
-         "computedAt":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),
-         "durationMs":int((time.time()-t0)*1000),"auditOnly":True,
+         "auditOnly":True,
          "auditDoc":"docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
          "q0Anchor":"independent",
          "q0AnchorReason":(
@@ -204,6 +245,16 @@ def main():
          "data":{"erratum":"GZ 2304.09377 S3.5 prose dims (1,4,1) -> should be (4,1,1)",
                  "pk_sizes":pk,"verdict":verdict},
          "assertions":A}
+    # Provenance via WitnessBuilder (check-sidecars P30): a raw json.dump leaves the
+    # witness PROV_MISSING — no scriptHash, no commitSha, no engineVersion. The payload
+    # carries a flat `assertions` list, so stamp_staleness_metadata is the right entry
+    # point (wrap_legacy is for assertion-free payloads).
+    sys.path.insert(0, os.path.join(root, "tools", "qou-substrate", "python"))
+    from qou_substrate.witness import WitnessBuilder
+    WitnessBuilder.stamp_staleness_metadata(
+        w, script_path=__file__, engine="python",
+        engine_version=sys.version.split()[0], q0_anchor="independent")
+    w["durationMs"] = int((time.time()-t0)*1000)
     out=os.path.join(root,"computations","probes","gz-third-knot-rank-grading.witness.json")
     with open(out,"w") as fh: json.dump(w,fh,indent=2); fh.write("\n")
     print(f"\n witness: {out}")

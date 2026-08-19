@@ -339,11 +339,40 @@ identification the sign block is the bar-odd one, so the `Γ/Γ(2)` action on th
 level-2 part carries no sign component — a chirality-flavoured asymmetry, sitting
 on the same involution that grades the DT split.
 
-**Observed, not derived.** No mechanism is claimed for the absent sign block, and
-nothing here is wired. It is recorded because it is the first place the corpus's
-own partition indexing has turned up in third-knot data that was not constructed
-to contain it.
+### The absence is FORCED — and its scope is one knot
+
+The paragraph above originally read *"observed, not derived"*. That was too weak
+in one direction and too strong in the other; both are corrected here.
+
+**Too weak: the absence has a mechanism.** `χ(W₀) = [4, 2, 1]` on the classes
+`(e, transpositions, 3-cycles)` of sizes `(1, 3, 2)`. That is exactly
+`[3, 1, 0] + [1, 1, 1]` — the character of the **permutation module on 3 points**
+plus a trivial. Characters determine complex representations up to isomorphism,
+so `W₀ ≅ ℂ[X] ⊕ ℂ` for a 3-element `S₃`-set `X`. And a 3-point permutation module
+of `S₃` contains **no** sign component:
+
+  `⟨χ_perm, χ_sign⟩ = (1·3·1 + 3·1·(−1) + 2·0·1)/6 = 0`,
+
+a general fact with nothing knot-specific in it; a trivial summand contributes
+`0` to sign multiplicity, so adding any number of them cannot create one. The
+missing sign block is therefore **forced by the shape of `W₀`**, not a
+coincidence awaiting interpretation.
+
+**Too strong: it is a one-knot statement.** GZ introduces the level as *"a new
+phenomenon"* arising at `(−2,3,7)`, which has `N = 2`; `4₁` and `5₂` have
+`N = 1`, so `ρ` factors through the **trivial** quotient — there is no finite
+group acting, hence no sign block there to be absent. The *mechanism* is general
+(any permutation-type module); the *instantiation* is single-instance among these
+three knots, by construction. Both halves are stated together in the Lean and the
+probe so neither can be quoted alone.
+
+**What stays interpretive.** That `X` is geometrically the three cusps of `Γ(2)`
+(equivalently the three non-zero 2-torsion classes) is the standard
+`Γ/Γ(2) ≅ S₃` picture, but GZ does not say `W₀` realizes it and nothing here
+claims so. The character identity is proved; the geometric reading is not.
+
+Nothing is wired.
 
 Artifacts: `QOU.QBeta.GZThirdKnotRankGrading` (core `Int`, sorry-free, no
-`sorryAx`), `computations/probes/gz_third_knot_rank_grading.py` (9/9). Bean
+`sorryAx`), `computations/probes/gz_third_knot_rank_grading.py` (12/12). Bean
 `qou-gz37`.
