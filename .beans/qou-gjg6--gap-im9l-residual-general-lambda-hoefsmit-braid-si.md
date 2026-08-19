@@ -1,29 +1,11 @@
 ---
 # qou-gjg6
 title: 'GAP (im9l residual): general-lambda Hoefsmit braid — size-6 S3-orbit Yang-Baxter identity'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T01:05:26Z
-updated_at: 2026-08-16T14:03:02Z
-
-updated_at: 2026-08-16T14:06:51Z
-
-updated_at: 2026-08-16T15:28:57Z
-
-updated_at: 2026-08-16T16:43:28Z
-
-updated_at: 2026-08-16T18:00:00Z
-
-updated_at: 2026-08-16T19:15:16Z
-
-updated_at: 2026-08-16T20:28:00Z
-
-updated_at: 2026-08-16T20:46:27Z
-
-updated_at: 2026-08-16T20:53:54Z
-
-updated_at: 2026-08-17T00:44:11Z
+updated_at: 2026-08-19T13:39:28Z
 parent: qou-59vq
 ---
 
@@ -1678,3 +1660,23 @@ surviving only on `barSymJMSum_block_eigenvalue`. File sorries **2 → 1**.
 `QOU.lean`); nothing consumes either theorem. Closing statement debt does not
 make the remaining gap smaller — `hoefsmit_seminormal_rep` (bean `qou-im9l`)
 is untouched and is still the blocker for the one surviving sorry.
+
+
+## CLOSED (2026-08-19) — residual discharged upstream
+
+The stated residual (the general-lambda `hoefsmit_seminormal_rep` sorry, incl. the
+size-6 S3-orbit Yang-Baxter identity) is gone: `Orbit3Braid.lean` +
+`Orbit6Braid.lean` + `HoefsmitRepGeneral.lean` are all sorry-free on main
+(merged #5279 / #5282 under qou-im9l). Measured 2026-08-19: 0 sorries across all
+22 SchurWeyl files.
+
+The two hypothesis-scoping findings this bean recorded were both acted on and
+one of them was superseded:
+- `barSymJMSum_central` += `q.qi = 1` — landed, still correct.
+- `barSymJMSum_block_eigenvalue`'s `q != 0` -> `0 < q and q != 1` — landed, then
+  **narrowed further and partly reversed** by #5290: the proved form takes
+  `q != 0 and q^2 != 1` (over R exactly *not a root of unity*), which is WEAKER
+  than `0 < q and q != 1` and admits negative q. The re-scope this bean made was
+  sound but overshot.
+- A defect this bean did NOT catch: the same statement was **false at N = 0**.
+  See qou-t8qh / #5290, `barSymJMSum_block_eigenvalue_zero_false`.
