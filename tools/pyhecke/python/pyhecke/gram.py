@@ -512,6 +512,7 @@ __all__ = [
     "gram_quotient_inverse",
     # 50-dps mpmath Gram / trace (NO float64)
     "z_mp", "h_mp", "tr_m_mp", "hm_mp", "gram_matrix_mp",
+    "radical_mp", "gram_inverse_mp", "gram_quotient_solve_mp",
     "gram_matrix_mp_strings", "tr_m_mp_strings",
     # Native-dispatched atom kernels
     "build_atom_nf", "atom_per_generator_volumes", "has_native",
@@ -784,6 +785,87 @@ def gram_matrix_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
                 nf = _nf_of_word_mp(NF_BASIS[i] + NF_BASIS[j], h_mp)
                 Gm[i][j] = +_mp.fsum(nf[k] * trm[k] for k in range(6))
         return Gm
+
+
+def radical_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
+    """The Gram radical at 50-dps mpmath — NO float64.
+
+    The three-strand q-antisymmetriser `v_i = (-1/q)^len(w_i)` over
+    `NF_BASIS`, i.e. the float64-free twin of the module constant `RADICAL`.
+    Established exactly over Q at three independent rational q in
+    `computations/probes/gram_radical_exact_probe.py` (det G = 0 EXACTLY,
+    rank 5 of 6, nullspace dimension exactly 1), so this is the PROVED null
+    direction, not one extracted numerically.
+
+    Carried in mpmath because the numerical check that it *is* the null
+    direction is precision-bound: `||G . v||` is 4.5e-62 at 60 dps and
+    4.3e-121 at 120 dps — it tracks the working precision, which is what
+    "exactly zero" looks like in floating point. At float64 it would be
+    indistinguishable from noise.
+    """
+    with _mp.workdps(dps):
+        qq = _mp.mpf(_q0_50dps_str()) if q is None else _mp.mpf(q)
+        return [+((-1 / qq) ** len(w)) for w in NF_BASIS]
+
+
+def gram_inverse_mp(dps: int = _GRAM_MP_DPS):
+    """REMOVED under convention D — the mp Gram is singular, so `G^-1` does
+    not exist. The mpmath twin of `gram_inverse()`.
+
+    Raises rather than returning a quotient solve, for the same reason the
+    float64 version does: the caller asked for an inverse, and under
+    convention D there isn't one. Substituting the quotient silently would
+    answer a different question.
+    """
+    raise NotImplementedError(
+        "gram_inverse_mp() is removed: under convention D the H_3(q) trace "
+        "form is SINGULAR (rank 5 of 6; the radical is the q-antisymmetriser, "
+        "`radical_mp()`), so G^-1 does not exist. Note that `mp.lu_solve` "
+        "does NOT raise on this matrix either — it returns entries of order "
+        "1e50 with a visibly nonzero residual — so a caller who reached for "
+        "lu_solve instead has the same bug without the error message. Use "
+        "`gram_quotient_solve_mp` and check that the quotient is what you "
+        "actually want."
+    )
+
+
+def gram_quotient_solve_mp(rhs, dps: int = _GRAM_MP_DPS, q=None):
+    """Solve `G x = rhs` on the quotient `H_3(q)/rad` at mpmath precision.
+
+    Returns `(x, radical_component)`:
+
+      x                  the minimum-norm solution, orthogonal to the radical
+      radical_component  the part of `rhs` ALONG the radical
+
+    `G` is symmetric with a one-dimensional kernel spanned by the
+    q-antisymmetriser `v`, so its range is exactly `v`-perp. An exact
+    solution therefore exists **iff** `radical_component` is zero (to working
+    precision); when it is not, the returned `x` solves the projected system
+    and `radical_component` is the part that no `x` can reach. It is returned
+    rather than discarded so a caller cannot mistake an unsolvable system for
+    a solved one — which is precisely what `mp.lu_solve` does here, returning
+    ~1e50 garbage without raising.
+
+    Method: with `P` the projector off `v`, solve `(G + P_v) x = P rhs`. That
+    matrix is invertible (it acts as `G` on `v`-perp, which is a bijection
+    there, and as the identity on `v`), and its solution already lies in
+    `v`-perp, so this is the exact minimum-norm solution — not a regularised
+    approximation to one. This is the mpmath analogue of `G_PINV`, which is
+    the Moore-Penrose pseudoinverse for exactly the same reason.
+    """
+    with _mp.workdps(dps):
+        Gm = _mp.matrix(gram_matrix_mp(dps, q))
+        v = _mp.matrix(radical_mp(dps, q))
+        vv = _mp.fsum(v[i] * v[i] for i in range(6))
+        b = _mp.matrix([_mp.mpf(x) for x in rhs])
+        coeff = _mp.fsum(v[i] * b[i] for i in range(6)) / vv
+        b_perp = _mp.matrix([b[i] - coeff * v[i] for i in range(6)])
+        A = _mp.matrix(6, 6)
+        for i in range(6):
+            for j in range(6):
+                A[i, j] = Gm[i, j] + v[i] * v[j] / vv
+        x = _mp.lu_solve(A, b_perp)
+        return [+x[i] for i in range(6)], +(coeff * _mp.sqrt(vv))
 
 
 def gram_matrix_mp_strings(dps: int = _GRAM_MP_DPS) -> list:
