@@ -18,6 +18,183 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:57.537Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (Lever-3 block: atomic q-Reeb phase, rho-free mirror ratio, absolute-scale gap); no assert-by-denying / 'not X but Y' found."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:57.600Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The absolute scale $\\rho$ requires a complete determination of $\\Delta_\\lambda$. However, the **ratio** ... is structurally independent of $\\rho$.'",
+        "notes": "A genuine mathematical 'however': the second clause is true because $\\rho$ cancels in the quotient, which the display then shows. Not a setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:57.642Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "An UNSPACED em-dash pair, inconsistent with the rest of the chapter: 'the absolute scale $\\rho \\approx 18.5$ MeV/rad-or equivalently, the per-block coefficient $\\rho_\\lambda$-remains the central underdetermined problem'.",
+        "notes": "fix applied: replaced the dash pair with commas - '$\\rho \\approx 18.5$ MeV/rad, or equivalently the per-block coefficient $\\rho_\\lambda$, remains the central underdetermined problem'. Content unchanged."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:57.742Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (Lever-3 block: atomic q-Reeb phase, rho-free mirror ratio, absolute-scale gap); no compulsive three-item cadence found."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:57.797Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (Lever-3 block: atomic q-Reeb phase, rho-free mirror ratio, absolute-scale gap); no quotable closing line found."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:57.871Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (Lever-3 block: atomic q-Reeb phase, rho-free mirror ratio, absolute-scale gap); no narration of own emphasis found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:57.986Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (Lever-3 block: atomic q-Reeb phase, rho-free mirror ratio, absolute-scale gap); no block-final restatement of what is already established found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:58.084Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (Lever-3 block: atomic q-Reeb phase, rho-free mirror ratio, absolute-scale gap); no personal / warm register in institutional prose found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:58.124Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "'This constitutes a **1.67% genuine prediction** of the mirror asymmetry directly from the $q$-Reeb phase shifts, formally establishing that the rotation channels capture the structural origin of the $A=3$ binding split.' - 'genuine' is a defensive intensifier and 'formally establishing' claims proof status for a numerical agreement that is 1.67% off. Reinforced two paragraphs later by 'Crucially, **there are no empirical fits**' and 'the central underdetermined problem'.",
+        "notes": "NOT fixed - 'formally establishing' is an epistemic claim, so rewording changes what the block asserts. proposed: 'The ratio is a parameter-free prediction of the mirror asymmetry from the $q$-Reeb phase shifts, 1.67% above the AME value; it locates the structural origin of the $A=3$ binding split in the rotation channels.' Drop 'genuine' and 'Crucially' as bare intensifiers; keep '**there are no empirical fits**', which is a required anti-fit statement. NOTE the arithmetic is sound: 1.1173/1.0990 - 1 = 1.665%, and the AME ratio 1.0990 reproduces from B(3H)/B(3He) = 8.4818/7.7180 = 1.09896."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "a6ab7bcff662"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:58.214Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Isolating the symmetric strong (cosh) channel by removing the antisymmetric inter-nucleon (sinh) term pulls the Deuteron's phase sum up toward this $A=3$ universal scale, identifying the sinh channel as the carrier of the doubly-magic/anomaly deviations.'",
+        "notes": "Long and gerund-fronted, but the chain is verb-linked rather than a noun pile, and every term is defined earlier in the block. Borderline; kept."
+      }
     ]
-  }
+  },
+  "updated_at": "2026-08-19T21:35:58.214Z"
 }

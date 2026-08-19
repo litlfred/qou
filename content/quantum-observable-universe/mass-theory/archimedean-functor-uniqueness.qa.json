@@ -1777,6 +1777,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.991Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1811,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.121Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1845,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 207 words)"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.193Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1879,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 207 words)"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.238Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1913,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.351Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1947,22 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.394Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Closing blockquote: 'The Lean theorem ... takes both classes as [Instance] hypotheses and is proved **without sorry**; the uniqueness statement therefore qualifies as a *rigorous conditional result* rather than an unproved conjecture.'",
+        "notes": "The conditional banner itself is MANDATED prose (AGENTS.md section 3b-cond item 3) and stays. The trailing Lean-status half ('proved without sorry ... qualifies as a rigorous conditional result') is an AGENTS.md section 4d authorNotes candidate rather than a trap; recorded here so the migration is visible, not scored as a fail. Separately: the blockquote opens '**Theorem (conditional on ...)**' inside a block whose own heading is '**Proposition (conditional on ...)**' - kind mismatch, in the batch anomaly list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.489Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.541Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.583Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.535Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "534577e8c3b2",
+          "ts": "8cc9ef7f3fe8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:48.655Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition (conditional on conj:dilogarithm-archimedean-limit + Bloch-Suslin), uniqueness of tau_arch); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2122,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:32:48.655Z"
 }

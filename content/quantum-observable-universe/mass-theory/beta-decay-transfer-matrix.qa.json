@@ -2358,6 +2358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.026Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The mixed crossing $\\frac12(\\sigma + \\sigma^{-1})$ is an algebraic average, not a group element, so $\\det T_{mix} \\neq -1$.'; 'no fractional powers of $q$ appear'.",
+        "notes": "The first is load-bearing (it explains why unimodularity fails for exactly one of the three matrices) and I verified it: $\\det T_{pp} = \\det T_{nn} = -1$, $\\det T_{mix} = -h^2/4 - 1$. The second is substantive but attached to a claim that is wrong for a different reason - see the batch anomaly list."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2377,6 +2393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.082Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, universal 2x2 beta-decay matrix Delta_beta = (h/2) I); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -2396,6 +2427,22 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 181 words)"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.202Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Two appending dashes: 'live in $M_2(\\mathbb{Z}[q^{\\pm1}])$ - no fractional powers of $q$ appear' and 'a scalar multiple of the identity - beta decay uniformly scales all channels by $\\frac12(q-q^{-1})$'.",
+        "notes": "Density 2 in 2.3 kB, each introducing a consequence. Kept."
       }
     ],
     "trap-triples": [
@@ -2415,6 +2462,22 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 181 words)"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.266Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The three crossing transfer matrices' + $T_{pp}$, $T_{nn}$, $T_{mix}$.",
+        "notes": "Substantive: pp / nn / mixed are the three nucleon-pair types, and the count is forced by the physics, not by cadence. All three matrices verified against the stated $T(c,d)$ template."
       }
     ],
     "trap-closing-aphorism": [
@@ -2434,6 +2497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.317Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, universal 2x2 beta-decay matrix Delta_beta = (h/2) I); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -2453,6 +2531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.361Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, universal 2x2 beta-decay matrix Delta_beta = (h/2) I); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -2472,6 +2565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.405Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, universal 2x2 beta-decay matrix Delta_beta = (h/2) I); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -2491,6 +2599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.455Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, universal 2x2 beta-decay matrix Delta_beta = (h/2) I); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -2510,6 +2633,22 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.519Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'a universal 2x2 matrix-valued polynomial $\\Delta_\\beta(q)$ that governs every beta transition in every nucleus'.",
+        "notes": "Universality IS the proposition's claim (the two elementary decay matrices coincide, giving one matrix), and the proof establishes it. Not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -2529,6 +2668,21 @@
         "reviewed_at": "2026-08-15T10:31:00.416Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "51e566ac5e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.562Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, universal 2x2 beta-decay matrix Delta_beta = (h/2) I); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2552,5 +2706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:39:33.562Z"
 }

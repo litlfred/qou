@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.388Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; status column only."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.437Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; no prose."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.497Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; dashes inside cells separate a status from its reason."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.541Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; no prose."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.591Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; no prose."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.727Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; no prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.772Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; no prose."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.837Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; no prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.883Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; no prose."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e3ab7c021463",
+          "ts": "73750f7b39f1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:35:56.961Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Pure data table; but two cells are ungrammatical because a script name was stripped and replaced by a stock phrase: 'Python the formal derivation (PoC)' and 'the canonical formalism + the canonical formalism'. Recorded as anomaly 8 (sweep damage) in the batch report; not repairable without the original references."
+      }
     ]
   },
   "source_hashes": {
     "md": "e3ab7c021463",
     "ts": "73750f7b39f1"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:35:56.961Z"
 }
