@@ -1,11 +1,11 @@
 ---
 # qou-t8qh
 title: 'SW-JM: q-Jucys-Murphy eigenvalue (Ram 4.1) — the last SchurWeyl sorry'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T07:41:30Z
-updated_at: 2026-08-19T08:17:31Z
+updated_at: 2026-08-19T12:31:23Z
 parent: qou-59vq
 ---
 
@@ -70,3 +70,34 @@ That is why the induction closes, and it means the remaining work needs NO furth
 4. Index bookkeeping: L_k ↔ value k+1; rho(sigma_k) = genMat q (k+1); axialDist T (k+1) = content(cell of k+2) - content(cell of k+1); the swap sends cell of k+1 to cell of k+2 (cellOf_swapTableau_self/_succ), which is why d_k(sT) = q^{2(c+d)}.
 5. Then barSymJMSum: sum_k (q^{2c_k} + q^{-2c_k}) over k = 0..n runs over ALL cells of lambda, giving cellContentCoshSum — independent of T, i.e. a scalar matrix. Discharges barSymJMSum_block_eigenvalue.
 The theorem must live DOWNSTREAM (QJucysMurphy does not import SeminormalRep), same pattern as HoefsmitRepGeneral: prove it in QJucysMurphyEigen and retire the stub.
+
+
+## CLOSED 2026-08-19 — PR #5290
+
+`barSymJMSum_block_eigenvalue_of_pos` proved sorry-free + axiom-clean in
+`QOU/SchurWeyl/QJucysMurphyEigen.lean`. `QJucysMurphy.lean` sorries 1 -> 0.
+
+Chain, all sorry-free:
+- `seminormalRep_qJM` — Ram (1997) Thm 4.1: L_k is diagonal with q^{2.content}
+  at the cell holding k+1. Induction on k; step is genMat_conj_jmDiagVal.
+- `seminormalRep_qJMInv` — by inverse-uniqueness from qJMInv_mul_qJM, no
+  second induction.
+- `sum_cellOf_range` — k |-> cellOf T (k+1) is a bijection range(n+1) -> cells.
+  This is what makes the sum SCALAR: the per-k diagonals depend on T, the total
+  does not.
+- `seminormalRep_barSymJMSum` — Theta acts by sum over cells of (q^{2c}+q^{-2c}).
+- packaging on Fin (dLambda lam) via seminormalRepFin + card_shape.
+
+### Two corrections to the statement, both recorded rather than absorbed
+
+1. **The stub was FALSE at N = 0**, and no amount of proof would have closed it.
+   N - 1 = 0 in ℕ, so Theta = L_0 + L_0^{-1} = 1 + 1 |-> 2.1, while the empty
+   partition's cellContentCoshSum is the empty sum 0; d_lambda >= 1 always
+   (instNonemptyStandardYoungTableau) so the target algebra is nontrivial.
+   Lean-checked as `barSymJMSum_block_eigenvalue_zero_false` — the refutation
+   sits next to the theorem, not hidden behind the new `0 < N`.
+   This is a DIFFERENT defect from the one qou-gjg6 recorded (`q != 0` vs the
+   rep's genericity); that one was already fixed.
+2. **The q hypothesis was too strong, not too weak.** `0 < q ∧ q != 1` excluded
+   negative q for no reason; the proved version takes `q != 0 ∧ q^2 != 1`,
+   which over ℝ says exactly *not a root of unity* — what seminormalRep takes.
