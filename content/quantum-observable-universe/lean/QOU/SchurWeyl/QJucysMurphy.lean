@@ -1045,64 +1045,28 @@ theorem cellContentCoshSum_eq_bracket (lam : Partition N) (q : R) (hq : q ≠ 0)
 
 end CellSum
 
-/-! ## General-`λ` block eigenvalue and centrality — honest `sorry` + `-- Ref:`
+/-! ## General-`λ` block eigenvalue — moved downstream, and re-hypothesised
 
-One statement remains here.  It needs the **general** Hoefsmit seminormal representation, which is
-itself a documented GAP (`hoefsmit_seminormal_rep`, bean `qou-im9l` / SW-4 residual).  The scalar
-it evaluates to is computed sorry-free above (`cellContentCoshSum`); only the bridge
-"the central element acts by that scalar on the irreducible block" awaits the general rep.
+The statement that used to sit here as an honest `sorry` — *`ρ_λ(Θ) = cellContentCoshSum λ q · 1`*
+— is **proved**, as `barSymJMSum_block_eigenvalue_of_pos` in
+`QOU.SchurWeyl.QJucysMurphyEigen`.  It lives there rather than here because its proof needs
+`SeminormalRep`, which imports this file; this mirrors `hoefsmit_seminormal_rep`, proved downstream
+in `HoefsmitRepGeneral` for the same reason.
 
-Centrality used to be the second statement in this section and is no longer a gap: it is proved
-sorry-free as `barSymJMSum_central` below, given `q · qi = 1`. -/
+**The statement as it stood here was false, and the hypothesis it was missing is `0 < N`.**  At
+`N = 0` the `ℕ`-truncation `N - 1 = 0` leaves `Θ = L_0 + L_0⁻¹ = 1 + 1`, which every algebra map
+sends to `2 · 1`, while the empty partition's `cellContentCoshSum` is the empty sum `0`; since
+`d_λ ≥ 1` the target algebra is nontrivial, so the two differ.  That refutation is itself Lean-
+checked, as `barSymJMSum_block_eigenvalue_zero_false` alongside the positive result — recorded
+rather than quietly excluded by a hypothesis.
 
-section GeneralGap
+The proved version also **weakens** the `q` hypothesis this stub carried: `q ≠ 0` with `q ^ 2 ≠ 1`
+(exactly *`q` is not a root of unity* over `ℝ`, what `seminormalRep` takes) instead of
+`0 < q ∧ q ≠ 1`, which needlessly excluded negative `q`.
 
-/-- **Block eigenvalue of `Θ` on the irreducible `ρ_λ`, at generic `q` — GAP.**  For every `λ ⊢ N`
-there is a seminormal representation `ρ_λ : H_N(q) →ₐ M_{d_λ}` on which the central bar-symmetrised
-sum `Θ = barSymJMSum` acts as the scalar `cellContentCoshSum λ q = Σ_{c∈λ}(q^{2c}+q^{−2c})·1`.
-The scalar is sorry-free (`cellContentCoshSum` + `cellContentCoshSum_eq_bracket`); the bridge
-`ρ_λ(Θ) = scalar·1` needs the general seminormal construction and the per-element eigenvalue
-`L_k ↦ q^{2·cellContent}`.
+Centrality was the other statement in this section and is not a gap either: `barSymJMSum_central`
+below is sorry-free, given `q · qi = 1`. -/
 
-**Hypotheses re-scoped 2026-08-17 (bean `qou-gjg6`), `q ≠ 0` → `0 < q ∧ q ≠ 1`.**  The old `q ≠ 0`
-was under-hypothesised, and not in the same way `barSymJMSum_central` was: at `Hecke ℝ q q⁻¹` the
-normalisation `q · q⁻¹ = 1` is already free from `q ≠ 0`, so centrality is not what was missing.
-What was missing is that the *seminormal representation itself* does not exist at every nonzero
-real `q`.  Its matrix entries carry denominators `1 − q^{−2d}` indexed by content differences `d`,
-so it degenerates exactly where `q^{2d} = 1` for some `d ≠ 0` — i.e. at `q = 1` (every `d`) and at
-`q = −1` (every even `d`, and there `0/0`).  `0 < q` excludes the negative branch and `q ≠ 1`
-excludes the classical point; together they are the concrete-`ℝ` reading of *generic `q`*, which is
-the regime in which [ram1997] and [hoefsmit1974] construct the representation at all.
-
-**Recorded gap, not silently dropped: the roots-of-unity regime.**  The excluded `q` are not a
-technicality to be relaxed later by a better proof of the same statement.  At a root of unity
-`H_N(q)` is no longer semisimple, the `λ ⊢ N` no longer index the irreducibles, and the statement's
-whole shape (one `d_λ`-dimensional block per partition, `Θ` acting by a scalar on it) is the thing
-that fails — so the excluded case needs a *different* statement, via cellular/Specht theory rather
-than seminormal form.  Nothing here claims that case is true, and nothing here claims it is false.
-It is open and is tracked as such; do not read the `0 < q` hypothesis as an artefact of this proof
-route.
-
-**The `0 < q` half is stronger than the construction needs — recorded, not silently changed.**
-When this hypothesis was put to the owner I described the constraint as `0 < q ∧ q ≠ 1`. That was
-my reading, and it was not sharp: `SeminormalRep.seminormalRep` and `hoefsmit_seminormal_rep` both
-take `(hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)`, which over `ℝ` says exactly *`q` is not a root of unity* —
-the genericity condition `[ram1997]` presupposes — and which **admits negative `q`**.  `0 < q ∧
-q ≠ 1` implies both (`q > 0` with `q ^ 2 = 1` forces `q = 1`), so the statement below is **sound,
-just narrower than necessary**: it excludes the whole `q < 0` branch that the construction handles.
-The owner's ruling is kept as given rather than quietly widened; when the `sorry` is discharged
-from `seminormalRep`, the hypotheses can be relaxed to `q ≠ 0 ∧ q ^ 2 ≠ 1` and the discharge
-becomes direct instead of needing a strengthening step. -/
-theorem barSymJMSum_block_eigenvalue {N : ℕ} (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1)
-    (lam : Partition N) :
-    ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
-      ρ (barSymJMSum ℝ q q⁻¹ (N - 1))
-        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
-  -- Ref: [ram1997] Theorem 4.1 (seminormal eigenvalues q^{2c}); [murphy1992] (the Murphy operators
-  --   are central and act by scalars on the irreducibles); [hoefsmit1974].
-  -- GAP: needs `hoefsmit_seminormal_rep` (bean qou-im9l, a documented sorry) plus the per-element
-  --   eigenvalue `L_k ↦ q^{2·cellContent}`.  The scalar itself is proved sorry-free above.
-  sorry
 
 section BarSymCentral
 
@@ -1123,6 +1087,5 @@ theorem barSymJMSum_central (hqi : q * qi = 1) (i : Fin n) :
 
 end BarSymCentral
 
-end GeneralGap
 
 end QOU.SchurWeyl
