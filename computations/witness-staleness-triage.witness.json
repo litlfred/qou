@@ -1,8 +1,8 @@
 {
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
- "scriptHash": "18e8cebbd898",
- "commitSha": "3f74d50b4708ae9494deadc0ae8d8ccd41e39d04",
+ "scriptHash": "044f75f617f8",
+ "commitSha": "aa929b7427794851aab2d7319dcd0ba64b10daa0",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
@@ -25,7 +25,7 @@
     "recorded": "072fb5ed3c8b",
     "current": "5c168b4ff8f9",
     "import_drift": [
-     "computations/substrate/witness_base.py"
+     "computations/substrate/witness_base.py (depth 1)"
     ]
    },
    {
@@ -34,8 +34,8 @@
     "recorded": "67d063ec3310",
     "current": "376be8da9282",
     "import_drift": [
-     "computations/substrate/_precision.py",
-     "computations/substrate/witness_base.py"
+     "computations/substrate/_precision.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)"
     ]
    },
    {
@@ -44,8 +44,8 @@
     "recorded": "a13c2ded717e",
     "current": "c07628897e6c",
     "import_drift": [
-     "computations/substrate/_precision.py",
-     "computations/substrate/witness_base.py"
+     "computations/substrate/_precision.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)"
     ]
    },
    {
@@ -54,7 +54,7 @@
     "recorded": "4235f4e36d8d",
     "current": "dcfe9ac029ce",
     "import_drift": [
-     "computations/substrate/witness_base.py"
+     "computations/substrate/witness_base.py (depth 1)"
     ]
    },
    {
@@ -63,7 +63,7 @@
     "recorded": "ebf04365abfd",
     "current": "d62058fdfbee",
     "import_drift": [
-     "computations/substrate/witness_base.py"
+     "computations/substrate/witness_base.py (depth 1)"
     ]
    },
    {
@@ -72,7 +72,7 @@
     "recorded": "9d4761a97964",
     "current": "b39bd1c51f13",
     "import_drift": [
-     "computations/y_lambda_wenzl_bridge.py"
+     "computations/y_lambda_wenzl_bridge.py (depth 1)"
     ]
    }
   ],
@@ -1665,8 +1665,8 @@
    {
     "witness": "computations/witness-staleness-triage.witness.json",
     "producer": "computations/witness_staleness_triage.py",
-    "recorded": "8938bf6cc9d4",
-    "current": "18e8cebbd898"
+    "recorded": "18e8cebbd898",
+    "current": "044f75f617f8"
    },
    {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",

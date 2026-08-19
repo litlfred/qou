@@ -65,6 +65,29 @@ are what drift.
   * `cosmetic_strips_provenance` — **do not refresh.** Fix the producer to emit
     provenance first; refreshing destroys the audit trail.
 
+**The transitive walk found nothing the one-hop check missed — measured, not
+assumed.** Walking the cone to 6 hops returns the same 6 witnesses, and *every*
+drift sits at depth 1. So on this corpus the shallow check was already
+sufficient; the deep walk is kept because that is a fact about today's corpus,
+not a property of the method, and it costs little (module paths and git lookups
+are memoised).
+
+**The gate over-flags, and I would rather say so than let it look sharper than
+it is.** 5 of the 6 hits are `substrate/witness_base.py` or
+`substrate/_precision.py` — imported by nearly every producer. Checked one:
+`casimir-d6-qcorrection-structure` is flagged because `witness_base.py` gained
+15 lines whose only non-comment content is exporting `_EPHEMERAL_META_FIELDS`.
+That is serialization plumbing and **cannot move a number**. `_precision.py` is
+a genuine maybe — it sets `mp.dps`, so a change there really can shift digits —
+but `witness_base` drift is provenance-only.
+
+Note this does not create work in either direction, which is the point: a
+refresh driven by infra-only drift would change nothing *but* provenance, and
+"provenance-only refresh" is precisely what this whole script exists to say is
+not worth the budget. So `cosmetic = 0` should be read as **conservative** — a
+few of the 6 are arguably refreshable — and the practical conclusion is
+unchanged.
+
 **Gate order matters when reading the counts.** The import-cone check runs
 first, so a witness that would *also* fail the environment or bare-producer gate
 is reported only as `cosmetic_import_cone_drift`. That is why those two buckets
@@ -214,22 +237,31 @@ def env_gap(w: dict) -> dict[str, str]:
     return gaps
 
 
-def local_import_drift(producer: Path, src: str, sha: str) -> list[str]:
-    """Local modules the producer imports that CHANGED since `sha`.
+_MODULE_PATH_CACHE: dict[str, str | None] = {}
+_CHANGED_CACHE: dict[tuple[str, str], bool] = {}
 
-    The producer's own AST being unchanged says nothing about the code it calls.
-    Measured: `binding_canonical.py` is byte-stable across its drift window while
-    `tr_m_atom_via_transfer.py` -- which computes the very quantity it reports --
-    changed, moving `tr_M_atom` 0.388 -> 0.575 (48%). Resolving only top-level
-    module names under computations/ is deliberately shallow: it is one hop, not
-    a transitive closure, so treat a clean result as "no drift found", never as
-    "no drift".
-    """
+
+def _resolve_module(name: str) -> str | None:
+    """Repo-relative path of a local module, or None if it is not one of ours."""
+    if name in _MODULE_PATH_CACHE:
+        return _MODULE_PATH_CACHE[name]
+    hit = None
+    direct = COMPUTATIONS / f"{name}.py"
+    if direct.is_file():
+        hit = direct
+    else:
+        for c in COMPUTATIONS.rglob(f"{name}.py"):
+            hit = c
+            break
+    _MODULE_PATH_CACHE[name] = hit.relative_to(ROOT).as_posix() if hit else None
+    return _MODULE_PATH_CACHE[name]
+
+
+def _imported_names(src: str) -> set[str]:
     try:
         tree = ast.parse(src)
     except (SyntaxError, ValueError, RecursionError):
-        return []
-
+        return set()
     names: set[str] = set()
     for node in ast.walk(tree):
         if isinstance(node, ast.ImportFrom) and node.module and node.level == 0:
@@ -237,18 +269,60 @@ def local_import_drift(producer: Path, src: str, sha: str) -> list[str]:
         elif isinstance(node, ast.Import):
             for a in node.names:
                 names.add(a.name.split(".")[0])
+    return names
 
-    drifted = []
-    for n in sorted(names):
-        hits = [c for c in (COMPUTATIONS / f"{n}.py", *COMPUTATIONS.rglob(f"{n}.py"))
-                if c.is_file()]
-        if not hits:
+
+def _changed_since(rel: str, sha: str) -> bool:
+    key = (rel, sha)
+    if key not in _CHANGED_CACHE:
+        _CHANGED_CACHE[key] = _git("diff", "--quiet", sha, "HEAD", "--", rel) is None
+    return _CHANGED_CACHE[key]
+
+
+def local_import_drift(producer: Path, src: str, sha: str,
+                       max_depth: int = 6) -> list[str]:
+    """Local modules in the producer's TRANSITIVE import cone that changed since `sha`.
+
+    The producer's own AST being unchanged says nothing about the code it calls.
+    Measured: `binding_canonical.py` is byte-stable across its drift window while
+    `tr_m_atom_via_transfer.py` -- which computes the very quantity it reports --
+    changed, moving `tr_M_atom` 0.388 -> 0.575 (48%).
+
+    This walks the cone breadth-first to `max_depth` hops rather than the single
+    hop it originally checked, because a one-hop clean result was never evidence
+    of a clean cone: the module that moves a number can sit two imports down and
+    read as clean from the producer. Each returned path is prefixed with the hop
+    at which it was found, so a depth-1 hit (the producer calls it directly) is
+    distinguishable from a depth-4 one when judging plausibility.
+
+    Still not a proof of cleanliness. It resolves only `computations/` modules by
+    top-level name, follows no dynamic or function-local imports it cannot parse,
+    and stops at `max_depth`. Read a clean result as "no drift found within
+    <depth> hops", never as "no drift".
+    """
+    prod_rel = producer.relative_to(ROOT).as_posix()
+    seen: set[str] = {prod_rel}
+    frontier = [(n, 1) for n in sorted(_imported_names(src))]
+    drifted: list[str] = []
+
+    while frontier:
+        name, depth = frontier.pop(0)
+        if depth > max_depth:
             continue
-        rel = hits[0].relative_to(ROOT).as_posix()
-        if rel == producer.relative_to(ROOT).as_posix():
+        rel = _resolve_module(name)
+        if rel is None or rel in seen:
             continue
-        if _git("diff", "--quiet", sha, "HEAD", "--", rel) is None:
-            drifted.append(rel)
+        seen.add(rel)
+        if _changed_since(rel, sha):
+            drifted.append(f"{rel} (depth {depth})")
+        try:
+            sub = (ROOT / rel).read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        for n in sorted(_imported_names(sub)):
+            if _resolve_module(n) not in seen:
+                frontier.append((n, depth + 1))
+
     return drifted
 
 
