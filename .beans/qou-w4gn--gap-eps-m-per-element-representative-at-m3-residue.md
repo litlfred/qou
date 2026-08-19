@@ -39,3 +39,27 @@ Convention note: this run measures e(z_1) = 15, e(z_2) = 22 against an
 alpha-basis generator, where the merged probes report 9 and 2 against a
 different generator. The dlogs differ by a unit rescaling; every
 divisibility verdict agrees, as it must.
+
+### 2026-08-19 (PR #5296, Addendum 32) — the target group, found
+
+CGZ Remark 1.9 (arXiv:1712.04887v3 p. 8): the invariant is
+`R_ζ ∈ (F_n^×/(F_n^×)^n)^{χ⁻¹}`, with `P_ζ ∈ H^×/H^{×n}` only its image
+and the **lift** flagged unchecked in general. An eigenspace is proper
+only when `μ_n ⊄ F`; every field in this programme was `Q₅(μ_{624m}) ⊇
+μ_m`, so Lemma 2.4(e) was vacuous throughout.
+
+Correct base is place-dependent: `K = Q(α)`, `α³−α²+1=0`, has two places
+over 5. At the degree-1 one `K_v = Q₅ ⊉ μ₃`, `F₃ = Q₂₅`, and the
+χ⁻¹-eigenspace of `B^×/(B^×)³` is the Teichmüller line — order 3 of 9,
+with `5` outside it. Non-vacuous.
+
+**Reverses half of Addendum 31.** `B = Q₂₅` *is* `F_n` there, and
+`χ_B = teich(·)⁸` *is* the eigenspace projection. The root-dependence of
+Addenda 27–29 belongs to the lift, not the field.
+
+**Route closed:** Lemma 2.3 is an isomorphism `F^×/F^{×n} ≅ H¹(Φ,μ)`, so
+the Kummer-cocycle reformulation computes the same object as Addendum 31.
+Dead end; no probe spent on it.
+
+**Still open:** the lift `P_ζ → R_ζ` at the degree-1 place (CGZ §3, via
+Chern classes). No ε_m value claimed at m ≥ 3.
