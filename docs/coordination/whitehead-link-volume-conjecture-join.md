@@ -48,6 +48,38 @@ The majorant is the triangle-inequality bound; the conditional class says the
 phases cost at most `N^p`, i.e. the majorant and the true modulus share
 exponential growth.
 
+## Program C — the ONE-LOOP arc (`qou-vdvS` / `qou-vdvE` / `qou-mlgp` (D))
+
+Found 2026-08-19, after this ledger was first written. A **third** program,
+which neither A nor B referenced, and which answers a brick the epic had
+scoped as open.
+
+Files: `QOU/MathlibExt/GaussianShearIntegral.lean` (sorry-free),
+`QOU/OneLoopPrefactorInvariance.lean`,
+`docs/outreach/2026-08-08-van-der-veen-whitehead-chains-corrections.md`.
+
+    integral_vdv_step4 (n) (hA : 0 < A.re) :
+      ∫_u ∫_v exp(−π[A u²/2 + 2 Σ_j (v_j + u/2)²]) = (√2)^{−n} · (2/A)^{1/2}
+
+`A = n − mi` with `n = c+d`, `m = 4a−c+d`, so `Re A = c+d ≥ 1 > 0` across the
+whole `b = 1` family — **which contains the Whitehead link** `W_{0,1,1,0}`. The
+value is manifestly nonzero.
+
+**It also carries a correction to van der Veen's published proof.** Lemma 2a is
+stated in *distances* `n′ = |n − ⌊N/2⌋|`, `k′ = |k − ⌊N/4⌋|`, which makes Step 4
+an integral over an **orthant** and produces `erfc` factors that close only in
+low rank. The underlying Taylor expansion is **signed** — `2xy < 0` when `x, y`
+have opposite signs — so restoring the signs returns the integral to all of
+`ℝ^{n+1}`, where it factorises completely. **No `erfc` is needed.**
+
+Consequence for this epic: bean `qou-9r2q` ("L4-6: limit integral nonvanishing
+— erfc infra") is **obviated in one half and supplied in the other**. Do not
+build `erfc` infrastructure; cite `integral_vdv_step4`.
+
+**Still not supplied**, and the honest remaining gap: the uniform error control
+licensing the replacement of the sum by that integral (vdV Lemma 2a/2b, bean
+`qou-vy77`), and the assembly into `WhiteheadLinkLowerRate`.
+
 ## The join
 
 **The gap between the two programs is exactly `VdVWhiteheadLemma4`.**
