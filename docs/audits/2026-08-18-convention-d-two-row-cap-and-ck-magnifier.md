@@ -266,6 +266,64 @@ is the thing to settle before another candidate `F` is tried.
 This is a far sharper filter than matching `1 − F(q₀) = 1.6748e-3` at a single
 point, and it is available to any D-frame attempt.
 
+## 3d. FORK RESOLVED: `Q_A` is the **counit**; `Im 𝔙` is the **trace**
+
+§3c left two possibilities the corpus did not distinguish — either `Q_A` is not
+`Im 𝔙` (no contradiction), or the conjecture's parity claim fails for the
+computed object. **It is the first**, and the corpus says so explicitly once the
+derivation is located.
+
+[`nuclear-interactions/qbeta-counit-closed-form.md`](../../content/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md)
+derives the closed form as a **Frobenius counit** evaluation —
+`ε(Δ)·𝔈₀ = m_e(q+1)(q²−2q−1)/(2q³)` with `𝔈₀ = m_e/(q(q−1))` and
+`Δ = NF(n) − NF(p)` in `H₃(q)` — and states the distinction outright:
+
+> `ε(Δ) = h²/2 − h`,  `tr_M(Δ) = h²/2 − h·z`
+> *"The counit is the Markov trace evaluated at the trivial loop value. The two
+> agree precisely when `z = 1`. The trivial-loop value is never attained on the
+> substrate. **The counit and the Markov trace are genuinely distinct
+> functionals on the substrate.**"*
+
+while `conj:binding-qbeta-complex-volume` defines
+`𝔙 = E₀·tr_M((Π_free − 1)∘ℳ)`, a **Markov-trace** object.
+
+**Verified:** `ε(Δ)·𝔈₀` reproduces the committed closed form exactly
+(`−0.783645827375` vs `+0.783645827375` — the closed form's `|q²−2q−1|` discards
+the sign, itself worth noting since a bar-odd object is signed).
+
+So the `+1.687`-vs-`−1` bar-ratio of §3c is **not a corpus contradiction**:
+`Q_A` was never the object the parity claim is about.
+
+### The identity this exposes
+
+Subtracting the two functionals:
+
+> **`ε(Δ) − tr_M(Δ) = h(z−1) = 2α`**  — verified symbolically, difference
+> simplifies to `0`, for any `z`.
+
+So **the ladder's phase `α` is exactly half the counit-minus-trace gap.** `α` is
+not an arbitrary parameterisation: the precision ladder is implicitly
+**transporting the evaluation from the counit to the trace**, and `α` measures
+precisely that gap.
+
+This also locates the unjustified step. It is the **cosine** — exponentiating a
+*difference* into `cos(α − u/2)` — and that is exactly the piece which is
+axiomatised (`QOU.Interactions.QBetaCosResummation`). The gap itself is
+structural; its exponentiation is not.
+
+### Measured once, and deliberately not pursued
+
+If the transport were a bare ratio of these functionals on `Δ`:
+
+| frame | `tr_M/ε` | `odd(tr_M)/ε` |
+|---|---|---|
+| C | `0.44087` | `0.55761` |
+| D | `0.56748` | `0.68421` |
+
+against `F_required = 0.998325`. None is close, so the transport is **not** a
+bare ratio of `ε` and `tr_M` on `Δ`. Recorded once and not explored further —
+hunting combinations that land near `0.998` is the fit this bean forbids.
+
 ## 4. Routes now pruned, and what remains
 
 | route | status | source |
