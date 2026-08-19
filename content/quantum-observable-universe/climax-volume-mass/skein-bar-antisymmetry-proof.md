@@ -17,7 +17,7 @@ crossing computations, a per-crossing-sign feasibility check, an
 enumeration of $L_+$ and $L_-$ contributions to a state sum — the
 bar-antisymmetry of (S) means those contributions enter the
 analysis as **bar-paired** terms, not independent ones.  The
-case-split is bookkeeping, not new content.
+case-split is pure bookkeeping.
 
 **Connection to substrate bar T-duality.**
 

@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/lifting-and-descent/brane-tower-levels.md"
   },
   "source_hashes": {
-    "md": "cbbfd5fd3e13",
+    "md": "ba609700c9dc",
     "ts": "4e2ec8b33ee4"
   },
   "criteria": {
@@ -1370,7 +1370,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "ba609700c9dc",
+          "ts": "4e2ec8b33ee4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:12.803Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:12.803Z"
 }

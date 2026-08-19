@@ -15,4 +15,4 @@ $$
 
 *Equivalently, the shell-binding target $y_{\mathrm{target}}(A_{\mathrm{magic}})$ correlates to the cumulative β-decay chain reaching the magic anchor via the categorical trace. To formalize the full binding scale, we combine multiple β-decay Q-values along the isobar chain through the magic anchor.*
 
-**Scope.** The single magic-crossing Q-value identity above rests on the categorical trace. The compound-chain extension — combining Q-values along the isobar chain to isolate a shell-binding target — is exploratory: it subtracts model-predicted non-magic Q-values — a circular step — and carries an unresolved unit mismatch. It is therefore not a fit-free calibration and is not wired into any production shell-binding target.
+**Scope.** The single magic-crossing Q-value identity above rests on the categorical trace. The compound-chain extension — combining Q-values along the isobar chain to isolate a shell-binding target — is exploratory: it subtracts model-predicted non-magic Q-values (a circular step) and carries an unresolved unit mismatch. It is therefore not a fit-free calibration and is not wired into any production shell-binding target.

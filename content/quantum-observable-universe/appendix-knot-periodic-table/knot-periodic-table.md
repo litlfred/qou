@@ -15,8 +15,7 @@ Here $Z$ is the atomic number (proton count) and $N$ is the
 neutron count, with $A = Z + N$ the mass number.
 Throughout, fraktur letters name particles ($\mathfrak{p}$ the
 proton, $\mathfrak{n}$ the neutron, with $\mathfrak{u}, \mathfrak{d}$
-their quark constituents) and $\oplus$ denotes Hopf linking; each
-symbol is glossed at first use.
+their quark constituents).
 
 **Mass formula.**
 

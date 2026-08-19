@@ -38,7 +38,7 @@ Under the three-calibration discipline, we flag these empirical fits as conditio
 
 ## Evidence
 
-Direct SDP-$T_\beta$ extraction at 50 decimal places precisely reproduces the conjectured $c_k$:
+Direct SDP-$T_\beta$ extraction at 50 decimal places reproduces the conjectured $c_k$:
 
 ```text
 c_2 extracted = -1.0171   (vs framework -1)
