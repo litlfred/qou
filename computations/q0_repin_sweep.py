@@ -123,12 +123,24 @@ def former_ideal_muon() -> list[str]:
 #     that would regenerate the anchor.
 # The guard did its job; nothing silently corrupted. But the sweep had no
 # exclusion list, so a re-run would reproduce all three.
+# PAIRED WITH `ANCHOR_DEFINITIONS` BELOW — two guards, two layers, and the
+# names are one letter apart, so read both before editing either. This one
+# holds PRODUCER STEMS and drops them from former_ideal_muon(), so the
+# producer is never scheduled. `ANCHOR_DEFINITIONS` holds WITNESS FILENAMES
+# and drops them in build_graph(), so the witness is never treated as a
+# consumer node. They were added independently for the same incident (this
+# PR #5296 / bean qou-w4gn; the other PR #5265-adjacent / bean qou-cezp) and
+# are complementary, not redundant — but editing one and assuming the defect
+# is covered would leave the other layer open.
 ANCHOR_DEFINING = frozenset({"q_pinning_50_digit"})
 
 
 # Witnesses that DEFINE an anchor rather than consume one. The sweep must
 # never re-pin these: doing so redefines the anchor instead of migrating a
 # consumer. See the note in build_graph. Bean qou-cezp.
+# PAIRED WITH `ANCHOR_DEFINING` ABOVE — see the note there. This set is keyed
+# on WITNESS FILENAME and guards build_graph(); that one is keyed on PRODUCER
+# STEM and guards former_ideal_muon().
 ANCHOR_DEFINITIONS = frozenset({"q-pinning-50-digit.witness.json"})
 
 
