@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 310,
-      "proton-pin": 893,
+      "proton-pin": 894,
       "unknown": 25,
-      "canonical": 533
+      "canonical": 534
     },
     "stale_total": 310,
     "new_stale": 0,
@@ -1854,8 +1854,22 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/atomic-tr-m-mpfr-50dps.witness.json",
         "field": "q_0_50dps",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
+        "file": "computations/atomic-tr-m-mpfr-50dps.witness.json",
+        "field": "q0Value",
         "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
         "class": "canonical",
         "ppb_vs_canonical": 0.0
