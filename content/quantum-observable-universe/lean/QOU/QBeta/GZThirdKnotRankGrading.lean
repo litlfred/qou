@@ -318,4 +318,122 @@ theorem sign_question_only_arises_at_level_two :
     level PKnot.pretzel237 ≠ level PKnot.fourOne := by
   refine ⟨by decide, by decide, by decide, by decide⟩
 
+/-! ## Part F — Dimofte–Garoufalidis §6: the signature inputs confirmed, the hypothesis named, and two conditional predictions
+
+`uploads/1511.05628v1.pdf` (Dimofte–Garoufalidis, *Quantum Modularity and Complex
+Chern–Simons Theory*) §6 states trace fields in the **signature notation
+`[r₁, r₂]`** — exactly the input Part 4's rule consumes — for five knots,
+glyph-verified:
+
+| knot | minimal polynomial | type `[r₁,r₂]` | disc |
+|---|---|---|---|
+| `4₁` | `x² − x + 1` | `[0, 1]` | `−3` |
+| `5₂` | `x³ − x² + 1` | `[1, 1]` | `−23` |
+| `6₁` | `x⁴ − 2x³ + x² + 3x + 1` | `[0, 2]` | `257` |
+| `(−2,3,−3) = (−2,3,9)` | `x⁵ − x⁴ + x³ + 2x² − 2x + 1` | `[1, 2]` | `23·733` |
+| `(−2,3,7)` | *same trace field as* `5₂` | `[1, 1]` | `−23` |
+
+**Confirmation.** Part 4 derived `4₁ ↦ (0 real, 1 pair)` and `5₂ ↦ (1 real, 1
+pair)` by reading GZ's prose. DG states the same two as `[0,1]` and `[1,1]` in
+type notation. Independent sources, identical inputs.
+
+**The hypothesis Part 4 was silently making, now named.** The rule is
+`r = #embeddings of A_K^red`, and `A_K^red ⊇ F_K` (the trace field) with equality
+**iff** `K` has no boundary-parabolic representations outside its trace field.
+Part 4 used `A_K^red`; DG tabulates `F_K`. They coincide for `4₁` and `5₂` — and
+**`(−2,3,7)` is a worked counterexample where they do not**: its trace field is
+`5₂`'s (3 embeddings) while `r = 6`, because `P_K` picks up a second Galois orbit
+over the totally real `ℚ(η)`. So "signature of the trace field" is *not*
+interchangeable with "signature of `A_K^red`", and Part 4's agreement on two
+knots did not establish which one the rule needs.
+
+**Two conditional predictions.** Under the named hypothesis `A_K^red = F_K`:
+
+* `6₁`  — `[0,2]` ⇒ `r = 0 + 2·2 = 4`, `|P_K| = 5`;
+* `(−2,3,9)` — `[1,2]` ⇒ `r = 1 + 2·2 = 5`, `|P_K| = 6`.
+
+Falsifiable, and stated *with* their hypothesis rather than as bare numbers —
+`(−2,3,7)` is exactly the knot where an unstated version of this would have been
+wrong.
+
+**A non-inference, recorded deliberately.** DG's Table 2 has a column headed
+"Level" (`4₁ ≤7`, `5₂ ≤5`, `6₁ ≤3`, …). That is the **Chern–Simons level**
+`k` with `ζ^k = 1` — the order of the root of unity at which the numerics were
+run — **not** GZ's level `N` (the period of the colored-Jones degree
+quasi-polynomial) from Part E. Reading `6₁ ≤ 3` as "`6₁` has level 3" would
+manufacture the fourth level-`> 1` knot that Part E's open question asks for, out
+of a different quantity. Third instance of this same conflation trap in this arc;
+recorded so it is not walked into a fourth time. -/
+
+/-- The knots for which Dimofte–Garoufalidis §6 gives a trace-field signature. -/
+inductive DGKnot where
+  | fourOne : DGKnot
+  | fiveTwo : DGKnot
+  | sixOne : DGKnot
+  | pretzel239 : DGKnot
+  deriving DecidableEq
+
+/-- `r₁`, the number of **real** embeddings of the trace field (DG type `[r₁,r₂]`). -/
+def traceFieldReal : DGKnot → Int
+  | DGKnot.fourOne => 0        -- ℚ(√−3),  type [0,1]
+  | DGKnot.fiveTwo => 1        -- x³−x²+1, type [1,1]
+  | DGKnot.sixOne => 0         -- x⁴−2x³+x²+3x+1, type [0,2]
+  | DGKnot.pretzel239 => 1     -- x⁵−x⁴+x³+2x²−2x+1, type [1,2]
+
+/-- `r₂`, the number of **complex-conjugate pairs** of embeddings. -/
+def traceFieldPairs : DGKnot → Int
+  | DGKnot.fourOne => 1
+  | DGKnot.fiveTwo => 1
+  | DGKnot.sixOne => 2
+  | DGKnot.pretzel239 => 2
+
+/-- Degree of the trace field, `r₁ + 2r₂` — checkable against the stated minimal
+polynomials (degrees `2, 3, 4, 5`). -/
+def traceFieldDegree (K : DGKnot) : Int := traceFieldReal K + 2 * traceFieldPairs K
+
+/-- **The signatures reproduce the stated minimal-polynomial degrees.** A
+consistency check on the transcription: `[0,1] → 2`, `[1,1] → 3`, `[0,2] → 4`,
+`[1,2] → 5`. -/
+theorem signatures_match_polynomial_degrees :
+    traceFieldDegree DGKnot.fourOne = 2 ∧
+    traceFieldDegree DGKnot.fiveTwo = 3 ∧
+    traceFieldDegree DGKnot.sixOne = 4 ∧
+    traceFieldDegree DGKnot.pretzel239 = 5 := by decide
+
+/-- **DG's types confirm Part 4's inputs on the two shared knots.** Part 4 read
+its signatures off GZ's prose; DG states them independently in `[r₁,r₂]`
+notation, and they agree. -/
+theorem dg_confirms_part4_inputs :
+    traceFieldReal DGKnot.fourOne = realEmbeddings PKnot.fourOne ∧
+    traceFieldPairs DGKnot.fourOne = complexPairs PKnot.fourOne ∧
+    traceFieldReal DGKnot.fiveTwo = realEmbeddings PKnot.fiveTwo ∧
+    traceFieldPairs DGKnot.fiveTwo = complexPairs PKnot.fiveTwo := by decide
+
+/-- The rank predicted **under the hypothesis** `A_K^red = F_K`. -/
+def predictedRankFromTraceField (K : DGKnot) : Int := traceFieldDegree K
+
+/-- **The hypothesis holds for `4₁` and `5₂`** — the prediction reproduces GZ's
+measured ranks `2` and `3`. -/
+theorem prediction_correct_where_hypothesis_holds :
+    predictedRankFromTraceField DGKnot.fourOne = rank PKnot.fourOne ∧
+    predictedRankFromTraceField DGKnot.fiveTwo = rank PKnot.fiveTwo := by decide
+
+/-- **And it FAILS for `(−2,3,7)`** — the worked counterexample. Its trace field
+is `5₂`'s, so the trace-field-only rule predicts `3`; the measured rank is `6`,
+because `P_K` acquires a second Galois orbit over `ℚ(η)`. This is why the
+hypothesis has to be stated, not assumed. -/
+theorem trace_field_alone_fails_on_pretzel237 :
+    traceFieldDegree DGKnot.fiveTwo = 3 ∧ rank PKnot.pretzel237 = 6 ∧
+    traceFieldDegree DGKnot.fiveTwo ≠ rank PKnot.pretzel237 := by decide
+
+/-- **The two conditional predictions.** Under `A_K^red = F_K`: `6₁` has rank `4`
+and `|P_K| = 5`; `(−2,3,9)` has rank `5` and `|P_K| = 6`. Not verified here — no
+source in the corpus gives these ranks — and false if either knot has
+representations outside its trace field, exactly as `(−2,3,7)` does. -/
+theorem conditional_predictions :
+    predictedRankFromTraceField DGKnot.sixOne = 4 ∧
+    predictedRankFromTraceField DGKnot.sixOne + 1 = 5 ∧
+    predictedRankFromTraceField DGKnot.pretzel239 = 5 ∧
+    predictedRankFromTraceField DGKnot.pretzel239 + 1 = 6 := by decide
+
 end QOU.QBeta.GZThirdKnotRankGrading

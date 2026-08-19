@@ -198,6 +198,81 @@ def main():
              "recorded so neither is quoted alone. Lean: "
              "sign_question_only_arises_at_level_two.")
 
+    # ---- T13-T16: Dimofte-Garoufalidis §6 signatures (uploads/1511.05628v1.pdf) ----
+    # DG states trace fields in the SIGNATURE notation [r1,r2] -- the exact input the
+    # Part-4 rule consumes -- for five knots. Glyph-verified from §6.1-§6.4.
+    dg = {  # knot: (min-poly degree, r1 real, r2 pairs, discriminant as printed)
+      "4_1":      (2, 0, 1, "-3"),
+      "5_2":      (3, 1, 1, "-23"),
+      "6_1":      (4, 0, 2, "257"),
+      "(-2,3,9)": (5, 1, 2, "23*733"),
+    }
+    print("\n[T13] do DG's signatures reproduce the stated polynomial degrees?")
+    for k,(deg,r1,r2,d) in dg.items():
+        print(f"     {k:10s} type [{r1},{r2}] -> r1+2r2 = {r1+2*r2}   stated degree = {deg}   disc {d}")
+    chk("T13-signatures-match-polynomial-degrees",
+        all(r1+2*r2 == deg for deg,r1,r2,_ in dg.values()),
+        note="Transcription consistency check on the DG table before anything is built "
+             "on it: [0,1]->2, [1,1]->3, [0,2]->4, [1,2]->5, matching the minimal "
+             "polynomials x^2-x+1, x^3-x^2+1, x^4-2x^3+x^2+3x+1, x^5-x^4+x^3+2x^2-2x+1.")
+
+    print("\n[T14] do DG's types confirm Part 4's independently-read inputs?")
+    part4 = {"4_1": (0,1), "5_2": (1,1)}
+    print(f"     Part 4 (read from GZ prose) : {part4}")
+    print(f"     DG §6 (stated as [r1,r2])   : {{'4_1': (0, 1), '5_2': (1, 1)}}")
+    chk("T14-dg-confirms-part4-signature-inputs",
+        all((dg[k][1], dg[k][2]) == part4[k] for k in part4),
+        note="YES, and from an independent source: Part 4 derived its signatures by "
+             "reading Garoufalidis-Zagier's prose; Dimofte-Garoufalidis state the same "
+             "two in [r1,r2] type notation. Same inputs, two papers.")
+
+    print("\n[T15] NAMING THE HYPOTHESIS -- and the knot where it fails")
+    # r = #embeddings of A_K^red, and A_K^red contains F_K with equality iff K has no
+    # boundary-parabolic reps outside its trace field.
+    tf_only = {k: dg[k][1] + 2*dg[k][2] for k in dg}
+    print(f"     trace-field-only prediction : 4_1 -> {tf_only['4_1']}, 5_2 -> {tf_only['5_2']}")
+    print(f"     measured rank (GZ)          : 4_1 -> {rank['4_1']}, 5_2 -> {rank['5_2']}")
+    print(f"     (-2,3,7): trace field = 5_2's -> predicts {tf_only['5_2']}, measured {rank['(-2,3,7)']}")
+    chk("T15-trace-field-alone-fails-on-pretzel237",
+        tf_only["4_1"] == rank["4_1"] and tf_only["5_2"] == rank["5_2"]
+        and tf_only["5_2"] != rank["(-2,3,7)"],
+        note="MATERIAL SHARPENING OF PART 4. The rule is r = #embeddings of A_K^red, and "
+             "A_K^red contains the trace field F_K with EQUALITY IFF K has no "
+             "boundary-parabolic reps outside F_K. Part 4 used A_K^red; DG tabulates "
+             "F_K. They coincide at 4_1 and 5_2 -- so Part 4's two-knot agreement did "
+             "NOT establish which one the rule needs. (-2,3,7) settles it: DG says its "
+             "trace field is 5_2's (3 embeddings) while the measured rank is 6, because "
+             "P_K picks up a second Galois orbit over the totally real Q(eta). The "
+             "hypothesis must be STATED, not assumed.")
+
+    print("\n[T16] two conditional predictions (fourth and fifth knots)")
+    print(f"     6_1      [0,2] -> r = {tf_only['6_1']}, |P_K| = {tf_only['6_1']+1}")
+    print(f"     (-2,3,9) [1,2] -> r = {tf_only['(-2,3,9)']}, |P_K| = {tf_only['(-2,3,9)']+1}")
+    chk("T16-conditional-predictions-stated-with-their-hypothesis",
+        tf_only["6_1"] == 4 and tf_only["(-2,3,9)"] == 5,
+        note="UNDER the T15 hypothesis A_K^red = F_K: 6_1 has r=4, |P_K|=5; (-2,3,9) has "
+             "r=5, |P_K|=6. NOT verified -- no corpus source gives these ranks -- and "
+             "FALSE if either knot has reps outside its trace field, exactly as "
+             "(-2,3,7) does. Stated with the hypothesis attached rather than as bare "
+             "numbers, because (-2,3,7) is precisely the knot where the unstated "
+             "version would have been wrong.")
+
+    print("\n[T17] GUARDED NON-INFERENCE: DG's Table 2 'Level' column")
+    dg_table2_level = {"4_1":7, "5_2":5, "(-2,3,7)":5, "(-2,3,-3)":3, "(-2,3,9)":3, "6_1":3}
+    gz_level        = {"4_1":1, "5_2":1, "(-2,3,7)":2}
+    print(f"     DG Table 2 'Level' (<=)  : {dg_table2_level}")
+    print(f"     GZ level N (Part E)      : {gz_level}")
+    chk("T17-dg-level-is-not-gz-level",
+        dg_table2_level["4_1"] != gz_level["4_1"] and dg_table2_level["(-2,3,7)"] != gz_level["(-2,3,7)"],
+        note="DIFFERENT QUANTITIES -- recorded so the trap is not walked into. DG's "
+             "'level k' is the CHERN-SIMONS level with zeta^k = 1, i.e. the order of the "
+             "root of unity at which the numerics were run (their abstract: 'Chern-Simons "
+             "theory with gauge group SL(2,C) at fixed level k, where zeta^k = 1'). GZ's "
+             "level N is the period of the colored-Jones degree quasi-polynomial. Reading "
+             "'6_1 <= 3' as '6_1 has level 3' would MANUFACTURE the fourth level->1 knot "
+             "Part E asks for, out of an unrelated quantity. Third instance of this same "
+             "conflation trap in this arc.")
+
     verdict = (
         "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in "
         "GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep "
@@ -214,7 +289,7 @@ def main():
         "(v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing "
         "into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU "
         "Wedderburn indexing appearing in the third knot's modular data, with a "
-        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. Nothing wired."
+        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. Nothing wired."
     )
     print(f"\n verdict: {verdict}")
 
