@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-15T00:00:00Z
+updated_at: 2026-08-19T16:18:28Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -368,3 +368,38 @@ answered (negatively). All 9 real consumers run or correctly refuse. Remaining
 is not science: draining the 38 baselined float64 fields in
 proton-residual-rootcause, and the detector-class question of committed
 witnesses whose producers crash.
+
+
+## 2026-08-19 RECONCILIATION — a sibling migrated this three days before me (commit 2eaa4eafd)
+
+Rebasing onto main 1998a5f0a surfaced `5046347e5` (2026-08-16):
+**"S2(qou-cds2): pyhecke's mpmath path to convention D — and the singularity
+was mis-located"**. Same bean, same migration, three days earlier. Theirs is
+on main; mine is dropped as redundant.
+
+**Independent agreement** (corroboration, not duplication): the straddle
+itself; that a stale JUSTIFICATION is harder to spot than a stale value
+because it reads as a reason; the restored lockstep at **4.1e-18** — same
+number to the digit; the Lorentzian (4,1) signature surviving; and that the
+SDP probe must not be repaired inside a library migration.
+
+**Divergence that is not a disagreement.** They say 18.5 %, I said 22.70 %:
+
+    gap = z_D - z_C = 0.113367703 ;  gap/z_C = 22.7044 % ;  gap/z_D = 18.5033 %
+
+One gap, two denominators — the FOURTH instance of that trap on this branch
+(c_2/c̃_2, 3.47/3.35, 2.98/2.88, now this) and the first hit independently by
+two agents on the same quantity. Both labelled, neither corrected. Their
+lu_solve figures (2.127e-10 / 1.313e-10) and mine (max|x| ~ 10^dps, resid
+~1e-3) likewise differ only by right-hand side — their probe anchors vs my
+identity-NF sweep — with the same conclusion.
+
+**What I re-added:** their migration lacks the quotient API, and three of my
+probes need it. `radical_mp` / `gram_quotient_solve_mp` / `gram_inverse_mp`
+(81 lines) restored ADDITIVELY onto their gram.py. Justified because that API
+carries the science they explicitly deferred — *"a science decision about the
+probe, not part of a library migration"* — which is precisely what the
+sign-rep identity and the quotient re-posing answer.
+
+**Gates GREEN.** The raw-float64 RED I had been carrying and attributing to
+main is fixed on main (55ac29d94). Nothing red on this branch now.
