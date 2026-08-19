@@ -48,6 +48,30 @@ for p in (str(HERE), str(REPO / "tools" / "qou-substrate" / "python")):
         sys.path.insert(0, p)
 
 from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from q0_migration_tolerance_triage import (  # noqa: E402
+    carries_the_anchor,
+    is_discrete,
+    slack_of,
+    ANCHOR_IMPACT,
+    AT_RISK,
+)
+
+#: Producers that must NEVER be swept, with the reason.
+#:
+#: `q_pinning_50_digit` writes `q-pinning-50-digit.witness.json`, which is not
+#: a datum -- it is what `qou_substrate.witness._q0_value_for_anchor` reads as
+#: THE DEFINITION of the muon pin. Regenerating it at the proton pin therefore
+#: does not migrate a witness, it deletes the muon anchor: both anchors then
+#: resolve to the same value and every muon-anchored witness reports a flip.
+#:
+#: That is not hypothetical. It happened -- commit 9a9c6b31c ("first 25
+#: witnesses regenerated at the proton pin") produced 262 Q0_FLIPs and had to
+#: be reverted by 2e4745448d. Beans `qou-m9xp`, `qou-cezp`, `qou-1c4y`.
+NEVER_SWEEP = {
+    "q_pinning_50_digit.py":
+        "defines the muon pin that _q0_value_for_anchor reads; sweeping it "
+        "deletes the anchor (262 Q0_FLIPs, 9a9c6b31c -> reverted 2e4745448d)",
+}
 
 NDIGITS = 12
 CUR = Q_50_DIGIT_STR[: NDIGITS + 2]
@@ -62,6 +86,35 @@ except Exception:  # pragma: no cover
                       "-compliance.witness.json")
 WGLOB = "computations/*.witness.json"
 BRANCH = "claude/q0-repin-regen-batch-2026-05-30"
+
+
+def at_risk_count(witness_relpaths: list[str]) -> int:
+    """Assertions in these witnesses whose margin cannot absorb the anchor move.
+
+    Reuses `q0_migration_tolerance_triage` rather than re-deriving the test --
+    that module already separates the three classes that LOOK like zero margin
+    and are not (counts, threshold semantics, real-valued exacts). Wiring it in
+    here is the point: the triage merged on 2026-08-15 and, measured four days
+    later, was referenced by nothing but its own test. A triage nothing calls
+    does not order anything.
+    """
+    n = 0
+    for rel in witness_relpaths:
+        try:
+            doc = json.loads((REPO / rel).read_text())
+        except Exception:
+            continue
+        if not isinstance(doc, dict):
+            continue
+        for a in doc.get("assertions") or []:
+            if not isinstance(a, dict) or is_discrete(a) or a.get("passed") is False:
+                continue
+            sl = slack_of(a)
+            if sl is None or sl < 0:
+                continue
+            if carries_the_anchor(a) or sl < AT_RISK * ANCHOR_IMPACT:
+                n += 1
+    return n
 
 
 def stale_q0(raw: str) -> bool:
@@ -109,6 +162,10 @@ def main() -> int:
     ap.add_argument("--no-push", action="store_true", help="commit but don't push")
     ap.add_argument("--skip", default="", help="comma-separated producer "
                     "scriptFiles to defer (e.g. slow heavy-atom producers)")
+    ap.add_argument("--include-at-risk", action="store_true",
+                    help="also sweep producers whose witnesses carry "
+                         "assertions too tight to absorb the ~1e-7 anchor "
+                         "move (default: defer them, listed at the end)")
     ap.add_argument("--logfile", default="/tmp/q0_regen.log")
     args = ap.parse_args()
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
@@ -128,9 +185,32 @@ def main() -> int:
                        key=lambda s: (-len(by_script[s]), s))
     no_script = by_script.get("<no-scriptFile>", [])
 
+    # Never-sweep list: these are DEFINITIONS, not data. See NEVER_SWEEP.
+    blocked = [s for s in producers if Path(s).name in NEVER_SWEEP]
+    producers = [s for s in producers if Path(s).name not in NEVER_SWEEP]
+
+    # Risk gate. A producer whose witnesses carry assertions with no margin
+    # left is deferred by default rather than swept blind: those failures are
+    # FINDINGS and are worth reading one at a time, not discovering in the
+    # middle of a 25-producer batch where they are indistinguishable from a
+    # real regression.
+    risk = {s: at_risk_count(by_script[s]) for s in producers}
+    at_risk = [s for s in producers if risk[s]]
+    if not args.include_at_risk:
+        producers = [s for s in producers if not risk[s]]
+
     log(f"=== q₀ regen batch — current q₀≈{CUR} ===")
     log(f"stale={total_stale}  producers={len(producers)}  "
         f"no_scriptFile(manual)={len(no_script)}")
+    for s in blocked:
+        log(f"  BLOCKED  {s} — {NEVER_SWEEP[Path(s).name]}")
+    if at_risk:
+        verb = "INCLUDED" if args.include_at_risk else "DEFERRED"
+        log(f"  {len(at_risk)} producer(s) carry at-risk assertions "
+            f"({verb}; --include-at-risk to sweep them):")
+        for s in sorted(at_risk, key=lambda s: (-risk[s], s)):
+            log(f"    {risk[s]:>3} at-risk  {s}")
+
     if args.plan:
         for s in producers:
             exists = (REPO / "computations" / s).exists()

@@ -223,3 +223,82 @@ likely to skip:
 not available: by precision, 255/255 carry ≥9 sig figs somewhere; by reader
 count, 44 have a reader and 211 are leaves — and skipping leaves is how the
 μ–p tension audit understated its own subject 155× unnoticed.
+
+---
+
+## 2026-08-19 — the sweep RAN, the predicted failure fired, and the triage was never used
+
+Reviewed against `origin/main` at `5b158ef06c`, 1163 commits after the triage
+landed. Three things to record, in descending order of how much they should
+change what happens next.
+
+### 1. The circularity hazard this bean documented is no longer hypothetical
+
+The §"1. RETRACTED" section above says, in its own words:
+
+> **The real defect ... the muon 50-dps constant is CIRCULAR** — its producer
+> reads, via `q_at`, the witness it writes. ... Breaking that loop must move
+> the LABEL and the COMPUTED VALUE together, or it reintroduces the
+> disagreement above.
+
+The `tnjb` sweep (`9a9c6b31c`, "first 25 witnesses regenerated at the proton
+pin") moved the VALUE without the accessor. `q-pinning-50-digit.witness.json`
+is what `qou_substrate/witness.py::_q0_value_for_anchor` reads *as the
+definition of the muon pin*, so regenerating it at proton left both anchors
+resolving to the same value and **the muon pin with no definition in the tree
+at the path its own accessor points to**. Measured consequence: 262 Q0_FLIPs
+against `--strict`.
+
+Fixed by `2e4745448d` ("restore the muon anchor — the repin sweep overwrote its
+own definition"); bean `qou-cezp` is completed and `qou-m9xp` carries the full
+trace. Verified in this tree: the file is back at `q0Anchor: muon`, `computedAt
+2026-07-18`, and the two anchors now resolve 11.54 ppb apart as they should.
+
+**The lesson is not "be careful".** It is that this file is a *definition*, not
+a datum, and a sweep that treats it as a datum breaks the layer it is sweeping.
+Any future batch must exclude `q_pinning_50_digit` explicitly, or move the
+accessor off it first.
+
+### 2. The tolerance triage merged and has never been run by anything
+
+`computations/q0_migration_tolerance_triage.py` (`8b0dee25ea`) exists to order
+exactly this sweep — step 2 item 2 of the sequencing above. Measured today:
+the only file in the corpus that references it is **its own test**. The sweep
+ran without it.
+
+That is not a complaint about the sweep; it is a defect in how the tool was
+delivered. A triage nothing calls is a triage that does not run. Wiring it into
+the batch entry point is the actionable item, not writing more of it.
+
+### 3. A dated DELTA — not a census, and not a number to quote
+
+§2 above says "do not quote a count from this bean", and that rule stands: the
+canonical census is whatever `--json` prints today. What follows is a different
+object — a *dated before/after* whose only job is to answer "is the migration
+moving?", which a single census cannot answer. Reproduce with:
+
+    python3 computations/q0_migration_tolerance_triage.py
+    python3 computations/q0_provenance_audit.py --json
+
+If you need a count for anything else, run those and use that.
+
+    q0_migration_tolerance_triage.py        q0_provenance_audit.py --json
+      muon-anchored witnesses  576             scanned          3222
+      PINNED-TO-ANCHOR           0  (was 1)    muon              940  (was 981)
+      AT-RISK                   55  (was 61)   proton            637  (was 553)
+      producers to order        25  (was 28)   neither          2487
+                                               known-stale       380  (was 421)
+
+The migration IS moving: proton +84, muon −41, known-stale −41, and the single
+`PINNED-TO-ANCHOR` assertion (`lambda_plus_eq_q`, 1e-18 tolerance against a
+quantity shifting 1.15e-8) is gone. Both audits still run clean across a corpus
+that gained 84 witnesses, which is the useful robustness signal.
+
+### Next step, concretely
+
+1. **Wire the triage into the batch driver** so a sweep cannot start without an
+   ordering. Until then it is decoration.
+2. **Exclude `q_pinning_50_digit` from every batch**, per §1, or repoint
+   `_q0_value_for_anchor` at a definition that is not itself a sweep target.
+   The second is the real fix; the first is the safe stopgap.
+3. Then the 25 producers, AT-RISK first, one at a time.
