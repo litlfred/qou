@@ -88,9 +88,23 @@ OPTIONAL_DEPS = {"snappy", "matplotlib", "scipy", "sage", "cypari", "spherogram"
 IN_REPO = {"pyhecke", "qou_substrate", "_precision", "witness_base",
            "q_parameter", "hecke_core", "lp_dual_solver", "mass_endomorphism"}
 
+# `sys.argv[0]` is REWRITTEN to the producer's own filename before the module
+# body runs, and that is load-bearing rather than cosmetic. `q_parameter`
+# resolves the q0 anchor from the running producer's argv stem against
+# `q0_anchor_manifest.json` (257 stems select the muon pin), so a loader that
+# leaves argv[0] as `-c` silently pins every producer to proton and never
+# executes the muon branch at all.
+#
+# Measured 2026-08-19: under the old `-c` argv this audit reported all 257
+# `ideal_muon` producers importable. Under a faithful argv they raise
+# `RuntimeError: ideal/muon anchor requested ... refusing to fall back to
+# proton silently`, because the committed `q-pinning-50-digit.witness.json`
+# holds the PROTON value (bean qou-m9xp). The detector was answering a
+# question no real invocation asks.
 _LOADER = (
     "import importlib.util,sys;"
-    "spec=importlib.util.spec_from_file_location('_m',sys.argv[1]);"
+    "sys.argv=[sys.argv[1]];"
+    "spec=importlib.util.spec_from_file_location('_m',sys.argv[0]);"
     "m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)"
 )
 
