@@ -1779,6 +1779,16 @@ vanishing `d` is a fact about the α-line, not a degenerate form.
 against the directly-computed product on a 3 × 3 grid rather than assumed.
 The per-symbol classes are
 
+> **🟧 INTERPRETATION DEFLATED by Addendum 40 (2026-08-19).** The
+> *computation* below stands. What is withdrawn is the sentence after it —
+> "the invariant is carried entirely by the `[z₁]` symbol". That rested on
+> `c₂ = 0`, one observation in a group of order 3, and the class of `P_ζ` is
+> distributed **exactly 80/80/80** over 240 arguments. Landing on 0 is a
+> 1-in-3 event. Worse, the reflection relation pins `c(X) + c(1−X)` to a
+> constant across the anharmonic orbit, so `c₁` and `c₂` are not two free
+> observations. Read `c₂ = 0` as a fact about this element's coefficients,
+> not about the invariant.
+
 **`c₁ = 1`, `c₂ = 0`** in the raw readout — which is a power of the **μ₂₄
 generator**, not of `ζ₃`. Converting (`κ = 2·cls mod 3`, since
 `cls(ζ₃) = 2`) gives `κ(P(z₁)) = 2`, `κ(P(z₂)) = 0`, hence
@@ -2099,3 +2109,48 @@ This **closes** the sweep here rather than opening it. It does **not** claim
 `ε₈, ε₁₂, ε₂₄` are undefined or trivial — only that they are unreachable by
 the method that produced `ε₃`, so claiming any of them would need the lift
 actually constructed. Scope-(a).
+
+---
+
+## Addendum 40 (2026-08-19) — `c₂ = 0` is a 1-in-3 event; Addendum 34's reading withdrawn
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_second_element_feasibility_probe.py`](../../computations/probes/gswz_epsm_second_element_feasibility_probe.py)
+— 7/7. Scope-(a); nothing wired.
+
+Addendum 34 concluded *"on the α-line the invariant is carried entirely by
+`[z₁]`"* from `c₂ = 0`. That is **one observation in a group of order 3**.
+Before hunting a second Bloch element to compare against, the cheaper
+question: was the observation worth anything?
+
+### A — no. The class map is exactly equidistributed
+
+Over 240 admissible arguments the class of `P_ζ(X)` splits **80 / 80 / 80**
+across `Z/3`. A symbol landing on `0` is precisely a 1-in-3 event. The
+exactness is itself notable — not a noisy near-third but a perfect one,
+suggesting the map is equidistributed by construction.
+
+### B — and the two symbols were never independent
+
+Within the anharmonic orbit of `K` (order 6, the six maps
+`z, 1/z, 1−z, 1/(1−z), (z−1)/z, z/(z−1)`) the reflection relation pins
+`c(X) + c(1−X)` to a constant — measured `2` on all six. So `c₁` and `c₂`
+are not two free observations; half the orbit determines the other half.
+
+*(A first version of the orbit function alternated `z ↦ 1/z` with
+`z ↦ 1−z` inside one loop and reached only four elements, since `z ↦ 1−z`
+has period 2 alone. The orbit-size check caught it.)*
+
+### C — a second field is cheap, if wanted
+
+46 candidates in `|a|,|b| ≤ 12` with `c = ±1` and `f(1) = ±1` — so both `β`
+and `1−β` are units, since `N(1−β) = f(1)` — irreducible, with a simple root
+mod 5 that Hensel-lifts to a degree-1 place where all four arguments are
+units of `Z₅`. Distinct discriminants include `−23` (K itself), 169, 257,
+697, 2777, …, and `κ` **varies** across them.
+
+### What is withdrawn, and what is not
+
+`ε₃(a[z₁] + b[z₂]) = ζ₃^{−a}` **stands as computed**. What is withdrawn is
+the interpretation laid on top of it. `c₂ = 0` describes this element's
+coefficients; it is not a finding about the invariant's structure.
