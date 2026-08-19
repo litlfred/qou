@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-15T21:22:12.124631+00:00",
-  "commitSha": "f933ce228900e206c942f5e4448d5c5ffd35cc19",
+  "computedAt": "2026-08-19T21:20:22.029200+00:00",
+  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -36,7 +36,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6802,
+  "durationMs": 6950,
   "computation": "a-K-via-lp-dual-hecke-basis",
   "scriptFile": "aK_via_lp_dual_hecke_basis.py",
   "scriptHash": "5b895d3621e2",
@@ -58,8 +58,8 @@
   "description": "Item B (B.1a-rev.5) — full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + Σ_{i ∉ sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit §7b at the only A where the full basis is tractable (A=1, 6 elements). A ≥ 2 requires the analytical C_λ · S_λ factorisation per audit §7d (H_6 = 720, H_9 = 360K elements).",
   "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
-    "q0": "mpf('1.109978582751380807591669095610768879874499121873578736072814240181799008')",
-    "h": "mpf('0.2090602987956393154308462131296749438597574952630245553816960544589759747')",
+    "q0": "mpf('1.109978595557334719899763220483225026656208408780153686607981146144929999')",
+    "h": "mpf('0.2090603219955936789818626364659673502616233016474798267897442369867365562')",
     "basis_size": 6,
     "hecke_level": 3,
     "lp_method": "scipy linprog highs (f64)"
@@ -383,11 +383,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "b23f493001a904d1a63601e01bcb2ac1c39a4cf738cbc0aee27f035936995aaf",
-        "size_bytes": 5616,
-        "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
-        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-        "computedAt": "2026-08-15T11:35:10.288058+00:00"
+        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
+        "size_bytes": 5551,
+        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-18T17:30:49.888071+00:00"
       }
     ]
   },
