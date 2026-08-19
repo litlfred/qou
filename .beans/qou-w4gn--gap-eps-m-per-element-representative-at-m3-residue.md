@@ -151,3 +151,34 @@ the unchecked H-side descent. Not a claim that they are trivial.
 `c₂ = 0` at `m = 3` is a single data point, and whether `ε` separates
 elements or is generically carried by one symbol is unanswered. Needs a
 second exceptional-unit field with a degree-1 place at 5.
+
+### 2026-08-19 (PR #5296, Addendum 40) — `c₂ = 0` deflated; and a preflight I had been skipping
+
+**Addendum 34's reading withdrawn.** "The invariant is carried entirely by
+`[z₁]`" rested on `c₂ = 0` — one observation in a group of order 3. The
+class of `P_ζ` splits **exactly 80/80/80** over 240 arguments, so that is a
+1-in-3 event; and the reflection relation pins `c(X) + c(1−X)` across the
+anharmonic orbit, so `c₁`/`c₂` were never two free observations. The value
+`ε₃ = ζ₃^{−a}` stands; the interpretation does not.
+
+**A second field is cheap after all** — 46 candidates in `|a|,|b| ≤ 12`
+(`c = ±1`, `f(1) = ±1`, irreducible, simple root mod 5 lifting to a
+degree-1 place with all four arguments `Z₅`-units), discriminants 169, 257,
+697, 2777, … and `κ` varies across them. Available if the comparison is
+ever wanted, but the motivating question has lost its force.
+
+**Process defect, found via a sibling.** `55ac29d946` fixed a raw-float64
+red in *my* m3-closure witness. That prompted me to run
+`scripts/precision-gates.sh` — required before any witness-touching commit
+and **not run once across eight probes this session**. All blocking gates
+are green, but the omission is the defect. It also surfaced that my eight
+witnesses sat in `Q0_ANCHOR_MISSING`, which the audit calls
+"indistinguishable from a producer that simply forgot"; they now declare
+`q0Anchor: "independent"` with per-probe reasons
+(`Q0_INDEPENDENT` 9 → 17, `Q0_ANCHOR_MISSING` 1912 → 1904, `Q0_FLIP` 0).
+
+**Status: the α-line at `v₁` is worked out.** One computable invariant
+(`ε₃`), validated against four CGZ predictions, with its interpretation
+correctly scoped. No obvious next increment that isn't either the
+unconstructed H-side lift or a second field whose motivating question just
+evaporated.
