@@ -1463,6 +1463,18 @@ control had to leave B entirely, using the ring generator.
 
 ## Addendum 31 (2026-08-19) — computing CGZ's class where they put it: the invariant is bracketed, not obtained
 
+> **🛑 HALF-CORRECTED by Addendum 32 (2026-08-19).** The "B = Q₂₅ is too
+> small" half of the bracket below is **wrong**. `B = Q₂₅` is exactly
+> `F_n = F(ζ₃)` at the degree-1 place of `K = Q(α)`, and `χ_B =
+> teich(·)⁸` is exactly the projection onto the χ⁻¹-eigenspace that
+> CGZ Remark 1.9 names as the invariant's home. The root-dependence
+> that this addendum attributes to the field belongs instead to the
+> **lift** `H → F_n`. The other half — `F = Q₅(μ₁₈₇₂)` is too large —
+> stands, and Addendum 32 explains it in one line: that field contains
+> `μ₃`, which collapses the eigenspace to the whole group. The
+> measurements below are correct as recorded; only their interpretation
+> as a statement about *fields* is retracted.
+
 `gswz_epsm_field_bracketing_probe.py`, **9/9**. Addendum 30's stated
 next increment was to compute the class in F^×/(F^×)ⁿ instead of
 descending to the base. Done — and the answer is a bracketing, not a
