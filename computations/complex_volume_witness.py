@@ -82,11 +82,22 @@ def complex_volume(Z: int, N: int):
     # and DIFFER at the real anchor q₀ (q̄₀=q₀≠q₀⁻¹).
     ta, tf = float(ta), float(tf)
     mass_mod_usual = abs(ta)                             # |tr_M(q₀)|
-    # bar-norm tr_M(q₀)·tr_M(q₀⁻¹) needs tr_M re-lifted at q₀⁻¹. The canonical
-    # color-weighted atom word BAKES q₀ into its crossing values, so it cannot
-    # re-lift at q⁻¹ (a q-parameterised word builder is required — see
-    # tr_m_atom_via_transfer docstring). Guarded: the bar-norm is the
-    # principled mass-modulus but is not yet computable for this convention.
+    # bar-norm tr_M(q₀)·tr_M(q₀⁻¹) needs tr_M re-lifted at q₀⁻¹.
+    #
+    # CORRECTED 2026-08-19 (bean `qou-e58e`). This comment used to say the
+    # word "BAKES q₀ into its crossing values, so it cannot re-lift at q⁻¹",
+    # citing the tr_m_atom_via_transfer docstring — which was itself stale and
+    # is fixed in the same commit. The re-lift WORKS: tr_M(q₀⁻¹) computes in
+    # milliseconds, and the try/except below has never been the thing that
+    # fires. What fires is `bar_prod > 0` in the next line, because the
+    # product is NEGATIVE (deuteron: −8.5e-4; free: −3.3e-3). So the bar-norm
+    # is not "not yet computable" — as a real number it DOES NOT EXIST for
+    # this word, which is a stronger and different statement.
+    #
+    # What the bar image does carry is a mirror law: q ↦ 1/q exchanges
+    # (Z,N) ↔ (N,Z) up to one universal offset δ(q), measured to 22–30 digits
+    # over A = 2..6. See
+    # `computations/substrate/bar_involution_is_isospin_probe.py`.
     ta_i = None
     mass_mod_bar = None
     try:
