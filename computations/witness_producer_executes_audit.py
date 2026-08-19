@@ -164,10 +164,16 @@ def resolve(ref: str) -> Path | None:
         return hits[0]
     if not hits:
         # Widen to the repo for non-Python producers, skipping build output.
+        # `.claude/worktrees/<agent>/` holds checkouts of OTHER branches, so a
+        # repo-wide rglob returns the real producer PLUS one copy per stale
+        # worktree. The `len(wide) == 1` guard below then rejects the match as
+        # ambiguous and the producer resolves to None -- i.e. a producer that
+        # plainly exists is reported missing. Measured: `joint_tower_sdp.rs`
+        # returned 6 hits, 1 real and 5 from worktrees.
         wide = [p for p in ROOT.rglob(name)
                 if p.is_file() and not any(
-                    part in (".git", ".lake", "node_modules", "target",
-                             "__pycache__")
+                    part in (".git", ".claude", ".lake", "node_modules",
+                             "target", "__pycache__")
                     for part in p.parts)]
         if len(wide) == 1:
             return wide[0]

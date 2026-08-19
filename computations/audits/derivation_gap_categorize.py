@@ -35,6 +35,23 @@ import collections
 import json
 import pathlib
 import re
+import sys
+
+# `witness_producer_executes_audit` already resolves producers correctly --
+# three spellings of the key (`scriptFile` / `producer` / `script`) plus
+# `computation.script`, resolved repo-wide across Python, Rust and Lean, with a
+# prose guard for witnesses whose producer field holds an explanation rather
+# than a path. This module used to read `scriptFile` alone, so a witness
+# declaring `producer: computations/deltalambda/foo_probe.py` was reported as a
+# tier-E orphan with its producer sitting on disk. Reuse that resolver instead
+# of keeping a second, worse one: two answers to "does this witness have a
+# producer?" is how the wrong one gets acted on.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+from witness_producer_executes_audit import (  # noqa: E402
+    is_prose as _is_prose,
+    producer_of as _producer_of,
+    resolve as _resolve,
+)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 #: Repo root. Producers do NOT all live under `computations/` -- some sit in
@@ -44,8 +61,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 #: time, which is the worst direction for this tool to be wrong in: the
 #: recommended disposition for an orphan is to retire it.
 REPO = ROOT.parent
-#: Extensions a `scriptFile` may legitimately name.
-PRODUCER_SUFFIXES = (".py", ".sage", ".lean", ".sh")
+#: Extensions a producer reference may legitimately name. Producers are not all
+#: Python: `.sage` under `computations/substrate/`, `.rs` under
+#: `tools/hecke-engine/src/bin/`, `.lean` under `content/**`.
+PRODUCER_SUFFIXES = (".py", ".sage", ".lean", ".rs", ".sh")
 AUDIT_WITNESS = "derivation-chain-audit.witness.json"
 SCRIPT_RE = re.compile(r"script:\s*([^\s,;]+)")
 FAMILY_MIN = 2  # a producer emitting >= this many witnesses is a "family"
@@ -86,6 +105,29 @@ def _guess_producer(witness_name: str, on_disk: set[str] | None = None) -> str:
     return stem + ".py"
 
 
+def _resolve_producer(data, wp: pathlib.Path, on_disk: set[str]) -> tuple[str, bool]:
+    """(producer basename, is it on disk?) for one witness.
+
+    Prefers what the witness *declares* -- under any of the spellings
+    `witness_producer_executes_audit.producer_of` knows -- resolved repo-wide.
+    Falls back to the filename convention only when the witness declares
+    nothing. A declaration that is prose ("(legacy -- no matching producer
+    found ...)") counts as *not* resolved: the witness is honestly saying it
+    does not know what wrote it, which is a real orphan.
+    """
+    body = data
+    if isinstance(body, list):
+        body = next((e for e in body if isinstance(e, dict)), {})
+    ref = _producer_of(body) if isinstance(body, dict) else None
+    if ref and not _is_prose(ref):
+        hit = _resolve(ref)
+        if hit is not None:
+            return hit.name, True
+        return pathlib.Path(ref).name, False
+    guess = _guess_producer(wp.name, on_disk)
+    return guess, guess in on_disk
+
+
 def categorize() -> dict:
     referenced = _referenced_producers()
     # `.claude/worktrees/` holds checkouts of OTHER branches; a producer that
@@ -118,13 +160,13 @@ def categorize() -> dict:
             audit_only = False
         else:
             continue
-        producer = pathlib.Path(script_file).name if script_file else _guess_producer(wp.name, on_disk)
+        producer, resolved = _resolve_producer(data, wp, on_disk)
         records.append({
             "witness": str(wp.relative_to(ROOT)),
             "producer": producer,
             "backed": producer in referenced,
             "audit_only": audit_only,
-            "producer_on_disk": producer in on_disk,
+            "producer_on_disk": resolved,
             "probe": "probes" in wp.parts,
         })
 
