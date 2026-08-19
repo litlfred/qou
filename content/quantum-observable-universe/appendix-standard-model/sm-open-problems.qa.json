@@ -908,6 +908,21 @@
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an explanation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.494Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no negation-contrast trap present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -927,6 +942,21 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.609Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no rhetorical-pivot trap present."
       }
     ],
     "trap-em-dash": [
@@ -947,6 +977,21 @@
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "severity": "minor",
         "evidence": "4 stylistic spaced dashes in 196 words (2.04/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.661Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no load-bearing em-dash trap present."
       }
     ],
     "trap-triples": [
@@ -966,6 +1011,22 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "triple density acceptable (0 in 196 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.699Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "closing paragraph walks exactly three items",
+        "notes": "pass-with-note: the three are the ledger's named critical-path gaps (hypercharge, SU(3) action, truncation mechanism), a substantive selection not a reflex triple"
       }
     ],
     "trap-closing-aphorism": [
@@ -985,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.738Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no closing-aphorism trap present."
       }
     ],
     "trap-meta-commentary": [
@@ -1004,6 +1080,22 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.782Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "was: 'Three of these deserve emphasis, because they are the ones...'",
+        "notes": "fixed: 'Three of these deserve emphasis, because they are the ones a derivation of the Standard Model cannot do without.' -> 'Three of these are the items a derivation of the Standard Model cannot do without.' (emphasis placed, not announced)"
       }
     ],
     "trap-thesis-restatement": [
@@ -1023,6 +1115,21 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.822Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no thesis-restatement trap present."
       }
     ],
     "trap-performed-warmth": [
@@ -1042,6 +1149,21 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.865Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no performed-warmth trap present."
       }
     ],
     "trap-superlative": [
@@ -1061,6 +1183,21 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.904Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no superlative-inflation trap present."
       }
     ],
     "trap-nonspeakable": [
@@ -1080,6 +1217,22 @@
         "reviewed_at": "2026-08-15T10:35:13.609Z",
         "reviewed_sha": "f32fea09b24ac7e4fdd345acc2de1f31dcd4f0f5",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aab44c2b0d0a",
+          "ts": "27018f5c8c9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:05.942Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "table row 'Hypercharge Y' is a ~200-word prose cell",
+        "notes": "pass-with-note: parses, but a table cell of this length strains the format; flagged to coordinating session as a structural (layout) candidate, not a trap"
       }
     ],
     "wall-base-ring-minimal": [

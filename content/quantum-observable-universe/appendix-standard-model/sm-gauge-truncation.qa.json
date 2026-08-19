@@ -1083,6 +1083,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not isomorphism:\"; \", not support.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:02.463Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "'deliberately containment, not isomorphism'; 'conjectural inputs, not support'",
+        "notes": "pass-with-note: the containment/isomorphism distinction is the conjecture's mathematical content; support-vs-input is a load-bearing epistemic statement"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1102,6 +1118,21 @@
         "reviewed_at": "2026-08-15T10:31:01.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:02.572Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no rhetorical-pivot trap present."
       }
     ],
     "trap-em-dash": [
@@ -1122,6 +1153,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "9 stylistic spaced dashes in 525 words (1.71/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:02.679Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no load-bearing em-dash trap present."
       }
     ],
     "trap-triples": [
@@ -1141,6 +1187,21 @@
         "reviewed_at": "2026-08-15T10:31:01.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 525 words)"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:02.787Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no compulsive-triple trap present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1160,6 +1221,21 @@
         "reviewed_at": "2026-08-15T10:31:01.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:02.894Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no closing-aphorism trap present."
       }
     ],
     "trap-meta-commentary": [
@@ -1179,6 +1255,21 @@
         "reviewed_at": "2026-08-15T10:31:01.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:02.937Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no meta-commentary trap present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1198,6 +1289,21 @@
         "reviewed_at": "2026-08-15T10:31:01.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:03.044Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no thesis-restatement trap present."
       }
     ],
     "trap-performed-warmth": [
@@ -1217,6 +1323,21 @@
         "reviewed_at": "2026-08-15T10:31:01.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:03.088Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no performed-warmth trap present."
       }
     ],
     "trap-superlative": [
@@ -1236,6 +1357,21 @@
         "reviewed_at": "2026-08-15T10:31:01.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:03.170Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no superlative-inflation trap present."
       }
     ],
     "trap-nonspeakable": [
@@ -1256,6 +1392,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "95b27cf885cf",
+          "ts": "f7310de48e2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:35:03.281Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "the per-factor status paragraph is one very long multi-semicolon block",
+        "notes": "pass-with-note: parses correctly; borderline length, splitting into per-factor paragraphs would be a structural (not trap) edit"
       }
     ],
     "wall-base-ring-minimal": [

@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.096Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "'constructed categorically ... rather than posited geometrically upstream' is the block's mathematical claim (S^3 as target of the Alexander–Markov correspondence) — substantive-contrast false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.135Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 157 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.176Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; em-dashes absent or parenthetical/range only, low density."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 157 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.218Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no reflex three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.258Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no quotable-flourish closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.300Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "'must not be confused with' is load-bearing disambiguation of the ambient-S^3 vs SU(2)≅S^3 symbol collision, stated directly, not narrated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.343Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no block-final restatement of established content."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.384Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no personal register in institutional prose."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.426Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no unqualified maximum-strength claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1539,21 @@
         "reviewed_at": "2026-08-15T10:30:58.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dbd12dcc1929",
+          "ts": "6614a3205afd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:10.467Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; prose parses aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [

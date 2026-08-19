@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.400Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "'There is no gradual approach' / 'no critical slowing-down and no superattraction': substantive math contrast with the smooth Hausdorff case",
+        "notes": "pass-with-note: substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.441Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "'Why q? Because the contraction gap is q itself' is question-answer motivation, not setup-then-reframe",
+        "notes": "register (informal question) is a clarity-grad-style matter, not a pivot"
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 465 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.479Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no load-bearing em-dash construction present."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 465 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.517Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no compulsive triple construction present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1369,22 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.557Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "final sentence contrasts discrete walk vs smooth traversal on the same parameter space; content-bearing",
+        "notes": "pass-with-note"
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.602Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no meta-commentary construction present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.643Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no thesis restatement construction present."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.681Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no performed warmth construction present."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1506,22 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.721Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "'the only universal convergence proof in this paper' is a factual scope claim",
+        "notes": "pass-with-note"
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:31:00.944Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:37:14.772Z",
+        "reviewed_sha": "9c6c2b0a33afdb8de90ff960696388b5ecdf5688",
+        "evidence": "Full-text read; no non-speakable syntax construction present."
       }
     ],
     "wall-base-ring-minimal": [

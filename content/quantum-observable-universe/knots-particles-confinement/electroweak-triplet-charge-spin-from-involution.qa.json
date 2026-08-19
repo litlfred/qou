@@ -1623,6 +1623,22 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.124Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'Charge and spin are not independent open conjectures: both follow from the one selection postulate' — epistemic-status contrast.",
+        "notes": "pass-with-note: load-bearing epistemic classification (postulate vs consequence)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1642,6 +1658,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.166Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1661,6 +1692,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.224Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
       }
     ],
     "trap-triples": [
@@ -1680,6 +1726,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.270Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no reflex three-item lists; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1699,6 +1760,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.314Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; final line is factual/technical, not quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1718,6 +1794,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.353Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1737,6 +1828,22 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.391Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Final italic sentence said the same thing twice within one sentence; redundant tail removed.",
+        "notes": "fixed: '...through the spin involution, so charge and spin are proved consequences rather than separate postulates.' -> '...through the spin involution.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1756,6 +1863,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.425Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; institutional register throughout, no personal warmth."
       }
     ],
     "trap-superlative": [
@@ -1775,6 +1897,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.459Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1794,6 +1931,21 @@
         "reviewed_at": "2026-08-15T10:30:59.064Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4a577972f512",
+          "ts": "816034935aac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:08.497Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
       }
     ],
     "wall-base-ring-minimal": [

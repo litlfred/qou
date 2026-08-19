@@ -1530,6 +1530,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the M GeV Higgs boson.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.670Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'is the Higgs mass mechanism, not the 125 GeV Higgs boson' (l.44); 'necessary but not sufficient' (l.55).",
+        "notes": "pass-with-note: load-bearing disambiguation (4_1 vs T(2,8) collision) and standard mathematical qualification."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1549,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.708Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1568,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (6 in 676 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.744Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
       }
     ],
     "trap-triples": [
@@ -1587,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 676 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.782Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no reflex three-item lists; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1606,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.820Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; final line is factual/technical, not quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1625,6 +1701,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.858Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1644,6 +1735,22 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.894Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'Charge and spin are proved consequences...' appears l.12 and l.23-24; each anchors its own section in a long block; closer (l.59) is factual scope.",
+        "notes": "pass-with-note: intra-block redundancy noted as exposition-duplication anomaly (sections duplicate sibling proof/slot blocks), not a trap closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1663,6 +1770,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.929Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; institutional register throughout, no personal warmth."
       }
     ],
     "trap-superlative": [
@@ -1682,6 +1804,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.964Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1701,6 +1838,21 @@
         "reviewed_at": "2026-08-15T10:30:59.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.000Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
       }
     ],
     "wall-base-ring-minimal": [
