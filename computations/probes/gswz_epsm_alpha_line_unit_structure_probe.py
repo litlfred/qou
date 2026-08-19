@@ -121,6 +121,31 @@ checks["one_minus_z2_is_alpha"] = (
 detail["alpha_line_as_powers_of_alpha"] = {
     "z1": "-alpha^3", "1-z1": "alpha^2", "z2": "alpha^-2", "1-z2": "alpha^1"}
 
+# ------------------------------------------------ GSWZ Example 4.3 (270)
+# The element is NOT ad hoc: GSWZ arXiv:2412.04241v2 Example 4.3 (p. 54)
+# sets K = Q(alpha)/(alpha^3 - alpha^2 + 1) and
+#     z_1 = 1 - alpha^2,  z_2 = z_1^2 - z_1 + 2,  z_3 = z_1,
+# with xi = [z_1] + [z_2] + [z_3] representing the Bloch element of the knot
+# 5_2. Since z_3 = z_1 that IS 2[z_1] + [z_2] -- which is where the
+# coefficients (2, 1) come from. Addendum 34 could only say they came "from
+# the construction upstream"; this names it and checks it.
+Z1_GSWZ = [a - b for a, b in zip(one, kpow(AL, 2))]          # 1 - alpha^2
+Z2_GSWZ = [a - b + c for a, b, c in
+           zip(kmul(Z1_GSWZ, Z1_GSWZ), Z1_GSWZ, [2, 0, 0])]  # z_1^2 - z_1 + 2
+checks["gswz_ex43_z1_matches_minus_alpha_cubed"] = Z1_GSWZ == Z1
+checks["gswz_ex43_z2_matches_one_minus_alpha"] = Z2_GSWZ == Z2
+# z_3 = z_1, so the three GSWZ symbols collapse to TWO distinct arguments
+# with multiplicities 2 and 1. Stated over the actual multiset -- an earlier
+# version of this check compared [2,0,0] to itself and could not have failed.
+_gswz_symbols = [tuple(Z1_GSWZ), tuple(Z2_GSWZ), tuple(Z1_GSWZ)]   # z_3 = z_1
+_mult = {v: _gswz_symbols.count(v) for v in set(_gswz_symbols)}
+detail["gswz_ex43_multiplicities"] = sorted(_mult.values(), reverse=True)
+checks["gswz_ex43_coefficients_are_2_and_1"] = (
+    len(_mult) == 2 and sorted(_mult.values(), reverse=True) == [2, 1]
+    and _mult[tuple(Z1)] == 2 and _mult[tuple(Z2)] == 1)
+detail["gswz_ex43_source"] = ("arXiv:2412.04241v2 Example 4.3 eqn (270), p. 54"
+                              " -- xi = [z_1] + [z_2] + [z_3], z_3 = z_1")
+
 # ------------------------------------------------ d(xi) in Lambda^2 K^x
 # Each unit is (sign exponent in Z/2, alpha exponent in Z). In Lambda^2 of
 # {+-1} x <alpha>, only (-1) ^ alpha survives, and it is 2-torsion.

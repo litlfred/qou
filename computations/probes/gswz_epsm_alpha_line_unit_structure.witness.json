@@ -3,7 +3,7 @@
  "probe": "gswz_epsm_alpha_line_unit_structure_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_epsm_alpha_line_unit_structure_probe.py",
- "commitSha": "a92bc24777ba918d07903531ef503a9c2aba156c",
+ "commitSha": "aa7476d1ce77e973f4c4c6f71e71ccc0b42e2738",
  "beans": [
   "qou-w4gn",
   "qou-y3xv",
@@ -16,6 +16,9 @@
   "one_minus_z1_is_alpha_squared": true,
   "exceptional_unit_relation_1_minus_alpha_eq_alpha_inv_sq": true,
   "one_minus_z2_is_alpha": true,
+  "gswz_ex43_z1_matches_minus_alpha_cubed": true,
+  "gswz_ex43_z2_matches_one_minus_alpha": true,
+  "gswz_ex43_coefficients_are_2_and_1": true,
   "d_of_xi_vanishes_exactly": true,
   "d_vanishes_for_all_coefficients_so_does_not_pin_them": true,
   "wedge_form_is_not_identically_zero": true,
@@ -37,6 +40,11 @@
    "z2": "alpha^-2",
    "1-z2": "alpha^1"
   },
+  "gswz_ex43_multiplicities": [
+   2,
+   1
+  ],
+  "gswz_ex43_source": "arXiv:2412.04241v2 Example 4.3 eqn (270), p. 54 -- xi = [z_1] + [z_2] + [z_3], z_3 = z_1",
   "d_contribution_of_z1_symbol": 2,
   "per_symbol_class_c1_of_z1": 1,
   "per_symbol_class_c2_of_z2": 0,
