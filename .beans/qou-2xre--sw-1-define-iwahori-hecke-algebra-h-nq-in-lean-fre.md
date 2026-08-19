@@ -1,11 +1,11 @@
 ---
 # qou-2xre
 title: 'SW-1: define Iwahori-Hecke algebra H_n(q) in Lean (FreeAlgebra quotient; σ_i, quadratic (σ_i-q)(σ_i+q⁻¹)=0 + braid relations)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:30:46Z
-updated_at: 2026-08-02T19:33:06Z
+updated_at: 2026-08-19T13:38:48Z
 parent: qou-59vq
 ---
 
@@ -32,3 +32,12 @@ seminormal-matrix step (Real.sqrt/q⁻¹); check relations generically first.
 normalization) and `QOU.IwahoriHecke.Quotient` (quadratic-only, Coxeter-general);
 neither ships lift+uniqueness. Consolidation is a possible follow-up (back-port
 `lift`/`hom_ext`), not done now. Wired into QOU.lean.
+
+
+## VERIFIED CLOSED (2026-08-19 measurement)
+
+`HeckeAlgebra.lean` is sorry-free on main. Measured across the whole SchurWeyl
+tree: 22 files, **0 sorries**. Universal property (`Hecke.lift`, `lift_sigma`,
+`hom_ext`) is in use by every downstream file (HeckeInclusion, HoefsmitRep,
+SeminormalRep), which is the real evidence it is adequate, not just present.
+Status was stale at todo since 2026-08-02.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-11T00:18:45Z
+updated_at: 2026-08-19T13:42:33Z
 parent: qou-59vq
 blocked_by:
     - qou-j377
@@ -59,3 +59,20 @@ the SW-7 Wedderburn iso H_3(q)≅ℝ×ℝ×M₂ = R2-inst at n=3.
 Next for the SW-7 Wedderburn ISO (R2-inst at n=3): assemble the six words into a
 Basis (finrank=6) and package ρ=(triv,sign,seminormalRep21) as the iso H_3(q)≅ℝ×ℝ×M₂.
 The hard dimension theorem is done; remaining is finrank/Basis + iso plumbing.
+
+
+## Measured 2026-08-19 — n = 3 only; the general assembly is gated on SW-3 + SW-5
+
+Landed and sorry-free on main: `HeckeDim3Dim` (finrank H_3(q) = 6),
+`HeckeWedderburn3.rho_bijective` -> H_3(q) ~= R x R x M_2(R), `HeckeWedderburnData3`.
+General n has the SPANNING half only: `HeckeCoset.finrank_le_factorial`
+(dim <= (n+1)!, generic CommRing, sorry-free — qou-uoal).
+
+The missing half is the lower bound, and it has exactly two routes:
+- **rep-theoretic**: rho_lambda jointly injective (SW-5 `qou-jfr8`) + sum d_lambda^2 = n!
+  (SW-3 `qou-wtny`) => dim >= n!. Both open; SW-5 just became reachable via Ram 4.1.
+- **GS normal forms**: `qou-auq3` (sibling, ACTIVELY OWNED — do not duplicate),
+  proving `hecke_is_gs_basis` gives normal forms and the basis directly.
+
+So SW-7-general is downstream of one of those two landing, not independently
+attackable right now.
