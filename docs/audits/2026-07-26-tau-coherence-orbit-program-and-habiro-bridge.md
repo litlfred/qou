@@ -1460,3 +1460,48 @@ sweeping 𝔽₅ scalars for a non-cube finds none (order divides 4, and
 (5¹²−1)/4 is divisible by 3), and neither does sweeping a+bα+cα² — every
 element of B^× is a cube in F, which is the structural fact above. The
 control had to leave B entirely, using the ring generator.
+
+## Addendum 31 (2026-08-19) — computing CGZ's class where they put it: the invariant is bracketed, not obtained
+
+`gswz_epsm_field_bracketing_probe.py`, **9/9**. Addendum 30's stated
+next increment was to compute the class in F^×/(F^×)ⁿ instead of
+descending to the base. Done — and the answer is a bracketing, not a
+value.
+
+**The computation.** For a unit of F the class is carried entirely by
+the Teichmüller part (1+5R is uniquely m-divisible), so it reads off as
+teich(u)^{(5^d−1)/m} in μ_m. *Applying the exponent to u itself does not
+work* — the 1+5R factor survives, and an earlier version of this probe
+did exactly that and returned no class at all.
+
+**Result 1 — Lemma 2.4(a), measured rather than quoted.** For
+P_ζ(ξ) = D(x₁)²D(x₂)/D(1)³ the class is **0**, and it is 0 for **all
+nine** choices of the two cube roots. Root-independence is confirmed
+empirically in this setting.
+
+**Result 2 — and this is why it is a bracket.** The class map is *not*
+globally trivial: it returns class 1 on an element built from the ring
+generator. But on the objects that matter it is identically zero — the
+class of P_ζ(w) is **0 for every one of the 23 admissible base
+arguments**. So in F the invariant carries no information about ξ, and
+the 0 above is **vacuous**. (P itself is not σ-fixed, so this is not the
+trivial "it landed in B, and B^× ⊆ (F^×)^m" explanation from
+Addendum 30.)
+
+| field | root-independence | class |
+|---|---|---|
+| base B = Q₂₅ | **fails** (Addenda 27–29) | distinguishes |
+| F = Q₅(μ₁₈₇₂) | **holds** (Lemma 2.4(a)) | **identically 0 on base arguments** |
+
+**Neither field supports the invariant.** The useful field is
+intermediate — or, reading CGZ more carefully, the invariant is not this
+bare class at all: their Lemma 2.4(d),(e) record that P_ζ is
+Φ-invariant and transforms under Gal by the cyclotomic character, and
+their R_ζ lands in K₂ / Galois cohomology rather than in a quotient of
+units. A bare class in F^×/(F^×)ⁿ discards exactly that structure, which
+is consistent with its collapsing.
+
+**Scope.** A negative that localises the difficulty rather than
+resolving it. No ε_m value is claimed at m ≥ 3; the m = 2 result
+(PR #4968) is untouched. The non-vacuity control is what makes the
+collapse a finding rather than a broken class function.
