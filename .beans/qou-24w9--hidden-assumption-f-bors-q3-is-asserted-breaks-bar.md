@@ -289,3 +289,61 @@ something upstream of F_Bor -- the hbar_q convention, the muon anchor, or the
 trace convention -- is absorbing a q-power that belongs elsewhere. The second is
 worth checking: 1/hbar_q^2 is ALSO bar-asymmetric (hbar_q = 1 - 1/q), and the
 two asymmetries combine to a net q^-2 across m_mu . F_Bor.
+
+## The hbar_q repair hypothesis: TESTED and REFUTED (2026-08-19)
+
+`computations/qbeta/fbor_normalisation_barsymmetry_probe.py` +
+`fbor-normalisation-barsymmetry.witness.json` (2 assertions, both pass).
+
+Last note here proposed the remaining repair: since `1/hbar_q^2` is ALSO
+bar-asymmetric (hbar_q = 1 - 1/q) and the two asymmetries combine to a net q^-2
+across m_mu . F_Bor, perhaps the q-power is simply MISPLACED -- use the
+bar-symmetric hbar_sym^2 = (q^{1/2} - q^{-1/2})^2 = q - 2 + 1/q and drop /q^3,
+giving a fully bar-symmetric mass identity.
+
+I proposed it, tested it, and it fails.
+
+### Why it is a real test rather than a reshuffle
+
+q_0 is NOT free -- it is solved from the proton pin. So the alternative was
+re-solved for its own q, and then scored on m_mu/m_e, which was NOT used in the
+solve. That ratio is the corpus's own 9.5-sigma cross-check (proton-pinned =>
+m_mu is a prediction), so it discriminates.
+
+### Result
+
+    CURRENT  hbar = 1 - 1/q, with /q^3      (bar-ASYMMETRIC)
+       q                  = 1.10997858275138
+       m_mu/m_e predicted = 206.768326370674
+       error              = 211.16 ppb          <- the known mu-p tension
+
+    ALTERNATIVE  hbar^2 = q - 2 + 1/q, no /q^3  (bar-SYMMETRIC)
+       q re-solved        = 1.12303052937477
+       m_mu/m_e predicted = 150.604111821442
+       error              = -2.716e8 ppb  (-27.16 %)
+
+    ratio: the symmetric form is 1 286 334x WORSE on the cross-check.
+
+### What this changes -- and it is a real update
+
+The bar-symmetric alternative reproduces the proton pin (it has a q that does),
+but misses the untouched muon ratio by 27 %. So the /q^3 is NOT a misplaced
+q-power that symmetry would repair.
+
+The status of the factor is therefore sharper than "unjustified convention":
+
+  NOT DERIVABLE   -- proved (unreachable by the writhe rule; double Poincare
+                     centering; sole bar-asymmetric step)
+  NOT ARBITRARY   -- it and the hbar_q convention JOINTLY satisfy TWO
+                     independent observables (m_p pin and m_mu ratio) to ~200
+                     ppb, where the natural symmetric alternative misses the
+                     second by six orders of magnitude
+
+A wrong normalisation would generally not survive an independent cross-check.
+This one does. So the honest target is no longer "replace it with a derivable
+one" -- the derivable options are enumerated and all fail (option table above).
+It is "explain why THIS combination is the one that works".
+
+That is a harder and more interesting question, and it is the one I would put to
+the owner: the factor behaves like it encodes something real that the current
+derivation vocabulary cannot express.
