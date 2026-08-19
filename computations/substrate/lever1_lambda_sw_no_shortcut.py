@@ -12,6 +12,12 @@ seductive icosahedral 'golden' tau=3 (lambda=phi^2). The genuine 2.6424-producin
 then the abelianised lambda_SW real holonomy (owner-gated keystone). Numerology guard.
 No fit; symbolic + mpmath 50dps.
 """
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
 import json, os, sys
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
 import sympy as sp
