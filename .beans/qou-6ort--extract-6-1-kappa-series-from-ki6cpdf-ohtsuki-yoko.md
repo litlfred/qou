@@ -1,10 +1,11 @@
 ---
 # qou-6ort
 title: Extract 6_1 kappa-series from ki6c.pdf (Ohtsuki-Yokota 6-crossing) — Ohtsuki-tower third-knot leg
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-15T11:35:54Z
-updated_at: 2026-08-15T11:35:54Z
+updated_at: 2026-08-19T21:17:04Z
 ---
 
 
@@ -86,3 +87,52 @@ Borel/Stokes extraction needs, i.e. a step toward #5293's open item 1 (an
 independent resurgence DT count for 6₁, which would turn `r = 4` into a test of
 the DT correspondence). **Precision, so this is not over-sold: a κ-series is
 NOT a DT count.** Stated that way on #5293 too.
+
+## 2026-08-19 ATTEMPT — controls pass, gate fails, and the failure is the result
+
+Built the pipeline (`computations/qbeta/qbeta_ohtsuki_sixone_kappa_series.py`).
+It does **not** report a κ-series. What it establishes is a precise,
+reproducible discrepancy that neither the transcription nor the evaluation can
+be blamed for.
+
+**Transcription of ki6c eq.(29) verified three ways:**
+1. form 3 recovered from the *separately extracted* form 2 under the paper's
+   own stated substitution `j→j+1, k→k+1`, factor by factor;
+2. `⟨6₁⟩_2 = −9` exactly, and `det(6₁) = 9`;
+3. **moduli, by an independent route**: `|(q)_j(q)_{N−j−1}| = N` exactly, so the
+   exponential variation is only `1/(q)_i²·1/(q)_{j−i}·1/(q)_{k−j}`, whose max
+   is `4Λ(π/6)/π = 0.6461318944`. ki6c p.20 independently computes
+   `max Re V̂ = 0.646131`. **Seven-digit agreement.**
+
+*Correction to my own method*: the form-3-vs-form-4 check I built first is NOT
+independent — form 4 was derived here by applying the stated substitution, so it
+validates algebra, not transcription. It is retained and labelled as such.
+
+**Evaluation verified two ways**: an O(N²) two-convolution factorisation of the
+`i≤j≤k` chain matches the literal triple sum to 1e-120, and `log|⟨6₁⟩_N|` is
+bit-identical across dps 60 → 600.
+
+**The discrepancy.** `(log|⟨6₁⟩_N| − (3/2)log N)/N` converges cleanly to
+**≈ 0.5715** (0.5604 / 0.5663 / 0.5692 / 0.5705 / 0.5710 / 0.5713 at
+N = 100…1400) where Theorem 1.1 + the volume conjecture — a *proved* result for
+6₁ — require `Vol(6₁)/2π = 0.50356`. 13.5 % off in an exponential rate,
+converged and precision-independent. The same pipeline on 4₁ converges correctly
+to `Vol(4₁)/2π`, so the conventions (q = e^{2πi/N}, the N^{3/2} normalisation)
+are right.
+
+**Diagnosis.** Moduli confirmed ⇒ the residual freedom is **phases**, and the
+cancellation from 0.6460 down to 0.5036 is exactly a phase effect. ki6c's form 1
+carries index-dependent factors `q^{1/2+i}`, `q^{−1/2−i}`, `q^{−1/2+k}`,
+`q^{−1/2−k+1}` which cancel to `q^0` only if read exactly as printed, and the
+OCR of form 1 is badly mangled. Most likely a dropped or misread
+index-dependent q-power in the simplification to form 3.
+
+**NOT tuned.** No formula variant was searched for one that hits 0.50356 — that
+would be fitting a transcription to its target and is exactly the move the
+anti-fit discipline forbids.
+
+**Next step** (not a parameter hunt): a clean source for eq.(29) — the published
+version rather than this OCR — or Ohtsuki's 5₂ paper, whose analogous sum would
+validate the whole pipeline end-to-end against a knot with published κ values.
+The O(N²) evaluator, the fit, the branch unwrapping and the gate are all built
+and reusable the moment the sum is right.
