@@ -26,6 +26,14 @@ it is simply located one step later than first thought, and on a function
 (`φ`, extendable via `Real.sinc`) that is regular where the original
 integrand was not.
 
+**CORRECTION (2026-08-19).**  The gap was real in *Mathlib* and NOT real in
+this *corpus*: `QOU/MathlibExt/CompositeEulerMaclaurin.lean` has carried the
+composite rule since 2026-08-10, already applied to `logSinc` (= `φ − log 2`)
+in `QOU/Knot/LogSincNearZero.lean`.  The paragraph above, and the
+"Mathlib inventory" note below, led to that rule being rebuilt.  Use
+`abs_sum_logSinc_sub_euler_maclaurin`.  See
+`docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md`.
+
 Mathlib inventory relevant to closing it: `Real.sinc` exists with
 `Real.continuous_sinc` and `Real.sinc_zero`, but **no** differentiability or
 analyticity lemmas — those, plus the first E–M correction for `C¹` functions,
