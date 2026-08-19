@@ -206,3 +206,30 @@ are also unramified, so the method now covers the whole live set). Expect
 `R^{w_F}` well-defined and `R` ambiguous in both. If all come out trivial,
 that is itself the finding — `ε₃` would be the only non-trivial invariant
 the α-line carries at this place.
+
+### 2026-08-19 (PR #5296, Addendum 42) — live set FINISHED: one invariant, four levels
+
+`m = 12` (`L = Q_{5⁴}`) and `m = 24` (`L = Q_{5⁸}`) both descend. **I
+predicted `R^{w_F} = 0` at both and was wrong** — measured **8** at both,
+non-trivial.
+
+All four computed levels are consistent reductions of a single class
+**`8 ∈ Z/24`**: `mod 12 → 8` (m=12), `mod 8 → 0` (m=8), `mod 3 → 2` (m=3).
+So the live set carries **one invariant seen at four levels**, and `m = 8`
+is the *2-part* vanishing, not the invariant — which also explains `m = 6`
+collapsing onto `m = 3`.
+
+Addendum 39 now fully corrected: wrong on the mechanism (41) and on the
+conclusion (42).
+
+**Status: the α-line at `v₁` is complete.** One invariant, `8 ∈ Z/24`,
+computed at every level of the live set, validated against four CGZ
+identities, with CGZ's descent explicitly constructed at three of them.
+
+**Next (genuine options, none urgent):**
+1. The `v₂` place — Addendum 32 showed its eigenspace collapses, so expect
+   nothing; worth one probe to confirm rather than assume.
+2. A second exceptional-unit field (46 candidates catalogued) — now with a
+   sharper question than the deflated `c₂ = 0` one: does the `Z/24` class
+   vary across fields, or is `8` forced?
+3. `qou-xx9f`'s unprinted normalisation series.
