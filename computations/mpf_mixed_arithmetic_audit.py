@@ -104,6 +104,11 @@ MPF = "MPF"
 F64 = "F64"
 
 
+def _short_enough(v: float) -> bool:
+    """Does `str(v)` round-trip the written decimal? True up to ~17 sig digits."""
+    return len(repr(v).replace("-", "").replace(".", "").lstrip("0")) <= 17
+
+
 def _exactly_representable(v: float) -> bool:
     return mpf(repr(v)) == mpf(v)
 
@@ -186,6 +191,9 @@ class Tainter:
         # name -> line where it BECAME tainted. Reported per row so a reader
         # can jump to the origin instead of re-tracing the chain by hand.
         self.origin: dict[str, int] = {}
+        # Names bound to a float literal short enough that `str()` round-trips
+        # it exactly (<= 17 significant digits). See the `str` case in f64().
+        self.short_lit: set[str] = set()
         self.mpf_names: set[str] = set()
         self.rows: list[dict] = []
 
@@ -201,6 +209,21 @@ class Tainter:
         if isinstance(node, ast.Call):
             f = node.func
             if isinstance(f, ast.Name):
+                if f.id == "str" and len(node.args) == 1:
+                    # `str(x)` on a float LITERAL round-trips: Python prints the
+                    # shortest decimal that reparses to the same double, so
+                    # `mpf(str(8.481798))` recovers the written value exactly.
+                    # This holds only up to ~17 significant digits -- which is
+                    # precisely why `Q_PROTON = 1.10997858275138080759...` (49
+                    # digits) was NOT recoverable and is a real defect. Measured
+                    # false positive without this: tritium_8_11's
+                    # `mp.mpf(str(AME_BINDING_3H_MEV))`.
+                    a0 = node.args[0]
+                    if isinstance(a0, ast.Name) and a0.id in self.short_lit:
+                        return False
+                    if isinstance(a0, ast.Constant) and isinstance(a0.value, float) \
+                            and _short_enough(a0.value):
+                        return False
                 if f.id in EXACT_SINKS:
                     # int(x) / round(x) collapse to an exact integer, which
                     # carries no float64 error however x was computed. Measured
@@ -303,6 +326,11 @@ class Tainter:
                 t = self.f64(st.value)
                 for tgt in st.targets:
                     if isinstance(tgt, ast.Name):
+                        if isinstance(st.value, ast.Constant) and isinstance(
+                                st.value.value, float) and _short_enough(st.value.value):
+                            self.short_lit.add(tgt.id)
+                        else:
+                            self.short_lit.discard(tgt.id)
                         if t:
                             self.tainted.add(tgt.id)
                             self.origin.setdefault(tgt.id, st.lineno)
