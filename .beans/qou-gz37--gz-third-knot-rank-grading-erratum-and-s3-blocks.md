@@ -9,7 +9,7 @@ tags:
     - route-c
     - literature
 created_at: 2026-08-19T12:10:00Z
-updated_at: 2026-08-19T12:10:00Z
+updated_at: 2026-08-19T12:30:00Z
 ---
 
 ## Context
@@ -78,24 +78,46 @@ GGM eq-(200) q^1 erratum adjudicated earlier in this arc.
    carries no sign component -- a chirality-flavoured asymmetry on the same involution
    that grades the DT split.
 
-OBSERVED, NOT DERIVED. No mechanism is claimed for the absent sign block; nothing is
-wired. It is recorded because it is the first place the corpus's own partition
-indexing has turned up in third-knot data that was not constructed to contain it.
+4. THE ABSENCE IS FORCED (added same session, upgrading item 3 from an observation).
+   chi(W_0) = [4,2,1] on the S_3 classes (e, transpositions, 3-cycles) of sizes
+   (1,3,2). That is exactly [3,1,0] + [1,1,1] = the character of the PERMUTATION
+   MODULE ON 3 POINTS plus a trivial. Characters determine complex reps up to iso,
+   so W_0 = C[X] + C for a 3-element S_3-set X. And a 3-point permutation module of
+   S_3 contains NO sign component -- <perm,sign> = (1*3*1 + 3*1*(-1) + 2*0*1)/6 = 0,
+   a general fact with nothing knot-specific in it; trivial summands contribute 0 to
+   sign multiplicity, so no number of them can create one. The missing sign block is
+   FORCED BY SHAPE.
+
+5. BUT THE SCOPE IS ONE KNOT (adversarial, tempering item 4). GZ introduces the level
+   as "a new phenomenon" at (-2,3,7), N=2; 4_1 and 5_2 have N=1, so rho factors
+   through the TRIVIAL quotient -- no finite group acts, hence no sign block there to
+   be absent. General mechanism, single-instance instantiation. Item 1 of the previous
+   NEXT STEP ("get 4_1/5_2 comparanda") is therefore ANSWERED AND CLOSED: there are no
+   comparanda to get, and that is a fact about the level, not a gap in the search.
+
+WHAT STAYS INTERPRETIVE: that X is geometrically the three cusps of Gamma(2) (or the
+three non-zero 2-torsion classes) is the standard Gamma/Gamma(2) = S_3 picture, but GZ
+does not say W_0 realizes it and nothing here claims so. Character identity proved;
+geometric reading not. Nothing wired.
 
 ## Artifacts
 
 - Lean: QOU.QBeta.GZThirdKnotRankGrading (core Int, imports AdjointIndexSetM3;
   lean-direct exit 0, sorry-free, #print axioms shows no sorryAx)
-- Probe: computations/probes/gz_third_knot_rank_grading.py, 9/9
+- Probe: computations/probes/gz_third_knot_rank_grading.py, 12/12
 - Audit: docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §7
 
 ## NEXT STEP
 
-1. EXPLAIN THE ABSENT SIGN BLOCK, or show it is an artifact of (-2,3,7). This is the
-   most QOU-native thread the third knot offers: a partition-indexed decomposition
-   with the bar-odd block missing. Needs 4_1/5_2 comparanda -- do THEIR gradings carry
-   an S_3 (or S_2) action, and is a sign block absent there too? If the pattern holds
-   across knots it is structure; if it is (-2,3,7)-only it is an artifact of level 2.
+1. [CLOSED THIS SESSION] Explain the absent sign block. DONE -- it is forced by W_0
+   being a permutation module (item 4), and the "get 4_1/5_2 comparanda" sub-task is
+   moot: those knots have level 1, so no group acts (item 5).
+1b. OPEN SUCCESSOR: find a FOURTH knot with level > 1 and check whether its analogue
+   of W_0 is again permutation-type. That is the only way to tell whether
+   "permutation-type, hence no sign" is a general feature of these gradings or a
+   coincidence of the one level-2 example. GZ ties level 2 to (-2,3,7)'s Newton
+   polygon having HALF-INTEGER SLOPES, which is a searchable criterion for picking
+   candidates rather than guessing knots.
 2. RE-RUN THE CORPUS SWEEP WITHOUT THE VOCABULARY BIAS. The "Stokes" keying cost this
    arc one paper; sweep instead on knot names + structural terms (rank, weight space,
    Galois orbit, trace field, quantum modularity). Cheap, and the same defect will

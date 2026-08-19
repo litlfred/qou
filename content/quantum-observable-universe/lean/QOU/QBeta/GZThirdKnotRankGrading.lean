@@ -199,4 +199,123 @@ theorem level_two_confined_to_w0 :
     decompositionDims[0]! = 4 := by
   decide
 
+/-! ## Part E — the absent sign block is FORCED, not observed
+
+Part D recorded the missing sign representation as an observation. It is more
+than that: given GZ's own decomposition it is a **theorem**, and the reason is a
+general fact about permutation modules.
+
+**Step 1 — the level restricts where the question can even be asked.** GZ
+introduces the level as *"a new phenomenon"* arising at `(−2,3,7)`, which has
+`N = 2`. The other two knots have `N = 1`, so `ρ` factors through the *trivial*
+quotient: **there is no finite group acting at `4₁` or `5₂`, hence no sign block
+to be absent.** The observation is single-instance among these three knots by
+construction, and Part D's phrasing understated that.
+
+**Step 2 — but at `(−2,3,7)` the absence is forced.** `S₃`-characters are
+determined on the three classes `e`, transpositions, 3-cycles (sizes `1, 3, 2`).
+GZ gives `W₀ = ` standard `⊕` trivial`²`, whose character is `[4, 2, 1]`. That is
+exactly `[3, 1, 0] + [1, 1, 1]` — the character of the **permutation module on 3
+points**, plus one trivial. Characters determine complex representations up to
+isomorphism, so
+
+  `W₀ ≅ ℂ[X] ⊕ ℂ`,  `X` a 3-element `S₃`-set.
+
+And a permutation module on 3 points **never** contains the sign representation:
+`⟨χ_perm, χ_sign⟩ = (1·3·1 + 3·1·(−1) + 2·0·1)/6 = 0`. Adding trivial summands
+cannot introduce one. So the sign block's absence is a consequence of `W₀` being
+permutation-type, not a coincidence to be explained.
+
+**What stays interpretive.** That the 3-element set is *geometrically* the three
+cusps of `Γ(2)` (equivalently the three non-zero 2-torsion classes, the three
+index-2 subgroups) is the standard `Γ/Γ(2) ≅ S₃` picture, but GZ does not say
+`W₀` realizes it, and this file does not claim so. The character identity is
+proved; the geometric identification is a reading.
+
+Inner products are carried as `6⟨·,·⟩` to stay in `Int`. -/
+
+/-- Class sizes of `S₃`: identity, transpositions, 3-cycles. -/
+def s3ClassSizes : List Int := [1, 3, 2]
+
+/-- Character of the trivial representation. -/
+def chiTrivial : List Int := [1, 1, 1]
+
+/-- Character of the sign representation. -/
+def chiSign : List Int := [1, -1, 1]
+
+/-- Character of the 2-dimensional standard representation. -/
+def chiStandard : List Int := [2, 0, -1]
+
+/-- Character of the permutation module on 3 points (`χ(g) = #` fixed points). -/
+def chiPerm : List Int := [3, 1, 0]
+
+/-- Six times the character inner product, kept integral. -/
+def ip6 (a b : List Int) : Int :=
+  (List.zipWith (fun s ab => s * ab) s3ClassSizes (List.zipWith (· * ·) a b)).sum
+
+/-- Pointwise sum of characters (direct sum of representations). -/
+def addChar (a b : List Int) : List Int := List.zipWith (· + ·) a b
+
+/-- **The permutation module on 3 points is `trivial ⊕ standard`.** Multiplicity
+one each (`6⟨·,·⟩ = 6`). -/
+theorem perm_is_trivial_plus_standard :
+    ip6 chiPerm chiTrivial = 6 ∧ ip6 chiPerm chiStandard = 6 := by decide
+
+/-- **A permutation module on 3 points contains no sign component.** This is the
+general fact the absence rests on — nothing about knots enters. -/
+theorem perm_has_no_sign : ip6 chiPerm chiSign = 0 := by decide
+
+/-- The character of `W₀` as GZ decomposes it: standard `⊕` trivial`²`. -/
+def chiW0 : List Int := addChar chiStandard (addChar chiTrivial chiTrivial)
+
+/-- **`W₀` is a permutation module plus a trivial**, at the level of characters —
+and characters determine complex representations up to isomorphism. -/
+theorem w0_is_perm_plus_trivial : chiW0 = addChar chiPerm chiTrivial := by decide
+
+/-- `W₀` has the dimension Part A extracted: `χ(e) = 4`. -/
+theorem w0_dimension_four : chiW0.head! = 4 := by decide
+
+/-- Six times the **sign multiplicity** of a character given by its three class
+values `(a₀, a₁, a₂)`: `1·a₀·1 + 3·a₁·(−1) + 2·a₂·1`. -/
+def signMult6 (a0 a1 a2 : Int) : Int := a0 - 3 * a1 + 2 * a2
+
+/-- `signMult6` agrees with `ip6 · chiSign` on the permutation character. -/
+theorem signMult6_matches_ip6 : signMult6 3 1 0 = ip6 chiPerm chiSign := by decide
+
+/-- **Adding a trivial summand does not change the sign multiplicity.** This is
+the whole mechanism: `χ_triv = (1,1,1)` contributes `1 − 3 + 2 = 0`. -/
+theorem addTrivial_preserves_signMult (a0 a1 a2 : Int) :
+    signMult6 (a0 + 1) (a1 + 1) (a2 + 1) = signMult6 a0 a1 a2 := by
+  unfold signMult6; omega
+
+/-- **The sign block's absence is FORCED, for the whole family.** Starting from
+the permutation character (sign multiplicity `0`) and adding *any* number of
+trivial summands leaves it `0`. So no representation of the form
+`ℂ[3 points] ⊕ ℂ^{⊕n}` — which is what `W₀` is — can contain the sign
+representation. Not "observed to be zero": zero by shape. -/
+theorem sign_absence_is_forced :
+    ∀ n : Nat, signMult6 (3 + n) (1 + n) (0 + n) = 0 := by
+  intro n; unfold signMult6; omega
+
+/-- **The instance follows.** `W₀` itself has zero sign multiplicity. -/
+theorem w0_sign_multiplicity_zero : ip6 chiW0 chiSign = 0 := by decide
+
+/-! ### The level restriction, recorded so the scope is not overstated -/
+
+/-- The level `N` of each knot (GZ §3.5: the level is *introduced* at `(−2,3,7)`,
+which has `N = 2`; the other two are `N = 1`). -/
+def level : PKnot → Nat
+  | PKnot.fourOne => 1
+  | PKnot.fiveTwo => 1
+  | PKnot.pretzel237 => 2
+
+/-- **At level 1 there is no group, hence no sign block to be absent.** The
+`Γ/Γ(N)` quotient is trivial exactly when `N = 1`, so `4₁` and `5₂` supply no
+comparandum — the sign-absence is a one-knot statement among these three, and
+saying otherwise would overstate it. -/
+theorem sign_question_only_arises_at_level_two :
+    level PKnot.fourOne = 1 ∧ level PKnot.fiveTwo = 1 ∧ level PKnot.pretzel237 = 2 ∧
+    level PKnot.pretzel237 ≠ level PKnot.fourOne := by
+  refine ⟨by decide, by decide, by decide, by decide⟩
+
 end QOU.QBeta.GZThirdKnotRankGrading
