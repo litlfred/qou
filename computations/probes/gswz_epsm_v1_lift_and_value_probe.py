@@ -47,7 +47,17 @@ WHAT PROPOSITION 2.5 GIVES, AND WHY v_1 IS EASY.
      in the field being used. The failure was never Lemma 2.4(a); it was
      the field.
 
-THE VALUE. eps_3(xi) = zeta_3^2 for xi = 2[z_1] + [z_2]. It is invariant
+THE VALUE. eps_3(xi) = zeta_3 for xi = 2[z_1] + [z_2].
+
+  CORRECTED 2026-08-19 by gswz_epsm_five_term_validation_probe.py. The
+  readout eigen_class(u) = teich(u)^8 gives the class as a power of the
+  mu_24 GENERATOR, not of zeta_3 -- and cls(zeta_3) = 2, because
+  zeta_3 = gen^8 = gen^2 mod cubes. The raw readout below is 2 and was
+  first written up as "zeta_3^2"; converting with kappa = 2 . cls mod 3
+  gives kappa = 1, i.e. zeta_3. Nothing about the computation changes,
+  only the basis the answer is stated in. The same probe caught the same
+  mislabelling one step before it became a false report of a discrepancy
+  with CGZ Lemma 2.4(b). It is invariant
 over all 9 root choices -- the check that FAILED at every m >= 3 in
 Addenda 27-29 -- it satisfies the Lemma 2.4(e) eigenvector condition
 phi_5(R) = R^{-1} mod cubes, and it is the SAME under either primitive
@@ -243,8 +253,14 @@ def R_of(t1, t2):
 
 Rbase = R_of(0, 0)
 EPS3 = eigen_class(Rbase)
-detail["eps3_alpha_line_v1_as_zeta3_exponent"] = EPS3
+detail["eps3_raw_readout_in_the_mu24_generator_basis"] = EPS3
+# The readout is a power of gen, NOT of zeta_3: zeta_3 = gen^8 = gen^2 mod
+# cubes, so eigen_class(zeta_3) = 2. Convert before naming a zeta power.
+checks["readout_is_not_the_identity_on_mu3"] = eigen_class(Z3) == 2
+EPS3_ZETA = (2 * EPS3) % 3
+detail["eps3_alpha_line_v1_as_zeta3_exponent"] = EPS3_ZETA
 checks["eps3_class_is_defined"] = EPS3 is not None
+checks["eps3_in_zeta_basis_is_zeta_3"] = EPS3_ZETA == 1
 
 # THE CHECK THAT FAILED AT EVERY m >= 3 IN ADDENDA 27-29.
 vals = {eigen_class(R_of(t1, t2)) for t1 in range(3) for t2 in range(3)}
@@ -373,8 +389,10 @@ witness = {
     "checks": checks,
     "result": detail,
     "scope": (
-        "scope-(a) VALUE AT ONE PLACE. eps_3 for the alpha-line element "
-        "xi = 2[z_1] + [z_2] is computed at the degree-1 place of "
+        "scope-(a) VALUE AT ONE PLACE. eps_3(2[z_1] + [z_2]) = zeta_3 "
+        "(CORRECTED: the raw readout 2 is a power of the mu_24 generator, "
+        "not of zeta_3; see gswz_epsm_five_term_validation_probe.py). It "
+        "is computed at the degree-1 place of "
         "K = Q(alpha), alpha^3 - alpha^2 + 1 = 0, and is reported as an "
         "exponent of zeta_3 in the chi^{-1}-eigenspace of "
         "B^x/(B^x)^3, B = Q_25 = F_3. CGZ Prop 2.5 applies there: "

@@ -1629,7 +1629,17 @@ compute anything in it. The m = 2 value (PR #4968) is untouched.
 
 ---
 
-## Addendum 33 (2026-08-19) — ε₃ = ζ₃² on the α-line at the degree-1 place: the lift exists, is unique, and is computed
+## Addendum 33 (2026-08-19) — ε₃ on the α-line at the degree-1 place: the lift exists, is unique, and is computed
+
+> **🛑 VALUE MIS-LABELLED — corrected by Addendum 35 (2026-08-19).** The
+> value below is written `ζ₃²`. That is the **raw readout `teich(·)⁸`,
+> which is a power of the μ₂₄ generator, not of `ζ₃`** — measured,
+> `cls(ζ₃) = 2`, because `ζ₃ = gen⁸ ≡ gen²` mod cubes. Converting,
+> `κ = 2·cls mod 3`, the value is **`ε₃(2[z₁]+[z₂]) = ζ₃`**, and in
+> general `ε₃(a[z₁]+b[z₂]) = ζ₃^{−a}`. Nothing about the computation
+> changes; only the basis it is stated in. The same conflation, applied to
+> `D_ζ(1)`, was one step from becoming a false report of a discrepancy
+> with CGZ Lemma 2.4(b) — see Addendum 35.
 
 > **🟧 SHARPENED by Addendum 34 (2026-08-19).** Two amendments, neither
 > changing the value. (1) The obstruction argument below — "`⋀²(F^×/(F^×)³)
@@ -1769,7 +1779,14 @@ vanishing `d` is a fact about the α-line, not a degenerate form.
 against the directly-computed product on a 3 × 3 grid rather than assumed.
 The per-symbol classes are
 
-**`c₁ = 1`, `c₂ = 0`**,  hence  **`ε₃(a[z₁] + b[z₂]) = a mod 3`**.
+**`c₁ = 1`, `c₂ = 0`** in the raw readout — which is a power of the **μ₂₄
+generator**, not of `ζ₃`. Converting (`κ = 2·cls mod 3`, since
+`cls(ζ₃) = 2`) gives `κ(P(z₁)) = 2`, `κ(P(z₂)) = 0`, hence
+
+**`ε₃(a[z₁] + b[z₂]) = ζ₃^{−a}`**.
+
+*(Basis corrected 2026-08-19 by Addendum 35; the structure below —
+linearity, `c₂ = 0`, dependence on `a` alone — is unaffected.)*
 
 The `[z₂]` symbol contributes **nothing** — `P_ζ(z₂)` is a cube — and
 Addendum 33's `ζ₃²` is simply `a = 2`. This is deflationary about the
@@ -1781,3 +1798,58 @@ symbol, and what Addendum 33 measured is one coefficient.
 No new claim. The value of Addendum 33 stands; its justification is now
 falsifiable, and what the number depends on is stated. Nothing wired; the
 m = 2 result (PR #4968) is untouched.
+
+---
+
+## Addendum 35 (2026-08-19) — the five-term relation validates the implementation, and catches a basis error of mine
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_five_term_validation_probe.py`](../../computations/probes/gswz_epsm_five_term_validation_probe.py)
+— 12/12, exact integer arithmetic mod 5⁸. Scope-(a); nothing wired.
+
+### Why this was needed
+
+Every check behind Addenda 33–34 was **internal** — root-independence,
+linearity, the Lemma 2.4(e) eigenvector condition. A consistently-wrong
+`P_ζ` would have passed all of them. Nothing had tested the implementation
+against the paper.
+
+### Four CGZ predictions, all confirmed
+
+| prediction | result |
+|---|---|
+| **Lemma 2.4(b)**: `D_ζ(1) ≡ ζ^{n/3}` mod nth powers | holds at `n = 3`; and `D_ζ(1) = 3(1−ζ²)` **exactly** |
+| **Lemma 2.4(c)** / p. 11: `P_ζ(X)P_ζ(1/X) = x^{n(n−1)/2}` | `κP(X) + κP(1/X) = 0` on **240** arguments |
+| **reflection** `[X] + [1−X] − [0] = 0` | forces the **nonzero** constant `2 mod 3`; ties the α-line symbols to each other via `1−z₂ = α`, `1−z₁ = α²` |
+| **five-term relation**, eqn (3) | holds on **400** instances of a two-parameter sweep |
+
+Constructed-to-fail controls: one flipped sign breaks **99/150**; `ζ`
+replaced by `ζ²` in a single factor of `D_ζ` breaks **96/150**. So the
+vanishing five-term sum is the relation holding, not a trivial class map.
+
+### The error it caught, in my own two addenda
+
+The readout `cls(u) = teich(u)⁸` gives the class as a power of the **μ₂₄
+generator**, not of `ζ₃`. Measured: **`cls(ζ₃) = 2`**, because
+`ζ₃ = gen⁸ ≡ gen²` mod cubes.
+
+The first version of this probe compared `cls(D_ζ(1))` to the bare integer
+`1`, got `2`, and was **one step from reporting a discrepancy with CGZ
+Lemma 2.4(b)**. There is none: `cls(D_ζ(1)) = cls(ζ₃) = 2`, so
+`D_ζ(1) ≡ ζ₃` exactly as the lemma says.
+
+The same conflation put a wrong label on the value. In the `ζ₃` basis
+(`κ = 2·cls mod 3`) the per-symbol classes are `κ(P(z₁)) = 2`,
+`κ(P(z₂)) = 0`, so
+
+**`ε₃(a[z₁] + b[z₂]) = ζ₃^{−a}`**,  and  **`ε₃(2[z₁] + [z₂]) = ζ₃`**, not
+`ζ₃²`.
+
+The structure reported in Addenda 33–34 — linearity, `c₂ = 0`, dependence
+on `a` alone — is **unaffected**; only the basis label was wrong. Both
+probes and both addenda are corrected in place.
+
+### Scope
+
+Validates the implementation; extends nothing to another place, field, or
+`m`. Nothing wired; the m = 2 result (PR #4968) is untouched.
