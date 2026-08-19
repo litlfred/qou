@@ -84,9 +84,9 @@ Three honest residual classes, reported separately rather than folded in:
 
 ## Relationship to the reproducibility gate
 
-`witness_reproducibility_check.py` and the producer-reproducibility audit on
-`claude/producer-reproducibility-gate-2026-08-10` answer *"can this producer
-still produce this witness?"* by **running** it. This script answers the cheaper
+`witness_reproducibility_check.py` and `witness_producer_executes_audit.py`
+(landed on `main` via #4960) answer *"can this producer still produce this
+witness?"* by **running** it. This script answers the cheaper
 upstream question *"is it worth running?"* by reading source and git, and never
 executes a producer. The env gate here reuses their axis to avoid recommending a
 refresh their `ENV_MISSING` bucket would catch after the fact; it does not
