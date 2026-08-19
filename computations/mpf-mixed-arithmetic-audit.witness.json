@@ -3,9 +3,9 @@
   "name": "mpf-mixed-arithmetic-audit",
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
-    "candidates": 16,
+    "candidates": 14,
     "marked": 6,
-    "files": 9,
+    "files": 8,
     "baseline": 16,
     "by_file": {
       "computations/atomic_mass_via_rho_k.py": 2,
@@ -14,7 +14,6 @@
       "computations/phase5/phase1a_symbolic_trace_dominant_h_expansion.py": 1,
       "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py": 2,
       "computations/probes/ak_lp_dual_quotient_probe.py": 2,
-      "computations/probes/tritium_8_11_jones_markov_probe.py": 2,
       "computations/proton_residual_rootcause.py": 1,
       "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3
     },
@@ -127,28 +126,6 @@
         "taint_name": "",
         "taint_origin_line": 0,
         "taint_origin_source": "",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/tritium_8_11_jones_markov_probe.py",
-        "line": 183,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 25)",
-        "source": "w.add_data(\"ratio_AME_to_bare_wenzl\", mp.nstr(ratio_wenzl, 25))",
-        "taint_name": "ratio_wenzl",
-        "taint_origin_line": 159,
-        "taint_origin_source": "ratio_wenzl = ame_mpf / pred_wenzl",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/probes/tritium_8_11_jones_markov_probe.py",
-        "line": 184,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 25)",
-        "source": "w.add_data(\"ratio_AME_to_bare_qschur\", mp.nstr(ratio_qschur, 25))",
-        "taint_name": "ratio_qschur",
-        "taint_origin_line": 160,
-        "taint_origin_source": "ratio_qschur = ame_mpf / pred_qschur",
         "class": "CANDIDATE"
       },
       {
