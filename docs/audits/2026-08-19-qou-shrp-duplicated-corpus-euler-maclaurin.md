@@ -116,3 +116,68 @@ and the estimate-calibration story is not an explanation for it.
 3. Nothing is deleted. The proofs are correct and the weaker-hypothesis
    first-order bracket may still be wanted; per the repo's standing rule,
    findings get re-scoped, not silently removed.
+
+---
+
+# Addendum: the wider overlap audit (2026-08-19)
+
+Having found one nine-day-old overlap, assuming it was the only one would have
+been the same mistake again. So I audited the rest of the L4 / Whitehead epic
+against the `qou-mlgp` lane before writing any more of it.
+
+## The lane
+
+`main` carries an **18-file `Kashaev*` lane** in `QOU/Knot/` — `…Argmax`,
+`…Asymptotic`, `…AsymptoticBounds`, `…BeyondWindow`, `…CSigma`,
+`…EndpointSplit`, `…FullSum`, `…LogAsymptotic`, `…PeakValue`, `…ProdEndpoint`,
+`…RatioExpansion`, `…ReflectionTrapezoid`, `…SaddleWindow`, `…TailBound`,
+`…WindowAssembly`, `…WindowIndex`, `…WindowSum`, plus `LogSincNearZero` — over
+generic infra in `QOU/MathlibExt/`.
+
+## The distinction that matters, and that I got wrong once already
+
+**Target: different. Machinery: the same.**
+
+* **Different target.** `kashaevProd` is defined in `FigureEightVolume.lean` —
+  the whole lane is **4₁**. Van der Veen's Lemma 4 is the **Whitehead link**'s
+  Fresnel non-cancellation. `VdVWhiteheadLemma4` has **no instance anywhere in
+  the corpus**, so the epic's target is genuinely still open. The epic is not
+  redundant.
+* **Same machinery.** The generic pieces my remaining bricks planned to build
+  already exist, in `MathlibExt`, stated generically:
+
+  | Remaining brick | Already in the corpus |
+  |---|---|
+  | `qou-vy77` — L4-2 Gaussian window | `GaussianWindowSum` (`sum_Icc_tilted_eq`, `abs_sum_Icc_tilted_sub_le`), `GaussianTailBound` (`tsum_gaussian_sub_sum_Icc_le`), `GaussianSumBound` (`sum_exp_neg_mul_sq_le`, `integral_exp_neg_mul_sq_le`), `GaussianTiltedSum`, `GaussianThetaBound`, `GaussianShearIntegral` |
+  | anything needing a quadrature rule | `CompositeEulerMaclaurin`, `CorrectedTrapezoid` (9 theorems, incl. `abs_corrected_trapezoid_sub_integral_le_osc`), `TrapezoidRule` |
+
+  These live in `MathlibExt` — the corpus's *generic* namespace — so they are
+  not 4₁-specific and apply to the Whitehead Gaussian directly.
+
+This is exactly the shape of the E–M miss, one level less severe. There, the
+lane had not merely built shared machinery but had **already applied it to my
+exact function** (`logSinc = φ − log 2`), which is why that case is subsumption
+rather than overlap.
+
+## Consequence for the epic
+
+`qou-u1b5`'s remaining bricks are **re-scoped from "build" to "assemble"**:
+
+* `qou-vy77` (L4-2) — assemble from the six generic `Gaussian*` files. Do not
+  write a Gaussian tail or window-sum bound.
+* `qou-kc8h` (L4-3), `qou-epy2` (L4-5), `qou-9r2q` (L4-6 erfc) — grep
+  `MathlibExt/` and the `Kashaev*` lane **first**; `GaussianShearIntegral`
+  already mentions `erfc`.
+
+**Standing rule for this epic from here on:** before any new brick, run
+`grep -rln "<topic>" content/quantum-observable-universe/lean/QOU/MathlibExt/
+content/quantum-observable-universe/lean/QOU/Knot/`. The corpus-grep checklist
+is not optional, and "I checked what landed since my fork point" is not it.
+
+## What is NOT claimed here
+
+That the epic is redundant — it is not; `VdVWhiteheadLemma4` is open and no
+instance exists. That the Kashaev lane proves anything about the Whitehead
+link — it does not; it is 4₁. Sharing machinery is not sharing a theorem, and
+conflating the two is the failure mode `AGENTS.md` §"Grep the claim SHAPE"
+describes.
