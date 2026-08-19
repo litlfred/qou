@@ -1853,3 +1853,91 @@ probes and both addenda are corrected in place.
 
 Validates the implementation; extends nothing to another place, field, or
 `m`. Nothing wired; the m = 2 result (PR #4968) is untouched.
+
+---
+
+## Addendum 36 (2026-08-19) — the GSWZ (287) f-subscript resolved: the printed `f₅` is a typo for `f₁`
+
+Bean `qou-xx9f`. Probe
+[`gswz_287_f1_vs_f5_subscript_resolution_probe.py`](../../computations/probes/gswz_287_f1_vs_f5_subscript_resolution_probe.py)
+— 12/12. Scope-(a); nothing wired.
+
+### The conflict
+
+GSWZ [arXiv:2412.04241v2](https://arxiv.org/abs/2412.04241v2)
+(`library/arxiv-2412.04241v2/`) states the (287) experiment twice, and the
+two disagree:
+
+| where | reads |
+|---|---|
+| prose, p. 56, one sentence before | "the integrality of the series **`f₁^{5₂}(x)`** after division by the generator `Ψ_{ξ,p}(x)`" |
+| display, p. 57, eqn (287) | `C `**`f₅^{5₂}(x)`**` Ψ_{[ζ₂₄],5}(x)^{−(1+4·5+3·5²+⋯)} ⋯` |
+
+Read at 6× from the pdf, not from a text extractor. And `f₅` is **not** a
+typo for a nonexistent object — (285) is `f₅^{5₂}(0)²` — so the glyph alone
+cannot settle which series the experiment used. This blocked `qou-xx9f` as
+an "owner eyeball" item; it was never resolvable that way.
+
+### Settled from (287)'s own right-hand side
+
+GSWZ give the coefficient-field rule themselves, in the parenthetical after
+(345):
+
+> "That the coordinates here are in K as opposed to `K[ζ_m]` is because
+> `φ(m) ≤ 2` for `m < 5` … in general, the coordinates are in
+> `K[ζ_m + ζ_m⁻¹]`."
+
+At `m = 5`: `ζ₅+ζ₅⁻¹` satisfies `t² + t − 1 = 0` (verified symbolically in
+`Z[z]/Φ₅`), a genuine quadratic extension — and one **ramified at 5**
+(disc 5; `Φ₅(1+π) = π⁴+5π³+10π²+10π+5` is Eisenstein, so `Q₅(ζ₅)` is
+totally ramified of degree 4). It embeds in **neither** unramified
+component of `K₅ = Q_{5²} × Q₅`: there the valuation is `Z`-valued and
+squares have even valuation, while `v₅(5) = 1` is odd.
+
+So an `m = 5` coefficient admits no clean powers-of-5 digit expansion over
+a K-basis. **That is exactly how (287) prints every coefficient** — three
+coordinates against `{1, α, α²}`, each an ordinary base-5 expansion.
+
+**Control.** The same computation re-derives GSWZ's own `φ(m) ≤ 2`
+boundary: `ζ_m+ζ_m⁻¹` is rational for `m = 1,2,3,4` (`2, −2, −1, 0`) and
+irrational at `m = 5`. The test fires at 5 and nowhere below — it
+discriminates rather than always firing.
+
+### Verdict
+
+Three independent lines converge, so the printed subscript is a
+typographical error for `f₁`:
+
+1. the prose one sentence earlier says `f₁`;
+2. only `f₁` is ever *defined* as a series ((281) defines it, (282) prints
+   its coefficients) — under the `f₅` reading the paper's own "experiment"
+   would not be reproducible by a reader, which is §4.6's stated purpose;
+3. (287)'s right-hand side lives in `K` with unramified digits, which the
+   `m = 5` fibre cannot supply.
+
+This is an evidenced reading of the source, **not a theorem**: GSWZ's rule
+says "in general", so a special series *could* have coefficients that
+happen to fall in `K`. The arXiv LaTeX source would be definitive and is
+unavailable here — `https://arxiv.org/e-print/2412.04241v2` returns
+`403 CONNECT` from the sandbox proxy. If that tarball is added to
+`library/arxiv-2412.04241v2/`, one grep for the macro confirms or
+overturns this immediately; do that before building on it.
+
+### A bad check of mine, caught by its own control
+
+The first version tested "5 is not a square in `Q₂₅`" by sampling
+candidates on a stride. Its companion control could not find `√49` either —
+**the control failing is what exposed the search as worthless**. Replaced
+with the exact valuation argument above, with `25` as a control that
+legitimately passes.
+
+### What this leaves
+
+Candidate (1) of the bean — "the inputs are an unprinted `m = 5` fibre, so
+they are unavailable" — is **eliminated**. The printed x¹–x³ digits remain
+unreproduced under the `f₁` reading, so what is left is candidate (2): an
+unprinted α-dependent normalisation between (281)'s `f₁` and the printed
+`Φ` series. The earlier narrowing stands — a single `q^λ` exponent confirms
+x² mod 25 (~6 nontrivial digits) but fails x³ mod 5, so the normalisation
+is a **series** with a nonzero h³ term, not a scalar. That is now the whole
+of `qou-xx9f`.
