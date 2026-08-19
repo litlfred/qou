@@ -2091,6 +2091,14 @@ built where predicted and absent where not.
 
 ### Terminal statement for `v₁`
 
+> **🛑 OVER-STATED — corrected by Addendum 41 (2026-08-19).** "Requires
+> leaving `B`" is right; "not computable" is not. The universal Kummer
+> extension `H` is never needed in *full* — only the finite subextension the
+> roots generate, and for a **unit** argument with `gcd(m,5) = 1` that
+> extension is **unramified**, hence just another `Q_{5^d}`. At `m = 8` it is
+> `L = Q_{5^8}`, and CGZ's descent goes through there. The obstruction below
+> was the absence of roots in `B`, not the absence of a constructible lift.
+
 **The degree-1 place of `K = Q(α)` yields exactly one computable
 non-redundant CGZ invariant: `ε₃`.**
 
@@ -2154,3 +2162,72 @@ units of `Z₅`. Distinct discriminants include `−23` (K itself), 169, 257,
 `ε₃(a[z₁] + b[z₂]) = ζ₃^{−a}` **stands as computed**. What is withdrawn is
 the interpretation laid on top of it. `c₂ = 0` describes this element's
 coefficients; it is not a finding about the invariant's structure.
+
+---
+
+## Addendum 41 (2026-08-19) — CGZ's lift, constructed: `ε₈` at `v₁` is trivial
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_h_lift_m8_probe.py`](../../computations/probes/gswz_epsm_h_lift_m8_probe.py)
+— 17/17. Scope-(a); nothing wired.
+
+Addendum 39 closed the `v₁` sweep at `m = 3, 6` because for `m = 8, 12, 24`
+the roots leave `B` and CGZ's lift — "flagged unchecked" by Remark 1.9 —
+would be needed. **That over-stated the difficulty.**
+
+### `H` is never needed in full
+
+Only the finite Kummer subextension the roots actually generate. For a
+**unit** argument with `gcd(m, 5) = 1` that extension is **unramified** —
+so it is just another `Q_{5^d}` and the same exact machinery applies.
+
+Computed: in `B^×/(B^×)⁸` the Teichmüller part is `Z/8`, the four arguments
+have `μ₂₄` dlogs `6, 12, 12, 6` → images `6, 4, 4, 6`, generating the
+order-4 subgroup `{0,2,4,6}`. So `[L:B] = 4` and
+
+`L = Q_{5^8}`, `N = 5⁸−1 = 390624`, with `8 | N` and `24 | N`.
+
+`μ₈`, `μ₂₄`, the roots and the descent target all live in one field. And
+going up is what buys root-independence: **`1−X` is an 8th power in `L`**
+(it is not in `B`), so the eqn-(21) ratio is an 8th power and the class is
+invariant over all 64 root choices.
+
+### The descent, and its ambiguity — which is the result
+
+Find `v ∈ B^×` with `P_ζ(ξ)/v` an 8th power in `L`. The obstruction
+`δ(d(ξ))` vanishes because `d(ξ) = 0` was computed exactly in `K`
+(Addendum 34). It reduces to one class match in `Z/8`, and it **succeeds**.
+
+It is also **12-fold ambiguous**. A first version of the probe took the
+first solution and reported `R = 6` — one arbitrary choice among four. The
+admissible `k` are all twelve **even** residues mod 24:
+
+| | value |
+|---|---|
+| `R = k mod 8` | **ambiguous** over `{0, 2, 4, 6}` |
+| `R^{w_F} = 4k mod 8` | **`0`**, well defined |
+
+`R` is not determined — exactly what Prop 2.5(b) predicts when
+`gcd(n, w_F) > 1` (here `gcd(8,4) = 4`) — and the `w_F`-power kills
+precisely that ambiguity, because every admissible `k` is even. **Prop
+2.5(b)'s mechanism measured rather than asserted.**
+
+**`ε₈` is trivial at this place.** A value, honestly obtained, and the first
+in this arc from an actual descent rather than from arranging for one to be
+unnecessary.
+
+### Two construction errors, both caught by their own checks
+
+- The `μ₈` search seeded on **scalars**, whose Teichmüller part lies in `μ₄`,
+  so the `N/8` power is always 1 and `ζ₈` was never found.
+- `eighth_root` tried to invert 8 modulo `N/8`, which fails because `N/8` is
+  even — the exponent trick only works on the odd part. Replaced with an
+  explicit baby-step giant-step discrete log.
+
+### Scope
+
+Constructs the lift in **one** case where the Kummer extension is unramified
+and small. Does **not** construct it in general: Remark 1.9 concerns
+arbitrary `F` and `n`, where the extension need not be unramified and
+`H²(Φ,μ)` need not be computable this way. What is shown is that the `v₁`
+obstruction of Addendum 39 was not the real one.
