@@ -120,4 +120,16 @@ theorem single_self_mem_of_separating (A : Subalgebra R (Matrix ι ι R)) (d : �
       exact hUW rfl
   exact hPeq ▸ hPmem
 
+/-- **The matrix units generate everything.**  A subalgebra containing every `single i j 1` is all
+of `Matrix ι ι R`, since every matrix is the sum of its entries times the units. -/
+theorem eq_top_of_single_mem (A : Subalgebra R (Matrix ι ι R))
+    (h : ∀ i j : ι, Matrix.single i j (1 : R) ∈ A) : A = ⊤ := by
+  refine eq_top_iff.mpr (fun x _ => ?_)
+  rw [Matrix.matrix_eq_sum_single x]
+  refine sum_mem (fun i _ => sum_mem (fun j _ => ?_))
+  have : Matrix.single i j (x i j) = (x i j) • Matrix.single i j (1 : R) := by
+    rw [Matrix.smul_single, smul_eq_mul, mul_one]
+  rw [this]
+  exact Subalgebra.smul_mem _ (h i j) _
+
 end QOU.SchurWeyl
