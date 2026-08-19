@@ -9,7 +9,7 @@ tags:
     - route-c
     - literature
 created_at: 2026-08-19T12:10:00Z
-updated_at: 2026-08-19T13:05:00Z
+updated_at: 2026-08-19T13:20:00Z
 ---
 
 ## Context
@@ -104,8 +104,39 @@ geometric reading not. Nothing wired.
 
 - Lean: QOU.QBeta.GZThirdKnotRankGrading (core Int, imports AdjointIndexSetM3;
   lean-direct exit 0, sorry-free, #print axioms shows no sorryAx)
-- Probe: computations/probes/gz_third_knot_rank_grading.py, 17/17
+- Probe: computations/probes/gz_third_knot_rank_grading.py, 21/21
 - Audit: docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §7
+
+## Part G (2026-08-19): the 6_1 prediction CONFIRMED by a sibling
+
+The Part-F conditional prediction (6_1 -> r=4, |P_K|=5 from DG trace-field type [0,2])
+was independently certified while this work was in progress: main 96d65d02e, bean
+qou-btvl, probe apoly_census_ldegree_certification_probe.py (3/3), from the Culler
+A-polynomial census (uploads/A_census.tgz, owner upload).
+
+  4_1 = K2_1: geom L-degree 2, full 3
+  5_2 = K3_2: geom L-degree 3, full 4
+  6_1 = K4_1: geom L-degree 4, full 5     <- matches the prediction
+
+WHY IT IS A TEST: the prediction side is the DEGREE OF A NUMBER FIELD
+(x^4-2x^3+x^2+3x+1, signature [0,2], disc 257); the certification side is the
+L-DEGREE OF A NEWTON POLYGON (census A-polynomial of K4_1). Unrelated objects,
+unrelated sources, agreeing on three knots with three distinct values (2,3,4) -- and
+6_1 was predicted before its census value was in hand.
+
+NOT A TEST (sibling flagged first): full = geom + 1 is definitional, the +1 being the
+abelian rep. The |P_K| = r+1 leg corroborates nothing; all content is in
+deg F_K = geom L-degree = r.
+
+CONTROL FIRES: the identity FAILS at (-2,3,7) -- trace field degree 3 vs rank 6 --
+exactly where A_K^red strictly contains F_K. The rule does not fit everything.
+
+CREDIT: the census certification is the sibling's work; ours is the prediction it
+confirms and the hypothesis that made it a prediction rather than a fit.
+
+Lean Part G: geomLDegree, fullLDegree, sixOne_prediction_confirmed,
+degree_equals_geom_ldegree_on_all_three, the_three_degrees_are_distinct,
+plus_one_leg_is_definitional, control_fires_where_hypothesis_fails. Probe now 21/21.
 
 ## NEXT STEP
 

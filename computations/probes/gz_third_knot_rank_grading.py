@@ -273,6 +273,58 @@ def main():
              "Part E asks for, out of an unrelated quantity. Third instance of this same "
              "conflation trap in this arc.")
 
+    # ---- T18-T21: the 6_1 prediction, CONFIRMED from a second unrelated object ----
+    # Sibling certification (main 96d65d02e, bean qou-btvl, probe
+    # apoly_census_ldegree_certification_probe.py 3/3) from the Culler A-polynomial
+    # census tarball uploads/A_census.tgz, read from its committed witness.
+    census = {"4_1": {"name":"K2_1","geom":2,"full":3},
+              "5_2": {"name":"K3_2","geom":3,"full":4},
+              "6_1": {"name":"K4_1","geom":4,"full":5}}
+    tf_deg = {"4_1": 2, "5_2": 3, "6_1": 4}     # DG signatures: [0,1],[1,1],[0,2]
+
+    print("\n[T18] the 6_1 prediction vs the sibling's certification")
+    print(f"     predicted (DG trace-field type [0,2]) : r = {tf_deg['6_1']}, |P_K| = {tf_deg['6_1']+1}")
+    print(f"     certified (Culler census, K4_1)       : geom L-deg = {census['6_1']['geom']}, "
+          f"full = {census['6_1']['full']}")
+    chk("T18-sixOne-prediction-confirmed",
+        tf_deg["6_1"] == census["6_1"]["geom"] and census["6_1"]["full"] == 5,
+        note="CONFIRMED, and by an independent session: the prediction was made here "
+             "from Dimofte-Garoufalidis's trace-field SIGNATURE [0,2]; the "
+             "certification is a sibling's, from the Culler A-polynomial census. "
+             "Credit for the census leg is theirs (main 96d65d02e, bean qou-btvl); "
+             "what is this probe's is the prediction it confirms.")
+
+    print("\n[T19] why it is a test and not a restatement")
+    print("     prediction side   : degree of an ALGEBRAIC NUMBER FIELD (x^4-2x^3+x^2+3x+1)")
+    print("     certification side: L-degree of a NEWTON POLYGON (census A-polynomial)")
+    chk("T19-degree-equals-geom-ldegree-on-all-three",
+        all(tf_deg[k] == census[k]["geom"] for k in tf_deg)
+        and len({census[k]["geom"] for k in census}) == 3,
+        note="Nothing forces a number field's degree to equal a knot polynomial's "
+             "L-degree -- unrelated objects in unrelated sources. They agree on THREE "
+             "knots with three DISTINCT values (2,3,4), and 6_1 was predicted before "
+             "its census value was in hand.")
+
+    print("\n[T20] the half that is NOT a test (sibling flagged this first)")
+    chk("T20-plus-one-leg-is-definitional",
+        all(census[k]["full"] == census[k]["geom"] + 1 for k in census),
+        note="full = geom + 1 holds BY CONSTRUCTION -- the +1 is the abelian/trivial "
+             "representation -- so the |P_K| = r+1 agreement corroborates nothing and "
+             "must never be cited as evidence. The content is entirely in "
+             "deg F_K = geometric L-degree = r. The sibling's own bean says this "
+             "('full=geom+1 is by construction, not a test'); recorded here so the "
+             "caveat travels with the result.")
+
+    print("\n[T21] CONTROL: does the rule fit everything?")
+    print(f"     (-2,3,7): trace field = 5_2's -> degree {tf_deg['5_2']}, measured rank {rank['(-2,3,7)']}")
+    chk("T21-control-fires-where-hypothesis-fails",
+        tf_deg["5_2"] != rank["(-2,3,7)"],
+        note="NO -- and that is the point. The identity FAILS at (-2,3,7), exactly the "
+             "knot with A_K^red strictly containing F_K. A rule that also fitted there "
+             "would be the worrying outcome; this one holds where its stated hypothesis "
+             "holds and breaks where it does not. The control is what makes T19 "
+             "evidence rather than a coincidence of small numbers.")
+
     verdict = (
         "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in "
         "GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep "
@@ -289,7 +341,7 @@ def main():
         "(v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing "
         "into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU "
         "Wedderburn indexing appearing in the third knot's modular data, with a "
-        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. Nothing wired."
+        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. (x) THE 6_1 PREDICTION IS CONFIRMED: a sibling session independently certified 6_1 (census K4_1) at geometric L-degree 4 / full 5 from the Culler A-polynomial census (main 96d65d02e, bean qou-btvl), matching the r=4 / |P_K|=5 predicted here from the DG trace-field type [0,2]. The two sides are a NUMBER FIELD DEGREE and a NEWTON POLYGON L-DEGREE -- unrelated objects, unrelated sources -- agreeing on three knots with three distinct values (2,3,4). The |P_K| = r+1 half is definitional (the abelian rep) and is NOT evidence; the sibling flagged that first. And the control fires: the identity FAILS at (-2,3,7), precisely where A_K^red strictly contains F_K, so the rule does not fit everything. Nothing wired."
     )
     print(f"\n verdict: {verdict}")
 

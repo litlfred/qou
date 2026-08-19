@@ -436,4 +436,94 @@ theorem conditional_predictions :
     predictedRankFromTraceField DGKnot.pretzel239 = 5 ∧
     predictedRankFromTraceField DGKnot.pretzel239 + 1 = 6 := by decide
 
+/-! ## Part G — the `6₁` prediction is CONFIRMED, from a second, unrelated object
+
+Part F predicted, *under* the named hypothesis `A_K^red = F_K`, that `6₁` has
+`r = 4` and `|P_K| = 5`, derived from Dimofte–Garoufalidis's trace-field type
+`[0, 2]`.
+
+**A sibling session independently certified it** (`main`, `96d65d02e`, bean
+`qou-btvl`, probe `apoly_census_ldegree_certification_probe.py`, 3/3) from the
+Culler A-polynomial census (`uploads/A_census.tgz`, owner-supplied):
+
+| knot | census name | geometric `L`-degree | full `L`-degree |
+|---|---|---|---|
+| `4₁` | `K2_1` | 2 | 3 |
+| `5₂` | `K3_2` | 3 | 4 |
+| `6₁` | `K4_1` | **4** | **5** |
+
+**Why this is a test and not a restatement.** The two sides come from unrelated
+objects in unrelated sources:
+
+* the prediction is the **degree of an algebraic number field** — DG §6's
+  `x⁴ − 2x³ + x² + 3x + 1`, signature `[0,2]`, discriminant `257`;
+* the certification is the **`L`-degree of a Newton polygon** — the census
+  A-polynomial of `K4_1`.
+
+Nothing forces a number field's degree to equal a knot polynomial's `L`-degree.
+They agree on **three** knots (`2, 3, 4`), and `6₁` was predicted *before* its
+census value was in hand.
+
+**One half is NOT a test, and the sibling flagged it first.** `full = geom + 1`
+holds by construction — the `+1` is the abelian/trivial representation — so the
+`|P_K| = r + 1` leg confirms nothing. The content is entirely in
+`deg F_K = geometric L-degree = r`.
+
+**And the control fires.** At `(−2,3,7)` the identity **fails**: its trace field
+is `5₂`'s (degree `3`) while `r = 6`. That is not a counterexample to the rule —
+it is the rule's hypothesis doing its job, since `(−2,3,7)` is exactly the knot
+with `A_K^red ⊋ F_K`. A rule that fitted everything would be the worrying
+outcome; this one fits where its stated hypothesis holds and breaks where it
+does not.
+
+Credit: the census certification is the sibling's work, not this file's. What is
+this file's is the prediction it confirms. -/
+
+/-- Geometric `A`-polynomial `L`-degree, certified from the Culler census
+(sibling probe `apoly_census_ldegree_certification_probe.py`). -/
+def geomLDegree : DGKnot → Int
+  | DGKnot.fourOne => 2      -- census K2_1
+  | DGKnot.fiveTwo => 3      -- census K3_2
+  | DGKnot.sixOne => 4       -- census K4_1
+  | DGKnot.pretzel239 => 0   -- not in the certified census data
+
+/-- Full `A`-polynomial `L`-degree = geometric `+ 1` (the abelian factor). -/
+def fullLDegree (K : DGKnot) : Int := geomLDegree K + 1
+
+/-- **The `6₁` prediction is confirmed.** The trace-field degree from DG's
+signature `[0,2]` equals the certified geometric `L`-degree from the census. -/
+theorem sixOne_prediction_confirmed :
+    predictedRankFromTraceField DGKnot.sixOne = geomLDegree DGKnot.sixOne ∧
+    geomLDegree DGKnot.sixOne = 4 ∧
+    fullLDegree DGKnot.sixOne = 5 := by decide
+
+/-- **Trace-field degree = geometric `L`-degree on all three certified knots.**
+A number field's degree and a Newton polygon's `L`-degree are unrelated a priori;
+they agree at `2, 3, 4`. -/
+theorem degree_equals_geom_ldegree_on_all_three :
+    predictedRankFromTraceField DGKnot.fourOne = geomLDegree DGKnot.fourOne ∧
+    predictedRankFromTraceField DGKnot.fiveTwo = geomLDegree DGKnot.fiveTwo ∧
+    predictedRankFromTraceField DGKnot.sixOne = geomLDegree DGKnot.sixOne := by decide
+
+/-- **The three values are distinct**, so the agreement is not a constant. -/
+theorem the_three_degrees_are_distinct :
+    geomLDegree DGKnot.fourOne = 2 ∧ geomLDegree DGKnot.fiveTwo = 3 ∧
+    geomLDegree DGKnot.sixOne = 4 ∧
+    geomLDegree DGKnot.fourOne ≠ geomLDegree DGKnot.sixOne := by decide
+
+/-- **The `+1` leg is not a test.** `full = geom + 1` holds definitionally here
+(the abelian representation), so it cannot corroborate anything — recorded so the
+`|P_K| = r + 1` agreement is never cited as evidence. -/
+theorem plus_one_leg_is_definitional (K : DGKnot) :
+    fullLDegree K = geomLDegree K + 1 := rfl
+
+/-- **The control fires at `(−2,3,7)`.** Its trace field is `5₂`'s, degree `3`,
+while its rank is `6` — the identity fails exactly where the hypothesis
+`A_K^red = F_K` fails. A rule that matched here too would be the worrying
+outcome. -/
+theorem control_fires_where_hypothesis_fails :
+    predictedRankFromTraceField DGKnot.fiveTwo = 3 ∧
+    rank PKnot.pretzel237 = 6 ∧
+    predictedRankFromTraceField DGKnot.fiveTwo ≠ rank PKnot.pretzel237 := by decide
+
 end QOU.QBeta.GZThirdKnotRankGrading
