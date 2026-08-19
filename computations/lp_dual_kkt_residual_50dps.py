@@ -120,10 +120,27 @@ def kkt_residuals(G_str, t_str, n_target: str, m_bound: str, res: dict) -> dict:
         r_gap = abs(primal_obj - dual_obj)
         r_cs = max(abs(y[i] * Gx[i]) for i in range(d))
         scale = max(abs(t[i] * x[i]) for i in range(d))
+        # r_cs needs its OWN scale, not the objective's. Dividing a
+        # y·(Gx) residual by max|t_i x_i| compares it to a quantity neither
+        # factor appears in, and on this problem that flattered a GROSSLY
+        # violated condition: the first run of this check reported
+        # `r_cs / scale = 1.69e-20` and passed, while the true per-row
+        # complementarity was 0.25 — every y_i and every (Gx)_i sitting at
+        # full scale simultaneously, which is as violated as it gets. It read
+        # as clean only because both factors are ~1e-8 while x runs to 1e5.
+        # Normalising by the largest each factor attains makes the measure
+        # scale-free and interpretable: 0 is exact complementarity, O(1) means
+        # the two are simultaneously large. Bean qou-q7f1 — this is the gate
+        # that should have caught an all-28-active `active_set` and did not.
+        ymax = max(abs(v) for v in y)
+        gxmax = max(abs(v) for v in Gx)
+        cs_scale = ymax * gxmax
+        r_cs_rel = r_cs / cs_scale if cs_scale > 0 else mp.mpf(0)
 
         return {
             "r_eq": r_eq, "r_Gx": r_Gx, "r_bound": r_bound, "r_y": r_y,
             "r_dual": r_dual, "r_gap": r_gap, "r_cs": r_cs,
+            "r_cs_rel": r_cs_rel,
             "primal_obj": primal_obj, "dual_obj": dual_obj,
             "term_scale": scale,
         }
@@ -173,11 +190,11 @@ def main() -> int:
     with mp.workdps(DPS):
         scale = R["term_scale"]
         rel_gap = R["r_gap"] / scale
-        rel_cs = R["r_cs"] / scale
+        rel_cs = R["r_cs_rel"]          # own-scale, NOT objective-scale
         rel_dual = R["r_dual"] / scale
         print(f"\n  scale-relative (divided by max|t_i x_i| = {mp.nstr(scale, 8)}):")
         print(f"    r_gap  / scale = {mp.nstr(rel_gap, 8)}")
-        print(f"    r_cs   / scale = {mp.nstr(rel_cs, 8)}")
+        print(f"    r_cs   / (max|y| max|Gx|) = {mp.nstr(rel_cs, 8)}")
         print(f"    r_dual / scale = {mp.nstr(rel_dual, 8)}")
 
         # 1e-18 is chosen to sit BELOW f64 resolution (~1e-16) and ABOVE what
