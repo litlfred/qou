@@ -56,3 +56,23 @@ hasDerivAt_sinc_zero (sinc'(0)=0, via slope + Real.sin_bound),
 hasDerivAt_sinc (quotient rule off 0), differentiable_sinc. Stated in
 Mathlib style, no QOU specifics, upstreamable. Next: step 2, the first
 Euler-Maclaurin correction for C^1 f on a uniform grid.
+
+STEP 2 DONE (EulerMaclaurinFirst.lean, sorry-free): Mathlib's missing first
+Euler-Maclaurin correction, in the MONOTONE-DERIVATIVE form (which squeezes
+and so pins the constant, instead of carrying an abstract modulus):
+  cell_defect_bracket  — (h^2/2) f'(a+h) <= int_a^{a+h} (f(a+h) - f u) du
+                          <= (h^2/2) f'(a),  for f' antitone on the cell
+  grid_defect_bracket  — the summed form on the uniform grid x_i = i h
+Both envelopes are (h/2) x a Riemann sum of f', so both -> (h/2)(f(nh)-f(0)).
+Proof needs no Fubini and no modulus bookkeeping: MVT + antitonicity +
+int_a^{a+h} (a+h-u) du = h^2/2. General f, Mathlib style, upstreamable.
+
+STEP 3 REMAINING, and it is not just "apply": grid_defect_bracket needs
+HasDerivAt f (f' x) x on the CLOSED [0, nh] including x = 0, but the corpus
+phi = log(2 sin x) - log x has a junk value there. So step 3 must
+ (a) define phiSinc x = log 2 + log (sinc x) (differentiable at 0 by STEP 1,
+     since sinc 0 = 1 != 0), and prove phiSinc = phi on (0, pi);
+ (b) prove phiSinc' antitone on [0, nh] -- true because phi'' = 1/x^2 -
+     1/sin^2 x < 0 (sin x < x), but it needs proving;
+ (c) then apply grid_defect_bracket and combine with the exact singular
+     telescope (L4-1c-i) + Stirling (L4-1b) for L4-1's sharp statement.
