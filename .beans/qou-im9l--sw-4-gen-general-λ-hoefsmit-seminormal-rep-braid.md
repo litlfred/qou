@@ -172,8 +172,18 @@ NOT in `HoefsmitRepGeneral`'s transitive cone and were named explicitly; all
 three then compiled EXIT=0 with **zero diagnostics** on first check from the
 umbrella. A coverage hole, not a defect.
 
-### Still open, downstream — do not claim this closed it
+### Downstream — CLOSED by a sibling while this bean was in flight
 
-`barSymJMSum_block_eigenvalue` (`QJucysMurphy.lean`) is unblocked in principle
-but additionally needs the per-element JM eigenvalue `L_k ↦ q^{2·cellContent}`,
-a separate unscoped piece. Its `-- Ref:`'d sorry stands.
+`barSymJMSum_block_eigenvalue` (`QJucysMurphy.lean`) needed the per-element JM
+eigenvalue `L_k ↦ q^{2·cellContent}` (Ram Thm 4.1), which this bean did not
+supply. **That has since landed on main** under bean `qou-t8qh`
+(`6a72c896ae`, `83d10c2180`): `QOU/SchurWeyl/QJucysMurphyEigen.lean` proves
+`genMat_conj_jmDiagVal` and `barSymJMSum_block_eigenvalue_of_pos`, and
+`QJucysMurphy.lean` is at **0 real sorries** — the SchurWeyl tree has none left.
+
+The `of_pos` version also weakens the hypothesis to `q ≠ 0 ∧ q² ≠ 1` (admitting
+negative `q`) and records that the old `N`-unrestricted statement was **false at
+`N = 0`**, as `barSymJMSum_block_eigenvalue_zero_false`.
+
+This bean still did not close that item — a sibling did. Recorded here only so
+the paragraph above is not read as current.
