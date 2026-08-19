@@ -239,11 +239,87 @@ def part4_size_of_the_offset(deltas) -> None:
     print("  so h^5 is the leading ORDER only. Naming a constant would be a fit.")
 
 
+
+
+def part5_extensive_intensive_split() -> None:
+    """Where delta lives: the exact extensive/intensive separation."""
+    print()
+    print("=" * 74)
+    print("5. WHY delta IS NUCLEUS-INDEPENDENT: an exact extensive/intensive split")
+    print("=" * 74)
+    print("  Symbolically (sympy, exact), EVERY letter of the atom word is")
+    print("  exactly bar-ODD -- d(1/q) = -d(q) -- EXCEPT the color-weighted")
+    print("  interface letter d = -h*(1/2 - f/4), f = flavor_split_leading.")
+    print("  Its defect is exact and fully factored:")
+    print()
+    print("      d(q) + d(1/q) = (q-1)^4 (q+1)^2 (q^2+1)^2 / (12 q^5)")
+    print()
+    print("  (because f(1/q) = -q^2 f(q), so the f-part does NOT flip sign with")
+    print("   h). The interface letters are also exactly what distinguishes the")
+    print("  atom word from the free word. So the atom/free asymmetry and the")
+    print("  bar-parity defect have the SAME support.")
+    print()
+    lq = mp.log(Q0)
+    PAIRS = [((1, 1), (1, 1), 2), ((1, 2), (2, 1), 3), ((2, 2), (2, 2), 4),
+             ((2, 3), (3, 2), 5), ((3, 3), (3, 3), 6)]
+
+    def S(a, b, free):
+        tot = mp.mpf(0)
+        for (Z, N) in (a, b):
+            ta, tf, _, _ = tr_m_atom_zn(Z, N, q=Q0)
+            tb, tg, _, _ = tr_m_atom_zn(N, Z, q=QI)
+            tot += mp.log(abs((tf / tg) if free else (ta / tb))) / lq
+        return tot
+
+    Sf = [S(a, b, True) for a, b, _ in PAIRS]
+    Sa = [S(a, b, False) for a, b, _ in PAIRS]
+    print("  Summing ln|tr(Z,N;q)/tr(N,Z;1/q)| / ln q over a MIRROR PAIR:")
+    print()
+    print(f"  {'A':<4s} {'S_free(A)':<26s} {'1st difference':<24s} "
+          f"{'S_atom - S_free':<22s}")
+    for i, (_, _, A) in enumerate(PAIRS):
+        d = mp.nstr(Sf[i] - Sf[i - 1], 18) if i else "--"
+        print(f"  {A:<4d} {mp.nstr(Sf[i], 20):<26s} {d:<24s} "
+              f"{mp.nstr(Sa[i] - Sf[i], 14):<22s}")
+
+    dd = [Sf[i] - Sf[i - 1] for i in range(1, len(Sf))]
+    c = dd[0]
+    resid = max(abs(Sf[i] - PAIRS[i][2] * c) for i in range(len(Sf)))
+    gaps = [Sa[i] - Sf[i] for i in range(len(Sf))]
+    print()
+    print(f"  1st-difference spread        : {mp.nstr(max(dd) - min(dd), 6)}")
+    print(f"  c(q_0) = the common 1st diff : {mp.nstr(c, 20)}")
+    print(f"  max |S_free(A) - A*c|        : {mp.nstr(resid, 6)}")
+    print(f"  atom-free gap, spread over A : {mp.nstr(max(gaps) - min(gaps), 6)}")
+    print(f"  that gap                     : {mp.nstr(-gaps[0], 20)}  = 2*delta/ln q")
+    check(resid < mp.mpf("1e-20"),
+          f"S_free is NOT exactly A-proportional (max residual {resid})")
+    check(max(gaps) - min(gaps) < mp.mpf("1e-20"),
+          f"the atom-free gap is NOT A-independent (spread "
+          f"{max(gaps) - min(gaps)})")
+    check(abs(-gaps[0] * lq / 2 - (L(1, 1, Q0) - L(1, 1, QI))) < mp.mpf("1e-30"),
+          "the atom-free gap does not equal 2*delta")
+    print()
+    print("  So the split is EXACT, and it is the extensive/intensive one:")
+    print("    * the FREE channel's mirror log is PURELY EXTENSIVE -- exactly")
+    print("      A*c(q), with NO constant term (residual ~1e-25, i.e. zero);")
+    print("    * the ATOM channel obeys the same extensive law MINUS a purely")
+    print("      INTENSIVE constant 2*delta, identical at every A.")
+    print()
+    print("  STILL OPEN, and not explained here: the NUMBER of interface")
+    print("  letters grows with A, yet delta does not. Something makes the")
+    print("  growing set of interface defects contribute an A-independent net")
+    print("  amount to ln(free/atom). That is the missing step, and it is what")
+    print("  a closed form for delta would have to come through.")
+
+
+
 def main() -> int:
     part1_premise_is_wrong()
     part2_weights_are_bar_even()
     deltas = part3_bar_is_isospin()
     part4_size_of_the_offset(deltas)
+    part5_extensive_intensive_split()
 
     print()
     print("=" * 74)
