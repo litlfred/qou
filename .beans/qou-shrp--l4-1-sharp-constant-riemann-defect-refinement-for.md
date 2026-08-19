@@ -76,3 +76,29 @@ phi = log(2 sin x) - log x has a junk value there. So step 3 must
      1/sin^2 x < 0 (sin x < x), but it needs proving;
  (c) then apply grid_defect_bracket and combine with the exact singular
      telescope (L4-1c-i) + Stirling (L4-1b) for L4-1's sharp statement.
+
+STEP 3 LANDED (LogSineSharpConstant.lean, sorry-free), with a ROUTE
+CORRECTION worth recording:
+  hasDerivAt_phiDeriv   — phi'' = 1/x^2 - 1/sin^2 x on (0,pi)
+  phiDeriv_antitoneOn   — phi' antitone on any [a,b] subset (0,pi); this is
+                          the hypothesis the E-M bracket needs, and it is
+                          just sin x < x. It went through cleanly -- the
+                          piece I had flagged as the likely surprise did not
+                          surprise.
+  phi_interior_bracket  — the E-M bracket applied to phi on the interior
+                          cells i = 1..n-1 (covering [h, nh]).
+
+ROUTE CORRECTION: the planned (a) -- define phiSinc = log 2 + log(sinc) so
+phi is differentiable at the CLOSED endpoint 0 -- proved UNNECESSARY. The
+i=0 cell never needs a derivative: smooth_defect_squeeze already brackets it
+between h(phi(h) - log 2) and 0, and that collapses as h -> 0. So E-M is
+applied only on [h, nh] where phi is honestly smooth. STEP 1's sinc infra is
+therefore NOT a dependency of this file; it stands on its own as
+upstreamable Mathlib material. Recorded so no false chain of necessity is
+inferred.
+
+REMAINING for L4-1's sharp statement (not yet done, do not overclaim):
+convert phi_interior_bracket's two envelopes into the LIMIT
+(h/2)(phi(nh) - phi(h)) -- both are (h/2) x Riemann sums of the monotone
+phi', so this is a monotone-Riemann-convergence step -- then add the
+collapsing i=0 cell and combine with L4-1c(i) + L4-1b.
