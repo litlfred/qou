@@ -679,7 +679,9 @@ fn main() {
     let ms = t_start.elapsed().as_millis();
 
     // Evaluate at q₀
-    const Q0: f64 = 1.10998;
+    // Substrate anchor from the crate constant (PROTON pin); the previous
+    // truncated 5-digit muon `1.10998` was 1277 ppb off.
+    const Q0: f64 = hecke_engine::gram::Q_0;
     let t0_val = Q0.sqrt();
     let denom = 2.0_f64.powi(elem.pn_count as i32);
     let tr_alt_val = tr_alt.eval(t0_val) / denom;
