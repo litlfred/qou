@@ -128,3 +128,26 @@ but empty as a CGZ value. Stop citing it as the programme's solid result.
 **Next:** `m = 6` at `v₁` — smallest live case beyond 3, and the first
 where only `R^{w_F}` exists, so it tests whether the `R^{w_F}` route
 carries a computable value in practice and not just in principle.
+
+### 2026-08-19 (PR #5296, Addenda 38–39) — the v₁ m-sweep CLOSES on ε₃
+
+`m = 6` computes (all four CGZ gates re-run, five-term on 300 instances,
+both controls firing) but its `R^{w_F}` re-expresses the `m = 3` invariant:
+`w_F = 4` kills the 2-part of `Z/6` and the surviving 3-part *is* the
+`m = 3` group. Consistency check, not a datum.
+
+And only `m ∈ {3, 6}` are computable in `B` at all. An `m`-th root of a
+`Z₅` unit stays in `B` iff `gcd(m,24)` divides its Teichmüller dlog; the
+four arguments have dlogs 6, 12, 12, 6, so 8, 12, 24 all fail — **correcting
+my own prediction, made minutes earlier, that 12 and 24 would merely be
+redundant.** Obstruction is per-symbol (at m=12 the dlog-12 arguments do
+have roots in B; z₁ and 1−z₂ block).
+
+**Terminal: the degree-1 place yields exactly one computable non-redundant
+CGZ invariant, `ε₃`.** 8/12/24 need the Kummer extension `B(z^{1/m})` —
+the unchecked H-side descent. Not a claim that they are trivial.
+
+**Next:** the second-Bloch-element test is now the only cheap live option —
+`c₂ = 0` at `m = 3` is a single data point, and whether `ε` separates
+elements or is generically carried by one symbol is unanswered. Needs a
+second exceptional-unit field with a degree-1 place at 5.
