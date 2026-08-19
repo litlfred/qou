@@ -1,0 +1,78 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_v1_computable_m_terminal_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_v1_computable_m_terminal_probe.py",
+ "commitSha": "e4900535b8dacfaaac58be715177e686f6673329",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 Remark 1.9, eqn (21), Proposition 2.5; Addenda 32-38 (this repo)",
+ "checks": {
+  "alpha_root_exact": true,
+  "all_four_arguments_are_units": true,
+  "Z5_unit_teichmuller_dlogs_are_multiples_of_6": true,
+  "computable_m_are_exactly_3_and_6": true,
+  "roots_constructed_where_predicted_and_absent_where_not": true,
+  "blockers_are_the_dlog6_symbols_at_m12": true,
+  "control_criterion_says_no_for_8_12_24": true,
+  "control_criterion_says_yes_for_3_and_6": true,
+  "wF_kills_the_2_part_of_Z6": true,
+  "surviving_part_of_Z6_under_wF_is_order_3": true,
+  "exactly_one_computable_nonredundant_m_at_v1": true
+ },
+ "result": {
+  "dlog24_of_teichmuller": {
+   "z1": 6,
+   "z2": 12,
+   "1-z1": 12,
+   "1-z2": 6
+  },
+  "m_th_roots_stay_in_B": {
+   "3": true,
+   "6": true,
+   "8": false,
+   "12": false,
+   "24": false
+  },
+  "construction_agrees_with_the_criterion": {
+   "3": true,
+   "6": true,
+   "8": true,
+   "12": true,
+   "24": true
+  },
+  "symbols_blocking_each_m": {
+   "3": [],
+   "6": [],
+   "8": [
+    "z1",
+    "z2",
+    "1-z1",
+    "1-z2"
+   ],
+   "12": [
+    "z1",
+    "1-z2"
+   ],
+   "24": [
+    "z1",
+    "z2",
+    "1-z1",
+    "1-z2"
+   ]
+  },
+  "terminal_map_at_v1": {
+   "3": "the value (Addenda 33-35)",
+   "6": "computable in B, but collapses onto m = 3",
+   "8": "requires leaving B",
+   "12": "requires leaving B",
+   "24": "requires leaving B"
+  },
+  "verdict": "The degree-1 place of K = Q(alpha) yields exactly ONE computable non-redundant CGZ invariant, eps_3. m = 6 is computable but collapses onto it; m = 8, 12, 24 need the m-th roots to leave B, i.e. the Kummer extension B(z^{1/m}) whose descent CGZ Remark 1.9 flags as unchecked. The shortcut that made v_1 easy does not extend past m = 6.",
+  "corrects": "gswz_epsm_m6_rwf_value_probe.py predicted 'the same collapse at m = 12 and m = 24, leaving m = 8 as the only structurally new live case'. Wrong: 12 and 24 are not computable in B either. That was a prediction where a measurement was available."
+ },
+ "scope": "scope-(a) TERMINAL NEGATIVE for the m-sweep at the degree-1 place, and a correction to a prediction made minutes earlier in gswz_epsm_m6_rwf_value_probe.py. Everything that made v_1 tractable rests on the m-th roots staying inside B = Q_25, which for a Z_5 unit holds exactly when gcd(m, 24) divides its Teichmueller discrete log. The four arguments of the 5_2 element have dlogs 6 and 12, so the criterion holds for m = 3 and 6 and FAILS for m = 8, 12 and 24 -- not just for 8, as the m = 6 probe predicted. Verified by construction as well as by divisibility: exact roots are built where the criterion says yes and are absent where it says no, and controls confirm it is neither vacuously yes nor vacuously no. Combined with the m = 6 collapse onto m = 3 (w_F = 4 kills the 2-part of Z/6; the surviving 3-part is the m = 3 group), the degree-1 place yields exactly ONE computable non-redundant invariant, eps_3. m = 8, 12, 24 require the Kummer extension B(z^{1/m}), i.e. the H-side descent CGZ Remark 1.9 flags as unchecked. This CLOSES the m-sweep here rather than opening it; it does NOT claim eps_8, eps_12, eps_24 are undefined or trivial, only that they are unreachable by the method that produced eps_3. Nothing wired."
+}
