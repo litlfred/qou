@@ -1,16 +1,17 @@
 {
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
- "scriptHash": "7967e9468ef0",
- "commitSha": "15bd3d384436f4cf22af416b1bdb8398f968f63d",
+ "scriptHash": "4e2d1f936b00",
+ "commitSha": "11cb2ba535f10a5f1a196da0332a9aa0f3eba658",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
   "cosmetic": 0,
   "cosmetic_env_differs": 0,
-  "cosmetic_import_cone_drift": 8,
+  "cosmetic_import_cone_drift": 2,
+  "cosmetic_import_infra_only": 6,
   "cosmetic_strips_provenance": 0,
-  "substantive": 267,
+  "substantive": 268,
   "rewritten": 376,
   "unresolvable": 113,
   "unparseable": 0
@@ -35,8 +36,21 @@
      "computations/_li_2_q_util.py (depth 5)",
      "computations/canonical_braid_crossings.py (depth 5)",
      "computations/markov/markov_trace_canonical.py (depth 5)"
-    ]
+    ],
+    "drift_kind": "numeric-bearing"
    },
+   {
+    "witness": "computations/yekutieli-volume-join.witness.json",
+    "producer": "computations/yekutieli_volume_join.py",
+    "recorded": "9d4761a97964",
+    "current": "b39bd1c51f13",
+    "import_drift": [
+     "computations/y_lambda_wenzl_bridge.py (depth 1)"
+    ],
+    "drift_kind": "numeric-bearing"
+   }
+  ],
+  "cosmetic_import_infra_only": [
    {
     "witness": "computations/casimir-d6-qcorrection-structure.witness.json",
     "producer": "computations/casimir_d6_qcorrection_structure.py",
@@ -44,7 +58,8 @@
     "current": "5c168b4ff8f9",
     "import_drift": [
      "computations/substrate/witness_base.py (depth 1)"
-    ]
+    ],
+    "drift_kind": "infra-only"
    },
    {
     "witness": "computations/habiro/habiro-taylor-extraction.witness.json",
@@ -54,7 +69,8 @@
     "import_drift": [
      "computations/substrate/_precision.py (depth 1)",
      "computations/substrate/witness_base.py (depth 1)"
-    ]
+    ],
+    "drift_kind": "infra-only"
    },
    {
     "witness": "computations/probes/one-loop-cusp-normalisation-tension.witness.json",
@@ -64,7 +80,8 @@
     "import_drift": [
      "computations/substrate/_precision.py (depth 1)",
      "computations/substrate/witness_base.py (depth 1)"
-    ]
+    ],
+    "drift_kind": "infra-only"
    },
    {
     "witness": "computations/qbeta/qbeta-c4-qhermite-entry-gate.witness.json",
@@ -73,7 +90,8 @@
     "current": "dcfe9ac029ce",
     "import_drift": [
      "computations/substrate/witness_base.py (depth 1)"
-    ]
+    ],
+    "drift_kind": "infra-only"
    },
    {
     "witness": "computations/s5-so3-su2-u1-fiber-action.witness.json",
@@ -82,7 +100,8 @@
     "current": "d62058fdfbee",
     "import_drift": [
      "computations/substrate/witness_base.py (depth 1)"
-    ]
+    ],
+    "drift_kind": "infra-only"
    },
    {
     "witness": "computations/y-lambda-macdonald-telescope.witness.json",
@@ -91,16 +110,8 @@
     "current": "c3ac558daace",
     "import_drift": [
      "computations/substrate/witness_base.py (depth 1)"
-    ]
-   },
-   {
-    "witness": "computations/yekutieli-volume-join.witness.json",
-    "producer": "computations/yekutieli_volume_join.py",
-    "recorded": "9d4761a97964",
-    "current": "b39bd1c51f13",
-    "import_drift": [
-     "computations/y_lambda_wenzl_bridge.py (depth 1)"
-    ]
+    ],
+    "drift_kind": "infra-only"
    }
   ],
   "cosmetic_strips_provenance": [],
@@ -1688,6 +1699,12 @@
     "producer": "computations/delta_lambda_v_hat_z_transfer_phase5d_4.py",
     "recorded": "e389632b77e0",
     "current": "ba4383ceb7e8"
+   },
+   {
+    "witness": "computations/witness-staleness-triage.witness.json",
+    "producer": "computations/witness_staleness_triage.py",
+    "recorded": "7967e9468ef0",
+    "current": "4e2d1f936b00"
    },
    {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",
