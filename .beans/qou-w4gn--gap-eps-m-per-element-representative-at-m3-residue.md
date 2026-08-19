@@ -106,3 +106,25 @@ the Bloch condition does **not** pin `(2,1)`.
 
 **Still open:** CGZ's lift where the obstruction does *not* vanish for
 free; any place where the arithmetic is not trivial; and `m ≥ 4`.
+
+### 2026-08-19 (PR #5296, Addendum 37) — the census, and m=2 is empty
+
+Live set over `F = Q₅`: **`m ∈ {3, 6, 8, 12, 24}`**. `m = 3` alone gets a
+*unique* lift (`gcd(3, w_{Q₅}) = gcd(3,4) = 1`); 6, 8, 12, 24 have a proper
+eigenspace but only `R^{w_F}` defined — still nontrivial there, so
+information survives. `m | 4` is vacuous. Eigenspace sizes measured by
+brute force, then checked against `m·gcd(m,4)`.
+
+**Corrected my own queued guess:** `μ_m ⊂ Q₅` iff `m | 4`, not "m coprime
+to 4" — so 8, 12, 24 qualify.
+
+**Corrected a claim I repeated all arc:** `m = 2` is vacuous in *every*
+field of char ≠ 2. `−1` forces `F₂ = F`, `Gal` trivial, `w_F` even, so
+`gcd(2, w_F) > 1`, Theorem 1.2 never applies at `n = 2`, and only
+`R^{w_F} = 1` is defined. **There was never a non-vacuous CGZ target at
+m = 2.** PR #4968's `+1` is forced by the group, not measured — not wrong,
+but empty as a CGZ value. Stop citing it as the programme's solid result.
+
+**Next:** `m = 6` at `v₁` — smallest live case beyond 3, and the first
+where only `R^{w_F}` exists, so it tests whether the `R^{w_F}` route
+carries a computable value in practice and not just in principle.
