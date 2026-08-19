@@ -42,3 +42,33 @@ apoly_census_ldegree_certification_probe.py, 3/3. The 6_1 prediction
 chain (DT_max = #connections = 5) is recorded as PREDICTION — the
 independent resurgence DT count for 6_1 is still the missing piece of
 the third-knot test (full=geom+1 is by construction, not a test).
+
+## 2026-08-19 — a sibling used this output and got r(6₁)=4 three independent ways
+
+PR #5293 (`qou-gz37`, `claude/gz-third-knot-rank-grading-2026-08-19`, draft)
+reads BOTH this bean's census A-polynomial output and `qou-6ort`'s ki6c
+extraction, and credits them. Result: `r(6₁) = 4` by three independent routes —
+DG §6's algebraic number field (`x⁴−2x³+x²+3x+1`, disc 257), this bean's Newton
+polygon (geometric A-poly L-degree of K4_1), and ki6c's stationary-phase gluing
+quartic — with an EXACT field-equality witness between the first and third
+(`γ := −α³+3α²−4α−1` satisfies `γ⁴−γ³−4γ²+4γ+8 = 0`, `γ/2` a root of the ki6c
+quartic; index-2 scaling, disc 16448 = 2⁶·257).
+
+**They independently confirmed, and improved on, this bean's two caveats.**
+The `full = geom + 1` leg being definitional (not evidence) is now the Lean
+theorem `plus_one_leg_is_definitional`; and "these are saddles/critical points,
+the DT invariants live on the rays BETWEEN them — so none of this is a DT
+count" is stated in their artifacts. My prose caveats became theorems.
+
+**This bean's open item is NOT closed and they say so**: an independent
+resurgence DT count for 6₁ is their open item 1, naming this same gap. `r` is
+the R1 *shadow*, not the count.
+
+**Also from their sweep, worth carrying**: their M3 sweep keyed on the word
+"Stokes" and missed three load-bearing papers — ki6c has ZERO "Stokes" hits.
+The lesson generalises the corpus-grep discipline: *a sweep keyed on the
+vocabulary of the answer you expect will miss the paper that answers in
+different words.* Re-sweeping on structural vocabulary matched 94/371.
+
+Coordination posted on #5293; `r`, the field identification, and the
+9₁₂ / (−2,3,9) predictions are theirs. Do not re-derive.

@@ -69,3 +69,20 @@ explicitly, not assumed.
 sum at the N needed for 4+ rungs is the compute risk (long-compute logging
 discipline applies). NOT a from-scratch saddle-point/Feynman-diagram build,
 which is what the previous note implied.
+
+## 2026-08-19 — the ki6c saddle leg has been consumed; the κ-series has not
+
+PR #5293 used this bean's ki6c extraction as one of three independent routes to
+`r(6₁) = 4`, and proved the ki6c gluing quartic generates the SAME field as
+DG §6's `x⁴−2x³+x²+3x+1` (exact witness in `ℤ[α]`). So the *saddle/field* leg of
+the ki6c extraction is now spent and owned by `qou-gz37`.
+
+**What remains here is distinct and still open: the κ-series itself.** `r` is a
+rank (the R1 shadow); the κᵢ are the coefficients of Ohtsuki's ℏ-expansion of
+⟨6₁⟩_N. Different objects. The rescope above (reuse
+`qbeta_ohtsuki_higher_rungs.py`; new PSLQ basis; ς/ω validation gate) is
+unaffected by #5293 and is now DOUBLY motivated: it is the perturbative input a
+Borel/Stokes extraction needs, i.e. a step toward #5293's open item 1 (an
+independent resurgence DT count for 6₁, which would turn `r = 4` into a test of
+the DT correspondence). **Precision, so this is not over-sold: a κ-series is
+NOT a DT count.** Stated that way on #5293 too.
