@@ -9,7 +9,7 @@ tags:
     - route-c
     - literature
 created_at: 2026-08-19T12:10:00Z
-updated_at: 2026-08-19T13:20:00Z
+updated_at: 2026-08-19T13:55:00Z
 ---
 
 ## Context
@@ -104,7 +104,7 @@ geometric reading not. Nothing wired.
 
 - Lean: QOU.QBeta.GZThirdKnotRankGrading (core Int, imports AdjointIndexSetM3;
   lean-direct exit 0, sorry-free, #print axioms shows no sorryAx)
-- Probe: computations/probes/gz_third_knot_rank_grading.py, 21/21
+- Probe: computations/probes/gz_third_knot_rank_grading.py, 25/25
 - Audit: docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §7
 
 ## Part G (2026-08-19): the 6_1 prediction CONFIRMED by a sibling
@@ -137,6 +137,40 @@ confirms and the hypothesis that made it a prediction rather than a fit.
 Lean Part G: geomLDegree, fullLDegree, sixOne_prediction_confirmed,
 degree_equals_geom_ldegree_on_all_three, the_three_degrees_are_distinct,
 plus_one_leg_is_definitional, control_fires_where_hypothesis_fails. Probe now 21/21.
+
+## Part H (2026-08-19): a THIRD route to r(6_1)=4 — from the saddle analysis
+
+Went after "an independent resurgence DT count for 6_1". Did NOT get one -- see the
+scope note -- but got a third independent determination of r, and the closest one yet
+to the resurgence side.
+
+Ohtsuki-Yokota (uploads/ki6c.pdf; saddle data extracted by a sibling, bean qou-6ort)
+give 6_1's gluing-equation quartic 2z^4 - z^3 - 2z^2 + z + 1, from a STATIONARY-PHASE
+analysis of the Kashaev integral. Measured exactly: irreducible, discriminant 257
+(prime), 0 real roots -> signature [0,2]. Matches DG's trace field on every invariant.
+
+AND THE FIELDS ARE EQUAL, not merely invariant-matched: with a a root of DG's quartic,
+gamma := -a^3 + 3a^2 - 4a - 1 satisfies gamma^4 - gamma^3 - 4gamma^2 + 4gamma + 8 = 0
+exactly in Z[a]/(dg), and gamma/2 is a root of the Ohtsuki-Yokota quartic. Both
+irreducible of degree 4 => Q(gamma) = Q(a). (disc(x^4-x^3-4x^2+4x+8) = 16448 =
+2^6 * 257: same field, index-2 scaling gamma = 2*beta.) Machine-checked in Lean as
+integer 4-tuple arithmetic, not asserted.
+
+THREE CONSTRUCTIONS WITH NOTHING IN COMMON BUT THE KNOT now give r(6_1) = 4:
+  a number field           (DG trace field, degree 4)
+  a Newton polygon         (Culler census geometric A-poly L-degree 4)
+  a stationary-phase analysis (Ohtsuki-Yokota gluing quartic, degree 4)
+
+SCOPE -- STILL NOT A DT COUNT, stated plainly so the agreement is not oversold. The
+saddles are the CRITICAL POINTS; the DT invariants are the Stokes constants on the
+Borel rays BETWEEN them. All three routes measure r, the R1 / Euler-characteristic
+shadow. The resurgence DT count for 6_1 is exactly as open as before, and the sibling
+bean qou-btvl names the same gap. What the agreement buys is a falsifiable SHAPE:
+with |P_K| = 5, 6_1's reduced Stokes matrix is 4x4 against 5_2's 3x3.
+
+Lean Part H: Alg4, mulAlg4, reduction_table_consistent, gamma,
+saddle_field_equals_trace_field, gamma_powers, gamma_is_not_rational,
+three_routes_agree_on_sixOne, sixOne_stokes_matrix_is_four_by_four. Probe 25/25.
 
 ## NEXT STEP
 

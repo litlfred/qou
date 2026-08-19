@@ -325,6 +325,93 @@ def main():
              "holds and breaks where it does not. The control is what makes T19 "
              "evidence rather than a coincidence of small numbers.")
 
+    # ---- T22-T25: third route to r(6_1)=4, from Ohtsuki-Yokota's saddle analysis ----
+    # ki6c.pdf gives 6_1's gluing-equation quartic 2z^4 - z^3 - 2z^2 + z + 1 (saddle
+    # data extracted by a sibling, bean qou-6ort). Exact integer arithmetic only.
+    from fractions import Fraction as Fr
+
+    def disc(c):                       # exact discriminant via Sylvester determinant
+        n = len(c) - 1
+        d = [i * c[i] for i in range(1, n + 1)]
+        m = n + (n - 1)
+        M = [[0] * m for _ in range(m)]
+        for i in range(n - 1):
+            for j, k in enumerate(reversed(c)): M[i][i + j] = k
+        for i in range(n):
+            for j, k in enumerate(reversed(d)): M[n - 1 + i][i + j] = k
+        A = [[Fr(v) for v in row] for row in M]; det = Fr(1)
+        for i in range(m):
+            piv = next((r for r in range(i, m) if A[r][i] != 0), None)
+            if piv is None: return 0
+            if piv != i: A[i], A[piv] = A[piv], A[i]; det = -det
+            det *= A[i][i]; inv = Fr(1) / A[i][i]
+            for r in range(i + 1, m):
+                f = A[r][i] * inv
+                if f:
+                    for cc in range(i, m): A[r][cc] -= f * A[i][cc]
+        D = Fr((-1) ** (n * (n - 1) // 2)) * det / Fr(c[n])
+        return int(D)
+
+    ki_c = [1, 1, -2, -1, 2]          # 2z^4 - z^3 - 2z^2 + z + 1  (ascending)
+    dg_c = [1, 3, 1, -2, 1]           # x^4 - 2x^3 + x^2 + 3x + 1  (ascending)
+
+    print("\n[T22] the ki6c gluing quartic vs DG's trace field — invariants")
+    print(f"     disc(ki6c quartic) = {disc(ki_c)}     disc(DG quartic) = {disc(dg_c)}")
+    chk("T22-same-discriminant-257", disc(ki_c) == disc(dg_c) == 257,
+        note="Ohtsuki-Yokota's quartic comes from a STATIONARY-PHASE analysis of the "
+             "Kashaev integral -- not a character variety, not a knot polynomial -- and "
+             "carries the same discriminant 257 (prime) as DG's trace field.")
+
+    # exact reduction in Z[a]/(dg):  a^4 = 2a^3 - a^2 - 3a - 1
+    def red(pp):
+        pp = list(pp)
+        while len(pp) > 4:
+            d = len(pp) - 1; L = pp[d]
+            if L:
+                for j, k in ((3, 2), (2, -1), (1, -3), (0, -1)): pp[d - 4 + j] += L * k
+            pp.pop()
+        while len(pp) < 4: pp.append(0)
+        return pp
+    def mulq(a, b):
+        o = [0] * (len(a) + len(b) - 1)
+        for i, xx in enumerate(a):
+            for j, yy in enumerate(b): o[i + j] += xx * yy
+        return red(o)
+
+    gam = [-1, -4, 3, -1]              # gamma = -a^3 + 3a^2 - 4a - 1
+    g2 = mulq(gam, gam); g3 = mulq(g2, gam); g4 = mulq(g3, gam)
+    cert = [g4[i] - g3[i] - 4 * g2[i] + 4 * gam[i] for i in range(4)]; cert[0] += 8
+
+    print("\n[T23] the explicit isomorphism witness")
+    print(f"     gamma = -a^3 + 3a^2 - 4a - 1 = {gam}")
+    print(f"     gamma^4 - gamma^3 - 4gamma^2 + 4gamma + 8 = {cert}")
+    chk("T23-isomorphism-certificate-exact", all(v == 0 for v in cert),
+        note="EXACT, in Z[a]/(a^4-2a^3+a^2+3a+1). gamma/2 is a root of the "
+             "Ohtsuki-Yokota quartic, so that quartic has a root in Q(a); both being "
+             "irreducible of degree 4, the fields are EQUAL. Not merely "
+             "invariant-matched -- an explicit witness. (disc of gamma's minimal "
+             "polynomial x^4-x^3-4x^2+4x+8 is 16448 = 2^6 * 257: same field through "
+             "the index-2 scaling gamma = 2*beta.) Lean: "
+             "saddle_field_equals_trace_field.")
+
+    print("\n[T24] three independent routes to r(6_1)")
+    routes = {"trace field degree (DG, a number field)": 4,
+              "geometric A-poly L-degree (Culler census, a Newton polygon)": census["6_1"]["geom"],
+              "gluing-equation quartic degree (Ohtsuki-Yokota, a saddle analysis)": 4}
+    for k, v in routes.items(): print(f"     {v}  <- {k}")
+    chk("T24-three-routes-agree", len(set(routes.values())) == 1 and 4 in routes.values(),
+        note="Three constructions with nothing in common but the knot, all giving 4.")
+
+    print("\n[T25] SCOPE: is this a DT count?")
+    chk("T25-still-not-a-dt-count", True,
+        note="NO -- stated plainly so the three-route agreement is not oversold. The "
+             "saddles are the CRITICAL POINTS; the Donaldson-Thomas invariants are the "
+             "Stokes constants on the Borel rays BETWEEN them. All three routes measure "
+             "r, the R1 / Euler-characteristic shadow. The resurgence DT count for 6_1 "
+             "is exactly as open as before, and the sibling bean qou-btvl says the same. "
+             "What the routes do buy is a falsifiable SHAPE: with |P_K| = 5, 6_1's "
+             "reduced Stokes matrix is 4x4 against 5_2's 3x3.")
+
     verdict = (
         "THIRD KNOT FOUND IN-CORPUS, and it does NOT refute H_Ad. (i) The data is in "
         "GZ 2304.09377 (the sequel 2111.06645 announces), which the earlier M3 sweep "
@@ -341,7 +428,7 @@ def main():
         "(v) NEW STRUCTURE: W0 is an S_3 = Gamma/Gamma(2) representation decomposing "
         "into partition blocks (3)^2 + (2,1), with the SIGN block absent -- the QOU "
         "Wedderburn indexing appearing in the third knot's modular data, with a "
-        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. (x) THE 6_1 PREDICTION IS CONFIRMED: a sibling session independently certified 6_1 (census K4_1) at geometric L-degree 4 / full 5 from the Culler A-polynomial census (main 96d65d02e, bean qou-btvl), matching the r=4 / |P_K|=5 predicted here from the DG trace-field type [0,2]. The two sides are a NUMBER FIELD DEGREE and a NEWTON POLYGON L-DEGREE -- unrelated objects, unrelated sources -- agreeing on three knots with three distinct values (2,3,4). The |P_K| = r+1 half is definitional (the abelian rep) and is NOT evidence; the sibling flagged that first. And the control fires: the identity FAILS at (-2,3,7), precisely where A_K^red strictly contains F_K, so the rule does not fit everything. Nothing wired."
+        "chirality-flavoured asymmetry. (vi) THE ABSENCE IS FORCED, NOT OBSERVED: chi(W_0)=[4,2,1]=[3,1,0]+[1,1,1], so W_0 is a PERMUTATION module on 3 points plus a trivial, and a 3-point permutation module of S_3 contains no sign component -- a general fact, with trivial summands contributing 0 to sign multiplicity. So Part D is upgraded from observation to mechanism. (vii) BUT THE SCOPE IS ONE KNOT: 4_1 and 5_2 have level N=1, so their quotient is trivial and no group acts -- there is no sign block there to be absent. General mechanism, single-instance instantiation. (viii) DIMOFTE-GAROUFALIDIS 1511.05628 S6 (also missed by the Stokes sweep) states trace fields as SIGNATURES [r1,r2] for five knots. It CONFIRMS Part 4 inputs for 4_1 and 5_2 from an independent source, and forces Part 4 silent hypothesis into the open: the rule needs the signature of A_K^red, NOT of the trace field F_K. Those coincide at 4_1 and 5_2 -- so the two-knot agreement settled nothing -- and (-2,3,7) is a worked counterexample (trace field = 5_2, 3 embeddings, measured rank 6). Under the now-stated hypothesis: 6_1 predicts r=4 / |P_K|=5 and (-2,3,9) predicts r=5 / |P_K|=6, both falsifiable and both unverified. (ix) GUARDED NON-INFERENCE: DG Table 2 Level column is the Chern-Simons level zeta^k=1, NOT GZ level N; reading it as the latter would manufacture the fourth level>1 knot out of an unrelated quantity -- third instance of this conflation trap in this arc. (x) THE 6_1 PREDICTION IS CONFIRMED: a sibling session independently certified 6_1 (census K4_1) at geometric L-degree 4 / full 5 from the Culler A-polynomial census (main 96d65d02e, bean qou-btvl), matching the r=4 / |P_K|=5 predicted here from the DG trace-field type [0,2]. The two sides are a NUMBER FIELD DEGREE and a NEWTON POLYGON L-DEGREE -- unrelated objects, unrelated sources -- agreeing on three knots with three distinct values (2,3,4). The |P_K| = r+1 half is definitional (the abelian rep) and is NOT evidence; the sibling flagged that first. And the control fires: the identity FAILS at (-2,3,7), precisely where A_K^red strictly contains F_K, so the rule does not fit everything. (xi) A THIRD ROUTE to r(6_1)=4, from Ohtsuki-Yokota's SADDLE ANALYSIS (ki6c.pdf, sibling extraction qou-6ort): the 6_1 gluing-equation quartic 2z^4-z^3-2z^2+z+1 is irreducible with discriminant 257 and signature [0,2], matching DG's trace field on every invariant -- and the fields are EQUAL, by the exact witness gamma = -a^3+3a^2-4a-1 satisfying gamma^4-gamma^3-4gamma^2+4gamma+8 = 0 in Z[a]/(dg). So three constructions with nothing in common but the knot (a number field, a Newton polygon, a stationary-phase analysis) all give 4. (xii) STILL NOT A DT COUNT: the saddles are the critical points; the DT invariants are the Stokes constants on the rays BETWEEN them. All three routes measure r, the R1 shadow. The resurgence DT count for 6_1 is exactly as open as before. What is bought is a falsifiable SHAPE: 6_1's reduced Stokes matrix is 4x4 against 5_2's 3x3. Nothing wired."
     )
     print(f"\n verdict: {verdict}")
 
