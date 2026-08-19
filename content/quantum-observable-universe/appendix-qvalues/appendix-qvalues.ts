@@ -22,6 +22,8 @@ export default chapter({
         "fivetwo-trace-field",
         "fivetwo-saddle-sum-rule",
         "fivetwo-bar-odd-arithmetic-home",
+        "fivetwo-dt-spectrum-split",
+        "fivetwo-stokes-unimodular",
       ],
     },
     {
