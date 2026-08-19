@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T17:19:14Z
-updated_at: 2026-08-19T18:25:01Z
+updated_at: 2026-08-19T18:48:01Z
 ---
 
 ## The contradiction
@@ -224,3 +224,76 @@ the muon value, or the muon anchor is retired and the 262 witnesses plus the
 territory and needs the owner. Whichever way it goes, the LABEL and the
 COMPUTED VALUE have to move together — the same discipline this function's own
 docstring records having violated once already.
+
+
+## RESOLVED 2026-08-19 — and the blast radius was 208 producers, not an audit nit
+
+The entry above stopped at "the audit compares muon witnesses against the
+proton pin". That understated it by a lot. `computations/substrate/q_parameter.py:113`
+guards the muon override on the same file:
+
+```python
+_d = _json.loads(_QPIN.read_text())["derived_50_digit"]
+if not _d["q"].startswith("1.109978595557"):
+    raise ValueError(f"q-pinning witness q={_d['q'][:16]} not canonical muon")
+```
+
+and `q_parameter` refuses to fall back — correctly, per its own beans yfvb /
+tnjb anti-corruption note. So on the committed tree every producer whose stem
+sits in `q0_anchor_manifest.json` `ideal_muon` dies at import:
+
+```
+RuntimeError: q_parameter: ideal/muon anchor requested (QOU_Q0_ANCHOR='ideal')
+but the muon override could not be established: ValueError('q-pinning witness
+q=1.10997858275138 not canonical muon'). Refusing to fall back to proton
+silently (bean yfvb / tnjb anti-corruption).
+```
+
+Measured over all 257 `ideal_muon` stems (all 257 have live files):
+
+| tree | pin-guard failures | imports clean |
+|---|---|---|
+| committed (proton pin) | **208** | 47 |
+| muon value restored | **0** | 253 |
+
+Pre-existing on `origin/main` 391604e9f: a 20-producer sample fails 14/20
+there, the other 6 dying earlier on import wiring. Fixing the wiring *increases*
+what is visible here rather than causing it.
+
+### Why it went unnoticed for four days
+
+Two independent blindnesses, and both are worth recording because each one
+alone would have been enough:
+
+1. **The importability audit's own loader.** It ran `python3 -c "<loader>"
+   <file>`, so `sys.argv[0]` was `-c`. `q_parameter` resolves the anchor from
+   the argv *stem*, so no stem ever matched the manifest, every producer pinned
+   to proton, and the muon branch was never executed. The audit reported all
+   257 importable. Fixed in `5c1149565` — the loader now sets
+   `sys.argv = [<producer filename>]`.
+
+2. **The audit witnesses were green off dirty trees.** Committed
+   `q0-anchor-consistency-audit.witness.json` records `Q0_FLIP: 0` at
+   2026-08-19T13:06Z on main, while the committed pin file was already proton.
+   Both are only true together if a producer had transiently rewritten the pin
+   file back to muon in the working tree at run time. `Q0_OK 658 = 396 + 262`
+   exactly — the same witness set moving between OK and FLIP as the comparand
+   changes.
+
+### Fix
+
+`1f25060f2` restores the file's pre-sweep content from `9a9c6b31c^` — identical
+key set, only values differ. This is a **restore, not a re-pin**: the proton
+50-digit string already exists as `qou_substrate.constants.Q_50_DIGIT_STR`, so
+regenerating this file at proton produced a duplicate of a constant we already
+had and left nothing in the tree holding the muon value. It does not touch the
+2026-08-07 proton-default directive, which governs what *new compute* pins to,
+not whether the muon anchor still has a definition.
+
+Result: pin-guard 208 -> 0, `Q0_FLIP` 262 -> 0, all blocking precision gates
+green.
+
+**The general lesson for the tnjb / qou-1c4y sweeps:** a witness that some
+piece of infrastructure reads as *the definition of an anchor* is not a
+migratable witness. Re-pinning it does not move a value to the other layer, it
+removes the layer. Worth an exclusion list before the next batch runs.
