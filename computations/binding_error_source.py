@@ -8,11 +8,26 @@ SATURATING observable, but binding energy is EXTENSIVE (grows with A).
 
   • |tr_free| ≈ 1 (normalized), so Δtr ≤ |tr_free| ≈ 1 — a hard ceiling.
   • Therefore B = m_e·Vol(𝓑₃)·Δtr ≤ m_e·Vol ≈ 3.74 MeV for ANY A.
-  • The deuteron (B=2.2 < 3.74) sits below the ceiling → works (+0.2%).
+  • The deuteron (B=2.2 < 3.74) sits below the ceiling → −6.3%.
   • ³He/⁴He (B=7.7/28.3 > 3.74) are clipped → −59%/−88%.
 
 An intensive observable cannot represent an extensive quantity. This
 is the error source — not a missing volume or a convention artifact.
+
+⚠ NUMBER CORRECTED 2026-08-15 (bean `qou-jdhm`). The deuteron line read
+"→ works (+0.2%)". That figure is trace **convention C**
+(z = 1/(√q + 1/√q) = 0.4993203), excised by owner ruling 2026-08-09 in
+favour of **convention D** (z = q³/(q²+1) = 0.6126880); under D the same
+computation gives −6.3%, and `binding-link-volumes.witness.json` has
+always recorded that assertion as `"passed": false`.
+
+**The FINDING above is unaffected**, which is why only the number moved.
+The argument is that Δtr saturates while binding is extensive, and −6.3%
+at A=2 against −59%/−88% at A≥3 exhibits the same ceiling behaviour that
++0.2% did. What is lost is the claim that the deuteron *works* — it does
+not, it merely fails far less. That is a cleaner reading of the ceiling
+argument rather than a weaker one: there is no longer a special A=2
+success needing its own explanation.
 
 STRUCTURAL POINTER (not a calibrated formula — calibration would be
 fitting): the Markov trace is partition-function-like (multiplicative
@@ -102,7 +117,9 @@ def main():
         "Error-source diagnosis for the A≥3 binding undershoot: Δtr is an "
         "intensive, saturating observable (≤ |tr_free| ≈ 1), capping "
         "B = m_e·Vol·Δtr at ~3.74 MeV for any A, while physical binding is "
-        "extensive. Deuteron sits below the ceiling (+0.2%); A≥3 is clipped "
+        "extensive. Deuteron sits below the ceiling (−6.3%, trace convention "
+        "D; the +0.2% previously quoted here was convention C, excised by "
+        "owner ruling 2026-08-09 — bean qou-jdhm); A≥3 is clipped "
         "(−59%/−88%). Structural pointer: the extensive analog is -log(tr), "
         "which grows with A — but no recalibrated formula is claimed (fitting)."
     )

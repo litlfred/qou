@@ -2162,6 +2162,11 @@ function main() {
   const argv = process.argv.slice(2);
   const roots: string[] = [];
   let jsonOut = "docs/audits/2026-06-17-lean-vacuity-axiom-audit.json";
+  // Whether `--json` was passed. A caller who names an output path has chosen
+  // where the report goes and may write whatever they scanned; a caller who did
+  // not is aiming at the committed corpus record by default, which a partial
+  // scan must not overwrite. See the guard above `writeFileSync`.
+  let jsonExplicit = false;
   let writeSc = false;
   let quiet = false;
   let onlyCat: Category | undefined;
@@ -2182,7 +2187,10 @@ function main() {
   let checkLedger: string | undefined;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (a === "--json") jsonOut = argv[++i];
+    if (a === "--json") {
+      jsonOut = argv[++i];
+      jsonExplicit = true;
+    }
     else if (a === "--write-sidecars") writeSc = true;
     else if (a === "--quiet") quiet = true;
     else if (a === "--only") onlyCat = argv[++i] as Category;
@@ -2313,7 +2321,42 @@ function main() {
     console.error("  Check the scan root(s); pass a directory that contains .lean files.");
     process.exit(2);
   }
-  writeFileSync(resolve(REPO_ROOT, jsonOut), JSON.stringify(witness, null, 2) + "\n");
+  // …and the SAME reasoning one step further out: a PARTIAL scan must not
+  // overwrite the corpus record either.  The zero-file guard above was added
+  // after a stray `--help` replaced a real audit with zeros; it stops that case
+  // and nothing else.  The documented CI invocation
+  //
+  //     bun run … lean-vacuity-axiom-audit.ts <changed .lean files> --quiet --fail-on …
+  //
+  // passes explicit paths, scans a handful of files, and sailed straight past
+  // it.  Measured 2026-08-15 (bean `qou-c7jp`): a 12-file diff run replaced a
+  // 2765-file / 169-flagged / 94-defect audit with `scanned 12, flagged 0,
+  // defects 0` — a 3,736-line deletion that reads as a CLEAN CORPUS over 94
+  // real defects.  CI never commits the file, so this only ever arrives from a
+  // local run plus `git add -A`, surfacing as an unrelated diff in an unrelated
+  // PR.
+  //
+  // A caller who passes `--json` has chosen where the report goes and may write
+  // whatever they scanned; the default path is the committed record and is
+  // reserved for a corpus-wide scan.
+  if (roots.length > 0 && !jsonExplicit) {
+    if (!quiet) {
+      console.error(
+        `lean-vacuity-axiom-audit: partial scan (${files.length} file(s) from explicit path(s)) — NOT writing ${jsonOut}.`,
+      );
+      console.error(
+        "  That file is the corpus-wide record; a partial scan would overwrite it with a",
+      );
+      console.error(
+        "  smaller count that reads as a clean corpus. Gate results below are unaffected.",
+      );
+      console.error(
+        "  To write a partial report anyway, name an output: --json <path>.",
+      );
+    }
+  } else {
+    writeFileSync(resolve(REPO_ROOT, jsonOut), JSON.stringify(witness, null, 2) + "\n");
+  }
 
   if (writeSc) {
     const scriptHash = hashFile(resolve(REPO_ROOT, SCRIPT_REL)) ?? "unknown";
@@ -2469,8 +2512,13 @@ function main() {
     }
   }
 
+  // Name the report only when one was actually written. Printing `jsonOut`
+  // unconditionally made a partial scan look like it had just produced that
+  // file's contents — which is the very confusion the write guard above exists
+  // to prevent, restated in the summary line.
+  const wroteReport = !(roots.length > 0 && !jsonExplicit);
   console.log(
-    `\n${jsonOut} — scanned ${files.length} .lean, ${totalHits} defect candidate(s) across ${Object.keys(flagged).length} file(s) (${exemptHits} exempt).`,
+    `\n${wroteReport ? jsonOut : "(partial scan — no report written)"} — scanned ${files.length} .lean, ${totalHits} defect candidate(s) across ${Object.keys(flagged).length} file(s) (${exemptHits} exempt).`,
   );
   for (const c of ALL_CATEGORIES)
     if (counts[c]) console.log(`  ${c}: ${counts[c]}`);

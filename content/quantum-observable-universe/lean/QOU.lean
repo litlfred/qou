@@ -1011,6 +1011,29 @@ import QOU.MassTheory.GermConnectionGaugeCovariance
 -- here, so nothing built them. Both verify lean-direct exit 0.
 import QOU.MassTheory.GermRootVectorGaugeFixing
 import QOU.MassTheory.TransversePairingClusterDecomposition
+
+-- ═══ qou-glnl / qou-glhi / qou-fr7j — the gluing-equation lane ═══
+-- Every module of this lane was ORPHANED until now: nothing imported them, so
+-- `lake build` (whose default target is `QOU` plus its transitive import closure)
+-- never compiled them and no gate would have noticed them breaking.  Caught by
+-- `lean-orphan-audit.ts --diff`, which exits 1 on all eleven.  Each was verified
+-- per-module by name during development, which is exactly the check that hides
+-- this defect: naming a module builds it whether or not anything imports it.
+import QOU.Knot.GluingBridge
+import QOU.Knot.SixOneCertified
+import QOU.Knot.GeneratedCusp
+import QOU.Knot.GeneratedCertified
+import QOU.Knot.GeneratedGluingHigh
+import QOU.Knot.GeneratedCertifiedHigh
+-- ═══ qou-hypr / qou-bday — the surreal birthday lane ═══
+-- Same defect, same cause.  DiophantineBirthday itself was already in the tree and
+-- also orphaned, so registering it here is a fix to pre-existing state rather than
+-- to this arc's additions.
+import QOU.AppendixSurreals.BirthdayFaithful
+import QOU.AppendixSurreals.DiophantineBirthday
+import QOU.AppendixSurreals.DiophantineBirthdayScope
+import QOU.AppendixSurreals.DiophantineBirthdayTrajectory
+import QOU.AppendixSurreals.GonshorConvergence
 -- qou-oc4v (§7c split, PR #5113): the depth-stratified FR module was split into
 -- an algebraic half ({R : Type*} [Field R]) and an archimedean sibling holding
 -- the empirical decimal variance records. Registering the sibling puts BOTH
@@ -1027,3 +1050,15 @@ import QOU.AlgebraicSubstrate.QChebyshevFunction
 -- (the generic [Field A] theorem split out of it), since the roadmap imports
 -- that module. Both verify lean-direct ok=1.
 import QOU.MassComputationChainRoadmap
+-- qou-br3w — staged for upstream Mathlib: the index of a multivariate polynomial at a
+-- point, the first missing Thue-Siegel-Roth prerequisite.  Depends on nothing from QOU
+-- (Mathlib imports only), so it lifts out verbatim when a Mathlib PR is possible; it is
+-- registered here so the orphan gate covers it in the meantime.
+import QOU.Mathlib.RothIndex
+-- qou-br3w — staged for upstream Mathlib: generalized (m x m) Wronskians.  Mathlib has the
+-- two-polynomial case only; genWronskian_two pins the generalisation to it.
+import QOU.Mathlib.GenWronskian
+-- qou-br3w — staged for upstream Mathlib: the same in SEVERAL variables, which is what
+-- Roth's lemma actually consumes (its auxiliary polynomial is multivariate).  The operator
+-- family is an explicit parameter because in several variables there is no canonical row.
+import QOU.Mathlib.MvGenWronskian

@@ -107,6 +107,8 @@ export default chapter({
         "classical-limit-stpart",
         "archimedean-stpart",
         "archimedean-stpart-strategy",
+        "hyperreal-limit-transfer",
+        "birthday-axioms-do-not-pin-the-birthday",
       ],
     },
     {

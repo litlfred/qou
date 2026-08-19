@@ -41,6 +41,7 @@ export default chapter({
       label: "sec:surreals-archimedean-speculative",
       blocks: [
         "diophantine-birthday",
+        "diophantine-birthday-trajectory",
         "infinitesimal-frobenius",
         "surreal-limit-transfer",
       ],
