@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T19:50:11.775425+00:00",
-  "commitSha": "954d7c4f0a4fde88fefd10b937245fa4baa80c51",
+  "computedAt": "2026-08-19T19:58:24.739343+00:00",
+  "commitSha": "c18a3e4c757a7feb8b0e2995bc52e06043d5f96d",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "5726f911cddb",
-  "scriptCommitSha": "353658c0b003ff269fcbaea0bdb85fd4a999a52f",
+  "scriptCommitSha": "ae40634874ca5343f5dbb0e40619777b5a8fdab9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,10 +37,10 @@
   "data": {
     "counts": {
       "Q0_OK": 654,
-      "Q0_AMBIGUOUS": 13,
-      "Q0_INDEPENDENT": 9,
+      "Q0_AMBIGUOUS": 14,
+      "Q0_INDEPENDENT": 21,
       "Q0_INDEPENDENT_NO_REASON": 2,
-      "Q0_ANCHOR_MISSING": 1905,
+      "Q0_ANCHOR_MISSING": 1906,
       "Q0_VALUE_MISSING": 2,
       "Q0_AUDIT_EXEMPT": 73,
       "Q0_PARSE_ERROR": 1,
@@ -7622,6 +7622,10 @@
           "detail": ""
         },
         {
+          "witness": "witness-staleness-triage.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "wlambda-ladder-higher-rungs.witness.json",
           "detail": ""
         },
@@ -10338,6 +10342,10 @@
           "detail": ""
         },
         {
+          "witness": "hd-to-s-bridge-anchor-dependence.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "rt-binomial-trace-evaluation-probe.witness.json",
           "detail": ""
         }
@@ -10669,6 +10677,54 @@
         },
         {
           "witness": "fivetwo-bar-odd-23adic-depth.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_287_f1_vs_f5_subscript_resolution.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_alpha_line_unit_structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_chi_eigenspace_place.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_five_term_validation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_h_lift_m12_m24.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_h_lift_m8.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_m6_rwf_value.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_m_lattice_eigenspace_census.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_second_element_feasibility.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_v1_computable_m_terminal.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_v1_lift_and_value.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_v2_vacuity_confirmation.witness.json",
           "detail": ""
         },
         {
