@@ -284,6 +284,46 @@ theorem seminormalRep_qJM (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ
       show genMat q (k + 1) _ _ * jmDiagVal q (k + 1) * genMat q (k + 1) _ _ = _
       rw [genMat_conj_jmDiagVal q hq0 hq2 (k + 1) (by omega) (by omega)]
 
+/-- The inverse eigenvalue matrix: diagonal with `q^{-2·content}`. -/
+noncomputable def jmDiagValInv (q : ℝ) (v : ℕ) :
+    Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
+  Matrix.diagonal (fun T => q ^ (-(2 * cellContent (cellOf T v))))
+
+theorem jmDiagVal_mul_inv (q : ℝ) (hq0 : q ≠ 0) (v : ℕ) :
+    jmDiagVal (μ := μ) q v * jmDiagValInv q v = 1 := by
+  rw [jmDiagVal, jmDiagValInv, Matrix.diagonal_mul_diagonal, ← Matrix.diagonal_one]
+  congr 1
+  funext T
+  rw [← zpow_add₀ hq0]
+  simp
+
+theorem jmDiagValInv_mul (q : ℝ) (hq0 : q ≠ 0) (v : ℕ) :
+    jmDiagValInv (μ := μ) q v * jmDiagVal q v = 1 := by
+  rw [jmDiagVal, jmDiagValInv, Matrix.diagonal_mul_diagonal, ← Matrix.diagonal_one]
+  congr 1
+  funext T
+  rw [← zpow_add₀ hq0]
+  simp
+
+/-- **The inverse Murphy element acts by the inverse eigenvalue.**  Derived from the two-sided
+inverse `qJM · qJMInv = 1 = qJMInv · qJM` plus uniqueness of inverses, so it needs no second
+induction. -/
+theorem seminormalRep_qJMInv (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hN : μ.cells.card = n + 1) (k : ℕ) (hk : k ≤ n) :
+    seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k) = jmDiagValInv q (k + 1) := by
+  have hqi : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
+  have h2 := congrArg (seminormalRep q hq0 hq2 n hN) (qJMInv_mul_qJM ℝ q q⁻¹ n hqi k hk)
+  rw [map_mul, map_one, seminormalRep_qJM q hq0 hq2 n hN k hk] at h2
+  -- `X · D = 1` and `D · D⁻¹ = 1` give `X = D⁻¹`
+  calc seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k)
+      = seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k) * 1 := by rw [mul_one]
+    _ = seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k)
+          * (jmDiagVal q (k + 1) * jmDiagValInv q (k + 1)) := by
+        rw [jmDiagVal_mul_inv q hq0]
+    _ = (seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k) * jmDiagVal q (k + 1))
+          * jmDiagValInv q (k + 1) := by rw [mul_assoc]
+    _ = jmDiagValInv q (k + 1) := by rw [h2, one_mul]
+
 end SeminormalRep
 
 end QOU.SchurWeyl
