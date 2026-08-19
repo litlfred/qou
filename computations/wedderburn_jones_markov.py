@@ -147,7 +147,15 @@ def y_lambda_at(
     """
     from y_lambda_su_n import y_lambda_su_n as _y_su_n
     import mpmath as _mp
-    if q_val is not None:
+    # A SYMBOLIC q_val must reach the exact solver below, not the numeric branch.
+    # It used to fall through to `_mp.mpf(str(q_val))` and die inside mpmath with
+    # `invalid literal for int() with base 10: 'q'` — a symbolic-q caller had no
+    # way in even though the exact convention-D solver was already wired for
+    # `q_val=None`. Now `y_lambda_at(n, <symbol>)` returns y_λ exact in THAT
+    # symbol. (bean `qou-j320`; needed by the symbolic trace in
+    # `computations/substrate/bar_involution_is_isospin_probe.py`.)
+    _symbolic = bool(getattr(q_val, "free_symbols", None))
+    if q_val is not None and not _symbolic:
         _y = _y_su_n(n, _mp.mpf(str(q_val)), 2)
         return {sh: sp.Float(_mp.nstr(v, 30), 30) for sh, v in _y.items()}
     # Symbolic q: route to the EXACT convention-D solver (wired 2026-08-09).
@@ -160,7 +168,7 @@ def y_lambda_at(
     # It is also far cheaper than the C path it replaces: C needed an ~18 min
     # linear solve at n=4, this is a product formula and returns instantly.
     from y_lambda_su_n import y_lambda_su_n_symbolic as _y_su_n_sym
-    return _y_su_n_sym(n, Q_SYM, 2)
+    return _y_su_n_sym(n, Q_SYM if q_val is None else q_val, 2)
 
 
 def _y_lambda_at_convention_C_HISTORICAL(
