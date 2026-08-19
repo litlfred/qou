@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-18T21:52:03Z
+updated_at: 2026-08-19T07:21:43Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -251,3 +251,77 @@ dropped alongside it, since both coordinates distort the residual by fixed
 magnifiers.
 
 Audit: docs/audits/2026-08-18-convention-d-two-row-cap-and-ck-magnifier.md
+
+## 2026-08-18 follow-on (PR #5283) — the projection does not make the PHASE bar-odd
+
+Extends THIS BEAN's bar-parity analysis by the one term it never checked. The
+Lean above is about the eigenphase a alone. The ladder's phase is a - u/2, and
+u's parity was never examined. Symbolically (bar: q -> 1/q):
+
+    h -> -h (ODD);  h^2, b (EVEN);  hbar_q -> -q*hbar_q;  u -> q^2 * u
+
+u is NEITHER bar-even nor bar-odd. So for ANY bar-odd a,
+
+    bar(a - u/2) + (a - u/2) = -u(1+q^2)/2  !=  0.
+
+MEASURED (50 dps, both anchors):
+  * the defect is IDENTICAL in C and D: -0.0095054571 for a_C and for the
+    forced a_odd alike. Carried entirely by u => CONVENTION-INDEPENDENT.
+    This is a ladder problem, not a D problem.
+  * replacing u/2 by its bar-odd part u(1-q^2)/4 moves 1-F by 15.1% of the
+    required correction -- not a rounding term.
+
+The two Lean theorems are CORRECT AS STATED (they concern a). What does not
+follow is the motivation: making a bar-odd does not make the phase bar-odd, so
+'restore bar-oddness' is not achieved by a_odd on its own.
+
+NOT SETTLED, and flagged rather than assumed: whether F is REQUIRED to be
+bar-even. Q_A is not bar-odd in the naive sense --
+bar(Q_A)/Q_A = q^3*|q^2+2q-1|/|q^2-2q-1|, not +-1 -- so the requirement cannot
+be read off the chain as written. If bar-evenness is not required this is a
+curiosity; if it is, the ladder violates it in BOTH conventions by a 15% term
+and the projection is incomplete rather than forced-and-final. Resolving that
+question looks like the cheapest next step, because it decides whether the
+u/2 term needs replacing before any new functional form is attempted.
+
+Probe: computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py
+
+### …and the parity requirement turns out not to be available at all
+
+Follow-on to the item above, which had left open whether F must be bar-even.
+The corpus states the requirement AND names the involution:
+
+  'the bar-odd (sinh) partner of the bar-even (cosh) meson scale m_pi UNDER THE
+   BAR-INVOLUTION q -> q^{-1}'
+  -- three-calibration-discipline.md:18; also
+     epistemic-status-of-calibrations.md:3,
+     three-calibration-discipline-proof.md:36, AGENTS.md.
+
+Testable against the closed form the framework computes. Measured, both anchors:
+
+    Q_A/m_e at q   = 1.5335566273012
+    Q_A/m_e at 1/q = 2.5868438911015
+    bar(Q_A)/Q_A   = 1.686826456258      <- odd would be -1, even would be +1
+
+NEITHER, and not marginally. q -> -q and q -> -1/q give non-constant ratios too.
+
+CONSEQUENCE: a bar-parity constraint on the D-frame correction CANNOT be derived
+from 'Q_beta is bar-odd', because Q_beta as computed is neither. The open
+question resolves as NOT AVAILABLE from the chain as written. Anyone invoking a
+parity constraint on F must first supply the object that actually carries the
+parity -- it is not this closed form.
+
+SCOPE (this contradicts four corpus sites, so stated carefully): the measurement
+is of Q_A = m_e|q^2-2q-1|(q+1)/(2q^3), which is what AGENTS.md gives for Q_beta
+and what qbeta_utils computes. If the parity claim is meant for a DIFFERENT
+representation -- an unevaluated sinh form, or the width D_beta before inversion
+-- it may hold there, and the defect is that the corpus attaches it to this
+form. Either way the statement as written does not hold of the computed object.
+m_pi's claimed bar-evenness is NOT tested.
+
+Probe: computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py
+
+NET EFFECT ON THE RE-DERIVATION: bar-parity is now removed from the toolkit as a
+CONSTRAINT (it cannot be derived), while remaining available as a DESCRIPTION of
+a to-be-identified object. That is a narrowing, not progress: it says one more
+route into the D-frame correction is closed.
