@@ -87,13 +87,19 @@ def tr_m_atom_zn(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     (`Q_50_DIGIT_STR`, via `chi_all_lambda_reduced_block`; y_λ at `Q0`).
     When `q` is
     given it is threaded to BOTH the y_λ Jones–Markov weights and the
-    transfer χ^λ. NOTE: the canonical color-weighted atom word is
-    **q₀-baked** — its interface `d` carries `flavor_split_leading(q₀)`
-    — so `chi_all_lambda_reduced_block`'s `word_to_mpfr` can only re-lift
-    it at q₀;
-    passing q ≠ q₀ with that convention raises `ValueError` (a true q-sweep
-    needs a q-parameterised word builder). q-agnostic conventions
-    (σ / σ⁻¹ / averaged) re-lift at any q.
+    transfer χ^λ, INCLUDING the color-weighted interface — see the
+    "q-parameterised core" note below, which is the operative one.
+
+    CORRECTED 2026-08-19 (bean `qou-e58e`). This paragraph used to say the
+    canonical color-weighted word is "q₀-baked" and that "passing q ≠ q₀
+    with that convention raises `ValueError`". That is FALSE and had been
+    false since the word builder was q-parameterised: it contradicted the
+    "q-parameterised core" comment thirty lines below in this same function,
+    and `tr_m_atom_zn(1, 1, q=1/q₀)` returns in milliseconds. The stale
+    wording was load-bearing — it was read as evidence that the bar image
+    `tr_M(q₀⁻¹)` is uncomputable, which is the premise a whole workplan item
+    was opened on. Measured refutation + what the bar image actually shows:
+    `computations/substrate/bar_involution_is_isospin_probe.py`.
 
     Canonical color-weighted p-n convention, summed over ALL `p(3A)`
     partitions — LOSSLESS: no `max_dim` cap, no active-set truncation
