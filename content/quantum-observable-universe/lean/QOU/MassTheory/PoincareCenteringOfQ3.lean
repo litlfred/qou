@@ -127,4 +127,56 @@ theorem ell_w0_eq_n_iff_three (n : ℕ) :
         · have hm : m = 2 := by omega
           subst hm; rfl
 
+/-! ### The bar-conjugate form, and the writhe obstruction
+
+One theorem per derivation attempt. -/
+
+/-- **Attempt 1, sharpest form: the code's factor is the BAR-CONJUGATE of the
+Poincaré polynomial.**
+
+`[3]_q!^bal / q³ = P(q⁻¹)`. `P` is palindromic, so one centering reaches the
+symmetric point and the second overshoots it by the same amount, landing on `P`
+evaluated at the inverse variable. This is exactly what "double centering"
+means. -/
+theorem code_form_eq_poincare_bar (q : K) (hq : q ≠ 0) :
+    qFactThreeBalanced q / q ^ 3 = poincareS3 q⁻¹ := by
+  rw [code_form_is_doubly_centered q hq]
+  unfold poincareS3
+  field_simp
+  ring
+
+/-- A braid word as a list of signed generators; only the **sign** of each entry
+matters for the writhe (`+i` is `σᵢ`, `−i` is `σᵢ⁻¹`). -/
+def writhe (w : List ℤ) : ℤ := (w.map (fun g => if 0 < g then (1 : ℤ) else -1)).sum
+
+/-- `β_Bor = (σ₁⁻¹σ₂)³`, the braid word the corpus assigns to the Borromean
+rings (`borromean-markov-trace-closed-form.md:2`). -/
+def borromeanWord : List ℤ := [-1, 2, -1, 2, -1, 2]
+
+/-- **`β_Bor` has writhe zero** — three negative and three positive crossings. -/
+theorem borromean_writhe_zero : writhe borromeanWord = 0 := by decide
+
+/-- **Every writhe prefactor is trivial on `β_Bor`.** -/
+theorem writhe_prefactor_is_one (a : K) :
+    a ^ (writhe borromeanWord) = 1 := by
+  rw [borromean_writhe_zero, zpow_zero]
+
+/-- **Attempt 2: no writhe prefactor can produce `q⁻³` on this braid.**
+
+`markov-axioms-primitive.md` states that link invariance is restored by the
+*writhe prefactor outside the trace*. Such a prefactor is a function of the
+writhe alone and multiplicative in it — `w ↦ a^w`. On `β_Bor` the writhe is `0`,
+so **every** such prefactor equals `1`, whatever `a` is. Hence none yields the
+`q⁻³` that `F_Bor` applies, unless `q³ = 1` — and at the substrate `q₀ ≈ 1.11`
+it is not.
+
+This is the sharp form of the negative: `/q³` does not merely lack a derivation
+trail, it is **unreachable** by the normalisation rule the corpus itself states,
+evaluated on the corpus's own braid word. -/
+theorem no_writhe_prefactor_yields_inv_cube (a q : K) (hq3 : q ^ 3 ≠ 1) :
+    a ^ (writhe borromeanWord) ≠ (q ^ 3)⁻¹ := by
+  rw [writhe_prefactor_is_one]
+  intro h
+  exact hq3 (inv_eq_one.mp h.symm)
+
 end QOU.MassTheory.PoincareCentering

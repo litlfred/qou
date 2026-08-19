@@ -197,3 +197,44 @@ intended normalisation were "divide by the Garside element's writhe" rather than
 the braid's own, that would produce 3. beta_Bor is not Delta and the corpus
 states the rule in terms of the braid's writhe, so this is a guess at intent,
 not a derivation.
+
+## Both attempts now Lean-proved (2026-08-19)
+
+Added to `QOU/MassTheory/PoincareCenteringOfQ3.lean` -- lean-direct exit 0,
+#print axioms standard-Mathlib on all eight decls, no sorry / axiom /
+native_decide.
+
+### Attempt 1 (double centering), sharpest form
+
+    code_form_eq_poincare_bar :  [3]_q!^bal / q^3  =  P(q^-1)
+
+P is palindromic, so one centering reaches the symmetric point and the second
+overshoots it by the same amount, landing on P at the INVERSE variable. That is
+what "double centering" means, now as a theorem rather than a computation.
+
+Together with the existing three:
+    balanced_is_already_centered   [3]_q!^bal      = P(q)/q^3
+    code_form_is_doubly_centered   [3]_q!^bal/q^3  = P(q)/q^6
+    balanced_is_bar_symmetric      the once-centered form is q -> q^-1 invariant
+
+### Attempt 2 (the writhe obstruction) -- an IMPOSSIBILITY, not just an absence
+
+    borromean_writhe_zero              writhe (sigma_1^-1 sigma_2)^3 = 0
+    writhe_prefactor_is_one            a ^ writhe(beta_Bor) = 1, for ANY a
+    no_writhe_prefactor_yields_inv_cube
+        a ^ writhe(beta_Bor) != (q^3)^-1   whenever q^3 != 1
+
+markov-axioms-primitive.md states link invariance is restored by the writhe
+prefactor outside the trace. Such a prefactor is a function of the writhe alone
+and multiplicative in it, w -> a^w. Since beta_Bor's writhe is 0, EVERY such
+prefactor is 1 regardless of a -- so none can be q^-3 unless q^3 = 1, which
+fails at q_0 ~ 1.11.
+
+This upgrades the finding from "no derivation trail" to "UNREACHABLE by the
+normalisation rule the corpus states, on the corpus's own braid word". The
+negative is now a theorem quantified over all writhe prefactors, not an
+observation about the ones I happened to check.
+
+Still open and unchanged: what DOES derive q^-3, given the numerics require it
+(dropping it moves m_p to +37.0 %). The Garside-element guess (l(w_0) = 3 =
+crossings of the B_3 half-twist Delta) remains recorded, not claimed.
