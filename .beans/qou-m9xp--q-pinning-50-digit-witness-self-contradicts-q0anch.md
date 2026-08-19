@@ -4,6 +4,8 @@ title: 'q-pinning-50-digit witness self-contradicts: q0Anchor=muon but calibrati
 status: todo
 type: task
 priority: normal
+created_at: 2026-08-19T17:19:14Z
+updated_at: 2026-08-19T18:25:01Z
 ---
 
 ## The contradiction
@@ -150,3 +152,75 @@ inspect its constants can therefore give a *different* answer than running
 it, with no error and no warning. Any anchor investigation that reads a
 constant by import — as my first three probes here did — must confirm by
 running the producer under its own name before concluding.
+
+
+## 2026-08-19 — the file moved to PROTON, and that broke the muon anchor's definition
+
+The contradiction above has since been "resolved" in the proton direction, and
+nothing updated the consumer that treats this file as the *definition* of the
+muon pin. Current committed state (identical on `origin/main`, on this branch,
+and in the tree):
+
+```
+computations/q-pinning-50-digit.witness.json
+  .q0Anchor                  "proton"
+  .derived_50_digit.q        1.109978582751380807591669…   <- the PROTON value
+  .computedAt                2026-08-15T11:35:10Z
+  last touched by            9a9c6b31c "sweep(tnjb): first 25 witnesses
+                             regenerated at the proton pin; driver fixes"
+```
+
+But `qou_substrate/witness.py::_q0_value_for_anchor` still reads exactly this
+path as the muon pin:
+
+```python
+if anchor == "muon":
+    p = _repo_root() / "computations" / "q-pinning-50-digit.witness.json"
+    val = json.loads(p.read_text())["derived_50_digit"]["q"]
+```
+
+So, measured in this tree:
+
+```
+_q0_value_for_anchor("muon")   -> 1.109978582751380807
+_q0_value_for_anchor("proton") -> 1.109978582751380807
+```
+
+**The two anchors now resolve to the same value, and it is the proton one.**
+The muon pin has no definition left in the tree at the path its own accessor
+points to.
+
+### Consequence, measured
+
+`computations/audits/q0_anchor_consistency_audit.py --strict` compares every
+muon-anchored witness against `_q0_value_for_anchor("muon")`, so it compares
+them against the *proton* pin and reports each as a flip:
+
+```
+FAIL (--strict): 262 Q0_FLIP witness(es).
+  ... anchor=muon but q0Value=1.10997859555733… (expected 1.109978582751…)
+```
+
+The "expected" in that message is the proton value under the label `muon`,
+which is the tell. The committed `q0-anchor-consistency-audit.witness.json`
+records `computed: 0, allPassed: true` — on `origin/main` too, timestamped
+2026-08-19T13:06Z — so the gate is reading green against a corpus in which the
+comparand is wrong. Note the failure is one-sided by construction: if the muon
+read had *failed* instead of returning the wrong value, `classify` returns
+`Q0_VALUE_MISSING`, which is not counted as a failure and the gate goes green
+anyway. Neither branch of that read can currently make the audit tell the
+truth about a muon witness.
+
+Reproduced in a clean `git worktree` at this branch's tip with no local edits,
+so it is not an artifact of in-flight work; `9a9c6b31c` is on main.
+
+### Not fixed here
+
+Deliberately out of scope for `claude/convention-d-tranche-2026-08-18`, whose
+diff is import paths. Recording it rather than patching, because the fix is a
+ruling, not an edit: either the muon accessor needs a pin file that still holds
+the muon value, or the muon anchor is retired and the 262 witnesses plus the
+`muon` branch of `_q0_value_for_anchor` go with it. That is `qou-1c4y`
+territory and needs the owner. Whichever way it goes, the LABEL and the
+COMPUTED VALUE have to move together — the same discipline this function's own
+docstring records having violated once already.
