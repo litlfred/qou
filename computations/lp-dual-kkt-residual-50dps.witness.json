@@ -1,0 +1,115 @@
+{
+  "engine": "clarabel-mpfr",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-19T07:27:19.995106+00:00",
+  "commitSha": "bbad48e70cda621bb403b867110528ae5a1a99c5",
+  "assertions": [
+    {
+      "name": "r_eq",
+      "computed": "5.25895560215196214315965706668329505963423831725309216838470e-24",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "KKT at 50 dps from *_str inputs — absolute; constraint terms are O(1)"
+    },
+    {
+      "name": "r_Gx",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "KKT at 50 dps from *_str inputs — one-sided: only a NEGATIVE value violates Gx >= 0"
+    },
+    {
+      "name": "r_bound",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "KKT at 50 dps from *_str inputs — one-sided: only a NEGATIVE value violates x_i >= -M"
+    },
+    {
+      "name": "r_y",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "KKT at 50 dps from *_str inputs — one-sided: only a NEGATIVE value violates y_i >= 0"
+    },
+    {
+      "name": "r_dual_over_scale",
+      "computed": "2.42638527926570198801516020965752155835941919522665521324420e-25",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-18",
+      "source": "KKT at 50 dps from *_str inputs — scale-relative; dual row cancels against t"
+    },
+    {
+      "name": "r_gap_over_scale",
+      "computed": "1.44191682566257346206582723270657753249162362306761880633795e-21",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-18",
+      "source": "KKT at 50 dps from *_str inputs — scale-relative; objective is a near-total cancellation"
+    },
+    {
+      "name": "r_cs_over_scale",
+      "computed": "1.69051019071404017277159396845464470051464697177936191981661e-20",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-18",
+      "source": "KKT at 50 dps from *_str inputs — scale-relative; products cancel at |x| ~ 2.65e5"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "lp-dual-kkt-residual-50dps",
+  "scriptFile": "lp_dual_kkt_residual_50dps.py",
+  "scriptHash": "f555ee453c91",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "KKT residuals (primal/dual feasibility, strong duality, complementary slackness) for the clarabel-MPFR operator-selection LP, computed at 50 dps from decimal-string inputs and the solver's own *_str outputs. Oracle-free validation of the no-float64 path.",
+  "parameters": {
+    "dps": 50,
+    "prec_bits": 167,
+    "n_target": "1",
+    "m_bound": "1000000"
+  },
+  "data": {
+    "residuals": {
+      "r_eq": "5.25895560215196214315965706668329505963423831725309216838470e-24",
+      "r_Gx": "0.000000000000000381482259555326688522964925657057899013528377115506394203083",
+      "r_bound": "734974.992180145768478243230123148105786968964882721040018453",
+      "r_y": "9.76557087968967955786567946620864055090092229675349969715812e-20",
+      "r_dual": "6.43052777611371862741717044516362398635833890399791254569819e-20",
+      "r_gap": "0.000000000000000382144017996802922443890193420625910416622910987330565042003",
+      "r_cs": "0.00000000000000448027476513531765074630784192470768983575324268778699632258",
+      "primal_obj": "0.000000000000000381482259555326688522964925657057899013528377115506394203083",
+      "dual_obj": "-0.000000000000000000661758441476233920925267763568011403094533871823892648458758",
+      "term_scale": "265025.007819854231521756769876851894213031035117278959981547"
+    },
+    "residuals_scale_relative": {
+      "r_gap_over_scale": "1.44191682566257346206582723270657753249162362306761880633795e-21",
+      "r_cs_over_scale": "1.69051019071404017277159396845464470051464697177936191981661e-20",
+      "r_dual_over_scale": "2.42638527926570198801516020965752155835941919522665521324420e-25"
+    }
+  },
+  "caveats": [
+    "Validates the 50-dps LP solve WITHOUT a second solver. Replaces the 'cross-check against scipy to 1e-25' note on solve_..._mpfr, which is not achievable: the scipy/HiGHS reference is float64 and good to ~1e-16, so 1e-25 agreement against it is not a statement that can be made. The existing f64 cross-check (clarabel_lp_crosscheck.py, 13/13, worst 2.00e-12) remains valid at ITS tolerance. Here every input is a decimal string and every operation runs under mp.workdps(50), so no float64 enters. The H_3 atom LP is DEGENERATE (y0 ~ -6.6e-19), so r_gap and r_cs are absolute residuals on near-zero objectives — read them against term_scale, not alone. Bean qou-q7f1."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
