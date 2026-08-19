@@ -1,0 +1,60 @@
+ion 2 - 21 Dec 2006
+
+, version
+
+hal-00017295
+
+OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES
+
+SYLVIE CORTEEL AND OLIVIER MALLET
+
+ABSTRACT. We extend partition-theoretic work of Andrews, Bressoud, and Burge to overpartitions, defining
+the notions of successive ranks, generalized Durfee squares, and generalized lattice paths, and then relating
+these to overpartitions defined by multiplicity conditions on the parts. This leads to many new partition
+and overpartition identities, and provides a unification of a number of well-known identities of the Rogers-
+Ramanujan type. Among these are Gordon’s generalization of the Rogers-Ramanujan identities, Andrews’
+generalization of the Géllnitz-Gordon identities, and Lovejoy’s “Gordon’s theorems for overpartitions.”
+
+1. INTRODUCTION
+
+In 1961 Gordon established his celebrated combinatorial generalization of the Rogers-Ramanujan identi-
+ties:
+
+Theorem 1.1. 4) Let By i(n) denote the number of partitions of n of the form (Ay, A2,..-,As), where
+Ne — Ae+k-1 > 2 and at most i—1 of the parts are equal to 1. Let Ap i(n) denote the number of partitions
+of n into parts not congruent to 0, +i modulo 2k +1. Then Agi (n) = Brin).
+
+Over the years, a number of other combinatorial functions have been found to be equal to the A,,;(m) in
+Gordon’s theorem. Most notable, perhaps, are two results of Andrews that employ Atkin’s successive ranks
+(Li) and Andrews’ own new idea of Durfee dissection :
+
+Theorem 1.2. Let Cyi(n) be the number of partitions of n whose successive ranks lie in the interval
+[-i + 2,2k —i-— 1] and let Djy,i(n) be the number of partitions of n with i—1 successive Durfee squares
+followed by k —1% successive Durfee rectangles. Then
+
+Agi(n) = Bri (n) = Cri(n) = Dri(n).
+
+An overpartition is a partition where the final occurrence of a part can be overlined (is. For example,
+there exist 8 overpartitions of 3
+
+(3), (3), (2,1), (2,1), (2,1), @,1), (,1,1), 1,1.
+
+In recent years overpartitions have been heavily studied, sometimes under different names and guises. They
+have been called joint partition: , or dotted partitions [13], and they are closely related to 2-modular
+diagrams pq, jagged partitions , I) and superpartitions . Overpartitions arise in the study of the
+combinatorics of basic hypergeometric series identities (i, bal 28, Ba), congruences properties of modular
+forms 3, Bal, supersymmetric functions [21], Lie algebras |27] and mathematical physics Pi, pd, pj.
+
+In 2003 Lovejoy proved an overpartition identity wherein one of the functions closely resembles the
+By,i(n) in Gordon’s theorem:
+
+Theorem 1.3 (“Gordon’s theorem for overpartitions” ). Let B,,(n) denote the number of overpartitions
+of n of the form (Ay, Ag,.--,As), where Ae—Aeze—1 > 1 if AczR—1 is overlined and re — Ae4.K—1 > 2 otherwise.
+Let Ay(n) denote the number of overpartitions of n into parts not divisible by k. Then A;(n) = By(n).
+
+2000 Mathematics Subject Classification. Primary 11P81; Secondary 05A17.
+
+Key words and phrases. Partitions, overpartitions, Rogers-Ramanujan identities, lattice paths.
+
+The authors are partially supported by the ACI Jeunes Chercheurs “Partitions d’entiers 4 la frontiére de la combinatoire,
+des q-séries et de la théorie des nombres.”

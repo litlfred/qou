@@ -13,7 +13,7 @@ Add an inline \cite at the block's claim 3 ('Immirzi from criticality') and at i
 - abstract + state-counting section — The corrected horizon state count in quantum geometry; contributions from spins above 1/2 are not negligible, revising the Barbero-Immirzi parameter.
   Use here: The established analytic result the q-dimension partition-function pole is claimed to recast, and the source of the parameter value claim 3 matches to.
 
-Source: `uploads/0407051v2.pdf` (`domagala-lewandowski-2004`)
+Source: `library/arxiv-gr-qc-0407051v2/0407051v2.pdf` (`domagala-lewandowski-2004`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

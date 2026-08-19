@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9911033v1",
+ "source_sha256": "196c05d2e3419565",
+ "brief": "ON THE LOWER BOUND ESTIMATES OF SECTIONS OF THE CANONICAL BUNDLES OVER A RIEMANN SURFACE ZHIQIN LU Contents 1. Introductions 1 2. A lower bound estimate 4 3. A counterexample 11 4. Partial uniform est",
+ "extended": "**ON THE LOWER BOUND ESTIMATES OF SECTIONS OF THE CANONICAL BUNDLES OVER A RIEMANN SURFACE ZHIQIN LU Contents 1. Introductions 1 2. A lower bound estimate 4 3. A counterexample 11 4. Partial uniform estimates 17**\n\n34 pp, 18 sections.\n\n**Outline.** 1 Introductions 1; 2 A lower bound estimate 4; 3 A counterexample 11; 4 Partial uniform estimates 17; 5 The uniform corona problem 24; 2 A lower bound estimate; 4 (−δx(y) + 1; 3 A counterexample; C Then f is a; 2 Let S ∈H 0(M,K m; 4 Partial uniform estimates; 1 In a neighborhood Ux of x, ϕ can be written ; 2 There is a constant C13 such that; 5 The uniform corona problem; 2 There are decompositions U ′; 3 By (5.4) and (5.5),; 2 (Ui|Cδj (Rj ),v 1j)Cδj (Rj ) = 0 for i ⁄=j, ; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Let M be a Riemann surface of the genus g ≥ 2. Let KM\n- Theorem 1.2: For any ε >0 and m ≥ 2, there is a Riemann surface M\n- Theorem 1.3: Let M be a Riemann surface of genus g ≥ 2 and constant\n- Theorem 1.4: Let M be a Riemann surface as above. Then there is an\n- Theorem 3.1: Consider the region T of U , the upper half plane,\n- Theorem 3.2: For any ε> 0 andm ≥ 2, there is a Riemann surface M of",
+ "tokens": {
+  "brief": 50,
+  "extended": 299
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introductions-1",
+   "title": "Introductions 1",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-2-a-lower-bound-estimate-4",
+   "title": "A lower bound estimate 4",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-3-a-counterexample-11",
+   "title": "A counterexample 11",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-003-4-partial-uniform-estimates-17",
+   "title": "Partial uniform estimates 17",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-004-5-the-uniform-corona-problem-24",
+   "title": "The uniform corona problem 24",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-005-2-a-lower-bound-estimate",
+   "title": "A lower bound estimate",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-006-4-δxy-1",
+   "title": "(−δx(y) + 1",
+   "pages": "7-11"
+  },
+  {
+   "id": "sec-007-3-a-counterexample",
+   "title": "A counterexample",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-008-c-then-f-is-a",
+   "title": "Then f is a",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-009-2-let-s-h-0mk-m",
+   "title": "Let S ∈H 0(M,K m",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-010-4-partial-uniform-estimates",
+   "title": "Partial uniform estimates",
+   "pages": "17-22"
+  },
+  {
+   "id": "sec-011-1-in-a-neighborhood-ux-of-x-ϕ-can-be-written-as",
+   "title": "In a neighborhood Ux of x, ϕ can be written as",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-012-2-there-is-a-constant-c13-such-that",
+   "title": "There is a constant C13 such that",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-013-5-the-uniform-corona-problem",
+   "title": "The uniform corona problem",
+   "pages": "24-28"
+  },
+  {
+   "id": "sec-014-2-there-are-decompositions-u",
+   "title": "There are decompositions U ′",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-015-3-by-54-and-55",
+   "title": "By (5.4) and (5.5),",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-016-2-uicδj-rj-v-1jcδj-rj-0-for-i-j-1-ij-s",
+   "title": "(Ui|Cδj (Rj ),v 1j)Cδj (Rj ) = 0 for i ⁄=j, 1 ≤i,j ≤s;",
+   "pages": "29-34"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "34-34"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

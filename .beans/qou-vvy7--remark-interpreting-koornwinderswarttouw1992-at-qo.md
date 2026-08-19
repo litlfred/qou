@@ -13,7 +13,7 @@ Soften the 'on E_q(2)' clause at KeystoneSelfDualSpectralNarrowing.lean:59: the 
 - transform pair, pp. 9-10 — A q-Hankel transform pair with the same third-q-Bessel kernel in both directions, hence self-reciprocal, degenerating to the classical Hankel pair as q -> 1.
   Use here: The analytic prototype of the self-reciprocality the keystone narrowing formalizes as S^4 = 1, and the reason a free-scale q-Bessel family is a duality template rather than a zero-dof node screen.
 
-Source: `uploads/1208.2521v1.pdf` (`koornwinderswarttouw1992`)
+Source: `library/arxiv-1208.2521v1/1208.2521v1.pdf` (`koornwinderswarttouw1992`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

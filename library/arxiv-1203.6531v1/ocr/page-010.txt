@@ -1,0 +1,65 @@
+10 EROL YILMAZ, CENAP OZEL AND UGUR USTAOGLU
+
+Definition 17. Let be positive integers. The q-binomial is defined by
+
+( m ), _ = a— gh) (= 4)
+
+r (-gd-#) 0-4)
+
+Although the formula in the first clause appears to involve a rational function, it
+actually designates a polynomial, because the division is exact in Z[q]. A standard
+combinatorial interpretation for q-binomial is that it counts the number of parti-
+tions that will fit into a box of size k x (n—k), weighted by the size of the partition.
+In particular the q-binomial
+
+2n (1 —22")(1 — 22-1)... (1 — 2+)
+( n )- (= «2 —a")
+counts the number of partitions in which there are at most n parts and in which
+no parts is larger than n.
+Now, we can proof the main result of this paper.
+
+Theorem 18. Then the reduced Grobner-Shirshov basis of the affine Weyl group
+
+A, is the set G’. Moreover all the reduced words are the form rw where r is a
+reduced word not including ro and w is a arranged word.
+
+The reduced words not including ro is given in Lemma [5] It is easy to see that
+the number of such words given by the generating function
+(l+a)(lL+a+a7)---(Ltat--:+2").
+
+Theorem and Theorem
+the generating function
+
+[16] imply that the number of arranged words given by
+
+( 2n ) oaty1 ay ae)
+
+"le _ (=2)(=2?)-A=2")
+
+(1 _ x2n)(1 _ g2n-l) Lee ( _ antl) a _ x2n)(1 _ g2n-1) a a _ grtl)
+1
+
+(a2) day
+By Lemma [7 the reduced words of An are in the form rw. Hence the number
+of reduced words given by the generating function
+
+(l+a)(l+a+a7)---(lt+a+---+2")
+(T= a) — 2) (12)
+
+which is well known Poincaré polynomial of the affine Weyl group An. (see [II]).
+Therefore these are all reduced words of A,. Hence by Composition-Diamond
+Lemma, G’ is a Grébner-Shirshov basis of A,. In fact, G’ is a reduced Grébner-
+Shirshov basis.
+
+REFERENCES
+
+{1] L.A. Bokut and L.S. Shiao, Grébner-Shirshov bases for Coxeter groups, Comm. Algebra 29
+(2001), 4305-4319.
+
+{2} L. A. Bokut, Imbeddings into Simple Associative Algebras, Algebra Logika 15 (1976), 117-
+142.
+
+[3] L.A. Bokut, Unsolvability of the word problem, and subalgebras of finitely presented Lie
+algebras, Izv. Akad. Nauk. SSSR Ser. Mat., 36 (1972), 1173-1219.
+
+[4] G. M. Bergman, The Diamond Lemma for Ring Theory, Adv. Math. 29 (1978), 178-218.

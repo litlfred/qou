@@ -1,0 +1,47 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0304010v1",
+ "source_sha256": "fc2296c027b3feb0",
+ "brief": "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn.",
+ "extended": "**KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS**\n\n*Vladimir Ivanov and Grigori Olshanski*\n\n49 pp, 5 sections.\n\n**Abstract.** Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ ) of a diagram λ equals dim 2 λ/n !, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ . As n → ∞ , the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω (Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a rema rkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpubli shed work notes, 1999.\n\n**Outline.** References; 2 (ω(x)−| x|). (2.1); 4.10 Thus, the degree of ⟨f⟩n does not exceed ; 2 (¯λ(x)− Ω( x)), x ∈ R. (7.1); 2 (p2\n\n**Extracted claims (proposals, not verified).**\n- Theorem 6.1: Choose a sequence {ξk}k=2,3,... of independent standard Gaussian random vari-\n- Theorem 6.1: can be generalized as follows:\n- Theorem 6.5: Let ρ range over the set of all partitions. We have\n- Theorem 8.6: As n → ∞, the random measures ˆλ concentrate near the Dirac mass at the\n- Theorem 7.1: , we will not repeat all the details.\n- Theorem 10.2: Fix an arbitrary A > 1. For any partition ρ and",
+ "tokens": {
+  "brief": 47,
+  "extended": 347
+ },
+ "sections": [
+  {
+   "id": "sec-000-references",
+   "title": "References",
+   "pages": "1-9"
+  },
+  {
+   "id": "sec-001-2-ωx-x-21",
+   "title": "(ω(x)−| x|). (2.1)",
+   "pages": "9-27"
+  },
+  {
+   "id": "sec-002-410-thus-the-degree-of-fn-does-not-exceed-1",
+   "title": "Thus, the degree of ⟨f⟩n does not exceed 1",
+   "pages": "27-33"
+  },
+  {
+   "id": "sec-003-2-λx-ω-x-x-r-71",
+   "title": "(¯λ(x)− Ω( x)), x ∈ R. (7.1)",
+   "pages": "33-40"
+  },
+  {
+   "id": "sec-004-2-p2",
+   "title": "(p2",
+   "pages": "40-49"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

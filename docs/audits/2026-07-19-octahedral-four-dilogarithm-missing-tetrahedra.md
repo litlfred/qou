@@ -76,6 +76,6 @@ The quantum dilogarithm has a **real (phase / energy)** and an **imaginary (volu
 `E_unit` / the −9% is **not** closed here — this locates the missing structure (the octahedral
 completion) and the tool (the 4-`Φ_q` / alien resummation). Anti-laundering stands.
 
-Refs: `uploads/2509.02354v2.pdf`, `uploads/0012035v3.pdf`, `uploads/phys-rep09.pdf` (owner-uploaded,
+Refs: `library/arxiv-2509.02354v2/2509.02354v2.pdf`, `library/arxiv-math-ph-0012035v3/0012035v3.pdf`, `library/phys-rep09/phys-rep09.pdf` (owner-uploaded,
 commit `618466`); #4117 `2026-07-19-eunit-source-is-the-counit.md`; sibling #3805 (`A_ω`);
 `climax-volume-mass/crossing-energy-*`.

@@ -1,0 +1,177 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "angled-survey",
+ "source_sha256": "8b49e682a39848bc",
+ "brief": "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on",
+ "extended": "**Contemporary Mathematics From angled triangulations to hyperbolic structures**\n\n*David Futer and Fran¸cois Guéritaud*\n\n24 pp, 31 sections.\n\n**Abstract.** This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifoldM with toroidal boundary. We also survey a number of applications of this technique. The method involves subdividingM into ideal tetrahedra and solving a system of gluing equations to ﬁnd hyperbolic shapes for the tetrahedra. The gluing equations decompose into a linear and non-linear part. The solutions to the linear equations form a convex polytopeA. The solution to the non-linear part (unique if it exists) is a critical point of a certainvolume functional on this polytope. The main contribution of this paper is an elementary proof of Rivin’s theorem that a critical point of the volume functional onA produces a complete hyperbolic structure onM.\n\n**Outline.** 1 Introduction; 2 DAVID FUTER AND FRANC¸OISGU ´ERITAUD; 1.1 Where to ﬁnd proofs. Proofs of Theorem 1.1; 2 Gluing equations; 1.2 Extending and applying the method. Section; 6.3 For each of these families of manifolds, c; 4 DAVID FUTER AND FRANC¸OISGU ´ERITAUD; 1.3 A reader’s guide. For a relative novice to; 1.4 Acknowledgements. The proof of Theorem 1.2; 6 DAVID FUTER AND FRANC¸OISGU ´ERITAUD; 3 The polytope of angle structures; 8 DAVID FUTER AND FRANC¸OISGU ´ERITAUD; 2 With this setup, the system of equations is; 10 DAVID FUTER AND FRANC¸OISGU ´ERITAUD; 4 Leading–trailing deformations; 12 DAVID FUTER AND FRANC¸OISGU ´ERITAUD; 14 DAVID FUTER AND FRANC¸OISGU ´ERITAUD; 16 DAVID FUTER AND FRANC¸OISGU ´ERITAUD\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Let M be an orientable 3–manifold with boundary consisting\n- Theorem 1.2: Let M be an orientable3–manifold with boundary consisting of\n- Theorem 1.2: , solving the non-linear part of the gluing equations amounts to ﬁnding\n- Theorem 1.2: Let M be an orientable3–manifold with boundary consisting of\n- Theorem 1.2: concerns manifolds with non-empty boundary that consists of tori.\n- Theorem 6.1: Let M be a manifold with boundary a single torusC,a n dl e t",
+ "tokens": {
+  "brief": 49,
+  "extended": 547
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-11-where-to-ﬁnd-proofs-proofs-of-theorem-11-are",
+   "title": "Where to ﬁnd proofs. Proofs of Theorem 1.1 are readily available in",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-2-gluing-equations",
+   "title": "Gluing equations",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-12-extending-and-applying-the-method-section-6-a",
+   "title": "Extending and applying the method. Section 6, at the end of the",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-63-for-each-of-these-families-of-manifolds-certa",
+   "title": "For each of these families of manifolds, certain angle inequalities obtained while",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-006-4-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-007-13-a-readers-guide-for-a-relative-novice-to-this",
+   "title": "A reader’s guide. For a relative novice to this subject, we recommend",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-008-14-acknowledgements-the-proof-of-theorem-12-was",
+   "title": "Acknowledgements. The proof of Theorem 1.2 was developed while",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-009-6-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-010-3-the-polytope-of-angle-structures",
+   "title": "The polytope of angle structures",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-011-8-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-012-2-with-this-setup-the-system-of-equations-is",
+   "title": "With this setup, the system of equations is",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-013-10-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-014-4-leadingtrailing-deformations",
+   "title": "Leading–trailing deformations",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-015-12-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-016-14-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-017-16-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-018-5-volume-maximization",
+   "title": "Volume maximization",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-019-18-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-020-6-extensions-applications-generalizations",
+   "title": "Extensions, applications, generalizations",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-021-61-closed-manifolds-via-dehn-ﬁllingthe-most-stra",
+   "title": "Closed manifolds via Dehn ﬁlling.The most straightforward way to",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-022-20-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-023-62-manifolds-with-polyhedral-boundary-there-is-a",
+   "title": "Manifolds with polyhedral boundary. There is also an analogue of",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-024-63-generalized-angle-structuresall-of-the-angle",
+   "title": "Generalized angle structures.All of the angle structures discussed so",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-025-64-volume-estimates-recall-that-by-lemma-53-the",
+   "title": "Volume estimates. Recall that, by Lemma 5.3, the volume functional",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-026-22-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-027-65-canonical-triangulations-nearly-everything-di",
+   "title": "Canonical triangulations. Nearly everything discussed thus far in this",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-028-66-weil-rigidity-we-close-this-paper-with-an-app",
+   "title": "Weil rigidity. We close this paper with an application whose statement",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-029-references",
+   "title": "References",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-030-24-david-futer-and-francoisgu-eritaud",
+   "title": "DAVID FUTER AND FRANC¸OISGU ´ERITAUD",
+   "pages": "24-24"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

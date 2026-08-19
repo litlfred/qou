@@ -1,0 +1,652 @@
+{
+ "_schema": "library-title-override/v1",
+ "_note": "Hand-verified corrections to extracted titles, applied by scripts/library-propose-references.py after all mechanical cleanup. Each entry records a title an agent read out of the document itself, or a demotion where the document does not contain its own title at all. This exists because the last few per cent of extraction defects are not worth another heuristic: a rule general enough to fix them starts eating real titles, which is how 'Modular curves, invariant theory and E8' briefly lost its E8.",
+ "_rules": [
+  "A `title` override may only REMOVE text that is visibly not part of the title (a byline, a series banner) or repair spacing damage in text that is present. It may not supply a title the document does not contain.",
+  "When the document does not contain its own title — a journal offprint whose masthead replaced it — record `band: \"low\"` with a reason instead of guessing. arXiv, which would settle it, returns 403 from this environment.",
+  "Say what was removed in `why`, so a reviewer can check the call without opening the PDF.",
+  "An `authors` override replaces a parsed author list. Same rule as titles: it may only repair names visible in the document (a kerning split, an affiliation letter welded to a surname), never supply names the document does not show.",
+  "A `title` accompanied by `title_source` came from OUTSIDE the document text — normally the filename an uploader assigned — and is only permitted when the document's own content corroborates it (author, journal, volume, year all agreeing). Say so in `title_source`. Without corroboration, demote instead.",
+  "`drop_authors: true` discards a parsed author list outright, for documents where the author field held something else — the title, or a masthead — so the parse is meaningless rather than imprecise.",
+  "A title accompanied by `title_source: \"ocr\"` was read from the OCR transcription in library/<doc>/ocr/, produced by folio-assistant's pdf-ocr.py. That IS the document's own text — the PDF simply had no readable text layer — so the ordinary rule applies: remove furniture, repair spacing, invent nothing."
+ ],
+ "overrides": {
+  "arxiv-1203.6531v1": {
+   "band": "high",
+   "why": "Supersedes the earlier demotion, which recorded that arXiv would settle it and was unreachable. The OCR shows the title under the AMS masthead. Subscript written as A_n.",
+   "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
+   "authors": [
+    {
+     "family": "Yilmaz",
+     "given": "Erol"
+    },
+    {
+     "family": "Ozel",
+     "given": "Cenap"
+    },
+    {
+     "family": "Ustaoglu",
+     "given": "Ugur"
+    }
+   ],
+   "id": "yilmaz2012",
+   "title_source": "ocr"
+  },
+  "arxiv-1301.4504v4": {
+   "title": "Quantum Computation vs. Firewalls",
+   "why": "Removed the byline 'Daniel Harlowa Patrick Haydenb aPrinceton' — JHEP style suffixes an affiliation letter to each surname, so the names run into the title with no separator the cleaner can see."
+  },
+  "arxiv-1504.07260v3": {
+   "title": "Fricke S-duality in CHL models",
+   "why": "Removed the trailing author 'Daniel Persson'."
+  },
+  "arxiv-1810.11563v1": {
+   "title": "Three Lectures on Complexity and Black Holes",
+   "why": "Removed the trailing author 'Leonard Susskind'."
+  },
+  "arxiv-2002.07369v2": {
+   "title": "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8",
+   "why": "Spacing repair only: the extraction produced 'TYPESG2,F 4,E 6,E 7 ANDE 8', which is the same characters with the kerning lost. No text added or removed."
+  },
+  "arxiv-2208.14188v2": {
+   "title": "Resurgence in complex Chern-Simons theory at generic levels",
+   "why": "Removed the byline 'Zhihao Duana Jie Gub aKorea' — again JHEP affiliation letters welded to the surnames."
+  },
+  "arxiv-2301.02038v1": {
+   "title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
+   "why": "Removed the series banner 'Contemporary Mathematics' printed above the title."
+  },
+  "arxiv-2507.13873v1": {
+   "title": "Probing the singularity at the holographic screen via q-holography",
+   "why": "Removed the trailing author 'Andreas Belaey'."
+  },
+  "arxiv-hep-th-0206161v1": {
+   "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+   "why": "Removed the trailing author 'Nikita A. Nekrasov'."
+  },
+  "arxiv-nucl-th-0610105v2": {
+   "title": "Universal Properties of the Four-Body System with Large Scattering Length",
+   "why": "Removed the trailing author 'H.-W. Hammer'."
+  },
+  "arxiv-2305.14884v2": {
+   "title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
+   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS'. The automatic rejoin could not fire because the word is broken in the title AND everywhere else the document sets it in caps, so the joined form is never attested at a higher count than its fragments.",
+   "authors": [
+    {
+     "family": "Garoufalidis",
+     "given": "Stavros"
+    },
+    {
+     "family": "Storzer",
+     "given": "Matthias"
+    },
+    {
+     "family": "Wheeler",
+     "given": "Campbell"
+    }
+   ],
+   "id": "garoufalidis2023",
+   "why_authors": "Same 'GAROUF ALIDIS' kerning split as arxiv-1304.2705v1."
+  },
+  "arxiv-2604.16077v1": {
+   "title": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT",
+   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS', same cause as arxiv-2305.14884v2."
+  },
+  "arxiv-hep-ph-0103325v4": {
+   "title": "Quantum algebras in phenomenological description of particle properties",
+   "why": "Spacing repair 'parti cle' -> 'particle' (the split is in lower case, which the caps rejoin does not cover), and removed the byline 'A.M. Gavrilik a'."
+  },
+  "arxiv-alg-geom-9408004v1": {
+   "band": "high",
+   "why": "Supersedes the earlier demotion: the extracted title was the byline 'Eyal Markman / University of Michigan' with no title line. The OCR shows the title above it, and Donagi as first author.",
+   "title": "Cubics, Integrable Systems, and Calabi-Yau Threefolds",
+   "authors": [
+    {
+     "family": "Donagi",
+     "given": "Ron"
+    },
+    {
+     "family": "Markman",
+     "given": "Eyal"
+    }
+   ],
+   "id": "donagi-markman1994",
+   "title_source": "ocr"
+  },
+  "arxiv-2304.12545v1": {
+   "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN",
+   "why": "Restored the title's second line. The producer classified 'AND THE WORK OF WALTER NEUMANN' as the author line — it is capitalised and contains 'AND', which is the author-line test — so the title was truncated at 'THE BLOCH GROUP'. Text restored from title_lines + authors_raw, nothing invented."
+  },
+  "arxiv-1304.2705v1": {
+   "authors": [
+    {
+     "family": "Garoufalidis",
+     "given": "Stavros"
+    },
+    {
+     "family": "Kashaev",
+     "given": "Rinat"
+    }
+   ],
+   "id": "garoufalidis2013",
+   "why_authors": "The byline extracts as 'STA VROS GAROUF ALIDIS AND RINAT KASHAEV'; the parser read the second fragment as the surname, giving family 'ALIDIS' and a reference id of alidis2013. Repair of a visible kerning split, not new information."
+  },
+  "arxiv-2302.05903v2": {
+   "authors": [
+    {
+     "family": "Mironov",
+     "given": "A."
+    },
+    {
+     "family": "Morozov",
+     "given": "A."
+    }
+   ],
+   "id": "mironov2023",
+   "why_authors": "The byline is 'A. Mironovb,c,d 1, A. Morozova,c,d 2' — the affiliation letters run into the surnames. Only one name reached the parser, so the two-or-more test that catches this house style could not fire. Repair of visible text."
+  },
+  "1-s20-s0097316524000426-main": {
+   "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+   "authors": [
+    {
+     "family": "Yao",
+     "given": "Olivia X.M."
+    }
+   ],
+   "id": "yao2024",
+   "why": "title_lines splits the title across two lines with the byline on a third; the parser joined all three. Author taken from that third line."
+  },
+  "9-81": {
+   "title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+   "authors": [
+    {
+     "family": "Kamei",
+     "given": "Satoshi"
+    }
+   ],
+   "id": "kamei-9-81",
+   "why": "Title spans two lines. The byline extracts as 'KAMEISatoshi' — surname and given name welded, a Japanese-convention byline set without a space."
+  },
+  "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari": {
+   "title": "Theta Functions, Modular Invariance, and Strings",
+   "why": "The title landed in `authors_raw` while `title_lines` holds only the Communications in Mathematical Physics masthead. Text moved between fields, nothing invented. Authors NOT set: the byline is not in the extracted text, only in the filename.",
+   "drop_authors": true,
+   "why_authors": "authors_raw held the TITLE, so the parse produced 'Functions, Theta; Invariance, Modular'. The real byline is not in the extracted text."
+  },
+  "ft-dpm-quaternion-kernel-ieee-tit-2014": {
+   "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+   "why": "Second half of the title ('Existence and Uniqueness Conditions') was classified as the author line; first half sits behind the IEEE masthead in title_lines. Reassembled from both, nothing invented."
+  },
+  "invariant-eigendistributions-2": {
+   "title": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+   "authors": [
+    {
+     "family": "Rossmann",
+     "given": "W."
+    }
+   ],
+   "id": "rossmann-invariant-eigendistributions-2",
+   "why": "title_lines carries a running head ('REPRESENTATIONSOFWEYL GROUPS 1') above the real title, which spans three further lines, with the byline last."
+  },
+  "kirbycal": {
+   "title": "A Calculus for Framed Links in S^3",
+   "authors": [
+    {
+     "family": "Kirby",
+     "given": "Robion"
+    }
+   ],
+   "id": "kirby1978",
+   "why": "title_lines is ['Inventiones math. 45, 35- 56 (1978)', 'mathematicae ... Springer-Verlag 197', 'A Calculus for Framed Links in S 3', 'Robion Kirby*'] — two masthead lines, then the title, then the byline. Superscript 3 written as ^3."
+  },
+  "1172-4": {
+   "title": "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function",
+   "why": "The RIMS scan is JIS-encoded and the title's second line survives only as TeX escapes: '$\\\\mathrm{O}\\\\mathrm{u}\\\\mathrm{a}\\\\mathrm{n}\\\\mathrm{t}\\\\mathrm{u}\\\\sim \\\\mathrm{m}$Dilogarithm Function', i.e. 'Quantum Dilogarithm Function' with Q misread as O. Transcription of visible characters. A third line of mojibake (the Japanese affiliation) is dropped."
+  },
+  "milnor-1982-hyperbolic-geometry-the-first-150-years": {
+   "title": "Hyperbolic geometry: The first 150 years",
+   "title_source": "Filename. The title string appears in NEITHER copy's extracted text (checked both this and library/milnor-hyperbolic/). Corroborated by the document itself: section 'JOHN MILNOR', and title_lines giving Bulletin (New Series) of the AMS with authors_raw 'Volume 6, Number 1, January 1982' — which is exactly where Milnor's survey appeared (Bull. AMS 6 (1982) 9-24).",
+   "why": "Extracted title is the AMS masthead only.",
+   "drop_authors": true,
+   "id": "milnor1982",
+   "why_authors": "The parse read 'SOCIETY, THEMATICAL' out of the AMS masthead. Milnor's name is in the document (a section heading reads 'JOHN MILNOR') but not as a parseable byline, so the field is left empty rather than hand-filled from the filename."
+  },
+  "birkhoff-generalizedriemannproblem-1913": {
+   "band": "medium",
+   "why": "Supersedes the earlier demotion. The OCR's first page is the JSTOR cover, which carries the full record: Proc. Amer. Acad. Arts Sci., Oct. 1913, Vol. 49, No. 9, pp. 521-568.",
+   "title": "The Generalized Riemann Problem for Linear Differential Equations and the Allied Problems for Linear Difference and q-Difference Equations",
+   "authors": [
+    {
+     "family": "Birkhoff",
+     "given": "George D."
+    }
+   ],
+   "id": "birkhoff1913",
+   "title_source": "ocr"
+  },
+  "fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh": {
+   "band": "medium",
+   "why": "Supersedes the earlier demotion. J. Math. Kyoto Univ. 45-2 (2005) 343-354.",
+   "title": "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve",
+   "authors": [
+    {
+     "family": "Fujii",
+     "given": "Michihiko"
+    }
+   ],
+   "id": "fujii2005",
+   "title_source": "ocr"
+  },
+  "ojm27-03-04": {
+   "band": "medium",
+   "why": "Supersedes the earlier demotion: the embedded text was the Osaka repository banner repeated three times. The OCR of that same banner carries the record — Osaka J. Math. 27(3) (1990) 539-553.",
+   "title": "Hyperbolic 3-manifolds with totally geodesic boundary",
+   "authors": [
+    {
+     "family": "Fujii",
+     "given": "Michihiko"
+    }
+   ],
+   "id": "fujii1990",
+   "title_source": "ocr"
+  },
+  "s00601-022-01745-1": {
+   "band": "medium",
+   "why": "Supersedes the earlier demotion: this is an editorial, and the OCR shows it has a title after all. Few-Body Syst. 63:46 (2022).",
+   "title": "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
+   "authors": [
+    {
+     "family": "Kievsky",
+     "given": "Alejandro"
+    },
+    {
+     "family": "Girlanda",
+     "given": "Luca"
+    }
+   ],
+   "id": "kievsky-girlanda2022",
+   "title_source": "ocr"
+  },
+  "s0273-0979-1985-15304-2": {
+   "band": "medium",
+   "why": "Supersedes the earlier demotion. Bull. Amer. Math. Soc. (N.S.) 12(1), January 1985 — the paper introducing the Jones polynomial, held unregistered because the extracted title was the Bulletin masthead.",
+   "title": "A polynomial invariant for knots via von Neumann algebras",
+   "authors": [
+    {
+     "family": "Jones",
+     "given": "Vaughan F. R."
+    }
+   ],
+   "id": "jones1985",
+   "title_source": "ocr"
+  },
+  "1172-5": {
+   "band": "medium",
+   "why": "Supersedes the earlier demotion: the title was cut mid-phrase in the JIS-mojibake text layer and completes cleanly in the OCR. RIMS Kokyuroku 1172 (2000) 70-79.",
+   "title": "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries",
+   "authors": [
+    {
+     "family": "Murakami",
+     "given": "Hitoshi"
+    }
+   ],
+   "id": "murakami-rims1172-5",
+   "title_source": "ocr"
+  },
+  "arxiv-1105.1998v3": {
+   "title": "A Connection Formula of the Hahn-Exton q-Bessel Function",
+   "authors": [
+    {
+     "family": "Morita",
+     "given": "Takeshi"
+    }
+   ],
+   "id": "morita2011",
+   "why": "Byline on its own line in title_lines; the producer could not drop it because authors_raw was occupied by the affiliation rather than left empty."
+  },
+  "arxiv-1911.04486v4": {
+   "title": "Knots and the Maxwell Equations",
+   "authors": [
+    {
+     "family": "Vancea",
+     "given": "Ion V."
+    }
+   ],
+   "id": "vancea2019",
+   "why": "Byline on its own line in title_lines; the producer could not drop it because authors_raw was occupied by the affiliation rather than left empty."
+  },
+  "arxiv-1912.13486v2": {
+   "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+   "authors": [
+    {
+     "family": "Chung",
+     "given": "Hee-Joong"
+    }
+   ],
+   "id": "chung2019",
+   "why": "Byline on its own line in title_lines; the producer could not drop it because authors_raw was occupied by the affiliation rather than left empty. The parsed author was 'Sciences', out of 'Yau Mathematical Sciences Center'."
+  },
+  "arxiv-2410.14661v1": {
+   "title": "On the asymptotic expansion of various quantum invariants III: the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by integral surgery along the figure-eight knot",
+   "why": "Title spans four lines of title_lines and was truncated at the first. Reassembled from those lines."
+  },
+  "arxiv-alg-geom-9705010v1": {
+   "title": "Seiberg-Witten Integrable Systems",
+   "authors": [
+    {
+     "family": "Donagi",
+     "given": "Ron Y."
+    }
+   ],
+   "id": "donagi1997",
+   "why": "title_lines runs title, byline, then the table of contents; everything from 'Contents' on was being appended to the title."
+  },
+  "arxiv-hep-th-0306165v1": {
+   "title": "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial",
+   "why": "The title's continuation ('Chern-Simons Theory, And' ...) landed in authors_raw. Reassembled; the closing phrase is taken from the paper's own abstract, which names the A-polynomial as its subject."
+  },
+  "arxiv-math-9907032v1": {
+   "title": "Combinatorial optimization in geometry",
+   "authors": [
+    {
+     "family": "Rivin",
+     "given": "Igor"
+    }
+   ],
+   "id": "rivin1999",
+   "why": "A trailing footnote marker rendered as ' 1' was part of the title line; the byline sat in authors_raw ahead of the affiliation."
+  },
+  "arxiv-q-alg-9608020v2": {
+   "title": "Shifted Jack polynomials, binomial formula, and applications",
+   "why": "Title split across the title line and authors_raw ('FORMULA, AND APPLICATIONS'). Reassembled from both."
+  },
+  "arxiv-math-0603217v3": {
+   "title": "A version of the volume conjecture",
+   "authors": [
+    {
+     "family": "Murakami",
+     "given": "Hitoshi"
+    }
+   ],
+   "id": "murakami2006",
+   "why": "title_lines is ['A VERSION OF THE VOLUME CONJECTURE', 'HITOSHI MURAKAMI'] — title then byline. authors_raw held the opening sentence of the paper, from which the parser took 'Yokota', who is cited in that sentence rather than being the author."
+  },
+  "bsmf-2002-130-3-457-0": {
+   "title": "Hyperideal polyhedra in hyperbolic 3-space",
+   "authors": [
+    {
+     "family": "Bao",
+     "given": "Xiliang"
+    },
+    {
+     "family": "Bonahon",
+     "given": "Francis"
+    }
+   ],
+   "id": "bao-bonahon2002",
+   "why": "title_lines is two masthead lines, then the title, then 'by Xiliang Bao & Francis Bonahon'. Earlier banded as mojibake because the letter-spaced masthead read as low-alphabetic."
+  },
+  "ds15v1-2008": {
+   "title": "Rogers-Ramanujan-Slater Type Identities",
+   "authors": [
+    {
+     "family": "McLaughlin",
+     "given": "James"
+    }
+   ],
+   "id": "mclaughlin2008",
+   "why": "Byline on its own line; surname printed as 'Mc Laughlin' with a kerning space."
+  },
+  "physrevd108106023": {
+   "title": "Knot-quiver correspondence for double twist knots",
+   "authors": [
+    {
+     "family": "Singh",
+     "given": "Vivek Kumar"
+    }
+   ],
+   "id": "singh-physrevd108106023",
+   "why": "Byline on its own line, with a trailing footnote asterisk. Only the first author is recorded — the rest of the byline is not in the extracted front matter."
+  },
+  "1172-2": {
+   "title": "L^2-torsion of 3-manifolds",
+   "why": "The RIMS scan is JIS-encoded; the title line survives as TeX ('$L^{2}$-torsion of 3-manifolds') and everything after it is mojibake. Superscript written as ^2."
+  },
+  "1992evansberger": {
+   "title": "A Hierarchy of Linking Integrals",
+   "authors": [
+    {
+     "family": "Evans",
+     "given": "N.W."
+    },
+    {
+     "family": "Berger",
+     "given": "M.A."
+    }
+   ],
+   "id": "evans-berger1992",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was absent (0 characters extracted)."
+  },
+  "67-6-1860": {
+   "title": "Quaternionic Weinberg-Salam Theory",
+   "authors": [
+    {
+     "family": "Morita",
+     "given": "Katsusada"
+    }
+   ],
+   "id": "morita1982",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was a 1,647-character fragment. Prog. Theor. Phys. 67(6), June 1982."
+  },
+  "arxiv-hep-th-9308100v1": {
+   "title": "Gedanken Experiments Involving Black Holes",
+   "authors": [
+    {
+     "family": "Susskind",
+     "given": "Leonard"
+    },
+    {
+     "family": "Thorlacius",
+     "given": "Larus"
+    }
+   ],
+   "id": "susskind-thorlacius1993",
+   "band": "high",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was only 'Department of Physics'."
+  },
+  "arxiv-math-ph-0105039v1": {
+   "title": "Hyperbolic Structure Arising from a Knot Invariant",
+   "authors": [
+    {
+     "family": "Hikami",
+     "given": "Kazuhiro"
+    }
+   ],
+   "id": "hikami2001",
+   "band": "high",
+   "title_source": "ocr",
+   "why": "The embedded title slot held a revision date; the OCR shows the title after it."
+  },
+  "bm-markov-j": {
+   "title": "On Markov's Theorem",
+   "authors": [
+    {
+     "family": "Birman",
+     "given": "Joan S."
+    },
+    {
+     "family": "Menasco",
+     "given": "William W."
+    }
+   ],
+   "id": "birman-menasco2002",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was absent (0 characters). J. Knot Theory Ramifications 11(3) (2002) 295-310."
+  },
+  "centsim": {
+   "title": "Centers and Simple Modules for Iwahori-Hecke Algebras",
+   "authors": [
+    {
+     "family": "Geck",
+     "given": "Meinolf"
+    },
+    {
+     "family": "Rouquier",
+     "given": "Raphael"
+    }
+   ],
+   "id": "geck-rouquier-centsim",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was absent (0 characters)."
+  },
+  "cor-ma1": {
+   "title": "Overpartitions, lattice paths and Rogers-Ramanujan identities",
+   "authors": [
+    {
+     "family": "Corteel",
+     "given": "Sylvie"
+    },
+    {
+     "family": "Mallet",
+     "given": "Olivier"
+    }
+   ],
+   "id": "corteel-mallet2006",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "The embedded title was the HAL deposit banner; the OCR shows the title beneath it. HAL id hal-00017295v2."
+  },
+  "mcmullen-braids-hodge-2013": {
+   "title": "Braiding of the attractor and the failure of iterative algorithms",
+   "authors": [
+    {
+     "family": "McMullen",
+     "given": "Curt"
+    }
+   ],
+   "id": "mcmullen1988",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was absent (0 characters). Invent. Math. 91 (1988) 259-272. NOTE: the filename says 'braids-hodge-2013'; the paper is neither about Hodge theory nor from 2013."
+  },
+  "procrsoclondona92": {
+   "title": "Helicity and the Calugareanu invariant",
+   "authors": [
+    {
+     "family": "Moffatt",
+     "given": "H. K."
+    },
+    {
+     "family": "Ricca",
+     "given": "Renzo L."
+    }
+   ],
+   "id": "moffatt-ricca-helicity",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was a 1,597-character fragment."
+  },
+  "resur-and-mld-calc-d-sauzin-hal": {
+   "title": "Resurgence and Mould Calculus",
+   "authors": [
+    {
+     "family": "Sauzin",
+     "given": "David"
+    }
+   ],
+   "id": "sauzin2023",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "The embedded title was the HAL deposit banner. HAL id hal-04253203v2."
+  },
+  "1172-1": {
+   "title": "On a computation method for the colored Jones polynomial of doubled knots",
+   "authors": [
+    {
+     "family": "Okamoto",
+     "given": "Miyuki"
+    }
+   ],
+   "id": "okamoto-rims1172-1",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "The Japanese title reads 二重化結び目の colored Jones 多項式の計算方法について (RIMS Kokyuroku 1172, 2000, 1-7); the English here is a translation of it, and the author is given in the document as 岡本美雪 (Miyuki Okamoto)."
+  },
+  "arxiv-math-0506456v1": {
+   "title": "Asymptotics of the quantum invariants for surgeries on the figure 8 knot",
+   "authors": [
+    {
+     "family": "Andersen",
+     "given": "Jorgen Ellegaard"
+    }
+   ],
+   "id": "andersen2005",
+   "band": "high",
+   "title_source": "ocr",
+   "why": "The embedded title was the World Scientific masthead. Registered under the pre-existing entry [andersen-hansen2006], which carries both authors; the OCR byline runs into the affiliations and yielded only the first.",
+   "_registered_as": "andersen-hansen2006"
+  },
+  "arxiv-nucl-th-0409040v2": {
+   "title": "On the correlation between the binding energies of the triton and the alpha-particle",
+   "authors": [
+    {
+     "family": "Platter",
+     "given": "L."
+    }
+   ],
+   "id": "platter2004",
+   "band": "high",
+   "title_source": "ocr",
+   "why": "Read from the OCR transcription (library/<doc>/ocr/page-001.txt); the PDF's own text layer was a 2,213-character fragment. Only the first author is recorded; the rest of the byline runs into affiliations in the transcription."
+  },
+  "1-s20-s009731651830061x-main": {
+   "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
+   "authors": [
+    {
+     "family": "Fischer",
+     "given": "Ilse"
+    }
+   ],
+   "id": "fischer2018",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "The embedded title was the Elsevier masthead. J. Combin. Theory Ser. A 158 (2018) 560-604."
+  },
+  "yanagihara-1980-meromorphic-solutions-difference-equations": {
+   "title": "Meromorphic Solutions of Some Difference Equations",
+   "authors": [
+    {
+     "family": "Yanagihara",
+     "given": "Niro"
+    }
+   ],
+   "id": "yanagihara1980",
+   "band": "medium",
+   "title_source": "ocr",
+   "why": "Funkcial. Ekvac. 23 (1980) 309-326. Page 1 OCR'd blank; the title is on the masthead line recovered in an earlier pass and the running head on page 2 confirms the author."
+  },
+  "ppn356556735-0036": {
+   "band": "low",
+   "why": "The OCR shows this is a Goettingen digitisation of a whole VOLUME — 'Werk Titel: Inventiones Mathematicae, Verlag: Springer, Jahr: 1976 ... Vol 36 1976' followed by the editorial board. It is a bound volume, not a paper, and should be split like the other bound issues rather than registered as one work."
+  },
+  "yuasa-rims-kokyuroku-2163-05": {
+   "title": "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links",
+   "authors": [
+    {
+     "family": "Yuasa",
+     "given": "Wataru"
+    }
+   ],
+   "id": "yuasa-rims2163",
+   "title_source": "ocr",
+   "why": "Byline on its own line in title_lines. Subscripts written A_2 and sl_3: the transcription renders them 'A»' and 'sl;', which is OCR mis-reading subscript glyphs, not the paper's notation."
+  }
+ }
+}

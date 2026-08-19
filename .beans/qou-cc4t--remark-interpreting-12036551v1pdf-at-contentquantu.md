@@ -13,7 +13,7 @@ The exponential growth of N_L(v) is a scope caveat on volume-as-identifier that 
 - §1 Introduction (third main result) + §5 — The number N_L(v) of hyperbolic link complements with a given volume v can grow at least exponentially fast with v.
   Use here: A structural caution for the volume-indexed mass law: hyperbolic volume is a badly degenerate label for links, so Vol(K) alone cannot separate two distinct link-indexed particles at larger v. Worth stating once as a scope note wherever the folio treats Vol(K) as the identifying geometric datum of a knot/link.
 
-Source: `uploads/1203.6551v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1203.6551v1/1203.6551v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

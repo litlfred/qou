@@ -1,0 +1,57 @@
+16 SYLVIE CORTEEL AND OLIVIER MALLET
+
+e else if 2 > 1, remove the overlining of fm4e—1 and overline fm,
+© fm+e — fm+e—1, and
+efnmn—fmtl.
+
+For example if m = 1 and the multuple is (1,1,3), we have n = 12, ¢ = 2 and F(1,1,3) = (2,1,2) whose
+weight is 10.
+
+Let By,i(n,j,N) be the number of overpartitions counted by By,i(n,j) of length N. Let Byi(N) =
+ee, By i(n,j,N)q"a). Now we divide the multiplicity sequence of an overpartition \ € B,,i(N) into mul-
+tuples going from the right to the left and we apply F to each multuple. We call the result F(A). If
+F(A) has a zero part, this part is discarded. Note that if A has weight n and length N then F(A) has
+weight n — N and length N or N — 1. For example, \ = (0, (0,1), (1,1,3)) has weight 24 and length 3 and
+F(0, (0,1), (1, 1,3)) = (0,1, 0,2, 1,2) whose weight is 21 and length 3.
+
+Let Gx,i(N) be the generating function for the overpartitions 4» = F(A) where . is an overpartition in
+By.i+1(N) and has a multuple (fo,..., fe) with £= land fy 4 1.
+
+Proposition 5.3. Let \ be an overpartition in By i(N) with N >0. Then
+
+e A is an overpartition of n and has a multuple (fo,..., fe) with £>1 or fe =1 if and only if F(A) is
+an overpartition of n — N, has one less overlined part than and is in By,i(N —1).
+
+© ) is an overpartition of n and has a multuple (fo,..., fe) with €=1 and fc #1 if and only if F(A)
+is an overpartition of n— N, has the same number of overlined parts as X and is in Gri-1(N).
+
+e A is an overpartition of n and has no multuple (fo,..., fe) if and only if F(A) is an overpartition of
+n—N, has the same number of overlined parts as and is in Byixi1(N).
+
+Let » be an overpartition in Gy i(N). Then
+
+e A is an overpartition of n and has a multuple (fo,..., fe) with £> 1 or fe =1 if and only if F(A) is
+an overpartition of n — N, has one less overlined part than and is in By,i(N — 1).
+
+¢ A is an overpartition of n and has a multuple (fo,..., fe) with €=1 and fe # 1 and F(A) is an
+overpartition of n—N, has the same number of overlined parts as X and is in Gy i-1(N).
+
+e A is an overpartition of n and has no multuple (fo,..., fe) if and only if F(A) is an overpartition of
+n—N +1, has the same number of overlined parts as \ and is in Britt (N-1).
+
+Proof. The full proof requires lots of details and is given in 3. We give here the first ingredient of the
+proof, that is, if A is an overpartition such that the condition V0, fe + fe41 < k+1 holds, then this condition
+still holds for F'(\). Indeed the only successive multiplicities fj, and fin4i, where fim + fm41 can increase
+are such that fm or fm4+i is the leftmost entry of a multuple. If it is f,, then after the operation f,, is now
+overlined and fim + fm41 < KI still holds. If it is fin41 then fm + fm41 increases by one, only if fj, = 0
+before the operation. We know that fm4i<k—1 before the operation (as fin4i+ fm+2 <k and fin42 > 0)
+then fm + fm+i < k still holds after the operation. Oo
+
+Note that By,;(0) = 1 as the only overpartition of length 0 is the empty overpartition and that if an
+
+overpartition has a multuple (fo,..., f¢) then i > 1. The previous remark and proposition imply that:
+Bra(N) = a Bra();
+Bri(N) = 9% (Beisi(N) + Gei-1(N) + aBy,i(N —1)), if 1 <i<k;
+Gra(N) = gY*Bra(N - 1);
+Gei(N) = a *Brayi(N -—1) + a%Gei1(N) + ag’ Bui(N — 1), if 1<i<k;
+By,i(0) = 1

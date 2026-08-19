@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Cross-check the U_q(sl₂) R-matrix engine against Masbaum's exact twist-knot
-colored-Jones formula (uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf, Masbaum, AGT 3 (2003) 537).
+colored-Jones formula (library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf, Masbaum, AGT 3 (2003) 537).
 
 Masbaum eq (49):  J'_{K_p}(N) = Σ_{n≥0} f_{K_p,n} · ∏_{j=1}^n {N+j}{N-j},
 with {m} = a^m − a^{-m}, and (his examples)
@@ -113,7 +113,7 @@ def main() -> int:
     import json
     from datetime import datetime, timezone
     wit = {
-        "description": "R-matrix engine cross-check vs Masbaum's exact twist-knot colored Jones (uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf). Validates the engine on a CHIRAL knot (trefoil) after the fig-8 (amphichiral) leg.",
+        "description": "R-matrix engine cross-check vs Masbaum's exact twist-knot colored Jones (library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf). Validates the engine on a CHIRAL knot (trefoil) after the fig-8 (amphichiral) leg.",
         "computation": "whitehead_masbaum_crosscheck",
         "audit_only": True,
         "convention": "Masbaum a = my balanced q; framing factor q^{-writhe*(N^2-1)/2}",

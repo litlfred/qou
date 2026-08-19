@@ -5,14 +5,14 @@ the uploaded sources and isogeny-gated; the numeric τ₀ pin is honestly
 flagged as an unresolved j-convention reconciliation (NOT forced).
 
 Corrects a corpus note: the two authoritative sources are ALREADY in
-uploads/ — the prior "absent from corpus" status (alpha-em-b2-scalar-c
+library/ — the prior "absent from corpus" status (alpha-em-b2-scalar-c
 witness, PR #4182) was wrong at the uploads level; the data had simply
 never been extracted.
-  - uploads/pjm-v154-n1-p09-s.pdf — Riera–Rodríguez, "The period
+  - library/pjm-v154-n1-p09-s/pjm-v154-n1-p09-s.pdf — Riera–Rodríguez, "The period
     matrix of Bring's curve", Pacific J. Math 154 (1992). Theorem 1:
     Bring's half-plane is Z = τ·C, τ ∈ ℂ, Im τ > 0. Theorem 2:
     Z = τ₀·C, τ₀ characterized by two j-values; μ = 5τ.
-  - uploads/1206.6004v2.pdf — Braden–Northover (2012). Glyph-extracted
+  - library/arxiv-1206.6004v2/1206.6004v2.pdf — Braden–Northover (2012). Glyph-extracted
     eq (4.3): j(τ₀) = −29³·25/2⁵, j(5τ₀) = −25/2, with τ₀ ≈
     −0.5 + 0.185576i, and the note that Riera–Rodríguez SWAP the two
     j-equations.
@@ -217,7 +217,7 @@ def main() -> int:
         f"(1,5,5,5) EXACTLY the recorded isogeny tuple — a convention-"
         f"independent cross-gate ({ok_eig}) — and Z = τ·C satisfies "
         f"the Riemann relations ({ok3}); BOTH source papers are in "
-        f"uploads/ (correcting the prior 'absent from corpus' note). "
+        f"library/ (correcting the prior 'absent from corpus' note). "
         f"CONVENTION RESOLUTION ATTEMPTED via FOUR independent methods "
         f"(direct eval, j-inversion, 5-isogeny coset from both "
         f"directions): the standard-j reconciliation is RULED OUT — "

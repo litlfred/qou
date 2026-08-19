@@ -1,0 +1,171 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1203.4538v1",
+ "source": {
+  "file": "1203.4538v1.pdf",
+  "sha256": "5e44909e355c78d6de43c56b420491a7dc92e577bbada483a116276cd97b111a",
+  "bytes": 145357,
+  "pages": 15
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1203.4538",
+   "version": "1",
+   "primary_class": "math.AC",
+   "stamp_date": "20 Mar 2012"
+  },
+  "doi": null,
+  "title": "The exponential-logarithmic equivalence classes of surreal numbers",
+  "authors_raw": "Salma Kuhlmann and Mickaël Matusinski",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181023005046-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "The exponential-logarithmic equivalence classes",
+   "of surreal numbers"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction.",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries on surreal numbers.",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Inductive definitions.",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Sign sequences.",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Generalized epsilon numbers",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "The kappa map.",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Sign sequences formulae for the kappa map.",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Transseries and exp-log series.",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction.",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3206,
+   "n_words": 541
+  },
+  {
+   "id": "sec-001-2-preliminaries-on-surreal-numbers",
+   "number": "2",
+   "title": "Preliminaries on surreal numbers.",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 8330,
+   "n_words": 1732
+  },
+  {
+   "id": "sec-002-22-sign-sequences",
+   "number": "2.2",
+   "title": "Sign sequences.",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2752,
+   "n_words": 512
+  },
+  {
+   "id": "sec-003-23-generalized-epsilon-numbers",
+   "number": "2.3",
+   "title": "Generalized epsilon numbers",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 560,
+   "n_words": 110
+  },
+  {
+   "id": "sec-004-3-the-kappa-map",
+   "number": "3",
+   "title": "The kappa map.",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4827,
+   "n_words": 1063
+  },
+  {
+   "id": "sec-005-4-sign-sequences-formulae-for-the-kappa-map",
+   "number": "4",
+   "title": "Sign sequences formulae for the kappa map.",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 8497,
+   "n_words": 1537
+  },
+  {
+   "id": "sec-006-5-transseries-and-exp-log-series",
+   "number": "5",
+   "title": "Transseries and exp-log series.",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4559,
+   "n_words": 738
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 7,
+  "chars_total": 32731
+ }
+}

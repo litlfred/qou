@@ -13,7 +13,7 @@ q-Bessel — independently reproduces this vector with NO free parameters.
 
 The single-argument form was refuted un-sourced (2026-07-02 §4); the
 0th-order q-Bessel TRICOMI C_{0,q} = Σ(-1)^k x^k/([k]_q!)^2 was refuted
-with a source (2026-07-04, uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf). BUT the Tricomi lacks the
+with a source (2026-07-04, library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf). BUT the Tricomi lacks the
 Gaussian q^{k(k-1)/2} that makes the THIRD q-Bessel entire-of-order-0 with
 DISCRETE orthogonality — i.e. the Tricomi is not the Plancherel object.
 
@@ -231,7 +231,7 @@ def main() -> int:
         "d_q={[1],[4],[5],[4][3]/[2]}. 0-dof, no fit; every candidate "
         "reported with ratio. Nothing wired.")
     wb.add_data("source", "Koornwinder-Swarttouw arXiv:1208.2521 (=TAMS 333, "
-                "1992) eq.(1.2); uploads/1208.2521v1.pdf")
+                "1992) eq.(1.2); library/arxiv-1208.2521v1/1208.2521v1.pdf")
     wb.add_data("q0", mp.nstr(Q0, 30))
     wb.add_data("q", mp.nstr(Q, 30))
     wb.add_data("target_d_q", [mp.nstr(t, 20) for t in tvec])

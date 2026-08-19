@@ -1,6 +1,6 @@
 """Audit every hardcoded CODATA constant in the corpus against the NIST table.
 
-Until `uploads/allascii.txt` was committed (2026-08-15) the corpus had no
+Until `library/allascii.txt` was committed (2026-08-15) the corpus had no
 authoritative CODATA table to check against, so every CODATA value was a
 hand-transcribed literal and nothing could detect a mis-transcription or a
 stale edition. This probe closes that: it maps each registry symbol to its
@@ -77,11 +77,11 @@ def _load_registry_values() -> dict[tuple[str, str], tuple[str, str]]:
 
 def main() -> int:
     print("=" * 78)
-    print("CODATA vintage audit — registry literals vs uploads/allascii.txt")
+    print("CODATA vintage audit — registry literals vs library/allascii.txt")
     print("=" * 78)
     print()
     print("Table: NIST 'Fundamental Physical Constants --- Complete Listing',")
-    print("       2022 CODATA adjustment, committed verbatim at uploads/allascii.txt.")
+    print("       2022 CODATA adjustment, committed verbatim at library/allascii.txt")
     print()
 
     registry = _load_registry_values()

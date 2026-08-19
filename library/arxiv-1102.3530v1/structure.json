@@ -1,0 +1,209 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1102.3530v1",
+ "source": {
+  "file": "1102.3530v1.pdf",
+  "sha256": "ad3edab19f3dc404915e597e65b720cb8c9ca2e3bf1b684e2cd9c1571ad3a774",
+  "bytes": 517505,
+  "pages": 35
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1102.3530",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "17 Feb 2011"
+  },
+  "doi": null,
+  "title": "THE COLORED JONES POLYNOMIAL, THE CHERN–SIMONS",
+  "authors_raw": "INVARIANT, AND THE REIDEMEISTER TORSION OF THE",
+  "abstract": "W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons invariant and the twisted Reidemeister torsion asso ciated with a rep- resentation of the fundamental group of the knot complement to the two- dimensional complex special linear group.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20190704132522-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "THE COLORED JONES POL YNOMIAL, THE CHERN–SIMONS",
+  "title_lines": [
+   "THE COLORED JONES POLYNOMIAL, THE CHERN–SIMONS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Integral formula for the colored Jones polynomial",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Approximating the integral formula",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Topological interpretations of S(u) and T(u)",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Representation",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Reidemeister torsion",
+   "page": 11,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Chern–Simons invariant",
+   "page": 11,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Calculation of S",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Proposition ??",
+   "page": 14,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Proposition ??",
+   "page": 31,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Lemma ??",
+   "page": 33,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7007,
+   "n_words": 1334
+  },
+  {
+   "id": "sec-001-2-integral-formula-for-the-colored-jones-polynom",
+   "number": "2",
+   "title": "Integral formula for the colored Jones polynomial",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 3252,
+   "n_words": 763
+  },
+  {
+   "id": "sec-002-3-approximating-the-integral-formula",
+   "number": "3",
+   "title": "Approximating the integral formula",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 5857,
+   "n_words": 1383
+  },
+  {
+   "id": "sec-003-41-representation",
+   "number": "4.1",
+   "title": "Representation",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1849,
+   "n_words": 388
+  },
+  {
+   "id": "sec-004-43-chernsimons-invariant",
+   "number": "4.3",
+   "title": "Chern–Simons invariant",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-42-reidemeister-torsion",
+   "number": "4.2",
+   "title": "Reidemeister torsion",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1953,
+   "n_words": 428
+  },
+  {
+   "id": "sec-006-5-calculation-of-s",
+   "number": "5",
+   "title": "Calculation of S",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 34,
+   "n_chars": 31021,
+   "n_words": 7857
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 4600,
+   "n_words": 734
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 8,
+  "chars_total": 55539
+ }
+}

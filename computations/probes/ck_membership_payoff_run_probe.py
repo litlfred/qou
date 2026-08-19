@@ -251,7 +251,7 @@ witness = {
         "corpus c_3 candidates (computations/c3_hopf_habiro_analysis.py; "
         "docs/coordination/1ppq-qbeta.md); alpha_EM element PR #1511; "
         "binding tails (habiro_tail_membership_gate_probe.py); GSWZ "
-        "gates (uploads/2412.04241v2.pdf); CGZ (uploads/1712.04887v3.pdf)"
+        "gates (library/arxiv-2412.04241v2/2412.04241v2.pdf); CGZ (library/arxiv-1712.04887v3/1712.04887v3.pdf)"
     ),
     "checks": checks,
     "gate_table": table,

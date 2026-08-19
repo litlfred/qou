@@ -1,0 +1,200 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1101.0956v3",
+ "source": {
+  "file": "1101.0956v3.pdf",
+  "sha256": "28fffdb404e885017ea586c077b33fc65bb6062cdde667887254fb33ae323642",
+  "bytes": 352177,
+  "pages": 44
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1101.0956",
+   "version": "3",
+   "primary_class": "math.DG",
+   "stamp_date": "25 Jul 2011"
+  },
+  "doi": null,
+  "title": "CONSTANTIN M. ARCUS ¸",
+  "authors_raw": null,
+  "abstract": "In this paper we present the category of generalized Lie algebroids . Important results (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize the importance and the utility of the objects of this new category.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210111000418-05'00'",
+   "Title": "",
+   "Creator": "LaTeX with hyperref package",
+   "Author": ""
+  },
+  "title_lines": [
+   "CONSTANTIN M. ARCUS ¸"
+  ],
+  "title_prev": "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES CONSTANTIN M. ARCUS ¸"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 17,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 18,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The category of generalized Lie algebroids",
+   "page": 21,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Interior Differential Systems",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Exterior differential calculus",
+   "page": 23,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Exterior Differential Systems",
+   "page": 13,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 17,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The category of generalized Lie algebroids",
+   "page": 18,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Interior Differential Systems",
+   "page": 21,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Exterior differential calculus",
+   "page": 23,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Exterior Differential Systems",
+   "page": 36,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
+   "page": 38,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-31-the-pull-back-lie-algebroid-of-a-generalized",
+   "number": "3.1",
+   "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 15,
+   "n_chars": 14214,
+   "n_words": 4081
+  },
+  {
+   "id": "sec-001-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2766,
+   "n_words": 398
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3972,
+   "n_words": 925
+  },
+  {
+   "id": "sec-003-2-the-category-of-generalized-lie-algebroids",
+   "number": "2",
+   "title": "The category of generalized Lie algebroids",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 38,
+   "n_chars": 33072,
+   "n_words": 9748
+  },
+  {
+   "id": "sec-004-6-torsion-and-curvature-forms-identities-of-cart",
+   "number": "6",
+   "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 44,
+   "n_chars": 9481,
+   "n_words": 2451
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 5,
+  "chars_total": 63505
+ }
+}

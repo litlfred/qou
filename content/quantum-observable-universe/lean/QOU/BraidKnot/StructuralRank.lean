@@ -85,7 +85,7 @@ open scoped DirectSum
     are identified with Specht-filtration layers. -/
 -- Ref: [mathas2004mackey] Filtrations on the Mackey decomposition for cyclotomic Hecke algebras
 -- Ref: [hu-mathas2012graded] Graded induction for Specht modules
--- Ref: [geck-pfeiffer2000] Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras §8-9
+-- Ref: [geckpfeiffer2000] Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras §8-9
 class PanelRankDecomposition
     (μIdx : Type) [Fintype μIdx]
     (νIdx : μIdx → Type) [∀ μ, Fintype (νIdx μ)]

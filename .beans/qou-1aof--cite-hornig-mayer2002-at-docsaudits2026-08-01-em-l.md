@@ -15,7 +15,7 @@ Move the two verified findings out of the references.ts note and into a refid-ke
 - Conclusions, p. 709 — 'only expressions quadratic and cubic in magnetic flux' can be obtained; the quadratic slot is occupied by cross-helicity, which vanishes for Brunnian configurations.
   Use here: The scaling trap: a Coulomb-like pair energy needs Flux², which the third-order invariant cannot supply.
 
-Source: `uploads/0203048v1.pdf` (`hornig-mayer2002`)
+Source: `library/arxiv-physics-0203048v1/0203048v1.pdf` (`hornig-mayer2002`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

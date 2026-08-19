@@ -1,0 +1,5205 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0203273v3",
+ "source": {
+  "file": "0203273v3.pdf",
+  "sha256": "824715d110e343057f8c5b8668e8870e8daf6f94342497f801d4f2e73aa6c2b1",
+  "bytes": 1139876,
+  "pages": 146,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0203273",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "12 Oct 2002"
+  },
+  "doi": null,
+  "title": "NILPOTENCE, RADICAUX ET STRUCTURES MONO \u00cfDALES YVES ANDR\u00c9 ET BRUNO KAHN AVEC UN APPENDICE DE PETER O\u2019SULLIVAN TABLE DES MATI \u00c8RES Introduction 3 I. Radicaux et nilpotence 7 1. Id\u00e9aux et radicaux 7",
+  "authors_raw": null,
+  "title_lines": [
+   "NILPOTENCE, RADICAUX ET STRUCTURES MONO \u00cfDALES",
+   "YVES ANDR\u00c9 ET BRUNO KAHN",
+   "AVEC UN APPENDICE DE PETER O\u2019SULLIVAN",
+   "TABLE DES MATI \u00c8RES",
+   "Introduction 3",
+   "I. Radicaux et nilpotence 7",
+   "1. Id\u00e9aux et radicaux 7"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180530102015-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0203273v3  [math.CT]  12 Oct 2002"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Radicaux et nilpotence",
+   "page": 7,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "I D \u00b4EAUX ET RADICAUX",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. La terminologie varie suivant les auteurs. Ainsi, Saavedra [53,",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.1.1"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. Une sous-cat\u00b4 egorie pleineB d\u2019uneK-cat\u00b4 egorieA est",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. SoientA,B deuxK-cat\u00b4egories etT,T \u2032 deuxK-foncteurs deA vers",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.1.3"
+  },
+  {
+   "level": 2,
+   "title": "Compl\u00b4etions. \u00b4Etant donn\u00b4 e uneK-cat\u00b4 egorieA, on peut former son enveloppe",
+   "page": 8,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "Propri\u00b4et\u00b4es universelles. Les deux constructions ci-dessus ont des propri\u00b4 et\u00b4 es",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. a) Pour tout couple de petitesK-cat\u00b4egories (A,B), avecBK-lin\u00b4eaire,",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.2.1"
+  },
+  {
+   "level": 2,
+   "title": "Alg`ebres `a plusieurs objets. Dans cet article, nous adoptons le point de vue",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. SiX est un ensemble d\u2019objets deA, stable par biproduit, la famille",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.3.1"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SupposonsAK-lin\u00b4eaire. SoientI,J deux id\u00b4eaux deA. Supposons",
+   "page": 10,
+   "source": "inferred",
+   "number": "1.3.2"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. SoitA\u2208A . UnA-id\u00b4eal `a gauche deA est la donn\u00b4 ee, pour tout",
+   "page": 10,
+   "source": "inferred",
+   "number": "1.3.4"
+  },
+  {
+   "level": 3,
+   "title": "D \u00b4e\ufb01nition. Un objet X d\u2019une cat\u00b4 egorieC est compact si le foncteur Y \u21a6\u2192",
+   "page": 11,
+   "source": "inferred",
+   "number": "1.3.5"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) Pour toutA\u2208A et toutM\u2208Mod\u2013A, l\u2019homomorphisme",
+   "page": 11,
+   "source": "inferred",
+   "number": "1.3.6"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoitA une cat \u00b4egorie ab \u00b4elienne stable par limites inductives",
+   "page": 12,
+   "source": "inferred",
+   "number": "1.3.8"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire (cf. [57, p. 140]) . Soit F :A\u2192B un K-foncteur. AlorsF\u2217 :",
+   "page": 12,
+   "source": "inferred",
+   "number": "1.3.9"
+  },
+  {
+   "level": 2,
+   "title": "Radical. On d\u00b4 emontre [30] que",
+   "page": 13,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Un autre radical a \u00b4 et\u00b4 e introduit dans la th` ese de Gabriel [16]",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.4.2"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Soit H :A\u2192 Projf L un foncteur K-lin\u00b4eaire deA vers la ca-",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.4.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) Le radical est le plus grand id \u00b4eal rad(A) tel que",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.4.4"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. Les radicaux des cat\u00b4egoriesA,A\u2295,A\u266e etA\u2295\u266e se correspondent",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.4.5"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. SoitT :A\u2192B unK-foncteur entre deux K-cat\u00b4 egories. Alors",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.4.6"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SiT est plein, il est radiciel. D\u2019autre part, siT est conservatif, on",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.4.7"
+  },
+  {
+   "level": 3,
+   "title": "Mise en garde. a) SiT est conservatif, l\u2019inclusionT\u22121(rad(B))\u2282 rad(A)",
+   "page": 15,
+   "source": "inferred",
+   "number": "1.4.8"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SoitA une K-cat\u00b4egorie, et soit S un objet deA tel queA(S,S )",
+   "page": 15,
+   "source": "inferred",
+   "number": "1.4.9"
+  },
+  {
+   "level": 1,
+   "title": "CAT \u00b4EGORIES DE WEDDERBURN",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. UneK-cat\u00b4 egorie est ditesemi-simple si toutA-module ` a gauche",
+   "page": 15,
+   "source": "inferred",
+   "number": "2.1.1"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoitA une (petite) cat\u00b4egorieK-lin\u00b4eaire. Les conditions suivan-",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Toute sous-cat\u00b4egorie pleine B d\u2019uneK-cat\u00b4egorie semi-simpleA",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Mise en garde. Dans le lemme 2.1.3, si A est mono\u00a8 \u0131dale et siB est une",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SoitA uneK-cat\u00b4egorie telle queA/rad(A) soit semi-simple. Pour",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.1.5"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoitA une petite cat\u00b4egorie ab\u00b4elienne semi-simple, o`uK est un",
+   "page": 16,
+   "source": "inferred",
+   "number": "2.1.6"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoitI un id\u00b4eal deA. Alors :",
+   "page": 17,
+   "source": "inferred",
+   "number": "2.1.7"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Soit A une K-alg`ebre (associative unitaire). Les conditions",
+   "page": 17,
+   "source": "inferred",
+   "number": "2.2.1"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. UneK-alg` ebreA est dite s\u00b4eparable (ou absolument semi-simple)",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Nous nous \u00b4 ecartons ici l\u00b4 eg` erement de la terminologie de Bour-",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Toute alg`ebre de dimension \ufb01nie sans radical sur un corps parfait",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.2.4"
+  },
+  {
+   "level": 3,
+   "title": "D \u00b4e\ufb01nition. Une cat\u00b4 egorieK-lin\u00b4 eaireA est dite s\u00b4eparable (ou absolument",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.2.6"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SiK est parfait, une K-cat\u00b4egorieA est s\u00b4eparable si et seule-",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.2.7"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. UneK-cat\u00b4 egorieA est semi-primaire si",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme (cf. [51, 1.1.28]). Soit N un nil-id \u00b4eal d\u2019un anneau A. Alors tout",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.3.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) SiA est semi-primaire, il en est de m \u02c6eme deA/I pour tout",
+   "page": 19,
+   "source": "inferred",
+   "number": "2.3.4"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoitA une cat\u00b4egorie ab\u00b4elienne dont tout objet est de longueur",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.3.5"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. UneK-cat\u00b4 egorieA est dite de Wedderburn si",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Mise en garde. Il est clair qu\u2019une K-cat\u00b4 egorie de Wedderburn est semi-",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.4.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Dans le cas d\u2019un seul objet, les alg` ebres correspondantes sont",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.4.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) La notion deK-cat\u00b4egorie de Wedderburn est stable par pas-",
+   "page": 21,
+   "source": "inferred",
+   "number": "2.4.4"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "R ADICAL INFINI ET NILPOTENCE RENFORC \u00b4EE",
+   "page": 22,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. Le radical in\ufb01ni deA est l\u2019id\u00b4 ealrad\u03c9(A) =",
+   "page": 22,
+   "source": "inferred",
+   "number": "3.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SiT :A\u2192B est unK-foncteur radiciel entreK-cat\u00b4egories, alors",
+   "page": 22,
+   "source": "inferred",
+   "number": "3.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Contre-exemple. Consid\u00b4 erons la cat\u00b4 egorieA suivante :",
+   "page": 22,
+   "source": "inferred",
+   "number": "3.1.4"
+  },
+  {
+   "level": 2,
+   "title": "Cas des cat \u00b4egories de modules. Prenons ` a pr\u00b4 esent pourA la cat\u00b4 egorie des",
+   "page": 23,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Th \u00b4eor`eme ([56], [31]). a)A est de type de repr \u00b4esentation \ufb01ni (i.e. il n\u2019y a",
+   "page": 23,
+   "source": "inferred",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Un exemple remarquable de cat\u00b4 egorie strictement de Wedder-",
+   "page": 23,
+   "source": "inferred",
+   "number": "3.2.2"
+  },
+  {
+   "level": 1,
+   "title": "R ADICAL ET EXTENSION DES SCALAIRES",
+   "page": 23,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Il est connu que le radical d\u2019une alg` ebre se comporte \u201cmal\u201d par extension des",
+   "page": 23,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. 1) SoitL/K une extension de corps. Soit A uneK-alg`ebre de",
+   "page": 23,
+   "source": "inferred",
+   "number": "4.1.1"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. La condition que rad(A\u2297KL)\u2282 rad(A)\u2297KL est n\u00b4 ecessaire :",
+   "page": 24,
+   "source": "inferred",
+   "number": "4.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Mise en garde. SiA est pseudo-ab\u00b4 elienne, il n\u2019en est pas de m\u02c6 eme deAL",
+   "page": 24,
+   "source": "inferred",
+   "number": "4.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. SoitA une cat\u00b4egorie de Wedderburn. Alors, pour toute extension",
+   "page": 24,
+   "source": "inferred",
+   "number": "4.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. SoientK un corps, L une extension de K,V unL-espace vec-",
+   "page": 24,
+   "source": "inferred",
+   "number": "4.1.5"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. SoientK un corps parfait in\ufb01ni, L une extension de K,A une",
+   "page": 25,
+   "source": "inferred",
+   "number": "4.1.7"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "Alors :",
+   "page": 26,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. La conclusion a) vaut encore si, au lieu d\u2019un L et d\u2019unH, on",
+   "page": 26,
+   "source": "inferred",
+   "number": "4.1.8"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Comme nous le verrons en 8.2.1, le corollaire pr\u00b4 ec\u00b4 edent s\u2019applique",
+   "page": 26,
+   "source": "inferred",
+   "number": "4.1.9"
+  },
+  {
+   "level": 1,
+   "title": "E XTENSIONS DES SCALAIRES NA \u00a8IVE ET NON NA \u00a8IVE",
+   "page": 26,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. SoientA uneK-cat\u00b4 egorie etL uneK-alg` ebre (commutative uni-",
+   "page": 26,
+   "source": "inferred",
+   "number": "5.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. a) LaK-structure deA(L) s\u2019enrichit en uneL-structure par la loi",
+   "page": 26,
+   "source": "inferred",
+   "number": "5.1.2"
+  },
+  {
+   "level": 2,
+   "title": "Sur l\u2019extension des scalaires`a la Saavedra. Notre but est de comparerAL ` a",
+   "page": 27,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 3,
+   "title": "Lemme (cf. [53, prop. II.1.5.1.1]). a) SoientA\u2208A etV \u2208Vec K. Le fonc-",
+   "page": 27,
+   "source": "inferred",
+   "number": "5.2.1"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. L\u2019homomorphisme(5.2) est un isomorphisme dans les cas suivants :",
+   "page": 28,
+   "source": "inferred",
+   "number": "5.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Hypoth `eses. `A partir de maintenant, on suppose que A est additive (c\u2019est-",
+   "page": 28,
+   "source": "inferred",
+   "number": "5.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Sous les hypoth`eses 5.2.3,",
+   "page": 28,
+   "source": "inferred",
+   "number": "5.2.4"
+  },
+  {
+   "level": 3,
+   "title": "Lemme ([53, II.1.5.2]). Le foncteur (5.3) est adjoint `a gauche au foncteur",
+   "page": 28,
+   "source": "inferred",
+   "number": "5.2.5"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoientA,B deux objets deA. Si dimKL =\u221e, supposons que",
+   "page": 29,
+   "source": "inferred",
+   "number": "5.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. Le foncteur",
+   "page": 29,
+   "source": "inferred",
+   "number": "5.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Prenons pour A la cat\u00b4 egorieRepKG des K-repr\u00b4 esentations de",
+   "page": 29,
+   "source": "inferred",
+   "number": "5.3.3"
+  },
+  {
+   "level": 1,
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "Radical et rigidit\u00b4e",
+   "page": 30,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "G \u00b4EN \u00b4ERALIT \u00b4ES",
+   "page": 30,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Id\u00b4eaux mono\u00a8\u0131daux, duaux. Soit K un anneau commutatif unitaire, et soit",
+   "page": 30,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. Un id\u00b4 ealJ deA est dit mono\u00a8\u0131dal13 s\u2019il est stable par les trans-",
+   "page": 30,
+   "source": "inferred",
+   "number": "6.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. a) SiJ est mono\u00a8\u0131dal, il est stable par produit mono\u00a8\u0131dal`a gauche et",
+   "page": 30,
+   "source": "inferred",
+   "number": "6.1.2"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. On dit que (A,\u2022) est rigide si tout objet a un dual ` a droite et est",
+   "page": 31,
+   "source": "inferred",
+   "number": "6.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. SiA est rigide, il en est de m\u02c6eme deA\u2295,A\u266e et deA\u2295\u266e (notations du",
+   "page": 31,
+   "source": "inferred",
+   "number": "6.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Tout id\u00b4eal mono\u00a8\u0131dalJ v\u00b4eri\ufb01e",
+   "page": 32,
+   "source": "inferred",
+   "number": "6.1.5"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SoitI un 1-id\u00b4eal `a gauche deA (d\u00b4e\ufb01nition 1.3.4). La formule",
+   "page": 32,
+   "source": "inferred",
+   "number": "6.1.6"
+  },
+  {
+   "level": 2,
+   "title": "Le cas sym \u00b4etrique. On suppose d\u00b4 esormais queA (qui rappelons-le, est sup-",
+   "page": 33,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SoitI un 1-id\u00b4eal `a gauche deA (d\u00b4e\ufb01nition 1.3.4). La formule",
+   "page": 33,
+   "source": "inferred",
+   "number": "6.2.1"
+  },
+  {
+   "level": 2,
+   "title": "Interpr\u00b4etation. Pour expliciter le sens des lemmes 6.1.5 et 6.2.1, notons :",
+   "page": 34,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. SiA est la cat\u00b4 egorie mono\u00a8 \u0131dale des motifs de Grothendieck pour",
+   "page": 35,
+   "source": "inferred",
+   "number": "6.3.1"
+  },
+  {
+   "level": 1,
+   "title": "T RACES",
+   "page": 35,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Traces et id\u00b4ealN . Rappelons que latrace d\u2019un endomorphismeh\u2208A (C,C )",
+   "page": 35,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. La formule",
+   "page": 36,
+   "source": "inferred",
+   "number": "7.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Dans le cas de l\u2019exemple 6.3.1 (motifs), l\u2019id\u00b4 eal mono\u00a8 \u0131dalN cor-",
+   "page": 36,
+   "source": "inferred",
+   "number": "7.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. On suppose que K est un corps. Soit f1,...,f n \u2208 A(A,A )",
+   "page": 36,
+   "source": "inferred",
+   "number": "7.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. On suppose queK est un corps. SoitA un cat\u00b4egorieK-lin\u00b4eaire",
+   "page": 36,
+   "source": "inferred",
+   "number": "7.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. L\u2019id\u00b4ealN ne d\u00b4epend pas du choix du tressage (sym\u00b4etrique)R.\u25a1",
+   "page": 37,
+   "source": "inferred",
+   "number": "7.1.5"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Sous les m\u02c6emes hypoth`eses, les conditions suivantes sont \u00b4equi-",
+   "page": 37,
+   "source": "inferred",
+   "number": "7.1.6"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Revenons ` a l\u2019exemple de la cat\u00b4 egorie mono\u00a8 \u0131dale sym\u00b4 etrique rigide",
+   "page": 37,
+   "source": "inferred",
+   "number": "7.1.8"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. La compatibilit\u00b4 e deN vis-` a-vis de l\u2019extension des scalaires",
+   "page": 37,
+   "source": "inferred",
+   "number": "7.1.9"
+  },
+  {
+   "level": 2,
+   "title": "Traces et puissances ext\u00b4erieures. Cette partie est inspir\u00b4 ee par [14, 7.2] et par",
+   "page": 38,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. On a",
+   "page": 38,
+   "source": "inferred",
+   "number": "7.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. SupposonsA1 =\u00b7\u00b7\u00b7 =An =A etf1 =\u00b7\u00b7\u00b7 =fn =f. Alors",
+   "page": 39,
+   "source": "inferred",
+   "number": "7.2.2"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. Soitn un entier naturel tel que n! soit inversible dansK, et soit",
+   "page": 39,
+   "source": "inferred",
+   "number": "7.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition (cf. [14, 7.2]). SoitA un objet deA, et soitf un endomorphisme",
+   "page": 40,
+   "source": "inferred",
+   "number": "7.2.4"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. Sous les hypoth`eses de la proposition 7.2.4,",
+   "page": 40,
+   "source": "inferred",
+   "number": "7.2.5"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Pour tout\u03c3\u2208 Sn, notons\u21131(\u03c3) la longueur du cycle \u03c31 de\u03c3",
+   "page": 41,
+   "source": "inferred",
+   "number": "7.2.6"
+  },
+  {
+   "level": 1,
+   "title": "(1)\u25e6\u00b7\u00b7\u00b7\u25e6 f\u03c31(1)\u25e6f1,",
+   "page": 41,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoitA\u2044= 0 un objet deA. On suppose qu\u2019il existe un entier",
+   "page": 42,
+   "source": "inferred",
+   "number": "7.2.7"
+  },
+  {
+   "level": 3,
+   "title": "Lemme (Nagata-Higman). Soientn un entier> 0 etK un anneau commu-",
+   "page": 42,
+   "source": "inferred",
+   "number": "7.2.8"
+  },
+  {
+   "level": 2,
+   "title": "Trace des endomorphismes nilpotents. Nous ignorons si un endomorphis-",
+   "page": 43,
+   "source": "inferred",
+   "number": "7.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Supposons queA soit pseudo-ab\u00b4elienne et que la dimension",
+   "page": 43,
+   "source": "inferred",
+   "number": "7.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Supposons queK soit un corps, queA soit pseudo-ab\u00b4elienne et que",
+   "page": 43,
+   "source": "inferred",
+   "number": "7.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Proposition (cf. [10, 1.4.3]). Supposons qu\u2019il existe un foncteur mono\u00a8\u0131dal sy-",
+   "page": 43,
+   "source": "inferred",
+   "number": "7.3.3"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Dans 7.3.1, contrairement ` a 7.3.3, on ne peut remplacer \u201ctrace",
+   "page": 44,
+   "source": "inferred",
+   "number": "7.3.4"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. SoitJ un id\u00b4 eal mono\u00a8 \u0131dal deA. Le\u2297-radical deJ est d\u00b4 e\ufb01ni par :",
+   "page": 44,
+   "source": "inferred",
+   "number": "7.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Dans le cas de l\u2019exemple 6.3.1 (motifs), l\u2019id\u00b4 eal mono\u00a8 \u0131dal",
+   "page": 44,
+   "source": "inferred",
+   "number": "7.4.3"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. La compatibilit\u00b4 e de",
+   "page": 44,
+   "source": "inferred",
+   "number": "7.4.4"
+  },
+  {
+   "level": 1,
+   "title": "T H \u00b4EOR `EMES DE STRUCTURE",
+   "page": 45,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. On suppose qu\u2019il existe un foncteurF :A\u2192 Vec L vers la ca-",
+   "page": 45,
+   "source": "inferred",
+   "number": "8.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Remarques. 1) La preuve de a) est une variante abstraite de la preuve clas-",
+   "page": 46,
+   "source": "inferred",
+   "number": "8.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. On suppose queA est pseudo-ab\u00b4elienne et que les dimensions",
+   "page": 46,
+   "source": "inferred",
+   "number": "8.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. On supposeK de caract\u00b4eristique nulle etA munie d\u2019un foncteur",
+   "page": 46,
+   "source": "inferred",
+   "number": "8.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. a) On suppose qu\u2019il existe un foncteur mono\u00a8\u0131dal sym\u00b4etriqueH de",
+   "page": 47,
+   "source": "inferred",
+   "number": "8.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarques. 1) SiA est tannakienne et queK est de caract\u00b4 eristique nulle, on",
+   "page": 47,
+   "source": "inferred",
+   "number": "8.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Remarques. 1) La propri\u00b4 et\u00b4 ea) pr\u00b4 esente l\u2019avantage sur les suivantes d\u2019\u02c6 etre",
+   "page": 48,
+   "source": "inferred",
+   "number": "8.2.5"
+  },
+  {
+   "level": 2,
+   "title": "Variante Z/2-gradu\u00b4ee. En th\u00b4 eorie des motifs, la cat\u00b4 egorie mono\u00a8 \u0131dale des mo-",
+   "page": 48,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SupposonsK de caract\u00b4eristique nulle, et soitL uneK-alg`ebre",
+   "page": 49,
+   "source": "inferred",
+   "number": "8.3.1"
+  },
+  {
+   "level": 1,
+   "title": "L E PAIR ET L \u2019IMPAIR",
+   "page": 50,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. a) Un objet A\u2208A est pairement de dimension \ufb01nie au sens de",
+   "page": 50,
+   "source": "inferred",
+   "number": "9.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Notation. SiA est pairement (resp. impairement) de dimension \ufb01nie au sens",
+   "page": 50,
+   "source": "inferred",
+   "number": "9.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) Toute somme directe, tout facteur direct d\u2019un objet pairement",
+   "page": 50,
+   "source": "inferred",
+   "number": "9.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. a) Soit A\u2208A , pairement de dimension \ufb01nie. Alors dimA est un",
+   "page": 51,
+   "source": "inferred",
+   "number": "9.1.5"
+  },
+  {
+   "level": 3,
+   "title": "Th \u00b4eor`eme. a) Soit A \u2208 Apairement de dimension \ufb01nie. Alors kimA =",
+   "page": 51,
+   "source": "inferred",
+   "number": "9.1.7"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. a) Si A etB sont pairement de dimension \ufb01nie, alors kim(A\u2295",
+   "page": 51,
+   "source": "inferred",
+   "number": "9.1.8"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoientA+ (resp.A\u2212) un objet deA pairement (resp. impaire-",
+   "page": 51,
+   "source": "inferred",
+   "number": "9.1.9"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoitA un objet de dimension \ufb01nie au sens de Kimura, et sup-",
+   "page": 52,
+   "source": "inferred",
+   "number": "9.1.10"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SoitA\u2208A , et soit A = A+\u2295A\u2212 une d\u00b4ecomposition en somme",
+   "page": 52,
+   "source": "inferred",
+   "number": "9.1.11"
+  },
+  {
+   "level": 3,
+   "title": "Proposition ([32, prop. 6.9]). Tout facteur direct d\u2019un objet de dimension",
+   "page": 52,
+   "source": "inferred",
+   "number": "9.1.12"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. SoitA un objet de dimension \ufb01nie au sens de Kimura. On d\u00b4 e\ufb01nit",
+   "page": 52,
+   "source": "inferred",
+   "number": "9.1.13"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. On pourrait aussi utiliser le raisonnement de la d\u00b4 emonstration",
+   "page": 53,
+   "source": "inferred",
+   "number": "9.1.15"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. Une cat\u00b4egorie de Kimura16 sur un corps de caract\u00b4 eristique nulle",
+   "page": 53,
+   "source": "inferred",
+   "number": "9.1.16"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. Supposons que",
+   "page": 53,
+   "source": "inferred",
+   "number": "9.2.1"
+  },
+  {
+   "level": 1,
+   "title": "Ceci permet de renforcer la proposition 9.1.10 en l\u2019\u00b4 enonc\u00b4 e suivant : siA\u2208A kim,",
+   "page": 54,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. Toute cat\u00b4egorie de KimuraA est de Wedderburn. Son radicalR",
+   "page": 54,
+   "source": "inferred",
+   "number": "9.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Pour le reste, on se ram` ene au th\u00b4 eor` eme 9.2.1 en quotientant par",
+   "page": 54,
+   "source": "inferred",
+   "number": "9.1.14"
+  },
+  {
+   "level": 1,
+   "title": "(cf. le",
+   "page": 54,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. \u00b4Etant donn\u00b4 e une cat\u00b4 egorie de KimuraA, le th\u00b4 eor` eme 9.2.2 nous",
+   "page": 54,
+   "source": "inferred",
+   "number": "9.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Kimura [32, 7.1] conjecture que tout motif de Chow est de dimen-",
+   "page": 54,
+   "source": "inferred",
+   "number": "9.2.4"
+  },
+  {
+   "level": 1,
+   "title": "E XEMPLES ET COMPL \u00b4EMENTS",
+   "page": 55,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Trois contre-exemples. V oici trois exemples de cat\u00b4 egories mono\u00a8 \u0131dalesK-",
+   "page": 55,
+   "source": "inferred",
+   "number": "10.1"
+  },
+  {
+   "level": 3,
+   "title": "Contre-exemple. Partons deD =K[\u03b5],\u03b5 2 = 0, vue comme super-alg` ebre",
+   "page": 55,
+   "source": "inferred",
+   "number": "10.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Contre-exemple. K est maintenant suppos\u00b4 e de caract\u00b4 eristiquep> 0, et on",
+   "page": 55,
+   "source": "inferred",
+   "number": "10.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Contre-exemple. K est maintenant suppos\u00b4 e de caract\u00b4 eristique3, et on",
+   "page": 56,
+   "source": "inferred",
+   "number": "10.1.3"
+  },
+  {
+   "level": 2,
+   "title": "Compl\u00b4ement : l\u2019alg`ebre commutative HH 0(A). SoientA une petite K-",
+   "page": 56,
+   "source": "inferred",
+   "number": "10.2"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. SupposonsA tannakienne semi-simple neutre sur un corps K",
+   "page": 56,
+   "source": "inferred",
+   "number": "10.2.1"
+  },
+  {
+   "level": 1,
+   "title": "Sections",
+   "page": 58,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "C OHOMOLOGIE DE HOCHSCHILD -MITCHELL",
+   "page": 58,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "Produit tensoriel de K-cat\u00b4egories. Ici, K d\u00b4 esigne de nouveau un anneau",
+   "page": 58,
+   "source": "inferred",
+   "number": "11.1"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. (cf. [38,\u00a711]). SoientA,B deuxK-cat\u00b4 egories. Leproduit ten-",
+   "page": 58,
+   "source": "inferred",
+   "number": "11.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Supposons seulement que lesK-cat\u00b4egoriesA etB soient de Wed-",
+   "page": 58,
+   "source": "inferred",
+   "number": "11.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. On suppose que K est un corps. Une K-cat\u00b4egorieA est de",
+   "page": 59,
+   "source": "inferred",
+   "number": "11.1.4"
+  },
+  {
+   "level": 2,
+   "title": "Complexe de Hochschild-Mitchell. SoitA une petiteK-cat\u00b4 egorie, telle que",
+   "page": 59,
+   "source": "inferred",
+   "number": "11.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. (Homologie de Hochschild) SiM etN sont deuxA-bimodules,",
+   "page": 60,
+   "source": "inferred",
+   "number": "11.2.1"
+  },
+  {
+   "level": 1,
+   "title": "U N \u201cTH \u00b4EOR `EME DE WEDDERBURN `A PLUSIEURS OBJETS \u201d",
+   "page": 60,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Existence et \u201cunicit \u00b4e\u201d de sections. Le th\u00b4 eor` eme de structure fondamental",
+   "page": 60,
+   "source": "inferred",
+   "number": "12.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SupposonsA pseudo-ab\u00b4elienne. Soit s une section de \u03c0A. Les",
+   "page": 63,
+   "source": "inferred",
+   "number": "12.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. SupposonsK alg\u00b4 ebriquement clos. SoitA un objet ind\u00b4 ecom-",
+   "page": 63,
+   "source": "inferred",
+   "number": "12.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Soit T : B \u2192 Aun K-foncteur radiciel entre deux pe-",
+   "page": 63,
+   "source": "inferred",
+   "number": "12.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. Sous les hypoth `eses du th \u00b4eor`eme 12.1.1, supposons donn \u00b4ee",
+   "page": 64,
+   "source": "inferred",
+   "number": "12.2.2"
+  },
+  {
+   "level": 1,
+   "title": "S ECTIONS MONO \u00a8IDALES",
+   "page": 64,
+   "source": "inferred",
+   "number": "13"
+  },
+  {
+   "level": 2,
+   "title": "Existence et \u201cunicit \u00b4e\u201d de sections mono \u00a8\u0131dales. Apr` es ces pr\u00b4 eliminaires,",
+   "page": 65,
+   "source": "inferred",
+   "number": "13.2"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. Soit (s, \u02dcs) : (B,\u22a4)\u2192 (A,\u2022) un foncteur mono\u00a8\u0131dal, et soitu :s\u21d2t",
+   "page": 65,
+   "source": "inferred",
+   "number": "13.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. Soient (A,\u2022), \u00afA,\u03c0A comme dans le th \u00b4eor`eme 13.2.1. Alors le th \u00b4e-",
+   "page": 66,
+   "source": "inferred",
+   "number": "13.3.2"
+  },
+  {
+   "level": 2,
+   "title": "Cat\u00b4egories mono\u00a8\u0131dales strictes. Une petite cat\u00b4 egorie mono\u00a8 \u0131dale(B,\u22a4) est",
+   "page": 66,
+   "source": "inferred",
+   "number": "13.4"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. SoitAA la cat\u00b4 egorie des endofoncteurs additifs deA. Munie",
+   "page": 66,
+   "source": "inferred",
+   "number": "13.4.1"
+  },
+  {
+   "level": 3,
+   "title": "La construction de Mac Lane[36, XI 3]. `A toute petite cat\u00b4 egorie mono\u00a8 \u0131dale",
+   "page": 67,
+   "source": "inferred",
+   "number": "13.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Soient (A,\u2022), \u00afA,\u03c0A comme dans le th \u00b4eor`eme 13.2.1. Si en",
+   "page": 67,
+   "source": "inferred",
+   "number": "13.4.2"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. La proposition 13.4.2 d\u00b4ecoule de l\u2019\u00b4enonc\u00b4e correspondant pour la",
+   "page": 68,
+   "source": "inferred",
+   "number": "13.5.1"
+  },
+  {
+   "level": 2,
+   "title": "Au c\u0153ur du probl `eme : d \u00b4emonstration de la proposition 13.4.2. Compte",
+   "page": 69,
+   "source": "inferred",
+   "number": "13.6"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4ebut de la preuve de c). Soits une section K-fonctorielle mono\u00a8 \u0131dale de",
+   "page": 69,
+   "source": "inferred",
+   "number": "13.6.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "page": 69,
+   "source": "inferred",
+   "number": "13.6.1"
+  },
+  {
+   "level": 3,
+   "title": "Une relation de cocycle, I. Supposons r\u2265 1 et trouv\u00b4 ee une familleu(r)",
+   "page": 70,
+   "source": "inferred",
+   "number": "13.6.2"
+  },
+  {
+   "level": 3,
+   "title": "Une relation de cocycle, II. La congruence (13.4) fait penser ` a une relation",
+   "page": 70,
+   "source": "inferred",
+   "number": "13.6.3"
+  },
+  {
+   "level": 3,
+   "title": "Une relation de cocycle, III \u2013 \ufb01n de la preuve de c). Nous sommes main-",
+   "page": 71,
+   "source": "inferred",
+   "number": "13.6.4"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4ebut de la preuve de a). Soits une sectionK-fonctorielle de\u03c0A. L\u2019exis-",
+   "page": 72,
+   "source": "inferred",
+   "number": "13.6.5"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "page": 72,
+   "source": "inferred",
+   "number": "13.6.2"
+  },
+  {
+   "level": 3,
+   "title": "Une relation de cocycle, I. Supposons r\u2265 1 et trouv\u00b4 ee une familleu(r)",
+   "page": 72,
+   "source": "inferred",
+   "number": "13.6.6"
+  },
+  {
+   "level": 3,
+   "title": "Une relation de cocycle, II. Pour interpr\u00b4 eter (13.6) comme une relation de",
+   "page": 73,
+   "source": "inferred",
+   "number": "13.6.7"
+  },
+  {
+   "level": 3,
+   "title": "Une relation de cocycle, III - \ufb01n de la preuve de a). De m\u02c6 eme que pour",
+   "page": 74,
+   "source": "inferred",
+   "number": "13.6.8"
+  },
+  {
+   "level": 3,
+   "title": "Preuve de b). Soients,s\u2032 deux sections mono\u00a8 \u0131dales strictes de\u03c0A. Il s\u2019agit",
+   "page": 74,
+   "source": "inferred",
+   "number": "13.6.9"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "page": 74,
+   "source": "inferred",
+   "number": "13.6.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Soit (B,\u2022) une autre cat \u00b4egorie mono\u00a8\u0131dale v\u00b4eri\ufb01ant les hy-",
+   "page": 76,
+   "source": "inferred",
+   "number": "13.7.1"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. Dans la situation de la proposition 12.2.1, supposons A,B",
+   "page": 77,
+   "source": "inferred",
+   "number": "13.7.2"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Sous les hypoth`eses du th\u00b4eor`eme 13.2.1, supposons donn\u00b4ee en",
+   "page": 77,
+   "source": "inferred",
+   "number": "13.7.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Sous les hypoth `eses du th \u00b4eor`eme 13.2.1, soit v une structure",
+   "page": 77,
+   "source": "inferred",
+   "number": "13.8.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Il existe une famille double (u(r))r\u22651 d\u2019automorphismes deIdA,",
+   "page": 77,
+   "source": "inferred",
+   "number": "13.8.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. SiA,B admettent des duaux ` a droite (cf. 6), les isomorphismes",
+   "page": 78,
+   "source": "inferred",
+   "number": "13.8.3"
+  },
+  {
+   "level": 1,
+   "title": "R EPR \u00b4ESENTABILIT \u00b4E",
+   "page": 78,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 3,
+   "title": "Le cas non mono\u00a8\u0131dal. SoitA une petiteK-cat\u00b4 egorie de Wedderburn. Con-",
+   "page": 79,
+   "source": "inferred",
+   "number": "14.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. La constructionA\u21a6\u2192G (A) d\u00b4e\ufb01nit un 2-foncteur 1-contravariant et",
+   "page": 79,
+   "source": "inferred",
+   "number": "14.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. Pour touteK-cat\u00b4egorie de WedderburnA, les foncteurs",
+   "page": 80,
+   "source": "inferred",
+   "number": "14.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Le cas mono\u00a8\u0131dal. Supposons maintenant queA soit mono\u00a8 \u0131dale, et que son",
+   "page": 80,
+   "source": "inferred",
+   "number": "14.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. La constructionA\u21a6\u2192G\u2297(A) d\u00b4e\ufb01nit un 2-foncteur 1-contravariant",
+   "page": 80,
+   "source": "inferred",
+   "number": "14.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. Pour touteK-cat\u00b4egorie de WedderburnA, les foncteurs",
+   "page": 81,
+   "source": "inferred",
+   "number": "14.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Objets compacts, duaux et limites inductives. SupposonsA stable par lim-",
+   "page": 81,
+   "source": "inferred",
+   "number": "14.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Extension des scalaires. SiL/K est une extension, on a des foncteurs \u201cex-",
+   "page": 81,
+   "source": "inferred",
+   "number": "14.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Objets en cat \u00b4egories et en groupo \u00a8\u0131des. SoitX une cat\u00b4 egorie avec limites",
+   "page": 81,
+   "source": "inferred",
+   "number": "14.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Objets en actions de groupe. Un objet en groupes dansX est un couple",
+   "page": 82,
+   "source": "inferred",
+   "number": "14.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Actions de groupe et groupo\u00a8\u0131des. Pour obtenir un groupo\u00a8 \u0131de\u0393 , il suf\ufb01t de se",
+   "page": 83,
+   "source": "inferred",
+   "number": "14.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. X = Sch/K est la cat\u00b4 egorie des K-sch\u00b4 emas (dans notre",
+   "page": 83,
+   "source": "inferred",
+   "number": "14.2.1"
+  },
+  {
+   "level": 2,
+   "title": "Repr\u00b4esentabilit\u00b4e alg\u00b4ebrique. SoientA uneK-cat\u00b4 egorie de Wedderburn et",
+   "page": 83,
+   "source": "inferred",
+   "number": "14.3"
+  },
+  {
+   "level": 3,
+   "title": "Th \u00b4eor`eme. Soit Wedf{K} la sous- 2-cat\u00b4egorie 1-pleine et 2-pleine de",
+   "page": 84,
+   "source": "inferred",
+   "number": "14.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Le th\u00b4 eor` eme 14.3.1 montre que, pour deuxK-cat\u00b4 egories de Wed-",
+   "page": 85,
+   "source": "inferred",
+   "number": "14.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Th \u00b4eor`eme. Soit Wedf\u2297{K} la sous- 2-cat\u00b4egorie 1-pleine et 2-pleine de",
+   "page": 85,
+   "source": "inferred",
+   "number": "14.3.3"
+  },
+  {
+   "level": 1,
+   "title": "S ECTIONS ET TRESSAGES",
+   "page": 86,
+   "source": "inferred",
+   "number": "15"
+  },
+  {
+   "level": 2,
+   "title": "Tressages. On renvoie ` a [27] pour les notions de tressage et de foncteurmo-",
+   "page": 86,
+   "source": "inferred",
+   "number": "15.1"
+  },
+  {
+   "level": 2,
+   "title": "Sorites. Le sorite suivant compl` ete le sorite 13.3.1 :",
+   "page": 87,
+   "source": "inferred",
+   "number": "15.2"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. Soit (s, \u02dcs) : ( B,\u22a4,R ) \u2192 (A,\u2022,S ) un foncteur mono \u00a8\u0131dal tress\u00b4e",
+   "page": 87,
+   "source": "inferred",
+   "number": "15.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. Tout tressageR satisfait les identit\u00b4es",
+   "page": 87,
+   "source": "inferred",
+   "number": "15.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. NotonsAsym la cat\u00b4egorie sym\u00b4etrique deA (m\u02c6emes objets, m \u02c6emes",
+   "page": 87,
+   "source": "inferred",
+   "number": "15.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Sorite. Soient (B,\u22a4,R ) une cat\u00b4egorie mono\u00a8\u0131dale tress\u00b4ee, (A,\u2022) une cat\u00b4ego-",
+   "page": 87,
+   "source": "inferred",
+   "number": "15.2.4"
+  },
+  {
+   "level": 2,
+   "title": "Sections. Reprenons maintenant les notations et hypoth` eses du th\u00b4 eor` eme 13.2.1,",
+   "page": 88,
+   "source": "inferred",
+   "number": "15.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) Il existe un automorphisme (non mono\u00a8\u0131dal)u des tel que,",
+   "page": 88,
+   "source": "inferred",
+   "number": "15.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Pour une section mono \u00a8\u0131dale (s, \u02dcs), les conditions suivantes",
+   "page": 89,
+   "source": "inferred",
+   "number": "15.3.3"
+  },
+  {
+   "level": 3,
+   "title": "D \u00b4e\ufb01nition. Une structure balanc \u00b4ee sur une cat\u00b4 egorie mono\u00a8 \u0131dale tress\u00b4 ee",
+   "page": 90,
+   "source": "inferred",
+   "number": "15.3.4"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. Soit (A,\u2022,R ) une cat\u00b4egorie mono\u00a8\u0131dale tress\u00b4ee. On suppose que",
+   "page": 90,
+   "source": "inferred",
+   "number": "15.3.5"
+  },
+  {
+   "level": 3,
+   "title": "Exemple. Consid\u00b4 erons la quanti\ufb01cation de Drinfeld-Cartier \u00afA[[h]] d\u2019une",
+   "page": 90,
+   "source": "inferred",
+   "number": "15.3.6"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Il est probable que les parties b) et c) du th\u00b4 eor` eme sont fausses",
+   "page": 91,
+   "source": "inferred",
+   "number": "15.3.7"
+  },
+  {
+   "level": 2,
+   "title": "Compl\u00b4ements. Pour \ufb01nir, examinons de plus pr` es le d\u00b4 efaut de validit\u00b4 e des",
+   "page": 91,
+   "source": "inferred",
+   "number": "15.4"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) L\u2019\u00b4el\u00b4emente = e(R)\u2208 N\u222a{\u221e} et les \u00b4el\u00b4ements \u00afnA,B de",
+   "page": 91,
+   "source": "inferred",
+   "number": "15.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Les identit\u00b4 es (15.9) et (15.10) ne sont autres que les relations",
+   "page": 92,
+   "source": "inferred",
+   "number": "15.4.2"
+  },
+  {
+   "level": 1,
+   "title": "P REMI `ERE APPLICATION : CAT \u00b4EGORIES DE KIMURA",
+   "page": 92,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "Rappelons (d\u00b4 e\ufb01nition 9.1.16) qu\u2019une cat\u00b4 egorie de Kimura sur un corps de",
+   "page": 92,
+   "source": "inferred",
+   "number": "16.1"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. SoitA une cat\u00b4egorie de Kimura, de radicalR. Alors",
+   "page": 92,
+   "source": "inferred",
+   "number": "16.1.1"
+  },
+  {
+   "level": 1,
+   "title": "(cf. th \u00b4eor`eme 9.2.1). Par ailleurs, soit \u03c0+",
+   "page": 92,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "L E CAS NON MONO \u00a8IDAL : ENVELOPPES PRO -SEMI -SIMPLES",
+   "page": 94,
+   "source": "inferred",
+   "number": "17"
+  },
+  {
+   "level": 2,
+   "title": "Enveloppes pro-semi-simples. SoientA une petiteK-cat\u00b4 egorie et\u03c0A :A\u2192",
+   "page": 94,
+   "source": "inferred",
+   "number": "17.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SiA est pro\ufb01nie, le quotient \u00afA deA par son radical est semi-simple",
+   "page": 94,
+   "source": "inferred",
+   "number": "17.1.1"
+  },
+  {
+   "level": 2,
+   "title": "Lien avec l\u2019alg`ebre d\u2019Auslander. L\u2019alg` ebre d\u2019Auslander d\u2019uneK-alg` ebre",
+   "page": 96,
+   "source": "inferred",
+   "number": "17.2"
+  },
+  {
+   "level": 2,
+   "title": "Cas des alg`ebres h\u00b4er\u00b4editaires. Rappelons qu\u2019uneK-alg` ebre est diteh\u00b4er\u00b4edi-",
+   "page": 97,
+   "source": "inferred",
+   "number": "17.3"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Dans le cas des alg` ebres de cheminsA =K\u20d7\u2206 , un avatar deAs",
+   "page": 98,
+   "source": "inferred",
+   "number": "17.3.1"
+  },
+  {
+   "level": 1,
+   "title": "S ECTIONS MONO \u00a8IDALES ET FONCTEURS FIBRES",
+   "page": 98,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. SoientK un corps de caract \u00b4eristique nulle et L une extension",
+   "page": 98,
+   "source": "inferred",
+   "number": "18.1.1"
+  },
+  {
+   "level": 2,
+   "title": "Le cas tannakien neutralis \u00b4e. Ce sous-paragraphe est pr\u00b4 eparatoire au para-",
+   "page": 99,
+   "source": "inferred",
+   "number": "18.2"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. SoientB une (petite) cat\u00b4egorieK-lin\u00b4eaire mono\u00a8\u0131dale sym\u00b4etrique",
+   "page": 99,
+   "source": "inferred",
+   "number": "18.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. L\u2019homomorphismes\u266f est un monomorphisme (i.e. une immersion",
+   "page": 100,
+   "source": "inferred",
+   "number": "18.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Le foncteur",
+   "page": 100,
+   "source": "inferred",
+   "number": "18.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. On a un foncteur canoniqueTG du groupo\u00a8\u0131de connexeG\u2297",
+   "page": 101,
+   "source": "inferred",
+   "number": "18.2.4"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Pour tout \u00b4epimorphisme \u03d5 : Gs\u2192 \u2192H, le centralisateur de",
+   "page": 101,
+   "source": "inferred",
+   "number": "18.2.6"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) Pour toute sections comme ci-dessus, tout homomorphisme",
+   "page": 102,
+   "source": "inferred",
+   "number": "18.2.7"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Soient f,g \u2208 Hom(G,H ), o `u G et H sont deux K-groupes",
+   "page": 103,
+   "source": "inferred",
+   "number": "18.2.8"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SoientG unK-groupe af\ufb01nes,t deux sections mono\u00a8\u0131dales de",
+   "page": 103,
+   "source": "inferred",
+   "number": "18.2.9"
+  },
+  {
+   "level": 3,
+   "title": "Scolie. Avec les notations de 10.2, on a",
+   "page": 103,
+   "source": "inferred",
+   "number": "18.2.10"
+  },
+  {
+   "level": 1,
+   "title": "A U-DEL `A DE JACOBSON -MOROZOV : ENVELOPPES PRO -R \u00b4EDUCTIVES",
+   "page": 104,
+   "source": "inferred",
+   "number": "19"
+  },
+  {
+   "level": 2,
+   "title": "Groupes `a conjugaison pr `es. Soit Ga\ufb00 K la cat\u00b4 egorie dont les objets sont",
+   "page": 104,
+   "source": "inferred",
+   "number": "19.1"
+  },
+  {
+   "level": 3,
+   "title": "D \u00b4e\ufb01nition. a) Soient G,H deux K-groupes af\ufb01nes. On note H 1",
+   "page": 104,
+   "source": "inferred",
+   "number": "19.1.1"
+  },
+  {
+   "level": 2,
+   "title": "Exactitude. Peu de limites inductives existent dans Ga\ufb00 K et dans Ga\ufb00 K. Il",
+   "page": 105,
+   "source": "inferred",
+   "number": "19.2"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. a) Soient f : G1\u2192 G2 etg : G2\u2192 G3 deux morphismes de",
+   "page": 105,
+   "source": "inferred",
+   "number": "19.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. a) Un morphisme f : G1\u2192 G2 deK-groupes af\ufb01nes est faible-",
+   "page": 105,
+   "source": "inferred",
+   "number": "19.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. Le foncteur d\u2019inclusion \u00af\u03b9 : GredK\u2192 Ga\ufb00 K admet un adjoint",
+   "page": 106,
+   "source": "inferred",
+   "number": "19.3.1"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. LeK-groupe ` a conjugaison pr` espRed(G) (muni de l\u2019injection",
+   "page": 106,
+   "source": "inferred",
+   "number": "19.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Remarques. a) Si f : G \u2192 H est un morphisme, nous ignorons si",
+   "page": 106,
+   "source": "inferred",
+   "number": "19.3.3"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Supposons K alg\u00b4ebriquement clos. `A isomorphisme unique",
+   "page": 107,
+   "source": "inferred",
+   "number": "19.3.4"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Nous ignorons si l\u2019hypoth` ese queK est alg\u00b4 ebriquement clos",
+   "page": 107,
+   "source": "inferred",
+   "number": "19.3.5"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. SiG est pro-unipotent, pRed(G) est pro-semi-simple simple-",
+   "page": 107,
+   "source": "inferred",
+   "number": "19.4.2"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) SoitG2\u2192G1 un morphisme faiblement \u00b4epi deK-sch\u00b4emas",
+   "page": 108,
+   "source": "inferred",
+   "number": "19.4.4"
+  },
+  {
+   "level": 3,
+   "title": "Corollaire. SiU est le radical unipotent deG et siGred =G/U, on a une",
+   "page": 109,
+   "source": "inferred",
+   "number": "19.4.5"
+  },
+  {
+   "level": 3,
+   "title": "Lemme. Soitf : G\u2192 H un homomorphisme de K-groupes af\ufb01nes. Sup-",
+   "page": 109,
+   "source": "inferred",
+   "number": "19.4.6"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. a) Pour toutG alg\u00b4ebrique, on a une suite exacte",
+   "page": 109,
+   "source": "inferred",
+   "number": "19.4.7"
+  },
+  {
+   "level": 3,
+   "title": "Proposition. Pour toutK-groupeG et toutK-groupe pro-r\u00b4eductifH, on a",
+   "page": 110,
+   "source": "inferred",
+   "number": "19.4.9"
+  },
+  {
+   "level": 2,
+   "title": "Le cas du groupe additif. `A titre d\u2019exemple embl\u00b4 ematique, calculons",
+   "page": 110,
+   "source": "inferred",
+   "number": "19.5"
+  },
+  {
+   "level": 3,
+   "title": "Th \u00b4eor`eme. On a pU(Ga) = Ga et pRed(Ga) = SL2. Plus pr \u00b4ecis\u00b4ement,",
+   "page": 111,
+   "source": "inferred",
+   "number": "19.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. L\u2019espace des Ga-homomorphismes SmV \u2192 SnV est de di-",
+   "page": 111,
+   "source": "inferred",
+   "number": "19.5.2"
+  },
+  {
+   "level": 2,
+   "title": "Extension des scalaires. Si l\u2019on fait varier le corps de baseK (toujours sup-",
+   "page": 112,
+   "source": "inferred",
+   "number": "19.6"
+  },
+  {
+   "level": 2,
+   "title": "Enveloppes pro-r\u00b4eductives des groupes pro-unipotents. Si G est un K-",
+   "page": 113,
+   "source": "inferred",
+   "number": "19.7"
+  },
+  {
+   "level": 3,
+   "title": "Th \u00b4eor`eme. Soit G un K-groupe pro-unipotent. Les propri \u00b4et\u00b4es suivantes",
+   "page": 114,
+   "source": "inferred",
+   "number": "19.7.1"
+  },
+  {
+   "level": 3,
+   "title": "Question. Pour quels groupes alg\u00b4 ebriques lin\u00b4 eairesG l\u2019enveloppe pro-r\u00b4 e-",
+   "page": 115,
+   "source": "inferred",
+   "number": "19.7.2"
+  },
+  {
+   "level": 1,
+   "title": "A PPLICATIONS AUX GROUPES ALG \u00b4EBRIQUES ET AUX REPR \u00b4ESENTATIONS",
+   "page": 115,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 3,
+   "title": "Proposition (cf. [40]). SoitH\u2032 un sous-groupe r\u00b4eductif ferm\u00b4e d\u2019un groupe",
+   "page": 115,
+   "source": "inferred",
+   "number": "20.1.1"
+  },
+  {
+   "level": 3,
+   "title": "D\u00b4e\ufb01nition. On appelle enveloppe r\u00b4eductive de f tout sous-groupe r\u00b4 eductif",
+   "page": 115,
+   "source": "inferred",
+   "number": "20.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Th \u00b4eor`eme. a) Deux enveloppes r \u00b4eductives de f sont conjugu \u00b4ees par un",
+   "page": 116,
+   "source": "inferred",
+   "number": "20.1.3"
+  },
+  {
+   "level": 3,
+   "title": "Contre-exemple. On pourrait se demander si la propri\u00b4 et\u00b4 e c)caract\u00b4erise les",
+   "page": 116,
+   "source": "inferred",
+   "number": "20.1.4"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. Pour toute enveloppe r\u00b4 eductiveH\u2032 de G dans GL(V ), il suit",
+   "page": 116,
+   "source": "inferred",
+   "number": "20.1.5"
+  },
+  {
+   "level": 2,
+   "title": "Applications aux repr\u00b4esentations ind\u00b4ecomposables. SoitV une repr\u00b4 esen-",
+   "page": 116,
+   "source": "inferred",
+   "number": "20.2"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. SiG est simplement connexe, aK(G,V ) est un anneau de poly-",
+   "page": 117,
+   "source": "inferred",
+   "number": "20.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Remarque. SiV est une repr\u00b4 esentation \ufb01d` ele deG. D\u2019apr` es 10.2, 10.2.1,",
+   "page": 117,
+   "source": "inferred",
+   "number": "20.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Th\u00b4eor`eme. Les conditions suivantes sont \u00b4equivalentes :",
+   "page": 117,
+   "source": "inferred",
+   "number": "20.2.3"
+  },
+  {
+   "level": 1,
+   "title": "Further H acts on the associated graded Gr\u00b5V through M, and \u00b5 induces an",
+   "page": 132,
+   "source": "inferred",
+   "number": "V"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-yves-andr-e-et-bruno-kahn",
+   "number": "2",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2282,
+   "n_words": 407
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3220,
+   "n_words": 532
+  },
+  {
+   "id": "sec-002-4-yves-andr-e-et-bruno-kahn",
+   "number": "4",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 6700,
+   "n_words": 1137
+  },
+  {
+   "id": "sec-003-6-yves-andr-e-et-bruno-kahn",
+   "number": "6",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2363,
+   "n_words": 397
+  },
+  {
+   "id": "sec-004-i-radicaux-et-nilpotence",
+   "number": "I",
+   "title": "Radicaux et nilpotence",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 316,
+   "n_words": 54
+  },
+  {
+   "id": "sec-005-1-i-d-eaux-et-radicaux",
+   "number": "1",
+   "title": "I D \u00b4EAUX ET RADICAUX",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2100,
+   "n_words": 377
+  },
+  {
+   "id": "sec-006-8-yves-andr-e-et-bruno-kahn",
+   "number": "8",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-111-remarque-la-terminologie-varie-suivant-les-a",
+   "number": "1.1.1",
+   "title": "Remarque. La terminologie varie suivant les auteurs. Ainsi, Saavedra [53,",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 232,
+   "n_words": 36
+  },
+  {
+   "id": "sec-008-112-de\ufb01nition-une-sous-cat-egorie-pleineb-dunek",
+   "number": "1.1.2",
+   "title": "D\u00b4e\ufb01nition. Une sous-cat\u00b4 egorie pleineB d\u2019uneK-cat\u00b4 egorieA est",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 186,
+   "n_words": 30
+  },
+  {
+   "id": "sec-009-113-sorite-soientab-deuxk-categories-ettt-deuxk",
+   "number": "1.1.3",
+   "title": "Sorite. SoientA,B deuxK-cat\u00b4egories etT,T \u2032 deuxK-foncteurs deA vers",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 154,
+   "n_words": 23
+  },
+  {
+   "id": "sec-010-12-completions-etant-donn-e-unek-cat-egoriea-on",
+   "number": "1.2",
+   "title": "Compl\u00b4etions. \u00b4Etant donn\u00b4 e uneK-cat\u00b4 egorieA, on peut former son enveloppe",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1606,
+   "n_words": 269
+  },
+  {
+   "id": "sec-011-123-proprietes-universelles-les-deux-constructio",
+   "number": "1.2.3",
+   "title": "Propri\u00b4et\u00b4es universelles. Les deux constructions ci-dessus ont des propri\u00b4 et\u00b4 es",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 485,
+   "n_words": 67
+  },
+  {
+   "id": "sec-012-121-sorite-a-pour-tout-couple-de-petitesk-catego",
+   "number": "1.2.1",
+   "title": "Sorite. a) Pour tout couple de petitesK-cat\u00b4egories (A,B), avecBK-lin\u00b4eaire,",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 536,
+   "n_words": 73
+  },
+  {
+   "id": "sec-013-13-algebres-a-plusieurs-objets-dans-cet-article",
+   "number": "1.3",
+   "title": "Alg`ebres `a plusieurs objets. Dans cet article, nous adoptons le point de vue",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 530,
+   "n_words": 92
+  },
+  {
+   "id": "sec-014-131-exemple-six-est-un-ensemble-dobjets-dea-stab",
+   "number": "1.3.1",
+   "title": "Exemple. SiX est un ensemble d\u2019objets deA, stable par biproduit, la famille",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 132,
+   "n_words": 25
+  },
+  {
+   "id": "sec-015-10-yves-andr-e-et-bruno-kahn",
+   "number": "10",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 455,
+   "n_words": 80
+  },
+  {
+   "id": "sec-016-132-lemme-supposonsak-lineaire-soientij-deux-ide",
+   "number": "1.3.2",
+   "title": "Lemme. SupposonsAK-lin\u00b4eaire. SoientI,J deux id\u00b4eaux deA. Supposons",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 770,
+   "n_words": 131
+  },
+  {
+   "id": "sec-017-134-de\ufb01nition-soitaa-una-ideal-a-gauche-dea-est",
+   "number": "1.3.4",
+   "title": "D\u00b4e\ufb01nition. SoitA\u2208A . UnA-id\u00b4eal `a gauche deA est la donn\u00b4 ee, pour tout",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 947,
+   "n_words": 172
+  },
+  {
+   "id": "sec-018-135-d-e\ufb01nition-un-objet-x-dune-cat-egoriec-est-c",
+   "number": "1.3.5",
+   "title": "D \u00b4e\ufb01nition. Un objet X d\u2019une cat\u00b4 egorieC est compact si le foncteur Y \u21a6\u2192",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 156,
+   "n_words": 25
+  },
+  {
+   "id": "sec-019-136-proposition-a-pour-toutaa-et-toutmmoda-lhomo",
+   "number": "1.3.6",
+   "title": "Proposition. a) Pour toutA\u2208A et toutM\u2208Mod\u2013A, l\u2019homomorphisme",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2016,
+   "n_words": 353
+  },
+  {
+   "id": "sec-020-12-yves-andr-e-et-bruno-kahn",
+   "number": "12",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 762,
+   "n_words": 134
+  },
+  {
+   "id": "sec-021-138-proposition-soita-une-cat-egorie-ab-elienne",
+   "number": "1.3.8",
+   "title": "Proposition. SoitA une cat \u00b4egorie ab \u00b4elienne stable par limites inductives",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 941,
+   "n_words": 147
+  },
+  {
+   "id": "sec-022-139-corollaire-cf-57-p-140-soit-f-ab-un-k-foncte",
+   "number": "1.3.9",
+   "title": "Corollaire (cf. [57, p. 140]) . Soit F :A\u2192B un K-foncteur. AlorsF\u2217 :",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1700,
+   "n_words": 288
+  },
+  {
+   "id": "sec-023-14-radical-on-d-emontre-30-que",
+   "number": "1.4",
+   "title": "Radical. On d\u00b4 emontre [30] que",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 275,
+   "n_words": 48
+  },
+  {
+   "id": "sec-024-14-yves-andr-e-et-bruno-kahn",
+   "number": "14",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-025-142-remarque-un-autre-radical-a-et-e-introduit-d",
+   "number": "1.4.2",
+   "title": "Remarque. Un autre radical a \u00b4 et\u00b4 e introduit dans la th` ese de Gabriel [16]",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 431,
+   "n_words": 80
+  },
+  {
+   "id": "sec-026-143-lemme-soit-h-a-projf-l-un-foncteur-k-lineair",
+   "number": "1.4.3",
+   "title": "Lemme. Soit H :A\u2192 Projf L un foncteur K-lin\u00b4eaire deA vers la ca-",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 587,
+   "n_words": 106
+  },
+  {
+   "id": "sec-027-144-proposition-a-le-radical-est-le-plus-grand-i",
+   "number": "1.4.4",
+   "title": "Proposition. a) Le radical est le plus grand id \u00b4eal rad(A) tel que",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 395,
+   "n_words": 65
+  },
+  {
+   "id": "sec-028-145-corollaire-les-radicaux-des-categoriesaaa-et",
+   "number": "1.4.5",
+   "title": "Corollaire. Les radicaux des cat\u00b4egoriesA,A\u2295,A\u266e etA\u2295\u266e se correspondent",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 108,
+   "n_words": 19
+  },
+  {
+   "id": "sec-029-146-de\ufb01nition-soitt-ab-unk-foncteur-entre-deux-k",
+   "number": "1.4.6",
+   "title": "D\u00b4e\ufb01nition. SoitT :A\u2192B unK-foncteur entre deux K-cat\u00b4 egories. Alors",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 40,
+   "n_words": 7
+  },
+  {
+   "id": "sec-030-147-lemme-sit-est-plein-il-est-radiciel-dautre-p",
+   "number": "1.4.7",
+   "title": "Lemme. SiT est plein, il est radiciel. D\u2019autre part, siT est conservatif, on",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 887,
+   "n_words": 149
+  },
+  {
+   "id": "sec-031-148-mise-en-garde-a-sit-est-conservatif-linclusi",
+   "number": "1.4.8",
+   "title": "Mise en garde. a) SiT est conservatif, l\u2019inclusionT\u22121(rad(B))\u2282 rad(A)",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 368,
+   "n_words": 69
+  },
+  {
+   "id": "sec-032-149-lemme-soita-une-k-categorie-et-soit-s-un-obj",
+   "number": "1.4.9",
+   "title": "Lemme. SoitA une K-cat\u00b4egorie, et soit S un objet deA tel queA(S,S )",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 935,
+   "n_words": 168
+  },
+  {
+   "id": "sec-033-2-cat-egories-de-wedderburn",
+   "number": "2",
+   "title": "CAT \u00b4EGORIES DE WEDDERBURN",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 80,
+   "n_words": 12
+  },
+  {
+   "id": "sec-034-211-de\ufb01nition-unek-cat-egorie-est-ditesemi-simpl",
+   "number": "2.1.1",
+   "title": "D\u00b4e\ufb01nition. UneK-cat\u00b4 egorie est ditesemi-simple si toutA-module ` a gauche",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 519,
+   "n_words": 85
+  },
+  {
+   "id": "sec-035-16-yves-andr-e-et-bruno-kahn",
+   "number": "16",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-036-212-proposition-soita-une-petite-categoriek-line",
+   "number": "2.1.2",
+   "title": "Proposition. SoitA une (petite) cat\u00b4egorieK-lin\u00b4eaire. Les conditions suivan-",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 565,
+   "n_words": 93
+  },
+  {
+   "id": "sec-037-213-lemme-toute-sous-categorie-pleine-b-dunek-ca",
+   "number": "2.1.3",
+   "title": "Lemme. Toute sous-cat\u00b4egorie pleine B d\u2019uneK-cat\u00b4egorie semi-simpleA",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 735,
+   "n_words": 118
+  },
+  {
+   "id": "sec-038-214-mise-en-garde-dans-le-lemme-213-si-a-est-mon",
+   "number": "2.1.4",
+   "title": "Mise en garde. Dans le lemme 2.1.3, si A est mono\u00a8 \u0131dale et siB est une",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 142,
+   "n_words": 28
+  },
+  {
+   "id": "sec-039-215-lemme-soita-unek-categorie-telle-quearada-so",
+   "number": "2.1.5",
+   "title": "Lemme. SoitA uneK-cat\u00b4egorie telle queA/rad(A) soit semi-simple. Pour",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 455,
+   "n_words": 71
+  },
+  {
+   "id": "sec-040-216-proposition-soita-une-petite-categorie-abeli",
+   "number": "2.1.6",
+   "title": "Proposition. SoitA une petite cat\u00b4egorie ab\u00b4elienne semi-simple, o`uK est un",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1698,
+   "n_words": 295
+  },
+  {
+   "id": "sec-041-217-proposition-soiti-un-ideal-dea-alors",
+   "number": "2.1.7",
+   "title": "Proposition. SoitI un id\u00b4eal deA. Alors :",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 777,
+   "n_words": 142
+  },
+  {
+   "id": "sec-042-221-proposition-soit-a-une-k-algebre-associative",
+   "number": "2.2.1",
+   "title": "Proposition. Soit A une K-alg`ebre (associative unitaire). Les conditions",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 124,
+   "n_words": 18
+  },
+  {
+   "id": "sec-043-18-yves-andr-e-et-bruno-kahn",
+   "number": "18",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1284,
+   "n_words": 249
+  },
+  {
+   "id": "sec-044-222-de\ufb01nition-unek-alg-ebrea-est-dite-separable",
+   "number": "2.2.2",
+   "title": "D\u00b4e\ufb01nition. UneK-alg` ebreA est dite s\u00b4eparable (ou absolument semi-simple)",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 56,
+   "n_words": 10
+  },
+  {
+   "id": "sec-045-223-remarque-nous-nous-ecartons-ici-l-eg-erement",
+   "number": "2.2.3",
+   "title": "Remarque. Nous nous \u00b4 ecartons ici l\u00b4 eg` erement de la terminologie de Bour-",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 204,
+   "n_words": 38
+  },
+  {
+   "id": "sec-046-224-lemme-toute-algebre-de-dimension-\ufb01nie-sans-r",
+   "number": "2.2.4",
+   "title": "Lemme. Toute alg`ebre de dimension \ufb01nie sans radical sur un corps parfait",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 186,
+   "n_words": 28
+  },
+  {
+   "id": "sec-047-226-d-e\ufb01nition-une-cat-egoriek-lin-eairea-est-di",
+   "number": "2.2.6",
+   "title": "D \u00b4e\ufb01nition. Une cat\u00b4 egorieK-lin\u00b4 eaireA est dite s\u00b4eparable (ou absolument",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 616,
+   "n_words": 104
+  },
+  {
+   "id": "sec-048-227-proposition-sik-est-parfait-une-k-categoriea",
+   "number": "2.2.7",
+   "title": "Proposition. SiK est parfait, une K-cat\u00b4egorieA est s\u00b4eparable si et seule-",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 163,
+   "n_words": 27
+  },
+  {
+   "id": "sec-049-231-de\ufb01nition-unek-cat-egoriea-est-semi-primaire",
+   "number": "2.3.1",
+   "title": "D\u00b4e\ufb01nition. UneK-cat\u00b4 egorieA est semi-primaire si",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 891,
+   "n_words": 143
+  },
+  {
+   "id": "sec-050-233-lemme-cf-51-1128-soit-n-un-nil-id-eal-dun-an",
+   "number": "2.3.3",
+   "title": "Lemme (cf. [51, 1.1.28]). Soit N un nil-id \u00b4eal d\u2019un anneau A. Alors tout",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 51,
+   "n_words": 9
+  },
+  {
+   "id": "sec-051-234-proposition-a-sia-est-semi-primaire-il-en-es",
+   "number": "2.3.4",
+   "title": "Proposition. a) SiA est semi-primaire, il en est de m \u02c6eme deA/I pour tout",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 763,
+   "n_words": 111
+  },
+  {
+   "id": "sec-052-20-yves-andr-e-et-bruno-kahn",
+   "number": "20",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2828,
+   "n_words": 496
+  },
+  {
+   "id": "sec-053-235-proposition-soita-une-categorie-abelienne-do",
+   "number": "2.3.5",
+   "title": "Proposition. SoitA une cat\u00b4egorie ab\u00b4elienne dont tout objet est de longueur",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 543,
+   "n_words": 88
+  },
+  {
+   "id": "sec-054-241-de\ufb01nition-unek-cat-egoriea-est-dite-de-wedde",
+   "number": "2.4.1",
+   "title": "D\u00b4e\ufb01nition. UneK-cat\u00b4 egorieA est dite de Wedderburn si",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 114,
+   "n_words": 20
+  },
+  {
+   "id": "sec-055-242-mise-en-garde-il-est-clair-quune-k-cat-egori",
+   "number": "2.4.2",
+   "title": "Mise en garde. Il est clair qu\u2019une K-cat\u00b4 egorie de Wedderburn est semi-",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 271,
+   "n_words": 47
+  },
+  {
+   "id": "sec-056-243-remarque-dans-le-cas-dun-seul-objet-les-alg",
+   "number": "2.4.3",
+   "title": "Remarque. Dans le cas d\u2019un seul objet, les alg` ebres correspondantes sont",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 173,
+   "n_words": 27
+  },
+  {
+   "id": "sec-057-244-proposition-a-la-notion-dek-categorie-de-wed",
+   "number": "2.4.4",
+   "title": "Proposition. a) La notion deK-cat\u00b4egorie de Wedderburn est stable par pas-",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1101,
+   "n_words": 193
+  },
+  {
+   "id": "sec-058-22-yves-andr-e-et-bruno-kahn",
+   "number": "22",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-059-3-r-adical-infini-et-nilpotence-renforc-ee",
+   "number": "3",
+   "title": "R ADICAL INFINI ET NILPOTENCE RENFORC \u00b4EE",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 46,
+   "n_words": 7
+  },
+  {
+   "id": "sec-060-311-de\ufb01nition-le-radical-in\ufb01ni-dea-est-lid-ealra",
+   "number": "3.1.1",
+   "title": "D\u00b4e\ufb01nition. Le radical in\ufb01ni deA est l\u2019id\u00b4 ealrad\u03c9(A) =",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 381,
+   "n_words": 63
+  },
+  {
+   "id": "sec-061-312-lemme-sit-ab-est-unk-foncteur-radiciel-entre",
+   "number": "3.1.2",
+   "title": "Lemme. SiT :A\u2192B est unK-foncteur radiciel entreK-cat\u00b4egories, alors",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 683,
+   "n_words": 105
+  },
+  {
+   "id": "sec-062-314-contre-exemple-consid-erons-la-cat-egoriea-s",
+   "number": "3.1.4",
+   "title": "Contre-exemple. Consid\u00b4 erons la cat\u00b4 egorieA suivante :",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 770,
+   "n_words": 149
+  },
+  {
+   "id": "sec-063-32-cas-des-cat-egories-de-modules-prenons-a-pr-e",
+   "number": "3.2",
+   "title": "Cas des cat \u00b4egories de modules. Prenons ` a pr\u00b4 esent pourA la cat\u00b4 egorie des",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 492,
+   "n_words": 91
+  },
+  {
+   "id": "sec-064-321-th-eoreme-56-31-aa-est-de-type-de-repr-esent",
+   "number": "3.2.1",
+   "title": "Th \u00b4eor`eme ([56], [31]). a)A est de type de repr \u00b4esentation \ufb01ni (i.e. il n\u2019y a",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1048,
+   "n_words": 181
+  },
+  {
+   "id": "sec-065-322-remarque-un-exemple-remarquable-de-cat-egori",
+   "number": "3.2.2",
+   "title": "Remarque. Un exemple remarquable de cat\u00b4 egorie strictement de Wedder-",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 182,
+   "n_words": 33
+  },
+  {
+   "id": "sec-066-4-r-adical-et-extension-des-scalaires",
+   "number": "4",
+   "title": "R ADICAL ET EXTENSION DES SCALAIRES",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-067-41-il-est-connu-que-le-radical-dune-alg-ebre-se",
+   "number": "4.1",
+   "title": "Il est connu que le radical d\u2019une alg` ebre se comporte \u201cmal\u201d par extension des",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 104,
+   "n_words": 17
+  },
+  {
+   "id": "sec-068-411-proposition-1-soitlk-une-extension-de-corps",
+   "number": "4.1.1",
+   "title": "Proposition. 1) SoitL/K une extension de corps. Soit A uneK-alg`ebre de",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 509,
+   "n_words": 78
+  },
+  {
+   "id": "sec-069-24-yves-andr-e-et-bruno-kahn",
+   "number": "24",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 510,
+   "n_words": 76
+  },
+  {
+   "id": "sec-070-412-remarque-la-condition-que-radakl-radakl-est",
+   "number": "4.1.2",
+   "title": "Remarque. La condition que rad(A\u2297KL)\u2282 rad(A)\u2297KL est n\u00b4 ecessaire :",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 260,
+   "n_words": 39
+  },
+  {
+   "id": "sec-071-413-mise-en-garde-sia-est-pseudo-ab-elienne-il-n",
+   "number": "4.1.3",
+   "title": "Mise en garde. SiA est pseudo-ab\u00b4 elienne, il n\u2019en est pas de m\u02c6 eme deAL",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 202,
+   "n_words": 40
+  },
+  {
+   "id": "sec-072-414-corollaire-soita-une-categorie-de-wedderburn",
+   "number": "4.1.4",
+   "title": "Corollaire. SoitA une cat\u00b4egorie de Wedderburn. Alors, pour toute extension",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 304,
+   "n_words": 52
+  },
+  {
+   "id": "sec-073-415-theoreme-soientk-un-corps-l-une-extension-de",
+   "number": "4.1.5",
+   "title": "Th\u00b4eor`eme. SoientK un corps, L une extension de K,V unL-espace vec-",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2972,
+   "n_words": 536
+  },
+  {
+   "id": "sec-074-417-corollaire-soientk-un-corps-parfait-in\ufb01ni-l",
+   "number": "4.1.7",
+   "title": "Corollaire. SoientK un corps parfait in\ufb01ni, L une extension de K,A une",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 447,
+   "n_words": 70
+  },
+  {
+   "id": "sec-075-26-yves-andr-e-et-bruno-kahn",
+   "number": "26",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 33,
+   "n_words": 10
+  },
+  {
+   "id": "sec-076-l-alors",
+   "number": "L",
+   "title": "Alors :",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 214,
+   "n_words": 29
+  },
+  {
+   "id": "sec-077-418-remarque-la-conclusion-a-vaut-encore-si-au-l",
+   "number": "4.1.8",
+   "title": "Remarque. La conclusion a) vaut encore si, au lieu d\u2019un L et d\u2019unH, on",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 328,
+   "n_words": 65
+  },
+  {
+   "id": "sec-078-419-exemple-comme-nous-le-verrons-en-821-le-coro",
+   "number": "4.1.9",
+   "title": "Exemple. Comme nous le verrons en 8.2.1, le corollaire pr\u00b4 ec\u00b4 edent s\u2019applique",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 87,
+   "n_words": 14
+  },
+  {
+   "id": "sec-079-5-e-xtensions-des-scalaires-na-ive-et-non-na-ive",
+   "number": "5",
+   "title": "E XTENSIONS DES SCALAIRES NA \u00a8IVE ET NON NA \u00a8IVE",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 322,
+   "n_words": 56
+  },
+  {
+   "id": "sec-080-511-de\ufb01nition-soienta-unek-cat-egorie-etl-unek-a",
+   "number": "5.1.1",
+   "title": "D\u00b4e\ufb01nition. SoientA uneK-cat\u00b4 egorie etL uneK-alg` ebre (commutative uni-",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 515,
+   "n_words": 100
+  },
+  {
+   "id": "sec-081-512-lemme-a-lak-structure-deal-senrichit-en-unel",
+   "number": "5.1.2",
+   "title": "Lemme. a) LaK-structure deA(L) s\u2019enrichit en uneL-structure par la loi",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1347,
+   "n_words": 228
+  },
+  {
+   "id": "sec-082-52-sur-lextension-des-scalairesa-la-saavedra-not",
+   "number": "5.2",
+   "title": "Sur l\u2019extension des scalaires`a la Saavedra. Notre but est de comparerAL ` a",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 325,
+   "n_words": 57
+  },
+  {
+   "id": "sec-083-521-lemme-cf-53-prop-ii1511-a-soientaa-etv-vec-k",
+   "number": "5.2.1",
+   "title": "Lemme (cf. [53, prop. II.1.5.1.1]). a) SoientA\u2208A etV \u2208Vec K. Le fonc-",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 863,
+   "n_words": 140
+  },
+  {
+   "id": "sec-084-28-yves-andr-e-et-bruno-kahn",
+   "number": "28",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-085-522-lemme-lhomomorphisme52-est-un-isomorphisme-d",
+   "number": "5.2.2",
+   "title": "Lemme. L\u2019homomorphisme(5.2) est un isomorphisme dans les cas suivants :",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 219,
+   "n_words": 42
+  },
+  {
+   "id": "sec-086-523-hypoth-eses-a-partir-de-maintenant-on-suppos",
+   "number": "5.2.3",
+   "title": "Hypoth `eses. `A partir de maintenant, on suppose que A est additive (c\u2019est-",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 170,
+   "n_words": 29
+  },
+  {
+   "id": "sec-087-524-lemme-sous-les-hypotheses-523",
+   "number": "5.2.4",
+   "title": "Lemme. Sous les hypoth`eses 5.2.3,",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 497,
+   "n_words": 86
+  },
+  {
+   "id": "sec-088-525-lemme-53-ii152-le-foncteur-53-est-adjoint-a",
+   "number": "5.2.5",
+   "title": "Lemme ([53, II.1.5.2]). Le foncteur (5.3) est adjoint `a gauche au foncteur",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 340,
+   "n_words": 56
+  },
+  {
+   "id": "sec-089-531-proposition-soientab-deux-objets-dea-si-dimk",
+   "number": "5.3.1",
+   "title": "Proposition. SoientA,B deux objets deA. Si dimKL =\u221e, supposons que",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 385,
+   "n_words": 62
+  },
+  {
+   "id": "sec-090-532-theoreme-le-foncteur",
+   "number": "5.3.2",
+   "title": "Th\u00b4eor`eme. Le foncteur",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1602,
+   "n_words": 272
+  },
+  {
+   "id": "sec-091-533-exemple-prenons-pour-a-la-cat-egorierepkg-de",
+   "number": "5.3.3",
+   "title": "Exemple. Prenons pour A la cat\u00b4 egorieRepKG des K-repr\u00b4 esentations de",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 388,
+   "n_words": 67
+  },
+  {
+   "id": "sec-092-30-yves-andr-e-et-bruno-kahn",
+   "number": "30",
+   "title": "YVES ANDR \u00b4E ET BRUNO KAHN",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-093-ii-radical-et-rigidite",
+   "number": "II",
+   "title": "Radical et rigidit\u00b4e",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 512,
+   "n_words": 89
+  },
+  {
+   "id": "sec-094-6-g-en-eralit-es",
+   "number": "6",
+   "title": "G \u00b4EN \u00b4ERALIT \u00b4ES",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-095-61-ideaux-mono\u0131daux-duaux-soit-k-un-anneau-commu",
+   "number": "6.1",
+   "title": "Id\u00b4eaux mono\u00a8\u0131daux, duaux. Soit K un anneau commutatif unitaire, et soit",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 35,
+   "n_words": 5
+  },
+  {
+   "id": "sec-096-611-de\ufb01nition-un-id-ealj-dea-est-dit-mono\u0131dal13",
+   "number": "6.1.1",
+   "title": "D\u00b4e\ufb01nition. Un id\u00b4 ealJ deA est dit mono\u00a8\u0131dal13 s\u2019il est stable par les trans-",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 45,
+   "n_words": 8
+  },
+  {
+   "id": "sec-097-612-lemme-a-sij-est-mono\u0131dal-il-est-stable-par-p",
+   "number": "6.1.2",
+   "title": "Lemme. a) SiJ est mono\u00a8\u0131dal, il est stable par produit mono\u00a8\u0131dal`a gauche et",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1587,
+   "n_words": 290
+  },
+  {
+   "id": "sec-098-613-de\ufb01nition-on-dit-que-a-est-rigide-si-tout-ob",
+   "number": "6.1.3",
+   "title": "D\u00b4e\ufb01nition. On dit que (A,\u2022) est rigide si tout objet a un dual ` a droite et est",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 108,
+   "n_words": 25
+  },
+  {
+   "id": "sec-099-614-sorite-sia-est-rigide-il-en-est-de-m\u02c6eme-dea",
+   "number": "6.1.4",
+   "title": "Sorite. SiA est rigide, il en est de m\u02c6eme deA\u2295,A\u266e et deA\u2295\u266e (notations du",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1532,
+   "n_words": 300
+  },
+  {
+   "id": "sec-100-615-lemme-tout-ideal-mono\u0131dalj-veri\ufb01e",
+   "number": "6.1.5",
+   "title": "Lemme. Tout id\u00b4eal mono\u00a8\u0131dalJ v\u00b4eri\ufb01e",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 600,
+   "n_words": 127
+  },
+  {
+   "id": "sec-101-616-lemme-soiti-un-1-ideal-a-gauche-dea-de\ufb01nitio",
+   "number": "6.1.6",
+   "title": "Lemme. SoitI un 1-id\u00b4eal `a gauche deA (d\u00b4e\ufb01nition 1.3.4). La formule",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 788,
+   "n_words": 142
+  },
+  {
+   "id": "sec-102-62-le-cas-sym-etrique-on-suppose-d-esormais-quea",
+   "number": "6.2",
+   "title": "Le cas sym \u00b4etrique. On suppose d\u00b4 esormais queA (qui rappelons-le, est sup-",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1339,
+   "n_words": 237
+  },
+  {
+   "id": "sec-103-63-interpretation-pour-expliciter-le-sens-des-le",
+   "number": "6.3",
+   "title": "Interpr\u00b4etation. Pour expliciter le sens des lemmes 6.1.5 et 6.2.1, notons :",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 2039,
+   "n_words": 379
+  },
+  {
+   "id": "sec-104-631-exemple-sia-est-la-cat-egorie-mono-\u0131dale-des",
+   "number": "6.3.1",
+   "title": "Exemple. SiA est la cat\u00b4 egorie mono\u00a8 \u0131dale des motifs de Grothendieck pour",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1148,
+   "n_words": 208
+  },
+  {
+   "id": "sec-105-7-t-races",
+   "number": "7",
+   "title": "T RACES",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 155,
+   "n_words": 23
+  },
+  {
+   "id": "sec-106-71-traces-et-idealn-rappelons-que-latrace-dun-en",
+   "number": "7.1",
+   "title": "Traces et id\u00b4ealN . Rappelons que latrace d\u2019un endomorphismeh\u2208A (C,C )",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 859,
+   "n_words": 159
+  },
+  {
+   "id": "sec-107-711-lemme-la-formule",
+   "number": "7.1.1",
+   "title": "Lemme. La formule",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 424,
+   "n_words": 86
+  },
+  {
+   "id": "sec-108-712-exemple-dans-le-cas-de-lexemple-631-motifs-l",
+   "number": "7.1.2",
+   "title": "Exemple. Dans le cas de l\u2019exemple 6.3.1 (motifs), l\u2019id\u00b4 eal mono\u00a8 \u0131dalN cor-",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 65,
+   "n_words": 11
+  },
+  {
+   "id": "sec-109-713-lemme-on-suppose-que-k-est-un-corps-soit-f1f",
+   "number": "7.1.3",
+   "title": "Lemme. On suppose que K est un corps. Soit f1,...,f n \u2208 A(A,A )",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 730,
+   "n_words": 121
+  },
+  {
+   "id": "sec-110-714-proposition-on-suppose-quek-est-un-corps-soi",
+   "number": "7.1.4",
+   "title": "Proposition. On suppose queK est un corps. SoitA un cat\u00b4egorieK-lin\u00b4eaire",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1249,
+   "n_words": 242
+  },
+  {
+   "id": "sec-111-715-corollaire-lidealn-ne-depend-pas-du-choix-du",
+   "number": "7.1.5",
+   "title": "Corollaire. L\u2019id\u00b4ealN ne d\u00b4epend pas du choix du tressage (sym\u00b4etrique)R.\u25a1",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-112-716-proposition-sous-les-m\u02c6emes-hypotheses-les-c",
+   "number": "7.1.6",
+   "title": "Proposition. Sous les m\u02c6emes hypoth`eses, les conditions suivantes sont \u00b4equi-",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 739,
+   "n_words": 135
+  },
+  {
+   "id": "sec-113-718-exemple-revenons-a-lexemple-de-la-cat-egorie",
+   "number": "7.1.8",
+   "title": "Exemple. Revenons ` a l\u2019exemple de la cat\u00b4 egorie mono\u00a8 \u0131dale sym\u00b4 etrique rigide",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 957,
+   "n_words": 180
+  },
+  {
+   "id": "sec-114-719-remarque-la-compatibilit-e-den-vis--a-vis-de",
+   "number": "7.1.9",
+   "title": "Remarque. La compatibilit\u00b4 e deN vis-` a-vis de l\u2019extension des scalaires",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 181,
+   "n_words": 33
+  },
+  {
+   "id": "sec-115-72-traces-et-puissances-exterieures-cette-partie",
+   "number": "7.2",
+   "title": "Traces et puissances ext\u00b4erieures. Cette partie est inspir\u00b4 ee par [14, 7.2] et par",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 1454,
+   "n_words": 243
+  },
+  {
+   "id": "sec-116-721-proposition-on-a",
+   "number": "7.2.1",
+   "title": "Proposition. On a",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1275,
+   "n_words": 219
+  },
+  {
+   "id": "sec-117-722-corollaire-supposonsa1-an-a-etf1-fn-f-alors",
+   "number": "7.2.2",
+   "title": "Corollaire. SupposonsA1 =\u00b7\u00b7\u00b7 =An =A etf1 =\u00b7\u00b7\u00b7 =fn =f. Alors",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 164,
+   "n_words": 32
+  },
+  {
+   "id": "sec-118-723-de\ufb01nition-soitn-un-entier-naturel-tel-que-n",
+   "number": "7.2.3",
+   "title": "D\u00b4e\ufb01nition. Soitn un entier naturel tel que n! soit inversible dansK, et soit",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 338,
+   "n_words": 62
+  },
+  {
+   "id": "sec-119-724-proposition-cf-14-72-soita-un-objet-dea-et-s",
+   "number": "7.2.4",
+   "title": "Proposition (cf. [14, 7.2]). SoitA un objet deA, et soitf un endomorphisme",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 676,
+   "n_words": 144
+  },
+  {
+   "id": "sec-120-725-corollaire-sous-les-hypotheses-de-la-proposi",
+   "number": "7.2.5",
+   "title": "Corollaire. Sous les hypoth`eses de la proposition 7.2.4,",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 1287,
+   "n_words": 248
+  },
+  {
+   "id": "sec-121-726-proposition-pour-tout\u03c3-sn-notons\u21131\u03c3-la-longu",
+   "number": "7.2.6",
+   "title": "Proposition. Pour tout\u03c3\u2208 Sn, notons\u21131(\u03c3) la longueur du cycle \u03c31 de\u03c3",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 129,
+   "n_words": 21
+  },
+  {
+   "id": "sec-122-1-1-f\u03c311f1",
+   "number": "1",
+   "title": "(1)\u25e6\u00b7\u00b7\u00b7\u25e6 f\u03c31(1)\u25e6f1,",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1813,
+   "n_words": 325
+  },
+  {
+   "id": "sec-123-727-proposition-soita-0-un-objet-dea-on-suppose",
+   "number": "7.2.7",
+   "title": "Proposition. SoitA\u2044= 0 un objet deA. On suppose qu\u2019il existe un entier",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 1277,
+   "n_words": 256
+  },
+  {
+   "id": "sec-124-728-lemme-nagata-higman-soientn-un-entier-0-etk",
+   "number": "7.2.8",
+   "title": "Lemme (Nagata-Higman). Soientn un entier> 0 etK un anneau commu-",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1004,
+   "n_words": 182
+  },
+  {
+   "id": "sec-125-73-trace-des-endomorphismes-nilpotents-nous-igno",
+   "number": "7.3",
+   "title": "Trace des endomorphismes nilpotents. Nous ignorons si un endomorphis-",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 147,
+   "n_words": 22
+  },
+  {
+   "id": "sec-126-731-proposition-supposons-quea-soit-pseudo-abeli",
+   "number": "7.3.1",
+   "title": "Proposition. Supposons queA soit pseudo-ab\u00b4elienne et que la dimension",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 787,
+   "n_words": 159
+  },
+  {
+   "id": "sec-127-732-lemme-supposons-quek-soit-un-corps-quea-soit",
+   "number": "7.3.2",
+   "title": "Lemme. Supposons queK soit un corps, queA soit pseudo-ab\u00b4elienne et que",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 198,
+   "n_words": 37
+  },
+  {
+   "id": "sec-128-733-proposition-cf-10-143-supposons-quil-existe",
+   "number": "7.3.3",
+   "title": "Proposition (cf. [10, 1.4.3]). Supposons qu\u2019il existe un foncteur mono\u00a8\u0131dal sy-",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 583,
+   "n_words": 105
+  },
+  {
+   "id": "sec-129-734-remarque-dans-731-contrairement-a-733-on-ne",
+   "number": "7.3.4",
+   "title": "Remarque. Dans 7.3.1, contrairement ` a 7.3.3, on ne peut remplacer \u201ctrace",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 381,
+   "n_words": 65
+  },
+  {
+   "id": "sec-130-741-de\ufb01nition-soitj-un-id-eal-mono-\u0131dal-dea-le-r",
+   "number": "7.4.1",
+   "title": "D\u00b4e\ufb01nition. SoitJ un id\u00b4 eal mono\u00a8 \u0131dal deA. Le\u2297-radical deJ est d\u00b4 e\ufb01ni par :",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 1094,
+   "n_words": 199
+  },
+  {
+   "id": "sec-131-743-exemple-dans-le-cas-de-lexemple-631-motifs-l",
+   "number": "7.4.3",
+   "title": "Exemple. Dans le cas de l\u2019exemple 6.3.1 (motifs), l\u2019id\u00b4 eal mono\u00a8 \u0131dal",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 394,
+   "n_words": 72
+  },
+  {
+   "id": "sec-132-744-remarque-la-compatibilit-e-de",
+   "number": "7.4.4",
+   "title": "Remarque. La compatibilit\u00b4 e de",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 124,
+   "n_words": 21
+  },
+  {
+   "id": "sec-133-8-t-h-eor-emes-de-structure",
+   "number": "8",
+   "title": "T H \u00b4EOR `EMES DE STRUCTURE",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 382,
+   "n_words": 66
+  },
+  {
+   "id": "sec-134-811-proposition-on-suppose-quil-existe-un-foncte",
+   "number": "8.1.1",
+   "title": "Proposition. On suppose qu\u2019il existe un foncteurF :A\u2192 Vec L vers la ca-",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 2001,
+   "n_words": 365
+  },
+  {
+   "id": "sec-135-812-remarques-1-la-preuve-de-a-est-une-variante",
+   "number": "8.1.2",
+   "title": "Remarques. 1) La preuve de a) est une variante abstraite de la preuve clas-",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 894,
+   "n_words": 172
+  },
+  {
+   "id": "sec-136-813-proposition-on-suppose-quea-est-pseudo-abeli",
+   "number": "8.1.3",
+   "title": "Proposition. On suppose queA est pseudo-ab\u00b4elienne et que les dimensions",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 1037,
+   "n_words": 171
+  },
+  {
+   "id": "sec-137-821-theoreme-on-supposek-de-caracteristique-null",
+   "number": "8.2.1",
+   "title": "Th\u00b4eor`eme. On supposeK de caract\u00b4eristique nulle etA munie d\u2019un foncteur",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 825,
+   "n_words": 141
+  },
+  {
+   "id": "sec-138-822-theoreme-a-on-suppose-quil-existe-un-foncteu",
+   "number": "8.2.2",
+   "title": "Th\u00b4eor`eme. a) On suppose qu\u2019il existe un foncteur mono\u00a8\u0131dal sym\u00b4etriqueH de",
+   "level": 3,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 1206,
+   "n_words": 223
+  },
+  {
+   "id": "sec-139-823-remarques-1-sia-est-tannakienne-et-quek-est",
+   "number": "8.2.3",
+   "title": "Remarques. 1) SiA est tannakienne et queK est de caract\u00b4 eristique nulle, on",
+   "level": 3,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 976,
+   "n_words": 171
+  },
+  {
+   "id": "sec-140-825-remarques-1-la-propri-et-ea-pr-esente-lavant",
+   "number": "8.2.5",
+   "title": "Remarques. 1) La propri\u00b4 et\u00b4 ea) pr\u00b4 esente l\u2019avantage sur les suivantes d\u2019\u02c6 etre",
+   "level": 3,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 1942,
+   "n_words": 377
+  },
+  {
+   "id": "sec-141-83-variante-z2-graduee-en-th-eorie-des-motifs-la",
+   "number": "8.3",
+   "title": "Variante Z/2-gradu\u00b4ee. En th\u00b4 eorie des motifs, la cat\u00b4 egorie mono\u00a8 \u0131dale des mo-",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 1503,
+   "n_words": 276
+  },
+  {
+   "id": "sec-142-831-proposition-supposonsk-de-caracteristique-nu",
+   "number": "8.3.1",
+   "title": "Proposition. SupposonsK de caract\u00b4eristique nulle, et soitL uneK-alg`ebre",
+   "level": 3,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 2082,
+   "n_words": 369
+  },
+  {
+   "id": "sec-143-9-l-e-pair-et-l-impair",
+   "number": "9",
+   "title": "L E PAIR ET L \u2019IMPAIR",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 177,
+   "n_words": 27
+  },
+  {
+   "id": "sec-144-911-de\ufb01nition-a-un-objet-aa-est-pairement-de-dim",
+   "number": "9.1.1",
+   "title": "D\u00b4e\ufb01nition. a) Un objet A\u2208A est pairement de dimension \ufb01nie au sens de",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 686,
+   "n_words": 133
+  },
+  {
+   "id": "sec-145-912-notation-sia-est-pairement-resp-impairement",
+   "number": "9.1.2",
+   "title": "Notation. SiA est pairement (resp. impairement) de dimension \ufb01nie au sens",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 325,
+   "n_words": 67
+  },
+  {
+   "id": "sec-146-914-proposition-a-toute-somme-directe-tout-facte",
+   "number": "9.1.4",
+   "title": "Proposition. a) Toute somme directe, tout facteur direct d\u2019un objet pairement",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 1148,
+   "n_words": 190
+  },
+  {
+   "id": "sec-147-915-lemme-a-soit-aa-pairement-de-dimension-\ufb01nie",
+   "number": "9.1.5",
+   "title": "Lemme. a) Soit A\u2208A , pairement de dimension \ufb01nie. Alors dimA est un",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 815,
+   "n_words": 144
+  },
+  {
+   "id": "sec-148-917-th-eoreme-a-soit-a-apairement-de-dimension-\ufb01",
+   "number": "9.1.7",
+   "title": "Th \u00b4eor`eme. a) Soit A \u2208 Apairement de dimension \ufb01nie. Alors kimA =",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 426,
+   "n_words": 80
+  },
+  {
+   "id": "sec-149-918-corollaire-a-si-a-etb-sont-pairement-de-dime",
+   "number": "9.1.8",
+   "title": "Corollaire. a) Si A etB sont pairement de dimension \ufb01nie, alors kim(A\u2295",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 98,
+   "n_words": 22
+  },
+  {
+   "id": "sec-150-919-proposition-soienta-respa-un-objet-dea-paire",
+   "number": "9.1.9",
+   "title": "Proposition. SoientA+ (resp.A\u2212) un objet deA pairement (resp. impaire-",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 490,
+   "n_words": 103
+  },
+  {
+   "id": "sec-151-9110-proposition-soita-un-objet-de-dimension-\ufb01ni",
+   "number": "9.1.10",
+   "title": "Proposition. SoitA un objet de dimension \ufb01nie au sens de Kimura, et sup-",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 278,
+   "n_words": 44
+  },
+  {
+   "id": "sec-152-9111-lemme-soitaa-et-soit-a-aa-une-decomposition",
+   "number": "9.1.11",
+   "title": "Lemme. SoitA\u2208A , et soit A = A+\u2295A\u2212 une d\u00b4ecomposition en somme",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 548,
+   "n_words": 100
+  },
+  {
+   "id": "sec-153-9112-proposition-32-prop-69-tout-facteur-direct",
+   "number": "9.1.12",
+   "title": "Proposition ([32, prop. 6.9]). Tout facteur direct d\u2019un objet de dimension",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 29,
+   "n_words": 6
+  },
+  {
+   "id": "sec-154-9113-de\ufb01nition-soita-un-objet-de-dimension-\ufb01nie",
+   "number": "9.1.13",
+   "title": "D\u00b4e\ufb01nition. SoitA un objet de dimension \ufb01nie au sens de Kimura. On d\u00b4 e\ufb01nit",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 1579,
+   "n_words": 306
+  },
+  {
+   "id": "sec-155-9115-remarque-on-pourrait-aussi-utiliser-le-rais",
+   "number": "9.1.15",
+   "title": "Remarque. On pourrait aussi utiliser le raisonnement de la d\u00b4 emonstration",
+   "level": 3,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 243,
+   "n_words": 42
+  },
+  {
+   "id": "sec-156-9116-de\ufb01nition-une-categorie-de-kimura16-sur-un",
+   "number": "9.1.16",
+   "title": "D\u00b4e\ufb01nition. Une cat\u00b4egorie de Kimura16 sur un corps de caract\u00b4 eristique nulle",
+   "level": 3,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 625,
+   "n_words": 105
+  },
+  {
+   "id": "sec-157-921-theoreme-supposons-que",
+   "number": "9.2.1",
+   "title": "Th\u00b4eor`eme. Supposons que",
+   "level": 3,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 1319,
+   "n_words": 238
+  },
+  {
+   "id": "sec-158-0-ceci-permet-de-renforcer-la-proposition-9110-e",
+   "number": "0",
+   "title": "Ceci permet de renforcer la proposition 9.1.10 en l\u2019\u00b4 enonc\u00b4 e suivant : siA\u2208A kim,",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 1064,
+   "n_words": 204
+  },
+  {
+   "id": "sec-159-922-theoreme-toute-categorie-de-kimuraa-est-de-w",
+   "number": "9.2.2",
+   "title": "Th\u00b4eor`eme. Toute cat\u00b4egorie de KimuraA est de Wedderburn. Son radicalR",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 264,
+   "n_words": 40
+  },
+  {
+   "id": "sec-160-9114-pour-le-reste-on-se-ram-ene-au-th-eor-eme-9",
+   "number": "9.1.14",
+   "title": "Pour le reste, on se ram` ene au th\u00b4 eor` eme 9.2.1 en quotientant par",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-161-0-cf-le",
+   "number": "0",
+   "title": "(cf. le",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 19,
+   "n_words": 4
+  },
+  {
+   "id": "sec-162-923-remarque-etant-donn-e-une-cat-egorie-de-kimu",
+   "number": "9.2.3",
+   "title": "Remarque. \u00b4Etant donn\u00b4 e une cat\u00b4 egorie de KimuraA, le th\u00b4 eor` eme 9.2.2 nous",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 263,
+   "n_words": 44
+  },
+  {
+   "id": "sec-163-924-exemple-kimura-32-71-conjecture-que-tout-mot",
+   "number": "9.2.4",
+   "title": "Exemple. Kimura [32, 7.1] conjecture que tout motif de Chow est de dimen-",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 990,
+   "n_words": 160
+  },
+  {
+   "id": "sec-164-10-e-xemples-et-compl-ements",
+   "number": "10",
+   "title": "E XEMPLES ET COMPL \u00b4EMENTS",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-165-101-trois-contre-exemples-v-oici-trois-exemples",
+   "number": "10.1",
+   "title": "Trois contre-exemples. V oici trois exemples de cat\u00b4 egories mono\u00a8 \u0131dalesK-",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 140,
+   "n_words": 23
+  },
+  {
+   "id": "sec-166-1011-contre-exemple-partons-ded-k\u03b5\u03b5-2-0-vue-comm",
+   "number": "10.1.1",
+   "title": "Contre-exemple. Partons deD =K[\u03b5],\u03b5 2 = 0, vue comme super-alg` ebre",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 1431,
+   "n_words": 269
+  },
+  {
+   "id": "sec-167-1012-contre-exemple-k-est-maintenant-suppos-e-de",
+   "number": "10.1.2",
+   "title": "Contre-exemple. K est maintenant suppos\u00b4 e de caract\u00b4 eristiquep> 0, et on",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 658,
+   "n_words": 120
+  },
+  {
+   "id": "sec-168-102-complement-lalgebre-commutative-hh-0a-soient",
+   "number": "10.2",
+   "title": "Compl\u00b4ement : l\u2019alg`ebre commutative HH 0(A). SoientA une petite K-",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 2064,
+   "n_words": 367
+  },
+  {
+   "id": "sec-169-1021-exemple-supposonsa-tannakienne-semi-simple",
+   "number": "10.2.1",
+   "title": "Exemple. SupposonsA tannakienne semi-simple neutre sur un corps K",
+   "level": 3,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 706,
+   "n_words": 123
+  },
+  {
+   "id": "sec-170-iii-sections",
+   "number": "III",
+   "title": "Sections",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 371,
+   "n_words": 67
+  },
+  {
+   "id": "sec-171-11-c-ohomologie-de-hochschild--mitchell",
+   "number": "11",
+   "title": "C OHOMOLOGIE DE HOCHSCHILD -MITCHELL",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-172-111-produit-tensoriel-de-k-categories-ici-k-d-es",
+   "number": "11.1",
+   "title": "Produit tensoriel de K-cat\u00b4egories. Ici, K d\u00b4 esigne de nouveau un anneau",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 31,
+   "n_words": 3
+  },
+  {
+   "id": "sec-173-1111-de\ufb01nition-cf-3811-soientab-deuxk-cat-egorie",
+   "number": "11.1.1",
+   "title": "D\u00b4e\ufb01nition. (cf. [38,\u00a711]). SoientA,B deuxK-cat\u00b4 egories. Leproduit ten-",
+   "level": 3,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 764,
+   "n_words": 137
+  },
+  {
+   "id": "sec-174-1113-lemme-supposons-seulement-que-lesk-categori",
+   "number": "11.1.3",
+   "title": "Lemme. Supposons seulement que lesK-cat\u00b4egoriesA etB soient de Wed-",
+   "level": 3,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 701,
+   "n_words": 123
+  },
+  {
+   "id": "sec-175-1114-proposition-on-suppose-que-k-est-un-corps-u",
+   "number": "11.1.4",
+   "title": "Proposition. On suppose que K est un corps. Une K-cat\u00b4egorieA est de",
+   "level": 3,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 687,
+   "n_words": 111
+  },
+  {
+   "id": "sec-176-112-complexe-de-hochschild-mitchell-soita-une-pe",
+   "number": "11.2",
+   "title": "Complexe de Hochschild-Mitchell. SoitA une petiteK-cat\u00b4 egorie, telle que",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 2023,
+   "n_words": 353
+  },
+  {
+   "id": "sec-177-1121-remarque-homologie-de-hochschild-sim-etn-so",
+   "number": "11.2.1",
+   "title": "Remarque. (Homologie de Hochschild) SiM etN sont deuxA-bimodules,",
+   "level": 3,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 329,
+   "n_words": 57
+  },
+  {
+   "id": "sec-178-12-u-n-th-eor-eme-de-wedderburn-a-plusieurs-obje",
+   "number": "12",
+   "title": "U N \u201cTH \u00b4EOR `EME DE WEDDERBURN `A PLUSIEURS OBJETS \u201d",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 125,
+   "n_words": 24
+  },
+  {
+   "id": "sec-179-121-existence-et-unicit-e-de-sections-le-th-eor",
+   "number": "12.1",
+   "title": "Existence et \u201cunicit \u00b4e\u201d de sections. Le th\u00b4 eor` eme de structure fondamental",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 6594,
+   "n_words": 1218
+  },
+  {
+   "id": "sec-180-1212-lemme-supposonsa-pseudo-abelienne-soit-s-un",
+   "number": "12.1.2",
+   "title": "Lemme. SupposonsA pseudo-ab\u00b4elienne. Soit s une section de \u03c0A. Les",
+   "level": 3,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 142,
+   "n_words": 21
+  },
+  {
+   "id": "sec-181-1213-remarque-supposonsk-alg-ebriquement-clos-so",
+   "number": "12.1.3",
+   "title": "Remarque. SupposonsK alg\u00b4 ebriquement clos. SoitA un objet ind\u00b4 ecom-",
+   "level": 3,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 1218,
+   "n_words": 208
+  },
+  {
+   "id": "sec-182-1221-proposition-soit-t-b-aun-k-foncteur-radicie",
+   "number": "12.2.1",
+   "title": "Proposition. Soit T : B \u2192 Aun K-foncteur radiciel entre deux pe-",
+   "level": 3,
+   "page_start": 63,
+   "page_end": 64,
+   "n_chars": 2551,
+   "n_words": 483
+  },
+  {
+   "id": "sec-183-1222-corollaire-sous-les-hypoth-eses-du-th-eorem",
+   "number": "12.2.2",
+   "title": "Corollaire. Sous les hypoth `eses du th \u00b4eor`eme 12.1.1, supposons donn \u00b4ee",
+   "level": 3,
+   "page_start": 64,
+   "page_end": 64,
+   "n_chars": 352,
+   "n_words": 57
+  },
+  {
+   "id": "sec-184-13-s-ections-mono-idales",
+   "number": "13",
+   "title": "S ECTIONS MONO \u00a8IDALES",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 1489,
+   "n_words": 235
+  },
+  {
+   "id": "sec-185-132-existence-et-unicit-e-de-sections-mono-\u0131dale",
+   "number": "13.2",
+   "title": "Existence et \u201cunicit \u00b4e\u201d de sections mono \u00a8\u0131dales. Apr` es ces pr\u00b4 eliminaires,",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 65,
+   "n_chars": 753,
+   "n_words": 120
+  },
+  {
+   "id": "sec-186-1331-sorite-soit-s-s-b-a-un-foncteur-mono\u0131dal-et",
+   "number": "13.3.1",
+   "title": "Sorite. Soit (s, \u02dcs) : (B,\u22a4)\u2192 (A,\u2022) un foncteur mono\u00a8\u0131dal, et soitu :s\u21d2t",
+   "level": 3,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 649,
+   "n_words": 109
+  },
+  {
+   "id": "sec-187-1332-sorite-soient-a-a\u03c0a-comme-dans-le-th-eoreme",
+   "number": "13.3.2",
+   "title": "Sorite. Soient (A,\u2022), \u00afA,\u03c0A comme dans le th \u00b4eor`eme 13.2.1. Alors le th \u00b4e-",
+   "level": 3,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 1511,
+   "n_words": 267
+  },
+  {
+   "id": "sec-188-134-categories-mono\u0131dales-strictes-une-petite-ca",
+   "number": "13.4",
+   "title": "Cat\u00b4egories mono\u00a8\u0131dales strictes. Une petite cat\u00b4 egorie mono\u00a8 \u0131dale(B,\u22a4) est",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 497,
+   "n_words": 88
+  },
+  {
+   "id": "sec-189-1341-remarque-soitaa-la-cat-egorie-des-endofonct",
+   "number": "13.4.1",
+   "title": "Remarque. SoitAA la cat\u00b4 egorie des endofoncteurs additifs deA. Munie",
+   "level": 3,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 1355,
+   "n_words": 225
+  },
+  {
+   "id": "sec-190-1341-la-construction-de-mac-lane36-xi-3-a-toute",
+   "number": "13.4.1",
+   "title": "La construction de Mac Lane[36, XI 3]. `A toute petite cat\u00b4 egorie mono\u00a8 \u0131dale",
+   "level": 3,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 1646,
+   "n_words": 283
+  },
+  {
+   "id": "sec-191-1342-proposition-soient-a-a\u03c0a-comme-dans-le-th-e",
+   "number": "13.4.2",
+   "title": "Proposition. Soient (A,\u2022), \u00afA,\u03c0A comme dans le th \u00b4eor`eme 13.2.1. Si en",
+   "level": 3,
+   "page_start": 67,
+   "page_end": 68,
+   "n_chars": 362,
+   "n_words": 58
+  },
+  {
+   "id": "sec-192-1351-lemme-la-proposition-1342-decoule-de-lenonc",
+   "number": "13.5.1",
+   "title": "Lemme. La proposition 13.4.2 d\u00b4ecoule de l\u2019\u00b4enonc\u00b4e correspondant pour la",
+   "level": 3,
+   "page_start": 68,
+   "page_end": 69,
+   "n_chars": 2496,
+   "n_words": 424
+  },
+  {
+   "id": "sec-193-136-au-c\u0153ur-du-probl-eme-d-emonstration-de-la-pr",
+   "number": "13.6",
+   "title": "Au c\u0153ur du probl `eme : d \u00b4emonstration de la proposition 13.4.2. Compte",
+   "level": 2,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 345,
+   "n_words": 65
+  },
+  {
+   "id": "sec-194-1361-debut-de-la-preuve-de-c-soits-une-section-k",
+   "number": "13.6.1",
+   "title": "D\u00b4ebut de la preuve de c). Soits une section K-fonctorielle mono\u00a8 \u0131dale de",
+   "level": 3,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 244,
+   "n_words": 43
+  },
+  {
+   "id": "sec-195-1361-lemme-il-existe-une-famille-double-ur",
+   "number": "13.6.1",
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "level": 3,
+   "page_start": 69,
+   "page_end": 70,
+   "n_chars": 863,
+   "n_words": 171
+  },
+  {
+   "id": "sec-196-1362-une-relation-de-cocycle-i-supposons-r-1-et",
+   "number": "13.6.2",
+   "title": "Une relation de cocycle, I. Supposons r\u2265 1 et trouv\u00b4 ee une familleu(r)",
+   "level": 3,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 971,
+   "n_words": 161
+  },
+  {
+   "id": "sec-197-1363-une-relation-de-cocycle-ii-la-congruence-13",
+   "number": "13.6.3",
+   "title": "Une relation de cocycle, II. La congruence (13.4) fait penser ` a une relation",
+   "level": 3,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 979,
+   "n_words": 181
+  },
+  {
+   "id": "sec-198-1364-une-relation-de-cocycle-iii-\ufb01n-de-la-preuve",
+   "number": "13.6.4",
+   "title": "Une relation de cocycle, III \u2013 \ufb01n de la preuve de c). Nous sommes main-",
+   "level": 3,
+   "page_start": 71,
+   "page_end": 72,
+   "n_chars": 1307,
+   "n_words": 252
+  },
+  {
+   "id": "sec-199-1365-debut-de-la-preuve-de-a-soits-une-sectionk",
+   "number": "13.6.5",
+   "title": "D\u00b4ebut de la preuve de a). Soits une sectionK-fonctorielle de\u03c0A. L\u2019exis-",
+   "level": 3,
+   "page_start": 72,
+   "page_end": 72,
+   "n_chars": 418,
+   "n_words": 72
+  },
+  {
+   "id": "sec-200-1362-lemme-il-existe-une-famille-double-ur",
+   "number": "13.6.2",
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "level": 3,
+   "page_start": 72,
+   "page_end": 72,
+   "n_chars": 442,
+   "n_words": 85
+  },
+  {
+   "id": "sec-201-1366-une-relation-de-cocycle-i-supposons-r-1-et",
+   "number": "13.6.6",
+   "title": "Une relation de cocycle, I. Supposons r\u2265 1 et trouv\u00b4 ee une familleu(r)",
+   "level": 3,
+   "page_start": 72,
+   "page_end": 73,
+   "n_chars": 1270,
+   "n_words": 198
+  },
+  {
+   "id": "sec-202-1367-une-relation-de-cocycle-ii-pour-interpr-ete",
+   "number": "13.6.7",
+   "title": "Une relation de cocycle, II. Pour interpr\u00b4 eter (13.6) comme une relation de",
+   "level": 3,
+   "page_start": 73,
+   "page_end": 74,
+   "n_chars": 1263,
+   "n_words": 219
+  },
+  {
+   "id": "sec-203-1368-une-relation-de-cocycle-iii---\ufb01n-de-la-preu",
+   "number": "13.6.8",
+   "title": "Une relation de cocycle, III - \ufb01n de la preuve de a). De m\u02c6 eme que pour",
+   "level": 3,
+   "page_start": 74,
+   "page_end": 74,
+   "n_chars": 429,
+   "n_words": 87
+  },
+  {
+   "id": "sec-204-1369-preuve-de-b-soientss-deux-sections-mono-\u0131da",
+   "number": "13.6.9",
+   "title": "Preuve de b). Soients,s\u2032 deux sections mono\u00a8 \u0131dales strictes de\u03c0A. Il s\u2019agit",
+   "level": 3,
+   "page_start": 74,
+   "page_end": 74,
+   "n_chars": 171,
+   "n_words": 31
+  },
+  {
+   "id": "sec-205-1363-lemme-il-existe-une-famille-double-ur",
+   "number": "13.6.3",
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "level": 3,
+   "page_start": 74,
+   "page_end": 76,
+   "n_chars": 3504,
+   "n_words": 643
+  },
+  {
+   "id": "sec-206-1371-proposition-soit-b-une-autre-cat-egorie-mon",
+   "number": "13.7.1",
+   "title": "Proposition. Soit (B,\u2022) une autre cat \u00b4egorie mono\u00a8\u0131dale v\u00b4eri\ufb01ant les hy-",
+   "level": 3,
+   "page_start": 76,
+   "page_end": 77,
+   "n_chars": 1966,
+   "n_words": 358
+  },
+  {
+   "id": "sec-207-1372-corollaire-dans-la-situation-de-la-proposit",
+   "number": "13.7.2",
+   "title": "Corollaire. Dans la situation de la proposition 12.2.1, supposons A,B",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 318,
+   "n_words": 55
+  },
+  {
+   "id": "sec-208-1373-proposition-sous-les-hypotheses-du-theoreme",
+   "number": "13.7.3",
+   "title": "Proposition. Sous les hypoth`eses du th\u00b4eor`eme 13.2.1, supposons donn\u00b4ee en",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 1128,
+   "n_words": 191
+  },
+  {
+   "id": "sec-209-1381-proposition-sous-les-hypoth-eses-du-th-eore",
+   "number": "13.8.1",
+   "title": "Proposition. Sous les hypoth `eses du th \u00b4eor`eme 13.2.1, soit v une structure",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 542,
+   "n_words": 94
+  },
+  {
+   "id": "sec-210-1382-lemme-il-existe-une-famille-double-urr1-dau",
+   "number": "13.8.2",
+   "title": "Lemme. Il existe une famille double (u(r))r\u22651 d\u2019automorphismes deIdA,",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 78,
+   "n_chars": 1340,
+   "n_words": 262
+  },
+  {
+   "id": "sec-211-1383-remarque-siab-admettent-des-duaux-a-droite",
+   "number": "13.8.3",
+   "title": "Remarque. SiA,B admettent des duaux ` a droite (cf. 6), les isomorphismes",
+   "level": 3,
+   "page_start": 78,
+   "page_end": 78,
+   "n_chars": 305,
+   "n_words": 59
+  },
+  {
+   "id": "sec-212-14-r-epr-esentabilit-e",
+   "number": "14",
+   "title": "R EPR \u00b4ESENTABILIT \u00b4E",
+   "level": 1,
+   "page_start": 78,
+   "page_end": 79,
+   "n_chars": 948,
+   "n_words": 153
+  },
+  {
+   "id": "sec-213-1411-le-cas-non-mono\u0131dal-soita-une-petitek-cat-e",
+   "number": "14.1.1",
+   "title": "Le cas non mono\u00a8\u0131dal. SoitA une petiteK-cat\u00b4 egorie de Wedderburn. Con-",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 1602,
+   "n_words": 262
+  },
+  {
+   "id": "sec-214-1411-sorite-la-constructionag-a-de\ufb01nit-un-2-fonc",
+   "number": "14.1.1",
+   "title": "Sorite. La constructionA\u21a6\u2192G (A) d\u00b4e\ufb01nit un 2-foncteur 1-contravariant et",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 80,
+   "n_chars": 376,
+   "n_words": 64
+  },
+  {
+   "id": "sec-215-1412-sorite-pour-toutek-categorie-de-wedderburna",
+   "number": "14.1.2",
+   "title": "Sorite. Pour touteK-cat\u00b4egorie de WedderburnA, les foncteurs",
+   "level": 3,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 196,
+   "n_words": 33
+  },
+  {
+   "id": "sec-216-1412-le-cas-mono\u0131dal-supposons-maintenant-quea-s",
+   "number": "14.1.2",
+   "title": "Le cas mono\u00a8\u0131dal. Supposons maintenant queA soit mono\u00a8 \u0131dale, et que son",
+   "level": 3,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 888,
+   "n_words": 147
+  },
+  {
+   "id": "sec-217-1413-sorite-la-constructionaga-de\ufb01nit-un-2-fonct",
+   "number": "14.1.3",
+   "title": "Sorite. La constructionA\u21a6\u2192G\u2297(A) d\u00b4e\ufb01nit un 2-foncteur 1-contravariant",
+   "level": 3,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 577,
+   "n_words": 91
+  },
+  {
+   "id": "sec-218-1413-objets-compacts-duaux-et-limites-inductives",
+   "number": "14.1.3",
+   "title": "Objets compacts, duaux et limites inductives. SupposonsA stable par lim-",
+   "level": 3,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 479,
+   "n_words": 80
+  },
+  {
+   "id": "sec-219-1414-extension-des-scalaires-silk-est-une-extens",
+   "number": "14.1.4",
+   "title": "Extension des scalaires. SiL/K est une extension, on a des foncteurs \u201cex-",
+   "level": 3,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 502,
+   "n_words": 86
+  },
+  {
+   "id": "sec-220-1421-objets-en-cat-egories-et-en-groupo-\u0131des-soi",
+   "number": "14.2.1",
+   "title": "Objets en cat \u00b4egories et en groupo \u00a8\u0131des. SoitX une cat\u00b4 egorie avec limites",
+   "level": 3,
+   "page_start": 81,
+   "page_end": 82,
+   "n_chars": 1582,
+   "n_words": 304
+  },
+  {
+   "id": "sec-221-1422-objets-en-actions-de-groupe-un-objet-en-gro",
+   "number": "14.2.2",
+   "title": "Objets en actions de groupe. Un objet en groupes dansX est un couple",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 83,
+   "n_chars": 1300,
+   "n_words": 264
+  },
+  {
+   "id": "sec-222-1423-actions-de-groupe-et-groupo\u0131des-pour-obteni",
+   "number": "14.2.3",
+   "title": "Actions de groupe et groupo\u00a8\u0131des. Pour obtenir un groupo\u00a8 \u0131de\u0393 , il suf\ufb01t de se",
+   "level": 3,
+   "page_start": 83,
+   "page_end": 83,
+   "n_chars": 469,
+   "n_words": 86
+  },
+  {
+   "id": "sec-223-1421-exemple-x-schk-est-la-cat-egorie-des-k-sch",
+   "number": "14.2.1",
+   "title": "Exemple. X = Sch/K est la cat\u00b4 egorie des K-sch\u00b4 emas (dans notre",
+   "level": 3,
+   "page_start": 83,
+   "page_end": 83,
+   "n_chars": 1082,
+   "n_words": 200
+  },
+  {
+   "id": "sec-224-143-representabilite-algebrique-soienta-unek-cat",
+   "number": "14.3",
+   "title": "Repr\u00b4esentabilit\u00b4e alg\u00b4ebrique. SoientA uneK-cat\u00b4 egorie de Wedderburn et",
+   "level": 2,
+   "page_start": 83,
+   "page_end": 84,
+   "n_chars": 557,
+   "n_words": 101
+  },
+  {
+   "id": "sec-225-1431-th-eoreme-soit-wedfk-la-sous--2-categorie-1",
+   "number": "14.3.1",
+   "title": "Th \u00b4eor`eme. Soit Wedf{K} la sous- 2-cat\u00b4egorie 1-pleine et 2-pleine de",
+   "level": 3,
+   "page_start": 84,
+   "page_end": 85,
+   "n_chars": 2537,
+   "n_words": 457
+  },
+  {
+   "id": "sec-226-1432-exemple-le-th-eor-eme-1431-montre-que-pour",
+   "number": "14.3.2",
+   "title": "Exemple. Le th\u00b4 eor` eme 14.3.1 montre que, pour deuxK-cat\u00b4 egories de Wed-",
+   "level": 3,
+   "page_start": 85,
+   "page_end": 85,
+   "n_chars": 816,
+   "n_words": 149
+  },
+  {
+   "id": "sec-227-1433-th-eoreme-soit-wedfk-la-sous--2-categorie-1",
+   "number": "14.3.3",
+   "title": "Th \u00b4eor`eme. Soit Wedf\u2297{K} la sous- 2-cat\u00b4egorie 1-pleine et 2-pleine de",
+   "level": 3,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 1564,
+   "n_words": 270
+  },
+  {
+   "id": "sec-228-15-s-ections-et-tressages",
+   "number": "15",
+   "title": "S ECTIONS ET TRESSAGES",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 86,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-229-151-tressages-on-renvoie-a-27-pour-les-notions-d",
+   "number": "15.1",
+   "title": "Tressages. On renvoie ` a [27] pour les notions de tressage et de foncteurmo-",
+   "level": 2,
+   "page_start": 86,
+   "page_end": 87,
+   "n_chars": 1430,
+   "n_words": 240
+  },
+  {
+   "id": "sec-230-152-sorites-le-sorite-suivant-compl-ete-le-sorit",
+   "number": "15.2",
+   "title": "Sorites. Le sorite suivant compl` ete le sorite 13.3.1 :",
+   "level": 2,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-231-1521-sorite-soit-s-s-br-as-un-foncteur-mono-\u0131dal",
+   "number": "15.2.1",
+   "title": "Sorite. Soit (s, \u02dcs) : ( B,\u22a4,R ) \u2192 (A,\u2022,S ) un foncteur mono \u00a8\u0131dal tress\u00b4e",
+   "level": 3,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 258,
+   "n_words": 47
+  },
+  {
+   "id": "sec-232-1522-sorite-tout-tressager-satisfait-les-identit",
+   "number": "15.2.2",
+   "title": "Sorite. Tout tressageR satisfait les identit\u00b4es",
+   "level": 3,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 246,
+   "n_words": 44
+  },
+  {
+   "id": "sec-233-1523-sorite-notonsasym-la-categorie-symetrique-d",
+   "number": "15.2.3",
+   "title": "Sorite. NotonsAsym la cat\u00b4egorie sym\u00b4etrique deA (m\u02c6emes objets, m \u02c6emes",
+   "level": 3,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 177,
+   "n_words": 31
+  },
+  {
+   "id": "sec-234-1524-sorite-soient-br-une-categorie-mono\u0131dale-tr",
+   "number": "15.2.4",
+   "title": "Sorite. Soient (B,\u22a4,R ) une cat\u00b4egorie mono\u00a8\u0131dale tress\u00b4ee, (A,\u2022) une cat\u00b4ego-",
+   "level": 3,
+   "page_start": 87,
+   "page_end": 88,
+   "n_chars": 562,
+   "n_words": 75
+  },
+  {
+   "id": "sec-235-153-sections-reprenons-maintenant-les-notations",
+   "number": "15.3",
+   "title": "Sections. Reprenons maintenant les notations et hypoth` eses du th\u00b4 eor` eme 13.2.1,",
+   "level": 2,
+   "page_start": 88,
+   "page_end": 88,
+   "n_chars": 308,
+   "n_words": 56
+  },
+  {
+   "id": "sec-236-1531-proposition-a-il-existe-un-automorphisme-no",
+   "number": "15.3.1",
+   "title": "Proposition. a) Il existe un automorphisme (non mono\u00a8\u0131dal)u des tel que,",
+   "level": 3,
+   "page_start": 88,
+   "page_end": 89,
+   "n_chars": 1822,
+   "n_words": 292
+  },
+  {
+   "id": "sec-237-1533-proposition-pour-une-section-mono-\u0131dale-s-s",
+   "number": "15.3.3",
+   "title": "Proposition. Pour une section mono \u00a8\u0131dale (s, \u02dcs), les conditions suivantes",
+   "level": 3,
+   "page_start": 89,
+   "page_end": 90,
+   "n_chars": 1727,
+   "n_words": 313
+  },
+  {
+   "id": "sec-238-1534-d-e\ufb01nition-une-structure-balanc-ee-sur-une",
+   "number": "15.3.4",
+   "title": "D \u00b4e\ufb01nition. Une structure balanc \u00b4ee sur une cat\u00b4 egorie mono\u00a8 \u0131dale tress\u00b4 ee",
+   "level": 3,
+   "page_start": 90,
+   "page_end": 90,
+   "n_chars": 117,
+   "n_words": 19
+  },
+  {
+   "id": "sec-239-1535-theoreme-soit-ar-une-categorie-mono\u0131dale-tr",
+   "number": "15.3.5",
+   "title": "Th\u00b4eor`eme. Soit (A,\u2022,R ) une cat\u00b4egorie mono\u00a8\u0131dale tress\u00b4ee. On suppose que",
+   "level": 3,
+   "page_start": 90,
+   "page_end": 90,
+   "n_chars": 1658,
+   "n_words": 298
+  },
+  {
+   "id": "sec-240-1536-exemple-consid-erons-la-quanti\ufb01cation-de-dr",
+   "number": "15.3.6",
+   "title": "Exemple. Consid\u00b4 erons la quanti\ufb01cation de Drinfeld-Cartier \u00afA[[h]] d\u2019une",
+   "level": 3,
+   "page_start": 90,
+   "page_end": 91,
+   "n_chars": 949,
+   "n_words": 170
+  },
+  {
+   "id": "sec-241-1537-remarque-il-est-probable-que-les-parties-b",
+   "number": "15.3.7",
+   "title": "Remarque. Il est probable que les parties b) et c) du th\u00b4 eor` eme sont fausses",
+   "level": 3,
+   "page_start": 91,
+   "page_end": 91,
+   "n_chars": 75,
+   "n_words": 10
+  },
+  {
+   "id": "sec-242-154-complements-pour-\ufb01nir-examinons-de-plus-pr-e",
+   "number": "15.4",
+   "title": "Compl\u00b4ements. Pour \ufb01nir, examinons de plus pr` es le d\u00b4 efaut de validit\u00b4 e des",
+   "level": 2,
+   "page_start": 91,
+   "page_end": 91,
+   "n_chars": 442,
+   "n_words": 79
+  },
+  {
+   "id": "sec-243-1541-proposition-a-lelemente-er-n-et-les-element",
+   "number": "15.4.1",
+   "title": "Proposition. a) L\u2019\u00b4el\u00b4emente = e(R)\u2208 N\u222a{\u221e} et les \u00b4el\u00b4ements \u00afnA,B de",
+   "level": 3,
+   "page_start": 91,
+   "page_end": 92,
+   "n_chars": 2381,
+   "n_words": 436
+  },
+  {
+   "id": "sec-244-1542-remarque-les-identit-es-159-et-1510-ne-sont",
+   "number": "15.4.2",
+   "title": "Remarque. Les identit\u00b4 es (15.9) et (15.10) ne sont autres que les relations",
+   "level": 3,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 248,
+   "n_words": 35
+  },
+  {
+   "id": "sec-245-16-p-remi-ere-application-cat-egories-de-kimura",
+   "number": "16",
+   "title": "P REMI `ERE APPLICATION : CAT \u00b4EGORIES DE KIMURA",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-246-161-rappelons-d-e\ufb01nition-9116-quune-cat-egorie-d",
+   "number": "16.1",
+   "title": "Rappelons (d\u00b4 e\ufb01nition 9.1.16) qu\u2019une cat\u00b4 egorie de Kimura sur un corps de",
+   "level": 2,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 191,
+   "n_words": 31
+  },
+  {
+   "id": "sec-247-1611-theoreme-soita-une-categorie-de-kimura-de-r",
+   "number": "16.1.1",
+   "title": "Th\u00b4eor`eme. SoitA une cat\u00b4egorie de Kimura, de radicalR. Alors",
+   "level": 3,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 304,
+   "n_words": 52
+  },
+  {
+   "id": "sec-248-0-cf-th-eoreme-921-par-ailleurs-soit-\u03c0",
+   "number": "0",
+   "title": "(cf. th \u00b4eor`eme 9.2.1). Par ailleurs, soit \u03c0+",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 94,
+   "n_chars": 1309,
+   "n_words": 238
+  },
+  {
+   "id": "sec-249-17-l-e-cas-non-mono-idal-enveloppes-pro--semi--s",
+   "number": "17",
+   "title": "L E CAS NON MONO \u00a8IDAL : ENVELOPPES PRO -SEMI -SIMPLES",
+   "level": 1,
+   "page_start": 94,
+   "page_end": 94,
+   "n_chars": 164,
+   "n_words": 30
+  },
+  {
+   "id": "sec-250-171-enveloppes-pro-semi-simples-soienta-une-peti",
+   "number": "17.1",
+   "title": "Enveloppes pro-semi-simples. SoientA une petiteK-cat\u00b4 egorie et\u03c0A :A\u2192",
+   "level": 2,
+   "page_start": 94,
+   "page_end": 94,
+   "n_chars": 809,
+   "n_words": 143
+  },
+  {
+   "id": "sec-251-1711-lemme-sia-est-pro\ufb01nie-le-quotient-a-dea-par",
+   "number": "17.1.1",
+   "title": "Lemme. SiA est pro\ufb01nie, le quotient \u00afA deA par son radical est semi-simple",
+   "level": 3,
+   "page_start": 94,
+   "page_end": 96,
+   "n_chars": 5156,
+   "n_words": 873
+  },
+  {
+   "id": "sec-252-172-lien-avec-lalgebre-dauslander-lalg-ebre-daus",
+   "number": "17.2",
+   "title": "Lien avec l\u2019alg`ebre d\u2019Auslander. L\u2019alg` ebre d\u2019Auslander d\u2019uneK-alg` ebre",
+   "level": 2,
+   "page_start": 96,
+   "page_end": 97,
+   "n_chars": 856,
+   "n_words": 145
+  },
+  {
+   "id": "sec-253-173-cas-des-algebres-hereditaires-rappelons-quun",
+   "number": "17.3",
+   "title": "Cas des alg`ebres h\u00b4er\u00b4editaires. Rappelons qu\u2019uneK-alg` ebre est diteh\u00b4er\u00b4edi-",
+   "level": 2,
+   "page_start": 97,
+   "page_end": 98,
+   "n_chars": 1976,
+   "n_words": 341
+  },
+  {
+   "id": "sec-254-1731-remarque-dans-le-cas-des-alg-ebres-de-chemi",
+   "number": "17.3.1",
+   "title": "Remarque. Dans le cas des alg` ebres de cheminsA =K\u20d7\u2206 , un avatar deAs",
+   "level": 3,
+   "page_start": 98,
+   "page_end": 98,
+   "n_chars": 56,
+   "n_words": 12
+  },
+  {
+   "id": "sec-255-18-s-ections-mono-idales-et-foncteurs-fibres",
+   "number": "18",
+   "title": "S ECTIONS MONO \u00a8IDALES ET FONCTEURS FIBRES",
+   "level": 1,
+   "page_start": 98,
+   "page_end": 98,
+   "n_chars": 156,
+   "n_words": 26
+  },
+  {
+   "id": "sec-256-1811-theoreme-soientk-un-corps-de-caract-eristiq",
+   "number": "18.1.1",
+   "title": "Th\u00b4eor`eme. SoientK un corps de caract \u00b4eristique nulle et L une extension",
+   "level": 3,
+   "page_start": 98,
+   "page_end": 99,
+   "n_chars": 2659,
+   "n_words": 451
+  },
+  {
+   "id": "sec-257-182-le-cas-tannakien-neutralis-e-ce-sous-paragra",
+   "number": "18.2",
+   "title": "Le cas tannakien neutralis \u00b4e. Ce sous-paragraphe est pr\u00b4 eparatoire au para-",
+   "level": 2,
+   "page_start": 99,
+   "page_end": 99,
+   "n_chars": 338,
+   "n_words": 63
+  },
+  {
+   "id": "sec-258-1821-lemme-soientb-une-petite-categoriek-lineair",
+   "number": "18.2.1",
+   "title": "Lemme. SoientB une (petite) cat\u00b4egorieK-lin\u00b4eaire mono\u00a8\u0131dale sym\u00b4etrique",
+   "level": 3,
+   "page_start": 99,
+   "page_end": 100,
+   "n_chars": 1668,
+   "n_words": 277
+  },
+  {
+   "id": "sec-259-1822-lemme-lhomomorphismes-est-un-monomorphisme",
+   "number": "18.2.2",
+   "title": "Lemme. L\u2019homomorphismes\u266f est un monomorphisme (i.e. une immersion",
+   "level": 3,
+   "page_start": 100,
+   "page_end": 100,
+   "n_chars": 329,
+   "n_words": 57
+  },
+  {
+   "id": "sec-260-1823-remarque-le-foncteur",
+   "number": "18.2.3",
+   "title": "Remarque. Le foncteur",
+   "level": 3,
+   "page_start": 100,
+   "page_end": 101,
+   "n_chars": 1107,
+   "n_words": 201
+  },
+  {
+   "id": "sec-261-1824-proposition-on-a-un-foncteur-canoniquetg-du",
+   "number": "18.2.4",
+   "title": "Proposition. On a un foncteur canoniqueTG du groupo\u00a8\u0131de connexeG\u2297",
+   "level": 3,
+   "page_start": 101,
+   "page_end": 101,
+   "n_chars": 1273,
+   "n_words": 219
+  },
+  {
+   "id": "sec-262-1826-proposition-pour-tout-epimorphisme-\u03d5-gs-h-l",
+   "number": "18.2.6",
+   "title": "Proposition. Pour tout \u00b4epimorphisme \u03d5 : Gs\u2192 \u2192H, le centralisateur de",
+   "level": 3,
+   "page_start": 101,
+   "page_end": 102,
+   "n_chars": 1158,
+   "n_words": 191
+  },
+  {
+   "id": "sec-263-1827-proposition-a-pour-toute-sections-comme-ci",
+   "number": "18.2.7",
+   "title": "Proposition. a) Pour toute sections comme ci-dessus, tout homomorphisme",
+   "level": 3,
+   "page_start": 102,
+   "page_end": 103,
+   "n_chars": 1193,
+   "n_words": 202
+  },
+  {
+   "id": "sec-264-1828-lemme-soient-fg-homgh-o-u-g-et-h-sont-deux",
+   "number": "18.2.8",
+   "title": "Lemme. Soient f,g \u2208 Hom(G,H ), o `u G et H sont deux K-groupes",
+   "level": 3,
+   "page_start": 103,
+   "page_end": 103,
+   "n_chars": 368,
+   "n_words": 63
+  },
+  {
+   "id": "sec-265-1829-proposition-soientg-unk-groupe-af\ufb01nest-deux",
+   "number": "18.2.9",
+   "title": "Proposition. SoientG unK-groupe af\ufb01nes,t deux sections mono\u00a8\u0131dales de",
+   "level": 3,
+   "page_start": 103,
+   "page_end": 103,
+   "n_chars": 761,
+   "n_words": 132
+  },
+  {
+   "id": "sec-266-18210-scolie-avec-les-notations-de-102-on-a",
+   "number": "18.2.10",
+   "title": "Scolie. Avec les notations de 10.2, on a",
+   "level": 3,
+   "page_start": 103,
+   "page_end": 104,
+   "n_chars": 251,
+   "n_words": 46
+  },
+  {
+   "id": "sec-267-19-a-u-del-a-de-jacobson--morozov-enveloppes-pro",
+   "number": "19",
+   "title": "A U-DEL `A DE JACOBSON -MOROZOV : ENVELOPPES PRO -R \u00b4EDUCTIVES",
+   "level": 1,
+   "page_start": 104,
+   "page_end": 104,
+   "n_chars": 1092,
+   "n_words": 197
+  },
+  {
+   "id": "sec-268-191-groupes-a-conjugaison-pr-es-soit-ga\ufb00-k-la-ca",
+   "number": "19.1",
+   "title": "Groupes `a conjugaison pr `es. Soit Ga\ufb00 K la cat\u00b4 egorie dont les objets sont",
+   "level": 2,
+   "page_start": 104,
+   "page_end": 104,
+   "n_chars": 349,
+   "n_words": 59
+  },
+  {
+   "id": "sec-269-1911-d-e\ufb01nition-a-soient-gh-deux-k-groupes-af\ufb01ne",
+   "number": "19.1.1",
+   "title": "D \u00b4e\ufb01nition. a) Soient G,H deux K-groupes af\ufb01nes. On note H 1",
+   "level": 3,
+   "page_start": 104,
+   "page_end": 105,
+   "n_chars": 1728,
+   "n_words": 305
+  },
+  {
+   "id": "sec-270-192-exactitude-peu-de-limites-inductives-existen",
+   "number": "19.2",
+   "title": "Exactitude. Peu de limites inductives existent dans Ga\ufb00 K et dans Ga\ufb00 K. Il",
+   "level": 2,
+   "page_start": 105,
+   "page_end": 105,
+   "n_chars": 518,
+   "n_words": 96
+  },
+  {
+   "id": "sec-271-1921-de\ufb01nition-a-soient-f-g1-g2-etg-g2-g3-deux-m",
+   "number": "19.2.1",
+   "title": "D\u00b4e\ufb01nition. a) Soient f : G1\u2192 G2 etg : G2\u2192 G3 deux morphismes de",
+   "level": 3,
+   "page_start": 105,
+   "page_end": 105,
+   "n_chars": 482,
+   "n_words": 93
+  },
+  {
+   "id": "sec-272-1922-lemme-a-un-morphisme-f-g1-g2-dek-groupes-af",
+   "number": "19.2.2",
+   "title": "Lemme. a) Un morphisme f : G1\u2192 G2 deK-groupes af\ufb01nes est faible-",
+   "level": 3,
+   "page_start": 105,
+   "page_end": 106,
+   "n_chars": 1279,
+   "n_words": 258
+  },
+  {
+   "id": "sec-273-1931-theoreme-le-foncteur-dinclusion-\u03b9-gredk-ga\ufb00",
+   "number": "19.3.1",
+   "title": "Th\u00b4eor`eme. Le foncteur d\u2019inclusion \u00af\u03b9 : GredK\u2192 Ga\ufb00 K admet un adjoint",
+   "level": 3,
+   "page_start": 106,
+   "page_end": 106,
+   "n_chars": 800,
+   "n_words": 138
+  },
+  {
+   "id": "sec-274-1932-de\ufb01nition-lek-groupe-a-conjugaison-pr-espre",
+   "number": "19.3.2",
+   "title": "D\u00b4e\ufb01nition. LeK-groupe ` a conjugaison pr` espRed(G) (muni de l\u2019injection",
+   "level": 3,
+   "page_start": 106,
+   "page_end": 106,
+   "n_chars": 198,
+   "n_words": 24
+  },
+  {
+   "id": "sec-275-1933-remarques-a-si-f-g-h-est-un-morphisme-nous",
+   "number": "19.3.3",
+   "title": "Remarques. a) Si f : G \u2192 H est un morphisme, nous ignorons si",
+   "level": 3,
+   "page_start": 106,
+   "page_end": 107,
+   "n_chars": 1076,
+   "n_words": 192
+  },
+  {
+   "id": "sec-276-1934-proposition-supposons-k-algebriquement-clos",
+   "number": "19.3.4",
+   "title": "Proposition. Supposons K alg\u00b4ebriquement clos. `A isomorphisme unique",
+   "level": 3,
+   "page_start": 107,
+   "page_end": 107,
+   "n_chars": 1211,
+   "n_words": 209
+  },
+  {
+   "id": "sec-277-1935-remarque-nous-ignorons-si-lhypoth-ese-quek",
+   "number": "19.3.5",
+   "title": "Remarque. Nous ignorons si l\u2019hypoth` ese queK est alg\u00b4 ebriquement clos",
+   "level": 3,
+   "page_start": 107,
+   "page_end": 107,
+   "n_chars": 402,
+   "n_words": 71
+  },
+  {
+   "id": "sec-278-1942-proposition-sig-est-pro-unipotent-predg-est",
+   "number": "19.4.2",
+   "title": "Proposition. SiG est pro-unipotent, pRed(G) est pro-semi-simple simple-",
+   "level": 3,
+   "page_start": 107,
+   "page_end": 108,
+   "n_chars": 1815,
+   "n_words": 351
+  },
+  {
+   "id": "sec-279-1944-proposition-a-soitg2g1-un-morphisme-faiblem",
+   "number": "19.4.4",
+   "title": "Proposition. a) SoitG2\u2192G1 un morphisme faiblement \u00b4epi deK-sch\u00b4emas",
+   "level": 3,
+   "page_start": 108,
+   "page_end": 109,
+   "n_chars": 639,
+   "n_words": 106
+  },
+  {
+   "id": "sec-280-1945-corollaire-siu-est-le-radical-unipotent-deg",
+   "number": "19.4.5",
+   "title": "Corollaire. SiU est le radical unipotent deG et siGred =G/U, on a une",
+   "level": 3,
+   "page_start": 109,
+   "page_end": 109,
+   "n_chars": 124,
+   "n_words": 19
+  },
+  {
+   "id": "sec-281-1946-lemme-soitf-g-h-un-homomorphisme-de-k-group",
+   "number": "19.4.6",
+   "title": "Lemme. Soitf : G\u2192 H un homomorphisme de K-groupes af\ufb01nes. Sup-",
+   "level": 3,
+   "page_start": 109,
+   "page_end": 109,
+   "n_chars": 651,
+   "n_words": 111
+  },
+  {
+   "id": "sec-282-1947-proposition-a-pour-toutg-algebrique-on-a-un",
+   "number": "19.4.7",
+   "title": "Proposition. a) Pour toutG alg\u00b4ebrique, on a une suite exacte",
+   "level": 3,
+   "page_start": 109,
+   "page_end": 110,
+   "n_chars": 2246,
+   "n_words": 420
+  },
+  {
+   "id": "sec-283-1949-proposition-pour-toutk-groupeg-et-toutk-gro",
+   "number": "19.4.9",
+   "title": "Proposition. Pour toutK-groupeG et toutK-groupe pro-r\u00b4eductifH, on a",
+   "level": 3,
+   "page_start": 110,
+   "page_end": 110,
+   "n_chars": 898,
+   "n_words": 155
+  },
+  {
+   "id": "sec-284-195-le-cas-du-groupe-additif-a-titre-dexemple-em",
+   "number": "19.5",
+   "title": "Le cas du groupe additif. `A titre d\u2019exemple embl\u00b4 ematique, calculons",
+   "level": 2,
+   "page_start": 110,
+   "page_end": 111,
+   "n_chars": 397,
+   "n_words": 73
+  },
+  {
+   "id": "sec-285-1951-th-eoreme-on-a-puga-ga-et-predga-sl2-plus-p",
+   "number": "19.5.1",
+   "title": "Th \u00b4eor`eme. On a pU(Ga) = Ga et pRed(Ga) = SL2. Plus pr \u00b4ecis\u00b4ement,",
+   "level": 3,
+   "page_start": 111,
+   "page_end": 111,
+   "n_chars": 1550,
+   "n_words": 253
+  },
+  {
+   "id": "sec-286-1952-remarque-lespace-des-ga-homomorphismes-smv",
+   "number": "19.5.2",
+   "title": "Remarque. L\u2019espace des Ga-homomorphismes SmV \u2192 SnV est de di-",
+   "level": 3,
+   "page_start": 111,
+   "page_end": 112,
+   "n_chars": 3065,
+   "n_words": 550
+  },
+  {
+   "id": "sec-287-196-extension-des-scalaires-si-lon-fait-varier-l",
+   "number": "19.6",
+   "title": "Extension des scalaires. Si l\u2019on fait varier le corps de baseK (toujours sup-",
+   "level": 2,
+   "page_start": 112,
+   "page_end": 113,
+   "n_chars": 2030,
+   "n_words": 360
+  },
+  {
+   "id": "sec-288-197-enveloppes-pro-reductives-des-groupes-pro-un",
+   "number": "19.7",
+   "title": "Enveloppes pro-r\u00b4eductives des groupes pro-unipotents. Si G est un K-",
+   "level": 2,
+   "page_start": 113,
+   "page_end": 114,
+   "n_chars": 1890,
+   "n_words": 331
+  },
+  {
+   "id": "sec-289-1971-th-eoreme-soit-g-un-k-groupe-pro-unipotent",
+   "number": "19.7.1",
+   "title": "Th \u00b4eor`eme. Soit G un K-groupe pro-unipotent. Les propri \u00b4et\u00b4es suivantes",
+   "level": 3,
+   "page_start": 114,
+   "page_end": 115,
+   "n_chars": 1473,
+   "n_words": 252
+  },
+  {
+   "id": "sec-290-1972-question-pour-quels-groupes-alg-ebriques-li",
+   "number": "19.7.2",
+   "title": "Question. Pour quels groupes alg\u00b4 ebriques lin\u00b4 eairesG l\u2019enveloppe pro-r\u00b4 e-",
+   "level": 3,
+   "page_start": 115,
+   "page_end": 115,
+   "n_chars": 897,
+   "n_words": 156
+  },
+  {
+   "id": "sec-291-20-a-pplications-aux-groupes-alg-ebriques-et-aux",
+   "number": "20",
+   "title": "A PPLICATIONS AUX GROUPES ALG \u00b4EBRIQUES ET AUX REPR \u00b4ESENTATIONS",
+   "level": 1,
+   "page_start": 115,
+   "page_end": 115,
+   "n_chars": 418,
+   "n_words": 63
+  },
+  {
+   "id": "sec-292-2011-proposition-cf-40-soith-un-sous-groupe-redu",
+   "number": "20.1.1",
+   "title": "Proposition (cf. [40]). SoitH\u2032 un sous-groupe r\u00b4eductif ferm\u00b4e d\u2019un groupe",
+   "level": 3,
+   "page_start": 115,
+   "page_end": 115,
+   "n_chars": 803,
+   "n_words": 135
+  },
+  {
+   "id": "sec-293-2012-de\ufb01nition-on-appelle-enveloppe-reductive-de",
+   "number": "20.1.2",
+   "title": "D\u00b4e\ufb01nition. On appelle enveloppe r\u00b4eductive de f tout sous-groupe r\u00b4 eductif",
+   "level": 3,
+   "page_start": 115,
+   "page_end": 116,
+   "n_chars": 236,
+   "n_words": 42
+  },
+  {
+   "id": "sec-294-2013-th-eoreme-a-deux-enveloppes-r-eductives-de",
+   "number": "20.1.3",
+   "title": "Th \u00b4eor`eme. a) Deux enveloppes r \u00b4eductives de f sont conjugu \u00b4ees par un",
+   "level": 3,
+   "page_start": 116,
+   "page_end": 116,
+   "n_chars": 1111,
+   "n_words": 194
+  },
+  {
+   "id": "sec-295-2014-contre-exemple-on-pourrait-se-demander-si-l",
+   "number": "20.1.4",
+   "title": "Contre-exemple. On pourrait se demander si la propri\u00b4 et\u00b4 e c)caract\u00b4erise les",
+   "level": 3,
+   "page_start": 116,
+   "page_end": 116,
+   "n_chars": 316,
+   "n_words": 54
+  },
+  {
+   "id": "sec-296-2015-remarque-pour-toute-enveloppe-r-eductiveh-d",
+   "number": "20.1.5",
+   "title": "Remarque. Pour toute enveloppe r\u00b4 eductiveH\u2032 de G dans GL(V ), il suit",
+   "level": 3,
+   "page_start": 116,
+   "page_end": 116,
+   "n_chars": 1042,
+   "n_words": 175
+  },
+  {
+   "id": "sec-297-202-applications-aux-representations-indecomposa",
+   "number": "20.2",
+   "title": "Applications aux repr\u00b4esentations ind\u00b4ecomposables. SoitV une repr\u00b4 esen-",
+   "level": 2,
+   "page_start": 116,
+   "page_end": 117,
+   "n_chars": 1742,
+   "n_words": 303
+  },
+  {
+   "id": "sec-298-2021-theoreme-sig-est-simplement-connexe-akgv-es",
+   "number": "20.2.1",
+   "title": "Th\u00b4eor`eme. SiG est simplement connexe, aK(G,V ) est un anneau de poly-",
+   "level": 3,
+   "page_start": 117,
+   "page_end": 117,
+   "n_chars": 309,
+   "n_words": 57
+  },
+  {
+   "id": "sec-299-2022-remarque-siv-est-une-repr-esentation-\ufb01d-ele",
+   "number": "20.2.2",
+   "title": "Remarque. SiV est une repr\u00b4 esentation \ufb01d` ele deG. D\u2019apr` es 10.2, 10.2.1,",
+   "level": 3,
+   "page_start": 117,
+   "page_end": 117,
+   "n_chars": 334,
+   "n_words": 59
+  },
+  {
+   "id": "sec-300-2023-theoreme-les-conditions-suivantes-sont-equi",
+   "number": "20.2.3",
+   "title": "Th\u00b4eor`eme. Les conditions suivantes sont \u00b4equivalentes :",
+   "level": 3,
+   "page_start": 117,
+   "page_end": 132,
+   "n_chars": 36010,
+   "n_words": 6739
+  },
+  {
+   "id": "sec-301-v-further-h-acts-on-the-associated-graded-gr\u00b5v-t",
+   "number": "V",
+   "title": "Further H acts on the associated graded Gr\u00b5V through M, and \u00b5 induces an",
+   "level": 1,
+   "page_start": 132,
+   "page_end": 146,
+   "n_chars": 41101,
+   "n_words": 9453
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 305,
+  "sections": 302,
+  "chars_total": 325591
+ }
+}

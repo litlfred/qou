@@ -1,0 +1,121 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1103.2082v1",
+ "source_sha256": "0ac5371486b38eac",
+ "brief": "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups.",
+ "extended": "**MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St)**\n\n*JONATHAN COMES AND JONATHAN R. KUJAWA*\n\n17 pp, 20 sections.\n\n**Abstract.** Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups. In this paper we show Deligne’s category admits a unique nontrivial family of modiﬁed trace functions. Such modiﬁed trace functions have already proven to be interesting in both low-dimensional topology and representation theory. We also introduce a graded variant of Deligne’s category, lift the modiﬁed trace functions to the graded setting, and use them to recover the well-known invariant of framed knots known as the writhe.\n\n**Outline.** 1 Introduction; 1.1.; 1.2.; 1.3.; 1.4.; 1.5.; 1.6 Acknowledgements; 2 Ribbon Categories and Traces; 2.3 Traces in Ribbon Categories; 2.4 Tensor Ideals in a Ribbon Category; 2.5.; 2.6.; 4 A trace on the ideal of negligibles in Rep(S; 4.2 Dimensions in the Non-Semisimple Block; 5 A trace on the ideal of negligibles in Rep(S; 5.1 Notation; 5.2 The Object Mn; 5.3 An Ambidextrous Trace on Mn",
+ "tokens": {
+  "brief": 38,
+  "extended": 267
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11",
+   "title": "1.1.",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-12",
+   "title": "1.2.",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-13",
+   "title": "1.3.",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-14",
+   "title": "1.4.",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-15",
+   "title": "1.5.",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-006-16-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-007-2-ribbon-categories-and-traces",
+   "title": "Ribbon Categories and Traces",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-008-23-traces-in-ribbon-categories",
+   "title": "Traces in Ribbon Categories",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-009-24-tensor-ideals-in-a-ribbon-category",
+   "title": "Tensor Ideals in a Ribbon Category",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-010-25",
+   "title": "2.5.",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-011-26",
+   "title": "2.6.",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-012-4-a-trace-on-the-ideal-of-negligibles-in-reps0",
+   "title": "A trace on the ideal of negligibles in Rep(S0)",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-013-42-dimensions-in-the-non-semisimple-block",
+   "title": "Dimensions in the Non-Semisimple Block",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-014-5-a-trace-on-the-ideal-of-negligibles-in-repst-w",
+   "title": "A trace on the ideal of negligibles in Rep(St) when tZ0",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-015-51-notation",
+   "title": "Notation",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-016-52-the-object-mn",
+   "title": "The Object Mn",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-017-53-an-ambidextrous-trace-on-mn",
+   "title": "An Ambidextrous Trace on Mn",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-018-61",
+   "title": "6.1.",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-019-references",
+   "title": "references",
+   "pages": "16-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

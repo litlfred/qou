@@ -1,0 +1,392 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0904.1556v2",
+ "source": {
+  "file": "0904.1556v2.pdf",
+  "sha256": "a1a43786d817f08560d09660297fa55e37cfc3c8c861e12d06c24781f52764f3",
+  "bytes": 572122,
+  "pages": 73
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0904.1556",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "1 May 2010"
+  },
+  "doi": null,
+  "title": "The Algebra of Grand Unified Theories",
+  "authors_raw": "John Baez and John Huerta",
+  "abstract": "The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relations hip between three ‘grand uniﬁed theories’: theories that unify forces and par ticles by extend- ing the Standard Model symmetry group U(1) × SU(2) × SU(3) to a larger group. These three are Georgi and Glashow’s SU(5) theory, Ge orgi’s theory based on the group Spin(10), and the Pati–Salam model based o n the group SU(2) × SU(2) × SU(4). In this expository account for mathematicians, we ex - plain only the portion of these theories that involves ﬁnite -dimensional group representations. This allows us to reduce the prerequisite s to a bare minimum while still giving a taste of the profound puzzles that physi cists are struggling to solve.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126171342-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "The Algebra of Grand Uniﬁed Theories",
+  "title_lines": [
+   "The Algebra of Grand Unified Theories"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Guide to Further Reading",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "The Standard Model",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Isospin and SU(2)",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The Fundamental Fermions",
+   "page": 13,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Quarks",
+   "page": 13,
+   "source": "outline",
+   "number": "2.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Leptons",
+   "page": 17,
+   "source": "outline",
+   "number": "2.2.2"
+  },
+  {
+   "level": 2,
+   "title": "The Fundamental Forces",
+   "page": 19,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Isospin and SU(2), Redux",
+   "page": 19,
+   "source": "outline",
+   "number": "2.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Hypercharge and U(1)",
+   "page": 22,
+   "source": "outline",
+   "number": "2.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Electroweak Symmetry Breaking",
+   "page": 25,
+   "source": "outline",
+   "number": "2.3.3"
+  },
+  {
+   "level": 3,
+   "title": "Color and SU(3)",
+   "page": 27,
+   "source": "outline",
+   "number": "2.3.4"
+  },
+  {
+   "level": 2,
+   "title": "The Standard Model Representation",
+   "page": 28,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Generations",
+   "page": 30,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Grand Unified Theories",
+   "page": 31,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The SU(5) GUT",
+   "page": 32,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The Spin(10) Theory",
+   "page": 42,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The Pati–Salam Model",
+   "page": 48,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The Route to Spin(10) via Pati–Salam",
+   "page": 55,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The Question of Compatibility",
+   "page": 62,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 65,
+   "source": "outline",
+   "number": "4"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9662,
+   "n_words": 1652
+  },
+  {
+   "id": "sec-001-2-the-standard-model",
+   "number": "2",
+   "title": "The Standard Model",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1197,
+   "n_words": 210
+  },
+  {
+   "id": "sec-002-11-guide-to-further-reading",
+   "number": "1.1",
+   "title": "Guide to Further Reading",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5615,
+   "n_words": 975
+  },
+  {
+   "id": "sec-003-21-isospin-and-su2",
+   "number": "2.1",
+   "title": "Isospin and SU(2)",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 13,
+   "n_chars": 15561,
+   "n_words": 2838
+  },
+  {
+   "id": "sec-004-22-the-fundamental-fermions",
+   "number": "2.2",
+   "title": "The Fundamental Fermions",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-221-quarks",
+   "number": "2.2.1",
+   "title": "Quarks",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 17,
+   "n_chars": 10734,
+   "n_words": 2127
+  },
+  {
+   "id": "sec-006-222-leptons",
+   "number": "2.2.2",
+   "title": "Leptons",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 5129,
+   "n_words": 930
+  },
+  {
+   "id": "sec-007-23-the-fundamental-forces",
+   "number": "2.3",
+   "title": "The Fundamental Forces",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-231-isospin-and-su2-redux",
+   "number": "2.3.1",
+   "title": "Isospin and SU(2), Redux",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 3271,
+   "n_words": 623
+  },
+  {
+   "id": "sec-009-232-hypercharge-and-u1",
+   "number": "2.3.2",
+   "title": "Hypercharge and U(1)",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 5557,
+   "n_words": 1083
+  },
+  {
+   "id": "sec-010-233-electroweak-symmetry-breaking",
+   "number": "2.3.3",
+   "title": "Electroweak Symmetry Breaking",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3219,
+   "n_words": 607
+  },
+  {
+   "id": "sec-011-234-color-and-su3",
+   "number": "2.3.4",
+   "title": "Color and SU(3)",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2525,
+   "n_words": 458
+  },
+  {
+   "id": "sec-012-24-the-standard-model-representation",
+   "number": "2.4",
+   "title": "The Standard Model Representation",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3070,
+   "n_words": 595
+  },
+  {
+   "id": "sec-013-25-generations",
+   "number": "2.5",
+   "title": "Generations",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 5815,
+   "n_words": 1041
+  },
+  {
+   "id": "sec-014-31-the-su5-gut",
+   "number": "3.1",
+   "title": "The SU(5) GUT",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 42,
+   "n_chars": 21385,
+   "n_words": 4381
+  },
+  {
+   "id": "sec-015-32-the-spin10-theory",
+   "number": "3.2",
+   "title": "The Spin(10) Theory",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 48,
+   "n_chars": 13422,
+   "n_words": 2543
+  },
+  {
+   "id": "sec-016-33-the-patisalam-model",
+   "number": "3.3",
+   "title": "The Pati–Salam Model",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 55,
+   "n_chars": 14785,
+   "n_words": 3019
+  },
+  {
+   "id": "sec-017-34-the-route-to-spin10-via-patisalam",
+   "number": "3.4",
+   "title": "The Route to Spin(10) via Pati–Salam",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 62,
+   "n_chars": 13209,
+   "n_words": 2639
+  },
+  {
+   "id": "sec-018-35-the-question-of-compatibility",
+   "number": "3.5",
+   "title": "The Question of Compatibility",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 65,
+   "n_chars": 3582,
+   "n_words": 578
+  },
+  {
+   "id": "sec-019-4-conclusion",
+   "number": "4",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 65,
+   "page_end": 73,
+   "n_chars": 18323,
+   "n_words": 3144
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 20,
+  "chars_total": 156061
+ }
+}

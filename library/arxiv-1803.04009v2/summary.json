@@ -1,0 +1,51 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1803.04009v2",
+ "source_sha256": "8b34299b739cd2b0",
+ "brief": "Symmetry enhancement and closing of knots in 3d/3d correspondence — We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary.",
+ "extended": "**Symmetry enhancement and closing of knots in 3d/3d correspondence**\n\n*Dongmin Ganga and Kazuya Yonekurab*\n\n59 pp, 6 sections.\n\n**Abstract.** We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary. After clarifying their construction from a viewpoint of compactiﬁcation of a 6dN = (2, 0) theory of A1-type on a 3-manifold, we propose a topological criterion forSU (2)/SO(3) ﬂavor symmetry enhancement for theu(1) symmetry in the theory associated to a torus boundary, which is expected from the 6d view- point. Base on the understanding of symmetry enhancement, we generalize the construction to closed 3-manifolds by identifying the gauge theory counterpart of Dehn ﬁlling operation. The generalized construction predicts inﬁnitely many 3d dualities from surgery calculus in knot theory.\n\n**Outline.** 1 Introduction and Summary; 2.3 Relation between the two constructions; 3 Symmetry enhancement; 4.2 Small hyperbolic manifolds; B.2 The global structure of the symmetries and; B.3 S-transformation of 3d SCFT",
+ "tokens": {
+  "brief": 46,
+  "extended": 268
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-summary",
+   "title": "Introduction and Summary",
+   "pages": "2-21"
+  },
+  {
+   "id": "sec-001-23-relation-between-the-two-constructions",
+   "title": "Relation between the two constructions",
+   "pages": "21-27"
+  },
+  {
+   "id": "sec-002-3-symmetry-enhancement",
+   "title": "Symmetry enhancement",
+   "pages": "27-41"
+  },
+  {
+   "id": "sec-003-42-small-hyperbolic-manifolds",
+   "title": "Small hyperbolic manifolds",
+   "pages": "41-51"
+  },
+  {
+   "id": "sec-004-b2-the-global-structure-of-the-symmetries-and-t",
+   "title": "B.2 The global structure of the symmetries and 't Hooft anomaly",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-005-b3-s-transformation-of-3d-scft",
+   "title": "B.3 S-transformation of 3d SCFT",
+   "pages": "52-59"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -86,7 +86,7 @@ assuming it.
 
 ## 4. GGM descendant q-difference equation — eq (49) VERIFIED from uploads PDF
 
-Read directly from `uploads/2012.00062v3.pdf` (pp. 14–15), Garoufalidis–Gu–Mariño,
+Read directly from `library/arxiv-2012.00062v3/2012.00062v3.pdf` (pp. 14–15), Garoufalidis–Gu–Mariño,
 "Peacock patterns and resurgence in complex Chern–Simons theory", arXiv:2012.00062,
 Res. Math. Sci. 10 (2023) 29 (corpus `garoufalidis-gu-marino2023peacock`):
 

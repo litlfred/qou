@@ -288,7 +288,7 @@ here: `qbeta-5two-route42-extended-bloch-anchor.witness.json` G4 records that
 independently.
 
 But the corpus's own `admissible_correction` (`FiveTwoSaddleSumRule.lean` §7g,
-reading Neumann `uploads/0307092v2.pdf`) shows `ν = 0` forces `(p,q) = (3k,−2k)`
+reading Neumann `library/0307092v2/0307092v2.pdf`) shows `ν = 0` forces `(p,q) = (3k,−2k)`
 with correction exactly `k·π²·ε`, so `R̂` is well-defined **in `ℂ/π²ℤ`**. An
 additive binding term in MeV needs a definite real number, not a class mod
 `π²`. Fixing that branch by whichever value matches AME is the forbidden fit
@@ -311,9 +311,9 @@ More infrastructure than `qou-985x`'s "'extended Bloch' in ONE file" suggests:
   that Bloch–Wigner `D` is provably useless here (`∑ D(yⱼ) = 0` automatically).
 * `MathlibExt/IdealTriangulation.lean` — `IdealTetrahedron`, volume in both
   Lobachevsky and dilogarithm form.
-* Neumann's paper is local: `uploads/0307092v2.pdf`. Garoufalidis–Zagier survey
-  `uploads/2304.12545v1.pdf`. Zagier dilogarithm
-  `uploads/zagier-the-dilogarithm-function.pdf`. Neumann–Zagier 1985 present.
+* Neumann's paper is local: `library/0307092v2/0307092v2.pdf`. Garoufalidis–Zagier survey
+  `library/arxiv-2304.12545v1/2304.12545v1.pdf`. Zagier dilogarithm
+  `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`. Neumann–Zagier 1985 present.
   **Several are not yet bib-registered** (`qou-xm0j` and siblings), and
   `bib-qa-verifications.json:10726` requires registration before any Lean
   statement leans on the lifted 5-term relation.

@@ -231,5 +231,5 @@ all scope labels are (a) — the misses refute the *stated candidates only*.
 - The $\tfrac12$ wall location: `2026-07-18-alpha-em-reciprocal-form-consolidation.md`; π-origin: `2026-07-18-alpha-em-pi-origin-adjudication.md`
 - B2 sibling cluster (distinct angle, §0): `MatrixSchurCommutant` (`a2ee67bd`), Hodge normalization (`1a83135b`), equivariance reduction (`58c3d52f`), [`2026-07-25-alpha-em-b2-tau-id-consolidation.md`](2026-07-25-alpha-em-b2-tau-id-consolidation.md)
 - Bring Jacobian / spin data: [`2026-07-24-tau-dictionary-fricke-cusp-spin.md`](2026-07-24-tau-dictionary-fricke-cusp-spin.md)
-- AGMV upload: `uploads/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf` (Commun. Math. Phys. **106**, 1–40 (1986)), Sect. 4 Eqs. (4.1)–(4.2), (4.4)/(4.6), (4.17)–(4.18), (4.25)–(4.27), (4.30)–(4.32)
+- AGMV upload: `library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf` (Commun. Math. Phys. **106**, 1–40 (1986)), Sect. 4 Eqs. (4.1)–(4.2), (4.4)/(4.6), (4.17)–(4.18), (4.25)–(4.27), (4.30)–(4.32)
 - Ledger: [`../coordination/alpha-em.md`](../coordination/alpha-em.md)

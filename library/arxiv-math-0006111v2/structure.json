@@ -1,0 +1,318 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0006111v2",
+ "source": {
+  "file": "0006111v2.pdf",
+  "sha256": "cd99f45d686eb6e235cdb56326775ceded2564111636c87051a933a6a158ca3b",
+  "bytes": 175015,
+  "pages": 12
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0006111",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "16 Jun 2000"
+  },
+  "doi": null,
+  "title": "APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane",
+  "authors_raw": null,
+  "abstract": "We prove a factorization-concentration result for characters of s ymmet- ric groups. This is then applied to the asymptotic behaviour of the decomposition of the tensor representations. There are connections with the Past ur-Marcenko distri- bution of random matrix theory, and freely inﬁnitely divisible d istributions.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210914065925-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0006111v2  [math.RT]  16 Jun 2000"
+  },
+  "title_prev": "APPROXIMATE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane",
+  "title_lines": [
+   "APPROXIMATE FACTORIZATION AND CONCENTRATION",
+   "FOR CHARACTERS OF SYMMETRIC GROUPS",
+   "Philippe Biane"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "PHILIPPE BIANE",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Notations and statement of the main result",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Symmetric groups and Y oung diagrams. We denote by Sq the symmet-",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Positive deﬁnite functions. Let ψ be a normalized (i.e. ψ (e) = 1), central",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "PHILIPPE BIANE",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Approximate factorization. We now give a precise deﬁnition of the approx-",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorems 1 and 2",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "PHILIPPE BIANE",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "PHILIPPE BIANE",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotics of the tensor representation",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The case of the canonical trace. In this section we consider the action of Sq",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "PHILIPPE BIANE",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Generalization to other tensor states. LetH =H0 ⊕H1, be a Z/ 2-graded",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 11,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "PHILIPPE BIANE",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-philippe-biane",
+   "number": "2",
+   "title": "PHILIPPE BIANE",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 330,
+   "n_words": 47
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2493,
+   "n_words": 446
+  },
+  {
+   "id": "sec-002-1-notations-and-statement-of-the-main-result",
+   "number": "1",
+   "title": "Notations and statement of the main result",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 66,
+   "n_words": 13
+  },
+  {
+   "id": "sec-003-11-symmetric-groups-and-y-oung-diagrams-we-denot",
+   "number": "1.1",
+   "title": "Symmetric groups and Y oung diagrams. We denote by Sq the symmet-",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1976,
+   "n_words": 414
+  },
+  {
+   "id": "sec-004-12-positive-deﬁnite-functions-let-ψ-be-a-normali",
+   "number": "1.2",
+   "title": "Positive deﬁnite functions. Let ψ be a normalized (i.e. ψ (e) = 1), central",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1155,
+   "n_words": 277
+  },
+  {
+   "id": "sec-005-4-philippe-biane",
+   "number": "4",
+   "title": "PHILIPPE BIANE",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 304,
+   "n_words": 60
+  },
+  {
+   "id": "sec-006-13-approximate-factorization-we-now-give-a-preci",
+   "number": "1.3",
+   "title": "Approximate factorization. We now give a precise deﬁnition of the approx-",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1849,
+   "n_words": 386
+  },
+  {
+   "id": "sec-007-2-proof-of-theorems-1-and-2",
+   "number": "2",
+   "title": "Proof of Theorems 1 and 2",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1690,
+   "n_words": 345
+  },
+  {
+   "id": "sec-008-6-philippe-biane",
+   "number": "6",
+   "title": "PHILIPPE BIANE",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4022,
+   "n_words": 842
+  },
+  {
+   "id": "sec-009-8-philippe-biane",
+   "number": "8",
+   "title": "PHILIPPE BIANE",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-3-asymptotics-of-the-tensor-representation",
+   "number": "3",
+   "title": "Asymptotics of the tensor representation",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-31-the-case-of-the-canonical-trace-in-this-secti",
+   "number": "3.1",
+   "title": "The case of the canonical trace. In this section we consider the action of Sq",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3167,
+   "n_words": 692
+  },
+  {
+   "id": "sec-012-10-philippe-biane",
+   "number": "10",
+   "title": "PHILIPPE BIANE",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 943,
+   "n_words": 229
+  },
+  {
+   "id": "sec-013-32-generalization-to-other-tensor-states-leth-h0",
+   "number": "3.2",
+   "title": "Generalization to other tensor states. LetH =H0 ⊕H1, be a Z/ 2-graded",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2452,
+   "n_words": 488
+  },
+  {
+   "id": "sec-014-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 664,
+   "n_words": 105
+  },
+  {
+   "id": "sec-015-12-philippe-biane",
+   "number": "12",
+   "title": "PHILIPPE BIANE",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 821,
+   "n_words": 128
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 16,
+  "chars_total": 21932
+ }
+}

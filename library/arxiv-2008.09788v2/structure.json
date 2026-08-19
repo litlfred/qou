@@ -1,0 +1,180 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2008.09788v2",
+ "source": {
+  "file": "2008.09788v2.pdf",
+  "sha256": "460f4f5432cb1f0cb5f0a9426749b9426fc8b40abe17a5f46841c877800184b2",
+  "bytes": 438993,
+  "pages": 31
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2008.09788",
+   "version": "2",
+   "primary_class": "math.RA",
+   "stamp_date": "23 Sep 2020"
+  },
+  "doi": null,
+  "title": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY",
+  "authors_raw": "ALEXEI KANEL-BELOV, ALEXEI CHILIKOV, ILYA IVANOV-POGODAEV, SERGEY MALEV",
+  "abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geomet ry. We start from a brief review of the paper and motivations. The ﬁrst section s deal with model theory. In Section 2.1 we describe the geometric equivalenc e, the elementary equiv- alence, and the isotypicity of algebras. We look at these not ions from the positions of universal algebraic geometry and make emphasis on the cas es of the ﬁrst order rigidity. In this setting Plotkin’s problem on the structur e of automorphisms of (auto)endomorphisms of free objects, and auto-equivalenc e of categories is pretty natural and important. Section 2.2 is dedicated to particul ar cases of Plotkin’s problem. Section 2.3 is devoted to Plotkin’s problem for aut omorphisms of the group of polynomial symplectomorphisms. This setting has a pplications to math- ematical physics through the use of model theory (non-stand ard analysis) in the studying of homomorphisms between groups of symplectomorp hisms and automor- phisms of the Weyl algebra. The last two sections deal with al gorithmic problems for noncommutative and commutative algebraic geometry. Se ction 3.1 is devoted to the Gr¨ obner basis in non-commutative situation. Despit e the existence of an algorithm for checking equalities, the zero divisors and ni lpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with th e problem of embedding of algebraic varieties; a sketch of the proof of its algorith mic undecidability over a ﬁeld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20200924211841-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETR Y",
+  "title_lines": [
+   "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND",
+   "SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC",
+   "GEOMETRY"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Model-theoretical aspects",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Algebraic geometry over algebraic systems",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Plotkin's problem: automorphisms of endomorphism semigroups and groups of polynomial automorphisms",
+   "page": 13,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
+   "page": 13,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Algorithmic aspects of algebraic geometry",
+   "page": 23,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+   "page": 23,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
+   "page": 25,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 15250,
+   "n_words": 2571
+  },
+  {
+   "id": "sec-001-2-model-theoretical-aspects",
+   "number": "2",
+   "title": "Model-theoretical aspects",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-algebraic-geometry-over-algebraic-systems",
+   "number": "2.1",
+   "title": "Algebraic geometry over algebraic systems",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 13,
+   "n_chars": 28875,
+   "n_words": 5241
+  },
+  {
+   "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
+   "number": "2.3",
+   "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 23,
+   "n_chars": 27348,
+   "n_words": 5384
+  },
+  {
+   "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
+   "number": "3",
+   "title": "Algorithmic aspects of algebraic geometry",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 7038,
+   "n_words": 1532
+  },
+  {
+   "id": "sec-005-32-on-the-algorithmic-undecidability-of-the-embe",
+   "number": "3.2",
+   "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 8595,
+   "n_words": 1866
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 17845,
+   "n_words": 2725
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 7,
+  "chars_total": 104951
+ }
+}

@@ -1,0 +1,282 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "di-cairano-2022-j-phys-commun-6-015002",
+ "source": {
+  "file": "Di_Cairano_2022_J._Phys._Commun._6_015002.pdf",
+  "sha256": "f75313b507f971721997956a33bae9227281f588db750c74f9d429406b88c80c",
+  "bytes": 479592,
+  "pages": 12
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1088/2399-6528/ac438d",
+  "title": "Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized Langevin Equation To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002",
+  "authors_raw": "View the article online for updates and enhancements",
+  "abstract": null,
+  "docinfo": {
+   "Creator": "IOPP",
+   "Title": "On the derivation of a Nonlinear Generalized Langevin Equation",
+   "CreationDate": "D:20220107045937-08'00'",
+   "Author": "Loris Di Cairano",
+   "Producer": "iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)"
+  },
+  "title_lines": [
+   "Communications",
+   "PAPER • OPEN ACCESS",
+   "On the derivation of a Nonlinear Generalized",
+   "Langevin Equation",
+   "To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002"
+  ],
+  "title_prev": "Langevin equation in systems with also negative temperatures"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "State-of-art",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Introduction to the problem",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "Criticism",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2.1"
+  },
+  {
+   "level": 2,
+   "title": "Notation",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Formal derivation of a nonlinear GLE",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "General setting: study of the equilibrium map",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Examples of a possible equilibrium map.",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1.1"
+  },
+  {
+   "level": 2,
+   "title": "Generalization of the equilibrium map",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Alternative derivation",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 11,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Data availability statement",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-state-of-art",
+   "number": "1.1",
+   "title": "State-of-art",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4898,
+   "n_words": 779
+  },
+  {
+   "id": "sec-002-12-introduction-to-the-problem",
+   "number": "1.2",
+   "title": "Introduction to the problem",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2509,
+   "n_words": 594
+  },
+  {
+   "id": "sec-003-121-criticism",
+   "number": "1.2.1",
+   "title": "Criticism",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 5227,
+   "n_words": 1041
+  },
+  {
+   "id": "sec-004-13-notation",
+   "number": "1.3",
+   "title": "Notation",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3853,
+   "n_words": 767
+  },
+  {
+   "id": "sec-005-2-formal-derivation-of-a-nonlinear-gle",
+   "number": "2",
+   "title": "Formal derivation of a nonlinear GLE",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 590,
+   "n_words": 98
+  },
+  {
+   "id": "sec-006-21-general-setting-study-of-the-equilibrium-map",
+   "number": "2.1",
+   "title": "General setting: study of the equilibrium map",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1899,
+   "n_words": 361
+  },
+  {
+   "id": "sec-007-211-examples-of-a-possible-equilibrium-map",
+   "number": "2.1.1",
+   "title": "Examples of a possible equilibrium map.",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2961,
+   "n_words": 650
+  },
+  {
+   "id": "sec-008-22-generalization-of-the-equilibrium-map",
+   "number": "2.2",
+   "title": "Generalization of the equilibrium map",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1174,
+   "n_words": 255
+  },
+  {
+   "id": "sec-009-23-alternative-derivation",
+   "number": "2.3",
+   "title": "Alternative derivation",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 9542,
+   "n_words": 2190
+  },
+  {
+   "id": "sec-010-3-conclusion",
+   "number": "3",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1462,
+   "n_words": 232
+  },
+  {
+   "id": "sec-011-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 388,
+   "n_words": 57
+  },
+  {
+   "id": "sec-012-data-availability-statement",
+   "number": null,
+   "title": "Data availability statement",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 171,
+   "n_words": 21
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2479,
+   "n_words": 449
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 37153
+ }
+}

@@ -9,7 +9,7 @@ invariants), and under the **formal** (coefficient-level) q-Borel/q-Laplace
 transform, which is itself a diagonal gauge (Route D). Both left one door
 open: the **analytic (transcendental)** q-Borel–Laplace summation of
 Ramis–Sauloy–Zhang, *Local analytic classification of q-difference
-equations* (Astérisque 355, `uploads/0903.0853v3.pdf`), **ch. 5** — the
+equations* (Astérisque 355, `library/arxiv-0903.0853v3/0903.0853v3.pdf`), **ch. 5** — the
 Borel-plane analytic continuation + discrete q-Laplace along a q-spiral,
 whose continuation step mixes all coefficients and is *not* diagonal.
 Door-i asks: can that summation functor map C1 to GGM, and is a **ramified

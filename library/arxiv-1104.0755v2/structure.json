@@ -1,0 +1,186 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1104.0755v2",
+ "source": {
+  "file": "1104.0755v2.pdf",
+  "sha256": "d2fbbea44598e8f41c6ce32d0699b2b7d03368c0e2e9020d1de58bad435842f3",
+  "bytes": 137306,
+  "pages": 12
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1104.0755",
+   "version": "2",
+   "primary_class": "math.CA",
+   "stamp_date": "1 Jul 2011"
+  },
+  "doi": null,
+  "title": "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡",
+  "authors_raw": null,
+  "abstract": "We show a connection formula between two diﬀerent q-Airy func- tions. One is called the Ramanujan function which appears in Ra- manujan’s ”Lost notebook”. Another one is called the q-Airy function that obtained in the study of the second q-Painlev´ e equation. We use the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210830025704-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "A connection formula between the Ramanujan",
+   "function and the q-Airy function",
+   "Takeshi MORITA‡"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Standard notations",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Two types of the q-analogue of the Airy function",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Ramanujan function Aq(x)",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The q-Airy function Aiq(x)",
+   "page": 7,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Shearing transformations",
+   "page": 7,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The q-Airy equation around the infinity",
+   "page": 8,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "The q-Borel transformation, the q-Laplace transformation and the connection formula",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The q-Borel transformation and the q-Laplace transformation",
+   "page": 9,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The connection formula of the q-Airy function",
+   "page": 10,
+   "source": "outline",
+   "number": "4.2"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 3749,
+   "n_words": 701
+  },
+  {
+   "id": "sec-001-2-standard-notations",
+   "number": "2",
+   "title": "Standard notations",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2017,
+   "n_words": 404
+  },
+  {
+   "id": "sec-002-31-the-ramanujan-function-aqx",
+   "number": "3.1",
+   "title": "The Ramanujan function Aq(x)",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1221,
+   "n_words": 247
+  },
+  {
+   "id": "sec-003-32-the-q-airy-function-aiqx",
+   "number": "3.2",
+   "title": "The q-Airy function Aiq(x)",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1080,
+   "n_words": 243
+  },
+  {
+   "id": "sec-004-33-shearing-transformations",
+   "number": "3.3",
+   "title": "Shearing transformations",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 1310,
+   "n_words": 275
+  },
+  {
+   "id": "sec-005-41-the-q-borel-transformation-and-the-q-laplace",
+   "number": "4.1",
+   "title": "The q-Borel transformation and the q-Laplace transformation",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 716,
+   "n_words": 137
+  },
+  {
+   "id": "sec-006-42-the-connection-formula-of-the-q-airy-function",
+   "number": "4.2",
+   "title": "The connection formula of the q-Airy function",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3785,
+   "n_words": 689
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 7,
+  "chars_total": 13878
+ }
+}

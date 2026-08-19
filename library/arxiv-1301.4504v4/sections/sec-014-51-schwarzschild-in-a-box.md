@@ -1,0 +1,77 @@
+---
+doc_id: arxiv-1301.4504v4
+doc_title: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center "
+section_id: sec-014-51-schwarzschild-in-a-box
+section_title: "Schwarzschild in a Box"
+section_number: 5.1
+pages: 41-43
+source_pdf: 1301.4504v4.pdf
+source_sha256: 201acc5bb1d4b6a0
+doc_brief: "DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princ"
+---
+In order for Alice to have any chance of doing the AMPS experiment given our claim
+of exponential decoding time, she will clearly need some way of slowing down the
+evaporation of the black hole. The simplest thing she could imagine is letting the black
+hole become old and then putting it inside of some sort of reﬂecting box to prevent it
+from evaporating.
+Closed ﬁnite entropy systems however behave very strangely over times of ordereS.
+For example over that kind of timescale a gas of particles in a room sometimes ﬁnds
+33We thank John Watrous for suggesting this argument.
+– 40 –
+itself collected up in the corner of the room, and other times ﬁnd itself spontaneously
+assembling into a puddle of liquid on the ﬂoor. This is the phenomenon of Poincar´ e
+recurrence [22]. Indeed eS is sometimes called the “classical recurrence time”, to be
+contrasted with the “quantum recurrence time” eeS
+which we encountered in section
+3.1. This nomenclature is a little misleading; after all, quantum mechanics is the reason
+that the entropy of the gas is ﬁnite in the ﬁrst place, but what it really means is the
+following: eS is the time scale over which some ﬁnite entropy quantum mechanical
+system will be “classically close” to an order one fraction of some orthogonal basis for
+its Hilbert space, up to conservation laws. In other words the probability that repeated
+measurements in that basis over a time of order eS at some point give any particular
+result allowed by conservation laws is order one. The signiﬁcantly longer quantum
+recurrence time, by contrast, is the time it takes for the system to get close in the trace
+norm to any particular quantum state. The basic distinction here is that the number
+of elements in a basis of the Hilbert space is eS, while the number of elements in an
+ϵ-net of the type discussed in section 3.1 is eeS
+.
+This means that it will be very diﬃcult to conﬁne the black hole in a box for such
+a long period of time. For example there is an order one probability that the black
+hole will produce a gigantic nuclear warhead and ﬁre it at the side of the box. Or
+another black hole. The black hole will also itself crash into the box every now and
+then. Making the box big to try to avoid such things is not allowed because then the
+black hole will just evaporate into a diﬀuse gas of particles inside the box and there
+will be no black hole left when Alice ﬁnishes her computation and opens the box.
+Of course every string theorist knows how to avoid the problems with putting a
+black hole in a box in Minkowski space: we just put it in Anti de Sitter space! As long
+as the black hole is large enough the reﬂecting boundary of AdS space will feed its own
+radiation back into it fast enough to prevent it from evaporating. Of course to make
+the AMPS argument at all we need the black hole to become maximally entangled
+with some external system, so following a suggestion of Don Marolf we imagine this is
+done by mining the black hole down to less than half of its initial entropy. 34 But this
+setup brings with it a new problem; we now need to put Alice, her mining equipment,
+and her computer in the box as well! Since the calculation still takes of order the
+34It is unclear to what extent this argument can be applied to the eternal two-sided AdS black hole,
+since the thermal bath will make it diﬃcult to extract energy. Indeed of all black holes this seems to
+be the least likely to have a ﬁrewall. Its gravity dual is two CFT’s which are entangled in just the
+way that seems necessary to produce a smooth horizon [24]. When we discuss AdS black holes we will
+always be imagining one-sided black holes made from some sort of collapse. Interesting previous work
+on the interior of AdS black holes includes [78, 79]; it would be illuminating to understand how to ask
+the ﬁrewall question in either of these frameworks.
+– 41 –
+recurrence time, this means that both Alice and her assorted paraphernalia now need
+to be resistant to nuclear warheads/mini black holes/etc. Alice could try to avoid this by
+staying very far away from the black hole, namely exponentially near the boundary, so
+that from her point of view the recurrences become eﬀectively low energy enough not to
+aﬀect her. In doing so however she will be ﬁghting against an eﬀective potential pulling
+her back to the center. To do this for enough time to accomplish the computation would
+require exponentially large amounts of rocket fuel, and the exhaust from burning all
+that fuel would fall back into the black hole anyway and pollute her experiment. Trying
+to use angular momentum to stabilize her orbit would not work because over such long
+time scales her orbit would rapidly decay via gravitational radiation.
+In fact there is a way to avoid these problems as well, which was suggested to
+us by Juan Maldacena. It involves putting a big AdS black hole in a throat geometry
+where the near horizon region is asymptotically AdS but there is also an asymptotically
+Minkowski region. In this way the geometry provides a box with the beneﬁts of both
+the Minkowski box and the AdS box without the problems of either. There is still a
+problem with this setup, but it is more subtle and we return to it later in this section.

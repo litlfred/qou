@@ -1,0 +1,116 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0910.5695v2",
+ "source_sha256": "703c2a2f1f9380b1",
+ "brief": "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St).",
+ "extended": "**ON BLOCKS OF DELIGNE’S CATEGORY Rep(St)**\n\n*JONATHAN COMES AND VICTOR OSTRIK*\n\n43 pp, 19 sections.\n\n**Abstract.** We describe blocks in Deligne’s category Re p(St).\n\n**Outline.** 1 Introduction; 2.1 Motivation; 1.1 Terminology and notation conventions; 2 The tensor category Rep(St); 2.3.; 3 Indecomposable objects in Rep(St); 3.2 Lifting objects; 3.5 Dimensions; 4 Endomorphisms of the identity functor; 4.1 Interpolating sums of r-cycles; 5 Blocks; 5.1 Blocks in additive categories; 5.2.; 5.5 Proof of result on blocks; 6 Description of a non-semisimple block; 6.2 Comparison of non-semisimple blocks in Rep; 6.3 Description of blocks via Martin; Appendix A. On lifting idempotents",
+ "tokens": {
+  "brief": 23,
+  "extended": 171
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-21-motivation",
+   "title": "Motivation",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-11-terminology-and-notation-conventions",
+   "title": "Terminology and notation conventions",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-2-the-tensor-category-repst",
+   "title": "The tensor category Rep(St)",
+   "pages": "2-11"
+  },
+  {
+   "id": "sec-004-23",
+   "title": "2.3.",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-005-3-indecomposable-objects-in-repst",
+   "title": "Indecomposable objects in Rep(St)",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-006-32-lifting-objects",
+   "title": "Lifting objects",
+   "pages": "15-21"
+  },
+  {
+   "id": "sec-007-35-dimensions",
+   "title": "Dimensions",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-008-4-endomorphisms-of-the-identity-functor",
+   "title": "Endomorphisms of the identity functor",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-009-41-interpolating-sums-of-r-cycles",
+   "title": "Interpolating sums of r-cycles",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-010-5-blocks",
+   "title": "Blocks",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-011-51-blocks-in-additive-categories",
+   "title": "Blocks in additive categories",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-012-52",
+   "title": "5.2.",
+   "pages": "28-34"
+  },
+  {
+   "id": "sec-013-55-proof-of-result-on-blocks",
+   "title": "Proof of result on blocks",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-014-6-description-of-a-non-semisimple-block",
+   "title": "Description of a non-semisimple block",
+   "pages": "37-39"
+  },
+  {
+   "id": "sec-015-62-comparison-of-non-semisimple-blocks-in-repsd",
+   "title": "Comparison of non-semisimple blocks in Rep(Sd; F).",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-016-63-description-of-blocks-via-martin",
+   "title": "Description of blocks via Martin",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-017-appendix-a-on-lifting-idempotents",
+   "title": "Appendix A. On lifting idempotents",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-018-references",
+   "title": "references",
+   "pages": "42-43"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -290,7 +290,7 @@ structure RMatrix where
     to `k[S_n]` as an abstract algebra (Jimbo's theorem).
 
     LaTeX: `\label{prop:knot-eigenbasis-complete}` (part 1) -/
--- Ref: [chari1994] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
+-- Ref: [chari1994guide] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
 structure HeckeAlgebra where
   /-- Number of strands. -/
   n : ℕ
@@ -359,7 +359,7 @@ noncomputable def YoungDiagram.spin (μ : YoungDiagram) : ℝ :=
     `j = (λ₁ − λ₂)/2` and `S_λ` is the irreducible `H_n(q)`-module.
 
     LaTeX: `\label{prop:knot-eigenbasis-complete}` (part 1) -/
--- Ref: [chari1994] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
+-- Ref: [chari1994guide] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
 structure SchurWeylDecomposition where
   /-- Number of tensor factors. -/
   n : ℕ
@@ -449,7 +449,7 @@ structure MarkovTrace where
        irreducible summands (density).
 
     LaTeX: `\label{prop:knot-eigenbasis-complete}` -/
--- Ref: [chari1994] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
+-- Ref: [chari1994guide] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
 -- Ref: [alexander1923] J.W. Alexander, Proc. Natl. Acad. Sci. USA 9 (1923)
 -- Ref: [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987)
 structure KnotEigenbasisComplete where

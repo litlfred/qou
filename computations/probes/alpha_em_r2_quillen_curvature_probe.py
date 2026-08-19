@@ -441,7 +441,7 @@ def main() -> None:
         "citation": "L. Alvarez-Gaume, G. Moore, C. Vafa, 'Theta "
                     "Functions, Modular Invariance, and Strings', Commun. "
                     "Math. Phys. 106, 1-40 (1986)",
-        "upload": "uploads/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf",
+        "upload": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf",
         "equations_used": {
             "(4.18)": "curvature of the determinant line = (i/2π)∂∂̄ "
                       "log‖σ‖² (Bismut–Freed)",

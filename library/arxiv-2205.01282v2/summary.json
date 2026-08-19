@@ -1,0 +1,102 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2205.01282v2",
+ "source_sha256": "00f656afa60db838",
+ "brief": "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed",
+ "extended": "**WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI**\n\n18 pp, 16 sections.\n\n**Abstract.** In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds. Their conjecture states that Witten–Reshetikhin–Turaev (WRT) invariants are radial limits of homological blocks, which are q-series introduced by them for plumbed 3-manifolds with negative definite linking matrices. The most difficult point in our proof is to prove the vanishing of weighted Gauss sums that appear in coefficients of negative degree in asymptotic expansions of homological blocks. To deal with it, we develop a new technique for asymptotic expansions, which enables us to compare asymptotic expansions of rational functions and false theta functions related to WRT invariants and homological blocks, respectively. In our technique, our vanishing results follow from holomorphy of such rational functions.\n\n**Outline.** 1 Introduction; Acknowledgement; 2 Basic notations for plumbing graphs; 2.1 Notations for graphs; 2.2 The inverse matrix of the linking matrix; 2.3 Periodic maps determined by the linking ma; 2.4 Rational functions determined by the linki; 3 Calculations of WRT invariants; 4 Expressions of homological blocks as false t; 5 An asymtotic formula; 5.1 Asymtotic formulas obtained from Euler–Mac; 5.2 Asymtotic expansion of infinite series wit; 6 A proof of the main theorem; 6.1 The main result; 6.2 A proof of the main result; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Conjecture 1.1 is true for plumbing graphs depicted in Figure 1.\n- Proposition 3.2: WRTk(M(Γ)) = (−1)|V1|e(|V≥2|/8)ζ\n- Proposition 3.3: Let L be a lattice of finite rank n equipped with a non-\n- Proposition 5.4: LetN and N′ be non-negative integers, f : RN+N′\n- Proposition 5.4: In the following statement, we use notations ε,S,Q and so on, which we prepared in\n- Proposition 6.1: (i) For each vertex v∈V≥3, the order of F (t) at tv = 0 satisfies",
+ "tokens": {
+  "brief": 48,
+  "extended": 507
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-acknowledgement",
+   "title": "Acknowledgement",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-2-basic-notations-for-plumbing-graphs",
+   "title": "Basic notations for plumbing graphs",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-21-notations-for-graphs",
+   "title": "Notations for graphs",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-22-the-inverse-matrix-of-the-linking-matrix",
+   "title": "The inverse matrix of the linking matrix",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-23-periodic-maps-determined-by-the-linking-matri",
+   "title": "Periodic maps determined by the linking matrix",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-24-rational-functions-determined-by-the-linking",
+   "title": "Rational functions determined by the linking matrix",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-007-3-calculations-of-wrt-invariants",
+   "title": "Calculations of WRT invariants",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-4-expressions-of-homological-blocks-as-false-the",
+   "title": "Expressions of homological blocks as false theta functions",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-009-5-an-asymtotic-formula",
+   "title": "An asymtotic formula",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-010-51-asymtotic-formulas-obtained-from-eulermaclaur",
+   "title": "Asymtotic formulas obtained from Euler–Maclaurin summation formula",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-011-52-asymtotic-expansion-of-infinite-series-with-w",
+   "title": "Asymtotic expansion of infinite series with weighted Gauss sums",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-012-6-a-proof-of-the-main-theorem",
+   "title": "A proof of the main theorem",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-013-61-the-main-result",
+   "title": "The main result",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-014-62-a-proof-of-the-main-result",
+   "title": "A proof of the main result",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-015-references",
+   "title": "References",
+   "pages": "17-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

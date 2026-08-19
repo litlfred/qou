@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-31
 **Branch:** `claude/standard-model-categorical-gauge-7vj44m` (PR #4419)
-**Trigger:** Owner uploaded 11 papers (`uploads/`, main commit `5d1385d1`) and
+**Trigger:** Owner uploaded 11 papers (`library/`, main commit `5d1385d1`) and
 directed: "analyze lit and work on beans."
 **Scope:** Per-paper analysis of the uploaded Standard-Model literature, mapped
 onto the appendix-standard-model gap beans. No paper below closes any bean;

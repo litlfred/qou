@@ -39,11 +39,11 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Identifies the SHAPE of the corpus's 1-loop prefactor with Dimofte-Gukov-Lenells-Zagier eq (2.3) (arXiv:0903.2472, uploads/0903.2472v1.pdf), S_1 = (1/2) log(T/2). The dependence c_sigma ~ (torsion)^(-1/2) is theirs and holds for a general M with a flat G_C bundle, unrestricted by cusp number. The CONSTANT is NOT: DGLZ carry a /2 in (2.3), a +log 2 in (4.5) between S_1 and the colored-Jones coefficient s_1, and a log pi shift against Gukov-Murakami, and fix their integration constants against colored-Jones asymptotics — so they calibrate too, and the corpus's k = 2^(-1/2) is not made redundant. Since the corpus measures c_sigma from the colored-Jones asymptotic it corresponds to s_1, under which the identification is T = 4/|tau_DG| rather than 1/|tau_DG|. The exponent is invariant under all of this; the prefactor is not. Corrects an earlier version of this probe that claimed the constant was never a fit. Nothing fitted; nothing wired.",
+  "description": "Identifies the SHAPE of the corpus's 1-loop prefactor with Dimofte-Gukov-Lenells-Zagier eq (2.3) (arXiv:0903.2472, library/arxiv-0903.2472v1/0903.2472v1.pdf), S_1 = (1/2) log(T/2). The dependence c_sigma ~ (torsion)^(-1/2) is theirs and holds for a general M with a flat G_C bundle, unrestricted by cusp number. The CONSTANT is NOT: DGLZ carry a /2 in (2.3), a +log 2 in (4.5) between S_1 and the colored-Jones coefficient s_1, and a log pi shift against Gukov-Murakami, and fix their integration constants against colored-Jones asymptotics — so they calibrate too, and the corpus's k = 2^(-1/2) is not made redundant. Since the corpus measures c_sigma from the colored-Jones asymptotic it corresponds to s_1, under which the identification is T = 4/|tau_DG| rather than 1/|tau_DG|. The exponent is invariant under all of this; the prefactor is not. Corrects an earlier version of this probe that claimed the constant was never a fit. Nothing fitted; nothing wired.",
   "auditOnly": "docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md",
   "data": {
     "dglz_source": {
-      "file": "uploads/0903.2472v1.pdf",
+      "file": "library/arxiv-0903.2472v1/0903.2472v1.pdf",
       "arxiv": "0903.2472",
       "title": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
       "authors": "Dimofte, Gukov, Lenells, Zagier",

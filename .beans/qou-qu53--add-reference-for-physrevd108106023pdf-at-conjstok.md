@@ -15,7 +15,7 @@ No ref() entry; the corpus cites kucharski-reineke-stosic-sulkowski2017 for the 
 - sec. II, eq. (8)-(9) and sec. IV — A quiver presentation of the colored Jones polynomial is proposed for all double twist knots, with the quiver matrix built recursively from a base set of blocks; the Alexander polynomial of the family takes the form 1 - pmX.
   Use here: Extends the check beyond the figure-eight to a family, so the corpus's open-vs-closed sector separation could be tested at a second knot rather than only at 4_1.
 
-Source: `uploads/PhysRevD.108.106023.pdf` — no `references.ts` entry yet
+Source: `library/physrevd108106023/PhysRevD.108.106023.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

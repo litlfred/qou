@@ -15,7 +15,7 @@ e^{−s}·ds as q → 1 (rate + exact h²-coefficient), and (ii) is there a
 manifestly POSITIVE fibre kernel carrying exactly the balanced moments?
 
 Reference read directly: Ramis–Sauloy–Zhang, "Local analytic classification
-of q-difference equations" (Astérisque 355; uploads/0903.0853v3.pdf):
+of q-difference equations" (Astérisque 355; library/arxiv-0903.0853v3/0903.0853v3.pdf):
   - Def 2.3.3 (p. 23): level-1 formal q-Borel B_{q,1}f(ξ) = Σ f_n q^{−n(n−1)/2}ξⁿ
     (|q| > 1 convention).
   - §3.3.1 (p. 39): level-d q-Borel via a family t_n with t_n = q^{n−d}t_{n−d};
@@ -635,7 +635,7 @@ def main() -> int:
                   "canonical 3-CAL layer); qou_substrate.constants."
                   "Q_50_DIGIT_STR (proton, precision layer)"})
     wb.add_data("rsz_citations", {
-        "paper": "uploads/0903.0853v3.pdf — Ramis–Sauloy–Zhang, Astérisque "
+        "paper": "library/arxiv-0903.0853v3/0903.0853v3.pdf — Ramis–Sauloy–Zhang, Astérisque "
                  "355",
         "def_2_3_3": "level-1 formal q-Borel, weight q^{−n(n−1)/2} (p. 23)",
         "sec_3_3_1": "level-d q-Borel families t_n = q^{n−d}t_{n−d}; "

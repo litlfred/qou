@@ -1,0 +1,113 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1210.6243v1",
+ "source": {
+  "file": "1210.6243v1.pdf",
+  "sha256": "3ff2f5358b25586e10469081d9b0a6e07671cced9d3f3a5074e55f5f6c749c74",
+  "bytes": 366905,
+  "pages": 8
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1210.6243",
+   "version": "1",
+   "primary_class": "quant-ph",
+   "stamp_date": "22 Oct 2012"
+  },
+  "doi": null,
+  "title": "Controlled double-slit electron diffraction",
+  "authors_raw": "Roger Bach 1, Damian Pope 2, Sy-Hwang Liou 1 and",
+  "abstract": "Double-slit diﬀraction is a corner stone of quantum mechanics. It illustrates key features of quantum mechanics: interference and the particle-wave duality of matter. In 1965, Richard Feynman presented a thought experiment to show these features. Here we demonstrate the full realization of his famous thought experiment. By placing a movable mask in front of a double-slit to cont rol the transmission through the individual slits, probability distributions fo r single- and double-slit arrangements were observed. Also, by recording single electron detection events diﬀracting through a double-slit, a diﬀraction pattern was b uilt up from individual events. PACS numbers: 03.65.-w, 03.75.-b, 41.75.Fr, 41.85.-p, 42.25.Fx",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20150311214318-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "Controlled double-slit electron diﬀraction",
+  "title_lines": [
+   "Controlled double-slit electron diffraction"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Experimental Setup",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Results",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 4,
+   "source": "outline",
+   "number": "4"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3439,
+   "n_words": 540
+  },
+  {
+   "id": "sec-001-2-experimental-setup",
+   "number": "2",
+   "title": "Experimental Setup",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1800,
+   "n_words": 310
+  },
+  {
+   "id": "sec-002-3-results",
+   "number": "3",
+   "title": "Results",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2557,
+   "n_words": 448
+  },
+  {
+   "id": "sec-003-4-conclusion",
+   "number": "4",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 4532,
+   "n_words": 777
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 4,
+  "chars_total": 12328
+ }
+}

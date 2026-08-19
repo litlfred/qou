@@ -2,7 +2,7 @@
 # ζ-indexed families, archimedean layer — the structure the bracket inhabits
 
 Completes the Lean half of bean qou-zt3h (T4 of the Habiro attack
-plan). The GSWZ picture (arXiv:2412.04241, `uploads/2412.04241v2.pdf`)
+plan). The GSWZ picture (arXiv:2412.04241, `library/arxiv-2412.04241v2/2412.04241v2.pdf`)
 organizes a Habiro-module element as a family of fibres over the roots
 of unity with arithmetic transition edges. The ARCHIMEDEAN layer of
 that picture — the only layer visible to `ℂ`-analysis — carries exactly

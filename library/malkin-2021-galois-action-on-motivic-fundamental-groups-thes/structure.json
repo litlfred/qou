@@ -1,0 +1,643 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
+ "source": {
+  "file": "malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf",
+  "sha256": "3bc30dc6a4a03a7f8b1674ddd3afa323f3d3ac2122654f91e8ed89dfec08ba2a",
+  "bytes": 1002554,
+  "pages": 123
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a finite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1)",
+  "authors_raw": null,
+  "abstract": "On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay Malkin 2021 ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1) The algebraic, geometric, and analytic aspects of this action are examined in two cases: for- = P1 and for- an elliptic curve. To study this action, we rely on motivic correlators, canonical elements in the fundamental Lie coalgebra of the category of mixed motives over a number ﬁeld. We trace three themes: (1) The Lie coalgebra structure on the motivic correlators. Using combinatorial arguments with an injection of Hodge theory, we ﬁnd general families of relations (double shuﬄe relations) on these elements. (2) The Hodge realization of the structure in (1). The canonical real periods of the motivic correlators are the Hodge correlator functions, functions of several--valued variables that are computed as Feynman integrals. We ﬁnd new functional equations on the Hodge correlator integrals. The proofs of results related to themes (1) and (2) are closely intertwined. (3) Thegeometryofmodularmanifolds. Thephenomenonthatthecomplexcomputingcohomologyofsome locallysymmetricspacecanbemappedtothestandardcochaincomplexofthemotivicLiecoalgebrahad been observed in several cases. Our work on Bianchi hyperbolic threefolds and the motivic fundamental groups of CM elliptic curves is a variation on this theme.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210414150324-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "MiKTeX pdfTeX-1.40.20",
+   "Title": ""
+  },
+  "title_prev": "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1)",
+  "title_lines": [
+   "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental",
+   "group of an algebraic curve- punctured at a finite set of points(:",
+   "GalMot ⟳cMot",
+   "1 (-−(,E 0). (1)"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "List of figures",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Hodge and motivic correlators",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Hodge correlator integrals",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Correlator coalgebra and fundamental group",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Mixed Tate motives and correlators on rational curves",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Hodge correlators",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Motivic correlators",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Multiple polylogarithms",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Shuffle relations for Hodge and motivic correlators on P1",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction and main results",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Summary",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Hodge correlator integrals and shuffle relations",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quasidihedral Lie coalgebras",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Relations for Hodge and motivic correlators",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Construction of the quasidihedral Lie coalgebra",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Definitions",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Proof of Theorem 2.5",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Specialization theorem for Hodge correlators",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The second shuffle relations",
+   "page": 76,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Proofs of Theorems 2.1, 2.6, and 2.7",
+   "page": 76,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Applications",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Motivic 1 of CM elliptic curves and geometry of Bianchi hyperbolic threefolds",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction and main results",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Summary",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Relations for correlators",
+   "page": 87,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Motivic correlators on elliptic curves",
+   "page": 89,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Main properties",
+   "page": 89,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Symmetric correlators modulo depth",
+   "page": 93,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Second shuffle relations",
+   "page": 100,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Bianchi hyperbolic threefolds and modular complexes",
+   "page": 101,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Bianchi tessellations and orbifolds",
+   "page": 101,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Modular complexes",
+   "page": 103,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Relating the modular and Bianchi complexes to the Galois Lie coalgebra",
+   "page": 106,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Applications",
+   "page": 109,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The weight 4 case: Euler complexes",
+   "page": 109,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Degeneration to rational curves: Voronoi complexes and multiple -values",
+   "page": 112,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 120,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Blank Page",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 213,
+   "n_words": 34
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1520,
+   "n_words": 233
+  },
+  {
+   "id": "sec-002-hodge-correlator-integrals",
+   "number": null,
+   "title": "Hodge correlator integrals",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 797,
+   "n_words": 78
+  },
+  {
+   "id": "sec-003-hodge-and-motivic-correlators",
+   "number": null,
+   "title": "Hodge and motivic correlators",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4377,
+   "n_words": 670
+  },
+  {
+   "id": "sec-004-correlator-coalgebra-and-fundamental-group",
+   "number": null,
+   "title": "Correlator coalgebra and fundamental group",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 18,
+   "n_chars": 10516,
+   "n_words": 1588
+  },
+  {
+   "id": "sec-005-hodge-correlators",
+   "number": null,
+   "title": "Hodge correlators",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 199,
+   "n_words": 34
+  },
+  {
+   "id": "sec-006-mixed-tate-motives-and-correlators-on-rational-c",
+   "number": null,
+   "title": "Mixed Tate motives and correlators on rational curves",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 25,
+   "n_chars": 11413,
+   "n_words": 1635
+  },
+  {
+   "id": "sec-007-motivic-correlators",
+   "number": null,
+   "title": "Motivic correlators",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 5538,
+   "n_words": 937
+  },
+  {
+   "id": "sec-008-multiple-polylogarithms",
+   "number": null,
+   "title": "Multiple polylogarithms",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 34,
+   "n_chars": 6423,
+   "n_words": 959
+  },
+  {
+   "id": "sec-009-introduction-and-main-results",
+   "number": null,
+   "title": "Introduction and main results",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-summary",
+   "number": null,
+   "title": "Summary",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 41,
+   "n_chars": 11085,
+   "n_words": 1492
+  },
+  {
+   "id": "sec-011-quasidihedral-lie-coalgebras",
+   "number": null,
+   "title": "Quasidihedral Lie coalgebras",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 44,
+   "n_chars": 4503,
+   "n_words": 692
+  },
+  {
+   "id": "sec-012-relations-for-hodge-and-motivic-correlators",
+   "number": null,
+   "title": "Relations for Hodge and motivic correlators",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 2763,
+   "n_words": 421
+  },
+  {
+   "id": "sec-013-construction-of-the-quasidihedral-lie-coalgebra",
+   "number": null,
+   "title": "Construction of the quasidihedral Lie coalgebra",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 52,
+   "n_chars": 10732,
+   "n_words": 1528
+  },
+  {
+   "id": "sec-014-proof-of-theorem-25",
+   "number": null,
+   "title": "Proof of Theorem 2.5",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 71,
+   "n_chars": 29680,
+   "n_words": 4929
+  },
+  {
+   "id": "sec-015-specialization-theorem-for-hodge-correlators",
+   "number": null,
+   "title": "Specialization theorem for Hodge correlators",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 76,
+   "n_chars": 8420,
+   "n_words": 1330
+  },
+  {
+   "id": "sec-016-proofs-of-theorems-21-26-and-27",
+   "number": null,
+   "title": "Proofs of Theorems 2.1, 2.6, and 2.7",
+   "level": 3,
+   "page_start": 76,
+   "page_end": 79,
+   "n_chars": 4848,
+   "n_words": 765
+  },
+  {
+   "id": "sec-017-applications",
+   "number": null,
+   "title": "Applications",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 82,
+   "n_chars": 3141,
+   "n_words": 549
+  },
+  {
+   "id": "sec-018-introduction-and-main-results",
+   "number": null,
+   "title": "Introduction and main results",
+   "level": 2,
+   "page_start": 82,
+   "page_end": 82,
+   "n_chars": 241,
+   "n_words": 37
+  },
+  {
+   "id": "sec-019-summary",
+   "number": null,
+   "title": "Summary",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 87,
+   "n_chars": 11200,
+   "n_words": 1660
+  },
+  {
+   "id": "sec-020-relations-for-correlators",
+   "number": null,
+   "title": "Relations for correlators",
+   "level": 3,
+   "page_start": 87,
+   "page_end": 89,
+   "n_chars": 3787,
+   "n_words": 523
+  },
+  {
+   "id": "sec-021-motivic-correlators-on-elliptic-curves",
+   "number": null,
+   "title": "Motivic correlators on elliptic curves",
+   "level": 2,
+   "page_start": 89,
+   "page_end": 89,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-022-main-properties",
+   "number": null,
+   "title": "Main properties",
+   "level": 3,
+   "page_start": 89,
+   "page_end": 93,
+   "n_chars": 6301,
+   "n_words": 1085
+  },
+  {
+   "id": "sec-023-symmetric-correlators-modulo-depth",
+   "number": null,
+   "title": "Symmetric correlators modulo depth",
+   "level": 3,
+   "page_start": 93,
+   "page_end": 101,
+   "n_chars": 11379,
+   "n_words": 1732
+  },
+  {
+   "id": "sec-024-bianchi-hyperbolic-threefolds-and-modular-comple",
+   "number": null,
+   "title": "Bianchi hyperbolic threefolds and modular complexes",
+   "level": 2,
+   "page_start": 101,
+   "page_end": 101,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-025-bianchi-tessellations-and-orbifolds",
+   "number": null,
+   "title": "Bianchi tessellations and orbifolds",
+   "level": 3,
+   "page_start": 101,
+   "page_end": 103,
+   "n_chars": 3487,
+   "n_words": 561
+  },
+  {
+   "id": "sec-026-modular-complexes",
+   "number": null,
+   "title": "Modular complexes",
+   "level": 3,
+   "page_start": 103,
+   "page_end": 106,
+   "n_chars": 3697,
+   "n_words": 569
+  },
+  {
+   "id": "sec-027-relating-the-modular-and-bianchi-complexes-to-th",
+   "number": null,
+   "title": "Relating the modular and Bianchi complexes to the Galois Lie coalgebra",
+   "level": 3,
+   "page_start": 106,
+   "page_end": 109,
+   "n_chars": 6367,
+   "n_words": 1093
+  },
+  {
+   "id": "sec-028-applications",
+   "number": null,
+   "title": "Applications",
+   "level": 2,
+   "page_start": 109,
+   "page_end": 109,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-the-weight-4-case-euler-complexes",
+   "number": null,
+   "title": "The weight 4 case: Euler complexes",
+   "level": 3,
+   "page_start": 109,
+   "page_end": 112,
+   "n_chars": 4104,
+   "n_words": 658
+  },
+  {
+   "id": "sec-030-degeneration-to-rational-curves-voronoi-complexe",
+   "number": null,
+   "title": "Degeneration to rational curves: Voronoi complexes and multiple -values",
+   "level": 3,
+   "page_start": 112,
+   "page_end": 120,
+   "n_chars": 12403,
+   "n_words": 1723
+  },
+  {
+   "id": "sec-031-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 120,
+   "page_end": 123,
+   "n_chars": 5414,
+   "n_words": 693
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 40,
+  "sections": 32,
+  "chars_total": 184548
+ }
+}

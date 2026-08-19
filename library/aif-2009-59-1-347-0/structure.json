@@ -1,0 +1,411 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "aif-2009-59-1-347-0",
+ "source": {
+  "file": "AIF_2009__59_1_347_0.pdf",
+  "sha256": "35b8422990e24888d4256e5cd55d698694b029151ea53f0a15a2b489567c33fe",
+  "bytes": 664260,
+  "pages": 47
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER",
+  "authors_raw": "Lucia DIVIZIO & Changgui ZHANG",
+  "abstract": null,
+  "docinfo": {
+   "Author": "Lucia Di Vizio& Changgui Zhang",
+   "Title": "On q-summation and confluence",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfeTeX-1.305",
+   "CreationDate": "D:20090224185456+01'00'"
+  },
+  "title_lines": [
+   "ANNALESDEL’INSTITUTFOURIER",
+   "ANNALES",
+   "L’INSTITUT FOURIER"
+  ],
+  "title_prev": "L’INSTITUT FOURIER"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Part 1. Convergent q-Borel and q-Laplace transform and confluence: the case q<1",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Convergent q-Euler series",
+   "page": 8,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Integral representation",
+   "page": 9,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 3,
+   "title": "Confluence",
+   "page": 10,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Confluence of the convergent q-analogue of Borel-Laplace summation",
+   "page": 14,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Definition of the convergent q-Borel and q-Laplace transform",
+   "page": 14,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Main result",
+   "page": 16,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Applications",
+   "page": 17,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Theorem 2.6",
+   "page": 19,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Appendix A. Jackson's integral",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix B. Expansion of Eq(x) at",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "B.1. Degenerate cases of the Watson's formula",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "B.2. Proof of Proposition 1.5",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The divergent q-Euler series",
+   "page": 29,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Definition of different sums of the q-Euler series",
+   "page": 29,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "q-integral and continuous integral",
+   "page": 31,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Comparing sums along different spirals",
+   "page": 34,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Confluence",
+   "page": 35,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Generic q-Gevrey series",
+   "page": 36,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "Two formal q-Borel transforms",
+   "page": 36,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "Different kinds of q-exponential summation",
+   "page": 38,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 3,
+   "title": "The Tschakaloff series",
+   "page": 41,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "The functional space H in the Borel plane",
+   "page": 42,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Theorem 4.14",
+   "page": 45,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Bibliography",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 11189,
+   "n_words": 2094
+  },
+  {
+   "id": "sec-001-part-1-convergent-q-borel-and-q-laplace-transfor",
+   "number": null,
+   "title": "Part 1. Convergent q-Borel and q-Laplace transform and confluence: the case q<1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 869,
+   "n_words": 150
+  },
+  {
+   "id": "sec-002-1-convergent-q-euler-series",
+   "number": "1",
+   "title": "Convergent q-Euler series",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1798,
+   "n_words": 357
+  },
+  {
+   "id": "sec-003-11-integral-representation",
+   "number": "1.1",
+   "title": "Integral representation",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 718,
+   "n_words": 143
+  },
+  {
+   "id": "sec-004-12-confluence",
+   "number": "1.2",
+   "title": "Confluence",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 16,
+   "n_chars": 9246,
+   "n_words": 1840
+  },
+  {
+   "id": "sec-005-22-main-result",
+   "number": "2.2",
+   "title": "Main result",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2573,
+   "n_words": 516
+  },
+  {
+   "id": "sec-006-23-applications",
+   "number": "2.3",
+   "title": "Applications",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 2550,
+   "n_words": 444
+  },
+  {
+   "id": "sec-007-24-proof-of-theorem-26",
+   "number": "2.4",
+   "title": "Proof of Theorem 2.6",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 6589,
+   "n_words": 1286
+  },
+  {
+   "id": "sec-008-appendix-b-expansion-of-eqx-at",
+   "number": null,
+   "title": "Appendix B. Expansion of Eq(x) at",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 28,
+   "n_chars": 7253,
+   "n_words": 1382
+  },
+  {
+   "id": "sec-009-b2-proof-of-proposition-15",
+   "number": null,
+   "title": "B.2. Proof of Proposition 1.5",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 394,
+   "n_words": 75
+  },
+  {
+   "id": "sec-010-part-2-summation-of-divergent-q-series-and-confl",
+   "number": null,
+   "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 866,
+   "n_words": 154
+  },
+  {
+   "id": "sec-011-3-the-divergent-q-euler-series",
+   "number": "3",
+   "title": "The divergent q-Euler series",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3877,
+   "n_words": 804
+  },
+  {
+   "id": "sec-012-32-q-integral-and-continuous-integral",
+   "number": "3.2",
+   "title": "q-integral and continuous integral",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 3566,
+   "n_words": 780
+  },
+  {
+   "id": "sec-013-34-confluence",
+   "number": "3.4",
+   "title": "Confluence",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 3584,
+   "n_words": 715
+  },
+  {
+   "id": "sec-014-4-generic-q-gevrey-series",
+   "number": "4",
+   "title": "Generic q-Gevrey series",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 42,
+   "n_chars": 10009,
+   "n_words": 1969
+  },
+  {
+   "id": "sec-015-44-the-functional-space-h-in-the-borel-plane",
+   "number": "4.4",
+   "title": "The functional space H in the Borel plane",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 45,
+   "n_chars": 4736,
+   "n_words": 931
+  },
+  {
+   "id": "sec-016-45-proof-of-theorem-414",
+   "number": "4.5",
+   "title": "Proof of Theorem 4.14",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 1966,
+   "n_words": 386
+  },
+  {
+   "id": "sec-017-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 4455,
+   "n_words": 676
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "sections": 18,
+  "chars_total": 76238
+ }
+}

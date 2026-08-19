@@ -1,0 +1,87 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "helicity03mmj",
+ "source_sha256": "e364dad3afff3180",
+ "brief": "MOSCOW MATHEMATICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem.",
+ "extended": "**MOSCOW MATHEMATICAL JOURNAL**\n\n*Volume 3, Number 3, July–September 2003, Pages 989–1011*\n\n23 pp, 13 sections.\n\n**Abstract.** We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem. We also survey various results related to Arnold’s the- orem on the asymptotic Hopf invariant on three-dimensional manifolds and recent work on linking of a vector ﬁeld with a foliation, the asymp- totic crossing number, short path systems, and relations with the Calabi invariant. 2000 Math. Subj. Class. 37A15, 55Q25, 76W05.\n\n**Outline.** 1 Introduction; 2 What is Helicity?; 3 Three-Dimensional Ramifications; 3.1 Bilinear and multi-linear forms.; 3.2 Energy estimates.; 3.3 Ergodic meaning of the Calabi invariant.; 3.4 Short paths systems.; 4 Linking of a Vector Field with a Measured Fo; 4.1 Linking of a curve with a foliation; 4.3 Linking of several measured foliations.; 5 Linking of Foliations and Brownian Motion; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.2: [1]. The helicity H(ξ) is preserved under the action on ξ of a volume-\n- Theorem 2.5: [1]. Helicity of a divergence-free vector ﬁeld ξ on a simply connected\n- Theorem 3.3: [1]. For a divergence-free vector ﬁeld ξ in a compact domain M∫\n- Theorem 3.6: [9]. Suppose a vector ﬁeld ξ in R3 has an invariant torus T forming\n- Theorem 3.16: [25]. On any compact Riemannian manifold M a system of shortest\n- Theorem 4.4: [16], [17]. Let ξ be a divergence-free vector ﬁeld on M with a volume",
+ "tokens": {
+  "brief": 43,
+  "extended": 393
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-what-is-helicity",
+   "title": "What is Helicity?",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-002-3-three-dimensional-ramifications",
+   "title": "Three-Dimensional Ramifications",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-003-31-bilinear-and-multi-linear-forms",
+   "title": "Bilinear and multi-linear forms.",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-32-energy-estimates",
+   "title": "Energy estimates.",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-005-33-ergodic-meaning-of-the-calabi-invariant",
+   "title": "Ergodic meaning of the Calabi invariant.",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-006-34-short-paths-systems",
+   "title": "Short paths systems.",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-007-4-linking-of-a-vector-field-with-a-measured-foli",
+   "title": "Linking of a Vector Field with a Measured Foliation",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-008-41-linking-of-a-curve-with-a-foliation",
+   "title": "Linking of a curve with a foliation",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-009-43-linking-of-several-measured-foliations",
+   "title": "Linking of several measured foliations.",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-010-5-linking-of-foliations-and-brownian-motion",
+   "title": "Linking of Foliations and Brownian Motion",
+   "pages": "15-22"
+  },
+  {
+   "id": "sec-011-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "22-23"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

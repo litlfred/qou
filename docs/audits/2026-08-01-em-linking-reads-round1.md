@@ -417,7 +417,7 @@ into the flux.
 ### Residual gap
 
 Freedman–He, *Ann. of Math.* **134** (1991) 189–229 is **not** in the
-corpus or in `uploads/` (201 PDFs scanned by title metadata, no match),
+corpus or in `library/` (201 PDFs scanned by title metadata, no match),
 so FH's own definition of the minimisation domain for `ac(L_k, L)` is
 not directly verified. Both corrections rest on Komendarczyk's statement
 of it — unambiguous on both the per-component indexing and the

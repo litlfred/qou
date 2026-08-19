@@ -159,7 +159,7 @@ imports referenced them, so no import breakage. Pre-existing stray
   in `b` and `1/b` at real *and* complex `b`; modular duality; inversion with
   the constant `e^{iπ(b²+b⁻²)/12}`; the FK modular-double product identity to
   **1.8e-37**). Conventions verified line-by-line against the owner-uploaded
-  source [`uploads/0604094v1.pdf`](../../uploads/0604094v1.pdf) (Hikami,
+  source [`library/arxiv-math-0604094v1/0604094v1.pdf`](../../library/arxiv-math-0604094v1/0604094v1.pdf) (Hikami,
   arXiv:math/0604094, eqs (2.1)–(2.5)) via the map `γ = πb²`, `φ = 2πbz`.
 - **The suspected "Φ compute inaccuracy" has a pinned mechanism**: the
   battery's first run caught a **complex-power principal-branch bug**

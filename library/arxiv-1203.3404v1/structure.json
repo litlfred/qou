@@ -1,0 +1,217 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1203.3404v1",
+ "source": {
+  "file": "1203.3404v1.pdf",
+  "sha256": "2318b14fb270266595726034523a964843a87d07b6f89e85a50a9a914f9fd70a",
+  "bytes": 181284,
+  "pages": 19
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1203.3404",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "15 Mar 2012"
+  },
+  "doi": null,
+  "title": "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗",
+  "authors_raw": null,
+  "abstract": "We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity. These solution s are given by the Ramanujan function, the q-Airy function and the divergent basic hypergeometric series 2ϕ 0(0, 0; −; q, x ). We use two diﬀerent q- Borel-Laplace transformations to obtain our connection fo rmulae.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220606142623-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "On local solutions of the Ramanujan equation",
+   "and their connection formulae",
+   "Takeshi MORITA∗"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Basic notations",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Two types of the q-analogue of the Airy function and the connection formula",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Ramanujan function Aq(x)",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The q-Airy function Aiq(x)",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Covering transformations",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The q-Airy equation around the infinity",
+   "page": 11,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The q-Borel transformation and the q-Laplace transformation",
+   "page": 11,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "The connection formula of the q-Airy function",
+   "page": 12,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "Connection formula of the divergent series 20(0,0;-;q,)",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Two different q-exponential functions",
+   "page": 13,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The connection formula and alternate representation",
+   "page": 14,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The connection formula of the series 20(0,0;-;q,)",
+   "page": 15,
+   "source": "outline",
+   "number": "4.3"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 7052,
+   "n_words": 1396
+  },
+  {
+   "id": "sec-001-2-basic-notations",
+   "number": "2",
+   "title": "Basic notations",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1764,
+   "n_words": 340
+  },
+  {
+   "id": "sec-002-31-the-ramanujan-function-aqx",
+   "number": "3.1",
+   "title": "The Ramanujan function Aq(x)",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1235,
+   "n_words": 254
+  },
+  {
+   "id": "sec-003-32-the-q-airy-function-aiqx",
+   "number": "3.2",
+   "title": "The q-Airy function Aiq(x)",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1085,
+   "n_words": 244
+  },
+  {
+   "id": "sec-004-33-covering-transformations",
+   "number": "3.3",
+   "title": "Covering transformations",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1227,
+   "n_words": 262
+  },
+  {
+   "id": "sec-005-35-the-q-borel-transformation-and-the-q-laplace",
+   "number": "3.5",
+   "title": "The q-Borel transformation and the q-Laplace transformation",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 724,
+   "n_words": 144
+  },
+  {
+   "id": "sec-006-36-the-connection-formula-of-the-q-airy-function",
+   "number": "3.6",
+   "title": "The connection formula of the q-Airy function",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2497,
+   "n_words": 506
+  },
+  {
+   "id": "sec-007-42-the-connection-formula-and-alternate-represen",
+   "number": "4.2",
+   "title": "The connection formula and alternate representation",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 5599,
+   "n_words": 1181
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 8,
+  "chars_total": 21183
+ }
+}

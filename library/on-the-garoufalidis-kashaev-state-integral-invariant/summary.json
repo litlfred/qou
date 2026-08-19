@@ -1,0 +1,326 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "on-the-garoufalidis-kashaev-state-integral-invariant",
+ "source_sha256": "eda230da2a596783",
+ "brief": "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec",
+ "extended": "**ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025**\n\n61 pp, 61 sections.\n\n**Outline.** ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES; Introduction; Motivation and Background; Overview of the Construction; Main Results; Structure of the Thesis; Connections and Outlook; Connections to Representation Theory; Locally Compact Abelian Groups; Pontryagin Duality; Foundational Definitions; Examples; Structure Theorem (Informal); Character Groups and Duality; Pontryagin Duality Theorem; Examples of Dual Pairs\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: ). Any LCA group L admits an isomor-\n- Theorem 2: For any LCA group L, the canonical evaluation\n- Theorem 3: The function φ(α,x) = α(1 +x) satisfies the distributional pentagon\n- Theorem 6: LetX∼X′ via Pachner moves. Then\n- Theorem 7: Let θ be a balanced angle structure satisfying\n- Theorem 8: The state-integral FF,X,θ is invariant under",
+ "tokens": {
+  "brief": 50,
+  "extended": 261
+ },
+ "sections": [
+  {
+   "id": "sec-000-acknowledgments",
+   "title": "ACKNOWLEDGMENTS",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "ABSTRACT",
+   "pages": "5-10"
+  },
+  {
+   "id": "sec-002-list-of-tables",
+   "title": "LIST OF TABLES",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-003-introduction",
+   "title": "Introduction",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-004-motivation-and-background",
+   "title": "Motivation and Background",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-005-overview-of-the-construction",
+   "title": "Overview of the Construction",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-006-main-results",
+   "title": "Main Results",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-007-structure-of-the-thesis",
+   "title": "Structure of the Thesis",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-008-connections-and-outlook",
+   "title": "Connections and Outlook",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-009-connections-to-representation-theory",
+   "title": "Connections to Representation Theory",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-010-locally-compact-abelian-groups",
+   "title": "Locally Compact Abelian Groups",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-011-pontryagin-duality",
+   "title": "Pontryagin Duality",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-012-foundational-definitions",
+   "title": "Foundational Definitions",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-013-examples",
+   "title": "Examples",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-014-structure-theorem-informal",
+   "title": "Structure Theorem (Informal)",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-015-character-groups-and-duality",
+   "title": "Character Groups and Duality",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-016-pontryagin-duality-theorem",
+   "title": "Pontryagin Duality Theorem",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-017-examples-of-dual-pairs",
+   "title": "Examples of Dual Pairs",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-018-gaussian-group",
+   "title": "Gaussian Group",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-019-pontryagin-characters-and-gauss-characters",
+   "title": "Pontryagin Characters and Gauss Characters",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-020-local-fields",
+   "title": "Local Fields",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-021-quantum-dilogarithm",
+   "title": "Quantum Dilogarithm",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-022-a-quantum-dilogarithm-over-a-gaussian-group",
+   "title": "A quantum dilogarithm over a Gaussian group",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-023-a-quantum-dilogarithm-over-a-special-gaussian-gr",
+   "title": "A quantum dilogarithm over a Special Gaussian Group",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-024-fourier-transform-of-the-archimedean-quantum-dil",
+   "title": "Fourier transform of the Archimedean quantum dilogarithm",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-025-pentagon-identity-in-the-archimedean-case",
+   "title": "Pentagon identity in the Archimedean case",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-026-angled-quantum-dilogarithm",
+   "title": "Angled Quantum Dilogarithm",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-027-angle-space-and-structure",
+   "title": "Angle Space and Structure",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-028-triangle-angle-condition",
+   "title": "Triangle Angle Condition",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-029-definition-of-the-angled-quantum-dilogarithm",
+   "title": "Definition of the Angled Quantum Dilogarithm",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-030-temperedness-and-positivity",
+   "title": "Temperedness and Positivity",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-031-symmetries-of-the-angled-quantum-dilogarithm",
+   "title": "Symmetries of the Angled Quantum Dilogarithm",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-032-angled-pentagon-identity",
+   "title": "Angled Pentagon Identity",
+   "pages": "36-40"
+  },
+  {
+   "id": "sec-033-the-state-integral-invariant",
+   "title": "The State-Integral Invariant",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-034-triangulations-and-state-variables",
+   "title": "Triangulations and State Variables",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-035-the-kinematical-kernel",
+   "title": "The Kinematical Kernel",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-036-angle-structures-and-dynamical-weights",
+   "title": "Angle Structures and Dynamical Weights",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-037-balanced-angle-structures",
+   "title": "Balanced Angle Structures",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-038-quantum-dilogarithmic-weights",
+   "title": "Quantum Dilogarithmic Weights",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-039-the-state-integral-definition",
+   "title": "The State-Integral Definition",
+   "pages": "44-46"
+  },
+  {
+   "id": "sec-040-target-of-the-state-integral",
+   "title": "Target of the State-Integral",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-041-target-statement-for-the-archimedean-state-integ",
+   "title": "Target Statement for the Archimedean State-Integral",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-042-angle-structures-and-parameter-dependence",
+   "title": "Angle Structures and Parameter Dependence",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-043-algebraic-background",
+   "title": "Algebraic Background",
+   "pages": "49-51"
+  },
+  {
+   "id": "sec-044-summary-table",
+   "title": "Summary Table",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-045-remark",
+   "title": "Remark",
+   "pages": "51-53"
+  },
+  {
+   "id": "sec-046-the-pentagon-identity-and-pachner-moves",
+   "title": "The Pentagon Identity and Pachner Moves",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-047-combinatorics-of-the-pachner-move",
+   "title": "Combinatorics of the Pachner Move",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-048-analytic-expression-via-pentagon-identity",
+   "title": "Analytic Expression via Pentagon Identity",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-049-p1-pachner-invariance",
+   "title": "(P1) Pachner Invariance",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-050-triangulation-equivalence",
+   "title": "Triangulation Equivalence",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-051-invariance-theorem",
+   "title": "Invariance Theorem",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-052-p2-analytic-control-and-temperedness",
+   "title": "(P2) Analytic Control and Temperedness",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-053-tempered-distribution-framework",
+   "title": "Tempered Distribution Framework",
+   "pages": "54-55"
+  },
+  {
+   "id": "sec-054-conditions-ensuring-convergence",
+   "title": "Conditions Ensuring Convergence",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-055-p3-angle-gauge-invariance",
+   "title": "(P3) Angle Gauge Invariance",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-056-internal-angle-shifts",
+   "title": "Internal Angle Shifts",
+   "pages": "55-56"
+  },
+  {
+   "id": "sec-057-cancellation-in-the-integral",
+   "title": "Cancellation in the Integral",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-058-topological-invariance-theorem",
+   "title": "Topological Invariance Theorem",
+   "pages": "56-58"
+  },
+  {
+   "id": "sec-059-conceptual-summary",
+   "title": "Conceptual Summary",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-060-references",
+   "title": "REFERENCES",
+   "pages": "59-61"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

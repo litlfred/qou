@@ -148,10 +148,10 @@ the genuinely keystone-gated parts (`E(q)` and `tr M(q₀) = 2.6424`). The struc
 reduction above (genus-4 → elliptic, `M` a 2×2 `SL₂`) stands independent of the
 explicit `j(E)`.
 
-### Resolution — the tool-block is removed by the literature (2026-07-18, `uploads/`)
+### Resolution — the tool-block is removed by the literature (2026-07-18, `library/`)
 
 The `RiemannSurface` tool-block above (option (b)) is **superseded**: two Bring
-period-matrix papers landed in `uploads/` and are now registered in
+period-matrix papers landed in `library/` and are now registered in
 `references.ts`. They supply the explicit period matrix **analytically** — no Sage
 `RiemannSurface` computation on the conjugate singularities is needed:
 

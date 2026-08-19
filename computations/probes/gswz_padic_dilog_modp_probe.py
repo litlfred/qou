@@ -173,7 +173,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_padic_dilog_modp_probe",
     "beans": ["qou-dugz", "qou-1hlh"],
-    "source": "GSWZ arXiv:2412.04241v2 §3.1 Prop 3.2, eqns (174)/(177)/(273); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 §3.1 Prop 3.2, eqns (174)/(177)/(273); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5",
     "checks": checks,
     "computed_rhs_mod5": {

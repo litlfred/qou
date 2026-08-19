@@ -1,0 +1,40 @@
+On Markov’s Theorem 299
+
+(resp. clockwise) when the vertex is positive (resp. negative). The valence
+of a vertex is the number of singular leaves which have endpoints at that
+vertex.
+
+The foliation may be used to decompose the surface F into a union of
+foliated 2-cells, each of which contains exactly one singularity of the foliation.
+We refer to these 2-cells as tiles and the resulting decomposition of F as a
+tiling. Each tile is a regular neighborhood on F of its singular leaves. See
+Figure 3.
+
+Type aa Type ab
+
+Figure 3: The three tile types.
+
+The vertices of the tiles are the points where the braid axis A intersects
+the surface F. (There are also other vertices on the graph of singular leaves,
+but we prefer to exclude them when we refer to tile vertices.) The edges of
+the tiles are non-singular leaves of type a or 6. (There are also other tile
+edges which are subarcs of X, but it will be convenient to ignore those too,
+just as we ignored the vertices which are on X.)
+
+If two tiles intersect, then they intersect along a non-singular leaf of the
+foliation, which is then necessarily an edge of type a or b. The tiles fall into
+three types, according to their foliations. We call them types aa, ab and bb,
+the notation indicating that in an aa-tile (respectively ab, bb-tile) the leaves
+which come together before the singularity are both type a (respectively
+types a and b, both type 6). The three tile types are distinguished by the
+number of their vertices, the types of their non-singular leaves, and the
+endpoints of their singular leaves. Tiles of type ab and aa meet X = OF,
+but tiles of type bb are contained entirely in the interior of F. Notice also
+that tiles of type bb, ab,aa each contain 2 positive vertices, but contain 2,1
+and 0 negative vertices respectively. The segments where X meets a tile of
+type ab or aa will be seen to ‘act like a negative vertex’.
+
+The singularities also have signs. Let s be asingular point of the foliation
+of a Markov surface F for a link X, and let Hg be the disc fiber which
+contains s. We say that s is positive if the outward-drawn oriented normal
+to the oriented surface F coincides in direction with the normal to Hg in the

@@ -1,0 +1,53 @@
+Asymptotics of the quantum invariants for the figure 8 knot 65
+
+The identity (C.10) was proved by using the explicit value of the dilogarithm in
+(3 — V5)/2, ef. (C.8). We note that only very few explicit values of the dilogaritm
+are known, see [21, Chap 1].
+
+Appendix D Proof of Lemma 8
+
+Let us begin by showing the identitites (5.83) and (5.85). Let 6 € I and let u =
+us(8), Qi = Q2 (6) and t = 4 and get
+
+QiQ@2 = (1-(l4u)"'t)(1-(l+u)t) =1-t(lt+ut(itu)')+?
+= -(1+u)'((1+u)?-(t+¢')(ut+1) +1) =8,
+
+where the last equality follows by the fact that ¢(t,u) = 0, where ¢ is given by
+(5.61).
+
+To show (5.85) we observe that
+
+QiQ3 _  Q3Qi
+
+— 4-1 2
+Q ~ de? 2%
+= ¢(1+u)(1-t tu) !)? =t tu) tid tu) -2
+
+by (5.83). Now ¢(t, u) = 0 implies that
+t(ltu)yt=+1-t-t(utl)
+
+leading to the identity
+
+Q1Q3
+Qe
+
+To prove the identities (5.82) and (5.84) it is necessary to examine the arguments
+of the functions QF (0), i=1,2. By Lemma 9 we note that
+
+=-14+t'-2t+P+u(t1 -t) = Li (6).
+
+QF (8) = QF (0) (D.1)
+
+for 0 € I.
+Assume first that @ € [1/6,1/3]. An elementary calculation shows that
+
+1+u4(0) € [-1, (v5 — 3)/2],
+1+u_(0) € [-(3 + V5)/2, -1] (D.2)
+
+for 0 € [1/6,1/3] and 1+ u4(@) = —1 if and only if @ € {1/6,1/3}. In particular,
+1+ u(9) is negative. We therefore get
+
+>0, 6 € {1/6,1/4],
+
+Im (Qi) = |L+ul7'sin(470) 4 =0, 6=1/4,
+<0, 6 €]1/4,1/3).

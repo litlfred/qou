@@ -6,7 +6,7 @@
 the dimension-not-polynomial obstruction the epic named at the start is **confirmed** as the exact
 barrier. No proof is claimed (anti-laundering).
 
-## Papers read (owner-uploaded to `uploads/`, commit `03fa2a5b`)
+## Papers read (owner-uploaded to `library/`, commit `03fa2a5b`)
 
 | paper | what it gives | closes the kernel? |
 |---|---|---|
@@ -53,4 +53,4 @@ independent machineries.
 
 - Phase 3 (β-ensemble reframing): [`2026-07-24-covariance-kernel-proof-epic-phase3.md`](2026-07-24-covariance-kernel-proof-epic-phase3.md)
 - Phase 2 / Phase 1: [`…-phase2.md`](2026-07-24-covariance-kernel-proof-epic-phase2.md) / [`…-phase1.md`](2026-07-18-covariance-kernel-proof-epic-phase1.md)
-- Papers: `uploads/{0305423v3,0304010v1,1402.4615v3,0411647v2,0006111v2,1704.02352v2,9608020v2}.pdf`
+- Papers: `library/{0305423v3,0304010v1,1402.4615v3,0411647v2,0006111v2,1704.02352v2,9608020v2}.pdf`

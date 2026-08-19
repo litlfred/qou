@@ -130,4 +130,4 @@ null and Volume (`g₂`) peaks.
 Refs: probe [`trefoil_coloring_pinned_bareven_probe.py`](../../computations/deltalambda/trefoil_coloring_pinned_bareven_probe.py);
 Lean [`TrefoilColoringBarEven.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/TrefoilColoringBarEven.lean);
 #4315 (`2026-07-26-octahedral-e2-coloring-quadratic-pinched-wall.md`); #4309, #4301; #4158 (`h²` gap);
-`uploads/2509.02354v2.pdf`.
+`library/arxiv-2509.02354v2/2509.02354v2.pdf`.

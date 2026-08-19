@@ -100,4 +100,4 @@ Refs: probe
 [`geometric_qdilog_lifted_amplitude_probe.py`](../../computations/deltalambda/geometric_qdilog_lifted_amplitude_probe.py);
 Lean [`PinchedOctahedronDegenerate.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/PinchedOctahedronDegenerate.lean);
 #4347 (frontier, bare `Li₂`); #4345 (shape `−h²` from rep); #4339 (`g₂_leading=1`);
-`uploads/2509.02354v2.pdf` eq (A.15), (A.17), §5.2.
+`library/arxiv-2509.02354v2/2509.02354v2.pdf` eq (A.15), (A.17), §5.2.

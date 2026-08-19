@@ -7,7 +7,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 
 CONTEXT. The GSWZ epsilon_m units (arXiv:2412.04241 eqn (16)) are the
 Chern-class map c_{zeta_m} of Calegari-Garoufalidis-Zagier
-(arXiv:1712.04887, uploads/1712.04887v3.pdf, their [10]). CGZ Theorem
+(arXiv:1712.04887, library/arxiv-1712.04887v3/1712.04887v3.pdf, their [10]). CGZ Theorem
 1.6 identifies c_zeta with the COMPUTABLE map R_zeta built from the
 cyclic quantum dilogarithm
 
@@ -206,7 +206,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "cgz_cyclic_qdilog_unit_probe",
     "beans": ["qou-9p9y"],
-    "source": "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21)/(33)/(34), §4.4, Theorem 7.4; uploads/1712.04887v3.pdf",
+    "source": "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21)/(33)/(34), §4.4, Theorem 7.4; library/arxiv-1712.04887v3/1712.04887v3.pdf",
     "checks": checks,
     "cases": detail,
     "scope": (

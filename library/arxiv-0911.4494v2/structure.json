@@ -1,0 +1,171 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0911.4494v2",
+ "source": {
+  "file": "0911.4494v2.pdf",
+  "sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
+  "bytes": 186337,
+  "pages": 14
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0911.4494",
+   "version": "2",
+   "primary_class": "math.AG",
+   "stamp_date": "8 Jul 2010"
+  },
+  "doi": null,
+  "title": "The geometry of Markov traces Ben Webster Geordie Williamson",
+  "authors_raw": "Department of Mathematics, Mathematical Institute",
+  "abstract": "We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn. This construction makes sense for all simple algebraic groups, s o we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of ot her types. We give a geometric expansion of this trace in terms of the irreducib le characters of the Hecke algebra, and conclude that it agrees with a trace deﬁned independently by Gomi. Based on our proof, we also prove that certain simple pervers e sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently , that the Hochschild homology of any Soerg el bimodule is free, as the authors had previously conjectured . This construction is closely tied to knot homology . This int erpretation of the Jones-Ocneanu trace is a more elementary manifestation of the geometric construction of HOMFLYPT homology given by the authors in [WW ].",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181104011748-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "The geometry of Markov traces",
+   "Ben Webster Geordie Williamson"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Hecke algebras",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Hecke algebras and geometry",
+   "page": 4,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A categorified trace",
+   "page": 5,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Character sheaves and character expansions",
+   "page": 9,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Character sheaves and Molien series",
+   "page": 11,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1969,
+   "n_words": 330
+  },
+  {
+   "id": "sec-001-2-hecke-algebras",
+   "number": "2",
+   "title": "Hecke algebras",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2836,
+   "n_words": 460
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3803,
+   "n_words": 733
+  },
+  {
+   "id": "sec-003-3-hecke-algebras-and-geometry",
+   "number": "3",
+   "title": "Hecke algebras and geometry",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 10675,
+   "n_words": 2022
+  },
+  {
+   "id": "sec-004-5-character-sheaves-and-character-expansions",
+   "number": "5",
+   "title": "Character sheaves and character expansions",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 6109,
+   "n_words": 1117
+  },
+  {
+   "id": "sec-005-6-character-sheaves-and-molien-series",
+   "number": "6",
+   "title": "Character sheaves and Molien series",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4076,
+   "n_words": 745
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 4285,
+   "n_words": 701
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 7,
+  "chars_total": 33753
+ }
+}

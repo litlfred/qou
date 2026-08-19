@@ -1,0 +1,70 @@
+OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES 15
+
+Proof. We can now prove equation (5.1). The lemma implies that
+Bri(a,q) = Ik,i(—a, 1,9).
+Hence
+kn2-+n(k-i+1) (1 /a) (1 _ genta)
+
+Biilag) = 2 5>(-1)nand
+
+(q)o0 (-aq)n-+1
+
+_ oo kn? +n(k-6+2) (_ J — g@rt)G-1)
+49) co qg a q
+sag! “ ze (1a (<1a)n( )
+
+n=0
+
+n=0
+
+(-aq)n41
+
+_ (=aq)oo Sore EE Man a + ag")
+(doo (—aq)n+41
+
+n=0
+
+Paya LEECH lO + agen NEY)
+nao (—aq)n+41
+(—aq)o0 y\ yn ng? tMk+1—-9) (_1/a)y
+= ao ~1)"q? —__ sn
+(Q)oo (A (—aq)n
+~ Sonar EN anit
+n=0 (—aq)n+41
+= (ag) eo Soy Can
+(qo \& (—aq)n
+=i kn? +n(k-i) (_
+nd (=1/a)-n
+4 —1)"qr-”
+a Caan
+_ (a9) ~ n ng m1) (~1/a)n
+= > (=1)"a" ——_—___—_
+Cn (—aq)n
+= Ex,i(a,q)
+
+Oo
+
+5.2. A combinatorial proof. This part is a generalization of is, Section 3]. We only give a sketch of
+the proof and details can be found in B5}. In this section we represent overpartitions by their multiplicity
+sequence (fo, fi, f2,-..). We include the multiplicity fo to simplify the definitions, although it is always
+equal to 0.
+We say that a sequence (fm,..., fm+c) is a multuple (tuple of multiplicity) if
+
+© fm+e > 0,
+
+e fm is not overlined, and
+
+© fm+p is overlined for 1 <p<é-1.
+
+The length of a multuple (fm,---, fm+e) is £ and its weight is i g(m +%)fm+i- We divide a multiplicity
+sequence of an overpartition into multuples going from the right to the left. When we find a positive multi-
+plicity, we close a parenthesis to its right. We look for the next non-overlined multiplicity to its left and open
+a parenthesis to the left of the multiplicity. The length of a multiplicity sequence is the sum of the length of
+its multuples. For partitions, the length is called the number of pairs of multiplicities (4. For example if
+the overpartition has for multiplicity sequence (0, 2,0,2, 1,1), then its multuples are ((0,2),0,(2,1,1)). The
+first multuple has length 1 and the second 2. Therefore the length is 3.
+
+We define a map F’ from multuples of weight n and length @ to multiplicity sequences of weight n — ¢ and
+length @. Given a multuple (fim,---, fm+e) then F(fm,---,fm+e) is computed with the following algorithm :
+
+if fm+e = 1, remove the overlining of fm4¢ and overline fim,

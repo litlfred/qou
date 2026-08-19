@@ -18,7 +18,7 @@ export default proposition({
     "prop:wedderburn-as-noncomm-fourier",
     "prop:plancherel-weight-boundedness",
   ],
-  cites: ["jones1985", "wenzl1988", "kassel1995", "halverson-1998-markov-weights"],
+  cites: ["jones1985", "wenzl1988", "kassel1995", "orellana1998"],
   computation: {
     engine: "python",
     script:

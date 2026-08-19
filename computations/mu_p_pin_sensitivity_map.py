@@ -31,7 +31,7 @@ derived_masses), so the map is exactly the chain that lands the masses.
 DISCIPLINE (AGENTS.md): no fit; nothing wired to production; this is a diagnostic
 map + honest scope-(a) assessment. The μ–p tension is NOT resolved here.
 
-# Ref: [thurston1979] The geometry and topology of three-manifolds  (Vol(4₁)=2Cl₂(π/3))
+# Ref: [thurston1978] The geometry and topology of three-manifolds  (Vol(4₁)=2Cl₂(π/3))
 # Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716  (Habiro ring / root rigidity)
 """
 from __future__ import annotations

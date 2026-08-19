@@ -13,7 +13,7 @@ Test whether the orbit-sum / distribution identity used by prop:cl3-zeta5-orbit-
 - Lemma 4 — q-deformed distribution relation: Li_2(x, q^n) = (1/n) sum_{y^n = x} Li_2(y, q), and similarly for Li_{1,1}.
   Use here: The q-analogue of exactly the classical distribution/multiplication identity sum_k Li_3(zeta_N^k) = (N^{1-3} - 1) zeta(3) that prop:cl3-zeta5-orbit-sum-identity and conj:bring-trilog-depth-3-witness rest on. Worth a compute-check: does the orbit-sum identity QOU uses survive in QOU's own q-normalisation, or only in Schlesinger's? A negative answer would be informative about the pre-/post-archimedean 'accident' classification in rem:transcendental-accounting.
 
-Source: `uploads/0111022v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0111022v1/0111022v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

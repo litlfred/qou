@@ -1,0 +1,57 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0903.2472v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "637cfd1d4d833c029b7c05ca0da874c71320e19c4c695425163beabb83d14f7d",
+  "file": "0903.2472v1.pdf"
+ },
+ "provenance": {
+  "title": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
+  "authors": "Tudor Dimofte,1 Sergei Gukov, 1,2 Jonatan Lenells, 3 and Don Zagier 4,5",
+  "arxiv": {
+   "id": "0903.2472",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "13 Mar 2009"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "conjecture": 2
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1",
+   "name": "Arithmeticity conjecture",
+   "statement": "As in (2.6), let M be a geodesically com-",
+   "section_file": "sections/sec-006-21-f-eynman-diagrams-and-arithmetic-tqft.md",
+   "section_title": "F eynman diagrams and arithmetic TQFT",
+   "pages": "10-15",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2",
+   "name": null,
+   "statement": "Every critical point of V corresponds to some branch \u03b1, and all \u03b1\u2044= abel",
+   "section_file": "sections/sec-042-0-u-v-p\u03b1uu-347.md",
+   "section_title": "(u) = V (p(\u03b1)(u),u ) (3.47)",
+   "pages": "40-42",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

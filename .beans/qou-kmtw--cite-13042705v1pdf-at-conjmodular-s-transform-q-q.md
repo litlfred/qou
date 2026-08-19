@@ -15,7 +15,7 @@ conj:modular-s-transform-q-q-tilde asserts modular continuation and a q<->q~ dua
 - Lemma 1.5(a), eq. (10) — F_{A,B}(q^{-1}, x) = F~_{A,B}(q, x) — inverting q exchanges the series with its modular partner.
   Use here: Directly relevant to the folio's bar-vs-S-transform bookkeeping: the D14 block argues that only q_0^{-1} ~ 0.901 lands in the upper half-plane, so the modular sector is intrinsically bar-symmetric. This lemma is the literature statement of that bar/modular exchange at the level of the q-series themselves.
 
-Source: `uploads/1304.2705v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1304.2705v1/1304.2705v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

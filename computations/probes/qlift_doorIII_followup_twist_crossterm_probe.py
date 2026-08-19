@@ -431,7 +431,7 @@ def main():
                 "(isoclinicity: no module map bridges C1 and GGM; NON-module "
                 "maps left as the only carve-out)",
             ],
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "hypotheses": {
                 "option1": "an m-dependent q^{alpha m} twist (fixed scalar alpha) "
                            "shifts the sub-leading LINEAR-in-m theta term while "

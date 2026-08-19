@@ -1,0 +1,99 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0111022v1",
+ "source": {
+  "file": "0111022v1.pdf",
+  "sha256": "fea7f118014838fe28843b30f7a8f6fb2b913d5198eb668c074eb541ca6ed6b7",
+  "bytes": 113932,
+  "pages": 11
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0111022",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "2 Nov 2001"
+  },
+  "doi": null,
+  "title": "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schrödinger Institute for Mathematical Physics Boltzmanngasse 9",
+  "authors_raw": "A-1090 Vienna, Austria",
+  "abstract": "We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformat ion usu- ally discussed in the literature. The merit of the deformati on as sug- gested, here, is that q-deformed multiple polylogarithms deﬁne an algebra, then (as in the undeformed case). For the special ca se of q- deformed multiple ζ-values, we show that there exists even a noncom- mutative and noncocommutative Hopf algebra structure whic h is a de- formation of the commutative Hopf algebra structure which o ne has in the classical case. Finally, we discuss the possible corres pondence be- tween q-deformed multiple polylogarithms and a noncommutative an d noncocommutative self-dual Hopf algebra recently introdu ced by the author as a quantum analog of the Grothendieck-Teichm¨ uller group. 1 Motivation In [CL] a family of noncommutative deformations S4,θ of the four dimen- sional sphere has been introduced from the instanton algebra. Co ncretely, the algebra of functions on S4,θ is given by the generators t,α,α ∗,β,β ∗ and relations αα ∗ = α ∗α, ββ ∗ =β ∗β 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220324153116-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0111022v1  [math.QA]  2 Nov 2001"
+  },
+  "title_prev": "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr¨ odinger Institute for Mathematical Physics Boltzmanngasse 9",
+  "title_lines": [
+   "Some remarks on q-deformed multiple",
+   "polylogarithms",
+   "Karl-Georg Schlesinger",
+   "Erwin Schrödinger Institute for Mathematical Physics",
+   "Boltzmanngasse 9"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Motivation",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 825,
+   "n_words": 128
+  },
+  {
+   "id": "sec-001-1-motivation",
+   "number": "1",
+   "title": "Motivation",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 10,
+   "n_chars": 13432,
+   "n_words": 2391
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1654,
+   "n_words": 232
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "sections": 3,
+  "chars_total": 15911
+ }
+}

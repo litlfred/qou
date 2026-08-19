@@ -1,0 +1,62 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "s0025-5718-07-02027-3",
+ "source_sha256": "080b5ac8542ff19c",
+ "brief": "MATHEMATICS OF COMPUTATION — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision.",
+ "extended": "**MATHEMATICS OF COMPUTATION**\n\n*Volume 77, Number 262, April 2008, Pages 1105–1134*\n\n30 pp, 8 sections.\n\n**Abstract.** We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision.\n\n**Outline.** 1 Introduction; 2 The p-adic polylogarithm; Acknowledgments; 4 Method of computation in the generic case; 6 Estimates; 7 The algorithm; 8 Concluding remarks; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.7: For any branch of the p-adic logarithm there exists a\n- Theorem 8.2: Suppose that z satisﬁes |z| = |z − 1| =1 a n db e l o n g st oaﬁ x e d\n- Proposition 2.10: (1) For m ≥ 1 and z in Cp with zm ⁄=1 ,\n- Proposition 4.1: Every residue disc other than U0 and U∞ is Uζ for a unique\n- Proposition 4.2: Suppose that ζ ⁄=1 is a (pf − 1)-th root of unity. Then\n- Proposition 4.2: implies that if we are able to compute Li(p)",
+ "tokens": {
+  "brief": 31,
+  "extended": 220
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-the-p-adic-polylogarithm",
+   "title": "The p-adic polylogarithm",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-003-4-method-of-computation-in-the-generic-case",
+   "title": "Method of computation in the generic case",
+   "pages": "6-11"
+  },
+  {
+   "id": "sec-004-6-estimates",
+   "title": "Estimates",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-005-7-the-algorithm",
+   "title": "The algorithm",
+   "pages": "14-24"
+  },
+  {
+   "id": "sec-006-8-concluding-remarks",
+   "title": "Concluding remarks",
+   "pages": "24-29"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "29-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

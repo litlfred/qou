@@ -45,4 +45,4 @@ and `UGB/BuchbergerPBW/ugb_pbw_corollary.lean`, "## Manuscript statement"
 sections -- or they will preserve the unqualified claim.
 
 This bean is the join target for the two `cite-in-block` actions on the ledger
-row for uploads/1502.06472v1.pdf.
+row for library/arxiv-1502.06472v1/1502.06472v1.pdf.

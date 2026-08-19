@@ -1,0 +1,41 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1210.6243v1",
+ "source_sha256": "3ff2f5358b25586e",
+ "brief": "Controlled double-slit electron diffraction — Double-slit diﬀraction is a corner stone of quantum mechanics.",
+ "extended": "**Controlled double-slit electron diffraction**\n\n*Roger Bach 1, Damian Pope 2, Sy-Hwang Liou 1 and*\n\n8 pp, 4 sections.\n\n**Abstract.** Double-slit diﬀraction is a corner stone of quantum mechanics. It illustrates key features of quantum mechanics: interference and the particle-wave duality of matter. In 1965, Richard Feynman presented a thought experiment to show these features. Here we demonstrate the full realization of his famous thought experiment. By placing a movable mask in front of a double-slit to cont rol the transmission through the individual slits, probability distributions fo r single- and double-slit arrangements were observed. Also, by recording single electron detection events diﬀracting through a double-slit, a diﬀraction pattern was b uilt up from individual events. PACS numbers: 03.65.-w, 03.75.-b, 41.75.Fr, 41.85.-p, 42.25.Fx\n\n**Outline.** 1 Introduction; 2 Experimental Setup; 3 Results; 4 Conclusion",
+ "tokens": {
+  "brief": 27,
+  "extended": 233
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-2-experimental-setup",
+   "title": "Experimental Setup",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-3-results",
+   "title": "Results",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-4-conclusion",
+   "title": "Conclusion",
+   "pages": "4-8"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

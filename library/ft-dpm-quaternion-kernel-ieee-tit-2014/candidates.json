@@ -1,0 +1,93 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "aa2f1eb73610a81b0c8ae9e25dec4824ade6661ae3598f907289d9161ecded35",
+  "file": "FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf"
+ },
+ "provenance": {
+  "title": "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces:",
+  "authors": "Existence and Uniqueness Conditions",
+  "arxiv": null,
+  "doi": "10.1109/TIT.2014.2333734"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "lemma": 1,
+   "theorem": 2,
+   "remark": 2
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "Let K = Kr +iK i + jK j +kK k be a quaternion",
+   "section_file": "sections/sec-000-c-quaternion-kernels.md",
+   "section_title": "Quaternion Kernels",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "Let K and \u2212\u2192K be arbitrary quaternion- and",
+   "section_file": "sections/sec-000-c-quaternion-kernels.md",
+   "section_title": "Quaternion Kernels",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "8",
+   "name": null,
+   "statement": "The vector-valued representation of a QRKHS",
+   "section_file": "sections/sec-000-c-quaternion-kernels.md",
+   "section_title": "Quaternion Kernels",
+   "pages": "5-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "gives the justi\ufb01cation for the design and imple-",
+   "section_file": "sections/sec-000-c-quaternion-kernels.md",
+   "section_title": "Quaternion Kernels",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "9",
+   "name": null,
+   "statement": "Note from Eqs. (10) and (11) that, owing to",
+   "section_file": "sections/sec-004-2-xt-we-arrive-at.md",
+   "section_title": "(x)]T we arrive at",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

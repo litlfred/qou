@@ -17,7 +17,7 @@ prop:q-plancherel-asymptotic-skeleton clause (2) cites feray2010 ('Stanley's for
 - §10 (free cumulants and Biane's theorem); §3-§4 (the p#_k basis and filtrations in A) — The proof is organised through the algebra of polynomial functions on Young diagrams, the elements p#_k, and free cumulants, connecting to Biane's asymptotic character theory.
   Use here: rem:non-commutative-probability-dictionary already frames the Hecke GNS data in free-probability terms; §10 gives the bridge between the Plancherel CLT and the free-cumulant language the corpus uses, so a q-deformed statement can be posed in the corpus's own coordinates.
 
-Source: `uploads/0304010v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0304010v1/0304010v1.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

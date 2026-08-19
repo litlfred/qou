@@ -1,0 +1,82 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1108.5286v3",
+ "source_sha256": "447d90883adce21e",
+ "brief": "Hochschild homology of affine Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not",
+ "extended": "**Hochschild homology of affine Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen**\n\n*Heyendaalseweg 135, 6525AJ Nijmegen, the Netherlands*\n\n39 pp, 12 sections.\n\n**Abstract.** Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity. We compute the Hochschild and the cyclic homology of H. It turns out that these are independent of q and that they admit an easy description in terms of the extended q uotient of a torus by a Weyl group, both of which are canonically associat ed to the root datum R. For positive q we also prove that the representations of the family of algeb ras H(R,q ǫ), ǫ∈ C come in families which depend analytically on ǫ. Analogous results are obtained for graded Hecke algebras an d for Schwartz completions of aﬃne Hecke algebras. Correction: in 2021 some problems with the construction of families of representations surfaced, these are discussed on pages 16, 18, 19 and 22.\n\n**Outline.** Introduction; 1 Preliminaries; 1.2 Graded Hecke algebras; 1.3 Parabolic subalgebras; 1.5 Schwartz algebras; 2 Analytic families of representations; 2.1 Positive parameters; 2.2 Complex parameters; 3 Hochschild homology; 3.1 Graded Hecke algebras; 3.3 Schwartz algebras; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2: (See Theorems 3.4, 3.6 and 3.8.)\n- Theorem 1.2: (First reduction theorem)\n- Theorem 1.3: (Second reduction theorem)\n- Theorem 1.5: The Fourier transform F induces an isomorphism of Fr´ echet alge-\n- Theorem 2.4: Suppose that kα ∈ R for all α ∈R. There exists a natural Q-linear\n- Theorem 2.6: Theorem 2.2 and Lemma 2.3 also hold for parameter functions qǫ",
+ "tokens": {
+  "brief": 48,
+  "extended": 421
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-1-preliminaries",
+   "title": "Preliminaries",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-002-12-graded-hecke-algebras",
+   "title": "Graded Hecke algebras",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-13-parabolic-subalgebras",
+   "title": "Parabolic subalgebras",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-004-15-schwartz-algebras",
+   "title": "Schwartz algebras",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-005-2-analytic-families-of-representations",
+   "title": "Analytic families of representations",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-006-21-positive-parameters",
+   "title": "Positive parameters",
+   "pages": "16-21"
+  },
+  {
+   "id": "sec-007-22-complex-parameters",
+   "title": "Complex parameters",
+   "pages": "21-24"
+  },
+  {
+   "id": "sec-008-3-hochschild-homology",
+   "title": "Hochschild homology",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-009-31-graded-hecke-algebras",
+   "title": "Graded Hecke algebras",
+   "pages": "24-32"
+  },
+  {
+   "id": "sec-010-33-schwartz-algebras",
+   "title": "Schwartz algebras",
+   "pages": "32-38"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "38-39"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

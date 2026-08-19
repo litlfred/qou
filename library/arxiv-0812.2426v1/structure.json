@@ -1,0 +1,793 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0812.2426v1",
+ "source": {
+  "file": "0812.2426v1.pdf",
+  "sha256": "df1eb953bc2c6c6362957715c74150736e41354b93e6d84166e669f4693ea198",
+  "bytes": 288612,
+  "pages": 19,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0812.2426",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "12 Dec 2008"
+  },
+  "doi": null,
+  "title": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS",
+  "authors_raw": "ALAIN BRUGUI \u00c8RES AND ALEXIS VIRELIZIER",
+  "title_lines": [
+   "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV",
+   "INVARIANTS"
+  ],
+  "abstract": "A theorem of M\u00a8 uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed \ufb01eld and the dimension of C is invertible. W e generalize this result to the case where k is an arbitrary commutative ring, without restriction on th e dimension of the category. Moreover we construct the analogue of the Resh etikhin-Turaev invariant associated to Z(C) and give an algorithm for computing this invari- ant in terms of certain explicit morphisms in the category C. Our approach is based on (a) Lyubashenko\u2019s construction of the Reshetikh in-Turaev invari- ant in terms of the coend of a ribbon category; (b) an explicit algorithm for computing this invariant via Hopf diagrams; (c) an algebrai c interpretation of the center of C as the category of modules over a certain Hopf monad Z on the category C; (d) a generalization of the classical notion of Drinfeld do uble to Hopf monads, which, applied to the Hopf monad Z, provides an explicit description of the coend of Z(C) in terms of the category C.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181108144656-05'00'",
+   "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
+   "Title": "arXiv:0812.2426v1  [math.QA]  12 Dec 2008"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Conventions and notations 3",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Quantum invariants and Hopf diagrams 5",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Hopf monads 11",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Quantum double of Hopf monads 14",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Reshetikhin-Turaev invariants from categorical centers 16",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Conventions and notations",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Sovereign categories. A sovereign category is a left autonomous category",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Braided categories. A braided category is a monoidal category endowed",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Ribbon categories. A twist on a braided category B is a natural isomor-",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Coends of autonomous categories. Let C be an autonomous category. If",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "Dimension of sovereign categories. Let C be a sovereign category which",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.7"
+  },
+  {
+   "level": 2,
+   "title": "F usion categories. A fusion category over a commutative ring k is a k-lin-",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.8"
+  },
+  {
+   "level": 1,
+   "title": "Quantum invariants and Hopf diagrams",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Constructing quantum invariants. Let B be a ribbon autonomous cate-",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Kirby elements and quantum invariants. As in the previous section, let B",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Hopf diagrams. For a precise treatment of the theory of Hopf diagrams, we",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Hopf monads",
+   "page": 11,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Monads. Let C be a category. Recall that the category End( C) of endofunc-",
+   "page": 11,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Modules over a monad. LetT be a monad on a category C. An action ofT",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The philosophy. Roughly speaking, a monad T on a monoidal category C is",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Bimonads. A bimonad 4 on a monoidal category C is a monad ( T,\u00b5,\u03b7 ) on C",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Hopf monads. A Hopf monad is a bimonad on an autonomous category",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "Quasitriangular Hopf monads. LetT be a Hopf monad on an autonomous",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.7"
+  },
+  {
+   "level": 2,
+   "title": "Ribbon Hopf monads. Let T be a quasitriangular Hopf monad T on an",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.8"
+  },
+  {
+   "level": 2,
+   "title": "Relations with modules. The notions of bimonads, Hopf monads, quasi-",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.9"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Quantum double of Hopf monads",
+   "page": 14,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The center of an monoidal category category . Let C be a braided cat-",
+   "page": 14,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The double of a Hopf monad. Let T be a Hopf monad on an autonomous",
+   "page": 14,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "The coend of a category of modules over a Hopf monad. Let T be a",
+   "page": 16,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Reshetikhin-Turaev invariants from categorical centers",
+   "page": 16,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "On the center of a fusion category. Fix a commutative ring k. Let C",
+   "page": 16,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The coend of the center of a fusion category . Let us describe the struc-",
+   "page": 17,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 2,
+   "title": "Computing RTZ(C)(M 3) from C. Let C be a spherical fusion category over",
+   "page": 18,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1-conventions-and-notations-3",
+   "number": "1",
+   "title": "Conventions and notations 3",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-2-quantum-invariants-and-hopf-diagrams-5",
+   "number": "2",
+   "title": "Quantum invariants and Hopf diagrams 5",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-3-hopf-monads-11",
+   "number": "3",
+   "title": "Hopf monads 11",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-4-quantum-double-of-hopf-monads-14",
+   "number": "4",
+   "title": "Quantum double of Hopf monads 14",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-5-reshetikhin-turaev-invariants-from-categorical",
+   "number": "5",
+   "title": "Reshetikhin-Turaev invariants from categorical centers 16",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1176,
+   "n_words": 184
+  },
+  {
+   "id": "sec-006-2-a-brugui-eres-and-a-virelizier",
+   "number": "2",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 6209,
+   "n_words": 1108
+  },
+  {
+   "id": "sec-007-1-conventions-and-notations",
+   "number": "1",
+   "title": "Conventions and notations",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 662,
+   "n_words": 142
+  },
+  {
+   "id": "sec-008-4-a-brugui-eres-and-a-virelizier",
+   "number": "4",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 357,
+   "n_words": 77
+  },
+  {
+   "id": "sec-009-12-sovereign-categories-a-sovereign-category-is",
+   "number": "1.2",
+   "title": "Sovereign categories. A sovereign category is a left autonomous category",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 514,
+   "n_words": 110
+  },
+  {
+   "id": "sec-010-13-braided-categories-a-braided-category-is-a-mo",
+   "number": "1.3",
+   "title": "Braided categories. A braided category is a monoidal category endowed",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 154,
+   "n_words": 34
+  },
+  {
+   "id": "sec-011-14-ribbon-categories-a-twist-on-a-braided-catego",
+   "number": "1.4",
+   "title": "Ribbon categories. A twist on a braided category B is a natural isomor-",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1032,
+   "n_words": 213
+  },
+  {
+   "id": "sec-012-16-coends-of-autonomous-categories-let-c-be-an-a",
+   "number": "1.6",
+   "title": "Coends of autonomous categories. Let C be an autonomous category. If",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 473,
+   "n_words": 101
+  },
+  {
+   "id": "sec-013-17-dimension-of-sovereign-categories-let-c-be-a",
+   "number": "1.7",
+   "title": "Dimension of sovereign categories. Let C be a sovereign category which",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 348,
+   "n_words": 64
+  },
+  {
+   "id": "sec-014-18-f-usion-categories-a-fusion-category-over-a-c",
+   "number": "1.8",
+   "title": "F usion categories. A fusion category over a commutative ring k is a k-lin-",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1601,
+   "n_words": 341
+  },
+  {
+   "id": "sec-015-2-quantum-invariants-and-hopf-diagrams",
+   "number": "2",
+   "title": "Quantum invariants and Hopf diagrams",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 153,
+   "n_words": 25
+  },
+  {
+   "id": "sec-016-21-constructing-quantum-invariants-let-b-be-a-ri",
+   "number": "2.1",
+   "title": "Constructing quantum invariants. Let B be a ribbon autonomous cate-",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 250,
+   "n_words": 49
+  },
+  {
+   "id": "sec-017-6-a-brugui-eres-and-a-virelizier",
+   "number": "6",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1397,
+   "n_words": 294
+  },
+  {
+   "id": "sec-018-22-kirby-elements-and-quantum-invariants-as-in-t",
+   "number": "2.2",
+   "title": "Kirby elements and quantum invariants. As in the previous section, let B",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3715,
+   "n_words": 744
+  },
+  {
+   "id": "sec-019-8-a-brugui-eres-and-a-virelizier",
+   "number": "8",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 325,
+   "n_words": 84
+  },
+  {
+   "id": "sec-020-23-hopf-diagrams-for-a-precise-treatment-of-the",
+   "number": "2.3",
+   "title": "Hopf diagrams. For a precise treatment of the theory of Hopf diagrams, we",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2769,
+   "n_words": 527
+  },
+  {
+   "id": "sec-021-10-a-brugui-eres-and-a-virelizier",
+   "number": "10",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3660,
+   "n_words": 752
+  },
+  {
+   "id": "sec-022-3-hopf-monads",
+   "number": "3",
+   "title": "Hopf monads",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 104,
+   "n_words": 18
+  },
+  {
+   "id": "sec-023-31-monads-let-c-be-a-category-recall-that-the-ca",
+   "number": "3.1",
+   "title": "Monads. Let C be a category. Recall that the category End( C) of endofunc-",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 374,
+   "n_words": 87
+  },
+  {
+   "id": "sec-024-12-a-brugui-eres-and-a-virelizier",
+   "number": "12",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-025-32-modules-over-a-monad-lett-be-a-monad-on-a-cat",
+   "number": "3.2",
+   "title": "Modules over a monad. LetT be a monad on a category C. An action ofT",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 509,
+   "n_words": 125
+  },
+  {
+   "id": "sec-026-33-the-philosophy-roughly-speaking-a-monad-t-on",
+   "number": "3.3",
+   "title": "The philosophy. Roughly speaking, a monad T on a monoidal category C is",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 548,
+   "n_words": 103
+  },
+  {
+   "id": "sec-027-34-bimonads-a-bimonad-4-on-a-monoidal-category-c",
+   "number": "3.4",
+   "title": "Bimonads. A bimonad 4 on a monoidal category C is a monad ( T,\u00b5,\u03b7 ) on C",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1972,
+   "n_words": 399
+  },
+  {
+   "id": "sec-028-36-hopf-monads-a-hopf-monad-is-a-bimonad-on-an-a",
+   "number": "3.6",
+   "title": "Hopf monads. A Hopf monad is a bimonad on an autonomous category",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 599,
+   "n_words": 108
+  },
+  {
+   "id": "sec-029-37-quasitriangular-hopf-monads-lett-be-a-hopf-mo",
+   "number": "3.7",
+   "title": "Quasitriangular Hopf monads. LetT be a Hopf monad on an autonomous",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 545,
+   "n_words": 110
+  },
+  {
+   "id": "sec-030-38-ribbon-hopf-monads-let-t-be-a-quasitriangular",
+   "number": "3.8",
+   "title": "Ribbon Hopf monads. Let T be a quasitriangular Hopf monad T on an",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 715,
+   "n_words": 136
+  },
+  {
+   "id": "sec-031-39-relations-with-modules-the-notions-of-bimonad",
+   "number": "3.9",
+   "title": "Relations with modules. The notions of bimonads, Hopf monads, quasi-",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 611,
+   "n_words": 122
+  },
+  {
+   "id": "sec-032-14-a-brugui-eres-and-a-virelizier",
+   "number": "14",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1306,
+   "n_words": 294
+  },
+  {
+   "id": "sec-033-4-quantum-double-of-hopf-monads",
+   "number": "4",
+   "title": "Quantum double of Hopf monads",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 147,
+   "n_words": 26
+  },
+  {
+   "id": "sec-034-41-the-center-of-an-monoidal-category-category-l",
+   "number": "4.1",
+   "title": "The center of an monoidal category category . Let C be a braided cat-",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 702,
+   "n_words": 167
+  },
+  {
+   "id": "sec-035-42-the-double-of-a-hopf-monad-let-t-be-a-hopf-mo",
+   "number": "4.2",
+   "title": "The double of a Hopf monad. Let T be a Hopf monad on an autonomous",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3467,
+   "n_words": 697
+  },
+  {
+   "id": "sec-036-16-a-brugui-eres-and-a-virelizier",
+   "number": "16",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 271,
+   "n_words": 52
+  },
+  {
+   "id": "sec-037-43-the-coend-of-a-category-of-modules-over-a-hop",
+   "number": "4.3",
+   "title": "The coend of a category of modules over a Hopf monad. Let T be a",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1125,
+   "n_words": 237
+  },
+  {
+   "id": "sec-038-5-reshetikhin-turaev-invariants-from-categorical",
+   "number": "5",
+   "title": "Reshetikhin-Turaev invariants from categorical centers",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 217,
+   "n_words": 37
+  },
+  {
+   "id": "sec-039-51-on-the-center-of-a-fusion-category-fix-a-comm",
+   "number": "5.1",
+   "title": "On the center of a fusion category. Fix a commutative ring k. Let C",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2553,
+   "n_words": 576
+  },
+  {
+   "id": "sec-040-52-the-coend-of-the-center-of-a-fusion-category",
+   "number": "5.2",
+   "title": "The coend of the center of a fusion category . Let us describe the struc-",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1345,
+   "n_words": 274
+  },
+  {
+   "id": "sec-041-18-a-brugui-eres-and-a-virelizier",
+   "number": "18",
+   "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 3066,
+   "n_words": 805
+  },
+  {
+   "id": "sec-042-53-computing-rtzcm-3-from-c-let-c-be-a-spherical",
+   "number": "5.3",
+   "title": "Computing RTZ(C)(M 3) from C. Let C be a spherical fusion category over",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1155,
+   "n_words": 214
+  },
+  {
+   "id": "sec-043-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2715,
+   "n_words": 426
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 44,
+  "sections": 44,
+  "chars_total": 48841
+ }
+}

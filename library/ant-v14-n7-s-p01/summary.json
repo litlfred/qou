@@ -1,0 +1,86 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ant-v14-n7-s-p01",
+ "source_sha256": "976199bfca4ac086",
+ "brief": "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction",
+ "extended": "**p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction to Q of its associated Galois representation. When 9 is ordinary at p we construct a**\n\n42 pp, 13 sections.\n\n**Outline.** 1 Introduction; 2 Preliminaries and notation; 3 Siegel units and weight 2 Asai–Eisenstein el; 1 (YQ,1(m2N), Z), H2(YF,1(m2n), Z)∼= HBM; 1 (YF,1(m2n), Z), (3-3); 2 (YQ,1(m2N), Z) and HBM; 3 (Y∗; 4 Proving the norm relations (Theorem 3.13); 5 Asai–Eisenstein elements in higher weights; 6 The p-adic Asai L-function; 7 Interpolation of critical L-values; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For any integer c> 1 coprime to 6n, there exists a p-adic measure\n- Theorem 2.9: Let9 be a Bianchi modular form of weight(k, k) and level U. Then there is a Fourier–\n- Theorem 2.18: There is a canonical, Hecke-equivariant injection\n- Theorem 3.13: Let r> 1, let a be a generator of OF/(pOF+ Z), and let\n- Theorem 3.13: is directly analogous to the norm-compatibility relations for Euler systems constructed\n- Theorem 3.3.1: ]. Note that these symmetric spaces are not connected for m> 2, but haveφ(m) connected",
+ "tokens": {
+  "brief": 49,
+  "extended": 320
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-preliminaries-and-notation",
+   "title": "Preliminaries and notation",
+   "pages": "4-14"
+  },
+  {
+   "id": "sec-002-3-siegel-units-and-weight-2-asaieisenstein-eleme",
+   "title": "Siegel units and weight 2 Asai–Eisenstein elements",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-003-1-yq1m2n-z-h2yf1m2n-z-hbm",
+   "title": "(YQ,1(m2N), Z), H2(YF,1(m2n), Z)∼= HBM",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-004-1-yf1m2n-z-3-3",
+   "title": "(YF,1(m2n), Z), (3-3)",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-005-2-yq1m2n-z-and-hbm",
+   "title": "(YQ,1(m2N), Z) and HBM",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-006-3-y",
+   "title": "(Y∗",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-007-4-proving-the-norm-relations-theorem-313",
+   "title": "Proving the norm relations (Theorem 3.13)",
+   "pages": "19-24"
+  },
+  {
+   "id": "sec-008-5-asaieisenstein-elements-in-higher-weights",
+   "title": "Asai–Eisenstein elements in higher weights",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-009-6-the-p-adic-asai-l-function",
+   "title": "The p-adic Asai L-function",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-010-7-interpolation-of-critical-l-values",
+   "title": "Interpolation of critical L-values",
+   "pages": "30-41"
+  },
+  {
+   "id": "sec-011-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "41-42"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

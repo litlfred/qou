@@ -10,11 +10,11 @@ with the universal constant `k = 2^(-1/2)` described as CALIBRATED on `4_1`, and
 `docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md` narrowing the
 open part to "whether c_sigma depends on tau ALONE".
 
-Both are answered by a paper that has been sitting in `uploads/` uncited.
+Both are answered by a paper that has been sitting in `library/` uncited.
 
 WHAT DGLZ SAY. Dimofte-Gukov-Lenells-Zagier, "Exact Results for Perturbative
 Chern-Simons Theory with Complex Gauge Group" (arXiv:0903.2472,
-`uploads/0903.2472v1.pdf`), write the perturbative partition function as
+`library/arxiv-0903.2472v1/0903.2472v1.pdf`), write the perturbative partition function as
 
     Z^(rho)(M; hbar) = exp( S_0/hbar - (1/2) delta log hbar
                             + sum_{n>=0} S_{n+1} hbar^n )        (2.1)
@@ -255,7 +255,7 @@ def main() -> int:
     wb.set_description(
         "Identifies the SHAPE of the corpus's 1-loop prefactor with Dimofte-"
         "Gukov-Lenells-Zagier eq (2.3) (arXiv:0903.2472, "
-        "uploads/0903.2472v1.pdf), S_1 = (1/2) log(T/2). The dependence "
+        "library/arxiv-0903.2472v1/0903.2472v1.pdf), S_1 = (1/2) log(T/2). The dependence "
         "c_sigma ~ (torsion)^(-1/2) is theirs and holds for a general M with a "
         "flat G_C bundle, unrestricted by cusp number. The CONSTANT is NOT: "
         "DGLZ carry a /2 in (2.3), a +log 2 in (4.5) between S_1 and the "
@@ -270,7 +270,7 @@ def main() -> int:
         "was never a fit. Nothing fitted; nothing wired.")
     wb.set_audit_only("docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md")
     wb.add_data("dglz_source", {
-        "file": "uploads/0903.2472v1.pdf",
+        "file": "library/arxiv-0903.2472v1/0903.2472v1.pdf",
         "arxiv": "0903.2472",
         "title": ("Exact Results for Perturbative Chern-Simons Theory with "
                   "Complex Gauge Group"),

@@ -25,7 +25,7 @@ state-sum tensor network:
 **Concrete next step:** obtain the Whitehead colored-Jones CYCLOTOMIC
 (Habiro) formula from the literature (candidate: Habiro / Garoufalidis-Le
 q-holonomic, arXiv math/0309214, bean qou-j1ld; or a 2-bridge / double-twist
-formula — Lovejoy-Osburn 1710.04865 is in uploads/), transcribe with citation,
+formula — Lovejoy-Osburn 1710.04865 is in library/), transcribe with citation,
 and VALIDATE it against whitehead_state_sum's EXACT ⟨W⟩_N at N=3..23 before
 trusting it (anti-guessing). Then evaluate at the Kashaev point q=e^{2πi/N},
 n=N → the {N}²/{N}² cancellations give the positive terms (à la

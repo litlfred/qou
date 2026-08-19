@@ -1,0 +1,65 @@
+and
+
+V (C2, W2) = 1.340917487 + 1.284485301V—1
+
+by MAPLE V.
+
+So there are three optimistic limits (up to 10 digits); Vj := 13.76750570, Vo :=
+1.340917487 + 1.284485301,/—1, and Vj. By using SnapPea [12], we calculate
+Vol( Me) = 1.2844853 and cs(Ms) = 0.0679316734799 and so we can write
+
+Vo = CS(Me) + Vol(Me)V—1.
+
+since 0.0679316734799 x 2m? = 1.34091748750.... Here Vol(M) and cs(M) are the
+volume and the Chern-Simons invariant [1] of a closed hyperbolic three-manifold
+M respectively, and CS(M) := 2m? cs(M).
+
+4.2. 5,7,8,9, 10-surgeries along the figure-eight knot. Similar calculations us-
+ing MAPLE V for p = 5,7,8,9,10 give the following. Note that Mp is also hyper-
+bolic in this case.
+
+Observation 4.2. For p = 5,6,7,8,9,10 there is an optimistic limit V(G,wp) of
+2nvV/—1log ty (Mp)
+
+N such that
+
+V (Cp: wp) = CS(Mp) + Vol(Mp)V—1
+up to several digits. Here
+
+V(z,w) = — Lig(zw) + Lio(z/w) + i (log z)” — log z log w
+
+’
+
+y
+
+and
+(¢5,ws) = (0.1979823656 — 0.4438341209\/—1, 0.007552359501 — 0.5131157955/—1),
+(Cs,w6) = (0.3679390314 — 0.4972675889\/—1, 0.1027847152 — 0.6654569513V/—1)
+(Cr,w7) = (0.4855046904 — 0.5042960525/—1, 0.1761405059 — 0.7455559248/—1)
+(Cs,ws) = (0.5730134132 — 0.4940983127./—1, 0.2327856161 — 0.7925519927/—1),
+(C9, wo) = (0.6404276706 — 0.4765868179\/—1, 0.2769632324 — 0.8216401587V/—1),
+
+(C10, 10) = (0.6935298015 — 0.4561607978V—1, 0.3118108269 —0.8402398912/—1).
+
+Remark 4.3. For p= 4n+2 with n = 1,2,...,100, we can observe the same result.
+See Figures 1 and 2 for (¢p, wp).
+
+4.3. 1,2,3-surgeries along the figure-eight knot. Next we consider the case
+where p = 1,2 and 3. Note that the manifold M, for p = 1,2,3 is a Seifert fibered
+space. See [4, p. 95] for details, which was informed by K. Ichihara.
+
+In this case, the (simplicial) volume of M, is zero but SnapPea tells us that
+it has the non-trivial Chern-Simons invariant. MAPLE V shows that the same
+observation as Observation 4.2 holds with
+
+(C1,w1) = (0.3738178762, 0.8019377355),
+(Co, w2) = (0.346014339 , 0.6180339884),
+(Cs, 3) = (0.2819716801, 0.4142135623).
+
+4.4. 0-surgery of the figure-eight knot. In this case Mo is a torus bundle
+over a circle. For a detail see [4, p. 95] again. Both the volume and the Chern—
+Simons invariant vanish in this case and Observation 4.2 holds putting (¢o,wo) =
+
+(0.381966011, 1).
+
+75

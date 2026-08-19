@@ -1,0 +1,47 @@
+Griffiths’ transversality now says that the derivative, a, is in F?H?. It clearly
+depends only on first-order data, i.e. on the tangent vector to M along
+(X1, 8,) at t = 0. This produces the map
+
+Tyx,3)M = F?HP(X, C)
+
+with the desired properties.
+
+Step IJ. We want a non-degenerate 2-form o on TF making 7 Lagrangian.
+By Theorem 1, this is equivalent to finding a_cubic_€ on TM satisfying
+|é = dp oi, where f is the period map for X : XY — M and i is the inverse
+of (5). Since p factors through the period map p for x: ¥ > M,, it is
+reasonable to look for a cubic c in p*Sym?T*M Cc Sym3T*M, satisfying
+|c=dpoi. But this is precisely where the Yukawa cubic of our CY family
+(also known as the Bryant-Griffiths cubic, cf. [BG]) lives. Abstractly, this is
+cup product, followed by a “rescaling” by the gauge squared, and integration,
+
+c: Sym® (Tx) @P (MT) = (ux!) & (wx) 4.
+Hodge theoretically, this is the third iterate of the derivative of the period
+map (or of the infinitesimal variation of Hodge structure):
+
+By, 0 By 0 Bz: Sym? H'(Tx) x H®° 3 H°8,
+
+where the 1-dimensional spaces H*° and H°? ~ (H*°)* are trivialized by
+means of s. The equality |c = dp oi follows immediately from this interpre-
+tation, cf. [CGGH].
+
+Step III. We still need to check that the 2-form we constructed is closed.
+
+We could construct an affine structure on M and use Theorem 2. Instead, we
+verify the closedness directly, and obtain the affine structure as corollary. We
+do this by checking that the standard symplectic form on T*M is invariant
+under translation by the image of \ : H3(¥/M,Z) — (F?H3)*, hence it
+descends to a symplectic form on ZT.
+
+Since the question is local on M, we may assume that the bundle of
+lattices R?y,Z on M is trivial. Let Xo be the CY fiber over a base point
+0€M. The choice of yo € H3(Xo, Z) determines a family y = (Y)tem, Ve €
+H3(X;,Z), and these are taken by \ to F?H°(X;,,C)*. By the identification
+i of (5), we end up with a section
+
+[« T(M,T"M).
+
+We need to show that (the image of) this section is Lagrangian, with respect
+to the standard symplectic form on T*M. Equivalently, we need to show
+
+12

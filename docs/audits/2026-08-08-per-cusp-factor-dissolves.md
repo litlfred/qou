@@ -212,7 +212,7 @@ The weakest point of the law above was that `k = 2^{−1/2}` is calibrated at
 corpus's own extraction. That is now fixed.
 
 Ohtsuki's asymptotic expansion of the Kashaev invariant of `5_2`
-(`uploads/ki52.pdf`, Theorem 1.1) is a **rigorous theorem**, not a fit:
+(`library/ki52/ki52.pdf`, Theorem 1.1) is a **rigorous theorem**, not a fit:
 
 ```
 <5_2>_N = e^{N ζ} N^{3/2} ω (1 + Σ κ_i (2πi/N)^i + O(N^{-d-1}))

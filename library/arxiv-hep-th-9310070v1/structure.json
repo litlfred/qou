@@ -1,0 +1,129 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9310070v1",
+ "source": {
+  "file": "9310070v1.pdf",
+  "sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
+  "bytes": 88534,
+  "pages": 9
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9310070",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "13 Oct 1993"
+  },
+  "doi": null,
+  "title": "September, 1993 Quantum Dilogarithm",
+  "authors_raw": "L.D. Faddeev1,2,†, R.M. Kashaev 1,∗,†",
+  "abstract": "A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity. The case where the quantum identity is realized in ﬁnite dimensional space is also considered and the quantum dilogarithm is constructed as a function on Ferm at curve, while the identity itself is equivalent to the restricted star-triangle relat ion introduced by Bazhanov and Baxter. † Supported by the Russian Academy of Sciences and Academy of F inland ∗ On leave of absence from St. Petersburg Nuclear Physics Inst itute, Gatchina, St. Petersburg 188350, Russia",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126154153-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-th/9310070v1  13 Oct 1993"
+  },
+  "title_lines": [
+   "September, 1993",
+   "Quantum Dilogarithm"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Quantized Rogers’ Identity",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Quantum Dilogarithm at θN = 1",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 629,
+   "n_words": 100
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2683,
+   "n_words": 513
+  },
+  {
+   "id": "sec-002-2-quantized-rogers-identity",
+   "number": "2",
+   "title": "Quantized Rogers’ Identity",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 2866,
+   "n_words": 609
+  },
+  {
+   "id": "sec-003-3-quantum-dilogarithm-at-θn-1",
+   "number": "3",
+   "title": "Quantum Dilogarithm at θN = 1",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5961,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1881,
+   "n_words": 329
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 14020
+ }
+}

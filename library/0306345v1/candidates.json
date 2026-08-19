@@ -1,0 +1,185 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "0306345v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "936aa08026b2683b8889419e9f7364d18ed2f194804d6d99710a26b62bbd9503",
+  "file": "0306345v1.pdf"
+ },
+ "provenance": {
+  "title": "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "theorem": 4,
+   "remark": 6,
+   "proposition": 1,
+   "example": 1
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.5",
+   "name": null,
+   "statement": "is equivalent to Habiro\u2019s one from [H3]. (The res ults of Section 2",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.2",
+   "name": null,
+   "statement": "The skein element \u03c9 = \u03c9 + is related to, but di\ufb00erent from, the",
+   "section_file": "sections/sec-001-1-habiros-formula-for-\u03c9.md",
+   "section_title": "Habiro\u2019s formula for \u03c9",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.1",
+   "name": null,
+   "statement": "The polynomials Sn satisfy a four-term recursion formula",
+   "section_file": "sections/sec-002-2-a-proof-using-orthogonal-polynomials.md",
+   "section_title": "A proof using orthogonal polynomials",
+   "pages": "5-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.3",
+   "name": null,
+   "statement": "Although it might be hard to guess formula (22), once one know s",
+   "section_file": "sections/sec-002-2-a-proof-using-orthogonal-polynomials.md",
+   "section_title": "A proof using orthogonal polynomials",
+   "pages": "5-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2",
+   "name": null,
+   "statement": "The coe\ufb03cients cn,p of \u03c9 p in (23) are given by",
+   "section_file": "sections/sec-003-3-graphical-calculus-and-a-formula-for-\u03c9-p.md",
+   "section_title": "Graphical calculus and a formula for \u03c9 p",
+   "pages": "9-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.2",
+   "name": null,
+   "statement": "The coe\ufb03cient Cn,n was computed by a di\ufb00erent method in",
+   "section_file": "sections/sec-004-4-another-formula-for-the-coe\ufb03cients-of-\u03c9-p.md",
+   "section_title": "Another formula for the coe\ufb03cients of \u03c9 p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.4",
+   "name": null,
+   "statement": "In the case p = 1, we have",
+   "section_file": "sections/sec-004-4-another-formula-for-the-coe\ufb03cients-of-\u03c9-p.md",
+   "section_title": "Another formula for the coe\ufb03cients of \u03c9 p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.5",
+   "name": "Habiro [H3]",
+   "statement": "For p \u2265 1, the coe\ufb03cients c\u2032",
+   "section_file": "sections/sec-004-4-another-formula-for-the-coe\ufb03cients-of-\u03c9-p.md",
+   "section_title": "Another formula for the coe\ufb03cients of \u03c9 p",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.7",
+   "name": null,
+   "statement": "In [H3], Habiro has obtained a similar formula using the quan tum",
+   "section_file": "sections/sec-004-4-another-formula-for-the-coe\ufb03cients-of-\u03c9-p.md",
+   "section_title": "Another formula for the coe\ufb03cients of \u03c9 p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Assume p = 2. We may write k = (k, n \u2212 k). Then",
+   "section_file": "sections/sec-004-4-another-formula-for-the-coe\ufb03cients-of-\u03c9-p.md",
+   "section_title": "Another formula for the coe\ufb03cients of \u03c9 p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": null,
+   "statement": "The colored Jones polynomial of the twist knot Kp is given by",
+   "section_file": "sections/sec-005-5-the-colored-jones-polynomial-of-twist-knots.md",
+   "section_title": "The colored Jones polynomial of twist knots",
+   "pages": "17-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "5.2",
+   "name": null,
+   "statement": "Here is another expression for J \u2032",
+   "section_file": "sections/sec-005-5-the-colored-jones-polynomial-of-twist-knots.md",
+   "section_title": "The colored Jones polynomial of twist knots",
+   "pages": "17-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -1,0 +1,1299 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0903.2472v1",
+ "source": {
+  "file": "0903.2472v1.pdf",
+  "sha256": "637cfd1d4d833c029b7c05ca0da874c71320e19c4c695425163beabb83d14f7d",
+  "bytes": 808783,
+  "pages": 61
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0903.2472",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "13 Mar 2009"
+  },
+  "doi": null,
+  "title": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group",
+  "authors_raw": "Tudor Dimofte,1 Sergei Gukov, 1,2 Jonatan Lenells, 3 and Don Zagier 4,5",
+  "abstract": "We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with comple x gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreduc ible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invarian ts, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introd uce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) thatSL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180530134935-04'00'",
+   "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
+   "Title": "arXiv:0903.2472v1  [hep-th]  13 Mar 2009"
+  },
+  "title_lines": [
+   "Exact Results for Perturbative Chern-Simons Theory",
+   "with Complex Gauge Group"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "California Institute of Technology, Pasadena, CA 91125, US A",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Department of Physics and Department of Mathematics,",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Centre for Mathematical Sciences, Wilberforce Road,",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53 111 Bonn, Germany",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Coll` ege de France, 3 rue d’Ulm, F-75005 Paris, France",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Perturbation theory around a non-trivial ﬂat connection",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "F eynman diagrams and arithmetic TQFT",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantization of Mﬂat (GC, Σ)",
+   "page": 15,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Analytic continuation",
+   "page": 18,
+   "source": "inferred",
+   "number": "2.2.1"
+  },
+  {
+   "level": 1,
+   "title": "(M ;u)",
+   "page": 19,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "A hierarchy of diﬀerential equations",
+   "page": 20,
+   "source": "inferred",
+   "number": "2.2.2"
+  },
+  {
+   "level": 1,
+   "title": "(u +jℏ)− 1",
+   "page": 20,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "S′′′",
+   "page": 21,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "S′′",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(u) = const +",
+   "page": 22,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u)− const =",
+   "page": 22,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u), and it never aﬀects the higher-order terms S(α)",
+   "page": 22,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = i",
+   "page": 23,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "Classical and quantum symmetries",
+   "page": 23,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "A ∧ A ∧ A",
+   "page": 23,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(u) = S(α)",
+   "page": 24,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) (mod 2 πu). (2.58)",
+   "page": 24,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u). Note that in the",
+   "page": 25,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) =−S(α)",
+   "page": 25,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) (mod 2 πu), (2.66)",
+   "page": 25,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Vol (M ;u) behavior of the geometric and conjugate branches",
+   "page": 25,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Brane quantization",
+   "page": 25,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "A state integral model for perturbative SL(2,C) Chern-Simons theory",
+   "page": 27,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Ideal triangulations of hyperbolic 3-manifolds",
+   "page": 27,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "(Log(z) +πiq)(Log(1−z) +πir) + π2qr",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Hikami’s invariant",
+   "page": 32,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Quantum dilogarithm",
+   "page": 34,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotic formula (3.18) can be reﬁned to the asymptoti c expansion",
+   "page": 35,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The function (x;q)∞ and its reciprocal have the Taylor expansions",
+   "page": 35,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The function Φ( z;τ ) deﬁned (initially for Re ( τ ) > 0 and |Re (z)| < 1",
+   "page": 36,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Re (τ ))",
+   "page": 36,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The functional equations (3.33) show that",
+   "page": 37,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "From (3.30) we also ﬁnd the Taylor expansion of I(z;τ ) at z = 0,",
+   "page": 37,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The quantum dilogarithm is related via the Jacobi triple pro duct formula to the Jacobi",
+   "page": 38,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "A state integral model for Z (ρ)(M ; ℏ)",
+   "page": 39,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "(u) = V (p(geom)(u),u ). (3.45)",
+   "page": 39,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) and matrix elements (3.13)-",
+   "page": 39,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = V (p(α)(u),u ) (3.47)",
+   "page": 40,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u)− 1",
+   "page": 42,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Examples and computations",
+   "page": 43,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Numerical veriﬁcation of the arithmeticity conjecture",
+   "page": 44,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "(0) = s1 + 1",
+   "page": 45,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Perturbative SL(2, C) invariants for the ﬁgure-8 knot complement",
+   "page": 48,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Re (z)≤ Im (z), Im (z)≤ 1√",
+   "page": 49,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(1− Re (z))}",
+   "page": 49,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Re (z)≤ Im (z)≤ 1√",
+   "page": 49,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Re (z)} (4.22)",
+   "page": 49,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(Vol (M ; 0) +iCS(M ; 0)) +",
+   "page": 50,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(Vol (M ;u) +iCS(M ;u)) +vgeom(u)Re (u) +iπu, (4.33)",
+   "page": 50,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Quantization",
+   "page": 51,
+   "source": "inferred",
+   "number": "4.2.1"
+  },
+  {
+   "level": 1,
+   "title": "Vol (41; 0) +",
+   "page": 52,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(0) = i",
+   "page": 52,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(Vol (41; 0) +iCS(41; 0)) =",
+   "page": 52,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(u) into the hierarchy of equations, the rest are readily",
+   "page": 52,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) in the perturbative Chern-Simons par-",
+   "page": 53,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(u) =−i",
+   "page": 54,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = −S(geom)",
+   "page": 54,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u). As for the geometric branch, this is then substituted",
+   "page": 54,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) =",
+   "page": 54,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(0) = 0. From the hierarchy of diﬀerential",
+   "page": 54,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = log m(m2− 1)",
+   "page": 54,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(u) = 0",
+   "page": 54,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(u) = 4(m2− 1)2",
+   "page": 54,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(u) = 0",
+   "page": 54,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(u) = 4(m2− 1)2",
+   "page": 54,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "State integral model",
+   "page": 55,
+   "source": "inferred",
+   "number": "4.2.2"
+  },
+  {
+   "level": 1,
+   "title": "(u) = V (α)(u), (4.57)",
+   "page": 57,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) =− 1",
+   "page": 57,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 58,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 58,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-california-institute-of-technology-pasadena-ca",
+   "number": "1",
+   "title": "California Institute of Technology, Pasadena, CA 91125, US A",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-2-department-of-physics-and-department-of-mathem",
+   "number": "2",
+   "title": "Department of Physics and Department of Mathematics,",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 54,
+   "n_words": 8
+  },
+  {
+   "id": "sec-002-3-centre-for-mathematical-sciences-wilberforce-r",
+   "number": "3",
+   "title": "Centre for Mathematical Sciences, Wilberforce Road,",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 34,
+   "n_words": 5
+  },
+  {
+   "id": "sec-003-4-max-planck-institut-f-ur-mathematik-vivatsgass",
+   "number": "4",
+   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53 111 Bonn, Germany",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-5-coll-ege-de-france-3-rue-dulm-f-75005-paris-fr",
+   "number": "5",
+   "title": "Coll` ege de France, 3 rue d’Ulm, F-75005 Paris, France",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 10,
+   "n_chars": 22923,
+   "n_words": 4019
+  },
+  {
+   "id": "sec-005-2-perturbation-theory-around-a-non-trivial-ﬂat-c",
+   "number": "2",
+   "title": "Perturbation theory around a non-trivial ﬂat connection",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 523,
+   "n_words": 84
+  },
+  {
+   "id": "sec-006-21-f-eynman-diagrams-and-arithmetic-tqft",
+   "number": "2.1",
+   "title": "F eynman diagrams and arithmetic TQFT",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 13387,
+   "n_words": 2401
+  },
+  {
+   "id": "sec-007-22-quantization-of-mﬂat-gc-σ",
+   "number": "2.2",
+   "title": "Quantization of Mﬂat (GC, Σ)",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 7271,
+   "n_words": 1313
+  },
+  {
+   "id": "sec-008-0-m-u",
+   "number": "0",
+   "title": "(M ;u)",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 992,
+   "n_words": 179
+  },
+  {
+   "id": "sec-009-221-analytic-continuation",
+   "number": "2.2.1",
+   "title": "Analytic continuation",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 4265,
+   "n_words": 771
+  },
+  {
+   "id": "sec-010-222-a-hierarchy-of-diﬀerential-equations",
+   "number": "2.2.2",
+   "title": "A hierarchy of diﬀerential equations",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1610,
+   "n_words": 312
+  },
+  {
+   "id": "sec-011-0-u-jℏ-1",
+   "number": "0",
+   "title": "(u +jℏ)− 1",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 768,
+   "n_words": 159
+  },
+  {
+   "id": "sec-012-2-s",
+   "number": "2",
+   "title": "S′′",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 110,
+   "n_words": 39
+  },
+  {
+   "id": "sec-013-6-s",
+   "number": "6",
+   "title": "S′′′",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1206,
+   "n_words": 266
+  },
+  {
+   "id": "sec-014-0-u-const",
+   "number": "0",
+   "title": "(u) = const +",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1553,
+   "n_words": 288
+  },
+  {
+   "id": "sec-015-0-u-const",
+   "number": "0",
+   "title": "(u)− const =",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 154,
+   "n_words": 28
+  },
+  {
+   "id": "sec-016-0-u-and-it-never-aﬀects-the-higher-order-terms-s",
+   "number": "0",
+   "title": "(u), and it never aﬀects the higher-order terms S(α)",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1208,
+   "n_words": 225
+  },
+  {
+   "id": "sec-017-0-u-i",
+   "number": "0",
+   "title": "(u) = i",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 115,
+   "n_words": 24
+  },
+  {
+   "id": "sec-018-23-classical-and-quantum-symmetries",
+   "number": "2.3",
+   "title": "Classical and quantum symmetries",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2495,
+   "n_words": 444
+  },
+  {
+   "id": "sec-019-3-a-a-a",
+   "number": "3",
+   "title": "A ∧ A ∧ A",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1299,
+   "n_words": 262
+  },
+  {
+   "id": "sec-020-0-u-sα",
+   "number": "0",
+   "title": "(u) = S(α)",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-0-u-mod-2-πu-258",
+   "number": "0",
+   "title": "(u) (mod 2 πu). (2.58)",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1227,
+   "n_words": 220
+  },
+  {
+   "id": "sec-022-0-u-note-that-in-the",
+   "number": "0",
+   "title": "(u). Note that in the",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1427,
+   "n_words": 274
+  },
+  {
+   "id": "sec-023-0-u-sα",
+   "number": "0",
+   "title": "(u) =−S(α)",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-024-0-u-mod-2-πu-266",
+   "number": "0",
+   "title": "(u) (mod 2 πu), (2.66)",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 68,
+   "n_words": 16
+  },
+  {
+   "id": "sec-025-2-vol-m-u-behavior-of-the-geometric-and-conjugat",
+   "number": "2",
+   "title": "Vol (M ;u) behavior of the geometric and conjugate branches",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 237,
+   "n_words": 39
+  },
+  {
+   "id": "sec-026-24-brane-quantization",
+   "number": "2.4",
+   "title": "Brane quantization",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 4363,
+   "n_words": 836
+  },
+  {
+   "id": "sec-027-3-a-state-integral-model-for-perturbative-sl2c-c",
+   "number": "3",
+   "title": "A state integral model for perturbative SL(2,C) Chern-Simons theory",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1396,
+   "n_words": 248
+  },
+  {
+   "id": "sec-028-31-ideal-triangulations-of-hyperbolic-3-manifold",
+   "number": "3.1",
+   "title": "Ideal triangulations of hyperbolic 3-manifolds",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 10994,
+   "n_words": 1974
+  },
+  {
+   "id": "sec-029-2-logz-πiqlog1z-πir-π2qr",
+   "number": "2",
+   "title": "(Log(z) +πiq)(Log(1−z) +πir) + π2qr",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 521,
+   "n_words": 100
+  },
+  {
+   "id": "sec-030-32-hikamis-invariant",
+   "number": "3.2",
+   "title": "Hikami’s invariant",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 3570,
+   "n_words": 627
+  },
+  {
+   "id": "sec-031-33-quantum-dilogarithm",
+   "number": "3.3",
+   "title": "Quantum dilogarithm",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 4936,
+   "n_words": 936
+  },
+  {
+   "id": "sec-032-1-the-asymptotic-formula-318-can-be-reﬁned-to-th",
+   "number": "1",
+   "title": "The asymptotic formula (3.18) can be reﬁned to the asymptoti c expansion",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 799,
+   "n_words": 161
+  },
+  {
+   "id": "sec-033-2-the-function-xq-and-its-reciprocal-have-the-ta",
+   "number": "2",
+   "title": "The function (x;q)∞ and its reciprocal have the Taylor expansions",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 916,
+   "n_words": 176
+  },
+  {
+   "id": "sec-034-3-the-function-φ-zτ-deﬁned-initially-for-re-τ-0",
+   "number": "3",
+   "title": "The function Φ( z;τ ) deﬁned (initially for Re ( τ ) > 0 and |Re (z)| < 1",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 5,
+   "n_words": 3
+  },
+  {
+   "id": "sec-035-2-re-τ",
+   "number": "2",
+   "title": "Re (τ ))",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 939,
+   "n_words": 219
+  },
+  {
+   "id": "sec-036-4-the-functional-equations-333-show-that",
+   "number": "4",
+   "title": "The functional equations (3.33) show that",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 1625,
+   "n_words": 289
+  },
+  {
+   "id": "sec-037-5-from-330-we-also-ﬁnd-the-taylor-expansion-of-i",
+   "number": "5",
+   "title": "From (3.30) we also ﬁnd the Taylor expansion of I(z;τ ) at z = 0,",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 1025,
+   "n_words": 241
+  },
+  {
+   "id": "sec-038-6-the-quantum-dilogarithm-is-related-via-the-jac",
+   "number": "6",
+   "title": "The quantum dilogarithm is related via the Jacobi triple pro duct formula to the Jacobi",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2782,
+   "n_words": 559
+  },
+  {
+   "id": "sec-039-34-a-state-integral-model-for-z-ρm-ℏ",
+   "number": "3.4",
+   "title": "A state integral model for Z (ρ)(M ; ℏ)",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 1495,
+   "n_words": 269
+  },
+  {
+   "id": "sec-040-0-u-v-pgeomuu-345",
+   "number": "0",
+   "title": "(u) = V (p(geom)(u),u ). (3.45)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 58,
+   "n_words": 9
+  },
+  {
+   "id": "sec-041-0-u-and-matrix-elements-313",
+   "number": "0",
+   "title": "(u) and matrix elements (3.13)-",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 353,
+   "n_words": 70
+  },
+  {
+   "id": "sec-042-0-u-v-pαuu-347",
+   "number": "0",
+   "title": "(u) = V (p(α)(u),u ) (3.47)",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 5597,
+   "n_words": 1013
+  },
+  {
+   "id": "sec-043-0-u-1",
+   "number": "0",
+   "title": "(u)− 1",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 3700,
+   "n_words": 675
+  },
+  {
+   "id": "sec-044-4-examples-and-computations",
+   "number": "4",
+   "title": "Examples and computations",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 2854,
+   "n_words": 494
+  },
+  {
+   "id": "sec-045-41-numerical-veriﬁcation-of-the-arithmeticity-co",
+   "number": "4.1",
+   "title": "Numerical veriﬁcation of the arithmeticity conjecture",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1384,
+   "n_words": 251
+  },
+  {
+   "id": "sec-046-1-0-s1-1",
+   "number": "1",
+   "title": "(0) = s1 + 1",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 6057,
+   "n_words": 1189
+  },
+  {
+   "id": "sec-047-42-perturbative-sl2-c-invariants-for-the-ﬁgure-8",
+   "number": "4.2",
+   "title": "Perturbative SL(2, C) invariants for the ﬁgure-8 knot complement",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 1635,
+   "n_words": 339
+  },
+  {
+   "id": "sec-048-3-re-z-im-z-im-z-1",
+   "number": "3",
+   "title": "Re (z)≤ Im (z), Im (z)≤ 1√",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-049-3-1-re-z",
+   "number": "3",
+   "title": "(1− Re (z))}",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 28,
+   "n_words": 9
+  },
+  {
+   "id": "sec-050-3-re-z-im-z-1",
+   "number": "3",
+   "title": "Re (z)≤ Im (z)≤ 1√",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-051-3-re-z-422",
+   "number": "3",
+   "title": "Re (z)} (4.22)",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 3594,
+   "n_words": 649
+  },
+  {
+   "id": "sec-052-2-vol-m-0-icsm-0",
+   "number": "2",
+   "title": "(Vol (M ; 0) +iCS(M ; 0)) +",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 103,
+   "n_words": 25
+  },
+  {
+   "id": "sec-053-2-vol-m-u-icsm-u-vgeomure-u-iπu-433",
+   "number": "2",
+   "title": "(Vol (M ;u) +iCS(M ;u)) +vgeom(u)Re (u) +iπu, (4.33)",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 614,
+   "n_words": 122
+  },
+  {
+   "id": "sec-054-421-quantization",
+   "number": "4.2.1",
+   "title": "Quantization",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 3089,
+   "n_words": 575
+  },
+  {
+   "id": "sec-055-2-vol-41-0",
+   "number": "2",
+   "title": "Vol (41; 0) +",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 265,
+   "n_words": 46
+  },
+  {
+   "id": "sec-056-0-0-i",
+   "number": "0",
+   "title": "(0) = i",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-057-2-vol-41-0-ics41-0",
+   "number": "2",
+   "title": "(Vol (41; 0) +iCS(41; 0)) =",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 126,
+   "n_words": 22
+  },
+  {
+   "id": "sec-058-0-u-into-the-hierarchy-of-equations-the-rest-are",
+   "number": "0",
+   "title": "(u) into the hierarchy of equations, the rest are readily",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 1068,
+   "n_words": 188
+  },
+  {
+   "id": "sec-059-0-u",
+   "number": "0",
+   "title": "(u) =",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 1079,
+   "n_words": 121
+  },
+  {
+   "id": "sec-060-1-u-in-the-perturbative-chern-simons-par",
+   "number": "1",
+   "title": "(u) in the perturbative Chern-Simons par-",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 698,
+   "n_words": 127
+  },
+  {
+   "id": "sec-061-0-u-i",
+   "number": "0",
+   "title": "(u) =−i",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 72,
+   "n_words": 17
+  },
+  {
+   "id": "sec-062-0-u-sgeom",
+   "number": "0",
+   "title": "(u) = −S(geom)",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-063-0-u-as-for-the-geometric-branch-this-is-then-sub",
+   "number": "0",
+   "title": "(u). As for the geometric branch, this is then substituted",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 779,
+   "n_words": 134
+  },
+  {
+   "id": "sec-064-0-0-0-from-the-hierarchy-of-diﬀerential",
+   "number": "0",
+   "title": "(0) = 0. From the hierarchy of diﬀerential",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 57,
+   "n_words": 8
+  },
+  {
+   "id": "sec-065-1-u-log-mm2-1",
+   "number": "1",
+   "title": "(u) = log m(m2− 1)",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 19,
+   "n_words": 4
+  },
+  {
+   "id": "sec-066-2-u-0",
+   "number": "2",
+   "title": "(u) = 0",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 7,
+   "n_words": 1
+  },
+  {
+   "id": "sec-067-3-u-4m2-12",
+   "number": "3",
+   "title": "(u) = 4(m2− 1)2",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 606,
+   "n_words": 117
+  },
+  {
+   "id": "sec-068-422-state-integral-model",
+   "number": "4.2.2",
+   "title": "State integral model",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 57,
+   "n_chars": 5831,
+   "n_words": 1103
+  },
+  {
+   "id": "sec-069-0-u-v-αu-457",
+   "number": "0",
+   "title": "(u) = V (α)(u), (4.57)",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 21,
+   "n_words": 5
+  },
+  {
+   "id": "sec-070-1-u-1",
+   "number": "1",
+   "title": "(u) =− 1",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 1509,
+   "n_words": 266
+  },
+  {
+   "id": "sec-071-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 570,
+   "n_words": 94
+  },
+  {
+   "id": "sec-072-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 61,
+   "n_chars": 8177,
+   "n_words": 1267
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 75,
+  "sections": 73,
+  "chars_total": 148242
+ }
+}

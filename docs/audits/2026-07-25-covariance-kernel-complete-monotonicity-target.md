@@ -78,4 +78,4 @@ conjecture; the Δ_λ growth chain stays Lean-proved modulo it.
 
 - Attack plan: bean `qou-v8t7` (A2 = `g'(0)≤0` endpoint, A3 = remainder/interval)
 - Transfer bound (Phase 7): [`2026-07-24-covariance-kernel-effective-stein-step2-transfer-bound.md`](2026-07-24-covariance-kernel-effective-stein-step2-transfer-bound.md)
-- Ivanov–Olshanski `0304010`, Śniady `0411647`, Biane `0006111` (in `uploads/`)
+- Ivanov–Olshanski `0304010`, Śniady `0411647`, Biane `0006111` (in `library/`)

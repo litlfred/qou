@@ -17,9 +17,9 @@ updated_at: 2026-08-10T01:35:00Z
 Two primary sources were uploaded to the repo at
 [`765457e`](https://github.com/litlfred/qou/commit/765457e64bf8b1e862decd2e91171c8a7df1e605):
 
-- `uploads/1207.6711v1.pdf` — Garoufalidis–Goerner–Zickert, *Gluing equations for
+- `library/arxiv-1207.6711v1/1207.6711v1.pdf` — Garoufalidis–Goerner–Zickert, *Gluing equations for
   PGL(n,ℂ)-representations of 3-manifolds*
-- `uploads/1507.03238v3.pdf` — *Triangulation independent Ptolemy varieties*
+- `library/arxiv-1507.03238v3/1507.03238v3.pdf` — *Triangulation independent Ptolemy varieties*
 
 ⚠ **They are on `main`, not on the Route 75 branch** — fetch before reading.
 

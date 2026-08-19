@@ -1,0 +1,126 @@
+Then, recalling the definition (19) of alternality,
+
+M and N alternal + [M, N][B] = [M[B], N[B]].
+(61)
+
+If B is an associative algebra with commutator as Lie
+bracket, the two kinds of alternal mould expansions
+coincide, as in (20)—cf. the classical Dynkin-Specht-
+Wever projection lemma, [Reu93].
+
+The set of alternal moulds U that have a composi-
+tion inverse is a group for mould composition.
+
+Symmetrality and alternality. Parallel to the defini-
+tion (19) of alternality, we have
+
+Definition 10. A mould M is called symmetral if
+M® =14 and SO sh(%2)M*= MeM* — (62)
+wen
+
+for any a,bEN.
+
+Symmetral moulds form a group for mould multi-
+plication; the logarithm map (57) maps it bijectively
+to the space of alternal moulds, which is a Lie algebra
+for mould commutator. Mould expansions enjoy spe-
+cial properties when each B,, acts as a derivation on
+some auxiliary algebra, as is the case of A,, € Derc(A)
+
+when A= Re:
+M alternal = MB is a derivation
+
+M symmetral = MB is an automorphism.
+
+The concepts of symmetrality and alternality, intro-
+duced in [Eca8l], are related to certain combinatorial
+Hopf algebras, as emphasized by Menous [Men09] in
+his work on the renormalization theory in perturbative
+quantum field theory. See [LSS19] for the relation to
+the Baker-Campbell-Hausdorff formula.
+
+Other types of symmetries. One may also consider
+mould expansions based on a family (Bu)wen of op-
+erators that, instead of being derivations, satisfy the
+same modified Leibniz rule (12) as the At. We
+then have parallel statements for the mould expan-
+sions associated with moulds enjoying ‘symmetrelity’
+or ‘alternelity’, two notions defined in a manner anal-
+ogous to symmetrality and alternality but involving,
+instead of shuffling, ‘contracting shuffling’ (also called
+stuffling).
+
+Ecalle [Eca02] also introduced ‘symmetrility’ and
+‘alternility’ in his works on MZVs, as well as many
+other structures in the context of ‘bimoulds’—see be-
+low.
+
+11
+
+5.2. The hyperlogarithmic mould.
+
+Here is a reinforcement of Theorem 5:
+
+Theorem 11 ([Eca81]). Let A := R (resp. R°,
+resp. Rs) andN :=C (resp. C*, resp. 0’). There ex-
+ists a symmetral A-valued mould (V%) Jen such that,
+for every wo € N and w = w1---w, EN,
+
+; Urre’r ifr >1 and wo = 44
+Ay Wren =
+0 otherwise.
+(63)
+Sketch of proof with A= RS and N =C*. Pick an
+
+entire function @, such that G,(w) # 0 for each
+w€N. The equations 7 (z) = 1 and, for w 4 2,
+
+(4:4 lel) Y2@) = rrr (2)( BG, )(2)_ (64)
+
+inductively define V“(z) € z~1C{[z~1]], with Borel
+transforms
+
+Fe ee,
+
+OO = TG
+(65)
+
+The resulting mould Y is A-valued and symmetral.
+
+Pg - 2
+
+Elementary manipulations show that, for each 7 €
+N, there is an alternal scalar mould V(7) such that
+
+V2(n) 40 = |lwll =n.
+(66)
+
+A,¥ =—-V(n) x ¥,
+
+By (65), V“(w1) = —271@,,, (w1).
+
+We define an alternal mould by V = new V(n).
+It has a composition inverse, that we denote by —U.
+Elementary manipulations show that Y := VY oU sat-
+isfies the requirements of Theorem 11. Details can be
+found in [Eca81; Sau09]. Oo
+
+The hyperlogarithmic mould is the scalar mould U
+obtained when N = Z* and G,,(¢) = 1 for all ¢ and w.
+In that case, there are scalar moulds L(y) (n € Z*)
+such that
+
+L2(n) 40 > |lwl| =n,
+(67)
+
+ATY = L(n) x ¥,
+
+giving rise to a ‘multiple logarithm’ mould
+
+2midd,---d¢,—
+12 = SDL“) _ mi dca Cr=1
+n
+
+[. (G1 = 81) (Gp = pa)’
+(68)
+

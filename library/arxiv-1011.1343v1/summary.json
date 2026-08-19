@@ -1,0 +1,60 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1011.1343v1",
+ "source_sha256": "7d50e5e28e695191",
+ "brief": "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force",
+ "extended": "**Chiral symmetry, nuclear forces and all that Ulf-G. Meißner**\n\n*HISKP and Bethe Center for Theoretical Physics*\n\n19 pp, 8 sections.\n\n**Outline.** 1 The early days at Stony Brook; 3 Flashback: The Texas revolution; 4 The chiral theory of nuclear forces as a pre; 4.1 The nucleon-nucleon interaction; 4.2 Three-nucleon interactions; 4.3 The nuclear matter problem; 4.4 Back to square one - meson-exchange curren; 5 Flash forward: Combining nuclear EFT with la",
+ "tokens": {
+  "brief": 43,
+  "extended": 114
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-the-early-days-at-stony-brook",
+   "title": "The early days at Stony Brook",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-3-flashback-the-texas-revolution",
+   "title": "Flashback: The Texas revolution",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
+   "title": "The chiral theory of nuclear forces as a precision tool",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-003-41-the-nucleon-nucleon-interaction",
+   "title": "The nucleon-nucleon interaction",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-42-three-nucleon-interactions",
+   "title": "Three-nucleon interactions",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-005-43-the-nuclear-matter-problem",
+   "title": "The nuclear matter problem",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-006-44-back-to-square-one---meson-exchange-currents",
+   "title": "Back to square one - meson-exchange currents",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-007-5-flash-forward-combining-nuclear-eft-with-latti",
+   "title": "Flash forward: Combining nuclear EFT with lattice simulations",
+   "pages": "13-19"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

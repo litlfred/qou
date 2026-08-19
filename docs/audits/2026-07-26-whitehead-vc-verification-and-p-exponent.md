@@ -93,7 +93,7 @@ the 2-cusp link exponent is 3/2 or a distinct value. Two routes to close it:
 The unstable single-power fit is not noise — it is the wrong *model*. The correct
 asymptotic structure is a **sum over boundary-parabolic SL₂(ℂ) flat connections**
 (GGMW, *Resurgence of Chern–Simons theory at the trivial flat connection*,
-[`uploads/2111.04763v2.pdf`](../../uploads/2111.04763v2.pdf), Conjecture 1):
+[`library/arxiv-2111.04763v2/2111.04763v2.pdf`](../../library/arxiv-2111.04763v2/2111.04763v2.pdf), Conjecture 1):
 
 $$\langle K\rangle_N \;=\; \sum_\sigma c^K_\sigma \, N^{\delta_\sigma}\,\mathrm{smed}\!\left(\Phi^{(K,\sigma)}\right)\!\left(\tfrac1N\right),\qquad \delta_\sigma=\tfrac32\ (\sigma\neq\sigma_0),\ \ \delta_{\sigma_0}=1,$$
 
@@ -115,7 +115,7 @@ q = 1**. Consequences for this row:
   weights sectors.
 - **Derivation target (supersedes the "more N" route).** Compute `c_{σ_geom}(q=1)` and
   the trivial-sector contribution for L5a1 directly, rather than fitting a power. The
-  twist-knot cyclotomic formula (Masbaum, [`uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf`](../../uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf):
+  twist-knot cyclotomic formula (Masbaum, [`library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf`](../../library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf):
   `J'_{K_p}(N)=Σ_n \tilde f_{K_p,n}(q^{1-N})_n(q^{1+N})_n`) is a ready cross-check on the
   R-matrix engine, since the twist knots `K_p` are `(-1/p)` Dehn fillings of one
   Whitehead component.
@@ -163,7 +163,7 @@ is `insufficient-N` and even the **known 4₁ recurrence is not recovered** — 
 confirming the reach is the binding constraint, not the mathematics.
 
 **The unblock is a fast 2-bridge colored-Jones formula.** Takata's *A Formula for the
-Colored Jones Polynomial of 2-Bridge Knots* (KMJ 48 (2008) 255; `uploads/KMJ-48-2-255.pdf`)
+Colored Jones Polynomial of 2-Bridge Knots* (KMJ 48 (2008) 255; `library/kmj-48-2-255/KMJ-48-2-255.pdf`)
 supplies it: Corollary 5 eq(14) is an **O(n²) nested q-hypergeometric sum**. At p₁=1 it is
 `S(5,3) = 4₁` — implemented in
 [`takata_fig8_recurrence_hunt.py`](../../computations/takata_fig8_recurrence_hunt.py) and
@@ -190,13 +190,13 @@ built on `p' = (p−1)/2` (Schubert normal form); *every* index (`r(j)`, `σ_j =
 | b(2,1) | Hopf (link) | 0.5 — does not instantiate |
 
 So Takata's formula is intrinsically the *odd-p / knot* case — and the double-twist-*knot*
-formulas (Lovejoy–Osburn `uploads/cJdoubletwistfinal.pdf` Thm 1.1; Lauridsen, for all m,p)
+formulas (Lovejoy–Osburn `library/cjdoubletwistfinal/cJdoubletwistfinal.pdf` Thm 1.1; Lauridsen, for all m,p)
 are likewise knot-only. **The right tool for the Whitehead *link* is a different one.**
 
 ### Resolution: the descendant framework handles links (the even-p problem was tool-specific)
 
 Garoufalidis–Kashaev, *The descendant colored Jones polynomials*
-(`uploads/descendants_colored_jones.pdf`), builds the colored Jones from the Kashaev-1994
+(`library/descendants-colored-jones/descendants_colored_jones.pdf`), builds the colored Jones from the Kashaev-1994
 root-of-unity state sum and states it explicitly for *"even links, with each component
 colored by its own integer parameter."* So the Whitehead link's `J_red` **is** computable —
 the odd-p `p'=(p−1)/2` obstruction was a limitation of *Takata's* Schubert formula, not of

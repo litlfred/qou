@@ -1,0 +1,194 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0901.1612v1",
+ "source": {
+  "file": "0901.1612v1.pdf",
+  "sha256": "b4f3efcadd1e5caff0aa26ee0210329756a330fe228727e1d895fb08dc6f2392",
+  "bytes": 558049,
+  "pages": 23
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0901.1612",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "12 Jan 2009"
+  },
+  "doi": null,
+  "title": "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS",
+  "authors_raw": "AND INTEGRAL FORMULAS FOR THREE-COMPONENT LINKS",
+  "abstract": "Three-component links in the 3-dimensional sphere were classiﬁed up to link homotopy by John Milnor in his senior thesis, published in 1954. A complete set of invariants is given by the pairwise linking numbers p,q andr of the components, and by the residue class of one further integer µ, the “triple linking number” of the title, which is well-deﬁned modulo the greatest common divisor of p, q and r. The Borromean rings: p =q =r = 0, µ = ±1 To each such link L we associate a geometrically natural characteristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies ofgL. Maps of the 3-torus to the 2-sphere were classiﬁed up to homotopy by Lev Pontryagin in 1941. A complete set of invariants is given by the degrees p,q andr of their restrictions to the 2-dimensional coordinate subtori, and by the residue class of one further integer ν, an “ambiguous Hopf invariant” which is well-deﬁned modulo twice the greatest common divisor of p, q and r. We show that the pairwise linking numbers p, q and r of the components of L are equal to the degrees of its characteristic map gL restricted to the 2-dimensional subtori, and that twice Milnor’sµ-invariant forL is equal to Pontryagin’sν-invariant for gL. Whenp,q andr are all zero, theµ- andν-invariants are ordinary integers. In this case we use J. H. C. Whitehead’s integral formula for the Hopf invariant, adapted to maps of the 3-torus to the 2-sphere, together with a formula for the fundamental solution of the scalar Laplacian on the 3-torus as a Fourier series in three variables, to provide an explicit integral formula for ν, and hence for µ. We give here only sketches of the proofs of the main results, with full details to appear elsewhere. Date: 12 January, 2009. 1 arXiv:0901.1612v1 [math.GT] 12 Jan 2009",
+  "docinfo": {
+   "Author": "Dennis DeTurck, Herman Gluck, Rafal Komendarczyk, Paul Melvin, Clayton Shonkwiler and David Shea Vela-Vick",
+   "CreationDate": "D:20181026103656Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.4",
+   "Title": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links"
+  },
+  "title_prev": "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS",
+  "title_lines": [
+   "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Statement of results",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Background and motivation",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Explicit formula for the characteristic map gL",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "An asymmetric version of the characteristic map",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Sketch of the topological proof of Theorem ??",
+   "page": 8,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Sketch of the algebraic proof of Theorem ??",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Sketch of the proof of Theorem ??",
+   "page": 17,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The fundamental solution of the Laplacian",
+   "page": 18,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Completing the proof of Theorem ??",
+   "page": 19,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-statement-of-results",
+   "number": "1",
+   "title": "Statement of results",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4044,
+   "n_words": 727
+  },
+  {
+   "id": "sec-001-2-background-and-motivation",
+   "number": "2",
+   "title": "Background and motivation",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3540,
+   "n_words": 594
+  },
+  {
+   "id": "sec-002-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 503,
+   "n_words": 78
+  },
+  {
+   "id": "sec-003-3-explicit-formula-for-the-characteristic-map-gl",
+   "number": "3",
+   "title": "Explicit formula for the characteristic map gL",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1041,
+   "n_words": 205
+  },
+  {
+   "id": "sec-004-31-an-asymmetric-version-of-the-characteristic-m",
+   "number": "3.1",
+   "title": "An asymmetric version of the characteristic map",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 18,
+   "n_chars": 24014,
+   "n_words": 4443
+  },
+  {
+   "id": "sec-005-61-the-fundamental-solution-of-the-laplacian",
+   "number": "6.1",
+   "title": "The fundamental solution of the Laplacian",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 2267,
+   "n_words": 433
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 8389,
+   "n_words": 1286
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 7,
+  "chars_total": 43798
+ },
+ "duplicate_of": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+ "duplicate_note": "Same work as library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

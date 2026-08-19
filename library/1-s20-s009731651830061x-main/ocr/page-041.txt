@@ -1,0 +1,50 @@
+600 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+to be a sequence of functions p,(«,q) that are polynomials in 2 of degree no greater
+than (fe p/7t) and Laurent polynomials in q with highest exponent (Let 72s) and
+lowest exponent — (Lt prely over Q such that the determinant in (5.17) is equal to
+
+Pn—1(2, @)Pn (a, 4).
+Let us finally remark that one could of course apply (5.10) to (5.15) and obtain
+
+i+j 2
+det - — 4° 0;.,
+o<ijen-1 ( af i ) q ‘) ,
+
+which is up to a trivial factor a specialization of (5.18) and has thus already been
+computed.
+
+Acknowledgment
+
+The author thanks an anonymous referee for the careful reading of the paper and
+several interesting comments.
+
+Appendix A. The case v = 1—u
+A.1. The cases (u,v) = (0,1) and (u,v) = (1,0)
+
+The generating function of monotone triangles with bottom row b,...,b, evaluated
+at (u,v) = (0,1) is equal to the number of monotone triangles with that bottom row,
+where SE-diagonals are strictly increasing, while the evaluation at (u,v) = (1,0) is
+the number of monotone triangles that are strictly increasing along NE-diagonals. The
+
+bs —bi rn .
+ar as both sets are in bijective correspondence with
+
+number is in both cases []j<;2;<n
+Gelfand—Tsetlin patterns with bottom row b; — 1, b2—2,...,b, —n (in the first case, this
+follows by subtracting 7 from the i-th NE-diagonal for all 7, counted from the left, while
+in the second case, this follows by subtracting i from the i-th SE-diagonal for all 7, also
+counted from the left), and the number of Gelfand—Tsetlin patterns with bottom row
+by, ..-,bn is Theicjen ao see [18] or [30, Corollary 7.21.4 and Lemma 7.21.1].
+
+A.2. The case (u,v) = , 3)
+
+On the other hand, the generating function of monotone triangles with bottom
+row 0y,...,b6, evaluated at (u,v) = (5. 3) is—up to the factor Q(2) —equal to the
+2-enumeration of monotone triangles with respect to the number of entries that lie strictly
+between their SW-neighbors and their SE-neighbors. By [27, Theorem 2], this number is
+2(2) Theicjen oe If (b1,--.,0n) = (1,...,n), this corresponds to the 2-enumeration
+of ASMs with respect to the number of —1’s, or, equivalently, to the enumeration of
+domino tilings of the Aztec diamond of order n, see [10] and also [8, Remark 4.3], where
+
+in order to obtain the number of the latter one has to multiply by 2”.

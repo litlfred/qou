@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "aif-2009-59-1-347-0",
+ "source_sha256": "35b8422990e24888",
+ "brief": "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series",
+ "extended": "**ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER**\n\n*Lucia DIVIZIO & Changgui ZHANG*\n\n47 pp, 18 sections.\n\n**Outline.** Introduction; Part 1. Convergent q-Borel and q-Laplace trans; 1 Convergent q-Euler series; 1.1 Integral representation; 1.2 Confluence; 2.2 Main result; 2.3 Applications; 2.4 Proof of Theorem 2.6; Appendix B. Expansion of Eq(x) at; B.2. Proof of Proposition 1.5; Part 2. Summation of divergent q-series and co; 3 The divergent q-Euler series; 3.2 q-integral and continuous integral; 3.4 Confluence; 4 Generic q-Gevrey series; 4.4 The functional space H in the Borel plane; 4.5 Proof of Theorem 4.14; Bibliography\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: — Letd ∈ [0, 2π) be such that φ(1,x ) is holomorphic on\n- Theorem 0.4: — Let ˆf ∈ C[[x]] be a generic q-Gevrey series. Then for\n- Theorem 1.4: — If q → 1−, the analytic continuation of Eq(x) con-\n- Theorem 3.3: — Eq(x) = Eq(x) and E [λ]\n- Theorem 3.10: — For any x ∈ C∗\\] − ∞, 0[ we have:\n- Theorem 3.13: — Forλ,µ ∈ C∗ \\ (1 −p)qZ we have:",
+ "tokens": {
+  "brief": 36,
+  "extended": 260
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-001-part-1-convergent-q-borel-and-q-laplace-transfor",
+   "title": "Part 1. Convergent q-Borel and q-Laplace transform and confluence: the case q<1",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-002-1-convergent-q-euler-series",
+   "title": "Convergent q-Euler series",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-11-integral-representation",
+   "title": "Integral representation",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-12-confluence",
+   "title": "Confluence",
+   "pages": "10-16"
+  },
+  {
+   "id": "sec-005-22-main-result",
+   "title": "Main result",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-006-23-applications",
+   "title": "Applications",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-007-24-proof-of-theorem-26",
+   "title": "Proof of Theorem 2.6",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-008-appendix-b-expansion-of-eqx-at",
+   "title": "Appendix B. Expansion of Eq(x) at",
+   "pages": "22-28"
+  },
+  {
+   "id": "sec-009-b2-proof-of-proposition-15",
+   "title": "B.2. Proof of Proposition 1.5",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-010-part-2-summation-of-divergent-q-series-and-confl",
+   "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-011-3-the-divergent-q-euler-series",
+   "title": "The divergent q-Euler series",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-012-32-q-integral-and-continuous-integral",
+   "title": "q-integral and continuous integral",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-013-34-confluence",
+   "title": "Confluence",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-014-4-generic-q-gevrey-series",
+   "title": "Generic q-Gevrey series",
+   "pages": "36-42"
+  },
+  {
+   "id": "sec-015-44-the-functional-space-h-in-the-borel-plane",
+   "title": "The functional space H in the Borel plane",
+   "pages": "42-45"
+  },
+  {
+   "id": "sec-016-45-proof-of-theorem-414",
+   "title": "Proof of Theorem 4.14",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-017-bibliography",
+   "title": "Bibliography",
+   "pages": "46-47"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

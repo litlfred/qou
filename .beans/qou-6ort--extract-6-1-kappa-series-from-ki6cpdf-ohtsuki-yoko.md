@@ -8,7 +8,7 @@ updated_at: 2026-08-15T11:35:54Z
 ---
 
 
-## 2026-08-15 extraction pass (pypdf; uploads/ki6c.pdf = Ohtsuki-Yokota,
+## 2026-08-15 extraction pass (pypdf; library/ki6c/ki6c.pdf = Ohtsuki-Yokota,
 ## "Kashaev invariant of the knots with 6 crossings", 72pp)
 
 WHAT THE PAPER SUPPLIES for 6_1 (mirror 6bar_1 convention; 6_1 values

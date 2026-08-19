@@ -1,0 +1,52 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0305423v3",
+ "source_sha256": "e4554f9084ba4935",
+ "brief": "Stein’s Method and Plancherel Measure of the Symmetric Group — We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group.",
+ "extended": "**Stein’s Method and Plancherel Measure of the Symmetric Group**\n\n*Running head: Stein’s Method and Plancherel Measure*\n\n19 pp, 6 sections.\n\n**Abstract.** We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group. A new proof of Ker ov’s central limit theorem for character ratios of random representatio ns of the symmet- ric group on transpositions is obtained; the proof gives an e rror term. The construction of an exchangeable pair needed for applying St ein’s method arises from the theory of harmonic functions on Bratelli dia grams. We also ﬁnd the spectrum of the Markov chain on partitions underlyin g the construc- tion of the exchangeable pair. This yields an intriguing met hod for studying the asymptotic decomposition of tensor powers of some repre sentations of the symmetric group. To appear in Trans. AMS. Submitted 5/28/03, Minor Revisions : 7/7/03, 11/8/03\n\n**Outline.** 1 Introduction; 2 Harmonic functions and exchangeable pairs; 3 Irreducible characters of the symmetric grou; 5 Asymptotic multiplicities in tensor products; 6 Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: ([K1]) Let λ be a partition of n chosen from the Plancherel\n- Theorem 1.2: Forn ≥ 2 and all real x0,\n- Theorem 1.2: will be a consequence of the following bound of St ein. Recall\n- Theorem 1.3: ([Stn1]) Let (W,W ∗) be an exchangeable pair of real random\n- Theorem 5.3: studies the convergence properties of the Marko v chains\n- Theorem 5.3: Let (n) denote the partition which consists of one part of size",
+ "tokens": {
+  "brief": 40,
+  "extended": 397
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-001-2-harmonic-functions-and-exchangeable-pairs",
+   "title": "Harmonic functions and exchangeable pairs",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-002-3-irreducible-characters-of-the-symmetric-group",
+   "title": "Irreducible characters of the symmetric group",
+   "pages": "8-14"
+  },
+  {
+   "id": "sec-003-5-asymptotic-multiplicities-in-tensor-products-o",
+   "title": "Asymptotic multiplicities in tensor products of representations",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-004-6-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-005-references",
+   "title": "References",
+   "pages": "18-19"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

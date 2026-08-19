@@ -1,0 +1,222 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2209.06973v1",
+ "source": {
+  "file": "On_the_geometry_of_two_state_models_for_the_colore.pdf",
+  "sha256": "cc3393a17c48b9dfeb51bc64550d586086665f6a8f72511236bce9b186c70c48",
+  "bytes": 2243478,
+  "pages": 66
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2209.06973",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "14 Sep 2022"
+  },
+  "doi": null,
+  "title": "On the geometry of two state models for the colored Jones polynomial",
+  "authors_raw": "September 16, 2022",
+  "abstract": "Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of states on the part arc-graph of a link projection and the set of states on a corresponding bichromatic digraph, called arc-graph, as deﬁned by Garoufalidis and Loebl [7]. We use this to give a new and essentially elementary proof for the knot state-sum formula in [7]. We will show that the state-sum contributions of states on the part arc-graph de- ﬁned by the universal R-matrix of Uq(sl(2, C)) correspond, under our bijection of sets of states, to the contributions in [7]. This will show that the two state models are in fact not essentially distinct. Our ap- proach will also extend the formula of Garoufalidis and Loebl to links. This requires some additional non-trivial observations concerning the geometry of states on the part arc-graphs. We will discuss in detail the computation of the arc-graph state-sum, in particular for 3-braid closures.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20220916003619Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  },
+  "title_lines": [
+   "On the geometry of two state models for the colored Jones",
+   "polynomial"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "State models",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The flow lemma",
+   "page": 14,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The R-matrix state model",
+   "page": 17,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Proving the Garoufalidis-Loebl state-sum",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Evaluation of the Garoufalidis-Loebl state-sum",
+   "page": 38,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Working with cyclic ordering",
+   "page": 47,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Weaving links",
+   "page": 51,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Vertex ordering by braids",
+   "page": 58,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Questions and projects",
+   "page": 64,
+   "source": "outline",
+   "number": "11"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1451,
+   "n_words": 247
+  },
+  {
+   "id": "sec-001-2-state-models",
+   "number": "2",
+   "title": "State models",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 6129,
+   "n_words": 1086
+  },
+  {
+   "id": "sec-002-3-graphs-and-colorings-for-state-sums-of-the-col",
+   "number": "3",
+   "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 17,
+   "n_chars": 21699,
+   "n_words": 3847
+  },
+  {
+   "id": "sec-003-5-the-r-matrix-state-model",
+   "number": "5",
+   "title": "The R-matrix state model",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 9696,
+   "n_words": 1756
+  },
+  {
+   "id": "sec-004-6-proving-the-garoufalidis-loebl-state-sum",
+   "number": "6",
+   "title": "Proving the Garoufalidis-Loebl state-sum",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 38,
+   "n_chars": 24199,
+   "n_words": 4427
+  },
+  {
+   "id": "sec-005-7-evaluation-of-the-garoufalidis-loebl-state-sum",
+   "number": "7",
+   "title": "Evaluation of the Garoufalidis-Loebl state-sum",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 47,
+   "n_chars": 14557,
+   "n_words": 2667
+  },
+  {
+   "id": "sec-006-8-working-with-cyclic-ordering",
+   "number": "8",
+   "title": "Working with cyclic ordering",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 51,
+   "n_chars": 6068,
+   "n_words": 1157
+  },
+  {
+   "id": "sec-007-9-weaving-links",
+   "number": "9",
+   "title": "Weaving links",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 58,
+   "n_chars": 6494,
+   "n_words": 1251
+  },
+  {
+   "id": "sec-008-10-vertex-ordering-by-braids",
+   "number": "10",
+   "title": "Vertex ordering by braids",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 64,
+   "n_chars": 8913,
+   "n_words": 1797
+  },
+  {
+   "id": "sec-009-11-questions-and-projects",
+   "number": "11",
+   "title": "Questions and projects",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 66,
+   "n_chars": 4930,
+   "n_words": 800
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 10,
+  "chars_total": 104136
+ }
+}

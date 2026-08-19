@@ -13,7 +13,7 @@ Named in a live attack plan and in a literature-assessment audit with no ref() e
 - Binomial formula (Sec. 1-2) — An explicit binomial expansion of Jack polynomials in terms of shifted Jack polynomials evaluated at the contents of the partition.
   Use here: The content-evaluation machinery the Delta_lambda covariance-kernel attack plan (bean qou-v8t7) uses; the 2026-07-24 assessment records it as supporting but blocked by the same dim-threshold obstruction, so it is cited as method, not as a closure.
 
-Source: `uploads/9608020v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-q-alg-9608020v2/9608020v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

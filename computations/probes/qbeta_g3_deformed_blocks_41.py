@@ -2,7 +2,7 @@
 """qbeta_g3_deformed_blocks_41.py — A_ω deformed leg, tranche A: the PROVEN
 GGM §5.2 holomorphic blocks of the deformed 4₁, implemented and certified.
 
-Source (all glyph-extracted from uploads/2012.00062v3.pdf; §5.2-5.3 are
+Source (all glyph-extracted from library/arxiv-2012.00062v3/2012.00062v3.pdf; §5.2-5.3 are
 THEOREMS with proofs, not conjectures):
 
   * θ(x;q) = (−q^{1/2}x; q)_∞ (−q^{1/2}x⁻¹; q)_∞          (107), |q|<1
@@ -323,7 +323,7 @@ def main() -> int:
         "where the two-saddle trans-series is unsuppressed.")
     wb.set_content_block("conj:im-q-physical-role")
     wb.add_data("source",
-                "uploads/2012.00062v3.pdf (GGM) eqs 106-110, 126-134, Thm 14/16")
+                "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 106-110, 126-134, Thm 14/16")
     wb.add_data("checks", {"theta_qdifference": bool(ok1),
                            "thm14_eq_gk44_u0": bool(ok2),
                            "thm16_annihilator": bool(ok3),

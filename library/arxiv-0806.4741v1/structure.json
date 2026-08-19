@@ -1,0 +1,319 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0806.4741v1",
+ "source": {
+  "file": "0806.4741v1.pdf",
+  "sha256": "5e7ad85a99fb355293d35eb086cb3b6b761482e01a4afac313a2e33d7067692f",
+  "bytes": 450196,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0806.4741",
+   "version": "1",
+   "primary_class": "math-ph",
+   "stamp_date": "30 Jun 2008"
+  },
+  "doi": null,
+  "title": "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium",
+  "authors_raw": null,
+  "abstract": "We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order hyperbolic diﬀerential operator. The construction is entirely explicit and relies on non-commutative harmonic analytical techniques on symplectic symmetric spaces. The present work presents a uniﬁed method producing every quantization of D, and provides, in the 2-dimensional context, an exact solution to Weinstein’s WKB quantization program within geometric terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or ‘dual’) to the geometry of the hyperbolic plane through the quantization process.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181031210849Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.4",
+   "Title": ""
+  },
+  "title_prev": "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium",
+  "title_lines": [
+   "The deformation quantizations of the hyperbolic plane",
+   "P. Bieliavsky",
+   "Géométrie et Physique mathématique",
+   "Université Catholique de Louvain",
+   "2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Motivations",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "What is done in the present work",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Symplectic symmetric spaces",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Definitions and elementary properties",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Group type symplectic symmetric surfaces, curvature contractions",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Admissible functions on symplectic symmetric surfaces",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Deformation Quantization",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The space of star products on the Poincaré orbit M:=SO(1,1)R2/R",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "sl2(R)- triplets of derivations and an unexpected Lorentzian structure",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The de-contraction procedure: evolution of the Dalembert operator",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Finding solutions of the Dalembertian evolution by variable separation",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Normalizations and asymptotic expansions",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The case k=24 and Zagier type deformations",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Unterberger type solutions and Weinstein's asymptotics",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Complements",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "On D and M",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Co-adjoint orbits of iso(1,1): the Poincaré plane",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "mberlineIndex",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "mberlineBibliography",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-motivations",
+   "number": null,
+   "title": "Motivations",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8283,
+   "n_words": 1353
+  },
+  {
+   "id": "sec-002-what-is-done-in-the-present-work",
+   "number": null,
+   "title": "What is done in the present work",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3416,
+   "n_words": 548
+  },
+  {
+   "id": "sec-003-symplectic-symmetric-spaces",
+   "number": null,
+   "title": "Symplectic symmetric spaces",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 7879,
+   "n_words": 1378
+  },
+  {
+   "id": "sec-004-group-type-symplectic-symmetric-surfaces-curvatu",
+   "number": null,
+   "title": "Group type symplectic symmetric surfaces, curvature contractions",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1893,
+   "n_words": 372
+  },
+  {
+   "id": "sec-005-admissible-functions-on-symplectic-symmetric-sur",
+   "number": null,
+   "title": "Admissible functions on symplectic symmetric surfaces",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6687,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-006-deformation-quantization",
+   "number": null,
+   "title": "Deformation Quantization",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4187,
+   "n_words": 780
+  },
+  {
+   "id": "sec-007-sl2r--triplets-of-derivations-and-an-unexpected",
+   "number": null,
+   "title": "sl2(R)- triplets of derivations and an unexpected Lorentzian structure",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 3068,
+   "n_words": 549
+  },
+  {
+   "id": "sec-008-the-de-contraction-procedure-evolution-of-the-da",
+   "number": null,
+   "title": "The de-contraction procedure: evolution of the Dalembert operator",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4042,
+   "n_words": 704
+  },
+  {
+   "id": "sec-009-finding-solutions-of-the-dalembertian-evolution",
+   "number": null,
+   "title": "Finding solutions of the Dalembertian evolution by variable separation",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 2867,
+   "n_words": 599
+  },
+  {
+   "id": "sec-010-normalizations-and-asymptotic-expansions",
+   "number": null,
+   "title": "Normalizations and asymptotic expansions",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 22,
+   "n_chars": 12109,
+   "n_words": 2424
+  },
+  {
+   "id": "sec-011-complements",
+   "number": null,
+   "title": "Complements",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-on-d-and-m",
+   "number": null,
+   "title": "On D and M",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 10583,
+   "n_words": 1720
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 13,
+  "chars_total": 65014
+ }
+}

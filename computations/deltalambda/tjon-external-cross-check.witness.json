@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-15T16:00:02.863456+00:00",
-  "commitSha": "81da8a0d4931874387acb1e9c273bda90752e34c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-16T13:54:18.797433+00:00",
+  "commitSha": "a123802110e3e4515adefa0b8120885dd3c749da",
   "assertions": [
     {
       "name": "ame_literal_3_matches_to_5_digits",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "tjon-external-cross-check",
   "scriptFile": "tjon_external_cross_check_probe.py",
-  "scriptHash": "2d6c35115a75",
-  "scriptCommitSha": "7e475690b2051562006fabba1c9e089ba0732a59",
+  "scriptHash": "49dce2755610",
+  "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,18 +61,15 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1"
   },
-  "description": "Closes QA beans qou-3o9x (re-derive the AME2020 literals of gap10_tjon_correlation_probe.py from uploads/mass_1.mas20.txt so a re-upload is caught by source_sha), qou-f3ec and qou-l4cm (cross-check the corpus Tjon ladder against the external sources, mismatch informative either way, no back-fitting). Part A derives B(2H), B(3H), B(4He) from the AME2020 mass table and shows rho_strong[3] is a 5-digit rounding while rho_strong[4] is a Coulomb-corrected value whose +0.694 MeV correction had no source in the corpus and is now checked against [platter2005tjon]. Part B scores against [hammer2007fourbody]'s universal B4/B3 = 5 and finds the simplex basis assigns that no-four-body-force system a LARGER mu4 than nature's, with the mu4 = 0 baseline provably unable to reach ratio 5 at all. Lean backing: QOU.MassTheory.TjonSimplexForm universal_ratio_forces_mu4, tjon_baseline_lt_four_ratio, universal_ratio_not_in_tjon_baseline, four_sub_two_mul_three (sorry-free, generic CommRing). VERDICT: AME2020 re-derivation: rho_strong[3] literal 3.8128 is a 5-digit rounding of the derived 3.812786601 (rel 3.51e-6); rho_strong[4] literal 13.0316 is NOT an AME ratio (raw 12.71963154) but implies B = 28.989657 MeV, a Coulomb correction of +0.694 MeV now sourced to [platter2005tjon]'s B_alpha^exp = 29.0 +/- 0.1 (inside: True). CROSS-CHECK against [hammer2007fourbody]'s universal B4/B3 = 5, the field's own parameter-free target: feeding that ratio into the C(A,k) basis gives mu4 = 9*mu2 + mu3 = 9.8128, i.e. 2.6x LARGER than nature's mu4 for a calculation that carries NO four-body input at all — a stronger form of TjonSimplexForm's thesis that mu4's size is a basis artifact. (Weak reading only: 'no four-body parameter needed at LO' is not 'no four-body force exists'; [jurgenson2009srg] puts the 4N force at tens-to-hundreds of keV, and Yamashita et al. dispute the LO claim generally while exempting nucleons, the case at issue.) Sharper: the mu4 = 0 baseline has M(4) < 4*M(3) strictly for any mu2 > 0 (Lean tjon_baseline_lt_four_ratio), so ratio 5 is outside its reachable range and the EFT's 'no four-body parameter' is PROVABLY NOT the simplex's mu4 = 0 (universal_ratio_not_in_tjon_baseline) — the paper motivates the baseline, it does not derive it. For the operator the external number makes the standing gap WIDER: operator 1.26 < nature 3.418 < universal 5. Scope-(a) NEGATIVE on the operator's ladder growth against one further target; no ingredient excluded, nothing fitted, nothing wired.",
+  "description": "Closes QA beans qou-3o9x (re-derive the AME2020 literals of gap10_tjon_correlation_probe.py from library/mass_1.mas20.txt so a re-upload is caught by source_sha), qou-f3ec and qou-l4cm (cross-check the corpus Tjon ladder against the external sources, mismatch informative either way, no back-fitting). Part A derives B(2H), B(3H), B(4He) from the AME2020 mass table and shows rho_strong[3] is a 5-digit rounding while rho_strong[4] is a Coulomb-corrected value whose +0.694 MeV correction had no source in the corpus and is now checked against [platter2005tjon]. Part B scores against [hammer2007fourbody]'s universal B4/B3 = 5 and finds the simplex basis assigns that no-four-body-force system a LARGER mu4 than nature's, with the mu4 = 0 baseline provably unable to reach ratio 5 at all. Lean backing: QOU.MassTheory.TjonSimplexForm universal_ratio_forces_mu4, tjon_baseline_lt_four_ratio, universal_ratio_not_in_tjon_baseline, four_sub_two_mul_three (sorry-free, generic CommRing). VERDICT: AME2020 re-derivation: rho_strong[3] literal 3.8128 is a 5-digit rounding of the derived 3.812786601 (rel 3.51e-6); rho_strong[4] literal 13.0316 is NOT an AME ratio (raw 12.71963154) but implies B = 28.989657 MeV, a Coulomb correction of +0.694 MeV now sourced to [platter2005tjon]'s B_alpha^exp = 29.0 +/- 0.1 (inside: True). CROSS-CHECK against [hammer2007fourbody]'s universal B4/B3 = 5, the field's own parameter-free target: feeding that ratio into the C(A,k) basis gives mu4 = 9*mu2 + mu3 = 9.8128, i.e. 2.6x LARGER than nature's mu4 for a calculation that carries NO four-body input at all — a stronger form of TjonSimplexForm's thesis that mu4's size is a basis artifact. (Weak reading only: 'no four-body parameter needed at LO' is not 'no four-body force exists'; [jurgenson2009srg] puts the 4N force at tens-to-hundreds of keV, and Yamashita et al. dispute the LO claim generally while exempting nucleons, the case at issue.) Sharper: the mu4 = 0 baseline has M(4) < 4*M(3) strictly for any mu2 > 0 (Lean tjon_baseline_lt_four_ratio), so ratio 5 is outside its reachable range and the EFT's 'no four-body parameter' is PROVABLY NOT the simplex's mu4 = 0 (universal_ratio_not_in_tjon_baseline) — the paper motivates the baseline, it does not derive it. For the operator the external number makes the standing gap WIDER: operator 1.26 < nature 3.418 < universal 5. Scope-(a) NEGATIVE on the operator's ladder growth against one further target; no ingredient excluded, nothing fitted, nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",
   "data": {
     "tjon_external_cross_check": {
       "lean": "QOU.MassTheory.TjonSimplexForm: universal_ratio_forces_mu4, tjon_baseline_lt_four_ratio, universal_ratio_not_in_tjon_baseline, four_sub_two_mul_three, two_mu3_add_mu4_neg_of_flat",
       "ame2020": {
-        "source": "uploads/mass_1.mas20.txt",
+        "source": "library/mass_1.mas20.txt",
         "source_sha256": "e8599c6d7f724fac91934e59f1b9de8fb8f63e820f4b39456b790665ed2a3307",
         "binding_MeV": {
           "2H": "2.22456619999999999999999999999991488885030261877109996211102",

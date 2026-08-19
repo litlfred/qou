@@ -1,0 +1,52 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1404.2541v1",
+ "source_sha256": "edb7c9b2b1561ac3",
+ "brief": "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu - jan equation between",
+ "extended": "**The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension Takeshi MORITA∗**\n\n22 pp, 6 sections.\n\n**Abstract.** We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the inﬁnity. These solut ions are given by the Ramanujan function, the q-Airy function and the diver- gent basic hypergeometric series 2ϕ 0(0, 0; −; q, x ). We use two diﬀerent q-Borel-Laplace resummation methods to obtain our connecti on for- mulae. We also introduce the q-Borel-Laplace transformation of level r−1, which are higher order extension of these transformation s. These methods are useful to obtain an asymptotic formula of a diver gent se- ries rϕ 0(0, 0, . . . , 0; −; q, x ).\n\n**Outline.** 1 Introduction; 2 Basic notations; 3 Two q-exponential functions; 4 Covering transformations; 6 The q-Borel-Laplace transformations; 9 The q-Borel-Laplace transformations of level\n\n**Extracted claims (proposals, not verified).**\n- Theorem: For any x ∈ C∗ \\ [−λ;q], we have\n- Theorem: For any C∗ \\ [−λ;qr−1], we have\n- Theorem 9.3: For any C∗ \\ [−λ;qr−1], we have\n- Corollary 3.3: For any x ∈ C∗ \\ [1;q], we have\n- Lemma 3.2: For any x ∈ C∗ \\ [1;q], the function eq(x/q ) has the following\n- Lemma 6.1: For any entire function f (x), we have",
+ "tokens": {
+  "brief": 49,
+  "extended": 324
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-2-basic-notations",
+   "title": "Basic notations",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-002-3-two-q-exponential-functions",
+   "title": "Two q-exponential functions",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-003-4-covering-transformations",
+   "title": "Covering transformations",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-004-6-the-q-borel-laplace-transformations",
+   "title": "The q-Borel-Laplace transformations",
+   "pages": "13-19"
+  },
+  {
+   "id": "sec-005-9-the-q-borel-laplace-transformations-of-level-r",
+   "title": "The q-Borel-Laplace transformations of level r-1 and its application",
+   "pages": "19-22"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

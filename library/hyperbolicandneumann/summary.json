@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "hyperbolicandneumann",
+ "source_sha256": "3d66fe4c64bdc62b",
+ "brief": "Second copy of Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — see library/arxiv-2304.12545v1/, which is the same document.",
+ "extended": "**Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann** — Stavros Garoufalidis and Don Zagier.\n\n**This is a duplicate copy.** The same document is held at `library/arxiv-2304.12545v1/`, which carries the arXiv identifier and should be preferred. Both were ingested because the doc-id derivation is per-file and the two files have different names; nothing detects that their *contents* are the same.\n\nKept rather than deleted so nothing that already cites this path breaks. See the arXiv copy for the summary.",
+ "tokens": {
+  "brief": 43,
+  "extended": 132
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
+   "title": "Ideal triangulations and the gluing equations",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-volumes-and-dehn-surgeries",
+   "title": "Volumes and Dehn surgeries",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
+   "title": "The Bloch group and the extended Bloch group",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-003-4-symplectic-properties",
+   "title": "Symplectic properties",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-5-quantization",
+   "title": "Quantization",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-005-6-connections-to-number-theory",
+   "title": "Connections to number theory",
+   "pages": "12-17"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "17-19"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

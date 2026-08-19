@@ -1,0 +1,61 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 569
+
+n
+
+ASx,.0, |[[G+e)" [] G+2;t+ae)} Te -2)7? (2.8)
+
+i=1 1<i<j<n 1<i<j<n
+
+It can be seen directly that this constant term is equal to the constant term of (2.3) as,
+for any polynomial f(x1,...,2,), the constant term of f(#1,...,¢n) TT (a,;1— «;')
+1<i<j<n
+n)l/ IT] (ai -2;). Note that
+1<i<j<n
+the expression in (2.8) is a polynomial in z1,...,2p (and not only a Laurent polynomial).
+It should be noted that (2.6) and (2.8) could actually be generalized to arbitrary u
+
+and v.
+
+is equal to the constant term of AS;, x, [f(x1,--
+
+2.2. Refined enumeration with respect to the top entry
+For a positive integer n, non-negative integers min < a < max and x = (2},...,2n),
+we define
+
+max — min
+
+‘ b a,+7—min—-1
+, _ _1)a+min +5 i
+GT namin, maxe(*) » (-1) (, _ sin) itt, ((; —-14+bdj = i) .
+
+b=0
+
+Suppose min < b) < bo < ... < by, < max is a sequence of integers, then
+GT pa,min,max(b1,...,bn) is the number of Gelfand—Tsetlin patterns with bottom row
+by,...,b, and top row a. This follows, for instance, from a result in [13, Theorem 3,
+
+S=0,P=Q=ll, as
+
+max — min
+
+xt i b x — min
+_ _y)atmin +b :
+I a-i » (-1) a—min b
+
+min<i<max,i#a b=0
+
+Further, we define
+
+Mnaminmax(u,0,x) =  [[ Stricte, 2, @Tn,a,min,max(X);
+1l<p<qsn
+
+then it follows from [13, Theorem 3] and the ideas above that the evaluation of
+Mh.a,min,max(u,V,X) at x = (b1,...,6,) is the generating function of monotone trian-
+gles with bottom row bi,...,b, and top row a, provided that min < b; < bg <...<
+bp, < max. The refined version of Corollary 3 is then the following.
+
+Theorem 4. Suppose b = (b1,...,bn) is a strictly increasing sequence of integers and
+min < a < max are integers with min < b; and b, < max. Then the generating function
+of monotone triangles with bottom row b,...,bn and top row a is the constant term of
+the rational function one obtains by multiplifying the Laurent polynomial in Corollary 3
+with

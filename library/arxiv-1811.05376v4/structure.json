@@ -1,0 +1,300 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1811.05376v4",
+ "source": {
+  "file": "1811.05376v4.pdf",
+  "sha256": "a486709d0a78d19cd46ec104c801b2f58f346fcab6265408a65684440770f30c",
+  "bytes": 992689,
+  "pages": 40
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1811.05376",
+   "version": "4",
+   "primary_class": "math.DG",
+   "stamp_date": "23 Oct 2020"
+  },
+  "doi": null,
+  "title": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres",
+  "authors_raw": "Jørgen Ellegaard Andersen and William Elbæk Mistegård",
+  "abstract": "For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki seriesZ0(X). We show that for every evenk ∈ N there exists a full asymptotic expansion of ˆZ0(X;q) for q tending to e2πi/k, and in particular that the limit ˆZ0(X;e2πi/k) exists and is equal to the WRT quantum invariantτk(X). We show that the poles of the Borel transform ofZ0(X) coincide with the classical complex Chern-Simons values, which we further show classiﬁes the corresponding components of the moduli space of ﬂatSL(2, C)-connections.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20201026005539Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  },
+  "title_lines": [
+   "Resurgence Analysis of Quantum Invariants of Seifert",
+   "Fibered Homology Spheres"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Complex Chern-Simons theory on X",
+   "page": 5,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The moduli space and complex Chern-Simons values",
+   "page": 6,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "The Borel transform and Complex Cherns-Simons",
+   "page": 15,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Resummation of the WRT invariant",
+   "page": 17,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Resurgence of the generating function",
+   "page": 18,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "A resurgence formula for the GPPV invariant",
+   "page": 19,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 3",
+   "page": 20,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotic expansion of the GPPV invariant",
+   "page": 26,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 4",
+   "page": 27,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "The decomposition of the GPPV invariant",
+   "page": 27,
+   "source": "outline",
+   "number": "4.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotic expansions of q-series with periodic coefficients",
+   "page": 31,
+   "source": "outline",
+   "number": "4.1.2"
+  },
+  {
+   "level": 3,
+   "title": "The asymptotic expansion of the GPPV invariant",
+   "page": 33,
+   "source": "outline",
+   "number": "4.1.3"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A Resurgence and resummation",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 Resurgent functions and the Borel transform",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 Borel-Laplace resummation",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-complex-chern-simons-theory-on-x",
+   "number": "1",
+   "title": "Complex Chern-Simons theory on X",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2659,
+   "n_words": 504
+  },
+  {
+   "id": "sec-001-11-the-moduli-space-and-complex-chern-simons-val",
+   "number": "1.1",
+   "title": "The moduli space and complex Chern-Simons values",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 15,
+   "n_chars": 19791,
+   "n_words": 3683
+  },
+  {
+   "id": "sec-002-2-the-borel-transform-and-complex-cherns-simons",
+   "number": "2",
+   "title": "The Borel transform and Complex Cherns-Simons",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 3924,
+   "n_words": 777
+  },
+  {
+   "id": "sec-003-21-resummation-of-the-wrt-invariant",
+   "number": "2.1",
+   "title": "Resummation of the WRT invariant",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1384,
+   "n_words": 259
+  },
+  {
+   "id": "sec-004-22-resurgence-of-the-generating-function",
+   "number": "2.2",
+   "title": "Resurgence of the generating function",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3072,
+   "n_words": 536
+  },
+  {
+   "id": "sec-005-3-a-resurgence-formula-for-the-gppv-invariant",
+   "number": "3",
+   "title": "A resurgence formula for the GPPV invariant",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2761,
+   "n_words": 503
+  },
+  {
+   "id": "sec-006-31-proof-of-theorem-3",
+   "number": "3.1",
+   "title": "Proof of Theorem 3",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 26,
+   "n_chars": 10655,
+   "n_words": 2026
+  },
+  {
+   "id": "sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant",
+   "number": "4",
+   "title": "The asymptotic expansion of the GPPV invariant",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1818,
+   "n_words": 348
+  },
+  {
+   "id": "sec-008-41-proof-of-theorem-4",
+   "number": "4.1",
+   "title": "Proof of Theorem 4",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 669,
+   "n_words": 111
+  },
+  {
+   "id": "sec-009-411-the-decomposition-of-the-gppv-invariant",
+   "number": "4.1.1",
+   "title": "The decomposition of the GPPV invariant",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 5759,
+   "n_words": 1109
+  },
+  {
+   "id": "sec-010-412-asymptotic-expansions-of-q-series-with-perio",
+   "number": "4.1.2",
+   "title": "Asymptotic expansions of q-series with periodic coefficients",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 2817,
+   "n_words": 507
+  },
+  {
+   "id": "sec-011-413-the-asymptotic-expansion-of-the-gppv-invaria",
+   "number": "4.1.3",
+   "title": "The asymptotic expansion of the GPPV invariant",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 5319,
+   "n_words": 975
+  },
+  {
+   "id": "sec-012-appendix-a-resurgence-and-resummation",
+   "number": null,
+   "title": "Appendix A Resurgence and resummation",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-a1-resurgent-functions-and-the-borel-transform",
+   "number": null,
+   "title": "A.1 Resurgent functions and the Borel transform",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1030,
+   "n_words": 174
+  },
+  {
+   "id": "sec-014-a2-borel-laplace-resummation",
+   "number": null,
+   "title": "A.2 Borel-Laplace resummation",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 11966,
+   "n_words": 1687
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 15,
+  "chars_total": 73624
+ }
+}

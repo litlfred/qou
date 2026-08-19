@@ -1,0 +1,13 @@
+---
+doc_id: arxiv-1208.2521v1
+doc_title: "1. Introduction Several possible q-analogues of the Bessel function (1.1) Jα (x) := (−1)k (x/ 2)α +2k k! Γ( α + k + 1) have been considered in the literature. Best known are two re"
+section_id: sec-014-1-g-e-andrews-q-series-their-development-and-app
+section_title: "G. E. Andrews, q-Series: their development and application in analysis, nu mber theory,"
+section_number: 1
+pages: 19-19
+source_pdf: 1208.2521v1.pdf
+source_sha256: 8d0281aa84043865
+doc_brief: "ON q-ANALOGUES OF THE FOURIER — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H."
+---
+combinatorics, physics, and computer algebra , Regional Conf. Ser. in Math., no. 66, Amer.
+Math. Soc., Providence, R.I., 1986.

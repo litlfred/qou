@@ -1,0 +1,101 @@
+---
+doc_id: phys-rep09
+doc_title: "PhysicsReports470(2009)151–238 Contents lists available at ScienceDirect PhysicsReports journal homepage: www.elsevier.com/locate/physrep TheMagnusexpansionandsomeofitsapplications"
+section_id: sec-004-optics
+section_title: "Optics"
+section_number: null
+pages: 82-84
+source_pdf: phys-rep09.pdf
+source_sha256: cd345d3df9358efc
+doc_brief: "PhysicsReports470(2009)151–238 PhysicsReports TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeVale"
+---
+Inthereviewpaper[ 228]onecanfindreferencestosomeearlyapplicationsofMEtoOptics.Forexample,toHamiltonians
+involvingthegeneratorsofSU (2),SU(1,1)andHeisenberg–Weylgroups,withapplicationstolaser-plasmascatteringand
+pulsepropagationinfree-electronlasers.Here,asrepresentativesofthemoremoderninterestofMEinOptics,wequote
+twoapplicationsreferringtoHelmholtzequation,andtothestudyofStokesparameters.
+Helmholtzequationinonespatialdimensionwithavariablerefractiveindex n(x)reads
+ψ′′(x)+k2n2(x)ψ(x)=0, (358)
+wherekisthewavenumberinvacuum.
+S.Blanesetal./PhysicsReports470(2009)151–238 233
+Recently,thistime-honoredwaveequationhasbeentreatedintwodifferentways,bothusingME.Fromamoreformal
+pointofview,in[ 229]HelmholtzequationisanalyzedfollowingthewellknownprocedurefollowedbyFeshbachandVillars
+toconvertthesecondorderrelativisticquantumKlein–Gordondifferentialequationforspin-0particlesinafirstorder
+differentialequationinvolvingtwocomponentswavefunctions(theoriginalwavefunctionanditstimederivative).The
+evolutionoperatorforHelmholtzequationisthena2 ×2matrixwhichevolvesaccordingtothefundamentalequation (4),
+withtheonlydifferencethatnowtheevolutionparameteris xinsteadof t.In[ 229]thewholeprocedureisexplainedand
+themainphysicalconsequence,whichamountstotheadditionofcorrectingtermstotheHamiltonian,isdiscussedinthe
+caseofanaxiallysymmetricgraded-indexmedium,i.e.oneinwhichtherefractiveindexisapolynomial.
+HelmholtzequationhasalsobeeninvestigatedwiththehelpofMEin[ 227,230,231].Here,thepropagationinaslowly
+varyingwaveguideisconsidered,andtheboundaryvalueproblemisconvertedintoaninitialvalueproblembythe
+introductionofappropriateoperatorswhichareshowntosatisfyEq. (4).Numericalmethodstofourthorderborrowed
+from[37]arethenused.
+Sincethemid19thcentury,thepolarizationstateoflight,andingeneralelectromagneticradiationoranyother
+transverse waves, is described by the so-called Stokes parameters, which constitute a four-dimensional vectorS(ω)
+dependingonthefrequency ω.Whenthelighttraversesanopticalelementwhichactsonitspolarizationstate,thein
+andoutStokesvectorsarerelatedby
+Sout(ω)=M(ω)Sin(ω), (359)
+wherethe4 ×4matrixM(ω)iscalledtheMuellermatrix.Itcanbeproved[ 232,233]thatitsatisfiestheequation
+M′(ω)=H(ω)M(ω), M(ω0)=M0, (360)
+where, now, the prime denotes derivative with respect to the real independent variableω. For systems with zero
+polarization-dependentloss(PDL)andnopolarizationmodedispersion(PMD), H(ω)isconstant,whereaswithPDLand
+PDM,thepreviousequationisjustourEq. (4)andtheappropriatenessofMEisapparent.Thematrix H(ω)inthisapplication
+hasaHermitianandanon-Hermitiancomponent.MEhasallowedarecursivecalculationofsuccessiveordersofthe
+frequencyvariationoftheMuellermatrix.ThisyieldsPMDandPDLcompensatorsthatcounteracttheeffectsofPMDand
+PDLwithincreasedaccuracy.
+AlsorelatedtotheuseofStokesvector,onecanmentiontheso-calledradiativetransferequationforpolarizedlight.Itis
+relevantinAstrophysicstomeasurethemagneticfieldsintheSunandstars.Thatequationgivesthevariationof S(z)with
+thelightpath z
+d
+dz
+S(z)=−K(z)S(z)+J,
+whereSistheStokesvector, Kisa4 ×4matrixwhichdescribesabsorptioninthepresenceofZeemaneffectand Jstands
+fortheemissionterm.In[ 234–236]MEisusedtoobtainanexponentialsolution.
+7.6. GeneralRelativity
+Toillustrate,oncemore,thepervasivepresenceofthelineardifferentialequation (4),letusmentionreference[ 237]in
+whichtheaimistodeterminethetimeelapsedbetweentwoeventswhenthespace-timeistreatedasinGeneralRelativity.
+Thenitturnsouttobenecessarytosolveatwo-pointboundaryvalueproblemfornullgeodesics.Insodoing,oneneeds
+toknowaJacobianwhoseexpressioninvolvesa8 ×8matrixfunctionobeyingthebasicEq. (4).In[ 237]aneighthorder
+numericalmethodfrom[ 39]isused,whichisprovedtobeanefficientscheme.
+7.7. Searchofperiodicorbits
+Thesearchofperiodicorbitsforsomenon-lineardifferentialautonomousequations, x′=f(x),x∈ Rdisofinterestin
+CelestialMechanics(periodicorbitsoftheN-bodyproblem)aswellasinthegeneraltheoryofdynamicalsystems.Dueto
+thecomplexityofthisprocess,itisimportanttohaveefficientnumericalalgorithms.
+TheLindstedt–Poincarétechniqueisfrequentlyusedtocalculateperiodicorbits.Aniterativeprocessproposedin[ 238]
+consistsofstartingwithaguessedperiodicorbit,andthisguessissubsequentlyimprovedbysolvingacorrelationnon-
+autonomouslineardifferentialequation.ThenumericalintegrationofthisequationiscarriedoutbymeansofMagnus
+integrators.
+7.8. Geometriccontrolofmechanicalsystems
+Manymechanicalsystemsstudiedincontroltheorycanbemodeledbyanordinarydifferentialequationoftheform
+[90,239]
+x′(t)=f0(x(t))+
+m∑
+i=1
+ui(t)fi(x(t)), (361)
+234 S.Blanesetal./PhysicsReports470(2009)151–238
+initializedat x(0)=p.Here x∈ Rdrepresentsallthepossiblestatesofthesystem, fiare(real)analyticvectorfieldsand
+thefunctionu=(u1,..., um)(thecontrols)isassumedtobeintegrablewithrespecttotimeandtakingvaluesinacompact
+subsetU⊂ Rm.Thevectorfield f0iscalledthe driftvectorfield,whereas fi,i≥1,arereferredtoasthe controlvectorfields.
+Whenf0≡0,thesystem (361)iscalled‘withoutdrift’,anditsanalysisistypicallyeasier.
+Foragivensetofcontrols {ui},Eq.(361)withinitialvalue x(0)isnothingbutadynamicalsystem,whichcanbeanalyzed
+and(approximately)solvedbystandardtechniques.Incontroltheory,however,oneisinterestedtypicallyinthe inverse
+problem:givenatarget x(T),findcontrols {ui}thatsteerfrom x(0)tox(T)[90],perhapsbyfollowingaprescribedpath.Just
+toillustratetheseabstractconsiderations,atypicalproblemcouldbethedeterminationofasetofcontrolsthatdrivethe
+actionsofarobotduringatask.
+Thefirststepistoguaranteethatthereexistsasolution.Thisistheproblemofcontrollability.Tocharacterizethe
+controllabilityoflinearsystemsoftheform
+x′(t)=A(t)x(t)+B(t)u(t) (362)
+isarelativelysimpletaskthankstoanalgebraiccriterionknownastheKalmanrankcondition[ 239,240].Thisissue,however,
+ismuchmoreinvolvedforthenonlinearsystem (361)[90].
+TheinterestofMEincontroltheory,ashasbeenalreadydiscussedinSection 3.5,stemsfromtheapproximateansatzit
+providesconnectingthestates x(0)andx(T).Thus,theMagnusexpansioncanbeusedeithertopredictastate x(T)fora
+givencontrol uortofindreasonablecontrols uwhichmadereachable,thetarget x(T)fromx(0).Ofcourse,manysetsof
+controlsmayexistanditraisesquestionsconcerningthe costofeveryscheme,andconsequentlythesearchfortheoptimal
+choice.Forinstance,theMEhasbeenusedinnon-holonomicmotionplanningofsystemswithoutdrift[ 241,242].Among
+non-holonomicsystemstherearefree-floatingrobots,mobilerobotsandunderwatervehicles[ 242,243].
+Intheparticularcaseoflinearquadraticoptimalcontrolproblems(appearinginengineeringproblemsaswellasindiffer-
+entialgames)agivencostfunctionalhastoachieveaminimum.Whenthishappens,Eq. (362)canbewrittenas[ 244,194]is
+x′=M(t,K(t))x, (363)
+whereK(t)∈ Rd×d hastosolveaRiccatidifferentialequationsimilarto (338)withfinalcondition K(T)= Kf.Inother
+words,theRiccatiequationhastobeintegratedbackwardintime,andthentouseitasaninputin (363).Asmentioned,the
+Riccatidifferentialmatrixequationhasreceivedmuchattention[ 191,194–196,244–246],butanefficientimplementation
+tothisproblemrequiresfurtherinvestigation,andmethodsfromMEcanplayanimportantrole.

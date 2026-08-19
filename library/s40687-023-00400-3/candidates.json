@@ -1,0 +1,119 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "s40687-023-00400-3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "fd7638a8cf512a9986d02292f111bbbd92ca6c46dddfedef6ece56fc145ca4ee",
+  "file": "s40687-023-00400-3.pdf"
+ },
+ "provenance": {
+  "title": "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.1007/s40687-023-00400-3"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "remark": 3,
+   "conjecture": 1,
+   "theorem": 3
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.3",
+   "name": null,
+   "statement": "OnecancheckthatEquation( 17)(orequivalently,itsrestrictionto n-throots",
+   "section_file": "sections/sec-005-13-neumannzagier-matrices-and-their-twisted-vers.md",
+   "section_title": "Neumann\u2013Zagier matrices and their twisted version",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.4",
+   "name": null,
+   "statement": "The Laurent polynomials det(A(t)) and det(B(t)) are palindromic, i.e.,",
+   "section_file": "sections/sec-005-13-neumannzagier-matrices-and-their-twisted-vers.md",
+   "section_title": "Neumann\u2013Zagier matrices and their twisted version",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.5",
+   "name": null,
+   "statement": "With the above notation, there exists a lower triangular matrix P with 1\u2019s",
+   "section_file": "sections/sec-005-13-neumannzagier-matrices-and-their-twisted-vers.md",
+   "section_title": "Neumann\u2013Zagier matrices and their twisted version",
+   "pages": "4-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.6",
+   "name": null,
+   "statement": "\u03c4CS(T ,t) is invariant under Pachner 2\u20133 moves between ideal triangula-",
+   "section_file": "sections/sec-006-14-the-1-loop-invariant-and-its-twisted-version.md",
+   "section_title": "The 1-loop invariant and its twisted version",
+   "pages": "7-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.8",
+   "name": null,
+   "statement": "We have \u03c4CS(T ,1) = 0 and d",
+   "section_file": "sections/sec-006-14-the-1-loop-invariant-and-its-twisted-version.md",
+   "section_title": "The 1-loop invariant and its twisted version",
+   "pages": "7-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.10",
+   "name": null,
+   "statement": "By varying the representation, the adjoint Reidemeister torsion can be",
+   "section_file": "sections/sec-006-14-the-1-loop-invariant-and-its-twisted-version.md",
+   "section_title": "The 1-loop invariant and its twisted version",
+   "pages": "7-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.1",
+   "name": null,
+   "statement": "RewritingEquation( 65)intermsofNZmatrices,wehave",
+   "section_file": "sections/sec-010-4-proofs-twisted-1-loop-invariant.md",
+   "section_title": "Proofs: twisted 1-loop invariant",
+   "pages": "16-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

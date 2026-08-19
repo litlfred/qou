@@ -24,7 +24,7 @@ Audits: `docs/audits/2026-07-02-keystone-valuemap-genuine-smatrix.md`,
 The carrier must be a **q-function family**. Concrete candidate: the two-variable
 knot-complement blocks **F_K(x, q)** (Gukov–Manolescu; GPPV framework — radial-limit
 theorem proved for negative-definite plumbed manifolds by Murakami,
-`uploads/2205.01282v2.pdf`; Seifert resurgence machinery in `uploads/1811.05376v4.pdf`).
+`library/arxiv-2205.01282v2/2205.01282v2.pdf`; Seifert resurgence machinery in `library/arxiv-1811.05376v4/1811.05376v4.pdf`).
 The λ-dependence enters through the colour variable x: state the x-specialization
 hypothesis class realizing `bwS0(λ; q)` at real q₀ > 1, THEN probe.
 
@@ -49,5 +49,5 @@ hypothesis class realizing `bwS0(λ; q)` at real q₀ > 1, THEN probe.
 - Genuine S-matrix: `computations/probes/keystone_valuemap_genuine_smatrix_s013.py`
 - Lean obligation (sibling DG session): `QOU/BraidKnot/KeystoneQBesselRadialTarget.lean`
 - Ledger: `docs/coordination/s5-so3-keystone.md`
-- Papers: `uploads/0405028v2.pdf`, `uploads/1811.05376v4.pdf`, `uploads/2205.01282v2.pdf`,
-  `uploads/zagier-the-dilogarithm-function.pdf`
+- Papers: `library/arxiv-math-ph-0405028v2/0405028v2.pdf`, `library/arxiv-1811.05376v4/1811.05376v4.pdf`, `library/arxiv-2205.01282v2/2205.01282v2.pdf`,
+  `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`

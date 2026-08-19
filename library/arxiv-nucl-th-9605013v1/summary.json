@@ -1,0 +1,76 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-nucl-th-9605013v1",
+ "source_sha256": "cdeab7717dcb9567",
+ "brief": "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROTATOR MODEL — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei.",
+ "extended": "**NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROTATOR MODEL**\n\n*N. MINKOV, S. B. DRENSKA, P. P. RAYCHEV, R. P. ROUSSEV*\n\n12 pp, 11 sections.\n\n**Abstract.** The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei. Good results are o btained in nuclei with valence pair number N > 10. It is shown that in the excited bands the violation of the exact SU(2) symmetry is generally stronger tha n in the ground state bands, indicating the presence of a nonadiabatic perturb ation caused by the excited vibrational degrees of freedom. The physical content o f the parameter q is discussed. Predictions of the SU q(2) model for B(E2) intraband transitions in excited bands are presented and the need for speciﬁc experiment al data is pointed out.\n\n**Outline.** Abstract; 1 Introduction; 3 SU q(2) symmetry in exited collective bands; 4 B q(E2) transitions in the exited bands; 5 Conclusion; 6 References; 3 V. G. Drinfeld, in Proceedings of the Intern; 5 D. Bonatsos, E. N. Argyres, S. B. Drenska, P; 15 A. Bohr and B. R. Mottelson, Nuclear Struct; 16 J. Eisenberg and W. Greiner, Nuclear Theory; 19 V. M. Belenki and E. P. Grigoriev, Structur",
+ "tokens": {
+  "brief": 48,
+  "extended": 303
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-3-su-q2-symmetry-in-exited-collective-bands",
+   "title": "SU q(2) symmetry in exited collective bands",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-003-4-b-qe2-transitions-in-the-exited-bands",
+   "title": "B q(E2) transitions in the exited bands",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-004-5-conclusion",
+   "title": "Conclusion",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-005-6-references",
+   "title": "References",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-006-3-v-g-drinfeld-in-proceedings-of-the-internation",
+   "title": "V. G. Drinfeld, in Proceedings of the International Congress of Mathematicia ns,",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-007-5-d-bonatsos-e-n-argyres-s-b-drenska-p-p-raychev",
+   "title": "D. Bonatsos, E. N. Argyres, S. B. Drenska, P. P. Raychev, R. P. Roussev and",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-008-15-a-bohr-and-b-r-mottelson-nuclear-structure-vo",
+   "title": "A. Bohr and B. R. Mottelson, Nuclear Structure Vol. II (Benjamin, New York,",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-009-16-j-eisenberg-and-w-greiner-nuclear-theory-vol",
+   "title": "J. Eisenberg and W. Greiner, Nuclear Theory Vol. I (North-Holland, Amster-",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-010-19-v-m-belenki-and-e-p-grigoriev-structure-of-ev",
+   "title": "V. M. Belenki and E. P. Grigoriev, Structure of Even Nuclei (Energoatomizdat,",
+   "pages": "10-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

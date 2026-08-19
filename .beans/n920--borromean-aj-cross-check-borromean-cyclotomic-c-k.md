@@ -7,7 +7,7 @@ created_at: 2026-07-04T10:42:30Z
 updated_at: 2026-07-07T14:03:51Z
 ---
 
-UNBLOCKED 2026-07-06: owner uploaded uploads/0508100v6.pdf (GL2011).
+UNBLOCKED 2026-07-06: owner uploaded library/arxiv-math-0508100v6/0508100v6.pdf (GL2011).
 Habiro's Borromean formula transcribed + verified in
 computations/habiro_borromean_colored_jones.py (4/4 anchors: n=1
 exactness, bar-symmetry n<=6, Laurent polynomiality, independent TL_3

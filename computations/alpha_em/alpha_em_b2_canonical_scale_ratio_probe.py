@@ -140,7 +140,7 @@ sole open categorical input; 1/(8pi) stays phase-4. mpmath 50 dps
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [mathas-1999] Iwahori-Hecke algebras and Schur algebras of the
 --       symmetric group (cellular/Murphy basis, gamma_{T^lam} = [lam]_Q!)
--- Ref: [halverson-1998-markov-weights] https://doi.org/10.1006/jabr.1998.7437
+-- Ref: [orellana1998] https://doi.org/10.1006/jabr.1998.7437
 -- Ref: [braden-disney-hogg-2022] https://arxiv.org/abs/2208.13692
 -- Ref: [riera-rodriguez-1992] The period matrix of Bring's curve,
 --       Pacific J. Math. 154 (1992)

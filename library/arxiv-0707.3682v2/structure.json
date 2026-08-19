@@ -1,0 +1,141 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0707.3682v2",
+ "source": {
+  "file": "0707.3682v2.pdf",
+  "sha256": "609a6f67a0cd5fc8b4ab67d4ec03a229c4a6ed673cc809d4f66c949058967a14",
+  "bytes": 565975,
+  "pages": 44
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0707.3682",
+   "version": "2",
+   "primary_class": "math.KT",
+   "stamp_date": "19 Nov 2007"
+  },
+  "doi": null,
+  "title": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS",
+  "authors_raw": "AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU",
+  "abstract": "We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding ζ-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin moti ves, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number ﬁe ld (or Artin motive) is Abelian over the rationals, and all conjectures a re veriﬁed numeri- cally in some other cases.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181105152436-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER",
+   "FIELDS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A motivic version of the conjecture",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "More explicit  K -groups and regulators",
+   "page": 17,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Computing  K -groups in practice",
+   "page": 23,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Computing p-adiccomingchar L-functionscomingchar",
+   "page": 27,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 30,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 9,
+   "n_chars": 25998,
+   "n_words": 4795
+  },
+  {
+   "id": "sec-001-3-a-motivic-version-of-the-conjecture",
+   "number": "3",
+   "title": "A motivic version of the conjecture",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 29,
+   "n_chars": 54625,
+   "n_words": 10668
+  },
+  {
+   "id": "sec-002-7-examples",
+   "number": "7",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 34,
+   "n_chars": 13073,
+   "n_words": 2601
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 44,
+   "n_chars": 34068,
+   "n_words": 5425
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 4,
+  "chars_total": 127764
+ }
+}

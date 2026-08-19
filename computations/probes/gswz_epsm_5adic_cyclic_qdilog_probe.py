@@ -316,8 +316,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21) (uploads/1712.04887v3.pdf); "
-        "GSWZ arXiv:2412.04241v2 eqns (16)/(275) (uploads/2412.04241v2.pdf); "
+        "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21) (library/arxiv-1712.04887v3/1712.04887v3.pdf); "
+        "GSWZ arXiv:2412.04241v2 eqns (16)/(275) (library/arxiv-2412.04241v2/2412.04241v2.pdf); "
         "finite-field validation: cgz_cyclic_qdilog_unit_probe.py (merged #4490)"
     ),
     "place": "Q_25 component of K_5, ring (Z/5^8)[y]/(y^2+py+r) Hensel-split",

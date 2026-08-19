@@ -1,0 +1,172 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ihpmay2025",
+ "source_sha256": "0440a39721552a9e",
+ "brief": "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025.",
+ "extended": "**IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY**\n\n41 pp, 30 sections.\n\n**Abstract.** These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025. The goal is to develop enough understanding of hyperbolic 3-manifolds to understand the background statements and some consequences of the Tameness Theorem, the Ending Lamination Theorem and the Density Theorem. The notes contain much more material than we will be able to cover in the actual mini-course. I left the four lane highway took a blacktop seven miles Down by the old country school I went to as a child Two miles down a gravel road I could see the proud old home A tribute to a way of life that’s almost come and gone. The roots of my raising run deep I come back for the strength that I need And hope comes no matter how far down I sink The roots of my raising run deep. —————–Tommy Collins1 0.\n\n**Outline.** 0 Background material; 0.1 The hyperbolic plane; 0.2 Life in the hyperbolic plane; 0.4 Hyperbolic 3-space; 1 Convex cocompact hyperbolic 3-manifolds; 1.1 Basic definitions; 1.2 A characterization of convex cocompactness; 1.3 Other characterizations; 1.4 A digression on hyperbolic spaces; 2 Deformation spaces of Kleinian groups; 2.1 Basic Definitions; 2.2 Stability; 2.3 A proof of the Local-to-global principle; 3.1 Quasiconformal maps and Beltrami different; 3.2 Quasifconformal conjugacy; 3.3 Simultaneous uniformization; 3.4 The general case; 4 Geometrically tame hyperbolic 3-manifolds\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.8: (Special case of Fellow Traveller Property) Given K≥ 1 and C≥ 0 there exists\n- Theorem 1.11: (Fellow Traveller Property) Given (K,C ) andδ there exists R so that if X isδ-\n- Theorem 2.1: If M is a compact 3-manifold whose fundamental group is not virtually abelian,\n- Theorem 2.2: If ρ :π1(M)→ PSL(2, C) is convex cocompact, then there exists a neighborhood\n- Theorem 2.2: was first establshed by Marden [50, Theorem 10.1]. Thurston [75, Proposition\n- Theorem 2.3: (Local to Global Principle) GivenK≥ 1,C≥ 0, there exists ˆK, ˆC andA so that",
+ "tokens": {
+  "brief": 39,
+  "extended": 528
+ },
+ "sections": [
+  {
+   "id": "sec-000-0-background-material",
+   "title": "Background material",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-01-the-hyperbolic-plane",
+   "title": "The hyperbolic plane",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-02-life-in-the-hyperbolic-plane",
+   "title": "Life in the hyperbolic plane",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-04-hyperbolic-3-space",
+   "title": "Hyperbolic 3-space",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-1-convex-cocompact-hyperbolic-3-manifolds",
+   "title": "Convex cocompact hyperbolic 3-manifolds",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-11-basic-definitions",
+   "title": "Basic definitions",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-006-12-a-characterization-of-convex-cocompactness-in",
+   "title": "A characterization of convex cocompactness in terms of quasi-isometries",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-007-13-other-characterizations",
+   "title": "Other characterizations",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-008-14-a-digression-on-hyperbolic-spaces",
+   "title": "A digression on hyperbolic spaces",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-009-2-deformation-spaces-of-kleinian-groups",
+   "title": "Deformation spaces of Kleinian groups",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-010-21-basic-definitions",
+   "title": "Basic Definitions",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-011-22-stability",
+   "title": "Stability",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-012-23-a-proof-of-the-local-to-global-principle",
+   "title": "A proof of the Local-to-global principle",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-013-31-quasiconformal-maps-and-beltrami-differential",
+   "title": "Quasiconformal maps and Beltrami differentials",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-014-32-quasifconformal-conjugacy",
+   "title": "Quasifconformal conjugacy",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-015-33-simultaneous-uniformization",
+   "title": "Simultaneous uniformization",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-016-34-the-general-case",
+   "title": "The general case",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-017-4-geometrically-tame-hyperbolic-3-manifolds",
+   "title": "Geometrically tame hyperbolic 3-manifolds",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-018-41-the-first-explicit-examples",
+   "title": "The first explicit examples",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-019-42-simplicial-hyperbolic-surfaces",
+   "title": "Simplicial hyperbolic surfaces",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-020-43-simply-degenerate-ends",
+   "title": "Simply degenerate ends",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-021-44-the-tameness-theorem",
+   "title": "The Tameness Theorem",
+   "pages": "29-32"
+  },
+  {
+   "id": "sec-022-46-limit-sets-of-kleinian-groups",
+   "title": "Limit sets of Kleinian groups",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-023-47-a-covering-theorem-for-hyperbolic-3-manifolds",
+   "title": "A covering theorem for hyperbolic 3-manifolds",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-024-5-the-classification-of-hyperbolic-3-manifolds",
+   "title": "The classification of hyperbolic 3-manifolds",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-025-51-geodesic-laminations",
+   "title": "Geodesic laminations",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-026-52-ending-laminations",
+   "title": "Ending laminations",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-027-53-the-ending-lamination-theorem",
+   "title": "The Ending Lamination Theorem",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-028-54-the-bers-sullivan-thurston-density-conjecture",
+   "title": "The Bers-Sullivan-Thurston Density Conjecture and other consequences",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-029-references",
+   "title": "References",
+   "pages": "38-41"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

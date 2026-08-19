@@ -1,0 +1,67 @@
+10 SYLVIE CORTEEL AND OLIVIER MALLET
+
+Proof. We only prove the case n > 0. The case n < 0 is identical as (a)_n = (=1/a)"q"?') /(aq)n and
+therefore
+ntl n+l
+
+(—aq)n(—a"/a)yeng? 702 )aN—" — (~aq)-n(—-" ang? 7 C2 JaXtn
+
+(q)+n(q)N—n (q)wtn(@)n—n
+
+We present an analytical proof and a combinatorial one.
+Analytical proof:
+
+So Coal Ja)y ag)
+
+(q)ntn(Q)N—n
+
+N=n
+
+FS aa)n(= a" Jag PYM a
+
+7 y (Qn (@)n+2n
+
+_(49)n ~ ghtC2") (< 9" /a)naX
+(gan <= (an (9?)
+
+We now apply the g-Gauss summation (Corollary 2.4 of Bi with n > N, a — —q"/a, b > —oo and
+2n+1)
+
+coq
+_ (—aq)n (—ag"*") 00
+(an (P?"*")oo
+_ (-4g)x0
+(Deo
+Combinatorial proof: Let n be a fixed non-negative integer and let N be the greatest integer such that
+the sum of the number of overlined parts greater than n and of the number of non-overlined parts greater
+than or equal to N +n is greater than or equal to N — n. By definition, N, if it exists, is unique. We
+check that N = n satisfies the condition: the sum of the number of overlined parts > n and of the number
+of non-overlined parts > 2n is indeed > 0. Therefore, N exists and it is unique. We call N the size of the
+generalized n-Durfee square. Note that if n = 0, N is the size of the generalized Durfee square and this
+bijection is the same as the one presented in the proof of Proposition B.A For example, if n = 2 then the
+overpartition (8, 8,6,5,5,3,3,3,1) gives N = 6.
+We now show that the generating function for the overpartitions with generalized n-Durfee square N is:
+
+n+l
+
+(=aq)n(—@"/a)n ng? )~4 P)qN-n
+(q)nen(Q)N=n .
+
+The factor (—aq)n corresponds to the overlined parts < n and the factor Onze corresponds to the
+non-overlined parts < N +n.
+
+The remaining factors correspond to an overpartition into N —n parts whose overlined parts are > n and
+whose non-overlined parts are > N +n. To prove this, let us show that there exists a bijection between
+such overpartitions 6 and triples (e,¢,7) where ¢ is the overpartition (V, N—I,...,2 +1) which has N—n
+parts (corresponding to the factor aN-ng( 2 Y-C3)), ¢ is a partition into distinct parts which lie between
+n and N — 1 (corresponding to the factor (—g"/a)N-—n) and 7 is a partition into N — n non-negative parts
+(corresponding to the factor we): This bijection (similar to Algorithm Z i) is defined as follows: first
+for all i we set 6; = ¢;+7;. Then for each part n +i in ¢, we add n +i to 0:41 and we remove the overlining
+of that part. This implies that the non-overlined parts are > N +n. Finally, we reorder the parts. It is easy
+to see that this is a bijection as there only a unique ordering of the parts of 6 which allows, if @;+1 is not
+overlined, to take off n +i from it and overline it and get a partition into distinct overlined parts.
+
+For example for N = 7 and n = 3, if e = (7, 6,5, 4), 7 = (3,3, 1,0) and ¢ = (6,3), then 0 = (13, 9,6, 10) =
+(13, 10, 9, 6).
+
+O

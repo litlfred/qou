@@ -1,0 +1,106 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "reshetikhin-turaev",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "7ead97555a25d357e952ba0ede5147f9e1a252e5fbcaa2e4de31d2b91edc0171",
+  "file": "Reshetikhin_Turaev.pdf"
+ },
+ "provenance": {
+  "title": "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics \u000e9 Springer-Verlag 1990",
+  "authors": "Ribbon Graphs and Their Invariants Derived",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "definition": 1,
+   "remark": 4,
+   "theorem": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": null,
+   "name": null,
+   "statement": "s of Jones-type polynomials for embedded graphs in R 3 have been",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that we do not require V**= V.",
+   "section_file": "sections/sec-003-21-monoidal-categories-see-ma-js-a-monoidal-cate.md",
+   "section_title": "Monoidal Categories (see [Ma, JS]). A monoidal category C = (C o, | I, a, r, \u007f)",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "One may more generally define topological quasitriangular Hopf",
+   "section_file": "sections/sec-009-6-n-yu-reshetikhin-and-v-g-turaev.md",
+   "section_title": "N. Yu. Reshetikhin and V. G. Turaev",
+   "pages": "6-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "All objects of Rep A are reflexive up to a canonical isomorphism. Indeed,",
+   "section_file": "sections/sec-010-32-category-repa-with-each-algebra-a-one-associa.md",
+   "section_title": "Category RepA. With each algebra A one associates the category RepA of its",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.6",
+   "name": null,
+   "statement": "may be easily extended to the case of CDR(A).",
+   "section_file": "sections/sec-020-45-category-hcdra-let-a-be-a-hopf-algebra-we-def.md",
+   "section_title": "Category HCDR(A). Let A be a Hopf algebra. We define the category of",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The homomorphisms {w).} suggest the extension L~h~ of Uh~ , generated",
+   "section_file": "sections/sec-040-73-homomorphism-w-a-let-v-a-be-the-finite-dimens.md",
+   "section_title": "Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of",
+   "pages": "22-23",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

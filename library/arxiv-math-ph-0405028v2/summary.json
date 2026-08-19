@@ -1,0 +1,32 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-ph-0405028v2",
+ "source_sha256": "90a0e4ba456988d6",
+ "brief": "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES KAZUHIRO HIKAMI — We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology",
+ "extended": "**ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES KAZUHIRO HIKAMI**\n\n26 pp, 2 sections.\n\n**Abstract.** We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ( p1, p 2, p 3) by use of properties of the modular form following a method proposed by R. Lawrence and D. Zagier. Key observation is that the invariant coincides with a limiting value of the Eichler integral of th e modular form with weight 3/ 2. We show that the Casson invariant is related to the number of the Eichler integrals which do not van- ish in a limit τ → N ∈ Z. Correspondingly there is a one-to-one correspondence bet ween the non-vanishing Eichler integrals and the irreducible representation of the fundamental group, and the Chern–Simons invariant is given from the Eichler integral i n this limit.\n\n**Outline.** S-matrix and the Reidemeister Torsion; The Ohtsuki Invariant\n\n**Extracted claims (proposals, not verified).**\n- Theorem 15: Let the function Λ n(p1, p2, p3) be deﬁned by\n- Corollary 13: We have an asymptotic behavior of the Witten invariant (1.1) for the Brieskorn",
+ "tokens": {
+  "brief": 48,
+  "extended": 284
+ },
+ "sections": [
+  {
+   "id": "sec-000-s-matrix-and-the-reidemeister-torsion",
+   "title": "S-matrix and the Reidemeister Torsion",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-001-the-ohtsuki-invariant",
+   "title": "The Ohtsuki Invariant",
+   "pages": "20-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

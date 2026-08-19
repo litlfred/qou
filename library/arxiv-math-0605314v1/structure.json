@@ -1,0 +1,1848 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0605314v1",
+ "source": {
+  "file": "0605314v1.pdf",
+  "sha256": "5fb8b89b432401ea28d10e34d348c5cdebe43cf3ddb95c0475aaee869fa276fc",
+  "bytes": 705675,
+  "pages": 66
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0605314",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "11 May 2006"
+  },
+  "doi": null,
+  "title": "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO",
+  "authors_raw": null,
+  "abstract": "W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring Z[q] such that the evaluation at each root of unity ζ gives the the SU (2) Witten-Reshetikhin- Turaev invariant τ ζ (M ) of M at ζ . Thus JM uniﬁes all the SU (2) Witten- Reshetikhin-Turaev invariants of M . As a consequence, τ ζ (M ) is an algebraic integer. Moreover, it follows that τ ζ (M ) as a function on ζ behaves like an “analytic function” deﬁned on the set of roots of unity. That is, the τ ζ (M ) for all roots of unity are determined by a “Taylor expansion” at a ny root of unity, and also by the values at inﬁnitely many roots of unity of prim e power orders. In particular, τ ζ (M ) for all roots of unity are determined by the Ohtsuki series, which can be regarded as the Taylor expansion at q = 1.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126172124-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0605314v1  [math.GT]  11 May 2006"
+  },
+  "title_prev": "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO",
+  "title_lines": [
+   "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT",
+   "FOR INTEGRAL HOMOLOGY SPHERES",
+   "KAZUO HABIRO"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The WRT invariant for integral homology spheres. Witten [77] intro-",
+   "page": 1,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The ring ˆZ[q] of analytic functions on the set of roots of unity. The",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "A uniﬁed WRT invariant JM with values in ˆZ[q]. The following is the",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Organization of the paper. In Section 2, we ﬁrst recall the deﬁnition of",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The algebra Uh(sl2) and its subalgebras",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The quantized enveloping algebra Uh. We deﬁne Uh = Uh(sl2) as the",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "The subalgebras Uq andU ev",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Adjoint action. Let⊲ : Uh ˆ⊗Uh→Uh denote the (left) adjoint action deﬁned",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Filtrations and completions. Here we introduce ﬁltrations for the algebras",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "The Hopf algebra structure for ˜Uq. In this subsection, we show that",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.6"
+  },
+  {
+   "level": 1,
+   "title": "Braided Hopf algebra structure for ˜U ev",
+   "page": 11,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Ribbon structure for Uh. The Hopf algebra Uh has a ribbon Hopf algebra",
+   "page": 11,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "H⊗H = exp(h",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "H(H+2)en,(3.8)",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "H(H+2)en.(3.9)",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "H(H+2) ˜U ev",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Braided Hopf algebra structure for Uh. Let ModUh denote the category",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Braided Hopf algebra structure for ˜U ev",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Universal sl2 invariant of bottom tangles",
+   "page": 14,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Universalsl2 invariant of bottom tangles. For each ribbon Hopf algebra",
+   "page": 15,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "Universal sl2-invariant of algebraically-split, 0-framed bottom tan-",
+   "page": 16,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Forp,q≥ 0 and f∈{ψ±1,µ, ∆ ,S} with f : U ˆ⊗i",
+   "page": 17,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Universal sl2 invariant of bottom knots. By a bottom knot , we mean a",
+   "page": 17,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "By Theorem",
+   "page": 17,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "Colored Jones polynomials",
+   "page": 18,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Finite-dimensional representations of Uh. By a ﬁnite-dimensional repre-",
+   "page": 18,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Colored Jones polynomials. Let L = L1∪···∪ Lm be an m-component,",
+   "page": 19,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 2,
+   "title": "Quantum trace and the colored Jones polynomial. If V is a ﬁnite-",
+   "page": 20,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Representation rings. For a commutative ring A with unit, let RA denote",
+   "page": 20,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Knots",
+   "page": 20,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The elements Pn and P ′′",
+   "page": 21,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "The reduced Jones polynomials of knots. We prove the following result",
+   "page": 21,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 3,
+   "title": "The homomorphism ξ : RQ[[h]] → Z(Uh). Let c+ denote the 2-component",
+   "page": 22,
+   "source": "inferred",
+   "number": "6.3.1"
+  },
+  {
+   "level": 3,
+   "title": "The Hopf link pairing ⟨,⟩: RZ[v,v−1]×R Z[v,v−1]→ Z[v,v −1]. Deﬁne a sym-",
+   "page": 23,
+   "source": "inferred",
+   "number": "6.3.2"
+  },
+  {
+   "level": 3,
+   "title": "The elements Sn. LetS denote the Z[q,q −1]-subalgebra of RZ[q,q−1] gener-",
+   "page": 23,
+   "source": "inferred",
+   "number": "6.3.3"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Proposition 6.3. For eachn≥ 0 we have ξ(Sn) = σn. Therefore, by",
+   "page": 24,
+   "source": "inferred",
+   "number": "6.3.4"
+  },
+  {
+   "level": 1,
+   "title": "Remarks on knot invariants",
+   "page": 24,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "The two-variable colored Jones invariant. Part of the following overlaps",
+   "page": 24,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 1,
+   "title": "For ζ∈Z with r = ord(ζ), by (7.2), we have",
+   "page": 25,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 2,
+   "title": "Melvin-Morton expansions and Rozansky’s rationality theo rem. Rozan-",
+   "page": 26,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Algebraically-split links",
+   "page": 28,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "The algebra P and its completion ˆP. Forn≥ 0, set",
+   "page": 28,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Integrality for algebraically-split, 0-framed links. The following theo-",
+   "page": 29,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 8.2. The following lemma is proved in the next subsec-",
+   "page": 29,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 1,
+   "title": "KAZUO HABIRO",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 2,
+   "title": "Remarks on boundary links and boundary bottom tangles. In this",
+   "page": 31,
+   "source": "inferred",
+   "number": "8.5"
+  },
+  {
+   "level": 1,
+   "title": "Twists",
+   "page": 32,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "The twist element ω∈ ˆP. Deﬁne two elements ω+,ω −∈ ˆP by",
+   "page": 33,
+   "source": "inferred",
+   "number": "9.1"
+  },
+  {
+   "level": 1,
+   "title": "The invariant JM",
+   "page": 34,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Admissible framed links and the Hoste moves. A framed link L inS3",
+   "page": 34,
+   "source": "inferred",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Deﬁnition of JM . Let M be an integral homology sphere. Choose an ad-",
+   "page": 35,
+   "source": "inferred",
+   "number": "10.2"
+  },
+  {
+   "level": 2,
+   "title": "Some remarks. IfM andL are as above, then we have the following formula",
+   "page": 35,
+   "source": "inferred",
+   "number": "10.3"
+  },
+  {
+   "level": 1,
+   "title": "Specializations at roots of unity",
+   "page": 36,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "Deﬁnition of τζ(M ). We brieﬂy recall the deﬁnition of the sl2 WRT invari-",
+   "page": 36,
+   "source": "inferred",
+   "number": "11.1"
+  },
+  {
+   "level": 2,
+   "title": "WRT invariants of integral homology spheres. Deﬁne t : RQ(q1/ 4)→",
+   "page": 37,
+   "source": "inferred",
+   "number": "11.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 11.1. First consider the case r = 1, ζ = 1. We have",
+   "page": 37,
+   "source": "inferred",
+   "number": "11.3"
+  },
+  {
+   "level": 2,
+   "title": "An alternative proof of Theorem 10.2. Here we give an alternative proof",
+   "page": 38,
+   "source": "inferred",
+   "number": "11.4"
+  },
+  {
+   "level": 1,
+   "title": "Some properties of JM",
+   "page": 38,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "On determination of JM by inﬁnitely many WRT invariants. In this",
+   "page": 39,
+   "source": "inferred",
+   "number": "12.2"
+  },
+  {
+   "level": 2,
+   "title": "Power series invariants. In this subsection, we study the power series",
+   "page": 40,
+   "source": "inferred",
+   "number": "12.3"
+  },
+  {
+   "level": 3,
+   "title": "Derivatives and power series expansions. Like polynomials and analytic",
+   "page": 41,
+   "source": "inferred",
+   "number": "12.3.1"
+  },
+  {
+   "level": 3,
+   "title": "The Ohtsuki series. As mentioned in the introduction, according to Lawrence’s",
+   "page": 41,
+   "source": "inferred",
+   "number": "12.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Expansions at roots of unity. For every root of unityζ,ιζ (JM )∈ Z[ζ][[q−ζ]]",
+   "page": 42,
+   "source": "inferred",
+   "number": "12.3.3"
+  },
+  {
+   "level": 3,
+   "title": "Divisibility in the ring ˆZ[q]. Here, we make some basic observations about",
+   "page": 43,
+   "source": "inferred",
+   "number": "12.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Applications to the Ohtsuki series. Here we apply Propositions 12.14 and",
+   "page": 45,
+   "source": "inferred",
+   "number": "12.4.3"
+  },
+  {
+   "level": 3,
+   "title": "The eighth WRT invariant τ8(M ). For each r∈ N, it would be interesting",
+   "page": 47,
+   "source": "inferred",
+   "number": "12.4.4"
+  },
+  {
+   "level": 1,
+   "title": "The p-adic and the mod p WRT functions",
+   "page": 47,
+   "source": "inferred",
+   "number": "13"
+  },
+  {
+   "level": 2,
+   "title": "F ormal evaluations in rings. Let R be a commutative, unital ring, and",
+   "page": 48,
+   "source": "inferred",
+   "number": "13.1"
+  },
+  {
+   "level": 2,
+   "title": "Evaluations at complex numbers. Let α∈ C. Then ev α : Z[q]→ Z[α]",
+   "page": 48,
+   "source": "inferred",
+   "number": "13.2"
+  },
+  {
+   "level": 1,
+   "title": "If α = 0, then ˆZ[0]",
+   "page": 48,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "If α is transcendental, then ˆ evα : ˆZ[q]",
+   "page": 48,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "If α∈Z , then ˆZ[α]",
+   "page": 48,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The p-adic WRT functions. In this subsection, we show that the WRT",
+   "page": 49,
+   "source": "inferred",
+   "number": "13.3"
+  },
+  {
+   "level": 2,
+   "title": "The mod p WRT functions. Letp be a prime and let Fp be the ﬁeld of p",
+   "page": 51,
+   "source": "inferred",
+   "number": "13.4"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 53,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 2,
+   "title": "Borromean rings. As in Section 4.3, let B∈ BT0",
+   "page": 53,
+   "source": "inferred",
+   "number": "14.1"
+  },
+  {
+   "level": 1,
+   "title": "(k−l)(k−l+1)−l−4kl+2k2",
+   "page": 53,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Powers of the ribbon element and the twist element. Here we give",
+   "page": 54,
+   "source": "inferred",
+   "number": "14.2"
+  },
+  {
+   "level": 1,
+   "title": "H(H+2) ∑",
+   "page": 55,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Surgeries along the Borromean rings. Fori,j,k ∈ Z, we deﬁne Li,Ki,j",
+   "page": 56,
+   "source": "inferred",
+   "number": "14.3"
+  },
+  {
+   "level": 1,
+   "title": "Knots in integral homology spheres",
+   "page": 57,
+   "source": "inferred",
+   "number": "15"
+  },
+  {
+   "level": 2,
+   "title": "Bottom knots with links. LetT =T0∪L1∪···∪ Ll be a tangle in a cube",
+   "page": 57,
+   "source": "inferred",
+   "number": "15.1"
+  },
+  {
+   "level": 2,
+   "title": "The invariantJ(M,K ). Let (M,K ) be a pair of an integral homology sphere",
+   "page": 58,
+   "source": "inferred",
+   "number": "15.2"
+  },
+  {
+   "level": 1,
+   "title": "(S3,K ′)L1∪···∪Ll",
+   "page": 58,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Surgery along a knot with framing 1/m. Kirby and Melvin proved pe-",
+   "page": 59,
+   "source": "inferred",
+   "number": "15.3"
+  },
+  {
+   "level": 2,
+   "title": "Cyclotomic ﬁnite type invariants of integral homology sphe res. Kricker",
+   "page": 59,
+   "source": "inferred",
+   "number": "15.4"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks",
+   "page": 61,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "Generalizations to simple Lie algebra. In a joint work with Le [23], for",
+   "page": 62,
+   "source": "inferred",
+   "number": "16.2"
+  },
+  {
+   "level": 2,
+   "title": "Rational homology spheres. The invariant JM has been generalized by",
+   "page": 62,
+   "source": "inferred",
+   "number": "16.3"
+  },
+  {
+   "level": 2,
+   "title": "Bottom tangles in homology handlebodies. An interesting generaliza-",
+   "page": 63,
+   "source": "inferred",
+   "number": "16.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 63,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-kazuo-habiro",
+   "number": "2",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 842,
+   "n_words": 169
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 198,
+   "n_words": 32
+  },
+  {
+   "id": "sec-002-11-the-wrt-invariant-for-integral-homology-spher",
+   "number": "1.1",
+   "title": "The WRT invariant for integral homology spheres. Witten [77] intro-",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2541,
+   "n_words": 483
+  },
+  {
+   "id": "sec-003-12-the-ring-ˆzq-of-analytic-functions-on-the-set",
+   "number": "1.2",
+   "title": "The ring ˆZ[q] of analytic functions on the set of roots of unity. The",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3002,
+   "n_words": 562
+  },
+  {
+   "id": "sec-004-13-a-uniﬁed-wrt-invariant-jm-with-values-in-ˆzq",
+   "number": "1.3",
+   "title": "A uniﬁed WRT invariant JM with values in ˆZ[q]. The following is the",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 849,
+   "n_words": 152
+  },
+  {
+   "id": "sec-005-4-kazuo-habiro",
+   "number": "4",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1353,
+   "n_words": 253
+  },
+  {
+   "id": "sec-006-14-organization-of-the-paper-in-section-2-we-ﬁrs",
+   "number": "1.4",
+   "title": "Organization of the paper. In Section 2, we ﬁrst recall the deﬁnition of",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5349,
+   "n_words": 1013
+  },
+  {
+   "id": "sec-007-6-kazuo-habiro",
+   "number": "6",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4217,
+   "n_words": 762
+  },
+  {
+   "id": "sec-008-2-the-algebra-uhsl2-and-its-subalgebras",
+   "number": "2",
+   "title": "The algebra Uh(sl2) and its subalgebras",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1146,
+   "n_words": 209
+  },
+  {
+   "id": "sec-009-22-the-quantized-enveloping-algebra-uh-we-deﬁne",
+   "number": "2.2",
+   "title": "The quantized enveloping algebra Uh. We deﬁne Uh = Uh(sl2) as the",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 195,
+   "n_words": 39
+  },
+  {
+   "id": "sec-010-8-kazuo-habiro",
+   "number": "8",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 746,
+   "n_words": 153
+  },
+  {
+   "id": "sec-011-23-the-subalgebras-uq-andu-ev",
+   "number": "2.3",
+   "title": "The subalgebras Uq andU ev",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1756,
+   "n_words": 380
+  },
+  {
+   "id": "sec-012-24-adjoint-action-let-uh-ˆuhuh-denote-the-left-a",
+   "number": "2.4",
+   "title": "Adjoint action. Let⊲ : Uh ˆ⊗Uh→Uh denote the (left) adjoint action deﬁned",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 642,
+   "n_words": 136
+  },
+  {
+   "id": "sec-013-25-filtrations-and-completions-here-we-introduce",
+   "number": "2.5",
+   "title": "Filtrations and completions. Here we introduce ﬁltrations for the algebras",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 477,
+   "n_words": 84
+  },
+  {
+   "id": "sec-014-10-kazuo-habiro",
+   "number": "10",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1855,
+   "n_words": 413
+  },
+  {
+   "id": "sec-015-26-the-hopf-algebra-structure-for-uq-in-this-sub",
+   "number": "2.6",
+   "title": "The Hopf algebra structure for ˜Uq. In this subsection, we show that",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1379,
+   "n_words": 285
+  },
+  {
+   "id": "sec-016-3-braided-hopf-algebra-structure-for-u-ev",
+   "number": "3",
+   "title": "Braided Hopf algebra structure for ˜U ev",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 162,
+   "n_words": 32
+  },
+  {
+   "id": "sec-017-31-ribbon-structure-for-uh-the-hopf-algebra-uh-h",
+   "number": "3.1",
+   "title": "Ribbon structure for Uh. The Hopf algebra Uh has a ribbon Hopf algebra",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 200,
+   "n_words": 38
+  },
+  {
+   "id": "sec-018-2-hh-exph",
+   "number": "2",
+   "title": "H⊗H = exp(h",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 276,
+   "n_words": 67
+  },
+  {
+   "id": "sec-019-12-kazuo-habiro",
+   "number": "12",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 509,
+   "n_words": 105
+  },
+  {
+   "id": "sec-020-2-hh2en38",
+   "number": "2",
+   "title": "H(H+2)en,(3.8)",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 39,
+   "n_words": 12
+  },
+  {
+   "id": "sec-021-2-hh2en39",
+   "number": "2",
+   "title": "H(H+2)en.(3.9)",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 41,
+   "n_words": 8
+  },
+  {
+   "id": "sec-022-2-hh2-u-ev",
+   "number": "2",
+   "title": "H(H+2) ˜U ev",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 3,
+   "n_words": 2
+  },
+  {
+   "id": "sec-023-32-braided-hopf-algebra-structure-for-uh-let-mod",
+   "number": "3.2",
+   "title": "Braided Hopf algebra structure for Uh. Let ModUh denote the category",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1123,
+   "n_words": 220
+  },
+  {
+   "id": "sec-024-33-braided-hopf-algebra-structure-for-u-ev",
+   "number": "3.3",
+   "title": "Braided Hopf algebra structure for ˜U ev",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1375,
+   "n_words": 309
+  },
+  {
+   "id": "sec-025-14-kazuo-habiro",
+   "number": "14",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1483,
+   "n_words": 324
+  },
+  {
+   "id": "sec-026-4-universal-sl2-invariant-of-bottom-tangles",
+   "number": "4",
+   "title": "Universal sl2 invariant of bottom tangles",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2109,
+   "n_words": 401
+  },
+  {
+   "id": "sec-027-42-universalsl2-invariant-of-bottom-tangles-for",
+   "number": "4.2",
+   "title": "Universalsl2 invariant of bottom tangles. For each ribbon Hopf algebra",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 660,
+   "n_words": 127
+  },
+  {
+   "id": "sec-028-16-kazuo-habiro",
+   "number": "16",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 380,
+   "n_words": 75
+  },
+  {
+   "id": "sec-029-43-universal-sl2-invariant-of-algebraically-spli",
+   "number": "4.3",
+   "title": "Universal sl2-invariant of algebraically-split, 0-framed bottom tan-",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1358,
+   "n_words": 280
+  },
+  {
+   "id": "sec-030-3-forpq-0-and-fψ1µ-s-with-f-u-ˆi",
+   "number": "3",
+   "title": "Forp,q≥ 0 and f∈{ψ±1,µ, ∆ ,S} with f : U ˆ⊗i",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1446,
+   "n_words": 300
+  },
+  {
+   "id": "sec-031-44-universal-sl2-invariant-of-bottom-knots-by-a",
+   "number": "4.4",
+   "title": "Universal sl2 invariant of bottom knots. By a bottom knot , we mean a",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 145,
+   "n_words": 26
+  },
+  {
+   "id": "sec-032-1-by-theorem",
+   "number": "1",
+   "title": "By Theorem",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 320,
+   "n_words": 72
+  },
+  {
+   "id": "sec-033-18-kazuo-habiro",
+   "number": "18",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 865,
+   "n_words": 186
+  },
+  {
+   "id": "sec-034-5-colored-jones-polynomials",
+   "number": "5",
+   "title": "Colored Jones polynomials",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 549,
+   "n_words": 95
+  },
+  {
+   "id": "sec-035-51-finite-dimensional-representations-of-uh-by-a",
+   "number": "5.1",
+   "title": "Finite-dimensional representations of Uh. By a ﬁnite-dimensional repre-",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 813,
+   "n_words": 168
+  },
+  {
+   "id": "sec-036-52-colored-jones-polynomials-let-l-l1-lm-be-an-m",
+   "number": "5.2",
+   "title": "Colored Jones polynomials. Let L = L1∪···∪ Lm be an m-component,",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2036,
+   "n_words": 391
+  },
+  {
+   "id": "sec-037-20-kazuo-habiro",
+   "number": "20",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-038-53-quantum-trace-and-the-colored-jones-polynomia",
+   "number": "5.3",
+   "title": "Quantum trace and the colored Jones polynomial. If V is a ﬁnite-",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 626,
+   "n_words": 133
+  },
+  {
+   "id": "sec-039-54-representation-rings-for-a-commutative-ring-a",
+   "number": "5.4",
+   "title": "Representation rings. For a commutative ring A with unit, let RA denote",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 929,
+   "n_words": 167
+  },
+  {
+   "id": "sec-040-6-knots",
+   "number": "6",
+   "title": "Knots",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 203,
+   "n_words": 34
+  },
+  {
+   "id": "sec-041-61-the-elements-pn-and-p",
+   "number": "6.1",
+   "title": "The elements Pn and P ′′",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 808,
+   "n_words": 166
+  },
+  {
+   "id": "sec-042-62-the-reduced-jones-polynomials-of-knots-we-pro",
+   "number": "6.2",
+   "title": "The reduced Jones polynomials of knots. We prove the following result",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 651,
+   "n_words": 147
+  },
+  {
+   "id": "sec-043-22-kazuo-habiro",
+   "number": "22",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1107,
+   "n_words": 209
+  },
+  {
+   "id": "sec-044-631-the-homomorphism-ξ-rqh-zuh-let-c-denote-the",
+   "number": "6.3.1",
+   "title": "The homomorphism ξ : RQ[[h]] → Z(Uh). Let c+ denote the 2-component",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 530,
+   "n_words": 98
+  },
+  {
+   "id": "sec-045-632-the-hopf-link-pairing-rzvv1r-zvv1-zvv-1-deﬁn",
+   "number": "6.3.2",
+   "title": "The Hopf link pairing ⟨,⟩: RZ[v,v−1]×R Z[v,v−1]→ Z[v,v −1]. Deﬁne a sym-",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 440,
+   "n_words": 84
+  },
+  {
+   "id": "sec-046-633-the-elements-sn-lets-denote-the-zqq-1-subalg",
+   "number": "6.3.3",
+   "title": "The elements Sn. LetS denote the Z[q,q −1]-subalgebra of RZ[q,q−1] gener-",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 967,
+   "n_words": 182
+  },
+  {
+   "id": "sec-047-24-kazuo-habiro",
+   "number": "24",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 690,
+   "n_words": 150
+  },
+  {
+   "id": "sec-048-634-proof-of-proposition-63-for-eachn-0-we-have",
+   "number": "6.3.4",
+   "title": "Proof of Proposition 6.3. For eachn≥ 0 we have ξ(Sn) = σn. Therefore, by",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 108,
+   "n_words": 21
+  },
+  {
+   "id": "sec-049-7-remarks-on-knot-invariants",
+   "number": "7",
+   "title": "Remarks on knot invariants",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 377,
+   "n_words": 77
+  },
+  {
+   "id": "sec-050-71-the-two-variable-colored-jones-invariant-part",
+   "number": "7.1",
+   "title": "The two-variable colored Jones invariant. Part of the following overlaps",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1893,
+   "n_words": 362
+  },
+  {
+   "id": "sec-051-2-for-ζz-with-r-ordζ-by-72-we-have",
+   "number": "2",
+   "title": "For ζ∈Z with r = ord(ζ), by (7.2), we have",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 436,
+   "n_words": 82
+  },
+  {
+   "id": "sec-052-26-kazuo-habiro",
+   "number": "26",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-053-72-melvin-morton-expansions-and-rozanskys-ration",
+   "number": "7.2",
+   "title": "Melvin-Morton expansions and Rozansky’s rationality theo rem. Rozan-",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 3661,
+   "n_words": 678
+  },
+  {
+   "id": "sec-054-28-kazuo-habiro",
+   "number": "28",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 390,
+   "n_words": 61
+  },
+  {
+   "id": "sec-055-8-algebraically-split-links",
+   "number": "8",
+   "title": "Algebraically-split links",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 196,
+   "n_words": 31
+  },
+  {
+   "id": "sec-056-81-the-algebra-p-and-its-completion-ˆp-forn-0-se",
+   "number": "8.1",
+   "title": "The algebra P and its completion ˆP. Forn≥ 0, set",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1096,
+   "n_words": 244
+  },
+  {
+   "id": "sec-057-82-integrality-for-algebraically-split-0-framed",
+   "number": "8.2",
+   "title": "Integrality for algebraically-split, 0-framed links. The following theo-",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 972,
+   "n_words": 179
+  },
+  {
+   "id": "sec-058-83-proof-of-theorem-82-the-following-lemma-is-pr",
+   "number": "8.3",
+   "title": "Proof of Theorem 8.2. The following lemma is proved in the next subsec-",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 727,
+   "n_words": 157
+  },
+  {
+   "id": "sec-059-30-kazuo-habiro",
+   "number": "30",
+   "title": "KAZUO HABIRO",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2818,
+   "n_words": 609
+  },
+  {
+   "id": "sec-060-85-remarks-on-boundary-links-and-boundary-bottom",
+   "number": "8.5",
+   "title": "Remarks on boundary links and boundary bottom tangles. In this",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 3584,
+   "n_words": 759
+  },
+  {
+   "id": "sec-061-9-twists",
+   "number": "9",
+   "title": "Twists",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 130,
+   "n_words": 19
+  },
+  {
+   "id": "sec-062-91-the-twist-element-ω-ˆp-deﬁne-two-elements-ωω",
+   "number": "9.1",
+   "title": "The twist element ω∈ ˆP. Deﬁne two elements ω+,ω −∈ ˆP by",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 3132,
+   "n_words": 581
+  },
+  {
+   "id": "sec-063-10-the-invariant-jm",
+   "number": "10",
+   "title": "The invariant JM",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 88,
+   "n_words": 17
+  },
+  {
+   "id": "sec-064-101-admissible-framed-links-and-the-hoste-moves",
+   "number": "10.1",
+   "title": "Admissible framed links and the Hoste moves. A framed link L inS3",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 1300,
+   "n_words": 217
+  },
+  {
+   "id": "sec-065-102-deﬁnition-of-jm-let-m-be-an-integral-homolog",
+   "number": "10.2",
+   "title": "Deﬁnition of JM . Let M be an integral homology sphere. Choose an ad-",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1083,
+   "n_words": 197
+  },
+  {
+   "id": "sec-066-103-some-remarks-ifm-andl-are-as-above-then-we-h",
+   "number": "10.3",
+   "title": "Some remarks. IfM andL are as above, then we have the following formula",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 1082,
+   "n_words": 224
+  },
+  {
+   "id": "sec-067-11-specializations-at-roots-of-unity",
+   "number": "11",
+   "title": "Specializations at roots of unity",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 231,
+   "n_words": 46
+  },
+  {
+   "id": "sec-068-111-deﬁnition-of-τζm-we-brieﬂy-recall-the-deﬁnit",
+   "number": "11.1",
+   "title": "Deﬁnition of τζ(M ). We brieﬂy recall the deﬁnition of the sl2 WRT invari-",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1534,
+   "n_words": 304
+  },
+  {
+   "id": "sec-069-112-wrt-invariants-of-integral-homology-spheres",
+   "number": "11.2",
+   "title": "WRT invariants of integral homology spheres. Deﬁne t : RQ(q1/ 4)→",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 600,
+   "n_words": 118
+  },
+  {
+   "id": "sec-070-113-proof-of-theorem-111-first-consider-the-case",
+   "number": "11.3",
+   "title": "Proof of Theorem 11.1. First consider the case r = 1, ζ = 1. We have",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 1893,
+   "n_words": 372
+  },
+  {
+   "id": "sec-071-114-an-alternative-proof-of-theorem-102-here-we",
+   "number": "11.4",
+   "title": "An alternative proof of Theorem 10.2. Here we give an alternative proof",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 556,
+   "n_words": 119
+  },
+  {
+   "id": "sec-072-12-some-properties-of-jm",
+   "number": "12",
+   "title": "Some properties of JM",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1096,
+   "n_words": 202
+  },
+  {
+   "id": "sec-073-122-on-determination-of-jm-by-inﬁnitely-many-wrt",
+   "number": "12.2",
+   "title": "On determination of JM by inﬁnitely many WRT invariants. In this",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 3727,
+   "n_words": 741
+  },
+  {
+   "id": "sec-074-123-power-series-invariants-in-this-subsection-w",
+   "number": "12.3",
+   "title": "Power series invariants. In this subsection, we study the power series",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 159,
+   "n_words": 25
+  },
+  {
+   "id": "sec-075-1231-derivatives-and-power-series-expansions-lik",
+   "number": "12.3.1",
+   "title": "Derivatives and power series expansions. Like polynomials and analytic",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 697,
+   "n_words": 136
+  },
+  {
+   "id": "sec-076-1232-the-ohtsuki-series-as-mentioned-in-the-intr",
+   "number": "12.3.2",
+   "title": "The Ohtsuki series. As mentioned in the introduction, according to Lawrence’s",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1402,
+   "n_words": 288
+  },
+  {
+   "id": "sec-077-1233-expansions-at-roots-of-unity-for-every-root",
+   "number": "12.3.3",
+   "title": "Expansions at roots of unity. For every root of unityζ,ιζ (JM )∈ Z[ζ][[q−ζ]]",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 3058,
+   "n_words": 564
+  },
+  {
+   "id": "sec-078-1241-divisibility-in-the-ring-ˆzq-here-we-make-s",
+   "number": "12.4.1",
+   "title": "Divisibility in the ring ˆZ[q]. Here, we make some basic observations about",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 3002,
+   "n_words": 598
+  },
+  {
+   "id": "sec-079-1243-applications-to-the-ohtsuki-series-here-we",
+   "number": "12.4.3",
+   "title": "Applications to the Ohtsuki series. Here we apply Propositions 12.14 and",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 3801,
+   "n_words": 827
+  },
+  {
+   "id": "sec-080-1244-the-eighth-wrt-invariant-τ8m-for-each-r-n-i",
+   "number": "12.4.4",
+   "title": "The eighth WRT invariant τ8(M ). For each r∈ N, it would be interesting",
+   "level": 3,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 1396,
+   "n_words": 285
+  },
+  {
+   "id": "sec-081-13-the-p-adic-and-the-mod-p-wrt-functions",
+   "number": "13",
+   "title": "The p-adic and the mod p WRT functions",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 401,
+   "n_words": 70
+  },
+  {
+   "id": "sec-082-131-f-ormal-evaluations-in-rings-let-r-be-a-comm",
+   "number": "13.1",
+   "title": "F ormal evaluations in rings. Let R be a commutative, unital ring, and",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 363,
+   "n_words": 74
+  },
+  {
+   "id": "sec-083-132-evaluations-at-complex-numbers-let-α-c-then",
+   "number": "13.2",
+   "title": "Evaluations at complex numbers. Let α∈ C. Then ev α : Z[q]→ Z[α]",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 145,
+   "n_words": 25
+  },
+  {
+   "id": "sec-084-1-if-α-0-then-ˆz0",
+   "number": "1",
+   "title": "If α = 0, then ˆZ[0]",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 6,
+   "n_words": 3
+  },
+  {
+   "id": "sec-085-2-if-α-is-transcendental-then-ˆ-evα-ˆzq",
+   "number": "2",
+   "title": "If α is transcendental, then ˆ evα : ˆZ[q]",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 14,
+   "n_words": 5
+  },
+  {
+   "id": "sec-086-3-if-αz-then-ˆzα",
+   "number": "3",
+   "title": "If α∈Z , then ˆZ[α]",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 1340,
+   "n_words": 258
+  },
+  {
+   "id": "sec-087-133-the-p-adic-wrt-functions-in-this-subsection",
+   "number": "13.3",
+   "title": "The p-adic WRT functions. In this subsection, we show that the WRT",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 51,
+   "n_chars": 4478,
+   "n_words": 918
+  },
+  {
+   "id": "sec-088-134-the-mod-p-wrt-functions-letp-be-a-prime-and",
+   "number": "13.4",
+   "title": "The mod p WRT functions. Letp be a prime and let Fp be the ﬁeld of p",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 53,
+   "n_chars": 4542,
+   "n_words": 845
+  },
+  {
+   "id": "sec-089-14-examples",
+   "number": "14",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 88,
+   "n_words": 15
+  },
+  {
+   "id": "sec-090-141-borromean-rings-as-in-section-43-let-b-bt0",
+   "number": "14.1",
+   "title": "Borromean rings. As in Section 4.3, let B∈ BT0",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 878,
+   "n_words": 176
+  },
+  {
+   "id": "sec-091-2-klkl1l4kl2k2",
+   "number": "2",
+   "title": "(k−l)(k−l+1)−l−4kl+2k2",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 1584,
+   "n_words": 328
+  },
+  {
+   "id": "sec-092-142-powers-of-the-ribbon-element-and-the-twist-e",
+   "number": "14.2",
+   "title": "Powers of the ribbon element and the twist element. Here we give",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 389,
+   "n_words": 85
+  },
+  {
+   "id": "sec-093-2-hh2",
+   "number": "2",
+   "title": "H(H+2) ∑",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 1951,
+   "n_words": 455
+  },
+  {
+   "id": "sec-094-143-surgeries-along-the-borromean-rings-forijk-z",
+   "number": "14.3",
+   "title": "Surgeries along the Borromean rings. Fori,j,k ∈ Z, we deﬁne Li,Ki,j",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 1419,
+   "n_words": 257
+  },
+  {
+   "id": "sec-095-15-knots-in-integral-homology-spheres",
+   "number": "15",
+   "title": "Knots in integral homology spheres",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 986,
+   "n_words": 199
+  },
+  {
+   "id": "sec-096-151-bottom-knots-with-links-lett-t0l1-ll-be-a-ta",
+   "number": "15.1",
+   "title": "Bottom knots with links. LetT =T0∪L1∪···∪ Ll be a tangle in a cube",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 1869,
+   "n_words": 405
+  },
+  {
+   "id": "sec-097-152-the-invariantjmk-let-mk-be-a-pair-of-an-inte",
+   "number": "15.2",
+   "title": "The invariantJ(M,K ). Let (M,K ) be a pair of an integral homology sphere",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 139,
+   "n_words": 30
+  },
+  {
+   "id": "sec-098-2-s3k-l1ll",
+   "number": "2",
+   "title": "(S3,K ′)L1∪···∪Ll",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 1774,
+   "n_words": 329
+  },
+  {
+   "id": "sec-099-153-surgery-along-a-knot-with-framing-1m-kirby-a",
+   "number": "15.3",
+   "title": "Surgery along a knot with framing 1/m. Kirby and Melvin proved pe-",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 1523,
+   "n_words": 304
+  },
+  {
+   "id": "sec-100-154-cyclotomic-ﬁnite-type-invariants-of-integral",
+   "number": "15.4",
+   "title": "Cyclotomic ﬁnite type invariants of integral homology sphe res. Kricker",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 61,
+   "n_chars": 4564,
+   "n_words": 828
+  },
+  {
+   "id": "sec-101-16-concluding-remarks",
+   "number": "16",
+   "title": "Concluding remarks",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 2863,
+   "n_words": 530
+  },
+  {
+   "id": "sec-102-162-generalizations-to-simple-lie-algebra-in-a-j",
+   "number": "16.2",
+   "title": "Generalizations to simple Lie algebra. In a joint work with Le [23], for",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 430,
+   "n_words": 82
+  },
+  {
+   "id": "sec-103-163-rational-homology-spheres-the-invariant-jm-h",
+   "number": "16.3",
+   "title": "Rational homology spheres. The invariant JM has been generalized by",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 1625,
+   "n_words": 293
+  },
+  {
+   "id": "sec-104-164-bottom-tangles-in-homology-handlebodies-an-i",
+   "number": "16.4",
+   "title": "Bottom tangles in homology handlebodies. An interesting generaliza-",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 1990,
+   "n_words": 343
+  },
+  {
+   "id": "sec-105-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 66,
+   "n_chars": 10797,
+   "n_words": 1709
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 106,
+  "sections": 106,
+  "chars_total": 141773
+ }
+}

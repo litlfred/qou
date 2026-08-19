@@ -13,7 +13,7 @@ The corpus's Fricke-involution work has no bibliographic anchor for the involuti
 - Sec. 3, 'Fricke S-duality and N-modularity' (also Sec. 4.3) — A CHL model is self-dual under the Fricke involution S -> -1/(NS) if and only if its lattice of purely electric charges is N-modular, i.e. isometric to its dual after rescaling the quadratic form by N.
   Use here: Supplies the form a structural selection principle for the corpus's bar <-> Fricke identification would take -- a lattice condition rather than a numerical gate -- which is what the enumerated-and-failed candidate class currently lacks.
 
-Source: `uploads/1504.07260v3.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1504.07260v3/1504.07260v3.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

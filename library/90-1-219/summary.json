@@ -1,0 +1,35 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "90-1-219",
+ "source_sha256": "c2e3f2f8946c6f84",
+ "brief": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993 — 3 sections: Acknowledgements; Appendix; References",
+ "extended": "**Progress of Theoretical Physics, Vol. 90, No.1, July 1993**\n\n*Quaternions and Non-Commutative Geometry*\n\n18 pp, 3 sections.\n\n**Outline.** Acknowledgements; Appendix; References",
+ "tokens": {
+  "brief": 27,
+  "extended": 44
+ },
+ "sections": [
+  {
+   "id": "sec-000-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-001-appendix",
+   "title": "Appendix",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-002-references",
+   "title": "References",
+   "pages": "18-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,628 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "0310279v5",
+ "source": {
+  "file": "0310279v5.pdf",
+  "sha256": "a1d472d37291a3331a74fb16e387bbfdbf13a41e7a8120582c1e38ad01728c9b",
+  "bytes": 1305650,
+  "pages": 128
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/gt.2006.10.413",
+  "title": "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO",
+  "authors_raw": "Choose any oriented link type X and closed braid representatives X+, X− of",
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.4",
+   "CreationDate": "D:20241126212952Z"
+  },
+  "title_lines": [
+   "Stabilization in the braid groups I: MTWS",
+   "JOAN S BIRMAN",
+   "WILLIAM W MENASCO"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The problem",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Block-strand diagrams and templates",
+   "page": 5,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "The two destabilization templates",
+   "page": 7,
+   "source": "outline",
+   "number": "1.2.1"
+  },
+  {
+   "level": 3,
+   "title": "The admissible flype templates",
+   "page": 7,
+   "source": "outline",
+   "number": "1.2.2"
+  },
+  {
+   "level": 3,
+   "title": "The exchange move template and sequences of exchange moves",
+   "page": 9,
+   "source": "outline",
+   "number": "1.2.3"
+  },
+  {
+   "level": 3,
+   "title": "The cyclic templates",
+   "page": 11,
+   "source": "outline",
+   "number": "1.2.4"
+  },
+  {
+   "level": 3,
+   "title": "The G–flype and G–exchange templates",
+   "page": 11,
+   "source": "outline",
+   "number": "1.2.5"
+  },
+  {
+   "level": 2,
+   "title": "Statement of results",
+   "page": 12,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Plan of the paper",
+   "page": 17,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "Getting started",
+   "page": 19,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The basic construction for knots",
+   "page": 19,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The general case",
+   "page": 23,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "A key example of the basic construction",
+   "page": 24,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Introducing braid foliations",
+   "page": 26,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Braid foliations of Seifert surfaces",
+   "page": 26,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Control over the foliations",
+   "page": 30,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Using braid foliations to detect destabilizations and exchange moves",
+   "page": 34,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Using braid foliations to detect stabilizations",
+   "page": 37,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Braid foliations of the immersed annulus",
+   "page": 38,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Tile types in PA",
+   "page": 39,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Preliminary modifications in the clasp arcs",
+   "page": 45,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Construction of the tabs",
+   "page": 46,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "The two finger moves",
+   "page": 49,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Creating symmetric normal neighborhoods of the clasp arcs",
+   "page": 52,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "Pushing across CA",
+   "page": 58,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The complexity function c(X+,X-,CA)",
+   "page": 59,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Pushing across a microflype region",
+   "page": 67,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Pushing across thin annuli",
+   "page": 69,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 3,
+   "title": "Constructing the thin annuli",
+   "page": 69,
+   "source": "outline",
+   "number": "5.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Using flypes to push X+ across S",
+   "page": 77,
+   "source": "outline",
+   "number": "5.3.2"
+  },
+  {
+   "level": 2,
+   "title": "Constructing a candidate for a template (D+,D-) from CA",
+   "page": 88,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Pushing across regions with a G–flype foliation",
+   "page": 92,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "Pushing across regions with a G–exchange foliation",
+   "page": 94,
+   "source": "outline",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "Pushing across a standard annulus",
+   "page": 101,
+   "source": "outline",
+   "number": "5.7"
+  },
+  {
+   "level": 1,
+   "title": "The proof of the MTWS",
+   "page": 102,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "6.1",
+   "page": 102,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Cleaning up the templates in T(m)",
+   "page": 106,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "The set T(m) is finite",
+   "page": 109,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Open problems",
+   "page": 123,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 127,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-the-problem",
+   "number": "1.1",
+   "title": "The problem",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 8068,
+   "n_words": 1392
+  },
+  {
+   "id": "sec-002-12-block-strand-diagrams-and-templates",
+   "number": "1.2",
+   "title": "Block-strand diagrams and templates",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 6561,
+   "n_words": 1205
+  },
+  {
+   "id": "sec-003-121-the-two-destabilization-templates",
+   "number": "1.2.1",
+   "title": "The two destabilization templates",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2997,
+   "n_words": 541
+  },
+  {
+   "id": "sec-004-123-the-exchange-move-template-and-sequences-of",
+   "number": "1.2.3",
+   "title": "The exchange move template and sequences of exchange moves",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2624,
+   "n_words": 458
+  },
+  {
+   "id": "sec-005-124-the-cyclic-templates",
+   "number": "1.2.4",
+   "title": "The cyclic templates",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3788,
+   "n_words": 696
+  },
+  {
+   "id": "sec-006-13-statement-of-results",
+   "number": "1.3",
+   "title": "Statement of results",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 6330,
+   "n_words": 1216
+  },
+  {
+   "id": "sec-007-14-plan-of-the-paper",
+   "number": "1.4",
+   "title": "Plan of the paper",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 4633,
+   "n_words": 786
+  },
+  {
+   "id": "sec-008-2-getting-started",
+   "number": "2",
+   "title": "Getting started",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 316,
+   "n_words": 61
+  },
+  {
+   "id": "sec-009-21-the-basic-construction-for-knots",
+   "number": "2.1",
+   "title": "The basic construction for knots",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 9269,
+   "n_words": 1805
+  },
+  {
+   "id": "sec-010-22-the-general-case",
+   "number": "2.2",
+   "title": "The general case",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2571,
+   "n_words": 456
+  },
+  {
+   "id": "sec-011-23-a-key-example-of-the-basic-construction",
+   "number": "2.3",
+   "title": "A key example of the basic construction",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 3863,
+   "n_words": 749
+  },
+  {
+   "id": "sec-012-3-introducing-braid-foliations",
+   "number": "3",
+   "title": "Introducing braid foliations",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 738,
+   "n_words": 129
+  },
+  {
+   "id": "sec-013-31-braid-foliations-of-seifert-surfaces",
+   "number": "3.1",
+   "title": "Braid foliations of Seifert surfaces",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 8923,
+   "n_words": 1656
+  },
+  {
+   "id": "sec-014-32-control-over-the-foliations",
+   "number": "3.2",
+   "title": "Control over the foliations",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 6379,
+   "n_words": 1230
+  },
+  {
+   "id": "sec-015-33-using-braid-foliations-to-detect-destabilizat",
+   "number": "3.3",
+   "title": "Using braid foliations to detect destabilizations and exchange moves",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 5776,
+   "n_words": 1082
+  },
+  {
+   "id": "sec-016-34-using-braid-foliations-to-detect-stabilizatio",
+   "number": "3.4",
+   "title": "Using braid foliations to detect stabilizations",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 1690,
+   "n_words": 294
+  },
+  {
+   "id": "sec-017-4-braid-foliations-of-the-immersed-annulus",
+   "number": "4",
+   "title": "Braid foliations of the immersed annulus",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2125,
+   "n_words": 401
+  },
+  {
+   "id": "sec-018-41-tile-types-in-pa",
+   "number": "4.1",
+   "title": "Tile types in PA",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 46,
+   "n_chars": 14980,
+   "n_words": 2752
+  },
+  {
+   "id": "sec-019-43-construction-of-the-tabs",
+   "number": "4.3",
+   "title": "Construction of the tabs",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 52,
+   "n_chars": 11768,
+   "n_words": 2248
+  },
+  {
+   "id": "sec-020-45-creating-symmetric-normal-neighborhoods-of-th",
+   "number": "4.5",
+   "title": "Creating symmetric normal neighborhoods of the clasp arcs",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 58,
+   "n_chars": 13021,
+   "n_words": 2449
+  },
+  {
+   "id": "sec-021-5-pushing-across-ca",
+   "number": "5",
+   "title": "Pushing across CA",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 69,
+   "n_chars": 26506,
+   "n_words": 4913
+  },
+  {
+   "id": "sec-022-53-pushing-across-thin-annuli",
+   "number": "5.3",
+   "title": "Pushing across thin annuli",
+   "level": 2,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 864,
+   "n_words": 162
+  },
+  {
+   "id": "sec-023-531-constructing-the-thin-annuli",
+   "number": "5.3.1",
+   "title": "Constructing the thin annuli",
+   "level": 3,
+   "page_start": 69,
+   "page_end": 88,
+   "n_chars": 42908,
+   "n_words": 8026
+  },
+  {
+   "id": "sec-024-54-constructing-a-candidate-for-a-template-dd--f",
+   "number": "5.4",
+   "title": "Constructing a candidate for a template (D+,D-) from CA",
+   "level": 2,
+   "page_start": 88,
+   "page_end": 94,
+   "n_chars": 14958,
+   "n_words": 2750
+  },
+  {
+   "id": "sec-025-56-pushing-across-regions-with-a-gexchange-folia",
+   "number": "5.6",
+   "title": "Pushing across regions with a G–exchange foliation",
+   "level": 2,
+   "page_start": 94,
+   "page_end": 100,
+   "n_chars": 13521,
+   "n_words": 2611
+  },
+  {
+   "id": "sec-026-57-pushing-across-a-standard-annulus",
+   "number": "5.7",
+   "title": "Pushing across a standard annulus",
+   "level": 2,
+   "page_start": 100,
+   "page_end": 102,
+   "n_chars": 5445,
+   "n_words": 978
+  },
+  {
+   "id": "sec-027-6-the-proof-of-the-mtws",
+   "number": "6",
+   "title": "The proof of the MTWS",
+   "level": 1,
+   "page_start": 102,
+   "page_end": 102,
+   "n_chars": 181,
+   "n_words": 35
+  },
+  {
+   "id": "sec-028-61",
+   "number": null,
+   "title": "6.1",
+   "level": 2,
+   "page_start": 102,
+   "page_end": 123,
+   "n_chars": 57272,
+   "n_words": 10523
+  },
+  {
+   "id": "sec-029-7-open-problems",
+   "number": "7",
+   "title": "Open problems",
+   "level": 1,
+   "page_start": 123,
+   "page_end": 128,
+   "n_chars": 14459,
+   "n_words": 2396
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 41,
+  "sections": 30,
+  "chars_total": 292534
+ }
+}

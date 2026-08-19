@@ -5,9 +5,9 @@
 **Beans:** `qou-7nwg`, `qou-0pzi`, `qou-pjx4`, `qou-brg3`
 **Lean:** [`QOU/QBeta/SingleCrossingAlwaysBinds.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/SingleCrossingAlwaysBinds.lean) (sorry-free)
 **Probes:** `two_nucleon_sector_sign_probe.py`, `stacked_interface_writhe_normalised_probe.py`
-**Sources:** owner-uploaded, commit `2e5bfdd` — [`uploads/0006014v1.pdf`](../../uploads/0006014v1.pdf)
+**Sources:** owner-uploaded, commit `2e5bfdd` — [`library/arxiv-nucl-th-0006014v1/0006014v1.pdf`](../../library/arxiv-nucl-th-0006014v1/0006014v1.pdf)
 (Machleidt, *CD-Bonn*, arXiv:nucl-th/0006014, Phys. Rev. C 63 024001),
-[`uploads/1105.2919v1.pdf`](../../uploads/1105.2919v1.pdf) (Machleidt–Entem,
+[`library/arxiv-1105.2919v1/1105.2919v1.pdf`](../../library/arxiv-1105.2919v1/1105.2919v1.pdf) (Machleidt–Entem,
 *Chiral EFT and nuclear forces*, arXiv:1105.2919, Phys. Rept. 503 1)
 
 ---

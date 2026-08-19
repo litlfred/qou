@@ -15,7 +15,7 @@ No ref() entry, and no source anywhere in the corpus for the notion of cusp shap
 - Thm 1.1 — Cusp shapes of hyperbolic tunnel-number-one manifolds are dense in the Teichmuller space of the torus.
   Use here: Background only: it says the cusp shape is not constrained by low tunnel number, so no structural conclusion can be drawn from a particular knot's cusp shape being special.
 
-Source: `uploads/CuspShapes.pdf` — no `references.ts` entry yet
+Source: `library/cuspshapes/CuspShapes.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

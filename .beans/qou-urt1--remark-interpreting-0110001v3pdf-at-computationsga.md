@@ -13,7 +13,7 @@ The GAP-2 audit's M3(K) = mu-bar-irreducible triple count is currently defined o
 - p. 562, remark following the Theorem — When the boundary of F is disjoint from the double-point set (possible only if all pairwise linkings vanish) mu-bar(ijk) = -t(ijk)(F), a pure signed triple-point count.
   Use here: The Brunnian-case corollary is the geometric form of the 'Milnor-irreducible triple' the GAP-2 audit uses to define M3(K); it gives a surface-level object to count rather than a braid-word Magnus coefficient.
 
-Source: `uploads/0110001v3.pdf` — no `references.ts` entry yet
+Source: `library/0110001v3/0110001v3.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

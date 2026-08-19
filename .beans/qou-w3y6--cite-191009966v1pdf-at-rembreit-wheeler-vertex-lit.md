@@ -13,7 +13,7 @@ rem:breit-wheeler-vertex-literature is the corpus's literature-alignment block f
 - Abstract / §1 — Fermions are modelled as hyperbolic knot complements S^3 minus (K x D^2) and bosons as torus bundles; knot complements are presented as 3-fold branched covers of the 3-disk branched along 3-braids, with electric charge obtained from topology and the correct spectrum of possible values.
   Use here: A published parallel to the braid-to-fermion assignment underlying conj:sm-gauge-truncation and rem:breit-wheeler-vertex-literature, and the explicit bridge between the braid-preon and division-algebra routes the corpus registers separately.
 
-Source: `uploads/1910.09966v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1910.09966v1/1910.09966v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

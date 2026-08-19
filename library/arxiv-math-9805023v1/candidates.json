@@ -1,0 +1,190 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9805023v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ea8758b2a2bf9d8504d6715dba6f905440e513e5c0e0118ae3a60485457d3411",
+  "file": "9805023v1.pdf"
+ },
+ "provenance": {
+  "title": "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL",
+  "authors": "FUNCTIONS AND THEIR OR THOGONALITY RELA TIONS",
+  "arxiv": {
+   "id": "math/9805023",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "6 May 1998"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "remark": 4,
+   "lemma": 4,
+   "corollary": 1,
+   "proposition": 3
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.1",
+   "name": null,
+   "statement": "The motivation to consider the operator L comes from an investigation in",
+   "section_file": "sections/sec-000-2-k1.md",
+   "section_title": "(k+1)\u221a",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let x \u2208 C\\{0}, then V t(x) =",
+   "section_file": "sections/sec-000-2-k1.md",
+   "section_title": "(k+1)\u221a",
+   "pages": "3-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "It follows from Lemma 2.2(i) that L has de\ufb01ciency indices (1 , 1) for q",
+   "section_file": "sections/sec-001-2-k-\u03b1-q-q-j-2.md",
+   "section_title": "(k\u2212 \u03b1 )(q; q)\u221e J (2)",
+   "pages": "5-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.3",
+   "name": null,
+   "statement": "We have the following Wronskians:",
+   "section_file": "sections/sec-001-2-k-\u03b1-q-q-j-2.md",
+   "section_title": "(k\u2212 \u03b1 )(q; q)\u221e J (2)",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.2",
+   "name": null,
+   "statement": "The \ufb01rst statement of Theorem 4.1 corresponds to Moak\u2019s disc rete orthogo-",
+   "section_file": "sections/sec-003-2-un\u03b7pv-t-1.md",
+   "section_title": "Un(\u03b7p)V t\u2212 1",
+   "pages": "7-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.3",
+   "name": null,
+   "statement": "The following orthogonality relations hold;",
+   "section_file": "sections/sec-006-2-kl1klc-\u03b1-1.md",
+   "section_title": "(k+l)(\u22121)k+lc\u2212 \u03b1 \u2212 1",
+   "pages": "11-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "We have the following generating functions:",
+   "section_file": "sections/sec-007-2-kl-1.md",
+   "section_title": "(k+l)\u2212 1)",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.2",
+   "name": null,
+   "statement": "For |y| < 1, l \u2208 Z, we have",
+   "section_file": "sections/sec-007-2-kl-1.md",
+   "section_title": "(k+l)\u2212 1)",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "(i) with x replaced by y/b. This then gives the following identity",
+   "section_file": "sections/sec-007-2-kl-1.md",
+   "section_title": "(k+l)\u2212 1)",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.1",
+   "name": null,
+   "statement": "Fix \u03b1 > \u22121, c > 0, k \u2208 Z. Then, for each x \u2208 R we have the pointwise",
+   "section_file": "sections/sec-008-43-this-then-gives-together-with-the-analytic-pr.md",
+   "section_title": "This then gives, together with the analytic proofs of th e previous section a complete",
+   "pages": "13-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.2",
+   "name": null,
+   "statement": "Fix \u03b1 > \u22121, c > 0, k \u2208 Z, Let r \u2208 { k, k + 1, . . .}. Then, for p \u2208",
+   "section_file": "sections/sec-008-43-this-then-gives-together-with-the-analytic-pr.md",
+   "section_title": "This then gives, together with the analytic proofs of th e previous section a complete",
+   "pages": "13-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "As we said in the Introduction the limit transition (6.7) fro m big q-Jacobi poly-",
+   "section_file": "sections/sec-008-43-this-then-gives-together-with-the-analytic-pr.md",
+   "section_title": "This then gives, together with the analytic proofs of th e previous section a complete",
+   "pages": "13-19",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

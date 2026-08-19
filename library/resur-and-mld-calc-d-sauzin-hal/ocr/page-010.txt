@@ -1,0 +1,115 @@
+that, given a direction 6 € R, one has
+
+wom fe pI (ADE) =f AOA
+(44)
+
+where
+
+log¢
+
+2ri
+
+XQ) = X(0) +F(Q), FO) EC{C}, (45)
+
+and Hg is a rotated Hankel contour as on Figure 5.
+Figure 5: 6-rotated Hankel contour.
+0-20
+0
+
+He
+
+Let us thus introduce the Hankel-type Laplace
+transform
+
+(Ble) =f eH a. (6)
+
+Ho
+
+A simple singularity at 0 of the form
+
+0) = gaz +X), (47)
+
+encoded by aod + X(¢) € Cd ® C{¢}, is mapped to
+a function that is asymptotic to a formal series a9 +
+BX € C[z7]]. This gives a clue as to how we can
+deal with much more general singularities, provided
+they are still isolated.
+
+Let C denote the Riemann surface of the logarithm
+with its points denoted by = re, r > 0,6 ER, ie.
+we view it as a covering space over C* with 4 ¢e7?7!
+as a deck transformation. We now define ANA to be
+the space of all functions 7(¢) analytic in a domain of
+the form {r < h(0)} for some continuous positive func-
+tion h, i.e. the totality of all possibly singular germs
+that are regular in a spiralling neighbourhood of ¢ = 0.
+Examples are singular germs with a simple singularity,
+like (47), or higher order poles, or essential singular-
+ities, or convergent expansions involving non-integer
+powers of ¢ and powers of log¢ as in (51), to name
+but a few.
+
+Definition 9. A singularity is any member of
+SING := ANA /C{¢}. We denote the canonical pro-
+jection by
+
+w € ANA+ singg(w(¢)) ESING. (48)
+The minor of a singularity b = sings (WX(0)) is
+¥Q):
+
+We call resurgent singularity any b whose minor v0)
+is endlessly continuable in the sense of Definition 8.
+
+w(Q) -d(Ge?") CANA. (49)
+
+The space of all resurgent singularities is denoted
+
+Vv
+by R.
+
+The subspace Ry, of R alluded to at the beginning of
+this article is precisely C5 @ »( ©), with the notation
+
+S<singo(sae) "R= singo(%6) SES) (60)
+
+2Qni
+
+(from now on, we no longer view 6 as a symbol but
+rather as a singularity).
+
+It turns out that one can define a commutative con-
+
+v ~
+volution on R that extends the one inherited from Rg,
+and makes it an algebra, for which 6 is the unit.
+
+Observe that the Hankel-type Laplace transform
+passes to the quotient: given a singularity whose mi-
+nor has at most exponential growth at infinity in the
+
+Vy? Von V
+direction 6, we can set Y9w = YW for any repre-
+voog
+sentative w of w.
+
+However, the asymptotic expansions as |z| — 00
+of the resulting functions can be much more general
+than mere power series. The direct generalization of
+
+¢ and R*, the so-called formal model of Resurgence,
+R, is thus more delicate to define [Eca85]. Suffice it
+to say that R is an algebra containing monomials like
+I, =z? or J, = —z~° log z, to be viewed as inverse
+Borel transforms of the singularities represented by
+
+To = G00, Ja = g(o)67* log + g'(a)67™*,
+(51)
+where g(a) = s4el™’I(1 — 0) for o € C — Zyo (the
+case o € Zs must be treated separately), as well as
+z 7 (log z)™ for any m € Zso.
+Accordingly, in practice, one often encounters resur-
+gent transseries of the form
+
+Soe dn(z),  delz) € 27% Cz NR (52)
+
+k>0

@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1003.4808v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "72301d4bee491f865b87b8fd1945ccf4d693ae9cf3b3ffc011780b3fac9b981d",
+  "file": "1003.4808v2.pdf"
+ },
+ "provenance": {
+  "title": "Quantum Field Theory and the Volume Conjecture",
+  "authors": "Tudor Dimofte and Sergei Gukov",
+  "arxiv": {
+   "id": "1003.4808",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "26 Mar 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

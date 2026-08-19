@@ -154,7 +154,7 @@ That is **exactly the shape of the per-cusp factor `2^{(c−1)/2}`** that
   trace-field unit group, which no universal constant can absorb.
 
 Pinning the constant needs an external multi-cusp reference value. Nothing in
-`uploads/` supplies one: Garoufalidis–Yoon (2411.03801) prove 1-loop = adjoint
+`library/` supplies one: Garoufalidis–Yoon (2411.03801) prove 1-loop = adjoint
 torsion for **two-bridge knots**, which is one-cusped.
 
 ## What is now unblocked

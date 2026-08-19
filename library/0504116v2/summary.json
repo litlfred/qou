@@ -1,0 +1,102 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "0504116v2",
+ "source_sha256": "24a8c998e40aed5d",
+ "brief": "On deformations of hyperbolic 3-manifolds with geodesic boundary (Frigerio, AGT 6 (2006) 435–457) — the solution variety of consistency equations for a geometric partially truncated triangulation…",
+ "extended": "**On deformations of hyperbolic 3-manifolds with geodesic boundary** — Roberto Frigerio. Algebraic & Geometric Topology 6 (2006) 435–457.\n\nFor M a complete finite-volume hyperbolic 3-manifold with compact non-empty geodesic boundary and k toric cusps, and T a geometric partially truncated triangulation of M: the variety of solutions of the consistency equations for T is a smooth manifold of real dimension 2k near the point representing the unique complete structure. Consequences follow for the relation between deformations of triangulations and deformations of the hyperbolic structure.\n\n**Why it may bear here.** Consistency (\"gluing\") equations and their solution variety are the same machinery as the Ptolemy / gluing-equation material already registered (garoufalidis-goerner-zickert2012); this is the geodesic-boundary case.",
+ "tokens": {
+  "brief": 49,
+  "extended": 208
+ },
+ "sections": [
+  {
+   "id": "sec-000-12-triangulations",
+   "title": "Triangulations",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-1-triangulations-and-hyperbolicity-equations",
+   "title": "Triangulations and hyperbolicity equations",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-11-partially-truncated-tetrahedra",
+   "title": "Partially truncated tetrahedra",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-13-moduli-for-partially-truncated-tetrahedra",
+   "title": "Moduli for partially truncated tetrahedra",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-14-conditions-for-geometric-gluing",
+   "title": "Conditions for geometric gluing",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-15-exceptional-hexagons",
+   "title": "Exceptional hexagons",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-006-16-consistency-equations",
+   "title": "Consistency equations",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-17-reducing-the-number-of-equations",
+   "title": "Reducing the number of equations",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-18-completeness",
+   "title": "Completeness",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-009-2-smoothness-at-the-complete-structure",
+   "title": "Smoothness at the complete structure",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-010-21-deforming-cone-structures",
+   "title": "Deforming cone structures",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-011-22-dual-vectors-to-planes-and-horospheres",
+   "title": "Dual vectors to planes and horospheres",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-012-23-lifting-geometric-tetrahedra",
+   "title": "Lifting geometric tetrahedra",
+   "pages": "15-21"
+  },
+  {
+   "id": "sec-013-a-cohomology-theory-of-representations",
+   "title": "A Cohomology theory of representations",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-014-a1-the-tangent-space-to-a-representation",
+   "title": "A.1 The tangent space to a representation",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-015-a2-classical-rigidity-results",
+   "title": "A.2 Classical rigidity results",
+   "pages": "22-24"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "abstract",
+   "opening-text"
+  ],
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

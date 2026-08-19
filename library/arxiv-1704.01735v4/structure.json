@@ -1,0 +1,743 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1704.01735v4",
+ "source": {
+  "file": "1704.01735v4.pdf",
+  "sha256": "3935747ae9291f766e4056d07d8822084272cba3197bbee3d0e32cffe086cee6",
+  "bytes": 262522,
+  "pages": 39
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1704.01735",
+   "version": "4",
+   "primary_class": "math.NT",
+   "stamp_date": "8 Jun 2017"
+  },
+  "doi": null,
+  "title": "Modular curves, invariant theory and E8 Lei Yang",
+  "authors_raw": null,
+  "abstract": "The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2 , 13). This gives a diﬀerent construction of the E8 root lattice. It also gives an explicit construction of the modular curve X(13).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20170608210224-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Modular curves, invariant theory and E8",
+   "Lei Yang"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Standard construction: from the icosahedron to E8",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Modular curve X(13) and invariant theory for PSL(2 , 13)",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A diﬀerent construction: from the modular curve X(13) to E8",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "An explicit construction of the modular curve X(13)",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "E8-singularity: from the icosahedron to E8",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "Thus we see that from the very beginning there",
+   "page": 10,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 2,
+   "title": "The Barlow surface: from the icosahedron to E8",
+   "page": 10,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Bring’s curve and Fricke’s octavic curve: from the icos ahedron",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Modular curve X(13) and invariant theory for",
+   "page": 13,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "T A(z), A",
+   "page": 21,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q)),",
+   "page": 22,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q)),",
+   "page": 22,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(−1 + O(q)),",
+   "page": 22,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(−1 + O(q)),",
+   "page": 23,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(−3 + O(q)),",
+   "page": 23,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q)),",
+   "page": 23,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(−1 + O(q)),",
+   "page": 23,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(6 + O(q)),",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(8 + O(q)),",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(2 + O(q)),",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "Let",
+   "page": 24,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q))5+",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(−1 + O(q))+",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(−3 + O(q)) + 2ζ 3νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(−3 + O(q)) + 2ζ 9νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q))+",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(−1 + O(q)) + 2ζ 10νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(−1 + O(q)) + 2ζ 4νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(−1 + O(q))+",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(6 + O(q)) + ζ 5νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(8 + O(q)) + ζ 6νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(−3 + O(q)) + ζ 8νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(2 + O(q)) + ζ 7νq",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q))2+",
+   "page": 27,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q))+",
+   "page": 27,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(1 + O(q))5+",
+   "page": 28,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A diﬀerent construction: from the modular curve",
+   "page": 30,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "E8-singularity: from X(13) to E8",
+   "page": 30,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Barlow surface: from X(13) to E8",
+   "page": 31,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Bring’s curve and Fricke’s octavic curve: from X(13) to E8",
+   "page": 33,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "(δ2",
+   "page": 34,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 37,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 260,
+   "n_words": 45
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-2-standard-construction-from-the-icosahedron-to",
+   "number": "2",
+   "title": "Standard construction: from the icosahedron to E8",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-3-modular-curve-x13-and-invariant-theory-for-psl",
+   "number": "3",
+   "title": "Modular curve X(13) and invariant theory for PSL(2 , 13)",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-4-a-diﬀerent-construction-from-the-modular-curve",
+   "number": "4",
+   "title": "A diﬀerent construction: from the modular curve X(13) to E8",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-5-an-explicit-construction-of-the-modular-curve",
+   "number": "5",
+   "title": "An explicit construction of the modular curve X(13)",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 12860,
+   "n_words": 2979
+  },
+  {
+   "id": "sec-006-21-e8-singularity-from-the-icosahedron-to-e8",
+   "number": "2.1",
+   "title": "E8-singularity: from the icosahedron to E8",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2459,
+   "n_words": 514
+  },
+  {
+   "id": "sec-007-30-thus-we-see-that-from-the-very-beginning-ther",
+   "number": "30",
+   "title": "Thus we see that from the very beginning there",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1020,
+   "n_words": 224
+  },
+  {
+   "id": "sec-008-22-the-barlow-surface-from-the-icosahedron-to-e8",
+   "number": "2.2",
+   "title": "The Barlow surface: from the icosahedron to E8",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 2442,
+   "n_words": 541
+  },
+  {
+   "id": "sec-009-23-brings-curve-and-frickes-octavic-curve-from-t",
+   "number": "2.3",
+   "title": "Bring’s curve and Fricke’s octavic curve: from the icos ahedron",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3121,
+   "n_words": 621
+  },
+  {
+   "id": "sec-010-3-modular-curve-x13-and-invariant-theory-for",
+   "number": "3",
+   "title": "Modular curve X(13) and invariant theory for",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 21,
+   "n_chars": 10598,
+   "n_words": 3065
+  },
+  {
+   "id": "sec-011-4-t-az-a",
+   "number": "4",
+   "title": "T A(z), A",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2305,
+   "n_words": 582
+  },
+  {
+   "id": "sec-012-4-1-oq",
+   "number": "4",
+   "title": "(1 + O(q)),",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 84,
+   "n_words": 28
+  },
+  {
+   "id": "sec-013-8-1-oq",
+   "number": "8",
+   "title": "(−1 + O(q)),",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 743,
+   "n_words": 262
+  },
+  {
+   "id": "sec-014-26-2-oq",
+   "number": "26",
+   "title": "(2 + O(q)),",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 132,
+   "n_words": 51
+  },
+  {
+   "id": "sec-015-26-6-oq",
+   "number": "26",
+   "title": "(6 + O(q)),",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 568,
+   "n_words": 167
+  },
+  {
+   "id": "sec-016-26-3-oq",
+   "number": "26",
+   "title": "(−3 + O(q)),",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 279,
+   "n_words": 93
+  },
+  {
+   "id": "sec-017-26-8-oq",
+   "number": "26",
+   "title": "(8 + O(q)),",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 264,
+   "n_words": 70
+  },
+  {
+   "id": "sec-018-12-let",
+   "number": "12",
+   "title": "Let",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 620,
+   "n_words": 141
+  },
+  {
+   "id": "sec-019-2-1-oq5",
+   "number": "2",
+   "title": "(1 + O(q))5+",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 14,
+   "n_words": 5
+  },
+  {
+   "id": "sec-020-2-1-oq",
+   "number": "2",
+   "title": "(−1 + O(q))+",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 10,
+   "n_words": 4
+  },
+  {
+   "id": "sec-021-26-3-oq-2ζ-3νq",
+   "number": "26",
+   "title": "(−3 + O(q)) + 2ζ 3νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-022-26-3-oq-2ζ-9νq",
+   "number": "26",
+   "title": "(−3 + O(q)) + 2ζ 9νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1,
+   "n_words": 1
+  },
+  {
+   "id": "sec-023-26-1-oq",
+   "number": "26",
+   "title": "(1 + O(q))+",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 12,
+   "n_words": 4
+  },
+  {
+   "id": "sec-024-26-1-oq-2ζ-10νq",
+   "number": "26",
+   "title": "(−1 + O(q)) + 2ζ 10νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1,
+   "n_words": 1
+  },
+  {
+   "id": "sec-025-26-1-oq-2ζ-4νq",
+   "number": "26",
+   "title": "(−1 + O(q)) + 2ζ 4νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 29,
+   "n_words": 9
+  },
+  {
+   "id": "sec-026-26-6-oq-ζ-5νq",
+   "number": "26",
+   "title": "(6 + O(q)) + ζ 5νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-027-26-8-oq-ζ-6νq",
+   "number": "26",
+   "title": "(8 + O(q)) + ζ 6νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 29,
+   "n_words": 9
+  },
+  {
+   "id": "sec-028-26-3-oq-ζ-8νq",
+   "number": "26",
+   "title": "(−3 + O(q)) + ζ 8νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-029-26-2-oq-ζ-7νq",
+   "number": "26",
+   "title": "(2 + O(q)) + ζ 7νq",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 1504,
+   "n_words": 383
+  },
+  {
+   "id": "sec-030-4-1-oq",
+   "number": "4",
+   "title": "(1 + O(q))+",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1598,
+   "n_words": 375
+  },
+  {
+   "id": "sec-031-2-1-oq2",
+   "number": "2",
+   "title": "(1 + O(q))2+",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1665,
+   "n_words": 448
+  },
+  {
+   "id": "sec-032-4-1-oq5",
+   "number": "4",
+   "title": "(1 + O(q))5+",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 2758,
+   "n_words": 788
+  },
+  {
+   "id": "sec-033-4-a-diﬀerent-construction-from-the-modular-curve",
+   "number": "4",
+   "title": "A diﬀerent construction: from the modular curve",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 11,
+   "n_words": 3
+  },
+  {
+   "id": "sec-034-41-e8-singularity-from-x13-to-e8",
+   "number": "4.1",
+   "title": "E8-singularity: from X(13) to E8",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2282,
+   "n_words": 456
+  },
+  {
+   "id": "sec-035-42-the-barlow-surface-from-x13-to-e8",
+   "number": "4.2",
+   "title": "The Barlow surface: from X(13) to E8",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 3204,
+   "n_words": 753
+  },
+  {
+   "id": "sec-036-43-brings-curve-and-frickes-octavic-curve-from-x",
+   "number": "4.3",
+   "title": "Bring’s curve and Fricke’s octavic curve: from X(13) to E8",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 871,
+   "n_words": 241
+  },
+  {
+   "id": "sec-037-26-δ2",
+   "number": "26",
+   "title": "(δ2",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 3801,
+   "n_words": 900
+  },
+  {
+   "id": "sec-038-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 4907,
+   "n_words": 756
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 44,
+  "sections": 39,
+  "chars_total": 60458
+ }
+}

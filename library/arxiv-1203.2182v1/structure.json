@@ -1,0 +1,1330 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1203.2182v1",
+ "source": {
+  "file": "1203.2182v1.pdf",
+  "sha256": "2fe21af194f652278168c8637f0e6256e8994d2efb1e1be8bdb0ebea7fe750a5",
+  "bytes": 1026952,
+  "pages": 92
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1203.2182",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "9 Mar 2012"
+  },
+  "doi": null,
+  "title": "Volume Conjecture: Refined and Categorified",
+  "authors_raw": "Hiroyuki Fuji1,2, Sergei Gukov 1,3 and Piotr Su/suppress lkowski1,4,5",
+  "abstract": "The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebra ic curve, the zero locus of the A-polynomial A(x,y ). Another “family version” of the volume conjecture depend s on a quantization parameter, usually denoted q or ℏ; this quantum volume conjecture (also known as the AJ-conjecture) can be stated in a form of a q-diﬀerence equation that annihilates the colored Jones polynomials and SL(2, C) Chern-Simons partition functions. We propose reﬁnements / categoriﬁcations of both conjectures that inc lude an extra deformation parameter t and describe similar properties of homological knot invari ants and reﬁned BPS invariants. Much like their unreﬁned / decategoriﬁed prede cessors, that correspond to t = −1, the new volume conjectures involve objects naturally deﬁ ned on an algebraic curve Aref(x,y ;t) obtained by a particular deformation of the A-polynomial, and its quantization ˆAref(ˆx,ˆy;q,t ). We compute both classical and quantum t-deformed curves in a number of examples coming from colored knot homologies and reﬁned BPS invariants. CALT-68-2866",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241127003600-05'00'",
+   "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
+   "Title": "arXiv:1203.2182v1  [hep-th]  9 Mar 2012"
+  },
+  "title_prev": "Volume Conjecture: Reﬁned and Categoriﬁed",
+  "title_lines": [
+   "Volume Conjecture: Refined and Categorified"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "California Institute of Technology, Pasadena, CA 91125, US A",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Nagoya University, Dept. of Physics, Graduate School of Sci ence,",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53 111 Bonn, Germany",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Institute for Theoretical Physics, University of Amsterda m,",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Faculty of Physics, University of Warsaw, ul. Ho˙ za 69, 00-6 81 Warsaw, Poland",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Nagoya University, Graduate School of Mathematics, Nagoya 464-8602, Japan",
+   "page": 1,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Reﬁned A-polynomials 78",
+   "page": 3,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Generalized volume conjecture",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantum volume conjecture",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Quantization and deformation of algebraic curves",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "The new conjectures: incorporating t",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Quantum volume conjecture: reﬁned",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Generalized volume conjecture: reﬁned",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Examples coming from knots",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Sr homological invariants of (2, 2p + 1) torus knots",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "(C2(R1)+C2(R2)−C2(Q)). (3.23)",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(C2(R1)+C2(R1)+|C2(R1)−C2(R2)|)",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Reﬁned braid operators and gamma factors",
+   "page": 15,
+   "source": "inferred",
+   "number": "3.1.1"
+  },
+  {
+   "level": 1,
+   "title": "A;q1)r−ℓ",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A−1;q2)r−ℓ",
+   "page": 21,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "F rom partition functions to superpolynomials",
+   "page": 21,
+   "source": "inferred",
+   "number": "3.1.2"
+  },
+  {
+   "level": 1,
+   "title": "Z ref",
+   "page": 23,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Homological algebra of colored knot invariants",
+   "page": 26,
+   "source": "inferred",
+   "number": "3.1.3"
+  },
+  {
+   "level": 1,
+   "title": "(The Milnor Conjecture)",
+   "page": 28,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(K;a,q,t )",
+   "page": 29,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(n−1)−ℓ",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1−2p)(n−1)−ℓ (q;q)n−1(t2q;q)ℓ(t2q2;q)2ℓ(−t3q2;q)n+ℓ−1(−tq;q)n−ℓ−1",
+   "page": 32,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Recursion relations for homological knot invariants",
+   "page": 32,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Unknot",
+   "page": 32,
+   "source": "inferred",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "T refoil",
+   "page": 34,
+   "source": "inferred",
+   "number": "3.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Recursion in various limits",
+   "page": 36,
+   "source": "inferred",
+   "number": "3.2.3"
+  },
+  {
+   "level": 2,
+   "title": "Reﬁned A-polynomials and the reﬁned “volume” S0(u,t )",
+   "page": 38,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Reﬁned A-polynomial and S0(u,t ) for the unknot",
+   "page": 39,
+   "source": "inferred",
+   "number": "3.3.1"
+  },
+  {
+   "level": 1,
+   "title": "(−t−3)",
+   "page": 39,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Reﬁned A-polynomial and S0(u,t ) for the trefoil",
+   "page": 40,
+   "source": "inferred",
+   "number": "3.3.2"
+  },
+  {
+   "level": 1,
+   "title": "(u) +",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u), (3.163)",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = log (1 −x)3",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = 1",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) + −8x4 + 9x3 − 12x2 + 5x − 3",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) + 1",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) includes 1",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) and also a rational function",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) contributions, so that",
+   "page": 41,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "Saddle point analysis of the homological torus knot invariants",
+   "page": 42,
+   "source": "inferred",
+   "number": "3.3.3"
+  },
+  {
+   "level": 1,
+   "title": "(−1 +t2z0)(1 +t3xz0)",
+   "page": 43,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u),",
+   "page": 46,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = log",
+   "page": 46,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u)",
+   "page": 46,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "Asymptotic behavior in diﬀerent grading conventions",
+   "page": 46,
+   "source": "inferred",
+   "number": "3.3.4"
+  },
+  {
+   "level": 1,
+   "title": "(u) = log x4p+2(x −ξj)(1 −xξj)",
+   "page": 49,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "Relation to algebraic K-theory",
+   "page": 50,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 3,
+   "title": "Quantizability of reﬁned A-polynomials",
+   "page": 52,
+   "source": "inferred",
+   "number": "3.4.1"
+  },
+  {
+   "level": 1,
+   "title": "Examples coming from reﬁned BPS invariants",
+   "page": 54,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "PRt(q−ρ",
+   "page": 55,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Reﬁned quantum mirror curves",
+   "page": 58,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Reﬁned mirror curves, S0(u,t ) and quantizability",
+   "page": 60,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "(logz)2",
+   "page": 61,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "However, this curve is",
+   "page": 62,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(logy)2 + (logy)(log(1 −yq1)) + Li2(yq1). (4.33)",
+   "page": 62,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(logy)2 + (logy)",
+   "page": 62,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Reﬁnement as a twisted mass parameter",
+   "page": 63,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 67,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 68,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(̺j := (N+1)/2−j,j = 1, · · ·,N ), we ﬁnd the polynomialMR(q̺",
+   "page": 69,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(bc)−r",
+   "page": 70,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(−x +z0)(1 +txz0)",
+   "page": 73,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(u) = log (1 −x)x2",
+   "page": 74,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "L) ·∏ r+ℓ",
+   "page": 75,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L) ·∏ r",
+   "page": 75,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L)",
+   "page": 76,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(ℓ ≤k ≤ℓ +r), respectively, are",
+   "page": 76,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(q−ℓ",
+   "page": 76,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q−ℓ",
+   "page": 76,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 −qi",
+   "page": 76,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Reﬁned A-polynomials",
+   "page": 79,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 87,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-california-institute-of-technology-pasadena-ca",
+   "number": "1",
+   "title": "California Institute of Technology, Pasadena, CA 91125, US A",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-2-nagoya-university-dept-of-physics-graduate-sch",
+   "number": "2",
+   "title": "Nagoya University, Dept. of Physics, Graduate School of Sci ence,",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 44,
+   "n_words": 5
+  },
+  {
+   "id": "sec-002-3-max-planck-institut-f-ur-mathematik-vivatsgass",
+   "number": "3",
+   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53 111 Bonn, Germany",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-4-institute-for-theoretical-physics-university-o",
+   "number": "4",
+   "title": "Institute for Theoretical Physics, University of Amsterda m,",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 53,
+   "n_words": 8
+  },
+  {
+   "id": "sec-004-5-faculty-of-physics-university-of-warsaw-ul-ho",
+   "number": "5",
+   "title": "Faculty of Physics, University of Warsaw, ul. Ho˙ za 69, 00-6 81 Warsaw, Poland",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-6-nagoya-university-graduate-school-of-mathemati",
+   "number": "6",
+   "title": "Nagoya University, Graduate School of Mathematics, Nagoya 464-8602, Japan",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1162,
+   "n_words": 174
+  },
+  {
+   "id": "sec-006-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-11-generalized-volume-conjecture",
+   "number": "1.1",
+   "title": "Generalized volume conjecture",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1528,
+   "n_words": 251
+  },
+  {
+   "id": "sec-008-c-reﬁned-a-polynomials-78",
+   "number": "C",
+   "title": "Reﬁned A-polynomials 78",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2149,
+   "n_words": 372
+  },
+  {
+   "id": "sec-009-12-quantum-volume-conjecture",
+   "number": "1.2",
+   "title": "Quantum volume conjecture",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1811,
+   "n_words": 306
+  },
+  {
+   "id": "sec-010-13-quantization-and-deformation-of-algebraic-cur",
+   "number": "1.3",
+   "title": "Quantization and deformation of algebraic curves",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4151,
+   "n_words": 728
+  },
+  {
+   "id": "sec-011-2-the-new-conjectures-incorporating-t",
+   "number": "2",
+   "title": "The new conjectures: incorporating t",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 478,
+   "n_words": 82
+  },
+  {
+   "id": "sec-012-21-quantum-volume-conjecture-reﬁned",
+   "number": "2.1",
+   "title": "Quantum volume conjecture: reﬁned",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1325,
+   "n_words": 218
+  },
+  {
+   "id": "sec-013-22-generalized-volume-conjecture-reﬁned",
+   "number": "2.2",
+   "title": "Generalized volume conjecture: reﬁned",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1408,
+   "n_words": 291
+  },
+  {
+   "id": "sec-014-3-examples-coming-from-knots",
+   "number": "3",
+   "title": "Examples coming from knots",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 9624,
+   "n_words": 1692
+  },
+  {
+   "id": "sec-015-31-sr-homological-invariants-of-2-2p-1-torus-kno",
+   "number": "3.1",
+   "title": "Sr homological invariants of (2, 2p + 1) torus knots",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 4060,
+   "n_words": 785
+  },
+  {
+   "id": "sec-016-2-c2r1c2r2c2q-323",
+   "number": "2",
+   "title": "(C2(R1)+C2(R2)−C2(Q)). (3.23)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 540,
+   "n_words": 107
+  },
+  {
+   "id": "sec-017-2-c2r1c2r1c2r1c2r2",
+   "number": "2",
+   "title": "(C2(R1)+C2(R1)+|C2(R1)−C2(R2)|)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 942,
+   "n_words": 189
+  },
+  {
+   "id": "sec-018-311-reﬁned-braid-operators-and-gamma-factors",
+   "number": "3.1.1",
+   "title": "Reﬁned braid operators and gamma factors",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 11398,
+   "n_words": 2206
+  },
+  {
+   "id": "sec-019-2-aq1rℓ",
+   "number": "2",
+   "title": "A;q1)r−ℓ",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 250,
+   "n_words": 53
+  },
+  {
+   "id": "sec-020-1-a1q2rℓ",
+   "number": "1",
+   "title": "A−1;q2)r−ℓ",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 526,
+   "n_words": 104
+  },
+  {
+   "id": "sec-021-312-f-rom-partition-functions-to-superpolynomial",
+   "number": "3.1.2",
+   "title": "F rom partition functions to superpolynomials",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4940,
+   "n_words": 879
+  },
+  {
+   "id": "sec-022-2-z-ref",
+   "number": "2",
+   "title": "Z ref",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 4488,
+   "n_words": 852
+  },
+  {
+   "id": "sec-023-313-homological-algebra-of-colored-knot-invarian",
+   "number": "3.1.3",
+   "title": "Homological algebra of colored knot invariants",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 5860,
+   "n_words": 1050
+  },
+  {
+   "id": "sec-024-2-the-milnor-conjecture",
+   "number": "2",
+   "title": "(The Milnor Conjecture)",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 2070,
+   "n_words": 365
+  },
+  {
+   "id": "sec-025-1-kaqt",
+   "number": "1",
+   "title": "(K;a,q,t )",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 7699,
+   "n_words": 1347
+  },
+  {
+   "id": "sec-026-2-n1ℓ",
+   "number": "2",
+   "title": "(n−1)−ℓ",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 235,
+   "n_words": 46
+  },
+  {
+   "id": "sec-027-2-12pn1ℓ-qqn1t2qqℓt2q2q2ℓt3q2qnℓ1tqqnℓ1",
+   "number": "2",
+   "title": "(1−2p)(n−1)−ℓ (q;q)n−1(t2q;q)ℓ(t2q2;q)2ℓ(−t3q2;q)n+ℓ−1(−tq;q)n−ℓ−1",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 154,
+   "n_words": 21
+  },
+  {
+   "id": "sec-028-32-recursion-relations-for-homological-knot-inva",
+   "number": "3.2",
+   "title": "Recursion relations for homological knot invariants",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 372,
+   "n_words": 59
+  },
+  {
+   "id": "sec-029-321-unknot",
+   "number": "3.2.1",
+   "title": "Unknot",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 3991,
+   "n_words": 756
+  },
+  {
+   "id": "sec-030-322-t-refoil",
+   "number": "3.2.2",
+   "title": "T refoil",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 4316,
+   "n_words": 824
+  },
+  {
+   "id": "sec-031-323-recursion-in-various-limits",
+   "number": "3.2.3",
+   "title": "Recursion in various limits",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 3474,
+   "n_words": 658
+  },
+  {
+   "id": "sec-032-33-reﬁned-a-polynomials-and-the-reﬁned-volume-s0",
+   "number": "3.3",
+   "title": "Reﬁned A-polynomials and the reﬁned “volume” S0(u,t )",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2491,
+   "n_words": 419
+  },
+  {
+   "id": "sec-033-331-reﬁned-a-polynomial-and-s0ut-for-the-unknot",
+   "number": "3.3.1",
+   "title": "Reﬁned A-polynomial and S0(u,t ) for the unknot",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 310,
+   "n_words": 50
+  },
+  {
+   "id": "sec-034-2-t3",
+   "number": "2",
+   "title": "(−t−3)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 1815,
+   "n_words": 328
+  },
+  {
+   "id": "sec-035-332-reﬁned-a-polynomial-and-s0ut-for-the-trefoil",
+   "number": "3.3.2",
+   "title": "Reﬁned A-polynomial and S0(u,t ) for the trefoil",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2033,
+   "n_words": 410
+  },
+  {
+   "id": "sec-036-0-u",
+   "number": "0",
+   "title": "(u) +",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 27,
+   "n_words": 8
+  },
+  {
+   "id": "sec-037-0-u-3163",
+   "number": "0",
+   "title": "(u), (3.163)",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 108,
+   "n_words": 16
+  },
+  {
+   "id": "sec-038-0-u-1",
+   "number": "0",
+   "title": "(u) = 1",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 23,
+   "n_words": 7
+  },
+  {
+   "id": "sec-039-0-u-log-1-x3",
+   "number": "0",
+   "title": "(u) = log (1 −x)3",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 34,
+   "n_words": 9
+  },
+  {
+   "id": "sec-040-0-u-8x4-9x3-12x2-5x-3",
+   "number": "0",
+   "title": "(u) + −8x4 + 9x3 − 12x2 + 5x − 3",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 48,
+   "n_words": 15
+  },
+  {
+   "id": "sec-041-0-u-1",
+   "number": "0",
+   "title": "(u) + 1",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 72,
+   "n_words": 15
+  },
+  {
+   "id": "sec-042-0-u-includes-1",
+   "number": "0",
+   "title": "(u) includes 1",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 5,
+   "n_words": 1
+  },
+  {
+   "id": "sec-043-0-u-and-also-a-rational-function",
+   "number": "0",
+   "title": "(u) and also a rational function",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 135,
+   "n_words": 25
+  },
+  {
+   "id": "sec-044-0-u-contributions-so-that",
+   "number": "0",
+   "title": "(u) contributions, so that",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 671,
+   "n_words": 130
+  },
+  {
+   "id": "sec-045-333-saddle-point-analysis-of-the-homological-tor",
+   "number": "3.3.3",
+   "title": "Saddle point analysis of the homological torus knot invariants",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 2550,
+   "n_words": 452
+  },
+  {
+   "id": "sec-046-0-1-t2z01-t3xz0",
+   "number": "0",
+   "title": "(−1 +t2z0)(1 +t3xz0)",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 46,
+   "n_chars": 6023,
+   "n_words": 1259
+  },
+  {
+   "id": "sec-047-0-u",
+   "number": "0",
+   "title": "(u)",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 19,
+   "n_words": 5
+  },
+  {
+   "id": "sec-048-0-u",
+   "number": "0",
+   "title": "(u),",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 41,
+   "n_words": 12
+  },
+  {
+   "id": "sec-049-0-u-log",
+   "number": "0",
+   "title": "(u) = log",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 1369,
+   "n_words": 284
+  },
+  {
+   "id": "sec-050-334-asymptotic-behavior-in-diﬀerent-grading-conv",
+   "number": "3.3.4",
+   "title": "Asymptotic behavior in diﬀerent grading conventions",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 49,
+   "n_chars": 5972,
+   "n_words": 1128
+  },
+  {
+   "id": "sec-051-0-u-log-x4p2x-ξj1-xξj",
+   "number": "0",
+   "title": "(u) = log x4p+2(x −ξj)(1 −xξj)",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 571,
+   "n_words": 141
+  },
+  {
+   "id": "sec-052-34-relation-to-algebraic-k-theory",
+   "number": "3.4",
+   "title": "Relation to algebraic K-theory",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 5903,
+   "n_words": 1063
+  },
+  {
+   "id": "sec-053-341-quantizability-of-reﬁned-a-polynomials",
+   "number": "3.4.1",
+   "title": "Quantizability of reﬁned A-polynomials",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 5903,
+   "n_words": 1086
+  },
+  {
+   "id": "sec-054-4-examples-coming-from-reﬁned-bps-invariants",
+   "number": "4",
+   "title": "Examples coming from reﬁned BPS invariants",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 55,
+   "n_chars": 2551,
+   "n_words": 420
+  },
+  {
+   "id": "sec-055-1-prtqρ",
+   "number": "1",
+   "title": "PRt(q−ρ",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 58,
+   "n_chars": 5098,
+   "n_words": 938
+  },
+  {
+   "id": "sec-056-41-reﬁned-quantum-mirror-curves",
+   "number": "4.1",
+   "title": "Reﬁned quantum mirror curves",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 5023,
+   "n_words": 979
+  },
+  {
+   "id": "sec-057-42-reﬁned-mirror-curves-s0ut-and-quantizability",
+   "number": "4.2",
+   "title": "Reﬁned mirror curves, S0(u,t ) and quantizability",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 61,
+   "n_chars": 1958,
+   "n_words": 365
+  },
+  {
+   "id": "sec-058-2-logz2",
+   "number": "2",
+   "title": "(logz)2",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 2039,
+   "n_words": 370
+  },
+  {
+   "id": "sec-059-2-however-this-curve-is",
+   "number": "2",
+   "title": "However, this curve is",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 716,
+   "n_words": 131
+  },
+  {
+   "id": "sec-060-2-logy2-logylog1-yq1-li2yq1-433",
+   "number": "2",
+   "title": "(logy)2 + (logy)(log(1 −yq1)) + Li2(yq1). (4.33)",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 2281,
+   "n_words": 429
+  },
+  {
+   "id": "sec-061-43-reﬁnement-as-a-twisted-mass-parameter",
+   "number": "4.3",
+   "title": "Reﬁnement as a twisted mass parameter",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 67,
+   "n_chars": 9306,
+   "n_words": 1695
+  },
+  {
+   "id": "sec-062-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 68,
+   "n_chars": 1234,
+   "n_words": 198
+  },
+  {
+   "id": "sec-063-appendix",
+   "number": null,
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 69,
+   "n_chars": 2001,
+   "n_words": 416
+  },
+  {
+   "id": "sec-064-2-j-n12jj-1-n-we-ﬁnd-the-polynomialmrq",
+   "number": "2",
+   "title": "(̺j := (N+1)/2−j,j = 1, · · ·,N ), we ﬁnd the polynomialMR(q̺",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 70,
+   "n_chars": 2332,
+   "n_words": 594
+  },
+  {
+   "id": "sec-065-1-bcr",
+   "number": "1",
+   "title": "(bc)−r",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 73,
+   "n_chars": 4540,
+   "n_words": 842
+  },
+  {
+   "id": "sec-066-0-x-z01-txz0",
+   "number": "0",
+   "title": "(−x +z0)(1 +txz0)",
+   "level": 1,
+   "page_start": 73,
+   "page_end": 74,
+   "n_chars": 893,
+   "n_words": 175
+  },
+  {
+   "id": "sec-067-0-u-log-1-xx2",
+   "number": "0",
+   "title": "(u) = log (1 −x)x2",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 75,
+   "n_chars": 1511,
+   "n_words": 357
+  },
+  {
+   "id": "sec-068-1-l-rℓ",
+   "number": "1",
+   "title": "L) ·∏ r+ℓ",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 203,
+   "n_words": 52
+  },
+  {
+   "id": "sec-069-2-1-qi",
+   "number": "2",
+   "title": "(1 −qi",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 76,
+   "n_chars": 887,
+   "n_words": 243
+  },
+  {
+   "id": "sec-070-2-ℓ-k-ℓ-r-respectively-are",
+   "number": "2",
+   "title": "(ℓ ≤k ≤ℓ +r), respectively, are",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 76,
+   "n_chars": 25,
+   "n_words": 6
+  },
+  {
+   "id": "sec-071-1-qℓ",
+   "number": "1",
+   "title": "(q−ℓ",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 79,
+   "n_chars": 2397,
+   "n_words": 638
+  },
+  {
+   "id": "sec-072-c-reﬁned-a-polynomials",
+   "number": "C",
+   "title": "Reﬁned A-polynomials",
+   "level": 1,
+   "page_start": 79,
+   "page_end": 87,
+   "n_chars": 27545,
+   "n_words": 5411
+  },
+  {
+   "id": "sec-073-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 92,
+   "n_chars": 13240,
+   "n_words": 1996
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 78,
+  "sections": 74,
+  "chars_total": 200951
+ }
+}

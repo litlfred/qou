@@ -1,0 +1,392 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2410.14661v1",
+ "source": {
+  "file": "2410.14661v1.pdf",
+  "sha256": "3362fcd5e28eb1f0faeb2ebb04ed6f6380ae0655404d74aca5ae9950d1fb65f9",
+  "bytes": 997639,
+  "pages": 62
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2410.14661",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "18 Oct 2024"
+  },
+  "doi": null,
+  "title": "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING INTEGRAL SURGERY ALONG THE TWIST KNOT",
+  "authors_raw": null,
+  "abstract": "This is the third article in a series devoted to the study of the asymptotic expansions of various quantum invariants related to the twist knots. In this paper, by us- ing the saddle point method developed by Ohtsuki and Yokota, we obtain an asymptotic expansion formula for the Reshetikhin-Turaev invariants of closed hyperbolic 3-manifolds obtained by doing integral q-surgery along the twist knotsKp at the root of unity e 4π√−1 r (r is odd).",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241021010334Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  },
+  "title_lines": [
+   "ON THE ASYMPTOTIC EXPANSION OF VARIOUS QUANTUM",
+   "INVARIANTS III: THE RESHETIKHIN-TURAEV INVARIANTS OF",
+   "CLOSED HYPERBOLIC 3-MANIFOLDS OBTAINED BY DOING",
+   "INTEGRAL SURGERY ALONG THE TWIST KNOT"
+  ],
+  "title_prev": "(r is odd). Contents 1. Introduction 2 2. Preliminaries 4 2.1. Defintion of the Reshetikhin-Turaev invariants 4 2.2. Dilogarithm and Lobachevsky functions 6 2.3. Quantum dilogrithm functions 7"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Defintion of the Reshetikhin-Turaev invariants",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Dilogarithm and Lobachevsky functions",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Quantum dilogrithm functions",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Saddle point method",
+   "page": 7,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Computations of the potential function",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Poisson summation formula",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotic expansions",
+   "page": 20,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Preparations",
+   "page": 20,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The case m2=0",
+   "page": 24,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The case m2=0 but (m1,m3)=(0,0)",
+   "page": 29,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "The contribution of N(0,0,0)",
+   "page": 32,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Final proof",
+   "page": 41,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Appendices",
+   "page": 41,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Geometry of the critical point",
+   "page": 41,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Critical value gives the complex volume",
+   "page": 43,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Proposition 5.2",
+   "page": 45,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Estimation of the critical value",
+   "page": 46,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "Two-dimensional saddle point method",
+   "page": 52,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "One-dimensional saddle point method",
+   "page": 55,
+   "source": "outline",
+   "number": "6.6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 61,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6558,
+   "n_words": 1269
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant",
+   "number": "2.1",
+   "title": "Defintion of the Reshetikhin-Turaev invariants",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2289,
+   "n_words": 431
+  },
+  {
+   "id": "sec-003-22-dilogarithm-and-lobachevsky-functions",
+   "number": "2.2",
+   "title": "Dilogarithm and Lobachevsky functions",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1185,
+   "n_words": 249
+  },
+  {
+   "id": "sec-004-23-quantum-dilogrithm-functions",
+   "number": "2.3",
+   "title": "Quantum dilogrithm functions",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1415,
+   "n_words": 339
+  },
+  {
+   "id": "sec-005-24-saddle-point-method",
+   "number": "2.4",
+   "title": "Saddle point method",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1732,
+   "n_words": 337
+  },
+  {
+   "id": "sec-006-3-computations-of-the-potential-function",
+   "number": "3",
+   "title": "Computations of the potential function",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 15,
+   "n_chars": 8027,
+   "n_words": 2260
+  },
+  {
+   "id": "sec-007-4-poisson-summation-formula",
+   "number": "4",
+   "title": "Poisson summation formula",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 6722,
+   "n_words": 1324
+  },
+  {
+   "id": "sec-008-5-asymptotic-expansions",
+   "number": "5",
+   "title": "Asymptotic expansions",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 101,
+   "n_words": 16
+  },
+  {
+   "id": "sec-009-51-preparations",
+   "number": "5.1",
+   "title": "Preparations",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 41,
+   "n_chars": 28319,
+   "n_words": 6092
+  },
+  {
+   "id": "sec-010-55-final-proof",
+   "number": "5.5",
+   "title": "Final proof",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 364,
+   "n_words": 75
+  },
+  {
+   "id": "sec-011-6-appendices",
+   "number": "6",
+   "title": "Appendices",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-61-geometry-of-the-critical-point",
+   "number": "6.1",
+   "title": "Geometry of the critical point",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 1585,
+   "n_words": 318
+  },
+  {
+   "id": "sec-013-62-critical-value-gives-the-complex-volume",
+   "number": "6.2",
+   "title": "Critical value gives the complex volume",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 3261,
+   "n_words": 610
+  },
+  {
+   "id": "sec-014-63-proof-of-proposition-52",
+   "number": "6.3",
+   "title": "Proof of Proposition 5.2",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 2082,
+   "n_words": 422
+  },
+  {
+   "id": "sec-015-64-estimation-of-the-critical-value",
+   "number": "6.4",
+   "title": "Estimation of the critical value",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 52,
+   "n_chars": 7415,
+   "n_words": 1783
+  },
+  {
+   "id": "sec-016-65-two-dimensional-saddle-point-method",
+   "number": "6.5",
+   "title": "Two-dimensional saddle point method",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 55,
+   "n_chars": 4633,
+   "n_words": 1027
+  },
+  {
+   "id": "sec-017-66-one-dimensional-saddle-point-method",
+   "number": "6.6",
+   "title": "One-dimensional saddle point method",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 61,
+   "n_chars": 6976,
+   "n_words": 1338
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 3917,
+   "n_words": 601
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 19,
+  "chars_total": 86581
+ }
+}

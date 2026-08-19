@@ -213,7 +213,7 @@ a refutation of S1's Lean. I have not read `DecayLadderConventionDPositivity.lea
 — I am refuting the *composition* I was asked to test, on the ground that our
 object does not satisfy its antecedent.
 
-Registered separately: `uploads/9806163v1.pdf` (Orellana, *Weights of Markov
+Registered separately: `library/arxiv-math-9806163v1/9806163v1.pdf` (Orellana, *Weights of Markov
 Traces on Hecke Algebras*) uses "type D" for the **Coxeter type** `D_n`, which
 has nothing to do with our trace convention D. Not cited here, and flagged so
 the collision does not propagate.
@@ -347,11 +347,11 @@ from filename):
 
 - **Geck, "Hecke algebras of finite type are cellular"**, arXiv
   [math/0611941v3](https://arxiv.org/abs/math/0611941) [math.RT], 19 Mar 2007
-  (`uploads/0611941v3.pdf`). Establishes that our algebra *is* cellular, so
+  (`library/arxiv-math-0611941v3/0611941v3.pdf`). Establishes that our algebra *is* cellular, so
   the cell-module theory applies rather than being an analogy.
 - **Künzer & Mathas, "Elementary divisors of Specht modules"**, arXiv
   [math/0309426v2](https://arxiv.org/abs/math/0309426), 1 Jul 2004
-  (`uploads/0309426v2.pdf`). Opens with the quotient-by-radical construction
+  (`library/arxiv-math-0309426v2/0309426v2.pdf`). Opens with the quotient-by-radical construction
   of the irreducibles. The elementary-divisor machinery is the right tool
   for a *Specht-module* Gram at a special parameter — and, per §3, the wrong
   tool for this object.

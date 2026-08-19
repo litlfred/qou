@@ -13,7 +13,7 @@ Cross-check the probe's 5-node figure-eight count against the published explicit
 - sec. III A, the explicit matrix C^{4_1}, with the size formula in sec. III ("(4mp+1) x (4mp+1)") — The figure-eight knot, as the double-twist knot with both twist parameters equal to one, has an explicit 5x5 quiver matrix under the knots-quivers correspondence.
   Use here: Independently confirms the 5-node open-BPS count that conj:stokes-dt-bps-bridge's sector non-degeneracy argument infers from det(4_1) = 5, turning an inference into a checked value.
 
-Source: `uploads/PhysRevD.108.106023.pdf` — no `references.ts` entry yet
+Source: `library/physrevd108106023/PhysRevD.108.106023.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
