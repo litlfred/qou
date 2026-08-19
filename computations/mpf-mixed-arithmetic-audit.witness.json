@@ -3,9 +3,9 @@
   "name": "mpf-mixed-arithmetic-audit",
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
-    "candidates": 19,
-    "marked": 4,
-    "files": 12,
+    "candidates": 16,
+    "marked": 6,
+    "files": 9,
     "baseline": 28,
     "by_file": {
       "computations/atomic_mass_via_rho_k.py": 2,
@@ -16,10 +16,7 @@
       "computations/probes/ak_lp_dual_quotient_probe.py": 2,
       "computations/probes/tritium_8_11_jones_markov_probe.py": 2,
       "computations/proton_residual_rootcause.py": 1,
-      "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3,
-      "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py": 1,
-      "computations/s5_so3_su2_u1_fiber_action.py": 1,
-      "tools/qou-substrate/python/qou_substrate/precision.py": 1
+      "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3
     },
     "rows": [
       {
@@ -148,30 +145,6 @@
         "kind": "printed",
         "detail": "nstr(<float64-tainted>, 18)",
         "source": "\"delta_tr_M_at_q0\": mp.nstr(delta_tr_num, 18),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-        "line": 186,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 25)",
-        "source": "\"chi_at_q_proton_handbuild\": mp.nstr(chi_qp, 25),",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "computations/s5_so3_su2_u1_fiber_action.py",
-        "line": 217,
-        "kind": "printed",
-        "detail": "nstr(<float64-tainted>, 30)",
-        "source": "\"twist_q^{j(j+1)}_at_q0\": mp.nstr(theta, 30)}",
-        "class": "CANDIDATE"
-      },
-      {
-        "file": "tools/qou-substrate/python/qou_substrate/precision.py",
-        "line": 166,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "return fmt(float(value))   # float branch of fmt == natural repr",
         "class": "CANDIDATE"
       }
     ]

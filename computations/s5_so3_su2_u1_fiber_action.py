@@ -214,7 +214,8 @@ def ribbon_twist_phases(q0):
         theta = mp.power(q0, float(casimir))
         out[label] = {"casimir_j(j+1)": str(casimir),
                       "half_integer_j": (j.denominator == 2),
-                      "twist_q^{j(j+1)}_at_q0": mp.nstr(theta, 30)}
+                      # float64-intentional: exponent is an exact quarter-integer (above).
+        "twist_q^{j(j+1)}_at_q0": mp.nstr(theta, 30)}
     return out
 
 

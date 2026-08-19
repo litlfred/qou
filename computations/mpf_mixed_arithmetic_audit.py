@@ -89,7 +89,14 @@ MARKER = "float64-intentional"
 MPF_CTORS = {"mpf", "mpmathify"}
 MPF_MODULES = {"mp", "mpmath"}
 F64_MODULES = {"math", "statistics", "np", "numpy"}
-F64_METHODS = {"item", "sum", "trace", "mean", "std"}
+# Bare-method detection is restricted to `.item()`, which is distinctive to
+# numpy/torch scalars. `.sum()`, `.trace()`, `.mean()`, `.std()` were here
+# too and are AMBIGUOUS -- sympy Matrix carries all of them symbolically.
+# Measured false positive: qbeta_hoefsmit's `sp.simplify(M.trace())` on a
+# sympy matrix was tagged float64, tainting an exactly-evaluated chi.
+# The numpy MODULE forms (np.trace, np.sum, ...) are caught by F64_MODULES
+# regardless, so nothing real is lost.
+F64_METHODS = {"item"}
 EXACT_SINKS = {"int", "round", "len"}   # collapse to an exact integer
 ARITH_OPS = (ast.Add, ast.Sub, ast.Mult, ast.Div, ast.Pow, ast.FloorDiv)
 
