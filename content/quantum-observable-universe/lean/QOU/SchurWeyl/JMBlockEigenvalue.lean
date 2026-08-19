@@ -1,6 +1,7 @@
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.SytAdmissible
 import QOU.SchurWeyl.SeminormalParam
+import QOU.SchurWeyl.SeminormalRep
 
 /-!
 # Why `Θ = Σ_k (L_k + L_k⁻¹)` is a *scalar*, reduced to the per-element eigenvalue
@@ -54,9 +55,20 @@ single scalar condition kills both; `seminormalParam_weighted_sum_zero` shows th
 precisely when `y = x·q^{2δ}`.  The axial distance is therefore the *only* place the tableau
 combinatorics enters the step — everything else is `2 × 2` matrix algebra over `ℝ`.
 
-What is still missing for Ram Thm 4.1 in general is the orbit *bookkeeping*: orbits of size `> 2`,
-and the assembly of the per-generator steps along a reduced word.  The size-`2` step below is the
-base case of that induction, not a proof of it.
+`genMat_submatrix_orbit` then identifies that abstract block with the real one: restricted to the
+two rows and columns `{T, s_k·T}`, `genMat` **is** `seminormalBlock q (a δ)`.  So the step is a
+statement about the actual representation, not about a `2 × 2` matrix that resembles it.
+
+## What is still missing for Ram Thm 4.1 in general
+
+The assembly: the induction on `k` in `L_{k+1} = σ_k L_k σ_k`, using that `genMat` is
+block-diagonal over the `s_k`-orbits so the product decomposes orbit by orbit.  The size-`2` step
+below is the base case of that induction, not a proof of it.
+
+Note that "orbits have size `≤ 2`" is **not** part of the gap — `swapTableau_involutive`
+(`TableauCells`) already gives it, and the size-`1` case is `genMat_of_not_admissible`.  Both were
+in the corpus before this file; an earlier revision of the accompanying bean listed the size bound
+as still needing to be stated, which was wrong.
 -/
 
 namespace QOU.SchurWeyl
@@ -359,6 +371,73 @@ theorem seminormalBlock_conj_diag_swap (hq : q ≠ 0) (δ : ℤ) (hδ : q ^ (2 *
   exact seminormalParam_weighted_sum_zero q hq δ hδ x
 
 end OrbitStep
+
+section GenMatOrbit
+
+open Seminormal SeminormalRep
+
+variable (q : ℝ)
+
+/-- **The size-`2` orbit of `genMat` *is* a `seminormalBlock`.**  Restricted to the two rows and
+columns `{T, s_k·T}` of an admissible swap, the global generator matrix equals
+`seminormalBlock q (a δ)` with `δ = axialDist T k`.
+
+This is the bridge that makes `seminormalBlock_conj_diag_swap` a statement about `genMat` rather
+than an abstract `2 × 2` identity.  It is not free: `genMat`'s two off-diagonal entries are
+`offDiag q δ` and `offDiag q (−δ)`, which are **asymmetric** — one is the plain `1` and the other
+carries `1 + a(δ)a(−δ)`.  Matching them against `seminormalBlock`'s `1` and
+`a(q − q⁻¹) − a² + 1` is what fixes the orientation, and it only works one way round; hence the
+hypothesis `axialDist T k < 0`, which puts the negative-distance tableau first.  The opposite
+orientation is the same statement applied to `s_k·T` (`swapTableau_involutive`,
+`axialDist_swapTableau`), not a second lemma.
+
+The `a(δ) + a(−δ) = q − q⁻¹` identity (`seminormalParam_add_neg`) is what converts `offDiag`'s
+`1 + a(δ)a(−δ)` into `seminormalBlock`'s lower-left entry — the same trace identity that makes the
+block have determinant `−1`. -/
+theorem genMat_submatrix_orbit (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card)
+    (T : StandardYoungTableau μ) (hadm : SwapAdmissible T k) (hneg : axialDist T k < 0)
+    (hq : q ≠ 0) (hd : q ^ ((-2 : ℤ) * axialDist T k) ≠ 1) :
+    (genMat q k hk hkn).submatrix ![T, swapTableau T k hk hkn hadm]
+        ![T, swapTableau T k hk hkn hadm]
+      = seminormalBlock q (seminormalParam q (axialDist T k)) := by
+  classical
+  set T' := swapTableau T k hk hkn hadm with hT'
+  have hadm' : SwapAdmissible T' k := swapAdmissible_swapTableau T hk hkn hadm
+  have hinv : swapTableau T' k hk hkn hadm' = T := swapTableau_involutive T hk hkn hadm
+  have hdist' : axialDist T' k = -axialDist T k := axialDist_swapTableau T hk hkn hadm
+  have hne : T' ≠ T := swapTableau_ne T hk hkn hadm
+  -- the four entries
+  have e00 : genMat q k hk hkn T T = seminormalParam q (axialDist T k) :=
+    genMat_diag q k hk hkn T
+  have e11 : genMat q k hk hkn T' T' = seminormalParam q (-axialDist T k) := by
+    rw [genMat_diag q k hk hkn T', hdist']
+  have e10 : genMat q k hk hkn T' T = offDiag q (axialDist T k) :=
+    genMat_swap q k hk hkn hadm hne
+  have e01 : genMat q k hk hkn T T' = offDiag q (-axialDist T k) := by
+    have := genMat_swap q k hk hkn hadm' (by rw [hinv]; exact fun h => hne h.symm)
+    rw [hinv, hdist'] at this
+    exact this
+  -- `offDiag` on the two orientations
+  have hoff01 : offDiag q (-axialDist T k) = 1 := offDiag_of_not_neg q (by omega)
+  have hoff10 : offDiag q (axialDist T k)
+      = 1 + seminormalParam q (axialDist T k) * seminormalParam q (-axialDist T k) := by
+    unfold offDiag; rw [if_pos hneg]
+  -- the trace identity turns that into `seminormalBlock`'s lower-left entry
+  have htr : seminormalParam q (axialDist T k) + seminormalParam q (-axialDist T k) = q - q⁻¹ :=
+    seminormalParam_add_neg q (axialDist T k) hq hd
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp only [Matrix.submatrix_apply, Fin.mk_zero, Fin.mk_one, Matrix.cons_val_zero,
+      Matrix.cons_val_one, seminormalBlock, Matrix.cons_val_fin_one, Matrix.of_apply,
+      Matrix.cons_val', Matrix.empty_val']
+  · exact e00
+  · rw [e01, hoff01]
+  · rw [e10, hoff10]
+    linear_combination seminormalParam q (axialDist T k) * htr
+  · rw [e11]
+    linear_combination htr
+
+end GenMatOrbit
 
 end TableauCells
 

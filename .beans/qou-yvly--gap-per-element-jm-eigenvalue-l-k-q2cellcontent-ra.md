@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T08:13:31Z
-updated_at: 2026-08-19T12:22:48Z
+updated_at: 2026-08-19T12:33:45Z
 ---
 
 ## Scope, after the 2026-08-19 narrowing
@@ -160,3 +160,25 @@ Orbit BOOKKEEPING, not the per-orbit algebra:
 
 Neither needs new algebraic identities as far as I can see — but I have
 not tried them, so treat that as a guess, not a result.
+
+
+### Correction to the item above — orbit size ≤ 2 is NOT part of the gap
+
+I listed "the claim that every s_k-orbit on SYT(μ) has size ≤ 2 needs
+stating" as remaining work. Wrong: `TableauCells.swapTableau_involutive`
+already proves it (merged well before this branch), and the size-1 case is
+`SeminormalRep.genMat_of_not_admissible`. Both were in the corpus. I wrote
+the item before grepping, which is the failure mode this bean's own notes
+warn about.
+
+Also landed: `genMat_submatrix_orbit` — restricted to the two rows and
+columns {T, s_k·T}, `genMat` IS `seminormalBlock q (a δ)`. Hypothesis
+`axialDist T k < 0` fixes the orientation, which is forced: genMat's two
+off-diagonals are `offDiag q δ` and `offDiag q (−δ)` and those are
+asymmetric (one is 1, the other 1 + a(δ)a(−δ)); only one ordering matches
+seminormalBlock. The other orientation is the same lemma applied to s_k·T.
+This makes seminormalBlock_conj_diag_swap a statement about the actual
+representation rather than an abstract 2×2 identity.
+
+So the remaining gap is exactly ONE thing: the induction on k in
+L_{k+1} = σ_k L_k σ_k, decomposing the product orbit by orbit.
