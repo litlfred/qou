@@ -76,6 +76,8 @@ from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from knot_volumes import (  # noqa: E402
     VOL_BORROMEAN_MPF as VOL_BORROMEAN,
     VOL_7_SQ_1_MPF as VOL_7_SQ_1,
+    VOL_6_2_MPF,
+    VOL_8_11_MPF,
 )
 from codata_constants import (  # noqa: E402
     ame_binding_mev,
@@ -97,9 +99,20 @@ from codata_constants import (  # noqa: E402
 C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1         # ≈ 2.4270 MeV
 
 # Hyperbolic volumes from SnapPy (50-digit HP, independent of AME).
+#
+# From `knot_volumes`, not typed here.  The qou-3wqg port swapped L6a4 and 7²_1
+# onto the `_MPF` constants and left these two as bare Python float literals --
+# so the 50 digits written out were parsed to binary64 at import and only ~17
+# survived, while the comment above still promised 50.  That floor propagated:
+# `B = nu * M_E_MEV * vol` inherited it, and `str()` on the mpf product then
+# printed the float64's full binary expansion, which is how `B_pred_MeV` reached
+# eight consumers as `2.2488207979013089793867766275070607662200927734375` --
+# 49 digits of which ~17 are real.  The imported constants are digit-identical
+# to the literals they replace, so this recovers precision without moving a
+# value.
 KNOT_VOL = {
-    "6_2":       4.4008325161230461014412038656409280339834854185165,
-    "8_11":      8.2863168178065925881,
+    "6_2":       VOL_6_2_MPF,
+    "8_11":      VOL_8_11_MPF,
     "L6a4":      VOL_BORROMEAN,
 }
 
@@ -194,24 +207,39 @@ ATOM_ASSIGN = {
     # the Kashaev single-knot rule (target volumes too large for
     # low-crossing census). Likely need composite rules combining
     # α-cores + valence nucleon knots.
-    "9Be":  {"rule": "gap",      "B_AME_MeV_target": 58.165,
-             "vol_kashaev_target_m_e_units": 58.165 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 58.165 / (2 * M_E_MEV),
+    #
+    # Targets come from `ame_binding_mev`, not typed.  The four below read
+    # 58.165 / 76.206 / 104.659 / 147.801 and every one disagreed with the
+    # vendored AME2020 table -- by 1.7e-5, 1.2e-5, 3.8e-6 and 2.5e-6 relative --
+    # which is the same defect, in the same file, that the `_AME_NUCLIDES`
+    # comment above records fixing for the main table.  The three Li rows beside
+    # them were already on registry constants; these four were missed.
+    "9Be":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(4, 9),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(4, 9) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(4, 9) / (2 * M_E_MEV),
              "structural_hint": "2α + n (Borromean halo nucleus)",
              "origin": "GAP: odd-A, Borromean halo — needs composite rule"},
-    "11B":  {"rule": "gap",      "B_AME_MeV_target": 76.206,
-             "vol_kashaev_target_m_e_units": 76.206 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 76.206 / (2 * M_E_MEV),
+    "11B":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(5, 11),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(5, 11) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(5, 11) / (2 * M_E_MEV),
              "structural_hint": "2α + 3p (p-shell nucleus)",
              "origin": "GAP: odd-A, p-shell — needs composite rule"},
-    "14N":  {"rule": "gap",      "B_AME_MeV_target": 104.659,
-             "vol_kashaev_target_m_e_units": 104.659 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 104.659 / (2 * M_E_MEV),
+    "14N":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(7, 14),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(7, 14) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(7, 14) / (2 * M_E_MEV),
              "structural_hint": "3α + 2p (p-shell, N=Z mirror)",
              "origin": "GAP: odd-A, N=Z mirror — needs composite rule"},
-    "19F":  {"rule": "gap",      "B_AME_MeV_target": 147.801,
-             "vol_kashaev_target_m_e_units": 147.801 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 147.801 / (2 * M_E_MEV),
+    "19F":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(9, 19),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(9, 19) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(9, 19) / (2 * M_E_MEV),
              "structural_hint": "4α + 3p (sd-shell onset)",
              "origin": "GAP: odd-A, sd-shell onset — needs composite rule"},
 }
@@ -410,8 +438,15 @@ def main() -> int:
             else None
         )
         err = (B_pred - B_ame) if B_pred is not None else None
-        pct = (err / B_ame * 100) if (err is not None and B_ame) else 0.0
-        ppb = (err / B_ame * 1e9) if (err is not None and B_ame) else 0.0
+        # `None`, not `0.0`, when there is no prediction.  A GAP row has no
+        # error -- it has no B_pred to take an error OF -- and writing `0.0`
+        # there both put six raw float64 zeros into the witness and, far worse,
+        # made the row read as a perfect prediction.  The `within` counters
+        # below took that at face value: every one of the six "within 1 ppb"
+        # atoms this producer reported was a GAP row.  Zero predictions are
+        # within 1 ppb.
+        pct = (err / B_ame * 100) if (err is not None and B_ame) else None
+        ppb = (err / B_ame * 1e9) if (err is not None and B_ame) else None
         l3_marker = f"  [+ε_shell={eps_shell:+.3f}]" if eps_shell != 0.0 else ""
         if B_pred is None:
             print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
@@ -439,13 +474,18 @@ def main() -> int:
     # Summary
     print()
     print("  Summary:")
-    ok = rows
+    # Scored rows are the ones that actually carry a prediction.  `ok = rows`
+    # scored the GAP rows too, on their fabricated 0.0 error.
+    ok = [r for r in rows if r["err_ppb"] is not None]
+    gap = [r for r in rows if r["err_ppb"] is None]
     within = {1: 0, 1e3: 0, 1e6: 0, 1e9: 0}
     for r in ok:
         for th in within:
             if abs(r["err_ppb"]) <= th:
                 within[th] += 1
     print(f"    n = {len(ok)} atoms with zero-parameter prediction")
+    print(f"    n = {len(gap)} atoms with a rule but no prediction (GAP): "
+          f"{', '.join(r['sym'] for r in gap)}")
     print(f"    n = {len(no_assign)} atoms without rule "
           f"({', '.join(a[0] for a in no_assign)})")
     print(f"    within 1    ppb  (1e-9):    {within[1]}")
@@ -453,8 +493,10 @@ def main() -> int:
     print(f"    within 1e6  ppb  (0.1%):    {within[1e6]}")
     print(f"    within 1e9  ppb  (100%):    {within[1e9]}")
 
-    mean_pct = sum(abs(r["err_pct"]) for r in ok) / len(ok) if ok else 0.0
-    mean_ppb = sum(abs(r["err_ppb"]) for r in ok) / len(ok) if ok else 0.0
+    # Over the scored rows only -- averaging the GAP rows' 0.0 in pulled the
+    # mean down by the 6/16 of the table that made no prediction at all.
+    mean_pct = sum(abs(r["err_pct"]) for r in ok) / len(ok) if ok else None
+    mean_ppb = sum(abs(r["err_ppb"]) for r in ok) / len(ok) if ok else None
     print(f"    mean |err|:   {float(mean_pct):.4f}%  =  {float(mean_ppb):.3e} ppb")
 
     builder = (
