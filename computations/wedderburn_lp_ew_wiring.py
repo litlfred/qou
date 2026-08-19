@@ -33,6 +33,7 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
+from functools import lru_cache
 from pathlib import Path
 
 import sympy as sp
@@ -114,6 +115,7 @@ from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402
 
 
+@lru_cache(maxsize=None)
 def _hoefsmit_mp_matrices(n: int, q_str: str) -> dict:
     """Hoefsmit generator matrices ``M^λ_g`` in **mpmath**, for every
     partition ``λ ⊢ n`` and every generator ``g ∈ {0, …, n-2}``.
@@ -131,6 +133,15 @@ def _hoefsmit_mp_matrices(n: int, q_str: str) -> dict:
     float64 *by construction* — ``BlockCache`` uses ``math.sqrt`` against a
     fixed ``1e-15`` degeneracy threshold — so handing it an ``mpf`` q does not
     make it exact; numpy coerces on contact.
+
+    MEMOISED on ``(n, q_str)``. The sweep called this again for the
+    headline atom with identical arguments — triton is both the headline
+    and a sweep entry — so the H_9 build ran twice and dominated the
+    wall clock: 28 min becomes ~14. The existing ``hoefsmit_cache=``
+    parameter reuses a cache WITHIN one atom (supply vector + Gram); it
+    does nothing ACROSS the headline/sweep boundary, which is where the
+    duplication was. Pure function of its arguments, and callers only
+    read traces, so nothing mutates the cached matrices.
 
     The caller then evaluates Markov traces of arbitrary 4-letter
     words via three matrix multiplications + one trace + sum over
