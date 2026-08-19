@@ -381,6 +381,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_v1_lift_and_value_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. eps_3 is computed from K = Q(alpha), alpha^3-alpha^2+1 = 0, in exact 5-adic arithmetic; the substrate modulus plays no role in CGZ's construction and no anchor is imported."),
     "scriptFile": "gswz_epsm_v1_lift_and_value_probe.py",
     "commitSha": _sha,
     "beans": ["qou-w4gn", "qou-y3xv", "qou-9p9y"],

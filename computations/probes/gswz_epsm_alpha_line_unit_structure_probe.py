@@ -334,6 +334,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_alpha_line_unit_structure_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. The Bloch condition d(xi) = 0 and the per-symbol classes are computed in Z[x]/(x^3-x^2+1) and Z/5^W; no substrate modulus enters."),
     "scriptFile": "gswz_epsm_alpha_line_unit_structure_probe.py",
     "commitSha": _sha,
     "beans": ["qou-w4gn", "qou-y3xv", "qou-9p9y"],

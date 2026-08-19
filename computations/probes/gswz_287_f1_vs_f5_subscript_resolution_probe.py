@@ -267,6 +267,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_287_f1_vs_f5_subscript_resolution_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. Resolves a source ambiguity in GSWZ (287) from ramification and cyclotomic field degrees; no numerical anchor of any kind is used."),
     "scriptFile": "gswz_287_f1_vs_f5_subscript_resolution_probe.py",
     "commitSha": _sha,
     "beans": ["qou-xx9f"],

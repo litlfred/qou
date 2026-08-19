@@ -2,8 +2,10 @@
  "schema": "probe-witness/v1",
  "probe": "gswz_epsm_m6_rwf_value_probe",
  "engine": "python3-int-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. The m = 6 R^{w_F} computation and its CGZ gates are exact 5-adic arithmetic over K = Q(alpha); the substrate modulus never enters.",
  "scriptFile": "gswz_epsm_m6_rwf_value_probe.py",
- "commitSha": "907466861f4fb6c45f9c30ff280bcbafd828b2f5",
+ "commitSha": "8060f7c0256851bc3e6b48bfefb2dbdfff7dde38",
  "beans": [
   "qou-w4gn",
   "qou-y3xv",

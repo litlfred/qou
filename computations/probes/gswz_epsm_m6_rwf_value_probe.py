@@ -359,6 +359,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_m6_rwf_value_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. The m = 6 R^{w_F} computation and its CGZ gates are exact 5-adic arithmetic over K = Q(alpha); the substrate modulus never enters."),
     "scriptFile": "gswz_epsm_m6_rwf_value_probe.py",
     "commitSha": _sha,
     "beans": ["qou-w4gn", "qou-y3xv", "qou-9p9y"],
