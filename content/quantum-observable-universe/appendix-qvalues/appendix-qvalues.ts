@@ -17,6 +17,14 @@ export default chapter({
       ],
     },
     {
+      title: "The $5_2$ lane: trace field and saddle closure",
+      blocks: [
+        "fivetwo-trace-field",
+        "fivetwo-saddle-sum-rule",
+        "fivetwo-bar-odd-arithmetic-home",
+      ],
+    },
+    {
       title: "Substrate evaluations",
       blocks: [
         "proton-borromean-assembly",
