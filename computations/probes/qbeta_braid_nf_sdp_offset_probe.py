@@ -33,7 +33,30 @@ and `nf` is the NORMAL-FORM vector of the braid word in `H_3(q)` — the braid's
 own operator content, reduced through the Gröbner-Shirshov tables
 (`pyhecke.gram.hm`). Since `G` is invertible (rank 6), `G x = nf` fixes
 `x* = G⁻¹ nf` uniquely, and `nf`'s DIRECTION varies per knot, not merely its
-scale. Homogeneity is therefore broken and the offset direction becomes
+scale.
+
+    ⛔ THAT PREMISE IS FALSE UNDER CONVENTION D (2026-08-19, bean qou-cds2).
+    `G` has rank 5 of 6 under D — the radical is the q-antisymmetriser — so
+    `x*` is not unique, and it exists at all only if `nf` is orthogonal to the
+    radical. It is not: BOTH anchors carry a radical component of ~47 % of
+    their NF norm (0.47268915 for each, identically). So `G x = nf` is
+    UNSATISFIABLE for both and this probe's question is ill-posed under D, not
+    merely harder to solve.
+
+    This probe ran on convention C, because `pyhecke.gram`'s mpmath path was
+    still on C until 2026-08-19 while the float64 path had been D since
+    08-15. Its committed witness is therefore C-frame.
+
+    It now REFUSES TO RUN rather than re-solving on the quotient and reporting
+    an offset angle: `mp.lu_solve` does not raise on the singular D Gram (it
+    returns entries of order 1e50 with a ~1e-3 residual at every precision
+    from 20 to 120 dps), so without this guard the probe would publish
+    laundered numbers that look like a result. Re-deriving the question under
+    D is separate work.
+
+    Measurement + the quotient API that a re-derivation would use:
+    `computations/qbeta/gram_mp_path_convention_d_migration_probe.py`
+    (witness `gram-mp-path-convention-d-migration.witness.json`). Homogeneity is therefore broken and the offset direction becomes
 knot-dependent — giving a MAGNITUDE *and* an ANGLE per knot, two numbers, which
 is what the falsifiability bar requires.
 
@@ -159,6 +182,25 @@ def main() -> int:
     Gm = _gram.gram_matrix_mp()
     G = mp.matrix(Gm)
     d = G.rows
+
+    # ---- convention-D guard (bean qou-cds2) --------------------------------
+    # Under D this Gram is singular and `mp.lu_solve` below would return ~1e50
+    # garbage WITHOUT raising. Refuse rather than publish it.
+    _v = mp.matrix(_gram.radical_mp())
+    _vv = mp.fsum(_v[i] * _v[i] for i in range(d))
+    if _vv > 0:
+        _resid = max(abs(t) for t in (G * _v))
+        if _resid < mp.mpf("1e-30"):
+            print("\n  ⛔ REFUSING TO RUN — the Gram is SINGULAR under convention D.")
+            print(f"     ||G · radical|| = {mp.nstr(_resid, 6)} (the q-antisymmetriser")
+            print("     is a null direction), so `G x = nf` has no unique solution and")
+            print("     has NO solution at all unless nf ⊥ radical. Measured radical")
+            print("     fraction of the anchors: ~47 % each. This probe's premise")
+            print("     ('G is invertible (rank 6)') does not hold under D.")
+            print("     mp.lu_solve would NOT raise here — it returns ~1e50 entries")
+            print("     with a ~1e-3 residual — so running on would publish laundered")
+            print("     numbers. See gram_mp_path_convention_d_migration_probe.py.")
+            return 2
     print(f"\n  NF basis ({d}): {list(_gram.NF_NAMES)}   h = q₀ − q₀⁻¹ = "
           f"{mp.nstr(_gram.h_mp(), 20)}")
 
