@@ -2,23 +2,41 @@
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
  "scriptHash": "7967e9468ef0",
- "commitSha": "cf21f35ef093175b6c64e58169bc158ed243df8f",
+ "commitSha": "15bd3d384436f4cf22af416b1bdb8398f968f63d",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
   "cosmetic": 0,
   "cosmetic_env_differs": 0,
-  "cosmetic_import_cone_drift": 6,
+  "cosmetic_import_cone_drift": 8,
   "cosmetic_strips_provenance": 0,
-  "substantive": 268,
-  "rewritten": 366,
-  "unresolvable": 111,
+  "substantive": 267,
+  "rewritten": 376,
+  "unresolvable": 113,
   "unparseable": 0
  },
  "data": {
   "cosmetic": [],
   "cosmetic_env_differs": [],
   "cosmetic_import_cone_drift": [
+   {
+    "witness": "computations/binding-multibond-wenzl.witness.json",
+    "producer": "computations/binding_multibond_wenzl.py",
+    "recorded": "7ce68c29ed54",
+    "current": "e51bf27bddd3",
+    "import_drift": [
+     "computations/substrate/_precision.py (depth 1)",
+     "computations/substrate/codata_constants.py (depth 1)",
+     "computations/substrate/hecke_core.py (depth 1)",
+     "computations/tr_m_wenzl_bridge_mpfr.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)",
+     "computations/codata_2022_source.py (depth 2)",
+     "computations/markov/markov_peel.py (depth 4)",
+     "computations/_li_2_q_util.py (depth 5)",
+     "computations/canonical_braid_crossings.py (depth 5)",
+     "computations/markov/markov_trace_canonical.py (depth 5)"
+    ]
+   },
    {
     "witness": "computations/casimir-d6-qcorrection-structure.witness.json",
     "producer": "computations/casimir_d6_qcorrection_structure.py",
@@ -62,6 +80,15 @@
     "producer": "computations/s5_so3_su2_u1_fiber_action.py",
     "recorded": "ebf04365abfd",
     "current": "d62058fdfbee",
+    "import_drift": [
+     "computations/substrate/witness_base.py (depth 1)"
+    ]
+   },
+   {
+    "witness": "computations/y-lambda-macdonald-telescope.witness.json",
+    "producer": "computations/y_lambda_macdonald_telescope.py",
+    "recorded": "97e35a240ddc",
+    "current": "c3ac558daace",
     "import_drift": [
      "computations/substrate/witness_base.py (depth 1)"
     ]
@@ -139,6 +166,12 @@
     "current": "55d683d8c551"
    },
    {
+    "witness": "computations/atom-level-wedderburn-tower.witness.json",
+    "producer": "computations/atom_level_wedderburn_tower.py",
+    "recorded": "33fabd4442c9",
+    "current": "7c52c6c0b8de"
+   },
+   {
     "witness": "computations/atom-mass-derived.witness.json",
     "producer": "computations/atom_mass_derived.py",
     "recorded": "022843a2b5c2",
@@ -175,10 +208,22 @@
     "current": "9482010b5e32"
    },
    {
+    "witness": "computations/binding-error-source.witness.json",
+    "producer": "computations/binding_error_source.py",
+    "recorded": "88b5200bbe55",
+    "current": "18ae4c3a509a"
+   },
+   {
     "witness": "computations/binding-factor-f-sequence.witness.json",
     "producer": "computations/binding_factor_f_sequence.py",
     "recorded": "ef41361d0894",
     "current": "82ec655d0692"
+   },
+   {
+    "witness": "computations/binding-link-volumes.witness.json",
+    "producer": "computations/binding_link_volumes.py",
+    "recorded": "4091a1d2b729",
+    "current": "f228c890954a"
    },
    {
     "witness": "computations/binding-wn-multianchor-tower-refute.witness.json",
@@ -961,12 +1006,6 @@
     "current": "b7dee1a17d13"
    },
    {
-    "witness": "computations/chi-convention-audit.witness.json",
-    "producer": "computations/chi_convention_audit.py",
-    "recorded": "f19e0d0cd52f",
-    "current": "e2179462ad3f"
-   },
-   {
     "witness": "computations/chi-deuteron-free-h6-at-q0-50dps.witness.json",
     "producer": "computations/bar_pairing_binding_observable.py",
     "recorded": "1e9518e4eef9",
@@ -989,24 +1028,6 @@
     "producer": "computations/chi_lambda_he4_full_partition_table.py",
     "recorded": "45a1c2bf2e09",
     "current": "523a7ee27545"
-   },
-   {
-    "witness": "computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
-    "producer": "computations/chi_via_rust_lossless.py",
-    "recorded": "9dec1cdfee64",
-    "current": "8d38b71496d3"
-   },
-   {
-    "witness": "computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
-    "producer": "computations/chi_via_rust_lossless.py",
-    "recorded": "9dec1cdfee64",
-    "current": "8d38b71496d3"
-   },
-   {
-    "witness": "computations/chi-via-rust-lossless-general.witness.json",
-    "producer": "computations/chi_via_rust_lossless.py",
-    "recorded": "fa6f74b15644",
-    "current": "8d38b71496d3"
    },
    {
     "witness": "computations/chirality-weighted-3body-cluster.witness.json",
@@ -1486,7 +1507,13 @@
     "witness": "computations/probes/poly-q-proof.witness.json",
     "producer": "computations/probes/poly_q_proof_probe.py",
     "recorded": "75bab736c6a7",
-    "current": "08a92b0de66e"
+    "current": "c635ad3bf0ef"
+   },
+   {
+    "witness": "computations/probes/qbeta-5two-categorical-markov-volume.witness.json",
+    "producer": "computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
+    "recorded": "e8d94135a1c1",
+    "current": "be72672c2020"
    },
    {
     "witness": "computations/probes/qbeta-5two-gbar-pole-ladder.witness.json",
@@ -1663,12 +1690,6 @@
     "current": "ba4383ceb7e8"
    },
    {
-    "witness": "computations/witness-staleness-triage.witness.json",
-    "producer": "computations/witness_staleness_triage.py",
-    "recorded": "044f75f617f8",
-    "current": "7967e9468ef0"
-   },
-   {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",
     "producer": "computations/xi_ell_phi_q_probe.py",
     "recorded": "39b942183c2d",
@@ -1745,13 +1766,6 @@
     "reason": "commit bbc410b27 not in the repository"
    },
    {
-    "witness": "computations/active-set-truncation-prototype.witness.json",
-    "producer": "computations/active_set_truncation_prototype.py",
-    "recorded": "3eaea4e4ad1f",
-    "current": "1a66900746ef",
-    "reason": "commit 2d4f7ff2c not in the repository"
-   },
-   {
     "witness": "computations/alpha/alpha-star-dominant-partitions.witness.json",
     "producer": "computations/alpha/alpha_star_dominant_partitions.py",
     "recorded": "2e8301788347",
@@ -1759,92 +1773,11 @@
     "reason": "commit 417e511ad not in the repository"
    },
    {
-    "witness": "computations/alpha-basis-knot-couplings.witness.json",
-    "producer": "computations/alpha_basis_knot_couplings.py",
-    "recorded": "f24ac5a6b801",
-    "current": "f1eff9c09d34",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/alpha-em-4pi-q0-sensitivity.witness.json",
-    "producer": "computations/alpha_em_4pi_q0_sensitivity.py",
-    "recorded": "24d64809f970",
-    "current": "88e63904fc8c",
-    "reason": "commit 56e0d96d0 not in the repository",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/alpha-em-no-pi-correction-probe.witness.json",
-    "producer": "computations/alpha_em_no_pi_correction_probe.py",
-    "recorded": "77e56f4b09dd",
-    "current": "4cae5ca9c10e",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/alpha-k-four-strand-singlet-selection.witness.json",
-    "producer": "computations/alpha_k_four_strand_singlet_selection.py",
-    "recorded": "2013522ec20d",
-    "current": "983650c4cff7",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/alpha-k-per-force-assembly.witness.json",
-    "producer": "computations/alpha_k_per_force_assembly.py",
-    "recorded": "7b1afa37157f",
-    "current": "1cd2a0da8a68",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/alpha-k-selection-rule-conditional.witness.json",
-    "producer": "computations/alpha_k_selection_rule_conditional.py",
-    "recorded": "6e98d5a2cb59",
-    "current": "eccfcec796bb",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/alpha-k-split-pole-order-audit.witness.json",
-    "producer": "computations/alpha_k_split_pole_order_audit.py",
-    "recorded": "e6f3c2d0dab0",
-    "current": "b4820128becb",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/alpha_em/alpha-em-count-carrying-object.witness.json",
     "producer": "computations/alpha_em/alpha_em_count_carrying_object_probe.py",
     "recorded": "a57f005cecac",
     "current": "ad1cf6f7e1df",
     "reason": "commit 5dee38b80 not in the repository"
-   },
-   {
-    "witness": "computations/atom-braid-active-partitions.witness.json",
-    "producer": "computations/atom_braid_active_partitions.py",
-    "recorded": "bd3249bd226e",
-    "current": "639ef8808a87",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/atom-level-wedderburn-tower.witness.json",
-    "producer": "computations/atom_level_wedderburn_tower.py",
-    "recorded": "0fe8ddbf8916",
-    "current": "39da12dc17e3",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/atomic-chirality-residue.witness.json",
@@ -1896,52 +1829,11 @@
     "reason": "commit 65d2418d1 not in the repository"
    },
    {
-    "witness": "computations/aufbau-ell-penetration-hartree-pinned.witness.json",
-    "producer": "computations/aufbau_ell_penetration_hartree_pinned.py",
-    "recorded": "90c8b6d3a3d0",
-    "current": "d1aa0b5ca1eb",
-    "reason": "commit 5a256810e not in the repository"
-   },
-   {
     "witness": "computations/averaged-block-swap-binding.witness.json",
     "producer": "computations/averaged_block_swap_binding.py",
     "recorded": "fd0c223d783b",
     "current": "2458c2e7bd05",
     "reason": "commit c48f3a75e not in the repository"
-   },
-   {
-    "witness": "computations/balanced-head-dominance-binding-period-probe.witness.json",
-    "producer": "computations/balanced_head_dominance_binding_period_probe.py",
-    "recorded": "53659f593de7",
-    "current": "1dbc1e0dec5c",
-    "reason": "commit 2d62b1c4f not in the repository"
-   },
-   {
-    "witness": "computations/bar-symmetry-three-candidates.witness.json",
-    "producer": "computations/bar_symmetry_three_candidates.py",
-    "recorded": "b78c5c3834c6",
-    "current": "c028dac486f5",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/basis-knot-tables.witness.json",
-    "producer": "computations/basis_knot_tables.py",
-    "recorded": "6e50c2e346ce",
-    "current": "62d4254dd1f6",
-    "reason": "commit cae0becd6 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/binding-block-multiplicative.witness.json",
-    "producer": "computations/binding_block_multiplicative.py",
-    "recorded": "6af7927f6c31",
-    "current": "64d2bd1666c9",
-    "reason": "commit 6949424f7 not in the repository",
-    "approx_anchor": "78a296287",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/binding-depth-stratified-knot-weighted.witness.json",
@@ -2005,6 +1897,15 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
+    "witness": "computations/binding-per-bond-decomposition.witness.json",
+    "producer": "computations/binding_per_bond_decomposition.py",
+    "recorded": "64918383fcf6",
+    "current": "63cbbdd4e41b",
+    "reason": "commit 56bd29634 not in the repository",
+    "approx_anchor": "20af222c1",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/binding-qhyperbolic-weight-probe.witness.json",
     "producer": "computations/binding_qhyperbolic_weight_probe.py",
     "recorded": "f31b92620570",
@@ -2053,15 +1954,6 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/borromean-volume-propagation-to-m-p.witness.json",
-    "producer": "computations/borromean_volume_propagation_to_m_p.py",
-    "recorded": "3342404701a6",
-    "current": "6594785420aa",
-    "reason": "commit d7a30bb9a not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/bring-chiral-fibre-figure.witness.json",
     "producer": "computations/bring_chiral_fibre_figure.py",
     "recorded": "d69f21db359a",
@@ -2088,15 +1980,6 @@
     "recorded": "f91707b2624f",
     "current": "fd9182227dcf",
     "reason": "commit 15dd1c2fc not in the repository"
-   },
-   {
-    "witness": "computations/c-3-categorical-derivation-attempt.witness.json",
-    "producer": "computations/c_3_categorical_derivation_attempt.py",
-    "recorded": "3ca6c7011bf1",
-    "current": "fb6d9677e915",
-    "reason": "commit d7a30bb9a not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/canonical-tr-m-via-rust.witness.json",
@@ -2129,6 +2012,15 @@
     "recorded": "41e443db69f6",
     "current": "affea1db739a",
     "reason": "commit 73f8fafac not in the repository"
+   },
+   {
+    "witness": "computations/chi-via-rust-lossless-general.witness.json",
+    "producer": "computations/chi_via_rust_lossless.py",
+    "recorded": "32fda59f59ef",
+    "current": "6433a7b10bd7",
+    "reason": "commit 49be20a30 not in the repository",
+    "approx_anchor": "2e7dc3ce3",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/chirality-braid-average.witness.json",
@@ -2366,7 +2258,7 @@
     "witness": "computations/derived-chi-catalogue.witness.json",
     "producer": "computations/derived_chi_catalogue_build.py",
     "recorded": "f5718d9b2dda",
-    "current": "4f3289518d2e",
+    "current": "9ff8994d3a9b",
     "reason": "commit 3c5cc75df not in the repository"
    },
    {
@@ -2564,6 +2456,240 @@
     "reason": "commit 9506223ee not in the repository"
    },
    {
+    "witness": "computations/habiro-coefficients-beryllium-10.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-beryllium-6.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-beryllium-7.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-beryllium-8.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-beryllium-9.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-boron-10.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-boron-12.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit 10dacb1d7 not in the repository",
+    "approx_anchor": "89f213471",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-boron-8.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-boron-9.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-carbon-10.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-carbon-14.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit 10dacb1d7 not in the repository",
+    "approx_anchor": "89f213471",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-deuteron.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-helium-3.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-helium-4.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-helium-5.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-helium-6.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit 10dacb1d7 not in the repository",
+    "approx_anchor": "89f213471",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-lithium-5.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-lithium-6.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-lithium-7.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-lithium-8.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-mass-table-summary.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-neutron.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-nitrogen-12.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit 10dacb1d7 not in the repository",
+    "approx_anchor": "89f213471",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-oxygen-14.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit 10dacb1d7 not in the repository",
+    "approx_anchor": "89f213471",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-proton.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/habiro-coefficients-tritium.witness.json",
+    "producer": "computations/_habiro_coefficient_extract.py",
+    "recorded": "38a8e150e5d2",
+    "current": "2313bfea83ad",
+    "reason": "commit b838c46c6 not in the repository",
+    "approx_anchor": "fb0ce3fc8",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/hbond-vdw-energy-ladder.witness.json",
     "producer": "computations/hbond_vdw_energy_ladder.py",
     "recorded": "a802a8c88121",
@@ -2746,15 +2872,6 @@
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/m-p-borromean-verification-50dps.witness.json",
-    "producer": "computations/m_p_borromean_verification_50dps.py",
-    "recorded": "eea9b92fe98c",
-    "current": "f0cbe2a7702e",
-    "reason": "commit e309512a6 not in the repository",
-    "approx_anchor": "03675bd4a",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/m-tau-complex-volume-search.witness.json",
     "producer": "computations/m_tau_complex_volume_search.py",
     "recorded": "070ee5cbc2c1",
@@ -2803,6 +2920,22 @@
     "recorded": "8c762139e330",
     "current": "84e17f3dbe66",
     "reason": "commit 847c4435e not in the repository"
+   },
+   {
+    "witness": "computations/markov-z-fibre-rank-bar-covariance.witness.json",
+    "producer": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
+    "recorded": "47cacb3d249e",
+    "current": "331cf8609599",
+    "reason": "commit 457f4cc4a not in the repository",
+    "approx_anchor": "805ca010a",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/markov-z-full-bar-condition.witness.json",
+    "producer": "computations/markov_z_full_bar_condition_probe.py",
+    "recorded": "d95a6783eaf6",
+    "current": "cd17813bd2c6",
+    "reason": "commit 548a34b69 not in the repository"
    },
    {
     "witness": "computations/mass-sweep-bar-sym-h2-coefficient.witness.json",
@@ -3070,13 +3203,6 @@
     "reason": "commit d7a30bb9a not in the repository",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/probe-1b-li6-orthogonality.witness.json",
-    "producer": "computations/probe_1b_li6_orthogonality.py",
-    "recorded": "579a1beb1922",
-    "current": "f9305bcb7a9a",
-    "reason": "commit b302ff3f2 not in the repository"
    },
    {
     "witness": "computations/probe-4-li6-rectangular-python-targeted.witness.json",
@@ -3598,15 +3724,6 @@
     "recorded": "1f36cf6623d1",
     "current": "26fafbd3b5b0",
     "reason": "commit a97e6b4fc not in the repository"
-   },
-   {
-    "witness": "computations/probes/qbeta-5two-categorical-markov-volume.witness.json",
-    "producer": "computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
-    "recorded": "93fa4132f6ff",
-    "current": "692edfe2b5f2",
-    "reason": "commit 9d8cb5b54 not in the repository",
-    "approx_anchor": "36c75ac3b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/probes/qbeta-5two-colored-tower-barodd-qstar.witness.json",
@@ -4316,15 +4433,6 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/spectral-selector-validate.witness.json",
-    "producer": "computations/spectral_selector_validate.py",
-    "recorded": "bd1f95394cea",
-    "current": "4c179f6da688",
-    "reason": "commit 58d7abe89 not in the repository",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/staircase-ew-disjoint-spectrum.witness.json",
     "producer": "computations/staircase_ew_disjoint_spectrum.py",
     "recorded": "896720d5bfb4",
@@ -4452,15 +4560,6 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/tr-m-q-hecke-seminormal.witness.json",
-    "producer": "computations/tr_m_q_hecke_seminormal.py",
-    "recorded": "2e09fee63ac7",
-    "current": "ae2d73dbbdc4",
-    "reason": "commit 6949424f7 not in the repository",
-    "approx_anchor": "78a296287",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/tritium-h5-psd-feasibility.witness.json",
     "producer": "computations/tritium_h5_psd_feasibility_witness.py",
     "recorded": "323b41beade7",
@@ -4522,6 +4621,15 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
+    "witness": "computations/volume-binding-four-point.witness.json",
+    "producer": "computations/volume_binding_four_point.py",
+    "recorded": "97023a026b63",
+    "current": "9f01ce0fa9f2",
+    "reason": "commit 457f4cc4a not in the repository",
+    "approx_anchor": "805ca010a",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/wenzl-lr-convention-adapter.witness.json",
     "producer": "computations/wenzl_lr_convention_adapter.py",
     "recorded": "258b74f8a97a",
@@ -4529,6 +4637,13 @@
     "reason": "commit 6949424f7 not in the repository",
     "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/y-lambda-tower-infra.witness.json",
+    "producer": "computations/y_lambda_tower_infra.py",
+    "recorded": "bb7a1798dc26",
+    "current": "786ee6f5472d",
+    "reason": "commit e8b82252f not in the repository"
    }
   ],
   "unresolvable": [
@@ -4911,6 +5026,13 @@
     "reason": "producer not at this path in 5c29d9238 (renamed/moved)"
    },
    {
+    "witness": "computations/probe-volume-wedderburn-delta-lambda.witness.json",
+    "producer": "computations/probe_volume_wedderburn_delta_lambda.py",
+    "recorded": "471067b3528f",
+    "current": "0d711ba72caa",
+    "reason": "producer not at this path in b7d13950a (renamed/moved)"
+   },
+   {
     "witness": "computations/probes/delta-coupling-closed-form-probe.witness.json",
     "producer": "computations/probes/delta_coupling_closed_form_probe.py",
     "recorded": "0cb389f4c639",
@@ -4951,6 +5073,13 @@
     "recorded": "6c75bc21d181",
     "current": "c19dc7c1d5c0",
     "reason": "producer not at this path in 08f9d5c42 (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/flavor-split-alpha-dilog-expansion.witness.json",
+    "producer": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
+    "recorded": "fed23a5ba66d",
+    "current": "106aabc4f048",
+    "reason": "producer not at this path in a0a62222b (renamed/moved)"
    },
    {
     "witness": "computations/probes/flavor-split-substrate-probe.witness.json",
