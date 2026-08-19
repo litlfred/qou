@@ -47,3 +47,30 @@ audit probes naturally write.
 Found while running `/prepare-merge` step 4b on PR #5060. Not fixed there: the
 branch introduced no red, and widening a ratchet mid-merge would have made the
 gate's first run red on someone else's witnesses.
+
+## Still open, and it grew — re-measured 2026-08-19
+
+Piece 1 (widen the scan) shipped: `witness_raw_float64_audit.py` takes
+`--scan-root`, and `scripts/precision-gates.sh` runs the audits tree as an
+ADVISORY gate. `--rebaseline` is refused alongside `--scan-root`, so the
+tempting shortcut is closed.
+
+Piece 2 (drain the five) is **not** done, and is now **six**:
+
+|  n | witness |
+|---:|---|
+| 8 | `qbeta-action-qsqrt3-saddle-probe` |
+| 6 | `qbeta-ohtsuki-deformed-meridian-rungs` |
+| 6 | `wlambda_normalisation_census`  **<- NEW since this bean was filed** |
+| 4 | `keystone-wlambda-unitarity-normalization-gate` |
+| 1 | `qbeta-ohtsuki-deformed-kappa3-tall-ladder` |
+| 1 | `qbeta-ohtsuki-deformed-kappa5-phase-test` |
+
+That the count went 5 -> 6 while the tree was advisory is the argument for
+flipping it blocking: advisory reports a gap, it does not hold one. The gate
+comment already states the flip condition ("once the five are drained"); the
+condition should now read six, and the drain still belongs to the arcs owning
+those probes rather than to this bean.
+
+Note the newcomer is a `.py`-named witness in a tree of `-`-named ones, so a
+drain sweep keyed on the `qbeta-*` prefix would miss it.
