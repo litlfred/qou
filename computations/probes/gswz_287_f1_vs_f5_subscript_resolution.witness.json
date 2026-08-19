@@ -1,0 +1,123 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_287_f1_vs_f5_subscript_resolution_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_287_f1_vs_f5_subscript_resolution_probe.py",
+ "commitSha": "bc8172c475fa2c55c0cbc9fe148eb10a0349cada",
+ "beans": [
+  "qou-xx9f"
+ ],
+ "source": "GSWZ arXiv:2412.04241v2 (library/arxiv-2412.04241v2/): p. 56 prose, eqn (287) p. 57, eqns (281)/(282)/(285), Example 4.3 p. 54, and the coordinate-field parenthetical after (345)",
+ "checks": {
+  "zeta5_real_part_satisfies_t2_plus_t_minus_1": true,
+  "that_quadratic_is_irreducible_over_Q": true,
+  "degree_of_real_subfield_at_m5_is_2": true,
+  "five_is_not_a_square_in_Z5": true,
+  "x2_minus_5_is_eisenstein": true,
+  "phi5_at_1_plus_pi_is_eisenstein": true,
+  "v5_of_5_is_odd_so_5_is_not_a_square_in_any_unramified_ext": true,
+  "valuation_control_25_is_even_and_is_a_square": true,
+  "control_test_does_not_fire_below_m5": true,
+  "printed_287_uses_exactly_the_K_basis": true,
+  "printed_287_digits_are_ordinary_base_5": true,
+  "f5_reading_is_inconsistent_with_the_printed_RHS": true
+ },
+ "result": {
+  "t_as_poly_in_z": [
+   -1,
+   0,
+   -1,
+   -1
+  ],
+  "t_squared_plus_t_minus_one": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "phi5_shifted_coeffs": [
+   5,
+   10,
+   10,
+   5,
+   1
+  ],
+  "ramification_index_of_Q5_zeta5": 4,
+  "v5_of_5": 1,
+  "ramification_index_of_Q5_sqrt5": 2,
+  "real_subfield_degree_by_m": {
+   "1": 1,
+   "2": 1,
+   "3": 1,
+   "4": 1,
+   "5": 2
+  },
+  "zeta_m_plus_inverse_for_small_m": {
+   "1": 2,
+   "2": -2,
+   "3": -1,
+   "4": 0
+  },
+  "printed_287_coefficients_read_at_6x": {
+   "x1": {
+    "alpha2": [
+     2,
+     4,
+     0,
+     4
+    ],
+    "alpha": [
+     2,
+     3,
+     3,
+     3
+    ],
+    "const": [
+     3
+    ]
+   },
+   "x2": {
+    "alpha2": [
+     3,
+     2,
+     2,
+     3
+    ],
+    "alpha": [
+     3,
+     0,
+     4,
+     3
+    ],
+    "const": [
+     3,
+     3,
+     2,
+     3
+    ]
+   },
+   "x3": {
+    "alpha2": [
+     2,
+     4,
+     1,
+     4
+    ],
+    "alpha": [
+     3,
+     0,
+     4,
+     1
+    ],
+    "const": [
+     2,
+     0,
+     3,
+     3
+    ]
+   }
+  },
+  "verdict": "The (287) subscript is a typographical error for f_1: the prose one sentence earlier says f_1, only f_1 is ever defined as a series ((281)/(282)), and (287)'s own right-hand side lives in K with unramified 5-power digits, which the m = 5 fibre cannot supply."
+ },
+ "scope": "scope-(a) SOURCE RESOLUTION, evidenced, not a theorem. GSWZ state the (287) experiment twice and disagree: the prose on p. 56 says f_1, the display on p. 57 says f_5. Since f_5 exists as an object ((285)), the glyph cannot settle it. Settled instead from (287)'s own right-hand side, using GSWZ's coordinate-field rule after (345): the m-th fibre's coordinates lie in K[zeta_m + zeta_m^-1], which collapses to K only when phi(m) <= 2. At m = 5 that is a quadratic extension, and it is RAMIFIED at 5 (disc 5; Q_5(zeta_5) totally ramified of degree 4 by Eisenstein), so it embeds in neither unramified component of K_5 = Q_{5^2} x Q_5 and admits no clean powers-of-5 digit expansion over a K-basis. (287) prints every coefficient as exactly three coordinates against {1, alpha, alpha^2} with ordinary base-5 digits. The control re-derives GSWZ's phi(m) <= 2 boundary -- the test does not fire for m = 1, 2, 3, 4 -- so it discriminates rather than always firing. VERDICT: the printed subscript is a typo for f_1. This does NOT close qou-xx9f: the printed x^1..x^3 digits remain unreproduced under the f_1 reading, which is a normalisation question, not a fibre-identification one, and that is now the whole of the bean. Nothing wired."
+}
