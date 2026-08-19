@@ -1,0 +1,54 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_five_term_validation_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_five_term_validation_probe.py",
+ "commitSha": "d2c9c730d9bec1126cbee7a523701e9b4a4757d1",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 eqn (3), Lemma 2.4(b),(c), the relations on p. 2, Theorem 1.2; Addenda 33-34 (this repo)",
+ "checks": {
+  "readout_is_not_the_identity_on_mu3": true,
+  "kappa_inverts_the_readout": true,
+  "D_zeta_1_equals_3_times_one_minus_zeta_squared": true,
+  "lemma_24b_D_zeta_1_is_zeta_to_the_n_over_3": true,
+  "lemma_24c_inversion_identity_holds": true,
+  "reflection_relation_gives_minus_class_D1": true,
+  "alpha_line_classes_match_the_reflection_prediction": true,
+  "eps3_in_zeta_basis_is_minus_a": true,
+  "five_term_relation_holds": true,
+  "control_sign_flip_breaks_the_relation": true,
+  "control_wrong_zeta_breaks_the_relation": true,
+  "class_map_is_non_trivial_on_the_sweep": true
+ },
+ "result": {
+  "cls_of_zeta_3": 2,
+  "class_of_D_zeta_1_raw": 2,
+  "kappa_of_D_zeta_1": 1,
+  "n_admissible_arguments_swept": 240,
+  "inversion_pairs_tested": 240,
+  "reflection_sum_values_seen": [
+   1
+  ],
+  "kappa_P_z1": 2,
+  "kappa_P_z2": 0,
+  "kappa_P_alpha": 2,
+  "kappa_P_alpha_squared": 0,
+  "reflection_constant_in_kappa_basis": 2,
+  "eps3_corrected_zeta_exponent_for_xi_2_1": 1,
+  "five_term_instances_tested": 400,
+  "five_term_failures": [],
+  "control_sign_flip": {
+   "tested": 150,
+   "nonzero": 99
+  },
+  "control_wrong_zeta": {
+   "tested": 150,
+   "nonzero": 96
+  }
+ },
+ "scope": "scope-(a) VALIDATION of the implementation behind Addenda 33-34, plus a CORRECTION to their stated value. Every check to date was internal, and a consistently-wrong P_zeta would have passed them all. Tested here against four CGZ predictions the implementation had no part in producing. ALL FOUR HOLD: Lemma 2.4(b) (D_zeta(1) = zeta mod cubes at n = 3, and D_zeta(1) = 3 (1 - zeta^2) exactly); Lemma 2.4(c) (kappa P(X) + kappa P(1/X) = 0 on 240 arguments); the reflection relation [X] + [1-X] - [0] = 0, which forces the NONZERO constant 2 mod 3 and ties the alpha-line symbols to each other via 1 - z_2 = alpha and 1 - z_1 = alpha^2; and the five-term relation of eqn (3) on 400 instances of a two-parameter sweep. Two constructed-to-fail controls -- one flipped sign, and zeta replaced by zeta^2 in a single factor -- break the sweep at 99/150 and 96/150, so the vanishing sum is the relation holding rather than a trivial class map. THE CORRECTION: the readout teich(u)^8 gives the class as a power of the mu_24 generator, not of zeta_3, and cls(zeta_3) = 2. Comparing it to a bare integer nearly produced a false report of a discrepancy with Lemma 2.4(b), and did produce a wrong basis label in Addenda 33-34: their 'eps_3 = zeta_3^2' should read eps_3(a[z_1] + b[z_2]) = zeta_3^{-a}, so eps_3(2[z_1] + [z_2]) = zeta_3. The structure those addenda report -- linearity, c_2 = 0, dependence on a alone -- is unaffected; only the basis label was wrong. Validates the implementation only; extends nothing to another place, field, or m. Nothing wired."
+}
