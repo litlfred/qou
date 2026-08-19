@@ -45,9 +45,17 @@ Addendum 33, and it makes the coefficient-dependence explicit. Linearity
 is verified against the directly-computed product on a 3 x 3 grid, so it
 is a measurement rather than an appeal to multiplicativity.
 
-AND THE SHARP FORM. Measured: c_1 = 1 and c_2 = 0, so
+AND THE SHARP FORM. Measured in the raw readout: c_1 = 1 and c_2 = 0. The
+readout is a power of the mu_24 GENERATOR, not of zeta_3 (cls(zeta_3) = 2,
+since zeta_3 = gen^8 = gen^2 mod cubes), so converting with
+kappa = 2 . cls mod 3 gives kappa(P(z_1)) = 2, kappa(P(z_2)) = 0 and
 
-    eps_3(a[z_1] + b[z_2]) = a  mod 3.
+    eps_3(a[z_1] + b[z_2]) = zeta_3^{-a}.
+
+(CORRECTED 2026-08-19 by gswz_epsm_five_term_validation_probe.py, which
+caught the same mislabelling one step before it became a false report of a
+discrepancy with CGZ Lemma 2.4(b). Only the basis label changes; the
+structure below -- linearity, c_2 = 0, dependence on a alone -- stands.)
 
 The [z_2] symbol contributes NOTHING -- P_zeta(z_2) is a cube -- and
 Addendum 33's zeta_3^2 is simply a = 2. The invariant on the alpha-line is
@@ -278,6 +286,14 @@ checks["eps3_actually_depends_on_the_coefficients"] = len(set(grid.values())) > 
 # AND THE SHARP FORM: c_2 = 0, so eps_3 = a mod 3 -- the [z_2] symbol
 # contributes NOTHING, and Addendum 33's zeta_3^2 is just a = 2. Stated as a
 # check so it cannot be missed in the grid.
+# Convert the raw readout to a genuine zeta_3 exponent before naming a value.
+checks["readout_is_not_the_identity_on_mu3"] = cls(Z3) == 2
+detail["kappa_c1_zeta_exponent"] = (2 * c1) % 3
+detail["kappa_c2_zeta_exponent"] = (2 * c2) % 3
+checks["eps3_in_zeta_basis_is_zeta_to_minus_a"] = (
+    (2 * c1) % 3 == 2 and (2 * c2) % 3 == 0
+    and all((2 * grid[f"{aa},{bb}"]) % 3 == (-aa) % 3
+            for aa in range(3) for bb in range(3)))
 checks["eps3_depends_only_on_the_z1_coefficient"] = (
     c2 == 0 and all(grid[f"{aa},{bb}"] == aa % 3
                     for aa in range(3) for bb in range(3)))
@@ -312,9 +328,12 @@ witness = {
         "every (a, b), so (2, 1) comes from the alpha-line construction "
         "upstream, not from the Bloch condition -- recorded so the value of "
         "Addendum 33 is not read as forced. Since P_zeta is multiplicative, "
-        "eps_3 is linear in the coefficients; the per-symbol classes c_1, "
-        "c_2 are reported and linearity is measured against the direct "
-        "product on a 3 x 3 grid rather than assumed. Nothing wired; the "
+        "eps_3 is linear in the coefficients; linearity is measured against "
+        "the direct product on a 3 x 3 grid rather than assumed. The "
+        "per-symbol classes are kappa(P(z_1)) = 2 and kappa(P(z_2)) = 0 in "
+        "the zeta_3 basis, so eps_3(a[z_1] + b[z_2]) = zeta_3^{-a} -- the "
+        "raw readout is a power of the mu_24 generator, not of zeta_3, and "
+        "conflating the two mislabelled the value in Addenda 33-34. Nothing wired; the "
         "m = 2 result of PR #4968 is untouched."
     ),
 }
