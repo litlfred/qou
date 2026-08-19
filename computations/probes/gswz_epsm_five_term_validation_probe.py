@@ -343,6 +343,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_five_term_validation_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. Validates P_zeta against CGZ's own identities (Lemma 2.4, the five-term relation) in exact 5-adic arithmetic; no anchor is involved."),
     "scriptFile": "gswz_epsm_five_term_validation_probe.py",
     "commitSha": _sha,
     "beans": ["qou-w4gn", "qou-y3xv", "qou-9p9y"],

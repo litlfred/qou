@@ -292,6 +292,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_v1_computable_m_terminal_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. Determines which m-th roots stay in Q_25 from Teichmueller discrete logs alone; no substrate modulus is read."),
     "scriptFile": "gswz_epsm_v1_computable_m_terminal_probe.py",
     "commitSha": _sha,
     "beans": ["qou-w4gn", "qou-y3xv", "qou-9p9y"],

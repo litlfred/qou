@@ -280,6 +280,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_chi_eigenspace_place_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. The eps_m relocation is pure algebraic number theory in Z/5^W and the divisor lattice of 24; the substrate modulus never enters, and no pyhecke/Gram/Markov import exists in the cone."),
     "scriptFile": "gswz_epsm_chi_eigenspace_place_probe.py",
     "commitSha": _sha,
     "beans": ["qou-w4gn", "qou-y3xv", "qou-9p9y"],

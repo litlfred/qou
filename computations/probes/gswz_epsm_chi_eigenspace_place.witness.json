@@ -2,8 +2,10 @@
  "schema": "probe-witness/v1",
  "probe": "gswz_epsm_chi_eigenspace_place_probe",
  "engine": "python3-int-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. The eps_m relocation is pure algebraic number theory in Z/5^W and the divisor lattice of 24; the substrate modulus never enters, and no pyhecke/Gram/Markov import exists in the cone.",
  "scriptFile": "gswz_epsm_chi_eigenspace_place_probe.py",
- "commitSha": "114abbb15738df3dd39f21bca721856a64d60274",
+ "commitSha": "8060f7c0256851bc3e6b48bfefb2dbdfff7dde38",
  "beans": [
   "qou-w4gn",
   "qou-y3xv",

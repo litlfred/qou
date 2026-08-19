@@ -201,6 +201,9 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_epsm_m_lattice_eigenspace_census_probe",
     "engine": "python3-int-exact",
+    "q0Anchor": "independent",
+    "q0AnchorReason": (
+        "Reads no q0. A census of Galois eigenspaces over the divisor lattice of 24; entirely group-theoretic and 5-adic, with no substrate input."),
     "scriptFile": "gswz_epsm_m_lattice_eigenspace_census_probe.py",
     "commitSha": _sha,
     "beans": ["qou-w4gn", "qou-y3xv", "qou-9p9y"],
