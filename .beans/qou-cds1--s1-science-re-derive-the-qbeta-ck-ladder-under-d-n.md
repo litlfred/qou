@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T12:13:23Z
+updated_at: 2026-08-19T12:30:20Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -432,3 +432,54 @@ That is now a specific object with a specific role, not a search over functional
 forms -- and alpha = (eps - tr_M)/2 says the ladder was always approximating it.
 
 Probe: computations/qbeta/qbeta_counit_vs_trace_fork_probe.py
+
+### TRIED 2026-08-19: the frak-V transport route is BLOCKED at the source
+
+Attempted the concrete next step from the previous entry -- derive the counit ->
+trace transport for the frak-V operator (Pi_free - 1).M rather than for Delta.
+It CANNOT BE STARTED, and the reason is a corpus defect worth recording.
+
+The transport is a change of FUNCTIONAL, so its effect on X is fixed by X's
+character vector:
+    tr_M^z(X) - eps(X) = sum_lambda [y_lambda(z) - y_lambda(1)] * chi_lambda(X)
+(eps = tr_M at the trivial loop value z=1). So the frak-V transport needs
+chi_lambda((Pi_free-1).M) -- i.e. frak-V evaluated as a TRACE object. Never done.
+
+complex_volume_witness.py opens 'frak-V = E_0 tr_M((Pi_free-1).M) as ONE object'
+and then computes Re from tr_M but IMPORTS Im:
+    from q_beta_substrate_prediction import q_beta_substrate     (line 39)
+So Im IS the counit closed form Q_A. VERIFIED: the witness's
+im_qbeta_pred_MeV = 0.7836458273746213 equals |eps(Delta)*E_0| to 9e-17.
+
+The two halves of the 'one object' come from TWO DIFFERENT FUNCTIONALS -- Re
+from the Markov trace, Im from the Frobenius counit -- which
+qbeta-counit-closed-form.md itself calls 'genuinely distinct functionals on the
+substrate'. The 'one object' is not realised in compute.
+
+CONSEQUENCES:
+ 1. Transport blocked at the source -- Im(frak V) is the counit object by
+    ASSIGNMENT, so there is nothing to transport TO.
+ 2. THE PARITY CLAIM IS CIRCULAR. The corpus says Q_beta is bar-odd BECAUSE it
+    is Im(frak V); in the only compute Im(frak V) IS Q_beta, whose bar-ratio is
+    +1.6868 (neither parity). Asserted of an object defined to be the object
+    whose parity is in question.
+
+ALSO MEASURED (bears on how much that witness establishes):
+  * assertions: []  -- it asserts NOTHING; allPassed:true is VACUOUS.
+  * its REAL part -- the half that genuinely IS a tr_M object -- misses AME
+    binding by 21.8% / 21.8% / 36.7% / 69.3% on 2H / 3H / 3He / 4He.
+
+This is the AGENTS.md 'Defined residual != derived decomposition' family.
+
+SCOPE: does NOT refute conj:binding-qbeta-complex-volume. It says the conjecture
+is UNTESTED by the compute that appears to test it, and the transport route
+cannot start from that compute.
+
+WHAT THIS MEANS FOR THE BEAN. Every route into the D-frame correction that runs
+through the complex-volume identification is blocked until someone actually
+EVALUATES tr_M((Pi_free-1).M) for the imaginary channel. That is now the
+gating computation -- and it is a well-posed one, unlike 'find a functional
+form'. Until it exists, the sinh/bar-odd story cannot support any derivation,
+because nothing in compute realises it.
+
+Probe: computations/qbeta/qbeta_frakv_transport_blocked_probe.py
