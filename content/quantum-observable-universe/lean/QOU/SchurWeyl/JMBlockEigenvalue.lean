@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.SytAdmissible
+import QOU.SchurWeyl.SeminormalParam
 
 /-!
 # Why `Θ = Σ_k (L_k + L_k⁻¹)` is a *scalar*, reduced to the per-element eigenvalue
@@ -39,6 +40,23 @@ The per-element eigenvalue itself.  `L_k` is a product of `genMat`s under the re
 showing that product is diagonal with entries `q^{2·content}` is [ram1997] Theorem 4.1 — the
 substance, not the packaging.  It is stated below as the hypothesis `PerElementEigenvalue` and
 consumed; it is **not** proved, and this file does not claim it is.
+
+## What the `OrbitStep` section *does* prove
+
+The inductive step of that theorem, on an orbit of size `2`:
+`seminormalBlock_conj_diag_swap` shows `M · diag(x, x·q^{2δ}) · M = diag(x·q^{2δ}, x)` for
+`M = seminormalBlock q (a δ)`.  Read with `x = q^{2c}` and `δ` the axial distance, this is exactly
+`σ_k L_k σ_k = L_{k+1}` acting on a two-element orbit, with the two contents exchanged.
+
+It factors into a matrix half and a scalar half, and the split is the point: `block_conj_diag`
+shows *both* off-diagonal entries of `M · diag(x,y) · M` carry the same factor `a·x + d·y`, so a
+single scalar condition kills both; `seminormalParam_weighted_sum_zero` shows that condition holds
+precisely when `y = x·q^{2δ}`.  The axial distance is therefore the *only* place the tableau
+combinatorics enters the step — everything else is `2 × 2` matrix algebra over `ℝ`.
+
+What is still missing for Ram Thm 4.1 in general is the orbit *bookkeeping*: orbits of size `> 2`,
+and the assembly of the per-generator steps along a reduced word.  The size-`2` step below is the
+base case of that induction, not a proof of it.
 -/
 
 namespace QOU.SchurWeyl
@@ -233,6 +251,114 @@ theorem seminormalRep21_qJM_two (hq : q ≠ 0) :
   rw [h0, S1_S0sq_S1_eq_diag q hq]
 
 end Rep21Eigenvalue
+
+/-! ## The size-`2` orbit step, in general
+
+The `(2,1)` check above works because of one scalar cancellation.  This section isolates that
+cancellation for the **generic** `seminormalBlock` at a **general** axial distance, which is the
+per-orbit step any induction proving [ram1997] Thm 4.1 has to run.
+
+Two facts, and they separate cleanly:
+
+* `block_conj_diag` is pure matrix algebra.  For any block of `seminormalBlock` shape (top-right
+  `1`, trace `q − q⁻¹`, determinant `−1` — so the bottom-left is forced to `a·d + 1`) and any
+  diagonal `diag(x, y)`, the conjugate `M · diag(x,y) · M` is diagonal **iff** `a·x + d·y = 0`, and
+  then it is `diag(y, x)` — the two values **exchanged**, which is what a generator swapping the two
+  tableaux of the orbit must do.  Both off-diagonal entries carry the *same* factor `a·x + d·y`, so
+  one condition kills both.  No `q`, no contents, no seminormal parameters enter.
+
+* `seminormalParam_weighted_sum_zero` is where the geometry enters: the condition `a·x + d·y = 0`
+  holds for `a = a(δ)`, `d = a(−δ)` exactly when `y = x · q^{2δ}` — i.e. when the two eigenvalues
+  differ by the axial distance between the two cells.  In content terms `c₂ = c₁ + δ`, which is what
+  `axialDistance` *is*.
+
+Together: at a size-`2` orbit the seminormal generator conjugates `diag(q^{2c₁}, q^{2c₂})` to
+`diag(q^{2c₂}, q^{2c₁})` precisely when `δ = c₂ − c₁`.  The `(2,1)` instance above is this with
+`δ = ±1`.
+
+**What this is not.**  It is the *orbit step*, not the induction.  A full proof still needs the
+size-`1` orbits, the assembly of `genMat` from its blocks, and the induction on `L_{k+1} = σ_k L_k σ_k`
+that tracks which cell each entry occupies.  Those are not here. -/
+
+section OrbitStep
+
+open Seminormal
+
+variable (q : ℝ)
+
+/-- **The scalar cancellation.**  `a(δ)·x + a(−δ)·(x·q^{2δ}) = 0`: the seminormal parameters at
+`±δ`, weighted by two eigenvalues differing by `q^{2δ}`, cancel.
+
+This is the content half of the orbit step — the place the axial distance enters. -/
+theorem seminormalParam_weighted_sum_zero (hq : q ≠ 0) (δ : ℤ) (hδ : q ^ (2 * δ) ≠ 1) (x : ℝ) :
+    seminormalParam q δ * x + seminormalParam q (-δ) * (x * q ^ (2 * δ)) = 0 := by
+  have h1 : q ^ ((-2 : ℤ) * δ) = (q ^ (2 * δ))⁻¹ := by
+    rw [show (-2 : ℤ) * δ = -(2 * δ) by ring, zpow_neg]
+  have h2 : q ^ ((-2 : ℤ) * (-δ)) = q ^ (2 * δ) := by congr 1; ring
+  rw [seminormalParam, seminormalParam, h1, h2]
+  set u := q ^ (2 * δ) with hu
+  have hu0 : u ≠ 0 := zpow_ne_zero _ hq
+  have hu1 : (1 : ℝ) - u ≠ 0 := sub_ne_zero.mpr (Ne.symm hδ)
+  have hiu : (1 : ℝ) - u⁻¹ ≠ 0 := by
+    intro hcon
+    apply hδ
+    have hinv : u⁻¹ = 1 := by linarith
+    rw [← inv_inv u, hinv, inv_one]
+  -- the bracket vanishes: `1/(1 − u⁻¹) = u/(u−1)` and `u/(1 − u) = −u/(u−1)`
+  have hb : (1 - u⁻¹)⁻¹ + u * (1 - u)⁻¹ = 0 := by
+    have hu1' : u - 1 ≠ 0 := fun h => hu1 (by linarith)
+    have e : (1 : ℝ) - u⁻¹ = (u - 1) / u := by field_simp
+    rw [e, inv_div]
+    field_simp
+    ring
+  rw [div_eq_mul_inv, div_eq_mul_inv]
+  have expand : (q - q⁻¹) * (1 - u⁻¹)⁻¹ * x + (q - q⁻¹) * (1 - u)⁻¹ * (x * u)
+      = (q - q⁻¹) * x * ((1 - u⁻¹)⁻¹ + u * (1 - u)⁻¹) := by ring
+  rw [expand, hb, mul_zero]
+
+/-- **The matrix step.**  A `seminormalBlock` conjugating a diagonal matrix gives a diagonal matrix
+with the two entries **exchanged** — provided the single condition `a·x + d·y = 0`, where
+`d = (q − q⁻¹) − a` is the block's other diagonal entry.
+
+Both off-diagonal entries of the product carry the same factor `a·x + d·y`, which is why one
+hypothesis suffices for both. -/
+theorem block_conj_diag (a x y : ℝ) (hcancel : a * x + ((q - q⁻¹) - a) * y = 0) :
+    seminormalBlock q a * !![x, 0; 0, y] * seminormalBlock q a = !![y, 0; 0, x] := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [seminormalBlock, Matrix.mul_apply, Fin.sum_univ_two]
+  · linear_combination a * hcancel
+  · linear_combination hcancel
+  · linear_combination (a * (q - q⁻¹) - a ^ 2 + 1) * hcancel
+  · linear_combination ((q - q⁻¹) - a) * hcancel
+
+/-- **The orbit step.**  On a size-`2` orbit `{T, s_k T}` whose two swapped cells have contents
+differing by `δ`, the seminormal generator `seminormalBlock q (a δ)` carries `diag(x, x·q^{2δ})` to
+`diag(x·q^{2δ}, x)`.
+
+Read with `x = q^{2c}` and `δ = axialDistance`: the two diagonal entries are `q^{2c}` and `q^{2c'}`,
+and the conclusion is that `σ_k L_k σ_k` is again diagonal with the two contents **exchanged** —
+the inductive step of [ram1997] Theorem 4.1 on an orbit of size `2`.
+
+The only input beyond the two lemmas above is `seminormalParam_add_neg`, which identifies the
+block's lower-right entry `(q − q⁻¹) − a(δ)` with `a(−δ)`.  So the whole step reduces to the
+scalar cancellation: the axial distance is the *only* place the tableau combinatorics enters. -/
+theorem seminormalBlock_conj_diag_swap (hq : q ≠ 0) (δ : ℤ) (hδ : q ^ (2 * δ) ≠ 1) (x : ℝ) :
+    seminormalBlock q (seminormalParam q δ) * !![x, 0; 0, x * q ^ (2 * δ)]
+        * seminormalBlock q (seminormalParam q δ)
+      = !![x * q ^ (2 * δ), 0; 0, x] := by
+  have hneg : q ^ ((-2 : ℤ) * δ) ≠ 1 := by
+    rw [show (-2 : ℤ) * δ = -(2 * δ) by ring, zpow_neg]
+    intro hcon
+    exact hδ (by rw [← inv_inv (q ^ (2 * δ)), hcon, inv_one])
+  have hd : (q - q⁻¹) - seminormalParam q δ = seminormalParam q (-δ) := by
+    have := seminormalParam_add_neg q δ hq hneg
+    linarith
+  refine block_conj_diag q _ x (x * q ^ (2 * δ)) ?_
+  rw [hd]
+  exact seminormalParam_weighted_sum_zero q hq δ hδ x
+
+end OrbitStep
 
 end TableauCells
 
