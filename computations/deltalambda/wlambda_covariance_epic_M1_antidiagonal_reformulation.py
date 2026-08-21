@@ -53,7 +53,16 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE.parent / "substrate"))
 
+from _precision import fmt, mpf, mpsqrt, set_compute_dps  # noqa: E402 — carry rho as mpmath.mpf, never float64
+
+set_compute_dps()  # raise mp.dps to the canonical compute precision before any mpmath value
+
 NMAX = 17
+
+
+def _mpf_fr(fr):
+    """Exact Fraction -> mpmath.mpf (no float64 intermediate)."""
+    return mpf(fr.numerator) / mpf(fr.denominator)
 
 
 def partitions_of(n, m=None):
@@ -124,7 +133,7 @@ def stats(n):
     M1_h = Eshsh2 - Esh * Esh2
     var_b = Eb2 - Eb * Eb
     var_c2 = Ec22 - Ec2 * Ec2
-    rho = float(M1_b) / (float(var_b) * float(var_c2)) ** 0.5 if var_b > 0 and var_c2 > 0 else 0.0
+    rho = _mpf_fr(M1_b) / mpsqrt(_mpf_fr(var_b) * _mpf_fr(var_c2)) if var_b > 0 and var_c2 > 0 else mpf(0)
     return M1_b, M1_nl, M1_h, var_b, var_c2, rho
 
 
@@ -142,11 +151,11 @@ def main() -> int:
         rhos.append(rho)
         if n <= 8 or n == NMAX:
             print(f"{n:2d} | {str(M1_b):15} | {M1_b == M1_nl} | {M1_b == M1_h} | {var_c2 == c3} | "
-                  f"{rho:.3f} | {M1_b > 0}")
+                  f"{float(rho):.3f} | {M1_b > 0}")
     rho_stable = min(rhos) > 0.8   # near-perfect correlation (~0.85-0.92)
     print(f"\n reformulation M_1 = Cov(Σb,Σc²) = 2Cov(n_λ,Σc²) = Cov(Σh,Σh²) all n≤{NMAX}: {reform_ok}")
     print(f" Var(Σc²) = |C₃| exactly: {c3_ok}")
-    print(f" M_1 > 0 robustly, ρ ∈ [{min(rhos):.3f},{max(rhos):.3f}] non-degenerate: {pos_ok and rho_stable}")
+    print(f" M_1 > 0 robustly, ρ ∈ [{float(min(rhos)):.3f},{float(max(rhos)):.3f}] non-degenerate: {pos_ok and rho_stable}")
 
     # closed-form exclusion: M_1 is not poly(n) + n^a H_n
     Hn = [Fr(0)]
@@ -205,7 +214,7 @@ def main() -> int:
         w.add_data("reformulation_verified_nmax", NMAX)
         w.add_data("sum_b_transpose_even_not_in_A", True)
         w.add_data("var_sum_c2_eq_C3", bool(c3_ok))
-        w.add_data("correlation_rho_range_near_perfect", [round(min(rhos), 3), round(max(rhos), 3)])
+        w.add_data("correlation_rho_range_near_perfect", [fmt(min(rhos)), fmt(max(rhos))])
         w.add_data("closed_form_excluded", bool(no_closed))
         w.add_data("proof_route", "Kerov CLT: Cov = double integral of phi*psi against Gaussian profile kernel K_Delta (positive quadratic form)")
         w.add_assertion(
