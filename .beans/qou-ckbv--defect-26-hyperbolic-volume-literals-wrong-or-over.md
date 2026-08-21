@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:33:05Z
-updated_at: 2026-08-21T21:47:12Z
+updated_at: 2026-08-21T23:11:46Z
 ---
 
 ## Measured, not estimated
@@ -126,3 +126,55 @@ Follow-up: port that probe to `WitnessBuilder`, declare it in
 `q0_anchor_manifest.json`, then commit its witness. Check whether the other
 three repaired modules have the same shape before committing anything they
 emit.
+
+
+---
+
+## `--n12`: unrecorded parameter provenance, demonstrated a second time
+
+Regenerating `whitehead-c0-mpmath.witness.json` after the Vol(4_1) fix
+produced a diff FAR larger than a digit-21 correction, and one part of it was
+a **lost data point**:
+
+    committed   "10": 7062.35924065477,  "12": 29287.27767465885
+    fresh run   "10": 7062.35924065477
+    factor      1.9678009716166576  ->  1.8973391741766672
+
+The producer gates N=12 behind an opt-in flag:
+
+    EXTEND_N12 = "--n12" in sys.argv        # line 47
+
+The committed witness contains N=12, so it was generated WITH `--n12` -- and
+nothing in the witness records that. A plain re-run silently drops the point
+and moves the headline `factor` by 3.6%. The verdict survives ("nearest
+prediction: FACTOR 2; excludes factor 1 & 4: YES"), but only by luck.
+
+This is exactly the class `tools/hecke-engine/src/provenance.rs` documents --
+*"The parameters were not recorded at all ... none of them wrote it down"* --
+now demonstrated on a Python producer as well as the Rust ones. Worth
+generalising: **before regenerating any witness, check whether its producer
+has argv-gated behaviour, because the witness will not tell you.**
+
+Re-running with `--n12` to produce a comparable artifact.
+
+Other pre-existing drift in the same diff (field renames
+`whitehead_c0_run` -> `whitehead_c0_mpmath`,
+`figure_eight_reference_c0_Nge8` -> `_c0_2term`, a dropped
+`whitehead_c0_fits` block) confirms the committed witness predates a
+substantial producer rewrite, independently of the flag.
+
+## Method note: a monitoring bug I reported from
+
+I watched that compute with a background waiter:
+
+    until ! pgrep -f whitehead_c0_mpmath; do sleep 10; done
+
+`pgrep -f` matches full command lines, so **the waiter matched itself** and
+could never terminate. It reported "[still running]" indefinitely, and I
+repeated that in a status update after the process had in fact exited. Caught
+by `ps -eo pid,etime,args`, which showed no such process at all.
+
+Use a pattern that cannot match the watcher (a pidfile, `$!`, or
+`pgrep -f "script.py --flag"` checked with `ps`), and prefer confirming
+"finished" from the artifact or the log's own completion line rather than
+from process absence.
