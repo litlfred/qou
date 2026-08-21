@@ -8,7 +8,8 @@
   "An `authors` override replaces a parsed author list. Same rule as titles: it may only repair names visible in the document (a kerning split, an affiliation letter welded to a surname), never supply names the document does not show.",
   "A `title` accompanied by `title_source` came from OUTSIDE the document text — normally the filename an uploader assigned — and is only permitted when the document's own content corroborates it (author, journal, volume, year all agreeing). Say so in `title_source`. Without corroboration, demote instead.",
   "`drop_authors: true` discards a parsed author list outright, for documents where the author field held something else — the title, or a masthead — so the parse is meaningless rather than imprecise.",
-  "A title accompanied by `title_source: \"ocr\"` was read from the OCR transcription in library/<doc>/ocr/, produced by folio-assistant's pdf-ocr.py. That IS the document's own text — the PDF simply had no readable text layer — so the ordinary rule applies: remove furniture, repair spacing, invent nothing."
+  "A title accompanied by `title_source: \"ocr\"` was read from the OCR transcription in library/<doc>/ocr/, produced by folio-assistant's pdf-ocr.py. That IS the document's own text — the PDF simply had no readable text layer — so the ordinary rule applies: remove furniture, repair spacing, invent nothing.",
+  "An `authors_raw` override repairs the raw byline stored in library/<doc>/structure.json, which is what corpus-grep reads. Same rule as `authors`: spacing repair and affiliation-marker removal on names the document shows, never a name it does not. It is separate from `authors` because that one is structured and feeds references.ts, while this one is the document's own line."
  ],
  "overrides": {
   "arxiv-1203.6531v1": {
@@ -70,7 +71,7 @@
   },
   "arxiv-2305.14884v2": {
    "title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
-   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS'. The automatic rejoin could not fire because the word is broken in the title AND everywhere else the document sets it in caps, so the joined form is never attested at a higher count than its fragments.",
+   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS'. The automatic rejoin could not fire because the word is broken in the title AND everywhere else the document sets it in caps, so the joined form is never attested at a higher count than its fragments. Measured since, and it is not merely unattested but *inverted*: the damage is in the running head, so it repeats once per page and outnumbers the correct form in the body. Discounting occurrences inside the pair repairs all four of these and also welds \"L'INSTITUT FOURIER\", whose counts have the identical shape (63 spaced / 18 welded, against 54 / 18 here) and the opposite correct answer — so no statistic over these counts separates them. Recorded in folio-assistant scripts/tests/pdf-text-repair.test.py.",
    "authors": [
     {
      "family": "Garoufalidis",
@@ -86,11 +87,15 @@
     }
    ],
    "id": "garoufalidis2023",
-   "why_authors": "Same 'GAROUF ALIDIS' kerning split as arxiv-1304.2705v1."
+   "why_authors": "Same 'GAROUF ALIDIS' kerning split as arxiv-1304.2705v1.",
+   "authors_raw": "STAVROS GAROUFALIDIS, MATTHIAS STORZER, AND CAMPBELL WHEELER",
+   "why_authors_raw": "Same 'STA VROS GAROUF ALIDIS' split as the structured `authors` above, applied to the raw byline that structure.json stores."
   },
   "arxiv-2604.16077v1": {
    "title": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT",
-   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS', same cause as arxiv-2305.14884v2."
+   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS', same cause as arxiv-2305.14884v2. Measured since, and it is not merely unattested but *inverted*: the damage is in the running head, so it repeats once per page and outnumbers the correct form in the body. Discounting occurrences inside the pair repairs all four of these and also welds \"L'INSTITUT FOURIER\", whose counts have the identical shape (63 spaced / 18 welded, against 54 / 18 here) and the opposite correct answer — so no statistic over these counts separates them. Recorded in folio-assistant scripts/tests/pdf-text-repair.test.py.",
+   "authors_raw": "STÉPHANE BASEILHAC, FATHI BEN ARIBI",
+   "why_authors_raw": "Removed the affiliation markers welded to each surname ('BASEILHAC 1', 'ARIBI2')."
   },
   "arxiv-hep-ph-0103325v4": {
    "title": "Quantum algebras in phenomenological description of particle properties",
@@ -633,8 +638,16 @@
    "why": "Funkcial. Ekvac. 23 (1980) 309-326. Page 1 OCR'd blank; the title is on the masthead line recovered in an earlier pass and the running head on page 2 confirms the author."
   },
   "ppn356556735-0036": {
-   "band": "low",
-   "why": "The OCR shows this is a Goettingen digitisation of a whole VOLUME — 'Werk Titel: Inventiones Mathematicae, Verlag: Springer, Jahr: 1976 ... Vol 36 1976' followed by the editorial board. It is a bound volume, not a paper, and should be split like the other bound issues rather than registered as one work."
+   "title": "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups",
+   "authors": [
+    {
+     "family": "Springer",
+     "given": "T. A."
+    }
+   ],
+   "id": "springer1976",
+   "title_source": "ocr",
+   "why": "CORRECTS this document's earlier demotion, which read: 'It is a bound volume, not a paper, and should be split like the other bound issues rather than registered as one work.' That was wrong, and wrong in an instructive way — it was inferred from the Goettingen digitisation banner on page 1 ('Werk Titel: Inventiones Mathematicae ... Vol 36 1976') without reading on. Pages 2-3 are the journal's editorial board and submission policy, bound in with the offprint; pages 4-38 are one continuous article, running head 'Trigonometric Sums', author 'T.A. Springer' throughout, paginated 173-207 — which is 35 pages and exactly the 35 pages present. The title page (OCR page-004) reads 'Inventiones math. 36, 173-207 (1976) ... Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups / T.A. Springer (Utrecht)'. One paper, not a volume; nothing to split."
   },
   "yuasa-rims-kokyuroku-2163-05": {
    "title": "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links",
@@ -647,6 +660,241 @@
    "id": "yuasa-rims2163",
    "title_source": "ocr",
    "why": "Byline on its own line in title_lines. Subscripts written A_2 and sl_3: the transcription renders them 'A»' and 'sl;', which is OCR mis-reading subscript glyphs, not the paper's notation."
+  },
+  "arxiv-1004.1533v3": {
+   "title": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT",
+   "why": "Spacing repair only: 'INV ARIANTS' -> 'INVARIANTS'. Measured since, and it is not merely unattested but *inverted*: the damage is in the running head, so it repeats once per page and outnumbers the correct form in the body. Discounting occurrences inside the pair repairs all four of these and also welds \"L'INSTITUT FOURIER\", whose counts have the identical shape (63 spaced / 18 welded, against 54 / 18 here) and the opposite correct answer — so no statistic over these counts separates them. Recorded in folio-assistant scripts/tests/pdf-text-repair.test.py."
+  },
+  "arxiv-0905.0591v3": {
+   "title": "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS",
+   "why": "Spacing repair only: 'SUR VEY' -> 'SURVEY'. Measured since, and it is not merely unattested but *inverted*: the damage is in the running head, so it repeats once per page and outnumbers the correct form in the body. Discounting occurrences inside the pair repairs all four of these and also welds \"L'INSTITUT FOURIER\", whose counts have the identical shape (63 spaced / 18 welded, against 54 / 18 here) and the opposite correct answer — so no statistic over these counts separates them. Recorded in folio-assistant scripts/tests/pdf-text-repair.test.py.",
+   "authors_raw": "STEFAN FRIEDL AND STEFANO VIDUSSI",
+   "why_authors_raw": "The byline carries the same split twice: 'STEF AN' -> 'STEFAN', 'STEF ANO' -> 'STEFANO'."
+  },
+  "thurston": {
+   "title": "The Geometry and Topology of Three-Manifolds",
+   "authors": [
+    {
+     "family": "Thurston",
+     "given": "William P."
+    }
+   ],
+   "why": "Title and byline were swapped: the extractor took the author line ('William P. Thurston') as the title and the title as the byline. Both strings are the document's own, in the other order. NOT a new entry: the work is already in the bibliography as [thurston1978], which simply had no join to this copy. The join is a possession marker in that entry's note; the title and authors here are still needed, because they are what structure.json and the section front matter show."
+  },
+  "04010141": {
+   "title": "Cellular algebras and diagram algebras in representation theory",
+   "authors": [
+    {
+     "family": "Graham",
+     "given": "J. J."
+    },
+    {
+     "family": "Lehrer",
+     "given": "G. I."
+    }
+   ],
+   "id": "graham-lehrer2004",
+   "why": "Removed the series banner the extractor took as the title ('Advanced Studies in Pure Mathematics 40, 2004' / 'Representation Theory of Algebraic Groups and Quantum Groups' / 'pp. 141-173' — the VOLUME's title, not the paper's). Page 1 reads 'Cellular algebras and diagram algebras m representation theory / J.J. Graham and G.I. Lehrer'. ONE GLYPH CHANGED: the scan's text layer reads 'algebras m representation theory'; 'm' is a misread of 'in' — flagged here rather than left silent, because it is the only character in this file not taken verbatim from the extraction."
+  },
+  "104171-rmi-1408": {
+   "title": "From octonions to composition superalgebras via tensor categories",
+   "authors": [
+    {
+     "family": "Daza-García",
+     "given": "Alberto"
+    },
+    {
+     "family": "Elduque",
+     "given": "Alberto"
+    },
+    {
+     "family": "Sayin",
+     "given": "Umut"
+    }
+   ],
+   "id": "dazagarcia-elduque-sayin2024",
+   "why": "Removed the four-line publisher block the extractor took as title and byline ('Rev. Mat. Iberoam. 40 (2024), no. 1, 129-152' / 'DOI 10.4171/RMI/1408' / the copyright and licence lines). The title and byline are the next two lines of page 1."
+  },
+  "9710022v2": {
+   "title": "Harmonic Analysis on the quantum Lorentz group",
+   "authors": [
+    {
+     "family": "Buffenoir",
+     "given": "E."
+    },
+    {
+     "family": "Roche",
+     "given": "Ph."
+    }
+   ],
+   "id": "buffenoir-roche1999",
+   "why": "Spacing repair ('quan tum Loren tz') plus removal of the affiliation block that followed. This extraction inserts a literal '/' wherever the source had a ligature or an accent — 'E/. Bu/enoir', 'Univ ersit / e Mon tp ellier /2/' — so the byline could not be parsed at all; both surnames are legible on page 1 ('E/. Bu/enoir', 'Ph/. Ro c he')."
+  },
+  "arxiv-1108.5365v2": {
+   "title": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)",
+   "authors": [
+    {
+     "family": "Ip",
+     "given": "Ivan C. H."
+    }
+   ],
+   "id": "ip2012",
+   "why": "The title runs over three lines and the extractor kept only the first two; the third is 'q (2,R)', the subscript of 'GL+' having been emitted on its own line. Written 'GL+_q(2,R)' so the subscript survives as text."
+  },
+  "arxiv-2411.04021v1": {
+   "title": "On the Gram determinants of the Specht modules",
+   "authors": [
+    {
+     "family": "Hoyer",
+     "given": "Linda"
+    }
+   ],
+   "id": "hoyer2024",
+   "why": "Removed the byline 'Linda Hoyer ∗' welded to the end of the title: a single-author line carries no comma and no 'and', so the author-line test cannot see it."
+  },
+  "arxiv-math-0203273v3": {
+   "title": "Nilpotence, radicaux et structures monoïdales",
+   "authors": [
+    {
+     "family": "André",
+     "given": "Yves"
+    },
+    {
+     "family": "Kahn",
+     "given": "Bruno"
+    }
+   ],
+   "id": "andre-kahn2002",
+   "why": "Removed the byline welded to the title ('YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O'SULLIVAN') and repaired the spacing damage in 'MONO ÏDALES'. O'Sullivan wrote an appendix and is named as such on the page, so he is not listed as an author of the paper."
+  },
+  "arxiv-nucl-th-0006014v1": {
+   "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
+   "authors": [
+    {
+     "family": "Machleidt",
+     "given": "R."
+    }
+   ],
+   "id": "machleidt2001",
+   "why": "Removed the byline 'R. Machleidt ∗' welded to the title, and repaired the spacing in 'nucleon-nucle on'."
+  },
+  "disssubmission": {
+   "title": "Tannakian categories of perverse sheaves on abelian varieties",
+   "authors": [
+    {
+     "family": "Krämer",
+     "given": "Thomas"
+    }
+   ],
+   "id": "kraemer-dissertation",
+   "why": "A dissertation: page 1 opens with six lines of Heidelberg degree boilerplate ('INAUGURAL-DISSERTATION / zur / Erlangung der Doktorwürde / an der / Naturwissenschaftlich-Mathematischen Gesamtfakultät / der Ruprecht-Karls-Universität Heidelberg') before the title. The extractor took the boilerplate. Author from 'vorgelegt von Dipl.-Math. Thomas Krämer'."
+  },
+  "hecke-alg": {
+   "title": "Hecke algebras and Schur algebras of the symmetric group",
+   "authors": [
+    {
+     "family": "Mathas",
+     "given": "Andrew"
+    }
+   ],
+   "why": "Spacing repair ('Hec k e', 'Sc h ur') plus removal of the byline and the 'Author address:' line that followed it. Same '/'-for-ligature extraction damage as 9710022v2 ('Ma thema tics F/0/7/'). NOT a new entry: the work is already in the bibliography as [mathas1999], which simply had no join to this copy. The join is a possession marker in that entry's note; the title and authors here are still needed, because they are what structure.json and the section front matter show."
+  },
+  "104171-owr-2018-52": {
+   "title": "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)",
+   "drop_authors": true,
+   "id": "owr-2018-52",
+   "why": "A workshop report, not a paper: the volume collects the extended abstracts of one Oberwolfach meeting. The extractor took the institute banner as the title and the workshop name as the byline; they are the other way round. Registered as the report it is, with the report number kept in the title because that is how Oberwolfach reports are cited. `drop_authors` because the parsed 'author' was the workshop name — there is no single author, there are organisers and many contributors."
+  },
+  "xi": {
+   "title": "Cellular algebras",
+   "authors": [
+    {
+     "family": "Xi",
+     "given": "Changchang"
+    }
+   ],
+   "id": "xi2005",
+   "why": "Removed the conference banner ('Advanced school and conference on representation theory and related topics. ICTP, Trieste. Jan. 9-28, 2005') that the extractor took as the title. Supersedes the earlier low-band demotion, which read 'only 1848 chars extracted — probably a scan with no text layer': the text layer is fine and the PDF is genuinely ONE page. It is the opening page of a four-lecture series ('This is a series of 4 lectures on cellular algebras'), so the document is a fragment — the title and author are certain, the rest of the lectures are simply not in the file."
+  },
+  "huang-2021-chinese-phys-c-45-030002": {
+   "title": "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
+   "authors": [
+    {
+     "family": "Huang",
+     "given": "W. J."
+    }
+   ],
+   "why": "Removed the IOP masthead prefix ('Chinese Physics C' / 'PAPER • OPEN ACCESS') and reassembled the title from its three lines. Author from the page's own citation line, 'W.J. Huang et al 2021 Chinese Phys. C 45 030002' — only the first author is named there, so only the first author is recorded. NOT a new entry: the work is already in the bibliography as [ame2020], which simply had no join to this copy. The join is a possession marker in that entry's note; the title and authors here are still needed, because they are what structure.json and the section front matter show."
+  },
+  "kondev-2021-chinese-phys-c-45-030001": {
+   "title": "The NUBASE2020 evaluation of nuclear physics properties",
+   "authors": [
+    {
+     "family": "Kondev",
+     "given": "F. G."
+    }
+   ],
+   "why": "Same IOP masthead as huang-2021-chinese-phys-c-45-030002. The parsed 'author' was the boilerplate 'View the article online for updates and enhancements'. Author from the citation line 'F.G. Kondev et al 2021 Chinese Phys. C 45 030001'. NOT a new entry: the work is already in the bibliography as [nubase2020], which simply had no join to this copy. The join is a possession marker in that entry's note; the title and authors here are still needed, because they are what structure.json and the section front matter show."
+  },
+  "arxiv-1001.2180v2": {
+   "authors_raw": "VALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT",
+   "why_authors_raw": "Spacing repair: 'V ALENTIN' -> 'VALENTIN'."
+  },
+  "arxiv-0812.2426v1": {
+   "authors": [
+    {
+     "family": "Bruguières",
+     "given": "Alain"
+    },
+    {
+     "family": "Virelizier",
+     "given": "Alexis"
+    }
+   ],
+   "id": "bruguieres-virelizier2008",
+   "why_authors": "The byline reads 'ALAIN BRUGUI `ERES AND ALEXIS VIRELIZIER': the grave accent of 'Bruguières' is emitted as a separate '`' before the letters it belongs to, which splits the surname. The parser then took 'ÈRES' as the family name and 'ALAIN BRUGUI' as the given name, and built the id 'res2008' from it — the same failure that once aimed a Garoufalidis paper at 'alidis2013'."
+  },
+  "arxiv-math-0309426v2": {
+   "authors": [
+    {
+     "family": "Künzer",
+     "given": "Matthias"
+    },
+    {
+     "family": "Mathas",
+     "given": "Andrew"
+    }
+   ],
+   "id": "kuenzer-mathas2003",
+   "why_authors": "The byline reads 'MATTHIAS K ¨UNZER AND ANDREW MATHAS' — the umlaut is emitted before the 'U' it belongs to, so the 'K' is cut off from the rest of the surname. Parsed as family 'ÜNZER', given 'MATTHIAS K', id 'nzer2003'."
+  },
+  "arxiv-1105.2919v1": {
+   "authors": [
+    {
+     "family": "Machleidt",
+     "given": "R."
+    },
+    {
+     "family": "Entem",
+     "given": "D. R."
+    }
+   ],
+   "id": "machleidt-entem2011",
+   "why_authors": "The byline reads 'R. Machleidta,∗, D. R. Entem b': Elsevier style suffixes an affiliation letter to each surname with no separator, so 'Machleidta' and 'Entem b' are what the parser sees. It found no usable author list at all and fell back to the doc-id as the entry id."
+  },
+  "arxiv-1801.04409v4": {
+   "authors": [
+    {
+     "family": "Etingof",
+     "given": "Pavel"
+    },
+    {
+     "family": "Ostrik",
+     "given": "Victor"
+    }
+   ],
+   "id": "etingof-ostrik2018",
+   "why_authors": "Spacing repair in the byline: 'PA VEL' -> 'PAVEL'."
   }
  }
 }
