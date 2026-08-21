@@ -1226,6 +1226,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:30.736Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1245,6 +1260,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:30.777Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-em-dash": [
@@ -1264,6 +1294,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:30.820Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-triples": [
@@ -1283,6 +1328,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:30.862Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-closing-aphorism": [
@@ -1302,6 +1362,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:30.905Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-meta-commentary": [
@@ -1321,6 +1396,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:30.947Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-thesis-restatement": [
@@ -1340,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:30.988Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-performed-warmth": [
@@ -1359,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:31.028Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-superlative": [
@@ -1378,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:31.070Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "trap-nonspeakable": [
@@ -1397,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.068Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "80deee2b2c4b",
+          "ts": "d52dd530a0e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:31.109Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Standard definition; pentagon/triangle named factually; clean on all ten."
       }
     ],
     "wall-base-ring-minimal": [

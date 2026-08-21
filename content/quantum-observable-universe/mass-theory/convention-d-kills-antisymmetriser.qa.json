@@ -1180,6 +1180,22 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.621Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Two contrasts weighed: 'The selection criterion for the Markov trace is not non-degeneracy' is the entire content of the section 'What the characterisation replaces' (convention D provably has a radical); 'now derived rather than tabulated' states what changed. Both substantive.",
+        "notes": "Heading 'The trivial branch is not a competitor' is negation-framed; judged substantive here, but it is a clarity-rhetorical-header candidate for that audit (noun-phrase alternative: 'Collapse at z = q')."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1199,6 +1215,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.656Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 602 w: read in full. Every number independently recomputed and reproduced exactly (q0=1.10997858275138080759 proton pin; z_D=0.6126880371464652515941; z_C=0.4993203341836944524135; weights D=(0.5054042265,0.2472978867,0) and C=(0.4153957954,0.2809296310,0.0227449426) by lu_solve on the stated 3x3 normalisation system; closed forms y_(2,1)=q^2/(q^2+1)^2 and y_(3)=(q^4+1)/(q^2+1)^2 match)."
       }
     ],
     "trap-em-dash": [
@@ -1218,6 +1249,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 460 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.716Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Two spaced-dash pairs, both true parentheticals ('--- the pairing has a radical, and the radical is exactly the block killed above ---'). No density."
       }
     ],
     "trap-triples": [
@@ -1237,6 +1283,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 460 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.793Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'Three normalisations, three unknowns' is the actual 3x3 linear system, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1256,6 +1317,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.830Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 602 w: read in full. Every number independently recomputed and reproduced exactly (q0=1.10997858275138080759 proton pin; z_D=0.6126880371464652515941; z_C=0.4993203341836944524135; weights D=(0.5054042265,0.2472978867,0) and C=(0.4153957954,0.2809296310,0.0227449426) by lu_solve on the stated 3x3 normalisation system; closed forms y_(2,1)=q^2/(q^2+1)^2 and y_(3)=(q^4+1)/(q^2+1)^2 match)."
       }
     ],
     "trap-meta-commentary": [
@@ -1275,6 +1351,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.864Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 602 w: read in full. Every number independently recomputed and reproduced exactly (q0=1.10997858275138080759 proton pin; z_D=0.6126880371464652515941; z_C=0.4993203341836944524135; weights D=(0.5054042265,0.2472978867,0) and C=(0.4153957954,0.2809296310,0.0227449426) by lu_solve on the stated 3x3 normalisation system; closed forms y_(2,1)=q^2/(q^2+1)^2 and y_(3)=(q^4+1)/(q^2+1)^2 match)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1294,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.897Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 602 w: read in full. Every number independently recomputed and reproduced exactly (q0=1.10997858275138080759 proton pin; z_D=0.6126880371464652515941; z_C=0.4993203341836944524135; weights D=(0.5054042265,0.2472978867,0) and C=(0.4153957954,0.2809296310,0.0227449426) by lu_solve on the stated 3x3 normalisation system; closed forms y_(2,1)=q^2/(q^2+1)^2 and y_(3)=(q^4+1)/(q^2+1)^2 match)."
       }
     ],
     "trap-performed-warmth": [
@@ -1313,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.934Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 602 w: read in full. Every number independently recomputed and reproduced exactly (q0=1.10997858275138080759 proton pin; z_D=0.6126880371464652515941; z_C=0.4993203341836944524135; weights D=(0.5054042265,0.2472978867,0) and C=(0.4153957954,0.2809296310,0.0227449426) by lu_solve on the stated 3x3 normalisation system; closed forms y_(2,1)=q^2/(q^2+1)^2 and y_(3)=(q^4+1)/(q^2+1)^2 match)."
       }
     ],
     "trap-superlative": [
@@ -1332,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.968Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 602 w: read in full. Every number independently recomputed and reproduced exactly (q0=1.10997858275138080759 proton pin; z_D=0.6126880371464652515941; z_C=0.4993203341836944524135; weights D=(0.5054042265,0.2472978867,0) and C=(0.4153957954,0.2809296310,0.0227449426) by lu_solve on the stated 3x3 normalisation system; closed forms y_(2,1)=q^2/(q^2+1)^2 and y_(3)=(q^4+1)/(q^2+1)^2 match)."
       }
     ],
     "trap-nonspeakable": [
@@ -1351,6 +1487,22 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a071311360fb",
+          "ts": "c9436295b1ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.002Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Body prose is speakable.",
+        "notes": "The boilerplate 'Archimedean specialisation' banner carries a four-item noun chain ('real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation'); corpus-wide stock text, not this block's drafting."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1374,5 +1526,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:55:33.002Z"
 }

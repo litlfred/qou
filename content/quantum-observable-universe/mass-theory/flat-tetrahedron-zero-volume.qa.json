@@ -1,0 +1,178 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.943Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:50.976Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.009Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.045Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.079Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.125Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.161Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.196Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "A version restricted to 0 < x < 1 is strictly weaker, and too weak for the application in the next block, and The vanishing must hold on all of R or it does not reach the case it is wanted for - both are substantive: the trefoil shape parameters -1 and 2 lie outside (0,1), so the restriction genuinely fails to cover the intended application. This is mathematical necessity, not emphasis by denial."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.233Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The section justifying the unrestricted form gives a concrete mathematical reason (the trefoil's parameters) rather than merely asserting significance.",
+        "notes": "clarity-rhetorical-header NOTE (different criterion): the header Why the unrestricted form is the one worth stating is rhetorical rather than a noun phrase; proposed Scope of the hypothesis or Unrestricted vs restricted form."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.268Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The block closes on a cross-reference (this is the mechanism behind the vanishing for torus knots, used in the block that follows), which is the bookkeeping false-positive class.",
+        "notes": "RIGOR: VERIFIED CORRECT. D(x) = 0 for all real x is a true property of the Bloch-Wigner dilogarithm, and the Lobachevsky-form argument given (real shape gives real edge parameters, whose arguments are 0 or pi, and Lambda vanishes at both) is valid. The Lambda-vs-Cl_2 hazard flagged in AGENTS.md does not arise here: Lambda is used only as the Lobachevsky function in D(z) = Lambda(theta_1)+Lambda(theta_2)+Lambda(theta_3), with no numeric coefficient asserted. The junk-value handling at x = 0 and x = 1 under the 1/0 = 0 convention is stated correctly, and volume additivity over an ideal triangulation gives the torus-knot consequence."
+      }
+    ]
+  },
+  "updated_at": "2026-08-21T16:07:51.268Z"
+}

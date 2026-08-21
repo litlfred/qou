@@ -1359,6 +1359,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not a M -deformation artefact but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.136Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'is **not** a $q$-deformation artefact but a structural feature of $\\Phi_1$ in the symmetric group algebra' is the diagnostic's actual finding (the wrong-sign binding survives the $q \\to 1$ limit), i.e. substantive contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.170Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.206Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.239Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.273Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.310Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.371Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.407Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.441Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the companion-reading and diagnostic-application sections. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1665,23 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3eee18a69e1c",
+          "ts": "66e41f824ae9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.474Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'canonical scan\\n(the formal derivation) confirms that the proton--neutron mass splitting *vanishes* ...' -- two token substitutions in one subject phrase ('canonical scan' for a numerical scan, '(the formal derivation)' where a script name stood), leaving the sentence without an identifiable agent.",
+        "notes": "proposed: 'A numerical scan (`computations/...py`) confirms that ...'. Not applied: the producer name is not recoverable from the text."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:50.474Z"
 }

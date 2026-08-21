@@ -1751,6 +1751,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.465Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1770,6 +1785,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.503Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "trap-em-dash": [
@@ -1789,6 +1819,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.540Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "trap-triples": [
@@ -1808,6 +1853,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.577Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "'the neutron, deuteron, and triton' is a factual enumeration of the sibling instances, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1827,6 +1887,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.619Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "trap-meta-commentary": [
@@ -1846,6 +1921,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.657Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "trap-thesis-restatement": [
@@ -1865,6 +1955,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.694Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "trap-performed-warmth": [
@@ -1884,6 +1989,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.731Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "trap-superlative": [
@@ -1903,6 +2023,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.766Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Borderline: the closing 'The canonical agreement is certified to machine precision' is unqualified and does not say certified by what, but it is a precision statement rather than a maximum-strength claim. Reported separately for two other reasons: 'canonical' here is the known sweep substitution for 'numerical', and the Conjectural-status sentence proposes closing the Lean proof via native_decide, which the Strict Lean Discipline bans as laundering."
       }
     ],
     "trap-nonspeakable": [
@@ -1922,6 +2057,21 @@
         "reviewed_at": "2026-08-15T10:31:00.329Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4f028c0c58b4",
+          "ts": "458da9987dde"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:29.802Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (conjecture, 14 lines: statement + Categorical statement / Lean encoding / Conjectural status). No trap construction of this category present. VERIFIED (not a trap): the quoted 2.1225825095 is a correct 11-sig-fig rounding of the corpus value 2.12258250945273 recorded in computations/p-tr-M-q0.derivation.json, and the block correctly uses the approx sign per section 7ab."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1945,5 +2095,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:14:29.802Z"
 }

@@ -1020,6 +1020,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "4 negation-contrast construction(s): \", not of any individual quantum dimension.\"; \", not to be conflated.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.600Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'it is a property of *cancellation in the alternating sum*, not of any individual quantum dimension' and 'a single-[m]_q-vs-product distinction, not a cyclotomic-vs-non-cyclotomic one' are the block's actual corrections - it exists partly to retract the conflated earlier wording. Substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1039,6 +1054,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.634Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 804 w: read in full and every mathematical claim independently reproduced in sympy. Confirmed: S(n)|_{q=1} = 1,1,2,4,10,26,76,232,764,2620,9496 (A000085); with balanced q-integers D(4) = q^-2 Phi_1^2 Phi_3 and D(5) = 2 q^-4 Phi_1^2 Phi_2^2 Phi_3 Phi_6 exactly as stated; D(6) = q^-7 Phi_1^2 Phi_5 C_6 with C_6 = q^8+4q^7+6q^6+2q^5+2q^4+2q^3+6q^2+4q+1 irreducible over Q; z^4 Ctilde(z+1/z) = C_6 exactly; disc(Ctilde) = -44208 < 0 so Ctilde has a non-real root; C_6 has roots of modulus 2.2711 and 0.4403, hence not cyclotomic; D(7)..D(11) each carry a large irreducible non-cyclotomic factor, matching 'verified through n = 11'. The block's tier separation (verified / not proved), its self-correction of the single-[m]_q-vs-cyclotomic conflation, and its 'magnitudes not interpreted' guard all hold up."
       }
     ],
     "trap-em-dash": [
@@ -1059,6 +1089,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "16 stylistic spaced dashes in 734 words (2.18/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.671Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Eight spaced dashes in 804 w. Several are true parentheticals ('D(n) - the Habiro tail - carries'), but several append afterthoughts the sentence could have carried directly: 'from n=6 - the same non-holonomicity that obstructs any fixed-order closed form'; 'non-cyclotomicity is the expected outcome - the content is entirely that n <= 5 *are* cyclotomic'; 'Status - three tiers of correlation'.",
+        "notes": "Proposed: convert the three appending dashes to full stops or a colon; keep the parenthetical pairs. Not applied: the block is 800 words of tightly-scoped argument and the coordinator may prefer one deliberate pass over a piecemeal edit."
       }
     ],
     "trap-triples": [
@@ -1078,6 +1125,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 734 words)"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.707Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'three tiers of correlation' is an enumerated arithmetic/alignment/rep-theory split used to keep the claims apart."
       }
     ],
     "trap-closing-aphorism": [
@@ -1097,6 +1159,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.744Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 804 w: read in full and every mathematical claim independently reproduced in sympy. Confirmed: S(n)|_{q=1} = 1,1,2,4,10,26,76,232,764,2620,9496 (A000085); with balanced q-integers D(4) = q^-2 Phi_1^2 Phi_3 and D(5) = 2 q^-4 Phi_1^2 Phi_2^2 Phi_3 Phi_6 exactly as stated; D(6) = q^-7 Phi_1^2 Phi_5 C_6 with C_6 = q^8+4q^7+6q^6+2q^5+2q^4+2q^3+6q^2+4q+1 irreducible over Q; z^4 Ctilde(z+1/z) = C_6 exactly; disc(Ctilde) = -44208 < 0 so Ctilde has a non-real root; C_6 has roots of modulus 2.2711 and 0.4403, hence not cyclotomic; D(7)..D(11) each carry a large irreducible non-cyclotomic factor, matching 'verified through n = 11'. The block's tier separation (verified / not proved), its self-correction of the single-[m]_q-vs-cyclotomic conflation, and its 'magnitudes not interpreted' guard all hold up."
       }
     ],
     "trap-meta-commentary": [
@@ -1116,6 +1193,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.779Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'not to be conflated' and 'Specific root magnitudes are not interpreted' are scope/numerology guards stating what is and is not claimed, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1135,6 +1227,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.813Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 804 w: read in full and every mathematical claim independently reproduced in sympy. Confirmed: S(n)|_{q=1} = 1,1,2,4,10,26,76,232,764,2620,9496 (A000085); with balanced q-integers D(4) = q^-2 Phi_1^2 Phi_3 and D(5) = 2 q^-4 Phi_1^2 Phi_2^2 Phi_3 Phi_6 exactly as stated; D(6) = q^-7 Phi_1^2 Phi_5 C_6 with C_6 = q^8+4q^7+6q^6+2q^5+2q^4+2q^3+6q^2+4q+1 irreducible over Q; z^4 Ctilde(z+1/z) = C_6 exactly; disc(Ctilde) = -44208 < 0 so Ctilde has a non-real root; C_6 has roots of modulus 2.2711 and 0.4403, hence not cyclotomic; D(7)..D(11) each carry a large irreducible non-cyclotomic factor, matching 'verified through n = 11'. The block's tier separation (verified / not proved), its self-correction of the single-[m]_q-vs-cyclotomic conflation, and its 'magnitudes not interpreted' guard all hold up."
       }
     ],
     "trap-performed-warmth": [
@@ -1154,6 +1261,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.847Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "conjecture, 804 w: read in full and every mathematical claim independently reproduced in sympy. Confirmed: S(n)|_{q=1} = 1,1,2,4,10,26,76,232,764,2620,9496 (A000085); with balanced q-integers D(4) = q^-2 Phi_1^2 Phi_3 and D(5) = 2 q^-4 Phi_1^2 Phi_2^2 Phi_3 Phi_6 exactly as stated; D(6) = q^-7 Phi_1^2 Phi_5 C_6 with C_6 = q^8+4q^7+6q^6+2q^5+2q^4+2q^3+6q^2+4q+1 irreducible over Q; z^4 Ctilde(z+1/z) = C_6 exactly; disc(Ctilde) = -44208 < 0 so Ctilde has a non-real root; C_6 has roots of modulus 2.2711 and 0.4403, hence not cyclotomic; D(7)..D(11) each carry a large irreducible non-cyclotomic factor, matching 'verified through n = 11'. The block's tier separation (verified / not proved), its self-correction of the single-[m]_q-vs-cyclotomic conflation, and its 'magnitudes not interpreted' guard all hold up."
       }
     ],
     "trap-superlative": [
@@ -1173,6 +1295,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.881Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Every strong-looking phrase is scoped and checked out on recomputation: 'universal (q-1)^2 double root' (true - bar-evenness forces even multiplicity), 'coincides exactly', 'a single cited classical input', 'verified through n = 11 but not proved for all n'."
       }
     ],
     "trap-nonspeakable": [
@@ -1192,6 +1329,21 @@
         "reviewed_at": "2026-08-15T10:31:00.717Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "06e10cbc737d",
+          "ts": "ec1ce9988422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:26.917Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Hyphen chains such as 'a single-[m]_q-vs-product distinction' and 'verified-through-n=11' are eye-oriented, but the surrounding sentences are speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1214,5 +1366,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:26.917Z"
 }

@@ -1777,6 +1777,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:10.994Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of the proposition (display identity, two-sentence italic claim, three-sentence justification). No assertion-by-denial; 'exclusively at level 0' and 'strictly transient' are the positive form of the level-counting claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1811,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.033Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No setup-then-reframe; the closing paragraph gives three independent reasons rather than reframing the statement."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1845,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.070Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1879,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.142Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No enumerations; the closing paragraph's three sentences are three distinct arguments (idempotence, iteration, double-counting)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1913,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.177Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Closes on the double-counting consequence, which is the operative reason the sum is level-0 only."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1947,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.212Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1981,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.249Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The final sentence gives the reason for the level-0 restriction rather than restating it."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2015,21 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.284Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2049,22 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.319Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'exclusively', 'strictly' are the mathematical content of a level-counting claim, not intensifiers. 'consistently recovers' is the one empty intensifier in the block ('consistently' adds nothing to 'recovers'), but a single filler adverb is below the threshold for this criterion.",
+        "notes": "Left in place: 'Iterating the trace reduction consistently recovers ...' — drop 'consistently' in any future editorial pass."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2084,22 @@
         "reviewed_at": "2026-08-15T10:31:00.630Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b06e9140f1da",
+          "ts": "e8f69c4633c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.353Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "FIX APPLIED. Before: 'Summing the descended component at each subsequent jet level constitutes an invalid double-count of the foundational holonomy.' — gerund subject + 'constitutes' + a six-noun object chain; it parses on the page and stalls aloud. After: 'Summing the descended component at each subsequent jet level would double-count the base-level holonomy.'",
+        "notes": "The fix also repairs a terminology drift inside the block: the statement above names the object 'the invariant base-level holonomy', while the closing sentence renamed it 'the foundational holonomy'. Meaning unchanged; delimiters re-checked ('$$' count 2, even)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:51:11.353Z"
 }

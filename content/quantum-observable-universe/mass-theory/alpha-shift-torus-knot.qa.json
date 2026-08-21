@@ -2183,6 +2183,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.974Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2202,6 +2217,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.048Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -2221,6 +2251,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 143 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.099Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -2240,6 +2285,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 143 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.166Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -2259,6 +2319,22 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.213Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Closes on 'recasting the $\\delta_q$-trace identity in the same combinatorial terms as the atomic-shift formula.'",
+        "notes": "Cross-reference bookkeeping tied to a named sibling proposition (false-positive class 'cross-reference closers'), not a manufactured quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -2278,6 +2354,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.268Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -2297,6 +2388,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.342Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -2316,6 +2422,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.418Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -2335,6 +2456,22 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.608Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'are precisely the $q$-integer indices appearing in prop:em-coupling-projection'.",
+        "notes": "'precisely' marks an exact numerical coincidence (9 and 10 appear in both), which is the block's claim; verified: alpha_shift(T_{2,9}) = 9, alpha_shift(T_{3,5}) = 10 both equal k(p-1)."
       }
     ],
     "trap-nonspeakable": [
@@ -2354,6 +2491,21 @@
         "reviewed_at": "2026-08-15T10:31:00.678Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ca30024fb66b",
+          "ts": "1c7445d218e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.777Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proposition, torus-knot shift exponent alpha_shift(T_{p,k}) = k(p-1)); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2377,5 +2529,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:29:28.777Z"
 }

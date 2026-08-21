@@ -282,6 +282,9 @@ def main() -> int:
         },
     }
 
+    # Hand-written witness: stamp the manifest pin here (see q0_stamp).
+    from q0_stamp import stamp_q0_anchor  # noqa: PLC0415
+    stamp_q0_anchor(witness, __file__)
     out = HERE / "lw2-c2-independent-hopf-test-attempt.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
 

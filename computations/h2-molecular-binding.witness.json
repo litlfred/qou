@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:28:03.009803+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-21T15:11:30.279095+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [
     {
       "name": "H2 binding is positive",
@@ -20,20 +20,20 @@
     },
     {
       "name": "H2 binding energy within 5% of observed (no calibration)",
-      "computed": "4.62313909961224",
+      "computed": "0.864536457714344",
       "expected": 4.478,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.25,
       "unit": "eV",
       "source": "D_0(H2) = 4.478 eV, zero fitted parameters"
     }
   ],
-  "allPassed": true,
-  "durationMs": 7,
+  "allPassed": false,
+  "durationMs": 5,
   "computation": "h2-molecular-binding",
   "scriptFile": "h2-molecular-binding.py",
-  "scriptHash": "2fc11de57c37",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "4de8c9313d11",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,6 +43,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -50,13 +51,13 @@
   "description": "H₂ molecular braid binding energy from LP dual. Enumerates all 24 strand orderings of H₄(q), finds optimal binding by comparing molecular Φ₁ with 2 isolated H atoms.",
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
-    "q": 1.1099785955573347,
-    "HA": 0.20906032199559366,
-    "z": 0.49932033403356124,
-    "alpha_EM": 0.007297355479859718,
-    "E_hartree_eV": 27.211463866713153,
-    "TWO_Q": 2.0108968691190756,
-    "E_mol_scale_eV": 6.729337493415771,
+    "q": 1.1099785827513808,
+    "HA": 0.20906029879563937,
+    "z": 0.6126880371464652,
+    "alpha_EM": 0.007297355976840865,
+    "E_hartree_eV": 27.211467573147633,
+    "TWO_Q": 2.0108968667071223,
+    "E_mol_scale_eV": 6.729338426152079,
     "strand_labels": [
       "p1",
       "e1",
@@ -65,24 +66,34 @@
     ]
   },
   "data": {
-    "Phi1_H_isolated": -0.9597033493004249,
-    "Phi1_2H_separated": -1.9194066986008498,
-    "V_H_isolated": -0.38300648826686545,
-    "Phi1_H2_optimal": -2.606419217163886,
+    "Phi1_H_isolated": -1.3106724498372075,
+    "Phi1_2H_separated": -2.621344899674415,
+    "V_H_isolated": -0.2696386769228253,
+    "Phi1_H2_optimal": -2.7498176265556364,
     "optimal_ordering": [
       "p1",
       "e2",
-      "p2",
-      "e1"
+      "e1",
+      "p2"
     ],
-    "binding_Phi_diff": 0.687012518563036,
-    "E_bind_eV_predicted": 4.623139099612237,
+    "binding_Phi_diff": 0.12847272688122136,
+    "E_bind_eV_predicted": 0.8645364577143441,
     "generator_volumes": [
-      -0.38300648826686545,
-      0.663824346174184,
-      0.2902600120379676
+      -0.2696386769228253,
+      0.5874977215493498,
+      0.4036277383508259
     ],
     "all_orderings_ranked": [
+      {
+        "ordering": [
+          "p1",
+          "e2",
+          "e1",
+          "p2"
+        ],
+        "Phi1": -2.7498176265556364,
+        "binding": 0.12847272688122136
+      },
       {
         "ordering": [
           "p1",
@@ -90,8 +101,18 @@
           "p2",
           "e1"
         ],
-        "Phi1": -2.606419217163886,
-        "binding": 0.687012518563036
+        "Phi1": -2.7498176265556364,
+        "binding": 0.12847272688122136
+      },
+      {
+        "ordering": [
+          "e1",
+          "p2",
+          "p1",
+          "e2"
+        ],
+        "Phi1": -2.7498176265556364,
+        "binding": 0.12847272688122136
       },
       {
         "ordering": [
@@ -100,8 +121,8 @@
           "e2",
           "p1"
         ],
-        "Phi1": -2.606419217163886,
-        "binding": 0.687012518563036
+        "Phi1": -2.7498176265556364,
+        "binding": 0.12847272688122136
       },
       {
         "ordering": [
@@ -110,41 +131,21 @@
           "p1",
           "e2"
         ],
-        "Phi1": -2.606419217163886,
-        "binding": 0.687012518563036
+        "Phi1": -2.7498176265556364,
+        "binding": 0.12847272688122136
       },
       {
         "ordering": [
-          "e2",
-          "p1",
-          "e1",
-          "p2"
-        ],
-        "Phi1": -2.606419217163886,
-        "binding": 0.687012518563036
-      },
-      {
-        "ordering": [
-          "p1",
-          "e2",
-          "e1",
-          "p2"
-        ],
-        "Phi1": -2.606419217163885,
-        "binding": 0.6870125185630351
-      },
-      {
-        "ordering": [
-          "e1",
           "p2",
-          "p1",
-          "e2"
+          "e1",
+          "e2",
+          "p1"
         ],
-        "Phi1": -2.606419217163885,
-        "binding": 0.6870125185630351
+        "Phi1": -2.7498176265556364,
+        "binding": 0.12847272688122136
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

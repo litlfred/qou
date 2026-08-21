@@ -1542,6 +1542,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not flavor.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.583Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'correlates with arc count at R^2=0.83, not with the signed-h weight (R^2=0.26)'; 'Gluons couple color, not flavor.'",
+        "notes": "pass-with-note: substantive statistical/physics contrasts backed by numbers; the distinction is the claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1561,6 +1577,21 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.624Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (conjecture); no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1580,6 +1611,22 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 927 words)"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.662Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Unspaced em-dash parenthetical pair in the statement; one appending dash before the per-channel list.",
+        "notes": "pass-with-note: true parentheticals, low density over a long block."
       }
     ],
     "trap-triples": [
@@ -1599,6 +1646,21 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 927 words)"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.698Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (conjecture); no reflex three-item lists; enumerations substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1618,6 +1680,21 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.744Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (conjecture); final line is technical/factual, not a placed quotable"
       }
     ],
     "trap-meta-commentary": [
@@ -1637,6 +1714,21 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.842Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (conjecture); no narration of own emphasis ('we emphasize'/'note the framing' absent)"
       }
     ],
     "trap-thesis-restatement": [
@@ -1656,6 +1748,21 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.943Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (conjecture); no block-final restatement of established content"
       }
     ],
     "trap-performed-warmth": [
@@ -1675,6 +1782,21 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:00.983Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (conjecture); no personal register in institutional prose"
       }
     ],
     "trap-superlative": [
@@ -1694,6 +1816,22 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:01.020Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'This dramatically improves on the uniform-flavor projection's ~305 ppm flavor split ratio.'",
+        "notes": "fixed: 'This dramatically improves on' -> 'This improves on' (magnitude already carried by the quoted numbers)."
       }
     ],
     "trap-nonspeakable": [
@@ -1713,6 +1851,21 @@
         "reviewed_at": "2026-08-15T10:30:58.843Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "456b666df722",
+          "ts": "90b6d1826db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:01.057Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (conjecture); prose parses aloud; noun-chain density normal for technical register"
       }
     ],
     "wall-base-ring-minimal": [

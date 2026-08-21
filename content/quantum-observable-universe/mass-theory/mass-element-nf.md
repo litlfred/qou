@@ -87,4 +87,4 @@ including the descended part) is only $12\%$ of the total
 mass element norm.
 
 **Witness**: computed from $\mathrm{Li}_2(q^{-2})$ grouping
-at $q_0 = 1.109978595554181\ldots$ (50 dps).
+at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps).

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:46.861366+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:56:38.685234+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "pslq_search_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 4,
   "computation": "meson-habiro-c3-pslq-search",
   "scriptFile": "meson_habiro_c3_pslq_search.py",
   "scriptHash": "a99620ab76ae",
-  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,20 +28,22 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "PSLQ integer-relation search for meson Habiro c_3 = -0.7156 across 24 natural substrate basis elements (G, π, h-powers, b-powers, q-brackets, ℏ_q-powers, J_Hopf). Tests pairwise, triples (top-12), and full basis. Complements the NULL hand-curated scan in meson_habiro_c3_categorical_search.py.",
   "parameters": {
-    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "c_3_target": "-0.910178175446977036813273399252",
+    "c_3_target": "-0.71501962978697175817795974435",
     "basis_size": 24,
     "pairwise_matches": "[]",
     "pair_basis_hits_count": 0,
-    "verdict": "NULL — no clean PSLQ integer relation for c_3 = -0.910178175447 across 24 natural substrate basis elements (pairwise tol 1e-12, triples tol 1e-15, full tol 1e-25). Strong evidence that c_3 is NOT a natural rational combination of substrate quantities — likely transcendental in q OR the meson Habiro c=4 leading framing is wrong."
+    "verdict": "NULL — no clean PSLQ integer relation for c_3 = -0.715019629787 across 24 natural substrate basis elements (pairwise tol 1e-12, triples tol 1e-15, full tol 1e-25). Strong evidence that c_3 is NOT a natural rational combination of substrate quantities — likely transcendental in q OR the meson Habiro c=4 leading framing is wrong."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1193,6 +1193,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not independent ingredients.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.248Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'are confinement residues, not independent ingredients' is the section's substantive claim about the rank-3 and rank->=4 terms.",
+        "notes": "Reported separately: two parenthetical placeholders where references stood -- '(q-Dirac cell scanner witness)' and '(Q-beta path A extended witness)'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1212,6 +1228,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.282Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1231,6 +1262,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 244 words)"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.316Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1250,6 +1296,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 244 words)"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.351Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1269,6 +1330,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.387Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1288,6 +1364,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.422Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1307,6 +1398,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.456Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1326,6 +1432,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.490Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1345,6 +1466,23 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.522Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'At $k = 0$ (the centre) elements are completely free' and 'is --- read through this proposition --- literally a sum over confinement layers'. 'literally' is doing register work, not mathematics, in a sentence whose whole point is that the reading is an analogy.",
+        "notes": "proposed: drop 'completely' and 'literally'."
       }
     ],
     "trap-nonspeakable": [
@@ -1364,6 +1502,21 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.556Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1386,5 +1539,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:52.556Z"
 }

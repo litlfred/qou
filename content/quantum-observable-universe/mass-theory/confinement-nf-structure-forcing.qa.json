@@ -1752,6 +1752,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.273Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1771,6 +1786,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.307Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1790,6 +1820,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.341Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1809,6 +1854,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.378Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1828,6 +1888,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.413Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1847,6 +1922,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.447Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1866,6 +1956,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.482Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1885,6 +1990,21 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.517Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (confinement -> NF-structure forcing), the two numbered claims, the display, and the closing empirical paragraph; cross-checked against the sibling data table. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1904,6 +2024,23 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.552Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Seven intensifiers in the four-sentence closing paragraph: 'consistently returned an exact zero duality gap', 'rigidly falls into the active set every time', 'bounded structurally', 'in all instances', 'conform strictly'. This is the de-hedged rewrite pattern, and it inflates a six-row bench into a universal.",
+        "notes": "proposed (structural, 4 sentences -- not applied): 'Across the six-compound bench (n = 3, 4) the duality gap was 0 in every case, the maximizer lay in the active set 6/6, and the observed deviation stayed within the compound-length scale.' -- i.e. report the bench as a bench."
       }
     ],
     "trap-nonspeakable": [
@@ -1923,6 +2060,23 @@
         "reviewed_at": "2026-08-15T10:31:00.686Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "88b692383443",
+          "ts": "5f21ca6f4ed9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.586Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'The deviation bounded structurally to small expected length scales in all instances.' has no finite verb, and 'The test outputs conform strictly to the continuous strong-duality theorem predictions.' invokes a 'continuous strong-duality theorem' that does not exist (LP/SDP strong duality is not 'continuous').",
+        "notes": "proposed: fold both into the single sentence proposed above."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1946,5 +2100,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:53.586Z"
 }

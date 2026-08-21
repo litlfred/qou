@@ -1964,6 +1964,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.136Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'cannot capture chirality' states an impossibility directly; no assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1983,6 +1998,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.174Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'Consequently, any S-symmetric ansatz ... necessarily lives in the 2-dimensional S-invariant subspace' is a derived corollary of the parity table, not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -2002,6 +2032,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.213Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2021,6 +2066,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.253Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Three functionals and three terms — the objects the proposition classifies."
       }
     ],
     "trap-closing-aphorism": [
@@ -2040,6 +2100,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.295Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "The closing sentence is the block's mathematical payload (a parity obstruction), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -2059,6 +2134,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.336Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No narration of emphasis; 'Term by term' is a structural cue."
       }
     ],
     "trap-thesis-restatement": [
@@ -2078,6 +2168,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.372Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'Exactly one of the three terms is S-anti-invariant' restates the display above it, but as the explicit premise of the 'Consequently' that follows — transitional, not a closer."
       }
     ],
     "trap-performed-warmth": [
@@ -2097,6 +2202,21 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.411Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2116,6 +2236,22 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.449Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'exactly', 'necessarily', 'regardless of the mixing parameter' are all precise and licensed by the parity argument.",
+        "notes": "SCOPE NOTE (AGENTS.md refuted/ruled-out rule): 'cannot capture chirality regardless of the mixing parameter' is a scope-(b) structural exclusion and it is correctly licensed — the invariant cited is the S-parity decomposition proved in the sibling proof, which is exactly what (b) requires. No re-scoping needed. VERIFIED: the three Wedderburn weights close, W_sym + W_alt + W_std = (2q^2 + (q^2+1)^2)/D = (q^4+4q^2+1)/D = 1."
       }
     ],
     "trap-nonspeakable": [
@@ -2135,6 +2271,22 @@
         "reviewed_at": "2026-08-15T10:31:00.769Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.489Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Statement prose is short; the parity bookkeeping is carried by the display.",
+        "notes": "Render note: the aligned environment is inside $$...$$, i.e. in math mode, so it satisfies render-math-mode-envelope."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2158,5 +2310,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:56:04.489Z"
 }

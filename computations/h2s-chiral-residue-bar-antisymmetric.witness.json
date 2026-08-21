@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:30.885087+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:48:47.912579+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "the +2.1° residual is odd-in-h (bar-anti-symmetric), bracketed by consecutive odd powers",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "source": "h·z³ (1.49°) < 2.1° < h·z² (2.99°); even (cosh, h²) candidates are the wrong parity for a chiral residue"
     }
   ],
-  "allPassed": true,
-  "durationMs": 6,
+  "allPassed": false,
+  "durationMs": 7,
   "computation": "h2s-chiral-residue-bar-antisymmetric",
   "scriptFile": "h2s_chiral_residue_bar_antisymmetric.py",
-  "scriptHash": "9b2ffd9d1805",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "c2d285d0abcb",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,27 +27,29 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Identifies the H₂S +2.1° residual as the bar-ANTI-symmetric (chiral / P_skew, odd-in-h) channel of the bar-involution. H₂O's two self-dual lone pairs (defects 0,0) are bar-symmetric ⇒ pure even ⇒ clean q² angle, zero skew residual; H₂S's inequivalent lones (self-dual 3s² + chiral 3p_z, defects 0,2) give the chiral pair a bar-anti-symmetric (odd-in-h) part that opens the pure-p 90°. Parity check: the residual is odd in h (scale h·z²≈3° / h·z³≈1.5°, observed 2.1° between) — right parity and scale, not a clean single power. Exact value = the S³-embedding curvature integral (chirality residue), still open; the clean result is the bar-symmetric/anti-symmetric identification.",
   "contentBlock": "prop:symmetric-block-domain-weight",
   "parameters": {
-    "q": 1.1099785955573347,
-    "z_bar_symmetric": 0.49932033403356124,
-    "h_bar_antisymmetric": 0.20906032199559366,
-    "h_half_bar_antisymmetric": 0.10438806981200355
+    "q": 1.1099785827513808,
+    "z_bar_symmetric": 0.6126880371464652,
+    "h_bar_antisymmetric": 0.20906029879563937,
+    "h_half_bar_antisymmetric": 0.10438805825918152
   },
   "data": {
     "observed_opening_deg": 2.1,
     "odd_candidates_deg": {
-      "h·z² (≈3°)": 2.9864328365601556,
-      "h·z³ (≈1.5°)": 1.4911866415200126,
-      "h_1/2·z": 2.986432836560151
+      "h·z² (≈3°)": 4.496483464211958,
+      "h·z³ (≈1.5°)": 2.754941627749563,
+      "h_1/2·z": 3.6644841907775794
     },
-    "residual_is_odd_in_h_between_powers": true,
+    "residual_is_odd_in_h_between_powers": false,
     "finding": "The H₂S +2.1° is the bar-ANTI-symmetric (chiral / P_skew) residue. H₂O's two self-dual lone pairs are bar-symmetric (defects 0,0) ⇒ the angle is pure even ⇒ clean q² (104.5°), zero skew. H₂S's lones are inequivalent (self-dual 3s² + chiral 3p_z, defects 0,2); the chiral pair carries the odd-in-h bar-anti-symmetric part the framework normally projects away (P_skew: sin/sinh/Φ_q), surfacing here as the +2° opening of the pure-p 90°. The owner's 'cosh' (even) and 'chiral S³ curvature' (odd) directions are the two halves of the bar-involution. Parity confirmed (residual odd in h, scale h·z²..h·z³, 2.1° between). Exact value = the chirality-residue S³ curvature integral — open; the identification is the clean result."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,11 +1,11 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T20:46:28.515234+00:00",
-  "commitSha": "f933ce228900e206c942f5e4448d5c5ffd35cc19",
+  "computedAt": "2026-08-19T21:22:09.776933+00:00",
+  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "binding-canonical",
   "scriptFile": "binding_canonical.py",
   "scriptHash": "55d683d8c551",
@@ -46,7 +46,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 11,
-        "wall_sec": 0.0032906532287597656,
+        "wall_sec": 0.003985881805419922,
         "atom": "D",
         "B_AME_MeV": 2.2245662,
         "delta_m_over_m_pct": 0.09534349036639378
@@ -65,7 +65,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "wall_sec": 0.015464305877685547,
+        "wall_sec": 0.01648092269897461,
         "atom": "T",
         "B_AME_MeV": 8.4817962,
         "delta_m_over_m_pct": 0.27663136632708873
@@ -84,7 +84,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "wall_sec": 0.011020183563232422,
+        "wall_sec": 0.01046609878540039,
         "atom": "3He",
         "B_AME_MeV": 7.71804132,
         "delta_m_over_m_pct": 0.24937645803342515
@@ -103,7 +103,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 77,
-        "wall_sec": 0.07047557830810547,
+        "wall_sec": 0.0681145191192627,
         "atom": "4He",
         "B_AME_MeV": 28.2956624,
         "delta_m_over_m_pct": 0.7305876064998875
@@ -122,7 +122,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 385,
-        "wall_sec": 1.1706373691558838,
+        "wall_sec": 1.1383426189422607,
         "atom": "6Li",
         "B_AME_MeV": 31.994526,
         "delta_m_over_m_pct": 0.5488065480301245
@@ -141,7 +141,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 792,
-        "wall_sec": 3.0308923721313477,
+        "wall_sec": 2.5705723762512207,
         "atom": "7Li",
         "B_AME_MeV": 39.244531,
         "delta_m_over_m_pct": 0.580679891839253
@@ -160,7 +160,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 792,
-        "wall_sec": 0.9169890880584717,
+        "wall_sec": 0.8561325073242188,
         "atom": "7Be",
         "B_AME_MeV": 37.60035,
         "delta_m_over_m_pct": 0.5530808692679208

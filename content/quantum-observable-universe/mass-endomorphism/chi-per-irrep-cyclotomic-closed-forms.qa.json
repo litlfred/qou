@@ -1519,6 +1519,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:32.817Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; no assert-by-denying constructions; contrasts present are substantive mathematical distinctions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1538,6 +1553,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:32.857Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; no setup-then-reframe pivot construction."
       }
     ],
     "trap-em-dash": [
@@ -1557,6 +1587,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 301 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:32.898Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; spaced-dash density low; uses are ranges or true parentheticals."
       }
     ],
     "trap-triples": [
@@ -1576,6 +1621,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 301 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:32.941Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; enumerations reflect underlying mathematical content, not reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1595,6 +1655,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:32.985Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; final line is substantive (statement, cross-reference, or open-item bookkeeping), not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1614,6 +1689,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:33.058Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; no self-narrated emphasis; 'note that' style uses are standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1633,6 +1723,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:33.111Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; no block-final restatement of already-established content."
       }
     ],
     "trap-performed-warmth": [
@@ -1652,6 +1757,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:33.182Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; institutional scholarly register throughout; no personal register."
       }
     ],
     "trap-superlative": [
@@ -1671,6 +1791,23 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:33.232Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "severity": "minor",
+        "evidence": "Section '## Literature pointers' contains no pointers — only 'The canonical values are rigorously evaluated via formal trace definitions', a vacuous intensified sentence ('rigorously') that answers a header it does not serve.",
+        "notes": "proposed: either supply actual literature pointers (Hoefsmit 1974, Dipper-James) or delete the section; deleting a whole section is structural, so flagged rather than edited."
       }
     ],
     "trap-nonspeakable": [
@@ -1690,6 +1827,21 @@
         "reviewed_at": "2026-08-15T10:31:01.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a15ee60c5ff1",
+          "ts": "3dfe32458e46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q16",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:49:33.290Z",
+        "reviewed_sha": "b038f72bacf67cf8eef2b8dded1fef2ddaf1276a",
+        "evidence": "Full-block read; sentences parse aloud; technical noun compounds are standard terminology."
       }
     ],
     "wall-base-ring-minimal": [

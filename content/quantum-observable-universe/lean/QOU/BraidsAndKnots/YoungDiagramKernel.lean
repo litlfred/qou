@@ -266,6 +266,35 @@ theorem m1_transpose_identity_scaled_of_le_five (k : ℕ) (hk : k ≤ 5) :
       = 2 * scaledCov k (fun l => (nLambda l : ℤ)) contentSq := by
   interval_cases k <;> decide
 
+/-- Sum of squared row lengths `Σ_i λ_i²` (a `List ℕ` power sum), cast to `ℤ`. -/
+def rowSqSum (l : List ℕ) : ℤ := (l.map (fun x => (x : ℤ) ^ 2)).sum
+
+/-- **Per-partition hook-square / content-square identity** `Σ_□ h(□)² = Σ_□ c(□)² + |λ|²`, verified
+for all `λ ⊢ k`, `k ≤ 8` (`decide`). Classical (`Σh² = Σc² + n²`); the exact reason `M₁` can be
+written against `contentSq` rather than `hookSqSum`: at fixed `n` the two differ by the `λ`-independent
+constant `n²`, so they have the same Plancherel covariance with any statistic. -/
+theorem hookSqSum_eq_contentSq_add_sq_card_of_le_eight (k : ℕ) (hk : k ≤ 8) :
+    ∀ l ∈ partsOf k, hookSqSum l = contentSq l + (l.sum : ℤ) ^ 2 := by
+  interval_cases k <;> decide
+
+/-- **`M₁` as a content-spread covariance and as a row-length covariance** (Lean-verified `k ≤ 5`,
+`decide`), the `(k!)²`-scaled chain
+`Cov(Σh, Σh²) = Cov(Σh, Σc²) = Cov(Σ_i λ_i², Σc²)`. The first equality is the constant-shift from
+`hookSqSum_eq_contentSq_add_sq_card_of_le_eight`; the second is today's antidiagonal reformulation
+(`docs/audits/2026-08-21-covariance-kernel-M1-antidiagonal-reformulation.md`): via
+`Σ_□ h = n_λ + n_{λ'} + n` and `Σ_i C(λ_i,2) = (Σ_i λ_i² − n)/2`, the first odd moment equals the
+covariance of the **squared row lengths** with the **squared contents**. Both `Σ_i λ_i²` and `Σ_□ c²`
+are second moments (of parts, of contents); `Σ_i λ_i² ∉` the shifted-symmetric algebra, which is why
+`M₁` is non-polynomial. This is verified computationally to `n ≤ 24`
+(`wlambda_covariance_epic_M1_antidiagonal_reformulation.py`,
+`wlambda_covariance_epic_A2_odd_moment_structure.py`); `decide` machine-checks it for `k ≤ 5`. -/
+theorem m1_eq_cov_rowSq_contentSq_of_le_five (k : ℕ) (hk : k ≤ 5) :
+    scaledCov k (fun l => (hookSum l : ℤ)) hookSqSum
+      = scaledCov k (fun l => (hookSum l : ℤ)) contentSq
+    ∧ scaledCov k (fun l => (hookSum l : ℤ)) hookSqSum
+      = scaledCov k rowSqSum contentSq := by
+  interval_cases k <;> exact ⟨by decide, by decide⟩
+
 /-! ## Even hook-power moment positivity (proved)
 
 The even hook-power moments of the covariance measure,

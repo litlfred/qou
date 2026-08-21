@@ -1928,6 +1928,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not because the identification stands.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.024Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "'retained because the corpus refers to it, not because the identification stands' and 'It is not the quantity this block was about' are factual scope statements in a withdrawal block (false-positive class: temporal/scope status)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1947,6 +1962,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.066Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no rhetorical pivot construction present."
       }
     ],
     "trap-em-dash": [
@@ -1966,6 +1996,22 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (6 in 532 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.109Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Two consecutive '— because' causal connectors used the spaced dash in place of plain syntax; remaining dashes are true parentheticals (kept).",
+        "notes": "fix applied: '$39$ — because the coefficient vanishes' -> '$39$, because...'; 'contradicted itself — because' -> 'contradicted itself because'"
       }
     ],
     "trap-triples": [
@@ -1985,6 +2031,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 532 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.155Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no compulsive triple construction present."
       }
     ],
     "trap-closing-aphorism": [
@@ -2004,6 +2065,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.196Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no closing aphorism construction present."
       }
     ],
     "trap-meta-commentary": [
@@ -2023,6 +2099,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.239Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no meta commentary construction present."
       }
     ],
     "trap-thesis-restatement": [
@@ -2042,6 +2133,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.284Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no thesis restatement construction present."
       }
     ],
     "trap-performed-warmth": [
@@ -2061,6 +2167,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.326Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no performed warmth construction present."
       }
     ],
     "trap-superlative": [
@@ -2080,6 +2201,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.366Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no superlative inflation construction present."
       }
     ],
     "trap-nonspeakable": [
@@ -2099,6 +2235,21 @@
         "reviewed_at": "2026-08-15T10:30:59.094Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2aeee1164e3b",
+          "ts": "633dae919834"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:33:09.408Z",
+        "reviewed_sha": "27d5b1cc8ff8adabb5571ed160d6f611d5656a64",
+        "evidence": "Read full block in context (kind definition); no nonspeakable syntax construction present."
       }
     ],
     "wall-base-ring-minimal": [

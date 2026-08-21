@@ -1226,6 +1226,22 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.638Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'without phenomenological tuning' is the corpus's substantive no-free-parameter provenance claim, not manufactured contrast; 'while two-body inter-cluster bonds revert to the single-chirality density' is a real case distinction.",
+        "notes": "Note: 'without phenomenological tuning' sits in the same sentence flagged under trap-closing-aphorism."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1245,6 +1261,21 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.674Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1264,6 +1295,21 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 186 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.714Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1283,6 +1329,21 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 186 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.750Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'the symmetric particle channel, the standard propagator channel, and the alternating antiparticle channel' are the three Wedderburn blocks at n=3 — substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1302,6 +1363,23 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.787Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "major",
+        "evidence": "Block-final 'This categorical structure derives the {m_e, 2m_e} threshold directly from the Frobenius pairing without phenomenological tuning.' — a quotable derivation-and-no-tuning closer that adds nothing to the case formula above it, and that sits under a **Superseded** banner declaring the very density it claims to derive 'the structurally-wrong leading-order ansatz'.",
+        "notes": "PROPOSED (structural, not applied — the no-tuning claim is provenance the author may want kept, and the supersession makes the wording a scope question): drop the sentence, or re-scope to 'The {m_e, 2m_e} threshold follows from block activation alone; no parameter is fitted.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1321,6 +1399,22 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.823Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No narration of emphasis.",
+        "notes": "AUTHORNOTES FLAG (AGENTS.md 4d): the opening blockquote '**Superseded.** The scalar substrate density rho_q = 1/hbar_q^2 used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it' is a status banner in prose and belongs in authorNotes kind 'deprecated' with see: mass-endomorphism-tower."
       }
     ],
     "trap-thesis-restatement": [
@@ -1340,6 +1434,23 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.859Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "major",
+        "evidence": "'This categorical structure derives the {m_e, 2m_e} threshold directly from the Frobenius pairing' restates the displayed case formula and the sentence 'Populating the alt block mandates its antiparticle partner by CPT symmetry, doubling the density' — third statement of the same fact.",
+        "notes": "Same sentence as trap-closing-aphorism; one deletion clears both."
       }
     ],
     "trap-performed-warmth": [
@@ -1359,6 +1470,21 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.896Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1378,6 +1504,22 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.932Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'saturate all blocks internally' and 'directly' are mild and locally scoped.",
+        "notes": "VERIFIED: rho_q = 1/hbar_q^2 with hbar_q = 1 - 1/q_0 gives 101.8622 at the proton pin (101.8622 at the muon pin too — the two differ only at the 7th digit), so 'approx 102' is right."
       }
     ],
     "trap-nonspeakable": [
@@ -1397,6 +1539,23 @@
         "reviewed_at": "2026-08-15T10:31:00.391Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9cf52ed4e0c4",
+          "ts": "eb2937897bd1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:31.969Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "minor",
+        "evidence": "'Mass computes as the geometric volume scaled by the discrete fractional volume occupied within the Wedderburn module.' — 'Mass computes as' is not English (the verb has lost its passive), and the sentence then stacks volume-scaled-by-volume-occupied-within-module with no breath. Reads as compression damage rather than authored prose.",
+        "notes": "PROPOSED: 'Mass is computed as the geometric volume, scaled by the fraction of the Wedderburn module the state occupies.' Not applied: 'discrete fractional volume occupied within the Wedderburn module' may name a defined quantity, so the rewrite needs the author."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1419,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:53:31.969Z"
 }

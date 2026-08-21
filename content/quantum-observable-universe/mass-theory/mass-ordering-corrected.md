@@ -1,7 +1,7 @@
 With the corrected Markov trace
 $\mathrm{tr}_M(e^-) = z^3$
 ([corrected trace](#prop:corrected-markov-trace)),
-the nucleon traces at $q_0 = 1.109978595554181\ldots$ (50 dps) are:
+the nucleon traces at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) are:
 
 $$
   \mathrm{tr}_M(\mathfrak{p}) \approx -0.012,

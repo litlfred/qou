@@ -1,12 +1,12 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-09T00:37:38.067409+00:00",
-  "commitSha": "74074440e60b2e843d7494aceb29387d5d6ce029",
+  "computedAt": "2026-08-21T15:07:24.217358+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [
     {
       "name": "algebraic_q0_matches_transfer",
-      "computed": 6.878686792388677e-08,
+      "computed": 7.915112243406242e-08,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-07,
@@ -14,7 +14,7 @@
     },
     {
       "name": "symbolic_delta_matches_li2q",
-      "computed": 1.3381598174490219e-06,
+      "computed": 1.338158965458235e-06,
       "expected": 0.0,
       "passed": false,
       "tolerance": 1e-12,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 65,
+  "durationMs": 18,
   "computation": "tr-m-algebraic-q",
   "scriptFile": "tr_m_algebraic_q.py",
   "scriptHash": "9b97a61e6486",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,13 +38,12 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Algebraic q-parameterized Markov trace tr_M(q) ∈ ℚ(q): the atom braid word with the colour split flavor_split_leading(q) kept SYMBOLIC (vs the production q₀-baked float), so the trace is a clean Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the canonical transfer value tr_m_atom_zn(Z,N) to ~1e-8 for D/T(/³He) (float64-eval floor of the exact form).",
   "parameters": {
-    "q0": 1.1099785955573347
+    "q0": 1.1099785827513808
   },
   "data": {
     "rows": [
@@ -52,26 +51,26 @@
         "atom": "D",
         "Z": 1,
         "N": 1,
-        "tr_atom_q0_algebraic": 0.3883572575106489,
-        "tr_atom_transfer": 0.388357188723781,
-        "tr_free_q0_algebraic": 0.9835261819554807,
-        "tr_free_transfer": 0.9835261819554805,
-        "abs_diff_atom": 6.878686792388677e-08,
-        "abs_diff_free": 2.220446049250313e-16
+        "tr_atom_q0_algebraic": 0.5751723230688943,
+        "tr_atom_transfer": 0.5751722439177719,
+        "tr_free_q0_algebraic": 1.1317169043222113,
+        "tr_free_transfer": 1.1317169043222102,
+        "abs_diff_atom": 7.915112243406242e-08,
+        "abs_diff_free": 1.1102230246251565e-15
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
-        "tr_atom_q0_algebraic": 0.10407108773544438,
-        "tr_atom_transfer": 0.10407106930208715,
-        "tr_free_q0_algebraic": 0.9080241198356674,
-        "tr_free_transfer": 0.9080241198356671,
-        "abs_diff_atom": 1.8433357229508118e-08,
-        "abs_diff_free": 3.3306690738754696e-16
+        "tr_atom_q0_algebraic": 0.22931013366061537,
+        "tr_atom_transfer": 0.22931010210455652,
+        "tr_free_q0_algebraic": 1.1178462289782276,
+        "tr_free_transfer": 1.1178462289782265,
+        "abs_diff_atom": 3.155605884930246e-08,
+        "abs_diff_free": 1.1102230246251565e-15
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
