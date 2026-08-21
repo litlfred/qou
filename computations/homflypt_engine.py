@@ -280,10 +280,25 @@ def homflypt_2strand(braid_word: list[int]) -> LaurentPoly2:
        The `# Wait, let me use the correct Lickorish convention.` note left in
        the k=3 branch suggests it was noticed and not finished.
 
+       **Lean-validated** (`QOU/Knot/HomflySkeinReference.lean`, sorry-free):
+       the table entries are the reference evaluated at the HOMFLY mirror
+       `(v, z) -> (v^-1, -z)`. So the polynomials are not wrong -- these are
+       the LEFT trefoil and the NEGATIVE Hopf link, carrying the labels
+       "Right-hand trefoil" and "Hopf link (positive)". The defect is the
+       label and the crossing-sign convention, not the algebra.
+
+       Careful with the `z` sign: it is NOT plain `v -> v^-1`. That agrees at
+       k=3 only because `z` occurs there as `z^2`; at k=2 the reference's
+       `+vz` must become `-v^-1 z`. Both facts are proved
+       (`plain_inversion_ne_mirror`, `plain_inversion_eq_mirror_at_three`) so
+       the coincidence is not mistaken for a rule.
+
        NOT resolved here: which sign is intended is a convention call for this
        module's owner, and this repo has a costly history of convention
-       flip-flops. Recorded rather than flipped. Note that a `v`-spread is
-       mirror-invariant, so an MFW reading is unaffected either way.
+       flip-flops. Recorded rather than flipped -- but the Lean gives the exact
+       substitution, so applying it here and in `_self_test` is mechanical.
+       Note that a `v`-spread is mirror-invariant, so an MFW reading is
+       unaffected either way.
 
        Also note this is a hardcoded lookup table over `k = sum(signs)`, not
        the formula the docstring above states, and it raises for `|k| > 3`.

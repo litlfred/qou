@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:14:35Z
-updated_at: 2026-08-21T21:15:18Z
+updated_at: 2026-08-21T21:21:41Z
 ---
 
 ## The discrepancy (measured 2026-08-21, found while deriving braid index 6_1)
@@ -75,3 +75,48 @@ Which v-convention is intended for the symbolic path. If it is the reference's
 (the textbook one), homflypt_2strand's table and _self_test's expected values
 both need the mirror applied, and the module docstring's 'v = a^-1' note should
 say which of the two it means.
+
+
+## 2026-08-21 — LEAN-VALIDATED. It is a mirror, and the z-sign is the point.
+
+QOU/Knot/HomflySkeinReference.lean (sorry-free, axiom-clean, generic Field
+per §7c) formalises the reference recurrence and proves:
+
+    engine_k2_is_mirror   v^-3/z - v^-1/z - v^-1 z  =  skein(v^-1, -z) 2
+    engine_k3_is_mirror   -v^-4 + 2v^-2 + v^-2 z^2  =  skein(v^-1, -z) 3
+
+So homflypt_2strand is NOT wrong about the polynomial. It computes the LEFT
+trefoil and the NEGATIVE Hopf link while LABELLING them 'Right-hand trefoil'
+and 'Hopf link (positive)'. The defect is the label + the crossing-sign
+convention, not the algebra.
+
+### Correction to this bean's own earlier text
+
+I wrote that the two differ by 'exactly v -> v^-1'. That is WRONG in general.
+The HOMFLY mirror is (v, z) -> (v^-1, -z). It looks like plain v-inversion at
+k=3 only because z occurs there as z^2; at k=2 the reference's +vz must become
+-v^-1 z, and plain inversion gives the wrong sign.
+
+Proved both ways, so the accident is on the record beside the refutation:
+
+    plain_inversion_ne_mirror            skein(1/2, 1) 2 != skein(1/2, -1) 2
+    plain_inversion_eq_mirror_at_three   skein(1/2, 1) 3  = skein(1/2, -1) 3
+
+Independently confirmed against the actual Python table at v=2, z=1:
+k=2 engine = mirror = -7/8, naive = +7/8 (DIFFER); k=3 all three = 11/16.
+
+### Scope
+
+NOT proved: anything geometric. That a crossing switch on sigma_1^k gives
+sigma_1^(k-2) and a smoothing gives sigma_1^(k-1), that closure(sigma_1^0) is
+the 2-unlink and closure(sigma_1^1) the unknot, and that HOMFLY exists and is
+an isotopy invariant, are all BUILT INTO the definition of skein. What is
+proved is the algebra downstream of the skein relation -- exactly the layer
+the two computations/ files disagree on.
+
+### Decision still needed (unchanged, but now cheap)
+
+Which crossing-sign convention the symbolic path should use. If the
+reference's, then homflypt_2strand's table and _self_test's expected values
+both need (v,z) -> (v^-1,-z) applied, and the k=2/k=3 comments relabelled.
+The Lean gives the exact substitution to apply, so the edit is mechanical.
