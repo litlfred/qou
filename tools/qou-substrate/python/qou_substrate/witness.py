@@ -27,6 +27,8 @@ folio-assistant/schemas/types.ts.
 import hashlib
 import json
 import os
+import re as _re
+import warnings as _warnings
 import subprocess
 import sys
 import time
@@ -1154,7 +1156,54 @@ class WitnessBuilder:
             elif key == "auditOnly" and isinstance(value, str):
                 builder.set_audit_only(value)
             elif key == "computation":
-                # Filename already encodes this; skip to avoid duplicate
+                # ADOPT a value that is not simply the name; skip only the
+                # redundant case.
+                #
+                # `build()` sets `computation = self.name`, so a payload
+                # `computation` key does not survive: the key remains and its
+                # VALUE is replaced. A key-set diff therefore shows NO loss,
+                # which is what made this invisible.
+                #
+                # The old rationale — "filename already encodes this" — holds
+                # when the value IS the name, and measured on main that is the
+                # overwhelming case: of 188 payload `computation` keys, 146 are
+                # the witness name and 32 the script stem or path, all of which
+                # the clobber reproduces or normalises. Skipping those is right
+                # and is preserved below.
+                #
+                # It does NOT hold when the producer put something else there.
+                # Seven producers pass a structured dict — `engine`, `dps`,
+                # `script`, `reads`, and in one case `C_n_eps`, a computed
+                # constant. Checking the committed witnesses, `dps` and
+                # `script` survive under other fields, but `C_n_eps`
+                # (dilog-archimedean-limit-partA) and `reads`
+                # (lever1-binding-core-characterization,
+                # lever1-binding-core-root-distribution) appear NOWHERE in the
+                # emitted witness. `reads` is upstream-dependency provenance,
+                # so its loss is load-bearing for staleness tracking.
+                #
+                # Adopting rather than raising mirrors the `assertions` fix
+                # directly above (bean qou-l5zi) and breaks no producer: every
+                # name-valued case still takes the `continue`.
+                _norm = lambda t: _re.sub(r"[^a-z0-9]", "", str(t).lower())
+                if isinstance(value, str) and (
+                        _norm(value) == _norm(name)
+                        or _norm(value) == _norm(Path(str(script_path)).stem)
+                        or value.endswith(".py")):
+                    continue
+                # Anything else carries content the name cannot. Preserve it
+                # under a key `build()` does not overwrite, and say so, so a
+                # producer writing a fresh payload learns at once rather than
+                # discovering it in a diff.
+                builder._extra_top_level.setdefault("computationDetail", value)
+                _warnings.warn(
+                    f"wrap_legacy({name!r}): the payload's `computation` value "
+                    "is not the witness name, and `build()` overwrites that "
+                    "field with the name. It has been preserved as "
+                    "`computationDetail`. Write it under your own key to "
+                    "silence this.",
+                    UserWarning, stacklevel=3,
+                )
                 continue
             elif key == "assertions" and isinstance(value, list):
                 # ADOPT, do not skip. `assertions` and `allPassed` are in
