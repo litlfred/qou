@@ -68,3 +68,30 @@ The producer stays failed in the sweep journal with this reason recorded,
 rather than being silently skipped or blind-fixed. Its witness is therefore
 NOT regenerated at the proton pin and remains muon-valued — worth knowing
 before anyone reads it.
+
+## MEASURED (2026-08-21): the deciding question has one answer, and it is "yes"
+
+The bean above framed this as a two-branch decision — safe if the LP active
+set `A` misses the radical, a real decision if it meets it. **Measured, the
+first branch does not exist.**
+
+    radical      [1.0, -0.900918, -0.900918, 0.811654, 0.811654, -0.731234]
+    nonzero      indices 0,1,2,3,4,5
+    support      6/6 — FULL
+
+The radical is the sign representation and it has **full support** in the NF
+basis. Every coordinate direction carries a nonzero component of it, so *no*
+nonempty active set `A` is disjoint from the radical. The escape hatch is
+closed for every possible `A`, not merely for the one this producer happens
+to select.
+
+So the substitution `gram_inverse` → `gram_quotient_inverse` is **never**
+trivially safe here, and swapping the key would have produced numbers on
+every input rather than only on unlucky ones. That is the argument for having
+left it alone.
+
+What the consumer needs is a decision about what `G^{-1}|_{A*}` should mean
+when `G` is singular in a direction that meets every coordinate — quotient
+inverse, pseudo-inverse, or a restriction that excises the sign
+representation first. That is a question for `qou-m7py`, and it now has a
+measurement attached instead of a conditional.
