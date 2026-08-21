@@ -352,12 +352,39 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
 _Y_LAMBDA_CACHE: dict[tuple[str, int, int], dict] = {}
 
 
-def _load_y_lambda(n: int, path: Path | None = None) -> dict:
+def _load_y_lambda(n: int, path: Path | None = None,
+                   q_str: str | None = None) -> dict:
     """Load y_λ table for H_n from the mpfr witness.
 
-    Returns dict: tuple(partition) -> mpf(y_lambda).
+    Selection order: an explicit `path` always wins; otherwise the table is
+    chosen from `q_str`'s own anchor; otherwise `_Y_LAMBDA_DEFAULT`.
+
+    Deriving from `q_str` is the point. The comment on `_Y_LAMBDA_DEFAULT`
+    above records that the bridge "accepts q_str and then ignored it when
+    choosing weights, so a proton-q₀ caller got muon-pinned y_λ with nothing
+    in the output saying so". Repointing the default at the proton table fixed
+    the majority case and left the MIRROR of it live: a muon-q₀ caller now
+    gets proton-pinned y_λ, just as silently.
+
+    That bit a real two-pin comparison producer. `atomic_tr_m_mpfr_50dps`
+    emits a muon leg and a proton leg and cross-checks each against this
+    bridge; its muon leg regenerated to tr_M 1.14575978… -> 1.14575982…
+    (~40.7 ppb) while `abs_diff_vs_bridge` degraded ~1e-9 -> ~5e-8. The
+    SECOND number is the diagnostic: a pin change moves both of a producer's
+    methods together and leaves their agreement intact, so a fiftyfold
+    blow-up in the INTERNAL cross-check is a straddle, not a re-pin. (Bean
+    `qou-ibbr`.)
+
+    A default keyed on the caller's own q₀ cannot straddle in either
+    direction, and needs no call-site change to fix consumers that never knew
+    to pass a path.
     """
-    p = Path(path) if path else _Y_LAMBDA_DEFAULT
+    if path is not None:
+        p = Path(path)
+    else:
+        anchor = anchor_of_q0(q_str) if q_str is not None else None
+        # Unrecognised q₀ keeps the previous default rather than guessing.
+        p = _Y_LAMBDA_BY_ANCHOR.get(anchor, _Y_LAMBDA_DEFAULT)
     key = (str(p), n, mp.mp.dps)
     cached = _Y_LAMBDA_CACHE.get(key)
     if cached is not None:
@@ -399,7 +426,7 @@ def tr_M_via_wenzl_bridge_mpfr(
     """
     with mp.workdps(dps):
         q = mp.mpf(q_str)
-        y_table = _load_y_lambda(n, y_lambda_path)
+        y_table = _load_y_lambda(n, y_lambda_path, q_str=q_str)
 
         # n_gens needed in any partition's representation = max generator
         # index in the word + 1 (because g is 0-indexed for σ_{g+1}).
