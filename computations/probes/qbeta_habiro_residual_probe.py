@@ -90,16 +90,78 @@ def q_beta_single_wrap(q: mp.mpf, m_e: mp.mpf) -> mp.mpf:
     return m_e * abs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
 
 
+#: Straddle tolerance. Must sit BELOW the mu-p separation (1.15e-8), not
+#: above it: the first version of this guard used 1.2e-8 and so could not fire
+#: on the one straddle it exists to catch -- it passed a synthetic
+#: proton-value-under-a-muon-label with room to spare. A threshold set at the
+#: size of the thing being detected detects nothing.
+#:
+#: 1e-10 is two orders below the separation and well above the ~1e-50 noise of
+#: a 50-dps decimal string, so it fires on a layer swap and not on a re-serialisation.
+_STRADDLE_TOL = 1e-10
+
+
+def _assert_anchor_matches_value(qpin: dict) -> None:
+    """Fail loudly if the pin witness's stated anchor and emitted value differ.
+
+    The q-pinning witness uses "anchor" for three different jobs -- the layer
+    it reports at (`q0Anchor`), the derivation route (`calibration_inputs`),
+    and the uncertainty budget (`physical_anchoring_bound`) -- and a consumer
+    that greps for one and computes with another straddles the layers with no
+    signal at all. That is how this probe came to announce proton and compute
+    at muon.
+
+    So: compare the LAYER field against the emitted number and refuse to
+    proceed when they disagree. Checked against `q0Anchor`, deliberately, not
+    against `calibration_inputs.anchor` -- the route field is allowed to name
+    m_p/m_e while the ideal_muon override emits the muon literal, and keying
+    on it would make this guard fire on the correct configuration.
+    """
+    from qou_substrate.witness import _q0_value_for_anchor
+
+    layer = qpin.get("q0Anchor")
+    if not layer:
+        return  # nothing claimed, nothing to contradict
+    emitted = mp.mpf(qpin["derived_50_digit"]["q"])
+    expected = mp.mpf(str(_q0_value_for_anchor(layer)))
+    if expected == 0:
+        return
+    rel = abs(emitted - expected) / expected
+    if rel > _STRADDLE_TOL:
+        raise SystemExit(
+            f"ANCHOR STRADDLE in q-pinning-50-digit.witness.json: "
+            f"q0Anchor says {layer!r} but derived_50_digit.q is "
+            f"{float(rel):.3e} away from the {layer} pin. Computing here would "
+            f"produce a number belonging to neither layer. See bean qou-m9xp."
+        )
+
+
 def main() -> int:
     m_e = mp.mpf(str(M_E_MEV))
     sig_me_rel = mp.mpf(str(M_E_MEV_ERR)) / m_e
     Q_codata = mp.mpf(str(Q_BETA_MEV))
     sig_exp_rel = mp.mpf(str(Q_BETA_MEV_ERR)) / Q_codata
 
-    # --- 1. CANONICAL q₀ (live, proton-pinned) -------------------------
+    # --- 1. CANONICAL q₀ -----------------------------------------------
+    #
+    # This comment used to say "(live, proton-pinned)". It was WRONG, and the
+    # field read two lines down is why the error was invisible:
+    # `calibration_inputs.anchor` is `"m_p/m_e"` (the derivation ROUTE) while
+    # `derived_50_digit.q` is the MUON value -- q-pinning-50-digit is listed
+    # ideal_muon, so its Newton solve never runs. So the probe announced one
+    # anchor and computed at another, 11.54 ppb apart.
+    #
+    # Measured cost: the probe quotes `sigma_CAL_q0_ppb = 0.0074`, so the
+    # straddle is ~1558x its own stated q0 budget, and it exceeds
+    # `target_100x_ppb = 7.8` outright. It does NOT move the headline
+    # (residual_N2 = 1248 ppb vs a 7.8 ppb target is a ~160x miss either
+    # way) -- but AGENTS.md is explicit that straddling is a defect
+    # regardless of size, and an error budget that does not cover the error
+    # is not a budget.
     qpin = record_upstream(COMP / "q-pinning-50-digit.witness.json", _UPSTREAM_RECORDS)
     q0 = mp.mpf(qpin["derived_50_digit"]["q"])
     anchor = qpin["calibration_inputs"]["anchor"]
+    _assert_anchor_matches_value(qpin)
     sig_q0_rel = mp.mpf(qpin["physical_anchoring_bound"]["codata_relative_uncertainty"])
 
     # --- production ladder residuals (Q_A / Q_N1 / Q_N2) ---------------

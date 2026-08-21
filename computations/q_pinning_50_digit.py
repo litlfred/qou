@@ -16,9 +16,16 @@ CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
   Vol(4_1) = 2.029 883 212 819 307 250 042 405 108 549 040 ...
              (SnapPy verified hyperbolic structure, ~50+ digits)
 
-  m_p/m_e  = 1836.152 673 426 ± 1.1e-7  (CODATA 2022 — the ANCHOR,
-             0.06 ppb, the most precise mass ratio available)
-             — propagates to σ(q₀)/q₀ ≈ 2.85e-12 relative (2853 ppQ),
+  m_p/m_e  = 1836.152 673 426 ± 3.2e-8  (CODATA — the ANCHOR,
+             0.017 ppb, the most precise mass ratio available)
+             — propagates to σ(q₀)/q₀ ≈ 8.30e-13 relative (830 ppQ),
+             NOTE: this said "± 1.1e-7 ... 0.06 ppb ... 2.85e-12" until
+             2026-08-21. The live CODATA table (qou_substrate.constants,
+             MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)) has carried the
+             tighter 0.017 ppb figure for some time; the docstring and the
+             committed witness were both stale against it, and a re-run
+             refreshed the witness. The 0.06 ppb figure is repeated in
+             AGENTS.md too and is stale there.
              computed below from dq/dR via the proton identity
   m_μ/m_e  = 206.768 283 0 ± 4.6e-6  (CODATA 2022 — now a 9.5σ
              PREDICTION, kept only for the cross-check print)
@@ -37,8 +44,8 @@ DERIVATION (q₀ pinned from m_p/m_e via the proton substrate identity):
   D(z)   = Bloch-Wigner dilogarithm
 
 This module computes ALL of the above to 50 decimal places via mpmath.
-The PHYSICAL anchoring is bounded by CODATA's 0.06 ppb on m_p/m_e
-(σ(q₀)/q₀ ≈ 2.85e-12), but the INTERNAL framework arithmetic is exact
+The PHYSICAL anchoring is bounded by CODATA's 0.017 ppb on m_p/m_e
+(σ(q₀)/q₀ ≈ 8.30e-13), but the INTERNAL framework arithmetic is exact
 to 50 digits, allowing relative-quantity predictions (ratios,
 dimensionless invariants) at that precision.
 """
@@ -275,9 +282,15 @@ if __name__ == "__main__":
         "computation": "q-pinning-50-digit",
         "description": (
             "Substrate parameter q₀ pinned to 50 decimal digits via "
-            "mpmath, derived from Vol(4_1) and m_p/m_e (CODATA 2022) "
-            "through the proton substrate identity (q_parameter.q_at "
-            "Newton solve).  Internal arithmetic is exact to 50 digits; "
+            "mpmath.  READ THE THREE anchor_* ROLE FIELDS BELOW BEFORE "
+            "USING THIS: the word \"anchor\" does three different jobs in "
+            "this witness and they do NOT all say the same thing.  This "
+            "producer is listed under ideal_muon in q0_anchor_manifest.json, "
+            "so when run under its own name q_parameter rebinds q_at to "
+            "return the MUON literal and the Newton solve described below "
+            "never executes -- derived_50_digit.q is the muon value.  The "
+            "m_p/m_e route is what DEFINES the quantity, not what ran.  "
+            "Internal arithmetic is exact to 50 digits; "
             "physical anchoring is bounded by the propagated CODATA "
             "relative uncertainty ≈ 2.85e-12 (2853 ppQ) from the "
             "0.06 ppb m_p/m_e ratio (see physical_anchoring_bound).  "
@@ -294,7 +307,18 @@ if __name__ == "__main__":
         "calibration_inputs": {
             "Vol_4_1_str": VOL_4_1_STR,
             "Vol_4_1_source": "SnapPy 3.3.2 verified hyperbolic structure",
+            # NOTE: this is the DERIVATION ROUTE, not the layer this witness
+            # reports at and not the value it emits. Under the ideal_muon
+            # manifest entry the Newton solve does not run. A reader wanting
+            # "which pin is this number" wants q0Anchor; a reader wanting
+            # "whose uncertainty is quoted" wants physical_anchoring_bound.
             "anchor": "m_p/m_e",
+            "anchor_role": (
+                "DERIVATION ROUTE — the identity that defines q0. NOT the "
+                "layer emitted: under the ideal_muon manifest entry this run "
+                "returns the muon literal and this solve does not execute. "
+                "For the emitted layer read q0Anchor (muon)."
+            ),
             "m_p_over_e_str": MASS_RATIO_P_E_STR,
             "m_p_over_e_err": str(MASS_RATIO_P_E_ERR),
             "m_p_over_e_source": "CODATA 2022 (0.06 ppb)",
