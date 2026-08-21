@@ -48,51 +48,6 @@ for p in (str(HERE), str(REPO / "tools" / "qou-substrate" / "python")):
         sys.path.insert(0, p)
 
 from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
-from q0_migration_tolerance_triage import (  # noqa: E402
-    carries_the_anchor,
-    is_discrete,
-    slack_of,
-    ANCHOR_IMPACT,
-    AT_RISK,
-)
-
-#: Producers DECLARED to run at the ideal (muon) anchor, from
-#: `computations/q0_anchor_manifest.json`. These are not unmigrated leftovers
-#: -- they are the canonical 3-CAL layer, where CAL-2 is 𝔇_β with proxy
-#: m_mu/m_e, so muon is correct there BY DEFINITION. Sweeping one does not
-#: migrate a stale witness; it moves a canonical-chain artifact off the layer
-#: it is declared to live on.
-#:
-#: The μ-p tension (11.54 ppb; 9.5 sigma on m_mu) is only measurable because
-#: both pins exist. Collapsing the ideal layer into the experimental one does
-#: not tidy the corpus, it deletes the comparison.
-#:
-#: Measured 2026-08-19: of 576 muon-anchored witnesses, 219 come from a
-#: declared ideal_muon producer and 357 do not. The 357 are the migration.
-def _declared_ideal_muon() -> set[str]:
-    try:
-        man = json.loads((REPO / "computations" / "q0_anchor_manifest.json").read_text())
-    except Exception:
-        return set()
-    return set(man.get("ideal_muon") or [])
-
-
-#: Producers that must NEVER be swept, with the reason.
-#:
-#: `q_pinning_50_digit` writes `q-pinning-50-digit.witness.json`, which is not
-#: a datum -- it is what `qou_substrate.witness._q0_value_for_anchor` reads as
-#: THE DEFINITION of the muon pin. Regenerating it at the proton pin therefore
-#: does not migrate a witness, it deletes the muon anchor: both anchors then
-#: resolve to the same value and every muon-anchored witness reports a flip.
-#:
-#: That is not hypothetical. It happened -- commit 9a9c6b31c ("first 25
-#: witnesses regenerated at the proton pin") produced 262 Q0_FLIPs and had to
-#: be reverted by 2e4745448d. Beans `qou-m9xp`, `qou-cezp`, `qou-1c4y`.
-NEVER_SWEEP = {
-    "q_pinning_50_digit.py":
-        "defines the muon pin that _q0_value_for_anchor reads; sweeping it "
-        "deletes the anchor (262 Q0_FLIPs, 9a9c6b31c -> reverted 2e4745448d)",
-}
 
 NDIGITS = 12
 CUR = Q_50_DIGIT_STR[: NDIGITS + 2]
@@ -107,35 +62,6 @@ except Exception:  # pragma: no cover
                       "-compliance.witness.json")
 WGLOB = "computations/*.witness.json"
 BRANCH = "claude/q0-repin-regen-batch-2026-05-30"
-
-
-def at_risk_count(witness_relpaths: list[str]) -> int:
-    """Assertions in these witnesses whose margin cannot absorb the anchor move.
-
-    Reuses `q0_migration_tolerance_triage` rather than re-deriving the test --
-    that module already separates the three classes that LOOK like zero margin
-    and are not (counts, threshold semantics, real-valued exacts). Wiring it in
-    here is the point: the triage merged on 2026-08-15 and, measured four days
-    later, was referenced by nothing but its own test. A triage nothing calls
-    does not order anything.
-    """
-    n = 0
-    for rel in witness_relpaths:
-        try:
-            doc = json.loads((REPO / rel).read_text())
-        except Exception:
-            continue
-        if not isinstance(doc, dict):
-            continue
-        for a in doc.get("assertions") or []:
-            if not isinstance(a, dict) or is_discrete(a) or a.get("passed") is False:
-                continue
-            sl = slack_of(a)
-            if sl is None or sl < 0:
-                continue
-            if carries_the_anchor(a) or sl < AT_RISK * ANCHOR_IMPACT:
-                n += 1
-    return n
 
 
 def stale_q0(raw: str) -> bool:
@@ -175,6 +101,28 @@ def push_with_retry(log) -> bool:
     return False
 
 
+SUPERSEDED_BY = "computations/q0_repin_sweep.py"
+
+#: This driver is SUPERSEDED and refuses to run.
+#:
+#: `q0_repin_sweep.py` is the live q0 re-pin driver. It has three things this
+#: one does not, and each is load-bearing:
+#:
+#:   * `ANCHOR_DEFINING` / `ANCHOR_DEFINITIONS` — refuses to regenerate
+#:     `q-pinning-50-digit.witness.json`, which is not a datum but the
+#:     DEFINITION of the muon pin. Regenerating it at proton does not migrate
+#:     a witness, it deletes an anchor: 262 Q0_FLIPs (9a9c6b31c, reverted by
+#:     2e4745448d). THIS driver has no such guard and would do it again.
+#:   * `topo_order()` — producers read each other's witnesses, so alphabetical
+#:     order re-emits stale upstream values into freshly-run downstreams.
+#:     This driver sorts by yield (`-len`), which has the same defect.
+#:   * a progress journal, so an interrupted long run resumes.
+#:
+#: Kept rather than deleted because six files still reference it and the
+#: history is worth reading; made to refuse because a superseded driver that
+#: still runs is a loaded gun. Beans `qou-1c4y`, `qou-m9xp`, `qou-cezp`.
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true", help="list producers, no run")
@@ -183,17 +131,24 @@ def main() -> int:
     ap.add_argument("--no-push", action="store_true", help="commit but don't push")
     ap.add_argument("--skip", default="", help="comma-separated producer "
                     "scriptFiles to defer (e.g. slow heavy-atom producers)")
-    ap.add_argument("--include-declared-ideal", action="store_true",
-                    help="also sweep producers DECLARED ideal_muon in "
-                         "q0_anchor_manifest.json (default: exclude — they "
-                         "are on their correct layer by declaration; "
-                         "re-declaring one is an owner call)")
-    ap.add_argument("--include-at-risk", action="store_true",
-                    help="also sweep producers whose witnesses carry "
-                         "assertions too tight to absorb the ~1e-7 anchor "
-                         "move (default: defer them, listed at the end)")
     ap.add_argument("--logfile", default="/tmp/q0_regen.log")
     args = ap.parse_args()
+
+    print(
+        f"REFUSING TO RUN: this driver is superseded by {SUPERSEDED_BY}.\n"
+        "\n"
+        "It has no ANCHOR_DEFINING guard, so it would regenerate\n"
+        "q-pinning-50-digit.witness.json -- the DEFINITION of the muon pin,\n"
+        "not a datum. That produced 262 Q0_FLIPs on main once already\n"
+        "(9a9c6b31c, reverted by 2e4745448d). It also orders producers by\n"
+        "yield rather than topologically, so it re-emits stale upstream\n"
+        "values into freshly-run downstreams.\n"
+        "\n"
+        f"Use: python3 -u {SUPERSEDED_BY} --dry-run\n",
+        file=sys.stderr,
+    )
+    return 2
+
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
 
     logf = open(args.logfile, "a", buffering=1)
@@ -211,45 +166,9 @@ def main() -> int:
                        key=lambda s: (-len(by_script[s]), s))
     no_script = by_script.get("<no-scriptFile>", [])
 
-    # Never-sweep list: these are DEFINITIONS, not data. See NEVER_SWEEP.
-    blocked = [s for s in producers if Path(s).name in NEVER_SWEEP]
-    producers = [s for s in producers if Path(s).name not in NEVER_SWEEP]
-
-    # Manifest gate. Declared ideal-layer producers are on their correct
-    # anchor already; the migration targets the UNDECLARED remainder.
-    ideal = _declared_ideal_muon()
-    declared = [s for s in producers if Path(s).stem in ideal]
-    if not args.include_declared_ideal:
-        producers = [s for s in producers if Path(s).stem not in ideal]
-
-    # Risk gate. A producer whose witnesses carry assertions with no margin
-    # left is deferred by default rather than swept blind: those failures are
-    # FINDINGS and are worth reading one at a time, not discovering in the
-    # middle of a 25-producer batch where they are indistinguishable from a
-    # real regression.
-    risk = {s: at_risk_count(by_script[s]) for s in producers}
-    at_risk = [s for s in producers if risk[s]]
-    if not args.include_at_risk:
-        producers = [s for s in producers if not risk[s]]
-
     log(f"=== q₀ regen batch — current q₀≈{CUR} ===")
     log(f"stale={total_stale}  producers={len(producers)}  "
         f"no_scriptFile(manual)={len(no_script)}")
-    for s in blocked:
-        log(f"  BLOCKED  {s} — {NEVER_SWEEP[Path(s).name]}")
-    if declared:
-        verb = "INCLUDED" if args.include_declared_ideal else "EXCLUDED"
-        log(f"  {len(declared)} producer(s) DECLARED ideal_muon in the "
-            f"manifest ({verb}; muon is correct there by declaration):")
-        for s in sorted(declared):
-            log(f"    ideal-layer  {s}")
-    if at_risk:
-        verb = "INCLUDED" if args.include_at_risk else "DEFERRED"
-        log(f"  {len(at_risk)} producer(s) carry at-risk assertions "
-            f"({verb}; --include-at-risk to sweep them):")
-        for s in sorted(at_risk, key=lambda s: (-risk[s], s)):
-            log(f"    {risk[s]:>3} at-risk  {s}")
-
     if args.plan:
         for s in producers:
             exists = (REPO / "computations" / s).exists()

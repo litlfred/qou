@@ -303,7 +303,44 @@ that gained 84 witnesses, which is the useful robustness signal.
    The second is the real fix; the first is the safe stopgap.
 3. Then the 25 producers, AT-RISK first, one at a time.
 
-## 2026-08-19 (b) — the migration is 357 witnesses, not 940: the ideal layer is not a leftover
+## 2026-08-19 (b) — ~~the migration is 357, the ideal layer is comparison~~ RETRACTED
+
+> **The conclusion of this section is WRONG and is retracted 2026-08-21.**
+> Struck rather than deleted, because the *measurement* stands and only the
+> inference from it was bad — and because this is the second time in this bean
+> that a correct measurement carried a wrong conclusion.
+>
+> **What was wrong.** I read "declared `ideal_muon` in the manifest" as
+> "explicitly justified as a comparison, therefore keep". It is not. It is
+> simply where `q_parameter`'s argv-stem auto-selector happens to route a
+> producer. The owner's actual carve-out, recorded verbatim in AGENTS.md rule 4
+> on 2026-08-19, is narrower:
+>
+> > *"we want proton unless for an explicit reason (like comparison on proton
+> > vs muon results). otherwise pin proton"* / *"fix all, even if not visible."*
+>
+> A manifest entry is not an explicit reason. The 219 are the sweep's
+> **target list**, not a keep-list, and `q0_repin_sweep.py` on main is built
+> to flip exactly them.
+>
+> **What survives.** Only two things stay muon, and neither is the manifest:
+> 1. `q-pinning-50-digit` — the anchor DEFINITION. "Proton everywhere" governs
+>    what compute pins *to*, not whether the ideal layer is *statable*; delete
+>    it and the μ–p tension cannot be expressed at all. Guarded on the live
+>    driver as `ANCHOR_DEFINING`.
+> 2. Genuine comparison producers, which read `q_at()` / `q_muon_at()` **by
+>    name** and live under `physical_proton`. The manifest cannot serve them —
+>    it selects one anchor, and a comparison needs both.
+>
+> That design is better than the one I proposed and it was already on main
+> while I was proposing mine.
+>
+> **The measurement that stands:** 219 muon witnesses from a declared producer,
+> 357 not. Both sets are in scope. "Fix all, even if not visible" explicitly
+> rejects triaging either by visibility.
+
+### Original section follows (measurement good, conclusion retracted)
+
 
 Owner question, and the right one: *"why muon pinned? is it comparison? if so
 ok, otherwise proton pin."* Measured rather than reasoned about.
@@ -361,3 +398,22 @@ forward from `qou-m9xp`'s older "To close" list without reading its own later
 correction four sections down. The corpus is the source of truth, not the
 status note — including when the status note is in the same file as its
 retraction.
+
+
+## 2026-08-21 — two more corrections to my own work on this bean
+
+**1. I patched the wrong driver.** `q0_repin_regen_batch.py` (216 lines, last
+touched 2026-08-10) is superseded by `q0_repin_sweep.py` (397 lines, touched
+2026-08-19), which already had the `ANCHOR_DEFINING` guard I "added", plus
+topological ordering and a resume journal that mine lacks. I checked whether
+the guard existed *on the file I was editing* and not whether a better driver
+existed. The stale one now refuses to run and says why.
+
+**2. Deferring at-risk producers is against the directive.** My gate deferred
+them by default. "Fix all, even if not visible" rejects exactly that: the live
+sweep's docstring records that bucketing by significant digits (255/255 carry
+≥9 sig figs) and by reader count (44 readers, 211 leaves) were both tried and
+both rejected, because they leave a stale number on the theory nobody is
+looking. The tolerance triage is still useful — but as **ordering and
+annotation**, never as a skip. Offering it to `q0_repin_sweep.py` in that form
+is the remaining actionable item.
