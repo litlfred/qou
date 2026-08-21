@@ -48,6 +48,7 @@ import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
 import Mathlib.RingTheory.MvPolynomial.Basic
 import Mathlib.LinearAlgebra.Matrix.Nondegenerate
 import Mathlib.LinearAlgebra.LinearIndependent.Basic
+import Mathlib.Algebra.MvPolynomial.Degrees
 
 namespace MvPolynomial
 
@@ -311,6 +312,27 @@ theorem eq_C_of_pderiv_eq_zero [CharZero R] [IsDomain R] [DecidableEq σ]
       have hne : (s j : R) ≠ 0 := Nat.cast_ne_zero.mpr hj
       exact (mul_eq_zero.mp hzero.symm).resolve_left hne
     rw [hcoeff, coeff_C, if_neg (Ne.symm hs)]
+
+/-- **Differentiating strictly drops the degree in that variable.**
+
+Mathlib has the univariate `Polynomial.natDegree_derivative_lt`; the multivariate statement
+is a gap.  No characteristic hypothesis is needed: the vanishing that characteristic `p`
+causes is exactly the hypothesis `pderiv j p ≠ 0` excludes. -/
+theorem degreeOf_pderiv_lt [DecidableEq σ] {j : σ} {p : MvPolynomial σ R}
+    (hp : pderiv j p ≠ 0) :
+    degreeOf j (pderiv j p) < degreeOf j p := by
+  have hstep : ∀ t ∈ (pderiv j p).support, t j + 1 ≤ degreeOf j p := by
+    intro t ht
+    rw [mem_support_iff, coeff_pderiv] at ht
+    have hne : coeff (t + Finsupp.single j 1) p ≠ 0 := fun h => ht (by rw [h, mul_zero])
+    have hmem : t + Finsupp.single j 1 ∈ p.support := mem_support_iff.mpr hne
+    have hle := monomial_le_degreeOf j hmem
+    simpa [Finsupp.add_apply, Finsupp.single_eq_same] using hle
+  obtain ⟨t, ht⟩ := support_nonempty.mpr hp
+  have hpos : 0 < degreeOf j p := lt_of_lt_of_le (Nat.succ_pos _) (hstep t ht)
+  rw [degreeOf_lt_iff hpos]
+  intro m hm
+  exact Nat.lt_of_succ_le (hstep m hm)
 
 /-- The multi-index counting occurrences of each variable in a list. -/
 noncomputable def multiIndexOf (l : List σ) : σ →₀ ℕ := (l.map fun j => Finsupp.single j 1).sum

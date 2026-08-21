@@ -53,6 +53,17 @@ Restrict to a **generic line**: `gⱼ(t) = fⱼ(a + tc)`.
 So the missing pieces are the genericity argument (1) and the multilinear expansion (4);
 (2) and (3) are in hand.
 
+**Measured, not assumed:** the genericity input for (1) is already in Mathlib —
+`MvPolynomial.funext` / `funext_iff` (`Mathlib/Algebra/MvPolynomial/Funext.lean`), for
+polynomials over an **infinite integral domain**. Its contrapositive is exactly "a non-zero
+polynomial has a point where it does not vanish". So (1) is a matter of applying it to the
+right finite family, not of building the machinery.
+
+⚠ A definitional mismatch to plan for in (4): `Dᶜ^{i-1}` is a *linear combination* of
+monomial operators, whereas `mvGenWronskian` takes `D : Fin m → List σ`, i.e. monomial
+operators only. The expansion is what converts one to the other; it is not optional
+book-keeping, it is how the result lands in the committed shape.
+
 ## Already available
 
 - `genWronskian_eq_zero_iff` — the univariate criterion, both directions.
@@ -65,5 +76,14 @@ So the missing pieces are the genericity argument (1) and the multilinear expans
 `m = 2` bounded order: `f₁, f₂` independent ⟹ `∃ j, f₁ ∂ⱼf₂ − f₂ ∂ⱼf₁ ≠ 0` (order ≤ 1).
 Provable directly via the UFD structure of `MvPolynomial σ K` (Mathlib has the instance for
 arbitrary `σ`): divide by the gcd, coprimality forces `p ∣ ∂ⱼp`, degree forces `∂ⱼp = 0`,
-and `eq_C_of_pderiv_eq_zero` finishes. The one missing sub-lemma is
-`degreeOf j (pderiv j p) < degreeOf j p`, another measured Mathlib gap.
+and `eq_C_of_pderiv_eq_zero` finishes.
+
+`degreeOf_pderiv_lt` (`degreeOf j (pderiv j p) < degreeOf j p`) was the missing sub-lemma
+and is now **proved** in `MvGenWronskian.lean` — another measured Mathlib gap, filled.
+
+⚠ What that sub-target still needs, and it is not small: `p ∣ r` with `r ≠ 0` implies
+`degreeOf j p ≤ degreeOf j r`, which needs `degreeOf j (f*g) = degreeOf j f + degreeOf j g`
+over a domain. Mathlib has only `degreeOf_mul_le`, the wrong direction. Plus the UFD
+coprimality step (`p ∣ q * r`, `gcd p q = 1` ⟹ `p ∣ r`) — note `IsCoprime` in Mathlib is
+Bezout-flavoured and **does not hold** for `x, y` in `MvPolynomial`, so this must go through
+`UniqueFactorizationMonoid`, not `IsCoprime`.
