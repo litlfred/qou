@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-21T15:27:06Z
+updated_at: 2026-08-21T16:25:19Z
 ---
 
 
@@ -2748,3 +2748,50 @@ chain now has its lemma: loop passes (§4af), the quadratic pairs (`quadStep` +
 its `spoly` identity — the same wiring the `a > b` regime needed, over a longer
 list. Caveat unchanged: the blueprint is measured over `a ≤ 7` and a sample of
 `b`, not proved, and this arc has had structural guesses fail before.
+
+### The assembly is not only wiring — the chain cancels, twice
+
+Started the assembly and found the arc's own description of it incomplete.
+"`MultiStepReduction.trans` over a longer list" assumes a fixed-shape term list.
+It is not fixed-shape.
+
+**Measured** (`computations/hecke_chain_cancellation.py`, all 20 pairs
+`a = 2 … 6`, `b = a … a+3`): the two quadratic steps each add a term, so the
+element peaks at **four**; then **two** later steps remove two at once. No
+rewrite can do that — a far-commutation takes one term to one term — so each is
+a pair reconverging on a single word with opposite coefficients and
+annihilating. At `a = 4, b = 6`, step 24 rewrites `h · (σ_i σ_{i−4} ⋯)` into
+precisely the word already carried by `−h`, and both vanish.
+
+**The second event is the FINAL step.** So the chain does not terminate by some
+separate mechanism: reaching zero *is* a cancellation. The lemma is therefore
+needed twice, and the second use is what will deliver "reduces to zero".
+
+My first predicate asserted *one* cancellation and failed all 20 cases. Counting
+the final collapse is the whole correction — the failure was mine, not the
+chain's.
+
+**`ofTerms_cancel_pair`** (§4ak) is the bridge. `MultiStepReduction` is stated
+through `CoeffEq`, so the cancellation is **sound** with no help at all (§6
+already carries the congruences); what was missing is the **shape** bridge,
+without which every lemma downstream of a cancellation would have to be stated
+against a list whose first two entries are dead weight.
+
+Sorry-free, standard axioms, `lean`-direct exit 0 on the full file, zero
+warnings, non-vacuous at the configuration the chain actually produces. One
+note for whoever edits it: the `unnecessarySeqFocus` linter suggestion inside it
+is **wrong** — `(simp only …; ring)` fails with "no goals to be solved" because
+`simp only` already closes several `split_ifs` branches, and taking the
+suggestion silently introduced `sorryAx` until `#print axioms` caught it. The
+option is disabled for that declaration with the reason in a comment.
+
+**Where the assembly stands.** The term-count profile is now known end to end:
+
+    2 terms → (quad) 3 → (quad) 4 → (cancel) 2 → both blocks at 2 → (cancel) 0
+
+so the multi-term phase is confined to the prefix, and **both blocks run on a
+two-term element**, which `blockPass` already handles via its `L₁`/`L₂`
+parameters. What remains is the prefix's own step-by-step composition — the
+`a²+a+5` steps up to the first cancellation — and then the closing
+`OverlapComposition` + `spoly` identity. Unchanged caveat: all of this is
+measured over `a ≤ 7` and a sample of `b`, not proved.
