@@ -81,3 +81,72 @@ Per block: either a real Lean declaration at the named path, or an author decisi
 - `models-of-qous/symmetric-point-channel-collapse.ts` → `qou:QOU.symmetric_point_channel_collapse`
 - `models-of-qous/physical-units-gap-linear.ts` → `qou:QOU.physical_units_gap_linear`
 - `models-of-qous/witt-vector-lift.ts` → `qou:QOU.WittVectorLift`
+
+## 2026-08-21 — the "not mis-referenced" claim is not established, and one is now fixed
+
+This bean states the 57 are *"genuinely **unformalised**, not mis-referenced —
+verified by normalised (case/underscore-insensitive) matching against a decl
+index built from the whole tree, plus the canonical resolver."*
+
+**That verification cannot detect the mis-reference mode that has already
+produced two confirmed hits.** Both `thm:su2-emergence` (→ `QOU.RankOneGaugeData`,
+repointed in PR #5222) and `def:mass-identity` (→ `QOU.categoricalMass`,
+repointed under `qou-qc6s`) named declarations that exist nowhere — so they pass
+this bean's name test as "unformalised" — while the correct declaration existed
+all along, identified by the block's **`\label`**. A name-based index cannot see
+a label match. The test has to be run on the label, not the name.
+
+### Ran the label test
+
+| measure | count |
+|---|---:|
+| blocks carrying a `qou:` ref | 1238 |
+| refs the **canonical resolver** cannot resolve at all | **4** |
+| refs naming no declaration by normalised fully-qualified match | **49** |
+| of those 49, a Lean decl carries the block's **own label** | **16** |
+
+The 4 fully-unresolvable ones are exactly the set folio-assistant PR #121
+predicted — `figure-eight-reeb-theta-value`, `crossing-energy-pair-cancellation`,
+`channel-rotation-askey-lit`, `complex-volume-character-variety-path`.
+Independent confirmation of that number by a different route.
+
+**Do not read the 16 as 16 defects.** Resolving them individually, **10 of 12
+checked resolve correctly** — my fully-qualified matcher over-flags
+module-path-style refs (e.g. `def:yekutieli-triple`, `thm:qu-to-qou`, both of
+which I repaired myself in #5113 and which are fine). Recorded because the
+over-flagging is the same class of error this entry is about, and it caught me
+too.
+
+### One confirmed mis-reference, fixed
+
+`def:ns-regular-qou` (`fluid-dynamics/ns-regular-qou.ts`):
+
+- ref was `qou:QOU.FluidDynamics.NSRegularQOU` → **UNRESOLVED**; that namespace
+  and that declaration exist nowhere.
+- `QOU.GaugeFieldFluidDynamics.BoundaryObservability`
+  (`lean/QOU/GaugeFieldFluidDynamics.lean:477`) carries
+  `\label{def:ns-regular-qou}` — the block's own label.
+- Repointed; verified through the canonical resolver.
+
+**Why nothing caught it, and this is the reusable lesson.** The block has a
+co-located sibling `ns-regular-qou.lean`, and `walkBlocks` resolves the
+**sibling first**. So every checker audited the stub and passed, while the
+library ref sat dead and the real declaration went unchecked. **A sibling stub
+masks a broken library ref**, and it masks it from the diff-scoped gates too.
+Neither this bean's method nor #121's fix surfaces that combination — #121 made
+*aggregator* fallbacks honest, not sibling-shadowed ones.
+
+### What the remaining work actually is
+
+Not "57 separate formalisations". It is:
+
+1. **Run the label test per block on the ~49**, which is cheap and mechanical:
+   does any Lean declaration carry this block's `\label`? If yes → repoint (a
+   ref edit). If no → genuinely unformalised (a formalisation).
+2. **Audit the sibling-masking population separately.** Any block with both a
+   co-located `.lean` and a library `lean.ref` can have a dead ref that no gate
+   reports. That set is not enumerated anywhere yet and is the more dangerous
+   half, because it is invisible rather than merely unresolved.
+
+The owner directive to **keep the refs and bean them** is unaffected — repointing
+preserves intent, and nothing here deletes a ref.
