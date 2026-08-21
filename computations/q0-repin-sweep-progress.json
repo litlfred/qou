@@ -386,6 +386,83 @@
    "median_rel_move": 0.0,
    "n_fields": 17,
    "err": ""
+  },
+  "binding_combiner_markov_peel_fallback": {
+   "rc": 0,
+   "sec": 80.7,
+   "witnesses": [
+    "binding-combiner-markov-peel-fallback.witness.json"
+   ],
+   "max_rel_move": 0.5,
+   "median_rel_move": 0.0,
+   "n_fields": 103,
+   "err": "\u26a0 raw-float64: binding-combiner-markov-peel-fallback.witness.json: 17 raw float64 field(s) would enter the witness \u2014 .data.results[0].free_config.elapsed_reduce_sec, .data.results[0].free_config.elaps"
+  },
+  "binding_crossing_moment_viability": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "binding-crossing-moment-viability.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 53,
+   "err": ""
+  },
+  "rho_prefactor_structural_verifier": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "rho-prefactor-structural-verifier.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 338,
+   "err": ""
+  },
+  "binding_k_solver": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "binding-k-solver.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 1659,
+   "err": ""
+  },
+  "binding_observe_last": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "binding-observe-last.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 56,
+   "err": ""
+  },
+  "binding_perblock_bond_type_a3": {
+   "rc": 0,
+   "sec": 3.0,
+   "witnesses": [
+    "binding-perblock-bond-type-a3.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": ""
+  },
+  "binding_selection_rule_tau_closure": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "binding-selection-rule-tau-closure.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": ""
   }
  }
 }
