@@ -1812,6 +1812,21 @@
         "reviewed_at": "2026-08-15T10:31:00.799Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 45 words)"
+      },
+      {
+        "field_hash": {
+          "md": "51488297c20c",
+          "ts": "e29a35a1d0bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:54.663Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "test"
       }
     ],
     "trap-triples": [
@@ -1968,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:10:54.663Z"
 }
