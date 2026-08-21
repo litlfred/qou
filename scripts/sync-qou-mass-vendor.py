@@ -280,7 +280,56 @@ def main() -> int:
         return 0
 
     if not drifted and not missing:
-        print(f"vendored copies are in sync ({len(cone)} modules)")
+        print(f"vendored copies are in sync ({len(cone)} modules, "
+              f"{len(wits)} witness JSON)")
+        # State what was NOT examined. The old message said only
+        # "(N modules)", which reads as a whole-mirror all-clear while the
+        # comparison covers the cone plus the witnesses `required_witnesses`
+        # scrapes -- and nothing else. Everything under `data/` is package
+        # data outside the cone, never compared to a source, and a summary
+        # that does not say so invites the reader to assume it was.
+        #
+        # Measured 2026-08-21 (bean qou-cdj8): 157 witness files present,
+        # 122 uncovered. Note 157 - 18 = 139, NOT 122: 17 names exist in
+        # BOTH the package root and `data/`, so matching on name alone
+        # credits the `data/` twin with the root copy's check. That
+        # collapse is itself the finding below.
+        #
+        # Of the uncovered, 120 are stale copies predating the q0-anchor
+        # convention (PR #4020) -- old and unlabelled rather than wrong --
+        # and exactly ONE actively contradicts its source:
+        # canonical-mass-table-extended records `muon` where the source
+        # records `proton`.
+        uncovered = sorted(
+            q for q in WITNESS_DEST.rglob("*.witness.json")
+            if q.name not in wits
+        )
+        if uncovered:
+            print(f"  note: {len(uncovered)} further *.witness.json under "
+                  f"{WITNESS_DEST.relative_to(REPO)} are NOT compared -- "
+                  f"package data outside the vendoring cone (bean qou-cdj8)")
+
+        # Duplicated names are worse than uncovered ones. The header above
+        # explains that witnesses MUST sit in the package root because the
+        # vendored modules resolve there; a `data/` copy of a synced witness
+        # is unreachable at runtime, so it cannot fail loudly -- it just sits
+        # there being read by humans. Two of the 17 such pairs are stale by a
+        # month, including `q-pinning-50-digit`, the substrate modulus record.
+        # Reported rather than deleted, for the same reason `orphans` is:
+        # removing a shipped file is an API decision this script should not
+        # make silently.
+        shadowed = sorted(
+            q.name for q in (WITNESS_DEST / "data").glob("*.witness.json")
+            if (WITNESS_DEST / q.name).exists()
+        )
+        divergent = [n for n in shadowed
+                     if (WITNESS_DEST / n).read_bytes()
+                     != (WITNESS_DEST / "data" / n).read_bytes()]
+        if shadowed:
+            print(f"  note: {len(shadowed)} witness(es) exist in BOTH the "
+                  f"package root and data/; the data/ copy is unreachable at "
+                  f"runtime ({len(divergent)} of them also differ in content"
+                  + (f": {', '.join(divergent)}" if divergent else "") + ")")
         if orphans:
             print(f"  note: not in cone: {', '.join(orphans)}")
         return 0
