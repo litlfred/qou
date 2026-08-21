@@ -214,3 +214,70 @@ does not already exist.
       wrong.
 - [ ] Instantiate for `operator_selection_lp` — though per `qou/k4f8` that
       block needed no Farkas at all, so this unblocks only the general theorem.
+
+---
+
+## 2026-08-21, later — the attainment worry was mine, and it was wrong
+
+The previous entry said closing the gap "needs attainment of the dual optimum —
+a further polyhedral fact, not a corollary of separation". **That is true of the
+route I had sketched and false of the standard one.** Correcting it, because it
+would have sent the next person down a much harder path than necessary.
+
+### Why the naive route stalls
+
+Separate `(a, γ−ε)` from the cone `{(Ax, cᵀx + t) : x ≥ 0, t ≥ 0}` — finitely
+generated, hence closed by `isClosed_coneSpan`. That yields `(l', s)` with
+`s ≥ 0`, and `s = 0` is excluded by primal feasibility (if `s = 0` then
+`l'ᵀA_j ≥ 0` for all `j`, so `l'ᵀa = Σⱼ x₀ⱼ(l'ᵀAⱼ) ≥ 0`, contradicting
+`l'ᵀa < 0`). Dividing by `s` gives a dual-feasible `l` with `aᵀl > γ − ε`.
+
+For **every** `ε`, but never `≥ γ`. That is the wall, and it is real.
+
+### The route that avoids it
+
+Argue by contradiction on the conclusion instead. Suppose
+`∃ l, Aᵀl ≤ c ∧ aᵀl ≥ γ` is **infeasible**. That is an infeasible system of
+linear inequalities in `l`, so Farkas in *inequality form* gives multipliers
+`(x, μ) ≥ 0` with
+
+    A x − μ a = 0    and    cᵀx − μγ < 0
+
+and then a two-case split, each contradicting the hypothesis directly:
+
+- **`μ > 0`:** `x/μ ≥ 0` satisfies `A(x/μ) = a` and `cᵀ(x/μ) < γ` — a feasible
+  point beating `γ`.
+- **`μ = 0`:** `Ax = 0`, `x ≥ 0`, `cᵀx < 0`, so `x₀ + tx` is feasible for every
+  `t ≥ 0` and `cᵀ(x₀ + tx) → −∞`; for large `t` it beats `γ`.
+
+**No attainment anywhere.** The inequality form itself follows from what is now
+proved: `{l : Bl ≤ d}` is infeasible exactly when `d` misses the finitely
+generated cone spanned by `±` the columns of `B` together with the standard
+basis vectors — and `farkas_vector` applies to that cone directly.
+
+### What is proved now
+
+- `isClosed_coneSpan` — a finitely generated cone is closed
+- `farkas_separation` — Farkas, separating-functional form
+- `farkas_vector` — Farkas, vector form, via `InnerProductSpace.toDual`
+
+All sorry-free. `farkas_vector` is the form a linear program consumes, since
+dual feasibility `Aᵀl ≤ c` is a statement about a vector of multipliers.
+
+### One scope limit worth stating
+
+`MatrixFarkas` is declared over **any** `[CommRing R] [LinearOrder R]
+[IsStrictOrderedRing R]`. This route is analytic — it uses closedness and
+separation — so it can only produce the instance at `R = ℝ`. Farkas is true
+over any ordered field, but a general-`R` instance would need a
+Fourier–Motzkin style argument instead. In practice the `ℝ` instance is what
+the substrate needs (§7c fixes `R := ℝ` for evaluation), so this is a
+statement about generality, not a blocker.
+
+## Next
+
+- [ ] The inequality-form Farkas (`{l : Bl ≤ d}` infeasible ⇒ `∃ z ≥ 0`,
+      `Bᵀz = 0`, `dᵀz < 0`) — a direct application of `farkas_vector` to the
+      cone spanned by `±`columns and basis vectors. Index the generators by a
+      sum type.
+- [ ] Then `MatrixFarkas` at `R = ℝ` by the two-case split above.

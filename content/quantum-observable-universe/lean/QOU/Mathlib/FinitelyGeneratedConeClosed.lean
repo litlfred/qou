@@ -1,6 +1,8 @@
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.LinearIndependent.Defs
 import Mathlib.Analysis.Convex.Cone.InnerDual
+import Mathlib.Analysis.InnerProductSpace.Dual
+import Mathlib.Analysis.InnerProductSpace.PiL2
 
 /-!
 # Finitely generated cones are closed
@@ -399,5 +401,40 @@ theorem nonneg_on_coneSpan_of_nonneg_on_generators (v : ι → E) (f : E →L[�
     exact mul_nonneg (hx i) (hf i)
 
 end Farkas
+
+
+section EuclideanFarkas
+
+open scoped InnerProductSpace
+
+variable {k : ℕ}
+
+/-- The real inner product on `EuclideanSpace` in coordinates. -/
+theorem euclidean_inner_eq (z x : EuclideanSpace ℝ (Fin k)) :
+    (inner ℝ z x : ℝ) = ∑ p, z p * x p := by
+  rw [EuclideanSpace.inner_eq_star_dotProduct]
+  simp [dotProduct, mul_comm]
+
+/-- **Farkas' lemma, vector form.**
+
+If `b` is not a non-negative combination of `v`, there is a *vector* `z`
+with `⟪z, vᵢ⟫ ≥ 0` for every generator and `⟪z, b⟫ < 0`.
+
+This is `farkas_separation` pushed through Riesz representation. The
+functional form is the one separation produces; the vector form is the
+one a linear program consumes, since dual feasibility `Aᵀl ≤ c` is a
+statement about a vector of multipliers. -/
+theorem farkas_vector [DecidableEq ι] (v : ι → EuclideanSpace ℝ (Fin k))
+    {b : EuclideanSpace ℝ (Fin k)} (hb : b ∉ coneSpan v) :
+    ∃ z : EuclideanSpace ℝ (Fin k),
+      (∀ i, 0 ≤ ∑ p, z p * v i p) ∧ (∑ p, z p * b p) < 0 := by
+  obtain ⟨f, hfv, hfb⟩ := farkas_separation v hb
+  refine ⟨(InnerProductSpace.toDual ℝ _).symm f, fun i => ?_, ?_⟩
+  · rw [← euclidean_inner_eq, InnerProductSpace.toDual_symm_apply]
+    exact hfv i
+  · rw [← euclidean_inner_eq, InnerProductSpace.toDual_symm_apply]
+    exact hfb
+
+end EuclideanFarkas
 
 end QOU.Mathlib
