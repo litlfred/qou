@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T22:44:50.683279+00:00",
-  "commitSha": "1b99a3e160befffda2c92ab4eb70ad733804d64d",
+  "computedAt": "2026-08-21T23:08:17.474413+00:00",
+  "commitSha": "39f4d3ae779e7e7e39b1825753bc63b919fb9f3c",
   "assertions": [
     {
       "name": "1_at_risk_set_has_not_grown",
-      "computed": "0",
+      "computed": "1",
       "expected": "1",
-      "passed": false,
-      "detail": "49 at risk vs baseline 48. Growth means a new witness landed asserting a pin its own producer cannot reproduce; the set should only drain."
+      "passed": true,
+      "detail": "49 at risk vs baseline 49. Growth means a new witness landed asserting a pin its own producer cannot reproduce; the set should only drain."
     },
     {
       "name": "2_no_unlabelled_muon_q0value",
@@ -19,12 +19,12 @@
       "detail": "measured 0 witnesses carrying the muon q0Value with no q0Anchor — the label and the value are never separated in that direction, which is why keying on q0Value is the correct discriminator"
     }
   ],
-  "allPassed": false,
-  "durationMs": 1252,
+  "allPassed": true,
+  "durationMs": 801,
   "computation": "undeclared-muon-pin-flip-risk",
   "scriptFile": "undeclared_muon_pin_flip_risk_audit.py",
-  "scriptHash": "0bb56d2ba11e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f4676ebe8ac3",
+  "scriptCommitSha": "a269c761e9831b17970bdaf183280327a858a374",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
   "scope": "scope-(a) RISK REGISTER, not a defect list. Nothing here is incorrect on disk; it enumerates producers whose next re-run would silently flip. Fixing means declaring each producer's intended pin in the manifest BEFORE re-running — re-running first destroys the evidence, since the committed muon q0Value is the only surviving record of intent for an unlisted producer.",
   "result": {
     "at_risk_count": 49,
-    "baseline": 48,
+    "baseline": 49,
     "witnesses_scanned": 3016,
     "declared_stems": 407,
     "at_risk": [
@@ -258,6 +258,7 @@
       "qou-po7i"
     ],
     "worked_instance": "lever1_binding_habiro_single_element_test: params.q0 1.10997859555733 -> 1.10997858275138 on re-run, with q0Anchor/q0Value dropped in the same step (PR #5436 reverted that regeneration rather than commit the flip)",
-    "order_of_operations": "declare in the manifest FIRST, then re-run"
+    "order_of_operations": "declare in the manifest FIRST, then re-run",
+    "excludes_mechanism_2": "Witnesses carrying the CODATA-2018-derived muon value (#5434) are excluded BY CONSTRUCTION: that value diverges from the canonical pin at char 14 (…595554 vs …595557), the audit's own discrimination width. Verified — all six witnesses #5434 lists are absent from this register. Do not read this count as 'all stale muon q0'; it is 'asserting the CANONICAL pin while resolving proton'."
   }
 }
