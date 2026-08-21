@@ -113,3 +113,75 @@ re-running rather than re-reading once S4 lands.
 inside the tranche should be by convention, not by filename: settle the 9
 `chi_lambda_braid` sites as one decision, then the 6 `strict_averaged` ones as a
 separate and much smaller one.
+
+## ROOT CAUSE 2026-08-21 — the mass table's p-n interface comes from caches built before the weighting existed
+
+Owner authorised picking the frame for `canonical_mass_table_extended.py` (the
+producer of both `canonical-mass-table-extended` and, via a thin wrapper,
+`low-isotope-mass-table`). Traced it rather than flipped it, and the answer is
+not a convention flag anywhere in that producer — it has none. `grep
+pn_convention canonical_mass_table_extended.py` returns **zero**.
+
+### Measured
+
+    branching combiner, deuteron   0.575090872290275361250124   <- COLOUR-BLIND
+    closed form, strict_averaged   0.575090871629810316751633      (agrees, 6.6e-10)
+    bridge / fixed symbolic path   0.575172243917771870826535   <- weighted
+                                                                   gap 1.4e-4
+
+The producer routes A ≥ 2 through `canonical_tr_m_via_branching`, whose
+docstring says it applies `σ − h(½ − δ/4)·𝟙`. It does not, and the reason is
+structural rather than a wrong line:
+
+- `intra_block_word()` builds its word from `atom_canonical_crossings(1,0)` and
+  `(0,1)` — **free nucleons**, which have no p-n bond. So the `d_for_ctype` call
+  there (correct, and fixed for exactly this reason in an earlier pass) never
+  sees `averaged_weighted`. The comment above it — *"the if/elif this replaces
+  raised on averaged_weighted, i.e. on every Z≥1,N≥1 atom"* — is true of a
+  different call path and reads, in place, as though it covered this one.
+- The **interface** between blocks is not computed at all. It is loaded from
+  precomputed A-operator extract witnesses, keyed `(n_strands, iface)`:
+
+      (6,  "pn") -> sublemma-2-1-A-operator-extract.witness.json     computedAt 2026-05-05
+      (9,  "pn") -> A-operator-extract-h9-pn.witness.json            computedAt 2026-05-18
+      (12, "pn") -> A-operator-extract-h12-pn.witness.json
+      (15, "pn") -> A-operator-extract-h15-pn.witness.json
+      (18, "pn") -> A-operator-extract-h18-pn.witness.json
+
+Both checked extracts predate the colour weighting by ~three months, and
+**neither carries `convention_fingerprint`, `convention_label`, or
+`pn_convention`** — so nothing downstream can tell which interface they encode,
+and nothing invalidates them when the convention moves.
+
+### This is `45789ddfa0`'s finding, one cache family over
+
+That commit fixed exactly this shape for the **chi** caches — resume logic keyed
+on partition coverage or q₀ alone, "no notion of which word produced the cached
+entries, so a cache written before the colour-weighting landed looks complete
+forever" — and introduced `convention_fingerprint` in `canonical_braid_crossings`
+as the derived guard. The **A-operator** extracts have the same defect and were
+not covered.
+
+So the answer to "which frame is the mass table in" is: **it is in whatever
+frame its A-operator caches were built in, which is pre-weighting, and no code
+in the producer expresses a choice at all.** Flipping a `pn_convention` argument
+would fix nothing, because there is none to flip.
+
+### Fix path (NOT executed here — this is a compute job, not an edit)
+
+1. Apply the `convention_fingerprint` guard to the A-operator extracts, so a
+   pre-weighting cache is DISCARDED rather than resumed. Same mechanism, same
+   module, already written.
+2. Regenerate the five `(n, "pn")` extracts with the weighted interface. H₆ is
+   cheap; H₁₅/H₁₈ are long-compute and need the `-u … | tee` discipline.
+3. Re-run `canonical_mass_table_extended.py` and expect every Z≥1,N≥1 row to
+   move by ~1.4e-4 relative — the same migration the low-isotope witness took.
+4. Only then is `recomputed-low-isotope-mass-table.md`'s "three paths agree to
+   machine epsilon" true of all three; two of them now agree at 3.4e-25 after
+   the `qou-4e5k` fixes, and this producer is the third.
+
+### Also found, unrelated to the frame
+
+`canonical_mass_table_extended.py:310` passes `q_val=float(Q_FLOAT)` — a float64
+q₀ into a 50-dps pipeline. Caps the branching path at ~1e-16 regardless of
+`target_dps`. Precision defect, not a convention one; worth its own fix.
