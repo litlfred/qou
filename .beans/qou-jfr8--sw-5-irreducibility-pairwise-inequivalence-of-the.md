@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T16:12:28Z
+updated_at: 2026-08-21T16:20:43Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -378,3 +378,33 @@ than `YoungDiagram`).
 written.** Same failure class as the `qou-gjg6` HLF note: a plan recorded as
 "open" that a later commit closed, left sitting where the next agent would trust
 it. Read the "Remaining" list above only through this correction.
+
+
+## SECOND HALF CLOSED 2026-08-21 — pairwise inequivalence is unconditional
+
+`seminormalRep_not_matRepEquiv_of_ne` (PR #5370), sorry-free and axiom-clean:
+`μ ≠ ν → ¬ MatRepEquiv (seminormalRep … μ) (seminormalRep … ν)`, with no
+hypothesis beyond `μ ≠ ν` and the genericity `seminormalRep` already carries.
+
+Both residuals listed under "Remaining" are now closed:
+
+1. **Infinitely many roots ⟹ coefficient equality** — closed earlier this
+   session (see the CORRECTION entry above; the route I prescribed was not the
+   one used).
+2. **Content multiset ⟹ Young diagram** — closed as `qou-tho9`, in the same
+   session it was opened. Its own route sketch was also wrong: diagonals of a
+   Young diagram are downward-closed, so the diagonal *length* decides
+   membership outright — no greedy row recovery, no Frobenius coordinates, no
+   `Partition`↔`YoungDiagram` bridge.
+
+**Calibration note.** I sized these two backwards. The roots step, called the
+cheaper half, took several iterations; the content-multiset step, the one I said
+I would budget for, compiled first try in ~90 lines. I had read "classical, not
+in the corpus" as a difficulty signal — it is not one, when the object carries as
+much structure as a Young diagram.
+
+**What is left on this bean.** The `AlgHom.range = ⊤` irreducibility half was
+already landed by the prior holder before the takeover. With inequivalence now
+closed, check whether anything in the bean's own "Remaining" list from the
+irreducibility side still stands before marking `qou-jfr8` complete — I have not
+re-verified that half and am not claiming it.

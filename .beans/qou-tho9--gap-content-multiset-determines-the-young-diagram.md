@@ -1,11 +1,11 @@
 ---
 # qou-tho9
 title: 'GAP: content multiset determines the Young diagram — last step of q-deformed pairwise inequivalence'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:43Z
-updated_at: 2026-08-21T16:11:26Z
+updated_at: 2026-08-21T16:20:42Z
 ---
 
 ## What is open
@@ -73,3 +73,45 @@ Do **not** close `qou-jfr8` on the strength of `contentCount_eq_of_matRepEquiv`.
 That theorem is exactly what it says — equal content counts — and citing it as
 pairwise inequivalence would be the "conditional-proved ≠ premise-established"
 failure in its purest form.
+
+
+## CLOSED 2026-08-21, same session — and my route sketch above was wrong
+
+`youngDiagram_eq_of_contentCount_eq`, sorry-free, axiom-clean. With it,
+`seminormalRep_not_matRepEquiv_of_ne` makes pairwise inequivalence
+**unconditional**, closing the second half of `qou-jfr8`.
+
+**Retracting the route sketch above.** It proposed recovering the rows greedily
+from the diagonal lengths (`λ₁ = max{d : mult d > 0} + 1`, induction on the
+peeled diagram) and flagged Frobenius coordinates as a possible shortcut worth
+checking first. **Neither is needed, and the Frobenius detour would have been
+wasted work.** The observation that collapses it:
+
+> each **diagonal** of a Young diagram is **downward-closed**, so its *length*
+> already decides membership.
+
+With `diagIndex (i,j) = min i j` — a cell's position along its own diagonal —
+`(i,j) ∈ μ` iff `diagIndex (i,j) < #{cells of content j - i}`. Diagonal lengths
+*are* the content multiplicities, so equal counts give the same membership
+predicate, hence the same diagram. One `ext`, no induction on the diagram.
+
+**The `TLContentStratification` lead was also not needed** — and noting why is
+worth more than the lead was. It supplies the *support* (`numCols`, `length`)
+on `Partition`, which would have required the `Partition`↔`YoungDiagram` bridge
+this bean warned about. The direct argument never leaves `YoungDiagram` and uses
+exactly one fact about it, `up_left_mem`. I flagged the type mismatch as
+something to budget for; the right response to that flag was to avoid the type,
+not to bridge it.
+
+**Sizing, for calibration.** I called this "the one I would budget for" and left
+the roots argument as the cheaper half. That was backwards: the roots argument
+took several iterations (`Finset.sum_boole` orientation, the `zpow_mul` tail, the
+`d + n < 0` branch), and this one compiled first try in ~90 lines. The signal I
+misread was "classical fact not in the corpus" — absence from the corpus says
+nothing about difficulty when the object has as much structure as a Young
+diagram.
+
+Landed: `mem_iff_lt_card_of_downward`, `diagIndex`,
+`cell_eq_of_content_of_diagIndex`, `diagOf`, `mem_diagOf`,
+`diagIndex_image_downward`, `mem_iff_diagIndex_lt`,
+`youngDiagram_eq_of_contentCount_eq`.
