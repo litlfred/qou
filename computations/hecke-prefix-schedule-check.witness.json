@@ -1,0 +1,261 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-21T22:36:54.480213+00:00",
+  "commitSha": "25103867b52fc633486a076e35eff131d08e5f0d",
+  "assertions": [
+    {
+      "name": "chains_where_the_dead_pair_is_later_rewritten",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "chains_where_the_dead_pair_could_be_carried_into_the_tail",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 72,
+  "computation": "hecke-prefix-schedule-check",
+  "scriptFile": "hecke_prefix_schedule_check.py",
+  "scriptHash": "e55c2b2d4175",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "The corner's a <= b chain simulated in the LIST model Lean actually uses (AlgElement.ofTerms L, every lemma reading its redex off L1 ++ (W, c) :: L2 and so needing W to occur exactly once), rather than the confluence engine's cleaned word -> coefficient map. The two agree until the prefix's mid-way cancellation, where two terms reconverge on one word with opposite coefficients: the engine drops both, the list keeps both. Measured: the dead pair is never rewritten (dup_sources = 0), so on that count it could be carried -- but it leaves 4 entries at T_pre against the 2 tailChain is stated on, and ONE of the dead words extends a live term's block context, which is exactly what blockPass's hpark forbids. So ofTerms_cancel_pair is FORCED, not by any word being reduced twice (this arc's earlier guess) but by hpark being a condition on every other entry, live or dead. Nothing new is needed to discharge it: Basic.lean §6 already has SingleStepReduction.of_coeffEq_left and MultiStepReduction.congr_source.",
+  "parameters": {
+    "list_model": "entries are never merged; a step replaces its redex entry in place with the rule's images",
+    "tailChain_shape_gap": "tailChain is stated on a 2-entry list; carrying the dead pair leaves 4, and one dead word extends a live term's block context -- so the cancellation must be discharged BEFORE the tail, not after",
+    "discharged_by": "ofTerms_cancel_pair (this file) + MultiStepReduction.congr_source / SingleStepReduction.of_coeffEq_left (Basic.lean §6) -- all already present; no new bridging infrastructure"
+  },
+  "data": {
+    "cases_checked": 6,
+    "cases": [
+      {
+        "a": 3,
+        "b": 4,
+        "n": 10,
+        "i": 8,
+        "prefix": 17,
+        "steps": 31,
+        "max_entries": 4,
+        "final_entries": 4,
+        "dup_sources": [],
+        "dead_at": 16,
+        "dead_word_later_source": false,
+        "dead_pair_span": 15,
+        "dead_entries_are_inert": true,
+        "entries_at_T_pre": 4,
+        "live_at_T_pre": 2,
+        "dead_at_T_pre": 1,
+        "tailChain_2_entry_shape_matches": false,
+        "dead_words_extending_a_block_context": [
+          [
+            2,
+            1,
+            2,
+            3,
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      },
+      {
+        "a": 3,
+        "b": 5,
+        "n": 11,
+        "i": 9,
+        "prefix": 17,
+        "steps": 37,
+        "max_entries": 4,
+        "final_entries": 4,
+        "dup_sources": [],
+        "dead_at": 16,
+        "dead_word_later_source": false,
+        "dead_pair_span": 21,
+        "dead_entries_are_inert": true,
+        "entries_at_T_pre": 4,
+        "live_at_T_pre": 2,
+        "dead_at_T_pre": 1,
+        "tailChain_2_entry_shape_matches": false,
+        "dead_words_extending_a_block_context": [
+          [
+            2,
+            1,
+            2,
+            3,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "n": 12,
+        "i": 10,
+        "prefix": 25,
+        "steps": 45,
+        "max_entries": 4,
+        "final_entries": 4,
+        "dup_sources": [],
+        "dead_at": 24,
+        "dead_word_later_source": false,
+        "dead_pair_span": 21,
+        "dead_entries_are_inert": true,
+        "entries_at_T_pre": 4,
+        "live_at_T_pre": 2,
+        "dead_at_T_pre": 1,
+        "tailChain_2_entry_shape_matches": false,
+        "dead_words_extending_a_block_context": [
+          [
+            2,
+            1,
+            2,
+            3,
+            4,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "a": 4,
+        "b": 6,
+        "n": 13,
+        "i": 11,
+        "prefix": 25,
+        "steps": 53,
+        "max_entries": 4,
+        "final_entries": 4,
+        "dup_sources": [],
+        "dead_at": 24,
+        "dead_word_later_source": false,
+        "dead_pair_span": 29,
+        "dead_entries_are_inert": true,
+        "entries_at_T_pre": 4,
+        "live_at_T_pre": 2,
+        "dead_at_T_pre": 1,
+        "tailChain_2_entry_shape_matches": false,
+        "dead_words_extending_a_block_context": [
+          [
+            2,
+            1,
+            2,
+            3,
+            4,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "n": 14,
+        "i": 12,
+        "prefix": 35,
+        "steps": 61,
+        "max_entries": 4,
+        "final_entries": 4,
+        "dup_sources": [],
+        "dead_at": 34,
+        "dead_word_later_source": false,
+        "dead_pair_span": 27,
+        "dead_entries_are_inert": true,
+        "entries_at_T_pre": 4,
+        "live_at_T_pre": 2,
+        "dead_at_T_pre": 1,
+        "tailChain_2_entry_shape_matches": false,
+        "dead_words_extending_a_block_context": [
+          [
+            2,
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "n": 15,
+        "i": 13,
+        "prefix": 35,
+        "steps": 71,
+        "max_entries": 4,
+        "final_entries": 4,
+        "dup_sources": [],
+        "dead_at": 34,
+        "dead_word_later_source": false,
+        "dead_pair_span": 37,
+        "dead_entries_are_inert": true,
+        "entries_at_T_pre": 4,
+        "live_at_T_pre": 2,
+        "dead_at_T_pre": 1,
+        "tailChain_2_entry_shape_matches": false,
+        "dead_words_extending_a_block_context": [
+          [
+            2,
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ]
+      }
+    ]
+  },
+  "caveats": [
+    "Follows the engine's deg-lex schedule. The tail showed that schedule can violate a lemma hypothesis where a reordering does not, so every count here is a statement about THIS order only -- including the clash that forces the cancellation. A different prefix schedule might not produce it; none has been searched for.",
+    "The clash is measured against the block contexts of the LIVE terms at T_pre, i.e. against the contexts tailChain would use. It is not a sweep of every hypothesis of every lemma along the prefix -- the prefix assembly itself has not been attempted.",
+    "a = 3..5, b in {a+1, a+2}. The diagonal is excluded, as in the tail measurements."
+  ]
+}
