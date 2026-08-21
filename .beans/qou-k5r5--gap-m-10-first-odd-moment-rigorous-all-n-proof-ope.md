@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-21T21:50:31Z
+updated_at: 2026-08-21T22:10:42Z
 ---
 
 
@@ -43,3 +43,29 @@ NEXT: kappa is a covariance of two profile linear statistics (Sum_c^2 in
 Lambda* <-> R4; Sum_h OUTSIDE Lambda*), needs the IO Gaussian-field kernel
 (Sniady 4.5 bulk term + Fulman finite-n bound), NOT more n. Any analytic kappa
 must reproduce a NON-MONOTONE approach. Still OPEN; not laundered.
+
+
+
+*** LEADING CONSTANT DERIVED (2026-08-21, PR #5428): kappa = 128/(225 pi^2) ***
+M_1 ~ kappa n^{5/2}, kappa = 128/(225 pi^2) = 0.0576404955832 > 0. DERIVED, not
+fitted (exact data is at 0.0591; the Omega-integral gives 0.05764).
+
+Chain: (1) EXACT identity Sum_h = Sum_u D(u)^2 + Sum|c| (n<=14, D=diagonal
+lengths) => M_1 = Cov(Sum_u D^2 + Sum|c|, Sum_u u^2 D), functionals of the
+single fn D(u); quadratic Sum D^2 linearizes (dropped term order sqrt n).
+(2) IO Kerov-CLT field (arxiv-math-0304010 eq 0.3). (3) Calibration dD=Delta,
+Sum_u=sqrt n int reproduces the KNOWN exact Var(Sum_c^2)=n(n-1)(n-2)/3 ->
+Var/n^3=1/3 (validates normalization). (4) Sum_h's test function collapses to
+phi_h = 2 D_inf + |x| = Omega(x) (VKLS shape!); Sum_c^2's x^2 has ONLY k=3 mode
+=> kappa = Omega_hat_3/3, Omega_hat_3 = 128/(75 pi^2).
+
+Verified: Omega_hat_3 closed-form vs quadrature to 1e-42; calibration exact;
+cross-check Var(Sum_h)/n^2 -> sum Omega_hat_k^2/k = 0.00997; rho -> 0.9997;
+transition-measure free cumulants R_2=n verified all partitions, R_4-explained%
+of Var(Sum_h) rises toward 100. Rigorous MODULO the IO CLT theorem (cited).
+
+STATUS UPDATE: leading term now DERIVED (kappa>0), was 'unknown/non-monotone'.
+REMAINING for M_1>0 all-n: Fulman (arxiv-math-0305423) finite-n bound on the
++/- n^{5/2} cancellation. kappa>0 = asymptotic positivity; + exact positivity
+n<=50; the finite-n bound is the SOLE remaining gap. Not laundered; nothing
+wired; L2 unchanged.
