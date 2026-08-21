@@ -1062,3 +1062,8 @@ import QOU.Mathlib.GenWronskian
 -- Roth's lemma actually consumes (its auxiliary polynomial is multivariate).  The operator
 -- family is an explicit parameter because in several variables there is no canonical row.
 import QOU.Mathlib.MvGenWronskian
+-- qou-sq3h -- staged for upstream Mathlib: restriction of a multivariate polynomial to a
+-- line, with the chain rule d/dt f(a+tc) = (D^c f)(a+tc).  The bridge for the generic-line
+-- route to BOUNDED-ORDER generalized Wronskians, which MvGenWronskian's converse cannot
+-- reach (it argues from the origin, and bounded-order Wronskians can vanish there).
+import QOU.Mathlib.LineRestriction
