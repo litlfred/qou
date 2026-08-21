@@ -301,6 +301,66 @@ def self_test() -> int:
     return 0
 
 
+
+# ── Second detector: the PARAMETER-fill leak (bean qou-d8gq) ─────────
+#
+# `scan_text` above returns [] unless the file imports mpmath. That is right
+# for the chi_numpy shape it was built for, and structurally BLIND to the one
+# actually measured in syt_prefix_cache.py:
+#
+#     def build_seminormal_matrices_cached(shape, *, cache, q_val=None):
+#         M = np.zeros((dim, dim))        # float64 — no dtype
+#         M[r, c] = v                     # v is an mpf when q_val is an mpf
+#
+# That module imports numpy and `math`, never mpmath: the mpf arrives through
+# the SIGNATURE. So the precondition fired and the scanner never looked, while
+# every mpf entry was silently truncated to 53 bits and the downstream matmul
+# left BLAS (measured 642x at dim=162).
+#
+# A library that receives its numeric type from its caller cannot be cleared by
+# looking at its own imports. This detector therefore ignores the mpmath
+# precondition and asks a narrower question instead: is there a dtype-LESS
+# numpy allocation that is later filled by subscript assignment? Such an array
+# silently defines the precision of whatever it is handed.
+#
+# Reported as a separate, non-blocking tier: `dtype=` is genuinely optional in
+# plenty of honest f64 code, so this is a list of places to look, not a defect
+# list — the same convention the f64-into-mpmath audit uses for its
+# circumstantial tiers.
+
+# The negative lookahead must scan the REST OF THE LINE, not `[^)]*`: in
+# `np.zeros((dim, dim), dtype=object)` the first `)` closes the shape tuple, so
+# a `[^)]*` lookahead stops before it ever reaches `dtype` and the fixed call
+# gets flagged as unfixed. Caught by testing the detector against the pre- and
+# post-fix versions of the bug it was written for (bean qou-d8gq).
+ALLOC_NO_DTYPE = re.compile(
+    r"^\s*(\w+)\s*=\s*(?:np|numpy)\."
+    r"(?:zeros|empty|ones|full)\s*\((?!.*\bdtype\b)")
+SUBSCRIPT_FILL = re.compile(r"^\s*(\w+)\s*\[[^\]]+\]\s*=\s*(\w+)")
+
+
+def scan_param_fill(text: str) -> list[tuple[int, str, str]]:
+    """Dtype-less numpy allocations later filled by subscript assignment."""
+    if not re.search(r"^\s*(?:import numpy|from numpy)", text, re.M):
+        return []
+    lines = text.split("\n")
+    allocs: dict[str, int] = {}
+    for i, ln in enumerate(lines, 1):
+        m = ALLOC_NO_DTYPE.match(ln)
+        if m:
+            allocs[m.group(1)] = i
+    if not allocs:
+        return []
+    out = []
+    for i, ln in enumerate(lines, 1):
+        m = SUBSCRIPT_FILL.match(ln)
+        if m and m.group(1) in allocs and not NOQA_P35.search(ln):
+            out.append((i, ln.strip(),
+                        f"dtype-less numpy alloc at line {allocs[m.group(1)]} "
+                        f"filled by subscript; an mpf here truncates silently"))
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--self-test", "--selftest", dest="selftest",
@@ -315,6 +375,7 @@ def main() -> int:
         return self_test()
 
     findings: dict[str, list] = {}
+    param_fill: dict[str, list] = {}
     scanned = 0
     for p in sorted(ROOT.rglob("*.py")):
         if "_deprecated" in p.parts or ".lake" in p.parts:
@@ -326,6 +387,9 @@ def main() -> int:
         hits = scan_text(text)
         if hits:
             findings[p.relative_to(ROOT).as_posix()] = hits
+        pf = scan_param_fill(text)
+        if pf:
+            param_fill[p.relative_to(ROOT).as_posix()] = pf
         if re.search(r"^\s*(?:import numpy|from numpy)", text, re.M):
             scanned += 1
 
@@ -340,9 +404,23 @@ def main() -> int:
     print(f"  files with candidates    : {len(findings)}")
     print(f"  candidate lines          : {sum(len(v) for v in findings.values())}")
     print()
+    print(f"  ADVISORY param-fill      : {len(param_fill)} file(s), "
+          f"{sum(len(v) for v in param_fill.values())} line(s)")
+    if param_fill:
+        print()
+        print("  Dtype-less numpy allocations filled by subscript. NOT a defect")
+        print("  list — `dtype=` is optional in honest f64 code. These are the")
+        print("  places an mpf handed in through a PARAMETER would be truncated")
+        print("  silently, which the main scan cannot see (it requires a local")
+        print("  mpmath import). Bean qou-d8gq measured one at 642x.")
+        for path, hits in sorted(param_fill.items(), key=lambda kv: -len(kv[1]))[:12]:
+            print(f"    {path}  ({len(hits)})")
+            for ln, src, _why in hits[:2]:
+                print(f"       L{ln}: {src[:72]}")
+        print()
     if not findings:
-        print("  No candidates. (The known instance in hoefsmit_numpy.py is fixed;")
-        print("  the other four d_for_ctype consumers already cast.)")
+        print("  No BLOCKING candidates. (The known instance in hoefsmit_numpy.py")
+        print("  is fixed; the other four d_for_ctype consumers already cast.)")
         return 0
 
     for path, hits in sorted(findings.items(), key=lambda kv: -len(kv[1])):
