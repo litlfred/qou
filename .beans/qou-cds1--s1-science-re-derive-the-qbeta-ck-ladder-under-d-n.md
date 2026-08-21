@@ -908,3 +908,12 @@ is unaffected, and this does not supply such a rung.
 
 NON-OVERLAP: sibling PR #5415 works the c₃ f-map (routes A/B refuted, route C
 = analytic Φ_b open). Different rung; no duplication.
+
+── f-map 3-route attack: c₃ NOT forceable from the D trace (2026-08-21) ──
+Dispatched 3 routes; all trace-weight routes fail, C (amplitude) untouched:
+• Route A (bar-odd crossing): REFUTED scope-(b) — bar-odd part of D two-row trace of σ^k vanishes at q=1 (parity), target −2 is bar-even.
+• Route B (Z3 carrier G·D): REFUTED scope-(b) SAME parity — every bar-even-functional × bar-odd-carrier is bar-odd → 0 at q=1.
+• Redirect (bar-even channel): REFUTED scope-(a) genericity — −2 at q=1 hit by 4/4 natural bar-even combos (pins nothing); no bar-even object = full V(Hopf)(q)=−(s+s⁵) (which isn't bar-even).
+UNIFIED INSIGHT: c₃=−2=J_Hopf(1) is a bar-EVEN q=1 SHADOW; no bar-odd construction reaches it, bar-even is generic. D-trace/weights cannot force c₃ in any parity.
+DELIVERABLES: FMapC3ParityExclusion.lean (barOdd_at_one, barOdd_ne_hopf_value_at_one — sorry-free scope-b invariant); fmap_c3_parity_genericity_exclusion.py (19/19); audit 2026-08-21-fmap-c3-parity-genericity-exclusion.md.
+OPEN: only route C (analytic Φ_b/Lawrence-Rozansky amplitude leg) — structurally different (not a parity object), the corpus's real wall; ingredients gathered (Φ_b s_n=B_2n/(2n)!, 4₁ κ-tower) but c_k-reduction not completed. That is where future f-map work goes.
