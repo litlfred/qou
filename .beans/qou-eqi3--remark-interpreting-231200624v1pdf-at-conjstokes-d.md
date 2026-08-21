@@ -3,8 +3,9 @@
 title: Remark interpreting 2312.00624v1.pdf at conj:stokes-dt-bps-bridge
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T00:10:50Z
-updated_at: 2026-08-09T00:10:50Z
+updated_at: 2026-08-21T17:04:54Z
 ---
 
 One remark covering both usable items: that a GGM co-author lists the BPS-counting interpretation as open (calibrating the bridge block's 'proved ... for the figure-eight' wording), and that the integrality in question is the convergent-q-series holomorphic-block kind, not the resurgent Stokes kind -- so it is adjacent evidence, not a refutation. State explicitly what remains unchecked: whether the holomorphic-block integers and the resurgent Stokes constants of the same knot are related at all.
@@ -19,3 +20,10 @@ Source: `library/arxiv-2312.00624v1/2312.00624v1.pdf` — no `references.ts` ent
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-2312.00624v1/  ->  [mario2023]
+  On the structure of wave functions in complex Chern–Simons theory
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [mario2023] as the citation key when you do it.

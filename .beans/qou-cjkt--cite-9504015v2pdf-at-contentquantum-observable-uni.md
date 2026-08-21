@@ -3,8 +3,9 @@
 title: Cite 9504015v2.pdf at content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryCon…
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T00:10:47Z
-updated_at: 2026-08-09T00:10:47Z
+updated_at: 2026-08-21T17:04:51Z
 ---
 
 KeystoneRTSurgeryConstruction.lean carries the RT/WRT = Chern-Simons identification as a named, cited-but-unformalised hypothesis whose '-- Ref:' list currently names only Reshetikhin-Turaev 1991 / Turaev 1994 and beasleywitten2005. Adding this paper documents the perturbative form of that identification and its explicit verification on the Seifert class the file's manifold belongs to, so a reader can see how far the cited literature actually goes. It documents the hypothesis; it does not discharge it, and the file's honest-scope banner should stay unchanged.
@@ -19,3 +20,10 @@ Source: `library/arxiv-q-alg-9504015v2/9504015v2.pdf` — no `references.ts` ent
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-q-alg-9504015v2/  ->  [rozansky1995]
+  Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [rozansky1995] as the citation key when you do it.

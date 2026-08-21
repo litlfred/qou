@@ -3,8 +3,9 @@
 title: Remark interpreting 0906.1500v4.pdf at content/quantum-observable-universe/lean/QOU/OneLoopEdgeLa…
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:01Z
-updated_at: 2026-08-08T16:13:01Z
+updated_at: 2026-08-21T17:04:58Z
 ---
 
 Record why the refutation in qou-fl4t is a defect of the |det J| route and not of the torsion itself: the adjoint torsion is a well-defined invariant with an independent CW-level computation, so the negative is scope-(a) (this construction, as computed, is not invariant) and not scope-(b) (the quantity does not exist). Prevents the refutation from over-narrowing the search.
@@ -17,3 +18,10 @@ Source: `library/arxiv-0906.1500v4/0906.1500v4.pdf` — no `references.ts` entry
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-0906.1500v4/  ->  [dubois-yamaguchi2012]
+  Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [dubois-yamaguchi2012] as the citation key when you do it.
