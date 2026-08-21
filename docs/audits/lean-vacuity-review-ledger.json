@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-21T16:09:39.000Z",
+  "updated_at": "2026-08-21T16:16:11.608Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -589,17 +589,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `KnotOperatorSelectionContext` carries field `tr_Phi` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `tr_Phi` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/spectrahedral_phase_collapse.lean::nucleon_sdp_rank_drop::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 35,
-      "verdict": "genuine",
-      "file_sha": "4820ae158009",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Pure definitional unfolding under a name asserting a spectral result. `detFactor3 u := u^3 + u - 1` (GramMatrixH3Symbolic.lean:230), so `detFactor3 u = 0 ↔ u^3 + u - 1 = 0` is closed by `rfl` and states only that the definition is its own body. Nothing about an SDP, a nucleon, or a rank drop is established, and `hu_pos : u > 0` is unused decoration. Fix: state the rank-drop claim (that the Gram matrix drops rank exactly at the real root of `u^3+u-1`), or rename to `detFactor3_eq_zero_iff` and drop `hu_pos`.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse.lean::descartes_universality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
