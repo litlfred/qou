@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:26:31.517698+00:00",
-  "commitSha": "540693cb0424253f9ff91aa8f43785b03239f14d",
+  "computedAt": "2026-08-21T16:29:36.841624+00:00",
+  "commitSha": "6deebeb0652d194e30de787765ff0cef54636ef0",
   "assertions": [
     {
       "name": "covariance_epic_M1_antidiagonal_reformulation",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "wlambda-covariance-epic-M1-antidiagonal-reformulation",
   "scriptFile": "wlambda_covariance_epic_M1_antidiagonal_reformulation.py",
-  "scriptHash": "1b9fb14a3b63",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "22cf8d4d6d17",
+  "scriptCommitSha": "652df745361f773f6bb6d06d886c530efc9bbf4c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,8 @@
     "sum_b_transpose_even_not_in_A": true,
     "var_sum_c2_eq_C3": true,
     "correlation_rho_range_near_perfect": [
-      0.853,
-      1.0
+      "0.852802865422441737193750929735357505561496064256679482473764",
+      "1.00000000000000000000000000000000000000000000000000000000000"
     ],
     "closed_form_excluded": true,
     "proof_route": "Kerov CLT: Cov = double integral of phi*psi against Gaussian profile kernel K_Delta (positive quadratic form)"
