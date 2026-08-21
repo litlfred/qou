@@ -4987,6 +4987,100 @@ theorem blockTransportRight {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
       simp only [List.append_assoc, List.cons_append] at hstep hrec ⊢
       exact MultiStepReduction.trans hstep hrec
 
+/-! ### §4aj  The whole block, in three steps
+
+With `blockTransportRight` in hand the block closes. The per-level blueprint —
+measured over 102 levels in `hecke_block_transport_shape.py`, uniform on and off
+the diagonal — says the level with high letter `σ_h` passes
+`descWord (min(h−2, j₁+1)) j₂` and carries `descWord (h−1) (j₁+1) ++ [σ_i]` on
+its right. Only two levels sit below the cap, so the block is
+
+    h = j₁+1   one transport across `descWord (j₁−1) j₂`
+    h = j₁+2   one transport across `descWord j₁ j₂`
+    h ≥ j₁+3   one `blockTransportRight`, `X = descWord i (j₁+3)`
+
+and the two short levels need no lemma of their own — they are
+`farComm_transport_right_sources` applications, with the blueprint supplying
+their arguments.
+
+**What makes the three compose is the left contexts, and they are forced.**
+Writing `A` for the block transport's context, the earlier steps must run at
+
+    A₂ = A ++ descWord i (j₁+3) ++ [σ_{j₁+1}]
+    A₁ = A₂ ++ [σ_{j₁+2}, σ_{j₁}]
+
+and then each step's target is the next one's source *on the nose*, because
+`descWord j₁ j₂ = σ_{j₁} :: descWord (j₁−1) j₂` and
+`descWord (j₁+1) j₂ = σ_{j₁+1} :: descWord j₁ j₂` peel exactly the letters the
+contexts carry. Those two `descWord_cons` peelings and
+`descWord (j₁+2) (j₁+1) = [σ_{j₁+2}, σ_{j₁+1}]` are the whole of the gluing.
+
+**No bound relating `j₁+3` to `i` is needed.** The obvious hypothesis
+`j₁+3 ≤ i` is *not* required and is not taken: if it fails, `descWord i (j₁+3)`
+is empty and the middle step is vacuous, which is exactly the degenerate
+short-block case. Stating it would have narrowed the lemma for nothing. -/
+
+/-- **The block, at general depth.** One pass of the `a ≤ b` regime's
+far-commutation block: the two levels below the cap, then every level above it
+at once.
+
+The left context `A` is arbitrary — the block never has to know what the prefix
+left to its left — and the parked-term hypothesis is `blockTransportRight`'s. -/
+theorem blockPass {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ jm j₁ jp jpp jppp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ jm.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ A ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+          ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++
+          (descWord jpp jp ++ [(⟨i⟩ : HeckeGen n)]))), c) :: L₂)) := by
+  -- the two descWord peelings the chaining rests on
+  have hd1 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
+    descWord_cons hjm hj₂
+  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
+    descWord_cons hjp (by omega)
+  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
+    rw [descWord_cons hjpp (le_refl _), descWord_self]
+  -- step 1: σ_jp across descWord jm j₂
+  have s1 := farComm_transport_right_sources hn hp jp c hc L₁ L₂
+    (descWord jm j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩]))
+    [(⟨i⟩ : HeckeGen n)]
+    (fun y hy => by have := descWord_index_le hy; omega)
+    (fun u v _ _ r hr => by
+      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+        (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ [(⟨i⟩ : HeckeGen n)])))))
+      simpa only [List.append_assoc] using this)
+  -- step 2: σ_jpp across descWord j₁ j₂
+  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
+    (descWord j₁ j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
+    [(⟨jp⟩ : HeckeGen n), ⟨i⟩]
+    (fun y hy => by have := descWord_index_le hy; omega)
+    (fun u v _ _ r hr => by
+      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+        (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ [(⟨jp⟩ : HeckeGen n), ⟨i⟩])))))
+      simpa only [List.append_assoc] using this)
+  -- step 3: the capped block, all at once
+  have s3 := blockTransportRight hn hp c hc L₁ L₂ A hpark
+    (descWord jp j₂) (descWord i jppp) (descWord jpp jp ++ [(⟨i⟩ : HeckeGen n)])
+    (fun x hx y hy => by
+      have hx' := descWord_index_ge hx
+      have hy' := descWord_index_le hy
+      omega)
+  rw [hd1] at s2
+  rw [hd2, hd1, hd3] at s3 ⊢
+  simp only [List.append_assoc, List.cons_append,
+    List.nil_append] at s1 s2 s3 ⊢
+  exact MultiStepReduction.trans (MultiStepReduction.trans s1 s2) s3
+
 /-- **The descending run begins with its top index**, whenever it is non-empty.
 Splits on `j = i` (`descWord_self`) and `j < i` (`descWord_cons` at `i − 1`). -/
 theorem descWord_head {n : ℕ} {i j : Fin n} (hj : j.val ≤ i.val) :
