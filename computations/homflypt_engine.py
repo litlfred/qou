@@ -267,38 +267,39 @@ def homflypt_2strand(braid_word: list[int]) -> LaurentPoly2:
     For 2-strand braids, all crossings use generator σ₁. The
     braid word is just a sequence of ±1s.
 
-    .. warning::
+    .. note::
 
-       **This returns the `v` -> `v^-1` MIRROR of the convention used by this
-       module's own reference, and the two have never been compared.**
-       `homflypt_reference_qa._torus_homfly` derives `closure(sigma_1^k)` from
-       the skein relation by hand and states `P(sigma_1^3) = 2v^2 - v^4 +
-       v^2z^2` for the right trefoil; the table below returns
-       `-v^-4 + 2v^-2 + v^-2z^2`, which is that with `v -> v^-1`. The reference
-       QA never tests this path -- its docstring says the path under test is
-       `_homflypt_nstrand_numerical` -- which is how the discrepancy survived.
-       The `# Wait, let me use the correct Lickorish convention.` note left in
-       the k=3 branch suggests it was noticed and not finished.
+       **Fixed 2026-08-21 (bean qou-7ue5). The `k = +-2` and `k = +-3` entries
+       were wrong and are corrected here**; `k = 0, +-1` were always right.
 
-       **Lean-validated** (`QOU/Knot/HomflySkeinReference.lean`, sorry-free):
-       the table entries are the reference evaluated at the HOMFLY mirror
-       `(v, z) -> (v^-1, -z)`. So the polynomials are not wrong -- these are
-       the LEFT trefoil and the NEGATIVE Hopf link, carrying the labels
-       "Right-hand trefoil" and "Hopf link (positive)". The defect is the
-       label and the crossing-sign convention, not the algebra.
+       The table had been carrying the HOMFLY *mirror*: the `k = +2` and
+       `k = +3` slots held the polynomials of the NEGATIVE Hopf link and the
+       LEFT trefoil, under the labels "Hopf link (positive)" and "Right-hand
+       trefoil". This module's own reference,
+       `homflypt_reference_qa._torus_homfly`, derives `closure(sigma_1^k)` from
+       the skein relation by hand and gives `P(sigma_1^3) = 2v^2 - v^4 +
+       v^2z^2`; the two had never been compared, because that QA's docstring
+       says the path under test is `_homflypt_nstrand_numerical`.
 
-       Careful with the `z` sign: it is NOT plain `v -> v^-1`. That agrees at
-       k=3 only because `z` occurs there as `z^2`; at k=2 the reference's
-       `+vz` must become `-v^-1 z`. Both facts are proved
-       (`plain_inversion_ne_mirror`, `plain_inversion_eq_mirror_at_three`) so
-       the coincidence is not mistaken for a rule.
+       `k = -2` was wrong a second way. It had been derived from the (already
+       mirrored) `k = +2` by plain `v -> v^-1`, but the HOMFLY mirror is
+       `(v, z) -> (v^-1, -z)`. At `k = 2`, `z` appears to ODD powers, so
+       dropping the `z` sign flips the whole polynomial; the old entry was the
+       negative of a correct value. At `k = 3` the same omission is invisible
+       because `z` occurs only as `z^2` -- which is exactly why this survived.
 
-       NOT resolved here: which sign is intended is a convention call for this
-       module's owner, and this repo has a costly history of convention
-       flip-flops. Recorded rather than flipped -- but the Lean gives the exact
-       substitution, so applying it here and in `_self_test` is mechanical.
-       Note that a `v`-spread is mirror-invariant, so an MFW reading is
-       unaffected either way.
+       Both facts are proved in `QOU/Knot/HomflySkeinReference.lean`
+       (sorry-free): `engine_k2_is_mirror`, `engine_k3_is_mirror`, and the pair
+       `plain_inversion_ne_mirror` / `plain_inversion_eq_mirror_at_three` that
+       records the k=3 coincidence next to the k=2 refutation so it is not
+       mistaken for a rule. Every entry below is independently ground-truthed
+       against `computations/homfly_skein_braid.homfly`, an exact-integer skein
+       engine, and `_self_test`'s expected values were corrected to match.
+
+       Blast radius of the old values was zero: `homflypt_2strand` and
+       `homflypt_from_braid` have no consumers anywhere in the corpus. A
+       `v`-spread is mirror-invariant in any case, so no MFW reading was
+       affected.
 
        Also note this is a hardcoded lookup table over `k = sum(signs)`, not
        the formula the docstring above states, and it raises for `|k| > 3`.
@@ -323,24 +324,23 @@ def homflypt_2strand(braid_word: list[int]) -> LaurentPoly2:
         return LaurentPoly2.one()
 
     if k == 2:
-        # Hopf link (positive): P = -v⁻¹z + (v⁻³ - v⁻¹)/z
-        # = v⁻³z⁻¹ - v⁻¹z⁻¹ - v⁻¹z
-        return LaurentPoly2({(-3, -1): 1, (-1, -1): -1, (-1, 1): -1})
+        # Hopf link (positive): P = vz + (v - v³)/z = vz + vz⁻¹ - v³z⁻¹
+        return LaurentPoly2({(1, 1): 1, (1, -1): 1, (3, -1): -1})
 
     if k == -2:
-        # Hopf link (negative): mirror of positive
-        return LaurentPoly2({(3, -1): 1, (1, -1): -1, (1, 1): -1})
+        # Hopf link (negative) = the positive one at the mirror
+        # (v, z) -> (v⁻¹, -z):  v⁻³z⁻¹ - v⁻¹z⁻¹ - v⁻¹z
+        return LaurentPoly2({(-3, -1): 1, (-1, -1): -1, (-1, 1): -1})
 
     if k == 3:
-        # Right-hand trefoil: P = -v⁻⁴ + v⁻²z² + 2v⁻²
-        # Wait, let me use the correct Lickorish convention.
-        # Under v⁻¹P(L+) − vP(L-) = zP(L0):
-        # P(3₁⁺; v, z) = −v⁻⁴ + v⁻²z² + 2v⁻²
-        return LaurentPoly2({(-4, 0): -1, (-2, 2): 1, (-2, 0): 2})
+        # Right-hand trefoil, Lickorish v⁻¹P(L+) - vP(L-) = zP(L0):
+        # P(3₁⁺; v, z) = 2v² - v⁴ + v²z²
+        return LaurentPoly2({(2, 0): 2, (4, 0): -1, (2, 2): 1})
 
     if k == -3:
-        # Left-hand trefoil: mirror (v → v⁻¹)
-        return LaurentPoly2({(4, 0): -1, (2, 2): 1, (2, 0): 2})
+        # Left-hand trefoil = the right one at the mirror (v, z) -> (v⁻¹, -z).
+        # Here z appears only as z², so this one coincides with plain v⁻¹.
+        return LaurentPoly2({(-4, 0): -1, (-2, 0): 2, (-2, 2): 1})
 
     # General T(2, k) via Skein recurrence on 2-strand braids.
     # Resolving one crossing of σ₁^k:
@@ -855,8 +855,8 @@ def _self_test():
     # Hopf link (σ₁²)
     word, n = hopf_link_braid()
     p_hopf = homflypt_from_braid(word, n)
-    # Known: P(Hopf) = v⁻³z⁻¹ − v⁻¹z⁻¹ − v⁻¹z
-    expected_hopf = LaurentPoly2({(-3, -1): 1, (-1, -1): -1, (-1, 1): -1})
+    # Known: P(Hopf⁺) = vz + (v − v³)/z   (corrected, bean qou-7ue5)
+    expected_hopf = LaurentPoly2({(1, 1): 1, (1, -1): 1, (3, -1): -1})
     ok = (p_hopf == expected_hopf)
     print(f"  Hopf link:      P = {p_hopf}  {'✓' if ok else '✗ MISMATCH'}")
     if not ok:
@@ -865,8 +865,8 @@ def _self_test():
     # Trefoil (σ₁³)
     word, n = trefoil_braid()
     p_tref = homflypt_from_braid(word, n)
-    # Known: P(3₁⁺) = −v⁻⁴ + v⁻²z² + 2v⁻²
-    expected_tref = LaurentPoly2({(-4, 0): -1, (-2, 2): 1, (-2, 0): 2})
+    # Known: P(3₁⁺) = 2v² − v⁴ + v²z²   (corrected, bean qou-7ue5)
+    expected_tref = LaurentPoly2({(2, 0): 2, (4, 0): -1, (2, 2): 1})
     ok = (p_tref == expected_tref)
     print(f"  trefoil (3₁⁺):  P = {p_tref}  {'✓' if ok else '✗ MISMATCH'}")
     if not ok:
@@ -874,7 +874,7 @@ def _self_test():
 
     # Left trefoil (σ₁⁻³) — mirror
     p_ltref = homflypt_from_braid([-1, -1, -1], 2)
-    expected_ltref = LaurentPoly2({(4, 0): -1, (2, 2): 1, (2, 0): 2})
+    expected_ltref = LaurentPoly2({(-4, 0): -1, (-2, 0): 2, (-2, 2): 1})
     ok = (p_ltref == expected_ltref)
     print(f"  trefoil (3₁⁻):  P = {p_ltref}  {'✓' if ok else '✗ MISMATCH'}")
 
