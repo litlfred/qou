@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-21T15:38:22Z
+updated_at: 2026-08-21T15:53:06Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -851,3 +851,12 @@ Solved the three H₃ Markov eqns exactly over ℚ(q) at BOTH z_C and z_D (hoefs
 • At z_C the weights are genuinely three-row (√q powers) and b² ≠ 1 − y_(2,1)ᶜ. So the identity is CONVENTION-D SPECIFIC.
 ⇒ The Hoefsmit coupling b that generates ALL of N2..N5 is a D-frame object (b = √(1−y_(2,1)ᴰ)) — a POSITIVE structural reason the tails are correctly D-framed, beyond 'b is z-free'.
 PROVABLE (formalized, EXIT=0): hoefsmitB_sq_eq_one_sub_stdWeightD (b²=1−y_(2,1)ᴰ) + the c₂=−1 Taylor form. NOT provable-as-forced: c₃/c₄/c₅ VALUES (fitted near-matches; only the form J_Hopf·b^k is structural). The provable content of N2..N5 = the coupling identity + c₂; fence holds on the higher-rung values.
+
+── Lean-proved the full provable D-weight structure 2026-08-21 (PR #5364, all EXIT=0) ──
+Formalized S2 in Lean (turned the Python symbolic result into proved theorems) + characterized the D weights:
+• dWeights_normalised (y₃+2y₂₁=1), trivWeightD_eq (y₃=1−2y₂₁)
+• dWeights_markov_sigma + dWeights_markov_sigmasigma — the S2 weights SOLVE the σ and σσ Markov equations at z_D=q³/(q²+1)
+• stdWeightD_eq_jones (y₂₁ᴰ=1/[2]_q²) — matches markovWeights_eq_jones_of_threeRow_eq_zero's (q+q⁻¹)²y₂₁=1
+• hoefsmitB_sq_eq_trivWeightD_add_stdWeightD (b²=y₃+y₂₁), dWeights_at_one (q=1: y₂₁=¼,y₃=½,b²=¾)
+Combined with the prior b²=1−y₂₁ᴰ and the existing uniqueness lemma, the D weights are now FULLY characterized in Lean.
+HONEST BOUNDARY (stated in dWeights_at_one docstring): c₃=−2=J_Hopf(1) is a TOPOLOGICAL input (Jones of Hopf link), NOT derivable from these weights — no forced-c₃ lemma exists. Provable D-structure = weight/coupling algebra + c₂ Taylor form; c₃/c₄/c₅ values stay fitted.
