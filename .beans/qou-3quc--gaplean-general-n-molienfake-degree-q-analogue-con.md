@@ -56,7 +56,7 @@ machinery it already has.
 
 Blocker 1 said 'f^lam as #SYT in Lean ... missing'. IT IS NOT MISSING.
 QOU/Mathlib/SYTEnumerationFintype.lean (760+ lines, namespace QOU.Mathlib.SYTEnum)
-supplies numSYTenum -- KERNEL-COMPUTABLE,  evaluates it -- plus
+supplies numSYTenum -- KERNEL-COMPUTABLE, a `by decide` proof evaluates it -- plus
 numStandardYoungTableaux and the bridge numSYTenum_eq_numStandardYoungTableaux.
 I had probed MATHLIB by name, found nothing, and never grepped the corpus's own
 Lean tree.
