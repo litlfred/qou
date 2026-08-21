@@ -1540,6 +1540,48 @@
    "median_rel_move": 0.0,
    "n_fields": 21,
    "err": ""
+  },
+  "mass_formula_6term": {
+   "rc": 0,
+   "sec": 176.4,
+   "witnesses": [],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 0,
+   "err": "  vols_dict = atom_per_generator_volumes(Z, N, include_inter=include_inter)"
+  },
+  "mass_formula_6term_mpfr_50dps": {
+   "rc": 0,
+   "sec": 17.0,
+   "witnesses": [
+    "mass-formula-6term-mpfr-50dps.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 55,
+   "err": ""
+  },
+  "mass_per_knot_density": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "mass-per-knot-density.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": "  eq = abs(vol_density_borromean(q) - per_knot_density_vd(vol_borromean(), q))"
+  },
+  "mass_sweep_wiring_status": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "mass-sweep-wiring-status.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 112,
+   "err": ""
   }
  }
 }
