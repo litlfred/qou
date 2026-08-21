@@ -46,8 +46,14 @@ No open sibling branch/PR is currently on this arc (checked `git branch -r`, `li
    case — corrected Lane 2's "binding is ℏ_q²-suppressed" over-claim to `ρ_binding = M·ℏ_q²`. What
    survives non-circular: mass multiplier O(1/ℏ_q²) vs binding O(1) (mass classical, binding
    O(ℏ_q²) quantum); and `M = z = A−1` in the linear-chain regime (Lane 1 tie). Audit
-   `2026-08-21-binding-hbarq-rung-forward-test.md`. *Next open:* derive why mass carries
-   `linking_weight/ℏ_q²` and binding the bare coordination count `M`.
+   `2026-08-21-binding-hbarq-rung-forward-test.md`.
+3. **Rung derivation — PARTIAL (2026-08-21).** Attacked "why mass carries `linking_weight/ℏ_q²`
+   and binding the bare `M`." CLOSED: the `1/ℏ_q²` is traced to the CAL-2 muon-anchor cusp factor
+   (`m_μ/m_e = Vol(4₁)/ℏ_q²`, not free); the analytic dichotomy is Lean-proved sorry-free
+   (`QOU.Mass.BindingMassRung`: mass = order-2 pole residue `lw`; `binding/mass = (M/lw)·ℏ_q² → 0`).
+   PHYSICAL: the saturated binding fraction `B/A/m_N` rises toward ℏ_q² (0.95·ℏ_q² at ⁵⁶Fe).
+   OPEN KERNEL (bean `qou-brng`): a first-principles proof that saturation is *exactly* ℏ_q² (not
+   merely O(ℏ_q²)). Audit `2026-08-21-binding-mass-rung-derivation.md`.
 3. **Item 2:** turn `hoefsmit-convergence-magic-shells-intro.md`'s SW-3-root magic-shell
    saturation into the `a_D^(4)≈2.52` / `ρ_F≈2` value (replace the AME read).
 4. **Item 4 (W3 first):** resolve which knot the deuteron *is* (0 or 4.4 anchor) — every
