@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-19T13:05:24Z
-updated_at: 2026-08-21T22:48:57Z
+updated_at: 2026-08-21T23:23:02Z
 ---
 
 
@@ -230,3 +230,43 @@ not establishable, and guessing would launder it.
 Remaining: tranche **b** — the string/comment-resident sites, plus the
 188 consumers minus the three exclusion classes (window bounds, test
 expectations, deliberate determination choices).
+
+## 2026-08-21 23:05 UTC — tranche b: the count itself was the defect
+
+Re-measured before draining anything, and the first finding was in the
+detector this bean is built on.
+
+**The actionable queue is ~61, not 447.** Classified by whether the
+literal is executable, the 448 `.py/.lean/.ts` sites split:
+
+    CODE          61   executable -- can compute a wrong number
+    PROSE        381   inside a comment or a string; inert
+    ADJUDICATED    6   executable, carrying `noqa: P31`
+
+So this bean's title ("drain the 443 source sites") over-states its own
+scope by ~7x, and the scan's headline label was wrong for 87% of what it
+counted.
+
+**The direction matters more than the size.** Tranche a moved the count
+447 -> 448 -- not a regression: a drain that replaces a stale literal
+with a registry read and records the superseded value beside it lands in
+PROSE. Counting prose as defects makes the number rise when the corpus
+improves and rewards deleting provenance to bring it down. Only CODE
+gates under `--strict` now.
+
+Two defects in my own classifier, both recorded rather than quietly
+fixed: a line-keyed first attempt under-counted code 53 vs 61 (a
+trailing comment tarred the executable line), and an untracked-string
+`.lean/.ts` path over-counted it (registry.ts:647 is a CODATA value
+inside a `description:` string, reported as executable) -- the opposite
+of the direction I had argued the crude path could err in.
+
+Landed on #5423: `2e348e57e5`. `--self-test` covers 11 classifier
+shapes + 4 marker cases; precision gates green.
+
+**Remaining for the drain proper: the 61 code sites.** Dominant classes
+are `938.27208816` / `939.56542052` (CODATA-2018 masses, mostly in
+mass-theory `.lean`), `0.51099895` (truncated m_e) and
+`137.035999084` (CODATA-2018 alpha-inverse). The alpha-inverse sites
+are a deliberate determination choice per the tranche-a adjudication and
+should be marked `noqa: P31` rather than changed.
