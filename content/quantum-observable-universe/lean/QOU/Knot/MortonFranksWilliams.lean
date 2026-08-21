@@ -10,7 +10,10 @@ of a link below, from the `v`-degrees of its HOMFLY polynomial. HOMFLY is the
 Ocneanu/Markov trace on the Iwahori–Hecke tower — the corpus's own object — so
 this is the natural route to a **derived** braid index, replacing the
 literature-recalled value `braid index(6₁) = 4` that `qou-xpgq` flagged as
-unverified and load-bearing.
+unverified and load-bearing. (`qou-xpgq` lives on the unmerged branch of
+PR #5294, so `beans show qou-xpgq` returns nothing until that lands — its PR
+body carries the flag verbatim: "`6₁`'s braid index is **not** verified against
+any in-repo source".)
 
 ## The statement being formalised
 

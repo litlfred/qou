@@ -5,6 +5,10 @@
 `qou-xpgq` flagged `braid index(6_1) = 4` as a literature-recalled,
 unverified, load-bearing value. This producer derives it.
 
+That bean is on the unmerged branch of PR #5294, so `beans show qou-xpgq`
+returns nothing until it lands; the PR body states the flag verbatim
+("`6_1`'s braid index is **not** verified against any in-repo source").
+
 ## What is derived here
 
 For each knot: the exact two-variable HOMFLY of a braid closure
