@@ -1,11 +1,11 @@
 ---
 # qou-6y28
 title: 'Three content blocks never entered the paper — decide: wire in or remove'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T21:23:35Z
-updated_at: 2026-08-21T15:16:59Z
+updated_at: 2026-08-21T15:36:38Z
 ---
 
 
