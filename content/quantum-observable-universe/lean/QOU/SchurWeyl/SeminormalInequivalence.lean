@@ -51,7 +51,7 @@ LaTeX label: `lem:seminormal-pairwise-inequivalent`
 namespace QOU.SchurWeyl
 
 open QOU.Mathlib (StandardYoungTableau)
-open SeminormalRep
+open TableauCells SeminormalRep
 
 /-! ## Equivalence of matrix representations -/
 
@@ -95,6 +95,37 @@ theorem MatRepEquiv.scalar_eq [Nonempty κ] {ρ : A →ₐ[R] Matrix ι ι R} {�
   have := congrFun (congrFun h2 (Classical.arbitrary κ)) (Classical.arbitrary κ)
   simpa [Matrix.one_apply_eq] using this
 
+/-- **An equivalence conjugates one representation into the other.**  The intertwining identity
+`ρ' x * S = S * ρ x` becomes `ρ' x = S * ρ x * T` once `S * T = 1` is used on the right. -/
+theorem MatRepEquiv.conj_eq {ρ : A →ₐ[R] Matrix ι ι R} {ρ' : A →ₐ[R] Matrix κ κ R}
+    {S : Matrix κ ι R} {T : Matrix ι κ R} (hST : S * T = 1)
+    (hint : ∀ x : A, ρ' x * S = S * ρ x) (x : A) : ρ' x = S * ρ x * T := by
+  calc ρ' x = ρ' x * (S * T) := by rw [hST, Matrix.mul_one]
+    _ = (ρ' x * S) * T := (Matrix.mul_assoc _ _ _).symm
+    _ = (S * ρ x) * T := by rw [hint x]
+
+/-- **The character is an equivalence invariant.**  `tr ρ'(x) = tr ρ(x)` for every `x`.
+
+This is the workhorse for *un*conditional separation, and it is strictly stronger than
+`scalar_eq`: it applies to every algebra element, not only those landing on scalars, so it can
+compare whole spectra rather than one number.  Note it needs only `S * T = 1` and `T * S = 1` —
+no genericity, no algebra structure beyond the intertwining. -/
+theorem MatRepEquiv.trace_eq {ρ : A →ₐ[R] Matrix ι ι R} {ρ' : A →ₐ[R] Matrix κ κ R}
+    (h : MatRepEquiv ρ ρ') (x : A) : (ρ' x).trace = (ρ x).trace := by
+  obtain ⟨S, T, hST, hTS, hint⟩ := h
+  calc (ρ' x).trace = (S * ρ x * T).trace := by rw [MatRepEquiv.conj_eq hST hint x]
+    _ = (T * (S * ρ x)).trace := Matrix.trace_mul_comm _ _
+    _ = ((T * S) * ρ x).trace := by rw [Matrix.mul_assoc]
+    _ = (ρ x).trace := by rw [hTS, Matrix.one_mul]
+
+/-- **Equivalent representations have equal dimension.**  The `x = 1` instance of `trace_eq`,
+read through `CharZero` to land in `ℕ`. -/
+theorem MatRepEquiv.card_eq [CharZero R] {ρ : A →ₐ[R] Matrix ι ι R} {ρ' : A →ₐ[R] Matrix κ κ R}
+    (h : MatRepEquiv ρ ρ') : Fintype.card κ = Fintype.card ι := by
+  have := h.trace_eq 1
+  rw [map_one, map_one, Matrix.trace_one, Matrix.trace_one] at this
+  exact_mod_cast this
+
 /-! ## The seminormal application -/
 
 /-- **Shapes with different content-cosh sums carry inequivalent representations.**
@@ -115,5 +146,60 @@ theorem seminormalRep_not_matRepEquiv_of_contentCoshSum_ne {μ ν : YoungDiagram
   intro h
   exact hne (h.scalar_eq (seminormalRep_barSymJMSum q hq0 hq2 n hμ)
     (seminormalRep_barSymJMSum q hq0 hq2 n hν))
+
+
+/-! ## Stage 2 — the whole power-sum family, not one scalar
+
+`scalar_eq` above compares a *single* number and is therefore conditional.  What removes the
+condition is that the same argument runs for **every** power `m`: the element
+`Σ_k L_k^m` is again central-acting (its diagonal is constant, by the cell sweep), so an
+equivalence forces the content power sums to agree at every `m`.
+
+That family is what pins the shape.  Writing `t = q^{2m}`, the identity says the two content
+generating functions `Σ_{c ∈ μ} t^c` and `Σ_{c ∈ ν} t^c` agree at every point of
+`{q^2, q^4, q^6, …}`.  Because `q ≠ 0` and `q^2 ≠ 1`, those points are **pairwise distinct** —
+`q^2` is positive and `≠ 1`, so its powers are strictly monotone — so the difference is a Laurent
+polynomial with infinitely many roots, hence identically zero, hence the two content **multisets**
+coincide.  This is the step that a single scalar cannot reach, and it uses the genericity
+hypothesis for something other than `zpow` injectivity.
+-/
+
+/-- **The `m`-th Murphy power sum acts by the content power sum.**  Generalises
+`seminormalRep_barSymJMSum` from the bar-symmetrised `m = ±1` combination to every `m`, by the
+same two ingredients: Ram 4.1 makes each `ρ(L_k)` diagonal, and `sum_cellOf_range` makes the
+diagonal constant because summing over `k` sweeps every cell exactly once. -/
+theorem seminormalRep_jmPowSum {μ : YoungDiagram} (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hN : μ.cells.card = n + 1) (m : ℕ) :
+    seminormalRep q hq0 hq2 n hN (∑ k ∈ Finset.range (n + 1), (qJM ℝ q q⁻¹ n k) ^ m)
+      = (∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m)
+          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) := by
+  classical
+  rw [map_sum]
+  have hterm : ∀ k ∈ Finset.range (n + 1),
+      seminormalRep q hq0 hq2 n hN ((qJM ℝ q q⁻¹ n k) ^ m)
+        = Matrix.diagonal (fun T : StandardYoungTableau μ =>
+            (q ^ (2 * cellContent (cellOf T (k + 1)))) ^ m) := by
+    intro k hk
+    rw [Finset.mem_range] at hk
+    rw [map_pow, seminormalRep_qJM q hq0 hq2 n hN k (by omega), jmDiagVal, Matrix.diagonal_pow]
+    rfl
+  rw [Finset.sum_congr rfl hterm]
+  ext T U
+  simp only [Matrix.sum_apply, Matrix.smul_apply, Matrix.one_apply, smul_eq_mul]
+  by_cases h : T = U
+  · subst h
+    simp only [Matrix.diagonal_apply_eq, if_pos, mul_one]
+    exact sum_cellOf_range T hN (fun c => (q ^ (2 * cellContent c)) ^ m)
+  · simp only [Matrix.diagonal_apply_ne _ h, if_neg h, mul_zero, Finset.sum_const_zero]
+
+/-- **An equivalence forces every content power sum to agree.**  The unconditional handle on
+pairwise inequivalence: not one number, but a whole family indexed by `m`. -/
+theorem contentPowSum_eq_of_matRepEquiv {μ ν : YoungDiagram}
+    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
+    (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (m : ℕ) :
+    (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
+      = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m :=
+  h.scalar_eq (seminormalRep_jmPowSum q hq0 hq2 n hμ m) (seminormalRep_jmPowSum q hq0 hq2 n hν m)
 
 end QOU.SchurWeyl
