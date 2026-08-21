@@ -276,6 +276,42 @@ theorem coeff_pderiv [DecidableEq σ] (j : σ) (γ : σ →₀ ℕ) (g : MvPolyn
       · rw [if_neg h2]
   | add p q hp hq => simp [hp, hq]; ring
 
+/-- A monomial with a positive exponent is detected by the matching partial derivative. -/
+theorem coeff_pderiv_of_pos [DecidableEq σ] {j : σ} {s : σ →₀ ℕ} (hs : s j ≠ 0)
+    (p : MvPolynomial σ R) :
+    coeff (s - Finsupp.single j 1) (pderiv j p) = (s j : R) * coeff s p := by
+  have hle : Finsupp.single j 1 ≤ s := by rw [Finsupp.single_le_iff]; omega
+  have hback : s - Finsupp.single j 1 + Finsupp.single j 1 = s := tsub_add_cancel_of_le hle
+  rw [coeff_pderiv, hback]
+  congr 1
+  have hj : ((s - Finsupp.single j 1 : σ →₀ ℕ)) j = s j - 1 := by
+    simp [Finsupp.tsub_apply, Finsupp.single_eq_same]
+  rw [hj]
+  have h1 : (s j - 1) + 1 = s j := by omega
+  rw [← Nat.cast_one (R := R), ← Nat.cast_add, h1]
+
+/-- **A polynomial killed by every partial derivative is constant**, in characteristic zero.
+
+Mathlib has the univariate `Polynomial.eq_C_of_derivative_eq_zero`; the multivariate
+statement is a gap.  Characteristic zero is doing real work: over `𝔽ₚ` the polynomial `xᵖ`
+has every partial derivative zero and is not constant. -/
+theorem eq_C_of_pderiv_eq_zero [CharZero R] [IsDomain R] [DecidableEq σ]
+    {p : MvPolynomial σ R} (h : ∀ j, pderiv j p = 0) : p = C (coeff 0 p) := by
+  ext s
+  rcases eq_or_ne s 0 with rfl | hs
+  · simp
+  · have hcoeff : coeff s p = 0 := by
+      obtain ⟨j, hj⟩ : ∃ j, s j ≠ 0 := by
+        by_contra hcon
+        push_neg at hcon
+        exact hs (Finsupp.ext hcon)
+      have hzero := coeff_pderiv_of_pos (R := R) hj p
+      rw [h j] at hzero
+      simp only [coeff_zero] at hzero
+      have hne : (s j : R) ≠ 0 := Nat.cast_ne_zero.mpr hj
+      exact (mul_eq_zero.mp hzero.symm).resolve_left hne
+    rw [hcoeff, coeff_C, if_neg (Ne.symm hs)]
+
 /-- The multi-index counting occurrences of each variable in a list. -/
 noncomputable def multiIndexOf (l : List σ) : σ →₀ ℕ := (l.map fun j => Finsupp.single j 1).sum
 
@@ -372,6 +408,33 @@ theorem exists_mvGenWronskian_ne_zero [CharZero K] [DecidableEq σ]
     · exact absurd h hprod
     · exact h)
 
+/-! ### ⚠ The bounded-order gap, witnessed
+
+Roth's lemma needs the operator family to have **bounded order** — `Δᵢ` of order below `i`.
+The family produced by `exists_mvGenWronskian_ne_zero` carries no such bound, and the two
+computations below show that this is a limitation of the *proof technique*, not a slack
+statement: bounded-order families do suffice, but the origin argument cannot find them.
+
+For `x⁵, x⁶` the order-one family `(id, ∂/∂x₀)` gives a non-zero Wronskian — yet that
+Wronskian **vanishes at the origin**. Since the proof above concludes "non-zero" only from
+"non-zero at the origin", it is structurally incapable of returning this family; it must
+reach for operators of order at least `5`, enough to see the `x⁵` coefficient.
+
+So closing the gap requires a different argument, not a sharpening of this one. -/
+
+/-- Order-one operators already witness the independence of `x⁵, x⁶`. -/
+theorem mvGenWronskian_pow_five_six :
+    mvGenWronskian (R := ℚ) ![[], [0]] ![X 0 ^ 5, X 0 ^ 6] = X 0 ^ 10 := by
+  simp [mvGenWronskian, mvWronskianMatrix, Matrix.det_fin_two]
+  ring
+
+/-- ...and that same Wronskian vanishes at the origin, so the argument used above could
+never have produced it. -/
+theorem mvGenWronskian_pow_five_six_constantCoeff :
+    constantCoeff (mvGenWronskian (R := ℚ) ![[], [0]] ![X 0 ^ 5, X 0 ^ 6]) = 0 := by
+  rw [mvGenWronskian_pow_five_six]
+  simp
+
 /-- **Independence is exactly a non-vanishing generalized Wronskian**, in characteristic
 zero — the certificate Roth's lemma consumes, in both directions. -/
 theorem linearIndependent_iff_exists_mvGenWronskian_ne_zero [CharZero K] [DecidableEq σ]
@@ -395,15 +458,26 @@ end Converse
 
 /-! ### Next
 
-Both directions of the generalized-Wronskian criterion are now proved, so the independence
-certificate Roth's lemma needs is complete. What remains is **Roth's lemma itself** — the
-induction on the number of variables — and then Roth's theorem.
+Both directions of the generalized-Wronskian criterion are proved, so the independence
+certificate is complete **except for the order bound**.
 
-⚠ One gap between this criterion and the form Roth's lemma consumes: Roth needs the operator
-family to have **bounded order** (`Δᵢ` of total order `< i`, or bounded by `m`). The `D`
-produced by `exists_mvGenWronskian_ne_zero` comes from arbitrary multi-indices and carries
-no such bound. Getting the bound is a genuine extra step, not bookkeeping — it is where the
-degree hypotheses on the auxiliary polynomial actually enter. Recorded so nothing downstream
-consumes this as though the bound were already there. -/
+**The bounded-order criterion** — `f` independent over `K` implies some generalized
+Wronskian with `ord (Δᵢ) < i` is non-zero — is what Roth's lemma actually consumes, and it
+is open here. `mvGenWronskian_pow_five_six` above shows the bound is *achievable*; the
+companion computation shows the origin argument cannot achieve it.
+
+The classical route does not go through coefficients at all. It restricts to a **generic
+line**: for a generic base point and direction, the restrictions `t ↦ fⱼ(a + tc)` stay
+independent over `K`, the *univariate* criterion (`QOU.Mathlib.GenWronskian`'s
+`genWronskian_eq_zero_iff`) applies to them, and `dⁿ/dtⁿ` pulls back to `Dᶜ = ∑ᵢ cᵢ ∂ᵢ`
+— an operator of order exactly `n`. Expanding `det (Dᶜ^{i-1} fⱼ)` by multilinearity then
+exhibits one bounded-order generalized Wronskian that is non-zero.
+
+So the univariate criterion already proved is the engine; what is missing is the genericity
+argument (a non-zero polynomial over an infinite field has a point where it does not
+vanish) and the multilinear expansion.
+
+Then **Roth's lemma** itself — the induction on the number of variables — and Roth's
+theorem. -/
 
 end MvPolynomial
