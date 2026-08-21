@@ -978,6 +978,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.043Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'a magic-shell enhancement rather than a universal factor' and '(not derived -- ... honestly labelled in rem:alpha-cluster-model-g-closure)' are substantive anti-fit labelling."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -997,6 +1013,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.080Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 490-word remark; every table entry and every quoted percentage recomputed against AME2020 and census volumes."
       }
     ],
     "trap-em-dash": [
@@ -1017,6 +1049,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "9 stylistic spaced dashes in 400 words (2.25/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.116Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Five spaced dashes in 490 words, all matched appositive pairs ('the volume factor is the isospin carrier -- the mirror split is supplied by ... -- while the multiplicity was left open'); none appends an afterthought."
       }
     ],
     "trap-triples": [
@@ -1036,6 +1084,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 400 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.150Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 490-word remark; every table entry and every quoted percentage recomputed against AME2020 and census volumes."
       }
     ],
     "trap-closing-aphorism": [
@@ -1055,6 +1119,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.186Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 490-word remark; every table entry and every quoted percentage recomputed against AME2020 and census volumes."
       }
     ],
     "trap-meta-commentary": [
@@ -1074,6 +1154,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.222Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 490-word remark; every table entry and every quoted percentage recomputed against AME2020 and census volumes."
       }
     ],
     "trap-thesis-restatement": [
@@ -1093,6 +1189,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.258Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "The closer adds the Hafstad-Teller identification rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1112,6 +1224,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.298Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 490-word remark; every table entry and every quoted percentage recomputed against AME2020 and census volumes."
       }
     ],
     "trap-superlative": [
@@ -1131,6 +1259,22 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.336Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 490-word remark; every table entry and every quoted percentage recomputed against AME2020 and census volumes."
       }
     ],
     "trap-nonspeakable": [
@@ -1150,6 +1294,23 @@
         "reviewed_at": "2026-08-15T10:31:00.877Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c28d25e37b38",
+          "ts": "96631058d442"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.370Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One 60-word sentence ('These per-bond b_aa values are empirical near-constants ... likewise an AME read rather than a derived Schur-Weyl period') is heavy but parses.",
+        "notes": "RIGOR (not a trap): RECOMPUTED AND CONFIRMED -- M_need(3He)=7.7180/(m_e*7.327725)=2.0612 (quoted 2.061); M_need(4He)=28.29566/(m_e*7.327725)=7.5566 (quoted 7.557); M_need(3H)=2.0033 with Vol(8_11)=8.28578 (quoted 2.003); M_need/z=2.5189 (quoted 2.52); b_aa: 12C (92.1618-3*28.29566)/3 = 2.4249 (quoted 2.425), 16O (127.6193-4*28.29566)/6 = 2.4061 (quoted 2.406); 8Be residual -0.092 MeV, i.e. unbound (quoted '~0, consistent with being unbound'). TWO LOOSE FIGURES: 'matched to better than 3% with no free parameter' -- the 3He entry is 2.061 vs z=2, i.e. 3.05%, marginally outside the stated bound; and 'over-shoots the A=3 pair by ~30%' measures 25.8% against M_need=2.003 (22.3% against 2.061)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1172,5 +1333,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:31.370Z"
 }

@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.572Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.609Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 67 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.642Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One appositive at the close."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 67 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.674Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.707Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.743Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.777Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.811Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.846Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 236-word proof; the Kummer reflection derivation and the 50-digit table were both recomputed independently."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1673,23 @@
         "reviewed_at": "2026-08-15T10:31:00.773Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f0ae9c559e11",
+          "ts": "7b80b23d5343"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.880Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'Direct: Im Li_3(zeta_5) via `exact algebraic structures.polylog`' in the verification table, plus the heading '### canonical structural verification at 50 dps' and 'Verified by the canonical formalism' -- three token substitutions in one section, one of which names a library that does not exist.",
+        "notes": "proposed (structural, NOT applied): 'exact algebraic structures.polylog' is `mpmath.polylog`; 'the canonical formalism' stood in for the producer script name (unrecoverable -- the file entered git already damaged in 230cdd113); the heading is very likely 'Numerical structural verification at 50 dps'. RIGOR (not a trap). VERIFIED EXACTLY: log(-zeta_5) = -3i*pi/5 with the principal branch; log^3 = +27i*pi^3/125; -log^3/6 - pi^2 log/6 = i*pi^3(-9/250 + 25/250) = 8i*pi^3/125; hence S_3(2pi/5) = 4pi^3/125. Cross-checked against the Fourier closed form sum sin(n*theta)/n^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2pi/5, which gives 4pi^3/125 independently. The quoted 50 digits 0.99220085376959424561524208214724464647120923410832 match 4pi^3/125 computed at 70 dps exactly. CITATION: '(Lewin 1991, Eq. 6.10)' is a bare plain-text citation, not a \\cite{} key."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1569,5 +1730,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T22:03:45.250Z"
+  "updated_at": "2026-08-21T15:01:38.880Z"
 }

@@ -2100,6 +2100,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.933Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2119,6 +2134,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.967Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -2138,6 +2168,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 487 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.001Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -2157,6 +2202,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 487 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.035Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -2176,6 +2236,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.070Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2195,6 +2270,22 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.105Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'The three claims $T_1, T_2, T_3$ decompose and are discharged as follows' duplicates the proposition statement's 'decompose as follows' one paragraph earlier -- redundancy rather than narrated emphasis, so not a category-6 trap.",
+        "notes": "proposed: drop one of the two."
       }
     ],
     "trap-thesis-restatement": [
@@ -2214,6 +2305,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.137Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -2233,6 +2339,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.170Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -2252,6 +2373,23 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.206Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'**Fully proved**' twice, and 'matching the empirical closed form $D(u) = ...$ exactly'. The T_1 'fully proved' rests on a biconditional that is false in general (see the reported complementary-slackness error), and the 'exact' match consumes the empirical shifts 18 and 21 as inputs two sentences earlier.",
+        "notes": "proposed: 'Proved modulo the LP-duality library' for T_1/T_3, and for the closed form: 'reproduces the empirical closed form, with the per-nucleon shifts 18 and 21 taken from the witness rather than derived here'."
       }
     ],
     "trap-nonspeakable": [
@@ -2271,6 +2409,21 @@
         "reviewed_at": "2026-08-15T10:31:00.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6d5256cf44b3",
+          "ts": "e0d6469a0fa5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.241Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 118-line partial proof (T1/T2/T3), both formal-theorem sections, the pppnnn verification and the archimedean note. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2294,5 +2447,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:53.241Z"
 }

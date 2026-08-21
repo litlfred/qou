@@ -1203,6 +1203,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.377Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 186-word proof (Hodge-structure moduli count, S_5-equivariance forcing M = id_W (x) B, meson third datum, the term-by-term alignment)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1222,6 +1238,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.412Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 186-word proof (Hodge-structure moduli count, S_5-equivariance forcing M = id_W (x) B, meson third datum, the term-by-term alignment)."
       }
     ],
     "trap-em-dash": [
@@ -1241,6 +1273,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 165 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.449Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One appositive pair ('two real moduli -- an overall scale and a modulus (period ratio) --')."
       }
     ],
     "trap-triples": [
@@ -1260,6 +1308,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 165 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.484Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "The 2 + 1 = 3 count is the proof's content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1279,6 +1343,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.530Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 186-word proof (Hodge-structure moduli count, S_5-equivariance forcing M = id_W (x) B, meson third datum, the term-by-term alignment)."
       }
     ],
     "trap-meta-commentary": [
@@ -1298,6 +1378,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.606Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 186-word proof (Hodge-structure moduli count, S_5-equivariance forcing M = id_W (x) B, meson third datum, the term-by-term alignment)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1317,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.641Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Ends with the alignment statement and the QED box; that is the conclusion, not an echo."
       }
     ],
     "trap-performed-warmth": [
@@ -1336,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.716Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 186-word proof (Hodge-structure moduli count, S_5-equivariance forcing M = id_W (x) B, meson third datum, the term-by-term alignment)."
       }
     ],
     "trap-superlative": [
@@ -1355,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.798Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 186-word proof (Hodge-structure moduli count, S_5-equivariance forcing M = id_W (x) B, meson third datum, the term-by-term alignment)."
       }
     ],
     "trap-nonspeakable": [
@@ -1374,6 +1518,23 @@
         "reviewed_at": "2026-08-15T10:31:00.400Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "52e9f5edd07e",
+          "ts": "da88462c1b1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.837Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Parses.",
+        "notes": "RIGOR (not a trap): the CAL labels here are correct and current (CAL-1 m_e as the n=0 period, CAL-2 the modulus fixed by q_0, CAL-3 m_pi as the meson scale), and rank H^1 = 8 = 2 x 4 is right for genus 4. det B = 1 with the SL_2 trace as the single modulus is consistent."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1396,5 +1557,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:40.837Z"
 }

@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.621Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.655Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 188 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.691Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 188 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.724Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.757Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,22 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.792Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The closing paragraph names the Lean sibling's `sorry` and its `-- Ref: [manuscript]` citation -- honest status reporting per AGENTS section 1, not narrated emphasis.",
+        "notes": "Reported: the strict-feasibility side condition is written '$|q + q^{-1}| > 0$', which is vacuous for real $q > 0$ (where $q + q^{-1} \\geq 2$)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.827Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.861Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.895Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,21 @@
         "reviewed_at": "2026-08-15T10:31:00.310Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a0f8c4edc099",
+          "ts": "1b2ba1d93119"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.929Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the three-step sketch (compact spectrahedron, Slater/strong duality, LP as diagonal restriction) plus the Lean-status paragraph. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:53.929Z"
 }

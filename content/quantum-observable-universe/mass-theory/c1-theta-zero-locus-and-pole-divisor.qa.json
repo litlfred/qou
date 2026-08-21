@@ -1315,6 +1315,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not derived.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.625Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'This is not the Jacobi triple product, which additionally identifies the product expansion and needs Liouville' is load-bearing disambiguation; 'The remaining claims are computational, not derived' is the corpus's epistemic-tiering discipline."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1334,6 +1350,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.661Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 497-word proposition; the involution, the quasi-periodicity, the logarithmic-derivative identity and the argument-principle count were each re-derived by hand."
       }
     ],
     "trap-em-dash": [
@@ -1353,6 +1385,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.698Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One appositive ('The hypothesis in (2) -- no zero on the contour -- is not a restriction')."
       }
     ],
     "trap-triples": [
@@ -1372,6 +1420,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.737Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 497-word proposition; the involution, the quasi-periodicity, the logarithmic-derivative identity and the argument-principle count were each re-derived by hand."
       }
     ],
     "trap-closing-aphorism": [
@@ -1391,6 +1455,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.774Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 497-word proposition; the involution, the quasi-periodicity, the logarithmic-derivative identity and the argument-principle count were each re-derived by hand."
       }
     ],
     "trap-meta-commentary": [
@@ -1410,6 +1490,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.809Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 497-word proposition; the involution, the quasi-periodicity, the logarithmic-derivative identity and the argument-principle count were each re-derived by hand."
       }
     ],
     "trap-thesis-restatement": [
@@ -1429,6 +1525,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.845Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "The Scope paragraph narrows what (5) does and does not settle; it adds information."
       }
     ],
     "trap-performed-warmth": [
@@ -1448,6 +1560,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.879Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 497-word proposition; the involution, the quasi-periodicity, the logarithmic-derivative identity and the argument-principle count were each re-derived by hand."
       }
     ],
     "trap-superlative": [
@@ -1467,6 +1595,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.914Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'exactly one per period' and 'the *full* zero set' are precise statements, each proved in the preceding clause."
       }
     ],
     "trap-nonspeakable": [
@@ -1486,6 +1630,23 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6c2ae193d33b",
+          "ts": "f2f7bdaccead"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.949Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Reads well for its density.",
+        "notes": "RIGOR (not a trap): ALL STEPS VERIFIED. The involution n -> 2k-1-n leaves kn - n(n+1)/2 invariant and flips (-1)^n, and has no fixed point since 2k-1 is odd, so theta_p(-p^k) = 0. theta_p(pw) = w theta_p(w) checks coefficientwise. Differentiating gives p theta'(pw) = theta(w) + w theta'(w), hence the printed logarithmic-derivative identity and the 2 pi i winding increment under z = pw. The argument-principle count of one simple zero per annulus follows. This and c1-ggm-bar-parity-faces are the two cleanest blocks in the batch on every axis."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1515,5 +1676,5 @@
     "lean": "479205cc27ab",
     "lean_statement": "d7bf4bb49c90"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:39.949Z"
 }

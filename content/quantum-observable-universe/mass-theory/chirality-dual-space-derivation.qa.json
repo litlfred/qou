@@ -1972,6 +1972,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.179Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1991,6 +2006,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.214Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -2010,6 +2040,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.247Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -2029,6 +2074,22 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.282Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The trailing archimedean-wall note is three short sentences rather than a list; flagged separately as a truncated boilerplate, not as a compulsive triple.",
+        "notes": "Reported: this block carries the 3-sentence truncated variant of the archimedean-wall boilerplate (9 mass-theory .md files) against the 33-file canonical full text; the truncation drops 'or complex-analytic', the four-item construct list, and 'only their archimedean realisation is specialised here'."
       }
     ],
     "trap-closing-aphorism": [
@@ -2048,6 +2109,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.318Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2067,6 +2143,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.352Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2086,6 +2177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.387Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -2105,6 +2211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.420Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -2124,6 +2245,23 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.455Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Residual intensifier flood after the one fix: 'derives exactly from', 'factorizes explicitly into', 'is uniquely selected', 'This precisely identifies'. Each modifies a claim that is either true or false without the adverb.",
+        "notes": "fix applied: 'All six paper assignments match this formula perfectly.' -> 'All six paper assignments match this formula.' Proposed for the rest: drop the four adverbs; none changes a truth value. Not applied because three sit inside the italic proposition statement."
       }
     ],
     "trap-nonspeakable": [
@@ -2143,6 +2281,21 @@
         "reviewed_at": "2026-08-15T10:31:00.890Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b0b6f1b4b97e",
+          "ts": "f07a17747bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:45.488Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality a_K from symmetric-channel trace duality), two displays, plus the trailing archimedean note. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2166,5 +2319,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:45.488Z"
 }

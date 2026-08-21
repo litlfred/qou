@@ -1498,6 +1498,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the knot type:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.812Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'The index $i$ labels the constituent slot, not the knot type' and 'These insertion points are not free after the first crossing' are both substantive mathematical contrasts -- each is immediately cashed out (several slots may carry the same simple object; the link imposes algebraic relations).",
+        "notes": "§7a violation reported separately (not a trap): the Hecke relation is written '$(T - q)(T + q^{-1}) = 0$' twice, with $T$ also carrying the transfer matrix in the same block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1517,6 +1533,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.847Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1536,6 +1567,23 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 616 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.881Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Five spaced dashes; two join independent clauses rather than setting off a parenthetical: 'the source of OPE singularities $(z_i - z_j)^{-k}$ --- it is what distinguishes two copies of the same knot' and 'The quotient $\\mathcal{O}_n / I_k$ shrinks monotonically --- the insertion points become more constrained with each interaction.'",
+        "notes": "proposed (not applied; long math-dense block, left to the author): full stop for the first ('... $(z_i-z_j)^{-k}$. It is what distinguishes ...'), colon for the second. The remaining three dashes are genuine appositives and should stay."
       }
     ],
     "trap-triples": [
@@ -1555,6 +1603,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 616 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.915Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1574,6 +1637,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.948Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1593,6 +1671,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.982Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1612,6 +1705,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.014Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1631,6 +1739,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.048Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1650,6 +1773,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.081Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1669,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c75a565a8533",
+          "ts": "520c64fdda0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:44.114Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 113-line remark (configuration space, bi-filtration, categorification of T(H)) including all display math and the two numbered structures. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1691,5 +1844,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:44.114Z"
 }
