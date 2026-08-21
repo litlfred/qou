@@ -480,3 +480,61 @@ from a step already proved: applying the `m = 2` converse at `j = l` forces `lam
 `RothIndex.lean` 27 declarations, `GenWronskian.lean` 18, `MvGenWronskian.lean` 8 — **53
 declarations of Roth prerequisites**, all sorry-free on the standard axiom set, none of
 which existed in Mathlib.
+
+---
+
+## Progress, 2026-08-21 — all prerequisites done
+
+**Every Thue–Siegel–Roth prerequisite is now formalised.** What remains is Roth's lemma
+itself and then the theorem.
+
+| prerequisite | status |
+|---|---|
+| Siegel's lemma | present in Mathlib |
+| index at a point, product law | done |
+| index under differentiation | done — PR #5316 |
+| generalized Wronskians, univariate, **both directions** | done — merged #4907 |
+| generalized Wronskians, several variables, **both directions** | done — PR #5316 |
+| Roth's lemma | **open — the hard core** |
+| Roth's theorem | **open** |
+
+### The converse came out of linear algebra, not analysis
+
+The several-variable converse looked like the hardest remaining piece and was not. Its
+content is a statement with no derivatives in it at all:
+
+    LinearIndependent K f  ↔  ∃ α, det (coeffMatrix α f) ≠ 0
+
+Mathlib has no "some m × m minor is non-singular" lemma — `Rank.lean` carries the rank
+inequalities but no existence statement — so it is proved from `det_succ_row` by induction,
+expanding along the **new** row. The expansion must be along the *last* row: deleting it
+removes every entry the new index occurs in, which is what makes the cofactors independent
+of it. Any other row leaves it in the minors and the argument does not close.
+
+The bridge to derivatives is then a diagonal rescaling by positive integers, and the
+Wronskian is non-zero because it is non-zero **at the origin**.
+
+### ⚠ A gap the criterion does NOT close
+
+Roth's lemma needs the operator family to have **bounded order** (total order below the
+index, or bounded by `m`). `exists_mvGenWronskian_ne_zero` produces a family from arbitrary
+multi-indices with no such bound. Supplying it is where the degree hypotheses on the
+auxiliary polynomial enter — a real step, not bookkeeping. Recorded in both files' `Next`
+sections, because the criterion now *reads* as complete and this is easy to consume as
+though the bound were already there.
+
+### Running tally of falsified predictions — three, all mine
+
+1. The general-`m` univariate converse "needs the ratio argument in the function field".
+   It does not; multiplying by `c_l` where the classical proof divides keeps it in `K[X]`.
+2. The differentiation bound "is rescued only because `pderiv_monomial` carries a factor
+   `s_i`". No rescue needed — it is an *inequality*, so the degenerate case is slack. The
+   same rescue **is** needed in `coeff_pderiv`, which is an equality; the two cases resolve
+   opposite ways and the notes now say which is which.
+3. The several-variable converse as "materially harder". It is a cofactor induction.
+
+### Standing
+
+`RothIndex.lean` 27 declarations, `GenWronskian.lean` 18, `MvGenWronskian.lean` 21 — **66
+declarations of Roth prerequisites**, all sorry-free on the standard axiom set, none of
+which existed in Mathlib.
