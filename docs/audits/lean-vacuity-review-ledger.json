@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-21T21:03:15.485Z",
+  "updated_at": "2026-08-21T21:30:07.211Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -39,50 +39,6 @@
       "file_sha": "08595369b5ac",
       "disposition": "restate-or-drop",
       "evidence": "`∃ (_instance_data : NonAbelianStokes M G), True := ⟨inferInstance, trivial⟩`. The witness is `inferInstance`, so the theorem says 'the instance that already resolves, resolves' — it adds nothing to the instance declaration it reads from. The `-- Ref:` to Yekutieli 2015 §3 makes this read as an imported result. Fix: state a property the instance satisfies (the file's own following section lists three substantive candidates: piecewise-affine line integral, braid-surface multiplicative trace, the Stokes identity at finite slicing).",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::yekutieli_finite_slice_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 138,
-      "verdict": "genuine",
-      "file_sha": "c269b6e6c991",
-      "disposition": "restate-or-drop",
-      "evidence": "`∃ Y : YekutieliFiniteSliceMultTrace G z, True := ⟨inferInstance, trivial⟩`. Same `inferInstance`-witnessed existence, same misleading `_discharged` name. Fix together with `lie_valued_stokes_discharged` — and audit the surrounding `Master discharge theorem` aggregate, which composes these and inherits the overclaim.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h1_to_h2_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 174,
-      "verdict": "genuine",
-      "file_sha": "c269b6e6c991",
-      "disposition": "restate-against-a-definition",
-      "evidence": "`∃ M : MarkovTraceRecursionWithMul ℝ 1 q z, True := ⟨MarkovTraceRecursionWithMul.h1_to_h2 q z, trivial⟩`. Better than its `inferInstance` neighbours — the witness is a real construction, so this genuinely establishes `Nonempty` of the recursion structure at H₁→H₂. But `∃ _, True` throws away everything the witness satisfies, which is the part the name `discharged` is claiming. Fix: state the recursion identity `h1_to_h2` actually proves.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h2_to_h3_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 180,
-      "verdict": "genuine",
-      "file_sha": "c269b6e6c991",
-      "disposition": "restate-against-a-definition",
-      "evidence": "`∃ M : MarkovTraceRecursionWithMul ℝ 2 q z, True := ⟨MarkovTraceRecursionWithMul.h2_to_h3 q z, trivial⟩`. Identical to the H₁→H₂ case: a real witness whose content is discarded by the `∃ _, True` conclusion. Fix the pair together, and re-check the aggregate that claims discharge 'at every level n ∈ {1,2}'.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::lie_valued_stokes_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 266,
-      "verdict": "genuine",
-      "file_sha": "c269b6e6c991",
-      "disposition": "restate-or-drop",
-      "evidence": "`∃ S : LieValuedStokes M 𝔤, True := ⟨inferInstance, trivial⟩`. Same `inferInstance` shape as `yekutieli_finite_slice_substrate`, but the name is a stronger claim: `_discharged` asserts that a proof obligation has been closed, when all that has been shown is that an instance resolves. An obligation named in a conjecture is not discharged by exhibiting the instance that assumes it.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },

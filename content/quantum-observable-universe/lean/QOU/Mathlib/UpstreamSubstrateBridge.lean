@@ -136,8 +136,8 @@ theorem wedderburn_iso_n2_to_n6 (R : Type u) [CommRing R]
     multiplicative trace.  Concrete (non-vacuous) — uses the
     `z^n` formula. -/
 theorem yekutieli_finite_slice_discharged (G : Type u) [Group G] (z : G) :
-    ∃ Y : YekutieliFiniteSliceMultTrace G z, True :=
-  ⟨inferInstance, trivial⟩
+    Nonempty (YekutieliFiniteSliceMultTrace G z) :=
+  ⟨inferInstance⟩
 
 /-! ### Aggregate substrate-axiom discharge
 
@@ -172,21 +172,21 @@ theorem upstream_discharge_complete (R : Type u) [CommRing R]
 /-- **Bridge theorem**: the Markov-axiom recursion is
     discharged at H_1 → H_2 by the upstream concrete instance. -/
 theorem markov_axiom_h1_to_h2_discharged (q z : ℝ) :
-    ∃ M : MarkovTraceRecursionWithMul ℝ 1 q z, True :=
-  ⟨MarkovTraceRecursionWithMul.h1_to_h2 q z, trivial⟩
+    Nonempty (MarkovTraceRecursionWithMul ℝ 1 q z) :=
+  ⟨MarkovTraceRecursionWithMul.h1_to_h2 q z⟩
 
 /-- **Bridge theorem**: the Markov-axiom recursion is
     discharged at H_2 → H_3 by the upstream concrete instance. -/
 theorem markov_axiom_h2_to_h3_discharged (q z : ℝ) :
-    ∃ M : MarkovTraceRecursionWithMul ℝ 2 q z, True :=
-  ⟨MarkovTraceRecursionWithMul.h2_to_h3 q z, trivial⟩
+    Nonempty (MarkovTraceRecursionWithMul ℝ 2 q z) :=
+  ⟨MarkovTraceRecursionWithMul.h2_to_h3 q z⟩
 
 /-- **Aggregate**: the Markov-axiom recursion is discharged
     at every level n ∈ {1, 2}; level n ≥ 3 is tractable via
     `canonical_lift` with caller-supplied per-level data. -/
 theorem markov_axiom_recursion_discharged_low_n (q z : ℝ) :
-    (∃ M : MarkovTraceRecursionWithMul ℝ 1 q z, True) ∧
-    (∃ M : MarkovTraceRecursionWithMul ℝ 2 q z, True) :=
+    Nonempty (MarkovTraceRecursionWithMul ℝ 1 q z) ∧
+    Nonempty (MarkovTraceRecursionWithMul ℝ 2 q z) :=
   ⟨markov_axiom_h1_to_h2_discharged q z,
    markov_axiom_h2_to_h3_discharged q z⟩
 
@@ -224,9 +224,9 @@ theorem complete_upstream_discharge (R : Type u) [CommRing R]
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
     (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
     (∃ W3 : WedderburnIsomorphism R 3 q, True) ∧
-    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z, True) ∧
-    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z, True) ∧
-    (∃ Y : YekutieliFiniteSliceMultTrace G z_G, True) ∧
+    Nonempty (MarkovTraceRecursionWithMul ℝ 1 q_ℝ z) ∧
+    Nonempty (MarkovTraceRecursionWithMul ℝ 2 q_ℝ z) ∧
+    Nonempty (YekutieliFiniteSliceMultTrace G z_G) ∧
     (q_zero > 1) :=
   ⟨gb_spectral_collapse_at_E2_discharged R,
    ⟨wedderburn_n2 R q, trivial⟩,
@@ -265,8 +265,8 @@ theorem H4_block_dims_discharged :
 /-- **LieValuedStokes existence discharged**. -/
 theorem lie_valued_stokes_discharged (M : Type u) (𝔤 : Type u)
     [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤] :
-    ∃ S : LieValuedStokes M 𝔤, True :=
-  ⟨inferInstance, trivial⟩
+    Nonempty (LieValuedStokes M 𝔤) :=
+  ⟨inferInstance⟩
 
 /-- **Master+ aggregate**: extends `complete_upstream_discharge`
     with Wedderburn iso n=4..8 + H_4 block dims + Lie-valued
@@ -278,8 +278,8 @@ theorem extended_upstream_discharge (R : Type u) [CommRing R]
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
     (∀ n ∈ ([2, 3, 4, 5, 6, 7, 8] : List ℕ),
       ∃ syt : List ℕ, (syt.map (· ^ 2)).sum = n.factorial) ∧
-    (∃ Y : YekutieliFiniteSliceMultTrace G z_G, True) ∧
-    (∃ LS : LieValuedStokes M 𝔤, True) ∧
+    Nonempty (YekutieliFiniteSliceMultTrace G z_G) ∧
+    Nonempty (LieValuedStokes M 𝔤) ∧
     (q_zero > 1) := by
   refine ⟨gb_spectral_collapse_at_E2_discharged R,
           rsk_cardinality_discharged_n2_to_n8,
