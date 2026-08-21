@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-21T16:25:19Z
+updated_at: 2026-08-21T16:46:54Z
 ---
 
 
@@ -2795,3 +2795,49 @@ parameters. What remains is the prefix's own step-by-step composition — the
 `a²+a+5` steps up to the first cancellation — and then the closing
 `OverlapComposition` + `spoly` identity. Unchanged caveat: all of this is
 measured over `a ≤ 7` and a sample of `b`, not proved.
+
+### Two scope defects in the merged `blockPass` — found, fixed
+
+Started the prefix, asked whether `small(a)` could reuse `blockPass`, and the
+answer exposed two things wrong with what #5354 merged.
+
+**1. The diagonal was excluded.** `blockPass` carried `hj₂ : j₂ ≤ j₁ − 1`, and
+`b = a` gives `j₂ = j₁`, so it could not be instantiated on the diagonal *at
+all*. But `a ≤ b` includes `b = a`, and the diagonal block is real — `a−1`
+levels rather than `a`, starting one level higher, which is why it doesn't fit:
+the first level is simply absent there. **So #5354's claim that the block is
+"closed at general depth" was too strong** — it was closed for `b > a`.
+
+**2. The trailing word was hardcoded.** Source and target both ended `++ [σ_i]`.
+Right for the top-level block; wrong for `small(a)`, where what sits to the
+right is `descWord j₁ j₂`.
+
+**How the check nearly went wrong.** `small(a)` has the *same*
+`(high, length)` level profile as a diagonal block — measured, identical at
+every `a` from 3 to 6. That agreement is real and it is **not sufficient**: the
+`W` words match exactly and the `B` words do not. Had I stopped at the profile I
+would have asserted reuse that does not hold.
+
+**The unified blueprint**, over 102 top-level levels and 56 `small(a)` levels:
+
+    W = descWord (min(h−2, j₁+1)) j_eff        B = descWord (h−1) (j₁+1) ++ T
+
+    top-level:  j_eff = j₂,  T = [σ_i]
+    small(a):   j_eff = j₁,  T = descWord j₁ j₂
+
+**The fix** handles both defects at once: `blockPassFromTwo` covers the second
+level upward, asks only `j₂ ≤ j₁`, and takes `T` as a parameter — so it covers
+the diagonal *and* `small(a)`. `blockPass` is now one leading transport plus it.
+Freeing `T` is what turns the prefix's `block · two steps · block`
+self-similarity into literal lemma reuse rather than an observation about
+shapes.
+
+Both sorry-free, standard axioms, `lean`-direct exit 0 on the full file, zero
+warnings.
+
+**Running count of structural descriptions in this arc that failed under
+measurement: five.** The linear prefix fit; the quadratic-step contexts; the
+transport direction; "the assembly is wiring"; and now "the block is closed at
+general depth". Every one was caught by measuring rather than by reasoning from
+the previous description. That is the working method for the rest of this arc,
+not a run of bad luck.
