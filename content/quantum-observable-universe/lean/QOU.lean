@@ -1072,3 +1072,8 @@ import QOU.Mathlib.LineRestriction
 -- independence of line restrictions.  Reduces the bounded-order problem to a question about
 -- the DIRECTION alone; the base point drops out.
 import QOU.Mathlib.DirectionalWronskian
+-- qou-sq3h -- staged for upstream Mathlib: the BOUNDED-ORDER generalized Wronskian
+-- criterion, the form Roth's lemma consumes, proved at m = 2 (operator family (id, d_k),
+-- orders 0 and 1).  Mirrors the univariate m = 2 converse, with totalDegree for natDegree
+-- and IsRelPrime for Bezout coprimality.
+import QOU.Mathlib.BoundedOrderWronskian
