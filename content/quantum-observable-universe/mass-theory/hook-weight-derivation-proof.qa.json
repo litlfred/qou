@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.585Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.625Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,22 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 199 words)"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.657Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "One load-bearing dash (\"on a single generator -- the -2 subtracts the symmetric and alternating eigenvalues\"); a single appositive, below the density threshold."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1280,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 199 words)"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.697Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "\"the three extremal channels\" is a count carried from upstream, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1314,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.739Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Closes on the magic-number vanishing plus a cross-reference."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1348,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.777Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1382,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.813Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1416,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.861Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1450,23 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.903Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "\"improves the mass formula accuracy from 0.074% to 0.072% mean (with **dramatic** per-atom improvements: ...)\" attaches a maximum-strength adjective to a 2.7% relative change in the reported mean, and the per-atom figures it introduces are themselves the subject of a separate accuracy finding.",
+        "notes": "FIXED inline: \"(with dramatic per-atom improvements: ...)\" -> \"(per-atom improvements: ...)\". One word, pure prose, numbers untouched. $$ delimiters re-verified balanced."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1486,22 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "32559824c92e",
+          "ts": "4a128391e513"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.941Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Proof prose is concrete and reads aloud.",
+        "notes": "Separate (non-trap) findings, recomputed. (1) WRONG CHARACTER: \"the hook character chi_{[2,2]}(sigma_i) has trace tr = [2]_q - 2 on a single generator\" is false. The [2,2] irrep of H_4 is 2-dimensional with SYT [[1,2],[3,4]] and [[1,3],[2,4]]; for sigma_1 the first has 1,2 in the same ROW (eigenvalue q) and the second has them in the same COLUMN (eigenvalue -q^-1), so the trace is q - q^-1 = h = 0.2090602988 at q_0, not [2]_q - 2 = 0.0108968667, a factor of 19.2. The classical S_4 value chi_{[2,2]}(transposition) = 0 is reproduced by BOTH expressions at q = 1, which is presumably how the error survived. The sign argument built on it (\"the -2 subtracts the symmetric and alternating eigenvalues already counted\") therefore has no support, and h > 0 at q_0 > 1 so it does not deliver a negative sign either. (2) ACCURACY FRAMING / CALIBRATION PASS-THROUGH: the quoted percentages are errors on the TOTAL ATOMIC MASS, of which the binding energy (the part the framework supplies) is under 1 percent: B/M = 0.694% for Be-9 and 0.824% for C-12. Converting: Be-9 0.192% to 0.108% of mass is 16.10 to 9.05 MeV, i.e. 27.7% to 15.6% of its 58.17 MeV binding; C-12 0.081% to 0.002% is 9.05 to 0.22 MeV, i.e. 9.8% to 0.24% of its 92.16 MeV binding. A \"0.072% mean\" headline is roughly 120x smaller than the corresponding error on the framework-supplied quantity. (3) Under the absolute-mass excision (AGENTS.md, 2026-08-11) an atomic mass in MeV is not a framework prediction, so these should be restated as binding-energy accuracy. (4) tr_M is written here as sum_lambda w_lambda tr_lambda / dim_lambda, colliding with the y_lambda family used by sibling blocks (notation register warns y/w/tilde-w are distinct at q != 1). (5) Arithmetic that DOES check: abs(beta_4) times alpha = 0.083 x 3.74 = 0.3104 MeV."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1524,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:33:40.941Z"
 }
