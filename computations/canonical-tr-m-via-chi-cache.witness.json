@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:44:22.921597+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-08-21T14:56:31.304668+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 53,
+  "durationMs": 49,
   "computation": "canonical-tr-m-via-chi-cache",
   "scriptFile": "canonical_tr_m_via_chi_cache.py",
   "scriptHash": "eb10fdea2659",
@@ -138,7 +138,7 @@
       "tr_M_q0": "0.5751722439177718708265353439858617251768310907401",
       "abs_tr_M_q0": "0.5751722439177718708265353439858617251768310907401",
       "y_lambda_load_time_sec": "0.002",
-      "tr_m_sum_time_sec": "0.004",
+      "tr_m_sum_time_sec": "0.000",
       "per_lambda": [
         {
           "partition": [
@@ -266,7 +266,7 @@
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
       "tr_M_q0": "0.22931010210455650733209081026882237514112239545267",
       "abs_tr_M_q0": "0.22931010210455650733209081026882237514112239545267",
-      "y_lambda_load_time_sec": "0.011",
+      "y_lambda_load_time_sec": "0.008",
       "tr_m_sum_time_sec": "0.001",
       "per_lambda": [
         {
@@ -621,7 +621,7 @@
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
       "tr_M_q0": "0.40376703685142817036867025333324052165346969994438",
       "abs_tr_M_q0": "0.40376703685142817036867025333324052165346969994438",
-      "y_lambda_load_time_sec": "0.007",
+      "y_lambda_load_time_sec": "0.008",
       "tr_m_sum_time_sec": "0.001",
       "per_lambda": [
         {
@@ -976,7 +976,7 @@
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
       "tr_M_q0": "0.16097414544240738182587344098076450724643379378599",
       "abs_tr_M_q0": "0.16097414544240738182587344098076450724643379378599",
-      "y_lambda_load_time_sec": "0.022",
+      "y_lambda_load_time_sec": "0.024",
       "tr_m_sum_time_sec": "0.002",
       "per_lambda": [
         {

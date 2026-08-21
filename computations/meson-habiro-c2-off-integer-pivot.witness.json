@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:46.159566+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:56:37.437251+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "c2_pivot_search_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "meson-habiro-c2-off-integer-pivot",
   "scriptFile": "meson_habiro_c2_off_integer_pivot.py",
   "scriptHash": "5912be1283d7",
-  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,20 +28,22 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Task 2 of PR #1617: tests whether meson Habiro c_2 is exactly 4 or slightly off-integer with a structural h² correction (c_2 = 4·(1 + ε·h²)). Pairwise PSLQ across 24 substrate basis elements + 15 hand-curated ε candidates.",
   "parameters": {
-    "q_60dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_60dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "epsilon": "-0.04434267562869077611854946",
-    "c_2_pivot_value": "3.992247797367766746527475",
+    "epsilon": "-0.0348348100838457563272187",
+    "c_2_pivot_value": "3.993910010105138550271017",
     "pslq_matches_count": 0,
     "within_05pct_count": 0,
-    "verdict": "NULL — neither PSLQ over 24 substrate basis elements nor hand-curated candidate scan over 15 plausible ε values finds a clean match. ε = -0.04434267563 appears to NOT be a natural substrate quantity. The c_2-off-integer pivot does NOT rescue the meson Habiro c=4 reopening — both framings (c_2=4+c_3 at step 1, c_2=4·(1+ε·h²) here) fail PSLQ at the substrate basis."
+    "verdict": "NULL — neither PSLQ over 24 substrate basis elements nor hand-curated candidate scan over 15 plausible ε values finds a clean match. ε = -0.03483481008 appears to NOT be a natural substrate quantity. The c_2-off-integer pivot does NOT rescue the meson Habiro c=4 reopening — both framings (c_2=4+c_3 at step 1, c_2=4·(1+ε·h²) here) fail PSLQ at the substrate basis."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
