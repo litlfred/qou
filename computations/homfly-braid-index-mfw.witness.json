@@ -1,8 +1,8 @@
 {
   "engine": "skein-recursion-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T16:37:39.620316+00:00",
-  "commitSha": "3e2012a9b7ea2e72a61ba0eb6f54398502440db5",
+  "computedAt": "2026-08-21T21:04:55.329214+00:00",
+  "commitSha": "5bbaa7801570e938ace0da3460818069682e662e",
   "assertions": [
     {
       "name": "textbook_homfly_all",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 67,
+  "durationMs": 234,
   "computation": "homfly-braid-index-mfw",
   "scriptFile": "homfly_braid_index_mfw.py",
-  "scriptHash": "969701f8809e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "11bca4d96634",
+  "scriptCommitSha": "f6dd5df1ec15aa8d6ba6b2056be03880ea355768",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
