@@ -1295,6 +1295,30 @@ class WitnessBuilder:
         current_hash = file_content_hash(str(self._script_path))
         return existing.get("scriptHash") == current_hash
 
+    def _capture_invocation(self) -> dict:
+        """Record how this producer was invoked, per `qou-nok3`.
+
+        Returns ``{"argv": [...], "reproduce": "..."}``. ``argv[0]`` is
+        rewritten to the script's repo-relative path; the remaining entries
+        are verbatim, so a flag the builder knows nothing about is still
+        recorded.
+
+        An empty argument list is recorded as such — that is informative,
+        not absent. It distinguishes "run with no flags" from "written
+        before this field existed", which is what absence means.
+        """
+        argv = list(sys.argv)
+        try:
+            rel = self._script_path.resolve().relative_to(_repo_root())
+            head = str(rel)
+        except Exception:
+            head = self._script_path.name
+        argv = [head] + argv[1:]
+        return {
+            "argv": argv,
+            "reproduce": "python3 -u " + " ".join(argv),
+        }
+
     def build(self) -> dict:
         """Build the witness dictionary (without writing to disk)."""
         # Difference against the clock the baseline was actually taken on.
@@ -1347,6 +1371,32 @@ class WitnessBuilder:
         # Interpreter + numeric-library versions, so version-driven drift
         # (e.g. mpmath/sympy shifting q₀ at ~1e-8) is attributable.
         witness["environment"] = capture_environment()
+
+        # ── Invocation ─────────────────────────────────────────────
+        # WHAT this fixes: a producer can gate real compute on sys.argv,
+        # and nothing in its witness said so. Measured case —
+        # `whitehead_c0_mpmath.py` puts its N=12 data point behind
+        # `"--n12" in sys.argv`; the committed witness CONTAINS N=12, so it
+        # was made with the flag, and a plain re-run silently drops the
+        # point and moves the headline `factor` 1.9678 -> 1.8973 (3.6 %).
+        # The diff reads as ordinary drift. Scanned: 4 producers confirmed
+        # to gate payload on an unrecorded flag (bean qou-nok3).
+        #
+        # This mirrors `Generation` in `tools/hecke-engine/src/provenance.rs`,
+        # which already does it for the Rust binaries. Its design note argues
+        # for RAW ARGV over modelled per-flag fields, because modelling needs
+        # updating whenever a binary gains an option and silently drops
+        # anything not yet modelled — which is the failure being fixed. The
+        # same reasoning applies here, so this stores argv, not parsed flags.
+        #
+        # `argv[0]` is normalised to a repo-relative path so the record does
+        # not depend on where the script was invoked from; without that, the
+        # field would differ between machines for the same run and every
+        # comparison would be noise.
+        #
+        # NOT ephemeral, deliberately: the point is that a re-run with
+        # different flags shows up as a difference rather than hiding.
+        witness["invocation"] = self._capture_invocation()
 
         if self.description:
             witness["description"] = self.description
