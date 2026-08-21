@@ -157,8 +157,12 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     B = Q_β(n) · (tr_M(W_free) − tr_M(W_atom)),   [SIGNED categorical
     difference — see the in-body note; the double-modulus form was a
     non-archimedean misuse]
-    Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3
-    per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
+    Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, the **CAL-2
+    proxy** — NOT CAL-3; CAL-3 is 𝔇_π, exactly as line 69 of this file
+    already states. `precision-goals.md` scores Q_β as a *prediction*
+    carrying 1248–1279 ppb, not as a calibration input, and
+    `three-calibration-inputs-context` forbids "a second hadronic scale".
+    Per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
 
     **Naming note (2026-05-17, this branch).** This binding-scale
     parameter is the **β-decay Q-value $Q_\\beta(n)$**, **NOT** the
@@ -473,7 +477,7 @@ if __name__ == "__main__":
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
-    print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
+    print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-2 proxy)")
     print("=" * 100)
     results = []
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'B_AME':>8} "
@@ -516,7 +520,8 @@ if __name__ == "__main__":
             f"tr_M_atom) [SIGNED categorical difference; the double-"
             f"modulus |·|−|·| was a non-archimedean misuse] with "
             f"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
-            "neutron β-decay Q-value, CAL-3 calibration input — "
+            "neutron β-decay Q-value, the CAL-2 proxy — NOT CAL-3, "
+            "which is 𝔇_π; Q_β is a scored prediction, not an input — "
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
             "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
             "than AME because Q_β is the wrong energy scale; the "

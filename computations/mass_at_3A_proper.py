@@ -477,7 +477,23 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                              include_inter: bool = True,
-                             weight_scheme: str = "normalized_plancherel",
+                             weight_scheme: str = "jones_wenzl",
+                             # DEFAULT CHANGED (bean qou-2tuv): was
+                             # "normalized_plancherel", which breaks its own
+                             # documented invariant. That scheme's docstring
+                             # promises it "keeps V_hat_i in the physical range
+                             # [-1, 1] at our q0, which is what the Phi_q tower
+                             # needs" -- measured on the deuteron its max is
+                             # 1.08837 against a phi_q_safe cap of 1.087779,
+                             # i.e. AT the pole, and binding_3A_tower returns
+                             # ~1e7 MeV as a result. It also concedes it does
+                             # "not match the canonical Jones parameter z", so
+                             # it is inconsistent with the 2026-08-09 owner
+                             # ruling. `jones_wenzl` is the Ocneanu weighting
+                             # built on z = q^3/(q^2+1) (convention D); its max
+                             # V_hat is 0.06979 and the tower is finite.
+                             # docs/audits/2026-05-11-plancherel-usage-audit.md
+                             # marked normalized_plancherel DEPRECATED already.
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -673,7 +689,7 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
 
 def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        E_0: float = E_0_CALIBRATION_MEV,
-                       weight_scheme: str = "normalized_plancherel",
+                       weight_scheme: str = "jones_wenzl",
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",
