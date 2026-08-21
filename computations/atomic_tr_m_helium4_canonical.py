@@ -9,9 +9,9 @@ per PR #564 audit).
 1. Compute the H_3 traces `tau_p, tau_n` via the Wenzl bridge at 50 dps.
 2. Apply the Phase 5q closed form
        tr_M(𝓑_⁴He) = closed_form_tau_M(2, 2, q_0, tau_p, tau_n)
-   with the default `pn_convention="chi_lambda_braid"`, which Phase 5q
-   verified matches the empirical slow-path tr_M at machine precision
-   (1e-49 rel.err — see
+   passing `pn_convention="chi_lambda_braid"` EXPLICITLY (line 117) —
+   which Phase 5q verified matches the empirical slow-path tr_M at machine
+   precision (1e-49 rel.err — see
    `closed-form-tau-M-verification-phase5q.witness.json`).
 
 ## Why this is the canonical path
@@ -94,9 +94,18 @@ def main() -> int:
     # Compute H_3 baseline traces for proton and neutron via the
     # centralised compute_tau_M_nucleon_H3 helper. This uses the
     # canonical_braid_marshalling pipeline (chi_lambda_braid convention)
-    # that the Phase 5q witness validates against — matching the closed
-    # form's `pn_convention="chi_lambda_braid"` default at machine
+    # that the Phase 5q witness validates against — matching the
+    # `pn_convention="chi_lambda_braid"` passed explicitly below at machine
     # precision.
+    #
+    # NOT the default. `closed_form_tau_M`'s default is
+    # `bring_color_weighted` (closed_form_tau_M.py:245,344,392,495), made
+    # canonical by ruling R3. Both prose references here previously called
+    # chi_lambda_braid "the default", which was true when written and is
+    # not now. The explicit argument at line 117 is therefore LOAD-BEARING:
+    # deleting it as redundant would silently switch this file's physics to
+    # bring_color_weighted and invalidate the 1e-49 Phase 5q agreement cited
+    # above, which was measured under chi_lambda_braid. Bean qou-cds4.
     t0 = time.perf_counter()
     print("\n[1/3] Computing tau_p via compute_tau_M_nucleon_H3 (50 dps)...")
     tau_p = compute_tau_M_nucleon_H3("p", q_val, dps=50)
