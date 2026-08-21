@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-21T22:54:37Z
+updated_at: 2026-08-21T22:58:10Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -164,3 +164,49 @@ So the 49 splits at least three ways:
 sort is the cheap gate and it changes the ACTION, not just the ordering.
 
 Not yet measured: how many of the 49 fall in (ii). Two confirmed by hand.
+
+
+## Class (ii) is at least 4 — and the sort turns out NOT to be automatable
+
+AST-based (identifiers used as CODE, so a q0 mention inside a string literal or
+docstring does not count — that is what made `compute_audit_scan` look
+q0-using to a grep), file plus one hop into local imports:
+
+    at-risk producers                          49
+      q0 identifier used as code (self/1hop)   45
+      NO q0 identifier as code -> class (ii)    4
+
+    computations/audits/fitted_labelled_canonical_audit.py
+    computations/compute_audit_scan.py
+    computations/habiro/habiro_interpolate_cross_validator.py
+    computations/qbeta/qbeta_fsc_g_pattern_comparison.py
+
+So class (ii) is SMALL. It does not warrant separate corpus-wide treatment; it
+is a four-item cleanup. That answers the question of whether the false-label
+class needed its own arc: it does not.
+
+**But 4 is a LOWER BOUND, and the reason matters.**
+`derivation_chain_validator` has **NO** q0 identifier of its own — AST-checked,
+`self: NONE`. It landed in the 45 purely because it IMPORTS a module that
+contains a q0 accessor. Importing a module that mentions q0 is not using q0, so
+the one-hop rule OVER-ATTRIBUTES. I had hand-read that producer as class (ii)
+one turn earlier (it does `mpf` arithmetic over AUTHORED digits from chain
+JSON, never over a pin) and the detector disagreed with the hand-read — the
+detector is wrong here, not the hand-read.
+
+**Consequence: the (i)/(ii)/(iii) sort cannot be automated.** The two available
+rules fail in OPPOSITE directions —
+
+  * file-local grep      UNDER-counts (misses `aoa.q0_mp(dps)`, a module alias)
+  * one-hop AST          OVER-counts (an import is not a use)
+
+— so neither can produce the sort, and a hybrid inherits both errors. This is
+the fourth detector-calibration slip of the session and the first in the
+over-inclusive direction; the earlier three all under-counted. The honest
+conclusion is that the 49 need 49 reads, or at minimum 49 confirmations of a
+machine proposal, exactly as the `library-find-duplicates` proposals are
+adjudicated rather than trusted.
+
+Budget it as hand work, not a sweep. The audit script remains the right
+artifact: it holds the register and ratchets it, and makes no claim about which
+class an entry is in.
