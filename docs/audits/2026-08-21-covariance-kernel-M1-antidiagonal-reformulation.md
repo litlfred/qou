@@ -55,6 +55,34 @@ A reformulation + verified supporting facts + a concrete proof route — **not**
 form, and (ii) reducing the proof to one explicit Gaussian-field integral with strong evidence it is
 positive.
 
+## Further structure + resolution status (2026-08-21, "dull analysis")
+
+Attempting to *resolve* `M₁ > 0` (not just reformulate), the following exact facts were established
+(exact `Fraction`, n ≤ 24):
+
+- **Cleaner exact form:** `M₁ = Cov(Σᵢ λᵢ², Σc²)` (squared row-lengths vs squared contents), via
+  `Σh = n_λ+n_{λ'}+n` and `Σᵢ C(λᵢ,2) = (Σᵢλᵢ² − n)/2`. **Lean-formalized** (`decide`, k≤5):
+  `m1_eq_cov_rowSq_contentSq_of_le_five`, with the per-partition `Σh² = Σc² + n²`
+  (`hookSqSum_eq_contentSq_add_sq_card_of_le_eight`, k≤8).
+- **`Cov(p₂*, Σc²) = 0` exactly** (the shifted power sum `p₂*` is Plancherel-uncorrelated with `Σc²`);
+  since `Σᵢλᵢ² = p₂* + 2ñ_λ − n`, the non-polynomiality of `M₁` is carried entirely by the non-shifted-
+  symmetric part — traceable to the **number of parts** `ℓ(λ)`.
+- **Geometric decomposition:** `M₁ = Cov(Σ|c|, Σc²) + Cov(Σ_c h(c)², Σc²)`, the first **positive**
+  (dominant), the second **negative** — a **partial cancellation** of two `~n^{5/2}` terms with ratio
+  `Cov(Σh²,Σc²)/Cov(Σ|c|,Σc²) → −0.62`. So `M₁ ≈ 0.38 ×` (a positive `n^{5/2}` term).
+- **Asymptotic:** `Cov(Σb,Σc²) → κ·n^{5/2}`, `κ ≈ 0.0591` (clean exponent 5/2); correlation
+  `ρ(Σb,Σc²) → ~0.93`.
+- **No simple closed form:** `M₁ ≠ poly(n) + {E[ℓ], E[ℓ²], E[λ₁], ℓ·poly}` combinations (all exact
+  fits fail, n ≤ 19). The denominators carry every prime ≤ n — a genuinely complex Plancherel
+  expectation.
+
+**Resolution status: `M₁ > 0` remains OPEN.** The Kerov-CLT route gives *asymptotic* positivity (the
+`n^{5/2}` constant `κ > 0`), but a rigorous all-`n` proof requires either (i) an exact closed form
+(none found), or (ii) a rigorous Kerov-CLT constant **plus a finite-`n` error bound** controlling the
+`±n^{5/2}` cancellation (`ratio > −1` uniformly). Both are genuine analysis; this is the "same
+difficulty class as the open kernel" the odd-moment audit named, now made precise. **Not resolved; not
+laundered.** The *identity* is Lean-proved (finitely many `n`); the *positivity* is not.
+
 ## Compute
 
 - Probe: [`computations/deltalambda/wlambda_covariance_epic_M1_antidiagonal_reformulation.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_antidiagonal_reformulation.py) (exit 0)
