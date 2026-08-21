@@ -549,7 +549,11 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     codata_rel_unc: Object.freeze({
       name: "codata_rel_unc",
       description:
-        "CODATA relative uncertainty on m_μ/m_e — bounds physical anchoring of q_0.",
+        "CODATA relative uncertainty on m_p/m_e — bounds physical anchoring " +
+        "of q_0. Said m_μ/m_e until 2026-08-21, but the witness field this " +
+        "reads is proton-derived (anchor: m_p/m_e, limited_by: CODATA " +
+        "m_p/m_e); the muon figure is a separate field, " +
+        "muon_cross_check_relative_uncertainty, ~1470x looser.",
       symbol: "\\sigma(q_0)/q_0",
       witnessFile:
         "computations/q-pinning-50-digit.witness.json",
