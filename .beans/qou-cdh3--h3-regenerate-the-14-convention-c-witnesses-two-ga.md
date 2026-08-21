@@ -343,3 +343,25 @@ it is the tempting move and the next person will think of it too.
 
 Leaving `in-progress`: the tranche is not finished, and the two remaining items
 are now precisely scoped rather than open-ended.
+
+### Update 2026-08-21 — `qou-j47t` RESOLVED; helium-4 is the only item left
+
+The `derived-chi-catalogue` hits are cleared. They were **not convention C**: the
+field held the representation's *dimension* (`1`) where a Markov weight belongs,
+on ten cells, of which the detector could only see the two sitting on `ℓ(λ) ≥ 3`.
+The builder already emitted `"?"` for all ten; the artefact was stale, and the
+missing piece was an `update()` path on the catalogue. Fixed and verified — 342
+cells preserved, exactly 10 changed, genuine `1/4` kept. Full account in
+`qou-j47t`.
+
+**Convention-C witness surface as of now:**
+
+| item | status |
+|---|---|
+| `chi-helium-4-h12-at-q0-50dps-matrix-m` (70) | **real, blocked** — infeasible on its producer, quantified above |
+| `y-lambda-macdonald-telescope` (14 symbolic) | **false positive, proved** — identically zero, sympy 14/14 |
+| everything else | cleared |
+
+So this tranche is down to **one genuine outstanding witness**, and it is blocked
+on a cost question (does any consumer need `chi_lambda` on `ℓ(λ) ≥ 3` at n = 12?)
+rather than on a convention question.
