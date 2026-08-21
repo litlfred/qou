@@ -1,11 +1,11 @@
 ---
 # qou-cdh3
 title: 'H3 (hygiene): regenerate the 14 convention-C witnesses — two hard gates first'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-16T13:21:37Z
+updated_at: 2026-08-21T15:15:40Z
 ---
 
 Parent: `qou-cdx1`. Successor to the `qou-eea0` cascade, which drained the bulk.
@@ -121,3 +121,126 @@ So: **the saving is per-CONSUMER, not per-cache.** Anything downstream that
 contracts to `Σ_λ y_λ·χ^λ` can skip the dead blocks; anything that inspects
 blocks individually cannot, and the pole-order analyses are in the second class.
 Do not apply it cache-wide on the strength of the n=12 ratio.
+
+
+---
+
+## WORKED 2026-08-21 — 14 → 5 → 2, and BOTH gates turned out not to apply
+
+Claimed and worked today. Re-measured first (`scripts/convention-c-witness-audit.py`,
+**unchanged since 2026-08-15** — verified, so none of the movement below is
+detector drift).
+
+### Starting position was already 14 → 5, not 14
+
+| | this bean (2026-08-15) | on arrival (2026-08-21) |
+|---|---|---|
+| structural | 13 witnesses, 825 entries | **4 witnesses, 122 entries** |
+| symbolic | 1 witness, 14 expressions | 1 witness, 14 expressions |
+
+Of the 9 structural entries that had cleared before I started: **6 by
+migration, 3 by deletion**, and the deletions are right — `chi-helium-4-h12-numeric`
+was retired as the C orphan (`f933ce228`), and `chi-neutron-h3` / `chi-proton-h3`
+were deprecated as A=1 leftovers (`6d5673374`). Per this bean's own constraint 1,
+single nucleons have no p–n bond to weight, so **deprecating them beats migrating
+them** — a sweep that pattern-matched filenames would have migrated them and been
+wrong.
+
+### Gate 1 is STALE — the hazard it names is not in the path
+
+The gate says the `chi-*-matrix-m` family *"has no Python producer … a
+`hecke-engine` binary … Apply the convention gate to the binary before
+regenerating, or the regeneration launders C."* Resolved by reading the call
+graph rather than the filenames:
+
+- `computations/chi_at_q0_via_matrix_m_mpfr.py` **owns the family** and computes
+  in `mpmath` at 50 dps (`NO f64 in compute path`).
+- Rust appears **once**, at `:513`, as a *cross-check* —
+  `abs(chi_mpf - chi_rust) < tol` — never as the compute path. So the
+  `qou-j6il` binary-laundering hazard cannot reach these numbers.
+- The real convention input is `_load_y_lambda` →
+  `tr_m_wenzl_bridge_mpfr` → **`computations/y-lambda-mpfr-proton-witness.json`**,
+  which the gate never names. Verified convention **D** *before* running
+  anything: `z = 0.61268803714646525159…`, and every 3+-row weight is `≤1e-72`
+  for n = 2…12.
+
+So the caches held **stale pre-migration values, not laundered ones**, and the
+right gate is "check the y_λ source witness", not "gate the binary".
+
+### Gate 2 does not apply to this route
+
+`delta_lambda_2row_stratum_analysis.py` is first in *cascade* topo order.
+Invoking the producer directly does not enter the cascade, so the 40-minute
+tax is not paid. Gate 2 stands for cascade restarts; it does not gate this work.
+
+### Regenerated (`--fresh`, strictly one producer at a time, snapshotted first)
+
+`--fresh` is **mandatory**, not hygiene: the q0 guard compares against the
+**stored** q0, so a stale cache looks self-consistent and resumes its own values
+forever.
+
+| atom | H | time | partitions | cross-check | 3+row above `DEAD_TOL` |
+|---|---|---|---|---|---|
+| helium-3 | 9 | 67.7 s | 30/30 | 30/30 @ 1e-45 | 0 (max 5.274e-73) |
+| tritium | 9 | 67.1 s | 30/30 | 30/30 @ 1e-45 | 0 (max 5.274e-73) |
+| helium-4 | 12 | **in flight** | — | — | — |
+
+Both cleared values match `y-lambda-mpfr-proton-witness.json` exactly, which is
+the check that they came from the D source rather than being coincidentally small.
+
+### ⚠ NEW COST DATUM — H₁₂ is far more expensive than H₉ on this path
+
+helium-4 measured mid-run: **10 of 77 partitions in ~27 minutes**, and the
+per-partition cost is climbing (the 10th landed at 15:36Z, the 11th was still
+running 11 minutes later). H₉ did 30 partitions in 67 s. Naive extrapolation is
+~3 h and that is optimistic, since the large-dim middle partitions are the
+expensive ones.
+
+This is a **different** cost axis from the one in the `#5209` note above (that
+one is colour-weighted *symbolic* χ, measured at 1525.9 s at H₆). This is the
+*numeric* matrix-M mpfr path, which was supposed to be the cheap one — and at H₁₂
+it is not. Anyone planning an H₁₂-and-above regeneration should budget hours per
+atom and run it detached, not inside a session.
+
+### The symbolic hit is a FALSE POSITIVE — proved, not argued
+
+All 14 flagged weights in `y-lambda-macdonald-telescope.witness.json` carry the
+factor
+
+```
+1 - 1/((q**2 + 1)*(q**4/(q**2 + 1) - q**2 + 1))
+```
+
+and `(q**2 + 1)*(q**4/(q**2 + 1) - q**2 + 1) = q**4 - (q**4 - 1) = 1` **exactly**,
+so the factor — and every weight carrying it — is identically `0`. Confirmed with
+sympy: **14 of 14 algebraically zero, 0 nonzero**. The witness is *correctly
+convention D*; its D-ness is simply spelled as an unsimplified vanishing factor.
+
+**This is not a detector bug.** `scan_doc_symbolic`'s own docstring says a CAS
+*"does not belong in a scan over a 7 MB witness, so the 3+-row test screens
+syntactically and over-reports rather than under-reports"* — a deliberate,
+documented choice, and the right default for a test whose failure mode was
+silence. Added `--cas-verify` instead: an **opt-in** pass that runs the CAS only
+over the handful already flagged, where the cost argument does not apply. Exit
+code deliberately unchanged, so no gate flips on the flag. Selftest **16 → 22**,
+including the negative cases that matter (the committed convention-C root's
+`[1,1,1]` still flags; an unparseable expression returns `None`, never a verdict).
+
+### The last structural hit is split out as `qou-j47t`
+
+`derived-chi-catalogue.witness.json` (2 entries) is **not** a regeneration item.
+Its builder now emits `y_lambda_at_zero="?"` for exactly those cells, but
+`DerivedChiCatalogue.add` raises on duplicate keys and the builder *merges* into
+the existing catalogue — verified read-only: both keys are already in `_index` of
+the committed 342-cell witness, so a re-run raises on the first add, and a fresh
+build would emit 12 cells against 342. There is no update path. Full analysis and
+the unresolved `y_λ(0)` semantics question in `qou-j47t`.
+
+### Where this leaves the tranche
+
+- **cleared:** 11 of 13 structural (9 before today, 2 today), plus the symbolic
+  hit shown to be a false positive.
+- **in flight:** helium-4 (H₁₂).
+- **split out:** `derived-chi-catalogue` → `qou-j47t`.
+
+Not closing this bean while helium-4 is running.
