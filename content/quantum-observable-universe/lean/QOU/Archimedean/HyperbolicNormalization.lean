@@ -28,22 +28,26 @@ translation, height-fixing rotation) together with at most one boundary inversio
   hypothesis.  No inversion is needed: the boundary-similarity group fixes `∞` and
   so maps vertical lines to vertical lines, which is exactly enough here.
 
-## What is NOT proved here (honest wall, tracked as a bean, NOT stubbed)
+* **`invImage_horiz_collapse` + `exists_normalization_general` (DERIVED,
+  sorry-free)** — the general case, `x, y` with DISTINCT horizontal parts (bean
+  `qou-0a0z`, CLOSED).  A three-map composition `Φ = T₃ ∘ T₂ ∘ T₁` carries both
+  onto the z-axis: `T₁` a horizontal translation sending `x` to `(0,0,x₂)`; `T₂`
+  the boundary inversion at the geodesic's near ideal endpoint `ξ = (c−R)·u`
+  (`u = w/d` the unit horizontal difference, `c = (d²+y₂²−x₂²)/(2d)`,
+  `R = √(c²+x₂²)`); `T₃` a horizontal translation.  The endpoint algebra is
+  handled by the single sphere identity `‖p − ξ‖² = 2R·(α − (c−R))`, which
+  collapses coords `0,1` of BOTH inversion images to the same value — NO explicit
+  ideal-endpoint construction of the geodesic is needed, only that both interior
+  points lie on the Euclidean sphere `‖· − c·u‖ = R`.
+* **`exists_normalization` (DERIVED, sorry-free)** — the unconditional statement,
+  by case split on shared vs distinct horizontal parts.
 
-The **general** two-point case (`x, y` with distinct horizontal parts) is the
-genuine content of bean `qou-0a0z` and is NOT closed in this file — it is left as
-a precise `-- GAP:` note, not a `sorry` and not a fabricated instance, per
-AGENTS.md ("if you cannot close a derivation, CREATE A BEAN — not a `sorry`").
-The obstruction is purely the Euclidean *endpoint algebra*: the geodesic through
-two points with distinct horizontal parts is a boundary-centred semicircle whose
-two ideal endpoints `ξ, η ∈ ∂H³` must be computed (centre on `{z=0}`, radius from
-the perpendicular bisector) before an inversion `ξ ↦ 0`, `η ↦ ∞` straightens the
-geodesic to a vertical line, which a final horizontal translation lands on the
-z-axis.  Every ISOMETRY ingredient that route needs is already derived and
-composes via `IsDHIsometry.comp`; only the semicircle-endpoint construction and
-the verification that the composite lands `x, y` on the z-axis remain.  This file
-stays 100 % sorry-free; the `HypMinimizerUnique` conjecture in
-`HyperbolicGeodesic` is left untouched (no fabricated instance).
+## Discipline
+
+This file is 100 % sorry-free (`#print axioms` on every theorem shows only
+`propext, Classical.choice, Quot.sound` — no `sorryAx`).  The
+`HypMinimizerUnique` conjecture in `HyperbolicGeodesic` is left untouched: the
+z-axis reduction is a genuine derivation, NOT a fabricated instance.
 
 Archimedean (ℝ): `‖·‖`, ordering `0 < z` — §7c.
 
@@ -242,33 +246,162 @@ theorem invImage_horiz_collapse
   · rw [inversion_coord, hp0, hξ0, div_pow, hdξ]; field_simp; ring
   · rw [inversion_coord, hp1, hξ1, div_pow, hdξ]; field_simp; ring
 
-/-! ### WALL-2, general case — HONEST GAP (bean `qou-0a0z`, NOT stubbed)
+/-! ### WALL-2, general (distinct-horizontal) case — DERIVED
 
-The general two-point normalization — `x, y ∈ H³` with **distinct** horizontal
-parts — is NOT proved here.  It is not a `sorry` and not a fabricated
-`HypMinimizerUnique` instance; it is an explicit gap, tracked as bean `qou-0a0z`.
+The genuine content of bean `qou-0a0z`.  When `x, y` have DISTINCT horizontal
+parts, a three-map composition carries both onto the z-axis:
 
-`-- GAP:` The isometry infrastructure is complete: `IsDHIsometry.comp` (above)
-composes the WALL-1 boundary-similarity generators (`dilationIsom`,
-`horizTranslationIsom`, `heightFixingLinearIsom`) with the boundary inversion
-(`boundaryInversionIsom`), and every one of those is already a derived
-`dH`-isometry.  What remains is the Euclidean **endpoint algebra**, which involves
-square roots and has no ready Mathlib lemma:
+* **`T1`** the horizontal translation `p ↦ p + (zpt x₂ − x)` (as in the vertical
+  case) sends `x` to `(0,0,x₂)` and `y` to `w + (0,0,y₂)` with `w` the horizontal
+  difference, `d = ‖w‖ > 0`;
+* **`T2`** the boundary inversion at the near ideal endpoint
+  `ξ = (c−R)·u` (`u = w/d`, `c = (d²+y₂²−x₂²)/(2d)`, `R = √(c²+x₂²)`), which by
+  `invImage_horiz_collapse` collapses coords `0,1` of BOTH image points to the
+  same `K·uⱼ`;
+* **`T3`** the horizontal translation by `−K·u`, zeroing both horizontal
+  coordinates.
 
-  1. the geodesic through `x, y` (distinct horizontal parts) is the semicircle in
-     the vertical plane `V` spanned by `x, y, e_z`, centred at the point
-     `c ∈ V ∩ {z = 0}` equidistant (Euclidean) from `x` and `y`, of radius
-     `R = ‖x − c‖`;  its two ideal endpoints are `ξ, η = c ± R·û` for the unit
-     horizontal direction `û` of `V`;
-  2. a horizontal translation by `−ξ` sends `ξ ↦ 0`;  the boundary inversion
-     `inversion 0 1` sends `0 ↦ ∞` and `η − ξ ↦ (η − ξ)/‖η − ξ‖²`, so the
-     geodesic becomes the vertical line through that image;
-  3. a final horizontal translation lands that vertical line on the z-axis.
+Every factor is a derived `dH`-isometry (`horizTranslationIsom`,
+`boundaryInversionIsom`); `IsDHIsometry.comp` assembles the composite, and
+positive height is inherited from `IsDHIsometry.maps`. -/
 
-The composite `Φ` is then an `IsDHIsometry` by `IsDHIsometry.comp`, and — because
-`x, y` lie on their geodesic and `Φ` maps that geodesic to the z-axis — `Φ x` and
-`Φ y` land on `zAxis`.  Closing this needs (1) a Lean construction of `c, R, û`
-with the perpendicular-bisector / boundary-intersection identities, and (2) the
-image-coordinate verification.  Deferred to bean `qou-0a0z`. -/
+set_option maxHeartbeats 800000 in
+/-- **WALL-2 — general (distinct-horizontal) two-point normalization (DERIVED,
+sorry-free).**  If `x, y ∈ H³` have DISTINCT horizontal parts
+(`(y₀−x₀)² + (y₁−x₁)² > 0`), a `dH`-isometry (a horizontal translation, then a
+boundary inversion at the geodesic's near ideal endpoint, then a horizontal
+translation) carries both onto the z-axis. -/
+theorem exists_normalization_general {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH)
+    (hne : 0 < (y 0 - x 0) ^ 2 + (y 1 - x 1) ^ 2) :
+    ∃ (Φ : E → E), ∃ _ : IsDHIsometry Φ, Φ x ∈ zAxis ∧ Φ y ∈ zAxis := by
+  have hapos : (0:ℝ) < x 2 := hx
+  have hbpos : (0:ℝ) < y 2 := hy
+  -- scalars
+  set dsq := (y 0 - x 0) ^ 2 + (y 1 - x 1) ^ 2 with hdsq
+  have hdsqpos : 0 < dsq := hne
+  set d := Real.sqrt dsq with hddef
+  have hdpos : 0 < d := Real.sqrt_pos.mpr hdsqpos
+  have hdne : d ≠ 0 := ne_of_gt hdpos
+  have hd2 : d ^ 2 = dsq := Real.sq_sqrt (le_of_lt hdsqpos)
+  set c := (dsq + (y 2) ^ 2 - (x 2) ^ 2) / (2 * d) with hcdef
+  have h2dc : 2 * d * c = dsq + (y 2) ^ 2 - (x 2) ^ 2 := by
+    rw [hcdef]; field_simp
+  set Rsq := c ^ 2 + (x 2) ^ 2 with hRsqdef
+  have hRsqpos : 0 < Rsq := by
+    have : 0 < (x 2) ^ 2 := pow_pos hapos 2
+    have := sq_nonneg c; rw [hRsqdef]; linarith
+  set R := Real.sqrt Rsq with hRdef
+  have hRpos : 0 < R := Real.sqrt_pos.mpr hRsqpos
+  have hR2 : R ^ 2 = Rsq := Real.sq_sqrt (le_of_lt hRsqpos)
+  -- horizontal unit direction `u = w / d`
+  set hw : E := (y - x) - zpt ((y - x) 2) with hhwdef
+  have hhw0 : hw 0 = y 0 - x 0 := by
+    rw [hhwdef, PiLp.sub_apply, zpt_coord0, sub_zero, PiLp.sub_apply]
+  have hhw1 : hw 1 = y 1 - x 1 := by
+    rw [hhwdef, PiLp.sub_apply, zpt_coord1, sub_zero, PiLp.sub_apply]
+  have hhw2 : hw 2 = 0 := by
+    rw [hhwdef, PiLp.sub_apply, zpt_height, PiLp.sub_apply, sub_self]
+  set u : E := d⁻¹ • hw with hudef
+  have hu0 : u 0 = (y 0 - x 0) / d := by
+    rw [hudef, PiLp.smul_apply, smul_eq_mul, hhw0, div_eq_inv_mul]
+  have hu1 : u 1 = (y 1 - x 1) / d := by
+    rw [hudef, PiLp.smul_apply, smul_eq_mul, hhw1, div_eq_inv_mul]
+  have hu2 : u 2 = 0 := by
+    rw [hudef, PiLp.smul_apply, smul_eq_mul, hhw2, mul_zero]
+  have hu01 : (u 0) ^ 2 + (u 1) ^ 2 = 1 := by
+    rw [hu0, hu1, div_pow, div_pow, ← add_div, hd2]
+    exact div_self (ne_of_gt hdsqpos)
+  -- the images `A' = T1 x` and `B' = T1 y`, K, and the two translations
+  set b1 : E := zpt (x 2) - x with hb1def
+  have hb1h : b1 2 = 0 := zAxisShift_height x
+  set K := (c - R) + (1:ℝ) ^ 2 / (2 * R) with hKdef
+  set b3 : E := (-K) • u with hb3def
+  have hb3h : b3 2 = 0 := by rw [hb3def, PiLp.smul_apply, smul_eq_mul, hu2, mul_zero]
+  -- ξ 2 = 0 (inversion centre is on the boundary)
+  have hξ2 : ((c - R) • u) 2 = 0 := by rw [PiLp.smul_apply, smul_eq_mul, hu2, mul_zero]
+  -- `A' = T1 x = zpt x₂`
+  have hAeq : x + b1 = zpt (x 2) := by rw [hb1def, add_sub_cancel]
+  -- `B' = T1 y` coordinates
+  have hBeq0 : (y + b1) 0 = y 0 - x 0 := by
+    rw [hb1def, PiLp.add_apply, PiLp.sub_apply, zpt_coord0, zero_sub]; ring
+  have hBeq1 : (y + b1) 1 = y 1 - x 1 := by
+    rw [hb1def, PiLp.add_apply, PiLp.sub_apply, zpt_coord1, zero_sub]; ring
+  have hBeq2 : (y + b1) 2 = y 2 := by
+    rw [hb1def, PiLp.add_apply, PiLp.sub_apply, zpt_height]; ring
+  -- collapse on A' (α = 0)
+  have hAcirc : dist (zpt (x 2)) (c • u) ^ 2 = R ^ 2 := by
+    rw [distSq_coords, zpt_coord0, zpt_coord1, zpt_height,
+      show (c • u) 0 = c * u 0 from by rw [PiLp.smul_apply, smul_eq_mul],
+      show (c • u) 1 = c * u 1 from by rw [PiLp.smul_apply, smul_eq_mul],
+      show (c • u) 2 = 0 from by rw [PiLp.smul_apply, smul_eq_mul, hu2, mul_zero],
+      hR2, hRsqdef]
+    nlinarith [hu01]
+  have hAne : zpt (x 2) ≠ (c - R) • u := by
+    intro h; have : (zpt (x 2)) 2 = ((c - R) • u) 2 := by rw [h]
+    rw [zpt_height, hξ2] at this; exact (ne_of_gt hapos) this
+  have hAcol := invImage_horiz_collapse u hu2 hu01 c R 1 0 (x 2) hRpos one_pos
+    (zpt (x 2)) (by rw [zpt_coord0]; ring) (by rw [zpt_coord1]; ring) (zpt_height _)
+    hAcirc hAne
+  -- collapse on B' (α = d)
+  have hBcirc : dist (y + b1) (c • u) ^ 2 = R ^ 2 := by
+    rw [distSq_coords, hBeq0, hBeq1, hBeq2,
+      show (c • u) 0 = c * u 0 from by rw [PiLp.smul_apply, smul_eq_mul],
+      show (c • u) 1 = c * u 1 from by rw [PiLp.smul_apply, smul_eq_mul],
+      show (c • u) 2 = 0 from by rw [PiLp.smul_apply, smul_eq_mul, hu2, mul_zero],
+      hu0, hu1, hR2, hRsqdef]
+    field_simp
+    nlinarith [hu01, hd2, h2dc, sq_nonneg (y 0 - x 0), sq_nonneg (y 1 - x 1)]
+  have hBne : y + b1 ≠ (c - R) • u := by
+    intro h; have : (y + b1) 2 = ((c - R) • u) 2 := by rw [h]
+    rw [hBeq2, hξ2] at this; exact (ne_of_gt hbpos) this
+  have hBcol := invImage_horiz_collapse u hu2 hu01 c R 1 d (y 2) hRpos one_pos
+    (y + b1) (by rw [hBeq0, hu0]; field_simp) (by rw [hBeq1, hu1]; field_simp)
+    hBeq2 hBcirc hBne
+  -- assemble Φ = T3 ∘ T2 ∘ T1
+  have hb30 : b3 0 = (-K) * u 0 := by rw [hb3def, PiLp.smul_apply, smul_eq_mul]
+  have hb31 : b3 1 = (-K) * u 1 := by rw [hb3def, PiLp.smul_apply, smul_eq_mul]
+  have hΦ : IsDHIsometry
+      ((fun p => p + b3) ∘ (inversion ((c - R) • u) 1) ∘ (fun p => p + b1)) :=
+    ((horizTranslationIsom hb3h).comp (boundaryInversionIsom hξ2 one_pos)).comp
+      (horizTranslationIsom hb1h)
+  refine ⟨_, hΦ, ?_, ?_⟩
+  · -- Φ x ∈ zAxis
+    refine ⟨?_, ?_, hΦ.maps hx⟩
+    · simp only [Function.comp_apply, hAeq, PiLp.add_apply, hAcol.1, hb30, hKdef]; ring
+    · simp only [Function.comp_apply, hAeq, PiLp.add_apply, hAcol.2, hb31, hKdef]; ring
+  · -- Φ y ∈ zAxis
+    refine ⟨?_, ?_, hΦ.maps hy⟩
+    · simp only [Function.comp_apply, PiLp.add_apply, hBcol.1, hb30, hKdef]; ring
+    · simp only [Function.comp_apply, PiLp.add_apply, hBcol.2, hb31, hKdef]; ring
+
+/-! ### WALL-2, full two-point normalization — DERIVED (bean `qou-0a0z`, CLOSED)
+
+The two cases combine into the unconditional statement: ANY two points of `H³`
+can be carried onto the z-axis by a `dH`-isometry.  If they share their horizontal
+part, the single horizontal translation of `exists_normalization_vertical`
+suffices; otherwise the horizontal-difference is nonzero and
+`exists_normalization_general` applies.  No `HypMinimizerUnique` instance is
+fabricated — the reduction is a genuine derivation. -/
+
+/-- **WALL-2 — full two-point normalization to the z-axis (DERIVED, sorry-free).**
+For ANY `x, y ∈ H³` there is a `dH`-isometry `Φ` carrying both `Φ x` and `Φ y`
+onto the z-axis.  The shared-horizontal case reuses the single translation of
+`exists_normalization_vertical`; the distinct-horizontal case is the boundary-
+inversion construction of `exists_normalization_general`.  This is the geometric
+reduction that carries geodesic uniqueness between two arbitrary points down to
+the already-derived z-axis case (`dH_zpt`). -/
+theorem exists_normalization {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH) :
+    ∃ (Φ : E → E), ∃ _ : IsDHIsometry Φ, Φ x ∈ zAxis ∧ Φ y ∈ zAxis := by
+  by_cases h : x 0 = y 0 ∧ x 1 = y 1
+  · exact exists_normalization_vertical hx hy h.1 h.2
+  · refine exists_normalization_general hx hy ?_
+    rw [not_and_or] at h
+    rcases h with h0 | h1
+    · have hz : y 0 - x 0 ≠ 0 := sub_ne_zero.mpr (Ne.symm h0)
+      have hpos : 0 < (y 0 - x 0) ^ 2 := by positivity
+      nlinarith [sq_nonneg (y 1 - x 1)]
+    · have hz : y 1 - x 1 ≠ 0 := sub_ne_zero.mpr (Ne.symm h1)
+      have hpos : 0 < (y 1 - x 1) ^ 2 := by positivity
+      nlinarith [sq_nonneg (y 0 - x 0)]
 
 end QOU.Archimedean
