@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-21T21:47:24Z
+updated_at: 2026-08-21T21:55:38Z
 ---
 
 
@@ -389,3 +389,30 @@ SOMEWHERE in row i can reach the keystone, which is stated about the last cell.
   REMAINING entry, assemble CornersAlong for an arbitrary standard (P,Q).
 - rskPair bijective.
 - RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
+
+
+### Brick 17 — the cascade IS shape-level corner removal (same PR #5426)
+
+tableauShape_uninsert : ColStrict T -> NoEmptyRows T -> IsCorner T i ->
+  tableauShape (uninsert T i).1 = SYTEnum.removeCorner (tableauShape T) i
+
+uninsert changes exactly ONE row length (rows above the target are rewritten by rowUninsert, which
+preserves length), so on shapes it decrements entry i and drops the row if that empties it — exactly
+removeCorner.
+
+**This is how the arbitrary-(P,Q) argument crosses from Q to P.** IsCorner is determined by the
+shape (isCorner_iff_shape, brick 13), so once the shape is tracked, a corner of Q's shape is a
+corner of P's.
+
+Connects to EXISTING infra rather than duplicating: SYTEnum.removeCorner is the GNW corner-removal
+op in SYTListCorner.lean, and its sz_removeCorner / sorted_removeCorner / removeCorner_pos now apply
+to the reverse cascade for free. (Fifth potential duplication avoided — I checked before writing a
+parallel shape operation.)
+
+### Remaining for surjectivity — now assembly, not new mathematics
+- read the positions off Q (bricks 4-6 machinery: qRowOf / qAppendSteps);
+- show each step removes the largest REMAINING entry of Q;
+- induct with the shape carried alongside, using brick 16 + brick 17 at each step
+  -> CornersAlong P is for arbitrary standard (P,Q).
+Then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+Wedderburn split (currently n <= 12 only, via the unrelated rskBurnsideHolds_le12).
