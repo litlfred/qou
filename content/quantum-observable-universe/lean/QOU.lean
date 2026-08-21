@@ -917,6 +917,8 @@ import QOU.Mathlib.SchenstedReadbackFold
 import QOU.Mathlib.SchenstedRSKInjective
 -- RSK inverse, brick 8: RSK separates permutations.
 import QOU.Mathlib.SchenstedPermInjective
+-- RSK inverse, brick 10: the cascade-level RIGHT inverse (non-deleting branch).
+import QOU.Mathlib.SchenstedCascadeRightInverse
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
