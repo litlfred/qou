@@ -1636,6 +1636,22 @@
         "severity": "major",
         "evidence": "Step 2 opened by announcing its own importance: 'This is the key step.' — the emphasis is narrated rather than placed, and the sentence carries no mathematical content.",
         "notes": "FIXED (deletion, no meaning change): 'This is the key step.  We use the **Tannaka--Krein reconstruction**.' -> 'We use the **Tannaka--Krein reconstruction**.'"
+      },
+      {
+        "field_hash": {
+          "md": "7ca3799ef5c7",
+          "ts": "cb6c54d3616c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:52:06.445Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Superseding the earlier agent:r01 fail on this block: 'This is the key step.' was deleted in this batch, so the current Step 2 opens directly on the Tannaka--Krein reconstruction.",
+        "notes": "FIXED: 'This is the key step.  We use the **Tannaka--Krein reconstruction**.' -> 'We use the **Tannaka--Krein reconstruction**.'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1855,5 +1871,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:39:14.288Z"
+  "updated_at": "2026-08-19T21:52:06.445Z"
 }

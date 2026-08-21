@@ -1488,6 +1488,21 @@
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "'2m_e is *not* the crossing energy gap - it is the mass-energy'; closer 'not a single energy threshold but the decomposition'",
         "notes": "both are substantive disambiguation between genuinely distinct energies (pair mass-energy vs crossing gap; three-route table has no single threshold); kept"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:19.947Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Denials carry content: 'An isolated electron cannot become a positron -- lepton number conservation forbids it', 'The energy 2m_e is not the crossing energy gap -- it is the mass-energy of the two particles created', and the closing 'not a single energy threshold but the decomposition into symmetric binding (cosh) and antisymmetric Coulomb (sinh) channels'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1523,6 +1538,21 @@
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "opening rhetorical question + pivot ('The answer depends on ... - and the QOU framework reveals')",
         "notes": "fixed: 'How much energy does it cost...? The answer depends on what convert means - and the QOU framework reveals three distinct energy scales.' -> 'The energy cost of converting an electron into a positron depends on what convert means. The QOU framework distinguishes three energy scales.'"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.000Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Standard-physics baseline, QOU crossing energies, three routes, summary; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1559,6 +1589,21 @@
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "5 spaced em-dashes pre-fix; density was the tell",
         "notes": "fixed: 'through the unknot - but the trefoil' -> 'through the unknot, but the trefoil'; 'rotation is free - but inaccessible' -> 'rotation is free but inaccessible'; remaining dashes are load-bearing disambiguation ('is not the crossing energy gap - it is the mass-energy') and a true appositive"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.061Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "3 em-dashes in 669 words, each introducing a genuine gloss."
       }
     ],
     "trap-triples": [
@@ -1594,6 +1639,21 @@
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "'three distinct energy scales' / three-route summary",
         "notes": "the three-way split is the block's actual content (table + three numbered routes), not a reflex triple"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.119Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'The QOU framework distinguishes three energy scales' matches the three table rows, the three numbered routes and the three summary bullets."
       }
     ],
     "trap-closing-aphorism": [
@@ -1629,6 +1689,21 @@
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "final sentence on cosh/sinh channel decomposition",
         "notes": "substantive summary of the derived symmetric/antisymmetric decomposition, not a quotable flourish"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.167Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "The closing sentence makes the cosh/sinh decomposition claim rather than sounding a note."
       }
     ],
     "trap-meta-commentary": [
@@ -1663,6 +1738,21 @@
         "reviewed_at": "2026-08-15T11:37:15.737Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.227Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1697,6 +1787,22 @@
         "reviewed_at": "2026-08-15T11:37:15.785Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.285Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "The Summary re-enumerates the three scales, but reframes them as the three possible answers (infinity / 2 m_e / 0) to the question the block opens with.",
+        "notes": "Optional: the summary bullets duplicate the table's Energy column."
       }
     ],
     "trap-performed-warmth": [
@@ -1731,6 +1837,21 @@
         "reviewed_at": "2026-08-15T11:37:15.823Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.416Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1765,6 +1886,22 @@
         "reviewed_at": "2026-08-15T11:37:15.871Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.500Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No maximum-strength phrasing; the complex-q route is explicitly labelled inaccessible to measurement.",
+        "notes": "Two rigor flags reported separately: (i) 3(q - q^{-1}) is given as 0.630 but equals 0.627180896 at q_0 = 1.1099785827513808 (0.45 percent off, and no pin gives 0.630 -- at 1.1097 it is 0.6257); this is the same family as the 0.9010 -> 0.9009 fix in 46bf0a49b. (ii) 'the ratio tanh(ln q) = 0.104 ... consistent with alpha_EM ~ 1/137' compares 0.10396 with 0.00730, a factor 14.2 apart, with only a parenthetical scale caveat. Verified correct: 3 q_0 = 3.330, -3/q_0 = -2.703, q_0^{-1} = 0.9009, 3(q+q^{-1}) = 6.0327 = 6 cosh(ln q_0)."
       }
     ],
     "trap-nonspeakable": [
@@ -1799,6 +1936,21 @@
         "reviewed_at": "2026-08-15T11:37:15.916Z",
         "reviewed_sha": "7c07899a9932c5e615c678db168b61f6969ee7e1",
         "evidence": "full-block read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "52776faeaa87",
+          "ts": "d192e669a001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:50:20.577Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1821,5 +1973,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:50:20.577Z"
 }

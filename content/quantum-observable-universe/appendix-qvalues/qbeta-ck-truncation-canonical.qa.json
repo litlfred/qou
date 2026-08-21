@@ -2224,6 +2224,22 @@
         "severity": "major",
         "evidence": "Opener narrated the block's own act ('We set out the epistemic status ...'), with a dangling anaphor ('It designates' after a 'We' subject — sweep damage), and paragraph 5 opened by narrating the conjecture just stated ('This conjecture outlines the requirement for closure.').",
         "notes": "FIXED: opener -> 'The Q_beta truncation coefficients differ in epistemic status. The tiering below records, for each rung, whether it is proved, near-matched, or calibration-anchored, so that its open status is explicit and checkable.'; deleted 'This conjecture outlines the requirement for closure.'"
+      },
+      {
+        "field_hash": {
+          "md": "38962aa3e428",
+          "ts": "7d5a49c91451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:52:06.384Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Superseding the earlier agent:r01 fail on this block: the two narrating sentences were removed in this batch, so the CURRENT text carries no meta-commentary. Retained for the record: the opener read 'We set out the epistemic status ... It designates ...' (dangling anaphor) and paragraph 5 opened 'This conjecture outlines the requirement for closure.'",
+        "notes": "FIXED: opener -> 'The Q_beta truncation coefficients differ in epistemic status. The tiering below records, for each rung, whether it is proved, near-matched, or calibration-anchored, so that its open status is explicit and checkable.'; deleted 'This conjecture outlines the requirement for closure.'"
       }
     ],
     "trap-thesis-restatement": [
@@ -2383,5 +2399,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:23:18.218Z"
+  "updated_at": "2026-08-19T21:52:06.384Z"
 }
