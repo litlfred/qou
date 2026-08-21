@@ -24,11 +24,25 @@ That last clause is the one carrying the content. `rowUninsert` descends to the 
 before deciding, so it takes the *rightmost* entry strictly below `y`; the column argument needs
 exactly that maximality, not merely "some entry was replaced".
 
+Three consequences follow, and the last is the one the whole reverse programme was waiting on:
+
+* `le_index_of_lt` — the write index dominates every eligible index (maximality, contrapositive);
+* `reverse_bump_index_mono` — **reverse bump columns weakly increase going up**, the mirror of
+  `bump_findIdx_mono`;
+* **`strictBelow_reverse_bump_step`** — one adjacent-row step of column-strictness, the mirror of
+  `strictBelow_bump_step`.
+
+I had expected the monotonicity to be the hard step. It is three lines: `upper[kLow] < lower[kLow]`
+makes `kLow` itself an eligible index in the upper row, and the write index dominates every
+eligible index. The pair-of-rows step is then four column cases, of which monotonicity kills the
+only bad one.
+
 ## Scope
 
-One row. The cascade-level `ColStrict` preservation this feeds — and the corner hypothesis it
-needs, located in `SchenstedUninsertInvariants` — are later bricks of epic `qou-nrex`. Nothing here
-claims them.
+Two adjacent rows. Lifting `strictBelow_reverse_bump_step` along the cascade — which also needs the
+corner hypothesis located in `SchenstedUninsertInvariants`, for the `dropLast` at the target row —
+is the next brick of epic `qou-nrex`. Nothing here claims it, and `RSKBurnsideHolds` for general
+`n` stays open.
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 -/
@@ -99,6 +113,94 @@ theorem lt_of_index_lt {r : List ℕ} {y z k m : ℕ}
     (hright : ∀ m, k < m → m < r.length → y ≤ r.getD m 0) (hzy : z < y)
     (hm : k < m) (hmlt : m < r.length) : z < r.getD m 0 :=
   lt_of_lt_of_le hzy (hright m hm hmlt)
+
+/-! ### Bump-column monotonicity, reversed
+
+The forward cascade is column-strict because bump columns weakly **decrease** going down
+(`bump_findIdx_mono`). Reversed, they weakly **increase** going up: the reverse cascade removes a
+cell from a lower row and writes into the upper row at an index no further left.
+
+That is the one fact I expected to be the hard step of the reverse bumping lemma. It is not: it is
+the maximality clause of `rowUninsert_spec` read contrapositively, and needs no induction of its
+own. Both lemmas below are three lines. -/
+
+/-- **The write index dominates every eligible index.** If any in-range entry of `r` is strictly
+below `y`, then `rowUninsert` writes at least that far right. Contrapositive of maximality. -/
+theorem le_index_of_lt {r : List ℕ} {y k j : ℕ}
+    (hright : ∀ m, k < m → m < r.length → y ≤ r.getD m 0)
+    (hj : j < r.length) (hjy : r.getD j 0 < y) : j ≤ k := by
+  by_contra hcon
+  exact absurd (hright j (by omega) hj) (by omega)
+
+/-- **Reverse bump columns weakly increase going up** — the mirror of `bump_findIdx_mono`.
+
+If the lower row gave up its entry at `kLow`, and the upper row sits strictly above it
+(`StrictBelow upper lower`), then reverse-inserting that entry into the upper row writes at an
+index `kUp ≥ kLow`.
+
+The proof is the whole reason column-strictness survives: `upper[kLow] < lower[kLow] = yLow`, so
+`kLow` is itself an eligible index in the upper row, and the write index dominates every eligible
+index. -/
+theorem reverse_bump_index_mono {upper lower : List ℕ} {yLow kLow kUp : ℕ}
+    (hsb : StrictBelow upper lower)
+    (hkLow : kLow < lower.length) (hyLow : lower.getD kLow 0 = yLow)
+    (hright : ∀ m, kUp < m → m < upper.length → yLow ≤ upper.getD m 0) : kLow ≤ kUp := by
+  refine le_index_of_lt hright (lt_of_lt_of_le hkLow hsb.1) ?_
+  rw [← hyLow]
+  exact hsb.2 kLow hkLow
+
+/-! ### One adjacent-row step of column-strictness, reversed
+
+With monotonicity in hand the pair-of-rows step goes through directly — the mirror of
+`strictBelow_bump_step`. -/
+
+/-- **A reverse bump keeps the two rows column-strict.**
+
+`lower` gives up its entry `yLow` (writing `yBelow` in its place), `yLow` is reverse-inserted into
+`upper` (writing `yLow` in place of `yUp`), and the pair stays `StrictBelow`.
+
+Four column cases, and monotonicity kills the only bad one:
+
+* `j = kUp = kLow` — the upper row now reads `yLow`, the lower row now reads `yBelow`, and
+  `yLow < yBelow` because a reverse insertion always writes something strictly larger.
+* `j = kUp > kLow` — the lower row is unchanged at `j`, and `lt_of_index_lt` on the lower row's
+  maximality gives `yLow < lower[j]`.
+* `j = kLow < kUp` — the upper row is unchanged at `j`, and
+  `upper[kLow] < lower[kLow] = yLow < yBelow`.
+* neither — both rows unchanged at `j`.
+
+`j = kUp < kLow` is the case that would break it, and `reverse_bump_index_mono` excludes it. -/
+theorem strictBelow_reverse_bump_step {upper lower : List ℕ} {yBelow yLow yUp : ℕ}
+    (hsb : StrictBelow upper lower)
+    (hlow : (rowUninsert lower yBelow).2 = some yLow)
+    (hup : (rowUninsert upper yLow).2 = some yUp) :
+    StrictBelow (rowUninsert upper yLow).1 (rowUninsert lower yBelow).1 := by
+  obtain ⟨kLow, hkLow, hgLow, hsetLow, hltLow, hrightLow⟩ :=
+    rowUninsert_spec lower yBelow yLow hlow
+  obtain ⟨kUp, hkUp, hgUp, hsetUp, hltUp, hrightUp⟩ :=
+    rowUninsert_spec upper yLow yUp hup
+  have hmono : kLow ≤ kUp := reverse_bump_index_mono hsb hkLow hgLow hrightUp
+  rw [hsetLow, hsetUp]
+  refine ⟨by simpa using hsb.1, ?_⟩
+  intro j hj
+  have hjl : j < lower.length := by simpa using hj
+  have hju : j < upper.length := lt_of_lt_of_le hjl hsb.1
+  by_cases hjU : j = kUp
+  · subst hjU
+    rw [getD_set_self hju]
+    by_cases hjL : j = kLow
+    · rw [hjL, getD_set_self hkLow]
+      exact hltLow
+    · rw [getD_set_ne (fun h => hjL h.symm)]
+      exact lt_of_index_lt hrightLow hltLow (lt_of_le_of_ne hmono (fun h => hjL h.symm)) hjl
+  · rw [getD_set_ne (fun h => hjU h.symm)]
+    by_cases hjL : j = kLow
+    · rw [hjL, getD_set_self hkLow]
+      calc upper.getD kLow 0 < lower.getD kLow 0 := hsb.2 kLow hkLow
+        _ = yLow := hgLow
+        _ < yBelow := hltLow
+    · rw [getD_set_ne (fun h => hjL h.symm)]
+      exact hsb.2 j hjl
 
 /-! ### The rightmost choice, machine-checked
 
