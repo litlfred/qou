@@ -615,7 +615,18 @@ def main() -> dict:
         (q0 ** 4 - q0 ** -4) / (q0 - q0 ** -1)
     )  # [3]_q · [4]_q
     # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
-    _alpha_em_inv = mpf("137.035944")  # CS-corrected α_em (Witten κ, 399 ppb)
+    # α_em is DERIVED, not copied. This line held the literal
+    # mpf("137.035944") -- the MUON-anchor evaluation from before the
+    # 2026-05-28 proton re-pin, and a TRUNCATED CS tower besides. At the
+    # current proton pin the exact resummation gives 137.0359350939756,
+    # i.e. the literal was 65.0 ppb off, and its stated "399 ppb vs CODATA"
+    # understated the real residual of 468 ppb. pyhecke.constants and
+    # meson_em_sinh_closed_form were both corrected; this consumer and
+    # meson_em_residual_alpha_em were not, so the fix never reached the
+    # dashboard. Effect on m_K/m_pi is 0.0066 ppb -- the L2 verdict is
+    # unchanged; the defect was in what the number CLAIMED, not what it did.
+    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
+    _alpha_em_inv = alpha_em_inv_derived(q0)
     _mk_sq_over_mpi_sq = _qcg_strong + (1 / _alpha_em_inv) / _pi * _hbar_factor
     mk_pred = mp.sqrt(_mk_sq_over_mpi_sq)
     rows.append(_row_for(

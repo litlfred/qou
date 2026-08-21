@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-07T00:02:18.133944+00:00",
-  "commitSha": "ae890226b4f6b93ff173aacf5ef5515b5e013d73",
+  "computedAt": "2026-08-19T21:04:28.793664+00:00",
+  "commitSha": "8012e99a60460238500489de3c44de1a4b113f60",
   "assertions": [
     {
       "name": "closed_form_ring_identity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 9,
   "computation": "meson-em-sinh-closed-form",
   "scriptFile": "meson_em_sinh_closed_form.py",
-  "scriptHash": "973373c8ac74",
-  "scriptCommitSha": "5a68b7fcaf26905ef42dd980580d604e8fa13524",
+  "scriptHash": "f3aa2df9570f",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Closed-form identity (1 + ℏ_q − ℏ_q²/2) = (3q² − 1)/(2q²), verified at q₀ to machine precision. Full meson m_K²/m_π² closure form: [3]_q[4]_q + (α_em/π)·(3q² − 1)/(2q²). At q₀: +0.047 ppm. The numerator 3q²−1 reflects 3 generations + substrate; denominator 2q² is the standard EM-self-energy halving on the substrate-natural scale.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",

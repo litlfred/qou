@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-16T14:02:46Z
+updated_at: 2026-08-21T15:27:06Z
 ---
 
 
@@ -2625,3 +2625,126 @@ two blocks, and the closing steps, with the `OverlapComposition` and its `spoly`
 identity at the end. Same wiring the `a > b` regime needed, over a longer list.
 No new *kind* of object is known to be missing; that claim is only as good as
 the measurements above, which cover `a ≤ 7` and a sample of `b`.
+
+### Landed — PR #5247 merged 2026-08-19
+
+Rebase-merged, so the arc's commits sit on `main` individually (`895f5e07`
+… `114abbb1`). Verified on `main` after the merge: `quadStep` and
+`farComm_transport_right_sources` both present in `HeckeCompletion.lean`, and
+both probes with their witnesses present under `computations/`.
+
+The bean stays **in-progress**: the merge landed the *infrastructure* for the
+`a ≤ b` regime, not the regime. `hecke_is_gs_basis` is untouched by this arc so
+far.
+
+**The next tranche, in order.**
+
+1. **The outer induction over the block's levels.** Everything it needs exists:
+   the per-level lemma is `farComm_transport_right_sources`, and the level
+   structure is measured — `b > a` gives `a` levels with lengths
+   `min(b−a−1+k, b−a+2)`, `b = a` gives `a−1` levels with `min(k, 2)`. Because
+   the number of *short* levels is fixed (two, or one on the diagonal), this
+   should be a fixed prologue plus a uniform single-index loop, i.e. the same
+   kind of object as §4af's loop rather than a new one.
+2. **The assembly.** `MultiStepReduction.trans` over: prefix loop passes, the
+   two `Y·Q` pairs, the two blocks, the closing steps, then the
+   `OverlapComposition` and its `spoly` identity. Same wiring the `a > b`
+   regime needed, over a longer list.
+
+**Two cautions for whoever picks this up.**
+
+- The measurements behind (1) cover `a ≤ 7` and a *sample* of `b`. "No new kind
+  of object is missing" is an inference from that sample, not a theorem — this
+  arc has already had three structural guesses fail (the linear prefix fit, the
+  quadratic-step contexts, the transport direction).
+- Verify with `lean`-direct, never `lake build`, on a tree restored from
+  `lake-cache/qou-<toolchain-slug>`: that branch carries Mathlib but **no UGB
+  oleans**, so build the cone Elem → Basic → CompositionLemma → NormalForms →
+  AlgOps → HeckeGS first (~30 s), then `HeckeCompletion` (~2 min).
+
+### The block's uniform loop — `blockTransportRight` (§4ai)
+
+Half of next-tranche item 1. Measured the per-level `(A, X, W, B)` decomposition
+across the block, and the level-to-level transition is:
+
+    B_{k−1} = [σ just moved] ++ B_k        (the moved letter joins B)
+    W_{k−1} = one letter longer, until the cap; then fixed
+    A_{k−1} = A_k shortened correspondingly
+
+So in the **capped** region — every level after the fixed two (one on the
+diagonal) — the run `W` is constant and each level peels one letter off the
+right end of the remaining block and carries it across. That is exactly "carry a
+whole word `X` rightwards past a whole word `W`", with no reference to the block
+at all, which is what `blockTransportRight` states.
+
+**Peeling direction is forced.** `X` must be peeled from the **right**: its last
+letter sits against `W`, transports across, and joins `B`. From the left there
+is no single transport to apply — the head of `X` is separated from `W` by the
+rest of `X`. Hence `List.reverseRecOn` rather than ordinary list induction.
+
+**Parked-term hypothesis.** Enumerating this induction's intermediates would
+mean splitting `X` *and* `W` simultaneously, which is unusable. But every word
+any step rewrites is `A ++ z`, so `loopTwoGen`'s single hypothesis — no parked
+term begins with `A` — discharges every collision obligation at once. Same
+device, same reason.
+
+Built first try. Sorry-free, standard axioms, `lean`-direct exit 0 on the full
+file with no warnings, and checked non-vacuous by carrying a two-letter block
+past a two-letter run (four far-commutations) with a bystander that does not
+begin with the context.
+
+**Remaining, narrowed.** (a) The fixed prologue — two short levels off the
+diagonal, one on it — as individual `farComm_transport_right_sources`
+applications with explicit contexts, in the style of the `a > b` regime's
+`s1`–`s4`. (b) The assembly. Note (a) is a *fixed* amount of work independent of
+`a` and `b`, which is the whole point of the level-structure measurement.
+
+### The block is CLOSED — `blockPass` (§4aj)
+
+Next-tranche item 1 is done, and it went further than the plan: rather than
+write the two short levels as named lemmas alongside `blockTransportRight`, the
+whole block composes into one lemma.
+
+**Blueprint, measured over 102 levels** (`a = 2 … 7`, `b = a … a+3`), uniform on
+and off the diagonal — the diagonal differs only in *which* levels exist, not in
+their shapes. Level with high letter `σ_h`:
+
+    W = descWord (min(h−2, j₁+1)) j₂        the run it passes
+    B = descWord (h−1) (j₁+1) ++ [σ_i]      what sits to its right
+
+**So the block is three steps**, and the two short levels need **no new lemma** —
+they are `farComm_transport_right_sources` applications, with the blueprint
+supplying their arguments:
+
+    h = j₁+1   transport across descWord (j₁−1) j₂
+    h = j₁+2   transport across descWord j₁ j₂
+    h ≥ j₁+3   one blockTransportRight, X = descWord i (j₁+3)
+
+**The composition is forced by the left contexts.** With `A` the block
+transport's context, the earlier steps must run at
+`A₂ = A ++ descWord i (j₁+3) ++ [σ_{j₁+1}]` and `A₁ = A₂ ++ [σ_{j₁+2}, σ_{j₁}]`.
+Then each step's target is the next one's source *on the nose*, because
+`descWord j₁ j₂` and `descWord (j₁+1) j₂` peel exactly the letters those
+contexts carry. Two `descWord_cons` peelings plus
+`descWord (j₁+2) (j₁+1) = [σ_{j₁+2}, σ_{j₁+1}]` are the entire gluing — no
+bridging lemmas, which is the payoff for the word definitions having been
+chosen to match syntactically.
+
+**One hypothesis dropped.** I first stated `blockPass` with `j₁+3 ≤ i`; the
+linter flagged it unused and it genuinely is — if the bound fails,
+`descWord i (j₁+3)` is empty and the middle step is vacuous, which is exactly
+the degenerate short-block case. The lemma is more general without it.
+
+Sorry-free, standard axioms, `lean`-direct exit 0 on the full file with zero
+warnings. Checked non-vacuous by instantiating at a **real** block — the
+`a = 4, b = 6` corner (rank 13, `i = 11`, `j₁ = 7`, `j₂ = 5`) — with a bystander
+that does not begin with the context, so every index hypothesis is satisfied at
+once rather than merely individually satisfiable.
+
+**What is left is now only the assembly.** Every *kind* of step in the `a ≤ b`
+chain now has its lemma: loop passes (§4af), the quadratic pairs (`quadStep` +
+`monicStep` for the Yang–Baxter half), and the blocks (`blockPass`). Remaining is
+`MultiStepReduction.trans` over the whole list plus the `OverlapComposition` and
+its `spoly` identity — the same wiring the `a > b` regime needed, over a longer
+list. Caveat unchanged: the blueprint is measured over `a ≤ 7` and a sample of
+`b`, not proved, and this arc has had structural guesses fail before.

@@ -29,6 +29,24 @@ from codata_table import codata  # noqa: E402
 
 mp.mp.dps = 50
 
+# Two mpf built from the SAME decimal string can differ in the last bit when
+# they are constructed at different working precisions, so `==` on mpf is the
+# wrong equality here: it reported all 8 constants as disagreeing by ~1e-17
+# relative while their printed digits were identical. Compare with a relative
+# tolerance instead. 1e-15 is far below any real edition difference (those are
+# ~1e-9) and far above float-construction noise (~1e-17), so this keeps full
+# detection power. Fixes a defect in the version merged by PR #5149.
+_SAME_TOL = mp.mpf("1e-15")
+
+
+def _same(a, b) -> bool:
+    """True when two mpf denote the same printed decimal value."""
+    if a == b:
+        return True
+    if b == 0:
+        return abs(a) < _SAME_TOL
+    return abs(a - b) / abs(b) < _SAME_TOL
+
 # ── Registry symbol → NIST quantity name ────────────────────────────
 #
 # Only symbols that CLAIM to be CODATA values are listed. AME-derived
@@ -96,7 +114,7 @@ def main() -> int:
         want = entry.value
 
         checked += 1
-        agree = have == want
+        agree = _same(have, want)
 
         # Check the UNCERTAINTY as well as the value. A value-only check is
         # not enough: `m_p/m_e` prints identically in CODATA-2018 and -2022,
@@ -105,7 +123,7 @@ def main() -> int:
         # entirely in the uncertainty.
         err_agree = True
         if have_err and entry.uncertainty is not None:
-            err_agree = mp.mpf(have_err) == entry.uncertainty
+            err_agree = _same(mp.mpf(have_err), entry.uncertainty)
         # Express any disagreement in units of the table's own uncertainty.
         if entry.uncertainty and entry.uncertainty != 0:
             sigma = float(abs(have - want) / entry.uncertainty)

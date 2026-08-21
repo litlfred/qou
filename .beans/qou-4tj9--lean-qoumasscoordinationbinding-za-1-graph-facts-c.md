@@ -1,12 +1,21 @@
 ---
 # qou-4tj9
 title: 'Lean: QOU.Mass.CoordinationBinding — z=A-1 graph facts + conditional BondExtensiveBinding class (needs full Lean env)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-11T17:38:10Z
-updated_at: 2026-07-11T17:38:45Z
+updated_at: 2026-08-19T21:30:00Z
 ---
+
+**2026-08-19 (PR #5346): SHIPPED + machine-verified — awaiting owner close.** The sandbox
+blocker is gone: the full `lake-cache/qou-v4-24-0` restore carries the SimpleGraph +
+ProofWidgets olean cone, so `content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean`
+is `lean`-direct **exit 0**, sorry-free. Lemma names updated to current Mathlib
+(`SimpleGraph.complete_graph_degree`, `card_edgeFinset_top_eq_card_choose_two`,
+`sum_degrees_eq_twice_card_edges`); needed `import Mathlib.Data.Real.Basic` for the ℝ fields.
+All four theorems + the `BondExtensiveBinding` conditional class present as specced.
+
 
 Ship the QOU-library Lean file deferred from PR #3551 (could not machine-verify in
 sandbox: ProofWidgets widgetJsAll JS assets network-blocked → SimpleGraph olean cone

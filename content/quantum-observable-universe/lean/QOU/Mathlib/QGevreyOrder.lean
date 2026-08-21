@@ -471,6 +471,86 @@ theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
   --        then hnc to transfer that summand's growth to the convolution.
   sorry
 
+/-- **[MI-2, sorry-free] Endpoint `≥`-brick for the convolution order law.**
+    The lower (`≥`) half of `cauchyMul_order`, discharged unconditionally at the
+    **`k = n` endpoint** — the pick that attains the envelope `max s t` when `a`
+    dominates (`t ≤ s`, so `cauchyEnvelope s t = s`).
+
+    Given the non-cancellation hypothesis `hnc`, a nonzero constant term
+    `b 0 ≠ 0`, and `a` eventually nonzero, the leading Gaussian coefficient of
+    `a ⋆ b` is eventually `≥ s − ε`.  The single summand `a n · b 0` already
+    grows like `q^{s n²/2}`, and `hnc` transfers that growth to the whole
+    convolution: `‖(a⋆b)_n‖ ≥ c·‖a_n‖·‖b_0‖`, whence
+
+    `2·log_q‖(a⋆b)_n‖/n² ≥ 2·log_q‖a_n‖/n² + 2(log_q c + log_q‖b_0‖)/n² → s`,
+
+    the second term being `O(1/n²)`.  This closes the `θ* = 1` pick the general
+    `cauchyMul_order` `sorry` cites, for the physically relevant `s`-dominant
+    positive-order regime (e.g. a Route-B kernel of order `½` against a
+    lower-order factor).  It does **not** close the general theorem: the
+    interior-optimum case (both orders `≤ 0`, envelope `s t/(s+t)`) still needs a
+    near-optimal `k ≈ θ*·n` argument.  Companion of `order_eventually_ge`. -/
+theorem cauchyMul_leadingCoeff_ge_endpoint {q s : ℝ} {a b : ℕ → K}
+    (ha : IsQGevreyOrder q s a) (hq : 1 < q) (hnc : NoCancellation a b)
+    (hb0 : b 0 ≠ 0) (ha0 : ∀ᶠ n in atTop, a n ≠ 0) {ε : ℝ} (hε : 0 < ε) :
+    ∀ᶠ n in atTop, s - ε ≤ 2 * logb q ‖cauchyMul a b n‖ / (n : ℝ) ^ 2 := by
+  obtain ⟨c, hc, hbound⟩ := hnc
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  have hb0n : 0 < ‖b 0‖ := norm_pos_iff.mpr hb0
+  -- The constant contribution `M/n² → 0`.
+  set M : ℝ := 2 * (logb q c + logb q ‖b 0‖) with hM
+  have hsq : Tendsto (fun n : ℕ => (n : ℝ) ^ 2) atTop atTop :=
+    (tendsto_pow_atTop (by norm_num : (2 : ℕ) ≠ 0)).comp tendsto_natCast_atTop_atTop
+  have hKtend : Tendsto (fun n : ℕ => M / (n : ℝ) ^ 2) atTop (𝓝 0) := by
+    have hinv : Tendsto (fun n : ℕ => ((n : ℝ) ^ 2)⁻¹) atTop (𝓝 0) :=
+      tendsto_inv_atTop_zero.comp hsq
+    have := hinv.const_mul M
+    simpa [div_eq_mul_inv] using this
+  have hCsmall : ∀ᶠ n : ℕ in atTop, -(ε / 2) ≤ M / (n : ℝ) ^ 2 := by
+    have hnhds : ∀ᶠ x : ℝ in 𝓝 (0 : ℝ), -(ε / 2) ≤ x := by
+      filter_upwards [Ioi_mem_nhds (show -(ε / 2) < (0 : ℝ) by linarith)] with x hx
+        using le_of_lt hx
+    exact hKtend.eventually hnhds
+  -- eventual lower bound on `a`'s leading coefficient (as in `order_eventually_ge`,
+  -- inlined here since that lemma is stated below this one).
+  have hA : ∀ᶠ n : ℕ in atTop, s - ε / 2 ≤ 2 * logb q ‖a n‖ / (n : ℝ) ^ 2 := by
+    have hmem : ∀ᶠ y : ℝ in 𝓝 s, s - ε / 2 ≤ y := by
+      filter_upwards [Ioi_mem_nhds (show s - ε / 2 < s by linarith)] with y hy
+        using le_of_lt hy
+    exact ha.eventually hmem
+  filter_upwards [hA, hCsmall, ha0, hbound, eventually_ge_atTop 1]
+    with n hAn hCn han hbn hn1
+  have hnpos : (0 : ℝ) < (n : ℝ) := by
+    have : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn1
+    linarith
+  have hn2 : (0 : ℝ) < (n : ℝ) ^ 2 := by positivity
+  have han' : 0 < ‖a n‖ := norm_pos_iff.mpr han
+  -- `hnc` at `k = n` transfers the endpoint summand's growth.
+  have key : c * (‖a n‖ * ‖b 0‖) ≤ ‖cauchyMul a b n‖ := by
+    have h := hbn n (Finset.self_mem_range_succ n)
+    rwa [Nat.sub_self] at h
+  have hpos : 0 < c * (‖a n‖ * ‖b 0‖) := by positivity
+  -- `logb` is monotone (division by `Real.log q > 0`).
+  have hlogmono : logb q (c * (‖a n‖ * ‖b 0‖)) ≤ logb q ‖cauchyMul a b n‖ := by
+    unfold logb
+    rw [div_eq_mul_inv, div_eq_mul_inv]
+    exact mul_le_mul_of_nonneg_right (Real.log_le_log hpos key)
+      (le_of_lt (inv_pos.mpr hlogq))
+  -- `log` splits the positive product.
+  have hsplit : logb q (c * (‖a n‖ * ‖b 0‖))
+      = logb q c + logb q ‖a n‖ + logb q ‖b 0‖ := by
+    unfold logb
+    rw [Real.log_mul (ne_of_gt hc) (mul_pos han' hb0n).ne',
+        Real.log_mul han'.ne' hb0n.ne']
+    ring
+  have hnum : 2 * logb q ‖a n‖ + M ≤ 2 * logb q ‖cauchyMul a b n‖ := by
+    have heq : 2 * logb q ‖a n‖ + M = 2 * logb q (c * (‖a n‖ * ‖b 0‖)) := by
+      rw [hM, hsplit]; ring
+    rw [heq]; linarith [hlogmono]
+  -- Combine over the common `n²` denominator.
+  rw [le_div_iff₀ hn2] at hAn hCn ⊢
+  nlinarith [hAn, hCn, hnum]
+
 /-! ### MI-3 — bound-form extraction and the θ = ½·C(m,2) payoff bridge
 
     Two consumptions of the MI-1/MI-2 infra, both proved sorry-free.

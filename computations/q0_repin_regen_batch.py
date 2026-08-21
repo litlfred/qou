@@ -101,6 +101,28 @@ def push_with_retry(log) -> bool:
     return False
 
 
+SUPERSEDED_BY = "computations/q0_repin_sweep.py"
+
+#: This driver is SUPERSEDED and refuses to run.
+#:
+#: `q0_repin_sweep.py` is the live q0 re-pin driver. It has three things this
+#: one does not, and each is load-bearing:
+#:
+#:   * `ANCHOR_DEFINING` / `ANCHOR_DEFINITIONS` — refuses to regenerate
+#:     `q-pinning-50-digit.witness.json`, which is not a datum but the
+#:     DEFINITION of the muon pin. Regenerating it at proton does not migrate
+#:     a witness, it deletes an anchor: 262 Q0_FLIPs (9a9c6b31c, reverted by
+#:     2e4745448d). THIS driver has no such guard and would do it again.
+#:   * `topo_order()` — producers read each other's witnesses, so alphabetical
+#:     order re-emits stale upstream values into freshly-run downstreams.
+#:     This driver sorts by yield (`-len`), which has the same defect.
+#:   * a progress journal, so an interrupted long run resumes.
+#:
+#: Kept rather than deleted because six files still reference it and the
+#: history is worth reading; made to refuse because a superseded driver that
+#: still runs is a loaded gun. Beans `qou-1c4y`, `qou-m9xp`, `qou-cezp`.
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true", help="list producers, no run")
@@ -111,6 +133,22 @@ def main() -> int:
                     "scriptFiles to defer (e.g. slow heavy-atom producers)")
     ap.add_argument("--logfile", default="/tmp/q0_regen.log")
     args = ap.parse_args()
+
+    print(
+        f"REFUSING TO RUN: this driver is superseded by {SUPERSEDED_BY}.\n"
+        "\n"
+        "It has no ANCHOR_DEFINING guard, so it would regenerate\n"
+        "q-pinning-50-digit.witness.json -- the DEFINITION of the muon pin,\n"
+        "not a datum. That produced 262 Q0_FLIPs on main once already\n"
+        "(9a9c6b31c, reverted by 2e4745448d). It also orders producers by\n"
+        "yield rather than topologically, so it re-emits stale upstream\n"
+        "values into freshly-run downstreams.\n"
+        "\n"
+        f"Use: python3 -u {SUPERSEDED_BY} --dry-run\n",
+        file=sys.stderr,
+    )
+    return 2
+
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
 
     logf = open(args.logfile, "a", buffering=1)
