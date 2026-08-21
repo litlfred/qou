@@ -1,11 +1,11 @@
 ---
 # qou-wtny
 title: 'SW-3: dimension identity Σ_{λ⊢n} d_λ² = n! (RSK)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:30:46Z
-updated_at: 2026-08-19T13:41:54Z
+updated_at: 2026-08-21T16:59:22Z
 parent: qou-59vq
 blocked_by:
     - qou-rsbf
