@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T15:43:17Z
+updated_at: 2026-08-21T16:12:28Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -333,3 +333,48 @@ those pairs whose content-cosh sums differ *at this q*. The unconditional
 statement is **true** (`H_n(q)/ℝ` is semisimple away from roots of unity of
 order ≤ n, and the ρ_λ are then the complete pairwise-inequivalent family) — the
 gap is formalisation, not mathematics.
+
+
+## CORRECTION 2026-08-21 — item 1 of "Remaining" is CLOSED, and its prescribed route was wrong
+
+The "Remaining" list above says **two** steps are open. Only **one** is.
+
+**Item 1 (infinitely many roots ⟹ coefficient equality) is DONE** — landed in
+this branch, sorry-free: `poly_eq_zero_of_eval_pow`, `coeff_sum_X_pow`,
+`card_filter_eq_of_powSum_eq`, and the assembled
+`contentCount_eq_of_matRepEquiv`. An equivalence now forces the two shapes to
+have the same number of cells of **every** content.
+
+**And the route I wrote into that item is not the one that worked.** It said:
+
+> *Clear `t^{-K}` by multiplying through by `t^K` (`K = max |content|`), then
+> `Polynomial.eq_zero_of_infinite_isRoot`.*
+
+The `t^K` clearing does **not** belong in the general lemma.
+`card_filter_eq_of_powSum_eq` is stated with **`ℕ` exponents**, so it never sees
+a shift at all — the ℤ-valued contents are moved into `ℕ` at the *call site*
+(`shiftedContent`, `pow_shiftedContent`), where the row bound
+`row_lt_card` supplies the lower bound. Putting the shift inside the lemma would
+have coupled a general fact about power sums to Young-diagram specifics for no
+reason. Only `Polynomial.eq_zero_of_infinite_isRoot` survives from that sketch.
+
+Two things found along the way that the sketch did not anticipate:
+
+* **`q² ≠ 1` does a second, unrelated job.** Elsewhere in this arc it gives
+  injectivity of `c ↦ q^{2c}`. In the roots argument it makes `q²` positive and
+  `≠ 1`, hence its powers strictly monotone, hence the evaluation points
+  pairwise distinct. Same hypothesis, different mechanism — do not conflate them
+  when re-scoping the genericity.
+* **The `d + n < 0` branch is not bookkeeping.** There the shifted filter can be
+  nonempty while the content filter is empty, so the translation iff genuinely
+  *fails*; both sides are shown empty directly instead.
+
+**Item 2 (content multiset ⟹ Young diagram) now has its own bean: `qou-tho9`**,
+with the corpus-grep and one real lead (`TLContentStratification` already gives
+the *support* half — `numCols` and `length` — sorry-free, on `Partition` rather
+than `YoungDiagram`).
+
+**This entry exists because the list above was stale within one commit of being
+written.** Same failure class as the `qou-gjg6` HLF note: a plan recorded as
+"open" that a later commit closed, left sitting where the next agent would trust
+it. Read the "Remaining" list above only through this correction.
