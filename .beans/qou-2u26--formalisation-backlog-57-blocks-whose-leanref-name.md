@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T23:25:59Z
-updated_at: 2026-08-21T21:58:04Z
+updated_at: 2026-08-21T22:30:03Z
 ---
 
 Owner directive 2026-08-15: **keep these refs, bean them** — do not delete.
@@ -255,3 +255,82 @@ record and an owner decision.**
 Bean re-scoped, not closed: the 57 rows are retained as the record of what
 was claimed, now labelled false. The live work is the 9 — eight
 formalisations plus one `definition` that gates paper-wide validation.
+
+
+---
+
+## Reconciling the two 2026-08-21 entries above — they disagree, both are partly right, and there is a third category
+
+The two sections above were written independently within the hour and report
+**4** unresolvable refs and **9**. The sets are **disjoint**, so neither number
+is the answer. Reconciled by hand:
+
+### My 9 were measured with a location-blind index, and 4 of the label-test's 4 are ones I wrongly cleared
+
+I cleared a ref whenever its leaf identifier appeared in *any* declaration
+anywhere under `content/`. That ignores both namespace and file location, which
+is exactly what the resolver does not ignore. Running the four down:
+
+| block | ref leaf | actually declared in |
+|---|---|---|
+| `figure-eight-reeb-theta-value` | `figure_eight_classical_reeb` | `figure-eight-reeb-**rotation**.lean:128` |
+| `crossing-energy-pair-**cancellation**` | `pair_cancellation` | `crossing-energy-**decomposition**.lean:210` |
+| `channel-rotation-askey-lit` | `rotation_step` | `binding-qbeta-complex-volume.lean:208` |
+| `complex-volume-character-variety-path` | `AWDeformationPath` | `binding-qbeta-complex-volume.lean:402` |
+
+Every one is declared in **a different block's sibling `.lean`** — not the
+referencing block's own sibling, and not under `lean/`. So resolver candidate 1
+(own sibling) misses and candidate 2 (`<lakeRoot>/<Decl/Path>.lean`) misses.
+**The label test is right and my clear was wrong on all four.**
+
+### That makes a third category, and it is not on either list's terms
+
+Neither "unformalised" nor "mis-referenced to a declaration that does not exist":
+
+> **formalised, in a file the resolver cannot reach.**
+
+The Lean is written, correct, and sitting one file over. The fix is neither a
+formalisation nor a repoint-to-the-right-name — it is either moving the
+declaration into the library tree or pointing the ref at the file that has it.
+Cheapest of the three to close, and invisible to a name-based scan in both
+directions: my index said "declared" because it found the name; a
+strict fully-qualified matcher says "absent" because the path is wrong. Both
+are describing the same file-location fact.
+
+### The 9 stand, and the two counts cannot both be complete
+
+The 9 in the section above are a stricter set: **no sibling `.lean` at all**,
+and the leaf identifier declared in **no** `.lean` under `content/` — 11,028
+files indexed, guard-checked non-empty against four known-good probes. Nothing
+in the label test's route would resolve them, so a census reporting **4**
+unresolvable corpus-wide cannot also be complete.
+
+I am not adjudicating which run under-scanned; I cannot see the other script and
+the same-shaped error has now bitten both of us. What is checkable is the union:
+**13 candidate blocks, in three categories** — 4 file-location (above), 9
+genuinely absent, and the ~49-minus-over-flag set the label test is still
+working through. The label test should be run against the 9 as well; if any
+carries its own `\label` on a live declaration it moves to category 3 and the
+count drops further.
+
+### Corroboration on the one that matters
+
+The `szd6` commit (`212cbe3ce0`) independently reports main's `content_validate`
+RED on **`qou-motivic-galois-instance`, whose Lean sibling does not exist**,
+verified pre-existing by stashing — reached from the carrier census, not from
+this bean. That is the `definition` named in the section above as the single
+error making `run-validate` exit non-zero paper-wide. Two routes, same block.
+Its issue count is quoted there as **28** against the **5** measured here a few
+hours earlier; main moved 108 commits between the two readings, so treat 28 as
+current and 5 as stale rather than as a discrepancy.
+
+### Standing hazard, now three-for-three
+
+The label-test entry's sibling-masking lesson — *a co-located sibling stub makes
+`walkBlocks` resolve the stub first, so every checker audits it and passes while
+the library ref sits dead* — is the same failure mode as `qou-6y28` (a manifest
+nothing could load reporting as clean) and as this bean's original 57 (an empty
+or under-populated index reporting every ref as unresolvable). In all three the
+artifact **passed** because the thing that should have been read was never
+reached. Any scan in this family needs the guard: assert the index is non-empty
+and that known-good probes are in it before believing a negative.
