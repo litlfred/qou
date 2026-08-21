@@ -29,6 +29,14 @@ a different problem from a clash at length 9.
 overlap, so early on they share long prefixes by construction. The question is
 how far in the sharing persists and how deep it goes, not whether it exists.
 
+And since *scheduling* is what repaired the tail's collision, the same two
+lineage-grouped orders are measured here as well. They do not repair the
+prefix: both are legal and reach the same endpoint, but one clashes exactly as
+often as the engine's order and the other is strictly worse. That is a
+**scope-limited** negative — these two groupings, alone, do not help — and not
+a claim that no schedule can; the space of legal orders is far larger than
+three.
+
 Emits `hecke-prefix-head-separation.witness.json`. Bean qou-auq3.
 """
 from __future__ import annotations
@@ -79,20 +87,44 @@ def lcp(u, v):
     return k
 
 
-def sweep(i, a, b):
+def plan(i, a, b):
+    """The prefix's steps in engine order, each tagged with its root lineage."""
     f = start_element(i, a, b)
-    L = [[w, c] for w, c in sorted(f.items(), key=lambda kv: eng.deglex_key(kv[0]))]
+    lineage = {w: k for k, w in
+               enumerate(sorted(f, key=eng.deglex_key))}
     pre, steps = a * a + a + 5, []
     for k in range(pre):
         t = next_redex(f)
         if t is None:
             break
         w, name, kk = t
+        left, right = w[:kk], w[kk + len(eng.LM[name]):]
+        img = eng.context_mul(left, eng.REL[name], right)
+        steps.append({"src": w, "rule": name, "pos": kk,
+                      "lineage": lineage[w]})
+        coeff = sp.expand(f[w] / eng.LC[name])
+        f = eng.clean(eng.combine(f, img, -coeff))
+        for u in img:
+            if u != w:
+                lineage.setdefault(u, steps[-1]["lineage"])
+    return steps, f
+
+
+def sweep(i, a, b, schedule):
+    """Head separation along a given schedule, in the list model."""
+    f = start_element(i, a, b)
+    L = [[w, c] for w, c in sorted(f.items(), key=lambda kv: eng.deglex_key(kv[0]))]
+    out = []
+    for s in schedule:
+        w, name, kk = s["src"], s["rule"], s["pos"]
+        if w not in f:
+            return None          # schedule illegal: redex absent
         others = [e[0] for e in L if e[0] != w]
         heads_ok = all(o[:1] != w[:1] for o in others)
         deepest = max((lcp(w, o) for o in others), default=0)
-        steps.append({"step": k, "rule": name, "others": len(others),
-                      "heads_separate": heads_ok, "longest_common_prefix": deepest})
+        out.append({"step": len(out), "rule": name, "others": len(others),
+                    "heads_separate": heads_ok,
+                    "longest_common_prefix": deepest})
         hits = [idx for idx, e in enumerate(L) if e[0] == w]
         left, right = w[:kk], w[kk + len(eng.LM[name]):]
         img = eng.context_mul(left, eng.REL[name], right)
@@ -102,7 +134,7 @@ def sweep(i, a, b):
             L = L[:idx] + [[u, sp.expand(-coeff * cu)]
                            for u, cu in img.items() if u != w] + L[idx + 1:]
         f = eng.clean(eng.combine(f, img, -coeff))
-    return steps
+    return out, f
 
 
 def main():
@@ -114,7 +146,28 @@ def main():
             if i >= n or i - b < 0:
                 continue
             retune(n)
-            st = sweep(i, a, b)
+            steps, f_end = plan(i, a, b)
+            st, _ = sweep(i, a, b, steps)
+            # Does a lineage-grouped schedule repair the clashes, as it did in
+            # the tail? Both groupings, each lineage keeping its own order.
+            alts = {}
+            for tag, sched in (
+                ("lineage0_first", [s for s in steps if s["lineage"] == 0]
+                                   + [s for s in steps if s["lineage"] == 1]),
+                ("lineage1_first", [s for s in steps if s["lineage"] == 1]
+                                   + [s for s in steps if s["lineage"] == 0])):
+                got = sweep(i, a, b, sched)
+                if got is None:
+                    alts[tag] = {"legal": False}
+                    continue
+                so, fo = got
+                alts[tag] = {
+                    "legal": True,
+                    "same_endpoint": (fo == f_end),
+                    "clashing": sum(1 for x in so if not x["heads_separate"]),
+                    "max_lcp": max((x["longest_common_prefix"] for x in so
+                                    if not x["heads_separate"]), default=0),
+                }
             clashes = [s for s in st if not s["heads_separate"]]
             first_ok = next((s["step"] for s in st if s["heads_separate"]), None)
             # the run of leading steps that are NOT head-separated
@@ -133,6 +186,7 @@ def main():
                     (s["longest_common_prefix"] for s in clashes), default=0),
                 "clash_steps": [s["step"] for s in clashes],
                 "clash_rules": sorted({s["rule"][0] for s in clashes}),
+                "reordered": alts,
             })
 
     w = WitnessBuilder("hecke-prefix-head-separation", engine="sympy",
@@ -180,17 +234,26 @@ def main():
         "Head separation is SUFFICIENT, not necessary. A clashing step is not "
         "a proved obstruction -- it is a step whose collision hypothesis needs "
         "a real argument rather than a one-letter one.")
+    w.add_parameter(
+        "reordering",
+        "both lineage-grouped schedules are measured too, since scheduling is "
+        "exactly what repaired the tail's clash; both are legal and reach the "
+        "same endpoint, and NEITHER reduces the clash count")
     w.add_caveat(
-        "Engine deg-lex order only. The tail showed a schedule can turn a "
-        "clash into a non-clash; no reordering is searched for here.")
+        "Only three schedules are measured -- the engine's and the two "
+        "lineage-groupings. The space of legal orders is far larger, so a "
+        "clash surviving all three is not proved unavoidable.")
     path = w.save()
 
-    print("  a   b  steps  separated  clashing  lead-run  max-lcp  rules")
+    print("  a   b  steps  engine-clash  max-lcp  |  L0-first  L1-first")
     for r in rows:
+        z = r["reordered"]
+        f0, f1 = z["lineage0_first"], z["lineage1_first"]
+        c0 = f0.get("clashing") if f0.get("legal") else "illegal"
+        c1 = f1.get("clashing") if f1.get("legal") else "illegal"
         print(f" {r['a']:>2}  {r['b']:>2} {r['prefix_steps']:>6}"
-              f" {r['steps_head_separated']:>10} {r['steps_clashing']:>9}"
-              f" {r['leading_clash_run']:>9} {r['max_lcp_over_clashing']:>8}"
-              f"  {','.join(r['clash_rules'])}")
+              f" {r['steps_clashing']:>13} {r['max_lcp_over_clashing']:>8}"
+              f"  | {str(c0):>9} {str(c1):>9}")
     print(f"\ncases: {len(rows)}   a-values whose counts depend on b: {bad}")
     print(f"witness -> {path}")
     return 0 if not bad else 1

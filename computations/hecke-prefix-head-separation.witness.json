@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-21T23:04:27.548654+00:00",
-  "commitSha": "9ce553cd42e6f5683887cdc6cea56007e9a4b9f5",
+  "computedAt": "2026-08-21T23:08:16.302309+00:00",
+  "commitSha": "400b34edbb49e6ec174cf4da8a42751f9b37cc0f",
   "assertions": [
     {
       "name": "a_values_where_the_clash_counts_depend_on_b",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 82,
+  "durationMs": 93,
   "computation": "hecke-prefix-head-separation",
   "scriptFile": "hecke_prefix_head_separation.py",
-  "scriptHash": "584e600e1d08",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8e6eb8764513",
+  "scriptCommitSha": "400b34edbb49e6ec174cf4da8a42751f9b37cc0f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,7 +47,8 @@
     "why_it_matters": "where it holds, the step needs no collision reasoning at all, for any lemma and any choice of left context",
     "clashing_steps": "4(a-1), independent of b",
     "head_separated_steps": "a^2 - 3a + 9",
-    "deepest_shared_prefix": "2a + 1, independent of b"
+    "deepest_shared_prefix": "2a + 1, independent of b",
+    "reordering": "both lineage-grouped schedules are measured too, since scheduling is exactly what repaired the tail's clash; both are legal and reach the same endpoint, and NEITHER reduces the clash count"
   },
   "data": {
     "cases_checked": 9,
@@ -74,7 +75,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 8,
+            "max_lcp": 7
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 12,
+            "max_lcp": 7
+          }
+        }
       },
       {
         "a": 3,
@@ -98,7 +113,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 8,
+            "max_lcp": 7
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 12,
+            "max_lcp": 7
+          }
+        }
       },
       {
         "a": 3,
@@ -122,7 +151,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 8,
+            "max_lcp": 7
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 12,
+            "max_lcp": 7
+          }
+        }
       },
       {
         "a": 4,
@@ -150,7 +193,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 12,
+            "max_lcp": 9
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 18,
+            "max_lcp": 9
+          }
+        }
       },
       {
         "a": 4,
@@ -178,7 +235,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 12,
+            "max_lcp": 9
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 18,
+            "max_lcp": 9
+          }
+        }
       },
       {
         "a": 4,
@@ -206,7 +277,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 12,
+            "max_lcp": 9
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 18,
+            "max_lcp": 9
+          }
+        }
       },
       {
         "a": 5,
@@ -238,7 +323,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 16,
+            "max_lcp": 11
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 25,
+            "max_lcp": 11
+          }
+        }
       },
       {
         "a": 5,
@@ -270,7 +369,21 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 16,
+            "max_lcp": 11
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 25,
+            "max_lcp": 11
+          }
+        }
       },
       {
         "a": 5,
@@ -302,12 +415,26 @@
         "clash_rules": [
           "B",
           "F"
-        ]
+        ],
+        "reordered": {
+          "lineage0_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 16,
+            "max_lcp": 11
+          },
+          "lineage1_first": {
+            "legal": true,
+            "same_endpoint": true,
+            "clashing": 25,
+            "max_lcp": 11
+          }
+        }
       }
     ]
   },
   "caveats": [
     "Head separation is SUFFICIENT, not necessary. A clashing step is not a proved obstruction -- it is a step whose collision hypothesis needs a real argument rather than a one-letter one.",
-    "Engine deg-lex order only. The tail showed a schedule can turn a clash into a non-clash; no reordering is searched for here."
+    "Only three schedules are measured -- the engine's and the two lineage-groupings. The space of legal orders is far larger, so a clash surviving all three is not proved unavoidable."
   ]
 }
