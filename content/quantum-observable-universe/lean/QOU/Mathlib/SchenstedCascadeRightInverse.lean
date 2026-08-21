@@ -14,30 +14,36 @@ return the tableau you started from.
 
 ## The hypothesis, and why it is not the corner condition I predicted
 
-I expected to need a **corner condition** (row `i+1` strictly shorter than row `i`). Measured, the
-actual requirement is narrower and different: **the target row must keep at least one cell**
-(`2 ≤ (T.getD i []).length`).
+I expected to need a **corner condition** (row `i + 1` strictly shorter than row `i`). It is not
+that, and it is not a weakening of it. `uninsert` has two branches at the target row and they want
+different things:
 
-The reason is that `uninsert` has two branches at the target row, and only one of them is
-invertible by `insert`:
+* **row kept** (`length > 1`) — the row loses its last cell, and re-inserting the displaced value
+  appends it straight back: `rowInsert` finds no entry above it, so there is no bump and no
+  cascade. This needs nothing but row-sortedness. The corner condition was doing no work here.
+* **row deleted** (`length ≤ 1`) — the whole row goes, and the displaced value has to come back as
+  a new **top** row. But `insert` only ever appends rows at the *bottom*, so `insert T z = [z] :: T`
+  can hold only when `T` is a single column whose entries increase strictly downward: each step
+  `rowInsert [b] a` must bump, which needs `a < b`, and that has to hold all the way down.
 
-* **row kept** (`length > 1`): the row loses its last cell, and re-inserting the displaced value
-  appends it straight back — `rowInsert` finds no entry above it, so there is no bump and no
-  cascade. This works for *any* sorted row, corner or not.
-* **row deleted** (`length ≤ 1`): the whole row goes, and `insert` then starts at what used to be
-  the *next* row. That is not an inverse in general. Concretely `T = [[1],[2,4]]` gives
-  `uninsert T 0 = ([[2,4]], some 1)` and `insert [[2,4]] 1 = [[1,4],[2]] ≠ T` — both sides
-  `#eval`-checked, not asserted. Note `T` here has a non-Young shape `(1,2)`, which is exactly the
-  case a genuine tableau excludes.
+So the deleting branch needs **column strictness plus the shape condition** — and `ColStrict`,
+already in `SchenstedInsertion`, is exactly that: `StrictBelow upper lower` asserts both
+`lower.length ≤ upper.length` (the Young-shape half) and `upper[j] < lower[j]` (the strictness
+half). The bumping lemma `insert_colStrict` proving `insert` preserves it is already there too.
 
-So the deleting branch needs a *shape* hypothesis (row lengths weakly decreasing), not a corner
-one, and it is left to a later brick. Stating the hypothesis I can discharge, rather than the one
-I guessed, is the point of this file.
+A first pass here stated the theorem under `2 ≤ (T.getD i []).length`, dodging the deleting branch
+and calling the shape condition a later brick. That was under-read: the corpus already carried the
+invariant. The general statement below needs no length side condition at all.
+
+For the record, the deleting branch really does fail without the hypothesis — `#eval`-checked, not
+asserted: `uninsert [[1],[2,4]] 0 = ([[2,4]], some 1)` while `insert [[2,4]] 1 = [[1,4],[2]]`. Row
+lengths there are `(1,2)`, so `StrictBelow` fails on its length half; a genuine tableau excludes it.
 
 ## Scope
 
-The non-deleting branch of the cascade. The deleting branch, word-level surjectivity, and
-`RSKBurnsideHolds` are the remainder of epic `qou-nrex`. Nothing here claims them.
+One insertion step of the cascade, undone and redone. Word-level surjectivity (iterating this the
+way brick 3 iterates brick 2) and `RSKBurnsideHolds` for general `n` are the remainder of epic
+`qou-nrex`. Nothing here claims them.
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 -/
@@ -101,35 +107,103 @@ theorem uninsert_succ_of_none (r : List ℕ) (T T' : List (List ℕ)) (i : ℕ)
     (hrec : uninsert T i = (T', none)) : (uninsert (r :: T) (i + 1)).2 = none := by
   rw [uninsert_succ, hrec]
 
-/-- **The cascade right inverse, non-deleting branch.** If the reverse cascade at row `i` leaves
-that row with at least one cell and displaces `z`, then re-inserting `z` rebuilds `T`.
+/-- The head-to-head column comparison carried by `ColStrict`, in the form the single-column
+recursion consumes. -/
+theorem strictBelow_head_of_colStrict {r : List ℕ} {T : List (List ℕ)} (h : ColStrict (r :: T)) :
+    ∀ row ∈ T.head?, StrictBelow r row := by
+  cases T with
+  | nil => intro row hrow; simp at hrow
+  | cons row1 rest =>
+      intro row hrow
+      simp only [List.head?_cons, Option.mem_def, Option.some.injEq] at hrow
+      subst hrow
+      rw [ColStrict, List.isChain_cons_cons] at h
+      exact h.1
 
-The induction is the mirror of brick 2's: above the target row each step is undone by brick 9's
-`rowInsert_rowUninsert`, and at the target row `insert_dropLast` puts the removed cell back with
-no bump — so the re-insertion never cascades past where the removal started.
+/-- **Re-inserting a deleted top cell rebuilds a single column.** `insert` only ever appends rows
+at the *bottom*, so `insert T a = [a] :: T` needs every row of `T` to be a single cell strictly
+above the next — which is what `ColStrict` gives once the top row has length one. -/
+theorem insert_eq_cons_of_colStrict : ∀ (T : List (List ℕ)), ColStrict T → NoEmptyRows T →
+    ∀ (a : ℕ), (∀ row ∈ T.head?, row.length ≤ 1 ∧ a < row.getD 0 0) →
+    insert T a = [a] :: T
+  | [], _, _, _, _ => rfl
+  | row :: rest, hc, hne, a, h => by
+      obtain ⟨hlen, hlt⟩ := h row (by simp)
+      have hrne : row ≠ [] := hne row (List.mem_cons_self ..)
+      obtain ⟨b, rfl⟩ : ∃ b, row = [b] := by
+        cases row with
+        | nil => exact absurd rfl hrne
+        | cons b t =>
+            cases t with
+            | nil => exact ⟨b, rfl⟩
+            | cons c t' => simp at hlen
+      have hab : a < b := by simpa using hlt
+      have hri : rowInsert [b] a = ([a], some b) := by rw [rowInsert_cons, if_pos hab]
+      have hstep : insert rest b = [b] :: rest := by
+        refine insert_eq_cons_of_colStrict rest (colStrict_tail hc)
+          (fun w hw => hne w (List.mem_cons_of_mem _ hw)) b ?_
+        intro row1 hrow1
+        obtain ⟨hl, hlt1⟩ := strictBelow_head_of_colStrict hc row1 hrow1
+        have hr1ne : row1 ≠ [] := hne row1 (List.mem_cons_of_mem _ (List.mem_of_mem_head? hrow1))
+        exact ⟨by simpa using hl, by simpa using hlt1 0 (List.length_pos_iff.mpr hr1ne)⟩
+      rw [insert, hri]
+      simp only
+      rw [hstep]
+
+/-- **The cascade right inverse.** If the reverse cascade at row `i` displaces `z`, re-inserting
+`z` rebuilds `T`.
+
+Together with brick 2's `uninsert_insert` this makes `insert` and `uninsert` mutually inverse on a
+column-strict tableau: brick 2 gives `uninsert ∘ insert = id`, which supports injectivity, and this
+gives `insert ∘ uninsert = id`, which is what surjectivity needs.
+
+The induction mirrors brick 2's. Above the target row each step is undone by brick 9's
+`rowInsert_rowUninsert`. At the target row there are two cases: a row that keeps a cell is rebuilt
+by `insert_dropLast` with no bump, and a row that is deleted is rebuilt by
+`insert_eq_cons_of_colStrict`, which is where column strictness is spent.
 
 The `obtain ⟨_, _, h⟩ : ∃ …, … = (…, …) := ⟨_, _, rfl⟩` idiom names the intermediate results
 *without* touching the goal; `rcases h : e with ⟨…⟩` would substitute `e` in the goal but not in
 the hypotheses, which leaves the two out of step under the nested `match`. -/
-theorem insert_uninsert : ∀ (T : List (List ℕ)) (i : ℕ), RowsSorted T →
-    2 ≤ (T.getD i []).length → ∀ (z : ℕ), (uninsert T i).2 = some z →
+theorem insert_uninsert : ∀ (T : List (List ℕ)) (i : ℕ), RowsSorted T → ColStrict T →
+    NoEmptyRows T → ∀ (z : ℕ), (uninsert T i).2 = some z →
     insert (uninsert T i).1 z = T
-  | [], i, _, hlen, z, _ => by simp at hlen
-  | r :: T, 0, hs, hlen, z, hz => by
+  | [], i, _, _, _, z, hz => by simp at hz
+  | r :: T, 0, hs, hc, hne, z, hz => by
       have hrs : r.Sorted (· ≤ ·) := hs r (List.mem_cons_self ..)
-      simp only [List.getD_cons_zero] at hlen
-      have hne : r ≠ [] := by intro h; rw [h] at hlen; simp at hlen
-      have hkeep : ¬ r.length ≤ 1 := by omega
-      rw [uninsert_zero, if_neg hkeep] at hz ⊢
-      simp only at hz ⊢
-      rw [List.getLast?_eq_getLast hne] at hz
-      have hzl : z = r.getLast hne := (Option.some.inj hz).symm
-      subst hzl
-      exact insert_dropLast hrs hne T
-  | r :: T, i + 1, hs, hlen, z, hz => by
+      have hrne : r ≠ [] := hne r (List.mem_cons_self ..)
+      have hz' : r.getLast? = some z := by rw [uninsert_zero] at hz; simpa using hz
+      rw [uninsert_zero]
+      simp only
+      by_cases hshort : r.length ≤ 1
+      · -- the row is deleted; the displaced cell comes back as a new top row
+        rw [if_pos hshort]
+        obtain ⟨a, rfl⟩ : ∃ a, r = [a] := by
+          cases r with
+          | nil => exact absurd rfl hrne
+          | cons a t =>
+              cases t with
+              | nil => exact ⟨a, rfl⟩
+              | cons b t' => simp at hshort
+        have hza : z = a := by simpa using hz'.symm
+        subst hza
+        refine insert_eq_cons_of_colStrict T (colStrict_tail hc)
+          (fun w hw => hne w (List.mem_cons_of_mem _ hw)) z ?_
+        intro row1 hrow1
+        obtain ⟨hl, hlt1⟩ := strictBelow_head_of_colStrict hc row1 hrow1
+        have hr1ne : row1 ≠ [] := hne row1 (List.mem_cons_of_mem _ (List.mem_of_mem_head? hrow1))
+        exact ⟨by simpa using hl, by simpa using hlt1 0 (List.length_pos_iff.mpr hr1ne)⟩
+      · -- the row keeps a cell; re-inserting appends it straight back
+        rw [if_neg hshort]
+        rw [List.getLast?_eq_getLast hrne] at hz'
+        have hzl : z = r.getLast hrne := (Option.some.inj hz').symm
+        subst hzl
+        exact insert_dropLast hrs hrne T
+  | r :: T, i + 1, hs, hc, hne, z, hz => by
       have hrs : r.Sorted (· ≤ ·) := hs r (List.mem_cons_self ..)
       have hTs : RowsSorted T := fun row hrow => hs row (List.mem_cons_of_mem r hrow)
-      simp only [List.getD_cons_succ] at hlen
+      have hTc : ColStrict T := colStrict_tail hc
+      have hTne : NoEmptyRows T := fun row hrow => hne row (List.mem_cons_of_mem r hrow)
       obtain ⟨T', w, hrec⟩ : ∃ T' w, uninsert T i = (T', w) := ⟨_, _, rfl⟩
       cases w with
       | none => rw [uninsert_succ_of_none r T T' i hrec] at hz; simp at hz
@@ -148,7 +222,7 @@ theorem insert_uninsert : ∀ (T : List (List ℕ)) (i : ℕ), RowsSorted T →
                 rwa [hru] at this
               have hrec' : (uninsert T i).2 = some y := by rw [hrec]
               have htail : insert T' y = T := by
-                have := insert_uninsert T i hTs hlen y hrec'
+                have := insert_uninsert T i hTs hTc hTne y hrec'
                 rwa [hrec] at this
               rw [insert, hrow]
               simp only
