@@ -53,12 +53,6 @@ class MobiusFrobeniusKernelContext (E : Type*) [NormedAddCommGroup E] where
       `tr(Δ(γ(s)) ⊗ Δ(γ(t)))` of the Frobenius pairing at deformation
       parameter `q`. -/
   K_FH : ℝ → ℝ → ℝ → ℝ
-  /-- The classical Frobenius pairing evaluated at `s, t`. -/
-  K_classical : ℝ → ℝ → ℝ
-  /-- The classical pairing is the repulsive `1/r²` potential. -/
-  K_classical_eq : ∀ s t, γ s ≠ γ t → K_classical s t = 1 / ‖γ s - γ t‖ ^ 2
-  /-- The Frobenius–Hopf kernel limits to the classical Frobenius pairing as `q → 1`. -/
-  limit_to_classical : ∀ s t, γ s ≠ γ t → Filter.Tendsto (fun q => K_FH q s t) (nhdsWithin 1 {q : ℝ | q ≠ 1}) (nhds (K_classical s t))
 
 /-- **Classical limit of the Frobenius–Hopf kernel is the repulsive
     `1/r²`** ([`lem:mobius-energy-frobenius-kernel`]) — the resolving
@@ -72,8 +66,11 @@ class MobiusFrobeniusKernelContext (E : Type*) [NormedAddCommGroup E] where
 
       `K_FH(q; s, t) ⟶ 1/‖γ(s) − γ(t)‖²`  as  `q → 1`, `q ≠ 1`.
 
-    Proved by combining the convergence to the classical Frobenius pairing
-    with its definition as the `1/r²` potential. -/
+    The proof requires the reduction of the `q`-Hodge star to the
+    classical Hodge star and of the Frobenius pairing `∫_A ∘ μ` to
+    the `SU(2)` Killing form at `q = 1`, neither of which is yet
+    formalised; the body is a `sorry` carrying the manuscript
+    citation per AGENTS.md §1. -/
 -- Ref: [manuscript] lem:mobius-energy-frobenius-kernel, quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.md
 theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]
     [ctx : MobiusFrobeniusKernelContext E] (s t : ℝ)
@@ -81,8 +78,24 @@ theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]
     Filter.Tendsto (fun q => ctx.K_FH q s t)
       (nhdsWithin 1 {q : ℝ | q ≠ 1})
       (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) := by
-  have hlim := ctx.limit_to_classical s t _hst
-  rw [← ctx.K_classical_eq s t _hst]
-  exact hlim
+  -- Ref: [manuscript] lem:mobius-energy-frobenius-kernel — reduction of the q-Hodge star to
+  -- the classical Hodge star and of ∫_A ∘ μ to the SU(2) Killing form at q = 1.
+  sorry
+
+/-- **Refutable as written** — the class never relates the fields the
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`). -/
+theorem mobius_frobenius_kernel_unconstrained_false :
+    ¬ ∀ (ctx : MobiusFrobeniusKernelContext ℝ) (s t : ℝ), ctx.γ s ≠ ctx.γ t →
+        Filter.Tendsto (fun q => ctx.K_FH q s t)
+          (nhdsWithin 1 {q : ℝ | q ≠ 1})
+          (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) := by
+  intro h
+  haveI : (nhdsWithin (1 : ℝ) {q : ℝ | q ≠ 1}).NeBot := by
+    have hset : {q : ℝ | q ≠ 1} = ({1} : Set ℝ)ᶜ := rfl
+    rw [hset]; infer_instance
+  have ht := h { γ := id, K_FH := fun _ _ _ => 0 } 0 1 (by norm_num)
+  have : (0 : ℝ) = 1 / ‖(0 : ℝ) - 1‖ ^ 2 :=
+    tendsto_nhds_unique tendsto_const_nhds ht
+  norm_num at this
 
 end QOU.BraidsKnots
