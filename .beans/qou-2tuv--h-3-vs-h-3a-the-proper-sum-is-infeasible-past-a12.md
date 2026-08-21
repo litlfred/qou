@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-21T15:54:02Z
+updated_at: 2026-08-21T16:38:44Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -684,3 +684,81 @@ it was rather than moved to the other broken option.
 - The CAL-3 correction reached one call site; `build_cal_3_q_beta_witness.py`
   and two committed witnesses still assert `calibration_id = "CAL-3"` for
   Q_beta, and `binding-canonical.witness.json` still carries the old wording.
+
+
+---
+
+# Adversarial review of my own diff: 3 findings survived, 13 refuted
+
+I ran four independent reviewers over this branch's diff with a refutation pass
+before opening the PR. 16 findings, **13 refuted, 3 confirmed** — and one of the
+three was a defect in my own fix that would have been actively misleading.
+
+## CONFIRMED 1 (worst): the QOU_H3A_MPF flag was precision theatre
+
+Reproduced myself:
+
+    QOU_H3A_MPF=1
+      mp.mp.prec       = 53      <- mpmath DEFAULT
+      mp.mp.dps        = 15
+      V_hat[1] type    = mpf
+      mantissa bits    = 52
+      exactly float64? = True    <- mpf-typed, float64-VALUED
+
+The flag built `dtype=object` arrays of mpf, paid the full 642x object-matmul
+cost, and returned values with a 52-bit mantissa that compare EQUAL to their own
+float64 round-trip. It never called `set_compute_dps()`, so mpmath sat at its
+default 53 bits throughout.
+
+That is exactly the pattern `pyhecke.atom.reject_float64_q` exists to catch —
+"an mpf whose VALUE is a float64's decimal expansion". Shipping it under a flag
+named `QOU_H3A_MPF` would have been WORSE than not having the flag: it would
+have let a reader believe the precision question was settled.
+
+Fixed — `_q_pair()` now calls `set_compute_dps()` before constructing anything:
+
+      mp.prec 236 (dps 70), mantissa 236 bits, exactly float64? False
+
+Caught by review, **not by any gate** — including the two I added in this same
+branch.
+
+## CONFIRMED 2: scan_param_fill has false negatives
+
+A verifier wrote an independent scope-aware AST reference asking the same
+question and got **91 lines / 37 files** where my regexes get **64 / 33** — 27
+lines the AST catches and the regexes miss (multi-line allocations, and other
+forms). The detector is directionally right and validated on the bug it was
+written for, but it is a regex approximation of an AST question and understates
+the surface by ~30%. Recorded on the PR, not fixed here.
+
+## CONFIRMED 3: the CAL-3 fix self-stales its own witness
+
+`computations/binding-canonical.witness.json` is tracked, unchanged by this
+branch, and still publishes "free-neutron beta-decay Q-value, CAL-3 calibration
+input" — the exact wording the source edit corrects. And because `scriptHash` is
+sha256(source)[:12], editing the docstring makes the committed witness stale
+against its own producer.
+
+**Not regenerated here, deliberately.** Regenerating moves more than the label:
+
+    q0  1.1099785827513808...  (proton-pin)  ->  1.1099785955573347...  (canonical)
+    tr_M_atom / tr_M_free move at the 8th digit; B_MeV changes
+
+That is a q0-ANCHOR FLIP, environment-driven (this container's `pyhecke_native`
+0.9.0 is pre-convention-D and fails its self-check, so every run takes the
+pure-Python path). Committing it would smuggle an anchor change into a
+labelling branch. The three audit self-outputs that the gate run touched
+(`q0-anchor-consistency`, `mpf-import-time-dps`, `q0-value-drift`) were reverted
+for the same reason — their substantive lines are that same flip, not counts
+moved by anything here.
+
+So the branch knowingly ships a source edit that stales one committed witness.
+That is the lesser of the two errors and it is stated rather than hidden;
+regeneration belongs with whoever adjudicates the anchor.
+
+## The 13 refuted
+
+Not listed individually, but they included the claim that the constants change
+moved a value (it does not — the alias is identical), and several style
+objections. Recording the count so nobody re-runs the same pass expecting a
+different yield.

@@ -179,8 +179,24 @@ _H3A_MPF = os.environ.get("QOU_H3A_MPF", "0") in ("1", "true", "yes")
 
 
 def _q_pair():
-    """(q, h) at the precision this run is configured for."""
+    """(q, h) at the precision this run is configured for.
+
+    `set_compute_dps()` FIRST, and it is not optional. Without it mpmath sits
+    at its default `mp.dps = 15` / `mp.prec = 53`, so every mpf built here —
+    and every product of them — carries exactly 53 bits. The first version of
+    this flag did that: it built `dtype=object` arrays of mpf, paid the full
+    642x object-matmul cost, and returned values with a 52-bit mantissa that
+    compared EQUAL to their own float64 round-trip. mpf-typed, float64-valued.
+
+    That is the laundering pattern `pyhecke.atom.reject_float64_q` is written to
+    catch ("an mpf whose VALUE is a float64's decimal expansion"), and shipping
+    it under a flag named QOU_H3A_MPF would have been worse than not having the
+    flag: it would have let a caller believe the precision question was
+    answered. Caught by an adversarial review of this diff, not by a gate.
+    """
     if _H3A_MPF:
+        from _precision import set_compute_dps
+        set_compute_dps()
         from q_parameter import Q_MP as _q_mp, HA_MP as _h_mp
         return _q_mp, _h_mp
     return float(Q0), float(HA_VAL)
