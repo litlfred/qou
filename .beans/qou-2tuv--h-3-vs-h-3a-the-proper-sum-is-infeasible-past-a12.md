@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-16T13:44:56Z
+updated_at: 2026-08-21T15:19:16Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -565,3 +565,59 @@ E_0 stays where the corpus puts it: the hadronic energy scale, not the binding
 scale. If anyone wants it in the binding channel, that is a claim that
 `prop:binding-scale-catalan` is wrong, and it should be argued as such rather
 than settled by a residual.
+
+
+---
+
+# Item 3: the mpf path is now REAL, and A=3 is still out of reach
+
+`QOU_H3A_MPF=1` builds the seminormal matrices at mpf end to end.
+`BlockCache(float(Q0), float(HA_VAL))` — the line `f64_into_mpmath_audit` names
+in its own prose — becomes `BlockCache(Q_MP, HA_MP)`, and the two downcasts
+INSIDE `per_generator_V_hat_3A` that would have thrown the precision away again
+(`V_hat = [0.0]*n_gens` and `tr = float(np.trace(M))`) are conditioned on the
+same flag. Verified end to end:
+
+    default        V_hat type float   [0.0077, 0.06534, -0.02411, 0.00253, 0.06979]
+    QOU_H3A_MPF=1  V_hat type mpf     V_hat[1] = 0.0653438637921291467625642516848
+
+The disk cache key gains an `_mpf` tag, because it is keyed on q to 10 dp and
+an f64 build agrees with an mpf build to far more than that — without the tag,
+flipping the flag would load the truncated .npz and report it as full
+precision, which is the exact error the flag exists to remove.
+
+**Default is unchanged and stays f64.** Turning it on moves every value this
+module produces past digit ~16 for ~20 consumers; that is a migration, not a
+flag flip.
+
+## The measurement it was supposed to unblock — still blocked
+
+    D    A=2  3A=6    0.40 s   completes
+    T    A=3  3A=9    > 600 s  DID NOT COMPLETE
+    4He  A=4  3A=12   not reached
+
+So the A-dependence is **still unmeasured**, and `jones_wenzl` as the new
+default did not change that. The cost is not the weight scheme and not the
+matrix precision — it is that the braid word carries mpf in 19 of 35 steps
+(since `efcaf79ed`), so `c*sigma + d*I` is an object-dtype array either way and
+the matmul is Python-level at O(dim^3). At 3A=9 the largest partition has
+dim=216 where 3A=6 tops out at 16.
+
+**There is no cheap fix inside the NO-FLOAT64 directive.** The 642x is
+inherent to mpf matrix products; the only way to remove it is to cast the braid
+word down at the matrix boundary, which is the forbidden direction. The
+options are therefore:
+
+  (a) accept that H_{3A} is an A<=2 tool and stop describing the nine
+      A-bounded callers as "migration candidates";
+  (b) declare a float64 tier for this specific computation, the way the
+      raw-float64 audit already honours `precision_tier='float64-integrator'`
+      — a DECLARED f64 path is the sanctioned opposite of laundering;
+  (c) replace the dense character sum with something that is not O(dim^3) in
+      mpf — a real piece of work, not a flag.
+
+(b) is the only one that makes the A-dependence measurable this week, and it is
+an owner call because it means writing "this quantity is 16-digit" in a
+framework whose directive is NO FLOAT64. The honest framing: the computation is
+ALREADY float64 in the default path and merely pretends otherwise; (b) stops
+the pretence, it does not lose precision that anyone currently has.

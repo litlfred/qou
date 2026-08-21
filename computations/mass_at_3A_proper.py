@@ -48,6 +48,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+import os
 import sys
 import math
 import json
@@ -158,10 +159,37 @@ _SEMINORMAL_CACHE: dict[tuple[int, tuple[int, ...]], tuple] = {}
 _BLOCK_CACHE: BlockCache | None = None
 
 
+#: Build the seminormal matrices at full mpf precision instead of float64.
+#:
+#: `BlockCache(float(Q0), float(HA_VAL))` is named verbatim in
+#: `f64_into_mpmath_audit`'s own prose as the shape that "seeds a cache with
+#: doubles". Every seminormal entry therefore descends from a binary64 q, and
+#: the whole H_{3A} character sum is capped at 53 bits — while the braid word
+#: it multiplies against has been mpf since `efcaf79ed`, so the products leave
+#: BLAS for dtype=object anyway. Measured: 642x slower at dim=162, carrying
+#: float64 information. Worst of both (bean qou-d8gq).
+#:
+#: OFF BY DEFAULT, and deliberately so. Turning it on changes every value this
+#: module produces beyond digit ~16 and costs the full 642x, so it is not a
+#: change to make silently on behalf of ~20 consumers. It exists so the
+#: correct-and-slow path can be MEASURED — which is what the A-dependence
+#: question needs (bean qou-2tuv) — and so the choice between it and a declared
+#: float64 tier is made on numbers rather than on principle alone.
+_H3A_MPF = os.environ.get("QOU_H3A_MPF", "0") in ("1", "true", "yes")
+
+
+def _q_pair():
+    """(q, h) at the precision this run is configured for."""
+    if _H3A_MPF:
+        from q_parameter import Q_MP as _q_mp, HA_MP as _h_mp
+        return _q_mp, _h_mp
+    return float(Q0), float(HA_VAL)
+
+
 def _ensure_block_cache() -> BlockCache:
     global _BLOCK_CACHE
     if _BLOCK_CACHE is None:
-        _BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))
+        _BLOCK_CACHE = BlockCache(*_q_pair())
     return _BLOCK_CACHE
 
 # Disk cache for seminormal matrices: standard_young_tableaux is slow
@@ -187,7 +215,13 @@ def _cached_seminormal(shape: tuple[int, ...]):
     # collided every shape at the same n into a single n{n}_q1.npz file
     # that held only the LAST-written shape's data.  Construct the
     # filename by direct string concat to avoid with_suffix.
-    stem_name = f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}"
+    # `_mpf` in the stem: the disk cache is keyed on q to 10 dp, which CANNOT
+    # distinguish an f64 build from an mpf one (they agree to far more than 10
+    # dp). Without this suffix, flipping QOU_H3A_MPF would silently load the
+    # truncated float64 .npz and report it as full precision — the exact class
+    # of error this flag exists to remove.
+    _prec_tag = "_mpf" if _H3A_MPF else ""
+    stem_name = f"n{n}_q{Q0:.10f}{_prec_tag}_shape{'-'.join(map(str, shape))}"
     npz_path = _SEMINORMAL_DISK / (stem_name + ".npz")
     json_path = _SEMINORMAL_DISK / (stem_name + ".json")
     if npz_path.exists() and json_path.exists():
@@ -530,7 +564,11 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             word_by_gen[g].append((c, d))
 
     nfac = qfac(n_strands)
-    V_hat = [0.0] * n_gens
+    # Under QOU_H3A_MPF the accumulator must NOT start as a float: `0.0 + mpf`
+    # is fine, but `float(np.trace(M))` two lines down would still truncate the
+    # mpf trace, so building the matrices at mpf would buy nothing. Both are
+    # conditioned on the flag; the f64 path is byte-identical to before.
+    V_hat = [(mpf(0) if _H3A_MPF else 0.0)] * n_gens
 
     # Weight table — normalized to Σ = 1 for the Markov identity
     # tr_M(𝟏) = 1; alternate schemes available for audit.
@@ -573,9 +611,11 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             for (c, d) in w_i_steps:
                 M = M @ (c * sigmas[i] + d * I_lam)
             if is_sparse:
-                tr = float(M.diagonal().sum())
+                _t = M.diagonal().sum()
+                tr = _t if _H3A_MPF else float(_t)
             else:
-                tr = float(np.trace(M))
+                _t = np.trace(M)
+                tr = _t if _H3A_MPF else float(_t)
             V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
