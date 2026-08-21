@@ -610,3 +610,84 @@ Remaining library: `QouInfraDischargesGoncharovZeta5`, `VacuumEpsilon` (blocked
 on its 2026-08-08 docstring finding), `HyperbolicVolumeIndependence`,
 `BraidGroupNStrand` (class is `MarkovTraceN`, wants field-by-field splitting).
 Plus the six co-located stubs this bean's inventory omits.
+
+## Progress 2026-08-21 — `QouInfraDischargesGoncharovZeta5`
+
+Branch `claude/ffwk-goncharov-zeta5-2026-08-21`. Seventh of the ten.
+
+**The docstring recorded nothing.** Its "Content statement (from manuscript)"
+was the conjecture's **own title, repeated** — so unlike the earlier carriers
+there was no docstring claim to check against the block, and the block was the
+only source. Worth noting as a distinct sub-shape of this bean's defect: a
+placeholder field *plus* a placeholder content note.
+
+**The block supplied its own reduced target, which is encodable as written.**
+The full statement quantifies over motivic cohomology (`K₅^ind(F) ⊗ ℚ ≅
+𝔅₃(F) ⊗ ℚ`, the weight-3 Bloch group, the 22-term relation, the regulator into
+`𝒫₃/𝒫₂`) — none of which exists here, and neither do polylogarithms. But the
+block says:
+
+> The reduced target for QOU is to prove that `{Li₃(ζ₅ᵏ) : k = 1,2,3,4}` modulo
+> the multiplication-formula identity **span exactly this rank-2 image**.
+
+That is linear algebra over `ℚ` about four named elements. So the class asserts
+`finrank ℚ (span ℚ (range li3)) = 2`, with the ambient space and the four values
+as caller data.
+
+**Three things deliberately left out**, each for a different reason:
+
+- *the two routes* — Jones-coincident pairs and the direct `G₂₂(ζ₅)`
+  construction are **strategies**; the block itself says "if either route
+  succeeds". Encoding one would assert a proof method as part of the claim.
+- *"the only further relation being the 22-term one"* — constrains **which**
+  relations, not how many. The count is already forced and is derived below;
+  naming them needs `G₂₂`, hence polylogarithm identities the library lacks.
+- *Borel's theorem* — the rank `2` is the content of the conjecture at this
+  level, not a cited input.
+
+**Derived, not assumed:** `relations_finrank_eq_two` gets the
+multiplication-formula relation count from rank-nullity on
+`Fintype.linearCombination` — four generators spanning rank 2 leave a rank-2
+relation space. That is what makes a single numeric field say something
+structural.
+
+**Anti-vacuity:** `not_of_trivial` refutes the class at the all-zero family
+(span `⊥`, rank `0 ≠ 2`). Non-emptiness not shown — it needs an actual rank-2
+family, which is the conjecture.
+
+### A gate regression, adjudicated rather than hidden
+
+`check-base-ring` goes **PASS → WARN (9)** on this file. Every hit is `ℚ`.
+Verified against a stashed tree that this is my change, not pre-existing.
+
+**Not fixed, deliberately.** `ℚ` is load-bearing: the target is `dim_ℚ` of a
+`ℚ`-span matching Borel's `dim_ℚ K₅^ind(ℚ(ζ₅)) ⊗ ℚ = 2`. Over an arbitrary
+field the four values need not span rank 2 at all, so generalising the base ring
+would be a **different and unsupported claim** — the opposite error from the one
+this bean fixes. The checker is advisory by its own header ("It is advisory:
+`warn`, not [fail]"), and adding the acknowledgement to the block did **not**
+clear it: unlike `check-wall-side`, this checker counts hits regardless of any
+`.md`/`.ts` note. Recorded here and adjudicated in the block's `authorNotes`.
+
+That block's own 2026-08-08 note predicted this outcome — *"The real defect is
+the placeholder … fix that and the correct ring follows from it."* It did, and
+the ring is `ℚ`, not the `ℝ` the placeholder used. The new note records that the
+prediction was right.
+
+**Also:** the module was an **orphan** — imported by neither `QOU.lean` nor
+`QOU/AppendixSurreals.lean`. Pre-existing, so the diff-scoped orphan gate never
+saw it. Registered in the appendix umbrella.
+
+Detector count **10 → 9**.
+
+### Running total
+
+Seven of ten library carriers done; count 16 → 9. Seven carriers, seven
+encodings — tolerance parameter, exact equality, structural bridge between
+typeclass structures, asymmetric one-half-only, extensional-over-a-framing, and
+now a rank statement extracted from a block's own reduced target.
+
+Remaining library: `VacuumEpsilon` (blocked on its 2026-08-08 docstring
+finding), `HyperbolicVolumeIndependence`, `BraidGroupNStrand` (class is
+`MarkovTraceN`, wants field-by-field splitting). Plus the six co-located stubs
+this bean's inventory omits.
