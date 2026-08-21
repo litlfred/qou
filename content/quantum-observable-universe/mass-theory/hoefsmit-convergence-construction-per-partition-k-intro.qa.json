@@ -1657,6 +1657,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "81feb5daba04",
+          "ts": "91098eac6c4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:51.449Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1676,6 +1691,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "81feb5daba04",
+          "ts": "91098eac6c4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:51.500Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Both sentences read aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1698,5 +1728,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:21:51.408Z"
+  "updated_at": "2026-08-21T16:21:51.500Z"
 }
