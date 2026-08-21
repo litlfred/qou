@@ -1229,6 +1229,22 @@
         "severity": "major",
         "evidence": "One instance: the periodicity paragraph opened by narrating the act of stating rather than stating — 'It is worth stating why the hypothesis is periodicity rather than ...'.",
         "notes": "FIXED (no meaning change): 'It is worth stating why the hypothesis is periodicity rather than the more obvious fixed-point condition C(alpha) = alpha: that condition ...' -> 'The hypothesis is periodicity rather than the more obvious fixed-point condition C(alpha) = alpha because that condition ...'."
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:52:06.499Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Superseding the earlier agent:r01 fail on this block: the narrating opener was rewritten in this batch, so the periodicity paragraph now states the reason directly.",
+        "notes": "FIXED: 'It is worth stating why the hypothesis is periodicity rather than ... : that condition ...' -> 'The hypothesis is periodicity rather than ... because that condition ...'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1453,5 +1469,5 @@
     "md": "c39ad0ea617e",
     "ts": "9fad36258762"
   },
-  "updated_at": "2026-08-19T21:45:58.613Z"
+  "updated_at": "2026-08-19T21:52:06.499Z"
 }

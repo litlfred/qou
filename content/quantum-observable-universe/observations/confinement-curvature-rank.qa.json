@@ -1247,6 +1247,21 @@
         "reviewed_at": "2026-08-15T11:27:10.954Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "closer 'necessary confinement residues, not free parameters' is the substantive no-free-parameter claim central to the block's point, not manufactured emphasis"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.381Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "One denial, and it is the three-calibration-discipline claim: 'Both are necessary confinement residues, not free parameters'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1281,6 +1296,21 @@
         "reviewed_at": "2026-08-15T11:27:10.516Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "No setup-then-reframe construction; claims stated directly"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.441Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Dictionary entries under bold headings; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1315,6 +1345,21 @@
         "reviewed_at": "2026-08-15T11:27:10.568Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "No load-bearing spaced em-dashes; any dashes are ranges/parentheticals"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.511Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Zero em-dashes in 426 words."
       }
     ],
     "trap-triples": [
@@ -1349,6 +1394,21 @@
         "reviewed_at": "2026-08-15T11:27:10.623Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "No reflex three-item lists; enumerations track real content"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.590Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No reflex triples; the enumerations are the filtration strata."
       }
     ],
     "trap-closing-aphorism": [
@@ -1383,6 +1443,21 @@
         "reviewed_at": "2026-08-15T11:27:10.996Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "final sentence is a technical parameter-count claim about two named residues, not a quotable closer"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.689Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Ends on the anti-fit statement about the two residues, which is a claim rather than a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1417,6 +1492,21 @@
         "reviewed_at": "2026-08-15T11:27:10.668Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "No narration of own emphasis; headers label content, standard math style"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.745Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'Translating this algebraic statement into QCD vocabulary yields the following dictionary' announces structure, standard for a dictionary remark."
       }
     ],
     "trap-thesis-restatement": [
@@ -1451,6 +1541,21 @@
         "reviewed_at": "2026-08-15T11:27:10.739Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "No block-final restatement of what the text already established"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.811Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'Confinement is structurally built into the spectral-sequence collapse' opens the Predictive-consequence section and is followed by new material."
       }
     ],
     "trap-performed-warmth": [
@@ -1485,6 +1590,21 @@
         "reviewed_at": "2026-08-15T11:27:10.794Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "No personal register; institutional prose throughout"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.861Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1519,6 +1639,22 @@
         "reviewed_at": "2026-08-15T11:27:10.846Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "No unqualified maximum-strength claims"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:46.966Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'Every prediction ... is gauge-invariant' is a universal, but the mechanism is stated (projection through Z(A)).",
+        "notes": "Rigor flags reported separately: (i) 'The Hecke relation T^2 = (q - q^{-1}) T + 1' uses T, which AGENTS.md 7a forbids (generator is sigma_i); (ii) chirality is placed at k = 3 in the table and in the Q_beta discussion, but the stated example lambda = (2,1) has depth 2, so k = depth - 1 = 1 by the block's own rule. Verified correct: Vol(B_3) = 8G = 7.327724753 (Catalan G = 0.915965594) matches the Borromean complement, and dim su(3) = 8."
       }
     ],
     "trap-nonspeakable": [
@@ -1553,6 +1689,21 @@
         "reviewed_at": "2026-08-15T11:27:10.900Z",
         "reviewed_sha": "04d20c218f60cda2e71c464724d579497de85ca2",
         "evidence": "Prose parses aloud; technical terms but no stalling noun chains"
+      },
+      {
+        "field_hash": {
+          "md": "96e0281231a7",
+          "ts": "ee95e5fe91e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.032Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Dictionary entries are short and read aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1575,5 +1726,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:48:47.032Z"
 }
