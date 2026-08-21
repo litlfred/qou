@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:53:13Z
-updated_at: 2026-08-21T22:54:05Z
+updated_at: 2026-08-21T22:55:49Z
 ---
 
 `bun run scripts/run-validate.ts content/quantum-observable-universe` exits
@@ -91,3 +91,25 @@ says *"Lean status (2026-08-12): the co-located `.lean` file … has been
 deleted"*, describing an **earlier** round. The file `73a21ac34a` deleted today
 is a different one, and the note reads as if today's deletion were already
 accounted for. Worth a line when this is next touched.
+
+
+## The label test was run, and it agrees
+
+The decisive test from `qou-2u26` — *does any Lean declaration carry the
+block's own `\label`?* — is the one that repaired `thm:su2-emergence`,
+`def:mass-identity`, `def:ns-regular-qou` and `prop:descent-eigenspaces`, each
+time by finding the right declaration hiding under a wrong name. Run here:
+
+```
+grep -rln 'def:qou-motivic-galois-instance' --include=*.lean content/
+→ (no matches)
+```
+
+**No `.lean` anywhere under `content/` carries this block's label** — not the
+library tree, not any chapter directory. So the one route that has produced a
+cheap repoint four times produces nothing here, which is the expected answer if
+the declaration genuinely does not exist rather than merely being misnamed.
+
+That closes the three cheap dispositions: no resolvable ref target (the named
+decl was deleted), no label-carrying decl to repoint to, and no relief from
+dropping the field. Writing the instance is what is left.
