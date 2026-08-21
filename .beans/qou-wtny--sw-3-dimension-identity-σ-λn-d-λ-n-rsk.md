@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:30:46Z
-updated_at: 2026-08-21T16:59:22Z
+updated_at: 2026-08-21T19:58:02Z
 parent: qou-59vq
 blocked_by:
     - qou-rsbf
@@ -45,3 +45,25 @@ Do not start this cold. Corpus-grepped, the identity has three live attacks:
 So SW-3 stays open but is **not unowned**. Anyone picking it up should either
 help land route 2's last brick, or take route 3's `hup` as a deliberate second
 independent confirmation (permitted — open-outcome research) and say so.
+
+
+## 2026-08-21 (PR #5403) — diagonal of DU-UD=I landed; RSK confirmed absent
+
+Route 3 (RSK-free). Landed sorry-free, axiom-clean, general mu:
+QOU/Mathlib/YoungDiagramAddable.lean, card_addableCells_eq_card_cornerCells_succ
+(#addable = #removable + 1) + IsAddableCell/addCell + the row-shift.
+
+Two recon results, both now recorded in BurnsideViaBranching.lean's header:
+
+1. **Mathlib v4.24.0 has no RSK** — confirmed by enumerating the PINNED olean
+   tree (only YoungDiagram + SemistandardTableau under Combinatorics/Young).
+   Method note: do not use leansearch/loogle for this — often proxy-blocked, and
+   they index a CURRENT Mathlib, so their negative is not evidence about the
+   pinned version.
+2. **hdown is already proved** at general n by
+   QOU.Mathlib.numStandardYoungTableaux_branching. BurnsideViaBranching's header
+   listed hdown and hup as both-open; that was stale and is now corrected. hup is
+   the single remaining mathematical obligation.
+
+Remaining gap tracked as **qou-w0zn**: the off-diagonal of DU-UD=I, the
+assembling induction, and hdown's Finset-instantiation.
