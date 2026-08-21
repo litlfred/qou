@@ -2108,6 +2108,359 @@
    "median_rel_move": 0.0,
    "n_fields": 14,
    "err": ""
+  },
+  "probe_9b_laurent_degree_10a5": {
+   "rc": -9,
+   "sec": 90.0,
+   "witnesses": [
+    "probe-9b-laurent-degree-10a5.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 234,
+   "err": "TIMEOUT >90s"
+  },
+  "probe_9b_manybody_expansion": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "probe-9b-manybody-expansion.witness.json"
+   ],
+   "max_rel_move": 0.999999999991307,
+   "median_rel_move": 0.06149779406976029,
+   "n_fields": 183,
+   "err": "\u26a0 raw-float64: probe-9b-manybody-expansion.witness.json: 88 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].co"
+  },
+  "probe_9b_perlambda_brane_tower": {
+   "rc": 0,
+   "sec": 19.7,
+   "witnesses": [
+    "probe-9b-perlambda-brane-tower.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 209,
+   "err": "\u26a0 environment: probe-9b-perlambda-brane-tower.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simpl"
+  },
+  "probe_k_ud_bring_color_tube_empirical_baseline": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "probe-k-ud-bring-color-tube-empirical-baseline.witness.json"
+   ],
+   "max_rel_move": 1.2960999230694606e-07,
+   "median_rel_move": 1.5373898981409142e-08,
+   "n_fields": 40,
+   "err": "\u26a0 raw-float64: probe-k-ud-bring-color-tube-empirical-baseline.witness.json: 9 raw float64 field(s) would enter the witness \u2014 .data.scan_results[0].pdg_residual_pct, .data.scan_results[1].pdg_residual_"
+  },
+  "probe_k_ud_fractional_and_alt_ansatz": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "probe-k-ud-fractional-and-alt-ansatz.witness.json"
+   ],
+   "max_rel_move": 7.760110960079513e-07,
+   "median_rel_move": 0.0,
+   "n_fields": 26,
+   "err": "\u26a0 raw-float64: probe-k-ud-fractional-and-alt-ansatz.witness.json: 14 raw float64 field(s) would enter the witness \u2014 .data.scan_results[0].best_k_ud, .data.scan_results[0].pdg_residual_pct, .data.scan_"
+  },
+  "probe_markov_trace_factorization": {
+   "rc": 0,
+   "sec": 1.7,
+   "witnesses": [
+    "probe-markov-trace-factorization.witness.json"
+   ],
+   "max_rel_move": 1.0490331482371544e-07,
+   "median_rel_move": 0.0,
+   "n_fields": 16,
+   "err": "\u26a0 raw-float64: probe-markov-trace-factorization.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[3].tolerance, .assertions[4].tolerance, .assertions[5].tolerance. Carry mpmat"
+  },
+  "probe_markov_trace_ratio_exact": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "probe-markov-trace-ratio-exact.witness.json"
+   ],
+   "max_rel_move": 3.849117221293887e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 50,
+   "err": "\u26a0 environment: probe-markov-trace-ratio-exact.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15; scipy 1.18.0 -> 1."
+  },
+  "probe_topological_mass_formula": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "probe-topological-mass-formula-algebraic.witness.json",
+    "probe-topological-mass-formula.witness.json"
+   ],
+   "max_rel_move": 2.0980664068318756e-07,
+   "median_rel_move": 1.0490330382437667e-07,
+   "n_fields": 27,
+   "err": "\u26a0 raw-float64: probe-topological-mass-formula-algebraic.witness.json: 1 raw float64 field(s) would enter the witness \u2014 .assertions[1].tolerance. Carry mpmath.mpf from the source and serialize with _pr"
+  },
+  "proton_mu_mass_ratio_substrate_identity": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "proton-mu-mass-ratio-substrate-identity.witness.json"
+   ],
+   "max_rel_move": 4.545333392577218e-06,
+   "median_rel_move": 4.3864707032893e-09,
+   "n_fields": 24,
+   "err": "\u26a0 raw-float64: proton-mu-mass-ratio-substrate-identity.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance. Carry "
+  },
+  "proton_residual_rootcause": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "proton-residual-rootcause.witness.json"
+   ],
+   "max_rel_move": 2.9279170572536692,
+   "median_rel_move": 1.3630997232261689e-06,
+   "n_fields": 70,
+   "err": "\u26a0 environment: proton-residual-rootcause.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply mis"
+  },
+  "q1_mass_gap_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "q1-mass-gap-probe.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 182,
+   "err": ""
+  },
+  "q_beta_form_a_n1_extension": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "q-beta-form-a-n1-extension.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 27,
+   "err": "\u26a0 raw-float64: q-beta-form-a-n1-extension.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .assertions[1].computed, .assertions[1].expected, .assertions[1].tolerance, .data.E0_full_vs_c"
+  },
+  "q_beta_substrate_prediction": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "q-beta-substrate-prediction.witness.json"
+   ],
+   "max_rel_move": 1.7888912465124985e-05,
+   "median_rel_move": 1.153711783645715e-08,
+   "n_fields": 13,
+   "err": ""
+  },
+  "q_block_rmatrix_spectrum": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "q-block-rmatrix-spectrum.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 181,
+   "err": "\u26a0 raw-float64: q-block-rmatrix-spectrum.witness.json: 197 raw float64 field(s) would enter the witness \u2014 .parameters.q0, .data.per_block[0].eigenvalues[0][0], .data.per_block[0].eigenvalues[0][1], .da"
+  },
+  "q_pochhammer_seed": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "q-pochhammer-seed.witness.json"
+   ],
+   "max_rel_move": 0.6820428926406504,
+   "median_rel_move": 0.0,
+   "n_fields": 320,
+   "err": "\u26a0 raw-float64: q-pochhammer-seed.witness.json: 276 raw float64 field(s) would enter the witness \u2014 .parameters.q0, .data.pl_discriminant_roots[0].z_c_real, .data.pl_discriminant_roots[0].z_c_imag, .dat"
+  },
+  "q_weighted_block_swap": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "q-weighted-block-swap.witness.json"
+   ],
+   "max_rel_move": 1.1423404828226725e-07,
+   "median_rel_move": 1.153711783645715e-08,
+   "n_fields": 18,
+   "err": "\u26a0 environment: q-weighted-block-swap.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing"
+  },
+  "qbeta_c3_three_rung_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "qbeta-c3-three-rung-probe.witness.json"
+   ],
+   "max_rel_move": 0.0023274715649404527,
+   "median_rel_move": 3.151039510320883e-07,
+   "n_fields": 37,
+   "err": "\u26a0 raw-float64: qbeta-c3-three-rung-probe.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .data.q9_baseline_err_ppm, .data.residual_delta_needed, .data.per_candidate_results.q9_baseline"
+  },
+  "qbeta_c3_v9_style_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "qbeta-c3-v9-style-probe.witness.json"
+   ],
+   "max_rel_move": 1.269705852122777e-05,
+   "median_rel_move": 8.367074311230853e-09,
+   "n_fields": 31,
+   "err": "\u26a0 raw-float64: qbeta-c3-v9-style-probe.witness.json: 13 raw float64 field(s) would enter the witness \u2014 .data.per_candidate_results.Q1.  -2 \u00d7 (1 + \u210f_q \u00d7 q / 5).err_ppm, .data.per_candidate_results.Q2. "
+  },
+  "qbeta_multi_block_eigenphase_full_eps_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "qbeta-multi-block-eigenphase-full-eps-probe.witness.json"
+   ],
+   "max_rel_move": 4058.0524440733307,
+   "median_rel_move": 2.777181994929661e-07,
+   "n_fields": 51,
+   "err": "\u26a0 raw-float64: qbeta-multi-block-eigenphase-full-eps-probe.witness.json: 7 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .d"
+  },
+  "qbeta_multi_block_eigenphase_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "qbeta-multi-block-eigenphase-probe.witness.json"
+   ],
+   "max_rel_move": 4058.051880294203,
+   "median_rel_move": 1.3502963794581733e-09,
+   "n_fields": 24,
+   "err": "\u26a0 raw-float64: qbeta-multi-block-eigenphase-probe.witness.json: 4 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .data.resid"
+  },
+  "r5_full_canonical_knot_solver": {
+   "rc": 0,
+   "sec": 7.4,
+   "witnesses": [
+    "r5-full-canonical-knot-solver.witness.json"
+   ],
+   "max_rel_move": 4.943509648720791,
+   "median_rel_move": 1.2002604558873006e-07,
+   "n_fields": 1144,
+   "err": "\u26a0 environment: r5-full-canonical-knot-solver.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15; scipy 1.18.0 -> 1.1"
+  },
+  "reeb_flow_garside_closed_form_verification": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "reeb-flow-garside-closed-form-verification.witness.json"
+   ],
+   "max_rel_move": 1.153711793873993e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 81,
+   "err": "\u26a0 raw-float64: reeb-flow-garside-closed-form-verification.witness.json: 39 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .a"
+  },
+  "rt_c23_singlet_sign_core": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "rt-c23-singlet-sign-core.witness.json"
+   ],
+   "max_rel_move": 9.943542053007378e-08,
+   "median_rel_move": 1.153711783645715e-08,
+   "n_fields": 6,
+   "err": ""
+  },
+  "rt_habiro_borromean_cross_validation": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "rt-habiro-borromean-cross-validation.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 47,
+   "err": "\u26a0 raw-float64: rt-habiro-borromean-cross-validation.witness.json: 38 raw float64 field(s) would enter the witness \u2014 .tr_M_at_q0_real.q, .tr_M_at_q0_real.tr_M, .tr_M_at_root_of_unity[0].q_real, .tr_M_a"
+  },
+  "rt_identity_chain_consolidation": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "rt-identity-chain-consolidation.witness.json"
+   ],
+   "max_rel_move": 1.0046541942045384,
+   "median_rel_move": 0.0,
+   "n_fields": 13,
+   "err": ""
+  },
+  "rt_route_cross_particle_ratio_quantum_dim": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "rt-route-cross-particle-ratio-quantum-dim.witness.json"
+   ],
+   "max_rel_move": 3.299819021135053e-06,
+   "median_rel_move": 1.7929764999798224e-08,
+   "n_fields": 548,
+   "err": "\u26a0 raw-float64: rt-route-cross-particle-ratio-quantum-dim.witness.json: 497 raw float64 field(s) would enter the witness \u2014 .parameters.experimental_ratios.W_over_Z, .parameters.experimental_ratios.Z_ov"
+  },
+  "rt_w_sqrt2_jet_order_validation": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "rt-w-sqrt2-jet-order-validation.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 72,
+   "err": "\u26a0 environment: rt-w-sqrt2-jet-order-validation.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simp"
+  },
+  "sigma_f_electron_shell_chain": {
+   "rc": 0,
+   "sec": 29.1,
+   "witnesses": [
+    "sigma-f-electron-shell-chain.witness.json"
+   ],
+   "max_rel_move": 1.6853516882790743e-06,
+   "median_rel_move": 9.182768489933081e-07,
+   "n_fields": 18481,
+   "err": ""
+  },
+  "sigma_shell_from_beta_chain": {
+   "rc": 0,
+   "sec": 58.2,
+   "witnesses": [
+    "sigma-shell-from-beta-chain.witness.json"
+   ],
+   "max_rel_move": 6.685661572239888,
+   "median_rel_move": 0.0,
+   "n_fields": 33,
+   "err": "  from codata_constants import M_N_MEV  # noqa: E402"
+  },
+  "six_fifths_categorical_proof_attempt": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "six-fifths-categorical-proof-attempt.witness.json"
+   ],
+   "max_rel_move": 1.109725372697195e-07,
+   "median_rel_move": 0.0,
+   "n_fields": 71,
+   "err": "\u26a0 raw-float64: six-fifths-categorical-proof-attempt.witness.json: 60 raw float64 field(s) would enter the witness \u2014 .parameters.target_171_over_143, .parameters.hypothesis_6_over_5, .all_candidates[0]"
+  },
+  "skein_proton_canonical": {
+   "rc": 0,
+   "sec": 1.2,
+   "witnesses": [
+    "skein-proton-canonical.witness.json"
+   ],
+   "max_rel_move": 1355227460944935.8,
+   "median_rel_move": 2.064893982759392e-07,
+   "n_fields": 37,
+   "err": "\u26a0 raw-float64: skein-proton-canonical.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].computed"
+  },
+  "spectral_selector_validate": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "spectral-selector-validate.witness.json"
+   ],
+   "max_rel_move": 0.06078352180936995,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": "\u26a0 raw-float64: spectral-selector-validate.witness.json: 26 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.q0, .d"
   }
  }
 }

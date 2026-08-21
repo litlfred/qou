@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T01:58:11.801284+00:00",
-  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-21T15:00:40.413449+00:00",
+  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
   "assertions": [
     {
       "name": "pipeline_tau_is_jones_tl_decomposition",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 20,
+  "durationMs": 16,
   "computation": "probe-9b-perlambda-brane-tower",
   "scriptFile": "probe_9b_perlambda_brane_tower.py",
-  "scriptHash": "a9914c5b1270",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "fdff391037a7",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -94,9 +94,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "PROBE 4 (bean v292): per-λ collapse-last rerun of the single-pipeline Borromean brane tower. Structural: the pipeline τ is EXACTLY the SU(2)/TL (Jones) Markov decomposition y₃ᴶ=[4]/[2]³, y₂₁ᴶ=1/[2]², y_{1³}ᴶ=0 with χ^{(2,1)}=2−3h⁴−h⁶; the corpus Wenzl z-trace differs by 1.96e-4 (convention gap, recorded). RAW per-block tower (arguments χ_λχ_μ) DIVERGES — χ^{(2,1)}² ≈ 3.98 > q₀ exceeds the proved Li₂^q radius |z| < q. NORMALIZED collapse-last towers (W_λ = y_λd_λ, r_λ = χ^λ/d_λ; Jones, Wenzl, and ambient-H_6 per-ν via exact LR/MN branching) all converge ∀Z and reproduce the scalar tower to ≤ ~1e-4 — the Jensen gap of g over the block spread is negligible, so carrying (y_λ, χ^λ) through g per block does NOT close the ¹⁶O 2.3× normalization (scope-(a): this un-collapsed weighting alone, as-is). Shape and ∀Z convergence preserved. No new constants (Δ_λ gate respected).",
   "auditOnly": "docs/audits/2026-07-02-9b-probes-alphak-perlambda-tower.md",
@@ -442,6 +441,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
