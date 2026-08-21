@@ -5055,68 +5055,112 @@ contexts carry. Those two `descWord_cons` peelings and
 **No bound relating `j₁+3` to `i` is needed.** The obvious hypothesis
 `j₁+3 ≤ i` is *not* required and is not taken: if it fails, `descWord i (j₁+3)`
 is empty and the middle step is vacuous, which is exactly the degenerate
-short-block case. Stating it would have narrowed the lemma for nothing. -/
+short-block case. Stating it would have narrowed the lemma for nothing.
 
-/-- **The block, at general depth.** One pass of the `a ≤ b` regime's
-far-commutation block: the two levels below the cap, then every level above it
-at once.
+**Two corrections to the first version of this section, both about scope.**
 
-The left context `A` is arbitrary — the block never has to know what the prefix
-left to its left — and the parked-term hypothesis is `blockTransportRight`'s. -/
+*The diagonal was excluded.* `blockPass` originally carried
+`hj₂ : j₂ ≤ j₁ − 1`, and `b = a` means `j₂ = j₁`, so it could not be
+instantiated there at all — yet `a ≤ b` includes the diagonal, and the diagonal
+block is real (`a − 1` levels rather than `a`, starting one level higher). The
+first level is simply absent there, so the fix is to name the rest:
+`blockPassFromTwo` asks only `j₂ ≤ j₁` and covers the diagonal, with
+`blockPass` = one leading transport + it.
+
+*The trailing word was hardcoded.* Both versions ended `… ++ [σ_i]`. That is
+right for the top-level block, but the *same* block shape occurs inside the
+prefix as `small(a)`, where what sits to the right is `descWord j₁ j₂` instead.
+Measured over 131 levels, top-level and `small(a)` obey one blueprint,
+
+    W = descWord (min(h−2, j₁+1)) j_eff        B = descWord (h−1) (j₁+1) ++ T
+
+differing only in `j_eff` and the tail `T`. Making `T` a parameter is what lets
+one lemma serve both — and `small(a)` is where the prefix's own
+`block · two steps · block` self-similarity stops being an observation and
+becomes literal reuse. -/
+
+/-- **The block from its second level on.** The two levels below the cap are
+`h = j₁+1` and `h = j₁+2`; this covers the second and everything above it, which
+is all of the block when the first level is absent.
+
+It asks only `j₂ ≤ j₁`, **not** `j₂ < j₁`, and that is the point: at `b = a` the
+two coincide, so a lemma demanding the strict inequality cannot be instantiated
+on the diagonal at all. The trailing word `T` is a parameter for the same
+reason — see §4aj. -/
+theorem blockPassFromTwo {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ j₁ jp jpp jppp : Fin n}
+    (hjp : j₁.val + 1 = jp.val) (hjpp : jp.val + 1 = jpp.val)
+    (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ A ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          ((⟨jpp⟩ : HeckeGen n) :: (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))), c)
+          :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
+  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
+    descWord_cons hjp hj₂
+  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
+    rw [descWord_cons hjpp (le_refl _), descWord_self]
+  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
+    (descWord j₁ j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
+    ([(⟨jp⟩ : HeckeGen n)] ++ T)
+    (fun y hy => by have := descWord_index_le hy; omega)
+    (fun u v _ _ r hr => by
+      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+        (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))))
+      simpa only [List.append_assoc] using this)
+  have s3 := blockTransportRight hn hp c hc L₁ L₂ A hpark
+    (descWord jp j₂) (descWord i jppp) (descWord jpp jp ++ T)
+    (fun x hx y hy => by
+      have hx' := descWord_index_ge hx
+      have hy' := descWord_index_le hy
+      omega)
+  rw [hd2, hd3] at s3 ⊢
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s2 s3 ⊢
+  exact MultiStepReduction.trans s2 s3
+
+/-- **The block, at general depth, off the diagonal.** One pass of the `a ≤ b`
+regime's far-commutation block when `j₂ < j₁`: the first level below the cap,
+then `blockPassFromTwo` for the rest.
+
+The left context `A` and the trailing word `T` are both arbitrary — the block
+never has to know what the prefix left on either side of it. -/
 theorem blockPass {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
     {i j₂ jm j₁ jp jpp jppp : Fin n}
     (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
     (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
     (hj₂ : j₂.val ≤ jm.val)
     (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
-    (A : Monomial (HeckeGen n))
+    (A T : Monomial (HeckeGen n))
     (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ A ++ z) :
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (AlgElement.ofTerms (L₁ ++
         (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
-          ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))), c) :: L₂))
+          ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))), c) :: L₂))
       (AlgElement.ofTerms (L₁ ++
-        (A ++ (descWord jp j₂ ++ (descWord i jppp ++
-          (descWord jpp jp ++ [(⟨i⟩ : HeckeGen n)]))), c) :: L₂)) := by
-  -- the two descWord peelings the chaining rests on
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
   have hd1 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
     descWord_cons hjm hj₂
-  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
-    descWord_cons hjp (by omega)
-  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
-    rw [descWord_cons hjpp (le_refl _), descWord_self]
-  -- step 1: σ_jp across descWord jm j₂
   have s1 := farComm_transport_right_sources hn hp jp c hc L₁ L₂
     (descWord jm j₂)
-    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩]))
-    [(⟨i⟩ : HeckeGen n)]
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩])) T
     (fun y hy => by have := descWord_index_le hy; omega)
     (fun u v _ _ r hr => by
       have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
-        (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ [(⟨i⟩ : HeckeGen n)])))))
+        (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ T)))))
       simpa only [List.append_assoc] using this)
-  -- step 2: σ_jpp across descWord j₁ j₂
-  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
-    (descWord j₁ j₂)
-    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
-    [(⟨jp⟩ : HeckeGen n), ⟨i⟩]
-    (fun y hy => by have := descWord_index_le hy; omega)
-    (fun u v _ _ r hr => by
-      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
-        (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ [(⟨jp⟩ : HeckeGen n), ⟨i⟩])))))
-      simpa only [List.append_assoc] using this)
-  -- step 3: the capped block, all at once
-  have s3 := blockTransportRight hn hp c hc L₁ L₂ A hpark
-    (descWord jp j₂) (descWord i jppp) (descWord jpp jp ++ [(⟨i⟩ : HeckeGen n)])
-    (fun x hx y hy => by
-      have hx' := descWord_index_ge hx
-      have hy' := descWord_index_le hy
-      omega)
-  rw [hd1] at s2
-  rw [hd2, hd1, hd3] at s3 ⊢
-  simp only [List.append_assoc, List.cons_append,
-    List.nil_append] at s1 s2 s3 ⊢
-  exact MultiStepReduction.trans (MultiStepReduction.trans s1 s2) s3
+  have hj₂' : j₂.val ≤ j₁.val := by omega
+  have s23 := blockPassFromTwo (i := i) (j₂ := j₂) (j₁ := j₁) (jp := jp)
+    (jpp := jpp) (jppp := jppp) hn hp hjp hjpp hjppp hj₂' c hc L₁ L₂ A T hpark
+  rw [hd1] at s23
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s23 ⊢
+  exact MultiStepReduction.trans s1 s23
 
 /-- **The descending run begins with its top index**, whenever it is non-empty.
 Splits on `j = i` (`descWord_self`) and `j < i` (`descWord_cons` at `i − 1`). -/
