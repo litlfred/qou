@@ -167,6 +167,7 @@ import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.MortonFranksWilliams
+import QOU.Knot.HomflySkeinReference
 import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
