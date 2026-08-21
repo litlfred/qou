@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:03:21Z
-updated_at: 2026-08-21T22:42:25Z
+updated_at: 2026-08-21T22:49:51Z
 ---
 
 ## What was measured
@@ -142,3 +142,59 @@ PR #5423 ("CODATA drain (7ot6-a): route the constants modules at the registry,
 not literals") is live on the same input. Any regeneration of these six should
 land after, or coordinate with, that work -- otherwise they get regenerated
 twice.
+
+
+---
+
+## Cross-check against PR #5430 (independent, same values, different route)
+
+#5430 ("A `comparison` q0 anchor -- and the three different values all called
+'the muon q_0'") reached the same two numbers from the pin-vocabulary side.
+Its labels, kept here so the two records line up:
+
+    A  1.10997859555733471989...  canonical pin, frozen (q-pinning-50-digit)
+    B  1.10997859555418057528...  what the committed witnesses carry
+    C  1.10997859564273904668...  what a fresh run produces
+
+My six producers never touch the pin machinery -- they derive q_0 inline --
+so this is a genuinely independent route to the same values.
+
+### Refinement of #5430's account of B
+
+#5430 attributes B to a change made and reverted on 2026-08-15, whose revert
+"restored the anchor source and did not regenerate the witnesses". That may
+well be how B got STAMPED. But B's VALUE is forward-verified as a CODATA-2018
+derivation:
+
+    Vol(4_1) / 206.7682830  ->  B    (agreement 3.9e-50, i.e. all 50 digits)
+    Vol(4_1) / 206.7682827  ->  C
+
+206.7682830 is CODATA 2018; 206.7682827 is CODATA 2022. So B and C are the
+SAME derivation at two vintages, not two unrelated incidents, and B is not an
+artifact of the revert.
+
+### New: A is not a CODATA derivation at any vintage
+
+Inverting A the same way gives
+
+    m_mu/m_e = 206.768282989315
+
+which matches NEITHER published figure. It sits between them, 5.2e-11
+relative from the 2018 value. So "A is just the old CODATA" -- the tempting
+explanation -- is measurably false. A is a stamped literal not reproducible
+from a published muon ratio.
+
+**Recording a near-miss:** I first ran this check with A typed as
+`1.1099785955733347`, which DROPS A DIGIT from the real
+`1.10997859555733471989...` (they differ at digit 12). Caught before it
+reached the sibling PR. Noting it because it is exactly the transcription
+class this whole arc is about, and it nearly landed inside the analysis
+rather than in the data.
+
+### Population note
+
+#5430 names four probes carrying B. The six here are additional B-carriers,
+so the B population is larger than either PR alone shows. If a migration off
+B happens, both sets belong in it.
+
+Posted as https://github.com/litlfred/qou/pull/5430#issuecomment-5376190909
