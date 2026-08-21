@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-21T15:46:46Z
+updated_at: 2026-08-21T15:56:17Z
 ---
 
 
@@ -261,3 +261,23 @@ hypothesis (weakly decreasing row lengths), which is the next brick, not a corne
 - brick 11: the deleting branch, under a Young-shape hypothesis on T.
 - word-level surjectivity (iterate brick 10+11 the way brick 3 iterates brick 2).
 - RSKBurnsideHolds for general n → feeds spechtEquiv_of_sum_sq for the general Wedderburn split.
+
+
+### Brick 10 generalized (same PR #5374, 2026-08-21)
+
+The `2 ≤ length` side condition is GONE. `insert_uninsert` now holds at every row of a
+row-sorted, column-strict tableau with no empty rows — the full cascade right inverse.
+
+**Correction to the note above:** I wrote that the deleting branch 'needs a shape hypothesis
+(weakly decreasing row lengths), which is the next brick'. It did not need a new brick.
+`ColStrict` / `StrictBelow` were already in SchenstedInsertion.lean, and `StrictBelow` bundles
+BOTH halves — `lower.length ≤ upper.length` (the Young-shape half I was about to invent) and
+`upper[j] < lower[j]` — with the bumping lemma `insert_colStrict` already proved. One corpus grep
+for ColStrict before writing that note would have saved the round trip. Recorded in the file
+docstring and the PR body, not quietly dropped.
+
+axioms: insert_uninsert = [propext, Quot.sound] (Classical.choice dropped with the length omega).
+
+### Remaining after brick 10
+- word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2.
+- RSKBurnsideHolds for general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
