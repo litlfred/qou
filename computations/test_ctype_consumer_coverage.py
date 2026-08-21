@@ -28,6 +28,7 @@ Run: `python3 computations/test_ctype_consumer_coverage.py`
 """
 from __future__ import annotations
 
+import ast
 import re
 from collections import Counter
 import sys
@@ -361,20 +362,51 @@ EQUALITY_TEST_BASELINE: dict[str, str] = {
     # layer, not in the labels." Its equality test is correct by design, and
     # "fixing" it would break a deliberate convention in the file AGENTS.md
     # names as the p/n asymmetry mechanism.
-    "closed_form_tau_M.py:181": "own InterfaceKind vocabulary; label/value split is documented",
+    "closed_form_tau_M.py::interface_factor": "own InterfaceKind vocabulary; label/value split is documented",
     # Same vocabulary, same reason: this dispatches on the InterfaceKind
     # returned by `canonical_interface_kinds(...)` (positive/negative/
     # averaged), not on a ctype. Its `averaged` is the InterfaceKind label,
     # whose δ-aware factor is applied at the value layer.
-    "_habiro_coefficient_extract.py:166": "InterfaceKind vocabulary, not ctype",
+    "_habiro_coefficient_extract.py::_interface_product_symbolic": "InterfaceKind vocabulary, not ctype",
     # Same file, SECOND site — a tally over the InterfaceKind values returned
     # by `canonical_interface_kinds`, not over ctypes. It stayed invisible
     # until the per-file `break` was removed, which is precisely why that
     # break was wrong: one baselined site was silently standing in for two.
-    "closed_form_tau_M.py:445": "InterfaceKind tally, not ctype",
+    "closed_form_tau_M.py::interface_census": "InterfaceKind tally, not ctype",
 }
 
 _EQ_AVERAGED = re.compile(r"""[!=]=\s*['"]averaged['"]""")
+
+
+def _enclosing_function(src: str, lineno: int) -> str:
+    """Innermost `def` containing 1-indexed `lineno`, or `<module>`.
+
+    The baseline is keyed on `file.py::function` rather than `file.py:line`
+    BECAUSE LINE NUMBERS MOVE AND THE REASONS DO NOT. All three Part E entries
+    went stale at once when unrelated edits shifted `closed_form_tau_M.py`
+    (181 -> 238, 445 -> 502) and `_habiro_coefficient_extract.py` (166 -> 171):
+    the test then reported three NEW family-blind sites and three baseline
+    entries "no longer needed", when nothing had changed but the line numbers.
+    A reviewer seeing three fresh failures has to re-derive three adjudications
+    that were already made and written down — and the cheapest way through that
+    is to re-baseline, which is how a considered exemption decays into a
+    silencing list. Bean `qou-odkf`.
+
+    Falls back to `<module>` for a top-level site, which is stable for the same
+    reason.
+    """
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return "<unparsed>"
+    best = None
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            end = getattr(node, "end_lineno", None) or node.lineno
+            if node.lineno <= lineno <= end:
+                if best is None or node.lineno > best.lineno:
+                    best = node
+    return best.name if best is not None else "<module>"
 
 
 def part_e() -> None:
@@ -411,7 +443,7 @@ def part_e() -> None:
             near = "\n".join(lines[max(0, i - WINDOW):i + WINDOW + 1])
             if "averaged_weighted" in near or ".startswith(" in near:
                 continue  # this SITE handles the family
-            found.append(f"{rel}:{i + 1}")
+            found.append(f"{rel}::{_enclosing_function(src, i + 1)}")
             # NO `break`. An earlier cut stopped at the first match per file,
             # which silently re-introduced file-level granularity into a check
             # whose whole point is per-site precision: later `== 'averaged'`

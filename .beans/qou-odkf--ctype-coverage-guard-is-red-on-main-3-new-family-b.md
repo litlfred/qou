@@ -124,3 +124,56 @@ Sites 1 and 2 stand as written, and one new item replaces site 3:
 Plus the two ergonomics fixes already noted: baseline by enclosing function name
 rather than `file:line` (3 entries went stale on an unrelated edit), and require a
 reason string per baseline entry.
+
+## FIXED 2026-08-21 — all three reds were the SAME three baselined sites, at moved lines
+
+Part E is green, and nothing needed adjudicating: the three "new" failures were
+the three entries already in `EQUALITY_TEST_BASELINE`, whose reasons were written
+down and correct. Unrelated edits had shifted the lines:
+
+    closed_form_tau_M.py            181 -> 238    interface_factor
+    closed_form_tau_M.py            445 -> 502    interface_census
+    _habiro_coefficient_extract.py  166 -> 171    _interface_product_symbolic
+
+so the test reported three NEW family-blind sites AND three baseline entries
+"no longer needed" — the same three, counted twice, in opposite directions.
+
+**Fixed by keying the baseline on `file.py::function` instead of `file.py:line`**
+(`_enclosing_function`, an `ast` walk to the innermost enclosing `def`, falling
+back to `<module>`).
+
+Verified with a negative control rather than by assertion: injected 5 blank lines
+near the top of `closed_form_tau_M.py`, shifting every later line, and re-ran —
+**PASS**, 3 baselined. Under the old keying that edit alone would have produced
+three failures and three stale notes. File restored clean.
+
+### Why this mattered more than a cosmetic churn fix
+
+A reviewer meeting three fresh failures has to re-derive three adjudications that
+were already made and recorded. The cheapest way through that is to re-baseline —
+and that is exactly how a considered exemption decays into a silencing list. The
+line-keyed baseline was quietly converting its own reasons into noise on every
+unrelated edit.
+
+### Item-by-item disposition from the triage above
+
+1. `closed_form_tau_M.py::interface_factor` — **confirmed by-design, baselined
+   with its reason.** The value layer really does apply δ: measured earlier in
+   this arc, `closed_form_tau_M(1,1,q0,τ_p,τ_n, pn_convention="bring_color_weighted")`
+   reproduces the bridge value to **6e-25**. So the colour-blind label is a
+   documented label/value split, not a loss.
+2. `closed_form_tau_M.py::interface_census` — same vocabulary, a tally over
+   `InterfaceKind` rather than over ctypes. Baselined with its reason.
+3. `_habiro_coefficient_extract.py::_interface_product_symbolic` — the false
+   positive established earlier: the module requests `chi_lambda_braid`, under
+   which the p-n bond is labelled `positive`, so the `averaged` branch never sees
+   one. Baselined.
+
+### The item this does NOT fix, and it is the important one
+
+Part E greps for a literal `== 'averaged'`. It therefore catches a colour-blind
+collapse that KEEPS the word `averaged`, and is blind to one that RENAMES the
+p-n bond — which is the larger defect by 1210x (`chi_lambda_braid` is −17.05% per
+p-n bond; `strict_averaged` is +0.0141%). Detecting that needs an AST question
+about which `pn_convention` a call site requested, not a string match. Still open;
+it is the third item in this bean and is not addressed by the re-keying.
