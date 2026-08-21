@@ -938,6 +938,8 @@ import QOU.Mathlib.SchenstedWordSurjectivity
 import QOU.Mathlib.SchenstedCornersAlong
 -- RSK inverse, brick 16: a row holding a maximum entry is a corner (the Q-side keystone).
 import QOU.Mathlib.SchenstedMaxCorner
+-- RSK inverse, brick 18: CornersAlong reduces to a condition on shapes alone.
+import QOU.Mathlib.SchenstedShapeRun
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
