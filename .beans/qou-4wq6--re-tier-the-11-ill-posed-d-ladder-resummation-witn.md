@@ -1,11 +1,11 @@
 ---
 # qou-4wq6
 title: Re-tier the 11 ill-posed D-ladder resummation witnesses as scope-(b) closed
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T14:41:55Z
-updated_at: 2026-08-21T14:42:32Z
+updated_at: 2026-08-21T14:56:55Z
 ---
 
 ## Why this is untracked
@@ -49,3 +49,22 @@ no drift; (b) producer docstring headers, accepting the drift, re-running each
 
 Recommend (a). Four of the 11 came from my own arc (PRs #3818, #3857), whose
 audit docs were corrected in #5347 — the witness layer is the remaining half.
+
+
+## RESOLVED 2026-08-21 — option (a) executed
+
+Ledger row landed in `docs/coordination/1ppq-qbeta.md`:
+
+1. New §"Resummation arm — CLOSED (the D-ladder is convergent)", placed
+   immediately **before** §"Open probes (current queue)" so it is read before
+   anyone picks the next probe. Names all 11 as scope-(b) closed / ill-posed,
+   states why their recorded failures are not obstructions, and carries the
+   do-not-widen boundaries (6 arithmetic witnesses unaffected;
+   extension-singularity's k=31 data stands; deformed-meridian / odd-channel
+   Stokes not assessed; Phi_b genuinely resurgent, only D(u) is not).
+2. Correction banner on the 2026-07-17 (PR #3818) sessions-log entry, which
+   stated its results "conditional on the triple-confirmed divergence class"
+   and framed A ~ 0.236 as a lever awaiting ORD-63 — both now scoped.
+
+No producer touched, so no `scriptHash` drift and no spurious self-staleness
+on the 11. No witness edited. Audit §6 remains the full classification.
