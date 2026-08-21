@@ -3,8 +3,9 @@
 title: Remark interpreting CuspShapes.pdf at prop:cusp-shape-bar-parity
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:39Z
-updated_at: 2026-08-08T23:36:39Z
+updated_at: 2026-08-21T17:04:56Z
 ---
 
 Pin down which object 'cusp shape' names in prop:cusp-shape-bar-parity -- the Teichmuller modulus of the cusp torus, or the ideal-tetrahedron shape parameter tiling it -- and confirm the figure-eight value against the standard one. Deliberately a remark and not aid-proof: I could not settle the numerical question in this session, and the downstream cusp lattice Z<1, omega> depends on the answer.
@@ -19,3 +20,10 @@ Source: `library/cuspshapes/CuspShapes.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/cuspshapes/  ->  [dang-purcell]
+  Cusp shape and tunnel number
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [dang-purcell] as the citation key when you do it.

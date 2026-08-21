@@ -3,8 +3,9 @@
 title: Cite MotivicPeriodsandP1minus3pointsv3.pdf at rem:vol-as-motivic-period
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:14Z
-updated_at: 2026-08-08T23:37:14Z
+updated_at: 2026-08-21T17:04:47Z
 ---
 
 rem:transcendental-accounting and rem:vol-as-motivic-period both invoke motivic periods and the motivic Galois group with no citation whatsoever; this survey is the standard entry point.
@@ -17,3 +18,10 @@ Source: `library/motivicperiodsandp1minus3pointsv3/MotivicPeriodsandP1minus3poin
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/motivicperiodsandp1minus3pointsv3/  ->  [brown-motivic-p1-three-points]
+  Motivic periods and P^1 minus 3 points
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [brown-motivic-p1-three-points] as the citation key when you do it.

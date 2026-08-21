@@ -3,8 +3,9 @@
 title: Cite 2203.17029v1.pdf at conj:qdifference-kernel-prolongation-symbol
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:18Z
-updated_at: 2026-08-08T16:13:18Z
+updated_at: 2026-08-21T17:05:06Z
 ---
 
 conj:qdifference-kernel-prolongation-symbol reasons about q-Borel normalisation, connection matrices and Newton-polygon slopes with no reference for the q-difference-module framework.
@@ -19,3 +20,10 @@ Source: `library/arxiv-2203.17029v1/2203.17029v1.pdf` — no `references.ts` ent
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-2203.17029v1/  ->  [garoufalidis-wheeler-modular]
+  Modular q-holonomic modules
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [garoufalidis-wheeler-modular] as the citation key when you do it.

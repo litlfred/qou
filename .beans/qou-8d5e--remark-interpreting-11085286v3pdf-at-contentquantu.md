@@ -3,8 +3,9 @@
 title: Remark interpreting 1108.5286v3.pdf at content/quantum-observable-universe/braids-and-knots/marko…
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:05Z
-updated_at: 2026-08-08T16:13:05Z
+updated_at: 2026-08-21T17:04:46Z
 ---
 
 The inductive-limit Lean file declares the affine construction 'open R&D content' with no literature pointer. A remark recording what IS known about the affine algebra's trace/homology data — Theorem 2's q-independence and Theorem 1(d)'s trace-separation criterion, with the correction caveat — turns an unscoped open item into one with a stated starting point, without wiring anything.
@@ -21,3 +22,10 @@ Source: `library/arxiv-1108.5286v3/1108.5286v3.pdf` — no `references.ts` entry
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1108.5286v3/  ->  [solleveld2022]
+  Hochschild homology of affine Hecke algebras
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [solleveld2022] as the citation key when you do it.

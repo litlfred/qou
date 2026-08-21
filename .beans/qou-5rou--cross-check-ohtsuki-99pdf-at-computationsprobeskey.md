@@ -3,8 +3,9 @@
 title: Cross-check Ohtsuki-99.pdf at computations/probes/keystone_colored_sigma235_wrt.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T00:10:45Z
-updated_at: 2026-08-09T00:10:45Z
+updated_at: 2026-08-21T17:04:43Z
 ---
 
 Expand the corpus's Sigma(2,3,5) series in h = q-1 and compare lambda_1 against ±6 and lambda_2 against 39, after fixing the orientation convention against Lin-Wang's right-handed-trefoil normalisation; apply the lambda_2 in 3Z sieve as a precondition. This validates the transcription that the whole colored-WRT keystone step rests on. The external values are comparison targets, never inputs to be wired.
@@ -19,3 +20,10 @@ Source: `library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/lin
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/  ->  [lin-wang1999]
+  On Ohtsuki's invariants of integral homology 3-spheres
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [lin-wang1999] as the citation key when you do it.
