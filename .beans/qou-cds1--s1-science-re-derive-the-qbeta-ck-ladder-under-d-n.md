@@ -1012,3 +1012,28 @@ Nothing in this entry re-derives anything or moves a number. It retires two
 stated blockers by *closing* them, adds one real prerequisite, and repairs an
 internal contradiction. Under the standing rule that `c_k` conclusions stay
 C-frame-scoped until the re-derivation lands, no value above is promoted.
+
+### Independent check 2026-08-21 — `b² = 1 − y_(2,1)ᴰ` CONFIRMED
+
+Verified `e401bc427`'s identity from the two sides separately, without using the
+Lean:
+
+- `b² = (h²+3)/(h²+4)` taken from the *ladder substrate*
+  (`qbeta_utils.substrate_ladder_quantities`, where `u = b·ℏ_q²`);
+- `y_(2,1)ᴰ = q²/(q²+1)²` taken from the *D weight solve* (`fcffeee29`).
+
+Both simplify to **`(q²−q+1)(q²+q+1)/(q²+1)²`**; sympy difference exactly `0`.
+
+Worth stating why this is more than a tidy identity: `b` is not a free parameter
+of the ladder, it is the N2..N5 coupling that `u` is built from, and it was
+introduced on the C side. Finding it equal to `1 − y_(2,1)ᴰ` means the ladder's
+own coupling was **already a convention-D object** — so at least one substrate
+quantity does not need re-deriving under D, it needs *recognising*. That narrows
+what "re-derive the ladder under D" has left to cover, which is the opposite
+direction from the phase leg (where the C formula genuinely had to move by
+−h²/4).
+
+Both blockers recorded in §STATE 2026-08-21 re-checked and **still stand**:
+`qbeta-ck-truncation-canonical.lean:87` still carries the one `sorry` guarding a
+vacuous statement (`qou-7hfy`), and `RadicalPairingIsSignRep.lean` is still
+sorry-free, so the `G x = nf` route stays universally closed.
