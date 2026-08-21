@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-21T17:04:13Z
+updated_at: 2026-08-21T20:56:34Z
 ---
 
 
@@ -2921,3 +2921,46 @@ a **real** occurrence — the first quadratic pair of the `a = 4, b = 6` corner
 identity. That is now the only unattempted piece of the `a ≤ b` regime — and it
 is the one the arc has been wrong about before, so it should be attempted and
 allowed to fail rather than scheduled from the inventory.
+
+### First test of the inventory — `blockPass` does fit the chain
+
+The prefix-phases result was an *inventory* ("every kind of step has a lemma"),
+explicitly not a schedule. `computations/hecke_tail_assembly_fit.py` is the
+first direct test of it.
+
+It takes `blockPass`'s **actual Lean statement** — source and target, written in
+the same `descWord` formulas the lemma uses — and asks whether they reproduce
+the chain's measured block transition. `A` and `T` are **solved for** by
+searching splits, and both source and target must come out right under the
+**same** `(A, T)`. A lemma matching its source under one context and its target
+under another would not compose; that is the failure this is built to catch.
+
+**All 8 off-diagonal cases fit**, with clean contexts:
+
+    A = descWord (i−1) (j₁+2)      [rel 1 … a−2]
+    T = [σ_i]                      [rel 0]
+
+`T` is exactly the tail `blockPass` originally hardcoded — a small vindication
+of the earlier generalisation: freeing `T` did not disturb the top-level use, it
+only added `small(a)`.
+
+**What a pass means:** `blockPass` is *applicable* at the transition the engine
+actually performs, with the contexts it actually has. That is genuinely more
+than the inventory claimed.
+
+**What it does not mean:** that the tail assembles. The `hpark` collision
+hypotheses are properties of the *other* term and are untested here, and the
+Lean chain may order its steps differently from the engine. Off-diagonal only —
+`blockPass` does not cover `b = a`, so the diagonal needs its own fit check,
+not yet written.
+
+**Tail shape, measured** (`a = 4, b = 6`), for whoever assembles it:
+
+    T_pre  −1·(1,2,0,1,3,2,4,3,5,6,0)   +1·(2,1,2,0,1,3,2,4,3,5,6)
+    T_b1   −1·(1,2,3,4,5,6,0,1,2,3,0)   +1·(…unchanged…)     ← blockPass on term 1
+    T_mid  +1·(2,1,2,0,1,3,2,4,3,5,6)   −1·(2,1,2,3,4,5,6,0,1,2,3)
+    T_end  0 terms                       ← blockPass on term 2, then the pair cancels
+
+So the tail is four applications: `blockPass`, two `monicStep`s, `blockPass`,
+then `ofTerms_cancel_pair`. The second block drives term 2 onto term 1's word
+with the opposite coefficient, and that is the final annihilation.
