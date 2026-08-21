@@ -54,3 +54,47 @@ q-adic, a DIFFERENT filtration from the strand filtration above. MFW rides the
 strand one.
 CAVEAT: MFW is not always sharp; known counterexamples exist. A matching bound
 settles it; a gap does not.
+
+## The formulae, and what the trace bounds ABOVE as well as below
+
+HOMFLY convention: `v⁻¹P(L₊) − v P(L₋) = z P(L₀)`, `P(unknot) = 1`.
+For `β ∈ B_n` with exponent sum (writhe) `e` and closure `L`, MFW is a PAIR:
+
+    (1)   e − n + 1  ≤  mindeg_v P_L
+    (2)                 maxdeg_v P_L  ≤  e + n − 1
+
+**Subtract → the LOWER bound on the Markov-class minimum (braid index).**
+`e` cancels — which is the point, since `e` is not a link invariant:
+
+    maxdeg_v P − mindeg_v P ≤ 2n − 2      ⟹    n ≥ ½·spread_v P + 1
+    braid_index(L) = min{n} ≥ ½·spread_v P_L + 1
+
+**Read (1) alone → an UPPER bound on a MAXIMUM.** The self-linking number of
+the transverse representative is `sl(β) = e − n`, so (1) is exactly
+
+    sl(β) ≤ mindeg_v P_L − 1        for EVERY β in the Markov class
+
+i.e. the trace bounds the **maximal self-linking number** above — the
+HOMFLY sharpening of Bennequin's `sl ≤ 2g(L) − 1`. So the same trace bounds a
+min from below and a max from above; they are the two halves of one pair.
+
+**Why there is no "maximum braid index".** The Markov class is unbounded above:
+stabilise `β ↦ βσ_n^{±1}` and n grows without limit, closure unchanged. So
+`max{n}` = ∞ trivially, and the MINIMUM is the only invariant of the two. That
+asymmetry is structural, not an artifact.
+
+**Adding (1)+(2) instead** bounds the writhe at fixed n:
+    |mindeg_v P + maxdeg_v P − 2e| ≤ 2n − 2
+
+## Lean: what is provable now vs. what is research-scale
+
+- **MFW itself is research-scale.** Its proof needs HOMFLY well-definedness =
+  Markov invariance of the Ocneanu trace on the H_n tower, then a degree
+  argument. Not a session-scale formalisation.
+- **The derivation FROM the pair is cheap and honest** — the §3b-cond
+  conditional pattern: take (1) and (2) as explicit hypotheses on a generic
+  ordered field / ℤ, conclude `n ≥ ½(maxdeg − mindeg) + 1` and
+  `sl ≤ mindeg − 1`. Sorry-free, no axiom, and it states plainly that MFW is
+  assumed, not proved. That is the correct first Lean rung here.
+- Do NOT axiomatise MFW as a class and then present the bound as derived —
+  §"Axiomatization is NOT a Proof".
