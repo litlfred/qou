@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:44:29Z
-updated_at: 2026-08-21T21:44:58Z
+updated_at: 2026-08-21T21:54:39Z
 ---
 
 Split from `qou-hp3g`, whose sync-drift half turned out already fixed
@@ -59,3 +59,73 @@ write this up as researchers receiving wrong numbers.
 3. Re-sync the data and confirm the q₀ disagreement goes to 0.
 4. Precision preflight on the result — re-syncing changes what the package
    carries, so the raw-float64 posture must be measured after, not assumed.
+
+
+
+---
+
+## CORRECTED after reading the script properly
+
+Two of my own claims above were wrong and are retracted:
+
+1. **"157 witness JSONs are compared to nothing" — FALSE.** There IS a witness
+   loop (line ~246, `for name, src in wits.items()`). The check covers the 18
+   witnesses `required_witnesses()` scrapes from cone-module source. The
+   uncovered count is **122**, not 157 and not 139.
+
+   139 would be 157 − 18. It is 122 because **17 names exist in both the
+   package root and `data/`**, so a name-based match credits the `data/` twin
+   with the root copy's check. That collapse turned out to be the sharper
+   finding.
+
+2. **"122 disagree on the q₀ pin" — true but overstated.** Split by class:
+
+   | | n |
+   |---|---|
+   | mirror ABSENT / source proton — predates the #4020 anchor convention | 120 |
+   | ambiguous / absent — noise | 1 |
+   | **actively contradicting (both record a pin, they differ)** | **1** |
+
+   Exactly one file contradicts its source: `canonical-mass-table-extended`,
+   mirror **muon**, source **proton**. The 120 are stale and unlabelled, not
+   wrong. The isotope shards are 2026-05-19 copies from the same producer,
+   predating both anchor recording and the `environment` block.
+
+## The finding that survives
+
+**Duplicate shadows.** 17 witnesses exist in both the package root and `data/`.
+The script's own header explains witnesses MUST sit in the root because the
+vendored modules resolve there, and that a `data/` placement "makes every one
+of them FileNotFoundError" — so these copies are unreachable at runtime. They
+cannot fail loudly; they just sit there being read by humans. **2 of the 17 are
+divergent:**
+
+    q-pinning-50-digit.witness.json      root 2026-08-21  data/ 2026-07-18
+    atomic-tr-m-mpfr-50dps.witness.json  root 2026-08-19  data/ 2026-08-10
+
+`q-pinning-50-digit` is the substrate modulus record, present in two versions a
+month apart.
+
+**And nothing runs the gate.** Grepped every `.sh`/`.yml`: no workflow, no gate
+array invokes `sync-qou-mass-vendor.py`, while AGENTS.md calls `--check` "the
+gate". Fourth instance of the qou-j6gb pattern. This is why `qou-wpp2` saw it
+go red again four days after the ratchet was built.
+
+## Done
+
+`--check` now reports its own coverage instead of implying completeness:
+module + witness counts, the uncovered count, and the shadowed/divergent pairs.
+Shown to track reality, not print constants: resolving one shadow moved
+divergent 2→1, removing one moved pairs 17→16, both restored.
+
+Reported rather than deleted, following the script's existing `orphans`
+convention — removing a shipped file is an API decision this script should not
+make silently.
+
+## NOT done — needs a decision, not a sweep
+
+Re-syncing the 122 or deleting the 17 shadows changes what the package carries
+and is a package-design call (the script header already tracks a separate item
+about a package-aware resolver so vendored data could live under `data/`).
+Wiring `--check` into a gate array is likewise a decision — `precision-gates.sh`
+is the NO-FLOAT64 family and this is not that.
