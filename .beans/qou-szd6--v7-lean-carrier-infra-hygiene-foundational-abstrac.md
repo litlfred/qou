@@ -151,3 +151,73 @@ gap; the dispositions are separate work.
    mechanisable — "the fields do not constrain the objects the label names" is
    semantic — but *zero references across the tree* is trivially mechanisable
    and would have surfaced all nine.
+
+## 2026-08-21 — the nine adjudicated, and a correction to my own census
+
+Re-measured on `main @ 78e3872b`. **Correcting the census I wrote in PR #5226**:
+it said the nine are "referenced nowhere in the tree" and "not mentioned even in
+their own file". The scan behind that walked **`lean/` only**. Re-run over the
+whole corpus, three of the nine *are* referenced — from co-located `.lean`
+stubs, which `lake` does not compile:
+
+| | library refs | stub refs |
+|---|---:|---:|
+| `BraneBoundaryStructure` | 1 (its own decl) | **7** |
+| `BriggsKleinChart` | 1 | **2** |
+| `MassIdentityC` | 1 | **1** |
+| the other six | 1 | 0 |
+
+The zero-**library**-reference figure was right; describing it as "the entire
+corpus" was not. Consumption from an uncompiled stub is documentary, not formal
+— still worth knowing, but "orphan" overstated it for those three.
+
+### The decisive test: what does each label's block actually reference?
+
+Not "does anything consume this carrier" — a *definition* needs no consumer.
+The sharp question is whether the block that owns the carrier's `\label` points
+**at it** or **elsewhere**.
+
+| carrier | its `\label` | the block's `lean.ref` | verdict |
+|---|---|---|---|
+| `EigenspaceDecomposition` | `prop:descent-eigenspaces` | `…idempotent_direct_sum_decomposition` → **UNRESOLVED** | **broken ref — FIXED here** |
+| `TruncatedLerayProfile` | `prop:leray-profile` | `…FluidDynamics.leray_profile` → resolves | **stale label** on a superseded structure |
+| `VolumeFromRigidity` | `lem:volume-from-rigidity` | `QOU.volume_from_rigidity` → resolves | **stale label** |
+| `BraneBoundaryStructure` | `prop:brane-boundary` | `…Torsion.brane_boundary_structure` → resolves | **stale label** |
+| `IsLeibnizAlgebra` | `prop:q-jacobiator` | `QOU.q_jacobiator` → resolves | **stale label**, and a genuine **duplicate**: the label appears **twice** in `Elaboration.lean` (lines 245 and 321) |
+| `BriggsKleinChart` | `def:briggs-klein-chart` | `QOU.BriggsKleinChart` → itself | **canonical, no defect** |
+| `MassIdentityC` | `cor:mass-identity-C` | `QOU.MassIdentityC` → itself | **canonical, no defect** |
+| `ChiralSectorCoords` | `def:chiral-sector-coords` | **no block carries that label** | orphan label |
+| `SelfDualCurvature` | `prop:self-dual-curvature` | **no block carries that label** | orphan label |
+
+**The pattern:** an older CamelCase `structure Foo` carrying `\label{prop:foo}`
+sits beside a newer snake_case `theorem foo_bar` in its own module, and the
+block references the theorem. The structure is a **superseded leftover still
+holding the label**. Four of the nine are that. This is not "nine vacuous
+carriers"; it is one broken ref, four stale labels, two clean definitions, and
+two orphan labels — and only the first needed fixing.
+
+### Fixed here
+
+`prop:descent-eigenspaces` repointed from the nonexistent
+`QOU.Torsion.idempotent_direct_sum_decomposition` to
+`QOU.Torsion.EigenspaceDecomposition`, verified through the canonical resolver.
+
+**Third instance of the sibling-masking failure** (after `thm:su2-emergence`
+and `def:ns-regular-qou`): the block has a co-located sibling
+`descent-eigenspaces.lean`, `walkBlocks` resolves the sibling first, so every
+checker audited the stub and passed while the library ref sat dead. Found by the
+label test, not by any gate. That is now three independent confirmations that
+**a sibling stub hides a broken library ref from every gate we run** — see
+`qou-2u26`.
+
+### Recommended, not done
+
+Removing the four stale `\label` lines so each label has exactly one owner.
+Low risk — it is attribution, not a claim rewrite — but it edits four library
+files and changes the label→decl map that the resolver's decl-map candidate
+uses, so it wants a nod first. `prop:q-jacobiator` is the strongest case: two
+declarations in **one file** claim it.
+
+The two orphan labels (`def:chiral-sector-coords`, `prop:self-dual-curvature`)
+name blocks that do not exist — either the block was deleted or never written.
+Worth a decision: drop the label, or write the block.
