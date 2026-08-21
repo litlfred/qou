@@ -7,7 +7,7 @@
       "STALE": 310,
       "proton-pin": 897,
       "unknown": 25,
-      "canonical": 533
+      "canonical": 534
     },
     "stale_total": 310,
     "new_stale": 0,
@@ -10913,6 +10913,13 @@
       },
       {
         "file": "computations/qbeta/qbeta-symbolic-sdp-strict-complementarity.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
+        "file": "computations/qbeta/qbeta-trm-crosscheck-convention-pin-split.witness.json",
         "field": "q0Value",
         "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
         "class": "canonical",
