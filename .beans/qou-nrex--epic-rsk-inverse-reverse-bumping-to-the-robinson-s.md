@@ -5,9 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-21T15:56:17Z
-updated_at: 2026-08-21T16:06:00Z
-updated_at: 2026-08-21T16:20:58Z
+updated_at: 2026-08-21T21:43:38Z
 ---
 
 
@@ -334,3 +332,36 @@ rebase there.
   bump_findIdx_mono). May need a named uninsertIdx; rowUninsert_spec is the bridge.
 - brick 12c: uninsert preserves ColStrict, under the corner hypothesis located in #5383.
 - word-level surjectivity; RSKBurnsideHolds for general n.
+
+
+## MERGED 2026-08-21 — bricks 10-15 all on main
+
+All six landed via /prepare-merge-auto, rebase-merge, branches preserved:
+  #5374 b10 bd39e875e0 | #5383 b11 fce013fecc | #5390 b12 715db19cfc
+  #5398 b13 53286a5b6c | #5400 b14 3cd8bed694 | #5410 b15 87252c0d20
+
+Verified ON MAIN (not just per-branch): all six lean-direct exit 0 together; six imports registered
+in QOU.lean; zero sorryAx across every declaration. The one 'sorry' grep hit is the phrase
+'sorry-free' in a docstring.
+
+### Merge-mechanics lesson worth keeping
+The stacked branches could NOT be plain-rebased once their parents landed: rebase replays the
+parent's commits, which are already on main, giving 'both added' conflicts — and worse, the
+REBASE_HEAD version was the SUPERSEDED intermediate (pre-correction docstring) while main had the
+final one. Blindly resolving would have REVERTED the brick-12 correction.
+Fix: rebuild each stacked branch on fresh origin/main and cherry-pick ONLY its unique commits
+(git log --oneline origin/main..BR, drop the ones already landed). Also: a stacked PR's BASE must be
+retargeted to main (#5398 failed to merge with '405 merge conflicts' until its base was changed off
+the parent branch).
+
+### What the epic now has on main
+P side complete at the word level. insert/uninsert mutually inverse on column-strict tableaux
+(both composites); all three invariants preserved (two unconditionally, ColStrict at a corner);
+the run-level statement foldl_insert_uninsertSteps + insertWord_uninsertSteps; and brick 15 showing
+their hypotheses are inhabited.
+
+### Next: the Q-side, which is the actual gate on surjectivity
+CornersAlong P is for an ARBITRARY standard pair (P,Q) with positions read off Q — NOT off an
+insertion history. Different argument: the cell carrying the largest remaining entry of a standard
+tableau is a corner, because a cell below it would carry a larger entry. Brick 15 does NOT cover
+this and its docstring says so.
