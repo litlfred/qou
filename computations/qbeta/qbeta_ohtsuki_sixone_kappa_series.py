@@ -159,6 +159,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Raise precision BEFORE the module-scope constants below. `mp.mp.dps = 200`
+# in main() runs too late for them: an mpf literal is rounded at CONSTRUCTION,
+# so VOL_6_1's 46 written digits were being truncated to the default 15 and the
+# later raise only padded the loss back out with zeros. Measured: the dps-15
+# build differs from the dps-65 build at 4.16e-17 relative. Idempotent, and
+# safe alongside main()'s own raise.
+set_compute_dps()
 
 # ki6c printed values for the MIRROR 6̄₁ (Theorem 1.1 + p.15), ~6 digits.
 KI6C_SIGMA_BAR = mp.mpc("0.5035603", "-1.08078")
