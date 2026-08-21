@@ -172,18 +172,25 @@ set_compute_dps()
 # ki6c printed values for the MIRROR 6̄₁ (Theorem 1.1 + p.15), ~6 digits.
 KI6C_SIGMA_BAR = mp.mpc("0.5035603", "-1.08078")
 KI6C_OMEGA_BAR = mp.mpc("-0.52139", "0.071732")
-# Hyperbolic volumes, for the volume-conjecture cross-check below. Built
-# inside `workdps` because module scope runs at mpmath's default 15 dps: a
-# literal written here without it is silently truncated to ~15 digits, which
-# is what `mpf_import_time_dps_audit` flags. Values are SnapPy high-precision
-# (212-bit), each confirmed against its census twin -- `6_1` vs `m032` agree
-# to all 65 printed digits. The value previously carried here was correct only
-# to digit 21 (`...3991757529...` against the true `...3991014715...`); it was
-# never read, so nothing computed was wrong, but it would have silently capped
-# any check that used it.
-with mp.workdps(60):
-    VOL_5_2 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
-    VOL_6_1 = mp.mpf("3.1639632288831439839910147159731544848127876715181")
+# Hyperbolic volumes, for the volume-conjecture cross-check below. Safe at
+# module scope because `set_compute_dps()` above already raised precision --
+# these are constructed at 65 dps, not the default 15.
+#
+# THE DIGITS WERE ALSO WRONG, which is a separate defect from the truncation
+# the block above fixes, and it is the one that would have survived it. The
+# value carried here was correct only to digit 21:
+#
+#     was     3.16396322888314398399 1757529167384812325703962
+#     true    3.16396322888314398399 1014715973154484812787671
+#
+# so raising the precision made the code faithfully preserve 46 digits of a
+# number that is right for 21 of them. Replaced with SnapPy high-precision
+# (212-bit) values, each confirmed against its census twin -- `6_1` and `m032`
+# agree to all 65 printed digits. Nothing computed was ever wrong, because the
+# constant was defined and never read; that is also why it survived, and why
+# it is now WIRED (the `[2b]` cross-check) rather than left sitting here.
+VOL_5_2 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
+VOL_6_1 = mp.mpf("3.1639632288831439839910147159731544848127876715181")
 # Ohtsuki 5_2 paper (library/104171-qt-83), Theorem 1.1 - VALIDATION target.
 SIGMA_52 = mp.mpc("0.4501096100", "0.4813049796")
 OMEGA_52 = mp.mpc("0.0901905774", "-0.6499757866")
