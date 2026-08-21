@@ -1776,6 +1776,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.887Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1795,6 +1810,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.921Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1814,6 +1844,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 26 words)"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:46.961Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1833,6 +1878,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 26 words)"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.018Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1852,6 +1912,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.052Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1871,6 +1946,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.086Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1890,6 +1980,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.118Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1909,6 +2014,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.186Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (chirality / non-chirality mass split), two displays. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1928,6 +2048,23 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.261Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'rigidly isolates' and 'spans specifically' place intensifiers on a set-theoretic partition, which is either exact or not.",
+        "notes": "proposed: drop 'rigidly' and 'specifically' as part of the rewrite above."
       }
     ],
     "trap-nonspeakable": [
@@ -1947,6 +2084,23 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "804bb561a5c4",
+          "ts": "6beed0e93789"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:47.338Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Two garbled verb phrases: 'The mass tower rigidly isolates into chirality and non-chirality segments' and 'The chirality branch spans specifically over $c_\\lambda = 0$ Wedderburn blocks'. Neither 'isolates into' nor 'spans specifically over' is idiomatic; both stall on reading.",
+        "notes": "proposed: 'The mass tower splits into chirality and non-chirality parts according to the signed Young content $c_\\lambda$' and 'The chirality branch runs over the $c_\\lambda = 0$ Wedderburn blocks'. Not applied: both sit inside the italic proposition statement, so the wording is claim-bearing."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1970,5 +2124,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:47.338Z"
 }

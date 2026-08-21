@@ -924,6 +924,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.167Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -943,6 +959,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.201Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-em-dash": [
@@ -962,6 +994,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.236Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "No spaced dashes at all."
       }
     ],
     "trap-triples": [
@@ -981,6 +1029,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.270Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1000,6 +1064,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.305Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1019,6 +1099,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.343Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1038,6 +1134,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.380Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1057,6 +1169,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.418Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-superlative": [
@@ -1076,6 +1204,22 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.455Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 289-word proof (balanced twist, q-hook-maj, RSK descent preservation); every algebraic step recomputed."
       }
     ],
     "trap-nonspeakable": [
@@ -1095,6 +1239,23 @@
         "reviewed_at": "2026-08-15T10:31:00.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "adb7c7a887eb",
+          "ts": "623aa0812f26"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.492Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Standard combinatorial proof prose.",
+        "notes": "RIGOR (not a trap): VERIFIED -- [k]=q^{-(k-1)}[k]_{q^2}; sum_c h(c)=b+b'+n; Step-1 exponent b+b'-n(n-1)/2 matches q^{content}*ftilde(q^2); I(8)=764 involutions (quoted 764) correct. Step 3's Schuetzenberger descent-preservation and the q=1 SYT specialisation both check out."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1117,5 +1278,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:29.492Z"
 }

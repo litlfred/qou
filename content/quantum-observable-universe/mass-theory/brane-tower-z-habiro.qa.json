@@ -1754,6 +1754,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an operator-volume choice.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.054Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'regularizing in q, not z' and '(empirical, not structural)' are substantive technical distinctions; the closing 'not an operator-volume choice' is recorded under the RIGOR note instead."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1773,6 +1789,22 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.093Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 665-word conjecture (transient brane tower, z-Habiro completion, n_star, falsifiability, two structural findings); AME anchors rechecked."
       }
     ],
     "trap-em-dash": [
@@ -1792,6 +1824,23 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 588 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.130Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One unspaced dash ('z_i in [0.85, 1.0]--just below the first pole'); otherwise no dash density.",
+        "notes": "note: unspaced form; the chapter otherwise uses spaced dashes."
       }
     ],
     "trap-triples": [
@@ -1811,6 +1860,22 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 588 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.164Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'must be a structural invariant of H, reproduce the empirical B(H) across atoms, and be derivable without external calibration' is a substantive three-condition specification."
       }
     ],
     "trap-closing-aphorism": [
@@ -1830,6 +1895,22 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.198Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 665-word conjecture (transient brane tower, z-Habiro completion, n_star, falsifiability, two structural findings); AME anchors rechecked."
       }
     ],
     "trap-meta-commentary": [
@@ -1849,6 +1930,22 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.233Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 665-word conjecture (transient brane tower, z-Habiro completion, n_star, falsifiability, two structural findings); AME anchors rechecked."
       }
     ],
     "trap-thesis-restatement": [
@@ -1868,6 +1965,22 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.268Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 665-word conjecture (transient brane tower, z-Habiro completion, n_star, falsifiability, two structural findings); AME anchors rechecked."
       }
     ],
     "trap-performed-warmth": [
@@ -1887,6 +2000,22 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.304Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 665-word conjecture (transient brane tower, z-Habiro completion, n_star, falsifiability, two structural findings); AME anchors rechecked."
       }
     ],
     "trap-superlative": [
@@ -1906,6 +2035,23 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.340Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'rendering Z <-> N isospin symmetry exact' is asserted from a single 4-digit equality (tr_M = 0.0622 for both sub-braids) -- the standing rule forbids reporting limited-precision agreement as exact. 'each summand is enormous' is an unquantified intensifier where the two numbers are already given.",
+        "notes": "proposed (structural): 'the two magic-shell sub-braids carry equal Markov-trace operator volume to the 4 digits computed (0.0622), consistent with exact Z <-> N isospin symmetry at this level'."
       }
     ],
     "trap-nonspeakable": [
@@ -1925,6 +2071,23 @@
         "reviewed_at": "2026-08-15T10:31:00.790Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6c42901c01a3",
+          "ts": "e400e7f13e94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.377Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Sectioned prose parses.",
+        "notes": "fix applied (2x, token substitution 'canonical' for 'numerical'): 'Canonical evaluations Phi_q(0.989) ~ 6.7e5 ...' -> 'Numerical evaluations ...'; 'A uniform-depth canonical evaluation sweeping k in {...}' -> 'A uniform-depth numerical evaluation sweeping ...'. A third instance ('At the canonical Markov-trace operator-volume level') was LEFT ALONE because 'canonical' is a live technical term there and the reading is ambiguous. RIGOR (not a trap): AME anchors VERIFIED -- {2.224566, 8.481798, 7.71806} MeV are the D, T and 3He binding energies. SCOPE: 'the 3He gap represents a structural deficit at A=3, not an operator-volume choice' is a scope-(b) structural exclusion with no invariant cited, in a section that otherwise scopes carefully ('Refuted across probed forms; remains open'); proposed: 'no probed operator-volume choice closes it, which points at a structural deficit at A=3'. The block also ENDS with the dangling 'Archimedean specialisation. What follows sits on ...' banner (same defect as bond-order-eq-jet-degree.md)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1948,5 +2111,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:36.377Z"
 }

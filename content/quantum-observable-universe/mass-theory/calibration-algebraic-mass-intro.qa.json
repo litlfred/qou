@@ -1385,6 +1385,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.989Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 486-word section introduction, including the four-paragraph block-by-block enumeration and the closing Calibration paragraph."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1420,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.026Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 486-word section introduction, including the four-paragraph block-by-block enumeration and the closing Calibration paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1455,23 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 483 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.061Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One unspaced dash ('exactly three anchors are needed--one per Wedderburn channel').",
+        "notes": "note: unspaced form."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1491,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (2 in 483 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.097Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'exactly three' is the framework's actual calibration count, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1526,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.137Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 486-word section introduction, including the four-paragraph block-by-block enumeration and the closing Calibration paragraph."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1561,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.172Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 486-word section introduction, including the four-paragraph block-by-block enumeration and the closing Calibration paragraph."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1596,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.211Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "The closing Calibration paragraph restates the three inputs, but it is the section's thesis being stated for the first time in its canonical form, not an echo of what precedes it."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1631,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.247Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 486-word section introduction, including the four-paragraph block-by-block enumeration and the closing Calibration paragraph."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1666,22 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.286Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 486-word section introduction, including the four-paragraph block-by-block enumeration and the closing Calibration paragraph."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1701,23 @@
         "reviewed_at": "2026-08-15T10:31:00.755Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:40.340Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Paragraphs 2-4 are fifteen consecutive sentences of the identical shape 'The <Block Title> <kind> <verb>s <object>' ('The Normal form ... conjecture identifies ...', 'The Calibration inputs ... remark establishes ...', 'The Exactly three ... proposition proves ...', 'The Two-tier scaling ... remark and Three parameters ... proposition track ...'). Block titles are spliced in as bare noun phrases with no quoting or linking, so a sentence like 'The Habiro ring, Z-hat ring, Algebraic quantum volume, Quantum dilogarithm stratified, and Q-Pochhammer partial product definitions establish the brane-tower layer' has a five-deep noun pile as its subject. It parses on the page and stalls completely aloud.",
+        "notes": "proposed (structural, NOT applied): render the block titles as links or italics so the sentence boundaries are visible, and vary the verb/shape; or replace the enumeration with a short narrative of the section's argument, since the block list is already in the chapter manifest. RIGOR (not a trap), THREE FINDINGS: (1) CAL LABEL DEFECT -- 'The Exactly three calibration inputs proposition (m_e, m_mu/m_e, Q_beta(n))' puts Q_beta in the THIRD slot. Per the 2026-06-26 ruling, m_mu/m_e AND Q_beta are BOTH CAL-2 proxies (Q_beta = hbar/D_beta), and CAL-3 is D_pi with proxy m_pi -- which this very block's own closing paragraph states correctly. The two triples in one block disagree. (2) 7a -- 'pinned numerically by the lepton ratio m_mu/m_e through the Skein relation m_mu/m_e = Vol(4_1)/hbar_q^2': that identity is not the skein relation, which is L_+ - L_- = (q - q^{-1}) L_0. (3) 'The three inputs align with the three Wedderburn channels of H_3(R,q)' conflicts with the alignment the chapter actually proves two blocks later (the three real DOF of H^1(Bring) = 2W), and AGENTS.md warns specifically against substituting a different three-fold decomposition here."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1740,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:40.340Z"
 }
