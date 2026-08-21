@@ -1,0 +1,155 @@
+{
+  "description": "Independent verification of bean qou-j4mn's tr_M jet algebraic-dependence finding, under canonical convention D (z = q^3/(q^2+1)).",
+  "convention": "D (z = q^3/(q^2+1); owner ruling 2026-08-15)",
+  "markov_z": "q**3/(q**2 + 1)",
+  "method_1_field_membership": {
+    "4_1": {
+      "in_Q_of_q": true,
+      "num_q_degree": 8,
+      "den_q_degree": 6,
+      "factored": "(q**8 - q**6 + q**4 - q**2 + 1)/(q**2*(q**2 + 1)**2)"
+    },
+    "5_2": {
+      "in_Q_of_q": true,
+      "num_q_degree": 10,
+      "den_q_degree": 7,
+      "factored": "(q**10 - q**8 + 2*q**6 - q**4 + 2*q**2 - 1)/(q**3*(q**2 + 1)**2)"
+    },
+    "Borromean": {
+      "in_Q_of_q": true,
+      "num_q_degree": 12,
+      "den_q_degree": 8,
+      "factored": "-(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**2)"
+    }
+  },
+  "all_in_Q_of_q": true,
+  "transcendence_degree_over_Q": 1,
+  "dependence_forced": true,
+  "forcing_argument": "All three traces lie in Q(q), a field of transcendence degree 1 over Q. Any two elements of a trdeg-1 extension are algebraically dependent over Q, a fortiori any three. Dependence is therefore FORCED, independently of any numerical probe. This is a structural exclusion (AGENTS.md scope (b)), with the cited invariant being the transcendence degree.",
+  "method_2_resultant": [
+    {
+      "pair": [
+        "4_1",
+        "5_2"
+      ],
+      "min_degree": 10,
+      "relation": "4096*x**10 - 3456*x**9 + 3200*x**8*y**2 - 423*x**8 - 3642*x**7*y**2 + 870*x**7 + 625*x**6*y**4 - 1054*x**6*y**2 + 47*x**6 - 3900*x**5*y**4 - 1869*x**5*y**2 - 236*x**5 + 2796*x**4*y**4 + 1785*x**4*y**2 + 45*x**4 - 1250*x**3*y**6 - 1390*x**3*y**4 + 113*x**3*y**2 + 24*x**3 + 700*x**2*y**6 + 455*x**2*y**4 - 247*x**2*y**2 - 5*x**2 - 1375*x*y**6 + 300*x*y**4 + 5*x*y**2 - 2*x + 625*y**8 - 125*y**6 + 25*y**4 - 5*y**2 + 1"
+    },
+    {
+      "pair": [
+        "4_1",
+        "Borromean"
+      ],
+      "min_degree": 3,
+      "relation": "16*x**3 - 5*x**2*z - 19*x**2 + 11*x*z - 2*x - 5*z**2 + 4"
+    },
+    {
+      "pair": [
+        "5_2",
+        "Borromean"
+      ],
+      "min_degree": 12,
+      "relation": "256*y**12 + 128*y**10*z**2 + 1248*y**10*z - 1376*y**10 + 16*y**8*z**4 + 968*y**8*z**3 - 119*y**8*z**2 - 1626*y**8*z + 857*y**8 + 288*y**6*z**5 + 800*y**6*z**4 - 2246*y**6*z**3 + 1577*y**6*z**2 - 466*y**6*z - 129*y**6 + 32*y**4*z**7 + 640*y**4*z**6 - 1510*y**4*z**5 + 955*y**4*z**4 + 93*y**4*z**3 - 289*y**4*z**2 + 121*y**4*z + 39*y**4 + 160*y**2*z**8 - 288*y**2*z**7 + 186*y**2*z**6 - 205*y**2*z**5 + 81*y**2*z**4 + 162*y**2*z**3 - 114*y**2*z**2 + 4*y**2*z - y**2 + 16*z**10 - 24*z**9 + 9*z**8 + 8*z**6 - 14*z**5 + 6*z**4 + z**2 - 2*z + 1"
+    }
+  ],
+  "method_3_exact_minimal_degree": {
+    "minimal_total_degree": 3,
+    "nullspace_dim": 1,
+    "variables_used": [
+      "4_1",
+      "Borromean"
+    ],
+    "relation_terms": [
+      {
+        "exponents": [
+          0,
+          0,
+          0
+        ],
+        "coeff": "1/4"
+      },
+      {
+        "exponents": [
+          0,
+          0,
+          2
+        ],
+        "coeff": "-5/16"
+      },
+      {
+        "exponents": [
+          1,
+          0,
+          0
+        ],
+        "coeff": "-1/8"
+      },
+      {
+        "exponents": [
+          1,
+          0,
+          1
+        ],
+        "coeff": "11/16"
+      },
+      {
+        "exponents": [
+          2,
+          0,
+          0
+        ],
+        "coeff": "-19/16"
+      },
+      {
+        "exponents": [
+          2,
+          0,
+          1
+        ],
+        "coeff": "-5/16"
+      },
+      {
+        "exponents": [
+          3,
+          0,
+          0
+        ],
+        "coeff": "1"
+      }
+    ],
+    "verified_identically_zero": true
+  },
+  "method_4_exact_rational_points": [
+    {
+      "q": "7/3",
+      "relation_value": "0",
+      "vanishes": true
+    },
+    {
+      "q": "2",
+      "relation_value": "0",
+      "vanishes": true
+    },
+    {
+      "q": "-5/4",
+      "relation_value": "0",
+      "vanishes": true
+    },
+    {
+      "q": "11/7",
+      "relation_value": "0",
+      "vanishes": true
+    }
+  ],
+  "bean_claim_reproduces": {
+    "dependence_is_forced": true,
+    "in_Q_sqrt_q": "convention-C-frame; under D the traces lie in the smaller field Q(q)",
+    "min_degree_7": false,
+    "measured_min_degree": 3,
+    "note": "The degree-7 / nullspace-dim-3 figures are convention-C-frame (z = sqrt(q)/(q+1)). They are correct for C and need scoping, not correction. Under canonical convention D the minimal degree is 3."
+  },
+  "refs": [
+    "conj:three-knot-jet-order-independence",
+    "docs/audits/2026-08-21-jet-algebraic-dependence-convention-d.md"
+  ]
+}
