@@ -4,6 +4,51 @@
 · **Bean:** `qou-3q7t` · **Axis:** Δ_λ / `C_knot` magnitude · **Tier:** scope-(a) refutation of
 single-universal-`C_knot` + scope-(b) exclusion of any level-only rescale; **no fit**; nothing wired.
 
+> ## 🛑 CORRECTION 2026-08-21 — every number below is CONVENTION-C-FRAME, and the ⁴He one is
+> ## additionally ill-conditioned. The VERDICTS survive; the MAGNITUDES do not.
+>
+> **(i) The figures are stale.** This document records a run made under the Markov parameter
+> `z = √q/(q+1)` (convention C). The producer was refreshed to the canonical convention D
+> (`z = q³/(q²+1)`) on 2026-08-11 (`70d1ade383`, bean `qou-4jut`), and the committed witness
+> [`c-knot-nonuniversal-pinned-weight.witness.json`](../../computations/deltalambda/c-knot-nonuniversal-pinned-weight.witness.json)
+> now reads:
+>
+> | K | H_n | `\|S(K)\|` conv-C | `\|S(K)\|` conv-D | `C_knot` conv-C | `C_knot` conv-D |
+> |---|---|---|---|---|---|
+> | D | 6 | 0.7438 | 0.71745 | 5.853 | **6.0679** |
+> | T | 9 | 3.7349 | 2.47514 | 4.444 | **6.7061** |
+> | ³He | 9 | 4.5883 | 3.07899 | 3.292 | **4.9054** |
+> | ⁴He | 12 | 5.9456 | 0.19094 | 9.313 | **290.007** |
+> | | | | | spread **2.83×** | spread **59.12×** |
+>
+> The mirror ratio `C_knot(T)/C_knot(³He)` moves 1.35 → **1.3671**. **Do not quote "spread 2.83×" or
+> "`C_knot ≈ 5.85`" — both are superseded.** The bean `qou-3q7t` body carried the same C-era numbers
+> and is corrected in the same PR. Every *verdict* in this document is unaffected and in fact
+> strengthens: non-universality, the dimension-convention scan (`f^λ` still tightest), the failure of
+> any single scale, and the Lean mirror-pair exclusion all hold at the new magnitudes.
+>
+> **(ii) The 59.12× is dominated by one ill-conditioned denominator — read §2(a) with this in mind.**
+> `S(K)` is an *alternating* sum, so `|S|` can sit far below the scale of its summands. The
+> cancellation ratio `κ(K) = |S|/Σ_λ|t_λ|` is the reciprocal condition number of `|S|` under per-block
+> relative perturbation (`‖δ‖_∞ ≤ ε ⇒ |S′−S| ≤ ε·Σ|t| = (ε/κ)|S|`). Measured under convention D:
+> κ = 0.2911 (D) / 0.4137 (T) / 0.2944 (³He) / **0.0079548 (⁴He)**. **⁴He sits on a 126×
+> near-cancellation**, its largest single block term being **52× the whole signed sum**, so a 0.8%
+> per-block correction moves `C_knot(⁴He)` anywhere, sign included. Re-expressed per block, the
+> minimum sup-norm relative correction `δ_min^∞ = |B_AME/m_e − S|/Σ|t|` is 1.475/2.361/1.150/2.299 —
+> **spread 2.05×**, every isotope needing an order-unity correction.
+>
+> **This does NOT rescue universality** (`δ_min` is a *lower bound* on the missing structure, and equal
+> `δ_min` does not mean equal correction *direction*), and it does **not** weaken the §3 Lean
+> mirror-pair exclusion (T and ³He are both well-conditioned, κ ≈ 0.29–0.41). What it says is that the
+> missing per-block magnitude is an **order-unity** relative correction uniformly across all four
+> isotopes — reading the 59.12× as "⁴He is qualitatively harder" is reading a coordinate artifact.
+> Corroborated independently by [`threerow_4he_completion_probe.py`](../../computations/deltalambda/threerow_4he_completion_probe.py)
+> (bean `qou-prjo`), which already records a ⁴He **sign change in q** for the ℓ(λ)≥3 stratum of the
+> same object — a sign change is a zero, hence κ = 0 on the physical interval.
+>
+> Producer: [`c_knot_cancellation_conditioning_probe.py`](../../computations/deltalambda/c_knot_cancellation_conditioning_probe.py)
+> (0-fit, audit-only, convention D, proton pin). PR #5406, bean `qou-3q7t`.
+
 ## 0. BLUF
 
 Now that the binding weight is **pinned to the derived Wenzl `y_λ`** (Markov trace, PR #4543 — the
@@ -11,15 +56,16 @@ earlier "41× convention spread" was right-weight-vs-wrong-weight, resolved), th
 question for the deuteron deficit `C_knot` can finally be asked cleanly. It is asked here across the
 four lightest isotopes, all 0-fit:
 
-| K | H_n | `\|S(K)\|` | `C_knot(K) = B_AME/(m_e·\|S\|)` |
+| K | H_n | `\|S(K)\|` ⚠conv-C | `C_knot(K) = B_AME/(m_e·\|S\|)` ⚠conv-C |
 |---|---|---|---|
 | D | 6 | 0.7438 | **5.853** |
 | T | 9 | 3.7349 | **4.444** |
 | ³He | 9 | 4.5883 | **3.292** |
 | ⁴He | 12 | 5.9456 | **9.313** |
 
-**`C_knot` is NON-UNIVERSAL (spread 2.83×).** "Derive `C_knot ≈ 5.85` as one geometric/scale factor"
-is refuted. The Δ_λ magnitude derivation itself stays **OPEN** (`qou-3q7t`) — this narrows the attack,
+**`C_knot` is NON-UNIVERSAL (spread 2.83× — ⚠ CONVENTION-C; the canonical convention-D figure is
+59.12×, and see the correction banner above for why that number is ill-conditioned).** "Derive
+`C_knot ≈ 5.85` as one geometric/scale factor" is refuted. The Δ_λ magnitude derivation itself stays **OPEN** (`qou-3q7t`) — this narrows the attack,
 it does not close the gate.
 
 ## 1. The master formula and the convention pin
