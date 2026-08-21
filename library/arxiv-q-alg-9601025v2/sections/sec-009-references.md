@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-q-alg-9601025v2
-doc_title: "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Th´ eoriqueenslapp†"
+doc_title: "The hyperbolic volume of knots from the quantum dilogarithm"
 section_id: sec-009-references
 section_title: "References"
 section_number: null
 pages: 7-8
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
-doc_brief: "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Théoriqueenslapp† — The invariant of a link in three-sphere, associated with the cyclic quantum"
+doc_brief: "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N ."
 ---
 [1] J.W. Alexander, Topological invariants of knots and links , Trans.
 Amer. Math. Soc. 30 (1928) 275-306

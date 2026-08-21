@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-ph-0105039v1
-doc_title: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †"
+doc_title: "Hyperbolic Structure Arising from a Knot Invariant"
 section_id: sec-003-21-classical-dilogarithm-function
 section_title: "Classical Dilogarithm Function"
 section_number: 2.1
 pages: 3-4
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-doc_brief: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI † — We study the knot invariant based on the quantum dilogarithm function."
+doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
 ---
 We collect properties concerning the classical dilogarith m function (see Refs. 11, 12 for review).
 The Euler dilogarithm function Li2(x) is deﬁned by

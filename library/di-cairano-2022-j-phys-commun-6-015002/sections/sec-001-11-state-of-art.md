@@ -1,13 +1,13 @@
 ---
 doc_id: di-cairano-2022-j-phys-commun-6-015002
-doc_title: "Langevin equation in systems with also negative temperatures"
+doc_title: "On the derivation of a nonlinear generalized Langevin equation"
 section_id: sec-001-11-state-of-art
 section_title: "State-of-art"
 section_number: 1.1
 pages: 2-3
 source_pdf: Di_Cairano_2022_J._Phys._Commun._6_015002.pdf
 source_sha256: f75313b507f97172
-doc_brief: "Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized Langevin Equation To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002 — 14 sections: Introduction; Sta"
+doc_brief: "On the derivation of a nonlinear generalized Langevin equation — 14 sections: Introduction; State-of-art; Introduction to the problem"
 ---
 The generalized Langevin equation(GLE) is an important mathematical tool for investigating a wide class of
 both quantum and classical diffusive phenomena[1] and it is an extension of the Langevin equation[2]. The

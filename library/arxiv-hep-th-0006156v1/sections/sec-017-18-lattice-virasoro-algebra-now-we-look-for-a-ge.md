@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0006156v1
-doc_title: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE"
+doc_title: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality"
 section_id: sec-017-18-lattice-virasoro-algebra-now-we-look-for-a-ge
 section_title: "Lattice Virasoro algebra. Now we look for a generalization of this"
 section_number: 1.8
 pages: 6-7
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
-doc_brief: "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
+doc_brief: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well"
 ---
 construction by natural interpretation of the “raising”. S o, we want the
 lattice Virasoro algebra actually to be a group. If that is to be, the “global”

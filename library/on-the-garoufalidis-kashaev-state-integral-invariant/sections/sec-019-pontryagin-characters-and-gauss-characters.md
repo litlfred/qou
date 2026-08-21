@@ -1,13 +1,13 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025"
+doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
 section_id: sec-019-pontryagin-characters-and-gauss-characters
 section_title: "Pontryagin Characters and Gauss Characters"
 section_number: null
 pages: 20-21
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
+doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 A Pontryagin character is a continuous homomorphismχ :L−→ T, T :={z∈ C|
 |z| = 1}, so χ(x +y) =χ(x)χ(y). The set of all such characters forms the Pontryagin

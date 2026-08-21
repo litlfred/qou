@@ -1,13 +1,13 @@
 ---
 doc_id: disssubmission
-doc_title: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVER"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-120-25-debarre-osur-la-demonstration-de-a-weil-du-th
 section_title: "Debarre, O.,Sur la d´emonstration de A. Weil du th´eor`eme de Torelli pour les courbes,"
 section_number: 25
 pages: 178-181
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
-doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 121 sections: Acknowledgements; Introduction; Introduction"
 ---
 Compos. Math.58 (1986), 3–11.
 26. , Le lieu des vari´et´es ab´eliennes dont le diviseur thˆeta est singulier a deux

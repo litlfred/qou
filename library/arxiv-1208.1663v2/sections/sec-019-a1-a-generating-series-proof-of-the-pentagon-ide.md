@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1208.1663v2
-doc_title: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers"
+doc_title: "The 3D index of an ideal triangulation and angle structures"
 section_id: sec-019-a1-a-generating-series-proof-of-the-pentagon-ide
 section_title: "A.1. A generating series proof of the pentagon identity"
 section_number: null
 pages: 23-26
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
-doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
+doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 prove that I∆ satisﬁes the pentagon identity using generating series. We will abbreviate
 the Pochhammer symbol

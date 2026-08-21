@@ -1,13 +1,13 @@
 ---
 doc_id: disssubmission
-doc_title: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVER"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-019-24-chapter-2-proof-of-the-vanishing-theorems
 section_title: "Chapter 2 – Proof of the vanishing theorem(s)"
 section_number: 24
 pages: 32-33
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
-doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 121 sections: Acknowledgements; Introduction; Introduction"
 ---
 such that we have natural unity constraints
 K∗1

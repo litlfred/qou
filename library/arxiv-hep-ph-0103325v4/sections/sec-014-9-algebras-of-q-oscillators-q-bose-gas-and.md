@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0103325v4
-doc_title: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine"
+doc_title: "Quantum algebras in phenomenological description of particle properties"
 section_id: sec-014-9-algebras-of-q-oscillators-q-bose-gas-and
 section_title: "Algebras of q-oscillators, q-Bose gas and"
 section_number: 9
 pages: 6-8
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
-doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
+doc_brief: "Quantum algebras in phenomenological description of particle properties — 28 sections: Introduction; V ector mesons: q-deformation vs m; Octet baryon mass sum rules: best"
 ---
 two-pion (two-kaon) correlations
 The model of ideal gas of q-bosons based on

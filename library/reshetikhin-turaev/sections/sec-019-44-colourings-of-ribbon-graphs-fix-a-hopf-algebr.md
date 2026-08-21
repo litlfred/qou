@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-019-44-colourings-of-ribbon-graphs-fix-a-hopf-algebr
 section_title: "Colourings of Ribbon Graphs. Fix a Hopf algebra A. Denote by A = A(A) the"
 section_number: 4.4
 pages: 10-11
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 class of A-modules of finite dimension over the ground field. Denote by N = N(A) 
 the class of finite sequences (V1,~1), ...,(Vk, ek) where V 1, ..., VkeA and 51, "",~k 

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203273v3
-doc_title: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéa"
+doc_title: "Nilpotence, radicaux et structures monoïdales"
 section_id: sec-021-138-proposition-soita-une-cat-egorie-ab-elienne
 section_title: "Proposition. SoitA une cat ´egorie ab ´elienne stable par limites inductives"
 section_number: 1.3.8
 pages: 12-12
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
-doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
+doc_brief: "Nilpotence, radicaux et structures monoïdales — 302 sections: YVES ANDR ´E ET BRUNO KAHN; Introduction; YVES ANDR ´E ET BRUNO KAHN"
 ---
 quelconques. NotonsAcomp la sous-cat´egorie pleine de ses objets compacts. Sup-
 posonsAcomp dense dansA, c’est-`a-dire que tout objet de A est limite inductive

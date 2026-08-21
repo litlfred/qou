@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0605314v1
-doc_title: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO"
+doc_title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres"
 section_id: sec-004-13-a-uniﬁed-wrt-invariant-jm-with-values-in-ˆzq
 section_title: "A uniﬁed WRT invariant JM with values in ˆZ[q]. The following is the"
 section_number: 1.3
 pages: 3-4
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
-doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
+doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
 ---
 main result of the present paper, and follows from Theorems 1 0.2 and 11.1.
 Theorem 1.2. There is an invariant JM∈ ˆZ[q] of an integral homology sphere M

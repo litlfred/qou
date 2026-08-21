@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL"
+doc_title: "Cusp shapes under cone deformation"
 section_id: sec-008-22-boundary-terms
 section_title: "Boundary terms"
 section_number: 2.2
 pages: 9-10
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "CUSP SHAPES UNDER CONE DEFORMATION JESSICA S. PURCELL — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
 ---
 ary terms. In this section, we deﬁne these terms. We explain h ow they arise
 and recall certain properties. They will be used in the proof of Theorem 1.2.

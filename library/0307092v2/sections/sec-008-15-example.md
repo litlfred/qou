@@ -1,13 +1,13 @@
 ---
 doc_id: 0307092v2
-doc_title: "Published: 14 February 2004"
+doc_title: "Extended Bloch group and the Cheeger-Chern-Simons class"
 section_id: sec-008-15-example
 section_title: "Example"
 section_number: 15
 pages: 58-62
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
-doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
+doc_brief: "Extended Bloch group and the Cheeger-Chern-Simons class — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 We return to the ﬁgure 8 knot complement m004 of Example 14.4 to illustrate
 the above formulae. Denote the cross-ratio parameters of th e two simplices in

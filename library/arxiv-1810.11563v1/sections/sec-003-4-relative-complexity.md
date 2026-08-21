@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1810.11563v1
-doc_title: "Three Lectures on Complexity and Black Holes Leonard Susskind"
+doc_title: "Three Lectures on Complexity and Black Holes"
 section_id: sec-003-4-relative-complexity
 section_title: "Relative Complexity"
 section_number: 4
 pages: 7-9
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 The enormity of the space of states of quantum systems begs the question of how to
 measure the distance between states. Are some states close to each other and others

@@ -1,13 +1,13 @@
 ---
 doc_id: zagier-the-dilogarithm-function
-doc_title: "The Dilogarithm Function Don Zagier"
+doc_title: "The dilogarithm function"
 section_id: sec-045-c-asymptotic-calculations-in-this-subsection-we
 section_title: "Asymptotic calculations. In this subsection we study the asymptotic"
 section_number: C
 pages: 48-48
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
-doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The dilogarithm function — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 behavior of fA,B,C (z)a s z→ 0( q→ 1), concentrating for simplicity on the
 case r = 1, and use it to verify that the table of rank one solutions given

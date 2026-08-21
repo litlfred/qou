@@ -3,8 +3,9 @@
 title: Cross-check 0401068v1.pdf at computations/probes/qbeta_nz_even_series_fourone_probe.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:45Z
-updated_at: 2026-08-08T16:12:45Z
+updated_at: 2026-08-21T17:04:53Z
 ---
 
 The probe's tau extraction currently reads the CCGLS A-polynomial without a cited value; check the probe's A_{4_1} against Takata's A_{K_{-1}} seed coefficient-by-coefficient.
@@ -17,3 +18,10 @@ Source: `library/arxiv-math-0401068v1/0401068v1.pdf` — no `references.ts` entr
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0401068v1/  ->  [takata2004]
+  THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [takata2004] as the citation key when you do it.

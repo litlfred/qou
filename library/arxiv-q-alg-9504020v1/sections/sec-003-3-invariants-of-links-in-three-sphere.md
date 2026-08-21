@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-q-alg-9504020v1
-doc_title: "∗On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, et ` a "
+doc_title: "A link invariant from quantum dilogarithm"
 section_id: sec-003-3-invariants-of-links-in-three-sphere
 section_title: "Invariants of Links in Three-Sphere"
 section_number: 3
 pages: 4-5
 source_pdf: 9504020v1.pdf
 source_sha256: 0baef40fa9934c91
-doc_brief: "A Link Invariant from Quantum Dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Théoriqueenslapp† — The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix"
+doc_brief: "A link invariant from quantum dilogarithm — The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of"
 ---
 Let linkL inS3 is given by a two-strand tangle. Consider some non-singular (i.e.
 with only simple intersection points) planar projection of this tangle. Denote by

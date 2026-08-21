@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0903.0853v3
-doc_title: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS"
+doc_title: "Local analytic classification of q-difference equations"
 section_id: sec-096-343-another-kind-of-q-gevrey-interpolation-a-som
 section_title: "Another kind of q-Gevrey interpolation. — A somewhat sym-"
 section_number: 3.4.3
 pages: 49-51
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
-doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symm"
+doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
 ---
 metric problem is to describe the space of analytic classes w ithin a ﬁxed q-
 Gevrey class. This can be done in a similar way. We ﬁx a matrix AU0 where

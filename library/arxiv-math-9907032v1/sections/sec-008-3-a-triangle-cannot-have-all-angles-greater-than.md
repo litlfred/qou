@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Mathematics Department, California Institute of Technolog y"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-008-3-a-triangle-cannot-have-all-angles-greater-than
 section_title: "(a triangle cannot have all angles greater than π/3), we get"
 section_number: 3

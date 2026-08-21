@@ -1,13 +1,13 @@
 ---
 doc_id: 2018sorus020
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Reidemeister torsion on character varieties"
 section_id: sec-018-12-twisted-cohomology
 section_title: "Twisted cohomology"
 section_number: 1.2
 pages: 27-30
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
+doc_brief: "Reidemeister torsion on character varieties — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ"
 ---
 In this section we recall the basics of twisted cohomology that we will use in the
 sequel of the manuscript. Given a groupΓ, we will denote byZ[Γ] the group ring of

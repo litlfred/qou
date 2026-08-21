@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-ph-0105039v1
-doc_title: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †"
+doc_title: "Hyperbolic Structure Arising from a Knot Invariant"
 section_id: sec-005-22-quantum-dilogarithm-function-and-the-r-operat
 section_title: "Quantum Dilogarithm Function and the R Operator"
 section_number: 2.2
 pages: 5-8
 source_pdf: 0105039v1.pdf
 source_sha256: 850e6a00721e38d0
-doc_brief: "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI † — We study the knot invariant based on the quantum dilogarithm function."
+doc_brief: "Hyperbolic Structure Arising from a Knot Invariant — We study the knot invariant based on the quantum dilogarithm function."
 ---
 We deﬁne a function Φ γ (ϕ) by an integral form following Ref. 13:
 Φ γ (ϕ) = exp

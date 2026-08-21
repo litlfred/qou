@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-276-2-temperate-fundamental-groups-127
 section_title: "TEMPERATE FUNDAMENTAL GROUPS. 127"
 section_number: 2
 pages: 131-131
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 We see from the lemma that in the deﬁnition of a temperate cove ring,
 we may assume that T′→S and T′→T are Galois.

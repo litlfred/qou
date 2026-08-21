@@ -1,13 +1,13 @@
 ---
 doc_id: milnor-1982-hyperbolic-geometry-the-first-150-years
-doc_title: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY"
+doc_title: "Hyperbolic geometry: The first 150 years"
 section_id: sec-007-references
 section_title: "References"
 section_number: null
 pages: 14-16
 source_pdf: milnor-1982-hyperbolic-geometry-the-first-150-years.pdf
 source_sha256: d444d7a61af54c7c
-doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY HYPERBOLIC GEOMETRY: THE FIRST 150 YEARS BY JOHN MILNOR This will be a description of a few highlights in the early history of — 9 sections"
+doc_brief: "Hyperbolic geometry: The first 150 years — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
 ---
 [1827] C. F. Gauss, Disquisitiones generales circa superficies curvas, Commentationes Gottin-
 gensis 6 (Werke 4, 218-258; German summary, 341-347). 

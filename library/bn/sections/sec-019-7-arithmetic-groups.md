@@ -1,13 +1,13 @@
 ---
 doc_id: bn
-doc_title: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009"
+doc_title: "Braid groups and Hodge theory"
 section_id: sec-019-7-arithmetic-groups
 section_title: "Arithmetic groups"
 section_number: 7
 pages: 32-32
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
-doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
+doc_brief: "Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their"
 ---
 We now turn to arithmetic constraints on the image of the brai d group.
 Consider the Z[q]-module

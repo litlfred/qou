@@ -38,6 +38,7 @@ from __future__ import annotations
 
 import json
 import math
+from fractions import Fraction
 import os
 import re
 from glob import glob
@@ -184,7 +185,16 @@ def main() -> None:
     rows = []
     for n in range(3, 9):
         s_q = weight_sum(n, q0)
-        s_c = sum(dim_classical(l, n) ** 2 for l in partitions(n)) / math.factorial(n)
+        # EXACT, not float. This is the classical sum-of-squares identity
+        # Sum_lambda (f^lambda)^2 = n!, so the value is exactly 1 by a theorem.
+        # `int / int` in Python 3 is float division, which turned a proved
+        # identity into a float64 that merely lands on 1.0 — and put raw
+        # float64 in the witness. Fraction keeps it exact and lets the emission
+        # show `1`, which is the actual claim. Bean qou-irzg.
+        s_c = Fraction(
+            sum(dim_classical(l, n) ** 2 for l in partitions(n)),
+            math.factorial(n),
+        )
         rows.append(
             {
                 "n": n,
@@ -192,7 +202,7 @@ def main() -> None:
                 "sum_q_deformed_unbalanced_convention": mp.nstr(
                     weight_sum_unbalanced(n, q0), 30
                 ),
-                "sum_classical": s_c,
+                "sum_classical": str(s_c),
                 "deviation_from_one": mp.nstr(s_q - 1, 12),
             }
         )

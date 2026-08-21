@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.03697v5
-doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND"
+doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY"
 section_id: sec-005-23-poisson-algebraic-torus
 section_title: "Poisson algebraic torus"
 section_number: 2.3
 pages: 4-5
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 ⟨−,−⟩ as above, we consider the algebraic torus
 T+ = Hom Z(Γ , C∗)∼= (C∗)n,

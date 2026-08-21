@@ -1,13 +1,13 @@
 ---
 doc_id: ds15v1-2008
-doc_title: "Mathematics Subject Classi cation: 33D15, 05A17, 05A19, 11B65, 11P81"
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
 section_id: sec-101-references
 section_title: "References"
 section_number: null
 pages: 56-57
 source_pdf: ds15v1-2008.pdf
 source_sha256: aef155a324c6fdf4
-doc_brief: "Rogers-Ramanujan-Slater Type Identities James Mc Laughlin — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including"
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
 ---
 to the mathematical community in 1952. Accordingly, the authors believe it was a useful
 endeavor to bring together Slater’s list with Ramanujan’s lost notebook, and the dozens

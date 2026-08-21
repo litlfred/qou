@@ -3,8 +3,9 @@
 title: Cite 0006051v1.pdf at rem:q-dilog-three-contexts
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:30Z
-updated_at: 2026-08-08T16:12:30Z
+updated_at: 2026-08-21T17:04:43Z
 ---
 
 rem:q-dilog-three-contexts currently states the F_p truncation and the Q_p/C_p convergence with zero citations; Besser Prop. 2.1 is the standard source for the q=1 finite/p-adic polylogarithm relation.
@@ -19,3 +20,10 @@ Source: `library/arxiv-math-0006051v1/0006051v1.pdf` — no `references.ts` entr
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0006051v1/  ->  [besser2000]
+  Finite and p-adic polylogarithms
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [besser2000] as the citation key when you do it.

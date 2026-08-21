@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-100-4-abelian-periods-as-algebraic-integrals-47
 section_title: "ABELIAN PERIODS AS ALGEBRAIC INTEGRALS. 47"
 section_number: 4
 pages: 51-52
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 Note that another choice of ( ... ,ζ pn,... , 1) changes (2iπ)p by multipli-
 cation by a unit in Zp. Similarly, up to addition of an element of (2 iπ)pZp,

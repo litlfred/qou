@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-q-alg-9608020v2
-doc_title: "∂x i + (n −j)θ +u 1≤i,j ≤n D(u;θ)Pλ (x;θ) = ( ∏ (λ i + (n −i)θ +u) Pλ (x;θ),(1.1) where V (x) =∏ i<j(xi −xj) is the Vandermonde determinant and u is a parame- ter. The operators {D"
+doc_title: "Shifted Jack polynomials, binomial formula, and applications"
 section_id: sec-002-2-shifted-jack-polynomials-s1oook1ksok3-denote-b
 section_title: "Shifted Jack polynomials ( [S1,OO,Ok1,KS,Ok3]). Denote by Λ θ (n) the al-"
 section_number: 2
 pages: 2-3
 source_pdf: 9608020v2.pdf
 source_sha256: 727268098db7f23d
-doc_brief: "SHIFTED JACK POLYNOMIALS, BINOMIAL — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1. Jack polynomials ( [M,St])."
+doc_brief: "Shifted Jack polynomials, binomial formula, and applications — In this note we prove an explicit binomial formula for Jack poly nomials and discuss some applications of it. 1."
 ---
 gebra of polynomials f (x1,...,x n) that are symmetric in variables xi −θi. We
 call such polynomials shifted symmetric . By (1.1) one has the Harish-Chandra

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203273v3
-doc_title: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéa"
+doc_title: "Nilpotence, radicaux et structures monoïdales"
 section_id: sec-187-1332-sorite-soient-a-aπa-comme-dans-le-th-eoreme
 section_title: "Sorite. Soient (A,•), ¯A,πA comme dans le th ´eor`eme 13.2.1. Alors le th ´e-"
 section_number: 13.3.2
 pages: 66-66
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
-doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
+doc_brief: "Nilpotence, radicaux et structures monoïdales — 302 sections: YVES ANDR ´E ET BRUNO KAHN; Introduction; YVES ANDR ´E ET BRUNO KAHN"
 ---
 or`eme 13.2.1 r ´esulte de l’´enonc´e plus faible obtenu en remplac ¸ant dans a) et b) le
 mot “section” par “quasi-section”, o `u une quasi-section mono¨ıdale deπA est par

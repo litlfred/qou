@@ -7,7 +7,7 @@ section_number: 4.1
 pages: 20-21
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+doc_brief: "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks"
 duplicate_of: "agt-v7-n2-p13-s"
 ---
 r > 0, and r > 2 if g = 0, ﬁx a compact closed oriented base surface S of genus g with a set

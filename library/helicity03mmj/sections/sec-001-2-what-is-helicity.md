@@ -1,13 +1,13 @@
 ---
 doc_id: helicity03mmj
-doc_title: "MOSCOW MA THEMA TICAL JOURNAL"
+doc_title: "Geometry of higher helicities"
 section_id: sec-001-2-what-is-helicity
 section_title: "What is Helicity?"
 section_number: 2
 pages: 2-5
 source_pdf: helicity03mmj.pdf
 source_sha256: e364dad3afff3180
-doc_brief: "MOSCOW MATHEMATICAL JOURNAL — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
+doc_brief: "Geometry of higher helicities — We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem."
 ---
 Let M be a simply connected three-dimensional manifold with a volume form
 µ, and ξ a divergence-free vector ﬁeld on M . The divergence-free property means

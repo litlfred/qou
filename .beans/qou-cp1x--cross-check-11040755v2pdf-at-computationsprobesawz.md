@@ -3,8 +3,9 @@
 title: Cross-check 1104.0755v2.pdf at computations/probes/awzero_asymptotics_probe.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:04Z
-updated_at: 2026-08-08T16:13:04Z
+updated_at: 2026-08-21T17:04:52Z
 ---
 
 Evaluate both sides of the Theorem numerically at the substrate-relevant w and a spread of x, and check the zeros predicted by the theta factor against the tropical corners w^{1-2n} the probe computes. A mismatch would indicate the corpus's normalisation of A_w differs from Morita's; agreement independently validates the refuted-triangulation-free style of check the audit currently lacks.
@@ -17,3 +18,10 @@ Source: `library/arxiv-1104.0755v2/1104.0755v2.pdf` — no `references.ts` entry
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1104.0755v2/  ->  [morita-t2011]
+  A connection formula between the Ramanujan function and the q-Airy function
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [morita-t2011] as the citation key when you do it.

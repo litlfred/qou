@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL"
+doc_title: "Cusp shapes under cone deformation"
 section_id: sec-021-references
 section_title: "References"
 section_number: null
 pages: 44-46
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "CUSP SHAPES UNDER CONE DEFORMATION JESSICA S. PURCELL — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
 ---
 [1] Colin C. Adams, Augmented alternating link complements are hyperbolic , Low-
 dimensional topology and Kleinian groups (Coventry/Durha m, 1984), London Math.

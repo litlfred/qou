@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1101.0956v3
-doc_title: "CONSTANTIN M. ARCUS ¸"
+doc_title: "Algebraic constructions in the category of vector bundles"
 section_id: sec-001-references
 section_title: "References"
 section_number: null
 pages: 15-16
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
-doc_brief: "CONSTANTIN M. ARCUS ¸ — In this paper we present the category of generalized Lie algebroids ."
+doc_brief: "Algebraic constructions in the category of vector bundles — In this paper we present the category of generalized Lie algebroids ."
 ---
 [1] C. M. Arcus, The generalized Lie algebroids and their applications , arXiv:
 1007.1451v2, math-ph, 10 Aug (2010).

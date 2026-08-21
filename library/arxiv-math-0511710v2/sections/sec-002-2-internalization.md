@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0511710v2
-doc_title: "Higher Gauge Theory John Baez Department of Mathematics University of California"
+doc_title: "Higher gauge theory"
 section_id: sec-002-2-internalization
 section_title: "Internalization"
 section_number: 2
 pages: 8-9
 source_pdf: 0511710v2.pdf
 source_sha256: f88f50d459080490
-doc_brief: "Higher Gauge Theory John Baez Department of Mathematics University of California — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge"
+doc_brief: "Higher gauge theory — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional"
 ---
 The idea of internalization is simple: given a mathematical concept X deﬁned
 solely in terms of sets, functions and commutative diagrams involving these, and

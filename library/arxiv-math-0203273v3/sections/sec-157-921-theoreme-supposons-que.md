@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203273v3
-doc_title: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéa"
+doc_title: "Nilpotence, radicaux et structures monoïdales"
 section_id: sec-157-921-theoreme-supposons-que
 section_title: "Th´eor`eme. Supposons que"
 section_number: 9.2.1
 pages: 53-54
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
-doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
+doc_brief: "Nilpotence, radicaux et structures monoïdales — 302 sections: YVES ANDR ´E ET BRUNO KAHN; Introduction; YVES ANDR ´E ET BRUNO KAHN"
 ---
 ⊗√0 = 0 . Alors
 a) La cat ´egorieAkim est munie d’une Z/2-graduation compatible `a la structure

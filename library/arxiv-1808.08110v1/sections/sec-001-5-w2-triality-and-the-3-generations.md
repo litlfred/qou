@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1808.08110v1
-doc_title: "EXCEPTIONAL QUANTUM GEOMETRY"
+doc_title: "Exceptional quantum geometry and particle physics II"
 section_id: sec-001-5-w2-triality-and-the-3-generations
 section_title: "W2-triality and the 3 generations"
 section_number: 5
 pages: 12-15
 source_pdf: 1808.08110v1.pdf
 source_sha256: 4bf98566792d47bd
-doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for the description of the"
+doc_brief: "Exceptional quantum geometry and particle physics II — We continue the study undertaken in [13] of the relevance of t he exceptional Jordan algebra J 8 3 of hermitian 3 × 3 octonionic matrices for"
 ---
 We now consider the triality as corresponding to the 3 canonical Jor dan
 subalgebras J(1), J(2), J(3) isomorphic to J 8

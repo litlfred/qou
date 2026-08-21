@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-183-433-let-us-say-a-word-about-the-polarized-varian
 section_title: "Let us say a word about the polarized variant (here, it is safe r to"
 section_number: 4.3.3
 pages: 89-91
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 assume p⁄= 2). One assumes that Bp is endowed with an involution ∗, and
 that Lp is autodual for an alternate Zp-bilinear form such that ⟨bv,w⟩=

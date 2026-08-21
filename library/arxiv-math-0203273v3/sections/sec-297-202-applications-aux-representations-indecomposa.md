@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203273v3
-doc_title: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéa"
+doc_title: "Nilpotence, radicaux et structures monoïdales"
 section_id: sec-297-202-applications-aux-representations-indecomposa
 section_title: "Applications aux repr´esentations ind´ecomposables. SoitV une repr´ esen-"
 section_number: 20.2
 pages: 116-117
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
-doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
+doc_brief: "Nilpotence, radicaux et structures monoïdales — 302 sections: YVES ANDR ´E ET BRUNO KAHN; Introduction; YVES ANDR ´E ET BRUNO KAHN"
 ---
 tation ﬁd` ele deG. On note (abusivement) GV une enveloppe r´ eductive deG dans
 GL(V ) (c’est-` a-dire, d’apr` es ce qui pr´ ec` ede, le groupe r´ eductif image dansGL(V )

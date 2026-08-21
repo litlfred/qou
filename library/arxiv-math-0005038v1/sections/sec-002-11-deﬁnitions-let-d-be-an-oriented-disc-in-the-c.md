@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0005038v1
-doc_title: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW"
+doc_title: "Braid groups are linear"
 section_id: sec-002-11-deﬁnitions-let-d-be-an-oriented-disc-in-the-c
 section_title: "Deﬁnitions. Let D be an oriented disc in the complex plane. Fix a set"
 section_number: 1.1
 pages: 1-2
 source_pdf: 0005038v1.pdf
 source_sha256: db0b9b7a8534f161
-doc_brief: "BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
+doc_brief: "Braid groups are linear — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc."
 ---
 P ⊂ D consisting of n distinct points p1, . . . , pn in the interior of D. Let H(D, P )
 be the group of all homeomorphisms h : D → D such that h(P ) = P and h ﬁxes

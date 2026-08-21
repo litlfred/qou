@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-567-11-let-p-be-a-prime-number-k-a-perfect-ﬁeld-of-c
 section_title: "Let p be a prime number, k a perfect ﬁeld of characteristic p, K0 an"
 section_number: 1.1
 pages: 235-236
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 absolutely unramiﬁed discrete valuation ﬁeld of mixed char acteristics (0,p )
 with residue ﬁeld k, K 0 an algebraic closure of K0, and σ the Frobenius

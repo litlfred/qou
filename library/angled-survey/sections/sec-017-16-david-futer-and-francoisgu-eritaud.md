@@ -1,13 +1,13 @@
 ---
 doc_id: angled-survey
-doc_title: "Contemporary Mathematics From angled triangulations to hyperbolic structures"
+doc_title: "From angled triangulations to hyperbolic structures"
 section_id: sec-017-16-david-futer-and-francoisgu-eritaud
 section_title: "DAVID FUTER AND FRANC¸OISGU ´ERITAUD"
 section_number: 16
 pages: 16-16
 source_pdf: angled-survey.pdf
 source_sha256: 8b49e682a39848bc
-doc_brief: "Contemporary Mathematics From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on"
+doc_brief: "From angled triangulations to hyperbolic structures — This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifoldM with"
 ---
 Notice that the curvesρ1,...,ρ n,σ1,...,σ 2k are exactly the ones whose holo-
 nomy is being considered in Deﬁnition 2.4.

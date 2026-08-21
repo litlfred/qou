@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-433-417-one-of-the-main-applications-of-complex-orbi
 section_title: "One of the main applications of complex orbifolds is to repre sent"
 section_number: 4.1.7
 pages: 164-164
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 moduli problems for isomorphism classes of objects with ﬁni te automor-
 phism group. We have already alluded to this in II.1.1. Here w e shall

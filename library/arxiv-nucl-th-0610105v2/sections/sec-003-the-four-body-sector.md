@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-0610105v2
-doc_title: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut f¨ ur Strahlen- und Kernphysik (Theori e)"
+doc_title: "Universal Properties of the Four-Body System with Large Scattering Length"
 section_id: sec-003-the-four-body-sector
 section_title: "The Four-Body Sector"
 section_number: null
 pages: 6-7
 source_pdf: 0610105v2.pdf
 source_sha256: 5f3bd6d31a419d4d
-doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer ∗ Helmholtz-Institut für Strahlen- und Kernphysik (Theori e) — Few-body systems with large scattering length"
+doc_brief: "Universal Properties of the Four-Body System with Large Scattering Length — Few-body systems with large scattering length have univers al properties that do not depend on the details of their"
 ---
 Yakubovsky equations which are a generalization of the Faddeev eq uations to the four-body
 system. The full four-body wave function Ψ is ﬁrst decomposed int o Faddeev components,

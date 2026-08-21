@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0806.3105v3
-doc_title: "KNOTS AND PREONS Robert J. Finkelstein"
+doc_title: "Knots and preons"
 section_id: sec-004-preons-as-physical-particles
 section_title: "Preons as Physical Particles"
 section_number: null
 pages: 13-14
 source_pdf: 0806.3105v3.pdf
 source_sha256: a37b4f2e96365d30
-doc_brief: "KNOTS AND PREONS Robert J. Finkelstein — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that"
+doc_brief: "Knots and preons — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with"
 ---
 We have so far viewed the preons only as a simple way to describe the a lgebraic structure
 of the knot polynomials. If these preons are in fact physical partic les, the following decay

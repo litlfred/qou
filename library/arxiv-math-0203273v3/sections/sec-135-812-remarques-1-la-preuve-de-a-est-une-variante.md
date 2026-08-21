@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203273v3
-doc_title: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéa"
+doc_title: "Nilpotence, radicaux et structures monoïdales"
 section_id: sec-135-812-remarques-1-la-preuve-de-a-est-une-variante
 section_title: "Remarques. 1) La preuve de a) est une variante abstraite de la preuve clas-"
 section_number: 8.1.2
 pages: 46-46
 source_pdf: 0203273v3.pdf
 source_sha256: 824715d110e34305
-doc_brief: "NILPOTENCE, RADICAUX ET STRUCTURES MONO ÏDALES YVES ANDRÉ ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI ÈRES Introduction 3 I. Radicaux et nilpotence 7 1. Idéaux et radicaux 7 — 3"
+doc_brief: "Nilpotence, radicaux et structures monoïdales — 302 sections: YVES ANDR ´E ET BRUNO KAHN; Introduction; YVES ANDR ´E ET BRUNO KAHN"
 ---
 sique de la ﬁnitude des cycles alg´ ebriques modulo l’´ equivalence num´ erique. L’hy-
 poth` ese est tr` es faible, mais non superﬂue : on peut montrer que l’exemple de [14,

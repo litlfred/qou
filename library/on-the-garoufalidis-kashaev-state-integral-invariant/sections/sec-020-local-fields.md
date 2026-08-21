@@ -1,13 +1,13 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025"
+doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
 section_id: sec-020-local-fields
 section_title: "Local Fields"
 section_number: null
 pages: 21-23
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
+doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 Local fields give rise to special Gaussian groups [7].
 Definition 5 (Special Gaussian group created from a local field) . Let F be a local

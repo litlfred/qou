@@ -1,13 +1,13 @@
 ---
 doc_id: aif-2009-59-1-347-0
-doc_title: "L’INSTITUT FOURIER"
+doc_title: "On q-summation and confluence"
 section_id: sec-004-12-confluence
 section_title: "Confluence"
 section_number: 1.2
 pages: 10-16
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
-doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
+doc_brief: "On q-summation and confluence — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 In the present article, we will denote by ep(x) and eq(x) the functions
 obtained by replacing n! by [n]!

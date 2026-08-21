@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0903.0853v3
-doc_title: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS"
+doc_title: "Local analytic classification of q-difference equations"
 section_id: sec-195-7121-factoring-l-to-get-l-q2zσqaσqb-we-ﬁrst-look
 section_title: "Factoring L. — To get L = q2z(σq−A)(σq−B), we ﬁrst look for"
 section_number: 7.1.2.1
 pages: 122-122
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
-doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symm"
+doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
 ---
 B such that (σq−B)f0 = 0, that is, B := σqf0
 f0

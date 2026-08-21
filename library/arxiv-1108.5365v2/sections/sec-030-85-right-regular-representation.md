@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5365v2
-doc_title: "Representation of the Quantum Plane, its Quantum"
+doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)"
 section_id: sec-030-85-right-regular-representation
 section_title: "Right regular representation"
 section_number: 8.5
 pages: 85-87
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
 ---
 Similarly by applying the pairing to the right regular corepresentation we obtain
 Theorem 8.14. The right regular corepresentation is equivalent to

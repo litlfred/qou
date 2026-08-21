@@ -1,13 +1,13 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025"
+doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
 section_id: sec-042-angle-structures-and-parameter-dependence
 section_title: "Angle Structures and Parameter Dependence"
 section_number: null
 pages: 48-49
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT Amelia Palmer Dusenbury A thesis of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 — 61 sec"
+doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
 ---
 • The state-integral requires a choice of balanced angle structure:
 θ∈ Angle(X)⊆C X3,1, withC := R×F×,

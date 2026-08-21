@@ -3,8 +3,9 @@
 title: Remark interpreting 0006111v2.pdf at prop:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:32Z
-updated_at: 2026-08-08T16:12:32Z
+updated_at: 2026-08-21T17:05:10Z
 ---
 
 Record what a q-deformed Definition 1.3 would have to assert, and the obstruction that the Markov trace on H_n(q) is not a positive-definite function on S_q — this turns the open clause (3) into a stated programme rather than a bare conjecture.
@@ -19,3 +20,10 @@ Source: `library/arxiv-math-0006111v2/0006111v2.pdf` — no `references.ts` entr
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0006111v2/  ->  [biane2000]
+  Approximate factorization and concentration for characters of symmetric groups
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [biane2000] as the citation key when you do it.

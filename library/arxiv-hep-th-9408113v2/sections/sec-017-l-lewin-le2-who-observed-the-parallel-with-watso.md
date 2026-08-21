@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "Steklov Mathematical Institute"
+doc_title: "Dilogarithm identities"
 section_id: sec-017-l-lewin-le2-who-observed-the-parallel-with-watso
 section_title: "Lewin [Le2] who observed the parallel with Watson’s three identities and conjectured"
 section_number: L
 pages: 18-19
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 the second and third relations of the triple. The second was p roved by Loxton in the same
 paper [Lo1], but the third one was a numerical fact and for som e time had no analytic

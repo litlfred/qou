@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2507.13873v1
-doc_title: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+doc_title: "Probing the singularity at the holographic screen via q-holography"
 section_id: sec-001-correlation-functions-on-the-quantum-disk
 section_title: "Correlation functions on the quantum disk"
 section_number: null
 pages: 4-5
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 We first remind the reader of the conventional CFT story. Correlation functions of primary
 operators in a conformal field theory are strongly constrained by the Ward identities of

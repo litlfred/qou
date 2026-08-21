@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-035-61-a-summary-of-the-results-to-come
 section_title: "A summary of the results to come"
 section_number: 6.1
 pages: 46-50
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Using only the algebra of the complex octonions, which we will introduce, we expose an
 intrinsic structure to a generation of quarks and leptons. This algebraic structure mimics

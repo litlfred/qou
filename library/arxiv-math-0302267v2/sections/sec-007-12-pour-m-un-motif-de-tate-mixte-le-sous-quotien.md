@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-007-12-pour-m-un-motif-de-tate-mixte-le-sous-quotien
 section_title: "Pour M un motif de Tate mixte, le sous-quotient W−2n(M )/W−2(n+2)(M ) de M est"
 section_number: 1.2
 pages: 7-14
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 une extension Mn,n+1 de Gr W
 −2n(M ) = Q(n) ⊗ ωn(M ) par Gr W

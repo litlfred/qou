@@ -1,13 +1,13 @@
 ---
 doc_id: bn
-doc_title: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009"
+doc_title: "Braid groups and Hodge theory"
 section_id: sec-027-6-suppose-q-ζ-k
 section_title: "Suppose q =ζ k"
 section_number: 6
 pages: 35-36
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
-doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
+doc_brief: "Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their"
 ---
 d with 0 <k <d/ 2 and gcd(k,d ) = 1. Using Corollary
 3.2 to compute the signature ( r′,s ′) of H 1(X)q′ for the other primitive

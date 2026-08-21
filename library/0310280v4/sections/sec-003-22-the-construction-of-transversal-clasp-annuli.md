@@ -1,13 +1,13 @@
 ---
 doc_id: 0310280v4
-doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all tr"
+doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots"
 section_id: sec-003-22-the-construction-of-transversal-clasp-annuli
 section_title: "The construction of transversal clasp annuli"
 section_number: 2.2
 pages: 8-13
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
-doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 9 sections: Introduction and description of re; The MTWS and transversal isotopies; Block-strand diagrams, templates a"
 ---
 The goal in this subsection and the two that follow it is to state and prove a modiﬁed
 version of Theorem 1 which holds in the transversal setting. The proof of the MTWS

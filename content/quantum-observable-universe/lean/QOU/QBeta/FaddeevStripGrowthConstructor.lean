@@ -37,7 +37,7 @@ No fit; nothing wired; the leg stays *stated*-conditional (per
 `FaddeevStripGrowthFKV` (hence #4424 box reduction) + `FaddeevPhiStripGrowth`.
 Sorry-free.
 
--- Ref: [faddeev-kashaev-volkov-2001] https://arxiv.org/abs/hep-th/0006156 (§6, eqs 21-22)
+-- Ref: [faddeev-kashaev-volkov2000] https://arxiv.org/abs/hep-th/0006156 (§6, eqs 21-22)
 -/
 import Mathlib.LinearAlgebra.Basis.Defs
 import Mathlib.LinearAlgebra.Basis.Basic

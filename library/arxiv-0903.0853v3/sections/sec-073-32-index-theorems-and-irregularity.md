@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0903.0853v3
-doc_title: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS"
+doc_title: "Local analytic classification of q-difference equations"
 section_id: sec-073-32-index-theorems-and-irregularity
 section_title: "Index theorems and irregularity"
 section_number: 3.2
 pages: 38-38
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
-doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symm"
+doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
 ---
 We shall now give some complements to the results in 3.1.1, in the form
 of index theorems. They mostly originate in the works [ 7] of B´ ezivin(2) and

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5286v3
-doc_title: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen"
+doc_title: "Hochschild homology of affine Hecke algebras"
 section_id: sec-001-1-preliminaries
 section_title: "Preliminaries"
 section_number: 1
 pages: 5-7
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
-doc_brief: "Hochschild homology of affine Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not"
+doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 1.1 Aﬃne Hecke algebras
 Let a be a ﬁnite dimensional real vector space and let a∗ be its dual. Let Y ⊂ a be

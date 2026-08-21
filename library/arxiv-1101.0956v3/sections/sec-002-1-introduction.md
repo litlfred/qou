@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1101.0956v3
-doc_title: "CONSTANTIN M. ARCUS ¸"
+doc_title: "Algebraic constructions in the category of vector bundles"
 section_id: sec-002-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 16-18
 source_pdf: 1101.0956v3.pdf
 source_sha256: 28fffdb404e88501
-doc_brief: "CONSTANTIN M. ARCUS ¸ — In this paper we present the category of generalized Lie algebroids ."
+doc_brief: "Algebraic constructions in the category of vector bundles — In this paper we present the category of generalized Lie algebroids ."
 ---
 2 The category of generalized Lie algebroids 3
 3 Interior Diﬀerential Systems 6

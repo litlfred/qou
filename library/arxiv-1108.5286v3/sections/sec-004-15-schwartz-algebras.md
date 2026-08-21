@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5286v3
-doc_title: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen"
+doc_title: "Hochschild homology of affine Hecke algebras"
 section_id: sec-004-15-schwartz-algebras
 section_title: "Schwartz algebras"
 section_number: 1.5
 pages: 12-16
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
-doc_brief: "Hochschild homology of affine Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not"
+doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 An important tool to study H-representations is restriction to the commutative
 subalgebra A ∼

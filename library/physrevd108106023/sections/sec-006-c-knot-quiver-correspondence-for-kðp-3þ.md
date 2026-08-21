@@ -1,13 +1,13 @@
 ---
 doc_id: physrevd108106023
-doc_title: "I. INTRODUCTION Knot-quiver correspondence (KQC) conjectured by Kucharski-Reineke-Stosic-Sulkowski [1] provides a new encoding of HOMFL Y -PT invariants of knots in terms of the re"
+doc_title: "Knot-quiver correspondence for double twist knots"
 section_id: sec-006-c-knot-quiver-correspondence-for-kðp-3þ
 section_title: "Knot-quiver correspondence for Kðp; − 3Þ"
 section_number: C
 pages: 6-7
 source_pdf: PhysRevD.108.106023.pdf
 source_sha256: 50c7980e88cd21a0
-doc_brief: "Knot-quiver correspondence for double twist knots Vivek Kumar Singh * — 9 sections: INTRODUCTION; DOUBLE TWIST KNOTS; Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk"
+doc_brief: "Knot-quiver correspondence for double twist knots — 9 sections: INTRODUCTION; DOUBLE TWIST KNOTS; Fk ˜Fk /C1/C1/C1 /C1/C1/C1 Fk ˜Fk"
 ---
 Following reverse MMR, we could write the quiver
 presentation for Kð3; −3Þ and obtain the quiver matrix

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0905.0591v3
-doc_title: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS"
+doc_title: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS"
 section_id: sec-019-62-twisted-alexander-polynomials-and-the-thursto
 section_title: "Twisted Alexander polynomials and the Thurston norm"
 section_number: 6.2
 pages: 21-23
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 of Alexander that given a knot K ⊂S3 the following inequality holds:
 2genus(K) ≥ deg(∆ K ).

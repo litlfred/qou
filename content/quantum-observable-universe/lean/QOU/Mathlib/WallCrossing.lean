@@ -22,7 +22,7 @@
   Sorry-free algebraic core; the analytic content (convergence of infinite
   products, existence of stability conditions) is stated as axioms.
 
-  -- Ref: [kontsevich-soibelman2008] https://arxiv.org/abs/0811.2435
+  -- Ref: [kontsevich-soibelman-2008] https://arxiv.org/abs/0811.2435
   -- Ref: [bridgeland2007] https://doi.org/10.4007/annals.2007.166.317
 -/
 

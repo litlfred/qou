@@ -1,13 +1,13 @@
 ---
 doc_id: 0310280v4
-doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all tr"
+doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots"
 section_id: sec-002-21-block-strand-diagrams-templates-and-the-mtws
 section_title: "Block-strand diagrams, templates and the MTWS"
 section_number: 2.1
 pages: 4-8
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
-doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 9 sections: Introduction and description of re; The MTWS and transversal isotopies; Block-strand diagrams, templates a"
 ---
 LetB be the collection of all braid isotopy classes of closed braid representatives of
 oriented knot types in oriented R3. Among these, consider the sub-collectionB(X ) of

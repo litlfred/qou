@@ -183,7 +183,10 @@ def main():
         "scriptFile": os.path.basename(__file__),
         "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "assertions": assertions, "allPassed": all_passed,
-        "result": {"Z_at_q0": {n: float(Zvals[n][1]) for n in (2, 3, 4, 5)},
+        # NOT float(): Zvals[n][1] is a sympy N() value carrying more than
+        # float64; str() keeps what was computed. The display line above uses
+        # float() deliberately, which is display-only. Bean qou-irzg.
+        "result": {"Z_at_q0": {n: str(Zvals[n][1]) for n in (2, 3, 4, 5)},
                    "Z2_exact": str(Zvals[2][0]), "Z3_exact": str(Zvals[3][0]),
                    "verdict": verdict},
         "context": {

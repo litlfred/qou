@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9806163v1
-doc_title: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana"
+doc_title: "Weights of Markov traces on Hecke algebras"
 section_id: sec-019-5-the-weight-formula
 section_title: "The Weight Formula"
 section_number: 5
 pages: 16-18
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
-doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
+doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 In this section we deﬁne for every pair of partitions, ( α, β), a rational function in q and Q,
 W(α,β )(q, Q). We will show that this function is a weight for the Markov trace deﬁ ned by

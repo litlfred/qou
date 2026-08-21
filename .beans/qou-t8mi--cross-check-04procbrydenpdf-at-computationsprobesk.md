@@ -3,8 +3,9 @@
 title: Cross-check 04procbryden.pdf at computations/probes/keystone_colored_sigma235_wrt.py
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T00:10:44Z
-updated_at: 2026-08-09T00:10:44Z
+updated_at: 2026-08-21T17:05:04Z
 ---
 
 Cross-check the probe's Psi(q) = sum chi(n) q^{n^2/120} against this paper's q(q-1) Z_inf = 1 - (1/2) sum chi(n) q^{(n^2-1)/120}. The support set agrees (independent confirmation); the exponent offset q^{-1/120} and the q(q-1) prefactor do not obviously agree, and they move the operational Psi(1/q0) = 2.32958 in the fourth digit. A disagreement is a normalisation bug in the transcription; an agreement is an independent confirmation. Either way the external number is never adopted — only compared.
@@ -19,3 +20,10 @@ Source: `library/04procbryden/04procbryden.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/04procbryden/  ->  [jacoby-lawrence2004]
+  Some computations of Ohtsuki series
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [jacoby-lawrence2004] as the citation key when you do it.

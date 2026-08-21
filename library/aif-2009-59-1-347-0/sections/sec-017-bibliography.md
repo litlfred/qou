@@ -1,13 +1,13 @@
 ---
 doc_id: aif-2009-59-1-347-0
-doc_title: "L’INSTITUT FOURIER"
+doc_title: "On q-summation and confluence"
 section_id: sec-017-bibliography
 section_title: "Bibliography"
 section_number: null
 pages: 46-47
 source_pdf: AIF_2009__59_1_347_0.pdf
 source_sha256: 35b8422990e24888
-doc_brief: "ANNALESDEL’INSTITUTFOURIER ANNALES L’INSTITUT FOURIER — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
+doc_brief: "On q-summation and confluence — 18 sections: Introduction; Part 1. Convergent q-Borel and q-L; Convergent q-Euler series"
 ---
 [1] G. E. Andrew, R. Askey & R. Roy , Special functions , Encyclopedia of Mathe-
 matics and Its Applications, vol. 71, Cambridge University Press, Cambridge, 1999.

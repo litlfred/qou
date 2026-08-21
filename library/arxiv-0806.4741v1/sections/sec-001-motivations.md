@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0806.4741v1
-doc_title: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louva"
+doc_title: "The deformation quantizations of the hyperbolic plane"
 section_id: sec-001-motivations
 section_title: "Motivations"
 section_number: null
 pages: 1-3
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 The idea of the formal deformation quantization program [1], initiated by Bayen, Flato, Fronsdal, Lichnerow-
 icz and Sternheimer, is to generalize the Weyl product to an arbitrary symplectic (or Poisson) manifold. In

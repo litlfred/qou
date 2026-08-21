@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0608414v1
-doc_title: "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗"
+doc_title: "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations"
 section_id: sec-008-useful-formulas
 section_title: "Useful formulas"
 section_number: null
 pages: 46-47
 source_pdf: 0608414v1.pdf
 source_sha256: bd9a8d48a6d66945
-doc_brief: "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗ — For analytic nonlinear systems of ordinary diﬀerential equa"
+doc_brief: "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations — For analytic nonlinear systems of ordinary"
 ---
 B( 1
 xn ) = pn−1

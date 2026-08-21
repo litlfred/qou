@@ -1,13 +1,13 @@
 ---
 doc_id: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin
-doc_title: "© 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS"
+doc_title: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links"
 section_id: sec-008-completing-the-proof-of-theorem-b
 section_title: "Completing the proof of Theorem B"
 section_number: null
 pages: 26-33
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
-doc_brief: "Matemática Contemporânea, Vol. 34, 251–283 © 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were"
+doc_brief: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 ---
 Now we have an explicit formula for the fundamental solution φ of the
 scalar Laplacian on the 3-torus T 3, and just as in R3, both the scalar and

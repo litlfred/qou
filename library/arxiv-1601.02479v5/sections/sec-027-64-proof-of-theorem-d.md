@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1601.02479v5
-doc_title: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A"
+doc_title: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras"
 section_id: sec-027-64-proof-of-theorem-d
 section_title: "Proof of Theorem D"
 section_number: 6.4
 pages: 60-63
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
-doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
+doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
 ---
 bility condition ζ. By Corollary 4.11 there are canonical split inclusions
 H(BC*)vir ⊗ BPSζ

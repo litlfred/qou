@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "Department of Physics"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-023-4-e-verlinde-and-h-verlinde-a-unitary-s-matrix-f
 section_title: "E. Verlinde and H. Verlinde, A Unitary S-matrix for 2D Black Hole Formation and"
 section_number: 4
 pages: 47-47
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for"
 ---
 Evaporation, Princeton preprint, PUPT-1380,IASSNS-HEP-93/8, Februar y 1993;
 K. Schoutens, E. Verlinde, and H. Verlinde, Quantum Black Hole Evaporation, Prince-

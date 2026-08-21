@@ -1,13 +1,13 @@
 ---
 doc_id: hdr
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Hecke algebras, generalisations and representation theory"
 section_id: sec-005-kazhdanlusztig-cells
 section_title: "Kazhdan–Lusztig cells"
 section_number: null
 pages: 20-21
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
+doc_brief: "Hecke algebras, generalisations and representation theory — 27 sections: Algebras of Finite Type; Blocks; Symmetrising forms and Schur eleme"
 ---
 Let ι be the algebra involution on Hq(W,L ) given by ι(q) = q−1 and ι(Ts) = T−1
 s for s∈ S (as a

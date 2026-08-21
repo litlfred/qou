@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-047-1-gm-x-q1-tx-k-d-eﬁnit-une-extension-deq0-par-q1
 section_title: "(Gm, x) = Q(1), t/x ∈ k∗ d´ eﬁnit une extension deQ(0) par Q(1), donc"
 section_number: 1
 pages: 47-47
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 un Q(1)-torseur, et P H+ℓ
 y,x est la r´ ealisation de ce torseur.

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5365v2
-doc_title: "Representation of the Quantum Plane, its Quantum"
+doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)"
 section_id: sec-015-53-the-gns-description
 section_title: "The GNS description"
 section_number: 5.3
 pages: 44-46
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
 ---
 Given our multiplicative unitary
 W =e

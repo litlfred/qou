@@ -1,13 +1,13 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-004-3-denote-the-vertices-of-t-by-v1v-4-and
 section_title: "Denote the vertices of T by v1,...,v 4, and"
 section_number: 3
 pages: 1-4
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
-doc_brief: "Mathematical Research Letters3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE — 19 sections: Introduction; These; Conformal simplices"
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 19 sections: Introduction; These; Conformal simplices"
 ---
 denote the edge joiningvi andvj byeij. The length ofeij shall be denoted
 by lij, while the dihedral angle of eij shall be denoted by αij. The solid

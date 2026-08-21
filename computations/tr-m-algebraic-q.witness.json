@@ -1,32 +1,32 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-21T15:07:24.217358+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "computedAt": "2026-08-21T21:24:27.050620+00:00",
+  "commitSha": "5e40e394985c308671cc916351a5abacabf32ae7",
   "assertions": [
     {
       "name": "algebraic_q0_matches_transfer",
-      "computed": 7.915112243406242e-08,
+      "computed": 1.3877787807814457e-15,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-07,
-      "source": "max |tr_M_algebraic(q₀) − tr_m_atom_zn| over D/T(/³He), atom & free words; ~1e-8 float64-eval floor of the exact ℚ(q) form vs the 50-dps transfer"
+      "tolerance": 1e-09,
+      "source": "max |tr_M_algebraic(q₀) − tr_m_atom_zn| over D/T(/³He), atom & free words"
     },
     {
       "name": "symbolic_delta_matches_li2q",
-      "computed": 1.338158965458235e-06,
+      "computed": 2.168404344971009e-19,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1e-12,
       "source": "flavor_split_leading_sym(q₀) vs _li_2_q_util"
     }
   ],
-  "allPassed": false,
-  "durationMs": 18,
+  "allPassed": true,
+  "durationMs": 26,
   "computation": "tr-m-algebraic-q",
   "scriptFile": "tr_m_algebraic_q.py",
-  "scriptHash": "9b97a61e6486",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "9c915c90ba8b",
+  "scriptCommitSha": "5ea1233062f2d8348886b2b337bc261378434e99",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Algebraic q-parameterized Markov trace tr_M(q) ∈ ℚ(q): the atom braid word with the colour split flavor_split_leading(q) kept SYMBOLIC (vs the production q₀-baked float), so the trace is a clean Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the canonical transfer value tr_m_atom_zn(Z,N) to ~1e-8 for D/T(/³He) (float64-eval floor of the exact form).",
   "parameters": {
@@ -51,22 +52,22 @@
         "atom": "D",
         "Z": 1,
         "N": 1,
-        "tr_atom_q0_algebraic": 0.5751723230688943,
+        "tr_atom_q0_algebraic": 0.5751722439177721,
         "tr_atom_transfer": 0.5751722439177719,
         "tr_free_q0_algebraic": 1.1317169043222113,
         "tr_free_transfer": 1.1317169043222102,
-        "abs_diff_atom": 7.915112243406242e-08,
+        "abs_diff_atom": 2.220446049250313e-16,
         "abs_diff_free": 1.1102230246251565e-15
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
-        "tr_atom_q0_algebraic": 0.22931013366061537,
+        "tr_atom_q0_algebraic": 0.22931010210455513,
         "tr_atom_transfer": 0.22931010210455652,
         "tr_free_q0_algebraic": 1.1178462289782276,
         "tr_free_transfer": 1.1178462289782265,
-        "abs_diff_atom": 3.155605884930246e-08,
+        "abs_diff_atom": 1.3877787807814457e-15,
         "abs_diff_free": 1.1102230246251565e-15
       }
     ]

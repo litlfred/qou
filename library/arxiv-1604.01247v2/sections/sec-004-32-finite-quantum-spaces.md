@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1604.01247v2
-doc_title: "EXCEPTIONAL QUANTUM GEOMETRY"
+doc_title: "Exceptional quantum geometry and particle physics"
 section_id: sec-004-32-finite-quantum-spaces
 section_title: "Finite quantum spaces"
 section_number: 3.2
 pages: 12-16
 source_pdf: 1604.01247v2.pdf
 source_sha256: 5a402405aadf5d54
-doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an"
+doc_brief: "Exceptional quantum geometry and particle physics — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3"
 ---
 The notion of ﬁnite-dimensional Euclidean (or formally real) Jordan a lgebra
 was introduced and analyzed in [28] under the name r-number algebra in

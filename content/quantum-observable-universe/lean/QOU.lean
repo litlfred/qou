@@ -917,6 +917,18 @@ import QOU.Mathlib.SchenstedReadbackFold
 import QOU.Mathlib.SchenstedRSKInjective
 -- RSK inverse, brick 8: RSK separates permutations.
 import QOU.Mathlib.SchenstedPermInjective
+-- RSK inverse, brick 10: the cascade-level RIGHT inverse (non-deleting branch).
+import QOU.Mathlib.SchenstedCascadeRightInverse
+-- RSK inverse, brick 11: what the reverse cascade preserves (and what needs a corner).
+import QOU.Mathlib.SchenstedUninsertInvariants
+-- RSK inverse, brick 12a: where reverse row insertion writes (the reverse of rowInsert_bump_eq_set).
+import QOU.Mathlib.SchenstedReverseRowIndex
+-- RSK inverse, brick 13: the reverse cascade keeps columns strict, at a corner.
+import QOU.Mathlib.SchenstedCascadeColStrict
+-- RSK inverse, brick 14: the recovered word rebuilds the tableau (word-level surjectivity).
+import QOU.Mathlib.SchenstedWordSurjectivity
+-- RSK inverse, brick 15: insertion always creates a corner; brick 14's hypotheses are satisfiable.
+import QOU.Mathlib.SchenstedCornersAlong
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype

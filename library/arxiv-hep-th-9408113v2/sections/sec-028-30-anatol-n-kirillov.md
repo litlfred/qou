@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "Steklov Mathematical Institute"
+doc_title: "Dilogarithm identities"
 section_id: sec-028-30-anatol-n-kirillov
 section_title: "Anatol N. Kirillov"
 section_number: 30
 pages: 30-31
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 Corollary 3 (of Theorem 6). We have (r≡ 1(mod 2) )
 i) N (2,r ) = 2(r− 1)−

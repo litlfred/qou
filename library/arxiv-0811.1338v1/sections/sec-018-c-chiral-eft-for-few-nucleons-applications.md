@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.1338v1
-doc_title: "Modern Theory of Nuclear Forces E. Epelbaum∗"
+doc_title: "Modern theory of nuclear forces"
 section_id: sec-018-c-chiral-eft-for-few-nucleons-applications
 section_title: "Chiral EFT for few nucleons: applications"
 section_number: C
 pages: 21-23
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
-doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
+doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 We now turn our attention to applications. As dis-
 cussed in the previous section, the two-nucleon chi-

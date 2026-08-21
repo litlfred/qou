@@ -1,10 +1,13 @@
 ---
 # qou-nrex
 title: 'EPIC: RSK inverse — reverse bumping to the Robinson-Schensted bijection (taken over from the Schensted programme)'
-status: todo
+status: in-progress
 type: milestone
+priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-16T02:46:29Z
+updated_at: 2026-08-21T15:56:17Z
+updated_at: 2026-08-21T16:06:00Z
+updated_at: 2026-08-21T16:20:58Z
 ---
 
 
@@ -243,3 +246,91 @@ one that can.
 condition** on `i` (row `i+1` strictly shorter than row `i`): removing the last cell of a
 non-corner row breaks column-strictness, so the statement is false without it. That hypothesis is
 the thing to get right before writing the proof.
+
+## Brick 10 — cascade right inverse, non-deleting branch (PR #5374, 2026-08-21)
+
+`insert (uninsert T i).1 z = T` under `2 ≤ (T.getD i []).length`. lean-direct exit 0;
+`#print axioms insert_uninsert` = [propext, Classical.choice, Quot.sound], no sorryAx.
+
+**The predicted hypothesis was wrong and is corrected in-file.** Brick 9's PR body predicted a
+corner condition (row i+1 strictly shorter than row i). It is not that: the row-kept branch works
+for *any* sorted row, corner or not, and the row-deleted branch fails on a genuine counterexample
+(#eval-checked): uninsert [[1],[2,4]] 0 = ([[2,4]], some 1) but insert [[2,4]] 1 = [[1,4],[2]].
+That T has row lengths (1,2) — a non-Young shape. So the deleting branch needs a **shape**
+hypothesis (weakly decreasing row lengths), which is the next brick, not a corner one.
+
+### Remaining
+- brick 11: the deleting branch, under a Young-shape hypothesis on T.
+- word-level surjectivity (iterate brick 10+11 the way brick 3 iterates brick 2).
+- RSKBurnsideHolds for general n → feeds spechtEquiv_of_sum_sq for the general Wedderburn split.
+
+
+### Brick 10 generalized (same PR #5374, 2026-08-21)
+
+The `2 ≤ length` side condition is GONE. `insert_uninsert` now holds at every row of a
+row-sorted, column-strict tableau with no empty rows — the full cascade right inverse.
+
+**Correction to the note above:** I wrote that the deleting branch 'needs a shape hypothesis
+(weakly decreasing row lengths), which is the next brick'. It did not need a new brick.
+`ColStrict` / `StrictBelow` were already in SchenstedInsertion.lean, and `StrictBelow` bundles
+BOTH halves — `lower.length ≤ upper.length` (the Young-shape half I was about to invent) and
+`upper[j] < lower[j]` — with the bumping lemma `insert_colStrict` already proved. One corpus grep
+for ColStrict before writing that note would have saved the round trip. Recorded in the file
+docstring and the PR body, not quietly dropped.
+
+axioms: insert_uninsert = [propext, Quot.sound] (Classical.choice dropped with the length omega).
+
+### Remaining after brick 10
+- word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2.
+
+### Brick 11 — uninsert invariants (PR #5383, 2026-08-21, branch claude/schensted-uninsert-invariants-2026-08-21)
+
+uninsert_rowsSorted + uninsert_noEmptyRows, unconditional at every row index. Both needed to
+ITERATE brick 10 (the IH re-applies insert_uninsert at each intermediate tableau).
+
+**The corner condition finally located.** I looked for it in the wrong place across two bricks.
+StrictBelow bundles a LENGTH half; the keeping branch at row 0 turns 'row1.length <= r.length' into
+'row1.length <= r.length - 1', which fails exactly when row 1 is as long as row 0 — i.e. when the
+removed cell is not a corner. So:
+  - right-inverse identity (brick 10): needs NO corner condition
+  - ColStrict preservation: CANNOT hold without one
+Machine-checked on T = [[1,3],[2,4]]: cornerWitness_colStrict / cornerWitness_not_colStrict, plus
+cornerWitness_{rowsSorted,noEmptyRows}_survives showing the split is real on that same witness.
+
+Not a gap: the cascade is always run at the largest recording-tableau entry, which IS a corner.
+The condition is supplied by Q one level up and belongs in the statement that consumes it.
+
+### Remaining after brick 11
+- ColStrict preservation under an explicit corner hypothesis (needs the corner predicate defined,
+  and the i+1 case is the reverse bumping lemma proper).
+- word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2, consuming the
+  three preservation lemmas.
+- RSKBurnsideHolds for general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
+
+### Brick 12a — rowUninsert index characterization (PR #5390, branch claude/schensted-rowuninsert-index-2026-08-21)
+
+rowUninsert_spec: the reverse mirror of the corpus's rowInsert_bump_eq_set. Existential form
+(k < length, getD k = z, .1 = r.set k y, z < y, and nothing right of k eligible). The maximality
+clause is the content.
+
+Two findings:
+- lt_of_index_lt needs NO sortedness. I expected weak-sorted + rightmost chaining; the maximality
+  clause gives y <= r[m] directly and z < y chains through. One line.
+- THIRD duplication caught this arc: getD_set_self / getD_set_ne / getD_eq_getElem_mem already
+  exist at SchenstedInsertion.lean:551,556,561. Pattern: that file is 1300+ lines and carries far
+  more than its section headings advertise. GREP IT BEFORE ADDING ANY List/getD/index helper.
+
+Machine-checked rightmost witness: rowUninsert [1,2,4] 3 = ([1,3,4], some 2) — two eligible
+entries, takes the right-hand one; leftmost would give [3,2,4], not weakly increasing.
+
+### Three PRs open simultaneously on this epic, no file overlap
+- #5374 brick 10  SchenstedCascadeRightInverse.lean
+- #5383 brick 11  SchenstedUninsertInvariants.lean
+- #5390 brick 12a SchenstedReverseRowIndex.lean
+All three add one import line to QOU.lean in the same region; 2nd and 3rd to land need a one-line
+rebase there.
+
+- brick 12b: reverse bump monotonicity (write index weakly INCREASES going up, mirror of
+  bump_findIdx_mono). May need a named uninsertIdx; rowUninsert_spec is the bridge.
+- brick 12c: uninsert preserves ColStrict, under the corner hypothesis located in #5383.
+- word-level surjectivity; RSKBurnsideHolds for general n.

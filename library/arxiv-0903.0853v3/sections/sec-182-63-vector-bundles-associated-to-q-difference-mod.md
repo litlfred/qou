@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0903.0853v3
-doc_title: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS"
+doc_title: "Local analytic classification of q-difference equations"
 section_id: sec-182-63-vector-bundles-associated-to-q-difference-mod
 section_title: "VECTOR BUNDLES ASSOCIATED TO q-DIFFERENCE MODULES 109"
 section_number: 6.3
 pages: 115-115
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
-doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symm"
+doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
 ---
 the case of fuchsian modules, which is dealt with in [ 49]); but this ceases
 to be true for arbitrary modules: for instance, if M := ( C({z}),σ q) and

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-037-64-a-system-of-ladder-operators
 section_title: "A system of ladder operators"
 section_number: 6.4
 pages: 53-55
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 With the algebra C⊗← −O in hand, we can now set out to ﬁnd a system of ladder operators
 within the octonionic chain algebra. Consider α1≡ 1

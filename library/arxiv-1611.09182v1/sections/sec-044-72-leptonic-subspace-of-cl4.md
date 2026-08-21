@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-044-72-leptonic-subspace-of-cl4
 section_title: "Leptonic subspace of Cl(4)"
 section_number: 7.2
 pages: 64-65
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 We will now build a minimal right ideal, using the procedure laid out in Section 4.5.2.
 Readers should note that when multiplying elements constructed from R⊗ C⊗ H⊗ O, the

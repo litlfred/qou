@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0608414v1
-doc_title: "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗"
+doc_title: "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations"
 section_id: sec-002-the-convolution-equation-away-from-stokes-rays
 section_title: "The convolution equation away from Stokes rays"
 section_number: null
 pages: 12-30
 source_pdf: 0608414v1.pdf
 source_sha256: bd9a8d48a6d66945
-doc_brief: "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗ — For analytic nonlinear systems of ordinary diﬀerential equa"
+doc_brief: "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations — For analytic nonlinear systems of ordinary"
 ---
 For any star-shaped set E in the complex plane containing the origin (i.e.,
 a region such that the origin can be connected with any other point in E

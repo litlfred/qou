@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1002.0126v1
-doc_title: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+doc_title: "An introduction to the volume conjecture"
 section_id: sec-003-23-invariant
 section_title: "Invariant"
 section_number: 2.3
 pages: 4-5
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
-doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
 [36] to introduce a link invariant derived from a Yang-Baxter operat or.
 Let V be an N -dimensional vector space over C, R an isomorphism from V⊗V to

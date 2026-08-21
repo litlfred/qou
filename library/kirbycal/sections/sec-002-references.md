@@ -1,6 +1,6 @@
 ---
 doc_id: kirbycal
-doc_title: "Inventiones math. 45, 35- 56 (1978) mathematicae 9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby*"
+doc_title: "A Calculus for Framed Links in S^3"
 section_id: sec-002-references
 section_title: "References"
 section_number: null

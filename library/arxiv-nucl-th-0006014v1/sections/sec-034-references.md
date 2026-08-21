@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-034-references
 section_title: "References"
 section_number: null
 pages: 37-69
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
-doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . . . . . . . . . ."
 ---
 [1] R. Machleidt, K. Holinde, and Ch. Elster, Phys. Rep. 149, 1 (1987).
 [2] R. Machleidt, Adv. Nucl. Phys. 19, 189 (1989).

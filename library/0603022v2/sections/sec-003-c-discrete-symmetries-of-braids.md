@@ -1,13 +1,13 @@
 ---
 doc_id: 0603022v2
-doc_title: "Department of Physics, University of Waterloo"
+doc_title: "Quantum gravity and the standard model"
 section_id: sec-003-c-discrete-symmetries-of-braids
 section_title: "Discrete symmetries of braids"
 section_number: C
 pages: 6-7
 source_pdf: 0603022v2.pdf
 source_sha256: 46e24c0289f61d44
-doc_brief: "Quantum Gravity and the Standard Model Sundance O. Bilson-Thompson ∗ — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
+doc_brief: "Quantum gravity and the standard model — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
 ---
 It will be useful in classifying states to introduce the
 discrete symmetries which can act on subsystems of the

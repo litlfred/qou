@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson l"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-029-52-the-a-polynomial-and-the-generalized-volume-c
 section_title: "The A-Polynomial and the Generalized Volume Conjectur e"
 section_number: 5.2
 pages: 38-41
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting"
 ---
 Incomplete hyperbolic structures on knot complements come in continuous families.
 For example, if K is a hyperbolic knot in the 3-sphere, then the moduli space of hyperbolic

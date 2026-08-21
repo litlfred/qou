@@ -1,13 +1,13 @@
 ---
 doc_id: disssubmission
-doc_title: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVER"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-040-33-the-thick-subcategory-of-negligible-objects-4
 section_title: "The thick subcategory of negligible objects 47"
 section_number: 3.3
 pages: 55-57
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
-doc_brief: "INAUGURAL-DISSERTATION Erlangung der Doktorwürde an der Naturwissenschaftlich-Mathematischen Gesamtfakultät der Ruprecht-Karls-Universität Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES — 121 sec"
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 121 sections: Acknowledgements; Introduction; Introduction"
 ---
 LEMMA 3.4. For all K,M∈ D and χ∈ Π(X) one has the following
 natural isomorphisms.

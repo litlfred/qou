@@ -3,8 +3,9 @@
 title: Cite 0905.1873v2.pdf at content/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:59Z
-updated_at: 2026-08-08T16:12:59Z
+updated_at: 2026-08-21T17:05:01Z
 ---
 
 Replace the bare 'arXiv:0905.1873' in the TjonSimplexForm docstring with the registered key so the Lean -- Ref: convention holds and validate-bib can see the dependency.
@@ -21,3 +22,10 @@ Source: `library/arxiv-0905.1873v2/0905.1873v2.pdf` — no `references.ts` entry
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-0905.1873v2/  ->  [jurgenson2009srg]
+  Evolution of nuclear many-body forces with the similarity renormalization group
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [jurgenson2009srg] as the citation key when you do it.

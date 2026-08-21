@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0903.0853v3
-doc_title: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS"
+doc_title: "Local analytic classification of q-difference equations"
 section_id: sec-194-712-some-conﬂuent-basic-hypergeometric-functions
 section_title: "Some conﬂuent basic hypergeometric functions. — Usual basic"
 section_number: 7.1.2
 pages: 121-122
 source_pdf: 0903.0853v3.pdf
 source_sha256: d4295d4b18b2f08f
-doc_brief: "Jean-Pierre Ramis Jacques Sauloy Changgui Zhang LOCAL ANALYTIC CLASSIFICATION OF q-DIFFERENCE EQUATIONS — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symm"
+doc_brief: "Local analytic classification of q-difference equations — 229 sections: Vector bundles associated to q-diﬀ; The q-Euler equation and conﬂuent ; The symmetric square of the q-Eule"
 ---
 hypergeometrics series have the form:
 2Φ1(a,b ;c;q,z ) :=

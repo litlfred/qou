@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1012.5432v4
-doc_title: ""
+doc_title: "Towards topological quantum computation? Knotting and fusing flux tubes"
 section_id: sec-002-1-dirac-monopoles
 section_title: "Dirac Monopoles"
 section_number: 1
 pages: 12-13
 source_pdf: 1012.5432v4.pdf
 source_sha256: ec5f6da1f813649e
-doc_brief: "quant-ph Towards Topological Quantum Computation? - — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
+doc_brief: "Towards topological quantum computation? Knotting and fusing flux tubes — 19 sections: A Hamiltonian; Instantons; Dirac Monopoles"
 ---
 P. Dirac predicted the existence of monopoles in the quantum theory of electromagnetism
 as a method of accounting for charge quantization. These Dirac monopoles are singular

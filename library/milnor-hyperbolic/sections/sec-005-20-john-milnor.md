@@ -7,7 +7,7 @@ section_number: 20
 pages: 12-14
 source_pdf: milnor_hyperbolic.pdf
 source_sha256: d444d7a61af54c7c
-doc_brief: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY HYPERBOLIC GEOMETRY: THE FIRST 150 YEARS BY JOHN MILNOR This will be a description of a few highlights in the early history of — 9 sections"
+doc_brief: "Hyperbolic geometry: The first 150 years — 9 sections: JOHN MILNOR; JOHN MILNOR; JOHN MILNOR"
 duplicate_of: "milnor-1982-hyperbolic-geometry-the-first-150-years"
 ---
 where A = (1 - x2)l/2. Substituting A = sin 0, x = cos 9, dx = -Ad9y and 

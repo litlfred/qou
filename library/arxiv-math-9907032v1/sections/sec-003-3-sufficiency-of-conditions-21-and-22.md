@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Mathematics Department, California Institute of Technolog y"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-003-3-sufficiency-of-conditions-21-and-22
 section_title: "SUFFICIENCY OF CONDITIONS 2.1 AND 2.2"
 section_number: 3

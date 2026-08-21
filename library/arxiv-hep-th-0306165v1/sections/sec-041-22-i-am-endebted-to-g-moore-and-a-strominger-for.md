@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson l"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-041-22-i-am-endebted-to-g-moore-and-a-strominger-for
 section_title: "I am endebted to G. Moore and A. Strominger for very helpful co mments and suggestions"
 section_number: 22
 pages: 56-62
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting"
 ---
 on these points.
 55

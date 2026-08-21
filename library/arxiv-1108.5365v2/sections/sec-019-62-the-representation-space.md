@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5365v2
-doc_title: "Representation of the Quantum Plane, its Quantum"
+doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)"
 section_id: sec-019-62-the-representation-space
 section_title: "The representation space"
 section_number: 6.2
 pages: 48-51
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
 ---
 We introduce the transformations such that A acts on H canonically, and ˆA acts
 on ˆH canonically. We will use capital letter to denote the transformed fu nction.

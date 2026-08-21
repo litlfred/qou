@@ -1,13 +1,13 @@
 ---
 doc_id: 1172-3
-doc_title: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Pr"
+doc_title: "On the colored Jones polynomials of some simple links"
 section_id: sec-007-8-surgery-descriptions
 section_title: "SURGERY DESCRIPTIONS"
 section_number: 8
 pages: 8-10
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
-doc_brief: "ON THECOLOREDJONESPOLYNOMIALSOF SOMESIMPLELINKS KAZUOHABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the Volume C"
+doc_brief: "On the colored Jones polynomials of some simple links — 9 sections: INTRODUCTION; KAUFPMAN BRACKET SKEIN MODULES; RESULTS"
 ---
 In what follows we sometimes refer to framed links with zero framings
 simply as ‘links’.
