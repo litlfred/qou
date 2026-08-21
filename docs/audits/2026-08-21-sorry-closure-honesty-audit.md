@@ -166,3 +166,73 @@ the same failure.
 `c9177dfad0`) is **kept unchanged** — it is the honest pattern: real
 proved lemmas, and the open Mercer convergence named as a `Prop` with no
 proof term.
+
+## Scope note: this audit converged on a remedy that was not chosen
+
+The owner was offered four remedies and selected **(1)** restore the
+honest docstrings and **(2)** audit and re-scope. Remedy **(4)** — revert
+the series — was **not** selected. The result of judging all twelve
+declarations separately is nonetheless a byte-identical return to the
+pre-batch base. That is remedy (4) reached from the other direction, and
+it is recorded here as a **finding**, not applied as a default. The owner
+can accept or narrow it.
+
+The finding is stated plainly: **all twelve declarations carried the same
+defect.** Nothing in the batch survived the rubric except the file that
+was not part of it. The discriminating evidence is the verdict table
+above, not the sorry count — a count returning to its pre-batch value is
+equally consistent with a careful revert and an indiscriminate one.
+
+### Was anything of value lost by reverting?
+
+| Question | Answer |
+|---|---|
+| Was `c9177dfad0` ("add q≠0 hypothesis + fix zpow/ring proof") swept up? | **No.** It touches only `information-theory/q-heat-kernel-peter-weyl.lean`, which this branch does not modify — `git diff 98ee5a701a HEAD` on that path is empty. Graded `genuinely-proved`, kept. |
+| Proved content deleted **by the batch** | 15 `*_unconstrained_false` theorems, plus 11 further declarations in `ee9b3cc985` (the route-(b) structures, `QTurbulenceCascadeModel`) and 2 in `1be9bf9ec0` (`NeutronProtonSplittingNumerics`). All 15 refutations verified restored. |
+| Proved content deleted **by this revert** | The `rw` / `refine` projection bodies only. |
+| Net effect per declaration | Post-batch is worse on **both** axes in all twelve: a proved theorem deleted **and** a docstring flipped to a false "proved". |
+
+The sharpest evidence that the revert restores rather than discards: after
+it, `q_turbulence_spectrum`, `mass_categorical_descent` and
+`neutron_proton_splitting` sit at **zero sorries**. Those three were
+sorry-free *by genuine derivation* before the batch. Reverting them does
+not raise the sorry count at all — it puts proofs back.
+
+### Is the restored state actually honest?
+
+Checked mechanically over all twelve files: **zero** docstrings claiming
+`**proved**` or `sorry-free` above a body that contains a `sorry`. The 12
+restored sorries reconcile exactly with the 65 − 53 delta, and all 15
+refutation theorems are present. Remedy (1) is therefore satisfied by the
+revert for every file — the pre-batch text was already the honest text.
+
+### The two rows that deserve better than a revert
+
+Recorded as bean `qou-kkja` so the revert is not mistaken for the final
+answer:
+
+- `shell_filling_lp_strong_duality` — graded `genuine-composition`. It
+  chains two fields by transitivity rather than projecting a conclusion,
+  and what it assumes (LP strong duality, [bertsimas1997]) is a real
+  citable theorem. A §3b-cond `extends` model class is the right fix; it
+  cannot be done file-locally because the same class also carries the
+  self-assuming pairs for claims (i) and (ii).
+- `mobius_frobenius_kernel :: limit_to_classical` — asserts a real
+  `Filter.Tendsto` claim, so the class is content-bearing rather than
+  empty. Paired with `K_classical_eq` it still recomposes to exactly the
+  conclusion, which is why the verdict stands.
+
+Neither was fixed here: the brief forbids inventing a new class to tidy a
+gap away, and replacing one assumption with another is the same failure.
+
+## Verification
+
+- `lean`-direct, `LEAN_PATH` set to the restored olean tree, **exit 0 on
+  all twelve files.** Warnings are `declaration uses 'sorry'` — the honest
+  marker, and the point of the exercise.
+- Mathlib olean count **6990 before and 6990 after**. No `lake build` was
+  run at any point (measured eviction 6990 → 334).
+- Beans: six falsely-`completed` beans reopened (`qou-cqnr`, `qou-aei3`,
+  `qou-7t08`, `qou-9b3p`, `qou-sv9q`, `qou-pyk1`); `qou-kkja` opened. Seven
+  already-open beans left alone rather than duplicated. `qou-oq5r` stays
+  completed — its route-(b) code is restored by this branch.
