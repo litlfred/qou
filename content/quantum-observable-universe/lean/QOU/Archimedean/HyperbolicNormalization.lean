@@ -190,6 +190,58 @@ theorem inversion_coord (c : E) (R : ℝ) (p : E) (j : Fin 3) :
       vsub_eq_sub, vadd_eq_add]
   rw [hexp, PiLp.add_apply, PiLp.smul_apply, PiLp.sub_apply, smul_eq_mul]
 
+/-! ### The boundary-inversion horizontal-collapse lemma
+
+The geometric heart of the general case.  Two interior points whose horizontal
+parts are (possibly different) multiples `α` of a common unit horizontal
+direction `u` and which both lie on a Euclidean sphere centred at `O = c·u` on the
+boundary have, after the boundary inversion at the near ideal endpoint
+`ξ = (c−R)·u`, coordinates `0` and `1` collapsed to the SAME value `K·uⱼ`,
+`K = (c−R) + ρ²/(2R)` — INDEPENDENT of the point.  A later horizontal translation
+by `−K·u` then lands both on the z-axis.
+
+The mechanism is the single algebraic identity `‖p − ξ‖² = 2R·(α − (c−R))` valid
+for `p` on the sphere: the inversion factor `ρ²/‖p−ξ‖²` times the horizontal
+displacement `(α−(c−R))·u` telescopes to `ρ²/(2R)·u`, erasing the point's own `α`. -/
+
+/-- **Boundary-inversion horizontal collapse.**  Let `u` be a unit horizontal
+vector (`u₂ = 0`, `u₀²+u₁² = 1`), `R, ρ > 0`, and let `p` have horizontal part
+`α·u` (i.e. `p₀ = α·u₀`, `p₁ = α·u₁`), height `β`, and lie on the sphere centred at
+`O = c·u` of radius `R`.  Then the boundary inversion at `ξ = (c−R)·u` sends both
+horizontal coordinates of `p` to `K·uⱼ` with `K = (c−R) + ρ²/(2R)`, a value
+independent of `p`.  (`p ≠ ξ` — automatic for an interior point, whose height is
+positive while `ξ` is on the boundary.) -/
+theorem invImage_horiz_collapse
+    (u : E) (hu2 : u 2 = 0) (hu01 : (u 0) ^ 2 + (u 1) ^ 2 = 1)
+    (c R ρ α β : ℝ) (hR : 0 < R) (_hρ : 0 < ρ)
+    (p : E) (hp0 : p 0 = α * u 0) (hp1 : p 1 = α * u 1) (hp2 : p 2 = β)
+    (hcirc : dist p (c • u) ^ 2 = R ^ 2)
+    (hpξ : p ≠ (c - R) • u) :
+    (inversion ((c - R) • u) ρ p) 0 = ((c - R) + ρ ^ 2 / (2 * R)) * u 0 ∧
+    (inversion ((c - R) • u) ρ p) 1 = ((c - R) + ρ ^ 2 / (2 * R)) * u 1 := by
+  set ξ : E := (c - R) • u with hξdef
+  have hξ0 : ξ 0 = (c - R) * u 0 := by rw [hξdef, PiLp.smul_apply, smul_eq_mul]
+  have hξ1 : ξ 1 = (c - R) * u 1 := by rw [hξdef, PiLp.smul_apply, smul_eq_mul]
+  have hξ2 : ξ 2 = 0 := by rw [hξdef, PiLp.smul_apply, smul_eq_mul, hu2, mul_zero]
+  have hO0 : (c • u) 0 = c * u 0 := by rw [PiLp.smul_apply, smul_eq_mul]
+  have hO1 : (c • u) 1 = c * u 1 := by rw [PiLp.smul_apply, smul_eq_mul]
+  have hO2 : (c • u) 2 = 0 := by rw [PiLp.smul_apply, smul_eq_mul, hu2, mul_zero]
+  -- circle condition in coordinates: `(α − c)² + β² = R²`
+  have hcirc' : (α - c) ^ 2 + β ^ 2 = R ^ 2 := by
+    rw [distSq_coords, hp0, hp1, hp2, hO0, hO1, hO2] at hcirc
+    nlinarith [hcirc, hu01]
+  -- the telescoping identity `‖p − ξ‖² = 2R·(α − (c−R))`
+  have hdξ : dist p ξ ^ 2 = 2 * R * (α - (c - R)) := by
+    rw [distSq_coords, hp0, hp1, hp2, hξ0, hξ1, hξ2]
+    nlinarith [hcirc', hu01]
+  have hdξpos : 0 < dist p ξ ^ 2 := by
+    have : dist p ξ ≠ 0 := by rw [dist_ne_zero]; exact hpξ
+    positivity
+  have hαpos : 0 < α - (c - R) := by nlinarith [hdξ ▸ hdξpos, hR]
+  refine ⟨?_, ?_⟩
+  · rw [inversion_coord, hp0, hξ0, div_pow, hdξ]; field_simp; ring
+  · rw [inversion_coord, hp1, hξ1, div_pow, hdξ]; field_simp; ring
+
 /-! ### WALL-2, general case — HONEST GAP (bean `qou-0a0z`, NOT stubbed)
 
 The general two-point normalization — `x, y ∈ H³` with **distinct** horizontal
