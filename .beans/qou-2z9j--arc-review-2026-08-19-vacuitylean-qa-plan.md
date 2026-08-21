@@ -5,7 +5,7 @@ status: todo
 type: milestone
 priority: normal
 created_at: 2026-08-19T21:00:27Z
-updated_at: 2026-08-19T21:17:50Z
+updated_at: 2026-08-21T15:43:21Z
 ---
 
 Reconciliation of the Lean-QA vacuity arc against current main (@ 5b158ef0) after the #3269/#3287/#3299 waves merged. The arc is NOT drained; live state re-measured today.
@@ -40,3 +40,9 @@ I listed qou-h43i (P1) and vaud (P2) as live from their [todo] status WITHOUT ve
 4. **qou-si72** — meta post-mortem.
 
 The audit artifact is now trustworthy (h43i fixed + regression-tested), so total_defects=99 is a real backlog number to drive down.
+
+
+
+## UPDATE 2026-08-21 — ledger re-seeded + fully adjudicated (--check-ledger green)
+Item 4 (needs-agent) DONE: re-seeded stale ledger (38→69), 6-agent swarm adjudicated all 69 → 63 genuine / 5 legit / 1 advisory. --check-ledger exits 0 (all 182 candidates carry fresh verdicts). PR #5369.
+Item 5 re-scoped: the ledger now carries **161 genuine vacuity defects** (the real fix-queue) across categories — 54+ self-assuming-projection, proof-no-provable-axiom, proof-no-unused-hypothesis-rfl, proof-no-trivial-true, etc. This is the next drain tranche (q407-style, but larger). The committed ledger is the authoritative tracker; work it by clustering genuine entries into reviewable batches.
