@@ -3104,3 +3104,38 @@ phase is the obvious next Lean target. All of it independent of `b`.
 redex offset, and a lemma may force a shorter `A` (`blockPass`'s stops where the
 block begins). The `2a` figure is the robust one. The necessary condition is
 separately clean (`dup_sources = 0` chain-wide).
+
+### §4af's loop fits the opening phase (a ≥ 4)
+
+The phase seam makes the opening phase the cheapest remaining Lean target — if
+the lemma covering it fits. `hecke_prefix_loop_fit.py` does for `loopTwoGen`
+what `hecke_tail_assembly_fit` did for `blockPass`: actual Lean source and
+target, `A`/`S` solved by searching splits, `k`/`e` searched over the whole
+range, every side condition enforced (`kd+1=k`, `ed+1=e`, `j₁≤ed`, `j₂≤e`,
+`k≥e`, the `hD` decomposition of `descWord i j₁`, `hY` on the resulting `Y`),
+and the predicted target required to occur in the chain.
+
+**At `a ≥ 4`, both lineages fit** — B from its starting word, A from its word
+after its own three-step head `[B21, F02, B10]`.
+
+**`a = 3` has no loop pass at all** — its group structure is `[0]`, one bare
+Bokut–Shiao step, zero far-commutations. `loopTwoGen` has nothing to fit there;
+that opening phase needs its own treatment. My first version of the probe
+counted this as a failure, and also tested starting words only, which made
+lineage A miss by construction. Both were probe defects, not corpus facts.
+
+A fit is applicability, not assembly: `loopTwoGen` carries a bystander `P` with
+the same `∀ z, P ≠ A ++ z` shape as `hpark`, and fit and collision are separate
+questions — the distinction the tail turned on.
+
+**State of the `a ≤ b` regime**
+
+| piece | status |
+|---|---|
+| tail, off-diagonal | `tailChain` — sorry-free |
+| tail, diagonal | `tailChainFromTwo` — sorry-free |
+| opening phase, `a ≥ 4` | lemma fits (measured); **not assembled** |
+| opening phase, `a = 3` | no loop; needs its own treatment |
+| closing phase (`4(a−1)` steps, hard core `2a`) | **open** — no schedule helps |
+| mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
+| `OverlapComposition` + `spoly` | **open** |
