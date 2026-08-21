@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-21T22:49:00Z
+updated_at: 2026-08-21T22:51:57Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -84,3 +84,39 @@ arrival gets skipped, which is how a checker goes quiet. Wire it at 0.
 **Drain order stays as recorded above:** manifest entry FIRST, then re-run. For
 an unlisted producer the committed muon `q0Value` is the only surviving record
 of intent, and the re-run is what destroys it.
+
+
+## Drain feasibility, sampled 2026-08-21 — and a THIRD detector-blindness slip
+
+Asked whether the intended pin is recoverable from source, so the drain can be
+scoped. Answer: **about half, cheaply; the rest need per-producer work.**
+
+    of the 49 at-risk producers
+      q0 accessor in the file itself   18
+      only via a ONE-HOP import         7      => 25 resolvable
+      still unresolved at one hop      24
+
+**The slip, recorded because it is the third today.** My first pass grepped
+each producer for `q_muon_at|q_at\(|q_parameter.Q|...` and found ZERO signals in
+5 of 8 sampled, which I was about to report as "intent is not recoverable".
+Checking one concretely — `a_operator/cyclic_intertwiner_verify.py` — it reads
+
+    q = aoa.q0_mp(dps)
+
+i.e. through a module alias, a spelling my regex did not carry. The absence was
+in the DETECTOR, not the producers. This is exactly the taxonomy AGENTS.md
+already documents for convention-C detection (thirteen distinct blind
+spellings, four found by detectors written to catch the previous blind spot),
+and it is the same error as the 185-vs-49 over-count and the
+`computation`-clobber "PROSE_LOST = 0" earlier in this session. In all three I
+measured the container rather than the claim.
+
+The 25/24 split above uses an accessor set discovered from the tree rather than
+guessed, so treat it as a floor: further spellings would move producers from
+`unresolved` into `resolvable`, never the other way.
+
+**Sub-class worth separating before draining.** `compute_audit_scan` and
+`derivation_chain_validator` sit in the unresolved set and are AUDITS — they may
+not compute at a pin at all, in which case their `muon` label is wrong and the
+right fix is `independent` (with a reason), not a manifest entry. Do not
+mass-assign manifest entries; sort audits from computes first.
