@@ -334,6 +334,57 @@ theorem degreeOf_pderiv_lt [DecidableEq σ] {j : σ} {p : MvPolynomial σ R}
   intro m hm
   exact Nat.lt_of_succ_le (hstep m hm)
 
+/-- Differentiating never *raises* the degree in any variable.  Companion to
+`degreeOf_pderiv_lt`, which is the strict drop in the differentiated variable. -/
+theorem degreeOf_pderiv_le [DecidableEq σ] (i j : σ) (p : MvPolynomial σ R) :
+    degreeOf i (pderiv j p) ≤ degreeOf i p := by
+  rw [degreeOf_le_iff]
+  intro t ht
+  rw [mem_support_iff, coeff_pderiv] at ht
+  have hne : coeff (t + Finsupp.single j 1) p ≠ 0 := fun h0 => ht (by rw [h0, mul_zero])
+  have hle := monomial_le_degreeOf i (mem_support_iff.mpr hne)
+  simp only [Finsupp.add_apply] at hle
+  omega
+
+/-- Nor does any iterated partial. -/
+theorem degreeOf_pderivList_le [DecidableEq σ] (i : σ) (l : List σ) (p : MvPolynomial σ R) :
+    degreeOf i (pderivList l p) ≤ degreeOf i p := by
+  induction l generalizing p with
+  | nil => simp [pderivList]
+  | cons j l' ih =>
+    have hcons : pderivList (j :: l') p = pderiv j (pderivList l' p) := rfl
+    rw [hcons]
+    exact le_trans (degreeOf_pderiv_le i j _) (ih p)
+
+/-- **Degree bound for the generalized Wronskian:** `deg_{xᵢ} ≤ m · d` when every member of
+the family has `deg_{xᵢ} ≤ d`.
+
+⚠ **This is what makes the independence certificate quantitative.** Roth's lemma does not
+merely need *some* non-zero Wronskian — it needs one whose degree is controlled by the
+degrees of the auxiliary polynomial, because the index estimate is measured against those
+degrees. A certificate with no degree bound carries no arithmetic information. -/
+theorem degreeOf_mvGenWronskian_le [DecidableEq σ] {m : ℕ} (i : σ) (D : Fin m → List σ)
+    (f : Fin m → MvPolynomial σ R) (d : ℕ) (hf : ∀ j, degreeOf i (f j) ≤ d) :
+    degreeOf i (mvGenWronskian D f) ≤ m * d := by
+  classical
+  rw [mvGenWronskian, Matrix.det_apply']
+  refine le_trans (degreeOf_sum_le _ _ _) (Finset.sup_le fun s _ => ?_)
+  refine le_trans (degreeOf_mul_le _ _ _) ?_
+  have hone : degreeOf i (1 : MvPolynomial σ R) = 0 := by
+    have h1 : (1 : MvPolynomial σ R) = C 1 := C_1.symm
+    rw [h1, degreeOf_C]
+  have hsign : degreeOf i ((Equiv.Perm.sign s : ℤ) : MvPolynomial σ R) = 0 := by
+    rcases Int.units_eq_one_or (Equiv.Perm.sign s) with h | h <;> rw [h] <;> simpa using hone
+  rw [hsign, zero_add]
+  refine le_trans (degreeOf_prod_le _ _ _) ?_
+  have hterm : ∀ k : Fin m, degreeOf i (mvWronskianMatrix D f (s k) k) ≤ d := by
+    intro k
+    simp only [mvWronskianMatrix, Matrix.of_apply]
+    exact le_trans (degreeOf_pderivList_le i (D (s k)) (f k)) (hf k)
+  calc ∑ k : Fin m, degreeOf i (mvWronskianMatrix D f (s k) k)
+      ≤ ∑ _k : Fin m, d := Finset.sum_le_sum fun k _ => hterm k
+    _ = m * d := by simp
+
 /-- The multi-index counting occurrences of each variable in a list. -/
 noncomputable def multiIndexOf (l : List σ) : σ →₀ ℕ := (l.map fun j => Finsupp.single j 1).sum
 
