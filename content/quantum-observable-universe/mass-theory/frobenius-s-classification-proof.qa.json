@@ -1646,6 +1646,22 @@
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
         "evidence": "'the unique source of S-odd contribution' is supported by the eigenvalue decomposition just proved.",
         "notes": "ALL S-ACTION ALGEBRA RE-DERIVED AND CORRECT: D = q^4+4q^2+1 -> q^{-4}D; W_sym = q^2/D invariant; (q^2+1)^2 -> q^{-4}(1+q^2)^2 so W_std invariant; [3]_q = q^2+1+q^{-2} invariant; h_A -> -h_A. Phi_3 spot-check verified exactly: S(1,0) = (1,-h_A) gives chi_sym = q - (q - q^{-1}) = q^{-1} and chi_alt = -1/q - (q - 1/q) = -q, matching the claimed swap-with-sign. Borromean volume 8G = 7.32772475342 = 2 Vol(oct), correct."
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:40.473Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'the unique source of S-odd contribution' is supported by the eigenvalue decomposition just proved. S-action algebra re-derived and correct: D = q^4+4q^2+1 -> q^{-4}D; W_sym = q^2/D and W_std = (q^2+1)^2/D both invariant (and they sum to 1 with W_alt, verified); [3]_q = q^2+1+q^{-2} invariant; h_A -> -h_A; Phi_3 spot-check exact (S(1,0) = (1,-h_A) gives chi_sym = q^{-1}, chi_alt = -q). Vol(B_3) = 8G = 7.32772475342 = 2 Vol(oct), correct.",
+        "notes": "MATH ERROR FOUND (sympy-verified, three independent ways). The block states 'The Frobenius antipode maps the primitive factor (c, d) to (c, d - c h_A)'. That map is NOT an involution and does NOT preserve det T, so it cannot be an antipode of an order-2 action and cannot support the block's own claim 'For each primitive the determinant is S-invariant': det T(c, d - c h_A) - det T(c,d) = -2 c d h_A, and applying it twice to (1,0) gives (1,-2h_A), not (1,0). It also contradicts Table 3, which lists S(1,-h_A) = (1,0) with det -1 — under the block's rule S(1,-h_A) = (1,-2h_A) with det 2h_A^2 - 1. The correct map, which is involutive, leaves det T identically invariant, and reproduces all three Table-3 rows exactly, is (c,d) -> (c, -c h_A - d). It agrees with the block's rule on (1,0) only, which is why the Phi_3 spot-check still came out right. Fix: replace 'to (c, d - c h_A)' with 'to (c, -c h_A - d)'. NOT applied inline: this is math, not prose."
       }
     ],
     "trap-nonspeakable": [
@@ -1704,5 +1720,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:54:00.144Z"
+  "updated_at": "2026-08-21T15:55:40.473Z"
 }
