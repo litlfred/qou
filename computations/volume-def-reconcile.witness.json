@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:29:01.571778+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-21T15:07:27.083061+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "volume-def-reconcile",
   "scriptFile": "volume_def_reconcile.py",
   "scriptHash": "7d6377a5e502",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,8 +19,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Reconciliation of the two Borromean-volume definitions (8G vs ln|Vol_q|). Determines they are the SAME post-τ volume Vol(K) linked by the Kashaev Volume Conjecture; the keystone audit's 5090× was a cross-τ category comparison. No fit.",
   "schema": "volume-def-reconcile/1",
@@ -73,6 +75,6 @@
   "verdict": "(a) SAME OBJECT ACROSS τ — the '5090×' is a CROSS-FUNCTOR CATEGORY ERROR, not a numerical contradiction. Definition A (8G) is the POST-τ archimedean volume Vol(K)=Re tr(τ̂_desc·Hol) [topological-mass-formula Step 1, Chern–Simons/volume correspondence]. Definition B (ln|Vol_q|) is τ_arch applied to the PRE-τ algebraic generator Vol_q=∏V̂_i; prop:vol-through-tau + kashaev-volume-conjecture assert these are EQUAL by the Kashaev Volume Conjecture (the regulator of a Bloch-group class landing in ℝ as the hyperbolic volume). So ln|Vol_q| SHOULD equal 8G — they are the same Vol(K). The keystone audit's −0.00144 took ln of the q₀-evaluated NORMALIZED trace (≈0.9986), i.e. the PRE-τ algebraic number specialized at q₀ — NOT the τ_arch regulator/Kashaev-limit (an N→∞ asymptotic at roots of unity). Logging a pre-τ number is the category error. PRODUCTION USES THE CORRECT STAGE: the post-τ classical Vol(K)=8G is exactly what the KVC says ln|Vol_q| evaluates to. No volume-definition bug.",
   "residual_open": "Not the volume DEFINITION (reconciled here). The genuine open items per keystone §5: (i) the KVC itself (axiomatized as VolumeConjecture class — proved only for 4₁, some torus/pretzel); (ii) the per-crossing V̂_i factorization compute for atomic braids; (iii) the H₄ linking_weight 2.53 vs CODATA-λ 2.46 residual (+2.89%) = the separate λ_scale-absorbed item, NOT a volume-definition inconsistency.",
   "discipline": "No fit, no fabrication. m_p readings are raw at each stage; we report whichever follows, not the one nearest CODATA.",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

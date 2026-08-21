@@ -12,3 +12,5 @@ parabolic_cylinder_channel_mixing_probe|Try another starting point|numerical, ne
 per_irrep_pole_proton_h3|(non-zero, no stderr tail)|needs a look
 per_knot_density_per_block_wiring|ImportError: per_knot_density_*|pre-existing break (shared root)
 probe_9b_laurent_degree_10a5|TIMEOUT >90s|slow, standalone
+vhat_per_crossing_chain|UFuncInputCastingError: Cannot cast|pre-existing break
+wedderburn_lp_ew_wiring|TIMEOUT >90s|slow, standalone
