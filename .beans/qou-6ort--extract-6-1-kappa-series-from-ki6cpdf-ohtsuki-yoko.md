@@ -136,3 +136,42 @@ version rather than this OCR — or Ohtsuki's 5₂ paper, whose analogous sum wo
 validate the whole pipeline end-to-end against a knot with published κ values.
 The O(N²) evaluator, the fit, the branch unwrapping and the gate are all built
 and reusable the moment the sum is right.
+
+## 2026-08-19 SECOND PASS — the convention mismatch is PROVED
+
+First pass *inferred* "the phases are wrong". Now established, by a
+font-metadata PDF extraction (`visitor_text`, which exposes superscripts the
+flat text layer silently drops — that is how the `q^{-1}` prefactor of eq.(29)
+got confirmed too):
+
+**ki6c eq. (4) is `(q)_n (q)_{N-n-1} = N`, exactly** — read character by
+character, nothing rendered outside the band. The STANDARD Pochhammer
+`P_n = ∏(1-q^j)` **violates it**: `P_n·P_{N-1-n}` has modulus exactly N but a
+nontrivial phase for every n ≥ 1 (N=7, n=1 → −4.364−5.473i, not 7), since
+`P_n·P_{N-1-n} = N·(−1)^{N−1−n}·q^{(N−1−n)(N−n)/2}`.
+
+**⇒ the paper's `(q)_n` is NOT the standard q-Pochhammer.** No longer a guess
+about a dropped character; forced by an identity the paper states and the
+standard object fails. With `(q)_n = P_n·c_n`, `|c_n| = 1`, eq.(4) gives ONE
+constraint `c_n c_{N−1−n} = (−1)^{N−1−n} q^{−(N−1−n)(N−n)/2}`, which does not
+determine `c_n`. **The convention must be READ, not solved for.**
+
+Two principled evaluations, both reported, bracketing the target:
+  standard Pochhammer throughout ................ 0.5715
+  eq.(4) used for the two reflected pairs ....... 0.398
+  required (Thm 1.1 + proved VC) ................ 0.50356
+Opposite sides, consistent with the true `c_n` being an intermediate phase.
+Both keep |⟨6₁⟩_2| = 9 = det(6₁), so that check cannot separate them. Only two
+variants were run; more would be fitting a transcription to its answer.
+
+**New measured precision hazard**: the eq.(4) variant needs dps ≥ 200 — at
+dps 60 it silently returns 0.475 at N=1000 where the converged value is 0.3980
+(identical at dps 200 and 400). The original variant is dps-stable from 60.
+Dropping the reflected-pair phases makes the cancellation far worse, so a
+precision setting adequate for one variant is NOT adequate for the other.
+
+**NEXT STEP (a read, not a hunt)**: ki6c §2.1 defines `(q)_n` via a
+quantum-dilogarithm/integral presentation `exp(φ(…) − φ(…))`; its OCR is
+mangled and the font-metadata pass did not recover it either. A clean §2.1
+determines `c_n` and closes this. Everything else — O(N²) evaluator, fit,
+branch unwrapping, gate — is built and correct.
