@@ -444,7 +444,65 @@ def capture_environment() -> dict:
         except Exception:
             # Not installed / no metadata — omit rather than guess.
             pass
+
+    # `pyhecke_native` is built from this repo's own `tools/hecke-engine`
+    # and is NOT published, so its version string is a hand-maintained crate
+    # number, not a release identifier. Measured: across 21 commits to
+    # `hecke-engine` and 2 to `pyhecke-native` between 2026-08-11 and
+    # 2026-08-21 — including flipping `trace_weights` to `h*z^2 + z` and
+    # enabling native dispatch on convention D, both of which move numbers —
+    # the recorded versions never left `0.9.0` / `0.8.0`.
+    #
+    # So for the one dependency whose code lives in this repo, the block
+    # above is blind in exactly the case it exists to catch. That is not
+    # hypothetical: `atomic_tr_m_mpfr_50dps` fails to reproduce its
+    # committed tr_M by ~40.7 ppb with an `environment` block matching the
+    # committing run *exactly*, and seven other candidate causes are refuted
+    # by measurement (bean `qou-ibbr`). A matching environment was read as
+    # evidence the compute was the same; it is only evidence the provenance
+    # cannot tell.
+    #
+    # The compiled object is content-addressed instead, which needs no
+    # cooperation from the Rust side and cannot drift from what actually ran.
+    h = _pyhecke_native_build_hash()
+    if h:
+        env["pyhecke_native_build"] = h
     return env
+
+
+_PYHECKE_NATIVE_BUILD_HASH: Optional[str] = None
+
+
+def _pyhecke_native_build_hash() -> Optional[str]:
+    """sha256 prefix of the compiled `pyhecke_native` extension, or None.
+
+    Located via `find_spec` so the module is never imported just to record
+    provenance (the same restraint `capture_environment` shows for the
+    version reads). Cached: the file cannot change within a process, and
+    hashing ~3 MB per witness would otherwise be pure waste.
+    """
+    global _PYHECKE_NATIVE_BUILD_HASH
+    if _PYHECKE_NATIVE_BUILD_HASH is not None:
+        return _PYHECKE_NATIVE_BUILD_HASH or None
+    _PYHECKE_NATIVE_BUILD_HASH = ""  # negative-cache; "" is falsy
+    try:
+        import hashlib as _hl  # noqa: PLC0415
+        import importlib.util as _iu  # noqa: PLC0415
+
+        spec = _iu.find_spec("pyhecke_native")
+        if spec is None:
+            return None
+        roots = list(spec.submodule_search_locations or [])
+        if not roots and spec.origin:
+            roots = [str(Path(spec.origin).parent)]
+        for root in roots:
+            for so in sorted(Path(root).rglob("*.so")):
+                _PYHECKE_NATIVE_BUILD_HASH = _hl.sha256(
+                    so.read_bytes()).hexdigest()[:16]
+                return _PYHECKE_NATIVE_BUILD_HASH
+    except Exception:  # noqa: BLE001 — provenance never breaks a producer
+        pass
+    return None
 
 
 # ── Upstream-witness hash recording (anti-staleness) ────────────
