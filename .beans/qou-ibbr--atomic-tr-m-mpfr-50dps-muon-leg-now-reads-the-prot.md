@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-21T21:38:21Z
+updated_at: 2026-08-21T22:00:55Z
 ---
 
 
@@ -114,3 +114,40 @@ Note also that neither current table reproduces the committed value, and the pre
 That is a real latent defect and worth closing, but it is **not** this bean's cause, and it is honestly small: **5.7e-10** on the muon leg. Verified a no-op for the production consumer — `binding_canonical` re-run is byte-identical in every mathematical field (timings and provenance only).
 
 Bean stays **open** on the unestablished cause, re-scoped away from the pin.
+
+
+---
+
+## 2026-08-21 (later) — seven causes eliminated; the question is now sharper and NOT a pin question
+
+Continued from the correction above. Every candidate I could name is refuted **by measurement**, so recording the eliminations rather than guessing an eighth.
+
+The quantity: main's committed bridge `tr_M` for the proton atom is `1.14575978171993650736` (landed `c3a7e16856`, 2026-08-11). Re-running the same producer today gives `1.14575982831999277043` — **~40.7 ppb** — while the peel side is **byte-identical**.
+
+| # | candidate | measurement | verdict |
+|---|---|---|---|
+| 1 | pin / layer straddle | muon vs proton y_λ table move tr_M by **5.7e-10**; regression is 4.6e-8 | **refuted** — 80× too small |
+| 2 | convention C vs D | a C→D table swap moves tr_M **~7.5 %** (`1.0653` vs `1.1458`) | **refuted** — ~6 orders too large |
+| 3 | y_λ table drift | proton n=3 weight byte-stable across `cbc8237daa` and to main; muon table stable since `993e15015b` (08-10, *before* the 08-11 value) | **refuted** |
+| 4 | bridge code | only commit touching `tr_m_wenzl_bridge_mpfr.py` since 08-11 is my own `9e3d984719` | **refuted** |
+| 5 | environment | committed witness records `python 3.11.15 / mpmath 1.3.0 / pyhecke_native 0.9.0`; this container **matches exactly** | **refuted** |
+| 6 | Rust-path confound | both the committed run and mine record `effective_method: hoefsmit-python-fallback` | **refuted** |
+| 7 | table coverage / precision | both tables `dps=50`, identical weight counts at n=3 and n=9 | **refuted** |
+
+Also worth striking from the record: **`cbc8237daa` never touched the bridge at all.** Its diff is `y_lambda_tower_infra.py` + three witnesses. My original attribution was wrong about the mechanism *and* about the file.
+
+And the `y-lambda-at-q0.witness.json` cached-accessor trap (AGENTS.md §q₀ rule 4) does not apply — `wedderburn_jones_markov.y_lambda_at` already carries a guard whose docstring says that cache "holds C weights and must NOT be served".
+
+**Run-to-run determinism confirmed:** two consecutive local runs are byte-identical (`1.145759828887891988742418`).
+
+### The sharpened question
+
+Same repository state, same recorded environment, same effective method, deterministic — and the producer **does not reproduce its own committed value**. The 40.7 ppb is not a pin, not a convention, and not a code or dependency change that git can see.
+
+This is the same sentence as sibling **#5386**'s title, about a different producer: *"Repin q-beta-operator-valued-N3 to proton — and its committed witness does not reproduce."* Two independent producers failing to reproduce committed values under matched conditions is more likely one cause than two. That connection is the most promising lead and is worth pursuing jointly rather than separately.
+
+### Re-scope
+
+Bean stays **open**, re-scoped from "muon-leg straddle" to **"committed value not reproducible under a matched environment; cause unknown; 7 candidates eliminated"**. `abs_diff_vs_bridge` degrading 50× remains the sharpest *symptom* — the peel is a stable reference and the bridge is what moves — but it is not diagnostic of a straddle, which is where I went wrong twice.
+
+**Do not** re-pin, re-root, or rebaseline anything to make the number agree. Nothing measured supports any of those, and the committed witness on `main` is untouched.
