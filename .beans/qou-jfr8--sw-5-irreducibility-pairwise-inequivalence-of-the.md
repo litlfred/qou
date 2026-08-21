@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T15:23:31Z
+updated_at: 2026-08-21T15:43:17Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -272,3 +272,64 @@ irreducibles. What is open is only the Lean.
 **Anticipated residual:** *"the content multiset determines the Young diagram"*
 is classical but I have not found it in the corpus. If it turns out to be the
 expensive piece, it gets its own bean rather than a `sorry`.
+
+
+## Stage 1 + 2 LANDED (PR #5370) — and the route that removes the condition
+
+`QOU/SchurWeyl/SeminormalInequivalence.lean`, 7 theorems, all sorry-free and
+axiom-clean `[propext, Classical.choice, Quot.sound]`, wired into `QOU.lean`.
+
+**Stage 1** — `MatRepEquiv`, `MatRepEquiv.scalar_eq`,
+`seminormalRep_not_matRepEquiv_of_contentCoshSum_ne`. Conditional, as scoped.
+
+**Stage 2** — `conj_eq`, `trace_eq`, `card_eq`, `seminormalRep_jmPowSum`,
+`contentPowSum_eq_of_matRepEquiv`.
+
+### Correcting my own plan in the takeover note above
+
+I wrote that stage 2 needs *"the eigenvalue multiset of each `ρ(L_k)`"*, and
+budgeted for either Newton's identities or `charpoly` similarity-invariance.
+**Neither is needed, and the multiset never has to be handled as a multiset.**
+
+Sum over `k` FIRST. `Σ_k L_k^m` has a *constant* diagonal — the cell sweep
+(`sum_cellOf_range`) makes every tableau give the same value — so it acts by a
+**scalar**, and `scalar_eq` (already proved for stage 1) applies verbatim at
+every `m`. No per-`k` multiset, no charpoly, no power-sum-to-multiset lemma.
+`seminormalRep_jmPowSum` is `seminormalRep_barSymJMSum` with the bar-symmetrised
+`m = ±1` combination replaced by an arbitrary power, and the proof is the same
+four lines plus `Matrix.diagonal_pow`.
+
+### The genericity hypothesis does a second job
+
+Writing `t = q^{2m}`, the family says the content generating functions
+`Σ_{c∈μ} t^c` and `Σ_{c∈ν} t^c` agree at every point of `{q², q⁴, q⁶, …}`.
+`q ≠ 0` and `q² ≠ 1` make `q²` positive and `≠ 1`, so its powers are strictly
+monotone and those points are **pairwise distinct** — infinitely many. A Laurent
+polynomial with infinitely many roots vanishes.
+
+Worth noting because elsewhere in this arc `q² ≠ 1` is used only for `zpow`
+injectivity (`zpow_injective_of_not_root_of_unity`). Here it buys something
+different: an infinite supply of distinct evaluation points. Same hypothesis,
+unrelated mechanism.
+
+### Genuinely open — two steps, neither hidden as a `sorry`
+
+1. **Infinitely many roots ⟹ coefficient equality.** Clear `t^{-K}` by
+   multiplying through by `t^K` (`K = max |content|`), then
+   `Polynomial.eq_zero_of_infinite_isRoot`. The infinitude comes from strict
+   monotonicity of `m ↦ (q²)^m`.
+2. **Content multiset determines the Young diagram.** Classical; corpus-grepped
+   and **not found** — `SchurWeyl/`, `BraidKnot/`, `Mathlib/` all negative. This
+   is the one I would budget for. If it is expensive it gets its own bean.
+
+The file states both in its stage-2 docstring and proves neither. It proves what
+it says and no more; nothing in it is a placeholder.
+
+### Scope check on what is claimed
+
+`seminormalRep_not_matRepEquiv_of_contentCoshSum_ne` is **not** `μ ≠ ν ⟹
+ρ_μ ≇ ρ_ν` and must not be cited as if it were. Scope-(a): it separates exactly
+those pairs whose content-cosh sums differ *at this q*. The unconditional
+statement is **true** (`H_n(q)/ℝ` is semisimple away from roots of unity of
+order ≤ n, and the ρ_λ are then the complete pairwise-inequivalent family) — the
+gap is formalisation, not mathematics.
