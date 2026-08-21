@@ -177,3 +177,29 @@ and cross-check the log's mtime.
    Baselines drain, never grow — leaving it at 6 files / 26 fields after the
    tree reaches 0 would let a future regression back in silently, which is the
    whole failure this bean was opened about.
+
+## The gated tree was the SMALLER half — widen it to all of `docs/audits`
+
+Measured after the flip: I scoped the gate to `docs/audits/scripts` (26 fields),
+because that is where the bean's original evidence came from. The rest of
+`docs/audits/` was never in scope and is far bigger:
+
+    docs/audits (whole tree, excl. _deprecated and self-outputs):
+      34 dirty witnesses, 1,277 raw float64 fields
+
+That is ~50x the subtree I gated. Most are dated 2026-05-02 — historical
+one-off audit artifacts, e.g. `2026-05-02-per-braid-hybrid-jet` (249 fields),
+`-gs-filtration-E2-probe` (157), `-per-braid-wigner` (91).
+
+**Plan: one gate for `docs/audits`, superseding the `scripts` one.** The
+`_baseline_path()` mechanism already generalises to any scan root, so this is a
+baseline file and a one-word change to the gate's `--scan-root`, not new
+machinery. Two baselines for nested trees would double-count the subtree and
+confuse the drain accounting; a single superset baseline does not.
+
+Sequenced AFTER the kappa3/kappa5 witnesses land, so the new baseline starts at
+the true floor rather than recording 2 fields that are about to become 0.
+
+Not a drain: these 1,277 stay exactly as they are. The point is that nothing
+NEW may join them — which is the same argument the 5 -> 6 growth made for the
+subtree, only fifty times larger.
