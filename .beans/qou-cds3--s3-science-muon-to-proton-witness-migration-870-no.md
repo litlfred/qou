@@ -209,3 +209,68 @@ What would actually discriminate is whether the two pins feed **one computed
 quantity** versus sitting in two labelled fields — which needs the producer, not
 the artefact. That is the per-file work this bean asks for, and it is not
 automatable from the JSON alone.
+
+### ⚠ THE MIGRATION METRIC CANNOT SEE THE WORST CASE — 22 witnesses label a MUON value "proton"
+
+Chasing the 24 intra-muon files turned up something they were a symptom of.
+
+**Measured at HEAD**, over `computations/**/*.witness.json` (excluding
+`_deprecated/`), looking at fields whose *name* contains `proton`:
+
+| | count |
+|---|---|
+| proton-named field holding the real proton pin `1.1099785827513808…` | **63** |
+| **proton-named field holding a MUON value** | **22** |
+
+Examples, verbatim:
+
+```
+probes/flavor-split-alpha-dilog-expansion   /data/proton_anchor/q0 = 1.1099785955573347…   <- stale MUON
+                                            /data/muon_anchor/q0   = 1.1099785955541805…   <- derived muon
+                                            /q0Value               = 1.1099785955573347…
+qbeta/qbeta-c6-c10-crossanchor-falsification /data/q_proton        = 1.10997859555733471…  <- stale MUON
+audits/q0-consistency-audit                  /canonical_proton_q0  = 1.10997859555733471…  <- stale MUON
+```
+
+The real proton pin is `1.1099785827513808…`; these are `1.10997859…`. They differ
+at the 9th significant digit, so this is not rounding.
+
+**Why this matters more than the straddle count.** This bean measures migration by
+**fingerprint** — counting `1.1099785827` as "proton". These 22 witnesses contain
+**no proton fingerprint at all**. They are counted as *muon* witnesses awaiting
+migration, or as *both*-pin straddles, and in neither case does the metric reveal
+that a field literally named `proton` holds a muon number. **The measurement
+method is blind to the failure mode it most needs to catch**: right name, wrong
+value.
+
+Worse for the sweep: `audits/q0-consistency-audit.witness.json` — the *consistency
+audit* — asserts `canonical_proton_q0` = the stale muon constant, and carries
+**no `computedAt` and no `scriptHash`**, so nothing flags it as stale.
+
+**Two "cross-anchor" probes are therefore not cross-anchor.**
+`qbeta-c6-c10-crossanchor-falsification` and
+`qbeta-singularity-cross-anchor-probe` compare `q_proton` against `q_muon` where
+`q_proton` holds a muon value — so the "anchor swing" they measure is the
+**3.15e-12 gap between the two muon constants** (`qou-khac`), not the ~1.28e-8
+muon↔proton separation. Any conclusion drawn from their swing magnitude is scoped
+to the wrong comparison. Not re-derived here; flagged.
+
+**Provenance, stated as inference not fact.** Both dated examples were computed in
+**June 2026** (`2026-06-29`, `2026-06-22`), before the 2026-08-15 proton ruling. At
+a June-era commit the substrate's canonical branch required
+`_d["q"].startswith("1.109978595557")` and raised *"not canonical muon"* otherwise
+— i.e. **"canonical" then resolved to the muon pin**. So these witnesses recorded
+the then-canonical value under a `proton` name. Whether the probes mis-named it in
+June or the meaning of "canonical" moved under them, I did not establish, and it
+does not change the current state: the field says proton and the value is muon.
+
+**Not fixed here.** Regenerating them is producer work across 22 files and several
+of them are `qbeta`-channel probes whose conclusions would move; and hand-editing
+a witness value is prohibited outright. The queue is
+`scratchpad/proton_mislabel.txt`.
+
+**Bears directly on `qou-khac`**, which scopes the two-muon-value problem to 3
+hand-typed source constants. The witness layer carries it at 212 stale-only, 24
+both-values, and now 22 mislabelled-as-proton — and the last group will be
+*hardest to fix after* the sweep, because once a witness is relabelled there is
+nothing left to tell which muon value it came from.
