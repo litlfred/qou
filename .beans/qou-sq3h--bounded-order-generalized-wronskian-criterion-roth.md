@@ -135,3 +135,59 @@ useful direction is the contrapositive (if every bounded-order generalized Wrons
 vanishes then `dirGenWronskian c f = 0` for every `c`), which needs only multilinearity of
 `det` in its rows — **not** a multinomial theorem for `(∑ cᵢ ∂ᵢ)ⁱ`. Worth noting because the
 multinomial route looks necessary and is not.
+
+---
+
+## 2026-08-21, later — `m = 2` is done, and there are now TWO routes
+
+`QOU/Mathlib/BoundedOrderWronskian.lean`:
+
+```
+f, g independent over K  ⟹  ∃ k, mvGenWronskian ![[], [k]] ![f, g] ≠ 0
+```
+
+The family `(id, ∂ₖ)` has orders `0, 1` — exactly `ord (Δᵢ) ≤ i`. So the bounded-order
+criterion, in the committed shape, **holds outright at `m = 2`**.
+
+### ⚠ Route B, which avoids genericity, and is probably the one to try
+
+The `m = 2` case is not just a sub-target — it is *precisely the base case* that the
+univariate general-`m` converse already in this repo is built on.
+`Polynomial.exists_dependence_of_genWronskian_eq_zero` runs:
+
+1. kernel vector from the vanishing determinant,
+2. derivative descent (`sum_derivative_of_forall_sum_eq_zero`),
+3. the Wronskian combination `c_l ∂c_j − c_j ∂c_l` — kills one entry **without dividing**,
+4. the `m = 2` converse, consumed at step 3's output,
+5. substitution.
+
+Every step has a bounded-order multivariate analogue. The reason it should go through: the
+contradiction hypothesis is *"**every** bounded-order Wronskian vanishes"*, which is exactly
+what makes the cofactor expansion valid for an **arbitrary** last operator `Δ` with
+`ord Δ ≤ m−1`. Descent then works because `ord (∂ₖ ∘ Δ) ≤ m−1` whenever `ord Δ ≤ m−2`.
+
+**This route needs no genericity at all** — no generic direction, no generic point, no
+infinite-field argument.
+
+⚠ Written down as a plan, not a theorem. The analogy could fail where the univariate proof
+uses the canonical operator `dⁱ/dxⁱ` while the multivariate family is chosen. Try it before
+Route A.
+
+### Route A (generic direction) — still recorded, now the fallback
+
+`DirectionalWronskian` reduces it to `∃ c, dirGenWronskian c f ≠ 0`, with the base point
+already eliminated. Still blocked on a genericity statement over the space of directions.
+Keep it: if Route B's analogy breaks, this is where to return.
+
+### Newly available
+
+- `exists_bounded_order_mvGenWronskian_two` — the base case.
+- `totalDegree_pderiv_lt` **and** `degreeOf_pderiv_lt`. Not duplication: `totalDegree` is the
+  one that pairs with Mathlib's `totalDegree_mul_of_isDomain`, which has no `degreeOf`
+  counterpart.
+- `eq_C_of_pderiv_eq_zero`, `coeff_pderiv`, `coeff_pderiv_of_pos`.
+
+⚠ **`IsCoprime` is the wrong notion** for any of this. It is Bézout-flavoured and is **false**
+for `x, y` in `MvPolynomial` despite their sharing no non-unit factor. Everything must go
+through `UniqueFactorizationMonoid` / `IsRelPrime`. Reaching for `IsCoprime` is the natural
+first move and it does not work.
