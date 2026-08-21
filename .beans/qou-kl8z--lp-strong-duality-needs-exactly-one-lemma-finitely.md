@@ -281,3 +281,38 @@ statement about generality, not a blocker.
       cone spanned by `±`columns and basis vectors. Index the generators by a
       sum type.
 - [ ] Then `MatrixFarkas` at `R = ℝ` by the two-case split above.
+
+## Attempted and backed out: the inequality form (2026-08-21)
+
+Tried to land `mem_coneSpan_ineqGens_of_feasible` — the bridge from
+`farkas_vector` to the inequality form. **Backed out rather than committed with
+a `sorry`**, because the file is otherwise pristine and a lone `sorry` in it
+would misrepresent how close this is. The maths is not the obstacle; three
+`EuclideanSpace`/`WithLp` API details are. Recording them so the next attempt
+starts past them:
+
+1. **Coordinatewise evaluation of a sum.**
+   `(∑ i, x i • v i) q = ∑ i, x i * v i q` for `v : ι → EuclideanSpace ℝ (Fin p)`.
+   `simp [Finset.sum_apply]` does **not** fire — the linter reports the lemma
+   unused, because the head is `EuclideanSpace`, not a raw Pi type, so
+   `Finset.sum_apply` fails to match syntactically even though `WithLp` is a
+   type synonym. Needs either the PiLp-specific lemma or routing through
+   `EuclideanSpace.proj q` as a linear map and `map_sum`.
+2. **`WithLp.toLp_apply` does not exist** under that name. Something else
+   provides `WithLp.toLp 2 f q = f q`; find it, or build generators with
+   `EuclideanSpace.single` throughout instead of raw lambdas.
+3. **`if` orientation.** After `simp`, the basis term comes out as
+   `∑ x, if q = x then … else 0`, so it wants `Finset.sum_ite_eq`, not the
+   primed `Finset.sum_ite_eq'` (which matches `if x = q`). Easy, but it cost a
+   cycle.
+
+The design that was working: index generators by `(Fin k ⊕ Fin k) ⊕ Fin p` —
+columns, negated columns, basis — with coefficients
+`Sum.elim (Sum.elim (max (l j) 0) (max (-l j) 0)) (fun q => d q − (Bl) q)`.
+Non-negativity of those three families discharges by `le_max_right`,
+`le_max_right`, `sub_nonneg.mpr (hl q)`, and that part **did** compile. The
+scalar identity `max a 0 − max (-a) 0 = a` is proved by `rcases le_total 0 a`
+and is also fine. Only the coordinate bookkeeping is unfinished.
+
+Estimated remaining: one or two compile cycles once (1) is resolved, then the
+two-case `μ` split for `MatrixFarkas` at `R = ℝ`.

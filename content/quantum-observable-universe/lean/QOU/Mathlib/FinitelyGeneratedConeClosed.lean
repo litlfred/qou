@@ -437,4 +437,5 @@ theorem farkas_vector [DecidableEq ι] (v : ι → EuclideanSpace ℝ (Fin k))
 
 end EuclideanFarkas
 
+
 end QOU.Mathlib
