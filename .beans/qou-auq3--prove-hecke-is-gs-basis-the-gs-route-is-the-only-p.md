@@ -3057,3 +3057,33 @@ loop, the quadratic pair, `small(a)`), then `OverlapComposition` + `spoly`
 joining it to the tail. The prefix's own per-step hypotheses have **not** been
 swept — the clash above is measured only against the block contexts `tailChain`
 would use.
+
+### The prefix will be harder than the tail — measured, before writing its Lean
+
+Every context hypothesis in the tail was discharged by **one letter**: no other
+term shared the source's first letter, so "no other term extends this context"
+followed from `List.cons.inj` whatever context the lemma picked. Free, and
+lemma-independent. `hecke_prefix_head_separation.py` asks whether the prefix
+affords the same, over `a = 3..5`, `b ∈ {a, a+1, a+2}`:
+
+- **`4(a−1)` of the prefix's `a²+a+5` steps are NOT head-separated** — 8 of 17,
+  12 of 25, 16 of 35. Roughly half.
+- The shared prefix runs as deep as **`2a+1`**.
+- Only **B** and **F** steps clash; the **Y** and **Q** steps of the quadratic
+  pair never do.
+- All three counts are **independent of `b`** — the clash structure is a
+  function of the depth alone; the block length does not enter it.
+
+**And scheduling does not repair it.** That is what repaired the tail, so it was
+the first thing to try. Both lineage-grouped orders are legal and reach the same
+endpoint; lineage-0-first clashes exactly as often as the engine's order, and
+lineage-1-first is strictly worse (12/18/25 vs 8/12/16). **Scope (a)** — those
+two groupings, alone, do not help; the space of legal orders is far larger than
+three and nothing here excludes a better one.
+
+The necessary condition is separately clean (`dup_sources = 0` chain-wide), and
+head separation is *sufficient*, not necessary — a clashing step is not a proved
+obstruction, it is a step whose hypothesis needs an argument rather than a
+one-letter appeal. But the shape of the prefix's work is now known: ~half its
+steps need real collision reasoning, and hunting for a schedule first is not
+indicated.
