@@ -1,13 +1,13 @@
 ---
 # qou-q407
 title: 'GAP: 8 self-assuming projections — ''theorem (h : P) : P := h'' asserts nothing'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - lean
 created_at: 2026-08-07T18:24:34Z
-updated_at: 2026-08-19T20:59:59Z
+updated_at: 2026-08-21T14:37:44Z
 ---
 
 Eight provable declarations have the shape 'theorem name ... (h : P) : P := h' — hypothesis identical to conclusion, proof term the identity. They assert nothing about the objects named, and stay true if every definition is swapped.
