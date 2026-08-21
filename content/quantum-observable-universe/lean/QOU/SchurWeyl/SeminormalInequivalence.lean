@@ -43,9 +43,16 @@ Summing over `k` *first* makes the diagonal constant (the cell sweep), so `Σ_k 
 scalar for every `m` and the same `scalar_eq` applies verbatim; the family of scalars is then a
 polynomial identity in disguise.
 
-**The one step still open** is the classical fact that a Young diagram is determined by its
-content multiset.  It is stated here and deliberately not assumed; nothing in this file is a
-`sorry`, and no theorem here claims `μ ≠ ν → ρ_μ ≇ ρ_ν`.
+`youngDiagram_eq_of_contentCount_eq` then closes it, and needs neither Frobenius coordinates nor
+an induction on the diagram: **each diagonal of a Young diagram is downward-closed**, so its
+*length* already decides membership, and the diagonal lengths are exactly the content
+multiplicities.
+
+So `seminormalRep_not_matRepEquiv_of_ne` is **unconditional**: distinct shapes of the same size
+carry inequivalent representations, with no hypothesis beyond `μ ≠ ν` and the genericity
+`seminormalRep` already requires.  The conditional
+`seminormalRep_not_matRepEquiv_of_contentCoshSum_ne` is kept as the cheap criterion it is — one
+scalar, checkable per pair — but it is no longer the strongest statement here.
 
 The unconditional claim is nonetheless *true*: `H_n(q)` over `ℝ` is semisimple whenever `q` is
 not a root of unity of order `≤ n`, which `q ≠ 0` with `q ^ 2 ≠ 1` supplies, and the `ρ_λ` are
@@ -383,5 +390,147 @@ theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
       have := neg_le_cellContent hσ hc
       omega
     rw [hempty ν hν, hempty μ hμ]
+
+
+/-! ### Content multiset determines the diagram
+
+The last step, and it does not need Frobenius coordinates or an induction on the diagram.  The
+observation that collapses it: **each diagonal of a Young diagram is downward-closed**, so its
+*length* already decides membership.  Writing `diagIndex (i,j) = min i j` for the position of a
+cell along its own diagonal, a cell lies in `μ` exactly when its diagonal index is below the
+length of that diagonal — and the diagonal lengths are precisely the content multiplicities.
+
+So equal content counts give equal diagonal lengths, which give the same membership predicate,
+which is the same diagram.
+-/
+
+/-- A downward-closed finite set of naturals is an initial segment. -/
+theorem mem_iff_lt_card_of_downward {S : Finset ℕ}
+    (hdc : ∀ m ∈ S, ∀ k, k ≤ m → k ∈ S) (k : ℕ) : k ∈ S ↔ k < S.card := by
+  constructor
+  · intro hk
+    have hsub : Finset.range (k + 1) ⊆ S := by
+      intro x hx
+      rw [Finset.mem_range] at hx
+      exact hdc k hk x (by omega)
+    have := Finset.card_le_card hsub
+    rw [Finset.card_range] at this
+    omega
+  · intro hk
+    by_contra hnot
+    have hsub : S ⊆ Finset.range k := by
+      intro x hx
+      rw [Finset.mem_range]
+      by_contra hge
+      exact hnot (hdc x hx k (by omega))
+    have := Finset.card_le_card hsub
+    rw [Finset.card_range] at this
+    omega
+
+/-- The position of a cell along its own diagonal, counted from the boundary of the quadrant. -/
+def diagIndex (c : ℕ × ℕ) : ℕ := min c.1 c.2
+
+/-- A cell is determined by its content together with its diagonal index. -/
+theorem cell_eq_of_content_of_diagIndex {c c' : ℕ × ℕ}
+    (hc : cellContent c = cellContent c') (hi : diagIndex c = diagIndex c') : c = c' := by
+  obtain ⟨i, j⟩ := c
+  obtain ⟨i', j'⟩ := c'
+  simp only [cellContent, diagIndex] at hc hi
+  have h1 : i = i' ∧ j = j' := by omega
+  rw [h1.1, h1.2]
+
+/-- The `d`-diagonal of `μ` — the cells of content `d`.  Its cardinality is the multiplicity of
+`d` in the content multiset. -/
+noncomputable def diagOf (μ : YoungDiagram) (d : ℤ) : Finset (ℕ × ℕ) := by
+  classical
+  exact μ.cells.filter (fun c => cellContent c = d)
+
+theorem mem_diagOf {μ : YoungDiagram} {d : ℤ} {c : ℕ × ℕ} :
+    c ∈ diagOf μ d ↔ c ∈ μ.cells ∧ cellContent c = d := by
+  classical
+  simp [diagOf]
+
+/-- **Diagonals are downward-closed.**  Stepping one cell up-and-left along a diagonal stays in
+the diagram (up-left closure), keeps the content, and drops the diagonal index by one. -/
+theorem diagIndex_image_downward (μ : YoungDiagram) (d : ℤ) :
+    ∀ m ∈ (diagOf μ d).image diagIndex, ∀ k, k ≤ m → k ∈ (diagOf μ d).image diagIndex := by
+  classical
+  intro m hm k hk
+  simp only [Finset.mem_image] at hm ⊢
+  obtain ⟨c, hc, rfl⟩ := hm
+  obtain ⟨hcell, hcont⟩ := mem_diagOf.mp hc
+  obtain ⟨i, j⟩ := c
+  have hmem : (i, j) ∈ μ := by rw [← YoungDiagram.mem_cells]; simpa using hcell
+  simp only [diagIndex] at hk
+  set t : ℕ := min i j - k with htdef
+  refine ⟨(i - t, j - t), ?_, ?_⟩
+  · refine mem_diagOf.mpr ⟨?_, ?_⟩
+    · rw [YoungDiagram.mem_cells]
+      exact μ.up_left_mem (by omega) (by omega) hmem
+    · simp only [cellContent] at hcont ⊢
+      omega
+  · simp only [diagIndex]
+    omega
+
+/-- **Membership is decided by the diagonal length.**  A cell lies in `μ` exactly when its
+diagonal index is below the number of cells of its content. -/
+theorem mem_iff_diagIndex_lt (μ : YoungDiagram) (i j : ℕ) :
+    ((i, j) ∈ μ) ↔ diagIndex (i, j) < (diagOf μ (cellContent (i, j))).card := by
+  classical
+  set d : ℤ := cellContent (i, j) with hd
+  have hinj : Set.InjOn diagIndex (diagOf μ d) := by
+    intro a ha b hb hab
+    exact cell_eq_of_content_of_diagIndex
+      (((mem_diagOf.mp ha).2).trans ((mem_diagOf.mp hb).2).symm) hab
+  have hcard : ((diagOf μ d).image diagIndex).card = (diagOf μ d).card :=
+    Finset.card_image_of_injOn hinj
+  have hiff := mem_iff_lt_card_of_downward (diagIndex_image_downward μ d) (diagIndex (i, j))
+  rw [hcard] at hiff
+  rw [← hiff]
+  simp only [Finset.mem_image]
+  constructor
+  · intro hmem
+    exact ⟨(i, j), mem_diagOf.mpr ⟨by rw [YoungDiagram.mem_cells]; exact hmem, rfl⟩, rfl⟩
+  · rintro ⟨c, hc, hci⟩
+    obtain ⟨hcell, hcont⟩ := mem_diagOf.mp hc
+    have : c = (i, j) := cell_eq_of_content_of_diagIndex (by rw [hcont, hd]) hci
+    subst this
+    rw [← YoungDiagram.mem_cells]
+    simpa using hcell
+
+/-- **A Young diagram is determined by its content multiset.**  Equal content counts give equal
+diagonal lengths, and `mem_iff_diagIndex_lt` turns those into the same membership predicate. -/
+theorem youngDiagram_eq_of_contentCount_eq {μ ν : YoungDiagram}
+    (h : ∀ d : ℤ, (diagOf μ d).card = (diagOf ν d).card) : μ = ν := by
+  ext c
+  obtain ⟨i, j⟩ := c
+  rw [YoungDiagram.mem_cells, YoungDiagram.mem_cells,
+    mem_iff_diagIndex_lt μ i j, mem_iff_diagIndex_lt ν i j, h]
+
+
+/-! ### The unconditional statement -/
+
+/-- **Pairwise inequivalence of the `q`-deformed seminormal representations — unconditional.**
+
+Distinct shapes of the same size carry inequivalent representations.  No hypothesis on the shapes
+beyond `μ ≠ ν`, and none on `q` beyond the genericity `seminormalRep` already requires.
+
+The chain, all sorry-free: an equivalence makes `Σ_k L_k^m` act by the same scalar for every `m`
+(`contentPowSum_eq_of_matRepEquiv`); that family of coincidences is a polynomial identity in
+disguise, because `q ^ 2 ≠ 1` makes the evaluation points `q^2, q^4, …` distinct
+(`contentCount_eq_of_matRepEquiv`); and a Young diagram is determined by its content multiset,
+because its diagonals are downward-closed (`youngDiagram_eq_of_contentCount_eq`).
+
+Together with irreducibility this is what makes `{ρ_λ : λ ⊢ n}` the *list* of irreducibles of
+`H_n(q)` rather than merely a supply of them — the second half of SW-5 (bean `qou-jfr8`). -/
+theorem seminormalRep_not_matRepEquiv_of_ne {μ ν : YoungDiagram}
+    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1) (hne : μ ≠ ν) :
+    ¬ MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν) := by
+  classical
+  intro h
+  refine hne (youngDiagram_eq_of_contentCount_eq (fun d => ?_))
+  have hc := contentCount_eq_of_matRepEquiv q hq0 hq2 n hμ hν h d
+  simpa [diagOf] using hc.symm
 
 end QOU.SchurWeyl
