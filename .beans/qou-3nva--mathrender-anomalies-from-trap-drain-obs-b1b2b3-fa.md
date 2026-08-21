@@ -1022,3 +1022,118 @@ Recorded clean, so a later pass does not "fix" them: `Vol(4₁) =
 2·Cl₂(π/3)` is right in both name and coefficient here, and the `T_w` in
 `e-infinity-page-identifications` is the Hecke basis element sanctioned by
 the cheat sheet, not a §7a generator violation.
+
+---
+
+## From agent:r07 (mass-theory nq_01) — 2026-08-21
+
+25 findings over 42 blocks. The one that matters most is confirmed twice,
+by two independent routes.
+
+### `figure-eight-branching-rule` states a word that closes to the unknot
+
+The block gives `4₁ = σ₀σ₁⁻¹σ₀⁻¹σ₁` — the commutator on three strands.
+Cyclic permutation plus `σ₁⁻¹σ₂σ₁ = σ₂σ₁σ₂⁻¹` reduces it to `σ₁σ₂⁻¹`, and
+two destabilisations give the **unknot**.
+
+This is not a typo in the prose, and that is what makes it expensive.
+`agent:r07` built the 2-dimensional `[2,1]` Hoefsmit representation in
+sympy (braid relation verified) and found
+`χ(σ₁σ₂⁻¹σ₁⁻¹σ₂) = −q² + 1 − q⁻² = −1 − h²`, which is **exactly Table 1's
+entry**, while the true figure-eight `(σ₁σ₂⁻¹)²` gives
+`q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴`. So Table 1, `b_λ = −f^{λ/[2,1]}h²`, and every
+Table 2 assignment are characters of an unknot-closing braid presented as
+`4₁`. Correcting the word alone would leave the tables wrong; they need
+regeneration.
+
+Confirmed here by a different method —
+[`content/pipeline/braid-alexander.ts`](../content/pipeline/braid-alexander.ts),
+reduced Burau over exact `ℤ[t,t⁻¹]`:
+
+| word | Alexander | |
+|---|---|---|
+| `σ₀σ₁⁻¹σ₀⁻¹σ₁` (as stated) | `1` | the unknot |
+| `(σ₀σ₁⁻¹)²` (sibling block) | `1 − 3t + t²` | genuinely `4₁` |
+| `σ₀³` (control) | `1 − t + t²` | `3₁` |
+
+The sibling `figure-8-archimedean-illustration` carries the correct word,
+so the chapter disagrees with itself.
+
+### Three convention-C leaks, each load-bearing rather than cosmetic
+
+1. `explicit-alpha-k-h3-proof` — the "equivalently `α₃ = z(1+q^{1/2}−q^{−1/2})`"
+   step requires `h·z = q^{1/2} − q^{−1/2}`, true only at `z_C`. It
+   evaluates to **0.676645** against the correct convention-D **0.691166**,
+   a 2.1 % error rather than a restatement. (The statement block's boxed
+   `q³(q⁴+1)/(q²+1)²` is exact under D, verified to 1e-31.)
+2. `explicit-alpha-k-h4-proof` — the headline `tr_M(r₃) ≈ +0.003463` is a
+   convention-C number. With the statement table's exact `(1⁴)` row, sympy
+   gives `tr_M(r₃) = 0` **identically in q** under D, and
+   `0.003462520932` under C — the quoted value to every digit.
+3. `flavor-dressed-mass-from-substrate-split` — its two displays are equal
+   iff `1/z = q^{1/2}+q^{−1/2}`, i.e. `z_C`. Both give **1.286429856 MeV**
+   there (residual 4e-31); canonical `z_D` gives **1.048397466 MeV**, an
+   18.5 % gap. Worth stating neutrally: the C value sits 0.53 % below
+   CODATA `Δ_np = 1.29333`, in a block whose closing line stresses that
+   `Δ_np` is "no longer an input".
+
+### Claims that do not hold as written
+
+- `em-spectral-completeness` clause (4): `w± = (dim_q V±)²/[2]_q!` cannot
+  sum to 1 at `q ≠ 1` — the corpus's own `w_λ = [n]_q!/H_q(λ)²` gives
+  `2/[2]_q = 0.99458`, the categorical reading `5.10426`. The fix is
+  already in the corpus: the **linear** normalisation the four sibling
+  Feynman blocks use, `w_λ = dim_q(V_λ)·dim(S_λ)/dim_q(V^{⊗n})`, is 1
+  identically at n=2 because `[2]_q² = [3]_q + 1`. No `.lean` sibling
+  exists, so nothing machine-checks the clause.
+- `faddeev-phib-uniqueness`: two of three rigidity inputs are false on the
+  block's own branch. `Φ_b(z)Φ_b(−z)` is not constant (it swings from
+  `6.717e6+1.951e6i` to `−5.527e6−4.287e6i`), but
+  `Φ_b(z)Φ_b(−z)/e^{iπz²} = 6994799.44082` at every test point — the
+  relation is Faddeev's **Gaussian** inversion, not `= c₀`. And
+  σ-unitarity fails: `|Φ_b(0)| = 2644.77` against `|Φ_b(1.1)| = 142623`.
+  The branch making the products converge is the one destroying unitarity.
+- `frobenius-antipode-unifies-chirality-and-tower`: `S(σᵢ) = σᵢ⁻¹` is not
+  an endomorphism of `H_n(R,q)` — `σ⁻¹` satisfies `(x−q⁻¹)(x+q) = 0`, so S
+  is the KL **bar involution**, semilinear over `q ↦ q⁻¹`. A sibling
+  (`flavor-split-habiro-derivation`) uses the same symbol `S` for
+  `T_w ↦ T_{w⁻¹}`, which **fixes** every generator.
+- `explicit-alpha-k-h4-proof`: the six length-3 elements of `S₄` are two
+  **transpositions** and four 4-cycles, not "3-cycle + 4-cycle" — 3-cycles
+  have Coxeter length 2. The counts (6, and 2 classes) are right.
+- `feynman-classical-limit`: `z → 0` is false (both conventions give
+  `z = 1/2` at `q = 1`) and contradicts the block's own `tr_M(σᵢ) = z`.
+- `exceptional-divisor-reeb-intro`: the Garside element `Δ = σ₁σ₂σ₁` closes
+  to the **Hopf link**, Seifert-fibered with `V_hyp = 0`; `Δ²` closes to
+  `T(3,3)`, also 0. Only the Borromean half of that sentence is right.
+
+### Policy
+
+`frobenius-antipode-neutron-tower-closure` puts an excised-class claim and
+an anti-fit violation in six sentences: "dramatically corrects the neutron
+mass … sub-ppm match **at the precise optimal mixing value**". Absolute
+`m_n` is the excised class (2026-08-11) and is on the L2 miss list; a
+parameter tuned to its optimum is a fit, and the next sentence reads it as
+"confirms the structural role". No values, no witness, no pin anywhere in
+the block.
+
+Two more §7a generator violations (`T` for `σᵢ`): `eigenvalue-product-expansion-proof`,
+`feynman-classical-limit`. Token substitution confirmed at 8 further sites,
+including bold heads and sentence-initial lowercase "canonical evaluation",
+which is what proves a capitalised "Numerical" was replaced.
+
+### Recorded clean, so a later pass does not re-flag them
+
+`five-two-saddle-sum-rule` verifies to **30 dps** (residual 1e-30), with
+model epistemic labelling. `flat-tetrahedron-zero-volume`,
+`feynman-eigenbasis-decomposition{,-proof}`, `finite-connes-forces-trivial-kernel`
+and `flavor-mass-splitting-bound` are correct throughout.
+`frobenius-…-interpretation`'s `G/3 = Vol(𝓑₃)/24` is exact because
+`Vol(Borromean) = 8G` — though the `24 = |S₄|` reading is an
+interpretation, not a consequence.
+
+### Operational
+
+Two agents collided on the shared path `/tmp/rec.sh`, silently zeroing one
+helper's variables and costing a block's recording. Agent scratch paths
+must be namespaced per batch id.
