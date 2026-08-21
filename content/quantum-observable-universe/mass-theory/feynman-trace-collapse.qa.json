@@ -2084,6 +2084,22 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.381Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "'No regularisation is needed because V^{(x)n} has finitely many irreducible summands due to the semisimplicity of H_n(R,q)' - substantive, and the reason is given in the same sentence.",
+        "notes": "RIGOR (reported, not fixed): the statement is honestly conditional ('Suppose V_phys admits the complete eigenbasis of lem:feynman-eigenbasis-decomposition'), which is good practice, but the step that actually does the collapsing - that a path factors through a unique summand - is supplied nowhere, here or in the proof sibling. VERIFIED CORRECT: the finiteness half (semisimplicity of H_n(R,q) at non-root-of-unity q gives finitely many summands) is right."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2103,6 +2119,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.068Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -2122,6 +2153,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 45 words)"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.103Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -2141,6 +2187,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 45 words)"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.136Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -2160,6 +2221,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.172Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -2179,6 +2255,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.208Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -2198,6 +2289,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.243Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -2217,6 +2323,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.278Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -2236,6 +2357,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.312Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -2255,6 +2391,21 @@
         "reviewed_at": "2026-08-15T10:31:00.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:56.347Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read of lem:feynman-trace-collapse (one hypothesis sentence, one display, one conclusion sentence). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2278,5 +2429,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:58:56.381Z"
 }
