@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-21T21:55:38Z
+updated_at: 2026-08-21T22:00:40Z
 ---
 
 
@@ -416,3 +416,31 @@ parallel shape operation.)
   -> CornersAlong P is for arbitrary standard (P,Q).
 Then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
 Wedderburn split (currently n <= 12 only, via the unrelated rskBurnsideHolds_le12).
+
+
+### Brick 18 — CornersAlong reduces to SHAPES ALONE (same PR #5426)
+
+uninsertSteps_shape_and_corners : ShapeCornersAlong (tableauShape T) is ->
+  CornersAlong T is  AND  tableauShape (uninsertSteps T is).1 = removeCornerSteps (tableauShape T) is
+
+**The decoupling is the result.** CornersAlong T is mentions the tableau at EVERY step, so
+discharging it looked like it needed P and Q reasoned about together. It does not: IsCorner is
+determined by the shape (isCorner_iff_shape, brick 13) and brick 17 makes the cascade act on shapes
+as removeCorner, so the run-level corner condition FACTORS THROUGH tableauShape T.
+
+Headline consequence — insertWord_uninsertSteps_of_shape: every hypothesis is about T's SHAPE and
+the position list; P appears only in the conclusion.
+
+Four conclusions in one induction because they are mutually dependent: the shape at step k needs the
+corner condition at every LATER step (else the cascade may not have succeeded), and the corner at
+step k needs the shape at step k. Brick 14's uninsertSteps_invariants does NOT break the circle — it
+TAKES CornersAlong as a hypothesis, which is what we are producing.
+
+### Epic status
+P side: DONE, and now reduced to shapes. Bricks 10-15 on main; 16-18 open in #5426.
+Remaining for surjectivity is ONE statement about Q's shape alone:
+  produce ShapeCornersAlong (tableauShape P) is + removeCornerSteps ... = []
+  from Q standard, by reading positions off Q (bricks 4-6: qRowOf / qAppendSteps) and showing each
+  step peels the corner carrying the largest REMAINING entry (brick 16 supplies that corner).
+Then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+Wedderburn split.
