@@ -7,6 +7,7 @@ priority: normal
 created_at: 2026-08-16T02:46:29Z
 updated_at: 2026-08-21T15:56:17Z
 updated_at: 2026-08-21T16:06:00Z
+updated_at: 2026-08-21T16:20:58Z
 ---
 
 
@@ -305,3 +306,31 @@ The condition is supplied by Q one level up and belongs in the statement that co
 - word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2, consuming the
   three preservation lemmas.
 - RSKBurnsideHolds for general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
+
+### Brick 12a — rowUninsert index characterization (PR #5390, branch claude/schensted-rowuninsert-index-2026-08-21)
+
+rowUninsert_spec: the reverse mirror of the corpus's rowInsert_bump_eq_set. Existential form
+(k < length, getD k = z, .1 = r.set k y, z < y, and nothing right of k eligible). The maximality
+clause is the content.
+
+Two findings:
+- lt_of_index_lt needs NO sortedness. I expected weak-sorted + rightmost chaining; the maximality
+  clause gives y <= r[m] directly and z < y chains through. One line.
+- THIRD duplication caught this arc: getD_set_self / getD_set_ne / getD_eq_getElem_mem already
+  exist at SchenstedInsertion.lean:551,556,561. Pattern: that file is 1300+ lines and carries far
+  more than its section headings advertise. GREP IT BEFORE ADDING ANY List/getD/index helper.
+
+Machine-checked rightmost witness: rowUninsert [1,2,4] 3 = ([1,3,4], some 2) — two eligible
+entries, takes the right-hand one; leftmost would give [3,2,4], not weakly increasing.
+
+### Three PRs open simultaneously on this epic, no file overlap
+- #5374 brick 10  SchenstedCascadeRightInverse.lean
+- #5383 brick 11  SchenstedUninsertInvariants.lean
+- #5390 brick 12a SchenstedReverseRowIndex.lean
+All three add one import line to QOU.lean in the same region; 2nd and 3rd to land need a one-line
+rebase there.
+
+- brick 12b: reverse bump monotonicity (write index weakly INCREASES going up, mirror of
+  bump_findIdx_mono). May need a named uninsertIdx; rowUninsert_spec is the bridge.
+- brick 12c: uninsert preserves ColStrict, under the corner hypothesis located in #5383.
+- word-level surjectivity; RSKBurnsideHolds for general n.
