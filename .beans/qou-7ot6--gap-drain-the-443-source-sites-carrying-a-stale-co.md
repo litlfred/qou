@@ -153,3 +153,50 @@ It is largely an environment artifact rather than 113 broken producers: 72 are
 That is a fact about the audit's run environment, not about the corpus. Worth
 knowing before anyone cites "113 unimportable producers" as a corpus health
 figure — including me, who did.
+
+## PROGRESS 2026-08-21 — PR #5423, two tranches
+
+### Tranche 1: the constants modules (done)
+
+`substrate/experimental_constants.py` and `qou_substrate/constants.py` now
+read the registry instead of hardcoding. Five stale values removed, including
+`M_N_MINUS_P_MEV` at 320 ppb under a *"direct CODATA 2022 value"* label.
+`codata_2022_source` gained `M_N_MINUS_P_MEV`; the vintage audit is at
+**9/9**.
+
+**The catch worth remembering:** the registry's `M_N_MEV` is **AME-derived**,
+not CODATA-direct, and that is load-bearing. `Q_β = m_n − m_p − m_e`, and AME
+pins the *difference*. Both edition shifts are exactly `1.27e-6`, so it
+cancels and Q_β is **invariant**. A first pass mixed the table's CODATA-direct
+neutron with the 2022 proton and shifted Q_β by **+0.15 eV** — an artifact,
+not a result.
+
+**So: the drain's target is the REGISTRY, not the table.** The table is what
+the registry is checked against. This is the single most important thing to
+carry into the remaining work.
+
+### Tranche 2: 12 consumer literals in 7 files (done)
+
+Bare duplicates, several in files already importing `codata_constants` for
+other symbols.
+
+### Remaining, and the four exclusion classes
+
+The bulk is `.md`/`.lean`/witness sites plus ~170 `.py` files whose literal is
+in a **string or comment**. Before touching any of them, note that four
+classes look identical to a grep and must NOT be drained:
+
+1. **Window bounds** — `codata_masses.py:55-56`,
+   `float(M_P_MEV) > 938.27200 and < 938.27220`. Not constants.
+2. **Framework-derived look-alikes** — `rho_f_vol_binding_dashboard.py:27`,
+   `M_P = 938.2720894273`, the *muon-anchored Hecke energy*. Resembles m_p;
+   is not m_p.
+3. **`# noqa: P31` with a written justification** — six sites. Someone
+   adjudicated those; silently re-draining discards the adjudication.
+4. **Test expectations** — `test_p2_integration.py:21` is 252 ppb off, which
+   is not an edition shift. Changing it would falsify the test.
+
+Plus one open identification: the deuteron / He-3 / He-4 masses in
+`b_over_m_order_probe.py` and `knot-particle-generation.py` differ from the
+CODATA table by 9–100 ppb, too large for an edition. Probably **AME** values
+under a CODATA-shaped name. That needs identifying, not replacing.
