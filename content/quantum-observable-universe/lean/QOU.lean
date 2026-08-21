@@ -929,6 +929,10 @@ import QOU.Mathlib.SYTHookFormulaRows
 -- Pulls in QOU.Mathlib.YoungDiagramCorner (IsCornerCell / eraseCorner), which
 -- the SYT cluster also uses.
 import QOU.Mathlib.YoungDiagramThreeRowCorner
+-- Bean qou-wtny (SW-3): addable cells, and #addable = #removable + 1 -- the
+-- diagonal of DU - UD = I on the Young lattice. One input to the remaining
+-- `hup` hypothesis of QOU.Mathlib.BurnsideViaBranching.
+import QOU.Mathlib.YoungDiagramAddable
 -- Ballot numbers m_j(n) = C(n,j) - C(n,j-1): the Mathlib-gap engine shared by
 -- the q-Clebsch-Gordan normalisation (qou-0cyu G2) and the Catalan sum (G5).
 import QOU.Mathlib.BallotNumbers
