@@ -1298,6 +1298,248 @@
    "median_rel_move": 0.0,
    "n_fields": 118,
    "err": ""
+  },
+  "he3_tritium_cosh_asymmetry_diagnosis": {
+   "rc": -9,
+   "sec": 1200.1,
+   "witnesses": [
+    "he3-tritium-cosh-asymmetry-diagnosis.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": "TIMEOUT >1200s"
+  },
+  "hh-trefoil-corrected": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "hh-trefoil-corrected.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 32,
+   "err": ""
+  },
+  "hh-vertex-volume": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "hh-vertex-volume.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 13,
+   "err": ""
+  },
+  "homflypt_reference_qa": {
+   "rc": 0,
+   "sec": 4.6,
+   "witnesses": [
+    "homflypt-reference-qa.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 225,
+   "err": ""
+  },
+  "homflypt_su_n_mass_tower": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "homflypt-su-n-mass-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 34,
+   "err": ""
+  },
+  "hybridization_sp_gap_braid": {
+   "rc": 0,
+   "sec": 2.1,
+   "witnesses": [
+    "hybridization-sp-gap-braid.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 18,
+   "err": ""
+  },
+  "intermediate_knot_detection": {
+   "rc": 0,
+   "sec": 2.6,
+   "witnesses": [
+    "intermediate-knot-detection.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 628,
+   "err": ""
+  },
+  "iterative_lp_dual_h6_deuteron": {
+   "rc": 0,
+   "sec": 3.6,
+   "witnesses": [
+    "iterative-lp-dual-h6-deuteron.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 116,
+   "err": ""
+  },
+  "iterative_lp_dual_levels": {
+   "rc": 0,
+   "sec": 4.0,
+   "witnesses": [
+    "iterative-lp-dual-levels.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": ""
+  },
+  "jet_knot_invariants": {
+   "rc": 0,
+   "sec": 2.6,
+   "witnesses": [
+    "jet-knot-invariants.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 223,
+   "err": ""
+  },
+  "lambda_scale_proof_step4_h4_remainder": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "lambda-scale-proof-step4-h4-remainder.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 54,
+   "err": ""
+  },
+  "lambda_scale_proof_step5_skein_anchor": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "lambda-scale-proof-step5-skein-anchor.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "lambda_scale_rd_c4_pslq_search": {
+   "rc": 0,
+   "sec": 3.0,
+   "witnesses": [
+    "lambda-scale-rd-c4-pslq-search.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": ""
+  },
+  "landauer_crossing_energy_probe": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "landauer-crossing-energy-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 34,
+   "err": ""
+  },
+  "lepton_t2n_torus_tower": {
+   "rc": 0,
+   "sec": 2.2,
+   "witnesses": [
+    "lepton-t2n-torus-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 101,
+   "err": ""
+  },
+  "li2q_fbor_expansion_probe": {
+   "rc": 0,
+   "sec": 4.6,
+   "witnesses": [
+    "li2q-fbor-expansion-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": ""
+  },
+  "linking_weight_canonical_object_lwfix": {
+   "rc": 0,
+   "sec": 2.9,
+   "witnesses": [
+    "linking-weight-canonical-object-lwfix.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 38,
+   "err": ""
+  },
+  "low_isotope_sign_flip_diagnostic": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "low-isotope-sign-flip-diagnostic.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 57,
+   "err": ""
+  },
+  "lp_confinement_nf_forcing": {
+   "rc": 0,
+   "sec": 12.1,
+   "witnesses": [
+    "lp-confinement-nf-forcing.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 348,
+   "err": ""
+  },
+  "lw2_c2_independent_hopf_test_attempt": {
+   "rc": 0,
+   "sec": 3.1,
+   "witnesses": [
+    "lw2-c2-independent-hopf-test-attempt.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 27,
+   "err": ""
+  },
+  "lw_growth_rate_probe": {
+   "rc": 0,
+   "sec": 39.1,
+   "witnesses": [
+    "lw-growth-rate-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 67,
+   "err": ""
+  },
+  "m_p_spectral_corrected_50dps": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "m-p-spectral-corrected-50dps.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 21,
+   "err": ""
   }
  }
 }
