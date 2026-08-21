@@ -74,4 +74,37 @@ theorem Q_beta_categorical_ofPhase_tail_common (φ₁ φ₂ q m_e : ℝ) :
   unfold Q_beta_categorical_ofPhase
   ring
 
+/-! ## The N=2..5 coupling `b` is a convention-D object
+
+`N2..N5` are built from the Hoefsmit coupling `b = hoefsmitB` and `hbarQ'`.
+The following ties `b` to the convention-D Wedderburn weights of `H₃(q)`, and the
+identity is D-specific (it fails in C). Symbolic cross-check (exact over ℚ(q),
+solving the three Markov equations at both `z_C` and `z_D`):
+`computations/qbeta/hoefsmit_b_vs_d_weights_probe.py` (7/7). -/
+
+/-- D-frame standard-block `(2,1)` Wedderburn weight of `H₃(q)` (S2 PR #5185,
+    `gram-radical-exact`): `y_(2,1)^D = q²/(q²+1)²`. At `z_D = q³/(q²+1)` the
+    three Markov equations force `y_(1³) = 0` (two-row Temperley–Lieb) and pin
+    this value. -/
+noncomputable def stdWeightD (q : ℝ) : ℝ := q ^ 2 / (q ^ 2 + 1) ^ 2
+
+/-- **The Hoefsmit coupling squared is the complement of the D standard-block
+    weight: `b² = 1 − y_(2,1)^D`.**
+
+    This is the D-frame structural anchor of the whole `N2..N5` tail: the
+    coupling `b` that generates the Kashiwara/Hopf rungs is exactly
+    `√(1 − y_(2,1)^D)`. The identity is **convention-D specific** — under C the
+    `H₃(q)` weights carry `√q` and keep `y_(1³) ≠ 0`, and `b² ≠ 1 − y_(2,1)^C`
+    (`hoefsmit_b_vs_d_weights_probe.py`). So `b`, hence `N2..N5`, is naturally a
+    D-frame object, a positive structural reason the categorical tails are
+    correctly framed in D (bean `qou-cds1`). -/
+theorem hoefsmitB_sq_eq_one_sub_stdWeightD (q : ℝ) :
+    hoefsmitB q ^ 2 = 1 - stdWeightD q := by
+  unfold hoefsmitB stdWeightD
+  have hnn : (0 : ℝ) ≤ q ^ 4 + q ^ 2 + 1 := by positivity
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  rw [div_pow, Real.sq_sqrt hnn]
+  field_simp
+  ring
+
 end QOU.BraidKnot

@@ -136,3 +136,28 @@ Kashiwara tails untouched. Whether `N2..N5` should themselves change under D
 (if the Kashiwara operators see the trace normalisation) is the surviving open
 question — and closing the residual `41.94×` by adjusting them would still be a
 fit until a rung lands with `c₂ = −1`'s structural standing.
+
+## What is Lean-provable about `N2..N5` (2026-08-21, explored)
+
+`N2..N5` are built from the Hoefsmit coupling `b = hoefsmitB` and `ℏ_q = hbarQ'`.
+Solving the three `H₃(q)` Markov equations exactly over ℚ(q) at both `z_C` and
+`z_D` (`computations/qbeta/hoefsmit_b_vs_d_weights_probe.py`, 7/7) settles the
+provability question — and it turns on the *coupling*, not the rung *values*:
+
+| object | Lean-provable? | reason |
+|---|---|---|
+| `b² = 1 − y_(2,1)^D` (coupling = complement of D standard weight) | **YES** — `hoefsmitB_sq_eq_one_sub_stdWeightD`, EXIT=0 | `Real.sq_sqrt` + field algebra |
+| the same identity FAILS in C | yes (structural) | C weights carry `√q`, `y_(1³) ≠ 0`; `b² ≠ 1 − y_(2,1)^C` |
+| `N2_factor = 1 − b²ℏ⁴ = 1 − (bℏ²)²` (`c₂ = −1`) | **YES** | `ring` re-reading of the ansatz factor |
+| `c₃ = −2 = J_Hopf(1)`, `c₄`, `c₅` *values* | **NO** (fitted) | near-matches (3.47 %, 0.91 %, …); only the *form* `J_Hopf·b^k` is structural |
+
+**The finding.** At `z_D` the three Markov equations *force* `y_(1³) = 0`
+(two-row TL) and pin `y_(2,1)^D = q²/(q²+1)²`, and then
+`b² = 1 − y_(2,1)^D = y_(3)^D + y_(2,1)^D` **exactly**. Under `z_C` the weights are
+genuinely three-row (half-integer q-powers) and the identity fails. So the
+coupling `b` that generates the entire `N2..N5` tail is a **convention-D object**
+— a *positive* structural reason (beyond "b is z-free") that the categorical
+tails are correctly framed in D. What stays fitted is the higher-rung *values*
+(`c₃/c₄/c₅`); the fence holds there. The provable content of `N2..N5` is the
+coupling identity `b² = 1 − y_(2,1)^D` and the `c₂` Taylor form — nothing more,
+nothing less.
