@@ -438,4 +438,93 @@ theorem farkas_vector [DecidableEq ι] (v : ι → EuclideanSpace ℝ (Fin k))
 end EuclideanFarkas
 
 
+
+section InequalityFarkas
+
+variable {k p : ℕ}
+
+/-- Evaluating a combination coordinatewise.
+
+The `show` is load-bearing: it re-elaborates the goal so that
+`Finset.sum_apply` matches. Without it the lemma does not fire at all —
+`EuclideanSpace` is a `WithLp` synonym, and while application reduces
+definitionally, `simp` will not see through the head symbol. -/
+theorem coneSpan_sum_apply {ι' : Type*} [Fintype ι']
+    (v : ι' → EuclideanSpace ℝ (Fin p)) (x : ι' → ℝ) (q : Fin p) :
+    (∑ i, x i • v i) q = ∑ i, x i * v i q := by
+  show (∑ i, x i • v i) q = _
+  rw [Finset.sum_apply]
+  simp
+
+/-- Generators of `{Bl + s : l free, s ≥ 0} ⊆ ℝ^p`: the columns of `B`
+and their negations (letting `l` range over all signs), together with
+the standard basis (the slack `s ≥ 0`). Finitely many, so the cone they
+span is closed by `isClosed_coneSpan`. -/
+noncomputable def ineqGens (B : Fin p → Fin k → ℝ) :
+    (Fin k ⊕ Fin k) ⊕ Fin p → EuclideanSpace ℝ (Fin p) :=
+  Sum.elim
+    (Sum.elim (fun j => (WithLp.toLp 2 (fun q => B q j)))
+              (fun j => (WithLp.toLp 2 (fun q => -B q j))))
+    (fun q => EuclideanSpace.single q (1 : ℝ))
+
+/-- **Membership in the cone exhibits a solution.** If `d` is a
+non-negative combination of `ineqGens B`, then `Bl ≤ d` is solvable:
+take `l` to be the difference of the two column blocks, and the basis
+block is exactly the slack `d − Bl ≥ 0`.
+
+This is the direction Farkas needs. Its contrapositive turns
+"`Bl ≤ d` has no solution" into "`d` misses a closed cone", which is
+what `farkas_vector` consumes. -/
+theorem exists_solution_of_mem_coneSpan_ineqGens (B : Fin p → Fin k → ℝ)
+    (d : EuclideanSpace ℝ (Fin p)) (hd : d ∈ coneSpan (ineqGens B)) :
+    ∃ l : Fin k → ℝ, ∀ q, ∑ j, B q j * l j ≤ d q := by
+  classical
+  obtain ⟨x, hx, hsum⟩ := hd
+  refine ⟨fun j => x (Sum.inl (Sum.inl j)) - x (Sum.inl (Sum.inr j)), fun q => ?_⟩
+  have hq : d q = (∑ j, x (Sum.inl (Sum.inl j)) * B q j)
+      + (∑ j, x (Sum.inl (Sum.inr j)) * -B q j)
+      + x (Sum.inr q) := by
+    conv_lhs => rw [hsum]
+    rw [coneSpan_sum_apply]
+    simp [Fintype.sum_sum_type, ineqGens, EuclideanSpace.single_apply]
+  have hcol : ∀ j, B q j * (x (Sum.inl (Sum.inl j)) - x (Sum.inl (Sum.inr j)))
+      = x (Sum.inl (Sum.inl j)) * B q j + x (Sum.inl (Sum.inr j)) * -B q j := by
+    intro j; ring
+  rw [Finset.sum_congr rfl (fun j _ => hcol j), Finset.sum_add_distrib, hq]
+  have := hx (Sum.inr q)
+  linarith
+
+/-- **Farkas' lemma for a system of linear inequalities.**
+
+If `Bl ≤ d` has no solution, there are non-negative multipliers `z`
+with `Bᵀz = 0` and `dᵀz < 0` — a certificate of infeasibility.
+
+This is the form the LP duality argument consumes. It follows from
+`farkas_vector` applied to `ineqGens B`: non-negativity on the basis
+generators gives `z ≥ 0`, non-negativity on **both** a column and its
+negation forces the column pairing to vanish, and the strict inequality
+at `d` is `dᵀz < 0`. -/
+theorem farkas_inequality (B : Fin p → Fin k → ℝ) (d : EuclideanSpace ℝ (Fin p))
+    (hinf : ¬ ∃ l : Fin k → ℝ, ∀ q, ∑ j, B q j * l j ≤ d q) :
+    ∃ z : Fin p → ℝ, (∀ q, 0 ≤ z q) ∧ (∀ j, ∑ q, z q * B q j = 0) ∧
+      (∑ q, z q * d q) < 0 := by
+  classical
+  have hb : d ∉ coneSpan (ineqGens B) := fun hmem =>
+    hinf (exists_solution_of_mem_coneSpan_ineqGens B d hmem)
+  obtain ⟨z, hz, hzd⟩ := farkas_vector (ineqGens B) hb
+  refine ⟨fun q => z q, fun q => ?_, fun j => ?_, hzd⟩
+  · have := hz (Sum.inr q)
+    simpa [ineqGens, EuclideanSpace.single_apply] using this
+  · have hpos := hz (Sum.inl (Sum.inl j))
+    have hneg := hz (Sum.inl (Sum.inr j))
+    simp only [ineqGens, Sum.elim_inl] at hpos hneg
+    have hp : 0 ≤ ∑ q, z q * B q j := hpos
+    have hn : 0 ≤ ∑ q, z q * -B q j := hneg
+    have : (∑ q, z q * -B q j) = -(∑ q, z q * B q j) := by
+      rw [← Finset.sum_neg_distrib]
+      exact Finset.sum_congr rfl (fun q _ => by ring)
+    linarith [hp, this ▸ hn]
+
+end InequalityFarkas
+
 end QOU.Mathlib

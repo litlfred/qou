@@ -316,3 +316,37 @@ and is also fine. Only the coordinate bookkeeping is unfinished.
 
 Estimated remaining: one or two compile cycles once (1) is resolved, then the
 two-case `μ` split for `MatrixFarkas` at `R = ℝ`.
+
+## 2026-08-21 — the three API details resolved, inequality-form Farkas proved
+
+All three obstacles from the handoff note turned out to be small, and two
+dissolved on contact:
+
+1. **`WithLp.toLp` application is `rfl`.** No lemma needed at all.
+2. **The `ite` orientation yields to plain `simp`.** No named lemma needed.
+3. **The coordinatewise sum needed a `show`.** `Finset.sum_apply` will not
+   fire on an `EuclideanSpace` head — application reduces definitionally, but
+   `simp` does not see through the `WithLp` synonym. Re-elaborating the goal
+   with `show (∑ i, x i • v i) q = _` first makes it match. Recorded in
+   `coneSpan_sum_apply`'s docstring, since the `show` looks removable and is
+   not.
+
+`EuclideanSpace.proj` + `map_sum` and brute `simp` both failed; only the
+`show` route works.
+
+### Also: the draft had the implication backwards
+
+The handoff sketched `mem_coneSpan_ineqGens_of_feasible` — *feasible ⇒ in the
+cone*. Farkas needs the **converse**: *in the cone ⇒ feasible*, whose
+contrapositive turns "no solution" into "misses a closed cone". Proved as
+`exists_solution_of_mem_coneSpan_ineqGens`.
+
+### Proved
+
+`farkas_inequality`: if `Bl ≤ d` has no solution then there are `z ≥ 0` with
+`Bᵀz = 0` and `dᵀz < 0`. Sorry-free, compiled first try.
+
+The chain is now `isClosed_coneSpan` → `farkas_separation` → `farkas_vector` →
+`farkas_inequality`, all proved, with exactly one step left to `MatrixFarkas`:
+the two-case `μ` split, over `B : Fin (n+1) → Fin m → ℝ` encoding dual
+feasibility plus `−aᵀl ≤ −γ`.
