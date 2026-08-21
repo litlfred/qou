@@ -1,10 +1,11 @@
 ---
 # qou-kl8z
 title: 'LP strong duality needs exactly one lemma: finitely generated cones are closed'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-16T10:54:54Z
-updated_at: 2026-08-16T10:54:54Z
+updated_at: 2026-08-21T16:25:20Z
 ---
 
 Scoping done with a **working Lean toolchain** (see `lean-environment-setup.md`
@@ -78,3 +79,75 @@ Practical note: `Mathlib.Analysis.Convex.Cone.Proper` is **not** in the olean
 cache, so any file importing it needs that module built first. `Cone/Basic`,
 `Cone/Closure`, `Cone/Dual`, `Cone/InnerDual` and `Convex/Caratheodory` **are**
 cached.
+
+---
+
+## 2026-08-21 — the gap is now one *combinatorial* lemma, not an analytic one
+
+`QOU/Mathlib/FinitelyGeneratedConeClosed.lean`. Compiles clean against the
+pinned rev with **exactly one `sorry`**.
+
+### Two corrections to the scoping above
+
+- **`ProperCone` is present.** This bean records it as absent from the olean
+  cache — "a separate, purely practical obstacle". Measured today by compiling
+  a probe: the names simply moved.
+  `ConvexCone.innerDualCone_of_innerDualCone_eq_self`, `Set.innerDualCone` and
+  `isClosed_innerDualCone` are now **deprecated aliases** for
+  `ProperCone.innerDual_innerDual`, `ProperCone.innerDual` and
+  `ProperCone.isClosed`. There is no practical obstacle.
+- **`Convex/Caratheodory.lean` is not a starting point in the way stated.** It
+  proves `convexHull_eq_union` over *affinely independent* subsets — a
+  statement about convex hulls, not cones. The argument transfers; the
+  statement does not.
+
+### What is proved
+
+- `isClosed_coneSpan_of_linearIndependent` — a cone on **independent**
+  generators is closed. The coefficient map is injective (from
+  `Fintype.linearIndependent_iff`) out of a finite-dimensional space, hence a
+  closed embedding by `LinearMap.isClosedEmbedding_of_injective`, and the cone
+  is the image of the closed non-negative orthant. Supporting: `coneMap`,
+  `coneSpan_eq_image`, `isClosed_nonneg_orthant`, `ker_coneMap_eq_bot`,
+  `sum_eq_sum_subtype`.
+- `coneSpanOn_eq`, `isClosed_coneSpanOn` — the same for a subfamily indexed by
+  a `Finset`.
+- `coneSpan_eq_iUnion` — the cone is the union of the sub-cones on independent
+  subfamilies.
+- **`isClosed_coneSpan` — this bean's target theorem, derived.** A *finite*
+  union of closed sets, since `Finset ι` is finite.
+
+Stated over an arbitrary `[Fintype ι]` rather than `Fin n`, which is what lets
+the subfamily indexed by `s : Finset ι` reuse the same lemma.
+
+### What remains: `exists_linearIndependent_support`
+
+> Every point of the cone is a non-negative combination of a **linearly
+> independent** subfamily of the generators.
+
+Conic Carathéodory. **Finite and purely algebraic — no topology appears in
+it.** Sketch, for whoever takes it: if the active generators are dependent,
+take a dependency `Σ λᵢvᵢ = 0` with some `λᵢ > 0` (negate if necessary), walk
+`x ↦ x − tλ` with `t = minᵢ {xᵢ/λᵢ : λᵢ > 0}`; non-negativity survives (for
+`λᵢ > 0` by minimality, for `λᵢ ≤ 0` because `t ≥ 0`), the coefficient
+attaining the minimum is driven to zero, the support strictly shrinks, and
+induction on its cardinality terminates.
+
+So the bean's headline — "LP strong duality needs exactly one lemma" — is now
+**verified rather than asserted**, and the one lemma is combinatorial rather
+than analytic. That is a strictly better position: the remaining work needs no
+convex analysis, no separation theorem, and no Mathlib infrastructure that
+does not already exist.
+
+## Next
+
+- [ ] Prove `exists_linearIndependent_support` (sketch above; the only `sorry`)
+- [ ] Derive `MatrixFarkas` from `isClosed_coneSpan` via
+      `ProperCone.innerDual_innerDual` — **note this derivation is still
+      unverified**: this bean asserts it follows "the standard route", and
+      nobody has checked that the strong-duality-shaped `farkas_alternative`
+      field really does follow from the bidual identity. Worth doing before
+      trusting the reduction end-to-end.
+- [ ] Then instantiate for `operator_selection_lp` — though per `qou/k4f8`
+      that block needed no Farkas at all, so this now unblocks only the
+      *general* theorem.
