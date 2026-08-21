@@ -1137,3 +1137,121 @@ interpretation, not a consequence.
 Two agents collided on the shared path `/tmp/rec.sh`, silently zeroing one
 helper's variables and costing a block's recording. Agent scratch paths
 must be namespaced per batch id.
+
+---
+
+## From agent:r08 (mass-theory nq_02) — 2026-08-21
+
+26 findings over 41 blocks, the densest batch of the campaign. Grouped by
+what a reader would have to un-believe.
+
+### The Gram-matrix cluster — four blocks, one tangle
+
+1. **`gram-degeneracy-blocks-connes` gets both halves of one sentence
+   wrong.** It states the convention-D star-form spectrum as
+   `0, 0.752702^{×3}, 4.230339`, "exactly one null direction, and it is the
+   **braid-symmetric** one". Rebuilt at 40 dps: the multiplicity is **×4**,
+   not ×3 — the quoted list holds five eigenvalues for a six-dimensional
+   form, and ×3 is the *bilinear* multiplicity, precisely the pairing
+   confusion `prop:frobenius-gram-matrix` warns against one file away. The
+   kernel vector is `(1, −0.900918284, −0.900918284, 0.8116537544,
+   0.8116537544, −0.7312337075)` = `(−1/q)^{ℓ(w)}` to ten digits: the
+   **q-antisymmetriser**, the `(1³)` block this chapter twice calls the
+   radical. The symmetric direction has coefficients `q^ℓ` and is not in
+   the kernel.
+2. **`frobenius-gram-matrix`: the printed matrix does not produce the
+   block's own numbers.** Every quoted value reproduces only with
+   `tr_M(e⁻) = hz²+z` substituted (det G = 0 under D, spectrum
+   `(−0.752702113, 0, +0.752702113^{×3}, +4.23033923)`; under C
+   det G = −0.1892052191). But the block twice says the matrix is written
+   with the naive `z³` and that the correction "has still to be
+   propagated" — and with the naive entries det G = −0.334741 under D,
+   **nonzero**, with no null eigenvalue. "det G = 0 identically" is false
+   of the matrix as printed.
+3. **`frobenius-gram-matrix-context`: convention-C numbers under an
+   explicit convention-D declaration.** It writes "`z = q³/(q²+1)`
+   (**convention D**)" and then `hz²+z ≈ 0.5514`, stale `z³ ≈ 0.1245`,
+   "off by a factor of 4.4". Under D those are 0.69117, 0.22999 and 3.005;
+   0.5514/0.1245/4.43 are the **C** values to every digit.
+4. **The LP-dual trio rests on a premise this chapter refutes.** Its Step 1
+   asserts non-degeneracy because "every `y_λ(q) ≠ 0`". Under canonical D,
+   `y_{(1³)} = 0` at n=3 and det G = 0 — stated in two sibling blocks and
+   reproduced independently. Steps 1–5 and both corollaries are
+   convention-C statements; `Φ_τ` lives on `H_n/rad`.
+
+### A wrong map, with the right one derived
+
+**`frobenius-s-classification-proof`**'s antipode `(c,d) ↦ (c, d − c·h_A)`
+is not an involution (`(1,0) → (1,−h_A) → (1,−2h_A)`) and does not preserve
+`det T` (`Δ = −2cd·h_A`), so it cannot support the block's own
+"`det` is S-invariant", and it contradicts Table 3's `S(1,−h_A) = (1,0)`.
+The correct map is **`(c,d) ↦ (c, −c·h_A − d)`**: involutive,
+det-invariant identically, and it reproduces all three table rows. It
+agrees with the stated rule on `(1,0)` alone — which is why the `Φ₃`
+spot-check still passed.
+
+### Two off-by-ones that change a headline number
+
+- **`graded-hecke-energy-truncation-bound-table`**: the theorem bounds the
+  nonzero grades by `ℓ+1`, so the speedup is `p(n)/(ℓ+1)`. The table
+  reports `p(n)/ℓ` — 1.5, 2.2, 3.7, 7.0 against the correct 1.0, 1.83,
+  3.33, 6.42. **The proton and neutron rows should read 1.0×: no speedup
+  at all.**
+- **`geometric-invariant-piecewise`**: `ℏ_q² = 0.009817186`, so
+  `Vol/ℏ_q²` **multiplies by 101.86** and `CS·ℏ_q²` suppresses. The block
+  says the reverse of both.
+
+### Convention C, in the spelling the taxonomy calls invisible
+
+`frobenius-s-classification-proof` defines `z = 1/(q^{1/2}+q^{−1/2})`, and
+its table-2 sibling repeats it as `(q^{1/2}+q^{−1/2})^{−1}`. That is
+`√q/(q+1) = 0.4993203342` — convention C exactly. This is the
+reciprocal-of-sum form recorded in the detector-blindness taxonomy, and it
+survived the 2026-08-10 content-only drain.
+
+### A recurrence AGENTS.md §7b names, found twice in one flight
+
+`garside-as-compound-flow` runs the dilogarithm on `Δ₃ = σ₁σ₂σ₁`, whose
+closure is the **Hopf link** (`s₁s₂s₁ = (1 3)`, two cycles; cyclic
+permutation to `σ₁²σ₂` destabilises to `σ₁²` in `B₂`). Its complement is
+`T² × I` — Seifert fibred, volume 0, `D(z) = 0` — so "does not admit a full
+Seifert fibration / JSJ contains a hyperbolic piece / positive
+Bloch–Wigner sum" is false for that closure. `frobenius-gram-matrix-proof`
+misnames the same element "the trefoil". Independently, `agent:r07` found
+the same class in `exceptional-divisor-reeb-intro`.
+
+### Numbers that do not reproduce, and a scope-(b) overclaim
+
+`frobenius-cocasimir-refuted-deuteron` quotes "+0.145 m_e"; the signed sum
+in its own witness is **+0.2482770936** (per-λ contributions recomputed
+independently; the −4.353365006 target is right). The same block writes
+"This algebraic refutation eliminates the co-Casimir ansatz as a universal
+correction factor" — a scope-(b) exclusion from one numerical probe at one
+isotope with no invariant cited, and "algebraic" mislabels a 70-dps mpmath
+evaluation.
+
+### Structural
+
+`graded-hecke-energy-truncation-bound` is a `proposition()` whose `uses[]`
+lists `conj:gs-graded-markov-trace-existence` directly and whose proof
+opens "By [that conjecture]", with no conditional banner — a §3b
+propagation violation as written. `gram-matrix-spectral-connection` carries
+five separate defects including a struck-through sentence left in published
+prose. `full-pole-structure-mass-trace` discharges "Property (1)–(3)" in
+its proof and interpretation while the proposition numbers no properties.
+Two incompatible Wedderburn weights appear one file apart
+(`dim_q·dim/[n]_q!` vs `dim_q²/[n]_q!`, equal only at q=1).
+
+Token substitution: 7 further sites in 3 blocks, including sentences
+opening on a bare "canonical" and "extending the the formal derivation
+formalism" with a doubled article.
+
+### Recorded because it is good
+
+`ground-state-ordering` is the best block seen in the campaign: an explicit
+Lean-backed counterexample, exact unrounded tallies, a scope-(b)
+classification with its licensing invariant named, the empirical part
+labelled empirical and capped at A ≤ 16, and a refusal to settle the
+downstream question. Its one flaw is an *under*-claim — if the gap factors
+as `(t−1)` times an all-positive degree-20 polynomial, it holds for every
+`q > 1`, not merely "an interval containing the anchor".
