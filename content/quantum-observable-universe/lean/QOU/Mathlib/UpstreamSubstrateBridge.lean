@@ -131,13 +131,31 @@ theorem wedderburn_iso_n2_to_n6 (R : Type u) [CommRing R]
     class: `YekutieliFiniteSliceMultTrace G z` (in NonAbelianStokes.lean).
     The `_canonical` instance discharges via `braidSurfaceMultTrace`. -/
 
-/-- **Substrate-discharger**: any group `G` with marked element
-    `z : G` admits the canonical Yekutieli finite-slice
-    multiplicative trace.  Concrete (non-vacuous) — uses the
-    `z^n` formula. -/
-theorem yekutieli_finite_slice_discharged (G : Type u) [Group G] (z : G) :
-    Nonempty (YekutieliFiniteSliceMultTrace G z) :=
-  ⟨inferInstance⟩
+/-- **Substrate-discharger**: the finite-slice axioms *determine* the
+    Yekutieli multiplicative trace — for any group `G` with marked
+    element `z : G`, every trace satisfying them is `z ^ n`.
+
+    **Restated 2026-08-21** (vacuity ledger, `exists-true-tautology`).
+    Was `∃ Y : YekutieliFiniteSliceMultTrace G z, True :=
+    ⟨inferInstance, trivial⟩` — i.e. "the instance that already
+    resolves, resolves".  `∃ _, True` discards everything the witness
+    satisfies, which is precisely what the name `_discharged` claims;
+    exhibiting an instance is not discharging an obligation.  Now
+    delegates to `yekutieli_finite_slice_substrate`, so the name is
+    backed by a falsifiable statement.
+
+    **Converges with `246334be7c`** (sibling session, landed on `main`),
+    which drained the same four defects in this file by rewriting
+    `∃ X, True` as `Nonempty X`.  That is right as far as it goes — for a
+    *content-bearing* carrier like `YekutieliFiniteSliceMultTrace`
+    (`trace_zero` + `trace_succ`), `Nonempty` is a genuine claim.  This
+    extends it: `Nonempty` still only says an instance resolves, which the
+    instance declaration already established, whereas the statement below
+    says the axioms **determine** the trace. -/
+theorem yekutieli_finite_slice_discharged (G : Type u) [Group G] (z : G)
+    (Y : YekutieliFiniteSliceMultTrace G z) (n : ℕ) :
+    Y.trace n = z ^ n :=
+  yekutieli_finite_slice_substrate Y n
 
 /-! ### Aggregate substrate-axiom discharge
 
@@ -169,24 +187,43 @@ theorem upstream_discharge_complete (R : Type u) [CommRing R]
     arrive via `canonical_lift` once per-level multiplication
     tables are supplied. -/
 
-/-- **Bridge theorem**: the Markov-axiom recursion is
-    discharged at H_1 → H_2 by the upstream concrete instance. -/
-theorem markov_axiom_h1_to_h2_discharged (q z : ℝ) :
-    Nonempty (MarkovTraceRecursionWithMul ℝ 1 q z) :=
-  ⟨MarkovTraceRecursionWithMul.h1_to_h2 q z⟩
+/-- **Bridge theorem**: the Markov-axiom recursion is discharged at
+    H_1 → H_2 — the upstream concrete instance exists *and its Markov
+    axiom actually holds*.
 
-/-- **Bridge theorem**: the Markov-axiom recursion is
-    discharged at H_2 → H_3 by the upstream concrete instance. -/
+    **Restated 2026-08-21** (vacuity ledger, `exists-true-tautology`).
+    Was `∃ M : MarkovTraceRecursionWithMul ℝ 1 q z, True`.  The witness
+    was always real (`h1_to_h2`, a genuine construction), but the
+    `∃ _, True` conclusion threw away everything it satisfies — which
+    is the part `_discharged` was claiming.  The `axiom_witness` field
+    is now exposed in the statement. -/
+theorem markov_axiom_h1_to_h2_discharged (q z : ℝ) :
+    ∃ M : MarkovTraceRecursionWithMul ℝ 1 q z,
+      MarkovAxiomHolds ℝ z M.trace_n M.trace_succ M.mul_succ
+        M.sigma_n M.embed :=
+  ⟨MarkovTraceRecursionWithMul.h1_to_h2 q z,
+   (MarkovTraceRecursionWithMul.h1_to_h2 q z).axiom_witness⟩
+
+/-- **Bridge theorem**: the Markov-axiom recursion is discharged at
+    H_2 → H_3 — instance plus holding Markov axiom.  Restated
+    2026-08-21 for the same reason as the H_1 → H_2 case above. -/
 theorem markov_axiom_h2_to_h3_discharged (q z : ℝ) :
-    Nonempty (MarkovTraceRecursionWithMul ℝ 2 q z) :=
-  ⟨MarkovTraceRecursionWithMul.h2_to_h3 q z⟩
+    ∃ M : MarkovTraceRecursionWithMul ℝ 2 q z,
+      MarkovAxiomHolds ℝ z M.trace_n M.trace_succ M.mul_succ
+        M.sigma_n M.embed :=
+  ⟨MarkovTraceRecursionWithMul.h2_to_h3 q z,
+   (MarkovTraceRecursionWithMul.h2_to_h3 q z).axiom_witness⟩
 
 /-- **Aggregate**: the Markov-axiom recursion is discharged
     at every level n ∈ {1, 2}; level n ≥ 3 is tractable via
     `canonical_lift` with caller-supplied per-level data. -/
 theorem markov_axiom_recursion_discharged_low_n (q z : ℝ) :
-    Nonempty (MarkovTraceRecursionWithMul ℝ 1 q z) ∧
-    Nonempty (MarkovTraceRecursionWithMul ℝ 2 q z) :=
+    (∃ M : MarkovTraceRecursionWithMul ℝ 1 q z,
+      MarkovAxiomHolds ℝ z M.trace_n M.trace_succ M.mul_succ
+        M.sigma_n M.embed) ∧
+    (∃ M : MarkovTraceRecursionWithMul ℝ 2 q z,
+      MarkovAxiomHolds ℝ z M.trace_n M.trace_succ M.mul_succ
+        M.sigma_n M.embed) :=
   ⟨markov_axiom_h1_to_h2_discharged q z,
    markov_axiom_h2_to_h3_discharged q z⟩
 
@@ -224,9 +261,14 @@ theorem complete_upstream_discharge (R : Type u) [CommRing R]
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
     (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
     (∃ W3 : WedderburnIsomorphism R 3 q, True) ∧
-    Nonempty (MarkovTraceRecursionWithMul ℝ 1 q_ℝ z) ∧
-    Nonempty (MarkovTraceRecursionWithMul ℝ 2 q_ℝ z) ∧
-    Nonempty (YekutieliFiniteSliceMultTrace G z_G) ∧
+    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z,
+      MarkovAxiomHolds ℝ z M1.trace_n M1.trace_succ M1.mul_succ
+        M1.sigma_n M1.embed) ∧
+    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z,
+      MarkovAxiomHolds ℝ z M2.trace_n M2.trace_succ M2.mul_succ
+        M2.sigma_n M2.embed) ∧
+    (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
+      Y.trace n = z_G ^ n) ∧
     (q_zero > 1) :=
   ⟨gb_spectral_collapse_at_E2_discharged R,
    ⟨wedderburn_n2 R q, trivial⟩,
@@ -262,29 +304,57 @@ theorem H4_block_dims_discharged :
     H4_block_dims_squared.sum = 24 :=
   H4_block_dims_squared_sum
 
-/-- **LieValuedStokes existence discharged**. -/
-theorem lie_valued_stokes_discharged (M : Type u) (𝔤 : Type u)
-    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤] :
-    Nonempty (LieValuedStokes M 𝔤) :=
-  ⟨inferInstance⟩
+/-! ### `lie_valued_stokes_discharged` — REMOVED 2026-08-21
+
+    It read `∃ S : LieValuedStokes M 𝔤, True := ⟨inferInstance, trivial⟩`
+    (vacuity ledger, `exists-true-tautology`, verdict genuine).  It was
+    **dropped rather than restated**, because no restatement of it can
+    carry content:
+
+    - `LieValuedStokes` is a **self-certifying carrier** — it declares
+      `stokes_identity : Prop` *together with*
+      `stokes_identity_witness : stokes_identity`, so it is inhabited by
+      choosing the `Prop` to be anything provable.
+    - Its `LieValuedStokes_canonical` instance does exactly that:
+      `stokes_identity := (0 : 𝔤) = 0`, witnessed by `rfl`, with its own
+      comment conceding "Holds tautologically".
+
+    So `Nonempty (LieValuedStokes M 𝔤)` is as empty as the `∃ _, True`
+    it would replace, and swapping one for the other would only stop the
+    detector firing — the audit-dodging that AGENTS.md §1a forbids.  The
+    honest state is that the Lie-valued Stokes obligation is **not
+    discharged**; making the carrier content-bearing (a real
+    `stokes_identity` field rather than a `Prop` + witness pair) is
+    tracked as bean `qou-ewc4`.
+
+    **This is the one place where it diverges from `246334be7c`** (sibling
+    session, landed on `main`), which rewrote this declaration as
+    `Nonempty (LieValuedStokes M 𝔤) := ⟨inferInstance⟩`.  That rewrite is
+    correct for the other three defects in this file, whose carriers do
+    carry content — but not here: because `LieValuedStokes` certifies
+    itself, `Nonempty` is inhabited for the same reason `∃ _, True` was,
+    so the conversion silenced the detector without making the claim
+    falsifiable.  The divergence is deliberate, and narrow: the other
+    three keep the sibling's direction and go further. -/
 
 /-- **Master+ aggregate**: extends `complete_upstream_discharge`
-    with Wedderburn iso n=4..8 + H_4 block dims + Lie-valued
-    Stokes existence. -/
+    with Wedderburn iso n=4..8 + H_4 block dims.
+
+    **Narrowed 2026-08-21**: the Lie-valued-Stokes conjunct (and with it
+    the now-unused `M`, `𝔤` parameters) was removed together with
+    `lie_valued_stokes_discharged` — see the removal note above; that
+    obligation is not discharged, so the aggregate must not claim it. -/
 theorem extended_upstream_discharge (R : Type u) [CommRing R]
-    (q : R) (q_ℝ z : ℝ) (G : Type u) [Group G] (z_G : G)
-    (M : Type u) (𝔤 : Type u)
-    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤] :
+    (q : R) (q_ℝ z : ℝ) (G : Type u) [Group G] (z_G : G) :
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
     (∀ n ∈ ([2, 3, 4, 5, 6, 7, 8] : List ℕ),
       ∃ syt : List ℕ, (syt.map (· ^ 2)).sum = n.factorial) ∧
-    Nonempty (YekutieliFiniteSliceMultTrace G z_G) ∧
-    Nonempty (LieValuedStokes M 𝔤) ∧
+    (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
+      Y.trace n = z_G ^ n) ∧
     (q_zero > 1) := by
   refine ⟨gb_spectral_collapse_at_E2_discharged R,
           rsk_cardinality_discharged_n2_to_n8,
           yekutieli_finite_slice_discharged G z_G,
-          lie_valued_stokes_discharged M 𝔤,
           substrate_q0_in_regime⟩
 
 end QOU.Mathlib.UpstreamSubstrateBridge

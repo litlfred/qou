@@ -164,9 +164,12 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
 /-- **Identification of the inherited kernel** — the trace-side
     kernel of the filament's categorical mass equals the concrete
     `q`-deformed kernel `[2]_q / (‖ϱ(s) − ϱ(t)‖² − ℏ_q²)` for
-    `q ≠ 1`.  Genuinely open Lean-side (the `q`-deformed commutator
-    and `q`-Hodge star are not yet formalised); honest `sorry` per
-    AGENTS.md §1. -/
+    `q ≠ 1`.  Sorry-free, but §3b-**conditional** on
+    `NsiQDeformedKernelContext`: the un-formalised content (the
+    `q`-deformed commutator and `q`-Hodge star) is carried as the explicit
+    hypothesis fields `K_cat_eq` and `qDeformedCommutator_eq`, from which
+    the identification is derived.  The premise is assumed, not
+    established — see AGENTS.md §"Conditional-proved ≠ premise-established". -/
 -- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
 theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
     [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (hq1 : ctx.q ≠ 1) :
@@ -180,9 +183,11 @@ theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
 
     Conjoins the two parts of the manuscript lemma: (1) the
     identification of the inherited trace-side kernel with
-    `[2]_q / (r² − ℏ_q²)` at `r = ‖ϱ(s) − ϱ(t)‖` (the open part,
-    `sorry` in `nsi_q_kernel_identification`), and (2) the hard
-    singularity at `r = ℏ_q` (**derived sorry-free** in
+    `[2]_q / (r² − ℏ_q²)` at `r = ‖ϱ(s) − ϱ(t)‖` (**sorry-free but
+    §3b-conditional** — `nsi_q_kernel_identification` derives it from the
+    context's `K_cat_eq` / `qDeformedCommutator_eq` hypothesis fields,
+    which is where the un-formalised commutator content sits), and (2) the
+    hard singularity at `r = ℏ_q` (**derived sorry-free** in
     `nsi_q_kernel_hard_singularity` from the concrete kernel).
     Neither conjunct projects a conclusion field. -/
 -- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
