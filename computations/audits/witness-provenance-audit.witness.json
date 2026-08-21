@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:43:22.987919+00:00",
-  "commitSha": "fdb14d19f6f14f306c8b17d2b195fb6b19c6f9e7",
+  "computedAt": "2026-08-21T15:59:09.140217+00:00",
+  "commitSha": "f24604f6094b4886f6c819545c5f1c492282d3da",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 55,
+      "computed": 52,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -18,7 +18,7 @@
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "49144102041c",
-  "scriptCommitSha": "b8d9553793d2a014885bd740211ba1bbec955438",
+  "scriptCommitSha": "f071740412156b1ef48bd0221466f9af22a17653",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,13 +51,13 @@
   "data": {
     "counts": {
       "total_scanned": 2682,
-      "prov_ok": 2322,
+      "prov_ok": 2325,
       "prov_audit_exempt": 74,
       "prov_exempt_no_reader": 227,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 55,
+      "prov_missing": 52,
       "prov_parse_error": 1,
-      "completeness_ratio": "0.979120059656972408650260999254287844891871737509321401938852"
+      "completeness_ratio": "0.980238627889634601043997017151379567486950037285607755406413"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -6638,6 +6638,14 @@
           "missing_fields": []
         },
         {
+          "witness": "qlift_ggm_diagonal_gauge_prune_probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qlift_kernel_candidate_crosscheck_probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qm-channel-contribution-probe.witness.json",
           "missing_fields": []
         },
@@ -6767,6 +6775,10 @@
         },
         {
           "witness": "theta-poisson-mass-resummation-prune.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "theta_jet_gb_grading_probe.witness.json",
           "missing_fields": []
         },
         {
@@ -9660,30 +9672,6 @@
         {
           "witness": "aomega-bps-sector-nondegeneracy.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "qlift_ggm_diagonal_gauge_prune_probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "qlift_kernel_candidate_crosscheck_probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "theta_jet_gb_grading_probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
