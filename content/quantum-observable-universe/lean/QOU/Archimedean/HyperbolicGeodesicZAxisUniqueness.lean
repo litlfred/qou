@@ -334,6 +334,6 @@ theorem zaxis_minimizer_eq_vseg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) {γ : ℝ 
   fin_cases i
   · simpa [zpt, vseg, EuclideanSpace.single_apply] using recon_zero 0 hd0_ae τ hτ
   · simpa [zpt, vseg, EuclideanSpace.single_apply] using recon_zero 1 hd1_ae τ hτ
-  · simpa only [vseg_height] using recon_z τ hτ
+  · simpa [vseg_height] using recon_z τ hτ
 
 end QOU.Archimedean
