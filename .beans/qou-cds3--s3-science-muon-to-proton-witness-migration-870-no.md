@@ -146,3 +146,66 @@ The bulk migration still lacks its own scoped sign-off (R2 states the end state,
 not the sweep), so nothing was migrated. Standing posture holds: new/touched code
 uses proton, untouched muon witnesses stay as recorded, never mix within one
 quantity, every new witness records its q₀.
+
+### ADDENDUM, same day — the sweep is live, and straddles grow WITH it
+
+Between my first measurement this session and a `main` merge ~1 h later, **232
+witness files changed** and the population moved sharply. Both figures are
+correct for their tree; verified by counting at each commit
+(`git grep -l … 93d4abbf0` → 617, at HEAD → 430).
+
+| | bean 08-15 | 08-21 early | **08-21 HEAD** |
+|---|---|---|---|
+| total witnesses | 2941 | 2690 | 2694 |
+| muon fingerprint | 870 | 617 | **430** |
+| proton fingerprint | 588 | 653 | **861** |
+| muon-only | 801 | 539 | **332** |
+| **both pins** | **69** | **78** | **98** |
+
+The migration is working — muon-only 801 → 332. But **the straddle class grows
+with it**: 69 → 78 → 98, i.e. **+20 in the same hour that migrated ~187
+witnesses**. That is roughly one new both-pin artefact per nine migrated. It is
+consistent with partial migration: a witness that gets its production value moved
+to proton while retaining a muon-derived reference now matches both fingerprints.
+
+**Any count here is perishable.** The population moved 30 % in an hour. Quoting a
+straddle number without its commit is meaningless; this bean's "69" was accurate
+on 2026-08-15 and is now three revisions stale.
+
+### NEW: a straddle class nobody has counted — two MUON pins in one file
+
+The `1.109978595` fingerprint conflates the two muon values `qou-khac` is about.
+Splitting it:
+
+| | count |
+|---|---|
+| stale hand-typed `Q_MUON` (`…55733…`) only | **212** |
+| derived `q_muon_at()` (`…55418…`) only | **164** |
+| **both muon values in ONE file** | **24** |
+
+Those 24 are an **intra-muon straddle**, and they are invisible to every
+muon-vs-proton test — including this bean's, which is why they have never been
+counted. `qou-khac` names the two-value problem but scopes it to *3 hand-typed
+constants in source*; this is the same defect in the **witness** layer, at 24
+files, plus a 212/164 split showing the stale constant is still the **majority**
+of muon-bearing witnesses.
+
+Worth doing before the muon→proton sweep finishes: a witness migrated from the
+*stale* muon pin inherits a value 3.15e-12 off the one `q_muon_at()` derives, and
+once it is relabelled proton nobody can tell which muon value it came from.
+
+### On the structural triage I attempted
+
+I tried to separate deliberate comparisons from straddles by checking whether
+both pins sit under a shared JSON parent. **That test does not discriminate** —
+calibrating on two cases showed clean comparisons with shared parents:
+`peel-anchor-identification` stores `/q0_pins/proton` + `/q0_pins/muon` (its
+description: *"no anchor enters it — so both q0 pins can be evaluated from one
+expression"*), and `definitive-q0-shift` stores `q0_current` vs
+`q0_exact_for_mp`, which is the entire point of the witness. Recorded as a
+negative result rather than tuned until it agreed with me.
+
+What would actually discriminate is whether the two pins feed **one computed
+quantity** versus sitting in two labelled fields — which needs the producer, not
+the artefact. That is the per-file work this bean asks for, and it is not
+automatable from the JSON alone.
