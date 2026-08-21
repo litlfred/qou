@@ -183,7 +183,7 @@ forever.
 |---|---|---|---|---|---|
 | helium-3 | 9 | 67.7 s | 30/30 | 30/30 @ 1e-45 | 0 (max 5.274e-73) |
 | tritium | 9 | 67.1 s | 30/30 | 30/30 @ 1e-45 | 0 (max 5.274e-73) |
-| helium-4 | 12 | **in flight** | — | — | — |
+| helium-4 | 12 | **ABANDONED — infeasible, see below** | 13/77 in 77 min | — | unchanged (70) |
 
 Both cleared values match `y-lambda-mpfr-proton-witness.json` exactly, which is
 the check that they came from the D source rather than being coincidentally small.
@@ -271,3 +271,75 @@ the expected count for its `H_n` (11 at n=6, 30 at n=9, 77 at n=12) before
 trusting a clean structural result, or require the producer's completion marker.
 Not implemented here — flagged rather than half-built, and it belongs to the
 audit tooling rather than to this regeneration tranche.
+
+### helium-4 at H₁₂ is INFEASIBLE on this producer — measured, and the reason is structural
+
+**Correcting my own estimate earlier in this entry.** I extrapolated "~3 h and
+that is optimistic" from 10 partitions in 27 min. That was wrong by orders of
+magnitude. Run stopped after **77 minutes** at **13 of 77 partitions**, and the
+restored witness is back to its committed convention-C state (77/77, 70 entries
+above `DEAD_TOL`) — restored by explicit single path, never a glob.
+
+Measured at the stop:
+
+| | |
+|---|---|
+| wall time | 77 min, 99.9 % CPU throughout (verified advancing, not hung) |
+| partitions done | 13 of 77 |
+| partition in progress | `(7,4,1)` — **3 rows**, dim 1408 — alone for **44+ min** |
+| partitions with dim > the largest done (297) | **59** |
+| largest remaining dim | **7700** — `(5,3,2,1,1)` |
+
+Even at *linear* scaling the remainder is ~14 days; the H₉ timings
+(dim 168 → 6.1 s, dim 42 → 0.21 s) imply roughly `dim^2.4`, so it is far worse.
+This is not "budget hours". It does not finish.
+
+**Why, exactly.** Partitions of 12 split as
+
+```
+ ≤2 rows (LIVE under D)   :  7 partitions, total dim     924   (0.7 %)
+ ≥3 rows (DEAD under D)   : 70 partitions, total dim 139,228   (99.3 %)
+```
+
+The producer is lossless by default (`--max-dim None`) and walks partitions in
+reverse-lex, so it clears the seven live blocks early and then spends **99.3 % of
+its compute on blocks convention D sends to identically zero**
+(`WenzlWeightVanishing.lean`, all n). It died on `(7,4,1)`, a dead block.
+
+**And the obvious saving is the one this bean already ruled out.** The §"possible
+~10× saving at H₁₂" note above is correct that `y_λ = 0 ⟺ ℓ(λ) ≥ 3` kills 70 of 77
+blocks, and correct that the saving is **per-consumer, not per-cache**, because
+the pole-order analyses read `χ^λ` block-by-block *before* weighting — the note
+names `λ = (4,1,1)`, three rows, as the unique pole maximiser. This measurement
+prices that caveat: the per-partition schema stores `chi_lambda` for every λ, so
+the dead blocks' χ is real content a consumer wants, and computing it is what
+makes H₁₂ impossible. **The caveat is not a footnote; it is the blocker.**
+
+**What would actually unblock it** (none done here, all beyond this tranche):
+
+1. Establish that no live consumer needs `chi_lambda` on `ℓ(λ) ≥ 3` at n = 12
+   specifically — the pole-order argument is made at H₆ for the deuteron, and it
+   may or may not extend. If it does not, a `--live-blocks-only` mode makes this
+   a ~seconds job on 924 dim-units instead of 140,152.
+2. Or make the dead-block χ cheap by another route, since `y_λ·χ^λ = 0` regardless
+   — the cost is entirely in producing a number whose only consumer is a
+   block-wise inspection.
+3. Or run it detached over days. Not recommended: the output would be 70 blocks of
+   χ nobody has shown is needed at this n.
+
+**Explicitly NOT done:** patching `y_lambda` to 0 in the committed witness while
+keeping its existing `chi_lambda`. That would clear the audit in seconds and it is
+**hand-editing witness numbers**, which is prohibited outright. Recorded because
+it is the tempting move and the next person will think of it too.
+
+### Tranche status
+
+- **cleared:** 11 of 13 structural (9 before today, 2 today: helium-3, tritium);
+  the symbolic hit disproved as an unsimplified zero (14/14, sympy).
+- **blocked, quantified:** helium-4 (H₁₂) — infeasible on this producer, reason
+  and unblock routes above.
+- **split out:** `derived-chi-catalogue` → `qou-j47t` (stale-vs-builder, no
+  update path).
+
+Leaving `in-progress`: the tranche is not finished, and the two remaining items
+are now precisely scoped rather than open-ended.
