@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:21:00Z
-updated_at: 2026-08-21T16:22:17Z
+updated_at: 2026-08-21T16:59:55Z
 ---
 
 Attempted the qou-ls7l regeneration 2026-08-21. STOPPED and reverted: the fresh values contradict a landed corpus result, and my earlier claim that they were 'current-correct' is RETRACTED.
@@ -80,3 +80,69 @@ VALUES the now-runnable producer emits, not the parser.
 For whoever takes it: the reproduction is 'apply #5376, change out_path to
 HERE.parent, run'. Compare denom_factored against the law before landing
 anything.
+
+
+---
+
+## 2026-08-21 — BLOCK LIFTED. The two witnesses are two CONVENTIONS.
+
+Adjudicated by `computations/habiro/habiro_witness_convention_adjudication_probe.py`
+(6/6, symbolic-exact, witness `habiro-witness-convention-adjudication.witness.json`).
+My block above was wrong. Two measurements overturn it.
+
+**1. The committed witness does not describe tr_M.** Its own
+`reconstruction_matches: true` checks only the INNER identity
+`p(u) == reconstruct(a_m)`. It never checks the OUTER one,
+
+    p(u) / (u^shift * D(u))  ==  tr_M_atomic(Z,N)|_{q -> u^2}
+
+which is the only thing making the file a statement about the Markov trace.
+Checked by exact rational evaluation (no float): the committed witness FAILS
+it on all four atoms; the fresh values SATISFY it on all four.
+
+So "the committed witness satisfies the D(u) law" was never evidence it is
+correct. It is a self-consistent object that does not represent today's tr_M.
+
+**2. The disagreement is exactly C-vs-D.** The Markov-Ocneanu prefactor
+contributes the denominator of z raised to `3A-1`:
+
+    committed : (u^2+1)^(3A-1) = (1+q)^(3A-1)    <- z_C = q^(1/2)/(q+1)
+    fresh     : (u^4+1)^(3A-1) = (1+q^2)^(3A-1)  <- z_D = q^3/(q^2+1)
+
+Both carry the DERIVED exponent 3A-1 exactly; only the BASE moves. The
+committed witness is dated 2026-07-18; `pyhecke/gram.py:15` records
+"TRACE CONVENTION D (z = q^3/(q^2+1)) since 2026-08-15". The committed file
+is a convention-C object; the fresh values are convention D. That is also why
+regenerating moves the L1 gate's Habiro column onto D (~0.5 -> ~2e-7 vs
+Hoefsmit).
+
+**Why the D(u) law is not a counter-argument.** It is C-frame itself --
+`(1+u^2)` IS the z_C denominator -- and its exponent is FITTED. The module
+says verbatim that `u^shift` is "the only piece this script does NOT close",
+and its `EMPIRICAL_D_U` table is by its own comment "extracted from
+habiro-coefficients-extended.witness.json" -- the disputed file.
+`18Z+21N+1` reproduces that table on all six atoms because it was fitted to
+it. So my "old matches the law exactly 4-for-4" was CIRCULAR on the exponent,
+and non-discriminating on the cyclotomic exponent (both frames carry 3A-1).
+
+**What I got wrong, precisely.** I treated "fresh breaks a landed law" as
+evidence of corruption without asking whether the law was derived or fitted,
+or which convention it belonged to. It restates "the fresh values are not
+convention C" -- which, after the 2026-08-15 ruling, is the expected and
+desired outcome.
+
+## Open residual (NOT a blocker)
+
+Fresh prefactor is a uniform 6x the C-frame one on all four atoms
+(192/32, 768/128, 768/128, 3072/512). Uniform-in-A rules out a per-strand or
+per-crossing factor, and 6 = 2*3 cannot come from the averaged-crossing
+(sigma+sigma^-1)/2 mechanism that produces 2^(2A+1), since 3 is not a power
+of 2. Unexplained. It is a question about the D-frame normalisation, and it
+is not a reason to retain a witness that fails its own outer identity.
+
+## Next
+
+The regeneration is unblocked as a C->D migration. It still changes a physics
+gate's input, so it wants its own reviewed PR with before/after tabulated --
+not a drive-by here. The D(u) closed form wants a convention-C SCOPE label
+(correct for C; scope it, do not "fix" it).
