@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T21:36:26.010824+00:00",
-  "commitSha": "708ce844cfd851e99c92b08ea367a889d64ebc6d",
+  "computedAt": "2026-08-21T21:36:14.287296+00:00",
+  "commitSha": "690e6fe91b5851399eb18726c0e550dafec758f1",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1374,
+  "durationMs": 10128,
   "computation": "low-isotope-mass-table",
   "scriptFile": "low_isotope_mass_table.py",
-  "scriptHash": "fe01308fbd59",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "0f0dc10eed5a",
+  "scriptCommitSha": "8231f2f85911d5afffdc09bb7a329acc8fc5153e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,7 +21,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
@@ -117,17 +117,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "1.14575978228783550472628574899385394989504742089295835106844",
+        "tr_M_q0_canonical_50dps": "1.14575969245730086968908159577411930594372806194352203945878",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
         "prediction_MeV_50dps": "938.2720894273243",
-        "B_AME_MeV": 938.27208943,
-        "err_MeV": -2.675733412615955e-09,
-        "err_pct": -2.851767032995154e-10,
-        "err_ppb": -0.0028517670329951538,
-        "err_ppm": -2.851767032995154e-06,
+        "B_AME_MeV": "938.272089430000000000000000000000000000000000000000000000000",
+        "err_MeV": "-0.00000000267568248789757490158081054687500000000000000000000000000000",
+        "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
+        "err_ppb": "-0.00285171275799438004559808144017787678295044432823505734577907",
+        "err_ppm": "-0.00000285171275799438004559808144017787678295044432823505734577907",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via laurent_q_rust)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -215,17 +215,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.987743756687661111334135623741593130417358896843632853882728",
+        "tr_M_q0_canonical_50dps": "0.987743688115809571634020165501294982055048759062790056921782",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
         "prediction_MeV_50dps": "939.5654227645324",
-        "B_AME_MeV": 939.56542194,
-        "err_MeV": 8.245324352174066e-07,
-        "err_pct": 8.775678797490492e-08,
-        "err_ppb": 0.8775678797490493,
-        "err_ppm": 0.0008775678797490493,
+        "B_AME_MeV": "939.565421940000000000000000000000000000000000000000000000000",
+        "err_MeV": "0.000000824532399924064520746469497680664062500000000000000000000000",
+        "err_pct": "0.0000000877567842185574376403140940902838502877738204133979179416884",
+        "err_ppb": "0.877567842185574376403140940902838502877738204133979179416884",
+        "err_ppm": "0.000877567842185574376403140940902838502877738204133979179416884",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via laurent_q_rust)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -388,17 +388,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.575090958682446712091773040231153383121357773890000053489481",
+        "tr_M_q0_canonical_50dps": "0.575172243917761656498859008594805302688019263739999760427711",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "2.2488207948647343",
-        "B_AME_MeV": 2.2245662,
-        "err_MeV": 0.024254594864734358,
-        "err_pct": 1.0903067242833393,
-        "err_ppb": 10903067.242833393,
-        "err_ppm": 10903.067242833393,
+        "prediction_MeV_50dps": "2.2488207979013089793867766275070607662200927734375",
+        "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
+        "err_MeV": "0.0242545979013089793867766275070607662200927734374981106160886",
+        "err_pct": "1.09030686078521643396256885981009538938840181233977742207137",
+        "err_ppb": "10903068.6078521643396256885981009538938840181233977706812035",
+        "err_ppm": "10903.0686078521643396256885981009538938840181233977720825020",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -636,17 +636,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.229310147182826882258918179177713169271845436208713791256341",
+        "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268822375141122395452654441392918",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "8.46859838653302",
-        "B_AME_MeV": 8.4817962,
-        "err_MeV": -0.013197813466979014,
-        "err_pct": -0.15560163384943174,
-        "err_ppb": -1556016.3384943174,
-        "err_ppm": -1556.0163384943173,
+        "prediction_MeV_50dps": "8.468598397968138217308132595917413709685206413269",
+        "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
+        "err_MeV": "-0.0131978020318617826918674040825862903147935867309524973906117",
+        "err_pct": "-0.155601499029908107104334858724691950447873137189413923293933",
+        "err_ppb": "-1556014.99029908107104334858724691950447873137189414100851038",
+        "err_ppm": "-1556.01499029908107104334858724691950447873137189413914741086",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -884,17 +884,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.403767138483831240377191090408085854220080958322842091263489",
+        "tr_M_q0_canonical_50dps": "0.403767036851428170368670253333240521653469699944352047412313",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "7.48891930977096",
-        "B_AME_MeV": 7.71804132,
-        "err_MeV": -0.2291220102290401,
-        "err_pct": -2.9686548792542626,
-        "err_ppb": -29686548.792542625,
-        "err_ppm": -29686.548792542624,
+        "prediction_MeV_50dps": "7.4889193198832206495234833469509444304899048613641",
+        "B_AME_MeV": "7.71804132000000000000000000000000000000000000000000000000000",
+        "err_MeV": "-0.229122000116779350476516653049055569510095138635922789742849",
+        "err_pct": "-2.96865474823318710188657882242402363181563193076974778756194",
+        "err_ppb": "-29686547.4823318710188657882242402363181563193076974728054917",
+        "err_ppm": "-29686.5474823318710188657882242402363181563193076974482827686",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -903,19 +903,19 @@
     "n_atoms": 5,
     "derived_from": {
       "witness": "canonical-mass-table-extended.witness.json",
-      "scriptHash": "b6c20f1b6e02",
-      "scriptCommitSha": "8fac561f2bfe5124b2454270cc56c51fba9e5907",
-      "computedAt": "2026-08-15T21:36:25.519688+00:00",
-      "commitSha": "708ce844cfd851e99c92b08ea367a889d64ebc6d"
+      "scriptHash": "dfcd6d57966b",
+      "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
+      "computedAt": "2026-08-21T21:36:13.599177+00:00",
+      "commitSha": "690e6fe91b5851399eb18726c0e550dafec758f1"
     },
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "9d7fb69bd4c3de5ec04494f3bf74283d75a367c35bc4ba250fec6aa2957e5312",
-        "size_bytes": 24227,
-        "commitSha": "708ce844cfd851e99c92b08ea367a889d64ebc6d",
-        "scriptCommitSha": "8fac561f2bfe5124b2454270cc56c51fba9e5907",
-        "computedAt": "2026-08-15T21:36:25.519688+00:00"
+        "sha256": "7897fca64ff566aa82592462608414c372354ab2aeebccb22fa7238e6137dfe1",
+        "size_bytes": 72546,
+        "commitSha": "690e6fe91b5851399eb18726c0e550dafec758f1",
+        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
+        "computedAt": "2026-08-21T21:36:13.599177+00:00"
       }
     ]
   }
