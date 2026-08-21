@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.113Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.149Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.184Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.220Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.256Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.293Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.330Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.368Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.407Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "44da70afd7a3",
+          "ts": "7fda39e9b70c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.444Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 2 data rows, no prose sentences); read in full. No trap construction of this category present."
+      }
     ]
   },
   "source_hashes": {
     "md": "44da70afd7a3",
     "ts": "7fda39e9b70c"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:06:53.444Z"
 }
