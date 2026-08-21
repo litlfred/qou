@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-21T16:16:10Z
+updated_at: 2026-08-21T21:50:31Z
 ---
 
 
@@ -23,3 +23,23 @@ controlling the +/- cancellation -- a genuine analysis project (free-cumulant/tr
 machinery), NOT closeable by probe-driven exact computation. No elementary exact route exists.
 Recommend: dedicated Kerov-CLT/free-probability effort, or accept asymptotic+exact-finite-check status.
 Not resolved; not laundered.
+
+
+
+EXACT-ARITHMETIC UPDATE (2026-08-21, PR #5428). Recomputed Cov(Sum_h,Sum_c^2)
+in exact Fraction (prior kappa~0.0591 'above sqrt2/24' was a float64
+cancellation artifact):
+  - leading exponent 5/2 CONFIRMED (a_n -> 2.500).
+  - Cov > 0 EXACTLY for all 3<=n<=50.
+  - kappa_n NON-MONOTONE: peaks 0.0591961 at n=32, then descends (0.0590862 at
+    n=50, still drifting ~-7e-6/step). kappa NOT numerically pinned; sqrt(2)/24
+    WITHDRAWN as confirmed (data falls toward it from above but does not settle).
+  - Exact identities (Lean-formalizable): 2*Sum_h=p2(lam)+p2(lam');
+    p2=Sum(lam_i-i)^2 + 2 Sum i(lam_i-i) + Sum i^2. The middle i-weighted term
+    is the non-Lambda* obstruction (why Sum_h not in Lambda*). Leading
+    fluctuation bulk-Gaussian (sd~n); edge/TW subleading (~n^{2/3}) = candidate
+    source of the non-monotone corrections.
+NEXT: kappa is a covariance of two profile linear statistics (Sum_c^2 in
+Lambda* <-> R4; Sum_h OUTSIDE Lambda*), needs the IO Gaussian-field kernel
+(Sniady 4.5 bulk term + Fulman finite-n bound), NOT more n. Any analytic kappa
+must reproduce a NON-MONOTONE approach. Still OPEN; not laundered.
