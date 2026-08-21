@@ -167,13 +167,13 @@ theorem qJM_mul_qJMInv (hqi : q * qi = 1) :
              (σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩)
           = σ K q qi n ⟨k, h⟩ * qJM K q qi n k *
             (σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩) *
-            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by ring
+            qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by simp only [mul_assoc]
         _ = σ K q qi n ⟨k, h⟩ * qJM K q qi n k * 1 *
             qJMInv K q qi n k * σInv K q qi n ⟨k, h⟩ := by rw [hσσi]
         _ = σ K q qi n ⟨k, h⟩ * (qJM K q qi n k * qJMInv K q qi n k) *
-            σInv K q qi n ⟨k, h⟩ := by ring
+            σInv K q qi n ⟨k, h⟩ := by simp only [mul_assoc, one_mul]
         _ = σ K q qi n ⟨k, h⟩ * 1 * σInv K q qi n ⟨k, h⟩ := by rw [ih]
-        _ = σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩ := by ring
+        _ = σ K q qi n ⟨k, h⟩ * σInv K q qi n ⟨k, h⟩ := by simp only [mul_one]
         _ = 1 := hσσi
     · -- k ≥ n: recursion freezes, reduces to the k-th case
       push_neg at h
@@ -194,13 +194,13 @@ theorem qJMInv_mul_qJM (hqi : q * qi = 1) :
              (σ K q qi n ⟨k, h⟩ * qJM K q qi n k * σ K q qi n ⟨k, h⟩)
           = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k *
             (σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩) *
-            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by ring
+            qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by simp only [mul_assoc]
         _ = σInv K q qi n ⟨k, h⟩ * qJMInv K q qi n k * 1 *
             qJM K q qi n k * σ K q qi n ⟨k, h⟩ := by rw [hσiσ]
         _ = σInv K q qi n ⟨k, h⟩ * (qJMInv K q qi n k * qJM K q qi n k) *
-            σ K q qi n ⟨k, h⟩ := by ring
+            σ K q qi n ⟨k, h⟩ := by simp only [mul_assoc, one_mul]
         _ = σInv K q qi n ⟨k, h⟩ * 1 * σ K q qi n ⟨k, h⟩ := by rw [ih]
-        _ = σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩ := by ring
+        _ = σInv K q qi n ⟨k, h⟩ * σ K q qi n ⟨k, h⟩ := by simp only [mul_one]
         _ = 1 := hσiσ
     · push_neg at h; omega
 
