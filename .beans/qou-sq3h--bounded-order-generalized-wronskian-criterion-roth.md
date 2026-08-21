@@ -1,10 +1,11 @@
 ---
 # qou-sq3h
 title: Bounded-order generalized Wronskian criterion (Roth's lemma blocker)
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-21T15:21:57Z
-updated_at: 2026-08-21T15:21:57Z
+updated_at: 2026-08-21T16:24:08Z
 ---
 
 Roth's lemma needs a generalized Wronskian whose operators have bounded order; the criterion proved in qou-br3w supplies none. Route: generic line + the univariate criterion already proved. See body.
@@ -191,3 +192,44 @@ Keep it: if Route B's analogy breaks, this is where to return.
 for `x, y` in `MvPolynomial` despite their sharing no non-unit factor. Everything must go
 through `UniqueFactorizationMonoid` / `IsRelPrime`. Reaching for `IsCoprime` is the natural
 first move and it does not work.
+
+---
+
+## Summary of Changes — DONE, 2026-08-21
+
+```
+LinearIndependent K f  ↔  ∃ D, (∀ i, |D i| ≤ i) ∧ mvGenWronskian D f ≠ 0
+```
+
+Both directions, characteristic zero. This is the certificate Roth's lemma consumes, and it
+is what this bean was opened for. `QOU/Mathlib/BoundedOrderWronskian.lean`, 11 declarations,
+sorry-free, standard axiom set.
+
+**Route B is the one that worked**, transposing the univariate general-`m` converse:
+`m = 2` base case → derivative descent → Wronskian combination → collapse to constants → the
+induction.
+
+### ⚠ The doubt recorded against Route B was wrong, and the reason matters
+
+The earlier note warned the analogy might fail where the univariate proof uses the canonical
+operator `dⁱ/dxⁱ` while the multivariate family is chosen. It does not fail. The hypothesis
+is that **every** bounded-order Wronskian vanishes, so the cofactor expansion is available
+for an **arbitrary** last operator with `ord ≤ m−1` — and being free to vary that operator is
+exactly what replaces canonicity. Descent then works because
+`ord (∂ₖ ∘ Δ_l) = |l| + 1 ≤ m−1` whenever `|l| ≤ m−2`.
+
+### Route A was not needed
+
+**No genericity is used anywhere** — no generic direction, no generic point, no
+infinite-field argument. The open statement Route A was blocked on
+(`f independent ⟹ ∃ c, dirGenWronskian c f ≠ 0`) never had to be settled.
+
+`QOU/Mathlib/DirectionalWronskian.lean` is **kept, not deleted**: the equivalence it proves
+(a non-zero directional Wronskian iff some line has independent restrictions) is
+independently meaningful — it is what showed the base point drops out — and it is the natural
+home for anything later needing the line-restriction machinery. It is no longer on the
+critical path for Roth.
+
+### Follow-up
+
+Roth's lemma itself is now unblocked; it stays on the parent bean `qou-br3w`.
