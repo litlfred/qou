@@ -3,6 +3,7 @@
 title: 'borromean-axial-coupling reads gram_inverse, which no longer exists: the Gram matrix is singular and the substitute is a different object'
 status: completed
 type: task
+priority: normal
 created_at: 2026-08-21T14:48:19Z
 updated_at: 2026-08-22T12:05:00Z
 ---
@@ -167,3 +168,22 @@ above was done independently in `mpmath` at 50 dps rather than by running the
 producer. Someone with the environment should run it and confirm `g_A` before
 treating the witness as current.
 
+
+---
+
+## 2026-08-22 (later, from #5417) — I reached the opposite conclusion, and the resolution above is right
+
+Working this bean from a compute branch, I measured the same radical fact and drew a stronger conclusion than it supports. Recording the disagreement and its resolution, because the measurement is worth keeping and the conclusion is not.
+
+**What I measured** (50 dps, [`axial_observable_is_the_gram_radical_probe.py`](../computations/probes/axial_observable_is_the_gram_radical_probe.py)): the trivial character is orthogonal to the radical (`|cos| = 2.95e-51`) and the **sign character IS the radical** (`|cos| = 1.0`, exactly — they coincide by construction). I concluded the axial pairing "has no value" and that the `KeyError` was the corpus correctly refusing to compute it.
+
+**Why that does not follow.** The resolution above asked the question I skipped — *how is the value used?* — and the answer is that it enters a **ratio** with the same `u_A` and the same restricted matrix top and bottom, so the scale cancels exactly and `g_A` depends on it only through the direction of `u_Aᵀ M|_A`. The ambiguity I identified is real *for the pairing in isolation*; it does not reach the quantity the consumer computes. The resolution says so explicitly — the full-support argument is *"correct"* but *"does not block the fix"* — and that is the better reading.
+
+**What survives.** That the sign character coincides with the radical is still true and still worth knowing: it means the axial channel's dual pairing has no canonical value *taken alone*, and any future consumer that uses it outside a scale-invariant combination inherits that ambiguity. What does **not** survive is my inference that the producer therefore cannot proceed.
+
+Two lessons I'd rather record than repeat:
+
+1. **"This quantity is ill-defined" is not a finding until you check what consumes it.** I stopped at the mathematical object; the consumer's arithmetic was one function call away.
+2. I framed leaving the consumer unpatched as the cautious choice. It was the *incomplete* choice — the caution was real, the conclusion drawn from it was not.
+
+The pseudo-inverse identification (`3.76e-16` relative, annihilates the radical) also subsumes my earlier "third reading" note on this bean: `(G|_{A×A})⁻¹` was a genuine third object, but with two of three candidates coinciding and scale cancelling, it is not the one needed.
