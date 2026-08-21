@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:19:15.255022+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T00:37:38.933433+00:00",
+  "commitSha": "4d2ef6d14023955f9d3103fb06ce1395b8fcfd2c",
   "assertions": [
     {
       "name": "orthogonality_holds_at_a6_with_8plus_order_separation",
@@ -10,32 +10,45 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "max trace |y_λ| / deepest PSD |y_λ| = 9.0203e+08"
+      "source": "PSD-dominant y_lambda identically 0 under convention D — exact separation, which subsumes the >=1e8 threshold"
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 17,
   "computation": "probe-1b-li6-orthogonality",
   "scriptFile": "probe_1b_li6_orthogonality.py",
-  "scriptHash": "579a1beb1922",
-  "scriptCommitSha": "cbc5bc55cc8999f9c34135cd96fcb1b622f68535",
+  "scriptHash": "c971033baf33",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
-  "description": "Tests PSD-dominance vs trace-dominance orthogonality at A=6. Mirrors Probe (1) at A=4 which found PSD-dominant blocks contribute <0.03% of |tr_M|. At A=6 the magnitude separation between trace-dominant (y ~ 10^-6) and PSD-dominant (y ~ 10^-15) is 9 orders of magnitude, confirming orthogonality holds even more strongly at A=6.",
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Tests PSD-dominance vs trace-dominance orthogonality at A=6. Mirrors Probe (1) at A=4, which under convention C found PSD-dominant blocks contributing <0.03% of |tr_M|. UNDER CONVENTION D THE RESULT SHARPENS TO AN EXACT ONE: every PSD-dominant shape here has 3 or more rows, and Schur-Weyl on the two-dimensional fibre sends y_lambda to exactly 0 for ell(lambda) >= 3. So the PSD-dominant family contributes IDENTICALLY ZERO, not a small residue, and the separation from the trace-dominant family (1- and 2-row, y ~ 1e-4) is total rather than 9 orders of magnitude. The orthogonality claim survives the convention change and strengthens; it does not dissolve.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
   "auditOnly": "docs/audits/2026-05-25-dominant-partition-nucleon-structure.md",
   "data": {
     "trace_dominant_top10": [
       {
         "partition": [
+          18
+        ],
+        "y_lambda": "0.00011786155801416",
+        "n_rows": 1
+      },
+      {
+        "partition": [
           17,
           1
         ],
-        "y_lambda": 7.080243470706077e-06,
+        "y_lambda": "9.4704708660204e-5",
         "n_rows": 2
       },
       {
@@ -43,7 +56,7 @@
           16,
           2
         ],
-        "y_lambda": 6.923693911319062e-06,
+        "y_lambda": "7.56870430519622e-5",
         "n_rows": 2
       },
       {
@@ -51,22 +64,15 @@
           15,
           3
         ],
-        "y_lambda": 6.206424357858715e-06,
+        "y_lambda": "5.99773711305596e-5",
         "n_rows": 2
-      },
-      {
-        "partition": [
-          18
-        ],
-        "y_lambda": 5.8612064082964745e-06,
-        "n_rows": 1
       },
       {
         "partition": [
           14,
           4
         ],
-        "y_lambda": 5.266785233965885e-06,
+        "y_lambda": "4.68890826990216e-5",
         "n_rows": 2
       },
       {
@@ -74,7 +80,7 @@
           13,
           5
         ],
-        "y_lambda": 4.261459600207642e-06,
+        "y_lambda": "3.58501382938257e-5",
         "n_rows": 2
       },
       {
@@ -82,7 +88,7 @@
           12,
           6
         ],
-        "y_lambda": 3.2613303483561786e-06,
+        "y_lambda": "2.63780675088196e-5",
         "n_rows": 2
       },
       {
@@ -90,26 +96,24 @@
           11,
           7
         ],
-        "y_lambda": 2.2929450581123783e-06,
+        "y_lambda": "1.80588820430388e-5",
         "n_rows": 2
       },
       {
         "partition": [
-          15,
-          2,
-          1
+          10,
+          8
         ],
-        "y_lambda": 2.044957710565142e-06,
-        "n_rows": 3
+        "y_lambda": "1.05289818416953e-5",
+        "n_rows": 2
       },
       {
         "partition": [
-          14,
-          3,
-          1
+          9,
+          9
         ],
-        "y_lambda": 2.03759375671853e-06,
-        "n_rows": 3
+        "y_lambda": "3.45926351636012e-6",
+        "n_rows": 2
       }
     ],
     "psd_dominant_scanned": [
@@ -123,8 +127,8 @@
           2,
           2
         ],
-        "min_eig": -116.71,
-        "y_lambda": -7.849224269380604e-15,
+        "min_eig": "-116.71",
+        "y_lambda": "0.0",
         "n_rows": 7,
         "max_row": 3,
         "n_distinct_parts": 2
@@ -136,8 +140,8 @@
           5,
           3
         ],
-        "min_eig": -110.31,
-        "y_lambda": -2.8420462298676045e-11,
+        "min_eig": "-110.31",
+        "y_lambda": "0.0",
         "n_rows": 4,
         "max_row": 5,
         "n_distinct_parts": 2
@@ -150,8 +154,8 @@
           3,
           3
         ],
-        "min_eig": -109.81,
-        "y_lambda": -4.754471294267887e-14,
+        "min_eig": "-109.81",
+        "y_lambda": "0.0",
         "n_rows": 5,
         "max_row": 4,
         "n_distinct_parts": 2
@@ -165,8 +169,8 @@
           3,
           3
         ],
-        "min_eig": -96.52,
-        "y_lambda": 5.835719650448538e-17,
+        "min_eig": "-96.52",
+        "y_lambda": "0.0",
         "n_rows": 6,
         "max_row": 3,
         "n_distinct_parts": 1
@@ -177,8 +181,8 @@
           6,
           6
         ],
-        "min_eig": -95.72,
-        "y_lambda": 2.454575320954786e-09,
+        "min_eig": "-95.72",
+        "y_lambda": "0.0",
         "n_rows": 3,
         "max_row": 6,
         "n_distinct_parts": 1
@@ -189,8 +193,8 @@
           8,
           2
         ],
-        "min_eig": -88.95,
-        "y_lambda": 1.0111476824852191e-07,
+        "min_eig": "-88.95",
+        "y_lambda": "0.0",
         "n_rows": 3,
         "max_row": 8,
         "n_distinct_parts": 2
@@ -201,21 +205,29 @@
           4,
           4
         ],
-        "min_eig": -80.67,
-        "y_lambda": 9.206018372703014e-08,
+        "min_eig": "-80.67",
+        "y_lambda": "0.0",
         "n_rows": 3,
         "max_row": 10,
         "n_distinct_parts": 2
       }
     ],
     "magnitude_separation": {
-      "top_trace_abs_y": 7.080243470706077e-06,
-      "deepest_psd_abs_y": 7.849224269380604e-15,
-      "ratio_trace_over_psd": 902030981.370442,
-      "log10_ratio": 8.955221454179588
+      "top_trace_abs_y": "0.00011786155801416",
+      "deepest_psd_abs_y": "0.0",
+      "ratio_trace_over_psd": null,
+      "log10_ratio": null,
+      "separation_kind": "exact",
+      "separation_note": "PSD-dominant y_lambda is identically 0 under convention D (every scanned PSD shape has ell(lambda) >= 3, and Schur-Weyl on the two-dimensional fibre sends those to exact zero), so the ratio is infinite and is recorded as null. Under convention C it was a finite ~1e9."
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "⁶Li",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },
   "caveats": [
-    "Magnitude separation is a NECESSARY but not sufficient condition for the orthogonality. A definitive y·χ contribution test would require computing tr(ρ_λ(T_w_⁶Li)) for the PSD-dominant shapes via Hutchinson estimator or full diagonal trace. Given the 9-OOM y_λ gap and the symmetric eigval spread around 0 we observed for (3,3,3,3,2,2,2) [min=-117, max=+114], the contribution is expected to be effectively zero — but rigorous closure needs the tr_M computation."
+    "SUPERSEDED UNDER CONVENTION D. This caveat previously read: 'Magnitude separation is a NECESSARY but not sufficient condition for the orthogonality ... rigorous closure needs the tr_M computation', because a 9-OOM gap between a small y_lambda and a large chi^lambda leaves room for a nonzero product. That argument was correct under convention C and does not apply here: the PSD-dominant y_lambda are now EXACTLY 0, so their contribution y_lambda * chi^lambda to tr_M is exactly 0 for any finite chi^lambda. No Hutchinson estimator or diagonal trace is needed to close it — the vanishing is structural (Schur-Weyl on the two-dimensional fibre kills ell(lambda) >= 3), not numerical. What this probe still does NOT establish is anything about the 1- and 2-row trace-dominant family, whose weights are nonzero and whose chi^lambda are not computed here."
   ]
 }

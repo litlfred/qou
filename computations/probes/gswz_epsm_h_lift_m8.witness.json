@@ -1,0 +1,82 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_h_lift_m8_probe",
+ "engine": "python3-int-exact",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Reads no q0. A Kummer descent in Q_{5^8} over K = Q(alpha); the substrate modulus never enters and no anchor is imported.",
+ "scriptFile": "gswz_epsm_h_lift_m8_probe.py",
+ "commitSha": "029373004f7394ab98b74a0914909b3fc3f16714",
+ "beans": [
+  "qou-w4gn",
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 Remark 1.9, Proposition 2.5, eqn (21); Addenda 34, 37, 39 (this repo)",
+ "checks": {
+  "found_irreducible_degree_8_poly": true,
+  "mu8_and_mu24_found_in_L": true,
+  "class_map_is_well_defined_on_zeta8": true,
+  "alpha_root_exact": true,
+  "found_a_generator_of_mu_N": true,
+  "dlog_round_trips_on_the_generator": true,
+  "all_four_eighth_roots_exist_in_L": true,
+  "eighth_roots_are_exact": true,
+  "one_minus_X_is_an_8th_power_in_L": true,
+  "P_xi_class_defined": true,
+  "root_independence_holds_in_L": true,
+  "descent_succeeds": true,
+  "control_descent_can_fail": true,
+  "quotient_is_an_8th_power_in_L": true,
+  "R_itself_is_ambiguous_as_prop25_predicts": true,
+  "R_to_wF_is_well_defined": true,
+  "all_admissible_k_are_even": true
+ },
+ "result": {
+  "L_defining_poly_ascending": [
+   2,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "mu8_seed_is_non_scalar": true,
+  "class8_of_P_xi_in_L": 0,
+  "classes_over_all_64_root_choices": [
+   "0"
+  ],
+  "classes_reachable_from_mu24": [
+   "0",
+   "4"
+  ],
+  "admissible_k": [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22
+  ],
+  "an_unreachable_class": 1,
+  "R_class_mod_8_over_all_descents": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "R_to_the_wF_over_all_descents": [
+   0
+  ],
+  "eps8_R_to_wF": 0,
+  "verdict": "CGZ's descent performed explicitly at m = 8. The Kummer extension the roots generate is unramified of degree 4 over B, so L = Q_{5^8} carries everything and H is never needed in full -- the v_1 obstruction of Addendum 39 was the absence of roots in B, not the absence of a constructible lift. The descent is 12-fold and R itself is ambiguous over {0,2,4,6}, exactly as Prop 2.5(b) predicts for gcd(n, w_F) > 1; every admissible k is even, so R^{w_F} = 0 is well defined. eps_8 is therefore TRIVIAL at this place -- a value, honestly obtained, and the first in this arc from an actual descent rather than from arranging for one to be unnecessary."
+ },
+ "scope": "scope-(a) CONSTRUCTS CGZ's lift in one case, and corrects the framing of Addendum 39. That addendum closed the v_1 sweep at m = 3, 6 because for m = 8, 12, 24 the roots leave B = Q_25 and the lift 'flagged unchecked' would be needed. The universal Kummer extension H is never needed in full: only the subextension the roots generate, and for a unit argument with gcd(m,5) = 1 that is UNRAMIFIED. Computed: the four arguments have mu_24 dlogs 6, 12, 12, 6, images 6, 4, 4, 6 in Z/8, generating a subgroup of order 4, so [L:B] = 4 and L = Q_{5^8}, which contains both mu_8 and mu_24. The descent -- find v in B^x with P_zeta(xi)/v an 8th power in L -- is then a single class match in Z/8, and its obstruction delta(d(xi)) vanishes because d(xi) = 0 was computed exactly in K (Addendum 34). Since gcd(8, w_F) = 4 > 1 only R^{w_F} is defined, landing in {0,4}: a single bit, reported. Controls: the descent can fail (an unreachable class is exhibited), root independence holds over all 64 choices, and 1 - X is an 8th power in L -- the property that fails in B and is exactly what going up buys. Does NOT construct the lift in general: Remark 1.9 concerns arbitrary F and n, where the extension need not be unramified. Nothing wired."
+}

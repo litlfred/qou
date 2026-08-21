@@ -1,10 +1,11 @@
 ---
 # qou-h43i
 title: lean-vacuity-axiom-audit rewrites the committed corpus audit as a side effect of running the documented per-file gate
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-16T13:52:36Z
-updated_at: 2026-08-16T13:52:36Z
+updated_at: 2026-08-19T21:17:19Z
 ---
 
 
@@ -75,3 +76,12 @@ missing here.
       `docs/audits/` untouched
 - [ ] Check whether the committed artifact on `main` is currently a full scan
       or already a truncated one from someone's local run
+
+
+
+## RESOLVED 2026-08-19 (verified on current main @ 5b158ef0)
+Duplicate of `qou-c7jp` (completed), which landed disposition (1): the guard `if (roots.length > 0 && !jsonExplicit)` in lean-vacuity-axiom-audit.ts:2342 refuses to write the default corpus artifact for a file-scoped run.
+
+Reproduced the bean's exact repro today — the documented per-file gate on ONE file (`--quiet --fail-on …`) now prints '(partial scan — no report written)', exits 0, and leaves docs/audits/2026-06-17-…json **byte-identical** (git hash-object before==after). Fix confirmed live.
+
+Added the missing regression test (the one open sub-item): content/pipeline/lean-vacuity-axiom-audit.guard.test.ts — asserts a file-scoped run leaves the corpus artifact untouched (fail-safe: restores it if a regression rewrites it) + that an explicit --json still writes. `bun test` green (2 pass).

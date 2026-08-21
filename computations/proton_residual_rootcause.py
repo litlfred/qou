@@ -119,6 +119,31 @@ def _branch_a_legacy_f64(V0: float, V1: float, z: float) -> dict:
     }
 
 
+def _re(x):
+    """Real part of a Phi_q value, with the vanishing imaginary part CHECKED.
+
+    `PhiQ_euler_mpfr` returns an `mpmath.mpc` in EVERY regime — including well
+    inside convergence (v = 0.5 gives `(378.207990286 + 0.0j)`) — so this is
+    not a divergence artifact of the |v| >= 1 product fallback. The imaginary
+    part is exactly 0 at every point measured (v = 0.1 … 1.2, 50 dps).
+
+    That made `float(_re(phi0))` raise `TypeError: float() argument must be … not
+    'mpc'` unconditionally, so Branch C of this probe could never run at all —
+    the failure predates the convention-D work and is unrelated to it
+    (bean qou-cds2, verified against the pre-change baseline).
+
+    This asserts `Im == 0` rather than taking `.real` silently: if the value
+    ever does acquire a genuine imaginary part, that is a real result about
+    the q-exponential and must surface, not be discarded by a cast.
+    """
+    if mp.im(x) != 0:
+        raise ValueError(
+            f"Phi_q value has a nonzero imaginary part ({mp.nstr(mp.im(x), 6)}); "
+            "that is a mathematical fact about the q-exponential in this regime, "
+            "not a type nuisance — do not discard it with .real")
+    return mp.re(x)
+
+
 def _branch_b_legacy_mpfr(V0: float, V1: float, z: float) -> dict:
     """Branch B — Phi_q product but evaluated at 50dps MPFR.
 
@@ -134,12 +159,12 @@ def _branch_b_legacy_mpfr(V0: float, V1: float, z: float) -> dict:
     m = a01 + phi0 + phi1 + z_mp * z_mp * phi01
     return {
         "T1_abs_prod": float(a01),
-        "T2_phi_V0": mp.re(phi0),
-        "T3_phi_V1": mp.re(phi1),
-        "T4_z2_phi_V0V1": mp.re(z_mp * z_mp * phi01),
-        "phi_V0V1": mp.re(phi01),
-        "m_Hecke": mp.re(m),
-        "m_Hecke_mpf_str": mp.nstr(m, 30),
+        "T2_phi_V0": _re(phi0),
+        "T3_phi_V1": _re(phi1),
+        "T4_z2_phi_V0V1": _re(z_mp * z_mp * phi01),
+        "phi_V0V1": _re(phi01),
+        "m_Hecke": _re(m),
+        "m_Hecke_mpf_str": mp.nstr(_re(m), 30),
     }
 
 
@@ -162,12 +187,12 @@ def _branch_c_euler_mpfr(V0: float, V1: float, z: float) -> dict:
     m = mpf(str(a01)) + phi0 + phi1 + z_mp * z_mp * phi01
     return {
         "T1_abs_prod": a01,
-        "T2_phi_V0": mp.re(phi0),
-        "T3_phi_V1": mp.re(phi1),
-        "T4_z2_phi_V0V1": mp.re(z_mp * z_mp * phi01),
-        "phi_V0V1": mp.re(phi01),
-        "m_Hecke": mp.re(m),
-        "m_Hecke_mpf_str": mp.nstr(m, 30),
+        "T2_phi_V0": _re(phi0),
+        "T3_phi_V1": _re(phi1),
+        "T4_z2_phi_V0V1": _re(z_mp * z_mp * phi01),
+        "phi_V0V1": _re(phi01),
+        "m_Hecke": _re(m),
+        "m_Hecke_mpf_str": mp.nstr(_re(m), 30),
         "fallback_to_product": [a0 >= 1.0, a1 >= 1.0, a01 >= 1.0],
     }
 

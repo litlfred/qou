@@ -72,6 +72,33 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 BASELINE = HERE / "raw-float64-baseline.json"
 
+
+def _baseline_path(scan_root: "Path | None") -> "Path":
+    """Baseline file for a run — DERIVED from the scan root, never shared.
+
+    Exactly the `_output_name` defect (qou-pgdw) one step removed, and it is
+    why the audits-tree gate could not be made blocking. The OUTPUT name was
+    scoped when that bug was fixed; the BASELINE was left global, so the
+    advisory `--scan-root docs/audits/scripts` run reads a baseline whose 1572
+    entries are all `computations/` paths and therefore contains none of its
+    own. Every witness under that tree is reported NEW on every run, forever —
+    not because anything regressed, but because the ratchet has no memory for
+    that tree.
+
+    A ratchet with no memory cannot be blocking: it is red on arrival, and a
+    gate that is red on arrival gets skipped, which is how a checker goes quiet
+    (the rule this file's own header states). Giving each scan root its own
+    baseline is what makes "no NEW dirty here" a question the gate can answer.
+
+    This does NOT grow `raw-float64-baseline.json`. It is a separate file for a
+    tree that was previously outside the discipline altogether; the corpus
+    baseline is untouched and still drains-only.
+    """
+    if scan_root is None:
+        return BASELINE
+    slug = scan_root.relative_to(ROOT).as_posix().strip("/").replace("/", "-")
+    return HERE / f"raw-float64-baseline--{slug}.json"
+
 # These audits embed findings — including float values — in their own
 # witnesses, so scanning them re-detects the audit's own output every run.
 # Same exclusion the padding audit makes, for the same reason.
@@ -190,6 +217,54 @@ def _declares_f64_integrator(doc) -> bool:
             return True
     return False
 
+
+# ── deprecated-float64 carve-out (owner ruling 2026-08-15) ────────────────
+#
+# A THIRD carve-out, and deliberately not a widening of the one above.
+#
+# The owner's rule: "mpmath on anything in production; if not production,
+# deprecate it with precision_tier = float64." Walking the
+# production-vs-exploratory decision tree, a producer that reaches none of the
+# named production locations (m_p_borromean_verification_50dps, mass_table_ppb,
+# codata_constants, the two dashboards, the canonical mass/binding facades) is
+# EXPLORATORY, and an exploratory f64 probe is not worth an mpmath rewrite.
+#
+# Why it is NOT `float64-integrator`. That tier means f64 BY CONSTRUCTION with
+# no higher-precision source to carry from — an ODE integrator IS the source.
+# These producers are the opposite: a 50-dps source exists (q_0, h from
+# q_parameter) and numpy was simply cheaper for the matrix algebra. Filing them
+# under `float64-integrator` would be exactly the "ordinary f64 sloppiness"
+# that carve-out's own comment says it must be designed against. They get their
+# own name so the two reasons never blur.
+#
+# Opt-in requires BOTH fields, on the record:
+#
+#     w.add_data("precision_tier", "float64")
+#     w.add_data("deprecated", {"reason": ..., "not_production": ...})
+#
+# `precision_tier: "float64"` alone excuses nothing — otherwise any producer
+# could silence the ratchet by naming its own sloppiness. The `deprecated`
+# field is what makes it a retirement rather than an excuse, and it must say
+# WHY the producer is not production so a reader can check the claim against
+# the decision tree instead of taking it on faith.
+#
+# Counted and reported separately, like the other two. A carve-out that cannot
+# be seen is indistinguishable from a hole.
+F64_DEPRECATED_TIER = "float64"
+
+
+def _declares_deprecated_f64(doc) -> bool:
+    """Has this witness declared BOTH the float64 tier and its deprecation?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if not isinstance(holder, dict):
+            continue
+        if holder.get("precision_tier") == F64_DEPRECATED_TIER \
+                and holder.get("deprecated"):
+            return True
+    return False
+
 # A binary64 carries at most 17 significant decimal digits. A `*_str`
 # companion is only a genuine full-precision shadow if it carries MORE than
 # that — otherwise it is just the same f64 spelled as text.
@@ -289,6 +364,7 @@ CARVED: dict[str, int] = {}
 #: Per-file tally for the float64-integrator carve-out, kept SEPARATE from
 #: `CARVED` so the two excuses can never be read as one number.
 CARVED_INTEGRATOR: dict[str, int] = {}
+CARVED_DEPRECATED: dict[str, int] = {}
 
 
 def scan(scan_root: Path | None = None) -> dict[str, int]:
@@ -301,6 +377,7 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
     found: dict[str, int] = {}
     CARVED.clear()
     CARVED_INTEGRATOR.clear()
+    CARVED_DEPRECATED.clear()
     for p in sorted((scan_root or HERE).rglob("*.witness.json")):
         if (p.name in SELF_OUTPUTS
                 or p.name.startswith(SELF_OUTPUT_PREFIX)
@@ -319,6 +396,12 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
         # than a name list.
         if n and _declares_f64_integrator(d):
             CARVED_INTEGRATOR[rel] = n
+            n = 0
+        # Same witness-level application for the deprecated-exploratory tier.
+        # Checked AFTER the integrator tier so a producer that (wrongly) claims
+        # both is counted under the narrower, better-justified one.
+        if n and _declares_deprecated_f64(d):
+            CARVED_DEPRECATED[rel] = n
             n = 0
         if n:
             found[rel] = n
@@ -424,20 +507,30 @@ def main() -> int:
         if not scan_root.is_dir():
             print(f"--scan-root: not a directory: {scan_root}")
             return 2
-        if args.rebaseline:
-            # Rebaselining against a foreign root would write that root's
-            # dirty files into a baseline keyed on computations/ paths —
-            # growing it. Baselines drain, never grow.
-            print("--rebaseline is refused with --scan-root (bean qou-irzg).")
-            return 2
-        print(f"  scan root                      : {args.scan_root}  "
+        # --rebaseline WITH --scan-root used to be refused outright: the write
+        # would have put that root's dirty files into a baseline keyed on
+        # computations/ paths, growing it, and baselines drain-never-grow.
+        #
+        # It is now permitted, because `_baseline_path` sends it to that root's
+        # OWN file. The corpus baseline is unreachable from a non-default root,
+        # so the thing the refusal protected cannot happen. What this enables is
+        # ESTABLISHING coverage over a tree that had none — which is a different
+        # act from silencing a regression in a tree that already has it, and is
+        # the only way the ratchet can hold a line here at all.
+        _bp = _baseline_path(scan_root)
+        _cov = "own baseline: " + _bp.name if _bp.exists() else (
+            "NO baseline yet — every dirty file below reads as NEW; "
+            "--rebaseline to establish coverage")
+        print(f"  scan root                      : {args.scan_root}  [{_cov}]")
+        _unused_banner = (
               f"[non-default — baseline does not cover it, so every dirty\n"
               f"                                   file below is reported as "
               f"NEW; treat this run as ADVISORY]")
     found = scan(scan_root)
+    baseline_path = _baseline_path(scan_root)
     prior: dict[str, int] = {}
-    if BASELINE.exists():
-        prior = json.loads(BASELINE.read_text())["files"]
+    if baseline_path.exists():
+        prior = json.loads(baseline_path.read_text())["files"]
 
     new_files = {f: n for f, n in found.items() if f not in prior}
     grew = {f: (prior[f], n) for f, n in found.items()
@@ -459,6 +552,14 @@ def main() -> int:
               f"{len(CARVED_INTEGRATOR)} witness(es)  [NOT drained — declared "
               f"precision_tier={F64_INTEGRATOR_TIER!r}]")
         for _f, _n in sorted(CARVED_INTEGRATOR.items(), key=lambda t: -t[1]):
+            print(f"      {_n:6,d}  {_f}")
+    if CARVED_DEPRECATED:
+        print(f"  deprecated-f64 carve-out       : "
+              f"{sum(CARVED_DEPRECATED.values()):,} field(s) in "
+              f"{len(CARVED_DEPRECATED)} witness(es)  [NOT drained — declared "
+              f"precision_tier={F64_DEPRECATED_TIER!r} + deprecated, "
+              f"i.e. exploratory and retired rather than rewritten]")
+        for _f, _n in sorted(CARVED_DEPRECATED.items(), key=lambda t: -t[1]):
             print(f"      {_n:6,d}  {_f}")
     if CARVED:
         print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
@@ -492,7 +593,7 @@ def main() -> int:
             print(f"    {was:6d} -> {now:<6d}  {f}")
 
     if args.rebaseline:
-        BASELINE.write_text(json.dumps(
+        baseline_path.write_text(json.dumps(
             {"note": "Witnesses known to carry raw float64, by count. The "
                      "backlog is tolerated; it must only SHRINK. Regenerate "
                      "ONLY when draining. Adding a file here to silence a "
@@ -528,6 +629,8 @@ def main() -> int:
             # script. Emitting it only to stdout would have made this carve-out
             # exactly the unseeable kind its own comment warns against.
             "f64_integrator_carved_out_fields": sum(CARVED_INTEGRATOR.values()),
+            "deprecated_f64_carved_out_fields": sum(CARVED_DEPRECATED.values()),
+            "deprecated_f64_carved_out_by_file": dict(CARVED_DEPRECATED),
             "f64_integrator_carved_out_by_file": dict(
                 sorted(CARVED_INTEGRATOR.items())),
             "f64_integrator_declared_tier": F64_INTEGRATOR_TIER,

@@ -328,6 +328,58 @@ user's last message, not the most recently mentioned file.
       §0b-idle-time-backlog-policy-5-minute-trigger`](.claude/skills/local/integration-watcher.md#0b-idle-time-backlog-policy-5-minute-trigger).
       This sits above cross-cutting cleanups because stale
       sidecars mislead all four watcher children's reads.
+
+      **Before spending the witness half of that budget, run
+      [`witness_staleness_triage.py`](computations/witness_staleness_triage.py)
+      — measured, the answer is usually "spend it on sidecars instead."**
+      It normalises both producer versions through `ast.unparse` (comments,
+      docstrings and formatting gone) and reports which drifts can actually
+      move a number. Re-measured three times across 1564 commits of `main`,
+      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      identical is necessary but not sufficient, and the two extra gates are
+      the ones that bite:
+
+      - **Import-cone drift — the one that actually bites.** A producer's own
+        source can be byte-stable while the module it *calls* changed.
+        Measured: `binding_canonical.py` is source-stable across its drift
+        window, yet `tr_M_atom` moved `0.388 -> 0.575` (48 %) because
+        `tr_m_atom_via_transfer.py`, which computes that quantity, changed.
+        A file-local `git diff` cannot see this — use
+        [`witness_import_cone_staleness_audit.py`](computations/witness_import_cone_staleness_audit.py),
+        or the one-hop check the triage script now runs.
+      - **Environment (hazard, not yet measured here).** A producer *may*
+        branch on what is installed. I originally reported the
+        `binding_canonical` 48 % as an instance of this; **that was wrong** —
+        re-run with `pyhecke_native 0.9.0` and every recorded package matched,
+        it reproduces the committed value byte-identically. Still worth
+        checking the witness's `environment` block before re-running, but this
+        corpus has not yet produced a confirmed case.
+      - **Bare producers.** Some producers never emit provenance; the
+        `scriptHash` / `commitSha` on disk was added downstream. Re-running
+        one *deletes the field this audit keys on* (measured: 15 keys in, 7
+        and 9 out). Fix the producer to emit provenance first.
+
+      **And a `substantive` verdict is not a work order — measured, 39 %.**
+      Of 72 substantive producers actually re-run under a time budget, only
+      **28 moved a single mathematical field**; 44 were byte-identical, 3
+      crashed, 2 timed out. So "the code changed, therefore the payload can
+      move" over-flags by roughly 61 %, and the genuinely actionable queue is
+      ~105 of 268, not 268 — and not the 751 the raw self-stale count suggests.
+      Re-run to decide; do not treat the class as a to-do list.
+
+      **Producers write SIBLING witnesses.** The isotope producer rewrote 21
+      `canonical-isotope-witness-Z*.json` files that the sampler never targeted.
+      Anything that re-runs producers to compare must restore the whole
+      `computations/` tree afterwards, not the one file it was looking at, or it
+      leaves a dirty tree that reads as real work.
+
+      And ~48 % of the backlog is `rewritten` — the recorded `commitSha`
+      resolves to nothing, because rebase-merge (rule 8) rewrote the branch
+      sha the witness was written under. This is the same effect the
+      `scriptCommitSha` ruling above describes, one field over: **"diff the
+      producer first" is unrunnable for half the queue**, and hand-patching
+      the sha (13 such commits on `main` in one 8-day window) buys only the
+      interval until the next merge.
    5. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades,
       `validate-bib` deferred items, glossary backfills, doc
       currency. Lowest priority because they're not gated on any
@@ -1161,7 +1213,7 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
-> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
+> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
 
 The derivation chain:
 
@@ -1524,7 +1576,7 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
@@ -1587,7 +1639,52 @@ muon; muon-anchor → ~4000σ on proton).
    (R2) does not change this.** R2 restates the end state; it does not
    scope the sweep, so the sign-off requirement stands. If the owner
    intends R2 to authorise the bulk migration, that has to be said here
-   explicitly — do not infer it from R2's wording. Concretely:
+   explicitly — do not infer it from R2's wording.
+
+   > **🟧 OWNER AUTHORISATION, RECORDED 2026-08-19 (the gate above is now
+   > SATISFIED — read the four constraints before running anything).**
+   > The owner gave the directive in session on 2026-08-15, in these words:
+   >
+   > > *"we want proton unless for an explicit reason (like comparison on
+   > > proton vs muon results). otherwise pin proton"*
+   > > *"fix all, even if not visible."*
+   >
+   > It is recorded **here** because the gate above asks for exactly that
+   > and a chat transcript does not satisfy it. PR #5049 held the bulk
+   > reclassification back on precisely this ground, and it was right to:
+   > the branch could not show the directive, only infer it.
+   >
+   > **The authorisation is real, and it is not a blank cheque.** The first
+   > attempt at this migration broke `main` for **208 producers**
+   > (`qou-m9xp`), so it carries four constraints, each one bought:
+   >
+   > 1. **NEVER re-pin an anchor-DEFINING witness.**
+   >    `q-pinning-50-digit.witness.json` is what
+   >    `qou_substrate.witness._q0_value_for_anchor("muon")` READS. Re-pinning
+   >    it does not migrate a consumer — it redefines what "muon" *means*, so
+   >    every muon-stamped witness in the corpus then disagrees with its own
+   >    anchor (262 `Q0_FLIP`s) and `q_parameter`'s anti-corruption guard
+   >    hard-fails every `ideal_muon` producer, including the one that would
+   >    regenerate the anchor. `q0_repin_sweep.py` now excludes it by name
+   >    (`ANCHOR_DEFINING` / `ANCHOR_DEFINITIONS`); do not remove that.
+   > 2. **The muon anchor keeps its definition.** "Proton everywhere"
+   >    governs what new compute *pins to*, not whether the muon layer still
+   >    has a value. Something in the tree must continue to hold the muon
+   >    50-digit string or the ideal/CAL-2 layer becomes unstatable.
+   > 3. **A comparison producer needs BOTH pins and the manifest cannot
+   >    serve it.** A per-process override supplies one. Such a producer
+   >    reads `q_at()` / `q_muon_at()` by name and belongs under
+   >    `physical_proton` — see `mu_substrate_tension_audit_100dps`, which
+   >    understated its own subject **155×** while listed `ideal_muon`.
+   > 4. **Do not split the change.** The manifest reclassification and the
+   >    witnesses it re-pins are one change. #5049 merged the witnesses and
+   >    held the manifest, and the half that landed is the half that broke
+   >    `main`. Land them together or not at all.
+   >
+   > Scope: `qou-1c4y`. Rules 1–4 immediately below still apply to
+   > everything the sweep does not cover.
+
+   Concretely:
 
    > **Bean reference corrected 2026-08-15.** This paragraph previously
    > said the sweep is "tracked under bean `tnjb`". It is not, and the
@@ -3220,8 +3317,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
-| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 70 in-repo importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 89 in-repo importers. |
+| `tools/pyhecke/` | `pyhecke` — Layer 2b (Hecke / Gram / Markov trace). **Not on PyPI** (404). 70 in-repo importers. |
+| `tools/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine`. **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel but is `workflow_dispatch`-only and has no publish step. Build locally with `maturin build --release`. 89 in-repo importers. |
 | `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
 
 > **Importer counts are measured, not maintained.** The five above were
@@ -3234,11 +3331,23 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 >   | grep -v "^./tools/<pkg-dir>/" | grep -v _deprecated | wc -l
 > ```
 >
-> **`qou-mass` and `qou-substrate` are not published.** Both 404 on PyPI, with
-> no `dist/`, no tags and no publish workflow. Do not describe either as
-> shipped, and do not reason about external consumers of their data — there
-> are none. (Checked 2026-08-15; the `qou-mass` entry said "PyPI package"
-> while nothing had ever been uploaded.)
+> **None of `qou-mass`, `qou-substrate`, `pyhecke` or `pyhecke-native` are
+> published.** All four 404 on PyPI, with no `dist/` and no publish step. Do not
+> describe any of them as shipped, and do not reason about external consumers of
+> their data — there are none. (`qou-mass` / `qou-substrate` checked 2026-08-15;
+> the two `pyhecke` rows carried the same wrong claim until 2026-08-19 and were
+> corrected the same way. `pyhecke-native` has a wheel workflow, which is
+> probably how "PyPI wheel" got written, but it is `workflow_dispatch`-only and
+> uploads nothing — building an artifact is not publishing it.)
+>
+> **Consequence for agents.** `pyhecke_native` cannot be `pip install`ed, so a
+> container without it is the *default*, not an anomaly. Build it from
+> `tools/pyhecke-native/` with `maturin build --release` (works: produces
+> `pyhecke_native-0.9.0-cp311-...whl`) when a witness's `environment` block
+> records it. **Do not cite `binding_canonical` as evidence that its absence
+> changes results** — I did, and it was wrong: with the native extension
+> installed the producer reproduces the same `tr_M_atom` byte-identically. That
+> 48 % move was import-cone drift, not environment.
 >
 > **Never hand-edit `qou-mass/src/qou_mass/_internal/`.** It is generated from
 > `computations/` by [`scripts/sync-qou-mass-vendor.py`](scripts/sync-qou-mass-vendor.py)

@@ -24,6 +24,31 @@ merits as upstreamable Mathlib material rather than as a dependency of this
 file — recorded so nobody infers a false chain of necessity.
 -/
 
+/-
+**RETRACTION (2026-08-19) — `phi_smooth_defect_sharp` is SUBSUMED.**
+
+`QOU.Knot.FigureEightVolume.abs_sum_logSinc_sub_euler_maclaurin`
+(`LogSincNearZero.lean`, on main since 2026-08-10) already gives this, one full
+order stronger, for the same function: `logSinc x = log(sin x) - log x` and
+`phi x = log 2 + logSinc x`, so `phiDeriv = logSinc'` **identically**.
+`hasDerivAt_phi'`, `hasDerivAt_phiDeriv` and `phiDeriv_antitoneOn` below
+duplicate `hasDerivAt_logSinc`, `hasDerivAt_logSinc_deriv` and
+`antitoneOn_logSinc_deriv`.
+
+Normalised to the same quantity (`g = logSinc`, `a = h`, `b = nh`), this file
+only BOUNDS the `O(h)` term by `(h/2)(g'(a) - g'(b))`, while the corpus result
+IDENTIFIES it as `(h/12)(g'(b) - g'(a))` with an `O(h^2)` remainder.  The bound
+here is exactly 6x loose -- and `computations/logsine_sharp_constant_check.py`
+measured that 6 (6.0008, 5.9988, 6.0007, 6.0010 across N = 200..1600) while its
+commit message called it "headroom".
+
+**Assemble L4-1's smooth half from `abs_sum_logSinc_sub_euler_maclaurin`, not
+from this file.**  Kept, not deleted: the proofs are correct and the two-sided
+bracket form may still be wanted under the weaker hypotheses of
+`EulerMaclaurinFirst.lean`.  Full account:
+`docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md`.
+-/
+
 import QOU.Knot.EulerMaclaurinFirst
 import QOU.Knot.LogSineSmoothPart
 

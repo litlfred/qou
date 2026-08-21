@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:18:14.236594+00:00",
-  "commitSha": "56e0d96d0785b62b4f6c46c89955d32d3ccf3517",
+  "computedAt": "2026-08-15T11:28:17.867825+00:00",
+  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
   "assertions": [
     {
       "name": "fixed_point_forms_solved",
@@ -18,7 +18,7 @@
   "computation": "alpha-em-4pi-fixed-point-solve",
   "scriptFile": "alpha_em_4pi_fixed_point_solve.py",
   "scriptHash": "526a7707893d",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,56 +29,57 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Self-consistent fixed-point derivation of α_EM at q_0 using the empirical form α⁻¹ = T + α·H·(1-h²·α+O(α²)) from #1477 and #1480. Solves the resulting polynomial in α numerically at 50 dps; compares to CODATA. If residual < experimental σ_α (0.15 ppb), this constitutes a structural derivation of α from q_0 + Bring data with no free parameters.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
-    "q_0": "1.10997859555733471989976322048",
-    "T_tree_plus_zero_mode": "137.035426248011372225241032242",
-    "H_value": "0.0800110441920792514774778726529",
-    "h_squared": "0.0437062182329013102182450855436",
+    "q_0": "1.10997858275138080759166909561",
+    "T_tree_plus_zero_mode": "137.035415444371778089071283756",
+    "H_value": "0.0800110440961106725184460190327",
+    "h_squared": "0.0437062085325219894020193356774",
     "CODATA_alpha_inv": "137.035999084",
     "experimental_sigma_ppb": 0.15,
     "forms_solved": {
       "A_quadratic": {
         "label": "Form A — quadratic (no q-correction)",
         "formula": "α²·H + α·T - 1 = 0  ⇒  α = (-T + √(T²+4H)) / (2H)",
-        "alpha_solved": "0.00729735198177426000709295510627",
-        "alpha_inv_solved": "137.036010116763271122662954087",
-        "residual_ppb": 80.50996340282691,
-        "ratio_to_sigma": 536.7330893521795,
-        "verdict": "OFF (~81 ppb)"
+        "alpha_solved": "0.00729735255708024095409785697398",
+        "alpha_inv_solved": "137.035999313169007502203657865",
+        "residual_ppb": 1.6723270456964245,
+        "ratio_to_sigma": 11.148846971309498,
+        "verdict": "OFF (~2 ppb)"
       },
       "B_cubic_schwinger": {
         "label": "Form B — cubic with -h²·α correction (Schwinger)",
         "formula": "α³·h²·H - α²·H - T·α + 1 = 0  ⇒  α from polyroots",
-        "alpha_solved": "0.00729735199169062487239258283283",
-        "alpha_inv_solved": "137.036009930545163848946166635",
-        "residual_ppb": 79.15106421926589,
-        "ratio_to_sigma": 527.6737614617726,
-        "verdict": "OFF (~79 ppb)"
+        "alpha_solved": "0.00729735256699660673373929531974",
+        "alpha_inv_solved": "137.035999126950912420172700496",
+        "residual_ppb": 0.31342795110243077,
+        "ratio_to_sigma": 2.089519674016205,
+        "verdict": "NEAR-DERIVED"
       },
       "C_quartic_schwinger_extended": {
         "label": "Form C — quartic with -h²·α + h⁴·α² correction",
         "formula": "h⁴·H·α⁴ - h²·H·α³ + H·α² + T·α - 1 = 0  ⇒  α from polyroots",
-        "alpha_solved": "0.00729735199168746215035429784968",
-        "alpha_inv_solved": "137.036009930604556188679768093",
-        "residual_ppb": 79.15149762610885,
-        "ratio_to_sigma": 527.6766508407256,
-        "verdict": "OFF (~79 ppb)"
+        "alpha_solved": "0.00729735256699344401186199957698",
+        "alpha_inv_solved": "137.03599912701030474751840449",
+        "residual_ppb": 0.3138613578549827,
+        "ratio_to_sigma": 2.0924090523665515,
+        "verdict": "NEAR-DERIVED"
       }
     },
     "best": {
       "label": "Form B — cubic with -h²·α correction (Schwinger)",
       "formula": "α³·h²·H - α²·H - T·α + 1 = 0  ⇒  α from polyroots",
-      "alpha_solved": "0.00729735199169062487239258283283",
-      "alpha_inv_solved": "137.036009930545163848946166635",
-      "residual_ppb": 79.15106421926589,
-      "ratio_to_sigma": 527.6737614617726,
-      "verdict": "OFF (~79 ppb)"
+      "alpha_solved": "0.00729735256699660673373929531974",
+      "alpha_inv_solved": "137.035999126950912420172700496",
+      "residual_ppb": 0.31342795110243077,
+      "ratio_to_sigma": 2.089519674016205,
+      "verdict": "NEAR-DERIVED"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

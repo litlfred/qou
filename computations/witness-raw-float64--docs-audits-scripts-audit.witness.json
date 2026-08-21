@@ -17,12 +17,14 @@
       "y_star"
     ],
     "f64_integrator_carved_out_fields": 0,
+    "deprecated_f64_carved_out_fields": 0,
+    "deprecated_f64_carved_out_by_file": {},
     "f64_integrator_carved_out_by_file": {},
     "f64_integrator_declared_tier": "float64-integrator",
-    "baseline_files": 1572,
-    "baseline_fields": 536570,
-    "new_not_baselined": 6,
+    "baseline_files": 6,
+    "baseline_fields": 26,
+    "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 1572
+    "drained_files": 0
   }
 }

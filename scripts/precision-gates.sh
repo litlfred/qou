@@ -78,15 +78,30 @@ GATES=(
   # chi_numpy, invisible to compute_audit_scan, and misdiagnosed as slow
   # hardware for six hours. Bean qou-5qwb.
   "numpy/mpmath dtype leak|computations/numpy_mpmath_dtype_leak_audit.py||yes|yes"
-  # ADVISORY, and it starts red on purpose. The ratchet's scan root is
-  # computations/, so every witness under docs/audits/scripts/ has been
-  # outside the NO-FLOAT64 discipline entirely — 5 carry raw float64 today
-  # (20 fields: max_loss_digits, c_ratios, Z_at_q0). Those belong to other
-  # arcs, and the baseline is keyed on computations/ paths, so they cannot be
-  # baselined without GROWING it — which the discipline forbids. Reporting
-  # them is the honest middle: the gap becomes visible, nothing is silenced,
-  # and anything NEW landing there shows up immediately. Flip to blocking
-  # once the five are drained. Bean qou-irzg.
+  # BLOCKING as of 2026-08-19, and green on arrival. Bean qou-irzg.
+  #
+  # It ran ADVISORY because the ratchet had no MEMORY for this tree, not
+  # because the tree was dirty: the baseline's 1572 entries are all
+  # computations/ paths, so every witness under docs/audits/scripts/ was
+  # reported NEW on every run, forever. A ratchet with no memory is red on
+  # arrival, and a gate that is red on arrival gets skipped — the rule this
+  # file states at the top.
+  #
+  # That is the `_output_name` defect (qou-pgdw) one step removed. The OUTPUT
+  # name was scoped to the scan root when that was fixed; the BASELINE was left
+  # global. `_baseline_path` now derives it the same way, so this tree has its
+  # own drains-only baseline and the corpus one is untouched — establishing
+  # coverage where there was none, which is a different act from silencing a
+  # regression in a tree that already has it.
+  #
+  # Why it was worth flipping rather than waiting for the drain: the count grew
+  # 5 -> 6 while it was advisory (wlambda_normalisation_census). Advisory
+  # REPORTS a gap; it does not HOLD one. Verified before flipping — green at
+  # exit 0, exit 1 naming a planted dirty witness, green again once removed.
+  #
+  # The 6 baselined witnesses (26 fields: max_loss_digits, c_ratios, Z_at_q0,
+  # sum_classical) still belong to the arcs owning those probes. This gate
+  # holds the line; it does not drain it.
   # ADVISORY, baseline 28 — the leak BETWEEN the two layers above. The
   # padding ratchet works on values and is blind once a float64 is multiplied
   # by anything exact (measured: fmt(mpf(f64)) caught, fmt(exact*mpf(f64)) not);
@@ -98,7 +113,7 @@ GATES=(
   # annotation already produced one measured false positive, since fixed);
   # flip to blocking once the 28 rows carry agent verdicts. Bean qou-gqt5.
   "mixed mpf/f64 -> serializer|computations/mpf_mixed_arithmetic_audit.py|--strict|yes|yes"
-  "audits-tree raw-float64 (advisory)|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|no"
+  "audits-tree raw-float64|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|yes"
   # ADVISORY, and it starts red on purpose — same terms as the audits-tree
   # entry above. `witness_provenance_audit.py` was written, works (27/27
   # self-test), ships --strict/--list, and was in NO array, so nothing ran it.

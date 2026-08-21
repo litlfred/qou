@@ -22,6 +22,12 @@ Output: low-isotopes-binding-sweep.witness.json
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import json
 import math
 import sys
@@ -33,8 +39,11 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE.parents[1] / "tools" / "qou-substrate" / "python"))
 
+import mpmath as mp  # noqa: E402
+
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 CHI_CACHE = {
     (1, 1): "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
@@ -57,15 +66,27 @@ def active_set(Z: int, N: int):
         return None
     w = json.loads((HERE / f).read_text())
     bp = w.get("data", {}).get("by_partition") or w.get("by_partition")
-    valid = [(str(e["partition"]), abs(float(e["contribution"])), e.get("dim"))
+    # `dim` is COMPUTED, not read. The chi-*-matrix-m witnesses have never
+    # carried a `dim` field — `e.get("dim")` silently yielded None on every
+    # entry, and the committed dims (1, 5, 9 for n=6) were left over from an
+    # older chi source. Regenerating the chi family under convention D
+    # rewrote this witness and turned the nulls visible. Hook-length formula
+    # from `binding_row_length_stratification`, not a sixth private copy.
+    from binding_row_length_stratification import hook_length_dim
+    # NO FLOAT64: the chi witness carries 50-dps contributions as strings.
+    # Casting them to float() threw away 34 digits before the ranking and the
+    # fraction were computed, and every `frac` then entered the witness as a
+    # raw float64. Carry mpf from the source, serialize with `fmt`.
+    valid = [(str(e["partition"]), abs(mp.mpf(e["contribution"])),
+              hook_length_dim(list(e["partition"])))
              for e in bp if e.get("chi_lambda") != "skipped-max-dim"]
-    tot = sum(c for _, c, _ in valid)
+    tot = sum((c for _, c, _ in valid), mp.mpf(0))
     valid.sort(key=lambda x: -x[1])
-    cum, top = 0.0, []
+    cum, top = mp.mpf(0), []
     for p, c, d in valid:
         cum += c
-        top.append({"partition": p, "dim": d, "frac": round(c / tot, 4)})
-        if cum >= 0.9 * tot:
+        top.append({"partition": p, "dim": d, "frac": fmt(c / tot)})
+        if cum >= mp.mpf("0.9") * tot:
             break
     return {"n_partitions_total": len(bp), "n_in_active_90pct": len(top),
             "active_partitions": top}
@@ -73,26 +94,27 @@ def active_set(Z: int, N: int):
 
 def main() -> int:
     t0 = time.monotonic()
-    q0 = float(q_at(30))
-    lnq = math.log(q0)
+    set_compute_dps()
+    q0 = q_at(50)
+    lnq = mp.log(q0)
     bc = json.loads((HERE / "binding-canonical.witness.json").read_text())["data"]["results"]
 
     rows = []
     for r in bc:
         Z, N, A = r["Z"], r["N"], r["A"]
-        B_ame = float(r["B_AME_MeV"])
-        B_pred = float(r["B_MeV"])
+        B_ame = mp.mpf(str(r["B_AME_MeV"]))
+        B_pred = mp.mpf(str(r["B_MeV"]))
         dl = B_ame / B_pred
-        x = math.log(dl) / lnq
+        x = mp.log(dl) / lnq
         a_set = active_set(Z, N)
         rows.append({
             "atom": r["atom"], "Z": Z, "N": N, "A": A, "n_strands": 3 * A,
-            "B_AME_MeV": round(B_ame, 5),
-            "B_pred_canonical_MeV": round(B_pred, 5),
-            "Delta_lambda": round(dl, 4),
-            "log_q0_Delta": round(x, 3),
+            "B_AME_MeV": fmt(B_ame),
+            "B_pred_canonical_MeV": fmt(B_pred),
+            "Delta_lambda": fmt(dl),
+            "log_q0_Delta": fmt(x),
             "law_10A_minus_5": 10 * A - 5,
-            "dev_from_law": round(x - (10 * A - 5), 3),
+            "dev_from_law": fmt(x - (10 * A - 5)),
             "p_3A": _p(3 * A),
             "active_set": a_set,
         })
@@ -130,9 +152,11 @@ def main() -> int:
     for r in rows:
         a = r["active_set"]
         act = f"{a['n_in_active_90pct']}/{a['n_partitions_total']}" if a else "—"
-        print(f"{r['atom']:>5} {r['A']:>1} {r['B_AME_MeV']:>8.3f} "
-              f"{r['B_pred_canonical_MeV']:>8.4f} {r['Delta_lambda']:>8.3f} "
-              f"{r['log_q0_Delta']:>7.2f} {r['law_10A_minus_5']:>6} "
+        # float() only at DISPLAY — the stored fields stay full-precision.
+        print(f"{r['atom']:>5} {r['A']:>1} {float(r['B_AME_MeV']):>8.3f} "
+              f"{float(r['B_pred_canonical_MeV']):>8.4f} "
+              f"{float(r['Delta_lambda']):>8.3f} "
+              f"{float(r['log_q0_Delta']):>7.2f} {r['law_10A_minus_5']:>6} "
               f"{r['p_3A']:>6} {act:>9}")
     print(f"Witness: {out}")
     return 0

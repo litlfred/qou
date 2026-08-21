@@ -137,3 +137,69 @@ REMAINING for L4-1's full sharp statement (do not overclaim): add the
 collapsing i=0 cell (already bracketed by smooth_defect_squeeze between
 h(phi(h) - log 2) and 0) and combine with L4-1c(i)'s exact singular
 telescope + L4-1b's Stirling. The smooth half itself is now DONE.
+
+RETRACTION (2026-08-19) -- THE INFRA GAP THIS BEAN CHASED WAS NOT A CORPUS GAP.
+
+Everything above about "Mathlib has no E-M formula => genuine infra gap,
+owner-authorised to add" is half wrong, and it is the half that mattered.
+Mathlib indeed has none.  THIS CORPUS HAS HAD ONE SINCE 2026-08-08 (commit 2a0d39c28, qou-mlgp lane):
+
+  QOU/MathlibExt/CompositeEulerMaclaurin.lean   abs_integral_sub_composite_le_osc
+  QOU/MathlibExt/TrapezoidRule.lean
+  QOU/Knot/LogSincNearZero.lean                 abs_sum_logSinc_sub_euler_maclaurin
+                                                hasDerivAt_logSinc
+                                                hasDerivAt_logSinc_deriv
+                                                antitoneOn_logSinc_deriv
+
+nine days before step 2 was written.  logSinc x = log(sin x) - log x, and
+phi x = log 2 + logSinc x, so phiDeriv = logSinc' IDENTICALLY -- the three
+phi lemmas of step 3 duplicate the three logSinc lemmas outright, and
+abs_sum_logSinc_sub_euler_maclaurin IDENTIFIES the O(h) coefficient as
+(h/12)(g'(b) - g'(a)) where phi_smooth_defect_sharp only BOUNDS it, by a
+factor of exactly 6.
+
+The 6 was measured by my own verification probe and misread:
+logsine_sharp_constant_check.py reports bound/residual = 6.0008, 5.9988,
+6.0007, 6.0010 across N = 200..1600, and the commit message called that
+"headroom".  A ratio constant to four digits over a decade of h is the true
+coefficient (1/2 divided by 1/12), not slack.
+
+ROOT CAUSE, and it is not the estimate-calibration story recorded above:
+AGENTS.md requires the corpus-grep checklist before declaring a gap in a
+durable artifact.  Only the Mathlib inventory was run.
+  grep -rln "EulerMaclaurin" content/
+finds it at once.  Not covered by the parallel-exploration relaxation: the
+corpus work was LANDED on main, not in flight, and settled infrastructure
+has one right answer.
+
+WHAT STANDS: SincDeriv.lean (Real.sinc differentiability -- absent from both
+Mathlib and this corpus; LogSincNearZero deliberately avoids Real.sinc by
+starting the grid at h).  EulerMaclaurinFirst.lean needs only f' antitone
+where the composite rule needs a continuous f'', so it is kept as
+weaker-hypothesis material -- but not as a gap closure.
+
+NEXT: assemble L4-1's smooth half from abs_sum_logSinc_sub_euler_maclaurin.
+Before writing any of it, grep what LogSincNearZero + KashaevEndpointSplit +
+the qou-mlgp lane have already assembled -- the same failure twice would be
+much worse than once.
+Audit: docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md
+
+REDUNDANT (2026-08-19) -- L4-1's target was ALREADY PROVED ON MAIN, stronger,
+since 2026-08-08 22:33 UTC, THREE DAYS BEFORE the L4-1 feasibility pass that
+opened this bean.
+
+  QOU/Knot/KashaevAsymptotic.lean :: kashaev_log_sum_asymptotic
+    | sum_{j=1}^{k} log(2 sin(j pi/N))
+        - ( -(N/pi) Lob(k pi/N) + (1/2) log(2N sin(k pi/N))
+            + (pi/(12N)) cot(k pi/N) ) |
+      <= 1/(144 k^2) + (7/12)(pi/N)^2 + (pi/N)^2/(12 sin^2(k pi/N))
+
+Verified: 17-module cone ok=17, axioms [propext, Classical.choice, Quot.sound],
+no sorryAx.  It is STRICTLY STRONGER than the L4-1 target: it identifies the
+O(1/N) term as (pi/12N)cot, and its error is effective (explicit constants).
+The two (1/2)log terms differ by exactly (1/2)log(2pi) -- the Stirling constant
+the L4-1 route was going to produce.
+
+Nothing is deleted; the work here is correct and sorry-free.  Downstream
+consumers should cite kashaev_log_sum_asymptotic instead.
+Audit: docs/audits/2026-08-19-l41-was-already-proved-on-main.md

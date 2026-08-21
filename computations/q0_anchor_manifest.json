@@ -177,7 +177,6 @@
     "mp_habiro_c4_keystone_probe",
     "mp_residual_exotic_basis_pslq",
     "mp_yekutieli_plancherel_scaffold",
-    "mu_substrate_tension_audit_100dps",
     "native_5_strand_baryon",
     "nf_transition_lifting",
     "ocneanu_12_alt_knot_geometries",
@@ -350,6 +349,7 @@
     "mirror_split_milnor_one_third_probe",
     "mirror_split_s3_em_functional_probe",
     "mp_yekutieli_sign_block_discrimination",
+    "mu_substrate_tension_audit_100dps",
     "nf-qvalues",
     "onepb_status_dashboard",
     "option_e_isospin_probe",
@@ -414,5 +414,6 @@
   ],
   "ambiguous": [
     "per_irrep_pole_deuteron_h6"
-  ]
+  ],
+  "_mu_p_audit_note": "mu_substrate_tension_audit_100dps is listed PHYSICAL, alone. This is NOT the bulk migration (qou-1c4y) and does not depend on it. The producer's SUBJECT is the difference between the two pins: it computes the muon leg itself by inverting CODATA m_mu/m_e and takes the OTHER leg from Q_50_DIGIT_STR. Listed ideal_muon, that leg was muon too, so it differenced muon against muon and reported the literal-vs-inversion residual (0.075 ppb) as the substrate tension (11.61 ppb) -- understating its own subject 155x. A producer needing BOTH pins cannot be served by a per-process override that supplies one; it is miscategorised on its own terms. Since PR #5049 landed a run-time assertion that the proton leg is proton, leaving it here also makes the audit exit 1 rather than run."
 }

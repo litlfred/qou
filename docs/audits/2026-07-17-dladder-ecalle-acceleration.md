@@ -1,5 +1,31 @@
 # D-ladder Jackson q-Borel / Écalle acceleration — the odd-channel singularity locator
 
+> **🛑 PREMISE CORRECTED 2026-08-09 — the D-ladder is CONVERGENT; there is no
+> singularity to locate.** This document is an "odd-channel singularity locator"
+> for a series that has no Borel-plane singularity to find. `D(ũ)` is convergent
+> with radius `ρ = ũ(q*_ρ) = 0.142799996644689…`, the image of a **`Q_b` zero**
+> (`q*_ρ ≈ 1.48989`, the real root > 1 of an irreducible degree-12 factor of the
+> `Δ_net` numerator) omitted by the 2026-07-12 search; `κ = 0`. See
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md)
+> and registry row **KC22**. There is no instanton action, no Stokes constant,
+> and no Écalle resummation to perform.
+>
+> **A second, independent defect.** The §Context inference — *KC22 closes the
+> (q-)holonomic class, **hence** a genuine c₃ closure is transcendental/
+> resurgent* — is invalid on its own terms, and would have been invalid **even
+> if the ladder had diverged**: non-holonomicity constrains the *algebraic*
+> class, not the *growth* class, and only a divergent series can be resurgent.
+> Swept corpus-wide in
+> [`2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md`](2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md).
+> KC22's own closed form `D(w) = φ(w)·log(1 − w/ρ) + ψ(w)` (with `φ`, `ψ`
+> algebraic over the degree-12 field) is the counterexample: convergent *and*
+> not low-order P-finite.
+>
+> **What survives.** The acceleration machinery and the per-setting measurements
+> stand as data; the gate failure is the expected reading of `κ = 0` rather than
+> a finite-`k` artefact. The exact `d_k ∈ ℚ(√3)` data and the 2-adic parity
+> grading are untouched (KC22). Nothing was wired; no `c_k` tier changes.
+
 **Date:** 2026-07-17 · **Branch:** `claude/dladder-qborel-acceleration-2026-07-17` ·
 **Tier:** exploratory acceleration machinery + measurement (scope-(a); no `c_k`
 wired; no fit; no tier change; no instanton action claimed without the gate).

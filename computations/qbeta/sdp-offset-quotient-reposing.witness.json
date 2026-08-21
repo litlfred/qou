@@ -1,0 +1,115 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T12:29:21.676146+00:00",
+  "commitSha": "eb55c5d81705e47891b29a24c88a362c054217b7",
+  "assertions": [
+    {
+      "name": "offset_angle_is_not_an_invariant_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the separation sweeps [0.000899028, 2.10987] rad as the representative t varies over [-1000, 1000] — a span of 2.10897 rad out of pi. It is a function of the choice of point on the solution line, not of the braid pair."
+    },
+    {
+      "name": "C_frame_value_is_reachable_by_choosing_the_representative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the committed C-frame separation 0.3551189675 rad lies inside [0.000899028, 2.10987]. So agreement between the frames could be manufactured and disagreement means nothing — the comparison carries no information either way. This is why the probe reports no D-frame offset angle."
+    },
+    {
+      "name": "t_independent_reading_only_restates_the_min_norm_choice",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "projecting off v and then off P(1) gives one identical value at every t tested out to 1e3. But projecting off v IS the min-norm selection, so the invariance is the choice restated, not removed. An earlier pass of this probe claimed the SINGLE projection was t-independent 'by construction'; that was wrong — v is orthogonal to P(1), so it leaves the t*v component untouched — and the sweep is what caught it."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "sdp-offset-quotient-reposing",
+  "scriptFile": "sdp_offset_quotient_reposing_probe.py",
+  "scriptHash": "67e81848c98b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Re-poses qbeta_braid_nf_sdp_offset's demand on the convention-D quotient H_3(q)/rad and finds the offset ANGLE IS NOT AN INVARIANT. Under D, G x = P(nf) has solution set x_0 + t*v for all real t (G v = 0), and the C-frame probe never imposed its net constraint as an input (it read the net off as an output), so t is free. Measured: the separation angle sweeps [0.000899, 2.10987] rad over t in [-1000, 1000] — essentially all of (0, pi). The committed C-frame value 0.355119 rad lies INSIDE that range, reachable by picking t ~ +/-2.2, so 'does D reproduce C' is not a meaningful question. A t-independent reading exists (project off v, then off the symmetric direction P(1): 2.10986587031 rad at every t out to 1e3) but only because projecting off v IS the min-norm selection — the choice restated, and a Euclidean one at that, on top of a metric the C-frame witness already listed under untried_not_excluded. D needs two choices where C needed none. Also measured: the nf vectors are convention-INDEPENDENT (they fold with h = q - 1/q, no z; committed C-frame nf matches the D recomputation to 8.5e-22), so what moved between frames is G alone. CONSEQUENCE: the C-frame homogeneity_broken=true at 0.355119 rad was well-defined ONLY because G is invertible under C. Scope-(a): the measurement stands in its own frame; what is withdrawn is its portability to D. NOT attempted: choosing a canonical metric (the G-induced form on the quotient is the natural candidate) — picking a metric to make an angle come out is a fit. No value wired, no tier moved.",
+  "data": {
+    "solution_set": "x_0 + t*v for all real t (G v = 0)",
+    "sweep": [
+      {
+        "t": "-1000",
+        "separation": "0.000899028278523839359687487932315630808460822655957454865876869",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "-10",
+        "separation": "0.0898131043924275198711175547345475099042043173758750641465453",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "-2",
+        "separation": "0.438718601373980832767371885045682232908333744359915747298726",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "-0.5",
+        "separation": "1.35043782876538947319357733609593531716572109171216877474998",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "0",
+        "separation": "2.10986587030879598974518956131146311009124116219451140033924",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "0.5",
+        "separation": "1.35043782876538947319357733609593531716572109171216820861182",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "2",
+        "separation": "0.438718601373980832767371885045682232908333744359915665980300",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "10",
+        "separation": "0.0898131043924275198711175547345475099042043173758750606308651",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      },
+      {
+        "t": "1000",
+        "separation": "0.000899028278523839359687487932315630808460822655957454865524122",
+        "double_projected": "2.10986587030879598974518956131146311009124116219451140033924"
+      }
+    ],
+    "achievable_range_rad": {
+      "lo": "0.000899028278523839359687487932315630808460822655957454865524122",
+      "hi": "2.10986587030879598974518956131146311009124116219451140033924"
+    },
+    "c_frame_separation_rad": "0.355118967458865950670000000000000000000000000000000000000000",
+    "c_frame_value_reachable_by_choosing_t": true,
+    "double_projected_value_rad": "2.10986587030879598974518956131146311009124116219451140033924",
+    "nf_is_convention_independent": true,
+    "closes_cds2_science": true
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

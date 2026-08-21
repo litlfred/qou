@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T13:06:00.426909+00:00",
-  "commitSha": "946794f55c4b1d3df052e569fbe73245a992f4a1",
+  "computedAt": "2026-08-21T15:41:19.891178+00:00",
+  "commitSha": "6546ffecec9a2aeb1dff5a3a8baaa8dc6b15fab0",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "33ccaac86640",
-  "scriptCommitSha": "353658c0b003ff269fcbaea0bdb85fd4a999a52f",
+  "scriptHash": "5726f911cddb",
+  "scriptCommitSha": "7ddaeab36c1ef548a51ee2ff8765005d0a90312c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 653,
-      "Q0_AMBIGUOUS": 15,
-      "Q0_INDEPENDENT": 8,
-      "Q0_INDEPENDENT_NO_REASON": 2,
-      "Q0_ANCHOR_MISSING": 1903,
-      "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 73,
-      "Q0_PARSE_ERROR": 1,
+      "Q0_OK": 661,
+      "Q0_AMBIGUOUS": 18,
+      "Q0_INDEPENDENT": 23,
+      "Q0_INDEPENDENT_NO_REASON": 1,
+      "Q0_ANCHOR_MISSING": 1906,
+      "Q0_VALUE_MISSING": 0,
+      "Q0_AUDIT_EXEMPT": 75,
+      "Q0_PARSE_ERROR": 0,
       "Q0_FLIP": 0
     },
     "match_prefix_digits": 14,
@@ -2862,6 +2862,10 @@
           "detail": ""
         },
         {
+          "witness": "logsine-sharp-constant-check.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "logsine-smooth-defect-constant.witness.json",
           "detail": ""
         },
@@ -2939,6 +2943,10 @@
         },
         {
           "witness": "markov-trace-axiomatic-proton.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "markov-trace-canonical.witness.json",
           "detail": ""
         },
         {
@@ -5330,10 +5338,6 @@
           "detail": ""
         },
         {
-          "witness": "pyhecke-h3-vs-h3a-impact-comparison.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "q-beta-c3-wenzl-decomposition.witness.json",
           "detail": ""
         },
@@ -6858,6 +6862,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-route76-ptolemy-singular.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qcollatz_cycle_census.witness.json",
           "detail": ""
         },
@@ -7614,6 +7622,10 @@
           "detail": ""
         },
         {
+          "witness": "witness-staleness-triage.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "wlambda-ladder-higher-rungs.witness.json",
           "detail": ""
         },
@@ -7769,6 +7781,10 @@
         },
         {
           "witness": "atomic-mass-via-rho-k.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "atomic-tr-m-mpfr-50dps-proton.witness.json",
           "detail": ""
         },
         {
@@ -8476,7 +8492,11 @@
           "detail": ""
         },
         {
-          "witness": "chi-helium-4-h12-numeric.witness.json",
+          "witness": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
           "detail": ""
         },
         {
@@ -9105,6 +9125,10 @@
         },
         {
           "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "iterative-knot-builder.witness.json",
           "detail": ""
         },
         {
@@ -9748,6 +9772,10 @@
           "detail": ""
         },
         {
+          "witness": "pyhecke-h3-vs-h3a-impact-comparison.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "q-beta-form-a-n1-extension.witness.json",
           "detail": ""
         },
@@ -9773,6 +9801,14 @@
         },
         {
           "witness": "q1-mass-gap-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gram-convention-d-singularity-structural.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gram-mp-path-convention-d-migration.witness.json",
           "detail": ""
         },
         {
@@ -9913,6 +9949,14 @@
         },
         {
           "witness": "qbeta-symbolic-sdp-strict-complementarity.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "radical-pairing-sign-rep.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "sdp-offset-quotient-reposing.witness.json",
           "detail": ""
         },
         {
@@ -10294,14 +10338,6 @@
           "detail": ""
         },
         {
-          "witness": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "deuteron-binding-interface-closure.witness.json",
           "detail": ""
         },
@@ -10331,6 +10367,26 @@
         },
         {
           "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hd-to-s-bridge-anchor-dependence.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-alpha-entropy-bound.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-alpha-required-c-vs-d.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-eigenphase-branch-and-barodd-projection.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ladder-phase-mirror-covariance.witness.json",
           "detail": ""
         },
         {
@@ -10432,6 +10488,10 @@
           "detail": ""
         },
         {
+          "witness": "producer-importability-audit.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "proton-identity-extension-audit.witness.json",
           "detail": ""
         },
@@ -10505,6 +10565,10 @@
         },
         {
           "witness": "chi-witness-completeness-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "codata-corpus-vintage-scan.witness.json",
           "detail": ""
         },
         {
@@ -10632,31 +10696,65 @@
           "detail": ""
         }
       ],
-      "Q0_VALUE_MISSING": [
-        {
-          "witness": "atomic-tr-m-mpfr-50dps-proton.witness.json",
-          "detail": "anchor=proton"
-        }
-      ],
-      "Q0_PARSE_ERROR": [
-        {
-          "witness": "iterative-knot-builder.witness.json",
-          "detail": "root is not an object"
-        }
-      ],
-      "Q0_INDEPENDENT_NO_REASON": [
-        {
-          "witness": "markov-identity-symbolic.witness.json",
-          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
-        },
-        {
-          "witness": "qbeta-d-frame-markov-weights.witness.json",
-          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
-        }
-      ],
       "Q0_INDEPENDENT": [
         {
+          "witness": "markov-identity-symbolic.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "aomega-m3-adjoint-index-set.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fivetwo-bar-odd-23adic-depth.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_287_f1_vs_f5_subscript_resolution.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_alpha_line_unit_structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_chi_eigenspace_place.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_five_term_validation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_h_lift_m12_m24.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_h_lift_m8.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_m6_rwf_value.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_m_lattice_eigenspace_census.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_second_element_feasibility.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_v1_computable_m_terminal.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_v1_lift_and_value.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_v2_vacuity_confirmation.witness.json",
           "detail": ""
         },
         {
@@ -10669,6 +10767,10 @@
         },
         {
           "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-d-frame-markov-weights.witness.json",
           "detail": ""
         },
         {
@@ -10686,6 +10788,12 @@
         {
           "witness": "qns-phase-scramble-probe.witness.json",
           "detail": ""
+        }
+      ],
+      "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "qbeta-ohtsuki-sixone-kappa-series.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ]
     }

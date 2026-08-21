@@ -1030,5 +1030,11 @@
   "convention": "averaged-crossings",
   "convention_inferred_by": "chi_convention_audit.py --fix (producer:delta_lambda_empirical_tabulation.py)",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "_retired_2026_08_15": {
+    "reason": "orphan: no producer exists, so it cannot be regenerated at the proton pin or under convention D. Unreferenced by code — the three apparent readers are comments and a description string recording that they moved OFF it.",
+    "convention": "averaged-crossings",
+    "note": "convention is averaged-crossings, NOT a stale copy of the sign-only chi-helium-4-h12-at-q0-50dps-matrix-m witness — the two are different quantities (abs_tr_M 0.0553 vs tr_M 2.8996), so the maintained D witness does not supersede it and nothing is lost by retiring it rather than regenerating it.",
+    "retired_to": "_deprecated/"
+  }
 }

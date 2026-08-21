@@ -1,17 +1,23 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-10T01:51:48.548Z",
+  "updated_at": "2026-08-21T16:09:39.000Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
       "pattern": "native_decide",
       "line": 267,
       "verdict": "advisory",
-      "file_sha": "7741aa9a88de",
+      "file_sha": "e37036e78021",
       "disposition": "note-axiom-footprint",
-      "evidence": "Legitimate use of `native_decide`, with a caveat worth recording. Strict Lean Discipline §6 bans `native_decide` used to mask an unproved structural claim but permits a genuinely decidable finite computation; this is the latter — `nontrivialBrunnian borromean`, `borromean.length = 6`, and `wordsBelow6.all (fun w => !nontrivialBrunnian w)` are a finite enumeration of 3-braid words with a Kauffman/TL₃ bracket evaluation each, which plain kernel `decide` would very likely not discharge in reasonable time. The caveat is the axiom footprint: `native_decide` adds `Lean.ofReduceBool`, so this theorem and everything downstream of it leaves the standard three-axiom set, and an `#print axioms` reader will see it. Advisory: keep, but record the footprint where the minimality result is cited, and prefer `decide` if the enumeration is ever narrowed.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "evidence": "Decl unchanged from prior advisory. `native_decide` discharges a genuinely-decidable finite enumeration: `nontrivialBrunnian borromean`, `borromean.length = 6`, and `wordsBelow6.all (!nontrivialBrunnian ·)` over all length-<6 3-braid words. Legitimate per §6; caveat is the `Lean.ofReduceBool` + `Lean.trustCompiler` axiom footprint (docstring records it, cross-checked vs Python oracle).",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean::diagram_card::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -83,13 +89,19 @@
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "docstring-claims-gap",
-      "line": 62,
+      "line": 63,
       "verdict": "legit",
-      "file_sha": "0eaf50514b42",
-      "disposition": "no-fix",
-      "evidence": "Detector false positive: both enumerated properties ARE encoded as Prop fields (reeb_normalizes : reeb >> contact = contact; reeb_periodic : (reeb : End obj)^period = 1). The third (Leibniz) is explicitly documented as deferred to the preadditive specialisation.",
-      "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
+      "file_sha": "cad169db74c9",
+      "disposition": "detector-false-positive-fields-encoded",
+      "evidence": "Line 63: both docstring-enumerated properties ARE Prop fields — reeb_normalizes (reeb ≫ contact = contact) and reeb_periodic ((reeb:End obj)^period = 1). The third (Leibniz) is explicitly documented as deferred to the preadditive specialisation, not claimed encoded. Detector false positive; re-confirms prior legit.",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z"
     },
     "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean::delta_max_numerical_scale::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -366,17 +378,6 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa.lean::kappa_closed_form_is_categorical::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 82,
-      "verdict": "genuine",
-      "file_sha": "824f63be21f3",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `HasMagicShellCouplingKappaClosedForm` carries field `kappa_empirical` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `kappa_empirical` is outside CONCLUSION_FIELD."
-    },
     "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean::delta_max_numerical_scale::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
@@ -402,24 +403,36 @@
     "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean::branching_convergence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 352,
+      "line": 351,
       "verdict": "genuine",
-      "file_sha": "412f76c5e701",
-      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `BranchingConverges` is inhabited, nothing that inhabits it supplies content. Instances read by hand: inhabited only by a Fact-wrapper (`⟨hf.out⟩`, relabels the assumption) and `branchingConverges_refl` (the diagonal f_k = f_inf, where the bound is 0 ≤ … and closes by positivity); the theorem quantifies over arbitrary f_k, f_inf. (Automated shape test saw: branchingConverges_of_fact(fact-wrapper), branchingConverges_refl(degenerate-slice).)",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "restate-to-derive-or-demote"
+      "file_sha": "33de6b213ab9",
+      "evidence": "Line 351 `theorem branching_convergence … [hi : BranchingConverges …] : |f_k - f_inf| ≤ C_q/√(k-3) := hi.bound`; the class field `bound` (line 329) is character-identical to the conclusion, returned verbatim. The only inhabitants are `branchingConverges_of_fact` (relabels a `Fact` assumption via `⟨hf.out⟩`) and `branchingConverges_refl` (diagonal f=f, bound 0 ≤ … by positivity) — nothing discharges the bound with real analytic content. Decl unchanged, re-confirm prior genuine.",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "disposition": "construct-witness-or-drop"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean::tower_noncollapse_implies_independence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 699,
+      "line": 708,
       "verdict": "genuine",
-      "file_sha": "dd94edf0dc0d",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
+      "file_sha": "db4d5ccbd525",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `TowerNoncollapseImpliesIndependence` carries field `independence` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `independence` is outside CONCLUSION_FIELD."
+      "evidence": "Decl unchanged; re-confirm prior genuine. Class `TowerNoncollapseImpliesIndependence` field `independence : HyperbolicVolumeIndependence` is character-identical to the theorem's conclusion, and the body returns `hi.independence` verbatim. §3b-cond item-5 self-assuming projection — derives nothing."
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::term7_structural::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -457,45 +470,69 @@
     "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qInt_ratio_bound_small::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 406,
+      "line": 415,
       "verdict": "legit",
-      "file_sha": "726fbbf3a076",
-      "evidence": "Accessor idiom, not a defect. Instances read by hand: four instances discharge m = 1,2,3,4 from qInt_ratio_bound_m1..m4 with real analytic work; the class binds `_hm4 : m ≤ 4`, so they EXHAUST its domain. (Automated shape test saw: qIntRatioBoundSmall_one(substantive), qIntRatioBoundSmall_two(substantive), qIntRatioBoundSmall_three(substantive), qIntRatioBoundSmall_four(substantive).)",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "no-fix"
+      "file_sha": "6f9c16fe1973",
+      "evidence": "Decl unchanged at line 415: `theorem ... [hi : QIntRatioBoundSmall q hq hq2 m hm hm4] : ... := hi.bound`. The class binds `hm4 : m ≤ 4` and four instances (qFactRatioBound... sorry, qIntRatioBoundSmall_one..four) discharge m=1,2,3,4 with real nlinarith analytic work, exhausting the bounded domain. Re-confirms prior legit.",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "disposition": "accessor-idiom-legit"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qFact_ratio_bound::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 599,
+      "line": 608,
       "verdict": "legit",
-      "file_sha": "726fbbf3a076",
-      "evidence": "Accessor idiom, not a defect. Instances read by hand: same shape as QIntRatioBoundSmall — four proved instances exhausting the bounded parameter domain. (Automated shape test saw: qFactRatioBound_zero(substantive), qFactRatioBound_one(substantive), qFactRatioBound_two(substantive), qFactRatioBound_three(substantive).)",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "no-fix"
+      "file_sha": "6f9c16fe1973",
+      "evidence": "Decl unchanged at line 608, accessor `hi.bound` of QFactRatioBound. Named instances qFactRatioBound_zero/one/two/three prove k=0..3 directly (empty-product simp, factor-by-factor nlinarith). Same accessor idiom as qInt_ratio_bound_small; re-confirms prior legit.",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "disposition": "accessor-idiom-legit"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::wedderburn_weight_perturbation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 709,
+      "line": 718,
       "verdict": "genuine",
-      "file_sha": "726fbbf3a076",
-      "disposition": "restate-or-demote",
-      "evidence": "Conclusion-carrying class projected verbatim (`:= hi.bound`), labelled `Per-instance form` / `Pattern 4`. The long hypothesis list (`hq : q > 1`, `hq2 : q < 2`, `h_link`, `h_dq`, `h_fact`, …) makes the signature read as a derivation of the perturbation bound from the linking and factor bounds, but none of it is used — the bound arrives from the instance. The neighbouring `ConvergenceRate` class has the same shape (`bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k-3)`), so this is a file-wide idiom, not a one-off. Fix: derive the bound from `h_dq`/`h_fact` (that derivation is elementary and is what the hypotheses are for), or demote.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "6f9c16fe1973",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 718: class WedderburnWeightPerturbation field `bound : |w_q/w_cl - 1| ≤ 3*h_sq*k/3` is character-identical to the conclusion and returned verbatim (`hi.bound`); the long link/dq/fact hypotheses are unused, and the only instance is the degenerate k=0 slice. §3b-cond item-5 self-assuming projection. Re-confirms prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::convergence_rate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 795,
+      "line": 804,
       "verdict": "genuine",
-      "file_sha": "726fbbf3a076",
-      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `ConvergenceRate` is inhabited, nothing that inhabits it supplies content. Instances read by hand: Fact-wrapper plus diagonal, same shape as BranchingConverges. (Automated shape test saw: convergenceRate_of_fact(fact-wrapper), convergenceRate_refl(degenerate-slice).)",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T21:10:00Z",
+      "file_sha": "6f9c16fe1973",
+      "evidence": "Line 804: `hi.bound` of ConvergenceRate, whose field type equals the conclusion. Instances are convergenceRate_of_fact (a Fact-wrapper that just re-wraps the assumption) and convergenceRate_refl (f_k=f_inf degenerate); neither supplies content for general case. Re-confirms prior genuine.",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
       "disposition": "restate-to-derive-or-demote"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::convergence_bound::proof-no-self-assuming-projection": {
@@ -586,28 +623,6 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean::dimension_synthesis_upper_bound::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-underscored-hypothesis",
-      "line": 26,
-      "verdict": "genuine",
-      "file_sha": "f048918fe065",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Self-aware tautology carrying a `prop:` label. `predictedDim K := (K - 3) / 2`, and the docstring above the theorem reads verbatim `**Theorem (prop:cyclotomic-depth3-dimension-synthesis).** The predicted dimension agrees with itself.` — the author recorded that it says nothing, and it still ships as the Lean backing for a named proposition. Both hypotheses are `_`-underscored, i.e. explicitly recorded as unused, so `5 ≤ K` and `Nat.Prime K` are advertised as inputs to a formula derived from neither. Fix: state the synthesis against the actual cyclotomic dimension, not against `predictedDim`'s own body.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDimensionSynthesisAllDepths.lean::dimension_synthesis_all_depths::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-underscored-hypothesis",
-      "line": 28,
-      "verdict": "genuine",
-      "file_sha": "473e0ede43e1",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Same shape as `dimension_synthesis_upper_bound`, generalised over depth: `predictedDim n K = (if n % 2 = 1 then (K-3)/2 else (K-1)/2)` by `rfl`, with all three hypotheses (`2 ≤ n`, `3 ≤ K`, `Nat.Prime K`) `_`-underscored and unused. The parity split is real mathematical content — and it lives entirely in the definition, so the theorem establishes none of it. Fix the pair together.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean::closed_form_holds::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology",
@@ -633,13 +648,19 @@
     "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean::gb_residue_spectral_sum::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 94,
+      "line": 114,
       "verdict": "legit",
-      "file_sha": "53c5f560fc17",
-      "evidence": "Accessor idiom, not a defect. Instances read by hand: `fromCrystalData` is a general builder constructing the structure from arbitrary crystal data, so accessors on it are the ordinary idiom. (Automated shape test saw: residueAt(substantive), gradedMarkovTrace(substantive), fromCrystalData(substantive), (substantive), residueAt(substantive), gradedMarkovTrace(substantive), GBResidueSpectralSum.fromCrystalData(substantive).)",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "no-fix"
+      "file_sha": "24f4d3e75057",
+      "evidence": "Decl unchanged at line 114: projects `spectral_decomposition` from a `[GBResidueSpectralSum R]` instance. Verified `fromCrystalData` (line 165) is a general builder that constructs the class from arbitrary crystal data, defining `mass := |descended| + ∑ residue` and discharging `spectral_decomposition := rfl` — real content, ordinary accessor idiom. `classical_limit_descended` also does real work off the field. Re-confirms prior legit.",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "disposition": "accessor-idiom-legit"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean::graded_trace_residue_split::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -745,11 +766,17 @@
       "pattern": "field-projection",
       "line": 877,
       "verdict": "genuine",
-      "file_sha": "ad5148aab3cb",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
+      "file_sha": "2a57cda507eb",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `A4BettiTraceFactorization` carries field `target_binding_gap` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `target_binding_gap` is outside CONCLUSION_FIELD."
+      "evidence": "Line 877: class A4BettiTraceFactorization field `trace_factorization_closure : target_binding_gap = raw_structural_scale * betti_sum` is the theorem's conclusion, returned verbatim (`fac.trace_factorization_closure`). The class carries the block's own physics closure (28.30 MeV mass gap) as a field, not upstream hypotheses. §3b-cond item-5 defect. Re-confirms prior genuine."
     },
     "content/quantum-observable-universe/lean/QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean::ReebBundleComplementEqualsVolume::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -765,24 +792,36 @@
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean::adjoint_vanishing_propagation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 96,
+      "line": 110,
       "verdict": "genuine",
-      "file_sha": "a8cafd85a8ec",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Field projection from an explicit structure argument, with the interesting parameter unused. The body is `jgcs.adjoint_vanishing` — the level-0 field of `JetGradedChannelSeparation` — while the statement binds `(k : ℕ)` and the comments claim propagation: `At jet level k, the adjoint still vanishes` / `The adjoint vanishing at level 0 implies at all levels`. The implication from level 0 to level k is the entire content and is exactly what the projection skips; `k` never appears in the proof. The comment even names the missing step (`the prolonged connection preserves the adjoint vanishing by categorical_jet_prolongation`). Fix: prove the propagation by induction on `k` using that lemma.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "9a0efc7570ac",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Decl unchanged at line 110: binds `(k : ℕ)` but concludes `Subsingleton ((𝟙_ C) ⟶ jgcs.adjointObj)` (the *base* object) with body `jgcs.adjoint_vanishing` — the level-0 field returned verbatim, a P→P with the `k` binder unused. The docstring itself admits the over-claim (bean qou-fav8). Re-confirms prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean::kahler_differentials_no_sym_component::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 202,
+      "line": 222,
       "verdict": "genuine",
-      "file_sha": "a8cafd85a8ec",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. The statement's own comment block spells out the intended claim — the degree-0 dimension of Ω¹(A) is 0 because the symmetric channel sees σ_i → q and the restricted multiplication kernel is trivial — and then concludes `(0 : ℕ) = 0 := rfl`. The reasoning is in a comment; the Lean carries none of it. Fix: state the dimension of the degree-0 part of Ω¹(A) and prove it, or demote to a documented conjecture.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "9a0efc7570ac",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Decl unchanged at line 222: concludes `(0 : ℕ) = 0 := rfl`. The intended claim (degree-0 dimension of Ω¹(A) is 0) lives only in comments; the Lean carries no falsifiable content. Reflexive tautology ascribed to a literal. Re-confirms prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::su3_sym2_irreducible::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -811,11 +850,17 @@
       "pattern": "field-projection",
       "line": 210,
       "verdict": "genuine",
-      "file_sha": "34bc52817956",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `FeynmanCategoricalTrace` carries field `decomp` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `FeynmanCategoricalTrace` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `decomp` is outside CONCLUSION_FIELD."
+      "file_sha": "08ca10b3fa93",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "disposition": "construct-witness-or-drop",
+      "evidence": "Line 210 `theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) : … := fct.partitions_count`; field `partitions_count` (line 205) has the conclusion's exact type, returned verbatim. Grep confirms `FeynmanCategoricalTrace` is never inhabited anywhere in the corpus (only appears as a field of two other structures at lines 328/340; no def/instance/example/constructor). Decl unchanged, re-confirm prior genuine."
     },
     "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_from_substrate_split::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -842,13 +887,19 @@
     "content/quantum-observable-universe/lean/QOU/GradedFrobeniusHopf.lean::degree_zero_dim_one::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 183,
+      "line": 186,
       "verdict": "genuine",
-      "file_sha": "55b48bdc9dc3",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. Docstring: `the degree-0 subspace has dimension 1 (the symmetric eigenspace)`; the Lean proves `(1 : ℕ) = 1 := rfl`. The neighbouring `degree-≥1 subspace has dimension 5` claim has the same shape. Fix: state `finrank` (or the relevant dimension function) of the graded piece and prove it.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "14215d9ac2c8",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Docstring claims 'degree-0 subspace has dimension 1' but the Lean proves `(1 : ℕ) = 1 := rfl`, a bare reflexive tautology on a literal — it asserts nothing about the graded piece. Sibling `degree_geq1_dim_five` has the same shape. Decl unchanged from prior 'genuine'; re-confirmed.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean::habiro_flow_solutions_realise_synthesis::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -866,33 +917,51 @@
       "pattern": "field-projection",
       "line": 443,
       "verdict": "genuine",
-      "file_sha": "7a0106522da0",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
+      "file_sha": "ace6e76e3b79",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `ProtonPairSkeinApprox` carries field `bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `bound` is outside CONCLUSION_FIELD."
+      "evidence": "Class `ProtonPairSkeinApprox` field `bound : |proton_from_pair_skein - proton_topological| < 0.5` is character-identical to the theorem conclusion; body is `hi.bound` and the `h_denom` hypothesis is unused. Concrete numerical claim assumed as a field, not derived. Decl unchanged from prior 'genuine'; re-confirmed."
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::neutron_pair_skein_approx::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 470,
       "verdict": "genuine",
-      "file_sha": "7a0106522da0",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
+      "file_sha": "ace6e76e3b79",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `NeutronPairSkeinApprox` carries field `bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `bound` is outside CONCLUSION_FIELD."
+      "evidence": "Class `NeutronPairSkeinApprox` field `bound` equals the theorem conclusion; body `hi.bound` projects it verbatim, `h_denom` unused. Self-assuming projection per §3b-cond item-5. Decl unchanged from prior 'genuine'; re-confirmed."
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::skein_mass_relation_holds::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 611,
       "verdict": "genuine",
-      "file_sha": "7a0106522da0",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
+      "file_sha": "ace6e76e3b79",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `SkeinMassRelationHolds` carries field `identity` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `identity` is outside CONCLUSION_FIELD."
+      "evidence": "Class `SkeinMassRelationHolds` field `identity` is the exact Skein equality that the theorem `skein_mass_relation_holds [hi] := hi.identity` concludes. Field type = conclusion, no derivation. Decl unchanged from prior 'genuine'; re-confirmed."
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean::pair_skein_mass_formula::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1260,13 +1329,19 @@
     "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.lean::meson_squaring_exponent::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 62,
+      "line": 87,
       "verdict": "genuine",
-      "file_sha": "3e2de7d5f873",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. Docstring: `the squaring exponent equals the number of quark constituents`; the Lean proves `(2 : ℕ) = 2 := rfl`. That docstring names an *equality between two defined quantities*, which is a genuine and easily-stated proposition — the tautology drops both sides. Fix: define/locate the exponent and the constituent count and state their equality.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "c78638bd4dda",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Decl unchanged from prior 'genuine' verdict: theorem meson_squaring_exponent : (2 : ℕ) = 2 := rfl. Docstring 'the squaring exponent equals the number of quark constituents' names an equality of two defined quantities, but the Lean proves the tautology 2=2, dropping both sides. Re-confirm genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean::nuclear_knot_classification::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -1339,13 +1414,19 @@
     "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean::wenzl_annihilator::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-witness-with-underscored-hypothesis",
-      "line": 151,
+      "line": 168,
       "verdict": "genuine",
-      "file_sha": "21b690eda41c",
-      "disposition": "restate-or-drop",
-      "evidence": "A disguised triviality: `∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0`, witnessed by `⟨0, rfl⟩`. This is true in every ring and is independent of `firstCol`, of `_h : 4 ≤ firstCol`, and of Wenzl's theorem. The `-- Ref:` block (Wenzl 1987 §3 Thm 3.1, Jones 1987 §5, Witten 1989 §4) makes it read as an imported result, which is the sharper problem — a reader checking whether Wenzl annihilation is formalised finds three citations attached to `∃ x, x = 0`. Fix: state that the *specific* character `χ_λ` at `ζ` vanishes when the first column is ≥ 4.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "c1cc463bacf7",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Decl unchanged; re-confirm prior genuine. `∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0 := ⟨0, rfl⟩` is true in every ring, independent of `firstCol`, `_h : 4 ≤ firstCol`, and Wenzl's theorem. The Wenzl/Jones/Witten `-- Ref:` dresses a content-free existence up as an imported annihilation result.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean::main_commutative_diagram::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1383,46 +1464,70 @@
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::partitionTranspose::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
-      "line": 99,
+      "line": 108,
       "verdict": "genuine",
-      "file_sha": "7c138c29f222",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom partitionTranspose {n} : Partition n → Partition n`. Note the nearby `-- Ref: [fulton1997]` belongs to the *following* declaration (hook lengths under transpose), not to this one, so the citation window is genuinely empty here. Partition transpose is elementary and constructive — this should be a `def`, not an axiom, and Mathlib's `YoungDiagram.transpose` already provides it.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "d136339af53f",
+      "disposition": "define-not-axiom",
+      "evidence": "Line 108 `axiom partitionTranspose {n} : Partition n → Partition n` is uncited — the `-- Ref: [fulton1997]` at line 112 belongs to the following `hookLengths_transpose` decl, so the citation window here is empty. Partition transpose is an elementary constructive involution (Mathlib `YoungDiagram.transpose`); it should be a `def`/`opaque`, not an uncited axiom. Decl unchanged, re-confirm prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::HeckeNormalForm::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
-      "line": 161,
+      "line": 170,
       "verdict": "genuine",
-      "file_sha": "7c138c29f222",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom X : Type` carrier stub; two occurrences (confinement-grading-correspondence-conditional.lean and bar-involution-invariance.lean), same shape and same fix. The docstring cites the defining file in prose but carries no `-- Ref:`. Add the citation or switch to `opaque`.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "d136339af53f",
+      "disposition": "cite-or-opaque",
+      "evidence": "Line 170 `axiom HeckeNormalForm (n : ℕ) : Type` is a carrier-type stub whose docstring names the defining file (`hecke-normal-form.lean`) only in prose, with no `-- Ref:`. Should be `opaque` or carry a citation. Decl unchanged, re-confirm prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::barNormalForm::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
-      "line": 165,
+      "line": 174,
       "verdict": "genuine",
-      "file_sha": "7c138c29f222",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom barNormalForm {n} : HeckeNormalForm n → HeckeNormalForm n` — function stub for the bar involution `q ↦ q⁻¹`. The bar involution is standard (Kazhdan–Lusztig); cite it or define it on the real carrier.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "d136339af53f",
+      "disposition": "cite-or-opaque",
+      "evidence": "Line 174 `axiom barNormalForm {n} : HeckeNormalForm n → HeckeNormalForm n` is an uncited function stub for the bar involution q↦q⁻¹ (standard Kazhdan–Lusztig); no `-- Ref:` in its window. Decl unchanged, re-confirm prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::isPairProductionOutput::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
-      "line": 169,
+      "line": 178,
       "verdict": "genuine",
-      "file_sha": "7c138c29f222",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom isPairProductionOutput {n} : HeckeNormalForm n → Prop` — predicate stub with no defining condition. Because the downstream conjecture class quantifies over it, an empty predicate would make the conditional result vacuous; this one is worth defining rather than citing.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "d136339af53f",
+      "disposition": "define-predicate-or-cite",
+      "evidence": "Line 178 `axiom isPairProductionOutput {n} : HeckeNormalForm n → Prop` is an uncited predicate stub with no defining condition; the downstream class `SymmetricCrystalPairProduction` quantifies over it, so an empty predicate makes the conditional result vacuous. Decl unchanged, re-confirm prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean::cpt_closure::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1438,13 +1543,19 @@
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean::q_beta_spectral_conditional::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 294,
+      "line": 301,
       "verdict": "genuine",
-      "file_sha": "d4b2ae555085",
-      "disposition": "drop-pseudo-theorem-or-restate",
-      "evidence": "The §3b-cond item-5 shape exactly: the class field IS the conclusion, and the theorem projects it verbatim. `class BorromeanQuark where Q_beta_A : ℝ; Q_beta_B : ℝ; forms_agree : Q_beta_A = Q_beta_B`, whose own docstring calls `forms_agree` **The conjecture itself (spectral bridge)** — and then `q_beta_spectral_conditional [inst] : inst.Q_beta_A = inst.Q_beta_B := inst.forms_agree`. The theorem's docstring defends it as `Derived from the class field forms_agree — not a sorry-projection of an unrelated conclusion`, which answers a different objection: the problem is not that the conclusion is unrelated but that it is IDENTICAL, so the theorem derives nothing. NOTE THE OVERLOAD (third distinct `BorromeanQuark` in the corpus): the two instances that exist — `observations/borromean-quark.lean:120` and `lean/QOU/Archimedean/BorromeanQuark.lean:124` — inhabit a differently-fielded `BorromeanQuark` (field `orbitalDim`), NOT this one, which appears uninhabited. That is the honest open state for a conjecture carrier per §3b-tax, so the CLASS is fine; the defect is the wrapper. Fix: drop the pseudo-theorem and cite `BorromeanQuark.forms_agree` directly, or restate as something derived from the two forms rather than equal to their equality.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "file_sha": "67196453d7be",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Decl unchanged at line 301: `inst.Q_beta_A = inst.Q_beta_B := inst.forms_agree`. The class `BorromeanQuark` carries the conclusion directly as field `forms_agree`, whose own docstring calls it '**The conjecture itself** (spectral bridge)'. §3b-cond item-5 violation exactly: class axiomatises the conclusion, theorem projects it verbatim rather than deriving it from sub-hypotheses. Re-confirms prior genuine.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/observations/building-block-knots.lean::unknot_amphichiral::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -1515,24 +1626,36 @@
     "content/quantum-observable-universe/quantum-universes/categorical-jet.lean::CategoricalJet.kernelIncl_exact::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 55,
+      "line": 57,
       "verdict": "genuine",
-      "file_sha": "b42d472860b6",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `CategoricalJet` carries field `kernelIncl` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `CategoricalJet` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `kernelIncl` is outside CONCLUSION_FIELD."
+      "file_sha": "20c5a10fc303",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "disposition": "construct-witness-or-drop",
+      "evidence": "Decl unchanged at line 57: `cj.kernelIncl ≫ cj.jetEval = 0 := cj.exact`, projecting the `exact` field whose type is character-identical to the conclusion. `CategoricalJet` has no def/instance/example/builder inhabiting it anywhere (grepped the file; only consumed by `CategoricalJetProlongation` as a hypothesis), so this is a self-assuming projection, not the discharged-accessor idiom. Docstring also over-claims 'monic' while the statement is just the field. Re-confirms prior genuine."
     },
     "content/quantum-observable-universe/quantum-universes/categorical-jet.lean::categorical_jet_prolongation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 83,
+      "line": 85,
       "verdict": "genuine",
-      "file_sha": "b42d472860b6",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `CategoricalJet` carries field `jetEval` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `CategoricalJet` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `jetEval` is outside CONCLUSION_FIELD."
+      "file_sha": "20c5a10fc303",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      },
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "disposition": "construct-witness-or-drop",
+      "evidence": "Decl unchanged at line 85: `cj.jetEval ≫ jp.connection = jp.prolonged_connection ≫ cj.jetEval := jp.commutes`, returning the `commutes` field verbatim; its type is identical to the conclusion. `CategoricalJetProlongation` is never inhabited with real content, so this is a self-assuming projection. Re-confirms prior genuine."
     },
     "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::octonion_3_passes_sym2_gate::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -1549,267 +1672,749 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 86,
-      "verdict": "needs-agent",
-      "file_sha": "f1a2189a1b4f"
+      "verdict": "genuine",
+      "file_sha": "f1a2189a1b4f",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "`def r_matrix_braiding_structure [ctx] : <YBE> := ctx.claim_yang_baxter` projects a class field whose type IS the YBE conclusion. Docstring is honest ('Assumed, not derived here') but structurally the .md prop is assumed, not derived — the field is the conclusion, not a sub-hypothesis.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean::braid_rep_from_R_check::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 108,
-      "verdict": "needs-agent",
-      "file_sha": "f1a2189a1b4f"
+      "verdict": "genuine",
+      "file_sha": "f1a2189a1b4f",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "`def braid_rep_from_R_check [ctx] : <braid relation> := ctx.claim_braid_relation` projects the class field whose type is the braid-relation conclusion. Honestly labeled 'Assumed, not derived here' but is a field=conclusion self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean::pslq_independence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 37,
-      "verdict": "needs-agent",
-      "file_sha": "ef21ffdbe54d"
+      "verdict": "genuine",
+      "file_sha": "ef21ffdbe54d",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 37: `def pslq_independence [ctx] : (1000≤prec ∧ 10^10≤norm ∧ no_integer_relation_found) := ctx.claim_pslq_independence`. The class field `claim_pslq_independence` is the exact conjunction that is the conclusion, projected verbatim. Block's own PSLQ-certification claim axiomatized and returned; derives nothing.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotIndexedConvolutionGrid.lean::grid_placement::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 35,
-      "verdict": "needs-agent",
-      "file_sha": "82629b896426"
+      "verdict": "genuine",
+      "file_sha": "82629b896426",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 35 `def grid_placement [ctx : …GridContext] : … := ctx.claim_placement_well_defined`; the class field `claim_placement_well_defined` (line 29, labelled 'Manuscript claim') is character-identical to the conclusion and projected verbatim. The claimed conclusion is moreover a congruence tautology (equal components ⇒ equal pairs), so it should be a derived one-liner, not an assumed class field.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/LevelSufficiency.lean::LevelSufficiency::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 112,
-      "verdict": "needs-agent",
-      "file_sha": "84aea362c7dc"
+      "verdict": "genuine",
+      "file_sha": "84aea362c7dc",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "`def LevelSufficiency [hi : LevelSufficient …] : markovTrace P q = markovTrace P' q := hi.trace_eq` projects a class field equal to the conclusion. The lone `levelSufficient_refl` instance only handles P=P' by `rfl`; the general headline claim is assumed. Field = conclusion, self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean::character_closure_holds::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 33,
-      "verdict": "needs-agent",
-      "file_sha": "ab9055da485d"
+      "verdict": "genuine",
+      "file_sha": "ab9055da485d",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ctx.claim_paths_agree; the class field (tr_M_partition_sum = tr_M_axiom_reducer) is exactly the def conclusion. The two-path agreement is assumed as a class axiom and projected, not derived — self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SixTermPerDerivationWeights/binding_assembly.lean::binding_assembly::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 43,
-      "verdict": "needs-agent",
-      "file_sha": "58ec7b11eb56"
+      "verdict": "genuine",
+      "file_sha": "58ec7b11eb56",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Class field `claim_six_term_recovery : atomic_mass = Σ term_weights i` is type-identical to the def's conclusion; body `:= ctx.claim_six_term_recovery` projects it verbatim. §3b-cond item-5 vacuous self-assuming projection — the class carries the conclusion, not hypotheses.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean::g_eq_pi_h_substrate_hypothesis::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 124,
-      "verdict": "needs-agent",
-      "file_sha": "54151e444e5a"
+      "verdict": "genuine",
+      "file_sha": "54151e444e5a",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def takes [ctx : SubstrateEWDerivations] and returns ctx.claim_g_eq_pi_h; the class field's type (gauge_coupling_g = π·h_substrate_value) IS the conclusion verbatim. Pure §3b-cond item-5 self-assuming projection — nothing derives the claim; the class carries the conclusion and the def projects it.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean::v_ratio_eq_log_S3_hypothesis::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 144,
-      "verdict": "needs-agent",
-      "file_sha": "54151e444e5a"
+      "verdict": "genuine",
+      "file_sha": "54151e444e5a",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ctx.claim_v_ratio; the class field type (∃ v_framework, v_framework/vev = log|S_3|) is identical to the def's conclusion. Self-assuming projection — the conjectural equality is assumed as a class field and merely re-exposed, not derived.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean::scalar_gauge_ratio_eq_six_fifths_hypothesis::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 165,
-      "verdict": "needs-agent",
-      "file_sha": "54151e444e5a"
+      "verdict": "genuine",
+      "file_sha": "54151e444e5a",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ctx.claim_scalar_gauge; field type (scalar_mass_factor/gauge_mass_factor = 6/5 cardinalities) equals the conclusion. Degenerate §3b-cond projection — the class axiomatises the conclusion, not sub-hypotheses that would derive it.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/UnstableAtom/decay_channel.lean::decay_channel::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 108,
-      "verdict": "needs-agent",
-      "file_sha": "905b094d6795"
+      "verdict": "genuine",
+      "file_sha": "905b094d6795",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 108: `def decay_channel [ctx : DecayChannelContext]` whose type is a 3-way conjunction, discharged by tuple `⟨ctx.claim_i_well_defined, ctx.claim_ii_unique_off_boundary, ctx.claim_iii_phase_boundary_crossing⟩`. The context class carries each conjunct as a `claim_*` field; the def merely repackages the class's own conclusion fields. §3b-cond item-5 self-assuming tuple-projection — nothing derived.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean::algebraic_quantum_volume_specialization::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 56,
-      "verdict": "needs-agent",
-      "file_sha": "251c4cae18b2"
+      "verdict": "genuine",
+      "file_sha": "251c4cae18b2",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 56: def returns `⟨ctx.claim_i_qou_internal_specialisation, ctx.claim_ii_jones_specialisation, ctx.claim_iii_alexander_specialisation⟩`; each context field type is exactly a conjunct of the conclusion (the three manuscript specialisation sub-claims). Pure tuple-projection of conclusion-carrying fields; the block's own claims are assumed, not derived.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean::e_infinity_identifications::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 94,
-      "verdict": "needs-agent",
-      "file_sha": "86338a0f8feb"
+      "verdict": "genuine",
+      "file_sha": "86338a0f8feb",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 94 `def e_infinity_identifications := ⟨ctx.claim_mass_formula_unified, ctx.claim_descended, ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise, ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction_holds⟩`. Every conjunct of the six-term conclusion is one identically-typed `claim_*` class field; the class carries the conclusion, not sub-hypotheses (§3b-cond item-5 degenerate self-projection).",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/hoefsmit_scattering_pipeline.lean::hoefsmit_scattering_pipeline::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 137,
-      "verdict": "needs-agent",
-      "file_sha": "b1bfb5890ce3"
+      "verdict": "genuine",
+      "file_sha": "b1bfb5890ce3",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "`def … := ⟨ctx.claim_stage_1_hoefsmit, ctx.claim_stage_2_markov_trace, ctx.claim_stage_3_yekutieli_omega, ctx.claim_stage_4_electron_mass_scale⟩` — the four conjuncts of the stated conjunction are exactly the four assumed claim fields; nothing is derived. Tuple-projection self-assuming.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/jet_prefix_gb_filtration.lean::jet_prefix_gb_filtration::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 36,
-      "verdict": "needs-agent",
-      "file_sha": "54a08e699455"
+      "verdict": "genuine",
+      "file_sha": "54a08e699455",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ctx.claim_jet_prefix_eq_gb_depth; the class field (JetOrder = GbDepth) is identical to the conclusion. Docstring itself admits 'substantive content carried by context-class axioms, full derivation pending' — textbook self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/joint_tower_sdp_confinement.lean::joint_tower_sdp_confinement::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 107,
-      "verdict": "needs-agent",
-      "file_sha": "81a37acf1cce"
+      "verdict": "genuine",
+      "file_sha": "81a37acf1cce",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Conclusion is a 4-way conjunction whose conjuncts are exactly the class fields `claim_i_holds`, `claim_ii_gb_filtration_grading`, `claim_iii_jet_order_ordering`, `claim_iv_cross_level_compatibility`; body is `⟨…⟩` projecting each. Tuple self-assuming projection — class axiomatises the conclusion directly.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/knot_factor_spectral_derivation.lean::plancherelWeight_sum_eq_one::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 63,
-      "verdict": "needs-agent",
-      "file_sha": "7ce0efef6d1e"
+      "verdict": "genuine",
+      "file_sha": "7ce0efef6d1e",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ctx.claim_plancherel_sum_one; the KnotFactorSpectralContext field claim_plancherel_sum_one has type (Σ w_λ = 1) identical to the def conclusion. Self-assuming projection, no derivation of the Wedderburn trace identity.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/knot_factor_spectral_derivation.lean::knot_factor_spectral_derivation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 72,
-      "verdict": "needs-agent",
-      "file_sha": "7ce0efef6d1e"
+      "verdict": "genuine",
+      "file_sha": "7ce0efef6d1e",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ctx.claim_knot_factor_spectral; the class field carries the full spectral-formula equality that IS the def's conclusion. The knot-factor formula is assumed as a class field and projected, not derived.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/knot_mass_unified.lean::knot_mass_unified::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 93,
-      "verdict": "needs-agent",
-      "file_sha": "6e1b0274cecb"
+      "verdict": "genuine",
+      "file_sha": "6e1b0274cecb",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 93: `ctx.mass = ctx.descended - ctx.brane_tower + ctx.frobenius_co_casimir := ctx.claim_boxed_six_term_expansion`. The `KnotMassUnifiedContext` field `claim_boxed_six_term_expansion` has the conclusion's exact type; the def projects it verbatim. Class carries the whole boxed claim as an axiom; no derivation. Self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/mass_formula_regime_switching.lean::mass_formula_regime_switching::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 99,
-      "verdict": "needs-agent",
-      "file_sha": "a88f6e8a292d"
+      "verdict": "genuine",
+      "file_sha": "a88f6e8a292d",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 99: def returns `⟨ctx.claim_regime_A2, ctx.claim_regime_A3_A4, ctx.claim_regime_A5_plus⟩`; each field is a conjunct of the conclusion (the three A-regime binding formulas). The block's own physics claims are carried as class fields and projected verbatim; no derivation.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/schur_weyl_mass_decomposition.lean::schur_weyl_mass_decomposition::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 67,
-      "verdict": "needs-agent",
-      "file_sha": "0ed455f73ea3"
+      "verdict": "genuine",
+      "file_sha": "0ed455f73ea3",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 67 `def schur_weyl_mass_decomposition … := ctx.claim_schur_weyl_sum`; the class field `claim_schur_weyl_sum` (line 58) has the exact conclusion type `trM_atomic = Σ_λ s_λ·χ^λ/H_q(λ)` and is projected verbatim. The Schur–Weyl identity is assumed as a field, not derived — self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean::six_term_mass_formula_complete::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 49,
-      "verdict": "needs-agent",
-      "file_sha": "1a4876963c6d"
+      "verdict": "genuine",
+      "file_sha": "1a4876963c6d",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "`def six_term_mass_formula_complete [ctx] : cat_mass = term1+…+term6 := ctx.claim_six_term_sum` projects the class field `claim_six_term_sum` whose type is the identical six-term identity. Field = conclusion, no derivation.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/sorting_color_energy.lean::sorting_color_energy::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 51,
-      "verdict": "needs-agent",
-      "file_sha": "97aaed3498cb"
+      "line": 57,
+      "verdict": "genuine",
+      "file_sha": "6de103c6211b",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ctx.claim_eigenvalues; the class field (sym_eigenvalue = q ∧ wedge_eigenvalue = -q⁻¹) equals the def conclusion. The Hecke eigenvalues are assumed as a class field, not derived from an R-matrix decomposition — self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean::spectral_sequence_h3_explicit::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 58,
-      "verdict": "needs-agent",
-      "file_sha": "b8b61c973b8a"
+      "verdict": "genuine",
+      "file_sha": "b8b61c973b8a",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Conclusion `n_strands=3 ∧ claim_i_d1 ∧ claim_ii_d2 ∧ claim_iii_pages` is projected from the class's `_holds` fields (`claim_strand_count`, `claim_i_d1_differential_holds`, etc.), the sub-claims being opaque `Prop` fields. Body `⟨…⟩` returns them verbatim — degenerate self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean::terms_2_6_higher_operations::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 60,
-      "verdict": "needs-agent",
-      "file_sha": "48c8cc374fdc"
+      "verdict": "genuine",
+      "file_sha": "48c8cc374fdc",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 60: conjunction discharged by `⟨ctx.claim_term_2_single_generator_brane_tower, ctx.claim_term_6_jet_prefix_correction⟩`. The `Terms26HigherOperationsContext` class carries each conjunct as a `claim_*` field (lines 35, 45); the def tuple-projects them. Docstring admits 'the substantive mathematical content is carried by the context-class axioms'. Self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/wedderburnWeightCanonical.lean::wedderburnWeightCanonical::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 104,
-      "verdict": "needs-agent",
-      "file_sha": "c85d35e192f5"
+      "verdict": "genuine",
+      "file_sha": "c85d35e192f5",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 104: def returns `⟨ctx.claim_ii_BW_form, ctx.claim_iii_LP_shadow_price⟩`; each field type equals a conjunct of the conclusion (the BW-form and LP-shadow-price identities). The block's own manuscript sub-claims are axiomatized as class fields and projected verbatim; nothing derived.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/wigner2_coefficient.lean::wigner2_coefficient::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 124,
-      "verdict": "needs-agent",
-      "file_sha": "b09dda18a556"
+      "verdict": "genuine",
+      "file_sha": "b09dda18a556",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 124 `def wigner2_coefficient … := ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩`. The two conjuncts of the conclusion are character-identical to fields `claim_i_per_generator_trace` (line 45) and `claim_ii_BW_closed_form` (line 49); the def merely re-bundles the assumed claims. Self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Braiding/beta_stability.lean::beta_stability::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 39,
-      "verdict": "needs-agent",
-      "file_sha": "4bf1963a9fdc"
+      "verdict": "genuine",
+      "file_sha": "4bf1963a9fdc",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "`def beta_stability [ctx] : ∀ n, L_skein n_star ≤ L_skein n := ctx.claim_beta_stability` projects the class field `claim_beta_stability` of identical type. Docstring admits 'a full derivation from substrate primitives remains pending'. Field = conclusion self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Braiding/fermion_boson_knot_link.lean::fermion_boson_knot_link::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 48,
-      "verdict": "needs-agent",
-      "file_sha": "dd02b5100229"
+      "verdict": "genuine",
+      "file_sha": "dd02b5100229",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns the tuple ⟨ctx.claim_knot_iff_odd, ctx.claim_link_iff_even, ctx.claim_fermion_boson_knot_link⟩; each conjunct's type is a class field identical to that part of the conclusion. Pure tuple projection of assumed claims, nothing derived.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Braiding/r_matrix_braiding_structure.lean::r_matrix_braiding_structure::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 59,
-      "verdict": "needs-agent",
-      "file_sha": "21bf905baf6b"
+      "verdict": "genuine",
+      "file_sha": "21bf905baf6b",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Def conclusion is the YBE equation `comp (comp R12 R13) R23 = comp (comp R23 R13) R12`, identical to class field `claim_yang_baxter`; body `:= ctx.claim_yang_baxter`. Self-assuming projection (docstring honestly admits 'assumed, not derived here') — still a vacuity defect: the theorem derives nothing.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Braiding/reidemeister_mass_invariance.lean::reidemeister_mass_invariance::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 44,
-      "verdict": "needs-agent",
-      "file_sha": "9da02a13d7b0"
+      "verdict": "genuine",
+      "file_sha": "9da02a13d7b0",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 44: `∀ K, mass(R_I K)=mass K ∧ ... := ctx.claim_reidemeister_mass_invariance`. The `ReidemeisterMassInvarianceContext` field `claim_reidemeister_mass_invariance` (line 28) IS the conclusion; the def returns it verbatim. Docstring admits content is carried as a context-class axiom. Self-assuming projection, nothing derived.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/demazure_fiber_markov_trace.lean::demazure_fiber_markov_trace::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 95,
-      "verdict": "needs-agent",
-      "file_sha": "9071a62fe0b3"
+      "verdict": "genuine",
+      "file_sha": "9071a62fe0b3",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 95: def returns `⟨ctx.claim_i_standard_jones_markov, ctx.claim_ii_bruhat_order_structural_holds, ctx.claim_iii_plancherel_completeness⟩`; each field is a conjunct of the conclusion (saturated-case identity, conjectural Bruhat resonance, Plancherel completeness). The block's own three sub-claims are carried as fields and projected; no derivation.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ew_interface_knot.lean::ew_interface_knot::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 65,
-      "verdict": "needs-agent",
-      "file_sha": "057bacc35846"
+      "verdict": "genuine",
+      "file_sha": "057bacc35846",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 65 `def ew_interface_knot := ⟨ctx.claim_i_strand_count, ctx.claim_ii_ew_carrier_exponents, ctx.claim_iii_bar_self_duality⟩`; each of the three conjuncts equals an identically-typed `claim_*` field (lines 31/34/46). The docstring itself admits 'a full derivation from substrate primitives remains pending', confirming the content is entirely assumed — self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/explicit_alpha_k_h4.lean::explicit_alpha_k_h4::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 36,
-      "verdict": "needs-agent",
-      "file_sha": "9d4332fc4f47"
+      "verdict": "genuine",
+      "file_sha": "9d4332fc4f47",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "`def explicit_alpha_k_h4 [ctx] : ctx.n_classes = 5 := ctx.claim_explicit_alpha_k_h4`. `n_classes` is an abstract class field and `claim_explicit_alpha_k_h4 : n_classes = 5` is assumed, so the `=5` is projected, not computed (p(4)=5 is provable but is not derived here). Self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/qmn_recursive_memoized.lean::qmn_recursive_memoized::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 66,
-      "verdict": "needs-agent",
-      "file_sha": "2c1b8ca2bde3"
+      "verdict": "genuine",
+      "file_sha": "2c1b8ca2bde3",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "def returns ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_miss_computes_via_holds, ctx.claim_iii_stores_result_cache⟩; each conjunct is a class field equal to the conclusion component. Murnaghan-Nakayama recursion is assumed as class axioms (incl. a bare Prop field + witness) and projected, not derived — self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean::wedderburn_bratteli_recursion::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 64,
-      "verdict": "needs-agent",
-      "file_sha": "a3229d1044fc"
+      "verdict": "genuine",
+      "file_sha": "a3229d1044fc",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Conclusion is the 3-way conjunction (monotonicity ∧ sign-tracking ∧ ε-N limit) whose conjuncts are exactly class fields `claim_i_per_row_monotonicity`, `claim_ii_sign_tracking_added`, `claim_iii_trivial_rep_limit`; body `⟨…⟩` projects them verbatim. Tuple self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean::toffoli_transfer_matrix::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 99,
-      "verdict": "needs-agent",
-      "file_sha": "c72ff79660fe"
+      "verdict": "genuine",
+      "file_sha": "c72ff79660fe",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Line 99: 6-way conjunction discharged by `⟨ctx.claim_i_..., ..., ctx.claim_vi_diagonal_formula⟩`. Each conjunct is a `claim_*` field of `ToffoliTransferMatrixContext` (lines 62-85); the def tuple-projects the class's own conclusion fields. Docstring admits substantive content is context-class axioms. Self-assuming projection.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     },
     "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean::strong_duality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 118,
-      "verdict": "needs-agent",
-      "file_sha": "2c4fd5a94b5e"
+      "verdict": "legit",
+      "file_sha": "2c4fd5a94b5e",
+      "disposition": "cite-external-axiom-legit",
+      "evidence": "Line 118: HasFiniteLPDuality axiomatizes STANDARD external LP-duality facts (strong duality + complementary slackness) for any bounded/feasible finite-dim LP, honestly cited to Schrijver §7.2/§7.4, with no fabricated instance and a transparent 'awaiting Mathlib LP-duality port' note. strong_duality is a named conditional accessor of a genuine external theorem, not the block's own laundered conclusion — the sanctioned §3b-cond external-input idiom.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean::kappa_vanishes_iff_chi::proof-docstring-sorry-mismatch": {
+      "category": "proof-docstring-sorry-mismatch",
+      "pattern": "doc-claims-sorry-body-has-none",
+      "line": 120,
+      "verdict": "genuine",
+      "file_sha": "a0b1df636463",
+      "disposition": "fix-stale-docstring-sorry-claim",
+      "evidence": "Line 120 docstring states the theorem 'inherits that lemma's single honest `sorry`', but the body `rw [ctx.kappa_vanishes_def, obstruction_trace_gap.1]` (and `obstruction_trace_gap` itself, lines 106-112) contains no `sorry` — the gap was refactored into class fields (§3b-cond conditional). The theorem is a valid conditional result; the docstring's sorry claim is stale and inaccurate and should be corrected.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean::nsi_q_kernel_identification::proof-docstring-sorry-mismatch": {
+      "category": "proof-docstring-sorry-mismatch",
+      "pattern": "doc-claims-sorry-body-has-none",
+      "line": 171,
+      "verdict": "genuine",
+      "file_sha": "a3bf3706dc5e",
+      "disposition": "update-stale-docstring",
+      "evidence": "Docstring claims 'Genuinely open Lean-side … honest `sorry` per §1', but the body is a real proof `rw [ctx.K_cat_eq, ctx.qDeformedCommutator_eq _ hq1]` with no sorry (a sound conditional derivation from the two input fields). The docstring — and the downstream `nsi_q_deformed_kernel` doc calling it 'the open part, sorry in …' — are stale and should be corrected.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Machinery/H4Cyclicity.lean::trM4_cyc_1_1::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "reflexive-tautology",
+      "line": 194,
+      "verdict": "genuine",
+      "file_sha": "c28c618fe8f2",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Diagonal entry of the 72-case cyclicity table: statement is `trM4 z h (mulNF₄ h (e₄ 1)(e₄ 1)) = trM4 z h (mulNF₄ h (e₄ 1)(e₄ 1))` — both sides syntactically identical, proved `:= rfl`. A pure reflexive `X = X` tautology asserting nothing falsifiable (§5).",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Machinery/H4Cyclicity.lean::trM4_cyc_2_2::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "reflexive-tautology",
+      "line": 373,
+      "verdict": "genuine",
+      "file_sha": "c28c618fe8f2",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Same diagonal degeneracy as trM4_cyc_1_1 with word 2: LHS ≡ RHS (`mulNF₄ h (e₄ 2)(e₄ 2)` on both sides), `:= rfl`. Reflexive tautology, no content.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Machinery/H4Cyclicity.lean::trM4_cyc_6_6::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "reflexive-tautology",
+      "line": 572,
+      "verdict": "genuine",
+      "file_sha": "c28c618fe8f2",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "Diagonal entry with word 6: `trM4 ... (mulNF₄ h (e₄ 6)(e₄ 6)) = trM4 ... (mulNF₄ h (e₄ 6)(e₄ 6))`, both sides identical, `:= rfl`. Reflexive tautology.",
+      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean::binding_eq_bond_energy::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 75,
+      "verdict": "genuine",
+      "file_sha": "e0086c80a420",
+      "disposition": "drop-redundant-projection",
+      "evidence": "Self-assuming field-projection (§3b-cond item 5): the conclusion `h.binding = h.epsilon * C(A,2)` is character-identical to the class field `extensive` and the proof is `:= h.extensive` verbatim, deriving nothing (the docstring says 'Just h.extensive, exposed as a named consumer'). The BondExtensiveBinding class is a legitimately-open conditional carrier and its sibling `binding_nonneg` genuinely derives (mul_nonneg on epsilon_nonneg), but this decl only re-exports the hypothesis. Honest fix: drop it, use h.extensive directly downstream. (Sibling qou-4tj9's fresh file — queued, not fixed here.)",
+      "reviewed_at": "2026-08-21T16:09:39.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
     }
   }
 }

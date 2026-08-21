@@ -9,6 +9,12 @@ the prolonged periods of a fixed 2x2 M -- the audit fork (b).
 lw(c) = (1/(c+1)) Sum_{lam|-c+1} dim_q(lam),  dim_q = [n]_q!/prod[hook]_q, symmetric
 [k]_q = (q^k-q^-k)/(q-q^-1).  No fit; symbolic in q + 50-dps at q0.
 """
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
 import json, os, sys
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
 import sympy as sp

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T13:36:01Z
+updated_at: 2026-08-21T14:45:57Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -577,3 +577,264 @@ WHAT OF MY ENTRIES SURVIVES:
                                                             a FIFTH, at weights level
 
 All six of my probes re-run post-rebase: ASSERTIONS PASS.
+
+
+## MEASURED 2026-08-18: -974 is 1/u^3 amplification, not evidence D breaks
+
+Probe: computations/qbeta/qbeta_alpha_required_c_vs_d_probe.py (4/4).
+
+alpha_required -- the phase making the N=2 ladder hit CODATA with NO c_3 rung --
+is convention-INDEPENDENT: b and u are built from the Hoefsmit couplings
+(d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1))), never from z.  (d1 is numerically
+identical to z_D while being a different object; do not read that as 'the Gram
+already uses D'.)  So one fixed target scores both frames fairly.
+
+Residual the c_3 rung must absorb, proton anchor:
+    C frame  0.11321204
+    D frame  0.10136170        ratio D/C = 0.8953
+
+MY PREDICTION WAS WRONG.  I wrote the probe expecting the D residual to be
+ORDERS larger and asserted ratio > 10.  It failed.  D is 0.895x -- slightly
+BETTER than C.  Retracted.
+
+Where -974 actually comes from:
+    cos(alpha_eff) differs C -> D by  0.000601154  (relative)
+    1/u^3                          =  1618468.2
+    product                        =  972.94833
+    actual |c_3(D) - c_3(C)|       =  972.36255
+    agreement                      =  0.06 %
+
+The entire c_3 gap is the ladder's own 1/u^3 = 1.6e6 amplifier acting on a
+0.06 % difference in cos.  This is the SAME amplification behind
+sigma(c_k) = sigma_R/u^k, which the corpus already knows makes extracted c_k
+noise-dominated.  Quoting -974 as though convention D were catastrophic
+overstates what the number shows -- it measures the amplifier, not the physics.
+
+This does NOT reinstate D-by-substitution: decayLadder_zC_threeRow_ne_zero
+still proves the re-derivation requirement, and the probe wires nothing.  What
+it removes is the impression that D is disqualified on the numbers.
+
+## Two further facts for whoever derives the phase
+
+1. THE PHASE IS NOT WHERE THE ANCHOR INSTABILITY LIVES.  The residual drifts
+   0.00046 % (C) / 0.00052 % (D) between anchors, while extracted c_3 swings
+   2.37 %.  Both asserted phases are anchor-stable to ~5e-4 %.  A derived phase
+   will not, by itself, fix the cross-anchor swing.
+
+2. NEITHER asserted phase reproduces CODATA at N=2 -- both leave ~0.1 rad for
+   c_3 to absorb.  The un-derived alpha is open in C exactly as much as in D,
+   which is why there is no C-frame derivation to port.  That is the real
+   content of this bean.
+
+
+## Formalize-first prune on the PHASE (2026-08-18) — narrow licence, not a block
+
+Probe: computations/qbeta/qbeta_alpha_entropy_bound_probe.py (3/3).
+
+Before attempting to derive alpha, I asked of the phase the question PROBE 4
+asked of c_3: invert the ladder for alpha_required, then count reliable digits
+against the PSLQ entropy floor n*log10(2H).
+
+    cos(alpha_eff_req) = Q_codata / (Q_A (1 - u^2))
+    sigma(alpha_eff)   = cot(alpha_eff) * sigma_rel(Q_beta)
+
+MY HYPOTHESIS WAS WRONG.  I predicted a blanket entropy block and asserted
+best-case D_eff < cheapest floor.  It FAILED: 5.61 > 3.90.  The phase is NOT
+as noise-starved as c_3.  Third refuted prediction in this tranche; the
+measurement beat the guess each time.
+
+What is true, as a per-(sigma, basis) grid:
+
+    D_eff(alpha)  experimental sigma 7.8e-7 : 3.61427 digits
+    D_eff(alpha)  optimistic   sigma 7.8e-9 : 5.61427 digits
+
+    basis                floor    experimental   optimistic
+    minimal n=3 H<=10    3.903    NO             yes
+    standard n=4 H<=100  9.204    NO             NO
+    wide n=6 H<=100     13.81     NO             NO
+
+Identifying alpha by matching alpha_required is permitted by entropy ONLY for a
+3-term height<=10 basis AND only under a sigma nobody claims.  Every realistic
+basis is blocked at both readings (deficit 3.59 digits even at the optimistic
+sigma).  A narrow licence, not a green light -- worth stating before anyone
+runs a wide search.
+
+## The amplifier on the phase is NOT 1/u^3
+
+cot(alpha_eff) = 17.6436.  The rung's amplifier is 1/u^3 = 1.6e6 (now proved
+exactly: QOU.QBeta.c3Of_sub_mul_u_cubed).  Two different amplifiers; conflating
+them misattributes the phase's noise budget.  The cot is large for a structural
+reason -- alpha_eff is small, so the ladder reads the phase through the FLAT
+part of the cosine.
+
+## Corrects my own earlier note in this bean
+
+I recorded alpha_required as 'anchor-stable to 0.0005 %' as though that were a
+structural fact.  It is not: with ~3.6 honest digits there is not enough
+resolution for the two anchors to disagree, and D_eff comes out IDENTICAL at
+both.  The stability is a resolution artifact, not evidence.
+
+## Still open, unchanged
+
+alpha is asserted in both conventions and derived in neither.  This bounds one
+ROUTE (fitting the anchor); a categorical derivation is not limited by
+sigma(Q_beta) and remains the open item.
+
+
+## RESEARCH (2026-08-18): the corpus-grep found a constraint I did not know,
+## and it exposed an ELEMENTARY error in my own earlier result
+
+### First: the four-path corpus grep was overdue and it paid
+
+I had been repeating 'alpha is asserted, derived nowhere' from my own earlier
+session rather than from a fresh grep.  Running it found
+qbeta-d-frame-eigenphase-bar-parity (2026-08-16), which I did not know about
+and which changes the problem:
+
+  * under C the eigenphase is BAR-ODD: bar(alpha) + alpha = 0
+  * under D (full-bar bar(z) = z - h) it is NOT, with a Z-INDEPENDENT defect
+    bar(alpha) + alpha = h^2/2 = (q-1)^2(q+1)^2/(2q^2)   [symbolic-exact]
+  * so the FORCED bar-odd projection is alpha - h^2/4, taking c_3 from
+    -974.43 to -86.08, recorded there as 'improves substantially but does NOT
+    restore'
+
+So alpha is not derived, but it IS structurally constrained, and one correction
+is already forced rather than fitted.  I would have started cold without this.
+
+### RETRACTION of my own claim from earlier today
+
+qbeta_alpha_required_c_vs_d_probe reported that both conventions leave '~0.1
+rad' for c_3 and concluded 'NEITHER asserted phase reproduces CODATA at N=2'.
+WRONG, elementarily: cos is EVEN and mp.acos returns only the PRINCIPAL
+branch, so alpha_eff_req has two solutions.  The C phase sits on the NEGATIVE
+branch.
+
+    distance to the + branch (what I reported) : 0.11321204
+    distance to the - branch (the real one)    : 2.2563251e-5
+    overstatement                              : 5017.54x
+
+C DOES reproduce CODATA at N=2, to 2.26e-5 rad -- which amplified by
+1/u^3 = 1.6e6 is exactly the observed c_3 = -2.069.  That consistency check
+would have caught it immediately and I did not run it.
+
+The C-vs-D RATIO (0.895) is branch-independent and stands; only the absolute
+gaps and the conclusion were wrong.  The offending assertion is now recorded
+as RETRACTED in the probe itself rather than deleted, and the prose is fixed.
+
+### The actual research result
+
+Re-expressing the ALREADY-DERIVED bar-odd projection in the amplifier-free
+coordinate (justified by the proved QOU.QBeta.c3Of_sub_mul_u_cubed):
+
+    D phase gap             0.011872906
+    after alpha - h^2/4     0.00094635405
+    closed                  92.03 % of the D gap
+    residual                41.94x the C-frame residual
+
+Through c_3 the projection reads as a failure (-974 -> -86, still nothing like
+-2).  In phase space it recovers 92 % of the discrepancy.  ONE
+structurally-forced correction -- forced by requiring the bar-oddness that
+holds identically under C -- gets most of the way there.
+
+This STRENGTHENS the D programme: the D phase is not wild, it is one derived
+correction and a ~42x residual away from the frame that works.
+
+### Discipline
+
+Proposes NO correction and searches NO space.  The source witness explicitly
+fences further correction-hunting as fitting ('does NOT license searching for
+further corrections until one lands near the proved c_2 = -1'), and this
+respects it -- it adds a coordinate, not a candidate.  alpha remains asserted
+in both frames and derived in neither.
+
+
+## 2026-08-18 — the D-frame phase anomaly is a CLOSED FORM (writhe/ribbon avenue)
+
+Commit `0a2cf2b56`, PR #5265. Lean
+`QOU/QBeta/LadderPhaseMirrorCovariance.lean` (sorry-free, 7 decls, axioms
+clean, lean-direct exit 0) + probe
+`computations/qbeta/qbeta_ladder_phase_mirror_covariance_probe.py` (3/3).
+
+**Why bar-parity is the right test (this is the new part).** The Ocneanu
+trace is not a link invariant alone: the two stabilisation loop values are
+z and z-h, and invariance is restored by a writhe-dependent prefactor
+OUTSIDE the trace (Jones 1987 §5, block
+prop:jones-markov-trace-stabilisation). Writhe is mirror-ODD and that is
+already proved in this corpus generically —
+WritheMarkovInvariance.writhe_inv : writhe (inv a) = -writhe a — and mirror
+is q -> 1/q on the Hecke side. So a framing phase MUST be bar-odd.
+
+**The result.** For alpha = (z-1)h/2 with h bar-odd,
+
+    bar(alpha) + alpha = h * (z - bar z) / 2     for ANY z
+
+(phaseTwice_bar_anomaly, one ring line), hence the phase is bar-odd IFF z is
+exactly bar-fixed (phaseTwice_bar_odd_iff_z_bar_fixed — an iff, so it
+excludes as well as certifies). Then:
+
+- C passes by structure: z_C bar-fixed is the corpus's own
+  z_bar_invariant_field (ZBarParity, PR #3449), which the new file now
+  IMPORTS rather than restates. My earlier "alpha_C is bar-odd" measurement
+  was not an anchor coincidence.
+- D fails with a closed form: z_D - bar(z_D) = (q^4-1)/(q(1+q^2)) = q - 1/q
+  = h, EXACTLY (zD_sub_bar_eq_h). Hence bar(alpha_D)+alpha_D = h^2/2.
+- So the bar-odd part is alpha_D - h^2/4, and h^2 is bar-EVEN so the same
+  constant comes off both sides — the shift is UNIQUE
+  (phaseTwiceD_sub_hsq_bar_odd).
+
+**What changed.** alpha_D - h^2/4 is the projection I applied last session
+on numerical grounds (it closed 92.03% of the D gap in the amplifier-free
+coordinate). It is now DERIVED — the unique mirror-covariant part. Epistemic
+status moved; the value did not. That is the whole difference between this
+and a seventh fitted ansatz.
+
+**Still open, unchanged.** The projected D phase leaves a residual 41.94x
+the C-frame one. Untouched here. The fence from
+qbeta-d-frame-eigenphase-bar-parity stands: hunting further phase
+corrections is fitting until one lands with the structural standing of
+c_2 = -1. cds1 is NOT closed — the ladder re-derivation under D still needs
+the c_k rungs, and the Gram singularity (cds2) still blocks the H_3 route.
+
+
+### Sharpened, same day (commit 78c089e1d): bar EXCHANGES the two loop values
+
+Reading `z_D - bar(z_D) = h` with the Markov axioms (`tr(x s) = z tr(x)`,
+`tr(x s^-1) = (z-h) tr(x)`) gives:
+
+    bar(z_D) = z_D - h = the NEGATIVE-stabilisation loop value.
+
+Under D the bar involution **exchanges the two Markov loop values** — what
+mirror must do, since mirroring exchanges positive and negative crossings.
+Convention C's z is bar-FIXED, i.e. mirror-BLIND, missing the exchange by
+exactly h.
+
+**I had the value judgement backwards** in the entry above: D does not
+"fail" a parity test that C "passes". The h^2/2 anomaly is the signature
+that D tracks the crossing-sign exchange, while the phase formula
+alpha = (z-1)h/2 — written in the C frame where z is bar-fixed — was carried
+over unchanged. It is the phase FORMULA that needed re-deriving under D, not
+the convention. Both facts in the entry above are correct; only the reading
+was wrong.
+
+And the re-derivation is not a shift:
+
+    alpha_D - h^2/4 = ((z_D + (z_D - h))/2 - 1) * h/2
+
+the SAME formula at the MEAN of the two loop values — which under D equals
+the bar-mean (zD_bar_mean_eq_loop_mean). Symmetrising over the mirror and
+over the crossing sign are one operation in this frame; that is why no
+freedom remains.
+
+Lean §4: loopMeanTwice, phaseTwice_projected_eq_loopMean,
+zD_bar_eq_negative_loop, zD_bar_mean_eq_loop_mean. Probe now 5/5.
+
+Incidentally an argument FOR the 2026-08-15 D ruling on structural grounds,
+reached independently of it. Scope unchanged — still closes nothing.
+
+── State synthesis 2026-08-21 (session, PR #5348, branch n24484) → docs/audits/2026-08-21-cds1-d-frame-ladder-state-synthesis.md ──
+NET: structurally determined, numerically fenced. BOTH legs of the D re-derivation are already FORCED + FORMALIZED symbolically (corpus-grepped, not re-derived here):
+• Phase leg (forced): bar-odd projection α_D − h²/4, LadderPhaseMirrorCovariance.lean sorry-free (phaseTwiceD_sub_hsq_bar_odd; forced via zD_sub_bar_eq_h + loop-mean=bar-mean). This IS why it is not a z-swap: the formula re-derives to give −h²/4.
+• Weight leg (forced, exact ℚ(q)): z_D·[2]_q=q² (zD_eq_qsq_div_bracketTwo) = Jones/two-row; S2 (#5185) solved the D weights y_(3)=(q⁴+1)/(q²+1)², y_(2,1)=q²/(q²+1)², y_(1³)=0; PSD (5,0,1). Resolves the horn in decayLadder_zC_threeRow_ne_zero: under D the decay trace IS two-row TL.
+OPEN = the c_k assembly only, and it is anti-fit FENCED: forced phase closes 92.03% of the D gap, residual 41.94×C (qbeta-eigenphase-branch-and-barodd-projection.witness). Any c_k absorbing the residual is a fit until one lands with c₂=−1's standing — the same magnitude wall as C.
+CORRECTION: the sensitivity-table c₃≈−974 / c₂≈−9.299 are NAIVE-Z-SWAP artifacts (C-extractor fed z_D, which S1 proves invalid). NOT proposed D values; do not wire/quote.
+FORMALIZE-FIRST NEXT: state the invariant a forced D c₂ must satisfy (D analogue of c₂=−1=1−b²ℏ⁴) and check if exact weights + α_D−h²/4 determine it. Do NOT run the extractor on z_D and report the output.

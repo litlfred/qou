@@ -25,6 +25,12 @@ VERDICT (scope): the ζ₄ coupling is FIBRE-level and generator-exact; the OBSE
 "binding and Q_β are one number under ζ₄" is degenerate (Im(q₀)=0) and must NOT be used to close
 conj:binding-qbeta-complex-volume — that descent remains the open conjecture. No fit.
 """
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))

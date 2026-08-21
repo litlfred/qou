@@ -29,7 +29,8 @@ constructs the binding-side Habiro element from exact data, which the noise-limi
 """
 import json, os, sys
 
-sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import _path_bridge  # noqa: F401,E402 — wires tools/qou-substrate + tools/pyhecke
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sympy as sp
 import mpmath as mp

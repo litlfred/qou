@@ -26,7 +26,7 @@ from pathlib import Path
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE / "substrate"))  # witness_base shim
-sys.path.insert(0, str(_HERE.parent.parent / "qou-mass" / "src"))
+sys.path.insert(0, str(_HERE.parent / "qou-mass" / "src"))
 
 import sympy as sp  # noqa: E402
 

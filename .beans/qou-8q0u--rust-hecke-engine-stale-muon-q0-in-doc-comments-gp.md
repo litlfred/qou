@@ -1,20 +1,36 @@
 ---
 # qou-8q0u
 title: 'Rust hecke-engine: stale muon q0 in doc-comments + gp_cross_validate bin (f64 Q_0 already proton; NO production muon literal)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T21:27:22Z
-updated_at: 2026-08-15T21:28:18Z
+updated_at: 2026-08-19T21:09:10Z
 ---
 
-Follow-up to qou-m7py (merged, PR #5088). The Rust f64 production constant gram::Q_0 is ALREADY proton (1.1099785827513808) and the hecke.rs CLI resolves its default to it (q.unwrap_or(gram::Q_0)). NO production muon literal remains.
+COMPLETED 2026-08-19 (PR pending). Two rounds:
 
-Actual scope (small doc/bin hygiene, NOT a migration):
-- hecke.rs:36 — stale doc comment says 'default: q_0 = 1.1099785955541805' (muon); code returns proton Q_0. Fix the comment.
-- gp_cross_validate.rs:254 — live q_str_50dps is the muon 50-dps; exploratory bin, cross-validates at the wrong anchor. Flip to proton 50-dps (matrix_m_mpfr.rs:403 has it: 1.1099785827513808075916690956107688798744991218736).
-- hecke_canonical_chi.rs:24, hecke_gram.rs:7 — muon in doc examples; refresh.
+Round 1 (PR #5148, merged): fixed the `hecke gram --q` doc comment, which
+claimed the muon default while the code returned `gram::Q_0` (proton).
 
-DO NOT TOUCH (churn, not migration; gram.rs scope note): the muon 50-dps strings in #[cfg(test)] modules — tr_m_atomic_mpfr.rs:227, laurent_rational_q.rs:618, laurent_poly_q.rs:418, precision_scalar.rs:141. They are anchor-agnostic rounding/precision test inputs; precision_scalar.rs:124 even asserts .starts_with(muon), so flipping the input forces flipping the assertion for zero gain.
+Round 2 (this branch): the round-1 audit was INCOMPLETE and said so wrongly --
+it concluded 'no production muon literal remains' because it grepped only the
+full-precision spelling 1.1099785955541805, never the truncated 5-digit
+1.10998. A sibling caught this and corrected the gram::Q_0 scope note. Five
+live binaries carried the truncated value, 1277 ppb off the anchor (100x
+further than the re-pin round 1 was about):
+  v14_hapower.rs:309, v6.rs:484, v8.rs:682, h9_beta.rs:376, main.rs:370
+All now read hecke_engine::gram::Q_0. v6.rs had asserted 'Single source of
+truth: q_parameter.py. This must match' directly above a literal that did not.
 
-Fresh branch needed (5088 merged; main advanced 60+ commits).
+Also fixed in the same commit:
+- h9_beta.rs:389 printed 'z = 1/(q^1/2+q^-1/2)' (convention C, excised
+  2026-08-09) while computing convention D q^3/(q^2+1) -- 23% mislabel.
+- pyhecke/gram.py banner said 'STILL DIVERGENT ... Tracked as qou-m7py'
+  while _native_ok() in the same file reported it resolved+enabled.
+
+Output re-verified (not blind substitution): all 5 binaries run before/after,
+z -> 0.6126880371 = gram::markov_z(Q_0) exactly. Max rel moves 7.1e-6 (hapower)
+to 3.7e-3 (qvalues, on an already -99.1% row). 201/201 lib tests pass.
+
+LESSON: grep the truncated spellings, not just the canonical one.

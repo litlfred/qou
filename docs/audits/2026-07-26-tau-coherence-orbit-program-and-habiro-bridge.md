@@ -1463,6 +1463,18 @@ control had to leave B entirely, using the ring generator.
 
 ## Addendum 31 (2026-08-19) — computing CGZ's class where they put it: the invariant is bracketed, not obtained
 
+> **🛑 HALF-CORRECTED by Addendum 32 (2026-08-19).** The "B = Q₂₅ is too
+> small" half of the bracket below is **wrong**. `B = Q₂₅` is exactly
+> `F_n = F(ζ₃)` at the degree-1 place of `K = Q(α)`, and `χ_B =
+> teich(·)⁸` is exactly the projection onto the χ⁻¹-eigenspace that
+> CGZ Remark 1.9 names as the invariant's home. The root-dependence
+> that this addendum attributes to the field belongs instead to the
+> **lift** `H → F_n`. The other half — `F = Q₅(μ₁₈₇₂)` is too large —
+> stands, and Addendum 32 explains it in one line: that field contains
+> `μ₃`, which collapses the eigenspace to the whole group. The
+> measurements below are correct as recorded; only their interpretation
+> as a statement about *fields* is retracted.
+
 `gswz_epsm_field_bracketing_probe.py`, **9/9**. Addendum 30's stated
 next increment was to compute the class in F^×/(F^×)ⁿ instead of
 descending to the base. Done — and the answer is a bracketing, not a
@@ -1505,3 +1517,889 @@ is consistent with its collapsing.
 resolving it. No ε_m value is claimed at m ≥ 3; the m = 2 result
 (PR #4968) is untouched. The non-vacuity control is what makes the
 collapse a finding rather than a broken class function.
+
+---
+
+## Addendum 32 (2026-08-19) — the invariant lives in a χ⁻¹-**eigenspace**; my base field destroyed it, and half of Addendum 31 was wrong
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_chi_eigenspace_place_probe.py`](../../computations/probes/gswz_epsm_chi_eigenspace_place_probe.py)
+— 21/21, exact integer arithmetic mod 5⁸. Scope-(a); nothing wired.
+
+### What I had not read
+
+CGZ arXiv:1712.04887v3 **Remark 1.9** (p. 8), on Gangl–Kontsevich:
+
+> "*they did not check in general that the image of P_ζ could be lifted
+> to a suitable element R_ζ ∈ (F_n^×/F_n^{×n})^{χ⁻¹}*"
+
+Three facts follow, none of which the previous five addenda used:
+
+1. The invariant is **not** `P_ζ`. `P_ζ ∈ H^×/H^{×n}` is only its
+   *image*; `R_ζ` is a **lift**.
+2. Its home is `(F_n^×/(F_n^×)^n)^{χ⁻¹}` — the **χ⁻¹-eigenspace** of
+   `F_n = F(ζ_n)`, not of `H` and not of `F`. Lemma 2.4(e) is the
+   eigenvector condition, not a decoration.
+3. CGZ themselves flag the lift as **unchecked in general**. It is the
+   hard step, and it is exactly the step my descent was improvising.
+
+### The diagnosis: an eigenspace needs `μ_n ⊄ F`
+
+`(·)^{χ⁻¹}` is a proper subgroup only when `Gal(F_n/F) ≠ 1`, i.e. only
+when the base field does **not** already contain `μ_n`. Every field in
+this programme was `F = Q₅(μ_{624m})`, which contains `μ_m`. So
+`F_n = F`, `Gal(F_n/F) = 1`, Lemma 2.4(e) constrains nothing, and the
+"eigenspace" is the whole group. **The structure that carries the
+invariant was destroyed before anything was computed** — which is a
+better explanation of the Addendum-31 collapse than "the field is too
+large".
+
+### The correct base is place-dependent
+
+The α-line field is `K = Q(α)` with `α³ − α² + 1 = 0` (whence
+`1 − z₁ = α²`, `1 − z₂ = α`, `z₁ = −α³`). Over `Q₅`:
+
+`x³ − x² + 1 ≡ (x − 2)(x² + x + 2) (mod 5)` — measured, with the
+quadratic checked irreducible.
+
+| place | `K_v` | `μ₃ ⊂ K_v`? | `Gal(F₃/K_v)` | χ⁻¹-eigenspace |
+|---|---|---|---|---|
+| `v₁` (degree 1) | `Q₅` | **no** | `Z/2` | order **3** of 9 |
+| `v₂` (degree 2) | `Q₂₅` | yes | `1` | whole group |
+
+**Only `v₁` carries the structure.** There `F₃ = Q₂₅` — which is exactly
+the base `B` of the m = 2 and m = 3 descent probes.
+
+### The eigenspace, measured
+
+At `v₁`, `B^×/(B^×)³` has order **9**: the Teichmüller line
+`μ₂₄/μ₂₄³ ≅ Z/3` times the valuation line `Z/3`, with `1 + 5O` uniquely
+3-divisible (checked on all 25 residues, so it is trivial in the
+quotient). Frobenius `φ₅` acts by `5 ≡ −1 (mod 3)` on the Teichmüller
+line and by `+1` on the valuation line (it fixes `Q₅` pointwise —
+checked on the Teichmüller lifts of `𝔽₅^×`). And
+`χ(φ₅) = 5 ≡ 2`, `χ⁻¹(φ₅) = 2 ≡ −1`.
+
+So the χ⁻¹-eigenspace **is the Teichmüller line**: order 3, a **proper**
+subgroup, with `5` (class `(0,1)`) a witness outside it. Non-vacuous —
+unlike the Addendum-31 F-level class, which was identically 0 on all 23
+admissible base arguments.
+
+### This reverses half of Addendum 31
+
+Addendum 31 bracketed the invariant between "`B = Q₂₅` too small
+(root-independence fails)" and "`F = Q₅(μ₁₈₇₂)` too large (the class
+collapses)". **The first half is wrong.**
+
+- `B = Q₂₅` is not "too small" — it *is* `F_n` at the degree-1 place.
+- `χ_B = teich(·)⁸` is not an ad-hoc character — it *is* the projection
+  onto the χ⁻¹-eigenspace (measured: injective on the line, trivial on
+  cubes and on the valuation part).
+- What failed at the `B` level was the **lift** `H → F_n`, which
+  Remark 1.9 names as the unchecked step — **not** the choice of field.
+
+The second half of the bracket stands: `F = Q₅(μ₁₈₇₂)` really is too
+large, and Addendum 32 now explains *why* in one line — it contains
+`μ₃`.
+
+### A route ruled out without spending a probe on it
+
+**Lemma 2.3** (p. 9) is an **isomorphism**
+
+`φ : F^×/F^{×n} ≅ Hom(Φ, μ) ≅ H¹(Φ, μ)`,  `X ↦ (σ ↦ σx/x)`,
+
+with `Φ = Gal(H/F_n)` and `H` the *universal Kummer extension* (adjoin
+n-th roots of **every** element of `F`) — so `H` was never my `F`
+either. Because Lemma 2.3 is an isomorphism, computing the Kummer
+cocycle `σ ↦ σ(x)/x` returns the **same object** as the Addendum-31
+class, transported. It cannot rescue the collapse. That was the stated
+next increment on the merged work; it is a dead end, and no probe was
+written for it.
+
+### What is open
+
+The lift `P_ζ ∈ H^×/H^{×n} → R_ζ ∈ (F_n^×/(F_n^×)^n)^{χ⁻¹}` at the
+degree-1 place. CGZ construct it (§3, via Chern classes) and flag that
+Gangl–Kontsevich did not; my descent was an improvised substitute for
+it, and the root-dependence of Addenda 27–29 is its failure mode.
+
+**Scope.** No ε_m value is claimed at any m ≥ 3. This addendum
+relocates the target group and shows it is non-vacuous; it does not
+compute anything in it. The m = 2 value (PR #4968) is untouched.
+
+---
+
+## Addendum 33 (2026-08-19) — ε₃ on the α-line at the degree-1 place: the lift exists, is unique, and is computed
+
+> **🛑 VALUE MIS-LABELLED — corrected by Addendum 35 (2026-08-19).** The
+> value below is written `ζ₃²`. That is the **raw readout `teich(·)⁸`,
+> which is a power of the μ₂₄ generator, not of `ζ₃`** — measured,
+> `cls(ζ₃) = 2`, because `ζ₃ = gen⁸ ≡ gen²` mod cubes. Converting,
+> `κ = 2·cls mod 3`, the value is **`ε₃(2[z₁]+[z₂]) = ζ₃`**, and in
+> general `ε₃(a[z₁]+b[z₂]) = ζ₃^{−a}`. Nothing about the computation
+> changes; only the basis it is stated in. The same conflation, applied to
+> `D_ζ(1)`, was one step from becoming a false report of a discrepancy
+> with CGZ Lemma 2.4(b) — see Addendum 35.
+
+> **🟧 SHARPENED by Addendum 34 (2026-08-19).** Two amendments, neither
+> changing the value. (1) The obstruction argument below — "`⋀²(F^×/(F^×)³)
+> = 0`" — is **unfalsifiable**: the wedge square of a cyclic group vanishes
+> whatever `ξ` is, so it says nothing about whether `ξ` is a Bloch element.
+> Addendum 34 replaces it with `d(ξ) = 0` computed **exactly in `K`**, and
+> records that `d` vanishes for *every* coefficient pair, so `(2,1)` is
+> **not** pinned by the Bloch condition. (2) The per-symbol classes are
+> `c₁ = 1`, `c₂ = 0`, so `ε₃(a[z₁]+b[z₂]) = a mod 3` — the `[z₂]` symbol
+> contributes **nothing**, and the `ζ₃²` below is simply `a = 2`.
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_v1_lift_and_value_probe.py`](../../computations/probes/gswz_epsm_v1_lift_and_value_probe.py)
+— 23/23, exact integer arithmetic mod 5⁸. Scope-(a); nothing wired.
+
+Addendum 32 relocated the target and left one open step: the **lift**
+`P_ζ ∈ H^×/H^{×n} → R_ζ ∈ (F_n^×/(F_n^×)^n)^{χ⁻¹}`, which CGZ Remark 1.9
+flags as unchecked in Gangl–Kontsevich. CGZ **Proposition 2.5** (p. 11)
+constructs it, and at the degree-1 place every hypothesis it needs holds.
+
+### CGZ state Addendum 32's diagnosis themselves, in a different sentence
+
+§2.3, immediately before Prop 2.5:
+
+> "*Let `w_F = w₁(F)` denote the number of roots of unity in `F`. The
+> assumption in Theorem 1.2 that `F` contains no non-trivial nth roots of
+> unity is the assumption that `(n, w_F) = 1`.*"
+
+At `v₁`, `w_{Q₅} = 4` and `n = 3`: coprime, so Theorem 1.2 applies. My
+old `F = Q₅(μ_{624m})` has `3 | w_F`, so **Theorem 1.2 never applied to
+it at all** — an independent confirmation of Addendum 32 that does not go
+through the eigenspace argument.
+
+### Why the lift is free at `v₁`
+
+| Prop 2.5 ingredient | at `v₁` |
+|---|---|
+| obstruction `δ(d(ξ)) ∈ H²(Φ,μ)`, the cup product of `d(ξ) ∈ ⋀²(F^×/F^{×n})` | `F^×/(F^×)³ ≅ Z/3` generated by `5` (every **unit** of `Z₅` is a cube, `3 ∤ 4·5^k`), so `⋀²` is **0** — nothing to obstruct |
+| uniqueness, via `0 → S → F_n^×/(F_n^×)^n → M → 0`, `S = F^×/F^{×n}` | `G` acts trivially on `S`, `χ⁻¹` is the *nontrivial* character of `G = Z/2`, so `S^{χ⁻¹} = 0` and the eigenspace map is injective. Measured: `\|S\| = \|M\| = 3` at `v₁`, against `\|S\| = 9`, `\|M\| = 1` at `v₂` |
+
+### `H` is not needed — and that is the whole explanation of Addenda 27–29
+
+`z₁ = −α³`, `z₂ = 1−α`, `1−z₁ = α²`, `1−z₂ = α` are **all units of `Z₅`**,
+hence all cubes. So every cube root in `P_ζ` already lies in `Q₅ ⊂ B`, and
+the eqn-(21) shift ratio
+
+`D(ζ^i x)/D(x) = ∏_{k<i}(1−ζ^k x)³ / (1−X)`
+
+is a cube **in `B`** — numerator visibly, denominator because `1−X` is a
+unit. **That is why root-independence holds here and failed in Addenda
+27–29:** there, `1−X` was not a cube in the field being used. The failure
+was never Lemma 2.4(a). It was the field, twice over.
+
+### The value
+
+**`ε₃(ξ) = ζ₃²` for `ξ = 2[z₁] + [z₂]`.**
+
+- Invariant over **all 9** root choices — the check that failed at every
+  `m ≥ 3` in Addenda 27–29.
+- Satisfies the Lemma 2.4(e) eigenvector condition `φ₅(R) = R^{−1}` mod
+  cubes.
+- **Same under either primitive cube root.** Both `P_ζ` and the readout
+  depend on which primitive root plays `ζ`, and the two dependencies
+  cancel. Measured, not assumed — `2` is not a convention artefact.
+- The class map is **non-constant** on sampled arguments, so this reads a
+  map with content, unlike the Addendum-31 map that was identically 0.
+
+### Control at the other place
+
+`K_{v₂} = Q₂₅ ⊇ μ₃`, so `F₃ = F`, `M = 0`, `S` is the whole order-9 group
+and the lift is ambiguous by all of it — the invariant carries no
+information there. Three of the four arguments are **not** cubes in `Q₂₅`,
+so the cube roots genuinely leave the field. (An earlier version of this
+control used `B`'s ring generator as the root of `x³−x²+1`; that is a root
+of the mod-5 factor, not of the Hensel lift, and the check correctly
+refused. It now divides by `(x−α)` and takes the square root of the
+discriminant in `B`.)
+
+### Scope
+
+A value at **one place of one field**, where the arithmetic happens to be
+trivial enough that CGZ's lift is forced. It does **not** construct the
+lift in general, and it does **not** revive the fields of Addenda 27–29 —
+those are simply the wrong fields. The m = 2 result (PR #4968) is
+untouched, and nothing is wired to production.
+
+---
+
+## Addendum 34 (2026-08-19) — the α-line is an exceptional unit relation; `d(ξ) = 0` exactly, the coefficients are not pinned, and `ε₃ = a mod 3`
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_alpha_line_unit_structure_probe.py`](../../computations/probes/gswz_epsm_alpha_line_unit_structure_probe.py)
+— 16/16, exact integer arithmetic in `Z[x]/(x³−x²+1)` and mod 5⁸.
+Scope-(a); nothing wired. No new claim — this sharpens Addendum 33 and
+removes an unfalsifiable check of my own.
+
+### The check that could not have failed
+
+Addendum 33 justified the vanishing of CGZ's Prop-2.5 obstruction by
+`⋀²(F^×/(F^×)³) = 0`. True — and **useless**: the wedge square of a cyclic
+group vanishes whatever `ξ` is. It could not have failed, so it said
+nothing about whether `ξ` is a Bloch element at all.
+
+### The genuine condition, computed in `K` rather than 5-adically
+
+The α-line is an **exceptional unit relation**. From `α³ = α² − 1`:
+
+`α⁻¹ = α − α²`,  and  **`1 − α = α⁻²`**.
+
+So every argument is a sign times a power of `α`:
+
+| | `z₁` | `1 − z₁` | `z₂` | `1 − z₂` |
+|---|---|---|---|---|
+| | `−α³` | `α²` | `α⁻²` | `α` |
+
+`K = Q(α)` has discriminant `−23` and signature `(1,1)`, so its unit group
+is `{±1} × ⟨α⟩` of rank 1 and `⋀²` of it is generated by `(−1) ∧ α`, which
+is **2-torsion**. Writing each unit as (sign exponent, `α` exponent), the
+`[z₁]` symbol contributes `2·((−1) ∧ α)` and `[z₂]` contributes `0`:
+
+**`d(ξ) = 0` exactly, over `Z` — not merely mod 3.**
+
+### But it does not pin the coefficients
+
+`d(a[z₁] + b[z₂]) = 2a·((−1) ∧ α) = 0` for **every** `(a,b)`. The Bloch
+condition is satisfied by the whole coefficient lattice and does **not**
+single out `(2,1)`; those come from the α-line construction upstream.
+Recorded so Addendum 33's value is not read as forced.
+
+Control: the wedge form is **not** identically zero — a symbol whose two
+arguments carry independent sign/exponent data does contribute — so the
+vanishing `d` is a fact about the α-line, not a degenerate form.
+
+### The sharp form of the value
+
+`P_ζ` is multiplicative, so `ε₃` is **linear** in the coefficients — verified
+against the directly-computed product on a 3 × 3 grid rather than assumed.
+The per-symbol classes are
+
+> **🟧 INTERPRETATION DEFLATED by Addendum 40 (2026-08-19).** The
+> *computation* below stands. What is withdrawn is the sentence after it —
+> "the invariant is carried entirely by the `[z₁]` symbol". That rested on
+> `c₂ = 0`, one observation in a group of order 3, and the class of `P_ζ` is
+> distributed **exactly 80/80/80** over 240 arguments. Landing on 0 is a
+> 1-in-3 event. Worse, the reflection relation pins `c(X) + c(1−X)` to a
+> constant across the anharmonic orbit, so `c₁` and `c₂` are not two free
+> observations. Read `c₂ = 0` as a fact about this element's coefficients,
+> not about the invariant.
+
+**`c₁ = 1`, `c₂ = 0`** in the raw readout — which is a power of the **μ₂₄
+generator**, not of `ζ₃`. Converting (`κ = 2·cls mod 3`, since
+`cls(ζ₃) = 2`) gives `κ(P(z₁)) = 2`, `κ(P(z₂)) = 0`, hence
+
+**`ε₃(a[z₁] + b[z₂]) = ζ₃^{−a}`**.
+
+*(Basis corrected 2026-08-19 by Addendum 35; the structure below —
+linearity, `c₂ = 0`, dependence on `a` alone — is unaffected.)*
+
+The `[z₂]` symbol contributes **nothing** — `P_ζ(z₂)` is a cube — and
+Addendum 33's `ζ₃²` is simply `a = 2`. This is deflationary about the
+"value": on the α-line the invariant is carried entirely by the `[z₁]`
+symbol, and what Addendum 33 measured is one coefficient.
+
+### Scope
+
+No new claim. The value of Addendum 33 stands; its justification is now
+falsifiable, and what the number depends on is stated. Nothing wired; the
+m = 2 result (PR #4968) is untouched.
+
+---
+
+## Addendum 35 (2026-08-19) — the five-term relation validates the implementation, and catches a basis error of mine
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_five_term_validation_probe.py`](../../computations/probes/gswz_epsm_five_term_validation_probe.py)
+— 12/12, exact integer arithmetic mod 5⁸. Scope-(a); nothing wired.
+
+### Why this was needed
+
+Every check behind Addenda 33–34 was **internal** — root-independence,
+linearity, the Lemma 2.4(e) eigenvector condition. A consistently-wrong
+`P_ζ` would have passed all of them. Nothing had tested the implementation
+against the paper.
+
+### Four CGZ predictions, all confirmed
+
+| prediction | result |
+|---|---|
+| **Lemma 2.4(b)**: `D_ζ(1) ≡ ζ^{n/3}` mod nth powers | holds at `n = 3`; and `D_ζ(1) = 3(1−ζ²)` **exactly** |
+| **Lemma 2.4(c)** / p. 11: `P_ζ(X)P_ζ(1/X) = x^{n(n−1)/2}` | `κP(X) + κP(1/X) = 0` on **240** arguments |
+| **reflection** `[X] + [1−X] − [0] = 0` | forces the **nonzero** constant `2 mod 3`; ties the α-line symbols to each other via `1−z₂ = α`, `1−z₁ = α²` |
+| **five-term relation**, eqn (3) | holds on **400** instances of a two-parameter sweep |
+
+Constructed-to-fail controls: one flipped sign breaks **99/150**; `ζ`
+replaced by `ζ²` in a single factor of `D_ζ` breaks **96/150**. So the
+vanishing five-term sum is the relation holding, not a trivial class map.
+
+### The error it caught, in my own two addenda
+
+The readout `cls(u) = teich(u)⁸` gives the class as a power of the **μ₂₄
+generator**, not of `ζ₃`. Measured: **`cls(ζ₃) = 2`**, because
+`ζ₃ = gen⁸ ≡ gen²` mod cubes.
+
+The first version of this probe compared `cls(D_ζ(1))` to the bare integer
+`1`, got `2`, and was **one step from reporting a discrepancy with CGZ
+Lemma 2.4(b)**. There is none: `cls(D_ζ(1)) = cls(ζ₃) = 2`, so
+`D_ζ(1) ≡ ζ₃` exactly as the lemma says.
+
+The same conflation put a wrong label on the value. In the `ζ₃` basis
+(`κ = 2·cls mod 3`) the per-symbol classes are `κ(P(z₁)) = 2`,
+`κ(P(z₂)) = 0`, so
+
+**`ε₃(a[z₁] + b[z₂]) = ζ₃^{−a}`**,  and  **`ε₃(2[z₁] + [z₂]) = ζ₃`**, not
+`ζ₃²`.
+
+The structure reported in Addenda 33–34 — linearity, `c₂ = 0`, dependence
+on `a` alone — is **unaffected**; only the basis label was wrong. Both
+probes and both addenda are corrected in place.
+
+### Scope
+
+Validates the implementation; extends nothing to another place, field, or
+`m`. Nothing wired; the m = 2 result (PR #4968) is untouched.
+
+---
+
+## Addendum 36 (2026-08-19) — the GSWZ (287) f-subscript resolved: the printed `f₅` is a typo for `f₁`
+
+Bean `qou-xx9f`. Probe
+[`gswz_287_f1_vs_f5_subscript_resolution_probe.py`](../../computations/probes/gswz_287_f1_vs_f5_subscript_resolution_probe.py)
+— 12/12. Scope-(a); nothing wired.
+
+### The conflict
+
+GSWZ [arXiv:2412.04241v2](https://arxiv.org/abs/2412.04241v2)
+(`library/arxiv-2412.04241v2/`) states the (287) experiment twice, and the
+two disagree:
+
+| where | reads |
+|---|---|
+| prose, p. 56, one sentence before | "the integrality of the series **`f₁^{5₂}(x)`** after division by the generator `Ψ_{ξ,p}(x)`" |
+| display, p. 57, eqn (287) | `C `**`f₅^{5₂}(x)`**` Ψ_{[ζ₂₄],5}(x)^{−(1+4·5+3·5²+⋯)} ⋯` |
+
+Read at 6× from the pdf, not from a text extractor. And `f₅` is **not** a
+typo for a nonexistent object — (285) is `f₅^{5₂}(0)²` — so the glyph alone
+cannot settle which series the experiment used. This blocked `qou-xx9f` as
+an "owner eyeball" item; it was never resolvable that way.
+
+### Settled from (287)'s own right-hand side
+
+GSWZ give the coefficient-field rule themselves, in the parenthetical after
+(345):
+
+> "That the coordinates here are in K as opposed to `K[ζ_m]` is because
+> `φ(m) ≤ 2` for `m < 5` … in general, the coordinates are in
+> `K[ζ_m + ζ_m⁻¹]`."
+
+At `m = 5`: `ζ₅+ζ₅⁻¹` satisfies `t² + t − 1 = 0` (verified symbolically in
+`Z[z]/Φ₅`), a genuine quadratic extension — and one **ramified at 5**
+(disc 5; `Φ₅(1+π) = π⁴+5π³+10π²+10π+5` is Eisenstein, so `Q₅(ζ₅)` is
+totally ramified of degree 4). It embeds in **neither** unramified
+component of `K₅ = Q_{5²} × Q₅`: there the valuation is `Z`-valued and
+squares have even valuation, while `v₅(5) = 1` is odd.
+
+So an `m = 5` coefficient admits no clean powers-of-5 digit expansion over
+a K-basis. **That is exactly how (287) prints every coefficient** — three
+coordinates against `{1, α, α²}`, each an ordinary base-5 expansion.
+
+**Control.** The same computation re-derives GSWZ's own `φ(m) ≤ 2`
+boundary: `ζ_m+ζ_m⁻¹` is rational for `m = 1,2,3,4` (`2, −2, −1, 0`) and
+irrational at `m = 5`. The test fires at 5 and nowhere below — it
+discriminates rather than always firing.
+
+### Verdict
+
+Three independent lines converge, so the printed subscript is a
+typographical error for `f₁`:
+
+1. the prose one sentence earlier says `f₁`;
+2. only `f₁` is ever *defined* as a series ((281) defines it, (282) prints
+   its coefficients) — under the `f₅` reading the paper's own "experiment"
+   would not be reproducible by a reader, which is §4.6's stated purpose;
+3. (287)'s right-hand side lives in `K` with unramified digits, which the
+   `m = 5` fibre cannot supply.
+
+This is an evidenced reading of the source, **not a theorem**: GSWZ's rule
+says "in general", so a special series *could* have coefficients that
+happen to fall in `K`. The arXiv LaTeX source would be definitive and is
+unavailable here — `https://arxiv.org/e-print/2412.04241v2` returns
+`403 CONNECT` from the sandbox proxy. If that tarball is added to
+`library/arxiv-2412.04241v2/`, one grep for the macro confirms or
+overturns this immediately; do that before building on it.
+
+### A bad check of mine, caught by its own control
+
+The first version tested "5 is not a square in `Q₂₅`" by sampling
+candidates on a stride. Its companion control could not find `√49` either —
+**the control failing is what exposed the search as worthless**. Replaced
+with the exact valuation argument above, with `25` as a control that
+legitimately passes.
+
+### What this leaves
+
+Candidate (1) of the bean — "the inputs are an unprinted `m = 5` fibre, so
+they are unavailable" — is **eliminated**. The printed x¹–x³ digits remain
+unreproduced under the `f₁` reading, so what is left is candidate (2): an
+unprinted α-dependent normalisation between (281)'s `f₁` and the printed
+`Φ` series. The earlier narrowing stands — a single `q^λ` exponent confirms
+x² mod 25 (~6 nontrivial digits) but fails x³ mod 5, so the normalisation
+is a **series** with a nonzero h³ term, not a scalar. That is now the whole
+of `qou-xx9f`.
+
+---
+
+## Addendum 37 (2026-08-19) — the m | 24 census, and m = 2 was never a non-vacuous CGZ target
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_m_lattice_eigenspace_census_probe.py`](../../computations/probes/gswz_epsm_m_lattice_eigenspace_census_probe.py)
+— 13/13, exact integer arithmetic. Scope-(a); nothing wired.
+
+Before computing a value at another `m`, map where a value can exist at
+all. CGZ's invariant lives in the χ⁻¹-eigenspace of `F_m^×/(F_m^×)^m`, and
+an eigenspace carries information only when it is a **proper** subgroup.
+
+### The census over `F = Q₅`
+
+For `m | 24`, `F_m = Q₅(ζ_m)` is unramified of degree `ord_m(5)`, the class
+group is `Z/m × Z/m` (Teichmüller × valuation; `1+5O` is uniquely
+`m`-divisible), Frobenius multiplies the Teichmüller exponent by 5 and fixes
+the valuation, and `χ⁻¹(φ₅) = 5⁻¹`. The eigenspace is computed by **brute
+force** over all `m²` classes and only then compared with the closed form
+`m·gcd(m,4)` — so the formula is checked, not assumed.
+
+| `m` | deg | eigenspace | proper | unique lift | `R^{w_F}` nontrivial |
+|---|---|---|---|---|---|
+| 1 | 1 | 1/1 | no | yes | no |
+| **2** | 1 | 4/4 | **no** | no | **no** |
+| **3** | 2 | **3/9** | yes | **yes** | yes |
+| 4 | 1 | 16/16 | no | no | no |
+| **6** | 2 | 12/36 | yes | no | yes |
+| **8** | 2 | 32/64 | yes | no | yes |
+| **12** | 2 | 48/144 | yes | no | yes |
+| **24** | 2 | 96/576 | yes | no | yes |
+
+**Live set: `m ∈ {3, 6, 8, 12, 24}`.** `m = 3` has `gcd(m, w_F) = 1` with
+`w_{Q₅} = 4`, so Theorem 1.2 gives a *unique* lift — the case Addenda 33–35
+computed. For 6, 8, 12, 24 only `R^{w_F}` is defined (Prop 2.5), but that
+power is still nontrivial in those groups, so information survives.
+
+### Correction 1 — the guess that queued this work
+
+The scheduled note said the argument "needs `μ_m ⊄ Q₅`, which holds only for
+`m` coprime to 4". **False.** `μ_m ⊂ Q₅` exactly when `m | 4`, since the
+roots of unity of `Q₅` are `μ₄` and `1+5Z₅` is torsion-free. Coprimality to
+4 gives `{1,3}`; the truth is `{3,6,8,12,24}`. The probe carries both sets
+side by side so the wrong guess cannot be re-made silently.
+
+### Correction 2 — to a claim repeated throughout this arc
+
+**`m = 2` is vacuous in every field of characteristic ≠ 2.** `−1` is a
+nontrivial square root of 1 and lies in every such field, so `F₂ = F`,
+`Gal(F₂/F)` is trivial, the eigenspace is the whole group, and `w_F` is
+always even — hence `gcd(2, w_F) = 2 > 1`, **Theorem 1.2 never applies at
+`n = 2`**, and only `R^{w_F}` is defined, which is `1` in a group of
+exponent 2.
+
+So there was never a non-vacuous CGZ invariant at `m = 2` to compute. I
+have been citing "the m = 2 result of PR #4968" as the one solid value of
+the programme in nearly every commit and addendum here. Addendum 30 had
+already re-scoped it as measuring my descent-to-base composite rather than
+CGZ's invariant; this is the sharper point — **the CGZ target it was being
+compared against is identically trivial**, so the `+1` is forced by the
+group rather than measured.
+
+That does not make the #4968 computation incorrect. It makes it **empty as
+a CGZ value**, and it should stop being cited as a result. The earlier
+probes' phrasing ("the m = 2 result of PR #4968 is untouched") remains
+literally true and is left as written; what is superseded is the *weight*
+that sentence was carrying.
+
+### Controls
+
+The eigenspace test reports "vacuous" for every `m | 4`, so it does not
+always fire; the brute-force sizes agree with the closed form on all five
+degree-2 cases; `w_{Q₅} = 4` is counted, not assumed.
+
+### Scope
+
+A census of where values can exist, not a value at any new `m`.
+
+---
+
+## Addenda 38–39 (2026-08-19) — m = 6 computes but adds nothing, and the m-sweep at `v₁` closes on `ε₃` alone
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probes
+[`gswz_epsm_m6_rwf_value_probe.py`](../../computations/probes/gswz_epsm_m6_rwf_value_probe.py)
+(17/17) and
+[`gswz_epsm_v1_computable_m_terminal_probe.py`](../../computations/probes/gswz_epsm_v1_computable_m_terminal_probe.py)
+(11/11). Scope-(a); nothing wired.
+
+### 38 — `m = 6`: the `R^{w_F}` route works, and yields no new datum
+
+`m = 6` is the smallest live case with `gcd(m, w_F) > 1`, so Prop 2.5
+defines only `R_ζ(ξ)^{w_F}`. The census said that power is nontrivial in
+`Z/6`; this asks whether information survives *in practice*.
+
+The mechanism carries over: **every unit of `Z₅` is a 6th power in `B`**
+(its Teichmüller part lies in `μ₄ = (μ₂₄)⁶`), so `H` is not needed and the
+eqn-(21) ratio is a 6th power in `B`. Root-independence holds over all 36
+choices. Control: `gen` itself is *not* a 6th power, so the test isn't
+vacuous.
+
+All four CGZ gates re-run at `m = 6` before any value was believed —
+including Lemma 2.4(b) in its **even** form (`D_ζ(1)²` a root of unity; the
+odd-`n` form does not apply) and the five-term relation on **300**
+instances, with both constructed-to-fail controls breaking it.
+
+**But the answer collapses.** Per-symbol classes `z₁ → 4`, `z₂ → 0`, giving
+`R = R^{w_F} = 2`. The 2-part of `B^×/(B^×)⁶` is killed by the even power
+`w_F = 4`, and the surviving 3-part **is** the `m = 3` group — so `R^{w_F}`
+re-expresses `ε₃`. Checked symbol by symbol against a direct `m = 3`
+computation in the same probe, not argued from CRT. A consistency check on
+Addenda 33–35, not a second data point.
+
+### 39 — and the sweep closes: only `m = 3, 6` are computable at all
+
+Addendum 38 closed by predicting "the same collapse at `m = 12` and `24`,
+leaving `m = 8` as the only structurally new case". **Wrong** — 12 and 24
+are not computable by this method either. That was a prediction where a
+measurement was one line away.
+
+The criterion: an `m`-th root of a `Z₅` unit stays in `B` exactly when
+`gcd(m, 24)` divides its Teichmüller discrete log. Measured — `z₁ → 6`,
+`z₂ → 12`, `1−z₁ → 12`, `1−z₂ → 6`:
+
+| `m` | `gcd(m,24)` | divides? | computable in `B` |
+|---|---|---|---|
+| 3 | 3 | 6, 12 ✓ | **yes** |
+| 6 | 6 | 6, 12 ✓ | **yes** |
+| 8 | 8 | neither | no — all four symbols block |
+| 12 | 12 | 12 only | no — `z₁`, `1−z₂` block |
+| 24 | 24 | neither | no — all four block |
+
+The obstruction is **per-symbol**, which I also got wrong first time: a
+version of the construction check demanded that when `m` fails *no*
+argument has an `m`-th root, and it correctly failed at `m = 12`, where the
+two dlog-12 arguments *do*. Now checked per argument, with exact roots
+built where predicted and absent where not.
+
+### Terminal statement for `v₁`
+
+> **🛑 OVER-STATED — corrected by Addendum 41 (2026-08-19).** "Requires
+> leaving `B`" is right; "not computable" is not. The universal Kummer
+> extension `H` is never needed in *full* — only the finite subextension the
+> roots generate, and for a **unit** argument with `gcd(m,5) = 1` that
+> extension is **unramified**, hence just another `Q_{5^d}`. At `m = 8` it is
+> `L = Q_{5^8}`, and CGZ's descent goes through there. The obstruction below
+> was the absence of roots in `B`, not the absence of a constructible lift.
+
+**The degree-1 place of `K = Q(α)` yields exactly one computable
+non-redundant CGZ invariant: `ε₃`.**
+
+| `m` | status |
+|---|---|
+| 3 | the value (Addenda 33–35) |
+| 6 | computable, collapses onto `m = 3` |
+| 8, 12, 24 | require leaving `B` |
+
+"Requires leaving `B`" means the `m`-th root generates the Kummer extension
+`B(z^{1/m})` — the H-side descent CGZ Remark 1.9 flags as unchecked, and
+precisely what this arc foundered on before Addendum 32 relocated the
+target. The shortcut that made `v₁` easy is exhausted at `m = 3` and `6`.
+
+This **closes** the sweep here rather than opening it. It does **not** claim
+`ε₈, ε₁₂, ε₂₄` are undefined or trivial — only that they are unreachable by
+the method that produced `ε₃`, so claiming any of them would need the lift
+actually constructed. Scope-(a).
+
+---
+
+## Addendum 40 (2026-08-19) — `c₂ = 0` is a 1-in-3 event; Addendum 34's reading withdrawn
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_second_element_feasibility_probe.py`](../../computations/probes/gswz_epsm_second_element_feasibility_probe.py)
+— 7/7. Scope-(a); nothing wired.
+
+Addendum 34 concluded *"on the α-line the invariant is carried entirely by
+`[z₁]`"* from `c₂ = 0`. That is **one observation in a group of order 3**.
+Before hunting a second Bloch element to compare against, the cheaper
+question: was the observation worth anything?
+
+### A — no. The class map is exactly equidistributed
+
+Over 240 admissible arguments the class of `P_ζ(X)` splits **80 / 80 / 80**
+across `Z/3`. A symbol landing on `0` is precisely a 1-in-3 event. The
+exactness is itself notable — not a noisy near-third but a perfect one,
+suggesting the map is equidistributed by construction.
+
+### B — and the two symbols were never independent
+
+Within the anharmonic orbit of `K` (order 6, the six maps
+`z, 1/z, 1−z, 1/(1−z), (z−1)/z, z/(z−1)`) the reflection relation pins
+`c(X) + c(1−X)` to a constant — measured `2` on all six. So `c₁` and `c₂`
+are not two free observations; half the orbit determines the other half.
+
+*(A first version of the orbit function alternated `z ↦ 1/z` with
+`z ↦ 1−z` inside one loop and reached only four elements, since `z ↦ 1−z`
+has period 2 alone. The orbit-size check caught it.)*
+
+### C — a second field is cheap, if wanted
+
+46 candidates in `|a|,|b| ≤ 12` with `c = ±1` and `f(1) = ±1` — so both `β`
+and `1−β` are units, since `N(1−β) = f(1)` — irreducible, with a simple root
+mod 5 that Hensel-lifts to a degree-1 place where all four arguments are
+units of `Z₅`. Distinct discriminants include `−23` (K itself), 169, 257,
+697, 2777, …, and `κ` **varies** across them.
+
+### What is withdrawn, and what is not
+
+`ε₃(a[z₁] + b[z₂]) = ζ₃^{−a}` **stands as computed**. What is withdrawn is
+the interpretation laid on top of it. `c₂ = 0` describes this element's
+coefficients; it is not a finding about the invariant's structure.
+
+---
+
+## Addendum 41 (2026-08-19) — CGZ's lift, constructed: `ε₈` at `v₁` is trivial
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_h_lift_m8_probe.py`](../../computations/probes/gswz_epsm_h_lift_m8_probe.py)
+— 17/17. Scope-(a); nothing wired.
+
+Addendum 39 closed the `v₁` sweep at `m = 3, 6` because for `m = 8, 12, 24`
+the roots leave `B` and CGZ's lift — "flagged unchecked" by Remark 1.9 —
+would be needed. **That over-stated the difficulty.**
+
+### `H` is never needed in full
+
+Only the finite Kummer subextension the roots actually generate. For a
+**unit** argument with `gcd(m, 5) = 1` that extension is **unramified** —
+so it is just another `Q_{5^d}` and the same exact machinery applies.
+
+Computed: in `B^×/(B^×)⁸` the Teichmüller part is `Z/8`, the four arguments
+have `μ₂₄` dlogs `6, 12, 12, 6` → images `6, 4, 4, 6`, generating the
+order-4 subgroup `{0,2,4,6}`. So `[L:B] = 4` and
+
+`L = Q_{5^8}`, `N = 5⁸−1 = 390624`, with `8 | N` and `24 | N`.
+
+`μ₈`, `μ₂₄`, the roots and the descent target all live in one field. And
+going up is what buys root-independence: **`1−X` is an 8th power in `L`**
+(it is not in `B`), so the eqn-(21) ratio is an 8th power and the class is
+invariant over all 64 root choices.
+
+### The descent, and its ambiguity — which is the result
+
+Find `v ∈ B^×` with `P_ζ(ξ)/v` an 8th power in `L`. The obstruction
+`δ(d(ξ))` vanishes because `d(ξ) = 0` was computed exactly in `K`
+(Addendum 34). It reduces to one class match in `Z/8`, and it **succeeds**.
+
+It is also **12-fold ambiguous**. A first version of the probe took the
+first solution and reported `R = 6` — one arbitrary choice among four. The
+admissible `k` are all twelve **even** residues mod 24:
+
+| | value |
+|---|---|
+| `R = k mod 8` | **ambiguous** over `{0, 2, 4, 6}` |
+| `R^{w_F} = 4k mod 8` | **`0`**, well defined |
+
+`R` is not determined — exactly what Prop 2.5(b) predicts when
+`gcd(n, w_F) > 1` (here `gcd(8,4) = 4`) — and the `w_F`-power kills
+precisely that ambiguity, because every admissible `k` is even. **Prop
+2.5(b)'s mechanism measured rather than asserted.**
+
+**`ε₈` is trivial at this place.** A value, honestly obtained, and the first
+in this arc from an actual descent rather than from arranging for one to be
+unnecessary.
+
+### Two construction errors, both caught by their own checks
+
+- The `μ₈` search seeded on **scalars**, whose Teichmüller part lies in `μ₄`,
+  so the `N/8` power is always 1 and `ζ₈` was never found.
+- `eighth_root` tried to invert 8 modulo `N/8`, which fails because `N/8` is
+  even — the exponent trick only works on the odd part. Replaced with an
+  explicit baby-step giant-step discrete log.
+
+### Scope
+
+Constructs the lift in **one** case where the Kummer extension is unramified
+and small. Does **not** construct it in general: Remark 1.9 concerns
+arbitrary `F` and `n`, where the extension need not be unramified and
+`H²(Φ,μ)` need not be computable this way. What is shown is that the `v₁`
+obstruction of Addendum 39 was not the real one.
+
+---
+
+## Addendum 42 (2026-08-19) — the `v₁` live set finished: **one invariant at four levels**
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_h_lift_m12_m24_probe.py`](../../computations/probes/gswz_epsm_h_lift_m12_m24_probe.py)
+— 12/12. Scope-(a); nothing wired.
+
+Addendum 41's observation — for a **unit** argument the Kummer extension is
+unramified, hence a finite `Q_{5^d}` rather than `H` — is not special to
+`m = 8`. Applying it finishes the live set.
+
+### The fields
+
+The four arguments' `μ₂₄` dlogs `6, 12, 12, 6` give images generating an
+order-2 subgroup at `m = 12` (`L = Q_{5⁴}`, `N = 624`) and an order-4
+subgroup at `m = 24` (`L = Q_{5⁸}`, `N = 390624`). Both contain `μ_m` and
+`μ₂₄`. Both descents succeed, both are root-independent over all `m²`
+choices, and Prop 2.5(b)'s split was **re-measured at each level** rather
+than carried over: `R` ambiguous, `R^{w_F}` unique, at both.
+
+### I predicted trivial, and was wrong
+
+I wrote `R^{w_F} == 0` at both as a check, by analogy with `m = 8`. It
+**failed**. Measured `R^{w_F} = 8` at both `m = 12` and `m = 24` —
+**non-trivial**.
+
+### The structure is better than either guess
+
+All four computed levels are consistent reductions of a **single class
+`8 ∈ Z/24`**:
+
+| reduction | value | matches |
+|---|---|---|
+| `8 mod 12` | 8 | `m = 12` |
+| `8 mod 8` | 0 | `m = 8` (measured separately, Addendum 41) |
+| `8 mod 3` | 2 | `m = 3` (raw gen-basis `R = 2c₁ + c₂`) |
+
+So the live set carries **one invariant seen at four levels**, not five
+independent ones. `m = 8` is not a vanishing invariant — it is the **2-part
+vanishing while the 3-part carries the content**, which is also why `m = 6`
+collapsed onto `m = 3` (Addendum 38). The cross-level compatibility is a
+falsifiable check and could have failed at any of the three reductions.
+
+### Addendum 39, fully corrected
+
+- "not computable" — wrong on the **mechanism** (Addendum 41: the extension
+  is unramified, so the descent goes through);
+- the follow-up expectation that 12 and 24 would be **trivial** — wrong on
+  the **conclusion** (here).
+
+### Scope
+
+As at `m = 8`, this constructs the lift only where the Kummer extension is
+unramified and small; it is not a general construction. Control: an
+unreachable class is exhibited at each level, so the descent can fail.
+
+---
+
+## Addendum 43 (2026-08-19) — the q₀-anchor breakage: correcting my own "every", and two findings from #5265
+
+Bean `qou-w4gn` (incidental), cross-ref `qou-m9xp`. Not ε_m work — recorded
+here because it surfaced from this arc's precision preflight and the
+correction is mine.
+
+### What I got wrong
+
+I wrote, in the PR body and commit message, that the swept anchor
+**"hard-fails every `ideal_muon` producer"**. I took that from `witness.py`'s
+docstring ("hard-fails all 257 `ideal_muon` producers") rather than
+measuring it.
+
+A sibling on [#5265](https://github.com/litlfred/qou/pull/5265) measured it,
+importing all 257 stems under a faithful argv:
+
+| tree | pin-guard failures | imports clean |
+|---|---|---|
+| committed (proton pin) | **208** | 47 |
+| muon value restored | **0** | 253 |
+
+The 47 survivors have no `q_parameter` in their import cone, so the anchor is
+never resolved; 2 more fail on unrelated `ImportError`. **My "every"
+overstates by 49.**
+
+My own cheap cross-check corroborates the mechanism without reproducing the
+number: of the 257 stems, **31 contain no direct `q_parameter` reference at
+all**, so they cannot reach the guard. That is a lower bound; the gap to 47
+is presumably producers that reference it without the guard firing on their
+path.
+
+**The part worth keeping is not either number.** It is that **manifest
+membership does not predict breakage — the import cone does.** "All 257 are
+in the `ideal_muon` manifest" and "all 257 break" are different claims, and I
+conflated them.
+
+### Two findings from #5265 worth carrying
+
+**A committed audit witness can be green off a dirty tree.** The committed
+`q0-anchor-consistency-audit.witness.json` records `Q0_FLIP: 0` at 13:06Z
+*on main*, while the committed pin file was already proton — jointly possible
+only if a producer had transiently rewritten the pin back to muon in the
+working tree at run time. So that witness was never evidence the corpus was
+clean under this defect, which is why it survived four days.
+
+This generalises past that one file, and it retroactively supports a call I
+made independently: `precision-gates.sh` regenerated that same witness on
+this branch and I **declined to commit it**, because this container lacks
+numpy/scipy and regenerating strips both from the environment record. **A
+regenerated audit witness is only as trustworthy as the tree and environment
+that produced it.**
+
+**Resolving configuration from an `argv` stem is a silent-failure hazard.**
+#5265's own `producer_importability_audit.py` imported via
+`python3 -c "<loader>" <file>`, leaving `sys.argv[0] = "-c"`. `q_parameter`
+resolves the anchor from the argv *stem*, so nothing matched the manifest,
+every producer silently pinned to proton, the muon branch never executed, and
+the audit reported all 257 importable. Any harness that imports producers
+programmatically without spoofing argv is measuring **a configuration nothing
+runs in**. The probes in this arc are unaffected — they import no producers
+and declare `q0Anchor: "independent"` statically.
+
+### On the `Q0_OK` base
+
+#5265 measures `654 → 392`; I measure `658 → 396`. Both find **262 flips**.
+Given the dirty-tree finding above, **neither base should be quoted as a
+corpus fact** without naming the tree it came from. The 262 is the robust
+number.
+
+---
+
+## Addendum 44 (2026-08-19) — `v₂` confirmed vacuous, and for a second reason
+
+Beans `qou-w4gn`, `qou-y3xv`, `qou-9p9y`. Probe
+[`gswz_epsm_v2_vacuity_confirmation_probe.py`](../../computations/probes/gswz_epsm_v2_vacuity_confirmation_probe.py)
+— 12/12. Scope-(a); nothing wired.
+
+Addendum 32 predicted the degree-2 place carries no `ε_m` invariant, and
+never measured it. Given how many inferences in this arc failed once
+measured — *"hard-fails every producer"*, *"m = 12 and 24 will be trivial"*,
+*"μ_m ⊂ Q₅ iff m coprime to 4"* — the prediction gets checked.
+
+**Confirmed:** the eigenspace at `v₂` is the whole order-9 group; the
+descent is ambiguous by all of it.
+
+### And a second reason the eigenspace argument does not give
+
+At `v₂` the local field is `Q₂₅`, whose roots of unity are `μ₂₄`, so
+**`w_F = 24`** (counted). CGZ's Theorem 1.2 needs `(n, w_F) = 1`; at `n = 3`
+that is `gcd(3,24) = 3 > 1`, so the theorem does not apply and Prop 2.5
+defines only `R^{w_F} = R²⁴` — which in a group of exponent 3 is `(R³)⁸ = 1`,
+**identically trivial**. The same mechanism that makes `m = 2` vacuous in
+every field (Addendum 37).
+
+This is the **stronger** statement. The eigenspace reason says the descent
+carries no information; the `w_F` reason says there is nothing non-trivial to
+descend *to*, even granting a descent.
+
+### Contrast control
+
+The same computation at `v₁`: `w_F = 4`, `gcd(3,4) = 1`, Theorem 1.2 applies,
+eigenspace 3 of 9, `R^{w_F}` **not** identically trivial. The test
+discriminates between the places rather than reporting "vacuous" everywhere.
+
+### The α-line at `p = 5`, complete
+
+| place | `K_v` | `w_F` | Thm 1.2 | eigenspace | invariant |
+|---|---|---|---|---|---|
+| `v₁` (deg 1) | `Q₅` | 4 | **applies** | 3 of 9 | **`8 ∈ Z/24`**, at four levels |
+| `v₂` (deg 2) | `Q₂₅` | 24 | no | 9 of 9 | none, twice over |
+
+No value changes. This closes the `v₂` question by measurement.

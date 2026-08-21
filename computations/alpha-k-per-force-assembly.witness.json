@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:12:58.070524+00:00",
-  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
+  "computedAt": "2026-08-15T11:27:12.723473+00:00",
+  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
   "assertions": [
     {
       "name": "EM trace-ratio identity h^2/(q dq9 dq10) = 1/(q[9]_q[10]_q)",
@@ -37,8 +37,8 @@
   "durationMs": 11,
   "computation": "alpha-k-per-force-assembly",
   "scriptFile": "alpha_k_per_force_assembly.py",
-  "scriptHash": "7b1afa37157f",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "1cd2a0da8a68",
+  "scriptCommitSha": "9c0daf79e07b77570dd10f25e2dafb2aa2a53a75",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,12 +49,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "alpha_{basis-knot} step 3: per-force assembly.  Wires the step-2 writhe decoration delta_q(T_{m,k}) = h[(m-1)k]_q into the established force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): each carrier T_{m,k} carries an intertwining partition lambda=(m,1^{n-m}) [first index m] and a writhe decoration h[(m-1)k]_q [writhe (m-1)k].  The two genus-4 carriers are T_{2,9} (strong; (2,1,1), h[9]_q) and T_{3,5} (weak/beta; (3,1), h[10]_q), transpose partitions (Frobenius self-dual).  The established EM trace-ratio 1/alpha_EM = h^2/(q delta_q(T_{2,9}) delta_q(T_{3,5})) = q[9]_q[10]_q is assembled end-to-end from the derived writhe decorations (residual vs CODATA reported).  The per-force SELECTION rule (which carrier pair mediates the other forces) stays conditional on conj:e-hartree-categorical-derivation; NO carrier-pair-vs-coupling enumeration is done (anti-fishing).  Pre-archimedean decorations, no pi.",
   "contentBlock": "prop:force-carrier-intertwining-correspondence",
   "data": {
-    "q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q0_anchor": "proton",
+    "q0_source": "qou_substrate.constants.q_at()",
+    "q0_manifest_tag": "ideal_muon",
+    "q0_anchor_caveat": "q0_anchor_manifest.json tags this producer `ideal_muon`, but the code imports q_at directly rather than routing through q_parameter, so the tag cannot fire and a successful import yields the PROTON pin. Unresolved by design; see bean qou-7vm4.",
     "n_reference_strands": 4,
     "force_knots": {
       "T_2_3": {
@@ -67,7 +72,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[3]_q",
-        "delta_q_value_at_q0": "0.6363182020437610722260131857536351805820699745922230664109714779174567",
+        "delta_q_value_at_q0": "0.6363181294019515139253712488142545739471077114432856525408475083536772",
         "role": "electromagnetic (alpha_EM particle, trefoil)"
       },
       "T_2_5": {
@@ -80,7 +85,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[5]_q",
-        "delta_q_value_at_q0": "1.091387144296020475404497564095161284099922621501137070502926606503795",
+        "delta_q_value_at_q0": "1.091387012864929717055132249115480620271302912384958173558037893635092",
         "role": "2nd generation"
       },
       "T_2_7": {
@@ -93,7 +98,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[7]_q",
-        "delta_q_value_at_q0": "1.594156491253464701875366628330103356192761341657472132160518836682053",
+        "delta_q_value_at_q0": "1.594156284701868797602245650114350220181861076834695654333573384122148",
         "role": "charm / 3rd generation"
       },
       "T_2_9": {
@@ -106,7 +111,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[9]_q",
-        "delta_q_value_at_q0": "2.166600389715029085367557766161800708003507202684134671483822139761941",
+        "delta_q_value_at_q0": "2.166600083551418249953243795422177917535904294209919408659280265148226",
         "role": "strong binding (force-carrier)"
       },
       "T_3_4": {
@@ -118,7 +123,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[8]_q",
-        "delta_q_value_at_q0": "1.870188838981080351151786941711045724171768977788740918162234219840185",
+        "delta_q_value_at_q0": "1.870188586255837843387140511299067074948094592442937993907717428676152",
         "role": "Hopf-squared / top"
       },
       "T_3_5": {
@@ -130,17 +135,17 @@
           1
         ],
         "delta_q_h_qbracket": "h*[10]_q",
-        "delta_q_value_at_q0": "2.486621101329041028650932673689219464691844028391491790640066749433215",
+        "delta_q_value_at_q0": "2.486620733165098499023862223672432009639190308674340629266773293231987",
         "role": "weak / beta-decay (force-carrier)"
       }
     },
-    "delta_q_T2_9_h9": "2.166600389715029085367557766161800708003507202684134671483822139761941",
-    "delta_q_T3_5_h10": "2.486621101329041028650932673689219464691844028391491790640066749433215",
-    "inv_alpha_em_traceratio": "136.8232196572221784442158538912135031324824018881223584803525956770734",
+    "delta_q_T2_9_h9": "2.166600083551418249953243795422177917535904294209919408659280265148226",
+    "delta_q_T3_5_h10": "2.486620733165098499023862223672432009639190308674340629266773293231987",
+    "inv_alpha_em_traceratio": "136.8232088535825843080461054044414784949299951797473600635303837071519",
     "codata_inv_alpha": "137.035999177",
-    "inv_alpha_residual_rel": "-0.001552727174287895299213957938348932038141577244433284624594979195016088",
+    "inv_alpha_residual_rel": "-0.001552806012254991681308216448781222762025680502931893738744306896250931",
     "finding": "Per-force assembly: each torus-knot carrier T_{m,k} carries a derived intertwining partition (m,1^{n-m}) [index m] AND a derived writhe decoration h[(m-1)k]_q [writhe (m-1)k].  T_{2,9}=strong ((2,1,1),h[9]_q) and T_{3,5}=weak ((3,1),h[10]_q) are transpose partitions; their e_- Hopf trace-ratio assembles 1/alpha_EM = q[9]_q[10]_q end-to-end (residual -1.55e-3 vs CODATA).  The per-force selection rule for the OTHER forces stays conditional on conj:e-hartree-categorical-derivation; not fitted.  Next: step 6, the pre-archimedean (no-pi) source of the 2/(3pi)+alpha/(4pi) corrections via the Hopf S^1->S^3->S^2 / e_- channel."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
