@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-19T12:03:18Z
+updated_at: 2026-08-21T14:58:56Z
 ---
 
 
@@ -2661,3 +2661,40 @@ far.
   `lake-cache/qou-<toolchain-slug>`: that branch carries Mathlib but **no UGB
   oleans**, so build the cone Elem → Basic → CompositionLemma → NormalForms →
   AlgOps → HeckeGS first (~30 s), then `HeckeCompletion` (~2 min).
+
+### The block's uniform loop — `blockTransportRight` (§4ai)
+
+Half of next-tranche item 1. Measured the per-level `(A, X, W, B)` decomposition
+across the block, and the level-to-level transition is:
+
+    B_{k−1} = [σ just moved] ++ B_k        (the moved letter joins B)
+    W_{k−1} = one letter longer, until the cap; then fixed
+    A_{k−1} = A_k shortened correspondingly
+
+So in the **capped** region — every level after the fixed two (one on the
+diagonal) — the run `W` is constant and each level peels one letter off the
+right end of the remaining block and carries it across. That is exactly "carry a
+whole word `X` rightwards past a whole word `W`", with no reference to the block
+at all, which is what `blockTransportRight` states.
+
+**Peeling direction is forced.** `X` must be peeled from the **right**: its last
+letter sits against `W`, transports across, and joins `B`. From the left there
+is no single transport to apply — the head of `X` is separated from `W` by the
+rest of `X`. Hence `List.reverseRecOn` rather than ordinary list induction.
+
+**Parked-term hypothesis.** Enumerating this induction's intermediates would
+mean splitting `X` *and* `W` simultaneously, which is unusable. But every word
+any step rewrites is `A ++ z`, so `loopTwoGen`'s single hypothesis — no parked
+term begins with `A` — discharges every collision obligation at once. Same
+device, same reason.
+
+Built first try. Sorry-free, standard axioms, `lean`-direct exit 0 on the full
+file with no warnings, and checked non-vacuous by carrying a two-letter block
+past a two-letter run (four far-commutations) with a bystander that does not
+begin with the context.
+
+**Remaining, narrowed.** (a) The fixed prologue — two short levels off the
+diagonal, one on it — as individual `farComm_transport_right_sources`
+applications with explicit contexts, in the style of the `a > b` regime's
+`s1`–`s4`. (b) The assembly. Note (a) is a *fixed* amount of work independent of
+`a` and `b`, which is the whole point of the level-structure measurement.
