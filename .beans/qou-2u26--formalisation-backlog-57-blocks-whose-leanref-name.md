@@ -289,13 +289,50 @@ Neither "unformalised" nor "mis-referenced to a declaration that does not exist"
 
 > **formalised, in a file the resolver cannot reach.**
 
-The Lean is written, correct, and sitting one file over. The fix is neither a
-formalisation nor a repoint-to-the-right-name — it is either moving the
-declaration into the library tree or pointing the ref at the file that has it.
-Cheapest of the three to close, and invisible to a name-based scan in both
-directions: my index said "declared" because it found the name; a
-strict fully-qualified matcher says "absent" because the path is wrong. Both
-are describing the same file-location fact.
+The Lean is written, correct, and sitting one file over.
+
+**Correction to my own first reading of this, made an hour later: these four are
+not repoints, and I should not have called them the cheapest fix on the list.**
+I checked the namespaces. They are right:
+
+| ref | declared in | namespace at that site |
+|---|---|---|
+| `QOU.BraidsAndKnots.figure_eight_classical_reeb` | `braids-and-knots/figure-eight-reeb-rotation.lean:128` | `namespace QOU.BraidsAndKnots` ✓ |
+| `QOU.Braiding.pair_cancellation` | `observations/crossing-energy-decomposition.lean:210` | `namespace QOU.Braiding` ✓ |
+| `QOU.MassEndomorphism.rotation_step` | `mass-endomorphism/binding-qbeta-complex-volume.lean:208` | `namespace QOU.MassEndomorphism` ✓ |
+| `QOU.MassEndomorphism.AWDeformationPath` | same file, `:402` | `namespace QOU.MassEndomorphism` ✓ |
+
+Each ref names its declaration **correctly and fully qualified**. A `lean.ref` is
+a *declaration* path, not a file path, so there is nothing to point somewhere
+else — **there is no mis-reference here to fix.**
+
+What fails is file *lookup*. None of the four referencing blocks has a sibling
+`.lean` (checked), so resolver candidate 1 is out; and the declaration lives in a
+**chapter-directory `.lean` belonging to a different block**, which is not under
+`lean/`, so candidate 2 (`<lakeRoot>/<Decl/Path>.lean`) is out too. The resolver
+never looks in "some other block's sibling in the same chapter", and that is
+exactly where all four declarations are.
+
+So the category is narrower and less tractable than I first wrote:
+
+> **the reference is correct; the resolver cannot see the file.**
+
+Three dispositions, none of them a one-line edit: move the declaration into the
+library tree (touches Lean and imports); index chapter-directory `.lean` files by
+declaration name (a folio-assistant change, i.e. another repo); or give the
+referencing block a sibling. Which one is right is an architecture call, not
+idle-drain work — **flagging rather than doing.**
+
+Consistent with the label-test entry's note that these four are "exactly the set
+folio-assistant PR #121 predicted": if #121 tightened the grep fallback
+(candidate 3) that had previously been resolving them out of the chapter
+directory, these four would become visible at precisely that commit. Stated as
+consistent-with, not established — I have not read #121.
+
+Invisible to a name-based scan in both directions, which is how two runs
+disagreed on it: my index said "declared" because it found the name; a strict
+fully-qualified matcher says "absent" because the file is not where the path
+says. Both are describing the same file-location fact.
 
 ### The 9 stand, and the two counts cannot both be complete
 
