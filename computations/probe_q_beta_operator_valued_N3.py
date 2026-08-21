@@ -51,9 +51,28 @@ set_compute_dps()
 
 
 def _q_0_50dps() -> mp.mpf:
-    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
-        d = json.load(fh)
-    return mp.mpf(d["derived_50_digit"]["q"])
+    """The PROTON 50-digit pin.
+
+    This read `derived_50_digit.q` out of `q-pinning-50-digit.witness.json`,
+    which is the MUON value -- that producer is listed `ideal_muon`, so its
+    Newton solve never runs and the field holds the muon literal. Nothing in
+    this probe said so, and the witness it emits declares no `q0Anchor` at
+    all, so the muon-ness was invisible to every consumer downstream.
+
+    It surfaced when `probes/qbeta_habiro_residual_probe.py` was repinned to
+    proton (owner ruling 2026-08-21) and started comparing its live
+    single-wrap against the `Q_A` stored here: the agreement went from 1.1e-42
+    to 29.96 ppb. The former figure was not a validation -- it was both sides
+    being muon. 29.96 ppb is ~2.6x the 11.54 ppb pin separation, i.e. Q_beta
+    amplifies the anchor.
+
+    Now takes the proton pin by name, the same way `alpha_k_jones_markov_h12`
+    and the habiro probe do. The witness still records the pin file as an
+    upstream, but for provenance rather than for the value. Bean `qou-m9xp`.
+    """
+    from q_parameter import Q_50_DIGIT_STR
+
+    return mp.mpf(Q_50_DIGIT_STR)
 
 
 def main() -> int:
