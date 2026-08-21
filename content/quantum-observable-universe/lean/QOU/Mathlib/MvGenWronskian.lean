@@ -14,8 +14,9 @@
   determinant of **products of partials of bounded total order** — one operator per row,
   chosen, not canonical.
 
-  This file supplies the several-variable object and the direction Roth's lemma actually
-  uses.
+  This file supplies the several-variable object and **both** directions: a dependence kills
+  every generalized Wronskian, and — in characteristic zero — an independent family has one
+  that is non-zero (`linearIndependent_iff_exists_mvGenWronskian_ne_zero`).
 
   ═══ WHY THE OPERATOR FAMILY IS AN ARGUMENT ═══
 
@@ -36,9 +37,10 @@
   `map_sum` and `map_smul` rather than an induction.
 
   ⚠ **Characteristic.**  Ordinary partials are used, not Hasse derivatives.  That is correct
-  for Roth, which lives over number fields, but it means the converse direction would be
-  false in characteristic `p` for the same reason as in the univariate file.  Only the
-  direction proved here is characteristic-free.
+  for Roth, which lives over number fields, but it confines the **converse** to characteristic
+  zero: the bridge from coefficients to derivatives rescales each row by a positive integer,
+  and in characteristic `p` those integers can vanish in `K`.  The dependence direction is
+  characteristic-free; the converse is not, and not removably so.
 -/
 import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.MvPolynomial.CommRing
@@ -238,27 +240,170 @@ theorem linearIndependent_iff_exists_coeffMatrix_det_ne_zero {m : ℕ}
 
 end CoeffMinor
 
+/-! ### The bridge from coefficients to derivatives
+
+`exists_coeffMatrix_det_ne_zero` produces multi-indices; the Wronskian needs differential
+operators.  In characteristic zero the two differ by a positive-integer factor per row,
+which is invisible to a determinant being non-zero. -/
+
+section Bridge
+
+/-- Differentiating shifts the coefficient index and multiplies by the exponent. -/
+theorem coeff_pderiv [DecidableEq σ] (j : σ) (γ : σ →₀ ℕ) (g : MvPolynomial σ R) :
+    coeff γ (pderiv j g) = ((γ j : R) + 1) * coeff (γ + Finsupp.single j 1) g := by
+  induction g using MvPolynomial.induction_on' with
+  | monomial s a =>
+    rw [pderiv_monomial, coeff_monomial, coeff_monomial]
+    by_cases h : s = γ + Finsupp.single j 1
+    · subst h
+      have hsub : γ + Finsupp.single j 1 - Finsupp.single j 1 = γ := by simp
+      rw [hsub, if_pos rfl, if_pos rfl]
+      simp only [Finsupp.add_apply, Finsupp.single_eq_same]
+      push_cast
+      ring
+    · rw [if_neg h, mul_zero]
+      by_cases h2 : s - Finsupp.single j 1 = γ
+      · -- ⚠ the degenerate case: truncated subtraction fixed `s`, which forces `sⱼ = 0`,
+        -- and `pderiv_monomial`'s factor `sⱼ` then kills the term anyway
+        have hsj : s j = 0 := by
+          by_contra hne
+          apply h
+          have hle : Finsupp.single j 1 ≤ s := by
+            rw [Finsupp.single_le_iff]; omega
+          rw [← h2, tsub_add_cancel_of_le hle]
+        rw [if_pos h2, hsj]
+        simp
+      · rw [if_neg h2]
+  | add p q hp hq => simp [hp, hq]; ring
+
+/-- The multi-index counting occurrences of each variable in a list. -/
+noncomputable def multiIndexOf (l : List σ) : σ →₀ ℕ := (l.map fun j => Finsupp.single j 1).sum
+
+@[simp] theorem multiIndexOf_nil : multiIndexOf ([] : List σ) = 0 := rfl
+
+@[simp] theorem multiIndexOf_cons (j : σ) (l : List σ) :
+    multiIndexOf (j :: l) = Finsupp.single j 1 + multiIndexOf l := by
+  simp [multiIndexOf]
+
+theorem multiIndexOf_append (l₁ l₂ : List σ) :
+    multiIndexOf (l₁ ++ l₂) = multiIndexOf l₁ + multiIndexOf l₂ := by
+  simp [multiIndexOf, List.sum_append]
+
+theorem multiIndexOf_replicate (j : σ) (n : ℕ) :
+    multiIndexOf (List.replicate n j) = Finsupp.single j n := by
+  induction n with
+  | zero => simp
+  | succ k ih => rw [List.replicate_succ, multiIndexOf_cons, ih, ← Finsupp.single_add]; ring_nf
+
+/-- **Every multi-index is realised by a list**, so an operator family can be built from any
+family of multi-indices. -/
+theorem exists_multiIndexOf_eq (α : σ →₀ ℕ) : ∃ l : List σ, multiIndexOf l = α := by
+  classical
+  induction α using Finsupp.induction with
+  | zero => exact ⟨[], rfl⟩
+  | single_add a b f _ _ ih =>
+    obtain ⟨l, hl⟩ := ih
+    exact ⟨List.replicate b a ++ l, by rw [multiIndexOf_append, multiIndexOf_replicate, hl]⟩
+
+/-- **Iterating `coeff_pderiv` along a list.**
+
+⚠ The constant depends only on `γ` and `l`, **never on `g`** — the quantifier order matters,
+because the whole point is to pull a single factor out of an entire matrix row. -/
+theorem exists_coeff_pderivList [DecidableEq σ] (l : List σ) (γ : σ →₀ ℕ) :
+    ∃ c : ℕ, 0 < c ∧ ∀ g : MvPolynomial σ R,
+      coeff γ (pderivList l g) = (c : R) * coeff (γ + multiIndexOf l) g := by
+  induction l generalizing γ with
+  | nil => exact ⟨1, Nat.one_pos, fun g => by simp⟩
+  | cons j l' ih =>
+    obtain ⟨c', hc', hstep⟩ := ih (γ + Finsupp.single j 1)
+    refine ⟨(γ j + 1) * c', by positivity, fun g => ?_⟩
+    have hcons : pderivList (j :: l') g = pderiv j (pderivList l' g) := rfl
+    rw [hcons, coeff_pderiv, hstep]
+    have hidx : γ + Finsupp.single j 1 + multiIndexOf l' = γ + multiIndexOf (j :: l') := by
+      rw [multiIndexOf_cons]; abel
+    rw [hidx]
+    push_cast
+    ring
+
+end Bridge
+
+/-! ### The converse -/
+
+section Converse
+
+variable {K : Type*} [Field K]
+
+/-- **An independent family has a non-zero generalized Wronskian.**
+
+The Wronskian is non-zero because it is non-zero **at the origin**. Independence gives a
+non-singular coefficient minor at multi-indices `α`; realise each `α i` as a list of
+variables to get the operator family; then `constantCoeff` is a ring hom, so it commutes
+with the determinant, and the resulting scalar matrix is `diagonal c * coeffMatrix α f`.
+
+⚠ **Where characteristic zero enters, and why it cannot be avoided here.** The `c i` are
+positive integers — products of exponents thrown off by `coeff_pderiv`. Their product must
+be non-zero *in `K`*, which is exactly `CharZero`. Over `𝔽ₚ` the same construction can
+produce a genuinely zero determinant from an independent family, which is the multivariate
+face of the failure that makes the univariate converse false in characteristic `p`. -/
+theorem exists_mvGenWronskian_ne_zero [CharZero K] [DecidableEq σ]
+    {m : ℕ} (f : Fin m → MvPolynomial σ K) (hf : LinearIndependent K f) :
+    ∃ D : Fin m → List σ, mvGenWronskian D f ≠ 0 := by
+  classical
+  obtain ⟨α, hα⟩ := exists_coeffMatrix_det_ne_zero f hf
+  choose D hD using fun i => exists_multiIndexOf_eq (α i)
+  choose c hcpos hc using fun i => exists_coeff_pderivList (R := K) (D i) 0
+  refine ⟨D, fun hzero => ?_⟩
+  have hmat : (mvWronskianMatrix D f).map (constantCoeff (R := K) (σ := σ))
+      = Matrix.diagonal (fun i => (c i : K)) * coeffMatrix α f := by
+    ext i j
+    rw [Matrix.diagonal_mul]
+    simp only [Matrix.map_apply, mvWronskianMatrix, Matrix.of_apply, coeffMatrix]
+    rw [constantCoeff_eq, hc i (f j), hD i, zero_add]
+  have hdet : constantCoeff (mvGenWronskian D f)
+      = (∏ i, (c i : K)) * (coeffMatrix α f).det := by
+    rw [mvGenWronskian, RingHom.map_det, RingHom.mapMatrix_apply, hmat, Matrix.det_mul,
+      Matrix.det_diagonal]
+  rw [hzero, map_zero] at hdet
+  have hprod : (∏ i, (c i : K)) ≠ 0 := by
+    refine Finset.prod_ne_zero_iff.mpr fun i _ => ?_
+    exact Nat.cast_ne_zero.mpr (hcpos i).ne'
+  exact hα (by
+    rcases mul_eq_zero.mp hdet.symm with h | h
+    · exact absurd h hprod
+    · exact h)
+
+/-- **Independence is exactly a non-vanishing generalized Wronskian**, in characteristic
+zero — the certificate Roth's lemma consumes, in both directions. -/
+theorem linearIndependent_iff_exists_mvGenWronskian_ne_zero [CharZero K] [DecidableEq σ]
+    {m : ℕ} (f : Fin m → MvPolynomial σ K) :
+    LinearIndependent K f ↔ ∃ D : Fin m → List σ, mvGenWronskian D f ≠ 0 := by
+  classical
+  refine ⟨exists_mvGenWronskian_ne_zero f, ?_⟩
+  rintro ⟨D, hDne⟩
+  rw [Fintype.linearIndependent_iff]
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨c, hsum, i, hci⟩ := hcon
+  refine hDne (mvGenWronskian_eq_zero_of_dependent D f c ?_ ?_)
+  · intro h
+    rw [h] at hci
+    exact hci rfl
+  · rw [← hsum]
+    exact Finset.sum_congr rfl fun j _ => (smul_eq_C_mul _ _).symm
+
+end Converse
+
 /-! ### Next
 
-The **converse** — some generalized Wronskian is non-zero whenever the family is
-independent — now has its linear algebra done (`exists_coeffMatrix_det_ne_zero`). What is
-left is a bridge, not another existence argument:
+Both directions of the generalized-Wronskian criterion are now proved, so the independence
+certificate Roth's lemma needs is complete. What remains is **Roth's lemma itself** — the
+induction on the number of variables — and then Roth's theorem.
 
-1. `coeff γ (pderiv j g) = (γⱼ + 1) · coeff (γ + eⱼ) g`, iterated along a list, giving
-   `coeff 0 (pderivList l g) = c_l · coeff (multi-index of l) g` with `c_l` a positive
-   integer depending only on `l`.
-2. Every multi-index is the multi-index of some list, so the `α` produced above can be
-   realised by an operator family `D`.
-3. `eval 0` is a ring hom and `eval 0 P = coeff 0 P`, so it commutes with `det`
-   (`RingHom.map_det`). The resulting matrix is `diagonal (c_{D i}) * coeffMatrix α f`,
-   whose determinant is `(∏ᵢ c_{D i}) · det (coeffMatrix α f) ≠ 0` — **in characteristic
-   zero**, where the positive integers `c` stay invertible.
-
-So the Wronskian is non-zero because it is non-zero *at the origin*.
-
-⚠ Step 3 is exactly where characteristic zero enters, and it is not removable by care: in
-characteristic `p` the factorials `c_l` can vanish in `K`, which is the same failure that
-makes the univariate converse false there. A characteristic-free statement needs Hasse
-derivatives, whose whole point is to carry the `1/α!` already divided out. -/
+⚠ One gap between this criterion and the form Roth's lemma consumes: Roth needs the operator
+family to have **bounded order** (`Δᵢ` of total order `< i`, or bounded by `m`). The `D`
+produced by `exists_mvGenWronskian_ne_zero` comes from arbitrary multi-indices and carries
+no such bound. Getting the bound is a genuine extra step, not bookkeeping — it is where the
+degree hypotheses on the auxiliary polynomial actually enter. Recorded so nothing downstream
+consumes this as though the bound were already there. -/
 
 end MvPolynomial
