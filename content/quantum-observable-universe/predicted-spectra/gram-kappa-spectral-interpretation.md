@@ -1,4 +1,4 @@
-**Numerical check at $q_0 = 1.109978595554181\ldots$ (50 dps).**
+**Numerical check at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps).**
 
 The Hoefsmit pipeline ([Hoefsmit](#conj:hoefsmit-scattering-pipeline)) computes $\chi_\lambda(\beta_s)$ and $\chi_\lambda(\beta_w)$ in seminormal form. At strand count $n = 9$, the hook partitions $(8,1)$ and $(7,1,1)$ and the rectangular partition $(5,4)$ are the dominant blocks. Substituting the Plancherel weights $w_\lambda = \dim_q^2(V_\lambda)/[n]_q!$ and character values yields
 

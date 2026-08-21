@@ -1421,6 +1421,21 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:05.971Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No assert-by-denial in the block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1440,6 +1455,21 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.008Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Three limit statements followed by three interpretive claims; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1459,6 +1489,21 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.046Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1478,6 +1523,22 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.085Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Two three-part groupings, both substantive: the limits q->1 / q->0 or infinity / q_0, and the closing three claims (what the sum measures, what the tower measures, what is braid-independent).",
+        "notes": "Rhythm note: the closing paragraph is three unhedged subject-verb-object declaratives of near-equal length, the same staccato cadence seen in frobenius-cocasimir-refuted-deuteron and partition-sum-proton-residual — recognisable de-hedged drafting, but each sentence here carries a distinct claim."
       }
     ],
     "trap-closing-aphorism": [
@@ -1497,6 +1558,21 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.124Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'The substrate imposes the Frobenius bound independently of the braid' states the vortex-independence result, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1516,6 +1592,21 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.166Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1535,6 +1626,21 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.206Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The closing sentence adds the braid-independence claim rather than restating the limits."
       }
     ],
     "trap-performed-warmth": [
@@ -1554,6 +1660,21 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.244Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1573,6 +1694,23 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.282Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "minor",
+        "evidence": "'the substrate's fundamental processing overhead' — unearned intensifier on an already-interpretive metaphor.",
+        "notes": "FIXED: 'the substrate's fundamental processing overhead' -> 'the substrate's processing overhead'."
       }
     ],
     "trap-nonspeakable": [
@@ -1592,6 +1730,22 @@
         "reviewed_at": "2026-08-15T10:31:00.697Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "09228961e1a3",
+          "ts": "d1119492165f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:06.319Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Short sentences throughout.",
+        "notes": "VERIFIED: the three limit claims are all correct. q->1 gives sum 1/d_lambda; q->0 and q->infinity give exactly 2 (only the two 1-dimensional endpoint blocks keep dim_q = 1) for n >= 2; and q=1 is genuinely the maximum, so 'slightly reduced' at q_0 is right — at n=3 the sum is 2.4972905456 against the classical 5/2, i.e. -0.108%."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1614,5 +1768,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:53:06.319Z"
 }

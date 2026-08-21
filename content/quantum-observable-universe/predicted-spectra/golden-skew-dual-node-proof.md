@@ -3,7 +3,7 @@ Let $s_0$ be a root of $s^2 + s - 1 = 0$. Multiplying by $-s_0^{-2}$ yields $-1 
 
 **Two-sided stability margin.**
 
-The physical parameter $q_0 = 1.109978595554181\ldots$ (50 dps) lies in the open interval $(1, \varphi^2)$. The two golden nodes bracket this regime to define a two-sided stability margin:
+The physical parameter $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) lies in the open interval $(1, \varphi^2)$. The two golden nodes bracket this regime to define a two-sided stability margin:
 
 See [Table: Golden-ratio dual nodes](#tbl:golden-skew-dual-node-table-data).
 
