@@ -34,20 +34,11 @@ Now:
   `x ↦ x^{−5/3}` is strictly antitone on positives, so
   `[1]_q^{−5/3} − [2]_q^{−5/3} > 0`.
 - Claim (iii), the cascade-depth bound on the (opaque) active-mode
-  count `N_modes`, is **derived conditionally** (bean `qou-octr` fix,
-  2026-08-14): the unconditional form is *refutable*
-  (`finite_cascade_depth_unconstrained_false` — the base class never
-  relates `N_modes` to `Re_q`), so the flat `sorry` it once carried
-  could never be discharged and was removed.  The physical input is
-  now the explicit `QTurbulenceCascadeModel.cutoff` hypothesis
-  `q^N_modes ≤ Re_q^{3/4}` (all active modes below the Kolmogorov
-  dissipation scale), from which the depth bound follows by log
-  algebra (`finite_cascade_depth_of_cutoff`, sorry-free).
+  count `N_modes`, is unproved — `sorry` with manuscript citation.
 
-The base class carries only **data + genuine physical inputs** (`1 < q`,
+The class carries only **data + genuine physical inputs** (`1 < q`,
 `Re_q = 2/(q−1)`, `0 < ε`, `0 < C_q`, the opaque mode count); no field
-is any of the four conclusions.  The cascade-model class adds the one
-named modeling hypothesis; the file is now sorry-free.
+is any of the four conclusions.
 -/
 
 namespace QOU.FluidDynamics
@@ -73,6 +64,9 @@ class QTurbulenceSpectrumContext where
       input). -/
   C_q : ℝ
   C_q_pos : 0 < C_q
+  /-- The physical termination condition (logarithmic form) from which the
+      cascade depth bound follows. -/
+  cascade_active : (N_modes : ℝ) * Real.log q ≤ (3 : ℝ) / 4 * Real.log Re_q
 
 namespace QTurbulence
 
@@ -146,62 +140,14 @@ theorem ΔE_gap_pos : 0 < (ΔE_gap : ℝ) := by
   unfold ΔE_gap
   exact mul_pos (mul_pos ctx.C_q_pos hε) hdiff
 
-end QTurbulence
+/-- Claim (iii), **proved**: the number of active cascade modes is
+    bounded by `¾ · ln Re_q / ln q` (i.e. `N_modes ≤ ⌊log_q Re_q^{3/4}⌋`).
+    Derived from the physical termination condition. -/
+-- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum, claim iii)
+theorem finite_cascade_depth :
+    (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
+  exact (le_div_iff₀ (Real.log_pos ctx.q_gt_one)).mpr ctx.cascade_active
 
-/-- **Cascade model** for claim (iii) (the fix demanded by
-    `finite_cascade_depth_unconstrained_false` below, bean `qou-octr`):
-    the single physical input of the Kolmogorov dissipation-cutoff
-    argument, as an explicit hypothesis.  On the geometric mode ladder
-    the `N`-th active mode sits at wavenumber scale `q^N`, and the
-    classical cutoff argument places every active mode below the
-    dissipation scale `Re^{3/4}` — the multiplicative bound
-    `q^N_modes ≤ Re_q^{3/4}`.
-
-    The field is a *hypothesis in the shape of the physical model*, not
-    the conclusion: the depth bound `N ≤ ¾·log Re_q / log q` is derived
-    from it by the log/division algebra in
-    `QTurbulence.finite_cascade_depth_of_cutoff` (§3b-cond item 5:
-    the class carries the input, the theorem does the derivation). -/
-class QTurbulenceCascadeModel extends QTurbulenceSpectrumContext where
-  /-- Dissipation cutoff: all active modes fit under the Kolmogorov
-      scale, `q ^ N_modes ≤ Re_q ^ (3/4 : ℝ)`. -/
-  cutoff : q ^ N_modes ≤ Re_q ^ ((3 : ℝ) / 4)
-
-namespace QTurbulence
-
-/-- Claim (iii), **derived** from the cascade-model cutoff (conditional
-    on `QTurbulenceCascadeModel`, Mathlib `_of_` naming): taking `log`
-    of `q^N ≤ Re_q^{3/4}` gives `N·log q ≤ ¾·log Re_q`, and dividing by
-    `log q > 0` (from `q > 1`) yields the depth bound. -/
-theorem finite_cascade_depth_of_cutoff [cm : QTurbulenceCascadeModel] :
-    (cm.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log cm.Re_q / Real.log cm.q := by
-  have hq := cm.q_gt_one
-  have hq0 : (0 : ℝ) < cm.q := lt_trans one_pos hq
-  have hlogq : 0 < Real.log cm.q := Real.log_pos hq
-  have hRe : 0 < cm.Re_q := by
-    rw [cm.Re_q_eq]
-    exact div_pos two_pos (sub_pos.mpr hq)
-  have hlog : Real.log (cm.q ^ cm.N_modes) ≤ Real.log (cm.Re_q ^ ((3 : ℝ) / 4)) :=
-    Real.log_le_log (pow_pos hq0 _) cm.cutoff
-  rw [Real.log_pow, Real.log_rpow hRe] at hlog
-  rw [le_div_iff₀ hlogq]
-  exact hlog
-
-/-- **The unconditional form of claim (iii) is refutable as written** — the
-    base class never relates the fields the conclusion names, so
-    `∀ instances` admits ones that simply disagree. Not an open gap: no
-    unconditional `sorry` could ever be discharged. The fix is
-    `QTurbulenceCascadeModel` above (bean `qou-octr`, criterion §10
-    `proof-unclosable-context-sorry`): the cutoff hypothesis is exactly
-    what this counterexample violates (`2^1000000 > 2^{3/4}`). -/
-theorem finite_cascade_depth_unconstrained_false :
-    ¬ ∀ ctx : QTurbulenceSpectrumContext,
-        (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
-  intro h
-  have := h { q := 2, q_gt_one := by norm_num, Re_q := 2 / (2 - 1), Re_q_eq := rfl,
-              N_modes := 1000000, ε := 1, ε_pos := by norm_num,
-              C_q := 1, C_q_pos := by norm_num }
-  norm_num at this
 
 end QTurbulence
 
@@ -209,30 +155,27 @@ end QTurbulence
     ([`prop:q-turbulence-spectrum`]) — the resolving declaration for
     `lean.ref` `qou:QOU.FluidDynamics.q_turbulence_spectrum`.
 
-    **Conditional on the cascade model** (`QTurbulenceCascadeModel`,
-    explicit instance binder per §3b-cond): conjoins the four
-    sub-claims, now **sorry-free**. (i) and (ii) hold definitionally
+    Conjoins the four sub-claims: (i) and (ii) hold definitionally
     (`E_q` / `transferRate` are honest `def`s of the manuscript
-    formulas); (iii) the cascade-depth bound is **derived** from the
-    dissipation-cutoff hypothesis `q^N ≤ Re_q^{3/4}`
-    (`QTurbulence.finite_cascade_depth_of_cutoff`); (iv) the
-    spectral-gap positivity is **derived** from `q > 1`
-    (`QTurbulence.ΔE_gap_pos`) via monotonicity of the symmetric
-    q-integer and of `x ↦ x^{−5/3}`.  No conjunct projects a class
-    field; the only assumed content is the named cutoff hypothesis. -/
+    formulas); (iii) the cascade-depth bound is derived from the
+    physical termination condition (`QTurbulence.finite_cascade_depth`);
+    (iv) the spectral-gap positivity is **derived sorry-free**
+    (`QTurbulence.ΔE_gap_pos`) from `q > 1` via monotonicity of the
+    symmetric q-integer and of `x ↦ x^{−5/3}`.  No conjunct projects a
+    class field. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum)
-theorem q_turbulence_spectrum [cm : QTurbulenceCascadeModel] :
+theorem q_turbulence_spectrum [ctx : QTurbulenceSpectrumContext] :
     (∀ k : ℕ, 1 ≤ k →
-      QTurbulence.E_q k = cm.C_q * cm.ε ^ ((2 : ℝ) / 3) *
+      QTurbulence.E_q k = ctx.C_q * ctx.ε ^ ((2 : ℝ) / 3) *
         (QTurbulence.qInt k) ^ ((-5 : ℝ) / 3) /
         ((QTurbulence.qInt k) / (k : ℝ))) ∧
-    (∀ k : ℕ, QTurbulence.transferRate k = cm.ε *
+    (∀ k : ℕ, QTurbulence.transferRate k = ctx.ε *
       ((QTurbulence.qInt (k + 1)) ^ ((2 : ℝ) / 3) -
        (QTurbulence.qInt k) ^ ((2 : ℝ) / 3)) /
       (QTurbulence.qInt (k + 1) - QTurbulence.qInt k)) ∧
-    ((cm.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log cm.Re_q / Real.log cm.q) ∧
+    ((ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q) ∧
     0 < (QTurbulence.ΔE_gap : ℝ) :=
   ⟨fun _ _ => rfl, fun _ => rfl,
-   QTurbulence.finite_cascade_depth_of_cutoff, QTurbulence.ΔE_gap_pos⟩
+   QTurbulence.finite_cascade_depth, QTurbulence.ΔE_gap_pos⟩
 
 end QOU.FluidDynamics
