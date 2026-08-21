@@ -44,6 +44,16 @@ them are documented:
 Report the number this script prints, not a raw "key not in references.ts"
 count.
 
+## It does not tell you references.ts is well-formed
+
+Entry ids are read by regex over the source, deliberately — the file quotes
+`ref({ id: ... })` inside its own comments and a scan has to skip those. The
+cost is that a references.ts which does not PARSE still scans normally here.
+Nothing else catches that either: `run-validate.ts` reports "Valid" on a
+deliberately broken one (measured, bean qou-3vgs). Importing the module is
+what fails, so run a script that executes the entries when you need that
+answer.
+
 Usage:
     scripts/check-citation-keys.py            # report
     scripts/check-citation-keys.py --strict   # exit 1 if anything dangles

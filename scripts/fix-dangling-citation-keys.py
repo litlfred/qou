@@ -90,6 +90,15 @@ MAPPING: dict[str, tuple[str, str]] = {
         "same block, wrong kind prefix: it is declared "
         'label: "conj:jet-convergence-classical-limit" in '
         "mass-theory/jet-convergence-classical-limit.ts"),
+    # Confirmed against the copy we hold, not against id similarity.
+    "beliakova2011": (
+        "beliakova-le2011",
+        'library/arxiv-1106.6298v1 is "On the unification of quantum 3-manifold '
+        'invariants" by Beliakova and Le, which is that entry'),
+    "futer-gueritaud2011": (
+        "futer-gueritaud-angled",
+        'library/angled-survey is "From angled triangulations to hyperbolic '
+        'structures" by Futer and Gueritaud, which is that entry'),
     # Same authors, same work, the key simply carries no year.
     "fulton-harris": (
         "fulton-harris1991",
