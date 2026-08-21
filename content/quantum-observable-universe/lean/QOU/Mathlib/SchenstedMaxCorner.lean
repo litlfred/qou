@@ -1,4 +1,5 @@
 import QOU.Mathlib.SchenstedCornersAlong
+import QOU.Mathlib.SYTListCorner
 
 /-!
 # QOU.Mathlib.SchenstedMaxCorner — a row holding a maximum entry is a corner (brick 16)
@@ -102,5 +103,88 @@ theorem isCorner_of_max_in_row_sorted {T : List (List ℕ)} (hc : ColStrict T)
     le_getD_last_of_sorted (hs _ hrowmem) hrne m hmem
   refine isCorner_of_max_in_row hc hne hi (fun row hrow v hv => ?_)
   exact le_trans (hmax row hrow v hv) hle
+
+/-! ### The shape-level bridge
+
+The corner argument above lives on the tableau; a run has to track the **shape**. The corpus
+already has shape-level corner removal — `SYTEnum.removeCorner`, built for the GNW reduction — so
+the bridge to state is that the reverse cascade *is* that operation, one level up. -/
+
+/-- Filtering zeros out of an all-positive list changes nothing. -/
+theorem filter_ne_zero_of_pos : ∀ (l : List ℕ), (∀ a ∈ l, 0 < a) → l.filter (· != 0) = l
+  | [], _ => rfl
+  | a :: t, h => by
+      have ha : a ≠ 0 := by have := h a (List.mem_cons_self ..); omega
+      have ih := filter_ne_zero_of_pos t (fun b hb => h b (List.mem_cons_of_mem a hb))
+      simp [ha, ih]
+
+/-- A tableau with no empty rows has an all-positive shape. -/
+theorem tableauShape_pos {T : List (List ℕ)} (hne : NoEmptyRows T) :
+    ∀ a ∈ tableauShape T, 0 < a := by
+  intro a ha
+  rw [tableauShape, List.mem_map] at ha
+  obtain ⟨row, hrow, rfl⟩ := ha
+  exact List.length_pos_iff.mpr (hne row hrow)
+
+/-- **The reverse cascade is shape-level corner removal.**
+
+`uninsert T i` changes exactly one row length — every row it passes through above the target is
+rewritten by `rowUninsert`, which preserves length — so on shapes it decrements entry `i` and drops
+the row if that empties it. That is `removeCorner`.
+
+This is the step a run needs: `IsCorner` is determined by the shape (`isCorner_iff_shape`), so once
+the shape is tracked, a corner of `Q`'s shape is a corner of `P`'s. -/
+theorem tableauShape_uninsert : ∀ (T : List (List ℕ)) (i : ℕ), ColStrict T → NoEmptyRows T →
+    IsCorner T i →
+    tableauShape (uninsert T i).1 = QOU.Mathlib.SYTEnum.removeCorner (tableauShape T) i
+  | [], i, _, _, hcorner => by rw [IsCorner] at hcorner; simp at hcorner
+  | r :: T, 0, hc, hne, hcorner => by
+      have hrne : r ≠ [] := hne r (List.mem_cons_self ..)
+      have hrpos : 0 < r.length := List.length_pos_iff.mpr hrne
+      have hTpos : ∀ a ∈ tableauShape T, 0 < a :=
+        tableauShape_pos (fun row hrow => hne row (List.mem_cons_of_mem r hrow))
+      rw [isCorner_cons_zero] at hcorner
+      rw [uninsert_zero]
+      simp only [tableauShape_cons, QOU.Mathlib.SYTEnum.removeCorner, List.set_cons_zero,
+        List.getD_cons_zero]
+      by_cases hshort : r.length ≤ 1
+      · rw [if_pos hshort, show r.length - 1 = 0 from by omega]
+        simp [filter_ne_zero_of_pos _ hTpos]
+      · rw [if_neg hshort]
+        have hne0 : r.length - 1 ≠ 0 := by omega
+        simp [hne0, filter_ne_zero_of_pos _ hTpos, List.length_dropLast]
+  | r :: T, i + 1, hc, hne, hcorner => by
+      have hrne : r ≠ [] := hne r (List.mem_cons_self ..)
+      have hTc : ColStrict T := colStrict_tail hc
+      have hTn : NoEmptyRows T := fun row hrow => hne row (List.mem_cons_of_mem r hrow)
+      have hcT : IsCorner T i := (isCorner_cons_succ r T i).mp hcorner
+      -- the cascade succeeds at both levels, so the shape changes only at the target row
+      obtain ⟨y, hy⟩ := uninsert_isSome_of_isCorner hTc hTn hcT
+      obtain ⟨z, hz⟩ := uninsert_isSome_of_isCorner hc hne hcorner
+      obtain ⟨T'', w, hT⟩ : ∃ T'' w, uninsert T i = (T'', w) := ⟨_, _, rfl⟩
+      rw [hT] at hy; simp only at hy; subst hy
+      obtain ⟨r', v, hru⟩ : ∃ r' v, rowUninsert r y = (r', v) := ⟨_, _, rfl⟩
+      cases v with
+      | none =>
+          -- the row-level reverse insertion cannot fail here; `hz` says the cascade succeeded
+          exfalso
+          have hnone : uninsert (r :: T) (i + 1) = (r :: T'', none) := by
+            rw [uninsert_succ, hT]; simp only; rw [hru]
+          rw [hnone] at hz
+          simp at hz
+      | some v =>
+          have hfull : uninsert (r :: T) (i + 1) = (r' :: T'', some v) := by
+            rw [uninsert_succ, hT]; simp only; rw [hru]
+          have hrlen : r'.length = r.length := by
+            have := rowUninsert_length r y
+            rw [hru] at this; simpa using this
+          rw [hfull]
+          simp only [tableauShape_cons, hrlen]
+          have hIH : tableauShape T'' = QOU.Mathlib.SYTEnum.removeCorner (tableauShape T) i := by
+            have := tableauShape_uninsert T i hTc hTn hcT
+            rwa [hT] at this
+          have hrne0 : r.length ≠ 0 := by simpa [List.length_eq_zero_iff] using hrne
+          rw [hIH]
+          simp [QOU.Mathlib.SYTEnum.removeCorner, List.set_cons_succ, hrne0]
 
 end QOU.Mathlib.Schensted
