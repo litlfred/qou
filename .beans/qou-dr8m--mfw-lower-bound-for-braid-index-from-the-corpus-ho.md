@@ -1,10 +1,11 @@
 ---
 # qou-dr8m
 title: MFW lower bound for braid index from the corpus HOMFLY/Markov trace — settle 6_1 = 4 (flagged load-bearing by qou-xpgq)
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-21T15:39:09Z
-updated_at: 2026-08-21T15:39:09Z
+updated_at: 2026-08-21T21:06:43Z
 ---
 
 
@@ -196,3 +197,54 @@ MFW to reproduce them, BEFORE reading 6₁. Same discipline that caught the
 overline bug in `qou-6ort` — validate on knots with published answers first.
 Note 4₁ and 5₂ both have braid index 3, so they test the machinery but do NOT
 test discrimination between 3 and 4; 6₁ is the first genuinely new value.
+
+
+## 2026-08-21 — CLOSED. braid index(6₁) = 4, both bounds derived.
+
+Lower: MFW on the exact HOMFLY v-spread, which is 6, giving >= 4.
+Upper: the explicit 4-strand word [1,1,2,-1,-3,2,-3], SnapPy-identified
+as 6_1/m032. MFW forces writhe exactly 1 for any 4-strand representative
+(spread 6 at n=4 makes BOTH inequalities equalities), which made the
+upper-bound search exhaustive rather than lucky.
+
+### The blocker was not the algebra, it was that no usable HOMFLY existed
+
+- homflypt_engine.homflypt_from_braid is symbolic ONLY for n_strands==2.
+  Its n>=3 branch evaluates numerically at q0 and stores the float in
+  terms[(0,0)] -> a v-degree read returns spread 0, silently. For MFW
+  that is worse than a crash: spread 0 gives 'braid index >= 1', which
+  is consistent with every hypothesis. RECORDED, NOT FIXED — someone
+  should decide whether to fix or to make it raise.
+- the corpus Markov trace is SU(2)/TL-specialised (convention D), and
+  that specialisation IS the collapse of the v direction MFW reads. So
+  the C-vs-D convention question does NOT gate this work, which is why
+  T2 landed in a session instead of blocking on the migration.
+
+New: computations/homfly_skein_braid.py (descending-diagram skein
+recursion, exact integer Laurent, no floats, reads no q0), gated on
+textbook HOMFLY for 5 links + Conway P(v=1,z)=grad(z) for 7 knots.
+
+### Feeds qou-btvl
+
+4_1 and 5_2 are both braid index 3 (independently confirmed here), 6_1
+is 4 — so 6_1 is the FIRST point where a braid-index rule is testable
+at all. Wedderburn-at-braid-index -> {5,10} now rests on a derived
+index. Still a prediction; the discriminator is the missing independent
+6_1 DT count.
+
+### Also fixed in passing (qbeta kappa producer)
+
+VOL_6_1 was BOTH truncated (built at module scope, 15 dps) AND
+mis-transcribed from digit 22. Dead, so harmless — and that is why it
+survived. Now SnapPy-verified, workdps-wrapped, and WIRED as a
+volume-conjecture gate: 2*pi*Re(sigma) vs Vol agrees to 2.0e-17 (5_2)
+and 8.9e-18 (6_1). That reveals the 1.2e-7 ki6c agreement was a limit
+on the COMPARISON (ki6c prints 7 digits), not on the computation.
+
+### Correction to my own earlier note
+
+I recorded qou-xpgq as fabricated. It is not — it is on PR #5294's
+unmerged branch. Caught before the 'fix' landed. Result posted there.
+
+Left open (NOT done): proving MFW itself. The two inequalities remain
+hypotheses on MFWWitness.
