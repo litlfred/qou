@@ -1,11 +1,11 @@
 ---
 # qou-ghy5
 title: '68 dangling citation keys in .lean -- Ref: and .ts cites[] — neither path is checked'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-08-21T15:54:40Z
+updated_at: 2026-08-21T16:23:54Z
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
