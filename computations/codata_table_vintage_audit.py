@@ -62,6 +62,8 @@ CHECKS = [
     ("computations/codata_2022_source.py", "M_MU_MEV", "muon mass energy equivalent in MeV"),
     ("computations/codata_2022_source.py", "M_MU_OVER_M_E", "muon-electron mass ratio"),
     ("computations/codata_2022_source.py", "U_MEV", "atomic mass constant energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_N_MINUS_P_MEV",
+     "neutron-proton mass difference energy equivalent in MeV"),
     ("tools/qou-substrate/.../constants.py", "MASS_RATIO_P_E_STR", "proton-electron mass ratio"),
     ("tools/qou-substrate/.../constants.py", "MASS_RATIO_MU_E_STR", "muon-electron mass ratio"),
 ]
