@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:50:47.372139+00:00",
-  "commitSha": "56eb955ab64f00e5f22f0cb060da6f203fa162b0",
+  "computedAt": "2026-08-21T15:41:19.891178+00:00",
+  "commitSha": "6546ffecec9a2aeb1dff5a3a8baaa8dc6b15fab0",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 10,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "5726f911cddb",
@@ -28,6 +28,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -35,14 +36,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 658,
+      "Q0_OK": 661,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 21,
-      "Q0_INDEPENDENT_NO_REASON": 2,
+      "Q0_INDEPENDENT": 23,
+      "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_ANCHOR_MISSING": 1906,
-      "Q0_VALUE_MISSING": 2,
+      "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
-      "Q0_PARSE_ERROR": 1,
+      "Q0_PARSE_ERROR": 0,
       "Q0_FLIP": 0
     },
     "match_prefix_digits": 14,
@@ -7783,6 +7784,14 @@
           "detail": ""
         },
         {
+          "witness": "atomic-tr-m-mpfr-50dps-proton.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "atomic-tr-m-mpfr-50dps.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "aufbau-ell-grading-from-eigensplit.witness.json",
           "detail": ""
         },
@@ -9116,6 +9125,10 @@
         },
         {
           "witness": "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "iterative-knot-builder.witness.json",
           "detail": ""
         },
         {
@@ -10683,33 +10696,11 @@
           "detail": ""
         }
       ],
-      "Q0_VALUE_MISSING": [
-        {
-          "witness": "atomic-tr-m-mpfr-50dps-proton.witness.json",
-          "detail": "anchor=proton"
-        },
-        {
-          "witness": "atomic-tr-m-mpfr-50dps.witness.json",
-          "detail": "anchor=muon"
-        }
-      ],
-      "Q0_PARSE_ERROR": [
-        {
-          "witness": "iterative-knot-builder.witness.json",
-          "detail": "root is not an object"
-        }
-      ],
-      "Q0_INDEPENDENT_NO_REASON": [
+      "Q0_INDEPENDENT": [
         {
           "witness": "markov-identity-symbolic.witness.json",
-          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
+          "detail": ""
         },
-        {
-          "witness": "qbeta-d-frame-markov-weights.witness.json",
-          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
-        }
-      ],
-      "Q0_INDEPENDENT": [
         {
           "witness": "aomega-m3-adjoint-index-set.witness.json",
           "detail": ""
@@ -10779,6 +10770,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-d-frame-markov-weights.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ohtsuki-nz-bridge-b4.witness.json",
           "detail": ""
         },
@@ -10793,6 +10788,12 @@
         {
           "witness": "qns-phase-scramble-probe.witness.json",
           "detail": ""
+        }
+      ],
+      "Q0_INDEPENDENT_NO_REASON": [
+        {
+          "witness": "qbeta-ohtsuki-sixone-kappa-series.witness.json",
+          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ]
     }
