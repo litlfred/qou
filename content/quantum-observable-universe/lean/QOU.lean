@@ -1086,3 +1086,9 @@ import QOU.Mathlib.BoundedOrderWronskian
 -- Wronskian factors into an x-Wronskian times a y-Wronskian -- the engine of Roth's lemma's
 -- induction on the number of variables.
 import QOU.Mathlib.SeparatedWronskian
+-- qou-4lbh -- staged for upstream Mathlib: the m = 1 height bound for Roth's lemma.
+-- Elementary: lead((qX-p)^k) = q^k and a divisor's leading coefficient divides, so
+-- q^k <= |lead P|.  Corrects the recorded assessment that the base case needed Mahler
+-- measure -- that is required for bounding heights of FACTORS in the induction step, which
+-- goes the other way.
+import QOU.Mathlib.RothHeightBound

@@ -129,3 +129,46 @@ leaves it when it is not. The identical `k/dⱼ ≤ iⱼ/dⱼ` step **needs** a 
 `exact_mod_cast` in `le_index_of_forall_le_support` and must **not** have one in
 `le_index_of_X_pow_dvd_translate`. Both spellings are correct in their own context; copying
 either into the other fails.
+
+---
+
+## ⚠ CORRECTION, 2026-08-21 — the base case is NOT blocked, and this bean's title is misleading
+
+This bean was opened on the finding that Roth's lemma's remaining cost is height theory, and
+that the `m = 1` base case is "the analytic half of the theorem", blocked on two absent
+Mahler-measure bridges. **That is wrong for the base case.**
+
+`QOU/Mathlib/RothHeightBound.lean` proves the bound the base case actually needs, with no
+analysis at all:
+
+```
+(qX − p)^k ∣ P  in ℤ[X],  P ≠ 0   ⟹   q^k ≤ |lead P|
+```
+
+because `lead((qX − p)^k) = q^k` and in a domain a divisor's leading coefficient divides the
+dividend's. One line of algebra.
+
+### Why the earlier assessment went wrong
+
+Mahler measure / Gelfond's inequality bounds the heights of **factors** in terms of the
+height of a product — from `H(P)` *down to* `H(φ)`, `H(ψ)`. That is the **induction step**,
+where `P = ∑ₖ φₖ(x)ψₖ(y)` is split and the factors' heights must be controlled.
+
+The **base case** goes the other way — from a *divisor* up to the dividend — and that
+direction is free. Conflating the two produced the wrong blocker. The measured Mathlib
+inventory in this bean is still accurate; what was wrong is *which step needs it*.
+
+### Revised status
+
+| step | status |
+|---|---|
+| index lower bound, divisibility ↔ support ↔ index | done |
+| Wronskian factorization for separated `P` | done |
+| bounded-order certificate, degree bound | done |
+| **`m = 1` height bound** | **done — elementary, no Mahler** |
+| index → divisibility in one variable, + Gauss into `ℤ[X]` | **open, but ordinary algebra** — Mathlib has `IsPrimitive.dvd_of_fraction_map_dvd_fraction_map` |
+| **induction step: heights of the factors** | **open — THIS is where Gelfond/Mahler is needed** |
+
+So the analytic blocker is real but sits one level up from where this bean placed it. The
+title ("the height theory is the real cost") is still roughly right; "not the Wronskians" is
+right; but the base case is not the expensive part.
