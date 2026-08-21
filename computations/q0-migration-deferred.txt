@@ -1,0 +1,14 @@
+binding_via_interface_knot|TIMEOUT >1200s|slow, standalone
+block_swap_binding|TIMEOUT >100s|slow, standalone
+borromean-axial-coupling|KeyError: gram_inverse|BEANED qou-cnbm (pre-existing, not a rename)
+delta_lambda_imme_triplet|TIMEOUT >100s|slow, standalone
+hadron_knot_table|TypeError: no supported conversion for dtype|pre-existing break
+he3_tritium_cosh_asymmetry_diagnosis|TIMEOUT >90s|slow, standalone
+mass_per_knot_density|ImportError: per_knot_density_*|pre-existing break (shared root)
+mass_table_comprehensive|TIMEOUT >90s|slow, standalone
+mn_delta_pn_qbeta_habiro_cascade_probe|NameError: c3_habiro|pre-existing break
+option_e_phase1_h3_cross_check|(non-zero, no stderr tail)|needs a look
+parabolic_cylinder_channel_mixing_probe|Try another starting point|numerical, needs a look
+per_irrep_pole_proton_h3|(non-zero, no stderr tail)|needs a look
+per_knot_density_per_block_wiring|ImportError: per_knot_density_*|pre-existing break (shared root)
+probe_9b_laurent_degree_10a5|TIMEOUT >90s|slow, standalone
