@@ -33,6 +33,15 @@ A2  `2·χ_λ(σ₁) − h·f^λ = [2]_q·χ^λ(τ)` for every λ, where `χ^λ(
     `−q⁻¹` (mult m₋) on V_λ, so `χ_λ(σ₁) = q·m₊ − q⁻¹·m₋` and the
     combination collapses to `[2]_q·(m₊ − m₋) = [2]_q·χ^λ(τ)`.
 
+    HONESTY NOTE — A2 alone proves less than it looks.  `chi_hecke_sigma1`
+    *defines* `m± = (f^λ ± χ^λ(τ))/2`, so A2 is an algebraic identity given
+    that definition, not a test of it.  The representation-theoretic input —
+    that the σ₁ eigenvalue multiplicities really are that pair, i.e. that
+    `m₊ − m₋ = χ^λ(τ)` — is validated by **A3**, which checks the σ₁ Markov
+    condition `Σ_λ χ_λ(σ₁)·y_λ = z_D` against independently-computed weights
+    for n = 2..9.  A wrong multiplicity assignment fails A3.  Read A2 as
+    bookkeeping and A3 as the check.
+
 A3  Hence, from the Markov conditions alone (ANY convention):
         2z − h = [2]_q · Ξ_n,      Ξ_n := Σ_λ χ^λ(τ)·y_λ.
     and therefore, via `phaseTwice_projected_eq_loopMean`,
