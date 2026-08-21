@@ -3437,6 +3437,43 @@ theorem ofTerms_coeff_mid {n : ℕ} (L₁ L₂ : List (Monomial (HeckeGen n) × 
   have h₂ := hnil L₂ (fun r hr => h r (by rw [List.map_append]; exact List.mem_append_right _ hr))
   simp [AlgElement.ofTerms_coeff, List.filter_append, h₁, h₂]
 
+/-! ### §4ak  A cancelling pair drops out
+
+The `a ≤ b` chain's term list is not fixed-shape. `hecke_chain_cancellation.py`
+measures its profile: the two quadratic steps each add a term (peak four), and
+then **two** later steps remove two at once — which no rewrite can do, since a
+far-commutation takes one term to one term. Each is a pair reconverging on a
+single word with opposite coefficients and annihilating. Worked at `a = 4`,
+`b = 6`, step 24 rewrites `h · σ_i σ_{i−4} ⋯` into precisely the word already
+carried by `−h`, and the two vanish.
+
+The first such event is mid-prefix; the second **is the final step**, so the
+chain does not terminate by a separate mechanism — reaching zero is itself a
+cancellation. That is why the lemma below is needed twice, and why the second
+use is what will deliver "reduces to zero".
+
+`MultiStepReduction` is stated through `CoeffEq`, so the cancellation is *sound*
+with no help at all (§6 already carries the congruences). What is missing is the
+**shape** bridge: without it every lemma downstream of a cancellation would have
+to be stated against a list whose first two entries are dead weight. -/
+
+set_option linter.unnecessarySeqFocus false in
+/-- **Two terms on one word with opposite coefficients contribute nothing.**
+The bridge between the chain's term list before and after a cancellation. -/
+theorem ofTerms_cancel_pair {n : ℕ} (w : Monomial (HeckeGen n)) (c : ℝ)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    AlgElement.CoeffEq
+      (AlgElement.ofTerms (L₁ ++ (w, c) :: (w, -c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ L₂)) := by
+  intro m
+  simp only [AlgElement.ofTerms_coeff, List.filter_append, List.filter_cons,
+    List.map_append, List.sum_append, decide_eq_true_eq]
+  -- `linter.unnecessarySeqFocus` proposes `(simp only …; ring)` here. That is
+  -- WRONG: `simp only` already closes several of the `split_ifs` branches, so
+  -- the sequenced `ring` fails with "no goals to be solved". The option is
+  -- disabled for this declaration rather than the suggestion taken.
+  split_ifs <;> simp only [List.map_cons, List.sum_cons] <;> ring
+
 /-- **Far-commutation transport, leftwards.** If every letter of `w` is strictly
 more than one above `σ_z`, then `σ_z` may be walked from the right end of `w` to
 its left end, one far-commutation application per letter, inside any contexts
