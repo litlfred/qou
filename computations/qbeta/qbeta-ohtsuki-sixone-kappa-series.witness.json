@@ -1,0 +1,116 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-21T15:33:41.171408+00:00",
+  "commitSha": "37c23b452bb816c6f3a3a73e1f76c80374eef394",
+  "assertions": [
+    {
+      "name": "determinant_5_2",
+      "computed": "7.0",
+      "expected": "7",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "|<5_2>_2| = det"
+    },
+    {
+      "name": "determinant_6_1",
+      "computed": "9.0",
+      "expected": "9",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "|<6_1>_2| = det"
+    },
+    {
+      "name": "validation_5_2_sigma",
+      "computed": "7.058246717e-11",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-7",
+      "source": "fitted vs Ohtsuki's PUBLISHED sigma(5_2)"
+    },
+    {
+      "name": "validation_5_2_omega",
+      "computed": "4.278352103e-11",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "fitted vs Ohtsuki's PUBLISHED omega(5_2)"
+    },
+    {
+      "name": "gate_6_1_sigma",
+      "computed": "1.165699101e-7",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "fitted vs ki6c Theorem 1.1 sigma(6_1)"
+    },
+    {
+      "name": "gate_6_1_omega",
+      "computed": "1.660784352e-6",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-5",
+      "source": "fitted vs ki6c p.15 omega(6_1)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 64555,
+  "computation": "qbeta-ohtsuki-sixone-kappa-series",
+  "scriptFile": "qbeta_ohtsuki_sixone_kappa_series.py",
+  "scriptHash": "0f125429ad41",
+  "scriptCommitSha": "10e8a6c2444b4dc7d59b08c3f261014638699437",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Ohtsuki kappa-series for 6_1 from ki6c eq.(29), with the bar pattern ((q) vs (qbar)) restored from Ohtsuki's 5_2 eq.(7) where the bars are legible -- PDF text extraction cannot see overlines (LaTeX rules, not glyphs). Evaluated in O(N^2) by convolution factorisation of the i<=j<=k chain. VALIDATED end-to-end on 5_2 against that paper's PUBLISHED sigma and omega before 6_1 is touched. Gate: fitted 6_1 sigma/omega must reproduce ki6c's printed values. kappa_i are the perturbative coefficients of the asymptotic expansion, NOT DT counts. Scope-(a); nothing wired. Beans qou-6ort/qou-btvl.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "validation_5_2": {
+      "sigma_fit": "(0.450109610025217991523412 + 0.481304979665923738666185j)",
+      "sigma_published": "(0.45010961 + 0.4813049796j)",
+      "sigma_abs_err": "7.05825e-11",
+      "omega_fit": "(0.0901905774056642111272526 - 0.649975786642406908211725j)",
+      "omega_published": "(0.0901905774 - 0.6499757866j)",
+      "omega_abs_err": "4.27835e-11",
+      "passed": true,
+      "why": "5_2's bars are legible in its PDF, so this validates the whole pipeline against a PUBLISHED answer before 6_1 is touched"
+    },
+    "gate_6_1": {
+      "sigma_fit": "(0.503560387637746199120114 + 1.0807800768646172131077j)",
+      "sigma_ki6c": "(0.5035603 - 1.08078j)",
+      "sigma_abs_err": "1.1657e-7",
+      "omega_fit": "(-0.521388363445172103694423 - 0.0717322826534245495923839j)",
+      "omega_ki6c": "(-0.52139 + 0.071732j)",
+      "omega_abs_err": "1.66078e-6",
+      "mirror_frame": "conjugate",
+      "passed": true
+    },
+    "kappa": {
+      "kappa_1": "(-0.857036577786166099473194 + 0.0996113097156072094103263j)",
+      "kappa_2": "(0.358255042584737923302002 - 0.0945323841291178525641754j)",
+      "kappa_3": "(-0.0950597684808133093169799 + 0.0432714333144021832751715j)",
+      "kappa_4": "(0.0183530121695171878928093 - 0.0131501497029207266529605j)",
+      "kappa_5": "(-0.0027136686152560323362495 + 0.00466421458693848122583164j)"
+    },
+    "bar_pattern": {
+      "problem": "PDF text extraction cannot see overlines (LaTeX sets them as rules, not glyphs) -- invisible to flat text, layout mode, and a font-metadata pass that DOES recover superscripts and minus signs",
+      "source": "Ohtsuki 5_2 eq.(7), where the bars render as an 'N' glyph",
+      "rule": "doubled index -> (q)(qbar) = |.|^2 ; difference index -> barred ; reflected pair (q)_m (q)_{N-m-1} -> both unbarred",
+      "identity_checked": "(q)_n (qbar)_{N-n-1} = N exactly to 1e-40"
+    },
+    "scope": {
+      "not_a_dt_count": "kappa_i are perturbative coefficients; the DT/Stokes constants need a Borel resummation this does not do",
+      "branch_guide": "the printed sigma selects the 2*pi*m branch integer only; it is not an input to the fitted value"
+    }
+  },
+  "q0Anchor": "independent"
+}

@@ -1,0 +1,51 @@
+{
+  "engine": "python (mpf 50 dps)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-19T21:25:57.279715+00:00",
+  "commitSha": "0741c60a1b750c7b0bda59ef9efae794de252867",
+  "assertions": [
+    {
+      "name": "full_voldensity_overshoots_and_rho_aa_is_hbar_q_sq",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Full proton-VolDensity route (Vol/ℏ_q²×linking_weight) applied to 7²_1 overshoots b_αα by >100× (H₄: 259×), AND the AME-implied density ρ_αα=b_emp·ℏ_q²/(m_e·Vol) equals ℏ_q² to <1% (0.9955). Scope-(a): the ℏ_q² Planck enhancement belongs to the rest-mass scale, not the α–α binding, which sits one ℏ_q² rung lower. ρ_αα=ℏ_q² restates the match, not a derivation (numerology guard). No fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "b-alpha-alpha-voldensity-scaling",
+  "scriptFile": "b_alpha_alpha_voldensity_scaling_probe.py",
+  "scriptHash": "64ae7fad50da",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Lane 2 of bk-crossing-coordination (open item 3b, b_αα). Applies the proton VolDensity convention Vol/ℏ_q²×linking_weight to the α–α interface link 7²_1 (the one untried substrate-pure route named by the prior bare-tr_M probe). Result 1: the full VolDensity route OVERSHOOTS b_αα by 259× (H₄)/137× (H₃) — scope-(a) refutation; the ℏ_q²≈0.0098 Planck enhancement that lifts Vol(𝓑₃) to the GeV proton mass over-inflates the α–α bond. Result 2: the AME-implied α–α per-block density ρ_αα=b_emp·ℏ_q²/(m_e·Vol) equals ℏ_q² to 0.45% (ρ_αα/ℏ_q²=0.9955), so the literature m_e·Vol(7²_1) IS the VolDensity form with a density ρ_αα=ℏ_q² that cancels the denominator — the α–α binding sits one ℏ_q² rung below the rest-mass scale (proton ρ_p=linking_weight≈2.53 is O(1); ρ_p/ρ_αα≈259). OPEN (numerology guard): ρ_αα=ℏ_q² restates the match, not a derivation. No fit; no wiring; q₀ proton-anchored (no muon-cache straddle).",
+  "parameters": {
+    "q0_anchor": "proton/experimental (q_parameter.Q_MP)",
+    "q0": "1.109978582751380807591669",
+    "b_alpha_alpha_empirical_MeV": "2.416"
+  },
+  "data": {
+    "hbar_q_sq": "0.009817186454275073810569057",
+    "vol_7_2_1": "4.749499981874438508498087",
+    "linking_weight_H4": "2.532779656399391492051515",
+    "linking_weight_H3": "1.336965622235707433250831",
+    "b_aa_literature_MeV": "2.426989507040012097175451",
+    "b_aa_full_voldensity_H4_MeV": "626.1498320681169939034149",
+    "b_aa_full_voldensity_H3_MeV": "330.5225536412496583218798",
+    "overshoot_factor_H4": "259.1679768",
+    "rho_alpha_alpha": "0.009772733835366166150649268",
+    "rho_alpha_alpha_over_hbar_q_sq": "0.9954719593932587526532394",
+    "rho_p_over_rho_aa": "259.1679768"
+  }
+}

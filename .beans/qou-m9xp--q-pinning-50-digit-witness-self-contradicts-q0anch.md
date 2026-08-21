@@ -1,11 +1,11 @@
 ---
 # qou-m9xp
 title: 'q-pinning-50-digit witness self-contradicts: q0Anchor=muon but calibration_inputs.anchor=m_p/m_e'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T17:19:14Z
-updated_at: 2026-08-19T18:48:01Z
+updated_at: 2026-08-19T20:54:15Z
 ---
 
 ## The contradiction
@@ -297,3 +297,83 @@ green.
 piece of infrastructure reads as *the definition of an anchor* is not a
 migratable witness. Re-pinning it does not move a value to the other layer, it
 removes the layer. Worth an exclusion list before the next batch runs.
+
+
+## 2026-08-21 — NOT closeable: the restore reverted the prose fix, and a live consumer was straddling
+
+Checked for closure and found item 2 alive again.
+
+### The restore undid the prose fix
+
+`1f25060f2` restored the pin file from `9a9c6b31c^` to recover the muon anchor
+value. That worked — and it also reverted the §"Revised close" item 2 fix,
+because the restore predates it and only the *value* was verified afterwards.
+Measured on main before this commit: `q0Anchor: muon`,
+`calibration_inputs.anchor: m_p/m_e`, and a description still claiming a
+"proton substrate identity (q_parameter.q_at Newton solve)" that the
+`ideal_muon` override means never ran. Exactly the contradiction this bean
+opened on.
+
+**General shape worth carrying: a restore-to-fix-A silently reverts fix-B in
+the same file when only A is re-verified.** Neither commit was wrong; the gap
+is that "did the restore preserve the other fixes to this file?" is nobody's
+checklist item.
+
+Fixed at the producer (`q_pinning_50_digit.py`) rather than by hand-editing the
+witness, and re-run. The value is a fixed point, as this bean established —
+`derived_50_digit.q` is byte-identical across the re-run.
+
+### A live consumer was reading the contradiction and straddling on it
+
+`probes/qbeta_habiro_residual_probe.py:99` was commented
+`# --- 1. CANONICAL q₀ (live, proton-pinned) ---` and then computed at the
+**muon** value, because it reads `calibration_inputs.anchor` (`m_p/m_e`, the
+derivation ROUTE) as though it named the emitted layer.
+
+Measured, so the severity is not guessed:
+
+| | |
+|---|---|
+| straddle | 11.54 ppb |
+| the probe's own stated q₀ budget (`sigma_CAL_q0_ppb`) | **0.0074 ppb** |
+| ratio | **~1558x** |
+| its 100x target (`target_100x_ppb`) | 7.8 ppb — *smaller than the straddle* |
+| headline (`residual_N2_ppb_PRODUCTION`) | 1248 ppb vs 7.8 target |
+
+So it does **not** flip the verdict — a ~160x miss either way — but the error
+budget does not cover the error, and any statement about *reaching* the 100x
+target is anchor-limited rather than physics-limited.
+
+`_assert_anchor_matches_value()` now refuses to proceed when `q0Anchor` and
+`derived_50_digit.q` disagree. It keys on `q0Anchor` (the LAYER) and
+deliberately not on `calibration_inputs.anchor` (the ROUTE) — the route field
+is *allowed* to say m_p/m_e while the override emits muon, so keying on it
+would fire on the correct configuration.
+
+**My first version of that guard could not fire.** Its threshold was `1.2e-8`,
+above the `1.15e-8` separation it exists to detect; a synthetic
+proton-under-a-muon-label passed with room to spare. A threshold set at the
+size of the thing being detected detects nothing. Now `1e-10`, with a test
+asserting `_STRADDLE_TOL < 1.15e-8` so it cannot regress that way again.
+
+### Incidental: a stale CODATA uncertainty, found by the re-run
+
+The re-run moved `m_p_over_e_err` `1.1e-07 -> 3.2e-08` and
+`codata_relative_uncertainty` `2.853e-12 -> 8.300e-13`. Not drift: the live
+table (`qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`)
+carries **0.017 ppb**, and the committed witness plus this producer's own
+docstring were both stale at **0.06 ppb**. Docstring corrected.
+
+**`AGENTS.md` repeats the stale 0.06 ppb figure** (§q₀ anchor convention and
+the canonical-chain cheat sheet). Not corrected here — that is a doc with an
+owner-facing framing and the edit should be deliberate, but it is stale and
+someone should take it.
+
+### Remaining before this can close
+
+1. Whether `qbeta_habiro_residual_probe` *should* be muon (it computes Q_β, the
+   CAL-2 proxy, arguably ideal-layer) or proton (2026-08-07 default) is the
+   "explicit reason" judgement, not an agent call. It now computes at muon and
+   says so, instead of computing at muon and claiming proton — which is the
+   part that was a defect either way.
+2. The AGENTS.md 0.06 ppb staleness above.

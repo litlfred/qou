@@ -211,6 +211,33 @@ def main() -> int:
     out["scriptFile"] = _os.path.basename(__file__)
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print(f"\nWitness: {out_path}")
+
+    # Exit non-zero when any atom errored. This returned 0 unconditionally,
+    # and the errors are recorded INSIDE the witness (`results[label] =
+    # {"error": ...}`, above), so a total failure was indistinguishable from a
+    # clean run to anything reading the exit code.
+    #
+    # It is not hypothetical. As of 2026-08-21 this script fails on ALL FOUR
+    # atoms — `ValueError: LaurentQ.from_sympy: non-Laurent factor
+    # -(1 - 1/q**4)*(q - 1)**2/12 + 1/2` — and still exited 0. The witness it
+    # writes here is 4/4 errors; the good copy the corpus actually consumes is
+    # a separate file at `computations/` that this script no longer reaches
+    # (bean qou-kcii) and, given the failure, can no longer reproduce.
+    #
+    # So any sweep that "re-runs producers" would overwrite good data with
+    # error stubs and report success. That is the specific accident this
+    # guards, and it nearly happened here: the fix proposed for the L1 gate's
+    # pin straddle (bean qou-3zby) was "regenerate this witness", which would
+    # have destroyed the only working copy.
+    _errored = sorted(k for k, v in results.items()
+                      if isinstance(v, dict) and "error" in v)
+    if _errored:
+        print(f"\n✗ {len(_errored)} of {len(results)} atoms ERRORED: "
+              f"{', '.join(_errored)}\n"
+              "  The witness above records the errors and is NOT a usable "
+              "result. Do not treat it as a regeneration, and do not copy it "
+              "over a good witness.", file=sys.stderr)
+        return 1
     return 0
 
 
