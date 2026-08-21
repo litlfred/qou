@@ -97,3 +97,90 @@ Decide which frame the canonical mass table should be in (S4 / ruling R3 say
 `bring_color_weighted`), then either fix the producer or correct the content
 block -- but **not** by relaxing the claim to fit the numbers. Whichever way it
 lands, both witnesses must start recording their `pn_convention`.
+
+## RESOLVED 2026-08-21 — the mechanism is a tolerance straddle, and the third path never ran
+
+Chasing `binding_canonical.py` (the file `qou-cds4` says to read first) landed on
+the root of this bean's finding. Recording the whole chain, including the two
+places my own draft was wrong.
+
+### The dispatch function exists TWICE, with tolerances 1000x apart
+
+`_factor_from(c_f, d_f, g)` maps a crossing's numeric `d` to a symbolic factor.
+Two copies:
+
+    binding_canonical.py:111    tolerance 1e-6
+    atom_nf_symbolic_D.py:67    tolerance 1e-3   (_D_HECKE_TOL)
+
+Both branch on `abs(d_f + h/2) < tol` to recognise an `averaged` crossing. The
+colour-weighted crossing is `d = -h(1/2 - delta/4)`, whose distance from `-h/2`
+is `h*delta/4`:
+
+    |d_weighted - d_averaged| = 7.190163e-05
+
+**7.19e-5 sits exactly between the two tolerances.** So the same crossing is
+handled two different ways by two copies of the same function:
+
+    binding_canonical  1e-6  -> NO match -> falls through to sp.nsimplify(d)
+                                            (keeps the weighting)
+    atom_nf_symbolic_D 1e-3  -> MATCHES  -> rewritten as -h/2
+                                            (SILENTLY DISCARDS the weighting)
+
+Reachability confirmed, not inferred: `atom_braid_word_3A(1,1)` — the production
+word builder — yields 23 crossings dispatching as
+`{0: 11, -h/2: 4, -h: 7, FALLTHROUGH: 1}`. Exactly one weighted bond, the arc's
+signature.
+
+This is the `else:`-swallows-the-new-ctype shape again — the third instance after
+`spectral_coordinates_all_atoms`' `else: M = np.eye(2)` (#5029) and the
+`per_irrep_pole_atom` cemetery logic. Here it is worse, because the swallow is a
+*tolerance*, so no `else` branch is even visibly involved.
+
+### Measured: the four production paths, deuteron
+
+    path                                        tr_M(D)                    weighting
+    bridge (Rust/MPFR)              0.575172243917771870826535   weighted
+    peel (markov_peel)              agrees with bridge to 6.1e-50   weighted
+    symbolic (atom_nf_symbolic_D)   0.575090871629810316751633   BLIND
+    mass table (canonical_..._ext)  0.575090958682446712091773   BLIND
+
+    |symbolic - bridge|      = 8.14e-05      <- not machine epsilon
+    |symbolic - mass table|  = 8.71e-08      <- the two blind paths do not agree either
+
+The symbolic value is **bit-identical** to `closed_form_tau_M(..., "strict_averaged")`
+computed independently, which confirms the 1e-3 tolerance is producing exactly the
+colour-blind factor.
+
+### Why nothing caught it: the third path never ran, and there is no assertion
+
+`atomic_tr_m_mpfr_50dps.py` runs the symbolic path only under `if also_symbolic:`.
+In the committed witness, `symbolic_check.abs_diff_vs_bridge` is **absent for all
+five atoms** — it was never enabled. Only two paths ran, and those two are both
+weighted, so they agree at ~5e-50 and the witness looks clean.
+
+Worse, the check has **no threshold**. It computes
+`diff = abs(tr_sym_mpf - tr_at_q0_mpf)`, prints it, and stores it as
+`abs_diff_vs_bridge`. Nothing compares it to anything; nothing fails. So even had
+it run, the 8.14e-5 would have been recorded as a field and read as a pass.
+
+The paper's *"three independent production paths agree to machine epsilon"* is
+therefore backed by a witness that ran **two**, and the third — the one that
+disagrees — is disabled and unasserted.
+
+### Two corrections to my own draft of this bean
+
+1. **I was going to report a float64 defect. There is none.** I claimed the
+   fallthrough `sp.nsimplify(d_f)` was float64-seeded. `d_f` is an `mpf` at 50 dps
+   and `nsimplify` retains ~49 digits. Wrong, and caught only by running it.
+2. **I predicted `atom_nf_symbolic_D`'s NF would lose its `q` dependence** via
+   that fallthrough. It does not — measured, the deuteron NF has 32 terms and
+   every coefficient still carries `q`. It never reaches the fallthrough at all,
+   because its 1e-3 tolerance catches the crossing first. The defect is real but
+   it is the opposite one: not contamination, *erasure*.
+
+### Still open
+
+The **8.71e-08** between the two colour-blind paths, and the **7.8e-08** between
+the two witnesses on the free proton and neutron, are a second and separate
+discrepancy. Free nucleons carry no p-n bond, so the weighting cannot explain
+them. Unexplained, and roughly 1e7 above the L1 target on its own.
