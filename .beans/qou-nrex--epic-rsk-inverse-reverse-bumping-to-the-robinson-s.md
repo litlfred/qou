@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-21T21:43:38Z
+updated_at: 2026-08-21T21:47:24Z
 ---
 
 
@@ -365,3 +365,27 @@ CornersAlong P is for an ARBITRARY standard pair (P,Q) with positions read off Q
 insertion history. Different argument: the cell carrying the largest remaining entry of a standard
 tableau is a corner, because a cell below it would carry a larger entry. Brick 15 does NOT cover
 this and its docstring says so.
+
+
+### Brick 16 — Q-side keystone (PR #5426, based on main)
+
+isCorner_of_max_in_row : ColStrict T -> NoEmptyRows T -> i < T.length ->
+  (last cell of row i >= every entry of T) -> IsCorner T i
+
+Classical one-line contradiction: not-a-corner + ColStrict's length half pins rows i and i+1 EQUAL
+in length, putting a cell directly below the maximum, which column-strictness makes strictly larger.
+
+**It needs LESS than standardness.** I had this queued as 'needs a standardness predicate on
+List (List N)' and the corpus has none, so the obvious move was to write one. Checking what the
+argument actually consumes: no strict-row hypothesis, no standardness predicate — ColStrict plus the
+position of the maximum is the whole input. Writing that predicate would have been a fifth
+unnecessary addition on an arc that already caught four duplications.
+
+Also le_getD_last_of_sorted (+ isCorner_of_max_in_row_sorted) so a caller who knows the max is
+SOMEWHERE in row i can reach the keystone, which is stated about the last cell.
+
+### Remaining
+- brick 17: wire the keystone along a run — read positions off Q, show each step removes the largest
+  REMAINING entry, assemble CornersAlong for an arbitrary standard (P,Q).
+- rskPair bijective.
+- RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
