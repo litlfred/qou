@@ -162,11 +162,30 @@ def main() -> int:
     dm = float((_alpha_em_inv_derived(q_proton_pin)
                 - _alpha_em_inv_derived(q_muon_pin)) / c22 * 10 ** 9)
     print(f"  muon -> proton pin change: {dm:+.2f} ppb")
+    # Solve for the kappa that would close the gap exactly, rather than
+    # restating a figure: the block's "~1.8878" is the old pin + edition.
+    q = pins[0][1]
+    b = bare(q)
+    c1 = ((mp.pi ** 2 * mp.mpf(10) / 9 + mp.pi ** 2 * mp.mpf(16) / 15)
+          * (q_int(2, q) / 2) * (1 - 1 / q) ** 2 / b)
+    ratio = c22 / b
+    kappa_needed = ((ratio - 1) - c1) / ((ratio - 1) * c1)
+    witten = mp.mpf("1.722")
+    resid = abs(float((cs_tower_resummed(q) - c22) / c22 * 10 ** 9))
+    # Recomputed for THIS pin rather than reusing dt/de, which leak from the
+    # loop above holding the last iteration's (muon) values. They happen to
+    # coincide -- the resummation gain is pin-invariant -- so the number was
+    # right by luck while the sentence reported the proton residual beside it.
+    trunc_ppb = abs(float((_alpha_em_inv_derived(q, order=2) - c22) / c22 * 10 ** 9))
+    gain = trunc_ppb - resid
     print()
-    print("  Higher orders are worth ~11 ppb against a ~400 ppb residual — 1/36th")
-    print("  of the gap. The truncation is NOT the explanation, so by elimination")
-    print("  within that block's own two options the defect is kappa (still a")
-    print("  `sorry`, and needing ~1.8878 against Witten's 1.722).")
+    print(f"  Higher orders are worth {gain:.2f} ppb against a {resid:.0f} ppb "
+          f"residual — one part in {resid / gain:.0f} of")
+    print("  the gap. The truncation is NOT the explanation, so by elimination within")
+    print("  that block's own two options the defect is kappa (still a `sorry`).")
+    print(f"  Exact closure at this pin needs kappa = "
+          f"{mp.nstr(kappa_needed, 8)} against Witten's {witten} "
+          f"({float((kappa_needed - witten) / witten * 100):.1f}%).")
     return 0
 
 
