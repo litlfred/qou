@@ -170,3 +170,69 @@ The top-level 66 are the real defect surface and need per-file reading.
 
 1. Re-schema the 11 `audits/` backlog counters so red means red.
 2. Then drain the 66 top-level, oldest first.
+
+## RETRACTION 2026-08-21 — my "next step" was wrong, and so was my reading of it
+
+I proposed re-schemaing the 11 `computations/audits/` witnesses as category 3,
+"backlog counters wearing a pass/fail assertion". **Retracted.** I checked three
+before touching them:
+
+    fitted-labelled-canonical-audit  no_fitted_labelled_canonical  computed=8   expected=0
+    witness-provenance-audit         no_missing_provenance         computed=10  expected=0
+    stale-probe-audit                no_stale_probes               computed=0.0 expected=1.0
+
+These are **honest reds**. Each asserts a discipline invariant, and each is red
+because the invariant is violated — 8 real hardcoded-literal sites, 10 real
+missing-provenance witnesses. Converting them to ratchets would turn "no
+violations" into "no NEW violations", which is precisely the baseline-widening
+AGENTS.md forbids in the strongest terms. **The 11 audits are category 1 — fix
+the violations — not category 3.** They are the system working, and the only
+correct response is to drain what they name.
+
+That reclassification does not change the gate committed above: it is a
+meta-check on the witness FILE, and baselining these 11 records them rather than
+excusing them.
+
+## And I misread the thing I went to drain — twice over
+
+I opened `fitted-labelled-canonical-audit`'s 8 rows expecting anti-fit
+laundering. They are **hardcoded q₀ literals** — a practice defect (type the
+number instead of importing `q_parameter`), not a fitted value passed off as
+canonical. Already covered by the `q0-value drift ratchet` already wired into
+`precision-gates.sh`.
+
+Then, on two of them (`metallic_q_n4_character_sweep.py:59`,
+`metallic_q_wenzl_sign_sweep.py:61`), I measured the literal `1.1099785955541805`
+against the muon string in `q-pinning-50-digit.witness.json`, found a 2.84e-12
+gap, and drafted it as a **corrupted muon transcription**. It is the opposite.
+From `computations/q0_provenance_audit.py:44`:
+
+    Q_MUON = 1.1099785955541805        # <- the CANONICAL muon
+    Q_MUON_50 = "1.10997859555418057528159407960950937799328227995870"
+      "DERIVED not typed: q_muon_at(60) from CODATA m_mu/m_e and Vol(4_1)
+       reproduces exactly this. Owner ruling 2026-08-15: the muon string is
+       the correct one."
+
+The string I compared *against* — `1.10997859555733471989…`, carried by **243
+witnesses** — is the NON-REPRODUCIBLE one. So the literal in those two sweeps is
+the correct muon, and my "corruption" was me holding the wrong reference.
+
+Worth carrying forward, because that file already calibrates it and I would have
+overclaimed the same way: the 2.84e-12 gap is **431× smaller than the
+experimental uncertainty on q_muon** (CODATA `m_mu/m_e = 206.7682830 ± 4.6e-6`
+→ 1.22e-9 relative). Both strings are physically meaningless past ~digit 8.
+What is wrong with the 243-witness string is **reproducibility, not accuracy** —
+it cannot be regenerated from the stated inputs.
+
+Net: the two sweeps are off-canon only by *pin choice* (proton is the compute
+default per the 2026-08-07 directive and R2), which is `qou-1c4y`'s migration and
+is explicitly not authorised as a bulk sweep. No unclaimed drain for me here.
+
+## Corrected next step
+
+Not the 11 audits as a schema change. Drain what they NAME, and the cheapest
+honest unit is `witness-provenance-audit`'s 10 missing-provenance witnesses —
+`witness_provenance_audit.py` already ships `--strict`/`--list`, already runs
+advisory in `precision-gates.sh`, and its offences are per-file and independently
+fixable. The top-level 66 remain the real defect surface and need per-file
+reading.
