@@ -1,22 +1,22 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-15T23:26:52.147Z",
+  "generated": "2026-08-21T22:09:57.443Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 2911,
-  "files_flagged": 170,
-  "total_defects": 99,
-  "total_exempt": 122,
+  "scanned_files": 3008,
+  "files_flagged": 167,
+  "total_defects": 96,
+  "total_exempt": 123,
   "categories": {
     "proof-no-self-assuming-projection": 46,
     "proof-no-trivial-true": 21,
     "proof-no-provable-axiom": 11,
-    "proof-no-unused-hypothesis-rfl": 14,
+    "proof-no-unused-hypothesis-rfl": 11,
     "proof-docstring-sorry-mismatch": 3,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
-    "total": 243,
+    "total": 242,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -51,12 +51,12 @@
       {
         "name": "archimedean_agreement",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/archimedean_agreement.lean",
-        "line": 27
+        "line": 92
       },
       {
         "name": "archimedean_agreement",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/protonExample/archimedean_agreement.lean",
-        "line": 27
+        "line": 58
       },
       {
         "name": "ArchimedeanLimit",
@@ -81,7 +81,7 @@
       {
         "name": "BigBangHeatDeath",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-        "line": 437
+        "line": 442
       },
       {
         "name": "BlochWignerInjective",
@@ -161,7 +161,7 @@
       {
         "name": "BringFigureEightDepth2Witness",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/BringFigureEightDepth2Witness.lean",
-        "line": 27
+        "line": 103
       },
       {
         "name": "BringHyperbolicDecomposition",
@@ -311,7 +311,7 @@
       {
         "name": "DiophantineBirthday",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/DiophantineBirthday.lean",
-        "line": 27
+        "line": 115
       },
       {
         "name": "DirectionSanityGateClass",
@@ -416,7 +416,7 @@
       {
         "name": "HahnSubstrate",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-        "line": 530
+        "line": 535
       },
       {
         "name": "HasAlphaShiftTorus",
@@ -519,6 +519,11 @@
         "line": 14
       },
       {
+        "name": "HypMinimizerUnique",
+        "file": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicGeodesic.lean",
+        "line": 109
+      },
+      {
         "name": "InterNucleonChannelColorTube",
         "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/InterNucleonChannelColorTube.lean",
         "line": 146
@@ -594,11 +599,6 @@
         "line": 94
       },
       {
-        "name": "LocalInfinitesimalField",
-        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean",
-        "line": 27
-      },
-      {
         "name": "LRCoefficientHecke",
         "file": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.lean",
         "line": 63
@@ -664,11 +664,6 @@
         "line": 113
       },
       {
-        "name": "MostowIdealTetVolume",
-        "file": "content/quantum-observable-universe/lean/QOU/Archimedean/MostowIdealTetVolume.lean",
-        "line": 104
-      },
-      {
         "name": "MotivicSubstrate",
         "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MotivicSubstrate.lean",
         "line": 69
@@ -681,7 +676,7 @@
       {
         "name": "MRatioInversionMonotone",
         "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
-        "line": 87
+        "line": 88
       },
       {
         "name": "NSCounterexample",
@@ -816,7 +811,7 @@
       {
         "name": "QbetaHabiroTaylorBridgeClass",
         "file": "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean",
-        "line": 168
+        "line": 182
       },
       {
         "name": "QBirchSwinnertonDyer",
@@ -1004,11 +999,6 @@
         "line": 27
       },
       {
-        "name": "SpectralNormalForm",
-        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean",
-        "line": 27
-      },
-      {
         "name": "SurrealField",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Basic.lean",
         "line": 54
@@ -1076,7 +1066,7 @@
       {
         "name": "TwoFiltrationBridge",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/TwoFiltrationBridge.lean",
-        "line": 50
+        "line": 53
       },
       {
         "name": "TypedGarsideLeadingTerm",
@@ -1181,17 +1171,25 @@
     ],
     "dependent": [
       {
-        "name": "OmegaOrder",
-        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean",
-        "line": 57,
+        "name": "JonesBirthday",
+        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+        "line": 497,
         "dependsOn": [
           "SurrealField"
         ]
       },
       {
-        "name": "JonesBirthday",
-        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-        "line": 492,
+        "name": "LocalInfinitesimalField",
+        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean",
+        "line": 102,
+        "dependsOn": [
+          "SurrealField"
+        ]
+      },
+      {
+        "name": "SpectralNormalForm",
+        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean",
+        "line": 112,
         "dependsOn": [
           "SurrealField"
         ]
@@ -1615,7 +1613,18 @@
     ],
     "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean": [
       {
-        "line": 655,
+        "line": 370,
+        "category": "proof-no-trivial-true",
+        "pattern": "trivial-existential",
+        "snippet": "theorem qou_standardPart_image_exists (SQ : QOU_Surreal K) :",
+        "decl": "qou_standardPart_image_exists",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "vacuous-by-design: the triviality IS the content — this records that the conjunct was provable for every `SQ`.",
+        "detail": "concludes `∃ Q, … = Q` and proves it `⟨QOU_StandardPart K SQ, rfl⟩` — the witness IS the expression, so the statement holds for every value of `QOU_StandardPart K SQ` and says nothing about it"
+      },
+      {
+        "line": 660,
         "category": "proof-no-trivial-true",
         "pattern": "exists-true-tautology",
         "snippet": "theorem exists_knot [JonesBirthday K] :",
@@ -1625,7 +1634,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean": [
       {
-        "line": 352,
+        "line": 327,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem branching_convergence (k : ℕ) (hk : k ≥ 4)",
@@ -2417,7 +2426,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean": [
       {
-        "line": 96,
+        "line": 109,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem adjoint_vanishing_propagation",
@@ -2428,7 +2437,7 @@
         "detail": "the projected field `jgcs.adjoint_vanishing` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 202,
+        "line": 188,
         "category": "proof-no-trivial-true",
         "pattern": "reflexive-tautology-ascribed-literal",
         "snippet": "theorem kahler_differentials_no_sym_component :",
@@ -2582,7 +2591,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/GradedFrobeniusHopf.lean": [
       {
-        "line": 183,
+        "line": 153,
         "category": "proof-no-trivial-true",
         "pattern": "reflexive-tautology-ascribed-literal",
         "snippet": "theorem degree_zero_dim_one :",
@@ -2885,7 +2894,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean": [
       {
-        "line": 138,
+        "line": 154,
         "category": "proof-no-trivial-true",
         "pattern": "exists-true-tautology",
         "snippet": "theorem yekutieli_finite_slice_discharged (G : Type u) [Group G] (z : G) :",
@@ -2893,7 +2902,7 @@
         "severity": "critical"
       },
       {
-        "line": 174,
+        "line": 190,
         "category": "proof-no-trivial-true",
         "pattern": "exists-true-tautology",
         "snippet": "theorem markov_axiom_h1_to_h2_discharged (q z : ℝ) :",
@@ -2901,7 +2910,7 @@
         "severity": "critical"
       },
       {
-        "line": 180,
+        "line": 196,
         "category": "proof-no-trivial-true",
         "pattern": "exists-true-tautology",
         "snippet": "theorem markov_axiom_h2_to_h3_discharged (q z : ℝ) :",
@@ -2909,7 +2918,7 @@
         "severity": "critical"
       },
       {
-        "line": 266,
+        "line": 282,
         "category": "proof-no-trivial-true",
         "pattern": "exists-true-tautology",
         "snippet": "theorem lie_valued_stokes_discharged (M : Type u) (𝔤 : Type u)",
@@ -3395,17 +3404,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean": [
-      {
-        "line": 33,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-witness-with-unused-hypothesis",
-        "snippet": "theorem nuclear_knot_classification (Z N : ℕ) (hA : Z + N ≥ 4) :",
-        "decl": "nuclear_knot_classification",
-        "severity": "major",
-        "detail": "proof is `by\n  exact ⟨.borromean, rfl⟩`, which uses no hypothesis, yet the statement binds `hA` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean": [
       {
         "line": 105,
@@ -3502,17 +3500,6 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (unique) — honestly framed; tracked not counted"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean": [
-      {
-        "line": 168,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-witness-with-underscored-hypothesis",
-        "snippet": "theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :",
-        "decl": "wenzl_annihilator",
-        "severity": "major",
-        "detail": "proof is `⟨0, rfl⟩`, which uses no hypothesis, yet the statement binds `_h` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean": [
@@ -3671,20 +3658,9 @@
         "detail": "proof is `by\n  unfold bindingEnergy\n  rfl`, which uses no hypothesis, yet the statement binds `hq`, `h_parent_len` — absent from the conclusion, so the claim holds for every value of them"
       }
     ],
-    "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean": [
-      {
-        "line": 85,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-witness-with-unused-hypothesis",
-        "snippet": "theorem spectral_decomposition_qvalue",
-        "decl": "spectral_decomposition_qvalue",
-        "severity": "major",
-        "detail": "proof is `⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩`, which uses no hypothesis, yet the statement binds `hq`, `hp`, `hd`, `hme` — absent from the conclusion, so the claim holds for every value of them"
-      }
-    ],
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean": [
       {
-        "line": 62,
+        "line": 63,
         "category": "proof-claims-unencoded",
         "pattern": "docstring-claims-gap",
         "snippet": "structure CategoricalReebDerivation (C : Type u) [Category.{v} C]",
@@ -3721,7 +3697,7 @@
     ],
     "content/quantum-observable-universe/quantum-universes/categorical-jet.lean": [
       {
-        "line": 55,
+        "line": 57,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem CategoricalJet.kernelIncl_exact {C : Type u}",
@@ -3732,7 +3708,7 @@
         "detail": "the projected field `cj.exact` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 83,
+        "line": 85,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem categorical_jet_prolongation {C : Type u}",

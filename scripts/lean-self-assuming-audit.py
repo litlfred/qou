@@ -41,8 +41,32 @@ import json
 from pathlib import Path
 
 # theorem/lemma NAME <binders> : CONCLUSION := PROOF
+#: Keywords that start a new top-level item, i.e. end the previous one.
+#:
+#: `axiom` was missing, and the omission was **silent and consequential**.
+#: `rest` runs to the next terminator, so a theorem followed by an `axiom`
+#: swallowed it whole: `y_base_case_singleton` (wedderburn-bratteli-recursion)
+#: yielded a 361-character "proof" reading
+#: `hbase axiom plancherel_completeness_axiom {R : Type u} …`, which the
+#: length guard below then rejected. A textbook `(h : P) : P := h` was
+#: therefore invisible — as was `unified_mass_finite`, a textbook trivial
+#: existential — and both were found only by cross-checking this script
+#: against `content/pipeline/lean-vacuity-axiom-audit.ts`, which splits
+#: declarations differently.
+#:
+#: Note also that `/--` and `--` were dead alternatives here: `analyze`
+#: runs this over COMMENT-STRIPPED source, so no comment marker survives to
+#: match. Every real terminator has to be a keyword, which is why the list
+#: missing one was enough to lose a declaration.
+DECL_TERMINATORS = (
+    "theorem|lemma|def|abbrev|axiom|example|instance|structure|class|inductive"
+    "|opaque|macro|notation|syntax|elab|deriving|mutual|initialize"
+    "|private|protected|partial|unsafe|nonrec|scoped|noncomputable|local"
+    "|end|namespace|section|variable|universe|open|attribute|set_option"
+)
 DECL = re.compile(
-    r"^(?P<kw>theorem|lemma)\s+(?P<name>[A-Za-z_][A-Za-z0-9_.']*)\s*(?P<rest>.*?)(?=^\s*(?:@\[|/--|--|theorem|lemma|def|structure|class|instance|abbrev|noncomputable|end|namespace|\Z))",
+    r"^(?P<kw>theorem|lemma)\s+(?P<name>[A-Za-z_][A-Za-z0-9_.']*)\s*(?P<rest>.*?)"
+    r"(?=^\s*(?:@\[|" + DECL_TERMINATORS + r")\b|\Z)",
     re.S | re.M,
 )
 # Binder delimiters. Explicit `(..)`, implicit `{..}`, strict-implicit
@@ -345,6 +369,11 @@ def acknowledgment(raw_lines: list, line: int):
     return None
 
 
+#: Declarations rejected by the proof-length guard, so the number is
+#: reportable rather than silent. See the guard in `analyze`.
+SKIPPED_LONG: list = []
+
+
 def analyze(path: Path, report_heuristic: bool = False):
     raw = path.read_text(encoding="utf-8", errors="replace")
     raw_lines = raw.splitlines()
@@ -360,7 +389,17 @@ def analyze(path: Path, report_heuristic: bool = False):
         # Cheap reject: only short proof terms can be vacuous in the shapes
         # below. This used to demand a BARE IDENTIFIER, which is what kept
         # `by exact h`, `by assumption` and `⟨e, rfl⟩` out of reach.
-        if len(proof) > 200 or not proof:
+        #
+        # COUNTED, not silent. A mis-split declaration lands here looking
+        # like a very long proof, so a rise in this number is the symptom of
+        # a `DECL_TERMINATORS` gap rather than of long proofs. That is
+        # exactly how `axiom` went missing for as long as it did: the guard
+        # rejected the runaway `rest` and said nothing. `--diagnostics`
+        # prints the tally.
+        if not proof:
+            continue
+        if len(proof) > 200:
+            SKIPPED_LONG.append((str(path), m.group("name"), len(proof)))
             continue
         sig = body[:idx]
         concl_at = conclusion_colon(sig)
@@ -399,8 +438,9 @@ def analyze(path: Path, report_heuristic: bool = False):
 
 
 def main():
-    argv = [a for a in sys.argv[1:] if a != "--heuristic"]
+    argv = [a for a in sys.argv[1:] if a not in ("--heuristic", "--diagnostics")]
     heuristic = "--heuristic" in sys.argv[1:]
+    diagnostics = "--diagnostics" in sys.argv[1:]
     roots = argv or ["content"]
     hits = []
     scanned = 0
@@ -420,6 +460,17 @@ def main():
         by_cat.setdefault(h["category"], []).append(h)
     tally = ", ".join(f"{len(v)} {k}" for k, v in sorted(by_cat.items()))
     print(f"scanned {scanned} .lean files — {len(hits)} candidate(s): {tally}\n")
+    if SKIPPED_LONG:
+        print(
+            f"  {len(SKIPPED_LONG)} declaration(s) skipped: proof term over 200 "
+            "chars. A mis-split declaration looks exactly like this, so treat a "
+            "rise as a DECL_TERMINATORS gap until shown otherwise"
+            + (" (--diagnostics to list)" if not diagnostics else ":")
+        )
+        if diagnostics:
+            for f, n, ln in sorted(SKIPPED_LONG, key=lambda x: -x[2])[:40]:
+                print(f"    {ln:>6}  {n}  {f}")
+        print()
     for cat in sorted(by_cat):
         print(f"── {cat} ──\n")
         for h in sorted(by_cat[cat], key=lambda x: (x["file"], x["line"])):
