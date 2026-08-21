@@ -87,3 +87,51 @@ over a domain. Mathlib has only `degreeOf_mul_le`, the wrong direction. Plus the
 coprimality step (`p ∣ q * r`, `gcd p q = 1` ⟹ `p ∣ r`) — note `IsCoprime` in Mathlib is
 Bezout-flavoured and **does not hold** for `x, y` in `MvPolynomial`, so this must go through
 `UniqueFactorizationMonoid`, not `IsCoprime`.
+
+---
+
+## Progress, 2026-08-21 — steps 2 and 3 done, the gap is now one sentence
+
+Two new modules, both sorry-free on the standard axiom set:
+
+- `QOU/Mathlib/LineRestriction.lean` — `lineRestrict`, `dirDeriv`, the chain rule
+  `d/dt f(a+tc) = (Dᶜf)(a+tc)` and its iterate, `eval_zero_lineRestrict`,
+  `exists_lineRestrict_ne_zero`.
+- `QOU/Mathlib/DirectionalWronskian.lean` — `dirGenWronskian c f = det ((Dᶜ)ⁱ fⱼ)`, the
+  pullback across `lineRestrict`, and the equivalence below.
+
+### The result that reshapes the problem
+
+```
+dirGenWronskian c f ≠ 0  ↔  ∃ a, the restrictions along t ↦ a + tc are independent over K
+```
+
+Both directions proved. **The base point drops out of the problem.** Step 1 of the route as
+originally written asked for a generic *line* — a base point and a direction. It only ever
+needed the direction:
+
+```
+f independent over K   ⟹   ∃ c, dirGenWronskian c f ≠ 0
+```
+
+The reverse direction needed `exists_lineRestrict_ne_zero`, and the shape of that lemma is
+the reason the base point is free: the constant term of `lineRestrict a c P` is `P(a)`, so
+**any** `a` off the zero set of `P` works, in **every** direction. Genericity was only ever
+needed in `c`.
+
+### ⚠ What is open, stated honestly
+
+Finding a good direction is a genericity statement over the space of directions, and the
+naive argument does not close it. For each *fixed* non-zero `p ∈ span f` the set of bad `c`
+is a proper subspace — but `span f` is infinite, so there is no finite union to take. This
+needs a real argument (a dimension count, or an induction on the number of variables), not
+an assembly of what is already here.
+
+### Then, still
+
+**Multilinear expansion.** `(Dᶜ)ⁱ` is a linear combination of monomial operators of order
+`i`, whereas `mvGenWronskian` takes `D : Fin m → List σ` — monomial operators only. The
+useful direction is the contrapositive (if every bounded-order generalized Wronskian
+vanishes then `dirGenWronskian c f = 0` for every `c`), which needs only multilinearity of
+`det` in its rows — **not** a multinomial theorem for `(∑ cᵢ ∂ᵢ)ⁱ`. Worth noting because the
+multinomial route looks necessary and is not.
