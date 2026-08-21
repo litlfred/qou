@@ -41,6 +41,14 @@ at the bare hyperbolic-volume scale. The proton carries an O(1) density `ρ_p = 
 
 ## Open (numerology guard — magnitudes not interpreted)
 
+> **CORRECTION (2026-08-21, [forward test](2026-08-21-binding-hbarq-rung-forward-test.md)).** The
+> "binding residuals are ℏ_q²-suppressed" phrasing below over-generalised. `ρ_implied/ℏ_q² = M_need`
+> is a *definitional* identity, so `ρ_αα ≈ ℏ_q²` is only the single-bond `M ≈ 1` case; multi-bond
+> bindings have `M_need` = 2.0 (³H), 7.6 (⁴He), i.e. `ρ_binding = M·ℏ_q²`. What survives non-circular:
+> the mass multiplier is O(1/ℏ_q²) (ρ_p O(1), classical) while binding is O(1) so `ρ_binding = M·ℏ_q²`
+> is O(ℏ_q²) (quantum) — a scaling separation, not a magnitude coincidence. Result 1 (259×) is
+> unaffected.
+
 `ρ_αα ≈ ℏ_q²` **restates** the numerical match `b_αα = m_e·Vol` as a density identity; it is **not**
 a derivation. Deriving `b_αα` requires a first-principles reason the α–α interface density is `ℏ_q²`
 — that binding residuals sit two `ℏ_q`-powers below the rest-mass VolDensity. That is a scope-(a)

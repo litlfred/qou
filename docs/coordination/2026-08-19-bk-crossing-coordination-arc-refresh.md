@@ -41,9 +41,13 @@ No open sibling branch/PR is currently on this arc (checked `git branch -r`, `li
 1. **Item 1 (deepest):** derive *why* the multiplier is `z=A−1` in the linear-chain regime but
    ~2 at the doubly-magic ⁴He shell — the regime switch `he4-nu-sdp` exposed. The
    `BondExtensiveBinding` class (Lane 1) is the slot the derived law must fill.
-2. **Item 3b forward test:** the `ρ_αα ≈ ℏ_q²` observation predicts binding residuals are
-   `ℏ_q²`-suppressed relative to their VolDensity — test on the deuteron and per-isotope `b_αα`
-   for larger interface links; a confirmed pattern would upgrade the observation toward a rule.
+2. **Item 3b forward test — DONE (2026-08-21, re-scoped).** The `ρ_αα ≈ ℏ_q²` observation was
+   tested and found to be the *definitional* identity `ρ/ℏ_q² = M_need` at the single-bond `M ≈ 1`
+   case — corrected Lane 2's "binding is ℏ_q²-suppressed" over-claim to `ρ_binding = M·ℏ_q²`. What
+   survives non-circular: mass multiplier O(1/ℏ_q²) vs binding O(1) (mass classical, binding
+   O(ℏ_q²) quantum); and `M = z = A−1` in the linear-chain regime (Lane 1 tie). Audit
+   `2026-08-21-binding-hbarq-rung-forward-test.md`. *Next open:* derive why mass carries
+   `linking_weight/ℏ_q²` and binding the bare coordination count `M`.
 3. **Item 2:** turn `hoefsmit-convergence-magic-shells-intro.md`'s SW-3-root magic-shell
    saturation into the `a_D^(4)≈2.52` / `ρ_F≈2` value (replace the AME read).
 4. **Item 4 (W3 first):** resolve which knot the deuteron *is* (0 or 4.4 anchor) — every
