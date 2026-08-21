@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-21T22:00:40Z
+updated_at: 2026-08-21T22:03:38Z
 ---
 
 
@@ -444,3 +444,21 @@ Remaining for surjectivity is ONE statement about Q's shape alone:
   step peels the corner carrying the largest REMAINING entry (brick 16 supplies that corner).
 Then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
 Wedderburn split.
+
+
+### Brick 19 — the two run conditions COINCIDE (same PR #5426)
+
+cornersAlong_iff_shape : CornersAlong T is <-> ShapeCornersAlong (tableauShape T) is
+(under RowsSorted + ColStrict + NoEmptyRows)
+
+Brick 18 gave shape -> tableau; this adds the converse. No circularity: the induction's own
+hypothesis supplies ShapeCornersAlong for the LATER steps, and tableauShape_uninsertSteps turns that
+into the shape at that point, so the shape is in hand before the current step's corner is checked.
+
+Immediately buys: brick 15's insertion-built CornersAlong now reads at shape level, so BOTH
+hypotheses of insertWord_uninsertSteps_of_shape are inhabited (shapeCornersAlong_insertWord,
+removeCornerSteps_insertWord). Same anti-vacuity check brick 15 made, one level up — a reduction to
+a condition nothing satisfies is no reduction.
+
+### #5426 now carries bricks 16-19, all sorry-free and axiom-clean
+16 isCorner_of_max_in_row | 17 tableauShape_uninsert | 18 the reduction | 19 the iff + inhabitation
