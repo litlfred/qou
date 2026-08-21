@@ -244,3 +244,30 @@ the unresolved `y_λ(0)` semantics question in `qou-j47t`.
 - **split out:** `derived-chi-catalogue` → `qou-j47t`.
 
 Not closing this bean while helium-4 is running.
+
+### ⚠ HAZARD found while doing this: the audit reads a MID-WRITE witness as CLEAN
+
+Running `convention-c-witness-audit.py` while the helium-4 producer was still
+writing reported
+
+```
+convention-C witnesses, detected STRUCTURALLY
+  1 witness(es), 2 dead-block entries        <- helium-4 absent, i.e. "cleared"
+```
+
+but the file held **13 of 77 partitions** at that moment. The detector only sees
+what has been written, so a witness that is *incomplete* is indistinguishable
+from one that is *clean* — the 7 three-row entries present were all zero, and the
+64 unwritten partitions cannot be flagged.
+
+This is the same shape as taxonomy row 10 (*"the producer is migrated" does not
+mean "every anchor's witness is"*), one level lower: **"the audit is green" does
+not mean "the witness is finished."** Any cascade that runs the audit
+concurrently with a producer — or that runs it after a producer was killed
+mid-write — gets a false all-clear, and the failure mode is silence.
+
+Cheap guard for whoever wires this: compare the witness's partition count against
+the expected count for its `H_n` (11 at n=6, 30 at n=9, 77 at n=12) before
+trusting a clean structural result, or require the producer's completion marker.
+Not implemented here — flagged rather than half-built, and it belongs to the
+audit tooling rather than to this regeneration tranche.
