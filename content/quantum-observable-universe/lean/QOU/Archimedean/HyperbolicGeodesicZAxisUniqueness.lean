@@ -141,9 +141,10 @@ theorem zaxis_minimizer_eq_vseg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) {γ : ℝ 
   have hφ'_bd : ∀ t ∈ Set.Icc (0 : ℝ) 1, |(deriv γ t) 2 / (γ t) 2| ≤ |k| := by
     intro t ht
     have hz : (0 : ℝ) < (γ t) 2 := hγ.admissible.mem t ht
-    rw [abs_div, abs_of_pos hz, div_le_iff₀ hz]
-    calc |(deriv γ t) 2| ≤ ‖deriv γ t‖ := abs_coord_le_norm _ 2
-      _ = |k| * (γ t) 2 := hnorm_eq t ht
+    have hgk : ‖deriv γ t‖ / (γ t) 2 = |k| := by
+      have := hgval t ht; rw [hc_eq] at this; simpa [speedFn] using this
+    rw [← hgk, abs_div, abs_of_pos hz, div_le_div_iff_of_pos_right hz]
+    exact abs_coord_le_norm _ 2
   -- measurability of φ' on Icc
   have hnumCoord : AEStronglyMeasurable (fun t => (deriv γ t) 2)
       (volume.restrict (Set.Icc (0 : ℝ) 1)) :=
@@ -176,12 +177,11 @@ theorem zaxis_minimizer_eq_vseg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) {γ : ℝ 
     rw [hclean, hγ.admissible.target, hγ.admissible.source, zpt_height, zpt_height, hk]
   -- ∫_{Ioc 0 1} g = c
   have hg_int_eq : ∫ t in Set.Ioc (0 : ℝ) 1, speedFn γ t = c := by
-    have hEq : Set.EqOn (speedFn γ) (fun _ => c) (Set.Ioc (0 : ℝ) 1) :=
-      fun t ht => hgval t (Set.Ioc_subset_Icc_self ht)
-    have hcongr : ∫ t in Set.Ioc (0 : ℝ) 1, speedFn γ t = ∫ _t in Set.Ioc (0 : ℝ) 1, c :=
-      setIntegral_congr_fun measurableSet_Ioc hEq
-    rw [hcongr, setIntegral_const, Real.volume_Ioc, sub_zero,
-      ENNReal.toReal_ofReal (by norm_num), smul_eq_mul, one_mul]
+    have haeg : speedFn γ =ᵐ[volume.restrict (Set.Ioc (0 : ℝ) 1)] (fun _ => c) :=
+      (ae_restrict_iff' measurableSet_Ioc).mpr
+        (ae_of_all _ (fun t ht => hgval t (Set.Ioc_subset_Icc_self ht)))
+    rw [integral_congr_ae haeg, setIntegral_const, Real.volume_Ioc, sub_zero,
+      ENNReal.toReal_ofReal zero_le_one, smul_eq_mul, one_mul]
   -- integrability on Ioc
   have hgIoc : IntegrableOn (speedFn γ) (Set.Ioc (0 : ℝ) 1) :=
     (speedFn_integrableOn hγ.admissible hLfin).mono_set Set.Ioc_subset_Icc_self
