@@ -82,8 +82,18 @@ R_P = mpf(MASS_RATIO_P_E_STR)
 
 # CODATA 2022 muon-electron mass ratio (now a 9.5σ PREDICTION, kept for
 # the cross-check print; q₀ is no longer pinned from it — see below).
-M_MU_OVER_E_STR = "206.7682830"
-M_MU_OVER_E_ERR_STR = "0.0000046"
+#
+# READ from the registry, not transcribed. These were the literals
+# "206.7682830" / "0.0000046"; the first is the CODATA-**2018** value, 1.451
+# ppb from the 2022 value 206.7682827, carried here under a "CODATA 2022"
+# comment. qou_substrate.constants now reads the NIST table directly
+# (PR #5149), so this picks the correct edition up automatically -- and will
+# follow the next adjustment without anyone remembering to edit this line.
+from qou_substrate.constants import (  # noqa: E402
+    MASS_RATIO_MU_E_STR as M_MU_OVER_E_STR,
+    MASS_RATIO_MU_E_ERR as _M_MU_OVER_E_ERR,
+)
+M_MU_OVER_E_ERR_STR = repr(_M_MU_OVER_E_ERR)
 M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 
 # ── Substrate parameter q₀ — canonical single source ─────────
@@ -321,7 +331,7 @@ if __name__ == "__main__":
             ),
             "m_p_over_e_str": MASS_RATIO_P_E_STR,
             "m_p_over_e_err": str(MASS_RATIO_P_E_ERR),
-            "m_p_over_e_source": "CODATA 2022 (0.06 ppb)",
+            "m_p_over_e_source": f"CODATA 2022 ({float(mpf(str(MASS_RATIO_P_E_ERR)) / R_P) * 1e9:.3f} ppb)",
             "m_mu_over_e_str": M_MU_OVER_E_STR,
             "m_mu_over_e_err": "0.0000046",
             "m_mu_over_e_role": "9.5σ cross-check PREDICTION (not the anchor)",
