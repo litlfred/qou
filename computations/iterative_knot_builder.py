@@ -30,6 +30,17 @@ set_compute_dps()
 # retires), but it pinned this file to the ideal layer invisibly: nothing
 # in the file or its output said "muon", so no audit and no reader could
 # tell which layer the classification threshold belonged to.
+#
+# One further fact about that literal, measured on the branch that reached
+# this file second (bean `qou-odkf`): the muon string it typed was the
+# NON-REPRODUCIBLE one. It matched to 2.9e-24 the 243-witness string that
+# `q0_provenance_audit.py` records as unregenerable from its stated inputs,
+# rather than the canonical `Q_MUON_50` that `q_muon_at(60)` reproduces from
+# CODATA — those two differ by 2.84e-12 relative. So the literal was not
+# merely un-anchored; it was a copy of a value the corpus cannot rederive.
+# Importing removes both problems at once, and the muon -> proton move is
+# 1.15e-08 relative, ~1e2 inside the 1e-6 tolerances below, so no
+# classification changes.
 if not str(Q_50_DIGIT_STR).startswith("1.10997858275"):
     raise SystemExit(
         f"q_parameter resolved to {str(Q_50_DIGIT_STR)[:24]}…, not the proton "
@@ -54,8 +65,17 @@ def _classify_factor(c, d) -> str:
     return "mixed"
 
 def atom_to_braid_word_local(Z: int, N: int) -> list[int]:
-    # strict_averaged convention removes the color split terms so it matches d=0, -h, -h/2
-    triples = atom_braid_word_3A(Z, N, pn_convention="strict_averaged", include_inter=True)
+    # Was `pn_convention="strict_averaged"`, justified in-comment as removing
+    # "the color split terms so it matches d=0, -h, -h/2". `_classify_factor`
+    # has NO `-h/2` branch — anything that is not 0 or -h falls to "mixed" —
+    # so the colour-weighted `d` lands in the same bucket and the justification
+    # does not hold. Verified rather than argued: the full classification
+    # sequence is IDENTICAL under both conventions for D, T and 4He
+    # (D {pos:11, mixed:5, neg:7}; T {16,7,12}; 4He {23,9,15}). So this moves to
+    # the canonical convention (owner ruling R3, 2026-08-15) at zero behavioural
+    # cost, rather than being baselined as an exception. Bean `qou-odkf`.
+    triples = atom_braid_word_3A(
+        Z, N, pn_convention="bring_color_weighted", include_inter=True)
     
     by_nucleon: list[dict] = []
     triples_with_kind = [(c, d, g, _classify_factor(c, d)) for (c, d, g) in triples]

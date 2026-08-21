@@ -237,3 +237,61 @@ this bean's Part E fix was about.
 
 All seven point at `qou-cds4`, which owns the decision. Part F does not make it;
 it makes the decision's absence visible and stops the population growing.
+
+## Both unadjudicated entries read 2026-08-21 — one adjudicated, one drained
+
+Part F's honest debt is paid: **8 baselined, 0 unadjudicated**.
+
+### `chi_monotone_transfer.py::_self_test` — deliberate, and COUPLED
+
+Its in-file comment is explicit: the four oracle witnesses it checks against
+*"used the strict_averaged pn convention, so we compare on the MATCHING word"*.
+Correct today, and the same file already runs a colour-**weighted** check at
+n=6 — so it is explicitly two-framed rather than blind.
+
+But the oracles are `chi-{deuteron-h6, tritium-h9, helium-3-h9,
+helium-4-h12}-at-q0-50dps` — the colour-blind chi family from `45789ddfa0`,
+which is also the family missing provenance. **When those are regenerated
+weighted, this must flip too**, or the self-test starts comparing across frames
+and still passes. Baselined with that coupling recorded, not with "fixture".
+
+### `iterative_knot_builder.py::atom_to_braid_word_local` — TWO defects, both fixed
+
+Not one. I nearly recorded them as one, dropped the baseline entry after fixing
+the first, and the test immediately failed — which is the check working.
+
+**(a) A hardcoded q₀, and the wrong one.**
+
+    HA = 1.10997859555733471989976 - (1 / 1.10997859555733471989976)
+
+Three problems in one line: it typed q₀ instead of importing it; it typed the
+**muon** pin while R2 makes the proton pin canonical for compute; and the muon
+string it typed is the **NON-REPRODUCIBLE** one — matching to 2.9e-24 the
+243-witness string `q0_provenance_audit.py` records as unregenerable from its
+stated inputs, rather than the canonical `Q_MUON_50` that `q_muon_at(60)`
+reproduces from CODATA (the two differ by 2.84e-12 relative).
+
+Replaced with `from q_parameter import HA`, so the file stops having an opinion
+about q₀. The value moves 1.15e-08 (muon → proton), ~1e2 inside
+`_classify_factor`'s 1e-6 tolerances, so nothing reclassifies.
+
+**(b) The convention, which did NOT need an exception.**
+
+The in-comment justification — *"strict_averaged … removes the color split terms
+so it matches d=0, -h, -h/2"* — does not hold: `_classify_factor` has **no
+`-h/2` branch**. Anything not 0 or −h falls to `"mixed"`, and the colour-weighted
+`d` lands in the same bucket.
+
+Verified rather than argued — full classification sequences are **identical**
+under both conventions:
+
+    D    {pos: 11, mixed: 5, neg: 7}     identical
+    T    {pos: 16, mixed: 7, neg: 12}    identical
+    4He  {pos: 23, mixed: 9, neg: 15}    identical
+
+So it moves to `bring_color_weighted` at zero behavioural cost and leaves the
+baseline entirely, rather than being carried as a documented exception. Word
+lengths unchanged (11 / 23 / 47).
+
+That is the outcome a baseline should produce when someone finally reads the
+entry: not a better reason, but one fewer entry.

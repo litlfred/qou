@@ -613,10 +613,17 @@ PN_CONVENTION_BASELINE: dict[str, str] = {
         "declared in-file; S4 tranche owns it (qou-cds4)",
     # NOT YET ADJUDICATED. Listed so the ratchet can hold, flagged so nobody
     # mistakes silence for approval. Neither has been read.
+    # ADJUDICATED 2026-08-21: deliberate AND COUPLED. Its in-file comment says
+    # the four oracle witnesses it checks against "used the strict_averaged pn
+    # convention, so we compare on the MATCHING word". Correct today — and the
+    # same file already runs a colour-WEIGHTED check at n=6, so it is explicitly
+    # two-framed, not blind. But the oracles are
+    # chi-{deuteron-h6,tritium-h9,helium-3-h9,helium-4-h12}-at-q0-50dps, i.e. the
+    # colour-blind chi family from 45789ddfa0 that also lacks provenance. When
+    # those are regenerated weighted, THIS MUST FLIP TOO or the self-test starts
+    # comparing across frames and still passes.
     "chi_monotone_transfer.py::_self_test":
-        "UNADJUDICATED — in a _self_test, so plausibly a fixture rather than production; not read (qou-cds4)",
-    "iterative_knot_builder.py::atom_to_braid_word_local":
-        "UNADJUDICATED — a local word builder, so production-shaped; not read (qou-cds4)",
+        "matches its oracle witnesses' frame; flip when the chi oracles are regenerated (qou-cds4)",
 }
 
 CANONICAL_PN = "bring_color_weighted"
