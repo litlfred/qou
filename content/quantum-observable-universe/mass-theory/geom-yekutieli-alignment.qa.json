@@ -2003,6 +2003,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1206d2138e58",
+          "ts": "115cda99f3aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:09:40.142Z",
+        "reviewed_sha": "38c4028e22a7492474b539d85afac486538ea158",
+        "evidence": "'multiplicative rather than divisive' and 'no Thurston-geometrization input is required' are precise scope statements carrying the argument."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2197,5 +2212,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:09:40.142Z"
 }
