@@ -180,8 +180,9 @@ theorem zaxis_minimizer_eq_vseg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) {γ : ℝ 
     have haeg : speedFn γ =ᵐ[volume.restrict (Set.Ioc (0 : ℝ) 1)] (fun _ => c) :=
       (ae_restrict_iff' measurableSet_Ioc).mpr
         (ae_of_all _ (fun t ht => hgval t (Set.Ioc_subset_Icc_self ht)))
-    rw [integral_congr_ae haeg, setIntegral_const, Real.volume_Ioc, sub_zero,
-      ENNReal.toReal_ofReal zero_le_one, smul_eq_mul, one_mul]
+    rw [integral_congr_ae haeg, setIntegral_const, smul_eq_mul,
+      MeasureTheory.measureReal_def, Real.volume_Ioc, sub_zero,
+      ENNReal.toReal_ofReal zero_le_one, one_mul]
   -- integrability on Ioc
   have hgIoc : IntegrableOn (speedFn γ) (Set.Ioc (0 : ℝ) 1) :=
     (speedFn_integrableOn hγ.admissible hLfin).mono_set Set.Ioc_subset_Icc_self
@@ -202,7 +203,7 @@ theorem zaxis_minimizer_eq_vseg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) {γ : ℝ 
             _ ≤ |k| := hφ'_bd t (Set.Ioc_subset_Icc_self ht)
             _ = c := hc_eq.symm
             _ = speedFn γ t := (hgval t (Set.Ioc_subset_Icc_self ht)).symm
-        linarith
+        simp only [Pi.zero_apply]; linarith
       have hint0 : ∫ t in Set.Ioc (0 : ℝ) 1,
           (speedFn γ t - (deriv γ t) 2 / (γ t) 2) = 0 := by
         rw [integral_sub hgIoc hpIoc, hg_int_eq, hphi_int_eq, hc_eq, abs_of_nonneg hkpos]
@@ -231,7 +232,7 @@ theorem zaxis_minimizer_eq_vseg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) {γ : ℝ 
             _ = c := hc_eq.symm
             _ = speedFn γ t := (hgval t (Set.Ioc_subset_Icc_self ht)).symm
         have hneg := neg_abs_le ((deriv γ t) 2 / (γ t) 2)
-        linarith [neg_le_neg hpb]
+        simp only [Pi.zero_apply]; linarith [neg_le_neg hpb]
       have hint0 : ∫ t in Set.Ioc (0 : ℝ) 1,
           (speedFn γ t + (deriv γ t) 2 / (γ t) 2) = 0 := by
         rw [integral_add hgIoc hpIoc, hg_int_eq, hphi_int_eq, hc_eq, abs_of_neg hkneg]
@@ -318,8 +319,9 @@ theorem zaxis_minimizer_eq_vseg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) {γ : ℝ 
     have hintk : ∫ t in Set.Ioc (0 : ℝ) τ, (deriv γ t) 2 / (γ t) 2 = τ * k := by
       have hcongr : ∫ t in Set.Ioc (0 : ℝ) τ, (deriv γ t) 2 / (γ t) 2
           = ∫ _t in Set.Ioc (0 : ℝ) τ, k := integral_congr_ae haek
-      rw [hcongr, setIntegral_const, Real.volume_Ioc, sub_zero,
-        ENNReal.toReal_ofReal hτ.1, smul_eq_mul]
+      rw [hcongr, setIntegral_const, smul_eq_mul,
+        MeasureTheory.measureReal_def, Real.volume_Ioc, sub_zero,
+        ENNReal.toReal_ofReal hτ.1]
     rw [hintk, hγ.admissible.source, zpt_height] at hclean
     -- hclean : τ * k = Real.log ((γ τ) 2) - Real.log a
     have hzτ : (0 : ℝ) < (γ τ) 2 := hγ.admissible.mem τ hτ
