@@ -165,9 +165,14 @@ been put together. That is the highest-leverage remaining item, not this one.
   and `TemperleyLiebTower` built as addon oleans with `lean`-direct. **No
   `lake build` was run**; the main checkout's 6990 Mathlib oleans are intact
   (bean `qou-r13s`).
-- `grep`: **0** `sorry` in every touched file; no `native_decide`, no
-  `: True := trivial`, no `axiom`. `MarkovGramDegenerate.lean`'s sorry count is
-  unchanged from `HEAD` (0 → 0).
+- **Zero `sorry` tactics.** Stated carefully, because a bare `grep -c sorry`
+  is misleading here: `BallotNumbers.lean` and `MarkovGramDegenerate.lean`
+  return 0, but `TwoRowDimCatalan.lean` returns **3** — all three inside the
+  module docstring, in the words *"sorry-free"* (twice) and *"`sorryAx`"*.
+  There is no `sorry` tactic in any of the three files. The authoritative check
+  is the axiom sweep below, not the grep. `MarkovGramDegenerate.lean`'s count
+  is unchanged from `HEAD` (0 → 0). No `native_decide` (0 in all three files),
+  no `: True := trivial`, no `axiom`.
 - `#print axioms` on **all 22** new declarations (8 in `BallotNumbers`, 9 in
   `TwoRowDimCatalan`, 5 in `MarkovGramDegenerate`):
   `[propext, Classical.choice, Quot.sound]`, **no `sorryAx`** — read subject to
