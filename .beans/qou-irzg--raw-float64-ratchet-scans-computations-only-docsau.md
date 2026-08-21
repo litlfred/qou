@@ -1,11 +1,11 @@
 ---
 # qou-irzg
 title: raw-float64 ratchet scans computations/ only — docs/audits/scripts/ witnesses are ungated (5 carry raw floats)
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T02:49:47Z
-updated_at: 2026-08-21T15:56:07Z
+updated_at: 2026-08-21T16:12:01Z
 ---
 
 
@@ -216,3 +216,17 @@ Remaining, in order:
 2. Tighten `raw-float64-baseline--docs-audits-scripts.json` to 0/0.
 3. Widen the gate to `docs/audits` (34 dirty / 1277 fields measured),
    superseding the subtree baseline rather than sitting beside it.
+
+
+**All three pieces landed (8cd9a04d785).**
+
+1. kappa5 witness — phase-law verdict byte-identical, drain is representation-only.
+2. `docs/audits/scripts` baseline tightened 6/26 -> **0/0**.
+3. Gate widened to `docs/audits` (32 files / 1275 fields baselined), superseding
+   the subtree root. Shown to fire on a witness planted OUTSIDE the old subtree.
+
+Plus: `drain_owner` made root-aware (was stamping every root with #4677), and
+the stale `--scan-root` help that forbade the widening the code supports.
+
+Backlog now held rather than drained: 32 files belong to the arcs owning those
+probes. PR #5382.
