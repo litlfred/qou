@@ -1,7 +1,33 @@
 {
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T15:54:59.151074+00:00",
+  "commitSha": "f071740412156b1ef48bd0221466f9af22a17653",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "qlift_ggm_diagonal_gauge_prune_probe",
+  "scriptFile": "qlift_ggm_diagonal_gauge_prune_probe.py",
+  "scriptHash": "13851628434e",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Diagonal-gauge prune: b_m = g_m*y_m from C1 kernel [m+1]_q b_{m+1} = b_m + c b_{m-1} into GGM eq-49 y_{m+1} - (2-q^m) y_m + y_{m-1} = 0 -- consistency condition derived symbolically, verified numerically",
-  "computation": "mpmath dps=50; P1 residual of derived consistency identity; P2 direct (A)-gauge construction + eq-49 residual on the proved C1 solution b_n = I_q(n)/[n]_q!; P3 constant-c(q) and index-shift non-rescue",
-  "generated": "2026-07-20T03:19:29+00:00",
+  "computation_method": "mpmath dps=50; P1 residual of derived consistency identity; P2 direct (A)-gauge construction + eq-49 residual on the proved C1 solution b_n = I_q(n)/[n]_q!; P3 constant-c(q) and index-shift non-rescue",
+  "generated": "2026-08-21T15:54:59+00:00",
   "parameters": {
     "dps": 50,
     "tol_kill": "1e-40",

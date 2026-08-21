@@ -1,7 +1,33 @@
 {
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T15:54:59.445690+00:00",
+  "commitSha": "f071740412156b1ef48bd0221466f9af22a17653",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 40,
+  "computation": "qlift_kernel_candidate_crosscheck_probe",
+  "scriptFile": "qlift_kernel_candidate_crosscheck_probe.py",
+  "scriptHash": "eef555e9972f",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "C1 q-Hermite/q-involution vs C2 GGM eq-49: candidate q-lifts of the proved classical kernel (n+2) b_{n+2} = b_{n+1} + b_n -- structural cross-check, workplan step 2",
-  "computation": "mpmath dps=50; T1 exactness of [n+2]_q b_{n+2} = b_{n+1} + b_n for b_n = I_q(n)/[n]_q!; T2 scalar-gauge quadratic solve + residual scan vs GGM eq-49; T3 bar (q->1/q) covariance checks",
-  "generated": "2026-07-20T03:11:42+00:00",
+  "computation_method": "mpmath dps=50; T1 exactness of [n+2]_q b_{n+2} = b_{n+1} + b_n for b_n = I_q(n)/[n]_q!; T2 scalar-gauge quadratic solve + residual scan vs GGM eq-49; T3 bar (q->1/q) covariance checks",
+  "generated": "2026-08-21T15:54:59+00:00",
   "parameters": {
     "dps": 50,
     "tol_exact": "1e-45",
