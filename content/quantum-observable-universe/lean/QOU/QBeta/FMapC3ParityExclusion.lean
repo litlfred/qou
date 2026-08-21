@@ -58,4 +58,44 @@ theorem hopfValue_bar_even (q : ℝ) (hq : q ≠ 0) :
 theorem hopfValue_at_one : (-((1 : ℝ) ^ 2 + (1⁻¹) ^ 2)) = -2 := by
   norm_num
 
+/-! ### Route A, concretely: the D two-row trace's bar-odd part vanishes at q=1 -/
+
+/-- The dimension-weighted convention-D two-row (Temperley–Lieb) Markov trace of
+    the crossing power `σ^k`: block `(3)` scalar `q^k`, block `(2,1)` eigenvalues
+    `q^k, (−q⁻¹)^k`, weights `y₃ᴰ, y₂₁ᴰ`. -/
+noncomputable def traceD (k : ℕ) (q : ℝ) : ℝ :=
+  ((q ^ 4 + 1) / (q ^ 2 + 1) ^ 2) * q ^ k
+    + (q ^ 2 / (q ^ 2 + 1) ^ 2) * (q ^ k + (-(q⁻¹)) ^ k)
+
+/-- **Route A, formalised.** The bar-odd part of the D two-row trace of any
+    crossing power `σ^k` vanishes at `q = 1` — an instance of `barOdd_at_one`, so
+    it can never equal the bar-even `c₃ = −2` there. -/
+theorem barOdd_traceD_at_one (k : ℕ) : barOdd (traceD k) 1 = 0 := barOdd_at_one _
+
+/-! ### Redirect, concretely: genericity + the Hopf polynomial is not bar-even -/
+
+/-- **Genericity (scope-(a)).** Four unrelated bar-even D-quantities all equal
+    `−2` at `q = 1` — `−[2]_q`, `−(q²+q⁻²)`, `−y₃ᴰ/y₂₁ᴰ = −(q⁴+1)/q²`, and
+    `−1/(2y₂₁ᴰ)`. Matching the q=1 value distinguishes none of them, so it cannot
+    force the Hopf identification: the anti-fit genericity that refutes the
+    bar-even-weight route. -/
+theorem targetValue_generic_at_one :
+    (-((1 : ℝ) + 1⁻¹) = -2)
+      ∧ (-((1 : ℝ) ^ 2 + 1⁻¹ ^ 2) = -2)
+      ∧ (-(((1 : ℝ) ^ 4 + 1) / (1 : ℝ) ^ 2) = -2)
+      ∧ (-(1 / (2 * ((1 : ℝ) ^ 2 / ((1 : ℝ) ^ 2 + 1) ^ 2))) = -2) := by
+  refine ⟨by norm_num, by norm_num, by norm_num, by norm_num⟩
+
+/-- The skein-derived Hopf-link Jones polynomial in `s = √q`: `V(Hopf)(s) = −(s+s⁵)`. -/
+noncomputable def VhopfS (s : ℝ) : ℝ := -(s + s ^ 5)
+
+/-- **The Hopf polynomial is NOT bar-even.** It differs from its bar image at
+    the witness point `s = 2` (`−34 ≠ −17/32`), so no bar-even object can equal
+    it as a q-identity — only its `s = 1` *value* coincides. -/
+theorem VhopfS_not_bar_even : VhopfS 2 ≠ VhopfS (2⁻¹) := by
+  unfold VhopfS; norm_num
+
+/-- The Hopf polynomial's value at the classical point `s = 1` is `−2`. -/
+theorem VhopfS_at_one : VhopfS 1 = -2 := by unfold VhopfS; norm_num
+
 end QOU.QBeta
