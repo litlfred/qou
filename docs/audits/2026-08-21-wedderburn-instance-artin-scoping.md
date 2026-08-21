@@ -2,7 +2,7 @@
 
 **Verdict: the halves do not join, and joining them would not have helped.**
 Branch `claude/wedderburn-instance-artin-2026-08-21`, PR #5387. Answers item 3 of
-bean [`qou-luq7`](../../.beans/); tracked forward as `qou-hah4` and `qou-6dzi`.
+bean [`qou-luq7`](../../.beans/qou-luq7--defect-heckewedderburntrace-decomposition-is-self.md); tracked forward as `qou-hah4` and `qou-6dzi`.
 
 ## The question
 
@@ -175,8 +175,8 @@ Three distinct objects share the `WedderburnDecomp*` name:
 2. `QOU.Mathlib.HeckeAlgebra.WedderburnDecomposition` —
    `QOU/Mathlib/HeckeAlgebra.lean:118`. `Prop`-**variable** fields
    (`blocks_sum_to_one : Prop` + `blocks_sum_holds`), filled with `True` by
-   `instance triv_wedderburn` at `:167` over `block_proj _ := PUnit.unit`.
-   Worse than previously recorded: `instance triv_hecke` at `:150` *also*
+   `instance triv_wedderburn` at `:166` over `block_proj _ := PUnit.unit`.
+   Worse than previously recorded: `instance triv_hecke` at `:151` *also*
    globally registers `IwahoriHeckeAlgebra R n q` with `carrier := PUnit`, so
    even a genuine instance of the Wedderburn class there would be shadowed by
    typeclass search. Tracked: `qou-6dzi`.

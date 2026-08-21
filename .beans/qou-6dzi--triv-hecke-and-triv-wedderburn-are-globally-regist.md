@@ -25,10 +25,10 @@ agent has an ID that resolves.
   `blocks_sum_holds : blocks_sum_to_one`, `blocks_orthogonal : Prop` +
   `blocks_orthogonal_holds`. These are Prop-VARIABLE fields: the class does not
   say WHAT is asserted, only that something is.
-- `:167` `instance triv_wedderburn (R) [CommRing R] (n) (q : R) :
+- `:166` `instance triv_wedderburn (R) [CommRing R] (n) (q : R) :
   WedderburnDecomposition R n q` -- fills them with `True` / `True.intro`,
   `block_proj _ := PUnit.unit`. GLOBALLY REGISTERED.
-- `:150` `instance triv_hecke ... : IwahoriHeckeAlgebra R n q` with
+- `:151` `instance triv_hecke ... : IwahoriHeckeAlgebra R n q` with
   `carrier := PUnit`, every relation `True`. Also globally registered.
 
 ## WHY THIS IS WORSE THAN A LOCAL VACUITY
