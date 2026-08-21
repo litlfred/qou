@@ -1,4 +1,6 @@
 import QOU.SchurWeyl.QJucysMurphyEigen
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Algebra.Polynomial.Roots
 
 /-!
 # QOU.SchurWeyl.SeminormalInequivalence — pairwise inequivalence of the `ρ_λ` (q-deformed)
@@ -32,8 +34,18 @@ bar-symmetrised sum `Θ` is central, `ρ_λ(Θ)` is the *scalar* `cellContentCos
 number, and nothing here rules out two distinct shapes colliding on it.  As Laurent polynomials
 in `q` the sums differ — distinct shapes have distinct content multisets and the coefficients are
 positive — so they can agree for at most finitely many `q`; but "at most finitely many" is not
-"not at this one".  The unconditional route needs the eigenvalue **multiset** of each `ρ(L_k)`
-rather than one scalar; that is the file's tracked residual (bean `qou-jfr8`).
+"not at this one".
+
+`contentCount_eq_of_matRepEquiv` closes that gap: an equivalence forces the two shapes to have
+**the same number of cells of every content**.  The route is not the one the plan anticipated —
+no per-generator eigenvalue multiset, no characteristic polynomial, no Newton identities.
+Summing over `k` *first* makes the diagonal constant (the cell sweep), so `Σ_k L_k^m` acts by a
+scalar for every `m` and the same `scalar_eq` applies verbatim; the family of scalars is then a
+polynomial identity in disguise.
+
+**The one step still open** is the classical fact that a Young diagram is determined by its
+content multiset.  It is stated here and deliberately not assumed; nothing in this file is a
+`sorry`, and no theorem here claims `μ ≠ ν → ρ_μ ≇ ρ_ν`.
 
 The unconditional claim is nonetheless *true*: `H_n(q)` over `ℝ` is semisimple whenever `q` is
 not a root of unity of order `≤ n`, which `q ≠ 0` with `q ^ 2 ≠ 1` supplies, and the `ρ_λ` are
@@ -201,5 +213,175 @@ theorem contentPowSum_eq_of_matRepEquiv {μ ν : YoungDiagram}
     (∑ c ∈ ν.cells, (q ^ (2 * cellContent c)) ^ m)
       = ∑ c ∈ μ.cells, (q ^ (2 * cellContent c)) ^ m :=
   h.scalar_eq (seminormalRep_jmPowSum q hq0 hq2 n hμ m) (seminormalRep_jmPowSum q hq0 hq2 n hν m)
+
+
+/-! ### The roots core — equal power sums at every `m` force equal exponent multisets
+
+Shape-independent, and stated with `ℕ` exponents so that no shift is needed here; the Young-diagram
+contents are shifted into `ℕ` at the call site.  The infinitude of evaluation points is what does
+the work, and it comes from `0 < t`, `t ≠ 1`.
+-/
+
+
+/-- `m ↦ t ^ m` is injective for a positive `t ≠ 1`. -/
+theorem pow_right_injective_of_pos_of_ne_one {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1) :
+    Function.Injective (fun m : ℕ => t ^ m) := by
+  intro a b hab
+  have hlog : (a : ℝ) * Real.log t = (b : ℝ) * Real.log t := by
+    rw [← Real.log_pow, ← Real.log_pow]
+    exact congrArg Real.log hab
+  have hne : Real.log t ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one ht0 ht1
+  exact_mod_cast mul_right_cancel₀ hne hlog
+
+/-- A real polynomial vanishing at every `t ^ m` is the zero polynomial. -/
+theorem poly_eq_zero_of_eval_pow {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1)
+    (p : Polynomial ℝ) (h : ∀ m : ℕ, p.eval (t ^ m) = 0) : p = 0 := by
+  refine p.eq_zero_of_infinite_isRoot ?_
+  exact Set.infinite_of_injective_forall_mem
+    (pow_right_injective_of_pos_of_ne_one ht0 ht1) (fun m => h m)
+
+/-- The `d`-th coefficient of `∑_{i ∈ s} X ^ (f i)` counts the `i` with `f i = d`. -/
+theorem coeff_sum_X_pow {ι : Type*} (s : Finset ι) (f : ι → ℕ) (d : ℕ) :
+    (∑ i ∈ s, (Polynomial.X : Polynomial ℝ) ^ (f i)).coeff d
+      = ((s.filter (fun i => f i = d)).card : ℝ) := by
+  classical
+  rw [Polynomial.finset_sum_coeff]
+  simp only [Polynomial.coeff_X_pow]
+  have hflip : ∀ i ∈ s, (if d = f i then (1 : ℝ) else 0) = (if f i = d then (1 : ℝ) else 0) := by
+    intro i _
+    by_cases h : f i = d
+    · simp [h]
+    · simp [h, Ne.symm h]
+  rw [Finset.sum_congr rfl hflip, Finset.sum_boole]
+
+/-- **Equal power sums at every `m` force equal exponent multisets.** -/
+theorem card_filter_eq_of_powSum_eq {ι κ : Type*} {sμ : Finset ι} {sν : Finset κ}
+    {f : ι → ℕ} {g : κ → ℕ} {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1)
+    (h : ∀ m : ℕ, ∑ i ∈ sμ, (t ^ f i) ^ m = ∑ j ∈ sν, (t ^ g j) ^ m) (d : ℕ) :
+    (sμ.filter (fun i => f i = d)).card = (sν.filter (fun j => g j = d)).card := by
+  classical
+  set p : Polynomial ℝ :=
+    (∑ i ∈ sμ, (Polynomial.X : Polynomial ℝ) ^ (f i))
+      - (∑ j ∈ sν, (Polynomial.X : Polynomial ℝ) ^ (g j)) with hpdef
+  have hp : p = 0 := by
+    refine poly_eq_zero_of_eval_pow ht0 ht1 p (fun m => ?_)
+    rw [hpdef]
+    simp only [Polynomial.eval_sub, Polynomial.eval_finset_sum, Polynomial.eval_pow,
+      Polynomial.eval_X]
+    have hswap : ∀ u : ℕ, (t ^ m) ^ u = (t ^ u) ^ m := by
+      intro u; rw [← pow_mul, ← pow_mul, Nat.mul_comm]
+    simp only [hswap]
+    rw [h m, sub_self]
+  have hc := congrArg (fun r : Polynomial ℝ => r.coeff d) hp
+  simp only [hpdef, Polynomial.coeff_sub, Polynomial.coeff_zero, coeff_sum_X_pow] at hc
+  have hreal : ((sμ.filter (fun i => f i = d)).card : ℝ)
+      = ((sν.filter (fun j => g j = d)).card : ℝ) := by linarith
+  exact_mod_cast hreal
+
+
+/-! ### The Young-diagram bridge: shifting contents into `ℕ` -/
+
+/-- **A cell's row index is below the cell count.**  The cells `(0,j), …, (i,j)` all lie in `μ`
+by up-left closure and are distinct, so there are at least `i + 1` of them.  This is what bounds
+the contents from below and lets them be shifted into `ℕ`. -/
+theorem row_lt_card {μ : YoungDiagram} {i j : ℕ} (h : (i, j) ∈ μ) : i < μ.cells.card := by
+  classical
+  have hsub : ((Finset.range (i + 1)).image (fun k => (k, j))) ⊆ μ.cells := by
+    intro c hc
+    simp only [Finset.mem_image, Finset.mem_range] at hc
+    obtain ⟨k, hk, rfl⟩ := hc
+    rw [YoungDiagram.mem_cells]
+    exact μ.up_left_mem (by omega) (le_refl j) h
+  have hcard : ((Finset.range (i + 1)).image (fun k => (k, j))).card = i + 1 := by
+    rw [Finset.card_image_of_injective _ (fun a b hab => by simpa using hab), Finset.card_range]
+  have := Finset.card_le_card hsub
+  omega
+
+/-- Contents are bounded below by `-n` when the diagram has `n + 1` cells. -/
+theorem neg_le_cellContent {μ : YoungDiagram} {n : ℕ} (hN : μ.cells.card = n + 1)
+    {c : ℕ × ℕ} (hc : c ∈ μ.cells) : -(n : ℤ) ≤ cellContent c := by
+  have hmem : (c.1, c.2) ∈ μ := by rw [← YoungDiagram.mem_cells]; simpa using hc
+  have := row_lt_card hmem
+  rw [hN] at this
+  simp only [cellContent]
+  omega
+
+/-- The content of a cell, shifted into `ℕ` by the row bound. -/
+noncomputable def shiftedContent (n : ℕ) (c : ℕ × ℕ) : ℕ := (cellContent c + n).toNat
+
+theorem shiftedContent_cast {μ : YoungDiagram} {n : ℕ} (hN : μ.cells.card = n + 1)
+    {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
+    (shiftedContent n c : ℤ) = cellContent c + n := by
+  have := neg_le_cellContent hN hc
+  simp only [shiftedContent]
+  omega
+
+/-- `t ^ shiftedContent` factors as `q ^ (2·content)` times the shift, with `t = q ^ 2`. -/
+theorem pow_shiftedContent {μ : YoungDiagram} {n : ℕ} (hN : μ.cells.card = n + 1)
+    {q : ℝ} (hq0 : q ≠ 0) {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
+    (q ^ 2 : ℝ) ^ (shiftedContent n c) = q ^ (2 * cellContent c) * (q ^ 2 : ℝ) ^ n := by
+  have hq2 : (q ^ 2 : ℝ) ≠ 0 := pow_ne_zero 2 hq0
+  have hz : ((q ^ 2 : ℝ)) ^ (shiftedContent n c) = ((q ^ 2 : ℝ)) ^ ((shiftedContent n c : ℤ)) := by
+    rw [zpow_natCast]
+  rw [hz, shiftedContent_cast hN hc, zpow_add₀ hq2, zpow_natCast]
+  congr 1
+  rw [zpow_mul]
+  rfl
+
+
+/-- **An equivalence forces the two shapes to have the same content multiset.**
+
+The unconditional handle, assembled: `contentPowSum_eq_of_matRepEquiv` gives equality of the
+content power sums at *every* `m`; shifting the contents into `ℕ` turns those into honest
+polynomial evaluations at `t = q ^ 2`, `t ^ 2`, `t ^ 3`, …; and `card_filter_eq_of_powSum_eq`
+converts infinitely many coincidences into equality of coefficients — that is, of the number of
+cells of each content.
+
+The genericity hypothesis is doing a *second* job here.  Elsewhere in this arc `q ^ 2 ≠ 1` is
+used for injectivity of `c ↦ q ^ (2c)`; here it is what makes the evaluation points
+`q ^ 2, q ^ 4, …` pairwise distinct, so that the difference polynomial has infinitely many roots.
+
+What remains between this and `μ = ν` is the classical fact that a Young diagram is determined by
+its content multiset — stated in the module header as the one open step, and deliberately not
+assumed here. -/
+theorem contentCount_eq_of_matRepEquiv {μ ν : YoungDiagram}
+    (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+    (hμ : μ.cells.card = n + 1) (hν : ν.cells.card = n + 1)
+    (h : MatRepEquiv (seminormalRep q hq0 hq2 n hμ) (seminormalRep q hq0 hq2 n hν)) (d : ℤ) :
+    (ν.cells.filter (fun c => cellContent c = d)).card
+      = (μ.cells.filter (fun c => cellContent c = d)).card := by
+  classical
+  have ht0 : (0 : ℝ) < q ^ 2 := lt_of_le_of_ne (sq_nonneg q) (Ne.symm (pow_ne_zero 2 hq0))
+  by_cases hd : 0 ≤ d + (n : ℤ)
+  · have hshift : ∀ m : ℕ,
+        ∑ c ∈ ν.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m
+          = ∑ c ∈ μ.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m := by
+      intro m
+      have hν' : ∀ c ∈ ν.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m
+          = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : ℝ) ^ n) ^ m := by
+        intro c hc; rw [pow_shiftedContent hν hq0 hc, mul_pow]
+      have hμ' : ∀ c ∈ μ.cells, ((q ^ 2 : ℝ) ^ shiftedContent n c) ^ m
+          = (q ^ (2 * cellContent c)) ^ m * ((q ^ 2 : ℝ) ^ n) ^ m := by
+        intro c hc; rw [pow_shiftedContent hμ hq0 hc, mul_pow]
+      rw [Finset.sum_congr rfl hν', Finset.sum_congr rfl hμ', ← Finset.sum_mul, ← Finset.sum_mul,
+        contentPowSum_eq_of_matRepEquiv q hq0 hq2 n hμ hν h m]
+    have hcount := card_filter_eq_of_powSum_eq ht0 hq2 hshift ((d + (n : ℤ)).toNat)
+    have hre : ∀ (σ : YoungDiagram), σ.cells.card = n + 1 →
+        σ.cells.filter (fun c => shiftedContent n c = (d + (n : ℤ)).toNat)
+          = σ.cells.filter (fun c => cellContent c = d) := by
+      intro σ hσ
+      refine Finset.filter_congr (fun c hc => ?_)
+      have hcast := shiftedContent_cast hσ hc
+      constructor
+      · intro hh; omega
+      · intro hh; omega
+    rwa [hre ν hν, hre μ hμ] at hcount
+  · have hempty : ∀ (σ : YoungDiagram), σ.cells.card = n + 1 →
+        σ.cells.filter (fun c => cellContent c = d) = ∅ := by
+      intro σ hσ
+      refine Finset.filter_eq_empty_iff.mpr (fun {c} hc => ?_)
+      have := neg_le_cellContent hσ hc
+      omega
+    rw [hempty ν hν, hempty μ hμ]
 
 end QOU.SchurWeyl
