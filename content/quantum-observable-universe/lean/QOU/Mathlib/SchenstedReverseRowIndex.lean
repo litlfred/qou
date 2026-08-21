@@ -32,6 +32,14 @@ Three consequences follow, and the last is the one the whole reverse programme w
 * **`strictBelow_reverse_bump_step`** — one adjacent-row step of column-strictness, the mirror of
   `strictBelow_bump_step`.
 
+**Correction, recorded after the cascade was written.** This file was built expecting
+`strictBelow_reverse_bump_step` to be what the cascade lifts. It is not. That lemma relates `upper`
+and `lower` when *both* rows are `rowUninsert` images, and in the cascade the row below the one
+being written is not always such an image — at the target row it is a `dropLast`, or the row is
+deleted. `SchenstedCascadeColStrict` therefore does its column cases directly and consumes only the
+index theory above: `rowUninsert_spec`, `le_index_of_lt`, `reverse_bump_index_mono`. The lemma
+stands as a correct mirror of the forward API; it is simply not the load-bearing one.
+
 I had expected the monotonicity to be the hard step. It is three lines: `upper[kLow] < lower[kLow]`
 makes `kLow` itself an eligible index in the upper row, and the write index dominates every
 eligible index. The pair-of-rows step is then four column cases, of which monotonicity kills the
@@ -39,10 +47,9 @@ only bad one.
 
 ## Scope
 
-Two adjacent rows. Lifting `strictBelow_reverse_bump_step` along the cascade — which also needs the
-corner hypothesis located in `SchenstedUninsertInvariants`, for the `dropLast` at the target row —
-is the next brick of epic `qou-nrex`. Nothing here claims it, and `RSKBurnsideHolds` for general
-`n` stays open.
+Two adjacent rows. The cascade-level lift — which also needs the corner hypothesis located in
+`SchenstedUninsertInvariants`, for the `dropLast` at the target row — is the next brick of epic
+`qou-nrex`. Nothing here claims it, and `RSKBurnsideHolds` for general `n` stays open.
 
 Pure combinatorics on `ℕ`; nothing archimedean.
 -/
