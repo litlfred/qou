@@ -1,10 +1,11 @@
 ---
 # qou-nrex
 title: 'EPIC: RSK inverse — reverse bumping to the Robinson-Schensted bijection (taken over from the Schensted programme)'
-status: todo
+status: in-progress
 type: milestone
+priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-16T02:46:29Z
+updated_at: 2026-08-21T15:46:46Z
 ---
 
 
@@ -243,3 +244,20 @@ one that can.
 condition** on `i` (row `i+1` strictly shorter than row `i`): removing the last cell of a
 non-corner row breaks column-strictness, so the statement is false without it. That hypothesis is
 the thing to get right before writing the proof.
+
+## Brick 10 — cascade right inverse, non-deleting branch (PR #5374, 2026-08-21)
+
+`insert (uninsert T i).1 z = T` under `2 ≤ (T.getD i []).length`. lean-direct exit 0;
+`#print axioms insert_uninsert` = [propext, Classical.choice, Quot.sound], no sorryAx.
+
+**The predicted hypothesis was wrong and is corrected in-file.** Brick 9's PR body predicted a
+corner condition (row i+1 strictly shorter than row i). It is not that: the row-kept branch works
+for *any* sorted row, corner or not, and the row-deleted branch fails on a genuine counterexample
+(#eval-checked): uninsert [[1],[2,4]] 0 = ([[2,4]], some 1) but insert [[2,4]] 1 = [[1,4],[2]].
+That T has row lengths (1,2) — a non-Young shape. So the deleting branch needs a **shape**
+hypothesis (weakly decreasing row lengths), which is the next brick, not a corner one.
+
+### Remaining
+- brick 11: the deleting branch, under a Young-shape hypothesis on T.
+- word-level surjectivity (iterate brick 10+11 the way brick 3 iterates brick 2).
+- RSKBurnsideHolds for general n → feeds spechtEquiv_of_sum_sq for the general Wedderburn split.
