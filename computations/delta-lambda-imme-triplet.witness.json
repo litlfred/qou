@@ -1,8 +1,8 @@
 {
   "engine": "python+canonical-binding",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:09:21.526882+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "computedAt": "2026-08-21T15:51:40.994427+00:00",
+  "commitSha": "1e5d7568d07e46298511ea337ec2aa16069d11d5",
   "assertions": [
     {
       "name": "quadratic_c_nonzero",
@@ -27,7 +27,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 704760,
+  "durationMs": 1998655,
   "computation": "delta-lambda-imme-triplet",
   "scriptFile": "delta_lambda_imme_triplet.py",
   "scriptHash": "8dfb701566b6",
