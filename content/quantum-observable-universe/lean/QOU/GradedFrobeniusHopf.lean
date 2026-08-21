@@ -181,10 +181,25 @@ structure HeckeIrrepDecomposition where
 theorem hecke_h3_wedderburn :
     1 + 2 * 2 + 1 = (6 : ℕ) := by omega
 
-/-- The degree-0 subspace has dimension 1 (the symmetric eigenspace). -/
+/-- The dimension of the degree-0 subspace (the symmetric eigenspace).
+    A **named constant**, not a theorem.
+
+    Replaced `theorem degree_zero_dim_one : (1 : ℕ) = 1 := rfl`
+    (2026-08-21; vacuity ledger, `reflexive-tautology-ascribed-literal`).
+    `1 = 1` holds whatever that dimension is, so the statement asserted
+    nothing about the graded piece; per Strict Lean Discipline §8 a claim
+    with no falsifiable content is notation and belongs in a `def`. -/
 -- Ref: [mathas1999]
-theorem degree_zero_dim_one :
-    (1 : ℕ) = 1 := rfl
+def degreeZeroDim : ℕ := 1
+
+/-- The two graded pieces exhaust `H₃(q)`: the degree-0 subspace
+    (`degreeZeroDim`) together with the degree-≥1 subspace (dimension 5,
+    `degree_geq1_dim_five`) account for all `3! = 6` dimensions.  False
+    for any other degree-0 dimension, so the constant is load-bearing. -/
+-- Ref: [mathas1999]
+theorem graded_pieces_exhaust_h3 :
+    degreeZeroDim + (2 * 2 + 1) = Nat.factorial 3 := by
+  decide
 
 /-- The degree-≥1 subspace has dimension 5 (standard × 2 + alternating). -/
 -- Ref: [mathas1999]

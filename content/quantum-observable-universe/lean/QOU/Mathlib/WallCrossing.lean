@@ -120,12 +120,35 @@ class KSWallCrossing (L : ChargeLattice) where
     -- ±⟨γ₁, γ₂⟩ · Ω(γ₁) · Ω(γ₂) (the primitive KS formula):
     True  -- placeholder for the full quantum torus identity
 
-/-- **Primitive wall-crossing: the pentagon identity.** For the simplest
-    wall (rank-2 sublattice, two primitive charges), the KS formula reduces
-    to the quantum pentagon identity `E(e₁)E(e₂) = E(e₂)E(e₁+e₂)E(e₁)`.
-    This is the content of `QRogersPentagonArchimedean` in the existing
-    formalization — here we state the link. -/
-theorem primitive_KS_is_pentagon :
-    True := trivial  -- Link to QOU.BraidKnot.QRogersPentagonArchimedean
+/-! ### `primitive_KS_is_pentagon` — REMOVED 2026-08-21
+
+    It read `theorem primitive_KS_is_pentagon : True := trivial`, with a
+    trailing comment `-- Link to QOU.BraidKnot.QRogersPentagonArchimedean`
+    (vacuity ledger, `proof-no-trivial-true` / `placeholder-true`, verdict
+    genuine).  This is the canonical banned shape of AGENTS.md §1a and the
+    Strict Lean Discipline §4, and no carve-out applied: it was neither a
+    shadow-stub nor a conjecture-block placeholder.
+
+    Its docstring claimed the link, for a rank-2 wall, between the KS
+    formula and the quantum pentagon identity
+    `E(e₁)E(e₂) = E(e₂)E(e₁+e₂)E(e₁)`.  A cross-reference comment is not a
+    theorem, and this one did not even hold: the module is **not** imported
+    here, and the declaration had no consumers.
+
+    It was **dropped rather than restated** because no honest restatement
+    is available in this file:
+
+    - Stating the pentagon identity needs the quantum torus algebra and
+      the `E(·)` dilogarithm operator, none of which is formalised here.
+    - The obligation it would have connected to,
+      `KontsevichSoibelman.primitive_wall_crossing`, is **itself** a `True`
+      placeholder (see the class above), so there is nothing on either side
+      of the claimed link to connect.
+    - This file is otherwise `sorry`-free, so the state-and-queue route
+      (real statement + `sorry` + `-- Ref:`) would have introduced the
+      first `sorry` into a clean file — barred by Strict Lean Discipline §2.
+
+    The link is genuinely open and is tracked as bean `qou-xi16`, together
+    with the placeholder class field. -/
 
 end QOU.Mathlib.WallCrossing
