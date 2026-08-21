@@ -919,6 +919,8 @@ import QOU.Mathlib.SchenstedRSKInjective
 import QOU.Mathlib.SchenstedPermInjective
 -- RSK inverse, brick 10: the cascade-level RIGHT inverse (non-deleting branch).
 import QOU.Mathlib.SchenstedCascadeRightInverse
+-- RSK inverse, brick 11: what the reverse cascade preserves (and what needs a corner).
+import QOU.Mathlib.SchenstedUninsertInvariants
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
