@@ -140,6 +140,33 @@ def main() -> int:
     print()
     print("  Smallest residual belongs to the RULED-OUT form. That is the")
     print("  signature of a fit, not evidence for it.")
+
+    # `em-coupling-chern-simons` names two candidate causes for its residual:
+    # a wrong kappa, or an order-delta^2 truncation missing higher orders.
+    # Separating the two settles it.
+    print()
+    print("=" * 76)
+    print("Truncation vs pin — which one owns the residual")
+    print("=" * 76)
+    for pin_name, q in pins:
+        trunc = _alpha_em_inv_derived(q, order=2)
+        exact = _alpha_em_inv_derived(q)
+        dt = float((trunc - c22) / c22 * 10 ** 9)
+        de = float((exact - c22) / c22 * 10 ** 9)
+        print(f"  {pin_name:<7s} order-2 {dt:9.2f} ppb   exact {de:9.2f} ppb   "
+              f"resummation shrinks |residual| by {abs(dt) - abs(de):.2f} ppb")
+    # pins[0] is proton, pins[1] is muon -- going muon -> proton is [0] - [1].
+    # An earlier draft had these the wrong way round and printed +79.17 under a
+    # "muon -> proton" label.
+    q_proton_pin, q_muon_pin = pins[0][1], pins[1][1]
+    dm = float((_alpha_em_inv_derived(q_proton_pin)
+                - _alpha_em_inv_derived(q_muon_pin)) / c22 * 10 ** 9)
+    print(f"  muon -> proton pin change: {dm:+.2f} ppb")
+    print()
+    print("  Higher orders are worth ~11 ppb against a ~400 ppb residual — 1/36th")
+    print("  of the gap. The truncation is NOT the explanation, so by elimination")
+    print("  within that block's own two options the defect is kappa (still a")
+    print("  `sorry`, and needing ~1.8878 against Witten's 1.722).")
     return 0
 
 
