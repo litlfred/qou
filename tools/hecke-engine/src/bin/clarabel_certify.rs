@@ -146,7 +146,12 @@ fn main() {
     println!();
 
     // 2. Tighten the dual to rationals via §S9.2.
-    let q_str = "1.10998";
+    // Substrate anchor: the canonical 50-dps PROTON pin (bean qou-hihk).
+    // Was the truncated 5-digit `1.10998`, 1277 ppb off -- a hundred times
+    // further from the anchor than the muon/proton re-pin itself. This site
+    // takes a STRING because it feeds a Stern-Brocot rationalisation of the
+    // dual, so the digits choose which rational the certificate tightens to.
+    let q_str = "1.1099785827513808075916690956107688798744991218736";
     let q_max = 10_000_u64;
     let report = tighten_solution(&solver.solution, 3, q_str, q_max);
 
