@@ -101,12 +101,15 @@ theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
     (which sums `[c]_q[c+1]_q`) and the squared-bracket form `[c]_q²`
     from the bar-symmetrised JM cosh sum. -/
 -- Ref: [manuscript] §9
-theorem jacksonInt_mul_succ (q : ℝ) (k : ℤ) (hq : q ≠ 1) :
+theorem jacksonInt_mul_succ (q : ℝ) (k : ℤ) (hq : q ≠ 1) (hq0 : q ≠ 0) :
     jacksonInt q k * jacksonInt q (k + 1) =
     q * jacksonInt q k ^ 2 + jacksonInt q k := by
   unfold jacksonInt
   simp only [hq, ↓reduceIte]
   have hq1 : (1 : ℝ) - q ≠ 0 := sub_ne_zero.mpr (Ne.symm hq)
+  -- Normalize q^(k+1) = q^k * q BEFORE field_simp, so ring sees products
+  have hpow : q ^ (k + 1) = q ^ k * q := by rw [zpow_add₀ hq0, zpow_one]
+  simp only [hpow]
   field_simp
   ring
 
@@ -129,7 +132,8 @@ theorem jacksonInt_mul_succ (q : ℝ) (k : ℤ) (hq : q ≠ 1) :
     Both `Σ [c]_q²` and `Σ [c]_q` are determined by the shape λ;
     no free parameter remains. -/
 -- Ref: [manuscript] §9; QJucysMurphy.lean barSymJMSum eigenvalue
-theorem muLambda_from_sq_bracket (q : ℝ) (lam : YoungDiagram) (hq : q ≠ 1) :
+theorem muLambda_from_sq_bracket (q : ℝ) (lam : YoungDiagram)
+    (hq : q ≠ 1) (hq0 : q ≠ 0) :
     muLambda q lam =
     (hbar_q q) ^ 2 * ∑ cell ∈ lam.cells,
       (q * jacksonInt q (cell.2 - cell.1) ^ 2 + jacksonInt q (cell.2 - cell.1)) := by
@@ -137,7 +141,7 @@ theorem muLambda_from_sq_bracket (q : ℝ) (lam : YoungDiagram) (hq : q ≠ 1) :
   congr 1
   apply Finset.sum_congr rfl
   intro cell _
-  exact jacksonInt_mul_succ q (cell.2 - cell.1) hq
+  exact jacksonInt_mul_succ q (cell.2 - cell.1) hq hq0
 
 /-- **Peter-Weyl heat-kernel convergence** (conjecture, archimedean).
 
