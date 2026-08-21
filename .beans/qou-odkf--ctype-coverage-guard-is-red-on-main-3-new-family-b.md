@@ -177,3 +177,63 @@ p-n bond — which is the larger defect by 1210x (`chi_lambda_braid` is −17.05
 p-n bond; `strict_averaged` is +0.0141%). Detecting that needs an AST question
 about which `pn_convention` a call site requested, not a string match. Still open;
 it is the third item in this bean and is not addressed by the re-keying.
+
+## Part F 2026-08-21 — the AST check Part E structurally cannot do
+
+Item 3 of this bean is closed. Part E greps for `== 'averaged'`, so it sees a
+collapse that KEEPS the word and is blind to one that RENAMES the p-n bond —
+and `chi_lambda_braid` labels that bond `positive`, so no literal match will
+ever fire on the larger defect:
+
+    chi_lambda_braid -> canonical :  -17.0492 %  per p-n bond
+    strict_averaged  -> canonical :   +0.0141 %
+
+Part F asks the AST which convention a call site **requested** — the
+`pn_convention=` kwarg on any `ast.Call`, plus module-level `PN_CONVENTION`
+assignments — and flags anything that is not `bring_color_weighted` (owner
+ruling R3, 2026-08-15).
+
+Measured on the current tree: **12 literal sites, 8 files, collapsing to 9
+`file::function` keys** (three of the twelve share a function in
+`closed_form_tau_M_verification_phase5q.py`). Baselined at 9, so it is green on
+arrival and can only fire on something new.
+
+Verified with a negative control, not by assertion: injected a scratch module
+containing one `pn_convention="chi_lambda_braid"` call and re-ran — Part F
+flagged it by `file::function`. Removed; tree clean.
+
+### Five of my baseline keys were guesses, and all five were wrong
+
+I wrote the baseline from filenames and expected function names before running
+it. The test rejected all five and printed the real ones:
+
+    _build_closed_form          -> analyse_atom
+    <module>                    -> build_witness
+    compute_binding_canonical   -> binding_canonical
+    main                        -> _self_test
+    <module>                    -> atom_to_braid_word_local
+
+Corrected from the measured output. Two of those names are informative rather
+than cosmetic: `chi_monotone_transfer.py::_self_test` sits in a self-test, so it
+is plausibly a fixture rather than production; `iterative_knot_builder.py::atom_to_braid_word_local`
+is a local word builder, which is production-shaped. Both are recorded as
+**UNADJUDICATED** with that observation, because I have not read either file and
+a baseline entry that looks approved when nobody examined it is the exact decay
+this bean's Part E fix was about.
+
+### The seven adjudicated entries
+
+    binding_bring_enhancement_compare::build_witness   labelled comparison
+    binding_combiner_markov_peel_fallback::<module>    labelled fallback
+    binding_canonical::binding_canonical               matches its OWN symbolic path;
+                                                       move both halves together or
+                                                       they diverge by 1.4e-4
+    closed_form_tau_M_verification_phase5q::main       self-consistency INSIDE the
+                                                       legacy frame — not evidence
+                                                       FOR it; re-run, don't re-read
+    _habiro_coefficient_extract::_interface_product_symbolic
+    _habiro_coefficient_extract::analyse_atom          declared in-file; 27 witnesses
+    atomic_tr_m_helium4_canonical::main                declared in-file
+
+All seven point at `qou-cds4`, which owns the decision. Part F does not make it;
+it makes the decision's absence visible and stops the population growing.
