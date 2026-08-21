@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T22:08:15.563279+00:00",
-  "commitSha": "1dd041e9bd8d26363a7baa2116abed48d7dc6710",
+  "computedAt": "2026-08-21T22:17:27.734960+00:00",
+  "commitSha": "438d9a37edf8ef04abeae9bfdb8a8aab6fdab43a",
   "assertions": [
     {
       "name": "restriction_nonsingular_on_every_proper_active_set",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 137,
+  "durationMs": 131,
   "computation": "gram-restricted-nonsingularity",
   "scriptFile": "gram_restricted_nonsingularity_probe.py",
   "scriptHash": "820a27f86563",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "438d9a37edf8ef04abeae9bfdb8a8aab6fdab43a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,8 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "description": "Smallest |eigenvalue| of G|_{A×A} over every nonempty active set A, at 50-dps exact arithmetic. Decides whether the consumer's G^{-1}|_{A*} can be read as (G|_{A×A})^{-1} — invert the restriction — rather than as a restriction of a nonexistent inverse. The two differ by a Schur complement, so this is not a key rename.",
   "data": {

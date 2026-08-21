@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-21T22:00:55Z
+updated_at: 2026-08-21T22:17:56Z
 ---
 
 
@@ -151,3 +151,40 @@ This is the same sentence as sibling **#5386**'s title, about a different produc
 Bean stays **open**, re-scoped from "muon-leg straddle" to **"committed value not reproducible under a matched environment; cause unknown; 7 candidates eliminated"**. `abs_diff_vs_bridge` degrading 50× remains the sharpest *symptom* — the peel is a stable reference and the bridge is what moves — but it is not diagnostic of a straddle, which is where I went wrong twice.
 
 **Do not** re-pin, re-root, or rebaseline anything to make the number agree. Nothing measured supports any of those, and the committed witness on `main` is untouched.
+
+
+---
+
+## 2026-08-21 (later still) — elimination #5 RETRACTED. The provenance is blind for exactly this dependency.
+
+I listed **environment** as refuted because the committed witness records `python 3.11.15 / mpmath 1.3.0 / pyhecke_native 0.9.0` and this container matches exactly. **That proved less than I claimed, and the gap is the lead.**
+
+`pyhecke_native` is built from this repo's own `tools/hecke-engine` and is **not published** — its version string is a hand-maintained crate number, not a release identifier. Measured between `c3a7e16856` (2026-08-11, when the committed `tr_M` landed) and today:
+
+| | |
+|---|---|
+| commits to `tools/hecke-engine` | **21** |
+| commits to `tools/pyhecke-native` | **2** |
+| `pyhecke-native` version across all of them | `0.9.0` → `0.9.0` |
+| `hecke-engine` version across all of them | `0.8.0` → `0.8.0` |
+
+Two of those commits move numbers by their own description:
+
+- `92339920ef` — *"hecke-engine: flip `trace_weights` to `h*z^2 + z` — Rust and Python finally agree"*
+- `fcf09d2ff6` — *"pyhecke: enable native dispatch on convention D"*
+
+And the bridge routes χ through `pyhecke_native.chi_lambda_all_partitions_mpfr`, which is **available** in this container — so the Rust path is live, not a fallback.
+
+So for the one dependency whose code lives in this repo, the `environment` block is blind in exactly the case it exists to catch. Its own docstring says it is there so "version-driven drift is *attributable*". A matching environment block is **not** evidence the compute was the same; it is evidence the provenance cannot tell.
+
+That also explains why this reads the same as sibling #5386's *"its committed witness does not reproduce"*: any producer routing through the Rust extension has the same blind spot, so one cause can produce both.
+
+### Fix landed
+
+`qou_substrate.witness.capture_environment` now records **`pyhecke_native_build`** — a sha256 prefix of the compiled `.so` (`30fd920c241a54fa` here). Content-addressed, so it needs no cooperation from the Rust side and cannot drift from what actually ran. Located via `find_spec` (no forced import) and cached per process.
+
+Note `environment` is in `_EPHEMERAL_META_FIELDS`, so the field lands when a witness is substantively rewritten rather than on every re-run. That is the right behaviour — the value here is **forensic**: a future reader comparing two witnesses can now tell whether the same extension produced them, which is precisely what I could not do for this one.
+
+### Status
+
+**Not yet proved** that the `trace_weights` flip is what moved this particular number — that needs a rebuild of the old extension to confirm, which I have not done. What is established: the mechanism exists, is live on this path, and was invisible to every check I ran. Elimination #5 is withdrawn from the table; the other six stand.
