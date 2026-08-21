@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T02:08:25.308748+00:00",
-  "commitSha": "dea2ca9972221326a5ce3daf73e89a43612cf915",
+  "computedAt": "2026-08-21T15:21:25.980017+00:00",
+  "commitSha": "9b6ce21ed37484baeae42f8e17ab0d250d3dd8e4",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 204,
+  "durationMs": 67222,
   "computation": "chi-at-q0-matrix-m-tritium",
   "scriptFile": "chi_at_q0_via_matrix_m_mpfr.py",
-  "scriptHash": "d67acd7e9d5c",
-  "scriptCommitSha": "4e126c6f41e3b9645abe8c4bd369c6256401da48",
+  "scriptHash": "b7dee1a17d13",
+  "scriptCommitSha": "fb10da7d93b25650f88a1ff077f8903a1ce4aaad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,7 +20,7 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
@@ -38,8 +38,8 @@
     "N": 2,
     "n_strands": 9,
     "n_partitions": 30,
-    "tr_M_at_q0": "1.0860240058218428921913699499413612355786846551455",
-    "compute_time_sec": 0.0,
-    "cache_path": "/home/user/qou/computations/chi-tritium-h9-at-q0-50dps-matrix-m.witness.json"
+    "tr_M_at_q0": "2.511553340905765111985726357827281824543684012352",
+    "compute_time_sec": "67.10",
+    "cache_path": "/workspace/qou/computations/chi-tritium-h9-at-q0-50dps-matrix-m.witness.json"
   }
 }
