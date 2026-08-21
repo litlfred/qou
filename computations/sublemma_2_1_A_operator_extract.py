@@ -42,7 +42,23 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 
 
-H = 0.20906032198987945  # h = q − q⁻¹ at q_0
+# h = q − q⁻¹, DERIVED from this file's own Q0 rather than typed.
+#
+# It used to read `H = 0.20906032198987945`, and that literal was a LAYER
+# STRADDLE inside a single file. `Q0` above is imported from `q_parameter`,
+# which is the PROTON pin (1.1099785827513808). Inverting the hardcoded H gives
+# q = 1.1099785955541805692 — the canonical MUON q0, matched to 5.5e-18. So this
+# module built its braid words at the proton pin and its interface coefficients
+# at the muon pin, differing by 1.109e-07 relative on h.
+#
+# AGENTS.md §q₀ anchor convention names exactly this: "Never straddle the two
+# layers inside one quantity." The straddle is invisible at the call site — both
+# values are plausible, neither is labelled, and nothing in the emitted witness
+# said which layer the interface belonged to.
+#
+# Deriving it removes the question: whatever pin `q_parameter` resolves to, h
+# follows it. Bean `qou-cds4`.
+H = Q0 - 1.0 / Q0
 
 
 def evaluate_word_matrix(shape: tuple, word: list, q_val: float = None) -> np.ndarray:
@@ -70,9 +86,34 @@ def disjoint_word(word_p: list, word_n: list, n1: int = 3) -> list:
     return out
 
 
+def _pn_interface_d() -> float:
+    """`d` of the canonical p-n interface, from the module that owns ctypes.
+
+    The default below used to be the literal `-H/2` — the colour-BLIND averaged
+    crossing. The canonical builder emits `averaged_weighted` at a p-n boundary,
+    `d = -h(1/2 - δ/4)`, which sits 7.190163e-05 away. This extract feeds the
+    deuteron `(6, "pn")` A-operator cache, which is the ONLY route by which the
+    canonical mass table's interface is still colour-blind: A ≥ 3 returns
+    earlier via the q0-baked colour-weighted transfer path and never reads an
+    extract at all. Bean `qou-cds4`.
+
+    Derived rather than typed, so this file cannot drift from the classifier
+    again the way the hardcoded literal did.
+    """
+    from canonical_braid_crossings import d_for_ctype
+    return float(d_for_ctype("averaged_weighted", H))
+
+
 def with_interface(word_p: list, word_n: list, n1: int = 3,
-                    int_c: float = 1.0, int_d: float = -H/2) -> list:
-    """β_1 · I · β_2 in H_(n1 + n2) with I = c·σ_(n1-1) + d·1."""
+                    int_c: float = 1.0, int_d: float | None = None) -> list:
+    """β_1 · I · β_2 in H_(n1 + n2) with I = c·σ_(n1-1) + d·1.
+
+    `int_d=None` (the default) resolves to the canonical colour-weighted p-n
+    interface. Pass an explicit value only to probe a non-canonical convention,
+    and label it where you do.
+    """
+    if int_d is None:
+        int_d = _pn_interface_d()
     out = list(word_p)
     out.append((int_c, int_d, n1 - 1))   # interface generator at strand n_1
     out += [(c, d, g + n1) for (c, d, g) in word_n]
