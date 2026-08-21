@@ -37,7 +37,7 @@
     "counts": {
       "Q0_OK": 663,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 23,
+      "Q0_INDEPENDENT": 24,
       "Q0_INDEPENDENT_NO_REASON": 1,
       "Q0_ANCHOR_MISSING": 1914,
       "Q0_VALUE_MISSING": 0,
@@ -10736,6 +10736,10 @@
         }
       ],
       "Q0_INDEPENDENT": [
+        {
+          "witness": "habiro-witness-convention-adjudication.witness.json",
+          "detail": ""
+        },
         {
           "witness": "markov-identity-symbolic.witness.json",
           "detail": ""
