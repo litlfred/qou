@@ -1,11 +1,11 @@
 ---
 # qou-q2oa
 title: The ladder phase alpha has no derivation from the actual Wedderburn weights
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-16T11:40:16Z
-updated_at: 2026-08-16T11:40:16Z
+updated_at: 2026-08-21T15:24:14Z
 parent: qou-cdx1
 ---
 
@@ -96,3 +96,68 @@ Filed 2026-08-16 from an agent that could not reach the `beans` CLI. All
 quotations from PR #5187's merged body (`fdd58a4f39`, merged 2026-08-16);
 the D weight table is S2's, PR #5185 §3bis, cited there rather than
 re-derived.
+
+---
+
+## RESOLUTION (2026-08-21, PR #5353)
+
+Both halves of item 1 are settled, and they are consistent. Audit:
+`docs/audits/2026-08-21-ladder-phase-from-wedderburn-weights.md`.
+
+**NEGATIVE — the clean negative this bean invited, and the answer as posed.**
+`α` is **not a function of the weights**. Scope-(b) structural exclusion whose
+named proved invariant is bar-parity: every D-frame weight is bar-EVEN
+(`markovWeightsD_y21_barEven` / `_y3_barEven`, plus symbolic re-verification
+for n = 2..9), so any function of them is bar-invariant; `α` is not, since
+`bar(α) + α = h²/2` while `α ≠ h²/4`. Lean: `phaseTwice_not_bar_fixed`,
+`no_weight_function_gives_phase`. Non-vacuous at the pin: the witness
+`q⁴ − 2q³ − 2q + 1` is `−2.4371` at q₀ and `< 0` on all of `[1,2]`
+(`quartic_neg_on_Icc_one_two`).
+
+**POSITIVE — what the weights DO determine, once `h` is supplied.**
+
+    2z − h = [2]_q · Ξ ,   Ξ := Σ_λ χ^λ(τ)·y_λ        (ANY convention)
+    α      = (h/4)·( [2]_q·Ξ + h − 2 )
+
+from `2χ_λ(σ₁) − h·f^λ = [2]_q·χ^λ(τ)` (`chi_sigma_collapse`) summed against
+the two Markov conditions. **`Ξ` does not depend on `n`** — forced, because
+`2z − h` contains no `n` (`moment_independent_of_index`). Under D,
+`Ξ = (q⁴+1)/(q²+1)² = 0.50540422650393080319` at every `n ≥ 2` (Frobenius:
+a transposition is `μ = (2,1^{n−2})`, so the numerator is
+`p₂(1,Q)p₁(1,Q)^{n−2}`). Confirmed for n = 2..9 against the live producer.
+
+The two halves agree because the bar-odd content is entirely the outer `h`,
+which is exactly the datum the weights cannot see. This **refines** the prune
+in `MarkovWeightsConventionD` ("it must come from elsewhere — the `h` factor,
+…"): the source is the `h` factor, and the weights pin its multiplier.
+
+**SHAPE — the affine form does NOT survive**, as this bean anticipated.
+`y_(2,1) = 1/[2]_q²` exactly, so the apparent coefficient `−h·[2]_q/2` is
+itself a function of `y`; in `y` alone the phase carries half-integer powers
+`α = (h/4)(y^{−1/2} + h − 2) − (h/2)y^{1/2}`. The retracted formula's affine
+shape was an artifact of the bogus instance, where `y_(2,1) := 1/2 − z` is
+affine in `z` **by construction**. (It also dropped exactly one factor of
+`[2]_q`.)
+
+**Sharpening of the retraction, for the record.** The retracted formula was
+**tautological**, not numerically wrong: fed its own bogus instance it returns
+`α` *exactly* — both `−0.040485777340642764919` at the pin. So no arithmetic
+check could ever have caught it; only checking the defining conditions could,
+which is exactly the lesson item 2 records. It diverges only on the real
+weight (`−0.0781` vs `−0.0405`).
+
+**Item 3 (anti-fit) honoured.** No experimental Q_β is inverted; no `c_k` is
+extracted; no tier moves; nothing is wired. Every number is an exact rational
+function of `q` at the proton pin — change the experimental Q_β and none of
+them moves. `α_D` is deliberately **not** compared against experiment, since
+that needs the `c_k` ladder, which is C-frame and un-re-derived under D.
+
+**Verification** (CI is dispatch-only): `lean`-direct exit 0 on all four
+modules of the import cone; `#print axioms` clean on all 11 declarations;
+`check-sidecars` clean; `precision-gates` exit 0, all blocking gates green;
+mathlib oleans 6990 before and after (read-only, no `lake build`).
+
+**Not closed by this** — see audit §10: the ansatz `α = (z−1)h/2` is still
+asserted upstream and undrived; `qou-cds1` (the D-frame `c_k` ladder) is
+untouched; and whether the decay channel carries `α` or its mirror-covariant
+projection `α − h²/4` is a question about the framing, not the weights.
