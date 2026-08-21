@@ -145,9 +145,23 @@ GATES=(
   # REPORTS a gap; it does not HOLD one. Verified before flipping — green at
   # exit 0, exit 1 naming a planted dirty witness, green again once removed.
   #
-  # The 6 baselined witnesses (26 fields: max_loss_digits, c_ratios, Z_at_q0,
-  # sum_classical) still belong to the arcs owning those probes. This gate
-  # holds the line; it does not drain it.
+  # WIDENED to all of docs/audits on 2026-08-21, superseding the
+  # docs/audits/scripts root. The scripts subtree was the smaller half by an
+  # order of magnitude: 6 files / 26 fields against 32 files / 1,275 fields for
+  # the tree containing it. Gating the subtree alone left the bulk of the
+  # audits tree in the same ungated state the flip was meant to end.
+  #
+  # The 26 fields the old baseline tolerated are now 0 — all six producers were
+  # fixed at source (max_loss_digits, c_ratios, Z_at_q0, sum_classical), so the
+  # wider baseline records those files at nothing and the subtree's floor is
+  # preserved exactly: new dirt there is still NEW, still blocking. The
+  # subtree baseline is deleted rather than kept beside this one, because two
+  # baselines over nested roots is two things to keep true.
+  #
+  # The 32 files / 1,275 fields now recorded are a TOLERATED backlog belonging
+  # to the arcs that own those probes, not to this one. The ratchet holds the
+  # line; it does not drain it. 32 of those fields are LP-dual carve-outs in a
+  # single witness and are excused by name, not by baseline.
   # ADVISORY, baseline 28 — the leak BETWEEN the two layers above. The
   # padding ratchet works on values and is blind once a float64 is multiplied
   # by anything exact (measured: fmt(mpf(f64)) caught, fmt(exact*mpf(f64)) not);
@@ -159,7 +173,7 @@ GATES=(
   # annotation already produced one measured false positive, since fixed);
   # flip to blocking once the 28 rows carry agent verdicts. Bean qou-gqt5.
   "mixed mpf/f64 -> serializer|computations/mpf_mixed_arithmetic_audit.py|--strict|yes|yes"
-  "audits-tree raw-float64|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|yes"
+  "audits-tree raw-float64|computations/witness_raw_float64_audit.py|--scan-root docs/audits --strict|no|yes"
   # ADVISORY, and it starts red on purpose — same terms as the audits-tree
   # entry above. `witness_provenance_audit.py` was written, works (27/27
   # self-test), ships --strict/--list, and was in NO array, so nothing ran it.
