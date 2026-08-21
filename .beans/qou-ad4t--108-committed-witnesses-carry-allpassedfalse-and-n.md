@@ -1,10 +1,11 @@
 ---
 # qou-ad4t
-title: 108 committed witnesses carry allPassed:false and nothing reads them
+title: 111 committed witnesses carry a recorded assertion failure and nothing reads them
 status: todo
 type: bug
+priority: normal
 created_at: 2026-08-21T15:08:23Z
-updated_at: 2026-08-21T15:08:23Z
+updated_at: 2026-08-21T15:21:12Z
 ---
 
 Found while fixing `qou-4e5k`: the witness whose assertion named that defect had
@@ -94,3 +95,78 @@ Two things, in order:
                      if isinstance(a, dict) and a.get("passed") is False]
             print(str(w.get("computedAt",""))[:10], p, fails)
     PY
+
+## GATED 2026-08-21 — and the count was 111/137, not 108
+
+`computations/witness_failed_assertion_audit.py`, wired **blocking** into
+`scripts/precision-gates.sh`, baselined at 111 witnesses / 137 failed
+assertions. Self-test 8/8. Full suite: all blocking gates green, exit 0.
+
+**Correcting my own figure above.** I reported 108. The real count is **111
+witnesses / 137 assertions**. My first scan keyed only on `allPassed is False`
+and therefore missed witnesses carrying a per-assertion `passed: false` **while
+`allPassed` is not set false** — an inconsistency that is itself worth
+surfacing, and which the checker now reports. The bean's "4.0%" becomes 4.1% of
+2681. Low, not stale-high.
+
+### Why a ratchet and not a boolean
+
+A gate red on arrival gets skipped — `precision-gates.sh` records that reasoning
+in its own comments about the provenance audit, and that is exactly how a
+checker goes quiet. So the backlog is baselined and tolerated, on the same terms
+as the raw-float64 and padding ratchets: **a witness not in the baseline that is
+red fails; a baselined witness whose count grows fails; counts shrink, never
+grow.** The class stops growing today, and the drain proceeds on its own clock.
+
+This is the mirror of `witness_hollowness_audit`, which catches `allPassed: true`
+with `assertions: []` — green with nothing behind it. Nothing caught the
+opposite, which measures commoner.
+
+### What the checker deliberately does NOT catch, named where it will be looked for
+
+The `tr-m-algebraic-q` sibling assertion that **passed** at `6.88e-08` against a
+`tolerance=1e-07` whose `source` explained the residual away as a "~1e-8
+float64-eval floor". It was a real defect; post-fix the value is `3.50e-15`, so
+the claimed floor sat ~17 orders above the real one. No mechanical check sees a
+tolerance chosen to fit an unexplained gap. It is written into the module
+docstring because that is where someone will go looking.
+
+### Distribution — the drain order this implies
+
+    66  (59.5%)  computations/ (top level)
+    17  (15.3%)  computations/probes/
+    14  (12.6%)  computations/qbeta/
+    11  ( 9.9%)  computations/audits/
+     2  ( 1.8%)  computations/markov/
+     1  ( 0.9%)  computations/substrate/
+
+I expected `audits/` to dominate and it does not — 11 of 111. But its *shape*
+is the structural finding, so check it first anyway: **all eleven assert
+`no_<something>`** —
+
+    content-block-label-audit        no_missing_labels
+    fitted-labelled-canonical-audit  no_fitted_labelled_canonical
+    float64-leak-audit               no_i8_violations
+    guarded-off-audit                no_guarded_off_candidates
+    hardcoded-literal-audit          no_hardcoded_registry_matches
+    i1-no-probe-audit                no_i1_no_probe_blocks
+    i2-probe-only-audit              no_i2_probe_only_witnesses
+    lean-ref-resolution-audit        ok_count_matches_total_minus_failures
+    stale-probe-audit                no_stale_probes
+    validation-as-input-audit        no_i11_violations
+    witness-provenance-audit         no_missing_provenance
+
+— i.e. each asserts "this backlog is empty" and is red because it is not. These
+are **backlog counters wearing a pass/fail assertion**, and they will stay red
+until their backlogs drain, which is category 3 of the module docstring. Eleven
+permanently-red discipline audits is a large share of the reason a reader learns
+that a red witness is normal. Fixing them is a schema change (carry the count in
+`data`, assert on the ratchet), not a maths change, and it is the cheapest way
+to make the remaining 100 legible.
+
+The top-level 66 are the real defect surface and need per-file reading.
+
+### Next step
+
+1. Re-schema the 11 `audits/` backlog counters so red means red.
+2. Then drain the 66 top-level, oldest first.
