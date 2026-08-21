@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-21T21:03:15.483Z",
+  "generated": "2026-08-21T21:30:07.209Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3012,
-  "files_flagged": 163,
-  "total_defects": 85,
+  "scanned_files": 3015,
+  "files_flagged": 162,
+  "total_defects": 81,
   "total_exempt": 122,
   "categories": {
     "proof-no-self-assuming-projection": 47,
-    "proof-no-trivial-true": 21,
+    "proof-no-trivial-true": 17,
     "proof-no-unused-hypothesis-rfl": 7,
     "proof-docstring-sorry-mismatch": 5,
     "proof-no-provable-axiom": 1,
@@ -856,7 +856,7 @@
       {
         "name": "QouInfraDischargesGoncharovZeta5",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/QouInfraDischargesGoncharovZeta5.lean",
-        "line": 27
+        "line": 90
       },
       {
         "name": "QPochhammerHabiroEvaluation",
@@ -2805,40 +2805,6 @@
         "pattern": "exists-true-tautology",
         "snippet": "theorem yekutieli_finite_slice_substrate (M G : Type u) [Group G] :",
         "decl": "yekutieli_finite_slice_substrate",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean": [
-      {
-        "line": 138,
-        "category": "proof-no-trivial-true",
-        "pattern": "exists-true-tautology",
-        "snippet": "theorem yekutieli_finite_slice_discharged (G : Type u) [Group G] (z : G) :",
-        "decl": "yekutieli_finite_slice_discharged",
-        "severity": "critical"
-      },
-      {
-        "line": 174,
-        "category": "proof-no-trivial-true",
-        "pattern": "exists-true-tautology",
-        "snippet": "theorem markov_axiom_h1_to_h2_discharged (q z : ℝ) :",
-        "decl": "markov_axiom_h1_to_h2_discharged",
-        "severity": "critical"
-      },
-      {
-        "line": 180,
-        "category": "proof-no-trivial-true",
-        "pattern": "exists-true-tautology",
-        "snippet": "theorem markov_axiom_h2_to_h3_discharged (q z : ℝ) :",
-        "decl": "markov_axiom_h2_to_h3_discharged",
-        "severity": "critical"
-      },
-      {
-        "line": 266,
-        "category": "proof-no-trivial-true",
-        "pattern": "exists-true-tautology",
-        "snippet": "theorem lie_valued_stokes_discharged (M : Type u) (𝔤 : Type u)",
-        "decl": "lie_valued_stokes_discharged",
         "severity": "critical"
       }
     ],
