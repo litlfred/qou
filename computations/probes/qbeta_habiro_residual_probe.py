@@ -101,6 +101,32 @@ def q_beta_single_wrap(q: mp.mpf, m_e: mp.mpf) -> mp.mpf:
 _STRADDLE_TOL = 1e-10
 
 
+def _assert_uses_proton_pin(q0) -> None:
+    """Refuse unless the q0 actually in use is the proton pin.
+
+    The predecessor of this guard checked the pin WITNESS for internal
+    consistency, which was the right check while this probe read q0 out of
+    that witness. It no longer does (owner ruling 2026-08-21: proton), so the
+    useful invariant moved: assert the number this probe computes with is the
+    layer it claims.
+
+    Threshold below the 1.15e-8 mu-p separation, deliberately -- the first
+    version of the old guard used a threshold ABOVE the separation it existed
+    to detect and so could not fire on the one straddle that mattered. Bean
+    `qou-m9xp`.
+    """
+    from qou_substrate.constants import Q_50_DIGIT_STR as _P
+
+    expected = mp.mpf(_P)
+    rel = abs(q0 - expected) / expected
+    if rel > _STRADDLE_TOL:
+        raise SystemExit(
+            f"ANCHOR STRADDLE: this probe is declared PROTON but is computing "
+            f"at a q0 {float(rel):.3e} away from the proton pin "
+            f"(mu-p separation is 1.15e-8). See bean qou-m9xp."
+        )
+
+
 def _assert_anchor_matches_value(qpin: dict) -> None:
     """Fail loudly if the pin witness's stated anchor and emitted value differ.
 
@@ -158,10 +184,22 @@ def main() -> int:
     # way) -- but AGENTS.md is explicit that straddling is a defect
     # regardless of size, and an error budget that does not cover the error
     # is not a budget.
+    # OWNER RULING 2026-08-21: this probe is PROTON. It was reading
+    # `derived_50_digit.q` out of the pin witness, which is the MUON value --
+    # q-pinning-50-digit is an ideal_muon producer. The layer question ("is
+    # there an explicit reason for muon here?") was the owner's to settle and
+    # was settled: proton, the 2026-08-07 default.
+    #
+    # So q0 now comes from `q_parameter.Q_50_DIGIT_STR` by name, the same way
+    # `alpha/alpha_k_jones_markov_h12.py` takes it. The pin witness is still
+    # an upstream -- it supplies the CODATA uncertainty budget, which is a
+    # m_p/m_e quantity and so belongs to the proton layer anyway -- but it no
+    # longer supplies the value.
     qpin = record_upstream(COMP / "q-pinning-50-digit.witness.json", _UPSTREAM_RECORDS)
-    q0 = mp.mpf(qpin["derived_50_digit"]["q"])
-    anchor = qpin["calibration_inputs"]["anchor"]
-    _assert_anchor_matches_value(qpin)
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+    q0 = mp.mpf(_Q50_PROTON)
+    anchor = "m_p/m_e (proton; owner ruling 2026-08-21)"
+    _assert_uses_proton_pin(q0)
     sig_q0_rel = mp.mpf(qpin["physical_anchoring_bound"]["codata_relative_uncertainty"])
 
     # --- production ladder residuals (Q_A / Q_N1 / Q_N2) ---------------

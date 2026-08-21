@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 310,
-      "proton-pin": 895,
+      "proton-pin": 897,
       "unknown": 25,
-      "canonical": 534
+      "canonical": 533
     },
     "stale_total": 310,
     "new_stale": 0,
@@ -2053,6 +2053,13 @@
         "file": "computations/averaged-block-swap-binding.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/b-alpha-alpha-voldensity-scaling.witness.json",
+        "field": "parameters.q0",
+        "value": "1.109978582751380807591669",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -9878,9 +9885,9 @@
       {
         "file": "computations/probes/qbeta-habiro-residual.witness.json",
         "field": "data.q0_50dps",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/qbeta-operator-identification-probe.witness.json",
