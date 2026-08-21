@@ -558,5 +558,25 @@
   "refs": [
     "conj:three-knot-jet-order-independence",
     "docs/audits/2026-08-09-surreal-squeeze-cannot-decide-algebraic-independence.md"
-  ]
+  ],
+  "convention_scope": {
+    "frame": "C (z = sqrt(q)/(q+1))",
+    "canonical_now": "D (z = q**3/(q**2+1); owner ruling 2026-08-15)",
+    "status": "CONVENTION-C-FRAME -- correct for C, NOT current. Scope, do not 'fix'.",
+    "why": "Written 2026-08-09, before the C->D migration. The producer's own source is byte-identical since, but BOTH import-cone modules moved in 162d66eb7d; markov_trace_recursive.py now carries z = q**3/(q**2+1). Under C the traces carry a sqrt(q) and lie in Q(sqrt q) -- hence this file's structural_result. Under canonical D they lie in the smaller field Q(q).",
+    "superseded_measurements": {
+      "minimal_relation_degree": {
+        "C_frame_here": 7,
+        "D_canonical": 3
+      },
+      "nullspace_dim_at_min_degree": {
+        "C_frame_here": 3,
+        "D_canonical": 1
+      }
+    },
+    "unaffected": "The trdeg-1 FORCING argument is convention-independent: trdeg_Q Q(sqrt q) = trdeg_Q Q(q) = 1, so dependence is forced either way.",
+    "superseded_by": "computations/jet-algebraic-dependence-verification.witness.json",
+    "audit": "docs/audits/2026-08-21-jet-algebraic-dependence-convention-d.md",
+    "bean": "qou-j4mn"
+  }
 }
