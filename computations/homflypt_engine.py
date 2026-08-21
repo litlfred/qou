@@ -266,6 +266,27 @@ def homflypt_2strand(braid_word: list[int]) -> LaurentPoly2:
 
     For 2-strand braids, all crossings use generator σ₁. The
     braid word is just a sequence of ±1s.
+
+    .. warning::
+
+       **This returns the `v` -> `v^-1` MIRROR of the convention used by this
+       module's own reference, and the two have never been compared.**
+       `homflypt_reference_qa._torus_homfly` derives `closure(sigma_1^k)` from
+       the skein relation by hand and states `P(sigma_1^3) = 2v^2 - v^4 +
+       v^2z^2` for the right trefoil; the table below returns
+       `-v^-4 + 2v^-2 + v^-2z^2`, which is that with `v -> v^-1`. The reference
+       QA never tests this path -- its docstring says the path under test is
+       `_homflypt_nstrand_numerical` -- which is how the discrepancy survived.
+       The `# Wait, let me use the correct Lickorish convention.` note left in
+       the k=3 branch suggests it was noticed and not finished.
+
+       NOT resolved here: which sign is intended is a convention call for this
+       module's owner, and this repo has a costly history of convention
+       flip-flops. Recorded rather than flipped. Note that a `v`-spread is
+       mirror-invariant, so an MFW reading is unaffected either way.
+
+       Also note this is a hardcoded lookup table over `k = sum(signs)`, not
+       the formula the docstring above states, and it raises for `|k| > 3`.
     """
     # Compute total exponent k = Σ signs
     k = sum(1 if g > 0 else -1 for g in braid_word)
@@ -355,87 +376,32 @@ def homflypt_from_braid(braid_word: list[int], n_strands: int) -> LaurentPoly2:
     if n_strands == 2:
         return homflypt_2strand(braid_word)
 
-    # For n ≥ 3: use Hecke character decomposition via chi_lambda_braid.
+    # For n >= 3 this function has no symbolic implementation.
     #
-    # HOMFLYPT via Ocneanu trace (Jones 1987):
-    #   P(β̂; v, z) = δ^{n-1} · v^{-w(β)} · Σ_λ⊢n ω_λ(v,z) · χ_λ(β)
+    # It previously evaluated the Ocneanu trace NUMERICALLY at the substrate
+    # q_0 and returned `LaurentPoly2({(0, 0): <float>})` -- a degree-zero
+    # constant wearing the type of a polynomial, in a function whose docstring
+    # (and the module docstring) promise "LaurentPoly2 objects in (v, z)".
     #
-    # where:
-    #   δ = (v⁻¹ − v) / z  (HOMFLYPT unknot normalisation)
-    #   w(β) = writhe = Σ signs of crossings
-    #   ω_λ(v,z) = quantum Schur weight for partition λ
-    #   χ_λ(β) = Hecke character (via Hoefsmit seminormal representation)
+    # Reading a v-degree off that returns min = max = 0, i.e. spread 0, with no
+    # error raised. For a Morton-Franks-Williams bound that is worse than a
+    # crash: `braid index >= spread/2 + 1` becomes the vacuous `>= 1`, which is
+    # consistent with every hypothesis and so silently "confirms" whatever the
+    # caller believed. It also stored a `float` in a dict typed
+    # `dict[tuple[int, int], int]`.
     #
-    # The Schur weights ω_λ are the Ocneanu trace eigenvalues:
-    #   ω_λ = Π_{box (i,j)∈λ} (v · q^{c(i,j)} − v⁻¹ · q^{-c(i,j)}) / z
-    # where c(i,j) = j - i (content of box).
-    #
-    # For SU(N) specialisation v = q^{(N-1)/2}, this becomes the
-    # quantum dimension dim_q V_λ (up to normalisation).
-
-    import sys as _sys
-    _sys.path.insert(0, str(Path(__file__).parent))
-    from hecke_characters import chi_lambda_braid
-
-    # Convert braid word [±gen] → [(sign, gen_1based)] for chi_lambda_braid
-    word_for_chi = [
-        (+1, abs(g)) if g > 0 else (-1, abs(g))
-        for g in braid_word
-    ]
-
-    # Compute writhe
-    writhe = sum(1 if g > 0 else -1 for g in braid_word)
-
-    # Enumerate partitions of n_strands
-    from sympy.combinatorics.partitions import IntegerPartition
-    from sympy.utilities.iterables import partitions as _sympy_partitions
-
-    parts_of_n = []
-    for p_dict in _sympy_partitions(n_strands):
-        part = []
-        for k in sorted(p_dict.keys(), reverse=True):
-            part.extend([k] * p_dict[k])
-        parts_of_n.append(tuple(part))
-
-    # Compute χ_λ(β) for each partition at q = generic (f64 for now)
-    # and build the HOMFLYPT as a numerical value at specific (v, z)
-    # For the polynomial form, we'd need symbolic q — deferred.
-    # For now, return numerical HOMFLYPT at substrate q_0.
-
-    from q_parameter import Q as q0_val
-    import mpmath as mp
-    mp.mp.dps = 50
-
-    q = mp.mpf(q0_val)
-    qi = mp.mpf(1) / q
-
-    # Compute δ, v at q_0 (using SU(2) specialisation: v = q^{1/2})
-    v = mp.sqrt(q)
-    vi = mp.mpf(1) / v
-    z_val = v - vi  # z = v - v⁻¹ = q^{1/2} - q^{-1/2}
-    delta = (vi - v) / z_val  # δ = (v⁻¹ − v) / z = -1
-
-    result = mp.mpf(0)
-    for lam in parts_of_n:
-        # χ_λ(β) from Hecke characters
-        chi = chi_lambda_braid(list(lam), word_for_chi, q_value=float(q))
-
-        # ω_λ = Π_{boxes} (v · q^c − v⁻¹ · q^{-c}) / z
-        omega = mp.mpf(1)
-        for i, row_len in enumerate(lam):
-            for j in range(row_len):
-                c = j - i  # content
-                omega *= (v * q**c - vi * q**(-c)) / z_val
-
-        result += omega * mp.mpf(chi)
-
-    result *= delta**(n_strands - 1) * v**(-writhe)
-
-    # Return as a LaurentPoly2 with a single term at (0,0)
-    # (numerical evaluation, not the full polynomial form)
-    p = LaurentPoly2()
-    p.terms[(0, 0)] = float(result.real) if isinstance(result, complex) else float(result)
-    return p
+    # Nothing in the corpus ever called this branch (measured 2026-08-21: zero
+    # importers of `homflypt_from_braid` outside this module and its own
+    # self-test, which only exercises n <= 2). So it is removed rather than
+    # repaired, and callers are pointed at the exact engine.
+    raise NotImplementedError(
+        f"homflypt_from_braid has no symbolic path for n_strands={n_strands} "
+        f"(>= 3). Use computations/homfly_skein_braid.homfly(word, n), which "
+        f"returns an exact integer Laurent polynomial in (v, z) by skein "
+        f"recursion. For a NUMERICAL value at an SU(N) point instead, use "
+        f"homflypt_at_su_n(). This branch previously returned a numerical "
+        f"constant at terms[(0,0)], so any degree read gave spread 0 silently."
+    )
 
 
 # ── Convenience ──────────────────────────────────────────────────
