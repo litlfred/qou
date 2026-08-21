@@ -488,7 +488,7 @@ A 2-component closure cannot be a knot. This needs no determinant table.
 **Blast radius: (c), status unknown, small.** The row's `max_grade` and
 `filtered_basis_size` are computed *from the word*, so they are correct facts
 about the word; what is wrong is the **name**. The risk is a reader taking
-"`max_grade = 3`" as a jet-order fact about `6₂`. Bean `qou-w8kb`.
+"`max_grade = 3`" as a jet-order fact about `6₂`. Bean `qou-k3te`.
 
 ### 8.3 Correction to bean `qou-yaqm` — the doc is right, the bean over-generalises
 
