@@ -363,13 +363,89 @@ transitive import set. Same 12 errors before and after this change:
   `HeckeExpansion n`, which now passes `n : ℕ` as the base ring. Needs an
   authoring decision on which `R`.
 
+## 2026-08-21 — wired into the pipeline, and the two detectors audited each other
+
+The bean's original follow-up is done, and doing it produced the fourth and
+fifth silent gaps. Cross-checking two independent implementations is what found
+both; neither found its own.
+
+### What the pipeline could not see
+
+`content/pipeline/lean-vacuity-axiom-audit.ts` already had
+`proof-no-unused-hypothesis-rfl`, which matches `⟨…, rfl⟩` bodies. But it fires
+only when an **explicit Prop-shaped binder is unused** — a property of the
+decoration, not of the claim. A statement that binds nothing and concludes a
+tautology has no unused binder to notice. Measured over the six pre-fix files
+holding eleven trivial existentials: **0 hits**.
+
+Added `trivial-existential` (under `proof-no-trivial-true`) and `binder-echo`
+(under `proof-no-self-assuming-projection`). Deliberately **no new criterion
+ids** — both shapes are instances of criteria that already exist, already
+`critical`, already ledger-wired. Same six files after: 10 hits.
+
+### The pipeline carried the identical binder-depth bug (gap 4)
+
+Its binder regex admitted one level of parentheses — the same defect fixed in
+the Python sweep earlier in this bean, reached independently in two codebases.
+`knot_factor_amphicheiral`'s `_off_block_norm` nests two deep, so the binder
+was dropped and `proof-no-unused-hypothesis-rfl` reported nothing on the one
+declaration it was designed for. Balanced scanning alone recovers it: 0 → 1.
+
+### The Python sweep was losing declarations to a missing keyword (gap 5)
+
+`DECL_TERMINATORS` omitted `axiom`. A theorem followed by one swallowed it:
+`y_base_case_singleton` yielded a 361-char "proof" reading `hbase axiom
+plancherel_completeness_axiom {R : Type u} …`, which the 200-char guard
+rejected — silently. Two textbook findings were invisible for that reason
+alone, both surfaced by the TS scanner, which splits declarations differently.
+
+`/--` and `--` were dead alternatives in that terminator list: the regex runs
+over comment-stripped source, so no comment marker can ever match. Every real
+terminator has to be a keyword, which is why one missing keyword was enough.
+
+The length guard now **counts** its rejections (`--diagnostics` lists them),
+since a mis-split looks exactly like a long proof. Current: 1528 skipped, of
+which **0** contain a top-level terminator keyword — no residual mis-splits.
+
+### The two new findings
+
+- `y_base_case_singleton` — `(hbase : y ⟨[1]⟩ = 1) : y ⟨[1]⟩ = 1 := hbase`.
+  Restated as the anchoring the docstring already claimed: on any edge out of
+  `(1)` the recursion leaves the bare Bratteli factor. §7c `CommRing` →
+  `Field`; the old form divided by nothing because it did nothing.
+- `unified_mass_finite` — deleted, same shape as `phi_k_finite`.
+
+### Agreement
+
+Both detectors now report the same corpus: **0 actionable, 1
+`vacuous-by-design`** (visible, in its own section). The pipeline's totals are
+back to the 96 / 122-exempt baseline, so the wiring lands without turning the
+gate red — which is only true because the dispositions went first.
+
+### Noted, not acted on: the diff-scoped ledger gate
+
+`--check-ledger` (`.github/workflows/lean-content-siblings.yml`) fails locally
+on this branch: 9 candidates in touched files lack a fresh agent verdict. **4
+of the 9 predate today** (`branching_convergence`, `adjoint_vanishing_propagation`,
+`kahler_differentials_no_sym_component`, `degree_zero_dim_one`); the other 5
+were pulled into the diff-scope by touching `Conjectures.lean` and
+`UpstreamSubstrateBridge.lean`. **None comes from the two new patterns.**
+
+The five are `∃ Y : SomeClass, True` "discharge" theorems — a *different*
+defect, and arguably a real claim badly stated: `∃ Y : C, True` is `Nonempty C`,
+which is genuine content when `C` might be uninhabited. Restating them as
+`Nonempty C` would both say what is meant and stop the detector firing. Not
+done here: it is a separate class with its own adjudication story, and the
+aggregates (`upstream_discharge_complete`, `extended_upstream_discharge`,
+`complete_upstream_discharge`) carry the same conjuncts.
+
+GitHub reports **no check runs at all** on PR #5371 and denies combined-status
+to this integration (403), so I cannot confirm what CI actually does with this.
+
 ## Next
 
-- [ ] Wire the detector into `content/pipeline/lean-vacuity-axiom-audit.ts` as a
-      `proof-self-assuming` criterion. This is now the **only** remaining item
-      on this bean, and it is the one that stops the class recurring — three
-      separate silent detector gaps in this bean argue the check needs to run
-      in the pipeline, not by hand.
 - [ ] Owner: the `1 - h²` vs `1 - w_alt(1 + h²)` normalisation on
       `cor:knot-factor-amphicheiral`.
-- [ ] Separate bean for the two pre-existing broken knot-factor files.
+- [ ] `∃ C, True` → `Nonempty C` across the `_discharged` family, and ledger
+      verdicts for the 4 pre-existing candidates. Own bean.
+- [ ] `qou/29pv` — the two pre-existing broken knot-factor files.
