@@ -350,3 +350,60 @@ The chain is now `isClosed_coneSpan` → `farkas_separation` → `farkas_vector`
 `farkas_inequality`, all proved, with exactly one step left to `MatrixFarkas`:
 the two-case `μ` split, over `B : Fin (n+1) → Fin m → ℝ` encoding dual
 feasibility plus `−aᵀl ≤ −γ`.
+
+---
+
+## 2026-08-21 — CHAIN COMPLETE. `farkas_alternative_real` proved.
+
+`farkas_alternative_real` is `MatrixFarkas.farkas_alternative` unfolded, at
+`R = ℝ`, **proved sorry-free**. The whole file: zero errors, zero warnings.
+
+```
+isClosed_coneSpan  →  farkas_separation  →  farkas_vector
+                   →  farkas_inequality  →  farkas_alternative_real
+```
+
+Every link proved. The single analytic input the LP layer was said to rest on
+is now supplied.
+
+### The `μ` split, as predicted
+
+By contradiction on the conclusion. `farkas_inequality` applied to
+`B : Fin (n+1) → Fin m → ℝ` — dual feasibility in the first `n` rows,
+`−aᵀl ≤ −γ` in the last — yields `z ≥ 0` with `Ax = μa` and `cᵀx < μγ`, where
+`x = z ∘ castSucc` and `μ = z (last n)`. Then:
+
+- `μ > 0` — `x/μ` is primal feasible with objective `< γ`.
+- `μ = 0` — `Ax = 0`, `x ≥ 0`, `cᵀx < 0`, so `x₀ + tx` stays feasible and beats
+  `γ` for `t = max 0 ((P−γ)/(−S)) + 1`.
+
+Both contradict `hlb`. **No attainment used anywhere**, as worked out earlier.
+Primal feasibility earns its keep in the `μ = 0` branch: it supplies the `x₀`
+to move from. Without it that branch produces a recession direction and no
+contradiction — which is exactly why the class docstring calls the guard
+"essential for truth".
+
+### One more API note, for the same reason as the others
+
+`WithLp.toLp … q` does not reduce inside a `simp only` set even though it is
+`rfl`. A local `have hdapp : ∀ q, d q = … := fun _ => rfl` makes it available
+as a rewrite. Third instance of the same lesson: the `WithLp` synonym is
+transparent to the elaborator and opaque to `simp`.
+
+### Scope, restated
+
+This is the instance at `R = ℝ`. `MatrixFarkas` is declared over any ordered
+commutative ring, and the route here is analytic, so it cannot produce the
+general-`R` instance — that would need Fourier–Motzkin. §7c fixes `R := ℝ` for
+substrate evaluation, so this is what the corpus needs.
+
+## Next
+
+- [ ] Register the `MatrixFarkas` instance at `R = ℝ`: a file importing both
+      `QOU.Optimization.LPStrongDuality` and this one, with
+      `instance : MatrixFarkas A a c := ⟨farkas_alternative_real A a c⟩` modulo
+      matching the `PrimalFeasible`/`primalObj` unfoldings. Deliberately not
+      done here: this file is Mathlib-shaped and should not import the QOU LP
+      module.
+- [ ] With that instance, `lp_strong_duality`, `lp_dual_feasible_of_lower_bound`
+      and `lp_zero_duality_gap` become unconditional at `R = ℝ`.

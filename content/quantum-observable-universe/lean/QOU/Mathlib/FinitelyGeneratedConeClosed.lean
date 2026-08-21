@@ -527,4 +527,135 @@ theorem farkas_inequality (B : Fin p → Fin k → ℝ) (d : EuclideanSpace ℝ 
 
 end InequalityFarkas
 
+
+section LPAlternative
+
+variable {m n : ℕ}
+
+/-- **The affine Farkas alternative** — the duality-shaped statement.
+
+If the primal `{Ax = a, x ≥ 0}` is feasible and no feasible point has
+objective below `γ`, then the dual `{lᵀA ≤ c}` has a point with
+`aᵀl ≥ γ`.
+
+This is the statement `QOU.Optimization.MatrixFarkas` carries as its
+single field, unfolded. It is stated here without importing that module
+so this file stays Mathlib-shaped; the instance at `R = ℝ` is a
+one-liner in a file that imports both.
+
+**No attainment is used.** The naive route — separating `(a, γ−ε)` from
+the epigraph cone — yields `aᵀl > γ − ε` for every `ε` and never `≥ γ`.
+This argues by contradiction on the *conclusion* instead: if the dual
+system is infeasible, `farkas_inequality` produces multipliers `(x, μ)`
+with `Ax = μa` and `cᵀx < μγ`, and both branches of `μ` contradict the
+hypothesis directly. `μ > 0` rescales to a feasible point beating `γ`;
+`μ = 0` gives a recession direction along which the objective is
+unbounded below, so `x₀ + tx` beats `γ` for large `t`.
+
+The primal-feasibility hypothesis is what makes the `μ = 0` branch
+contradictory rather than merely uninformative — it supplies the `x₀`
+to move from. -/
+theorem farkas_alternative_real (A : Fin m → Fin n → ℝ) (a : Fin m → ℝ)
+    (c : Fin n → ℝ) (γ : ℝ)
+    (hpf : ∃ x₀ : Fin n → ℝ, (∀ i, ∑ j, A i j * x₀ j = a i) ∧ (∀ j, 0 ≤ x₀ j))
+    (hlb : ¬ ∃ x' : Fin n → ℝ, ((∀ i, ∑ j, A i j * x' j = a i) ∧ (∀ j, 0 ≤ x' j))
+      ∧ (∑ j, c j * x' j) < γ) :
+    ∃ l : Fin m → ℝ, (∀ j, ∑ i, l i * A i j ≤ c j) ∧ γ ≤ ∑ i, a i * l i := by
+  classical
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨x₀, hx₀eq, hx₀nn⟩ := hpf
+  -- the infeasible system in `l`: dual feasibility, plus `-aᵀl ≤ -γ`
+  set B : Fin (n + 1) → Fin m → ℝ :=
+    Fin.lastCases (fun i => -a i) (fun j i => A i j) with hB
+  set d : EuclideanSpace ℝ (Fin (n + 1)) :=
+    WithLp.toLp 2 (Fin.lastCases (-γ) (fun j => c j)) with hd
+  -- `WithLp.toLp` application is definitional, but `simp` will not see
+  -- through the synonym; this makes it available as a rewrite.
+  have hdapp : ∀ q, d q = Fin.lastCases (-γ) (fun j => c j) q := fun _ => rfl
+  have hinf : ¬ ∃ l : Fin m → ℝ, ∀ q, ∑ i, B q i * l i ≤ d q := by
+    rintro ⟨l, hl⟩
+    have hdual : ∀ j, ∑ i, l i * A i j ≤ c j := by
+      intro j
+      have := hl j.castSucc
+      simp only [hB, hdapp, Fin.lastCases_castSucc] at this
+      calc ∑ i, l i * A i j = ∑ i, A i j * l i :=
+            Finset.sum_congr rfl (fun i _ => mul_comm _ _)
+        _ ≤ c j := this
+    have hlast := hl (Fin.last n)
+    simp only [hB, hdapp, Fin.lastCases_last] at hlast
+    have : γ ≤ ∑ i, a i * l i := by
+      have hneg : ∑ i, -a i * l i = -∑ i, a i * l i := by
+        rw [← Finset.sum_neg_distrib]
+        exact Finset.sum_congr rfl (fun i _ => by ring)
+      rw [hneg] at hlast
+      linarith
+    exact absurd this (not_le.mpr (hcon l hdual))
+  obtain ⟨z, hznn, hzB, hzd⟩ := farkas_inequality B d hinf
+  set xx : Fin n → ℝ := fun j => z j.castSucc with hxx
+  set mu : ℝ := z (Fin.last n) with hmu
+  have hAx : ∀ i, ∑ j, A i j * xx j = mu * a i := by
+    intro i
+    have := hzB i
+    rw [Fin.sum_univ_castSucc] at this
+    simp only [hB, Fin.lastCases_castSucc, Fin.lastCases_last] at this
+    have hsw : ∑ j : Fin n, z j.castSucc * A i j = ∑ j, A i j * xx j :=
+      Finset.sum_congr rfl (fun j _ => mul_comm _ _)
+    rw [hsw] at this
+    have : (∑ j, A i j * xx j) + mu * -a i = 0 := this
+    linarith
+  have hcx : ∑ j, c j * xx j < mu * γ := by
+    rw [Fin.sum_univ_castSucc] at hzd
+    simp only [hdapp, Fin.lastCases_castSucc, Fin.lastCases_last] at hzd
+    have hsw : ∑ j : Fin n, z j.castSucc * c j = ∑ j, c j * xx j :=
+      Finset.sum_congr rfl (fun j _ => mul_comm _ _)
+    rw [hsw] at hzd
+    have : (∑ j, c j * xx j) + mu * -γ < 0 := hzd
+    linarith
+  have hmunn : 0 ≤ mu := hznn (Fin.last n)
+  rcases eq_or_lt_of_le hmunn with hmu0 | hmupos
+  · -- `μ = 0`: a recession direction with negative objective
+    have hz0 : mu = 0 := hmu0.symm
+    have hA0 : ∀ i, ∑ j, A i j * xx j = 0 := by
+      intro i; rw [hAx i, hz0, zero_mul]
+    have hc0 : ∑ j, c j * xx j < 0 := by rw [hz0, zero_mul] at hcx; exact hcx
+    set P : ℝ := ∑ j, c j * x₀ j with hP
+    set S : ℝ := ∑ j, c j * xx j with hS
+    set t : ℝ := max 0 ((P - γ) / (-S)) + 1 with ht
+    have hSneg : S < 0 := hc0
+    have htpos : 0 ≤ t := by positivity
+    refine absurd ⟨fun j => x₀ j + t * xx j, ⟨fun i => ?_, fun j => ?_⟩, ?_⟩ hlb
+    · have : ∑ j, A i j * (x₀ j + t * xx j)
+          = (∑ j, A i j * x₀ j) + t * ∑ j, A i j * xx j := by
+        rw [Finset.mul_sum, ← Finset.sum_add_distrib]
+        exact Finset.sum_congr rfl (fun j _ => by ring)
+      rw [this, hA0 i, hx₀eq i, mul_zero, add_zero]
+    · have := hznn j.castSucc
+      have hxxj : 0 ≤ xx j := this
+      nlinarith [hx₀nn j, htpos, hxxj]
+    · have hexp : ∑ j, c j * (x₀ j + t * xx j) = P + t * S := by
+        rw [hP, hS, Finset.mul_sum, ← Finset.sum_add_distrib]
+        exact Finset.sum_congr rfl (fun j _ => by ring)
+      rw [hexp]
+      have hle : (P - γ) / (-S) ≤ t := by
+        rw [ht]; linarith [le_max_right (0 : ℝ) ((P - γ) / (-S))]
+      have hlt : (P - γ) / (-S) < t := by rw [ht]; linarith [le_max_right (0 : ℝ) ((P - γ) / (-S))]
+      have hSpos : 0 < -S := by linarith
+      rw [div_lt_iff₀ hSpos] at hlt
+      nlinarith [hlt]
+  · -- `μ > 0`: rescale to a feasible point beating `γ`
+    refine absurd ⟨fun j => xx j / mu, ⟨fun i => ?_, fun j => ?_⟩, ?_⟩ hlb
+    · have : ∑ j, A i j * (xx j / mu) = (∑ j, A i j * xx j) / mu := by
+        rw [Finset.sum_div]
+        exact Finset.sum_congr rfl (fun j _ => by ring)
+      rw [this, hAx i, mul_comm, mul_div_assoc, div_self (ne_of_gt hmupos), mul_one]
+    · exact div_nonneg (hznn j.castSucc) hmupos.le
+    · have : ∑ j, c j * (xx j / mu) = (∑ j, c j * xx j) / mu := by
+        rw [Finset.sum_div]
+        exact Finset.sum_congr rfl (fun j _ => by ring)
+      rw [this, div_lt_iff₀ hmupos]
+      linarith [hcx]
+
+end LPAlternative
+
 end QOU.Mathlib
