@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T23:05:29Z
-updated_at: 2026-08-21T23:08:21Z
+updated_at: 2026-08-21T23:11:20Z
 ---
 
 ## Observed
@@ -135,3 +135,36 @@ particular escape works.
 
 Worth grepping the other skills that carry comment or PR-body templates for the
 same construct before fixing, rather than fixing this one file and assuming.
+
+
+## Blast radius: 35 placeholders in one file, not 137 in three
+
+Grepping every skill that both instructs GitHub posting and uses
+angle-bracket placeholders gives **3 files / 137 occurrences**. That is the
+wrong number to act on, and I nearly reported it.
+
+Only placeholders inside a template that becomes a **comment body** are
+affected. A placeholder in prose the agent *reads* — `gh pr view #N` in a
+workflow step — is never posted and never stripped. Narrowing to
+markdown-fenced template blocks:
+
+| skill | fenced templates | placeholders that get posted | placeholders anywhere |
+|---|---:|---:|---:|
+| `local/coordinate` | 7 | **35** | 61 |
+| `local/bib-qa` | 0 | **0** | 62 |
+| `local/pickup` | 0 | **0** | 14 |
+
+So `coordinate.md` is the whole of it, and the raw count over-states the work
+by about 4×. `bib-qa` has *more* angle brackets than `coordinate` and none of
+them matter.
+
+**Weaker half of that claim, stated as such:** the detector keys on a
+` ```markdown ` / ` ```md ` / ` ```text ` fence. A skill that builds a comment
+body in unfenced prose would not be seen. Zero fenced templates in `bib-qa`
+and `pickup` is good evidence they are unaffected, not proof.
+
+### Definition of done
+
+One pass over `coordinate.md`'s 7 template blocks, replacing the 35 bracketed
+placeholders with a syntax that survives — `#NNN`, `{one sentence}`,
+`COMMIT-SHA`. Not the other two files.
