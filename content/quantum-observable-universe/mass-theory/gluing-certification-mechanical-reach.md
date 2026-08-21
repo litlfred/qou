@@ -40,7 +40,7 @@ Net reach: shape-field degrees $2$ through $14$, triangulations of $2$ through $
 
 ## ⚠ What this does not establish
 
-The identities hold at an **arbitrary root**, so flat shapes are permitted throughout and **hyperbolicity is not established anywhere** — that needs $\operatorname{Im} z > 0$, which is a genuinely separate condition and is exactly the gap the trefoil exhibits: its flat shapes satisfy the edge equations exactly.
+The identities hold at an **arbitrary root**, so flat shapes are permitted throughout and **hyperbolicity is not established anywhere** — that needs $\mathrm{Im} z > 0$, which is a genuinely separate condition and is exactly the gap the trefoil exhibits: its flat shapes satisfy the edge equations exactly.
 
 Nothing here says any of these triangulations is a triangulation *of* a knot complement. That is Thurston hyperbolisation together with Mostow rigidity, and it needs a theory of hyperbolic 3-manifolds that this development does not have.
 

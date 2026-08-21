@@ -22,7 +22,7 @@ The two halves of the gluing data behave differently:
 | condition | needs |
 |---|---|
 | edge equations $\prod z^{a} (z')^{b} (z'')^{c} = 1$ | $z \neq 0, 1$ only |
-| dihedral angles summing to $2\pi$ around each edge | $\operatorname{Im} z > 0$ |
+| dihedral angles summing to $2\pi$ around each edge | $\mathrm{Im} z > 0$ |
 
 The edge equations are algebraic identities in $\mathbb{C} \setminus \{0,1\}$ and descend to flat shapes without complaint. The angle conditions do not: the dihedral angles are the arguments of the edge parameters, and a flat tetrahedron has angles $0$ and $\pi$ rather than a genuine angle triple summing to $\pi$. **Positivity is what detects hyperbolicity; the equations are indifferent to it.**
 
