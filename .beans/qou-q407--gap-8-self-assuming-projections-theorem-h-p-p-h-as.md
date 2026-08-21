@@ -217,3 +217,39 @@ aid only. Recorded rather than dropped because the negative is the useful part.
 - [ ] Restate the three ref-bound trivial-existentials
 - [ ] Consider wiring the detector into `lean-vacuity-axiom-audit.ts` as a
       `proof-self-assuming` criterion (the original audit's follow-up)
+
+## 2026-08-21 — groups (A)/(C)/(D) applied: self-assuming reaches 0
+
+Corpus sweep now reports **0 self-assuming**, 13 trivial-existential. All twelve
+of the original defect are discharged.
+
+- **Ref-bound (2)** — `defect_legendrian_knot`, `topological_charge_quantization`.
+  Converted from vacuous theorems to **`def`s naming the condition**, blocks
+  moved to `validation: "stub"`. Deletion was unavailable (they are `lean.ref`
+  targets); `def` targets are established practice
+  (`QOU.Braiding.r_matrix_braiding_structure`), so the refs still resolve.
+- **Deleted (7)** — `variational_transport`, `jet_preserves_channel_separation`,
+  `adjoint_has_no_degree_zero`, `plancherel_total_bound`,
+  `plancherel_sum_eq_one`, `fomin_identity`, `fomin_identity_n3`. No references
+  beyond their own definition sites.
+
+**Two were already diagnosed in place** — `jet_preserves_channel_separation`
+and `adjoint_has_no_degree_zero` carried inline `⚠` comments naming the `P → P`
+shape and citing bean `qou-fav8`. The diagnosis was correct and had been sitting
+there; both still type-checked clean, so every gate still read them as proved.
+A comment is not a disposition.
+
+**Near-miss:** two distinct declarations are named `variational_transport`
+(`categorical-action.lean` and `GaugeTheory.lean`); only the first is vacuous.
+A name-based edit would have hit the wrong one.
+
+All seven touched files compile clean.
+
+## Next
+
+- [ ] The 13 trivial-existentials. Ref-targeting is already checked: three must
+      be restated (`knot_factor_spectral_form`, `habiro_integral`,
+      `spectral_decomposition_qvalue`), ten can be deleted.
+- [ ] Wire the detector into `lean-vacuity-axiom-audit.ts` as a
+      `proof-self-assuming` criterion — the original audit's own follow-up, and
+      the thing that stops this recurring.

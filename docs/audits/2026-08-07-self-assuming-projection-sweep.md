@@ -428,3 +428,48 @@ rather than binders, and that is not a defect. So it ships behind
 `--heuristic`, off by default, as a triage aid — **not** as a gate. Recorded
 because the negative is worth knowing: the obvious generalisation of the tell
 does not work.
+
+## 2026-08-21, groups (A)/(C)/(D) applied — self-assuming count reaches zero
+
+All twelve self-assuming projections are now discharged. The corpus-wide sweep
+reports **0 self-assuming**, 13 trivial-existential.
+
+### Ref-bound: the claim is named, not asserted (2)
+
+`defect_legendrian_knot` and `topological_charge_quantization` are the
+`lean.ref` targets of their content blocks, so deletion was not available.
+Both are now **`def`s naming the condition** rather than theorems asserting it,
+and both blocks move from `validation: "not_checked"` to
+`validation: "stub"` — which is the accurate state and more informative than
+"nobody ran the checker".
+
+`def`-valued `lean.ref` targets are established practice here
+(`QOU.Braiding.r_matrix_braiding_structure`), so the refs still resolve.
+
+Worth recording about `defect_legendrian_knot`: its `zero : A ⟶ A` was a **free
+variable merely named `zero`**, not the zero morphism. The suggestive reading
+was fictional before you even asked what it proved.
+
+### Deleted, with the claim recorded (7)
+
+`variational_transport`, `jet_preserves_channel_separation`,
+`adjoint_has_no_degree_zero`, `plancherel_total_bound`,
+`plancherel_sum_eq_one`, `fomin_identity`, `fomin_identity_n3`. None had any
+reference beyond its own definition site.
+
+Two of these were **already diagnosed in place**:
+`jet_preserves_channel_separation` and `adjoint_has_no_degree_zero` carried
+inline `⚠` comments spelling out the `P → P` shape and citing bean
+`qou-fav8` — including, for the latter, the observation that the real statement
+"is expressible, but only once the adjoint object carries the grading too".
+The diagnosis was right and had been sitting there; what it did not change is
+that both still type-checked clean, so every gate still read them as proved.
+**A comment is not a disposition.** That is the gap this pass closes.
+
+### A near-miss worth noting
+
+There are **two** declarations named `variational_transport`, in
+`quantum-observable-universes/categorical-action.lean` and in
+`lean/QOU/QuantumObservableUniverse/GaugeTheory.lean`. Only the first is
+vacuous; the sweep never flagged the second. A name-based edit would have hit
+the wrong one.

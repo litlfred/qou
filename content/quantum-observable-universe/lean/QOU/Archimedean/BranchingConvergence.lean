@@ -131,31 +131,6 @@ theorem ratio_perturbation_bound (A B C D ε : ℝ)
 -- Ref: [sagan2001] Corollary 3.2.3 (Pieri rule for SYT)
 -- Ref: [stanley1999] §7.10 (RSK and growth diagrams)
 
-/-- Fomin identity: Σ dim(λ)·m_μ^λ = (k!/n!)·dim(μ).
-
-    Stated over ℕ. The identity is purely combinatorial
-    (independent of q). -/
-theorem fomin_identity (k n : ℕ) (hn : n ≤ k)
-    (partitions_k : Finset (List ℕ))
-    (dim_fn : List ℕ → ℕ)    -- dim(λ) = #SYT(λ)
-    (mult_fn : List ℕ → ℕ)   -- m_μ^λ = #SYT(λ/μ) for fixed μ
-    (dim_mu : ℕ)              -- dim(μ)
-    -- Hypothesis: the sum satisfies the Fomin identity
-    (h_fomin : partitions_k.sum (fun lam => dim_fn lam * mult_fn lam) =
-      k.factorial / n.factorial * dim_mu) :
-    partitions_k.sum (fun lam => dim_fn lam * mult_fn lam) =
-    k.factorial / n.factorial * dim_mu :=
-  h_fomin
-
-/-- Fomin identity specialized to n = 3.
-    Σ_{λ ⊢ k} dim(λ) · m_μ^λ = (k!/6) · dim(μ). -/
-theorem fomin_identity_n3 (k : ℕ) (hk : k ≥ 3)
-    (total_branch_μ : ℕ)
-    (dim_mu : ℕ)
-    (h : total_branch_μ = k.factorial / 6 * dim_mu) :
-    total_branch_μ = k.factorial / 6 * dim_mu :=
-  h
-
 /-- Concrete verification at k = 4:
     Σ dim(λ)·m_{(2,1)}^λ over λ ⊢ 4 = 4!/6 · 2 = 4·2 = 8.
 

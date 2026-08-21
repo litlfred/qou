@@ -7,7 +7,6 @@ import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
 
-
 /-!
 # QOU.CategoricalAction
 
@@ -101,17 +100,5 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     (ca : CategoricalAction C fh) :
     ca.gauge = ca.gauge ≫ 𝟙 (𝟙_ C) → ca.gauge = ca.gauge := by
   simp [CategoryTheory.Category.comp_id]
-
-/-- **Categorical transport equation**: the state is critical iff
-    `D_∇ ψ = 0`, i.e. the covariant derivative of the state vanishes.
-    Encoded: at a critical state, the matter term factors through the unit. -/
--- Ref: [manuscript] §1
-theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C)
-    (ca : CategoricalAction C fh)
-    (h_critical : ca.matter = fh.unit ≫ fh.counit) :
-    ca.matter = fh.unit ≫ fh.counit :=
-  h_critical
 
 end QOU

@@ -2,7 +2,6 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Data.Real.Basic
 
-
 /-!
 # Plancherel Term 7: well-defined log-functional formulation
 
@@ -51,26 +50,6 @@ noncomputable def phi_k (k : ℕ) (blocks : List WedderburnBlock) : ℝ :=
   (blocks.filter (fun b => b.depth = k)).foldl
     (fun acc b => acc + b.weight * Real.log (|b.character|))
     0
-
-/-- Weight-sum boundedness: total weight sum, when assumed bounded
-    by 1 (as for the classical Plancherel measure
-    `w_λ = (dim V_λ)²/n!`), stays so.  For the q-deformed analogue
-    `tilde w_λ = dim_q²(λ)/[n]_q!` the bound is generally not 1 but
-    a finite constant; the theorem is stated parametrically over
-    the bound. -/
-theorem plancherel_total_bound (blocks : List WedderburnBlock)
-    (h_total : (blocks.map (·.weight)).sum ≤ 1) :
-    (blocks.map (·.weight)).sum ≤ 1 := h_total
-
-/-- **Theorem (weight-sum identity, parametric).**
-    Under the *hypothesis* that the weights sum to 1 — true for the
-    classical Plancherel measure `w_λ = (dim V_λ)²/n!`; false in
-    general for the q-deformed `tilde w_λ = dim_q²/[n]_q!` (which
-    satisfies a different identity) — the sum is 1.  This is a
-    parametric restatement, not a proof of the q-deformed identity. -/
-theorem plancherel_sum_eq_one (blocks : List WedderburnBlock)
-    (h_pl : (blocks.map (·.weight)).sum = 1) :
-    (blocks.map (·.weight)).sum = 1 := h_pl
 
 /-- **Theorem (Φ_k is well-defined for non-zero characters).**
     Each curvature-rank-k log functional is a finite sum of finite
