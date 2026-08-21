@@ -411,3 +411,162 @@ results and nothing downstream consumes them.
 - `qou-r0dn` — **new**: `Vol(6₂)` literal wrong by 7.75 % in
   `m_tau_knot_prediction.py`; 8th-digit divergence in
   `vol_density_deuteron_perknot_probe.py`.
+
+---
+
+## 8. Amendments after independent re-verification (2026-08-21, second agent)
+
+This section was added on `claude/deuteron-knot-adjudication-redo-2026-08-21`
+after the commit above was rescued by cherry-pick. The rescue was needed
+because the commit had landed on an unrelated sibling branch
+(`claude/tl-arc-lean-infra-2026-08-21`) — two agents were sharing one
+checkout, so `HEAD` was the sibling's when this doc was committed. It existed
+in exactly one place until the cherry-pick.
+
+Everything above is **unchanged**. A second agent re-derived the findings from
+the tree rather than inheriting them; the results below either **confirm**,
+**sharpen**, or **add to** §§1–7. **The `UNDETERMINED` verdict of §3 is
+unchanged, and is now supported by a second, independent computation.**
+
+### 8.1 Independent confirmation of the `6₂` identification (§1B)
+
+§1B identified the registry word `[1, −2, 1, 1, 1, −2]` as `6₂` using a
+Kauffman-bracket state sum over `TL₃`. That was re-done by a **different**
+route — the reduced Burau representation over `ℤ[t, t⁻¹]`, giving the
+Alexander polynomial rather than the Jones polynomial:
+
+```
+[1,−2,1,1,1,−2] on 3 strands → 1 component, writhe +2
+Δ(t) = −t² + 3t − 3 + 3t⁻¹ − t⁻²        det = |Δ(−1)| = 11
+```
+
+`Δ` is the tabulated Alexander polynomial of `6₂` and `det = 11` agrees with
+§1B's bracket computation. **Two independent invariants, computed by two
+independent methods, give the same identification.** §1B stands.
+
+The script is committed as
+[`computations/probes/deuteron_braid_closure_identification.py`](../../computations/probes/deuteron_braid_closure_identification.py)
+— §6 recorded its scratchpad scripts as uncommitted, so this supplies a
+reproducible artifact for the arity argument that §3 Ground 1 rests on. It
+emits no witness. Its five textbook reference rows (unknot 1, Hopf 2, trefoil
+3, figure-eight 5, `6₂` 11) are load-bearing: the first version mapped
+`σᵢ⁻¹` by substituting `t → 1/t`, which coincides with the matrix inverse only
+in `B₂`, and it silently returned `3` for the figure-eight and `5` for `6₂`.
+Anyone re-deriving this should calibrate before trusting a corpus row.
+
+### 8.2 New — a **fourth** name/word mismatch, in `gb-filtration-jet-order-reader`
+
+Not in the §1 inventory, and a different defect class from §1E (which is
+wrong *numbers* under right names): here the **word does not close to the
+knot it is named for**.
+
+[`computations/gb-filtration-jet-order-reader.witness.json:41`](../../computations/gb-filtration-jet-order-reader.witness.json)
+names a row `"deuteron 6_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2^2 in H_3"`. Measured:
+
+| row as written | components | det | the named knot |
+|---|---|---|---|
+| `4_1`: `(σ₁σ₂⁻¹)²` | 1 | 5 | `4₁`: knot, det 5 — **correct** |
+| `6_2`: `σ₁⁻¹σ₂σ₁⁻¹σ₂²` | **2** | **8** | `6₂`: **knot**, det **11** — **mismatch** |
+| `8_11`: `σ₁⁻¹σ₂σ₁⁻²σ₂³` | **2** | 18 | `8₁₁`: **knot** — **mismatch** |
+
+The figure-eight row is correct, so the file's notation convention is the
+standard one and these two rows are genuinely wrong rather than
+differently-conventioned.
+
+For the deuteron row the repair looks like a single exponent:
+`σ₁⁻¹σ₂σ₁⁻¹σ₂³` (one more `σ₂`) gives **1 component, det 11** — exactly `6₂`.
+**No repair is proposed for the tritium row**: two nearest-neighbour
+candidates (`σ₂⁴`, `σ₁⁻³`) do restore a knot (det 23, det 25) but neither is
+identifiable as `8₁₁` from what was computed here, so only the arity mismatch
+is claimed.
+
+**Scope-(b) structural exclusion**, on the *same* proved invariant §2 already
+uses — the number of components of a braid closure is a permutation
+invariant, so it is independent of every crossing sign and every convention.
+A 2-component closure cannot be a knot. This needs no determinant table.
+
+**Blast radius: (c), status unknown, small.** The row's `max_grade` and
+`filtered_basis_size` are computed *from the word*, so they are correct facts
+about the word; what is wrong is the **name**. The risk is a reader taking
+"`max_grade = 3`" as a jet-order fact about `6₂`. Bean `qou-k3te`.
+
+### 8.3 Correction to bean `qou-yaqm` — the doc is right, the bean over-generalises
+
+§4(a) states the sign-drop's component count is "3 either way" and scopes that
+to the deuteron. **That is correct** — re-measured by exact cycle count of the
+induced permutation, the deuteron goes 3 → 3. The verdict's independence from
+the fix holds.
+
+Bean `qou-yaqm` states it **unscoped** ("Component count is unchanged (3)")
+while also naming the T / ³He / ⁴He rows. Off the deuteron row that is
+**false**:
+
+| row | as-coded | sign-corrected |
+|---|---|---|
+| `D` | 3 | 3 |
+| `T` | 4 | 4 |
+| **`³He`** | **2** | **4** |
+
+So the bug *does* change the topology of the ³He closure. The bean has been
+corrected; §4(a) needs no change.
+
+Two further sharpenings of the bean, both measured:
+
+- **Line numbers are 73 / 75 / 77**, not 69–76.
+- **The as-coded deuteron closure is split.** The as-coded word reaches only
+  `max|gen| = 4` on 6 strands, so **strand 6 is never touched** and the
+  closure is (something on 5 strands) ⊔ unknot. This *explains* the `det = 0`
+  §2 records — a split link has vanishing Alexander polynomial. The
+  sign-corrected word reaches `σ₅`. Determinant 0 is therefore not an
+  incidental number but the signature of the defect.
+- **The same `[g + k for g in …]` pattern appears 8 more times** in
+  [`computations/atom_braid_words.py`](../../computations/atom_braid_words.py)
+  (lines 101, 103, 105, 110, 111, 114, 115, 157), and the **proton** word
+  `p = [1, −2, 1, −2, 1, −2, 1, 1, 2, 1, 1]` carries negative letters too — so
+  `[g + 3 for g in p]` is affected as well. The defect is not confined to one
+  producer.
+
+### 8.4 Sharpening of §1E — the `2·Vol(4₁)` reading is a hypothesis, not an identity
+
+§1E says the `m_tau_knot_prediction.py:91` literal "agrees to 8 digits with
+`2·Vol(4₁)`". That wording is exact and is **not** being corrected. Adding the
+measurement, so a later reader does not upgrade it to an identity:
+
+```
+literal                4.059766495657880159
+2·Vol(4₁)              4.0597664256386145
+difference             7.00193e-8            relative 1.72471e-8
+literal vs census      −7.75003 %
+probe literal vs census  4.64422e-7           relative 1.05531e-7
+```
+
+The literal is **not** `2·Vol(4₁)`; it differs in the 9th significant figure.
+"Doubled figure-eight" remains a **hypothesis** about how the wrong number got
+there, tiered as such — the provenance is undetermined. What is **measured**
+is only the −7.75 % disagreement with the census value, and that alone is
+what bean `qou-r0dn` needs to be actionable.
+
+### 8.5 Prior art check on §3 Ground 3
+
+Independently corpus-grepped and found the same thing §3 cites, plus one item
+worth naming explicitly:
+[`computations/probes/knot_id_volume_match_adjudication.py`](../../computations/probes/knot_id_volume_match_adjudication.py)
+is a **live, non-deprecated** probe whose stated purpose is to adjudicate this
+exact fork, and whose method is scoring `ρ · m_e · Vol(K)` against `B_AME`
+(docstring: *"named set {6_2, 8_11, L6a4}: errors ≈ +1.1 %, −0.16 %, −3.0 %"*).
+Its verdict — *"the names are right"* — rests entirely on AME agreement.
+
+Under the owner's ruling that is the forbidden inversion, so **the corpus's
+existing adjudication of `6₂` is not admissible as a ground**, exactly as §3
+concludes. Its docstring's *"no fit: the law has zero free parameters"* is
+true of the **law** and not of the **selection**: the knot name is itself a
+discrete parameter chosen from a census by AME agreement. Recording this so a
+later agent who finds that probe does not read it as settling the question.
+
+### 8.6 Environment note
+
+SnapPy is **not installed** in this container (`ModuleNotFoundError: No module
+named 'snappy'`), so nothing here was re-checked against the census
+programmatically. Every claim in §8 is exact integer or symbolic arithmetic
+(`sympy`) over the braid words themselves, or a permutation cycle count — no
+float64 entered any conclusion, and no witness was written or regenerated.
