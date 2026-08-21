@@ -1,10 +1,11 @@
 ---
 # qou-7ot6
 title: 'GAP: drain the 443 source sites carrying a stale CODATA edition'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-19T13:05:24Z
-updated_at: 2026-08-19T13:05:24Z
+updated_at: 2026-08-21T22:48:57Z
 ---
 
 
@@ -200,3 +201,32 @@ Plus one open identification: the deuteron / He-3 / He-4 masses in
 `b_over_m_order_probe.py` and `knot-particle-generation.py` differ from the
 CODATA table by 9–100 ppb, too large for an edition. Probably **AME** values
 under a CODATA-shaped name. That needs identifying, not replacing.
+
+## 2026-08-21 22:50 UTC — tranche a on PR #5423, rebased and clean
+
+PR #5423 (`claude/codata-drain-7ot6a-2026-08-21`) carries tranche **a**:
+the constants modules routed at the registry, 12 consumer literals in 7
+files, and the light-nuclide identification. Rebased onto main (+170);
+`mergeable_state: clean`; all blocking precision gates green.
+
+Two witness conflicts during the rebase, both resolved by taking main's
+copy and regenerating (never merging witness text). Both counts that
+moved are main-side, verified by running the producer in a pristine
+`origin/main` worktree rather than argued:
+
+  mpf-import-time-dps-audit   literal_findings 1 -> 0 (main drained it)
+  q0-anchor-consistency-audit Q0_ANCHOR_MISSING 1918 -> 1919
+  q0-value-drift-audit        unchanged vs main
+
+The PR body's older accounting said `literal_findings 0 -> 1`; corrected
+in a comment on the PR rather than by a silent body edit.
+
+One finding filed rather than fixed: `qou-r8zo` — the
+`rho_f_vol_binding_dashboard` M_meas column is irreproducible from any
+standard route (+-240 eV, 100-240 sigma). Values deliberately left
+alone: the correct ones are computable but the intended provenance is
+not establishable, and guessing would launder it.
+
+Remaining: tranche **b** — the string/comment-resident sites, plus the
+188 consumers minus the three exclusion classes (window bounds, test
+expectations, deliberate determination choices).
