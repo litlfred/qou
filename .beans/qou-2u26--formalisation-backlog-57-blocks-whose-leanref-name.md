@@ -320,9 +320,17 @@ RED on **`qou-motivic-galois-instance`, whose Lean sibling does not exist**,
 verified pre-existing by stashing — reached from the carrier census, not from
 this bean. That is the `definition` named in the section above as the single
 error making `run-validate` exit non-zero paper-wide. Two routes, same block.
-Its issue count is quoted there as **28** against the **5** measured here a few
-hours earlier; main moved 108 commits between the two readings, so treat 28 as
-current and 5 as stale rather than as a discrepancy.
+Its issue count is quoted there as **28** against the **5** measured here.
+
+**I first wrote that 28 supersedes 5 because main had moved 108 commits between
+the readings. That was a guess, and it is wrong** — re-measured after rebasing
+onto that same main, `bun run scripts/run-validate.ts` gives **5** on
+`quantum-observable-universe` and **0** on both `unital-groebner-bases` and
+`fred2005-formal-groups`. 28 is not reproducible from any of the three papers by
+this entry point, and `content_validate` as named there appears in no workflow or
+script in this repo. So the two numbers come from **different tools counting
+different things**, not from one being stale. Do not reconcile them by date. The
+one thing both agree on, which is the load-bearing part, is the block.
 
 ### Standing hazard, now three-for-three
 
