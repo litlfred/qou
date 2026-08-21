@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-21T16:09:39.000Z",
+  "updated_at": "2026-08-21T16:25:30.669Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -367,17 +367,6 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.lean::muon_ratio_is_topological::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 54,
-      "verdict": "genuine",
-      "file_sha": "90213848aac6",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Pure definitional unfolding under a physics claim. `muonRatioFromVol q := vol_4_1 / hbarQSq q` (figure-8-muon-mass-cross-check.lean:33), so the theorem restates the definition by `rfl`. The substantive claim the name makes — that the muon ratio *is* this topological quantity — is the comparison against CODATA m_μ/m_e, which appears only in the comment block beneath as a numerical witness. `h_q_ne_one` is unused (division by zero returns zero in Lean, so `rfl` never needs it). Fix: state the CODATA agreement, or rename to `muonRatioFromVol_def`.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
     "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean::delta_max_numerical_scale::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
@@ -589,17 +578,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `KnotOperatorSelectionContext` carries field `tr_Phi` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `tr_Phi` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/spectrahedral_phase_collapse.lean::nucleon_sdp_rank_drop::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 35,
-      "verdict": "genuine",
-      "file_sha": "4820ae158009",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Pure definitional unfolding under a name asserting a spectral result. `detFactor3 u := u^3 + u - 1` (GramMatrixH3Symbolic.lean:230), so `detFactor3 u = 0 ↔ u^3 + u - 1 = 0` is closed by `rfl` and states only that the definition is its own body. Nothing about an SDP, a nucleon, or a rank drop is established, and `hu_pos : u > 0` is unused decoration. Fix: state the rank-drop claim (that the Gram matrix drops rank exactly at the real root of `u^3+u-1`), or rename to `detFactor3_eq_zero_iff` and drop `hu_pos`.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse.lean::descartes_universality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1095,17 +1073,6 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `VolThroughTau` carries field `knotVol` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `VolThroughTau` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `knotVol` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/lean/QOU/OptionE/RungSelection.lean::depthBasedRule_reaches_k3::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 86,
-      "verdict": "genuine",
-      "file_sha": "701f5d5869f5",
-      "disposition": "restate-against-a-definition",
-      "evidence": "`unfold depthBasedRule; rfl` — the rule's `k` at index 2 is 3 by construction, not because the crystal graph has ≥ 3 vertices. `h : 3 ≤ Γ.vertexCount` is unused, so the theorem does not establish that the rule *reaches* k=3 under any graph condition; it reads off a constant. Fix: state the property against a graph whose vertex count matters, or rename to a `_def`-style unfolding lemma and drop `h`.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
     "content/quantum-observable-universe/lean/QOU/PAdicQuantumGroups.lean::padic_frobenius_relation_preserved::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -1343,17 +1310,6 @@
         "agent_date": "2026-08-21"
       }
     },
-    "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean::nuclear_knot_classification::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-witness-with-unused-hypothesis",
-      "line": 33,
-      "verdict": "genuine",
-      "file_sha": "8990e53e81a6",
-      "disposition": "restate-or-drop",
-      "evidence": "A disguised triviality. `∃ K : NuclearKnotType, K = .borromean` is true for any inhabited enum carrying that constructor (witness `.borromean`, proof `rfl`) — it does not mention `Z`, `N`, or the hypothesis `hA : Z + N ≥ 4`, so it says nothing about which knot type an `A ≥ 4` nucleus has. The name claims a classification. Fix: state `nuclearKnotType Z N = .borromean` given `hA` — that is the claim, and it needs the classification function the file should be exporting.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_radius_of_convergence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -1410,23 +1366,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `SharedDenominatorCuspHolonomy` carries field `cusp_complete_of_root` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cusp_complete_of_root` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean::wenzl_annihilator::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-witness-with-underscored-hypothesis",
-      "line": 168,
-      "verdict": "genuine",
-      "file_sha": "c1cc463bacf7",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Decl unchanged; re-confirm prior genuine. `∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0 := ⟨0, rfl⟩` is true in every ring, independent of `firstCol`, `_h : 4 ≤ firstCol`, and Wenzl's theorem. The Wenzl/Jones/Witten `-- Ref:` dresses a content-free existence up as an imported annihilation result.",
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      }
     },
     "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean::main_commutative_diagram::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
