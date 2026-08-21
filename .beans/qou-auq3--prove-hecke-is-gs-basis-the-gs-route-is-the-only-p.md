@@ -3019,3 +3019,41 @@ inventory is known, and this tranche is precisely a case of the inventory being
 insufficient. Then the `OverlapComposition` + `spoly` identity joining the two.
 The diagonal `b = a` runs `blockPassFromTwo` and is covered by *neither* the
 collision nor the reorder measurement.
+
+### Two follow-ons, same tranche
+
+**The mid-prefix cancellation is forced — for a different reason than I gave.**
+`hecke_prefix_schedule_check.py` simulates the chain in the **list** model Lean
+actually uses (`ofTerms L`, every lemma reading its redex off
+`L₁ ++ (W, c) :: L₂`, so `W` must occur exactly once) rather than the engine's
+cleaned word→coefficient map. The two agree until the cancellation: the engine
+drops the reconverged pair, the list keeps both entries. Measured:
+
+- `dup_sources = 0` — no step ever rewrites a duplicated word, so the dead pair
+  is inert **as a source** and could be carried on that count alone;
+- **4** entries at `T_pre` against the **2** `tailChain` is stated on;
+- **one** dead word extends a live term's block context — which is exactly what
+  `hpark` forbids.
+
+So `ofTerms_cancel_pair` is forced, and `hecke_chain_cancellation.py` gave the
+wrong reason (a word being reduced twice; it never is) and the wrong count
+(twice; it is once, the second cancellation being the sign-pair ending).
+Consequence: **`tailChain` reaches the prefix's output only if the cancellation
+is discharged before it.** Nothing new is needed — `Basic.lean` §6 already has
+`SingleStepReduction.of_coeffEq_left` and `MultiStepReduction.congr_source`,
+whose disjunctive conclusion `reducesToZero_congr` shows how to absorb.
+
+**The diagonal.** `hecke_tail_diagonal_check.py` runs the fit, the collision and
+the reorder at `a = b = 3..6` against `blockPassFromTwo`'s actual source and
+target: fits both terms under a common `(A, T)`; `hpark` fails at the second
+block under the engine's order and holds under the reordered one; reaches zero.
+4/4. The two Bokut–Shiao steps and the endpoint are the **same** as the
+off-diagonal's — measured. `tailChainFromTwo` (sorry-free) is that argument, and
+its `j₂ ≤ j₁` covers the diagonal. Neither tail statement subsumes the other:
+the hypotheses nest, the sources do not.
+
+**Next.** The prefix assembly itself (`a² + a + 5` steps, two lineages, the
+loop, the quadratic pair, `small(a)`), then `OverlapComposition` + `spoly`
+joining it to the tail. The prefix's own per-step hypotheses have **not** been
+swept — the clash above is measured only against the block contexts `tailChain`
+would use.
