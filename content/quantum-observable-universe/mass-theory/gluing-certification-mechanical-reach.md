@@ -32,7 +32,7 @@ and both sides now carry **natural** exponents. Clearing denominators reduces th
 
 The obvious worries about scaling this up are that the certificates grow with the field degree, and that the product over tetrahedra outruns the available finite-product lemmas. Both were expected to bite; both were measured, and neither did.
 
-**Degree.** The certificates do grow — cofactor degree roughly quadruples and emitted size grows fivefold from degree 4 to degree 9. But the manifold with a degree-14 shape field, whose single largest certificate is over thirty thousand characters, verifies in about two minutes. The reason the naive extrapolation overshoots is worth recording: **cost tracks the number of ring-normalisation calls far more than the size of any one of them.** Wide-but-few is cheap. So certificate size — the quantity that visibly grows — is not the quantity that predicts cost.
+**Degree.** The certificates do grow — cofactor degree roughly quadruples and emitted size grows fivefold from degree 4 to degree 9. But the manifold with a degree-14 shape field, whose single largest certificate is over thirty thousand characters, verifies in about two minutes. The naive extrapolation overshoots because **cost tracks the number of ring-normalisation calls far more than the size of any one of them.** Wide-but-few is cheap.
 
 **Tetrahedron count.** The finite-product lemmas available off the shelf stop at eight, which reads like a hard limit at nine tetrahedra. It is a limit on the *named lemmas*, not on the argument: the successor form iterates unaided and unfolds the product at any count. A fourteen-tetrahedron triangulation certifies by the same single step as a two-tetrahedron one.
 

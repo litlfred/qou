@@ -2055,6 +2055,22 @@
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "evidence": "'exactly two non-zero central idempotents' and 'the only eigenvalues of c_{A,A}' are precise mathematical quantifiers carrying the completeness content of the theorem, not unqualified maximum-strength rhetoric.",
         "notes": "RIGOR (reported, not fixed - clause of a theorem statement, structural): CLAUSE (4) IS FALSE AT q != 1 AS WRITTEN. It asserts w_+ + w_- = 1 in R (x) Q with w_+- = (dim_q V_+-)^2/[2]_q!. The corpus's own Plancherel weight (h3-markov-wenzl-weights-context.md l.153) is w_lambda(q) = [n]_q!/H_q(lambda)^2, which is the same expression since dim_q lambda = [n]_q!/H_q(lambda). For n = 2 both hook products are H_q = [2]_q[1]_q = [2]_q, so w_+ = w_- = 1/[2]_q and the sum is 2/[2]_q = 0.9945810912 at the proton pin 1.1099785827513808 (0.9945810900 at the muon pin) - a 0.54% miss, not 1. Under the alternative (categorical) reading dim_q V_+ = [3]_q, dim_q V_- = 1 the sum is ([3]_q^2+1)/[2]_q = 5.104263502. Both readings recomputed at 30 dps. The identity sum_lambda (f^lambda)^2 = n! is the CLASSICAL Plancherel identity and does not q-deform in this form. Proposed fix: either restate clause (4) at q = 1 ('the weights satisfy w_+ + w_- = 1 in the classical limit'), or replace it with the Markov-trace normalisation that actually holds in R (x) Q and cite the block that proves it; also note there is NO .lean sibling for this theorem, so nothing machine-checks the clause."
+      },
+      {
+        "field_hash": {
+          "md": "7fa63a3d95ad",
+          "ts": "8ed3fadd1c3e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:13.245Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Re-recorded to carry the concrete replacement for clause (4) found while auditing the sibling Feynman blocks. Criterion verdict unchanged: exactly two non-zero central idempotents and the only eigenvalues are precise mathematical quantifiers, not rhetoric.",
+        "notes": "CONCRETE FIX for the clause-(4) defect recorded earlier on this criterion: the normalisation that DOES sum to 1 in R (x) Q is the one prf:feynman-categorical-trace and prf:feynman-markov-identification already use, w_lambda = dim_q(V_lambda).dim(S_lambda)/dim_q(V^{(x)n}) - the numerators add to the denominator because V^{(x)n} = (+)_lambda V_lambda (x) S_lambda. At n = 2 this gives w_+ + w_- = ([3]_q + 1)/[2]_q^2 = 1 IDENTICALLY, since [2]_q^2 = q^2 + 2 + q^{-2} = [3]_q + 1. Clause (4) as printed uses SQUARED q-dimensions over [2]_q! instead, which is the classical Plancherel identity and gives 2/[2]_q = 0.9945810912 (Hecke reading) or ([3]_q^2+1)/[2]_q = 5.104263502 (categorical reading) at the proton pin. Replacing the clause with the linear normalisation above makes it true at every q and puts it in agreement with the four sibling blocks in this chapter."
       }
     ],
     "trap-nonspeakable": [
@@ -2112,5 +2128,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:42:56.359Z"
+  "updated_at": "2026-08-21T16:16:13.245Z"
 }
