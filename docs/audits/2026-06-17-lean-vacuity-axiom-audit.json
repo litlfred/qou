@@ -1,11 +1,11 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-21T15:53:17.451Z",
+  "generated": "2026-08-21T16:08:15.007Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3008,
-  "files_flagged": 168,
+  "scanned_files": 3010,
+  "files_flagged": 169,
   "total_defects": 97,
-  "total_exempt": 122,
+  "total_exempt": 123,
   "categories": {
     "proof-no-self-assuming-projection": 46,
     "proof-no-trivial-true": 21,
@@ -2847,6 +2847,19 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (e2_is_canonical_basis) — honestly framed; tracked not counted"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean": [
+      {
+        "line": 75,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem binding_eq_bond_energy (h : BondExtensiveBinding A) :",
+        "decl": "binding_eq_bond_energy",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.extensive` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean": [

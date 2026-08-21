@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-21T15:53:17.462Z",
+  "updated_at": "2026-08-21T16:09:39.000Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2391,6 +2391,23 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Diagonal entry with word 6: `trM4 ... (mulNF₄ h (e₄ 6)(e₄ 6)) = trM4 ... (mulNF₄ h (e₄ 6)(e₄ 6))`, both sides identical, `:= rfl`. Reflexive tautology.",
       "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean::binding_eq_bond_energy::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 75,
+      "verdict": "genuine",
+      "file_sha": "e0086c80a420",
+      "disposition": "drop-redundant-projection",
+      "evidence": "Self-assuming field-projection (§3b-cond item 5): the conclusion `h.binding = h.epsilon * C(A,2)` is character-identical to the class field `extensive` and the proof is `:= h.extensive` verbatim, deriving nothing (the docstring says 'Just h.extensive, exposed as a named consumer'). The BondExtensiveBinding class is a legitimately-open conditional carrier and its sibling `binding_nonneg` genuinely derives (mul_nonneg on epsilon_nonneg), but this decl only re-exports the hypothesis. Honest fix: drop it, use h.extensive directly downstream. (Sibling qou-4tj9's fresh file — queued, not fixed here.)",
+      "reviewed_at": "2026-08-21T16:09:39.000Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
