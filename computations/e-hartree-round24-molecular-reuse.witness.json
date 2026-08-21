@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:11:08.434811+00:00",
+  "computedAt": "2026-08-21T21:07:23.015395+00:00",
   "commitSha": "unknown",
   "assertions": [
     {
@@ -29,7 +29,7 @@
   "allPassed": true,
   "computation": "e-hartree-round24-molecular-reuse",
   "scriptFile": "e_hartree_round24_molecular_reuse.py",
-  "scriptHash": "2271423605c5",
+  "scriptHash": "c853c04ecf76",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "enumeration": "exact integer arithmetic (Diophantine; no rounding)",
@@ -62,5 +62,7 @@
     "alpha_bare": "7.308701560055655e-03",
     "rel_gap_vs_codata": "-1.552806e-03",
     "finding": "Round 23's 'molecular-reuse assumption' is not a free, separable input.  LEG 1 (reuse the bare complexity) is forced by Bring uniqueness -- genus-4 gives the UNIQUE pair {(2,9),(3,5)}, so the force-carrier complexity cplx = q[9]_q[10]_q (= 1/alpha_EM, the -0.155% bare value) is the only one the theory has, a ring-invariant with no molecular-vs-free version.  LEG 2 (the molecular (2,2) exchange costs cplx, two exchanges => cplx^2) is the conjecture's own (2,2)=EM identification plus the covalent Pauli-2 count, not an extra assumption.  Intertwining- correspondence cannot close LEG 2 (it is e-hartree-conditional -- circular).  Residual = (a) (2,2)=EM dressed identification + (b) m_e c^2 CAL-1; the molecular-reuse dissolves into these."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

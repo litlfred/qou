@@ -74,9 +74,24 @@ from math import gcd
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-# substrate q_0 (proton-anchor re-pin, 2026-05-28); hardcoded fallback because
-# qou_substrate is not always importable in the sandbox.
-Q0 = 1.1099785955573347198997632204832250266562084087802
+# substrate q_0. `q_parameter` lives in `computations/substrate/`, so a bare
+# `from q_parameter import q_at` NEVER resolves when this file is run
+# standalone -- the try below silently fell through on every direct run and the
+# producer computed at the HARDCODED constant instead. That constant was the
+# MUON pin (1.10997859555733471...) sitting under a comment calling it the
+# "proton-anchor re-pin", so a direct run produced a muon-valued witness while
+# the manifest declares this producer proton. The committed proton witness was
+# reproducible only under the migration sweep, which happened to put
+# `substrate/` on the path.
+#
+# `_path_bridge` is the canonical fix -- it is what puts the substrate cluster
+# on sys.path -- and the fallback now carries the PROTON pin, matching both the
+# manifest and the comment, so the degraded path can no longer flip the anchor.
+# 254 producers hardcode the muon constant this way (78 under a proton
+# comment); the class is bean `qou-0hnz`.
+import _path_bridge  # noqa: F401, E402 -- puts substrate/ on sys.path
+
+Q0 = 1.1099785827513808075901793757796478271484375
 try:  # prefer the canonical constant when the package is present
     from q_parameter import q_at  # type: ignore
 
@@ -225,6 +240,11 @@ def main() -> None:
         },
     }
 
+    # Hand-written witness: WitnessBuilder is not on this path, so the
+    # manifest pin must be stamped here or the file lands unstamped
+    # (Q0_ANCHOR_MISSING) despite the producer being declared.
+    from q0_stamp import stamp_q0_anchor  # noqa: PLC0415
+    stamp_q0_anchor(witness, __file__)
     out_path = _HERE / "e-hartree-round24-molecular-reuse.witness.json"
     out_path.write_text(json.dumps(witness, indent=2) + "\n")
 
