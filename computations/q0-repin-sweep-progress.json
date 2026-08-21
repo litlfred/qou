@@ -464,14 +464,36 @@
    "n_fields": 14,
    "err": ""
   },
+  "block_swap_binding": {
+   "rc": -9,
+   "sec": 1200.1,
+   "witnesses": [
+    "block-swap-binding.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 16,
+   "err": "TIMEOUT >1200s"
+  },
+  "borromean-axial-coupling": {
+   "rc": 1,
+   "sec": 0.5,
+   "witnesses": [
+    "borromean-axial-coupling.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 125,
+   "err": "KeyError: 'gram_inverse'"
+  },
   "branching-qvalue-chain": {
    "rc": 0,
-   "sec": 2.4,
+   "sec": 1.0,
    "witnesses": [
     "branching-qvalue-chain.witness.json"
    ],
-   "max_rel_move": 0.7090909124471616,
-   "median_rel_move": 3.941235588645711e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 40,
    "err": "\u26a0 raw-float64: branching-qvalue-chain.witness.json: 29 raw float64 field(s) would enter the witness \u2014 .q0, .q0_err, .numeric.a, .numeric.a_err, .numeric.b, .numeric.b_err, .numeric.delta, .numeric.del"
   },
@@ -481,7 +503,7 @@
    "witnesses": [
     "bring-zero-mode-per-block-scaffold.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 7,
    "err": ""
@@ -492,32 +514,32 @@
    "witnesses": [
     "bw-chirality-isotopes.witness.json"
    ],
-   "max_rel_move": 7.70419557393774e-06,
-   "median_rel_move": 5.709014650295213e-09,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 112,
    "err": "\u26a0 raw-float64: bw-chirality-isotopes.witness.json: 81 raw float64 field(s) would enter the witness \u2014 .q_0, .coefficients_MeV.lambda_V, .coefficients_MeV.lambda_S, .coefficients_MeV.lambda_C, .coeffici"
   },
   "canonical_isospin_pyhecke": {
    "rc": 0,
-   "sec": 1.1,
+   "sec": 1.3,
    "witnesses": [
     "canonical-isospin-pyhecke.witness.json"
    ],
-   "max_rel_move": 18.224773091297383,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.32406542056074766,
+   "median_rel_move": 0.0,
    "n_fields": 28,
    "err": "\u26a0 raw-float64: canonical-isospin-pyhecke.witness.json: 13 raw float64 field(s) would enter the witness \u2014 .parameters.q_0, .results.p   (Z=1, N=0).tr_M_q0, .results.p   (Z=1, N=0).walltime_sec, .result"
   },
   "canonical_tr_m_via_chi_cache": {
    "rc": 0,
-   "sec": 0.9,
+   "sec": 1.2,
    "witnesses": [
     "canonical-tr-m-via-chi-cache.witness.json"
    ],
-   "max_rel_move": 3.0,
+   "max_rel_move": 1.0,
    "median_rel_move": 0.0,
-   "n_fields": 967,
-   "err": "\u26a0 environment: canonical-tr-m-via-chi-cache.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply "
+   "n_fields": 966,
+   "err": ""
   },
   "casimir_d6_qcorrection_structure": {
    "rc": 0,
@@ -525,32 +547,32 @@
    "witnesses": [
     "casimir-d6-qcorrection-structure.witness.json"
    ],
-   "max_rel_move": 2.2194506208596594e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 24,
-   "err": "\u26a0 environment: casimir-d6-qcorrection-structure.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is sim"
+   "err": ""
   },
   "casimir_jet_order_derivation": {
    "rc": 0,
-   "sec": 0.4,
+   "sec": 0.5,
    "witnesses": [
     "casimir-jet-order-derivation.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 26,
-   "err": "\u26a0 raw-float64: casimir-jet-order-derivation.witness.json: 24 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.targ"
+   "err": ""
   },
   "casimir_n_unknot_construction": {
    "rc": 0,
-   "sec": 0.8,
+   "sec": 0.9,
    "witnesses": [
     "casimir-n-unknot-construction.witness.json"
    ],
-   "max_rel_move": 2.2194506208596594e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 64,
-   "err": "\u26a0 environment: casimir-n-unknot-construction.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library"
+   "err": ""
   },
   "casimir_xi_2_dig_deeper": {
    "rc": 0,
@@ -558,98 +580,98 @@
    "witnesses": [
     "casimir-xi-2-dig-deeper.witness.json"
    ],
-   "max_rel_move": 2.2194506208596594e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 69,
-   "err": "\u26a0 environment: casimir-xi-2-dig-deeper.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library, inst"
+   "err": "\u26a0 raw-float64: casimir-xi-2-dig-deeper.witness.json: 23 raw float64 field(s) would enter the witness \u2014 .assertions[0].tolerance, .parameters.substrate_q, .parameters.h2_substrate, .data.finding_B3_sur"
   },
   "sigma_shell_characterization": {
    "rc": 0,
-   "sec": 2.6,
+   "sec": 3.1,
    "witnesses": [
     "sigma-shell-characterization.witness.json"
    ],
-   "max_rel_move": 1.0064280594422963e-06,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 92,
    "err": "\u26a0 raw-float64: sigma-shell-characterization.witness.json: 18 raw float64 field(s) would enter the witness \u2014 .enumeration_top_by_magnitude.2[0].y_abs, .enumeration_top_by_magnitude.2[0].w_lam, .enumera"
   },
   "categorical_q_decay_ba_low_isotopes": {
    "rc": 0,
-   "sec": 0.7,
+   "sec": 0.9,
    "witnesses": [
     "categorical-q-decay-ba-low-isotopes.witness.json"
    ],
-   "max_rel_move": 0.7090909090909091,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 175,
-   "err": "\u26a0 environment: categorical-q-decay-ba-low-isotopes.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is "
+   "err": "\u26a0 raw-float64: categorical-q-decay-ba-low-isotopes.witness.json: 132 raw float64 field(s) would enter the witness \u2014 .parameters.q_0_err, .parameters.m_e_MeV, .parameters.Q_beta_n_MeV_derived, .paramet"
   },
   "ch-bond-writhe-lp": {
    "rc": 0,
-   "sec": 0.8,
+   "sec": 1.2,
    "witnesses": [
     "ch-bond-writhe-lp.witness.json"
    ],
-   "max_rel_move": 4.0854382126516064,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 31,
    "err": "\u26a0 raw-float64: ch-bond-writhe-lp.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.E_mol_eV, .data.bond_H-H.E_eV, .data.bond_C-H.E_eV, .data.bond_C-O.E_eV, .da"
   },
   "charge_coulomb_tn3he_derived": {
    "rc": 0,
-   "sec": 1.6,
+   "sec": 1.9,
    "witnesses": [
     "charge-coulomb-tn3he-derived.witness.json"
    ],
-   "max_rel_move": 0.00020695306424285546,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 14,
-   "err": "\u26a0 environment: charge-coulomb-tn3he-derived.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library,"
+   "err": ""
   },
   "charge_slambda_reeb_phase_crack": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.7,
    "witnesses": [
     "charge-slambda-reeb-phase-crack.witness.json"
    ],
-   "max_rel_move": 1.0687640072430917e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 30,
-   "err": "\u26a0 environment: charge-slambda-reeb-phase-crack.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simp"
+   "err": ""
   },
   "chirality_avg_content": {
    "rc": 0,
-   "sec": 0.4,
+   "sec": 0.6,
    "witnesses": [
     "chirality-avg-content.witness.json"
    ],
-   "max_rel_move": 8.393267737899196,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 185,
    "err": ""
   },
   "close_321_weinberg_gap": {
    "rc": 0,
-   "sec": 1.2,
+   "sec": 1.7,
    "witnesses": [
     "close-321-weinberg-gap.witness.json"
    ],
-   "max_rel_move": 4.391008072698314e-05,
-   "median_rel_move": 2.30742352511581e-09,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 215,
-   "err": "\u26a0 raw-float64: close-321-weinberg-gap.witness.json: 128 raw float64 field(s) would enter the witness \u2014 .parameters.q_0_numeric, .parameters.cot_theta_W_codata, .data.cross_check_geometric_mean.path_a_"
+   "err": ""
   },
   "co_bond_order_active_set": {
    "rc": 0,
-   "sec": 6.1,
+   "sec": 1.2,
    "witnesses": [
     "co-bond-order-active-set.witness.json"
    ],
-   "max_rel_move": 1.4378700844322914,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 60,
-   "err": "\u26a0 environment: co-bond-order-active-set.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15; scipy 1.18.0 -> 1.17.1. "
+   "err": ""
   },
   "complex_fibre_cross_ratio": {
    "rc": 0,
@@ -657,76 +679,76 @@
    "witnesses": [
     "complex-fibre-cross-ratio.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 62,
    "err": ""
   },
   "confined_knot_binding": {
    "rc": 0,
-   "sec": 0.4,
+   "sec": 0.5,
    "witnesses": [
     "confined-knot-binding.witness.json"
    ],
-   "max_rel_move": 2.228817143869119,
-   "median_rel_move": 1.1543777362583445e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 93,
-   "err": "\u26a0 raw-float64: confined-knot-binding.witness.json: 67 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].computed"
+   "err": ""
   },
   "crystal_keystone_selector": {
    "rc": 0,
-   "sec": 0.6,
+   "sec": 0.5,
    "witnesses": [
     "crystal-keystone-selector.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 106,
    "err": ""
   },
   "d_density_derivation": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.7,
    "witnesses": [
     "d-density-derivation.witness.json"
    ],
-   "max_rel_move": 1.1097253687142907e-07,
-   "median_rel_move": 1.3502964283798549e-09,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 29,
-   "err": "\u26a0 raw-float64: d-density-derivation.witness.json: 17 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.q_0, .parame"
+   "err": ""
   },
   "defect_info_a_trend_probe": {
    "rc": 0,
-   "sec": 35.8,
+   "sec": 39.8,
    "witnesses": [
     "defect-info-a-trend-probe.witness.json"
    ],
-   "max_rel_move": 4.1592019843712835,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 62,
    "err": ""
   },
   "defect_weighted_zero_point_probe": {
    "rc": 0,
-   "sec": 1.1,
+   "sec": 1.4,
    "witnesses": [
     "defect-weighted-zero-point-probe.witness.json"
    ],
-   "max_rel_move": 4.1591892056685325,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 32,
    "err": ""
   },
   "deligne_stable_range_binding_period_probe": {
    "rc": 0,
-   "sec": 3.2,
+   "sec": 3.6,
    "witnesses": [
     "deligne-stable-range-binding-period-probe.witness.json"
    ],
-   "max_rel_move": 1.7882358581134805e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 72,
-   "err": "\u26a0 environment: deligne-stable-range-binding-period-probe.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this contain"
+   "err": ""
   },
   "delta_lambda_cancellation_ascaling_probe": {
    "rc": 0,
@@ -734,10 +756,10 @@
    "witnesses": [
     "delta-lambda-cancellation-ascaling-probe.witness.json"
    ],
-   "max_rel_move": 49.884090934671754,
-   "median_rel_move": 0.34354562013285356,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 42,
-   "err": "\u26a0 raw-float64: delta-lambda-cancellation-ascaling-probe.witness.json: 34 raw float64 field(s) would enter the witness \u2014 .parameters.q_0, .parameters.m_e_MeV, .data.rows[0].B_AME_MeV, .data.rows[0].net"
+   "err": ""
   },
   "delta_lambda_canonical_residual": {
    "rc": 0,
@@ -745,43 +767,54 @@
    "witnesses": [
     "delta-lambda-canonical-residual.witness.json"
    ],
-   "max_rel_move": 58.45454545454546,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 74,
-   "err": "\u26a0 raw-float64: delta-lambda-canonical-residual.witness.json: 44 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1"
+   "err": ""
   },
   "delta_lambda_extended_tower": {
    "rc": 0,
-   "sec": 0.4,
+   "sec": 0.3,
    "witnesses": [
     "delta-lambda-extended-tower.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 95,
-   "err": "\u26a0 environment: delta-lambda-extended-tower.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel. If this container is simply missing a library, install it and r"
+   "err": ""
   },
   "delta_lambda_full_variance_phase5e_1": {
    "rc": 0,
-   "sec": 3.1,
+   "sec": 3.4,
    "witnesses": [
     "delta-lambda-full-variance-phase5e-1.witness.json"
    ],
-   "max_rel_move": 0.4619112964938251,
-   "median_rel_move": 0.04286345884862758,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 450,
-   "err": "\u26a0 environment: delta-lambda-full-variance-phase5e-1.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is"
+   "err": ""
+  },
+  "delta_lambda_imme_triplet": {
+   "rc": 0,
+   "sec": 735.7,
+   "witnesses": [
+    "delta-lambda-imme-triplet.witness.json"
+   ],
+   "max_rel_move": 8.959043654464448e-07,
+   "median_rel_move": 0.0,
+   "n_fields": 105,
+   "err": "\u26a0 environment: delta-lambda-imme-triplet.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library, in"
   },
   "delta_lambda_imme_quartet": {
    "rc": 0,
-   "sec": 61.5,
+   "sec": 61.4,
    "witnesses": [
     "delta-lambda-imme-quartet.witness.json"
    ],
-   "max_rel_move": 0.8838476878403833,
-   "median_rel_move": 0.0018316260769282442,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 62,
-   "err": "\u26a0 raw-float64: delta-lambda-imme-quartet.witness.json: 52 raw float64 field(s) would enter the witness \u2014 .data.q0, .data.quartet.-1.5.B_pred, .data.quartet.-1.5.B_AME_gs, .data.quartet.-1.5.ias_ex_MeV"
+   "err": ""
   },
   "delta_lambda_l1_ceiling_sign_prune": {
    "rc": 0,
@@ -789,10 +822,10 @@
    "witnesses": [
     "delta-lambda-l1-ceiling-sign-prune.witness.json"
    ],
-   "max_rel_move": 0.9699286821384557,
-   "median_rel_move": 0.007971741445476695,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 56,
-   "err": "\u26a0 raw-float64: delta-lambda-l1-ceiling-sign-prune.witness.json: 39 raw float64 field(s) would enter the witness \u2014 .parameters.m_e_MeV, .data.rows[0].B_AME_MeV, .data.rows[0].target_units_m_e, .data.ro"
+   "err": ""
   },
   "delta_lambda_magnitude_deficit_profile": {
    "rc": 0,
@@ -800,32 +833,32 @@
    "witnesses": [
     "delta-lambda-magnitude-deficit-profile.witness.json"
    ],
-   "max_rel_move": 1.9710082724502285,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 78,
-   "err": "\u26a0 raw-float64: delta-lambda-magnitude-deficit-profile.witness.json: 41 raw float64 field(s) would enter the witness \u2014 .parameters.m_e_MeV, .data.D.B_AME_MeV, .data.D.target_units_m_e, .data.D.l1_ceili"
+   "err": ""
   },
   "delta_lambda_qdim_route_probe": {
    "rc": 0,
-   "sec": 0.4,
+   "sec": 0.5,
    "witnesses": [
     "delta-lambda-qdim-route-probe.witness.json"
    ],
-   "max_rel_move": 0.44759446992486884,
-   "median_rel_move": 0.010917358382631274,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 32,
-   "err": "\u26a0 raw-float64: delta-lambda-qdim-route-probe.witness.json: 28 raw float64 field(s) would enter the witness \u2014 .parameters.q_0, .parameters.m_e_MeV, .data.rows[0].B_AME_MeV, .data.rows[0].target_units_m"
+   "err": ""
   },
   "delta_lambda_z_coefficient_and_slope": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.4,
    "witnesses": [
     "delta-lambda-z-coefficient-and-slope.witness.json"
    ],
-   "max_rel_move": 58.45454545454546,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 41,
-   "err": "\u26a0 raw-float64: delta-lambda-z-coefficient-and-slope.witness.json: 21 raw float64 field(s) would enter the witness \u2014 .data.q0, .data.slope_test.rows[0].log_q0_Delta, .data.slope_test.rows[0].dev, .data"
+   "err": ""
   },
   "delta_n2_lp_dual_extraction": {
    "rc": 0,
@@ -833,10 +866,10 @@
    "witnesses": [
     "delta-n2-lp-dual-extraction.witness.json"
    ],
-   "max_rel_move": 1.1931582519322634,
-   "median_rel_move": 1.2690828938160103e-07,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 17,
-   "err": "\u26a0 raw-float64: delta-n2-lp-dual-extraction.witness.json: 13 raw float64 field(s) would enter the witness \u2014 .parameters.q_0, .data.y_lambda_at_q0.(3,), .data.y_lambda_at_q0.(2, 1), .data.y_lambda_at_q0"
+   "err": ""
   },
   "delta_q_decoration": {
    "rc": 0,
@@ -844,52 +877,52 @@
    "witnesses": [
     "delta-q-decoration.witness.json"
    ],
-   "max_rel_move": 0.7777777777777778,
-   "median_rel_move": 3.958319113018781e-09,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 236,
-   "err": "\u26a0 environment: delta-q-decoration.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel. If this container is simply missing a library, install it and re-run rat"
+   "err": ""
   },
   "derived_chi_catalogue_consumer_q0": {
    "rc": 0,
-   "sec": 1.1,
+   "sec": 1.2,
    "witnesses": [
     "derived-chi-catalogue-consumer-q0.witness.json"
    ],
-   "max_rel_move": 0.35695215741152037,
+   "max_rel_move": 1.097715552279575,
    "median_rel_move": 0.0,
    "n_fields": 46,
    "err": "\u26a0 raw-float64: derived-chi-catalogue-consumer-q0.witness.json: 16 raw float64 field(s) would enter the witness \u2014 .data.isotopes[0].catalogue_secs, .data.isotopes[0].rust_secs, .data.isotopes[0].mpfr_s"
   },
   "derived_chi_catalogue_matrix_m_mpfr": {
    "rc": 0,
-   "sec": 1.5,
+   "sec": 1.6,
    "witnesses": [
     "derived-chi-catalogue-matrix-m-mpfr.witness.json",
     "derived-chi-catalogue-matrix-m-mu-n-mpfr.witness.json"
    ],
-   "max_rel_move": 0.465263363336009,
+   "max_rel_move": 0.4874051050037973,
    "median_rel_move": 0.0,
    "n_fields": 467,
    "err": "\u26a0 raw-float64: derived-chi-catalogue-matrix-m-mpfr.witness.json: 70 raw float64 field(s) would enter the witness \u2014 .data.isotopes[0].total_precompute_secs, .data.isotopes[0].total_call_secs, .data.iso"
   },
   "derived_chi_catalogue_matrix_m_multi_a_benchmark": {
    "rc": 0,
-   "sec": 2.0,
+   "sec": 2.1,
    "witnesses": [
     "derived-chi-catalogue-matrix-m-multi-a-benchmark.witness.json"
    ],
-   "max_rel_move": 1.0579713100580992,
+   "max_rel_move": 0.5217912813549599,
    "median_rel_move": 0.0,
    "n_fields": 204,
    "err": "\u26a0 raw-float64: derived-chi-catalogue-matrix-m-multi-a-benchmark.witness.json: 70 raw float64 field(s) would enter the witness \u2014 .data.isotopes[0].total_precompute_secs, .data.isotopes[0].total_call_se"
   },
   "derived_chi_catalogue_matrix_m_numerical": {
    "rc": 0,
-   "sec": 0.8,
+   "sec": 0.9,
    "witnesses": [
     "derived-chi-catalogue-matrix-m-numerical.witness.json"
    ],
-   "max_rel_move": 0.5038571255726838,
+   "max_rel_move": 0.3639271562248422,
    "median_rel_move": 0.0,
    "n_fields": 59,
    "err": "\u26a0 raw-float64: derived-chi-catalogue-matrix-m-numerical.witness.json: 27 raw float64 field(s) would enter the witness \u2014 .data.cases[0].precompute_secs, .data.cases[0].call_secs, .data.cases[0].rust_se"
@@ -900,7 +933,7 @@
    "witnesses": [
     "e0-lambda-composite.witness.json"
    ],
-   "max_rel_move": 2.2364696981121268e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 109,
    "err": ""
@@ -916,11 +949,11 @@
   },
   "e_hartree_mechanism_b_probe": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.4,
    "witnesses": [
     "e-hartree-mechanism-b-probe.witness.json"
    ],
-   "max_rel_move": 0.812997982700611,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 31,
    "err": ""
@@ -931,19 +964,19 @@
    "witnesses": [
     "e-hartree-round19-dressed-scalar-block.witness.json"
    ],
-   "max_rel_move": 1.2046546542831998e-07,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 6,
    "err": ""
   },
   "e_hartree_round20_trace_ratio": {
    "rc": 0,
-   "sec": 1.2,
+   "sec": 1.3,
    "witnesses": [
     "e-hartree-round20-trace-ratio.witness.json"
    ],
-   "max_rel_move": 1.5792116127556862e-07,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 8,
    "err": ""
   },
@@ -953,18 +986,18 @@
    "witnesses": [
     "e-hartree-round22-arch-bridge.witness.json"
    ],
-   "max_rel_move": 1.4805786504444607e-07,
-   "median_rel_move": 1.204256811712206e-07,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 12,
    "err": ""
   },
   "e_hartree_round23_normalization": {
    "rc": 0,
-   "sec": 1.0,
+   "sec": 1.1,
    "witnesses": [
     "e-hartree-round23-normalization.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 5,
    "err": ""
@@ -975,7 +1008,7 @@
    "witnesses": [
     "e-hartree-round24-molecular-reuse.witness.json"
    ],
-   "max_rel_move": 5.087822907700533e-05,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 10,
    "err": ""
@@ -986,10 +1019,10 @@
    "witnesses": [
     "em-linking-invariant-probe.witness.json"
    ],
-   "max_rel_move": 3.380962272178538e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 29,
-   "err": "\u26a0 raw-float64: em-linking-invariant-probe.witness.json: 19 raw float64 field(s) would enter the witness \u2014 .data.coulomb_strong_ratio_tanh_ln_q0, .data.derived_categorical_dHe_MeV, .data.ame_split_MeV_"
+   "err": ""
   },
   "emitted_particle_tracker": {
    "rc": 0,
@@ -997,10 +1030,10 @@
    "witnesses": [
     "emitted-particle-tracker.witness.json"
    ],
-   "max_rel_move": 7.493941765237493,
-   "median_rel_move": 0.054394777076876004,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 64,
-   "err": "\u26a0 environment: emitted-particle-tracker.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply miss"
+   "err": ""
   },
   "escape1_geometric_holonomy_section": {
    "rc": 0,
@@ -1008,29 +1041,29 @@
    "witnesses": [
     "escape1-geometric-holonomy-section.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 42,
-   "err": "\u26a0 raw-float64: escape1-geometric-holonomy-section.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .data.task1_Res_A5_S3_H_decomposition.chi_Res_H_per_S3_class.3cyc, .data.task1_Res_A5_S"
+   "err": ""
   },
   "flavor_dependent_cusp_shape": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.6,
    "witnesses": [
     "flavor-dependent-cusp-shape.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 40,
    "err": ""
   },
   "flavor_split_xq_refinement": {
    "rc": 0,
-   "sec": 0.4,
+   "sec": 0.5,
    "witnesses": [
     "flavor-split-xq-refinement.witness.json"
    ],
-   "max_rel_move": 0.0002503881551854277,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 10,
    "err": ""
@@ -1041,21 +1074,21 @@
    "witnesses": [
     "four-unwired-theorems-regression.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 10,
-   "err": "\u26a0 raw-float64: four-unwired-theorems-regression.witness.json: 5 raw float64 field(s) would enter the witness \u2014 .assertions[0].tolerance, .assertions[3].tolerance, .assertions[4].tolerance, .assertions"
+   "err": ""
   },
   "fr_pullback_k3_test": {
    "rc": 0,
-   "sec": 5.6,
+   "sec": 5.7,
    "witnesses": [
     "fr-pullback-k3-test.witness.json"
    ],
-   "max_rel_move": 0.17442413528622988,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 121,
-   "err": "\u26a0 raw-float64: fr-pullback-k3-test.witness.json: 24 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .data.candidate_knots.4_1"
+   "err": ""
   },
   "full_twist_delta_n2_verification": {
    "rc": 0,
@@ -1063,7 +1096,7 @@
    "witnesses": [
     "full-twist-delta-n2-verification.witness.json"
    ],
-   "max_rel_move": 7.614500750278872e-07,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 2117,
    "err": "\u26a0 raw-float64: full-twist-delta-n2-verification.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .data.results_by_n.1.invariant_ratio_dim_sq, .data.results_by_n.2.invariant_ratio_dim_sq"
@@ -1074,10 +1107,10 @@
    "witnesses": [
     "gamma-gamma-pair-production-decomposition.witness.json"
    ],
-   "max_rel_move": 1.502636237466913e-05,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 46,
-   "err": "\u26a0 raw-float64: gamma-gamma-pair-production-decomposition.witness.json: 8 raw float64 field(s) would enter the witness \u2014 .assertions[0].tolerance, .assertions[1].tolerance, .assertions[2].computed, .as"
+   "err": ""
   },
   "gram_h3_symbolic_regression": {
    "rc": 0,
@@ -1085,10 +1118,10 @@
    "witnesses": [
     "gram-h3-symbolic-regression.witness.json"
    ],
-   "max_rel_move": 16025157582.202986,
-   "median_rel_move": 1.0160160594944387e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 49,
-   "err": "\u26a0 raw-float64: gram-h3-symbolic-regression.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[0].tolerance, .assertions[1].tolerance, .assertions[2].tolerance. Carry mpmath.mpf"
+   "err": ""
   },
   "h2-integer-lp": {
    "rc": 0,
@@ -1096,10 +1129,10 @@
    "witnesses": [
     "h2-integer-lp.witness.json"
    ],
-   "max_rel_move": 17.32264608308053,
-   "median_rel_move": 0.36669475273918684,
-   "n_fields": 71,
-   "err": "\u26a0 raw-float64: h2-integer-lp.witness.json: 60 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.E_mol_eV, .parameters.Phi_H_isolated, .data.best_1_crossing.binding, .data.best_"
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 91,
+   "err": ""
   },
   "h2-molecular-binding": {
    "rc": 0,
@@ -1107,21 +1140,21 @@
    "witnesses": [
     "h2-molecular-binding.witness.json"
    ],
-   "max_rel_move": 0.8129979827006114,
-   "median_rel_move": 0.05501740028903992,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 35,
    "err": "\u26a0 raw-float64: h2-molecular-binding.witness.json: 30 raw float64 field(s) would enter the witness \u2014 .assertions[2].expected, .assertions[2].tolerance, .parameters.q, .parameters.HA, .parameters.z, .pa"
   },
   "h2o_angle_activeset_gb": {
    "rc": 0,
-   "sec": 0.9,
+   "sec": 1.0,
    "witnesses": [
     "h2o-angle-activeset-gb.witness.json"
    ],
-   "max_rel_move": 0.505637062435112,
-   "median_rel_move": 0.021460458465822365,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 33,
-   "err": "\u26a0 raw-float64: h2o-angle-activeset-gb.witness.json: 29 raw float64 field(s) would enter the witness \u2014 .parameters.q, .data.tr_M_sigma, .data.tr_M_e_minus, .data.tr_M_L_plus, .data.tr_M_inverse_trefoil"
+   "err": ""
   },
   "h2o_angle_gb_truncation_inverse": {
    "rc": 0,
@@ -1129,10 +1162,10 @@
    "witnesses": [
     "h2o-angle-gb-truncation-inverse.witness.json"
    ],
-   "max_rel_move": 10.416203460604311,
-   "median_rel_move": 0.1666681273784354,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 102,
-   "err": "\u26a0 raw-float64: h2o-angle-gb-truncation-inverse.witness.json: 98 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.z, .parameters.h, .data.theta_observed_deg, .data.f_star, .dat"
+   "err": ""
   },
   "h2o_angle_knot_correction": {
    "rc": 0,
@@ -1140,10 +1173,10 @@
    "witnesses": [
     "h2o-angle-knot-correction.witness.json"
    ],
-   "max_rel_move": 1.1097253687142907e-07,
-   "median_rel_move": 5.564634734580557e-09,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 19,
-   "err": "\u26a0 raw-float64: h2o-angle-knot-correction.witness.json: 15 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.h, .data.leading_angle_deg, .data.observed_angle_deg, .data.residual"
+   "err": ""
   },
   "h2o_angle_q2_symmetric_block": {
    "rc": 0,
@@ -1151,10 +1184,10 @@
    "witnesses": [
     "h2o-angle-q2-symmetric-block.witness.json"
    ],
-   "max_rel_move": 0.7777777777777778,
-   "median_rel_move": 2.3074235552541665e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 22,
-   "err": "\u26a0 raw-float64: h2o-angle-q2-symmetric-block.witness.json: 15 raw float64 field(s) would enter the witness \u2014 .parameters.q, .data.q_squared, .data.block_ratios.sym V(3).sigma_trace, .data.block_ratios."
+   "err": ""
   },
   "h2o_bond_angle_shift_phi1": {
    "rc": 0,
@@ -1162,43 +1195,43 @@
    "witnesses": [
     "h2o-bond-angle-shift-phi1.witness.json"
    ],
-   "max_rel_move": 0.5056368953507494,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 15,
-   "err": "\u26a0 raw-float64: h2o-bond-angle-shift-phi1.witness.json: 11 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.z, .parameters.h, .data.tr_M_lone_pair_e_minus, .data.tr_M_bond_pair"
+   "err": ""
   },
   "h2s_chiral_residue_bar_antisymmetric": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.6,
    "witnesses": [
     "h2s-chiral-residue-bar-antisymmetric.witness.json"
    ],
-   "max_rel_move": 0.8474827704608231,
-   "median_rel_move": 1.1067186176698903e-07,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 12,
-   "err": "\u26a0 raw-float64: h2s-chiral-residue-bar-antisymmetric.witness.json: 8 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.z_bar_symmetric, .parameters.h_bar_antisymmetric, .paramet"
+   "err": ""
   },
   "h2s_chirality_residue_s3_holonomy": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.6,
    "witnesses": [
     "h2s-chirality-residue-s3-holonomy.witness.json"
    ],
-   "max_rel_move": 0.7777777777777778,
-   "median_rel_move": 6.374057600175884e-09,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 11,
-   "err": "\u26a0 raw-float64: h2s-chirality-residue-s3-holonomy.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .parameters.q, .data.blocks_signed_content_and_dirac_curvature.sym (3).D_q2, .data.block"
+   "err": ""
   },
   "h2s_lone_pair_asymmetry": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.6,
    "witnesses": [
     "h2s-lone-pair-asymmetry.witness.json"
    ],
-   "max_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 10,
-   "err": "\u26a0 raw-float64: h2s-lone-pair-asymmetry.witness.json: 1 raw float64 field(s) would enter the witness \u2014 .parameters.q. Carry mpmath.mpf from the source and serialize with _precision.fmt; do NOT stringif"
+   "err": ""
   },
   "h4_residual_higher_precision_pslq": {
    "rc": 0,
@@ -1206,8 +1239,8 @@
    "witnesses": [
     "h4-residual-higher-precision-pslq.witness.json"
    ],
-   "max_rel_move": 22.789019194878335,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 8,
    "err": ""
   },
@@ -1217,21 +1250,32 @@
    "witnesses": [
     "h5-h3-functor-keystone.witness.json"
    ],
-   "max_rel_move": 0.5056370624351119,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 95,
    "err": ""
   },
+  "hadron_knot_table": {
+   "rc": 1,
+   "sec": 33.5,
+   "witnesses": [
+    "hadron-knot-table.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 693,
+   "err": "TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))"
+  },
   "hbond_vdw_energy_ladder": {
    "rc": 0,
-   "sec": 0.5,
+   "sec": 0.4,
    "witnesses": [
     "hbond-vdw-energy-ladder.witness.json"
    ],
-   "max_rel_move": 4.5261975169622305e-07,
-   "median_rel_move": 1.153711783645715e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 18,
-   "err": "\u26a0 raw-float64: hbond-vdw-energy-ladder.witness.json: 14 raw float64 field(s) would enter the witness \u2014 .parameters.q, .data.h, .data.h_squared_hbond_rung, .data.h_fourth_vdw_rung, .data.hbar_q, .data."
+   "err": ""
   },
   "hbond_vdw_sdp": {
    "rc": 0,
@@ -1239,10 +1283,10 @@
    "witnesses": [
     "hbond-vdw-sdp.witness.json"
    ],
-   "max_rel_move": 1.1561047311158905,
-   "median_rel_move": 1.5084140634020248e-08,
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
    "n_fields": 38,
-   "err": "\u26a0 environment: hbond-vdw-sdp.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a libra"
+   "err": ""
   },
   "he3_pairknot_clambda_coulomb_probe": {
    "rc": 0,
@@ -1250,1217 +1294,10 @@
    "witnesses": [
     "he3-pairknot-clambda-coulomb-probe.witness.json"
    ],
-   "max_rel_move": 0.06899444405190894,
+   "max_rel_move": 0.0,
    "median_rel_move": 0.0,
    "n_fields": 118,
-   "err": "\u26a0 raw-float64: he3-pairknot-clambda-coulomb-probe.witness.json: 27 raw float64 field(s) would enter the witness \u2014 .data.E0_MeV, .data.C_lambda_charge_blocks.[3, 1, 1, 1], .data.C_lambda_charge_blocks."
-  },
-  "he3_tritium_cosh_asymmetry_diagnosis": {
-   "rc": -9,
-   "sec": 90.1,
-   "witnesses": [
-    "he3-tritium-cosh-asymmetry-diagnosis.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 14,
-   "err": "TIMEOUT >90s"
-  },
-  "hh-trefoil-corrected": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "hh-trefoil-corrected.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 32,
    "err": ""
-  },
-  "hh-vertex-volume": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "hh-vertex-volume.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 13,
-   "err": ""
-  },
-  "homflypt_reference_qa": {
-   "rc": 0,
-   "sec": 1.1,
-   "witnesses": [
-    "homflypt-reference-qa.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 225,
-   "err": ""
-  },
-  "homflypt_su_n_mass_tower": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "homflypt-su-n-mass-tower.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 34,
-   "err": ""
-  },
-  "hybridization_sp_gap_braid": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "hybridization-sp-gap-braid.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 18,
-   "err": ""
-  },
-  "intermediate_knot_detection": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "intermediate-knot-detection.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 628,
-   "err": ""
-  },
-  "iterative_lp_dual_h6_deuteron": {
-   "rc": 0,
-   "sec": 1.0,
-   "witnesses": [
-    "iterative-lp-dual-h6-deuteron.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 116,
-   "err": ""
-  },
-  "iterative_lp_dual_levels": {
-   "rc": 0,
-   "sec": 0.9,
-   "witnesses": [
-    "iterative-lp-dual-levels.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 35,
-   "err": ""
-  },
-  "jet_knot_invariants": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "jet-knot-invariants.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 223,
-   "err": ""
-  },
-  "lambda_scale_proof_step4_h4_remainder": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "lambda-scale-proof-step4-h4-remainder.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 54,
-   "err": ""
-  },
-  "lambda_scale_proof_step5_skein_anchor": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "lambda-scale-proof-step5-skein-anchor.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 17,
-   "err": ""
-  },
-  "lambda_scale_rd_c4_pslq_search": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "lambda-scale-rd-c4-pslq-search.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 35,
-   "err": ""
-  },
-  "landauer_crossing_energy_probe": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "landauer-crossing-energy-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 34,
-   "err": ""
-  },
-  "lepton_t2n_torus_tower": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "lepton-t2n-torus-tower.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 101,
-   "err": ""
-  },
-  "li2q_fbor_expansion_probe": {
-   "rc": 0,
-   "sec": 1.1,
-   "witnesses": [
-    "li2q-fbor-expansion-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 24,
-   "err": ""
-  },
-  "linking_weight_canonical_object_lwfix": {
-   "rc": 0,
-   "sec": 0.8,
-   "witnesses": [
-    "linking-weight-canonical-object-lwfix.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 38,
-   "err": ""
-  },
-  "low_isotope_sign_flip_diagnostic": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "low-isotope-sign-flip-diagnostic.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 57,
-   "err": ""
-  },
-  "lp_confinement_nf_forcing": {
-   "rc": 0,
-   "sec": 3.3,
-   "witnesses": [
-    "lp-confinement-nf-forcing.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 348,
-   "err": ""
-  },
-  "lw2_c2_independent_hopf_test_attempt": {
-   "rc": 0,
-   "sec": 0.9,
-   "witnesses": [
-    "lw2-c2-independent-hopf-test-attempt.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 27,
-   "err": ""
-  },
-  "lw_growth_rate_probe": {
-   "rc": 0,
-   "sec": 11.7,
-   "witnesses": [
-    "lw-growth-rate-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 67,
-   "err": ""
-  },
-  "m_p_spectral_corrected_50dps": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "m-p-spectral-corrected-50dps.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 21,
-   "err": ""
-  },
-  "mass_formula_6term": {
-   "rc": 0,
-   "sec": 56.6,
-   "witnesses": [],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 0,
-   "err": "  vols_dict = atom_per_generator_volumes(Z, N, include_inter=include_inter)"
-  },
-  "mass_formula_6term_mpfr_50dps": {
-   "rc": 0,
-   "sec": 5.1,
-   "witnesses": [
-    "mass-formula-6term-mpfr-50dps.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 55,
-   "err": ""
-  },
-  "mass_per_knot_density": {
-   "rc": 1,
-   "sec": 0.1,
-   "witnesses": [
-    "mass-per-knot-density.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 25,
-   "err": "ImportError: cannot import name 'per_knot_density_borromean' from '_li_2_q_util' (/home/user/qou/computations/_li_2_q_util.py)"
-  },
-  "mass_sweep_wiring_status": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "mass-sweep-wiring-status.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 112,
-   "err": ""
-  },
-  "mass_table_comprehensive": {
-   "rc": -9,
-   "sec": 90.0,
-   "witnesses": [
-    "mass-table-comprehensive.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 105118,
-   "err": "TIMEOUT >90s"
-  },
-  "meson_gen3_eta_phi": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "meson-gen3-eta-phi.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 27,
-   "err": "\u26a0 raw-float64: meson-gen3-eta-phi.witness.json: 16 raw float64 field(s) would enter the witness \u2014 .kaon_crosscheck.ppm, .comparisons.K\u00b1.pdg_ratio, .comparisons.K\u00b1.residual, .comparisons.\u03b7.pdg_ratio, ."
-  },
-  "meson_habiro_c2_off_integer_pivot": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "meson-habiro-c2-off-integer-pivot.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 7,
-   "err": ""
-  },
-  "meson_habiro_c3_categorical_search": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "meson-habiro-c3-categorical-search.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 38,
-   "err": ""
-  },
-  "meson_habiro_c3_pslq_search": {
-   "rc": 0,
-   "sec": 0.7,
-   "witnesses": [
-    "meson-habiro-c3-pslq-search.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 7,
-   "err": ""
-  },
-  "meson_habiro_c4_truncation_reexam": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "meson-habiro-c4-truncation-reexam.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 12,
-   "err": ""
-  },
-  "meson_per_knot_density": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "meson-per-knot-density.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 21,
-   "err": ""
-  },
-  "meson_vol_density": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "meson-vol-density.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 21,
-   "err": ""
-  },
-  "mmu_categorical_correction_first_probe": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "mmu-categorical-correction-first-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 24,
-   "err": ""
-  },
-  "mmu_categorical_correction_k_crossing_probe": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "mmu-categorical-correction-k-crossing-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 31,
-   "err": ""
-  },
-  "mmu_categorical_correction_refined_probe": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mmu-categorical-correction-refined-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 27,
-   "err": ""
-  },
-  "mmu_kashiwara_cos_factor_probe": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mmu-kashiwara-cos-factor-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 37,
-   "err": ""
-  },
-  "mmu_lepton_torus_tower_feasibility_probe": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "mmu-lepton-torus-tower-feasibility-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 17,
-   "err": ""
-  },
-  "mmu_r9_consistency_check": {
-   "rc": 0,
-   "sec": 0.7,
-   "witnesses": [
-    "mmu-r9-consistency-check.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 17,
-   "err": ""
-  },
-  "mmu_r9_two_rung_extension_probe": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mmu-r9-two-rung-extension-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 40,
-   "err": ""
-  },
-  "mmu_r9_two_rung_v2_probe": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mmu-r9-two-rung-v2-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 37,
-   "err": ""
-  },
-  "mmu_simpler_form_search_probe": {
-   "rc": 0,
-   "sec": 0.8,
-   "witnesses": [
-    "mmu-simpler-form-search-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 43,
-   "err": ""
-  },
-  "mn_delta_pn_qbeta_habiro_cascade_probe": {
-   "rc": 1,
-   "sec": 0.2,
-   "witnesses": [
-    "mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 30,
-   "err": "NameError: name 'c3_habiro' is not defined. Did you mean: 'c3_hab'?"
-  },
-  "mn_flavor_split_h3_plancherel": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mn-flavor-split-h3-plancherel.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 9,
-   "err": ""
-  },
-  "mn_flavor_split_h4_plancherel": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mn-flavor-split-h4-plancherel.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 9,
-   "err": ""
-  },
-  "mn_flavor_split_plancherel_channel": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mn-flavor-split-plancherel-channel.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 10,
-   "err": ""
-  },
-  "mn_standard_channel_correction": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mn-standard-channel-correction.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 11,
-   "err": ""
-  },
-  "molecular-frobenius-lp": {
-   "rc": 0,
-   "sec": 1.2,
-   "witnesses": [
-    "molecular-frobenius-lp.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 69,
-   "err": "\u26a0 raw-float64: molecular-frobenius-lp.witness.json: 39 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.E_mol_eV, .parameters.gram_eigenvalues[0], .parameters.gram_eigenvalues"
-  },
-  "molecular-trefoil-scan": {
-   "rc": 0,
-   "sec": 0.7,
-   "witnesses": [
-    "molecular-trefoil-scan.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 41,
-   "err": "\u26a0 raw-float64: molecular-trefoil-scan.witness.json: 27 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].compute"
-  },
-  "molecular_angle_derive_related": {
-   "rc": 0,
-   "sec": 2.0,
-   "witnesses": [
-    "molecular-angle-derive-related.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 18,
-   "err": ""
-  },
-  "molecular_angle_master_table": {
-   "rc": 0,
-   "sec": 9.0,
-   "witnesses": [
-    "molecular-angle-master-table.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 23,
-   "err": ""
-  },
-  "molecular_angle_symmetric_block_general": {
-   "rc": 0,
-   "sec": 9.9,
-   "witnesses": [
-    "molecular-angle-symmetric-block-general.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 26,
-   "err": ""
-  },
-  "molecular_braid_angle_table": {
-   "rc": 0,
-   "sec": 7.1,
-   "witnesses": [
-    "molecular-braid-angle-table.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 54,
-   "err": ""
-  },
-  "mp_dk_decisive_test": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "mp-dk-decisive-test.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 26,
-   "err": ""
-  },
-  "mp_habiro_c4_keystone_probe": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mp-habiro-c4-keystone-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 23,
-   "err": ""
-  },
-  "mp_residual_exotic_basis_pslq": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "mp-residual-exotic-basis-pslq.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 9,
-   "err": ""
-  },
-  "mp_yekutieli_plancherel_scaffold": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "mp-yekutieli-plancherel-scaffold.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 12,
-   "err": ""
-  },
-  "native_5_strand_baryon": {
-   "rc": 0,
-   "sec": 2.2,
-   "witnesses": [
-    "native-5-strand-baryon.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 42,
-   "err": ""
-  },
-  "nf_transition_lifting": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "nf-transition-lifting.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 328,
-   "err": ""
-  },
-  "ocneanu_12_alt_knot_geometries": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "ocneanu-12-alt-knot-geometries.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 10,
-   "err": ""
-  },
-  "ocneanu_12_bring_zero_mode_variants": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "ocneanu-12-bring-zero-mode-variants.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 11,
-   "err": ""
-  },
-  "ocneanu_12_em_correction_candidate": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "ocneanu-12-em-correction-candidate.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 10,
-   "err": ""
-  },
-  "ocneanu_12_qdeformation_discriminator": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "ocneanu-12-qdeformation-discriminator.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 15,
-   "err": ""
-  },
-  "ocneanu_12_route_reexam": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "ocneanu-12-route-reexam.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 9,
-   "err": ""
-  },
-  "ocneanu_54ppb_residual_exploration": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "ocneanu-54ppb-residual-exploration.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 8,
-   "err": ""
-  },
-  "option_e_phase1_h3_cross_check": {
-   "rc": 1,
-   "sec": 0.9,
-   "witnesses": [
-    "option-e-phase1-h3-cross-check.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 120,
-   "err": ""
-  },
-  "parabolic_cylinder_channel_mixing_probe": {
-   "rc": 1,
-   "sec": 0.6,
-   "witnesses": [
-    "parabolic-cylinder-channel-mixing-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 24,
-   "err": "Try another starting point or tweak arguments."
-  },
-  "path4_rho_K_at_h3A": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "path4-rho-K-at-h3A.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 45,
-   "err": ""
-  },
-  "path_b_evacuation": {
-   "rc": 0,
-   "sec": 1.4,
-   "witnesses": [
-    "path-b-evacuation.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 70,
-   "err": ""
-  },
-  "path_b_open_questions": {
-   "rc": 0,
-   "sec": 1.9,
-   "witnesses": [
-    "path-b-open-questions.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 22,
-   "err": ""
-  },
-  "per_basis_row_invariants_probe": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "per-basis-row-invariants-probe.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 73,
-   "err": ""
-  },
-  "per_bond_growth_a3": {
-   "rc": 0,
-   "sec": 1.0,
-   "witnesses": [
-    "per-bond-growth-a3.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 23,
-   "err": ""
-  },
-  "per_irrep_pole_proton_h3": {
-   "rc": 1,
-   "sec": 2.3,
-   "witnesses": [],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 0,
-   "err": ""
-  },
-  "per_knot_density_per_block_wiring": {
-   "rc": 1,
-   "sec": 0.1,
-   "witnesses": [
-    "per-knot-density-per-block-wiring.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 35,
-   "err": "ImportError: cannot import name 'per_knot_density_borromean' from '_li_2_q_util' (/home/user/qou/computations/_li_2_q_util.py)"
-  },
-  "per_knot_mass_table_demonstration": {
-   "rc": 0,
-   "sec": 0.9,
-   "witnesses": [
-    "per-knot-mass-table-demonstration.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 97,
-   "err": "  vol_density_uniform = vol_density_borromean(q)"
-  },
-  "photon_operator_table": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "photon-operator-table.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 680,
-   "err": ""
-  },
-  "prearchimedean_bond_factor": {
-   "rc": 0,
-   "sec": 1.0,
-   "witnesses": [
-    "prearchimedean-bond-factor.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 14,
-   "err": ""
-  },
-  "probe_9b_laurent_degree_10a5": {
-   "rc": -9,
-   "sec": 90.0,
-   "witnesses": [
-    "probe-9b-laurent-degree-10a5.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 234,
-   "err": "TIMEOUT >90s"
-  },
-  "probe_9b_manybody_expansion": {
-   "rc": 0,
-   "sec": 1.3,
-   "witnesses": [
-    "probe-9b-manybody-expansion.witness.json"
-   ],
-   "max_rel_move": 0.999999999991307,
-   "median_rel_move": 0.06149779406976029,
-   "n_fields": 183,
-   "err": "\u26a0 raw-float64: probe-9b-manybody-expansion.witness.json: 88 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].co"
-  },
-  "probe_9b_perlambda_brane_tower": {
-   "rc": 0,
-   "sec": 19.7,
-   "witnesses": [
-    "probe-9b-perlambda-brane-tower.witness.json"
-   ],
-   "max_rel_move": 1.153711783645715e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 209,
-   "err": "\u26a0 environment: probe-9b-perlambda-brane-tower.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simpl"
-  },
-  "probe_k_ud_bring_color_tube_empirical_baseline": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "probe-k-ud-bring-color-tube-empirical-baseline.witness.json"
-   ],
-   "max_rel_move": 1.2960999230694606e-07,
-   "median_rel_move": 1.5373898981409142e-08,
-   "n_fields": 40,
-   "err": "\u26a0 raw-float64: probe-k-ud-bring-color-tube-empirical-baseline.witness.json: 9 raw float64 field(s) would enter the witness \u2014 .data.scan_results[0].pdg_residual_pct, .data.scan_results[1].pdg_residual_"
-  },
-  "probe_k_ud_fractional_and_alt_ansatz": {
-   "rc": 0,
-   "sec": 1.1,
-   "witnesses": [
-    "probe-k-ud-fractional-and-alt-ansatz.witness.json"
-   ],
-   "max_rel_move": 7.760110960079513e-07,
-   "median_rel_move": 0.0,
-   "n_fields": 26,
-   "err": "\u26a0 raw-float64: probe-k-ud-fractional-and-alt-ansatz.witness.json: 14 raw float64 field(s) would enter the witness \u2014 .data.scan_results[0].best_k_ud, .data.scan_results[0].pdg_residual_pct, .data.scan_"
-  },
-  "probe_markov_trace_factorization": {
-   "rc": 0,
-   "sec": 1.7,
-   "witnesses": [
-    "probe-markov-trace-factorization.witness.json"
-   ],
-   "max_rel_move": 1.0490331482371544e-07,
-   "median_rel_move": 0.0,
-   "n_fields": 16,
-   "err": "\u26a0 raw-float64: probe-markov-trace-factorization.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[3].tolerance, .assertions[4].tolerance, .assertions[5].tolerance. Carry mpmat"
-  },
-  "probe_markov_trace_ratio_exact": {
-   "rc": 0,
-   "sec": 0.8,
-   "witnesses": [
-    "probe-markov-trace-ratio-exact.witness.json"
-   ],
-   "max_rel_move": 3.849117221293887e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 50,
-   "err": "\u26a0 environment: probe-markov-trace-ratio-exact.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15; scipy 1.18.0 -> 1."
-  },
-  "probe_topological_mass_formula": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "probe-topological-mass-formula-algebraic.witness.json",
-    "probe-topological-mass-formula.witness.json"
-   ],
-   "max_rel_move": 2.0980664068318756e-07,
-   "median_rel_move": 1.0490330382437667e-07,
-   "n_fields": 27,
-   "err": "\u26a0 raw-float64: probe-topological-mass-formula-algebraic.witness.json: 1 raw float64 field(s) would enter the witness \u2014 .assertions[1].tolerance. Carry mpmath.mpf from the source and serialize with _pr"
-  },
-  "proton_mu_mass_ratio_substrate_identity": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "proton-mu-mass-ratio-substrate-identity.witness.json"
-   ],
-   "max_rel_move": 4.545333392577218e-06,
-   "median_rel_move": 4.3864707032893e-09,
-   "n_fields": 24,
-   "err": "\u26a0 raw-float64: proton-mu-mass-ratio-substrate-identity.witness.json: 3 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance. Carry "
-  },
-  "proton_residual_rootcause": {
-   "rc": 0,
-   "sec": 0.9,
-   "witnesses": [
-    "proton-residual-rootcause.witness.json"
-   ],
-   "max_rel_move": 2.9279170572536692,
-   "median_rel_move": 1.3630997232261689e-06,
-   "n_fields": 70,
-   "err": "\u26a0 environment: proton-residual-rootcause.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply mis"
-  },
-  "q1_mass_gap_probe": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "q1-mass-gap-probe.witness.json"
-   ],
-   "max_rel_move": 1.153711783645715e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 182,
-   "err": ""
-  },
-  "q_beta_form_a_n1_extension": {
-   "rc": 0,
-   "sec": 1.3,
-   "witnesses": [
-    "q-beta-form-a-n1-extension.witness.json"
-   ],
-   "max_rel_move": 1.153711783645715e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 27,
-   "err": "\u26a0 raw-float64: q-beta-form-a-n1-extension.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .assertions[1].computed, .assertions[1].expected, .assertions[1].tolerance, .data.E0_full_vs_c"
-  },
-  "q_beta_substrate_prediction": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "q-beta-substrate-prediction.witness.json"
-   ],
-   "max_rel_move": 1.7888912465124985e-05,
-   "median_rel_move": 1.153711783645715e-08,
-   "n_fields": 13,
-   "err": ""
-  },
-  "q_block_rmatrix_spectrum": {
-   "rc": 0,
-   "sec": 1.1,
-   "witnesses": [
-    "q-block-rmatrix-spectrum.witness.json"
-   ],
-   "max_rel_move": 1.153711783645715e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 181,
-   "err": "\u26a0 raw-float64: q-block-rmatrix-spectrum.witness.json: 197 raw float64 field(s) would enter the witness \u2014 .parameters.q0, .data.per_block[0].eigenvalues[0][0], .data.per_block[0].eigenvalues[0][1], .da"
-  },
-  "q_pochhammer_seed": {
-   "rc": 0,
-   "sec": 0.6,
-   "witnesses": [
-    "q-pochhammer-seed.witness.json"
-   ],
-   "max_rel_move": 0.6820428926406504,
-   "median_rel_move": 0.0,
-   "n_fields": 320,
-   "err": "\u26a0 raw-float64: q-pochhammer-seed.witness.json: 276 raw float64 field(s) would enter the witness \u2014 .parameters.q0, .data.pl_discriminant_roots[0].z_c_real, .data.pl_discriminant_roots[0].z_c_imag, .dat"
-  },
-  "q_weighted_block_swap": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "q-weighted-block-swap.witness.json"
-   ],
-   "max_rel_move": 1.1423404828226725e-07,
-   "median_rel_move": 1.153711783645715e-08,
-   "n_fields": 18,
-   "err": "\u26a0 environment: q-weighted-block-swap.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing"
-  },
-  "qbeta_c3_three_rung_probe": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "qbeta-c3-three-rung-probe.witness.json"
-   ],
-   "max_rel_move": 0.0023274715649404527,
-   "median_rel_move": 3.151039510320883e-07,
-   "n_fields": 37,
-   "err": "\u26a0 raw-float64: qbeta-c3-three-rung-probe.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .data.q9_baseline_err_ppm, .data.residual_delta_needed, .data.per_candidate_results.q9_baseline"
-  },
-  "qbeta_c3_v9_style_probe": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "qbeta-c3-v9-style-probe.witness.json"
-   ],
-   "max_rel_move": 1.269705852122777e-05,
-   "median_rel_move": 8.367074311230853e-09,
-   "n_fields": 31,
-   "err": "\u26a0 raw-float64: qbeta-c3-v9-style-probe.witness.json: 13 raw float64 field(s) would enter the witness \u2014 .data.per_candidate_results.Q1.  -2 \u00d7 (1 + \u210f_q \u00d7 q / 5).err_ppm, .data.per_candidate_results.Q2. "
-  },
-  "qbeta_multi_block_eigenphase_full_eps_probe": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "qbeta-multi-block-eigenphase-full-eps-probe.witness.json"
-   ],
-   "max_rel_move": 4058.0524440733307,
-   "median_rel_move": 2.777181994929661e-07,
-   "n_fields": 51,
-   "err": "\u26a0 raw-float64: qbeta-multi-block-eigenphase-full-eps-probe.witness.json: 7 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .d"
-  },
-  "qbeta_multi_block_eigenphase_probe": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "qbeta-multi-block-eigenphase-probe.witness.json"
-   ],
-   "max_rel_move": 4058.051880294203,
-   "median_rel_move": 1.3502963794581733e-09,
-   "n_fields": 24,
-   "err": "\u26a0 raw-float64: qbeta-multi-block-eigenphase-probe.witness.json: 4 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .data.resid"
-  },
-  "r5_full_canonical_knot_solver": {
-   "rc": 0,
-   "sec": 7.4,
-   "witnesses": [
-    "r5-full-canonical-knot-solver.witness.json"
-   ],
-   "max_rel_move": 4.943509648720791,
-   "median_rel_move": 1.2002604558873006e-07,
-   "n_fields": 1144,
-   "err": "\u26a0 environment: r5-full-canonical-knot-solver.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded numpy 2.5.0 -> 2.4.6; python 3.13.12 -> 3.11.15; scipy 1.18.0 -> 1.1"
-  },
-  "reeb_flow_garside_closed_form_verification": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "reeb-flow-garside-closed-form-verification.witness.json"
-   ],
-   "max_rel_move": 1.153711793873993e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 81,
-   "err": "\u26a0 raw-float64: reeb-flow-garside-closed-form-verification.witness.json: 39 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .a"
-  },
-  "rt_c23_singlet_sign_core": {
-   "rc": 0,
-   "sec": 1.0,
-   "witnesses": [
-    "rt-c23-singlet-sign-core.witness.json"
-   ],
-   "max_rel_move": 9.943542053007378e-08,
-   "median_rel_move": 1.153711783645715e-08,
-   "n_fields": 6,
-   "err": ""
-  },
-  "rt_habiro_borromean_cross_validation": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "rt-habiro-borromean-cross-validation.witness.json"
-   ],
-   "max_rel_move": 1.153711783645715e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 47,
-   "err": "\u26a0 raw-float64: rt-habiro-borromean-cross-validation.witness.json: 38 raw float64 field(s) would enter the witness \u2014 .tr_M_at_q0_real.q, .tr_M_at_q0_real.tr_M, .tr_M_at_root_of_unity[0].q_real, .tr_M_a"
-  },
-  "rt_identity_chain_consolidation": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "rt-identity-chain-consolidation.witness.json"
-   ],
-   "max_rel_move": 1.0046541942045384,
-   "median_rel_move": 0.0,
-   "n_fields": 13,
-   "err": ""
-  },
-  "rt_route_cross_particle_ratio_quantum_dim": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "rt-route-cross-particle-ratio-quantum-dim.witness.json"
-   ],
-   "max_rel_move": 3.299819021135053e-06,
-   "median_rel_move": 1.7929764999798224e-08,
-   "n_fields": 548,
-   "err": "\u26a0 raw-float64: rt-route-cross-particle-ratio-quantum-dim.witness.json: 497 raw float64 field(s) would enter the witness \u2014 .parameters.experimental_ratios.W_over_Z, .parameters.experimental_ratios.Z_ov"
-  },
-  "rt_w_sqrt2_jet_order_validation": {
-   "rc": 0,
-   "sec": 0.5,
-   "witnesses": [
-    "rt-w-sqrt2-jet-order-validation.witness.json"
-   ],
-   "max_rel_move": 1.153711783645715e-08,
-   "median_rel_move": 0.0,
-   "n_fields": 72,
-   "err": "\u26a0 environment: rt-w-sqrt2-jet-order-validation.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is simp"
-  },
-  "sigma_f_electron_shell_chain": {
-   "rc": 0,
-   "sec": 29.1,
-   "witnesses": [
-    "sigma-f-electron-shell-chain.witness.json"
-   ],
-   "max_rel_move": 1.6853516882790743e-06,
-   "median_rel_move": 9.182768489933081e-07,
-   "n_fields": 18481,
-   "err": ""
-  },
-  "sigma_shell_from_beta_chain": {
-   "rc": 0,
-   "sec": 58.2,
-   "witnesses": [
-    "sigma-shell-from-beta-chain.witness.json"
-   ],
-   "max_rel_move": 6.685661572239888,
-   "median_rel_move": 0.0,
-   "n_fields": 33,
-   "err": "  from codata_constants import M_N_MEV  # noqa: E402"
-  },
-  "six_fifths_categorical_proof_attempt": {
-   "rc": 0,
-   "sec": 0.4,
-   "witnesses": [
-    "six-fifths-categorical-proof-attempt.witness.json"
-   ],
-   "max_rel_move": 1.109725372697195e-07,
-   "median_rel_move": 0.0,
-   "n_fields": 71,
-   "err": "\u26a0 raw-float64: six-fifths-categorical-proof-attempt.witness.json: 60 raw float64 field(s) would enter the witness \u2014 .parameters.target_171_over_143, .parameters.hypothesis_6_over_5, .all_candidates[0]"
-  },
-  "skein_proton_canonical": {
-   "rc": 0,
-   "sec": 1.2,
-   "witnesses": [
-    "skein-proton-canonical.witness.json"
-   ],
-   "max_rel_move": 1355227460944935.8,
-   "median_rel_move": 2.064893982759392e-07,
-   "n_fields": 37,
-   "err": "\u26a0 raw-float64: skein-proton-canonical.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].computed"
-  },
-  "spectral_selector_validate": {
-   "rc": 0,
-   "sec": 1.3,
-   "witnesses": [
-    "spectral-selector-validate.witness.json"
-   ],
-   "max_rel_move": 0.06078352180936995,
-   "median_rel_move": 0.0,
-   "n_fields": 31,
-   "err": "\u26a0 raw-float64: spectral-selector-validate.witness.json: 26 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .parameters.q0, .d"
   }
  }
 }

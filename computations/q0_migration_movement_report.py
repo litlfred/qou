@@ -54,6 +54,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 NUM = re.compile(r"^-?\d*\.?\d+(?:[eE][-+]?\d+)?$")
 _FLOOR = 1e-20
+# Below this, a baseline is 'was zero' and relative change is meaningless.
+_NEAR_ZERO = 1e-9
 
 # Changing with every run and carrying no mathematical content.
 EPHEMERAL = ("computedAt", "durationMs", "commitSha", "scriptCommitSha",
@@ -112,6 +114,7 @@ def main() -> int:
         return 0
 
     by_q: dict[str, list[float]] = defaultdict(list)
+    was_zero: dict[str, list[float]] = defaultdict(list)
     unchanged_files = 0
     for f in changed:
         old_raw = _git("show", f"{base}:{f}")
@@ -127,10 +130,23 @@ def main() -> int:
         for k, a in A.items():
             if k not in B or any(s in k for s in EPHEMERAL):
                 continue
-            if abs(a) < _FLOOR or B[k] == a:
+            if B[k] == a:
+                continue
+            moved_here = True
+            # A quantity whose OLD value was ~0 has no meaningful relative
+            # move: dividing by it manufactures 1e24 ppb out of a change of
+            # 1e-16. That is not noise, it is the SIGNATURE OF THIS
+            # MIGRATION -- fields like `pct_drift_between_pins`,
+            # `q0_drift_pct` and `tr_M_check_rel_err` exist to measure the
+            # gap between the two pins, so under the muon pin they computed
+            # (muon - muon) = 0 and now compute the real gap. They moved
+            # enormously *because they are working*. Ranking them alongside
+            # physical quantities buries the physics under an artifact, so
+            # they are counted separately and reported by ABSOLUTE change.
+            if abs(a) < _NEAR_ZERO:
+                was_zero[_leaf(k)].append(abs(B[k] - a))
                 continue
             by_q[_leaf(k)].append(abs(B[k] - a) / abs(a))
-            moved_here = True
         if not moved_here:
             unchanged_files += 1
 
@@ -147,6 +163,17 @@ def main() -> int:
               f"{statistics.median(v)*1e9:>10,.1f}p  {max(v)*1e9:>10,.1f}p")
     if len(rows) > args.top:
         print(f"  … {len(rows)-args.top} more quantities")
+
+    if was_zero:
+        wz = sorted(was_zero.items(), key=lambda t: -max(t[1]))
+        print(f"\n  WAS ~ZERO under the muon pin — relative move is undefined,")
+        print(f"  so these are reported by ABSOLUTE change. Mostly quantities")
+        print(f"  that MEASURE the pin gap, i.e. they moved because they work:")
+        print(f"  {'quantity':<34} {'n':>5}  {'max |delta|':>14}")
+        for q, v in wz[:10]:
+            print(f"  {q[:34]:<34} {len(v):>5}  {max(v):>14.3e}")
+        if len(wz) > 10:
+            print(f"  … {len(wz)-10} more")
 
     allv = [x for v in by_q.values() for x in v]
     repin = [x for x in allv if 1.0e-8 < x < 1.3e-8]
