@@ -44,6 +44,8 @@ import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.MvPolynomial.CommRing
 import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
 import Mathlib.RingTheory.MvPolynomial.Basic
+import Mathlib.LinearAlgebra.Matrix.Nondegenerate
+import Mathlib.LinearAlgebra.LinearIndependent.Basic
 
 namespace MvPolynomial
 
@@ -129,14 +131,134 @@ theorem mvGenWronskian_one_X :
     mvGenWronskian (R := ℚ) ![[], [0]] ![1, X 0] = 1 := by
   simp [mvGenWronskian, mvWronskianMatrix, Matrix.det_fin_two, Fin.isValue]
 
+/-! ### Towards the converse: the coefficient minor
+
+The converse asks for an operator family witnessing independence.  The linear algebra under
+it does not mention derivatives at all: a family of polynomials is independent over the base
+field exactly when some `m × m` minor of its **coefficient** matrix is non-singular.  That is
+proved here in full; what remains to reach the Wronskian converse is the bridge from
+coefficient functionals to differential operators, which in characteristic zero is a diagonal
+rescaling by factorials. -/
+
+section CoeffMinor
+
+variable {K : Type*} [Field K]
+
+/-- The matrix of coefficients of `f` at the multi-indices `α`. -/
+noncomputable def coeffMatrix {m : ℕ} (α : Fin m → (σ →₀ ℕ)) (f : Fin m → MvPolynomial σ K) :
+    Matrix (Fin m) (Fin m) K :=
+  Matrix.of fun i j => coeff (α i) (f j)
+
+/-- **An independent family has a non-singular coefficient minor.**
+
+Induction on `m`, by cofactor expansion along the new row. If *every* extension of the
+inductive minor were singular, the cofactors along that row would give a fixed linear
+relation `∑ⱼ cⱼ · coeff β (fⱼ) = 0` holding at **every** multi-index `β` — and a relation
+holding at every coefficient is a relation between the polynomials themselves. The cofactor
+in the last column is the inductive minor, so `c` is not the zero vector, contradicting
+independence.
+
+⚠ The cofactors must not depend on `β`, which is why the expansion is along the *last* row:
+deleting it removes every entry `β` occurs in. -/
+theorem exists_coeffMatrix_det_ne_zero :
+    ∀ {m : ℕ} (f : Fin m → MvPolynomial σ K), LinearIndependent K f →
+      ∃ α : Fin m → (σ →₀ ℕ), (coeffMatrix α f).det ≠ 0 := by
+  intro m
+  induction m with
+  | zero =>
+    intro f _
+    exact ⟨fun i => i.elim0, by simp [coeffMatrix]⟩
+  | succ n ih =>
+    intro f hf
+    have hinit : LinearIndependent K (Fin.init f) :=
+      hf.comp Fin.castSucc (Fin.castSucc_injective n)
+    obtain ⟨α', hα'⟩ := ih (Fin.init f) hinit
+    by_contra hcon
+    push_neg at hcon
+    set N : (σ →₀ ℕ) → Matrix (Fin (n+1)) (Fin (n+1)) K :=
+      fun β => coeffMatrix (Fin.snoc α' β) f with hN
+    set c : Fin (n+1) → K :=
+      fun j => (-1) ^ ((Fin.last n : ℕ) + (j : ℕ)) *
+        ((N 0).submatrix (Fin.last n).succAbove j.succAbove).det with hc
+    have hsub : ∀ (β : σ →₀ ℕ) (j : Fin (n+1)),
+        (N β).submatrix (Fin.last n).succAbove j.succAbove
+          = (N 0).submatrix (Fin.last n).succAbove j.succAbove := by
+      intro β j
+      ext i k
+      simp [hN, coeffMatrix, Fin.succAbove_last, Fin.snoc_castSucc]
+    have hexp : ∀ β : σ →₀ ℕ, (N β).det = ∑ j, c j * coeff β (f j) := by
+      intro β
+      rw [Matrix.det_succ_row (N β) (Fin.last n)]
+      refine Finset.sum_congr rfl fun j _ => ?_
+      rw [hsub β j, hc]
+      have hentry : N β (Fin.last n) j = coeff β (f j) := by
+        simp [hN, coeffMatrix, Fin.snoc_last]
+      rw [hentry]
+      ring
+    have hzero : ∑ j, c j • f j = 0 := by
+      ext β
+      have hβ := hexp β
+      rw [hcon (Fin.snoc α' β)] at hβ
+      simpa [coeff_sum, coeff_smul, smul_eq_mul] using hβ.symm
+    have hlast : c (Fin.last n) ≠ 0 := by
+      have hminor : (N 0).submatrix (Fin.last n).succAbove (Fin.last n).succAbove
+          = coeffMatrix α' (Fin.init f) := by
+        ext i k
+        simp [hN, coeffMatrix, Fin.succAbove_last, Fin.snoc_castSucc, Fin.init]
+      have hsign : (-1 : K) ^ ((Fin.last n : ℕ) + ((Fin.last n : ℕ))) = 1 := by
+        rw [← two_mul, pow_mul]; norm_num
+      rw [hc]
+      simp only [hminor, hsign, one_mul]
+      exact hα'
+    exact hlast (Fintype.linearIndependent_iff.mp hf c hzero (Fin.last n))
+
+/-- A non-singular coefficient minor certifies independence. -/
+theorem linearIndependent_of_coeffMatrix_det_ne_zero {m : ℕ} (α : Fin m → (σ →₀ ℕ))
+    (f : Fin m → MvPolynomial σ K) (h : (coeffMatrix α f).det ≠ 0) :
+    LinearIndependent K f := by
+  classical
+  rw [Fintype.linearIndependent_iff]
+  intro c hc
+  have hker : coeffMatrix α f *ᵥ c = 0 := by
+    funext i
+    have hi : coeff (α i) (∑ j, c j • f j) = 0 := by rw [hc]; simp
+    rw [coeff_sum] at hi
+    simp only [Matrix.mulVec, dotProduct, coeffMatrix, Matrix.of_apply, Pi.zero_apply]
+    rw [← hi]
+    exact Finset.sum_congr rfl fun j _ => by rw [coeff_smul, smul_eq_mul]; ring
+  intro i
+  exact congrFun (Matrix.eq_zero_of_mulVec_eq_zero h hker) i
+
+/-- **Independence is exactly a non-singular coefficient minor.** -/
+theorem linearIndependent_iff_exists_coeffMatrix_det_ne_zero {m : ℕ}
+    (f : Fin m → MvPolynomial σ K) :
+    LinearIndependent K f ↔ ∃ α : Fin m → (σ →₀ ℕ), (coeffMatrix α f).det ≠ 0 :=
+  ⟨exists_coeffMatrix_det_ne_zero f, fun ⟨α, h⟩ =>
+    linearIndependent_of_coeffMatrix_det_ne_zero α f h⟩
+
+end CoeffMinor
+
 /-! ### Next
 
-The converse — some generalized Wronskian is non-zero whenever the family is independent —
-is the harder half and is **not** proved here. Unlike the univariate case it is not a
-determinant identity: it requires exhibiting an operator family, which is where the
-`m`-variable induction in Roth's lemma actually does its work.
+The **converse** — some generalized Wronskian is non-zero whenever the family is
+independent — now has its linear algebra done (`exists_coeffMatrix_det_ne_zero`). What is
+left is a bridge, not another existence argument:
 
-Only the direction above is needed to *use* a Wronskian as an independence certificate; the
-converse is needed to *find* one. -/
+1. `coeff γ (pderiv j g) = (γⱼ + 1) · coeff (γ + eⱼ) g`, iterated along a list, giving
+   `coeff 0 (pderivList l g) = c_l · coeff (multi-index of l) g` with `c_l` a positive
+   integer depending only on `l`.
+2. Every multi-index is the multi-index of some list, so the `α` produced above can be
+   realised by an operator family `D`.
+3. `eval 0` is a ring hom and `eval 0 P = coeff 0 P`, so it commutes with `det`
+   (`RingHom.map_det`). The resulting matrix is `diagonal (c_{D i}) * coeffMatrix α f`,
+   whose determinant is `(∏ᵢ c_{D i}) · det (coeffMatrix α f) ≠ 0` — **in characteristic
+   zero**, where the positive integers `c` stay invertible.
+
+So the Wronskian is non-zero because it is non-zero *at the origin*.
+
+⚠ Step 3 is exactly where characteristic zero enters, and it is not removable by care: in
+characteristic `p` the factorials `c_l` can vanish in `K`, which is the same failure that
+makes the univariate converse false there. A characteristic-free statement needs Hasse
+derivatives, whose whole point is to carry the `1/α!` already divided out. -/
 
 end MvPolynomial
