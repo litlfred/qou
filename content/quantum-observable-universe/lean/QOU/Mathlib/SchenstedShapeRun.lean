@@ -124,4 +124,50 @@ theorem insertWord_uninsertSteps_of_shape {T : List (List ℕ)} {is : List ℕ}
     simpa [tableauShape] using this
   exact List.eq_nil_of_length_eq_zero hlen
 
+/-! ### The converse, and what it buys
+
+Brick 18 goes shape → tableau. The converse also holds, and is worth having because it turns the
+reduction into an **iff**: the tableau-level and shape-level run conditions are the same condition.
+
+There is no circularity. The induction's own hypothesis supplies `ShapeCornersAlong` for the later
+steps, and `tableauShape_uninsertSteps` then converts it into the shape at that point — so the shape
+is available before the corner at the current step is checked. -/
+
+/-- **The tableau-level corner condition implies the shape-level one.** -/
+theorem shapeCornersAlong_of_cornersAlong : ∀ (is : List ℕ) (T : List (List ℕ)),
+    RowsSorted T → ColStrict T → NoEmptyRows T → CornersAlong T is →
+    ShapeCornersAlong (tableauShape T) is
+  | [], _, _, _, _, _ => trivial
+  | i :: rest, T, hs, hc, hne, hca => by
+      obtain ⟨hcaRest, hcorner⟩ := hca
+      have hscaRest : ShapeCornersAlong (tableauShape T) rest :=
+        shapeCornersAlong_of_cornersAlong rest T hs hc hne hcaRest
+      refine ⟨hscaRest, ?_⟩
+      have hshape := tableauShape_uninsertSteps hs hc hne hscaRest
+      rw [← hshape, ← isCorner_iff_shape]
+      exact hcorner
+
+/-- **The two run conditions are the same condition.** -/
+theorem cornersAlong_iff_shape {T : List (List ℕ)} {is : List ℕ}
+    (hs : RowsSorted T) (hc : ColStrict T) (hne : NoEmptyRows T) :
+    CornersAlong T is ↔ ShapeCornersAlong (tableauShape T) is :=
+  ⟨shapeCornersAlong_of_cornersAlong is T hs hc hne, cornersAlong_of_shape hs hc hne⟩
+
+/-- **The shape-level condition is inhabited**, by every insertion-built run — brick 15 read through
+the iff. Worth stating for the same reason brick 15 was: a reduction to a condition nothing
+satisfies would be no reduction at all. -/
+theorem shapeCornersAlong_insertWord (w : List ℕ) :
+    ShapeCornersAlong (tableauShape (insertWord w)) (rowIndices [] w) :=
+  shapeCornersAlong_of_cornersAlong _ _ (insertWord_rowsSorted w) (insertWord_colStrict w)
+    (insertWord_noEmptyRows w) (cornersAlong_insertWord w)
+
+/-- And such a run peels the shape to nothing — the second hypothesis of
+`insertWord_uninsertSteps_of_shape`, also inhabited. -/
+theorem removeCornerSteps_insertWord (w : List ℕ) :
+    removeCornerSteps (tableauShape (insertWord w)) (rowIndices [] w) = [] := by
+  have h := tableauShape_uninsertSteps (insertWord_rowsSorted w) (insertWord_colStrict w)
+    (insertWord_noEmptyRows w) (shapeCornersAlong_insertWord w)
+  rw [← h, uninsertSteps_insertWord_fst]
+  rfl
+
 end QOU.Mathlib.Schensted
