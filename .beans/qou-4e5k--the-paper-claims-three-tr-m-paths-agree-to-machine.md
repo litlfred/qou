@@ -184,3 +184,101 @@ The **8.71e-08** between the two colour-blind paths, and the **7.8e-08** between
 the two witnesses on the free proton and neutron, are a second and separate
 discrepancy. Free nucleons carry no p-n bond, so the weighting cannot explain
 them. Unexplained, and roughly 1e7 above the L1 target on its own.
+
+## FIXED 2026-08-21 — two root causes, both closed; the paper's claim is now true
+
+The disagreement had **two** independent causes, one behind the other. Both are
+fixed; the symbolic path now agrees with the bridge to machine epsilon, which is
+what `recomputed-low-isotope-mass-table.md` claimed all along. The claim needed a
+correct implementation, not a weakened wording.
+
+    deuteron |symbolic - bridge|
+      before                 8.145e-05
+      after tolerance fix    7.915e-08     <- cause 1 closed, cause 2 exposed
+      after delta fix        3.440e-25     <- both closed
+    free nucleons after both fixes:  p 5.0e-49,  n 7.9e-49
+
+### Cause 1 — the tolerance straddle (`atom_nf_symbolic_D.py`)
+
+`_D_HECKE_TOL` was `1e-3`; the weighted crossing sits `7.190163e-05` from the
+blind `-h/2`, so the window swallowed it. Its justifying comment claimed the
+looseness absorbed "rounding of the q_0 rational" — measured, **that rounding is
+exactly 0.0**: h from `_Q0_RATIONAL` and h at the 50-dps q_0 agree to the bit,
+and every intra crossing lands at distance 0.0 from its target. The window bought
+nothing and cost the weighting.
+
+Fixed at `1e-9` (~7 orders of margin either side), plus an explicit branch that
+matches the weighted crossing **structurally** against
+`canonical_braid_crossings.d_for_ctype`, and maps it to a symbolic
+`-h(1/2 - δ(q)/4)` so the NF stays a function of q. This follows the rule
+`tr_m_algebraic_q.build_atom_symbolic_q` already states and this file broke: the
+colour δ *"is numerically indistinguishable from -h/2, so it must be placed
+structurally, not matched"*.
+
+### Cause 2 — two definitions of δ, differing by exactly ℏ³
+
+Closing cause 1 left 7.92e-08. Root:
+
+    tr_m_algebraic_q.flavor_split_leading_sym(q)   = leading * (1 + hbar**3)
+    _li_2_q_util.flavor_split_leading(q)           = leading
+    canonical_braid_crossings._avg_color_delta()   = leading
+
+    relative gap = 9.7270e-04 = hbar^3 exactly
+
+and `flavor_split_leading_sym`'s docstring **claimed it matched
+`_li_2_q_util.flavor_split_leading` "at any q"**. Per AGENTS.md the leading term
+is proven and `(1 + ℏ³)` is the *posited* subleading correction, carried
+separately as `flavor_split_subleading` — so every consumer was silently getting
+the posited quantity under the proven one's name. Fixed at source: the function
+now returns the leading term alone.
+
+This was **not** confined to my call site. `tr_m_algebraic_q.build_atom_symbolic_q`
+— the module's own headline export — sat 7.92e-08 from the bridge for the same
+reason, and now does not.
+
+### Why nothing caught either: three failure modes, all in one witness
+
+`computations/tr-m-algebraic-q.witness.json`, on main since 2026-08-09:
+
+1. **`allPassed: false`, committed and unread.** Its
+   `symbolic_delta_matches_li2q` assertion recorded `computed=1.338e-06`
+   against `tol=1e-12`, `passed=false` — naming cause 2 exactly, twelve days
+   before I rediscovered it by hand. Spun out as **`qou-ad4t`**: 108 of 2681
+   witnesses on main carry `allPassed: false`.
+2. **A tolerance sized to fit the bug.** The sibling assertion
+   `algebraic_q0_matches_transfer` **passed** at `6.88e-08` against `tol=1e-07`,
+   with a `source` string explaining the residual as a *"~1e-8 float64-eval
+   floor"*. It was cause 2, not a floor. Post-fix the value is 3.50e-15, so the
+   claimed floor sat ~17 orders above the real one. Tolerance tightened to 1e-9
+   and the rationalising text replaced with what actually happened.
+3. **A cross-check that could not fail.** `atomic_tr_m_mpfr_50dps.py` computed
+   `abs_diff_vs_bridge`, printed it, stored it as a field, and compared it to
+   nothing — and sat behind `if also_symbolic:`, never enabled (the committed
+   witness has no `abs_diff_vs_bridge` for any of the five atoms). Had it run
+   pre-fix it would have recorded 8.14e-05 and still passed. Now carries
+   `tolerance` + `passed` and prints a MISMATCH line.
+
+### Verification
+
+`tr_m_algebraic_q.py` re-run: both assertions pass (`3.4972e-15` vs 1e-9;
+`6.5052e-19` vs 1e-12), `allPassed: true`. Environment matched to main's record
+rather than downgraded — the container had mpmath 1.3.0 against the witness's
+1.4.1; installed 1.4.1 (sympy 1.14 declares `mpmath<1.4`, but it imports and the
+numbers are byte-identical under both, checked before trusting either) and
+regenerated so provenance reads 1.4.1.
+
+`precision-gates.sh --changed`: all blocking gates green. Vendor sync in sync
+(42 modules). qou-mass 20 passed, qou-substrate 65 passed.
+
+Pre-existing and NOT introduced here: the 19 raw-float64 fields in
+`tr-m-algebraic-q.witness.json`. Main's copy has exactly 19 too. Worth a separate
+fix at the producer; not folded into this one.
+
+### Still open in this bean
+
+Nothing from cause 1 or 2. The remaining item is the one this bean opened with
+and the fixes did not touch: **`canonical_mass_table_extended.py` still emits the
+colour-blind deuteron** (0.575090958682446712), and neither of its two witnesses
+records a `pn_convention`. That producer computes via `Σ y_λ·χ^λ`, not through
+either path fixed here. It belongs to `qou-cds4` / ruling R3, and picking its
+frame is that tranche's call.
