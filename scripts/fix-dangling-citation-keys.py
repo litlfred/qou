@@ -79,6 +79,17 @@ MAPPING: dict[str, tuple[str, str]] = {
         'target title is "Cubics, Integrable Systems, and Calabi-Yau Threefolds"; '
         "the year differs because the key uses the journal year and the entry the "
         "arXiv one (alg-geom/9408004)"),
+    # A block label with the wrong kind prefix. The block exists; it is a
+    # conjecture, and both citing sites are conditional Prop classes that
+    # axiomatise it — so the Lean is right and only the prefix is wrong.
+    # Worth fixing beyond tidiness: citing a conjecture as a proposition is
+    # the conjectural-propagation slip AGENTS.md §3b exists to catch, and it
+    # would read to a reviewer as proved backing.
+    "prop:jet-convergence-classical-limit": (
+        "conj:jet-convergence-classical-limit",
+        "same block, wrong kind prefix: it is declared "
+        'label: "conj:jet-convergence-classical-limit" in '
+        "mass-theory/jet-convergence-classical-limit.ts"),
     # Same authors, same work, the key simply carries no year.
     "fulton-harris": (
         "fulton-harris1991",
@@ -111,12 +122,20 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 
+    # Every target must exist before anything is rewritten: a bibliography
+    # id in references.ts, or — for a block-label target — a `label:` in the
+    # content tree.
     refs = open(os.path.join(REPO, "content", "schema", "references.ts"),
                 encoding="utf-8").read()
+    labels: set[str] = set()
+    for f in glob.glob(os.path.join(REPO, "content", "**", "*.ts"), recursive=True):
+        labels.update(re.findall(r'label:\s*"([^"]+)"',
+                                 open(f, encoding="utf-8", errors="replace").read()))
     missing = [new for _, (new, _) in MAPPING.items()
-               if not re.search(r'\bid:\s*"' + re.escape(new) + r'"', refs)]
+               if not re.search(r'\bid:\s*"' + re.escape(new) + r'"', refs)
+               and new not in labels]
     if missing:
-        sys.exit(f"target ids not in references.ts: {missing}")
+        sys.exit(f"targets resolve to neither an entry nor a block label: {missing}")
 
     total, files = 0, 0
     for path in sorted(glob.glob(os.path.join(REPO, "content", "**", "*.lean"), recursive=True)
