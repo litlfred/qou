@@ -24,8 +24,11 @@ CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
              MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)) has carried the
              tighter 0.017 ppb figure for some time; the docstring and the
              committed witness were both stale against it, and a re-run
-             refreshed the witness. The 0.06 ppb figure is repeated in
-             AGENTS.md too and is stale there.
+             refreshed the witness. This note also said the 0.06 ppb
+             figure was "repeated in AGENTS.md too and is stale there";
+             that was fixed in ae571e445d, where AGENTS.md now carries
+             0.017 ppb and keeps 0.06 only inside its own historical
+             clause.
              computed below from dq/dR via the proton identity
   m_μ/m_e  = 206.768 283 0 ± 4.6e-6  (CODATA 2022 — now a 9.5σ
              PREDICTION, kept only for the cross-check print)
