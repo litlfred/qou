@@ -7,7 +7,7 @@
       "STALE": 307,
       "proton-pin": 1222,
       "unknown": 25,
-      "canonical": 213
+      "canonical": 214
     },
     "stale_total": 307,
     "new_stale": 0,
@@ -1925,6 +1925,13 @@
       },
       {
         "file": "computations/audits/fitted-labelled-canonical-audit.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
+        "file": "computations/audits/muon-pin-three-values.witness.json",
         "field": "q0Value",
         "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
         "class": "canonical",
