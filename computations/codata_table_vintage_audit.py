@@ -64,6 +64,12 @@ CHECKS = [
     ("computations/codata_2022_source.py", "U_MEV", "atomic mass constant energy equivalent in MeV"),
     ("computations/codata_2022_source.py", "M_N_MINUS_P_MEV",
      "neutron-proton mass difference energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_DEUTERON_MEV_VALIDATION",
+     "deuteron mass energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_HE3_MEV_VALIDATION",
+     "helion mass energy equivalent in MeV"),
+    ("computations/codata_2022_source.py", "M_HE4_MEV_VALIDATION",
+     "alpha particle mass energy equivalent in MeV"),
     ("tools/qou-substrate/.../constants.py", "MASS_RATIO_P_E_STR", "proton-electron mass ratio"),
     ("tools/qou-substrate/.../constants.py", "MASS_RATIO_MU_E_STR", "muon-electron mass ratio"),
 ]
@@ -78,12 +84,26 @@ def _load_registry_values() -> dict[tuple[str, str], tuple[str, str]]:
     out: dict[tuple[str, str], tuple[str, str]] = {}
 
     import codata_2022_source as c22
+    # Some VALIDATION symbols are defined in the codata_constants facade
+    # rather than in codata_2022_source itself, so resolve across both
+    # rather than assuming one module holds everything.
+    import codata_constants as cc
+
+    def _get(sym, default=...):
+        for mod in (c22, cc):
+            if hasattr(mod, sym):
+                return getattr(mod, sym)
+        if default is ...:
+            raise AttributeError(
+                f"{sym!r} is in neither codata_2022_source nor codata_constants"
+            )
+        return default
 
     for mod, sym, _ in CHECKS:
         if not mod.startswith("computations/"):
             continue
-        val = getattr(c22, sym)
-        err = getattr(c22, f"{sym}_ERR", None)
+        val = _get(sym)
+        err = _get(f"{sym}_ERR", None)
         out[(mod, sym)] = (mp.nstr(val, 20, strip_zeros=False), "" if err is None else mp.nstr(err, 10))
 
     repo = Path(__file__).resolve().parent.parent
