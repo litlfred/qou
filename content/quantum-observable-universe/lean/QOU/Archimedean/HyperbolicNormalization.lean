@@ -266,14 +266,17 @@ Every factor is a derived `dH`-isometry (`horizTranslationIsom`,
 positive height is inherited from `IsDHIsometry.maps`. -/
 
 set_option maxHeartbeats 800000 in
-/-- **WALL-2 — general (distinct-horizontal) two-point normalization (DERIVED,
-sorry-free).**  If `x, y ∈ H³` have DISTINCT horizontal parts
-(`(y₀−x₀)² + (y₁−x₁)² > 0`), a `dH`-isometry (a horizontal translation, then a
-boundary inversion at the geodesic's near ideal endpoint, then a horizontal
-translation) carries both onto the z-axis. -/
-theorem exists_normalization_general {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH)
+/-- **WALL-2 — general (distinct-horizontal) normalization, INVERTIBLE form
+(DERIVED, sorry-free).**  Strengthens `exists_normalization_general` by also
+producing a `dH`-isometry LEFT INVERSE `Ψ` of the normalising map `Φ`
+(`Ψ = T₁⁻¹ ∘ T₂ ∘ T₃⁻¹`, using that the boundary inversion `T₂` is involutive).
+`Ψ` witnesses that `Φ` is injective and preserves `dH` exactly
+(`dH_eq_of_leftInverse`), which is what the WALL-5 minimiser-uniqueness reduction
+needs. -/
+theorem exists_normalization_general_isom {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH)
     (hne : 0 < (y 0 - x 0) ^ 2 + (y 1 - x 1) ^ 2) :
-    ∃ (Φ : E → E), ∃ _ : IsDHIsometry Φ, Φ x ∈ zAxis ∧ Φ y ∈ zAxis := by
+    ∃ (Φ Ψ : E → E), ∃ (_ : IsDHIsometry Φ) (_ : IsDHIsometry Ψ),
+      Function.LeftInverse Ψ Φ ∧ Φ x ∈ zAxis ∧ Φ y ∈ zAxis := by
   have hapos : (0:ℝ) < x 2 := hx
   have hbpos : (0:ℝ) < y 2 := hy
   -- scalars
@@ -364,7 +367,18 @@ theorem exists_normalization_general {x y : E} (hx : x ∈ upperH) (hy : y ∈ u
       ((fun p => p + b3) ∘ (inversion ((c - R) • u) 1) ∘ (fun p => p + b1)) :=
     ((horizTranslationIsom hb3h).comp (boundaryInversionIsom hξ2 one_pos)).comp
       (horizTranslationIsom hb1h)
-  refine ⟨_, hΦ, ?_, ?_⟩
+  -- the left inverse `Ψ = T₁⁻¹ ∘ T₂ ∘ T₃⁻¹`
+  have hΨ : IsDHIsometry
+      ((fun p => p + (-b1)) ∘ (inversion ((c - R) • u) 1) ∘ (fun p => p + (-b3))) :=
+    ((horizTranslationIsom (horiz_neg hb1h)).comp (boundaryInversionIsom hξ2 one_pos)).comp
+      (horizTranslationIsom (horiz_neg hb3h))
+  have hLI : Function.LeftInverse
+      ((fun p => p + (-b1)) ∘ (inversion ((c - R) • u) 1) ∘ (fun p => p + (-b3)))
+      ((fun p => p + b3) ∘ (inversion ((c - R) • u) 1) ∘ (fun p => p + b1)) := by
+    intro p
+    simp only [Function.comp_apply, add_neg_cancel_right,
+      inversion_involutive ((c - R) • u) (one_ne_zero) (p + b1)]
+  refine ⟨_, _, hΦ, hΨ, hLI, ?_, ?_⟩
   · -- Φ x ∈ zAxis
     refine ⟨?_, ?_, hΦ.maps hx⟩
     · simp only [Function.comp_apply, hAeq, PiLp.add_apply, hAcol.1, hb30, hKdef]; ring
@@ -373,6 +387,70 @@ theorem exists_normalization_general {x y : E} (hx : x ∈ upperH) (hy : y ∈ u
     refine ⟨?_, ?_, hΦ.maps hy⟩
     · simp only [Function.comp_apply, PiLp.add_apply, hBcol.1, hb30, hKdef]; ring
     · simp only [Function.comp_apply, PiLp.add_apply, hBcol.2, hb31, hKdef]; ring
+
+/-- **WALL-2 — general (distinct-horizontal) two-point normalization (DERIVED,
+sorry-free).**  The plain existence form, projecting the normalising map out of
+`exists_normalization_general_isom`. -/
+theorem exists_normalization_general {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH)
+    (hne : 0 < (y 0 - x 0) ^ 2 + (y 1 - x 1) ^ 2) :
+    ∃ (Φ : E → E), ∃ _ : IsDHIsometry Φ, Φ x ∈ zAxis ∧ Φ y ∈ zAxis := by
+  obtain ⟨Φ, _Ψ, hΦ, _, _, hΦx, hΦy⟩ := exists_normalization_general_isom hx hy hne
+  exact ⟨Φ, hΦ, hΦx, hΦy⟩
+
+/-- **WALL-2 — vertical (shared-horizontal) normalization, INVERTIBLE form
+(DERIVED, sorry-free).**  As `exists_normalization_vertical`, but also exposing the
+`dH`-isometry left inverse `Ψ = (· − b)` of the single horizontal translation
+`Φ = (· + b)`, `b = zpt x₂ − x`. -/
+theorem exists_normalization_vertical_isom {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH)
+    (h0 : x 0 = y 0) (h1 : x 1 = y 1) :
+    ∃ (Φ Ψ : E → E), ∃ (_ : IsDHIsometry Φ) (_ : IsDHIsometry Ψ),
+      Function.LeftInverse Ψ Φ ∧ Φ x ∈ zAxis ∧ Φ y ∈ zAxis := by
+  refine ⟨(fun p => p + (zpt (x 2) - x)), (fun p => p + (-(zpt (x 2) - x))),
+    horizTranslationIsom (zAxisShift_height x),
+    horizTranslationIsom (horiz_neg (zAxisShift_height x)),
+    (fun p => by simp only [add_neg_cancel_right]), ?_, ?_⟩
+  · -- `Φ x = x + (zpt x₂ − x) = (0,0,x₂)`
+    refine ⟨?_, ?_, ?_⟩
+    · show (x + (zpt (x 2) - x)) 0 = 0
+      simp only [PiLp.add_apply, PiLp.sub_apply, zpt_coord0]; ring
+    · show (x + (zpt (x 2) - x)) 1 = 0
+      simp only [PiLp.add_apply, PiLp.sub_apply, zpt_coord1]; ring
+    · show 0 < (x + (zpt (x 2) - x)) 2
+      simp only [PiLp.add_apply, PiLp.sub_apply, zpt_height]
+      have h : x 2 + (x 2 - x 2) = x 2 := by ring
+      rw [h]; exact hx
+  · -- `Φ y = y + (zpt x₂ − x) = (0,0,y₂)`, using the shared horizontal part
+    refine ⟨?_, ?_, ?_⟩
+    · show (y + (zpt (x 2) - x)) 0 = 0
+      simp only [PiLp.add_apply, PiLp.sub_apply, zpt_coord0]
+      rw [← h0]; ring
+    · show (y + (zpt (x 2) - x)) 1 = 0
+      simp only [PiLp.add_apply, PiLp.sub_apply, zpt_coord1]
+      rw [← h1]; ring
+    · show 0 < (y + (zpt (x 2) - x)) 2
+      simp only [PiLp.add_apply, PiLp.sub_apply, zpt_height]
+      have h : y 2 + (x 2 - x 2) = y 2 := by ring
+      rw [h]; exact hy
+
+/-- **WALL-2 — full two-point normalization, INVERTIBLE form (DERIVED,
+sorry-free).**  For ANY `x, y ∈ H³` there is a `dH`-isometry `Φ` with a
+`dH`-isometry left inverse `Ψ` carrying both onto the z-axis.  The invertible
+form; `exists_normalization` is its plain projection.  This is the interface the
+WALL-5 minimiser-uniqueness reduction consumes. -/
+theorem exists_normalization_isom {x y : E} (hx : x ∈ upperH) (hy : y ∈ upperH) :
+    ∃ (Φ Ψ : E → E), ∃ (_ : IsDHIsometry Φ) (_ : IsDHIsometry Ψ),
+      Function.LeftInverse Ψ Φ ∧ Φ x ∈ zAxis ∧ Φ y ∈ zAxis := by
+  by_cases h : x 0 = y 0 ∧ x 1 = y 1
+  · exact exists_normalization_vertical_isom hx hy h.1 h.2
+  · refine exists_normalization_general_isom hx hy ?_
+    rw [not_and_or] at h
+    rcases h with h0 | h1
+    · have hz : y 0 - x 0 ≠ 0 := sub_ne_zero.mpr (Ne.symm h0)
+      have hpos : 0 < (y 0 - x 0) ^ 2 := by positivity
+      nlinarith [sq_nonneg (y 1 - x 1)]
+    · have hz : y 1 - x 1 ≠ 0 := sub_ne_zero.mpr (Ne.symm h1)
+      have hpos : 0 < (y 1 - x 1) ^ 2 := by positivity
+      nlinarith [sq_nonneg (y 0 - x 0)]
 
 /-! ### WALL-2, full two-point normalization — DERIVED (bean `qou-0a0z`, CLOSED)
 
