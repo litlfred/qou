@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:44:21.005250+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-08-21T14:56:28.529253+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
@@ -25,7 +25,7 @@
     "pyhecke_native": "0.9.0"
   },
   "description": "Paper's full BW formula with chirality factors (derived in six-term-mass-formula-complete.md) applied to light isotopes. Coefficients from q-integer-mass-formula.md.  Verifies quoted errors for T (~0.5%), ³He (~0.9%), and extends to A≥5 where chirality limit → 1.",
-  "timestamp": "2026-08-21T14:44:20.818254+00:00",
+  "timestamp": "2026-08-21T14:56:28.322868+00:00",
   "q_0": 1.1099785827513808,
   "coefficients_MeV": {
     "lambda_V": 15.67108731129087,

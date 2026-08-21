@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:45:16.217009+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-08-21T14:57:26.733682+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 34357,
+  "durationMs": 37247,
   "computation": "defect-info-a-trend-probe",
   "scriptFile": "defect_info_a_trend_probe.py",
   "scriptHash": "d1887ee0ecc5",
@@ -107,7 +107,7 @@
   "verdict": {
     "deviation_from_1_nonincreasing_at_top3_A": false
   },
-  "timestamp": "2026-08-21T14:45:15+00:00",
+  "timestamp": "2026-08-21T14:57:26+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

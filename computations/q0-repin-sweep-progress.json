@@ -1255,27 +1255,859 @@
    "n_fields": 118,
    "err": "\u26a0 raw-float64: he3-pairknot-clambda-coulomb-probe.witness.json: 27 raw float64 field(s) would enter the witness \u2014 .data.E0_MeV, .data.C_lambda_charge_blocks.[3, 1, 1, 1], .data.C_lambda_charge_blocks."
   },
-  "delta_lambda_imme_triplet": {
+  "he3_tritium_cosh_asymmetry_diagnosis": {
    "rc": -9,
-   "sec": 100.2,
+   "sec": 90.1,
    "witnesses": [
-    "delta-lambda-imme-triplet.witness.json"
+    "he3-tritium-cosh-asymmetry-diagnosis.witness.json"
    ],
    "max_rel_move": 0.0,
    "median_rel_move": 0.0,
-   "n_fields": 106,
-   "err": "TIMEOUT >100s"
+   "n_fields": 14,
+   "err": "TIMEOUT >90s"
   },
-  "hadron_knot_table": {
-   "rc": 1,
-   "sec": 33.9,
+  "hh-trefoil-corrected": {
+   "rc": 0,
+   "sec": 0.6,
    "witnesses": [
-    "hadron-knot-table.witness.json"
+    "hh-trefoil-corrected.witness.json"
    ],
    "max_rel_move": 0.0,
    "median_rel_move": 0.0,
-   "n_fields": 693,
-   "err": "TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))"
+   "n_fields": 32,
+   "err": ""
+  },
+  "hh-vertex-volume": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "hh-vertex-volume.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 13,
+   "err": ""
+  },
+  "homflypt_reference_qa": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "homflypt-reference-qa.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 225,
+   "err": ""
+  },
+  "homflypt_su_n_mass_tower": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "homflypt-su-n-mass-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 34,
+   "err": ""
+  },
+  "hybridization_sp_gap_braid": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "hybridization-sp-gap-braid.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 18,
+   "err": ""
+  },
+  "intermediate_knot_detection": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "intermediate-knot-detection.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 628,
+   "err": ""
+  },
+  "iterative_lp_dual_h6_deuteron": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "iterative-lp-dual-h6-deuteron.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 116,
+   "err": ""
+  },
+  "iterative_lp_dual_levels": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "iterative-lp-dual-levels.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": ""
+  },
+  "jet_knot_invariants": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "jet-knot-invariants.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 223,
+   "err": ""
+  },
+  "lambda_scale_proof_step4_h4_remainder": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "lambda-scale-proof-step4-h4-remainder.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 54,
+   "err": ""
+  },
+  "lambda_scale_proof_step5_skein_anchor": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "lambda-scale-proof-step5-skein-anchor.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "lambda_scale_rd_c4_pslq_search": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "lambda-scale-rd-c4-pslq-search.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": ""
+  },
+  "landauer_crossing_energy_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "landauer-crossing-energy-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 34,
+   "err": ""
+  },
+  "lepton_t2n_torus_tower": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "lepton-t2n-torus-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 101,
+   "err": ""
+  },
+  "li2q_fbor_expansion_probe": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "li2q-fbor-expansion-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": ""
+  },
+  "linking_weight_canonical_object_lwfix": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "linking-weight-canonical-object-lwfix.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 38,
+   "err": ""
+  },
+  "low_isotope_sign_flip_diagnostic": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "low-isotope-sign-flip-diagnostic.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 57,
+   "err": ""
+  },
+  "lp_confinement_nf_forcing": {
+   "rc": 0,
+   "sec": 3.3,
+   "witnesses": [
+    "lp-confinement-nf-forcing.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 348,
+   "err": ""
+  },
+  "lw2_c2_independent_hopf_test_attempt": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "lw2-c2-independent-hopf-test-attempt.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 27,
+   "err": ""
+  },
+  "lw_growth_rate_probe": {
+   "rc": 0,
+   "sec": 11.7,
+   "witnesses": [
+    "lw-growth-rate-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 67,
+   "err": ""
+  },
+  "m_p_spectral_corrected_50dps": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "m-p-spectral-corrected-50dps.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 21,
+   "err": ""
+  },
+  "mass_formula_6term": {
+   "rc": 0,
+   "sec": 56.6,
+   "witnesses": [],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 0,
+   "err": "  vols_dict = atom_per_generator_volumes(Z, N, include_inter=include_inter)"
+  },
+  "mass_formula_6term_mpfr_50dps": {
+   "rc": 0,
+   "sec": 5.1,
+   "witnesses": [
+    "mass-formula-6term-mpfr-50dps.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 55,
+   "err": ""
+  },
+  "mass_per_knot_density": {
+   "rc": 1,
+   "sec": 0.1,
+   "witnesses": [
+    "mass-per-knot-density.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 25,
+   "err": "ImportError: cannot import name 'per_knot_density_borromean' from '_li_2_q_util' (/home/user/qou/computations/_li_2_q_util.py)"
+  },
+  "mass_sweep_wiring_status": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "mass-sweep-wiring-status.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 112,
+   "err": ""
+  },
+  "mass_table_comprehensive": {
+   "rc": -9,
+   "sec": 90.0,
+   "witnesses": [
+    "mass-table-comprehensive.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 105118,
+   "err": "TIMEOUT >90s"
+  },
+  "meson_gen3_eta_phi": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "meson-gen3-eta-phi.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 27,
+   "err": "\u26a0 raw-float64: meson-gen3-eta-phi.witness.json: 16 raw float64 field(s) would enter the witness \u2014 .kaon_crosscheck.ppm, .comparisons.K\u00b1.pdg_ratio, .comparisons.K\u00b1.residual, .comparisons.\u03b7.pdg_ratio, ."
+  },
+  "meson_habiro_c2_off_integer_pivot": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "meson-habiro-c2-off-integer-pivot.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 7,
+   "err": ""
+  },
+  "meson_habiro_c3_categorical_search": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "meson-habiro-c3-categorical-search.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 38,
+   "err": ""
+  },
+  "meson_habiro_c3_pslq_search": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "meson-habiro-c3-pslq-search.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 7,
+   "err": ""
+  },
+  "meson_habiro_c4_truncation_reexam": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "meson-habiro-c4-truncation-reexam.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 12,
+   "err": ""
+  },
+  "meson_per_knot_density": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "meson-per-knot-density.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 21,
+   "err": ""
+  },
+  "meson_vol_density": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "meson-vol-density.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 21,
+   "err": ""
+  },
+  "mmu_categorical_correction_first_probe": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "mmu-categorical-correction-first-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": ""
+  },
+  "mmu_categorical_correction_k_crossing_probe": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "mmu-categorical-correction-k-crossing-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": ""
+  },
+  "mmu_categorical_correction_refined_probe": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mmu-categorical-correction-refined-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 27,
+   "err": ""
+  },
+  "mmu_kashiwara_cos_factor_probe": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mmu-kashiwara-cos-factor-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 37,
+   "err": ""
+  },
+  "mmu_lepton_torus_tower_feasibility_probe": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "mmu-lepton-torus-tower-feasibility-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "mmu_r9_consistency_check": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "mmu-r9-consistency-check.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "mmu_r9_two_rung_extension_probe": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mmu-r9-two-rung-extension-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 40,
+   "err": ""
+  },
+  "mmu_r9_two_rung_v2_probe": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mmu-r9-two-rung-v2-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 37,
+   "err": ""
+  },
+  "mmu_simpler_form_search_probe": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "mmu-simpler-form-search-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 43,
+   "err": ""
+  },
+  "mn_delta_pn_qbeta_habiro_cascade_probe": {
+   "rc": 1,
+   "sec": 0.2,
+   "witnesses": [
+    "mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 30,
+   "err": "NameError: name 'c3_habiro' is not defined. Did you mean: 'c3_hab'?"
+  },
+  "mn_flavor_split_h3_plancherel": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mn-flavor-split-h3-plancherel.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 9,
+   "err": ""
+  },
+  "mn_flavor_split_h4_plancherel": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mn-flavor-split-h4-plancherel.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 9,
+   "err": ""
+  },
+  "mn_flavor_split_plancherel_channel": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mn-flavor-split-plancherel-channel.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "mn_standard_channel_correction": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mn-standard-channel-correction.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 11,
+   "err": ""
+  },
+  "molecular-frobenius-lp": {
+   "rc": 0,
+   "sec": 1.2,
+   "witnesses": [
+    "molecular-frobenius-lp.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 69,
+   "err": "\u26a0 raw-float64: molecular-frobenius-lp.witness.json: 39 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.E_mol_eV, .parameters.gram_eigenvalues[0], .parameters.gram_eigenvalues"
+  },
+  "molecular-trefoil-scan": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "molecular-trefoil-scan.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 41,
+   "err": "\u26a0 raw-float64: molecular-trefoil-scan.witness.json: 27 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions[1].compute"
+  },
+  "molecular_angle_derive_related": {
+   "rc": 0,
+   "sec": 2.0,
+   "witnesses": [
+    "molecular-angle-derive-related.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 18,
+   "err": ""
+  },
+  "molecular_angle_master_table": {
+   "rc": 0,
+   "sec": 9.0,
+   "witnesses": [
+    "molecular-angle-master-table.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 23,
+   "err": ""
+  },
+  "molecular_angle_symmetric_block_general": {
+   "rc": 0,
+   "sec": 9.9,
+   "witnesses": [
+    "molecular-angle-symmetric-block-general.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 26,
+   "err": ""
+  },
+  "molecular_braid_angle_table": {
+   "rc": 0,
+   "sec": 7.1,
+   "witnesses": [
+    "molecular-braid-angle-table.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 54,
+   "err": ""
+  },
+  "mp_dk_decisive_test": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "mp-dk-decisive-test.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 26,
+   "err": ""
+  },
+  "mp_habiro_c4_keystone_probe": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mp-habiro-c4-keystone-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 23,
+   "err": ""
+  },
+  "mp_residual_exotic_basis_pslq": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "mp-residual-exotic-basis-pslq.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 9,
+   "err": ""
+  },
+  "mp_yekutieli_plancherel_scaffold": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "mp-yekutieli-plancherel-scaffold.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 12,
+   "err": ""
+  },
+  "native_5_strand_baryon": {
+   "rc": 0,
+   "sec": 2.2,
+   "witnesses": [
+    "native-5-strand-baryon.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 42,
+   "err": ""
+  },
+  "nf_transition_lifting": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "nf-transition-lifting.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 328,
+   "err": ""
+  },
+  "ocneanu_12_alt_knot_geometries": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "ocneanu-12-alt-knot-geometries.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "ocneanu_12_bring_zero_mode_variants": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "ocneanu-12-bring-zero-mode-variants.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 11,
+   "err": ""
+  },
+  "ocneanu_12_em_correction_candidate": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "ocneanu-12-em-correction-candidate.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "ocneanu_12_qdeformation_discriminator": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "ocneanu-12-qdeformation-discriminator.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 15,
+   "err": ""
+  },
+  "ocneanu_12_route_reexam": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "ocneanu-12-route-reexam.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 9,
+   "err": ""
+  },
+  "ocneanu_54ppb_residual_exploration": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "ocneanu-54ppb-residual-exploration.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": ""
+  },
+  "option_e_phase1_h3_cross_check": {
+   "rc": 1,
+   "sec": 0.9,
+   "witnesses": [
+    "option-e-phase1-h3-cross-check.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 120,
+   "err": ""
+  },
+  "parabolic_cylinder_channel_mixing_probe": {
+   "rc": 1,
+   "sec": 0.6,
+   "witnesses": [
+    "parabolic-cylinder-channel-mixing-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": "Try another starting point or tweak arguments."
+  },
+  "path4_rho_K_at_h3A": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "path4-rho-K-at-h3A.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 45,
+   "err": ""
+  },
+  "path_b_evacuation": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "path-b-evacuation.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 70,
+   "err": ""
+  },
+  "path_b_open_questions": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "path-b-open-questions.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 22,
+   "err": ""
+  },
+  "per_basis_row_invariants_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "per-basis-row-invariants-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 73,
+   "err": ""
+  },
+  "per_bond_growth_a3": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "per-bond-growth-a3.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 23,
+   "err": ""
+  },
+  "per_irrep_pole_proton_h3": {
+   "rc": 1,
+   "sec": 2.3,
+   "witnesses": [],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 0,
+   "err": ""
+  },
+  "per_knot_density_per_block_wiring": {
+   "rc": 1,
+   "sec": 0.1,
+   "witnesses": [
+    "per-knot-density-per-block-wiring.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": "ImportError: cannot import name 'per_knot_density_borromean' from '_li_2_q_util' (/home/user/qou/computations/_li_2_q_util.py)"
+  },
+  "per_knot_mass_table_demonstration": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "per-knot-mass-table-demonstration.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 97,
+   "err": "  vol_density_uniform = vol_density_borromean(q)"
+  },
+  "photon_operator_table": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "photon-operator-table.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 680,
+   "err": ""
+  },
+  "prearchimedean_bond_factor": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "prearchimedean-bond-factor.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": ""
   }
  }
 }

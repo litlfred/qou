@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:29:37.630694+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-21T14:58:03.090154+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "H₂",
-      "computed": 4.5,
+      "computed": 4.2,
       "expected": 4.478,
       "passed": true,
       "tolerance": 1.3434,
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "molecular-trefoil-scan",
   "scriptFile": "molecular-trefoil-scan.py",
-  "scriptHash": "0bf20659e12f",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "aff731465625",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,6 +60,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -67,58 +68,58 @@
   "description": "Integer LP: scan inverse trefoil count per bond until marginal gain exhausts. Uses 3-channel vertex volumes.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
-    "q": 1.1099785955573347,
-    "E_mol_eV": 6.729337493415771
+    "q": 1.1099785827513808,
+    "E_mol_eV": 6.729338426152079
   },
   "data": {
     "bond_HH": {
-      "k_trefoils": 1,
-      "E_eV": 4.469442986954559
+      "k_trefoils": 7,
+      "E_eV": 4.206906367241129
     },
     "bond_CH": {
       "k_trefoils": 6,
-      "E_eV": 4.210925785915879
+      "E_eV": 4.210571477279454
     },
     "bond_CC": {
       "k_trefoils": 5,
-      "E_eV": 3.5107246442241538
+      "E_eV": 3.510725582066876
     },
     "bond_CO": {
       "k_trefoils": 5,
-      "E_eV": 3.510720374920299
+      "E_eV": 3.5107205419624616
     },
     "bond_OH": {
       "k_trefoils": 7,
-      "E_eV": 4.914733058531289
+      "E_eV": 4.9146834887440916
     },
     "molecules": [
       {
         "name": "H₂",
-        "pred_eV": "4.46944298695456",
+        "pred_eV": "4.20690636724113",
         "obs_eV": 4.478
       },
       {
         "name": "CO",
-        "pred_eV": "10.5321602779139",
+        "pred_eV": "10.5321606261555",
         "obs_eV": 11.09
       },
       {
         "name": "CO₂",
-        "pred_eV": "14.0428799794786",
+        "pred_eV": "14.0428803731852",
         "obs_eV": 16.56
       },
       {
         "name": "CH₄",
-        "pred_eV": "16.8510642641552",
+        "pred_eV": "16.8511986073645",
         "obs_eV": 17.9
       },
       {
         "name": "C₆H₆",
-        "pred_eV": "56.8736639168383",
+        "pred_eV": "56.8736655113409",
         "obs_eV": 57.4
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

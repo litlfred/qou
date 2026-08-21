@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:20:00.964304+00:00",
-  "commitSha": "56e0d96d0785b62b4f6c46c89955d32d3ccf3517",
+  "computedAt": "2026-08-21T14:57:35.973470+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "kernel_ran",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 60,
   "computation": "per-bond-growth-a3",
   "scriptFile": "per_bond_growth_a3.py",
-  "scriptHash": "cce2d55e0482",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "4f49cc327812",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,13 +27,14 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
   "data": {
-    "q_0": "1.1099785955573347",
-    "E0_MeV": 4.185980827582892,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "E0_MeV": 4.185981363294476,
     "B_iso_MeV": {
       "pn": 2.3048,
       "pp": 2.2861,
@@ -42,31 +43,31 @@
     "results": {
       "T": {
         "bond0_pn": {
-          "B_emb_MeV": 2.31994325549869,
+          "B_emb_MeV": 2.301132223278883,
           "B_iso_MeV": 2.3048,
-          "growth": 1.006570312174024
+          "growth": 0.9984086355774398
         },
         "bond1_nn": {
-          "B_emb_MeV": 2.7013058314901257,
+          "B_emb_MeV": 2.7905948727787933,
           "B_iso_MeV": 2.2497,
-          "growth": 1.200740468280271
+          "growth": 1.2404297785388245
         }
       },
       "3He": {
         "bond0_pp": {
-          "B_emb_MeV": 2.2001871035452343,
+          "B_emb_MeV": 2.1022750902037655,
           "B_iso_MeV": 2.2861,
-          "growth": 0.9624194495189338
+          "growth": 0.9195901711227705
         },
         "bond1_pn": {
-          "B_emb_MeV": 2.6717865346700886,
+          "B_emb_MeV": 2.669259829416874,
           "B_iso_MeV": 2.3048,
-          "growth": 1.1592270629425931
+          "growth": 1.1581307833290846
         }
       }
     },
     "note": "Embedded per-bond binding (marginal of one chain interface in the H_9 free braid) vs isolated H_6 bond. growth>1 ⇒ embedding enhancement, the A=3 −15% residual mechanism. Rust kernel; no fit."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
