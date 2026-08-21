@@ -29,9 +29,25 @@ noncomputable def bindingScale (K : NuclearKnotType) (m_e : ℝ) : ℝ :=
   | .figureEight => m_e * 2.029883212819307  -- Vol(4₁)
   | .borromean   => m_e * 7.327724753846269  -- Vol(B₃) = 8G
 
-/-- For A ≥ 4, the nuclear braid is Borromean-like. -/
+/-- Classify a nuclear braid closure by mass number `A = Z + N`:
+    `A ≤ 1` unknot, `A = 2` satellite, `A = 3` figure-eight, `A ≥ 4` Borromean. -/
+def classifyByMassNumber (A : ℕ) : NuclearKnotType :=
+  if A ≤ 1 then .unknot
+  else if A = 2 then .satellite
+  else if A = 3 then .figureEight
+  else .borromean
+
+/-- For `A = Z + N ≥ 4`, the nuclear braid closure is Borromean-like:
+    `classifyByMassNumber (Z + N) = .borromean`.
+
+    Derived from `hA` (the mass number selects the else-branch of
+    `classifyByMassNumber`) — no longer the vacuous
+    `∃ K, K = .borromean := ⟨.borromean, rfl⟩`, which held for any `A` and used
+    none of its hypotheses. -/
 theorem nuclear_knot_classification (Z N : ℕ) (hA : Z + N ≥ 4) :
-    ∃ K : NuclearKnotType, K = .borromean := by
-  exact ⟨.borromean, rfl⟩
+    classifyByMassNumber (Z + N) = .borromean := by
+  unfold classifyByMassNumber
+  rw [if_neg (by omega : ¬ Z + N ≤ 1), if_neg (by omega : Z + N ≠ 2),
+    if_neg (by omega : Z + N ≠ 3)]
 
 end QOU.BraidKnot

@@ -1,16 +1,16 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-21T16:08:15.007Z",
+  "generated": "2026-08-21T16:25:30.667Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3010,
-  "files_flagged": 169,
-  "total_defects": 97,
+  "files_flagged": 164,
+  "total_defects": 92,
   "total_exempt": 123,
   "categories": {
     "proof-no-self-assuming-projection": 46,
     "proof-no-trivial-true": 21,
     "proof-no-provable-axiom": 11,
-    "proof-no-unused-hypothesis-rfl": 12,
+    "proof-no-unused-hypothesis-rfl": 7,
     "proof-docstring-sorry-mismatch": 3,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
@@ -1571,17 +1571,6 @@
         "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `h_me` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
-    "content/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.lean": [
-      {
-        "line": 54,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem muon_ratio_is_topological",
-        "decl": "muon_ratio_is_topological",
-        "severity": "major",
-        "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `h_q_ne_one` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean": [
       {
         "line": 120,
@@ -1787,17 +1776,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `ctx.operator_selection` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/spectrahedral_phase_collapse.lean": [
-      {
-        "line": 35,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem nucleon_sdp_rank_drop (u : ℝ) (hu_pos : u > 0) :",
-        "decl": "nucleon_sdp_rank_drop",
-        "severity": "major",
-        "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `hu_pos` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse.lean": [
@@ -2988,17 +2966,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/OptionE/RungSelection.lean": [
-      {
-        "line": 86,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem depthBasedRule_reaches_k3",
-        "decl": "depthBasedRule_reaches_k3",
-        "severity": "major",
-        "detail": "proof is `by\n  unfold depthBasedRule\n  rfl`, which uses no hypothesis, yet the statement binds `h` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/PAdicQuantumGroups.lean": [
       {
         "line": 170,
@@ -3384,17 +3351,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean": [
-      {
-        "line": 33,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-witness-with-unused-hypothesis",
-        "snippet": "theorem nuclear_knot_classification (Z N : ℕ) (hA : Z + N ≥ 4) :",
-        "decl": "nuclear_knot_classification",
-        "severity": "major",
-        "detail": "proof is `by\n  exact ⟨.borromean, rfl⟩`, which uses no hypothesis, yet the statement binds `hA` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean": [
       {
         "line": 105,
@@ -3491,17 +3447,6 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (unique) — honestly framed; tracked not counted"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean": [
-      {
-        "line": 168,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-witness-with-underscored-hypothesis",
-        "snippet": "theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :",
-        "decl": "wenzl_annihilator",
-        "severity": "major",
-        "detail": "proof is `⟨0, rfl⟩`, which uses no hypothesis, yet the statement binds `_h` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean": [
