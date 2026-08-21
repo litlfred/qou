@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T23:05:29Z
-updated_at: 2026-08-21T23:06:06Z
+updated_at: 2026-08-21T23:08:21Z
 ---
 
 ## Observed
@@ -78,3 +78,60 @@ Backtick every placeholder in the `coordinate.md` templates. Costs nothing, is
 correct whether or not the stripping is universal, and renders as code — which
 is what a placeholder should look like anyway. Worth checking the other
 skills that carry comment templates for the same construct.
+
+
+---
+
+## CONFIRMED — and my proposed fix was wrong
+
+Ran the six-form test as a comment on #5367
+([`5376315977`](https://github.com/litlfred/qou/pull/5367#issuecomment-5376315977))
+and read the body back through the API.
+
+| # | form written | stored |
+|---|---|---|
+| 1 | bare, tag-shaped — `&lt;div&gt;` | **gone** |
+| 2 | bare, prose-shaped with spaces + apostrophe | **gone** |
+| 3 | **backticked**, tag-shaped | **gone** (the backticks survive; the content does not) |
+| 4 | **backticked**, prose-shaped | **gone** |
+| 5 | HTML entities `&amp;lt;div&amp;gt;` | **SURVIVED** |
+| 6 | inside a ```python fence, both shapes | **gone** |
+
+**Backticking does not protect it.** That was the fix this bean proposed one
+entry above, and it is refuted. I had inferred it from the wrong evidence:
+backticked spans in my #5419 comment survived, but *none of them contained
+angle brackets* — so what I actually observed was backticks surviving, not
+angle brackets surviving inside backticks. Untested inference presented as the
+remedy.
+
+The discriminator also came back the aggressive way. Form 2 —
+`main&#39;s version after the merge`, spaces and an apostrophe, nothing like a
+tag name — vanished exactly as `&lt;div&gt;` did. So the sanitiser removes
+**anything** between angle brackets, not merely valid HTML tags.
+
+### The rule
+
+> Angle-bracketed text is stripped from a GitHub comment body in **every**
+> context — prose, inline code, and fenced code blocks alike. Only `&amp;lt;` /
+> `&amp;gt;` entities survive.
+
+Which layer strips it — GitHub on POST, or the MCP tool before it — I cannot
+tell from here, and it does not change the authoring rule.
+
+### Corrected fix for [`local/coordinate`](.claude/skills/local/coordinate.md)
+
+Not backticks. Either:
+
+- **entities** — `&amp;lt;your PR&amp;gt;`, correct but unreadable in the source
+  template; or
+- **drop angle brackets from the templates entirely** — `#NNN`,
+  `{one sentence}`, `COMMIT-SHA`, `{the sibling's territory}`. Readable, safe,
+  and it removes the trap rather than escaping around it.
+
+The second is better. The templates are meant to be pasted and filled in by
+agents who will not be thinking about HTML sanitisation, and a placeholder
+syntax that silently deletes itself is a trap regardless of whether one
+particular escape works.
+
+Worth grepping the other skills that carry comment or PR-body templates for the
+same construct before fixing, rather than fixing this one file and assuming.
