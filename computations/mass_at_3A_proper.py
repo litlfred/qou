@@ -89,10 +89,31 @@ Z_MARKOV = Q0**3 / (Q0**2 + 1)
 
 def jones_wenzl_weight(shape: tuple[int, ...],
                         q: float = Q0, z: float = Z_MARKOV) -> float:
-    """Ocneanu/Jones–Wenzl weight ω_λ(q, z) for H_n(q) Markov trace.
+    """Hook-content weight ω_λ(q, z) for H_n(q). **DOES NOT SUM TO 1.**
 
-    Σ_λ ω_λ = 1 (normalization) — unlike the Plancherel weight
-    d_q(λ)²/[n]_q!, which does not sum to 1 at q ≠ 1.
+    The docstring here used to assert "Σ_λ ω_λ = 1 (normalization) — unlike the
+    Plancherel weight d_q(λ)²/[n]_q!, which does not sum to 1 at q ≠ 1". That is
+    backwards. Measured over all λ ⊢ 3A via `ocneanu_weights_3A`:
+
+        A       1         2         3
+        this   -0.8230   +0.0547   -0.0009
+        plancherel  1.0000    1.0000    1.0000
+
+    `computations/ocneanu_weights.py::omega_lambda_formula_guess` carries the
+    same hook-content shape under the docstring "FAILED GUESS: ... Does NOT
+    satisfy Σ ω = 1 at q ≠ 1. Retained for reference; see
+    omega_lambda_via_inversion below for the correct approach."
+
+    So this function is a closed-form GUESS at the Ocneanu/Jones–Wenzl weights,
+    not those weights. Selecting `weight_scheme="jones_wenzl"` buys small V̂
+    values — which looks like it fixes the Φ_q pole that
+    `normalized_plancherel` walks into — but it gets them by near-cancelling
+    weights driving the volumes toward zero, not by being right. Bean qou-2tuv.
+
+    The correct construction is the linear-system inversion in
+    `ocneanu_weights.py` (solve Σ_λ (ω_λ/d_λ)·χ_λ(T_w) = tr_M(T_w) over reduced
+    words; "works at ANY convention — no need to guess the formula"), which is
+    p(n)×p(n) and therefore has its own feasibility ceiling.
     """
     n = sum(shape)
     if n == 0:
