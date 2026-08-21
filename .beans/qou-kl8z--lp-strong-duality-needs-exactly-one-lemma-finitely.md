@@ -1,11 +1,11 @@
 ---
 # qou-kl8z
 title: 'LP strong duality needs exactly one lemma: finitely generated cones are closed'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T10:54:54Z
-updated_at: 2026-08-21T16:25:20Z
+updated_at: 2026-08-21T21:24:54Z
 ---
 
 Scoping done with a **working Lean toolchain** (see `lean-environment-setup.md`
@@ -407,3 +407,69 @@ substrate evaluation, so this is what the corpus needs.
       module.
 - [ ] With that instance, `lp_strong_duality`, `lp_dual_feasible_of_lower_bound`
       and `lp_zero_duality_gap` become unconditional at `R = ℝ`.
+
+---
+
+## 2026-08-21 — INSTANCE REGISTERED. The bean is done.
+
+`QOU/Optimization/MatrixFarkasInstance.lean` supplies
+`matrixFarkas_of_coneClosed`, discharging the class from
+`farkas_alternative_real`. With it in scope `lp_strong_duality`,
+`lp_dual_feasible_of_lower_bound` and `lp_zero_duality_gap` are
+**unconditional**. Compiles clean; `lp_strong_duality_uncond` is included as
+the unconditional restatement.
+
+The instance lives in its own file on purpose:
+`FinitelyGeneratedConeClosed` is Mathlib-shaped and must not import the QOU LP
+layer, `LPStrongDuality` must not depend on the analytic development, and the
+instance is the only place the two meet.
+
+`LPStrongDuality`'s module docstring said Farkas was "the one unproved input in
+the whole chain, honestly labelled as the open analytic import". That is now
+false, and the docstring says so — while keeping the conditional framing, which
+is how the layer was built and stays useful if the analytic route is ever
+replaced.
+
+### Correcting my own scope caveat
+
+Two entries above I wrote that this route "can only produce the instance at
+`R = ℝ`" because `MatrixFarkas` is declared over any ordered commutative ring,
+and that general `R` would need Fourier–Motzkin. **That was wrong.**
+`LPStrongDuality.lean:62` declares only `variable {m n : ℕ}` — no `R` — and the
+class signature names `ℝ` concretely. There is no generality gap: the instance
+covers the class exactly as declared. I should have read the signature before
+writing the caveat rather than inferring it from the neighbouring module's
+variables.
+
+## Summary of Changes
+
+The bean asked for one lemma — a finitely generated cone is closed — and
+claimed `MatrixFarkas` would follow "by the standard route". Both are now done,
+and the route needed correcting twice along the way.
+
+**Proved, all sorry-free, in `QOU/Mathlib/FinitelyGeneratedConeClosed.lean`:**
+`isClosed_coneSpan` (via conic Carathéodory + the closed-embedding argument),
+`farkas_separation`, `farkas_vector`, `farkas_inequality`,
+`farkas_alternative_real`. Plus the instance in
+`QOU/Optimization/MatrixFarkasInstance.lean`.
+
+**Two corrections to the bean's own scoping:** `ProperCone` was never absent
+from the olean cache (the names moved to deprecated aliases), and
+`Convex/Caratheodory.lean` is about convex hulls over affinely independent
+subsets, not cones.
+
+**One correction to my own reasoning:** the naive separation route does hit an
+attainment wall, and I reported that as a blocker. The standard route argues by
+contradiction on the conclusion instead and needs no attainment.
+
+**A recurring API lesson, hit three times:** `Finset.sum_apply` will not fire on
+an `EuclideanSpace` head, and `WithLp.toLp … q` will not reduce inside a
+`simp only` set, though both are `rfl`-true. The `WithLp` synonym is transparent
+to the elaborator and opaque to `simp`; each site needs a `show` or a local
+`fun _ => rfl`. Recorded in the docstrings because the workarounds look
+removable.
+
+## Remaining (optional, not blocking)
+
+- Instantiating for `operator_selection_lp` is moot: per `qou/k4f8` that block's
+  certificate is exhibitable by hand and never needed Farkas.
