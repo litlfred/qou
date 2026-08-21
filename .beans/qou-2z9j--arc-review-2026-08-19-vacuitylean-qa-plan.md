@@ -5,7 +5,7 @@ status: todo
 type: milestone
 priority: normal
 created_at: 2026-08-19T21:00:27Z
-updated_at: 2026-08-21T15:43:21Z
+updated_at: 2026-08-21T15:55:26Z
 ---
 
 Reconciliation of the Lean-QA vacuity arc against current main (@ 5b158ef0) after the #3269/#3287/#3299 waves merged. The arc is NOT drained; live state re-measured today.
@@ -46,3 +46,16 @@ The audit artifact is now trustworthy (h43i fixed + regression-tested), so total
 ## UPDATE 2026-08-21 — ledger re-seeded + fully adjudicated (--check-ledger green)
 Item 4 (needs-agent) DONE: re-seeded stale ledger (38→69), 6-agent swarm adjudicated all 69 → 63 genuine / 5 legit / 1 advisory. --check-ledger exits 0 (all 182 candidates carry fresh verdicts). PR #5369.
 Item 5 re-scoped: the ledger now carries **161 genuine vacuity defects** (the real fix-queue) across categories — 54+ self-assuming-projection, proof-no-provable-axiom, proof-no-unused-hypothesis-rfl, proof-no-trivial-true, etc. This is the next drain tranche (q407-style, but larger). The committed ledger is the authoritative tracker; work it by clustering genuine entries into reviewable batches.
+
+
+
+## Drain started 2026-08-21 (PR #5377) + honest assessment
+First increment landed: 2 dimension-synthesis unused-hypothesis-rfl defects → honest def:Prop predicates (mirroring BorelRank's rank_witness fix). genuine 161→159.
+
+**The drain is NOT mechanical** (verified by reading the first batch). The 159 remaining genuine defects are each a trivial/self-assuming statement whose real content is open or upstream; the honest fix per defect is one of: demote-to-conjecture, name-as-predicate (def:Prop), restate-against-a-definition, or a real derivation — often with content-block / prop:-label implications. Dispositions the swarm recorded: 88 restate-to-derive-or-demote, 31 construct-witness-or-drop-pseudo-theorem, 12 restate-against-a-definition, etc.
+
+**Batching plan (per integration-backlog, ≤49 files/PR):**
+1. Smaller mechanical-ish categories first: proof-no-unused-hypothesis-rfl (6 left), proof-docstring-sorry-mismatch (2), proof-no-trivial-true (19).
+2. proof-no-provable-axiom (10) — prove or honestly-cite/remove.
+3. proof-no-self-assuming-projection (122) — the bulk; cluster by directory. Many are §3b-cond field-projections needing genuine-hypothesis restructuring (NOT self-assuming class fields per §3b-cond item 5).
+Each batch: fix + lean-direct verify + re-seed ledger (prunes resolved) + check-ledger green + PR. The committed ledger is the authoritative tracker/queue.
