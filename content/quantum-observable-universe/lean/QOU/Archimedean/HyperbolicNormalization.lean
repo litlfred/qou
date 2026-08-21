@@ -58,6 +58,7 @@ Archimedean (ℝ): `‖·‖`, ordering `0 < z` — §7c.
 
 import QOU.Archimedean.HyperbolicGeodesicZAxis
 import QOU.Archimedean.HyperbolicIsometryInversion
+import QOU.Archimedean.HyperbolicIsometryAffine
 
 namespace QOU.Archimedean.HyperbolicMetric
 
@@ -90,7 +91,7 @@ end QOU.Archimedean.HyperbolicMetric
 
 namespace QOU.Archimedean
 
-open QOU.Archimedean.HyperbolicMetric
+open QOU.Archimedean.HyperbolicMetric EuclideanGeometry
 open scoped ENNReal
 
 /-- **The z-axis of `H³`** — the vertical geodesic `{(0,0,z) : z > 0}`, the target
@@ -155,6 +156,39 @@ theorem exists_normalization_vertical {x y : E} (hx : x ∈ upperH) (hy : y ∈ 
       simp only [PiLp.add_apply, PiLp.sub_apply, zpt_height]
       have h : y 2 + (x 2 - x 2) = y 2 := by ring
       rw [h]; exact hy
+
+/-! ### Coordinate helpers for the boundary-inversion computation
+
+The general two-point normalization uses a boundary inversion; verifying that the
+two interior points land on a common vertical line reduces to two elementary
+coordinate identities on `E = EuclideanSpace ℝ (Fin 3)`:
+
+* `distSq_coords` — `dist p q ² = Σⱼ (pⱼ − qⱼ)²`, the Pythagorean expansion, so a
+  Euclidean-sphere condition `‖p − O‖ = R` becomes polynomial in the coordinates;
+* `inversion_coord` — the `j`-th coordinate of `inversion c R p` is
+  `(R/dist p c)²·(pⱼ − cⱼ) + cⱼ`, extracted from the `+ᵥ`/`•ᵥ` definition exactly
+  as `HyperbolicIsometryInversion` does for the height coordinate. -/
+
+/-- **Pythagorean coordinate expansion of the squared Euclidean distance** on
+`H³`'s carrier: `dist p q² = (p₀−q₀)² + (p₁−q₁)² + (p₂−q₂)²`.  This turns a
+Euclidean-sphere membership `‖p − O‖ = R` into a polynomial identity in the
+coordinates, which is what the inversion-image computation consumes. -/
+theorem distSq_coords (p q : E) :
+    dist p q ^ 2 = (p 0 - q 0) ^ 2 + (p 1 - q 1) ^ 2 + (p 2 - q 2) ^ 2 := by
+  rw [EuclideanSpace.dist_eq, Real.sq_sqrt (by positivity), Fin.sum_univ_three]
+  simp only [Real.dist_eq, sq_abs]
+
+/-- **The `j`-th coordinate of a boundary inversion.**  `EuclideanGeometry.inversion
+c R p = (R/dist p c)²·(p − c) + c`, so coordinatewise
+`(inversion c R p)ⱼ = (R/dist p c)²·(pⱼ − cⱼ) + cⱼ`.  Same extraction as
+`boundaryInversionIsom.hheight`, but for a general coordinate `j` rather than the
+height. -/
+theorem inversion_coord (c : E) (R : ℝ) (p : E) (j : Fin 3) :
+    (inversion c R p) j = (R / dist p c) ^ 2 * (p j - c j) + c j := by
+  have hexp : inversion c R p = (R / dist p c) ^ 2 • (p - c) + c := by
+    rw [show inversion c R p = (R / dist p c) ^ 2 • (p -ᵥ c) +ᵥ c from rfl,
+      vsub_eq_sub, vadd_eq_add]
+  rw [hexp, PiLp.add_apply, PiLp.smul_apply, PiLp.sub_apply, smul_eq_mul]
 
 /-! ### WALL-2, general case — HONEST GAP (bean `qou-0a0z`, NOT stubbed)
 
