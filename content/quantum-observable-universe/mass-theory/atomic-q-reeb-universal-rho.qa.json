@@ -289,25 +289,6 @@
         "reviewed_sha": "ca9b96d66b919c6be2a69c04589105914ad4fd52"
       }
     ],
-    "wall-side-correct": [
-      {
-        "field_hash": {
-          "md": "3a691238a3ce",
-          "ts": "02c72e55fef3"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
-        },
-        "reviewed_at": "2026-08-21T15:27:55.913Z",
-        "reviewed_sha": "ca9b96d66b919c6be2a69c04589105914ad4fd52",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
@@ -875,7 +856,7 @@
           "in_degree": 0,
           "cone_size": 0,
           "depth": 0,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -1249,11 +1230,30 @@
         "evidence": "'Isolating the symmetric strong (cosh) channel by removing the antisymmetric inter-nucleon (sinh) term pulls the Deuteron's phase sum up toward this $A=3$ universal scale, identifying the sinh channel as the carrier of the doubly-magic/anomaly deviations.'",
         "notes": "Long and gerund-fronted, but the chain is verb-linked rather than a noun pile, and every term is defined earlier in the block. Borderline; kept."
       }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "32b53c52ed65",
+          "ts": "02c72e55fef3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-21T21:30:36.354Z",
+        "reviewed_sha": "6f1455d0ab9615f49c05a0c7dbb4a77df86747d1",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
   "source_hashes": {
-    "md": "3a691238a3ce",
+    "md": "32b53c52ed65",
     "ts": "02c72e55fef3"
   },
-  "updated_at": "2026-08-21T15:27:55.913Z"
+  "updated_at": "2026-08-21T21:30:36.354Z"
 }
