@@ -2623,6 +2623,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.754Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2642,6 +2657,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.813Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-em-dash": [
@@ -2661,6 +2691,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.881Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-triples": [
@@ -2680,6 +2725,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.943Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-closing-aphorism": [
@@ -2699,6 +2759,23 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.981Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "major",
+        "evidence": "Block-final line: 'This structure bridges the categorical operator traces to the empirical magic-shell mass phenomenology.' A quotable significance closer that neither the statement nor the proof establishes — the proof shows integrality and termination of a cyclotomic expansion, nothing about magic-shell phenomenology.",
+        "notes": "proposed (structural, not applied — it deletes a claim): drop the sentence, or migrate it to authorNotes per AGENTS.md 4d if the author wants the significance recorded. Same treatment as the novelty-closer template."
       }
     ],
     "trap-meta-commentary": [
@@ -2718,6 +2795,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.018Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-thesis-restatement": [
@@ -2737,6 +2829,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.053Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-performed-warmth": [
@@ -2756,6 +2863,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.105Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-superlative": [
@@ -2775,6 +2897,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.144Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
       }
     ],
     "trap-nonspeakable": [
@@ -2794,6 +2931,21 @@
         "reviewed_at": "2026-08-15T10:31:00.553Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.193Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "'the empirical magic-shell mass phenomenology' is a four-noun chain, but it is the only one in the block and each term is defined elsewhere in the chapter."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2817,5 +2969,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:21:43.193Z"
 }

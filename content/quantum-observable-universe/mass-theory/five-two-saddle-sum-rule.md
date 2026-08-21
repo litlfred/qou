@@ -6,18 +6,18 @@ $$
   y^3 - 2y^2 + 3y - 1 \;=\; 0 ,
 $$
 
-with discriminant $-23$. It has one real root $t \in (0,1)$ and a conjugate pair $a, \bar a$ with $\operatorname{Im} a > 0$. The sum rule states that the dilogarithm values at the three roots combine into a closed form involving only $\pi$, $\log t$, and $\arg a$.
+with discriminant $-23$. It has one real root $t \in (0,1)$ and a conjugate pair $a, \bar a$ with $\mathrm{Im} a > 0$. The sum rule states that the dilogarithm values at the three roots combine into a closed form involving only $\pi$, $\log t$, and $\arg a$.
 
 **Theorem.**
-*There exist $t \in (0,1)$ real and $a \in \mathbb{C}$ with $\operatorname{Im} a > 0$, both roots of the saddle cubic together with $\bar a$, such that*
+*There exist $t \in (0,1)$ real and $a \in \mathbb{C}$ with $\mathrm{Im} a > 0$, both roots of the saddle cubic together with $\bar a$, such that*
 
 $$
-  \operatorname{Li}_2(a) + \operatorname{Li}_2(\bar a) + \operatorname{Li}_2(t)
+  \mathrm{Li}_2(a) + \mathrm{Li}_2(\bar a) + \mathrm{Li}_2(t)
   \;=\;
   -\frac{\pi^2}{6} \;-\; \frac{(\log t)^2}{2} \;+\; \frac{2}{3}\bigl(\arg a - \pi\bigr)^2 ,
 $$
 
-*where $\operatorname{Li}_2$ is the corpus's integral continuation of the dilogarithm to $\mathbb{C} \setminus [1,\infty)$.*
+*where $\mathrm{Li}_2$ is the corpus's integral continuation of the dilogarithm to $\mathbb{C} \setminus [1,\infty)$.*
 
 ## What changed, and what did not
 
@@ -26,8 +26,8 @@ This statement was previously carried as an open conjecture class, with the comm
 **It is not the volume conjecture.** Three statements are distinct and must not be conflated:
 
 1. the sum rule above, which is now proved;
-2. $\operatorname{Vol}(S^3 \setminus 5_2) = 3\,D(y_1)$, which is a statement about a hyperbolic manifold and is not formalised here;
-3. $\lim_{N} \frac{2\pi}{N}\log\langle 5_2\rangle_N = \operatorname{Vol}(S^3 \setminus 5_2)$, the volume conjecture for $5_2$ — Ohtsuki's theorem, untouched.
+2. $\mathrm{Vol}(S^3 \setminus 5_2) = 3\,D(y_1)$, which is a statement about a hyperbolic manifold and is not formalised here;
+3. $\lim_{N} \frac{2\pi}{N}\log\langle 5_2\rangle_N = \mathrm{Vol}(S^3 \setminus 5_2)$, the volume conjecture for $5_2$ — Ohtsuki's theorem, untouched.
 
 The sum rule is an identity among dilogarithm values at algebraic points. Nothing about a metric, a manifold, or an asymptotic follows from it.
 
