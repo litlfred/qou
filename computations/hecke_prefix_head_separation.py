@@ -25,6 +25,14 @@ any of them, and whether the heads separate. The longest-common-prefix column is
 the one that says *how much* work a failing step needs — a clash at length 1 is
 a different problem from a clash at length 9.
 
+**Head separation is a proxy; the sharper criterion is also measured.** A left
+context `A` is necessarily a *prefix* of the source, since every lemma here
+reads its source as `A ++ redex ++ tail`. So `hpark` — no other term `r` equals
+`A ++ z` — holds exactly when `lcp(source, r) < |A|` for every other `r`, and
+`|A|` reaches at most the redex offset. A working context therefore exists iff
+`redex_offset > max lcp`. Measured, that rescues `2(a−2)` of the head-clashing
+steps and leaves a hard core of **`2a`** where no length works.
+
 **Expected to fail somewhere.** The prefix's two lineages descend from one
 overlap, so early on they share long prefixes by construction. The question is
 how far in the sharing persists and how deep it goes, not whether it exists.
@@ -122,9 +130,16 @@ def sweep(i, a, b, schedule):
         others = [e[0] for e in L if e[0] != w]
         heads_ok = all(o[:1] != w[:1] for o in others)
         deepest = max((lcp(w, o) for o in others), default=0)
+        # `hpark` for a left context A (necessarily a prefix of the source,
+        # since the lemmas read the source as A ++ redex ++ tail) says no other
+        # term r satisfies r = A ++ z -- i.e. lcp(source, r) < |A| for every r.
+        # The lemma's A reaches at most to the redex, so |A| <= kk, and the
+        # condition is satisfiable at this step exactly when kk > deepest.
         out.append({"step": len(out), "rule": name, "others": len(others),
                     "heads_separate": heads_ok,
-                    "longest_common_prefix": deepest})
+                    "longest_common_prefix": deepest,
+                    "redex_offset": kk,
+                    "context_fits": kk > deepest})
         hits = [idx for idx, e in enumerate(L) if e[0] == w]
         left, right = w[:kk], w[kk + len(eng.LM[name]):]
         img = eng.context_mul(left, eng.REL[name], right)
@@ -169,6 +184,17 @@ def main():
                                     if not x["heads_separate"]), default=0),
                 }
             clashes = [s for s in st if not s["heads_separate"]]
+            # Are the clashes a contiguous SUFFIX? If so the prefix splits
+            # into a collision-free opening phase and a closing phase where
+            # the two lineages have converged enough to share prefixes.
+            cidx = [s["step"] for s in clashes]
+            contiguous_suffix = bool(cidx) and cidx == list(
+                range(cidx[0], len(st)))
+            # the sharper reading: of the head-clashing steps, how many still
+            # admit a working left context because the redex sits past the
+            # shared prefix?
+            rescued = [s for s in clashes if s["context_fits"]]
+            genuine = [s for s in clashes if not s["context_fits"]]
             first_ok = next((s["step"] for s in st if s["heads_separate"]), None)
             # the run of leading steps that are NOT head-separated
             lead = 0
@@ -187,6 +213,15 @@ def main():
                 "clash_steps": [s["step"] for s in clashes],
                 "clash_rules": sorted({s["rule"][0] for s in clashes}),
                 "reordered": alts,
+                "clashing_but_context_fits": len(rescued),
+                "context_does_not_fit": len(genuine),
+                "context_fail_steps": [s["step"] for s in genuine],
+                "context_fail_rules": sorted({s["rule"][0] for s in genuine}),
+                "context_fail_offsets": [[s["redex_offset"],
+                                          s["longest_common_prefix"]]
+                                         for s in genuine],
+                "clashes_are_contiguous_suffix": contiguous_suffix,
+                "first_clash_step": cidx[0] if cidx else None,
             })
 
     w = WitnessBuilder("hecke-prefix-head-separation", engine="sympy",
@@ -206,7 +241,24 @@ def main():
     w.add_parameter("why_it_matters",
                     "where it holds, the step needs no collision reasoning at "
                     "all, for any lemma and any choice of left context")
-    w.add_parameter("clashing_steps", "4(a-1), independent of b")
+    w.add_parameter("head_clashing_steps", "4(a-1), independent of b")
+    w.add_parameter(
+        "steps_with_NO_satisfiable_left_context", "2a, independent of b")
+    w.add_parameter(
+        "phase_split",
+        "the clashes are a CONTIGUOUS SUFFIX beginning at step a^2-3a+9: the "
+        "prefix opens with a^2-3a+9 steps that are entirely head-separated "
+        "and therefore need no collision reasoning at all, and closes with "
+        "4(a-1) steps where the two lineages have converged enough to share "
+        "prefixes")
+    w.add_parameter(
+        "hpark_criterion",
+        "a left context A is necessarily a PREFIX of the source (the lemmas "
+        "read the source as A ++ redex ++ tail), so hpark -- no other term r "
+        "is A ++ z -- holds exactly when lcp(source, r) < |A| for every r. "
+        "|A| reaches at most the redex offset kk, so a working context exists "
+        "iff kk > max_r lcp. This is the ACTUAL criterion; head separation is "
+        "only a proxy for it, and overstates the difficulty by 2(a-2).")
     w.add_parameter("head_separated_steps", "a^2 - 3a + 9")
     w.add_parameter("deepest_shared_prefix", "2a + 1, independent of b")
     # the measured regularity: the clash structure is a function of `a`
@@ -219,6 +271,22 @@ def main():
     bad = sum(1 for a, v in by_a.items() if len(set(v)) != 1)
     w.add_assertion("a_values_where_the_clash_counts_depend_on_b",
                     computed=str(bad), expected="0")
+    w.add_assertion(
+        "cases_where_the_clashes_are_not_a_contiguous_suffix",
+        computed=str(sum(1 for r in rows
+                         if not r["clashes_are_contiguous_suffix"])),
+        expected="0")
+    w.add_assertion(
+        "cases_where_the_first_clash_is_not_at_step_a^2-3a+9",
+        computed=str(sum(1 for r in rows
+                         if r["first_clash_step"]
+                         != r["a"] ** 2 - 3 * r["a"] + 9)),
+        expected="0")
+    w.add_assertion(
+        "a_values_where_the_unsatisfiable_count_differs_from_2a",
+        computed=str(sum(1 for r in rows
+                         if r["context_does_not_fit"] != 2 * r["a"])),
+        expected="0")
     w.add_assertion("a_values_where_clashes_differ_from_4(a-1)",
                     computed=str(sum(1 for r in rows
                                      if r["steps_clashing"] != 4 * (r["a"] - 1))),
@@ -231,9 +299,14 @@ def main():
     w.add_data("cases_checked", len(rows))
     w.add_data("cases", rows)
     w.add_caveat(
-        "Head separation is SUFFICIENT, not necessary. A clashing step is not "
-        "a proved obstruction -- it is a step whose collision hypothesis needs "
-        "a real argument rather than a one-letter one.")
+        "Head separation is SUFFICIENT, not necessary -- see the sharper "
+        "kk > lcp criterion, which is what actually decides satisfiability.")
+    w.add_caveat(
+        "`context_fits` is OPTIMISTIC: it says a working left context EXISTS "
+        "at the full redex offset. A given lemma may force a shorter A (e.g. "
+        "blockPass's A stops where the block begins), in which case that step "
+        "is harder than this column suggests. The 2a `context_does_not_fit` "
+        "figure is the robust one -- there NO length works.")
     w.add_parameter(
         "reordering",
         "both lineage-grouped schedules are measured too, since scheduling is "
@@ -245,15 +318,18 @@ def main():
         "clash surviving all three is not proved unavoidable.")
     path = w.save()
 
-    print("  a   b  steps  engine-clash  max-lcp  |  L0-first  L1-first")
+    print("  a   b  steps  head-clash  ctx-fits  ctx-FAILS  rules  |  "
+          "L0-first  L1-first")
     for r in rows:
         z = r["reordered"]
         f0, f1 = z["lineage0_first"], z["lineage1_first"]
         c0 = f0.get("clashing") if f0.get("legal") else "illegal"
         c1 = f1.get("clashing") if f1.get("legal") else "illegal"
         print(f" {r['a']:>2}  {r['b']:>2} {r['prefix_steps']:>6}"
-              f" {r['steps_clashing']:>13} {r['max_lcp_over_clashing']:>8}"
-              f"  | {str(c0):>9} {str(c1):>9}")
+              f" {r['steps_clashing']:>11} {r['clashing_but_context_fits']:>9}"
+              f" {r['context_does_not_fit']:>10}"
+              f"  {','.join(r['context_fail_rules']) or '-':<5}  |"
+              f" {str(c0):>9} {str(c1):>9}")
     print(f"\ncases: {len(rows)}   a-values whose counts depend on b: {bad}")
     print(f"witness -> {path}")
     return 0 if not bad else 1
