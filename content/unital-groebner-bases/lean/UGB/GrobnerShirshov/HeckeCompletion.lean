@@ -5162,6 +5162,66 @@ theorem blockPass {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
   simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s23 ⊢
   exact MultiStepReduction.trans s1 s23
 
+/-! ### §4al  The quadratic pair, at general depth
+
+The prefix uses the quadratic rule exactly twice, and each time the step before
+it is a Yang–Baxter. `hecke_quad_pair_shape.py` measured both occurrences and
+they differ only in their surrounding words, so one lemma covers them — but the
+mechanism is worth stating, because it is what makes the pair a *pair* rather
+than two unrelated steps:
+
+    L ++ [σ_{j₁+1}, σ_{j₁}, σ_{j₁+1}] ++ (σ_{j₁} :: R)
+      Y →   L ++ [σ_{j₁}, σ_{j₁+1}] ++ [σ_{j₁}, σ_{j₁}] ++ R
+      Q →   (L ++ [σ_{j₁}, σ_{j₁+1}, σ_{j₁}] ++ R,  c·h)
+            (L ++ [σ_{j₁}, σ_{j₁+1}] ++ R,          c)
+
+The Yang–Baxter step ends by emitting a `σ_{j₁}`, and `R` already *begins* with
+one. The two land adjacent, and that is the quadratic redex. Neither step
+creates it alone.
+
+**The Yang–Baxter step does not go through `yangBaxterRelation`.** That rule
+carries `−1` at its own leading word, so it is not monic and `monicStep` cannot
+take it. The route is `bokutShiaoRelation j₁ (j₁+1) j₁`, which is the same
+relation at `j = i − 1` (§4j) but monic and with the leading word the right way
+round — `braid_hrel` / `braid_hlm` are exactly that repackaging. -/
+
+/-- **The Yang–Baxter step and the quadratic step it sets up.** One term in, two
+out, with the `h`-weighted one first. `L` and `R` are arbitrary: the pair occurs
+twice in the prefix and the two occurrences differ only in them. -/
+theorem quadPair {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {j₁ jp : Fin n} (hjp : j₁.val + 1 = jp.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (L R : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ L ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (L ++ ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: R)), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (L ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: R)),
+            c * (hp.q - hp.q⁻¹))
+          :: (L ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ R), c) :: L₂)) := by
+  have hne : (⟨j₁⟩ : HeckeGen n) ≠ ⟨jp⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  -- the Yang-Baxter step, taken through the Bokut-Shiao rule at j = i-1,
+  -- which is the same relation but monic (4j)
+  have s1 := monicStep hn hp _
+    (bokutShiaoRelation_mem hn hp hjp (le_refl _))
+    (BokutShiaoBraid.braid_hrel hjp) (BokutShiaoBraid.braid_hlm hjp)
+    (by simp [hne]) L₁ L₂ L ((⟨j₁⟩ : HeckeGen n) :: R) _ _ c hc rfl rfl
+    (fun q hq => by
+      have := hpark q hq ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: R))
+      simpa using this)
+  -- the quadratic step: Y's output puts a second σ_{j₁} against R's head
+  have s2 := quadStep hn hp j₁ L₁ L₂ (L ++ [(⟨j₁⟩ : HeckeGen n), ⟨jp⟩]) R _ c hc rfl
+    (fun q hq => by
+      have := hpark q hq ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨j₁⟩] ++ R))
+      simpa only [List.append_assoc, List.cons_append, List.nil_append] using this)
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s2 ⊢
+  exact MultiStepReduction.head s1 (MultiStepReduction.head s2 (MultiStepReduction.refl _))
+
 /-- **The descending run begins with its top index**, whenever it is non-empty.
 Splits on `j = i` (`descWord_self`) and `j < i` (`descWord_cons` at `i − 1`). -/
 theorem descWord_head {n : ℕ} {i j : Fin n} (hj : j.val ≤ i.val) :
