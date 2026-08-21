@@ -175,3 +175,53 @@ quantum-dilogarithm/integral presentation `exp(φ(…) − φ(…))`; its OCR is
 mangled and the font-metadata pass did not recover it either. A clean §2.1
 determines `c_n` and closes this. Everything else — O(N²) evaluator, fit,
 branch unwrapping, gate — is built and correct.
+
+## 2026-08-19 THIRD PASS — THE DEFECT IS FOUND: a dropped OVERLINE
+
+Ohtsuki's 5₂ paper is **in the library** (`library/104171-qt-83/`, = ki6c's
+ref [20]) and its PDF is far more legible. It settles the convention:
+
+    eq.(3):   (q)_n · (q̄)_{N−n−1}  =  N        ← BARRED second factor
+    p.10:     (q)_n = exp(φ(1/2N) − φ((2n+1)/2N))
+              (q̄)_n = exp(φ(1 − (2n+1)/2N) − φ(1 − 1/2N))
+    p.7:      R_ijkl = N q^{−1} (q)_{[i−j]} (q̄)_{[j−l]} (q)_{[l−k−1]} (q̄)_{[k−i]}
+
+Two DIFFERENT functions, alternating through the R-matrix. Verified
+numerically: `(q)_n · conj((q)_{N−1−n}) = N` **exactly, to 1e-40, all n, all N**.
+
+**So my `(q)_n` was right all along.** The defect is that ki6c eq.(29) contains
+`(q̄)` factors and **the OCR silently dropped every overline** — LaTeX sets
+`\overline{q}` as a *rule*, not a glyph, so it is invisible to `extract_text`,
+to layout mode, AND to the font-metadata `visitor_text` pass (which does recover
+superscripts and minus signs). Three extraction methods, none can see a bar.
+
+**This explains the exact signature measured in pass 1**: bars leave every
+modulus untouched (`|(q̄)_n| = |(q)_n|`) — which is why the transcription
+reproduced ki6c's `max Re V̂ = 0.646131` AND its location `t₀=s₀=u₀=1/6` — while
+changing every phase, which is precisely where the 0.6460 → 0.5036 cancellation
+lives. Pass 1 said "moduli right, phases wrong"; this is the mechanism.
+
+Also note ki6c eq.(4) as I read it (`(q)_n(q)_{N−n−1} = N`) is the SAME identity
+with the bar dropped — my pass-2 conclusion "the paper's (q)_n is not the
+standard Pochhammer" was **wrong, and is retracted**: it is standard; the
+*second* factor was barred.
+
+**Readings tested (3) — and stopped deliberately.** Unbarred → 0.5715;
+eq.(4)-substituted → 0.398; eq.(4) + `(q)_i(q̄)_i = |(q)_i|²` (supported by Ṽ's
+`φ(t) − φ(1−t)` pairing) → ~0.449 and still rising at N=700. None reaches
+0.50356. Continuing to permute bars until one matches would be fitting a
+transcription to its target; stopped.
+
+**THE CLEAN PATH, now concrete**: transcribe the **5₂** sum from
+`library/104171-qt-83` where the bars ARE legible (they render as an 'N' glyph
+in that PDF's encoding: `.Nq/`), and validate end-to-end against its published
+`ς = 0.4501096100… + i·0.4813049796…` (Re = Vol(5₂)/2π ✓) and
+`ω = 0.0901905774… − i·0.6499757866…`. That is a real test with a published
+answer. Only then apply the same bar pattern to 6₁.
+
+**CORPUS-WIDE HAZARD worth propagating**: flat PDF text extraction silently
+drops overlines/bars. The library holds 332 PDFs that agents grep. Any
+transcription of a formula containing `q̄`, `z̄`, `Ā`, a complex conjugate or a
+closure will come out WRONG-BUT-PLAUSIBLE — moduli intact, phases destroyed —
+and will pass determinant-style sanity checks. Worth a line in the corpus-grep
+discipline.
