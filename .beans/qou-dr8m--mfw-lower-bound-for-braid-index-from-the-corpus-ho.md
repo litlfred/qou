@@ -154,3 +154,45 @@ be §"Axiomatization is NOT a Proof". MFW itself remains UNPROVED here.
   and load-bearing for `qou-xpgq`'s {5,10}. Blocked on T2.
   CAVEAT: MFW is not always sharp. A matching upper bound settles it; a gap
   does not.
+
+## 2026-08-21 — T2 is CHEAPER than I sized it, and one module is broken
+
+Two measured findings while probing the compute route to T4.
+
+**1. `pyhecke.trace` does not import on this container.** It does
+`from hecke_core import …` and `from hecke_core_legacy import …`; neither module
+exists here. What IS installed and imports fine is **`pyhecke_native`** (the
+PyO3 binding). So the trace module's import path is stale relative to the
+shipped extension. Anyone reaching for `pyhecke.trace` hits
+`ModuleNotFoundError`, not a subtle wrongness. Not fixed here — it is not this
+bean's file and the right fix (rename vs shim vs rebuild `hecke_core`) is the
+owner's call. `maturin` and `cargo` are both on PATH if a rebuild is wanted.
+
+**2. The characters are ALREADY computable, which shortens T2 a lot.**
+`pyhecke_native` exports, among others:
+
+    chi_lambda_braid, chi_lambdas_braid, chi_lambda_braid_mpfr,
+    chi_lambdas_braid_mpfr, chi_lambda_matrix, chi_q_atomic
+
+i.e. the irreducible Hecke characters χ_λ evaluated ON A BRAID, in both f64 and
+mpfr. Since the Ocneanu trace is a weighted sum of exactly those,
+
+    tr(β) = Σ_λ W_λ(q,z) · χ_λ(β)      ⇒      HOMFLY = (normalisation) · tr(β)
+
+T2 is therefore NOT "formalise/implement the Ocneanu trace from scratch". It is
+**assemble HOMFLY from characters that already exist**. Revised sizing:
+session-to-multi-session, not research-scale.
+
+**NOT yet verified — do not treat as done:**
+  - the Ocneanu weights `W_λ(q,z)` in the corpus's convention;
+  - the HOMFLY framing normalisation (the `v^{−w}` writhe correction);
+  - which of the C/D trace conventions these χ_λ are in — the 2026-08-15 ruling
+    makes D canonical and the corpus is mid-migration, so this MUST be pinned
+    before any degree is read off. A wrong convention changes the polynomial.
+
+**Validation gate for T4, fixed in advance**: compute HOMFLY for 4₁ and 5₂
+first, whose braid indices (3 and 3) and degree spreads are known, and require
+MFW to reproduce them, BEFORE reading 6₁. Same discipline that caught the
+overline bug in `qou-6ort` — validate on knots with published answers first.
+Note 4₁ and 5₂ both have braid index 3, so they test the machinery but do NOT
+test discrimination between 3 and 4; 6₁ is the first genuinely new value.
