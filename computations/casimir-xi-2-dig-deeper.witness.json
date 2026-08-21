@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T17:36:23.069255+00:00",
-  "commitSha": "56e9680162560f9e3c8639adba2ffda1ade01318",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-21T14:44:25.111637+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "normalized_markov_trace_identity_is_one",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 35,
+  "durationMs": 33,
   "computation": "casimir-xi-2-dig-deeper",
   "scriptFile": "casimir_xi_2_dig_deeper.py",
   "scriptHash": "778f84d3b86d",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,15 +29,15 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
   "description": "Resolves the ξ_2 flip-flop on conj:casimir-epsilon-vacuum. Shows the ξ_k=0 calibration is circular and that ξ_2 is gated on the N_⊙ construction: normalized Markov trace of identity ≡ 1 ∀q (tautological ξ_k=0), unnormalized weight sum diverges with n.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785955573347,
-    "h2_substrate": 0.04370621823290131
+    "substrate_q": 1.1099785827513808,
+    "h2_substrate": 0.04370620853252199
   },
   "data": {
     "finding_A_calibration_is_circular": {
@@ -84,35 +84,35 @@
         {
           "n": 3,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.752702113845",
+          "sum_y_unnorm": "0.752702113252",
           "sum_y_unnorm_classical": "0.75",
           "h2coef_unnorm_rel": "0.082432629"
         },
         {
           "n": 4,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.566560472187",
+          "sum_y_unnorm": "0.566560471294",
           "sum_y_unnorm_classical": "0.5625",
           "h2coef_unnorm_rel": "0.16516225"
         },
         {
           "n": 5,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.380418830529",
+          "sum_y_unnorm": "0.380418829336",
           "sum_y_unnorm_classical": "0.375",
           "h2coef_unnorm_rel": "0.33062148"
         },
         {
           "n": 6,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.255433433367",
+          "sum_y_unnorm": "0.255433432168",
           "sum_y_unnorm_classical": "0.25",
           "h2coef_unnorm_rel": "0.49726868"
         },
         {
           "n": 7,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.161356660724",
+          "sum_y_unnorm": "0.161356659594",
           "sum_y_unnorm_classical": "0.15625",
           "h2coef_unnorm_rel": "0.74777983"
         }
@@ -172,6 +172,6 @@
   "caveats": [
     "This probe is an audit support for the ξ_2 reconciliation; it does NOT construct N_⊙. ξ_2's value remains gated on sub-problem 1."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

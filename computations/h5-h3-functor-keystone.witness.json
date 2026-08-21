@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:32.480001+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:48:50.048506+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "dim_check_Res_(5,)",
@@ -108,11 +108,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 15,
   "computation": "h5-h3-functor-keystone",
   "scriptFile": "h5_h3_functor_keystone.py",
-  "scriptHash": "1ad9c683756c",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "9a39ef1c0bfb",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -122,13 +122,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "THE 5<->3 keystone (named by PRs #1670/#1672/#1677/#1678): compute the STANDARD Hecke restriction functor Res^{H5}_{H3} and its adjoint Ind, the Markov tower H3<H4<H5 forward embedding, and the icosahedral A5 -> 3-element-stabilizer restriction of the dim-5 (ell=2) irrep H -- all via exact Young-tableau branching (remove/add-a-box) and explicit character tables. RAW multiplicities; the Borromean h^4=-3/4 is a FALSIFICATION reference only. No fit, no tuning. Environment: exact integer/rational branching combinatorics (Python stdlib + sympy for factorials/hook-lengths); RAW substrate z at compute_dps via mpmath; engine=python+mpmath.",
   "auditOnly": "docs/audits/2026-06-02-h5-h3-functor-keystone.md",
   "parameters": {
-    "q0_falsification_ref": "1.10997859555733471989976322048322502665620840878015405145269053872699",
+    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "q0_source": "q_parameter.Q_MP (proton-pinned)",
     "dps": 70,
     "h4_borromean_falsification_ref": "-3/4"
@@ -283,8 +285,8 @@
         "(2, 2, 1)": 2,
         "(2, 1, 1, 1)": 1
       },
-      "markov_z_at_q0": "0.4993203340335612717689663862757371401611757978998956061698587681762445",
-      "markov_z_squared_at_q0_two_stabilizations": "0.2493207959793872068594164926226985899936569194735793349271125284456959",
+      "markov_z_at_q0": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
+      "markov_z_squared_at_q0_two_stabilizations": "0.375386630862388383999372303379009911453307219880302673593224106882741",
       "caveat": "add-box embedding multiplicity of (2,1) into lambda5 EQUALS Res^{S5}_{S3}(lambda5)[(2,1)] (branching duality) -- so the Markov-tower forward embedding gives the SAME multiplicity vector as Candidate 1, NOT a canonical single channel."
     },
     "candidate_4_icosahedral_A5_restriction": {
@@ -323,6 +325,6 @@
   "caveats": [
     "Branching multiplicities are q-INDEPENDENT (integers). The Borromean h^4=-3/4 is RAW from the (2,1) block of tr_M((sigma_1^-1 sigma_2)^3) (borromean-markov-trace-closed-form.md) and is used here ONLY as a falsification reference: no multiplicity is chosen to reproduce it."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
