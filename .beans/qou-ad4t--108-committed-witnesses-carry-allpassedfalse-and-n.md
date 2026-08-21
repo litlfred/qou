@@ -290,3 +290,69 @@ precisely the checker whose job is to verify that `scriptFile` writes the
 witness. `scriptFile` should be repo-relative wherever a basename is ambiguous;
 until it is, a provenance check that resolves by basename can confirm against
 the wrong file. Worth its own small fix.
+
+## Correcting myself again, and the exemption that rhymes with the whole bean
+
+**"The visible majority of the 44 are chi-*" was wrong.** It is **14 of 44
+(32%)**. I read a `tail -25` of the audit output, which happened to show the chi
+block contiguously, and generalised from a truncated sample. Fifth draft of mine
+this session to invert or overstate under checking.
+
+### The regenerability hypothesis: confirmed for chi-matrix-m, NOT general
+
+Tested directly — do the convention-stale witnesses lack `scriptFile`?
+
+    witness                                    PROV_MISSING?   scriptFile
+    chi-helium-3-h9-...-matrix-m               no (exempt)     ABSENT
+    chi-helium-4-h12-...-matrix-m              YES             ABSENT
+    chi-tritium-h9-...-matrix-m                YES             ABSENT
+    derived-chi-catalogue                      no              derived_chi_catalogue_build.py
+    y-lambda-macdonald-telescope               no              y_lambda_macdonald_telescope.py
+
+**3 of 3 `chi-*-matrix-m` convention-stale witnesses have no `scriptFile`**, so
+`run_pipeline` cannot regenerate them — a real mechanism for why their staleness
+outlived the migrations that reached other families. But it is **3 of 5**, not a
+universal cause: the two non-`matrix-m` entries both have working producers and
+are stale anyway. Do not carry this forward as "the" explanation.
+
+### The exemption is the finding
+
+`chi-helium-3-h9-at-q0-50dps-matrix-m` lacks `engine`, `scriptFile` AND
+`commitSha`, and is **not** counted in the 44. It sits in
+**`PROV_EXEMPT_NO_READER`** — exempted because nothing reads it.
+
+It is read. `convention-c-witness-audit.py` reads it, and flags it as one of the
+five witnesses still structurally on convention C (25 entries).
+
+And that bucket is not small:
+
+    PROV_OK                  2322
+    PROV_EXEMPT_NO_READER     239     <- 5x the flagged count
+    PROV_AUDIT_EXEMPT          74
+    PROV_MISSING               44
+    PROV_EXEMPT_ACKNOWLEDGED    2
+    PROV_PARSE_ERROR            1
+
+So the headline "44 missing provenance" **excludes 239 witnesses that also lack
+provenance**, on the grounds that nobody consumes them.
+
+That exemption has the same shape as the defect this whole bean is about. "No
+reader" is a statement about the present, not about correctness — and a witness
+with no reader and no provenance is exactly the one that will sit stale and
+wrong indefinitely, because nothing will prompt a re-run and `run_pipeline`
+cannot rebuild it. The exemption is applied precisely where the risk of silent
+rot is highest. Two of the five convention-C survivors are in that population.
+
+I am NOT claiming the 239 are all wrong, or that the exemption should be
+deleted — an unread scratch witness genuinely does not need provenance. The
+claim is narrower and testable: **`no_reader` is being used as a proxy for
+`doesn't matter`, and at least one member is demonstrably read by an audit.**
+The exemption should key on "no reader **and** no audit reads it", which is a
+cheap change to the same scan.
+
+### Next step
+
+Re-scope `PROV_EXEMPT_NO_READER` to exclude witnesses that an audit reads, and
+re-measure. That is a one-predicate change and it will move witnesses from a
+silent bucket into a counted one — the right direction, and it will make the
+number worse, which is the point.
