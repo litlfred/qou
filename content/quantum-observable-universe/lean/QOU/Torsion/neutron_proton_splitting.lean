@@ -84,7 +84,7 @@ class NeutronProtonSplittingContext where
   /-- **CODATA agreement** (upstream input): the predicted splitting matches
       the CODATA value `1.293 MeV` within 1%.  This is the numerical
       verification — part (2). -/
-  -- Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mnd
+  -- Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mnd
   codata_agreement : |m_n - m_p - codataNeutronProtonSplittingMeV| ≤
     0.01 * codataNeutronProtonSplittingMeV
 

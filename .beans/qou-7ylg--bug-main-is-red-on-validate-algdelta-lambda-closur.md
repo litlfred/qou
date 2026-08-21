@@ -5,7 +5,7 @@ status: done
 type: bug
 priority: high
 created_at: 2026-08-07T10:49:35Z
-updated_at: 2026-08-08T12:00:00Z
+updated_at: 2026-08-21T22:06:16Z
 ---
 
 Reproduced on origin/main (not a branch artifact): 12 issues, 2 of them ERRORS.
@@ -109,3 +109,5 @@ dependency edge reaches it. Giving it a `proposition` block (with
 the proper fix, and then this algorithm should cite *that* instead. Not done
 here: authoring the statement belongs with whoever owns the Δ_λ derivation, and
 getting its scope subtly wrong would be worse than the citation above.
+
+x
