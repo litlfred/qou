@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "BLOCH GROUPS, ALGEBRAIC K-THEORY"
+doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
 section_id: sec-011-4-reduction-to-finite-fields
 section_title: "Reduction to finite fields"
 section_number: 4
 pages: 21-21
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "BLOCH GROUPS, ALGEBRAICK-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
+doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
 ---
 As we will see in Section 5, the comparison of the maps cζ and Rζ and the proof of
 Theorem 1.6 require a reduction of both maps to the case of ﬁnite ﬁelds. In this section,

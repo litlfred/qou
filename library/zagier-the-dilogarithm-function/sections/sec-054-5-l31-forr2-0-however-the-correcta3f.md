@@ -1,13 +1,13 @@
 ---
 doc_id: zagier-the-dilogarithm-function
-doc_title: "The Dilogarithm Function Don Zagier"
+doc_title: "The dilogarithm function"
 section_id: sec-054-5-l31-forr2-0-however-the-correcta3f
 section_title: "L3(1). Forr2 > 0, however, the correctA3(F)"
 section_number: 5
 pages: 58-60
 source_pdf: zagier-the-dilogarithm-function.pdf
 source_sha256: 05079cf525c6ba0f
-doc_brief: "The Dilogarithm Function Don Zagier — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
+doc_brief: "The dilogarithm function — 56 sections: Don Zagier; The dilogarithm function in geomet; The Bloch-Wigner function D(z) and"
 ---
 turns out to be a subgroup of Ker(∂3), as we now explain.
 Let φ be any homomorphism from F × to Z.I f ξ =∑ni[xi] belongs to

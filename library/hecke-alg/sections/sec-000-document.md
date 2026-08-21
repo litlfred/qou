@@ -1,13 +1,13 @@
 ---
 doc_id: hecke-alg
-doc_title: "Hec k e algebras and Sc h ur algebras of the symmetric group Andrew Mathas Author address/:"
+doc_title: "Hecke algebras and Schur algebras of the symmetric group"
 section_id: sec-000-document
 section_title: "Document"
 section_number: null
 pages: 1-78
 source_pdf: hecke_alg.pdf
 source_sha256: 4ac08dfd165fb366
-doc_brief: "Hec k e algebras and Sc h ur algebras of the symmetric group Andrew Mathas Author address/: — 1 sections: Document"
+doc_brief: "Hecke algebras and Schur algebras of the symmetric group — 1 sections: Document"
 ---
 Hec k e algebras and Sc h ur algebras of the
 symmetric group

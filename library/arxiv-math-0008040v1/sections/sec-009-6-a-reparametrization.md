@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-009-6-a-reparametrization
 section_title: "A Reparametrization"
 section_number: 6
 pages: 13-20
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 We will now use the rectangle combinatorics from the previou s section to calculate the Lusztig
 parametrizations cj(j),cP (j) of the canonical basis elements arising in Theorem 4.4; her e j is ﬁxed

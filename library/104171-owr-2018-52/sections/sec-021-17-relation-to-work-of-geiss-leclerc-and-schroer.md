@@ -1,13 +1,13 @@
 ---
 doc_id: 104171-owr-2018-52
-doc_title: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018"
+doc_title: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)"
 section_id: sec-021-17-relation-to-work-of-geiss-leclerc-and-schroer
 section_title: "Relation to work of Geiss, Leclerc and Schroer. In [4] they consider"
 section_number: 1.7
 pages: 46-46
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
-doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
+doc_brief: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018) — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical"
 ---
 a similar construction, but using nilpotent polynomial rings in place of o ur ﬁelds.
 They can then work over an algebraically closed ﬁeld, a clear advanta ge. But

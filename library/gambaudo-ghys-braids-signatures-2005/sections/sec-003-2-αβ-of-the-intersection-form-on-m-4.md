@@ -1,13 +1,13 @@
 ---
 doc_id: gambaudo-ghys-braids-signatures-2005
-doc_title: "Bull. Soc. math. France 133 (4), 2005, p. 541–579"
+doc_title: "Braids and signatures"
 section_id: sec-003-2-αβ-of-the-intersection-form-on-m-4
 section_title: "(α,β )) of the intersection form on M 4"
 section_number: 2
 pages: 6-8
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
-doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
+doc_brief: "Braids and signatures — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 2 (α,β )
 in two diﬀerent ways; these computations will give us the equ ality stated in The-

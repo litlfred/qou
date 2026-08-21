@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0604094v1
-doc_title: "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF QUANTUM INV ARIANT KAZUHIRO HIKAMI"
+doc_title: "Generalized volume conjecture and the A-polynomials: the Neumann-Zagier potential function as a classical limit of quantum invariant"
 section_id: sec-000-quantum-dilogarithm-function
 section_title: "Quantum Dilogarithm Function"
 section_number: null
 pages: 2-12
 source_pdf: 0604094v1.pdf
 source_sha256: f0c4c36ab0acf537
-doc_brief: "GENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS: THE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF QUANTUM INVARIANT KAZUHIRO HIKAMI — We study quantum invariant Zγ(M) for cusped"
+doc_brief: "Generalized volume conjecture and the A-polynomials: the Neumann-Zagier potential function as a classical limit of quantum invariant — We study quantum invariant Zγ(M) for cusped hyperbolic"
 ---
 introduced his invariant JK
 (

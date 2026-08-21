@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-008-31-quasitriangular-hopfalgebras-see-dr-let-a-be
 section_title: "Quasitriangular HopfAlgebras (see [Dr]). Let A be a Hopf algebra with the"
 section_number: 3.1
 pages: 4-6
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 comultiplication A, counit ~ and antipodal mapping s. Let R be an invertible 
 element of A |174 Denote the permutation homomorphism 

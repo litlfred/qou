@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1601.02479v5
-doc_title: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A"
+doc_title: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras"
 section_id: sec-005-16-main-results-for-cohomological-hall-algebras
 section_title: "Main results for cohomological Hall algebras"
 section_number: 1.6
 pages: 9-12
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
-doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
+doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
 ---
 condition ζ is generic. The object H( Aζ ,S
 W,µ ) is a unital algebra in the category of

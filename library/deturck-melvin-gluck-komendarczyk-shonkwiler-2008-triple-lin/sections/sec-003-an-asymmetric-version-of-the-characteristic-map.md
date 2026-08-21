@@ -1,13 +1,13 @@
 ---
 doc_id: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin
-doc_title: "© 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS"
+doc_title: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links"
 section_id: sec-003-an-asymmetric-version-of-the-characteristic-map
 section_title: "An asymmetric version of the characteristic map"
 section_number: null
 pages: 9-10
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
-doc_brief: "Matemática Contemporânea, Vol. 34, 251–283 © 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were"
+doc_brief: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 ---
 Continuing to view S3⊂ R4, let ℘x denote stereographic projection of
 S3−{x} onto the 3-space R3

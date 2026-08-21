@@ -1,13 +1,13 @@
 ---
 doc_id: thurston
-doc_title: "William P. Thurston"
+doc_title: "The Geometry and Topology of Three-Manifolds"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 3-9
 source_pdf: Thurston.pdf
 source_sha256: 6010919ed83edd81
-doc_brief: "William P. Thurston — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi"
+doc_brief: "The Geometry and Topology of Three-Manifolds — 22 sections: Introduction; GEOMETRY AND THREE-MANIFOLDS; Start with the three sphereS3, whi"
 ---
 These notes (through p. 9.80) are based on my course at Princeton in 1978–
 79. Large portions were written by Bill Floyd and Steve Kerckho↵. Chapter 7, by

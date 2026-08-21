@@ -1,13 +1,13 @@
 ---
 doc_id: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials
-doc_title: "On 2-variable q-Legendre polynomials: the view point of the q-operational technique"
+doc_title: "Two-variable q-Legendre polynomials"
 section_id: sec-010-references
 section_title: "References"
 section_number: null
 pages: 12-13
 source_pdf: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf
 source_sha256: da8c1204e84d019c
-doc_brief: "On 2-variable q-Legendre polynomials: the view point of the q-operational technique — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
+doc_brief: "Two-variable q-Legendre polynomials — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
 ---
 [1] Berg C., Ismail M.E.H. q-Hermite polynomials and classical orthogonal polynomia ls. Canad. J. Math. 1996, 48 (1),
 43–63. doi:10.4153/CJM-1996-002-4

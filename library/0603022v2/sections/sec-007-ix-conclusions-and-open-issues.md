@@ -1,13 +1,13 @@
 ---
 doc_id: 0603022v2
-doc_title: "Department of Physics, University of Waterloo"
+doc_title: "Quantum gravity and the standard model"
 section_id: sec-007-ix-conclusions-and-open-issues
 section_title: "CONCLUSIONS AND OPEN ISSUES"
 section_number: IX
 pages: 10-11
 source_pdf: 0603022v2.pdf
 source_sha256: 46e24c0289f61d44
-doc_brief: "Quantum Gravity and the Standard Model Sundance O. Bilson-Thompson ∗ — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
+doc_brief: "Quantum gravity and the standard model — 9 sections: INTRODUCTION; THEORIES ON RIBBON GRAPHS; CONSERVED DEGREES OF FREEDOM"
 ---
 The results presented here tell us that theories that sat-
 isfy the conditions described in section 2 above, may be

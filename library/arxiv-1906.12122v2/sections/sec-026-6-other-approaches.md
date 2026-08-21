@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1906.12122v2
-doc_title: "Nuclear eﬀective ﬁeld theory: status and perspectives H.-W. Hammer∗ Institut f¨ ur Kernphysik, Technische Universit¨ at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute"
+doc_title: "Nuclear effective field theory: status and perspectives"
 section_id: sec-026-6-other-approaches
 section_title: "Other approaches"
 section_number: 6
 pages: 52-56
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
-doc_brief: "Nuclear effective field theory: status and perspectives H.-W. Hammer∗ Institut für Kernphysik, Technische Universität Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI — 34 sections: C"
+doc_brief: "Nuclear effective field theory: status and perspectives — 34 sections: Contents; Two-body scattering amplitude; Power counting"
 ---
 The renormalization of Chiral EFT described in the
 previous section was criticized by Epelbaumet al. (2018),

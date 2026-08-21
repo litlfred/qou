@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0006156v1
-doc_title: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE"
+doc_title: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality"
 section_id: sec-050-62-analytic-properties-we-can-perform-the-integr
 section_title: "Analytic properties. We can perform the integration in (15) by the"
 section_number: 6.2
 pages: 15-16
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
-doc_brief: "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
+doc_brief: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well"
 ---
 residue method. The result can be written as ratio of two q-ex ponentials
 eb(z) = (e2π (z+cb)b;q2)∞/(e2π (z−cb)b−1

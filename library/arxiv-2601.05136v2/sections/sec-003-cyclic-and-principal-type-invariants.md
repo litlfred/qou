@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2601.05136v2
-doc_title: "N(K,ρ,µ ) of a knotK, a representationρ: π1(S3\K)→ SL2(C), andalogarithm µofameridianeigenvalueof ρ. Itcanbeinterpretedasa geometrictwistoftheKashaevinvariantorasaquantizationofthe"
+doc_title: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant"
 section_id: sec-003-cyclic-and-principal-type-invariants
 section_title: "Cyclic and principal type invariants"
 section_number: null
 pages: 4-5
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
-doc_brief: "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site — Previous work of the author and N."
+doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
 ---
 Thereappeartobetwoinequivalent(butperhapsbothnatural)branchesofcomplexChern-Simons
 theory. Abovewedescribed cyclic typeinvariants[BB04;BWY21;KR05;McP25a]that

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1208.1663v2
-doc_title: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers"
+doc_title: "The 3D index of an ideal triangulation and angle structures"
 section_id: sec-008-43-the-rank-of-v-part-b-of-theorem-32
 section_title: "The rank of V+: part (b) of Theorem 3.2"
 section_number: 4.3
 pages: 11-12
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
-doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
+doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 discrete integer variables e,m which satisﬁes Equations (3.1a) and 3.1b. Section 4.1 implies
 that f(0,e ) satisﬁes the 3-term recursion

@@ -1,13 +1,13 @@
 ---
 doc_id: 4geo-dedi-rev
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the quantum Teichmüller invariants of fibred cusped 3-manifolds"
 section_id: sec-000-2-st-ephane-baseilhac1-riccardo-benedetti-2
 section_title: "ST ´EPHANE BASEILHAC1, RICCARDO BENEDETTI 2"
 section_number: 2
 pages: 3-5
 source_pdf: 4GEO-DEDI-REV.pdf
 source_sha256: e4d52947b71a3f37
-doc_brief: "HAL Id: hal-01812027 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: ST ´EPHANE B"
+doc_brief: "On the quantum Teichmüller invariants of fibred cusped 3-manifolds — 27 sections: ST ´EPHANE BASEILHAC1, RICCARDO BE; ST ´EPHANE BASEILHAC1, RICCARDO BE; ST ´EPHANE BASEILHAC1, RICCARDO BE"
 ---
 • The local representations are reducible, but more suited to perform the usual cut-and-paste
 operations of topological quantum ﬁeld theories. In this framework, it is natural to restrict

@@ -1,13 +1,13 @@
 ---
 doc_id: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials
-doc_title: "On 2-variable q-Legendre polynomials: the view point of the q-operational technique"
+doc_title: "Two-variable q-Legendre polynomials"
 section_id: sec-008-24-raza-n-fadel-m-c-cesarano
 section_title: "Raza N., Fadel M., C. Cesarano"
 section_number: 24
 pages: 11-12
 source_pdf: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf
 source_sha256: da8c1204e84d019c
-doc_brief: "On 2-variable q-Legendre polynomials: the view point of the q-operational technique — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
+doc_brief: "Two-variable q-Legendre polynomials — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
 ---
 Theorem 6. The 2-variable q-Legendre polynomials Rn,q(x, y) satisfy the following equivalent
 operational identities:

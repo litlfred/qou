@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1011.1343v1
-doc_title: "Institut für Kernphysik, Institute for Advanced Simulatio n and JCHP"
+doc_title: "Chiral symmetry, nuclear forces and all that"
 section_id: sec-004-42-three-nucleon-interactions
 section_title: "Three-nucleon interactions"
 section_number: 4.2
 pages: 9-10
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
-doc_brief: "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
+doc_brief: "Chiral symmetry, nuclear forces and all that — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
 ---
 One of the biggest advantages of the chiral Lagrangian appro ach to the nuclear force
 problem - as stressed early in Weinberg’s papers - is the cons istent derivation of the

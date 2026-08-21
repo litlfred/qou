@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson l"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-023-33-perturbation-theory
 section_title: "Perturbation Theory"
 section_number: 3.3
 pages: 30-31
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting"
 ---
 Using eﬀective quantum mechanics, we studied the semi-clas sical limit of the partition
 function,Z(M ), in the SL(2,C) Chern-Simons theory on a knot complement, M = S3\K.

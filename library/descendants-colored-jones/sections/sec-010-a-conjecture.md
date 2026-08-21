@@ -1,13 +1,13 @@
 ---
 doc_id: descendants-colored-jones
-doc_title: "Pure and Applied Mathematics Quarterly"
+doc_title: "The descendant colored Jones polynomials"
 section_id: sec-010-a-conjecture
 section_title: "A conjecture"
 section_number: null
 pages: 24-24
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
-doc_brief: "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the"
+doc_brief: "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 When n = −1, Equation (43) implies that the invariant of a long knot K is a
 multiple of the identity N × N matrix, and the multiple is the specialization

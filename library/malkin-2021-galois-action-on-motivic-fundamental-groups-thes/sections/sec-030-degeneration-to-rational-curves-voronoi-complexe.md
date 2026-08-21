@@ -1,13 +1,13 @@
 ---
 doc_id: malkin-2021-galois-action-on-motivic-fundamental-groups-thes
-doc_title: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a ﬁnite set of points(: GalMot ⟳cMot 1 (-−(,E 0)"
+doc_title: "On the Galois action on motivic fundamental groups of punctured elliptic and rational curves"
 section_id: sec-030-degeneration-to-rational-curves-voronoi-complexe
 section_title: "Degeneration to rational curves: Voronoi complexes and multiple -values"
 section_number: null
 pages: 112-120
 source_pdf: malkin-2021-galois-action-on-motivic-fundamental-groups-thesis.pdf
 source_sha256: 3bc30dc6a4a03a7f
-doc_brief: "ThemainmotiveofthisthesisistostudytheactionofthemotivicGaloisgrouponthemotivicfundamental group of an algebraic curve- punctured at a finite set of points(: GalMot ⟳cMot 1 (-−(,E 0). (1) — On the"
+doc_brief: "On the Galois action on motivic fundamental groups of punctured elliptic and rational curves — On the Galois Action on Motivic Fundamental Groups of Punctured Elliptic and Rational Curves Nikolay"
 ---
 In this section we study the behavior of the motivic correlators at the boundary of the moduli spaceM′
 1,= of

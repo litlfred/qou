@@ -1,13 +1,13 @@
 ---
 doc_id: s00601-022-01745-1
-doc_title: "This special issue of the journalFew-Body Systemscelebrates Steven Weinberg’s article, “Nuclear Forces from Chiral Lagrangians,” published in 1990 [ 1]. The effective ﬁeld theory ("
+doc_title: "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue"
 section_id: sec-000-references
 section_title: "References"
 section_number: null
 pages: 2-3
 source_pdf: s00601-022-01745-1.pdf
 source_sha256: 9badfa30f706f4ee
-doc_brief: "Few-Body Syst (2022) 63:46 EDITORIAL Alejandro Kievsky · Luca Girlanda Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the — 1 sections: Ref"
+doc_brief: "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue — 1 sections: References"
 ---
 1. S. Weinberg, Nuclear forces from chiral Lagrangians. Phys. Lett. B 251, 288 (1990)
 2. S. Weinberg, Effective chiral Lagrangians for nucleon - pion interactions and nuclear forces. Nucl. Phys. B 363, 3 (1991)

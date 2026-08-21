@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-010-32-category-repa-with-each-algebra-a-one-associa
 section_title: "Category RepA. With each algebra A one associates the category RepA of its"
 section_number: 3.2
 pages: 6-7
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 finite dimensional linear representations. The objects of RepA are left A-modules 
 finitely generated over the ground field. The morphisms of RepA are A-linear 

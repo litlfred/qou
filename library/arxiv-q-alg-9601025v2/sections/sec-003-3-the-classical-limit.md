@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-q-alg-9601025v2
-doc_title: "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Th´ eoriqueenslapp†"
+doc_title: "The hyperbolic volume of knots from the quantum dilogarithm"
 section_id: sec-003-3-the-classical-limit
 section_title: "The classical limit"
 section_number: 3
 pages: 3-5
 source_pdf: 9601025v2.pdf
 source_sha256: 369b0a1a92ce67a8
-doc_brief: "The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev ∗ Laboratoire de Physique Théoriqueenslapp† — The invariant of a link in three-sphere, associated with the cyclic quantum"
+doc_brief: "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N ."
 ---
 Here we calculate explicitly the leading asymptotics at N → ∞ of the
 invariant for the hyperbolic knots from section 2 and justify formu la

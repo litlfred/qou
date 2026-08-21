@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-011-references
 section_title: "References"
 section_number: null
 pages: 20-21
 source_pdf: 0008040v1.pdf
 source_sha256: a72319b55dbaf20b
-doc_brief: "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh — Let U be the quantum group associated to a Lie algebra g of type An."
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 [1] R. Bedard. On the spanning vectors of Lusztig cones. Prep rint, 1999.
 [2] A. Berenstein, S. Fomin, and A. Zelevinsky. Parametriza tions of canonical bases and totally

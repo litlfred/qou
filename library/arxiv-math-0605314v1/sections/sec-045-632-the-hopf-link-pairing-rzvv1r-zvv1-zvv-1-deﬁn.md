@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0605314v1
-doc_title: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO"
+doc_title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres"
 section_id: sec-045-632-the-hopf-link-pairing-rzvv1r-zvv1-zvv-1-deﬁn
 section_title: "The Hopf link pairing ⟨,⟩: RZ[v,v−1]×R Z[v,v−1]→ Z[v,v −1]. Deﬁne a sym-"
 section_number: 6.3.2
 pages: 23-23
 source_pdf: 0605314v1.pdf
 source_sha256: 5fb8b89b432401ea
-doc_brief: "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the"
+doc_brief: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — W e construct an invariant JM of integral homology spheres M with values in a completion ˆZ[q] of the polynomial ring"
 ---
 metric bilinear form
 ⟨,⟩: RQ[[h]]×R Q[[h]]→ Q[[h]]

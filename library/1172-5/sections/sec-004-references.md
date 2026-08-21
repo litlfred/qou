@@ -1,13 +1,13 @@
 ---
 doc_id: 1172-5
-doc_title: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mat"
+doc_title: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries"
 section_id: sec-004-references
 section_title: "References"
 section_number: null
 pages: 9-10
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
-doc_brief: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{H}\mathrm{I}\mat"
+doc_brief: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries — I calculate"
 ---
 [1] S.-S. Chern and J. Simons, Characteristicforms and geometric invariants, Ann. of Math.
 (2) 99 (1974),48-69.

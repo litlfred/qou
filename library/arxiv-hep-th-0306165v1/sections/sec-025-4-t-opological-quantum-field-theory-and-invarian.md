@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson l"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-025-4-t-opological-quantum-field-theory-and-invarian
 section_title: "T opological Quantum Field Theory and Invariants of Three -Manifolds"
 section_number: 4
 pages: 34-34
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting"
 ---
 As was already pointed out earlier, the deﬁnition of the Cher n-Simons path integral
 (1.4) is independent on the choice of metric on M , even in the quantum theory. Hence,

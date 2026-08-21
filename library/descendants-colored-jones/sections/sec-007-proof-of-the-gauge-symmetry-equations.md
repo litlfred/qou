@@ -1,13 +1,13 @@
 ---
 doc_id: descendants-colored-jones
-doc_title: "Pure and Applied Mathematics Quarterly"
+doc_title: "The descendant colored Jones polynomials"
 section_id: sec-007-proof-of-the-gauge-symmetry-equations
 section_title: "Proof of the gauge symmetry equations"
 section_number: null
 pages: 15-19
 source_pdf: descendants_colored_jones.pdf
 source_sha256: f00693a5926c074f
-doc_brief: "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the"
+doc_brief: "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum"
 ---
 In this section we give the proofs of equations (26)a n d(27)w h i c hw e r es t a t e d
 in [Kas96], but proofs were ommitted.

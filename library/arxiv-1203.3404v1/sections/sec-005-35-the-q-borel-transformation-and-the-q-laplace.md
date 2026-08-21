@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1203.3404v1
-doc_title: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗"
+doc_title: "On local solutions of the Ramanujan equation and their connection formulae"
 section_id: sec-005-35-the-q-borel-transformation-and-the-q-laplace
 section_title: "The q-Borel transformation and the q-Laplace transformation"
 section_number: 3.5
 pages: 11-12
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
-doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity."
 ---
 tion following Zhang [16].
 3.5 The q-Borel transformation and the q-Laplace trans-

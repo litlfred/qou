@@ -1,13 +1,13 @@
 ---
 doc_id: 1172-3
-doc_title: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Pr"
+doc_title: "On the colored Jones polynomials of some simple links"
 section_id: sec-004-5-the-pairing
 section_title: "THE PAIRING"
 section_number: 5
 pages: 5-7
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
-doc_brief: "ON THECOLOREDJONESPOLYNOMIALSOF SOMESIMPLELINKS KAZUOHABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the Volume C"
+doc_brief: "On the colored Jones polynomials of some simple links — 9 sections: INTRODUCTION; KAUFPMAN BRACKET SKEIN MODULES; RESULTS"
 ---
 Let $L=L_{1}\cup\cdots\cup L_{m}$be an ordered nonoriented framed link in a
 3-manifold $M$. A $\mathrm{Z}[A, A^{-}1]$-linear map

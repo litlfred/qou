@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1112.5179v1
-doc_title: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA "
+doc_title: "3-Manifolds and 3d Indices"
 section_id: sec-020-a-proof-of-triality-for-the-tetrahedron-index
 section_title: "A Proof of triality for the tetrahedron index"
 section_number: null
 pages: 68-70
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-doc_brief: "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK — We"
+doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
 ---
 We would like to prove that the index is invariant under the aﬃne σeST transformation
 discussed in Section 3.2. We will prove it in the form

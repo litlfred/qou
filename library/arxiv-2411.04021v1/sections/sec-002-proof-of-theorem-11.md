@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2411.04021v1
-doc_title: "On the Gram determinants of the Specht modules Linda Hoyer ∗"
+doc_title: "On the Gram determinants of the Specht modules"
 section_id: sec-002-proof-of-theorem-11
 section_title: "Proof of Theorem 1.1"
 section_number: null
 pages: 7-19
 source_pdf: 2411.04021v1.pdf
 source_sha256: f5b6980f08d25394
-doc_brief: "On the Gram determinants of the Specht modules Linda Hoyer ∗ — For every partitionλ of a positive integern, letSλ be the corresponding Specht module of the symmetric group Sn, and let det(λ)∈ Z"
+doc_brief: "On the Gram determinants of the Specht modules — For every partitionλ of a positive integern, letSλ be the corresponding Specht module of the symmetric group Sn, and let det(λ)∈ Z denote the Gram"
 ---
 We fix a positive integern and an even partitionλ. Let r be the integer such that
 2r≤n< 2r+1. Our goal is to work towards a proof of Theorem 1.1. The following

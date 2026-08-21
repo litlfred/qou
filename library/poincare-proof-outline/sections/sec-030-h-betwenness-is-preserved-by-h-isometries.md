@@ -1,13 +1,13 @@
 ---
 doc_id: poincare-proof-outline
-doc_title: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry"
+doc_title: "Formalization of the Poincare disc model of hyperbolic geometry"
 section_id: sec-030-h-betwenness-is-preserved-by-h-isometries
 section_title: "H-betwenness is preserved by h-isometries"
 section_number: null
 pages: 77-78
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
-doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
+doc_brief: "Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Since they preserve cross-ratio and inversion, h-isometries (unit disc preserving Möbius transformations and
 conjugation) preserve h-betweeness.

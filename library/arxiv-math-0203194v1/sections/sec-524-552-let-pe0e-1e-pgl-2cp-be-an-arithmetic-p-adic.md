@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and diﬀerential equations. From C to Cp Tˆohoku-Hokkaidˆo lectures in Arithmetic Geometry Yves Andr´ e (with appendices by F. Kato and N. Tsuzuki)"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-524-552-let-pe0e-1e-pgl-2cp-be-an-arithmetic-p-adic
 section_title: "Let ∆ p(e0,e 1,e∞) ⊂ PGL 2(Cp) be an arithmetic p-adic triangle"
 section_number: 5.5.2
 pages: 188-189
 source_pdf: 0203194v1.pdf
 source_sha256: 6f35e530f07116dc
-doc_brief: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry Yves André (with appendices by F. Kato and N. Tsuzuki) — 580 sections: INTRODUCTION; INTRODUCTI"
+doc_brief: "Period mappings and differential equations. From C to Cp — 580 sections: INTRODUCTION; INTRODUCTION; INTRODUCTION"
 ---
 group. Thus, there is a totally real number ﬁeld E ⊂ Cp, and a totally
 deﬁnite quaternion algebra B over E, split at one place v above p, and a

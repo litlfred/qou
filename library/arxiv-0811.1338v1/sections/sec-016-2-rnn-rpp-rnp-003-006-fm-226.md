@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.1338v1
-doc_title: "Modern Theory of Nuclear Forces E. Epelbaum∗"
+doc_title: "Modern theory of nuclear forces"
 section_id: sec-016-2-rnn-rpp-rnp-003-006-fm-226
 section_title: "(rnn +rpp) −rnp = 0.03 ± 0.06 fm .(2.26)"
 section_number: 2
 pages: 18-20
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
-doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
+doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 These numbers for charge independence breaking (CIB)
 are taken from the recent compilation of Machleidt (18).

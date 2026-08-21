@@ -1,13 +1,13 @@
 ---
 doc_id: gambaudo-ghys-braids-signatures-2005
-doc_title: "Bull. Soc. math. France 133 (4), 2005, p. 541–579"
+doc_title: "Braids and signatures"
 section_id: sec-059-51-the-ω--signatures-of-torus-knots-we-choose-a
 section_title: "The ω -signatures of torus knots. — We choose a primitive k-"
 section_number: 5.1
 pages: 34-36
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
-doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
+doc_brief: "Braids and signatures — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 th root of unity ω and an integer p ≥ 1 and we would like to compute
 signω (σ 1 · · ·σ n− 1)p. When p is a multiple of n, this reduces to the computation

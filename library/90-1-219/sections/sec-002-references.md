@@ -1,13 +1,13 @@
 ---
 doc_id: 90-1-219
-doc_title: "Progress of Theoretical Physics, Vol. 90, No.1, July 1993"
+doc_title: "Quaternions and non-commutative geometry"
 section_id: sec-002-references
 section_title: "References"
 section_number: null
 pages: 18-18
 source_pdf: 90-1-219.pdf
 source_sha256: c2e3f2f8946c6f84
-doc_brief: "Progress of Theoretical Physics, Vol. 90, No.1, July 1993 — 3 sections: Acknowledgements; Appendix; References"
+doc_brief: "Quaternions and non-commutative geometry — 3 sections: Acknowledgements; Appendix; References"
 ---
 1) A. Connes, p. 9 in The Inter/ace of Mathematics and Particle Physics, ed. D. G. Quillen, G. B. Segal 
 and S. T. Tsou (Clarendon Press, Oxford, 1990). 

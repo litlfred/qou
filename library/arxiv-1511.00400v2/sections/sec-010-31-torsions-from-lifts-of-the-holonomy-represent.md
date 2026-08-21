@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1511.00400v2
-doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗"
+doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties"
 section_id: sec-010-31-torsions-from-lifts-of-the-holonomy-represent
 section_title: "Torsions from lifts of the holonomy representation"
 section_number: 3.1
 pages: 16-18
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
-doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 Let M 3 be a closed, orientable hyperbolic 3-manifold. Its holonomy represe n-
 tations is unique up to conjugation:

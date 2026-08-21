@@ -1,13 +1,13 @@
 ---
 doc_id: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3
-doc_title: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+doc_title: "On Ohtsuki's invariants of integral homology 3-spheres"
 section_id: sec-014-9-then
 section_title: "Then"
 section_number: 9
 pages: 12-13
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
-doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
+doc_brief: "On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres"
 ---
 Proof This follows from Formula (5.3) and the fact that AI(S3,1/,~) = -nv2(K). 
 Corollary 5.4 Suppose v3(K) # 0 for a knot K, and let I4" be the mirror image of K. Then 

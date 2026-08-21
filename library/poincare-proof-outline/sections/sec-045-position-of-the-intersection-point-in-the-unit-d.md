@@ -1,13 +1,13 @@
 ---
 doc_id: poincare-proof-outline
-doc_title: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry"
+doc_title: "Formalization of the Poincare disc model of hyperbolic geometry"
 section_id: sec-045-position-of-the-intersection-point-in-the-unit-d
 section_title: "Position of the intersection point in the unit disc"
 section_number: null
 pages: 110-112
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
-doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
+doc_brief: "Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 Check if the intersection point of one h-line with the x-axis is located more outward the edge of the disc than
 the intersection point of another h-line.

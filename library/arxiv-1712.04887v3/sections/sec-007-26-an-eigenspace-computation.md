@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "BLOCH GROUPS, ALGEBRAIC K-THEORY"
+doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
 section_id: sec-007-26-an-eigenspace-computation
 section_title: "An eigenspace computation"
 section_number: 2.6
 pages: 16-17
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "BLOCH GROUPS, ALGEBRAICK-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
+doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
 ---
 with a subgroup of ( Z/nZ)× via the map χ of Equation (4). Since F×
 n/F×n

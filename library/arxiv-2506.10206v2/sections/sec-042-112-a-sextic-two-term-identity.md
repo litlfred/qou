@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2506.10206v2
-doc_title: "5), and Q(√−7)"
+doc_title: "Analytic dilogarithm identities"
 section_id: sec-042-112-a-sextic-two-term-identity
 section_title: "A sextic two-term identity"
 section_number: 11.2
 pages: 31-32
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
-doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
+doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 Using Lemma 4, we set k = 1
 2 sec 2π

@@ -1,13 +1,13 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Michihiko Fujii 1. Introduction"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-004-0-x1-0arrowvertexdblx0-x0-x1x-1-x2x-2-x1
 section_title: "X1 =0⇑/arrowvertexdbl⇓X0 =−x0 −x1,X 1 =x2,X 2 =−x1"
 section_number: 0
 pages: 6-7
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
-doc_brief: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve Michihiko Fujii — 12 sectio"
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Introduction; Deformation of hyperbolic structur; A birational"
 ---
 −x0x2
 1 − x3

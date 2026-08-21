@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-011-33-ribbon-hopf-algebras-let-a-r-be-a-quasitriang
 section_title: "Ribbon Hopf Algebras. Let (A, R) be a quasitriangular Hopf algebra with the"
 section_number: 3.3
 pages: 7-8
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 comultiplication A, counit e and antipode s. Put u = UA ~ A. We call the triple (A, R, 
 a central element v e A) a ribbon Hopf algebra if 

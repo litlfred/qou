@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "E. Witten Institute for Advanced Study"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-049-2-for-weak-coupling-and-in-the-n-4-normalization
 section_title: "For weak coupling and in the N = 4 normalization this is at u ≈ 1"
 section_number: 2

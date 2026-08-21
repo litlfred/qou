@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0906.1500v4
-doc_title: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
+doc_title: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds"
 section_id: sec-001-l-jeﬀrey-and-j-weitsman-jw93-and-j-park-par97-fu
 section_title: "Jeﬀrey and J. Weitsman [JW93] and J. Park [Par97]. Furthermore , J. Porti [Por97]"
 section_number: L
 pages: 1-3
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
-doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
+doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
 ---
 applied the Reidemeister torsion twisted by the adjoint representa tion to the study of
 three–dimensional hyperbolic manifolds eventually with cusps via SL 2(C)-character va-

@@ -1,13 +1,13 @@
 ---
 doc_id: squier-burau-unitary-1984
-doc_title: "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY"
+doc_title: "The Burau representation is unitary"
 section_id: sec-001-2-the-burau-representation-of-b-we-view-the-brai
 section_title: "The Burau representation of B„. We view the braid group abstractly as having"
 section_number: 2
 pages: 2-3
 source_pdf: squier-burau-unitary-1984.pdf
 source_sha256: 5087ee3cb48679d1
-doc_brief: "THE BURAU REPRESENTATION IS UNITARY CRAIG C. SQUIEr' — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
+doc_brief: "The Burau representation is unitary — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
 ---
 generators a,, a2,... ,a„_, and relations all appropriate
 (1) a,a,i+1"/ + \aiai+\< °j°i> ■j\>2.

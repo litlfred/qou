@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2305.14884v2
-doc_title: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
+doc_title: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-004-23-geometric-aspects
 section_title: "Geometric aspects"
 section_number: 2.3
 pages: 8-9
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
-doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 related to the choice of the shapes z in a Neumann–Zagier datum. Let us ﬁx an ideal
 triangulation T . A solution z ∈ ( /BV \ {0, 1})N to the Neumann–Zagier equations gives rise,

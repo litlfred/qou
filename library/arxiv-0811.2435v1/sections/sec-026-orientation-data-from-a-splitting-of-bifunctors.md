@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.2435v1
-doc_title: "Stability structures, motivic"
+doc_title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations"
 section_id: sec-026-orientation-data-from-a-splitting-of-bifunctors
 section_title: "Orientation data from a splitting of bifunctors"
 section_number: null
 pages: 83-84
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 LetC be a triangulated ind-constructive category over a ﬁeld k. We will
 assume that all functors, bifunctors etc. respect this stru cture. In this section

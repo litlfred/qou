@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1112.5179v1
-doc_title: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA "
+doc_title: "3-Manifolds and 3d Indices"
 section_id: sec-001-2-actions-on-the-3d-index
 section_title: "Actions on the 3d index"
 section_number: 2
 pages: 7-11
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-doc_brief: "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK — We"
+doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
 ---
 Let us consider a 3d N = 2 SCFT T with ﬂavor symmetry U(1)N. The generalized super-
 symmetric index was deﬁned in [17], following [13–16, 43], as a trace

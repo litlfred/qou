@@ -1,13 +1,13 @@
 ---
 doc_id: bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co
-doc_title: "RESEARCHARTICLE PSYCHOLOGICALANDCOGNITIVESCIENCEMS The non-Riemannian nature of perceptual color space RoxanaBujacka,1 ,EmilyTeti a,b,JonahMiller a,ElektraCaﬀrey a,c,andTereceL.Tur"
+doc_title: "The non-Riemannian nature of perceptual color space"
 section_id: sec-000-discussion
 section_title: "Discussion"
 section_number: null
 pages: 7-8
 source_pdf: bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf
 source_sha256: 2bc66a26d3901a29
-doc_brief: "RESEARCHARTICLE PSYCHOLOGICALANDCOGNITIVESCIENCEMS The non-Riemannian nature of perceptual color space RoxanaBujacka,1 ,EmilyTeti a,b,JonahMiller a,ElektraCaffrey a,c,andTereceL.Turton a — 2 sections"
+doc_brief: "The non-Riemannian nature of perceptual color space — 2 sections: Discussion; (Fig. 9) results in¯x"
 ---
 the various color spaces). It is also a geodesic in the Euclidean
 spaces CIE CAM, CIE RGB, CIE XYZ, CIE LUV, DIN99,

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0906.1500v4
-doc_title: "TWISTED ALEXANDER INV ARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
+doc_title: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds"
 section_id: sec-020-61-bridge-from-the-polynomial-torsion-to-the-non
 section_title: "Bridge from the polynomial torsion to the non–abelian Reide meister tor-"
 section_number: 6.1
 pages: 15-16
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
-doc_brief: "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS — W e study a computational method of the hyperbolic Reidemeister torsion (also"
+doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
 ---
 sion. The following theorem proves that the non–abelian Reidemeister tor sion can be
 deduced from the polynomial torsion ∆ ϕ⊗Ad◦ρ

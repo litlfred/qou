@@ -1,13 +1,13 @@
 ---
 doc_id: s40879-023-00706-0
-doc_title: "RESEARCH ARTICLE"
+doc_title: "Bring's curve: old and new"
 section_id: sec-015-5-theta-characteristics
 section_title: "Theta characteristics"
 section_number: 5
 pages: 38-38
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
-doc_brief: "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 We now investigate the theta characteristics of Bring’s curve, which in [3] were shown
 to be equivalent to spin structures, and as such we will use the terms interchangeably.

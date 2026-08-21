@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-069-519-notons-encore-aσ-un-el-ement-de-gω-mto1n-ima
 section_title: "Notons encore aσ un ´ el´ ement de Gω ⟨MT(O[1/N])⟩ image d’un ´ el´ ement"
 section_number: 5.19
 pages: 63-64
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 aσ ∈ Gω ⟨MT(k)⟩ de 2.12, et ι(aσ) son image par 5.10.3 dans Hω. De mˆ eme pour a0
 σ

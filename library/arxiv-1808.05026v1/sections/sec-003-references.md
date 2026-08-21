@@ -7,7 +7,7 @@ section_number: null
 pages: 9-9
 source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
-doc_brief: "Palestine Journal of Mathematics — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial"
+doc_brief: "Gröbner-Shirshov bases for Temperley-Lieb algebras — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
 duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
 [1] G. M. Bergman, The diamond lemma for ring theory , Adv. Math. 29 (1978), 178–218.

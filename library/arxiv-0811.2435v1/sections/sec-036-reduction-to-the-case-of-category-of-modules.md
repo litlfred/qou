@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.2435v1
-doc_title: "Stability structures, motivic"
+doc_title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations"
 section_id: sec-036-reduction-to-the-case-of-category-of-modules
 section_title: "Reduction to the case of category of modules"
 section_number: null
 pages: 120-125
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 Here we present two special cases when the conjecture holds.
 1) Assume that the abelian category A(

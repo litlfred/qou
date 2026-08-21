@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0410233v4
-doc_title: "CUSP SHAPES UNDER CONE DEFORMA TION JESSICA S. PURCELL"
+doc_title: "Cusp shapes under cone deformation"
 section_id: sec-014-42-selecting-local-deformations
 section_title: "Selecting local deformations"
 section_number: 4.2
 pages: 19-21
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
-doc_brief: "CUSP SHAPES UNDER CONE DEFORMATION JESSICA S. PURCELL — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
+doc_brief: "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape."
 ---
 responds to a local deformation with 1–form ( ω0)j expressed in Vj as in
 equation (22). In terms of the deformation, varying ¯ s varies the rates at

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.1338v1
-doc_title: "Modern Theory of Nuclear Forces E. Epelbaum∗"
+doc_title: "Modern theory of nuclear forces"
 section_id: sec-017-2-charge
 section_title: "(charge-"
 section_number: 2
 pages: 20-21
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
-doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
+doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 independence-breaking), VIII
 2N = α (τ 3
