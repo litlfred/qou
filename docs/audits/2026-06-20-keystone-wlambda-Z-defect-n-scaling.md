@@ -171,3 +171,29 @@ conjecture carrier. Formalising `Σ_λ d_q(λ)²` as a constructed finite sum (r
 than an opaque field) and proving total mass `1` on the quotient is the smallest
 real Lean step available here; it would also let the `q ≠ 1` failure in §1 be
 stated as a theorem rather than a table.
+
+> **Update 2026-08-21 — the Lean step named above has been taken (PR #5372).**
+> `QPlancherel.lean` §3 now *constructs* the partition function as an explicit
+> `Finset` sum, `qPartitionFunctionOn s = Σ_{λ ∈ s} d_q(λ)²`, and proves
+> `sum_measureOn_eq_one` — total mass `1` for the measure normalised by it,
+> sorry-free and needing no ordering on the base ring. So the sentence above,
+> "there is **no** `Σ_λ measure λ k = 1` theorem in the corpus", is superseded
+> as of that merge, in the narrow sense that such a theorem now exists *for the
+> constructed sum*.
+>
+> **Everything else in this section stands, including its temper.** The new
+> theorem is subject to the same caveat this note already raises: normalising a
+> family by its own sum gives total mass one *by construction*, so it is
+> evidence about the constructed object only and **not** evidence that
+> `Σ_λ d_q(λ)²` is the canonical normaliser for `W_λ = d_q(λ)²/[n]_q!`. That
+> question is still open, and the `Z(n)` defect measured in §1 — with its sign
+> change at `n = 7` — is what keeps it open.
+>
+> The opaque-field critique also stands verbatim for §1's own `measure`:
+> `HasPartitionFunction.Z` remains an opaque class field carrying only `Z_pos`.
+> PR #5372 records why, with a witness rather than an assertion —
+> `badPartitionFunction` is a *lawful* instance (`Z = 2 > 0`) under which §1's
+> `measure` sums to `1/2`. The missing content is a **value** constraint, not a
+> sign constraint, which is why the bridging theorem
+> `sum_measure_eq_one_of_Z_eq_sum` must take `Z k = qPartitionFunctionOn s` as
+> a hypothesis instead of deriving it from `Z_pos`.
