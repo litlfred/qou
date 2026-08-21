@@ -99,6 +99,32 @@ MAPPING: dict[str, tuple[str, str]] = {
         "futer-gueritaud-angled",
         'library/angled-survey is "From angled triangulations to hyperbolic '
         'structures" by Futer and Gueritaud, which is that entry'),
+    # Matched on the IDENTIFIER the citing comment carries, not on the name.
+    # This is the reliable key: `garoufalidis2020` scores 0.97 against three
+    # different garoufalidis entries and is none of them — its comment names
+    # arXiv 2012.00062, which is the Peacock Patterns paper.
+    "garoufalidis2015stateintegrals": (
+        "garoufalidis-kashaev2015",
+        "the citing comment gives arXiv 1411.6062, which is that entry "
+        "(Evaluation of State Integrals at Rational Points)"),
+    "donagi1997swintegrable": (
+        "donagi1997",
+        "the citing comment gives arXiv alg-geom/9705010, which is that entry "
+        "(Seiberg-Witten Integrable Systems)"),
+    "faddeev-kashaev-volkov-2001": (
+        "faddeev-kashaev-volkov2000",
+        "the citing comment gives arXiv hep-th/0006156, which is that entry — "
+        "confirmed by identifier rather than by the year being one off"),
+    "garoufalidis2020": (
+        "garoufalidis-gu-marino2023peacock",
+        "the citing comment gives arXiv 2012.00062 (Peacock Patterns and "
+        "Resurgence in Complex Chern-Simons Theory). Name similarity pointed at "
+        "three other garoufalidis entries at 0.97 and every one was wrong"),
+    "rsz2013": (
+        "ramis-sauloy-zhang2013",
+        "the citing comment reads \"Asterisque 355 §3.3 (Ramis-Sauloy-Zhang)\" "
+        "and that entry is Asterisque vol. 355, 2013, by Ramis, Sauloy and "
+        "Zhang — RSZ is the authors' initials"),
     # Same authors, same work, the key simply carries no year.
     "fulton-harris": (
         "fulton-harris1991",
