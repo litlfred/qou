@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-21T16:38:44Z
+updated_at: 2026-08-21T16:51:00Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -762,3 +762,63 @@ Not listed individually, but they included the claim that the constants change
 moved a value (it does not — the alias is identical), and several style
 objections. Recording the count so nobody re-runs the same pass expecting a
 different yield.
+
+
+---
+
+# Two of the three confirmed findings now closed — and I had one of them backwards
+
+## binding-canonical.witness.json: regenerated, and my earlier revert was WRONG
+
+The verifier proved this decisively and I under-reacted to it. It AST-extracted
+the `set_description(...)` literal from both revisions and compared byte-for-byte
+against the committed JSON:
+
+    BASE literal == committed witness description : True
+    HEAD literal == committed witness description : False
+
+So the witness was in EXACT sync with its producer on main, and this branch is
+what broke it. Confirmed by scriptHash: main's producer hashes to 55d683d8c551,
+the value recorded in the witness; HEAD's hashes to 29e40a028c7e. The drift
+checker moves 781 -> 782 self-stale, with `comm -13` yielding exactly one new
+entry and nothing dropping out.
+
+**I had originally refused to regenerate** on the grounds that it also flips q0
+(proton-pin -> canonical) and that this was environment drift I should not
+smuggle in. **That was wrong.** `q0_anchor_manifest.json` lists
+`binding_canonical` under **`ideal_muon`**, while the committed witness carries
+`q0Anchor: "proton"`. The producer auto-selects by script stem, so running it
+yields the manifest-correct anchor. The committed witness was stale on the
+ANCHOR as well as on the label; regenerating corrects both rather than
+introducing anything.
+
+Regenerated and committed:
+
+    q0Anchor    proton -> muon          (matches manifest ideal_muon)
+    scriptHash  55d683d8c551 -> 29e40a028c7e   (matches this branch's source)
+    description "CAL-3 calibration input" -> "CAL-2 proxy — NOT CAL-3"
+    q0          1.1099785827513808... -> 1.1099785955573347...
+    tr_M_atom / tr_M_free move at the 8th digit — the anchor's doing, expected
+
+### Gate gap this exposes
+
+`q0_anchor_consistency_audit --strict` passes with **Q0_FLIP: 0** on both the
+stale and the corrected witness. It checks INTERNAL consistency — does the
+declared `q0Anchor` match the `q0Value` — and the stale witness was internally
+consistent (declared proton, used proton). It does not check MANIFEST
+CONFORMANCE, so a witness can sit on the wrong anchor indefinitely and the flip
+detector stays green. Worth its own item; not fixed here.
+
+## scan_param_fill: the undercount is now printed, not hidden
+
+A verifier wrote an independent scope-aware AST reference asking the same
+question over the same corpus and got **91 lines / 37 files** against my regexes'
+**64 / 33** — 27 missed, chiefly multi-line allocations where `dtype=` or the
+subscript target falls on a continuation line. Severity HIGH is fair: the whole
+point of the tier is recall for a class the main scan cannot see, and a printed
+count that reads as a total while missing 30% is worse than no count.
+
+Not rewritten to AST here — that is a real change to a gate script and wants its
+own review. The output now states the shortfall and instructs the reader to
+treat the number as a FLOOR. Understating with a stated error bar is defensible;
+understating silently was not.

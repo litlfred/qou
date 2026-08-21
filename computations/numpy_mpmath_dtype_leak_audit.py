@@ -408,6 +408,13 @@ def main() -> int:
           f"{sum(len(v) for v in param_fill.values())} line(s)")
     if param_fill:
         print()
+        print("  UNDERCOUNTS by ~30%: these are regexes approximating an AST")
+        print("  question. An independent scope-aware AST reference over the same")
+        print("  corpus finds 91 lines / 37 files where these find 64 / 33 — 27")
+        print("  lines missed, chiefly multi-line allocations where the `dtype=`")
+        print("  kwarg or the subscript target falls on a continuation line.")
+        print("  Treat the count as a FLOOR, not a total (bean qou-d8gq).")
+        print()
         print("  Dtype-less numpy allocations filled by subscript. NOT a defect")
         print("  list — `dtype=` is optional in honest f64 code. These are the")
         print("  places an mpf handed in through a PARAMETER would be truncated")
