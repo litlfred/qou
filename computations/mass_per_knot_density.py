@@ -19,7 +19,7 @@ rather than an order-by-order check.
 - ``ℏ_q = (q−1)/q`` — substrate Planck quantum.
 
 ``per_knot_density_vd(vol_K, q)`` is bit-identical to the legacy
-``_li_2_q_util.per_knot_density_borromean(q)`` for the Borromean nucleon — this
+``_li_2_q_util.vol_density_borromean(q)`` for the Borromean nucleon — this
 module is the Stage-0/1 foundation of the PerKnotDensity → Vol·Density purge
 (see ``docs/workplans/2026-06-04-mass-per-knot-density-stokes-delta-formalization.md``).
 
@@ -64,8 +64,8 @@ if str(HERE) not in sys.path:
 import _path_bridge  # noqa: F401, E402
 from _li_2_q_util import (  # noqa: E402
     borromean_markov_trace_h2,
-    per_knot_density_borromean,
-    per_knot_density_per_block,
+    vol_density_borromean,
+    vol_density_per_block,
 )
 
 
@@ -114,7 +114,7 @@ def density_per_block(tr_M_K: mp.mpf) -> mp.mpf:
     (H₃ for the 3-strand Borromean baryons). Pass to `per_knot_density_vd` /
     `mass_per_knot_density` as the `density` argument — i.e.
     ``per_knot_density_vd(vol_K, q, density=density_per_block(tr_M_K))`` is
-    bit-identical to `_li_2_q_util.per_knot_density_per_block(vol_K, tr_M_K, q)`.
+    bit-identical to `_li_2_q_util.vol_density_per_block(vol_K, tr_M_K, q)`.
 
     This is the SU(2)_q density: tr_M = Σ_λ y_λ χ^λ ranges over the
     Wedderburn blocks (Young diagrams λ), so it sees the per-block
@@ -179,7 +179,7 @@ def compare_density_readings(
 def per_knot_density_vd(vol_K: mp.mpf, q: mp.mpf, density: mp.mpf | None = None) -> mp.mpf:
     """PerKnotDensity as the explicit product Vol(K)·ρ(q)/ℏ_q² (the purge target).
     Defaults `density` to the Borromean ρ(q); pass a per-knot density for
-    other knots. Bit-identical to `per_knot_density_borromean(q)` for K = 𝓑₃."""
+    other knots. Bit-identical to `vol_density_borromean(q)` for K = 𝓑₃."""
     rho = density_borromean(q) if density is None else density
     return vol_K * rho / hbar_q(q) ** 2
 
@@ -262,7 +262,7 @@ def _emit_witness() -> None:
         return
     from q_parameter import Q_50_DIGIT_STR as Qs
     q = mp.mpf(Qs)
-    eq = abs(per_knot_density_borromean(q) - per_knot_density_vd(vol_borromean(), q))
+    eq = abs(vol_density_borromean(q) - per_knot_density_vd(vol_borromean(), q))
     h_id = abs((q - 1 / q) - h_from_rapidity(q))
     b2_id = abs((q + 1 / q) - bracket2_from_rapidity(q))
     O0, th = mp.mpf("938.9"), mp.mpf("0.01")
@@ -282,11 +282,11 @@ def _emit_witness() -> None:
     try:
         tr_M_proton = _load_tr_M_proton_at_q0()
         cmp_pb = compare_density_readings(q, tr_M_proton)
-        # per_knot_density_vd with per-block density ≡ _li_2_q_util.per_knot_density_per_block.
+        # per_knot_density_vd with per-block density ≡ _li_2_q_util.vol_density_per_block.
         # Compute Vol(𝓑₃) once (precision-dependent) and reuse for both.
         vol = vol_borromean()
         vd_pb = per_knot_density_vd(vol, q, density=density_per_block(tr_M_proton))
-        pb_equiv = abs(vd_pb - per_knot_density_per_block(vol, tr_M_proton, q))
+        pb_equiv = abs(vd_pb - vol_density_per_block(vol, tr_M_proton, q))
     except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError) as e:
         # Catch only the expected chi-cache load failures; an explicit skip
         # datum is emitted below so a missing cache cannot silently pass as
@@ -323,10 +323,10 @@ def _emit_witness() -> None:
         w.add_assertion(name, computed=1 if val < tol else 0, expected=1,
                         source=f"{name}: |Δ| = {mp.nstr(val, 4)} < {mp.nstr(tol, 1)}")
     if pb_equiv is not None:
-        # per_knot_density_vd(density=per_block) reproduces per_knot_density_per_block exactly.
+        # per_knot_density_vd(density=per_block) reproduces vol_density_per_block exactly.
         w.add_assertion("per_knot_density_vd_per_block_equiv",
                         computed=1 if pb_equiv < tol else 0, expected=1,
-                        source=f"per_knot_density_vd(density=tr_M) ≡ per_knot_density_per_block: "
+                        source=f"per_knot_density_vd(density=tr_M) ≡ vol_density_per_block: "
                                f"|Δ| = {mp.nstr(pb_equiv, 4)} < {mp.nstr(tol, 1)}")
     out = w.save()
     print(f"  Witness: {out.name}")
@@ -339,7 +339,7 @@ if __name__ == "__main__":
     print("Mass = Vol × Density — wired-up compute")
     print(f"  [2]_q = 2cosh(log q₀) = {mp.nstr(bracket2_from_rapidity(q), 12)} (recurring Hecke weight)")
     print(f"  per_knot_density ≡ Vol·ρ/ℏ²: |Δ| = "
-          f"{mp.nstr(abs(per_knot_density_borromean(q) - per_knot_density_vd(vol_borromean(), q)), 3)}")
+          f"{mp.nstr(abs(vol_density_borromean(q) - per_knot_density_vd(vol_borromean(), q)), 3)}")
     try:
         _tr = _load_tr_M_proton_at_q0()
         _c = compare_density_readings(q, _tr)
