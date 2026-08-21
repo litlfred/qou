@@ -953,3 +953,72 @@ Summary of what changed in the understanding of each:
    obligations and needs a Lean build this container does not have. The
    old-muon string is the mirror: 30 of 43 occurrences in `.md`, 27 of them
    labelled "(50 dps)" on a 16-digit value.
+
+---
+
+## From agent:r06 (mass-theory nq_00) — 2026-08-21
+
+Fourteen findings, each recomputed by the agent rather than asserted. The
+four that carry consequences:
+
+1. **`deuteron-binding-dressing-proton-net`: `+0.12%` is the wrong route's
+   number.** The prose credits the `(1−h/2)` dressing with `+0.12%` of
+   AME2020. The block's own witness
+   (`probes/probe-d-dressing-is-proton-net.witness.json`) records
+   `B_cand_err_vs_AME_pct = 0.28666` for exactly that route; `0.11882`
+   belongs to `B_via_kashiwara_qbeta_MeV`, which substitutes the Kashiwara
+   Q_β for the ansatz one. The claim is **2.4× overstated**, and the same
+   figure is repeated in the `.ts` authorNotes. Reproduced independently:
+   `h = 0.20906030`, `net(p) = 0.89546985`, `1.1199 × 0.89546985 = 1.002866`.
+2. **A convention-C survivor that is load-bearing, not cosmetic.**
+   `deuteron-fusion-frame` sets `z = 1/[2]_v = 1/(√q + 1/√q) = 0.49932` —
+   z_C exactly — and calls it "the Ocneanu–Markov normalization … not a
+   modeling parameter". Its marginal-stability identity `g²(1+[2]_v²) = 1`
+   holds **iff** `z = 1/[2]_v`, so the block's "rigidity of the integer 5"
+   argument is convention-C-specific and does **not** survive the swap to
+   canonical D. `delta-max-uniform-bound` carries the same z_C value.
+3. **"Systematically under-predicts by 30% to 76%" is contradicted by the
+   block's own Table 2.** The deuteron is **over**-predicted (+41%), and the
+   under-prediction range over the other five rows is 32–76%. The sign flip
+   is informative rather than incidental: D is the only isotope with no
+   same-flavour pair, so `Δ_{T=1}` vanishes there.
+4. **"Sub-percent, predictive not calibrated" scores a calibration
+   pass-through.** The baseline `Z·m_p + N·m_n + Z·m_e` is CODATA input
+   carrying >99 % of the mass, so "sub-percent on the total" restates
+   "binding is under 1 % of the mass" — the ⁴He 0.576 % error *is* the
+   21.5 MeV binding shortfall over 3728.40 MeV. Same class as the
+   2026-08-18 `m_e`-scored-as-a-beat correction.
+
+Table arithmetic, with the identities derived rather than guessed:
+
+- `cyclotomic-orbit-sum-all-depths-table1` row (n=5, N=7) prints the
+  fraction `16806/16807` against its own decimal `−1.03650`. From
+  `Σ_j Cl_n(2πj/N) = −ζ(n)(N^{n−1}−1)/N^{n−1}` the value is **2400/2401**
+  (= −1.036496); the printed fraction gives −1.036866. The other four rows
+  satisfy the formula.
+- `cyclotomic-trilog-imaginary-closed-form-table`: the closed form
+  `(n−1)(n−2)π³/(3n³)` is exactly right, but three decimals are wrong —
+  n=6 `0.95672` (true 0.9569838), n=7 `0.90369` (true 0.9039731), n=12
+  `0.65779` (true 0.6579264).
+- Two tables in one chapter disagree on one quantity: `−1.17751` vs
+  `−1.17753` for N=7 (true −1.177525130).
+- `canonical-braid-interface-composition-table3` row 1 gives `(1,1,1)` for
+  `pppnnn`, but the parent block's own closed form gives `(2,1,2)`; the
+  printed triple is the A=4 answer and duplicates row 3. The table is also
+  **orphaned** — nothing in the parent `.md` references it.
+- `n_pp` means two different things one chapter apart: `Z(Z−1)/2` (pairs)
+  in `derived-mass-formula-light-isotopes`, `max(0, Z−1)` (adjacent
+  interfaces) in `canonical-braid-interface-composition`. They agree at
+  Z=2 and diverge at Z=3.
+
+Infrastructure: `dt-spectrum-bar-eigenspace.ts` has `uses: []` while its
+`.md` cross-references `conj:stokes-dt-bps-bridge` twice — §3b propagation
+is *not* breached (the statement is unconditional integer arithmetic) but
+the dependency is invisible to the graph. `descent-rate-probe-sim.md` is
+empty (1 byte), so the `β(d) = 1` evidence that `rem:mass-tower-syt-cells`
+cites *through* it is unreachable from the paper.
+
+Recorded clean, so a later pass does not "fix" them: `Vol(4₁) =
+2·Cl₂(π/3)` is right in both name and coefficient here, and the `T_w` in
+`e-infinity-page-identifications` is the Hecke basis element sanctioned by
+the cheat sheet, not a §7a generator violation.
