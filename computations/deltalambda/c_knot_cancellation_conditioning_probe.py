@@ -337,7 +337,7 @@ def main() -> int:
     print(f"\nwitness -> {out.name}")
 
     # Assertions — the finding must be reproducible, not narrated.
-    assert abs(float(per["D"]["markov_norm_sum_yf"]) - 1.0) < 1e-6, "Markov normalisation Σ y_λ f^λ = 1 broken"
+    assert fabs(mpf(per["D"]["markov_norm_sum_yf"]) - 1) < mpf("1e-6"), "Markov normalisation Σ y_λ f^λ = 1 broken"
     for k in per:  # triangle inequality: κ ≤ 1 by construction, a self-check on the arithmetic
         assert kvals[k] <= 1, f"κ({k}) > 1 — |Σt| ≤ Σ|t| violated, arithmetic is wrong"
     assert kvals["4He"] < mpf("0.01"), "⁴He cancellation (κ < 1%) is the core measurement"

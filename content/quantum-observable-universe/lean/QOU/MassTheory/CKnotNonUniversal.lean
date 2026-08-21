@@ -9,7 +9,16 @@ the open Δ_λ gate (bean `qou-3q7t`).
 The companion probe `c_knot_nonuniversal_pinned_weight_probe.py` measures, with this ONE derived weight
 (all 0-fit, exact mpmath):
 
-  `C_knot(D) = 5.85`, `C_knot(T) = 4.44`, `C_knot(³He) = 3.29`, `C_knot(⁴He) = 9.31`  → spread 2.83×.
+  `C_knot(D) = 6.0679`, `C_knot(T) = 6.7061`, `C_knot(³He) = 4.9054`, `C_knot(⁴He) = 290.007`
+  → spread 59.12×.  (Convention D — the constants in this file are already the D values; only
+  this header line still carried the superseded convention-C figures `5.85 / 4.44 / 3.29 / 9.31`,
+  spread `2.83×`, which contradicted the refresh note below it.  Corrected 2026-08-21, PR #5406.)
+
+  The `⁴He` entry is ILL-CONDITIONED and should not be read as `290×` of missing physics: the
+  master sum is alternating and `κ(⁴He) = |S| / Σ_λ|t_λ| < 1/100`, so a sub-percent per-block
+  correction sends `S(⁴He)` to zero.  See `CKnotCancellationConditioning.lean`, which also proves
+  the mirror pair used below is well conditioned (`κ(T), κ(³He) > 1/4`) — the exclusion in THIS
+  file is therefore unaffected.
 
 **The formalize-first invariant (this file):** the triton `T` and helion `³He` sit at the SAME strand
 count `H₉`, so any *level-only* closure `B(K) = g(n_K, q₀) · m_e · S(K)` would force the SAME rescale
