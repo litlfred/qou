@@ -162,4 +162,56 @@ theorem rep_unbounded [Markov Rep] {n : ℕ} (hn : Rep n) :
   have := hM _ this
   omega
 
+/-! ## Worked instance: the knot `6₁`
+
+The four numbers below are **measured**, not recalled:
+[`computations/homfly_braid_index_mfw.py`](../../../../../../computations/homfly_braid_index_mfw.py)
+computes the exact two-variable HOMFLY of a braid closure by
+descending-diagram skein recursion in integer Laurent arithmetic, and reads
+`dmin`/`dmax` off it. The producer is gated on textbook HOMFLY for five links,
+on the Conway specialisation `P(v=1, z) = ∇(z)` for seven knots, and on
+agreement with the tabulated braid index for the six knots other than `6₁`.
+
+`e = 1` is the writhe of the 4-strand word `[1,1,2,-1,-3,2,-3]`, whose closure
+SnapPy identifies as `6₁`/`m032`. That word is what supplies the **upper**
+bound; it is a computed fact about a diagram, so it is cited here rather than
+proved. What Lean adds is the **lower** bound and its consequence — and note
+that with `spread = 6` and `n = 4` both MFW inequalities are equalities, so the
+witness is tight on both sides. This replaces the literature-recalled
+`braid index(6₁) = 4` that `qou-xpgq` flagged as unverified and load-bearing.
+-/
+
+/-- The measured MFW input for `6₁`: HOMFLY `v`-degree window `[-2, 4]`, and the
+4-strand representative of writhe `1`. -/
+def sixOne : MFWWitness where
+  n := 4
+  e := 1
+  dmin := -2
+  dmax := 4
+  one_le_n := by norm_num
+  mfw_lower := by norm_num
+  mfw_upper := by norm_num
+  dmin_le_dmax := by norm_num
+
+/-- The MFW window for `6₁` is **tight on both sides**: the derived bound
+`spread + 2 ≤ 2n` holds with equality at `n = 4`. -/
+theorem sixOne_tight : (sixOne.dmax - sixOne.dmin) + 2 = 2 * sixOne.n := by
+  norm_num [sixOne]
+
+/-- **No 3-strand braid closes to a link with `6₁`'s HOMFLY degree window.**
+This is the step that separates `4` from `3`, and it is the first knot in the
+producer's set where the bound has to do so: `4₁` and `5₂` both have braid
+index `3`, so they exercise the machinery without testing this discrimination. -/
+theorem sixOne_not_three_strand :
+    ¬ ∃ w : MFWWitness, w.n = 3 ∧ w.dmin = -2 ∧ w.dmax = 4 :=
+  no_representative_of_spread_gt 3 (-2) 4 (by norm_num)
+
+/-- **Every representative of `6₁` needs at least 4 strands.** Together with the
+computed 4-strand closure cited above, the braid index of `6₁` is exactly `4`. -/
+theorem sixOne_four_le_strands (w : MFWWitness)
+    (hmin : w.dmin = -2) (hmax : w.dmax = 4) : 4 ≤ w.n := by
+  have := w.braid_bound
+  rw [hmin, hmax] at this
+  linarith
+
 end QOU.Knot.MortonFranksWilliams
