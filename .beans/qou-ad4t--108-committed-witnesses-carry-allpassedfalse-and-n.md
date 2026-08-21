@@ -356,3 +356,54 @@ Re-scope `PROV_EXEMPT_NO_READER` to exclude witnesses that an audit reads, and
 re-measure. That is a one-predicate change and it will move witnesses from a
 silent bucket into a counted one — the right direction, and it will make the
 number worse, which is the point.
+
+## My fix to the exemption was WRONG — measured, 10/10 false positives
+
+Implemented the "no reader AND no audit reads it" idea as: when a witness has no
+`scriptFile`, treat a single `.py` mention as a real reader rather than as its
+own producer (threshold `> 1` -> `>= 1`). Result:
+
+    PROV_EXEMPT_NO_READER   239 -> 72     (-167)
+    PROV_MISSING             44 -> 210    (+166)
+
+Then I sampled the newly-flagged class (no `scriptFile`, exactly 1 `.py`
+mention; 162 members) and asked whether that single mention WRITES the witness
+or reads it. **10 of 10 were writers** — filename-matched producers containing
+`WitnessBuilder` / `json.dump`:
+
+    qbeta-5two-route13-rogers-extension  <- qbeta_5two_route13_rogers_extension_probe.py
+    hh1-h5-bar-parity                    <- hh1_h5_bar_parity.py
+    c-knot-not-universal                 <- deltalambda/c_knot_not_universal_probe.py
+    ... 7 more, same shape
+
+**REVERTED.** My premise was a category error, and the same one I have now made
+repeatedly today: `scriptFile` absent means *provenance was not recorded*, NOT
+*no producer exists*. Almost all of these have producers that simply never wrote
+themselves down. The original `> 1` heuristic is right for them, and my change
+turned one true positive into ~162 false ones.
+
+The `chi-helium-3-h9-...-matrix-m` miss is still real. The correct predicate is
+not "does a producer field exist" but **"does the single mentioning `.py`
+actually WRITE this witness?"** — which is exactly the WRITES/UNCONFIRMED verdict
+that `computations/witness_provenance_audit.py` (the *other* file of that name,
+see the basename hazard above) already computes. Wiring that verdict into
+`has_reader` is the right fix and is not a one-predicate change; it needs the two
+tools joined.
+
+## And the count itself is not reproducible
+
+While reverting I re-ran on a clean tree, twice:
+
+    total scanned 2682   PROV_MISSING 55   PROV_EXEMPT_NO_READER 227   (stable, x2)
+
+My commit two steps earlier recorded **44 / 239** from the same script on what
+should have been the same tree, and I cannot reproduce it. I am not going to
+guess at the cause — `py_counts` is built from a `grep` over `computations/`,
+so anything that adds or removes a `.py` mention of a witness name shifts the
+exemption boundary, and this session added files. But that is a hypothesis, not
+a finding.
+
+What it demonstrates is worth more than the number: **this audit's headline
+count depends on the state of unrelated files**, so two honest runs days apart
+can disagree without anything relevant having changed. A gate cannot be built on
+it until that is understood. Committing the reproducible 55/227.
