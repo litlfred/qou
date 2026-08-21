@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:03:21Z
-updated_at: 2026-08-21T22:04:00Z
+updated_at: 2026-08-21T22:42:25Z
 ---
 
 ## What was measured
@@ -82,3 +82,63 @@ There is no cheap tier. Classify by running, not by grepping.
 
 Also: `q_beta_complex_q_test1_phaseA.py` exceeds 300 s and did not finish --
 long-compute, needs the tee'd-log discipline.
+
+
+---
+
+## RESOLVED 2026-08-21 — it is the CODATA 2018 -> 2022 update. Not a mystery, and NOT a blocker.
+
+The "likely cause" above guessed `a4d9906659` and guessed the mechanism wrong
+(I suspected the VolDensity->PerKnotDensity rename changed behaviour). The
+commit is right; the mechanism is not. Determined by inverting the committed
+q_0 rather than by reading code.
+
+These producers DERIVE q_0 from CAL-2 rather than reading a pin:
+
+    hbar_q^2 = Vol(4_1) / (m_mu/m_e)
+    q_0      = 1 / (1 - hbar_q)
+
+so q_0 is invertible back to the muon ratio that produced it:
+
+    committed witness  =>  m_mu/m_e = 206.7682830   <- CODATA 2018
+    main today         =>  m_mu/m_e = 206.7682827   <- CODATA 2022
+
+`a4d9906659` CREATED `computations/codata_2022_source.py` (465 lines, all new)
+carrying `M_MU_OVER_M_E = 206.7682827`. The witnesses predate it and were
+never regenerated.
+
+Consistency check on the magnitude: the ratio moved 1.45e-9 relative;
+d(q_0)/q_0 = 0.55 * d(cal2)/cal2 for this map, giving ~8e-10 -- which is what
+was measured. The arithmetic closes.
+
+Confirmed across the class: all four of the six witnesses that carry a `q_0`
+field record the identical value 1.1099785955541805752806677289528087346650276795181,
+i.e. the CODATA-2018 q_0. (`q-beta-complex-q-test1-phasea-v2` has no `q_0`
+field; `gap-a4-T2-per-knot-vol-probe` not checked this way.)
+
+### What this changes
+
+**The `qou-ckbv` drain is NOT blocked.** Regenerating these witnesses is
+correct and safe -- the diff is explainable rather than mysterious, and the
+CODATA update is a deliberate corpus change that these witnesses simply have
+not caught up with.
+
+The remaining requirement is DISCLOSURE, not investigation: a commit that
+regenerates them must state that the bulk of the numeric diff is the CODATA
+2018 -> 2022 update and NOT the Vol(4_1) correction, which contributes only at
+digit 21. Two effects, one diff, both named.
+
+### Distinct from PR #5436's mechanism -- checked, does not apply
+
+#5436 documents unlisted producers falling through `q0_anchor_manifest.json`
+to the proton default, flipping muon -> proton (11.5 ppb). That is NOT this:
+these producers never consult the manifest, and 0.8 ppb is the wrong
+magnitude and the wrong direction. Two different stale-q_0 mechanisms in the
+same session; do not conflate them.
+
+### Coordination
+
+PR #5423 ("CODATA drain (7ot6-a): route the constants modules at the registry,
+not literals") is live on the same input. Any regeneration of these six should
+land after, or coordinate with, that work -- otherwise they get regenerated
+twice.
