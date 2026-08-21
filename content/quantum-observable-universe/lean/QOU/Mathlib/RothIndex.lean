@@ -50,6 +50,7 @@
 import Mathlib.Algebra.MvPolynomial.Equiv
 import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.Order.Ring.Rat
+import Mathlib.Algebra.MvPolynomial.Division
 
 namespace MvPolynomial
 
@@ -365,6 +366,73 @@ theorem index_le_index_iterate_pderiv_add [DecidableEq σ] (d : σ → ℕ) (α 
           rw [← Function.iterate_succ_apply, hsplit, WithTop.coe_add, add_assoc]
       _ = index d α ((pderiv j)^[n + 1] P)
             + ((((n + 1 : ℕ) : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) := by push_cast; ring_nf
+
+/-! ### Bounding the index from BELOW
+
+Every result above bounds the index from above.  Roth's lemma also needs the other
+direction: its auxiliary polynomial is *constructed* to vanish to high order, and the index
+is what that construction buys. -/
+
+/-- A single term is at most the whole weight, since every term is non-negative. -/
+theorem le_idxWeight (d : σ → ℕ) (i : σ →₀ ℕ) (j : σ) :
+    (i j : ℚ) / (d j : ℚ) ≤ idxWeight d i := by
+  classical
+  by_cases hj : i j = 0
+  · rw [hj]
+    simpa using idxWeight_nonneg d i
+  · exact Finset.single_le_sum (f := fun j' => (i j' : ℚ) / (d j' : ℚ))
+      (fun j' _ => div_nonneg (Nat.cast_nonneg _) (Nat.cast_nonneg _))
+      (Finsupp.mem_support_iff.mpr hj)
+
+/-- **High-order vanishing in one variable forces a lower bound on the index.** -/
+theorem le_index_of_forall_le_support (d : σ → ℕ) (α : σ → R) (P : MvPolynomial σ R)
+    (j : σ) (k : ℕ) (h : ∀ i ∈ (translate α P).support, k ≤ i j) :
+    (((k : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) ≤ index d α P := by
+  rw [le_index_iff]
+  intro i hi
+  -- ⚠ `gcongr` leaves this side goal because `h i hi` is not a local hypothesis; in
+  -- `le_index_of_X_pow_dvd_translate` below the analogous fact *is* in context and `gcongr`
+  -- discharges it itself, so the follow-up must be omitted there.  Both spellings are
+  -- correct in their own context and copying either into the other fails.
+  have hstep : (k : ℚ) / (d j : ℚ) ≤ (i j : ℚ) / (d j : ℚ) := by
+    gcongr
+    exact_mod_cast h i hi
+  exact_mod_cast le_trans hstep (le_idxWeight d i j)
+
+/-! ### Divisibility, support, and the index -/
+
+/-- Divisibility by a monomial is a condition on the support. -/
+theorem monomial_one_dvd_iff_support {s : σ →₀ ℕ} {x : MvPolynomial σ R} :
+    monomial s (1 : R) ∣ x ↔ ∀ i ∈ x.support, s ≤ i := by
+  rw [monomial_one_dvd_iff_modMonomial_eq_zero]
+  constructor
+  · intro h i hi
+    by_contra hle
+    rw [mem_support_iff] at hi
+    exact hi (by rw [← coeff_modMonomial_of_not_le x hle, h, coeff_zero])
+  · intro h
+    ext i
+    by_cases hle : s ≤ i
+    · rw [coeff_modMonomial_of_le x hle, coeff_zero]
+    · rw [coeff_modMonomial_of_not_le x hle, coeff_zero]
+      by_contra hne
+      exact hle (h i (mem_support_iff.mpr hne))
+
+/-- **Divisibility by a power of a variable, as a support condition.**
+
+Mathlib has the univariate `Polynomial.X_pow_dvd_iff`; multivariately it has only
+`X_dvd_iff_modMonomial_eq_zero`, the first-power case. -/
+theorem X_pow_dvd_iff_support {j : σ} {k : ℕ} {x : MvPolynomial σ R} :
+    (X j : MvPolynomial σ R) ^ k ∣ x ↔ ∀ i ∈ x.support, k ≤ i j := by
+  rw [X_pow_eq_monomial, monomial_one_dvd_iff_support]
+  exact forall_congr' fun i => forall_congr' fun _ => Finsupp.single_le_iff
+
+/-- The index lower bound, phrased as divisibility of the translate. -/
+theorem le_index_of_X_pow_dvd_translate (d : σ → ℕ) (α : σ → R) (P : MvPolynomial σ R)
+    (j : σ) (k : ℕ) (h : (X j : MvPolynomial σ R) ^ k ∣ translate α P) :
+    (((k : ℚ) / (d j : ℚ) : ℚ) : WithTop ℚ) ≤ index d α P := by
+  rw [X_pow_dvd_iff_support] at h
+  exact le_index_of_forall_le_support d α P j k h
 
 /-! ### Next, in order
 

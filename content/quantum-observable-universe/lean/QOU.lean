@@ -1081,3 +1081,8 @@ import QOU.Mathlib.DirectionalWronskian
 -- orders 0 and 1).  Mirrors the univariate m = 2 converse, with totalDegree for natDegree
 -- and IsRelPrime for Bezout coprimality.
 import QOU.Mathlib.BoundedOrderWronskian
+-- qou-4lbh -- staged for upstream Mathlib: Wronskians of SEPARATED polynomials.  For
+-- P = sum_k phi_k(x) psi_k(y) with the variable groups disjoint, the mixed generalized
+-- Wronskian factors into an x-Wronskian times a y-Wronskian -- the engine of Roth's lemma's
+-- induction on the number of variables.
+import QOU.Mathlib.SeparatedWronskian
