@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T23:25:59Z
-updated_at: 2026-08-15T23:26:33Z
+updated_at: 2026-08-21T21:58:04Z
 ---
 
 Owner directive 2026-08-15: **keep these refs, bean them** — do not delete.
@@ -150,3 +150,108 @@ Not "57 separate formalisations". It is:
 
 The owner directive to **keep the refs and bean them** is unaffected — repointing
 preserves intent, and nothing here deletes a ref.
+
+
+---
+
+## CORRECTION (2026-08-21) — all 57 are false positives; the real number is 9, and this bean lists none of them
+
+**Re-measured. Every one of the 57 entries above has its declaration in
+the block's own sibling `.lean` file — and had it at the commit this bean
+was written** (`366dd77de4`, main as of 2026-08-15T23:25Z). Not
+"formalised since": present the whole time, in candidate 1 of the
+resolver, the first place it looks.
+
+| check | result |
+|---|---|
+| 57 entries, leaf declared anywhere in `content/` today | **57 / 57** |
+| 57 entries, declared **in the sibling `.lean`** at `366dd77de4` | **57 / 57** |
+| genuinely absent | **0** |
+
+Three by hand, since a table is easy to disbelieve:
+
+- `brings-surface/color-sector-coords.ts` → `qou:QOU.ColorSectorCoords` —
+  `structure ColorSectorCoords` at `color-sector-coords.lean:37`.
+- `information-theory/planck-time.ts` → `qou:QOU.planckTime` —
+  `def planckTime` at `planck-time.lean:33`.
+- `braids-and-knots/q-casimir-classical-limit.ts` →
+  `qou:QOU.QCasimirEigenvalue_classical_limit` —
+  `theorem QCasimirEigenvalue_classical_limit` at line 127.
+
+The first two are **`definition`**-kind, where the Lean sibling is
+*enforced*. `bun run scripts/run-validate.ts content/quantum-observable-universe`
+passes both and reports exactly **one** unresolved-Lean error paper-wide.
+If their refs did not resolve, validate would error on them. It doesn't.
+That is the repo's own resolver contradicting this bean, not my script.
+
+**Consequence: the owner directive recorded at the top — "keep these refs,
+bean them — do not delete" — was taken on a measurement that was wrong for
+every row.** Nothing was at risk of deletion; there was no backlog here.
+The directive itself is unaffected as a *policy* (keeping an intended
+formalisation target is still the right default) — it just was not
+answering a real question.
+
+### What the number actually is: 9
+
+Scanning all **1274** `lean.ref`s in `content/` against a declaration index
+built from all 11,028 `.lean` files, **9** name a leaf identifier that is
+declared nowhere. All 9 also have **no sibling `.lean` at all**, and none
+of them appears in the 57 above — so this bean is wrong in both
+directions: 57 false positives, 9 false negatives, zero overlap.
+
+- **`conjecture`** [`gs-spectral-decomposition-existence`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/gs-spectral-decomposition-existence.md) → `qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition`
+- **`proposition`** [`cyclotomic-depth3-dimension-synthesis`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md) → `qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound`
+- **`proposition`** [`confined-knot-binding`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/confined-knot-binding.md) → `qou:QOU.BraidKnot.confined_knot_binding`
+- **`proposition`** [`dt-spectrum-bar-eigenspace`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/dt-spectrum-bar-eigenspace.md) → `qou:QOU.QBeta.FiveTwoDTSpectrumSplit`
+- **`proposition`** [`cyclotomic-dimension-synthesis-all-depths`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md) → `qou:QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths.dimension_synthesis_all_depths`
+- **`proposition`** [`phi-b-unitary-bar-odd`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md) → `qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even`
+- **`proposition`** [`qbeta-canonical-markov-weights-explicit-instance`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.md) → `qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance`
+- **`definition`** [`qou-motivic-galois-instance`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md) → `qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar`
+- **`proposition`** [`type-b-folded-crystal-combinatorics`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.md) → `qou:QOU.Archimedean.TypeBFoldedCrystalCombinatorics.content_sum_plus_transpose_content_sum_eq_zero`
+
+**One of the nine is load-bearing.** `qou-motivic-galois-instance` is a
+`definition`, so its missing Lean is the single error that makes
+`run-validate content/quantum-observable-universe` exit non-zero — the red
+every branch in flight has been carrying as inherited noise. Its class
+`MotivicGaloisCharacter` exists
+([`MotivicGaloisCharacter.lean:60`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean));
+what is missing is the QOU **instance**, i.e. a
+`frobenius_at : Nat.Primes → Mhat` for the substrate. That is real
+mathematics (Habiro → Frob_p), not a rename — do **not** discharge it with
+a trivial instance.
+
+**The other eight are reported by nothing.** They are `proposition` /
+`conjecture` kind, where the Lean sibling is only *expected*; validate's
+"no Lean declaration yet" warning fires on a **missing `lean` field**, not
+on a present-but-unresolvable one. So a ref pointing at a declaration that
+has never existed is quieter than having no ref at all.
+
+### Why this happened, and the reason I am confident about the shape
+
+I cannot see the script that produced the 57, so I will not assert its
+mechanism. I can report that I reproduced this exact failure **in my own
+scan, this session, twenty minutes before finding it here**: my decl-index
+regex used `^` without `re.MULTILINE`, so it matched only at position 0.
+Index: **0 declarations**. Every ref then reads "declared nowhere", and
+the output looks like a perfectly ordinary finding — 402 unresolved refs,
+plausible file paths, no error anywhere. A second bug (indexing only
+`lean/` and not the chapter-dir siblings) then gave me 13 with 4 more
+false positives. The number went 402 → 13 → 9 across three fixes to the
+instrument, and only the last is defensible.
+
+An empty or under-populated index is the natural way to get "57 refs
+resolve to nothing" out of a corpus where all 57 resolve. Any future scan
+of this shape should carry the guard I now use: assert the index is
+non-empty and that a handful of known-good names are in it before
+believing a single negative result.
+
+This is the same class as `qou-6y28` (a manifest nothing could load
+reported as clean) one level up: **the instrument that checks whether
+references resolve was itself broken, and its output became a durable
+record and an owner decision.**
+
+### Disposition
+
+Bean re-scoped, not closed: the 57 rows are retained as the record of what
+was claimed, now labelled false. The live work is the 9 — eight
+formalisations plus one `definition` that gates paper-wide validation.
