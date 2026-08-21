@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T21:09:10.066454+00:00",
-  "commitSha": "9c6a637f9d61b5e1567011dd143daa200a15593e",
+  "computedAt": "2026-08-21T21:10:47.574173+00:00",
+  "commitSha": "5c8fc6a8d369d1f43dcefffc0683fbddedb155fc",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -40,7 +40,7 @@
       "Q0_AMBIGUOUS": 18,
       "Q0_INDEPENDENT": 23,
       "Q0_INDEPENDENT_NO_REASON": 1,
-      "Q0_ANCHOR_MISSING": 1909,
+      "Q0_ANCHOR_MISSING": 1914,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
       "Q0_PARSE_ERROR": 0,
@@ -1606,6 +1606,10 @@
           "detail": ""
         },
         {
+          "witness": "deuteron-wall-qborel-resummation.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "deuteron_trefoil_qinvariant_closed_form.witness.json",
           "detail": ""
         },
@@ -1899,6 +1903,10 @@
         },
         {
           "witness": "wlambda-covariance-epic-A2-tail-second-instance.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "wlambda-covariance-epic-M1-antidiagonal-reformulation.witness.json",
           "detail": ""
         },
         {
@@ -2411,6 +2419,14 @@
         },
         {
           "witness": "he4-qreeb-phase-falsification.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "he4-rho-F-cpt-mechanism-refuted.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "he4-rho-F-two-row-stratum-search.witness.json",
           "detail": ""
         },
         {
@@ -3127,6 +3143,10 @@
         },
         {
           "witness": "molecular-experimental-refs.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "mu-lambda-content-casimir.witness.json",
           "detail": ""
         },
         {
