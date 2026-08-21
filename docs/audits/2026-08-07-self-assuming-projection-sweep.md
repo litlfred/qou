@@ -473,3 +473,153 @@ There are **two** declarations named `variational_transport`, in
 `lean/QOU/QuantumObservableUniverse/GaugeTheory.lean`. Only the first is
 vacuous; the sweep never flagged the second. A name-based edit would have hit
 the wrong one.
+
+---
+
+## 2026-08-21, trivial-existentials — a third silent detector gap, then 16 → 0
+
+`trivial-existential` was the category the second pass added. Dispositioning
+its 13 findings meant re-reading the detector once more, and it was short
+again — the same *kind* of gap for the third time in this bean.
+
+### `⟨_, rfl⟩` was invisible, and it is the stronger tell
+
+`trivial_existential_witness` required the witness to be **written out**:
+
+```
+⟨e, rfl⟩   matched
+⟨_, rfl⟩   did not
+```
+
+Both are the same defect. The second is worse: the author did not even name the
+value, and the elaborator recovered it by unifying `rfl`. Fixed by splitting the
+conclusion at its top-level `=` and accepting `_` when exactly one side is the
+bound variable and the other does not mention it.
+
+**Three more findings, and the ranking is the point:**
+
+| decl | file | `lean.ref` target? |
+|---|---|---|
+| `knot_factor_amphicheiral` | `QOU/BraidKnot/KnotFactorAmphicheiral.lean:54` | **yes** — `cor:knot-factor-amphicheiral` |
+| `magic_crossing_Q_value` | `compound-beta-shell-calibration.lean:41` | no |
+| `compound_beta_y_target_extraction` | `compound-beta-shell-calibration.lean:50` | no |
+
+`knot_factor_amphicheiral` sits **thirteen lines above**
+`knot_factor_amphicheiral_value`, which the old detector *did* report. Same
+file, same shape; the reported one is an unreferenced throwaway over an
+arbitrary `h`, the unreported one is the block's `lean.ref` target carrying two
+substantive-looking hypotheses. **The scan was blind to exactly the more
+consequential of the two** — the same bias the binder-depth bug had.
+
+Three silent gaps now (binder depth → conclusion colon → unnamed witness), all
+with the same signature: unparsed and clean produced identical output.
+
+### `vacuous-by-design` — an opt-out that does not hide
+
+One finding is trivial **on purpose**. `qou_standardPart_image_exists`
+(`QOU/AppendixSurreals/Conjectures.lean`) lives in a section headed
+*"Trivially-derivable lemmas (factored out of conjectures)"*: it records that a
+conjunct of the original `VacuumEpsilon` was provable for every `SQ` and so was
+not part of the conjectural kernel, and it is **used**, by
+`VacuumEpsilon'.exists_epsilon_vacuum_with_st_image`, to rebuild the original
+wider statement. Deleting it would destroy a narrowing audit.
+
+Marked in source:
+
+```lean
+-- vacuous-by-design: the triviality IS the content. …
+theorem qou_standardPart_image_exists (SQ : QOU_Surreal K) :
+```
+
+The marker moves the finding into its own `trivial-existential-by-design`
+section. It does **not** drop it, and it **requires a reason** — a bare mute is
+rejected. Dropping it would re-create this audit's own subject: a check that
+silently excuses cases is indistinguishable from one that never ran.
+
+### Dispositions
+
+**Restated (6).** In each case the hypotheses were inert and now are not:
+
+- `knot_factor_spectral_form` → the unfolding equation the block asserts, plus
+  `knotFactor_self`, the "sum of positive squares" its `.ts` title names.
+- `knot_factor_amphicheiral` → derives the pairing from `Amphicheiral` and the
+  off-block normalisation. See the content finding below.
+- `archimedean_eval_well_defined` → **uniqueness**. Any ring hom `ℝ[q] → ℝ`
+  fixing the constants with `X ↦ q₀` *is* `evalAtQZero`. Existence was never
+  the question — `evalAtQZero` is existence; a "discharge" owes that it is a
+  ring map and that nothing else is.
+- `habiro_integral` → integrality **in the ambient ring**. `HabiroCoeff` is
+  `Polynomial ℤ`, so `∃ z : ℤ, (h.coeffs m).eval u₀ = z` restated a *typing*
+  fact. The claim that can fail is about `HabiroExpansion.eval`, which goes
+  through `Int.castRingHom R`; over `ℚ[u]` coefficients it is false, which is
+  the distinction the md is drawing.
+- `spectral_decomposition_qvalue` → the expanded `log`-form, making `hq`, `hp`
+  and `hd` load-bearing; `bareQValue_nonneg` added for `hme`.
+- `q_0_well_defined` → **independence of the identification chosen**, which is
+  what "well-defined" means. The old form was equally provable with
+  `identification_witness` deleted from the class, under a docstring reading
+  "FULLY VERIFIED BY LEAN".
+
+**Deleted (7).** `knot_factor_amphicheiral_value`,
+`n{6,7,8}_dimq_at_well_defined`, `regime_switched_binding_defined`,
+`phi_k_finite`, `plancherel_term_7_finite`. No reference beyond their own
+definition sites; no genuine statement available. Each leaves a `/-! -/` note
+saying what stood there and why it said nothing — the practice
+`knot-factor-borromean-composite.lean` already established for
+`knot_factor_borromean_value`.
+
+`phi_k_finite` is worth singling out: it was headed *"Φ_k is well-defined for
+non-zero characters … a finite sum of finite real numbers"*, and `log_unbounded`
+sits **four lines below it** proving the values are unbounded. The reassuring
+theorem and its refutation were adjacent.
+
+**Demoted to `def` (2).** `magicCrossingQ`, `compoundBetaYTarget`. `Float`
+supports no useful reasoning — no `ring`, no associativity — so a theorem about
+them cannot say more than the `def`. Writing a formula down is what a `def` is.
+
+### Content finding: the amphicheiral corollary does not give `a = 1 - h²`
+
+Proved from the hypotheses the file states, the result is
+
+```
+a_K(β, β*) = 1 - w_alt · (1 + h²)
+```
+
+not the displayed `1 - h²`. The alternating block contributes `-w_alt h²` via
+the mirror sign flip; the rest contribute `1 - w_alt`, because that is what
+`off_block_norm` says. Recovering `1 - h²` requires the non-alternating blocks
+to sum to `1`. The two forms agree only at `w_alt = 0`, where the corollary
+says nothing about `h`.
+
+Which normalisation the chapter intends is an **authoring decision**, recorded
+as a `caveat` authorNote on `cor:knot-factor-amphicheiral` rather than settled
+here. This was unobservable while the theorem was `⟨_, rfl⟩` — the hypotheses
+were never confronted with each other.
+
+### Incidental: a `sorry` in a `def` body, under a live `lean.ref`
+
+`predicted-spectra/spectral-decomposition-qvalue.lean` did not compile on this
+branch. `Real.log` was an **unknown constant** — only `Mathlib.Data.Real.Basic`
+was imported — so `bareQValue`'s body elaborated to `sorry`, and every statement
+about `bareQValue` was a statement about `sorry`. The trivial-existential proof
+never forced the definition open, which is how it survived. Fixed here by
+importing `Mathlib.Analysis.SpecialFunctions.Log.Basic`.
+
+`bun run scripts/run-validate.ts` passes at exit 0 on this file, before and
+after: it validates content objects, not whether the `.lean` a `lean.ref` names
+compiles. Two further files (`knot-factor-borromean-composite.lean`,
+`knot-factor-shell-closed.lean`) are unbuildable for an unrelated pre-existing
+reason and pass everything too — bean `qou/29pv`. **A per-file compile over
+every `lean.ref` target is the gate that would catch all three.**
+
+### Where the sweep now stands
+
+```
+scanned 3008 .lean files — 1 candidate(s): 1 trivial-existential-by-design
+```
+
+0 self-assuming, 0 actionable trivial-existentials, 1 acknowledged and visible.
+The remaining follow-up is the original one: wire the detector into
+`content/pipeline/lean-vacuity-axiom-audit.ts` as a `proof-self-assuming`
+criterion. Three silent detector gaps in one bean is the argument for it — a
+check run by hand is a check that is as good as its last reader.

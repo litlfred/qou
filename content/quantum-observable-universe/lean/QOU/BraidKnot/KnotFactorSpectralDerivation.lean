@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Field.Defs
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -63,7 +64,26 @@ def knotFactor {R : Type*} [Field R] (n : ℕ)
 --      published version.
 theorem knot_factor_spectral_form {R : Type*} [Field R] (n : ℕ)
     (β β_mirror : HeckeExpansion R n) :
-    ∃ a : R, a = knotFactor n β β_mirror :=
-  ⟨knotFactor n β β_mirror, rfl⟩
+    knotFactor n β β_mirror
+      = ∑ lam ∈ β.partitions,
+          β.weight lam * (β.c lam * β_mirror.c lam) / (β.trivial lam) ^ 2 :=
+  rfl
+
+/-- **Self-pairing.**  Pairing a braid with itself gives the Plancherel
+    sum of squared character ratios,
+
+      `a_K(β, β) = Σ_λ w_λ · (χ_λ(β) / χ_λ(𝟙))²` ,
+
+    the "sum of positive squares" form.  Over an ordered field every
+    summand with `w_λ ≥ 0` is non-negative, which is what makes the
+    amphicheiral corollary's sign flip on the alternating block
+    observable rather than a convention. -/
+theorem knotFactor_self {R : Type*} [Field R] (n : ℕ)
+    (β : HeckeExpansion R n) :
+    knotFactor n β β
+      = ∑ lam ∈ β.partitions, β.weight lam * (β.c lam / β.trivial lam) ^ 2 := by
+  refine Finset.sum_congr rfl fun lam _ => ?_
+  rw [div_pow]
+  ring
 
 end QOU.BraidKnot

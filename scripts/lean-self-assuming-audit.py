@@ -184,7 +184,7 @@ EXACT_IDENT = re.compile(
     r"(?:by\s+)?exact\s*\(?\s*(?P<name>[A-Za-z_][A-Za-z0-9_']*)\s*\)?"
 )
 ASSUMPTION = re.compile(r"by\s+assumption")
-#: `⟨e, rfl⟩`, optionally behind `by exact`.
+#: `⟨e, rfl⟩` — or `⟨_, rfl⟩` — optionally behind `by exact`.
 ANON_REFL = re.compile(r"(?:by\s+)?(?:exact\s+)?⟨\s*(?P<wit>.+?)\s*,\s*rfl\s*⟩", re.S)
 #: `∃ x, body` or `∃ x : T, body` (single binder).
 EXISTS_HEAD = re.compile(
@@ -225,6 +225,44 @@ def trivial_existential_witness(proof: str, conclusion: str):
     var, body, wit = em.group("var"), norm(em.group("body")), norm(m.group("wit"))
     if body in (f"{wit} = {var}", f"{var} = {wit}"):
         return wit
+    if wit == "_":
+        # `⟨_, rfl⟩` is the SAME defect and a stronger tell: the author did
+        # not even name the witness, and the elaborator recovered it by
+        # unifying `rfl`. Requiring the witness to be spelled out is what
+        # let `knot_factor_amphicheiral` (KnotFactorAmphicheiral.lean) sit
+        # unreported while its own sibling `knot_factor_amphicheiral_value`
+        # — the identical shape, witness written out — was reported. The
+        # first is `lean.ref`-bound and carries two substantive-looking
+        # hypotheses; the second is unreferenced. The scan was blind to
+        # exactly the more consequential of the two.
+        sides = split_top_level_eq(body)
+        if sides is None:
+            return None
+        lhs, rhs = sides
+        if lhs == var and var not in IDENT.findall(rhs):
+            return rhs
+        if rhs == var and var not in IDENT.findall(lhs):
+            return lhs
+    return None
+
+
+def split_top_level_eq(body: str):
+    """`(lhs, rhs)` of the first `=` outside every bracket group, or None.
+
+    A nested `=` must not be mistaken for the equation's own — `∃ x, f (a =
+    b) = x` splits at the second `=`, not the first.
+    """
+    depth = 0
+    for i, ch in enumerate(body):
+        if ch in OPEN_TO_CLOSE:
+            depth += 1
+        elif ch in CLOSERS:
+            depth -= 1
+        elif ch == "=" and depth == 0:
+            # not `≠`, `≤`, `≥`, `:=`, `==`
+            if body[i - 1 : i] in (":", "<", ">", "!", "=") or body[i + 1 : i + 2] == "=":
+                continue
+            return norm(body[:i]), norm(body[i + 1 :])
     return None
 
 
@@ -268,8 +306,48 @@ def conclusion_mentions_no_binder(binders: dict, conclusion: str):
     return sorted(binders)
 
 
+#: `-- vacuous-by-design: <reason>` immediately above a declaration.
+VACUOUS_OK = re.compile(r"--\s*vacuous-by-design:\s*(?P<why>\S.*?)\s*$")
+
+
+def acknowledgment(raw_lines: list, line: int):
+    """Reason from a `-- vacuous-by-design:` marker above `line`, or None.
+
+    Some trivial existentials are *deliberate* and their triviality is the
+    point. `qou_standardPart_image_exists` (AppendixSurreals/Conjectures.lean)
+    exists to record that a conjunct of the original `VacuumEpsilon`
+    conjecture was provable for any `SQ`, so that the surviving conjecture
+    asserts only what is irreducibly open — and it is *used*, to rebuild the
+    original wider statement. Deleting it would destroy a narrowing audit.
+
+    Such a declaration is still reported, in its own section, never dropped:
+    a check that silently excuses cases is indistinguishable from one that
+    never ran, which is the defect class this whole script exists for. The
+    marker moves a finding out of the actionable list and into the record,
+    and it must carry a reason — a bare mute is not accepted.
+
+    Only the contiguous run of `--` lines, attributes and blanks directly
+    above the declaration is searched, so a marker cannot drift onto an
+    unrelated neighbour.
+    """
+    i = line - 2  # 0-based index of the line above the declaration
+    while i >= 0:
+        t = raw_lines[i].strip()
+        if not t or t.startswith("@["):
+            i -= 1
+            continue
+        if not t.startswith("--"):
+            return None
+        m = VACUOUS_OK.search(t)
+        if m:
+            return m.group("why")
+        i -= 1
+    return None
+
+
 def analyze(path: Path, report_heuristic: bool = False):
     raw = path.read_text(encoding="utf-8", errors="replace")
+    raw_lines = raw.splitlines()
     src = strip_comments(raw)
     out = []
     for m in DECL.finditer(src):
@@ -305,7 +383,12 @@ def analyze(path: Path, report_heuristic: bool = False):
             continue
         wit = trivial_existential_witness(proof, conclusion)
         if wit is not None:
-            out.append({**rec, "category": "trivial-existential", "hypothesis": wit})
+            why = acknowledgment(raw_lines, rec["line"])
+            cat = "trivial-existential-by-design" if why else "trivial-existential"
+            hit = {**rec, "category": cat, "hypothesis": wit}
+            if why:
+                hit["acknowledged"] = why
+            out.append(hit)
             continue
         if report_heuristic:
             inert = conclusion_mentions_no_binder(binders, conclusion)
@@ -349,6 +432,8 @@ def main():
                 print(f"    ({h['hypothesis']} : {h['statement']})  ⊢  {h['statement']}")
             else:
                 print(f"    ⊢ {h['statement']}   witnessed by ⟨{h['hypothesis']}, rfl⟩")
+                if h.get("acknowledged"):
+                    print(f"    acknowledged: {h['acknowledged']}")
             print()
     Path("/tmp/self-assuming.json").write_text(json.dumps(hits, indent=1))
     return 0

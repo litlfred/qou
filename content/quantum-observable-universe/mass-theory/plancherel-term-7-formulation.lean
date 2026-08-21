@@ -51,11 +51,14 @@ noncomputable def phi_k (k : ℕ) (blocks : List WedderburnBlock) : ℝ :=
     (fun acc b => acc + b.weight * Real.log (|b.character|))
     0
 
-/-- **Theorem (Φ_k is well-defined for non-zero characters).**
-    Each curvature-rank-k log functional is a finite sum of finite
-    real numbers. -/
-theorem phi_k_finite (k : ℕ) (blocks : List WedderburnBlock) :
-    ∃ x : ℝ, phi_k k blocks = x := ⟨phi_k k blocks, rfl⟩
+/-! `phi_k_finite` (`∃ x : ℝ, phi_k k blocks = x`) stood here until
+    2026-08-21.  `phi_k` is a `ℝ`-valued total function, so the statement
+    was true of any definition whatsoever and in particular could not
+    detect the failure mode its name gestures at.  Nor is it reassuring:
+    `log_unbounded` immediately below shows the values this functional
+    takes are *not* bounded, which is the fact the stratum binning has to
+    contend with.  `character_ne_zero` is carried by `WedderburnBlock`
+    where it belongs. -/
 
 /-- **Logarithmic unbounding lemma.**  For any M ≥ 0 there exists a
     character value c with |c| > 0 such that log|c| > M.
@@ -75,11 +78,8 @@ noncomputable def plancherel_term_7
   alpha * ((List.range (k_max + 1)).filter (· ≥ 4)).foldl
     (fun acc k => acc + phi_k k blocks) 0
 
-/-- **Theorem (well-defined).**  Plancherel Term 7 is a finite real
-    number for any finite block list and finite k_max. -/
-theorem plancherel_term_7_finite
-    (alpha : ℝ) (blocks : List WedderburnBlock) (k_max : ℕ) :
-    ∃ x : ℝ, plancherel_term_7 alpha blocks k_max = x :=
-  ⟨plancherel_term_7 alpha blocks k_max, rfl⟩
+/-! `plancherel_term_7_finite` was removed 2026-08-21 for the same reason
+    as `phi_k_finite` above: `∃ x : ℝ, plancherel_term_7 … = x` is a
+    property of `ℝ` being inhabited, not of Term 7. -/
 
 end QOU.WedderburnMass

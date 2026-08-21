@@ -253,3 +253,123 @@ All seven touched files compile clean.
 - [ ] Wire the detector into `lean-vacuity-axiom-audit.ts` as a
       `proof-self-assuming` criterion — the original audit's own follow-up, and
       the thing that stops this recurring.
+
+## 2026-08-21 — trivial-existentials: 13 found, 16 real, 0 actionable left
+
+### The detector was under-reporting again, by the same *kind* of gap
+
+`trivial_existential_witness` required the witness to be **spelled out**:
+`⟨e, rfl⟩` matched, `⟨_, rfl⟩` did not. But `⟨_, rfl⟩` is the same defect and a
+*stronger* tell — the author did not even name the value, the elaborator
+recovered it by unifying `rfl`. Three more findings, and the one that matters:
+
+- `knot_factor_amphicheiral` — **`lean.ref` target** of
+  `cor:knot-factor-amphicheiral`, two substantive-looking hypotheses, both
+  unused. Its sibling thirteen lines below, `knot_factor_amphicheiral_value`, is
+  the identical shape with the witness written out and **was** reported. The
+  scan was blind to exactly the more consequential of the two.
+- `magic_crossing_Q_value`, `compound_beta_y_target_extraction` —
+  `compound-beta-shell-calibration.lean`.
+
+Third time this bean has found the detector short of its own hardest cases
+(binder depth → conclusion colon → unnamed witness). All three were *silent*:
+unparsed and clean produced identical output.
+
+### `vacuous-by-design`: an opt-out that does not hide
+
+`qou_standardPart_image_exists` (`AppendixSurreals/Conjectures.lean`) is a
+trivial existential **on purpose** — it records that a conjunct of the original
+`VacuumEpsilon` conjecture was provable for every `SQ`, so the surviving
+conjecture asserts only what is irreducibly open, and it is *used* by
+`VacuumEpsilon'.exists_epsilon_vacuum_with_st_image` to rebuild the wider form.
+Deleting it destroys a narrowing audit.
+
+Marked `-- vacuous-by-design: <reason>` above the declaration. The finding is
+**still reported**, in its own `trivial-existential-by-design` section — a check
+that silently excuses cases is indistinguishable from one that never ran, which
+is the whole defect class here. The marker must carry a reason; a bare mute is
+rejected.
+
+### Dispositions — 7 deleted, 6 restated, 2 demoted to `def`, 1 acknowledged
+
+**Restated (6)** — each now uses hypotheses that were inert:
+
+- `knot_factor_spectral_form` → the unfolding equation the block actually
+  claims, plus `knotFactor_self` (the "sum of positive squares" the `.ts`
+  title names).
+- `knot_factor_amphicheiral` → derives the pairing from `Amphicheiral` and the
+  normalisation. **See the content finding below.**
+- `archimedean_eval_well_defined` → *uniqueness*: any ring hom `ℝ[q] → ℝ`
+  fixing constants with `X ↦ q₀` **is** `evalAtQZero`. Existence was never the
+  question; `evalAtQZero` is existence.
+- `habiro_integral` → integrality in the **ambient ring**. `HabiroCoeff` is
+  `Polynomial ℤ`, so `∃ z : ℤ, (h.coeffs m).eval u₀ = z` restated a *typing*
+  fact. What can fail is about `HabiroExpansion.eval`, which goes through
+  `Int.castRingHom R`; over `ℚ[u]` coefficients the statement is false, which
+  is the distinction the md draws.
+- `spectral_decomposition_qvalue` → the expanded `log`-form, so `hq`, `hp`,
+  `hd` all do work; plus `bareQValue_nonneg` for `hme`.
+- `q_0_well_defined` → *independence of the identification chosen*, which is
+  what "well-defined" means. The old form was provable with
+  `identification_witness` deleted from the class.
+
+**Deleted (7)** — no reference beyond their own definition site, and no genuine
+statement available: `knot_factor_amphicheiral_value`,
+`n{6,7,8}_dimq_at_well_defined`, `regime_switched_binding_defined`,
+`phi_k_finite`, `plancherel_term_7_finite`. Each leaves a `/-! -/` note saying
+what stood there and why it said nothing. Precedent: the same file that holds
+`knot_factor_borromean` already carries such a note for
+`knot_factor_borromean_value`.
+
+**Demoted to `def` (2)** — `magicCrossingQ`, `compoundBetaYTarget`. `Float`
+admits no useful reasoning (no `ring`, no associativity), so a theorem about
+them cannot say more than the `def` does. Promoting them properly needs the
+quantities to be `ℝ`-valued first — a larger change than this pass.
+
+### Content finding: the amphicheiral corollary does not give `a = 1 - h²`
+
+Proving it from the stated hypotheses yields
+
+> `a_K(β, β*) = 1 - w_alt · (1 + h²)`
+
+not the displayed `1 - h²`. The alternating block contributes `-w_alt h²` via
+the mirror sign flip; the rest contribute `1 - w_alt` **by `off_block_norm` as
+written**. Recovering `1 - h²` needs the non-alternating blocks to sum to `1`.
+The two agree only at `w_alt = 0`, where the corollary says nothing about `h`.
+
+Which normalisation the chapter intends is an **authoring decision**, recorded
+as a `caveat` authorNote on `cor:knot-factor-amphicheiral` rather than
+reconciled here. The block is `not_checked`, so nothing over-claims meanwhile.
+This was invisible while the theorem was `⟨_, rfl⟩`.
+
+### Incidental: a `def` whose body was `sorry`, under a `lean.ref`
+
+`predicted-spectra/spectral-decomposition-qvalue.lean` did **not compile** on
+this branch: `Real.log` was an unknown constant (only `Mathlib.Data.Real.Basic`
+was imported), so `bareQValue`'s body elaborated to `sorry` and every statement
+about it was a statement about `sorry`. The trivial-existential proof never
+forced the definition open, which is how it survived. Fixed by importing
+`Mathlib.Analysis.SpecialFunctions.Log.Basic`.
+
+### Pre-existing breakage found, NOT fixed here (out of scope)
+
+Two downstream files fail to compile on `main`, both from the 2026-08-09
+`HeckeExpansion` genericisation dropping `Mathlib.Data.Real.Basic` from the
+transitive import set. Same 12 errors before and after this change:
+
+- `mass-theory/knot-factor-borromean-composite.lean` — `HPow ℝ ℕ` /
+  `HSub ℕ ℝ` unsynthesizable; one missing import.
+- `mass-theory/knot-factor-shell-closed.lean` — still writes
+  `HeckeExpansion n`, which now passes `n : ℕ` as the base ring. Needs an
+  authoring decision on which `R`.
+
+## Next
+
+- [ ] Wire the detector into `content/pipeline/lean-vacuity-axiom-audit.ts` as a
+      `proof-self-assuming` criterion. This is now the **only** remaining item
+      on this bean, and it is the one that stops the class recurring — three
+      separate silent detector gaps in this bean argue the check needs to run
+      in the pipeline, not by hand.
+- [ ] Owner: the `1 - h²` vs `1 - w_alt(1 + h²)` normalisation on
+      `cor:knot-factor-amphicheiral`.
+- [ ] Separate bean for the two pre-existing broken knot-factor files.

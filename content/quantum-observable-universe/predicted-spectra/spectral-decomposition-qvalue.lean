@@ -1,6 +1,13 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic.Ring
+-- `Real.log` is used by `bareQValue` below.  Without this import it
+-- elaborated as an unknown constant, i.e. `sorry`, so the file did not
+-- compile and every statement about `bareQValue` was about a `sorry`
+-- (found 2026-08-21 while restating `spectral_decomposition_qvalue`; the
+-- trivial-existential proof it carried never forced the definition open).
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -85,16 +92,27 @@ noncomputable def bareQValue (q : ℝ) (skeinRatio : ℝ) (m_e : ℝ) : ℝ :=
 theorem spectral_decomposition_qvalue
     (q : ℝ) (hq : 1 < q)
     (parentPoly daughterPoly : ℝ) (hp : 0 < parentPoly) (hd : 0 < daughterPoly)
-    (m_e : ℝ) (hme : 0 < m_e)
-    (knotOperator : ℝ)
-    : ∃ Q_q : ℝ,
-        Q_q = bareQValue q (daughterPoly / parentPoly) m_e * knotOperator :=
-  -- Trivial existential: take Q_q to be the right-hand side itself.
-  -- The substantive content (Rosso-Jones completeness, shell cancellation,
-  -- tower termination at degree 2) belongs in a sharper theorem that
-  -- *characterises* Q_q rather than asserts existence.
-  -- Ref: [manuscript] §5/spectral-decomposition-qvalue
-  ⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩
+    (knotOperator : ℝ) (m_e : ℝ)
+    : bareQValue q (daughterPoly / parentPoly) m_e * knotOperator
+        = |Real.log daughterPoly - Real.log parentPoly| / Real.log q
+            * ((q - 1) / q) * m_e / 3 * knotOperator := by
+  unfold bareQValue hbar
+  rw [Real.log_div (ne_of_gt hd) (ne_of_gt hp), abs_div,
+      abs_of_pos (Real.log_pos hq)]
+
+/-- **Non-negativity of the bare Q-value.**  In the analytic-continuation
+    regime `q > 1` — where `ℏ_q = (q-1)/q` is positive — the bare Q-value
+    is non-negative for any skein ratio.  Together with
+    `spectral_decomposition_qvalue` this is what makes the sign of `Q_q`
+    the sign of the knot operator, rather than an artifact of the branch
+    of `log_q`. -/
+theorem bareQValue_nonneg (q : ℝ) (hq : 1 < q) (skeinRatio : ℝ)
+    (m_e : ℝ) (hme : 0 < m_e) : 0 ≤ bareQValue q skeinRatio m_e := by
+  unfold bareQValue hbar
+  have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hnum : (0 : ℝ) ≤ (q - 1) / q := div_nonneg (by linarith) (le_of_lt hq0)
+  exact div_nonneg
+    (mul_nonneg (mul_nonneg (abs_nonneg _) hnum) (le_of_lt hme)) (by norm_num)
 
 /-- The jet bundle over Σ₄ has exactly three non-zero levels (k = 0, 1, 2).
     Degree 3 requires genus ≥ 13, exceeding the genus-4 bound. -/
