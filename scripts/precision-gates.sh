@@ -70,6 +70,25 @@ GATES=(
   # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
   "witness shape guard|computations/witness_shape_guard.py||yes|yes"
   "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
+  # BLOCKING, and green on arrival because the 111-witness backlog is
+  # baselined. The mirror of `witness_hollowness_audit` (which catches
+  # `allPassed: true` with `assertions: []` — green with nothing behind it):
+  # this catches a witness committed with its failure RECORDED INSIDE IT.
+  #
+  # A recorded-but-unread failure is strictly worse than no check, because the
+  # check's existence is what stops anyone looking. Motivating case, bean
+  # qou-4e5k: `tr-m-algebraic-q.witness.json` carried
+  # `symbolic_delta_matches_li2q computed=1.338e-06 tol=1e-12 passed=false`
+  # from 2026-08-09 — naming a real δ defect numerically — and was
+  # rediscovered twelve days later by hand-measuring a deuteron trace.
+  #
+  # Baselined at 111 witnesses / 137 assertions rather than run red, because
+  # this file's own comments (see the provenance entry below) record that a
+  # gate red on arrival gets skipped, which is how a checker goes quiet.
+  # Counts shrink, never grow. Drain triage is bean qou-ad4t; the category to
+  # identify first is the probe that records an EXPECTED negative, since every
+  # such witness teaches readers that red is normal.
+  "witness failed-assertion ratchet|computations/witness_failed_assertion_audit.py|--strict|yes|yes"
   # Blocking, and GREEN as of the commit that added it (0 candidates across
   # 273 numpy-importing files) — which is exactly when a gate is safe to make
   # blocking, because it can then only ever fire on a NEW regression.
