@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-21T16:16:11.608Z",
+  "updated_at": "2026-08-21T16:19:17.345Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -1083,17 +1083,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `VolThroughTau` carries field `knotVol` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `VolThroughTau` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `knotVol` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/lean/QOU/OptionE/RungSelection.lean::depthBasedRule_reaches_k3::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 86,
-      "verdict": "genuine",
-      "file_sha": "701f5d5869f5",
-      "disposition": "restate-against-a-definition",
-      "evidence": "`unfold depthBasedRule; rfl` — the rule's `k` at index 2 is 3 by construction, not because the crystal graph has ≥ 3 vertices. `h : 3 ≤ Γ.vertexCount` is unused, so the theorem does not establish that the rule *reaches* k=3 under any graph condition; it reads off a constant. Fix: state the property against a graph whose vertex count matters, or rename to a `_def`-style unfolding lemma and drop `h`.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/PAdicQuantumGroups.lean::padic_frobenius_relation_preserved::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",

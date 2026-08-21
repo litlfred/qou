@@ -1,16 +1,16 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-21T16:16:11.600Z",
+  "generated": "2026-08-21T16:19:17.343Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3010,
-  "files_flagged": 168,
-  "total_defects": 96,
+  "files_flagged": 167,
+  "total_defects": 95,
   "total_exempt": 123,
   "categories": {
     "proof-no-self-assuming-projection": 46,
     "proof-no-trivial-true": 21,
     "proof-no-provable-axiom": 11,
-    "proof-no-unused-hypothesis-rfl": 11,
+    "proof-no-unused-hypothesis-rfl": 10,
     "proof-docstring-sorry-mismatch": 3,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
@@ -2975,17 +2975,6 @@
         "snippet": "theorem markov_gns_embedding (A : Type u) (H : Type v)",
         "decl": "markov_gns_embedding",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/OptionE/RungSelection.lean": [
-      {
-        "line": 86,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem depthBasedRule_reaches_k3",
-        "decl": "depthBasedRule_reaches_k3",
-        "severity": "major",
-        "detail": "proof is `by\n  unfold depthBasedRule\n  rfl`, which uses no hypothesis, yet the statement binds `h` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/PAdicQuantumGroups.lean": [
