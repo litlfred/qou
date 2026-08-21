@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:33:05Z
-updated_at: 2026-08-21T21:33:46Z
+updated_at: 2026-08-21T21:47:12Z
 ---
 
 ## Measured, not estimated
@@ -85,3 +85,44 @@ few are long-compute. That is a separate, careful pass, not an idle-drain.
 Gate: `python3 computations/hyperbolic_volume_literal_audit.py --strict`
 exits 1 while any WRONG or OVER_CLAIMED remains. Requires snappy
 (`pip install snappy`); exits 77 without it, deliberately NOT 0.
+
+
+---
+
+## Update 2026-08-21 — the 2 WRONG are FIXED (PR #5407); 24 OVER_CLAIMED remain
+
+`VOL_6_2 = 4.40083298054544839393` corrected to the census value in both
+deuteron per-knot density probes. Audit now reports **WRONG 0**. The
+remaining scope of this bean is the 24 OVER_CLAIMED plus the 38
+UNRECOGNISED triage.
+
+## Two adjacent findings, opened by this work
+
+### A. Half-applied rename broke 4 modules (FIXED in #5407)
+
+`a4d9906659` migrated "VolDensity" -> "PerKnotDensity" across callers but
+never renamed the functions in `_li_2_q_util`. Measured by AST over every
+`from _li_2_q_util import` in the tree: 4 modules raised ImportError at
+import time on main, from 2 missing names.
+
+Repaired by aliasing (`per_knot_density_per_block = vol_density_per_block`,
+same for `_borromean`) rather than renaming -- 71 sites still use the
+`vol_density_*` spelling, so flipping the canonical name risks a second
+partial pass. **Open question for the owner, NOT decided:** which spelling
+should ultimately be canonical? AGENTS.md's mass-formula banner says
+`vol_density_per_block` "stays valid for binding ratios only", which reads
+like the migration was intentional and unfinished.
+
+### B. An unanchored witness, not committed
+
+`probes/per_knot_density_borromean_q_locality_probe.py` had not run since
+that rename landed -- its witness has NEVER existed in the repo. With the
+aliases in place it runs and emits, but the emitted witness is hand-rolled
+rather than built by `WitnessBuilder`: no `q0Anchor`, no `q0Value`, no
+`assertions`. It was deliberately NOT committed, because adding an
+unanchored witness is the class of defect this arc drains.
+
+Follow-up: port that probe to `WitnessBuilder`, declare it in
+`q0_anchor_manifest.json`, then commit its witness. Check whether the other
+three repaired modules have the same shape before committing anything they
+emit.
