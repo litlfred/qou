@@ -553,14 +553,19 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
 
     The CANONICAL replacement is:
         computations/mass_at_3A_proper.py
-            per_generator_V_hat_3A(Z, N, weight_scheme="jones_wenzl")
+            per_generator_V_hat_3A(Z, N)
     which sums over all partitions of 3A with proper Wedderburn weights.
 
-    This line used to name `weight_scheme="normalized_plancherel"` — i.e. this
-    warning sent every migrating caller at the ONE scheme that breaks the Phi_q
-    tower (V_hat at the pole; see bean qou-2tuv and the DEFAULT CHANGED note in
-    mass_at_3A_proper). `jones_wenzl` is the convention-D weighting and is now
-    also the default, so the keyword can be omitted.
+    NO WEIGHT SCHEME HERE IS KNOWN-GOOD, and this warning should not be read as
+    endorsing one (bean qou-2tuv):
+      - `normalized_plancherel` (the default) sums to 1 as the Markov identity
+        requires, but puts max|V_hat| at 1.08837 against a phi_q_safe cap of
+        1.087779 — AT the pole — so `binding_3A_tower` returns ~1e7 MeV. It was
+        marked DEPRECATED by docs/audits/2026-05-11-plancherel-usage-audit.md.
+      - `jones_wenzl` keeps V_hat small, but only because its weights DO NOT
+        SUM TO 1: measured -0.8230 at A=1, +0.0547 at A=2, -0.0009 at A=3. It
+        buys a finite tower by driving the volumes toward zero.
+    Migrating for the weights alone therefore trades one defect for another.
 
     Migration is a PACKAGE swap, not a drop-in function substitution. The
     H_{3A} volumes come with (a) the jones_wenzl weights, (b) a free-baseline

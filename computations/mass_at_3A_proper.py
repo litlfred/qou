@@ -511,23 +511,27 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                              include_inter: bool = True,
-                             weight_scheme: str = "jones_wenzl",
-                             # DEFAULT CHANGED (bean qou-2tuv): was
-                             # "normalized_plancherel", which breaks its own
-                             # documented invariant. That scheme's docstring
-                             # promises it "keeps V_hat_i in the physical range
-                             # [-1, 1] at our q0, which is what the Phi_q tower
-                             # needs" -- measured on the deuteron its max is
-                             # 1.08837 against a phi_q_safe cap of 1.087779,
-                             # i.e. AT the pole, and binding_3A_tower returns
-                             # ~1e7 MeV as a result. It also concedes it does
-                             # "not match the canonical Jones parameter z", so
-                             # it is inconsistent with the 2026-08-09 owner
-                             # ruling. `jones_wenzl` is the Ocneanu weighting
-                             # built on z = q^3/(q^2+1) (convention D); its max
-                             # V_hat is 0.06979 and the tower is finite.
-                             # docs/audits/2026-05-11-plancherel-usage-audit.md
-                             # marked normalized_plancherel DEPRECATED already.
+                             weight_scheme: str = "normalized_plancherel",
+                             # NOT changed to "jones_wenzl", and the attempt
+                             # is recorded here so nobody repeats it. That
+                             # scheme's weights DO NOT SUM TO 1 — measured
+                             # Sigma_lambda omega_lambda = -0.8230 at A=1,
+                             # +0.0547 at A=2, -0.0009 at A=3 — against the
+                             # "normalized to Sigma = 1 for the Markov identity
+                             # tr_M(1) = 1" three lines below. It appears to fix
+                             # the Phi_q pole (max|V_hat| 1.08837 -> 0.06979,
+                             # binding_3A_tower 1e7 -> 0.331) only because the
+                             # near-cancelling weights drive every V_hat toward
+                             # zero, not because the volumes become right.
+                             #
+                             # So the Phi_q-pole problem documented on bean
+                             # qou-2tuv is REAL and still OPEN: normalized_
+                             # plancherel puts V_hat at 1.08837 against a cap of
+                             # 1.087779, and docs/audits/2026-05-11-plancherel-
+                             # usage-audit.md marked this scheme DEPRECATED in
+                             # May. Both schemes are wrong for the tower; that
+                             # is the finding, and picking between them is not
+                             # the fix.
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -729,7 +733,7 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
 
 def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        E_0: float = E_0_CALIBRATION_MEV,
-                       weight_scheme: str = "jones_wenzl",
+                       weight_scheme: str = "normalized_plancherel",
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",

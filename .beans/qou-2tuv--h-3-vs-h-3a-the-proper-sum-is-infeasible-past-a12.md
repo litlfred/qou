@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-21T15:19:16Z
+updated_at: 2026-08-21T15:54:02Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -621,3 +621,66 @@ an owner call because it means writing "this quantity is 16-digit" in a
 framework whose directive is NO FLOAT64. The honest framing: the computation is
 ALREADY float64 in the default path and merely pretends otherwise; (b) stops
 the pretence, it does not lose precision that anyone currently has.
+
+
+---
+
+# RETRACTION: the jones_wenzl default was wrong, and so was the -30.1% result
+
+An adversarial review of my own diff (four independent reviewers over the
+change) produced a HIGH finding I then reproduced myself:
+
+    scheme                  A=1        A=2        A=3     sum omega_lambda
+    normalized_plancherel   1.0000     1.0000     1.0000
+    jones_wenzl            -0.8230    +0.0547    -0.0009
+
+`per_generator_V_hat_3A`'s own comment, three lines above the weight table,
+says *"Weight table — normalized to Sigma = 1 for the Markov identity
+tr_M(1) = 1"*. **`jones_wenzl` violates it outright**, and not by a rounding
+margin — the weights very nearly cancel.
+
+That destroys the reasoning I gave for the switch. `jones_wenzl` appeared to
+fix the Phi_q pole (max|V_hat| 1.08837 -> 0.06979, `binding_3A_tower` 1e7 ->
+0.331) **only because near-cancelling weights drive every V_hat toward zero**,
+not because the volumes become right. A finite tower obtained that way is not a
+correct tower.
+
+## What this retracts
+
+- The **default change is reverted**. `normalized_plancherel` is restored.
+- The `pyhecke/atom.py` deprecation text no longer endorses `jones_wenzl`; it
+  now states that NEITHER scheme is known-good, with the numbers for both.
+- **The "-30.1%, fully axiom-aligned" deuteron is withdrawn.** Every row of
+  that table which used `jones_wenzl` volumes — including the one I reported as
+  the best canonical-form result — rests on weights that fail the Markov
+  identity the whole construction is built on. The comparison was measuring a
+  near-zero artefact.
+
+## What SURVIVES
+
+The scale analysis is untouched by this: `prop:binding-scale-catalan` assigns
+alpha = m_e x Vol_q(B_3) to the binding slot, `three-calibration-inputs-context`
+forbids Q_beta as a second hadronic scale, and none of that depended on the
+weight scheme. **alpha remains the answer on axiom grounds.** What is withdrawn
+is the claim that any measured stack currently realises it well.
+
+The Phi_q-pole problem is also unchanged and still OPEN: `normalized_plancherel`
+genuinely does put V_hat at 1.08837 against a cap of 1.087779, and
+docs/audits/2026-05-11-plancherel-usage-audit.md marked it DEPRECATED in May.
+**Both schemes are wrong for the tower.** That is the actual finding, and
+choosing between them is not the fix — which is why the default is back where
+it was rather than moved to the other broken option.
+
+## Still to check from the same review (not yet verified by me)
+
+- `pyhecke-h3-vs-h3a-impact-comparison.witness.json` is written by a bare
+  `per_generator_V_hat_3A(Z, N)` call. With the default reverted this is moot,
+  but it shows the blast radius of a default change here is wider than the two
+  functions I checked.
+- The comment I wrote called `jones_wenzl` "the Ocneanu weighting"; a reviewer
+  reports the repo's own Ocneanu module derives different weights and documents
+  this formula as a FAILED GUESS. If so, `ocneanu_weights_3A` is itself
+  misnamed — worth its own item.
+- The CAL-3 correction reached one call site; `build_cal_3_q_beta_witness.py`
+  and two committed witnesses still assert `calibration_id = "CAL-3"` for
+  Q_beta, and `binding-canonical.witness.json` still carries the old wording.
