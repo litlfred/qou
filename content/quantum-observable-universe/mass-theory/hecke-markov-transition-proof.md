@@ -31,7 +31,7 @@ at step $n$ depends only on the crossing type at $\sigma_n$,
 not on the history of previous crossings.
 
 **(iv)** Follows from (iii) by induction: peeling generators
-From right to left, each factor $\hat{V}_i = z a_i + b_i$ is
+from right to left, each factor $\hat{V}_i = z a_i + b_i$ is
 independent of the remaining product, giving
 $\mathrm{tr}_M(\rho(\beta)) = \prod_i \hat{V}_i$.  $\square$
 
