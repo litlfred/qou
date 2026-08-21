@@ -923,6 +923,8 @@ import QOU.Mathlib.SchenstedCascadeRightInverse
 import QOU.Mathlib.SchenstedUninsertInvariants
 -- RSK inverse, brick 12a: where reverse row insertion writes (the reverse of rowInsert_bump_eq_set).
 import QOU.Mathlib.SchenstedReverseRowIndex
+-- RSK inverse, brick 13: the reverse cascade keeps columns strict, at a corner.
+import QOU.Mathlib.SchenstedCascadeColStrict
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
