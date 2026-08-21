@@ -455,3 +455,113 @@ The resolution is one rule per axis, and two of the three are already decided:
      added that caveat.
 
 Axis 2 is the one blocking, and it is one decision.
+
+---
+
+# THE SCALE DECISION — resolved on axiom grounds, not on fit
+
+I previously recommended alpha because it fit best. That is the wrong
+criterion and the framework says so explicitly (`markov_z`: *"NOT decided by
+which value matches experiment"*). Read against the corpus, the question
+dissolves: **alpha and E_0 are not two candidates for one slot.** They are
+different scales with assigned roles, and the corpus assigns them.
+
+## The admissibility rule (prop:three-calibration-inputs)
+
+    O = O_hat(q_0) * m_e^a * m_pi^b ,   O_hat(q_0) in Z[q_0^{+-1/2}],  a+b in {0,1}
+
+with exactly three external inputs: **CAL-1 m_e, CAL-2 q_0<-m_p (proxy
+m_mu/m_e), CAL-3 m_pi**. Beyond these "no further empirical, fitting, or
+numerological input is permitted".
+
+That same prop names E_0 directly:
+
+> "the derived hadronic energy scale **E_0 = m_e/(q_0(q_0-1))** and the CAL-2
+> proxy **Q_beta** are m_e^1 . Q(q_0) expressions, **not independent factors**."
+
+## Each candidate against the rule
+
+**alpha — COMPLIANT, and it is the binding scale by name.**
+`prop:binding-scale-catalan` states:
+
+>  alpha_q = m_e x Vol_q(B_3)  **in Z[q^{1/2}, q^{-1/2}]**
+>  ... "*The binding energy scale in the atomic mass formula* is the
+>  archimedean evaluation of the algebraic binding scale."
+
+So O_hat = Vol_q(B_3) = prod V_hat_i^{B_3}(q), a=1, b=0. **8G is not an input** —
+it is what the admissible Z[q^{+-1/2}] expression EVALUATES to at the CAL-2 pin,
+and its proof notes the equality Vol(B_3) = 8G is "a theorem of hyperbolic
+geometry, not a canonical approximation", with **zero uncertainty**; all error
+in alpha comes from m_e (CAL-1) at 3e-8.
+
+Critically, `Vol_q(B_3) = prod V_hat_i` is the SAME per-generator object
+`atom_per_generator_volumes` computes. The scale is not bolted on beside the
+volumes — it is built from them.
+
+**E_0 — COMPLIANT, but it is the HADRONIC scale, a different role.**
+`three-calibration-inputs-context` gives it three framework-derived forms, all
+CAL-1 + CAL-2:
+
+    E_0^(N=0)  = m_e/(q_0(q_0-1))          ~ 4.186 MeV   single Planck-tick
+    E_0^full   = E_0^(N=0)/(1-hbar_q^2)    ~ 4.228 MeV   tower-summed
+    E_0^(cal)  = Q_beta(n)/|Delta(net)|    ~ 4.155 MeV   CAL-3 cross-check
+
+**Q_beta — FORBIDDEN as a scale.** The same doc forbids "*A second hadronic
+scale*", and states E_0 != Q_beta, differing "by the dimensionless factor
+1/|Delta(net)| ~ 5.31". Measured here: E_0/Q_beta = **5.3506**. Q_beta is the
+CAL-2 proxy and, per `precision-goals.md`, a SCORED PREDICTION carrying
+1248-1279 ppb that misses its 100x target by ~164x. Using it as the binding
+scale feeds a framework output back in as an input.
+
+## The consumer is part of the same ruling
+
+`binding-scale-catalan-proof` gives the canonical form:
+
+>  m(Z, N) = M_free + **alpha . Phi_atom**,  Phi < 0 for bound nuclei
+
+i.e. alpha scales the **Phi_q tower**, which is exactly the functional
+`atom_per_generator_volumes`'s own docstring names
+(m(W) = |prod V_i| + sum Phi_q(|V_i|) + z^2 sum Phi_q(|V_i V_j|)).
+Production instead uses `sum ln|V|`, whose own name calls it a **proxy**.
+
+So the table is wrong on TWO axes at once, and they interact.
+
+## Measured — deuteron, AME 2.22452
+
+              weights                   consumer    scale        B_MeV       err%
+          jones_wenzl    Phi_q tower (canonical)    alpha       1.5545      -30.1   <-- FULLY ALIGNED
+          jones_wenzl    Phi_q tower (canonical)      E_0       1.7378      -21.9
+          jones_wenzl    Phi_q tower (canonical)   Q_beta       0.3248      -85.4
+          jones_wenzl            log-sum (proxy)    alpha       3.0641      +37.7
+           legacy H_3            log-sum (proxy)    alpha       4.0396      +81.6   <-- PRODUCTION
+           legacy H_3    Phi_q tower (canonical)    alpha  102937.33   +4.6e6
+normalized_plancherel    Phi_q tower (canonical)    alpha  10807718     +4.9e8
+
+The full axiom-aligned stack moves the deuteron from **+81.6% to -30.1%** — a
+2.7x reduction in |error|, from a change with no fitted content.
+
+Note the tower only survives with `jones_wenzl` volumes; both legacy H_3 and
+`normalized_plancherel` put V_hat at or past the Phi_q pole and it diverges.
+The three axes are not independent — picking the canonical consumer FORCES the
+convention-D weight scheme.
+
+E_0 does score marginally better (-21.9%) than alpha (-30.1%). **That is not a
+reason to prefer it**: the fit criterion is the one the framework rejects, and
+alpha is the scale its own prop assigns to this formula. A 8% error difference
+at one atom is far inside the H_3-vs-H_{3A} weight error still in the stack.
+
+## RECOMMENDATION
+
+**alpha**, on the strength of `prop:binding-scale-catalan`, for every binding
+channel — and adopt the Phi_q tower with `jones_wenzl` weights alongside it,
+because the prop's formula is `alpha . Phi`, not `alpha . log-sum`.
+
+**Never Q_beta.** It is forbidden as a second hadronic scale, it is a scored
+prediction rather than an input, and it is the worst fit of the three. Its
+current use in `mass_at_3A_proper` (bound to the NAME `E_0`) is a mislabel with
+a ruling already against it.
+
+E_0 stays where the corpus puts it: the hadronic energy scale, not the binding
+scale. If anyone wants it in the binding channel, that is a claim that
+`prop:binding-scale-catalan` is wrong, and it should be argued as such rather
+than settled by a residual.
