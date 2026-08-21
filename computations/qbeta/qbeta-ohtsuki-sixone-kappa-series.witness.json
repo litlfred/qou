@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:33:41.171408+00:00",
-  "commitSha": "37c23b452bb816c6f3a3a73e1f76c80374eef394",
+  "computedAt": "2026-08-21T16:38:43.400230+00:00",
+  "commitSha": "3e2012a9b7ea2e72a61ba0eb6f54398502440db5",
   "assertions": [
     {
       "name": "determinant_5_2",
@@ -37,6 +37,22 @@
       "source": "fitted vs Ohtsuki's PUBLISHED omega(5_2)"
     },
     {
+      "name": "volume_conjecture_5_2",
+      "computed": "2.014269926e-17",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "2*pi*Re(sigma_5_2) vs SnapPy Vol(5_2)"
+    },
+    {
+      "name": "volume_conjecture_6_1",
+      "computed": "8.850574832e-18",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-5",
+      "source": "2*pi*Re(sigma_6_1) vs SnapPy Vol(6_1)"
+    },
+    {
       "name": "gate_6_1_sigma",
       "computed": "1.165699101e-7",
       "expected": "0",
@@ -54,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 64555,
+  "durationMs": 63495,
   "computation": "qbeta-ohtsuki-sixone-kappa-series",
   "scriptFile": "qbeta_ohtsuki_sixone_kappa_series.py",
-  "scriptHash": "0f125429ad41",
-  "scriptCommitSha": "10e8a6c2444b4dc7d59b08c3f261014638699437",
+  "scriptHash": "cb05be362491",
+  "scriptCommitSha": "ae1d692cc671aba8da507101134cbedfe675d508",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -94,6 +110,17 @@
       "mirror_frame": "conjugate",
       "passed": true
     },
+    "volume_conjecture_crosscheck": {
+      "relation": "Vol(K) = 2*pi*Re(sigma), from |<K>_N| ~ e^{N Re sigma}",
+      "vol_5_2_snappy": "2.82812208833078316276389880928",
+      "vol_5_2_from_sigma": "2.82812208833078318290659807072",
+      "vol_5_2_abs_err": "2.01427e-17",
+      "vol_6_1_snappy": "3.16396322888314398399101471597",
+      "vol_6_1_from_sigma": "3.16396322888314399284158954799",
+      "vol_6_1_abs_err": "8.85057e-18",
+      "passed": true,
+      "why_independent": "the volumes come from SnapPy and never enter the fit; ki6c's printed sigma is used only to pick the 2*pi*m branch integer via its imaginary part"
+    },
     "kappa": {
       "kappa_1": "(-0.857036577786166099473194 + 0.0996113097156072094103263j)",
       "kappa_2": "(0.358255042584737923302002 - 0.0945323841291178525641754j)",
@@ -112,5 +139,6 @@
       "branch_guide": "the printed sigma selects the 2*pi*m branch integer only; it is not an input to the fitted value"
     }
   },
-  "q0Anchor": "independent"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no q0, on either layer. The Kashaev invariant is a state sum over q = exp(2*pi*i/N) at Nth roots of unity, and the sigma/omega/kappa fit is in 1/N; the substrate modulus never enters. The only external numbers are Ohtsuki's printed sigma/omega (comparison targets, plus the 2*pi*m branch integer) and SnapPy's hyperbolic volumes (an independent cross-check)."
 }

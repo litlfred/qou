@@ -172,7 +172,18 @@ set_compute_dps()
 # ki6c printed values for the MIRROR 6̄₁ (Theorem 1.1 + p.15), ~6 digits.
 KI6C_SIGMA_BAR = mp.mpc("0.5035603", "-1.08078")
 KI6C_OMEGA_BAR = mp.mpc("-0.52139", "0.071732")
-VOL_6_1 = mp.mpf("3.163963228883143983991757529167384812325703962")
+# Hyperbolic volumes, for the volume-conjecture cross-check below. Built
+# inside `workdps` because module scope runs at mpmath's default 15 dps: a
+# literal written here without it is silently truncated to ~15 digits, which
+# is what `mpf_import_time_dps_audit` flags. Values are SnapPy high-precision
+# (212-bit), each confirmed against its census twin -- `6_1` vs `m032` agree
+# to all 65 printed digits. The value previously carried here was correct only
+# to digit 21 (`...3991757529...` against the true `...3991014715...`); it was
+# never read, so nothing computed was wrong, but it would have silently capped
+# any check that used it.
+with mp.workdps(60):
+    VOL_5_2 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
+    VOL_6_1 = mp.mpf("3.1639632288831439839910147159731544848127876715181")
 # Ohtsuki 5_2 paper (library/104171-qt-83), Theorem 1.1 - VALIDATION target.
 SIGMA_52 = mp.mpc("0.4501096100", "0.4813049796")
 OMEGA_52 = mp.mpc("0.0901905774", "-0.6499757866")
@@ -355,6 +366,23 @@ def main() -> int:
     gate = err_sigma < mp.mpf("1e-6") and err_omega < mp.mpf("1e-5")
     print(f"    6₁ GATE: {'PASS' if gate else 'FAIL'}")
 
+    # [2b] VOLUME-CONJECTURE CROSS-CHECK — an invariant this pipeline never
+    # sees. The Kashaev asymptotic is ⟨K⟩_N ≈ e^{Nς}·N^{3/2}·ω, so
+    # log|⟨K⟩_N|/N → Re(ς), and the volume conjecture reads Vol = 2π·Re(ς).
+    # Only ki6c's PRINTED ς entered the fit (as a branch guide, imaginary part
+    # only), and the volumes come from SnapPy — so agreement here is genuinely
+    # independent confirmation of the fitted real part, not a restatement.
+    # Mirroring does not matter: conjugation flips Chern–Simons, not volume.
+    print("\n[2b] volume-conjecture cross-check  (Vol = 2π·Re ς)")
+    vol_err = {}
+    for name, sig, vol in (("5₂", s52, VOL_5_2), ("6₁", sigma_fit, VOL_6_1)):
+        got = 2 * mp.pi * mp.re(sig)
+        vol_err[name] = mp.fabs(got - vol)
+        print(f"    {name}: 2π·Re ς = {mp.nstr(got, 14)}   SnapPy Vol = "
+              f"{mp.nstr(vol, 14)}   |Δ| = {mp.nstr(vol_err[name], 4)}")
+    vol_ok = vol_err["5₂"] < mp.mpf("1e-8") and vol_err["6₁"] < mp.mpf("1e-5")
+    print(f"    VOLUME CROSS-CHECK: {'PASS' if vol_ok else 'FAIL'}")
+
     lams = [coeffs[i + 2] / (2j * mp.pi) ** (i + 1) for i in range(n_inv)]
     kappas = logseries_to_kappa(lams) if (gate and val52) else []
     kap_out = {}
@@ -381,6 +409,18 @@ def main() -> int:
         "omega_fit": mp.nstr(omega_fit, 24), "omega_ki6c": mp.nstr(KI6C_OMEGA_BAR, 8),
         "omega_abs_err": mp.nstr(err_omega, 6),
         "mirror_frame": "conjugate" if conj else "direct", "passed": bool(gate)})
+    wb.add_data("volume_conjecture_crosscheck", {
+        "relation": "Vol(K) = 2*pi*Re(sigma), from |<K>_N| ~ e^{N Re sigma}",
+        "vol_5_2_snappy": mp.nstr(VOL_5_2, 30),
+        "vol_5_2_from_sigma": mp.nstr(2 * mp.pi * mp.re(s52), 30),
+        "vol_5_2_abs_err": mp.nstr(vol_err["5₂"], 6),
+        "vol_6_1_snappy": mp.nstr(VOL_6_1, 30),
+        "vol_6_1_from_sigma": mp.nstr(2 * mp.pi * mp.re(sigma_fit), 30),
+        "vol_6_1_abs_err": mp.nstr(vol_err["6₁"], 6),
+        "passed": bool(vol_ok),
+        "why_independent": "the volumes come from SnapPy and never enter the "
+                           "fit; ki6c's printed sigma is used only to pick the "
+                           "2*pi*m branch integer via its imaginary part"})
     wb.add_data("kappa", kap_out)
     wb.add_data("bar_pattern", {
         "problem": "PDF text extraction cannot see overlines (LaTeX sets them "
@@ -406,13 +446,28 @@ def main() -> int:
     wb.add_assertion("validation_5_2_omega", computed=mp.nstr(e_o52, 10),
                      expected="0", tolerance="1e-6",
                      source="fitted vs Ohtsuki's PUBLISHED omega(5_2)")
+    wb.add_assertion("volume_conjecture_5_2", computed=mp.nstr(vol_err["5₂"], 10),
+                     expected="0", tolerance="1e-8",
+                     source="2*pi*Re(sigma_5_2) vs SnapPy Vol(5_2)")
+    wb.add_assertion("volume_conjecture_6_1", computed=mp.nstr(vol_err["6₁"], 10),
+                     expected="0", tolerance="1e-5",
+                     source="2*pi*Re(sigma_6_1) vs SnapPy Vol(6_1)")
     wb.add_assertion("gate_6_1_sigma", computed=mp.nstr(err_sigma, 10),
                      expected="0", tolerance="1e-6",
                      source="fitted vs ki6c Theorem 1.1 sigma(6_1)")
     wb.add_assertion("gate_6_1_omega", computed=mp.nstr(err_omega, 10),
                      expected="0", tolerance="1e-5",
                      source="fitted vs ki6c p.15 omega(6_1)")
-    wb.save({"q0Anchor": "independent"})
+    wb.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0, on either layer. The Kashaev invariant is a state "
+            "sum over q = exp(2*pi*i/N) at Nth roots of unity, and the "
+            "sigma/omega/kappa fit is in 1/N; the substrate modulus never "
+            "enters. The only external numbers are Ohtsuki's printed "
+            "sigma/omega (comparison targets, plus the 2*pi*m branch integer) "
+            "and SnapPy's hyperbolic volumes (an independent cross-check)."),
+    })
 
     ok = val52 and gate
     print(f"\n  RESULT: {'kappa-series MEASURED for 6_1' if ok else 'gate failed'}")
