@@ -107,4 +107,63 @@ theorem hoefsmitB_sq_eq_one_sub_stdWeightD (q : ℝ) :
   field_simp
   ring
 
+/-- D-frame trivial-block `(3)` Wedderburn weight (S2): `y_(3)^D = (q⁴+1)/(q²+1)²`. -/
+noncomputable def trivWeightD (q : ℝ) : ℝ := (q ^ 4 + 1) / (q ^ 2 + 1) ^ 2
+
+/-- **D-weight normalisation** `y_(3)^D + 2·y_(2,1)^D = 1` (with `y_(1³)^D = 0`):
+    the S2 weight vector is a normalised trace on `H₃(q)`. -/
+theorem dWeights_normalised (q : ℝ) : trivWeightD q + 2 * stdWeightD q = 1 := by
+  unfold trivWeightD stdWeightD
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- `y_(3)^D = 1 − 2·y_(2,1)^D` (two-row relation). -/
+theorem trivWeightD_eq (q : ℝ) : trivWeightD q = 1 - 2 * stdWeightD q := by
+  have := dWeights_normalised q; linarith
+
+/-- **`b² = y_(3)^D + y_(2,1)^D`** — complementary form of
+    `hoefsmitB_sq_eq_one_sub_stdWeightD`. -/
+theorem hoefsmitB_sq_eq_trivWeightD_add_stdWeightD (q : ℝ) :
+    hoefsmitB q ^ 2 = trivWeightD q + stdWeightD q := by
+  rw [hoefsmitB_sq_eq_one_sub_stdWeightD, trivWeightD_eq]; ring
+
+/-- **`y_(2,1)^D = 1/[2]_q²`** — the standard-block weight is the Jones-closure
+    value, matching the `(q+q⁻¹)²·y₂₁ = 1` conclusion of
+    `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero`. -/
+theorem stdWeightD_eq_jones (q : ℝ) (hq : q ≠ 0) :
+    stdWeightD q = 1 / (q + q⁻¹) ^ 2 := by
+  unfold stdWeightD
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+
+/-- **The S2 D-weights solve the σ Markov equation at `z_D = q³/(q²+1)`:**
+    `q·y_(3)^D + (q−q⁻¹)·y_(2,1)^D = z_D` (with `y_(1³)^D = 0`). Formalises the
+    S2 symbolic solution (`gram-radical-exact`) in Lean. -/
+theorem dWeights_markov_sigma (q : ℝ) (hq : q ≠ 0) :
+    q * trivWeightD q + (q - q⁻¹) * stdWeightD q = q ^ 3 / (q ^ 2 + 1) := by
+  unfold trivWeightD stdWeightD
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The S2 D-weights solve the σσ Markov equation at `z_D`:**
+    `q²·y_(3)^D − y_(2,1)^D = z_D²`. -/
+theorem dWeights_markov_sigmasigma (q : ℝ) :
+    q ^ 2 * trivWeightD q + (-1) * stdWeightD q = (q ^ 3 / (q ^ 2 + 1)) ^ 2 := by
+  unfold trivWeightD stdWeightD
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- The D-weights and coupling at the classical point `q = 1`:
+    `y_(2,1)^D = ¼`, `y_(3)^D = ½`, `b² = ¾`. (`c₃`'s value at `q=1`,
+    `J_Hopf(1) = −2`, is a **topological input** — the Jones polynomial of the
+    Hopf link — NOT derivable from these weights; there is no forced-`c₃` lemma.
+    The provable D-structure is the weight/coupling algebra above.) -/
+theorem dWeights_at_one :
+    stdWeightD 1 = 1 / 4 ∧ trivWeightD 1 = 1 / 2 ∧ hoefsmitB 1 ^ 2 = 3 / 4 := by
+  refine ⟨by norm_num [stdWeightD], by norm_num [trivWeightD], ?_⟩
+  rw [hoefsmitB_sq_eq_one_sub_stdWeightD]; norm_num [stdWeightD]
+
 end QOU.BraidKnot
