@@ -2,4 +2,4 @@ The electromagnetic coupling derives from the matter particle spectrum. The Desc
 
 Spectral completeness holds. The spectral interpretation maps every photon mode to a force-carrier knot. The Plancherel-ratio Gram determinant defines the spectral measure. The derivation yields $\alpha_{\mathrm{EM}}$ as the unique gauge coupling compatible with the completeness pairing. This connects to the Chern–Simons action and the $\kappa$-spectral interpretation of the Gram-matrix determinant. The Bring zero-mode controls the precision-target gap.
 
-This yields the categorical value of $\alpha_{\mathrm{EM}}$ as a function of the substrate parameter. Evaluating at $q_0 \approx 1.1097$ produces a numerical prediction for comparison against CODATA.
+This yields the categorical value of $\alpha_{\mathrm{EM}}$ as a function of the substrate parameter. Evaluating at $q_0 \approx 1.1100$ produces a numerical prediction for comparison against CODATA.

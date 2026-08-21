@@ -23,7 +23,7 @@ $$
 
 ## Numerical match
 
-Evaluation at $q_0 = 1.109978595554181\ldots$ (50 dps) using 60 dps precision yields:
+Evaluation at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) using 60 dps precision yields:
 
 | Quantity | Value |
 |----------|------:|

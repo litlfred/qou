@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:59.800Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'The unsymmetrised standard character is not an S-eigenvector in general' is the fact that motivates the symmetrisation — substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:59.837Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Standard proof structure: coefficients, then Phi_2, Phi_3, Phi_1, then a corollary. No reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 296 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:59.874Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 296 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:59.912Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The three functionals Phi_1/Phi_2/Phi_3 are the objects the proposition classifies, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:59.952Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Ends on a witness note, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:59.993Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'We verify each S-eigenvalue in turn' and '(verify: ...)' are standard proof roadmap and reader-check, both routine mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:00.031Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The corollary derives a new consequence (the p/n splitting origin) rather than restating the eigenvalue table."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:00.068Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,22 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:00.105Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'the unique source of S-odd contribution' is supported by the eigenvalue decomposition just proved.",
+        "notes": "ALL S-ACTION ALGEBRA RE-DERIVED AND CORRECT: D = q^4+4q^2+1 -> q^{-4}D; W_sym = q^2/D invariant; (q^2+1)^2 -> q^{-4}(1+q^2)^2 so W_std invariant; [3]_q = q^2+1+q^{-2} invariant; h_A -> -h_A. Phi_3 spot-check verified exactly: S(1,0) = (1,-h_A) gives chi_sym = q - (q - q^{-1}) = q^{-1} and chi_alt = -1/q - (q - 1/q) = -q, matching the claimed swap-with-sign. Borromean volume 8G = 7.32772475342 = 2 Vol(oct), correct."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,23 @@
         "reviewed_at": "2026-08-15T10:31:00.382Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2d1aeb9b3d65",
+          "ts": "36995374fdf2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:00.144Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "minor",
+        "evidence": "Two sentences are unreadable because token substitution has replaced words with 'canonical' / 'the formal derivation': (i) '...S-odd contribution to the categorical mass.  canonical, since $S$ maps the proton braid (uud)...' — a sentence beginning with a bare adjective; (ii) '**Witness**: the formal derivation verifies the eigenvalue assignments canonical at $q_0$'.",
+        "notes": "SWEEP DAMAGE, not fixed inline (restoring words the sweep deleted is content restoration): 'canonical, since $S$ maps' -> 'Physically, since $S$ maps'; 'verifies the eigenvalue assignments canonical at $q_0$' -> 'verifies the eigenvalue assignments numerically at $q_0$' (the documented 'canonical' <- 'numerical(ly)' substitution class); 'the formal derivation' -> the actual producer script name. A third likely instance in the same block: 'are real canonical constants unaffected by the algebraic action' -> 'are real numerical constants'. CONVENTION FLAG (separate, verified): the block defines $z = 1/(q^{1/2}+q^{-1/2})$, which equals sqrt(q)/(q+1) = 0.4993203342 at q_0 — this is the EXCISED convention C, not the canonical convention D z = q^3/(q^2+1) = 0.6126880371. It is written in the reciprocal-of-sum spelling that the detector-blindness taxonomy records as detector-invisible, and it survives inside content/ after the 2026-08-10 content-only drain. NOTATION FLAG: 'the average $\\Phi_1 := \\tfrac12(\\Phi_1(\\beta)+\\Phi_1(S(\\beta)))$' defines Phi_1 in terms of itself; it needs a distinct name (e.g. Phi_1^{even})."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:54:00.144Z"
 }

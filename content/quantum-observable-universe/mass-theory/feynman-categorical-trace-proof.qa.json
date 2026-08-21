@@ -1292,6 +1292,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.942Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'collapses to a finite weighted sum over the irreducible summands, with no regularisation needed' - substantive: the absence of regularisation is the mathematical point of the collapse (contrasted with the divergent continuum integral), not emphasis by denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1311,6 +1326,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.655Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1330,6 +1360,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 99 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.691Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1349,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 99 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.979Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'The argument proceeds in three steps' is accurate: the three cited lemmas are eigenbasis decomposition, trace collapse, and Markov identification; the fourth citation (categorical mass as Markov trace) is the concluding identification, not a fourth step.",
+        "notes": "RIGOR (reported, not fixed): VERIFIED CORRECT and worth propagating - the Markov weight given here, w_lambda = dim_q(V_lambda).dim(S_lambda)/dim_q(V^{(x)n}), sums to 1 EXACTLY over lambda, because V^{(x)n} = (+)_lambda V_lambda (x) S_lambda makes the numerators add to the denominator. At n = 2 this is ([3]_q + 1)/[2]_q^2 = 1 identically (since [2]_q^2 = q^2+2+q^{-2} = [3]_q + 1). This is the CORRECT normalisation, and it is the concrete fix for clause (4) of thm:em-spectral-completeness, which instead writes w_+- = (dim_q V_+-)^2/[2]_q! and consequently does not sum to 1 at q != 1."
       }
     ],
     "trap-closing-aphorism": [
@@ -1368,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.726Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1387,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.764Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1406,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.800Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1425,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.835Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1444,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.870Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -1463,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.768Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "26d07a687fca",
+          "ts": "4b000a566027"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:45.907Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of prf:feynman-categorical-trace (three-lemma chain plus the categorical-mass identification). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1486,5 +1637,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:53:45.979Z"
 }

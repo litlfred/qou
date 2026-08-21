@@ -1203,6 +1203,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.942Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'m_e enters the higher periods through the recurrence rather than as a prefactor' - FALSE-POSITIVE CLASS 'substantive mathematical contrast': the distinction between propagating through the two-term recurrence and multiplying the whole tower is exactly what the block proves (a_D^{(2)} = tau a_D^{(1)} - m_e is additive in m_e, not multiplicative). Kept."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1222,6 +1237,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.661Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1241,6 +1271,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.697Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1260,6 +1305,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.732Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1279,6 +1339,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.770Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1298,6 +1373,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.805Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1317,6 +1407,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.840Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1336,6 +1441,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.874Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1355,6 +1475,23 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.992Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "severity": "minor",
+        "evidence": "Filler intensifier: 'The base value is then literally a_D^{(0)} = m_e'. 'literally' asserts nothing the equation does not already state; it is a de-hedging emphasis word in a sentence whose content is a structure projection (base0).",
+        "notes": "FIXED INLINE (1 sentence, pure prose, no math change): 'The base value is then literally $a_D^{(0)} = m_e$' -> 'The base value is then $a_D^{(0)} = m_e$'. Delimiter balance re-verified after edit."
       }
     ],
     "trap-nonspeakable": [
@@ -1374,6 +1511,21 @@
         "reviewed_at": "2026-08-15T10:31:00.729Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "422be93d805d",
+          "ts": "34f86125fbf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:41:24.908Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prf:electron-period-base (recurrence, base identification, n=0 evaluation). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1396,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:41:24.992Z"
 }

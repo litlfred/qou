@@ -15,7 +15,7 @@ a distinguished knot ideal — empirically $k_* = 4$.
 
 The total sum is bounded: $\sum_{\lambda \vdash n} w_\lambda(q)$
 is finite for every $n$ and equals $1$ exactly at $q = 1$; at
-$q_0 = 1.109978595554181\ldots$ (50 dps) it deviates from $1$ — categorically
+$q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) it deviates from $1$ — categorically
 $\sum w_\lambda(q) \approx 1.51$ at $n = 12$
 ([prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness)
 remark on q-deformed alternative). Boundedness of $\Phi_k$ follows

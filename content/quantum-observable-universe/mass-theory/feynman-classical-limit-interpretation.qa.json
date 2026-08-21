@@ -1326,6 +1326,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.332Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1345,6 +1360,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.370Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1364,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 242 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.406Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1383,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 242 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.442Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1402,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.622Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The block ends on a technical causal claim about where the continuum divergences come from, not on a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1421,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.586Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'The classical limit reveals how the QOU categorical trace degenerates to the standard quantum-mechanical formalism' is a scope sentence for a remark block, not narration of the author's own emphasis; no 'note that' / 'we emphasize' pattern anywhere."
       }
     ],
     "trap-thesis-restatement": [
@@ -1440,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.479Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1459,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.514Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1478,6 +1598,23 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.658Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "minor",
+        "evidence": "'All knots become topologically trivial under the symmetric quotient B_n ->> S_n.' The maximal quantifier is attached to the wrong object: knots do not become trivial - the INVARIANT stops distinguishing them, because the quotient forgets the braiding. The block's own preceding sentences say the right thing ('J_K(1) = 1 for every knot K', 'The Markov trace becomes constant'), so the over-claim is gratuitous.",
+        "notes": "STRUCTURAL (a meaning change, so not fixed inline). Proposed: 'All knots become indistinguishable to the invariant under the symmetric quotient B_n ->> S_n.' RIGOR (reported, not fixed): (1) CANONICAL MASS-FORMULA SHAPE. The block writes 'The topological mass formula m(K) = Vol(K)/hbar_q^2'. The canonical shape per AGENTS.md is m(K) = m_e . Vol(K) . rho(K) / hbar_q^2 - both the electron scale m_e (CAL-1) and the per-block density rho(K) are missing here. The divergence conclusion is unaffected (rho and m_e are hbar_q-independent), but the formula as printed is the purged short form. (2) UNSUPPORTED PHYSICS CLAIM: 'consistent with the classical expectation that only unknotted particles have finite mass' - no such classical expectation exists in the literature; this reads as a post-hoc rationalisation of the divergence. Proposed: delete the clause or cite what asserts it. (3) VERIFIED CORRECT: J_K(1) = 1 for every KNOT (the block correctly says knot - for an L-component link the value is (-2)^{L-1}); at q = 1 the Hecke quadratic has roots +-1 and H_n(R,q) -> k[S_n]; hbar_q = 1 - q^{-1} -> 0 and c_q = 1/(q-1) -> infinity; V^{(x)n} = (+) V_lambda (x) S_lambda keeps floor(n/2)+1 summands, consistent with the sibling proposition."
       }
     ],
     "trap-nonspeakable": [
@@ -1497,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:31:00.358Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.550Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1520,5 +1672,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:54:08.658Z"
 }
