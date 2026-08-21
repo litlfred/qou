@@ -301,3 +301,37 @@ because your next producer run would overwrite it.
 
 Context: PR #5312 drained this class 2 -> 0 earlier today; this one
 landed after. Count is back to 1.
+
+### Second defect in the same producer — an import-time `mpf` literal
+
+Surfaced by `scripts/precision-gates.sh` during an unrelated merge-prep
+run. `mpf_import_time_dps_audit` reports:
+
+```
+NEW files (not baselined) : 1
+  literal=1   computations/qbeta/qbeta_ohtsuki_sixone_kappa_series.py
+  L166: mpf('3.163963228883143983991757529167384812325703962')  [literal]
+```
+
+The string spelling is right — `mpf('...')` is the correct way to keep a
+constant out of float64 — but the **evaluation point** is wrong. This is
+at module scope, so it runs at IMPORT time, before `set_compute_dps()`.
+mpmath parses it at whatever `mp.dps` is then (default 15), so those 46
+digits are truncated on the way in. The literal *looks* precise and the
+value is not.
+
+Fix: move the construction inside the function that uses it (after the
+dps is set), or wrap it so it is built lazily. Do not add the file to
+`raw-float64-baseline.json` — AGENTS.md is explicit that baselines drain
+and never grow.
+
+Counts, for whoever fixes it:
+
+```
+files_with_findings  14 -> 15
+literal_findings      0 -> 1
+new_not_baselined     0 -> 1
+```
+
+Not fixed here for the same reason as the anchor field above: this is
+your in-progress bean and your next producer run owns both.
