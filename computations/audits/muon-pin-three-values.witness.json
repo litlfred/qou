@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "1.4.1",
-  "computedAt": "2026-08-21T21:41:56.501482+00:00",
-  "commitSha": "bd39e875e0355330da5a5675b852a0d113dec6fb",
+  "computedAt": "2026-08-21T23:02:09.431477+00:00",
+  "commitSha": "a58efc986b261c9328bc8f8664f88bec9dea376b",
   "assertions": [
     {
       "name": "1_three_distinct_values",
@@ -33,6 +33,27 @@
       "detail": "B matches the number `_q0_value_for_anchor`'s docstring records as the WRONG side of the 2026-08-15 revert ('1.1099785955541805 stamped'). The revert fixed the code and left the data, so B survives on main."
     },
     {
+      "name": "5a_B_is_CODATA_2018",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "Vol(4_1)/206.7682830 (CODATA 2018) reproduces B: 1.10997859555418057528159408. So B's VALUE is not an artifact of the revert — the revert is how it got stamped, not what it is (PR #5434, verified here independently)."
+    },
+    {
+      "name": "5b_C_is_CODATA_2022",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "Vol(4_1)/206.7682827 (CODATA 2022) reproduces C: 1.109978595642739046681795129. B and C are therefore the SAME derivation at successive CODATA vintages, not two independent drifts."
+    },
+    {
+      "name": "5c_A_matches_no_CODATA_vintage",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "inverting A gives m_mu/m_e = 206.768282989315, which matches NEITHER published figure and sits strictly between them (5.17e-11 from 2018, 1.40e-9 from 2022). So 'A is just the old CODATA' is measurably FALSE — A is not reproducible from a published muon ratio at all."
+    },
+    {
       "name": "5_C_is_not_B",
       "computed": "1",
       "expected": "1",
@@ -41,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 8,
   "computation": "muon-pin-three-values",
   "scriptFile": "muon_pin_three_values_probe.py",
-  "scriptHash": "5653d9a6af60",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ba5f7a9c836a",
+  "scriptCommitSha": "e607eee0477f652b3ff182c042bf130b503a309a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -77,6 +98,13 @@
       "B_minus_A_ppb": "-0.0028416265",
       "C_minus_A_ppb": "0.076942319",
       "C_minus_B_ppb": "0.079783945"
+    },
+    "codata_reconstruction": {
+      "vol_4_1": "2.029883212819307250042405",
+      "q0_from_CODATA_2018": "1.10997859555418057528159407961",
+      "q0_from_CODATA_2022": "1.10997859564273904668179512938",
+      "m_mu_over_m_e_implied_by_A": "206.768282989315",
+      "note": "B = CODATA 2018, C = CODATA 2022 — the same inline derivation q0 = 1/(1-sqrt(Vol(4_1)/(m_mu/m_e))) at two vintages, with commit a4d9906659 (codata_2022_source.py) the step between. A matches no vintage."
     },
     "B_carrying_witnesses": [
       "qbeta-h-frame-rungs.witness.json",

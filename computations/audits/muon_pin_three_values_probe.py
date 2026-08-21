@@ -21,8 +21,34 @@ significant digit -- five orders of magnitude above the framework's own L1
 compute target of 1 ppQ (1e-15), and inside the ~11.5 ppb muon-proton
 separation that the whole two-pin vocabulary exists to keep straight.
 
-WHERE B COMES FROM (this is the part worth reading)
----------------------------------------------------
+WHAT A, B AND C ACTUALLY ARE (corrected 2026-08-21 by PR #5434)
+----------------------------------------------------------------
+B and C are the SAME derivation at two CODATA vintages. The lepton-tower
+family derives q0 inline as hbar_q^2 = Vol(4_1)/(m_mu/m_e), q0 = 1/(1-hbar_q),
+which inverts cleanly. Verified independently here (mpmath dps=60):
+
+    Vol(4_1)/206.7682830  ->  1.10997859555418057528159407961   == B  (CODATA 2018)
+    Vol(4_1)/206.7682827  ->  1.10997859564273904668179512938   == C  (CODATA 2022)
+
+So C is not a second unexplained drift: it is B's derivation re-evaluated after
+the CODATA table was updated (commit a4d9906659, which added
+codata_2022_source.py). This CORRECTS the account below, which attributed B's
+VALUE to the reverted change. The revert is plausibly how B got STAMPED into
+the anchor field, but B's value is what that derivation returns under CODATA
+2018 -- not an artifact.
+
+A is the anomaly, and more sharply than "frozen". Inverting it the same way:
+
+    invert A  ->  m_mu/m_e = 206.768282989315
+
+which matches NEITHER published figure. It sits strictly BETWEEN them,
+5.17e-11 relative from 2018 and 1.40e-9 from 2022. So A is not that derivation
+at any CODATA vintage, and the tempting explanation -- "A is just the old
+CODATA" -- is measurably false. A is not reproducible from a published muon
+ratio at all.
+
+HOW B GOT STAMPED (the original finding, still standing)
+---------------------------------------------------------
 B is verbatim the number recorded in `_q0_value_for_anchor`'s own docstring as
 the WRONG side of a change that was made and then REVERTED on 2026-08-15:
 
@@ -34,7 +60,9 @@ witness -- the revert is complete in the code and incomplete in the data.
 
 C then moved again on top of that: q_muon_at() is a live derivation over a
 CODATA input, so it drifts whenever that input is updated, while A is frozen.
-Two of the three values are therefore MOVING TARGETS and one is not.
+Two of the three values are therefore MOVING TARGETS and one is not -- and
+per the correction above, the two moving ones are the SAME derivation at
+successive CODATA vintages, not two independent drifts.
 
 WHY THIS BLOCKS THE `comparison` STAMP IT WAS FOUND BY
 ------------------------------------------------------
@@ -120,6 +148,23 @@ def main() -> int:
     C = mp.nstr(q_muon_at(60), 52, strip_zeros=False)
     B, bpath = _find_b()
 
+    # CODATA reconstruction (PR #5434's refinement, verified here rather than
+    # taken on trust). The lepton-tower family derives q0 inline as
+    # hbar_q^2 = Vol(4_1)/(m_mu/m_e), q0 = 1/(1-hbar_q), so a published muon
+    # ratio predicts a q0 forward, and a q0 inverts back to a ratio.
+    VOL41 = 2 * mp.clsin(2, mp.pi / 3)      # 2*Cl_2(pi/3); NOT the 2*Lambda spelling
+    R2018, R2022 = mp.mpf("206.7682830"), mp.mpf("206.7682827")
+
+    def _q0_from_ratio(r):
+        return 1 / (1 - mp.sqrt(VOL41 / r))
+
+    def _ratio_from_q0(qs):
+        q = mp.mpf(qs)
+        return VOL41 / (1 - 1 / q) ** 2
+
+    q_2018, q_2022 = _q0_from_ratio(R2018), _q0_from_ratio(R2022)
+    ratio_A = _ratio_from_q0(A)
+
     print("=" * 74)
     print("Three values all called 'the muon q0'")
     print("=" * 74)
@@ -174,6 +219,28 @@ def main() -> int:
                        "('1.1099785955541805 stamped'). The revert fixed the "
                        "code and left the data, so B survives on main.",
              },
+            {"name": "5a_B_is_CODATA_2018",
+             "passed": mp.nstr(q_2018, 28) == mp.nstr(mp.mpf(B), 28),
+             "detail": f"Vol(4_1)/206.7682830 (CODATA 2018) reproduces B: "
+                       f"{mp.nstr(q_2018, 28)}. So B's VALUE is not an artifact "
+                       "of the revert — the revert is how it got stamped, not "
+                       "what it is (PR #5434, verified here independently).",
+             },
+            {"name": "5b_C_is_CODATA_2022",
+             "passed": mp.nstr(q_2022, 28) == mp.nstr(mp.mpf(C), 28),
+             "detail": f"Vol(4_1)/206.7682827 (CODATA 2022) reproduces C: "
+                       f"{mp.nstr(q_2022, 28)}. B and C are therefore the SAME "
+                       "derivation at successive CODATA vintages, not two "
+                       "independent drifts.",
+             },
+            {"name": "5c_A_matches_no_CODATA_vintage",
+             "passed": bool(R2022 < ratio_A < R2018),
+             "detail": f"inverting A gives m_mu/m_e = {mp.nstr(ratio_A, 16)}, "
+                       "which matches NEITHER published figure and sits strictly "
+                       "between them (5.17e-11 from 2018, 1.40e-9 from 2022). "
+                       "So 'A is just the old CODATA' is measurably FALSE — A is "
+                       "not reproducible from a published muon ratio at all.",
+             },
             {"name": "5_C_is_not_B",
              "passed": C[:16] != B[:16],
              "detail": "q_muon_at() no longer returns what it returned when "
@@ -220,6 +287,16 @@ def main() -> int:
             "B_committed_in_probe_witnesses": B,
             "C_q_muon_at_live": C,
             "separations": pairs,
+            "codata_reconstruction": {
+                "vol_4_1": mp.nstr(VOL41, 25),
+                "q0_from_CODATA_2018": mp.nstr(q_2018, 30),
+                "q0_from_CODATA_2022": mp.nstr(q_2022, 30),
+                "m_mu_over_m_e_implied_by_A": mp.nstr(ratio_A, 16),
+                "note": ("B = CODATA 2018, C = CODATA 2022 — the same inline "
+                         "derivation q0 = 1/(1-sqrt(Vol(4_1)/(m_mu/m_e))) at two "
+                         "vintages, with commit a4d9906659 (codata_2022_source.py) "
+                         "the step between. A matches no vintage."),
+            },
             "B_carrying_witnesses": [w for w, _ in _B_WITNESSES],
             "verdict": (
                 "Three values, two of them moving. The 2026-08-15 revert of the "
