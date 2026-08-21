@@ -1,9 +1,9 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:33:12.373414+00:00",
-  "commitSha": "e1cca3baaeb1a768682bad3e71ed7f4bfca385d6",
-  "scriptCommitSha": "e1cca3baaeb1a768682bad3e71ed7f4bfca385d6",
+  "computedAt": "2026-08-21T21:04:18.952735+00:00",
+  "commitSha": "9c6a637f9d61b5e1567011dd143daa200a15593e",
+  "scriptCommitSha": "9c6a637f9d61b5e1567011dd143daa200a15593e",
   "computation": "lw2-c2-independent-hopf-test-attempt",
   "scriptFile": "lw2_c2_independent_hopf_test_attempt.py",
   "assertions": [
@@ -102,5 +102,7 @@
       "statement": "The natural independent c=2 Hopf Markov trace, ALONE, does not reproduce the selection-rule c=2 value (1.104 vs 1.337). This constrains the magnitude/identification, NOT lw(2)'s validity.",
       "NOT_a_structural_exclusion": "lw(2)=(q+1)\u00b2/(3q) remains derivation-tight (Lean-proved). Nothing here refutes the selection rule; the negative is that tr_M(Hopf) is the WRONG independent object (a trace, not a mean dimension). A correct test needs a c=2 mass-consumer."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
