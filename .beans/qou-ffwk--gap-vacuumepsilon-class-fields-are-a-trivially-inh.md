@@ -610,3 +610,177 @@ Remaining library: `QouInfraDischargesGoncharovZeta5`, `VacuumEpsilon` (blocked
 on its 2026-08-08 docstring finding), `HyperbolicVolumeIndependence`,
 `BraidGroupNStrand` (class is `MarkovTraceN`, wants field-by-field splitting).
 Plus the six co-located stubs this bean's inventory omits.
+
+## Progress 2026-08-21 — `QouInfraDischargesGoncharovZeta5`
+
+Branch `claude/ffwk-goncharov-zeta5-2026-08-21`. Seventh of the ten.
+
+**The docstring recorded nothing.** Its "Content statement (from manuscript)"
+was the conjecture's **own title, repeated** — so unlike the earlier carriers
+there was no docstring claim to check against the block, and the block was the
+only source. Worth noting as a distinct sub-shape of this bean's defect: a
+placeholder field *plus* a placeholder content note.
+
+**The block supplied its own reduced target, which is encodable as written.**
+The full statement quantifies over motivic cohomology (`K₅^ind(F) ⊗ ℚ ≅
+𝔅₃(F) ⊗ ℚ`, the weight-3 Bloch group, the 22-term relation, the regulator into
+`𝒫₃/𝒫₂`) — none of which exists here, and neither do polylogarithms. But the
+block says:
+
+> The reduced target for QOU is to prove that `{Li₃(ζ₅ᵏ) : k = 1,2,3,4}` modulo
+> the multiplication-formula identity **span exactly this rank-2 image**.
+
+That is linear algebra over `ℚ` about four named elements. So the class asserts
+`finrank ℚ (span ℚ (range li3)) = 2`, with the ambient space and the four values
+as caller data.
+
+**Three things deliberately left out**, each for a different reason:
+
+- *the two routes* — Jones-coincident pairs and the direct `G₂₂(ζ₅)`
+  construction are **strategies**; the block itself says "if either route
+  succeeds". Encoding one would assert a proof method as part of the claim.
+- *"the only further relation being the 22-term one"* — constrains **which**
+  relations, not how many. The count is already forced and is derived below;
+  naming them needs `G₂₂`, hence polylogarithm identities the library lacks.
+- *Borel's theorem* — the rank `2` is the content of the conjecture at this
+  level, not a cited input.
+
+**Derived, not assumed:** `relations_finrank_eq_two` gets the
+multiplication-formula relation count from rank-nullity on
+`Fintype.linearCombination` — four generators spanning rank 2 leave a rank-2
+relation space. That is what makes a single numeric field say something
+structural.
+
+**Anti-vacuity:** `not_of_trivial` refutes the class at the all-zero family
+(span `⊥`, rank `0 ≠ 2`). Non-emptiness not shown — it needs an actual rank-2
+family, which is the conjecture.
+
+### A gate regression, adjudicated rather than hidden
+
+`check-base-ring` goes **PASS → WARN (9)** on this file. Every hit is `ℚ`.
+Verified against a stashed tree that this is my change, not pre-existing.
+
+**Not fixed, deliberately.** `ℚ` is load-bearing: the target is `dim_ℚ` of a
+`ℚ`-span matching Borel's `dim_ℚ K₅^ind(ℚ(ζ₅)) ⊗ ℚ = 2`. Over an arbitrary
+field the four values need not span rank 2 at all, so generalising the base ring
+would be a **different and unsupported claim** — the opposite error from the one
+this bean fixes. The checker is advisory by its own header ("It is advisory:
+`warn`, not [fail]"), and adding the acknowledgement to the block did **not**
+clear it: unlike `check-wall-side`, this checker counts hits regardless of any
+`.md`/`.ts` note. Recorded here and adjudicated in the block's `authorNotes`.
+
+That block's own 2026-08-08 note predicted this outcome — *"The real defect is
+the placeholder … fix that and the correct ring follows from it."* It did, and
+the ring is `ℚ`, not the `ℝ` the placeholder used. The new note records that the
+prediction was right.
+
+**Also:** the module was an **orphan** — imported by neither `QOU.lean` nor
+`QOU/AppendixSurreals.lean`. Pre-existing, so the diff-scoped orphan gate never
+saw it. Registered in the appendix umbrella.
+
+Detector count **10 → 9**.
+
+### Running total
+
+Seven of ten library carriers done; count 16 → 9. Seven carriers, seven
+encodings — tolerance parameter, exact equality, structural bridge between
+typeclass structures, asymmetric one-half-only, extensional-over-a-framing, and
+now a rank statement extracted from a block's own reduced target.
+
+Remaining library: `VacuumEpsilon` (blocked on its 2026-08-08 docstring
+finding), `HyperbolicVolumeIndependence`, `BraidGroupNStrand` (class is
+`MarkovTraceN`, wants field-by-field splitting). Plus the six co-located stubs
+this bean's inventory omits.
+
+## 2026-08-21 (2) — the inventory's detection method is wrong, and undercounts
+
+Went to do `HyperbolicVolumeIndependence` next. It is **already fixed**, and
+finding out why exposed a defect in this bean's own method. Re-measured the
+whole population.
+
+### The grep misses every prefixed variant
+
+This bean inventories by `grep -rl "residual_eq_zero"` and names ten carriers.
+But the placeholder is **not always spelled `residual_eq_zero`** — it appears as
+`tau_cyclic_residual_eq_zero`, `yb_residual_eq_zero`, `qyst_residual_eq_zero`,
+`hecke_quad_residual_eq_zero`, `inclusion_residual_eq_zero`,
+`conjecture_residual_eq_zero`, … The bare token matches those only incidentally,
+via substring, and an anchored field-position search for it finds **none** of
+them.
+
+I made the same mistake first: an anchored `^\s*residual_eq_zero\s*:` scan
+reported one live placeholder in nine files. That was an artifact of the anchor,
+not a fact — caught by hand-checking three files before asserting it. The
+correct pattern is `[A-Za-z_]*residual[A-Za-z_]*_eq_zero`.
+
+### Corrected census
+
+| file | placeholder fields | fabricated witnesses |
+|---|---:|---:|
+| `mass-endomorphism/hecke-algebra-type-scaffold.lean` | 4 | 0 |
+| `mass-theory/ck-extraction-from-algebraic-rules.lean` | 4 | 0 |
+| `mass-endomorphism/markov-trace-operator-construction.lean` | 3 | 0 |
+| `braids-and-knots/markov-trace-inductive-limit.lean` | 1 | **1** |
+| `mass-endomorphism/phi-d-syt-count-conjecture.lean` | 1 | **3** |
+| `lean/QOU/AppendixSurreals/VacuumEpsilon.lean` | 1 | 0 |
+| `lean/QOU/BraidKnot/BraidGroupNStrand.lean` | 1 | 0 |
+| `mass-theory/typed-b3-sub-braid-extraction.lean` | 1 | 0 |
+| `lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean` | **0** | **0** |
+
+**16 placeholder fields, not ~10 carriers** — several files carry three or four,
+so a per-file row undercounts the work. And **4 fabricated witnesses**, which
+the bean's row-level "instances remaining" column does not distinguish from
+placeholder fields at all.
+
+### LIVE audit-dodges — the most urgent item on this bean
+
+`phi-d-syt-count-conjecture.lean` declares **three global instances**
+(`phiDConj_V3`, `phiDConj_V21`, `phiDConj_V111`), each closing a
+`PhiD4FConjecture` with
+
+```lean
+  conjecture_residual := 0
+  conjecture_residual_eq_zero := rfl
+```
+
+These are `instance`s, so every downstream `[PhiD4FConjecture …]` resolves
+automatically, with **no `axiom` and no `sorry`** to surface in `#print axioms`.
+That is exactly the pattern AGENTS.md §3b-tax forbids and that the
+de-laundering PRs were supposed to have removed. `markov-trace-inductive-limit.lean`
+has a fourth. **This file is not in this bean's inventory at all.**
+
+I did not fix them here: removing a global instance breaks whatever resolves
+through it, and that consumer analysis is `qou-up56`'s scope, not a drive-by.
+
+### `HyperbolicVolumeIndependence` — a false positive, remove the row
+
+Zero placeholder fields, zero fabricated witnesses. Its placeholder class was
+**removed on 2026-06-10** (recorded in the file's own history note), and the
+real class in `HyperbolicVolumeTranscendence.lean:454` is fully content-bearing:
+a genuine ℚ-algebraic-independence statement over `vol_4_1`, `vol_5_2`,
+`vol_B3`. The file matches the grep **only through its own changelog** — the
+exact false-positive mode the seven rewritten carriers were written to avoid.
+
+Its live concern is different and belongs elsewhere: a `noncomputable instance`
+discharged by `sorry`. Per §3b that is the sanctioned encoding of an open
+conjecture (a `sorry` surfaces as `sorryAx`, unlike an `axiom`), so it is not
+obviously a defect — but it is a *global* instance, so it still resolves
+downstream for free. `qou-up56`.
+
+### Revised remaining work
+
+Not "3 of 10 carriers left". It is:
+
+1. **4 fabricated witnesses** (`phi-d-syt` ×3, `markov-trace-inductive-limit`
+   ×1) — highest priority; these are live and silent.
+2. **16 placeholder fields across 8 files**, of which the three multi-field
+   files (4, 4, 3) are the bulk and are all **co-located stubs**, not library
+   modules — lower build severity, higher reader severity, and omitted from
+   this bean's inventory.
+3. `VacuumEpsilon` (1 field) — still blocked on its 2026-08-08 docstring
+   finding.
+4. `BraidGroupNStrand` / `MarkovTraceN` (1 field) — wants field-by-field
+   splitting, since `tau_identity_eq_one` is already substantive.
+
+**Update the inventory's detection line** to the corrected pattern before the
+next pass, or the next agent re-derives this.
