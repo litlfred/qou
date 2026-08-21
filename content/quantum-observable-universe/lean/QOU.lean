@@ -336,6 +336,7 @@ import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.SeminormalInequivalence
 import QOU.SchurWeyl.OffDiagNonvanishing
+import QOU.SchurWeyl.SeminormalRangeTop
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.SytAdmissible
 -- Umbrella gap found by the sibling PR #5282 (`claude/hoefsmit-finish-2026-08-18`):
