@@ -25,8 +25,8 @@
   | Wronskian | present, but **two polynomials only** |
   | **index at a point** | **absent — this file** |
   | generalized Wronskians | absent in Mathlib — supplied in `QOU.Mathlib.GenWronskian`
-    (univariate, with the dependence iff) and `QOU.Mathlib.MvGenWronskian` (several
-    variables, the direction Roth's lemma consumes) |
+    (univariate) and `QOU.Mathlib.MvGenWronskian` (several variables), each with the
+    dependence criterion proved in **both** directions |
   | Roth's lemma, Roth's theorem | absent |
 
   ═══ THE DEFINITION, AND WHY IT AVOIDS DERIVATIVES ═══
@@ -369,9 +369,9 @@ theorem index_le_index_iterate_pderiv_add [DecidableEq σ] (d : σ → ℕ) (α 
 /-! ### Next, in order
 
 1. ~~`index_mul_ge`~~ — **done**, above.
-2. ~~**Generalized Wronskians**~~ — **done**. Univariate, with the full dependence criterion
-   `genWronskian_eq_zero_iff`, in `QOU.Mathlib.GenWronskian`; several variables, with the
-   direction Roth's lemma consumes, in `QOU.Mathlib.MvGenWronskian`.
+2. ~~**Generalized Wronskians**~~ — **done, both directions**.  Univariate:
+   `genWronskian_eq_zero_iff` in `QOU.Mathlib.GenWronskian`.  Several variables:
+   `linearIndependent_iff_exists_mvGenWronskian_ne_zero` in `QOU.Mathlib.MvGenWronskian`.
 3. ~~**The index under differentiation**~~ — **done**, `index_le_index_pderiv_add` and its
    iterate above.
 
@@ -385,9 +385,13 @@ theorem index_le_index_iterate_pderiv_add [DecidableEq σ] (d : σ → ℕ) (α 
    step where no part of it is bookkeeping.
 
    What is now in place for it: the index and its product law, both generalized-Wronskian
-   flavours, and the differentiation estimate above. What is not: the several-variable
-   converse (some operator family witnesses independence — see `MvGenWronskian`'s own
-   `Next`), and the induction itself.
+   criteria in full, and the differentiation estimate above.
+
+   ⚠ What is *not*, and is easy to overlook: Roth's lemma needs the operator family to have
+   **bounded order**, and `exists_mvGenWronskian_ne_zero` produces one from arbitrary
+   multi-indices with no such bound.  Supplying the bound is where the degree hypotheses on
+   the auxiliary polynomial enter — a real step, not bookkeeping.  Then the induction
+   itself.
 5. **Roth's theorem** itself, by the auxiliary-polynomial contradiction, using Mathlib's
    existing `exists_ne_zero_int_vec_norm_le` (Siegel's lemma) for the construction. -/
 
