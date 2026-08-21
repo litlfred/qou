@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T16:05:17Z
-updated_at: 2026-08-21T16:06:29Z
+updated_at: 2026-08-21T16:18:58Z
 ---
 
 RETROACTIVE CLAIM. Opened 2026-08-21 *after* the work merged, because it was
@@ -66,3 +66,23 @@ FOLLOW-UPS (queued, not done here):
      with the Tr_Gamma vs Jones-Ocneanu identification flagged as OPEN
      verification (the paper says "analogous to", and coinciding with Gomi's
      trace, while the abstract calls it an interpretation OF Jones-Ocneanu).
+
+
+FOLLOW-UPS DONE 2026-08-21 (PR #5385):
+  1. Register correction landed in the Z-defect addendum. The 'that is exactly
+     what remains open' sentence is corrected in place, with the 2026-08-16
+     ruling quoted, the numbers cross-checked against the note's own table
+     (0.987 = Z(3), 1.051 continues the n=7 crossing), and the residual open
+     question narrowed to the geometric-realization target only. The mu_lambda
+     conflation hazard from the same register entry is cited alongside.
+  2. Webster-Williamson lead doc written:
+     docs/audits/2026-08-21-webster-williamson-molien-lead-for-equivariant-index.md
+
+CORRECTION TO THIS BEAN'S OWN FOLLOW-UP NOTE. Item 2 above said the paper needed
+a lead doc; in framing it I first described the paper as uncited. That was WRONG
+and the corpus-grep caught it: it IS registered (webster-williamson-2014-markov)
+and IS cited, by mass-theory/hecke-markov-interpretation.ts. What is true, and is
+what the lead doc actually says, is narrower: the citation is BARE (that block's
+prose never discusses the paper) and 'Molien' appears NOWHERE in content/, docs/
+or computations/. So the paper was ingested and cited and its content never
+pulled through. Registered-but-unmined, not undiscovered.
