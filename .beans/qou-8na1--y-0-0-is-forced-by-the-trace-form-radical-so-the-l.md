@@ -1,10 +1,11 @@
 ---
 # qou-8na1
 title: y_0* = 0 is forced by the trace-form radical, so the LP shadow price prices nothing
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-16T13:18:20Z
-updated_at: 2026-08-16T13:18:20Z
+updated_at: 2026-08-21T16:21:57Z
 ---
 
 

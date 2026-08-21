@@ -207,3 +207,13 @@ it questions `prop:mass-coefficient-shadow-price`, not just this block.
 
 Farkas (`qou/kl8z`) was never needed here, and now demonstrably so: the
 certificate is exhibited by hand.
+
+## Blocker recheck 2026-08-21
+
+Witness registration is still blocked, and not by choice: `numpy`, `mpmath`,
+`sympy` and `scipy` are all unimportable in this container, so `WitnessBuilder`
+(via `qou_substrate.precision` → `mpmath`) cannot run and `pyhecke` cannot
+import either. The `.results.json` files remain deliberately outside the witness
+namespace rather than hand-forged. Needs one run in an environment with the
+numeric stack; the computation itself is exact and stdlib-only, so nothing about
+the result depends on that environment.
