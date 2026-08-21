@@ -6,6 +6,7 @@ type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
 updated_at: 2026-08-21T15:56:17Z
+updated_at: 2026-08-21T16:06:00Z
 ---
 
 
@@ -280,4 +281,27 @@ axioms: insert_uninsert = [propext, Quot.sound] (Classical.choice dropped with t
 
 ### Remaining after brick 10
 - word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2.
+
+### Brick 11 — uninsert invariants (PR #5383, 2026-08-21, branch claude/schensted-uninsert-invariants-2026-08-21)
+
+uninsert_rowsSorted + uninsert_noEmptyRows, unconditional at every row index. Both needed to
+ITERATE brick 10 (the IH re-applies insert_uninsert at each intermediate tableau).
+
+**The corner condition finally located.** I looked for it in the wrong place across two bricks.
+StrictBelow bundles a LENGTH half; the keeping branch at row 0 turns 'row1.length <= r.length' into
+'row1.length <= r.length - 1', which fails exactly when row 1 is as long as row 0 — i.e. when the
+removed cell is not a corner. So:
+  - right-inverse identity (brick 10): needs NO corner condition
+  - ColStrict preservation: CANNOT hold without one
+Machine-checked on T = [[1,3],[2,4]]: cornerWitness_colStrict / cornerWitness_not_colStrict, plus
+cornerWitness_{rowsSorted,noEmptyRows}_survives showing the split is real on that same witness.
+
+Not a gap: the cascade is always run at the largest recording-tableau entry, which IS a corner.
+The condition is supplied by Q one level up and belongs in the statement that consumes it.
+
+### Remaining after brick 11
+- ColStrict preservation under an explicit corner hypothesis (needs the corner predicate defined,
+  and the i+1 case is the reverse bumping lemma proper).
+- word-level surjectivity: iterate insert_uninsert the way brick 3 iterates brick 2, consuming the
+  three preservation lemmas.
 - RSKBurnsideHolds for general n -> spechtEquiv_of_sum_sq gives the general Wedderburn split.
