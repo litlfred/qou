@@ -925,6 +925,8 @@ import QOU.Mathlib.SchenstedUninsertInvariants
 import QOU.Mathlib.SchenstedReverseRowIndex
 -- RSK inverse, brick 13: the reverse cascade keeps columns strict, at a corner.
 import QOU.Mathlib.SchenstedCascadeColStrict
+-- RSK inverse, brick 14: the recovered word rebuilds the tableau (word-level surjectivity).
+import QOU.Mathlib.SchenstedWordSurjectivity
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
