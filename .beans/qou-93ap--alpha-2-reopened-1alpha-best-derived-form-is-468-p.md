@@ -52,3 +52,45 @@ This item is a worked example of why the anti-laundering rule exists: an
 empirical fit sat in a live status doc as a closed derivation for months,
 cited under a proposition label that contained no such formula, with all its
 supporting audits already deprecated.
+
+## The block's open question is now answered — it is κ, not the truncation
+
+[`em-coupling-chern-simons`](../content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md)
+states the residual honestly and names two candidate causes: *"Either the
+Gram-determinant identification of κ is wrong, or the order-$\delta_{CS}^2$
+truncation omits higher-order contributions."*
+
+Measured (`_alpha_em_inv_derived(q, order=2)` vs the exact resummation):
+
+| effect | size |
+|---|---|
+| resumming the tower (all orders vs order-δ²) | **11.06 ppb** — identical at both pins |
+| muon → proton pin | **79.17 ppb** — identical for both forms |
+
+The omitted higher orders are worth **11 ppb against a ~400 ppb residual** —
+1/36th of the gap. The truncation is therefore **not** the explanation, and by
+elimination within the block's own two options the defect is **κ**. That
+matches the block's own observation that exact CODATA matching needs
+κ ≈ 1.8878 against Witten's 1.722, a ~10 % discrepancy, and κ is precisely the
+quantity still carried as a `sorry`.
+
+Both effects being invariant across the other variable is a structural check
+on the measurement, not a coincidence: the tower ratio and the pin enter
+multiplicatively.
+
+## Live content is NOT over-claiming — scope note
+
+Checked, because the correction above could be read as broader than it is.
+`em-coupling-chern-simons` says κ "was never closed";
+`docs/observable-sector-tracker.md` records α_EM as
+**"PARTIAL … derived form OPEN"**. The false *"resolved at 6.7 ppb"* lived
+only in `computations/DERIVATION-STATUS.md`. The paper content was right.
+
+## Next, needing approval (paper content)
+
+`em-coupling-chern-simons.md` and `em-coupling-projection-table1-data.md`
+quote `137.035944` / `399 ppb` / `CODATA 2018`. Those are the truncated,
+muon-pinned figures against the superseded edition; current is
+`137.0359350939756` / **468 ppb** / CODATA-2022. Correcting them is a
+content-block edit — `qa-sweep` + the render-QA gate apply — and it changes
+numbers inside a proposition, so it is not an idle-pass fix.
