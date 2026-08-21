@@ -40,7 +40,15 @@ cite I lacked:
 > **docstring, not the Lean** (`:2-12`).
 
 It also goes a step further than I did: under D the *implied empirical*
-c₂ = **−9.299** (registry §9g:713), so **even c₂ is a C-frame object**. I had
+c₂ = **−9.299** (registry §9g:713), so **even c₂ is a C-frame object**.
+> **⚠ That −9.299 is RETRACTED UPSTREAM (2026-08-21, PR #5348 / `qou-cds1`).**
+> The cds1 state synthesis records the sensitivity-table `c₃ ≈ −974` and
+> `c₂ ≈ −9.299` as **naive-z-swap artifacts** — the C-frame extractor fed
+> `z_D`, which S1 proves invalid — and says they are *not* proposed D values
+> and must not be wired or quoted. My sentence above is accurate as a report
+> of what the 2026-08-16 red-team audit said; it is **superseded as a
+> statement about convention D**. Flagged rather than deleted so the
+> reattribution above still reads straight. I had
 concluded the "PROVED" label overstates the Lean; the audit had already concluded
 that *and* that the value itself does not survive the convention ruling.
 
