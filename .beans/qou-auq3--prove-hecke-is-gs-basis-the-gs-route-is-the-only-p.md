@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-21T16:46:54Z
+updated_at: 2026-08-21T16:53:50Z
 ---
 
 
@@ -2841,3 +2841,43 @@ transport direction; "the assembly is wiring"; and now "the block is closed at
 general depth". Every one was caught by measuring rather than by reasoning from
 the previous description. That is the working method for the rest of this arc,
 not a run of bad luck.
+
+### The prefix, read by term lineage — and it needs no new lemma kinds
+
+`computations/hecke_prefix_phases.py` + witness. The prefix's step list resists
+reading because the element is multi-term there and the engine interleaves the
+terms by deg-lex, so consecutive chain steps often belong to *different* terms.
+Tagging each step by term lineage makes it simple.
+
+**Exactly two lineages act, running the same script, offset.** Measured over
+`a = 3 … 6`, `b ∈ {a, a+1, a+2}` — 12 cases, none failing:
+
+    A = [B₂₁, F₀₂, B₁₀] ++ (B minus its trailing [B₁₀⟨b⟩, B₂₁])
+    B = for d = 1 … a−3:  one Bokut–Shiao step, then d far-commutations
+        then one bare Bokut–Shiao step
+        then Y_{j₁,j₁+1} Q_{j₁}, adjacent
+
+`B`'s script is §4af's loop followed by the quadratic pair.
+
+**The lengths corrected my own first phrasing.** "A is the head prepended to
+B's script" is what the picture suggests, and it is wrong: `|A| = |B| + 1`, not
+`|B| + 3`, because `B` ends with two steps `A` has no counterpart for. The check
+now pins that exactly rather than comparing a common prefix — the weaker form
+would have passed while leaving `B`'s last two steps unexamined.
+
+**Consequence — the prefix introduces no new *kind* of step:**
+
+    loop passes      §4af (loopTwo / loopTwoGen / blockStep)
+    B and Y steps    monicStep          (§4x)
+    Q steps          quadStep           (§4ah)
+    small(a)         blockPassFromTwo   (§4aj — reachable only because T was freed)
+    the cancellation ofTerms_cancel_pair (§4ak)
+
+**That is an inventory result, not a schedule**, and the witness says so. The
+pieces still have to compose on the nose across an interleaving of two
+lineages. Given the arc's record — five structural descriptions falsified by
+measurement, one of them about this same assembly — the composition should be
+attempted and allowed to fail loudly, not assumed from the inventory.
+
+**Remaining:** the prefix composition itself, then the `OverlapComposition` and
+its `spoly` identity.
