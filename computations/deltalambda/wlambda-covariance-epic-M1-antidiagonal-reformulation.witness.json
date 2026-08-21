@@ -1,0 +1,46 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T15:26:31.517698+00:00",
+  "commitSha": "540693cb0424253f9ff91aa8f43785b03239f14d",
+  "assertions": [
+    {
+      "name": "covariance_epic_M1_antidiagonal_reformulation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "M_1 = Cov(sum(i+j), sum c^2) = 2Cov(n_lam,sum c^2) = Cov(sum h, sum h^2) (n<=17); Cov>0, rho in [0.85,0.92] near-perfect; Var(sum c^2)=|C3|; no harmonic-augmented closed form; Kerov-CLT integral is the proof route. Reformulation+route, not a proof. No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "wlambda-covariance-epic-M1-antidiagonal-reformulation",
+  "scriptFile": "wlambda_covariance_epic_M1_antidiagonal_reformulation.py",
+  "scriptHash": "1b9fb14a3b63",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "A clean reformulation + concrete proof route for the first odd moment M_1>0 (qou-x631, qou-ogrk), the open base case of odd-moment positivity. Via transpose symmetry M_1 = Cov_Planch(Σ_□ h, Σ_□ h²) = 2 Cov(n_λ,Σc²) = Cov_Planch(Σ_□(i+j), Σ_□(j−i)²) — the antidiagonal spread Σb (b=i+j) vs the diagonal spread Σc² (verified equal, n≤17). Σb is transpose-EVEN yet ∉ the shifted-symmetric algebra A, which is why M_1 is non-polynomial. Supporting facts (exact n≤19): Cov>0 robustly with near-perfect correlation ρ≈0.85–0.92 (non-degenerate, does not decay); Var(Σc²)=|C₃|=n(n−1)(n−2)/3 exactly; and M_1 is NOT a harmonic-augmented polynomial (poly₄ and n²H_n+poly₃ fits both fail — no cheap closed form). Proof route: Kerov CLT — both statistics are quadratic-in-position moments, so Cov(Σb,Σc²)=∬φ(x)ψ(y)K_Δ(x,y) against Kerov's explicit Gaussian-profile covariance kernel, a positive quadratic form ⇒ Cov>0 asymptotically with explicit constant; exact small-n covers the tail. Executing that integral is the open next step. Reformulation + route, NOT a proof of M_1, odd positivity, A2, or the kernel (all open). scope-(a); no fit; nothing wired; no c_k; L2 unchanged.",
+  "data": {
+    "reformulation": "M_1 = Cov_Planch(sum(i+j), sum c^2)  (antidiagonal vs diagonal spread)",
+    "reformulation_verified_nmax": 17,
+    "sum_b_transpose_even_not_in_A": true,
+    "var_sum_c2_eq_C3": true,
+    "correlation_rho_range_near_perfect": [
+      0.853,
+      1.0
+    ],
+    "closed_form_excluded": true,
+    "proof_route": "Kerov CLT: Cov = double integral of phi*psi against Gaussian profile kernel K_Delta (positive quadratic form)"
+  }
+}
