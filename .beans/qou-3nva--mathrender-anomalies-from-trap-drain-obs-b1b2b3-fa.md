@@ -879,3 +879,43 @@ not survive re-reading.
    three data tables, and a genuine digit transposition (`1.10977859555`) in
    `proton-mass-substrate-identity-derivation` — a *production identity*
    block. A reader cannot tell which is authoritative from the text.
+
+---
+
+## r01 re-audit of the 35 changed blocks — findings recovered from the sidecars
+
+`agent:r01` re-audited the 35 blocks whose `.md` had changed on main after
+their original audit (so their old verdicts were deliberately not carried
+forward). It completed all 35 with the full ten-category record, then died
+on the weekly usage limit **while writing its summary**, so the prose report
+was lost. The verdicts survived on disk; this section is reconstructed from
+them, not rewritten from memory.
+
+**17 fails over 35 blocks — 4 fixed inline, 13 flagged structural.**
+
+Fixed: meta-commentary openers in `qbeta-ck-truncation-canonical` (twice, one
+of them a negation-contrast in the same block), `quantum-peter-weyl-proof`
+("This is the key step." deleted), `skein-filtration-trichotomy` ("It is worth
+stating why …" → the plain predicate).
+
+Structural, worth the owner's attention:
+
+- **`millennium-unification` is internally contradictory after a correction
+  pass.** Paragraphs were inserted establishing that the Navier–Stokes row is
+  a *rate comparison*, not a squeeze instance — but the block's opener still
+  says "Six … reduce to a single surreal inequality", and a later paragraph
+  restates it. The block now claims six and demonstrates five-plus-one.
+  `surreal-squeeze-interpretation` carries the same stale "every millennium
+  remark reduces to this lemma" currency. Two blocks, one unreconciled edit.
+- **A trace-class constant fails on its own step** in
+  `p1-spectral-sobolev-proof` — verified by the agent, separate from the
+  superlative flag on the same line.
+- **Three correction/provenance notes sit in `.md` prose** where §4d puts
+  them in `.ts` `authorNotes` (`q-collatz-conjecture`, `qou-p-neq-np`,
+  `categorical-mass-markov-proof` — the last also carries a C-vs-D comparison
+  table that is probably worth keeping in prose). Flagged rather than moved:
+  deleting provenance is the wrong repair.
+- `ns-kummer-specialisation` carries the de-hedging intensifier flood in both
+  its superlative and nonspeakable dimensions; the proposed repair restores
+  plain predicates ("zeroes out only spanning n in {1,2,3,6}" → "vanishes
+  exactly when n divides −6").
