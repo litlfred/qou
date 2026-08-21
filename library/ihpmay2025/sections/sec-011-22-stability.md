@@ -1,13 +1,13 @@
 ---
 doc_id: ihpmay2025
-doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY"
+doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-011-22-stability
 section_title: "Stability"
 section_number: 2.2
 pages: 17-19
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
-doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 It is a crucial property of convex cocompact representations, known as stability, thatgCC (M)
 is open in Hom(Γ , PSL(2, C)). This was first established by Marden [50]. Informally, if you

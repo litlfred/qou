@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0103325v4
-doc_title: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine"
+doc_title: "Quantum algebras in phenomenological description of particle properties"
 section_id: sec-001-2-v-ector-mesons-q-deformation-vs-mixing
 section_title: "V ector mesons: q-deformation vs mixing"
 section_number: 2
 pages: 1-2
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
-doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
+doc_brief: "Quantum algebras in phenomenological description of particle properties — 28 sections: Introduction; V ector mesons: q-deformation vs m; Octet baryon mass sum rules: best"
 ---
 We use (see [3,5,6]) Gelfand-Tsetlin basis vec-
 tors for meson states from ( n2 − 1)-plet of ’ n-

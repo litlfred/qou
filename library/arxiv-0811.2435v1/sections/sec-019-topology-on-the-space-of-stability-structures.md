@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.2435v1
-doc_title: "Stability structures, motivic"
+doc_title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations"
 section_id: sec-019-topology-on-the-space-of-stability-structures
 section_title: "Topology on the space of stability structures"
 section_number: null
 pages: 56-60
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 LetC be an ind-constructible weakly unital A∞-category over a ﬁeld k of
 arbitrary characteristic. Let cl : Ob(C) → Γ ≃ Zn be a map of ind-

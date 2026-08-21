@@ -1,13 +1,13 @@
 ---
 doc_id: resur-and-mld-calc-d-sauzin-hal
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Resurgence and Mould Calculus"
 section_id: sec-006-the-hyperlogarithmic-mould
 section_title: "The hyperlogarithmic mould."
 section_number: null
 pages: 12-13
 source_pdf: Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf
 source_sha256: b33f24cc76102f33
-doc_brief: "HAL Id: hal-04253203 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 9 sections: Introduction"
+doc_brief: "Resurgence and Mould Calculus — 9 sections: Introduction; Alien operators. Alien derivations; Borel-Laplace summation"
 ---
 Here is a reinforcement of Theorem 5:
 Theorem 11 ([´Eca81]). Let A := ~R (resp. ~Rs,

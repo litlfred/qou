@@ -1,13 +1,13 @@
 ---
 doc_id: s0025-5718-07-02027-3
-doc_title: "MA THEMA TICS OF COMPUT A TION"
+doc_title: "Li(p)-service? An algorithm for computing p-adic polylogarithms"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: S0025-5718-07-02027-3.pdf
 source_sha256: 080b5ac8542ff19c
-doc_brief: "MATHEMATICS OF COMPUTATION — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
+doc_brief: "Li(p)-service? An algorithm for computing p-adic polylogarithms — We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision."
 ---
 It is well known that, for a number ﬁeld k with ring of integers Ok,t h e r ei sa
 relation between the regulator of the group of units of Ok, O∗

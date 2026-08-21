@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1511.00400v2
-doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗"
+doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties"
 section_id: sec-016-42-higher-torsions-for-closed-manifolds
 section_title: "Higher torsions for closed manifolds"
 section_number: 4.2
 pages: 27-29
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
-doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 From Theorem 4.2, we can deﬁne torsions.
 Deﬁnition 4.3. Let M 3 be a closed oriented hyperbolic three-manifold, with

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "E. Witten Institute for Advanced Study"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-051-2-in-the-nf-4-normalization-this-means-that-it-i
 section_title: "In the Nf = 4 normalization this means that it is at u ≈ 2a2 =m2. Hence,"
 section_number: 2

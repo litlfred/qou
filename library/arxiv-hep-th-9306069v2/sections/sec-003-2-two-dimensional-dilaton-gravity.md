@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "Department of Physics"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-003-2-two-dimensional-dilaton-gravity
 section_title: "Two-dimensional dilaton gravity"
 section_number: 2
 pages: 8-10
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for"
 ---
 It is very useful to have a simpliﬁed setting in which to study black hole physics. Callan,
 Giddings, Harvey and Strominger (CGHS) suggested for this p urpose two-dimensional dila-

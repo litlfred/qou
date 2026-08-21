@@ -1,13 +1,13 @@
 ---
 doc_id: 1172-1
-doc_title: "Fs=E2=7k$SL\$Ncolored Jones B?9`<0$a7W;;J}K!$K$D$$$F @;?4=w;RBg3X2,K\H~@c(Mﬁyuki Okamoto) 0lHL$N7k$SL\$NFs=E2=7k$SL\$K4X$9$kcolored Jones B?9`<0$r, Whitehead Mm$_ L\$Ncolored Jones"
+doc_title: "On a computation method for the colored Jones polynomial of doubled knots"
 section_id: sec-001-2-whitehead-mm-lncolored-jones-b90hhbetan5u9tns
 section_title: "Whitehead Mm$_L\$Ncolored Jones B?9`<0$H$H(\beta)$$N5U9TNs"
 section_number: 2
 pages: 3-7
 source_pdf: 1172-1.pdf
 source_sha256: f067a1bfa4c60df0
-doc_brief: "数理解析研究所講究録 1172 % 2000 年 1-7 二重化結び目の colored Jones 多項式の計算方法について 聖心女子大学 岡本美雪 (Miyuki Okamoto) 一般の結び目の二重化結び目に関する colored Jones 多項式を, Whitehead 絡み 目の colored Jones 多項式を用いて計算する方法を紹介する. 二重化結び目に関し — 2 secti"
+doc_brief: "On a computation method for the colored Jones polynomial of doubled knots — 2 sections: Fs=E2=7k$SL\$Ncolored Jones B?9`<0; Whitehead Mm$_L\$Ncolored Jones B?"
 ---
 Mm$_L\$r1 2U=j$G@ZCG$7$F$(1,1)-$%?%s%0%kI=<($7, [1] $N$R$9TNs$rMQ$$$Fcolored
 Jones B?9`<0$r7W;;$9$k$3$H$,$G$-$k.

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1705.01853v2
-doc_title: "Line Operators in the Standard Model David Tong"
+doc_title: "Line operators in the Standard Model"
 section_id: sec-010-31-theta-angles
 section_title: "Theta Angles"
 section_number: 3.1
 pages: 11-13
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
-doc_brief: "Line Operators in the Standard Model David Tong — There is an ambiguity in the gauge group of the Standard Model."
+doc_brief: "Line operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
 We can now ask how the spectrum of line operators changes as we va ry the θ-angles.
 A priori, there are three such angles, one for each factor of the g auge group. We call

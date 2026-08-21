@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "which has many interesting connections with three-dimensi onal quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the prese nce of a single knotted Wilson l"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-004-2-more-precisely-isom-i-h3-p-sl2c-sl2c1-but-acco
 section_title: "More precisely, Isom +(I H3) = P SL(2,C) = SL(2,C)/{±1}, but according to [5], a repre-"
 section_number: 2
 pages: 4-5
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
-doc_brief: "Three-Dimensional Quantum Gravity — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting connections with three-dimensi onal quantum gravity"
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with compl ex gauge group SL(2, C), which has many interesting"
 ---
 sentation of P SL(2,C) corresponding to a complete hyperbolic structure can alw ays be lifted to
 SL(2,C), and it is SL(2,C) with which we shall work.

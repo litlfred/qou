@@ -1,6 +1,6 @@
 ---
 doc_id: cor-ma1
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Overpartitions, lattice paths and Rogers-Ramanujan identities"
 section_id: sec-003-6-syl-vie-corteel-and-olivier-mallet
 section_title: "SYL VIE CORTEEL AND OLIVIER MALLET"
 section_number: 6

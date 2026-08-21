@@ -1,6 +1,6 @@
 ---
 doc_id: afst-2007-6-16-3-665-0
-doc_title: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+doc_title: "Galois theory of q-difference equations"
 section_id: sec-009-2-vector-bundles-andq-diﬀerence-modules
 section_title: "Vector bundles andq-diﬀerence modules"
 section_number: 2

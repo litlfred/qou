@@ -1,13 +1,13 @@
 ---
 doc_id: 04010141
-doc_title: "Advanced Studies in Pure Mathematics 40, 2004"
+doc_title: "Cellular algebras and diagram algebras in representation theory"
 section_id: sec-003-43-temperley-lieb-algebras-of-various-types
 section_title: "Temperley-Lieb algebras of various types"
 section_number: 4.3
 pages: 16-19
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
-doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
+doc_brief: "Cellular algebras and diagram algebras in representation theory — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to"
 ---
 We shall next explain how to realise the various algebras which have 
 been introduced above by means of diagrams as quotients of Heeke al-

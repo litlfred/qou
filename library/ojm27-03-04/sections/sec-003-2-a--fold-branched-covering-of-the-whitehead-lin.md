@@ -1,6 +1,6 @@
 ---
 doc_id: ojm27-03-04
-doc_title: "The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka Institutional Knowledge Archive : OUKA The University of Osaka"
+doc_title: "Hyperbolic 3-manifolds with totally geodesic boundary"
 section_id: sec-003-2-a--fold-branched-covering-of-the-whitehead-lin
 section_title: "A £-fold branched covering of the Whitehead link complement"
 section_number: 2

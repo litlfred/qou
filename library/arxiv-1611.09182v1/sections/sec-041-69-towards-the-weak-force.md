@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-041-69-towards-the-weak-force
 section_title: "Towards the weak force"
 section_number: 6.9
 pages: 61-62
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 Perhaps unexpectedly, it turns out that Su packages all of the isospin up-type states to-
 gether, and Sd packages all of the down-type states together. This is of course, if one goes

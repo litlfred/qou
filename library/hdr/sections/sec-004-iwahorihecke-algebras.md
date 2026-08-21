@@ -1,13 +1,13 @@
 ---
 doc_id: hdr
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Hecke algebras, generalisations and representation theory"
 section_id: sec-004-iwahorihecke-algebras
 section_title: "Iwahori–Hecke Algebras"
 section_number: null
 pages: 20-20
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
+doc_brief: "Hecke algebras, generalisations and representation theory — 27 sections: Algebras of Finite Type; Blocks; Symmetrising forms and Schur eleme"
 ---
 In this chapter we will focus on real reﬂection groups, while in the next chapter we will see what happens
 in the complex case.

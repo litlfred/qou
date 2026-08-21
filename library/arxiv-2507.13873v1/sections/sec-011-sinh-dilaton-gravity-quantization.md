@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2507.13873v1
-doc_title: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡"
+doc_title: "Probing the singularity at the holographic screen via q-holography"
 section_id: sec-011-sinh-dilaton-gravity-quantization
 section_title: "Sinh dilaton gravity quantization"
 section_number: null
 pages: 31-44
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography Andreas Belaey,∗ Thomas G. Mertens,† Jacopo Papalini,‡ — We study the emergence ofq-deformed spacetime in a lower-dimensional"
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 In order to be self-contained, we follow here a more direct approach based on the canonical
 phase space quantization of the theory, which will allow us to directly identify the boundary

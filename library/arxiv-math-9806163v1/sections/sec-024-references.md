@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9806163v1
-doc_title: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana"
+doc_title: "Weights of Markov traces on Hecke algebras"
 section_id: sec-024-references
 section_title: "References"
 section_number: null
 pages: 22-23
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
-doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
+doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 [B] Birman, J, Braids, links and mapping class groups , Ann. Math. Stud. 82 (1974).
 [D] Drinfeld, V. Quantum groups , Proceedings ICM Berkeley, 1986, 798-820.

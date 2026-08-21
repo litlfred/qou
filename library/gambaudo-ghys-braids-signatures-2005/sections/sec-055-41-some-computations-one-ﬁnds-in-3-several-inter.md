@@ -1,13 +1,13 @@
 ---
 doc_id: gambaudo-ghys-braids-signatures-2005
-doc_title: "Bull. Soc. math. France 133 (4), 2005, p. 541–579"
+doc_title: "Braids and signatures"
 section_id: sec-055-41-some-computations-one-ﬁnds-in-3-several-inter
 section_title: "Some computations. — One ﬁnds in [3] several interpretations of the"
 section_number: 4.1
 pages: 27-28
 source_pdf: gambaudo-ghys-braids-signatures-2005.pdf
 source_sha256: 647f4c28cab7428d
-doc_brief: "Bull. Soc. math. France 133 (4), 2005, p. 541–579 — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
+doc_brief: "Braids and signatures — 62 sections: Introduction; (v1) −v1 =v2 −γ 2(v2) and deﬁne; (α,β ) which is a 2-fold branched"
 ---
 Meyer cocycle in terms of cyclic orderings. As a warm up for ou r study of B3,
 we give some simple formulas for Meyer( γ 1,γ 2) where γ 1 and γ 2 are elements

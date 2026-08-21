@@ -1,13 +1,13 @@
 ---
 doc_id: crmath-2011-349-19-20-1037-0
-doc_title: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect"
+doc_title: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières"
 section_id: sec-006-références
 section_title: "Références"
 section_number: null
 pages: 3-3
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
-doc_brief: "C. R. Acad. Sci. Paris, Ser. I www.sciencedirect.com Équations différentielles Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put"
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put and Reversat described the form of a pure q-difference module with non"
 ---
 [1] Pierre Deligne, James Milne, Tannakian Categories, in: Lecture Notes in Mathematics, vol. 900, Springer, Berlin/Heidelberg, 1981, pp. 101–228.
 [2] Marius van der Put, Marc Reversat, Galois theory ofq-difference equations, Ann. Fac. Sci. Toulouse Math. (6) 16 (3) (2007) 665–718.

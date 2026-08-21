@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Bonn, November 2018"
+doc_title: "Few-body systems in lattice effective field theory"
 section_id: sec-053-density-and-current-operators
 section_title: "Density and current operators"
 section_number: null
 pages: 93-95
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Effective Field Theory Dissertation Erlangung des Doktorgrades (Dr. rer. nat.) Mathematisch-Naturwissenschaftlichen Fakultät Rheinischen Friedrich-Wilhelms-Universität Bonn"
+doc_brief: "Few-body systems in lattice effective field theory — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 Here, we deﬁne the various nucleon density, current and derivative operators that we are using. Following
 Refs. [32, 116, 164], we deﬁne the local density operators. The LO and NLO density operators include

@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "School of Mathematics, Georgia Institute of Technology"
+doc_title: "The colored Jones function is q-holonomic"
 section_id: sec-008-51-finding-a-recursion-relation-for-multisums
 section_title: "Finding a recursion relation for multisums"
 section_number: 5.1
 pages: 16-18
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
+doc_brief: "The colored Jones function is q-holonomic — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear"
 ---
 Our starting point are multisums of q –proper hypergeometric functions. Recall
 the deﬁnition 2.3 of a q –proper hypergeometric function F (n, k) from Section

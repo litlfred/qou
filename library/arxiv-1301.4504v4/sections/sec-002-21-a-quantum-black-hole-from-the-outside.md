@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1301.4504v4
-doc_title: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center "
+doc_title: "Quantum Computation vs. Firewalls"
 section_id: sec-002-21-a-quantum-black-hole-from-the-outside
 section_title: "A Quantum Black Hole from the Outside"
 section_number: 2.1
 pages: 9-11
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princ"
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 We’ll ﬁrst discuss Charlie’s description, which is based on the following three postulates:
 • According to Charlie, the formation and evaporation of the black hole is a unitary

@@ -1,13 +1,13 @@
 ---
 doc_id: monodromyhitchiny
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the monodromy of the Hitchin connection"
 section_id: sec-021-8-yves-laszlo-christian-pauly-and-christoph-sorg
 section_title: "YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER"
 section_number: 8
 pages: 9-9
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
+doc_brief: "On the monodromy of the Hitchin connection — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND ; Introduction; Review of mapping class groups, mo"
 ---
 Proposition 5.3. In the four cases l = 1, 2, 4 and 8, the image ρl(π1(M0,4,x )) in the projective
 linear group PGL(2, C) is ﬁnite and isomorphic to the groups given in table

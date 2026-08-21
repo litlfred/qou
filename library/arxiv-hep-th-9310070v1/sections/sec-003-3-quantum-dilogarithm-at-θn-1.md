@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9310070v1
-doc_title: "September, 1993 Quantum Dilogarithm"
+doc_title: "Quantum dilogarithm"
 section_id: sec-003-3-quantum-dilogarithm-at-θn-1
 section_title: "Quantum Dilogarithm at θN = 1"
 section_number: 3
 pages: 5-8
 source_pdf: 9310070v1.pdf
 source_sha256: b979ebf2f47a4653
-doc_brief: "September, 1993 Quantum Dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity."
+doc_brief: "Quantum dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity."
 ---
 When |θ| = 1, deﬁnition (1.4) of the quantum dilogarithm needs qualiﬁ cation because the
 inﬁnite product is not convergent. In this section we restri ct ourselves to a particular case,

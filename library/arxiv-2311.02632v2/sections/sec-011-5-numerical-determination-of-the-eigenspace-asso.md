@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2311.02632v2
-doc_title: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE"
+doc_title: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE"
 section_id: sec-011-5-numerical-determination-of-the-eigenspace-asso
 section_title: "Numerical determination of the eigenspace associated to 1"
 section_number: 5
 pages: 32-37
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 Having established that the first eigenvalue of the Fricke-Macbeath surface has a
 multiplicity of 7, our objective in this section is to numerically determine which 7-

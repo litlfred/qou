@@ -1,13 +1,13 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Michihiko Fujii 1. Introduction"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-007-42-points-of-ﬁnite-order-on-e-and-sol-manifolds
 section_title: "Points of ﬁnite order on E and Sol manifolds"
 section_number: 4.2
 pages: 8-8
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
-doc_brief: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve Michihiko Fujii — 12 sectio"
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Introduction; Deformation of hyperbolic structur; A birational"
 ---
 Let us consider the pointt1 := (1−
 √

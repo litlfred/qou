@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "poincare-proof-outline",
  "source_sha256": "8ac25ddb38d360b4",
- "brief": "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant.",
- "extended": "**Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry**\n\n*February 6, 2026*\n\n175 pp, 64 sections.\n\n**Abstract.** We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [ 6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).\n\n**Outline.** Introduction; Background theories; Hyperbolic Functions; Tarski axioms; H-lines in the Poincaré model; Collinear points; H-lines and inversion; Points on h-line; H-line uniqueness; H-isometries preserve h-lines; Mapping h-lines to x-axis; Construction of the h-line between the two giv; Correctness of the construction; Existence of h-lines; Uniqueness of h-lines; Some consequences of line uniqueness; Transformations of constructed lines; Collinear points and h-lines",
+ "brief": "Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant.",
+ "extended": "**Formalization of the Poincare disc model of hyperbolic geometry**\n\n*February 6, 2026*\n\n175 pp, 64 sections.\n\n**Abstract.** We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [ 6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).\n\n**Outline.** Introduction; Background theories; Hyperbolic Functions; Tarski axioms; H-lines in the Poincaré model; Collinear points; H-lines and inversion; Points on h-line; H-line uniqueness; H-isometries preserve h-lines; Mapping h-lines to x-axis; Construction of the h-line between the two giv; Correctness of the construction; Existence of h-lines; Uniqueness of h-lines; Some consequences of line uniqueness; Transformations of constructed lines; Collinear points and h-lines",
  "tokens": {
-  "brief": 44,
-  "extended": 306
+  "brief": 45,
+  "extended": 307
  },
  "sections": [
   {

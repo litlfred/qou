@@ -1,13 +1,13 @@
 ---
 doc_id: 5s032x
-doc_title: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗"
+doc_title: "The standard model symmetry and qubit entanglement"
 section_id: sec-008-conclusion
 section_title: "Conclusion"
 section_number: null
 pages: 16-20
 source_pdf: 5S032X.pdf
 source_sha256: 17761383781f7bdc
-doc_brief: "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗ — quantum description."
+doc_brief: "The standard model symmetry and qubit entanglement — quantum description."
 ---
 The present study draws inspiration and arguments from several disparate sources, aiming to integrate them into
 a coherent whole. These avenues are, as delineated above:

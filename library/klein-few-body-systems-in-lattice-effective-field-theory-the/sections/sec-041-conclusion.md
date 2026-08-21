@@ -1,13 +1,13 @@
 ---
 doc_id: klein-few-body-systems-in-lattice-effective-field-theory-the
-doc_title: "Bonn, November 2018"
+doc_title: "Few-body systems in lattice effective field theory"
 section_id: sec-041-conclusion
 section_title: "Conclusion"
 section_number: null
 pages: 74-75
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
-doc_brief: "Few-Body Systems in Lattice Effective Field Theory Dissertation Erlangung des Doktorgrades (Dr. rer. nat.) Mathematisch-Naturwissenschaftlichen Fakultät Rheinischen Friedrich-Wilhelms-Universität Bonn"
+doc_brief: "Few-body systems in lattice effective field theory — 58 sections: Introduction and Motivation; The standard model of particle phy; Lattice QCD"
 ---
 In this chapter we have analysed the Tjon band in the framework of NLEFT. We studied the two-, three-,
 and four-body sector for lattice spacings from a = 1.97 fm to a = 1.32 fm up to N2LO and including

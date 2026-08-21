@@ -1,6 +1,6 @@
 ---
 doc_id: s0273-0979-1985-15304-2
-doc_title: "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY"
+doc_title: "A polynomial invariant for knots via von Neumann algebras"
 section_id: sec-004-19-r-t-powers-representations-of-uniformly-hyper
 section_title: "R. T. Powers, Representations of uniformly hyperfinite algebras and the associated von"
 section_number: 19

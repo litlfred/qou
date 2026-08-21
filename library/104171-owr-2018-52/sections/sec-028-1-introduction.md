@@ -1,13 +1,13 @@
 ---
 doc_id: 104171-owr-2018-52
-doc_title: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018"
+doc_title: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)"
 section_id: sec-028-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 58-66
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
-doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
+doc_brief: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018) — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical"
 ---
 Wess-Zumino-Witten model is a type of two dimensional conformal ﬁ eld theory,
 which associates to an algebraic curve with marked points and integr able highest

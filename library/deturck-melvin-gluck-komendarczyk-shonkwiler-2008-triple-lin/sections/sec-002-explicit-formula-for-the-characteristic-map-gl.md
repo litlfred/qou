@@ -1,13 +1,13 @@
 ---
 doc_id: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin
-doc_title: "© 2008, Sociedade Brasileira de Matem´ atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS"
+doc_title: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links"
 section_id: sec-002-explicit-formula-for-the-characteristic-map-gl
 section_title: "Explicit formula for the characteristic map gL"
 section_number: null
 pages: 8-9
 source_pdf: deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf
 source_sha256: db149864ce367da2
-doc_brief: "Matemática Contemporânea, Vol. 34, 251–283 © 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS — Three-component links in the 3-dimensional sphere were"
+doc_brief: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 ---
 View R4 as the space of quaternions, with 1,i,j,k as basis, and consider
 the map F : Conf3S3→ R3−{ 0} defined by

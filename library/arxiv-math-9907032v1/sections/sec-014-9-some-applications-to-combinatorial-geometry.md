@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Mathematics Department, California Institute of Technolog y"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-014-9-some-applications-to-combinatorial-geometry
 section_title: "SOME APPLICATIONS TO COMBINATORIAL GEOMETRY"
 section_number: 9

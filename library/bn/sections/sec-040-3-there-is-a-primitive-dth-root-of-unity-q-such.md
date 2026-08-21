@@ -1,13 +1,13 @@
 ---
 doc_id: bn
-doc_title: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009"
+doc_title: "Braid groups and Hodge theory"
 section_id: sec-040-3-there-is-a-primitive-dth-root-of-unity-q-such
 section_title: "There is a primitive dth root of unity q such that ρq(Bn) has ﬁnite"
 section_number: 3
 pages: 50-51
 source_pdf: bn.pdf
 source_sha256: 95ed0908ceb54a1c
-doc_brief: "Braid groups and Hodge theory Curtis T. McMullen 25 April, 2009 — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove"
+doc_brief: "Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cove r- ings of P1, highlighting their"
 ---
 index in U(Λ n,q ).
 Proof. Up to isotopy, any mapping-class [ φ] commuting with T can be

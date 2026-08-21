@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1604.01247v2
-doc_title: "EXCEPTIONAL QUANTUM GEOMETRY"
+doc_title: "Exceptional quantum geometry and particle physics"
 section_id: sec-011-63-general-connections
 section_title: "General connections"
 section_number: 6.3
 pages: 32-32
 source_pdf: 1604.01247v2.pdf
 source_sha256: 5a402405aadf5d54
-doc_brief: "EXCEPTIONAL QUANTUM GEOMETRY — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an"
+doc_brief: "Exceptional quantum geometry and particle physics — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3"
 ---
 Let Ω = ⊕n≥0Ω n be a diﬀerential graded Jordan algebra and let Γ = ⊕n≥0Γ n
 be a graded Jordan module over the graded Jordan algebra Ω, (the axioms

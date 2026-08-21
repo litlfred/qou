@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-ph-0103325v4
-doc_title: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine"
+doc_title: "Quantum algebras in phenomenological description of particle properties"
 section_id: sec-025-22-a-lerda-and-s-sciuto-nucl-phys-b-401
 section_title: "A. Lerda and S. Sciuto, Nucl. Phys. B 401"
 section_number: 22
 pages: 8-8
 source_pdf: 0103325v4.pdf
 source_sha256: 38590174ab836fa1
-doc_brief: "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine — 28 sections: Introduction; V ector meso"
+doc_brief: "Quantum algebras in phenomenological description of particle properties — 28 sections: Introduction; V ector mesons: q-deformation vs m; Octet baryon mass sum rules: best"
 ---
 (1993) 613. M. Frau, M.A. R.-Monteiro and
 S. Sciuto, J. Phys. A 27 (1994) 801.

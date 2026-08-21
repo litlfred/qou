@@ -1,13 +1,13 @@
 ---
 doc_id: agt-v3-n1-p17-p
-doc_title: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum"
+doc_title: "Skein-theoretical derivation of some formulas of Habiro"
 section_id: sec-004-3-graphical-calculus-and-a-formula-for-p
 section_title: "Graphical calculus and a formula for !p"
 section_number: 3
 pages: 9-12
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
-doc_brief: "Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of"
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of integral homol"
 ---
 Let us write ! =!+ and put
 !p =

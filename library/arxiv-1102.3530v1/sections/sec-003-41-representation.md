@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1102.3530v1
-doc_title: "THE COLORED JONES POL YNOMIAL, THE CHERN–SIMONS"
+doc_title: "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion"
 section_id: sec-003-41-representation
 section_title: "Representation"
 section_number: 4.1
 pages: 10-11
 source_pdf: 1102.3530v1.pdf
 source_sha256: ad3edab19f3dc404
-doc_brief: "THE COLORED JONES POLYNOMIAL, THE CHERN–SIMONS — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons"
+doc_brief: "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight"
 ---
 group π1(S3 \E) (with a base point above the paper) of the complement of the
 ﬁgure-eight knot E depicted in Figure 3. The group π1(S3 \E) has the following

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1203.3404v1
-doc_title: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗"
+doc_title: "On local solutions of the Ramanujan equation and their connection formulae"
 section_id: sec-004-33-covering-transformations
 section_title: "Covering transformations"
 section_number: 3.3
 pages: 10-11
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
-doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity."
 ---
 We deﬁne a covering transformation of a second order linear q-diﬀerence
 equation.

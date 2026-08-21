@@ -1,13 +1,13 @@
 ---
 doc_id: motivicperiodsandp1minus3pointsv3
-doc_title: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗"
+doc_title: "Motivic periods and P^1 minus 3 points"
 section_id: sec-054-33-idea-of-proof-of-theorem-1-5-the-proof-of-lin
 section_title: "Idea of proof of theorem 1 .5. The proof of linear independence is"
 section_number: 3.3
 pages: 16-16
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
-doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
+doc_brief: "Motivic periods and P^1 minus 3 points — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta values."
 ---
 by induction on the number of 3’s. In the case where there are n o 3’s, one can
 easily show by adapting an argument due to Euler that

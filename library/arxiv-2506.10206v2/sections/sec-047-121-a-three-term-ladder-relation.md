@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2506.10206v2
-doc_title: "5), and Q(√−7)"
+doc_title: "Analytic dilogarithm identities"
 section_id: sec-047-121-a-three-term-ladder-relation
 section_title: "A three-term ladder relation"
 section_number: 12.1
 pages: 34-34
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
-doc_brief: "Analytic dilogarithm identities Cetin Hakimoglu-Brown — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured"
+doc_brief: "Analytic dilogarithm identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 We can rewrite Theorem 5 so that the three-term dilogarithm combination
 Li2

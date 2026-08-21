@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1011.1343v1
-doc_title: "Institut für Kernphysik, Institute for Advanced Simulatio n and JCHP"
+doc_title: "Chiral symmetry, nuclear forces and all that"
 section_id: sec-005-43-the-nuclear-matter-problem
 section_title: "The nuclear matter problem"
 section_number: 4.3
 pages: 10-11
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
-doc_brief: "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
+doc_brief: "Chiral symmetry, nuclear forces and all that — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
 ---
 Another important question in nuclear physics is to underst and the saturation properties
 of nuclear matter - an idealized inﬁnite system of nucleons i n which all Coulomb eﬀects

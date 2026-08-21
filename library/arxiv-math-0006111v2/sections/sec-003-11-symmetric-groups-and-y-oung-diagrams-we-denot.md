@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0006111v2
-doc_title: "APPROXIMA TE F ACTORIZA TION AND CONCENTRA TION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane"
+doc_title: "Approximate factorization and concentration for characters of symmetric groups"
 section_id: sec-003-11-symmetric-groups-and-y-oung-diagrams-we-denot
 section_title: "Symmetric groups and Y oung diagrams. We denote by Sq the symmet-"
 section_number: 1.1
 pages: 2-3
 source_pdf: 0006111v2.pdf
 source_sha256: cd99f45d686eb6e2
-doc_brief: "APPROXIMATE FACTORIZATION AND CONCENTRATION FOR CHARACTERS OF SYMMETRIC GROUPS Philippe Biane — We prove a factorization-concentration result for characters of s ymmet- ric groups."
+doc_brief: "Approximate factorization and concentration for characters of symmetric groups — We prove a factorization-concentration result for characters of s ymmet- ric groups."
 ---
 ric group on {1,...,q }, by ( ij) the transposition exchanging i and j, and more
 generally by ( i1i2...i n) cyclic permutations of order n. For σ ∈ Sq, let c(σ ) be

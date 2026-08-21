@@ -1,13 +1,13 @@
 ---
 doc_id: maximal-hoermander-q-var-revised-v03
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "q-variational Hormander functional calculus and Schrodinger and wave maximal estimates"
 section_id: sec-008-examples-and-concluding-remarks
 section_title: "Examples and concluding remarks"
 section_number: null
 pages: 35-36
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
-doc_brief: "HAL Id: hal-04526930 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction"
+doc_brief: "q-variational Hormander functional calculus and Schrodinger and wave maximal estimates — 10 sections: Introduction; R-boundedness; Preliminaries"
 ---
 In this section, we shortly discuss examples of0-sectorial operatorsA and of UMD latticesY,
 to illustrate our main results from Sections 3 and 5. We will then end with some concluding

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0111022v1
-doc_title: "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr¨ odinger Institute for Mathematical Physics Boltzmanngasse 9"
+doc_title: "Some remarks on q-deformed multiple polylogarithms"
 section_id: sec-001-1-motivation
 section_title: "Motivation"
 section_number: 1
 pages: 1-10
 source_pdf: 0111022v1.pdf
 source_sha256: fea7f118014838fe
-doc_brief: "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schrödinger Institute for Mathematical Physics Boltzmanngasse 9 — We introduce general q-deformed multiple"
+doc_brief: "Some remarks on q-deformed multiple polylogarithms — We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformat ion usu- ally"
 ---
 In [CL] a family of noncommutative deformations S4,θ of the four dimen-
 sional sphere has been introduced from the instanton algebra. Co ncretely,

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.09182v1
-doc_title: ""
+doc_title: "Standard model physics from an algebra?"
 section_id: sec-040-68-ladders-to-su3c-and-u1em
 section_title: "Ladders to su(3)c and u(1)em"
 section_number: 6.8
 pages: 58-61
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics — 57 sections"
+doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
 ---
 We will now ﬁnd a compact way of describing the generators of the MTIS symmetries,
 su(3) and u(1), and apply them to our minimal left ideals.

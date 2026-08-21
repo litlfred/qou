@@ -1,6 +1,6 @@
 ---
 doc_id: 1-s20-s009731651830061x-main
-doc_title: "Journal of Combinatorial Theory, Series A 158 (2018) 560–604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta Consta"
+doc_title: "Constant term formulas for refined enumerations of Gog and Magog trapezoids"
 section_id: sec-018-52-the-application-of-theorem-17-to-28-when-bii
 section_title: "The application of Theorem 17 to (2.8) when bi=i"
 section_number: 5.2

@@ -1,13 +1,13 @@
 ---
 doc_id: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials
-doc_title: "On 2-variable q-Legendre polynomials: the view point of the q-operational technique"
+doc_title: "Two-variable q-Legendre polynomials"
 section_id: sec-004-18-raza-n-fadel-m-c-cesarano
 section_title: "Raza N., Fadel M., C. Cesarano"
 section_number: 18
 pages: 5-7
 source_pdf: raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf
 source_sha256: da8c1204e84d019c
-doc_brief: "On 2-variable q-Legendre polynomials: the view point of the q-operational technique — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
+doc_brief: "Two-variable q-Legendre polynomials — 12 sections: Aligarh Muslim University , Aligar; University of Lahej, 73560 Lahej, ; Introduction"
 ---
 1 2-variable q-Legendre polynomials
 In this section, we introduce the 2-variable q-Legendre polynomials 2V qLP Sn,q(x, y) and

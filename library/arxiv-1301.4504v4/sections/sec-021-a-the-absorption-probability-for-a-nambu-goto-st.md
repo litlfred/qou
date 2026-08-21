@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1301.4504v4
-doc_title: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center "
+doc_title: "Quantum Computation vs. Firewalls"
 section_id: sec-021-a-the-absorption-probability-for-a-nambu-goto-st
 section_title: "A The Absorption Probability for a Nambu-Goto String"
 section_number: null
 pages: 59-66
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princ"
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 In this section we compute the low-energy absorption probability for transverse oscilla-
 tions of a string stretching down the extremal black three brane geometry (5.17). This

@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "School of Mathematics, Georgia Institute of Technology"
+doc_title: "The colored Jones function is q-holonomic"
 section_id: sec-013-7-the-colored-jones-function-for-a-simple-lie-al
 section_title: "The colored Jones function for a simple Lie algebra"
 section_number: 7
 pages: 24-24
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
+doc_brief: "The colored Jones function is q-holonomic — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear"
 ---
 Fix a simple complex Lie algebra g of rank ℓ. For every knot K and every
 ﬁnite-dimensional g–module V , called the color of the knot, one can deﬁne

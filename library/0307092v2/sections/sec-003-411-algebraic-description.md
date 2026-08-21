@@ -1,13 +1,13 @@
 ---
 doc_id: 0307092v2
-doc_title: "Published: 14 February 2004"
+doc_title: "Extended Bloch group and the Cheeger-Chern-Simons class"
 section_id: sec-003-411-algebraic-description
 section_title: "Algebraic description"
 section_number: 4.1.1
 pages: 14-18
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
-doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
+doc_brief: "Extended Bloch group and the Cheeger-Chern-Simons class — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 We recall a standard chain complex for homology of G = PSL(2, C), the chain
 complex of “homogeneous simplices for G.” We will, however, diverge from

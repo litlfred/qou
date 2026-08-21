@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2311.02632v2
-doc_title: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE"
+doc_title: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE"
 section_id: sec-008-34-length-spectrum-of-the-fricke-macbeath-surfac
 section_title: "Length spectrum of the Fricke-Macbeath surface"
 section_number: 3.4
 pages: 19-21
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 an in-depth analysis of closed geodesics on Hurwitz surfaces is presented, with a spe-
 cial focus on the length spectrum of Hurwitz surfaces of low genera. Of particular

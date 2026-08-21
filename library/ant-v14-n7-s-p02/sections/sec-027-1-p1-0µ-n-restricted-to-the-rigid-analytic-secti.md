@@ -1,13 +1,13 @@
 ---
 doc_id: ant-v14-n7-s-p02
-doc_title: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a n"
+doc_title: "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values"
 section_id: sec-027-1-p1-0µ-n-restricted-to-the-rigid-analytic-secti
 section_title: "(P1\{ 0,µ N,∞}), restricted to the rigid analytic sections on"
 section_number: 1
 pages: 33-35
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
-doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p -adic cyclotomic multiple zeta values David Jarossay p-adic cyclotomic multiple zeta values depend on the choice of a number of iterations"
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 33 sections: Introduction 1711; Preliminaries 1716; Iteration of the harmonic Frobeniu"
 ---
 P1,an\⋃
 ξ∈µN(K) B(ξ, 1), is given, with the conventions of [Jarossay 2019], by the formula
