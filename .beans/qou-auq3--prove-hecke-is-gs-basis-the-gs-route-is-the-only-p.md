@@ -4,7 +4,7 @@ title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to ge
 status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-21T16:53:50Z
+updated_at: 2026-08-21T17:04:13Z
 ---
 
 
@@ -2881,3 +2881,43 @@ attempted and allowed to fail loudly, not assumed from the inventory.
 
 **Remaining:** the prefix composition itself, then the `OverlapComposition` and
 its `spoly` identity.
+
+### `quadPair` (§4al) — the pair, and why it is a pair
+
+The prefix uses the quadratic rule exactly twice, each time right after a
+Yang–Baxter. One lemma covers both occurrences (they differ only in `L` and
+`R`), but the mechanism is the part worth recording:
+
+    L ++ [σ_{j₁+1}, σ_{j₁}, σ_{j₁+1}] ++ (σ_{j₁} :: R)
+      Y →   L ++ [σ_{j₁}, σ_{j₁+1}] ++ [σ_{j₁}, σ_{j₁}] ++ R
+      Q →   (L ++ [σ_{j₁}, σ_{j₁+1}, σ_{j₁}] ++ R,  c·h)
+            (L ++ [σ_{j₁}, σ_{j₁+1}] ++ R,          c)
+
+The Yang–Baxter step ends by emitting a `σ_{j₁}`; `R` already **begins** with
+one. They land adjacent, and that adjacency *is* the quadratic redex — neither
+step creates it alone. The original handoff was right to name the pair rather
+than the quadratic step on its own.
+
+**The Yang–Baxter step does not go through `yangBaxterRelation`.** That rule
+carries `−1` at its own leading word, so it is not monic and `monicStep` cannot
+take it. The route is `bokutShiaoRelation j₁ (j₁+1) j₁` — the same relation at
+`j = i−1` (§4j), monic, leading word the right way round. `braid_hrel` /
+`braid_hlm` are exactly that repackaging and already existed; finding them was
+the whole difficulty.
+
+Sorry-free, standard axioms, `lean`-direct exit 0, zero warnings, non-vacuous at
+a **real** occurrence — the first quadratic pair of the `a = 4, b = 6` corner
+(rank 13, `i = 11`, `j₁ = 7`) with the measured contexts.
+
+**Inventory status.** Every piece of the prefix now has a lemma *by name*:
+
+    loop passes      §4af (loopTwo / loopTwoGen / blockStep)
+    B steps          monicStep           (§4x)
+    the Y·Q pairs    quadPair            (§4al)
+    small(a)         blockPassFromTwo    (§4aj)
+    the cancellation ofTerms_cancel_pair (§4ak)
+
+**Remaining: the composition itself**, then the `OverlapComposition` + `spoly`
+identity. That is now the only unattempted piece of the `a ≤ b` regime — and it
+is the one the arc has been wrong about before, so it should be attempted and
+allowed to fail rather than scheduled from the inventory.
