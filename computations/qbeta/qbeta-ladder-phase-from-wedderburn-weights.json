@@ -1,0 +1,32 @@
+{
+  "checks": {
+    "A0_retracted_is_change_of_variable": true,
+    "A0_bogus_satisfies_normalisation": true,
+    "A0_bogus_fails_sigma1_condition": true,
+    "A0b_retracted_diverges_on_real_weight": true,
+    "A1_weights_are_schur_measure": true,
+    "A2_chi_collapse": true,
+    "A3_loop_mean_identity": true,
+    "A4_xi_independent_of_n": true,
+    "A3_alpha_closed_form": true,
+    "A5_alpha_not_weight_determined": true,
+    "A6_shape_does_not_survive": true
+  },
+  "A1_max_abs_dev": "4.61187e-61",
+  "A5_nonvanishing_witness_at_q0": "-2.4371075895871860536",
+  "values_at_proton_pin": {
+    "q0_proton_pin": "1.1099785827513808076",
+    "h": "0.20906029879563931543",
+    "two_q": "2.0108968667071222998",
+    "z_D": "0.6126880371464652516",
+    "Xi_all_n": "0.50540422650393080319",
+    "y_3_n3": "0.50540422650393080319",
+    "y_21_n3": "0.24729788674803459841",
+    "alpha_D": "-0.040485777340642764919",
+    "alpha_retracted_formula_on_its_own_bogus_y": "-0.040485777340642764919",
+    "alpha_retracted_formula_on_the_REAL_y21": "-0.078115159746446971546",
+    "alpha_bar_even_part_hsq_over_4": "0.010926552133130497351",
+    "Xi_convention_C_HISTORICAL_for_contrast": "0.39265085278326621818"
+  },
+  "verdict": "all-checks-pass"
+}
