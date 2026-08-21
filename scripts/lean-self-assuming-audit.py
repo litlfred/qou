@@ -31,8 +31,11 @@ DECL = re.compile(
     r"^(?P<kw>theorem|lemma)\s+(?P<name>[A-Za-z_][A-Za-z0-9_.']*)\s*(?P<rest>.*?)(?=^\s*(?:@\[|/--|--|theorem|lemma|def|structure|class|instance|abbrev|noncomputable|end|namespace|\Z))",
     re.S | re.M,
 )
-# (name : type) explicit binder
-BINDER = re.compile(r"\((?P<names>[^():]+?)\s*:\s*(?P<type>(?:[^()]|\([^()]*\))*)\)")
+# Binder delimiters. Explicit `(..)`, implicit `{..}`, strict-implicit
+# `⦃..⦄` and instance `[..]` are all scanned; an anonymous instance binder
+# carries no top-level `:` and is skipped naturally.
+OPEN_TO_CLOSE = {"(": ")", "{": "}", "[": "]", "\u2983": "\u2984"}
+CLOSERS = set(OPEN_TO_CLOSE.values())
 
 
 def _blank(text: str) -> str:
@@ -51,6 +54,67 @@ def strip_comments(src: str) -> str:
 
 def norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
+
+
+def parse_binders(sig: str) -> dict:
+    """Map binder names to their (normalised) types, at any nesting depth.
+
+    Replaces a regex that permitted only ONE level of parentheses inside a
+    binder's type::
+
+        BINDER = re.compile(r"\\((?P<names>[^():]+?)\\s*:\\s*(?P<type>(?:[^()]|\\([^()]*\\))*)\\)")
+
+    A hypothesis like
+
+        (h : ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧ (∀ g ∈ w, 3 ≤ f g)))
+
+    nests two deep, so the regex did not match, the binder was dropped, and
+    the declaration could never be reported — the scan **skipped it
+    silently**, indistinguishably from finding it clean. That is how
+    `structurallyValidBinding_necessary` (PSDFeasibilityProxy.lean) sat
+    unreported in a file whose sibling declaration WAS reported, and it
+    biased the sweep against precisely the elaborate statements most likely
+    to be hiding a tautology.
+
+    Balanced-delimiter scanning has no depth limit, so the class of
+    statement this can miss is no longer a function of how complicated the
+    statement is.
+    """
+    binders: dict = {}
+    i, n = 0, len(sig)
+    while i < n:
+        if sig[i] not in OPEN_TO_CLOSE:
+            i += 1
+            continue
+        depth, j = 0, i
+        while j < n:
+            if sig[j] in OPEN_TO_CLOSE:
+                depth += 1
+            elif sig[j] in CLOSERS:
+                depth -= 1
+                if depth == 0:
+                    break
+            j += 1
+        if j >= n:            # unbalanced tail; nothing further to parse
+            break
+        inner = sig[i + 1 : j]
+        # Cut at the FIRST top-level `:` — `(x y : T)` binds both names,
+        # and a type may itself contain `∀ z : T, ..`.
+        d, cut = 0, -1
+        for k, c in enumerate(inner):
+            if c in OPEN_TO_CLOSE:
+                d += 1
+            elif c in CLOSERS:
+                d -= 1
+            elif c == ":" and d == 0:
+                cut = k
+                break
+        if cut >= 0:
+            typ = norm(inner[cut + 1 :])
+            for nm in inner[:cut].split():
+                binders[nm] = typ
+        i = j + 1
+    return binders
 
 
 def analyze(path: Path):
@@ -83,10 +147,7 @@ def analyze(path: Path):
         if concl_at < 0:
             continue
         conclusion = norm(sig[concl_at + 1 :])
-        binders = {}
-        for b in BINDER.finditer(sig[:concl_at]):
-            for nm in b.group("names").split():
-                binders[nm] = norm(b.group("type"))
+        binders = parse_binders(sig[:concl_at])
         if proof in binders and binders[proof] == conclusion and conclusion:
             out.append(
                 {

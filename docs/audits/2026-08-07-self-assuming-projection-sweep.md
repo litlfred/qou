@@ -195,3 +195,98 @@ A sibling of the same bug in this repo is
 counted oleans under `$LEAN_DIR` rather than `$REPO_ROOT`, re-running the
 cache restore on every call (1m58s → 3s once fixed) and hard-failing on a
 working tree whenever the cache branch was unreachable.
+
+---
+
+## 2026-08-21 revision — the count was 8 because the detector could not read its own hardest cases
+
+Bean `qou/q407`. Two changes: the sweep tool was under-reporting, and one
+of the findings has been discharged by proof.
+
+### The detector silently skipped nested hypotheses
+
+`scripts/lean-self-assuming-audit.py` parsed explicit binders with
+
+```python
+BINDER = re.compile(r"\((?P<names>[^():]+?)\s*:\s*(?P<type>(?:[^()]|\([^()]*\))*)\)")
+```
+
+The `type` alternation admits characters that are not parentheses, or **one**
+parenthesised group. A hypothesis nesting two deep —
+
+```lean
+(h_invalid : ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧ (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ …)))
+```
+
+— does not match, so the binder was dropped and the declaration could never be
+reported. It **skipped, it did not fail**: a scan that cannot parse a
+declaration and one that parses it and finds it clean produced identical
+output. And the bias ran the wrong way, against exactly the elaborate
+statements most likely to be hiding a tautology.
+
+Replaced with balanced-delimiter scanning (`parse_binders`), which has no
+depth limit and also reads `{..}`, `⦃..⦄` and `[..]` binders.
+
+### The corrected sweep: 12, not 8
+
+3008 `.lean` files (the original run saw 2590). All 7 still-open originals
+reproduce, plus **five that were never visible**:
+
+| declaration | file:line |
+|---|---|
+| `structurallyValidBinding_necessary` | `QOU/BraidKnot/PSDFeasibilityProxy.lean:103` |
+| `jet_preserves_channel_separation` | `QOU/ChannelSeparation.lean:162` |
+| `adjoint_has_no_degree_zero` | `QOU/GradedFrobeniusHopf.lean:116` |
+| `plancherel_total_bound` | `mass-theory/plancherel-term-7-formulation.lean:61` |
+| `plancherel_sum_eq_one` | `mass-theory/plancherel-term-7-formulation.lean:71` |
+
+`structurallyValidBinding_necessary` is the sharpest illustration: it sits
+**nine lines below** `length_bound_necessary` in a file the original sweep did
+report, and differs from it only by having a more complicated hypothesis.
+
+Two of the five are already honest in prose — `plancherel_sum_eq_one`'s own
+docstring says "This is a parametric restatement, not a proof of the
+q-deformed identity". That lowers the stakes of their disposition but does not
+change the defect: a `**Theorem**` docstring over `theorem X (h : P) : P := h`
+is what §3b-cond item 5 forbids, whatever the prose concedes.
+
+### One finding discharged: `universal_ilp_selects_minimum`
+
+`nuclear-interactions/universal-ilp-algorithm.lean`. The old statement took
+`hmin : K.crossing_number ≤ K'.crossing_number` and returned it, so it said
+nothing about `universal_ilp`.
+
+Its docstring — "The LP selects the minimum-crossing feasible knot operator" —
+names a genuine and provable claim: **the ILP attains its minimum**. Since
+`crossing_number : ℕ`, the feasible crossing numbers form a nonempty set of
+naturals and well-ordering supplies a least element:
+
+```lean
+theorem universal_ilp_selects_minimum (q : ℝ) (state : Fin 6 → ℝ)
+    (K₀ : KnotOperator q) (hK₀ : universal_ilp q state K₀) :
+    ∃ K, universal_ilp q state K ∧
+      ∀ K', universal_ilp q state K' →
+        K.crossing_number ≤ K'.crossing_number
+```
+
+Proved, sorry-free; the file compiles clean. This is the §1a "prove it"
+disposition, and it was available because the docstring already said what the
+theorem should have been saying.
+
+Worth flagging separately, not fixed here: that file defines
+`gram_matrix _q = 0`, so `frobenius_positive` is vacuously true and
+`universal_ilp` reduces to `is_knot ∧ crossing_number > 0`. The docstring
+concedes this ("Trivial zero-witness"), so it is disclosed rather than hidden,
+but the new theorem is correspondingly weak — it attains a minimum over a
+feasible set whose Frobenius constraint currently constrains nothing.
+
+### Note on verification
+
+`JetOrder.lean` appeared to have three arity errors under a hand-rolled
+`LEAN_PATH`. It does not: the container's `UGB/*.olean` were a month stale
+(2026-07-19 objects against a 2026-08-15 source), so `OverlapComposition` was
+being read without its `ord` parameter. Rebuilding the five-module chain with
+`lean -o` cleared it, and the file compiles clean on `main`. Recorded because
+the symptom — an arity error deep in an unrelated file — reads like a corpus
+breakage rather than a cache-age problem. Use `scripts/lib/lean-env.sh`'s
+`lean_leanpath`, and check olean mtimes before believing an arity error.
