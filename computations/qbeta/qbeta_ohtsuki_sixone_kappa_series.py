@@ -92,10 +92,57 @@ The OCR of form 1 is badly mangled. **The most likely defect is a dropped or
 misread index-dependent q-power in the simplification to form 3** — which would
 leave every modulus intact and destroy exactly the cancellation that matters.
 
-**Not tuned.** No variant of the formula was searched for one that hits 0.50356;
-that would be fitting a transcription to its target. The next step is a clean
-source for eq. (29) (the published version, or Ohtsuki's 5₂ paper whose
-analogous sum can validate the pipeline end-to-end), not a parameter hunt.
+## 2026-08-19 SECOND PASS — the convention mismatch is now PROVED, not inferred
+
+The first pass inferred "the residual freedom is phases". A font-metadata
+extraction (`visitor_text`, which exposes superscripts the flat text layer
+drops — that is how the `q^{-1}` prefactor was confirmed) settles it:
+
+**ki6c eq. (4) reads `(q)_n (q)_{N-n-1} = N`, exactly.** Character by character,
+with nothing rendered outside the band. And the STANDARD Pochhammer
+`P_n = ∏_{j≤n}(1-q^j)` **provably violates it**: `P_n·P_{N-1-n}` has modulus
+exactly `N` but a nontrivial phase for every `n ≥ 1` (N=7, n=1 gives
+`-4.364 - 5.473i`, not 7), because
+
+    P_n · P_{N-1-n} = N · (-1)^{N-1-n} · q^{(N-1-n)(N-n)/2}.
+
+**So the paper's `(q)_n` is not the standard q-Pochhammer.** That is no longer a
+guess about a dropped OCR character; it is forced by an identity the paper
+states and the standard object fails. Writing `(q)_n = P_n·c_n` with `|c_n| = 1`,
+eq. (4) gives exactly one constraint,
+
+    c_n · c_{N-1-n} = (-1)^{N-1-n} · q^{-(N-1-n)(N-n)/2},
+
+which does NOT determine `c_n`. The convention has to be read, not solved for.
+
+**Two principled evaluations bracket the target** (and only two were run —
+further variants would be fitting a transcription to its answer):
+
+| evaluation | justified by | rate |
+|---|---|---|
+| standard Pochhammer throughout | the usual convention | **0.5715** |
+| eq. (4) used for the two reflected pairs `(q)_j(q)_{N-j-1}`, `(q)_k(q)_{N-k-1}` | the paper's own identity | **0.398** |
+| required | Thm 1.1 + the proved VC | **0.50356** |
+
+The two bracket 0.50356 from opposite sides, which is what one expects if the
+true `c_n` is an intermediate phase. Both keep `|⟨6₁⟩_2| = 9 = det(6₁)`, so that
+check cannot separate them.
+
+**Precision hazard, measured.** The eq.(4) variant needs **dps ≥ 200**: at dps 60
+it silently returns 0.475 at N=1000 where the converged value is 0.3980 (stable
+and identical at dps 200 and 400). The original variant was dps-stable from 60.
+Removing the phases from the reflected pairs makes the cancellation far worse,
+so a precision setting adequate for one variant is not adequate for the other.
+
+**Next step, and it is a read, not a hunt**: ki6c §2.1 gives `(q)_n` by an
+integral/quantum-dilogarithm presentation `(q)_n = exp(φ(…) − φ(…))`, whose OCR
+is mangled and which the font-metadata pass did not recover either. A clean
+source for §2.1 determines `c_n` and closes this immediately; the evaluator,
+fit, branch-unwrapping and gate are all built and correct.
+
+**Not tuned.** No variant was searched for one that hits 0.50356. The two above
+were each fixed in advance by a stated convention, and both are reported
+whether or not they agree with the target.
 
 Scope-(a). Beans qou-6ort / qou-btvl / qou-rtec.
 """
