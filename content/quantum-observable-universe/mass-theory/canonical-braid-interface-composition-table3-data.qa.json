@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.329Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.365Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.407Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.446Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.482Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.517Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.553Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.586Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.621Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ae4e4db8cb0d",
+          "ts": "b9ccee25cef3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:35.656Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 ordering rows); read in full. No trap construction of this category present. NUMERIC DEFECT reported separately: row 1 is labelled 'pppnnn (canonical)' but carries (1,1,1); the parent definition's own closed forms give (n_pp,n_pn,n_nn)=(2,1,2) for pppnnn (Z=3,N=3). The (1,1,1) values are the A=4 'ppnn' counts, which row 3 already carries, and rows 2-3 are both A=4."
+      }
     ]
   },
   "source_hashes": {
     "md": "ae4e4db8cb0d",
     "ts": "b9ccee25cef3"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:35.656Z"
 }
