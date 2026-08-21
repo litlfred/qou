@@ -3081,9 +3081,26 @@ lineage-1-first is strictly worse (12/18/25 vs 8/12/16). **Scope (a)** — those
 two groupings, alone, do not help; the space of legal orders is far larger than
 three and nothing here excludes a better one.
 
-The necessary condition is separately clean (`dup_sources = 0` chain-wide), and
-head separation is *sufficient*, not necessary — a clashing step is not a proved
-obstruction, it is a step whose hypothesis needs an argument rather than a
-one-letter appeal. But the shape of the prefix's work is now known: ~half its
-steps need real collision reasoning, and hunting for a schedule first is not
-indicated.
+**Refined — head separation was a proxy, and it overstated the difficulty.** The
+real condition is closed-form. A left context `A` is necessarily a *prefix* of
+the source (every lemma reads its source as `A ++ redex ++ tail`), so `hpark`
+holds exactly when `lcp(source, r) < |A|` for every other term `r`; and `|A|`
+reaches at most the redex offset. So a working context **exists iff
+`redex_offset > max lcp`**. Against that:
+
+- `2(a−2)` of the head-clashing steps are **rescued** — their redex sits past
+  the shared prefix;
+- the **hard core is `2a`** steps (6, 8, 10 at a = 3, 4, 5) where no choice of
+  left context works;
+- and the clashes are a **contiguous suffix** beginning at step `a²−3a+9`.
+
+So the prefix splits cleanly: an **opening phase** of `a²−3a+9` steps that are
+entirely head-separated and need no collision reasoning at all, then a
+**closing phase** of `4(a−1)` where the lineages have converged enough to share
+prefixes. That seam is the natural place to cut the assembly, and the opening
+phase is the obvious next Lean target. All of it independent of `b`.
+
+`context_fits` is optimistic — it asks whether a context exists at the *full*
+redex offset, and a lemma may force a shorter `A` (`blockPass`'s stops where the
+block begins). The `2a` figure is the robust one. The necessary condition is
+separately clean (`dup_sources = 0` chain-wide).
