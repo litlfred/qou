@@ -1016,14 +1016,21 @@ theorem descWord_snoc {n : ℕ} {i j j₀ : Fin n}
 
 /-! ### Leading coefficients, and membership -/
 
+/-- The two Bokut–Shiao words are distinct: they differ at their first letter,
+`σᵢ` against `σᵢ₋₁`. `bokutShiaoRelation_lc` needs this to read the leading
+coefficient off a two-term `ofTerms`, and `monicStep` needs it as `hLR`. -/
+theorem bsWord₂_ne_bsWord₁ {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    bsWord₂ i' i j ≠ bsWord₁ i j := by
+  have hii' : i' ≠ i := fun hcon => absurd (congrArg Fin.val hcon) (by omega)
+  rw [bsWord₁_cons hi hj, bsWord₂]
+  simp [hii']
+
 /-- The Bokut–Shiao rule is monic: deg-lex picks `bsWord₁`, which carries `+1`. -/
 theorem bokutShiaoRelation_lc {n : ℕ} {i' i j : Fin n}
     (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
     (bokutShiaoRelation i' i j).lc (heckeOrder n) = 1 := by
-  have hii' : i' ≠ i := fun hcon => absurd (congrArg Fin.val hcon) (by omega)
-  have hne : bsWord₂ i' i j ≠ bsWord₁ i j := by
-    rw [bsWord₁_cons hi hj, bsWord₂]
-    simp [hii']
+  have hne := bsWord₂_ne_bsWord₁ hi hj
   show (bokutShiaoRelation i' i j).relation.coeff
     ((bokutShiaoRelation i' i j).lm (heckeOrder n)) = 1
   rw [bokutShiaoRelation_lm hi hj]
@@ -10775,13 +10782,6 @@ The two words meet because of two splittings of one descending run, nothing more
 
 both instances of `descWord_split`. -/
 
-
-theorem bsWord₂_ne_bsWord₁ {n : ℕ} {i' i j : Fin n}
-    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
-    bsWord₂ i' i j ≠ bsWord₁ i j := by
-  have hii' : i' ≠ i := fun hcon => absurd (congrArg Fin.val hcon) (by omega)
-  rw [bsWord₁_cons hi hj, bsWord₂]
-  simp [hii']
 
 theorem bsStep {n : ℕ} (hn : 0 < n) (hp : HeckeParams) {i' i j : Fin n}
     (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val)
