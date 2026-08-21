@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T20:58:23Z
+updated_at: 2026-08-21T21:30:23Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -525,3 +525,49 @@ adjacent pair supplies only one *directed* arc, since the reverse entry is
 `offDiag` at a negative distance. With lemma 2, that reverse entry is nonzero
 too — `offDiag` vanishes only at `±1`, which admissibility excludes — so both
 arcs are available and the digraph is strongly connected.
+
+
+## IRREDUCIBILITY HALF CLOSED 2026-08-21 — `seminormalRep_range_eq_top`
+
+`AlgHom.range (seminormalRep q hq0 hq2 n hN) = ⊤`, sorry-free, axiom-clean
+`[propext, Classical.choice, Quot.sound]`, in `SeminormalRangeTop.lean`. The
+general-λ Hoefsmit representation is **surjective onto its matrix block**.
+
+Five already-proved facts compose along the connectivity chain — the table is in
+the file header. The one that was missing until two commits ago is
+`offDiag_axialDist_ne_zero`, and **its absence was not visible from the plan**:
+the plan asserted the entry was nonzero, `offDiag q (-1) = 0` says otherwise, and
+only `two_le_natAbs_axialDist` reconciles them.
+
+**Lean shape note worth keeping.** The induction composes units as a
+**three-factor sandwich** `single c b 1 * single b T 1 * single T T 1`, which
+`Matrix.single_mul_mul_single` evaluates directly. The two-factor identity
+`single a b 1 * single b c 1 = single a c 1` is **not in Mathlib at this pin** —
+`exact?` fails on it — and is not needed once the sandwich form is used. A reader
+who assumes the obvious lemma exists will waste time; it does not.
+
+### SW-5 status after this
+
+| half | state |
+|---|---|
+| **irreducibility** | **CLOSED** — `seminormalRep_range_eq_top` |
+| **pairwise inequivalence** | content-count equality proved (`contentCount_eq_of_matRepEquiv`); one step short of `μ ≠ ν ⟹ ρ_μ ≇ ρ_ν` |
+
+**The single remaining item in the whole bean** is the classical fact that a
+Young diagram is determined by its content multiset. Corpus-grepped repeatedly
+and not found. Everything else SW-5 asked for is proved.
+
+### Calibration note on my own estimates in this arc
+
+I have now mis-sized four steps here, and **all four in the cheap direction**:
+an iterated column-growth lemma budgeted twice and needed neither time (Mathlib's
+`col_strict` already spans arbitrary gaps); a `d ≠ 0` hypothesis written into
+`offDiag_eq_zero_iff` that the proof never used; and this assembly, called
+"bookkeeping" and then compiling first try. The one estimate I got wrong in the
+*expensive* direction was the earlier plan to reach inequivalence via `charpoly`
+or Newton's identities, which summing-over-`k`-first made unnecessary.
+
+Pattern: **I over-budget for machinery Mathlib already has, and under-budget for
+premises nobody checked.** The genuine cost in this arc was never the tactics —
+it was `offDiag q (-1) = 0`, a one-line `simp` lemma sitting in plain sight that
+falsified a plan step everyone had read past.
