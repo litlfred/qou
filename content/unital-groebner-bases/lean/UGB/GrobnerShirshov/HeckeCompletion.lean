@@ -10924,4 +10924,136 @@ theorem tailChain_indices_nonvacuous :
       j₂.val ≤ jm.val ∧ jpp.val ≤ id.val :=
   ⟨11, 10, 9, 5, 6, 7, 8, 9, 10, by decide⟩
 
+
+/-- **The tail from the block's second level on — the diagonal included.**
+
+`tailChain` above asks `j₂ ≤ jm`, so it is off-diagonal only. This asks
+`j₂ ≤ j₁`, and at `b = a` the two coincide: the same relation `blockPass` and
+`blockPassFromTwo` stand in, one level up.
+
+Neither statement subsumes the other, because their *sources* differ. On the
+diagonal the block is one level shorter and `blockPassFromTwo`'s source word is
+not `blockPass`'s — the trailing `σ_jp` sits on the other side of the descending
+run, one transport later. So this is not `tailChain` with a weakened hypothesis;
+it is the same four-step argument starting from the later word.
+
+Everything after the two blocks is *identical* to `tailChain`'s, and measurement
+says so rather than inspection: `hecke_tail_diagonal_check.py` finds the
+diagonal's two Bokut–Shiao steps and its endpoint word to be the same as the
+off-diagonal's, with only the block source differing — and finds the same
+collision pattern, `hpark` failing under the engine's order at the second block
+and holding under the reordered one, 4/4 at `a = b = 3..6`. -/
+theorem tailChainFromTwo {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i id idd j₂ j₁ jp jpp jppp : Fin n}
+    (hid : id.val + 1 = i.val) (hidd : idd.val + 1 = id.val)
+    (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppid : jpp.val ≤ id.val)
+    (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord i jppp ++
+            ([(⟨jp⟩ : HeckeGen n)] ++ ((⟨jpp⟩ : HeckeGen n) ::
+              (descWord j₁ j₂ ++ [(⟨jp⟩ : HeckeGen n)]))))), c),
+         (descWord id jpp ++ (descWord i jppp ++
+            ([(⟨jp⟩ : HeckeGen n)] ++ ((⟨jpp⟩ : HeckeGen n) ::
+              (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++
+                [(⟨i⟩ : HeckeGen n)]))))), -c)])
+      (AlgElement.ofTerms
+        [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+            (descWord i jppp ++ descWord jpp jp))), c),
+         ((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+            (descWord i jppp ++ descWord jpp jp))), -c)]) := by
+  have hcn : -c ≠ 0 := neg_ne_zero.mpr hc
+  have hAcons : descWord id jpp = (⟨id⟩ : HeckeGen n) :: descWord idd jpp :=
+    descWord_cons_le hidd hjppid
+  have hDcons : descWord id j₂ = (⟨id⟩ : HeckeGen n) :: descWord idd j₂ :=
+    descWord_cons_le hidd (by omega)
+  have hidd_ne : (⟨idd⟩ : HeckeGen n) ≠ ⟨id⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hsplitA : descWord id j₂ = descWord id jpp ++ descWord jp j₂ :=
+    descWord_split hjpp (by omega) hjppid
+  have hsplitI : descWord i jp = descWord i jppp ++ descWord jpp jp :=
+    descWord_split hjppp (by omega) (by omega)
+  have hicons : descWord i jp = (⟨i⟩ : HeckeGen n) :: descWord id jp :=
+    descWord_cons hid (by omega)
+  have s1 := blockPassFromTwo (i := i) hn hp hjp hjpp hjppp hj₂ c hc
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(descWord id jpp ++ (descWord i jppp ++
+        ([(⟨jp⟩ : HeckeGen n)] ++ ((⟨jpp⟩ : HeckeGen n) ::
+          (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++
+            [(⟨i⟩ : HeckeGen n)]))))), -c)]
+    ((⟨idd⟩ : HeckeGen n) :: descWord id jpp) []
+    (fun r hr z => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1.symm)
+  have s2 := blockPassFromTwo (i := i) hn hp hjp hjpp hjppp hj₂ (-c) hcn
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    (descWord id jpp) [(⟨i⟩ : HeckeGen n)]
+    (fun r hr z => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  have s3 := bsStep (i' := id) (i := i) (j := jp) hn hp hid (by omega)
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    (descWord id j₂) []
+    (descWord id jpp ++ (descWord jp j₂ ++ (descWord i jppp ++
+      (descWord jpp jp ++ [(⟨i⟩ : HeckeGen n)]))))
+    (descWord id j₂ ++ bsWord₂ id i jp ++ [])
+    (-c) hcn
+    (by simp only [bsWord₁, hsplitA, hsplitI, List.append_assoc, List.append_nil])
+    rfl
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  have s4 := bsStep (i' := idd) (i := id) (j := j₂) hn hp hidd (by omega)
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [] ((⟨i⟩ : HeckeGen n) :: descWord id jp)
+    (descWord id j₂ ++ bsWord₂ id i jp ++ [])
+    ((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+      (descWord i jppp ++ descWord jpp jp))))
+    (-c) hcn
+    (by simp only [bsWord₁, bsWord₂, List.nil_append, List.append_nil,
+      List.append_assoc, List.cons_append])
+    (by simp only [bsWord₂, List.nil_append, List.cons_append, ← hDcons,
+      ← hicons, hsplitA, hsplitI, List.append_assoc])
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      intro hcon
+      rw [hDcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  simp only [List.nil_append, List.cons_append, List.append_nil]
+    at s1 s2 s3 s4 ⊢
+  exact ((s1.trans s2).step s3).step s4
+
+/-- The diagonal `b = a` is inside `tailChainFromTwo`'s reach: `j₂ = j₁`. -/
+theorem tailChainFromTwo_covers_diagonal :
+    ∃ (i id idd j₂ j₁ jp jpp jppp : Fin 11),
+      id.val + 1 = i.val ∧ idd.val + 1 = id.val ∧ j₁.val + 1 = jp.val ∧
+      jp.val + 1 = jpp.val ∧ jpp.val + 1 = jppp.val ∧
+      j₂.val = j₁.val ∧ jpp.val ≤ id.val :=
+  ⟨9, 8, 7, 5, 5, 6, 7, 8, by decide⟩
+
 end UGB.GrobnerShirshov.Hecke

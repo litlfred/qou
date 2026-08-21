@@ -1,0 +1,314 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-21T22:40:38.246866+00:00",
+  "commitSha": "a831af1ed2227962c00e9cfc07b2252d474b930e",
+  "assertions": [
+    {
+      "name": "diagonals_not_matching_the_offdiagonal_argument",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 115,
+  "computation": "hecke-tail-diagonal-check",
+  "scriptFile": "hecke_tail_diagonal_check.py",
+  "scriptHash": "62494e44c300",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "The three off-diagonal tail measurements (blockPass fit, hpark collision, reordered schedule) each excluded b = a, where the block is one level shorter and runs blockPassFromTwo -- whose SOURCE WORD differs from blockPass's, so nothing transfers by inspection. This runs all three on the diagonal against blockPassFromTwo's actual Lean source and target: whether it fits both terms under a common (A, T), whether hpark fails under the engine's order as it does off the diagonal, and whether the reordered schedule repairs it.",
+  "parameters": {
+    "blockPassFromTwo_source": "A ++ descWord i jppp ++ [s_jp] ++ s_jpp :: descWord j1 j2 ++ [s_jp] ++ T",
+    "blockPassFromTwo_target": "A ++ descWord jp j2 ++ descWord i jppp ++ descWord jpp jp ++ T"
+  },
+  "data": {
+    "cases_checked": 4,
+    "cases": [
+      {
+        "a": 3,
+        "b": 3,
+        "n": 9,
+        "i": 7,
+        "read": true,
+        "tail_steps": 8,
+        "roots_rel_i": [
+          [
+            1,
+            0,
+            2,
+            1,
+            3,
+            2,
+            0
+          ],
+          [
+            2,
+            1,
+            0,
+            2,
+            1,
+            3,
+            2
+          ]
+        ],
+        "blockPassFromTwo_fits_both_terms": true,
+        "solved_contexts": {
+          "0": [
+            [
+              1
+            ],
+            [
+              0
+            ]
+          ],
+          "1": [
+            [
+              2,
+              1
+            ],
+            []
+          ]
+        },
+        "hpark_engine_order": {
+          "0": true,
+          "1": false
+        },
+        "hpark_engine_order_fails": true,
+        "hpark_reordered": {
+          "1": true,
+          "0": true
+        },
+        "hpark_reordered_all_hold": true,
+        "reordered_reaches_zero": true,
+        "diagonal_matches_offdiagonal_argument": true
+      },
+      {
+        "a": 4,
+        "b": 4,
+        "n": 11,
+        "i": 9,
+        "read": true,
+        "tail_steps": 12,
+        "roots_rel_i": [
+          [
+            1,
+            2,
+            0,
+            1,
+            3,
+            2,
+            4,
+            3,
+            0
+          ],
+          [
+            2,
+            1,
+            2,
+            0,
+            1,
+            3,
+            2,
+            4,
+            3
+          ]
+        ],
+        "blockPassFromTwo_fits_both_terms": true,
+        "solved_contexts": {
+          "0": [
+            [
+              1,
+              2
+            ],
+            [
+              0
+            ]
+          ],
+          "1": [
+            [
+              2,
+              1,
+              2
+            ],
+            []
+          ]
+        },
+        "hpark_engine_order": {
+          "0": true,
+          "1": false
+        },
+        "hpark_engine_order_fails": true,
+        "hpark_reordered": {
+          "1": true,
+          "0": true
+        },
+        "hpark_reordered_all_hold": true,
+        "reordered_reaches_zero": true,
+        "diagonal_matches_offdiagonal_argument": true
+      },
+      {
+        "a": 5,
+        "b": 5,
+        "n": 13,
+        "i": 11,
+        "read": true,
+        "tail_steps": 16,
+        "roots_rel_i": [
+          [
+            1,
+            2,
+            3,
+            0,
+            1,
+            2,
+            4,
+            3,
+            5,
+            4,
+            0
+          ],
+          [
+            2,
+            1,
+            2,
+            3,
+            0,
+            1,
+            2,
+            4,
+            3,
+            5,
+            4
+          ]
+        ],
+        "blockPassFromTwo_fits_both_terms": true,
+        "solved_contexts": {
+          "0": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0
+            ]
+          ],
+          "1": [
+            [
+              2,
+              1,
+              2,
+              3
+            ],
+            []
+          ]
+        },
+        "hpark_engine_order": {
+          "0": true,
+          "1": false
+        },
+        "hpark_engine_order_fails": true,
+        "hpark_reordered": {
+          "1": true,
+          "0": true
+        },
+        "hpark_reordered_all_hold": true,
+        "reordered_reaches_zero": true,
+        "diagonal_matches_offdiagonal_argument": true
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "n": 15,
+        "i": 13,
+        "read": true,
+        "tail_steps": 20,
+        "roots_rel_i": [
+          [
+            1,
+            2,
+            3,
+            4,
+            0,
+            1,
+            2,
+            3,
+            5,
+            4,
+            6,
+            5,
+            0
+          ],
+          [
+            2,
+            1,
+            2,
+            3,
+            4,
+            0,
+            1,
+            2,
+            3,
+            5,
+            4,
+            6,
+            5
+          ]
+        ],
+        "blockPassFromTwo_fits_both_terms": true,
+        "solved_contexts": {
+          "0": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            [
+              0
+            ]
+          ],
+          "1": [
+            [
+              2,
+              1,
+              2,
+              3,
+              4
+            ],
+            []
+          ]
+        },
+        "hpark_engine_order": {
+          "0": true,
+          "1": false
+        },
+        "hpark_engine_order_fails": true,
+        "hpark_reordered": {
+          "1": true,
+          "0": true
+        },
+        "hpark_reordered_all_hold": true,
+        "reordered_reaches_zero": true,
+        "diagonal_matches_offdiagonal_argument": true
+      }
+    ]
+  },
+  "caveats": [
+    "a = 3..6 on the diagonal only. a = 2 is excluded as elsewhere in this arc: the loop is empty there and the prefix head degenerates.",
+    "Hypotheses read off the lemma statements and checked against the measured words, as in the off-diagonal probes. A pass says a diagonal tailChain should be the same proof with blockPassFromTwo substituted; it does not say the Lean composes."
+  ]
+}
