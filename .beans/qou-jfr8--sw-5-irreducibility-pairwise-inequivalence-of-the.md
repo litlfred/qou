@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T16:25:11Z
+updated_at: 2026-08-21T20:58:23Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -463,3 +463,65 @@ and am not asserting it. It is the next concrete step on this half.
 **So: do not mark `qou-jfr8` complete.** The inequivalence half is closed; the
 irreducibility half is one named lemma-pair short of it, and the shortfall is in
 the *plan*, not merely in the typing.
+
+
+## BOTH missing lemmas PROVED 2026-08-21 (PR #5370) — the plan's hole is closed
+
+The previous entry recorded that the irreducibility half's plan assumed
+`offDiag ≠ 0` at every admissible swap, and that the two lemmas needed for that
+were absent from the corpus. Both are now proved, sorry-free and axiom-clean.
+
+**1. `TableauCells.two_le_natAbs_axialDist`** (`AxialDistanceBound.lean`) — an
+admissible swap has `|axialDist| ≥ 2`. This is the *converse* of
+`axialDist_trichotomy`, which gives only same-row ⟹ `+1` and same-column ⟹ `−1`.
+One squeeze run four ways: at distance `±1` in different rows *and* columns,
+either the cells are ordered strictly up-left (so `k+1 < k`) or the rectangle
+they span has a corner cell that up-left closure puts in `μ`, squeezed strictly
+between `k` and `k+1`. Which corner depends only on the sign — `(i₂,j₁)` at
+`d = −1`, `(i₁,j₂)` at `d = +1`. Rest is `omega`.
+
+**2. `SeminormalRep.offDiag_eq_zero_iff`** (`OffDiagNonvanishing.lean`) —
+`offDiag q d = 0 → d = 1 ∨ d = −1`. Clearing denominators turns it into
+`q^{2d} + q^{−2d} = q² + q^{−2}`: `q^{2d}` and `q²` agree under `x ↦ x + x⁻¹`,
+a two-to-one map whose preimages are visible as a factorisation, `A = q^{2d}`:
+
+    A(q²−1)² − q²(A−1)² = −(A − q²)(A·q² − 1)
+
+so `q^{2d} = q²` or `q^{2d+2} = 1`, and `zpow_ne_one` converts each into a claim
+about the exponent. **The sharp form** — "zero only at `±1`", not "nonzero for
+`|d| ≥ 2`" — so the caller's bound rules both out and the lemma says more.
+
+`offDiag_axialDist_ne_zero` composes the two: every admissible swap has a
+nonzero off-diagonal entry.
+
+### Two corrections to my own estimates, both in the cheap direction
+
+* I budgeted an **iterated column-growth lemma** twice. Not needed either time:
+  Mathlib's SSYT `col_strict` already spans arbitrary row gaps, not just
+  adjacent rows. `entry_lt_of_le_of_ne` is two applications and nothing more.
+* I put a **`d ≠ 0` hypothesis** on `offDiag_eq_zero_iff` and the proof never
+  used it — at `d = 0` the `else` branch gives `offDiag q 0 = 1`, so the
+  implication is vacuous there. Dropped rather than carried.
+
+### What is left on this half — bookkeeping, not mathematics
+
+Assemble `AlgHom.range (seminormalRep …) = ⊤`. **Every input now exists:**
+
+| piece | provides |
+|---|---|
+| `syt_swapStep_connected` | the chain `T = T₀, …, T_m = T'` |
+| `offDiag_axialDist_ne_zero` | each step's entry is nonzero — **the piece that was missing** |
+| `single_mem_range_of_entry_ne_zero` | promote a nonzero entry to a matrix unit |
+| `single_self_mem_range` | the diagonal units |
+| `eq_top_of_single_mem` | units generate everything |
+
+What remains is composing them along the chain (`single a b · single b c =
+single a c`) by induction on its length. I am flagging it as bookkeeping
+**having twice mis-sized steps in this arc in both directions**, so treat that
+as an estimate, not a promise.
+
+**Note the direction subtlety is now moot.** The earlier entry worried that each
+adjacent pair supplies only one *directed* arc, since the reverse entry is
+`offDiag` at a negative distance. With lemma 2, that reverse entry is nonzero
+too — `offDiag` vanishes only at `±1`, which admissibility excludes — so both
+arcs are available and the digraph is strongly connected.
