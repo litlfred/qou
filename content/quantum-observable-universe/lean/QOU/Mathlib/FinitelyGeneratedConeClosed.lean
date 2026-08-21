@@ -33,29 +33,43 @@ Mathlib-shaped hole, and this file is where it gets filled.
   It is a template for the argument, not a source of it: the conic
   statement has to be proved separately.
 
-## Where this file stands
+## What this file proves
 
-The proof splits in two, along the line of what Mathlib already
-supports:
+**`isClosed_coneSpan` — the lemma `qou/kl8z` names, proved, sorry-free.**
+The proof splits in two along the line of what Mathlib already supports:
 
-1. **`isClosed_coneSpan_of_linearIndependent` — proved here.** When the
-   generators are linearly independent the coefficient map is an
-   injective linear map out of a finite-dimensional space, hence a
-   closed embedding, and the cone is the image of the closed
-   non-negative orthant. This is the half Mathlib's
-   `LinearMap.isClosedEmbedding_of_injective` was made for.
+1. **`isClosed_coneSpan_of_linearIndependent`.** When the generators are
+   linearly independent the coefficient map is an injective linear map
+   out of a finite-dimensional space, hence a closed embedding, and the
+   cone is the image of the closed non-negative orthant. This is the
+   half `LinearMap.isClosedEmbedding_of_injective` was made for.
 
-2. **`exists_linearIndepOn_of_mem_coneSpan` — the conic Carathéodory
-   step, still open.** Every point of the cone is a non-negative
-   combination of a *linearly independent* subfamily. Purely
-   combinatorial: if the active generators are dependent, move along
-   the dependency until a coefficient hits zero, and induct on the
-   support. No topology is involved.
+2. **`exists_linearIndependent_support` — conic Carathéodory.** Every
+   point of the cone is a non-negative combination of a *linearly
+   independent* subfamily. Purely combinatorial, and proved here by
+   induction on the support: if the active generators are dependent,
+   move along the dependency until a coefficient hits zero. No topology
+   is involved, which is why it belongs in the algebraic half.
 
-`isClosed_coneSpan` assembles the two. So the open surface of the
-entire LP layer is now exactly step 2 — a finite, algebraic statement
-with no analysis in it — rather than an unquantified appeal to
-Minkowski–Weyl.
+`coneSpan_eq_iUnion` then exhibits the cone as a **finite** union of the
+sub-cones on independent subfamilies, and a finite union of closed sets
+is closed.
+
+The whole file is stated over an arbitrary `[Fintype ι]` rather than
+`Fin n`. That is not decoration: it is what lets the subfamily indexed
+by `s : Finset ι` reuse (1) directly, instead of needing a `Fin`
+reindexing detour.
+
+## What is still open above this file
+
+`MatrixFarkas` does **not** follow from this file alone, and the bean's
+claim that it does "by the standard route" is still unverified. Its
+`farkas_alternative` field is strong-duality shaped — *if the primal is
+feasible and no feasible point beats `γ`, the dual has a point with
+objective `≥ γ`* — not the classic alternative. Deriving it from
+`ProperCone.innerDual_innerDual` plus closedness is a real argument that
+nobody has checked. Until someone does, "the LP layer is one lemma from
+done" remains a claim about work not yet inspected.
 -/
 
 namespace QOU.Mathlib
@@ -178,28 +192,113 @@ theorem isClosed_coneSpanOn (v : ι → E) (s : Finset ι)
   rw [coneSpanOn_eq]
   exact isClosed_coneSpan_of_linearIndependent hs
 
-/-- **Conic Carathéodory** — the one remaining input.
+/-- **Conic Carathéodory**, by induction on the support.
 
-Every point of the cone is a non-negative combination of a **linearly
-independent** subfamily of the generators.
-
-The proof is finite and purely algebraic, with no topology in it: if the
-active generators are dependent, take a dependency `Σ λᵢvᵢ = 0` with some
-`λᵢ > 0` (negating if necessary), walk `x ↦ x − tλ` with
-`t = minᵢ {xᵢ/λᵢ : λᵢ > 0}`, and observe that non-negativity is preserved
-while the coefficient attaining the minimum is driven to zero. The support
-strictly shrinks, so induction on its cardinality terminates.
+If the active generators are dependent, take a dependency `Σ λᵢvᵢ = 0`
+with some `λᵢ > 0` (negating if necessary) and walk `x ↦ x − cλ` with
+`c = minᵢ {xᵢ/λᵢ : λᵢ > 0}`. Non-negativity survives — where `λᵢ ≤ 0`
+because `c ≥ 0`, and where `λᵢ > 0` by minimality of `c` — and the
+coefficient attaining the minimum is driven to zero, so the support
+strictly shrinks and the induction terminates.
 
 This is the conic analogue of `Mathlib/Analysis/Convex/Caratheodory.lean`,
 which proves the corresponding statement for **convex hulls** over affinely
-independent subsets. The argument transfers but the statement does not, so
-it has to be done separately. -/
+independent subsets. The argument transfers; the statement does not, so it
+is proved separately here. -/
+private theorem caratheodory_aux (v : ι → E) :
+    ∀ (k : ℕ) (s : Finset ι) (x : ι → ℝ), s.card ≤ k →
+      (∀ i, 0 ≤ x i) → (∀ i ∉ s, x i = 0) →
+      ∃ t : Finset ι, LinearIndependent ℝ (fun i : t => v (i : ι)) ∧
+        ∃ z : ι → ℝ, (∀ i, 0 ≤ z i) ∧ (∀ i ∉ t, z i = 0) ∧
+          (∑ i, z i • v i) = ∑ i, x i • v i := by
+  intro k
+  induction k with
+  | zero =>
+      intro s x hcard hx hoff
+      have hs : s = ∅ := Finset.card_eq_zero.mp (Nat.le_zero.mp hcard)
+      subst hs
+      refine ⟨∅, ?_, x, hx, fun i _ => hoff i (Finset.notMem_empty i), rfl⟩
+      have : IsEmpty ((∅ : Finset ι) : Type _) :=
+        ⟨fun i => absurd i.2 (Finset.notMem_empty _)⟩
+      exact linearIndependent_empty_type
+  | succ k ih =>
+      intro s x hcard hx hoff
+      classical
+      by_cases hli : LinearIndependent ℝ (fun i : s => v (i : ι))
+      · exact ⟨s, hli, x, hx, hoff, rfl⟩
+      have reduce : ∀ mu : ι → ℝ, (∑ i, mu i • v i) = 0 → (∀ i ∉ s, mu i = 0) →
+          ∀ i₁ ∈ s, 0 < mu i₁ →
+          ∃ t : Finset ι, LinearIndependent ℝ (fun i : t => v (i : ι)) ∧
+            ∃ z : ι → ℝ, (∀ i, 0 ≤ z i) ∧ (∀ i ∉ t, z i = 0) ∧
+              (∑ i, z i • v i) = ∑ i, x i • v i := by
+        intro mu hmu0 hmuoff i₁ hi₁s hi₁pos
+        set P : Finset ι := s.filter (fun i => 0 < mu i) with hP
+        have hPne : P.Nonempty := ⟨i₁, by simp [hP, hi₁s, hi₁pos]⟩
+        obtain ⟨i₀, hi₀P, hi₀min⟩ := P.exists_min_image (fun i => x i / mu i) hPne
+        have hi₀s : i₀ ∈ s := (Finset.mem_filter.mp hi₀P).1
+        have hi₀pos : 0 < mu i₀ := (Finset.mem_filter.mp hi₀P).2
+        set c : ℝ := x i₀ / mu i₀ with hc
+        have hc0 : 0 ≤ c := div_nonneg (hx i₀) hi₀pos.le
+        set z : ι → ℝ := fun i => x i - c * mu i with hz
+        have hzi₀ : z i₀ = 0 := by
+          simp only [hz, hc]
+          field_simp
+          ring
+        have hznn : ∀ i, 0 ≤ z i := by
+          intro i
+          rcases le_or_gt (mu i) 0 with h | h
+          · have hle : c * mu i ≤ 0 := mul_nonpos_of_nonneg_of_nonpos hc0 h
+            simp only [hz]; linarith [hx i]
+          · have hiP : i ∈ P := by
+              refine Finset.mem_filter.mpr ⟨?_, h⟩
+              by_contra hns
+              exact absurd (hmuoff i hns) (ne_of_gt h)
+            have hle : c * mu i ≤ x i := (le_div_iff₀ h).mp (hi₀min i hiP)
+            simp only [hz]; linarith
+        have hzoff : ∀ i ∉ s, z i = 0 := by
+          intro i hi
+          simp [hz, hoff i hi, hmuoff i hi]
+        have hzsum : (∑ i, z i • v i) = ∑ i, x i • v i := by
+          have hterm : ∀ i, z i • v i = x i • v i - c • (mu i • v i) := by
+            intro i; simp [hz, sub_smul, smul_smul]
+          rw [Finset.sum_congr rfl (fun i _ => hterm i), Finset.sum_sub_distrib,
+            ← Finset.smul_sum, hmu0, smul_zero, sub_zero]
+        have hcard' : (s.erase i₀).card ≤ k := by
+          rw [Finset.card_erase_of_mem hi₀s]
+          omega
+        obtain ⟨t, hti, w, hw, hwoff, hwsum⟩ :=
+          ih (s.erase i₀) z hcard' hznn
+            (fun i hi => by
+              rcases eq_or_ne i i₀ with rfl | hne
+              · exact hzi₀
+              · exact hzoff i (fun hs => hi (Finset.mem_erase.mpr ⟨hne, hs⟩)))
+        exact ⟨t, hti, w, hw, hwoff, hwsum.trans hzsum⟩
+      obtain ⟨g, hg0, i₁, hg1⟩ := Fintype.not_linearIndependent_iff.mp hli
+      set lam : ι → ℝ := fun i => if h : i ∈ s then g ⟨i, h⟩ else 0 with hlam
+      have hlamoff : ∀ i ∉ s, lam i = 0 := fun i hi => by simp [hlam, hi]
+      have hlam0 : (∑ i, lam i • v i) = 0 := by
+        rw [sum_eq_sum_subtype s _ (fun i hi => by simp [hlam, hi])]
+        rw [← hg0]
+        exact Finset.sum_congr rfl (fun i _ => by simp [hlam, i.2])
+      have hlam1 : lam (i₁ : ι) ≠ 0 := by simpa [hlam, i₁.2] using hg1
+      rcases hlam1.lt_or_gt with hneg | hpos
+      · refine reduce (fun i => -lam i) ?_ (fun i hi => by simp [hlamoff i hi]) i₁ i₁.2
+          (by simpa using hneg)
+        simp only [neg_smul]
+        rw [Finset.sum_neg_distrib, hlam0, neg_zero]
+      · exact reduce lam hlam0 hlamoff i₁ i₁.2 hpos
+
+/-- Conic Carathéodory, in the form the union decomposition needs. -/
 theorem exists_linearIndependent_support (v : ι → E) {y : E} (hy : y ∈ coneSpan v) :
     ∃ s : Finset ι, LinearIndependent ℝ (fun i : s => v (i : ι)) ∧
       y ∈ coneSpanOn v s := by
   -- Ref: [rockafellar1970] Convex Analysis, Cor. 17.1.2 (conic Carathéodory)
   -- Ref: [schrijver1986] Theory of Linear and Integer Programming, §7.2
-  sorry
+  obtain ⟨x, hx, rfl⟩ := hy
+  obtain ⟨t, hti, z, hz, hzoff, hzsum⟩ :=
+    caratheodory_aux v (Finset.univ.card) Finset.univ x le_rfl hx
+      (fun i hi => absurd (Finset.mem_univ i) hi)
+  exact ⟨t, hti, z, hz, hzoff, hzsum.symm⟩
 
 /-- The cone is the union of the sub-cones on independent subfamilies. -/
 theorem coneSpan_eq_iUnion (v : ι → E) :

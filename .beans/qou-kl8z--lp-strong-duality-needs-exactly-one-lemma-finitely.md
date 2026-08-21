@@ -120,7 +120,21 @@ pinned rev with **exactly one `sorry`**.
 Stated over an arbitrary `[Fintype ι]` rather than `Fin n`, which is what lets
 the subfamily indexed by `s : Finset ι` reuse the same lemma.
 
-### What remains: `exists_linearIndependent_support`
+### PROVED 2026-08-21 — `exists_linearIndependent_support` closed too
+
+The file is now **sorry-free**. Conic Carathéodory is proved by induction on
+the support (`caratheodory_aux`): extract a dependency via
+`Fintype.not_linearIndependent_iff`, extend it by zero off the active set,
+orient it so some coefficient is positive (negating if necessary), and walk
+`x ↦ x − cλ` with `c = minᵢ{xᵢ/λᵢ : λᵢ > 0}` obtained from
+`Finset.exists_min_image`. Non-negativity survives — where `λᵢ ≤ 0` because
+`c ≥ 0`, and where `λᵢ > 0` by minimality — and the coefficient attaining
+the minimum is driven to zero, so the support strictly shrinks.
+
+**So this bean's headline lemma is done.** `isClosed_coneSpan` is proved, and
+with it the analytic input the LP layer was said to rest on.
+
+### Original scoping of what remained (kept for the record)
 
 > Every point of the cone is a non-negative combination of a **linearly
 > independent** subfamily of the generators.
@@ -151,3 +165,18 @@ does not already exist.
 - [ ] Then instantiate for `operator_selection_lp` — though per `qou/k4f8`
       that block needed no Farkas at all, so this now unblocks only the
       *general* theorem.
+
+## Status after 2026-08-21
+
+- [x] Prove `isClosed_coneSpan` — **done, sorry-free**, including conic
+      Carathéodory.
+- [ ] **Derive `MatrixFarkas` from it. Still unverified, and this is now the
+      only thing between here and the LP layer.** This bean asserts it follows
+      "the standard route" via the bidual; nobody has checked that the
+      strong-duality-shaped `farkas_alternative` field really does follow from
+      `ProperCone.innerDual_innerDual` plus closedness. Until it is checked,
+      "LP strong duality needs exactly one lemma" is a claim about work not yet
+      inspected — the lemma named is now proved, and the sentence may still be
+      wrong.
+- [ ] Instantiate for `operator_selection_lp` — though per `qou/k4f8` that
+      block needed no Farkas at all, so this unblocks only the general theorem.
