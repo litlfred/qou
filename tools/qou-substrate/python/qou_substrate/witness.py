@@ -59,7 +59,7 @@ def _repo_root() -> Path:
 # (`computations/q0_anchor_manifest.json` + the QOU_Q0_ANCHOR env override), so
 # the stamped label always matches the value the producer actually computed.
 #
-# THE VOCABULARY (`q0Anchor`) has four values. The last one is not resolvable
+# THE VOCABULARY (`q0Anchor`) has five values. The last two are not resolvable
 # from the manifest and must be declared by the producer:
 #
 #   "muon"        ideal / canonical 3-CAL pin; carries the muon `q0Value`
@@ -71,6 +71,42 @@ def _repo_root() -> Path:
 #   "independent" the compute NEVER READS q₀. No `q0Value` exists, and one
 #                 appearing alongside this label is a contradiction the audit
 #                 reports as Q0_FLIP.
+#   "comparison"  the compute reads MORE THAN ONE anchor DELIBERATELY — the
+#                 comparison is the subject. Carries `q0Values`, a mapping
+#                 {anchor: 50-digit value} with an entry per pin read, and NO
+#                 bare `q0Value` (there is no single pin; one alongside this
+#                 label is a Q0_FLIP, exactly as under `independent`).
+#
+# Why `comparison` is not one of the other four. A cross-anchor probe fits none
+# of them: `muon`/`proton` each assert ONE pin; `independent` would be a FALSE
+# claim of layer-freedom when the compute reads q₀ twice; and `ambiguous`, though
+# descriptively true that both signatures are present, is defined above as "the
+# pin is UNDETERMINED … a queue for a manual ruling" — a deliberate comparison is
+# not undetermined, and filing it there mislabels it for whoever drains that
+# queue. Before this value such probes had no honest option and landed in
+# `Q0_ANCHOR_MISSING`, indistinguishable from producers that simply forgot
+# (bean `qou-po7i`).
+#
+# This matters beyond bookkeeping. AGENTS.md §"q₀ anchor convention" makes
+# mixing an ideal-layer input with an experimental-layer one inside a single
+# quantity a DEFECT ("never straddle the two layers inside one quantity" — the
+# μ₃ Fréchet probe, an 11.54 ppb error). `comparison` is what lets the audit
+# separate that real defect from a probe whose whole point is telling the pins
+# apart; without it both look the same and the defects hide in a bucket of ~1890.
+#
+# `comparison` is also the ONE label the audit can VERIFY rather than take on
+# trust: `independent` asserts something about an import cone and can only be
+# checked by re-deriving it, whereas `comparison` NAMES its pins, and each named
+# pin either matches its canonical value or does not. So:
+#
+#   w.save({"q0Anchor": "comparison",
+#           "q0Values": {"muon": q_muon_str, "proton": q_proton_str},
+#           "q0AnchorReason": "measures the c_3 cross-anchor swing; both pins "
+#                             "are read on purpose and each is reported under "
+#                             "its own key"})
+#
+# `resolve_q0_anchor` never returns it, for the same reason it never returns
+# `independent`: no manifest lookup can establish intent.
 #
 # `q0AnchorReason` (free text) states WHY, and belongs with every
 # `independent` — and with `ambiguous`, where it names what is undetermined.
@@ -100,6 +136,55 @@ def _repo_root() -> Path:
 # cone and asserts it; the audit then distinguishes a q₀-free producer from one
 # that merely forgot, which before this value it could not (bean qou-rw91, and
 # earlier qou-pin1 on the purely symbolic `chi-deuteron-h6`).
+
+def q0_comparison(*, muon, proton, reason: str, dps: int = 52) -> dict:
+    """Build the ``comparison`` q₀-anchor stamp for a cross-anchor producer.
+
+    A producer that reads BOTH pins DELIBERATELY — where the comparison is the
+    subject — declares it by passing this dict to ``save()``::
+
+        wb.save(q0_comparison(
+            muon=qm, proton=qp,
+            reason="measures the c_3 cross-anchor swing; both pins are read on "
+                   "purpose and each is reported under its own key"))
+
+    Pass the values the producer ACTUALLY COMPUTED WITH, not the canonical
+    constants. The audit re-checks each leg against its canonical pin, so
+    stamping the constant would make the check a tautology; stamping the
+    computed value makes it a real test — a producer that thinks it read the
+    muon pin but read the proton one is then caught, which is the flip-flop bug
+    happening inside a comparison.
+
+    Deliberately emits NO bare ``q0Value``: there is no single pin, and one
+    alongside this label is a ``Q0_FLIP``.
+
+    See the vocabulary note at the top of this module for why this is a
+    separate value from ``ambiguous`` and ``independent`` rather than a reuse
+    of either (bean ``qou-po7i``).
+    """
+    if not str(reason or "").strip():
+        raise ValueError(
+            "q0_comparison requires a reason: the label states that two pins "
+            "were read on purpose, and without saying what is being compared a "
+            "reader cannot tell it from an accidental layer straddle (which "
+            "AGENTS.md makes a defect)."
+        )
+
+    def _fmt(v) -> str:
+        if isinstance(v, str):
+            return v
+        try:
+            import mpmath as _mp
+            return _mp.nstr(_mp.mpf(v), dps, strip_zeros=False)
+        except Exception:  # noqa: BLE001
+            return str(v)
+
+    return {
+        "q0Anchor": "comparison",
+        "q0Values": {"muon": _fmt(muon), "proton": _fmt(proton)},
+        "q0AnchorReason": reason,
+    }
+
 
 _Q0_VALUE_CACHE: dict = {}
 
@@ -204,10 +289,12 @@ def resolve_q0_anchor(
     ambiguous, and — matching the runtime default — anything else ⇒ proton).
     ``q0_value`` is the matching 50-digit string, or ``None`` for ambiguous.
 
-    Never returns ``"independent"``. That value states the compute does not read
-    q₀ at all, which no manifest lookup can establish (see the vocabulary note
-    at the top of this module) — a producer declares it via
-    ``save({"q0Anchor": "independent"})``.
+    Never returns ``"independent"`` or ``"comparison"``. Those two state
+    something about the producer's INTENT — that q₀ is never read, or that two
+    pins are read deliberately — which no manifest lookup can establish (see the
+    vocabulary note at the top of this module). A producer declares them via
+    ``save({"q0Anchor": "independent"})`` / ``save({"q0Anchor": "comparison",
+    "q0Values": {...}})``.
     """
     environ = os.environ if env is None else env
     e = (environ.get("QOU_Q0_ANCHOR", "") or "").strip().lower()
