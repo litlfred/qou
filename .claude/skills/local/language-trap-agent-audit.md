@@ -161,6 +161,9 @@ recovered this way once already.
 
 ## Batch conventions
 
+- **Namespace every scratch path by batch id.** Two agents writing
+  `/tmp/rec.sh` collided mid-batch, silently zeroing one helper's variables
+  and costing a block's recording. Use `/tmp/<batch-id>/…`.
 - Batches of ~25 blocks, grouped by chapter (mirrors
   `qa-agent-drain-queue.ts`). Disjoint file sets per concurrent agent.
 - Agents in a shared tree do not commit; the coordinating session
