@@ -1,7 +1,7 @@
 {
   "computation": "e0-lambda-tryall",
   "description": "Falsification harness for 5 substrate-derived \u03c7^\u03bb\u2192M_\u03bb (per-block energy E_0^\u03bb) maps. Each candidate produces a per-block weight w_\u03bb from cached substrate data (q\u2080, \u03c7^\u03bb, y_\u03bb, dim, content-sum, dim_q, ribbon twist, seminormal eigenphases) \u2014 NEVER from B_AME or the deprecated fit_three_E0. The per-block ENERGY scale E_0^\u03bb maps the genuine per-block STRUCTURAL masses m^\u03bb(particle) (from per_block_phi_q.mass_per_block \u2014 orders-of-magnitude different across e\u207b in H_2 vs p,n in H_3) onto observed MeV: M(particle) = C\u00b7\u03a3_\u03bb E_0^\u03bb\u00b7m^\u03bb(particle). ONE global C is pinned from the proton; the electron AND neutron residuals are the test. PASS = one positive C fits all three within 1%; LATENT-FIT = nucleons fit but the electron (different Hecke order) needs a separate scale (hidden parameter); FAIL = one C fails even on nucleons or C \u2264 0. The {e\u207b,p,n} observed masses are the falsification test, NOT fit targets. No tuning, no back-solve. If all fail, that is the reported result \u2014 no 6th fit (the \u0394_\u03bb gate already exhausted six ans\u00e4tze).",
-  "timestamp": "2026-08-10T18:21:16Z",
+  "timestamp": "2026-08-21T14:48:16Z",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "h_50dps": "0.20906029879563931543084621312967494385975749526306",
   "m_e_MeV": "0.51099895069",
@@ -44,22 +44,22 @@
         "(2, 1)": "3215.5509070371582914",
         "(1, 1, 1)": "-1721.807209802995017"
       },
-      "struct_electron": "333980845954.51597409",
-      "struct_proton": "884560054801.50447316",
-      "struct_neutron": "190420242795.46022696",
-      "C_global_pinned_from_proton": "1.0607217501366241579e-9",
+      "struct_electron": "333981403034.80114729",
+      "struct_proton": "884561516737.8777124",
+      "struct_neutron": "190420551630.3161936",
+      "C_global_pinned_from_proton": "1.0607199970559406013e-9",
       "C_positive": true,
       "pred_MeV": {
-        "electron": "354.26074743298445627",
+        "electron": "354.26075284381318435",
         "proton": "938.27208943",
-        "neutron": "201.98289319944146932"
+        "neutron": "201.98288696469957814"
       },
       "resid_rel": {
-        "electron": 692.2709880414186,
+        "electron": 692.2709986301463,
         "proton": 0.0,
-        "neutron": -0.7850251951775851
+        "neutron": -0.785025201813357
       },
-      "worst_resid_rel_excl_proton": 692.2709880414186,
+      "worst_resid_rel_excl_proton": 692.2709986301463,
       "verdict": "FAIL",
       "reason": "one C fails even on nucleons (n resid -7.85e-01, e resid 6.92e+02)"
     },
@@ -71,22 +71,22 @@
         "(2, 1)": "8.2641474838594202344",
         "(1, 1, 1)": "1.0"
       },
-      "struct_electron": "1679493971.074817744",
-      "struct_proton": "4256636770.6977123347",
-      "struct_neutron": "2472877737.3192306131",
-      "C_global_pinned_from_proton": "2.204256881604220786e-7",
+      "struct_electron": "1679496772.7725034255",
+      "struct_proton": "4256643823.2941558799",
+      "struct_neutron": "2472881826.7155231003",
+      "C_global_pinned_from_proton": "2.2042532294935699514e-7",
       "C_positive": true,
       "pred_MeV": {
-        "electron": "370.20361433544671452",
+        "electron": "370.20361853078190986",
         "proton": "938.27208943",
-        "neutron": "545.08577698517887027"
+        "neutron": "545.08577526936504211"
       },
       "resid_rel": {
-        "electron": 723.4704002533903,
+        "electron": 723.4704084634564,
         "proton": 0.0,
-        "neutron": -0.41985330211525423
+        "neutron": -0.41985330394143233
       },
-      "worst_resid_rel_excl_proton": 723.4704002533903,
+      "worst_resid_rel_excl_proton": 723.4704084634564,
       "verdict": "FAIL",
       "reason": "one C fails even on nucleons (n resid -4.20e-01, e resid 7.23e+02)"
     },
@@ -98,22 +98,22 @@
         "(2, 1)": "68.296133634979986423",
         "(1, 1, 1)": "1.0"
       },
-      "struct_electron": "17917913449.548413703",
-      "struct_proton": "39588570684.128799503",
-      "struct_neutron": "24847029046.662318863",
-      "C_global_pinned_from_proton": "2.3700580071867981286e-8",
+      "struct_electron": "17917943340.645456593",
+      "struct_proton": "39588636260.83851824",
+      "struct_neutron": "24847070134.599216886",
+      "C_global_pinned_from_proton": "2.3700540812974360947e-8",
       "C_positive": true,
       "pred_MeV": {
-        "electron": "424.66494243182241132",
+        "electron": "424.66494742952980665",
         "proton": "938.27208943",
-        "neutron": "588.88900146844983974"
+        "neutron": "588.88899980790508786"
       },
       "resid_rel": {
-        "electron": 830.0485605858855,
+        "electron": 830.048570366155,
         "proton": 0.0,
-        "neutron": -0.3732325735737262
+        "neutron": -0.37323257534108023
       },
-      "worst_resid_rel_excl_proton": 830.0485605858855,
+      "worst_resid_rel_excl_proton": 830.048570366155,
       "verdict": "FAIL",
       "reason": "one C fails even on nucleons (n resid -3.73e-01, e resid 8.30e+02)"
     },
@@ -125,22 +125,22 @@
         "(2, 1)": "2.5820081905611131756",
         "(1, 1, 1)": "1.6233075087315161163"
       },
-      "struct_electron": "387921168.63216898352",
-      "struct_proton": "1348064630.5168960455",
-      "struct_neutron": "790809071.56428372658",
-      "C_global_pinned_from_proton": "6.9601417334882009787e-7",
+      "struct_electron": "387921815.72598833112",
+      "struct_proton": "1348066866.5101623291",
+      "struct_neutron": "790810381.83153268324",
+      "C_global_pinned_from_proton": "6.9601301889347110263e-7",
       "C_positive": true,
       "pred_MeV": {
-        "electron": "269.99863151002733627",
+        "electron": "269.99863405808193181",
         "proton": "938.27208943",
-        "neutron": "550.41432222156285203"
+        "neutron": "550.41432123086365426"
       },
       "resid_rel": {
-        "electron": 527.3741407794462,
+        "electron": 527.3741457658647,
         "proton": 0.0,
-        "neutron": -0.41418201503725416
+        "neutron": -0.414182016091677
       },
-      "worst_resid_rel_excl_proton": 527.3741407794462,
+      "worst_resid_rel_excl_proton": 527.3741457658647,
       "verdict": "FAIL",
       "reason": "one C fails even on nucleons (n resid -4.14e-01, e resid 5.27e+02)"
     },
@@ -152,22 +152,22 @@
         "(2, 1)": "0.0",
         "(1, 1, 1)": "-3.0"
       },
-      "struct_electron": "472161982.27740888631",
-      "struct_proton": "177256150.61979183",
-      "struct_neutron": "177134771.54345442",
-      "C_global_pinned_from_proton": "5.2933118887511013734e-6",
+      "struct_electron": "472162770.02446540387",
+      "struct_proton": "177256438.59329178",
+      "struct_neutron": "177135059.33121405",
+      "C_global_pinned_from_proton": "5.2933032891562825464e-6",
       "C_positive": true,
       "pred_MeV": {
-        "electron": "2499.3006342052952851",
+        "electron": "2499.3007435876441328",
         "proton": "938.27208943",
-        "neutron": "937.62959212217756016"
+        "neutron": "937.62959218280858936"
       },
       "resid_rel": {
-        "electron": 4890.009327573958,
+        "electron": 4890.0095416298755,
         "proton": -1.4584847476370533e-51,
-        "neutron": -0.002060345956352213
+        "neutron": -0.0020603458918212842
       },
-      "worst_resid_rel_excl_proton": 4890.009327573958,
+      "worst_resid_rel_excl_proton": 4890.0095416298755,
       "verdict": "LATENT-FIT",
       "reason": "nucleons fit (n resid -2.06e-03) but electron off by 4.89e+03 \u2014 needs a per-Hecke-order scale (hidden parameter)"
     },
@@ -179,22 +179,22 @@
         "(2, 1)": "1.0",
         "(1, 1, 1)": "0.73123370754943367404"
       },
-      "struct_electron": "215277274.416574911",
-      "struct_proton": "627690157.18721958033",
-      "struct_neutron": "411871768.27612935557",
-      "C_global_pinned_from_proton": "1.4948013421694358671e-6",
+      "struct_electron": "215277633.53933142209",
+      "struct_proton": "627691198.27365606312",
+      "struct_neutron": "411872450.83944825442",
+      "C_global_pinned_from_proton": "1.4947988628971331027e-6",
       "C_positive": true,
       "pred_MeV": {
-        "electron": "321.79675873647413567",
+        "electron": "321.79676182177833331",
         "proton": "938.27208943",
-        "neutron": "615.66647202085703748"
+        "neutron": "615.66647117346260518"
       },
       "resid_rel": {
-        "electron": 628.7405470245158,
+        "electron": 628.7405530623054,
         "proton": 0.0,
-        "neutron": -0.34473272680720995
+        "neutron": -0.34473272770911034
       },
-      "worst_resid_rel_excl_proton": 628.7405470245158,
+      "worst_resid_rel_excl_proton": 628.7405530623054,
       "verdict": "FAIL",
       "reason": "one C fails even on nucleons (n resid -3.45e-01, e resid 6.29e+02)"
     },
@@ -206,22 +206,22 @@
         "(2, 1)": "1.0",
         "(1, 1, 1)": "0.53470273505649069374"
       },
-      "struct_electron": "294388799.04806805563",
-      "struct_proton": "705569920.9789987696",
-      "struct_neutron": "489743580.40556229093",
-      "C_global_pinned_from_proton": "1.3298073819928721015e-6",
+      "struct_electron": "294389290.15876689611",
+      "struct_proton": "705571090.69830148322",
+      "struct_neutron": "489744391.58957951511",
+      "C_global_pinned_from_proton": "1.3298051773938116884e-6",
       "C_positive": true,
       "pred_MeV": {
-        "electron": "391.48039815013709974",
+        "electron": "391.48040222241731378",
         "proton": "938.27208943",
-        "neutron": "651.26462850693644581"
+        "neutron": "651.26462753540516418"
       },
       "resid_rel": {
-        "electron": 765.1080274656583,
-        "proton": -1.4584847476370533e-51,
-        "neutron": -0.30684483134530915
+        "electron": 765.1080354349119,
+        "proton": 0.0,
+        "neutron": -0.30684483237933113
       },
-      "worst_resid_rel_excl_proton": 765.1080274656583,
+      "worst_resid_rel_excl_proton": 765.1080354349119,
       "verdict": "FAIL",
       "reason": "one C fails even on nucleons (n resid -3.07e-01, e resid 7.65e+02)"
     }
@@ -236,6 +236,6 @@
     "5_ribbon_twist": "FAIL"
   },
   "any_pass": false,
-  "compute_time_sec": 0.14,
+  "compute_time_sec": 0.13,
   "design_note": "docs/audits/2026-06-01-e0-lambda-tryall-results.md"
 }

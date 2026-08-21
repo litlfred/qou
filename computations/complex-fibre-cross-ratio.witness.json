@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:18:29.277444+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:44:39.513138+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 71,
+  "durationMs": 60,
   "computation": "complex-fibre-cross-ratio",
   "scriptFile": "complex_fibre_cross_ratio.py",
   "scriptHash": "0f93efc27696",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,8 +19,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "auditOnly": "docs/audits/2026-06-01-complex-fibre-cross-ratio.md",
   "q0": "1.1099785955573347198997632204832250266562084087802",
@@ -172,6 +174,6 @@
     "precise_missing_object": "A DERIVED complex shape map z_i = Z(braid_word, flavor_content) ∈ ℂ∖ℝ such that (a) Σ_i D(z_i) = Vol of the actual nucleon complement, (b) z_i depends on the uud-vs-udd flavor content (so proton and neutron get DIFFERENT shapes/volumes), (c) the real V̂_i are its Borel-r_1 shadow. The framework derives (c)-direction (V̂→K_1) and has the universal Bring color-tube cubic, but NOT the flavor-dependent Z map giving distinct p/n shapes. This flavor-dependent complex shape is exactly the categorical input L2 isospin requires."
   },
   "VERDICT": "The framework HAS a derived complex cross-ratio / shape-parameter object: the universal color-tube cubic z_c (Im≠0, def:color-tube-cubic) and the Thurston ideal-tetrahedron shapes z_k (figure-8 e^{iπ/3}, Borromean octahedra), with Σ D(z) finite, real, and zero-parameter (Vol(4_1)=2Cl₂(π/3), Vol(ℬ_3)=8G reproduced). BUT this complex-z object carries the absolute VOLUME (mass scale), NOT the p/n distinction: the color-tube cubic is knot-independent and the canonical baryon complement is the SAME Borromean linking ℬ_3 for proton (uud) and neutron (udd) — identical shapes, identical Σ D. The flavor-dependent (p/n) content lives in the REAL sector: the V̂_i map to K_1(ℂ) via the Borel regulator Σln|V̂| (D(real V̂)=0), and the isospin refinement is the conjectural REAL color-sheet weighting (conj:inter-nucleon-channel-color-tube). The map V̂_i → flavor-dependent complex z_i is NOT derived (snappy-cusp-seeding: bare seeds at distance 0.4–0.9 from true z_k; τ_arch map 'subject of further work'). CONCLUSION: the complex-fibre cross-ratio is NOT the L2 isospin path. It is the right object for absolute VOLUME but is p/n-blind. The precise MISSING object is a DERIVED flavor-dependent complex shape map Z(braid,flavor)→z_i∈ℂ∖ℝ giving DISTINCT proton/neutron complements — categorical input the framework does not currently supply. This is a CLEAN NEGATIVE that delimits exactly what L2 needs, not a free resolution.",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T21:31:42.208457+00:00",
-  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+  "computedAt": "2026-08-21T14:45:20.978225+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deligne-stable-range-binding-period-probe",
   "scriptFile": "deligne_stable_range_binding_period_probe.py",
   "scriptHash": "793afbda76f7",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,16 +21,15 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Deligne/TL stable-range probe for T_q(n)=sum dim_q: (1) per-shape padded-family closed form (rational in q, q^n — the interpolation restriction property) verified exactly; (2) captured fraction of the stable truncation at substrate q_0 — feasibility verdict for interpolated-level evaluation of the binding period.",
   "audit_only": true,
   "tier": "decisive probe (formalize-first: formula derived then machine-verified; capture is a measurement, no fit)",
   "precision_dps": 50,
   "constants": {
-    "q_0": "1.1099785955573347199"
+    "q_0": "1.1099785827513808076"
   },
   "restriction_property": {
     "mu_max": 4,
@@ -60,7 +59,7 @@
     },
     "6": {
       "0": "0.012291209",
-      "1": "0.076456742",
+      "1": "0.076456743",
       "2": "0.32643653",
       "3": "0.737729",
       "4": "0.98770879",
@@ -68,7 +67,7 @@
       "6": "1.0"
     },
     "7": {
-      "0": "0.0038230003",
+      "0": "0.0038230004",
       "1": "0.028244658",
       "2": "0.15122262",
       "3": "0.45019521",
@@ -78,47 +77,47 @@
     },
     "8": {
       "0": "0.0010792029",
-      "1": "0.0093084941",
-      "2": "0.060513848",
+      "1": "0.0093084944",
+      "2": "0.060513849",
       "3": "0.22523181",
       "4": "0.57567415",
       "5": "0.91032365",
       "6": "0.9989208"
     },
     "9": {
-      "0": "0.00028570673",
-      "1": "0.0028415506",
+      "0": "0.00028570675",
+      "1": "0.0028415507",
       "2": "0.021939418",
-      "3": "0.098790546",
+      "3": "0.098790547",
       "4": "0.32099084",
       "5": "0.68070247",
       "6": "0.9538203"
     },
     "10": {
-      "0": "6.9634686e-5",
-      "1": "0.00079129501",
-      "2": "0.0071424267",
-      "3": "0.038057139",
+      "0": "6.9634693e-5",
+      "1": "0.00079129506",
+      "2": "0.007142427",
+      "3": "0.03805714",
       "4": "0.1513474",
       "5": "0.41021904",
       "6": "0.77003721"
     },
     "11": {
-      "0": "1.5882723e-5",
-      "1": "0.0002047962",
-      "2": "0.0021361125",
-      "3": "0.013259719",
-      "4": "0.062937353",
+      "0": "1.5882725e-5",
+      "1": "0.00020479622",
+      "2": "0.0021361127",
+      "3": "0.01325972",
+      "4": "0.062937355",
       "5": "0.20928383",
       "6": "0.5064722"
     },
     "12": {
-      "0": "3.3552621e-6",
-      "1": "4.8834645e-5",
-      "2": "0.00058349237",
-      "3": "0.0041718472",
-      "4": "0.023222535",
-      "5": "0.092249449",
+      "0": "3.3552627e-6",
+      "1": "4.8834651e-5",
+      "2": "0.00058349242",
+      "3": "0.0041718475",
+      "4": "0.023222536",
+      "5": "0.09224945",
       "6": "0.27642879"
     }
   },
@@ -127,7 +126,7 @@
     "stable_truncation_captures_T_at_q0": false,
     "capture_decreasing_in_n": true
   },
-  "timestamp": "2026-08-08T21:31:42+00:00",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "timestamp": "2026-08-21T14:45:20+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
