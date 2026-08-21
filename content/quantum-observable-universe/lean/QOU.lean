@@ -927,6 +927,8 @@ import QOU.Mathlib.SchenstedReverseRowIndex
 import QOU.Mathlib.SchenstedCascadeColStrict
 -- RSK inverse, brick 14: the recovered word rebuilds the tableau (word-level surjectivity).
 import QOU.Mathlib.SchenstedWordSurjectivity
+-- RSK inverse, brick 15: insertion always creates a corner; brick 14's hypotheses are satisfiable.
+import QOU.Mathlib.SchenstedCornersAlong
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
