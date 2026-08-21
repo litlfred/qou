@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-21T14:45:57Z
+updated_at: 2026-08-21T15:23:55Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -838,3 +838,9 @@ NET: structurally determined, numerically fenced. BOTH legs of the D re-derivati
 OPEN = the c_k assembly only, and it is anti-fit FENCED: forced phase closes 92.03% of the D gap, residual 41.94×C (qbeta-eigenphase-branch-and-barodd-projection.witness). Any c_k absorbing the residual is a fit until one lands with c₂=−1's standing — the same magnitude wall as C.
 CORRECTION: the sensitivity-table c₃≈−974 / c₂≈−9.299 are NAIVE-Z-SWAP artifacts (C-extractor fed z_D, which S1 proves invalid). NOT proposed D values; do not wire/quote.
 FORMALIZE-FIRST NEXT: state the invariant a forced D c₂ must satisfy (D analogue of c₂=−1=1−b²ℏ⁴) and check if exact weights + α_D−h²/4 determine it. Do NOT run the extractor on z_D and report the output.
+
+── Executed 2026-08-21 (part 2, new PR): convention is localised to the N=1 phase (FORCED, sorry-free) ──
+Read Q_beta_categorical factor by factor: ONLY N1_factor=cos(α−bℏ²/2) reads markovZ' (via α=(z−1)h/2). N2..N5 — carrying c₂=−1, c₃=−2, c₄, c₅ — are closed forms in q via hoefsmitB + hbarQ' ALONE (pure Kashiwara/Hopf tails b^k·ℏ^{2k}), NO z.
+Formalized: QOU/BraidKnot/LadderConventionLocalisation.lean (lean-direct EXIT=0): Q_beta_categorical_eq_ofPhase (ladder = φ=α q instance of phase-parameterised family) + Q_beta_categorical_ofPhase_tail_common (two phases differ only by cos factors, ckTail common).
+CONSEQUENCE: distinguishes CATEGORICAL c_k (structural, z-free — C→D moves ONLY the N=1 phase to α_D−h²/4, higher rungs unchanged) from EXTRACTED c_k (inverted from full Q_β, z-dependent). The S1 c₃≈−974 is EXACTLY the N=1 phase change mis-attributed to the higher rungs by the extractor — reconciled, not a categorical value.
+SCOPE: localises z-dependence + explains the −974 artifact; does NOT claim the physical D re-derivation leaves the Kashiwara tails untouched (open). Fence unchanged: closing the 41.94×C residual by adjusting N2..N5 is a fit until a rung lands with c₂=−1's standing.
