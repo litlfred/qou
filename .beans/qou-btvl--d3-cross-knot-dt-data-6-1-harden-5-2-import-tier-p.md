@@ -72,3 +72,30 @@ different words.* Re-sweeping on structural vocabulary matched 94/371.
 
 Coordination posted on #5293; `r`, the field identification, and the
 9₁₂ / (−2,3,9) predictions are theirs. Do not re-derive.
+
+## 2026-08-19/21 — the 6₁ DT count is now a DISCRIMINATOR, not just a test
+
+A third sibling (`qou-xpgq`, PR #5294) proposed indexing the Stokes constant
+set by the braid index via the Wedderburn pair `(p(n), I(n))` — `(3,4)` at n=3 —
+then **retracted most of it** (duplicated PR #4567; misstated 5₂ as carrying
+`{3,4}` flat when it SPLITS across chirality; and #4567 had already found the
+contrary result that no single scalar clones across the two knots).
+
+What survives, at their own stated low confidence — a bare guess, not a corpus
+candidate — still raises this bean's value:
+
+    R1 (DT_max = #connections)          predicts 6₁ → {5}
+    Wedderburn at the braid index       predicts 6₁ → {5, 10}   [p(4)=5, I(4)=10]
+
+**The 10 is the discriminator**; R1 cannot produce it. So if `qou-btvl` ever
+lands a 6₁ DT count it *decides between two readings*, rather than only testing
+the DT correspondence. Worth the extra weight when prioritising.
+
+**Braid-index caveat I verified for them (honest negative).** They flagged that
+6₁'s braid index 4 was literature-recalled, unverified, and load-bearing for the
+`{5,10}` arithmetic. I could not verify it either, and the obvious tool is a
+TRAP: `snappy.Link(K).braid_word()` returns a NON-minimal representative —
+5₂ gives 4 strands where the true braid index is 3. 4₁ gives 3 (coincidence),
+6₁ gives 5, 9₁₂ gives 6. Morton–Franks–Williams would settle it but this SnapPy
+build ships no HOMFLY (`Link` exposes only alexander/jones; spherogram exports
+none). Needs KnotInfo or a HOMFLY implementation. Posted on #5293.
