@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T16:20:43Z
+updated_at: 2026-08-21T16:25:11Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -408,3 +408,58 @@ already landed by the prior holder before the takeover. With inequivalence now
 closed, check whether anything in the bean's own "Remaining" list from the
 irreducibility side still stands before marking `qou-jfr8` complete — I have not
 re-verified that half and am not claiming it.
+
+
+## Re-verified the IRREDUCIBILITY half 2026-08-21 — it is NOT closed, and its plan has a hole
+
+I said I would check this before anyone marks `qou-jfr8` complete. Measured:
+
+**`AlgHom.range (seminormalRep …) = ⊤` does not exist anywhere.** The phrase
+occurs exactly once in the tree — in `SeminormalRange.lean`'s header, as the
+*target* ("Toward SW-5 in the range form"). `DiagonalSeparation.eq_top_of_single_mem`
+is the abstract "all matrix units ⟹ ⊤"; nothing instantiates it at
+`seminormalRep`. So the bean's "THE ONE REMAINING GAP" is still open, and
+connectivity landing (`syt_swapStep_connected`, #5321) did **not** close it.
+
+**The plan for that gap has an unverified premise.** It reads:
+
+> a chain `T = T_0, …, T_m = T'` where each step is an admissible swap, **so
+> that genMat's off-diagonal entry offDiag is nonzero at each step**
+
+That "so that" does not follow. `offDiag q (-1) = 0` is a `@[simp]` lemma in
+`SeminormalRep.lean` — the entry genuinely vanishes — and `genMat_ne_scalar`'s
+own docstring already flags it: *"this does not go through `offDiag ≠ 0` at the
+moved entry: that can genuinely vanish."* `genMat_ne_scalar` survives by reading
+the **partner** column instead, which is available to it because it only needs
+*one* nonzero entry. The chain argument needs a **direction**, and that is a
+strictly stronger demand.
+
+**The crux, stated precisely.** `offDiag_mul_neg` gives
+`offDiag q d · offDiag q (-d) = 1 + a(d)·a(-d)`, so *both* entries of a pair are
+nonzero iff `1 + a(d)a(-d) ≠ 0`. At `d = ±1` that is exactly `0`
+(`seminormalParam_mul_neg_one`). So the gap needs **two** lemmas, neither in the
+corpus:
+
+1. **`SwapAdmissible T k → 2 ≤ |axialDist T k|`.** Grepped: no bound on
+   `|axialDist|` for admissible swaps exists (`natAbs`/`abs`/`2 ≤` searches all
+   negative). Note `axialDist_trichotomy` does *not* give this — it says same-row
+   ⟹ `+1` and same-column ⟹ `−1`, not the converse.
+2. **`1 + a(d)a(-d) ≠ 0` for `|d| ≥ 2`.**
+
+**Why this matters beyond bookkeeping.** Without (1), each swap-adjacent pair
+supplies only **one** guaranteed directed edge — the direction out of the
+tableau whose `axialDist` is `≥ 0`, since the other entry is `offDiag` of a
+negative distance. Exactly one of the pair has `d ≥ 0` (`axialDist_ne_zero`
+rules out the tie), so the induced digraph has one arc per undirected edge and
+is not strongly connected in general. Matrix units compose along *directed*
+paths (`single a b · single b c = single a c`), so one-way arcs do not deliver
+every `single T' T 1`. The undirected connectivity that landed is genuinely not
+enough by itself.
+
+I believe (1) is true — a hand-check of `d = -1` with distinct rows and columns
+runs into a cell squeezed between `k` and `k+1` — but I have **not** proved it
+and am not asserting it. It is the next concrete step on this half.
+
+**So: do not mark `qou-jfr8` complete.** The inequivalence half is closed; the
+irreducibility half is one named lemma-pair short of it, and the shortfall is in
+the *plan*, not merely in the typing.
