@@ -225,3 +225,45 @@ transcription of a formula containing `q̄`, `z̄`, `Ā`, a complex conjugate or
 closure will come out WRONG-BUT-PLAUSIBLE — moduli intact, phases destroyed —
 and will pass determinant-style sanity checks. Worth a line in the corpus-grep
 discipline.
+
+## 2026-08-21 SOLVED — κ-series measured, validated end-to-end
+
+The bars are restored and the κ-series is out. Route: Ohtsuki's 5₂ paper
+(`library/104171-qt-83`) prints eq.(7) with the bars LEGIBLE:
+
+    ⟨5₂⟩_N = Σ_{0≤j≤i<N} N³q / [ (q)_i (q)_{N−i−1} · (q)_j(q̄)_j · (q̄)_{i−j} ]
+
+That yields a bar RULE — doubled index → (q)(q̄) = |·|²; difference index →
+barred; reflected pair (q)_m(q)_{N−m−1} → both unbarred — and, applied to
+ki6c eq.(29), gives 6₁'s rate converging to 0.50356 where every earlier
+reading missed.
+
+**Validated end-to-end on 5₂ against PUBLISHED values before 6₁ was touched:**
+    fitted ς(5₂) = 0.45010961002522 + 0.48130497966592i   |Δ| = 7.06e-11
+    fitted ω(5₂) = 0.090190577405664 − 0.64997578664241i  |Δ| = 4.28e-11
+
+**6₁ gate PASSES:**
+    ς(6₁) = 0.5035603876377462 + 1.080780076864617i   vs ki6c |Δ| = 1.17e-7
+    ω(6₁) = −0.5213883634451721 − 0.07173228265342455i vs ki6c |Δ| = 1.66e-6
+Re(ς) = 0.5035603876 = Vol(6₁)/2π independently ✓. |⟨5₂⟩_2| = 7, |⟨6₁⟩_2| = 9 ✓.
+
+**Mirror frame resolved BY MEASUREMENT, not assumption** (the ambiguity flagged
+at the outset): the branch guide is run in both conjugations and the
+self-consistent one kept — 7.7e-8 vs 30.85. My sum computes the UNBARRED ⟨6₁⟩,
+whose ς, ω are the conjugates of the paper's 6̄₁ values.
+
+**κ_i(6₁), ℏ = 2πi/N, in the 6̄₁ frame:**
+    κ₁ = −0.857036577786166099 + 0.0996113097156072094i
+    κ₂ =  0.358255042584737923 − 0.0945323841291178526i
+    κ₃ = −0.0950597684808133093 + 0.0432714333144021833i
+    κ₄ =  0.0183530121695171879 − 0.0131501497029207267i
+    κ₅ = −0.00271366861525603234 + 0.00466421458693848123i
+
+**SCOPE — these are NOT DT counts.** They are the perturbative coefficients of
+the asymptotic expansion; the DT/Stokes constants need a Borel resummation this
+probe does not do. This is the *input* to `qou-btvl`'s open item, not the item.
+No PSLQ recognition attempted yet: unlike 4₁ (ℚ(√−3), parity-split basis), 6₁'s
+trace field is the quartic and the right basis is not obvious — a separate step.
+
+NEXT: (a) more rungs / higher N for PSLQ-grade precision; (b) the Borel/Stokes
+step that turns these into DT constants and tests R1's {5} vs the {5,10} guess.
