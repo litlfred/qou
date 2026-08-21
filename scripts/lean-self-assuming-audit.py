@@ -11,9 +11,23 @@ identifier that names one of its own explicit hypotheses, AND whose
 conclusion is syntactically the same as that hypothesis's type. That is
 `P -> P` proved by `id` -- it asserts nothing about the objects involved.
 
+Also flagged, as of 2026-08-21 (bean `qou/q407`):
+
+  * `:= by exact h` and `:= exact h` -- the earlier docstring called these
+    out of scope as "needing elaboration to judge". They do not: when the
+    argument is a BARE IDENTIFIER naming a binder whose type is the
+    conclusion, `by exact h` is exactly as certain as `h`. Only a
+    `by exact <expression>` needs elaboration, and that is still skipped.
+  * `:= by assumption` -- vacuous precisely when some binder already has
+    the conclusion's type; the detector reports which one.
+  * category `trivial-existential`: `∃ x, e = x` proved by `⟨e, rfl⟩`.
+    A different vacuity from self-assumption -- there is no hypothesis
+    being echoed -- but the same defect: it holds for EVERY `e` in a total
+    type theory, so "`e` is well-defined" is not a theorem about `e`.
+
 Deliberately NOT flagged:
-  * proofs with a tactic block (`:= by ...`) -- a `by exact h` may still
-    be vacuous but needs elaboration to judge; out of scope here
+  * `by exact <expression>`, `by simp`, `by simpa using h` -- may be
+    vacuous, but judging needs elaboration
   * `h.1`, `h.symm`, `f h` -- projections/applications do real work
   * conclusion differing from the hypothesis type in any way -- even a
     reassociation is content
@@ -117,6 +131,100 @@ def parse_binders(sig: str) -> dict:
     return binders
 
 
+def conclusion_colon(sig: str) -> int:
+    """Index of the `:` that introduces the conclusion, or -1.
+
+    Walks left to right, skipping each balanced binder group whole, and
+    returns the FIRST `:` seen outside any group.
+
+    The previous rule was "the LAST top-level `:`", which is wrong for a
+    conclusion that contains one of its own::
+
+        theorem phi_k_finite (k : ℕ) … : ∃ x : ℝ, phi_k k blocks = x
+
+    Here the `:` inside `∃ x : ℝ` is also at depth 0, so "last" picked it
+    and the conclusion came out as `ℝ, phi_k k blocks = x` — garbage that
+    could never match a hypothesis type. Every quantified conclusion was
+    silently unanalysable, which is the same failure mode as the binder
+    regex: unparsed and clean looked identical.
+    """
+    i, n = 0, len(sig)
+    while i < n:
+        ch = sig[i]
+        if ch in OPEN_TO_CLOSE:
+            depth, j = 0, i
+            while j < n:
+                if sig[j] in OPEN_TO_CLOSE:
+                    depth += 1
+                elif sig[j] in CLOSERS:
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            if j >= n:
+                return -1
+            i = j + 1
+            continue
+        if ch == ":":
+            if i + 1 < n and sig[i + 1] == "=":
+                i += 2
+                continue
+            return i
+        i += 1
+    return -1
+
+
+IDENT = re.compile(r"[A-Za-z_][A-Za-z0-9_']*")
+#: `h`, `by exact h`, `exact h`, `by exact (h)` — all identity proofs when
+#: `h` names a binder whose type is the conclusion.
+EXACT_IDENT = re.compile(
+    r"(?:by\s+)?exact\s*\(?\s*(?P<name>[A-Za-z_][A-Za-z0-9_']*)\s*\)?"
+)
+ASSUMPTION = re.compile(r"by\s+assumption")
+#: `⟨e, rfl⟩`, optionally behind `by exact`.
+ANON_REFL = re.compile(r"(?:by\s+)?(?:exact\s+)?⟨\s*(?P<wit>.+?)\s*,\s*rfl\s*⟩", re.S)
+#: `∃ x, body` or `∃ x : T, body` (single binder).
+EXISTS_HEAD = re.compile(
+    r"^∃\s*(?P<var>[A-Za-z_][A-Za-z0-9_']*)\s*(?::(?P<ty>[^,]*))?,\s*(?P<body>.+)$",
+    re.S,
+)
+
+
+def self_assuming_witness(proof: str, binders: dict, conclusion: str):
+    """Name of the echoed hypothesis, or None."""
+    p = proof.strip()
+    m = EXACT_IDENT.fullmatch(p)
+    if m:
+        p = m.group("name")
+    if IDENT.fullmatch(p):
+        if p in binders and binders[p] == conclusion:
+            return p
+        return None
+    if ASSUMPTION.fullmatch(p):
+        for nm, ty in binders.items():
+            if ty == conclusion:
+                return nm
+    return None
+
+
+def trivial_existential_witness(proof: str, conclusion: str):
+    """Witness term of a `∃ x, e = x := ⟨e, rfl⟩`, or None.
+
+    Holds for every `e`, so it asserts nothing about `e`. "Well-defined"
+    is not a theorem in a total type theory.
+    """
+    m = ANON_REFL.fullmatch(proof.strip())
+    if not m:
+        return None
+    em = EXISTS_HEAD.match(conclusion.strip())
+    if not em:
+        return None
+    var, body, wit = em.group("var"), norm(em.group("body")), norm(m.group("wit"))
+    if body in (f"{wit} = {var}", f"{var} = {wit}"):
+        return wit
+    return None
+
+
 def analyze(path: Path):
     raw = path.read_text(encoding="utf-8", errors="replace")
     src = strip_comments(raw)
@@ -128,37 +236,33 @@ def analyze(path: Path):
         if idx < 0:
             continue
         proof = norm(body[idx + 2 :])
-        # bare identifier proof only (no tactics, no application, no projection)
-        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_']*", proof):
+        # Cheap reject: only short proof terms can be vacuous in the shapes
+        # below. This used to demand a BARE IDENTIFIER, which is what kept
+        # `by exact h`, `by assumption` and `⟨e, rfl⟩` out of reach.
+        if len(proof) > 200 or not proof:
             continue
         sig = body[:idx]
-        # conclusion = text after the last top-level `:` outside binders
-        depth = 0
-        concl_at = -1
-        for i, ch in enumerate(sig):
-            if ch in "([{":
-                depth += 1
-            elif ch in ")]}":
-                depth -= 1
-            elif ch == ":" and depth == 0:
-                if i + 1 < len(sig) and sig[i + 1] == "=":
-                    continue
-                concl_at = i
+        concl_at = conclusion_colon(sig)
         if concl_at < 0:
             continue
         conclusion = norm(sig[concl_at + 1 :])
+        if not conclusion:
+            continue
         binders = parse_binders(sig[:concl_at])
-        if proof in binders and binders[proof] == conclusion and conclusion:
-            out.append(
-                {
-                    "decl": m.group("name"),
-                    "kind": m.group("kw"),
-                    "hypothesis": proof,
-                    "statement": conclusion,
-                    "file": str(path),
-                    "line": src[: m.start()].count("\n") + 1,
-                }
-            )
+        rec = {
+            "decl": m.group("name"),
+            "kind": m.group("kw"),
+            "statement": conclusion,
+            "file": str(path),
+            "line": src[: m.start()].count("\n") + 1,
+        }
+        hyp = self_assuming_witness(proof, binders, conclusion)
+        if hyp is not None:
+            out.append({**rec, "category": "self-assuming", "hypothesis": hyp})
+            continue
+        wit = trivial_existential_witness(proof, conclusion)
+        if wit is not None:
+            out.append({**rec, "category": "trivial-existential", "hypothesis": wit})
     return out
 
 
@@ -177,13 +281,21 @@ def main():
                 hits.extend(analyze(p))
             except Exception as e:  # noqa: BLE001
                 print(f"  ! {p}: {e}", file=sys.stderr)
-    print(f"scanned {scanned} .lean files — {len(hits)} self-assuming candidate(s)\n")
-    for h in sorted(hits, key=lambda x: x["file"]):
-        rel = h["file"]
-        print(f"  {h['kind']} {h['decl']}")
-        print(f"    {rel}:{h['line']}")
-        print(f"    ({h['hypothesis']} : {h['statement']})  ⊢  {h['statement']}")
-        print()
+    by_cat: dict = {}
+    for h in hits:
+        by_cat.setdefault(h["category"], []).append(h)
+    tally = ", ".join(f"{len(v)} {k}" for k, v in sorted(by_cat.items()))
+    print(f"scanned {scanned} .lean files — {len(hits)} candidate(s): {tally}\n")
+    for cat in sorted(by_cat):
+        print(f"── {cat} ──\n")
+        for h in sorted(by_cat[cat], key=lambda x: (x["file"], x["line"])):
+            print(f"  {h['kind']} {h['decl']}")
+            print(f"    {h['file']}:{h['line']}")
+            if cat == "self-assuming":
+                print(f"    ({h['hypothesis']} : {h['statement']})  ⊢  {h['statement']}")
+            else:
+                print(f"    ⊢ {h['statement']}   witnessed by ⟨{h['hypothesis']}, rfl⟩")
+            print()
     Path("/tmp/self-assuming.json").write_text(json.dumps(hits, indent=1))
     return 0
 

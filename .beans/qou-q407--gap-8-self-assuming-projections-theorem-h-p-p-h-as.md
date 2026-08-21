@@ -148,4 +148,17 @@ descended parts first — but that is a different theorem from the one claimed.
       corpus claims
 - [ ] Apply (A), (C), (D) dispositions once (B)/(E) are settled, so the whole
       set lands as one reviewable change
-- [ ] Extend the detector to the `:= by exact h` and `⟨x, rfl⟩` shapes
+- [x] Extend the detector to the `:= by exact h` and `⟨x, rfl⟩` shapes —
+      done; `by exact h`/`by assumption` found **nothing** new (measured
+      negative), `⟨e, rfl⟩` found **15**, and a second silent parser bug
+      (conclusion taken at the last top-level `:`, wrong for every
+      `∃ x : T,` conclusion) was fixed in passing. Corpus total: **27**.
+- [ ] Disposition the 15 `trivial-existential` findings. Two are not merely
+      vacuous but mis-titled: `wenzl_annihilator` carries three literature
+      Refs for `∃ x : R, x = 0` with its `firstCol ≥ 4` hypothesis unused,
+      and `nuclear_knot_classification` proves the `.borromean` constructor
+      exists with `Z`, `N`, `hA` unused. **Owner call** — same class of
+      decision as groups (B)/(E).
+- [ ] Consider an unused-binder heuristic: every one of the 27 has hypotheses
+      that never appear in the conclusion. Not sufficient on its own, but a
+      cheap corpus-wide pre-filter for the shapes no regex will catch.

@@ -290,3 +290,71 @@ being read without its `ord` parameter. Rebuilding the five-module chain with
 the symptom — an arity error deep in an unrelated file — reads like a corpus
 breakage rather than a cache-age problem. Use `scripts/lib/lean-env.sh`'s
 `lean_leanpath`, and check olean mtimes before believing an arity error.
+
+## 2026-08-21, second pass — a second vacuity shape: 27 candidates
+
+The detector now covers the shapes the original pass listed as out of scope.
+
+### `by exact h` and `by assumption`: widened, and found nothing
+
+The original docstring excluded tactic proofs because "a `by exact h` may
+still be vacuous but needs elaboration to judge". That is true of
+`by exact <expression>` and false of `by exact <bare identifier>`: when the
+argument names a binder whose type is the conclusion, it is exactly as
+certain as the bare form. Both are now recognised, along with
+`by assumption` (vacuous precisely when some binder already carries the
+conclusion's type — the detector names which).
+
+**Result: still 12 self-assuming.** No tactic-wrapped instance exists in the
+corpus. Worth recording as a measured negative rather than an untested
+assumption.
+
+### New category `trivial-existential`: 15 findings
+
+`∃ x, e = x` proved by `⟨e, rfl⟩`. No hypothesis is echoed, so it is not
+self-assumption — but it is the same defect: the statement holds for **every**
+`e` in a total type theory, so "`e` is well-defined" is not a theorem about
+`e`. Five are named `*_well_defined` and are at least self-describing. Two are
+not:
+
+- **`wenzl_annihilator`** (`zeta8-witness-level2-su2.lean:168`). Docstring:
+  "For any partition `λ` with first-column length `≥ 4`, the Hecke character
+  `χ^λ` at `q = ζ` has zero quantum trace." Statement:
+  `∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0`. That says a ring has a
+  zero. `firstCol` and `_h : 4 ≤ firstCol` are **unused**, so it holds for
+  first-column length 1 as readily as 4, and carries three literature Refs
+  ([wenzl1987] §3 Thm 3.1, [jones1987] §5, [witten1989] §4) while proving
+  nothing any of them says. Its docstring does concede "stated as a structural
+  target".
+- **`nuclear_knot_classification`** (`nuclear-knot-classification.lean:33`).
+  Docstring: "For A ≥ 4, the nuclear braid is Borromean-like." Statement:
+  `∃ K : NuclearKnotType, K = .borromean`, i.e. the constructor exists.
+  `Z`, `N` and `hA : Z + N ≥ 4` are all unused; it holds for A = 0.
+
+The remaining eight are `∃ y, f x = y` restatements of definitions
+(`archimedean_eval_well_defined`, `n6/n7/n8_dimq_at_well_defined`,
+`habiro_integral`, `regime_switched_binding_defined`, `phi_k_finite`,
+`plancherel_term_7_finite`, `knot_factor_*`, `q_0_well_defined`,
+`qou_standardPart_image_exists`, `spectral_decomposition_qvalue`).
+
+A useful tell, cheap to check and not yet automated: **every one of these has
+unused hypotheses.** A theorem whose binders do not appear in its conclusion is
+not necessarily vacuous, but a vacuous one almost always has them.
+
+### A second silent parser bug, fixed in passing
+
+The conclusion was extracted at the **last** top-level `:` in the signature.
+For a quantified conclusion that colon belongs to the quantifier:
+
+```lean
+theorem phi_k_finite (k : ℕ) … : ∃ x : ℝ, phi_k k blocks = x
+```
+
+gave conclusion `ℝ, phi_k k blocks = x`. Every `∃ x : T,` conclusion in the
+corpus was therefore unanalysable — and, as with the binder regex, unparsed
+and clean produced identical output. Now taken as the first `:` outside all
+binder groups.
+
+That is twice in one tool that a parsing limit silently shrank the reported
+set. Both were invisible for the same reason: nothing distinguished "could not
+read this" from "read it and it was fine".
