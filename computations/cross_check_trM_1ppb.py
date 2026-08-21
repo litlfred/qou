@@ -219,14 +219,64 @@ def main() -> int:
             f"muon q0 ({mp.nstr(_muon, 12)}). Set QOU_Q0_ANCHOR=ideal — else "
             "peel/chi-cache color-weighting is mixed-pin (audit "
             "2026-07-18-avg-color-delta-q0-pin-mismatch.md).")
-    _peel_q0 = peel.get("parameters", {}).get("q0")
-    if _peel_q0 is not None:
-        _pv = _peel_q0.get("value") if isinstance(_peel_q0, dict) else _peel_q0
-        if fabs(mpf(str(_pv)) - _muon) / _muon > mpf("1e-9"):
+    # (b) EVERY input witness's recorded q0 — not just peel's.
+    #
+    # This checked `peel` alone for a year, and the comment above already
+    # said what it should do ("the peel witness's recorded q0"): one of four
+    # inputs. The gate therefore enforced the pin at the RUNTIME layer, where
+    # it refuses to start off-muon, while silently accepting a committed
+    # INPUT at the other pin — false assurance, since the refusal makes the
+    # run look pin-uniform.
+    #
+    # Measured 2026-08-21 (bean qou-3zby), deuteron |tr_M| at the muon pin:
+    #
+    #   method       convention   pin       vs C@proton
+    #   Hoefsmit         D        muon        —
+    #   chi-cache        D        muon        —
+    #   markov_peel      C        muon      1.82e-04
+    #   Habiro           C       PROTON     2.71e-13   <- exact match
+    #
+    # Habiro IS the convention-C value at the PROTON pin, inside a gate that
+    # raises SystemExit if the RUNTIME pin is proton. It survived because
+    # `habiro-coefficients-extended.witness.json` records no q0 at all, so
+    # there was nothing to compare — and it is not alone: `atomic-tr-m-mpfr-
+    # 50dps` records none either. 1966 of 2681 corpus witnesses (73%) carry
+    # no `q0Anchor`, so "no recorded pin" is the normal case, not an oddity.
+    #
+    # So: verify every input that HAS a recorded q0, and NAME the ones that
+    # do not rather than skipping them silently. An unverifiable input is a
+    # reportable state, not a pass.
+    _pin_inputs = (
+        ("Hoefsmit", hoef),
+        ("markov_peel", peel),
+        ("chi-cache",
+         json.loads(CHICACHE_PATH.read_text()) if CHICACHE_PATH.exists() else None),
+        ("Habiro",
+         json.loads(HABIRO_EXT_PATH.read_text()) if HABIRO_EXT_PATH.exists() else None),
+    )
+    _unverifiable = []
+    for _name, _doc in _pin_inputs:
+        if not isinstance(_doc, dict):
+            continue
+        _rec = _doc.get("q0Value")
+        if _rec is None:
+            _pq = _doc.get("parameters", {}).get("q0")
+            _rec = _pq.get("value") if isinstance(_pq, dict) else _pq
+        if _rec is None:
+            _unverifiable.append(_name)
+            continue
+        if fabs(mpf(str(_rec)) - _muon) / _muon > mpf("1e-9"):
             raise SystemExit(
-                "peel witness was computed at a q0 that is NOT the muon pin "
-                f"({str(_pv)[:18]}… vs {mp.nstr(_muon, 12)}); regenerate it "
-                "under QOU_Q0_ANCHOR=ideal (mixed-pin, audit 2026-07-18).")
+                f"{_name} witness was computed at a q0 that is NOT the muon "
+                f"pin ({str(_rec)[:18]}… vs {mp.nstr(_muon, 12)}); regenerate "
+                "it under QOU_Q0_ANCHOR=ideal (mixed-pin, audit 2026-07-18).")
+    if _unverifiable:
+        print(f"⚠ q0-pin: {len(_unverifiable)} input(s) record no q0 and "
+              f"CANNOT be pin-verified — {', '.join(_unverifiable)}. The "
+              "runtime guard above does not cover them: it constrains this "
+              "process, not the committed witness. Habiro is measured at the "
+              "PROTON pin (bean qou-3zby); stamp these at their producers.",
+              file=sys.stderr)
     # ─────────────────────────────────────────────────────────────────────
 
     # Hoefsmit results: list of dicts, atom name in 'atom'
