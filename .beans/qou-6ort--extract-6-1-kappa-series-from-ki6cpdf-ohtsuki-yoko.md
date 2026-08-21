@@ -1,11 +1,11 @@
 ---
 # qou-6ort
 title: Extract 6_1 kappa-series from ki6c.pdf (Ohtsuki-Yokota 6-crossing) — Ohtsuki-tower third-knot leg
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T11:35:54Z
-updated_at: 2026-08-19T21:17:04Z
+updated_at: 2026-08-21T15:39:08Z
 ---
 
 
