@@ -597,7 +597,13 @@ def main() -> int:
                      "ONLY when draining. Adding a file here to silence a "
                      "failure defeats the gate — fix at the producer instead.",
              "enforced_rule": "AGENTS.md: NO-FLOAT64 means none may enter a witness.",
-             "drain_owner": "PR #4677 (float64 residual, producer-side)",
+             # Root-aware: #4677 owns the computations/ backlog and nothing
+             # else. A non-default root's backlog belongs to whoever gated it,
+             # and stamping every root with #4677 would send the next agent to
+             # an arc that never touched these files.
+             "drain_owner": ("PR #4677 (float64 residual, producer-side)"
+                             if scan_root is None else
+                             f"whoever gated {args.scan_root} — see bean qou-irzg"),
              "files_count": len(found),
              "fields_count": total,
              "files": dict(sorted(found.items()))}, indent=2) + "\n")
