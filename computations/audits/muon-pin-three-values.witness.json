@@ -1,0 +1,97 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "computedAt": "2026-08-21T21:41:56.501482+00:00",
+  "commitSha": "bd39e875e0355330da5a5675b852a0d113dec6fb",
+  "assertions": [
+    {
+      "name": "1_three_distinct_values",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "3 distinct values at the anchor audit's own 14-char discrimination width (_MATCH_PREFIX), which is what it uses to tell muon from proton"
+    },
+    {
+      "name": "2_separations_exceed_L1_target",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "every pairwise separation exceeds the L1 compute target of 1 ppQ = 1e-15 relative = 1e-6 ppb, so this is not arithmetic noise"
+    },
+    {
+      "name": "3_separations_below_mu_p_tension",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "all three sit INSIDE the ~11.5 ppb muon-proton gap, so none of them is a mislabelled proton value — this is a muon-vs-muon discrepancy, a class the anchor vocabulary has no way to express"
+    },
+    {
+      "name": "4_B_is_the_reverted_derivation_value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "B matches the number `_q0_value_for_anchor`'s docstring records as the WRONG side of the 2026-08-15 revert ('1.1099785955541805 stamped'). The revert fixed the code and left the data, so B survives on main."
+    },
+    {
+      "name": "5_C_is_not_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "q_muon_at() no longer returns what it returned when these witnesses were written — it derives over a CODATA input and drifts as that input updates, while A is frozen. Two moving targets, one fixed."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "muon-pin-three-values",
+  "scriptFile": "muon_pin_three_values_probe.py",
+  "scriptHash": "5653d9a6af60",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Three distinct values are all called 'the muon q0' and differ at the 13th significant digit: the frozen canonical pin, the value left inside four probe witnesses by a code change that was reverted without regenerating them, and today's live q_muon_at() derivation, which has drifted again since. All three sit inside the 11.5 ppb muon-proton gap, so this is a muon-vs-muon discrepancy the anchor vocabulary cannot currently express.",
+  "computation_method": "Reads A from qou_substrate.witness._q0_value_for_anchor('muon') (the committed q-pinning witness), C from qou_substrate.constants.q_muon_at(60) (the live derivation), and B from the committed muon leg of qbeta-h-frame-rungs. All separations are exact-decimal mpmath at dps=80; no float64.",
+  "audit_only": true,
+  "tier": "empirical",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0AnchorReason": "Muon-layer throughout: every value compared is a muon q0 and the canonical muon pin is the reference. No proton quantity is read, so this is not a cross-anchor comparison and not a layer straddle.",
+  "scope": "scope-(a) MEASUREMENT, not a ruling. Does not say which value is correct, changes no pin, wires nothing. Choosing between A and C is an owner/registry question about what the ideal CAL-2 muon pin means; regenerating the B-carrying witnesses is a separate migration.",
+  "result": {
+    "A_canonical_pin": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "B_committed_in_probe_witnesses": "1.10997859555418057528159407960950937799328227995868622546675",
+    "C_q_muon_at_live": "1.109978595642739046681795129380001752700065561029012",
+    "separations": {
+      "B_minus_A_ppb": "-0.0028416265",
+      "C_minus_A_ppb": "0.076942319",
+      "C_minus_B_ppb": "0.079783945"
+    },
+    "B_carrying_witnesses": [
+      "qbeta-h-frame-rungs.witness.json",
+      "qbeta-c3-crossanchor-swing-provenance.witness.json",
+      "qbeta-h-vs-u-frame-stability.witness.json",
+      "qbeta-ladder-required-phase.witness.json"
+    ],
+    "verdict": "Three values, two of them moving. The 2026-08-15 revert of the derive-the-muon-branch change was complete in the code and incomplete in the data, and q_muon_at() has drifted again on top of that. Until it is ruled which of A and C a 'muon-anchored' quantity should use, a producer that calls q_muon_at() cannot be honestly stamped against the canonical pin -- the audit correctly reports Q0_FLIP, and stamping the constant instead would make its per-leg check a tautology."
+  },
+  "context": {
+    "found_by": "adding the `comparison` q0 anchor value (bean qou-po7i)",
+    "beans": [
+      "qou-po7i"
+    ],
+    "reverted_change": "see the REVERTED note in qou_substrate.witness._q0_value_for_anchor -- it names value B",
+    "blocks": "stamping qbeta_c3_crossanchor_swing_provenance_probe, qbeta_h_frame_rungs_probe, qbeta_h_vs_u_frame_stability_probe and qbeta_ladder_required_phase_probe as `comparison`"
+  }
+}
