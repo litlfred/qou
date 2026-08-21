@@ -38,6 +38,7 @@
 import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.MvPolynomial.CommRing
 import Mathlib.Algebra.Polynomial.Derivative
+import Mathlib.Algebra.MvPolynomial.Funext
 
 namespace MvPolynomial
 
@@ -121,6 +122,36 @@ theorem iterate_derivative_lineRestrict [Fintype σ] [DecidableEq σ] (a c : σ 
   | zero => simp
   | succ n ih =>
     rw [Function.iterate_succ_apply, Function.iterate_succ_apply, derivative_lineRestrict, ih]
+
+/-! ### Which lines see a non-zero polynomial -/
+
+/-- The restriction's value at `t = 0` is the polynomial's value at the base point. -/
+theorem eval_zero_lineRestrict (a c : σ → K) (P : MvPolynomial σ K) :
+    Polynomial.eval 0 (lineRestrict a c P) = eval a P := by
+  have hring : (Polynomial.evalRingHom (0 : K)).comp (lineRestrict a c).toRingHom
+      = (eval a : MvPolynomial σ K →+* K) := by
+    apply MvPolynomial.ringHom_ext
+    · intro r; simp [lineRestrict]
+    · intro i; simp [lineRestrict]
+  exact DFunLike.congr_fun hring P
+
+/-- **A non-zero polynomial survives restriction to some line, in every direction.**
+
+Note the quantifiers: the *direction* `c` is arbitrary — only the base point has to be
+chosen.  That is because the constant term of the restriction is `P(a)`, so any `a` off the
+zero set of `P` already works, and `MvPolynomial.funext` supplies one over an infinite
+field. -/
+theorem exists_lineRestrict_ne_zero {K : Type*} [Field K] [Infinite K]
+    {P : MvPolynomial σ K} (hP : P ≠ 0) (c : σ → K) :
+    ∃ a : σ → K, lineRestrict a c P ≠ 0 := by
+  by_contra hcon
+  push_neg at hcon
+  apply hP
+  rw [MvPolynomial.funext_iff]
+  intro x
+  have hx := congrArg (Polynomial.eval (0 : K)) (hcon x)
+  rw [eval_zero_lineRestrict] at hx
+  simpa using hx
 
 /-! ### Next
 

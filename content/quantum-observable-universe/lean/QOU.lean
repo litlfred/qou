@@ -1067,3 +1067,8 @@ import QOU.Mathlib.MvGenWronskian
 -- route to BOUNDED-ORDER generalized Wronskians, which MvGenWronskian's converse cannot
 -- reach (it argues from the origin, and bounded-order Wronskians can vanish there).
 import QOU.Mathlib.LineRestriction
+-- qou-sq3h -- staged for upstream Mathlib: the directional generalized Wronskian
+-- det((D^c)^i f_j), whose rows carry order 0..m-1 by construction, and its equivalence with
+-- independence of line restrictions.  Reduces the bounded-order problem to a question about
+-- the DIRECTION alone; the base point drops out.
+import QOU.Mathlib.DirectionalWronskian
