@@ -133,6 +133,14 @@ where `χ^λ(τ)` is the **ordinary** `S_n` character at a transposition (the
 bar-odd half of the character is annihilated against `h·f^λ`, leaving the
 bar-EVEN `[2]_q`.
 
+> **What checks what.** Check A2 verifies this identity, but the probe
+> *defines* `m± = (f^λ ± χ^λ(τ))/2`, so A2 is algebraically automatic given
+> that definition and does **not** test the representation-theoretic input.
+> The check that does is **A3**: the σ₁ Markov condition
+> `Σ_λ χ_λ(σ₁)·y_λ = z_D`, verified symbolically for n = 2..9 against
+> independently-computed weights. A wrong multiplicity assignment fails A3.
+> Read A2 as bookkeeping and A3 as the test.
+
 ### 4b. The loop-mean identity (`loopMean_eq_twoQ_mul_moment`)
 
 Summing 4a against the two Markov conditions — `Σ f^λ y_λ = 1` and
@@ -221,11 +229,25 @@ so the true relation carries a square root and cannot be affine.
 | exclusion non-vacuous at q₀ | **proved-lean** over `ℝ` on `[1,2]` |
 | `y_λ = s_λ(1,Q)/(1+Q)^n` | **symbolic-exact**, 4.6e-61 against the live producer |
 
-**A caveat on 4b.** It is an identity following from the Markov *defining*
-conditions, so it is not an independent determination of `z` from the weights.
-§3 proves no such determination exists. The content of 4b is that the specific
-mirror-forced combination `2z − h` is `[2]_q` times a **weight functional**,
-and 4c that the functional is `n`-free.
+**A caveat on 4b, stated the way a referee will state it.** Substituting
+`Ξ = (2z − h)/[2]_q` back into 4d returns `α = (h/2)(z − 1)` — the definition.
+So the closed form is *not* new information about `α` considered as a function
+of `z`; it is a change of variable, and 4b is an identity following from the
+Markov **defining** conditions rather than an independent determination of `z`.
+§3 proves no such determination exists, so this is the most that could be true.
+
+What is therefore left, stated precisely — and it is not nothing:
+
+1. `Ξ` is a **weight functional** with representation-theoretic coefficients
+   (`χ^λ(τ)`, integers fixed by `S_n`), not a repackaging of `z`. Given the
+   weight vector and nothing else, you can compute `Ξ`, hence `2z − h`.
+2. So the weights **do** determine the loop mean — the mirror-forced
+   combination — and determine `α` up to the single datum `h`. §3 says that
+   last datum is not recoverable from them, and `h` is exactly what
+   distinguishes `q` from `q⁻¹`. The two results meet exactly, with no slack.
+3. `Ξ`'s **`n`-independence** (4c) is genuinely new and is not a change of
+   variable: it is a statement about the weight vectors at different `n`,
+   forced by the fact that `2z − h` carries no `n`.
 
 ---
 
