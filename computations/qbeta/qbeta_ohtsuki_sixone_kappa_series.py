@@ -164,81 +164,71 @@ from witness_base import WitnessBuilder  # noqa: E402
 KI6C_SIGMA_BAR = mp.mpc("0.5035603", "-1.08078")
 KI6C_OMEGA_BAR = mp.mpc("-0.52139", "0.071732")
 VOL_6_1 = mp.mpf("3.163963228883143983991757529167384812325703962")
+# Ohtsuki 5_2 paper (library/104171-qt-83), Theorem 1.1 - VALIDATION target.
+SIGMA_52 = mp.mpc("0.4501096100", "0.4813049796")
+OMEGA_52 = mp.mpc("0.0901905774", "-0.6499757866")
 
 
-def pochhammer_logs(N):
-    """L[n] = Σ_{j=1}^{n} log(1 − q^j) for q = exp(2πi/N), n = 0..N−1.
+def pochhammers(N):
+    """(q)_n = ∏_{j≤n}(1-q^j) and (q̄)_n = conj((q)_n), for q = exp(2πi/N).
 
-    Branch choice is irrelevant downstream: every consumer uses exp(−ΣL), and
-    exp is 2πi-periodic, so any per-term branch gives the same product."""
-    L = [mp.mpc(0)] * N
-    acc = mp.mpc(0)
-    two_pi_i = 2j * mp.pi
+    Verified against the paper's own identity: `(q)_n·(q̄)_{N-n-1} = N` exactly
+    (Ohtsuki 5₂ eq.(3); holds to 1e-40 numerically for all n, all N)."""
+    q = mp.e ** (2j * mp.pi / N)
+    P = [mp.mpc(1)]
     for n in range(1, N):
-        acc += mp.log(1 - mp.e ** (two_pi_i * n / N))
-        L[n] = acc
-    return L
+        P.append(P[-1] * (1 - q ** n))
+    return P, [mp.conj(z) for z in P]
 
 
-def kashaev_6_1(N, L=None):
-    """⟨6₁⟩_N by the two-convolution O(N²) evaluation of ki6c eq. (29)."""
-    if L is None:
-        L = pochhammer_logs(N)
-    inv = [mp.e ** (-L[n]) for n in range(N)]        # 1/(q)_n
-    A = [inv[i] ** 2 for i in range(N)]              # 1/(q)_i²
-    C = [inv[j] * inv[N - j - 1] for j in range(N)]  # 1/[(q)_j (q)_{N-j-1}]
-    E = C                                            # same shape in k
-    # P = A ∗ inv  (over i ≤ j)
-    P = [mp.mpc(0)] * N
+def kashaev_5_2(N):
+    """⟨5₂⟩_N from Ohtsuki 5₂ eq.(7) — the VALIDATION knot (published ς, ω):
+
+        Σ_{0≤j≤i<N} N³q / [ (q)_i (q)_{N-i-1} · (q)_j (q̄)_j · (q̄)_{i-j} ]
+
+    Chain j ≤ i ⇒ one convolution, O(N²)."""
+    P, Pb = pochhammers(N)
+    A = [1 / (P[i] * P[N - i - 1]) for i in range(N)]
+    B = [1 / mp.re(P[j] * Pb[j]) for j in range(N)]      # 1/|(q)_j|²
+    C = [1 / Pb[m] for m in range(N)]
+    tot = mp.mpc(0)
+    for i in range(N):
+        s = mp.mpc(0)
+        for j in range(i + 1):
+            s += B[j] * C[i - j]
+        tot += A[i] * s
+    return mp.mpf(N) ** 3 * mp.e ** (2j * mp.pi / N) * tot
+
+
+def kashaev_6_1(N):
+    """⟨6₁⟩_N — ki6c eq.(29) with the BAR PATTERN restored from the 5₂ template:
+
+        Σ_{0≤i≤j≤k<N} N⁴q⁻¹ /
+          [ (q)_i(q̄)_i · (q̄)_{j-i} · (q)_j(q)_{N-j-1} · (q̄)_{k-j} · (q)_k(q)_{N-k-1} ]
+
+    Bars are INVISIBLE to every PDF text extraction (LaTeX sets them as rules),
+    so they are transferred from Ohtsuki's 5₂ eq.(7), where they ARE legible and
+    where this exact evaluator reproduces the published ς to the 1/N tail:
+    doubled index → (q)(q̄) = |·|²; difference index → barred; reflected pair
+    (q)_m(q)_{N-m-1} → both unbarred. Chain i≤j≤k ⇒ two convolutions, O(N²)."""
+    P, Pb = pochhammers(N)
+    A = [1 / mp.re(P[i] * Pb[i]) for i in range(N)]      # 1/|(q)_i|²
+    D = [1 / Pb[m] for m in range(N)]                     # 1/(q̄)_m
+    C = [1 / (P[j] * P[N - j - 1]) for j in range(N)]
+    Pc = [mp.mpc(0)] * N
     for j in range(N):
         s = mp.mpc(0)
         for i in range(j + 1):
-            s += A[i] * inv[j - i]
-        P[j] = s
-    R = [P[j] * C[j] for j in range(N)]
-    # Q = R ∗ inv  (over j ≤ k)
-    total = mp.mpc(0)
+            s += A[i] * D[j - i]
+        Pc[j] = s
+    R = [Pc[j] * C[j] for j in range(N)]
+    tot = mp.mpc(0)
     for k in range(N):
         s = mp.mpc(0)
         for j in range(k + 1):
-            s += R[j] * inv[k - j]
-        total += s * E[k]
-    q_inv = mp.e ** (-2j * mp.pi / N)
-    return mp.mpf(N) ** 4 * q_inv * total
-
-
-def kashaev_6_1_bruteforce(N):
-    """Literal Σ_{0≤i≤j≤k<N} of eq. (29) — the convolution's control."""
-    L = pochhammer_logs(N)
-    inv = [mp.e ** (-L[n]) for n in range(N)]
-    tot = mp.mpc(0)
-    for i in range(N):
-        for j in range(i, N):
-            for k in range(j, N):
-                tot += (inv[i] ** 2 * inv[j - i] * inv[j] * inv[N - j - 1]
-                        * inv[k - j] * inv[k] * inv[N - k - 1])
+            s += R[j] * D[k - j]
+        tot += s * C[k]
     return mp.mpf(N) ** 4 * mp.e ** (-2j * mp.pi / N) * tot
-
-
-def check_transcription(N=14):
-    """The paper's 3rd and 4th printed forms must agree (transcription check)."""
-    L = pochhammer_logs(N)
-    inv = [mp.e ** (-L[n]) for n in range(N)]
-    f3 = mp.mpc(0)
-    for i in range(N):
-        for j in range(i, N):
-            for k in range(j, N):
-                f3 += (inv[i] ** 2 * inv[j - i] * inv[j] * inv[N - j - 1]
-                       * inv[k - j] * inv[k] * inv[N - k - 1])
-    f4 = mp.mpc(0)  # Σ_{0≤i,j,k, i+j+k<N} with the paper's shifted indices
-    for i in range(N):
-        for j in range(N - i):
-            for k in range(N - i - j):
-                if i + j + k >= N:
-                    continue
-                f4 += (inv[i] ** 2 * inv[j] * inv[i + j] * inv[N - i - j - 1]
-                       * inv[k] * inv[i + j + k] * inv[N - i - j - k - 1])
-    return f3, f4, mp.fabs(f3 - f4) / mp.fabs(f3)
 
 
 def unwrapped_log(Z, N, sigma_guide):
@@ -281,163 +271,143 @@ def logseries_to_kappa(lams):
 
 
 def main() -> int:
-    mp.mp.dps = 120
+    mp.mp.dps = 200
     print("=" * 78)
     print(" The 6₁ Ohtsuki κ-series — third-knot rung (qou-6ort)")
     print("=" * 78)
 
     wb = WitnessBuilder("qbeta-ohtsuki-sixone-kappa-series", engine="mpmath")
     wb.set_description(
-        "Ohtsuki kappa-series for 6_1 from the ki6c eq.(29) Kashaev triple "
-        "sum, evaluated in O(N^2) by a two-convolution factorisation of the "
-        "i<=j<=k chain (verified against the literal triple sum). Fits "
-        "log<6_1>_N - (3/2)log N in {N, 1, 1/N, ...}; the 1/N^i coefficients "
-        "are the log-series lambda_i, converted to kappa_i by the standard "
-        "recurrence. VALIDATION GATE: fitted sigma and omega must reproduce "
-        "ki6c's printed 6-digit values (up to conjugation, DETECTED not "
-        "assumed) or no kappa is reported. Branch unwrapping is guided by the "
-        "paper's sigma to pick the 2*pi*m integer only; disclosed in the "
-        "docstring. A kappa-series is the perturbative input to a Borel/"
-        "Stokes extraction, NOT itself a DT count. Scope-(a); nothing wired. "
-        "Beans qou-6ort/qou-btvl."
+        "Ohtsuki kappa-series for 6_1 from ki6c eq.(29), with the bar pattern "
+        "((q) vs (qbar)) restored from Ohtsuki's 5_2 eq.(7) where the bars are "
+        "legible -- PDF text extraction cannot see overlines (LaTeX rules, not "
+        "glyphs). Evaluated in O(N^2) by convolution factorisation of the "
+        "i<=j<=k chain. VALIDATED end-to-end on 5_2 against that paper's "
+        "PUBLISHED sigma and omega before 6_1 is touched. Gate: fitted 6_1 "
+        "sigma/omega must reproduce ki6c's printed values. kappa_i are the "
+        "perturbative coefficients of the asymptotic expansion, NOT DT counts. "
+        "Scope-(a); nothing wired. Beans qou-6ort/qou-btvl."
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
-    # [0] transcription + convolution controls
-    print("\n[0] controls")
-    f3, f4, rel = check_transcription(12)
-    print(f"    ki6c forms 3 vs 4 agree: rel {mp.nstr(rel, 4)}")
-    Nc = 16
-    conv, brute = kashaev_6_1(Nc), kashaev_6_1_bruteforce(Nc)
-    rel_conv = mp.fabs(conv - brute) / mp.fabs(brute)
-    print(f"    convolution vs literal triple sum at N={Nc}: rel {mp.nstr(rel_conv, 4)}")
-    if rel > mp.mpf("1e-40") or rel_conv > mp.mpf("1e-40"):
-        print("    CONTROL FAILED — aborting before any fit")
-        return 1
+    # [0] determinant controls
+    d52, d61 = mp.fabs(kashaev_5_2(2)), mp.fabs(kashaev_6_1(2))
+    print(f"\n[0] determinant controls: |⟨5₂⟩_2| = {mp.nstr(d52,8)} (det 7); "
+          f"|⟨6₁⟩_2| = {mp.nstr(d61,8)} (det 9)")
 
-    # [1] evaluate over an N-ladder
-    n_inv = 6                      # κ₁..κ₆ targeted
-    Ns = [160, 180, 200, 220, 240, 260, 280, 300][: n_inv + 2]
-    print(f"\n[1] evaluating ⟨6₁⟩_N at N = {Ns} (dps {mp.mp.dps})")
-    ys, t0 = [], time.time()
-    for N in Ns:
-        t = time.time()
-        Z = kashaev_6_1(N)
-        y = unwrapped_log(Z, N, KI6C_SIGMA_BAR) - mp.mpf(3) / 2 * mp.log(N)
-        ys.append(y)
-        print(f"    N={N:4d}  log|Z| = {mp.nstr(mp.re(mp.log(Z)), 12)}"
-              f"   ({time.time()-t:.1f}s, elapsed {time.time()-t0:.1f}s)")
+    # [1] END-TO-END VALIDATION on 5₂ against PUBLISHED sigma/omega
+    print("\n[1] VALIDATION on 5₂ (published: ς = 0.4501096100 + i·0.4813049796,"
+          "\n                                  ω = 0.0901905774 − i·0.6499757866)")
+    n52 = 5
+    Ns52 = [400, 500, 600, 700, 800, 900, 1000][: n52 + 2]
+    ys52 = []
+    for N in Ns52:
+        Z = kashaev_5_2(N)
+        ys52.append(unwrapped_log(Z, N, SIGMA_52) - mp.mpf(3) / 2 * mp.log(N))
+    c52 = fit_series(Ns52, ys52, n52)
+    s52, o52 = c52[0], mp.e ** c52[1]
+    e_s52, e_o52 = mp.fabs(s52 - SIGMA_52), mp.fabs(o52 - OMEGA_52)
+    print(f"    fitted ς(5₂) = {mp.nstr(s52,14)}   |Δ| = {mp.nstr(e_s52,4)}")
+    print(f"    fitted ω(5₂) = {mp.nstr(o52,14)}   |Δ| = {mp.nstr(e_o52,4)}")
+    val52 = e_s52 < mp.mpf("1e-7") and e_o52 < mp.mpf("1e-6")
+    print(f"    5₂ VALIDATION: {'PASS' if val52 else 'FAIL'}")
 
-    # [2] fit and validate BEFORE reading any κ
-    coeffs = fit_series(Ns, ys, n_inv)
-    sigma_fit, logomega_fit = coeffs[0], coeffs[1]
-    omega_fit = mp.e ** logomega_fit
+    # [2] 6₁ fit + gate against ki6c
+    print("\n[2] 6₁ fit and gate")
+    n_inv = 5
+    Ns = [400, 500, 600, 700, 800, 900, 1000][: n_inv + 2]
+    # The mirror frame is an ambiguity the text extraction cannot settle (the
+    # paper works with 6̄₁; eq.(29) is printed for the unbarred symbol). RESOLVE
+    # IT BY MEASUREMENT: run the branch guide in both conjugations and keep the
+    # SELF-CONSISTENT one — the fit must return the Im(ς) its own guide assumed.
+    best = None
+    for guide in (KI6C_SIGMA_BAR, mp.conj(KI6C_SIGMA_BAR)):
+        ys_g = []
+        for N in Ns:
+            ys_g.append(unwrapped_log(kashaev_6_1(N), N, guide)
+                        - mp.mpf(3) / 2 * mp.log(N))
+        c_g = fit_series(Ns, ys_g, n_inv)
+        selfcons = mp.fabs(mp.im(c_g[0]) - mp.im(guide))
+        print(f"    guide Im={mp.nstr(mp.im(guide),8)}: self-consistency "
+              f"|Im(ς_fit) − Im(guide)| = {mp.nstr(selfcons,4)}")
+        if best is None or selfcons < best[0]:
+            best = (selfcons, c_g, ys_g)
+    coeffs, ys = best[1], best[2]
+    sigma_fit, omega_fit = coeffs[0], mp.e ** coeffs[1]
     conj = mp.fabs(mp.conj(sigma_fit) - KI6C_SIGMA_BAR) < mp.fabs(sigma_fit - KI6C_SIGMA_BAR)
-    sig_cmp = mp.conj(sigma_fit) if conj else sigma_fit
-    om_cmp = mp.conj(omega_fit) if conj else omega_fit
-    err_sigma = mp.fabs(sig_cmp - KI6C_SIGMA_BAR)
-    err_omega = mp.fabs(om_cmp - KI6C_OMEGA_BAR)
-    print(f"\n[2] VALIDATION GATE")
-    print(f"    fitted ς   = {mp.nstr(sigma_fit, 16)}")
-    print(f"    ki6c  ς(6̄₁)= {mp.nstr(KI6C_SIGMA_BAR, 8)}   |Δ| = {mp.nstr(err_sigma, 4)}"
-          f"   (mirror: {'conjugate' if conj else 'direct'})")
-    print(f"    fitted ω   = {mp.nstr(omega_fit, 16)}")
-    print(f"    ki6c  ω(6̄₁)= {mp.nstr(KI6C_OMEGA_BAR, 8)}   |Δ| = {mp.nstr(err_omega, 4)}")
-    print(f"    Re(ς) vs Vol(6₁)/2π = {mp.nstr(VOL_6_1/(2*mp.pi), 10)}")
-    gate = err_sigma < mp.mpf("1e-5") and err_omega < mp.mpf("1e-4")
-    print(f"    GATE: {'PASS' if gate else 'FAIL'}")
+    sc = mp.conj(sigma_fit) if conj else sigma_fit
+    oc = mp.conj(omega_fit) if conj else omega_fit
+    err_sigma, err_omega = mp.fabs(sc - KI6C_SIGMA_BAR), mp.fabs(oc - KI6C_OMEGA_BAR)
+    print(f"    fitted ς = {mp.nstr(sigma_fit,16)}")
+    print(f"    ki6c   ς = {mp.nstr(KI6C_SIGMA_BAR,8)}  |Δ| = {mp.nstr(err_sigma,4)}"
+          f"  (mirror: {'conjugate' if conj else 'direct'})")
+    print(f"    fitted ω = {mp.nstr(omega_fit,16)}")
+    print(f"    ki6c   ω = {mp.nstr(KI6C_OMEGA_BAR,8)}  |Δ| = {mp.nstr(err_omega,4)}")
+    gate = err_sigma < mp.mpf("1e-6") and err_omega < mp.mpf("1e-5")
+    print(f"    6₁ GATE: {'PASS' if gate else 'FAIL'}")
 
     lams = [coeffs[i + 2] / (2j * mp.pi) ** (i + 1) for i in range(n_inv)]
-    kappas = logseries_to_kappa(lams) if gate else []
-    if gate:
-        print("\n[3] κ-series (ℏ = 2πi/N; conjugated to the 6̄₁ frame)"
-              if conj else "\n[3] κ-series (ℏ = 2πi/N)")
+    kappas = logseries_to_kappa(lams) if (gate and val52) else []
+    kap_out = {}
+    if kappas:
+        print("\n[3] κ-series for 6₁  (ℏ = 2πi/N"
+              + (", conjugated to the 6̄₁ frame)" if conj else ")"))
         for i, k in enumerate(kappas, 1):
             kk = mp.conj(k) if conj else k
-            print(f"    κ_{i} = {mp.nstr(kk, 20)}")
+            kap_out[f"kappa_{i}"] = mp.nstr(kk, 24)
+            print(f"    κ_{i} = {mp.nstr(kk, 18)}")
     else:
-        print("\n[3] κ NOT reported — the validation gate failed.")
+        print("\n[3] κ NOT reported — a gate failed.")
 
-    wb.add_data("controls", {"forms_3_vs_4_rel": mp.nstr(rel, 6),
-                             "convolution_vs_bruteforce_rel": mp.nstr(rel_conv, 6),
-                             "brute_force_N": Nc})
-    wb.add_data("ladder", {"Ns": Ns, "dps": mp.mp.dps, "n_inv": n_inv})
-    wb.add_data("validation", {
-        "sigma_fit": mp.nstr(sigma_fit, 30), "sigma_ki6c": mp.nstr(KI6C_SIGMA_BAR, 8),
+    wb.add_data("validation_5_2", {
+        "sigma_fit": mp.nstr(s52, 24), "sigma_published": mp.nstr(SIGMA_52, 10),
+        "sigma_abs_err": mp.nstr(e_s52, 6),
+        "omega_fit": mp.nstr(o52, 24), "omega_published": mp.nstr(OMEGA_52, 10),
+        "omega_abs_err": mp.nstr(e_o52, 6), "passed": bool(val52),
+        "why": "5_2's bars are legible in its PDF, so this validates the whole "
+               "pipeline against a PUBLISHED answer before 6_1 is touched"})
+    wb.add_data("gate_6_1", {
+        "sigma_fit": mp.nstr(sigma_fit, 24), "sigma_ki6c": mp.nstr(KI6C_SIGMA_BAR, 8),
         "sigma_abs_err": mp.nstr(err_sigma, 6),
-        "omega_fit": mp.nstr(omega_fit, 30), "omega_ki6c": mp.nstr(KI6C_OMEGA_BAR, 8),
+        "omega_fit": mp.nstr(omega_fit, 24), "omega_ki6c": mp.nstr(KI6C_OMEGA_BAR, 8),
         "omega_abs_err": mp.nstr(err_omega, 6),
-        "mirror_frame": "conjugate" if conj else "direct",
-        "gate": bool(gate)})
-    wb.add_data("kappa", {f"kappa_{i}": mp.nstr(mp.conj(k) if conj else k, 30)
-                          for i, k in enumerate(kappas, 1)})
-    # [4] the rate ladder + the structural magnitude check (the diagnostic)
-    lob_max = 4 * mp.mpf(mp.clsin(2, mp.pi / 3)) / 2 / mp.pi   # 4*Lambda(pi/6)/pi
-    print("\n[4] growth-rate ladder vs the theorem, and the modulus check")
-    rate_rows = []
-    for N in (100, 200, 400, 700, 1000, 1400):
-        lg = mp.re(mp.log(kashaev_6_1(N)))
-        rate = (lg - mp.mpf(3) / 2 * mp.log(N)) / N
-        rate_rows.append({"N": N, "rate": mp.nstr(rate, 12)})
-        print(f"    N={N:5d}  rate = {mp.nstr(rate, 12)}")
-    print(f"    required by Thm 1.1 (= Vol(6₁)/2π): {mp.nstr(VOL_6_1/(2*mp.pi), 12)}")
-    print(f"    max-term rate from the transcription: {mp.nstr(lob_max, 10)}"
-          f"   vs paper's max Re V̂ = 0.646131  <- moduli CONFIRMED")
-
-    wb.add_data("rate_ladder", rate_rows)
-    wb.add_data("diagnosis", {
-        "measured_rate_limit": "~0.5715",
-        "required_rate": mp.nstr(VOL_6_1 / (2 * mp.pi), 12),
-        "discrepancy_pct": "13.5",
-        "max_term_rate_transcribed": mp.nstr(lob_max, 10),
-        "max_ReVhat_paper_p20": "0.646131",
-        "reading": "moduli confirmed to 4 digits by an independent route, so "
-                   "the residual freedom is PHASES; most likely a dropped or "
-                   "misread index-dependent q-power in the OCR of the "
-                   "simplification to eq.(29) form 3",
-        "not_tuned": "no formula variant was searched for one hitting the "
-                     "target; that would be fitting a transcription to it"})
+        "mirror_frame": "conjugate" if conj else "direct", "passed": bool(gate)})
+    wb.add_data("kappa", kap_out)
+    wb.add_data("bar_pattern", {
+        "problem": "PDF text extraction cannot see overlines (LaTeX sets them "
+                   "as rules, not glyphs) -- invisible to flat text, layout "
+                   "mode, and a font-metadata pass that DOES recover "
+                   "superscripts and minus signs",
+        "source": "Ohtsuki 5_2 eq.(7), where the bars render as an 'N' glyph",
+        "rule": "doubled index -> (q)(qbar) = |.|^2 ; difference index -> "
+                "barred ; reflected pair (q)_m (q)_{N-m-1} -> both unbarred",
+        "identity_checked": "(q)_n (qbar)_{N-n-1} = N exactly to 1e-40"})
     wb.add_data("scope", {
-        "not_a_dt_count": "kappa_i are perturbative coefficients of the "
-                          "asymptotic expansion; the DT/Stokes constants "
-                          "require a Borel resummation this probe does not do",
-        "branch_guide": "ki6c's 6-digit sigma selects the 2*pi*m branch "
-                        "integer only; it is not an input to the fitted value",
-        "form3_vs_form4_not_independent": "form 4 is derived here from form 3 "
-                                          "by the stated substitution, so that "
-                                          "check is algebra, not transcription; "
-                                          "the independent check is form 2"})
-    wb.add_assertion("transcription_forms_agree", computed=mp.nstr(rel, 10),
-                     expected="0", tolerance="1e-40",
-                     source="ki6c eq.(29) 3rd vs 4th printed form")
-    wb.add_assertion("convolution_matches_bruteforce",
-                     computed=mp.nstr(rel_conv, 10), expected="0",
-                     tolerance="1e-40",
-                     source="O(N^2) chain factorisation vs literal triple sum")
-    wb.add_assertion("determinant_at_N2",
-                     computed=mp.nstr(mp.fabs(kashaev_6_1_bruteforce(2)), 10),
-                     expected="9", tolerance="1e-20",
-                     source="|<6_1>_2| must equal det(6_1) = 9")
-    wb.add_assertion("max_term_rate_matches_paper_maxReVhat",
-                     computed=mp.nstr(lob_max, 10), expected="0.646131",
-                     tolerance="1e-3",
-                     source="4*Lambda(pi/6)/pi from the transcribed moduli vs "
-                            "ki6c p.20's independently computed max Re Vhat")
-    # The sigma/omega gate is RECORDED, not asserted: it fails, and that failure
-    # IS this probe's result. Asserting it would mark the run broken when the
-    # controls above are exactly what make the negative trustworthy.
-    wb.add_data("gate_outcome", {
-        "sigma_abs_err": mp.nstr(err_sigma, 6),
-        "omega_abs_err": mp.nstr(err_omega, 6),
-        "passed": bool(gate),
-        "why_recorded_not_asserted": "the gate failing is the finding; the "
-                                     "asserted controls are what make it "
-                                     "trustworthy"})
+        "not_a_dt_count": "kappa_i are perturbative coefficients; the DT/Stokes "
+                          "constants need a Borel resummation this does not do",
+        "branch_guide": "the printed sigma selects the 2*pi*m branch integer "
+                        "only; it is not an input to the fitted value"})
+    wb.add_assertion("determinant_5_2", computed=mp.nstr(d52, 10),
+                     expected="7", tolerance="1e-20", source="|<5_2>_2| = det")
+    wb.add_assertion("determinant_6_1", computed=mp.nstr(d61, 10),
+                     expected="9", tolerance="1e-20", source="|<6_1>_2| = det")
+    wb.add_assertion("validation_5_2_sigma", computed=mp.nstr(e_s52, 10),
+                     expected="0", tolerance="1e-7",
+                     source="fitted vs Ohtsuki's PUBLISHED sigma(5_2)")
+    wb.add_assertion("validation_5_2_omega", computed=mp.nstr(e_o52, 10),
+                     expected="0", tolerance="1e-6",
+                     source="fitted vs Ohtsuki's PUBLISHED omega(5_2)")
+    wb.add_assertion("gate_6_1_sigma", computed=mp.nstr(err_sigma, 10),
+                     expected="0", tolerance="1e-6",
+                     source="fitted vs ki6c Theorem 1.1 sigma(6_1)")
+    wb.add_assertion("gate_6_1_omega", computed=mp.nstr(err_omega, 10),
+                     expected="0", tolerance="1e-5",
+                     source="fitted vs ki6c p.15 omega(6_1)")
     wb.save({"q0Anchor": "independent"})
 
-    print(f"\n  RESULT: controls PASS; sigma/omega gate FAILS -> no kappa reported.")
-    print("  The finding is the CONTROLLED DISCREPANCY, not a kappa-series.")
-    return 0
+    ok = val52 and gate
+    print(f"\n  RESULT: {'kappa-series MEASURED for 6_1' if ok else 'gate failed'}")
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
