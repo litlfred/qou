@@ -919,3 +919,37 @@ Structural, worth the owner's attention:
   its superlative and nonspeakable dimensions; the proposed repair restores
   plain predicates ("zeroes out only spanning n in {1,2,3,6}" → "vanishes
   exactly when n divides −6").
+
+---
+
+## Reconciliation options worked, 2026-08-21
+
+The three "hand the owner first" items are analysed with the mathematics
+recomputed in
+[`docs/audits/2026-08-21-three-reconciliations.md`](../docs/audits/2026-08-21-three-reconciliations.md).
+Summary of what changed in the understanding of each:
+
+1. **`ex:trefoil-operator-algebra`** — not a typo in the displayed product.
+   The block applies the braid relation to a **dihedral** generator pair
+   (3-cycle lift, transposition lift) taken from `def:su2-generators`. It is
+   impossible as stated: braid generators are conjugate, so `tr α = tr β`,
+   but `tr α = 1` and `tr β = 0`. The correct braid pair lives in the same
+   group — `s₁ = β`, `s₂ = α²β` — and its composite has eigenvalues
+   `e^{±iπ/3}`, which is the three-fold colour phase the block's closing
+   sentence wants; the current `αβ` has eigenvalues `±i`. The repair
+   improves the physics rather than merely correcting it.
+2. **Braid-word tables** — one misconception with two variants: torus words
+   written on `p` strands instead of `p−1`. The `T(2,n)` rows keep the right
+   crossing count and gain a spurious component; the `T(3,n)` rows get both
+   wrong and name `T(4,q)` instead. Correct words recovered for every row.
+   **A component-count guard is not sufficient**: `T₃,₅` as written closes
+   to a knot and is caught only by crossing count.
+3. **q₀ surface** — re-measured, and the item's shape is different from how
+   it was ledgered. The mis-rounded `1.1097` is **a Lean problem**: 110 of
+   its 127 occurrences are in `.lean`, **79 inside statements** rather than
+   comments (`q_approx : |q - 1.1097| < 0.001`, `cfl_gap 1.1097 > 2`). They
+   are not false — the slack absorbs the error — but they discharge at a
+   point that is not the substrate, so re-pointing them changes proof
+   obligations and needs a Lean build this container does not have. The
+   old-muon string is the mirror: 30 of 43 occurrences in `.md`, 27 of them
+   labelled "(50 dps)" on a 16-digit value.
