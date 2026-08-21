@@ -1,16 +1,16 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-21T15:29:23.582Z",
+  "generated": "2026-08-21T15:53:17.451Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3008,
-  "files_flagged": 170,
-  "total_defects": 99,
+  "files_flagged": 168,
+  "total_defects": 97,
   "total_exempt": 122,
   "categories": {
     "proof-no-self-assuming-projection": 46,
     "proof-no-trivial-true": 21,
     "proof-no-provable-axiom": 11,
-    "proof-no-unused-hypothesis-rfl": 14,
+    "proof-no-unused-hypothesis-rfl": 12,
     "proof-docstring-sorry-mismatch": 3,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
@@ -1831,28 +1831,6 @@
         "snippet": "theorem orbit_sum_general (zeta3 : ℝ) : ∀ N : ℕ, 2 ≤ N →",
         "decl": "orbit_sum_general",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean": [
-      {
-        "line": 26,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-underscored-hypothesis",
-        "snippet": "theorem dimension_synthesis_upper_bound",
-        "decl": "dimension_synthesis_upper_bound",
-        "severity": "major",
-        "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `_`, `_` — absent from the conclusion, so the claim holds for every value of them"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDimensionSynthesisAllDepths.lean": [
-      {
-        "line": 28,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-underscored-hypothesis",
-        "snippet": "theorem dimension_synthesis_all_depths",
-        "decl": "dimension_synthesis_all_depths",
-        "severity": "major",
-        "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `_`, `_`, `_` — absent from the conclusion, so the claim holds for every value of them"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean": [

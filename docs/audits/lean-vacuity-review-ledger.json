@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-21T15:40:59.000Z",
+  "updated_at": "2026-08-21T15:53:17.462Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -620,28 +620,6 @@
       "file_sha": "92ed1a087e59",
       "disposition": "restate-against-a-definition",
       "evidence": "Literal `X = X`: `∀ N, 2 ≤ N → cl3OrbitSumPredicted N zeta3 = cl3OrbitSumPredicted N zeta3`, closed by `rfl`. Both binders are decoration — the claim holds for every `N` and every `zeta3`, with or without `2 ≤ N`. The file name (`CyclotomicCl3OrbitSum`) and the theorem name promise a general orbit-sum identity, so the intended statement equates the predicted sum to something else (a closed form, or the actual orbit sum). Banned outright by Strict Lean Discipline §5.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean::dimension_synthesis_upper_bound::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-underscored-hypothesis",
-      "line": 26,
-      "verdict": "genuine",
-      "file_sha": "f048918fe065",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Self-aware tautology carrying a `prop:` label. `predictedDim K := (K - 3) / 2`, and the docstring above the theorem reads verbatim `**Theorem (prop:cyclotomic-depth3-dimension-synthesis).** The predicted dimension agrees with itself.` — the author recorded that it says nothing, and it still ships as the Lean backing for a named proposition. Both hypotheses are `_`-underscored, i.e. explicitly recorded as unused, so `5 ≤ K` and `Nat.Prime K` are advertised as inputs to a formula derived from neither. Fix: state the synthesis against the actual cyclotomic dimension, not against `predictedDim`'s own body.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDimensionSynthesisAllDepths.lean::dimension_synthesis_all_depths::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-underscored-hypothesis",
-      "line": 28,
-      "verdict": "genuine",
-      "file_sha": "473e0ede43e1",
-      "disposition": "restate-against-a-definition",
-      "evidence": "Same shape as `dimension_synthesis_upper_bound`, generalised over depth: `predictedDim n K = (if n % 2 = 1 then (K-3)/2 else (K-1)/2)` by `rfl`, with all three hypotheses (`2 ≤ n`, `3 ≤ K`, `Nat.Prime K`) `_`-underscored and unused. The parity split is real mathematical content — and it lives entirely in the definition, so the theorem establishes none of it. Fix the pair together.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
