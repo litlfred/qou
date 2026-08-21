@@ -479,6 +479,15 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
             "at q = q_0.",
         "y_lambda_witness": "y-lambda-mpfr-witness.json",
         "q_0_50dps": q_str,
+        # Same value under the key `q0_anchor_consistency_audit` actually
+        # reads. Without it the audit cannot check the pin against the
+        # anchor declared above and files the witness Q0_VALUE_MISSING —
+        # which is exactly how a genuine flip stayed invisible here for
+        # four days: the muon-labelled witness carried the PROTON value
+        # (read from the pin file while 9a9c6b31c7 had it corrupted) and
+        # the audit could not see it to say so. `q_0_50dps` is kept for
+        # existing consumers.
+        "q0Value": q_str,
         "symbolic_cross_check_enabled": also_symbolic,
         "precision_caveat": (
             "y-lambda-mpfr-witness.json was computed with q at f64 "

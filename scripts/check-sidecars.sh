@@ -107,6 +107,14 @@ for f in "${files[@]}"; do
     content/*.md|content/*.ts)
       base="${f%.*}"
       qa="$base.qa.json"
+      # A chapter/paper MANIFEST is `<dir>/<dir>.ts` with no `.md` sibling — it
+      # lists blocks, it is not one. 47 of them exist, and without this the arm
+      # below reports "(no sidecar yet)" and prints a qa-sweep line that cannot
+      # do anything. Same misclassification as the content-tree code arm above.
+      if [ ! -f "$base.md" ] && [ "$(basename "$base")" = "$(basename "$(dirname "$base")")" ]; then
+        echo "▸ $f  [chapter/paper manifest — lists blocks, is not one; no sidecar applies]"
+        continue
+      fi
       echo "▸ $f  [content block]"
       if [ -f "$qa" ]; then
         crits=$(grep -oE '"(q-usage-[a-z0-9-]+|wall-side-correct|one-voice-[a-z0-9-]+|da-[a-z0-9-]+|[a-z-]+-integrity|remark-[a-z-]+)"' "$qa" 2>/dev/null | tr -d '"' | sort -u | paste -sd', ' -)

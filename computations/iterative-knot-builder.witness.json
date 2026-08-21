@@ -1,48 +1,187 @@
-[
-  {
-    "Z": 1,
-    "N": 0,
-    "A": 1,
-    "initial_braid_length": 11,
-    "initial_crossings": 11,
-    "reduced_crossings": 11,
-    "volume": 7816850.323077447,
-    "reduced_knot_name": "q-clt-proxy"
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T14:38:20.466150+00:00",
+  "commitSha": "2a422c9bb6d9c75960e6e712f4fb42adcbfe2020",
+  "assertions": [
+    {
+      "name": "every_scheduled_atom_completed",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "unit": "incomplete atoms"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 32,
+  "computation": "iterative-knot-builder",
+  "scriptFile": "iterative_knot_builder.py",
+  "scriptHash": "42ee8a5a9e5b",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
-  {
-    "Z": 1,
-    "N": 1,
-    "A": 2,
-    "initial_braid_length": 23,
-    "initial_crossings": 23,
-    "reduced_crossings": 23,
-    "volume": 35913165.61606621,
-    "reduced_knot_name": "q-clt-proxy"
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
-  {
-    "Z": 2,
-    "N": 1,
-    "A": 3,
-    "initial_braid_length": 35,
-    "initial_crossings": 35,
-    "reduced_crossings": 35,
-    "volume": 79835276.82277128,
-    "reduced_knot_name": "q-clt-proxy"
+  "description": "Per-atom 3A braid words with the per-generator log-volume sum Sum_i log|V_hat_i|. Classification threshold HA = q0 - 1/q0 at the experimental PROTON pin. NOTE: no braid reduction is performed — `reduced_crossings` equals `initial_crossings` by construction and `reduced_knot_name` is a constant placeholder.",
+  "data": {
+    "atoms": [
+      {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "initial_braid_length": 11,
+        "initial_crossings": 11,
+        "reduced_crossings": 11,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "0.0226378048088112741641047991573",
+        "volume": "0.0226378048088112741641047991573",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "initial_braid_length": 23,
+        "initial_crossings": 23,
+        "reduced_crossings": 23,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-1.17547762256504211823363450546",
+        "volume": "-1.17547762256504211823363450546",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "initial_braid_length": 35,
+        "initial_crossings": 35,
+        "reduced_crossings": 35,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-1.96358425330320353900659857838",
+        "volume": "-1.96358425330320353900659857838",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "initial_braid_length": 47,
+        "initial_crossings": 47,
+        "reduced_crossings": 47,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-3.52906650019778437498266837805",
+        "volume": "-3.52906650019778437498266837805",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "initial_braid_length": 59,
+        "initial_crossings": 59,
+        "reduced_crossings": 59,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-4.31717313093594579575563245097",
+        "volume": "-4.31717313093594579575563245097",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "initial_braid_length": 71,
+        "initial_crossings": 71,
+        "reduced_crossings": 71,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-5.88265537783052663173170225063",
+        "volume": "-5.88265537783052663173170225063",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "initial_braid_length": 83,
+        "initial_crossings": 83,
+        "reduced_crossings": 83,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-6.67076200856868805250466632356",
+        "volume": "-6.67076200856868805250466632356",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "initial_braid_length": 95,
+        "initial_crossings": 95,
+        "reduced_crossings": 95,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-8.23624425546326888848073612322",
+        "volume": "-8.23624425546326888848073612322",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 5,
+        "N": 4,
+        "A": 9,
+        "initial_braid_length": 107,
+        "initial_crossings": 107,
+        "reduced_crossings": 107,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-9.02435088620143030925370019615",
+        "volume": "-9.02435088620143030925370019615",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 5,
+        "N": 5,
+        "A": 10,
+        "initial_braid_length": 119,
+        "initial_crossings": 119,
+        "reduced_crossings": 119,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-10.5898331330960111452297699958",
+        "volume": "-10.5898331330960111452297699958",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 6,
+        "N": 5,
+        "A": 11,
+        "initial_braid_length": 131,
+        "initial_crossings": 131,
+        "reduced_crossings": 131,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-11.3779397638341725660027340687",
+        "volume": "-11.3779397638341725660027340687",
+        "reduced_knot_name": "q-clt-proxy"
+      },
+      {
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "initial_braid_length": 143,
+        "initial_crossings": 143,
+        "reduced_crossings": 143,
+        "reduction_performed": false,
+        "sum_log_abs_V_hat": "-12.9434220107287534019788038684",
+        "volume": "-12.9434220107287534019788038684",
+        "reduced_knot_name": "q-clt-proxy"
+      }
+    ],
+    "incomplete": []
   },
-  {
-    "Z": 2,
-    "N": 2,
-    "A": 4,
-    "initial_braid_length": 47,
-    "initial_crossings": 47,
-    "reduced_crossings": 47,
-    "volume": 132759865.30864322,
-    "reduced_knot_name": "q-clt-proxy"
-  },
-  {
-    "Z": 6,
-    "N": 5,
-    "A": 11,
-    "error": "Timeout after 300s"
-  }
-]
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

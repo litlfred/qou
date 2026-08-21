@@ -1213,7 +1213,7 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
-> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
+> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
 
 The derivation chain:
 
@@ -1576,7 +1576,7 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to

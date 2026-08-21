@@ -158,16 +158,19 @@ theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by
   rw [if_neg hnei, zpow_neg, zpow_natCast, h4]
   norm_num
 
-/-- **Wenzl annihilator at `q = ζ` (level-2 SU(2) Verlinde truncation)**.
+/-- **Wenzl-annihilator target at `q = ζ` (level-2 SU(2) Verlinde truncation)**,
+    as a **predicate** on the character value: the Hecke character `χ^λ` at
+    `q = ζ` (given as a function of the first-column length) vanishes for every
+    partition `λ` with first-column length `≥ 4` — the categorical content of the
+    universal `Φ_8` cancellation at `M = 7`.
 
-    For any partition `λ` with first-column length `≥ 4`, the Hecke
-    character `χ^λ` at `q = ζ` has zero quantum trace — the categorical
-    content of the universal `Φ_8` cancellation at `M = 7`. Stated as a
-    structural target; a full proof needs the Wenzl projector machinery
-    not yet in Mathlib. -/
-theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :
-    ∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0 :=
-  -- Ref: [wenzl1987] §3 Theorem 3.1; [jones1987] §5; [witten1989] §4.
-  ⟨0, rfl⟩
+    Named (§3b), not asserted: the previous
+    `wenzl_annihilator (_n) (firstCol) (_h : 4 ≤ firstCol) :
+    ∃ chi, chi = 0 := ⟨0, rfl⟩` was trivially true in every ring and used none of
+    its hypotheses. A full proof needs the Wenzl projector machinery not yet in
+    Mathlib. -/
+-- Ref: [wenzl1987] §3 Theorem 3.1; [jones1987] §5; [witten1989] §4.
+def wenzlAnnihilatorHolds (chi_lambda_at_zeta : ℕ → R) : Prop :=
+  ∀ firstCol : ℕ, 4 ≤ firstCol → chi_lambda_at_zeta firstCol = 0
 
 end QOU.BraidKnot.Zeta8Witness

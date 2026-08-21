@@ -91,3 +91,41 @@ D1-c. Passive; not a substitute for D1-a/e.
 3. D1-b (main multi-session thrust) 4. D1-c (parallel sibling, distinct angle)
 5. D1-d/D1-f passive. Nothing derives A_omega; datum stays certified-imported;
 q0-derivation untouched (forever-gated).
+
+## 2026-08-19 Arc review — two sibling tools now feed D1, and M3 has an owner
+
+**Nobody has touched the M1 construction rung.** D1-a…D1-f stand as written.
+Two landings feed it, both verified sorry-free and read directly:
+
+1. **`QOU/QBeta/LadderPhaseMirrorCovariance.lean`** (`fa03077a7`, generic
+   `CommRing`/field): `phaseTwice_bar_odd_iff_z_bar_fixed`, `zC_bar_fixed`,
+   `phaseTwiceD_bar_anomaly`, and — the D1-relevant one — under convention D
+   **bar EXCHANGES the two Markov loop values**, which is what a mirror must do
+   since mirroring exchanges positive and negative crossings.
+   **Why this matters here:** `QuiverMirrorAutomorphismExcluded` proved the
+   mirror must act on the STABILITY RAY, never as a count-preserving symmetry,
+   but supplied no candidate for what that action IS. The D-frame loop-value
+   exchange is the first concrete candidate. Feeds D1-a (the two-ray scan) and
+   D1-e (further Lean constraints) directly.
+
+2. **`QOU/QBeta/AdjointIndexSetM3.lean`** —
+   `knot_independent_core_forces_unit_remainder (core : Int) (extra : KKnot → Int)`
+   with hypotheses `core + extra 4₁ = 3`, `core + extra 5₂ = 4`. Stated over the
+   SAME `KKnot`/`fourOne`/`fiveTwo` vocabulary as my
+   `Driver14CharacterVarietyDTMenu`, so it composes without translation. Usable
+   in D1-a as a filter on candidate (Q,W) spectra: any knot-independent core
+   forces a remainder of exactly 1.
+
+**Coordination (do this before D1-b or D1-c).** Bean `qou-m3ad` (sibling,
+in-progress, high, `parent: qou-rtec` — inside my own parent programme)
+reframed the M3 target from "build a CoHA" to "derive the index set Ω", on M2's
+abelian finding, and pins the (3,3)-vs-(3,4) remainder with two adversarial
+checks recorded. Per the survey it does NOT conflict with
+`no_scalar_matches_chirality_split_datum`: its Part 2 addresses that explicitly
+(R1 = dtMax, H_Ad core = dtMin, and the PAIR reconstructs {3,4}) — i.e. it
+routes around my no-scalar theorem rather than contradicting it. **Unverified
+by me**: I read the theorem statement, not that Part-2 argument. Verify before
+building on it.
+
+Sequencing unchanged (D1-e → D1-a → D1-b, D1-c as a sibling's parallel angle),
+but D1-a is now cheaper: two proved filters instead of an unconstrained scan.

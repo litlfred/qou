@@ -47,12 +47,16 @@ theorem cal2_identity_pinned
     muonRatioFromVol q = m_mu / m_e := by
   exact h_cal2.symm
 
-/-- Vol-form ansatz reduces to CAL-2 at the figure-8 (degenerate
-    Borromean limit: λ_scale = 1, S = 0).
+/-- Definitional form of the Vol-form muon ratio: `muonRatioFromVol q` is
+    `Vol(4_1) / ℏ_q²` (the degenerate Borromean limit `λ_scale = 1`, `S = 0`).
+
+    A definitional unfolding of `muonRatioFromVol`: the previous
+    `muon_ratio_is_topological (q) (h_q_ne_one : q ≠ 1) : … := rfl` carried an
+    **unused** `q ≠ 1` and a docstring claiming a reduction it did not derive.
+    The substantive CAL-2 content is `cal2_identity_pinned` above.
 
     Ref: [manuscript] figure-8 as Vol-form anchor. -/
-theorem muon_ratio_is_topological
-    (q : ℝ) (h_q_ne_one : q ≠ 1) :
+theorem muonRatioFromVol_eq_vol_form (q : ℝ) :
     muonRatioFromVol q = vol_4_1 / hbarQSq q := by
   rfl
 
