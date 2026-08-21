@@ -1,17 +1,17 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-21T16:25:30.667Z",
+  "generated": "2026-08-21T21:03:15.483Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3010,
-  "files_flagged": 164,
-  "total_defects": 92,
-  "total_exempt": 123,
+  "scanned_files": 3012,
+  "files_flagged": 163,
+  "total_defects": 85,
+  "total_exempt": 122,
   "categories": {
-    "proof-no-self-assuming-projection": 46,
+    "proof-no-self-assuming-projection": 47,
     "proof-no-trivial-true": 21,
-    "proof-no-provable-axiom": 11,
     "proof-no-unused-hypothesis-rfl": 7,
-    "proof-docstring-sorry-mismatch": 3,
+    "proof-docstring-sorry-mismatch": 5,
+    "proof-no-provable-axiom": 1,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
   },
@@ -281,7 +281,7 @@
       {
         "name": "CrystalGraphRealization",
         "file": "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean",
-        "line": 65
+        "line": 70
       },
       {
         "name": "CrystalGraphRealization",
@@ -1006,7 +1006,7 @@
       {
         "name": "SymmetricCrystalPairProduction",
         "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
-        "line": 183
+        "line": 192
       },
       {
         "name": "SymmetricCrystalPairProduction",
@@ -1515,48 +1515,6 @@
         "pattern": "reflexive-tautology-ascribed-literal",
         "snippet": "theorem exactly_two_one_dim_irreps : (2 : ℕ) = 2 := rfl",
         "decl": "exactly_two_one_dim_irreps",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean": [
-      {
-        "line": 38,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom HeckeAlgebra (n : ℕ) (q : ℝ) : Type",
-        "decl": "HeckeAlgebra",
-        "severity": "critical"
-      },
-      {
-        "line": 42,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom HeckeNormalForm (n : ℕ) (q : ℝ) : Type",
-        "decl": "HeckeNormalForm",
-        "severity": "critical"
-      },
-      {
-        "line": 46,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom KLRModule (n : ℕ) : Type",
-        "decl": "KLRModule",
-        "severity": "critical"
-      },
-      {
-        "line": 49,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom KLRTopDegree {n : ℕ} (M : KLRModule n) : ℕ",
-        "decl": "KLRTopDegree",
-        "severity": "critical"
-      },
-      {
-        "line": 52,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom confinementLevel {n : ℕ} {q : ℝ} (T : HeckeNormalForm n q) : ℕ",
-        "decl": "confinementLevel",
         "severity": "critical"
       }
     ],
@@ -2933,14 +2891,13 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
       {
-        "line": 150,
+        "line": 164,
         "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-delegates-sorry",
+        "pattern": "doc-claims-sorry-body-has-none",
         "snippet": "theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :",
         "decl": "shell_filling_rule",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "docstring attributes the `sorry` to another declaration and this file has one"
+        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/MotivesArchimedean.lean": [
@@ -2990,6 +2947,17 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (su4_action, alpha_cluster_from_su4_quadruplets) — honestly framed; tracked not counted"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean": [
+      {
+        "line": 115,
+        "category": "proof-docstring-sorry-mismatch",
+        "pattern": "doc-claims-sorry-body-has-none",
+        "snippet": "theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :",
+        "decl": "four_term_pair_nucleon",
+        "severity": "critical",
+        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean": [
@@ -3149,6 +3117,16 @@
         "detail": "the projected field `tmd.decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean": [
+      {
+        "line": 108,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :",
+        "decl": "neutron_proton_splitting",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean": [
       {
         "line": 43,
@@ -3207,16 +3185,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean": [
-      {
-        "line": 170,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom partitionCount_eq_fintype_card_partition_small :",
-        "decl": "partitionCount_eq_fintype_card_partition_small",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean": [
@@ -3486,40 +3454,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `h.angle_eq_holonomy` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean": [
-      {
-        "line": 108,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom partitionTranspose {n : ℕ} : Partition n → Partition n",
-        "decl": "partitionTranspose",
-        "severity": "critical"
-      },
-      {
-        "line": 170,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom HeckeNormalForm (n : ℕ) : Type",
-        "decl": "HeckeNormalForm",
-        "severity": "critical"
-      },
-      {
-        "line": 174,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom barNormalForm {n : ℕ} : HeckeNormalForm n → HeckeNormalForm n",
-        "decl": "barNormalForm",
-        "severity": "critical"
-      },
-      {
-        "line": 178,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop",
-        "decl": "isPairProductionOutput",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean": [

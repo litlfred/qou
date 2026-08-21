@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-21T16:25:30.669Z",
+  "updated_at": "2026-08-21T21:03:15.485Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -298,61 +298,6 @@
       "file_sha": "c05762810c54",
       "disposition": "restate-against-a-definition",
       "evidence": "Tautology ascribed to a literal. The name asserts that H₂ has exactly two 1-dimensional irreps; the Lean proves `(2 : ℕ) = 2 := rfl`. The surrounding docstring works out the genuine C = bar computation on the two eigenvalues {q, −q⁻¹}, which is real content the statement never reaches. Fix: state the cardinality of the 1-dim irrep set (or the two-eigenvalue characterisation the docstring derives) and prove it.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::HeckeAlgebra::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 38,
-      "verdict": "genuine",
-      "file_sha": "03c233b3decc",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom X : Type` carrier stub. Not a false mathematical assertion — positing a type asserts almost nothing — but it is an unjustified `axiom` in an audit whose whole point is that `axiom` means 'assumed'. The docstring names its provenance in prose ('full definition in `hecke-normal-form.lean`'), so the fix is mechanical: add a `-- Ref:` pointing at the real definition, or declare it `opaque`/`variable` instead of `axiom`. Grouped with the other carrier stubs in the same conditional file.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::HeckeNormalForm::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 42,
-      "verdict": "genuine",
-      "file_sha": "03c233b3decc",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom X : Type` carrier stub; two occurrences (confinement-grading-correspondence-conditional.lean and bar-involution-invariance.lean), same shape and same fix. The docstring cites the defining file in prose but carries no `-- Ref:`. Add the citation or switch to `opaque`.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::KLRModule::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 46,
-      "verdict": "genuine",
-      "file_sha": "03c233b3decc",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom X : Type` carrier stub for the Brundan–Kleshchev KLR module. This one has a real literature home (Brundan–Kleshchev), so a `-- Ref:` is available and should be added rather than left implicit in the docstring.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::KLRTopDegree::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 49,
-      "verdict": "genuine",
-      "file_sha": "03c233b3decc",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom KLRTopDegree {n} (M : KLRModule n) : ℕ` — a function stub, not a proposition. Asserts the existence of a top-degree function without defining it. Fix: define it from the KLR grading, or cite the source that does.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
-    "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::confinementLevel::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 52,
-      "verdict": "genuine",
-      "file_sha": "03c233b3decc",
-      "disposition": "cite-or-make-opaque",
-      "evidence": "Uncited `axiom confinementLevel {n q} (T : HeckeNormalForm n q) : ℕ` — function stub. The docstring points at `def:confinement-level`, which is the citation that should be in a `-- Ref:` line.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -1216,17 +1161,6 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean::partitionCount_eq_fintype_card_partition_small::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 170,
-      "verdict": "genuine",
-      "file_sha": "788ee94db04c",
-      "disposition": "prove-it",
-      "evidence": "An uncited `axiom` asserting a *finite, decidable* claim: `∀ n ∈ Finset.Icc 1 5, partitionCount n = Fintype.card (Nat.Partition n)`, where `partitionCount` is a literal 6-case table. This is `proof-no-provable-axiom` in its purest form — the content is p(1..5) = 1,2,3,5,7 (OEIS A000041), uncontested and finite. The docstring is honest about the blocker (a uniform `decide` route for `Fintype.card (Nat.Partition n)`) but is also self-inconsistent: it says 'Stated as a `sorry`' while the declaration is an `axiom`, which is a stronger and less visible commitment — a `sorry` shows up in the sorry audit, an `axiom` does not. Fix: prove it (per-`n` `decide`, or via Mathlib's partition API), or at minimum downgrade to a cited `sorry` so it is tracked.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
     "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean::rho_eq_qdim_via_canonical_knot::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -1399,74 +1333,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `H2SChiralData` carries field `angleOpeningDeg` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `H2SChiralData` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `angleOpeningDeg` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::partitionTranspose::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 108,
-      "verdict": "genuine",
-      "file_sha": "d136339af53f",
-      "disposition": "define-not-axiom",
-      "evidence": "Line 108 `axiom partitionTranspose {n} : Partition n → Partition n` is uncited — the `-- Ref: [fulton1997]` at line 112 belongs to the following `hookLengths_transpose` decl, so the citation window here is empty. Partition transpose is an elementary constructive involution (Mathlib `YoungDiagram.transpose`); it should be a `def`/`opaque`, not an uncited axiom. Decl unchanged, re-confirm prior genuine.",
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      }
-    },
-    "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::HeckeNormalForm::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 170,
-      "verdict": "genuine",
-      "file_sha": "d136339af53f",
-      "disposition": "cite-or-opaque",
-      "evidence": "Line 170 `axiom HeckeNormalForm (n : ℕ) : Type` is a carrier-type stub whose docstring names the defining file (`hecke-normal-form.lean`) only in prose, with no `-- Ref:`. Should be `opaque` or carry a citation. Decl unchanged, re-confirm prior genuine.",
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      }
-    },
-    "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::barNormalForm::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 174,
-      "verdict": "genuine",
-      "file_sha": "d136339af53f",
-      "disposition": "cite-or-opaque",
-      "evidence": "Line 174 `axiom barNormalForm {n} : HeckeNormalForm n → HeckeNormalForm n` is an uncited function stub for the bar involution q↦q⁻¹ (standard Kazhdan–Lusztig); no `-- Ref:` in its window. Decl unchanged, re-confirm prior genuine.",
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      }
-    },
-    "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::isPairProductionOutput::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 178,
-      "verdict": "genuine",
-      "file_sha": "d136339af53f",
-      "disposition": "define-predicate-or-cite",
-      "evidence": "Line 178 `axiom isPairProductionOutput {n} : HeckeNormalForm n → Prop` is an uncited predicate stub with no defining condition; the downstream class `SymmetricCrystalPairProduction` quantifies over it, so an empty predicate makes the conditional result vacuous. Decl unchanged, re-confirm prior genuine.",
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      }
     },
     "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean::cpt_closure::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -2347,6 +2213,57 @@
       "disposition": "drop-redundant-projection",
       "evidence": "Self-assuming field-projection (§3b-cond item 5): the conclusion `h.binding = h.epsilon * C(A,2)` is character-identical to the class field `extensive` and the proof is `:= h.extensive` verbatim, deriving nothing (the docstring says 'Just h.extensive, exposed as a named consumer'). The BondExtensiveBinding class is a legitimately-open conditional carrier and its sibling `binding_nonneg` genuinely derives (mul_nonneg on epsilon_nonneg), but this decl only re-exports the hypothesis. Honest fix: drop it, use h.extensive directly downstream. (Sibling qou-4tj9's fresh file — queued, not fixed here.)",
       "reviewed_at": "2026-08-21T16:09:39.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean::shell_filling_rule::proof-docstring-sorry-mismatch": {
+      "category": "proof-docstring-sorry-mismatch",
+      "pattern": "doc-claims-sorry-body-has-none",
+      "line": 164,
+      "verdict": "legit",
+      "file_sha": "135db0180e11",
+      "disposition": "genuine-composition-of-distinct-subtheorems",
+      "evidence": "Composes three DISTINCT named sub-theorems (shell_filling_inner_shells, shell_filling_hund_rule, shell_filling_lp_strong_duality) — real lemmas with their own content/sorries — not class-field projection. The docstring explicitly and honestly discloses the sub-theorem sorries ('the unproved ones carry honest sorrys in their named sub-theorems ... not projected conclusion fields'), so there is no genuine docstring-sorry mismatch.",
+      "reviewed_at": "2026-08-21T21:03:07.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean::four_term_pair_nucleon::proof-docstring-sorry-mismatch": {
+      "category": "proof-docstring-sorry-mismatch",
+      "pattern": "doc-claims-sorry-body-has-none",
+      "line": 115,
+      "verdict": "advisory",
+      "file_sha": "9e0ea6cd5425",
+      "disposition": "clarify-docstring-sorry-wording",
+      "evidence": "The proof is a genuine §3b-cond conditional derivation (refine ⟨?_,?_⟩; rw [ctx.universality_eval, ctx.base_proton_net/base_neutron_net]) — no body sorry. The docstring's 'Honest sorry:' phrasing is a minor mismatch: the unproved NF-net values live in the class instance (base_*_net fields / compute engine), not in this decl's body. Advisory: clarify the docstring to say 'conditional on the class instance' rather than 'Honest sorry'.",
+      "reviewed_at": "2026-08-21T21:03:07.000Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-4-8",
+        "agent_date": "2026-08-21"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean::neutron_proton_splitting::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 108,
+      "verdict": "genuine",
+      "file_sha": "da275c37d108",
+      "disposition": "restate-class-to-carry-inputs-and-derive",
+      "evidence": "§3b-cond item-5 anti-pattern: the class NeutronProtonSplittingContext carries the two conjuncts of the theorem's conclusion (mass_formula = the framework formula; codata_agreement = the CODATA inequality) as fields, and the theorem projects them verbatim via ⟨ctx.mass_formula, ctx.codata_agreement⟩. Unlike the q_bkm legit exemplar (which carries two IMPLICATIONS and derives an iff), here the fields ARE the conclusion. Honest fix: carry the framework's structural inputs and DERIVE the formula. (Sibling's fresh file — queued.)",
+      "reviewed_at": "2026-08-21T21:03:07.000Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
