@@ -333,6 +333,7 @@ import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.QJucysMurphyEigen
+import QOU.SchurWeyl.AxialDistanceBound
 import QOU.SchurWeyl.SeminormalInequivalence
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.SytAdmissible
