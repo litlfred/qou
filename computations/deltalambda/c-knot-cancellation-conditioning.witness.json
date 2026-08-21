@@ -1,0 +1,134 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/c_knot_cancellation_conditioning_probe.py",
+  "computation": "c-knot-cancellation-conditioning",
+  "audit_only": true,
+  "tier": "scope-(a) correction to the INTERPRETATION of the C_knot spread; no closure, no exclusion, no fit",
+  "result": {
+    "object": "S(K) = \u03a3_\u03bb t_\u03bb,  t_\u03bb = y_\u03bb\u00b7\u03c7^\u03bb(\u03b2_K)\u00b7(\u22121)^{n(\u03bb)}\u00b7f^\u03bb  \u2014 the master binding sum; C_knot(K) = B_AME(K)/(m_e\u00b7|S(K)|)",
+    "cancellation_ratio_def": "\u03ba(K) = |S(K)| / \u03a3_\u03bb|t_\u03bb(K)| \u2208 [0,1]. Reciprocal condition number: \u2016\u03b4\u2016_\u221e \u2264 \u03b5 \u21d2 |S\u2032\u2212S| \u2264 \u03b5\u00b7\u03a3|t| = (\u03b5/\u03ba)|S|. \u03b5 = \u03ba drives S to 0, i.e. C_knot to +\u221e.",
+    "delta_min_def": "\u03b4_min^\u221e(K) = |B_AME/m_e \u2212 S| / \u03a3_\u03bb|t_\u03bb| \u2014 the MINIMUM sup-norm relative per-block correction {\u03b4_\u03bb} with \u03a3 t_\u03bb(1+\u03b4_\u03bb) = target. A LOWER BOUND on the missing per-block structure, not the structure; equal \u03b4_min does NOT mean equal correction direction.",
+    "per_isotope": {
+      "D": {
+        "A": 2,
+        "n_strands": 6,
+        "n_partitions": 11,
+        "S_signed": "-0.7174453364",
+        "absS": "0.7174453364",
+        "T_abs_sum": "2.464604357",
+        "L2_norm": "1.492960722",
+        "markov_norm_sum_yf": "1.0",
+        "kappa_cancellation_ratio": "0.2910996",
+        "amplification_inv_kappa": "3.4352504",
+        "max_abs_term": "1.2696891",
+        "max_abs_term_partition": [
+          5,
+          1
+        ],
+        "max_term_over_absS": "1.7697363",
+        "C_knot": "6.0678734",
+        "delta_min_sup": "1.4752559",
+        "delta_min_l2": "2.4353769",
+        "eps_to_zero_S": "0.2910996"
+      },
+      "T": {
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "S_signed": "-2.47514038",
+        "absS": "2.47514038",
+        "T_abs_sum": "5.982292163",
+        "L2_norm": "3.96218806",
+        "markov_norm_sum_yf": "1.0",
+        "kappa_cancellation_ratio": "0.41374448",
+        "amplification_inv_kappa": "2.4169507",
+        "max_abs_term": "3.7308027",
+        "max_abs_term_partition": [
+          6,
+          3
+        ],
+        "max_term_over_absS": "1.5073095",
+        "C_knot": "6.7060686",
+        "delta_min_sup": "2.3608544",
+        "delta_min_l2": "3.5645256",
+        "eps_to_zero_S": "0.41374448"
+      },
+      "3He": {
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "S_signed": "-3.078991335",
+        "absS": "3.078991335",
+        "T_abs_sum": "10.45925829",
+        "L2_norm": "6.547812258",
+        "markov_norm_sum_yf": "1.0",
+        "kappa_cancellation_ratio": "0.29437951",
+        "amplification_inv_kappa": "3.3969756",
+        "max_abs_term": "5.8948308",
+        "max_abs_term_partition": [
+          6,
+          3
+        ],
+        "max_term_over_absS": "1.9145331",
+        "C_knot": "4.9054474",
+        "delta_min_sup": "1.1496837",
+        "delta_min_l2": "1.8364666",
+        "eps_to_zero_S": "0.29437951"
+      },
+      "4He": {
+        "A": 4,
+        "n_strands": 12,
+        "n_partitions": 77,
+        "S_signed": "-0.1909376657",
+        "absS": "0.1909376657",
+        "T_abs_sum": "24.00287176",
+        "L2_norm": "13.23642904",
+        "markov_norm_sum_yf": "1.0",
+        "kappa_cancellation_ratio": "0.0079547842",
+        "amplification_inv_kappa": "125.71051",
+        "max_abs_term": "9.9389473",
+        "max_abs_term_partition": [
+          8,
+          4
+        ],
+        "max_term_over_absS": "52.053361",
+        "C_knot": "290.00684",
+        "delta_min_sup": "2.2989871",
+        "delta_min_l2": "4.1689713",
+        "eps_to_zero_S": "0.0079547842"
+      }
+    },
+    "spread_C_knot": "59.1193",
+    "spread_delta_min_sup": "2.05348",
+    "kappa_min": "0.00795478",
+    "kappa_max": "0.413744",
+    "corroboration": {
+      "threerow_4he_sign_change_in_q": "threerow_4he_completion_probe.py (bean qou-prjo) records 4He_sign_at_qlo=+1, 4He_sign_at_q0=\u22121 for the \u2113(\u03bb)\u22653 stratum of the same object \u2014 a sign change, hence a zero, hence \u03ba=0 somewhere on the physical interval. The small \u03ba measured here at q\u2080 is the full-sum shadow of that crossing. Independent producer, not re-run here.",
+      "convention_migration_amplification": "Historical: under 70d1ade383 (convention C\u2192D) |S| moved 3.5%/34%/33%/96.8% for D/T/\u00b3He/\u2074He (5.9456 \u2192 0.19094 for \u2074He). A ~24% per-term perturbation amplified by 1/\u03ba\u2248126 reproduces the 96.8% move; no \u2074He-specific mechanism is required."
+    },
+    "what_this_does_not_claim": [
+      "NOT a claim that C_knot is universal \u2014 it is not; the per-knot non-universality of c_knot_nonuniversal_pinned_weight_probe.py stands.",
+      "NOT a weakening of the Lean mirror-pair exclusion CKnotNonUniversal.no_level_only_closure: T and \u00b3He are both well-conditioned here (\u03ba \u2248 0.294\u20130.414), so that exclusion is untouched.",
+      "NOT a new ansatz for the \u0394_\u03bb magnitude. \u03ba and \u03b4_min are diagnostics of the EXISTING formula. No per-block weight is proposed (AGENTS.md: no seventh fit-based ansatz).",
+      "\u03b4_min is a LOWER BOUND on the correction size, not a derived \u0394_\u03bb, and is not wired."
+    ],
+    "verdict": "The headline C_knot spread (59.1193\u00d7) is dominated by one ill-conditioned denominator: \u03ba(\u2074He) = 0.007955 (1/\u03ba = 125.71\u00d7), with its largest single block term 52.05\u00d7 the whole signed sum. Re-expressed per block, the same information gives spread 2.0535\u00d7 with every isotope needing an order-unity relative correction. The \u0394_\u03bb magnitude remains OPEN (qou-3q7t).",
+    "anti_fit": "B_AME enters only through the diagnostic ratios C_knot and \u03b4_min, never inverted into a canonical weight (owner directive: \u0394_\u03bb from inverted CODATA = NOT ALLOWED). y_\u03bb recomputed from the Wenzl closed form (\u03a3 y_\u03bb f^\u03bb = 1 asserted); \u03c7^\u03bb from the committed interface-inclusive Rust caches; free_parameters = 0; nothing wired.",
+    "free_parameters": 0
+  },
+  "parameters": {
+    "q0_experimental_proton_anchor": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "experimental/proton (q_parameter.Q)",
+    "convention": "D (z = q\u00b3/(q\u00b2+1))",
+    "compute_dps": 50,
+    "free_parameters": 0
+  },
+  "context": {
+    "axis": "\u0394_\u03bb / C_knot magnitude \u2014 conditioning of the reported cross-isotope spread",
+    "bean": "qou-3q7t",
+    "companion_to": "computations/deltalambda/c_knot_nonuniversal_pinned_weight_probe.py",
+    "corroborated_by": "computations/deltalambda/threerow_4he_completion_probe.py (qou-prjo)",
+    "no_fit": true
+  },
+  "scriptCommitSha": "uncommitted"
+}
