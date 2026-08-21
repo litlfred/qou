@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-08-21T16:43:16Z
+updated_at: 2026-08-21T16:58:56Z
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
@@ -89,3 +89,32 @@ AMENDMENT: the correction above says '69 resolve to nothing, over 48 distinct
 keys'. The union is **49**, not 48 — 24 on lean-ref plus 25 on ts-cites, with
 no key appearing on both paths, so the two add rather than overlap. The 69
 site count and the per-path figures are right; only the union was mis-added.
+
+PROGRESS 2026-08-21 (PR #5384): 69 -> 66 sites.
+
+Landed: check-citation-keys.py (the durable half — the two unchecked paths
+are now checkable, --strict for a gate); 14 keys repointed over 29 sites; 10
+author lists filled on fallback-id entries; one entry renamed so a proof's
+citation resolves without editing the proof.
+
+REMAINING 66 sites / ~46 keys, in two groups:
+
+  (a) classics absent from the bibliography — bethe1936, serre1977 (6 sites),
+      voisin2002, pontryagin1934, weizsacker1935, lefschetz1926, aitken1956,
+      prasad1973, wielenberg1978, shirshov1962, bokut1978, macdonald1971,
+      lusztig1989, tate1950, hewitt-ready1979, turaev-viro1992, pachner1991.
+      These need an ENTRY, and the metadata cannot be verified from here:
+      arxiv.org is 403 and none of them is in library/. Writing a CSL entry
+      from memory is the thing this repo's discipline forbids, so they want
+      either a copy uploaded or an owner willing to accept unverified
+      metadata explicitly marked as such.
+
+  (b) ambiguous against an existing author — garoufalidis2020 scores 0.97
+      against THREE different entries; faddeev1996 against two; murakami1996,
+      murakami2013, frenkel2020, zagier2007, ohtsuki2002, bridgeland2007,
+      sauzin2014, rsz2013, costin2020 similar. Each needs the citing block
+      read to see which result is being invoked. Doable here, one at a time;
+      not mechanical.
+
+Also filed from this work: qou-3vgs (run-validate reports Valid on a
+references.ts that does not parse — confirmed by controlled test).
