@@ -654,3 +654,27 @@ def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
     jones = -ti**3 + 3*ti**2 - 2*ti + 4 - 2*t + 3*t**2 - t**3
     norm = (sq + sqi) ** 2
     return jones / norm
+
+
+# ---------------------------------------------------------------------------
+# `per_knot_density_*` aliases — a half-applied rename, repaired
+#
+# Commit a4d9906659 migrated the terminology "VolDensity" -> "PerKnotDensity"
+# across CALLERS but never renamed the functions here. The result: four
+# modules on `main` raise ImportError at import time and cannot run at all.
+#
+#     computations/mass_per_knot_density.py                  (both names)
+#     computations/per_knot_density_per_block_wiring.py       (both names)
+#     computations/per_knot_density_deuteron_perknot_probe.py (per_block)
+#     computations/probes/per_knot_density_borromean_q_locality_probe.py
+#
+# Aliasing rather than renaming is deliberate. 71 call sites still use the
+# `vol_density_*` spelling, so flipping which name is canonical is a churn
+# with a real chance of a partial second pass -- i.e. exactly the failure
+# being repaired. These two lines un-break all four modules, change no
+# number, and prejudge nothing about which spelling should win.
+#
+# There is no behavioural difference: the alias IS the function object.
+# ---------------------------------------------------------------------------
+per_knot_density_per_block = vol_density_per_block
+per_knot_density_borromean = vol_density_borromean
