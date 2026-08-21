@@ -98,3 +98,41 @@ analogue of C's `c₂ = −1 = 1 − b²ℏ⁴` Taylor-exactness) and check whet
 exact weights + `α_D − h²/4` phase determine it. If they do, that is the first
 re-derived coefficient; if they leave freedom, the fence holds and the c_k stay
 open. Do **not** run the extractor on `z_D` and report the output as a value.
+
+## Executed 2026-08-21 — the convention is localised to the N=1 phase (forced)
+
+Carrying out that next step, reading `Q_beta_categorical` factor by factor
+settles *where* the convention lives, and it is sharper than "the whole ladder
+is C-conditional":
+
+- **Only `N1_factor = cos(α − b·ℏ_q²/2)` reads the Markov parameter**, through
+  `α = (markovZ' − 1)·h/2`.
+- **`N2..N5` — carrying `c₂=−1`, `c₃=−2`, `c₄`, `c₅` — are closed forms in `q`
+  through `hoefsmitB` and `hbarQ'` alone**, with no `markovZ'` and no `α`. They
+  are the pure Kashiwara/Hopf tails `b^k·ℏ_q^{2k}`.
+
+Formalised sorry-free (`lean`-direct EXIT=0) in
+[`QOU/BraidKnot/LadderConventionLocalisation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/LadderConventionLocalisation.lean):
+`Q_beta_categorical_eq_ofPhase` (the ladder is the `φ = α q` instance of a
+phase-parameterised family) and `Q_beta_categorical_ofPhase_tail_common` (two
+phases differ only by their `cos` factors, `ckTail` common).
+
+**Two consequences.**
+
+1. **The categorical `c_k` (k ≥ 2) are z-convention-immune** *as the ladder is
+   constructed*. So the C→D move acts on this construction **only** by replacing
+   the phase `α q` with the D-frame `α_D − h²/4`; the higher rungs do not move.
+   This distinguishes the **categorical** `c_k` (structural, z-free) from the
+   **extracted** `c_k` (inverted from full Q_β, z-dependent).
+2. **The S1 `c₃ ≈ −974` is exactly the N=1 phase change mis-attributed to the
+   higher rungs by the extractor.** Feeding `z_D` into the full-Q_β extractor
+   dumps the entire `cos`-factor movement onto the `c_k`; that is the −974, not a
+   categorical value. This *reconciles* S1's sensitivity number with the
+   z-freeness of the categorical rungs.
+
+**Scope (unchanged fence).** This localises the z-dependence and explains the
+artifact; it does **not** claim the *physical* D re-derivation leaves the
+Kashiwara tails untouched. Whether `N2..N5` should themselves change under D
+(if the Kashiwara operators see the trace normalisation) is the surviving open
+question — and closing the residual `41.94×` by adjusting them would still be a
+fit until a rung lands with `c₂ = −1`'s structural standing.
