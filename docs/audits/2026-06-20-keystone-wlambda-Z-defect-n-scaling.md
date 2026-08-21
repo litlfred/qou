@@ -129,9 +129,52 @@ construction** — dividing a positive family by its own sum always does. So
 "it normalizes to 1" is not evidence for the heat-kernel reading, for the
 S¹-equivariant index, or for anything else; it is what normalization means. The
 substantive question is not *whether* a normalizer exists but *which* one is
-canonical, and that is exactly what remains open. This note's own temper stands:
-`Z(n)` **may** be a normalization artifact, and the sign change is the
-discriminating test.
+canonical. This note's own temper stands: `Z(n)` **may** be a normalization
+artifact, and the sign change is the discriminating test.
+
+**Correction (2026-08-21) — the canonical-normalizer question is narrower than
+the sentence above first claimed.** This paragraph originally ended "…and that
+is exactly what remains open." That overstated it. The **owner ruling of
+2026-08-16**, in
+[`notation/notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md),
+already settles the measure question, and this note predates it by two months:
+
+> `w_λ(q) = dim_q²(λ)/[n]_q!` = q-deformed Wedderburn-block weight,
+> `Σ w_λ(q)` finite but **≠ 1 at q ≠ 1** … **Never write a normalisation claim
+> on bare `w_λ`** — `Σ_λ w_λ(1) = 1` is exact, `Σ_λ w_λ(q)` is not (0.987 at
+> `n = 3`, 1.051 at `n = 8`).
+
+Those are **this note's own numbers**: the register's 0.987 at `n = 3` is the
+table's `Z(3) = 0.987440`, and its 1.051 at `n = 8` continues the crossing the
+table records at `n = 7`. The register also quotes `≈ 1.51` at `n = 12`, and
+cites a per-partition census
+([`wlambda_normalisation_census.py`](scripts/wlambda_normalisation_census.py)).
+
+So `Σ W_λ ≠ 1` is **documented by-design behaviour of the `w_λ(q)` family**, not
+a defect awaiting explanation. The register names three distinct families and
+assigns the measure role away from `w_λ(q)` entirely — `y_λ` (Jones–Markov,
+normalised through `tr_M(𝟙) ≡ 1`, which the corpus itself calls *trivial*) and
+`w_λ(1) = (dim V_λ)²/n!` (classical Plancherel, `Σ = 1` exactly). Under that
+ruling the "geometric defect" reading of `1 − Z` is not merely disfavoured; it
+is a notation violation.
+
+What genuinely remains open is therefore narrower than "which normalizer is
+canonical": it is whether the **geometric-realization** target — the
+owner-gated S¹-equivariant index — should reproduce `w_λ(q)` as it stands or a
+normalised variant of it. The sign change stays the discriminating test for
+*that* question.
+
+Recorded rather than silently edited because the overstatement is instructive:
+the addendum's author corpus-grepped the **Lean** side thoroughly and never
+grepped the **notation register**, which is where the ruling lives. Bean
+`qou-sf1t`.
+
+**Related hazard from the same register entry.** It warns that `μ_λ(q)` — the
+q-Laplacian eigenvalue from the very `prop:q-heat-kernel-peter-weyl` this
+addendum discusses — "is NOT a Markov-trace ingredient. It does not multiply
+`χ^λ`, does not sum to anything normalised, and does not appear in the Frobenius
+expansion," and that symbol-similarity to `w_λ(q)` makes conflation tempting.
+Cite it alongside `Z_heat(t)`, whose exponent it is.
 
 ### 3. Lean status of the above — none of it is proved
 
