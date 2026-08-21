@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-21T22:51:57Z
+updated_at: 2026-08-21T22:54:37Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -120,3 +120,47 @@ guessed, so treat it as a floor: further spellings would move producers from
 not compute at a pin at all, in which case their `muon` label is wrong and the
 right fix is `independent` (with a reason), not a manifest entry. Do not
 mass-assign manifest entries; sort audits from computes first.
+
+
+## The 49 are NOT homogeneous — and for part of them re-running is a FIX
+
+Checked the audit-vs-compute sub-class concretely rather than by heuristic.
+
+**`compute_audit_scan` carries a FALSE muon label.** AST-checked: **zero**
+q0-ish identifiers used as code. Its only `q0` mention is inside a STRING
+LITERAL — advice text ("numerical evalf at q0. Add `simplify=False`") emitted
+by a static source scanner. Non-stdlib imports are `_path_bridge` and
+`witness_base`, nothing else. It never computes with q0 in any form. Yet
+`compute-audit-scan.witness.json` asserts
+
+    q0Anchor: muon
+    q0Value:  1.10997859555733471989...
+
+That is a false claim of the strongest kind the vocabulary makes — it asserts
+the producer computed at a specific pin. `derivation_chain_validator` is the
+same shape but milder: it does `mpf` arithmetic, over AUTHORED digits read from
+chain JSON (`mpf(str(target_value_raw))`), not over a substrate pin.
+
+**Consequence, and it inverts the disposition for this subset.** For these
+producers re-running does not damage anything — it DROPS a false `q0Anchor`,
+which is a correction. The blanket rule recorded above ("declare the manifest
+entry FIRST, then re-run") is right for the producers that genuinely compute at
+the muon pin (the lever1 case) and WRONG here: adding a manifest entry would
+promote a false claim into a declared one.
+
+So the 49 splits at least three ways:
+
+  (i)   genuinely computes at the muon pin, undeclared  -> real flip risk;
+                                                           declare, then re-run
+  (ii)  never computes with q0, carries a false muon label -> re-run to clear
+                                                           it, or set
+                                                           `independent` with a
+                                                           reason
+  (iii) unresolved -> needs the per-producer look, and per the note above
+                      "unresolved" is a statement about my detector, not the
+                      producer
+
+**Do not drain this bean as one sweep.** Sort into (i)/(ii)/(iii) first. The
+sort is the cheap gate and it changes the ACTION, not just the ordering.
+
+Not yet measured: how many of the 49 fall in (ii). Two confirmed by hand.
