@@ -3,8 +3,9 @@
 title: raw-float64 ratchet scans computations/ only — docs/audits/scripts/ witnesses are ungated (5 carry raw floats)
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-15T02:49:47Z
-updated_at: 2026-08-15T02:49:47Z
+updated_at: 2026-08-21T15:56:07Z
 ---
 
 
@@ -203,3 +204,15 @@ the true floor rather than recording 2 fields that are about to become 0.
 Not a drain: these 1,277 stay exactly as they are. The point is that nothing
 NEW may join them — which is the same argument the 5 -> 6 growth made for the
 subtree, only fifty times larger.
+
+
+**kappa3 landed (b463010b365).** Producer fix reached the witness; four-line
+diff, all rung values byte-identical to the 2026-07-12 run. Subtree audit now
+**1 file / 1 field** (was 6/26). The remaining field is kappa5's
+`max_loss_digits`; that run is on its final rung N=524288 at 75%.
+
+Remaining, in order:
+1. kappa5 witness — same three-step verify, then commit.
+2. Tighten `raw-float64-baseline--docs-audits-scripts.json` to 0/0.
+3. Widen the gate to `docs/audits` (34 dirty / 1277 fields measured),
+   superseding the subtree baseline rather than sitting beside it.
