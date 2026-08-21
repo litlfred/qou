@@ -47,7 +47,46 @@ import math
 from .codata import codata as _codata
 
 # ── Input measurements with uncertainties ────────────────────────
-VOL_FIGURE_EIGHT     = 2.029883212819307   # 2·Cl₂(π/3): math constant (SnapPy-verified)
+# Vol(4_1) = 2·Cl₂(π/3), the figure-eight hyperbolic volume. COMPUTED, not
+# transcribed.
+#
+# This was the hand-typed literal `2.029883212819307` until 2026-08-21. That
+# is not merely f64-truncated — it is not even the correctly-rounded f64 of
+# the true value, which is `2.0298832128193074`. The exact constant runs
+# 2.02988321281930725004240510854904057188337861506...
+#
+# A decimal literal cannot be checked by reading it; an expression can, and
+# `vol_4_1_at()` further down this module already computes the same thing.
+# Having both meant one of them was free to be wrong, and it was the one every
+# f64 path used.
+#
+# Measured blast radius before changing it: `Q` is IDENTICAL either way — the
+# f64 Newton solve in `_solve_q_proton_f64` returns the same bits, because the
+# discrepancy (1.23e-16 relative) is below what that solve resolves. So this
+# corrects the constant without moving the substrate pin. What it does fix is
+# every consumer that lifts this value into mpmath, where 1.23e-16 is real:
+# the round-trip q_0 -> m_p/m_e improves from 1.2e-16 to 4.0e-49 when the
+# exact form is used (`computations/probes/q0_roundtrip_exactness_probe.py`).
+try:
+    import mpmath as _mp_vol
+
+    _prev_dps = _mp_vol.mp.dps
+    try:
+        _mp_vol.mp.dps = 60
+        _VOL_4_1_EXACT = 2 * _mp_vol.clsin(2, _mp_vol.pi / 3)
+        #: 50-digit decimal for mpmath consumers, mirroring Q_50_DIGIT_STR.
+        VOL_FIGURE_EIGHT_50_STR = _mp_vol.nstr(
+            _VOL_4_1_EXACT, 50, strip_zeros=False
+        )
+        VOL_FIGURE_EIGHT = float(_VOL_4_1_EXACT)
+    finally:
+        _mp_vol.mp.dps = _prev_dps
+    del _mp_vol, _prev_dps
+except ImportError:  # pragma: no cover — mpmath is a hard dependency
+    # Correctly-rounded f64 of 2·Cl₂(π/3), i.e. float(exact), NOT a truncation.
+    VOL_FIGURE_EIGHT = 2.0298832128193074
+    VOL_FIGURE_EIGHT_50_STR = "2.0298832128193072500424051085490405718833786150606"
+
 VOL_FIGURE_EIGHT_ERR = 1e-12               # storage precision (math value is exact)
 
 # The two mass ratios are READ from the NIST table (qou_substrate/data/
