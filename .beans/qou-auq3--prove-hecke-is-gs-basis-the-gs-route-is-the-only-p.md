@@ -2964,3 +2964,58 @@ not yet written.
 So the tail is four applications: `blockPass`, two `monicStep`s, `blockPass`,
 then `ofTerms_cancel_pair`. The second block drives term 2 onto term 1's word
 with the opposite coefficient, and that is the final annihilation.
+
+---
+
+## The `a ≤ b` tail composes (2026-08-21, PR #5435, §4am)
+
+The inventory's untested hypothesis, tested — and the answer changed the fix.
+
+**`hpark` fails, and it is the engine's fault.** `blockPass` asks that no other
+term be an extension of the block's left context. That is a property of the
+*other* term, so no fit of a transition can see it — but the tail runs the block
+twice, once per surviving term, so each application has the other as bystander.
+Measured (`hecke_tail_collision_check.py`, 8/8 off-diagonal): `hpark` **holds at
+block 1 and fails at block 2**, because block 2's *last step emits the
+bystander* — that emission is the cancellation ending the chain. The bystander
+is never a word either block *rewrites*.
+
+**The reflex fix was wrong.** Since `SingleStepReduction` reads the redex
+coefficient off the **source** side, a collision on a word only ever *produced*
+costs nothing, so the apparent fix was to propagate down the source-only
+relaxation `farComm_transport_right_sources` already carries. That is three
+lemmas restated, plus an argument that a block's destination differs from each
+of its own intermediate sources.
+
+**None of it was needed — the schedule was.** The two blocks act on *different
+terms*, so their steps commute and `MultiStepReduction` fixes no order beyond
+each redex being present. Deg-lex runs block 1 first; that is the engine's
+accident. Run block 2 first and its bystander is term 1 *pre*-block, which does
+not extend `σ_{i−2} :: A`; by the time term 1 moves, term 2 begins `σ_{i−2}` and
+does not extend `A`. `hecke_tail_reorder_check.py`: both `hpark`s hold, every
+source unique, chain still reaches zero, 8/8.
+
+**`tailChain` (§4am), sorry-free.** `blockPass` on term 2 → `blockPass` on
+term 1 → two `bsStep`s. Ends at a pair differing only in sign — the `a > b`
+regime's own ending (`chain` → `T6` → `T6_isZero`), so **`ofTerms_cancel_pair`
+is not what finishes the tail** after all; it stays the right tool for the
+*mid-prefix* cancellation, where the chain continues. The two terms meet by two
+instances of `descWord_split`.
+
+Also landed: `bsStep` (Bokut–Shiao at general depth in `monicStep`'s shape),
+`bsWord₂_ne_bsWord₁`, `heckeGen_ne_of_val_ne`, and
+`tailChain_indices_nonvacuous` (a = 4, b = 6 at n = 13 satisfies every index
+hypothesis).
+
+**Two corrections to my own work this tranche.** (1) The first collision check
+reported the bystander was *not* the block's final word — a harder problem. That
+was my bug: the chain ends at zero, so reading the post-block term set finds
+nothing and the test went vacuous; asking the last step what it *emits* is the
+fix. (2) I began re-deriving `descWord_split`, which the file already had; my
+grep for it had been truncated by `head -40`, and the compiler caught it.
+
+**Still open.** The **prefix** (`a² + a + 5` steps) is not assembled — only its
+inventory is known, and this tranche is precisely a case of the inventory being
+insufficient. Then the `OverlapComposition` + `spoly` identity joining the two.
+The diagonal `b = a` runs `blockPassFromTwo` and is covered by *neither* the
+collision nor the reorder measurement.
