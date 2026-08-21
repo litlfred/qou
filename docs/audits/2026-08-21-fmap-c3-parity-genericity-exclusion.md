@@ -70,8 +70,34 @@ Rozansky amplitude leg** — structurally different from the trace-weight routes
 (it is not a bar-parity object). This matches the corpus's own assessment: the
 QPlancherel result proved the c_k wall is the *amplitude* leg (not normalisation),
 and prior attempts on it (C16 Habiro-integrality, C17 qZeilberger, C18 PSLQ) were
-refuted or entropy-blocked. A probe gathered its ingredients (the Faddeev `Φ_b`
-semiclassical coefficients `s_n = B_{2n}/(2n)!`; the 4₁ κ-tower `κ₁ = 11√3π/108`,
-`κ₂ = 2π²/27`) but the c_k-reduction test was not completed. It is the genuine
-deep frontier, not a quick check — and it is where any future f-map attack should
-go, since the trace-weight parity/genericity fence is now closed from both sides.
+refuted or entropy-blocked.
+
+## Route C — REFUTED too (2026-08-21, scope-(a), structural not entropy)
+
+Executed (bean `qou-i2ir`;
+`computations/qbeta/fmap_c3_routeC_amplitude_exclusion.py`). The exact 4₁ Ohtsuki
+tower is `κ_n = (p_n/q_n)·√3^{[n odd]}·π^n`
+(`qbeta_kappa_exact_ladder_resurgence_probe.py`), 1-loop torsion `δ(4₁) = 1/√3`
+(`jones_1loop_c0_calibration_fig8.py`). Writing the amplitude as the ladder
+product and matching log-cumulants gives the **one-scale / two-target** gate: a
+single substrate scale `σ` must satisfy `σ²·λ₂ = −1` and `σ³·λ₃ = −2`, which is
+possible **iff** `4λ₂³ + λ₃² = 0`. With `λ₂ = 455π²/7776`,
+`λ₃ = 270463√3π³/6298560`:
+
+> `4λ₂³ + λ₃² = 6.088 ≠ 0` — a **sum of two positives**, so it can never vanish.
+
+Deeper: the *odd* cumulants carry `√3`, the *even* do not, while `c₂, c₃` are
+`√3`-free rationals — no single scale reconciles the two parities. So the forced
+(single-scale) amplitude→c_k map fails; any working map needs per-rung free
+parameters, i.e. a fit. This is a **structural** refutation, not the C18 entropy
+wall. Scope-(a): it excludes the single-scale forced map, not every conceivable
+amplitude construction.
+
+## Net — all four routes fenced
+
+`c₃ = J_Hopf(1) = −2` is not forceable from **any** tried f-map route: the trace
+weights in either parity (A/B scope-(b), redirect scope-(a)) *and* the amplitude
+(C scope-(a)). It is a genuine near-match, fenced from every direction with a
+clean structural reason — no fabrication, no fit. A derivation, if one exists,
+must come from mathematics outside all of these (a categorical CoHA/BPS argument,
+the A_ω Route C `qou-q9ih` — a separate open programme).
