@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-21T15:53:06Z
+updated_at: 2026-08-21T15:59:47Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -860,3 +860,10 @@ Formalized S2 in Lean (turned the Python symbolic result into proved theorems) +
 • hoefsmitB_sq_eq_trivWeightD_add_stdWeightD (b²=y₃+y₂₁), dWeights_at_one (q=1: y₂₁=¼,y₃=½,b²=¾)
 Combined with the prior b²=1−y₂₁ᴰ and the existing uniqueness lemma, the D weights are now FULLY characterized in Lean.
 HONEST BOUNDARY (stated in dWeights_at_one docstring): c₃=−2=J_Hopf(1) is a TOPOLOGICAL input (Jones of Hopf link), NOT derivable from these weights — no forced-c₃ lemma exists. Provable D-structure = weight/coupling algebra + c₂ Taylor form; c₃/c₄/c₅ values stay fitted.
+
+── J_Hopf(1)=−2 now DERIVED, not asserted 2026-08-21 (PR #5364, EXIT=0) ──
+Built the Hopf-link Jones value from the skein relation: JonesHopfSkein.lean (sorry-free).
+jonesHopf_of_skein: over any CommRing, the cleared Jones axioms (V(unknot)=1, s·V(2-unlink)=−(s²+1), cleared skein V₊−s⁴V₋=(s³−s)V₀) FORCE V(Hopf)=−(s+s⁵) at the Hopf crossing (one linear_combination).
+jonesHopf_at_one: hence V(Hopf)=−2 at s=1 (q=1).
+jonesHopfClassicalLimit_eq_jonesHopfValue_one: the ladder's c₃ constant = jonesHopfValue 1 = −2 — the wired constant is now the classical-point value of the skein-derived Hopf polynomial, no longer a bare def.
+This addresses the c₃-input provability gap flagged in dWeights_at_one: c₃'s value −2 is derived from the Jones skein axioms (the polynomial's DEFINITION applied to the Hopf link), conditional-class style. Still NOT derived: that −2 is the right coupling for the ladder's N3 rung (the c₃ near-match, 3.47%) — that remains the fitted step. What is now proved: −2 IS J_Hopf(1), from the axioms.
