@@ -44,6 +44,35 @@ This is a RISK REGISTER, not a defect list: nothing here is wrong on disk
 today. Each entry is a producer that cannot be safely re-run until its
 intended pin is declared.
 
+WHAT THIS REGISTER DOES NOT COVER — a second, disjoint stale-q0 mechanism
+--------------------------------------------------------------------------
+Two different stale-q0 mechanisms were found in the same session, with similar
+symptoms and different fixes. This register covers ONE of them.
+
+  mechanism 1 (HERE)  an unlisted producer falls through q0_anchor_manifest
+                      to the PROTON default.  muon -> proton, ~11.5 ppb.
+                      Fix: declare the intended pin, then re-run.
+
+  mechanism 2 (#5434) a producer that DERIVES q0 from CAL-2 inline and never
+                      consults the manifest at all, carrying a value from the
+                      CODATA 2018 table.  ~0.8 ppb, the other direction
+                      (m_mu/m_e 206.7682830 -> 206.7682827).
+                      Fix: re-run once the A-vs-C pin question is settled.
+
+**Mechanism 2 is excluded from this register BY CONSTRUCTION, not by
+oversight.** The filter requires `q0Value` to match the canonical muon pin at
+14 chars, and the CODATA-2018-derived value diverges before that width:
+
+    canonical (A)      1.109978595557...
+    CODATA 2018 (B)    1.109978595554...
+                                    ^ differs at char 14
+
+Verified: all six witnesses #5434 lists are absent from the 49 here. So a
+reader must NOT treat this count as "all witnesses carrying a stale muon q0" —
+it is specifically "witnesses asserting the CANONICAL muon pin from a producer
+that would resolve proton". A muon-family value that is not the canonical pin
+is a different finding with a different fix.
+
 ORDER OF OPERATIONS (this is the point)
 ----------------------------------------
 Declare the manifest entry FIRST, then re-run. Re-running first destroys the
@@ -215,6 +244,14 @@ def main(argv: list[str] | None = None) -> int:
                 "q0Anchor/q0Value dropped in the same step (PR #5436 reverted "
                 "that regeneration rather than commit the flip)"),
             "order_of_operations": "declare in the manifest FIRST, then re-run",
+            "excludes_mechanism_2": (
+                "Witnesses carrying the CODATA-2018-derived muon value (#5434) "
+                "are excluded BY CONSTRUCTION: that value diverges from the "
+                "canonical pin at char 14 (…595554 vs …595557), the audit's own "
+                "discrimination width. Verified — all six witnesses #5434 lists "
+                "are absent from this register. Do not read this count as 'all "
+                "stale muon q0'; it is 'asserting the CANONICAL pin while "
+                "resolving proton'."),
         },
     }
 
