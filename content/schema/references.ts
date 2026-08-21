@@ -32,6 +32,52 @@ import type { Data as CSLData, Person as CSLPerson, Date as CSLDate, ItemType } 
 // ── Re-exports for consumer convenience ─────────────────────────
 export type { CSLData, CSLPerson, CSLDate, ItemType };
 
+/**
+ * Where our copy of a source is, and how far it has been processed.
+ *
+ * Written onto each entry by `scripts/sync-references-library.py` and
+ * derived entirely from the library tree plus the source ledger — never
+ * authored, never hand-edited. The field order here matches that script's
+ * `render()` so a regenerated block diffs cleanly.
+ *
+ * Declared because `CSLData` from the `csl-json` package does not have it,
+ * and 351 entries carry it. The Zod schema is `.passthrough()`, so this was
+ * valid at runtime and rejected by the compiler — 712 `TS2353` errors,
+ * invisible because nothing type-checks this file: qou has no `tsc` gate on
+ * it, and the platform's `tsc` only sees it through the bridge symlink that
+ * `setup-folio-assistant.sh` creates in a working clone and CI does not have.
+ */
+export interface LibraryRef {
+  /** Directory name under `library/`, and the join key to the source ledger. */
+  docId: string;
+  dir: string;
+  pdf?: string;
+  /** A path the ledger claims we hold that is not in the repo. */
+  claimedPath?: string;
+  /** How far ingestion got: held < structure < sections < candidates, or `missing`. */
+  stage: "held" | "structure" | "sections" | "candidates" | "missing";
+  pages?: number;
+  sections?: number;
+  arxiv?: string;
+  /** Other copies of the same work, when the join landed on a duplicate. */
+  alternates?: string[];
+  duplicateOf?: string;
+}
+
+/**
+ * A CSL-JSON entry plus the derived record of the copy we hold.
+ *
+ * `series` is here because the `csl-json` package's `Data` omits it while
+ * entries use it for a journal's series designation — `rogers1907` is
+ * Proc. LMS **series 2**, vol. 4 — and dropping it to satisfy the compiler
+ * would lose the only thing distinguishing that volume from the first
+ * series' volume 4.
+ */
+export type Reference = CSLData & {
+  library?: LibraryRef;
+  series?: string;
+};
+
 // ── Zod schema for CSL-JSON validation ──────────────────────────
 
 const CSLPersonSchema = z.object({
@@ -115,14 +161,14 @@ export const CSLEntrySchema = z.object({
 // ── Builder ─────────────────────────────────────────────────────
 
 /** Validates a CSL-JSON entry at construction time. */
-export function ref(data: CSLData): CSLData {
+export function ref(data: Reference): Reference {
   CSLEntrySchema.parse(data);
   return data;
 }
 
 // ── Bibliography database ───────────────────────────────────────
 
-export const references: CSLData[] = [
+export const references: Reference[] = [
 
   // ── Garoufalidis 2004 — AJ conjecture / q-holonomic colored Jones ──
   ref({
@@ -2377,7 +2423,6 @@ export const references: CSLData[] = [
     DOI: "10.2140/agt.2006.6.1113",
     URL: "https://arxiv.org/abs/math/0505219",
     note: "Algebr. Geom. Topol. 6 (2006), no. 3, 1113-1214; arXiv:math/0505219. DOI corrected 2026-06-07 from the spurious 10.2140/gt.2008.12.2091 to the authoritative AGT DOI 10.2140/agt.2006.6.1113 (verified via Project Euclid / msp.org). This entry is the 'Bottom tangles and universal invariants' paper; QOU citers that intend the Habiro RING Ẑ[q] (q-Pochhammer / cyclotomic completion) were re-keyed to habiro2004cyclotomic, and colored-Jones citers to habiro2000, on 2026-06-07.",
-    URL: "https://arxiv.org/abs/math/0505219",
   }),
 
   ref({
@@ -3482,8 +3527,8 @@ export const references: CSLData[] = [
       "the regular ideal simplex is the unique volume maximiser. The " +
       "analytic half of the latter is formalized in " +
       "`QOU.Archimedean.IdealTetrahedronConcavity.volChart_isMaxOn_regular`; " +
-      "the volume identification itself is bean qou-5gai H4 (open).",
-    note: "PDF library/milnor-1982-hyperbolic-geometry-the-first-150-years/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. ",
+      "the volume identification itself is bean qou-5gai H4 (open)." +
+      "PDF library/milnor-1982-hyperbolic-geometry-the-first-150-years/ — joined 2026-08-16: the library held this paper unlinked, so it read as an unregistered document. ",
   }),
 
   // ── Thurston 1978 ──────────────────────────────────────────────
@@ -4830,8 +4875,8 @@ export const references: CSLData[] = [
       "formalized sorry-free in `QOU.Optimization.lp_weak_duality` / " +
       "`lp_duality_gap_nonneg`, which is the proved backing for the " +
       "`duality_gap ≥ 0` assertion carried by every QOU LP/SDP-dual witness. " +
-      "Cited bibliographically for the abstract duality statement.",
-    note: "PDF library/arxiv-math-9907032v1/ — joined 2026-08-16. This branch had drafted a separate entry [rivin1999] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. ",
+      "Cited bibliographically for the abstract duality statement." +
+      "PDF library/arxiv-math-9907032v1/ — joined 2026-08-16. This branch had drafted a separate entry [rivin1999] for the same paper from the library copy; main registered it independently with fuller metadata, so that draft was dropped and the library join moved here. ",
   }),
 
   // ── Young 1901 (quantitative substitutional analysis) ─────────
@@ -5448,8 +5493,8 @@ export const references: CSLData[] = [
       "of the Kashaev volume conjecture carried by the class " +
       "\\texttt{VolumeConjecture41} (whose instance is, since " +
       "2026-07-26, machine-proved sorry-free in-repo by an " +
-      "elementary Riemann-sum squeeze).",
-    note: "PDF library/arxiv-math-0506456v1/ — joined 2026-08-16. The library copy was unlinked because its extracted title was the World Scientific masthead; OCR recovered the real title, which matched this entry. A batch-7 entry drafted from that OCR (id andersen2005, first author only — the byline runs into the affiliations in the transcription) was dropped in favour of this one. ",
+      "elementary Riemann-sum squeeze)." +
+      "PDF library/arxiv-math-0506456v1/ — joined 2026-08-16. The library copy was unlinked because its extracted title was the World Scientific masthead; OCR recovered the real title, which matched this entry. A batch-7 entry drafted from that OCR (id andersen2005, first author only — the byline runs into the affiliations in the transcription) was dropped in favour of this one. ",
   }),
 
   // ── Costin–Ehrlich–Friedman 2015 (integration on the surreals) ──
@@ -13903,7 +13948,7 @@ export const references: CSLData[] = [
 export const referenceMap = new Map(references.map((r) => [r.id, r]));
 
 /** Get a reference by id. Throws if not found. */
-export function getRef(id: string): CSLData {
+export function getRef(id: string): Reference {
   const entry = referenceMap.get(id);
   if (!entry) throw new Error(`Unknown reference: "${id}". Check content/schema/references.ts`);
   return entry;
