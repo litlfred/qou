@@ -167,12 +167,16 @@ word, not volume-match."* B's finding: the mass chain's `T_w` word closes to a
 | census `6₂` (A's (c), rejected) | 1 | **excluded** — same ground, plus §5 |
 | *the actual closure* | **3** | the rule's answer |
 
-**Scope-(b) structural exclusion**, on the proved invariant that the number of
-components of a braid closure is a function of the underlying permutation and
-hence independent of every crossing sign — `QOU.BraidsAndKnots.wordPerm_eq_of_indices_eq`
-→ `closureComponents_ne_of_perm_ne` (sorry-free, `main` `01a4dd3bb6`). This
+**Scope-(b) structural exclusion**, on the elementary fact that a braid
+closure's component count is the orbit count of the induced permutation, hence
+a function of the crossing *indices* alone. The **resolution-independence** of
+that count is Lean-proved sorry-free —
+`QOU.BraidsAndKnots.wordPerm_eq_of_indices_eq` → `closureComponents_resolve`
+(`main` `01a4dd3bb6`, `lean`-direct exit 0, no `sorryAx`). So the exclusion
 holds for every resolution of the 5 non-braid letters and every crossing
-convention; it is not a numerical near-miss.
+convention; it is not a numerical near-miss. **See §5e — the Lean carries the
+resolution-independence, not the link-level exclusion, and an earlier draft of
+this section cited it for both.**
 
 **So A's tie-breaker does not survive as an argument for `Vol = 0`.** It survives
 as a *rule*, and the rule's own output is "a 3-component link" — an answer A did
@@ -252,6 +256,77 @@ search space would have given by chance.**
 | deuteron's word is `σ₁³` | A, via 8 `deltalambda` probes | **unsupported** — cites #4158, which is about `g₂`; content layer says electron (§3) |
 | frames 1 and 3 related by nucleon collapse | implicit in A | **refuted** (§2a, measured) |
 | verdict `UNDETERMINED` | B | **survives, sharpened** — the class is 3-component links, and the SDP returns one |
+
+### 5e. Scoping the Lean citation — and correcting my own over-reach
+
+**Self-correction.** §4 above, this branch's PR body, and the coordination
+comments I posted on #5389 and #5363 all cite
+`closureComponents_ne_of_perm_ne` as the invariant that **excludes** `6₂`,
+the trefoil and Hopf as the mass word's closure. Read against the actual Lean
+([`ClosureComponentsSignInvariant.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ClosureComponentsSignInvariant.lean)),
+**that citation is one step wider than the theorem.** Per AGENTS.md
+§"Grep the claim SHAPE, not only the topic" — resolve the symbol, read the
+type — the file's contents are:
+
+```lean
+noncomputable def closureComponents (π : Perm (Fin n)) : ℕ :=
+  Nat.card (MulAction.orbitRel.Quotient (Subgroup.zpowers π) (Fin n))
+
+theorem closureComponents_ne_of_perm_ne {π π' : Perm (Fin n)}
+    (h : closureComponents π ≠ closureComponents π') : π ≠ π'
+```
+
+Three things follow, and they should be kept apart:
+
+1. **What is proved.** `closureComponents` is the **orbit count of a
+   permutation**. `wordPerm_eq_of_indices_eq` → `wordPerm_resolve` →
+   `closureComponents_resolve` prove that this count is **independent of every
+   crossing sign and every resolution**. That is real content and it is the
+   half the "all 32 resolutions" claim needs. Nothing in the file mentions a
+   link.
+2. **What `closureComponents_ne_of_perm_ne` actually concludes** is `π ≠ π'` —
+   **distinct permutations**, not distinct *links*. It is the contrapositive of
+   a congruence and carries no topology. It is therefore **not** the exclusion
+   step; it is the bookkeeping around it.
+3. **The step that does the excluding is not in the Lean.** "The closure of a
+   braid has as many components as the induced permutation has orbits" is
+   stated in the file's **docstring prose** (*"the strands `Fin n` fall into
+   components exactly as they fall into orbits of `⟨π⟩`, since the closure
+   joins strand `i` to strand `π i`"*) and is a modelling bridge, not a
+   theorem. It is elementary, standard (Birman), and I do not doubt it — but it
+   is asserted, not formalised.
+
+**Does the verdict move? No.** The bridge is a textbook fact about braid
+closures, so the arity exclusion of §4 stands on ordinary mathematics. What
+changes is only the **strength of the citation**: the correct form is
+
+> **scope-(b), on the elementary fact that a braid closure's component count is
+> the orbit count of the induced permutation — with the *resolution-independence*
+> of that count Lean-proved sorry-free** (`closureComponents_resolve`,
+> `wordPerm_eq_of_indices_eq`).
+
+not "Lean-proved that `6₂` is excluded". The Lean prunes the *convention*
+degree of freedom, which is exactly what a formalize-first prune should do and
+is why the 32-resolution enumeration was replaceable; it does not by itself
+carry the link-level exclusion. B §3 Ground 1 states this correctly on its own
+terms (*"that invariant is elementary and convention-free"*) — the over-reach
+is mine, introduced in §4 of this document, and is corrected here rather than
+silently edited away.
+
+**Verification performed** (CI is `workflow_dispatch`-only; this is the agent
+gate). `lean`-direct against the restored Mathlib olean tree, no `lake build`:
+
+```
+lean ClosureComponentsSignInvariant.lean        -> exit 0, no diagnostics
+#print axioms wordPerm_eq_of_indices_eq          -> [propext, Quot.sound]
+#print axioms wordPerm_resolve                   -> [propext, Quot.sound]
+#print axioms closureComponents_resolve          -> [propext, Classical.choice, Quot.sound]
+#print axioms closureComponents_ne_of_perm_ne    -> [propext, Classical.choice, Quot.sound]
+#print axioms braidClosureComponents_resolve     -> [propext, Classical.choice, Quot.sound]
+```
+
+No `sorryAx`. Mathlib olean count `6990` before and `6990` after — the restored
+tree was not evicted.
 
 ### 5d. What is *not* disturbed
 
