@@ -65,34 +65,6 @@ class LpDualStabilityContext where
   x_partial : Fin channels → ℝ
   /-- The `σ₀` channel index. -/
   σ_0_idx : Fin channels
-  /-- Primal slack variables for the confined solution. -/
-  slack : Fin channels → ℝ
-  /-- Primal feasibility equates the Gram evaluation to the slacks. -/
-  primal_slack_eq : ∀ i, (Finset.univ.sum fun j => G i j * x_star j) = slack i
-  /-- Slack variables are non-negative. -/
-  slack_nonneg : ∀ i, 0 ≤ slack i
-  /-- The shadow price bound factor. -/
-  price_bound_factor : ℝ
-  /-- The condition number gives the exact bound factor. -/
-  factor_eq : price_bound_factor = κ_G * t_norm
-  /-- Shadow prices are bounded by the factor. -/
-  dual_price_bound : ∀ i, |y_star i| ≤ price_bound_factor
-  /-- The negative drift value on the sub-braid channel. -/
-  partial_drift : ℝ
-  /-- The sub-braid channel evaluates to the drift. -/
-  partial_eval_eq : (Finset.univ.sum fun j => G σ_0_idx j * x_partial j) = partial_drift
-  /-- The drift is strictly negative. -/
-  partial_drift_neg : partial_drift < 0
-  /-- Primal objective value. -/
-  primal_obj : ℝ
-  /-- Dual objective value. -/
-  dual_obj : ℝ
-  /-- Tr_M(x*) is the primal objective. -/
-  tr_M_eq_primal : tr_M_x_star = primal_obj
-  /-- y₀* * n_target is the dual objective. -/
-  y_0_mul_eq_dual : y_0_star * (n_target : ℝ) = dual_obj
-  /-- Strong duality holds. -/
-  strong_duality : primal_obj = dual_obj
 
 /-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).
 
@@ -110,17 +82,27 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (Finset.univ.sum fun j : Fin ctx.channels =>
       ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
     ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) := by
-  refine ⟨?_, ?_, ?_, ?_⟩
-  · intro i
-    rw [ctx.primal_slack_eq]
-    exact ctx.slack_nonneg i
-  · intro i
-    rw [← ctx.factor_eq]
-    exact ctx.dual_price_bound i
-  · rw [ctx.partial_eval_eq]
-    exact ctx.partial_drift_neg
-  · rw [ctx.tr_M_eq_primal, ctx.y_0_mul_eq_dual, ctx.strong_duality]
+  -- Missing infra: explicit 6×6 Gram entries at q₀, the LP
+  -- strong-duality theorem, and the κ(G)·‖t‖ dual-perturbation bound.
+  -- Not yet formalised in QOU/Mathlib.
+  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
+  sorry
 
-
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem lp_dual_stability_unconstrained_false :
+    ¬ ∀ ctx : LpDualStabilityContext,
+        (Finset.univ.sum fun j : Fin ctx.channels =>
+          ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 := by
+  intro h
+  have := h { q := 0, channels := 1, G := fun _ _ => 0, κ_G := 0,
+              y_star := fun _ => 0, t := fun _ => 0, t_norm := 0,
+              tr_M_x_star := 0, y_0_star := 0, n_target := 0,
+              x_star := fun _ => 0, x_partial := fun _ => 0, σ_0_idx := 0 }
+  norm_num at this
 
 end QOU.ParticleInteractions
