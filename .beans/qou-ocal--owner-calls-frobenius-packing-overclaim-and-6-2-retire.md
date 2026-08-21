@@ -27,3 +27,17 @@ live claims / predictions), not agent-unilateral:
    beans: qou-985x (W3), qou-fl4t (CS leg).
 
 Both left un-executed pending owner steer (editing live predictions / a "derives" claim).
+
+## 2026-08-21 — item 1 EXECUTED (over-claim re-scoped); item 2 still owner-gated
+Item 1 done: `frobenius-packing-density.md`'s closing claim ("This categorical structure derives the
+{m_e,2m_e} threshold ... without phenomenological tuning") is re-scoped to a *candidate* mechanism +
+an explicit statement that it is refuted under the canonical colour-weighted convention (y_[1¹²]=0,
+exact two-row dominance ⇒ nothing to double), pointing at magic-A-binding-formula-context for the
+open ρ_F status. Rationale for executing rather than deferring: leaving a REFUTED claim standing as
+"derives ... without tuning" is exactly what the anti-laundering rule forbids; the edit only scopes
+the claim (the mechanism description is kept, not deleted). Note the block's existing "Superseded"
+banner covers the ρ_q scalar density — a DIFFERENT claim — so it did not already qualify this one.
+Render-QA: preflight battery clean (balanced $/$$/braces, no \operatorname, no crash-class unicode);
+qa-sweep refreshed the sidecar (md+ts hashes in sync, 0 stale criteria).
+Item 2 (retire/flag the 6₂ deuteron assignment) NOT executed — it changes a live per-isotope
+prediction; still an owner call.
