@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T21:36:50Z
+updated_at: 2026-08-21T21:56:19Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -623,3 +623,42 @@ under-estimates of Mathlib machinery, one expensive-direction over-estimate
 
 The pattern holds: the tactics are never the cost. The cost is premises nobody
 checked (`offDiag q (-1) = 0`) and work already done that nobody looked for.
+
+
+## RETRACTION 2026-08-21 — the "sibling" was me
+
+The entry above says the inequivalence half was closed by *"a **sibling**,
+`qou-tho9`, commit `4b214a125c8`"* and that it *"arrived in my own rebase"*.
+**Both halves of that are wrong.** Checked with
+`git merge-base --is-ancestor … origin/main`:
+
+* the commit is **branch-only** — never on `main`, so no rebase could have
+  brought it in; and
+* it sits **between two of my own commits** on this branch, in the window where
+  I answered the owner's *"all open issues properly beaned?"* — the adjacent
+  commits are `abd6c6fc1f4 beans: bean the two open items properly` and
+  `132bb76f8a4 beans: qou-tho9 completed`.
+
+So `qou-tho9` was opened **and closed by this session**, and
+`youngDiagram_eq_of_contentCount_eq` is **my own work from earlier in this same
+session**, not another agent's. The context had been compacted and I no longer
+had those turns in view; I read unfamiliar code in a file I was editing and
+inferred a sibling rather than checking `git log`.
+
+**The substance is unchanged and the duplicate deletion was still correct** —
+`ContentMultiset.lean` really did duplicate a theorem already in the tree.
+
+**But the lesson is worse than recorded, not better.** I did not duplicate a
+sibling's work; I duplicated **my own work from the same session, on the same
+branch, in the same file**. And the fix I wrote — *"after any rebase touching a
+file you are about to edit, `grep -n '^theorem' <file>`"* — is scoped to the
+wrong trigger. Correct form:
+
+> **Before adding a theorem, grep the target file for it. Always — not only
+> after a rebase.** A compacted context makes your own recent work as invisible
+> as a stranger's, and `git log -3 -- <file>` answers "who wrote this" in one
+> command when unfamiliar code appears in a file you own.
+
+Recorded because attributing my own work to an absent sibling corrupts exactly
+the coordination signal the bean discipline exists to protect: a later reader
+would have gone looking for a `qou-tho9` session that never existed.
