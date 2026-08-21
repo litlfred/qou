@@ -25,13 +25,19 @@ is `ℏ_q²` and not merely `O(ℏ_q²)`. Empirically the fraction rises monoton
 A (²H 0.12·ℏ_q² → ⁴He 0.77 → ⁴⁰Ca 0.93 → ⁵⁶Fe 0.95·ℏ_q²); the ≈0.95·ℏ_q² Fe value is a scope-(a)
 forward observation under the numerology guard, NOT a derivation.
 
-Candidate routes to try (formalize-first, no fitting):
-- The volume-defect picture: `B = (m_e·lw/ℏ_q²)·ΔVol` with `ΔVol = Σ Vol_nucleon − Vol_nucleus`;
-  derive `ΔVol/Vol → ℏ_q²·(M/lw)` at saturation from the substrate incompressibility / knot
-  close-packing (ties to the 3a close-packing count, already derived).
+Candidate routes:
+- ~~The volume-defect picture `B = (m_e·lw/ℏ_q²)·ΔVol`~~ — **REFUTED 2026-08-21 (scope-a)**,
+  `computations/binding_volume_defect_route_refuted.py`. The knot-volume defect `ΔVol/Vol` is O(1)
+  (1.65 ³H, 2.00 ³He, 3.00 ⁴He), NOT O(ℏ_q²), so `B_pred ~ GeV`, overpredicting binding by 102–250×
+  (≈1/ℏ_q²). Binding is not a mass-scale volume defect; the O(1/ℏ_q²) mass terms do not cancel to
+  O(ℏ_q²) at the volume level.
 - Why the coordination count `M` (integer, cusp-independent) is the correct binding multiplier
   while the mass carries the q-dim-weighted `lw` — a categorical statement about linking (mutual)
-  vs self-energy (self-linking) amplitudes in the substrate.
+  vs self-energy (self-linking) amplitudes in the substrate. **Still open — the surviving route.**
 
-Do NOT wire the 0.95·ℏ_q² match to production; do NOT fit a correction to force it to 1·ℏ_q².
-The honest state is: dichotomy proved, exact saturation value open.
+**Updated verdict (2026-08-21):** with the volume-defect route refuted, the saturated-fraction
+≈ ℏ_q² coincidence has lost its one candidate mechanism and is — on current evidence — **more
+likely numerology than a derived prediction**. Do NOT wire the 0.95·ℏ_q² match; do NOT fit a
+correction to force it to 1·ℏ_q². The honest state: analytic dichotomy proved (Lean); the exact
+ℏ_q² saturation value is open AND now more suspect. Needs a genuinely new structural mechanism
+(the linking-vs-self-energy route) or a scoped owner decision on whether it is worth pursuing.
