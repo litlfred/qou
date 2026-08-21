@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-19T17:41:59Z
+updated_at: 2026-08-21T15:23:31Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -206,3 +206,69 @@ invariant subspace and the representation would not be irreducible.
 Formalising it is real analysis over zpow (the geometric-sum factorisation plus
 the AM-GM step), not a bookkeeping lemma. It is the single remaining gap between
 the current branch and range = top.
+
+
+## TAKEOVER 2026-08-21 — stalled claim, pairwise inequivalence (q-DEFORMED)
+
+Claiming under the stalled-claim policy. Prior holder's last commit on the
+backing work was **aab0901121** (`lean(qou-jfr8): admissible-swap connectivity
+transported`), 2026-08-19 19:39 UTC — **~44 h** stale, against a 3 h threshold.
+Confirmed genuinely idle rather than merely paused: `main` has moved 18 commits
+since, **none** touching `SchurWeyl/` or mentioning `jfr8`, and there is no open
+PR for it. (My previous turn read the same silence as a fleet-wide pause; that
+reading is retired — the fleet is demonstrably active again.)
+
+Continuing from `main`, not from any sibling branch. Nothing force-pushed.
+
+**Scope taken: pairwise inequivalence only.** Irreducibility (range form) is
+landed; I am not reopening it.
+
+### Corpus-grep before declaring it open (the step I skipped on `qou-gjg6`)
+
+`BraidKnot/SpechtClassification.specht_pairwise_noniso` **does** prove pairwise
+non-isomorphism — but for a **different object**: Specht modules over `k[S_n]`
+at **q = 1**, as `Representation k (Perm (Fin n))`, via the dominance-order
+route (`dom_of_intertwiner` / `spechtIso_imp_dom_both`). The q-deformed
+`ρ_λ : Hecke ℝ q q⁻¹ n →ₐ[ℝ] Matrix (SYT λ) (SYT λ) ℝ` is not covered by it, and
+nothing in `SchurWeyl/` states it. Genuinely open — and the owner has confirmed
+the q-deformed case is the target.
+
+The q=1 file is still useful as a **precedent for the Lean shape**: it declares
+its own `IsRepIso` intertwiner predicate rather than reaching for `FDRep`,
+explicitly to avoid `Module.Finite` plumbing. I am mirroring that choice on the
+algebra-hom side.
+
+### Route, and an honest split between what is cheap and what is true
+
+The JM diagonalisation makes the dominance-order argument unnecessary here.
+`ρ_λ(L_k)` is diagonal with entry `q^{2·cellContent (cellOf T k)}` at `T`
+(`seminormalRep_qJM`), so similarity invariants read off contents directly.
+
+**Stage 1 (cheap, conditional).** `Θ = barSymJMSum` is central and
+`ρ_λ(Θ) = cellContentCoshSum λ q · 1` (`seminormalRep_barSymJMSum`, proved). A
+scalar is a similarity invariant, so
+`cellContentCoshSum λ q ≠ cellContentCoshSum ν q ⟹ ρ_λ ≇ ρ_ν`.
+
+**Stage 1 does NOT give the unconditional statement, and I will not dress it up
+as if it did.** At a *fixed real* q the cosh-sum is one number, and two distinct
+shapes could collide numerically. As Laurent polynomials in q the two sums
+differ (the content multisets differ, and the coefficients are positive), so
+they agree for at most finitely many q — but "at most finitely many" is not
+"not at q₀", and this file evaluates at a fixed q.
+
+**Stage 2 (the real content).** Unconditional separation needs the eigenvalue
+**multiset**, not a sum. From an intertwiner, `ρ_λ(L_k) ~ ρ_ν(L_k)` for each k;
+both are diagonal, so the diagonal multisets agree; `zpow_injective_of_not_
+root_of_unity` (already landed) turns equal eigenvalues into equal contents; and
+the disjoint union over k is `d_λ` copies of the content multiset of λ. With
+`d_λ = d_ν` forced by equal matrix size, the content multisets agree — and the
+content multiset determines the partition.
+
+**The unconditional statement is TRUE**, so Stage 2 is not chasing a mirage:
+`H_n(q)` over ℝ is semisimple whenever q is not a root of unity of order ≤ n,
+which `q ≠ 0 ∧ q² ≠ 1` gives here, and the ρ_λ are then the full list of
+irreducibles. What is open is only the Lean.
+
+**Anticipated residual:** *"the content multiset determines the Young diagram"*
+is classical but I have not found it in the corpus. If it turns out to be the
+expensive piece, it gets its own bean rather than a `sorry`.
