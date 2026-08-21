@@ -170,8 +170,42 @@ does not already exist.
 
 - [x] Prove `isClosed_coneSpan` — **done, sorry-free**, including conic
       Carathéodory.
-- [ ] **Derive `MatrixFarkas` from it. Still unverified, and this is now the
-      only thing between here and the LP layer.** This bean asserts it follows
+- [x] **Farkas' lemma itself — PROVED.** `farkas_separation`: if `b` is not a
+      non-negative combination of `v`, some continuous linear functional is
+      `≥ 0` on every generator and `< 0` at `b`. This is what closedness was
+      *for* — `ProperCone.hyperplane_separation` consumes a closed cone, and
+      closedness of a finitely generated cone was the missing input. Packaging:
+      `coneSpanPointed` (a `PointedCone`, i.e. a `Submodule` over the
+      non-negative reals) then `coneSpanProper` via `isClosed_coneSpan`.
+      `nonneg_on_coneSpan_of_nonneg_on_generators` gives the converse half, so
+      the two alternatives are mutually exclusive.
+
+      **So the link the bean asserted — closedness ⟹ Farkas — is now verified,
+      not assumed.**
+
+- [ ] **The remaining gap is narrower and now precisely known.** Getting from
+      `farkas_separation` to `MatrixFarkas.farkas_alternative` still needs
+      three things, none of them supplied here:
+
+      1. **Riesz / coordinates.** `farkas_separation` yields a *functional*.
+         `farkas_alternative` wants a vector `l : Fin m → R`. Over an inner
+         product space that is `InnerProductSpace.toDual`, but note the LP
+         file uses plain `Fin m → R` (sup norm, **not** an inner product
+         space), so a bridge through `EuclideanSpace ℝ (Fin m)` is needed.
+      2. **The augmented cone.** The duality-shaped statement is Farkas applied
+         to `{(Ax, cᵀx) : x ≥ 0} ⊆ ℝ^{m+1}`, not to `A` alone.
+      3. **The `s > 0` case split.** Separating `(a, γ−ε)` gives multipliers
+         `(l', s)` with `s ≥ 0`; dividing by `s` needs `s > 0`, and *that*
+         is where the class's primal-feasibility guard earns its place — the
+         guard its own docstring calls "essential for truth".
+
+      Note (3) also surfaces a genuine mathematical wrinkle: the separation
+      argument naturally gives `aᵀl > γ − ε` for every `ε > 0`, whereas
+      `farkas_alternative` demands an `l` with `γ ≤ aᵀl` **attained**. Closing
+      that gap needs attainment of the dual optimum, which is a further
+      polyhedral fact rather than a corollary of separation. So the bean's
+      "exactly one lemma" is still not established, and this is the concrete
+      reason why. This bean asserts it follows
       "the standard route" via the bidual; nobody has checked that the
       strong-duality-shaped `farkas_alternative` field really does follow from
       `ProperCone.innerDual_innerDual` plus closedness. Until it is checked,

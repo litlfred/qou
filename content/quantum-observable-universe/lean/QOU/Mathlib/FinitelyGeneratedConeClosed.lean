@@ -328,4 +328,76 @@ theorem isClosed_coneSpan (v : ι → E) : IsClosed (coneSpan v) := by
 
 end Caratheodory
 
+
+section Farkas
+
+variable [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq ι]
+
+/-- Each generator lies in the cone it generates. -/
+theorem mem_coneSpan_generator (v : ι → E) (i : ι) : v i ∈ coneSpan v := by
+  classical
+  refine ⟨fun j => if j = i then 1 else 0, fun j => by by_cases h : j = i <;> simp [h], ?_⟩
+  simp
+
+/-- `coneSpan` as a pointed cone: it contains `0` and is closed under
+addition and non-negative scaling. -/
+def coneSpanPointed (v : ι → E) : PointedCone ℝ E where
+  carrier := coneSpan v
+  zero_mem' := ⟨fun _ => 0, fun _ => le_rfl, by simp⟩
+  add_mem' := by
+    rintro _ _ ⟨x, hx, rfl⟩ ⟨y, hy, rfl⟩
+    exact ⟨fun i => x i + y i, fun i => add_nonneg (hx i) (hy i), by
+      simp [add_smul, Finset.sum_add_distrib]⟩
+  smul_mem' := by
+    rintro ⟨c, hc⟩ _ ⟨x, hx, rfl⟩
+    exact ⟨fun i => c * x i, fun i => mul_nonneg hc (hx i), by
+      simp [Finset.smul_sum, mul_smul]⟩
+
+omit [DecidableEq ι] in
+@[simp]
+theorem coe_coneSpanPointed (v : ι → E) :
+    (coneSpanPointed v : Set E) = coneSpan v := rfl
+
+/-- `coneSpan` as a **proper** cone — the packaging `isClosed_coneSpan`
+makes available, and the form Mathlib's separation theorem consumes. -/
+def coneSpanProper (v : ι → E) : ProperCone ℝ E where
+  toSubmodule := coneSpanPointed v
+  isClosed' := isClosed_coneSpan v
+
+@[simp]
+theorem coe_coneSpanProper (v : ι → E) :
+    (coneSpanProper v : Set E) = coneSpan v := rfl
+
+/-- **Farkas' lemma**, in separating-functional form.
+
+If `b` is not a non-negative combination of `v`, then some continuous
+linear functional is non-negative on every generator and strictly
+negative at `b`. Exactly one of the two alternatives holds — the
+converse direction is immediate, since a functional non-negative on the
+generators is non-negative on the whole cone.
+
+This is what `isClosed_coneSpan` was for: `ProperCone.hyperplane_separation`
+needs a *closed* cone, and closedness of a finitely generated cone is
+precisely the fact Mathlib was missing. -/
+theorem farkas_separation (v : ι → E) {b : E} (hb : b ∉ coneSpan v) :
+    ∃ f : E →L[ℝ] ℝ, (∀ i, 0 ≤ f (v i)) ∧ f b < 0 := by
+  obtain ⟨f, hfC, hfb⟩ :=
+    (coneSpanProper v).hyperplane_separation (K := {b}) (convex_singleton b)
+      isCompact_singleton (Set.disjoint_singleton_left.mpr (by simpa using hb))
+  exact ⟨f, fun i => hfC _ (mem_coneSpan_generator v i), hfb b rfl⟩
+
+omit [DecidableEq ι] in
+/-- The converse half of the alternative, for completeness: a functional
+non-negative on the generators is non-negative on the cone, so the two
+alternatives of `farkas_separation` are mutually exclusive. -/
+theorem nonneg_on_coneSpan_of_nonneg_on_generators (v : ι → E) (f : E →L[ℝ] ℝ)
+    (hf : ∀ i, 0 ≤ f (v i)) {y : E} (hy : y ∈ coneSpan v) : 0 ≤ f y := by
+  obtain ⟨x, hx, rfl⟩ := hy
+  rw [map_sum]
+  exact Finset.sum_nonneg fun i _ => by
+    rw [map_smul, smul_eq_mul]
+    exact mul_nonneg (hx i) (hf i)
+
+end Farkas
+
 end QOU.Mathlib
