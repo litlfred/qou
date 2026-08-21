@@ -4925,6 +4925,68 @@ theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : F
     farComm_transport_right_sources hn hp x c hc L₁ L₂ w a b hw
       (fun u v huv _ => hcol u v huv)
 
+/-! ### §4ai  A whole block transported past a run
+
+The `a ≤ b` regime's blocks are `a` levels (or `a − 1` on the diagonal), each
+one letter transported rightwards past a run of far-commutations, and
+`hecke_block_transport_shape.py` measures the level lengths as
+`min(b−a−1+k, b−a+2)` off the diagonal and `min(k, 2)` on it. The consequence
+worth acting on is that the number of *short* levels is **fixed** — two, or one
+on the diagonal — so every remaining level passes the *same* run
+`descWord (j₁+1) j₂`. The block is therefore a fixed prologue followed by a
+uniform loop, not a nested loop with a growing inner run.
+
+`blockTransportRight` is that uniform part, and stating it needs no reference to
+the block at all: it is "carry a whole word `X` rightwards past a whole word
+`W`", by induction peeling `X` from its right end. Each peel is one
+`farComm_transport_right_sources`, and the letter just moved joins `B`, which is
+exactly the transition the measurement shows between consecutive levels.
+
+**The parked-term hypothesis is `loopTwoGen`'s, and for the same reason.**
+Enumerating the intermediate words here would mean splitting `X` *and* `W`
+simultaneously, which is unusable in practice. But every word any step of this
+induction rewrites has the form `A ++ z` — the accumulator only ever grows to
+the right of `A` — so the single hypothesis "no parked term begins with `A`"
+discharges every collision obligation at once. In the corner it holds because
+the two terms start with different letters. -/
+
+/-- **A whole block carried rightwards past a run.** `X` and `W` swap, provided
+every letter of `X` is at least two above every letter of `W`, inside any
+context and at any position of the term list.
+
+The induction peels `X` from the **right**: its last letter transports across
+`W` first and then joins `B`, so the recursion re-enters with `X` one shorter
+and `B` one longer. Peeling from the left would not compose — the head of `X`
+is separated from `W` by the rest of `X`, so no single transport applies. -/
+theorem blockTransportRight {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ A ++ z)
+    (W : Monomial (HeckeGen n)) :
+    ∀ (X B : Monomial (HeckeGen n)),
+      (∀ x ∈ X, ∀ y ∈ W, y.index.val + 1 < x.index.val) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms (L₁ ++ (A ++ (X ++ (W ++ B)), c) :: L₂))
+        (AlgElement.ofTerms (L₁ ++ (A ++ (W ++ (X ++ B)), c) :: L₂)) := by
+  intro X
+  induction X using List.reverseRecOn with
+  | nil =>
+      intro B _
+      simp only [List.nil_append]
+      exact MultiStepReduction.refl _
+  | append_singleton X' xg ih =>
+      intro B hfar
+      obtain ⟨xi⟩ := xg
+      have hstep := farComm_transport_right_sources hn hp xi c hc L₁ L₂ W (A ++ X') B
+        (fun y hy => hfar ⟨xi⟩ (by simp) y hy)
+        (fun u v _ _ r hr => by
+          have := hpark r hr (X' ++ (u ++ ((⟨xi⟩ : HeckeGen n) :: (v ++ B))))
+          simpa only [List.append_assoc] using this)
+      have hrec := ih ((⟨xi⟩ : HeckeGen n) :: B)
+        (fun x hx => hfar x (List.mem_append_left _ hx))
+      simp only [List.append_assoc, List.cons_append] at hstep hrec ⊢
+      exact MultiStepReduction.trans hstep hrec
+
 /-- **The descending run begins with its top index**, whenever it is non-empty.
 Splits on `j = i` (`descWord_self`) and `j < i` (`descWord_cons` at `i − 1`). -/
 theorem descWord_head {n : ℕ} {i j : Fin n} (hj : j.val ≤ i.val) :
