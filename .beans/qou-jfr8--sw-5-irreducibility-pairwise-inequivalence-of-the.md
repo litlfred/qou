@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-21T21:30:23Z
+updated_at: 2026-08-21T21:36:50Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -571,3 +571,55 @@ Pattern: **I over-budget for machinery Mathlib already has, and under-budget for
 premises nobody checked.** The genuine cost in this arc was never the tactics —
 it was `offDiag q (-1) = 0`, a one-line `simp` lemma sitting in plain sight that
 falsified a plan step everyone had read past.
+
+
+## SW-5 IS CLOSED — both halves (2026-08-21)
+
+| half | theorem | by |
+|---|---|---|
+| irreducibility | `seminormalRep_range_eq_top` | this session |
+| pairwise inequivalence | `seminormalRep_not_matRepEquiv_of_ne` | **sibling**, `qou-tho9`, commit `4b214a125c8` |
+
+Both verified together from one import: `lean`-direct EXIT=0, `#print axioms`
+`[propext, Classical.choice, Quot.sound]` on both plus
+`youngDiagram_eq_of_contentCount_eq`. **`SchurWeyl/` has zero code-level
+sorries** (the single `grep` hit in `QJucysMurphy.lean` is the string
+"sorry-free" at the start of a docstring line).
+
+So `{ρ_λ : λ ⊢ n}` is a pairwise-inequivalent family of irreducibles — the
+*list* of irreducibles of `H_n(q)`, not merely a supply.
+
+### I wrote a duplicate of the last step and caught it only by accident
+
+The previous entry said one item remained: content multiset ⟹ Young diagram. A
+sibling closed it as `youngDiagram_eq_of_contentCount_eq` (via `diagOf` /
+`diagIndex` / `mem_iff_diagIndex_lt`), **inline in `SeminormalInequivalence.lean`**
+— the same file I had been editing.
+
+That commit arrived in **my own rebase at the start of the turn**. I then wrote
+`ContentMultiset.lean`, ~110 lines proving the identical statement by the
+identical diagonal argument, with the answer already sitting in my working tree.
+It is deleted, unpushed.
+
+**What actually caught it was a `python` assertion failing on the file's tail** —
+not a check I ran. Had the anchor string matched, I would have appended a second
+proof of a theorem the file already had and pushed it.
+
+**The rule this violates is one I already wrote into `qou-gjg6` after the same
+mistake**: re-baseline *and re-read the target file* on resume, not just
+`git rebase`. Rebasing is not reading. The `qou-gjg6` version of this cost a
+130-line drop; this one cost 110 lines and was luck, not process.
+
+**Concretely, for next time:** after any rebase that touches a file you are about
+to edit, `grep -n '^theorem' <file>` before writing. It is one command and it
+would have caught both instances.
+
+### Calibration, updated
+
+Five mis-sized steps in this arc now, still lopsided: four cheap-direction
+under-estimates of Mathlib machinery, one expensive-direction over-estimate
+(`charpoly`/Newton, made unnecessary by summing over `k` first). Added to that a
+**second** duplicate-work incident with the same root cause as the first.
+
+The pattern holds: the tactics are never the cost. The cost is premises nobody
+checked (`offDiag q (-1) = 0`) and work already done that nobody looked for.
