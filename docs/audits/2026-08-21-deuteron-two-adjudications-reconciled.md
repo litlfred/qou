@@ -178,6 +178,25 @@ convention; it is not a numerical near-miss. **See §5e — the Lean carries the
 resolution-independence, not the link-level exclusion, and an earlier draft of
 this section cited it for both.**
 
+### 4a. Both readings of "the `T_w` word" give 3 — the argument does not turn on which
+
+A's tie-breaker cites **two** sources for its rule: the registry's
+`principled-derivation` tier (which is about braid words in `H_{n₀}(q₀)`) and
+`r5_full_canonical_knot_solver.py` / `prop:atom-knot-mass-derivation` (which
+selects `T_w` by the joint PSD-feasibility + binding SDP, in `B₃`). Those are
+two different objects, so "the `T_w` word" admits two readings. **Both give the
+same arity:**
+
+| reading of "the `T_w` word" | the word | strands | components |
+|---|---|--:|--:|
+| the mass chain's Hecke word (`H₆`) | 23 letters | 6 | **3** |
+| the SDP-selected `T_w` (`B₃`) | `[1,2,2,2,2,2,2,−1]` | 3 | **3** |
+
+So the exclusion in the table above does not depend on resolving which `T_w` A
+meant. Under either reading, A's rule returns a 3-component link and excludes
+all three of A's candidates. This is what makes the disagreement resolvable
+rather than a standoff between two defensible frames.
+
 **So A's tie-breaker does not survive as an argument for `Vol = 0`.** It survives
 as a *rule*, and the rule's own output is "a 3-component link" — an answer A did
 not consider and B reached from the other side.
