@@ -98,3 +98,59 @@ asymmetry is structural, not an artifact.
   assumed, not proved. That is the correct first Lean rung here.
 - Do NOT axiomatise MFW as a class and then present the bound as derived —
   §"Axiomatization is NOT a Proof".
+
+## 2026-08-21 — TIER 1 + the Mathlib gap LANDED (sorry-free)
+
+Two files, both `lean`-direct exit 0, zero warnings, axiom-clean (no `sorryAx`):
+
+**`QOU/MathlibExt/BraidGroup.lean` — Mathlib has NO braid groups.** Verified:
+no `*braid*` file anywhere in `Mathlib/`; `GroupTheory/` has `Coxeter` but not
+the braid group. Built on Mathlib's `PresentedGroup`:
+  - `braidRelators n` — the Artin presentation (far commutation + braid relation)
+  - `BraidGroup n` — braid group on `n+1` strands, `n` generators on `Fin n`.
+    The offset is deliberate: `Fin (n-1)` would use truncated ℕ-subtraction and
+    poison every downstream index proof. `strandCount n = n+1` is exported so
+    callers never have to recall the convention.
+  - **`exponentSum : BraidGroup n →* Multiplicative ℤ` — the WRITHE**, and the
+    real content: it descends to the quotient because every Artin relator has
+    total exponent sum zero (`lift_const_relators`, axioms [propext, Quot.sound]
+    only). The writhe of a braid *word* is trivial; the writhe of a group
+    *element* is not, and MFW is a statement about the latter.
+
+**`QOU/Knot/MortonFranksWilliams.lean` — the MFW pair and its consequences.**
+`MFWWitness` carries `(n, e, dmin, dmax)` plus the two MFW inequalities AS
+HYPOTHESES, and derives:
+  - `spread_le_two_mul_sub_two` — subtracting cancels the writhe `e` (the crux:
+    `e` is not a link invariant, the degree window is)
+  - `braid_bound` — `spread + 2 ≤ 2n`, division-free
+  - `no_representative_of_spread_gt` — the contrapositive, the form that rules
+    a strand number out
+  - `selfLinking_le` — MFW (1) alone bounds `sl = e − n` ABOVE (HOMFLY-Bennequin)
+  - `writhe_bounds` — adding them constrains the writhe at fixed n
+  - `rep_upward` / `rep_unbounded` — from a `Markov` stabilisation class: the
+    representable strand set is upward closed hence UNBOUNDED, so `max` is ∞ for
+    every link. **Proves why the braid index is a minimum and never a maximum.**
+
+**Self-correction during the build**: `writhe_bounds` needs `dmin ≤ dmax`,
+which I had not assumed. It is true (mindeg ≤ maxdeg for a nonzero HOMFLY) but
+is NOT derivable from the MFW pair, so it is now an explicit carried field
+rather than quietly assumed.
+
+**Anti-laundering**: `MFWWitness` carries the INPUTS; the bounds are computed.
+It is deliberately not a class with `braid index ≥ …` as a field — that would
+be §"Axiomatization is NOT a Proof". MFW itself remains UNPROVED here.
+
+## Remaining tiers (honest sizing)
+
+* **T2 — HOMFLY.** Not in Mathlib either. Needs the Ocneanu trace on the Hₙ
+  tower and its Markov invariance. The corpus has the trace numerically
+  (`pyhecke`) and `QOU/KnotTheory/JonesPolynomial.lean` states Jones as an
+  `opaque` Laurent polynomial + conjectural class — the same idiom extends.
+  Multi-session.
+* **T3 — MFW itself**, i.e. discharging `mfw_lower`/`mfw_upper` rather than
+  carrying them. Needs T2 plus the degree argument. Research-scale.
+* **T4 — the payoff**: compute HOMFLY(6₁) from the corpus trace, instantiate
+  `MFWWitness`, and settle `braid index(6₁) = 4` — currently literature-recalled
+  and load-bearing for `qou-xpgq`'s {5,10}. Blocked on T2.
+  CAVEAT: MFW is not always sharp. A matching upper bound settles it; a gap
+  does not.
