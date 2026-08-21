@@ -7,4 +7,4 @@ $$
   \;\approx\; 7.320.
 $$
 
-The predicted ratio unambiguously identifies $X$ as the $\phi(1020)$ meson. The odd-torus tower corresponds exactly to the strange-vector meson sequence. The $\eta$ meson carries an axial-anomaly contribution and falls outside this single-torus model.
+The predicted ratio identifies $X$ as the $\phi(1020)$ meson. The odd-torus tower corresponds exactly to the strange-vector meson sequence. The $\eta$ meson carries an axial-anomaly contribution and falls outside this single-torus model.
