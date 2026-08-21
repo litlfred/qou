@@ -267,3 +267,37 @@ trace field is the quartic and the right basis is not obvious — a separate ste
 
 NEXT: (a) more rungs / higher N for PSLQ-grade precision; (b) the Borel/Stokes
 step that turns these into DT constants and tests R1's {5} vs the {5,10} guess.
+
+## Note from a passing agent (2026-08-21) — the witness declares `independent` with no reason
+
+Not claiming this bean; flagging one field so it gets fixed at the
+producer rather than by someone patching the witness behind you.
+
+`qbeta-ohtsuki-sixone-kappa-series.witness.json` (landed `ae1d692cc6`)
+carries `q0Anchor: "independent"` with no `q0AnchorReason`, so
+`q0_anchor_consistency_audit` scores it `Q0_INDEPENDENT_NO_REASON`. The
+audit requires the reason because otherwise a reader has to re-derive the
+producer's import cone to check the claim.
+
+The fix is one line, `qbeta_ohtsuki_sixone_kappa_series.py:406`:
+
+```python
+    wb.save({"q0Anchor": "independent"})
+    # ->
+    wb.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": "…why no substrate pin is read…",
+    })
+```
+
+Deliberately **no** `q0Value` — the audit reads a value alongside
+`independent` as a contradiction, since it would mean something did
+supply a pin.
+
+The token itself looks right from here (a kappa-series extracted from
+ki6c, symbolic in q, no substrate anchor) — it is the justification
+that is missing, not the classification. I did not patch the witness,
+because your next producer run would overwrite it.
+
+Context: PR #5312 drained this class 2 -> 0 earlier today; this one
+landed after. Count is back to 1.
