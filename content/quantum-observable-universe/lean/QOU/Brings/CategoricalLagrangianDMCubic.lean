@@ -174,7 +174,7 @@ structure BringHKData (R : Type*) [CommRing R] where
     No instance is supplied — the honest open state of the cubic-condition
     conjecture. -/
 -- Ref: [donagi-markman1994] https://arxiv.org/abs/alg-geom/9408004 §1
--- Ref: [donagi1997swintegrable] https://arxiv.org/abs/alg-geom/9705010
+-- Ref: [donagi1997] https://arxiv.org/abs/alg-geom/9705010
 -- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
 class QDonagiMarkmanCubicCondition {R : Type*} [CommRing R]
     (F : QLagrangianFibration R) : Prop where
@@ -292,7 +292,7 @@ theorem categorical_lagrangian_dm_cubic {R : Type*} [CommRing R]
     here.  The earlier `symbol D_q = recurrenceKernelLead κ` is a tautological
     re-encoding of the recurrence; nothing above supplies the independent
     geometric side, and this class must NOT be discharged by a fit. -/
--- Ref: [donagi1997swintegrable] https://arxiv.org/abs/alg-geom/9705010
+-- Ref: [donagi1997] https://arxiv.org/abs/alg-geom/9705010
 -- Ref: [grassi-gu-marino2019qsw] https://doi.org/10.1007/JHEP07(2020)106
 -- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic;
 --      QOU.Machinery.QProlongation.recurrenceKernelLead;

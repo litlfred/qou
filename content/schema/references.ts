@@ -12514,7 +12514,7 @@ export const references: Reference[] = [
     note: "PDF library/arxiv-2607.29018v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
   }),
   ref({
-    id: "arxiv-hep-ph-0103325v4",
+    id: "gavrilik2001",
     library: {
       docId: "arxiv-hep-ph-0103325v4",
       dir: "library/arxiv-hep-ph-0103325v4",
@@ -12526,8 +12526,9 @@ export const references: Reference[] = [
     },
     type: "article",
     title: "Quantum algebras in phenomenological description of particle properties",
+    author: [{ family: "Gavrilik", given: "A. M." }],
     URL: "https://arxiv.org/abs/hep-ph/0103325",
-    note: "PDF library/arxiv-hep-ph-0103325v4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+    note: "PDF library/arxiv-hep-ph-0103325v4/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Id was the doc-id `arxiv-hep-ph-0103325v4`, a machine fallback: the byline is 'A.M. Gavrilik a' with the Elsevier affiliation letter welded to the surname, so no author parsed and the entry captured abstract prose instead. Nothing cited that id; a Lean proof cited `gavrilik2001`, which resolved to nothing. Renamed to the key in use and the author filled from page 1. Year 2001 is the arXiv submission (hep-ph/0103325, March 2001); the v4 stamp reads 2002.",
   }),
   ref({
     id: "kleinkreisler1996",
