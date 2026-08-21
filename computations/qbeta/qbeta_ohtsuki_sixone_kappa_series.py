@@ -159,6 +159,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Raise precision at module scope, ABOVE the constants below.
+#
+# `VOL_6_1` carries 46 significant digits. An `mp.mpf` built from a string is
+# fixed at whatever `mp.mp.dps` is when it is CONSTRUCTED, which at import is
+# the mpmath default of 15 — so the constant was already truncated before any
+# code touched it, and the `mp.mp.dps = 200` further down runs far too late to
+# help. `module_const_precision_audit` classes that LOSSY: "the value is
+# already wrong when built".
+#
+# This left BOTH the import-time-dps ratchet and the module-const gate red on
+# `main` corpus-wide (a single offender, this line). `set_compute_dps()` is
+# idempotent and is the fix the audit itself prescribes.
+set_compute_dps()
 
 # ki6c printed values for the MIRROR 6̄₁ (Theorem 1.1 + p.15), ~6 digits.
 KI6C_SIGMA_BAR = mp.mpc("0.5035603", "-1.08078")
