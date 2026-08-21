@@ -88,7 +88,34 @@ GATES=(
   # Counts shrink, never grow. Drain triage is bean qou-ad4t; the category to
   # identify first is the probe that records an EXPECTED negative, since every
   # such witness teaches readers that red is normal.
-  "witness failed-assertion ratchet|computations/witness_failed_assertion_audit.py|--strict|yes|yes"
+  #
+  # ADVISORY ON ARRIVAL, AND THIS IS THE FLIP-TO-BLOCKING NOTE.
+  # ----------------------------------------------------------
+  # FLIP TO BLOCKING WHEN THE NEW-OFFENDER COUNT REACHES 0 — i.e. when a plain
+  # run reports no witness outside the baseline. Same terms as the
+  # audits-tree entry above, and the same precedent this file set for its
+  # red-on-arrival provenance gate.
+  #
+  # It was authored BLOCKING and green at 111. Between authoring and merge,
+  # `main` gained a 112th (`computations/probes/qbeta-habiro-residual.witness.json`,
+  # `Q_A_witness_matches_live_single_wrap computed=29.959 expected=0.0
+  # tolerance=1.0`, landed by ae571e445d). Shipping it blocking would therefore
+  # have made THIS SCRIPT exit 1 on `main` for every other agent — over a
+  # witness that has nothing to do with the branch introducing the gate.
+  #
+  # That is the failure this gate exists to prevent, arriving one level up: a
+  # preflight that is red for reasons you did not cause is a preflight you
+  # learn to skip. Advisory keeps the signal and costs nobody a red run.
+  #
+  # The two shortcuts were BOTH refused, and neither should be taken later:
+  #   * do NOT add the offender to the baseline — the ratchet drains and never
+  #     grows (AGENTS.md), and a baseline that absorbs each new arrival is not
+  #     a ratchet;
+  #   * do NOT "fix" qbeta-habiro-residual to clear this — it is a 30x
+  #     residual, not a tolerance nudge, and it belongs to the live qbeta
+  #     proton re-pin arc (#5386). Editing it steps on a sibling mid-flight.
+  # Drain owners: bean qou-6ort (the dps defect) and the qbeta re-pin arc.
+  "witness failed-assertion ratchet|computations/witness_failed_assertion_audit.py|--strict|yes|no"
   # Blocking, and GREEN as of the commit that added it (0 candidates across
   # 273 numpy-importing files) — which is exactly when a gate is safe to make
   # blocking, because it can then only ever fire on a NEW regression.
