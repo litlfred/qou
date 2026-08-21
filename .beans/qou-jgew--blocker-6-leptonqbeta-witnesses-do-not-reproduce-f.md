@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:03:21Z
-updated_at: 2026-08-21T22:49:51Z
+updated_at: 2026-08-21T22:52:36Z
 ---
 
 ## What was measured
@@ -198,3 +198,29 @@ so the B population is larger than either PR alone shows. If a migration off
 B happens, both sets belong in it.
 
 Posted as https://github.com/litlfred/qou/pull/5430#issuecomment-5376190909
+
+
+### Negative result: A is NOT explained by a mis-transcribed Vol(4_1) either
+
+Given this session found seven wrong hand-typed Vol(4_1) values, the obvious
+next hypothesis was that A = Vol_bad/ratio for one of them. Tested by
+inverting for the Vol that WOULD produce A:
+
+    ratio 206.7682830 (2018)  ->  implied Vol = 2.029883212924203479151486
+    ratio 206.7682827 (2022)  ->  implied Vol = 2.029883209979046924955691
+    ratio 206.7682826 (2014)  ->  implied Vol = 2.029883208997328073557093
+
+    true 2*Cl_2(pi/3)         =  2.029883212819307250042405
+    the bad 8-file literal    =  2.029883212819307250011597804990
+    VOL_FIGURE_EIGHT (was)    =  2.029883212819307
+
+The closest (2018) diverges from the true value at digit 11 -- far coarser
+than any of the mis-transcriptions found this session, all of which are
+correct to at least 16. So no combination of a published muon ratio with a
+Vol(4_1) seen in this corpus produces A.
+
+A is also not the proton solve (that is 1.1099785827513808, 11.5 ppb away).
+
+**So A's provenance is genuinely unreconstructed**, not merely unfashionable.
+Recording the refutation so the next agent does not spend the same hour on
+the same three candidates. Resolving it is #5430's scope, not this bean's.
