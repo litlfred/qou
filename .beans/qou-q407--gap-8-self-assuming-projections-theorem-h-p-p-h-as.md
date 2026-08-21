@@ -162,3 +162,58 @@ descended parts first — but that is a different theorem from the one claimed.
 - [ ] Consider an unused-binder heuristic: every one of the 27 has hypotheses
       that never appear in the conclusion. Not sufficient on its own, but a
       cheap corpus-wide pre-filter for the shapes no regex will catch.
+
+---
+
+## 2026-08-21, dispositions applied — 27 → 22, all compile-verified
+
+**Group (E) did not need a ruling.** The corpus had already answered it:
+`QOU.AlgebraicSubstrate.AtomicityJetIndependence` records that "the block's
+`axiom ordering_extends` is tautological there" and recovers the genuine
+extension leg as `ltAt_extends`, derived from `level_mono`. I mirrored that
+accepted precedent in `JetOrder.lean`'s own vocabulary — `degLexAt n` for the
+level-restricted order, and `ordering_extends : m ≤ n → degLexAt m a b →
+degLexAt n a b`. The levels are alphabet bounds; the docstring's "embedding"
+never existed. Proved.
+
+**Group (B) taken as B1 (delete).** Both were conventions of
+`binding-k-enumerator` written as results, neither had any caller, and both
+conventions are now recorded as prose in the file. B2 was rejected on the
+grounds given in the brief: a definition existing only to be echoed is the
+same defect one level up.
+
+**`nuclear_knot_classification` could not be deleted** — it is the `lean.ref`
+target of `prop:nuclear-knot-classification`. Its classification table existed
+only in constructor comments; transcribed to `nuclearKnotType` and proved, so
+`hA` now does work. Added `bindingScale_of_borromean`, which is the
+proposition's own title and was not previously derivable.
+
+**`wenzl_annihilator` weakened to what the file supports**: `∃ j ≤ firstCol,
+qInt ζ j = 0`, proved from its own `qInt_four_eq_zero`. The character
+statement stays open and is now documented as open rather than implied proved.
+
+Verification: every touched file compiles clean under `lean_leanpath`. Two
+container-cache gaps had to be cleared first (19 stale UGB oleans; four missing
+`QOU.Mass.*` / `QOU.MathlibExt.*` oleans) — neither was a corpus defect.
+
+### Remaining: 22 (9 self-assuming, 13 trivial-existential)
+
+Groups (A), (C) and (D) are untouched and unchanged in character. Of the 13
+trivial-existentials, **three are `lean.ref` targets and must be restated
+rather than deleted** (`knot_factor_spectral_form`, `habiro_integral`,
+`spectral_decomposition_qvalue`); the other ten have no reference beyond their
+own definition site. That check is done, so the next pass is mechanical.
+
+### The unused-binder heuristic: implemented, measured, rejected as a gate
+
+854 hits corpus-wide; 447 requiring a relation-bearing binder — ~15% of
+provable declarations. Ordinary theorems about global constants mention
+globals, not binders. Shipped behind `--heuristic`, off by default, as a triage
+aid only. Recorded rather than dropped because the negative is the useful part.
+
+## Next
+
+- [ ] Groups (A)/(C)/(D) — mechanical now that ref-targeting is known
+- [ ] Restate the three ref-bound trivial-existentials
+- [ ] Consider wiring the detector into `lean-vacuity-axiom-audit.ts` as a
+      `proof-self-assuming` criterion (the original audit's follow-up)

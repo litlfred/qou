@@ -158,16 +158,39 @@ theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by
   rw [if_neg hnei, zpow_neg, zpow_natCast, h4]
   norm_num
 
-/-- **Wenzl annihilator at `q = ζ` (level-2 SU(2) Verlinde truncation)**.
+/-- **The Wenzl truncation boundary is reached at first-column length
+    `≥ 4`**: some quantum integer at or below that length vanishes at
+    `q = ζ`.
 
-    For any partition `λ` with first-column length `≥ 4`, the Hecke
-    character `χ^λ` at `q = ζ` has zero quantum trace — the categorical
-    content of the universal `Φ_8` cancellation at `M = 7`. Stated as a
-    structural target; a full proof needs the Wenzl projector machinery
-    not yet in Mathlib. -/
-theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :
-    ∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0 :=
-  -- Ref: [wenzl1987] §3 Theorem 3.1; [jones1987] §5; [witten1989] §4.
-  ⟨0, rfl⟩
+    This is the part of the level-2 SU(2) Verlinde statement this file
+    can actually support, and it follows from its own
+    `qInt_four_eq_zero`.
+
+    **Still open, and deliberately not claimed here.** The full
+    statement — that for any partition `λ` with first-column length
+    `≥ 4` the Hecke character `χ^λ` has zero quantum trace at `q = ζ`,
+    the categorical content of the universal `Φ_8` cancellation at
+    `M = 7` — needs the Wenzl projector machinery, which is not in
+    Mathlib and not in this corpus. There is no `χ^λ` in scope to state
+    it about.
+
+    **2026-08-21 (bean `qou/q407`).** The previous version was
+
+    ```lean
+    theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :
+        ∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0 := ⟨0, rfl⟩
+    ```
+
+    which says a field has a zero. `firstCol` and `_h` were unused, so it
+    held at first-column length 1 exactly as at 4, and it carried the
+    three citations below while proving nothing any of them says. The
+    docstring's "stated as a structural target" was accurate about the
+    intent and did not stop the declaration from reading as proved to
+    every consumer and every gate. -/
+-- Ref: [wenzl1987] §3 Theorem 3.1; [jones1987] §5; [witten1989] §4.
+theorem wenzl_annihilator (hζ : IsPrimitiveRoot ζ 8)
+    (firstCol : ℕ) (h : 4 ≤ firstCol) :
+    ∃ j ≤ firstCol, qInt ζ j = 0 :=
+  ⟨4, h, qInt_four_eq_zero hζ⟩
 
 end QOU.BraidKnot.Zeta8Witness

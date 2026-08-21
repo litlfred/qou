@@ -358,3 +358,73 @@ binder groups.
 That is twice in one tool that a parsing limit silently shrank the reported
 set. Both were invisible for the same reason: nothing distinguished "could not
 read this" from "read it and it was fine".
+
+## 2026-08-21, dispositions applied — 27 → 22
+
+Five discharged, each by the §1a option its own evidence pointed to. No
+declaration was rewritten to say something the corpus did not already claim.
+
+### Proved: 3
+
+- **`universal_ilp_selects_minimum`** — see above.
+- **`ordering_extends`** (`JetOrder.lean`). Group (E) needed no ruling in the
+  end: **the corpus had already answered it.**
+  `QOU.AlgebraicSubstrate.AtomicityJetIndependence` records that "the block's
+  `axiom ordering_extends` is tautological there", because the ordering is one
+  global relation whose levels are restrictions, and recovers the genuine
+  extension leg as `ltAt_extends`, derived from `level_mono`. Restated in this
+  module's vocabulary: `degLexAt n a b := degLexNat a b ∧ (∀ g ∈ a, g < n) ∧
+  (∀ g ∈ b, g < n)`, and `ordering_extends : m ≤ n → degLexAt m a b →
+  degLexAt n a b`, proved from monotonicity of `<`. The levels are alphabet
+  bounds; the docstring's "embedding" never existed.
+- **`nuclear_knot_classification`**. The classification table existed **only in
+  end-of-line comments** on the `NuclearKnotType` constructors, so nothing in
+  Lean connected `(Z,N)` to a knot type and the theorem could not be about the
+  classification. Transcribed the comments into `nuclearKnotType (Z N : ℕ)`
+  and proved `4 ≤ Z + N → nuclearKnotType Z N = .borromean` — `hA` now does
+  work. Added `bindingScale_of_borromean`, which is the proposition's own
+  title ("closure type determines binding scale") and was not previously
+  derivable. Could **not** be deleted: it is the `lean.ref` target of
+  `prop:nuclear-knot-classification`.
+
+### Deleted: 2
+
+- **`length_bound_necessary`**, **`structurallyValidBinding_necessary`**
+  (group (B)). Conventions of `binding-k-enumerator` written in the grammar of
+  results — the first's docstring conceded "excluded from the search *by
+  hypothesis*". Both conventions are now recorded as prose in
+  `PSDFeasibilityProxy.lean` where they belong. Neither had a caller: the only
+  corpus reference to either name was its own definition site.
+
+  The alternative — define `inEnumeratorSearchSpace` and re-prove
+  `¬bound → ¬inSpace` by `id` — was rejected: the definition would exist only
+  to be echoed, which is the same defect one level up.
+
+### Weakened to what is actually supported: 1
+
+- **`wenzl_annihilator`**. Was `∃ x : R, x = 0`, i.e. a field has a zero, with
+  `firstCol` and `4 ≤ firstCol` unused and three literature Refs attached. Now
+  `∃ j ≤ firstCol, qInt ζ j = 0`, proved from the file's own
+  `qInt_four_eq_zero` — the Wenzl truncation boundary being reached, which is
+  the part of the claim this file can support. The full character statement
+  (`χ^λ` has zero quantum trace at `q = ζ`) is documented as still open: there
+  is no `χ^λ` in scope to state it about.
+
+### Which of the rest can be deleted, and which cannot
+
+Checked every remaining `trivial-existential` for `lean.ref` targeting. Three
+are bound to content blocks and must be **restated, not deleted** —
+`knot_factor_spectral_form`, `habiro_integral`,
+`spectral_decomposition_qvalue`. The other ten have no reference beyond their
+own definition site.
+
+### The unused-binder tell does not generalise — measured
+
+All 27 findings shared a property: hypotheses that never appear in the
+conclusion. As a corpus-wide filter that fires **854** times (~28% of provable
+declarations); requiring at least one relation-bearing binder brings it to
+**447**, still ~15%. Ordinary theorems about global constants mention globals
+rather than binders, and that is not a defect. So it ships behind
+`--heuristic`, off by default, as a triage aid — **not** as a gate. Recorded
+because the negative is worth knowing: the obvious generalisation of the tell
+does not work.

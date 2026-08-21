@@ -80,3 +80,60 @@ mechanical check's.
 - [ ] Owner decision on `prop:mass-coefficient-shadow-price`
 - [x] Check `qou/pin3` against this — **different**, see above
 - [ ] Re-read the `a_K` extraction chain for other divisions by `y₀*`
+
+---
+
+## 2026-08-21 — confirmed against the corpus's own committed numerics
+
+The ℚ(q) analysis above was symbolic. `computations/a-K-via-lp-dual-hecke-basis.witness.json`
+is the committed f64 solve of the same LP, and it agrees **exactly**, for both
+atoms:
+
+| predicted in ℚ(q) | witness (proton and neutron) |
+|---|---|
+| `y₀* = 0`, forced by the radical | `y0_star = -0.0` |
+| `s = e₀`, the unique non-negative certificate for `q > 0` | `y_star = [1.0, 0, 0, 0, 0, 0]` |
+| optimal value `n_target · y₀* = 0` | `primal_obj ≈ -5e-11`, `dual_obj = 0.0` |
+| — | `chi_y_sum = 1.0`, `sc_y_sum = 0.0` |
+
+So this is not a symbolic curiosity that numerics might contradict. The numerics
+already showed it and were read as a solver artifact.
+
+### The sharper consequence for `prop:mass-coefficient-shadow-price`
+
+Re-reading the block: it claims `c_λ = y_λ* · m_e`, where `y_λ*` is the dual of
+the **Frobenius** constraint on Wedderburn block `λ` — *not* the net-constraint
+dual `y₀*`. My earlier note conflated the two, which understated the problem.
+
+`y_star = e₀` says **every Frobenius shadow price except index 0 is exactly
+zero**, and index 0 is `𝟙`, the identity element — not a partition block at all.
+So if mass coefficients are Frobenius shadow prices, then on this LP **all but
+one coefficient is zero**. That is a stronger and more direct contradiction of
+the block than the `y₀* = 0` observation, and it does not depend on the
+NF-index → Wedderburn-block assignment being exact (the script's own comment
+calls that assignment "approximate").
+
+### A tension worth flagging, not resolving
+
+`x_star[0] = -1000000.0` in the witness — exactly `-M_bound`. **The box binds at
+the solver's optimum.** Bean `qou/0tjt` concluded the box is non-binding at `x*`,
+and `operator_selection_lp.lean` drops the box on that basis.
+
+Both can be true without contradiction: the optimal face here is large (I showed
+the radical direction `x* = c·v` is also optimal, with every Frobenius constraint
+tight and the box slack), so the LP has many optima and the solver landed on a
+box vertex while `0tjt` reasoned about a different one. The *value* and the
+*duals* — which are what the content claims rest on — agree either way. But
+"the box is non-binding at x*" is true of a particular `x*`, not of the LP, and
+the Lean's justification for dropping the box should say so.
+
+## Next
+
+- [ ] **Owner ruling** on `prop:mass-coefficient-shadow-price`, now with the
+      numerics confirming the symbolics. The options are unchanged — retract /
+      restate, move the extraction off the LP, or change where `n_target`
+      enters — but the evidence is no longer contestable as a precision artifact.
+- [ ] Re-word the box justification in `operator_selection_lp.lean` and in
+      `qou/0tjt`: non-binding **at the radical optimum**, not at every optimum.
+- [ ] Re-read the `a_K` chain for other divisions by `y₀*` or by a `y_λ*` that
+      is now known to be zero.

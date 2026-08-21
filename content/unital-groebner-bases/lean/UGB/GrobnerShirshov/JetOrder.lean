@@ -200,18 +200,47 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
 
 /-! ### Ordering extends through the jet tower -/
 
-/-- **Compatibility lemma**: when a deg-lex comparison has already
-    been established for two descended monomials, it is preserved
-    unchanged by the jet embedding (which maps level-`n` generators
-    to the first `numGens` indices at level `n+1`).
+/-- The level-`n` restriction of deg-lex: a comparison between two
+    monomials both drawn from the alphabet `{0, …, n-1}`.
 
-    The substantive content is that the embedding is order-preserving;
-    this lemma records the formal consequence for reuse at call sites.
+    This is the `∧ ∀ g ∈ a, g < n` shape already used by
+    `wellfounded_at_level` below, named so the extension leg can be
+    stated about it.  It mirrors `JetCompatibleOrder.ltAt` in
+    `QOU.AlgebraicSubstrate.AtomicityJetIndependence`. -/
+def degLexAt (n : ℕ) (a b : List ℕ) : Prop :=
+  degLexNat a b ∧ (∀ g ∈ a, g < n) ∧ (∀ g ∈ b, g < n)
 
-    Reference: [manuscript] §3/ordering-jet-compatibility. -/
+/-- **Compatibility lemma (extension leg).** A comparison established at
+    level `m` persists at every later level `n ≥ m`: the ordering itself
+    is one global relation, and the alphabet bound only weakens as the
+    jet tower grows.
+
+    **2026-08-21 (bean `qou/q407`).** The previous version was
+
+    ```lean
+    theorem ordering_extends (a b : List ℕ) (hab : degLexNat a b) :
+        degLexNat a b := hab
+    ```
+
+    — `theorem (h : P) : P := h`. Its docstring claimed "the substantive
+    content is that the embedding is order-preserving", but there is no
+    embedding in this module: monomials are bare `List ℕ` at every level
+    and `degLexNat` never mentions an alphabet bound, so nothing was
+    being mapped and nothing could be preserved.
+
+    The corpus had already worked out where the real content lives.
+    `QOU.AlgebraicSubstrate.AtomicityJetIndependence` observes that "the
+    block's `axiom ordering_extends` is tautological there" because the
+    ordering is one global relation, and recovers the genuine extension
+    leg as `ltAt_extends`, derived from `level_mono`. This is that same
+    statement in this module's vocabulary: the levels are alphabet
+    bounds, and monotonicity of `<` supplies the extension. -/
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-theorem ordering_extends (a b : List ℕ) (hab : degLexNat a b) :
-    degLexNat a b := hab
+theorem ordering_extends {m n : ℕ} (hmn : m ≤ n) {a b : List ℕ}
+    (hab : degLexAt m a b) : degLexAt n a b :=
+  ⟨hab.1,
+   fun g hg => Nat.lt_of_lt_of_le (hab.2.1 g hg) hmn,
+   fun g hg => Nat.lt_of_lt_of_le (hab.2.2 g hg) hmn⟩
 
 /-- **Well-foundedness at each level**: within the alphabet
     `{0, …, n-1}`, deg-lex has no infinite descending chains. -/

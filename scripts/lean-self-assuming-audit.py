@@ -175,6 +175,9 @@ def conclusion_colon(sig: str) -> int:
 
 
 IDENT = re.compile(r"[A-Za-z_][A-Za-z0-9_']*")
+#: A binder type containing a relation/quantifier reads as a hypothesis
+#: rather than a plain type or instance argument.
+PROPISH = re.compile(r"[=≤<∈¬∀∃≥→]")
 #: `h`, `by exact h`, `exact h`, `by exact (h)` — all identity proofs when
 #: `h` names a binder whose type is the conclusion.
 EXACT_IDENT = re.compile(
@@ -225,7 +228,47 @@ def trivial_existential_witness(proof: str, conclusion: str):
     return None
 
 
-def analyze(path: Path):
+def conclusion_mentions_no_binder(binders: dict, conclusion: str):
+    """Names bound by the declaration but absent from its conclusion, or None.
+
+    A heuristic, deliberately reported as its own low-confidence category.
+    Hypotheses routinely fail to appear in a conclusion — `hA : 4 ≤ Z + N`
+    does not occur in `nuclearKnotType Z N = .borromean`, and that is a
+    perfectly good theorem. What is suspicious is the stronger condition
+    checked here: the conclusion mentions **none** of the declaration's
+    binders at all, so it cannot be a statement about the objects the
+    declaration is parameterised by.
+
+    Measured on the 27 confirmed findings, this is what separates the
+    harmful from the benign. `wenzl_annihilator`'s conclusion
+    `∃ x : R, x = 0` names no binder — its `firstCol ≥ 4` hypothesis is
+    inert — whereas `archimedean_eval_well_defined`'s `∃ y, evalAtQZero p = y`
+    does mention `p`, and is merely a definition restated.
+
+    **It does not generalise, and the measurement says so.** Corpus-wide
+    it fires 854 times without the Prop-ish requirement and 447 with it —
+    roughly 15% of all provable declarations. Perfectly ordinary theorems
+    about globally-defined constants mention globals rather than binders,
+    and that is not a defect. So this is **not gate material**, and it is
+    deliberately behind `--heuristic` rather than on by default: it is a
+    triage aid for a human working through a file, not a check anything
+    should fail on. Recorded rather than dropped because the negative is
+    worth knowing — the obvious generalisation of the tell does not work.
+    """
+    if not binders:
+        return None
+    tokens = set(IDENT.findall(conclusion))
+    if any(nm in tokens for nm in binders):
+        return None
+    # Require at least one binder that actually looks like a HYPOTHESIS.
+    # Without this the rule fires on every ordinary theorem about global
+    # constants — measured 854 hits corpus-wide, ~28%, unusable as a gate.
+    if not any(PROPISH.search(ty) for ty in binders.values()):
+        return None
+    return sorted(binders)
+
+
+def analyze(path: Path, report_heuristic: bool = False):
     raw = path.read_text(encoding="utf-8", errors="replace")
     src = strip_comments(raw)
     out = []
@@ -263,11 +306,19 @@ def analyze(path: Path):
         wit = trivial_existential_witness(proof, conclusion)
         if wit is not None:
             out.append({**rec, "category": "trivial-existential", "hypothesis": wit})
+            continue
+        if report_heuristic:
+            inert = conclusion_mentions_no_binder(binders, conclusion)
+            if inert is not None:
+                out.append({**rec, "category": "conclusion-mentions-no-binder",
+                            "hypothesis": ", ".join(inert)})
     return out
 
 
 def main():
-    roots = sys.argv[1:] or ["content"]
+    argv = [a for a in sys.argv[1:] if a != "--heuristic"]
+    heuristic = "--heuristic" in sys.argv[1:]
+    roots = argv or ["content"]
     hits = []
     scanned = 0
     for root in roots:
@@ -278,7 +329,7 @@ def main():
                 continue
             scanned += 1
             try:
-                hits.extend(analyze(p))
+                hits.extend(analyze(p, report_heuristic=heuristic))
             except Exception as e:  # noqa: BLE001
                 print(f"  ! {p}: {e}", file=sys.stderr)
     by_cat: dict = {}
@@ -291,7 +342,10 @@ def main():
         for h in sorted(by_cat[cat], key=lambda x: (x["file"], x["line"])):
             print(f"  {h['kind']} {h['decl']}")
             print(f"    {h['file']}:{h['line']}")
-            if cat == "self-assuming":
+            if cat == "conclusion-mentions-no-binder":
+                print(f"    ⊢ {h['statement']}")
+                print(f"    binds {h['hypothesis']} — none of which the conclusion mentions")
+            elif cat == "self-assuming":
                 print(f"    ({h['hypothesis']} : {h['statement']})  ⊢  {h['statement']}")
             else:
                 print(f"    ⊢ {h['statement']}   witnessed by ⟨{h['hypothesis']}, rfl⟩")
