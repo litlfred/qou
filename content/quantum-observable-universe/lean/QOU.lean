@@ -944,6 +944,7 @@ import QOU.Mathlib.SchenstedShapeRun
 import QOU.Mathlib.SchenstedAddable
 -- RSK inverse, brick 23: the counting bridge from column-strictness.
 import QOU.Mathlib.SchenstedStandardCount
+import QOU.Mathlib.SchenstedReinsertRow
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
