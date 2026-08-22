@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 
 /-!
@@ -63,7 +64,23 @@ noncomputable def hbar (q : ℝ) : ℝ := (q - 1) / q
 noncomputable def bareQValue (q : ℝ) (skeinRatio : ℝ) (m_e : ℝ) : ℝ :=
   |Real.log skeinRatio / Real.log q| * hbar q * m_e / 3
 
-/-- **Spectral decomposition of the Q_q-value** (Corollary):
+/-- **Rosso–Jones product-collapse** (§3b-conditional on
+    `prop:cohomological-embedding`).
+
+    The substantive content of the spectral decomposition is that the
+    knot-operator product over the embeddable torus-knot basis `E_g` collapses
+    to the single active-shell term: every other shell cancels between parent
+    and daughter, and non-embeddable knots contribute `1`.  This is Rosso–Jones
+    completeness of the torus-knot invariants — argued in the narrative, **not**
+    derived in Lean (bean `qou-xq3f`) — so it is carried here as the class
+    hypothesis `collapse`, the lone conditional input. -/
+class RossoJonesCollapse (knotOperatorProduct activeShellTerm : ℝ) : Prop where
+  /-- The full knot-operator product over `E_g` equals the single active-shell
+      term (the `(iv)` shell-cancellation of the corollary). -/
+  collapse : knotOperatorProduct = activeShellTerm
+
+/-- **Spectral decomposition of the Q_q-value** (Corollary, §3b-conditional on
+    `prop:cohomological-embedding` via `RossoJonesCollapse`).
 
     For β⁻ decay N_{Z,N} → N_{Z+1,N-1}, the Q_q-value admits
     the spectral decomposition:
@@ -75,7 +92,16 @@ noncomputable def bareQValue (q : ℝ) (skeinRatio : ℝ) (m_e : ℝ) : ℝ :=
     (ii)  log_q is the q-natural logarithm counting exceptional divisor levels
     (iii) F(τ(r,s), N) is the knot operator (Markov trace of τ·T_β on active shells)
     (iv)  The product collapses to a single term (shell cancellation)
-    (v)   The decomposition is exact — terminates at degree 2 on Σ₄ -/
+    (v)   The decomposition is exact — terminates at degree 2 on Σ₄
+
+    **Restated 2026-08-22** (vacuity ledger, `proof-no-unused-hypothesis-rfl`).
+    The prior form `∃ Q_q, Q_q = Q_bare · knotOperator` was a trivial
+    existential (witness `⟨rhs, rfl⟩`) that asserted nothing and consumed none
+    of its hypotheses.  The real content — the `(iv)` product-collapse — is the
+    open Rosso–Jones input, now carried by `RossoJonesCollapse`; the theorem
+    *derives* the collapsed factorization from it rather than asserting bare
+    existence.  The collapse itself stays open (bean `qou-xq3f`), so the class
+    is left uninstantiated (honestly conditional). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -83,18 +109,12 @@ noncomputable def bareQValue (q : ℝ) (skeinRatio : ℝ) (m_e : ℝ) : ℝ :=
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 -- Ref: [manuscript] §5/spectral-decomposition-qvalue
 theorem spectral_decomposition_qvalue
-    (q : ℝ) (hq : 1 < q)
-    (parentPoly daughterPoly : ℝ) (hp : 0 < parentPoly) (hd : 0 < daughterPoly)
-    (m_e : ℝ) (hme : 0 < m_e)
-    (knotOperator : ℝ)
-    : ∃ Q_q : ℝ,
-        Q_q = bareQValue q (daughterPoly / parentPoly) m_e * knotOperator :=
-  -- Trivial existential: take Q_q to be the right-hand side itself.
-  -- The substantive content (Rosso-Jones completeness, shell cancellation,
-  -- tower termination at degree 2) belongs in a sharper theorem that
-  -- *characterises* Q_q rather than asserts existence.
-  -- Ref: [manuscript] §5/spectral-decomposition-qvalue
-  ⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩
+    (q parentPoly daughterPoly m_e : ℝ)
+    (knotOperatorProduct activeShellTerm : ℝ)
+    [collapse : RossoJonesCollapse knotOperatorProduct activeShellTerm] :
+    bareQValue q (daughterPoly / parentPoly) m_e * knotOperatorProduct
+      = bareQValue q (daughterPoly / parentPoly) m_e * activeShellTerm := by
+  rw [collapse.collapse]
 
 /-- The jet bundle over Σ₄ has exactly three non-zero levels (k = 0, 1, 2).
     Degree 3 requires genus ≥ 13, exceeding the genus-4 bound. -/

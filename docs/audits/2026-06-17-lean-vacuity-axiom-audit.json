@@ -1,10 +1,10 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-22T16:36:42.111Z",
+  "generated": "2026-08-22T20:22:27.897Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3031,
-  "files_flagged": 142,
-  "total_defects": 53,
+  "files_flagged": 141,
+  "total_defects": 52,
   "total_exempt": 123,
   "categories": {
     "proof-no-self-assuming-projection": 44,
@@ -12,8 +12,7 @@
     "proof-no-trivial-true": 2,
     "proof-no-provable-axiom": 1,
     "proof-claims-unencoded": 3,
-    "proof-no-decide-masking": 1,
-    "proof-no-unused-hypothesis-rfl": 1
+    "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
     "total": 244,
@@ -1790,7 +1789,7 @@
         "line": 203,
         "category": "proof-docstring-sorry-mismatch",
         "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem identityB_general (n : ℕ) :",
+        "snippet": "theorem identityB_general (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :",
         "decl": "identityB_general",
         "severity": "critical",
         "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
@@ -3249,17 +3248,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean": [
-      {
-        "line": 85,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-witness-with-unused-hypothesis",
-        "snippet": "theorem spectral_decomposition_qvalue",
-        "decl": "spectral_decomposition_qvalue",
-        "severity": "major",
-        "detail": "proof is `⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩`, which uses no hypothesis, yet the statement binds `hq`, `hp`, `hd`, `hme` — absent from the conclusion, so the claim holds for every value of them"
       }
     ],
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean": [
