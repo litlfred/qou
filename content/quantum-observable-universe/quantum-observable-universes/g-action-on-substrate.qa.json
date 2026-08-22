@@ -1815,6 +1815,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.048Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "Full read of the conjecture (four constraints G-1..G-4, the N_sym derivation, the verification, and the residual discussion). No negation-contrast in the .md prose; the 'categorically derived, not fitted' phrasing sits in the .ts authorNotes, outside this block's prose."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1834,6 +1849,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.089Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "'The small discrepancy suggests an incomplete specification of the constraints' introduces three concrete candidate mechanisms rather than reframing the preceding claim; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1853,6 +1883,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 345 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.130Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "Four spaced em-dashes, all of them the same heading punctuation ('**Constraint (G-1) - G-isotypic decomposition.**'). Uniform label separators in bolded headers, not sentence structure; zero load-bearing dashes in running prose."
       }
     ],
     "trap-triples": [
@@ -1872,6 +1917,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 345 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.172Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "One triple: 'a categorical correction to the vacuum volume normalization, a Plancherel weight for the electroweak block, or a Higgs-mixing correction of order O(hbar_q^2) on the Z-host'. Load-bearing - the .ts authorNotes refers back to it as 'one of the three sources above' and makes resolving one of them a promotion criterion. Substantive, not reflex."
       }
     ],
     "trap-closing-aphorism": [
@@ -1891,6 +1951,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.211Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "Ends on 'A significant number of the results below are conditional on resolving this residual. See [Table 3].' - a cross-reference closer (false-positive class 3), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1910,6 +1985,22 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.251Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "'We propose', 'We compose the traces over the components' are ordinary mathematical first-person plural. 'This derivation grounds Anchor II explicitly in categorical structures' comes closest to narrating its own significance, but it carries a real cross-reference (which anchor the derivation serves) rather than announcing emphasis.",
+        "notes": "Minor register note: 'explicitly' and 'directly' are de-hedging intensifiers doing no work here."
       }
     ],
     "trap-thesis-restatement": [
@@ -1929,6 +2020,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.291Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "The verification and residual sections add new numbers and new open routes rather than restating the derivation; the block-final sentence is a forward cross-reference to Table 3."
       }
     ],
     "trap-performed-warmth": [
@@ -1948,6 +2054,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.332Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1967,6 +2088,21 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.374Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "No maximum-strength claim. 'A significant number of the results below are conditional' is a vague quantifier rather than inflation - though Table 3 lists exactly six rows, so a count would be both shorter and stronger."
       }
     ],
     "trap-nonspeakable": [
@@ -1986,6 +2122,22 @@
         "reviewed_at": "2026-08-15T10:31:00.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:10.415Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "Longest chain is 'the symmetric-channel Frobenius trace N_sym(q) = tr_F(e_sym^EW . e_H)'; speakable.",
+        "notes": "NUMERICS RECOMPUTED (mpmath, 50 dps). Convention identified: the bracket is the BALANCED q-integer [n]_q = sum_{k} q^{n-1-2k}. At the proton pin q_0 = 1.1099785827513808: [2]_q = 2.0108969 (block quotes 2.0109, ok), [4]_q = 4.1096824 so [4]_q^2 = 16.88949, [6]_q = 6.3880866 (block quotes 6.388, ok), and [2]_q [4]_q^2 [6]_q = 216.9587226 (block quotes ~216.96, ok). Residual (213.11 - 216.9587)/213.11 = -1.80598 %, so the quoted -1.81 % is right. TWO NUMERIC DEFECTS: (i) the block writes 16.892 for [4]_q^2; the correct value is 16.8895. 16.892 is what you get by squaring a 3-figure [4]_q = 4.11 (4.11^2 = 16.8921), i.e. round-then-square. (ii) The displayed line is internally inconsistent - multiplying the three quoted literals gives 2.0109 x 16.892 x 6.388 = 216.9884, not the 216.96 stated on the same line; the 216.96 was evidently computed from unrounded values. PIN CURRENCY: the numbers do NOT distinguish the pins - proton gives 216.9587226 and muon (1.10997859555733471) gives 216.9587285, identical to 8 figures - but they DO exclude the 1.1097 rounding, which gives 216.8325 and a residual of -1.7468 % (would print as -1.75 %, not -1.81 %). So the block reproduces a full-precision q_0, either pin. Note the .ts computation.witness is computations/q-pinning-50-digit.witness.json, which is the MUON-pinned anchor, with computation.status 'not_run'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2009,5 +2161,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:08:10.415Z"
 }
