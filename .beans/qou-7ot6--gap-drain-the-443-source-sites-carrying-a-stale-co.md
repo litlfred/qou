@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-19T13:05:24Z
-updated_at: 2026-08-22T09:53:42Z
+updated_at: 2026-08-22T10:10:26Z
 ---
 
 
@@ -294,3 +294,39 @@ has blast radius), and the two `electronMass_witness` proof-body mirrors
 **Remaining: 36 code sites.** Not yet grouped -- next step is to re-run
 `--strict` and classify them the way tranche c did, one literal-group per
 commit with a per-site disposition.
+
+## 2026-08-22 (cont.) — 36 -> 23 on PR #5439
+
+Drained the `206.7682830` muon-ratio group (3 Lean sites, the ORIGINAL
+defect of this whole arc, still live where #5149 never reached), and
+marked four deliberate-exception classes that #5423 had adjudicated in
+prose but never in a form the scan could read:
+
+  - `qou_substrate/constants.py:352` AME-derived m_n (the +0.15 eV Q_beta
+    trap site)
+  - `MassDerivation.lean:164` deliberate 7-digit round, 1e-4 tolerance
+  - `codata_masses.py:55-56` sanity WINDOW BOUNDS (1-keV bands)
+  - `qou-mass/tests/test_p2_integration.py` the framework's own
+    PREDICTIONS — an intrinsic false-positive class: the better a
+    prediction gets, the more it looks like stale CODATA to this scan
+
+Two scan defects this forced: the `noqa: P31` marker required `#` and so
+was unusable in `.lean` (20 of 30 remaining sites), and `--strict` hid 16
+of its own 36 findings behind a print cap.
+
+**Remaining: 23.** Groups, with my read on each:
+
+  - `137.035999084` x4 (3 .lean + crystal_alpha_shift_pole_orders.py) —
+    the Cs-recoil determination choice. OWNER CALL pending; I left the
+    .lean ones in tranche c on the grounds that the live gap there is
+    468 ppb structural.
+  - `mass-from-generators.lean:36,52,56,60` — 2018 m_e/deuteron/helion/
+    alpha in one file; a clean single-file drain.
+  - `borromean-baryon-mass-formula.lean:146,150` — truncated m_p/m_e and
+    m_n/m_e ratios.
+  - `AtomicMass.lean:65` 931.49410242 — 2018 atomic mass unit.
+  - `b_over_m_order_probe.py:47-49` — rounded nuclear masses.
+  - `HadronicMass.lean:282,492`, `CODATAChain.lean:195`,
+    `FormLadderAnchorDominance.lean:195,198` — NOT yet inspected; the
+    FormLadder pair look like computed ladder values rather than
+    transcriptions, which would make them false positives.
