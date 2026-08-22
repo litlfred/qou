@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T17:33:45Z
+updated_at: 2026-08-22T19:39:09Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -184,3 +184,48 @@ works** — only that the proved obstruction does not close it, and where to loo
 5. M outside the braid image .............. OPEN, unexplored
 
 Probe now 8/8 (assertions 7-8 added), exact symbolic Q(q).
+
+
+## 2026-08-22 (4) — RETRACTION: route 4 closes too. It is ONE invariant.
+
+**Retracting my own entry (3) above**, which said tr_M 'escapes' the obstruction
+and named route 4 'the live route'. It escapes Z[q,q^-1] — which is what I
+checked — but NOT the field the argument needs, which I did not check before
+naming it live.
+
+tr_M(beta) = sum_lambda y_lambda(z)*chi_lambda(beta): weights rational in (q,z),
+characters Laurent in q, so **tr_M is RATIONAL in (q,z)**. And
+alpha = (z-1)h/2 = (q^2-1)(z-1)/(2q) is itself rational and NON-CONSTANT, so
+2cos(alpha) is transcendental over Q(q,z) (cos f = (e^{if}+e^{-if})/2, and e^f is
+transcendental over a rational function field unless f is constant).
+
+**No rational assembly of the Hecke/Markov data equals 2cos(alpha).** One
+statement subsumes three routes I had been arguing separately:
+  route 2  exact bridge -- rational (its 530% miss was a symptom, not the reason)
+  route 3  matrix character -- Z[q,q^-1] subset Q(q,z)
+  route 4  Markov-normalised trace -- Q(q,z)
+
+## Route table (corrected)
+
+1. z_D into alpha=(z-1)h/2 ......... PRUNED (23% vs 1.1e-5 rad window)
+2. exact Form-A/Form-B bridge ...... CLOSED by the rationality invariant
+3. M = lambda*rho(w), matrix char ... CLOSED by the rationality invariant
+4. M normalised by tr_M ............ CLOSED by the rationality invariant
+5. TRANSCENDENTAL construction ..... **OPEN — and now the ONLY route**
+6. numerical coincidence at a specialised anchor -- not excluded (identity of
+   FUNCTIONS is what is excluded; at q_0 the nearest character is 2.7e-3 away)
+
+## The direction this gives
+
+The obstruction is exactly a RATIONALITY obstruction, so what survives is
+precisely the transcendental constructions: a q-exponential, Faddeev's Phi_q, a
+holonomy/monodromy, a matrix exponential. A phase e^{i.alpha} arising as a
+HOLONOMY rather than a character value is untouched.
+
+**The honest reading is not 'the phase is impossible' but 'the phase cannot come
+from character algebra; it has to come from an exponential'** — consistent with
+alpha appearing in the corpus only ever inside a cos. That is where a derivation
+must look, and it is a much narrower target than 'derive alpha'.
+
+Probe now 10/10 (assertions 9-10 added); the boundary section is corrected in
+place rather than appended, since it said the opposite.
