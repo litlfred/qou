@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:22:10Z
-updated_at: 2026-08-22T16:12:19Z
+updated_at: 2026-08-22T19:18:49Z
 ---
 
 Follow-up to `qou-cdj8` (#5431), which surfaced the number, and to the owner's
@@ -115,3 +115,76 @@ origin is that arc's.
 `adjacent_vs_full_probe` 277, `canonical_tower` 273,
 `mass_tower_operator_valued` 208, `sublemma_2_1_deuteron_branching` 120,
 `brane_tower_isospin_diagnosis` 90. Same recipe, much smaller.
+
+
+---
+
+## LONG-TAIL TRIAGE — the count was 5 producers, it is 10, and 95% is BLOCKED
+
+Took the 1,036-field tail on the owner's go. Two corrections and one blocker.
+
+**"5 producers" was wrong — there are 10.** My earlier figure was the top five
+of a truncated list, not a count.
+
+### The tail splits, and the split is the finding
+
+**Group A — float64 all the way down. ~985 fields (95%). NOT drainable here.**
+
+    277  adjacent_vs_full_probe.py
+    273  canonical_tower.py
+    208  mass_tower_operator_valued.py
+    120  sublemma_2_1_deuteron_branching.py
+     90  brane_tower_isospin_diagnosis.py
+     17  mass_endomorphism.py
+
+Every one reads `q_parameter.Q` or `mass_endomorphism.q0`, and **both are
+Python floats**:
+
+    mass_endomorphism.q0   = 1.1099785827513808          (float)
+    q_parameter.Q          =                              (float)
+    q_parameter.Q_50_DIGIT_STR = "1.1099785827513808075916690956…"  (50 digits, RIGHT THERE)
+    hecke_core.E_0_CALIBRATION_MEV = 0.7823334093099085  (float)
+
+mpf usage across the six: **0** (except brane_tower's 4).
+
+**Converting their emit sites would be laundering.** AGENTS.md is explicit: *"A
+float64 input poisons the whole result … do not note it as a limitation and
+ship."* Writing 50-digit strings over ~16 real digits is precisely the fake
+precision the padding ratchet exists to catch. The fix belongs at the INPUT —
+`q_parameter.Q` and `mass_endomorphism.q0` carrying mpf — which is shared
+infrastructure with ~309 in-repo importers, i.e. a corpus-wide change, not a
+probe fix. **Beaned, not attempted.**
+
+**Group B — already mpf-aware. ~51 fields (5%). Drainable.**
+
+    17  m_p_borromean_verification_50dps.py
+    16  snappy_census_volume_verification.py
+    11  markov_trace_recursive.py
+     7  markov_weights_symbolic.py   <- DONE, 7 -> 0
+
+### Done: markov_weights_symbolic 7 -> 0
+
+The textbook case. It evaluated a **closed form** at a 50-digit q0 to 30 digits
+and then cast the result to a double:
+
+    float(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+
+50 in, 30 computed, 16 out — in a script whose whole point is that the value
+comes from the Markov axioms rather than a fit. Now `str()`, carrying all 30:
+`tr_M_proton_at_q0 = 1.14575969245730086968908159577`.
+
+The `markov_peel` reference stays `"1.0653062286131670"` — 17 digits, as
+recorded. Running it through a 50-digit formatter would pad 17 real digits with
+33 invented ones.
+
+### Stopped deliberately at the other three
+
+Their remaining leaks are inside `add_assertion(computed=…)` payloads and
+`tolerance=` fields, not data. Changing them risks altering assertion-comparison
+semantics for 44 fields. Rising risk, falling value — left rather than ground
+through.
+
+### State
+
+qou-mass 1,036 -> **1,029** (9 files). Baselines re-tightened; all blocking
+precision gates green.
