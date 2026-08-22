@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-22T20:14:16Z
+updated_at: 2026-08-22T20:40:40Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -355,3 +355,66 @@ map first (fixes the 14), then read the 19 `depends` individually to separate
 "computes at the pin" (class i, needs a manifest entry) from "reads a muon
 witness for its q0" (label is TRUE, remove from the register entirely). The
 second category is invisible to both tests and may be a large share of the 19.
+
+
+## 2026-08-22 (final) — the drain stalls for a REASON, and it is a bigger finding
+
+Recovered the 14 the AST heuristic lost -- **the register already carried the
+mapping** (`{witness, producer_stem}`) in the data my sweep was reading. I
+rebuilt it badly instead of using it. EIGHTH error, and the most avoidable.
+(Checked: the heuristic never mis-resolved, only ever failed silently, so the
+26 classifications stand.)
+
+Those 14 yielded 5 more "class (ii) label-only" -- so the "cheap phase is over"
+call was premature, taken from a sweep that had silently dropped 35 % of the
+population.
+
+**But all 5 read q0 BY NAME, and none is class (ii).** Two signals disagreeing
+is what exposed the real category:
+
+    qbeta_composite4_fibre_root_of_unity_probe  Q0_STR = "1.10997859555733471989…"
+    trefoil_complex_volume_probe                Q0 = Decimal("1.1099785955573347")
+
+They HARDCODE the pin. So they do not respond to the anchor, their `muon` label
+is TRUE, and dispositioning them `independent` would replace a true label with
+a false one. **19 of the 40 are like this.**
+
+### The register's premise is wrong for ~half its members
+
+It flags producers that would "resolve PROTON on re-run". A producer whose q0
+is a literal never resolves. Those 19 are not at risk of that flip at all --
+they need neither `independent` nor a manifest entry; they need to LEAVE the
+register, and the register needs to stop claiming them.
+
+### The corpus-wide finding (now its own audit + ratchet)
+
+`computations/audits/hardcoded_q0_literal_families_audit.py`:
+
+    clean (truncated or correctly rounded)   221 sites, lengths 14..70
+    DIVERGENT                                 71 sites
+      char 13   65   the `…5541805…` CODATA-stale family
+      char 18/19/20  6
+
+Precision on the CLEAN sites alone spans 56 characters for one constant.
+
+**NINTH error, caught before it shipped:** my first pass called 75 correctly-
+ROUNDED sites divergent -- it would have reported the corpus's largest correct
+family as defective. Rounding is not divergence.
+
+**And the count is SITES, not defects** -- not yet split code-that-computes vs
+documentation. The predecessor CODATA sweep made that exact mistake and had to
+correct itself ("wrong for 87 % of its own count"). Do not quote 65 as defects.
+
+## Where this leaves the drain
+
+Not "40 producers to disposition". Three separate problems:
+
+  1. ~19 hardcode the pin -> the REGISTER's filter is wrong for them; fix the
+     filter, do not relabel the producers.
+  2. ~19 genuinely depend -> real class (i), still need per-producer reads.
+  3. 71 divergent literals corpus-wide -> a migration to READING the pin, which
+     is the CODATA sweep's lesson one layer down and much larger than this bean.
+
+(3) should not ride on this bean. It wants its own arc, and it is gated on
+A-vs-C (bean qou-bred) since you cannot migrate sites to read a pin before
+ruling which pin.
