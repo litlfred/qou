@@ -99,6 +99,26 @@ contradicts itself.
 
 directly above a read that returns the muon value.
 
+## The disposition of the 5 is not uniform — and one would break under a sweep
+
+Reading each of the five for *intent* (bean `qou-v90i`):
+
+| producer | evidence | disposition |
+|---|---|---|
+| `b_over_m_order_probe` | docstring: *"Computed at the **proton-pinned** q₀"* | **read is the bug** |
+| `path4_rho_K_at_h3A` | compares against proton/neutron `ρ_K_CODATA` | **read is the bug** |
+| `q_beta_form_a_n1_extension` | comment: *"Load **CAL-2** q_0 from canonical pinning witness"* | **manifest is the bug** — CAL-2 *is* the ideal muon layer; the code is right |
+| `q1_mass_gap_probe` | reads the witness as a reference table (`plancherel_weights_n3`) *and* binds q₀ from it | **mixed** — table read legitimate, q₀ bind is not |
+| `aK_via_lp_dual_hecke_basis` | "H_3 (proton, neutron)" names the *particle*, not the pin | **ambiguous** — needs a call |
+
+This is the load-bearing observation. A mechanical *"re-pin everything
+declared `physical_proton`"* would have **broken**
+`q_beta_form_a_n1_extension`, which deliberately wants the ideal CAL-2
+pin — the same class of failure as `qou-m9xp`, where the first sweep
+attempt broke `main` for 208 producers. Two of five need the *manifest*
+changed or a human call rather than the code. Per-file reading is not
+ceremony here; it is what separates the fix from the regression.
+
 ## Relation to the trap `qou-1c4y` already names
 
 The bean already flags `wedderburn_jones_markov.y_lambda_at`, where a
