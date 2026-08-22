@@ -1097,3 +1097,8 @@ import QOU.Mathlib.RothHeightBound
 -- mahlerMeasure.  Cornerstone of the Jensen form, and the measurement that reversed this
 -- arc's recommendation from "bare-hands Gelfond" to "fill the bridge upstream".
 import QOU.Mathlib.MahlerJensen
+-- Heights of a disjoint-variable product.  For separated variables the coefficients of a
+-- product ARE the products of the coefficients, so the height is exactly multiplicative —
+-- which makes the height half of Roth's induction step elementary rather than a Gelfond
+-- application, correcting bean qou-4lbh's third prediction of where the cost sits.
+import QOU.Mathlib.SeparatedHeight

@@ -412,3 +412,70 @@ Recording the prediction so it can be checked: (1) is a day of `ℤ`-to-`ℂ` bo
 where the remaining difficulty actually sits. This bean has mis-placed the difficulty twice
 already — once onto the `m = 1` base case, once onto "bare-hands vs upstream" — so treat
 that prediction as a claim to be measured, not a plan.
+
+---
+
+## ⚠ 2026-08-22 — THIRD CORRECTION: the induction step does not need Gelfond
+
+This bean's standing prediction — repeated in the entry above — is that the height half of the
+induction step needs Gelfond's inequality. **For the step this repo has actually formalised,
+that is wrong.**
+
+New module `QOU/Mathlib/SeparatedHeight.lean`, five declarations plus two non-vacuity
+examples, all `[propext, Classical.choice, Quot.sound]`, built by name with the `.olean`
+deleted, no linter output:
+
+```
+coeff_sumElim_rename_mul     coeff (i ⊞ j) (U·V) = coeff i U * coeff j V
+abs_coeff_mul_separated_le   H(U·V) ≤ H(U)·H(V)
+abs_coeff_le_of_mul_separated  H(U) ≤ H(U·V)   for V ≠ 0 over ℤ
+```
+
+### Why Gelfond is the wrong tool here
+
+Gelfond bounds the heights of factors of a product **in shared variables**, where the
+coefficient of a monomial is a *sum* over many splittings and cancellation is possible. That
+is what makes it an inequality with a `2^{deg}` in it, and what makes it need the Mahler
+measure.
+
+The separated-Wronskian factorization `W = U(x)·V(y)` (`det_separated_wronskian`) is not that.
+The variable groups are **disjoint**, so the monomials `x^i y^j` are pairwise distinct and the
+coefficient of `x^i y^j` in the product **is** `uᵢvⱼ` — one term, no sum, no cancellation.
+Height is therefore *exactly* multiplicative, and `H(U) ≤ H(W)` follows from nothing more than
+"a non-zero integer has absolute value at least one":
+
+```
+|uᵢ| ≤ |uᵢ|·|vⱼ| = |coeff (i ⊞ j) W| ≤ H(W)     for any j in the support of V.
+```
+
+The middle step is an identity, not an estimate.
+
+### ⚠ How far this goes, and how far it does not
+
+It says Gelfond is unnecessary **for this step**. It does **not** say Gelfond is unnecessary
+for Roth's lemma. Whether some other step needs it is **unmeasured**, and given that this bean
+has now mis-placed the difficulty three times, it should be measured rather than asserted:
+
+1. onto the `m = 1` base case (wrong — that direction is free algebra);
+2. onto "bare-hands Gelfond vs upstream Mahler" (wrong — upstream was cheaper);
+3. onto the induction step's height half (wrong — disjoint variables don't mix).
+
+The Mahler machinery in `MahlerJensen.lean` is proved, axiom-clean, and costs nothing to
+keep; several of its results (`M(qX−a) = max(‖q‖,‖a‖)` in particular) are independently
+useful. What should not be kept is the claim that a *named* step is blocked on it.
+
+### Revised open list
+
+| step | status |
+|---|---|
+| index, Wronskians, bounded-order certificate, degree bound | done |
+| `m = 1` base case | done |
+| separated-Wronskian factorization | done |
+| **heights of the separated factors** | **done — this entry, and elementary** |
+| Mahler bridges (Jensen form, coefficient bound, `H ≤ 2^d M`) | done, but not needed above |
+| **assembling the induction on the number of variables** | **open — and now the real gap** |
+| Roth's lemma proper, then Roth's theorem | open |
+
+The next thing to measure is the assembly itself: what quantitative statement the induction
+carries, and whether every ingredient it names is present. That is a scoping task, not a
+proving one, and it should come before more Mahler work.
