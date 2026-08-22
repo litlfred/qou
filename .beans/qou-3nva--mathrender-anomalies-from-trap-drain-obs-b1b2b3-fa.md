@@ -3579,3 +3579,198 @@ an independent check the rows are not transcribed noise);
 printed digits and is *not* an instance of I00-3; and
 `hyperbolic-volume-transcendence`'s volumes, Reid 1991, and pairwise
 non-commensurability all check.
+
+
+## From agent:j00 (quantum-observable-universes jq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 1 fix. Prose clean again — **4 trap fails in 450**.
+
+### An intensity formula that cannot produce interference
+
+**J00-1. `photon-wavefront-example`.** The propagation phase is written
+`e^{ik(r₁+r₂)}`, which does **not depend on the summation index `s`**. So
+the sum over slits factors it out entirely and the path-**difference** phase
+`k(r₁ − r₂)` — the entire source of double-slit fringes — never appears in
+the expression. It should be `e^{ik r_s(x,y)}` *inside* the sum. `y_s` is
+also undefined relative to the integration variable `y`.
+
+*Verified correct in the same block*, and worth keeping: the colour
+coefficient `(φ₀q − φ₁q⁻¹)` is exactly `φ₀·q + φ₁·(−q⁻¹)`, the two §7a Hecke
+eigenvalues.
+
+### A diagram that is zero in every case it illustrates
+
+**J00-2. `pawlowski-leitner-basis`** draws a single composite
+`𝟏 → Λ²V_{1/2} ↪ V_{1/2}^{⊗n} → V_j`. By Schur, `Hom(𝟏, V_j) = 0` unless
+`j = 0`, so the composite vanishes for every `j ≠ 0` — i.e. for every case
+the diagram is meant to depict. It cannot show a basis element of
+`Hom(V_j, V^{⊗n})` except trivially.
+
+**J00-3. `pawlowski-leitner-inner-product` indexes a basis that has one
+element.** It writes `{T_λ}` with `⟨T_λ, T_μ⟩ = δ_{λμ}‖T_λ‖²`, but
+`λ₁ + λ₂ = n` and `λ₁ − λ₂ = 2j` determine `λ` **uniquely** — the basis is
+indexed by *tableaux of that one shape*, as the proposition it `uses` says.
+The Lean sibling indexes correctly by `Fin num_basis`. Its tikzcd also types
+`φ†∘ψ` as landing in `A` where it is an endomorphism of `V_j`.
+
+### A coefficient undefined exactly where the claim is made
+
+**J00-4. `q-dilog-habiro-ring`.** With the corpus's balanced
+`[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)`, the coefficient `1/(n[n]_q)` is **undefined
+whenever `q^{2n} = 1`** — so the coefficients are not in `ℤ[q]^` without
+inverting the brackets, and "evaluates the series at any root of unity"
+fails at precisely those roots. **The corpus already records this** in its
+own words: `appendix-surreals/q-bsd-classical-limit` — "At `𝔾_m` torsion
+points `q = ζ_n`, the denominator `[n]_{ζ_n}² = 0`".
+
+### Function algebra, determinant, and radius
+
+**J00-5.** `projective-line-su2` calls `ℂ[z]` the function algebra of `ℙ¹`.
+`ℙ¹` is complete, so `𝒪(ℙ¹) = ℂ`; `ℂ[z]` is the affine chart's ring. This is
+load-bearing: `def:projective-line-object` uses the function algebra to
+*realise* the object as `A^{coT}`. The **Lean sibling states the wrong
+version more strongly** — "The coordinate ring `𝒪(ℙ¹) = ℂ[z]`". That same
+Lean file carries two self-assuming projections
+(`su2_projective_euler_char … := rfl` reading back a field the definition
+sets, with `euler_eq` carried as structure data), so every field of
+`SU2ProjectiveLineData` is pinned by an accompanying `_eq` axiom — a
+container of assumed constants, against Strict Lean Discipline §5.
+
+**J00-6.** `lichnerowicz-wkb-corollary`'s determinant chain is off by a
+factor 2 **under its own parent's reading**. The parent gives
+`Δ^q_∇ = 𝔇_∇²` on one space with no chiral splitting, so
+`−½log det Δ^q = −log|det 𝔇|`, not `−½log det 𝔇`; equating them forces
+`det 𝔇 = 1`. The chain *is* consistent if the three determinants live on
+different spaces (chiral half vs full) — which "the Pfaffian structure on
+chiral spinors" gestures at — but the block never says so and the parent
+supplies no splitting.
+
+**J00-7.** `q-dilog-three-contexts` gives the p-adic radius as
+`v_p(x) > 1/(p−1)`, which is the convergence radius of **exp**; a
+log/dilog-type series `Σ xⁿ/(n[n]_q)` needs only `v_p(x) > 0`. Borrowed from
+the wrong series. Relatedly `q-dilog-heat-partition`: summing logarithmic
+branches over a spectrum gives a log-**determinant**, not a **di**logarithm —
+the `1/n` (or a further integration) is missing from the sentence.
+
+**J00-8.** `q-dilogarithm-pentagon-associator` writes "the *compact*
+dilogarithm `Φ_q/Li₂^q`", slashing together the two objects the cheat
+sheet's Faddeev-vs-Rogers context-sorting exists to separate — and
+`mass-endomorphism-tower` records that the corpus *replaced* `Φ_q`: "the
+Faddeev `Φ_q` form was empirically incompatible with isospin symmetry at
+q₀".
+
+### Two `definition` blocks whose Lean does not exist
+
+**J00-9.** `maximal-torus` and `maximal-torus-su2` name
+`qou:QOU.MaximalTorus` and `qou:QOU.Examples.su2MaximalTorus`. **Neither
+exists**: no sibling `.lean`, no `lean/QOU/MaximalTorus.lean`, and all 310
+`Torus` hits under `lean/QOU` are torus *knots*. `def:maximal-torus` is a
+`definition` block, for which a Lean sibling is **type-level required**.
+
+**J00-10.** `observation`'s `lean.ref` names the wrong structure.
+`qou:QOU.Intent` formalises the *two-observer commutator* — i.e. the
+`rem:two-observer-parallelogram` block — while the sibling `observation.lean`
+carries `QOU.Observation`, which is what this `.md` actually describes.
+Separately the `.md` says `δq` is determined "via the Hopf coaction" while
+that sibling Lean explicitly flags `substrate_shift` as **free data**: "do
+not read an inhabitant of `Observation` as evidence that the shift is
+coaction-induced."
+
+**J00-11.** `maximal-torus` asserts `T = Aut^⊗(τ|_{⟨V⟩}) ⊂ G`, but
+restricting a fibre functor to a full subcategory yields a group *receiving*
+a homomorphism from `G` — a quotient in the dictionary — not a subgroup, and
+the block's own diagram draws `T ↪ G` from a different characterisation.
+**The agent could not adjudicate** whether the two coincide for this
+particular `⟨V⟩` and said so rather than guessing.
+
+### Sweep damage: the `secur*` flood — 6 fixed, 19 flagged
+
+**J00-12.** 25 corpus sites of `secur*`, ten of them in this chapter.
+Several are nonsense rather than florid, which is what identifies it as
+token substitution: *"Liquid H **securely** exists at 20 K"*, *"the bare
+`e₊` **securely** resides at the `ℏ_q`-scale"*, *"converges **securely**
+within `v_p(x) > 1/(p−1)`"*, *"evaluates **securely** to `Li₂^q`"*.
+
+The six **adverbial** sites are fixed by deletion — each is a pure
+intensifier whose removal restores the sentence, no math touched. The 19
+**verbal** sites (`secures`, `securing`) are left: there the word carries
+the predicate ("`Γ_c(M,𝒮) = 0` secures the injectivity of the jet-bundle
+map" reads as *establishes*), and restoring the original verb needs an
+author's ear, not a sweep. Same family: "**strictly** orthogonal" in
+`pawlowski-leitner-inner-product`, where orthogonality admits no degrees.
+
+Note the agent's care: it deliberately did **not** fire `trap-superlative`
+on these, since that would file the verdict under the wrong criterion.
+
+### Notation
+
+**J00-13.** Two independent collisions on `τ`, which the register reserves
+for the fibre functor: `laplace-fourier-wick-rotation` writes
+`τ = t + iΘ` (two collisions in one formula — `Θ` is the contact form), and
+`photon-wavefront-example` writes the torsion phase `τ(y)`. The corpus's own
+convention is the opposite: `os-reflection-positivity-from-reeb` quotes the
+standard OS `τ` and then **translates it away** ("Euclidean time is the Reeb
+parameter `t`"). Also `intro-heisenberg-commutator` uses `\hat{q}` — its
+only occurrence in the entire corpus, unregistered, colliding with the
+substrate parameter — and does not match the section it introduces, which
+uses `[X̂,P̂]_q = Jℏ_q`. And `j1e-local-states.ts` titles `J¹E` where the body
+says `J¹𝒮`, with `E` deprecated in favour of `𝒮`.
+
+### Smaller
+
+**J00-14.** `levi-generalisation` asserts Levi **non**-degeneracy while
+recording `q(p) = 1 + |⟨L_Θ, F_A^+⟩| ≥ 1`; non-degeneracy should give the
+strict `q > 1` the substrate convention wants.
+`q-dilogarithm-exists-proof`'s load-bearing step ("has a one-dimensional
+solution space at each level") is asserted rather than argued, and the block
+has no QED marker where its chapter sibling does.
+`q-codifferential-formula`'s numbered list presents the adjoint as
+term-by-term replacement; applied in reading order to `Θ ∧ ℒ_ξ` it yields
+`ι_ξ ∘ ℒ_ξ*` where the closed formula has `ℒ_ξ* ∘ ι_ξ` — the order reversal
+is the only subtle step and goes unmentioned.
+
+**J00-15. The batch's closest call, recorded as a pass.**
+`q-dilogarithm-pentagon-associator` carries **six** negation-contrast
+constructions. Each survives the substantive-contrast carve-out
+individually, so the agent recorded `pass` and said so in the entry; the
+residual concern is density, which category 1's rubric does not make the
+test. A reviewer could reasonably fail the opener.
+
+**J00-16. Out of batch, via the tables' parent.** `g-action-on-substrate`
+quotes `[4]_q² = 16.892`; recomputed `[4]_q = 4.1096824`, squared
+**16.88948**. Its `−1.81 %` residual **is correct** — target-normalised;
+prediction-normalised it is `−1.774 %`. **Do not "fix" either into the
+other** — the same normalisation trap the AGENTS.md c_k correction names.
+
+### q₀ pins — a recorded negative
+
+No q₀ numeral appears in any of the 45 blocks. The only pin-bearing number
+in reach is via the tables' parent, using the witnessed
+`:val[q_0]{precision=6}`. Recomputing `[2]_q[4]_q²[6]_q` across all five
+pins: proton **216.95872**, muon **216.95873**, old-muon 216.95873,
+`1.10997` → 216.95483, `1.1097` → **216.83253**. So the printed `216.96`
+**cannot discriminate proton from muon** (they diverge at the 8th digit) but
+**does exclude** the erroneous `1.1097`.
+
+### Verified correct — do not re-flag
+
+The **PawLei dimension** `(2j+1)n!/((n/2+j+1)!(n/2−j)!)` agrees with the
+Clebsch–Gordan multiplicity **and** the two-row SYT hook count for every
+`(n,j)` with `n ≤ 10`. `pawLeiDim` in Lean *looks* wrong beside the `.md`'s
+`j` — its ℕ-division `(twice_j+1)/2` — but is exactly the ceiling that
+compensates the floored `n/2` in the half-integer case: **0 mismatches for
+n ≤ 14. It is correct; do not "fix" it.** The `δ_q` adjoint
+`(Θ∧ℒ_ξ)* = ℒ_ξ*∘ι_ξ` checks directly *and* cross-checks — substituting
+`d_q, δ_q` into `d_qδ_q + δ_qd_q` reproduces `rem:q-laplacian-expansion`
+term for term, including its cross bracket and both outer coefficients. The
+five-term relation was confirmed numerically at 30 dps on four `(x,y)`
+pairs, residuals at the arithmetic floor. Also verified: the
+Faddeev–Kashaev operator pentagon; `Φ_b = Φ_{1/b}`; the unit-circle natural
+boundary; §7a eigenvalue labelling in `observation-fermion-action`;
+`ℏ_{q+δ} − ℏ_q = δ/(q(q+δ))`; Bogomolny `‖F‖² = c₂ + 2‖F⁻‖²`;
+`SU(2)/U(1) ≅ ℙ¹(ℂ)`; Levi signature `(n,0)`.
+
+And `q-dilogarithm-pentagon-associator`'s scope paragraph is **the model of
+the (a)/(b) discipline** — it names both unformalised links, marking one
+"cited rather than machine-checked" and the other "a conjecture class".
+Worth keeping intact through any rewrite of that block's dashes.
