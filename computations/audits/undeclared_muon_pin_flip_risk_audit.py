@@ -143,7 +143,22 @@ def _exemption_holds(stem: str) -> bool:
     re-derived here rather than trusted, and a failed check counts the producer.
     """
     import ast as _ast
-    cands = [c for c in (HERE.parent).rglob(f"{stem}.py") if "worktrees" not in str(c)]
+    root = HERE.parent
+    # Exclude nested worktrees by the path RELATIVE TO THE SCAN ROOT — the same
+    # correction `scan()` carries below, for the same reason and missed in the
+    # same pass. Written as `"worktrees" not in str(c)` against the ABSOLUTE
+    # path, this filter discarded EVERY candidate whenever the script ran from
+    # inside a git worktree, so `cands` was empty, the AST check never ran, and
+    # the exemption was refused on a producer that satisfies it: the register
+    # then read 50 against a baseline of 49 and blocked a merge.
+    #
+    # Note the failure mode is the MIRROR of the one `scan()` documents. There
+    # the bug made a broken scan look clean (false green); here it makes a clean
+    # register look grown (false red). One absolute-vs-relative slip produces
+    # both, which is why the exclusion is anchored the same way in both places.
+    cands = [c for c in root.rglob(f"{stem}.py")
+             if "worktrees" not in c.relative_to(root).parts
+             and ".claude" not in c.relative_to(root).parts]
     if not cands:
         return False                     # cannot verify => do not exempt
     try:
