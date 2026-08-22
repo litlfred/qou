@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-22T21:20:42Z
+updated_at: 2026-08-22T21:26:29Z
 ---
 
 ## Why this bean exists
@@ -153,3 +153,35 @@ the next concrete target and is a standard permutation-combinatorics lemma —
 check Mathlib for it before proving it by hand (`#check` against the oleans; the
 cache carries no `.lean` source and the LSP is down, so name-grep does not work
 in this container).
+
+
+## Parity layer proved (2026-08-22)
+
+The base-case measurement behind `MFWSkeinInduction` found `|e|` and `n - c`
+always sharing a parity, with the bound tight whenever they agree. That is now
+**proved**, not observed, and it is the structure that makes `|e| <= n - c` a
+*same-parity, smaller-magnitude* statement rather than a bare inequality:
+
+- `sign_closurePerm` — the closure permutation's sign is `(-1)^(crossing count)`.
+  Each crossing is one transposition **whatever its sign**, the same
+  sign-blindness that makes `c` invariant under switching.
+- `length_parity_cycleType` — read through `Equiv.Perm.sign_of_cycleType`.
+- `writhe_sub_length_even` — the writhe has the parity of the crossing count.
+- `writhe_parity_cycleType` — the writhe's parity is fixed by the closure
+  permutation's cycle data.
+
+All sorry-free, zero warnings, axiom-clean. 23 results in the file now.
+
+**Deliberate weakening, stated so it is not mistaken for the full result.** The
+last theorem is phrased against `cycleType.sum + cycleType.card` rather than
+`n - c`. Getting to the `n - c` form needs two pieces of `ℕ`-subtraction
+bookkeeping I did not do: `support.card ≤ n` (easy — `Finset.card_le_univ` plus
+`Fintype.card_fin`) and `cycleType.card ≤ support.card` (each cycle has length
+≥ 2 and they are disjoint; **`Equiv.Perm.card_cycleType_le_card_support` does
+NOT exist in Mathlib** — checked by `#check` — so it needs proving by hand).
+Without the second, `components ≤ n` is not available and `(n : ℤ) - components`
+cannot be formed cleanly. That is the next concrete target.
+
+**Still missing for step 2 overall**: that a transposition changes the orbit
+count by exactly `±1` (the magnitude half — this parity work is only the parity
+half), the descending predicate, and the well-founded reduction.
