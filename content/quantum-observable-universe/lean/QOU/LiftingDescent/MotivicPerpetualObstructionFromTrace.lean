@@ -40,7 +40,7 @@ theorem perpetual_obstruction_from_trace
     numerical approximation. The value C=4 is an exact algebraic
     identity: a₀(u) evaluated at u=-1 gives 4, and a₁(-1)=0.
 
-    Ref: [conj:motivic-perpetual-obstruction]
+    Ref: [thm:motivic-perpetual-obstruction]
     Ref: [def:motivic-galois-character]
     Ref: bean qou-86gm (symbolic derivation) -/
 theorem qou_proton_perpetual_obstruction :

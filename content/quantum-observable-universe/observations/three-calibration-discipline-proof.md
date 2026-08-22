@@ -36,7 +36,7 @@ Induction along the 19-link derivation chain. At each step:
   the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) meson scale
   $m_\pi$: the :refterm[descent]{#descent} obstruction
   class
-  ([motivic perpetual obstruction theorem](#conj:motivic-perpetual-obstruction))
+  ([motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction))
   is normalised by the already-fixed scales, not by a fourth input.
 
 The dimensional factors $m_e$ and $m_\pi$ enter only at the final
