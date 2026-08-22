@@ -370,4 +370,40 @@ theorem length_eq_of_gens_eq {v w : BraidWord n} (h : gens v = gens w) :
   have : (gens v).length = (gens w).length := by rw [h]
   simpa [gens] using this
 
+/-! ### Orientation, against the reference engine
+
+`computations/homfly_skein_braid.py::traverse` counts closure components by
+walking each strand around the closure, and its `comps` is the number of orbits
+of the strand map — the same quantity `components` defines here. But it composes
+crossings in the **opposite order**: it applies `word[0], word[1], …` in turn,
+whereas Lean's `f * g` means `f ∘ g`, so `closurePerm` applies the *last* letter
+first.
+
+The two therefore differ by an inversion, not by an error, and inversion
+preserves both the cycle type and the support — so the component counts agree.
+Proved rather than asserted, because this is exactly the kind of convention
+mismatch that silently produces a mirror (cf. `qou-7ue5`, where two places in
+`computations/` disagreed about a HOMFLY by a `v ↦ v⁻¹` mirror). It will matter
+concretely when the traversal itself is formalised, where the *order* — not just
+the orbit count — is load-bearing. -/
+
+/-- Reversing a braid word inverts its closure permutation. Each crossing is an
+involution, so reversal is exactly inversion. -/
+theorem closurePerm_reverse (w : BraidWord n) :
+    closurePerm w.reverse = (closurePerm w)⁻¹ := by
+  induction w with
+  | nil => simp
+  | cons c w ih =>
+      simp only [List.reverse_cons, closurePerm_append, ih, closurePerm_cons,
+                 closurePerm_nil, mul_one, mul_inv_rev]
+      simp [crossingSwap, Equiv.swap_inv]
+
+/-- **The reference engine's component count agrees with `components`.** Its
+strand map is the inverse of `closurePerm`, and inversion preserves cycle type
+and support. -/
+theorem components_reverse (w : BraidWord n) :
+    components w.reverse = components w := by
+  simp [components, closurePerm_reverse, Equiv.Perm.cycleType_inv,
+        Equiv.Perm.support_inv]
+
 end QOU.Knot.BraidClosure
