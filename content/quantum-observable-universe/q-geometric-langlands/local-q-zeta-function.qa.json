@@ -1870,6 +1870,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.142Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1889,6 +1905,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.180Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-em-dash": [
@@ -1908,6 +1940,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.218Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-triples": [
@@ -1927,6 +1975,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.257Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-closing-aphorism": [
@@ -1946,6 +2010,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.296Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-meta-commentary": [
@@ -1965,6 +2045,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.336Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-thesis-restatement": [
@@ -1984,6 +2080,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.378Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-performed-warmth": [
@@ -2003,6 +2115,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.418Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-superlative": [
@@ -2022,6 +2150,22 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.458Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition of Z(B,t) + degree/denominator commentary); all ten judged. deg P = 2g = 8 for g=4 checked; H^0/H^2 denominator attribution correct."
       }
     ],
     "trap-nonspeakable": [
@@ -2041,6 +2185,23 @@
         "reviewed_at": "2026-08-15T10:31:00.935Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "289d49375018",
+          "ts": "2d8425e05b55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.499Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Opening sentence fronted an object-relative: 'the arithmetic invariants whose absolute values the geometric Riemann hypothesis constrains'. Written for the eye; stalls aloud.",
+        "notes": "fix applied: 'The Frobenius eigenvalues of Bring's curve are the arithmetic invariants whose absolute values the geometric Riemann hypothesis constrains; the local q-zeta function packages them...' -> 'The geometric Riemann hypothesis constrains the absolute values of the Frobenius eigenvalues of Bring's curve; the local q-zeta function packages those eigenvalues...'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2064,5 +2225,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:41.499Z"
 }

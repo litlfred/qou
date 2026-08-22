@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.118Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.157Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.195Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.234Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.271Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.310Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.348Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.387Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.425Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "982cfd7c38eb",
+          "ts": "a10301727748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.472Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (14) sigma_0 sigma_1 sigma_0 = e^-; term (15) sigma_0 sigma_1^2 = h L_+ + sigma_0; term (16) (sigma_0 sigma_1)^2 = sigma_1 sigma_0 sigma_1^2 = L_- + h e^-. All three correct."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:03.472Z"
 }

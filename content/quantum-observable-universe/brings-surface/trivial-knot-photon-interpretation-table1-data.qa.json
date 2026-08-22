@@ -883,7 +883,188 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.962Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.001Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.041Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.081Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.119Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Row (1)'s interpretation cell read 'Two bare photon cores pass through each other. Light through light.' The second sentence is a four-word aphoristic fragment adding nothing to the first - a quotable line placed for effect in the table's opening row.",
+        "notes": "fix applied: 'Two bare photon cores pass through each other. Light through light.' -> 'Two bare photon cores pass through each other.'"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.157Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.195Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.232Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.269Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "29881df1b577",
+          "ts": "e31ac3534eab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.304Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: terms (2), (3), (4) are products with the identity and reduce to their second factor unchanged - all correct."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:02.304Z"
 }
