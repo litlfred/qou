@@ -11879,6 +11879,49 @@ theorem closingBs (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n
     hne₁
   exact ((MultiStepReduction.refl _).step hb₀).step hb₁
 
+/-! #### Bridging `TOpen` to `fRun` and `fRun` to `closingBs`
+
+Two list identities, each shared by both lineages. Neither is a step; they are
+what lets the closing phase's four lemma calls meet on the nose. -/
+
+/-- **A `TOpen` word is an `fRun` source.** Pure associativity once `trioLeft`
+is unfolded — `fRun`'s left context is `trioLeft` without its trailing run. -/
+theorem trio_out_eq_fRun_source {n : ℕ} (i x y j₁ jp jpp jppp : Fin n)
+    (S : Monomial (HeckeGen n)) :
+    trioLeft i x y jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ S))
+      = ([(⟨x⟩ : HeckeGen n)] ++ descWord y jpp) ++
+          (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)) := by
+  rw [trioLeft]
+  simp only [List.append_assoc, List.cons_append, List.nil_append]
+
+/-- **An `fRun` target closes up into two descending runs.** Both ends rejoin:
+`descWord y jpp ++ [σ_jp, σ_j₁]` is `descWord y j₁`, and
+`descWord i jp ++ (σ_j₁ :: descWord jm j₂)` is `descWord i j₂`. Both are
+`descWord_split`; `hj₂ : j₂ ≤ j₁` is the regime, entering here as it does in
+`trio`. -/
+theorem fRun_target_eq {n : ℕ} {i x y j₂ jm j₁ jp jpp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (hy : jpp.val ≤ y.val) (hi : jp.val ≤ i.val)
+    (T : Monomial (HeckeGen n)) :
+    ([(⟨x⟩ : HeckeGen n)] ++ descWord y jpp) ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++
+          (descWord i jp ++ ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T))))
+      = [(⟨x⟩ : HeckeGen n)] ++ (descWord y j₁ ++ (descWord i j₂ ++ T)) := by
+  have hleft : descWord y j₁ = descWord y jpp ++ [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] := by
+    rw [descWord_split (k := jpp) (k' := jp) (i := y) (j := j₁) hjpp
+      (by omega) hy,
+      descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+      descWord_self]
+  have hright : descWord i j₂
+      = descWord i jp ++ ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_split (k := jp) (k' := j₁) (i := i) (j := j₂) hjp
+      (by omega) hi,
+      descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂]
+  rw [hleft, hright]
+  simp only [List.append_assoc, List.cons_append, List.nil_append]
+
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
