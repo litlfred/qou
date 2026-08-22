@@ -61,4 +61,4 @@ in $H^2(\mathcal{S}, \mathbb{G}_m) / nH^2(\mathcal{S}, \mathbb{G}_m)$
 iff $n$ divides the trace $\chi(A)$. Equivalently, the motivic
 Galois character $\chi^{\mathrm{mot}}_A$ is non-trivial at every
 finite place $p \nmid \chi(A)$
-([motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)). $\square$
+([motivic perpetual obstruction](#conj:motivic-perpetual-obstruction), proved via Route A: prime-ideal collapse, $C = a_0(-1) + 2 \cdot a_1(-1)$). $\square$

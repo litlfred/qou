@@ -36,7 +36,7 @@ Induction along the 19-link derivation chain. At each step:
   the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) meson scale
   $m_\pi$: the :refterm[descent]{#descent} obstruction
   class
-  ([motivic-perpetual-obstruction](#conj:motivic-perpetual-obstruction))
+  ([motivic perpetual obstruction theorem](#conj:motivic-perpetual-obstruction))
   is normalised by the already-fixed scales, not by a fourth input.
 
 The dimensional factors $m_e$ and $m_\pi$ enter only at the final
@@ -48,9 +48,8 @@ $\mathfrak{m}(X) = m_e^a m_\pi^c \cdot Q_X(q_0)$ with
 $Q_X \in \mathbb{Q}(q_0)$ and $a, c \in \mathbb{Z}_{\geq 0}$.
 
 The proposition is **conditional** on the chain being realised.
-Open conjectures along the chain
-([motivic-perpetual-obstruction](#conj:motivic-perpetual-obstruction),
-[mass-endomorphism](#conj:mass-endomorphism),
+Remaining open conjectures along the chain
+([mass-endomorphism](#conj:mass-endomorphism),
 [phi-q-tower-jsj-bridge](#rem:phi-q-tower-jsj-bridge))
 do not affect the dimensional-discipline statement: every step
 that *is* realised respects $m_e^a m_\pi^c \cdot \mathbb{Q}(q_0)$
