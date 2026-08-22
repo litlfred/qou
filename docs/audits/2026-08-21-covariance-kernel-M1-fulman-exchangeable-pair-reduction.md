@@ -105,6 +105,35 @@ weight `s(λ,μ)`. Quantifying that weight-suppression is the remaining gap.
 weighted bound on the high-ratio edges, or a monotone-below-limit argument) is **still open**. Not
 laundered — the reduction and all increments are exact; only the uniform inequality is unproved.
 
+## Update (2026-08-22, part 2): `N/P = E_ω[ratio_e]`, the 1-Lipschitz lemma, and why the uniform bound needs effective asymptotics
+
+Writing the per-edge ratio `ratio_e = N`-term`/P`-term `= 2(d_a − d_r + 1)/(r − a)` (r=|c_r|>a=|c_a|),
+
+> **`N/P = E_ω[ratio_e]`**, `ω` the edge-probability measure `∝ 2s(λ,μ)·(r−a)²(r+a)`.
+
+So `M₁>0 ⟺ E_ω[ratio_e] < 1`. Two exact structural facts:
+
+- **1-Lipschitz lemma** (verified all λ⊢n, n≤16; `max|D(u+1)−D(u)| = 1`; Lean-formalizable — it is
+  `D(u)=(ω_λ(u)−|u|)/2` with `ω_λ` of slope ±1): **`|D(u+1) − D(u)| ≤ 1`**. Hence for same-sign
+  contents `d_a − d_r ≤ r − a`, giving the **worst-case per-edge bound**
+  `ratio_e ≤ 2 + 2/(r−a) ≤ 4` — which exactly explains the observed `max ratio_e = 4` (at `r−a=1`).
+
+- **Route refutation (scope-(a)).** The natural "high-ratio edges are weight-suppressed" hypothesis is
+  **false**: the ω-weight concentrates on *distant* signed-content moves (weight on `|c_a−c_b|≥4`
+  grows to ~0.88), and ~15 % of ω-weight sits persistently on `ratio_e ≥ 1`. `N/P<1` is **not** a
+  worst-case fact (per-edge ratio reaches 4). It is an **averaging** phenomenon: `ω ∝ (r−a)²(r+a)`
+  up-weights large-`(r−a)` edges, which carry *small* `ratio_e` (the `(r−a)` is in the denominator),
+  and the **bulk diagonal profile of a typical diagram is flat** (`d_a−d_r ≪ r−a` in the bulk).
+
+**Consequence for the proof.** A *uniform* `N/P<1` cannot come from an elementary per-edge / worst-case
+bound (that only gives `≤4`) nor from weight-concentration (refuted). It requires **effective,
+error-controlled limit-shape estimates** (a Berry–Esseen-grade second-order Kerov CLT: `M₁ ≥ κn^{5/2}
+− C n²` with explicit `κ>0, C`, then finite check). The asymptotic `N/P → 0.6605 < 1` is already
+proved (the VKLS integrals); the missing piece is purely the *effective* error term. This is a precise,
+honest localisation of the remaining difficulty — not a closure.
+
+Probe: [`wlambda_covariance_epic_M1_edge_ratio_structure.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_edge_ratio_structure.py) (exit 0).
+
 ## Compute
 
 - Probe: [`wlambda_covariance_epic_M1_fulman_exchangeable_pair.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_fulman_exchangeable_pair.py)
