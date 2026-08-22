@@ -2207,3 +2207,156 @@ numerics all check: `E₀^(N=0) = 4.185981`, `E₀^full = 4.227483`,
   excision correctly implemented.
 - **`toroidal-harmonics-delta-lambda`'s golden-ratio section** — the
   batch's best example of anti-fit discipline, notwithstanding F02-5.
+
+
+## From agent:f00 (mass-theory fq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 2 inline fixes. Only 3 trap fails — this chapter's
+prose is in good shape, and the batch's value is entirely in what the
+full-context read caught alongside it.
+
+### The wrong knot, confirmed twice by independent routes
+
+**F00-1. `figure-eight-branching-rule` defines 4₁ as a word that closes to
+the UNKNOT.** The block gives `4₁ = σ₀σ₁⁻¹σ₀⁻¹σ₁`. Reduced Burau over exact
+`ℤ[t,t⁻¹]`, `det(I−B)·(1−t)/(1−t³)`:
+
+| word | Δ(t) | is |
+|---|---|---|
+| `σ₀σ₁⁻¹σ₀⁻¹σ₁` (the block's) | `1/t ≐ 1` | **unknot** |
+| `(σ₀σ₁⁻¹)²` (genuine 4₁) | `−1 + 3/t − 1/t² ≐ t − 3 + t⁻¹` | figure-eight ✓ |
+| `σ₀³` in B₂ (control) | `t² − t + 1` | trefoil ✓ |
+
+So **every `b_λ·h²` term in that block is computed on the wrong knot.** In
+`[2,1]` the true character is `q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴`, not `−1 − h²`;
+the two agree only at q = 1.
+
+This corroborates the same finding reached independently by **agent:r07** on
+a different chunk, and I re-verified it a third time in the coordinating
+session with a separate sympy implementation. Three routes, one answer.
+
+### A coefficient carried at two values, where only one reproduces the headline
+
+**F00-2. `c₅` disagrees across five blocks.** The proposition and tables 1–2
+use `c₅ = −(b² + ½) = −1.2527`; the context block (×2) and table 3 use
+`c₅ = 3c₃² + b = +12.868`. At `u⁵ = 4.4822e−11`:
+
+| c₅ | contribution | N=4 → N=5 |
+|---|---|---|
+| −1.2527 | −0.0561 ppb | −0.57 → −0.63 ppb |
+| +12.868 | +0.5768 ppb | −0.57 → **+0.0068 ppb** |
+
+Only the second lands on the published "~0 / +0.04 ppb". **The context block
+is right; the proposition carries the superseded coefficient.**
+
+**F00-3. The ladder headline matches no row of its own table.** The
+proposition claims −0.0066 ppm; its table 2 gives +6.02 ppb (N=3) and
+−0.57 ppb (N=4) — wrong sign and ~10 % off.
+
+**F00-4. `h` is undefined in the ladder proposition.** `α = (z−1)h/2`
+requires `h = q − q⁻¹` (which reproduces N=1 = +73.64 ppm against the
+printed 73.79); reading `h = ℏ_q` gives +1254 ppm, off by 17×.
+
+**F00-5. `S(q₀) ≈ 0.18689` is not S(q₀).** The block's own formula gives
+**0.18720719**. 0.18689 is `Q_β^CODATA/E₀(q₀)` — and the two differ by
+exactly the 0.168 % that the same block quotes elsewhere
+(`Q_A/Q_CODATA − 1 = 0.167738 %`).
+
+### A retraction, recorded because it is worth as much as the finding
+
+**F00-6. RETRACTED by the auditing agent mid-batch.** It first flagged the
+direction gate's "2.1e−7 (210 ppb)" as 18× overstated. On recheck that is
+**exact**: "the substrate variable" means the *ladder* variable u, not q, and
+`u(proton) = 0.008517234550156142` vs `u(muon) = 0.008517236340043958` is
+210.15 ppb. The 18× is the amplification `d ln u/d ln q = 2/(qℏ_q) = 18.19`,
+i.e. the agent had found the amplification factor and mistaken it for an
+error. Only the block's wording is ambiguous; the number is right.
+
+### The c_k conflation AGENTS.md names, found again
+
+**F00-7.** "Cross-anchor swing ≈ 3.5 % at c₃" is `|−2 − c₃|/2 = 3.46713 %` —
+the **gap to the integer candidate**, not the swing. The true swing is
+**2.37478 %**. This is precisely the normalisation-mistaken-for-discrepancy
+class the AGENTS.md c_k correction was written about.
+
+**F00-8. Stale c₃.** The context block's "−2.010 at the muon pin" is the
+pre-#1422 value (current −2.02020024), and it implies a 2.85 % swing.
+
+### Convention C, load-bearing and — unusually — decidable
+
+**F00-9. `frobenius-s-classification-table2` gives
+`z = (q^{1/2}+q^{−1/2})⁻¹ = 0.49932033`** — convention C in the spelling the
+detector-blindness taxonomy lists. Here it is load-bearing rather than
+cosmetic: z enters `Φ₁ = Σ log|z aᵢ + bᵢ|`, and `bar(z_C)/z_C = 1` while
+`bar(z_D)/z_D = q⁻⁴`, so the "+1" S-eigenvalue — and the parent block's
+"exactly one S-odd term" — is a statement about C, not about the canonical
+convention. In the direction gate, switching to D moves the refuted family
+from `m ≥ 4` to `m ≥ 5` (`0.998/z_D⁴ = 7.08` passes; `/z_D⁵ = 11.56` fails).
+
+### Proof steps that do not hold
+
+**F00-10. Step 3(c) of the stratified proof is false.** "λ has a box with
+hook k ⟺ depth ≥ k" fails at **λ = (2,1)**: hooks are {3,1}, maximum 3, and
+there is no hook of length 2. 22 counterexamples up to n = 7.
+
+**F00-11. Step 3(d) is malformed.** `F_n(z) = Σ_λ dim_q⁻¹ z^{|λ|}` is a
+monomial, since `|λ| = n` always — coefficient 2.4972905 at n=3, which is the
+sibling table's own number — so it cannot equal
+`∏(1 − q⁻ᵏz)^{−c_k(n)}·u_n(q)` (at n=3, `c₃(3) = 3`).
+
+**F00-12. Step 4 does not follow from Step 1.** Step 1 gives
+`⟨Z^(k), Z^(ℓ)⟩ = 0` for `k + ℓ ≠ N`; Step 4 needs orthogonality for
+`k ≠ ℓ`. Under Step 1 the vanishing is `k > N − k_*`, which matches only if
+`k_* = N/2`.
+
+**F00-13. `ramified-disc-fusion` clause 3 contradicts its own prose.** The
+DFT gives `w_k → ζ^{−k}w_k`, which the prose states correctly; clause 3's
+uniform `ζ w_k` is wrong. Separately, C₃ monodromy is already regular — S₃
+arises only after adjoining orientation reversals, again as the prose says.
+
+### Provenance
+
+**F00-14. A deprecated witness at the old muon pin.**
+`mn-classical-parity-blind` sources `_deprecated/schur-weyl-mn.witness.json`
+(`q₀ = 1.1099785955541805`, the **old muon** value), whose own notes say it
+"requires ribbon q-weights (next iteration)". Its column "Nonzero χ^λ
+partitions" is **false**: 2/6/18/40 partitions have χ ≠ 0, not 1/2/3/5.
+
+**F00-15. Pin-attribution mismatch.** The radius gate says "extraction at
+q₀ = 1.10997858…" (proton) while its witness records
+`1.1099785955573347…` (**muon**).
+
+**F00-16. Sweep damage.** `partition-sum-…-table5` carries "Deuteron gap
+(**the formal derivation**)" in the slot where the sibling row carries a
+backticked script name; also "canonical evaluation", "canonical precision
+ladder", "via the canonical formalism", "From the canonical formalism",
+"canonical anchor (verified)".
+
+**F00-17. Unprovenanced symbols.** `N_sym ≈ 1.90` (hoefsmit table 2) has no
+definition, witness or derivation — and its own context block calls the
+Plancherel framing "incorrect". `P_n(q,z)` in `qz-bicompletion` is undefined;
+`J` in `reeb-exceptional-divisor` is undefined.
+
+**F00-18. Rounding.** `30/8 = 3.75` printed as 3.7 (two rows) beside an exact
+7.0; a ratio `1.00039344` printed 1.00036, recomputed from an
+already-truncated 2.5009; `955.49/1.019741349 = 936.9925` against a printed
+936.994; and "within 0.1 %" is **0.10838 %**, while the parent block's
+"within 0.1 %" is **0.1477 %** — refuted by its own table's `−0.14 %`.
+
+### Verified correct — recomputed from scratch, so a later pass does not re-flag
+
+All 20 Hoefsmit pure tableaux and all eight multiplicities 4/2/1/3/3/1/2/4 —
+including the counter-intuitive asymmetric 2/1/3 — with
+`tr_pure = 41.6949`; all 7 skew-SYT counts; all 8 Plancherel weights
+(summing to exactly 1); `Σ 1/dim_q` at n = 3,4,5,6 to the last printed digit,
+and the exact 5/2, 19/6, 46/15, **473/144**; `Σ W_λ = 1` for the Frobenius
+weights; `8G = 7.32772475342 = 2·V_oct` (**not** the `8·Cl₂(π/4)` error);
+`Φ_q(0.989) = 671094`; `u(proton)` to **17 significant digits**; the
+per-nucleon shift `1 + 18Z + 21N` exact in all six rows; `V_L(1) = (−2)^{n−1}`;
+and the 3-CAL table.
+
+**Pin discrimination — a useful negative.** No table in this batch separates
+the proton pin from the muon pin at its printed precision. The erroneous
+`1.1097` *is* excluded by `tr_pure` (41.56 vs 41.69), by `Φ_q(0.989)`
+(7.0e5 vs 6.7e5) and by the parity-blind figures (6.7143e−1 vs 6.7145e−1) —
+but **not** by `partition-sum-table1`, where all three pins print 1.2761.
