@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-22T09:24:01Z
+updated_at: 2026-08-22T09:29:29Z
 ---
 
 
@@ -294,3 +294,34 @@ Every in-window change I can identify is eliminated, and the surviving constrain
 The first is testable and is the cheaper next step: check out `c3a7e16856` wholesale in a worktree and re-run the producer there. If it does **not** reproduce its own contemporaneous committed value, the window is the wrong place to look and this stops being a drift question.
 
 Bean open. Nothing measured supports re-pinning or rebaselining; main's witness untouched.
+
+
+---
+
+## 2026-08-22 — the witness IS reproducible at its own commit. My "every in-window change is eliminated" was wrong.
+
+Ran the producer inside a worktree checked out wholesale at `c3a7e16856` (08-11), same container, same Rust extension, same interpreter:
+
+```
+committed in that tree : tr_M = 1.145759781719936507366644   abs_diff 5.67e-10
+re-run in that tree    : tr_M = 1.145759781719936507366644   abs_diff 5.67e-10
+```
+
+**Byte-for-byte.** So the committed witness is not "unreproducible" at all — it reproduces exactly where it was made. That kills the framing I had been carrying since the first correction, in which the mystery was a value that could not be regenerated under matched conditions.
+
+### What it forces
+
+The change is **in the repository**, and it **is** inside the 08-11 → today window. Both alternatives I offered last round are dead:
+
+- ~~the cause predates the window~~ — refuted: 08-11 reproduces.
+- ~~a dependency I have not enumerated~~ — the container, extension and interpreter are identical across both runs.
+
+So my previous line, *"every in-window change I can identify is eliminated"*, cannot be true. **One of the thirteen eliminations is wrong**, or the change is in a file I never thought to enumerate. Enumerating by hand is exactly the method that produced the bad eliminations, so it is the wrong tool to reach for again.
+
+### Bisecting instead of guessing
+
+Good `c3a7e16856`, bad this branch's tip, ~13.6k revisions, 14 steps, ~60 s per test — the test is `tr_M == 1.14575978171993650736`, exit 125 on any run that cannot execute so unrelated breakage is skipped rather than mis-scored.
+
+This is the right instrument and I should have reached for it several rounds ago. Every hand-audit round this session ended the same way: a plausible commit subject, a mechanism that fit, and a measurement that said no. The bisect does not care what any commit message claims.
+
+Result to follow.
