@@ -60,4 +60,46 @@ theorem motivic_perpetual_obstruction
         ¬IsUnit (trace p) :=
   perpetual_obstruction_from_trace trace N h_bound
 
+/-- **Motivic perpetual obstruction, stated about the Frobenius family
+    itself.**
+
+    `motivic_perpetual_obstruction` above carries a
+    `[MotivicGaloisCharacter …]` binder that it never uses: its `trace` is a
+    free function and its conclusion is about `trace`, with nothing relating
+    the two.  What it proves therefore holds of *any* integer-valued function
+    that is eventually large in absolute value, and mentions no motivic
+    structure at all.  It is kept as stated — it is true, and it is the form
+    a caller who already has a trace function wants.
+
+    This version supplies the missing link.  The trace is not free: it is the
+    image of the Frobenius family under a given realization `φ : Mhat →+* ℤ`,
+    and the conclusion is about `hχ.frobenius_at p` rather than about its
+    image.  The transfer is the contrapositive of `IsUnit.map`: a ring hom
+    carries units to units, so a non-unit image forces a non-unit source.
+
+    `φ` is an explicit argument rather than derived from the substrate's
+    `realize`, because `MotivicSubstrate.realize` lands in `Target v`, which
+    is a bare `CommRing` with no ordering — `1 < |·|` is not expressible
+    there.  A caller with `Target (Place.finite p) = ℤ` supplies `realize`
+    itself; the generality costs nothing and avoids inventing structure on
+    `Target`.
+
+    Ref: [yekutieli2010] §3-4 (gerbe obstruction). -/
+theorem motivic_perpetual_obstruction_frobenius
+    {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
+    {Target : Place → Type*} [∀ v, CommRing (Target v)]
+    [MotivicSubstrate K0 Mhat Target]
+    {motiveA : Mhat}
+    (hχ : MotivicGaloisCharacter K0 Mhat Target motiveA)
+    (φ : Mhat →+* ℤ)
+    (N : ℕ)
+    (h_bound : ∀ p : Nat.Primes, (p : ℕ) ≥ N →
+      1 < (φ (hχ.frobenius_at p)).natAbs) :
+    ∃ S : Finset ℕ,
+      ∀ p : Nat.Primes, (p : ℕ) ∉ S →
+        ¬IsUnit (hχ.frobenius_at p) := by
+  obtain ⟨S, hS⟩ :=
+    perpetual_obstruction_from_trace (fun p => φ (hχ.frobenius_at p)) N h_bound
+  exact ⟨S, fun p hp hu => hS p hp (hu.map φ)⟩
+
 end QOU.LiftingDescent
