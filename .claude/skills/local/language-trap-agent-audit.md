@@ -175,7 +175,25 @@ inference from present state unless a command was run.
 So: *"this was deleted"*, *"this used to say"*, *"this does not exist
 anywhere"*, *"these two files diverge"* — run the command before writing it
 into a commit message, a ledger, or a reply. **Opening the second file is
-usually the whole check.** `git show --numstat <sha> -- <path>`
+usually the whole check.**
+
+**And check the clone is not shallow first — this bit me while I was
+enforcing the rule above.** Sessions here run on a shallow clone (19 grafts).
+At a graft boundary git has no parent to diff against, so it renders the
+whole tree as additions: `--numstat` reports `n insertions, 0 deletions` for
+**every** file, and `<sha>^` does not resolve, so `cat-file -e` fails for
+every path whether or not it existed. Read naively, the pair looks like proof
+a file was created empty at that commit. It is proof of nothing.
+
+```sh
+git rev-list --parents -n 1 <sha>    # a lone sha = no parent in this clone
+test -f .git/shallow && echo shallow
+```
+
+A shallow clone cannot tell you what a file used to contain, only what it
+contains now. If the answer matters, `git fetch --unshallow` (slow — a
+`--deepen=200` timed out at two minutes here) or ask the remote; otherwise
+say the history is unavailable rather than inferring from the boundary. `git show --numstat <sha> -- <path>`
 and `git cat-file -e <sha>^:<path>` settle the first two; for the third,
 remember that `lean.ref` resolution checks the **sibling first**
 (AGENTS.md §0a), which a search scoped to the library tree will miss.

@@ -3919,3 +3919,69 @@ The split is not about care; these are careful agents. It is that a number
 can be recomputed from what is on the page, and a file's history cannot.
 Anything about the past, or about what exists elsewhere, is an inference
 from present state unless a command was run. **Run the command.**
+
+
+## CORRECTION TO THE CORRECTION — the clone is shallow, so "never written" is not established either (2026-08-22)
+
+Earlier I corrected `agent:k00`'s *"the sweep destroyed two tables"* to
+**"the tables were never written"**, on the strength of
+
+```
+$ git show --numstat 230cdd113 -- <table>.md
+1  0
+$ git cat-file -e 230cdd113^:<table>.md      → does not exist
+```
+
+**Both readings are artifacts of a shallow clone.**
+
+```
+$ git rev-list --max-parents=0 HEAD | head -3     → three "root" commits
+$ git rev-list --parents -n 1 230cdd113           → 230cdd113   (no parent shown)
+$ wc -l .git/shallow                              → 19 grafted
+$ git show --stat 230cdd113 | tail -1             → 30809 files changed, 12425567 insertions(+)
+```
+
+`230cdd113` is a **graft boundary**, not a root. At a boundary git has no
+parent to diff against, so it renders the entire tree as additions — which
+is exactly what "30809 files changed, 12,425,567 insertions" means, and why
+every file in it reports `n insertions, 0 deletions`. `230cdd113^` does not
+resolve, so `cat-file -e` on it fails for **every** path, present or absent.
+Neither command says anything about whether those tables once held content.
+
+`git fetch --deepen=200` timed out at two minutes without completing, so the
+question is **not settleable from this clone**. Settling it needs
+`git fetch --unshallow` or a query against the remote.
+
+### What is actually established, from present state only
+
+- The two data-blocks contain one boilerplate sentence and no table. ✓
+- Their parents cite them as populated — `recomputed-low-isotope-mass-table.md:72`
+  "See [Table 4]", `rho-k-graded-expansion.md:98` "degrades accuracy (see
+  Table 1)". ✓
+- **Whether they were ever populated: unknown.**
+
+The defect and its remedy are unchanged — a parent citing an empty table is
+broken either way, and the fix is to author the table or drop the reference.
+What was wrong was my confident account of *how it got that way*, asserted
+twice in opposite directions.
+
+`agent:m00` hit the same boundary independently on two different files, ran
+the same two commands, and drew the same "as imported" conclusion. It was
+being appropriately careful — the new skill rule sent it to git — and the
+commands it was told to trust do not mean what they normally mean in a
+shallow clone. **That is a gap in the rule I wrote, not in the agent's
+work.**
+
+### The rule, amended
+
+Before reading `--numstat` or `cat-file -e` as evidence about a file's past,
+check that the commit has a parent in *this* clone:
+
+```sh
+git rev-list --parents -n 1 <sha>    # a lone sha means no parent here
+test -f .git/shallow && echo shallow
+```
+
+At a graft boundary both commands are silent about history and loud in a way
+that looks like an answer. A shallow clone cannot tell you what a file used
+to contain; it can only tell you what it contains now.
