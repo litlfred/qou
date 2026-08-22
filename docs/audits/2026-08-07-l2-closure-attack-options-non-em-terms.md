@@ -170,9 +170,14 @@ that its logarithm is the extensive term. Whether the resulting coefficient matc
 > strand (`markovStabFactor_succ`), the merge law
 > `stab(m)·stab(n)·N(q) = stab(m+n)` (`markovStabFactor_merge`), and it is
 > extensive-not-intensive for `N(q) ≠ 1` (`markovStabFactor_not_intensive`;
-> exponent affine with unit slope). This proves *only* that the discarded
-> normalisation is extensive — the coefficient/`a_V` question and the strand↔`A`
-> identification are deliberately left as the open prediction below.
+> exponent affine with unit slope). The **`A`-constituent** form is proved too
+> (`markovStabFactor_merge_parts`): merging `A` parts gives
+> `stab(Σ nᵢ) = (∏ stab nᵢ)·N(q)^{A-1}`, so the normalisation that does **not**
+> cancel in a binding difference is exactly `N(q)^{A-1}` — extensive in the
+> constituent count `A`, the precise `∝ A` volume-term shape. This proves *only*
+> that the discarded normalisation is extensive — the coefficient/`a_V` question
+> (is `(A-1)·log N(q) = a_V·(A-1)`?) and the strand↔`A` identification are
+> deliberately left as the open prediction below.
 
 **Honest caveat.** `E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV` and `log[2]_q ≈ 0.6945`, so the
 naive `N = 2` reading gives `≈ 2.91 MeV` per strand against `a_V ≈ 15.6 MeV` —

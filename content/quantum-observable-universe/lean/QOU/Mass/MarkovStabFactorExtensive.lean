@@ -92,4 +92,41 @@ theorem markovStabFactor_not_intensive {R : Type*} [Field R] (Nq : R)
 theorem markovStabFactor_exponent_affine {A : ℕ} (hA : 1 ≤ A) :
     ((A + 1) - 1) - (A - 1) = 1 := by omega
 
+/-- **Binding accrues `N(q)^{A-1}` of the discarded normalisation — extensive in
+    the constituent count `A`.** Writing an `A`-constituent system as the
+    strand-merge of `A` parts with strand counts `ns` (each `≥ 1`), the total
+    stabilisation factor is the product of the parts' factors times
+    `N(q)^{|ns|-1}`:
+
+      `stab(Σ nᵢ) = (∏ stab nᵢ) · N(q)^{A-1}`,   `A = |ns|`.
+
+    So the normalisation that does **not** cancel in a binding difference (bound
+    system minus its free constituents) is exactly `N(q)^{A-1}` — extensive in the
+    **constituent count `A`**, independent of the individual strand counts. This
+    is the precise sense in which the discarded Markov normalisation is the volume
+    term `∝ A`: it is the residue of `A-1` strand-merges, one factor of `N(q)`
+    each (`markovStabFactor_merge`). **Magnitude still open:** whether
+    `(A-1)·log N(q)` (times the electron scale) equals `a_V·(A-1)` is the
+    prediction, not proved here — the audit measures the `N = 2` reading `5.4×`
+    short. -/
+theorem markovStabFactor_merge_parts {R : Type*} [CommRing R] (Nq : R) :
+    ∀ (ns : List ℕ), ns ≠ [] → (∀ n ∈ ns, 1 ≤ n) →
+      markovStabFactor Nq ns.sum
+        = (ns.map (markovStabFactor Nq)).prod * Nq ^ (ns.length - 1)
+  | [n], _, _ => by simp [markovStabFactor]
+  | n :: m :: rest, _, hpos => by
+    have hn1 : 1 ≤ n := hpos n (by simp)
+    have htail_pos : ∀ k ∈ (m :: rest), 1 ≤ k := fun k hk => hpos k (by simp [hk])
+    have hm1 : 1 ≤ m := htail_pos m (by simp)
+    have hsum1 : 1 ≤ (m :: rest).sum := by rw [List.sum_cons]; omega
+    have IH := markovStabFactor_merge_parts Nq (m :: rest) (by simp) htail_pos
+    have key : markovStabFactor Nq ((n :: m :: rest).sum)
+        = markovStabFactor Nq n * markovStabFactor Nq ((m :: rest).sum) * Nq := by
+      rw [List.sum_cons]; exact (markovStabFactor_merge Nq hn1 hsum1).symm
+    have hlen : (n :: m :: rest).length - 1 = ((m :: rest).length - 1) + 1 := by
+      simp only [List.length_cons]; omega
+    rw [key, IH, hlen, pow_succ]
+    simp only [List.map_cons, List.prod_cons]
+    ring
+
 end QOU.Mass.MarkovStabFactor
