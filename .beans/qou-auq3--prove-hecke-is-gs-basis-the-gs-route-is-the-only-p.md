@@ -3138,4 +3138,22 @@ questions — the distinction the tail turned on.
 | opening phase, `a = 3` | no loop; needs its own treatment |
 | closing phase (`4(a−1)` steps, hard core `2a`) | **open** — no schedule helps |
 | mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
-| `OverlapComposition` + `spoly` | **open** |
+| `OverlapComposition` + `spoly` | ~~open~~ **already in the corpus** — see below |
+
+### Correction: the overlap and s-polynomial were never open
+
+This arc carried "`OverlapComposition` + `spoly`" on its open list. Wrong, and
+it is the failure the corpus-grep rule exists to catch. Neither
+`CornerGeneral.oc` nor `oc_spoly_coeff` relates `j₁` to `j₂` — both ask only
+`j₁ ≤ i₁` and `j₂ ≤ i₁`. So the overlap is constructible and its S-polynomial is
+identified as `T0` for `j₂ ≤ j₁`, **diagonal included**.
+
+Verified rather than read off the signature: instantiated `oc_spoly_coeff` at
+`j₂ ≤ j₁` and at `j₂ = j₁`, `lean`-direct exit 0 on both. Separately measured
+against the engine — the `a ≤ b` start element is exactly
+`ofTerms [(V0, 1), (U0, −1)] = T0` at (a,b) = (3,4), (4,6) and the diagonal
+(5,5).
+
+**So the only regime-specific piece is the reduction chain from `T0` to zero.**
+Recorded in `oc_spoly_coeff`'s docstring, where the next reader will be
+standing.
