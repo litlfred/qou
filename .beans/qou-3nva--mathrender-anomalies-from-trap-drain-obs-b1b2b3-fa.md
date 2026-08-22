@@ -3807,3 +3807,61 @@ And `q-dilogarithm-pentagon-associator`'s scope paragraph is **the model of
 the (a)/(b) discipline** — it names both unformalised links, marking one
 "cited rather than machine-checked" and the other "a conjecture class".
 Worth keeping intact through any rewrite of that block's dashes.
+
+
+## CORRECTION — "the sweep destroyed content" is wrong; the tables were never written (2026-08-22)
+
+`agent:k00` reported that a token-substitution sweep had **destroyed** two
+whole tables, a section and half a numbered list, replacing them with the
+boilerplate *"The canonical values are rigorously evaluated via formal trace
+definitions."* I repeated that in the `kq_00` commit message — *"The sweep
+has DESTROYED CONTENT, not merely garbled it"* — before checking it.
+
+**Git says otherwise, unambiguously.** For both table files, commit
+`230cdd113`:
+
+```
+$ git show --numstat 230cdd113 -- .../recomputed-low-isotope-mass-table-table4-data.md
+1  0  .../recomputed-low-isotope-mass-table-table4-data.md
+$ git cat-file -e 230cdd113^:.../rho-k-graded-expansion-table1-data.md
+   → does not exist
+```
+
+**One insertion, zero deletions, and neither file existed in the parent
+commit.** They were *created* carrying that sentence. Nothing was
+overwritten. (`git log --follow` shows earlier commits, which is the rename
+heuristic reaching for an unrelated file; `--numstat` on the actual commit is
+the authoritative read, and it is 1/0.) The
+`tau-M-asymptotic-rep-theory-interpretation` case is the same shape: 37
+insertions, **0 deletions**.
+
+**The defect is real and the remedy is the opposite of what was implied.**
+The parents genuinely depend on tables that do not exist:
+
+- `recomputed-low-isotope-mass-table.md:72` — "See [Table 4](#tbl:…-table4-data)"
+- `rho-k-graded-expansion.md:74` — "See [Table 1](#tbl:…-table1-data)", and
+  again at `:98`, where the prose leans on it: *"its naive log-additive form
+  degrades accuracy (see Table 1)"*.
+
+So: **placeholder data-blocks were created and cited as though populated.**
+There is nothing to recover — the tables have to be authored, or the
+references dropped. A recovery pass over git history, which the agent
+recommended and I endorsed, would find nothing and waste the attempt.
+
+### The general lesson, since this is the second instance in two turns
+
+An audit agent cannot easily read git history, so its claims about a file's
+*past* are inferences from the file's present state, not observations.
+Twice in two turns I repeated one before checking:
+
+1. `J00-9` — "these `lean.ref`s resolve to nothing"; both resolve, via the
+   content-block sibling the agent's search did not cover.
+2. This one — "the sweep destroyed these tables"; they were never written.
+
+Both agents were reporting a real defect and getting the *mechanism* wrong,
+and the mechanism is what determines the fix. **Provenance claims — "this
+was deleted", "this used to say", "this file does not exist" — get verified
+against git or the filesystem before they are repeated.** The numeric
+findings in the same reports have held up under recomputation every time;
+it is specifically the historical and existence claims that need the second
+look.

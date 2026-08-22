@@ -149,6 +149,27 @@ never fix math inline.
 - **Braid words.** Where a table gives one, compute the closure's
   component count. Two tables were found carrying wrong words this way.
 
+## Verify provenance claims before repeating them
+
+An agent's numeric findings have held up under recomputation throughout this
+campaign. Its claims about a file's **past or existence** have not, twice in
+two turns: "these `lean.ref`s resolve to nothing" (both resolved, via the
+content-block sibling the search did not cover) and "the sweep destroyed
+these tables" (`git show --numstat` on the accused commit: **1 insertion, 0
+deletions**, and neither file existed in the parent — they were created as
+placeholders and cited as though populated).
+
+Both agents had found a real defect and got the **mechanism** wrong, and the
+mechanism is what determines the fix: one implied a recovery pass over git
+history that would have found nothing.
+
+So: *"this was deleted"*, *"this used to say"*, *"this does not exist
+anywhere"* — check against git or the filesystem before writing it into a
+commit message, a ledger, or a reply. `git show --numstat <sha> -- <path>`
+and `git cat-file -e <sha>^:<path>` settle the first two; for the third,
+remember that `lean.ref` resolution checks the **sibling first**
+(AGENTS.md §0a), which a search scoped to the library tree will miss.
+
 ## Preserving verdicts across merges
 
 These entries have **no producer**. `qa-sweep` regenerates the script
