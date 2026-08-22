@@ -1360,6 +1360,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.334Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'This surrogate is not the canonical Markov trace, as canonical weights require sqrt q.' and 'The invariant ... is vacuous at the Lean type level.'",
+        "notes": "Both substantive and unusually honest -- the second volunteers that an extension proves nothing, which is the opposite of the trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1379,6 +1395,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.377Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Proof paragraph, scope section, five numbered extensions, status. No reframe.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1430,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 459 words)"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.420Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1417,6 +1465,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 459 words)"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.462Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Five extensions, three per-block coefficients (exhaustive), three named originally-deferred sorries.",
+        "notes": "Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1500,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.505Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends on a status paragraph, not a closer.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1535,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.545Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'We define...', 'We lock the order-0 coefficient...', 'We axiomatise...'",
+        "notes": "Ordinary construction narration in a proof block."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1570,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.586Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Final section states Lean status, which is new information rather than recapitulation.",
+        "notes": "Its truth is recorded under trap-superlative."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1605,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.629Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1640,23 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.671Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'**All** theorems are sorry-free and locally verified. The three originally deferred sorries (derivative at q=1, Markov-parameter symmetric form, and z-recursion uniqueness) were discharged during local Lean verification.' -- an unqualified universal, refuted by the sibling Lean file it describes.",
+        "notes": "REPORT ONLY, not fixed (Lean status is a factual claim the coordinating session should re-verify). content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains a LIVE sorry at line 330, introduced by its own comment at line 317 ('state this as an axiom for now (sorry referenced to the SymPy ...)') and lines 326-329 ('a full second-derivative proof is bulky ... so it is queued as a cited sorry'). The sibling remark qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope.md independently contradicts this block too: it says orders 2..7 'remain stated as Lean theorems with sorry and -- Ref: citations'. Proposed: 'All theorems are sorry-free' -> name which three were discharged and state that the second-derivative theorem remains a cited sorry. AGENTS.md Strict Lean Discipline treats a false sorry-free claim as a review failure. EVERYTHING ELSE IN THIS BLOCK VERIFIED CORRECT and should not be re-flagged: the antipode identity reduces to 1/q^5 = q^-4(1/q) as stated; the O(w) coefficients -2, -1, -2 are right; Extension 1's surrogate closed form is EXACT -- (q^2*chi_(3) + q*chi_(2,1) + 1*chi_(1,1,1))/((1+q)(1+q+q^2)) simplifies identically to the displayed degree-11/degree-7 quotient (and the reversed assignment (1,q,q^2) does NOT, so the block's ordering is the right one); Extension 2's quotient-rule arithmetic N'(1) = -10, D(1) = 12, N(1) = 0 => -5/6 is right; Extension 5's recursion 4(n+1)a_(n+1) + 6n a_n + (2n-1)a_(n-1) = 0 with a_0 = 1/2, a_1 = 0 was checked against the actual Taylor coefficients of z(q) = sqrt(q)/(1+q) at q=1, a = (1/2, 0, -1/16, 1/16, -13/256, 5/128, -61/2048, 47/2048), and holds exactly for n = 1..6."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1676,22 @@
         "reviewed_at": "2026-08-15T10:31:01.031Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "480ab2cef4f2",
+          "ts": "4ee641a4d088"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:05:36.716Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'require bulky n-th derivative computations'; 'matching the per-block dimension structure {q^2, q, 1}/((1+q)(1+q+q^2))'.",
+        "notes": "Parses. Minor: 'Lean's type system enforces rationality by construction' is loose -- the type R -> R enforces nothing; the construction does."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1714,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:05:36.716Z"
 }

@@ -1745,6 +1745,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a research-level categorical question.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:12.965Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "The block closes by denying what it is not: \"a **specific combinatorial fact** about typed-braid sub-braid extraction, not a research-level categorical question. Discharging it is substantial Lean work but no longer at the categorical-frontier level.\" Two denials in two sentences, both reassurance about the difficulty of remaining work rather than a statement of what the remaining work is.",
+        "notes": "Structural (it is the block's closing scope assessment). Proposed: state the positive form - \"What remains is one combinatorial identification, step 3 of the list above; steps 1, 2 and 4 are mechanical.\" - which the block already says two paragraphs earlier."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1764,6 +1781,21 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.004Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1783,6 +1815,21 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 323 words)"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.045Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Three em-dashes in 3.2k, all appositive."
       }
     ],
     "trap-triples": [
@@ -1802,6 +1849,21 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 323 words)"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.084Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The 5-item and 4-item lists are substantive and enumerate real Lean steps."
       }
     ],
     "trap-closing-aphorism": [
@@ -1821,6 +1883,21 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.124Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Recorded under negation-contrast; the closing construction is a denial pair rather than an aphorism."
       }
     ],
     "trap-meta-commentary": [
@@ -1840,6 +1917,21 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.165Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None beyond the closing assessment recorded above."
       }
     ],
     "trap-thesis-restatement": [
@@ -1859,6 +1951,21 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.204Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The Cumulative-atoms table adds per-step status rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1878,6 +1985,21 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.245Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1897,6 +2019,23 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.283Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "SWEEP DAMAGE plus a witness that does not support the numbers. (a) DAMAGE: the two-bullet justification reads \"This is **categorically verified** via two canonical evaluation runs: - the canonical formalism - F_3's eps^6 leading coefficient is exactly -3sqrt3/4 ... - the canonical formalism - categorical residual after N=3 is -0.0066 ppm\". \"the canonical formalism\" appears twice where a script name belongs, and \"canonical\"/\"categorical\" stand where \"numerical\" belongs - a residual quoted in ppm is a numerical residual, and \"two canonical evaluation runs\" were two numerical runs. Five substituted tokens in one list, all of the documented sweep-damage class. (b) THE WITNESS ASSERTS NOTHING: the .ts cites computations/q-beta-operator-valued-N3.witness.json, which carries \"assertions\": [] with \"allPassed\": true - an empty assertion array reported as a pass. (c) THE NUMBERS ARE NOT IN IT: that witness has no -0.0066 ppm anywhere and records \"tightening_vs_N2\": null. Its candidate list tops out at 0.6312 ppm for the best NON-fitted form; the only entry reaching zero is named \"Q_N2 * (1 + c_3_emp * b^3 * hbar_q^6) [fit]\" with eps_ppm 0.0 - a fit, self-labelled. (d) THE 112x DOES NOT GO WITH -0.0066: the witness's N=2 residual is eps_N2_ppm = 1.2490942611624274, and 1.2491/112 = 0.01115, not 0.0066; dividing by 0.0066 gives 189x. The sibling block q-beta-c3-hopf-three-fold-markov-context.md quotes the same 112x with a residual of +0.011 ppm, which does reproduce it. So two content blocks carry different N=3 residuals (-0.0066 vs +0.011) behind one shared factor, and only the sibling's is arithmetically consistent - reported, not resolved. (e) An existing audit, docs/audits/2026-05-18-qbeta-n4-sign-investigation.md lines 20 and 119, already records that the -0.0066 ppm figure \"appears to use fitted\" values. VERIFIED CORRECT: -3sqrt(3)/4 = -1.29903810568 = -2*(sqrt(3)/2)^3, so the identity holds with b(1) = sqrt(3)/2, and the witness's hoefsmit_b = 0.86758 is the q_0 value of the same quantity, consistent with b(1) being its q=1 limit.",
+        "notes": "Reported, not edited. Route: recover the script names behind \"the canonical formalism\"; re-derive or re-source the N=3 residual and reconcile it with the sibling block's +0.011 ppm; either give the witness real assertions or drop \"verified\" for what it actually is - the .ts already labels the computation status \"experimental\", which the prose does not."
       }
     ],
     "trap-nonspeakable": [
@@ -1916,6 +2055,22 @@
         "reviewed_at": "2026-08-15T10:31:00.676Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "383fb189b761",
+          "ts": "fc20dc0f595e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:13.321Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "Caps-for-emphasis (\"SINGLE focused combinatorial fact\", \"the FINAL substantive axiom\") is a register break rather than a syntax one; the sentences themselves read aloud. SCOPE FLAG: the block is built on \"the c_3 = -2 chain\" and carries no convention note, but the AGENTS ruling of 2026-08-15 makes convention D canonical and leaves the whole c_k ladder convention-C-frame and not re-derived, so every c_3 conclusion here is C-conditional and should say so; AGENTS also retracts \"proved\" for the c_2 = -1 sibling claim in favour of \"structural\"."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1939,5 +2094,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:13.321Z"
 }

@@ -20,7 +20,7 @@ under THREE Vol conventions side-by-side:
         p/n = 8·G (Borromean); D = 4.401 (Vol(6_2)); T = 8.286 (Vol(8_11));
         ³He = 8·G (Borromean); ⁴He = 4·8·G (magic-A L6a4_x4)
   C — Uniform Vol(𝓑₃) = 8·G for every atom (production
-        `vol_density_borromean` convention)
+        `per_knot_density_borromean` convention)
 
 The verdict for each convention is the **per-light-series swing**
 of λ_emp(K).  A tight convention has small swing across atoms — the
@@ -75,7 +75,8 @@ VOL_6_2 = mp.mpf("4.40083251612304610144120386564092803398348541851650")
 # `substrate/knot_volumes.py`, not significant digits.  Sub-13-digit
 # differences are below the source's precision floor.  Copilot review on
 # PR #1891 caught the literal apparent over-precision.
-VOL_8_11 = mp.mpf("8.28631681780659258810000000000000000000000000000000")
+# Vol(8_11) SnapPy census; the literal printed 51 digits, correct to 20 (qou-ckbv)
+VOL_8_11 = mp.mpf("8.28631681780659258812682479775")
 
 # Phase-4 SnapPy JSJ values (from `2026-05-19-delta-lambda-phase4-z4N-closure.md`):
 VOL_PHASE4_Z1 = mp.mpf("12.776")
@@ -286,7 +287,7 @@ def main() -> int:
         tolerance=2e-3,
         source=(
             "Proton's λ_emp ≈ 2.46 (the CODATA-implied near-match in "
-            "_li_2_q_util.py::vol_density_borromean docstring).  Anchors "
+            "_li_2_q_util.py::per_knot_density_borromean docstring).  Anchors "
             "the probe — proton row is the proton row regardless of "
             "convention since all three use Vol(𝓑₃) = 8G for p."
         ),

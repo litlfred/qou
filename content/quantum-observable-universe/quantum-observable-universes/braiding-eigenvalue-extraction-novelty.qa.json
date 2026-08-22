@@ -1428,6 +1428,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not its magnitude.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.596Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Block is dense with 'not' constructions; adjudicated one by one. Load-bearing and kept: 'enters categorically rather than by hand' (the block's thesis), 'fixes the role, not its magnitude' (the actual role/value distinction), 'is not obtained this way', 'neither implies the other', 'not claimed here' (scope statements, false-positive class 'temporal/scope status'). One decorative assert-by-denial removed.",
+        "notes": "fix applied: 'Nothing is imported: the parameter is read off structure the category already carries.' -> 'The parameter is read off structure the category already carries.' The removed clause asserted by denial and duplicated the preceding sentence's 'rather than by hand'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1447,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.637Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Two cleft constructions: '**What this does not settle is the value.**' opening para 2, and 'What the extraction buys is an identification:' in para 4. Both are setup-then-reframe in shape, but each carries a required scope caveat (the q_0-derivation gate) rather than manufactured emphasis, so they fall in the scope-statement false-positive class."
       }
     ],
     "trap-em-dash": [
@@ -1466,6 +1499,22 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 272 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.677Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "One spaced em-dash: 'The braiding is *assumed data* - a braided monoidal category comes equipped with a braiding...'. Single instance, introduces the justification of the preceding claim; density is not a tell here.",
+        "notes": "Could be tightened to a colon, which is what the clause actually does; left alone as a one-off."
       }
     ],
     "trap-triples": [
@@ -1485,6 +1534,21 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 272 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.715Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1504,6 +1568,21 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.756Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Final sentence is a scope claim tied to the identification just stated, not a free-standing quotable line; see the thesis-restatement entry for the redundancy finding."
       }
     ],
     "trap-meta-commentary": [
@@ -1523,6 +1602,23 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.797Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Body narrates no emphasis.",
+        "notes": "Structural note (.ts, not applied): the title 'Mathematical novelty: $q$ is extracted, not posited' announces the result's own novelty. Proposed: 'Scope of the extraction: the role of $q$ versus its value', which is descriptive and matches what the block actually adjudicates."
       }
     ],
     "trap-thesis-restatement": [
@@ -1542,6 +1638,23 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.840Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The role-versus-value scope is stated four times: para 1 (fix applied), para 2 'fixes the parameter's role, not its magnitude' + 'not obtained this way', para 3 'neither implies the other' + 'not claimed here', para 4 closer 'and it is silent on what that quantity's value is'. The final sentence establishes nothing the preceding two paragraphs have not.",
+        "notes": "Proposed (structural, spans paragraphs, not applied): end the block at 'so the two descriptions share one parameter instead of two.' and drop the closing sentence; alternatively keep the closer and compress para 3, whose two sentences are already covered by para 2. Author call on which repetition to keep."
       }
     ],
     "trap-performed-warmth": [
@@ -1561,6 +1674,21 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.882Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1580,6 +1708,21 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.919Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No unqualified maximum-strength claims; 'standard (Kassel)' is properly attributed and 'Nothing is imported' (the one absolute) has been removed."
       }
     ],
     "trap-nonspeakable": [
@@ -1599,6 +1742,22 @@
         "reviewed_at": "2026-08-15T10:30:59.948Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2a052a84e92b",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.959Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Sentences are clause-structured and read aloud.",
+        "notes": "Recomputed: q_0 from the CAL-2 identity m_mu/m_e = Vol(4_1)/hbar_q^2 with Vol(4_1) = 2*Cl_2(pi/3) = 2.0298832128 and CODATA 206.7682827 gives q_0 = 1.10997859564, so the block's '1.10998' is the correct rounding of the muon pin (and of the proton pin 1.1099785827 at this precision) - not the erroneous 1.1097. CAL-2 attribution matches the decay-width ruling (m_mu/m_e is the proxy) and the 'no q_0 derivation is claimed' sentence matches the 2026-08-02 forever-gate."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1621,5 +1780,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:54:01.959Z"
 }

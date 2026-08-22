@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.643Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Two-sentence remark; both claims positive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.682Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Concrete reading then significance claim; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.720Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 41 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.761Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1080,23 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.800Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Half the block is a contentless significance closer: 'This structural existence theorem underpins the harmonic analysis on the categorical Frobenius-Hopf algebra A.' It names no property, no decomposition and no consequence - 'underpins' is doing all the work - and it is placed exactly where a quotable line goes.",
+        "notes": "Proposed (not applied: the replacement needs content only the author can supply): either delete the sentence and let the block be the one concrete statement it actually makes, or replace it with the specific fact intended, e.g. 'These projections are the Peter-Weyl idempotents of A' - which is checkable, whereas 'underpins the harmonic analysis' is not."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1116,22 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.840Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "'Concretely,' signals a worked reading rather than narrating emphasis; the significance claim is scored under closing-aphorism."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1151,22 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.878Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The closer evaluates importance rather than restating an established claim; scored once, under closing-aphorism."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1186,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.916Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1220,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.955Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1254,22 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ddcfcd4e297b",
+          "ts": "d98673705316"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:40.995Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Both sentences read aloud.",
+        "notes": "Minor: '(irreps)' introduces an abbreviation that is then used once and never again; in a two-sentence remark the abbreviation costs more than it saves."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1296,5 @@
     "md": "ddcfcd4e297b",
     "ts": "d98673705316"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:04:40.995Z"
 }

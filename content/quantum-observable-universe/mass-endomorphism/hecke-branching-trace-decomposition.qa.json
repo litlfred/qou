@@ -2146,6 +2146,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.906Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No assertion-by-denial. \"No further hypothesis remains needed\" is a completeness claim, not a contrast.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2165,6 +2181,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.952Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -2184,6 +2216,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.997Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -2203,6 +2251,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:21.041Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No reflex list; the banner's four-item enumeration is boilerplate.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -2222,6 +2286,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:21.085Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "The corollary section closes on \"No further hypothesis remains needed\", a scope statement; the block then ends on the boilerplate archimedean banner.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -2241,6 +2321,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:21.129Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "None.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -2260,6 +2356,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:21.173Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "The corollary states a new special case rather than restating the proposition.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -2279,6 +2391,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:21.263Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -2298,6 +2426,22 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:21.218Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No inflation. Pythagorean identity independently verified: with A_scalar = (tr A / D) I and D = dim(V_mu tensor V_nu) = d_mu d_nu, ",
+        "notes": "|A_scalar||_F^2 = |tr A|^2 / D and <A, A_scalar> = |tr A|^2 / D, so ||A - A_scalar||_F^2 = ||A||_F^2 - |tr A|^2/(d_mu d_nu) exactly as printed. The beta_1 = beta_2 = 1 corollary also reduces correctly.|Two items flagged for the coordinating session, neither edited: (1) the block ends with the boilerplate banner \"**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall ...\" with nothing following it - it is the final paragraph. Same defect in hecke-algebra-type-scaffold.md. (2) The corollary links [rem:operator-valued-magnitude-budget](operator-valued-magnitude-budget.md) by relative file path rather than the #label anchor used everywhere else in this chapter; the target file does exist."
       }
     ],
     "trap-nonspeakable": [
@@ -2317,6 +2461,23 @@
         "reviewed_at": "2026-08-15T10:31:00.986Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "27f66a234a85",
+          "ts": "4c1331b0cf35"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:21.307Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "severity": "minor",
+        "evidence": "Copular substitution twice in the proposition statement: \"A^lambda_{mu,nu}(I) ... constructs the operator-valued coefficient\" and \"rho_lambda, rho_mu, rho_nu construct the Hoefsmit seminormal representations\". A coefficient does not construct itself; the verb should be the copula.",
+        "notes": "FIXED (mechanical, verb only, no math or symbol touched). Before: \"constructs the operator-valued coefficient encoding\" / \"$\\rho_\\lambda, \\rho_\\mu, \\rho_\\nu$ construct the Hoefsmit seminormal representations\". After: \"is the operator-valued coefficient encoding\" / \"$\\rho_\\lambda, \\rho_\\mu, \\rho_\\nu$ are the Hoefsmit seminormal representations\". Math delimiters re-checked after the edit: $$ count even, single-$ count 34 (even)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2340,5 +2501,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:20:21.307Z"
 }

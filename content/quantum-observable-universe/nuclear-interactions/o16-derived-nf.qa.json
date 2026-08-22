@@ -1182,6 +1182,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.058Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (5 sections) + .ts. O-16 nuclear facts correct: 8 is magic, 1p shell closes at 8, O-16 is the next doubly-magic nuclide after He-4. Step counts 16 nucleons / 15 inter-nucleon crossings are consistent.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1201,6 +1218,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.098Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (5 sections) + .ts. O-16 nuclear facts correct: 8 is magic, 1p shell closes at 8, O-16 is the next doubly-magic nuclide after He-4. Step counts 16 nucleons / 15 inter-nucleon crossings are consistent.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1220,6 +1254,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 206 words)"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.137Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (5 sections) + .ts. O-16 nuclear facts correct: 8 is magic, 1p shell closes at 8, O-16 is the next doubly-magic nuclide after He-4. Step counts 16 nucleons / 15 inter-nucleon crossings are consistent.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1239,6 +1290,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 206 words)"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.180Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Four-step numbered construction.",
+        "notes": "Substantive; the step counts (16 nucleons, 15 crossings, 8 electrons) are internally consistent."
       }
     ],
     "trap-closing-aphorism": [
@@ -1258,6 +1326,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.221Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (5 sections) + .ts. O-16 nuclear facts correct: 8 is magic, 1p shell closes at 8, O-16 is the next doubly-magic nuclide after He-4. Step counts 16 nucleons / 15 inter-nucleon crossings are consistent.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1277,6 +1362,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.263Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (5 sections) + .ts. O-16 nuclear facts correct: 8 is magic, 1p shell closes at 8, O-16 is the next doubly-magic nuclide after He-4. Step counts 16 nucleons / 15 inter-nucleon crossings are consistent.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1296,6 +1398,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.305Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'## Expected operator sequence -- By the three-regime theory, the 15 inter-nucleon operators follow the predicted pattern.'",
+        "notes": "A section heading followed by a sentence that names no pattern, states no sequence, and only asserts that a prediction is met. Either the sequence was removed or the section was never written. PROPOSED: give the 15-operator sequence, or delete the section."
       }
     ],
     "trap-performed-warmth": [
@@ -1315,6 +1434,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.345Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (5 sections) + .ts. O-16 nuclear facts correct: 8 is magic, 1p shell closes at 8, O-16 is the next doubly-magic nuclide after He-4. Step counts 16 nucleons / 15 inter-nucleon crossings are consistent.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1334,6 +1470,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.386Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'yield the **closed** $1s^2 2s^2 2p^4$ electron configuration'; 'At $A = 16$, the unreduced braid word contains $\\sim 10^{10}$ terms ... reduces this to $\\leq 128$ normal-form terms within $\\leq 480$ Hecke steps'; 'the doubly-magic nucleus attains $|\\mathrm{def}| = 0$, indicating **complete stability**'.",
+        "notes": "THREE unearned claims. (1) $1s^2 2s^2 2p^4$ is an OPEN shell -- 2p holds six electrons and oxygen has four; the electron count 8 is right but 'closed' is false (oxygen is not a noble gas, and the block's own subsidiary conjecture in rem:periodic-table-demand lists the noble gases as Z = 2, 10, 18, 36, 54, 86). (2) The '~10^10 terms' contradicts the chapter's own bound: rem:nuclear-reduction-algorithm gives O(2^{Z*N}), which at Z=N=8 is 2^64 = 1.8x10^19, nine orders of magnitude larger; and '<= 480 Hecke steps' contradicts that block's O(A^3) = 4096. (3) 'complete stability' at |def| = 0 is contradicted by rem:periodic-table-demand, which reports the only doubly-magic case actually computed, He-4, at |dem| = 0.098 and says explicitly that its stability 'arises from action minimization, not demand closure'. Also NOTATION DRIFT: this block writes |def| while its sibling table and rem:periodic-table-demand write |dem| for what appears to be the same quantity -- and ex:li6-derived-nf uses BOTH within one block."
       }
     ],
     "trap-nonspeakable": [
@@ -1353,6 +1506,23 @@
         "reviewed_at": "2026-08-15T10:31:01.504Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "32f1e9944ee0",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.428Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (5 sections) + .ts. O-16 nuclear facts correct: 8 is magic, 1p shell closes at 8, O-16 is the next doubly-magic nuclide after He-4. Step counts 16 nucleons / 15 inter-nucleon crossings are consistent.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1375,5 +1545,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:02.428Z"
 }

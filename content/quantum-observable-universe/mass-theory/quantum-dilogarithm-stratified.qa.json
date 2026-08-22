@@ -1768,6 +1768,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.230Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1787,6 +1803,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.274Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-em-dash": [
@@ -1806,6 +1838,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 96 words)"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.317Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-triples": [
@@ -1825,6 +1873,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 96 words)"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.359Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-closing-aphorism": [
@@ -1844,6 +1908,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.401Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-meta-commentary": [
@@ -1863,6 +1943,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.441Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-thesis-restatement": [
@@ -1882,6 +1978,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.486Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-performed-warmth": [
@@ -1901,6 +2013,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.527Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-superlative": [
@@ -1920,6 +2048,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.569Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "trap-nonspeakable": [
@@ -1939,6 +2083,22 @@
         "reviewed_at": "2026-08-15T10:31:00.654Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "29d5fa52eeb4",
+          "ts": "ec72e10dbe11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.608Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full. All ten categories clean in context. The closing three declaratives ('The analytic infinite product truncates to a finite product as a Frobenius-paired identity. The truncation depth is structurally locked to the NF support of T_w. The analytic divergence is a side-effect, absent from the categorical mass.') are an interpretive gloss on the displayed corollary rather than a reflex triple, and each states a different thing; the last is a substantive scope claim, not manufactured contrast. RIGOR: the statement's shape is internally consistent -- the depth-k coefficient is the Frobenius dual of the truncation increment, and the corollary's truncation at k_star(T_w) matches the partial-sum claim.",
+        "notes": "Two notes. (1) STRUCTURE, not a trap: the block carries a '**Corollary (truncation).**' inside a proposition block, which is a definition-clarity concern (one claim per block) rather than a language-trap one; it should be its own cor: block or be folded into the statement. (2) THE PROOF OF THIS BLOCK HAS A VERIFIED MATHEMATICAL ERROR at Step 3(c) and a malformed Step 3(d) -- see my verdict on prf:quantum-dilogarithm-stratified. Both sit inside the region the proof already marks open, but the statement here is what they are meant to support, so the proposition should be read as conditional on that region."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1962,5 +2122,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:45:21.608Z"
 }

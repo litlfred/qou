@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T02:49:30Z
-updated_at: 2026-08-15T10:52:55Z
+updated_at: 2026-08-21T21:47:54Z
 ---
 
 
@@ -99,3 +99,85 @@ TRAP: `snappy.Link(K).braid_word()` returns a NON-minimal representative —
 6₁ gives 5, 9₁₂ gives 6. Morton–Franks–Williams would settle it but this SnapPy
 build ships no HOMFLY (`Link` exposes only alexander/jones; spherogram exports
 none). Needs KnotInfo or a HOMFLY implementation. Posted on #5293.
+
+
+## 2026-08-21 — RESIDUAL CLOSED. 6_1 = 5 boundary-parabolic connections.
+
+This bean's handoff said the 6_1 count 'is NOT hardenable in this sandbox'
+because ptolemy.unhyperbolic.org 403s and magma/sage are absent, and the
+certified probe repeated it ('6_1 has no bundled data'). Both were right about
+the DATA and wrong about the REQUIREMENT.
+
+Only retrieve_solutions() needs the network. Manifold.ptolemy_variety() builds
+the ideal OFFLINE, and for these knots it is tiny -- 4 tetrahedra, 4 Ptolemy
+coordinates, 5 equations, 2 obstruction classes. A sympy Groebner basis over QQ
+settles it in seconds. No DB, no Magma, no sage.
+
+    4_1   2 irreducible + 1 abelian = 3     reproduces the certified probe
+    5_2   3 irreducible + 1 abelian = 4     reproduces the certified probe
+    6_1   4 irreducible + 1 abelian = 5     <- the missing input
+
+Producer: computations/qbeta/dt_crossknot_sixone_connection_count_groebner.py
+
+### The trap, recorded because the wrong answer is the plausible one
+
+SnapPy's equations_with_non_zero_condition appends the Rabinowitsch polynomial
+1 = c1 c2 c3 c4 t. Without it, 6_1's obstruction class 0 contributes a spurious
+rational point with c_0011_2 = 0 -> 5 irreducible, 6 connections, which would
+have REFUTED R1. I ran it that way first and reported 5. The probe now computes
+and prints BOTH forms so the difference is visible rather than assumed away.
+
+### Independent gate
+
+Each class-1 ideal is a single Galois orbit; its field must be the knot's known
+trace field. Discriminants: -3, -23, 257 = Q(sqrt-3), the cubic of disc -23,
+and the quartic of disc 257 -- tabulated trace fields of 4_1, 5_2, 6_1. Nothing
+in the count computes a trace field, so this is a real check, not a restatement.
+
+### What this does and does NOT settle
+
+SUPPLIES R1's input. DT_max = #connections, so R1's 6_1 prediction is now the
+definite {5}.
+
+DOES NOT test R1. The third-knot test still needs an independent
+resurgence/Borel DT count for 6_1, absent from the corpus. That is now the
+ONLY missing piece.
+
+But the test is live in a way it was not: both candidates are definite --
+R1 -> {5} against Wedderburn-at-the-braid-index -> {5,10}, the latter definite
+only because braid index(6_1) = 4 is now DERIVED (qou-dr8m, MFW + explicit
+4-strand word) rather than recalled. This bean's own note said 'two knots of
+equal braid index test a braid-index rule not at all' -- 4_1 and 5_2 are both
+index 3, 6_1 is 4, so 6_1 is the first point where it is testable.
+
+
+### CORRECTION to the note above (same day, before it stood)
+
+I wrote '<- the missing input', implying the 4 was new. It is NOT. Re-reading
+this bean's own 2026-08-19 entry: PR #5293 (qou-gz37) already derived
+r(6_1) = 4 THREE independent ways, one of them 'DG §6's algebraic number field
+(x^4-2x^3+x^2+3x+1, disc 257)'. That is character-for-character the polynomial
+and discriminant my Groebner basis produced.
+
+So the honest framing is a FOURTH route, not a first derivation:
+
+    #5293 route 1   DG §6 algebraic number field
+    #5293 route 2   Newton polygon / geometric A-poly L-degree of K4_1
+    #5293 route 3   ki6c stationary-phase gluing quartic
+    this            Ptolemy variety over QQ, Groebner, non-zero condition
+
+Route 4 is genuinely independent of 1-3: it never touches the A-polynomial,
+the Newton polygon, or the ki6c asymptotic. It goes through the gluing-variety
+ideal itself. Getting their exact quartic out of a different construction is a
+real cross-confirmation of their field identification — and cuts the other way
+too, since my first (wrong) run got 5 and their 4 is what a correct run
+reproduces.
+
+What is arguably new here is small and should be stated as such: the count is
+obtained WITHOUT the A-polynomial, and the '+1 abelian' step is flagged as the
+same definitional move this bean already flags for 'full = geom + 1' — so the
+computed content is the 4, and the 5 remains one convention away from it.
+
+UNCHANGED: the third-knot test still needs an independent resurgence/Borel DT
+count for 6_1. That is #5293's open item 1 and it is still open. r is the R1
+shadow, not the count.

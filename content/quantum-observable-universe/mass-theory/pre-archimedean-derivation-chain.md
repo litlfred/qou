@@ -14,7 +14,7 @@ Yekutieli's surface integration maps the braided category to an Iwahori–Hecke 
 Every hadron corresponds to a knot closure. Jones’s uniqueness theorem guarantees a single Markov trace $\mathrm{tr}_M$ captures the knot invariant unambiguously. Mass, binding, and decay are evaluations of this one algebraic functional.
 
 **Step 4: Operator selection**
-The genus-four state space admits exactly six independent crossing operators. The $H_3(q)$ basis in Gröbner–Shirshov normal form supplies them. The Wedderburn summands indexing the mass formula perfectly mirror the curve's automorphism Prym decomposition.
+The genus-four state space admits exactly six independent crossing operators. The $H_3(q)$ basis in Gröbner–Shirshov normal form supplies them. The Wedderburn summands indexing the mass formula mirror the curve's automorphism Prym decomposition.
 
 **Step 5: Wedderburn blocks**
 Semisimplicity splits $H_n(q)$ into Wedderburn matrix blocks indexed by partitions. This renders the trace a finite sum. Hoefsmit seminormal representations compute the matrix traces. The Wenzl branching rule provides the central weights $y_\lambda(q)$. The full invariant factors block-by-block.
@@ -23,7 +23,7 @@ Semisimplicity splits $H_n(q)$ into Wedderburn matrix blocks indexed by partitio
 The Markov trace is the Frobenius integral on the symmetric algebra $H_n(q)$. The absolute trace evaluates the absolute categorical mass. The Kauffman framing formula supplies the ribbon twist, matching the knot's chirality to its phase.
 
 **Step 7: Normal forms and finite slices**
-The Gröbner–Shirshov basis algorithms rewrite braid words to their canonical normal forms. The associated spectral sequence collapses at $E_2$. Computations therefore require only finite jet-order slices, completely avoiding infinite-series divergence.
+The Gröbner–Shirshov basis algorithms rewrite braid words to their canonical normal forms. The associated spectral sequence collapses at $E_2$. Computations therefore require only finite jet-order slices, avoiding infinite-series divergence.
 
 **Step 8: Jet order**
 The slice-traversal matches the jet order. Convergence confirms the finite-slice evaluation remains algebraically consistent with the expected semiclassical limit at $q \to 1$.

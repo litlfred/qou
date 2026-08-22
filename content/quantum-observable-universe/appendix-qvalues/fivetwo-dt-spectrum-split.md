@@ -58,7 +58,7 @@ found, but that none can exist. Any construction whose output is symmetric
 under exchanging the two Stokes blocks is blind to the datum, however
 elaborate.
 
-Read positively, the same fact says the DT count is a **bar-graded** object.
+The same fact says the DT count is a **bar-graded** object.
 The involution $\tau$ induces a faithful $\mathbb{Z}/2$ grading into bar-even
 and bar-odd parts; the $5_2$ pair has nonzero bar-odd part, and that part is
 precisely what a symmetric reading discards. "No scalar serves the datum" and

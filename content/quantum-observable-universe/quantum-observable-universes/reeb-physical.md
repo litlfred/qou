@@ -1,1 +1,1 @@
-The geometric decomposition $\alpha = \alpha_H + \alpha_V$ enforces the spin-statistics connection at the categorical level. Purely horizontal forms carry integer spin and act as bosons, while forms with non-trivial vertical components carry half-integer spin and act as fermions.
+The geometric decomposition $\alpha = \alpha_H + \alpha_V$ enforces the spin-statistics connection at the categorical level. Purely horizontal forms carry integer spin and are bosons, while forms with non-trivial vertical components carry half-integer spin and are fermions.

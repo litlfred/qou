@@ -1,11 +1,11 @@
 ---
 # qou-0hnz
 title: 254 producers hardcode the MUON pin as an import fallback; 78 under a 'proton' comment
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T21:08:09Z
-updated_at: 2026-08-21T21:08:46Z
+updated_at: 2026-08-21T21:21:49Z
 ---
 
 ## What
@@ -47,3 +47,36 @@ be muon-valued under a proton declaration. Prefer fixing the *path* over
 editing the constant — a resolved `q_at()` cannot go stale, a hardcoded literal
 can. Re-run and diff each witness; the guard means an unfixed one now shows up
 as `Q0_ANCHOR_MISSING` rather than silently passing.
+
+
+---
+
+## CORRECTION (same session, before any of this shipped as fact)
+
+**The headline numbers in the section above are wrong, and the direction of the error matters: they over-claim.**
+
+**"78 under a proton comment" counted comments, not declarations.** What determines a witness's anchor is its `q0_anchor_manifest.json` **declaration**, not the comment sitting beside the constant. Measured against declarations: of **407** declared producers, **23** carry a pin literal in executable code, and exactly **1** could not resolve `q_parameter`.
+
+**That 1 was already fixed.** `deltalambda/t25_cinquefoil_deltalambda_sign_probe.py` was repaired by a prior agent to *fail loudly* rather than substitute the muon literal. The literal survives only inside the comment explaining the removal — so my grep read a **fix** as a **finding**.
+
+**"254 producers hardcode the muon constant" is also contaminated by prose.** Stripping comments and docstrings: of 255 files matching, **33** mention the literal only in prose.
+
+**Measured population of the acute defect — declared proton, actually computes muon — is 0.**
+
+### What was real
+
+`e_hartree_round24_molecular_reuse` **was** a genuine instance: declared proton, `from q_parameter import q_at` unreachable standalone, `ImportError` swallowed, computed at the muon literal. Found, fixed (imports `_path_bridge`; fallback now carries the proton pin), verified reproducing the committed numbers exactly. So the class had a real member — one — and it is closed.
+
+The `q0_stamp` disagreement guard remains correct and worth having regardless of the count: it makes the failure mode *visible* (`Q0_ANCHOR_MISSING` + `q0AnchorReason`) instead of a false `Q0_OK`.
+
+### Re-scope
+
+The remaining **300 UNDECLARED** producers carrying a pin literal are **not a flip class**. Absent from the manifest, their witnesses land `Q0_ANCHOR_MISSING` — a tolerated, visible state, no false anchor. Moving them to the proton pin is ordinary migration scope under **`qou-1c4y`**, and belongs there rather than in a separate defect bean.
+
+### Landed instead of the drain
+
+[`computations/audits/q0_hardcoded_pin_audit.py`](../computations/audits/q0_hardcoded_pin_audit.py) — reports the three populations separately and **refuses to conflate them**: `CONTRADICTS` (the only defect class; exits 1), `UNDECLARED` (migration scope), `PROSE_ONLY` (not a finding, often the opposite of one). It strips comments and docstrings before matching, and treats *`q_parameter` resolution* as the deciding test rather than the literal's presence — a producer that reaches `q_at()` has a dead literal.
+
+Current: **CONTRADICTS 0**, UNDECLARED 300, PROSE_ONLY 36, exit 0.
+
+This bean is closed as **over-claimed**. The checker is the durable output; the drain it proposed does not exist as described.

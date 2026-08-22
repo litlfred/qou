@@ -12,6 +12,7 @@ The trefoil spins around the Borromean anchor. This motion sweeps out the electr
     & \\
   & \underset{\text{proton (anchor)}}{\mathrm{Vol} \approx 7.328} &
 \end{tikzcd}
+```
 
 The Borromean volume pins the massive proton in place. The zero volume of the trefoil keeps the electron light. Vacuum drag alone supplies its mass. The Hopf link $\oplus$ provides the electromagnetic binding.
 

@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.497Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. Denials are all substantive: 'No third channel exists' (End(A⊗A) has R-rank 2, so exactly two central idempotents); 'No free parameters are introduced'; 'It disagrees with the bare formula at every other q'; 'Neither is established'. Each is a checkable claim rather than emphasis-by-denial. The one borderline case (the three-item denial after 'topological invariant') is recorded under trap-triples instead."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.538Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No setup-then-reframe. The two candidate constructions that get undercut ('matches CODATA to 7 ppb ... It disagrees with the bare formula at every other q') state a real limitation of a real proposal, not a manufactured reframe."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 615 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.579Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No spaced em-dashes; the only '--' is the LaTeX en-dash in the proper name Chern--Simons."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,23 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 615 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.621Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "'At the fundamental level, no contour integrals, no factors of $2\\pi i$, and no renormalisation-group running are required.' - a reflex three-item denial list immediately after the sentence it restates ('These results turn $\\alpha_{EM}$ into a topological invariant of the Bring fibration'). Items 1 and 2 are not independent: factors of $2\\pi i$ are what contour integrals produce, so the third item is padded to reach three. Only 'no renormalisation-group running' carries content the preceding sentence does not.",
+        "notes": "Structural (physics claim at stake), not edited. Proposed fix: 'These results turn $\\alpha_{EM}$ into a topological invariant of the Bring fibration, fixed at $q_0$ without renormalisation-group running.' - folds the one load-bearing denial into the positive claim and drops the two redundant ones. The substantive numbered list of three structural results earlier in the block is a genuine enumeration and passes."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1371,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.662Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Block ends 'Closing the remaining $1.55\\times10^{-3}$ gap requires a pre-archimedean origin for the $\\pi$-bearing additive correction or an off-diagonal Gram deformation that escapes the multiplicative-family ruling. Neither is established.' - names two concrete candidate routes and their status; not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.702Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No narration of emphasis anywhere in the block."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.743Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The final paragraph looks like a summary but adds content the body does not have (the two candidate closure routes and the fact that neither is established), so it is not bare restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.784Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1507,21 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.824Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'exhausts genus-4 torus knots' is a proved Diophantine exhaustion (recomputed: (m-1)(n-1)=8, gcd(m,n)=1, m<=n gives exactly (2,9),(3,5)), and 'the entirety of the electromagnetic coupling' follows from R-rank 2. Not inflation. 'This is the numerical front-runner' and 'is solid' are colloquial register rather than superlative inflation - noted for clarity-grad-style, not failed here."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1541,23 @@
         "reviewed_at": "2026-08-15T10:31:01.123Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dd1a26f50baa",
+          "ts": "6a5e0c9af9ff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:11.866Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Two noun-pile sentences that stall aloud: 'The Bring-supported quantum observable universe has a forced force-carrier sector with categorical complexity $[9]_q\\cdot[10]_q\\in R$.' (four stacked pre-modifiers before the head noun, then a second modifier chain) and 'This puts the correction structurally outside the pre-archimedean substrate ring $R=\\mathbb{Z}[q^{\\pm1/2},(q-q^{-1})^{-1}]$.'",
+        "notes": "Structural (math-adjacent), not edited. Proposed fix for the first: 'On a Bring-supported quantum observable universe the force-carrier sector is therefore forced, and its categorical complexity is $[9]_q\\cdot[10]_q\\in R$.' The second is acceptable once the first is split."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1580,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:27:11.866Z"
 }

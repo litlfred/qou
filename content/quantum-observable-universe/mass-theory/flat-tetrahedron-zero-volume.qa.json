@@ -16,6 +16,21 @@
         "reviewed_at": "2026-08-21T16:07:50.943Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:59.944Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -33,6 +48,21 @@
         "reviewed_at": "2026-08-21T16:07:50.976Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:59.985Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Two spaced em-dashes in 1.8k, both true parentheticals (\"- the range in which all three edge parameters have the most obvious signs -\")."
       }
     ],
     "trap-triples": [
@@ -50,6 +80,21 @@
         "reviewed_at": "2026-08-21T16:07:51.009Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:00.026Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "The only triple is the Lobachevsky decomposition D(z) = L(t1)+L(t2)+L(t3), which has three terms because a tetrahedron has three dihedral-angle classes."
       }
     ],
     "trap-thesis-restatement": [
@@ -67,6 +112,21 @@
         "reviewed_at": "2026-08-21T16:07:51.045Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:00.137Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "The Consequence section states a new fact (additivity gives total volume zero), not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -84,6 +144,21 @@
         "reviewed_at": "2026-08-21T16:07:51.079Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:00.175Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -101,6 +176,21 @@
         "reviewed_at": "2026-08-21T16:07:51.125Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:00.215Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Only \"the most obvious signs\", a mild descriptive superlative, not inflation. Verified the mathematical claims: D(x)=0 for all real x holds (Bloch-Wigner vanishes on the reals); Lean sibling QOU.Knot.FlatTet.BlochWigner_lob_ofReal states exactly (x : R) -> BlochWigner_lob (x : C) = 0 with no hypothesis, matching the .md; file is sorry-free."
       }
     ],
     "trap-nonspeakable": [
@@ -118,6 +208,21 @@
         "reviewed_at": "2026-08-21T16:07:51.161Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "Full read of thm:flat-tetrahedron-zero-volume (flatness definition, the unrestricted theorem, the Lobachevsky-form proof sketch, the degenerate values, the additivity consequence). No construction of this category present."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:00.253Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "trap-negation-contrast": [
@@ -135,6 +240,21 @@
         "reviewed_at": "2026-08-21T16:07:51.196Z",
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "A version restricted to 0 < x < 1 is strictly weaker, and too weak for the application in the next block, and The vanishing must hold on all of R or it does not reach the case it is wanted for - both are substantive: the trefoil shape parameters -1 and 2 lie outside (0,1), so the restriction genuinely fails to cover the intended application. This is mathematical necessity, not emphasis by denial."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:00:59.905Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"A version restricted to 0<x<1 ... is strictly weaker, and too weak for the application\" is a substantive strength comparison, checked against the next block (trefoil shapes -1 and 2 are indeed outside that interval)."
       }
     ],
     "trap-meta-commentary": [
@@ -153,6 +273,21 @@
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "The section justifying the unrestricted form gives a concrete mathematical reason (the trefoil's parameters) rather than merely asserting significance.",
         "notes": "clarity-rhetorical-header NOTE (different criterion): the header Why the unrestricted form is the one worth stating is rhetorical rather than a noun phrase; proposed Scope of the hypothesis or Unrestricted vs restricted form."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:00.100Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No emphasis narration."
       }
     ],
     "trap-closing-aphorism": [
@@ -171,8 +306,23 @@
         "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
         "evidence": "The block closes on a cross-reference (this is the mechanism behind the vanishing for torus knots, used in the block that follows), which is the bookkeeping false-positive class.",
         "notes": "RIGOR: VERIFIED CORRECT. D(x) = 0 for all real x is a true property of the Bloch-Wigner dilogarithm, and the Lobachevsky-form argument given (real shape gives real edge parameters, whose arguments are 0 or pi, and Lambda vanishes at both) is valid. The Lambda-vs-Cl_2 hazard flagged in AGENTS.md does not arise here: Lambda is used only as the Lobachevsky function in D(z) = Lambda(theta_1)+Lambda(theta_2)+Lambda(theta_3), with no numeric coefficient asserted. The junk-value handling at x = 0 and x = 1 under the 1/0 = 0 convention is stated correctly, and volume additivity over an ideal triangulation gives the torus-knot consequence."
+      },
+      {
+        "field_hash": {
+          "md": "b5597ed669bd",
+          "ts": "0a5a4146e08a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:00.063Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Final line is a cross-reference closer (\"used in that form in the block that follows\") - false-positive class."
       }
     ]
   },
-  "updated_at": "2026-08-21T16:07:51.268Z"
+  "updated_at": "2026-08-22T05:01:00.253Z"
 }

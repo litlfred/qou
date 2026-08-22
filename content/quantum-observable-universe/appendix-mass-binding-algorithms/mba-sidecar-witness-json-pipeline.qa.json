@@ -885,13 +885,193 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.060Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.097Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.144Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.182Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.221Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.260Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.301Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.341Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.380Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5ead3f162006",
+          "ts": "6a61633a7446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.419Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:witness-json-pipeline. No constructions from the ten categories; the block is candid about the legacy-witness residue in both its opening sentence and its authorNotes status entry. VERIFIED every other cited path exists (qou_substrate/witness.py, lp_dual_witness_validator.py) and the precisionMetadata shape matches the 65/50 dps discipline.",
+        "notes": "NOT A TRAP, reported separately: the Notes cite the cross-language sibling as ../../../tools/witness-schema/, which does not exist. Per AGENTS.md the package was moved back out of folio-assistant by e2ded2c607 and now lives at schemas/witness-schema/ - I confirmed tools/witness-schema is absent and schemas/witness-schema is present. Minor: the JSON template shows guard_digits 15 while live witnesses (e.g. photon-operator-table) record 10."
+      }
     ]
   },
   "source_hashes": {
     "md": "5ead3f162006",
     "ts": "6a61633a7446"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:27:25.419Z",
   "$schema": "block-qa/v1",
   "label": "alg:witness-json-pipeline",
   "kind": "algorithm",

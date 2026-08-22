@@ -17,7 +17,7 @@ $$
 
 The two sides are compared along a ray $r \mapsto rz$. Their difference has vanishing derivative — and the vanishing *is* the law of sines for the ideal tetrahedron, $\lVert z\rVert = \sin\theta_2 / \sin\theta_3$, in disguise. So the difference is constant on the ray. At $r = 1$ the shape lies on the unit circle, where $\log\lVert z\rVert = 0$ and both sides reduce to the Clausen value $\mathrm{Cl}_2$; the constant is therefore zero.
 
-This is why the unit circle carries so much weight in the argument: it is the one place where the identity is visible directly, and the radial derivative transports it everywhere else in the upper half plane.
+The unit circle is the one place where the identity is visible directly; the radial derivative transports it everywhere else in the upper half plane.
 
 ## What it buys
 

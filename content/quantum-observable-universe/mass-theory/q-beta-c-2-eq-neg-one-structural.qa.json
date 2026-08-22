@@ -1774,6 +1774,22 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.470Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The canonical observation c_2 ~ -1 is not an empirical fit. It is the exact coefficient of u^2 ...' is the corpus's required fit-vs-derivation distinction, so the contrast is substantive. But see trap-superlative: 'canonical observation' is incoherent as written (a canonical result would not be approximate) and matches this chapter's confirmed 'canonical'-for-'numerical' token substitution."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1793,6 +1809,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.526Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1812,6 +1843,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 106 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.586Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes in the body."
       }
     ],
     "trap-triples": [
@@ -1831,6 +1877,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 106 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.644Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1850,6 +1911,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.713Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a concrete next step (discriminating brane-tower truncation schemes via c_3)."
       }
     ],
     "trap-meta-commentary": [
@@ -1869,6 +1945,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.767Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1888,6 +1979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.824Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1907,6 +2013,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.950Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1926,6 +2047,23 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:18.900Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'the partial ladder Q_{N=2}(q_0) evaluates to within 5.6 ppm of Q_beta^CODATA with zero CODATA input' is unqualified on two counts that I verified against the block's own witness (computations/qbeta/qbeta-symbolic-chain-alpha-b.witness.json). (1) CONVENTION. That witness computes z = 1/(sqrt(q) + 1/sqrt(q)) = 0.4993203342, which is convention C - excised by the owner ruling of 2026-08-15 in favour of D (z = q^3/(q^2+1) = 0.6126880371). z is load-bearing here, not cosmetic: alpha = (z-1)h/2 feeds alpha_eff = alpha - b*hbar^2/2 and hence the cos(alpha_eff) factor of the displayed ladder. I reproduced the witness exactly under C at the muon pin (eps_N0 = 1681.9, eps_N1 = 78.156, eps_N2 = 5.60699 ppm, all matching to the digits recorded) and then re-ran the identical chain under D: eps_N1 = 679.36 and eps_N2 = 606.76 ppm. The headline 5.6 ppm is therefore 108x worse under the canonical convention, and the block carries no C-conditional label. (2) 'zero CODATA input' - q_0 itself is pinned on a CODATA mass ratio, so the honest claim is 'no fit to the CODATA Q_beta value'.",
+        "notes": "PROPOSED (not applied - every part of this is math): (a) add the C-conditional scope the AGENTS.md c_k banner requires ('convention-C frame; not yet re-derived under D'), and record the D figure alongside; (b) reword 'zero CODATA input' to 'without fitting to Q_beta^CODATA'. NOTE what is NOT affected: c_2 = -1 itself is z-free (b and hbar_q do not involve z), so the ring identity survives convention D unchanged - only the ladder it sits in, and the 5.6 ppm, are C-framed. SEPARATE defect in the .ts, not fixed: computation.status is 'verified' but the witness records allPassed: false (assertion alpha_q0_matches_probe_n3_witness computed 5.82e-09 against tolerance 1e-30). The authorNotes also cite that passing assertion's tolerance as 1e-20; the witness records tolerance 0."
       }
     ],
     "trap-nonspeakable": [
@@ -1945,6 +2083,21 @@
         "reviewed_at": "2026-08-15T10:31:00.742Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1d4ff1f99540",
+          "ts": "9e33cc4f18b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:19.014Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1968,5 +2121,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:15:19.014Z"
 }

@@ -1779,6 +1779,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not just observing it empirically.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.160Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The reason is not that the Markov closure of the full typed braid is the Hopf link -- it isn't' heads off a real misreading and is followed immediately by the positive account (order-3 factorisation through 2-strand sub-braid windings). Substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1798,6 +1814,21 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.222Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement, boxed identity, mechanism, cross-reference; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1817,6 +1848,22 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.330Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "One em-dash, closing the 'it isn't' correction. Carries content."
       }
     ],
     "trap-triples": [
@@ -1836,6 +1883,21 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.383Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The per-step categorical chain, the empirical confirmation, and the near-match tier' names the three actual sections of the context remark."
       }
     ],
     "trap-closing-aphorism": [
@@ -1855,6 +1917,21 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.430Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a cross-reference."
       }
     ],
     "trap-meta-commentary": [
@@ -1874,6 +1951,23 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.502Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The block narrates its own epistemic status and gets it wrong: 'This proposition **proves** the categorical identification c_3 = J_Hopf(q=1) = -2 ... not just observing it empirically.' Its own interpreting remark says the opposite - 'Near-match tier (not Taylor-exact). The identification ... forms a classical-limit near-match, not a Taylor-exact coefficient' - and quantifies the gap at ~0.58 percent. AGENTS.md is explicit that c_k >= 3 are near-matches and that the wire/un-wire flip-flop (six recorded episodes) came from exactly this compression. The block's lean.validation is also 'not_checked', so nothing machine-checked backs the word.",
+        "notes": "PROPOSED (not applied - this is the block's epistemic tier, which needs author sign-off): replace 'proves' with the tiered wording AGENTS.md requires, e.g. 'This proposition gives the categorical mechanism for the near-match c_3 ~ J_Hopf(q=1) = -2'. The context remark's own paragraph is a ready model - it was updated to the post-2026-08-16 framing while this proposition was not, which is why the pair now contradicts itself."
       }
     ],
     "trap-thesis-restatement": [
@@ -1893,6 +1987,21 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.606Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1912,6 +2021,21 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.679Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1931,6 +2055,23 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.755Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Bold is used as emphasis on the contested word ('**proves**', '**factors**', '**not**'); the first is the substantive over-claim recorded under trap-meta-commentary.",
+        "notes": "PROPOSED (not applied - same sentence; fix once)."
       }
     ],
     "trap-nonspeakable": [
@@ -1950,6 +2091,21 @@
         "reviewed_at": "2026-08-15T10:31:00.437Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e8073a99ddae",
+          "ts": "1b787b762e52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:22:49.835Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1973,5 +2129,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:22:49.835Z"
 }

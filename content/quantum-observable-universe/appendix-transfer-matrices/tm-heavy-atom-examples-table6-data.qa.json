@@ -895,7 +895,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.689Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.731Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.774Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "Spaced em-dash appended an afterthought naming the table's own layout: 'closing the shell - the concluding n_out = 0 cell.'",
+        "notes": "FIXED: '...closing the shell - the concluding $n_{\\mathrm{out}} = 0$ cell.' -> '...closing the shell ($n_{\\mathrm{out}} = 0$).'"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.815Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.855Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.896Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "'the concluding ... cell' described the table's layout instead of the physics.",
+        "notes": "FIXED by the same edit as trap-em-dash."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.939Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.980Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.021Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1184bf4b5731",
+          "ts": "782b7650c2d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.063Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: Bi-210 magic lookup + caption. n_out column correct; the N=127 shell-size cell is inconsistent with the n_shell definition (reported as anomaly).",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:00.063Z"
 }

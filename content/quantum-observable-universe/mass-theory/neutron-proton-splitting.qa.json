@@ -2112,6 +2112,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.799Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2131,6 +2146,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.867Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Display equation then a four-sentence causal chain; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -2150,6 +2180,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.921Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2169,6 +2214,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.980Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2188,6 +2248,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:36.060Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a quantitative accuracy claim (agreement with CODATA), not a quotable line. NOTE: that closing number is wrong — see the trap-thesis-restatement note and the batch findings."
       }
     ],
     "trap-meta-commentary": [
@@ -2207,6 +2282,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:36.164Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2226,6 +2316,22 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:36.271Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This makes the neutron heavier.' is a step of the causal chain (dd crossing carries more confinement energy => heavier), not a restatement of the opening claim.",
+        "notes": "Numeric defect found while reading (not a trap): the .md says the 1.302 MeV prediction 'matches the CODATA value to 0.63%'. Recomputed: CODATA-2022 m_n-m_p = 1.29333251 MeV, so (1.302-1.29333251)/1.29333251 = 0.670% (0.666% if normalised by the prediction). The block's own .ts authorNotes already states 0.68%. Proposed fix (math, not applied inline): 0.63% -> 0.67%."
       }
     ],
     "trap-performed-warmth": [
@@ -2245,6 +2351,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:36.443Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2264,6 +2385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:36.518Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No unqualified maximum-strength claim; the accuracy claim is numeric (though numerically wrong)."
       }
     ],
     "trap-nonspeakable": [
@@ -2283,6 +2419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1a3bd7174063",
+          "ts": "2ad1c4f0935e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:36.578Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Four short declaratives; speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2306,5 +2457,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:36:36.578Z"
 }

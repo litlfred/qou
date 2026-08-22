@@ -1813,6 +1813,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the diagram.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:51.630Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Four negation shapes, all substantive: 'Mass is a property of the knot type, not the diagram' (the R-I/R-II/R-III separation IS the block's content); 'regular isotopy invariant ..., not a knot invariant'; 'does not depend on the diagram'; 'does not cancel'. Substantive-mathematical-contrast false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1832,6 +1847,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:51.695Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'This is why an excited hydrogen atom is still hydrogen: ... But it is in a different state: ...' is an explanatory application of the preceding invariance table, both clauses load-bearing; not a setup-then-reframe where the second clause carries everything."
       }
     ],
     "trap-em-dash": [
@@ -1851,6 +1881,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (5 in 678 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:51.750Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Two dashes, both restrictive appositives naming the invariant class just quantified ('R-I + R-II + R-III invariants - the topological knot type'). Low density; no comma-vs-full-stop dodging."
       }
     ],
     "trap-triples": [
@@ -1870,6 +1915,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 678 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:51.802Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'three local moves' is Reidemeister's theorem (a true trichotomy) and the R-I/R-II/R-III triples throughout are forced by it; the particle list is a four."
       }
     ],
     "trap-closing-aphorism": [
@@ -1889,6 +1949,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:51.864Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Block ends on the Archimedean-specialisation boilerplate; the last authored line is 'the trefoil's writhe is different ..., and the binding energy differs', a factual consequence."
       }
     ],
     "trap-meta-commentary": [
@@ -1908,6 +1983,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:51.923Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No narrated emphasis anywhere."
       }
     ],
     "trap-thesis-restatement": [
@@ -1927,6 +2017,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:51.994Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'The difference between identity and state is precisely one Reidemeister move: R-I' looks like a closer but is the antecedent of the next paragraph's 'This is why ...', so it is load-bearing rather than terminal restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1946,6 +2051,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:52.050Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1965,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:52.119Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'precisely one Reidemeister move' is an exact count, verified against the table; no unqualified maxima."
       }
     ],
     "trap-nonspeakable": [
@@ -1984,6 +2119,23 @@
         "reviewed_at": "2026-08-15T10:31:00.700Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "eece273237ca",
+          "ts": "0ef709563107"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:14:52.181Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "The table footnote does not parse aloud or on the page: 'R-III preserves writhe but is not the only invariance of writhe; writhe is a regular isotopy invariant (R-II + R-III), not a knot invariant (R-I + R-II + R-III).' The 'but is not the only invariance of writhe' clause has no readable referent.",
+        "notes": "PROPOSED (structural, math-adjacent - not fixed inline): replace the footnote with 'Writhe is a regular isotopy invariant (invariant under R-II and R-III) but not a knot invariant, since R-I changes it by $\\pm1$.' THIS IS COUPLED TO A TABLE ERROR: the cell the footnote annotates, 'Writhe $w$ | x | ok | x*', marks writhe NOT invariant under R-III, which is false and is contradicted (a) by this very footnote's first clause and (b) by the block's own 'Shell number $n$' row, which gives the same quantity 'x | ok | ok'. Correct row is x / ok / ok; cell should read $\\checkmark^*$. Further non-trap findings on this block: absolute-mass excision violation ('proton mass ~938 MeV (from Vol(B_3))', and the m_e Vol rho/hbar_q^2 form read at K=B_3 is the guardrailed WRONG absolute-mass form); the R-II binding-energy argument concludes 'invariant' from '(q-q^-1) L_0 ... cancel to leading order' although q-1/q = 0.2090602988 = 18.8% of q at proton q0; and two display formulas lose the space before \\text{ so they render 'm_bareis invariant'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2007,5 +2159,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:14:52.181Z"
 }

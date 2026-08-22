@@ -1264,6 +1264,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.105Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1283,6 +1299,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.143Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-em-dash": [
@@ -1302,6 +1334,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.184Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-triples": [
@@ -1321,6 +1369,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.221Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1340,6 +1404,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.259Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-meta-commentary": [
@@ -1359,6 +1439,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.298Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1378,6 +1474,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.337Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-performed-warmth": [
@@ -1397,6 +1509,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.376Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-superlative": [
@@ -1416,6 +1544,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.414Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "trap-nonspeakable": [
@@ -1435,6 +1579,22 @@
         "reviewed_at": "2026-08-15T10:30:59.892Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "73abb43c2e1e",
+          "ts": "50d470b5c468"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.455Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence example. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, or non-speakable chain; 'precisely encodes' marks an identification rather than inflating a claim.",
+        "notes": "TWO MATH FLAGS (not traps, reported not fixed). (1) TYPE CONFUSION in the displayed comultiplication: 'Delta_mu(f)(g,h) = int_G f(xg) conj(h(x)) dx'. On the left (g,h) are the two arguments of a function on G x G, i.e. group elements; on the right f(xg) uses g as a group element (right translation) but conj(h(x)) uses h as a FUNCTION. The formula cannot be read consistently either way. (2) The closing sentence describes COMMUTATIVITY, not associativity: 'The Frobenius relation precisely encodes the associativity of convolution: integrating f(xy)g(y) over y yields the same result whether convolved first with f or first with g.' Associativity of convolution is the three-function statement (f * g) * k = f * (g * k); 'first with f or first with g' over two functions is the commutativity of f * g, which is false on non-abelian SU(2). PROPOSED: state the three-function bracketing explicitly, or replace the gloss with the Frobenius identity Delta . mu = (mu tensor id) . (id tensor Delta)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1458,5 +1618,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:05:18.455Z"
 }

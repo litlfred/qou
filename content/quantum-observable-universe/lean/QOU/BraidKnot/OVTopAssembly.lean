@@ -148,7 +148,7 @@ We construct the keystone's `SnWedderburnSpectralData R n` by wiring each field 
   from the **proved** core `SpechtTriangularCore.standardPolytabloid_triangular'`, so the `rank`
   sorry-path is the **spanning / straightening stub only** — not the independence stub and not the
   opaque brick-2 finrank stub `Specht.specht_finrank_eq_numSYT`. -/
-noncomputable def snSpectralData (n : ℕ) :
+noncomputable def snSpectralData (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :
     RegularRepBlockTrace.SnWedderburnSpectralData R n :=
   -- Destructure the single aligned core once and wire every projection-data field to it.
   let pf := (SnWedderburnPartitionBridge.snBlocks_c2_aligned (R := R) n).choose_spec.choose_spec
@@ -181,7 +181,7 @@ noncomputable def snSpectralData (n : ℕ) :
 existence statement that discharges the side-2 hypothesis of Identity (B).  Constructed by
 `snSpectralData`, whose `Idx` / `d` / `ω` fields are sorry-free and whose projection data is wired
 to the bricks (see the per-field map in `snSpectralData`). -/
-theorem sn_spectralData_exists (n : ℕ) :
+theorem sn_spectralData_exists (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :
     Nonempty (RegularRepBlockTrace.SnWedderburnSpectralData R n) :=
   ⟨snSpectralData n⟩
 
@@ -200,7 +200,7 @@ theorem, the standard-basis dimension theorem's spanning core), all wired in `sn
 
 (The statement is stated exactly as the keystone's `identityB_conditional` concludes, against the
 assembled `W := (sn_spectralData_exists n).some`.) -/
-theorem identityB_general (n : ℕ) :
+theorem identityB_general (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit R] :
     ∑ i : (sn_spectralData_exists (R := R) n).some.Idx,
         (sn_spectralData_exists (R := R) n).some.ω i
           * ((sn_spectralData_exists (R := R) n).some.d i : R) ^ 2
@@ -219,7 +219,7 @@ of the Burnside identity `Σ_λ (f^λ)² = n!` (`DeltaLambdaSignRule.burnside`);
 additionally needs `dimIrrep = numSYT` (the hook-length formula `numSYT_mul_hookProduct` + the
 custom-`Partition` ↔ `YoungDiagram` hookProduct bridge) and the `List (Partition n)` ↔
 `PartitionIndex n` reindexing. -/
-theorem sum_numSYT_sq_eq_factorial (n : ℕ) :
+theorem sum_numSYT_sq_eq_factorial (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] :
     ∑ i : SpechtClassification.PartitionIndex n, numSYT i.diagram ^ 2 = n.factorial := by
   have h := RegularRepBlockTrace.sumSq_dim_eq (snSpectralData (R := ℚ) n)
   have key : ((∑ i : SpechtClassification.PartitionIndex n, numSYT i.diagram ^ 2 : ℕ) : ℚ)

@@ -91,24 +91,6 @@ class ShellFillingRuleContext (R : Type*) [Semiring R] where
   /-- Optimal primal objective of the electron assignment LP (the
       minimal total `Φ₁`). -/
   primal_obj : R
-  /-- The energy gap (Φ₁ reduction) for an inner vacancy at shell `n`. -/
-  vacancy_gap : ℕ → R
-  /-- For inner shells, the vacancy gap is non-zero, indicating it reduces Φ₁ more than a valence electron. -/
-  vacancy_gap_nonzero : ∀ n < n_val, vacancy_gap n ≠ 0
-  /-- If the vacancy gap is non-zero, the ground state must fill the shell to capacity to minimise Φ₁. -/
-  filled_of_vacancy_gap : ∀ n < n_val, vacancy_gap n ≠ 0 → occupancy n = capacity n
-  /-- Repulsive `ee` crossing (`σ`) count for a valence configuration. -/
-  ee_crossings : ValenceConfig → ℕ
-  /-- The ground state minimises the `ee` crossing count (parallel electrons have lower penalty). -/
-  ground_minimises_crossings : ∀ c : ValenceConfig, ee_crossings ground ≤ ee_crossings c
-  /-- The number of singly occupied sites decreases as the number of `ee` crossings increases. -/
-  singly_antimono_crossings : ∀ c : ValenceConfig, ee_crossings ground ≤ ee_crossings c → singly c ≤ singly ground
-  /-- The optimal value of the dual LP problem. -/
-  dual_obj : R
-  /-- By definition of the dual problem, its value is `Z * y_0`. -/
-  dual_obj_eq : dual_obj = (Z : R) * y_0
-  /-- LP strong duality: the primal and dual objectives are equal. -/
-  strong_duality : primal_obj = dual_obj
 
 /-- **Pauli occupancy bound — derived sorry-free.**  Every shell obeys
     `occupancy n ≤ 2n²`, from the Pauli hypothesis and the defining
@@ -118,36 +100,40 @@ theorem shell_filling_pauli_bound [ctx : ShellFillingRuleContext R]
   have h := ctx.occupancy_le_capacity n
   rwa [ctx.capacity_def n] at h
 
-/-- **Claim (i), aufbau — proved.**  Inner shells
+/-- **Claim (i), aufbau — stated, not yet proved.**  Inner shells
     (`n < n_val`) fill completely in the ground state: each additional
     electron in a partly filled inner shell reduces `Φ₁` more than any
-    valence electron, giving a non-zero vacancy gap. -/
+    valence electron.  The `Φ₁`-monotonicity argument is not yet
+    formalised. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext R] :
     ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
-  intro n hn
-  exact ctx.filled_of_vacancy_gap n hn (ctx.vacancy_gap_nonzero n hn)
+  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+  sorry
 
-/-- **Claim (ii), Hund's rule — proved.**  Within the
+/-- **Claim (ii), Hund's rule — stated, not yet proved.**  Within the
     valence shell the ground state maximises the number of singly
     occupied sites: parallel electron trefoils have lower `Φ₁` than
     antiparallel pairs, since the repulsive `ee` crossing (`σ`) is
-    minimised on distinct spatial sites. -/
+    minimised on distinct spatial sites.  The `Φ₁` comparison is not
+    yet formalised. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext R] :
     ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
-  intro c
-  exact ctx.singly_antimono_crossings c (ctx.ground_minimises_crossings c)
+  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+  sorry
 
-/-- **Claim (iii), LP strong duality — proved.**  The
+/-- **Claim (iii), LP strong duality — stated, not yet proved.**  The
     optimal primal objective of the electron assignment LP equals the
     dual objective `Z·y₀` (`max_y Z·y₀` s.t.
-    `y₀ + Σ_n G_{n,s}·y_{n,s} ≤ Φ₁^{(s)}` for all sites `s`). -/
+    `y₀ + Σ_n G_{n,s}·y_{n,s} ≤ Φ₁^{(s)}` for all sites `s`).  Strong
+    duality for this LP is not yet formalised. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
 theorem shell_filling_lp_strong_duality [ctx : ShellFillingRuleContext R] :
     ctx.primal_obj = (ctx.Z : R) * ctx.y_0 := by
-  rw [ctx.strong_duality, ctx.dual_obj_eq]
+  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+  sorry
 
 /-- **Proposition** ([`prop:shell-filling-rule`]) — resolving
     declaration for the `lean.ref` URI
@@ -167,5 +153,133 @@ theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :
     ctx.primal_obj = (ctx.Z : R) * ctx.y_0 :=
   ⟨shell_filling_inner_shells, shell_filling_hund_rule,
    shell_filling_lp_strong_duality⟩
+
+/-- **Refutable as written.** The class bounds `occupancy ≤ capacity`; the
+    theorem asserts *equality*. Carrying hypotheses is not enough — they must
+    be strong enough for the conclusion (bean qou-octr, §10).
+
+    Stated over the generic `[Semiring R]` of the module (§7c): the
+    counterexample lives entirely in the `ℕ`-valued occupancy/capacity
+    fields, so no ordering and no archimedean structure is used.  This
+    is strictly stronger than the former `R := ℝ` form, which it
+    recovers by instantiation. -/
+theorem shell_filling_inner_shells_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext R,
+        ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 2, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 0 } 1 (by norm_num)
+  norm_num at this
+
+/-- **Refutable as written** — the class never relates the fields the
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`).
+
+    Generic `[Semiring R]` (§7c): the witness separates the two valence
+    configurations through the `ℕ`-valued `singly` field alone. -/
+theorem shell_filling_hund_rule_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext R,
+        ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Bool, ground := false,
+              singly := fun b => if b then 1 else 0,
+              y_0 := 0, primal_obj := 0 } true
+  norm_num at this
+
+/-- **Refutable as written** — the class never relates the fields the
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`).
+
+    Generic `[Semiring R]` (§7c).  The LP scalars are the only non-`ℕ`
+    data, so this witness does need `1 ≠ 0`; that is supplied by the
+    purely algebraic `[Nontrivial R]`, **not** by an ordering — no
+    archimedean structure is used, and `R := ℝ` recovers the former
+    statement. -/
+theorem shell_filling_lp_strong_duality_unconstrained_false [Nontrivial R] :
+    ¬ ∀ ctx : ShellFillingRuleContext R, ctx.primal_obj = (ctx.Z : R) * ctx.y_0 := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 1 }
+  simp at this
+
+section LPDuality
+
+/-- **LP optimality certificate for the electron-assignment LP**
+    (§3b-cond model class over `ShellFillingRuleContext`, bean
+    `qou-kkja`).
+
+    Claim (iii) — `primal_obj = Z·y₀` — is *not* derivable from
+    `ShellFillingRuleContext` alone, and that is machine-checked below
+    by `shell_filling_lp_strong_duality_unconstrained_false`: the base
+    class carries `y_0` and `primal_obj` as unrelated scalars, so a
+    context with `Z = 0`, `y_0 = 0`, `primal_obj = 1` refutes it.
+
+    This class supplies the LP structure the base class lacks — the
+    assignment variables, the per-site cost, and a **dual optimality
+    certificate** (stationarity + complementary slackness).  Claim
+    (iii) is then *derived* from those hypotheses by
+    `shell_filling_lp_strong_duality_of_certificate`, not carried as a
+    field.  Nothing here asserts the conclusion: the fields constrain
+    `x`, `cost`, `slack`, `y_0` and `primal_obj` jointly, and the
+    equality falls out of the algebra.
+
+    Generic `[CommSemiring R]` (§7c) — commutativity is used only to
+    match the `Z·y₀` orientation of the existing statement; no ordering
+    and no archimedean structure is required.  Note this is the
+    *certificate*, not a proof that one exists: exhibiting `x` and
+    `slack` for a given atom is the separate (open) optimisation
+    problem. -/
+class ShellFillingLPDuality (R : Type*) [CommSemiring R]
+    extends ShellFillingRuleContext R where
+  /-- Sites available to the `Z` electron trefoils. -/
+  Site : Type
+  /-- The site set is finite. -/
+  [siteFintype : Fintype Site]
+  /-- Primal assignment variable at each site. -/
+  x : Site → R
+  /-- Per-site `Φ₁` cost coefficient. -/
+  cost : Site → R
+  /-- Reduced cost (dual slack) at each site. -/
+  slack : Site → R
+  /-- The primal objective is the total assigned cost. -/
+  primal_obj_def : primal_obj = ∑ i, cost i * x i
+  /-- Primal feasibility: exactly `Z` electrons are assigned. -/
+  primal_feasible : ∑ i, x i = (Z : R)
+  /-- Dual stationarity: each site's cost splits into the electron
+      chemical potential `y₀` plus that site's reduced cost. -/
+  stationarity : ∀ i, cost i = y_0 + slack i
+  /-- Complementary slackness: a site carries assignment or reduced
+      cost, never both. -/
+  complementary_slackness : ∀ i, slack i * x i = 0
+
+attribute [instance] ShellFillingLPDuality.siteFintype
+
+/-- **Claim (iii), derived** from the LP optimality certificate
+    (conditional on `ShellFillingLPDuality`, Mathlib `_of_` naming).
+
+    `Σ cost_i·x_i = Σ (y₀ + slack_i)·x_i = y₀·Σ x_i + Σ slack_i·x_i
+     = y₀·Z + 0`.
+
+    Every step is genuine algebra over the certificate's hypotheses;
+    no field of the class states the conclusion. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality)
+theorem shell_filling_lp_strong_duality_of_certificate
+    {R : Type*} [CommSemiring R] [cert : ShellFillingLPDuality R] :
+    cert.primal_obj = (cert.Z : R) * cert.y_0 := by
+  rw [cert.primal_obj_def]
+  have h : ∀ i, cert.cost i * cert.x i = cert.y_0 * cert.x i := by
+    intro i
+    rw [cert.stationarity i, add_mul, cert.complementary_slackness i, add_zero]
+  rw [Finset.sum_congr rfl fun i _ => h i, ← Finset.mul_sum,
+    cert.primal_feasible, mul_comm]
+
+end LPDuality
 
 end QOU.Molecular

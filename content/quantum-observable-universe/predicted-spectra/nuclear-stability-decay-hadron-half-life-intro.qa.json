@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:10.986Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1166,6 +1182,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.026Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1185,6 +1217,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 60 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.068Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1204,6 +1252,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 60 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.109Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1223,6 +1287,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.149Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1242,6 +1322,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.355Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Six of the seven sentences are first-person announcements of what the section will do ('We define the hadron half-life. We derive the q-self-correction. We establish the skein-Coulomb enhancement ... We tabulate predictions against PDG values. We identify the optimal substrate-flow regime.'). I considered this against the criterion and it does NOT fire: the category is narrating one's own EMPHASIS ('note the framing', 'we emphasize', 'the key takeaway'), and a section roadmap is a standard and legitimate device in mathematical writing. Nothing here announces importance or asks the reader to notice anything.",
+        "notes": "pass on all ten, but two register observations for an author's eye, neither a trap. (1) Six consecutive sentences share the identical 'We VERB the/a NOUN.' frame with no subordination and no connectives, which reads as a table of contents rendered as prose rather than as a paragraph — the flattened register I also noted on the sibling sec:nuclear-stability-decay-intro. (2) The one substantive sentence in the block, 'The categorical q-self-correction provides the leading deviation from the classical Fermi formula', is a real claim sitting unmarked among the roadmap items; it would carry better either as the paragraph's opening thesis or in the body where it is derived."
       }
     ],
     "trap-thesis-restatement": [
@@ -1261,6 +1357,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.191Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1280,6 +1392,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.233Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1299,6 +1427,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.275Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1318,6 +1462,22 @@
         "reviewed_at": "2026-08-15T10:31:01.274Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c51e17eb9d98",
+          "ts": "e5d72e4ac83d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:11.316Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the seven-sentence section preamble (prose kind, no math, no Lean). No negation-contrast, no rhetorical pivot, no em-dash, no triple (the roadmap lists six items, not three), no closing aphorism, no performed warmth, no superlative inflation, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1340,5 +1500,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:34:11.355Z"
 }

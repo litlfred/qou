@@ -2137,6 +2137,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not independent factors.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.364Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2156,6 +2171,21 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.404Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-em-dash": [
@@ -2175,6 +2205,21 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 147 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.446Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-triples": [
@@ -2194,6 +2239,21 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 147 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.486Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-closing-aphorism": [
@@ -2213,6 +2273,21 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.530Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-meta-commentary": [
@@ -2232,6 +2307,21 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.573Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-thesis-restatement": [
@@ -2251,6 +2341,21 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.612Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-performed-warmth": [
@@ -2270,6 +2375,21 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.655Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (169w, prop)."
       }
     ],
     "trap-superlative": [
@@ -2289,6 +2409,22 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.694Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'no further empirical, fitting, or numerological input is permitted - every other ... is a prediction' is the framework's standing discipline claim, stated as a rule rather than an accuracy result.",
+        "notes": "NOTE for the report: against the L2 dashboard (1 of 5 scoreable predictions meets the 100x target) the blanket 'is a prediction' is a discipline statement and should not be read as an accuracy claim; the block does not say so."
       }
     ],
     "trap-nonspeakable": [
@@ -2308,6 +2444,23 @@
         "reviewed_at": "2026-08-15T10:31:00.726Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3852434bf2f1",
+          "ts": "b5acdc54b5af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.737Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "Same sweep substitution as the proof sibling: 'q_0 fixed by CAL-2 (D_beta, pinned canonical through its proxy m_mu/m_e)'.",
+        "notes": "NOT FIXED. Proposed: 'pinned numerically through its proxy m_mu/m_e'. RECOMPUTED TYPE CONTRADICTION for the report: the block says 'there exists a Q(q_0)-element hat-O(q_0) in Z[q_0^{+-1/2}]' - these are different rings, and the block's own example breaks the narrower one: E_0 = m_e/(q_0(q_0-1)) needs the inverse of (q_0 - 1) and so lies in Q(q_0) but NOT in Z[q_0^{+-1/2}]. The same applies to Q_beta = m_e|q_0^2-2q_0-1|(q_0+1)/(2 q_0^3), which needs 1/2."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2331,5 +2484,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:26:20.737Z"
 }

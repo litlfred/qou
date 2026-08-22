@@ -890,6 +890,186 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.175Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.250Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.301Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.389Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.458Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.514Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.593Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.648Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.726Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d8a6ee06cd67",
+          "ts": "4ddc60022402"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:15.786Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED with sympy. The parent block defines h(l) = #{w : |w| = l} over reduced words in S_A, so the generating polynomial should be the Poincare polynomial [A]_r! = prod_{k=1}^{A}(1+r+...+r^{k-1}), whose value at r=1 is A!. Only the A=2 row satisfies this. See notes.",
+        "notes": "*** FOUR OF THE FIVE ROWS ARE WRONG, AND THE CHEAP TEST IS r=1. *** Sum of h(l) must equal A!. Table values at r=1 vs A!: A=2 -> 2 vs 2 (CORRECT); A=3 -> 4 vs 6; A=4 -> 12 vs 24; A=5 -> 36 vs 120; A=6 -> 180 vs 720. Correct polynomials: [3]_r! = (1+r)(1+r+r^2) = 1+2r+2r^2+r^3, but the table gives [2]_r^2 = 1+2r+r^2, which omits one length-2 word and the unique length-3 word (S_3 has h = 1,2,2,1). [4]_r! = (1+r)^2(1+r^2)(1+r+r^2) = 1+3r+5r^2+6r^3+5r^4+3r^5+r^6, but the table gives (1+r)^2(1+r+r^2) = 1+3r+4r^2+3r^3+r^4 - the (1+r^2) = [2]_{r^2} factor is missing and the degree is 4 instead of 6 (the longest element of S_4 has length 6). [5]_r! and [6]_r! are likewise short by (1+r^2) and more. The entries ARE palindromic, so the block's palindromicity/Bruhat-Poincare-duality remark is not what detects this - the r=1 count is. The reduced A-term basis reading does not rescue them either: after I_8/I_9 the parent says exactly A terms survive, which for A=3 would be 1+2r, not (1+r)^2. Proposed fix: replace each row with [A]_r! = prod_{k=2}^{A}[k]_r, or state explicitly which sub-support of S_A is being tallied and recompute."
+      }
     ]
   },
   "label": "tbl:groebner-nf-computation-table2-data",
@@ -897,5 +1077,5 @@
     "md": "d8a6ee06cd67",
     "ts": "4ddc60022402"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:56:15.786Z"
 }

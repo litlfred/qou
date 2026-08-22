@@ -21,6 +21,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a relabelling:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.179Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). Four contrasts (L3 'a *process*, not a relabelling'; L7 'time is an ordering here rather than a coordinate'; L19 'is not assumed here'; L23 'attached to a knot rather than to a diagram of one'). Each is the substantive distinction the paragraph exists to draw.",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -40,6 +57,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.218Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). L5 'The hexagon identities ... buy something further, and it is the reason we can speak of \\'an interaction\\' at all.' announces a consequence and then delivers it over the rest of the paragraph - signposting, not a reframe whose second clause carries an unearned claim.",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -59,6 +93,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 716 words)"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.258Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). Four em-dashes across 25 lines of long-form prose (L3, L13, L23 x2); all genuine appositives. Note for the record: 'wide channels cheap, narrow ones expensive' (L23) is an epigrammatic dash-clause, but it is a compression of the preceding formula rather than a substitute for sentence structure.",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -78,6 +129,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 716 words)"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.296Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -97,6 +165,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.335Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). Block ends '**What is deliberately absent.** Rigidity. ... they are imposed one level up, on a quantum observable universe.' - a scope statement pointing at the next chapter, not a placed quotable line.",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -116,6 +201,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.375Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). L23 read 'The reading is that the total trace distributes over the channels with each contributing in inverse proportion to its quantum dimension' - announcing an interpretation rather than placing the statement. (L1 'This remark says which, in the loosest terms that are still honest; the precise consequences are proved later' was judged a legitimate epistemic scope note and left alone.)",
+        "notes": "FIX APPLIED: 'The reading is that the total trace distributes over the channels with each contributing in inverse proportion to its quantum dimension' -> 'The total trace distributes over the channels, each contributing in inverse proportion to its quantum dimension'"
       }
     ],
     "trap-thesis-restatement": [
@@ -135,6 +237,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.415Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). final sentence is \"Duals are what allow a strand to bend backwards, which is what an antiparticle is and what closing a knot requires, and they are imposed one level up, on a quantum observable universe.\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -154,6 +273,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.453Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -173,6 +309,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.494Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -192,6 +345,23 @@
         "reviewed_at": "2026-08-15T10:31:00.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "225d19920d88",
+          "ts": "ee04443bbf63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:11.535Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md (25 lines, kind=remark, title=\"What each axiom buys\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1011,7 +1181,7 @@
       }
     ]
   },
-  "updated_at": "2026-08-16T13:52:23.391Z",
+  "updated_at": "2026-08-22T06:08:11.535Z",
   "paths": {
     "ts": "content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.ts",
     "md": "content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md"

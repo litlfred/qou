@@ -946,6 +946,21 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.358Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'this is a distinct involution (b -> b^{-1} maps q to its S-dual, not to q^{-1}), and it is the structure the compact q-dilogarithm lacks — not the bar parity, which the compact form also has' is a two-stage disambiguation against a specific, easy confusion (modular double vs bar). Load-bearing; the block would be wrong without it."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -965,6 +980,21 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.411Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -985,6 +1015,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 225 words (3.11/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.462Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Seven em-dashes in 237 words — 30 per 1000, the highest density in this batch by a factor of three. Four are load-bearing (the appositive 'any element — in particular log Phi_b'; the two bullet glosses '— the hyperbolic volume / mass face' and '— the Chern-Simons / decay face'), but the run in the opening paragraph ('... which the compact form also has') and the trailing '— so the ladder element factors as F = F_even * F_odd' both append a clause where a full stop belongs, and the last of those carries the section's conclusion.",
+        "notes": "Proposed (structural — the sentences are math-adjacent): give the ladder factorisation its own sentence rather than dash-appending it to the two-rung evidence, and make the compact-dilogarithm contrast a separate sentence."
       }
     ],
     "trap-triples": [
@@ -1004,6 +1051,21 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 225 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.526Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list; the enumerations are two-part (even/odd) throughout, as the subject requires."
       }
     ],
     "trap-closing-aphorism": [
@@ -1023,6 +1085,21 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.584Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a parenthetical script citation."
       }
     ],
     "trap-meta-commentary": [
@@ -1042,6 +1119,21 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.639Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This is the algebraic core of the sinh/cosh split' locates the sibling proposition; not emphasis-narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1061,6 +1153,21 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.689Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The c_k section is new content."
       }
     ],
     "trap-performed-warmth": [
@@ -1080,6 +1187,21 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.751Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1099,6 +1221,22 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.807Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated adjectives; the epistemic problem here is with 'confirmed' as a claim about evidence, recorded in the note rather than as inflation.",
+        "notes": "RIGOR — three items. (1) VERIFIED CORRECT AND CURRENT: 'c_3 (bar-odd) swings approx 2.375% between the proton and muon anchors'. AGENTS.md's 2026-08-16 correction gives the measured cross-anchor swing as 2.3748% proton-normalised, which rounds to exactly 2.375. This block is one of the few carrying the CURRENT figure rather than the superseded 'approx 3%' (which traces to a pre-#1422 c_3 = -2.0097); do not 'fix' it. Also correct: the epistemic hygiene line 'The mathematical statement ... is unconditional; only this physical identification ... invokes the conjecture', and the modular-double-vs-bar disambiguation. (2) UNDER-SPECIFIED CLAIM flagged by name in AGENTS.md: 'c_2 = -1 (bar-even) is Taylor-exact'. Per the 2026-08-16 ruling, 'Taylor' here is under-specified rather than false — c_2 = -1 IS the u^2 coefficient of the explicit-factor product prod_{k>=2}(1 + c_k u^k), but the full normalised model Phi(u)/Phi(0) has c-tilde_2 = c_2 - 1/8 = -9/8. The ruling's instruction is to say WHICH SERIES, never to delete the word. Proposed: 'c_2 = -1 (bar-even) is the exact u^2 coefficient of the explicit-factor product'. (3) CONVENTION LABEL MISSING: the owner ruling of 2026-08-15 makes convention D canonical and excises C, and the entire c_k ladder — c_2 = -1, c_3, and the cross-anchor swing — is convention-C-frame and has NOT been re-derived under D (bean qou-cds1). This block's '## Consequence for the c_k ladder' section states a general law (bar-parity predicts anchor-behaviour) from those rungs with no C-conditional label. Proposed: label the section C-conditional. SECONDARY, epistemic: 'This is confirmed on both available rungs' rests on n = 2, and one of the two is not independent evidence — c_2 = -1 is claimed structural (no fit, no CODATA, no q_0), so its anchor-stability follows by construction rather than confirming the parity law. The honest reading is one informative rung."
       }
     ],
     "trap-nonspeakable": [
@@ -1118,6 +1256,23 @@
         "reviewed_at": "2026-08-15T10:31:00.644Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7eceb6d2e489",
+          "ts": "f23b041d6093"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.857Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The opening sentence runs 55 words through a dash, a parenthesis and a trailing dash-clause before it ends; it parses but stalls aloud.",
+        "notes": "Same fix as the em-dash entry."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1144,5 +1299,5 @@
     "md": "7eceb6d2e489",
     "ts": "f23b041d6093"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:57:38.857Z"
 }

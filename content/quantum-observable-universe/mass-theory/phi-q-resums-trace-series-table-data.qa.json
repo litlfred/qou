@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.105Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.181Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.253Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.322Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.384Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.441Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.514Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.608Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.659Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4bed91e30a7b",
+          "ts": "0c8975ed91cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.718Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows mapping Phi_q resummation terms to Markov-trace forms. SS7a compliance checked: trace written tr_M throughout, no T for the generator, no V_K(t). Term 4, tr_M(C_dim_q) = sum_lambda 1/dim_q(lambda), is the same object as the sibling partition-sum tables, and I verified independently that this sum equals 2 + 1/[2]_q at n=3 -- so the cross-reference is sound. No numerics, no q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes. (1) Row 1 uses a spaced em-dash inside a table cell ('tr_M(T_w) -- descended'); that is cell shorthand, not the prose construction trap-em-dash targets, so n/a rather than fail. (2) Rows 2 and 3 name tr_Plancherel while row 1 names tr_M without saying how the two traces relate; a reader cannot tell from the table whether the series are in the same normalisation."
+      }
     ]
   },
   "source_hashes": {
     "md": "4bed91e30a7b",
     "ts": "0c8975ed91cf"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:09.718Z"
 }

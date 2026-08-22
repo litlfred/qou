@@ -27,4 +27,4 @@ $$
 
 The two chiral operators are generated independently. The $L_+$ coefficient is the cross-color product $\varphi_0\psi_1$. The $L_-$ coefficient is $\varphi_1\psi_0$. For any target pair $(a,b)$, the weights $(\varphi_0,\varphi_1,\psi_0,\psi_1)=(a,b,1,1)$ realise $L_+=a$ and $L_-=b$. The operator $L_-=\sigma_1\sigma_0$ is absent from any single photon. The single photon support is $\{\mathbf{1},\sigma_0,\sigma_1,\sigma_0\sigma_1\}$. The two-photon cross term produces $L_-$. Restoring the four-term coupling $\varphi_{01}\neq 0$ opens the remaining basis operator $e^-=\sigma_0\sigma_1\sigma_0$. This completes the basis.
 
-The span of the two-photon products is all of $H_3(q)$. The photon and the elementary crossings generate the full operator catalogue. Pair production ($\gamma\gamma$) is the categorical mechanism by which light assembles matter.
+The span of the two-photon products is all of $H_3(q)$.

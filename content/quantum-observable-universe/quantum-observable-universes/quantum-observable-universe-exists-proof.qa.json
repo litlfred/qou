@@ -1360,6 +1360,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.274Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). no assertion-by-denial; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1379,6 +1395,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.311Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). no setup-then-reframe construction; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1430,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 165 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.352Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). em-dash count 2 in the block; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "2 spaced em-dashes, both true appositives glossing a just-introduced object ('-- the rigid ribbon braided monoidal category ...', '-- the restricted dual Hopf algebra ...'); density passes."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1465,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 165 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.392Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). no reflex three-item list; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1500,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.430Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). final sentence is substantive, not a quotable placed for closure; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1535,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.470Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). no narration of the author's own emphasis; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1570,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.508Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). no block-final restatement of what the text established; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1605,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.547Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). no personal or institutional-warmth register; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1640,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.586Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). no unqualified maximum-strength claim; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1675,22 @@
         "reviewed_at": "2026-08-15T10:30:59.888Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ecb5f1601bd4",
+          "ts": "5e1c704be32c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:36.623Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, construction / verification / conclusion / non-uniqueness sections). reads aloud without stalling; proof, construction / verification / conclusion / non-uniqueness sections.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1713,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:36.623Z"
 }

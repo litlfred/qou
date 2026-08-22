@@ -1777,6 +1777,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:40.812Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial in the statement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1811,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:40.866Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement, display, two consequences, boilerplate wall notice; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1845,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:40.923Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes (see the note: the canonical form of the wall boilerplate has one, and this block's variant has had it removed along with the enumeration it introduced)."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1879,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:41.008Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1913,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:41.094Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the shared 'Archimedean specialisation' boilerplate."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1947,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:41.170Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1981,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:41.239Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This is the alternating-block trace divided by the symmetric-block trace' glosses the display in words for a reader who skipped it — standard mathematical practice, and it names the two blocks the symbols do not."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2015,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:41.327Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2049,21 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:41.383Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2083,22 @@
         "reviewed_at": "2026-08-15T10:31:00.542Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b8ac577414f2",
+          "ts": "92c33e8be930"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:52:41.438Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short sentences; speakable.",
+        "notes": "RIGOR. (1) SWEEP DAMAGE, and it is corpus-wide rather than local to this block. The 'Archimedean specialisation' wall notice appears in 132 content .md files in at least EIGHT divergent wordings. The canonical form (23 occurrences) is one sentence with a colon and a dash carrying the enumeration: '... it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0. Any generic categorical / q-deformation identities ...'. THIS block carries a four-sentence chopped variant (4 occurrences) that has LOST the enumeration entirely and split the remainder into four short declaratives; a sibling variant (9 occurrences) has additionally lost 'or complex-' and 'it draws on'. The sibling block prop:nuclear-knot-classification, in this same batch, carries the canonical form — so the divergence is visible inside one chapter. This is the sentence-splitting/de-hedging sweep signature, not authorial variation, and the content lost (which archimedean constructs trigger the wall) is exactly what makes the notice useful. Proposed: normalise all 132 to the 23-occurrence canonical wording, ideally by generating the notice rather than storing it per block. (2) MINOR, type: the display asserts F_Pauli ... 'in R', but F_Pauli is a QUOTIENT of two elements of the coefficient ring; it lies in Frac(R) (or in R only when the denominator is a unit). (3) MINOR, and the general fact is stronger than the block's: 'It is a unit when beta saturates the alternating block (fully fermionic)' is under-specified — if 'saturates' means the symmetric character vanishes, the ratio is undefined, not a unit. Related: the sibling proof block notes 'Both extremal q-dimensions equal 1' only for H_3, but this holds for EVERY n, since (n) and (1^n) are conjugate and hence have identical multisets of hook lengths, giving dim_q = [n]_q!/prod[h]_q = 1 in both cases. So the dim_q factors in the boxed formula are identically 1 and the general statement reduces to the character ratio."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2122,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:52:41.438Z"
 }

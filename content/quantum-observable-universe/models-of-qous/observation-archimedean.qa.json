@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:42.781Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:42.829Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:42.869Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:42.910Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:42.950Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:42.992Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:43.032Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:43.072Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1698,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:43.114Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1732,21 @@
         "reviewed_at": "2026-08-15T10:31:01.077Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "94bdb219f28c",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:43.156Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (remark, 4 sentences, ~0.4kB). 'Observing the universe changes it' is an opener rather than a closer and states the block's content directly. All ten categories clean. Two defects (an unresolved 'condition (2)' reference, and an observation typed as a map to a bundle's total space where a section is meant) are reported as anomalies."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1769,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:23:43.156Z"
 }

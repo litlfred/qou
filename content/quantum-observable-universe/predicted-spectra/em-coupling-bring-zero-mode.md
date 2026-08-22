@@ -30,7 +30,7 @@ Evaluation at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) using 60 dps pr
 | $q\cdot[9]_q\cdot[10]_q$ | $136.823219654\ldots$ |
 | $2/(3\pi) = 2g/(4\pi(g-1))$ | $0.212206591\ldots$ |
 | Sum | $137.035426245\ldots$ |
-| CODATA $1/\alpha$ | $137.035999084(21)$ |
+| CODATA-2022 $1/\alpha$ | $137.035999177(21)$ |
 | **Residual** (relative) | $\mathbf{-4.2 \times 10^{-6}}$ |
 
 The second additive term $\alpha/(4\pi) \approx 5.81 \times 10^{-4}$ brings the relative residual to $+5.7 \times 10^{-8}$. This approaches the CODATA standard deviation $\sigma_\alpha = 1.5 \times 10^{-10}$.

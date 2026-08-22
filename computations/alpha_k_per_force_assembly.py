@@ -95,12 +95,55 @@ except Exception:
 # qou_substrate -- but the path taken is now WARNED about and RECORDED
 # (`q0_source` / `q0_anchor` in the witness payload).
 #
-# NOTE (open, owner call): q0_anchor_manifest.json lists this producer under
-# `ideal_muon`, but this code imports q_at directly instead of routing through
-# `q_parameter`, so the manifest tag cannot fire. Resolving that -- either
-# honour the tag (muon) or re-tag to physical_proton (regenerate; every
-# delta_q moves 114-148 ppb and 1/alpha_EM moves -78.96 ppb) -- is tracked in
-# bean qou-7vm4 and is deliberately NOT decided here.
+# RESOLVED 2026-08-22 (was: an open owner call, beans qou-7vm4 / qou-d5eg).
+# This note used to say the manifest listed this producer under `ideal_muon`
+# while the code imported the proton pin -- a layer straddle. It was re-tagged
+# in the interim and the three now AGREE on proton, measured on main:
+#   * q0_anchor_manifest.json  -> `physical_proton` (and NOT in `ideal_muon`)
+#   * this module              -> imports q_at() == the proton pin
+#   * the committed witness    -> q0_anchor "proton", and its q0 matches the
+#     50-digit proton pin to 1.9e-50 while differing from the muon pin by
+#     1.16e-8 (the known mu-p substrate tension), so the VALUE agrees with the
+#     label rather than merely being tagged.
+# The muon fallback below is retained only for the no-`qou_substrate`
+# environment, and taking it is warned about and recorded.
+#
+# STILL LIVE, but now LATENT rather than active: this module imports
+# `qou_substrate.constants.q_at` directly instead of routing through
+# `q_parameter`, and it is `q_parameter` that reads the manifest and honours an
+# `ideal_muon` tag. So the tag still cannot fire here. That is harmless while
+# the tag says `physical_proton` (the direct import gives the same pin), but if
+# this producer were ever re-tagged to `ideal_muon` the tag would silently fail
+# and this code would keep using proton -- the original defect, re-armed. Any
+# such re-tag must also switch this import to `q_parameter`. Tracked in
+# qou-7vm4, which stays OPEN for that reason.
+def _manifest_tag() -> str:
+    """This producer's anchor group, read from `q0_anchor_manifest.json`.
+
+    Read rather than hardcoded: the previous literal (`ideal_muon`) survived a
+    re-tag to `physical_proton` and shipped a false field in every witness this
+    producer emitted. Returns "unknown (manifest unreadable)" rather than
+    guessing, so a lookup failure is visible instead of silently asserting a
+    group.
+    """
+    import json
+    from pathlib import Path
+
+    stem = Path(__file__).stem
+    try:
+        manifest = json.loads(
+            (Path(__file__).resolve().parent / "q0_anchor_manifest.json").read_text()
+        )
+    except Exception as exc:  # pragma: no cover - environment-dependent
+        return f"unknown (manifest unreadable: {exc!r})"
+    hits = [g for g, v in manifest.items() if isinstance(v, list) and stem in v]
+    if len(hits) == 1:
+        return hits[0]
+    if not hits:
+        return "untagged (stem absent from manifest)"
+    return f"AMBIGUOUS (stem in {len(hits)} groups: {', '.join(sorted(hits))})"
+
+
 _Q0_MUON_FALLBACK = "1.1099785955573347198997632204832250266562084087802"
 try:
     from qou_substrate.constants import q_at
@@ -263,13 +306,16 @@ def main() -> None:
     # call site (AGENTS.md: "Say which pin you used").
     w.add_data("q0_anchor", Q0_ANCHOR)
     w.add_data("q0_source", Q0_SOURCE)
-    w.add_data("q0_manifest_tag", "ideal_muon")
+    w.add_data("q0_manifest_tag", _manifest_tag())
     w.add_data(
         "q0_anchor_caveat",
-        "q0_anchor_manifest.json tags this producer `ideal_muon`, but the code "
-        "imports q_at directly rather than routing through q_parameter, so the "
-        "tag cannot fire and a successful import yields the PROTON pin. "
-        "Unresolved by design; see bean qou-7vm4.",
+        "Resolved 2026-08-22 (beans qou-7vm4 / qou-d5eg): the manifest tag, this "
+        "module's import, and this witness now all say PROTON. The tag above is "
+        "READ FROM q0_anchor_manifest.json at run time rather than hardcoded, so "
+        "it cannot silently go stale against a re-tag the way the previous "
+        "hardcoded `ideal_muon` literal did. `q0_anchor`/`q0_source` above record "
+        "the path actually taken; the muon fallback fires only without "
+        "qou_substrate and warns when it does.",
     )
     w.add_data("n_reference_strands", n_ref)
     w.add_data("force_knots", data)

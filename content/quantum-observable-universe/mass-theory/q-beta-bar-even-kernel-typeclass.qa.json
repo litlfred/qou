@@ -1774,6 +1774,21 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:36.592Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two short paragraphs describing a Lean bundle; no assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1793,6 +1808,21 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:36.650Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1812,6 +1842,21 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 68 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:36.699Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1831,6 +1876,21 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 68 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:36.765Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Lists of four, matching the four gates."
       }
     ],
     "trap-closing-aphorism": [
@@ -1850,6 +1910,21 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:36.836Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the composition theorem, a technical statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1869,6 +1944,22 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:36.905Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'It operationalises the pre-flight checklist' describes the class's purpose; placement, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1888,6 +1979,22 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:36.965Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The second paragraph re-lists what the statement already said (the bundle and its equivalence), but adds the CommRing scope and the composition theorem."
       }
     ],
     "trap-performed-warmth": [
@@ -1907,6 +2014,21 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:37.024Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1926,6 +2048,21 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:37.088Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1945,6 +2082,23 @@
         "reviewed_at": "2026-08-15T10:31:00.709Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:37.145Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The body's list of the four bundled gates disagrees with the block's own title and uses[]. Body: 'the anchor-stable, bar-even, q=1 shadow, and direction-sanity checks'. Title: 'bar-even, radius-of-convergence, q=1 shadow, direction sanity'. uses[] names prop:q-beta-radius-of-convergence-gate and no anchor-stability gate. So the body substitutes a fourth gate that does not exist in the corpus for the one that does, and a reader taking the body at face value would look for an anchor-stability instance that is not there.",
+        "notes": "PROPOSED (not applied - this changes which propositions the block claims to bundle, so it needs author confirmation of which list is right): make the body match the title and uses[], i.e. 'the bar-even, radius-of-convergence, q=1 shadow, and direction-sanity checks'. If 'anchor-stable' is a real fifth gate, it needs its own uses[] entry and its own block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1968,5 +2122,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:17:37.145Z"
 }

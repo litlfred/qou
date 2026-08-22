@@ -40,7 +40,8 @@ from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
 def main() -> int:
     mp.mp.dps = 50
 
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2_target = M_MU_OVER_M_E
     cal3_target = mp.mpf("0.78233341")
     m_e = mp.mpf("0.51099895000")

@@ -149,6 +149,11 @@ M_N_MEV_VALIDATION_ERR = _load_mpf(_VALIDATION_WITNESS, "data.m_n_MeV_err")
 
 M_D_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_D_MeV")
 M_T_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_T_MeV")
+# The deuteron mass was already in the validation witness with full CODATA
+# provenance; only the facade line was missing, so consumers hand-typed it
+# (knot-particle-generation.py carried the CODATA-2018 1875.61294257).
+# Drain qou-7ot6-a.
+M_DEUTERON_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_D_MeV")
 M_HE3_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_3He_MeV")
 M_HE4_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_4He_MeV")
 

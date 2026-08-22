@@ -887,13 +887,193 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.664Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.704Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.742Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.781Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.819Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.865Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.904Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.945Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.983Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "081ce5690757",
+          "ts": "e772f5786033"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.022Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of alg:lp-sdp-dual-emission. No constructions from the ten categories; zero spaced em-dashes. VERIFIED the six required dual fields against the AGENTS.md contract - y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap - they match exactly, as does the historical '58 of 58' figure. Good discipline worth naming: the Notes deliberately decline to quote a current outstanding count, which is precisely what the corpus rule asks for.",
+        "notes": "NOT A TRAP, reported separately: the block names tools/pyhecke/python/pyhecke/lp_dual_solver.py as the canonical entry point, while AGENTS.md names computations/lp_dual_solver.py. BOTH FILES EXIST AND THEIR CONTENTS DIFFER (md5 5c66b818... vs ed28cd38...), so there are two divergent copies of a solver the corpus calls canonical, and this block and AGENTS.md point at different ones."
+      }
     ]
   },
   "source_hashes": {
     "md": "081ce5690757",
     "ts": "e772f5786033"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:27:25.022Z",
   "$schema": "block-qa/v1",
   "label": "alg:lp-sdp-dual-emission",
   "kind": "algorithm",

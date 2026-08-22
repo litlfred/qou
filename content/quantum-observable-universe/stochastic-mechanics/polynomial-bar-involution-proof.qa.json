@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.002Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.041Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 631 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.079Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 631 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.118Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.157Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "block does not end on a manufactured quotable line"
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,23 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.196Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "Closing paragraph opens 'Polynomial-level work is **complete** - every theorem here has a narrative proof above and a sorry-free Lean proof in the sibling.' This is a status announcement about the work rather than mathematics, and it duplicates the .ts authorNotes entry ('Polynomial-level truncation work is sorry-free') - AGENTS.md 4d puts status in authorNotes, not prose.",
+        "notes": "PROPOSED (not applied - the following 'Future extensions' sentence depends on the paragraph): delete the first sentence, keep 'Future extensions: ...'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1569,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.236Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "no block-final restatement of what the text established"
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1604,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.276Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "institutional register throughout"
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.317Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "no unqualified maximum-strength claim"
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:30:59.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a61c9994d3fc",
+          "ts": "0d04171fc476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.357Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: ~20 short Lean-mirrored propositions with narrative proofs. c5^[6](1) = -333/256 and the 0.06% error vs -13/10 recomputed correct; the -3/2+1/(X^2+4) closed form Taylor-expands exactly to the printed truncation.",
+        "notes": "noun chains parse aloud"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:11.357Z"
 }

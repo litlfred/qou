@@ -148,7 +148,11 @@ theorem figure_eight_amphichiral (q : ℝ) (hq : q ≠ 0) :
 
 /-- The unknot is amphichiral: J(q) = J(q⁻¹) = 1. -/
 -- Ref: [jones1987]
-theorem unknot_amphichiral (q : ℝ) (hq : q ≠ 0) :
+-- Dropped the unused hypothesis `hq : q ≠ 0` (2026-08-22; vacuity ledger,
+-- `proof-no-unused-hypothesis-rfl`).  `jones_unknot ≡ 1` for every `q`, so
+-- the equality holds unconditionally and `hq` constrained nothing; keeping it
+-- falsely suggested the identity needed `q ≠ 0`.
+theorem unknot_amphichiral (q : ℝ) :
     jones_unknot q = jones_unknot (q⁻¹) := rfl
 
 -- ═══════════════════════════════════════════════════════════════════

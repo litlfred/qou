@@ -1865,6 +1865,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.400Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1884,6 +1900,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.441Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1903,6 +1935,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.482Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1922,6 +1970,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.522Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1941,6 +2005,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.563Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: final prose sentence is: \"Both crossings are $\\sigma^{-1}$ (EM attraction), so each shared electron contributes two attractive crossings—one to each nucleus.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1960,6 +2040,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.604Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1979,6 +2075,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.646Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: final sentence checked against the body: \"Both crossings are $\\sigma^{-1}$ (EM attraction), so each shared electron contributes two attractive crossings—one to each nucleus.\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1998,6 +2110,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.688Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -2017,6 +2145,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.727Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Definitional prose; no inflated claim.",
+        "notes": "CARRIED FINDING (braid word vs label - INHERITED, do not fix locally): the block writes 'Each electron is a trefoil T_{2,3} = sigma_0 sigma_1 sigma_0 in its local H_3(q)'. Computed: the closure of sigma_0 sigma_1 sigma_0 in B_3 has permutation (13), hence 2 components (cyclic-conjugate to sigma_0^2 sigma_1, which destabilises to sigma_0^2 in B_2 = the Hopf link). T(2,3) is a knot, 1 component (closure of sigma_0^3 in B_2). So the word is not T_{2,3}. This is a corpus-wide standing convention, not something introduced here: e^- = sigma_0 sigma_1 sigma_0 'the trefoil' appears in knot-operator-basis-table, nucleon-hecke-element-normal-form, frobenius-gram-matrix, breit-wheeler-pair-production, confinement-operator-selection and binding-knots-visual-inventory (which additionally asserts it 'closes to a 3-cusp shape'). Flagged for a chapter-external decision; the 2k-crossing content of this definition is unaffected. Verified clean here: the L_b product gives 2 attractive sigma^-1 crossings per shared electron, consistent with every other bond-count in the batch."
       }
     ],
     "trap-nonspeakable": [
@@ -2036,6 +2180,22 @@
         "reviewed_at": "2026-08-15T10:31:01.624Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8261f4478f01",
+          "ts": "29c42e78c888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.766Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the definition block (order-k bond as Hopf linking of k electron trefoils; L_b product formula; 2 crossings per shared electron). Judged on the whole text: read aloud end to end (5 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2059,5 +2219,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:18.766Z"
 }

@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.478Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Block title ('calibration-dependent, not structural') is a substantive classification: the block's whole content is that the n/p undershoot is an artefact of the calibration route, not of the mass formula. False-positive class. The .md prose itself carries no assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.534Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'must instead use the trace difference directly' is a corrective instruction with its own content, not a setup-then-reframe where the second clause carries everything."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.583Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.650Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.702Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the method statement (topological trace vs single-generator Kashaev), a scope claim rather than a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.750Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.818Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Final sentences add the accuracy figure and the method scope; no restatement of the opening."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.883Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1698,23 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.946Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Intensifier flood in a 6-sentence block: 'drastically undershoots', 'relies purely on', 'completely avoiding', 'problematic ... approximations' (an unsupported pejorative), alongside 'entirely' and two 'directly'. Signature de-hedging density.",
+        "notes": "FIXED INLINE (prose only, no math or meaning change): 'drastically undershoots the neutron mass' -> 'undershoots the neutron mass'; 'It relies purely on the topological trace, completely avoiding the problematic single-generator Kashaev approximations.' -> 'It relies on the topological trace alone, avoiding the single-generator Kashaev approximations.' Left in place: 'Bypassing the per-nucleon evaluation entirely' and the two 'directly', which carry method content. Delimiter balance re-checked (0 $$ pairs unchanged, even)."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1734,21 @@
         "reviewed_at": "2026-08-15T10:31:00.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6e1bcadf3b89",
+          "ts": "d05a0953d040"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:46.997Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short declaratives; 'per-generator amplitudes that sit at different distances from the q_0 pole' reads aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1771,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:40:46.997Z"
 }

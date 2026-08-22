@@ -1528,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:26.328Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'with the q-parameter held fixed (q -> q, not q -> q^{-1})' and 'is distinct from:' introduce a three-item disambiguation against bar, C and T. Separating P from the bar-involution is the conjecture's entire content, so the contrasts are load-bearing disambiguation."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1547,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:26.458Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Structured conjecture with named sections; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1566,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 383 words)"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:26.595Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three em-dashes across a long structured block, each a true appositive."
       }
     ],
     "trap-triples": [
@@ -1585,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 383 words)"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:26.692Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The triples here are forced by the subject: C, P, T are three; the 'distinct from' list is bar/C/T; the CPT table has three rows; 'Structural invariants' has three bullets because the corpus's invariant schema has three slots (GB filtration level, jet order, bar-symmetry status)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1604,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:26.783Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a cross-reference list."
       }
     ],
     "trap-meta-commentary": [
@@ -1623,6 +1698,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:26.870Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis; the bold is used for symbol names."
       }
     ],
     "trap-thesis-restatement": [
@@ -1642,6 +1732,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:26.967Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing sections are open-items and cross-references, not restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1661,6 +1766,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.048Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1680,6 +1800,21 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.141Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1699,6 +1834,22 @@
         "reviewed_at": "2026-08-15T10:31:00.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "89ca1af9982d",
+          "ts": "e801e2839156"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.250Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Bulleted and tabulated; the prose sentences are short.",
+        "notes": "RIGOR (reported, not fixed — MAJOR, and it falsifies the conjecture's central well-definedness claim). '## What remains open' item 1 asserts: 'The quadratic is preserved (since both sigma_i and sigma_i^{-1} satisfy the same relation): the quadratic (sigma_i - q)(sigma_i + q^{-1}) = 0 is invariant under P because (sigma_i^{-1} - q)(sigma_i^{-1} + q^{-1}) = 0 also holds (multiply the original by sigma_i^{-2}).' THIS IS FALSE, and the stated derivation produces the opposite conclusion. Checked symbolically in sympy: sigma satisfies x^2 - (q - q^{-1})x - 1 = 0 with eigenvalues {q, -q^{-1}}. Multiplying by sigma^{-2} — precisely the operation the parenthesis names — gives, for y = sigma^{-1}, y^2 + (q - q^{-1})y - 1 = 0, i.e. (y + q)(y - q^{-1}) = 0, eigenvalues {-q, q^{-1}}. The claimed (y - q)(y + q^{-1}) = 0 differs from the true one by 2y(1 - q^2)/q, which vanishes only at q = +-1. So sigma_i^{-1} does NOT satisfy the Hecke quadratic of H_n(q); the eigenvalue pair {q, -q^{-1}} maps to {q^{-1}, -q}, and those sets coincide only when q^2 = 1. CONSEQUENCE: the map sigma_i -> sigma_i^{-1} with q held fixed is not an algebra endomorphism of H_n(q), so 'P' as defined in the opening paragraph and in the displayed action is not well defined on the Hecke image — it is well defined only on the braid group B_n. This is exactly why the bar-involution must send q -> q^{-1} at the same time, a fact the block itself states two sections earlier ('bar ... acts as q -> q^{-1} AND sigma_i -> sigma_i^{-1} simultaneously'), so the block contradicts itself. The three-way CPT factorisation bar = P.C.T inherits the problem: neither C (flavour labels) nor T (word reversal) touches q, so no composite of the three as described can produce bar's q -> q^{-1}. Proposed: restate P as an involution of B_n (or of the diagram category) that does NOT descend to H_n(q) with q fixed, and re-derive what bar = P.C.T can mean — at minimum one of C or T must carry the q-inversion. Secondary: item 1 is filed under 'What remains open' while its body claims to settle it; whichever way the mathematics lands, the heading and the body disagree."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1722,5 +1873,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:48:27.250Z"
 }

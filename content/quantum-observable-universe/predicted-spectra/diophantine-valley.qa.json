@@ -1422,6 +1422,23 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.533Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "major",
+        "evidence": "'The nuclear chart is not a phenomenological fit; it is the set of integer solutions to an algebraic equation determined by the single parameter $q$.' - assert-by-denial in the diagnostic form, and the denial is doing the rhetorical work rather than drawing a mathematical distinction. It is also not the substantive-contrast false-positive class, because the block's own algebra contradicts the positive half: the curve depends on $c$, given three paragraphs later as $c = (q - q^{-1})\\lambda_C/(2a_A)$, i.e. on $\\lambda_C$ and $a_A$ as well as $q$ - and $a_A, a_C$ are the semi-empirical mass-formula coefficients, which ARE phenomenological fits.",
+        "notes": "Structural - the construction cannot be removed without also settling the over-claim it carries, so not fixed inline. Proposed: state the positive claim at its true strength, e.g. 'The nuclear chart is the set of integer solutions to an algebraic equation whose single curvature parameter $c$ is fixed by $q$ together with the binding coefficients $\\lambda_C$ and $a_A$.' Then say explicitly whether $\\lambda_C$ and $a_A$ are derived or are inputs beyond CAL-1/2/3 (per AGENTS 'any input outside CAL-1/2/3 is a fourth calibration')."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1441,6 +1458,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.181Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: five bold-titled sections (stability cubic / color-fibration comparison / n-p ratio / integer points / substrate connection) with four display equations."
       }
     ],
     "trap-em-dash": [
@@ -1460,6 +1492,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 338 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.439Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "One unspaced em-dash pair in the block-final sentence, enclosing an appositive list ('The structure of the nuclear chart-neutron excess, stability pairs, and even-odd staggering-emerges from a single deformation parameter.'). Single instance, true parenthetical, no density."
       }
     ],
     "trap-triples": [
@@ -1479,6 +1526,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 338 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.479Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The only triple is 'neutron excess, stability pairs, and even-odd staggering' - three distinct chart features, a counted enumeration rather than a reflex three. NOTE for the author: the block earlier treats pairing as a SEPARATE correction that lifts S from genus 0 to genus 1, so attributing even-odd staggering to the same single parameter c is in tension with the block's own genus argument."
       }
     ],
     "trap-closing-aphorism": [
@@ -1498,6 +1560,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.714Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The block-final sentence is a summarising closer but carries a substantive (if over-strong) claim rather than a decorative line; adjudicated under trap-thesis-restatement, recorded fail there."
       }
     ],
     "trap-meta-commentary": [
@@ -1517,6 +1594,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.256Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: five bold-titled sections (stability cubic / color-fibration comparison / n-p ratio / integer points / substrate connection) with four display equations."
       }
     ],
     "trap-thesis-restatement": [
@@ -1536,6 +1628,23 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.661Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Block-final sentence 'The structure of the nuclear chart-neutron excess, stability pairs, and even-odd staggering-emerges from a single deformation parameter.' restates the claim already made two sections earlier ('determined by the single parameter $q$'), after the intervening paragraph has already said 'As $q$ increases from $1$, the $ct^2$ term bends the curve. The integer solutions disperse.' It adds a list, not a claim.",
+        "notes": "Structural - it carries the same unsupported single-parameter claim as the negation-contrast above, so the two should be fixed together. Proposed: end on the mechanism instead - 'As $q$ increases from $1$, the $ct^2$ term bends the curve and the integer solutions disperse, producing the neutron excess and the observed stability pairs.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1555,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.302Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: five bold-titled sections (stability cubic / color-fibration comparison / n-p ratio / integer points / substrate connection) with four display equations."
       }
     ],
     "trap-superlative": [
@@ -1574,6 +1698,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.341Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: five bold-titled sections (stability cubic / color-fibration comparison / n-p ratio / integer points / substrate connection) with four display equations."
       }
     ],
     "trap-nonspeakable": [
@@ -1593,6 +1732,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7d8137d991a7",
+          "ts": "5a8d889cbb1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:05.384Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: five bold-titled sections (stability cubic / color-fibration comparison / n-p ratio / integer points / substrate connection) with four display equations."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1615,5 +1769,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:34:05.714Z"
 }

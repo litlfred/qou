@@ -11,7 +11,7 @@ The interference phase is
 
 $$
   \Delta\Phi_q(\theta)
-  =  q^{-1}\frac{2\pid\sin\theta}{\lambda}
+  =  q^{-1}\frac{2\pi d\sin\theta}{\lambda}
         +  (1 - q^{-1})\Delta\phi_\xi(\theta).
 $$
 
@@ -19,7 +19,7 @@ The envelope parameter is
 
 $$
   \beta_q(\theta)
-  =  q^{-1}\frac{\pia\sin\theta}{\lambda}
+  =  q^{-1}\frac{\pi a\sin\theta}{\lambda}
         +  (1 - q^{-1})^2\beta_\xi(\theta).
 $$
 
@@ -34,13 +34,13 @@ The $q$-Laplacian separates into three scales:
 The fringe spacing is
 
 $$
-  \Delta y_q =  \frac{q\lambdaL}{d}.
+  \Delta y_q =  \frac{q\lambda L}{d}.
 $$
 
 The envelope half-width broadens:
 
 $$
-  w_q =  \frac{q^2\lambdaL}{a}
+  w_q =  \frac{q^2\lambda L}{a}
         \left(1 +  (1 - q^{-1})^2
         \frac{\langle\Delta_\xi\rangle}{\langle\Delta\rangle}\right).
 $$

@@ -883,7 +883,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.852Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.893Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.934Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:17.973Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:18.012Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:18.051Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:18.090Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:18.129Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Block contains one sentence and no table; category has no surface.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:18.173Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "This 'table' block contains NO TABLE. Its entire .md is the single sentence 'The canonical values are rigorously evaluated via formal trace definitions.' (no trailing newline) -- the token-substitution sweep artefact, which here has replaced the pair-generator accuracy table wholesale. The parent prop:rho-k-graded-expansion points at it twice ('See Table 1' and '(see Table 1)') and its prose depends on it ('Both pair extensions degrade accuracy' names two extensions the reader can no longer see).",
+        "notes": "PROPOSED (not applied -- content recovery): restore the table from git history, or delete the block and both parent pointers. SECOND destroyed table in this batch; the other is recomputed-low-isotope-mass-table-table4-data.md. The sentence appears in five .md files in this chapter."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "20a40d5d7cad",
+          "ts": "fd35c8958ff8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:18.216Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "'The canonical values are **rigorously** evaluated via formal trace definitions.' -- an unqualified rigour claim that is the block's entire content and names no value, no definition and no script.",
+        "notes": "Same artefact; recorded so the criterion carries it."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:14:18.216Z"
 }

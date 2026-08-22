@@ -64,7 +64,8 @@ G = mp.catalan
 # (CAL-4 audit, 2026-05-22).
 VOL_B3_FROM_G = 8 * G
 VOL_B3_LIT = VOL_B3_FROM_G
-VOL_41 = mp.mpf("2.02988321281930725004240510854658")
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 33 digits, correct to 29 (qou-ckbv)
+VOL_41 = 2 * mp.clsin(2, mp.pi / 3)
 
 # CODATA validation (CAL-1: m_e MeV; comparison only)
 from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
@@ -264,7 +265,19 @@ def main() -> int:
         "Findings inform the open R&D on λ_scale substrate derivation."
     )
 
-    out = w.save()
+    out = w.save({"q0Anchor": "independent",
+         "q0AnchorReason": (
+            'Reads no substrate value. PROVED by running this producer'
+            'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
+            'witness: the only non-ephemeral leaves that differ are'
+            'q0Anchor and q0Value THEMSELVES -- every substantive field is'
+            'byte-identical, so the pin changes the label and nothing else.'
+            'Its previous `muon` label was therefore a false claim that'
+            'this producer computed at that anchor. `independent` is the'
+            'honest disposition; a q0_anchor_manifest entry would be the'
+            'WRONG fix, promoting a false claim into a declared one. Bean'
+            'qou-o922, class (ii).'
+         )})
     print(f"Witness emitted: {out.name}")
     print()
     print("Summary:")

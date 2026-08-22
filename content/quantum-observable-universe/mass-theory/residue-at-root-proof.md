@@ -29,5 +29,5 @@ content of the Habiro-completion theorem
 analytic residue at $\zeta_\ell$ for any element of
 $\widehat{\mathbb{Z}[q]}$ that converges as a complex function on
 $|q| > 1$. The algebraic projection, however, is well-defined
-*regardless* of analytic convergence — which is the point: the
+*regardless* of analytic convergence: the
 algebraic-side derivation does not need analytic continuation.

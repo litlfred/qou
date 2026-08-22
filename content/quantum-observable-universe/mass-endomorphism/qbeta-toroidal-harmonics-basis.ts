@@ -1,14 +1,33 @@
-import { Proposition } from "../../ontologist";
+import { proposition } from "../../schema/builders";
 
-export const qbetaToroidalHarmonicsBasis = Proposition({
-  id: "prop:qbeta-toroidal-harmonics-basis",
-  name: "Toroidal Harmonics Global Basis",
-  statement: `The continuum limit of the discrete multiblock Habiro knot trace $\\Delta\\tau_M(q)$ evaluated over the trefoil knot (a $(2,3)$ torus knot) is governed by Toroidal Harmonics of half-integer degree $P_{n-1/2}^m$. The phenomenological Parabolic Cylinder (Weber) ODE is the local Liouville–Green limit of the Toroidal Harmonic ODE near its vacuum turning points. The f-map order-gap ($O(\\sqrt{u})$ cancellation) corresponds exactly to the mode-selective projection isolating the principal Toroidal Harmonic mode.`,
-  proofStrategy: `1. **Topological Geometry:** The Markov trace $\\Delta\\tau_M$ evaluates link invariants on the solid torus. Consequently, the global analytic continuation of the generating function must span the Toroidal Harmonic basis $P_{n-1/2}^m$ and $Q_{n-1/2}^m$, inheriting the half-integer degree representations of $\\mathfrak{sl}_2$.
-2. **Mode-Selective Projection:** The discrete trace is a superposition of cyclic harmonics. The order-gap observed in the continuum limit (the vanishing of $c_1$ linear terms in the $u$-ladder) is not an algebraic coincidence, but a geometric projection. By mapping $w \\to u$, the f-map isolates the principal Toroidal mode (where $m=1/2$) and suppresses secondary noise, resulting in the pristine $1 + c_2 u^2 + \\dots$ sequence.
-3. **Liouville–Green Local Limit:** The exact Toroidal Harmonic ODE in the longitudinal coordinate $\\eta$, given by $F''(\\eta) - \\left(n^2 - 1/4 + \\frac{m^2 - 1/4}{\\sinh^2 \\eta}\\right)F(\\eta) = 0$, reduces to the Parabolic Cylinder ODE $F''(u) + (A + Bu + Cu^2)F(u) = 0$ via the standard Liouville–Green (WKB) approximation around the regular turning points. The topological normalization fixes the $K$-level parameter $c_4 = 2$, enforcing $C = -22$.`,
+/**
+ * Rewritten 2026-08-21 (bean qou-6y28). The original manifest imported
+ * `Proposition` from "../../ontologist" — a module that has NEVER existed
+ * in this repository (`git log --all` on that path returns zero commits).
+ * It therefore never imported, the block never rendered, and no per-block
+ * checker ever saw it, from 290ce47222 (2026-07-06) onward.
+ *
+ * Two fields from the original are deliberately NOT carried over:
+ *
+ *   - `status: "verified"`. AGENTS.md §4 is explicit that formalization
+ *     status is DERIVED at build time and never stored in a `.ts`. A
+ *     stored "verified" on a block nothing had ever checked is the exact
+ *     claim that rule exists to prevent.
+ *   - `statement` / `proofStrategy` as manifest strings. The narrative
+ *     belongs in the `.md`, which already carries both verbatim.
+ *
+ * NOT wired into the chapter manifest, deliberately. Its central claim —
+ * that the topological normalization FIXES c_4 = 2, enforcing C = -22 —
+ * is a c_k claim, and per AGENTS.md every c_k result in the corpus is
+ * convention-C-frame pending the D re-derivation (bean qou-cds1). Adding
+ * it to the paper now would introduce an unscoped C-frame claim. The
+ * wiring decision belongs after that re-derivation, or after review.
+ */
+export default proposition({
+  label: "prop:qbeta-toroidal-harmonics-basis",
+  title: "Toroidal harmonics global basis",
+  tags: ["qbeta", "toroidal-harmonics", "habiro", "continuum-limit"],
   uses: [
     "prop:q-beta-categorical-precision-ladder",
   ],
-  status: "verified",
 });

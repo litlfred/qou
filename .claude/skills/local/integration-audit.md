@@ -96,6 +96,36 @@ that:
   a child process (via `spawnSync`) to repopulate the sidecars,
   unless `--no-sweep` or `--dry-run` is passed.
 
+## Resolving a sidecar conflict — script vs agent entries
+
+"Do not hand-merge generated output; let `qa-sweep` regenerate it
+against the merged tree" is the right resolution for **script**
+entries and the wrong one for **agent** entries. A script entry has a
+producer, so regenerating reproduces it. An agent verdict does not:
+`automated: false` axes (`trap-*`, `da-*`, `clarity-*`, `q-usage-*`)
+have a scanner that emits high-recall *candidates* and nothing that
+emits a *judgement*. Resolving to one side drops the other side's
+verdicts, and the loss is silent — the sidecar stays well-formed and
+the axis simply reports fewer findings.
+
+Measured: the #5103 takeover resolved 742 sidecar conflicts to main's
+side on exactly that reasoning and dropped 7381 `trap-*` verdicts over
+738 blocks, each one an agent having read a block in full across ten
+categories. Bean `qou-tqr9`.
+
+Take the union instead, mechanically:
+
+```bash
+python3 scripts/qa-sidecar-agent-union.py --against <other-side> --apply
+```
+
+It is additive only — it never deletes an entry — and it carries an
+entry over only when its `field_hash.md` still matches the live `.md`,
+because a verdict certifies the text it was written against. `--check`
+exits 1 when the working tree is missing a live-valid agent entry the
+other side carries; run it after any rebase, takeover, or force-push
+that touched `content/`.
+
 ## Persistence
 
 Logs every invalidation run to

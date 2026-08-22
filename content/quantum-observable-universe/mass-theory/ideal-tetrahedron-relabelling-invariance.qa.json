@@ -16,6 +16,23 @@
         "reviewed_at": "2026-08-21T16:39:00.089Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "Four near-contrasts, all substantive and load-bearing: \"if it is not, the formula is measuring the labelling rather than the geometry\"; \"carries the second edge parameter of y_1, not y_1 itself\"; \"a theorem rather than a coincidence\"; \"the earlier agreement is explained rather than relied upon\". Each marks a real distinction the block exists to draw."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.512Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "Four \"rather than\" constructions in 1.9k (\"measuring the labelling rather than the geometry\", \"the second edge parameter of y_1, not y_1 itself\", \"a theorem rather than a coincidence\", \"explained rather than relied upon\"). Three are load-bearing - the whole block is about which parameter the middle tetrahedron carries - so recorded as pass on the false-positive class, with the density noted.",
+        "notes": "Only \"a theorem rather than a coincidence\" is rhetorical; if the density is trimmed, that is the one to restate positively."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -32,6 +49,21 @@
         },
         "reviewed_at": "2026-08-21T16:39:00.129Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.549Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "No setup-then-reframe."
       }
     ],
@@ -50,6 +82,21 @@
         "reviewed_at": "2026-08-21T16:39:00.169Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "One em-dash, introducing the correction about the middle tetrahedron."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.587Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "One spaced em-dash in 1.9k."
       }
     ],
     "trap-triples": [
@@ -67,6 +114,21 @@
         "reviewed_at": "2026-08-21T16:39:00.211Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "No reflex list."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.628Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "The triples are the three dihedral angles and the three shapes of the 5_2 triangulation - fixed by the geometry."
       }
     ],
     "trap-closing-aphorism": [
@@ -84,6 +146,21 @@
         "reviewed_at": "2026-08-21T16:39:00.248Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "Closes on a technical statement about a vanishing derivative."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.668Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Ends on a mathematical identification (\"it is exactly the statement that a certain derivative along the ray vanishes\"), which is what the Kummer block then uses."
       }
     ],
     "trap-meta-commentary": [
@@ -101,6 +178,22 @@
         "reviewed_at": "2026-08-21T16:39:00.289Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "No narration of emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.707Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"Where this is load-bearing\" is a section label, not emphasis narration. NOTE: \"An earlier model in this corpus took all three to be y_1 and obtained the right total for a reason it did not state\" narrates the corpus's own revision history - a status leak under AGENTS.md 4d / one-voice Category H rather than a trap construction.",
+        "notes": "Flagged for the one-voice axis: the revision note belongs in authorNotes."
       }
     ],
     "trap-thesis-restatement": [
@@ -118,6 +211,21 @@
         "reviewed_at": "2026-08-21T16:39:00.368Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "The \"Where this is load-bearing\" section adds the 5_2 application; the law-of-sines section adds a new identity."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.747Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -135,6 +243,21 @@
         "reviewed_at": "2026-08-21T16:39:00.402Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "Institutional register."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.786Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -152,6 +275,21 @@
         "reviewed_at": "2026-08-21T16:39:00.485Z",
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "No inflation; the block is candid about a prior model that \"obtained the right total for a reason it did not state\"."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.824Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Claims verified. The relabelling map z -> 1/(1-z) and both stated identities check symbolically: 1/(1 - 1/(1-z)) = (z-1)/z = 1 - 1/z, and 1 - (1-z) = z, so the second edge parameter of the relabelled tetrahedron is the third of the original and the third is the first, exactly as the prose says. The Lean sibling QOU.MathlibExt.IdealTetrahedron.volume_rotate resolves (IdealTriangulation.lean:206, namespace IdealTetrahedron) and states T.rotate.volume = T.volume, with rotate_shape giving 1/(1 - T.shape) and rotate_angles giving the 1->2->3->1 cycle."
       }
     ],
     "trap-nonspeakable": [
@@ -170,8 +308,23 @@
         "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
         "evidence": "Reads aloud cleanly.",
         "notes": "VERIFIED, all correct. The two composition identities check symbolically: 1/(1 - 1/(1-z)) = (1-z)/(-z) = 1 - 1/z, and 1 - (1-z) = z, so z -> 1/(1-z) does cycle the three edge parameters as claimed. The volume claim follows since vol = Lambda(theta_1) + Lambda(theta_2) + Lambda(theta_3) is cycle-symmetric -- and note the block uses Lambda correctly here (the Lobachevsky form of the ideal-tetrahedron volume), so this is not an instance of the Lambda-vs-Cl_2 guard. The 5_2 consequence also checks: D is invariant on the cyclic orbit {z, 1/(1-z), 1-1/z}, so shapes (y_1, 1/(1-y_1), y_1) sum to 3 D(y_1). The law of sines |z| = sin(theta_2)/sin(theta_3) is the standard relation. Minor notation nit: the modulus is written with a double bar, ||z||, where |z| is meant."
+      },
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:04:30.861Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Reads aloud cleanly."
       }
     ]
   },
-  "updated_at": "2026-08-21T16:39:00.517Z"
+  "updated_at": "2026-08-22T05:04:30.861Z"
 }

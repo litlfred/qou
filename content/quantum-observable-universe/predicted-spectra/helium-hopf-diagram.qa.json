@@ -1395,6 +1395,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.666Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "'It passes around the entire Hopf pair instead of threading through it.' The two linking patterns are geometrically distinct and the contrast is the block's content -- substantive-contrast false-positive class.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1414,6 +1430,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.703Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (prose, two tikzcd figures, three displays). Judged all ten categories; one block-final restatement found, plus two structural defects reported separately.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) BUILD-FATAL -- the block opens two ```tex fences (before each tikzcd) and closes NEITHER; a whole-batch fence count gives 2 backtick-fence lines for 2 openers, so everything after the first \\begin{tikzcd} falls inside raw passthrough. (2) MATH ERROR -- 'The linking matrix of the two-electron Hopf link is L = [[0,1],[1,0]]. This matrix has rank 1.' The stated matrix has determinant -1, hence rank 2, not 1. The downstream arithmetic ('increases the total linking number from 1 to at least 3') is independently correct."
       }
     ],
     "trap-em-dash": [
@@ -1433,6 +1465,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.741Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (prose, two tikzcd figures, three displays). Judged all ten categories; one block-final restatement found, plus two structural defects reported separately.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) BUILD-FATAL -- the block opens two ```tex fences (before each tikzcd) and closes NEITHER; a whole-batch fence count gives 2 backtick-fence lines for 2 openers, so everything after the first \\begin{tikzcd} falls inside raw passthrough. (2) MATH ERROR -- 'The linking matrix of the two-electron Hopf link is L = [[0,1],[1,0]]. This matrix has rank 1.' The stated matrix has determinant -1, hence rank 2, not 1. The downstream arithmetic ('increases the total linking number from 1 to at least 3') is independently correct."
       }
     ],
     "trap-triples": [
@@ -1452,6 +1500,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.785Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (prose, two tikzcd figures, three displays). Judged all ten categories; one block-final restatement found, plus two structural defects reported separately.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) BUILD-FATAL -- the block opens two ```tex fences (before each tikzcd) and closes NEITHER; a whole-batch fence count gives 2 backtick-fence lines for 2 openers, so everything after the first \\begin{tikzcd} falls inside raw passthrough. (2) MATH ERROR -- 'The linking matrix of the two-electron Hopf link is L = [[0,1],[1,0]]. This matrix has rank 1.' The stated matrix has determinant -1, hence rank 2, not 1. The downstream arithmetic ('increases the total linking number from 1 to at least 3') is independently correct."
       }
     ],
     "trap-closing-aphorism": [
@@ -1471,6 +1535,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.822Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (prose, two tikzcd figures, three displays). Judged all ten categories; one block-final restatement found, plus two structural defects reported separately.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) BUILD-FATAL -- the block opens two ```tex fences (before each tikzcd) and closes NEITHER; a whole-batch fence count gives 2 backtick-fence lines for 2 openers, so everything after the first \\begin{tikzcd} falls inside raw passthrough. (2) MATH ERROR -- 'The linking matrix of the two-electron Hopf link is L = [[0,1],[1,0]]. This matrix has rank 1.' The stated matrix has determinant -1, hence rank 2, not 1. The downstream arithmetic ('increases the total linking number from 1 to at least 3') is independently correct."
       }
     ],
     "trap-meta-commentary": [
@@ -1490,6 +1570,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.858Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (prose, two tikzcd figures, three displays). Judged all ten categories; one block-final restatement found, plus two structural defects reported separately.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) BUILD-FATAL -- the block opens two ```tex fences (before each tikzcd) and closes NEITHER; a whole-batch fence count gives 2 backtick-fence lines for 2 openers, so everything after the first \\begin{tikzcd} falls inside raw passthrough. (2) MATH ERROR -- 'The linking matrix of the two-electron Hopf link is L = [[0,1],[1,0]]. This matrix has rank 1.' The stated matrix has determinant -1, hence rank 2, not 1. The downstream arithmetic ('increases the total linking number from 1 to at least 3') is independently correct."
       }
     ],
     "trap-thesis-restatement": [
@@ -1509,6 +1605,23 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.893Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "severity": "major",
+        "evidence": "Block-final sentence: 'It passes around the entire Hopf pair instead of threading through it. This forms the 2s shell. The trefoil links to the 1s^2 cluster as a single unit.' The last sentence restates the first two -- 'passes around the entire pair' already says the pair is linked as one unit -- and it is the block's closing line, which is the category-7 shape exactly.",
+        "notes": "PROPOSED (not applied: the fix spans three sentences, beyond the inline-fix budget, and the block needs a human pass for the unclosed fences anyway): merge to 'It passes around the entire Hopf pair instead of threading through it, linking to the closed $1s^2$ cluster as a single unit. This forms the $2s$ shell.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1528,6 +1641,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.930Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (prose, two tikzcd figures, three displays). Judged all ten categories; one block-final restatement found, plus two structural defects reported separately.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) BUILD-FATAL -- the block opens two ```tex fences (before each tikzcd) and closes NEITHER; a whole-batch fence count gives 2 backtick-fence lines for 2 openers, so everything after the first \\begin{tikzcd} falls inside raw passthrough. (2) MATH ERROR -- 'The linking matrix of the two-electron Hopf link is L = [[0,1],[1,0]]. This matrix has rank 1.' The stated matrix has determinant -1, hence rank 2, not 1. The downstream arithmetic ('increases the total linking number from 1 to at least 3') is independently correct."
       }
     ],
     "trap-superlative": [
@@ -1547,6 +1676,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.968Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "'The helium atom A(2,2) provides the simplest closed electron shell.' Checked what the superlative asserts before judging it as style: 1s^2 is in fact the smallest closed shell, so the claim is accurate and bounded, not inflation.",
+        "notes": "No change."
       }
     ],
     "trap-nonspeakable": [
@@ -1566,6 +1711,22 @@
         "reviewed_at": "2026-08-15T10:31:01.168Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9640e2be9e35",
+          "ts": "3f1832fa472d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.004Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full (prose, two tikzcd figures, three displays). Judged all ten categories; one block-final restatement found, plus two structural defects reported separately.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) BUILD-FATAL -- the block opens two ```tex fences (before each tikzcd) and closes NEITHER; a whole-batch fence count gives 2 backtick-fence lines for 2 openers, so everything after the first \\begin{tikzcd} falls inside raw passthrough. (2) MATH ERROR -- 'The linking matrix of the two-electron Hopf link is L = [[0,1],[1,0]]. This matrix has rank 1.' The stated matrix has determinant -1, hence rank 2, not 1. The downstream arithmetic ('increases the total linking number from 1 to at least 3') is independently correct."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1588,5 +1749,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:04.004Z"
 }

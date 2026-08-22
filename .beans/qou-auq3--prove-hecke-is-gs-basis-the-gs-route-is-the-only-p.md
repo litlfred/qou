@@ -2964,3 +2964,274 @@ not yet written.
 So the tail is four applications: `blockPass`, two `monicStep`s, `blockPass`,
 then `ofTerms_cancel_pair`. The second block drives term 2 onto term 1's word
 with the opposite coefficient, and that is the final annihilation.
+
+---
+
+## The `a ≤ b` tail composes (2026-08-21, PR #5435, §4am)
+
+The inventory's untested hypothesis, tested — and the answer changed the fix.
+
+**`hpark` fails, and it is the engine's fault.** `blockPass` asks that no other
+term be an extension of the block's left context. That is a property of the
+*other* term, so no fit of a transition can see it — but the tail runs the block
+twice, once per surviving term, so each application has the other as bystander.
+Measured (`hecke_tail_collision_check.py`, 8/8 off-diagonal): `hpark` **holds at
+block 1 and fails at block 2**, because block 2's *last step emits the
+bystander* — that emission is the cancellation ending the chain. The bystander
+is never a word either block *rewrites*.
+
+**The reflex fix was wrong.** Since `SingleStepReduction` reads the redex
+coefficient off the **source** side, a collision on a word only ever *produced*
+costs nothing, so the apparent fix was to propagate down the source-only
+relaxation `farComm_transport_right_sources` already carries. That is three
+lemmas restated, plus an argument that a block's destination differs from each
+of its own intermediate sources.
+
+**None of it was needed — the schedule was.** The two blocks act on *different
+terms*, so their steps commute and `MultiStepReduction` fixes no order beyond
+each redex being present. Deg-lex runs block 1 first; that is the engine's
+accident. Run block 2 first and its bystander is term 1 *pre*-block, which does
+not extend `σ_{i−2} :: A`; by the time term 1 moves, term 2 begins `σ_{i−2}` and
+does not extend `A`. `hecke_tail_reorder_check.py`: both `hpark`s hold, every
+source unique, chain still reaches zero, 8/8.
+
+**`tailChain` (§4am), sorry-free.** `blockPass` on term 2 → `blockPass` on
+term 1 → two `bsStep`s. Ends at a pair differing only in sign — the `a > b`
+regime's own ending (`chain` → `T6` → `T6_isZero`), so **`ofTerms_cancel_pair`
+is not what finishes the tail** after all; it stays the right tool for the
+*mid-prefix* cancellation, where the chain continues. The two terms meet by two
+instances of `descWord_split`.
+
+Also landed: `bsStep` (Bokut–Shiao at general depth in `monicStep`'s shape),
+`bsWord₂_ne_bsWord₁`, `heckeGen_ne_of_val_ne`, and
+`tailChain_indices_nonvacuous` (a = 4, b = 6 at n = 13 satisfies every index
+hypothesis).
+
+**Two corrections to my own work this tranche.** (1) The first collision check
+reported the bystander was *not* the block's final word — a harder problem. That
+was my bug: the chain ends at zero, so reading the post-block term set finds
+nothing and the test went vacuous; asking the last step what it *emits* is the
+fix. (2) I began re-deriving `descWord_split`, which the file already had; my
+grep for it had been truncated by `head -40`, and the compiler caught it.
+
+**Still open.** The **prefix** (`a² + a + 5` steps) is not assembled — only its
+inventory is known, and this tranche is precisely a case of the inventory being
+insufficient. Then the `OverlapComposition` + `spoly` identity joining the two.
+The diagonal `b = a` runs `blockPassFromTwo` and is covered by *neither* the
+collision nor the reorder measurement.
+
+### Two follow-ons, same tranche
+
+**The mid-prefix cancellation is forced — for a different reason than I gave.**
+`hecke_prefix_schedule_check.py` simulates the chain in the **list** model Lean
+actually uses (`ofTerms L`, every lemma reading its redex off
+`L₁ ++ (W, c) :: L₂`, so `W` must occur exactly once) rather than the engine's
+cleaned word→coefficient map. The two agree until the cancellation: the engine
+drops the reconverged pair, the list keeps both entries. Measured:
+
+- `dup_sources = 0` — no step ever rewrites a duplicated word, so the dead pair
+  is inert **as a source** and could be carried on that count alone;
+- **4** entries at `T_pre` against the **2** `tailChain` is stated on;
+- **one** dead word extends a live term's block context — which is exactly what
+  `hpark` forbids.
+
+So `ofTerms_cancel_pair` is forced, and `hecke_chain_cancellation.py` gave the
+wrong reason (a word being reduced twice; it never is) and the wrong count
+(twice; it is once, the second cancellation being the sign-pair ending).
+Consequence: **`tailChain` reaches the prefix's output only if the cancellation
+is discharged before it.** Nothing new is needed — `Basic.lean` §6 already has
+`SingleStepReduction.of_coeffEq_left` and `MultiStepReduction.congr_source`,
+whose disjunctive conclusion `reducesToZero_congr` shows how to absorb.
+
+**The diagonal.** `hecke_tail_diagonal_check.py` runs the fit, the collision and
+the reorder at `a = b = 3..6` against `blockPassFromTwo`'s actual source and
+target: fits both terms under a common `(A, T)`; `hpark` fails at the second
+block under the engine's order and holds under the reordered one; reaches zero.
+4/4. The two Bokut–Shiao steps and the endpoint are the **same** as the
+off-diagonal's — measured. `tailChainFromTwo` (sorry-free) is that argument, and
+its `j₂ ≤ j₁` covers the diagonal. Neither tail statement subsumes the other:
+the hypotheses nest, the sources do not.
+
+**Next.** The prefix assembly itself (`a² + a + 5` steps, two lineages, the
+loop, the quadratic pair, `small(a)`), then `OverlapComposition` + `spoly`
+joining it to the tail. The prefix's own per-step hypotheses have **not** been
+swept — the clash above is measured only against the block contexts `tailChain`
+would use.
+
+### The prefix will be harder than the tail — measured, before writing its Lean
+
+Every context hypothesis in the tail was discharged by **one letter**: no other
+term shared the source's first letter, so "no other term extends this context"
+followed from `List.cons.inj` whatever context the lemma picked. Free, and
+lemma-independent. `hecke_prefix_head_separation.py` asks whether the prefix
+affords the same, over `a = 3..5`, `b ∈ {a, a+1, a+2}`:
+
+- **`4(a−1)` of the prefix's `a²+a+5` steps are NOT head-separated** — 8 of 17,
+  12 of 25, 16 of 35. Roughly half.
+- The shared prefix runs as deep as **`2a+1`**.
+- Only **B** and **F** steps clash; the **Y** and **Q** steps of the quadratic
+  pair never do.
+- All three counts are **independent of `b`** — the clash structure is a
+  function of the depth alone; the block length does not enter it.
+
+**And scheduling does not repair it.** That is what repaired the tail, so it was
+the first thing to try. Both lineage-grouped orders are legal and reach the same
+endpoint; lineage-0-first clashes exactly as often as the engine's order, and
+lineage-1-first is strictly worse (12/18/25 vs 8/12/16). **Scope (a)** — those
+two groupings, alone, do not help; the space of legal orders is far larger than
+three and nothing here excludes a better one.
+
+**Refined — head separation was a proxy, and it overstated the difficulty.** The
+real condition is closed-form. A left context `A` is necessarily a *prefix* of
+the source (every lemma reads its source as `A ++ redex ++ tail`), so `hpark`
+holds exactly when `lcp(source, r) < |A|` for every other term `r`; and `|A|`
+reaches at most the redex offset. So a working context **exists iff
+`redex_offset > max lcp`**. Against that:
+
+- `2(a−2)` of the head-clashing steps are **rescued** — their redex sits past
+  the shared prefix;
+- the **hard core is `2a`** steps (6, 8, 10 at a = 3, 4, 5) where no choice of
+  left context works;
+- and the clashes are a **contiguous suffix** beginning at step `a²−3a+9`.
+
+So the prefix splits cleanly: an **opening phase** of `a²−3a+9` steps that are
+entirely head-separated and need no collision reasoning at all, then a
+**closing phase** of `4(a−1)` where the lineages have converged enough to share
+prefixes. That seam is the natural place to cut the assembly, and the opening
+phase is the obvious next Lean target. All of it independent of `b`.
+
+`context_fits` is optimistic — it asks whether a context exists at the *full*
+redex offset, and a lemma may force a shorter `A` (`blockPass`'s stops where the
+block begins). The `2a` figure is the robust one. The necessary condition is
+separately clean (`dup_sources = 0` chain-wide).
+
+### §4af's loop fits the opening phase (a ≥ 4)
+
+The phase seam makes the opening phase the cheapest remaining Lean target — if
+the lemma covering it fits. `hecke_prefix_loop_fit.py` does for `loopTwoGen`
+what `hecke_tail_assembly_fit` did for `blockPass`: actual Lean source and
+target, `A`/`S` solved by searching splits, `k`/`e` searched over the whole
+range, every side condition enforced (`kd+1=k`, `ed+1=e`, `j₁≤ed`, `j₂≤e`,
+`k≥e`, the `hD` decomposition of `descWord i j₁`, `hY` on the resulting `Y`),
+and the predicted target required to occur in the chain.
+
+**At `a ≥ 4`, both lineages fit** — B from its starting word, A from its word
+after its own three-step head `[B21, F02, B10]`.
+
+**`a = 3` has no loop pass at all** — its group structure is `[0]`, one bare
+Bokut–Shiao step, zero far-commutations. `loopTwoGen` has nothing to fit there;
+that opening phase needs its own treatment. My first version of the probe
+counted this as a failure, and also tested starting words only, which made
+lineage A miss by construction. Both were probe defects, not corpus facts.
+
+A fit is applicability, not assembly: `loopTwoGen` carries a bystander `P` with
+the same `∀ z, P ≠ A ++ z` shape as `hpark`, and fit and collision are separate
+questions — the distinction the tail turned on.
+
+**State of the `a ≤ b` regime**
+
+| piece | status |
+|---|---|
+| tail, off-diagonal | `tailChain` — sorry-free |
+| tail, diagonal | `tailChainFromTwo` — sorry-free |
+| opening phase, `a ≥ 4` | lemma fits (measured); **not assembled** |
+| opening phase, `a = 3` | no loop; needs its own treatment |
+| closing phase (`4(a−1)` steps, hard core `2a`) | **open** — no schedule helps |
+| mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
+| `OverlapComposition` + `spoly` | ~~open~~ **already in the corpus** — see below |
+
+### Correction: the overlap and s-polynomial were never open
+
+This arc carried "`OverlapComposition` + `spoly`" on its open list. Wrong, and
+it is the failure the corpus-grep rule exists to catch. Neither
+`CornerGeneral.oc` nor `oc_spoly_coeff` relates `j₁` to `j₂` — both ask only
+`j₁ ≤ i₁` and `j₂ ≤ i₁`. So the overlap is constructible and its S-polynomial is
+identified as `T0` for `j₂ ≤ j₁`, **diagonal included**.
+
+Verified rather than read off the signature: instantiated `oc_spoly_coeff` at
+`j₂ ≤ j₁` and at `j₂ = j₁`, `lean`-direct exit 0 on both. Separately measured
+against the engine — the `a ≤ b` start element is exactly
+`ofTerms [(V0, 1), (U0, −1)] = T0` at (a,b) = (3,4), (4,6) and the diagonal
+(5,5).
+
+**So the only regime-specific piece is the reduction chain from `T0` to zero.**
+Recorded in `oc_spoly_coeff`'s docstring, where the next reader will be
+standing.
+
+
+### §4an — the opening was mostly already proved
+
+Two `CornerGeneral` results carry the `a ≤ b` regime unchanged, both established
+by **instantiation**, not by reading a signature:
+
+- `oc` / `oc_spoly_coeff` never relate `j₁` to `j₂` → same `T0`, diagonal
+  included.
+- **`s1` and `s2` too.** They ask only `i₁+1 = i`, `i₂+1 = i₁`, `j₁ ≤ i₂`; Lean's
+  unused-variable linter reports **`j₂` unused** when they are instantiated,
+  which is the sharpest possible statement of it. They carry the chain to
+  `ofTerms [(V2, 1), (U0, −1)]` — exactly where the engine's replay lands after
+  two steps.
+
+So the regime-specific part starts *later* than this arc assumed. `s3`/`s4` are
+where it begins: they need `hed : ed+1 = j₂` with `j₁ ≤ ed`, i.e. `j₁ < j₂`, and
+cannot be instantiated at `j₂ ≤ j₁` at all.
+
+New namespace **`CornerLe`** with **`uHead`** (sorry-free): the *second* term's
+head — the same two-rule motif as `s1`/`s2` (Bokut–Shiao then far-commutation)
+displaced one letter right, because `U0` carries a leading `σᵢ₋₁` that `V0` does
+not. The Bokut–Shiao redex straddles the two descending runs. Both collision
+hypotheses fall to one letter: the bystander `V2` opens `σᵢ₋₂`, every word here
+opens `σᵢ₋₁`.
+
+**Revised state of the `a ≤ b` regime**
+
+| piece | status |
+|---|---|
+| overlap + S-polynomial | already in the corpus, both depths |
+| chain steps 1–2 (on `V0`) | `s1`/`s2` — already proved, `j₂`-independent |
+| chain steps 3–4 (on `U0`) | `CornerLe.uHead` — sorry-free |
+| tail, off-diagonal / diagonal | `tailChain` / `tailChainFromTwo` — sorry-free |
+| middle of the opening phase, `a ≥ 4` | `loopTwoGen` fits (measured); not assembled |
+| opening phase, `a = 3` | no loop; own treatment |
+| closing phase — `4(a−1)` steps, hard core `2a` | needs the source-only relaxation; **not** an obstruction |
+| mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
+
+### Correction: the `2a` hard core is a lemma-shape problem
+
+I called it "the single genuine obstruction in this regime". That over-claims.
+
+`hpark` is **sufficient, not necessary**. What a step actually needs is
+`monicStep`'s `hne` — the *source* word absent from the rest of the list, so its
+coefficient reads off `L₁ ++ (W, c) :: L₂`. A bundled lemma needs that at each of
+its own intermediate sources, which is exactly the relaxation
+`farComm_transport_right_sources` already carries one level down (it excludes
+only the split naming the transport's final word).
+
+**Measured: every source in the chain is unique, the `2a` hard-core steps
+included** (9/9 per case, plus the chain-wide `dup_sources = 0`). So the precise
+per-step condition holds everywhere, and the `2a` figure measures that
+`blockTransportRight` / `blockPassFromTwo` / `blockPass` / `loopTwoGen` do not
+propagate the relaxation — a known fix, not a wall.
+
+**The symmetry worth keeping.** For the **tail**, scheduling made the relaxation
+unnecessary, and I recorded that ("none of it was needed"). For the **closing
+phase**, scheduling does not help — both lineage groupings measured no better or
+worse — and the relaxation is the route. Same two options at each phase; the
+answer differs.
+
+So nothing in this regime is currently known to be blocked. What remains is
+work: propagate the source-only hypothesis into the four bundled lemmas, then
+assemble.
+
+**First of the four is done (§4ai).** `blockTransportRightSources` narrows the
+hypothesis to the family the transport actually rewrites —
+`A ++ P ++ u ++ (x :: (v ++ (S ++ B)))` for `P ++ (x :: S) = X`, `u ++ v = W`,
+`v ≠ []` — one per letter of `X` and per interior split of `W`. The recursion
+threads it through: when `X` loses its last letter to `B`, a split of `X'`
+becomes a split of `X` with `S` extended by that letter. `blockTransportRight`
+keeps its exact signature and is now the one-line corollary, so `blockPass`,
+`blockPassFromTwo` and both tail chains are untouched (`#print axioms` on all
+six: no `sorryAx`). Proved first attempt — the claim that this was "a known fix"
+is now tested rather than asserted.
+
+Remaining to relax: `blockPassFromTwo`, `blockPass`, `loopTwoGen`.

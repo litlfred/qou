@@ -2131,6 +2131,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.269Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2150,6 +2167,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.310Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2169,6 +2203,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.350Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2188,6 +2239,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.389Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Three numbered regimes (odd A, even A, A=1).",
+        "notes": "Substantive -- they are the theorem's content and match prf:parity-regime-selection's table one-for-one."
       }
     ],
     "trap-closing-aphorism": [
@@ -2207,6 +2275,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.429Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2226,6 +2311,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.470Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2245,6 +2347,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.508Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2264,6 +2383,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.547Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2283,6 +2419,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.585Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Regime 1: 'The factorization $a^Z b^{N-1}(a-b)$ is positive'.",
+        "notes": "PROOF GAP: the theorem's displayed statement is only sign$(a^Z b^{N-1}) = (-1)^{A-1}$, and the proof establishes only that. Positivity of the full factorization additionally needs $a > b$, which is never stated or proved. It does hold -- I recomputed a = -h/2 = -0.1045302 and b = -3(q^2-1)(q^2+1)^2/(4q^3) = -0.6340338 from def:per-nucleon-channel-decomposition, giving a - b = +0.5295 -- but the block must say so."
       }
     ],
     "trap-nonspeakable": [
@@ -2302,6 +2455,23 @@
         "reviewed_at": "2026-08-15T10:31:01.435Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "edc9fa0d0991",
+          "ts": "3b89eb61a539"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.624Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the Sec.7c base-ring authorNote). The three regimes match the proof's table assignments one-for-one.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2325,5 +2495,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:03.624Z"
 }

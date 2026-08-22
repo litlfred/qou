@@ -1347,7 +1347,177 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.921Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.958Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.997Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.034Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.070Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.106Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.142Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.176Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.209Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "09a5caaf60e8",
+          "ts": "190ffa837381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.243Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (simulator description, ~1.1kB). defaultView pins q = 1.1099785827513808, the current proton value and the correct compute default. The beta-stability curve p*(A) = A/(2 + cA^{2/3}) matches def:stable-nucleus. One claim does not hold as written: 'As q -> 1 ... All lattice points fall on this diagonal' - the green dots are observed stable isotopes and do not move with q. Reported as a minor anomaly. The simulator HTML could not be checked (folio-assistant/ is not present in this sandbox)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:43.243Z"
 }

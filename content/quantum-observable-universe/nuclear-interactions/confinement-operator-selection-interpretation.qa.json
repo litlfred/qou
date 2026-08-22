@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.524Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.568Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 103 words)"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.606Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "Two unspaced em-dashes, both label-gloss separators in a two-item bullet list ('vacuum energy deficit—the source of ...'), the conventional definition-list form; noted only that the chapter elsewhere spells the same construction as a spaced ---."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 103 words)"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.646Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.686Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.727Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.768Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.809Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.851Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.484Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "118cae2aa3ae",
+          "ts": "4418696ef733"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:45.892Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-operator-selection-interpretation (NF display, two glossed bullets, universality para). Checked every number against computations/confinement-operator-selection.witness.json and all reproduce exactly: the proton NF [-0.0997, 0.0357, 0.9976, 0.0994, 0.0093, -0.043] rounds to the displayed -0.100 / 0.036 / 0.998 / 0.099 / 0.009 / -0.043, and its coefficients sum to 0.9991 = the witness's net for the B_3-confined proton, which is also the net target that makes every |Delta net| in Table 1 come out right. The neutron figures gamma = -0.202 and L_+ = -0.010 match the witness's [-0.2017, ..., -0.0096] and the 'deficit is larger' comparison holds (0.202 vs 0.100). Pin/convention defect reported: the backing witness is q0 = 1.1099785955541805 (the OLD muon value) and z = 0.4993203340 (excised convention C).",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:10:45.892Z"
 }

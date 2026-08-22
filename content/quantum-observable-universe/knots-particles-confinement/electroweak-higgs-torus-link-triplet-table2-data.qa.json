@@ -883,7 +883,207 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.773Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "U2 reads \"Force-carriers are 2-component **links**, not knots\". Judged substantive: the knot/link dichotomy is the row's entire content and the parity classification it rests on is exact, so this is the false-positive class \"substantive mathematical contrast\", not assertion-by-denial."
+      },
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      },
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:18.203Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "U2 reads \"Force-carriers are 2-component **links**, not knots\". Judged substantive: the knot/link dichotomy is the row's entire content and the parity classification it rests on is exact, so this is the false-positive class \"substantive mathematical contrast\", not assertion-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8a9da8aedb57",
+          "ts": "4345b97bc5d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:39:02.398Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Data table with no running prose; the ten constructions are judged absent by inspection of every cell. 5 rows (sub-argument U1-U5 -> derivability -> status); the \"needs content block - open\" and \"currently a structural choice\" cells are honest scope reporting, not trap register. U5 (mass ordering m_W < m_Z < m_H against crossing ordering 4 < 6 < 8) independently checked against PDG."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:39:18.203Z"
 }

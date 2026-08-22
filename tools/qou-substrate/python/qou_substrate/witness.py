@@ -27,6 +27,8 @@ folio-assistant/schemas/types.ts.
 import hashlib
 import json
 import os
+import re as _re
+import warnings as _warnings
 import subprocess
 import sys
 import time
@@ -59,7 +61,7 @@ def _repo_root() -> Path:
 # (`computations/q0_anchor_manifest.json` + the QOU_Q0_ANCHOR env override), so
 # the stamped label always matches the value the producer actually computed.
 #
-# THE VOCABULARY (`q0Anchor`) has four values. The last one is not resolvable
+# THE VOCABULARY (`q0Anchor`) has five values. The last two are not resolvable
 # from the manifest and must be declared by the producer:
 #
 #   "muon"        ideal / canonical 3-CAL pin; carries the muon `q0Value`
@@ -71,6 +73,42 @@ def _repo_root() -> Path:
 #   "independent" the compute NEVER READS q₀. No `q0Value` exists, and one
 #                 appearing alongside this label is a contradiction the audit
 #                 reports as Q0_FLIP.
+#   "comparison"  the compute reads MORE THAN ONE anchor DELIBERATELY — the
+#                 comparison is the subject. Carries `q0Values`, a mapping
+#                 {anchor: 50-digit value} with an entry per pin read, and NO
+#                 bare `q0Value` (there is no single pin; one alongside this
+#                 label is a Q0_FLIP, exactly as under `independent`).
+#
+# Why `comparison` is not one of the other four. A cross-anchor probe fits none
+# of them: `muon`/`proton` each assert ONE pin; `independent` would be a FALSE
+# claim of layer-freedom when the compute reads q₀ twice; and `ambiguous`, though
+# descriptively true that both signatures are present, is defined above as "the
+# pin is UNDETERMINED … a queue for a manual ruling" — a deliberate comparison is
+# not undetermined, and filing it there mislabels it for whoever drains that
+# queue. Before this value such probes had no honest option and landed in
+# `Q0_ANCHOR_MISSING`, indistinguishable from producers that simply forgot
+# (bean `qou-po7i`).
+#
+# This matters beyond bookkeeping. AGENTS.md §"q₀ anchor convention" makes
+# mixing an ideal-layer input with an experimental-layer one inside a single
+# quantity a DEFECT ("never straddle the two layers inside one quantity" — the
+# μ₃ Fréchet probe, an 11.54 ppb error). `comparison` is what lets the audit
+# separate that real defect from a probe whose whole point is telling the pins
+# apart; without it both look the same and the defects hide in a bucket of ~1890.
+#
+# `comparison` is also the ONE label the audit can VERIFY rather than take on
+# trust: `independent` asserts something about an import cone and can only be
+# checked by re-deriving it, whereas `comparison` NAMES its pins, and each named
+# pin either matches its canonical value or does not. So:
+#
+#   w.save({"q0Anchor": "comparison",
+#           "q0Values": {"muon": q_muon_str, "proton": q_proton_str},
+#           "q0AnchorReason": "measures the c_3 cross-anchor swing; both pins "
+#                             "are read on purpose and each is reported under "
+#                             "its own key"})
+#
+# `resolve_q0_anchor` never returns it, for the same reason it never returns
+# `independent`: no manifest lookup can establish intent.
 #
 # `q0AnchorReason` (free text) states WHY, and belongs with every
 # `independent` — and with `ambiguous`, where it names what is undetermined.
@@ -100,6 +138,55 @@ def _repo_root() -> Path:
 # cone and asserts it; the audit then distinguishes a q₀-free producer from one
 # that merely forgot, which before this value it could not (bean qou-rw91, and
 # earlier qou-pin1 on the purely symbolic `chi-deuteron-h6`).
+
+def q0_comparison(*, muon, proton, reason: str, dps: int = 52) -> dict:
+    """Build the ``comparison`` q₀-anchor stamp for a cross-anchor producer.
+
+    A producer that reads BOTH pins DELIBERATELY — where the comparison is the
+    subject — declares it by passing this dict to ``save()``::
+
+        wb.save(q0_comparison(
+            muon=qm, proton=qp,
+            reason="measures the c_3 cross-anchor swing; both pins are read on "
+                   "purpose and each is reported under its own key"))
+
+    Pass the values the producer ACTUALLY COMPUTED WITH, not the canonical
+    constants. The audit re-checks each leg against its canonical pin, so
+    stamping the constant would make the check a tautology; stamping the
+    computed value makes it a real test — a producer that thinks it read the
+    muon pin but read the proton one is then caught, which is the flip-flop bug
+    happening inside a comparison.
+
+    Deliberately emits NO bare ``q0Value``: there is no single pin, and one
+    alongside this label is a ``Q0_FLIP``.
+
+    See the vocabulary note at the top of this module for why this is a
+    separate value from ``ambiguous`` and ``independent`` rather than a reuse
+    of either (bean ``qou-po7i``).
+    """
+    if not str(reason or "").strip():
+        raise ValueError(
+            "q0_comparison requires a reason: the label states that two pins "
+            "were read on purpose, and without saying what is being compared a "
+            "reader cannot tell it from an accidental layer straddle (which "
+            "AGENTS.md makes a defect)."
+        )
+
+    def _fmt(v) -> str:
+        if isinstance(v, str):
+            return v
+        try:
+            import mpmath as _mp
+            return _mp.nstr(_mp.mpf(v), dps, strip_zeros=False)
+        except Exception:  # noqa: BLE001
+            return str(v)
+
+    return {
+        "q0Anchor": "comparison",
+        "q0Values": {"muon": _fmt(muon), "proton": _fmt(proton)},
+        "q0AnchorReason": reason,
+    }
+
 
 _Q0_VALUE_CACHE: dict = {}
 
@@ -204,10 +291,12 @@ def resolve_q0_anchor(
     ambiguous, and — matching the runtime default — anything else ⇒ proton).
     ``q0_value`` is the matching 50-digit string, or ``None`` for ambiguous.
 
-    Never returns ``"independent"``. That value states the compute does not read
-    q₀ at all, which no manifest lookup can establish (see the vocabulary note
-    at the top of this module) — a producer declares it via
-    ``save({"q0Anchor": "independent"})``.
+    Never returns ``"independent"`` or ``"comparison"``. Those two state
+    something about the producer's INTENT — that q₀ is never read, or that two
+    pins are read deliberately — which no manifest lookup can establish (see the
+    vocabulary note at the top of this module). A producer declares them via
+    ``save({"q0Anchor": "independent"})`` / ``save({"q0Anchor": "comparison",
+    "q0Values": {...}})``.
     """
     environ = os.environ if env is None else env
     e = (environ.get("QOU_Q0_ANCHOR", "") or "").strip().lower()
@@ -355,7 +444,65 @@ def capture_environment() -> dict:
         except Exception:
             # Not installed / no metadata — omit rather than guess.
             pass
+
+    # `pyhecke_native` is built from this repo's own `tools/hecke-engine`
+    # and is NOT published, so its version string is a hand-maintained crate
+    # number, not a release identifier. Measured: across 21 commits to
+    # `hecke-engine` and 2 to `pyhecke-native` between 2026-08-11 and
+    # 2026-08-21 — including flipping `trace_weights` to `h*z^2 + z` and
+    # enabling native dispatch on convention D, both of which move numbers —
+    # the recorded versions never left `0.9.0` / `0.8.0`.
+    #
+    # So for the one dependency whose code lives in this repo, the block
+    # above is blind in exactly the case it exists to catch. That is not
+    # hypothetical: `atomic_tr_m_mpfr_50dps` fails to reproduce its
+    # committed tr_M by ~40.7 ppb with an `environment` block matching the
+    # committing run *exactly*, and seven other candidate causes are refuted
+    # by measurement (bean `qou-ibbr`). A matching environment was read as
+    # evidence the compute was the same; it is only evidence the provenance
+    # cannot tell.
+    #
+    # The compiled object is content-addressed instead, which needs no
+    # cooperation from the Rust side and cannot drift from what actually ran.
+    h = _pyhecke_native_build_hash()
+    if h:
+        env["pyhecke_native_build"] = h
     return env
+
+
+_PYHECKE_NATIVE_BUILD_HASH: Optional[str] = None
+
+
+def _pyhecke_native_build_hash() -> Optional[str]:
+    """sha256 prefix of the compiled `pyhecke_native` extension, or None.
+
+    Located via `find_spec` so the module is never imported just to record
+    provenance (the same restraint `capture_environment` shows for the
+    version reads). Cached: the file cannot change within a process, and
+    hashing ~3 MB per witness would otherwise be pure waste.
+    """
+    global _PYHECKE_NATIVE_BUILD_HASH
+    if _PYHECKE_NATIVE_BUILD_HASH is not None:
+        return _PYHECKE_NATIVE_BUILD_HASH or None
+    _PYHECKE_NATIVE_BUILD_HASH = ""  # negative-cache; "" is falsy
+    try:
+        import hashlib as _hl  # noqa: PLC0415
+        import importlib.util as _iu  # noqa: PLC0415
+
+        spec = _iu.find_spec("pyhecke_native")
+        if spec is None:
+            return None
+        roots = list(spec.submodule_search_locations or [])
+        if not roots and spec.origin:
+            roots = [str(Path(spec.origin).parent)]
+        for root in roots:
+            for so in sorted(Path(root).rglob("*.so")):
+                _PYHECKE_NATIVE_BUILD_HASH = _hl.sha256(
+                    so.read_bytes()).hexdigest()[:16]
+                return _PYHECKE_NATIVE_BUILD_HASH
+    except Exception:  # noqa: BLE001 — provenance never breaks a producer
+        pass
+    return None
 
 
 # ── Upstream-witness hash recording (anti-staleness) ────────────
@@ -1067,7 +1214,54 @@ class WitnessBuilder:
             elif key == "auditOnly" and isinstance(value, str):
                 builder.set_audit_only(value)
             elif key == "computation":
-                # Filename already encodes this; skip to avoid duplicate
+                # ADOPT a value that is not simply the name; skip only the
+                # redundant case.
+                #
+                # `build()` sets `computation = self.name`, so a payload
+                # `computation` key does not survive: the key remains and its
+                # VALUE is replaced. A key-set diff therefore shows NO loss,
+                # which is what made this invisible.
+                #
+                # The old rationale — "filename already encodes this" — holds
+                # when the value IS the name, and measured on main that is the
+                # overwhelming case: of 188 payload `computation` keys, 146 are
+                # the witness name and 32 the script stem or path, all of which
+                # the clobber reproduces or normalises. Skipping those is right
+                # and is preserved below.
+                #
+                # It does NOT hold when the producer put something else there.
+                # Seven producers pass a structured dict — `engine`, `dps`,
+                # `script`, `reads`, and in one case `C_n_eps`, a computed
+                # constant. Checking the committed witnesses, `dps` and
+                # `script` survive under other fields, but `C_n_eps`
+                # (dilog-archimedean-limit-partA) and `reads`
+                # (lever1-binding-core-characterization,
+                # lever1-binding-core-root-distribution) appear NOWHERE in the
+                # emitted witness. `reads` is upstream-dependency provenance,
+                # so its loss is load-bearing for staleness tracking.
+                #
+                # Adopting rather than raising mirrors the `assertions` fix
+                # directly above (bean qou-l5zi) and breaks no producer: every
+                # name-valued case still takes the `continue`.
+                _norm = lambda t: _re.sub(r"[^a-z0-9]", "", str(t).lower())
+                if isinstance(value, str) and (
+                        _norm(value) == _norm(name)
+                        or _norm(value) == _norm(Path(str(script_path)).stem)
+                        or value.endswith(".py")):
+                    continue
+                # Anything else carries content the name cannot. Preserve it
+                # under a key `build()` does not overwrite, and say so, so a
+                # producer writing a fresh payload learns at once rather than
+                # discovering it in a diff.
+                builder._extra_top_level.setdefault("computationDetail", value)
+                _warnings.warn(
+                    f"wrap_legacy({name!r}): the payload's `computation` value "
+                    "is not the witness name, and `build()` overwrites that "
+                    "field with the name. It has been preserved as "
+                    "`computationDetail`. Write it under your own key to "
+                    "silence this.",
+                    UserWarning, stacklevel=3,
+                )
                 continue
             elif key == "assertions" and isinstance(value, list):
                 # ADOPT, do not skip. `assertions` and `allPassed` are in
@@ -1208,6 +1402,30 @@ class WitnessBuilder:
         current_hash = file_content_hash(str(self._script_path))
         return existing.get("scriptHash") == current_hash
 
+    def _capture_invocation(self) -> dict:
+        """Record how this producer was invoked, per `qou-nok3`.
+
+        Returns ``{"argv": [...], "reproduce": "..."}``. ``argv[0]`` is
+        rewritten to the script's repo-relative path; the remaining entries
+        are verbatim, so a flag the builder knows nothing about is still
+        recorded.
+
+        An empty argument list is recorded as such — that is informative,
+        not absent. It distinguishes "run with no flags" from "written
+        before this field existed", which is what absence means.
+        """
+        argv = list(sys.argv)
+        try:
+            rel = self._script_path.resolve().relative_to(_repo_root())
+            head = str(rel)
+        except Exception:
+            head = self._script_path.name
+        argv = [head] + argv[1:]
+        return {
+            "argv": argv,
+            "reproduce": "python3 -u " + " ".join(argv),
+        }
+
     def build(self) -> dict:
         """Build the witness dictionary (without writing to disk)."""
         # Difference against the clock the baseline was actually taken on.
@@ -1260,6 +1478,32 @@ class WitnessBuilder:
         # Interpreter + numeric-library versions, so version-driven drift
         # (e.g. mpmath/sympy shifting q₀ at ~1e-8) is attributable.
         witness["environment"] = capture_environment()
+
+        # ── Invocation ─────────────────────────────────────────────
+        # WHAT this fixes: a producer can gate real compute on sys.argv,
+        # and nothing in its witness said so. Measured case —
+        # `whitehead_c0_mpmath.py` puts its N=12 data point behind
+        # `"--n12" in sys.argv`; the committed witness CONTAINS N=12, so it
+        # was made with the flag, and a plain re-run silently drops the
+        # point and moves the headline `factor` 1.9678 -> 1.8973 (3.6 %).
+        # The diff reads as ordinary drift. Scanned: 4 producers confirmed
+        # to gate payload on an unrecorded flag (bean qou-nok3).
+        #
+        # This mirrors `Generation` in `tools/hecke-engine/src/provenance.rs`,
+        # which already does it for the Rust binaries. Its design note argues
+        # for RAW ARGV over modelled per-flag fields, because modelling needs
+        # updating whenever a binary gains an option and silently drops
+        # anything not yet modelled — which is the failure being fixed. The
+        # same reasoning applies here, so this stores argv, not parsed flags.
+        #
+        # `argv[0]` is normalised to a repo-relative path so the record does
+        # not depend on where the script was invoked from; without that, the
+        # field would differ between machines for the same run and every
+        # comparison would be noise.
+        #
+        # NOT ephemeral, deliberately: the point is that a re-run with
+        # different flags shows up as a difference rather than hiding.
+        witness["invocation"] = self._capture_invocation()
 
         if self.description:
             witness["description"] = self.description
@@ -1417,9 +1661,30 @@ class WitnessBuilder:
                 # dropped with it: a reason carried past a dropped anchor would
                 # explain a label that is no longer there, which is worse than
                 # no reason at all.
+                # `independent` and `comparison` FORBID a bare `q0Value`
+                # (see the vocabulary note at the top of this module): one
+                # alongside either label is a contradiction the anchor audit
+                # reports as Q0_FLIP. So when the NEW witness declares one of
+                # them, the old `q0Value` must not ride along -- carrying it
+                # forward would manufacture exactly the contradiction the
+                # declaration exists to avoid.
+                #
+                # Measured: declaring `q0Anchor: independent` on two producers
+                # that provably do not read q0 (fitted_labelled_canonical_audit,
+                # compute_audit_scan -- byte-identical output under
+                # QOU_Q0_ANCHOR=muon vs =proton, differing only in the
+                # q0Anchor/q0Value pair itself) still emitted the inherited
+                # 50-digit MUON value next to `independent`. It went unreported
+                # only because both filenames end in a suffix the anchor audit
+                # exempts, so the flip check never ran on them.
+                _forbids_value = witness.get("q0Anchor") in ("independent", "comparison")
                 for _k in ("q0Anchor", "q0Value", "q0AnchorReason"):
+                    if _k == "q0Value" and _forbids_value:
+                        continue
                     if _k not in witness and _k in existing:
                         witness[_k] = existing[_k]
+                if _forbids_value:
+                    witness.pop("q0Value", None)
 
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops

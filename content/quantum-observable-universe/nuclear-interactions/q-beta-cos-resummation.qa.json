@@ -1764,6 +1764,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not in the q-deformed quantum group.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.242Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'The mass observable lives in the classical limit, not in the q-deformed quantum group.'",
+        "notes": "Substantive contrast between two technically distinct settings; the positive half carries the claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1783,6 +1800,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.282Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. both status authorNotes). Recomputed the resummation and tested its two structural constraints under both trace conventions (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1802,6 +1836,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 180 words)"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.323Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. both status authorNotes). Recomputed the resummation and tested its two structural constraints under both trace conventions (see trap-superlative).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1821,6 +1872,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 180 words)"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.363Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Two numbered structural constraints.",
+        "notes": "Two, not three."
       }
     ],
     "trap-closing-aphorism": [
@@ -1840,6 +1908,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.402Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. both status authorNotes). Recomputed the resummation and tested its two structural constraints under both trace conventions (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1859,6 +1944,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.445Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. both status authorNotes). Recomputed the resummation and tested its two structural constraints under both trace conventions (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1878,6 +1980,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.486Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'$\\mathrm{tr}_M(M_\\beta) \\;=\\; \\cos\\alpha$' stated as an equality in the .md body.",
+        "notes": "Contradicted by the block's OWN .ts status note, which says 'V_{(3)} and V_{(1,1,1)} contribute at O(h^2) to tr_M but are not yet included in the single-eigenphase resummation above'. The Markov trace on H_3(q) is a weighted sum over all three irreps; restricted to V_{(2,1)} it is at best the normalised trace of one block. The displayed identity should carry the restriction it is missing. PROPOSED: write it as tr_M|_{V_{(2,1)}} or as an approximation."
       }
     ],
     "trap-performed-warmth": [
@@ -1897,6 +2016,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.525Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. both status authorNotes). Recomputed the resummation and tested its two structural constraints under both trace conventions (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1916,6 +2052,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.564Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'admits a **tighter** symbolic refinement'; 'This refinement tightens the CODATA residual from $+1677.5$ ppm to $+305.7$ ppm'; 'The **minimal** even-power resummation that **matches the linear bridge at the perturbative level** is the cosine'; 'The classical cosine is more accurate by $\\approx 7$ ppm'.",
+        "notes": "FOUR FINDINGS; the arithmetic is right and the STRUCTURE is not. (a) THE RESULT IS CONVENTION-C-ONLY. This block sets $z = 1/(\\sqrt q + 1/\\sqrt q) = \\sqrt q/(q+1) = 0.49932$, which is the trace convention the 2026-08-15 owner ruling EXCISED; canonical convention D is $z = q^3/(q^2+1) = 0.61269$. Recomputing the block's own construction under D: alpha = -0.0404858, cos = 0.99918056, Q^{A,cos} = 0.7830037, residual 856.7 ppm -- so the headline '5.49x tighter' becomes 1.96x and the 306 ppm becomes 857 ppm. The result does not survive the canonical convention. (b) CONSTRAINT (1) ALSO FAILS UNDER D. The block's bar-involution argument needs z invariant under q -> 1/q. VERIFIED: z_C(1/q) = z_C(q) = 0.499320334034 exactly, but z_D(1/q) = 0.403628 against z_D(q) = 0.612688. The evenness-in-alpha argument is a property of convention C, not of the Markov trace. (c) 'MATCHES THE LINEAR BRIDGE AT THE PERTURBATIVE LEVEL' IS FALSE. cos(alpha) = 1 - alpha^2/2 + O(alpha^4) has NO linear term, while the bridge factor is 1 + alpha. Numerically 1 + alpha = 0.9476639 against cos alpha = 0.9986308 -- 5.4% apart, not a perturbative match. Replacing one by the other is a different correction at a different order, not a resummation of the same series. (d) The 7 ppm classical-vs-q-deformed margin is used to select between variants inside a 306 ppm residual, i.e. 44x below the block's own error bar; the data cannot distinguish them. VERIFIED SOUND: every printed number reproduces -- alpha = -0.052336, cos = 0.9986308, 1677.5 ppm and 305.7 ppm (I get 1677.54 and 306.02) and 5.49x."
       }
     ],
     "trap-nonspeakable": [
@@ -1935,6 +2088,23 @@
         "reviewed_at": "2026-08-15T10:31:01.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "921f516c1efe",
+          "ts": "3114fba06c34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.602Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. both status authorNotes). Recomputed the resummation and tested its two structural constraints under both trace conventions (see trap-superlative).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1958,5 +2128,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:06.602Z"
 }

@@ -2116,6 +2116,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:43.851Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2135,6 +2150,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:43.894Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-em-dash": [
@@ -2154,6 +2184,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:43.937Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-triples": [
@@ -2173,6 +2218,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:43.976Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-closing-aphorism": [
@@ -2192,6 +2252,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:44.016Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-meta-commentary": [
@@ -2211,6 +2286,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:44.056Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-thesis-restatement": [
@@ -2230,6 +2320,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:44.099Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-performed-warmth": [
@@ -2249,6 +2354,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:44.141Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-superlative": [
@@ -2268,6 +2388,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:44.186Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "trap-nonspeakable": [
@@ -2287,6 +2422,21 @@
         "reviewed_at": "2026-08-15T10:31:01.190Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6f4b742456ef",
+          "ts": "683e478b208e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:22:44.226Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read: 2 prose sentences + display math + shared 'Archimedean specialisation' banner (the 3-occurrence 4-sentence variant). No negation-contrast, pivot, aphorism, meta-commentary, warmth or superlative; the banner's 4-item enumeration is not a triple; no spaced em-dash."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2310,5 +2460,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:22:44.226Z"
 }

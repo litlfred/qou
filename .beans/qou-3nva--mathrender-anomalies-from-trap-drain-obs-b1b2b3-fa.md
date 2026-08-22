@@ -223,10 +223,48 @@ typos rather than a different convention:** the correct words
 counts **3, 5, 7, 9, 8, 10** matching the tables' own *Crossings* columns
 exactly, and give the component counts the tables claim.
 
-**L-V3. [q11/q13] The blowup-regularity render breakage is still there.**
+**L-V3. [q11/q13] FIXED 2026-08-22 — and the ledger had the defect
+backwards, in the direction that matters.**
 `lifting-and-descent/blowup-regularity-as-lifting.md` L6 `\foralln` and L8
-`\varepsilonq^{2k}` — undefined control sequences, both inside math. These
-abort the render, not merely mis-typeset. Highest mechanical priority.
+`\varepsilonq^{2k}` are **not** undefined and do **not** abort the render.
+`main.tex` defined both, in a block of 16 `\newcommand`s headed *"Stubs for
+compound macros (missing spaces in source content)"*. That is why nobody
+noticed them: the stub makes the page compile and prints something.
+
+What it prints is the problem. `\varepsilonq` expanded to `\varepsilon_q`,
+so `\varepsilonq^{2k}` typeset ε_q^{2k} where the asymptotic is a constant
+times q^{2k} (`[k]_q² → q^{2k}/(q−q⁻¹)²`). Two of the sixteen were worse:
+
+- **`\pic` expanded to `\pi`, deleting the `c`.** In
+  `fluid-dynamics/acoustic-horizon-thermodynamics.md`,
+  `\frac{\hbar_q\kappa_H}{2\pic_s}` printed `2\pi_s` — the sound speed
+  gone from a Hawking-temperature denominator. Line 28 of that same block
+  writes `\kappa_H/(2\pi c_s)` correctly in prose, which is what settles
+  the intended reading: the block contradicts itself on one page.
+- **`\xid` expanded to `\xi_d`**, so `\mathcal{L}_\xid\alpha` printed a
+  Lie derivative along a subscripted field with no argument. `\xiZ` is the
+  same shape: `\mathcal{L}_\xiZ = J\hbar_qZ` printed an operator equated
+  to a scalar, where the prose says the Reeb flow rotates the phase of Z —
+  i.e. `\mathcal{L}_\xi Z = J\hbar_q Z`.
+
+`\xid`, `\xiZ`, `\xiA` were commented as *"Reeb vector field variants used
+in contact/brane geometry"*. No such notation is registered anywhere under
+`content/quantum-observable-universe/notation/`. The comment documents three
+typos as though they were notation, which is how a typo acquires a citation.
+
+All 16 stubs removed (`7d1a616ae`) from the three preambles carrying them,
+and all 11 remaining source sites fixed across 6 blocks. `\pp`, `\unicode`
+and `\yng` stay — real stubs for a reserved symbol and two unloaded
+packages. A corpus scan for the whole class (rare control sequences whose
+prefix is a common one) now returns only true macros: `\coloneqq`,
+`\rightarrow`, `\rightsquigarrow`, `\dotsb`, `\texttt`, `\bigm`,
+`\inf`, `\top`.
+
+**The general lesson, since it will recur:** a missing space between a
+control sequence and the next token is *not* a render-breaking error unless
+the glued name is undefined. Defining it is the tempting fix and the wrong
+one — it silences the error and keeps the wrong mathematics. If one
+reappears, the undefined-control-sequence failure is the correct outcome.
 
 ### Numeric, re-verified
 
@@ -858,27 +896,201 @@ not survive re-reading.
 
 ## What to hand the owner first
 
-1. **L-V1 — `trefoil-operator-algebra`.** A content block displays two matrix
-   products, asserts they are equal, and gives a third matrix as their common
-   value. All three statements are false, and the representation it claims to
-   exhibit cannot exist (`tr α = 1 ≠ 0 = tr β`, so the two generators are not
-   conjugate). This is the only item in the ledger where a *displayed
-   equation* is wrong rather than a *label* or a *rounding*.
-2. **L-V2 — the braid-word tables.** Three tables across two chapters give
-   words whose closures have the wrong component count, the wrong knot type,
-   or (Borromean) a topology that cannot be Brunnian. The intended words are
-   recoverable from the tables' own crossing counts, so the fix is mechanical
-   — but until it lands, `binding-knots-visual-inventory`,
-   `knot-particle-dictionary` tables 1–2, and
-   `nucleon-hecke-element-normal-form` disagree with the sibling proofs in
-   their own chapter.
-3. **R1 + L-V60 — the q₀ pin surface.** Not because the muon string is wrong
-   (it is not — see R1), but because the corpus currently carries **four**
-   distinct q₀ presentations: the correct proton pin, the correct muon pin
-   mislabelled "(50 dps)" across 33 files, a stale 1.1097 baked into at least
-   three data tables, and a genuine digit transposition (`1.10977859555`) in
-   `proton-mass-substrate-identity-derivation` — a *production identity*
-   block. A reader cannot tell which is authoritative from the text.
+**Refreshed 2026-08-22.** The three items this section previously listed are
+resolved: the `trefoil-operator-algebra` matrices were rewritten with a
+genuine conjugate pair, 18 braid-word rows were corrected across three
+tables, and the q₀ presentation pass landed. What follows is ranked against
+the ledger as it now stands (~280 items, 62 % corpus coverage), newest
+batches included. Ranking is by *how far the error propagates*, not by how
+wrong it looks.
+
+### Tier 1 — wrong mathematics with live downstream consumers
+
+1. **`figure-eight-branching-rule` computes on the wrong knot.** It defines
+   `4₁ = σ₀σ₁⁻¹σ₀⁻¹σ₁`, whose closure has Alexander polynomial 1 — the
+   **unknot**. The genuine `(σ₀σ₁⁻¹)²` gives `t − 3 + t⁻¹`. Every `b_λ·h²`
+   term in the block is therefore computed on the wrong object, and in
+   `[2,1]` the true character `q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴` agrees with the
+   block's `−1 − h²` only at q = 1. **Three independent confirmations**
+   (agents `r07`, `f00`, and a separate implementation in the coordinating
+   session). This is the ledger's strongest item.
+
+2. **`c₅` is carried at two different values across five blocks**, and only
+   one reproduces the published headline. Proposition + tables 1–2 use
+   `−(b²+½) = −1.2527`; the context block + table 3 use
+   `3c₃² + b = +12.868`. At `u⁵ = 4.4822e−11` the second gives the
+   "+0.04 ppb" result and the first does not. The proposition carries the
+   superseded coefficient — so the *statement* block is the wrong one.
+
+3. **A uniqueness proof proves a different operator than its own definition
+   gives** (`agent:d01`), and separately **`ω_V` is identically zero**,
+   which makes the proposition asserting its properties vacuous. Both are
+   structural: the Lean and the prose diverge, so neither audit catches it
+   alone.
+
+4. **Convention-C dependence hidden inside identities, not assignments.**
+   `toroidal-harmonics-delta-lambda` turns on `w = z² = 1/(2(cosh η + 1))`,
+   exact for `z_C` to 1e−31 and off by 51 % for `z_D`;
+   `frobenius-s-classification-table2` spells C as `(q^{1/2}+q^{−1/2})⁻¹` and
+   it is load-bearing — the "+1" S-eigenvalue and the parent's "exactly one
+   S-odd term" are statements about C, and switching to D moves a refuted
+   family from `m ≥ 4` to `m ≥ 5`. **No grep over `z = …` finds either.**
+   This is the class the detector-blindness taxonomy predicts, now with
+   worked instances.
+
+### Tier 2 — claims a referee would stop on
+
+5. **`three-halves-structural-factor` overstates by ~1600×**: it claims
+   `Vol(4₁)/ℏ_q²` closes `m_μ/m_e` "to 0.034 %"; the true figure is
+   **209.8 ppb**, which is exactly the documented μ–p tension, and zero at
+   the muon pin where the relation *is* the pin. Its τ sentence is
+   impossible as written (omits ξ₃; the cited witness's own ξ₃ reproduces
+   its recorded 0.79443 % exactly).
+
+6. **`topological-mass-trefoil` prints a number matching no pin.** 207.1
+   back-solves to q = 1.1098808 — not proton, not either muon value, not the
+   1.1097 error. The correct 206.7683 is 2.1e−5 % from CODATA; the printed
+   value misses by 0.160 %, understating the block's own result by four
+   orders of magnitude.
+
+7. **The excised absolute-mass double-counting is still shipping.**
+   `tower-binding-energy-table-data` reproduces its own "mass error" column
+   exactly — and that column is the artefact: the underlying binding errors
+   are +121.6 % (²D) and −31.4 % (⁴He), pressed below 0.25 % by a
+   denominator dominated by `Z·m_p + N·m_n`, i.e. by the calibration.
+
+8. **`𝒲(1) = 0` is false** (it is `z² = 1/4`), and **CODATA α appears inside
+   the derivation of α**. Two tautologies are presented as Mathlib gap
+   closures. Each is a single block, but each is the kind of thing that
+   discredits neighbouring correct work.
+
+9. **Proof steps that do not hold**: step 3(c) of the stratified proof fails
+   at λ = (2,1) (22 counterexamples to n = 7); step 3(d) equates a monomial
+   to an infinite product; step 4 needs an orthogonality its step 1 does not
+   supply.
+
+### Tier 3 — provenance and currency, cheap to fix, corrosive if left
+
+10. **Citations that do not resolve or do not say what is claimed**: a
+    witness path containing a space that matches nothing in `computations/`
+    (the space is itself sweep damage, so the *sweep created the citation*);
+    a witness reporting `allPassed: false` cited as confirming; a witness
+    sourced from `_deprecated/` at the old muon pin whose own notes say it
+    needs a further iteration; three blocks whose prose names one pin while
+    their witness records the other.
+
+11. **Sweep damage, three recurring shapes**: `canonical` substituted for
+    `numerical(ly)` ("pinned canonical by the dimensionless ratio"); script
+    names replaced by "the canonical formalism" / "the formal derivation",
+    leaving quoted percentages provenance-free; sentence-initial lowercase.
+    Mechanical, but the second shape destroys provenance rather than merely
+    reading badly.
+
+12. **The compound-macro stub class — resolved, recorded as precedent.**
+    `main.tex` carried 16 `\newcommand`s that promoted author typos to
+    macros so the page would build; two printed wrong mathematics for
+    months. Removed, all source sites fixed, and
+    `content/pipeline/glued-macro-scan.ts` added. Kept here because the
+    tempting fix recurs: **never define the glued name.**
+
+### Recurring classes — what to fix once instead of 300 times
+
+Added 2026-08-22, after fourteen batches. Individual items are listed
+per-batch below; these are the shapes that repeat, with instance counts. A
+class with a systemic fix is worth more than any single item in it.
+
+**C1. The tolerance is doing the work the evidence should do.** Three
+independent instances, and this is the campaign's sharpest finding:
+
+- A predicted `η = 0.1045` sits **4.2σ outside its own fitted 95 % CI**
+  `[0.1167, 0.1366]`, and the verdict row reads **"Confirmation"** — because
+  that CI overlaps a pre-registered band `[0.08, 0.13]` wide enough to
+  swallow the failure. The band confirms; the prediction does not.
+- Nine assertions pass with a computed mass of **zero or negative** against
+  expected thousands of MeV, because every `tolerance` is twice its
+  `expected` (`qou-tol0`).
+- That producer sets `tolerance = max(abs(delta_MeV) * 2, 50)` where
+  `delta_MeV` **is** the residual — `|delta| ≤ 2|delta|`, true
+  unconditionally. A tautology generator, not a loose bound.
+
+None of these is a wrong number, which is why every numeric and staleness
+audit passes them. **Systemic fix**: a check that asks, of any passing
+assertion, what value would have failed it.
+[`witness_assertion_slack_audit.py`](../computations/witness_assertion_slack_audit.py)
+does this for witnesses; nothing yet does it for a block's own stated CI.
+
+**C2. The block and its witness disagree, and the block wins.** At least
+eight instances: `status: "verified"` against a witness recording
+`max_relative_diff = 7.888`; `allPassed: true` from an **empty** assertions
+array (twice); a passing assertion concealing a 21.6 % miss; ten table
+numbers stale against their own *fresh* witness with the error column
+overstating agreement by seven orders of magnitude; a witness whose
+assertions cover clause (1) of a three-clause proposition; a citation
+resolving only under `_deprecated/`; a number cited "from the witness" that
+appears nowhere in `computations/`. **Systemic fix**: `status: "verified"`
+should be derived from the witness, never asserted beside it.
+
+**C3. Convention C printed under a convention-D declaration.** The
+`Vol(4₁)`-class defect, one layer over. Instances include a block whose
+`q=1` weights are D-consistent (a third weight vanishes identically only
+under D) while its quoted `tr_M` is the C value — with its own witness
+recording `allPassed: false` and a failing residual equal to the C−D gap;
+a producer that *prints* the C spelling while *storing* the D value; and a
+`.md` labelled D whose Lean sibling computes C. **The denominator settles
+it faster than the value**: `q⁸(q+1)` under C against `q⁷(q²+1)²` under D.
+
+**C4. A `lean.ref` that resolves to something weaker than it looks.**
+`qou-shdw`: a sibling declaring `∃ c, ∀ i, c i = f i` — inhabited by
+`fun i => f i` for any function, both hypotheses unused — while the library
+declares **the same name** substantively, so §0a's sibling-first resolution
+makes the real theorem unreachable. Plus `exists_axiom_N` lemmas that are
+field projections out of a *given* structure; two refs whose Lean proves a
+different proposition than the block states; self-assuming projections
+(`:= ctx.claim_foo`) in at least five files. **The tell throughout is
+hypotheses declared and never used** — mechanical, and not yet checked.
+
+**C5. Wrong knot, right prose.** Five braid words found labelled as one
+knot and closing to another, every one caught by computing the closure
+rather than reading the label: `4₁` closing to the unknot; `σ₀σ₁σ₀` called
+the trefoil closing to the Hopf link; `σ₀σ₁` called Hopf closing to the
+unknot; a 5₂ word closing to a 2-component link; `(σ₁σ₂)³` called Borromean
+when it is the full twist. Plus a nucleon called a *knot* in a proof whose
+next sentence makes knot-vs-link decide the spin. **Systemic fix exists and
+was extended this campaign**:
+[`braid-word-closure-check.ts`](../content/pipeline/braid-word-closure-check.ts)
+now also reads columns headed "Hecke word" (45 → 61 rows, 1 → 3 findings).
+
+**C6. Sweep damage, three sub-shapes.** A **verb-substitution cluster**
+(`forms`/`acts as`/`equates to`/`constitutes` where *is* is meant) running
+10–21 substitutions per 45 blocks, sometimes leaving no predicate at all;
+**token substitution** (`securely` for a lost adverb — 25 sites, 6 fixed;
+`canonical` for `numerical`; "the formal derivation" for a script name — 38
+occurrences across 27 files in one chapter, destroying provenance); and the
+**"non-by definition"** garble. **Note the honest limit**: whether these
+were introduced by a sweep or authored that way is **not determinable from
+this clone**, which is shallow.
+
+**C7. `trap-superlative` as a defect detector.** Not a defect class but a
+finding about the axis: across five batches, roughly **7 in 9** of its hits
+— 18 of 23 in one, 8 of 9 in another — attach to a claim the block's own
+witness, sibling, or arithmetic refutes. It should be read as a pointer to
+check the claim, not as a style verdict, and that is now in the agent brief.
+
+**Coverage note, stated rather than implied.** Per-batch sections below run
+through `agent:j00`. Batches `k00`, `l00`, `l01`, `m00`, `n00`, `n01` are
+recorded in their commit messages with the same detail but do not yet have
+sections here; their load-bearing items are folded into the classes above
+and into the tiers.
+
+### What is NOT in this list
+
+Roughly 40 % of the ledger is verified-correct notes — blocks recomputed
+from scratch and found right, recorded so a later pass does not re-flag
+them. Those are not a backlog. Useful negatives among them include: no table
+audited so far discriminates the proton pin from the muon pin at its printed
+precision (though `1.1097` *is* excluded by several), and the Hoefsmit
+tableaux, Plancherel weights, skew-SYT counts and `Σ 1/dim_q` exact
+rationals all check to the last printed digit.
 
 ---
 
@@ -1255,3 +1467,2682 @@ labelled empirical and capped at A ≤ 16, and a refusal to settle the
 downstream question. Its one flaw is an *under*-claim — if the gap factors
 as `(t−1)` times an all-positive degree-20 polynomial, it holds for every
 `q > 1`, not merely "an interval containing the anchor".
+
+---
+
+## From agent:d01 (quantum-observable-universes dq_01) — 2026-08-22
+
+45 blocks, only 4 trap fails — this chapter's prose is clean, and the yield
+is mathematical. 15 anomalies; the first three carry consequences.
+
+### The uniqueness proof proves a different operator than the definition gives
+
+`categorical-q-ext-deriv-unique-proof`. Derived rather than eyeballed: with
+`P = q⁻¹·id + (1−q⁻¹)π_V` and `π_H = id − π_V`, the **definition** gives
+
+    d_q = P ∘ d
+
+while the **proof** works with
+
+    d′ = q⁻¹ d ∘ π_H + d ∘ π_V = d ∘ P.
+
+Those agree iff `[π_V, d] = 0` — which this chapter's own `d_q² ≠ 0`
+result denies. The same hidden hypothesis sits under
+`categorical-q-ext-deriv`'s prose claim that `d_q` "acts as `q⁻¹d` on
+horizontal forms and as `d` on vertical forms": `π_V` acts on the *output*
+of `d`, so that reading needs `d` to preserve the H/V splitting.
+
+### Lichnerowicz Step 4 is off by a factor of 0.8018, and drops a term
+
+The step asserts `q⁻²∇² − ℏ_q²∇_ξ² = ∇*∇`. Its algebra is **correct** —
+`q⁻² − ℏ_q² = (2−q)/q`, since `1 − (q−1)² = 2q − q²` and `ℏ_q = 1 − q⁻¹`
+gives `qℏ_q = q−1`. But that quantity is not 1: at 30 dps it evaluates to
+**0.801836567911** at the proton pin (0.801836547123 at muon), so the
+identity is off by ~19.8 %. The same step also drops `L_ξ∇` without
+comment.
+
+### A definition whose axiom collapses its own decomposition
+
+`categorical-reeb-brings` computes `ι_ξ dΘ_A = 0` — correct, that *is* the
+classical Reeb condition, and it follows correctly from
+`ι_{e₃}(ω₊ ∧ ω₋) = 0`. But `def:categorical-reeb`'s axiom
+`π_V ∘ d = ι_ξ dΘ_A` then forces `π_V ∘ d = 0`, collapsing the
+horizontal/vertical decomposition the chapter is built on. One of the two
+is wrong, and the definition is the likelier culprit.
+
+### Naming and typing, in a chapter where both are load-bearing
+
+- **One term, two morphisms.** `def:categorical-reeb` and
+  `def:categorical-reeb-derivation` both bold "categorical Reeb
+  derivation" for different objects (`ξ` vs `ξ_q`) under different
+  normalisations (`Θ_A(ξ) = id₁` vs `ξ_q ∘ Θ = Θ`).
+- **The Dirac operator has two fonts**: `𝔇_∇` (fraktur) in
+  `prop:categorical-lichnerowicz`, `𝒟_∇` (calligraphic) in all four
+  Lagrangian blocks, both citing `def:categorical-dirac-operator`. §7aa
+  admits at most one.
+- **`Ω_q`** (Reeb period) collides with `Ω^k(A)` (forms) across the
+  chapter; `ξ` serves as both Reeb generator and Fourier spectral
+  variable.
+- **Three codomains for one formula**: `tr_M(exp_q(−s·)·f)` is declared
+  into `End_C(A)` by `def:categorical-laplace`, called an element of
+  `Hom(1, A)` by its exists-proof, and as a Markov trace lands in
+  `Hom(1,1)`. `def:categorical-fourier` repeats the mismatch.
+- **Type mismatch** in the Lagrangian's second summand: `ψ* ⊗ 𝒟_∇ψ`
+  composes to `Hom(A, Ω¹(A))`, not `End_C(A)`, unless `Ω¹(A) ≅ A` —
+  asserted away as "via the rigid pairing".
+
+### Vacuous and near-vacuous statements
+
+`prop:categorical-lagrangian-unique` reads "any endomorphism equal to *the
+formula* coincides with `L_q`" — true by substitution. Its proof's preamble
+claims uniqueness follows "by enforcing the variational equations", and the
+body enforces none; that absent variational characterisation is exactly
+what would make the proposition non-vacuous, so deleting the preamble
+should be paired with a decision on the claim itself.
+`categorical-irreducible-proof` closes on a non sequitur: `∫_A` vanishing
+on `Ad(A)` plus *global* non-degeneracy does not give `s = 0` without
+non-degeneracy of the **restricted** pairing.
+
+### A banner in the wrong chapter
+
+`categorical-q-ext-deriv-unique` is the only block in this purely
+categorical chapter carrying the "sits on the archimedean side of the
+substrate wall" note (140 files corpus-wide). It has no real, no `q₀`, no
+numeric and no transcendental; its `.ts` has no archimedean tag; its proof
+uses only `π_H + π_V = id`. It is also positioned last, so nothing follows
+what it announces.
+
+### Verified correct, so a later pass does not re-flag them
+
+The q-Lie bracket's antisymmetry and its `q = 1` limit; `∇_q → ∇` at
+`q = 1`; the q-heat resolvent `û = (s + Δ̂_q)⁻¹u₀` including sign and
+initial datum; the Bogomolny decomposition's factor 2 and topological term;
+Bring's curve `8 = 2g` with `g = 4` and `S₅`-equivariance; and the
+`q⁻² − ℏ_q² = (2−q)/q` algebra itself — it is the *use* of it that fails,
+not the identity.
+
+---
+
+## From agent:d00 (quantum-observable-universes dq_00) — 2026-08-22
+
+45 blocks, 18 anomalies. The chapter's prose is clean; the yield is in the
+mathematics and in one structural pattern that spans six blocks.
+
+### The pattern: a proof preamble that narrates a proof that is not there
+
+Six proof blocks open with the same two-or-three-sentence "The proof
+strategy is… / We explicitly…" construction. Two were pure prose and were
+deleted inline; four carry formulas or new symbols and are flagged. **Two
+of the four describe a method the body never uses:**
+
+- `categorical-dirac-operator-unique-proof` promises "assume a general
+  affine operator `α∇ + βι_ξ∇`, apply the categorical constraints, they
+  force `α = q⁻¹`, `β = 1−q⁻¹`". No constraint is applied; the body says
+  the same combination is "literally the same morphism".
+- `categorical-fourier-transform-unique-proof` promises "the
+  representation ring structure pins down the labels"; the body is a Wick
+  rotation from Laplace uniqueness.
+
+This matters beyond style: in the Dirac case the advertised argument is
+precisely the one that would make the proposition non-vacuous (see below),
+so the preamble is standing in for missing content rather than decorating
+present content.
+
+### Statements that are vacuous or cannot hold
+
+1. **`adjoint-trace`'s Killing-form identity is vacuous where it is true
+   and false elsewhere.** The claim is `tr_Ad(f) = tr(ad f) = −2 tr_{ℂ²}(f)`.
+   Route: sympy over a `gl(2)` basis. On all three standard `su(2)`
+   generators `tr(ad X) = 0` (ad is traceless on a perfect algebra) and
+   `tr_{ℂ²}(X) = 0`, so the chain reads `0 = 0 = 0`. Off `su(2)` it fails —
+   `f = id` gives `0` against `−4`. And the normalisation is wrong
+   regardless: computing `B(X,X)/tr(X²) = −8/−2 = 4` on each generator
+   gives **`B(X,Y) = 4 tr(XY)`**, not `−2`.
+2. **`categorical-dq-squared-proof`: `ω_V` is identically zero as
+   defined.** `ω_V = d(π_V(d 1_A))`, and `d(1_A) = 0` in any first-order
+   calculus, so `ω_V = 0` — which makes the proposition's own right-hand
+   side vanish for every `α`. The same proof has a degree mismatch:
+   `[d, π_V]α = π_H(𝓛_ξ α)` puts degree `deg α + 1` on the left and
+   `deg α` on the right. Its "if and only if" also over-claims: the
+   prefactor does vanish exactly at `q = 1`, but the product also dies when
+   `ω_V = 0`, which given the above is not a hypothetical branch.
+3. **`categorical-dirac-operator-unique` is a tautology.** "Any morphism
+   decomposing as `α∇ + βι_ξ∇` **with `α = q⁻¹`, `β = 1−q⁻¹`** equals
+   `𝒟_∇`" — the same expression equalling itself, as the proof concedes.
+   The non-vacuous statement is the classification its preamble advertises.
+4. **`braiding-induced-ordering` assumes `c² ≠ id` and never uses it.**
+   The proof is a degree-lex well-ordering on words over `{1..n−1}` and
+   goes through for any braiding.
+
+### Errors of fact
+
+5. **`brings-coordinate-ring`: `S₅` is not an automorphism group of
+   `O_q(B)`.** With `x_i x_j = q x_j x_i` for `i < j`, the transposition
+   `(i j)` sends that relation to `x_j x_i = q x_i x_j`, while the ring
+   gives `q⁻¹`. Permutations act by algebra automorphisms only if
+   `q² = 1`. (Correct in the same block: `g = 4`, `2g = 8` cycles, and
+   `Aut(Bring) = S₅` classically.)
+6. **`categorical-coordinate-ring-proof`: two specialisation rows are wrong
+   as rings.** `ℂ[i]/(i²+1) ≅ ℂ × ℂ` by CRT — `i²+1` splits over `ℂ` — not
+   `ℂ`. Rows 2 and 4 are right. The displayed conjugation
+   `z → z⁻¹ → qz⁻¹ → q⁻¹z` checks out exactly.
+7. **`categorical-action`'s duality maps do not compose**, across five
+   blocks. The definition composes `ev_A ∘ (id_{A^∨} ⊗ Φ) ∘ coev_A` while
+   declaring `ev_A : A^∨ ⊗ A → 1` and `coev_A : 1 → A ⊗ A^∨`; the proof's
+   display then flips to `Φ ⊗ id` and applies `ev_A` to `A ⊗ A^∨`,
+   contradicting both propositions and its own prose. One side needs
+   fixing consistently across def + 2 props + 2 proofs.
+8. **`categorical-dirac-operator-exists-proof` types `ι_ξ` wrongly.** With
+   `ι_ξ : Ω¹(A) → A`, `ι_ξ∘∇ : A → A`, so `𝒟_∇ = q⁻¹∇ + (1−q⁻¹)ι_ξ∇` adds
+   `A → Ω¹` to `A → A`. The definition's own phrase "its projection onto
+   the Reeb direction" says `ι_ξ` should be `Ω¹ → Ω¹`.
+9. **`braiding-unit-circle-convention`'s name contradicts its content.**
+   The "inside-unit-circle convention" sets `q := λ₊`, and for real `q > 1`
+   that root lies *outside*; `|λ₋| = q⁻¹ < 1` is the one inside.
+10. **`categorical-fourier-transform-properties`**: "functions identically
+    over `𝔽_p`" is false without semisimplicity (`p ∤ |G|`, `q` not a bad
+    root of unity). The title also promises Wick rotation, which the body
+    never discusses.
+
+Smaller: a §7a violation (`(T−q)(T+q⁻¹) = 0` where the generator must be
+`σ_i`, in `braiding-eigenvalue-extraction`); `κ ∈ H²(𝒮, 𝓑)` colliding with
+`𝓑` for Bring's curve; `𝒜` for the Frobenius–Hopf object where the chapter
+uses `A`; and "intrinsic *topological* invariant" claimed for what is a
+categorical uniqueness statement, with nothing topological anywhere in the
+Fourier cluster.
+
+### Convention checks, all clean — recorded so they are not re-run
+
+The only numeric in 45 blocks is `q₀ ≈ 1.10998`, and it is **correct**:
+recomputed from CAL-2, `Vol(4₁) = 2·Cl₂(π/3) = 2.029883212819307` with
+CODATA `m_μ/m_e = 206.7682827` gives `q₀ = 1.10997859564`, whose rounding
+at that precision matches both real pins and is not the erroneous `1.1097`.
+No Markov `z` appears anywhere in the batch, so no convention-C exposure.
+Categories are bold `𝐂` throughout, the fibre functor is always `τ`, the
+tuple is always `(𝐂, Θ, G, 𝒮)`, and the deprecated 5-tuple appears
+nowhere. No §3b propagation violation, no mass claims, no braid words.
+
+New sweep-damage shape, distinct from the token-substitution class: a
+synonym swap for *is* and *ensures* — `operates as`, `acts as`, `secures
+positivity`, `securing the smoothness`, `functions identically`, plus
+`leverages` twice in proof preambles. Five instances across five blocks.
+
+---
+
+## From agent:d02 (quantum-observable-universes dq_02) — 2026-08-22
+
+42 prose blocks plus 3 data tables. Six trap fails, four inline fixes, and
+29 anomalies. One was fixable and is already fixed; the rest are recorded.
+
+### Fixed: a macro collision that silently typeset the wrong operator
+
+`dq-squared-proof` wrote `\mathcal{L}_\xid\alpha`, intending the Lie
+derivative along `ξ` of `dα`. But `\xid` is a **real macro** —
+`main.tex:222` defines it as `\xi_d` — and LaTeX matches the longest name,
+so the PDF rendered `L_{ξ_d}α`. The key cancellation therefore typeset as
+`Θ ∧ L_{ξ_d}α = Θ ∧ dL_ξα`, which is not the identity being claimed; on the
+KaTeX path it errors instead. Two sites, both in that block, none elsewhere
+in `content/`. Rewritten with braces so the macro cannot re-collide.
+
+The agent checked whether `\xid` was a typo or a definition before
+reporting it, which is what made this actionable rather than a guess.
+
+### `g-action-on-substrate`: the headline number, and why it survives
+
+The block's result is `N_sym(q₀)` against a target `213.11`, quoted at
+`−1.81 %`. Recomputed at 50 dps with the balanced `[n]_q`:
+
+| quantity | printed | recomputed (proton pin) |
+|---|---|---|
+| `[4]_q²` | 16.892 | **16.88949** |
+| `[2]·[4]²·[6]` | ≈ 216.96 | **216.9587226** |
+| residual | −1.81 % | **−1.80598 %** |
+
+So `16.892` is a round-then-square artefact (`4.11² = 16.8921`), and the
+line that multiplies the printed values gives `216.9884`, disagreeing with
+the `216.96` on the same line. **The −1.81 % headline is nonetheless
+correct**, because it was computed from full-precision values — which the
+pin test confirms: proton and muon agree to eight figures here
+(`216.9587226` vs `216.9587285`), while the erroneous `1.1097` rounding
+would give `216.8325` and print `−1.75 %`.
+
+Three structural problems in the same block matter more than the rounding:
+
+1. **`⊕` where the derivation needs `⊗`.** The trace display takes `dim_q`
+   of a **direct sum** `A^{(W⁺)} ⊕ A^{(W⁻)} ⊕ A^{(Z)}` and the next step
+   **multiplies** `[4]·[4]·[6]`. `dim_q` is additive over `⊕`:
+   `[2]·([4]+[4]+[6]) = 29.374`, not 216.96. The derivation does not follow
+   from its own display.
+2. **An input outside the three calibrations.** (G-3) fixes
+   `tr_F(ϱ*ϱ) = v²/m_e²` with `v ≈ 246 GeV`, "the empirical Higgs VEV".
+   Mitigating, and worth stating because the authorNotes claim every factor
+   is derived: (G-4) divides by exactly that trace, so `v` cancels and
+   never reaches `N_sym`.
+3. **The target has no provenance.** "the CODATA target `N_sym(q₀) =
+   213.11`" carries no citation, no derivation and no witness field, and
+   the entire −1.81 % rests on it.
+
+Also: `e_H` is called a **rank-1** projector yet assigned trace dimension
+`[2]_q`, the value (G-2) gives to *all* of `A^{(H)}`; Table 1 assigns the
+photon a trivial `(0,0)` while giving Z the mixed weight, though both are
+W³–B mixtures, and its last row ("residual matter sector") is not an
+irrep, contradicting (G-1)'s "each `A^{(X)}` carries a unique irreducible
+representation"; Table 2 names rows for Goldstones whose `q`-dimensions the
+body assigns to the **gauge** components.
+
+### Axioms that do not constrain what they name
+
+`frobenius-hopf-substrate` axiom 3 reads "the Frobenius form `λ` satisfies
+`μ∘Δ = (Δ⊗id)∘α∘(id⊗μ)`" — **`λ` never appears in it**, and the two sides
+do not compose (`A→A` on the left; `A⊗A⊗A → A⊗A → A⊗A⊗A` on the right).
+The standard form is `Δ∘μ = (μ⊗id)∘(id⊗Δ) = (id⊗μ)∘(Δ⊗id)`. In the same
+block **the antipode `S` is unconstrained**: it sits in the sextuple and is
+named in axiom 2, but no axiom relates it to anything —
+`μ∘(S⊗id)∘Δ = η∘ε` is absent, and what axiom 2 states is counit
+multiplicativity, not a Hopf compatibility.
+
+### A citation that points at nothing, and a direction reversed
+
+`emergence-to-quantum-flat` says "quantum flatness operates as a derived
+consequence of **the instanton axiom**" — which inverts its own proof
+(Step 2 *imposes* `B = F_A`, Step 3 *derives* `F_A⁻ = 0`), and
+`grep -rn "instanton axiom" content/` returns **that line alone**
+corpus-wide. There is no such axiom.
+
+### A mis-attribution that recurs, so it is a pattern not a slip
+
+Both `frobenius-simplification` and `fiber-adjoint-involution-proof`
+credit `H⁰(Ad(A)) = 0` to non-degeneracy of the pairing — "any global
+parallel section would pair with itself", which is no contradiction. The
+corpus's own proof uses SU(2)-emergence plus **Schur**. Two blocks, same
+wrong reason.
+
+### Smaller, verified
+
+`frobenius-su2`'s `Δ_μ(f)(g,h) = ∫_G f(xg)\overline{h(x)}dx` types `h` as a
+group element on the left and a function on the right; its closer describes
+**commutativity**, not associativity (the two-function statement is false
+on non-abelian SU(2)). `fiber-adjoint-su2` gives a traceless **Hermitian**
+`σ([ℓ])` and an **anti-Hermitian** orbit representative two lines later.
+`heisenberg-commutator` equates a scalar to an operator, and `Θ(ξ) = 1`
+identically for a normalised Reeb field. `fermion-boson-decomposition` uses
+`\mathcal{H}_q^k` for harmonic forms while `notation-collisions.md`
+registers `\mathcal{H}_q` as the shuffle Hopf algebra — and
+`dilog-pentagon-is-associator`, in this same chapter, uses it that way.
+Bare `J` appears in three blocks against the register's "we never write
+bare `J`".
+
+### Clean, recorded so it is not re-run
+
+No convention-C `z` in any spelling — `z` does not appear at all. No braid
+words. No raw `q₀` literal (only `:val[q_0]{precision=6}`). No absolute-mass
+MeV claim. Categories bold `𝐂`, fibre functor `τ`, no deprecated 5-tuple.
+No §3b violation: `g-action-on-substrate` is correctly kinded `conjecture`.
+
+`operates as` for *is* occurs **22×** corpus-wide, so it is house style
+rather than this batch's defect — worth knowing before someone "fixes" it.
+
+---
+
+## From agent:e00 (predicted-spectra eq_00) — 2026-08-22
+
+37 prose blocks + 8 data tables, 35 anomalies. This is the chapter that
+states predictions, and it shows: the findings are about what the numbers
+mean, not about prose.
+
+### The α_EM headline changes sign with the pin
+
+`alpha-em-derivation-open-problems` quotes **+5.7 × 10⁻⁸** as its residual.
+Every number in the block is **muon**-pinned. At the proton compute default
+(the standing directive since 2026-08-07) the same quantity is
+**−2.142 × 10⁻⁸** — opposite sign and 2.7× smaller. The `+2/(3π)` row moves
+too: −4.180e-6 muon vs −4.259e-6 proton.
+
+`alpha-em-categorical-trace-ratio-table-data` is also muon-pinned, and here
+the table **can** distinguish the pins (they differ in the 8th digit of
+`δ₉`), so this is not a rounding-invisible case. `1.1097` is excluded.
+
+### "Both models close the 1.6 % energy gap" is false, and backwards
+
+`breit-wheeler-pair-production-derivation`. The algebra checks out
+term-by-term — five NF coefficients, `net_bare = 1 + h = 1.209060299`, both
+polarisation limits. What fails is the conclusion:
+
+- The **net → MeV conversion is never stated.** Recovering it from the
+  block's own numbers gives `0.83205114 MeV/unit`, uncited.
+- Under that constant, reaching `2mₑ` needs `φ = 0.0538675`, `s = 0.108282`.
+  The block quotes **0.0487** and **0.0978**, low by a factor 1.106.
+- Those values give `net = 1.205278 / 1.205165`, **below** the bare
+  1.209060 — so `E = 1.0029 / 1.0028 MeV`, **worse than doing nothing**.
+- And `φ`, `s` are fitted to `2mₑ` by construction.
+
+### The Λ-vs-Cl₂ guard, live in content
+
+`bring-hyperbolic-knot-bloch-decomposition` §Obs 2 writes
+**"Vol(𝓑₃) = 8G = 8·Cl₂(π/4)"**. The value `8G = 7.327724753` is right; the
+name is not. `Cl₂(π/4) = 0.9818721511`, so `8·Cl₂(π/4) = 7.854977208`, and
+`G = Cl₂(π/2) = 0.9159655942`. This is precisely the shape AGENTS.md
+describes — right number under the wrong name — so a grep for the bad name
+would flag it while a grep for a bad value would not. Its own sibling
+`bloch-wigner-mathlib-filler-table1-data` has it right (`4Cl₂(π/2) = 4G`).
+
+### The wrong-trefoil braid word, third chapter running
+
+`breit-wheeler-pair-production` gives `e⁻ = σ₀σ₁σ₀ "(trefoil)"`. Computed
+from the induced permutation: `σ₁σ₂σ₁` induces `(1 3)`, so the closure has
+**2 components** and is not a knot at all; Markov-reducing,
+`σ₁σ₂σ₁ ~ σ₁²σ₂` destabilises to `σ₁² ∈ B₂` — the **Hopf link**. The
+trefoil as a 3-braid is `(σ₁σ₂)²`. `e⁺` inherits it, and the rest of the
+chapter uses the correct `e⁻ = T_{2,3} = σ₁³`.
+
+`bring-hyperbolic-knot-bloch-decomposition`'s Markov-closure table is wrong
+in **3 of 5 rows** (`σ₁`,`σ₂` → 2 components, not "unknot"; `σ₁σ₂`,`σ₂σ₁` →
+1, not "Hopf link"; `σ₁σ₂σ₁` → 2 = Hopf link, not "trefoil"), and it cites
+`σ₁³`, which is not an H₃ basis element. The section's conclusion survives;
+the table does not. `categorical-neutron-table-data` repeats the same
+mislabels on the same six basis elements.
+
+### The Bloch-group five-term relation is inverted
+
+`bloch-group-quotient-construction`. Tested at 30 dps with
+`x = 0.3+0.7i`, `y = −0.4+1.3i`: the standard five-term residual is
+**0.0**; the block's orientation (with `e₄`, `e₅` reciprocated) gives
+**1.979625777**. `e₃ = e₂/e₁` matches the standard form, so no relabelling
+rescues `e₄`/`e₅` — and since `D(1/z) = −D(z)`, the block's version flips
+two signs.
+
+### Claims that do not follow
+
+- `borel-zagier-qou-volumes`: "**strictly stronger than irrationality**" is
+  false. ℚ-linear independence of `{V₁,V₂,V₃}` does not imply any `Vᵢ ∉ ℚ`
+  — `{1, √2, √3}` is a counterexample. The statement needs
+  `{1, V₁, V₂, V₃}`. Also `Vol(𝓑₃)/Vol(5₂) = 2.591021365`, printed 2.592.
+- `bring-hyperbolic-knot-bloch-decomposition`: the conjecture and both
+  reduction claims live in `B(ℚ(ζ₁₅))`, but the Borromean class has trace
+  field `ℚ(i)`, and **`i ∉ ℚ(ζ₁₅)`** (that needs `4 | 15`). The block's own
+  Obs 2 already concludes `ℚ(ζ₆₀)`. Its field table is otherwise fully
+  correct. Also `L6a4` **is** the Borromean rings (6³₂), listed as two
+  atlas entries, so "the shared volume identity establishes `𝓑₃ ~ L6a4`"
+  is an identity restated as a derivation; and "By the **Birman–Hilden**
+  theorem, 3-braid closures yield hyperbolic knots up to 10 crossings" is
+  misattributed and false as stated.
+- `bohr-radius-categorical`: "a₀ at `q₀ ≈ 1.11` yields `5.29 × 10⁻¹¹` m" is
+  the CODATA value. With the block's **own** `α_EM = 7.30870156e-3`,
+  `a₀ = 5.2835550e-11` m. A calibration pass-through presented as a result.
+  Its `.ts` kind is `conjecture` while the `.md` opens "Proposition."
+- `bohr-radius-round8-findings`: "three structural properties" followed by
+  **four** sections; and "identifying `n = 2k+1` exactly reproduces the Bohr
+  `1/n²`" reproduces only the **odd-n subseries** — `1/4` and `1/16` have
+  no `k`.
+- `alpha-em-categorical-trace-ratio-table-data`: the `.ts` caption calls row
+  5 "the CODATA α_EM definition", but `7.30870098e-3` is **not** CODATA
+  (`7.2973525693e-3`) — `1/α = 136.8232089`, **0.1555 % high**. Rows 4 and 5
+  are the same expression at the same `q₀`, so "exact within 10⁻¹²"
+  certifies an identity, not an experiment.
+
+### Convention C, with its dependence measured
+
+`bohr-radius-round8-findings` uses `z = √q/(q+1) = 0.4993203342`. The
+displayed `V_H`, `V[1]`, `V[2]` carry `z` **symbolically**, so the
+cross-term-cancellation headline is convention-independent; any numerical
+evaluation and the "optimal ordering" claim are not. Recording the split
+because "flag every C value" without this distinction over-reports.
+
+### Sweep damage: a new shape
+
+Flattened imperative or bulleted lists rewritten as declaratives, producing
+sentences with no subject-verb sense — *"The photon holonomy integral
+defines over the fibre."*, *"The partition functions evaluate and limits
+take k → ∞."*, *"A depth-k contribution defines 1/α_EM."* (four in one
+block), plus *"The trace ratio identity determines the substrate-flow value
+from the α_EM categorical-trace ratio"* (subject and object are the same
+object). Six blocks. Distinct from the token-substitution and synonym-swap
+classes already recorded.
+
+Two §7a generator violations in the β-decay cluster (`T² = (q−q⁻¹)T + 1`,
+and the skein written `q[L₊] − q⁻¹[L₋] = (q^{1/2}−q^{−1/2})[L₀]`), plus
+`β⁻` emitting an **unbarred** `K_{0₁}` — breaking lepton number and
+contradicting its own sibling's `L₀⁻ = T_{2,3} ⊔ T_{1,0}^σ`.
+
+### Verified clean, recorded so it is not re-run
+
+All 9 rows of the Breit–Wheeler product table; the `S₃` sign projector;
+`V₃² = Δ`; bar-transfer clauses 1 and 3; the `φ²` band and `q₀ ∈ (1, φ²)`;
+`dim Λ²ℂ¹⁰ = 45 = 9 + 36`; `α_shift(T_{2,9}) = 9`, `α_shift(T_{3,5}) = 10`;
+every cyclotomic degree and `r₂` in the field table; and all four margins in
+`bar-self-dual-confinement-band-proof`, which are pin-independent at the
+displayed precision.
+
+---
+
+## From agent:e01 (predicted-spectra eq_01) — 2026-08-22
+
+23 prose blocks and 22 data tables. **The tables carried the findings** —
+which is the argument for reading them even though they take no trap
+verdicts.
+
+### A failing witness cited as confirming evidence
+
+`e-hartree-categorical-derivation` states: *"The H₂ witness gives the
+dimensionless ratio `E_bind/E_Hartree ≈ 0.170` … It matches the
+standard-physics H₂ ratio ≈ 1/6."*
+
+From `h2-molecular-binding.witness.json`:
+`0.8645364577143441 / 27.211467573147633 = 0.03177103386`. **0.170 appears
+at no key in the witness.** It is the *experimental* ratio (D₀ → 0.164563,
+D_e → 0.174434). And the witness itself records
+
+    {"name":"H2 binding energy within 5% of observed",
+     "computed":0.8645, "expected":4.478, "passed":false}
+    "allPassed": false
+
+Root cause: tables 2, 3 and 11 are pinned to a **superseded run**. Table 2's
+`Φ₁ binding 0.687` / `E_bind 4.64 eV` against the current `0.12847272688` /
+`0.86453646` are ratios **5.3474** and **5.3670**; and `4.64/27.30 =
+0.169963` is the quoted 0.170 exactly. Table 11's unstated "target" *is*
+0.16996, verified across all six rows. Against the current witness those six
+candidates score 5.246–6.029, so the mechanism Table 11 calls "a direct
+symbolic computation" now supports nothing.
+
+### The quantity to be derived is supplied experimentally in its own evidence
+
+Same block, two different `α_EM` in one place. Table 2 uses the framework
+value — recomputed `1/α = q[9]_q[10]_q = 136.823208854`, giving
+`m_e c²α² = 27.29609 eV`, **0.3113 % above** the CODATA Hartree. The
+witness cited as evidence uses `alpha_EM = 0.007297355976840865`
+(`1/α = 137.035935`, i.e. CODATA) → `E_hartree_eV = 27.211467573`.
+
+### Two tautologies presented as Mathlib gap closures
+
+`cl2-pentagon-and-faddeev-partial`.
+`Cl₂(0) − Cl₂(0) + Cl₂(0) − Cl₂(0) + Cl₂(0)` has three plus and two minus
+terms, so it collapses to a single `Cl₂(0)`; and `Φₙ(0;q) = 1` makes
+`(1−q)log Φₙ(0;q) − Li₂(0) = 0 − 0` for every `(q, n)`. The joint Lean
+statement is literally `Cl_2(0) = 0 ∧ Li_2(0) = 0`, while the `.ts`
+authorNote calls it *"closes a non-trivial portion of substantive Mathlib
+gaps (2) and (3)"*. Table 1's own gloss concedes *"pentagon holds by
+definition"*. Strict Lean Discipline item 5 / "Axiomatization is NOT a
+Proof".
+
+### The Λ-vs-Cl₂ guard, independently confirmed — and the Lean is the right side
+
+`clausen-function-mathlib-filler` writes `Vol(𝓑₃) = 8Cl₂(π/4) = 8G`, where
+`8·Cl₂(π/4) = 7.85497720840163` and `8G = 8·Cl₂(π/2) = 7.32772475341775` —
+the middle term is **7.195 %** larger than both outer terms. The correct
+form is `16Λ(π/4) = 8Cl₂(π/2)`.
+
+**The `.lean` is correct** (`ClausenFunctionMathlibFiller.lean:139`,
+`8 * Cl_2 (Real.pi / 2)`), and its docstring carries the smoking gun:
+`` `G = Cl_2(π/2)` (NOT `Cl_2(π/2)`) `` — the NOT-clause repeats the thing
+it negates, so it was written against `Cl_2(π/4)` and later half-corrected.
+Table 1 in the same block self-contradicts. A **third** site is outside this
+batch: `mass-theory/binding-scale-catalan-proof.md:4` (`G = Cl₂(π/4)`).
+
+### Tables whose rows contradict themselves
+
+- **`diophantine-valley-table-data`: 4 of 7 rows have a printed `n/p` that
+  is not the `n/p` of the same row.** Br 35/44 printed 1.10, actual
+  **1.2571**; Zr 40/50 printed 1.20, actual **1.2500**; Sn 50/70 printed
+  1.30, actual **1.4000**; W 74/110 printed 1.40, actual **1.4865**. The
+  `(p,n)` pairs are real nuclides; the first column is an unchecked
+  1.10/1.20/1.30/1.40 decade ladder, and a "threshold-crossing" reading
+  does not rescue it.
+- **`chebyshev-torus-coefficients`: four mutually inconsistent laws for one
+  `cₙ`.** The boxed `U_{n−1}(x/2)`, the block's stated recurrence, the
+  correct Hecke transfer, and the referenced table each give different
+  sequences — the boxed form needs `−c_{n−1}` and the transfer needs
+  `+c_{n−1}`, so they diverge in **sign** from n=3. No single recurrence
+  generates the whole table.
+
+### `diophantine-valley` and `elliptic-stability-locus`: right answers, wrong routes
+
+- Three mutually inconsistent normalisations of the Coulomb term appear in
+  `diophantine-valley` (coefficients `4c`, `2c`, `c`); **(ii) and (iii)
+  equated force `c = 0`**. Only the third matches the textbook SEMF
+  `Z* = A/(2 + (a_C/2a_A)A^{2/3})`.
+- **Mordell is misapplied**: Mordell–Weil gives *finitely generated*, not
+  finite, and a positive-rank curve has infinitely many rational points.
+  Finiteness of **integral** points is Siegel's theorem — and the block's
+  own points are integral, so Siegel is what it wants.
+- `elliptic-stability-locus`'s erbium result is reached by a route other
+  than the equation it is presented as following from: the block's own
+  `p² = (1−c)/(4c³)` gives **p = 270.93**, and its own match condition gives
+  **237.5**, against the stated 67.8. The 67.8 ↔ erbium pairing *is*
+  reproducible — via the **textbook** `Z = A/(2+cA^{2/3})` at A = 167,
+  giving Z = 68.05.
+- Its discriminant is printed 16× small (`−18.95` for `−303.145`), and that
+  this is a slip rather than a convention is provable from the same line:
+  the printed `j = 129.9` matches `c₄³/Δ` with the **standard** Δ, where
+  `−18.95` would give `j = 2077`.
+
+### `em-coupling-bring-zero-mode`: the residual is smaller than the pin shift
+
+The table is arithmetically exact at the **old muon** pin. But
+`tree(muon) − tree(proton)` is `1.0801e-5`, **relative 7.894e-8 — larger
+than the claimed `+5.7e-8` residual**. Under the proton compute default the
+two-term residual becomes **−2.14e-8**, flipping sign. And `+5.7e-8` is
+**372σ**, not "approaching `σ_α = 1.5e-10`". Its cited witness
+`alpha-em-correction-derivation-attempts.witness.json` **does not exist** —
+checked against all 1421 witnesses in `computations/`.
+
+### Recorded clean, including one I expected to fail
+
+`α²/h⁴ = 1/(q²(q⁹−q⁻⁹)²(q¹⁰−q⁻¹⁰)²)` is algebraically exact. Table 10
+verified row by row via `[n]_{−q^{±1}} = (−1)^{n+1}[n]_q`. Table 12's
+characters reproduce with `χ_{(3,1)}+χ_{(2,1,1)} = −h` exactly. Table 13's
+"≈[5]_q amplification" holds (5.280 vs 5.2204, 1.1 %). And the
+**convention-D** parenthetical in Mechanism B is *correct* — D is exactly
+what makes `det G = 0` and forces the `H_n/rad ≅ TL_n` reading. No
+convention-C residue anywhere in this batch.
+
+---
+
+## From agent:e02 (predicted-spectra eq_02) — 2026-08-22
+
+45 blocks, **92 anomalies logged** (full list in the agent's scratch; the
+load-bearing ones follow). The trap register here is different from every
+other chapter: only 3 fails across the diagnostic five, but 16 on
+nonspeakable syntax — nominalisation density consistent with a
+de-passivisation sweep, two of whose casualties were left ungrammatical
+("The categorical structure defines over the commutative ring").
+
+### Claims that are false, with the route
+
+1. **`hadron-half-life-proof`: "in the classical limit `q→1`, `𝒲(1) = 0`"
+   is false.** Computing `tr_M((σ₀σ₁)⁵)` in `H₃(q)` symbolically gives a
+   polynomial whose value at `h = 0` is exactly **`z² = 1/4`** (`z(1) = 1/2`
+   under both C and D). Independently: at `q = 1`, `H₃(1) = ℂ[S₃]` and
+   `(s₀s₁)⁵ = (s₀s₁)² = s₁s₀`, whose trace is `z²`. Beta decay *does*
+   vanish at `q = 1` — but by the sibling block's route (`Q = 0`), not this
+   one.
+2. **`groebner-nf-computation-table2`: 4 of 5 rows wrong.** `Σ_ℓ h(ℓ) = A!`
+   at `r = 1`. The table gives 2, 4, 12, 36, 180 against the correct
+   **2, 6, 24, 120, 720**. The stated `[3]_r!` is really `[2]_r²`
+   (`S₃` has `h = 1,2,2,1`), and `[4]_r!` should have degree 6 — the
+   longest element of `S₄` — where the table's has degree 4. **The entries
+   are palindromic**, so the block's own Poincaré-duality remark does not
+   catch this; only the `r = 1` count does.
+3. **`hadron-q-self-correction-proof`: the closing bound is false as
+   stated.** "`|δq/q₀| < 0.1 %` for all nuclei" holds along the valley
+   (Fe-56 0.031 %, Pb-208 0.093 %, U-238 0.0999 %) and fails for real
+   neutron-rich nuclides: **⁴⁰Mg 0.172 %**, ⁶⁰Ca 0.145 %, ²⁴O 0.141 %.
+   The formula's supremum is 0.44 %. Its interpretation sibling
+   compounds it: `A = 3` is not the maximum — `(A−1)/A²` peaks at `A = 2` —
+   and the quoted "0.1–0.4 %" overstates the true 0.221 % maximum by 1.8×.
+4. **`francium-extremal-metal` is refuted by its own table.** "The lowest
+   ionization energy (4.07 eV)" and "decreases monotonically with `n`",
+   against a table showing **Cs 3.89 < Fr 4.07**. All six values are
+   correct against NIST; the block concedes the reversal two sentences
+   later without withdrawing the claim.
+5. **`force-knot-identification`'s skein is wrong and violates §7a.**
+   Printed `q[L₊] − q⁻¹[L₋] = (q^{1/2}−q^{−1/2})[L₀]` against §7a's
+   `L₊ − L₋ = (q−q⁻¹)L₀`. It is not a correct Jones skein under either
+   substitution: with `q = t` the LHS exponents are swapped, with
+   `q = t⁻¹` the RHS sign flips. **Load-bearing** — parity violation is
+   derived from it two sentences later. The same block says "the three
+   `S₃` subgroups of `S₅`"; there are **30** (10 supports × 3 each), so
+   the definite description does not denote.
+6. **`hadron-half-life-fermi`'s "2.1 ppm deviation from CODATA" matches
+   nothing.** The bare `q⁻¹/([9]_q[10]_q)` — the formula named in that very
+   sentence — is off by **1553 ppm**; CS-corrected is 0.399 ppm, the
+   fixed-point cubic 0.0007 ppm, PSLQ 0.003–0.006 ppm. The nearest corpus
+   quantity is the additive zero-mode residual −4.2 ppm, of which 2.1 is
+   exactly half. The sentence also attributes the *bare* formula to "the
+   Chern–Simons correction".
+
+### The α_EM cluster is not on a common pin, and one witness misdescribes itself
+
+The four routes disagree about which pin they are on: the CS route
+reproduces **muon** exactly (137.035944554, 398.6 ppb, κ 1.88804) while the
+fixed-point cubic strongly prefers **proton** (0.69 ppb vs 79.5 ppb muon),
+PSLQ's "7 ppb" is muon (2.6 ppb proton), and the additive `+5.7×10⁻⁸` is
+muon-only — **proton gives `−2.2×10⁻⁸`, opposite sign**. This is the third
+independent arrival at that sign flip (e00, e01, e02).
+
+`em-coupling-projection-probe.witness.json` **contradicts itself about its
+own pin**: it records `q0Anchor: "proton"` with the proton value, while
+`q0_source` and its assertion text both say "muon-anchored", and the
+producer says "muon-anchored" in four places. The number is right and the
+label is wrong — an inverted layer-straddle, the mirror of the hazard
+AGENTS.md documents.
+
+Its `CODATA_ALPHA_INV = "137.035999206"` is commented "CODATA 2018/2022"
+and is **neither** (2018: …084, 2022: …177) — it is the LKB/Morel-2020
+measurement. Three different unprovenanced α targets appear across this one
+block family, and Table 1's headline "399 ppb" does not follow from its own
+printed digits (those give 402.0 ppb; 399 is full-precision muon against a
+target the table never names).
+
+### Convention C, flagged with an honest limit
+
+`hadron-half-life-proof` uses `1/(q^{1/2}+q^{−1/2}) = 0.4993203 = z_C`
+exactly — a detector-blind spelling. The agent explicitly could **not**
+determine from the block whether the argument depends on it (it may be an
+independent symmetrising normalisation) and flagged it for producer
+adjudication rather than asserting dependence. Recording that limit, since
+the alternative is a confident guess.
+
+### Verified correct, recorded as negatives
+
+The two-photon normal form matches sympy term for term; all six Markov
+traces in `frobenius-gram-matrix-table1-data` including `hz²+z`; the
+golden-quartet Galois group entire, including `disc = 400 = 2⁴·5²` and the
+Möbius fixed points of `(4−q)/(4q+3)` being exactly `{1/φ, −φ}`; the
+Plancherel sums 0.98744 / 1.05056 against the quoted 0.987 / 1.051, tending
+to 1 as `q→1`; `Δq_eff = (A−1)/A²·ℏ_q²` derived exactly; crossing numbers 9
+and 10 via Murasugi; `Vol(S²)/(3Vol(S³)) = 2/(3π)` exactly.
+
+And `groebner-nf-computation` carries the batch's **only correctly-scoped
+durable negative**: "no per-generator transfer matrix can compute
+`F_Pauli`" is a scope-(b) exclusion with its licensing invariant named and
+verified — the shape the anti-overclaim rule asks for.
+
+
+## From agent:f02 (mass-theory fq_02) — 2026-08-22
+
+45 blocks, 450 verdicts, 5 inline fixes. Every number below was recomputed
+rather than read off; the route is given where it is not obvious.
+
+### A number matching no pin, and a claim off by 1600×
+
+**F02-1. `topological-mass-trefoil` prints 207.1 for `Vol(4₁)/ℏ_q²`.**
+Recomputed (`mpmath`, `Vol = 2·clsin(2, π/3) = 2.02988321`, `ℏ_q = 1 − 1/q`):
+
+| pin | q₀ | Vol/ℏ_q² |
+|---|---|---|
+| proton | 1.1099785827513808 | **206.7683** |
+| muon | 1.10997859555733471 | 206.768283 |
+| old muon | 1.109978595554181 | 206.768283 |
+| the 1.1097 error | 1.1097 | 207.7155 |
+
+The printed 207.1 back-solves to **q = 1.1098808** — a *fourth* value
+matching none of the three documented pins and not the known rounding error
+either. Against CODATA `m_μ/m_e = 206.7682830` the formula achieves
+2.1e-5 %; the printed number misses by **0.160 %**, i.e. the block
+understates its own result by four orders of magnitude.
+
+**F02-2. `three-halves-structural-factor` says the same identity closes
+`m_μ/m_e` "to 0.034 %".** At the proton pin the true figure is
+**+2.10e-5 % = 209.8 ppb** — which is precisely the documented μ–p substrate
+tension — and identically **zero** at the muon pin, where the relation *is*
+the pin. 0.034 % is ~1600× too large and corresponds to no pin.
+
+**F02-3. Same block: the τ sentence omits ξ₃ and is impossible as written.**
+`m_τ/m_e = 3477.23` would need `Vol/ℏ² = 34.137` without ξ₃, far outside any
+10-crossing hyperbolic volume. The cited witness carries
+`Vol(10₄₃) = 13.83304617` and `predicted_xi_3 = 2.4873628890`, and
+`ξ₃·Vol/ℏ² = 3504.8` reproduces the witness's own
+`rel_err_percent = 0.79443` exactly. So the muon sentence needs ξ₂
+**excluded** and the τ sentence needs ξ₃ **included** — the two were written
+from one template and the template is wrong in opposite directions.
+
+### Convention C, including the spelling a source grep cannot see
+
+**F02-4. `terms-2-6-higher-operations-table2-data` is convention-C
+throughout.** Recursion `σ^k = A_k σ + B_k`, `tr = A_k z + B_k`:
+
+| k | printed | z_C = 0.4993203 | z_D = 0.6126880 |
+|---|---|---|---|
+| 1 | 0.49932 | 0.49932 ✓ | 0.612688 |
+| 2 | 1.10439 | 1.10439 ✓ | 1.12809 |
+| 3 | 0.730204 | 0.730204 ✓ | 0.848527 |
+| 4 | 1.25704 | 1.25704 ✓ | 1.30548 |
+| 5 | 0.993002 | 0.993002 ✓ | 1.12145 |
+
+All five match C; all five differ from D **in the first printed digit**. The
+`1/(q;q)_k` column is independently correct, and the table cannot
+distinguish proton from muon pin at its printed precision.
+
+**F02-5. `toroidal-harmonics-delta-lambda` depends on convention C through
+an identity, not a constant.** Its bridge turns on
+`w = z² = 1/(2(cosh η + 1))`, which holds for `z_C` to 1e-31 and **fails for
+`z_D`** (0.3753866 vs 0.2493208, a 51 % gap). This is the class the
+detector-blindness taxonomy calls invisible: there is no `z = …` to grep,
+only an identity that happens to be true in one convention. The block's ODE
+reduction was re-derived by hand and is **exactly correct**, and
+`P_{-1/2}/P_{1/2}(√5/2) = 0.9446492234` reproduces its printed 0.944649 to
+six digits — the defect is scope, not arithmetic.
+
+### The excised absolute-mass double-counting, still shipping
+
+**F02-6. `tower-binding-energy-table-data` reproduces its own "Mass error"
+column exactly** — all 7 values check as `(B_obs − B_pred)/M_atom`. That is
+the finding. The underlying **binding** errors are **+121.6 % (²D),
+−31.4 % (⁴He), +7.6 %, −10.1 %, −8.2 %, −7.2 %**; they land under 0.25 %
+only because the denominator is a mass dominated by `Z·m_p + N·m_n`, i.e. by
+the calibration. This is exactly the double-counting the 2026-08-11
+absolute-mass excision removes. No pin, no witness, no producer.
+
+**F02-7. `term6-binding-density` — prose vs its own table, factor 6.** The
+prose says T₆ enumerates **ordered** triples (~A³); the table gives the
+**unordered** `C(Z,3) + C(Z,2)N + Z·C(N,2) + C(N,3) = C(A,3) = A³/6`
+(Vandermonde, verified at five (Z,N) pairs). The fitted α absorbs the
+factor. The block also concedes α, β are "AME calibration constants", which
+`rem:three-calibration-inputs-context` explicitly forbids.
+
+### Citations that resolve to nothing, and a witness that misdescribes itself
+
+**F02-8. A dead witness with a space in its filename.**
+`spin-involution-lp-dual-invariance-proof` cites
+`computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json`.
+No such file; no `*pair-knot*` anywhere in `computations/`; the quoted
+`0.06216177120816107` appears nowhere in the tree. The space is itself the
+`canonical` ← script-name sweep substitution, so the citation was *created*
+by the sweep. Its sibling citation is real:
+`alpha-5-lp-dual-crystal.witness.json` has `allPassed: true` and genuinely
+carries `y0_star = 570.6762423449366` and `26.82418994350443` — but
+`q0Anchor: "muon"`, which the prose does not disclose.
+
+**F02-9. `tau-amphichiral-sdp-probe.witness.json` straddles the two layers.**
+Header says `q0Anchor: proton` (`1.10997858275138…`), while its assertion
+`muon_canonical_pin_consistency` computes **206.768283** — the *muon*-pin
+value of `Vol(4₁)/ℏ_q²` (proton-pin gives 206.768326). A comparison producer
+classified on one layer; the exact hazard AGENTS.md §q₀ describes.
+
+### Statements refuted by their own blocks
+
+**F02-10. `thurston-volume-additivity`.** "One tetrahedron per crossing"
+would give 4₁ four tetrahedra; the block's own Extremality section says 4₁
+"comprises exactly two". Both the per-crossing sum and the torus-knot
+argument rest on the false claim. (`v₃ = 1.0149416`, `2v₃ = 2.0298832` are
+correct — not the `8·Cl₂(π/4)` error.)
+
+**F02-11. `staircase-ew-residual`.** The conjecture says the matrix image
+"has two nonzero eigenvalues"; the k=4 evidence in the same block says "the
+top eigenvalue is degenerate" and cites `e[254]/e[188]` from a 768-dim
+spectrum (`f^{(4,3,2,1)} = 768` verified). It also quantifies over all k ≥ 2
+while recording k=2 as untestable.
+
+**F02-12. `three-parameters-wedderburn-context`.** Its table maps std → m_e →
+mass scale and alt → Q_β → interaction scale. Its H₂ cross-check then says
+"Two irreps → q₀ and m_e" and "No standard representation → no interaction
+scale needed". H₂'s irreps are sym and **alt**, so by the block's own table
+H₂ *has* the interaction scale and *lacks* m_e — the opposite, reached by
+silently relabelling std as the interaction scale.
+
+**F02-13. sym/alt swapped across three blocks.**
+`rem:three-calibration-inputs-context` maps alt(1³) → CAL-2 → q₀ and
+sym(3) → CAL-3; `prop:three-parameters-wedderburn` and
+`rem:three-parameters-wedderburn-context` both map sym(3) → q₀ and
+alt(1³) → interaction/Q_β. Two against one; the calibration-inputs-context
+table is the outlier.
+
+**F02-14. `staircase-corner-hook-proof` — the k=3 pair does not reconcile.**
+`q^{1/5} = 2.1087 %` at every real pin (2.1036 % at 1.1097). Applied to the
+stated 2.19 % gap it leaves **0.081 %**, not the claimed 0.13 %; landing on
+0.13 % would need a 2.057 % factor. The hook identity itself (arm = leg =
+k−1, h = 2k−1) is correct.
+
+### Typing, ring and convention errors
+
+**F02-15.** `topological-mass-formula-algebraic-proof` asserts
+`Habiro-hat(ℤ[q]) ⊂ ℚ(q)`. Backwards — the Habiro ring is strictly larger
+and not contained in ℚ(q).
+
+**F02-16.** `topological-mass-formula-algebraic` states
+`Φ₁ = ln|Vol_{q₀}(β)|`, so `m = ln|Vol|/ℏ²`; its own proof and
+`prop:topological-mass-formula` both give `Vol(K)/ℏ²`, **no logarithm**. The
+statement also claims to bypass "hyperbolic volume conjectures" while its
+proof's final step invokes the volume conjecture.
+
+**F02-17.** `topological-mass-formula` — §3b-cond violation. Step 2 rests on
+Kashaev–Murakami, carried as "Hypothesis 2" on the Lean structure, but the
+`.md` opens with a bare `**Proposition.**` and `uses[]` names no `conj:`.
+Clauses 3 and 4 both fail. Same block, one paragraph apart: prose calls Vol
+"the imaginary part of the Chern–Simons functional" while the display two
+lines later writes `Re tr(…) = Vol(K)`;
+`substrate-cohomology-calibration-story` takes Vol as the **real** part
+(Neumann–Zagier `Vol + i·CS`). It also cites "Möbius energy" for the CS
+correspondence — an unrelated functional.
+
+**F02-18.** `three-calibration-inputs` — ring contradiction: "a ℚ(q₀)-element
+`Ô(q₀) ∈ ℤ[q₀^{±1/2}]`". Different rings, and the block's own example breaks
+the narrower one (`E₀ = m_e/(q₀(q₀−1))` needs `(q₀−1)⁻¹`).
+
+**F02-19.** `substrate-cohomology-calibration-story` — sign error. Crossing
+eigenvalues are `q` and `−q⁻¹`; with `λ = log q` these are `cosh λ + sinh λ`
+and `−(cosh λ − sinh λ) = sinh λ − cosh λ`. The block writes "these split as
+`cosh λ ± sinh λ`", dropping the minus. It also labels q₀ itself "CAL-2"
+(CAL-2 is 𝔇_β; q₀ is what it fixes) and reuses `τ` for a monodromy trace and
+`λ` for `log q` — both AGENTS.md-named collisions.
+
+**F02-20.** `tmli-constituent-composite-agreement{,-proof}` — type error plus
+sibling contradiction: "`∏ V̂_i` and `tr_M(ρ(β))` evaluate the same element
+of `H_N(q)`", but both are scalars, not algebra elements. And
+`prf:spin-involution-lp-dual-invariance` states the product convention "does
+NOT respect the Hecke-algebra structure", attributing a 1.326× discrepancy
+to exactly that gap.
+
+**F02-21.** `tau-all-orders-bridge` — not a dichotomy. "Exactly one of the
+following holds", but option 2 adds "coincidentally share only their h²
+coefficient" beyond the negation of option 1, so the pair is not exhaustive.
+`α₆ = α₈ = 0` and "computations up to h⁸" carry no witness.
+
+**F02-22.** `torus-knot-zero-volume-via-reeb` — closure of `σ₁σ₂` in B₃ is
+`T_{3,1}` = the **unknot**, not the trefoil (`(σ₁σ₂)² = T_{3,2}` or `σ₁³`).
+The conclusion survives: the unknot has zero volume too.
+
+**F02-23.** `topological-field-ansatz-table-data` — every knot
+identification verified (T_{2,3}/T_{2,5}/T_{2,7}, 4₁ amphichiral, Borromean
+= 6³₂, deg = m), but the framework use contradicts two siblings: it assigns
+4₁ to the **Higgs** while `three-halves-structural-factor` writes
+`K_μ = 4₁`, and it assigns **torus** knots to μ and τ, which two blocks in
+this same batch prove have zero hyperbolic volume.
+
+**F02-24. Scope discipline.** `terms-2-6-higher-operations` writes an
+unscoped "dead-end". The (b)-justifying invariant genuinely exists here
+(`HH¹ = HH² = 0`, semisimple, per the block's own table), so the fix is to
+*state* it as scope-(b) — not to delete the finding. Its third table row
+("Φ_q ≠ finite-dim character") cites no invariant and is scope-(a) at best.
+
+### Sweep damage, three shapes
+
+- **`canonical` ← `numerical(ly)`**: `three-calibration-inputs-proof`
+  ("pinned **canonical** by the dimensionless ratio"),
+  `three-calibration-inputs` ("pinned **canonical** through its proxy"). Not
+  fixed inline — `canonical` is a loaded word in this corpus and the repair
+  should be deliberate.
+- **Script-name substitution**:
+  `spin-involution-lp-dual-invariance-proof` ×3, including "**The** / the
+  canonical formalism / (per prop:operator-selection-lp) confirms";
+  `staircase-corner-hook-proof` ×2, leaving both quoted percentages
+  provenance-free.
+- **Sentence-initial lowercase**: `spectral-sequence-collapse-proof`,
+  "categorical derivation steps need only enumerate…".
+
+**F02-25. A dangling boilerplate paragraph, twice.** `tau-all-orders-bridge`
+and `thurston-volume-additivity` both **end** with the identical stub
+"**Archimedean specialisation.** What follows sits on the archimedean
+side…" — and nothing follows in either.
+
+**F02-26. `three-calibration-inputs-proof` — stale precision figure.**
+`m_p/m_e (6 × 10⁻¹¹)` is the superseded 0.06 ppb; the live value is
+0.017 ppb = 1.7e-11.
+
+**F02-27. `three-calibration-inputs-context` — CAL mislabel.**
+`E₀^(cal) = Q_β(n)/|Δ(net)| ≈ 4.155` is tagged "(CAL-3 cross-check)" while
+the same block states four times that Q_β is the **CAL-2** proxy. Its
+numerics all check: `E₀^(N=0) = 4.185981`, `E₀^full = 4.227483`,
+`Q_β = 0.783646` (+0.168 % vs CODATA 0.78233, matching its own "0.17 %"),
+`4.155/0.78233 = 5.311`, SM count 6+3+4+3+1+1+1 = 19.
+
+### Verified correct — recorded so a later pass does not re-flag them
+
+- **`symbolic-character-table`.** `c_λ = f^λ/2` for self-conjugate λ was
+  derived from `χ^λ(odd) = 0` and reproduces **all four rows**
+  (2/6/16/20 → 1/3/8/10); the three pair characters check against the S₅
+  table at q→1; Plancherel 35.6 % ≈ the stated "36 %".
+- **`torus-knot-delta-q-writhe`.** Every writhe correct, and the block
+  **understates** its own invariant: `w − m` is identically
+  presentation-independent, not merely its parity.
+- **`t-beta-markov-frobenius-collapse{,-general}-proof`.** All five steps
+  correct, with an honest note that cyclicity goes unused.
+- **`terminal-resolution`.** Table internally exact, and the absolute-mass
+  excision correctly implemented.
+- **`toroidal-harmonics-delta-lambda`'s golden-ratio section** — the
+  batch's best example of anti-fit discipline, notwithstanding F02-5.
+
+
+## From agent:f00 (mass-theory fq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 2 inline fixes. Only 3 trap fails — this chapter's
+prose is in good shape, and the batch's value is entirely in what the
+full-context read caught alongside it.
+
+### The wrong knot, confirmed twice by independent routes
+
+**F00-1. `figure-eight-branching-rule` defines 4₁ as a word that closes to
+the UNKNOT.** The block gives `4₁ = σ₀σ₁⁻¹σ₀⁻¹σ₁`. Reduced Burau over exact
+`ℤ[t,t⁻¹]`, `det(I−B)·(1−t)/(1−t³)`:
+
+| word | Δ(t) | is |
+|---|---|---|
+| `σ₀σ₁⁻¹σ₀⁻¹σ₁` (the block's) | `1/t ≐ 1` | **unknot** |
+| `(σ₀σ₁⁻¹)²` (genuine 4₁) | `−1 + 3/t − 1/t² ≐ t − 3 + t⁻¹` | figure-eight ✓ |
+| `σ₀³` in B₂ (control) | `t² − t + 1` | trefoil ✓ |
+
+So **every `b_λ·h²` term in that block is computed on the wrong knot.** In
+`[2,1]` the true character is `q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴`, not `−1 − h²`;
+the two agree only at q = 1.
+
+This corroborates the same finding reached independently by **agent:r07** on
+a different chunk, and I re-verified it a third time in the coordinating
+session with a separate sympy implementation. Three routes, one answer.
+
+### A coefficient carried at two values, where only one reproduces the headline
+
+**F00-2. `c₅` disagrees across five blocks.** The proposition and tables 1–2
+use `c₅ = −(b² + ½) = −1.2527`; the context block (×2) and table 3 use
+`c₅ = 3c₃² + b = +12.868`. At `u⁵ = 4.4822e−11`:
+
+| c₅ | contribution | N=4 → N=5 |
+|---|---|---|
+| −1.2527 | −0.0561 ppb | −0.57 → −0.63 ppb |
+| +12.868 | +0.5768 ppb | −0.57 → **+0.0068 ppb** |
+
+Only the second lands on the published "~0 / +0.04 ppb". **The context block
+is right; the proposition carries the superseded coefficient.**
+
+**F00-3. The ladder headline matches no row of its own table.** The
+proposition claims −0.0066 ppm; its table 2 gives +6.02 ppb (N=3) and
+−0.57 ppb (N=4) — wrong sign and ~10 % off.
+
+**F00-4. `h` is undefined in the ladder proposition.** `α = (z−1)h/2`
+requires `h = q − q⁻¹` (which reproduces N=1 = +73.64 ppm against the
+printed 73.79); reading `h = ℏ_q` gives +1254 ppm, off by 17×.
+
+**F00-5. `S(q₀) ≈ 0.18689` is not S(q₀).** The block's own formula gives
+**0.18720719**. 0.18689 is `Q_β^CODATA/E₀(q₀)` — and the two differ by
+exactly the 0.168 % that the same block quotes elsewhere
+(`Q_A/Q_CODATA − 1 = 0.167738 %`).
+
+### A retraction, recorded because it is worth as much as the finding
+
+**F00-6. RETRACTED by the auditing agent mid-batch.** It first flagged the
+direction gate's "2.1e−7 (210 ppb)" as 18× overstated. On recheck that is
+**exact**: "the substrate variable" means the *ladder* variable u, not q, and
+`u(proton) = 0.008517234550156142` vs `u(muon) = 0.008517236340043958` is
+210.15 ppb. The 18× is the amplification `d ln u/d ln q = 2/(qℏ_q) = 18.19`,
+i.e. the agent had found the amplification factor and mistaken it for an
+error. Only the block's wording is ambiguous; the number is right.
+
+### The c_k conflation AGENTS.md names, found again
+
+**F00-7.** "Cross-anchor swing ≈ 3.5 % at c₃" is `|−2 − c₃|/2 = 3.46713 %` —
+the **gap to the integer candidate**, not the swing. The true swing is
+**2.37478 %**. This is precisely the normalisation-mistaken-for-discrepancy
+class the AGENTS.md c_k correction was written about.
+
+**F00-8. Stale c₃.** The context block's "−2.010 at the muon pin" is the
+pre-#1422 value (current −2.02020024), and it implies a 2.85 % swing.
+
+### Convention C, load-bearing and — unusually — decidable
+
+**F00-9. `frobenius-s-classification-table2` gives
+`z = (q^{1/2}+q^{−1/2})⁻¹ = 0.49932033`** — convention C in the spelling the
+detector-blindness taxonomy lists. Here it is load-bearing rather than
+cosmetic: z enters `Φ₁ = Σ log|z aᵢ + bᵢ|`, and `bar(z_C)/z_C = 1` while
+`bar(z_D)/z_D = q⁻⁴`, so the "+1" S-eigenvalue — and the parent block's
+"exactly one S-odd term" — is a statement about C, not about the canonical
+convention. In the direction gate, switching to D moves the refuted family
+from `m ≥ 4` to `m ≥ 5` (`0.998/z_D⁴ = 7.08` passes; `/z_D⁵ = 11.56` fails).
+
+### Proof steps that do not hold
+
+**F00-10. Step 3(c) of the stratified proof is false.** "λ has a box with
+hook k ⟺ depth ≥ k" fails at **λ = (2,1)**: hooks are {3,1}, maximum 3, and
+there is no hook of length 2. 22 counterexamples up to n = 7.
+
+**F00-11. Step 3(d) is malformed.** `F_n(z) = Σ_λ dim_q⁻¹ z^{|λ|}` is a
+monomial, since `|λ| = n` always — coefficient 2.4972905 at n=3, which is the
+sibling table's own number — so it cannot equal
+`∏(1 − q⁻ᵏz)^{−c_k(n)}·u_n(q)` (at n=3, `c₃(3) = 3`).
+
+**F00-12. Step 4 does not follow from Step 1.** Step 1 gives
+`⟨Z^(k), Z^(ℓ)⟩ = 0` for `k + ℓ ≠ N`; Step 4 needs orthogonality for
+`k ≠ ℓ`. Under Step 1 the vanishing is `k > N − k_*`, which matches only if
+`k_* = N/2`.
+
+**F00-13. `ramified-disc-fusion` clause 3 contradicts its own prose.** The
+DFT gives `w_k → ζ^{−k}w_k`, which the prose states correctly; clause 3's
+uniform `ζ w_k` is wrong. Separately, C₃ monodromy is already regular — S₃
+arises only after adjoining orientation reversals, again as the prose says.
+
+### Provenance
+
+**F00-14. A deprecated witness at the old muon pin.**
+`mn-classical-parity-blind` sources `_deprecated/schur-weyl-mn.witness.json`
+(`q₀ = 1.1099785955541805`, the **old muon** value), whose own notes say it
+"requires ribbon q-weights (next iteration)". Its column "Nonzero χ^λ
+partitions" is **false**: 2/6/18/40 partitions have χ ≠ 0, not 1/2/3/5.
+
+**F00-15. Pin-attribution mismatch.** The radius gate says "extraction at
+q₀ = 1.10997858…" (proton) while its witness records
+`1.1099785955573347…` (**muon**).
+
+**F00-16. Sweep damage.** `partition-sum-…-table5` carries "Deuteron gap
+(**the formal derivation**)" in the slot where the sibling row carries a
+backticked script name; also "canonical evaluation", "canonical precision
+ladder", "via the canonical formalism", "From the canonical formalism",
+"canonical anchor (verified)".
+
+**F00-17. Unprovenanced symbols.** `N_sym ≈ 1.90` (hoefsmit table 2) has no
+definition, witness or derivation — and its own context block calls the
+Plancherel framing "incorrect". `P_n(q,z)` in `qz-bicompletion` is undefined;
+`J` in `reeb-exceptional-divisor` is undefined.
+
+**F00-18. Rounding.** `30/8 = 3.75` printed as 3.7 (two rows) beside an exact
+7.0; a ratio `1.00039344` printed 1.00036, recomputed from an
+already-truncated 2.5009; `955.49/1.019741349 = 936.9925` against a printed
+936.994; and "within 0.1 %" is **0.10838 %**, while the parent block's
+"within 0.1 %" is **0.1477 %** — refuted by its own table's `−0.14 %`.
+
+### Verified correct — recomputed from scratch, so a later pass does not re-flag
+
+All 20 Hoefsmit pure tableaux and all eight multiplicities 4/2/1/3/3/1/2/4 —
+including the counter-intuitive asymmetric 2/1/3 — with
+`tr_pure = 41.6949`; all 7 skew-SYT counts; all 8 Plancherel weights
+(summing to exactly 1); `Σ 1/dim_q` at n = 3,4,5,6 to the last printed digit,
+and the exact 5/2, 19/6, 46/15, **473/144**; `Σ W_λ = 1` for the Frobenius
+weights; `8G = 7.32772475342 = 2·V_oct` (**not** the `8·Cl₂(π/4)` error);
+`Φ_q(0.989) = 671094`; `u(proton)` to **17 significant digits**; the
+per-nucleon shift `1 + 18Z + 21N` exact in all six rows; `V_L(1) = (−2)^{n−1}`;
+and the 3-CAL table.
+
+**Pin discrimination — a useful negative.** No table in this batch separates
+the proton pin from the muon pin at its printed precision. The erroneous
+`1.1097` *is* excluded by `tr_pure` (41.56 vs 41.69), by `Φ_q(0.989)`
+(7.0e5 vs 6.7e5) and by the parity-blind figures (6.7143e−1 vs 6.7145e−1) —
+but **not** by `partition-sum-table1`, where all three pins print 1.2761.
+
+
+## Independent re-verification of Tier-1 item 3 — 2026-08-22
+
+Both halves were promoted into the owner brief on one agent's report, so I
+re-derived them in the coordinating session before leaving them there. Both
+hold, and the Killing-form one is worse than recorded.
+
+**`ω_V` is identically zero — one line, no computation.**
+`categorical-dq-squared-proof.md:37` defines
+`ω_V = d(π_V(d 1_A)) ∈ Ω²(A)`. In any first-order calculus `d` is a
+derivation, so `d(1_A) = d(1_A·1_A) = d(1_A)·1_A + 1_A·d(1_A) = 2 d(1_A)`,
+hence `d(1_A) = 0`; `π_V` is linear, so `π_V(0) = 0` and `ω_V = d(0) = 0`.
+This needs nothing about the calculus beyond `d` being a derivation. The
+middle term the block simplifies to `ω_V ∧_q [ξ, α]` therefore vanishes for
+**every** α, which is not what a curvature term is for.
+
+**`adjoint-trace`'s Killing identity — confirmed, plus a type error the
+numbers obscure.** Recomputed over the `sl(2)` basis `{H, E, F}` with
+sympy:
+
+| check | value |
+|---|---|
+| `tr(ad X)` for X ∈ {H, E, F} | **0, 0, 0** (perfect algebra) |
+| `B(H,H) / tr(H²)` | 8/2 = **4** |
+| `B(E,F) / tr(EF)` | 4/1 = **4** |
+| `B(F,E) / tr(FE)` | 4/1 = **4** |
+| `f = id`: `tr(ad id)` vs `−2 tr_{ℂ²}(id)` | **0 vs −4** |
+
+So on `su(2)` the block's chain `tr_Ad(f) = tr(ad f) = −2 tr_{ℂ²}(f)` reads
+`0 = 0 = 0` (su(2) elements are traceless), it fails off `su(2)`, and the
+correct normalisation is `B(X,Y) = 4 tr(XY)` — the general `sl(n)` value
+`2n·tr(XY)` at n = 2. Both sign and magnitude are wrong.
+
+**And the coefficient is not the real defect.** `tr(ad f)` is a *linear
+functional* on the algebra; the Killing form `B(X,Y) = tr(ad X ∘ ad Y)` is
+*bilinear*. No linear functional "recovers" a bilinear form, at any
+normalisation. Fixing `−2` to `4` would leave the sentence just as wrong,
+which is why this is worth stating separately from the arithmetic: the
+repair is to write the pairing, not to correct the constant.
+
+
+## From agent:f01 (mass-theory fq_01) — 2026-08-22
+
+45 blocks, 450 verdicts, 9 inline fixes. `trap-superlative` failed **16
+times**, far above this campaign's norm, and the reason is diagnostic rather
+than stylistic: **9 of the 16 attach to a claim the block's own witness,
+table, or sibling refutes.** In this chapter the unqualified claim is
+usually the *carrier* of a substantive error, not decoration on a correct
+one. That is worth knowing for how the axis is read elsewhere.
+
+### Five blocks cite a witness that does not support them
+
+**F01-1. `s4-s3-half-symmetric-projection` is marked `status: "verified"`
+against a witness that reports failure.**
+`lambda-scale-rd-h4-half-symmetric.witness.json` records
+`pi_HS_at_q1 = "0"`, `h0 = h2 = h4 = h6 = 0`,
+`h0_equals_5_over_2 = **false**`, `h2_equals_minus_G_within_1pct =
+**false**`, and `pi_HS_at_q0 = 0.2584333` against a target of 2.4599523
+(9.5×). Its `allPassed: true` is **vacuous — the assertions array is
+empty.** The agent re-derived `pi_HS_at_q1` from the witness's own
+characters: `(1+1+0−1−1)/4 = 0`. And the producer,
+`lambda_scale_rd_h4_half_symmetric.py`, tests the **purged** `λ_scale`
+ansatz (absorbed 2026-05-23, `ffdd84409`).
+
+**F01-2. `rem-qstar-decay-sector-q0` cites a witness whose passing assertion
+asserts the claim the block retracts.** `assertions[2].source` reads *"q\* is
+an independent decay-sector determination of q0"*, passed — while the
+block's own title says it is **not**, and calls the reasoning circular.
+Separately `data/q_star/frac_muon_ward_pct = 80.29605` is the Vol(4₁)-window
+fraction, not q\*'s position; recomputed from the stored
+`q_star = 1.109978593031523288` the position is **80.27627 %**.
+
+**F01-3. `schur-weyl-mass-decomposition` is marked "verified" against a
+witness with `data = {}`**, no assertions, whose own description calls the
+object a "candidate". Its "observed 5 %–20 % binding-energy drift" has no
+citation, derivation or witness anywhere.
+
+**F01-4. `six-canonical-knot-operators-table-data` is wrong in 2 of 6 rows
+against its own producer — confirmed three ways.**
+`reeb-flow-garside-closed-form-verification.witness.json` (all assertions
+pass) gives `predicted_twists_in_q_pi_units = (0.5, 0, −0.5)` for **both**
+3-cycles; the table says "+q,+q,+q uniform" and "−q,−q,−q uniform". (a) The
+witness asserts `Σψ = 0` for all six operators, and `(+q,+q,+q)` sums to
+`3q`. (b) Concatenating the row's own letters — `(+q,−q,0)` then
+`(0,+q,−q)` — over the witness's recorded `n_sub_intervals = 2` averages to
+exactly `(0.5, 0, −0.5)`, and the table's **own Garside row already uses
+that convention correctly** at `(2/3,−1/3,−1/3)`. (c) The witness gives both
+3-cycles the *same* vector, so the table's sign flip is wrong twice over.
+The permutation column is entirely correct. Repeated in prose in
+`six-canonical-knot-operators-context` and in
+`six-operators-via-vertex-factorisation-table-data`.
+
+**F01-5. `sigma-shell-…-table-data` is stale in 4 of 6 rows** against
+`sigma-shell-from-beta-chain.witness.json` (row A=2): `y_(3,2,1)` 0.00731845
+vs **"0.0"**; `χ^(3,2,1)(β_D)` −1.88451 vs **−1.97227244615**;
+`|tr_M(β_D)|` 0.388286 vs **0.575172395398** — the 48 % import-cone drift
+AGENTS.md documents for `tr_M_atom`; `y_target` 0.001331 vs **"0.0"**; ratio
+1.122 vs `ratio_pct` **"−100.0"**. The witness reports `allPassed: true`
+regardless. The table is internally self-consistent (its own inputs
+reproduce 0.0013315605 and 0.0011854589), so this is staleness rather than
+arithmetic — **except** that ratio 1.12324 is 12.32 %, so "within 12 %" is
+false on the table's own numbers.
+
+### Hyperbolic-geometry constants: three errors in one parenthetical
+
+**F01-6.** `s4-s3-half-symmetric-projection-proof`. Recomputed at 30 dps and
+confirmed independently in the coordinating session:
+
+| quantity | value | the block says |
+|---|---|---|
+| `G = Cl₂(π/2)` | 0.915965594177 | — |
+| `Λ(π/4)` | 0.457982797089 = **G/2** | "G = Λ(π/4)" — off by 2 |
+| `V_oct = 8Λ(π/4)` | 3.66386237671 = **4G** | "G = ½V_oct" — G is V_oct/4 |
+| `Vol(ℬ₃) = 8G` | 7.32772475342 = **2·V_oct** | "eight cells" — it is **two** octahedra |
+
+Cross-check: `snappy-cusp-seeding.witness.json` records L6a4 with
+`num_tetrahedra = 8` — the 8 is **tetrahedra** (2 octahedra × 4), which is
+plausibly where "eight cells" came from. This kills the block's "per-cell
+ratio 1/8" and "one of the eight cells". Note `8·Cl₂(π/4) = 7.8549772` is
+the *separate* known error and is not what is happening here.
+
+**F01-7. Same block, an unexplained factor of 2.** It derives
+`dim_half-sym = 1+3+1 = 5` and a factor `2/5`, then writes
+"(5/2) × (2/5) = 1" calling `5/2` the half-symmetric count; `5 × 2/5 = 2`.
+The witness independently reports `h0_equals_5_over_2 = false`. The
+branching table itself is correct in all 5 rows (`Σ dim² = 24 = 4!`).
+
+### `det T = −1` is not a theorem
+
+**F01-8. `skein-polynomial-transfer-matrix-proof`.** From the block's own
+`T_j` and `(c,d)`: `pp → −1` ✓, `nn → −u² + u² − 1 = −1` ✓, but the mixed
+p–n row gives **−1.010926552** — 1.0927 % off, at both pins (recomputed
+independently). The closed form is `−(q+q⁻¹)²/4`, confirmed from the
+eigenvalues `±½(q+q⁻¹)` of `½(σ+σ⁻¹)`, agreeing to 25 digits. The error is
+structural: `det` is multiplicative, so `det σ = det σ⁻¹ = −1` says nothing
+about their **average**.
+
+### Knot theory and group theory
+
+**F01-9. The Skein relation is written in HOMFLY form.**
+`skein-generation-proof` gives `q·L₊ − q⁻¹·L₋ = (q−q⁻¹)L₀`; AGENTS.md §7a
+fixes `L₊ − L₋ = (q−q⁻¹)L₀` (from `σ² = (q−q⁻¹)σ + 1` times `σ⁻¹`).
+`reidemeister-mass-invariance` **in the same batch** has it right — two
+blocks one directory apart disagree on the convention.
+
+**F01-10. A Garside closure called non-torus is the Hopf link.**
+`six-operators-via-vertex-factorisation`: "yields a non-torus braid,
+contributing a positive hyperbolic JSJ piece". But `σ₁σ₂σ₁ ∼ σ₁²σ₂`
+cyclically, `σ₂` occurs once with `σ₁² ∈ B₂`, so Markov destabilisation
+gives the closure of `σ₁²` — the **(2,2) torus link = Hopf link, Vol = 0**.
+Permutation (13), cycle type (2,1) ⇒ 2 components, confirming. Same claim in
+`six-canonical-knot-operators-context`. The 3-cycle half is correct
+(`σ₁σ₂` → unknot).
+
+**F01-11. S₃ does not embed in SU(2).** SU(2) has a *unique* element of
+order 2: `g² = I` with `det g = 1` forces eigenvalues both `+1` or both
+`−1`, i.e. `g = ±I`. S₃ has three involutions. So "the S₃ holonomy of
+`ρ : B₃ → SU(2)`" needs SO(3) = PSU(2), or a projective representation.
+
+**F01-12. "Precisely the torus knots" omits the graph-manifold class.**
+Zero simplicial volume is torus knots ∪ unknot ∪ their connected sums and
+iterated cables. The granny knot `3₁#3₁` has Vol 0 and is not a torus knot
+(torus knots are prime). The same block's fermion list also skips the
+**muon** — the CAL-2 proxy — between electron and tau.
+
+**F01-13. A hypothesis unsatisfiable in 5 of its own 7 cases.**
+`sigma-shell-…-derivation` says "let `λ_shell ⊢ n` be **the** staircase
+partition of n" with `n = 3·A_magic`, giving n = 6, 24, 60, 84, 150, 246,
+378 — of which only **6 = T₃** and **378 = T₂₇** are triangular. Its title
+also says "derivation … **from** compound β-decay chain Q-values" while the
+body says "**entirely independent** of 𝔔_β and the AME chain".
+
+**F01-14. "A real q₀ can never flip the sign of S" is false.**
+`S = c₃ + Vol(4₁)` is a real function that changes sign between two real
+q₀ — and the sibling `rem-qstar` **root-finds that very zero** at
+`q* = 1.1099785930315233`, 80.28 % of the way p→μ. (Verified: the probe's
+hardcoded `S_TARGET` reproduces exactly from `c₃(μ) = −2.0202002328`,
+`c₃(p) = −2.0693425728`, `Vol(4₁) = 2.0298832128`; the ε values check at
++0.0148679 / +1.339 % and −0.0605885 / −5.459 %.)
+
+**F01-15. Wrong π exponent.** `rem-ohtsuki-tower-bar-parity` writes
+`κ_n ∈ ℚ(√3)·π^{⌈n/2⌉}`, contradicted by its own `κ₂ = 2π²/27`
+(`⌈2/2⌉ = 1`). The canonical producer prints `π^n`:
+`κ₅ = (110011/688905)√3π⁵`, `κ₆ = (207892/295245)π⁶`,
+`κ₇ = (32729683/26572050)√3π⁷`. Separately, summing the block's own
+`T_λ(q⁻¹) = (−1)^{n−1}T_{λ'}(q)` over its 11 blocks gives
+`tr_M(β_D)(q⁻¹) = −tr_M(β_D)(q)` at n=6 — the **whole** trace is bar-odd,
+which is stronger than, and in tension with, "g₂ is carried by the pair
+asymmetries".
+
+**F01-16. A summary table refuted by its own footnote.**
+`reidemeister-mass-invariance` gives "Writhe w | × | ✓ | ×\*"; R-III
+preserves writhe, as the block's **own footnote** says, and as its own
+"Shell number n" row — the same quantity — marks ✓ under R-III.
+
+### Convention C, and one case where the near-match *is* the artifact
+
+**F01-17.** `skein-polynomial-transfer-matrix` sets
+`z(q) = 1/(q^{1/2}+q^{−1/2}) = 0.4993203342` (D gives 0.6126880371). The
+dependence is load-bearing, not cosmetic: the proof's cancellation step, the
+ring `M₂(ℤ[q^{±1/2}])`, and the `deg ≤ A²−1` bound all rest on half-integer
+powers that only C produces.
+
+**F01-18. The Reeb pair — the "near-match" is a convention-C artifact.**
+`reeb-linking-cwf-normalization` / `reeb-pn-magnitude-criticality` use "the
+Markov bond factor `z = 1/[2]_v`" = `√q/(q+1)` = 0.4993203342. The algebra is
+z-agnostic and survives; the number is not. Under C, `g_C = 0.4467270679`
+gives `5g = 2.2336` against `B(²H) = 2.2246` — **0.408 %**, the quoted
+near-match. Under canonical D, `g_D = 0.5224286690` gives `5g = 2.6121` —
+**17.42 %**. The agreement is produced by the excised convention.
+
+**F01-19. Convention unstated.** `six-term-mass-formula-complete` and
+`…weights-table1-data` carry a factor `z²` with `z` never defined. The agent
+**declined to guess** and said so; `z²` differs by 1.506× between the
+conventions (0.37536 vs 0.24932).
+
+### Stale figures — including one in AGENTS.md itself
+
+**F01-20. `dc₃/dq ≈ 4.7e6` is wrong; three routes give 3.84e6.** Secant from
+the block's own anchors: **3.83746e6**. `2.37 × (1/u³)` at `u = 0.00852`:
+**3.83204e6**. The block's own witness: `S_prime_qstar = 3838404.458` with
+`inv_u_cubed = 1618467.41` (ratio 2.3717 = the quoted prefactor). 4.7e6
+would require `u = 0.0079595`.
+
+**This one propagates into AGENTS.md.** Its §formalize-first-probe precedent
+read `dc_3/dq ≈ 4.6e6`, as do five other sites. That figure is the
+**stale-c₃ twin of the "≈ 3 %" swing AGENTS.md already corrects** — both
+came from the pre-#1422 muon `c₃ = −2.0097` and its 2.88 % swing, and both
+should have been re-derived together. **The prune is unaffected**: 3.84e6 is
+just as impossible for a smooth real `f`, so the real-q c₃ family stays
+killed. Corrected in AGENTS.md and `local/compute-author` §precedent-table
+this session, with the routes recorded inline; the four audit-doc sites are
+historical records of that analysis and are left as written.
+
+**F01-21. `rem-qstar`'s "≈367× more precise" uses the superseded 0.06 ppb
+proton figure** (22/0.06 = 366.67). The live figure is 0.017 ppb ⇒
+**1294×**. Its companion "≈0.0007 % muon-ward" recomputes to 0.000744 % at
+0.06 ppb but 0.00006 % at 0.017. The witness carries
+`proton_over_muon_precision = 366.7`, so producer and prose are stale
+together. *Every other rem-qstar figure verifies*: window 0.0491423,
+σ(c₃) = 1.262 = 61.0 %, 0.0313σ / 0.00767σ, band [0.8073, 3.3313], 51.36×,
+31.98× / 130.3×.
+
+**F01-22. Two comparatives wrong, both flattering.**
+`six-term-per-derivation-weights-proof`: "76× improves on … (14.7 % mean)" —
+`14.7/0.18406 = ` **79.86×**; and "this **matches** the standalone … fit
+(0.13–0.16 % mean)" — 0.184 % is **outside** that range, 15–42 % worse. Also
+`α = m_e·8G` hardcoded at 3.74446989 against a recomputed **3.744459660**
+(2.73 ppm high). *All 12 error rows and the 0.184 % mean verify exactly* —
+but the mean averages in p and n, which are 0.000 **by construction**; over
+the 10 genuinely predicted rows it is **0.2209 %**.
+
+### Discipline
+
+**F01-23. §3b propagation violations (2).** `rho-k-h3a-refinement`
+(`proposition`, uses `conj:hoefsmit-scattering-pipeline`, no conditional
+banner) and `s4-s3-half-symmetric-projection` (`proposition`, uses
+`conj:borromean-baryon-mass-formula`, no banner).
+
+**F01-24. Defined-residual laundering — the exact AGENTS.md pattern.**
+`rho-k-h3a-refinement`: "the true binding energy lives entirely within
+`Δ_λ`" is true **by definition** of `ρ^LO`, and the witness says so outright
+— *"exactly by construction (single equation, single unknown)"* — while
+recording `balanced_321_heuristic/Delta_lambda = **inf**`
+(`χ^{(3,2,1)}(β_D)` vanishes, consistent with (3,2,1) being the bar-odd
+self-conjugate block). The `Δ_λ(K)` here is also **K-dependent**, colliding
+with the K-independent proved `Δ_λ`.
+
+**F01-25. Sweep damage, measured.**
+`six-term-mass-formula-complete-table-data` has **5** occurrences of "the
+formal derivation" standing in for script names in a 6-row table — including
+the self-evidently broken "the formal derivation, the formal derivation" —
+plus a **dead reference** `atomic-tr-m-mpfr-exact representation.witness.json`
+(space in the filename; the real files are
+`atomic-tr-m-mpfr-50dps[-proton].witness.json`). `…weights-proof` has 3 more,
+one leaving "the standalone the *atomic-braid mass formula* … formula's".
+Spread: **38 occurrences across 27 files** in mass-theory alone; "the
+canonical formalism" appears in **56 files** corpus-wide.
+
+**F01-26. A physics error and a retired target.**
+`rho-k-h3a-refinement-interpretation`: "shell structure captured by
+liquid-drop formulas" — liquid-drop is precisely what shell structure
+*deviates from* (hence Strutinsky corrections). Same block: "Nine evaluation
+levels push the mass prediction accuracy to **one part per billion**" — no
+citation, no witness, an absolute-mass claim, and a target retired
+2026-05-26.
+
+**F01-27. Missing modulus.** `rem-im-q-vs-p-skew`'s Mechanism-2 display
+reads `𝔪 = tr_M(ρ(β))` and the next sentence says "The |·| is the modulus".
+There are no bars in the display; the block's own `authorNotes` give the
+mechanism as `m = |tr_M|`.
+
+**F01-28. An empty math cell.** `six-canonical-knot-operators-table-data`'s
+identity row ends `| $$ |`, and the file's `$$` count is **1 (odd)** —
+pre-existing, not introduced by the audit.
+
+**F01-29. Refuted by its own table.** `six-term-mass-formula-complete`:
+"breaks **cleanly** into six derived terms", "**every** term evaluates
+**uniquely**" — against its own rows 2 and 3, marked "PATHOLOGICAL at q₀
+archimedean". It is also dimensionally inconsistent (only Term 4 carries
+`m_e`). Parallel case: `six-term-per-derivation-weights` claims six terms
+while its proof records `T₄ ≡ 0` and `T₆ = 0` for A ≥ 5 — 3 of 6 terms inert
+for 8 of the 12 tabulated atoms.
+
+**F01-30. Superseded upstream with no forward pointer.**
+`sl2-prolongation-recurrence` calls pinning θ "the last open number",
+solvable via `τ = (a₂+a₄)/a₃`; its own downstream consumer
+`sl2-period-conserved-quantity` **proves** the true period admits no depth-2
+recurrence and that this τ is an `n ≤ 4` germ.
+
+**F01-31. Misc.** `reidemeister-mass-invariance` — absolute `m_p ≈ 938 MeV`
+"from Vol(ℬ₃)" (excised, *and* the guardrailed wrong form); R-II marked
+"invariant ✓" from "cancel to leading order" though `q − 1/q = 0.2090602988`
+is 18.8 % of q; two displays lose the space before `\text{` ("m_bareis
+invariant"). `residue-at-root` — a non-sequitur "fulfilling the
+three-calibration discipline", and a `ζ_ℓ` vs `ζ_{n_ℓ}` field-vs-ring
+inconsistency with its own proof. `skein-mass-from-linking-proof` — contains
+no proof, re-displays the lemma, and its only content is duplicated verbatim
+in `skein-generation-proof`. `sdp-degeneracy` — "S(2) = {2}" writes the index
+where `δ₂` is meant; "prior **canonical** probes" is the
+`canonical`←`numerical` substitution. `skein-polynomial-transfer-matrix-proof`
+— §7a violation `T² = (q−q⁻¹)T + 1` in the triple-identity table while the
+same proof writes it with σ three paragraphs earlier; "All evaluated in
+milliseconds" with **no** `computation` field on the `.ts`. Duplicate blocks:
+`…weights-table2-data` and `…-table3-data` carry identical data.
+
+### Verified clean — recorded so a later pass does not re-flag
+
+`rivin-concavity-one-tetrahedron` (`Λ′ = −log|2 sin t|`, `Λ″ = −cot t`, and
+the at-most-one-negative-cotangent argument all correct);
+`sl2-period-conserved-quantity` + proof (`H_{n+1} − H_n = 0` symbolically,
+`λ₊ = e^θ`, and the fork correctly scoped to constant-τ `det = 1`);
+`shared-denominator-cusp-holonomy` (only "exact initial seed values"
+overstates — the recomputed seed distances 0.4004–0.9148 match the block's
+own "0.4–0.9"); and the `skein-polynomial-transfer-matrix` degree table, all
+6 rows, `A²−1` and `C(A,2)` both correct at A = 2, 3, 4, 14, 56, 210.
+Checked and found **not** a defect: "north foundry" is established corpus
+terminology (`def:q-reeb-flow-on-color-coords`).
+
+
+## From agent:g00 (nuclear-interactions gq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 4 inline fixes, 15 trap fails.
+
+### An impossibility, proved from a standard formula
+
+**G00-1. `bring-z5-descent`: the quotient cannot be a genus-2 hyperelliptic
+curve.** The block states that `𝓑_Br/⟨τ⟩` is one. Riemann–Hurwitz,
+`2g_X − 2 = n(2g_Y − 2) + Σ_P(e_P − 1)` with `g_X = 4`, `n = 5`, and every
+ramification index 5 (the order is prime, so a fixed point is totally
+ramified):
+
+| `g_Y` | required `Σ(e−1)` | fixed points | |
+|---|---|---|---|
+| **0** | 16 | **4** | the unique solution |
+| 1 | 6 | 3/2 | impossible |
+| 2 | −4 | −1 | impossible |
+| 3 | −14 | −7/2 | impossible |
+
+**The quotient is `ℙ¹` with four branch points.** Recomputed independently
+in the coordinating session. The block's other two claims — six Sylow
+5-subgroups, and `y² = x⁵ − 1` having genus 2 with a `ℤ₅` automorphism —
+are both **correct**; only the descent between them is impossible.
+
+### A non-degeneracy claim its own sibling refutes
+
+**G00-2. `confinement-frobenius-reciprocity`** asserts "the Markov trace
+`tr_M` is a non-degenerate Frobenius form on `H_n(q)`". Its own
+interpretation sibling and `MarkovGramDegenerate.lean` say `det G = 0`
+exactly under the canonical convention D. Route: solving the three Markov
+conditions for `H₃` at `z_D = q³/(q²+1)` gives `y_(1³) = 0` **identically**,
+so the `(1³)` block *is* the radical. Consistency check: `6 − 1 = 5 =
+Catalan(3) = dim TL₃`, which is exactly the expected quotient
+`H_n/rad ≅ TL_n`.
+
+### Withdrawn numbers still in circulation
+
+**G00-3.** Three blocks carry figures formally withdrawn on 2026-08-09 as
+convention-C artifacts at a superseded pin. `b3-local-minimum` keeps
+"a negative eigenvalue ≈ −0.956", which `toffoli-lp-stability-proof`
+withdraws **by value**. `confinement-operator-selection.witness.json` is
+`z = 0.4993203340335982` (convention C) at `q0 = 1.1099785955541805` (old
+muon) with `gram_det = −0.1892052530713217` — the determinant
+`confinement-nucleon-unit` withdraws by value on both counts. Two tables and
+an interpretation block's normal forms are all generated from it.
+
+**G00-4. A block that contradicts itself within one page.**
+`confinement-lp`'s Caveat says "the Gram matrix acquires a negative
+eigenvalue"; its Quadratic-extension section, updated 2026-08-09, withdraws
+that indefinite reading and states the form is **positive semidefinite,
+signature (5,0,1)**. The 2026-08-09 pass fixed one section and left the
+other. The (5,0,1) signature was confirmed independently.
+
+### Witnesses that pass while missing
+
+**G00-5. `borromean-axial-coupling.witness.json` reports `allPassed: true`
+while missing by 21.6 %.** Its `g_A` assertion computes **1.0** against an
+expected **1.2754** (PDG 2024) — admitted by `tolerance: 0.5`. It is also
+`q0Anchor: "muon"`, undisclosed in the prose. Its LP-dual field set is
+complete and correct (gap 1.4e−15).
+
+**G00-6. A number sourced to a witness that does not contain it.**
+`beta-decay-energy-scale` says "From the witness: `Δ(net) = −0.188291`". The
+string occurs nowhere in `computations/`, and neither cited witness carries
+it. It exists only in this block.
+
+**G00-7. A table column with no source.** `confinement-operator-selection`
+Table 1's `tr_M` column has no corresponding witness field — the witness
+carries `crossing_energy`, `n_demand`, `demand_magnitude` and no Markov
+trace — and the column does not scale from `crossing_energy`. **Table 2
+breaks its rank-2/3 tie on that unsourced column.** Table 2's `.ts` also
+carries no `computation` field.
+
+**G00-8. A witness that under-covers a 3-clause proposition.**
+`bar-involution-invariance` is `status: "verified"` against
+`brundan-kleshchev-audit.witness.json`, which is `allPassed: true` but whose
+assertions cover **clause (1) only**, plus generic Burnside/centre/JM
+checks. Nothing tests clause (2) or (3).
+
+**G00-9. A solver claimed but deprecated.** `confinement-misdp`: "We solve
+this MISDP via continuous SDP relaxation combined with branch-and-cut." The
+only such code is under `computations/_deprecated/`, and the block has no
+`computation` field.
+
+### Mathematics
+
+**G00-10. The SEMF factor 4, dropped in two displays whose conclusion is
+right.** `beta-stability-interpretation`'s final formula
+`p = A/(2 + a_C A^{2/3}/(2a_A))` is the standard, correct
+valley-of-stability result. But `∂/∂Z` of `−a_A(A−2Z)²/A` is
+`4a_A(A−2Z)/A`, and as printed the stationarity condition and the "Solving
+for p" line carry `a_A` — yielding four times the wrong correction. Restore
+the 4 in both intermediate displays; the conclusion needs no change.
+
+**G00-11. An LP/SDP bound stated backwards, twice.**
+`confinement-sdp-vs-lp`: "the LP provides a lower bound on the SDP". The SDP
+is `min_{Φ⪰0}⟨T,Φ⟩`, and restricting Φ to diagonal *shrinks* the feasible
+set, so LP ≥ SDP — an **upper** bound. The `.ts` tag `lp-relaxation` inverts
+it the same way: diagonal restriction is a restriction, not a relaxation.
+Same block: "the rank-1 restriction `Φ = diag(x)`" — `diag(x)` has rank equal
+to its nonzero count; and "for most baryonic configurations the Wedderburn
+decomposition has 1-dimensional blocks" is false for the baryon case itself,
+where `H₃` has dims 1, **2**, 1 and the 2-dimensional `(2,1)` block carries
+the isospin singlet's entire weight.
+
+**G00-12. The wrong Borromean word.** `atomic-lp-stability-dressing` writes
+"the Borromean braid `(σ₁σ₂)³`". That is the **full twist**, which is the
+identity in the 2-dimensional irrep and closes to the (3,3)-torus link. The
+corpus-canonical word — used by four blocks in this same batch — is
+`(σ₁σ₂⁻¹)³`, which is **not** scalar in that representation. So the
+algebraic fact holds only of the wrong word, and the dressed ratio's stated
+mechanism rests on the mis-identification.
+
+**G00-13. An underived literal, with an arithmetic theorem on top of it.**
+`bareAnnihilationRatio := 0.537` appears in two blocks and
+`atomic_lp_stability.lean`, and **nowhere else in the corpus**. Nearest
+closed form is `q⁻⁶ = 0.53470` (−0.43 %); `q^{−x} = 0.537` needs
+`x = 5.959`. Under the Lean's own stated `(q,−q⁻¹)` vs `(q⁵,−q⁻⁵)` channels
+the bare ratio should be `q⁻² = 0.81165` — and the *dressed* `q⁻¹⁰ =
+0.352252` **does** follow that rule and matches to 3 dp (and discriminates
+the pins: 1.1097 would give 0.3531). The sorry-free
+`annihilation_ratios_distinct` proves `0.537 ≠ q₀⁻¹⁰`: arithmetic on a
+literal with no derivation. Same file carries the **old muon pin**
+`(1.109978595554181 : ℝ)`.
+
+**G00-14. A minimality claim with an unstated restriction.**
+`box-braid-irreducibility-proof` §(iii): "no alternative mediator with fewer
+crossings exists on the Bring's surface", while placing `T_{3,4}` on that
+same surface — and `c(T_{3,4}) = min(8,9) = 8 < 10`. True only under the
+flavour-changing restriction asserted one sentence earlier, which the claim
+does not carry.
+
+### Structure and notation
+
+**G00-15.** `atomic-braid-mass-crossing-locality-cpt-intro` roadmaps a
+section that moved: 4 of 8 named items are not in §8, three now live in
+`mass-theory/`, and "crossing-graded mass expansion" exists nowhere.
+`atomic-braid-mass-intro` has the same over-scope. By contrast
+`branching-qvalue-intro`'s "§8" citation **checks out** — a §3b insertion
+makes the manifest's §7 render eighth.
+
+**G00-16.** `color-pairing-binding` cites "the degree-2 amplification ratio
+`A₂/A₃`" while its table names its integrals `I₃, I₂, I₁, I₀`; no `A_k` is
+defined. `beta-stability` uses `p` for the proton count, which the notation
+register reserves for the brane point (`Z` is the proton count) — and writes
+`L = Z𝔭 ⊕ N𝔫` correctly one line earlier. `confinement-frobenius-
+reciprocity-interpretation` item 1 ends `))**.**`, a bolded full stop.
+`bar-involution-invariance-proof`'s section headed "Worked example: n = 3"
+contains no n = 3 data, and part (3) has no closing `□`.
+
+**G00-17. Flagged, not asserted.** `anyon-observation-collapse` assigns
+*abelian* anyons to generic q and *non-abelian* to `q = e^{2πi/k}`. The
+standard reading is the reverse for genericity, while non-abelian anyons
+proper do require a root of unity. The agent could not adjudicate from the
+block and said so rather than guessing — the right call, recorded as such.
+
+### Verified clean — recomputed, do not re-flag
+
+`archimedean-remainder-exponential-decay`: every numeric reproduces,
+including the **exact** identity `Ce^{−cN} = ℏ^{2(N+1)}/(1−ℏ²)` with
+`c = −2 ln ℏ_q`. `branching-identity-isospin-weights`: every claim
+re-derived from scratch — and its 20-digit `0.24729788674803459841`
+back-solves to `q₀ = 1.10997858275138080751`, **the proton pin carried
+beyond its own 17-digit float64 literal** (not muon 0.24729788615, not
+1.1097's 0.24731078). `box-braid-irreducibility[-proof]`: `c(T_{3,5}) = 10`,
+braid index 3, `dim H₃ = 6`, `ℓ(w₀^{S₃}) = 3`, Bring genus 4, Borromean
+Brunnian minimality all correct. `confinement-sdp-spectral-gap`:
+`q + q⁻¹ = 0 ⟺ q = ±i`, exactly where the eigenvalues `q, −q⁻¹` collide —
+the deconfinement claim is right. `wigner-su4-alpha-cluster-probe`:
+`4⊗4 = 6⊕10`, `4^{⊗3} = 4⊕20^{⊕3}` (64), p-shell holds exactly 12, and
+`8G = 7.32772475341775 = 2V_oct = Vol(𝓑₃)` exactly.
+`beta-stability-interpretation`'s accuracy claim is if anything
+**pessimistic**: over a 30-nuclide stable sample (C-12 → Bi-209) the formula
+gives mean `|Δn| = 0.62`, max 1.92, against a quoted 1.4.
+
+**G00-18. Recorded as a positive.** `colour-tube-floor-overshoots-deuteron`
+declares its figures provisional and uncomputed in its own prose and `.ts`,
+and grep confirms `2.29580` appears nowhere in `computations/`. The
+declaration is accurate. This is the model of the discipline, and is
+recorded so it is not mistaken for a missing-witness defect by a later pass.
+
+## A Lean nucleon-mass definition built on convention C, at a fifth q₀
+
+Found in the coordinating session while chasing the skein-convention
+question into the Lean tree (`qou-hey2`), and **not** a new open item — the
+μ_u/μ_d provenance question is already `qou-37y0`, and
+`observations/dressed-quark-numerology-at-q0` names the concern in its own
+title. What follows is measurement to attach to those.
+
+[`knots-particles-confinement/knot-particle-generation.lean`](../content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean)
+defines
+
+```lean
+noncomputable def q_substrate : ℝ := 1.10997        -- line 34
+noncomputable def mu_up   : ℝ := 311.10             -- "from CODATA nucleon masses"
+noncomputable def mu_down : ℝ := 312.39             -- "from CODATA nucleon masses"
+noncomputable def pairSkeinMass (mu_a mu_b : ℝ) : ℝ :=
+  (q_substrate * mu_a + (1 / q_substrate) * mu_b) /
+  (Real.sqrt q_substrate + 1 / Real.sqrt q_substrate)
+noncomputable def mass_proton_qou  : ℝ := skein_uu + 2 * skein_ud
+noncomputable def mass_neutron_qou : ℝ := 2 * skein_ud + skein_dd
+```
+
+Four measurements:
+
+1. **`q_substrate = 1.10997` is a fifth q₀ spelling** — a 6-digit truncation,
+   distinct from the proton pin, both muon values, and the `1.1097` error.
+2. **The denominator is exactly convention C.**
+   `1/(√q + 1/√q) = 0.4993203342 = z_C`. The excised Markov convention sits
+   inside a nucleon-mass definition in Lean.
+3. **Code and docstrings disagree on q.** The docstring values 312.370 /
+   312.950 / 313.665 reproduce at the **proton pin** (312.369815 /
+   312.950118 / 313.665081); at the file's own `q_substrate = 1.10997` they
+   are 312.3637 / 312.9442 / 313.6590.
+4. **The two μ values coincide with an exact inversion of CODATA to 5
+   significant figures.** Solving `(m_p, m_n)_CODATA → (μ_u, μ_d)` through
+   this same formula at the proton pin gives **(311.1012512,
+   312.3893261)**, against the file's (311.10, 312.39). Whatever their
+   provenance, `mass_proton_qou` cannot be read as a test of anything.
+
+On provenance the corpus is not silent, and the two accounts differ:
+`flavor-dressed-mass-from-substrate-split` derives the *difference*
+`μ_d − μ_u` from q₀ and `M_N` and says the individual masses "are then
+pinned by the baryon-content sum-rule", while this Lean file's docstrings
+say both come "from CODATA nucleon masses". Those are compatible only if the
+sum-rule's scale is itself CODATA-set. Not adjudicated here; attached to
+`qou-37y0`. Note also that these are **absolute nucleon masses in MeV**,
+which the 2026-08-11 excision removes as framework predictions regardless of
+how the μ are obtained.
+
+
+## From agent:g01 (nuclear-interactions gq_01) — 2026-08-22
+
+45 blocks, 450 verdicts, 7 fixes, only **8 trap fails** — the prose in this
+chapter is clean, and the batch's value is the mathematics under it.
+
+### Two typed-crossing relations, settled by the chapter's own table
+
+**G01-1/2.** `tbl:ground-state-ordering-table1-data` is self-consistent and
+gives the crossing operators' spectra. Cayley–Hamilton then forces both
+relations, and both are printed wrong. Recomputed independently:
+
+| | trace | det | forced relation | block prints |
+|---|---|---|---|---|
+| `C_nn` (eigs `{q⁻¹, −q}`) | `−h` | `−1` | **`C_nn² = 1 − h·C_nn`** | `h·C_nn + 1` |
+| `C_pn` | `0` | `−(1+h²/4)` | **`C_pn² = (1 + h²/4)·1`** | `h·C_pn + 1 − ¼h²` |
+
+`C_nn` has the sign of the linear term wrong. `C_pn` is wrong twice — there
+is **no linear term at all**, and the quadratic enters with a plus — and the
+following sentence inherits it. Two sibling blocks (`prop:demand-stability`,
+`ex:helium4-derived-nf`) already carry the correct minus form, so the
+chapter disagrees with itself.
+
+**G01-3. A proof's table violates the proposition it proves.**
+`prop:inductive-gb-reduction` bounds the normal-form count at
+`C(A−1, ⌊(A−1)/2⌋)` = 1, 3, 35, 6435 for A = 2, 4, 8, 16. The proof's table
+gives 2, 8, 32, 128 = `A²/2`, exceeding the bound at A = 2 (2 > 1) and A = 4
+(8 > 3). A *third* rate — "linear growth in the number of nucleons" — is
+asserted in `prop:demand-stability`.
+
+### A theorem and its own proof use different functionals
+
+**G01-4. `thm:groebner-shirshov-energy`.** The theorem defines
+`E = Σ|c_w|·ℓ(w)`; the proof's Part 3 computes
+`|c(q−q⁻¹)| + |c| − |c| = |c||q−q⁻¹|`, dropping `ℓ`. Carrying it,
+`ΔE = |c|[(q−q⁻¹)(ℓ−1) − 2]`, which is **negative for every ℓ < 10.5666** at
+the proton pin (`q−q⁻¹ = 0.2090602988`) — e.g. `−1.791|c|` at ℓ = 2, the
+shortest case. So "every Hecke step increases the total weight" is false
+under the theorem's own `E` and true under `Σ|c_w|`. Dropping the `ℓ(w)`
+factor makes theorem, proof and monotonicity consistent.
+
+### The Gram cluster — a dead witness, a wrong spectrum, and both conventions
+
+**G01-5.** `prf:confinement-topological` ends "**Witness:**
+`confinement-lp.witness.json`", which exists **only** under
+`computations/_deprecated/`. Worse, that witness does not reproduce the
+block's number: its `gram_eigenvalues` are six distinct nonzero values, while
+the block asserts a `{λ₊×3, λ_max, λ₀, λ₋}` structure with `λ₋ ≈ −0.855`.
+That value belongs to a **different** witness,
+`gram-h3-symbolic-regression`, whose spectrum computes to
+`{−0.85506726, 0.10179667, 0.85506726×3, 3.4769498}` — and which carries
+`q0 = 1.1099785955541805` (**old muon**) and `z = 0.4993203340335982`
+(**convention C**). Under canonical D the same spectrum is
+`{4.2303392, 0.7527021×3, 3.07e−17, −0.7527021}`: `λ₋` should read
+**−0.7527**, and **only under D is the block's own name "λ₀" literally
+correct** (it is 0.1018 under C).
+
+**G01-6.** The two witnesses a sibling block claims to have cross-verified
+"to 1e−16" are **different matrices** — `G[0][1]` is 0.4993 (C) against
+0.6127 (D), an entrywise gap of 0.113. Under D the recorded
+`gram_determinant` is 3.998e−17, i.e. numerically **zero**, which would
+refute that block's clause 3 (`det ≠ 0`) — the known D-singularity, bean
+`qou-cds2`. Also: `gram-matrix-h3-symbolic.ts`'s authorNote says "the main
+theorem is positive-definiteness for u > 1", while the Lean says
+`det(G(u)) = −(strictly positive) ≠ 0` and the theorem proved is `det ≠ 0`;
+a PD 6×6 has positive determinant, and two sibling blocks correctly state G
+is *not* positive definite. And the `.ts` `computation.script` names
+`gram_matrix_dual.py` where the file is `gram-matrix-dual.py`.
+
+**G01-7. Right value, wrong name, again.** `gram-matrix-dual.py:45` *prints*
+`z = 1/(q^½+q^{−½})` — the convention-C spelling — while *storing*
+`z_D = 0.6126880371464652`. Same shape as the `Vol(4₁)` class: the
+arithmetic is canonical, the label is not.
+
+**G01-8. RETRACTED by the agent, and the retraction is the finding.** It
+first reported a (3,4) transposition bug in both witnesses: Cauchy–Schwarz
+is violated there (`|G₃₄| = 1.2197 > √(G₃₃G₄₄) = 0.3646`) and swapping
+restores an all-positive spectrum with `det = +0.18920521914`. That reading
+is **wrong**. `gram-matrix-dual.py:151–154` builds `G[i,j] = tr_M(b_i·b_j)`
+with **no anti-involution** — the indefinite Frobenius *trace form*, not an
+inner-product Gram matrix — so a negative eigenvalue and a CS failure are
+*expected*, not defects. The corrected entry supersedes the original on all
+ten criteria. Worth keeping as a general caution: "Gram matrix" in this
+corpus does not imply an inner product.
+
+### The interface band — wrong reduction, better verdict
+
+**G01-9. `prop:interface-band-between-isospin-weights`.** The upper
+separation is stated as "equivalent to `q⁵ < q²+1` … holds for
+`q < 1.193859`". Under D, `z(q+q⁻¹) = q²` identically, so `z < μ₊` reduces
+to **`q⁵ − q⁴ + q³ − q² − 1 < 0`**, threshold **1.249851589** (both roots
+recomputed). Direct evaluation confirms the gap: at q = 1.21 and q = 1.24,
+`z < μ₊` is TRUE while `q⁵ < q²+1` is FALSE.
+
+**The conclusion is unaffected and strengthened.** Both separations still
+hold at q₀, the upper is still the tighter, and the margin is **12.601 %**
+rather than 7.56 %. What must change is the sentence claiming that "moving q
+upward past 1.193859 closes the upper separation" — it names a q at which it
+still holds.
+
+**G01-10. Everything else in that block checks exactly**, and two structural
+facts fall out that the block does not state: **`μ₋ + μ₊ = 1` exactly**
+(verified to 20 digits — it makes both separations one statement), and
+`μ₊ = 0.75270211325196540159` *is* the D-convention Gram eigenvalue
+`0.7527021132519656`.
+
+### A genus set, refuted by its own sibling
+
+**G01-11. `rem:hyperelliptic-z5-classification-interpretation` item 2** gives
+"genera `g ∈ {4,5,6,…}`". An order-5 automorphism of `ℙ¹` has exactly two
+fixed points, so `|Branch| = 5a + ε` with `ε ≤ 2`, and `|Branch| = 2g+2` is
+even. `g = 6` needs `|Branch| = 14`; none of 14, 13, 12 is divisible by 5.
+Attainable: **{2, 4, 5, 7, 9, 10, 12, …}**, so the text should read
+{4, 5, 7, …}. Derived independently, then confirmed against the chapter's
+own `prf:hyperelliptic-z5-classification`, which states
+`|Branch| ∈ {0,1,2,5,6,7,10,11,12,…}`. The remark's own g = 4 example is
+correct.
+
+### A mechanism stated backwards, and a norm that is not one
+
+**G01-12. `prop:gram-weighted-qvalue`.** With `‖δ‖_F = √|Σ λ_α c_α²|`,
+domination by the **negative** eigenspace makes the magnitude **large**, and
+*balanced* projections **cancel** to a small one. The block asserts the
+reverse in both directions, and `rem:gram-weight-eigenstructure` repeats the
+inversion. The empirical ordering may well hold; the stated explanation does
+not. Both blocks also call `‖·‖_F` "the Frobenius norm induced by the Gram
+matrix" while stating that G is indefinite — so `‖δ‖_F²` differs from the
+displayed `δ·G·δ` exactly when that is negative.
+
+### Calibration-doctrine violations
+
+**G01-13.** `energy-scale-planck`'s calibration table assigns **H⁰/H¹/H²
+degrees** to m_e, m_μ/m_e, Q_β. AGENTS.md is explicit and STRICT: the three
+calibrations are the three real DOF of the **single** `H¹(Bring) = 2W`,
+"not three distinct degrees". Same block: **Q_β is labelled CAL-3**, where
+the 2026-06-26 ruling makes CAL-3 = `𝔇_π` (proxy m_π) and Q_β the **CAL-2**
+proxy; and "CAL-2 (q₀)" is loose, since CAL-2 is `𝔇_β`, which *fixes* q₀.
+
+**G01-14. The same formula, two values, neither matching the printed
+inputs.** `Q_β/|Δnet|` is given as ≈4.155 MeV in one section and ≈4.179 in
+another; the block's own `0.782/0.188 = 4.1596`. Back-solving, 4.155 needs
+0.188207 and 4.179 needs 0.187126. The choice is **load-bearing**: the 0.74 %
+gap the block computes uses 4.155; with 4.179 it would be 0.17 %. The same
+block also reports "the 1 % residual between `E₀` and `m_e c_q² ℏ_q`" — a
+residual between a quantity and its own boxed definition.
+
+**G01-15.** `tbl:hydrogen-derived-nf-table2-data` presents an **absolute
+mass** total ≈938.8 MeV built from a Borromean-volume term — forbidden as a
+framework prediction by the 2026-08-11 excision. Its arithmetic is fine
+(`938 + 0 + 0.511 + 0.3 − 1.36e−5 = 938.811`; `Vol(𝓑₃) = 7.328` ✓;
+`Vol(T_{2,3}) = 0` ✓).
+
+**G01-16. §7a violation with an entrenched counter-convention.**
+`conj:hecke-anyonic-substrate` writes the generator `T_{s_i}` and the
+relation `(T−q)(T+1) = 0`; §7a is STRICT on `σ_i` and
+`(σ_i−q)(σ_i+q⁻¹) = 0`. Its sibling `thm:groebner-shirshov-energy` uses the
+§7a form, so the two disagree. Flagged for an owner/ontologist call rather
+than fixed: the Lean ref `QOU.IwahoriHecke.Tw.*` suggests `T_w` is
+entrenched on that side.
+
+### Self-contradiction, structure, and unresolved
+
+**G01-17.** `prop:delta-pre-archimedean` — "the choice of which order to use
+is an **expository convention**" against its own final section,
+"**Necessity** of the ordering for binding".
+`rem:confinement-topological-interpretation` — opener "Confinement is
+topological, **not** energetic" against its own closer "Confinement is
+topology **plus** action minimization", and the `.ts` title agrees with the
+closer.
+
+**G01-18.** `conj:geom-universality`'s bold lead declares it "conditional on
+hyperbolic volume transcendence" — which appears nowhere in the properties,
+the three steps, or `uses[]`. `ex:hydrogen-derived-nf` has a render defect:
+two `\xrightarrow` arrows back to back with no node between them.
+`ex:helium4-derived-nf`'s atom coefficients sum to **1.888** against a
+printed net of 1.889 (its hydrogen sibling sums exactly, so the difference is
+worth confirming), and its Markov traces "1.037 versus 1.230" appear nowhere
+else and cite no witness. `rem:e-minus-one`'s `.ts` title says `E_{−1}` while
+the `.md` writes `𝒮_{−1}` throughout, and bare `E` is deprecated (§7aa).
+`descent-mirror-intro.md` is **empty (1 byte)**.
+`intro-pair-production-anyon.ts` is a bare `export default prose();` with
+**no label**, unlike its sibling section intros.
+`conj:cpt-orbit-closure-density`'s "correctness of the fold involution" is
+four unconnected assertions followed by "Thus", and its `ρ_F`, called a
+packing *density*, takes values in mass units.
+
+**G01-19. Reported as unresolved, not as an error.**
+`prop:generator-volume-decomposition` has `V̂_i = z·a_i + b_i`, linear in the
+convention-dependent `z`, and names neither C nor D — 23 % apart at q₀. The
+agent could not determine which applies from the block and said so.
+
+**G01-20. "|Δnet| = 0.004, an order of magnitude worse"** — the comparison
+target is 0.000, so no ratio is defined, and the block's own next bullet puts
+every other word above 0.01, making 0.004 **2.5× better** than that floor.
+
+### Checked and clean — named so a later pass does not re-flag
+
+`rem:groebner-reduction-methods`'s reproducibility claim **stands**: bean
+`qou-f9th` ("certificate corpus is not reproducible") was **retracted**
+2026-08-15 — the 2-adic denominators are exactly `2^pn_count` and the
+apparent failure was catastrophic cancellation (log₁₀ cond up to 359 for
+⁶⁰Co). All four named Rust engines exist. `conj:geom-universality`
+**avoids** the §7b recurring failure mode: Bloch–Wigner is scoped to
+hyperbolic knots and torus knots handled separately with Vol = 0.
+`prop:content-keyed-interface-refuted` and the two interface blocks are
+**model (b)-scope refutations** — invariant named, non-excluded alternatives
+named, anti-fit risk on the proposed repair flagged.
+`prf:hyperelliptic-z5-classification` re-derived end to end and correct
+throughout. `(σ₀σ₁⁻¹)³` confirmed Borromean by closure permutation.
+`energy-scale-planck`'s `E₀ = m_e/(q(q−1)) = 4.185981 MeV`, amplification
+`−11.09268`, `σ = 13.533 ppb`, `ℏ_q²/(1−ℏ_q²) = 0.9915 %` all verify —
+and a **useful pin-negative**: at 4 printed digits `E₀` cannot discriminate
+proton from muon (both 4.185981), while the erroneous 1.1097 would give
+4.197665, so that value is demonstrably not in use.
+
+
+## From agent:h00 (mass-endomorphism hq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 4 fixes. **`trap-superlative` was again the top
+failure (9 of 45), and again 7 of the 9 attach to a claim the block's own
+witness, sibling, or arithmetic refutes.** Three consecutive batches with
+that shape — the axis is functioning as a defect detector, not a style one,
+and that is worth knowing when reading its counts elsewhere.
+
+### A block that declares D and prints C, with a decisive independent check
+
+**H00-1. `markov-trace-axiomatic-closed-form`.** Re-derived the closed form
+in sympy from the block's own recurrence at the proton pin:
+
+| | tr_M | ρ_p |
+|---|---|---|
+| convention C | **1.63315337744905357** (printed) | **1124.2973** (printed 1124.3) |
+| convention D (canonical) | 1.88431946725497488 | 974.437 |
+
+15.38 % apart. **The denominator settles it without touching the numerics**:
+the exact denominators are `q⁸(q+1)` under C and `q⁷(q²+1)²` under D, and the
+printed `q¹⁰(q+1)³` carries a `(q+1)` power **D cannot produce**. It matches
+neither, so the printed form is not simply a C leak but a third thing.
+
+Its sibling `markov-trace-recursive-reducer` prints **1.884319** — the D
+value — for the *same* word `σ₁⁷σ₂⁴` under the *same* declared convention,
+and that sibling's `.ts` documents this exact failure mode in its own words:
+*"A block citing a witness that disowns itself is how the convention-C values
+reached this proposition's table."* The fix was applied to the reducer and
+not to this block.
+
+### Verified against a witness that refutes it
+
+**H00-2. `markov-trace-antipode-polynomial-symmetry`** is `status:
+"verified"` against `probes/poly-q-proof.witness.json`, which records
+`max_relative_diff_across_q = 7.888` and, at q₀,
+`tr_M_numeric = 1.6331533774490408` against
+`tr_M_pr546_closed_form = 0.43313389325191254` — a factor of ~3.8. The only
+field the witness confirms is `anti_self_reciprocal_proved`. The polynomial
+identity `q²⁰p(1/q) = −p(q)` **is** correct (re-derived). What the witness
+refutes is the *identification* `p(q)/(12q¹⁰) = tr_M(𝓑_p)`. A true lemma
+carrying a false attribution — the same shape as the defined-residual rule.
+
+**H00-3.** Same block: "shift(K) … equals 18Z + 21N + 1" gives 19 at (1,0),
+but the block's own denominator `12q¹⁰` and its own `deg_q p = 2·shift`
+require **shift = 10**. 19 is the *u*-coordinate pole order, from a different
+block. It also calls `H_n(q)` a Hopf algebra (it is not; `U_q(sl_n)` is) and
+places `𝓑_p` in `B₃` against the cited proposition's `n = 3A + Z = 4`.
+
+### A bolded claim beside the cell that refutes it
+
+**H00-4. `categorical-chain-convergence-mechanisms-table-data`** bolds
+"clears 1 ppb" next to its own cell reading **0.0094 ppm = 9.4 ppb**. From
+the parent's own bound `|R_N| ≤ ℏ_q^{2(N+1)}/(1−ℏ_q²)` at the proton pin (40
+dps): N=3 → **9.38065 ppb**, N=4 → 0.0921 ppb. **Every printed value
+reproduces the bound exactly** — only the annotation is wrong, and the same
+error is in the parent prose. Useful negative: this table cannot discriminate
+the pins (proton and muon both give 9914.52 ppm at N=0).
+
+**H00-5. A table row contradicts the Lean it names.**
+`chi-v3-closed-form-proof-table-data` says the polynomial part "vanishes at
+q=1"; `chi-v3-closed-form-proof.lean:172–177` computes
+`chi_V3_polynomial_part 1 = −1/4` from `−(q⁵+q³−q)/4`. The row is also
+internally impossible: the geometric part is 1/4 and the total is stated 0.
+
+**H00-6. A table contradicts its own headline equation.**
+`mass-endomorphism-conjecture` asserts `tr_M(Φ^trans) = Vol(K)/ℏ_q² − |tr_M|`.
+For the trefoil the block itself states `Vol = 0`, giving **−0.551**; the
+table prints **+111.86**, which is `Li₂(q⁻²)/ℏ_q² = 111.8955` — the vacuum
+drag. So the *row* is right and the *equation* does not cover it, unremarked.
+The 4₁ row is 0.4 % off: `Vol(4₁)/ℏ_q² = 206.7683` (206.5863 after
+subtracting `|tr_M|`) against a printed 207.40, which back-solves to
+`Vol(4₁) = 2.03787` rather than 2.0298832.
+
+### Mathematics
+
+**H00-7. A failure locus that omits the odd-order roots.**
+`hecke-baer-star-generic`'s boxed set `{q : q^{2k} = 1, k ∈ 2..n}` is right;
+its "equivalently … primitive 2k-th root … `{ζ₄, ζ₆, …, ζ_{2n}}`" is not.
+**Counterexample `q = ζ₃`**: `ζ₃⁶ = 1` puts it in the box at k = 3, and
+`[3]_{ζ₃} = 0` directly — but ζ₃ is not a primitive 2k-th root for any k.
+Correct enumeration: d even with `4 ≤ d ≤ 2n`, **together with** d odd with
+`3 ≤ d ≤ n`.
+
+**H00-8. A regime that excludes nothing.**
+`hecke-branching-trace-decomposition-proof`'s "Wenzl positivity regime" is
+`q^{1/2} + q^{−1/2} ≥ 2`, which by AM–GM holds for **every** `q > 0`, with
+equality only at q = 1. At q₀ it is 2.0027223639. Note the agent's care here:
+`1/(q^{1/2}+q^{−1/2}) = z_C` exactly, but it is used as a positivity
+inequality and **not** as a Markov parameter, so the block is **not** read as
+convention-C-dependent. That distinction is the right one.
+
+**H00-9. A step whose stated reason is checkably wrong.**
+`hecke-baer-star-generic-proof` Step 1: under `q ↦ q⁻¹`, `q ↦ q⁻¹` and
+`−q⁻¹ ↦ −q`; neither is the other member of `{q, −q⁻¹}`. The map that swaps
+them is `q ↦ −q⁻¹` — the *other* involution, and the one that induces
+`λ ↦ λ′`. Scope **(a)**: the justification fails; the conclusion may still
+hold. The same proof assumes algebraically-closed `R` against a
+characteristic-0-field hypothesis, and calls `d_λ` the isotypic dimension
+where it is `dim V_λ`.
+
+**H00-10. Another wrong braid word.** `bring-embeddable-knots-table-data`'s
+5₂ row gives `σ₁²σ₂⁻¹σ₁σ₂⁻¹`, whose closure has `Δ = −(1−t)³` with
+`Δ(1) = 0` and permutation product (13) — a **2-component link**. The correct
+word is `σ₁²σ₂²σ₁σ₂⁻¹`, `Δ = 2 − 3t + 2t²`. Verified with
+`braid-alexander.ts`. That is the third wrong braid word this campaign, all
+found by computing the closure rather than reading the label.
+
+**H00-11. A spectral sequence assembled from mismatched parts.**
+`gb-spectral-sequence` asserts `d∘d = 0` for `d = d_H + d_F + d_YB`
+(rewriting rules) and cites a classical theorem about the **Hochschild**
+differential, introduced two paragraphs later, with nothing connecting them.
+Also: "each rule lowers filtration degree" is false for `d_F` and `d_YB`
+(both preserve word length); "bounded below" and "exhaustive" are swapped
+(the second is separatedness); `tr_M` is typed `→ ℂ` against the proof's own
+"values live in R"; and `E_∞^{p,q}` uses `q` as a bidegree.
+
+**H00-12. A circular trace and an unsupported value.** `mass-identity-su2`
+defines `tr(φ) = (∫_A ⊗ id)∘Δ∘φ`, then applies `(∫_A ⊗ id)∘Δ` **twice** in
+the mass formula. "Integrating this character … yields `𝔪(ϱ) = 1`" is
+asserted with no computation, and the naive Haar integral of `χ_{1/2}` is
+**0** by orthogonality. It also reuses `\varTheta`, reserved for the QOU
+tuple, as the SU(2) rotation angle.
+
+**H00-13. One wrong factor in an otherwise exemplary block.**
+`markov-z-reconciliation` says the two parameters "differ by a factor of
+`q − 1`"; the actual ratio is `z_J/z_m = (q−1)z_m = 0.0549145`, not
+`q − 1 = 0.1099786` — out by `z_m ≈ ½`. The block's own Relation section
+gives it correctly.
+
+### Structure
+
+**H00-14.** `homological-shell-condensation` is `.ts` kind **`proposition`**
+with tag `open-problem`, `.md` headed "**Proposition (Conjecture — …)**", and
+a sibling saying "this remains conjectural" — neither the `conjecture` kind
+nor the §3b-cond exception. Everything downstream inherits the provable kind.
+Its interpretation sibling also claims magic numbers are "the only nucleon
+counts" (sub-magic 6/14/16/32/34 show observed kinks; 126 is neutron-only),
+asserts a biconditional on a one-directional argument, and omits n = 28 from
+both of its own lists.
+
+**H00-15. The dangling boilerplate banner, now ×3 in one chapter.**
+`hecke-algebra-type-scaffold`, `hecke-branching-trace-decomposition` and
+`markov-trace-operator-construction` all **end** on "**Archimedean
+specialisation.** What follows sits on the archimedean side…" with nothing
+following, and the three copies have already drifted in wording.
+(`mass-identity` has the good, block-specific version.) This is now the
+fourth and fifth instance across the campaign.
+
+**H00-16. Count mismatches (3):** "**two** partial mitigations" followed by
+three items; "**three** stages" followed by four; "M1–M4" against a sibling
+proposition's three axioms. **Sweep damage:** `mass-identity-C-proof` carries
+`\[yekutieli2015]` twice, where its sibling shows the correct `\cite{}` form.
+**A chapter-wide `is → forms/provides/constructs` substitution**: ~8 sites in
+`gb-spectral-sequence` alone plus singles across seven other blocks; three
+unambiguous ones fixed, the rest flagged as a single pass so a partial fix
+does not leave the register inconsistent.
+
+**H00-17. Retraction.** The agent first read the 4₁ transient row (207.40) as
+a plain arithmetic error; on recheck it is 0.4 % off, not grossly wrong, and
+the substantive defect in that table is the **trefoil** row (H00-6) where the
+equation genuinely does not apply. Reported that way.
+
+### Verified clean — do not re-flag
+
+`markov-trace-recursive-reducer` (both table entries re-derived exactly under
+D: proton 1.88431946725, neutron 1.46403413634; its witness carries 9 real
+all-passing assertions with `closed_form::σ_1 = z_D` exactly);
+`markov-z-reconciliation`'s `z_m`/`z_J`/`z_−` and its Ocneanu weight formula,
+which reproduces the D weights `[4]_q/[2]_q³`, `1/[2]_q²`, `0`
+**symbolically**, with `Σ dim·w = 1` under both conventions;
+`markov-trace-axiomatic-closed-form-table1-data` (all 8 recurrence rows);
+`chi-per-irrep-cyclotomic-closed-forms-table{1,2}-data`;
+`markov-trace-antipode-polynomial-symmetry-proof`; `mass-geometric-drag`;
+`mass-identity-exists{,-proof}`; and the tower/Φ_q numerics of
+`mass-endomorphism-conjecture` (73.8875 / 94.2887 / 99.7474 / 99.9898 %;
+`Φ_q(0.989) = 671094`, `Φ_q(1) = 901389`).
+
+
+## From agent:i00 (predicted-spectra iq_00) — 2026-08-22
+
+45 blocks, 450 verdicts. Trap density is genuinely low — 22 of the 45 are
+extracted data tables with no prose — and the read paid off in the numerics.
+
+### Three build-fatal render defects — FIXED, and the obvious detector is wrong
+
+**I00-1.** Two ` ```tex ` fences opened and never closed
+(`helium-hopf-diagram` twice, `hydrogen-orbitals` once). Under CommonMark a
+**closing** fence carries no info string, so the second ` ```tex ` does not
+close the first: the block stays open and the rest of the file is raw
+passthrough, which aborts pdflatex.
+
+**Counting fences for parity does not catch this, and I wrote the parity
+check first.** It reported **zero problems corpus-wide** while both files
+were unbuildable, because `helium-hopf-diagram` had an *even* count (2
+openers, 0 closers). The correct check walks fences in order and flags an
+info-string fence seen while a block is open —
+[`content/pipeline/fence-close-check.ts`](../content/pipeline/fence-close-check.ts),
+now in the render battery. Corpus is clean under it: 3628 files, zero.
+
+**I00-2.** `integer-stability` carried `\mathrm*{argmin}`. `\mathrm` has no
+starred form; LaTeX errors and KaTeX rejects it. Fixed to `\mathrm{argmin}`
+(not `\operatorname*`, which the corpus bans).
+
+### The Λ-vs-Cl₂ swap, caught against its own Lean
+
+**I00-3. `clausen-function-mathlib-filler-table1-data` row 5** gives
+`Vol_Borromean = 8·Cl₂(π/4)`. Recomputed at 30 dps:
+`Cl₂(π/4) = 0.9818721511`, so `8·Cl₂(π/4) = 7.8549772084` — **7.20 % above**
+`Vol(Borromean) = 7.3277247534`. The correct identity is
+`8·Cl₂(π/2) = 8G = 16·Λ(π/4)`, which is **exactly what the Lean carrier
+says and proves**: `ClausenFunctionMathlibFiller.lean:139` defines
+`Vol_Borromean := 8 * Cl_2 (π/2)` and `CatalanValueBounds` proves it against
+7.3277247534. Row 3 of the *same table* gives `Catalan_constant = Cl₂(π/2)`
+correctly, so the table also contradicts itself. This is the AGENTS.md
+argument-swap class, and `qou-zdz5` tracks the corpus-wide drain.
+
+The agent's **self-retraction here is the instructive part**: its first
+recorded note asserted `8·Cl₂(π/4) = 7.3277` *without computing it* —
+i.e. it reproduced the very error it was auditing — and superseded that
+entry on all ten criteria after evaluating the Clausen function.
+
+### Three tables stale against a witness that now fails
+
+**I00-4.** `e-hartree-…-table2/3/11-data`.
+`computations/h2-molecular-binding.witness.json` currently records
+**`allPassed: false`**, `binding_Phi_diff = 0.12847273`,
+`E_bind_eV_predicted = 0.86453646`, and a failing assertion "H2 binding
+energy within 5 % of observed" (computed 0.8645 against expected 4.478 eV).
+`git show` dates the move to `4326460a4`, *"migration: batch to 116/254 at
+the proton pin"*; at `230cdd113` it read 0.687012518563036 / 4.623139099612237
+/ `allPassed: true`.
+
+The tables still carry the **pre-migration** numbers — table 3's column is
+explicitly labelled "Witness (numerical)" — and table 11's unlabelled "ratio
+to target" back-solves to a single consistent 0.1699 where the current
+witness gives 0.03177. **Everything is off by the same 5.35×**, which is what
+makes it staleness rather than arithmetic. Also: that assertion's *name* says
+5 % while its `tolerance` field is 0.25.
+
+**I00-5. A framework Hartree presented as the physical one.**
+`e-hartree-…-table2-data` prints `E_HARTREE 27.30 eV`. The table is
+internally consistent — `α_EM²/h⁴ = 0.0279636710` at the proton pin ✓,
+implying `1/α = 136.8232` and `m_e c²α² = 27.2961` ✓ — but 27.30 eV is
+**0.33 % above** the physical 27.2114 eV, unqualified, and the cited witness
+itself records `E_hartree_eV = 27.211467573` with CODATA `α_EM`.
+
+### Claims that do not follow
+
+**I00-6. A β-stability threshold formula that its parent's own model
+refutes.** `integer-stability-consequences` states
+`A_k = (a_C(2k+1)/(2a_A))^{3/2}`. Solving `p*(A) = k + ½` numerically with
+the normalisation the parent's `E(p,A)` implies gives
+**A₂₀ = 44.97, A₅₀ = 119.78, A₉₁ = 236.55** — the last correctly landing on
+uranium — against the stated **0.062, 0.240, 0.586**. The model itself is
+sound (`p*(238) = 91.98` vs Z = 92; `p*(208) = 81.98` vs Z = 82).
+
+Coefficient-free argument that the *shape* is wrong: `a_C > 0` forces
+`p* < A/2`, so `A_k > 2k+1` always, while the stated form falls **below**
+`2k+1` for any realistic `a_C/a_A`. **Second self-retraction:** the agent
+first proposed exponent 3 (the large-A limit); that fails too (0.031, 0.46,
+2.74), because `a_A` and `a_C·A^{2/3}` are comparable across the whole
+physical range (93 vs 27 at A = 238) — **neither** asymptotic limit is
+available, so no closed form of this shape is correct.
+
+**I00-7. A valley table disagreeing with its own columns in 4 of 7 rows.**
+`diophantine-valley-table-data`, n/p recomputed from its own p and n:
+Br **1.2571** (stated 1.10), Zr **1.2500** (1.20), Sn **1.4000** (1.30),
+W **1.4865** (1.40); Ca, Pb, U check. The recomputed sequence is also
+**non-monotonic** (Br 1.2571 > Zr 1.2500) although the table is ordered as a
+monotone crossing ladder, and the parent's model reproduces neither column.
+
+**I00-8. 4₁ called the Higgs boson**, in two blocks. The corpus says
+*field*: a sibling in this same chapter states "the Higgs **field** … is the
+figure-eight knot 4₁ … the Higgs **boson** excitation (≈125 GeV) is the
+torus link T(2,8)". Numerically decisive: `Vol(4₁)/ℏ_q² = 206.77 = m_μ/m_e`,
+not 125 GeV.
+
+**I00-9. An invalid link in an implication chain.**
+`hyperbolic-volume-transcendence` writes
+`irrationality ⟸ ℚ-linear independence ⟸ algebraic independence`. The right
+arrow is valid; the left is not as stated — ℚ-linear independence of a *set*
+does not make its members irrational unless 1 is adjoined (`{1/2, π, e}` is
+ℚ-linearly independent with a rational member). The sibling
+`implications-algebraic-independence` derives irrationality from *algebraic*
+independence, which **is** valid. Only the middle link needs "1 adjoined".
+
+**I00-10.** `helium-hopf-diagram` says the linking matrix `[[0,1],[1,0]]`
+"has rank 1"; `det = −1`, so rank **2**. The downstream arithmetic is
+independently correct. Not fixed — the intended claim may be about the
+linking *number*, which is 1.
+
+**I00-11. A block contradicting itself within a page.**
+`hydrogen-orbitals`: "photon absorption executes **a** Reidemeister I move …
+and increases the writhe by +2", against its own display three lines later,
+"`w → w+2` ⟺ **two** R-I moves", and against its sibling table. A single R-I
+move changes writhe by ±1, so the singular clause is the defect.
+
+### Notation and structure
+
+**I00-12.** `integer-stability` binds `A` to the algebra object in
+"(**C**, A, τ) be the Descartes universe" and then to the mass number in the
+next sentence, with every display using the second. Two blocks declare
+`(Z, N)` and then use `(p, n)` for the same quantities, where the register
+reserves `p` for a brane point — their own intro block does it correctly.
+`intro-stable-nucleus-torus-knots` writes `T(p, q)` in a sentence that also
+invokes "the substrate-parameter flow"; the sibling legend writes `T_{m,n}`
+for exactly this reason. `hyperbolic-volumes-prose` states the mass ansatz as
+`m(K) = Vol(K)/ℏ_q²`, dropping both the `m_e` scale and the per-block `ρ(K)`,
+with no note that absolute mass is excised, and names the mass functional
+`𝓜` and `𝔪(K)` two sentences apart with `𝓜` never introduced.
+
+**I00-13.** `hydrogen-shell-writhe`: `.ts` kind `conjecture` against a `.md`
+opening "**Proposition (conditional on `conj:borromean-quark`)**", with
+§3b-cond rule 4 unmet (`uses[]` holds only `def:electron-knot`), and a
+closing paragraph opening "What follows evaluates…" when nothing follows.
+The same conjecture is attributed to Milnor in one block and Borel–Zagier in
+another.
+
+**I00-14. Unadjudicated, stated rather than guessed.**
+`categorical-proton-table1/3-data` carry four-decimal coefficients with no
+producer found in any witness, and `−0.0095` appears as table 1's `σ₀`
+coefficient *and* table 3's identity coefficient — consistent with a one-row
+shift, but with no producer the agent declined to adjudicate.
+`intro-jwst-aeon-initiations` names "GLIMPSE-17775" with no `cites[]` at all,
+unverifiable offline. And "of the 254 stable nuclides, 166 have even p and
+even n" matches no published tally (the standard figure is ~148–150 of
+251–254, ≈59 % against the stated 65.4 %) — flagged as needing a source
+rather than asserted wrong.
+
+### Verified clean — recomputed, do not re-flag
+
+`hadron-q-self-correction-table-data` (every cell: all six
+`ℓ_net = C(p,2) − C(n,2)`, all six `δq = ℓ_net·A⁻²·ℏ_q²`, all six
+percentages, `A = p+n` in every row); `hydrogen-orbital-tables` (`w = 2n+1`,
+`n²`, `2n²`, the `2Σ(2ℓ+1)` identity, and all four spectral rows —
+Lyman-α 10.20 eV/121.6 nm, Balmer-α 1.889/656.3, Paschen-α 0.6611/1875.4);
+`knot-formula-table-table2-data` (all eight genus/crossing pairs from
+`g = (p−1)(q−1)/2`, `c = min(p(q−1), q(p−1))`, and the photon row's
+identity-braid closure to a 4-component unlink);
+`e-hartree-…-table12-data` (the Coxeter character table, hooks only,
+`(−1)^r q^{n−1−2r}`, reproducing table 7's χ column at q₀);
+`e-hartree-…-table7-data` (back-solved weights respect conjugation symmetry,
+an independent check the rows are not transcribed noise);
+`hyperbolic-volumes-prose` states the Λ/Cl₂ relation **correctly** to all 15
+printed digits and is *not* an instance of I00-3; and
+`hyperbolic-volume-transcendence`'s volumes, Reid 1991, and pairwise
+non-commensurability all check.
+
+
+## From agent:j00 (quantum-observable-universes jq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 1 fix. Prose clean again — **4 trap fails in 450**.
+
+### An intensity formula that cannot produce interference
+
+**J00-1. `photon-wavefront-example`.** The propagation phase is written
+`e^{ik(r₁+r₂)}`, which does **not depend on the summation index `s`**. So
+the sum over slits factors it out entirely and the path-**difference** phase
+`k(r₁ − r₂)` — the entire source of double-slit fringes — never appears in
+the expression. It should be `e^{ik r_s(x,y)}` *inside* the sum. `y_s` is
+also undefined relative to the integration variable `y`.
+
+*Verified correct in the same block*, and worth keeping: the colour
+coefficient `(φ₀q − φ₁q⁻¹)` is exactly `φ₀·q + φ₁·(−q⁻¹)`, the two §7a Hecke
+eigenvalues.
+
+### A diagram that is zero in every case it illustrates
+
+**J00-2. `pawlowski-leitner-basis`** draws a single composite
+`𝟏 → Λ²V_{1/2} ↪ V_{1/2}^{⊗n} → V_j`. By Schur, `Hom(𝟏, V_j) = 0` unless
+`j = 0`, so the composite vanishes for every `j ≠ 0` — i.e. for every case
+the diagram is meant to depict. It cannot show a basis element of
+`Hom(V_j, V^{⊗n})` except trivially.
+
+**J00-3. `pawlowski-leitner-inner-product` indexes a basis that has one
+element.** It writes `{T_λ}` with `⟨T_λ, T_μ⟩ = δ_{λμ}‖T_λ‖²`, but
+`λ₁ + λ₂ = n` and `λ₁ − λ₂ = 2j` determine `λ` **uniquely** — the basis is
+indexed by *tableaux of that one shape*, as the proposition it `uses` says.
+The Lean sibling indexes correctly by `Fin num_basis`. Its tikzcd also types
+`φ†∘ψ` as landing in `A` where it is an endomorphism of `V_j`.
+
+### A coefficient undefined exactly where the claim is made
+
+**J00-4. `q-dilog-habiro-ring`.** With the corpus's balanced
+`[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)`, the coefficient `1/(n[n]_q)` is **undefined
+whenever `q^{2n} = 1`** — so the coefficients are not in `ℤ[q]^` without
+inverting the brackets, and "evaluates the series at any root of unity"
+fails at precisely those roots. **The corpus already records this** in its
+own words: `appendix-surreals/q-bsd-classical-limit` — "At `𝔾_m` torsion
+points `q = ζ_n`, the denominator `[n]_{ζ_n}² = 0`".
+
+### Function algebra, determinant, and radius
+
+**J00-5.** `projective-line-su2` calls `ℂ[z]` the function algebra of `ℙ¹`.
+`ℙ¹` is complete, so `𝒪(ℙ¹) = ℂ`; `ℂ[z]` is the affine chart's ring. This is
+load-bearing: `def:projective-line-object` uses the function algebra to
+*realise* the object as `A^{coT}`. The **Lean sibling states the wrong
+version more strongly** — "The coordinate ring `𝒪(ℙ¹) = ℂ[z]`". That same
+Lean file carries two self-assuming projections
+(`su2_projective_euler_char … := rfl` reading back a field the definition
+sets, with `euler_eq` carried as structure data), so every field of
+`SU2ProjectiveLineData` is pinned by an accompanying `_eq` axiom — a
+container of assumed constants, against Strict Lean Discipline §5.
+
+**J00-6.** `lichnerowicz-wkb-corollary`'s determinant chain is off by a
+factor 2 **under its own parent's reading**. The parent gives
+`Δ^q_∇ = 𝔇_∇²` on one space with no chiral splitting, so
+`−½log det Δ^q = −log|det 𝔇|`, not `−½log det 𝔇`; equating them forces
+`det 𝔇 = 1`. The chain *is* consistent if the three determinants live on
+different spaces (chiral half vs full) — which "the Pfaffian structure on
+chiral spinors" gestures at — but the block never says so and the parent
+supplies no splitting.
+
+**J00-7.** `q-dilog-three-contexts` gives the p-adic radius as
+`v_p(x) > 1/(p−1)`, which is the convergence radius of **exp**; a
+log/dilog-type series `Σ xⁿ/(n[n]_q)` needs only `v_p(x) > 0`. Borrowed from
+the wrong series. Relatedly `q-dilog-heat-partition`: summing logarithmic
+branches over a spectrum gives a log-**determinant**, not a **di**logarithm —
+the `1/n` (or a further integration) is missing from the sentence.
+
+**J00-8.** `q-dilogarithm-pentagon-associator` writes "the *compact*
+dilogarithm `Φ_q/Li₂^q`", slashing together the two objects the cheat
+sheet's Faddeev-vs-Rogers context-sorting exists to separate — and
+`mass-endomorphism-tower` records that the corpus *replaced* `Φ_q`: "the
+Faddeev `Φ_q` form was empirically incompatible with isospin symmetry at
+q₀".
+
+### Two `definition` blocks whose Lean does not exist
+
+**J00-9. RETRACTED 2026-08-22 — both refs resolve.** The agent reported
+that `maximal-torus` and `maximal-torus-su2` name Lean declarations that
+exist nowhere, having searched `lean/QOU/` and found all 310 `Torus` hits to
+be torus *knots*. That search missed resolution candidate **(1)**, the
+content-block sibling, which AGENTS.md §0a checks **first**. Both siblings
+exist and carry the declarations:
+
+- `quantum-observable-universes/maximal-torus.lean:35` — `structure MaximalTorus`
+- `quantum-observable-universes/maximal-torus-su2.lean:108` — `def su2MaximalTorus`
+
+I repeated the finding in a commit message before checking it, so the
+correction is recorded here rather than left implicit.
+
+**What the check did find**, run corpus-wide afterwards: of **1,271** blocks
+carrying a `lean.ref`, **10** resolve to nothing under all three candidates
+(sibling, `<lakeRoot>/<Decl/Path>.lean`, declaration-name grep) — 0.8 %.
+That count is a **lower bound**: candidate 3 accepts a matching leaf name in
+any namespace, so a ref pointing at the wrong namespace still resolves. The
+ten:
+
+```
+qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection
+qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance
+qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar
+qou:QOU.BraidKnot.CyclotomicCl3OrbitSum.orbit_sum_general
+qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound
+qou:QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths.dimension_synthesis_all_depths
+qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds
+qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition
+qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even
+qou:QOU.Archimedean.TypeBFoldedCrystalCombinatorics.content_sum_plus_transpose_content_sum_eq_zero
+```
+
+**A separate observation from the same scan**: `structure MaximalTorus` is
+declared in **three** content-block siblings —
+`maximal-torus.lean`, `weight-decomposition-exists.lean` and
+`categorical-reeb-exists.lean` — three copies of the same structure rather
+than one import. Minor, but it is how two of them drift.
+
+**J00-10.** `observation`'s `lean.ref` names the wrong structure.
+`qou:QOU.Intent` formalises the *two-observer commutator* — i.e. the
+`rem:two-observer-parallelogram` block — while the sibling `observation.lean`
+carries `QOU.Observation`, which is what this `.md` actually describes.
+Separately the `.md` says `δq` is determined "via the Hopf coaction" while
+that sibling Lean explicitly flags `substrate_shift` as **free data**: "do
+not read an inhabitant of `Observation` as evidence that the shift is
+coaction-induced."
+
+**J00-11.** `maximal-torus` asserts `T = Aut^⊗(τ|_{⟨V⟩}) ⊂ G`, but
+restricting a fibre functor to a full subcategory yields a group *receiving*
+a homomorphism from `G` — a quotient in the dictionary — not a subgroup, and
+the block's own diagram draws `T ↪ G` from a different characterisation.
+**The agent could not adjudicate** whether the two coincide for this
+particular `⟨V⟩` and said so rather than guessing.
+
+### Sweep damage: the `secur*` flood — 6 fixed, 19 flagged
+
+**J00-12.** 25 corpus sites of `secur*`, ten of them in this chapter.
+Several are nonsense rather than florid, which is what identifies it as
+token substitution: *"Liquid H **securely** exists at 20 K"*, *"the bare
+`e₊` **securely** resides at the `ℏ_q`-scale"*, *"converges **securely**
+within `v_p(x) > 1/(p−1)`"*, *"evaluates **securely** to `Li₂^q`"*.
+
+The six **adverbial** sites are fixed by deletion — each is a pure
+intensifier whose removal restores the sentence, no math touched. The 19
+**verbal** sites (`secures`, `securing`) are left: there the word carries
+the predicate ("`Γ_c(M,𝒮) = 0` secures the injectivity of the jet-bundle
+map" reads as *establishes*), and restoring the original verb needs an
+author's ear, not a sweep. Same family: "**strictly** orthogonal" in
+`pawlowski-leitner-inner-product`, where orthogonality admits no degrees.
+
+Note the agent's care: it deliberately did **not** fire `trap-superlative`
+on these, since that would file the verdict under the wrong criterion.
+
+### Notation
+
+**J00-13.** Two independent collisions on `τ`, which the register reserves
+for the fibre functor: `laplace-fourier-wick-rotation` writes
+`τ = t + iΘ` (two collisions in one formula — `Θ` is the contact form), and
+`photon-wavefront-example` writes the torsion phase `τ(y)`. The corpus's own
+convention is the opposite: `os-reflection-positivity-from-reeb` quotes the
+standard OS `τ` and then **translates it away** ("Euclidean time is the Reeb
+parameter `t`"). Also `intro-heisenberg-commutator` uses `\hat{q}` — its
+only occurrence in the entire corpus, unregistered, colliding with the
+substrate parameter — and does not match the section it introduces, which
+uses `[X̂,P̂]_q = Jℏ_q`. And `j1e-local-states.ts` titles `J¹E` where the body
+says `J¹𝒮`, with `E` deprecated in favour of `𝒮`.
+
+### Smaller
+
+**J00-14.** `levi-generalisation` asserts Levi **non**-degeneracy while
+recording `q(p) = 1 + |⟨L_Θ, F_A^+⟩| ≥ 1`; non-degeneracy should give the
+strict `q > 1` the substrate convention wants.
+`q-dilogarithm-exists-proof`'s load-bearing step ("has a one-dimensional
+solution space at each level") is asserted rather than argued, and the block
+has no QED marker where its chapter sibling does.
+`q-codifferential-formula`'s numbered list presents the adjoint as
+term-by-term replacement; applied in reading order to `Θ ∧ ℒ_ξ` it yields
+`ι_ξ ∘ ℒ_ξ*` where the closed formula has `ℒ_ξ* ∘ ι_ξ` — the order reversal
+is the only subtle step and goes unmentioned.
+
+**J00-15. The batch's closest call, recorded as a pass.**
+`q-dilogarithm-pentagon-associator` carries **six** negation-contrast
+constructions. Each survives the substantive-contrast carve-out
+individually, so the agent recorded `pass` and said so in the entry; the
+residual concern is density, which category 1's rubric does not make the
+test. A reviewer could reasonably fail the opener.
+
+**J00-16. Out of batch, via the tables' parent.** `g-action-on-substrate`
+quotes `[4]_q² = 16.892`; recomputed `[4]_q = 4.1096824`, squared
+**16.88948**. Its `−1.81 %` residual **is correct** — target-normalised;
+prediction-normalised it is `−1.774 %`. **Do not "fix" either into the
+other** — the same normalisation trap the AGENTS.md c_k correction names.
+
+### q₀ pins — a recorded negative
+
+No q₀ numeral appears in any of the 45 blocks. The only pin-bearing number
+in reach is via the tables' parent, using the witnessed
+`:val[q_0]{precision=6}`. Recomputing `[2]_q[4]_q²[6]_q` across all five
+pins: proton **216.95872**, muon **216.95873**, old-muon 216.95873,
+`1.10997` → 216.95483, `1.1097` → **216.83253**. So the printed `216.96`
+**cannot discriminate proton from muon** (they diverge at the 8th digit) but
+**does exclude** the erroneous `1.1097`.
+
+### Verified correct — do not re-flag
+
+The **PawLei dimension** `(2j+1)n!/((n/2+j+1)!(n/2−j)!)` agrees with the
+Clebsch–Gordan multiplicity **and** the two-row SYT hook count for every
+`(n,j)` with `n ≤ 10`. `pawLeiDim` in Lean *looks* wrong beside the `.md`'s
+`j` — its ℕ-division `(twice_j+1)/2` — but is exactly the ceiling that
+compensates the floored `n/2` in the half-integer case: **0 mismatches for
+n ≤ 14. It is correct; do not "fix" it.** The `δ_q` adjoint
+`(Θ∧ℒ_ξ)* = ℒ_ξ*∘ι_ξ` checks directly *and* cross-checks — substituting
+`d_q, δ_q` into `d_qδ_q + δ_qd_q` reproduces `rem:q-laplacian-expansion`
+term for term, including its cross bracket and both outer coefficients. The
+five-term relation was confirmed numerically at 30 dps on four `(x,y)`
+pairs, residuals at the arithmetic floor. Also verified: the
+Faddeev–Kashaev operator pentagon; `Φ_b = Φ_{1/b}`; the unit-circle natural
+boundary; §7a eigenvalue labelling in `observation-fermion-action`;
+`ℏ_{q+δ} − ℏ_q = δ/(q(q+δ))`; Bogomolny `‖F‖² = c₂ + 2‖F⁻‖²`;
+`SU(2)/U(1) ≅ ℙ¹(ℂ)`; Levi signature `(n,0)`.
+
+And `q-dilogarithm-pentagon-associator`'s scope paragraph is **the model of
+the (a)/(b) discipline** — it names both unformalised links, marking one
+"cited rather than machine-checked" and the other "a conjecture class".
+Worth keeping intact through any rewrite of that block's dashes.
+
+
+## CORRECTION — "the sweep destroyed content" is wrong; the tables were never written (2026-08-22)
+
+`agent:k00` reported that a token-substitution sweep had **destroyed** two
+whole tables, a section and half a numbered list, replacing them with the
+boilerplate *"The canonical values are rigorously evaluated via formal trace
+definitions."* I repeated that in the `kq_00` commit message — *"The sweep
+has DESTROYED CONTENT, not merely garbled it"* — before checking it.
+
+**Git says otherwise, unambiguously.** For both table files, commit
+`230cdd113`:
+
+```
+$ git show --numstat 230cdd113 -- .../recomputed-low-isotope-mass-table-table4-data.md
+1  0  .../recomputed-low-isotope-mass-table-table4-data.md
+$ git cat-file -e 230cdd113^:.../rho-k-graded-expansion-table1-data.md
+   → does not exist
+```
+
+**One insertion, zero deletions, and neither file existed in the parent
+commit.** They were *created* carrying that sentence. Nothing was
+overwritten. (`git log --follow` shows earlier commits, which is the rename
+heuristic reaching for an unrelated file; `--numstat` on the actual commit is
+the authoritative read, and it is 1/0.) The
+`tau-M-asymptotic-rep-theory-interpretation` case is the same shape: 37
+insertions, **0 deletions**.
+
+**The defect is real and the remedy is the opposite of what was implied.**
+The parents genuinely depend on tables that do not exist:
+
+- `recomputed-low-isotope-mass-table.md:72` — "See [Table 4](#tbl:…-table4-data)"
+- `rho-k-graded-expansion.md:74` — "See [Table 1](#tbl:…-table1-data)", and
+  again at `:98`, where the prose leans on it: *"its naive log-additive form
+  degrades accuracy (see Table 1)"*.
+
+So: **placeholder data-blocks were created and cited as though populated.**
+There is nothing to recover — the tables have to be authored, or the
+references dropped. A recovery pass over git history, which the agent
+recommended and I endorsed, would find nothing and waste the attempt.
+
+### The general lesson, since this is the second instance in two turns
+
+An audit agent cannot easily read git history, so its claims about a file's
+*past* are inferences from the file's present state, not observations.
+Twice in two turns I repeated one before checking:
+
+1. `J00-9` — "these `lean.ref`s resolve to nothing"; both resolve, via the
+   content-block sibling the agent's search did not cover.
+2. This one — "the sweep destroyed these tables"; they were never written.
+
+Both agents were reporting a real defect and getting the *mechanism* wrong,
+and the mechanism is what determines the fix. **Provenance claims — "this
+was deleted", "this used to say", "this file does not exist" — get verified
+against git or the filesystem before they are repeated.** The numeric
+findings in the same reports have held up under recomputation every time;
+it is specifically the historical and existence claims that need the second
+look.
+
+
+## CORRECTION — the "two divergent LP solvers" are an implementation and its shim (2026-08-22)
+
+`agent:l01` reported *"two divergent copies of the canonical solver"*:
+`tools/pyhecke/python/pyhecke/lp_dual_solver.py` (md5 `5c66b818…`) against
+`computations/lp_dual_solver.py` (`ed28cd38…`), with the block pointing at
+one and AGENTS.md at the other. I repeated it in a reply and a commit
+message.
+
+**Opening the second file settles it.** It is **31 lines** against 834, and
+its own docstring says what it is:
+
+> `lp_dual_solver — back-compat re-export shim.` The canonical
+> implementation moved to `pyhecke.lp_dual_solver` per workplan v2 item 2c
+> (PR #1136). This file is a thin shim that keeps `from lp_dual_solver
+> import X` working unchanged for the existing external importers in
+> `computations/`.
+
+Its body is `from pyhecke.lp_dual_solver import *` with a `sys.path`
+fallback. So there is **one** implementation and **one** re-export of it;
+differing md5s is exactly what that looks like, and both citation paths
+resolve to the same code. Nothing diverges and nothing needs reconciling.
+
+The only residue is doc-currency: AGENTS.md calls
+`computations/lp_dual_solver.py` "the canonical entry point", which is now
+the shim rather than the implementation. Functionally harmless — the
+re-export makes the sentence true at the level of what you get — but a
+reader chasing the algorithm lands on twelve lines of import machinery.
+
+### This is the third provenance inversion in three turns
+
+| claim | reality |
+|---|---|
+| two `lean.ref`s "resolve to nothing" | both resolve, via the content-block sibling |
+| a sweep "destroyed" two tables | `--numstat`: 1 insertion, 0 deletions; never written |
+| "two divergent copies" of a solver | an implementation and its documented shim |
+
+Three for three, and each time the *observation* was real — a search
+returned nothing, a boilerplate sentence was the file's whole content, two
+md5s differed — while the *mechanism* inferred from it was wrong. The
+mechanism is what determines the fix, so each one pointed at work that
+would have found nothing: a library-tree search, a git-history recovery
+pass, a reconciliation of two files that are already one.
+
+Meanwhile **every recomputed number has survived checking** — the Cayley–
+Hamilton relations, the hyperbolic constants, `dc₃/dq`, the Riemann–Hurwitz
+count, the Jones values, the two table products confirmed against their own
+witness.
+
+The split is not about care; these are careful agents. It is that a number
+can be recomputed from what is on the page, and a file's history cannot.
+Anything about the past, or about what exists elsewhere, is an inference
+from present state unless a command was run. **Run the command.**
+
+
+## CORRECTION TO THE CORRECTION — the clone is shallow, so "never written" is not established either (2026-08-22)
+
+Earlier I corrected `agent:k00`'s *"the sweep destroyed two tables"* to
+**"the tables were never written"**, on the strength of
+
+```
+$ git show --numstat 230cdd113 -- <table>.md
+1  0
+$ git cat-file -e 230cdd113^:<table>.md      → does not exist
+```
+
+**Both readings are artifacts of a shallow clone.**
+
+```
+$ git rev-list --max-parents=0 HEAD | head -3     → three "root" commits
+$ git rev-list --parents -n 1 230cdd113           → 230cdd113   (no parent shown)
+$ wc -l .git/shallow                              → 19 grafted
+$ git show --stat 230cdd113 | tail -1             → 30809 files changed, 12425567 insertions(+)
+```
+
+`230cdd113` is a **graft boundary**, not a root. At a boundary git has no
+parent to diff against, so it renders the entire tree as additions — which
+is exactly what "30809 files changed, 12,425,567 insertions" means, and why
+every file in it reports `n insertions, 0 deletions`. `230cdd113^` does not
+resolve, so `cat-file -e` on it fails for **every** path, present or absent.
+Neither command says anything about whether those tables once held content.
+
+`git fetch --deepen=200` timed out at two minutes without completing, so the
+question is **not settleable from this clone**. Settling it needs
+`git fetch --unshallow` or a query against the remote.
+
+### What is actually established, from present state only
+
+- The two data-blocks contain one boilerplate sentence and no table. ✓
+- Their parents cite them as populated — `recomputed-low-isotope-mass-table.md:72`
+  "See [Table 4]", `rho-k-graded-expansion.md:98` "degrades accuracy (see
+  Table 1)". ✓
+- **Whether they were ever populated: unknown.**
+
+The defect and its remedy are unchanged — a parent citing an empty table is
+broken either way, and the fix is to author the table or drop the reference.
+What was wrong was my confident account of *how it got that way*, asserted
+twice in opposite directions.
+
+`agent:m00` hit the same boundary independently on two different files, ran
+the same two commands, and drew the same "as imported" conclusion. It was
+being appropriately careful — the new skill rule sent it to git — and the
+commands it was told to trust do not mean what they normally mean in a
+shallow clone. **That is a gap in the rule I wrote, not in the agent's
+work.**
+
+### The rule, amended
+
+Before reading `--numstat` or `cat-file -e` as evidence about a file's past,
+check that the commit has a parent in *this* clone:
+
+```sh
+git rev-list --parents -n 1 <sha>    # a lone sha means no parent here
+test -f .git/shallow && echo shallow
+```
+
+At a graft boundary both commands are silent about history and loud in a way
+that looks like an answer. A shallow clone cannot tell you what a file used
+to contain; it can only tell you what it contains now.
+
+
+## CORRECTION — the "Archimedean specialisation." banner is a template, not damage (2026-08-22)
+
+I reported a dangling **"Archimedean specialisation.** What follows sits on
+the archimedean side…" banner as a defect across five batches, with a
+running count that reached "ten instances, three wordings", listed under
+sweep damage and structural findings.
+
+`agent:p01` reframed it after measuring, and I re-measured independently:
+
+```
+files under content/ containing the banner:      132
+...where it is the FINAL paragraph:              129
+```
+
+**That is systematic template placement, not damage.** A construct in 132
+files, terminal in 129 of them, is how the corpus is written — the two or
+three where it is *not* terminal are the anomalies, not the 129.
+
+The narrower observation survives and is worth keeping: where the banner is
+terminal, its own phrase *"What follows"* refers to nothing, and several
+sit on blocks their `.ts` tags `pre-archimedean`, which the banner
+contradicts. But that is a **template-design** question — AGENTS.md §4d's
+disposition for status-ish prose is `authorNotes` — and not a per-block
+finding to be counted five times.
+
+**Withdrawn**: every per-batch instance count for this item. The batches
+that reported it were each correct about their own block and wrong about
+what it meant, and I compounded that by adding the counts together.
+
+This is the same error shape as the three provenance inversions, in a
+different register: a real observation, generalised without measuring the
+base rate. The check that would have caught it — *"how often does this
+appear corpus-wide?"* — costs one command.
+
+## Navigation — where the findings after batch `j00` live (2026-08-22)
+
+Per-batch sections in this file stop at `j00`. That is a real gap and it is
+not going to be back-filled from memory, because the sessions that produced
+`k00`–`p02` have been compacted. What exists instead, and is authoritative:
+
+**Each batch's commit message names its own load-bearing findings.** The
+drain commits are `qa(trap-drain): <chapter> <batch> — N blocks, N fixes, N
+anomalies [qou-ujp8]`, and from `p02` onward every numeric claim quoted in
+one was re-derived in the coordinating session before it was written down.
+`git log --oneline --grep='qa(trap-drain)'` is the index.
+
+**The findings severe enough to act on were promoted to their own beans**
+rather than left in this ledger. As of 2026-08-22:
+
+| bean | finding |
+|---|---|
+| `qou-rhax` | **high** — `rh_iff_persistence_axiom` proves `False`. `SpectralPersistence f` is inhabited by `fun h i => h 0 i` for every `f`, and the axiom quantifies over both arguments, so `RiemannHypothesis ζ` follows for every `ζ`; take `ζ ≡ 0`, `s = 1/4`. Blast radius is one file. |
+| `qou-etfq` | the `lp-dual-stability` table does not follow from its witness. `Gx` is strictly positive for all four sub-units; the `−0.11` that is the chapter's only negative number sits where `+0.32` is. Three of four rows are reproduced *exactly* by one deterministic map from the true `Gx`; the load-bearing fourth is not. |
+| `qou-jbbk` | two Jones values in `building-block-knots` are unattainable by their own polynomials for **any** real `q > 0`, and seven torus rows carry a `q^{1−g²}` shift that hid behind `J(1) = 1`. |
+| `qou-ptnp` | three vacuous decls in `p-vs-np-boundary.lean`; one (`nontorsion_full_tree`, whose `NonTorsionReal` argument is unused) is cited as the corpus warrant for the premise fixing `info(n) = 3^{3n}`. |
+| `qou-tol0` | 9 mass assertions that cannot fail — `tolerance = max(abs(delta)*2, 50)` where `delta` **is** the residual under test. |
+| `qou-vfy1` | 221 blocks record `computation.status: "verified"`; 64 are unsupported by the witness they name. (The "278 `.ts` carry a §4-forbidden `status`" claim is **retracted** — 276 of them are `computation.status`, which §4 does not govern; the real count is **1**.) |
+| `qou-umev` | `prop:unit-modulus-eigenvalue` is false in both clauses. |
+| `qou-shdw` | a shadowing sibling stub declaring `∃ c, ∀ i, c i = f i`, inhabited by `fun i => f i`, over a library declaration of the same name with real content. |
+
+**This ledger's remaining job** is the recurring-class taxonomy (§"Recurring
+classes", C1–C7) and the corrections section, both of which are
+cross-batch and do not decay the way a per-batch list does. Read those two
+first; use the commit log for anything batch-specific.
+
+One measured note on why the corrections section is the more valuable half:
+across this campaign, agent **numeric** findings have survived independent
+recomputation every time they were checked, and agent claims about a file's
+**past or existence** have inverted three times out of three. The four
+corrections recorded above are all of the second kind.

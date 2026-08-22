@@ -1495,6 +1495,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not a difference but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:34.935Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "\"the operator is not a difference but an extension\" is a real structural distinction (append vs subtract) and is used immediately."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1514,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:34.979Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1533,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (5 in 493 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.020Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "Two spaced em-dashes in 6.7k, both true appositives (\"- the order of crossings matters\", \"- the element surviving after modding out\")."
       }
     ],
     "trap-triples": [
@@ -1552,6 +1597,23 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 493 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.060Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "severity": "minor",
+        "evidence": "The opening sentence is a reflex triple - \"acts on the Groebner-Shirshov-reduced Hecke chain, generates a non-commutative operator algebra under composition, and catalogues every particle interaction together with its Delta operator and composition rules\" - followed by a contentless signpost restating the same three nouns. The block actually has five sections, so the triple does not even index the contents.",
+        "notes": "FIXED inline (the signpost only): \" These actions, catalogues, and rules are collected below.\" -> deleted. The opening triple is left in place as it does introduce the material. Math delimiters rechecked after the edit (30 occurrences of $$, balanced)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1571,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.099Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "Ends on a factorisation statement about the parallel-interaction rule."
       }
     ],
     "trap-meta-commentary": [
@@ -1590,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.138Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "The signposting sentence recorded under trap-triples was the only instance and is now removed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1609,6 +1701,21 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.175Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None beyond the removed signpost."
       }
     ],
     "trap-performed-warmth": [
@@ -1628,6 +1735,21 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.214Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1647,6 +1769,23 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.253Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "severity": "major",
+        "evidence": "\"Every particle interaction corresponds to a transfer matrix\" and the catalogue's physical assignments are asserted rather than derived, and three checkable claims in the block do not hold up. (1) SELF-REFERENTIAL DEFINITION: M_i is defined as the product, \"M_i = prod_j T_j(q)\", and then the Groebner-Shirshov ideal is defined as I_i = ker(prod_j T_j(q) - M_i(q)) - the argument of ker is identically the zero matrix, so I_i is the whole space and the definition says nothing. (2) The eigenvalue expression is correct but unsimplified, and the simplification matters: T_{gamma e} = T_pp encodes sigma, whose characteristic polynomial lambda^2 - (q - q^-1)lambda - 1 factors as (lambda - q)(lambda + q^-1), so lambda_+ = q and lambda_- = -q^-1 EXACTLY - the eigenvalues AGENTS 7a names for sigma_i. I confirmed numerically at the proton pin: lambda_+ - q = -2e-31 at 30 dps. (3) Consequently E_n proportional to lambda_+^n = q^n GROWS geometrically in the shell index (1.110, 1.232, 1.368, 1.518, 1.685 for n = 1..5), and Delta E_{n->n+1} grows with it; the hydrogen shell energies it is offered as a model of converge instead. The block does not claim a numerical match, but \"This gives the photon energy for shell transitions\" is stated without that caveat. (4) The sequential-composition rule Delta_total = Delta_2 T_between Delta_1 + Delta_1 + Delta_2 does not follow from the stated definitions: substituting T_i -> T_i + Delta_i into a product gives Delta_2 T_b T_1 + T_2 T_b Delta_1 + Delta_2 T_b Delta_1, which is not the printed expression.",
+        "notes": "Reported, not edited (all mathematical). Routes: (1) define M_i as the reduced normal form and I_i as the kernel of the reduction map, or drop the ker formulation; (2) replace the radical with lambda_+ = q, lambda_- = -q^-1 and cite 7a; (3) state explicitly that E_n proportional to q^n is a growth law and is not offered as the Rydberg spectrum; (4) re-derive the sequential rule or mark it as a definition rather than a consequence. Verified separately and CORRECT: a' = ac(q-q^-1) + ad + bc and b' = ac + bd are exactly the coefficients of (c sigma + d)(a sigma + b) reduced by sigma^2 = (q-q^-1)sigma + 1, and the matrix form [a';b'] = T[a;b] reproduces them; trace and determinant claims elsewhere in the chain also hold."
       }
     ],
     "trap-nonspeakable": [
@@ -1666,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.578Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "13b6230ccf50",
+          "ts": "c878e51c4586"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:35.294Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "Dense but speakable; the tables carry most of the load."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1688,5 +1842,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:12:35.294Z"
 }

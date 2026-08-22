@@ -459,16 +459,25 @@ theorem not_noCancellation_of_cauchyMul_eventually_zero {a b : ℕ → K}
     `cauchyMul_bound` above; `envelope_shift_le` is the algebraic step that
     carries a bound back to the limit form.  The residual is the `≥` half: pick
     `k ≈ θ*·n` attaining the envelope, then apply `hnc` to transfer that single
-    summand's growth to the convolution. -/
+    summand's growth to the convolution.
+
+    **`ha0` and `hb0` (non-zero) were added 2026-08-21** to repair a second
+    false-statement defect (independent of the `hnc` repair of 2026-08-08).
+    `NoCancellation` is trivially satisfied by the zero sequence (`0 ≤ 0`),
+    which has order `0` but `cauchyEnvelope s t` can be positive — so without
+    the non-zero hypotheses the statement admits a counterexample at `a = 0`.
+    Credit: QGevrey prover agent 2026-08-21. -/
 theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
     (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b)
-    (hq : 1 < q) (hnc : NoCancellation a b) :
+    (hq : 1 < q) (hnc : NoCancellation a b)
+    (ha0 : ∃ n, a n ≠ 0) (hb0 : ∃ n, b n ≠ 0) :
     IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
   -- Ref: [ramis-sauloy-zhang2013] Newton-polygon / dominant-balance slopes of
   --      q-difference systems.  Upper: cauchyMul_order_le (sorry-free).
   --      Lower: hnc applied at k ≈ θ*·n, where θ* attains the envelope.
   -- SORRY: needs the ≥ half — attainment of the sup at a near-optimal index,
   --        then hnc to transfer that summand's growth to the convolution.
+  --        Non-zero hypotheses (ha0, hb0) added 2026-08-21 to fix false statement.
   sorry
 
 /-- **[MI-2, sorry-free] Endpoint `≥`-brick for the convolution order law.**

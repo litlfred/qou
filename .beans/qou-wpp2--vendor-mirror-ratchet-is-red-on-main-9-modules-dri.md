@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-19T21:03:40Z
-updated_at: 2026-08-19T21:04:13Z
+updated_at: 2026-08-21T21:54:08Z
 ---
 
 Measured on origin/main 5b158ef06c, 2026-08-19.
@@ -52,3 +52,37 @@ the ratchet is advisory — nothing runs it on a push. Either it joins
 `scripts/check-sidecars.sh` as a hand-run preflight with a named trigger
 (any edit under the cone), or it stays red on a four-day cycle. Recommend the
 former; the cone list is machine-derivable, so the trigger can be exact.
+
+
+
+---
+
+## Note from qou-cdj8 (2026-08-21) — this is RESOLVED; status left for its owner
+
+The drift recorded here was fixed **28 minutes after this bean was filed**:
+
+    qou-wpp2 filed        2026-08-19 21:03:40
+    e4906af5a4c           2026-08-19 21:31:30  chore(vendor): regenerate the mirror
+
+On current main `--check` exits **0** (42 modules, 18 witness JSON). I hit the
+identical measurement independently on my own branch and filed `qou-hp3g` for
+it, then had to retract that too — same cause, a checkout predating the fix.
+
+Verified the detector still fires rather than trusting exit 0: planted one line
+in the vendored `_precision.py` → `exit 1, DRIFTED (1): _precision` → restored
+→ clean.
+
+**Your root-cause line is the durable part and it is confirmed.** "Nobody is
+running `--apply` when a cone module changes" — I grepped every `.sh` and
+`.yml`: **nothing invokes this script.** It is in no gate array and no
+workflow, only in docs and beans, while AGENTS.md calls `--check` "the gate".
+That is why it went red again in four days and will again. Fourth instance of
+the qou-j6gb pattern.
+
+Also found, and split to `qou-cdj8`: the check covers 42 modules + 18
+witnesses, while **122 further witness files** under `qou-mass/src` are never
+compared, and **17 witnesses exist in both the package root and `data/`** —
+2 of those pairs divergent, including `q-pinning-50-digit` (root 2026-08-21,
+data/ 2026-07-18), the substrate modulus record.
+
+Not touching this bean's status — it is yours.

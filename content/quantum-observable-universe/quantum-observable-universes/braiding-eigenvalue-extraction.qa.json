@@ -2129,6 +2129,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:01.997Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proposition; every step stated positively (decomposition, eigenvalues, determinant constraint, q=1 limit)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2148,6 +2163,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.038Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Linear derivation; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -2167,6 +2197,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.079Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2186,6 +2231,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.120Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2205,6 +2265,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.160Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Final sentence introduces d_q and states the micro/macro identification, i.e. new content rather than a placed closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2224,6 +2299,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.200Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2243,6 +2333,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.241Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Closer adds the macroscopic interpolation, not previously mentioned."
       }
     ],
     "trap-performed-warmth": [
@@ -2262,6 +2367,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.281Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -2281,6 +2401,21 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.322Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'decomposes intrinsically' and 'governed exactly by' are mild intensifiers on otherwise exact statements; neither is an unqualified maximum-strength claim."
       }
     ],
     "trap-nonspeakable": [
@@ -2300,6 +2435,22 @@
         "reviewed_at": "2026-08-15T10:30:59.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "afb14130fc3b",
+          "ts": "f7275ef1ede6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:02.371Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Short declaratives throughout.",
+        "notes": "CONVENTION VIOLATION to report (not a trap category, not edited): the block writes the Hecke relation as '(T - q)(T + q^{-1}) = 0 for T = tau(c_{V,V})'. AGENTS.md 7a is explicit that the Hecke generator is sigma_i and never T. Proposed: '(sigma - q)(sigma + q^{-1}) = 0 for sigma = tau(c_{V,V})'. Arithmetic checked and correct: q*(-q^{-1}) = -1 for the determinant constraint, and c^2 = id forces eigenvalues +-1, i.e. q = 1, consistent with lambda_- = -q^{-1}."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2323,5 +2474,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:54:02.371Z"
 }

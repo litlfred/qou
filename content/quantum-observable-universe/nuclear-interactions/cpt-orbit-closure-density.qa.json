@@ -1659,6 +1659,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:18.909Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "Kept: structural-vs-post-hoc is the claim, not manufactured emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1678,6 +1694,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:18.948Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1697,6 +1729,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 145 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:18.990Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1716,6 +1764,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 145 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.032Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "No reflex triple; see note on the 'Correctness of the fold involution' section."
       }
     ],
     "trap-closing-aphorism": [
@@ -1735,6 +1799,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.074Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "Block ends on the standard Archimedean-specialisation boilerplate."
       }
     ],
     "trap-meta-commentary": [
@@ -1754,6 +1834,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.116Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1773,6 +1869,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.157Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "No restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1792,6 +1904,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.197Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1811,6 +1939,22 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.240Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "'in every case' is scoped to the n=3 example that heads its section."
       }
     ],
     "trap-nonspeakable": [
@@ -1830,6 +1974,38 @@
         "reviewed_at": "2026-08-15T10:31:01.407Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.280Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the conjecture statement, the boxed rho_F case split, and the three follow-on sections. Checked the ten categories in context: 'CPT enforcement is now structural rather than post-hoc' is the block's actual claim (it is what replacing the manual Boolean flag buys), so it is substantive contrast; the headers are noun-phrase academic; there are no em-dashes, no aphorism, no warmth, no superlative.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "bf5aa608a2d4",
+          "ts": "2c35a2834a2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:19.329Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Structural read of the argument sections, beyond the ten categories.",
+        "notes": "NOTES for the coordinator (no fix applied). (1) The 'Correctness of the fold involution' section is four staccato assertions - 'The Type-B Cartan datum is obtained by folding. The KLR canonical basis is bar-invariant. The bar involution matches the chirality-reversal.' - followed by 'Thus, sigma is the intrinsic fold.' No connective carries the 'Thus': as written each sentence is independent and the conclusion does not follow from their conjunction. This is a proof-gap shape rather than a language trap, so it is recorded as a note, not a trap fail; the honest options are to supply the connecting step or to mark the section a sketch. (2) The boxed formula assigns rho_F, described as a packing DENSITY, the values m_e and 2 m_e, i.e. mass units. If that is the framework's convention it should be stated at the box; if not, the units are wrong. (3) The conjecture is correctly kind 'conjecture' with a class-axiomatised Lean ref, so the section's declarative 'CPT enforcement is now structural' should be read as conditional on the conjecture, which the prose does not say."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1853,5 +2029,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:05:19.329Z"
 }

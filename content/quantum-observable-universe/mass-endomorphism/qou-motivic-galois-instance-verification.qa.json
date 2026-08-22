@@ -948,6 +948,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.039Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -967,6 +983,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.084Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Three signposted sections.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -986,6 +1018,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 222 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.126Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1005,6 +1053,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 222 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.167Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Three sections (construction/verification, downstream consumers, coherence) matching the block's stated scope; two named checks.",
+        "notes": "Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1024,6 +1088,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.210Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends on a scope limitation ('The deeper l-adic archimedean Weil/Deligne behaviour lies outside this construction'), which is bookkeeping.",
+        "notes": "Note: 'l-adic archimedean' is a contradiction in terms -- l-adic places are non-archimedean. Likely a garble; proposed 'the deeper l-adic Weil/Deligne behaviour'."
       }
     ],
     "trap-meta-commentary": [
@@ -1043,6 +1123,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.256Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None narrating emphasis.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -1062,6 +1158,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.302Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Opening paragraph announces the sections rather than restating a conclusion.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -1081,6 +1193,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.345Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1100,6 +1228,23 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.390Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'In particular, conj:motivic-perpetual-obstruction **becomes an unconditional theorem** for the QOU substrate.' -- stated three sentences after the same block concedes that the instance's key field 'almost_everywhere_nontrivial **functions as a substrate axiom**, backed by a numerical witness for primes p <= 13'.",
+        "notes": "REPORT ONLY, not fixed (this is a mathematical-status claim). AGENTS.md sec 'Axiomatization is NOT a Proof' is directly on point: an axiom plus a finite numerical witness does not make a conjecture an unconditional theorem, and 'sorry-free != derived' applies to the instance too. The parent definition block agrees with me and not with this block -- qou-motivic-galois-instance.md records that the co-located .lean 'contained a bare axiom laundering the perpetual obstruction into the MotivicGaloisCharacter class' and 'has been deleted'. THE TWO BLOCKS ARE OUT OF SYNC: this one still cites 'The instance in qou-motivic-galois-instance.lean', a file the parent says was deleted and which does not exist on disk. FURTHER: (a) 'Galois-norm integrality holds ... yields a rational integer (residual < 1e-7)' is only half true against the cited witness -- galois_trace_num_is_integer is true on every cell I checked, but galois_trace_full_is_integer is FALSE and step2_full_trace_passed is FALSE on every one of them; (b) N vs Tr conflation -- 'the trace N(Frob_p) = sum_sigma sigma(Frob_p)' names a trace, writes the norm symbol, and the sibling per-cell block calls it 'Galois-norm integrality'; the producer's own description carries the same conflation, so fixing it means fixing three places; (c) 'At larger primes, the spread grows. The QOU motive remains mixed in general' infers mixedness without excluding the alternative the SIBLING block supplies -- that the larger-prime cells run past the on-disk Habiro data (m_max < 2p), so growing spread is exactly what truncation error would look like."
       }
     ],
     "trap-nonspeakable": [
@@ -1119,6 +1264,22 @@
         "reviewed_at": "2026-08-15T10:31:01.046Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8922ec90a30c",
+          "ts": "be08b535a315"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:09:30.432Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'the orbit-spread max|sigma(Frob_p)| - min|sigma(Frob_p)| remains below 1e-10 for every atom'.",
+        "notes": "Parses."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1302,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:09:30.432Z"
 }

@@ -1778,6 +1778,23 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.127Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'This is not double counting.' is a standalone assert-by-denial defending against an objection the block never states, and the follow-up 'Each regime merely selects the convergent limits of the exact unified mass functional' restates rather than argues. The positive fact is available and stronger: the three cases partition the mass number (A = 2, 3 <= A <= 4, A >= 5), so no isotope is evaluated twice.",
+        "notes": "Proposed (structural — it changes what the paragraph argues, not just its wording): replace the two sentences with 'The three cases partition A, so each isotope is evaluated in exactly one regime.' If instead the intended claim is that the regimes are asymptotic limits of one functional, that functional has to be named and the limits shown; as written 'the exact unified mass functional' is asserted, not exhibited."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1797,6 +1814,21 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.176Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The raise-and-dismiss construction is recorded under trap-negation-contrast; there is no separate setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1816,6 +1848,21 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.228Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1835,6 +1882,21 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.287Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The three regimes are the content of the piecewise definition."
       }
     ],
     "trap-closing-aphorism": [
@@ -1854,6 +1916,21 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.344Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the standing archimedean-specialisation boilerplate."
       }
     ],
     "trap-meta-commentary": [
@@ -1873,6 +1950,21 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.400Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1892,6 +1984,21 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.458Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1911,6 +2018,21 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.508Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1930,6 +2052,23 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.570Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the EXACT UNIFIED mass functional' asserts the existence of a single exact functional of which the three regimes are convergent limits. Nothing in the block or the piecewise formula exhibits it, and the regime boundaries are where the two candidate evaluations cross over rather than where a limit is taken. 'merely' further de-weights a step that is doing all the work.",
+        "notes": "Proposed: drop 'exact unified' or cite the block that constructs the functional."
       }
     ],
     "trap-nonspeakable": [
@@ -1949,6 +2088,22 @@
         "reviewed_at": "2026-08-15T10:31:00.693Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c8f7c52e1180",
+          "ts": "7df88b96e529"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:33.615Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "VERIFIED CONSISTENT: the headline 'tracks AME data to <= 5% for A <= 4' is satisfied by the block's own Table 2 (regime-selected errors +2.1%, +0.51%, +0.86%, -4.07%; max 4.07%). EPISTEMIC FLAG for the reviewer, under the critical-distance license: Table 2 also shows each regime is catastrophically wrong outside its band (SW+Frob is -79% / -73% / -94% at A = 3, 4; BW+chi is -353% at A = 2), and the 'regime-selected' column is in every row the better of the two. Selecting the evaluation per-A by which formula matches AME is a hidden degree of freedom, and the A = 2 / A = 3 boundary coincides exactly with where the ranking flips. The prose sentence 'This is not double counting' answers a different objection than this one."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1972,5 +2127,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:40:33.615Z"
 }

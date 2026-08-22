@@ -2038,6 +2038,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:45.604Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2057,6 +2072,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:45.677Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -2076,6 +2106,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:45.759Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "trap-triples": [
@@ -2095,6 +2140,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:45.859Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -2114,6 +2174,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:45.943Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -2133,6 +2208,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.051Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -2152,6 +2242,23 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.151Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "The block closes on '…identifying $q_0$ as the distinguished regime supporting exact exponential mass scaling', which does not follow from the sentence it closes. The stated failure set is 'roots of unity or the golden-ratio degeneration threshold' — a measure-zero set — so sitting outside it is GENERIC, exactly as the same paragraph says ('the generic physical substrate $q_0$'). Being generic cannot distinguish $q_0$ from any other generic $q$, and the corpus's standing 'q_0 is not special' discipline is the reason this matters.",
+        "notes": "proposed: '…so the property holds at any generic $q$, including $q_0$, and fails only at roots of unity and the golden-ratio threshold.' Structural: it changes what the conjecture claims about $q_0$."
       }
     ],
     "trap-performed-warmth": [
@@ -2171,6 +2278,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.251Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -2190,6 +2312,23 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.332Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "The statement says the same thing twice at maximum strength: '$\\eta(c)$ depends STRICTLY on the individual crossing, its sign, and the substrate parameter $q$, COMPLETELY INDEPENDENT of the broader configuration' — 'depends only on X' and 'is independent of everything else' are one claim, and both halves are un-hedged. The paragraph then adds 'is GUARANTEED at the generic physical substrate'.",
+        "notes": "proposed: '$\\eta(c)$ depends only on the crossing $c$, its sign, and $q$.' Not applied inline: the sentence is inside the italicised conjecture statement."
       }
     ],
     "trap-nonspeakable": [
@@ -2209,6 +2348,21 @@
         "reviewed_at": "2026-08-15T10:31:00.803Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4064ad6c831a",
+          "ts": "b4efc8678c15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.414Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Conjecture read in full (statement + display + holonomy paragraph + Archimedean boilerplate); eight of ten categories clean."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2232,5 +2386,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:14:46.414Z"
 }

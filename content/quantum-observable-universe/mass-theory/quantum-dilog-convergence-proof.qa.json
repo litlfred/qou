@@ -1178,6 +1178,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the regularization question.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.981Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1197,6 +1213,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.019Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-em-dash": [
@@ -1216,6 +1248,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.057Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-triples": [
@@ -1235,6 +1283,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.096Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1254,6 +1318,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.136Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-meta-commentary": [
@@ -1273,6 +1353,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.175Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1292,6 +1388,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.215Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-performed-warmth": [
@@ -1311,6 +1423,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.254Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-superlative": [
@@ -1330,6 +1458,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.294Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "trap-nonspeakable": [
@@ -1349,6 +1493,22 @@
         "reviewed_at": "2026-08-15T10:31:00.869Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.334Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1371,5 +1531,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:44:28.334Z"
 }

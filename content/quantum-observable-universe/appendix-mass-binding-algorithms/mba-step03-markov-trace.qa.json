@@ -889,13 +889,193 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.137Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.176Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.218Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.258Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.299Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.340Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.380Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.419Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.461Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "68666ae88b7d",
+          "ts": "0654bad42945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.504Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:markov-trace including the long large-A transfer-matrix note. No constructions from the ten categories (2 spaced dashes in 733 words). VERIFIED: the three Markov axioms as stated (cyclicity, tr_M(a sigma_n) = z tr_M(a), tr_M(1) = 1) are the standard characterisation; 'for n <= 9 the partition count is at most 30' is exactly p(9) = 30; the Markov parameter z is not given a value here, so the block carries no convention-C/D exposure.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The edge-case note - 'closure of any braid containing a full twist Delta_n^2 in the centre acquires a factor q^{n(n-1)} from the central character' - is not right as a uniform scalar. I computed Delta_3^2 = (sigma_0 sigma_1)^3 in H_3(q) symbolically: it is a genuine six-term element, not q^6 times the identity. Being central it acts by a scalar on each Wedderburn block, but that scalar is lambda-dependent: q^{n(n-1)} = q^6 on the trivial rep (sigma_i -> q) and q^{-6} on the sign rep (sigma_i -> -q^-1). The claim holds for the trivial block only. (2) The codomain is given as R[q, q^-1], but the Markov parameter is a rational function of q under either convention (D: z = q^3/(q^2+1)), so bare tr_M lands in R(q); Laurent-polynomiality is a property of the normalised Jones invariant, not of the raw trace."
+      }
     ]
   },
   "source_hashes": {
     "md": "68666ae88b7d",
     "ts": "0654bad42945"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:26:43.504Z",
   "$schema": "block-qa/v1",
   "label": "alg:markov-trace",
   "kind": "algorithm",

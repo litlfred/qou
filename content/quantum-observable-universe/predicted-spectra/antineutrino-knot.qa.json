@@ -1871,6 +1871,36 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.123Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.513Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'Orientation - not knot type - distinguishes the neutrino and antineutrino.' is the documented substantive-mathematical-contrast false positive: the unknot is amphichiral, so the contrast IS the block's content and the denial is the load-bearing half."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1890,6 +1920,21 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.167Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
       }
     ],
     "trap-em-dash": [
@@ -1909,6 +1954,36 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.208Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.551Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "One unspaced em-dash pair in 'Orientation-not knot type-distinguishes ...', a true parenthetical carrying the block's claim. No other dashes; no density."
       }
     ],
     "trap-triples": [
@@ -1928,6 +2003,21 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.246Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
       }
     ],
     "trap-closing-aphorism": [
@@ -1947,6 +2037,21 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.285Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
       }
     ],
     "trap-meta-commentary": [
@@ -1966,6 +2071,21 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.323Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
       }
     ],
     "trap-thesis-restatement": [
@@ -1985,6 +2105,21 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.361Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
       }
     ],
     "trap-performed-warmth": [
@@ -2004,6 +2139,21 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.398Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
       }
     ],
     "trap-superlative": [
@@ -2023,6 +2173,21 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.435Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
       }
     ],
     "trap-nonspeakable": [
@@ -2042,6 +2207,37 @@
         "reviewed_at": "2026-08-15T10:31:01.293Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.474Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the antineutrino definition. All ten categories judged; see per-criterion notes for the two constructions examined and cleared."
+      },
+      {
+        "field_hash": {
+          "md": "7377cfe55c34",
+          "ts": "2d08a4c6d81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:16.589Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Prose is short-sentence and reads aloud cleanly. RENDER-QA AND PHYSICS FINDINGS recorded here (see notes).",
+        "notes": "STANDING-TRAP FINDINGS, report only, do not fix inline. (1) RENDER RISK: the character U+2299 CIRCLED DOT OPERATOR appears twice - once inside display math, in '\\text{(mirror unknot, dashed circle U+2299)}', and once in plain prose, 'We draw the antineutrino as a dashed circle (U+2299)'. Per AGENTS.md the transliteration added in folio-assistant#129 covers inline and fenced CODE, so a crash-class char in plain prose or inside a \\text{} argument is the residual exposure; U+2299 is not declared by LaTeX utf8.def. Proposed fix: '\\odot' inside math, and the word 'dashed circle' alone in prose. (2) PHYSICS: 'The antineutrino T_{1,0}^sigma carries zero topological mass and exits as a massless particle' is stated flatly; neutrino oscillation establishes nonzero neutrino mass experimentally. Whether the framework means topological mass only should be said in the sentence."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2065,5 +2261,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:29:16.589Z"
 }

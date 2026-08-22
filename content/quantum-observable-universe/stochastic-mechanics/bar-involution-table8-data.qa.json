@@ -895,7 +895,177 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.586Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.625Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.664Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.703Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.743Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.783Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.821Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.862Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.901Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "21d1dad259c2",
+          "ts": "478f8069d7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.938Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 6-row notation table, no prose sentences. Cross-checked against table1 and table2: P_avg/P_skew agree with table1's formulas, and sigma_avg = P_avg(sigma) = sigma - h/2 agrees with table2's row and with the Hecke relation sigma - sigma^{-1} = q - q^{-1} = h."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:04.938Z"
 }

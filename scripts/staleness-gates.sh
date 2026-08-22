@@ -51,6 +51,25 @@ GATES=(
   "scriptHash + upstream drift|computations/witness_dependency_drift.py|--strict|yes"
   "q0 constant staleness|computations/substrate/witness_constant_staleness.py|--strict|yes"
   "dependency coverage|computations/audits/witness_dependency_coverage_audit.py|--strict|no"
+  # BLOCKING, and green on arrival. Bean qou-cdj8.
+  #
+  # The vendored qou-mass mirror is the same failure this file exists for, one
+  # package over: a copy whose source moved and was never regenerated, reporting
+  # yesterday's answer with today's authority. It belongs in the STALENESS
+  # family, not the precision one -- nothing about it is float64.
+  #
+  # It had no runner at all. AGENTS.md calls `--check` "the gate", and a grep of
+  # every .sh and .yml found nothing invoking it, which is why the mirror went
+  # red again four days after the ratchet was built (bean qou-wpp2) and why two
+  # separate agents independently re-measured the same drift. Fourth instance of
+  # the qou-j6gb pattern this repo keeps hitting: the checker exists, works,
+  # ships --check, and is in no array.
+  #
+  # Blocking from the start rather than advisory, because it is GREEN on arrival
+  # -- the objection in precision-gates.sh (a gate red on arrival gets skipped)
+  # does not apply here. Coverage as of 2026-08-22: 42 modules, 18 cone
+  # witnesses, 122 package-data witnesses, 0 uncovered.
+  "qou-mass vendor mirror|scripts/sync-qou-mass-vendor.py|--check|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then

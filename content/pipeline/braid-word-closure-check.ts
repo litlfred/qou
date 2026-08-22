@@ -83,7 +83,13 @@ function rowsOf(file: string): Row[] {
     if (cells.every((c) => /^:?-+:?$/.test(c))) return;
     if (!head.length) { head = cells.map((c) => c.toLowerCase()); return; }
     const at = (name: string) => { const k = head.findIndex((h) => h.includes(name)); return k < 0 ? undefined : cells[k]; };
-    const wcell = at("braid");
+    // The column is not always headed "braid word". A whole family of
+    // mislabelled rows was invisible to this checker because its header
+    // reads "Hecke word" — the image of the braid word in H_n(q), written
+    // in the same notation and closing the same way. Try the aliases in
+    // order of specificity; a cell that is not a plain braid word fails
+    // `expand` below and is dropped, so a loose header match costs nothing.
+    const wcell = at("braid") ?? at("hecke word") ?? at("word");
     if (!wcell) return;
     const wm = /\$([^$]*)\$/.exec(wcell);
     if (!wm) return;

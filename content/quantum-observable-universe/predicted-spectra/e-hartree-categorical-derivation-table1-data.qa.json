@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:01.846Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:01.888Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:01.928Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:01.969Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.009Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.049Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.090Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.131Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.174Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9429b966b538",
+          "ts": "41c818a06ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:02.215Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row layer/object/examples table stating where alpha_EM lives. No prose sentences; judged all ten categories.",
+        "notes": "Table-only block. The bold **NO**/**YES** in the last column is a two-valued data cell, not narrated emphasis, so trap-meta-commentary passes. Content check: the claim that alpha_EM lives in dim_q and not in tr_M is the block's substantive distinction (false-positive class 'substantive mathematical contrast'), not a negation-contrast construction."
+      }
     ]
   },
   "source_hashes": {
     "md": "9429b966b538",
     "ts": "41c818a06ac3"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:02.215Z"
 }

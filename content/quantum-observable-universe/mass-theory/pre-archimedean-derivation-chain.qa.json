@@ -1197,6 +1197,22 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:23.707Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'No analytic limits or empirical constants enter until the final Archimedean specialisation' is a factual scope statement about where the wall sits, not assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1216,6 +1232,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:23.755Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Eleven numbered steps plus a three-paragraph preamble; no setup-then-reframe anywhere."
       }
     ],
     "trap-em-dash": [
@@ -1235,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 515 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:23.823Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "One unspaced em-dash pair, a true parenthetical: 'All other observables--nucleon masses, binding energies, decay Q-values--are derived algebraically at q_0'."
       }
     ],
     "trap-triples": [
@@ -1254,6 +1301,23 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 515 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:23.875Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Paragraph-level triple rhythm: 8 of the 11 step paragraphs are exactly three sentences (Steps 1,2,3,4,6,7,9,10; Step 5 has five, Steps 8 and 11 have two). The content does not come in threes - Step 8's two sentences and Step 5's five show the natural sizes - so the uniform three-beat is imposed rather than found.",
+        "notes": "PROPOSED (not applied - restructuring 8 paragraphs is well past the mechanical bar): let each step run to its own length. Steps 4 and 10 in particular pad to three by splitting one claim across two sentences ('...admits exactly six independent crossing operators. The H_3(q) basis ... supplies them.')."
       }
     ],
     "trap-closing-aphorism": [
@@ -1273,6 +1337,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:23.942Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on Step 11's technical content, no flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1292,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:23.996Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'We detail the algorithm behind each step' and 'Steps 1-8 construct ... Steps 9-11 extract' are structural roadmap, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1311,6 +1406,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:24.048Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1330,6 +1440,21 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:24.103Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1349,6 +1474,23 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:24.167Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two unearned intensifiers: 'The Wedderburn summands ... perfectly mirror the curve's automorphism Prym decomposition' (Step 4) and 'completely avoiding infinite-series divergence' (Step 7).",
+        "notes": "FIXED inline (adverb deletion only, no math, no meaning change): 'perfectly mirror' -> 'mirror'; 'completely avoiding' -> 'avoiding'. $$ count re-checked even. NOT touched, verified correct: 'exactly six independent crossing operators' in Step 4 - dim H_3(q) = 3! = 6, so 'exactly' is earned."
       }
     ],
     "trap-nonspeakable": [
@@ -1368,6 +1510,23 @@
         "reviewed_at": "2026-08-15T10:31:00.567Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b03b77cc43a1",
+          "ts": "2d7dcd99d9aa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:07:24.228Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Step 10's closer stalls aloud on a four-noun object: 'The dual shadow prices explicitly recover the binding energy block saturation.'",
+        "notes": "PROPOSED (not applied - names the LP dual's role, so rewording is math-adjacent): 'The dual shadow prices identify which Wedderburn blocks the bound state saturates.' Compare AGENTS.md SS'LP / SDP duals', which states that content directly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1390,5 +1549,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:07:24.228Z"
 }
