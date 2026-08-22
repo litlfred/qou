@@ -1231,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:03.984Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Block-final sentence asserted by double denial: 'It is neither metallic nor inert, but maximally covalent.'",
+        "notes": "FIXED: 'It is neither metallic nor inert, but maximally covalent.' -> 'It is maximally covalent, sitting between the metallic and the inert extremes.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1267,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.024Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1302,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.065Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Spaced/unspaced dashes counted across the block; none load-bearing, density within normal parenthetical use."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1337,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.107Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Numbered 1/2/3 (bonding capacity, energy landscape, chain-forming) - three separate consequences of half-filling, each with distinct content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1372,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.146Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked: it advances or scopes the argument rather than supplying a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1407,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.187Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No narration of the author's own emphasis ('note the framing', 'we emphasize', 'the key takeaway')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1442,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.227Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked against the block's opening claim; no restatement closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1477,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.267Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Institutional register throughout; no personal or affective language."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1512,23 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.309Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Five maximum-strength claims in 19 lines: 'makes carbon unique among the light elements', 'Maximal bonding capacity', 'More than any other period-2 element', 'maximum Phi_1 flexibility', 'maximally covalent'. Concentration is the tell; the individual claims are defensible (carbon is the only period-2 element with four bonds).",
+        "notes": "STRUCTURAL by volume. Proposed: keep 'four open linking sites, more than any other period-2 element' as the one quantitative claim and drop the three restatements of it."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1548,22 @@
         "reviewed_at": "2026-08-15T10:31:00.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "33f03aafc162",
+          "ts": "8cd536b6f26a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:04.349Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Read for aloud-parseability; no noun-chain that stalls when spoken."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1586,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:04.349Z"
 }
