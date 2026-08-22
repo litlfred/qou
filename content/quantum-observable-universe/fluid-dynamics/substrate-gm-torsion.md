@@ -68,4 +68,4 @@ $$
 
 The specialisation map factors precisely through the Kummer sequence. The obstruction definitively persists if and only if $\kappa_n$ remains **not** divisible by $n$ in $H^2(\mathcal{S}, \mathbb{G}_m)$ for any finite $n$.
 
-On the Descartes universe ($\chi(A) = -6$), [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction) commands that the specialisation $\kappa_0|_{q = \zeta_n}$ registers as non-zero at every primitive root avoiding $\gcd(n, 6) = 1$. The NS obstruction categorically cannot collapse.
+On the Descartes universe ($\chi(A) = -6$), the [motivic perpetual obstruction theorem](#conj:motivic-perpetual-obstruction) commands that the specialisation $\kappa_0|_{q = \zeta_n}$ registers as non-zero at every primitive root avoiding $\gcd(n, 6) = 1$. The NS obstruction categorically cannot collapse.

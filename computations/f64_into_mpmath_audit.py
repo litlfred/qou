@@ -489,7 +489,21 @@ def _iter_rows(tier: str | None):
     """[(tier, relpath, record)] for every in-scope module under ROOT."""
     rows = []
     for p in sorted(ROOT.rglob("*.py")):
-        if {"_deprecated", "node_modules", ".lake"} & set(p.parts):
+        # `.claude` excluded because agent worktrees live under
+        # `.claude/worktrees/<agent-id>/` — a full second checkout of the repo,
+        # gitignored (.gitignore:120) and carrying 0 tracked files. Without
+        # this, every scanned file appears TWICE and every count this audit
+        # reports is inflated by whatever agent worktrees happen to exist.
+        # Measured on 2026-08-22 with one worktree present: 7321 in-scope .py
+        # files, of which 3648 (49.8%) were the mirror — i.e. roughly double.
+        #
+        # The inflation is environment-dependent, which is the worse property:
+        # the same commit audits differently depending on whether an agent
+        # worktree is checked out, so the numbers are not reproducible across
+        # machines and cannot support a baseline. Its sibling
+        # `witness_raw_float64_audit` is correctly scoped (0 worktree hits);
+        # this one had simply not been given the exclusion.
+        if {"_deprecated", "node_modules", ".lake", ".claude"} & set(p.parts):
             continue
         if p.resolve() == Path(__file__).resolve():
             continue
