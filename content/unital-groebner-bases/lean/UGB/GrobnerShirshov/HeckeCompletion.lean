@@ -11450,6 +11450,90 @@ theorem vLoop (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : 
     (by rw [descWord_cons h₁ (by omega)]; simp)
   simpa [V2, V2L] using key
 
+/-- **The trio**: one Bokut–Shiao step then `quadPair`, in the shape both
+lineages of the opening phase use.
+
+`hecke_opening_trio_shape.py` measures the six steps after `TL` as
+`B(jp,jpp,j₁)`, `Y(j₁,jp)`, `Q(j₁)` twice, 6/6 — and the two occurrences differ
+only in `A` and `T`, so this is one lemma applied twice rather than a U trio and
+a V trio:
+
+| | `A` | `T` |
+|---|---|---|
+| U | `[σᵢ₋₁] ++ descWord i₂ jpp ++ descWord i jppp` | `[σᵢ]` |
+| V | `[σᵢ₋₂] ++ descWord i₁ jpp ++ descWord i jppp` | `[]` |
+
+The Bokut–Shiao redex straddles the two descending runs: `descWord i j₁` splits
+at `jppp`, leaving `descWord jpp j₁`, and `descWord jpp j₂` opens with `σ_jpp` —
+so `descWord jpp j₁ ++ [σ_jpp]` is `bsWord₁ jpp j₁`, sitting on the join. Its
+image `bsWord₂ jp jpp j₁ = [σ_jp, σ_jpp, σ_jp, σ_j₁]` then meets `descWord jp j₂`,
+whose first two letters are `σ_jp, σ_j₁` — and `σ_jp σ_j₁ σ_jp` followed by
+`σ_j₁` is exactly `quadPair`'s redex. Neither step creates it alone, which is
+the same mechanism §4al describes one level down.
+
+**`hj₂ : j₂ ≤ j₁` is the regime.** It is what makes `descWord jp j₂` open with
+those two letters, and it is `b ≥ a` — so this lemma does not instantiate in the
+`a > b` corner at all. The diagonal `b = a` is included: there `descWord j₁ j₂`
+is the single letter `σ_j₁` and `descWord jm j₂` is empty.
+
+One collision hypothesis serves both steps: no bystander extends `A`.
+`quadPair` asks about `A ++ [σ_jp, σ_jpp]`, which is an extension of `A`, and
+`bsStep` asks about a source that begins with `A`. At both call sites it is
+discharged by a single letter — the U trio's `A` opens `σᵢ₋₁` against the parked
+`V2L`'s `σᵢ₋₂`, and the V trio's the other way round. -/
+theorem trio (hn : 0 < n) (hp : HeckeParams) {j₂ jm j₁ jp jpp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hj₂ : j₂.val ≤ j₁.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n),
+      r ≠ A ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (bsWord₁ jpp j₁ ++ (descWord jp j₂ ++ T)), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+          ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+            ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))),
+          c * (hp.q - hp.q⁻¹))
+        :: (A ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+              ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ (descWord jm j₂ ++ T))), c)
+        :: L₂)) := by
+  -- `descWord jp j₂` opens `σ_jp, σ_j₁` — this is where `j₂ ≤ j₁` is used
+  have hsplit : descWord jp j₂ =
+      (⟨jp⟩ : HeckeGen n) :: ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂) := by
+    rw [descWord_cons_le hjp (by omega), descWord_cons_le hjm hj₂]
+  -- state the Bokut-Shiao step's TARGET already in `quadPair`'s source shape,
+  -- so the two compose with no rewriting between them
+  have hmid : (A ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]) ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))
+      = A ++ bsWord₂ jp jpp j₁ ++ (descWord jp j₂ ++ T) := by
+    rw [bsWord₂, hsplit,
+      descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+      descWord_self]
+    simp only [List.cons_append, List.append_assoc, List.nil_append]
+  have hbs := bsStep (i' := jp) (i := jpp) (j := j₁) hn hp hjpp (by omega)
+    L₁ L₂ A (descWord jp j₂ ++ T)
+    (A ++ (bsWord₁ jpp j₁ ++ (descWord jp j₂ ++ T)))
+    ((A ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]) ++
+      ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++
+        ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ T))))
+    c hc
+    (by simp only [List.append_assoc])
+    hmid
+    (fun q hq => by
+      have := hpark q hq (bsWord₁ jpp j₁ ++ (descWord jp j₂ ++ T))
+      simpa only [List.append_assoc] using this)
+  have hq := quadPair (j₁ := j₁) (jp := jp) hn hp hjp c hc L₁ L₂
+    (A ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩]) (descWord jm j₂ ++ T)
+    (fun r hr z => by
+      have := hpark r hr ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++ z)
+      simpa only [List.append_assoc] using this)
+  have hchain := ((MultiStepReduction.refl _).step hbs).trans hq
+  simpa only [List.append_assoc, List.cons_append, List.singleton_append,
+    List.nil_append] using hchain
+
 /-- The chain after both loops, before either trio. -/
 noncomputable def TL (i i₁ i₂ j₁ j₂ jpp : Fin n) : AlgElement (HeckeGen n) ℝ :=
   AlgElement.ofTerms
