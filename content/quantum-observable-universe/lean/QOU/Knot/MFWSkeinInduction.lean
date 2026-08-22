@@ -171,7 +171,20 @@ where a proof should come from.
 It is **not proved here**, and it is not free: for arbitrary (non-descending)
 words the analogous bound fails — the longest element of `S₃` has Coxeter
 length 3 against `n − c = 1` — so the content lies in what "descending"
-supplies. Tracked in `qou-9ttb`.
+supplies.
+
+**What it supplies, measured**: in a descending word **no two strands cross
+more than once *net*** — the maximum `|net signed crossings|` over any strand
+pair is exactly `1`, across all 1227 words. That is the cancellation which
+keeps `|e|` small while the letter count stays large, and it is the natural
+next lemma.
+
+**One decomposition is refuted** (scope-(a), recorded so it is not re-walked):
+the per-pair bound is *necessary but not sufficient*. In **298** of the 1227
+words the number of pairs with nonzero net **exceeds** `n − c` — e.g. `n = 3`,
+`w = σ₁σ₂σ₁⁻¹` has all three pairs nonzero against `n − c = 1` — so
+`|e| ≤ #nonzero pairs` does not yield the bound. The **signs** must arrange as
+well, and that is the piece still missing. Tracked in `qou-9ttb`.
 -/
 
 /-- The base-case hypothesis, named so it can be discharged later rather than
