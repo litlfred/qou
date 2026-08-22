@@ -263,6 +263,50 @@ as a rule in `classify_intent()`, it reclassified three of five producers.
 The classifier carries a comment saying why CAL-2 mentions are deliberately
 not muon signals, so the next agent does not re-derive the same mistake.
 
+## Coordination with `qou-o922` — the two audits catch opposite failure modes
+
+A sibling branch is measuring a closely-related population under bean
+`qou-o922` (`computations/audits/undeclared_muon_pin_flip_risk_audit.py`,
+baseline ratcheted 49 → 40). Measured intersection against my 56:
+
+| | count |
+|---|---:|
+| `qou-o922` at-risk | 49 |
+| my direct muon-pinners | 56 |
+| **intersection** | **4** |
+| sibling only | 45 |
+| mine only | 52 |
+
+Nearly disjoint — and the reason is that the two populations behave
+**oppositely on re-run**:
+
+- **`qou-o922`:** witness stamped `muon`, producer absent from the manifest.
+  On re-run, `q_parameter` falls through to the **proton default** *and*
+  `WitnessBuilder` drops the `q0Anchor` label in the same step. **Re-running
+  flips the pin and destroys the evidence that it flipped.**
+- **This audit:** the producer reads `q-pinning-50-digit.witness.json`
+  **directly** and never imports `q_parameter`. Manifest state is irrelevant
+  to it. **Re-running does not flip anything** — it stays on muon
+  indefinitely.
+
+### The consequence for `qou-o922`'s stated fix
+
+That bean's next step reads *"add a manifest entry under `ideal_muon` or
+`physical_proton`, THEN re-run."* That is correct for its own 45, and it is
+**a no-op for my 52**: a producer that never consults `q_parameter` does not
+observe its manifest entry. Declaring it and re-running leaves it on the muon
+pin while the declaration says otherwise — which is precisely how the 5
+contradictions above came to exist.
+
+The four in both populations are
+`qbeta_dladder_ecalle_acceleration_probe`, `qbeta_fsc_g_pattern_comparison`,
+`qbeta_symbolic_sdp_strict_complementarity`, and
+`qbeta_trm_crosscheck_convention_pin_split_probe` — these need the read fixed
+*before* the manifest entry, or the entry will not take effect.
+
+Together the two audits cover 101 producers (49 + 56 − 4), and neither sees
+the other's set.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke

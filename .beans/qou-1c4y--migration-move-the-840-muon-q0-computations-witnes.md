@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-22T19:35:40Z
+updated_at: 2026-08-22T20:20:42Z
 ---
 
 
@@ -504,3 +504,33 @@ Classifying the 51 is the next step; the 5 are actionable now.
 Re-runnable: `python3 computations/audits/q0_muon_population_partition.py`
 (`--list-contradictions` exits 1 while any remain). Audit:
 `docs/audits/2026-08-22-q0-migration-worklist-partition.md`.
+
+
+## Coordination with qou-o922 (measured 2026-08-22) — opposite failure modes
+
+Sibling bean `qou-o922` measures a closely-related population
+(`undeclared_muon_pin_flip_risk_audit.py`, ratcheted 49 -> 40). Intersection
+against my 56 direct muon-pinners: **4 overlap, 45 sibling-only, 52 mine-only.**
+
+Nearly disjoint, because the two behave **oppositely on re-run**:
+
+- **qou-o922**: muon-stamped witness + producer undeclared. On re-run
+  `q_parameter` falls through to the **proton default** and `WitnessBuilder`
+  drops the label in the same step -> **the pin flips and the evidence
+  disappears together.**
+- **mine**: the producer reads `q-pinning-50-digit.witness.json` **directly**,
+  never importing `q_parameter`. Manifest state is irrelevant -> **re-running
+  flips nothing**; it stays muon indefinitely.
+
+**Consequence for qou-o922's stated fix.** Its next step is *"add a manifest
+entry ... THEN re-run"*. Correct for its own 45; **a no-op for my 52** — a
+producer that never consults `q_parameter` cannot observe its manifest entry.
+Declaring it and re-running leaves it on muon while the declaration says
+proton, which is exactly how the 5 contradictions arose.
+
+The 4 in both need the **read** fixed before the manifest entry, or the entry
+will not take effect: `qbeta_dladder_ecalle_acceleration_probe`,
+`qbeta_fsc_g_pattern_comparison`, `qbeta_symbolic_sdp_strict_complementarity`,
+`qbeta_trm_crosscheck_convention_pin_split_probe`.
+
+Together: 101 producers covered (49 + 56 - 4); neither audit sees the other's set.
