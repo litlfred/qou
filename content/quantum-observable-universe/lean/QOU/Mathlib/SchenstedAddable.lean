@@ -341,4 +341,44 @@ theorem addCellSteps_insertWord (w : List ℕ) :
     addCellSteps [] (rowIndices [] w) = tableauShape (insertWord w) :=
   (addableAlong_rowIndices w [] colStrict_nil).2
 
+/-! ### The shape an addable sequence builds is the count shape
+
+The tool the recording-tableau bridge needs. `addCell` increments one entry, so after a whole run
+row `i` holds exactly the cells whose position was `i` — no reference to any tableau. -/
+
+/-- A nonzero entry is in range. -/
+theorem lt_length_of_getD_pos {l : List ℕ} {i : ℕ} (h : 0 < l.getD i 0) : i < l.length := by
+  by_contra hc
+  rw [getD_past (by omega)] at h
+  omega
+
+/-- **Row `i` of the built shape counts the steps that landed in row `i`.** -/
+theorem getD_addCellSteps : ∀ (is : List ℕ) (l : List ℕ), AddableAlong l is → ∀ (i : ℕ),
+    (addCellSteps l is).getD i 0 = l.getD i 0 + is.count i
+  | [], l, _, i => by simp
+  | j :: rest, l, haa, i => by
+      obtain ⟨hadd, haaRest⟩ := haa
+      rw [addCellSteps_cons, getD_addCellSteps rest (addCell l j) haaRest i]
+      by_cases h : i = j
+      · subst h
+        rw [getD_addCell_self l hadd.1, List.count_cons]
+        simp only [beq_self_eq_true, if_true]
+        omega
+      · rw [getD_addCell_ne l hadd.1 h, List.count_cons]
+        simp only [beq_iff_eq, Ne.symm h, if_false, Nat.add_zero]
+
+/-- The built shape has exactly the rows that were used. -/
+theorem lt_length_addCellSteps {is l : List ℕ} (haa : AddableAlong l is) {i : ℕ}
+    (h : 0 < l.getD i 0 + is.count i) : i < (addCellSteps l is).length := by
+  refine lt_length_of_getD_pos ?_
+  rw [getD_addCellSteps is l haa i]
+  exact h
+
+/-- **The count shape, from the empty shape** — the form the bridge will use, with the starting
+shape gone. -/
+theorem getD_addCellSteps_nil {is : List ℕ} (haa : AddableAlong [] is) (i : ℕ) :
+    (addCellSteps [] is).getD i 0 = is.count i := by
+  rw [getD_addCellSteps is [] haa i]
+  simp
+
 end QOU.Mathlib.Schensted
