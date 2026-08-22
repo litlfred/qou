@@ -1,10 +1,11 @@
 ---
 # qou-r8zo
 title: 'rho_f_vol_binding_dashboard M_meas column is irreproducible: +-240 eV from every standard route'
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-08-21T22:02:08Z
-updated_at: 2026-08-21T22:02:08Z
+updated_at: 2026-08-22T09:53:41Z
 ---
 
 
@@ -69,3 +70,33 @@ If the answer is "it should just be the CODATA/AME measured masses", the fix
 is registry reads — `M_DEUTERON_MEV_VALIDATION`, `M_HE3_MEV_VALIDATION`,
 `M_HE4_MEV_VALIDATION` all now exist and are audited (12/12 in
 `codata_table_vintage_audit`); only tritium would need adding.
+
+## RESOLVED 2026-08-22 — and my own verdict in this bean was wrong
+
+I filed this as "irreproducible from every standard route" and left the
+values alone. **I never checked the obvious source.** NIST publishes the
+nuclear masses directly (deuteron / triton / helion / alpha):
+
+    iso   was            NIST                  error
+    2H    1875.612790    1875.61294500     -155.0 eV   (267 sigma)
+    3H    2808.921136    2808.92113668       -0.7 eV     (1 sigma)
+    3He   2808.391611    2808.39161112       -0.1 eV     (0 sigma)
+    4He   3727.379109    3727.3794118      -302.8 eV   (252 sigma)
+
+Two rows landing at 1 and 0 sigma is what IDENTIFIES the intended source.
+The two routes this bean tested -- `Z*m_p + N*m_n - B` and
+`atomic*u - Z*m_e` -- miss those same two rows by 13 and 78 eV, so
+"no route reproduces the column" was a statement about the routes I
+happened to try, not about the column. 2H and 4He are simply wrong, by
+-82.6 and -81.2 ppb; the shared relative offset says one bad conversion
+rather than two typos, but I did not identify what produced it.
+
+Fixed on PR #5439 (`5e79118289`): all four now READ from the table, so
+the question cannot recur. Also converted the probe to mpmath end-to-end
+(a probe is not exempt from NO-FLOAT64), and marked M_P/M_N `noqa: P31`
+-- they are the canonical Hecke energies, not CODATA, and draining them
+would be the opposite of correct.
+
+Lesson for the next agent: before writing "irreproducible", enumerate
+the sources the corpus actually has a reader for. `codata_table.codata()`
+covers 293 NIST quantities including every light nuclear mass.
