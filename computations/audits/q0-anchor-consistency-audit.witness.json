@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T10:27:57.404454+00:00",
-  "commitSha": "c5d4b8131656d6f9dc521d56e9557bf8124827ff",
+  "computedAt": "2026-08-22T12:31:06.871924+00:00",
+  "commitSha": "77558b2d3ad7a2952ef3601d5f0f9131b8270d88",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "5726f911cddb",
-  "scriptCommitSha": "7ddaeab36c1ef548a51ee2ff8765005d0a90312c",
+  "scriptHash": "d4f4409e5d3b",
+  "scriptCommitSha": "31d1bdf6e98c398512f7b5fe095471cfb976f600",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,19 +36,21 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 664,
+      "Q0_OK": 665,
       "Q0_AMBIGUOUS": 18,
       "Q0_INDEPENDENT": 27,
       "Q0_INDEPENDENT_NO_REASON": 0,
-      "Q0_ANCHOR_MISSING": 1918,
+      "Q0_COMPARISON": 0,
+      "Q0_COMPARISON_NO_REASON": 0,
+      "Q0_COMPARISON_NO_VALUES": 0,
+      "Q0_ANCHOR_MISSING": 1924,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
       "Q0_PARSE_ERROR": 0,
@@ -2486,7 +2488,19 @@
           "detail": ""
         },
         {
+          "witness": "hecke-prefix-head-separation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-prefix-loop-fit.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "hecke-prefix-phases.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-prefix-schedule-check.witness.json",
           "detail": ""
         },
         {
@@ -2495,6 +2509,18 @@
         },
         {
           "witness": "hecke-tail-assembly-fit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-tail-collision-check.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-tail-diagonal-check.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-tail-reorder-check.witness.json",
           "detail": ""
         },
         {
@@ -7845,6 +7871,10 @@
         },
         {
           "witness": "atomic-tr-m-mpfr-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "muon-pin-three-values.witness.json",
           "detail": ""
         },
         {
