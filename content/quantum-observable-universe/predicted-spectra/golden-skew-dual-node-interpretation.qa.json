@@ -1413,6 +1413,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.685Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1447,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.820Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 26 words)"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.894Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-triples": [
@@ -1470,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 26 words)"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.947Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1549,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.997Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1583,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:10.050Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1617,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:10.105Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1651,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:10.154Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1685,21 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:10.203Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of a two-sentence remark. None of these nine constructions is present."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1719,23 @@
         "reviewed_at": "2026-08-15T10:31:01.136Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "03041c814342",
+          "ts": "238411c3b407"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:10.246Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "severity": "minor",
+        "evidence": "Both sentences of a two-sentence block are noun-pile constructions. 'The reciprocal node bar-duality ($\\varphi^{-2}$ and $\\varphi^2$) functions as a two-sided stability margin.' has a four-word compound subject and uses 'functions as' where 'is' is meant. 'This margin provides a boundary condition for bounding spectral gaps.' pairs 'boundary' with 'bounding' and turns the verb into 'provides', leaving no agent. Read aloud, neither sentence lands.",
+        "notes": "Structural (the 'functions as' -> 'is' swap changes what is asserted from a role to an identity, which is the author's call), not edited. Proposed fix: 'The two reciprocal nodes $\\varphi^{-2}$ and $\\varphi^2$ bracket the physical band, giving a two-sided stability margin that bounds the spectral gap from either side.' Two items reported to the batch: (i) 'functions as' joins 'acting as' in prf:gauge-conformal-invariance and 'serving as' in prf:golden-quartet-galois - a three-block cluster of the is-substitution pattern; (ii) the block is titled 'Mathematical novelty of the skew-dual stability margin' but states no novelty, the same defect as rem:gauge-coupling-uniqueness-novelty."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1758,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:52:10.246Z"
 }

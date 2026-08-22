@@ -2109,6 +2109,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.118Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2128,6 +2143,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.176Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "trap-em-dash": [
@@ -2147,6 +2177,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 272 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.235Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "trap-triples": [
@@ -2166,6 +2211,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 272 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.283Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "trap-closing-aphorism": [
@@ -2185,6 +2245,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.349Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "trap-meta-commentary": [
@@ -2204,6 +2279,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.413Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "trap-thesis-restatement": [
@@ -2223,6 +2313,23 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.594Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "severity": "minor",
+        "evidence": "The display $1/\\alpha_{EM} = q[9]_q[10]_q + 2g/(4\\pi(g-1)) + O(\\alpha)$ is typeset TWICE, identically: once in the Proposition statement and again, verbatim, under '## Conjectural physical interpretation', where the surrounding prose then re-narrates it ('The $g=4$ structure of Bring's surface appears in both main terms.'). The second display adds nothing the first has not stated.",
+        "notes": "Structural - deleting a display touches math layout. Proposed: drop the repeated display and open the section with the reading instead: 'In the decomposition above, the $g = 4$ structure of Bring's surface enters both terms: ...'."
       }
     ],
     "trap-performed-warmth": [
@@ -2242,6 +2349,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.475Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "trap-superlative": [
@@ -2261,6 +2383,23 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.667Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "severity": "minor",
+        "evidence": "Three unqualified claims, each contradicted by the block's own numbers. (i) 'This approaches the CODATA standard deviation $\\sigma_\\alpha = 1.5 \\times 10^{-10}$.' - recomputed, the two-term residual 5.7e-8 is 372 sigma away, so 'approaches' overstates by more than two orders of magnitude. (ii) 'The additive form provides the cleanest structure.' - the comparison table directly above lists rem:em-coupling-chern-simons at residual -4e-7, TEN TIMES better than this form's -4.2e-6. (iii) 'Every factor maps to a known geometric or topological invariant of Bring's surface.' - unqualified, while the same table's 'Structural status' column for this row reads 'Geometrically clean' rather than derived, and the .ts authorNotes still list two open sub-problems.",
+        "notes": "Structural. Proposed: (i) state the distance honestly - 'The two-term residual is 5.7e-8, about 370 times the CODATA standard deviation 1.5e-10.'; (ii) say what 'cleanest' means and concede the comparison - 'The additive form is structurally the simplest of the three, though the Chern--Simons form currently has the smaller residual.'; (iii) qualify (iii) to the terms actually identified. Separately, the .ts authorNote's 'far too precise to be coincidence' is the numerology form AGENTS.md warns against and needs a search-space count to stand."
       }
     ],
     "trap-nonspeakable": [
@@ -2280,6 +2419,21 @@
         "reviewed_at": "2026-08-15T10:31:01.280Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3993c5250ac6",
+          "ts": "85a93fa0314c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:14.537Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of conditional-proposition block: statement with two geometric identifications, numerical-match table, conjectural interpretation, conditional-theorem callout, comparison table, witness pointer."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2303,5 +2457,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:51:14.667Z"
 }
