@@ -993,6 +993,95 @@ wrong it looks.
     `content/pipeline/glued-macro-scan.ts` added. Kept here because the
     tempting fix recurs: **never define the glued name.**
 
+### Recurring classes — what to fix once instead of 300 times
+
+Added 2026-08-22, after fourteen batches. Individual items are listed
+per-batch below; these are the shapes that repeat, with instance counts. A
+class with a systemic fix is worth more than any single item in it.
+
+**C1. The tolerance is doing the work the evidence should do.** Three
+independent instances, and this is the campaign's sharpest finding:
+
+- A predicted `η = 0.1045` sits **4.2σ outside its own fitted 95 % CI**
+  `[0.1167, 0.1366]`, and the verdict row reads **"Confirmation"** — because
+  that CI overlaps a pre-registered band `[0.08, 0.13]` wide enough to
+  swallow the failure. The band confirms; the prediction does not.
+- Nine assertions pass with a computed mass of **zero or negative** against
+  expected thousands of MeV, because every `tolerance` is twice its
+  `expected` (`qou-tol0`).
+- That producer sets `tolerance = max(abs(delta_MeV) * 2, 50)` where
+  `delta_MeV` **is** the residual — `|delta| ≤ 2|delta|`, true
+  unconditionally. A tautology generator, not a loose bound.
+
+None of these is a wrong number, which is why every numeric and staleness
+audit passes them. **Systemic fix**: a check that asks, of any passing
+assertion, what value would have failed it.
+[`witness_assertion_slack_audit.py`](../computations/witness_assertion_slack_audit.py)
+does this for witnesses; nothing yet does it for a block's own stated CI.
+
+**C2. The block and its witness disagree, and the block wins.** At least
+eight instances: `status: "verified"` against a witness recording
+`max_relative_diff = 7.888`; `allPassed: true` from an **empty** assertions
+array (twice); a passing assertion concealing a 21.6 % miss; ten table
+numbers stale against their own *fresh* witness with the error column
+overstating agreement by seven orders of magnitude; a witness whose
+assertions cover clause (1) of a three-clause proposition; a citation
+resolving only under `_deprecated/`; a number cited "from the witness" that
+appears nowhere in `computations/`. **Systemic fix**: `status: "verified"`
+should be derived from the witness, never asserted beside it.
+
+**C3. Convention C printed under a convention-D declaration.** The
+`Vol(4₁)`-class defect, one layer over. Instances include a block whose
+`q=1` weights are D-consistent (a third weight vanishes identically only
+under D) while its quoted `tr_M` is the C value — with its own witness
+recording `allPassed: false` and a failing residual equal to the C−D gap;
+a producer that *prints* the C spelling while *storing* the D value; and a
+`.md` labelled D whose Lean sibling computes C. **The denominator settles
+it faster than the value**: `q⁸(q+1)` under C against `q⁷(q²+1)²` under D.
+
+**C4. A `lean.ref` that resolves to something weaker than it looks.**
+`qou-shdw`: a sibling declaring `∃ c, ∀ i, c i = f i` — inhabited by
+`fun i => f i` for any function, both hypotheses unused — while the library
+declares **the same name** substantively, so §0a's sibling-first resolution
+makes the real theorem unreachable. Plus `exists_axiom_N` lemmas that are
+field projections out of a *given* structure; two refs whose Lean proves a
+different proposition than the block states; self-assuming projections
+(`:= ctx.claim_foo`) in at least five files. **The tell throughout is
+hypotheses declared and never used** — mechanical, and not yet checked.
+
+**C5. Wrong knot, right prose.** Five braid words found labelled as one
+knot and closing to another, every one caught by computing the closure
+rather than reading the label: `4₁` closing to the unknot; `σ₀σ₁σ₀` called
+the trefoil closing to the Hopf link; `σ₀σ₁` called Hopf closing to the
+unknot; a 5₂ word closing to a 2-component link; `(σ₁σ₂)³` called Borromean
+when it is the full twist. Plus a nucleon called a *knot* in a proof whose
+next sentence makes knot-vs-link decide the spin. **Systemic fix exists and
+was extended this campaign**:
+[`braid-word-closure-check.ts`](../content/pipeline/braid-word-closure-check.ts)
+now also reads columns headed "Hecke word" (45 → 61 rows, 1 → 3 findings).
+
+**C6. Sweep damage, three sub-shapes.** A **verb-substitution cluster**
+(`forms`/`acts as`/`equates to`/`constitutes` where *is* is meant) running
+10–21 substitutions per 45 blocks, sometimes leaving no predicate at all;
+**token substitution** (`securely` for a lost adverb — 25 sites, 6 fixed;
+`canonical` for `numerical`; "the formal derivation" for a script name — 38
+occurrences across 27 files in one chapter, destroying provenance); and the
+**"non-by definition"** garble. **Note the honest limit**: whether these
+were introduced by a sweep or authored that way is **not determinable from
+this clone**, which is shallow.
+
+**C7. `trap-superlative` as a defect detector.** Not a defect class but a
+finding about the axis: across five batches, roughly **7 in 9** of its hits
+— 18 of 23 in one, 8 of 9 in another — attach to a claim the block's own
+witness, sibling, or arithmetic refutes. It should be read as a pointer to
+check the claim, not as a style verdict, and that is now in the agent brief.
+
+**Coverage note, stated rather than implied.** Per-batch sections below run
+through `agent:j00`. Batches `k00`, `l00`, `l01`, `m00`, `n00`, `n01` are
+recorded in their commit messages with the same detail but do not yet have
+sections here; their load-bearing items are folded into the classes above
+and into the tiers.
+
 ### What is NOT in this list
 
 Roughly 40 % of the ledger is verified-correct notes — blocks recomputed
