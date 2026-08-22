@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-22T09:18:46Z
+updated_at: 2026-08-22T09:24:01Z
 ---
 
 
@@ -246,3 +246,51 @@ Determinism holds throughout: repeated local runs are byte-identical.
 Un-eliminated in-window Python changes: **`d53f2025ba`** (colour-weighting — changed `atom_nf_symbolic_D.py` + `tr_m_algebraic_q.py`, both on the *symbolic* path, which the bridge does not obviously import) and one commit to `canonical_tr_m_via_rust.py`. The search is now three files rather than the whole corpus.
 
 Bean stays **open**. Nothing measured supports re-pinning or rebaselining; main's witness remains untouched.
+
+
+---
+
+## 2026-08-22 (later) — a mislabel of my own to correct, and two more eliminations
+
+### Correction: I wrote "pristine main" and it was not
+
+Earlier I reported running the producer on "pristine main" to show the degradation is main's property rather than #5349's. **It was my own branch with one uncommitted edit stashed**, not `main`. The substance of the conclusion survives — the branch was rebased onto main and the stashed edit was the only difference — but the label was wrong and the distinction turns out to matter, because:
+
+### `d53f2025ba` is ELIMINATED — my branch never had it
+
+The colour-weighting fix landed on `main` on 08-21, **after** this branch's base. Measured:
+
+```
+NO   d53f2025ba  2026-08-21  fix(colour-weighting): close both causes
+YES  7d49b31add  2026-08-16  perf(wedderburn): skip TL_n-radical blocks
+YES  666e8959b1  2026-08-14  fix(ctype): one crossing vocabulary
+YES  45789ddfa0  2026-08-16  chi caches could not tell the question changed
+```
+
+Every re-run I did was **without** `d53f2025ba`, so it cannot explain the 4.6e-8. Had I not checked ancestry I would have spent the next pass A/B-ing a commit that was never in the tree — the same shape as reasoning from a commit subject, one level up.
+
+### `45789ddfa0` — right class, wrong producer, and a tension that rules it out
+
+Its subject is exactly the right shape: *"a cache written before the colour-weighting landed looks complete forever"* — nine committed witnesses carrying colour-**blind** χ for words that have a p-n interface. That is precisely the mechanism that would make an 08-11 value stale.
+
+Two measurements say it is not this producer:
+
+1. **The caches it fixes are on-disk resume caches in `per_irrep_pole_deuteron_h6` / `per_irrep_pole_atom`.** `atomic_tr_m_mpfr_50dps` has no on-disk cache; the bridge's are in-process only (`_Y_LAMBDA_CACHE`, `_SEMINORMAL_CACHE`, the latter keyed on `mp.dps`). Nothing survives between runs to go stale.
+2. **The proton has no weighted bond.** That commit's own derived fingerprint gives `proton  sigma:6+sigma_inv:3+averaged:2` — no `averaged_weighted`. A colour-weighting change cannot move the proton, yet `results[0]` (Z=1, N=0) moved `1.14575978…` → `1.14575982…` like every other atom. Whatever moved them moved the free nucleon too.
+
+That second point is the useful constraint: **the cause is not p-n-interface-specific.** It acts on a word with no weighted crossing, so colour weighting, δ, and the flavour split are all excluded as the mechanism — for this producer.
+
+### Elimination table
+
+Thirteen candidates now refuted: pin, convention C/D, y_λ tables, bridge code, environment *(retracted as evidence — blind)*, Rust fallback path, table coverage/dps, **Rust extension (direct A/B, byte-identical)**, Rust χ import cone (two hops), crossing vocabulary (`d_for_ctype` output identical), `7d49b31add` (author-verified diff = 0), **`d53f2025ba` (not in the branch)**, **`45789ddfa0` (no on-disk cache; proton has no weighted bond)**.
+
+### Where this leaves it
+
+Every in-window change I can identify is eliminated, and the surviving constraint — *it moves the free proton, which has no p-n bond* — does not point at any of them. Two readings, and I cannot yet separate them:
+
+- the cause is outside the 08-11 → today window I have been searching (i.e. the committed value was already not reproducible when it was committed), or
+- it is in a dependency I have not enumerated.
+
+The first is testable and is the cheaper next step: check out `c3a7e16856` wholesale in a worktree and re-run the producer there. If it does **not** reproduce its own contemporaneous committed value, the window is the wrong place to look and this stops being a drift question.
+
+Bean open. Nothing measured supports re-pinning or rebaselining; main's witness untouched.
