@@ -88,6 +88,34 @@ def q0_for(anchor: str) -> str:
     pin the contents carry.
     """
     if anchor == "ideal":
+        # SYMMETRIC GUARD. The check below covers only the proton direction.
+        # The reverse -- an `ideal` run while `q_parameter` resolved PROTON --
+        # was unguarded, and it does not fail: it returns the muon string from
+        # the witness, so the trace is evaluated at muon while everything in
+        # this producer's cone that reads the MODULE CONSTANT rather than this
+        # returned `q_str` computes at proton. One quantity, two layers.
+        #
+        # Measured, and the measurement is why this exists: moving this
+        # script's stem from `ideal_muon` to `physical_proton` in
+        # `q0_anchor_manifest.json` -- a ONE-LINE manifest change, no code
+        # touched -- moved tr_M from 1.145759781719936507366644 to
+        # 1.145759828319992770436796 (~40.7 ppb) and degraded this producer's
+        # own `abs_diff_vs_bridge` from 5.67e-10 to 4.60e-08. Moving the entry
+        # back restored both exactly. Bisected to `3bcbbf401c`; bean qou-ibbr.
+        #
+        # The 80x gap between the pin's own effect (5.7e-10, both legs moving
+        # together) and this (4.6e-8, one leg only) is the straddle signature.
+        # Do not read a small pin delta as evidence a straddle is excluded.
+        from q_parameter import Q_50_DIGIT_STR as _resolved
+        if not str(_resolved).startswith("1.10997859555"):
+            raise SystemExit(
+                "--anchor ideal, but q_parameter resolved to the PROTON pin "
+                f"({str(_resolved)[:24]}…). This producer's ideal leg needs "
+                "its stem under `ideal_muon` in q0_anchor_manifest.json; "
+                "under `physical_proton` the returned q is muon while its "
+                "cone computes at proton — a layer straddle inside one "
+                "quantity, which AGENTS.md §q₀ rule 4 forbids regardless of "
+                "size. Refusing rather than writing a straddled witness.")
         return json.load(open(Q0))["derived_50_digit"]["q"]
     if anchor != "proton":
         raise SystemExit(f"unknown anchor {anchor!r}: expected 'ideal' or 'proton'")
