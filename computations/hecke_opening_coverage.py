@@ -186,6 +186,22 @@ def main():
                                                         loop_end + 4)]
                 got = [ids.get(nm) for nm in names]
                 trio = got == [("B", jp_, jpp_, j1), ("Y", j1, jp_), ("Q", j1)]
+            # --- Can both loops run BEFORE either trio?
+            # `loopTwoGen` is stated for a TWO-term element; `quadPair` takes
+            # general L1/L2 and tolerates any number of bystanders.  Under the
+            # engine's order the U trio (whose quadratic step SPLITS U in two)
+            # precedes the V loop, so the V loop would face three terms and
+            # `loopTwoGen` could not be applied at all.  Running both loops
+            # first keeps each at two terms.  Same lesson as the tail: the
+            # engine's schedule is an accident, not a constraint.
+            Vt = (i2,) + dw(i1, ed_) + dw(i, j1) + dw(ed_, j2)
+            u_split = next((kk for kk in range(len(tr))
+                            if len(tr[kk]["terms"]) > 2), None)
+            v_loop_at = next((kk for kk in range(len(tr))
+                              if Vt in tr[kk]["terms"]), None)
+            engine_forces_three = (u_split is not None
+                                   and v_loop_at is not None
+                                   and u_split < v_loop_at)
             ok = v_ok and u_end_ok
             bad += not ok
             rows.append({
@@ -203,6 +219,11 @@ def main():
                 "V_loop_A_rel_i": [i - x for x in V_loop] if V_loop else None,
                 "V_loop_target_at_step": v_loop_end,
                 "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": trio,
+                "V_loop_m": i - jppp,
+                "U_loop_m": i1 - jppp,
+                "U_splits_at_step": u_split,
+                "V_loop_completes_at_step": v_loop_at,
+                "engine_order_forces_a_three_term_loop": engine_forces_three,
                 # the full decomposition: 2 (s1,s2) + L (U loop) + 3 (U bare
                 # BS + quadPair) + (L+1) (V loop, one level deeper) + 3
                 "V_loop_steps": (v_loop_end - v_resume + 1)
@@ -247,6 +268,20 @@ def main():
         "descended one further) + 3 (the same trailing trio) = 2L + 9, which "
         "is a^2-3a+9 exactly")
     w.add_parameter(
+        "scheduling_constraint",
+        "loopTwoGen is stated for a TWO-term element; quadPair takes general "
+        "L1/L2 and tolerates any number of bystanders. Under the engine's "
+        "deg-lex order the U trio -- whose quadratic step SPLITS U in two -- "
+        "runs BEFORE the V loop, so the V loop would face three terms and "
+        "loopTwoGen could not be applied at all. Measured per case. Both "
+        "loops must therefore precede both trios, which is legal because "
+        "steps on different terms commute. Same lesson as the tail: the "
+        "engine's schedule is an accident, not a constraint on the Lean.")
+    w.add_parameter(
+        "V_loop", "loopTwoGen with A = [s_{i-2}], k = i, S = [], m = a-3 -- "
+        "one level MORE than the U loop's a-4, which is what 'one level "
+        "deeper' means concretely")
+    w.add_parameter(
         "trailing_trio",
         "bokutShiaoRelation jp jpp j1, then Yang-Baxter at (j1, jp), then the "
         "quadratic at j1 -- uniform in a AND b, and the last two are exactly "
@@ -257,6 +292,16 @@ def main():
     w.add_assertion(
         "cases_where_the_five-stretch_decomposition_does_not_close",
         computed=str(sum(0 if r["decomposition_closes"] else 1 for r in rows)),
+        expected="0")
+    w.add_assertion(
+        "cases_where_the_engine_order_does_NOT_force_a_three-term_loop",
+        computed=str(sum(0 if r["engine_order_forces_a_three_term_loop"] else 1
+                         for r in rows)),
+        expected="0")
+    w.add_assertion(
+        "cases_where_the_V_loop_m_is_not_one_more_than_the_U_loop_m",
+        computed=str(sum(0 if r["V_loop_m"] == r["U_loop_m"] + 1 else 1
+                         for r in rows)),
         expected="0")
     w.add_assertion(
         "cases_where_the_trailing_trio_is_not_BS(jp,jpp,j1)_Y(j1,jp)_Q(j1)",
