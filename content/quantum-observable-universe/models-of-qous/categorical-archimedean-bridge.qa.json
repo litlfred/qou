@@ -2115,6 +2115,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.568Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2134,6 +2149,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.608Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-em-dash": [
@@ -2153,6 +2183,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.650Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-triples": [
@@ -2172,6 +2217,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.689Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-closing-aphorism": [
@@ -2191,6 +2251,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.729Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-meta-commentary": [
@@ -2210,6 +2285,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.770Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-thesis-restatement": [
@@ -2229,6 +2319,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.812Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-performed-warmth": [
@@ -2248,6 +2353,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.853Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-superlative": [
@@ -2267,6 +2387,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.893Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "trap-nonspeakable": [
@@ -2286,6 +2421,21 @@
         "reviewed_at": "2026-08-15T10:31:01.071Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "783ff7be3e96",
+          "ts": "c9d73965f081"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:41.933Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (proposition, ~1.0kB). Statement plus one fenced tikzcd square plus its prose reading - no rhetorical construction in any of the ten categories. lean.ref qou:QOU.categorical_archimedean_bridge resolves to the content-block sibling. All clean. Cosmetic: line 1 carries a trailing space."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2309,5 +2459,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:23:41.933Z"
 }

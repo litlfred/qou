@@ -1804,6 +1804,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.074Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1823,6 +1838,23 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.521Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "severity": "major",
+        "evidence": "Setup-then-reframe across a paragraph break. Setup: 'This fails to match the 1.823 CODATA target' - a factor-2.8 miss. Reframe, opening the very next paragraph: 'Expressing theta_W as a ratio of categorical scalars remains structurally consistent.' The second clause carries everything: a numerical refutation of the stated evaluation is converted into a statement of continued structural health without any argument in between. The .ts authorNotes are blunter and more accurate than the .md ('Open. The statement is currently a structural proposal; the simple-multiplicity reading numerically fails'), and authorNotes do not render by default, so the reader sees only the reframe.",
+        "notes": "PROPOSED (not applied - the sentence carries an epistemic claim): make the survival explicit and bounded, e.g. 'The ratio-of-categorical-scalars FORM survives this failure; what is refuted is the simple-multiplicity evaluation, not the shape.'"
       }
     ],
     "trap-em-dash": [
@@ -1842,6 +1874,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 180 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.118Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "trap-triples": [
@@ -1861,6 +1908,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 180 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.155Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "trap-closing-aphorism": [
@@ -1880,6 +1942,23 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.610Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "severity": "minor",
+        "evidence": "Block-final 'Proving this conjecture supplies sin theta_W, cos theta_W in R as categorical scalars, closing the Weinberg-angle gap' is a conditional-triumph closer placed three sentences after the block reported that its own evaluation fails by a factor of 2.8. 'Closing the gap' is doing the work of a summary the block has not earned.",
+        "notes": "PROPOSED (not applied - pairs with the pivot above): end on the .ts's own next-step list instead, or on the falsifier, rather than on the payoff."
       }
     ],
     "trap-meta-commentary": [
@@ -1899,6 +1978,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.198Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1918,6 +2012,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.257Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "trap-performed-warmth": [
@@ -1937,6 +2046,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.325Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "trap-superlative": [
@@ -1956,6 +2080,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.370Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -1975,6 +2114,21 @@
         "reviewed_at": "2026-08-15T10:31:01.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.433Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1998,5 +2152,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:15:50.610Z"
 }
