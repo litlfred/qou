@@ -18,6 +18,21 @@
         "severity": "minor",
         "evidence": "Two of the three section headers are negation-shaped: 'The Hessian is computed, not assumed' and 'What is not claimed'. In-body instances ('derived, rather than a form asserted to be one', 'None of that is established here') are substantive epistemic-scope statements and pass; the headers are the trap in header form.",
         "notes": "PROPOSED (structural, changes document navigation, so not fixed inline): 'The Hessian is computed, not assumed' -> 'Computation of the Hessian'; 'What is not claimed' -> 'Scope'. Both are noun-phrase academic headers per the clarity-rhetorical-header convention and lose no content, since the body states the epistemic point directly."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.517Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "The header \"The Hessian is computed, not assumed\" is assert-by-denying, but the distinction (derived second derivative vs asserted quadratic form) is the section's actual content and is what the Lean sibling establishes. Section \"What is not claimed\" is an honest scope limit."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -35,6 +50,21 @@
         "reviewed_at": "2026-08-22T02:33:19.657Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "'The argument needs the volume functional to be concave, or the critical point carries no information' states a genuine logical dependency of the Casson-Rivin programme."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.554Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -52,6 +82,21 @@
         "reviewed_at": "2026-08-22T02:33:19.752Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "One matched pair, a true parenthetical stating Rivin's full theorem inside the sentence that scopes it."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.591Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "One spaced em-dash pair in 2.1k, a true parenthetical around Rivin's full statement."
       }
     ],
     "trap-triples": [
@@ -69,6 +114,21 @@
         "reviewed_at": "2026-08-22T02:33:19.814Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "'the polytope itself, a compactness argument, and the identification of the critical point with a geometric structure' are three distinct missing ingredients, each real."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.628Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"the polytope itself, a compactness argument, and the identification of the critical point\" enumerates three genuinely distinct missing ingredients."
       }
     ],
     "trap-closing-aphorism": [
@@ -86,6 +146,21 @@
         "reviewed_at": "2026-08-22T02:33:19.903Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "Ends on 'the angle-structure polytope for 5_2 is not built' — a concrete statement of what is absent."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.665Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Ends on a concrete unbuilt object (\"the angle-structure polytope for 5_2 is not built\"), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -103,6 +178,23 @@
         "reviewed_at": "2026-08-22T02:33:19.979Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "'This matters for the epistemic status of the result: ...' is close to narrated significance, but the colon-clause carries a real distinction (the quadratic form IS the derived Hessian rather than an asserted one) and the emphasis is placed rather than announced."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.702Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "\"This matters for the epistemic status of the result: the quadratic form is the Hessian, derived, rather than a form asserted to be one.\" announces the importance of its own point instead of placing it.",
+        "notes": "FIXED inline: \"This matters for the epistemic status of the result: the quadratic form **is** the Hessian, derived, rather than a form asserted to be one.\" -> \"The quadratic form **is** the Hessian, derived, rather than a form asserted to be one.\" Math delimiters rechecked after the edit (4 occurrences of $$, balanced)."
       }
     ],
     "trap-thesis-restatement": [
@@ -120,6 +212,21 @@
         "reviewed_at": "2026-08-22T02:33:20.077Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "No terminal echo; the final section adds scope not previously stated."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.739Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"Strict concavity on a convex set is exactly strict concavity along every segment, so this is Rivin's theorem for a single tetrahedron\" is a scope identification, and the Lean docstring makes the same step."
       }
     ],
     "trap-performed-warmth": [
@@ -137,6 +244,21 @@
         "reviewed_at": "2026-08-22T02:33:20.172Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "No personal register."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.777Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -154,6 +276,22 @@
         "reviewed_at": "2026-08-22T02:33:20.257Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "No inflation; 'exactly strict concavity along every segment' is a precise equivalence and correct."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.816Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No inflation, and the mathematics checks out. Lambda'(t) = -log",
+        "notes": "2 sin t| and Lambda''(t) = -cot t are the standard derivatives; the stated second derivative along the line, -(u^2 cot a + v^2 cot b + w^2 cot c), follows. I sampled the quadratic form on u+v+w=0 at 4000 random directions for three angle triples including two near-degenerate obtuse ones (2.5, 0.3, 0.3416) and (3.0, 0.07, 0.0716): the minimum of the form over unit directions was 0.110 and 0.0236 respectively, both strictly positive, so the strict-negativity claim holds where it is hardest. The Lean sibling QOU.Knot.Rivin.strictConcaveOn_tetVolLine resolves with hypotheses hsum, htan and hne, and hne (not (u = 0 and v = 0)) is equivalent to the .md's \"nonzero tangent direction\" given u+v+w=0.|"
       }
     ],
     "trap-nonspeakable": [
@@ -172,8 +310,23 @@
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "The 60-word opening sentence is semicolon-structured and reads aloud; the rest is short.",
         "notes": "RECOMPUTED, ALL CORRECT: Lambda'(t) = -log|2 sin t| and Lambda''(t) = -cot t; the line second derivative -(u^2 cot a + v^2 cot b + w^2 cot c); 'at most one cotangent is negative' (two angles above pi/2 with a+b+c = pi would force the third negative); and 'strict concavity on a convex set is exactly strict concavity along every segment'. uses[] carries no conj:, so no SS3b issue. Nothing substantive to report on this block."
+      },
+      {
+        "field_hash": {
+          "md": "f3aae038da3a",
+          "ts": "a0e87b93f7cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.855Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Reads aloud cleanly."
       }
     ]
   },
-  "updated_at": "2026-08-22T02:33:20.318Z"
+  "updated_at": "2026-08-22T05:05:04.855Z"
 }

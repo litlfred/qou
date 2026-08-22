@@ -17,6 +17,21 @@
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "The section header 'The proof is a rigidity argument, not a computation' matches the template, but the denial is informative rather than decorative: it tells the reader the proof needs no evaluation of either side, which is the section's actual content. False-positive class: substantive contrast.",
         "notes": "note: the sibling header 'What it buys' is colloquial for the graduate-formal register (clarity-rhetorical-header axis, not a trap criterion)."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.127Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Two constructions: the header \"The proof is a rigidity argument, not a computation\" and \"both sides vanish, but for a different reason\". The header is mild assert-by-denying but does convey the method (no series manipulation); the second is a genuine distinction. Density low."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -34,6 +49,21 @@
         "reviewed_at": "2026-08-21T21:12:00.087Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "Theorem block read in full (statement + rigidity-argument section + 'What it buys' + Scope). Identity verified numerically at 30 dps: D(e^{i pi/3}) = Im Li_2 + log|z| arg(1-z) = 1.0149416064096536 = Cl_2(pi/3) exactly, so the stated Kummer identity and the Lobachevsky-sum reading are both correct; Vol(4_1) = 2 Cl_2(pi/3) = 2.029883 as required. Seven of ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.166Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -53,6 +83,23 @@
         "severity": "minor",
         "evidence": "Three spaced em-dashes in a ~7-sentence block, one of them substituting for sentence structure: 'Their difference has vanishing derivative — and the vanishing *is* the law of sines for the ideal tetrahedron ... in disguise.' The other two ('tetrahedral volume — angles, Lobachevsky, additivity — and the analytic one'; 'for a different reason — see the flat-tetrahedron statement') are a true parenthetical and a cross-reference and would pass alone; the density is the tell.",
         "notes": "proposed: 'Their difference has vanishing derivative, and that vanishing is the law of sines for the ideal tetrahedron, $\\lVert z\\rVert = \\sin\\theta_2/\\sin\\theta_3$.' Not applied: the sentence carries the load-bearing law-of-sines identity, so it is math-adjacent."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.205Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "Three spaced em-dashes in 1.9k (~1.6/1k), the highest density in this batch. Two form one true parenthetical pair around \"angles, Lobachevsky, additivity over a triangulation\"; the third appends a clause (\"- and the vanishing is the law of sines ... in disguise\"). Recorded pass because the parenthetical pair is legitimate, with the density noted.",
+        "notes": "If trimmed, the appended clause is the one to promote to its own sentence."
       }
     ],
     "trap-triples": [
@@ -70,6 +117,21 @@
         "reviewed_at": "2026-08-21T21:12:00.215Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "Theorem block read in full (statement + rigidity-argument section + 'What it buys' + Scope). Identity verified numerically at 30 dps: D(e^{i pi/3}) = Im Li_2 + log|z| arg(1-z) = 1.0149416064096536 = Cl_2(pi/3) exactly, so the stated Kummer identity and the Lobachevsky-sum reading are both correct; Vol(4_1) = 2 Cl_2(pi/3) = 2.029883 as required. Seven of ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.244Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"angles, Lobachevsky, additivity over a triangulation\" enumerates the three ingredients of the geometric side; not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -87,6 +149,21 @@
         "reviewed_at": "2026-08-21T21:12:00.263Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "Theorem block read in full (statement + rigidity-argument section + 'What it buys' + Scope). Identity verified numerically at 30 dps: D(e^{i pi/3}) = Im Li_2 + log|z| arg(1-z) = 1.0149416064096536 = Cl_2(pi/3) exactly, so the stated Kummer identity and the Lobachevsky-sum reading are both correct; Vol(4_1) = 2 Cl_2(pi/3) = 2.029883 as required. Seven of ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.283Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Ends on a scope paragraph with a cross-reference to the flat-tetrahedron block - false-positive class."
       }
     ],
     "trap-meta-commentary": [
@@ -105,6 +182,21 @@
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "FIXED: 'This is why the unit circle carries so much weight in the argument: it is the one place where...' narrated the argument's own emphasis rather than placing it. The replacement states the same fact directly.",
         "notes": "fix applied: 'This is why the unit circle carries so much weight in the argument: it is the one place where the identity is visible directly, and the radial derivative transports it everywhere else in the upper half plane.' -> 'The unit circle is the one place where the identity is visible directly; the radial derivative transports it everywhere else in the upper half plane.'"
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.322Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"What it buys\" is a section label."
       }
     ],
     "trap-thesis-restatement": [
@@ -124,6 +216,21 @@
         "severity": "minor",
         "evidence": "The 'What it buys' paragraph states the bridge claim and then restates it: 'The identity is the bridge between the geometric description ... and the analytic one' is followed by 'The $5_2$ sum rule lives on the analytic side; the triangulation and gluing equations live on the geometric side; this is the map between them.' The second sentence's final clause repeats the first sentence's claim in fresh wording.",
         "notes": "proposed: keep the two-sides sentence for its concrete instances and delete the trailing 'this is the map between them'."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.360Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"The 5_2 sum rule lives on the analytic side ... this is the map between them\" summarises with new information (which block is on which side)."
       }
     ],
     "trap-performed-warmth": [
@@ -141,6 +248,21 @@
         "reviewed_at": "2026-08-21T21:12:00.425Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "Theorem block read in full (statement + rigidity-argument section + 'What it buys' + Scope). Identity verified numerically at 30 dps: D(e^{i pi/3}) = Im Li_2 + log|z| arg(1-z) = 1.0149416064096536 = Cl_2(pi/3) exactly, so the stated Kummer identity and the Lobachevsky-sum reading are both correct; Vol(4_1) = 2 Cl_2(pi/3) = 2.029883 as required. Seven of ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.399Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -158,6 +280,23 @@
         "reviewed_at": "2026-08-21T21:12:00.494Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "Theorem block read in full (statement + rigidity-argument section + 'What it buys' + Scope). Identity verified numerically at 30 dps: D(e^{i pi/3}) = Im Li_2 + log|z| arg(1-z) = 1.0149416064096536 = Cl_2(pi/3) exactly, so the stated Kummer identity and the Lobachevsky-sum reading are both correct; Vol(4_1) = 2 Cl_2(pi/3) = 2.029883 as required. Seven of ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.438Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "\"The hypothesis Im z > 0 is genuine and not removable\" is an unqualified maximum-strength claim, and the block's own next sentence undercuts it (\"On real shapes both sides vanish\"). I evaluated the right-hand side Im Li_2(x) + log",
+        "notes": "x| arg(1-x) at x = 0.3, -1, 2, 5 at 30 dps: it is 0 at all four, and D(x) = 0 for all real x is the neighbouring theorem in this same batch - so as an identity the statement extends to the real axis and the hypothesis is removable. What is genuinely true is narrower: the RHS is branch-sensitive because arg(1-z) jumps across the real axis, and the radial-rigidity proof given here needs Im z > 0.|Reported, not edited (the sentence is a scope claim; meaning is at stake). Proposed: \"The hypothesis Im z > 0 is what the proof uses: arg(1-z) jumps across the real axis, so the radial argument does not transport across it. On real shapes both sides vanish anyway - see the flat-tetrahedron statement.\" The Lean sibling QOU.Knot.KummerRadial.kummer carries hz : 0 < z.im and uses it, which is consistent with the narrower reading."
       }
     ],
     "trap-nonspeakable": [
@@ -175,8 +314,23 @@
         "reviewed_at": "2026-08-21T21:12:00.539Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "evidence": "Theorem block read in full (statement + rigidity-argument section + 'What it buys' + Scope). Identity verified numerically at 30 dps: D(e^{i pi/3}) = Im Li_2 + log|z| arg(1-z) = 1.0149416064096536 = Cl_2(pi/3) exactly, so the stated Kummer identity and the Lobachevsky-sum reading are both correct; Vol(4_1) = 2 Cl_2(pi/3) = 2.029883 as required. Seven of ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "be86e2985bad",
+          "ts": "282958b22ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:05:04.475Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Reads aloud cleanly."
       }
     ]
   },
-  "updated_at": "2026-08-21T21:12:00.539Z"
+  "updated_at": "2026-08-22T05:05:04.475Z"
 }
