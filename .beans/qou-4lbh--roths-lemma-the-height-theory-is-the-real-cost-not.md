@@ -304,3 +304,50 @@ Gelfond bounds `∏H(pᵢ)` by `H(p)`, so it consumes both directions: `H(pᵢ) 
 going up from each factor's Mahler measure, and `M(p) ≤ ‖p‖₁` coming down from the product's
 height. Only the second is now in hand. `H(p) ≤ 2^{deg}·M(p)` follows from the Jensen form by
 Vieta and is the next thing to prove — it is not analysis, but it is not yet written.
+
+---
+
+## 2026-08-22 — the Jensen form is done; ONE bridge remains
+
+`QOU/Mathlib/MahlerJensen.lean`:
+
+```
+mahlerMeasure_eq_leadingCoeff_mul_prod_roots :
+    M(p) = ‖lead p‖ · ∏_{a ∈ roots p} max(1, ‖a‖)
+mahlerMeasure_C_mul_X_sub_C  (q ≠ 0) :  M(qX − a) = max(‖q‖, ‖a‖)
+```
+
+Eight declarations in the module, all `[propext, Classical.choice, Quot.sound]`.
+
+It was assembly, as predicted: `mahlerMeasure_X_sub_C` for a single factor, Mathlib's
+`prod_mahlerMeasure_eq_mahlerMeasure_prod` for the product, and
+`C_leadingCoeff_mul_prod_multiset_X_sub_C` for the factorization, which applies over `ℂ`
+because it is algebraically closed. No new analysis. The estimate held.
+
+`M(qX − a) = max(‖q‖,‖a‖)` was listed as ABSENT in this bean's measured inventory; it is now
+present, as the Jensen form at one root.
+
+Two details worth keeping:
+
+* The Jensen form needs **no `p ≠ 0` hypothesis** — at `p = 0` the left side is `0` by
+  definition and the right side is `‖0‖ · 1 = 0`, since `(0 : ℂ[X]).roots` is empty.
+* The `IsAlgClosed ℂ` instance lives in `Mathlib/Analysis/Complex/Polynomial/Basic.lean`
+  (the fundamental theorem of algebra) — importing `FieldTheory.IsAlgClosed.Basic` gives the
+  class but not the instance, and the failure is a bare `failed to synthesize`.
+
+### The inventory, current
+
+| bridge | status |
+|---|---|
+| `M(X − a) = max(1,‖a‖)` | done |
+| **Jensen form** `M(p) = ‖lead‖·∏max(1,‖root‖)` | **done — this entry** |
+| `M(qX − a) = max(‖q‖,‖a‖)` | **done — this entry** |
+| `M(p) ≤ ‖p‖₁` over `ℤ` | done (⚠ weaker than Landau; see above) |
+| **`H(p) ≤ 2^{deg p}·M(p)`** | **ABSENT — the last one** |
+| Gelfond, then factor-height control | needs the row above |
+
+`H(p) ≤ 2^{deg p}·M(p)` now follows from the Jensen form by Vieta: each coefficient is
+`lead p` times an elementary symmetric function of the roots, so `‖coeff j‖ ≤ C(n,j)·M(p)`,
+and `∑ⱼ C(n,j) = 2ⁿ`. Mathlib has Vieta (`Polynomial.coeff_eq_esymm_roots_of_card`), so this
+is bookkeeping over it rather than analysis — but it is not yet written, and until it is,
+Gelfond has only one of its two directions.

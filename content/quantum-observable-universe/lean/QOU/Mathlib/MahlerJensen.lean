@@ -29,8 +29,9 @@
 
   ⚠ The Jensen form is one of *two* bridges, and neither is finished here.
 
-  * **The Jensen form** `M(P) = ‖lead P‖ · ∏ max(1, ‖root‖)`.  The single-root case is
-    `mahlerMeasure_X_sub_C` below; the product is still to be assembled.
+  * **The Jensen form** `M(P) = ‖lead P‖ · ∏ max(1, ‖root‖)` — `mahlerMeasure_X_sub_C`
+    below for one root, `mahlerMeasure_eq_leadingCoeff_mul_prod_roots` for the product.
+    ✔ **done.**
   * **The coefficient bridge.**  `mahlerMeasure_le_max_one_sum_norm_coeff` below gives
     `M(p) ≤ max(1, ‖p‖₁)`.  ⚠ **That is weaker than Landau's inequality and must not be
     cited as it.**  Landau is `M(P) ≤ ‖P‖₂ ≤ √(deg+1) · H(P)`, proved through Parseval; the
@@ -43,6 +44,7 @@
 -/
 import Mathlib.Analysis.Polynomial.MahlerMeasure
 import Mathlib.Analysis.SpecialFunctions.Integrals.PosLogEqCircleAverage
+import Mathlib.Analysis.Complex.Polynomial.Basic
 
 open Real Finset
 
@@ -65,6 +67,42 @@ theorem mahlerMeasure_X_sub_C (a : ℂ) :
     rw [heval, circleAverage_log_norm_sub_const_eq_posLog,
       posLog_eq_log_max_one (norm_nonneg a)]
   rw [mahlerMeasure, if_pos hne, hlog, Real.exp_log hpos]
+
+/-! ### The Jensen form -/
+
+/-- **The Jensen form of the Mahler measure:** `M(P) = ‖lead P‖ · ∏ max(1, ‖root‖)`, the
+product running over the roots of `P` with multiplicity.
+
+Assembly rather than analysis, exactly as predicted: `mahlerMeasure_X_sub_C` for a single
+factor, Mathlib's `prod_mahlerMeasure_eq_mahlerMeasure_prod` for the product, and the
+factorization `C (lead P) * ∏ (X − aᵢ) = P` which holds over `ℂ` because it is algebraically
+closed.
+
+No `P ≠ 0` hypothesis is needed: at `P = 0` the left side is `0` by definition and the right
+side is `‖0‖ * 1 = 0`, since `(0 : ℂ[X]).roots` is the empty multiset. -/
+theorem mahlerMeasure_eq_leadingCoeff_mul_prod_roots (p : ℂ[X]) :
+    p.mahlerMeasure = ‖p.leadingCoeff‖ * (p.roots.map (fun a => max 1 ‖a‖)).prod := by
+  have hroots : Multiset.card p.roots = p.natDegree :=
+    splits_iff_card_roots.mp (IsAlgClosed.splits_codomain p)
+  have hmap : (p.roots.map (fun a => (X - C a : ℂ[X]))).map (fun q => q.mahlerMeasure)
+      = p.roots.map (fun a => max 1 ‖a‖) := by
+    rw [Multiset.map_map]
+    exact Multiset.map_congr rfl (fun a _ => mahlerMeasure_X_sub_C a)
+  conv_lhs => rw [← C_leadingCoeff_mul_prod_multiset_X_sub_C hroots]
+  rw [mahlerMeasure_mul, mahlerMeasure_const, prod_mahlerMeasure_eq_mahlerMeasure_prod, hmap]
+
+/-- **`M(qX − a) = max(‖q‖, ‖a‖)`.**
+
+This is the shape the `m = 1` case of Roth's lemma measures a rational `a/q` against, and
+the bean recorded it as absent.  It is the Jensen form at a single root: `qX − a` is
+`C q * (X − C (a/q))`, so its measure is `‖q‖ · max(1, ‖a‖/‖q‖) = max(‖q‖, ‖a‖)`. -/
+theorem mahlerMeasure_C_mul_X_sub_C {q a : ℂ} (hq : q ≠ 0) :
+    (C q * X - C a : ℂ[X]).mahlerMeasure = max ‖q‖ ‖a‖ := by
+  have hfac : (C q * X - C a : ℂ[X]) = C q * (X - C (a / q)) := by
+    rw [mul_sub, ← C_mul, mul_div_cancel₀ _ hq]
+  have hqn : (0 : ℝ) < ‖q‖ := norm_pos_iff.mpr hq
+  rw [hfac, mahlerMeasure_mul, mahlerMeasure_const, mahlerMeasure_X_sub_C, norm_div,
+    mul_max_of_nonneg _ _ (le_of_lt hqn), mul_one, mul_div_cancel₀ _ (ne_of_gt hqn)]
 
 /-! ### A coefficient bound
 
@@ -158,12 +196,12 @@ theorem mahlerMeasure_le_sum_int {q : ℤ[X]} (hq : q ≠ 0) :
 
 /-! ### Next
 
-1. **The Jensen form** `M(P) = ‖lead P‖ · ∏ max(1, ‖root‖)`.  With `mahlerMeasure_X_sub_C`,
-   `mahlerMeasure_mul`, and the factorization of a complex polynomial into linear factors,
-   this is assembly rather than analysis.
-2. **`H(p) ≤ 2^{deg p} · M(p)`** — the *reverse* bridge, which follows from the Jensen form
-   by Vieta.  Nothing above supplies this direction, and Gelfond needs both.
-3. **Gelfond**, from (1)–(2) together with `mahlerMeasure_le_sum_int`, and then the height
+1. **`H(p) ≤ 2^{deg p} · M(p)`** — the *reverse* bridge, and now the only missing one.
+   It follows from `mahlerMeasure_eq_leadingCoeff_mul_prod_roots` by Vieta: each coefficient
+   is `lead p` times an elementary symmetric function of the roots, so
+   `‖coeff j‖ ≤ C(n, j) · M(p)`, and `∑ⱼ C(n,j) = 2ⁿ`.  Mathlib has Vieta
+   (`Polynomial.coeff_eq_esymm_roots_of_card`); this is bookkeeping over it, not analysis.
+2. **Gelfond**, from (1) together with `mahlerMeasure_le_sum_int`, and then the height
    control on the factors `φₖ, ψₖ` that the induction step of Roth's lemma needs.
 
 Sharpening `mahlerMeasure_le_max_one_sum_norm_coeff` to Landau proper (`M(p) ≤ ‖p‖₂`, via
