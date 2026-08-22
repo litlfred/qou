@@ -860,3 +860,43 @@ Then SpechtWedderburnCriterion.spechtEquiv_of_sum_sq converts it to the general 
 - assemble the Equiv from injectivity (words) + surjectivity (this): the mismatch to bridge is that
   injectivity is stated for words and surjectivity for permutations;
 - then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq -> general Wedderburn split.
+
+### Bricks 39-40 — THE CORRESPONDENCE IS AN EQUIV (same PR #5426)
+
+Brick 39 (SchenstedRSKPairInjective.lean) — rskPair_injective.
+  SchenstedRSKInjective proved injectivity ON WORDS, for LIST tableaux. rskPair is on PERMUTATIONS
+  and valued in a Σ of Mathlib SYTs. That mismatch was the entire distance.
+
+  KEY TRICK, worth remembering: NO HEq, NO subst needed. Extracting the second component of a
+  Σ-equality normally needs a transport because its type depends on the first — BUT
+      fun X => X.2.1.entry i j
+  is a perfectly good NON-DEPENDENT function on the Σ type (dependent projection, ℕ-valued field),
+  so congrArg hands over entry equalities directly. Everything after that is ordinary list work:
+    eq_of_shape_and_entries  (same shape + same entries -> same list tableau)
+    shiftT_injective         (strip the 0->1 relabel; map of an injective map)
+    word_eq_of_insertWordRec_eq (existing, word level)
+    wordOfPerm_injective     (back to permutations)
+
+Brick 40 (SchenstedRSKEquiv.lean):
+  rskEquiv n : Equiv.Perm (Fin n) ≃ {X : Σ μ, SYT μ × SYT μ // X.1.cells.card = n}
+
+  The SUBTYPE IS FORCED: rskPair lands in the Σ over ALL diagrams, image is exactly those with n
+  cells (rskPair_card, via recordingCells_card ∘ recordingShape_eq_pShape). Cutting the codomain is
+  what makes it a bijection and not merely injective.
+  exists_rskPair_eq_of_card substitutes |μ| = n — legitimate because n IS A VARIABLE. Contrast
+  brick 35, where the diagram equality had NO variable side and ofRowLens_congr had to be proved.
+
+### SCOPE — NOT RSKBurnsideHolds
+RSKBurnsideHolds n := ∑ p : Nat.Partition n, (dimSYT p)^2 = n! — indexed by Nat.Partition, NOT by
+YoungDiagram. Getting there from rskEquiv additionally needs:
+  Nat.card (Perm (Fin n)) = n!                                    (Fintype.card_perm, easy)
+  Nat.card {X // X.1.cells.card = n} = ∑ p, (dimSYT p)^2          (THE WORK)
+and the second needs partitionShape : Nat.Partition n -> YoungDiagram to be a BIJECTION onto the
+diagrams with n cells, plus a Σ-card decomposition over that index. None of it is done.
+RSKBurnsideHolds general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK in it).
+
+### #5426 now carries bricks 16-40, sixteen files, zero sorries, axiom-clean throughout
+### Next
+- partitionShape bijective onto {μ // μ.cells.card = n}  (the remaining obstacle)
+- then the Σ-card decomposition -> RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq -> general
+  Wedderburn split.
