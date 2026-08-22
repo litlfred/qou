@@ -110,7 +110,22 @@ build_qou_module() {
 }
 
 if [ "${#files[@]}" -eq 0 ]; then
-  ref="${REF:-HEAD~1}"
+  # DEFAULT IS THE MERGE-BASE, NOT HEAD~1. A different shape from the
+  # qou-s2gm working-tree defect but the same family: HEAD~1 sees only the
+  # MOST RECENT COMMIT, so on a branch built the way AGENTS.md rule 3 asks
+  # for -- "each logically distinct change gets its own commit" -- this
+  # verified one commit's .lean files and reported "no .lean files to check"
+  # for every earlier one. Under-coverage that reads as a pass.
+  #
+  # This is the Lean side of the §"QA is agent-owned; CI is a backup" gate,
+  # and a library file under lean/QOU/** has no .qa.json sidecar and is
+  # covered by nothing else, so narrow-by-default is the wrong direction.
+  # Verifying more files costs `lean` time; missing one costs a wrong proof
+  # on main.
+  #
+  # REF= still overrides, so `REF=HEAD~1 scripts/lean-verify-changed.sh` is
+  # the old behaviour when you deliberately want just the last commit.
+  ref="${REF:-$(git merge-base HEAD origin/main 2>/dev/null || echo HEAD~1)}"
   while IFS= read -r f; do
     [ -n "$f" ] && files+=("$ROOT/$f")
   done < <(cd "$ROOT" && git diff --name-only "$ref" -- '*.lean')

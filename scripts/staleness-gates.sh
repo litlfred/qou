@@ -82,9 +82,20 @@ if [ "${1:-}" = "--list" ]; then
 fi
 
 if [ "${1:-}" = "--changed" ]; then
+  # THE MERGE-BASE DIFF IS NOT OPTIONAL -- third instance of the qou-s2gm
+  # defect-1 shape, after precision-gates.sh and check-sidecars.sh. All three
+  # working-tree sources see only UNCOMMITTED work, so once a change is
+  # committed the set goes empty, this prints "nothing touched -- skipped" and
+  # exits 0, and that is indistinguishable from a real pass. AGENTS.md tells
+  # every agent to commit early and often, so verifying after committing is
+  # the natural order.
+  #
+  # On `main` the merge-base IS HEAD, so this adds nothing on a clean checkout.
+  base=$(git merge-base HEAD origin/main 2>/dev/null || true)
   relevant=$( { git diff --name-only HEAD 2>/dev/null
                 git diff --cached --name-only 2>/dev/null
-                git ls-files --others --exclude-standard 2>/dev/null; } \
+                git ls-files --others --exclude-standard 2>/dev/null
+                [ -n "$base" ] && git diff --name-only "$base"...HEAD 2>/dev/null; } \
               | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$)' || true)
   if [ -z "$relevant" ]; then
     echo "staleness-gates: no witness or computations/ script touched — skipped."
