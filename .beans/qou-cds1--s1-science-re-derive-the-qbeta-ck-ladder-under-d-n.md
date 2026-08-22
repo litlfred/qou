@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-21T15:59:47Z
+updated_at: 2026-08-22T11:18:14Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -867,3 +867,44 @@ jonesHopf_of_skein: over any CommRing, the cleared Jones axioms (V(unknot)=1, s�
 jonesHopf_at_one: hence V(Hopf)=−2 at s=1 (q=1).
 jonesHopfClassicalLimit_eq_jonesHopfValue_one: the ladder's c₃ constant = jonesHopfValue 1 = −2 — the wired constant is now the classical-point value of the skein-derived Hopf polynomial, no longer a bare def.
 This addresses the c₃-input provability gap flagged in dWeights_at_one: c₃'s value −2 is derived from the Jones skein axioms (the polynomial's DEFINITION applied to the Hopf link), conditional-class style. Still NOT derived: that −2 is the right coupling for the ladder's N3 rung (the c₃ near-match, 3.47%) — that remains the fitted step. What is now proved: −2 IS J_Hopf(1), from the axioms.
+
+
+── c₂ invariant STATED and SETTLED 2026-08-22 (owner: "4 y") ──
+Executes this bean's own FORMALIZE-FIRST NEXT verbatim: *"state the invariant a
+forced D c₂ must satisfy … and check if exact weights + α_D−h²/4 determine it.
+Do NOT run the extractor on z_D."* No extractor run; no number fitted.
+
+ANSWER: the PHASE LEG DOES NOT ENTER, and the WEIGHT LEG DETERMINES IT WHOLLY.
+`Q_beta_categorical_ofPhase_tail_common` already localises every z-dependence to
+the N=1 phase, so α_D−h²/4 is irrelevant to N2_factor. The weights then force
+the coupling, via a quantum-integer identity:
+
+    y_(2,1)^D = 1/[2]_q²        stdWeightD_eq_jones          (already proved)
+    b²        = 1 − y_(2,1)^D   hoefsmitB_sq_eq_one_sub…     (already proved)
+    [2]_q² − [3]_q = 1          NEW
+    ⇒ b²      = [3]_q/[2]_q²    NEW
+
+So under D **the N=2 rung has no free parameter**: b is not an independent
+Hoefsmit input but a function of the forced D weights. Under C the same
+statement is FALSE — b² ≠ 1 − y_(2,1)^C, the C weights are genuinely three-row
+(y_(1³)^C ≠ 0, half-integer powers of q) — so there the coupling is separate
+data. That is a second positive structural reason the tails are D-framed,
+independent of the "b is z-free" argument already recorded above.
+
+LEAN (sorry-free, lean-direct EXIT=0, axioms [propext, Classical.choice,
+Quot.sound] on all three) — QOU/BraidKnot/LadderConventionLocalisation.lean:
+  bracketTwo_sq_sub_bracketThree_eq_one
+  hoefsmitB_sq_eq_bracketThree_div_bracketTwo_sq
+  N2_factor_eq_bracketRatio      (N2 = 1 − ([3]_q/[2]_q²)·ℏ_q⁴)
+
+PROBE: computations/qbeta/qbeta_d_frame_c2_invariant_probe.py, 6/6 exact
+symbolic ℚ(q), no float. Includes the C-side negative (assertions 4–5).
+
+SCOPE — settles c₂ ONLY, closes nothing numerically. c₃/c₄/c₅ values stay
+fitted near-matches; the 41.94×C residual is UNTOUCHED. What is removed is the
+possibility that a D-frame c₂ could be *chosen*. The bean's standing fence —
+any c_k absorbing the residual is a fit until one lands with c₂=−1's standing —
+is unaffected, and this does not supply such a rung.
+
+NON-OVERLAP: sibling PR #5415 works the c₃ f-map (routes A/B refuted, route C
+= analytic Φ_b open). Different rung; no duplication.
