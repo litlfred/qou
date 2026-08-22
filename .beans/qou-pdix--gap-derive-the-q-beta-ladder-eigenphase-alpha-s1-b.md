@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T20:39:44Z
+updated_at: 2026-08-22T20:44:40Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -309,3 +309,47 @@ Does not overturn the ruling (corpus-wide trace convention vs one channel's
 phase) but deepens the recorded decayLadder_zC_threeRow_ne_zero tension.
 
 PROBE: computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py (7/7).
+
+
+## 2026-08-22 (7) — branch 3: the crux is EXACT, and 'eigenphase' tracks the MODULI
+
+REFUTED (my own first idea, tested not asserted). sigma_1 = diag(q,-1/q) as a
+half-monodromy exp(i.pi.A) gives log-gap = 2 ln q - i.pi. The obvious story —
+alpha is a QUARTER of that gap (half-monodromy x Markov symmetrisation) — is
+WRONG: target/gap = -ln q/(4 ln q - 2 i pi) is not constant, and at q0 the i.pi
+dominates the real part 15x. Recorded because it is the first thing the next
+reader will reach for.
+
+EXACT: target / Re(log-gap) = -1/4, with Re(log-gap) = 2 ln q. Two things
+unexplained, and together they ARE the remaining content:
+   (a) why 1/4
+   (b) why the i.pi is discarded
+
+## The structural consequence — this is the useful part
+
+sigma_1's eigenvalues: q (modulus q, phase 0) and -1/q (modulus 1/q, phase pi).
+Its PHASE content is {0, pi} — CONSTANT, zero q-dependence. All q-dependence
+lives in the MODULI (log-ratio 2 ln q). **alpha tracks the moduli.**
+
+Consequences:
+ - 'eigenphase' is a questionable name: relative to this operator alpha is a
+   log-modulus, not a phase.
+ - **A UNITARY holonomy cannot produce a q-dependent alpha from this spectrum**
+   (unitary => modulus-1 eigenvalues; here the phases are q-free). So either the
+   connection is NON-UNITARY, or the phase comes from somewhere other than
+   sigma_1's spectrum. Falsifiable fork, not a refutation.
+
+## Acceptance test for any branch-3 construction (now two-part)
+
+ 1. reproduce alpha through order t^2 (entry 6: needs z'(1) = 0)
+ 2. account for the -1/4 of Re(log-gap) AND for discarding the i.pi (entry 7)
+
+A construction that misses (1) is wrong. One that satisfies (1) but cannot say
+why (2) has not derived alpha, only re-fitted it.
+
+## NOT DONE
+
+The connection itself. Building it half-way and reporting a match would be the
+fitted result the discipline forbids. Delivered instead: the crux stated
+exactly, one candidate refuted, and a sharper constraint (non-unitary or
+off-spectrum) on what remains.
