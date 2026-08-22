@@ -75,7 +75,8 @@ VOL_6_2 = mp.mpf("4.40083251612304610144120386564092803398348541851650")
 # `substrate/knot_volumes.py`, not significant digits.  Sub-13-digit
 # differences are below the source's precision floor.  Copilot review on
 # PR #1891 caught the literal apparent over-precision.
-VOL_8_11 = mp.mpf("8.28631681780659258810000000000000000000000000000000")
+# Vol(8_11) SnapPy census; the literal printed 51 digits, correct to 20 (qou-ckbv)
+VOL_8_11 = mp.mpf("8.28631681780659258812682479775")
 
 # Phase-4 SnapPy JSJ values (from `2026-05-19-delta-lambda-phase4-z4N-closure.md`):
 VOL_PHASE4_Z1 = mp.mpf("12.776")

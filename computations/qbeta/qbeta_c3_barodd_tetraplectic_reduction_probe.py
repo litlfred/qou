@@ -53,7 +53,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 40
 
 # Exact c₃ target (committed anchor-blind witness; see the sleak-target audit).
-VOL_4_1 = mp.mpf("2.02988321281930725417066550300100495")  # 2·Λ(π/3)
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 36 digits, correct to 17 (qou-ckbv)
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
 S_TARGET = {"muon": mp.mpf("0.00968298"), "proton": mp.mpf("-0.03945936")}
 
 

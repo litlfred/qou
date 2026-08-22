@@ -65,7 +65,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 40
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)   # complete shape e^{iπ/3}
-VOL_4_1 = mp.mpf("2.02988321281930725417066550300100495")
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 36 digits, correct to 17 (qou-ckbv)
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
 
 
 def gluing_residual(z, m):
