@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T23:15:31Z
-updated_at: 2026-08-21T23:16:17Z
+updated_at: 2026-08-22T00:13:38Z
 ---
 
 ## The class
@@ -95,3 +95,54 @@ data -- as demonstrated above.
 behaviour, because the witness will not tell you.** Diffing the regenerated
 output against the committed one is not sufficient either -- the difference
 looks like ordinary drift.
+
+
+---
+
+## Update: the 6 "inline, unclassified" are ALL payload-affecting. 10, not 4.
+
+The AST pass could not classify six sites because the flag is tested inline
+rather than bound to a variable. Read by hand, every one changes what is
+computed:
+
+| producer | flag | effect |
+|---|---|---|
+| `whitehead_c0_tower.py` | `--hi` | `Ns [6,8,10,12]` -> `[6,8,10,12,14]` |
+| `whitehead_recurrence_hunt_fast.py` | `--nmax` | tower depth, default 28 |
+| `whitehead_diagonal_recurrence_hunt.py` | `--nmax` | tower depth, default 12 |
+| `takata_fig8_recurrence_hunt.py` | `--nmax` | tower depth, default 26 |
+| `derived_chi_catalogue_matrix_m_mpfr.py` | `--use-mu-n-blocks` | `sys.exit(validate_mu_n_blocks())` instead of `sys.exit(main())` -- an entirely different function |
+| `probes/borromean_cusp_framing_factor.py` | `--recompute` | live SnapPy gluing equations instead of baked constants |
+
+**So the payload-affecting count is 10, not 4.** The AST classifier was
+high-precision and low-recall: it never mis-classified, but it declined on
+a third of the population, and declining is not the same as clearing.
+
+## `whitehead_c0_tower --hi` is CONFIRMED by artifact evidence
+
+Not inferred from the source -- read out of the committed witness:
+
+    computations/whitehead-c0-tower.witness.json
+      "Ns": [6, 8, 10, 12, 14]
+
+`Ns` is `[6, 8, 10, 12]` by default and gains the 14 **only** under `--hi`.
+So that witness was generated with the flag, and nothing in it records that.
+A plain re-run drops the N=14 point and moves `whitehead_factor` (committed
+2.308131318350451) exactly as `whitehead_c0_mpmath` moved 1.9678 -> 1.8973.
+
+Both witnesses are dated **2026-07-25** and are siblings in the same
+Whitehead c_0 investigation, so this is one authoring session that left two
+un-reproducible artifacts, not two independent slips.
+
+**Two of ten are now confirmed against their own artifacts** (`--n12`
+measured by re-running, `--hi` by reading `Ns` out of the file). The other
+eight are confirmed payload-affecting from source but their committed
+witnesses have not been checked for whether the flag was used.
+
+## Method note
+
+The `--nmax` family takes a VALUE, not just a presence. Recording raw argv
+captures `["...", "--nmax", "28"]` and therefore the value too; a checker
+modelling flags as booleans would record that the flag was present and lose
+which depth was run. That is the second concrete argument for the raw-argv
+design `provenance.rs` chose, alongside the one its own note gives.
