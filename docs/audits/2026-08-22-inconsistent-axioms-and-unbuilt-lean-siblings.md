@@ -208,12 +208,45 @@ library path (§0a), so for those blocks the paper's claimed formalisation
 *is* the non-compiling file. The 21 definitions matter most: a
 `definition` block requires a Lean sibling at type level.
 
-**Most are cheap.** 339 errors across 73 files, **median 2 per file**, and
-**30 files have exactly one error**. The distribution says this is
-accumulated drift in files nothing ever checked — renamed Mathlib lemmas
-(`RESOLVE`, 41 %), missing instance arguments, a stray token — not 73
-unfinished formalisations. One file dominates the total
-(`frobenius-codim-universal.lean`, 101 errors).
+**The error counts are a LOWER BOUND, and reading them as repair cost is a
+mistake I made and then measured.** Lean halts at the first parse error and
+never reports what is behind it, so a file counted as "1 error" can need
+several sequential repairs. 339 errors across 73 files, median 2 per file,
+30 files with exactly one error — treat all three as floors.
+
+Measured on the first five repaired (§4a): **two** were a genuine one-line
+fix; **three** needed two or three rounds, and one of those hid a structure
+that does not exist anywhere in the corpus.
+
+The class distribution still says *drift*, not unfinished work — renamed
+Mathlib lemmas dominate (`RESOLVE`, 41 %). Confirmed renames found so far:
+`abs_add` → `abs_add_le`, `div_lt_iff` → `div_lt_iff₀`, `div_lt_div_iff` →
+`div_lt_div_iff₀`. One file dominates the total
+(`frobenius-codim-universal.lean`, 101 errors), and 44 of those are `λ`
+used as a binder name, which Lean 4 reserves.
+
+### 4a. First five repaired (this branch)
+
+| file | rounds | what it actually took |
+|---|---:|---|
+| `climax-volume-mass/q-momentum` | 1 | `abs_add` → `abs_add_le` |
+| `predicted-spectra/hadron-half-life` | 1 | `div_lt_iff` → `div_lt_iff₀` |
+| `glossary/glossary-s3-group` | 2 | missing `Fintype` import; then the *first* import tried (`GroupTheory.Perm.Fintype`) has no olean in this container — `Data.Fintype.Perm` does |
+| `predicted-spectra/q-value-transition` | 3 | `div_lt_div_iff` → `div_lt_div_iff₀`; then `push_cast` had to precede the rewrite (goal carries `↑(A+1)`, not `↑A + 1`); then an `nlinarith` hint stated over `ℤ` against an `ℝ` goal |
+| `predicted-spectra/gauge-coupling-uniqueness` | 3 | unterminated docstring; behind it `∃ λ :` (reserved token); behind *that* `GaugeCouplingUniquenessData` **undefined corpus-wide**, auto-bound to a metavariable |
+
+The last is the instructive one. Its declaration body was `d.exists_lambda`
+— the "corollary" was to be the projection of a field of its own hypothesis
+structure, which under §3b-cond item 5 derives nothing. Restoring the
+missing structure with an `exists_lambda` field would have made the file
+compile **while proving nothing**. It was instead rewritten so the structure
+carries genuine hypotheses (linearity of both couplings, non-degeneracy of
+the reference) and the theorem derives the conclusion, with the witness
+`lam = phi 1 · (psi 1)⁻¹`. `#print axioms` → `[propext]`.
+
+That is the warning for the rest of the tranche: **a file that compiles is
+not thereby a file that proves anything**, and this population has had no
+reviewer at all.
 
 By chapter: `mass-theory` 27, `predicted-spectra` 10,
 `quantum-observable-universes` 8, then ≤ 3 each.
