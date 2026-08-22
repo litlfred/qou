@@ -221,9 +221,9 @@ that does not exist anywhere in the corpus.
 The class distribution still says *drift*, not unfinished work — renamed
 Mathlib lemmas dominate (`RESOLVE`, 41 %). Confirmed renames found so far:
 `abs_add` → `abs_add_le`, `div_lt_iff` → `div_lt_iff₀`, `div_lt_div_iff` →
-`div_lt_div_iff₀`. One file dominates the total
-(`frobenius-codim-universal.lean`, 101 errors), and 44 of those are `λ`
-used as a binder name, which Lean 4 reserves.
+`div_lt_div_iff₀`. One file appeared to dominate the total
+(`frobenius-codim-universal.lean`, "101 errors"). **Both halves of that
+sentence were wrong**, and the file is worked through in §4b.
 
 ### 4a. First five repaired (this branch)
 
@@ -266,3 +266,53 @@ batch, is the model: a content-bearing class, **no instance**, and a removed
 axiom recorded in its docstring. Two files, one chapter, opposite
 dispositions — which is what an unbuilt population looks like from the
 inside.
+
+### 4b. `frobenius-codim-universal.lean` — the outlier, worked through
+
+Two claims I made about this file were wrong.
+
+**"101 errors" was never a count.** Lean stops at `maximum number of errors
+(100; from option maxErrors)` — the figure is the cap plus the cap message.
+Every "error count" in the triage table is bounded above by 101 for the same
+reason, so the total of 339 is a floor, not a measurement.
+
+**"44 of them are `λ` used as a binder" was wrong.** `λ` *is* reserved in
+Lean 4 and the file did use it as a binder in 43 code lines (73 further
+occurrences are prose in comments, where it is correct notation for a
+partition and must be left alone). But renaming all 43 to `lam` changed the
+error count by **zero**: the parse failures were masking an equal number of
+elaboration failures behind them. Fixing the visible errors revealed the
+real ones rather than reducing the count.
+
+What actually cut the file down, in order:
+
+| step | errors after |
+|---|---:|
+| baseline | 100 (capped) |
+| rename the 43 `λ` code binders → `lam` | 100 (capped) |
+| **add `import Mathlib.Data.Real.Basic`** | **34** |
+| convert 2 orphan docstrings to `/-! … -/` | 32 |
+| **`set_option maxHeartbeats 1000000` on `heckeH8DimQ`** | **8** |
+
+The two large drops are the interesting ones.
+
+**`ℝ` was not `Real`.** The file imported `Algebra.Basic`,
+`BigOperators.Fin` and `RepresentationTheory.FDRep` — none of which supplies
+`Mathlib.Data.Real.Basic` — and did not set `autoImplicit false`. So every
+`ℝ` in the file was **auto-bound as a free type variable**, and 85 errors
+read `failed to synthesize OfNat ℝ 0`. One import line fixed all 85. This is
+the single highest-value thing to check in any file from this population.
+
+**A 22-case `match` exceeded the elaborator's heartbeat budget.**
+`heckeH8DimQ` (the q-hook-length dimensions of the 22 partitions of 8) timed
+out at `whnf`, so the *definition* failed and the name was auto-bound to a
+metavariable at all 22 use sites — reported as 22 separate
+`Function expected at heckeH8DimQ` errors, which look like 22 problems and
+are one. Note `set_option … in` must precede the **docstring**, not sit
+between docstring and declaration; placing it wrongly costs another parse
+error.
+
+**Still 8 errors, and they are real.** Three `unsolved goals`, three
+`typeclass instance problem is stuck`, one `simp` failure, one `rewrite`
+failure. That is formalisation work, not drift, and it is **not** done here.
+The file remains in the failing set.
