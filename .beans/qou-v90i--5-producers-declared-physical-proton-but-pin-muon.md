@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:37:16Z
-updated_at: 2026-08-22T19:37:46Z
+updated_at: 2026-08-22T19:42:35Z
 ---
 
 Found while re-baselining `qou-1c4y`; measurement +
@@ -52,3 +52,42 @@ per-file read is load-bearing, not ceremony.
 
 Gate: `--list-contradictions` exits 1 while any remain, so it can be
 wired into a preflight once drained.
+
+
+## CORRECTION (same session) — the `q_beta_form_a_n1_extension` row was wrong
+
+I read its comment *"Load **CAL-2** q_0 from canonical pinning witness"* as
+a deliberate ideal-layer choice and called the manifest the bug. Wrong.
+
+AGENTS.md §"q₀ anchor convention" states the 2026-08-07 directive *"is about
+which **numerical evaluation** code defaults to, not about redefining the
+3-CAL triple"* — the ideal CAL-2 definition is untouched while **compute
+evaluates at the proton pin**. Naming CAL-2 identifies *which calibration*,
+not *which pin*. The manifest entry is correct; the read is the bug.
+
+Corrected: **three** plain read-bugs (`b_over_m_order_probe`,
+`path4_rho_K_at_h3A`, `q_beta_form_a_n1_extension`), one **dual-purpose
+read** (`q1_mass_gap_probe`), one with no stated intent
+(`aK_via_lp_dual_hecke_basis` — directive default applies, no call needed).
+
+**My "a sweep would have broken this one" argument does not survive** in the
+form I wrote it. Re-pinning `q_beta_form_a_n1_extension` to proton is the
+*correct* action.
+
+What survives is narrower and real: `q1_mass_gap_probe` reads
+`q-pinning-50-digit.witness.json` for **two** purposes — its q₀ bind *and*
+its recorded `plancherel_weights_n3` / `[2]_q` as a cross-check reference
+table. A naive re-pin that redirects the whole read fixes the first and
+breaks the second. The sweep hazard is **dual-purpose reads**, not
+layer-intent conflicts.
+
+### Revised next steps
+
+1. Three read-bugs: route q₀ through `q_parameter`, re-run, refresh witness.
+   (`q_beta_form_a_n1_extension` re-runs in <180s, exit 0, and is
+   mathematically byte-identical on re-run — its 12 raw-float64 fields are
+   already baselined at exactly 12, so the ratchet is satisfied. It also
+   carries a pre-existing float64 defect worth a separate bean.)
+2. `q1_mass_gap_probe`: split the two reads before re-pinning either.
+3. `aK_via_lp_dual_hecke_basis`: apply the directive default; no author call
+   needed after all.
