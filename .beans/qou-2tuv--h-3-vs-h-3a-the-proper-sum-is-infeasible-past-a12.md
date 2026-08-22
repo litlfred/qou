@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T15:33:58Z
+updated_at: 2026-08-22T19:36:15Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1044,3 +1044,45 @@ Unaffected — these are measurements on raw V_hat, taken before any tower call:
 Cross-channel maxima were measured at A = 2, 3. At A = 4 the single-channel
 conclusion follows from the already-measured max|V_hat| = 1.08837 < q0; the
 cross maximum there was not re-measured.
+
+
+
+---
+
+## prepare-merge (2026-08-22)
+
+Branch `claude/mass-table-comprehensive-triage` is merged-up, green and pushed
+at `b42462c8e`. Base had moved **552 commits** — my earlier "0 behind" reading
+was against a stale `origin/main`.
+
+Two files overlapped; one conflicted. **`binding-canonical.witness.json`** — my
+commit e429d73f had regenerated it to `q0Anchor: muon`, reasoning from
+`q0_anchor_manifest.json`, which at my base listed `binding_canonical` under
+`ideal_muon` (256 entries). Main has since migrated (`da2968cc3`, "first
+witnesses at the proton pin"): the manifest now lists it under
+`physical_proton` (406 entries; `ideal_muon` is down to 3). **My premise was
+right at my base and is now superseded** — the muon flip is dropped.
+
+Resolution is neither side verbatim: main's anchor decision **plus** this
+branch's producer edit (CAL-3 -> CAL-2 proxy, which moves
+`scriptHash 55d683d8c551 -> 29e40a028c7e`), reconciled by regenerating. Result
+carries `q0Anchor: proton` + the new hash. Every numeric field is unchanged to
+1e-11% or better; only `wall_sec` moves. Regeneration does restamp the
+environment (mpmath 1.3.0 -> 1.4.1), and the 1.45e-11% drift on `B_MeV` traces
+to that bump — recorded rather than hidden, since closing the scriptHash left no
+way to avoid it.
+
+**Gates:** `scripts/precision-gates.sh` exit 0, *"All blocking precision gates
+green."* `probe-float64-guard.py --diff` exit 0 — and comparing main's copy of
+`mass_at_3A_proper.py` against ours in-tree gives **16 hits each**, so this
+branch adds none.
+
+**Not mine, left alone:** running the gates refreshed
+`q0-value-drift-audit.witness.json` by +2 `proton-pin` rows
+(`gram-restricted-nonsingularity`, `axial-observable-is-the-gram-radical`
+gaining `q0Value`). No row changed class and binding-canonical was already
+`proton-pin` on both sides, so that is **main's audit witness being stale
+against main's own tree**, not fallout from this branch. Reverted rather than
+folded in — it belongs to the witness drain (qou-ad4t). Worth someone's
+attention: it means the committed drift audit under-reports the proton-pin
+count by 2.
