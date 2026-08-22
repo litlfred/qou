@@ -617,7 +617,7 @@ wrong row. Nodup on the flattened tableau is the weakest hypothesis ruling that 
 already tracks it for the built case (insertWordRec_snd_content_nodup).
 
 **Totality is separate and needs no distinctness — and it is a trap-blocker.** qRowOf returns an
-Option; a counting argument reading it with  would silently score every ABSENT timestamp as
+Option; a counting argument reading it with .getD 0 would silently score every ABSENT timestamp as
 row 0. Stating totality makes that visible instead of latent. Worth having found before writing the
 count, not after.
 
