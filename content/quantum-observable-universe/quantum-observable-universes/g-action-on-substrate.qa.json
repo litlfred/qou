@@ -1830,6 +1830,22 @@
         "reviewed_at": "2026-08-22T01:08:10.048Z",
         "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
         "evidence": "Full read of the conjecture (four constraints G-1..G-4, the N_sym derivation, the verification, and the residual discussion). No negation-contrast in the .md prose; the 'categorically derived, not fitted' phrasing sits in the .ts authorNotes, outside this block's prose."
+      },
+      {
+        "field_hash": {
+          "md": "85b9c867f5da",
+          "ts": "42f4775addea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:08:42.758Z",
+        "reviewed_sha": "3c86a232bce10e5678d12aaa88567aaae9c9d4b5",
+        "evidence": "Full read of the conjecture (four constraints G-1..G-4, the N_sym derivation, verification, residual discussion) plus its three extracted data tables. No negation-contrast in the .md prose; 'categorically derived, not fitted' sits in the .ts authorNotes, outside the block prose. This entry supersedes my earlier one only to carry the structural findings below.",
+        "notes": "STRUCTURAL MATH FLAGS (not traps, reported not fixed). (1) DIRECT SUM WHERE A PRODUCT IS NEEDED. The trace display reads tr_F(e_sym^EW . e_H) = dim_q(e_sym^EW[A^(W+) DIRECT-SUM A^(W-) DIRECT-SUM A^(Z)]) . dim_q(e_H . A^(H)), and the next step multiplies [4]_q . [4]_q . [6]_q. A q-dimension is ADDITIVE over a direct sum: [4]+[4]+[6] = 14.607, and times [2]_q that is 29.374, not 216.96. To get the product the middle object has to be a TENSOR product (which the name 'symmetric-channel' suggests was intended). As written the derivation of N_sym does not follow from its own display. (2) e_H's TRACE CONTRADICTS ITS RANK. (G-4) calls e_H a rank-1 projector isolating 'the unbroken 1-dimensional subspace of A^(H)', then assigns it trace dimension [2]_q - the value (G-2) gives to ALL of A^(H). A rank-1 sub-object cannot carry the q-dimension of the rank-2 object containing it. (G-2)'s own wording is ambiguous on the same point ('the q-dimension of the fundamental representation, restricted to the neutral component' - the fundamental is 2-dimensional, the neutral component 1-dimensional). (3) POSSIBLE FOURTH CALIBRATION. (G-3) fixes tr_F(rho_Phi* . rho_Phi) = v^2/m_e^2 with v ~ 246 GeV, described in the block as 'the empirical Higgs VEV'. That is an empirical input outside CAL-1/2/3 (m_e, D_beta, D_pi). Mitigating: (G-4) divides by exactly that trace, so v cancels out of e_H and never reaches N_sym - worth saying so explicitly, since the authorNotes claim every factor is derived and not fitted. (4) UNSOURCED TARGET. 'the CODATA target N_sym(q_0) = 213.11' carries no citation, no derivation and no witness field; computation.status in the .ts is 'not_run'. The whole -1.81 % headline rests on it. (5) TABLE 1 (tbl:g-action-on-substrate-table1-data): the photon row is assigned the trivial irrep (0,0) while the Z row is assigned the mixed '(1,0) restricted to (T^3, Y)'. Both gamma and Z are W^3-B mixtures, so the asymmetry is wrong in the same way for gamma; and the last row 'residual matter sector / leptons + quarks' is not an irrep at all, contradicting (G-1)'s 'each A^(X) carries a unique irreducible representation of G'. (6) TABLE 2 calls the [4]_q, [4]_q, [6]_q entries 'Goldstone at W-host / Z-host', but the body assigns those q-dimensions to the gauge components A^(W+-), A^(Z); Goldstones are the eaten scalars of the Higgs doublet, so the two namings disagree. (7) TABLE 3 is work-tracking, not content: its rows are audit flags and their disposition ('HIGGS-SLOT | retraction | ...', 'section 3.A v4 calibration | wrong direction | ...'), and the 'post-discharge' column describes a state that does not yet hold. This is the AGENTS.md section 4d authorNotes case and should migrate out of the rendered paper."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2161,5 +2177,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T01:08:10.415Z"
+  "updated_at": "2026-08-22T01:08:42.758Z"
 }
