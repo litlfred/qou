@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 307,
-      "proton-pin": 1222,
+      "proton-pin": 1223,
       "unknown": 25,
       "canonical": 214
     },
@@ -6024,6 +6024,13 @@
         "value": "1.10997859555418057528159407960950937799328227995870",
         "class": "STALE",
         "ppb_vs_canonical": -0.0028416265239649993
+      },
+      {
+        "file": "computations/figure-eight-kashaev-volume.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/flavor-dependent-cusp-shape.witness.json",

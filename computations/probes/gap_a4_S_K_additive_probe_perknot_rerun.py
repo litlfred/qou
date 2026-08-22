@@ -24,7 +24,7 @@ Density-swap mapping:
   |           | p = n degenerate) — the original PR #1876 form         |
   | per-knot  | tr_M(K) — canonical chi-cache Markov trace, p≠n        |
   |           | distinct; leading term routed through the canonical    |
-  |           | `vol_density_per_block(vol_K, tr_M_K, q₀)`             |
+  |           | `per_knot_density_per_block(vol_K, tr_M_K, q₀)`             |
 
 Same isotopes {p, n, D, T, ³He, ⁴He}, CODATA/AME validation masses,
 per-knot volumes, q₀ and precision defaults as the original.  Same
@@ -60,7 +60,7 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from canonical_tr_m_via_chi_cache import canonical_tr_m  # noqa: E402
-from _li_2_q_util import linking_weight_family_a, vol_density_per_block  # noqa: E402
+from _li_2_q_util import linking_weight_family_a, per_knot_density_per_block  # noqa: E402
 
 from codata_constants import (  # noqa: E402
     M_E_MEV,
@@ -112,8 +112,8 @@ def _branch(name: str, q_0: mp.mpf, lam_of: dict[str, mp.mpf],
     for label, atom, Z, N, m_K, vol_K in LIGHT_SERIES:
         lam = lam_of[label]
         if use_per_block:
-            # canonical route: m_pred = m_e * vol_density_per_block(...)
-            pred = M_E_MEV * vol_density_per_block(vol_K, lam, q_0)
+            # canonical route: m_pred = m_e * per_knot_density_per_block(...)
+            pred = M_E_MEV * per_knot_density_per_block(vol_K, lam, q_0)
         else:
             pred = M_E_MEV * vol_K / hbar2 * lam
         S = m_K - pred
@@ -181,7 +181,7 @@ def main() -> int:
         "hbar_q^2*lambda(K) for lambda(K) in {lambda_A (fitted global "
         "scalar, baseline reproduction), tr_M(K) (canonical chi-cache "
         "per-knot trace, p!=n distinct, routed through "
-        "vol_density_per_block)}, and tests whether S_emp factors as a "
+        "per_knot_density_per_block)}, and tests whether S_emp factors as a "
         "uniform-coefficient substrate form (same normalisation columns "
         "as the original; uniformity spread is the verdict). NO new "
         "ansatz families. EXPLORATORY."
@@ -217,7 +217,7 @@ def main() -> int:
     base = _branch("baseline: lambda_A (fitted, p=n degenerate)",
                    q_0, lamA_of, use_per_block=False)
     pk = _branch("per-knot: tr_M(K) (canonical, p!=n distinct, "
-                 "vol_density_per_block)", q_0, tr_M, use_per_block=True)
+                 "per_knot_density_per_block)", q_0, tr_M, use_per_block=True)
 
     w.add_data("baseline_lambdaA", base)
     w.add_data("perknot_trM", pk)

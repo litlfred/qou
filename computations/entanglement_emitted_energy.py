@@ -41,7 +41,7 @@ import mpmath as mp  # noqa: E402
 
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
-from _li_2_q_util import linking_weight_family_a, vol_density_borromean  # noqa: E402
+from _li_2_q_util import linking_weight_family_a, per_knot_density_borromean  # noqa: E402
 from gamma_gamma_pair_production_decomposition import (  # noqa: E402
     linking_weight_via_jones, linking_weight_exact_via_anchor,
 )
@@ -53,7 +53,7 @@ def main() -> int:
     mp.mp.dps = 40
     q = mp.mpf(str(Q0))
     m_e = mp.mpf(str(M_E_MEV))
-    vd = vol_density_borromean(q)            # Vol(𝓑₃)/ℏ_q²  (dimensionless)
+    vd = per_knot_density_borromean(q)            # Vol(𝓑₃)/ℏ_q²  (dimensionless)
     scale = m_e * vd                          # MeV per unit linking weight
 
     lw_fa = linking_weight_family_a(q)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Meson VolDensity: the meson-sector analog of vol_density_borromean.
+Meson VolDensity: the meson-sector analog of per_knot_density_borromean.
 
 For baryons:  m_p = 2·(m_μ·F_Bor − 6·m_e) — the canonical muon-anchored
               Hecke energy (canonical_mass facade; the former

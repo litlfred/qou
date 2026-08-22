@@ -30,7 +30,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from _li_2_q_util import vol_density_per_block  # noqa: E402
+from _li_2_q_util import per_knot_density_per_block  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
@@ -68,8 +68,8 @@ if tr_M_D is None:
     sys.exit(1)  # gated: no canonical trace ⇒ non-zero so CI/automation don't read it as success
 
 print(f"tr_M(β_D) [{src}] = {mp.nstr(tr_M_D, 12)}")
-geom_perknot = vol_density_per_block(VOL_6_2, tr_M_D, q0)   # Vol(6₂)/ℏ² · tr_M
-geom_uniform = vol_density_per_block(VOL_B3, tr_M_D, q0)    # Vol(8G)/ℏ²  · tr_M  (the bug)
+geom_perknot = per_knot_density_per_block(VOL_6_2, tr_M_D, q0)   # Vol(6₂)/ℏ² · tr_M
+geom_uniform = per_knot_density_per_block(VOL_B3, tr_M_D, q0)    # Vol(8G)/ℏ²  · tr_M  (the bug)
 m_perknot = M_E_MEV * geom_perknot
 m_uniform = M_E_MEV * geom_uniform
 err_pk = (m_perknot - M_D_AME) / M_D_AME

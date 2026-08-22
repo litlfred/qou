@@ -240,7 +240,7 @@ M_MU_CODATA_MEV = _M_MU_MEV_VALIDATION  # CODATA muon (validation; codata_consta
 # because this is the documented audit-verification use, not a
 # production consumer.
 import warnings as _warnings
-from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+from _li_2_q_util import per_knot_density_borromean as _vol_density_borromean
 with _warnings.catch_warnings():
     _warnings.simplefilter("ignore", DeprecationWarning)
     GEOM_FULL_BORROMEAN = _vol_density_borromean(Q)

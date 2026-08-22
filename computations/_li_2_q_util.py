@@ -311,7 +311,7 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
 # was REMOVED on 2026-05-24 (PR #1089 review-cycle, Copilot finding).
 # Per owner directive: "no lambda-scale ANYWHERE in production".  All
 # call sites now import `linking_weight_family_a` (or use the
-# `vol_density_borromean` wrapper when the full VolDensity evaluation is
+# `per_knot_density_borromean` wrapper when the full VolDensity evaluation is
 # wanted).  Any future caller attempting `from _li_2_q_util import
 # lambda_scale_family_a` will raise ImportError — by design, to force
 # migration.
@@ -360,8 +360,8 @@ def bring_color_weighted_linking_weight(
     close m_avg — consistent with the 5+ refuted routes documented
     in the canonical reference.
 
-    Status: PROBE, NOT WIRED into production `vol_density_borromean`.
-    Use via `vol_density_borromean_bring_color_weighted(Z, N, q)`.
+    Status: PROBE, NOT WIRED into production `per_knot_density_borromean`.
+    Use via `per_knot_density_borromean_bring_color_weighted(Z, N, q)`.
     """
     qi = mpf(1) / q if q_inv is None else q_inv
     base = linking_weight_family_a(q, qi)
@@ -376,19 +376,19 @@ def bring_color_weighted_linking_weight(
     return base * (1 + delta * asym + delta ** 2 * sym)
 
 
-def vol_density_borromean_bring_color_weighted(
+def per_knot_density_borromean_bring_color_weighted(
     Z: int, N: int, q: mpf, q_inv: mpf | None = None,
 ) -> mpf:
-    """Bring-color-tube extension of vol_density_borromean for atom (Z, N).
+    """Bring-color-tube extension of per_knot_density_borromean for atom (Z, N).
 
-    [PROBE — parallels `vol_density_borromean` but uses the per-atom
+    [PROBE — parallels `per_knot_density_borromean` but uses the per-atom
     Bring-color-tube linking_weight instead of the H_4 Wedderburn
     average.]
 
     m(K) = m_e · VolDensity_bring(Z, N, q₀)
 
     Status: PROBE.  NOT wired into production mass computation;
-    the existing `vol_density_borromean` (H_4 average, acknowledged
+    the existing `per_knot_density_borromean` (H_4 average, acknowledged
     CAL-4) remains in production until a categorical Bring-color-tube
     formulation is found that closes the +2.89% m_avg gap.
     """
@@ -399,7 +399,7 @@ def vol_density_borromean_bring_color_weighted(
     return geom_leading * bring_color_weighted_linking_weight(Z, N, q, qi)
 
 
-def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
+def per_knot_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     """[SHORTCUT — global-scalar collapse, NOT the paper's per-block sum.]
 
     VolDensity(𝓑₃, q) — the complete per-knot Geom evaluation for the
@@ -417,7 +417,7 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     NOT compute the formula in `prop:hoefsmit-scattering-pipeline`
     Stage 4 — the 2.53 is a CODATA-implied-λ near-match that lands
     near `λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46` (the value that round-trips m_p).
-    Use `vol_density_per_block(vol_K, tr_M_K, q, ...)` for the
+    Use `per_knot_density_per_block(vol_K, tr_M_K, q, ...)` for the
     paper-faithful per-block evaluation.  This routine is retained ONLY until the
     per-block version is validated and the owner approves a production
     switch (the switch changes the m_p computation).
@@ -466,7 +466,7 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     """
     import warnings as _warnings
     _warnings.warn(
-        "vol_density_borromean is the λ_A fit (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) "
+        "per_knot_density_borromean is the λ_A fit (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) "
         "— NOT the canonical absolute nucleon mass. Use the canonical_mass "
         "facade (muon-anchored Hecke energy). See "
         "docs/canonical-mass-formula-guardrail.md.",
@@ -485,7 +485,7 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     # The exploratory spectral-phase correction (spectral_correction_
     # borromean, −819 ppm on m_avg) is NOT applied here: it is unproved
     # (trivial Lean stub) so it must not enter production. Use it only
-    # via the explicitly-exploratory vol_density_borromean_spectral().
+    # via the explicitly-exploratory per_knot_density_borromean_spectral().
     return geom_leading * linking_weight
 
 
@@ -503,7 +503,7 @@ def geom_leading(vol_K: mpf, q: mpf, q_inv: mpf | None = None) -> mpf:
     return vol_K / hbar_q ** 2
 
 
-def vol_density_per_block(
+def per_knot_density_per_block(
     vol_K: mpf,
     tr_M_K: mpf,
     q: mpf,
@@ -521,10 +521,10 @@ def vol_density_per_block(
     Markov trace over the partitions of the KNOT'S OWN strand count
     (H₃ for the 3-strand Borromean baryons, H₆ for the deuteron at
     n=6, etc.).  This is the `Σ_λ` factor that the legacy
-    `vol_density_borromean` shortcut DROPPED and replaced with a global
+    `per_knot_density_borromean` shortcut DROPPED and replaced with a global
     H₄ scalar.
 
-    The mass is then `m(K) = m_e · vol_density_per_block(...)`.
+    The mass is then `m(K) = m_e · per_knot_density_per_block(...)`.
 
     Arguments
     ---------
@@ -587,16 +587,16 @@ def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     return theta / (8 * hbar_q ** 2)
 
 
-def vol_density_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
+def per_knot_density_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
     """EXPLORATORY (not production): proved Family-A vol_density × the
     UNPROVED spectral-phase correction. m_e × this = m_avg ≈ 938.15 MeV
     (−819 ppm vs CODATA m_avg) — a no-fit ~35× improvement over the bare
     +2.89 %, but the correction is not proved (trivial Lean stub) and the
     sinh(θ) refinement is an open lead, so this must NOT feed production.
-    Production uses vol_density_borromean (proved Family A, +2.89 %).
+    Production uses per_knot_density_borromean (proved Family A, +2.89 %).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
-    return vol_density_borromean(q, qi) * spectral_correction_borromean(q, qi)
+    return per_knot_density_borromean(q, qi) * spectral_correction_borromean(q, qi)
 
 
 def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
@@ -676,5 +676,10 @@ def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
 #
 # There is no behavioural difference: the alias IS the function object.
 # ---------------------------------------------------------------------------
-per_knot_density_per_block = vol_density_per_block
-per_knot_density_borromean = vol_density_borromean
+# Back-compat aliases, OLD -> NEW. Owner ruling 2026-08-22: `per_knot_density_*`
+# is the canonical spelling. These keep the 170-odd historical call sites and
+# any out-of-tree caller working; they are the deprecated direction now.
+vol_density_per_block = per_knot_density_per_block
+vol_density_borromean = per_knot_density_borromean
+vol_density_borromean_spectral = per_knot_density_borromean_spectral
+vol_density_borromean_bring_color_weighted = per_knot_density_borromean_bring_color_weighted

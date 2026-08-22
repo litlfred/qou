@@ -151,7 +151,7 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # the DeprecationWarning is suppressed because this retention is the
 # intentional, documented audit use.
 import warnings as _warnings
-from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+from _li_2_q_util import per_knot_density_borromean as _vol_density_borromean
 with _warnings.catch_warnings():
     _warnings.simplefilter("ignore", DeprecationWarning)
     GEOM_FULL_BORROMEAN_Q0 = _vol_density_borromean(_Q_0)
