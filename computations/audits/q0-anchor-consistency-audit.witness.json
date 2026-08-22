@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T12:23:46.554876+00:00",
-  "commitSha": "899b52c4612075f436c0aa9414d03f1b5ed753c6",
+  "computedAt": "2026-08-22T10:27:57.404454+00:00",
+  "commitSha": "c5d4b8131656d6f9dc521d56e9557bf8124827ff",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "d4f4409e5d3b",
-  "scriptCommitSha": "250bf85872ab4d3070f275fd8082fc36b6947697",
+  "scriptHash": "5726f911cddb",
+  "scriptCommitSha": "7ddaeab36c1ef548a51ee2ff8765005d0a90312c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,6 +34,13 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
+  "invocation": {
+    "argv": [
+      "computations/audits/q0_anchor_consistency_audit.py",
+      "--strict"
+    ],
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+  },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
@@ -41,10 +48,7 @@
       "Q0_AMBIGUOUS": 18,
       "Q0_INDEPENDENT": 27,
       "Q0_INDEPENDENT_NO_REASON": 0,
-      "Q0_COMPARISON": 0,
-      "Q0_COMPARISON_NO_REASON": 0,
-      "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1925,
+      "Q0_ANCHOR_MISSING": 1918,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
       "Q0_PARSE_ERROR": 0,
@@ -2162,10 +2166,6 @@
           "detail": ""
         },
         {
-          "witness": "figure-eight-kashaev-volume.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "form-stabilizer-genericity-su3-routes.witness.json",
           "detail": ""
         },
@@ -2486,19 +2486,7 @@
           "detail": ""
         },
         {
-          "witness": "hecke-prefix-head-separation.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "hecke-prefix-loop-fit.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "hecke-prefix-phases.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "hecke-prefix-schedule-check.witness.json",
           "detail": ""
         },
         {
@@ -2507,18 +2495,6 @@
         },
         {
           "witness": "hecke-tail-assembly-fit.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "hecke-tail-collision-check.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "hecke-tail-diagonal-check.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "hecke-tail-reorder-check.witness.json",
           "detail": ""
         },
         {
@@ -7872,10 +7848,6 @@
           "detail": ""
         },
         {
-          "witness": "muon-pin-three-values.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "aufbau-ell-grading-from-eigensplit.witness.json",
           "detail": ""
         },
@@ -8897,6 +8869,10 @@
         },
         {
           "witness": "even-a-mirror-pair-phi8-scaling-test.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "figure-eight-kashaev-volume.witness.json",
           "detail": ""
         },
         {

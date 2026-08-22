@@ -82,7 +82,7 @@ def _hbar_q(q: "mpf") -> "mpf":
 
 
 def _geom_leading(vol: "mpf", q: "mpf") -> "mpf":
-    """Geom_leading = Vol / ℏ_q² (per _li_2_q_util.vol_density_borromean)."""
+    """Geom_leading = Vol / ℏ_q² (per _li_2_q_util.per_knot_density_borromean)."""
     return vol / _hbar_q(q) ** 2
 
 

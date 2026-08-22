@@ -20,7 +20,7 @@ under THREE Vol conventions side-by-side:
         p/n = 8·G (Borromean); D = 4.401 (Vol(6_2)); T = 8.286 (Vol(8_11));
         ³He = 8·G (Borromean); ⁴He = 4·8·G (magic-A L6a4_x4)
   C — Uniform Vol(𝓑₃) = 8·G for every atom (production
-        `vol_density_borromean` convention)
+        `per_knot_density_borromean` convention)
 
 The verdict for each convention is the **per-light-series swing**
 of λ_emp(K).  A tight convention has small swing across atoms — the
@@ -286,7 +286,7 @@ def main() -> int:
         tolerance=2e-3,
         source=(
             "Proton's λ_emp ≈ 2.46 (the CODATA-implied near-match in "
-            "_li_2_q_util.py::vol_density_borromean docstring).  Anchors "
+            "_li_2_q_util.py::per_knot_density_borromean docstring).  Anchors "
             "the probe — proton row is the proton row regardless of "
             "convention since all three use Vol(𝓑₃) = 8G for p."
         ),
