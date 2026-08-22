@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T15:57:29Z
+updated_at: 2026-08-22T20:34:03Z
 ---
 
 
@@ -157,3 +157,60 @@ already proved; only the effective error term is missing.
 STATUS: elementary/combinatorial routes to uniform N/P<1 exhausted+refuted;
 remaining path is a quantitative 2nd-order Kerov CLT (effective error). Honest
 localisation. M_1>0 exact n<=50, kappa>0 derived, all-n reduced+localised. OPEN.
+
+
+
+EFFECTIVE-CLT PROJECT (2026-08-22, PR #5466): plan persisted + sub-result (1) CLOSED.
+Sub-result (1) outcome (better than planned): the Lambda*-part of Sum_h is
+omega3-orthogonal. Sum_h = p2sharp_sym + T, p2sharp_sym in Lambda* (shifted power
+sum), T = Sum_box(i+j) - n (non-Lambda* co-content). EXACTLY (n<=11):
+  Cov(p2sharp_sym, omega3) = 0  =>  M_1 = Cov(Sum_h, omega3) = Cov(T, omega3).
+Provable reason: p2sharp_sym is Lambda*-degree 2 (Sigma_2, n^2, n) and
+Cov(Sigma_2,Sigma_3)=0 (= exact Cov(R_3,R_4)=0; omega3=Sigma_3/3). No genus
+correction. Proves PR #5366 antidiagonal reformulation M_1=Cov(Sum(i+j),Sum c^2)
+EXACT. Effective bound now needs ONLY non-Lambda* T (no Lambda* contamination).
+Sniady genus (arxiv-math-0411647 4.5) does NOT reach T - it only re-derives
+Lambda* x Lambda* covariances (already exact).
+REMAINING (sub-result 2): effective bound Cov(T,omega3) >= kappa n^{5/2} - C n^2,
+T,omega3 both additive box statistics. Fulman 3 exact 2nd-moment / IO field 2nd
+order. Gap OPEN. Workplan: docs/workplans/2026-08-22-M1-effective-CLT-project.md
+
+
+
+SUB-RESULT (2) REFRAMED to ONE-SIDED (2026-08-22, PR #5466). Exact kappa_n vs
+kappa=128/(225 pi^2): kappa_n < kappa for n<=12, kappa_n > kappa for EVERY
+13<=n<=46 (crossing n_0=13). Gap kappa_n-kappa positive, peaks ~0.001556 at n=32,
+declines gently (~0.00147 at n=46), far from recrossing 0. So:
+  M_1>0 all-n <= (a) exact M_1>0 for n<=12 [DONE] AND (b) kappa_n>=kappa for n>=13.
+(b) is ONE-SIDED: Cov(T,omega3) >= kappa n^{5/2}, i.e. the SIGN of the leading
+correction (kappa_n -> kappa FROM ABOVE), NOT an explicit constant C. Weaker
+demand on the 2nd-order Kerov CLT than a two-sided bound.
+REMAINING NUB (b1): prove the correction Cov(T,omega3)-kappa n^{5/2} >= 0 for large
+n (its sign). Empirically correction ~ +A n^{~2.35}, A>0 (slowly-varying). This is
+a genuine 2nd-order Kerov-CLT sign computation - substantial standalone analysis;
+no slick proof found. (b2): no dip on 13<=n<N_0 (exact, have to 46).
+STATUS: gap content now = ONE sign of ONE correction term. kappa>0 derived; M_1>0
+exact n<=46; Lambda* part proved orthogonal; reduced to one-sided sign. OPEN.
+
+
+
+RETRACTION + EXTEND + SIGN-RECAST (2026-08-22, PR #5466).
+RETRACTED sub-result (1): the 'Lambda*-peeling reduction M_1=Cov(T,omega3)' was
+VACUOUS. Exact n<=12: p2sharp_sym == 0 IDENTICALLY (transpose-antisym
+p2sharp(lam)=-p2sharp(lam')) and T == Sum_h identically. So Cov(p2sharp_sym,omega3)=0
+is the zero function's covariance, and M_1=Cov(T,omega3) is the definition - NO
+reduction. Caught before merge (PR #5466 open). Genuine residue: co-content
+identity Sum_h=Sum(i+j)-n (=PR #5366 reformulation, an identity). Lambda*-peeling
+gives NOTHING (Sum_h transpose-even _|_ Sigma_2 transpose-odd; M_1=Cov(Sum_h,Sigma_3)
+even x even unchanged).
+UNAFFECTED (stand): kappa=128/(225 pi^2) derivation; one-sided kappa_n>=kappa
+reframing (both about M_1 VALUES).
+EXTEND: kappa_n > kappa verified exactly for ALL 13<=n<=60 (crossing n_0=13),
+correction +, peak 0.001556 at n=32, 0.001381 at n=60, far from 0.
+SIGN (b1) recast, NOT proved: via real Sum_h=SumD2+Sum|c| (PR #5452),
+kappa_n-kappa=(N-deficit)-(P-deficit); both P_n/n^2.5,N_n/n^2.5 rise from below;
+kappa_n>kappa BECAUSE N (diag-length-spread cov) converges to VKLS limit SLOWER
+than P (|c|-spread cov). So one-sided sign <=> 2nd-order RATE comparison 'N lags
+P'. Concrete target; open 2nd-order-CLT statement.
+STATUS: M_1>0 exact n<=60; kappa>0 derived; reduced to one-sided kappa_n>=kappa
+<=> 'N lags P'. OPEN. (Sub-result 1 was a dead end, honestly retracted.)
