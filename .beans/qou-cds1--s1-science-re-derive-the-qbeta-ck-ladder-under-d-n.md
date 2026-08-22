@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-22T11:18:14Z
+updated_at: 2026-08-22T19:31:51Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -917,3 +917,17 @@ Dispatched 3 routes; all trace-weight routes fail, C (amplitude) untouched:
 UNIFIED INSIGHT: c₃=−2=J_Hopf(1) is a bar-EVEN q=1 SHADOW; no bar-odd construction reaches it, bar-even is generic. D-trace/weights cannot force c₃ in any parity.
 DELIVERABLES: FMapC3ParityExclusion.lean (barOdd_at_one, barOdd_ne_hopf_value_at_one — sorry-free scope-b invariant); fmap_c3_parity_genericity_exclusion.py (19/19); audit 2026-08-21-fmap-c3-parity-genericity-exclusion.md.
 OPEN: only route C (analytic Φ_b/Lawrence-Rozansky amplitude leg) — structurally different (not a parity object), the corpus's real wall; ingredients gathered (Φ_b s_n=B_2n/(2n)!, 4₁ κ-tower) but c_k-reduction not completed. That is where future f-map work goes.
+
+── Bridge lemma 2026-08-22 (branch n24484): phase = counit-trace gap, FORMALIZED ──
+phaseTwice_eq_counit_sub_trace (LadderPhaseMirrorCovariance.lean, lean-direct
+EXIT=0): phaseTwice z h = evalMap h 1 - evalMap h z = eps(Delta) - tr_M(Delta),
+so 2*alpha IS the counit-minus-trace gap. The 'real result' (alpha measures the
+counit->trace transport generator) is now a single named cross-file theorem
+bridging CrossingWeightAffine (evalMap, counit at w=1 / trace at w=z) to the
+ladder phase — previously only prose + two disconnected Lean pieces (evalMap_affine
++ phaseTwice). LOCATES the unjustified step (the cosine QBetaCosResummation) as
+the transport a D re-derivation must supply. SCOPE: locates, closes nothing; the
+41.94xC c_k residual stays anti-fit-fenced. HONEST WALL on gap 3: both structural
+legs forced+formalized, c2 settled, c3 proven un-forceable (f-map), residual
+closure forbidden as fitting. No legitimate derivation move remains that isn't
+already done or a forbidden fit.
