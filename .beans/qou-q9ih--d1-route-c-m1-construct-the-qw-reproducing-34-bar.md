@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T02:49:30Z
-updated_at: 2026-08-15T10:56:28Z
+updated_at: 2026-08-22T20:24:44Z
 ---
 
 
@@ -129,3 +129,27 @@ building on it.
 
 Sequencing unchanged (D1-e → D1-a → D1-b, D1-c as a sibling's parallel angle),
 but D1-a is now cheaper: two proved filters instead of an unconstrained scan.
+
+── Assessment 2026-08-22 (branch n24484): no bounded high-value move; O4 stands ──
+Read the arc-status (qou-arc1, COMPLETED): the A_ω/Route-C arc RESOLVED to O4
+(pivot away) on 2026-08-15 — O2 refuted, physics connection ESTABLISHED ABSENT,
+recommendation = bank standing results and stop investing; M1/M3 remain 'pure-math,
+no physics payoff'. Assessed each bounded D1 entry against that:
+• D1-a (small-quiver two-ray DT scan): its predicted outcome — 'datum underdetermines
+  (Q,W)' — is ALREADY anticipated by the corpus ('2-integer target is weak, #4534
+  two-knot-linear-fit guard'). Running it reproduces a known negative; low marginal value.
+• D1-e (formalize-first vertex bound): given the imported M2 abelian premise (stable
+  classes = vertex simples, #simples = V) the vertex lower bound V≥4 from ray-count 4 is
+  near-trivial pigeonhole; thin, and the premise carries all the weight.
+• D1-c (Hecke/Bring derivation-tier, the ONLY route whose success = derivation): the cheap
+  shape test 'does a natural pairing on 5₂'s H₃(q) blocks give a 2-ray abelian spectrum
+  summing to 7' is the right entry, BUT the exact (7,1) bar-split target + the
+  blocks→spectrum 'natural pairing' dictionary are under-specified in the corpus; assembling
+  them is the multi-session D1-b/c thrust, not a session.
+Certified inputs confirmed: DT connection counts 4₁→3 (2 irred + 1 abelian), 5₂→4 (3+1),
+so {3,4} sum 7 (dt_crossknot_connection_count_certified_probe). Nothing here is a fit.
+VERDICT: no bounded, rigorous, high-value in-session move exists that isn't corpus-
+anticipated (D1-a), near-trivial (D1-e), or a multi-session assembly (D1-c). O4 stands:
+this periphery has no physics payoff. Not pursuing further absent an explicit pure-math
+directive. (Coordination: my gap-3 commit touched LadderPhaseMirrorCovariance.lean, which
+feeds D1-a/e — phaseTwice_eq_counit_sub_trace added there, no overlap with M1 construction.)
