@@ -1415,6 +1415,22 @@
         "reviewed_at": "2026-08-22T01:23:08.741Z",
         "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
         "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:31.445Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "No assertion-by-denial anywhere in the remark. NOTATION/MATH AUDIT recorded here for durability (see notes).",
+        "notes": "STANDING-TRAP FINDING, not a trap category, do not fix inline: the bullet states 'the delta_q-decoration evaluates to a pure categorical trace delta_q(T_{p,q}) = q^q - q^{-q} in the appropriate p-strand realisation'. This (a) collides the substrate modulus q with the torus-knot second index q (AGENTS.md 7aa symbol-collision rule), and (b) is FALSE as a general rule against its own parent proposition: prop:alpha-em-categorical-trace-ratio gives delta_q(T_{3,5}) = q^10 - q^-10, not q^5 - q^-5. The exponent is 9 for T_{2,9} (= second index) but 10 for T_{3,5} (!= second index), so no 'q^(second index)' rule holds. Proposed fix: rename the indices, e.g. 'delta_q(T_{a,b}) = q^{n(a,b)} - q^{-n(a,b)} where n(2,9)=9 and n(3,5)=10', or state the two cases explicitly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1789,5 +1805,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T01:23:09.212Z"
+  "updated_at": "2026-08-22T01:23:31.445Z"
 }
