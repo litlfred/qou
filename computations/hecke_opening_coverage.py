@@ -75,6 +75,27 @@ def next_redex(f):
     return None
 
 
+RMAP_CACHE = {}
+
+
+def rule_ids(n):
+    """rule name -> ('B'|'Y'|'Q'|'F', indices...) for the current tuning."""
+    out = {}
+    for x in range(n):
+        out[f"Q{x}"] = ("Q", x)
+    for x in range(n - 1):
+        out[f"Y{x}{x+1}"] = ("Y", x, x + 1)
+    for x in range(n):
+        for y in range(n):
+            if y + 1 < x:
+                out[f"F{x}{y}"] = ("F", x, y)
+    for x in range(n - 1):
+        for y in range(n):
+            if y <= x:
+                out[f"B{x}{x+1}{y}"] = ("B", x, x + 1, y)
+    return out
+
+
 def replay(i, a, b, upto):
     f = start_element(i, a, b)
     lineage = {w: k for k, w in enumerate(sorted(f, key=eng.deglex_key))}
@@ -91,7 +112,8 @@ def replay(i, a, b, upto):
         for u in img:
             if u != w:
                 lineage.setdefault(u, tag)
-        trace.append({"lineage": tag, "terms": dict(f), "lin": dict(lineage)})
+        trace.append({"lineage": tag, "terms": dict(f), "lin": dict(lineage),
+                      "rule": name})
     return trace
 
 
@@ -152,6 +174,18 @@ def main():
                     if hit is not None:
                         V_loop, v_loop_end = A2, hit
                         break
+            # --- the trailing trio, by RULE IDENTITY rather than by shape.
+            # Measured uniform in a and b: bokutShiaoRelation jp jpp j1, then
+            # Yang-Baxter at (j1, jp), then the quadratic at j1 -- and the last
+            # two are exactly quadPair's redex.
+            ids = RMAP_CACHE.setdefault(n, rule_ids(n))
+            jp_, jpp_ = j1 + 1, j1 + 2
+            trio = None
+            if loop_end is not None and loop_end + 3 <= len(tr):
+                names = [tr[kk]["rule"] for kk in range(loop_end + 1,
+                                                        loop_end + 4)]
+                got = [ids.get(nm) for nm in names]
+                trio = got == [("B", jp_, jpp_, j1), ("Y", j1, jp_), ("Q", j1)]
             ok = v_ok and u_end_ok
             bad += not ok
             rows.append({
@@ -168,6 +202,7 @@ def main():
                 "V_side_resumes_at_step": v_resume,
                 "V_loop_A_rel_i": [i - x for x in V_loop] if V_loop else None,
                 "V_loop_target_at_step": v_loop_end,
+                "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": trio,
                 # the full decomposition: 2 (s1,s2) + L (U loop) + 3 (U bare
                 # BS + quadPair) + (L+1) (V loop, one level deeper) + 3
                 "V_loop_steps": (v_loop_end - v_resume + 1)
@@ -211,11 +246,22 @@ def main():
         "[s_{i-2}, s_{i-1}], S = []; one level deeper because the V side has "
         "descended one further) + 3 (the same trailing trio) = 2L + 9, which "
         "is a^2-3a+9 exactly")
+    w.add_parameter(
+        "trailing_trio",
+        "bokutShiaoRelation jp jpp j1, then Yang-Baxter at (j1, jp), then the "
+        "quadratic at j1 -- uniform in a AND b, and the last two are exactly "
+        "quadPair's redex [s_jp, s_j1, s_jp] ++ (s_j1 :: R). So each lineage's "
+        "trio is one bsStep followed by quadPair; no new lemma.")
     w.add_assertion("cases_where_the_two_applications_do_not_fit",
                     computed=str(bad), expected="0")
     w.add_assertion(
         "cases_where_the_five-stretch_decomposition_does_not_close",
         computed=str(sum(0 if r["decomposition_closes"] else 1 for r in rows)),
+        expected="0")
+    w.add_assertion(
+        "cases_where_the_trailing_trio_is_not_BS(jp,jpp,j1)_Y(j1,jp)_Q(j1)",
+        computed=str(sum(0 if r["trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1"]
+                         else 1 for r in rows)),
         expected="0")
     w.add_assertion(
         "cases_where_the_V_loop_is_not_one_level_deeper_than_the_U_loop",

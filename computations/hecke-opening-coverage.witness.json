@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-22T16:00:38.285082+00:00",
-  "commitSha": "e4ea9ac6a825fc1ec99824db983b20c71cd45847",
+  "computedAt": "2026-08-22T19:46:40.634770+00:00",
+  "commitSha": "f820891d361c9d5a30c68a7d1d4391a1f15e0aa7",
   "assertions": [
     {
       "name": "cases_where_the_two_applications_do_not_fit",
@@ -17,6 +17,12 @@
       "passed": true
     },
     {
+      "name": "cases_where_the_trailing_trio_is_not_BS(jp,jpp,j1)_Y(j1,jp)_Q(j1)",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
       "name": "cases_where_the_V_loop_is_not_one_level_deeper_than_the_U_loop",
       "computed": "0",
       "expected": "0",
@@ -24,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 46,
   "computation": "hecke-opening-coverage",
   "scriptFile": "hecke_opening_coverage.py",
-  "scriptHash": "3aba2d6f15d2",
-  "scriptCommitSha": "d01caeb236474afeda05128e568c9dbc35a40ec4",
+  "scriptHash": "6b020d9a08f8",
+  "scriptCommitSha": "726f670d1eaa3b24f04505c3e9744b2a8e8cbf2e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +45,8 @@
     "python": "3.11.15",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -51,7 +58,8 @@
   "parameters": {
     "m": "a - 4 (so a = 3 would need m = -1: no loop pass)",
     "loop_levels": "k = i1 down to e = jppp",
-    "opening_phase_decomposition": "2 (s1, s2: V0 -> V2) + L (U loop, A = [s_{i-1}], S = [s_i]) + 3 (U bare Bokut-Shiao, then quadPair) + (L+1) (V loop, A = [s_{i-2}, s_{i-1}], S = []; one level deeper because the V side has descended one further) + 3 (the same trailing trio) = 2L + 9, which is a^2-3a+9 exactly"
+    "opening_phase_decomposition": "2 (s1, s2: V0 -> V2) + L (U loop, A = [s_{i-1}], S = [s_i]) + 3 (U bare Bokut-Shiao, then quadPair) + (L+1) (V loop, A = [s_{i-2}, s_{i-1}], S = []; one level deeper because the V side has descended one further) + 3 (the same trailing trio) = 2L + 9, which is a^2-3a+9 exactly",
+    "trailing_trio": "bokutShiaoRelation jp jpp j1, then Yang-Baxter at (j1, jp), then the quadratic at j1 -- uniform in a AND b, and the last two are exactly quadPair's redex [s_jp, s_j1, s_jp] ++ (s_j1 :: R). So each lineage's trio is one bsStep followed by quadPair; no new lemma."
   },
   "data": {
     "cases_checked": 6,
@@ -76,6 +84,7 @@
           1
         ],
         "V_loop_target_at_step": 9,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
         "V_loop_steps": 3,
         "decomposition_total": 13,
         "decomposition_closes": true
@@ -100,6 +109,7 @@
           1
         ],
         "V_loop_target_at_step": 9,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
         "V_loop_steps": 3,
         "decomposition_total": 13,
         "decomposition_closes": true
@@ -124,6 +134,7 @@
           1
         ],
         "V_loop_target_at_step": 15,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
         "V_loop_steps": 6,
         "decomposition_total": 19,
         "decomposition_closes": true
@@ -148,6 +159,7 @@
           1
         ],
         "V_loop_target_at_step": 15,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
         "V_loop_steps": 6,
         "decomposition_total": 19,
         "decomposition_closes": true
@@ -172,6 +184,7 @@
           1
         ],
         "V_loop_target_at_step": 23,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
         "V_loop_steps": 10,
         "decomposition_total": 27,
         "decomposition_closes": true
@@ -196,6 +209,7 @@
           1
         ],
         "V_loop_target_at_step": 23,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
         "V_loop_steps": 10,
         "decomposition_total": 27,
         "decomposition_closes": true
