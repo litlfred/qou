@@ -78,9 +78,23 @@ inverses differ precisely by radical terms."* Measured at 50 dps
 | sign $O_A$ | $\mathbf{1.0}$ — **is** the radical, exactly |
 
 The radical **is** the sign representation, and $O_A$ **is** the sign character,
-so they coincide by construction. The **axial** pairing therefore has no value:
-every generalized inverse answers differently, by exactly a radical term. The
-trivial channel is fine.
+so they coincide by construction. Taken **alone**, the axial pairing therefore
+has no canonical value: generalized inverses differ by exactly a radical term.
+
+> **Correction (2026-08-22, after `641c84f8b2`).** I first wrote that this makes
+> the axial pairing unusable and `borromean-axial-coupling`'s `KeyError` the
+> corpus correctly refusing it. **Withdrawn.** `641c84f8b2` resolved bean
+> `qou-cnbm` by asking what *consumes* the value: it enters a **ratio** with the
+> same $u_A$ and the same restricted matrix top and bottom, so scale cancels
+> exactly and the result depends on it only through the direction of
+> $u_A^{\mathsf T} M|_A$. The ambiguity is real in isolation and does not reach
+> the computed quantity — that commit says so, calling the full-support argument
+> *"correct"* but *"does not block the fix"* — and it measures
+> `gram_quotient_inverse` to **be** the Moore–Penrose pseudo-inverse
+> ($3.76\times10^{-16}$ relative, annihilates the radical).
+>
+> What survives: the axial channel is canonical only inside a scale-invariant
+> combination, and a consumer using it outside one inherits the ambiguity.
 
 ## What this audit does and does not claim
 
@@ -112,5 +126,7 @@ rather than a finding.
 2. Reconcile the block's *"dual-basis matrix on the active subspace"* with the
    compute's *"principal submatrix of $G^{-1}$"* — they are different objects
    and only one can be meant.
-3. Decide whether the axial channel is meaningful under the quotient. Measured,
-   in this construction, it is not.
+3. ~~Decide whether the axial channel is meaningful under the quotient.~~
+   **Answered by `641c84f8b2`**: it is, inside the ratio the consumer computes.
+   The residual caution is only for a future consumer that uses the pairing
+   outside a scale-invariant combination.
