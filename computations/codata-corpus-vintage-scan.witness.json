@@ -1,6 +1,6 @@
 {
  "engine": "python-stdlib",
- "computedAt": "2026-08-22T12:18:32.724870+00:00",
+ "computedAt": "2026-08-22T12:37:45.639361+00:00",
  "computation": "codata-corpus-vintage-scan",
  "scriptFile": "codata_corpus_literal_scan.py",
  "description": "Numeric literals in the corpus that are NEAR a NIST CODATA-2022 table value but not equal to it -- the signature of a stale edition. Sites are split into code_sites (executable, the only class that can compute a wrong number), prose_sites (inside a comment or string, inert -- and often the RESULT of a drain recording what it superseded), adjudicated_sites (executable but marked reviewed), and record_sites (witness/audit output). Quote code_sites as the actionable queue, never source_sites, which is their sum and over-states it ~7x. Complements codata_truncation_audit.py, which compares literals against the in-repo codata_constants module and so catches short prefixes but is structurally blind to a full-length literal from an earlier CODATA edition. Reference values are READ from library/allascii.txt, never typed here.",
@@ -9,21 +9,21 @@
  "near_threshold_relative": "1e-05",
  "min_significant_digits": 7,
  "table_entries": 293,
- "files_scanned": 25192,
- "distinct_literals": 285,
- "total_sites": 1911,
+ "files_scanned": 25201,
+ "distinct_literals": 275,
+ "total_sites": 1905,
  "source_sites": 419,
  "code_sites": 0,
  "prose_sites": 391,
  "adjudicated_sites": 28,
- "record_sites": 1492,
+ "record_sites": 1486,
  "findings": [
   {
    "literal": "938.27208816",
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
-   "sites": 337,
-   "code_sites": 290,
+   "sites": 335,
+   "code_sites": 288,
    "files": [
     "computations/alpha/three-term-wedderburn.witness.json",
     "computations/atomic_mass_via_rho_k.py",
@@ -127,8 +127,6 @@
     "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md",
     "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
     "qou-mass/src/qou_mass/_internal/experimental_constants.py",
-    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z01.witness.json",
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json",
     "tools/qou-substrate/python/qou_substrate/constants.py"
    ]
   },
@@ -136,8 +134,8 @@
    "literal": "939.56542052",
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
-   "sites": 167,
-   "code_sites": 142,
+   "sites": 165,
+   "code_sites": 140,
    "files": [
     "computations/alpha/three-term-wedderburn.witness.json",
     "computations/atomic_mass_via_rho_k.py",
@@ -202,8 +200,6 @@
     "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md",
     "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
     "qou-mass/src/qou_mass/_internal/experimental_constants.py",
-    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json",
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json",
     "tools/qou-substrate/python/qou_substrate/constants.py"
    ]
   },
@@ -440,13 +436,15 @@
    "literal": "206.7682830",
    "table_value": "206.7682827",
    "quantity": "muon-electron mass ratio",
-   "sites": 73,
+   "sites": 76,
    "code_sites": 33,
    "files": [
     ".claude/skills/local/compute-audit.md",
     "AUDIT-DEEP-2026-05.md",
     "computations/alpha/alpha_em_pslq_uniqueness.py",
     "computations/alpha_em_4pi_q0_sensitivity.py",
+    "computations/audits/muon-pin-three-values.witness.json",
+    "computations/audits/muon_pin_three_values_probe.py",
     "computations/codata_2022_source.py",
     "computations/codata_table_vintage_audit.py",
     "computations/compute-audit-scan.witness.json",
@@ -499,7 +497,6 @@
     "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md",
     "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
     "qou-mass/src/qou_mass/_internal/experimental_constants.py",
-    "qou-mass/src/qou_mass/data/q-pinning-50-digit.witness.json",
     "tools/qou-substrate/python/qou_substrate/codata.py",
     "tools/qou-substrate/python/qou_substrate/constants.py",
     "tools/qou-substrate/tests/test_codata_table.py",
@@ -574,8 +571,8 @@
    "literal": "206.768283",
    "table_value": "206.7682827",
    "quantity": "muon-electron mass ratio",
-   "sites": 51,
-   "code_sites": 47,
+   "sites": 50,
+   "code_sites": 46,
    "files": [
     ".claude/skills/local/scientific-accuracy.md",
     "computations/canonical-lepton-braid-words.witness.json",
@@ -600,8 +597,7 @@
     "computations/xi-ell-phi-q-probe.witness.json",
     "docs/audits/2026-05-02-alpha-categorical-probe.witness.json",
     "docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md",
-    "docs/audits/2026-05-28-spectral-phase-correction-derived.md",
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+    "docs/audits/2026-05-28-spectral-phase-correction-derived.md"
    ]
   },
   {
@@ -879,7 +875,26 @@
     "computations/multi-layer-gap-decomposition.witness.json",
     "computations/rho-k-graded-atomic-mass.witness.json",
     "docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md",
-    "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json"
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "939.5654227645324",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 11,
+   "code_sites": 11,
+   "files": [
+    "computations/canonical-isotope-witness-Z00.witness.json",
+    "computations/landauer-crossing-energy-probe.witness.json",
+    "computations/low-isotope-mass-table.witness.json",
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/mass-table-comprehensive.witness.json",
+    "computations/multi-layer-gap-decomposition.witness.json",
+    "computations/rho-k-graded-atomic-mass.witness.json",
+    "docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md",
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
    ]
   },
   {
@@ -899,24 +914,6 @@
    ]
   },
   {
-   "literal": "939.5654227645324",
-   "table_value": "939.56542194",
-   "quantity": "neutron mass energy equivalent in MeV",
-   "sites": 10,
-   "code_sites": 10,
-   "files": [
-    "computations/canonical-isotope-witness-Z00.witness.json",
-    "computations/landauer-crossing-energy-probe.witness.json",
-    "computations/low-isotope-mass-table.witness.json",
-    "computations/m-p-borromean-verification-50dps.witness.json",
-    "computations/mass-table-comprehensive.witness.json",
-    "computations/multi-layer-gap-decomposition.witness.json",
-    "computations/rho-k-graded-atomic-mass.witness.json",
-    "docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md",
-    "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json"
-   ]
-  },
-  {
    "literal": "4.0014857735613285",
    "table_value": "4.001506179129",
    "quantity": "alpha particle mass in u / alpha particle relative atomic mass",
@@ -933,23 +930,6 @@
     "computations/braid-registry/sn-114.json",
     "computations/braid-registry/sn-115.json",
     "computations/braid-registry/zr-94.json"
-   ]
-  },
-  {
-   "literal": "1.29333236",
-   "table_value": "1.29333251",
-   "quantity": "neutron-proton mass difference energy equivalent in MeV",
-   "sites": 9,
-   "code_sites": 4,
-   "files": [
-    "computations/flavor-dressed-mass-from-substrate-split.witness.json",
-    "computations/inter-nucleon-linked-channel.witness.json",
-    "computations/inter_nucleon_linked_channel.py",
-    "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
-    "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
-    "computations/probes/flavor_split_geometric_closure_probe.py",
-    "docs/audits/2026-06-01-e0-lambda-composite-structure.md",
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
    ]
   },
   {
@@ -1056,6 +1036,22 @@
    ]
   },
   {
+   "literal": "1.29333236",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 8,
+   "code_sites": 3,
+   "files": [
+    "computations/flavor-dressed-mass-from-substrate-split.witness.json",
+    "computations/inter-nucleon-linked-channel.witness.json",
+    "computations/inter_nucleon_linked_channel.py",
+    "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
+    "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
+    "computations/probes/flavor_split_geometric_closure_probe.py",
+    "docs/audits/2026-06-01-e0-lambda-composite-structure.md"
+   ]
+  },
+  {
    "literal": "105.658397811",
    "table_value": "105.6583755",
    "quantity": "muon mass energy equivalent in MeV",
@@ -1148,6 +1144,19 @@
    ]
   },
   {
+   "literal": "938.272089",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 6,
+   "code_sites": 6,
+   "files": [
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/mass-table-comprehensive.witness.json",
+    "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
    "literal": "42.57771563763444",
    "table_value": "42.577478461",
    "quantity": "proton gyromag. ratio in MHz/T",
@@ -1224,18 +1233,6 @@
     "computations/alpha-em-form-ladder.witness.json",
     "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean",
     "docs/audits/2026-08-11-alpha-em-anchor-dominance.md"
-   ]
-  },
-  {
-   "literal": "938.272089",
-   "table_value": "938.27208943",
-   "quantity": "proton mass energy equivalent in MeV",
-   "sites": 5,
-   "code_sites": 5,
-   "files": [
-    "computations/m-p-borromean-verification-50dps.witness.json",
-    "computations/mass-table-comprehensive.witness.json",
-    "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
    ]
   },
   {
@@ -1375,6 +1372,18 @@
    "files": [
     "computations/audits/hardcoded-literal-audit.witness.json",
     "computations/codata_masses.py"
+   ]
+  },
+  {
+   "literal": "939.565422",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/mass-table-comprehensive.witness.json",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
    ]
   },
   {
@@ -1525,6 +1534,17 @@
    ]
   },
   {
+   "literal": "206.768282989315",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 3,
+   "code_sites": 2,
+   "files": [
+    "computations/audits/muon-pin-three-values.witness.json",
+    "computations/audits/muon_pin_three_values_probe.py"
+   ]
+  },
+  {
    "literal": "105.6583978",
    "table_value": "105.6583755",
    "quantity": "muon mass energy equivalent in MeV",
@@ -1547,13 +1567,24 @@
    ]
   },
   {
-   "literal": "105.65837564897296527",
+   "literal": "206.768282989",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65837564351296387",
    "table_value": "105.6583755",
    "quantity": "muon mass energy equivalent in MeV",
    "sites": 2,
    "code_sites": 2,
    "files": [
-    "computations/deuteron-from-scratch-ledger.witness.json",
+    "computations/m-p-borromean-verification-50dps.witness.json",
     "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
    ]
   },
@@ -1566,6 +1597,17 @@
    "files": [
     "computations/canonical-isotope-witness-Z44.witness.json",
     "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z44.witness.json"
+   ]
+  },
+  {
+   "literal": "939.5654217900798",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/canonical-isotope-witness-Z00.witness.json",
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json"
    ]
   },
   {
@@ -1784,17 +1826,6 @@
    "files": [
     "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
     "docs/coordination/2026-05-30-alpha-em-fsc-closure.md"
-   ]
-  },
-  {
-   "literal": "939.565422",
-   "table_value": "939.56542194",
-   "quantity": "neutron mass energy equivalent in MeV",
-   "sites": 2,
-   "code_sites": 2,
-   "files": [
-    "computations/m-p-borromean-verification-50dps.witness.json",
-    "computations/mass-table-comprehensive.witness.json"
    ]
   },
   {
@@ -2032,116 +2063,6 @@
    "code_sites": 1,
    "files": [
     "qou-mass/CHANGELOG.md"
-   ]
-  },
-  {
-   "literal": "1836.1522100385643104",
-   "table_value": "1836.152673426",
-   "quantity": "proton-electron mass ratio",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "938.27185263683084707",
-   "table_value": "938.27208943",
-   "quantity": "proton mass energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "1838.6831976837001227",
-   "table_value": "1838.68366200",
-   "quantity": "neutron-electron mass ratio",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "939.56518466770460123",
-   "table_value": "939.56542194",
-   "quantity": "neutron mass energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "1.29333203087",
-   "table_value": "1.29333251",
-   "quantity": "neutron-proton mass difference energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "1836.1522100385644",
-   "table_value": "1836.152673426",
-   "quantity": "proton-electron mass ratio",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "29.164461188862333",
-   "table_value": "29.1646935",
-   "quantity": "neutron gyromag. ratio in MHz/T",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z57.witness.json"
-   ]
-  },
-  {
-   "literal": "939.5651846677046",
-   "table_value": "939.56542194",
-   "quantity": "neutron mass energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json"
-   ]
-  },
-  {
-   "literal": "206.76550538987516",
-   "table_value": "206.7669881",
-   "quantity": "electron-muon mag. mom. ratio",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z38.witness.json"
-   ]
-  },
-  {
-   "literal": "938.2718526368309",
-   "table_value": "938.27208943",
-   "quantity": "proton mass energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z01.witness.json"
-   ]
-  },
-  {
-   "literal": "2808.933623585707",
-   "table_value": "2808.92113668",
-   "quantity": "triton mass energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z01.witness.json"
    ]
   },
   {
@@ -2885,16 +2806,6 @@
    ]
   },
   {
-   "literal": "939.5654217900798",
-   "table_value": "939.56542194",
-   "quantity": "neutron mass energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "computations/canonical-isotope-witness-Z00.witness.json"
-   ]
-  },
-  {
    "literal": "938.27836",
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
@@ -3365,26 +3276,6 @@
    ]
   },
   {
-   "literal": "206.768282989",
-   "table_value": "206.7682827",
-   "quantity": "muon-electron mass ratio",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "computations/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "105.65837564351296387",
-   "table_value": "105.6583755",
-   "quantity": "muon mass energy equivalent in MeV",
-   "sites": 1,
-   "code_sites": 1,
-   "files": [
-    "computations/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
    "literal": "938.272049444",
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
@@ -3448,6 +3339,16 @@
    "literal": "939.56589306798113012",
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/deuteron-from-scratch-ledger.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65837564897296527",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
    "sites": 1,
    "code_sites": 1,
    "files": [
