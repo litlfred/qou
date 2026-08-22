@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T09:18:16.400738+00:00",
-  "commitSha": "660ef33ee45998f7adce3eacf6373caea4fd705d",
+  "computedAt": "2026-08-22T12:16:53.933385+00:00",
+  "commitSha": "bffd39704b91ca0319d3b5a4a9a5b3f14a063ca1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "5726f911cddb",
-  "scriptCommitSha": "7ddaeab36c1ef548a51ee2ff8765005d0a90312c",
+  "scriptHash": "d4f4409e5d3b",
+  "scriptCommitSha": "08992e2ab592b547cc357939429eb61ab8ac77ea",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,10 +37,13 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 663,
+      "Q0_OK": 664,
       "Q0_AMBIGUOUS": 18,
       "Q0_INDEPENDENT": 27,
       "Q0_INDEPENDENT_NO_REASON": 0,
+      "Q0_COMPARISON": 0,
+      "Q0_COMPARISON_NO_REASON": 0,
+      "Q0_COMPARISON_NO_VALUES": 0,
       "Q0_ANCHOR_MISSING": 1919,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
@@ -7842,6 +7845,10 @@
         },
         {
           "witness": "atomic-tr-m-mpfr-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "muon-pin-three-values.witness.json",
           "detail": ""
         },
         {
