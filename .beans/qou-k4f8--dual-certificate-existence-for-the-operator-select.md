@@ -217,3 +217,43 @@ import either. The `.results.json` files remain deliberately outside the witness
 namespace rather than hand-forged. Needs one run in an environment with the
 numeric stack; the computation itself is exact and stdlib-only, so nothing about
 the result depends on that environment.
+
+## Correction 2026-08-22 — `pyhecke` IS importable, and the Gram is confirmed numerically
+
+Two lines in this bean are wrong and have been carried forward since.
+
+**"`pyhecke` is not importable in this sandbox as of 2026-08-16"** — it is. It
+lives at `tools/pyhecke/python/pyhecke` and needs its siblings on the path:
+
+```sh
+PYTHONPATH=tools/pyhecke/python:tools/qou-substrate/python:computations/substrate:computations
+```
+
+The same shape of error as the numpy/mpmath blocker recorded further up: a
+missing path read as a missing capability.
+
+**"Register the findings as a proper `*.witness.json` (needs an environment
+with `mpmath`)"** — `numpy`, `mpmath`, `sympy` and `scipy` all install from
+PyPI here. Both blockers on this bean are stale.
+
+With those, the ℚ(q) result is confirmed numerically at the substrate `q₀`:
+
+```
+NF_NAMES     ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻']
+max|G - Gᵀ|  0.0
+eigenvalues  [-0.75270211, 0.0, 0.75270211, 0.75270211, 0.75270211, 4.23033923]
+rank 5   det 4.0e-17   min|eig| 1.85e-16
+t == G row 0   True, max diff 0.0
+```
+
+Rank 5, one exact zero eigenvalue, and the cost vector is row 0 of the Gram
+**to the last bit** — the two facts this bean established symbolically, now
+from the other direction.
+
+Worth noting which of the two does the work downstream. `dualCertificateExists_of_cost_eq_gram_row`
+needs only `t = G e₀`, and that alone produces `y₀ = 0`, `y = e₀` and optimal
+value `0`. The radical is what upgrades "attained" to "forced". Twelve of the
+thirteen committed LP/SDP witnesses carrying a `y0_star` show the `e₀`
+certificate — including `frobenius-repose`, whose Gram is **invertible**
+(`gram_rank 6`). So the identity, not the radical, is the widespread mechanism.
+See `qou/augu`.

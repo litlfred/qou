@@ -351,3 +351,27 @@ Recorded on the block as a `caveat` authorNote. `validation` left at
 `validated`: the Lean is a §3b conditional carrier
 (`MassCoefficientShadowPrice.factor` is a *hypothesis*), its three theorems are
 sorry-free consequences, and nothing above shows the class uninhabited.
+
+## 2026-08-22 (second) — lead with the identity, not the radical
+
+`qou/augu` tested the thirteen zero-dual witnesses against
+`y_0_eq_zero_of_radical`'s actual hypotheses. The radical is **not** the
+operative one, and this bean's framing sent that search the wrong way.
+
+`y₀ = 0` being *attained*, with optimal value 0, needs only `t = G e₀` — the
+cost vector is a Gram row because the basis contains the identity. Then
+`(0, e₀)` is dual-feasible with objective 0, and `Σⱼtⱼxⱼ = (Gx)₀ ≥ 0` is one of
+the constraints. `k4f8` says this and has the Lean lemma
+(`dualCertificateExists_of_cost_eq_gram_row`, hypothesis `ht` alone).
+
+`y_0_eq_zero_of_radical` proves something strictly stronger — that `y₀ = 0` is
+**forced** for every dual-feasible pair — and that *does* need the radical. It
+is the uniqueness refinement, not the cause.
+
+The discriminating datum: `frobenius-repose` reports `gram_rank = 6`,
+`gram_invertible = true`, **and** `y* = e₀`. An invertible Gram with the same
+certificate. Twelve of thirteen witnesses show `e₀`.
+
+This bean's title stays accurate for `H₃` — `y₀* = 0` *is* forced there by the
+radical. But anyone reading it as the explanation of a zero dual elsewhere will
+go looking for a radical that need not exist.

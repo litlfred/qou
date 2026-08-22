@@ -71,11 +71,123 @@ is calibrated to floating-point zero rather than to the scale at which these
 solves actually report a vanishing dual — and `pin3` is the precedent for a
 small denominator producing a large wrong number that reads as a result.
 
+---
+
+## 2026-08-22 — answered, and the mechanism is not the radical
+
+Ran the test. The answer is that **I was looking for the wrong hypothesis**,
+and the corpus already had the right explanation written down.
+
+### The canonical Gram, computed directly
+
+`pyhecke` **is** importable — it just needs the path
+(`PYTHONPATH=tools/pyhecke/python:tools/qou-substrate/python:computations/substrate:computations`).
+`k4f8` recorded it as unimportable on 2026-08-16 and that has been carried
+forward since; it is wrong, the same way the numpy/mpmath blocker was.
+
+```
+NF_NAMES        ['γ', 'σ₀', 'σ₁', 'L₊', 'L₋', 'e⁻']
+max|G - Gᵀ|     0.0                       symmetric, as a trace form must be
+eigenvalues     [-0.75270211, 0.0, 0.75270211, 0.75270211, 0.75270211, 4.23033923]
+rank            5          det 4.0e-17    min|eig| 1.85e-16
+t (= TR_M)      [1, 0.61268804, 0.61268804, 0.37538663, 0.37538663, 0.69116648]
+G row 0         [1, 0.61268804, 0.61268804, 0.37538663, 0.37538663, 0.69116648]
+t == G[0]       True,  max diff 0.0
+```
+
+So at the substrate `q₀`, numerically: **rank 5, one exact zero eigenvalue** —
+`k4f8`'s ℚ(q) result confirmed from the other direction — and **`t` is row 0
+of `G` to the last bit**.
+
+### The mechanism is `t = G e₀`, and it needs no radical
+
+`y_0_eq_zero_of_radical` proves `y₀ = 0` is **forced**. But `y₀ = 0` being
+*attained*, with optimal value 0, needs only `t = G e₀`: then `(y₀, y) = (0, e₀)`
+is dual-feasible with objective 0, and for feasible `x`,
+`Σⱼtⱼxⱼ = (Gx)₀ ≥ 0` is one of the constraints. `k4f8` said exactly this and
+even has the Lean lemma — `dualCertificateExists_of_cost_eq_gram_row`, whose
+only hypothesis is `ht`. `8na1` foregrounded the radical, and this bean
+inherited that framing and went looking for radicals.
+
+`t = G e₀` holds whenever the basis contains the identity and the cost is
+`tr_M(bⱼ)`: `tⱼ = tr_M(bⱼ) = tr_M(b₀bⱼ) = G₀ⱼ`. Nothing about `det G`.
+
+**The signature confirms it. Twelve of the thirteen report `y* = e₀`:**
+
+```
+e₀ only   confinement-lp · lp-duality-check · a-K-via-lp-dual-hecke-basis
+          all-nuclides-sdp-admissibility · he3-pairknot-composite-lp
+          molecular-frobenius-lp · pn-alpha-lp-dual · frobenius-repose
+          qbeta-c3-barodd-binding-sdp-dual · wedderburn-pair-volumes
+          qbeta-symbolic-sdp-strict-complementarity
+          co-bond-order-active-set   (e₀-supported, scaled: [0.687, 0, 0, 0])
+other     a-K-via-lp-dual-full       ([1.0, 1.0, 0.0] — partition-indexed, 3 blocks)
+```
+
+`frobenius-repose` reports `gram_rank = 6`, `gram_invertible = true` **and**
+`y* = e₀` — an invertible Gram with the same certificate. That single row is
+enough to rule the radical out as the cause.
+
+### Correction to this bean's own filing
+
+It said two of the eleven producing scripts "mention neither `tr_M` nor a Gram,
+so at least two of the thirteen have a different cause". **One of the two does.**
+`all_nuclides_sdp_admissibility.py`'s header reads
+
+> `t = TR_M (H_3 Markov-trace cost vector), G = gram_matrix() (6x6), from
+> pyhecke.gram (the H_3(q_0) NF basis [gamma, s0, s1, L+, L-, e-])`
+
+— my grep looked for `tr_M`/`Gram` and the file writes `TR_M`/`gram_matrix()`.
+Only `co_bond_order_active_set.py` is genuinely different: it builds its own
+`linprog` over bond channels with `bounds=[(0, u)]` and no Gram at all, so its
+single-support dual is most likely one active constraint rather than this
+mechanism.
+
+## Second finding: `confinement-lp.witness.json`'s Gram is not a trace form
+
+Its committed `gram_matrix` **cannot be** `tr_M(bᵢbⱼ)`:
+
+- **It is not symmetric** — `max|G - Gᵀ| = 0.4269`. A trace form is symmetric
+  because `tr_M(ab) = tr_M(ba)`. Swapping rows 3 and 4 (`L₊` ↔ `L₋`) makes it
+  **exactly** symmetric (`max|G - Gᵀ| = 0.0`), so this is a row-ordering error,
+  not numerical noise.
+- **It is rank 6** (`det = -0.3608`, `min|eig| = 0.414`), and after the row
+  swap still rank 6 with eigenvalues `[0.414, 0.428, 0.428, 1.282, 1.282,
+  2.893]` — all positive. The H₃ trace form is rank 5 for **every** `q ≠ 1`
+  (`det G = 0` identically in ℚ(q), `k4f8`), so no `q` and no braid insertion
+  `G^w` yields rank 6. The row swap alone does not recover the trace form.
+- Its committed `gram_eigenvalues` `[-0.7408, 0.4140, 0.4281, 0.7408, 1.2820,
+  2.8931]` are the eigenvalues of the **asymmetric** matrix — note the spurious
+  `±0.7408` pair, the fingerprint of an antisymmetric component. `lp-duality-check`
+  reports `±0.9557` around the same core and flags `"indefinite": true`.
+- Its `z = 0.4993203340335982` is `G[0][1]`, whereas canonical
+  `tr_M(σ₀) = 0.61268804`. Its `q0 = 1.1099785955541805` agrees with the
+  canonical `1.1099785827513808` to 8 figures, so `q` does not explain it. The
+  witness is dated **2026-05-02**, `git_sha c8dbe912`.
+
+Internally it is consistent — its `markov_traces` field equals its own row 0,
+so the `t = G e₀` identity holds for whatever object it is.
+
+**And its headline claim is the one the degeneracy denies.** The description
+reads *"LP proof that B₃ is the **unique** optimal confinement operator over
+all of H₃(q)"*, while its own duals record `y₀* = -0.0`, `dual_obj = -0.0`,
+`primal_obj = -2.04e-16`, `y* = e₀`, `active_set = [0]` — optimal value 0 for
+every target. `qbeta-confinement-sdp-offset-homogeneity` states the consequence
+in its own witness: *"the optimal face is not a point, so `x*` … [is] not
+determined by the LP; the returned point is a solver choice."* Uniqueness is
+exactly what a non-singleton optimal face precludes.
+
 ## Next
 
-- [ ] For each of the nine trace-form scripts: does its `G` have a radical, and
-      is its `t` orthogonal to it? That is the actual test, and the Lean lemma
-      `y_0_eq_zero_of_radical` states the hypotheses to check.
-- [ ] The two non-trace scripts: find the separate cause.
-- [ ] Re-calibrate the four guards, or justify `1e-12` against the observed
-      `1e-10`/`1e-8` band.
+- [ ] `confinement-lp.witness.json`: re-derive the Gram from `pyhecke.gram`,
+      or establish what the committed matrix is. Then re-read the "unique
+      optimal B₃" claim against a degenerate optimal face. **Own bean.**
+- [ ] Fold the correction back: `8na1` should lead with
+      `dualCertificateExists_of_cost_eq_gram_row` (needs only `t = G e₀`) and
+      treat `y_0_eq_zero_of_radical` as the *uniqueness* refinement it is.
+- [ ] Correct `k4f8`'s "pyhecke is not importable in this sandbox" — it is.
+- [ ] Re-calibrate the four `1e-12` guards, or justify them against the
+      observed `1e-10`/`1e-8` band.
+- [x] Test the trace-form scripts against `y_0_eq_zero_of_radical`'s
+      hypotheses — done; the radical is not the operative hypothesis.
+- [x] The non-trace scripts — one of the two was miscounted; see above.
