@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T02:02:43Z
-updated_at: 2026-08-22T12:14:45Z
+updated_at: 2026-08-22T15:27:06Z
 ---
 
 ## What is open
@@ -175,3 +175,32 @@ recursion are built into the engine's construction, not proved in Lean.
 So ingredient 2 is **not closed**. What changed is that it no longer requires
 the Ocneanu/Markov machinery — the residue is one combinatorial statement
 about descending braid words.
+
+
+## Base case narrowed further (2026-08-22, second pass)
+
+**Mechanism identified.** Descending supplies: *no two strands cross more than
+once NET.* Max `|net signed crossings|` over any strand pair = **1**, across
+all 1227 descending words. This is the cancellation that keeps `|e|` bounded
+while the letter count `m` stays large — and it is what makes the bound
+possible at all, since `|e| <= m` runs the wrong way.
+
+**One decomposition REFUTED** — scope-(a), recorded so nobody re-walks it. The
+per-pair bound is necessary but **not sufficient**: in **298** of the 1227
+words the count of pairs with nonzero net **exceeds** `n - c`. Worked case:
+`n = 3`, `w = sigma_1 sigma_2 sigma_1^{-1}` has all three pairs nonzero
+against `n - c = 1`; the nets are `+1, +1, -1`, summing to `1`. So
+`|e| <= #nonzero pairs` does not give it — the SIGNS must additionally
+arrange, and no argument for that is in hand.
+
+Also checked and rejected as the mechanism: `|e| <= rank(G)` where `G` is the
+signed graph of nonzero pairs. For the triangle above `rank(G) = 2` while
+`n - c = 1`, so `n - c` is strictly stronger than the graph rank — the bound
+is not a spanning-forest count.
+
+**Still open.** The residue is exactly: why do the signs arrange so that
+`|sum of nets| <= n - c`? `n - c` is the reflection length of the word's
+permutation, and the crossings' transpositions generate that permutation, so
+the shape of the answer is probably "the word's transposition sequence is a
+reduced-ish factorization once cancellation is applied" — but that is a
+sketch, not an argument.

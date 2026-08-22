@@ -52,6 +52,20 @@ def main() -> int:
     violations = []
     best: dict[tuple[int, int], int] = {}
     total = 0
+    max_pair_net = 0          # mechanism: how much can one strand pair carry?
+    nz_exceeds_bound = 0      # refutes "|e| <= #nonzero pairs" as the route
+
+    def pair_nets(w, n):
+        """Net signed crossings per unordered pair of strand LABELS."""
+        pos2lab = list(range(1, n + 1))
+        net: dict[tuple[int, int], int] = {}
+        for x in w:
+            i = abs(x)
+            a, b = pos2lab[i - 1], pos2lab[i]
+            key = (min(a, b), max(a, b))
+            net[key] = net.get(key, 0) + (1 if x > 0 else -1)
+            pos2lab[i - 1], pos2lab[i] = b, a
+        return net
     for n in range(2, MAX_N + 1):
         gens = [g for i in range(1, n) for g in (i, -i)]
         for L in range(0, MAX_LEN + 1):
@@ -65,6 +79,13 @@ def main() -> int:
                     violations.append({"n": n, "word": list(w), "e": e, "c": c})
                 key = (n, c)
                 best[key] = max(best.get(key, 0), abs(e))
+
+                net = pair_nets(w, n)
+                assert e == sum(net.values()), "writhe must be the net sum"
+                max_pair_net = max(max_pair_net,
+                                   max((abs(v) for v in net.values()), default=0))
+                if sum(1 for v in net.values() if v) > n - c:
+                    nz_exceeds_bound += 1
 
     print(f"\n  totally descending words (len <= {MAX_LEN}, n <= {MAX_N}): {total}")
     print(f"  violations of |e| <= n - c: {len(violations)}")
@@ -84,6 +105,20 @@ def main() -> int:
     if tight_all:
         print("  Tightness matters: with the two shift lemmas also tight, no "
               "step of this route wastes room, which is why MFW is sharp.")
+    print("\n  MECHANISM (what descending actually supplies):")
+    print(f"    max |net signed crossings| over ANY strand pair : {max_pair_net}")
+    print("    i.e. no two strands cross more than once NET, however many")
+    print("    times they cross in total. That is the cancellation that makes")
+    print("    |e| small while the letter count m stays large.")
+
+    print("\n  ONE DECOMPOSITION REFUTED — scope-(a), recorded so it is not")
+    print("  re-walked:")
+    print(f"    words where #{{pairs with net != 0}} > n - c : {nz_exceeds_bound}")
+    print("    So `|e| <= #nonzero pairs` does NOT yield the bound: e.g. n=3,")
+    print("    w=(1,2,-1) has all three pairs nonzero against n-c = 1. The per-")
+    print("    pair bound is necessary but not sufficient; the SIGNS must also")
+    print("    arrange, and that is the part still missing.")
+
     print("\n  NOT a proof. The Lean file states this as `DescendingWrithe` and "
           "uses it in\n  `base_window_of_descending`; discharging it is the "
           "open residue of qou-9ttb.")
@@ -108,6 +143,12 @@ def main() -> int:
                      computed=str(len(violations)), expected="0",
                      tolerance="exact",
                      source=f"exhaustive over {total} descending words")
+    wb.add_data("max_net_crossings_per_strand_pair", max_pair_net)
+    wb.add_data("words_where_nonzero_pairs_exceed_n_minus_c", nz_exceeds_bound)
+    wb.add_assertion("no_strand_pair_crosses_more_than_once_net",
+                     computed=str(max_pair_net), expected="1",
+                     tolerance="exact",
+                     source="mechanism supplied by the descending condition")
     wb.add_assertion("bound_is_tight_for_every_n_c",
                      computed=str(bool(tight_all)), expected="True",
                      tolerance="exact", source="max|e| == n-c in every cell")
