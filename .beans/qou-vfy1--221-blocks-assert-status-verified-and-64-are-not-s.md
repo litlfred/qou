@@ -402,3 +402,67 @@ absence of verdict — including the 36 blocks here, without touching any of the
 Only after that is it worth asking, per block, whether a `verified` status
 pointing at a deliberately-descriptive witness should say something else.
 
+## 2026-08-22 — I traced the one-liner. It is real, it is already known, and it is NOT safe as I proposed it.
+
+Three corrections to the note above, in increasing order of importance.
+
+### 1. The mechanism, located
+
+[`witness.py:1225`](../tools/qou-substrate/python/qou_substrate/witness.py):
+
+```python
+all_passed = all(a.passed for a in self.assertions)
+```
+
+`all([])` is `True`. A producer that registers no assertions therefore gets
+`allPassed: true` from `build()`. That is the 392.
+
+### 2. The corpus already diagnosed this — I re-derived a known number
+
+`witness.py:1073-1088` carries a comment describing exactly this shape, and
+[`test_wrap_legacy_assertions.py`](../tools/qou-substrate/tests/test_wrap_legacy_assertions.py)
+is a regression test for it. Their recorded measurement:
+
+> *389 of 2083 witnesses carrying an `allPassed` field (19 %) had it true with
+> zero assertions.*
+
+Mine, measured independently today: **392 of 2162 (18 %)**. The same defect, three
+witnesses later. I should not have presented this as a new finding — it is a
+confirmation, and the credit belongs to whoever wrote that comment.
+
+**What their fix did and did not cover.** It repaired `wrap_legacy` *discarding*
+payload assertions — 28 producers whose checks were being thrown away, so that
+"a probe whose headline check FAILED reported success". That is a different and
+worse bug, and it is fixed. It does **not** touch the case where a producer
+genuinely has nothing to assert, which still yields `true` at line 1225.
+
+### 3. The fix I proposed would break consumers — do not apply it as stated
+
+I wrote that `WitnessBuilder` "should emit `allPassed: null`, not `true`". The
+one-line change is real, but at least a dozen producers do this:
+
+```python
+wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
+return 0 if wit["allPassed"] else 1
+```
+
+`if None` is **falsy**, so `null` would turn every assertion-free probe into a
+non-zero exit — converting a silent false-positive into a loud false-negative.
+That is not an improvement.
+
+Note also that those producers compute `allPassed` themselves rather than going
+through the builder, so they **reproduce the same `all([])` bug outside it**: a
+builder-only change does not reach them.
+
+**What is actually needed**, then, is not one line but a small scoped change:
+
+- keep `allPassed` a bool so truthiness consumers are unaffected, and add an
+  explicit `assertionCount` (or `verdict: "descriptive"`) that a consumer can
+  check — the signal is what is missing, not the field; **or**
+- emit `null` *and* audit the ~dozen hand-rolled `return 0 if … else 1` sites
+  first, which is a flag day rather than a one-liner.
+
+Either way it is a witness-schema decision with a measured blast radius, which
+is where I am stopping. The value delivered here is that the blast radius is now
+known and the earlier recommendation is withdrawn before anyone acted on it.
+
