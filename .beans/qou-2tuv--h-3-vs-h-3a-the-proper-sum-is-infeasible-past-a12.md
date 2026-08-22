@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-21T16:51:00Z
+updated_at: 2026-08-22T12:07:03Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -822,3 +822,79 @@ Not rewritten to AST here — that is a real change to a gate script and wants i
 own review. The output now states the shortfall and instructs the reader to
 treat the number as a FLOOR. Understating with a stated error bar is defensible;
 understating silently was not.
+
+
+---
+
+# THE PAYOFF, MEASURED: correct weights are WORSE. The Phi_q tower is the problem.
+
+The open question was whether a weight family that actually satisfies the Markov
+identity would keep V_hat inside the Phi_q range — i.e. whether "both schemes
+are wrong" had a third option. **It does not, and the answer inverts the
+diagnosis.**
+
+`ocneanu_weights.omega_lambda_via_inversion` is the correct construction: it
+solves the p(n) x p(n) system Sigma_lambda (omega_lambda/d_lambda) chi_lambda(T_w)
+= tr_M(T_w) against `markov_trace_canonical.tr_M_element`. Measured:
+
+    n     p(n)    secs    sum omega
+    3        3     3.4    1.000000000000    SUMS TO 1
+    6       11     0.0    1.000000000000    SUMS TO 1
+    9       30     2.0    1.000000000000    SUMS TO 1
+   12       77    16.1    1.000000000000    SUMS TO 1
+
+and on **convention D** — its z is 0.6126880371464652 = q^3/(q^2+1) exactly. So
+a correct, affordable (n=12 in 16 s), convention-D weight family EXISTS.
+
+Then the decisive table. `phi_q_safe` cap = 0.98*q0 = 1.087779:
+
+    atom   weights        sum w    max|V_hat|   in range?     tower      B_MeV      err%
+       D   inversion    1.00000      1.28242    NO — POLE   6.357e+07   4.09e+07  +1.8e9
+       D   norm_planch  1.00000      1.08837    NO — POLE   3.190e+07   1.08e+07  +4.9e8
+       D   jones_wenzl  0.05466      0.06979    yes             8.588     1.5545   -30.1
+
+       T   inversion    1.00000      1.28242    NO — POLE   9.047e+07   8.17e+07  +9.6e8
+       T   norm_planch  1.00000      1.08837    NO — POLE   5.850e+07   5.16e+07  +6.1e8
+       T   jones_wenzl -0.00097      0.00123    yes            10.67      0.0360   -99.6
+
+**The CORRECT weights are the worst offender.** max|V_hat| = 1.28242 against
+`normalized_plancherel`'s 1.08837 — further past the pole, not closer to it.
+
+## What this means
+
+Every weight family that satisfies Sigma omega = 1 drives V_hat past the Phi_q
+pole. The only scheme that keeps V_hat small is the one whose weights nearly
+cancel — and its error grows with A exactly as an artefact should: the deuteron
+lands at -30.1% and the triton at **-99.6%**, i.e. it is converging on zero
+binding, not on the data.
+
+So the defect is **not the weight scheme**. That was the wrong axis all along,
+including in my own framing of it. Three candidate families, two correct and one
+broken, and the tower diverges on both correct ones. The incompatibility is
+between the Phi_q tower and Markov-normalised weights at this q0 and these A —
+`phi_q_safe`'s cap is not regularising an edge case, it is masking that the
+tower's own precondition (|V_hat| < q0) is violated by construction.
+
+That reframes qou-2tuv's open item. It is not "pick a weight scheme"; it is one
+of:
+  (a) the Phi_q tower is the wrong consumer for these volumes;
+  (b) V_hat's normalisation convention differs from what the tower expects by a
+      factor nobody has pinned;
+  (c) q0 is outside the tower's radius of convergence for A >= 2 and the
+      construction needs a different expansion there.
+
+None of those is a code fix, and none is mine to choose.
+
+## Method note
+
+Measured without editing the repo: the inner loop of `per_generator_V_hat_3A`
+was replicated in a scratch script taking a supplied weight table, so all three
+families were compared under identical code. 4He (3A=12) hit
+`ValueError: setting an array element with a sequence` in that scratch
+replication — the sparse-matrix path at dim > 500 — so A=4 is unmeasured. The
+A=2 and A=3 rows are sufficient for the conclusion and it is the same at both.
+
+The `jones_wenzl` trend from -30.1% (A=2) to -99.6% (A=3) is worth recording on
+its own: last week that -30.1% was briefly reported as the best canonical-form
+result. It is a near-zero artefact whose agreement degrades monotonically as A
+grows.
