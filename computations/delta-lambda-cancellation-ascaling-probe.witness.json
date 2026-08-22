@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:19:34.756487+00:00",
-  "commitSha": "0ec50f1e17ddcbf67ac724fdd8386ad07616306c",
+  "computedAt": "2026-08-21T14:45:21.551955+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 307,
+  "durationMs": 167,
   "computation": "delta-lambda-cancellation-ascaling-probe",
   "scriptFile": "delta_lambda_cancellation_ascaling_probe.py",
   "scriptHash": "a510ac5f6174",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,13 +18,16 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "SIGNED net/target = Σ_λ y_λ χ^λ sgn(w₀^{S_λ'}) dim_q,λ (closure ⇒ +1) for D/T/³He/⁴He under classic + 3 q-dim conventions. As the convention grows the net grows NON-UNIFORMLY in A: heavy isotopes (³He 1.27, ⁴He 1.31 at fake-degree) overshoot while light ones (D 0.28, T 0.91) undershoot. NO single convention lands all four near +1 ⟹ no flat q-dim convention reproduces binding's A-scaling; the closure object must be A-/λ-structured (route (ii)/(iii) or a structured kernel, e.g. z2bn q-Gaussian/Habiro EGF #2899). Scope (a), not a (b) exclusion. Sign on transpose λ' (proven form PR #2416).",
   "scope": "(a) scope-limited — the 3 flat q-dim conventions fail the A-scaling closure test",
   "parameters": {
-    "q_0": 1.1099785955573347,
+    "q_0": 1.1099785827513808,
     "m_e_MeV": 0.51099895069
   },
   "data": {
@@ -34,10 +37,10 @@
         "A": 2,
         "B_AME_MeV": 2.224566,
         "net_over_target": {
-          "classic": 0.17085186593588303,
-          "balanced": 0.1802576137738499,
-          "unbalanced": 0.2187788912611763,
-          "fake_degree": 0.2769300513801864
+          "classic": 0.16480239924488357,
+          "balanced": 0.17243813463966984,
+          "unbalanced": 0.20320531519296492,
+          "fake_degree": 0.22958169852861388
         }
       },
       {
@@ -45,10 +48,10 @@
         "A": 3,
         "B_AME_MeV": 8.481798,
         "net_over_target": {
-          "classic": 0.2250151160229988,
-          "balanced": 0.2952067969883689,
-          "unbalanced": 0.5677191944124267,
-          "fake_degree": 0.9078541182549537
+          "classic": 0.14911863461602473,
+          "balanced": 0.19139152129221523,
+          "unbalanced": 0.34222714117992686,
+          "fake_degree": 0.4581158113282718
         }
       },
       {
@@ -56,10 +59,10 @@
         "A": 3,
         "B_AME_MeV": 7.718043,
         "net_over_target": {
-          "classic": 0.30378240760528336,
-          "balanced": 0.4016024078189423,
-          "unbalanced": 0.7831453956280945,
-          "fake_degree": 1.2703259122989523
+          "classic": 0.2038549592827259,
+          "balanced": 0.2636336595779366,
+          "unbalanced": 0.4791583495592399,
+          "fake_degree": 0.6473876423113994
         }
       },
       {
@@ -67,37 +70,37 @@
         "A": 4,
         "B_AME_MeV": 28.295673,
         "net_over_target": {
-          "classic": 0.1073728468868487,
-          "balanced": 0.20601384482255988,
-          "unbalanced": 0.652882613506759,
-          "fake_degree": 1.3134349405876835
+          "classic": 0.0034481931848160422,
+          "balanced": -0.00242064233585484,
+          "unbalanced": -0.03788316852734373,
+          "fake_degree": -0.06600830353520608
         }
       }
     ],
     "per_convention_isotope_spread": {
       "classic": {
-        "min": 0.1073728468868487,
-        "max": 0.30378240760528336,
-        "ratio": 2.829229329510228
+        "min": 0.0034481931848160422,
+        "max": 0.2038549592827259,
+        "ratio": 59.11935566150751
       },
       "balanced": {
-        "min": 0.1802576137738499,
-        "max": 0.4016024078189423,
-        "ratio": 2.2279358935861104
+        "min": -0.00242064233585484,
+        "max": 0.2636336595779366,
+        "ratio": -108.9106208186826
       },
       "unbalanced": {
-        "min": 0.2187788912611763,
-        "max": 0.7831453956280945,
-        "ratio": 3.5796204611585787
+        "min": -0.03788316852734373,
+        "max": 0.4791583495592399,
+        "ratio": -12.648317661533188
       },
       "fake_degree": {
-        "min": 0.2769300513801864,
-        "max": 1.3134349405876835,
-        "ratio": 4.742840056691862
+        "min": -0.06600830353520608,
+        "max": 0.6473876423113994,
+        "ratio": -9.807669757276974
       }
     },
     "any_convention_closes_all_four": false
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

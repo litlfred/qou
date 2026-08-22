@@ -194,7 +194,8 @@ HBAR_Q = (Q - mp.mpf(1)) / Q
 # the m_p residual to ~1 ppb).
 VOL_B3 = 8 * mp.catalan
 # Figure-8 volume (muon baseline, for cross-check)
-VOL_41 = mp.mpf("2.02988321281930725004240510854658")
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 33 digits, correct to 29 (qou-ckbv)
+VOL_41 = 2 * mp.clsin(2, mp.pi / 3)
 
 # CODATA / validation values — imported from the calibration
 # registry, not free literals (P31 audit discipline). m_e is CAL-1;
@@ -240,7 +241,7 @@ M_MU_CODATA_MEV = _M_MU_MEV_VALIDATION  # CODATA muon (validation; codata_consta
 # because this is the documented audit-verification use, not a
 # production consumer.
 import warnings as _warnings
-from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+from _li_2_q_util import per_knot_density_borromean as _vol_density_borromean
 with _warnings.catch_warnings():
     _warnings.simplefilter("ignore", DeprecationWarning)
     GEOM_FULL_BORROMEAN = _vol_density_borromean(Q)

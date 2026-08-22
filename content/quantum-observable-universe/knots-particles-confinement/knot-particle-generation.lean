@@ -126,6 +126,6 @@ noncomputable def atomicMass (Z N : ℕ) (binding : ℝ) (m_e : ℝ) : ℝ :=
 
 /-- Electron mass (MeV), CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
-noncomputable def m_electron : ℝ := 0.51099895
+noncomputable def m_electron : ℝ := 0.51099895069
 
 end QOU.Torsion

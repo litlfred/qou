@@ -1,13 +1,13 @@
 ---
 doc_id: monodromyhitchiny
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the monodromy of the Hitchin connection"
 section_id: sec-020-5-infinite-monodromy-over-m04
 section_title: "Infinite monodromy over M0,4"
 section_number: 5
 pages: 8-9
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
+doc_brief: "On the monodromy of the Hitchin connection — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND ; Introduction; Review of mapping class groups, mo"
 ---
 We denote byρl the restriction of the monodromy representation ~ρl to the subgroupπ1(M0,4,x )
 ρl :π1(M0,4,x ) → GL(2, C).

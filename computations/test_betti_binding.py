@@ -7,10 +7,15 @@ from mpmath import mpf, mp
 
 import sympy as sp
 
+from codata_table import codata
+
 def main():
     mp.dps = 50
     q = mpf("1.1099785955573347198997632204832250266562084087802")
-    m_e = 0.510998950
+    # Was the bare float64 literal `0.510998950` -- both truncated (the table
+    # carries 0.51099895069) and float, in a script that sets dps = 50 and
+    # uses mpf for everything else. Read it instead.
+    m_e = codata("electron mass energy equivalent in MeV").value
     
     # 1. Gather Betti sums
     betti_sums = {

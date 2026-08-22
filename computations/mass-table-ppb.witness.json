@@ -1,15 +1,15 @@
 {
   "engine": "python+snappy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T12:43:52.890299+00:00",
-  "commitSha": "0504169edd19fe9e2be816b643b2377a3d895cce",
+  "computedAt": "2026-08-19T21:21:57.161289+00:00",
+  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 146,
+  "durationMs": 4,
   "computation": "mass-table-ppb",
   "scriptFile": "mass_table_ppb.py",
   "scriptHash": "bde10a73b298",
-  "scriptCommitSha": "b393679b5ba10c0aa16a8d421800e30e52a8019d",
+  "scriptCommitSha": "bbb18e6ff3fb3b6447c87e019e853850ee76383a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,13 +22,12 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = ρ_F · Vol_hyp(K) with ρ_F ∈ {m_e, 2m_e}; atom→knot assignments from framework rules (magic A·8G, α-cluster with c_αα = m_e·Vol(7²_1)) or census search (flagged 'hyp: census-assigned'). NO AME-derived calibrations or fits.",
   "auditOnly": "docs/audits/2026-05-03-next-session-plan-to-1ppb.md",
   "parameters": {
-    "q_0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "m_e_MeV": "0.51099895069",
     "vol_borromean_8G": "7.327724753417752120436828119459072886193194994253377074131984956974104",
     "vol_7_sq_1": "4.7494999818744385084980865556375718851941577840553",
@@ -379,6 +378,6 @@
     "mean_abs_pct": "4.249732880179781011215063134152579700508898038275684479890510625185106",
     "mean_abs_ppb": "42497328.80179781011215063134152579700508898038275684479890510625185106"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

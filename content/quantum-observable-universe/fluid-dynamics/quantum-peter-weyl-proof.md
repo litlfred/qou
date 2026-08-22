@@ -29,7 +29,7 @@ The result uses only Schur's lemma (which holds in
 any semisimple abelian category) and the Frobenius trace.
 
 *Step 2: Completeness (b).*
-This is the key step.  We use the **Tannaka--Krein
+We use the **Tannaka--Krein
 reconstruction**.  The fibre functor
 $\tau \colon \mathbf{C} \to R\text{-Mod}$ is faithful and exact
 (axiom of QOU).  By the Tannaka--Krein theorem, $A$ is

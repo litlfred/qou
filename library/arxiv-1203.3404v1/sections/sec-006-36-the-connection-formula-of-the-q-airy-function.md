@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1203.3404v1
-doc_title: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗"
+doc_title: "On local solutions of the Ramanujan equation and their connection formulae"
 section_id: sec-006-36-the-connection-formula-of-the-q-airy-function
 section_title: "The connection formula of the q-Airy function"
 section_number: 3.6
 pages: 12-14
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
-doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity."
 ---
 Applying the q-Borel transformation in 3.5 to the equation (12) and using
 lemma 3, we obtain the ﬁrst order q-diﬀerence equation

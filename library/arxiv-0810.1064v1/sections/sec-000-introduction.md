@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0810.1064v1
-doc_title: "Multiple polylogarithm values at roots of unity Jianqiang Zhao"
+doc_title: "Multiple polylogarithm values at roots of unity"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-2
 source_pdf: 0810.1064v1.pdf
 source_sha256: b2d7514c5382ceaa
-doc_brief: "Multiple polylogarithm values at roots of unity Jianqiang Zhao — For any positive integer N let µ N be the group of the N th roots of unity."
+doc_brief: "Multiple polylogarithm values at roots of unity — For any positive integer N let µ N be the group of the N th roots of unity."
 ---
 Double shuﬄe relations have played signiﬁcant roles in the study of mu ltiple zeta values in recent years.
 These relations can be easily generalized to the special values of mult iple polylogarithms at roots of unity

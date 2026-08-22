@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.486Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.533Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.572Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.614Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.655Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.701Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.743Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.788Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.830Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8926c3bccf67",
+          "ts": "f9ecc193e75e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.872Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 4-row automorphism/action table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. Internal consistency check: the sigma (antipode) and tau rows both act by q^-2 on 1/alpha and q^2 on alpha, and id and rho both act trivially -- consistent with the four maps forming the Klein four-group on {q, q^-1, -q, -q^-1} with the sign-only maps acting trivially on an even function of q. Could not verify the exponents without the explicit 1/alpha(q) formula; flagged as unadjudicated rather than guessed."
+      }
     ]
   },
   "source_hashes": {
     "md": "8926c3bccf67",
     "ts": "f9ecc193e75e"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:05.872Z"
 }

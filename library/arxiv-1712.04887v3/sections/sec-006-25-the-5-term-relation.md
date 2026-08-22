@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "BLOCH GROUPS, ALGEBRAIC K-THEORY"
+doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
 section_id: sec-006-25-the-5-term-relation
 section_title: "The 5-term relation"
 section_number: 2.5
 pages: 15-16
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "BLOCH GROUPS, ALGEBRAICK-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
+doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
 ---
 Stroganov to show that the map Rζ satisﬁes the 5-term relation, and consequently descends
 to a map of the group B(F ; Z/nZ).

@@ -1,13 +1,13 @@
 ---
 doc_id: 104171-qt-83
-doc_title: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot T omotada Ohtsuki1"
+doc_title: "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot"
 section_id: sec-003-references
 section_title: "References"
 section_number: null
 pages: 63-67
 source_pdf: 10.4171-qt-83.pdf
 source_sha256: d95b9363de2766d2
-doc_brief: "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1 — We give a presentation of the asymptotic"
+doc_brief: "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot — We give a presentation of the asymptotic expansion of the Kas haev invariant of the52 knot."
 ---
 [1] J. E. Andersen and S. K. Hansen, Asymptotics of the quantum i nvariants for surg-
 eries on the /f_igure /eight.prop knot.J. Knot Theory Rami/f_ications /one.prop/five.prop(/two.prop/zero.prop/zero.prop/six.prop), no. /four.prop, /four.prop/seven.prop/nine.prop–/five.prop/four.prop/eight.prop.

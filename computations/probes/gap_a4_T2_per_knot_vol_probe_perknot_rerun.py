@@ -6,15 +6,15 @@ canonical PER-KNOT Hecke-trace density substituted for the fitted
 global scalar λ_A, per the re-run protocol of
 [`docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md`](../../docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md).
 The audit classifies the original as λ_A-bound: it "anchors on the
-`vol_density_borromean` (λ_A) convention".
+`per_knot_density_borromean` (λ_A) convention".
 
 Density-swap mapping (λ_A anchor → like-for-like per-knot form):
 
   | where λ_A entered the original | per-knot re-run |
   |---|---|
   | proton anchor assertion `λ_emp(p) ≈ 2.460` — the CODATA-implied | REMOVED as a target; λ_emp(p) is *reported*, and the |
-  | λ_A near-match from the `vol_density_borromean` docstring | tested identity is `λ_emp(K) =? tr_M(K)` (ratio → 1) |
-  | convention C "uniform Borromean" = the `vol_density_borromean` | kept as one of the three Vol conventions (the Vol map |
+  | λ_A near-match from the `per_knot_density_borromean` docstring | tested identity is `λ_emp(K) =? tr_M(K)` (ratio → 1) |
+  | convention C "uniform Borromean" = the `per_knot_density_borromean` | kept as one of the three Vol conventions (the Vol map |
   | (λ_A) production convention | is under test, not the density scalar) |
   | reference trace `closed_form_tau_M(Z, N, …)` — the closed-form | canonical chi-cache Markov trace `tr_M(K)` from |
   | product approximation (needs the Rust kernel) | `chi-{atom}-h{3A}-at-q0-50dps.witness.json` |
@@ -22,7 +22,7 @@ Density-swap mapping (λ_A anchor → like-for-like per-knot form):
 The tested quantity per atom and Vol convention is
 
     ratio(K) = λ_emp(K) / tr_M(K)
-             = m(K) / (m_e · vol_density_per_block(Vol(K), tr_M(K), q₀))
+             = m(K) / (m_e · per_knot_density_per_block(Vol(K), tr_M(K), q₀))
 
 i.e. the observed mass over the canonical per-knot volume-density mass
 `m_pred(K) = m_e · Vol(K)/ℏ_q² · tr_M(K)`.  The verdict metric is the
@@ -72,7 +72,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _li_2_q_util import vol_density_per_block  # noqa: E402
+from _li_2_q_util import per_knot_density_per_block  # noqa: E402
 
 # Import the ORIGINAL probe module (unmodified) for the like-for-like
 # fixtures: atoms, masses, the three Vol conventions, λ_emp and the
@@ -160,11 +160,11 @@ def main() -> int:
             vol = conv_vols[c]
             lam = lambda_empirical(m_K, vol, q_0)
             # Canonical per-knot mass via the paper-faithful helper.
-            m_pred = M_E_MEV * vol_density_per_block(vol, tr_M_K, q_0)
+            m_pred = M_E_MEV * per_knot_density_per_block(vol, tr_M_K, q_0)
             ratio = mp.mpf(m_K) / m_pred
             # Internal consistency: λ_emp/tr_M must equal m/m_pred exactly.
             assert abs(ratio - lam / tr_M_K) < mp.mpf("1e-40"), (
-                label, c, "vol_density_per_block route mismatch"
+                label, c, "per_knot_density_per_block route mismatch"
             )
             ratios_by_convention[c].append(ratio)
             per_atom[f"vol_{c}"] = str(vol)
@@ -180,9 +180,9 @@ def main() -> int:
     w.add_data("production_wired", False)
     w.add_data(
         "density_swap",
-        "global λ_A anchor (vol_density_borromean ≈ 2.533, p=n degenerate)"
+        "global λ_A anchor (per_knot_density_borromean ≈ 2.533, p=n degenerate)"
         " → canonical per-knot tr_M(K) from chi-{atom}-h{n}-at-q0-50dps"
-        " witnesses via vol_density_per_block(Vol(K), tr_M(K), q₀)",
+        " witnesses via per_knot_density_per_block(Vol(K), tr_M(K), q₀)",
     )
     w.add_data("per_atom_per_convention", rows)
 

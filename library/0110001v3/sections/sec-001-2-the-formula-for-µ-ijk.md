@@ -1,13 +1,13 @@
 ---
 doc_id: 0110001v3
-doc_title: "Published: 19 June 2003 A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin"
+doc_title: "A geometric interpretation of Milnor's triple linking numbers"
 section_id: sec-001-2-the-formula-for-µ-ijk
 section_title: "The formula for ¯µ ijk"
 section_number: 2
 pages: 3-6
 source_pdf: 0110001v3.pdf
 source_sha256: f30f603ac1c555e0
-doc_brief: "A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the"
+doc_brief: "A geometric interpretation of Milnor's triple linking numbers — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the"
 ---
 Fix three components Li, Lj, Lk of L, with δ the greatest common divisor
 of their pairwise linking numbers, and choose any associate d oriented Seifert

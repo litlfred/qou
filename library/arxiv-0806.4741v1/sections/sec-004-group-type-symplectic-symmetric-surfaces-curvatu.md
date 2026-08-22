@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0806.4741v1
-doc_title: "The deformation quantizations of the hyperbolic plane P. Bieliavsky G´ eom´ etrie et Physique math´ ematique Universit´ e Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louva"
+doc_title: "The deformation quantizations of the hyperbolic plane"
 section_id: sec-004-group-type-symplectic-symmetric-surfaces-curvatu
 section_title: "Group type symplectic symmetric surfaces, curvature contractions"
 section_number: null
 pages: 7-8
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
-doc_brief: "The deformation quantizations of the hyperbolic plane P. Bieliavsky Géométrie et Physique mathématique Université Catholique de Louvain 2, Chemin du Cyclotron, B-1348 Louvain-la-Neuve, Belgium — We"
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 A symplectic symmetric space (M,ω,s ) is said to be of group type if there exists in its automorphism group
 G a Lie subgroup S that acts on M in a simply transitive manner i.e. in a way that for all x in M there is

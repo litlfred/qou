@@ -28,7 +28,7 @@ evaluation).
 self-dual curvature subspace ($S([\sigma_i, \sigma_j])^* = [\sigma_i, \sigma_j]$).
 Within this subspace, the extremum of $|\mathrm{tr}(\Phi)|$ is
 attained at the irrep with largest quantum dimension times
-character evaluation.  For pair production at our $q_0 = 1.109978595554181\ldots$ (50 dps),
+character evaluation.  For pair production at our $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps),
 this is $T_{2,3}$ (trefoil, $e^-$) — the lowest-crossing
 operator that unconditionally opens the degree-3 channel.
 

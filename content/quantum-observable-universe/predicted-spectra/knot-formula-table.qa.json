@@ -1394,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.886Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "One candidate construction: 'The up and down quarks are not independent generators. They are expressed in terms of $T_{2,3}$.' The negation IS the block's content — the paragraph is headed 'Derived shorthand for quarks' and its whole point is that u,d are not primitive generators but Skein images of the trefoil. Falls under the substantive-mathematical-contrast false-positive class.",
+        "notes": "pass (substantive contrast). SEPARATE MATH FINDING, not fixed inline: the same paragraph says 'Here $\\mathfrak{d}$ denotes the three-twist knot $5_2$' while defining $\\mathfrak{d}=T_{2,3}^{\\sigma}$; table 1 of this very remark defines $K^{\\sigma}$ = 'Mirror (antiparticle) of knot K' and braids-and-knots/knot-notation-convention.md fixes $T_{m,n}^{\\sigma}=T_{m,-n}$, so $\\mathfrak{d}$ is the left-handed trefoil (3 crossings), not $5_2$ (5 crossings). Table 2 lists the down quark at 3 crossings, agreeing with the mirror trefoil and contradicting the '$5_2$' gloss."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1413,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.564Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1432,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 267 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.601Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1451,6 +1499,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 267 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.637Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1470,6 +1534,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.673Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1489,6 +1569,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.708Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1508,6 +1604,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.744Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1527,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.780Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1546,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.814Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1565,6 +1709,22 @@
         "reviewed_at": "2026-08-15T10:31:01.258Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a9a446d301b0",
+          "ts": "03aa80f93d5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:59:01.850Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Full read of the remark (compact notation + quark/nucleon/nuclear shorthand + 5 table pointers). Verified: Vol(4_1)=2.0299 = 2*Cl_2(pi/3) correct; T(2,8) Seifert genus = 8/2-1 = 3, so 'unique genus-3 link' is arithmetically right; T(3,4) genus (3-1)(4-1)/2=3 and crossing no. min(3*3,4*2)=8 correct; nuclear rule A=Z+N and neutral-atom Z*T(2,3) self-consistent with tables 4 and 5. No trap construction of this class present.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1587,5 +1747,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:59:01.886Z"
 }

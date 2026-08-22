@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1203.3404v1
-doc_title: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗"
+doc_title: "On local solutions of the Ramanujan equation and their connection formulae"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-7
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
-doc_brief: "On local solutions of the Ramanujan equation and their connection formulae Takeshi MORITA∗ — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the"
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity."
 ---
 In this papar, we show two essentially diﬀerent connection formulae of some
 basic hypergeometric series between the origin and the inﬁnity. In 1 846,

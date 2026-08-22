@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-alg-geom-9705010v1
-doc_title: "Proceedings of Symposia in Pure Mathematics"
+doc_title: "Seiberg-Witten Integrable Systems"
 section_id: sec-007-12-ron-y-donagi
 section_title: "RON Y. DONAGI"
 section_number: 12
 pages: 12-14
 source_pdf: 9705010v1.pdf
 source_sha256: 30ab8d0cc2d8f1ae
-doc_brief: "Seiberg-Witten Integrable Systems Ron Y. Donagi Contents Introduction §1. Some physics background Electromagnetism Yang-Mills theory Quantization Supersymmetry N = 2 super Yang-Mills — 17 sections: RO"
+doc_brief: "Seiberg-Witten Integrable Systems — 17 sections: RON Y. DONAGI; Introduction; References"
 ---
 which was mentioned above; and its K¨ ahler potential
 K =K(a, ¯a) = Im

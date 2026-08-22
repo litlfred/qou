@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-16T13:41:44Z
-updated_at: 2026-08-16T13:42:16Z
+updated_at: 2026-08-21T15:41:59Z
 ---
 
 The corpus carries three live, inconsistent deuteron knot assignments:
@@ -28,3 +28,21 @@ the canonical braid closure says flat with Vol = 0.
 Related proved result (PR #5242, QOU.MassTheory.BlochVolumeLeg): the volume leg is identically
 zero on any real-shape triangulation at ANY tetrahedron count, flattening-independent. So the
 trefoil frame gives 0 no matter how the triangulation is refined.
+
+
+
+FORMALIZE-FIRST PRUNE LANDED (2026-08-21, PR #5363, commit a32906af4a).
+
+The scope-(b) arity exclusion in the adjudication (§2/§3 Ground 1) no longer rests on enumerating the 32 resolutions of the mass word. It is now a sorry-free theorem:
+
+  content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ClosureComponentsSignInvariant.lean
+
+Content: wordPerm_eq_of_indices_eq -- the permutation a signed braid word induces depends only on its index sequence, never on the crossing signs. Specialises through resolve (position-indexed, so distinct averaged crossings may resolve differently) to closureComponents_resolve, and to the exclusion form closureComponents_ne_of_perm_ne. Braid words are List (i x Bool), which is QOU.Archimedean.BraidWord n definitionally.
+
+This is §5 step 2's formalize-first note discharged: the knot-valued hypothesis class is pruned by theorem before any census search, and the exclusion holds without fixing a crossing convention first.
+
+NOT proved (cited to Birman §1.2/§2.2, stated in the docstring): that wordPerm adjacentPerm is the image under B_n -> S_n, and that closure components are its orbits. Deriving those needs a formalisation of B_n with its relations, which the file does not build.
+
+Verified: lean-direct exit 0 against the main checkout's oleans (read-only LEAN_PATH, no lake build); #print axioms clean on all 11 declarations (propext / Classical.choice / Quot.sound, no sorryAx); zero sorry / native_decide / axiom; check-sidecars clean.
+
+The UNDETERMINED verdict is unchanged. What changed is that one of its two structural legs is now machine-checked.

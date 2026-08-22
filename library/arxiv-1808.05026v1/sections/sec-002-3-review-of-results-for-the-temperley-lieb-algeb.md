@@ -7,7 +7,7 @@ section_number: 3
 pages: 3-9
 source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
-doc_brief: "Palestine Journal of Mathematics — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial"
+doc_brief: "Gröbner-Shirshov bases for Temperley-Lieb algebras — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
 duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
 First, we review the results on Temperley-Lieb algebras T (An−1) (n ≥ 2). Deﬁne T (An−1) to

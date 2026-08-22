@@ -1812,6 +1812,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.105Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1831,6 +1846,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.142Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1850,6 +1880,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.176Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1869,6 +1914,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.211Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1888,6 +1948,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.246Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1907,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.284Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1926,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.326Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1945,6 +2050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.361Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1964,6 +2084,22 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.396Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "One content-free intensifier removed; the '(proved)'/'(conditional)' property labels are appropriately tiered.",
+        "notes": "fix applied: 'Additional linkings map strictly to pre-composition with $c_{A, A}$.' -> 'Additional linkings map to pre-composition with $c_{A, A}$.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1983,6 +2119,21 @@
         "reviewed_at": "2026-08-15T10:31:00.457Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "701e66ffe545",
+          "ts": "d9ad90b6b900"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:43.429Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical linking operation Lk_R), two display definitions, five numbered properties, EWSB significance section. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2006,5 +2157,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:43.429Z"
 }

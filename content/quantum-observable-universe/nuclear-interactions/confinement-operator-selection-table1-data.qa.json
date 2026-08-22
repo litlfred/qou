@@ -884,7 +884,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.386Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.426Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.466Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.507Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.549Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.591Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.631Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.672Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.711Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ad3cc227661e",
+          "ts": "bc6091157dae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:18.751Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 6 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Verified against computations/confinement-operator-selection.witness.json: every |Delta net| reproduces exactly from the witness nets against the B_3 target 0.9991 (0.221, 0.245, 0.010, 0.292, 0.010), the three hardcoded net values (+1.244, +1.291, +1.009) match the witness to the digit, and the Demand column matches n_demand exactly (2,0,0,2,0,2). THREE defects reported: the table shows six of the witness's NINE candidates, omitting (sigma_0 sigma_1^-1)^2, L_- = sigma_1 sigma_0 and sigma_1^-1 sigma_0^-1; the tr_M column has NO source in the cited witness, which carries crossing_energy / n_demand / demand_magnitude and no Markov-trace field (and tr_M does not scale from crossing_energy); and the witness is convention C (z = 0.4993203340) at the old muon pin (q0 = 1.1099785955541805), carrying the gram_det -0.18920525 that a sibling block explicitly withdrew on 2026-08-09.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:11:18.751Z"
 }

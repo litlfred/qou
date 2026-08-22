@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.1338v1
-doc_title: "Modern Theory of Nuclear Forces E. Epelbaum∗"
+doc_title: "Modern theory of nuclear forces"
 section_id: sec-033-iv-summary-and-perspectives
 section_title: "SUMMARY AND PERSPECTIVES"
 section_number: IV
 pages: 45-45
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
-doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
+doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 In this review, we have described the theory that has
 emerged by applying eﬀective ﬁeld theory methods to the

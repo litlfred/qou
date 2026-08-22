@@ -1571,6 +1571,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:41.783Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "\"the universal constant determined by the partition algebra, with no nuclear data\" is a real provenance claim about C_lambda."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1590,6 +1605,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:41.824Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1609,6 +1639,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 378 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:41.866Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No spaced em-dashes outside the witness line."
       }
     ],
     "trap-triples": [
@@ -1628,6 +1673,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 378 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:41.908Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The three legacy mechanisms are three named prior constructions, each with its own slice."
       }
     ],
     "trap-closing-aphorism": [
@@ -1647,6 +1707,22 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:41.949Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "The pre-QED body ends on the bolded triple \"**one** symbolic algorithm with **zero** fitted parameters and **no** special-case branches\", which is a quotable three-beat closer; recorded under trap-superlative because the problem is the claim, not the cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1666,6 +1742,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:41.991Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "\"Algorithm summary\", \"Witness\", \"Comparison snapshot\" are section labels."
       }
     ],
     "trap-thesis-restatement": [
@@ -1685,6 +1776,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.031Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Each section adds material."
       }
     ],
     "trap-performed-warmth": [
@@ -1704,6 +1810,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.073Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1723,6 +1844,23 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.116Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "Three findings. (1) THE WITNESS IS NOT IN THIS CHECKOUT. The block states 'Witness: `mass-qvalue-by-level.witness.json` - every isotope (H-1 to Pb-208), per-step rows'. I searched the whole tree with find: no file of that name exists anywhere, and this line is its only mention in .md, .ts or .py. The .ts carries no computation or witness field either, so nothing backs the per-isotope claim. (I can say what is here now; this clone is shallow and I make no claim about what was here before.) (2) THE CLOSING CLAIM IS UNDERCUT BY THE BLOCK'S OWN TABLE. \"The unified path uses one symbolic algorithm with zero fitted parameters and no special-case branches\" is immediately followed by \"The discrepancy between the two paths quantifies the residual that the LP-dual accumulator does not absorb\" - the discrepancy being a deuteron at -16.45 MeV against an experimental +2.224 and Pb-208 at +58%. Zero fitted parameters is a real and creditable property; describing an unbound deuteron as a quantified residual is not. (3) SYMBOL MISMATCH: the proposition weights by the shadow price u_lambda, the proof's prose by u_lambda^*, and the pseudocode by y_lambda = w_lambda/d_lambda - 1/[k]_q!, which the AGENTS notation register treats as a distinct weight family from both.",
+        "notes": "Reported, not edited. Route: supply the witness (or name the one that exists); state the residual as a magnitude per nucleus rather than as a general \"discrepancy\"; unify u_lambda / y_lambda across statement, prose and pseudocode. NOTE: the \\ordw macro used in the closing surreal paragraph IS defined in main.tex line 837, so that inline math renders."
       }
     ],
     "trap-nonspeakable": [
@@ -1742,6 +1880,21 @@
         "reviewed_at": "2026-08-15T10:31:00.713Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "87c237f1cbcc",
+          "ts": "9dfb7aac868f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:42.157Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Dense but speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1764,5 +1917,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:42.157Z"
 }

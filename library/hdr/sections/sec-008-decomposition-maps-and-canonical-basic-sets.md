@@ -1,13 +1,13 @@
 ---
 doc_id: hdr
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Hecke algebras, generalisations and representation theory"
 section_id: sec-008-decomposition-maps-and-canonical-basic-sets
 section_title: "Decomposition maps and canonical basic sets"
 section_number: null
 pages: 24-26
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
+doc_brief: "Hecke algebras, generalisations and representation theory — 27 sections: Algebras of Finite Type; Blocks; Symmetrising forms and Schur eleme"
 ---
 As we saw in Section 2.2, the specialisation q ↦→ 1 yields a bijection between the set of irreducible
 representations of K(q)Hq(W,L ) and Irr(W ). What happens though when q specialises to a complex

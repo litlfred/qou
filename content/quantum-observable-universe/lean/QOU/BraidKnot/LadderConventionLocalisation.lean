@@ -166,4 +166,59 @@ theorem dWeights_at_one :
   refine ⟨by norm_num [stdWeightD], by norm_num [trivWeightD], ?_⟩
   rw [hoefsmitB_sq_eq_one_sub_stdWeightD]; norm_num [stdWeightD]
 
+/-! ## The D-frame N=2 rung is forced — `b² = [3]_q / [2]_q²`
+
+Bean `qou-cds1` asks, as its own named next step, to *"state the invariant a
+forced D `c₂` must satisfy (D analogue of `c₂ = −1 = 1 − b²ℏ⁴`) and check if
+exact weights + `α_D − h²/4` determine it"*.
+
+The answer is that the **phase leg does not enter at all**, and the weight leg
+determines the rung completely. `Q_beta_categorical_ofPhase_tail_common` (above)
+already localises every `z`-dependence to the `N=1` phase, so `α_D − h²/4` is
+irrelevant to `N2_factor`. And `stdWeightD_eq_jones` pins `y_(2,1)^D = 1/[2]_q²`,
+so with `hoefsmitB_sq_eq_one_sub_stdWeightD` the coupling collapses to a bare
+quantum-integer ratio, via the identity `[2]_q² − [3]_q = 1`.
+
+So under D there is **no free parameter in the `N=2` rung**: `b` is not an
+independent Hoefsmit input but a function of the D weights, which are themselves
+forced. This is the contrast with C, where `b² ≠ 1 − y_(2,1)^C` and the coupling
+is genuinely separate data.
+
+**Scope.** This states and settles the invariant for `c₂` ONLY. It says nothing
+about `c₃`/`c₄`/`c₅`, whose values remain fitted near-matches (see
+`dWeights_at_one`), and it closes no part of the numerical gap — the `41.94×C`
+residual recorded in `qou-cds1` is untouched. What it removes is the possibility
+that a D-frame `c₂` could be *chosen*.
+-/
+
+/-- **`[2]_q² − [3]_q = 1`** — the quantum-integer identity behind the collapse
+    below. With `[2]_q = q + q⁻¹` and `[3]_q = q² + 1 + q⁻²`:
+    `(q + q⁻¹)² = q² + 2 + q⁻²`, so subtracting `[3]_q` leaves exactly `1`. -/
+theorem bracketTwo_sq_sub_bracketThree_eq_one (q : ℝ) (hq : q ≠ 0) :
+    (q + q⁻¹) ^ 2 - (q ^ 2 + 1 + (q ^ 2)⁻¹) = 1 := by
+  field_simp
+  ring
+
+/-- **`b² = [3]_q / [2]_q²`** — the Hoefsmit coupling squared IS a quantum-integer
+    ratio in the D frame.
+
+    Immediate from `hoefsmitB_sq_eq_one_sub_stdWeightD` (`b² = 1 − y_(2,1)^D`)
+    and `stdWeightD_eq_jones` (`y_(2,1)^D = 1/[2]_q²`), using
+    `bracketTwo_sq_sub_bracketThree_eq_one`. -/
+theorem hoefsmitB_sq_eq_bracketThree_div_bracketTwo_sq (q : ℝ) (hq : q ≠ 0) :
+    hoefsmitB q ^ 2 = (q ^ 2 + 1 + (q ^ 2)⁻¹) / (q + q⁻¹) ^ 2 := by
+  rw [hoefsmitB_sq_eq_one_sub_stdWeightD]
+  unfold stdWeightD
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The `N=2` rung is a function of `q` alone in the D frame** — no free
+    parameter. `N2_factor = 1 − ([3]_q/[2]_q²)·ℏ_q⁴`, with the coupling supplied
+    by the forced D weights rather than assumed. -/
+theorem N2_factor_eq_bracketRatio (q : ℝ) (hq : q ≠ 0) :
+    N2_factor q = 1 - ((q ^ 2 + 1 + (q ^ 2)⁻¹) / (q + q⁻¹) ^ 2) * (hbarQ' q) ^ 4 := by
+  unfold N2_factor
+  rw [hoefsmitB_sq_eq_bracketThree_div_bracketTwo_sq q hq]
+
 end QOU.BraidKnot

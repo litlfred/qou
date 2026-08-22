@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.624Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.662Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.701Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.740Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.777Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.818Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.856Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.895Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.934Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0310a04461b2",
+          "ts": "6ffde1460a4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.974Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (9-row embeddability table). Every Seifert genus recomputed: 0_1:0, 3_1:1, 4_1:1, 5_1:2, 5_2:1, 7_1:3, 8_19 = T_{3,4}:3, 9_1 = T_{2,9}:4, 10_124 = T_{3,5}:4. All correct, and the two 'saturates' marks fall exactly on the g = 4 rows. No prose trap constructions."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:59.974Z"
 }

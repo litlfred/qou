@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1511.00400v2
-doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗"
+doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
-doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 2 Combinatorial and analytic torsions 4
 2.1 Combinatorial torsion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4

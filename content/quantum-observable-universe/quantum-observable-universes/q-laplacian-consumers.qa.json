@@ -1233,6 +1233,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.193Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is remark listing four consumers of the spectral tower plus the fibre/observable split; no negation-contrast construction present.",
+        "notes": "Pass. 'The tower and its truncation form fibre-level statements; the observable component requires evaluating at ... q_0' is the AGENTS.md fibre-vs-observable distinction, i.e. substantive content, not manufactured contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1268,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.234Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is remark listing four consumers of the spectral tower plus the fibre/observable split; sentences assert directly.",
+        "notes": "No fix needed."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1303,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.272Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 1 in the block. Block is remark listing four consumers of the spectral tower plus the fibre/observable split; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1338,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.309Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is remark listing four consumers of the spectral tower plus the fibre/observable split; the consumer list is four-item (q-heat, q-NS, Markov/Gram, lifting obstruction), not a triple.",
+        "notes": "No fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1373,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.347Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is remark listing four consumers of the spectral tower plus the fibre/observable split; the closer is mathematical content.",
+        "notes": "No fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1408,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.383Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is remark listing four consumers of the spectral tower plus the fibre/observable split; none present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1443,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.422Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is remark listing four consumers of the spectral tower plus the fibre/observable split; it does not.",
+        "notes": "No fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1478,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.461Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is remark listing four consumers of the spectral tower plus the fibre/observable split; register is institutional throughout.",
+        "notes": "No fix needed."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1513,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.498Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for unqualified maximum-strength claims. Block is remark listing four consumers of the spectral tower plus the fibre/observable split; no superlative inflation.",
+        "notes": "Pass, with a note. 'guarantees that spectral computations form finite exact sums with no series-truncation error' is a maximum-strength phrasing, but it is accurate: at a root of unity the tower genuinely terminates, so the sum is finite and the truncation error is zero. Separately, this block carries four substituted verbs ('acts as', 'exhibits', 'form' twice) where 'is/are' is meant; reported in the batch anomaly list, not fixed inline."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1548,22 @@
         "reviewed_at": "2026-08-15T10:31:00.003Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0a54d21f6716",
+          "ts": "a03fb2e5892d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:13.537Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is remark listing four consumers of the spectral tower plus the fibre/observable split; sentences are speakable.",
+        "notes": "No fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1586,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:41:13.537Z"
 }

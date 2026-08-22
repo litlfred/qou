@@ -1841,6 +1841,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.848Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1860,6 +1876,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.887Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-em-dash": [
@@ -1879,6 +1911,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.926Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-triples": [
@@ -1898,6 +1946,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.967Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "The three numbered clauses (shell-writhe correspondence / orbital counting / energy scaling) are the proposition's three distinct assertions, each with its own formula. Substantive enumeration.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1917,6 +1981,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.007Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-meta-commentary": [
@@ -1936,6 +2016,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.046Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-thesis-restatement": [
@@ -1955,6 +2051,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.086Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-performed-warmth": [
@@ -1974,6 +2086,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.127Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-superlative": [
@@ -1993,6 +2121,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.167Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "trap-nonspeakable": [
@@ -2012,6 +2156,22 @@
         "reviewed_at": "2026-08-15T10:31:01.128Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.207Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2035,5 +2195,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:05.207Z"
 }

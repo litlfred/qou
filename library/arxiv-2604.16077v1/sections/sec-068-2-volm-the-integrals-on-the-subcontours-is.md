@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2604.16077v1
-doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
+doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
 section_id: sec-068-2-volm-the-integrals-on-the-subcontours-is
 section_title: "Vol(M ). The integrals on the subcontours [ is−"
 section_number: 2
 pages: 62-62
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
-doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of"
 ---
 N,iη ] and [2iπ−iη′, 2iπ−is+
 N ] have polynomial

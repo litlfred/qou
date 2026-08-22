@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.03697v5
-doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND"
+doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY"
 section_id: sec-021-ii-theories-of-class-s
 section_title: "(ii) Theories of class S"
 section_number: null
 pages: 14-15
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 known as theories of class S. We consider only the case of gauge group SU(2). To specify the
 theory we need to ﬁx a genus g≥ 0 and a collection of d≥ 1 integers

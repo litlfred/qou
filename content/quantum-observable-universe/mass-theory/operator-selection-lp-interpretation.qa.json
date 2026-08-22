@@ -1429,6 +1429,37 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not real numbers.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:25.606Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One instance, the bold heading 'LP over motivic shadows, not real numbers.' The paragraph it heads is exactly about the LP data living in a q-Laurent ring and only being projected to R by rho_infinity afterwards, so the denied alternative is the misreading the paragraph exists to correct. Substantive class."
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:26.222Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "(Re-recorded to carry two rigor notes found on the same read.)",
+        "notes": "RIGOR 1 (reported, MAJOR — a ring-membership claim that cannot hold). The block says the Markov traces and Gram entries 'are formal elements of Z[q^{+-1/2}, (q-q^{-1})^{-1}], hence elements of the Habiro completion Z[q]-hat'. The 'hence' fails: the Habiro ring Z[q]-hat = lim Z[q]/((q;q)_n) admits a well-defined evaluation at every root of unity, q = 1 included, whereas q - q^{-1} vanishes at q = 1, so (q-q^{-1})^{-1} cannot be an element of it (its evaluation at q = 1 would be 1/0). The half-integer powers q^{+-1/2} are likewise not in Z[q]-hat without an explicit extension. Proposed: either drop the 'hence' and say the data lie in a localisation that is NOT the Habiro ring, or name the actual target (e.g. a Habiro ring of the field the corpus uses, with the localisation and the square root declared). RIGOR 2 (reported, internal contradiction with a sibling): the opening sentence, 'The confinement LP selects the Borromean link B_3 as the UNIQUE optimizer over the 6-element NF basis of H_3(q)', contradicts the dated 2026-08-09 correction inside prf:operator-selection-lp, which states that under production convention D the Gram matrix on H_n is singular and the LP 'has a corank G-dimensional space of optima differing by radical directions the trace cannot see', with corank = 1 at n = 3. Uniqueness holds on the quotient H_3/rad tr_M = TL_3 (dimension C_3 = 5), not over the 6-element NF basis this sentence names."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1448,6 +1479,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:25.664Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1467,6 +1513,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 268 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:25.729Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two em-dashes, one paired parenthetical, set UNSPACED against the text ('The data feeding the LP—Markov traces ... Gram entries—are formal elements'). A true parenthetical; the unspaced setting is a typographic inconsistency with the rest of the chapter rather than a trap."
       }
     ],
     "trap-triples": [
@@ -1486,6 +1547,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 268 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:25.787Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1505,6 +1581,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:25.847Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the complementary-slackness reading of a positive y_i* — technical, not quotable. NOTE one paragraph-internal candidate: 'No channel carries unbounded demand.' is a four-word sentence closing paragraph 2 with an economic flourish; it restates the Frobenius positivity constraint in the economic metaphor the block is building, so it earns its place."
       }
     ],
     "trap-meta-commentary": [
@@ -1524,6 +1615,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:25.912Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1543,6 +1649,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:25.968Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The final paragraph introduces the shadow-price reading of y_0 and y_i, which is the block's payload, not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1562,6 +1683,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:26.032Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register; the 'demand-supply' language is the block's declared economic metaphor."
       }
     ],
     "trap-superlative": [
@@ -1581,6 +1717,21 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:26.104Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Strong duality is a purely algebraic consequence of the LP' uses 'purely' to draw the algebraic/archimedean line the block is about, so it is precise rather than inflating."
       }
     ],
     "trap-nonspeakable": [
@@ -1600,6 +1751,23 @@
         "reviewed_at": "2026-08-15T10:31:00.396Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bcdb8edc229d",
+          "ts": "bb5ece4e812f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:26.155Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The selection of the operator Phi* = sum_i x_i* b_i is a combinatorial problem over the motivic shadows of the motivic substrate (the algebraic data of the Hecke algebra independently of any place-realization).' — 'the motivic shadows of the motivic substrate' repeats the modifier inside one noun phrase and then defers the meaning to a parenthesis; the sentence stalls aloud.",
+        "notes": "Proposed: 'over the motivic substrate — the algebraic data of the Hecke algebra, independent of any place-realization.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1622,5 +1790,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:46:26.222Z"
 }

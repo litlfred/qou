@@ -1,13 +1,13 @@
 ---
 doc_id: ihpmay2025
-doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY"
+doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-027-53-the-ending-lamination-theorem
 section_title: "The Ending Lamination Theorem"
 section_number: 5.3
 pages: 37-37
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
-doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 We now describe the ending invariants of a hyperbolic 3-manifold with finitely generated
 fundamental group and no cusps. Let C be a compact core for N (which is well-defined up

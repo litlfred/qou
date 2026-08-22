@@ -1359,6 +1359,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not implied by the central-element theorem.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.281Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "'The structural framework (Murphy 1992 + LP-dual extraction) is intact; the simplest closed form is not.' has the trap shape but is a correct and necessary scope statement - exactly the AGENTS.md scope-(a) classification ('this construction, alone, does not reproduce the numbers'), which the block gets right where most blocks in this chapter get it wrong."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.332Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proof block (kind proof) - Steps 1-3, Corollary, alpha_5 application, Empirical status. Category absent."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 388 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.393Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proof block (kind proof) - Steps 1-3, Corollary, alpha_5 application, Empirical status. Category absent."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 388 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.477Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proof block (kind proof) - Steps 1-3, Corollary, alpha_5 application, Empirical status. Category absent."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.524Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proof block (kind proof) - Steps 1-3, Corollary, alpha_5 application, Empirical status. Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.572Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proof block (kind proof) - Steps 1-3, Corollary, alpha_5 application, Empirical status. Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1563,22 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.638Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Closes on an empirical refutation, not a restatement.",
+        "notes": "SEPARATE (non-trap) findings. (1) The k = 1 contradiction recorded on prop:jucys-murphy-central-elements-qou originates HERE, in Step 3 (J_k v_T = q^(2c) v_T against the proposition's J_1 = empty sum = 0), and Step 2 confirms the additive reading by expanding P_1 = J_1 + ... + J_n = sum_{i<k} q^(1-k) sigma_{i,k}. (2) PROOF GAP in Step 2: 'P_1 ... is centralised by every sigma_j (each sigma_j acts on the sum by permuting the transpositions, fixing the symmetric sum)'. That is the C[S_n] class-sum argument, where sum over ALL transpositions is central because it is a conjugacy class. Here the summands carry q^(1-k) weights that are NOT permutation-symmetric in k, so the sum is not a class sum and the permutation argument does not transfer at q != 1. 'their sigma_j-invariance follows from the same permutation argument applied at the level of multi-index summations' inherits the same gap. The result (Murphy 1992) is true; the argument given for it is not. (3) LIKELY DOUBLE NORMALISATION in the Corollary: T^(l) = m_e . (sum_{lambda |- 3A, ht = l+1} w_lambda(q) c_l(lambda)) / [3A]_q!, with w_lambda(q) defined two lines below as dim_q(lambda)^2 / [n]_q! and n = 3A here - so [3A]_q! divides twice, giving ([3A]_q!)^2 in the denominator. The same doubling carries into the alpha_5 formula."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.701Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proof block (kind proof) - Steps 1-3, Corollary, alpha_5 application, Empirical status. Category absent."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.767Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "'the SIMPLEST closed-form ansatz' is immediately and explicitly scoped in the same sentence ('it is *conjectural*, not implied by the central-element theorem'), so the superlative is qualified rather than inflated.",
+        "notes": "RECOMPUTED: the '482%' spread is correct - computations/alpha/alpha-5-jucys-murphy-central.witness.json carries relative_spread_normalized = 4.821586227256139 (= 482.16%), with verdict 'strongly atom-dependent (mechanism orthogonal to JM-central)' and assertion naive_jm_central_form_refuted_at_q0 passing."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.725Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2c23af1afd68",
+          "ts": "18af311b41cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.842Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proof block (kind proof) - Steps 1-3, Corollary, alpha_5 application, Empirical status. Category absent."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:22:39.842Z"
 }

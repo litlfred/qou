@@ -1177,6 +1177,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not the physical crossing count.\"; \"not just positive braids, but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.589Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "Argument (ii)'s 'computes the amplitude ..., not the physical crossing count' and 'it does not reduce the number of applications' ARE the argument - the whole point of (ii) is separating algebraic reduction from physical crossing count. Substantive-contrast false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1213,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.626Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1249,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 371 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.664Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1285,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 371 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.705Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1321,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.744Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1357,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.783Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1393,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.821Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1429,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.860Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1465,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.899Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "'T_{3,5} is the unique cross-family mediator' is carried by an actual enumeration (only T_{3,4} and T_{3,5} embed with winding from both families) plus a stated restriction, unlike the bare assertion of the same sentence in the sibling interpretation block."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1501,23 @@
         "reviewed_at": "2026-08-15T10:31:01.464Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.938Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1540,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:59:50.938Z"
 }

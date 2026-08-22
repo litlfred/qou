@@ -1,13 +1,13 @@
 ---
 doc_id: zhao-standard-2010
-doc_title: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao"
+doc_title: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity"
 section_id: sec-015-6-some-conjectures-of-fds-and-rds
 section_title: "Some conjectures of FDS and RDS"
 section_number: 6
 pages: 16-17
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
-doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
 Fix a level N . Let R be a commutative Q-algebra with 1 and a homomorphism
 ZR : A0 − →R such that the ﬁnite double shuﬄe (FDS) property holds:

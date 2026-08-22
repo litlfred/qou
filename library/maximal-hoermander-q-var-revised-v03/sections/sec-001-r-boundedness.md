@@ -1,13 +1,13 @@
 ---
 doc_id: maximal-hoermander-q-var-revised-v03
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "q-variational Hormander functional calculus and Schrodinger and wave maximal estimates"
 section_id: sec-001-r-boundedness
 section_title: "R-boundedness"
 section_number: null
 pages: 8-8
 source_pdf: Maximal-Hoermander-q-Var-revised-v03.pdf
 source_sha256: 135332c04a1b3bb8
-doc_brief: "HAL Id: hal-04526930 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 10 sections: Introduction"
+doc_brief: "q-variational Hormander functional calculus and Schrodinger and wave maximal estimates — 10 sections: Introduction; R-boundedness; Preliminaries"
 ---
 as type and cotype. Moreover, we introduce the (restricted) necessary notions of Hörmander
 functional calculus and the classΛβ

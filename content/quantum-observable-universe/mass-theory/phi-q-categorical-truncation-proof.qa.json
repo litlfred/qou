@@ -1362,6 +1362,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.089Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three contrasts, all substantive and all doing real epistemic work: the heading 'Remaining gap (canonical, not structural)' classifies WHICH kind of gap is left; 'attributable to multiplicity in supp(T_w) rather than to a missing brane-tower correction' names the competing explanation; 'if it reflects a genuine k_star(T) = 9 rather than a strand-padding artifact' states the falsifier's two readings. This block is the batch's best example of the substantive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1381,6 +1396,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.190Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Numbered steps then two explicitly-labelled status sections; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1400,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (6 in 532 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.291Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Seven em-dashes in 778 words (9 per 1000), and each of the five in the closing sections sets off a genuine appositive on a technical noun ('That identity is unstratified — it equates the whole transient trace with the whole dilogarithm'; 'The structural content of the proposition — that the brane tower is centre-stratified ... — is closed modulo'). Below the density that reads as a substitute for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1419,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 532 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.387Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The one triple ('centre-stratified, truncates categorically at a finite depth, and the analytic Phi_q product is a faithful representation') enumerates the three components of the proposition's structural content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1438,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.446Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends 'if it reflects a genuine k_star(T) = 9 rather than a strand-padding artifact, the proposition fails.' — a stated falsification condition, the opposite of a placed quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1457,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.498Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The bold section labels ('Proof gap closure (partial)', 'Remaining gap (canonical, not structural)') classify epistemic status rather than announce emphasis. This is the behaviour the corpus's discipline asks for."
       }
     ],
     "trap-thesis-restatement": [
@@ -1476,6 +1566,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.548Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing paragraphs state what is closed, what is open, and what would falsify — none of it a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1495,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.602Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1514,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.686Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'the most concrete falsifier' is a comparative within an enumerated set of candidates, immediately followed by the condition under which it bites."
       }
     ],
     "trap-nonspeakable": [
@@ -1533,6 +1668,22 @@
         "reviewed_at": "2026-08-15T10:31:00.792Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b54d66492c5c",
+          "ts": "edabd50f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:59:55.875Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Step structure keeps it speakable despite the density.",
+        "notes": "RIGOR. This proof is unusually honest about its own gaps (it names an unstated bridge, cites the audit doc, and separates the structural from the canonical gap), and the .ts uses[] comment even explains why conj:brane-tower-z-habiro is deliberately NOT listed. Two defects survive that. (1) THE TELESCOPE NEEDS alpha_k = 1 AND SAYS SO NOWHERE. Step 3 introduces m = Sum_{k=0}^{k_star} alpha_k * m^{(k)}; Step 4 sets m^{(k)}|_i = Phi^{[<=k]}(z_i) - Phi^{[<=k-1]}(z_i) and then asserts Sum_k alpha_k * m^{(k)}|_i = Phi^{[<=k_star]}(z_i). A telescoping sum of consecutive differences collapses to the top term only when every coefficient is 1 (and with the convention Phi^{[<=-1]} = 0, which is also unstated; note Phi^{[<=0]} is the empty product 1, so the k = 0 term is 1). With general alpha_k the sum is Sum_k (alpha_k - alpha_{k+1}) Phi^{[<=k]} + alpha_{k_star} Phi^{[<=k_star]}, which is not the claimed value. Either define alpha_k = 1 and remove them, or carry them through Step 4. (2) MINOR, typography: the display closing Step 4's telescope ends with a comma and is followed by a new sentence beginning 'The brane-tower contribution ...' with a capital letter — the comma should be a full stop. VERIFIED OK: Phi_q^{[<=k]}(z) = prod_{j=1}^{k} (1 - q^{-j} z)^{-1} does have exactly k factors as claimed ('a finite product of k_star(T_w) factors'), and with q_0 > 1 the q^{-j} convention is the convergent one."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1555,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-16T03:02:52.443Z"
+  "updated_at": "2026-08-21T21:59:55.875Z"
 }

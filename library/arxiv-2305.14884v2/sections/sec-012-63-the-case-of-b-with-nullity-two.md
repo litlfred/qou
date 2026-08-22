@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2305.14884v2
-doc_title: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
+doc_title: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-012-63-the-case-of-b-with-nullity-two
 section_title: "The case of B with nullity two"
 section_number: 6.3
 pages: 33-41
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
-doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 assumption that the matrix B has nullity 2. Similarly to the proof of Proposition 6.4, we use
 three intermediate formulas in Equation ( 98). They involve two Fourier transforms (adding

@@ -2105,6 +2105,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.679Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2124,6 +2139,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.721Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "trap-em-dash": [
@@ -2143,6 +2173,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 137 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.761Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "trap-triples": [
@@ -2162,6 +2207,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 137 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.802Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "trap-closing-aphorism": [
@@ -2181,6 +2241,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.842Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "trap-meta-commentary": [
@@ -2200,6 +2275,23 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.883Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "A '## Significance' section that narrates the block's own importance rather than placing it: 'This proposition closes a structural gap.' The claim belongs in the .ts authorNotes (where a status note already lives), not in the scholarly prose.",
+        "notes": "proposed: delete '## Significance' and move its one factual sentence ('The full chirality computation requires the character imbalance chi^lambda(beta) - chi^{lambda^T}(beta)') into the application section as the honest scope note it actually is."
       }
     ],
     "trap-thesis-restatement": [
@@ -2219,6 +2311,23 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.924Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "'The partition-content cancellation provides the necessary structural infrastructure.' closes by restating the theorem the block opened with, and 'Type-B folded crystals structurally reduce the chirality factor.' closes the preceding section the same way.",
+        "notes": "proposed: cut both closing sentences."
       }
     ],
     "trap-performed-warmth": [
@@ -2238,6 +2347,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.963Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "trap-superlative": [
@@ -2257,6 +2381,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.002Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -2276,6 +2415,21 @@
         "reviewed_at": "2026-08-15T10:31:01.103Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2e6ba2df136e",
+          "ts": "537468923b78"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.040Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.9kB). The combinatorial core is correct: c(r,col) + c(col,r) = 0 is immediate, the partition-level sum and the self-dual corollary follow. The chirality rewrite, however, silently needs w_lambda = w_{lambda^T}, which the block never states and which the corpus's q-deformed Wedderburn weights do not generally satisfy - reported as an anomaly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2299,5 +2453,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:41.040Z"
 }

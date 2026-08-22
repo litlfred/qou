@@ -1,4 +1,4 @@
-*The covalent bond operator is selected by the universal ILP—the same LP that derives confinement ($\mathcal{B}_3$) and the gluon ($2\sigma_0$):*
+*The covalent bond operator is selected by the universal ILP, the same LP that derives confinement ($\mathcal{B}_3$) and the gluon ($2\sigma_0$):*
 
 $$
   \min_{K} \; \mathrm{cr}(K) \quad \text{s.t.} \quad K \in \{\text{knots}\}, \quad G \cdot \mathrm{NF}(x \cdot K) \geq 0, \quad \mathrm{tr}_M(x \cdot K) \leq \mathrm{tr}_M(x)
@@ -10,7 +10,7 @@ $$
 
 ### Knots, not links
 
-The dual space of the LP is the knot operator space—single-component braid closures. Links are excluded because the covalent bond is a single topological structure mediating the interaction. The Hopf link gives repulsive or weak binding on the vertex volume model. The knot constraint forces the inseparability of the bonded system.
+The dual space of the LP is the knot operator space: single-component braid closures. Links are excluded because the covalent bond is a single topological structure mediating the interaction. The Hopf link gives repulsive or weak binding on the vertex volume model. The knot constraint forces the inseparability of the bonded system.
 
 ### Consistency across levels
 

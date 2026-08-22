@@ -1371,6 +1371,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.294Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1390,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.329Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-em-dash": [
@@ -1409,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.362Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-triples": [
@@ -1428,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.398Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-closing-aphorism": [
@@ -1447,6 +1507,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.434Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-meta-commentary": [
@@ -1466,6 +1541,40 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.469Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Templated proof-strategy preamble: 'The proof strategy rests on algebraic rigidity and the categorical action principle. We assume an arbitrary endomorphism in $\\mathrm{End}(A)$ that acts as a Lagrangian and show that enforcing the variational equations uniquely constrains it to be identical to $L_q = D^2 + \\psi^* \\otimes D \\psi$.' The narration describes a proof that is not present: the body assumes no arbitrary endomorphism and enforces no variational equations -- it cites uniqueness of \\mathcal{D}_\\nabla, uniqueness of \\psi^* given \\psi and the antipode, and closure under addition. Same plain-$L_q$/plain-$D$ notation break as the exists-proof sibling.",
+        "notes": "Proposed (structural, same class as the sibling *-proof preambles): delete the preamble. Note the mismatch is load-bearing here -- the preamble's variational characterisation is exactly what the proposition (prop:categorical-lagrangian-unique) would need to be non-vacuous, so the honest repair is either to prove that characterisation or to drop the claim, not to keep a roadmap describing an absent argument."
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:48.848Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Templated proof-strategy preamble: 'The proof strategy rests on algebraic rigidity and the categorical action principle. We assume an arbitrary endomorphism in $\\mathrm{End}(A)$ that acts as a Lagrangian and show that enforcing the variational equations uniquely constrains it to be identical to $L_q = D^2 + \\psi^* \\otimes D \\psi$.' The body assumes no arbitrary endomorphism and enforces no variational equations; it cites uniqueness of \\mathcal{D}_\\nabla, uniqueness of \\psi^* given \\psi and the antipode, and closure under addition. Same plain-L/plain-D notation break as the exists-proof sibling.",
+        "notes": "NOT fixed inline: the preamble carries a formula, so it falls outside the pure-prose small-trap threshold. Proposed: delete the preamble, matching the sibling fixes in this chapter. Flagged as the highest-value of the four: the variational characterisation the preamble invokes is exactly what prop:categorical-lagrangian-unique needs in order not to be vacuous (as written, 'any endomorphism equal to the formula coincides with \\mathcal{L}_q' is true by substitution), so deleting the preamble should be paired with a decision on whether that characterisation can be proved or the uniqueness claim should be dropped."
       }
     ],
     "trap-thesis-restatement": [
@@ -1485,6 +1594,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.505Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-performed-warmth": [
@@ -1504,6 +1628,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.540Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-superlative": [
@@ -1523,6 +1662,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.577Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "trap-nonspeakable": [
@@ -1542,6 +1696,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4e3b02f331d3",
+          "ts": "047f7783ea28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.614Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 6-line body. All ten categories checked on the whole text."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1564,5 +1733,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:03:48.848Z"
 }

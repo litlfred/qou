@@ -1,13 +1,13 @@
 ---
 doc_id: s40879-023-00706-0
-doc_title: "RESEARCH ARTICLE"
+doc_title: "Bring's curve: old and new"
 section_id: sec-010-42-relations-between-quotients
 section_title: "Relations between quotients"
 section_number: 4.2
 pages: 25-26
 source_pdf: s40879-023-00706-0.pdf
 source_sha256: 4c5af312d2e5d6a7
-doc_brief: "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
 ---
 We now consider the various relationships we might expect between the quotient
 curves of Bring’s curve. Recall (again from Riemann–Hurwitz) that if C is a curve

@@ -1,0 +1,68 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-22T16:03:14.025412+00:00",
+  "commitSha": "a28f0a8ee2ac539680fa8156a8d568681e2ec42d",
+  "assertions": [
+    {
+      "name": "sign_character_is_the_radical_direction",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "radical_is_sign_representation is true, so the sign character and the radical coincide by construction; |cos| = 1 confirms it numerically"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 74,
+  "computation": "axial-observable-is-the-gram-radical",
+  "scriptFile": "axial_observable_is_the_gram_radical_probe.py",
+  "scriptHash": "2bfe977e795e",
+  "scriptCommitSha": "be2d53b167c5fa560a56454b8a5aa9ae1e41ca4f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/axial_observable_is_the_gram_radical_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/axial_observable_is_the_gram_radical_probe.py"
+  },
+  "description": "Overlap of the trivial and sign characters with the convention-D Markov-Gram radical on the H_3 NF basis. The sign character IS the radical (|cos| = 1), so `borromean-axial-coupling`'s axial pairing has no canonical value TAKEN ALONE — but 641c84f8b2 showed the value enters a ratio where scale cancels exactly, so the ambiguity does not reach the computed quantity. The trivial channel is orthogonal to the 50-dps floor. Bean qou-cnbm.",
+  "data": {
+    "by_observable": [
+      {
+        "observable": "trivial",
+        "abs_cos_to_radical": "2.95420168787181990216633204489705907298044149548372979688056e-51",
+        "dualisable": true
+      },
+      {
+        "observable": "sign",
+        "abs_cos_to_radical": "1.00000000000000000000000000000000000000000000000000000000000",
+        "dualisable": false
+      }
+    ],
+    "radical": [
+      "1.00000000000000000000000000000000000000000000000000000000000",
+      "-0.900918283955741492160822882481093936014741626610537207153029",
+      "-0.900918283955741492160822882481093936014741626610537207153029",
+      "0.811653754365758058132214822141752124918532537796475184630024",
+      "0.811653754365758058132214822141752124918532537796475184630024",
+      "-0.731233707549433674041352781095106426763989809329441201839475"
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

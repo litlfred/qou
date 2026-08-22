@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.847Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.891Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.959Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1279,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.006Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1313,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.057Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1347,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.114Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1381,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.183Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.228Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1449,21 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.287Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (269w, prf). Completing-the-square expansion recomputed and correct, including the centrality parenthetical and the 2S^2 - S^2 = S^2 collapse."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:00.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a449700b7757",
+          "ts": "54de9a1bc2b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.333Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Prose is speakable.",
+        "notes": "MATH FLAG for the report: positivity is asserted as 'a standard property of the unique normalised trace on the symmetric semisimple Iwahori-Hecke algebra at generic q' with the citation attached only to non-degeneracy. Positive-semi-definiteness of tr_M on squares is not unconditional in q and the Markov parameter; the block should state the regime it holds in, as the general-form sibling does by hypothesis."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1521,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:20:39.333Z"
 }

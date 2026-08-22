@@ -1,10 +1,10 @@
-*For every real $q > 0$ (the substrate-anchor regime, $\operatorname{Im}(q) = 0$ at the archimedean place), the ratio satisfies:*
+*For every real $q > 0$ (the substrate-anchor regime, $\mathrm{Im}(q) = 0$ at the archimedean place), the ratio satisfies:*
 
 $$
   \tanh(\ln q) \;=\; \frac{q - q^{-1}}{q + q^{-1}} \;=\; \frac{q^2 - 1}{q^2 + 1}.
 $$
 
-*The Coulomb/strong ratio from $\operatorname{def:coulomb-charge}$ equals the q-rational expression $(q_0^2 - 1)/(q_0^2 + 1)$ at the substrate anchor. The analytic and the algebraic forms are a single object.*
+*The Coulomb/strong ratio from [def:coulomb-charge](#def:coulomb-charge) equals the q-rational expression $(q_0^2 - 1)/(q_0^2 + 1)$ at the substrate anchor. The analytic and the algebraic forms are a single object.*
 
 ## Significance
 

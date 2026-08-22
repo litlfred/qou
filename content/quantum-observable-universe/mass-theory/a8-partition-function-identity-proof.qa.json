@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.227Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.297Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.363Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.433Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.575Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Block ends with the ring-verification sentence and the QED mark; no quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.703Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,22 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.749Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Each coefficient is the exact value of the integer partition function at the corresponding index.' follows the match table.",
+        "notes": "Judged substantive: it states the proof's conclusion rather than re-announcing an already-drawn conclusion; the following sentence gives the verification route ('checked in Z[X] by ring'). Standard proof closure, not a manufactured closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.792Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.837Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,21 @@
         "reviewed_at": "2026-08-15T10:31:00.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "686a4f433c18",
+          "ts": "0b85ccdd93c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:20.977Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, coefficient-match table + two closing sentences); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:22:20.977Z"
 }

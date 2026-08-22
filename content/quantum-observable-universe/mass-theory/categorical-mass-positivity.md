@@ -1,6 +1,6 @@
 **Remark (no exhaustive positivity proof needed).**
 
-The categorical mass evaluates the observation functor $\tau$ on graded projective KLR modules. The functor takes the graded Euler characteristic, rendering each coefficient the strictly non-negative integer dimension of a $\mathrm{Hom}$-space:
+The categorical mass evaluates the observation functor $\tau$ on graded projective KLR modules. The functor takes the graded Euler characteristic, rendering each coefficient the non-negative integer dimension of a $\mathrm{Hom}$-space:
 
 $$
   [\tau(\mathfrak{M}_K)]_d \;=\;

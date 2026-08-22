@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9310164v2
-doc_title: ""
+doc_title: "SPHERICAL CATEGORIES"
 section_id: sec-009-12-john-w-barrett-bruce-w-westbury
 section_title: "JOHN W. BARRETT & BRUCE W. WESTBURY"
 section_number: 12
 pages: 12-14
 source_pdf: 9310164v2.pdf
 source_sha256: e0972e04667ccc47
-doc_brief: "This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative. The motivating examples are categories of representations of Hopf algebras."
+doc_brief: "SPHERICAL CATEGORIES — This paper is a study of monoidal categories with duals where th e ten- sor product need not be commutative."
 ---
 Deﬁnition 3.1. A spherical Hopf algebra over F consists of a F-module A together
 with the following data

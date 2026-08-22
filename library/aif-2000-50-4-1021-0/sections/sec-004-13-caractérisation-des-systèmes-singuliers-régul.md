@@ -1,13 +1,13 @@
 ---
 doc_id: aif-2000-50-4-1021-0
-doc_title: ""
+doc_title: "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie"
 section_id: sec-004-13-caractérisation-des-systèmes-singuliers-régul
 section_title: "Caractérisation des systèmes singuliers réguliers par la"
 section_number: 1.3
 pages: 18-33
 source_pdf: AIF_2000__50_4_1021_0.pdf
 source_sha256: a7ca398590a266d8
-doc_brief: "ANNALES DE L ’ INSTITUT FOURIER JACQUES SAULOY Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie — 7 sections: Cas d'une matrice unipotente. — So; No"
+doc_brief: "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie — 7 sections: Cas d'une matrice unipotente. — So; Notation; Cas d'une matrice semi-simple. — P"
 ---
 forme des solutions.
 Il s'agit plus ou moins d'une réciproque aux résultats de 1.1.

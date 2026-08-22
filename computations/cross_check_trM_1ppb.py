@@ -71,7 +71,14 @@ PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m-muon.witness.json", HERE)
 # Third path landed via PR #681's Step 2 + this PR's combiner: the
 # canonical Σ_λ y_λ(q_0) · χ^λ(β; q_0) trace built from per-irrep
 # chi caches (`per_irrep_pole_atom.py` chi-{atom}-h{n} caches).
-CHICACHE_PATH = _pb.witness_path("canonical-tr-m-via-chi-cache.witness.json", HERE)
+# MUON companion, matching PEEL_PATH's convention two lines up. The
+# unsuffixed name is the PROTON cache -- this cross-check is declared
+# `ideal_muon` and its guard below refuses a proton-pinned cache, so it
+# must read the muon variant. Produced by
+# `QOU_Q0_ANCHOR=ideal python3 canonical_tr_m_via_chi_cache.py`; the
+# producer now derives its output name from the q0 in force (qou-wn6d).
+CHICACHE_PATH = _pb.witness_path(
+    "canonical-tr-m-via-chi-cache-muon.witness.json", HERE)
 # Fourth path (this PR): direct evaluation of the cyclotomic Habiro
 # series `tr_M = (1/denom) · Σ_m a_m(u) · (u;u)_m` at u_0 = q_0^{1/2}
 # using the coefficients in `habiro-coefficients-extended.witness.json`.

@@ -1,13 +1,13 @@
 ---
 doc_id: 0310280v4
-doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all tr"
+doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots"
 section_id: sec-006-3-transversal-simplicity-and-its-failure
 section_title: "Transversal simplicity and its failure"
 section_number: 3
 pages: 24-24
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
-doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 9 sections: Introduction and description of re; The MTWS and transversal isotopies; Block-strand diagrams, templates a"
 ---
 In this section we develop our examples illustrating the failure of transversal simplicity.
 In particular, we will produce examples of pairs of closed braids, ( X+, X−) such

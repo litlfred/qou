@@ -1768,6 +1768,21 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.543Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of the conjecture (statement + limit display, Status paragraph, closing role sentence). No assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1787,6 +1802,21 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.582Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Three short paragraphs, each self-contained; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1806,6 +1836,21 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.623Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1825,6 +1870,21 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.661Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No enumerations."
       }
     ],
     "trap-closing-aphorism": [
@@ -1844,6 +1904,21 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.697Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "The closer states this conjecture's role relative to the Kashaev volume conjecture (algebraic half pairing with the Bloch-Wigner geometric half) — a structural relation, though inflated; the inflation is recorded under trap-superlative."
       }
     ],
     "trap-meta-commentary": [
@@ -1863,6 +1938,22 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.736Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'**Status:**' is a label, not narration of emphasis.",
+        "notes": "Separate (AGENTS.md §4d) issue: the whole Status paragraph is an author-tracking banner in scholarly prose, and it DUPLICATES the .ts authorNotes entry of 2026-07-24, which states the same Part A closure at greater length and with the correct Part B scope. Migrate the prose banner out; the .ts already holds the canonical version."
       }
     ],
     "trap-thesis-restatement": [
@@ -1882,6 +1973,21 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.774Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "The closer places the conjecture in the volume-conjecture programme rather than restating the limit."
       }
     ],
     "trap-performed-warmth": [
@@ -1901,6 +2007,21 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.814Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1920,6 +2041,23 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.851Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "severity": "minor",
+        "evidence": "Four empty intensifiers, two of them attached to a mathematical claim where the word has no content: 'converges strictly to the classical dilogarithm' and 'holds strictly on the sub-unity limit' (convergence is not 'strict'; nothing in the display supports the adverb), plus 'the overarching Kashaev volume conjecture' and 'the complete continuous volume'. The .ts authorNotes describe the same results without any of the four, which is evidence the intensifiers are not the author's register.",
+        "notes": "Proposed (structural — the two 'strictly' occurrences modify a convergence claim and are therefore math-adjacent, so not deleted inline): 'converges strictly to' -> 'converges to'; 'holds strictly on the sub-unity limit' -> 'holds for the q -> 1^- limit'; drop 'overarching' and 'complete'. Confirm with the author that 'strictly' was not meant as 'in the strict sense' before deleting."
       }
     ],
     "trap-nonspeakable": [
@@ -1939,6 +2077,23 @@
         "reviewed_at": "2026-08-15T10:31:00.565Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d16c24df161e",
+          "ts": "b3b94756ebea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:24.889Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "severity": "minor",
+        "evidence": "'The substantive open content concerns the substrate continuation extending past the branch cut, demanding exact cancellation among algebraic poles before evaluating the principal branch.' — a 24-word chain of three nominalisations ('substantive open content', 'substrate continuation', 'exact cancellation') joined by two stacked participles ('extending', 'demanding'), with no finite verb after 'concerns'. It parses on the page and stalls aloud. The block's own .ts authorNote (2026-07-25) states the same fact speakably: 'there the factors 1 - x q^k change sign, so the poles of Phi_n approach the Li_2 branch cut and the Frobenius-pairing pole cancellation must do real work.'",
+        "notes": "Proposed (structural — replaces a sentence about the open mathematical content, so not edited inline): adopt the authorNote's phrasing, e.g. 'The open content is the substrate continuation past the branch cut: there the factors 1 - x q^k change sign, so the poles of Phi_n approach the Li_2 branch cut and the pole cancellation must be exact before the principal branch can be evaluated.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1961,5 +2116,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:55:24.889Z"
 }

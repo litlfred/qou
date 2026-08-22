@@ -895,7 +895,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.895Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.939Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.981Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.021Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.061Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.099Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.138Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.178Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.218Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0e7a2b553bee",
+          "ts": "c15c5920cb43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.261Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table3-data. The block is a bare 5-row table with NO prose whatsoever, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the rows symbolically and against the cited witness.",
+        "notes": "STRUCTURAL, reported separately, two items. (1) MATH ERROR: the last row L+ . sigma_0 . L- is given as (gamma=1, sigma_0=h, sigma_1=h, L+=h^2, L-=h^2, e-=h^3+h). The correct value is (0, 0, 1, h, h, h^2) - derivable in one step from the block's own sibling Table L.1, since L+ sigma_0 = e- and e- L- = sigma_1 + h L+ + h L- + h^2 e-; the witness photon-operator-table.witness.json T_{2,1} matrix[3][4] agrees with me (s1=1.0, L+=0.20906, L-=0.20906, e-=0.043706). The printed row is instead the value of e- . e-, i.e. it looks copied from the wrong product. The other four rows are correct. (2) Unlike its three sibling table blocks, this one carries no legend, so h, gamma, L+/L- and the b_i . sigma_0 . b_j convention are never introduced in the block."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:15:00.261Z"
 }

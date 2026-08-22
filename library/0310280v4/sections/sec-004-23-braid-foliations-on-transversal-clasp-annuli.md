@@ -1,13 +1,13 @@
 ---
 doc_id: 0310280v4
-doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all tr"
+doc_title: "Stabilization in the braid groups II: Transversal simplicity of knots"
 section_id: sec-004-23-braid-foliations-on-transversal-clasp-annuli
 section_title: "Braid foliations on transversal clasp annuli"
 section_number: 2.3
 pages: 13-20
 source_pdf: 0310280v4.pdf
 source_sha256: 1e146ee4ebc157f2
-doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal — 9 sectio"
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 9 sections: Introduction and description of re; The MTWS and transversal isotopies; Block-strand diagrams, templates a"
 ---
 The principle tool in the proof of the MTWS is the study of the braid foliation of CA,
 the singular foliation which is determined by the intersections of CAwith the disc

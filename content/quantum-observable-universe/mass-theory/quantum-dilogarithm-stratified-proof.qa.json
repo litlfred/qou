@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a canonical identity.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.646Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.685Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1429,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 707 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.723Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1464,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 707 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.763Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1499,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.805Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1534,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.847Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1569,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.889Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1604,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.934Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.977Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:00.404Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.019Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:45:22.019Z"
 }

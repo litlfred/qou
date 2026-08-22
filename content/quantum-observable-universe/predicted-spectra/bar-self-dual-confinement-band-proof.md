@@ -11,7 +11,7 @@ The interval $\mathcal{B} = (1/\varphi^2, \varphi^2)$ unifies three disjoint pha
 
 Both deconfined regimes are governed by the same algebraic threshold $s^2 - s - 1 = 0$, applied directly on the super-classical side and via $\iota$ on the sub-classical side.
 
-Our universe sits at $q_0 \approx 1.1097 \in \mathcal{B}$, with margins
+Our universe sits at $q_0 \approx 1.1100 \in \mathcal{B}$, with margins
 
 $$
   d_-(q_0)  :=  q_0 - 1/\varphi^2 \approx 0.728,

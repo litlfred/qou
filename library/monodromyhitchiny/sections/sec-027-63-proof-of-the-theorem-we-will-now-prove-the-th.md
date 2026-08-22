@@ -1,13 +1,13 @@
 ---
 doc_id: monodromyhitchiny
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "On the monodromy of the Hitchin connection"
 section_id: sec-027-63-proof-of-the-theorem-we-will-now-prove-the-th
 section_title: "Proof of the Theorem. We will now prove the theorem stated in the introduction. This"
 section_number: 6.3
 pages: 12-13
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
-doc_brief: "HAL Id: hal-00465731 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 30 sections: YVES LASZLO"
+doc_brief: "On the monodromy of the Hitchin connection — 30 sections: YVES LASZLO, CHRISTIAN PAULY, AND ; Introduction; Review of mapping class groups, mo"
 ---
 theorem will be a corollary of the following more general result (Theo rem 6.7) since we know by
 [L] assuming g ≥ 3 that there is a projectively ﬂat isomorphism between the two proj ectivized

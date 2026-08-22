@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1906.12122v2
-doc_title: "Nuclear eﬀective ﬁeld theory: status and perspectives H.-W. Hammer∗ Institut f¨ ur Kernphysik, Technische Universit¨ at Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute"
+doc_title: "Nuclear effective field theory: status and perspectives"
 section_id: sec-028-2-fine-tuning-in-chiral-eft-and-infrared-limit-c
 section_title: "Fine-tuning in Chiral EFT and infrared limit cycle"
 section_number: 2
 pages: 57-59
 source_pdf: 1906.12122v2.pdf
 source_sha256: 955e3eda48672e28
-doc_brief: "Nuclear effective field theory: status and perspectives H.-W. Hammer∗ Institut für Kernphysik, Technische Universität Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI — 34 sections: C"
+doc_brief: "Nuclear effective field theory: status and perspectives — 34 sections: Contents; Two-body scattering amplitude; Power counting"
 ---
 Chiral EFT, constituting the many-nucleon generaliza-
 tion of ChPT, yields the pion-mass dependence of nuclear

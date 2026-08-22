@@ -1483,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.505Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "major",
+        "evidence": "'The three cases are not *ad hoc*: each arises from an established theorem in low-dimensional topology.' — the quality is asserted by denying its opposite, in a sentence that then supplies the positive justification anyway.",
+        "notes": "FIXED: 'The three cases are not *ad hoc*: each arises from an established theorem in low-dimensional topology.' -> 'Each of the three cases arises from an established theorem in low-dimensional topology.' Same construction as in frobenius-codim-universal-proof ('forced by the structure, not ad-hoc'), so this is a chapter-level habit rather than a one-off."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1502,6 +1519,21 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.540Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The 'if hyperbolic knots represent ... torus knots represent ...' sentence is a stated duality with both halves developed, not a setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1521,6 +1553,21 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 401 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.577Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Zero em-dashes in 481 words (the double hyphens in 'Kashaev--Murakami--Murakami', 'Chern--Simons' and 'Thurston' are en-dash markup)."
       }
     ],
     "trap-triples": [
@@ -1540,6 +1587,21 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 401 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.614Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "'three cases' and 'three geometric structures' are the case split of the displayed definition and Thurston's trichotomy respectively — forced by the mathematics."
       }
     ],
     "trap-closing-aphorism": [
@@ -1559,6 +1621,21 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.649Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Ends on the reason the unknot is normalised to zero, not on a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1578,6 +1655,21 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.688Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "'The figure-eight knot 4_1 is special:' announces significance rather than showing it, but the next clause immediately gives the reason (amphicheirality), so the emphasis is placed rather than merely narrated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1597,6 +1689,21 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.726Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The five numbered sections each add a distinct justification; none restates the opening."
       }
     ],
     "trap-performed-warmth": [
@@ -1616,6 +1723,21 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.766Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1635,6 +1757,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.813Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "'the vast majority of knots' is a true statement about knot censuses; 'strict duality', 'purely the phase' and 'manifestly real' are locally justified.",
+        "notes": "VERIFIED: 4_1 is amphicheiral, and the two figure-eight BW factors are real algebraic in q — 1 - h^2 = 4 - [3]_q and h[2]_q = q^2 - q^-2 both check symbolically."
       }
     ],
     "trap-nonspeakable": [
@@ -1654,6 +1792,22 @@
         "reviewed_at": "2026-08-15T10:31:00.797Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.851Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Numbered sections, short sentences, displays carry the formulas.",
+        "notes": "FOUR RIGOR FLAGS, in decreasing confidence. (1) SUPPRESS/AMPLIFY INVERTED, verified numerically: the block says hyperbolic knots are states 'where hbar_q^2 suppresses the volume' and torus knots ones 'where hbar_q^2 amplifies the Chern-Simons phase'. At the proton pin hbar_q^2 = 0.009817186, so dividing by it (the hyperbolic case, Vol/hbar_q^2) MULTIPLIES by 101.86 and multiplying by it (the torus case, CS x hbar_q^2) suppresses by the same factor. The two verbs are swapped. (2) THE TRICHOTOMY DOES NOT MATCH THE CASE SPLIT: Thurston's classification is quoted correctly as hyperbolic / Seifert-fibred (torus) / satellite, and the block then says 'The piecewise definition of Geom(K) follows this classification directly'. It does not: Geom(K) has no satellite case, and it has an unknot case that is not one of the three. Satellite knots are therefore undefined under Geom. (3) CS FORMULA UNCITED AND UNBOUNDED: CS(T_{m,n}) = pi^2 (m^2-1)(n^2-1)/(12 m n) is given with no citation and grows without bound (T(2,101) gives 124.6), whereas a Chern-Simons invariant is defined only modulo its period lattice — at best this is a specific lift and should say so. It does have one good internal consistency check: it vanishes at m=1, agreeing with the unknot case. (4) THE PAIRING IDENTITY IS VACUOUS: the displayed 'Frobenius inner product' is literally Geom(K) divided by Geom(K-mirror), so '= 1' follows from Vol(K-mirror) = Vol(K) alone and tells us nothing about the Frobenius pairing or about hbar_q^2 'mediating' it. Minor: torus knots are called 'self-dual under the descent involution', but T(2,3) is chiral, so that phrase needs its involution named. Advisory: the Volume-Conjecture paragraph slides from the coloured Jones at roots of unity to tr_M(rho(B_K)) at fixed q, which are different objects; the VC is itself a conjecture and should be cited as a hypothesis."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1676,5 +1830,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:14:20.851Z"
 }

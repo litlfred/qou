@@ -1372,6 +1372,21 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.578Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (98w, ex). Numerics fully recomputed at 30 dps."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1391,6 +1406,21 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.623Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (98w, ex). Numerics fully recomputed at 30 dps."
       }
     ],
     "trap-em-dash": [
@@ -1410,6 +1440,21 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.686Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (98w, ex). Numerics fully recomputed at 30 dps."
       }
     ],
     "trap-triples": [
@@ -1429,6 +1474,21 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.733Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (98w, ex). Numerics fully recomputed at 30 dps."
       }
     ],
     "trap-closing-aphorism": [
@@ -1448,6 +1508,23 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.783Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "Three flat de-hedged assertions closing the block, the last a quotable one-liner: 'The figure-eight knot supplies the universal mass mechanism. It couples to all knot-particles with positive crossing numbers. The knot topology alone dictates the mass scale.'",
+        "notes": "NOT FIXED: deleting the closer would also delete an exclusivity claim ('alone') that the block does not otherwise make, so this is a meaning change rather than a construction removal. Proposed: drop 'The knot topology alone dictates the mass scale.' and support the middle sentence, or move all three to a follow-on remark."
       }
     ],
     "trap-meta-commentary": [
@@ -1467,6 +1544,21 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.833Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (98w, ex). Numerics fully recomputed at 30 dps."
       }
     ],
     "trap-thesis-restatement": [
@@ -1486,6 +1578,21 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.890Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (98w, ex). Numerics fully recomputed at 30 dps."
       }
     ],
     "trap-performed-warmth": [
@@ -1505,6 +1612,21 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:40.960Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (98w, ex). Numerics fully recomputed at 30 dps."
       }
     ],
     "trap-superlative": [
@@ -1524,6 +1646,23 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.055Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "'the universal mass mechanism', 'couples to ALL knot-particles with positive crossing numbers', 'topology ALONE dictates' - three maximum-strength claims in consecutive sentences, none qualified or cited.",
+        "notes": "STRUCTURAL, same three sentences. Proposed as above."
       }
     ],
     "trap-nonspeakable": [
@@ -1543,6 +1682,22 @@
         "reviewed_at": "2026-08-15T10:31:00.438Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5314823e367e",
+          "ts": "0129d60f4874"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.121Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Prose is speakable.",
+        "notes": "THREE RECOMPUTED FLAGS for the report. (1) THE NUMBER IS WRONG: m(4_1) = Vol(4_1)/hbar_q^2 = 2.02988321/hbar_q^2 evaluates to 206.7683 at the proton pin, 206.768283 at the muon pin and 206.768283 at the old muon value - and 207.7155 at the erroneous 1.1097. The block prints 207.1, which corresponds to q = 1.1098808, a FOURTH value matching no documented pin. Against CODATA m_mu/m_e = 206.7682830 the printed 207.1 is a 0.160 pct miss where the formula itself achieves 2.1e-5 pct, so 'This matches the muon-to-electron mass ratio' understates the agreement by four orders of magnitude while printing a number that is simply not the formula's value. (2) NOTATION: the trefoil is written tau(2,3), but tau is reserved for the fibre functor (AGENTS.md section 7) and every other block in this chapter writes T_{m,p}. (3) SCOPE: prop:topological-mass-formula states the mass formula only for a HYPERBOLIC knot; this block applies it to the trefoil, which its own first line calls non-hyperbolic, via an unstated substitution Vol -> Li_2(q^-2). For the record that substitution gives Li_2(q_0^-2)/hbar_q^2 = 111.90, so the block's two examples stand in ratio 1.85, not m_mu/m_e. And 4_1 is the HIGGS in tbl:topological-field-ansatz-table-data, which this block's own first line repeats before reading its value as the muon ratio."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1565,5 +1720,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:32:41.121Z"
 }

@@ -3,8 +3,9 @@
 title: Cite 0006156v1.pdf at prop:faddeev-phib-uniqueness
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:35:59Z
-updated_at: 2026-08-08T23:35:59Z
+updated_at: 2026-08-21T17:05:02Z
 ---
 
 prop:faddeev-phib-uniqueness currently cites only faddeev1995 + faddeev1994 while stating the product formula and the strip-growth hypothesis that this paper's eqs. (21)-(22) give explicitly.
@@ -19,3 +20,10 @@ Source: `library/arxiv-hep-th-0006156v1/0006156v1.pdf` — no `references.ts` en
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-hep-th-0006156v1/  ->  [faddeev-kashaev-volkov2000]
+  Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [faddeev-kashaev-volkov2000] as the citation key when you do it.

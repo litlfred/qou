@@ -1232,6 +1232,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.638Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1251,6 +1266,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.679Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "trap-em-dash": [
@@ -1270,6 +1300,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 18 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.723Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "trap-triples": [
@@ -1289,6 +1334,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 18 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.763Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "trap-closing-aphorism": [
@@ -1308,6 +1368,23 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.557Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "severity": "major",
+        "evidence": "The block is two sentences. The first states an axiom ('The Hopf comultiplication Delta_q on O_q(SU(2)) obeys coassociativity'); the second - 'This property is required for consistency across the theoretical framework.' - is placed purely to end the block and carries no content. It names no consistency condition, no result that depends on coassociativity, and no framework component; it would remain equally true and equally empty attached to any axiom in the corpus. Coassociativity is part of the DEFINITION of a Hopf algebra, so 'required for consistency' is not even a claim about this object.",
+        "notes": "NOT FIXED (structural: deleting the sentence leaves a one-line remark restating a definitional axiom, which is a different defect, and the block has a second problem - see below). PROPOSED, in order of preference: (a) supply the content the label promises - the block is named rem:hopf-structure-diagrams and titled 'Hopf-algebra structure: coassociativity' but contains NO diagram at all; add the coassociativity pentagon/square as a tikzcd, which is presumably what was intended; or (b) replace the empty sentence with the actual dependency, e.g. 'Coassociativity is what makes the iterated comultiplication used in Constraint (G-1) well defined.'; or (c) merge the block into rem:hopf-non-cocommutativity, which states the same comultiplication's coassociativity in its first clause and then says something. SOURCE HYGIENE: the second sentence begins with a stray leading space and the file has no trailing newline."
       }
     ],
     "trap-meta-commentary": [
@@ -1327,6 +1404,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.597Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "severity": "major",
+        "evidence": "The same closing sentence was considered here - 'This property is required for consistency across the theoretical framework' announces the importance of the stated property rather than placing any emphasis - but it is recorded once, as a closing aphorism, to avoid double-counting one construction across two criteria."
       }
     ],
     "trap-thesis-restatement": [
@@ -1346,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.803Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "trap-performed-warmth": [
@@ -1365,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.844Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "trap-superlative": [
@@ -1384,6 +1507,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.883Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "trap-nonspeakable": [
@@ -1403,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dcb429972834",
+          "ts": "a4a3811131b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:13:14.924Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, restatement, warmth, superlative, or non-speakable chain; the block's defect is the empty closer recorded under trap-closing-aphorism."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1425,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:13:14.924Z"
 }

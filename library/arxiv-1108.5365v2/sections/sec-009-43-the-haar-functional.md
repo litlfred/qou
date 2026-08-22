@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5365v2
-doc_title: "Representation of the Quantum Plane, its Quantum"
+doc_title: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)"
 section_id: sec-009-43-the-haar-functional
 section_title: "The Haar functional"
 section_number: 4.3
 pages: 27-28
 source_pdf: 1108.5365v2.pdf
 source_sha256: 000961ede2234231
-doc_brief: "Representation of the Quantum Plane, its Quantum — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra."
+doc_brief: "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual"
 ---
 Recall from Deﬁnition 2.8 that a linear functional on A is called a left invariant
 Haar functional if it satisﬁes

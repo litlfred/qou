@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1007.1250v4
-doc_title: "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES AMNON YEKUTIELI"
+doc_title: "Nonabelian Multiplicative Integration on Surfaces"
 section_id: sec-001-references
 section_title: "References"
 section_number: null
 pages: 137-139
 source_pdf: 1007.1250v4.pdf
 source_sha256: 541ba4fb3068de8b
-doc_brief: "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES AMNON YEKUTIELI — We construct a 2 -dimensional twisted nonabelian multiplicative integral ."
+doc_brief: "Nonabelian Multiplicative Integration on Surfaces — We construct a 2 -dimensional twisted nonabelian multiplicative integral ."
 ---
 [BGNT] P . Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Formality for Algebroids I: Nerves of
 Two-Groupoids, eprint arXiv:1211.6603.

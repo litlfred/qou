@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1108.5286v3
-doc_title: "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen"
+doc_title: "Hochschild homology of affine Hecke algebras"
 section_id: sec-007-22-complex-parameters
 section_title: "Complex parameters"
 section_number: 2.2
 pages: 21-24
 source_pdf: 1108.5286v3.pdf
 source_sha256: 447d90883adce21e
-doc_brief: "Hochschild homology of affine Hecke algebras Maarten Solleveld Radboud Universiteit Nijmegen — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not"
+doc_brief: "Hochschild homology of affine Hecke algebras — Let H = H(R,q ) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity."
 ---
 Everything we discussed in the previous subsection has a nat ural analogue for graded
 Hecke algebras. The condition q positive translates to k real valued, but with the

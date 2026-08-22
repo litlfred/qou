@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1208.1663v2
-doc_title: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers"
+doc_title: "The 3D index of an ideal triangulation and angle structures"
 section_id: sec-014-52-an-independent-proof-of-convergence-for-stric
 section_title: "An independent proof of convergence for strict index structures"
 section_number: 5.2
 pages: 16-21
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
-doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of"
+doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 implies that IM converges when M admits a strict index structure. In this section we give
 an independent proof of this fact without using the restriction of the summand of the index

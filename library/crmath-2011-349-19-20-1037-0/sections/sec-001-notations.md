@@ -1,13 +1,13 @@
 ---
 doc_id: crmath-2011-349-19-20-1037-0
-doc_title: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect"
+doc_title: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières"
 section_id: sec-001-notations
 section_title: "Notations"
 section_number: null
 pages: 1-1
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
-doc_brief: "C. R. Acad. Sci. Paris, Ser. I www.sciencedirect.com Équations différentielles Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put"
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put and Reversat described the form of a pure q-difference module with non"
 ---
 Le corps des séries de Laurent convergentes sera notéK = C({z}) = C{z}[z−1] et ˆK désignera le corps des séries formelles
 C((z)) = C[[z]][z−1].S o i tq ∈ C∗ tel que|q| >1, on déﬁnit l’opérateurσ, automorphisme deK (ou ˆK)p a rσ( f (z)) = f (qz).

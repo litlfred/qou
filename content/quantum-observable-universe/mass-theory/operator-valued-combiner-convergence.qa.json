@@ -2138,6 +2138,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.347Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The atomic Markov trace need not be recomputed at full strand count 3A for each isotope. Instead, it peels one nucleon at a time.' states the computational content of the recursion; substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2157,6 +2172,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.443Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement, boxed recursion, then four sentences of consequence; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -2176,6 +2206,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.539Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2195,6 +2240,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.632Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2214,6 +2274,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.727Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The product form exhibits the per-isotope binding tower as a telescoping accumulation.' names the structure the recursion produces; technical, not a composed closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2233,6 +2308,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.807Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This proposition provides the convergence content of the operator-valued Wenzl branching combiner' locates the block in the argument rather than narrating emphasis; standard cross-block bookkeeping."
       }
     ],
     "trap-thesis-restatement": [
@@ -2252,6 +2342,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.894Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing paragraph adds the computational consequence (no recomputation at 3A strands), not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2271,6 +2376,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:27.980Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2290,6 +2410,22 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:28.084Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'arbitrarily large atom' is a quantifier, not inflation.",
+        "notes": "RIGOR (minor, reported): the block is titled and framed as CONVERGENCE ('assembles into a single convergent representation', 'the convergence content of the ... combiner'), but what is displayed is the one-step recursion cv(A+1) = w(A) cv(A), whose iterate is the telescoping PRODUCT cv(A) = cv(2) * prod_{j=2}^{A-1} w(j). A product converges only if w(j) -> 1, and no such condition is stated or cited anywhere in the block. Proposed: either state the condition on w that makes the tower converge, or retitle the content as a telescoping/product representation (which is what the last sentence actually says) and reserve 'convergent' for wherever the bound on w is proved. Also verified: the peel levels n_k = 3(A-k+1) do give n_1 = 3A, the full strand count, consistent with beta_atom in H_{3A}(q), and bottoming out at k = A-1 gives n = 6, matching 'the deuteron ... computed directly at H_6'."
       }
     ],
     "trap-nonspeakable": [
@@ -2309,6 +2445,21 @@
         "reviewed_at": "2026-08-15T10:31:00.735Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5956f63be86e",
+          "ts": "44f5c1dfc342"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:48:28.174Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short declaratives; speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2332,5 +2483,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:48:28.174Z"
 }

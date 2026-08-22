@@ -278,6 +278,7 @@ exactly this slip: the crossing-energy channels and the $V_\lambda
 \mapsto -\sigma_i^{-1}$, not the bar involution) are corrected here, and the
 argument from bar-invariance for the Markov parameter $z$ is withdrawn — its
 bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$. (The $z$
-*convention* itself is unsettled and is not changed here; see
+*convention* is settled independently of this: convention D, $z = q^3/(q^2+1)$,
+is canonical and C is excised; see
 [`def:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md).)
 When the object being graded lies in the algebra, use both halves.

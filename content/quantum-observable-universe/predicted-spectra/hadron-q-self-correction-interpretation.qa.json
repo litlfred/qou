@@ -1413,6 +1413,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:47.738Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1447,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:47.778Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 261 words)"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:47.820Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-triples": [
@@ -1470,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 261 words)"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:47.860Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1549,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:47.900Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1583,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:47.940Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1617,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:47.980Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1651,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:48.021Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (opening remark plus three sections). No negation-contrast ('not the background q' is load-bearing disambiguation), no pivot, no load-bearing spaced em-dash (only the numeric range 0.1--0.4%), no reflex triple, no aphoristic closer, no narrated emphasis, no restatement closer, no warm register. THE CENTRAL DERIVATION IS CORRECT AND I VERIFIED IT ALGEBRAICALLY: with delta q proportional to [C(p,2) - C(n,2)]/A^2, the (p,n) -> (p+1,n-1) difference is [p + (n-1)]/A^2 = (A-1)/A^2 exactly, matching the displayed Delta q_eff = (A-1)/A^2 . hbar_q^2; it is strictly positive for A >= 2 as claimed; and at A = 3 it evaluates to (2/9)(0.0098172) = 0.0021816, matching the quoted 0.00218 to every digit. The quoted sensitivity 48 agrees with prf:hadron-half-life."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1685,23 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:48.062Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "severity": "minor",
+        "evidence": "Two maximum-strength claims, both of which fail against the block's own formula. (1) 'For $^{3}\\mathrm{H}$ ($A = 3$), the shift $\\Delta q_{eff} = (2/9)\\times\\hbar_q^2 \\approx 0.00218$ is the maximum correction.' The function (A-1)/A^2 has its integer maximum at A = 2, not A = 3: f(2) = 1/4 = 0.25 against f(3) = 2/9 = 0.2222, giving Delta q_eff = 0.0024543 at A = 2 versus 0.0021816 at A = 3. The claim is true only when restricted to beta-decaying nuclides (A >= 3, since the A = 2 systems are stable or unbound), and the block does not say so. (2) 'A shift of $\\Delta q/q_0 \\sim 0.1$--$0.4\\%$' - the upper end exceeds what the formula can produce. Computed across A: 0.221% at A = 2, 0.197% at A = 3, 0.166% at A = 4, 0.0967% at A = 8, 0.0080% at A = 100. The global maximum over all A is 0.221%, so 0.4% overstates the achievable ceiling by a factor of 1.8, and the interval's lower end 0.1% corresponds to A around 8.",
+        "notes": "Structural (numerical corrections), not edited. Proposed fix: '...is the largest correction among beta-decaying nuclides (the formula peaks at A = 2, which does not beta-decay).' and 'A shift of $\\Delta q/q_0$ between 0.02% and 0.2%, depending on A, ...' - or state the A range the 0.1-0.4% interval is meant to cover."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1721,23 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "04a120ecd092",
+          "ts": "1ff464c17eb9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:48.101Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "severity": "minor",
+        "evidence": "The opening paragraph runs three consecutive agentless nominalisations: 'The signed-crossing excess $\\binom{p}{2}-\\binom{n}{2}$ acts as a topological self-deformation of the substrate field.' ('acts as' for 'is'), 'Nuclear linking density $\\ell_{\\mathrm{net}}/A^2$ drives this.' (a four-word nominal subject and a pronoun object with no clear antecedent - 'this' points back to the whole preceding clause), and 'This provides a geometric mechanism for nuclear self-correction.' Three sentences, three abstract subjects, no agent.",
+        "notes": "Structural, not edited. Proposed fix: 'The signed-crossing excess $\\binom{p}{2}-\\binom{n}{2}$, normalised by the nuclear linking density $\\ell_{\\mathrm{net}}/A^2$, deforms the substrate field: a nucleus shifts its own effective $q$.' One further item reported to the batch: 'This embodies $q$-deformed energy balance, overriding classical conservation.' - 'overriding classical conservation' overstates what the block shows, which is that Q is evaluated at a shifted q rather than that conservation fails. 'embodies' also joins the is-substitution cluster."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1760,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:03:48.101Z"
 }

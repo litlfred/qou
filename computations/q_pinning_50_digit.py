@@ -24,8 +24,11 @@ CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
              MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)) has carried the
              tighter 0.017 ppb figure for some time; the docstring and the
              committed witness were both stale against it, and a re-run
-             refreshed the witness. The 0.06 ppb figure is repeated in
-             AGENTS.md too and is stale there.
+             refreshed the witness. This note also said the 0.06 ppb
+             figure was "repeated in AGENTS.md too and is stale there";
+             that was fixed in ae571e445d, where AGENTS.md now carries
+             0.017 ppb and keeps 0.06 only inside its own historical
+             clause.
              computed below from dq/dR via the proton identity
   m_μ/m_e  = 206.768 283 0 ± 4.6e-6  (CODATA 2022 — now a 9.5σ
              PREDICTION, kept only for the cross-check print)
@@ -76,7 +79,7 @@ set_compute_dps()
 VOL_4_1 = vol_4_1_at(mp.dps)
 VOL_4_1_STR = mp.nstr(VOL_4_1, mp.dps, strip_zeros=False)
 
-# CODATA 2022 proton-electron mass ratio — the ANCHOR (0.06 ppb).
+# CODATA 2022 proton-electron mass ratio — the ANCHOR (0.017 ppb).
 from q_parameter import MASS_RATIO_P_E_STR, MASS_RATIO_P_E_ERR  # noqa: E402
 R_P = mpf(MASS_RATIO_P_E_STR)
 
@@ -302,8 +305,10 @@ if __name__ == "__main__":
             "m_p/m_e route is what DEFINES the quantity, not what ran.  "
             "Internal arithmetic is exact to 50 digits; "
             "physical anchoring is bounded by the propagated CODATA "
-            "relative uncertainty ≈ 2.85e-12 (2853 ppQ) from the "
-            "0.06 ppb m_p/m_e ratio (see physical_anchoring_bound).  "
+            f"relative uncertainty ≈ {float(Q_ERR / Q):.2e} "
+            f"({float(Q_ERR / Q) * 1e15:.0f} ppQ) from the "
+            f"{float(mpf(str(MASS_RATIO_P_E_ERR)) / R_P) * 1e9:.3f} ppb "
+            "m_p/m_e ratio (see physical_anchoring_bound).  "
             "m_μ/m_e is recorded only as a 9.5σ cross-check prediction.  "
             "Recorded 50-digit outputs: q, q^{-1}, ℏ_q², ℏ_q, H_A, "
             "[2]_q, z_markov, s_skein; plus quantum integers/"
@@ -367,15 +372,18 @@ if __name__ == "__main__":
             "sigma_q0_absolute": str(Q_ERR),
             "ppq": f"{float(Q_ERR / Q) / 1e-15:.0f}",
             "limited_by":
-                f"CODATA m_p/m_e (0.06 ppb) at σ(q)/q ≈ {float(Q_ERR/Q):.2e}",
+                f"CODATA m_p/m_e ({float(R_P_ERR / R_P) * 1e9:.3f} ppb) "
+                f"at σ(q)/q ≈ {float(Q_ERR/Q):.2e}",
             "muon_cross_check_relative_uncertainty": str(Q_ERR_MU / Q),
             "comment": (
                 "Internal arithmetic is at 50 digits.  The framework's "
                 "DIMENSIONLESS predictions (ratios, equality of "
                 "computed quantities) can be checked at 50-digit "
                 "precision.  q₀ is anchored on m_p/m_e (the most precise "
-                "ratio, 0.06 ppb); the propagated bound σ(q₀)/q₀ ≈ "
-                "2.85e-12 (2853 ppQ) improves one-for-one as CODATA "
+                f"ratio, {float(R_P_ERR / R_P) * 1e9:.3f} ppb); the "
+                "propagated bound σ(q₀)/q₀ ≈ "
+                f"{float(Q_ERR / Q):.2e} ({float(Q_ERR / Q) * 1e15:.0f} ppQ) "
+                "improves one-for-one as CODATA "
                 "improves m_p/m_e — it is not a framework ceiling.  The "
                 "muon-anchor bound (~1.22e-9) is shown for comparison "
                 "and is ~429× looser; m_μ/m_e is now a 9.5σ prediction."

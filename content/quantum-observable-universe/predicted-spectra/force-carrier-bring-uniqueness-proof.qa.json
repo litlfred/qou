@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.118Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.181Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.243Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.301Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.357Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1346,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.403Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1380,37 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.450Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.742Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No restatement closer.",
+        "notes": "STRUCTURAL, reported not fixed (block-kind, outside the trap categories): this proof( ) block carries a full '**Corollary (categorical complexity of the force-carrier sector).**' with its own italic statement and display. Per the content-object type system a corollary is its own block kind with label prefix cor: and an expected Lean sibling; embedding it in a proof block hides it from every per-kind checker and from the uses[] graph. Proposed fix: split into corollary({label: 'cor:force-carrier-categorical-complexity', uses: ['prop:force-carrier-bring-uniqueness']}) with its own .ts/.md/.lean triple, leaving only the two-sentence proof here."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.525Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.585Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:01.249Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "77ba53f2faee",
+          "ts": "bcefd67a02dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:32:37.649Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (two-sentence proof plus an embedded corollary with one display). Clean formal prose: none of the ten constructions is present; the proof ends on the QED box and the corollary on its display. Math verified: g(T(2,9))=(2-1)(9-1)/2=4 and g(T(3,5))=(3-1)(5-1)/2=4, both matching the ambient genus; crossing numbers 9 and 10 are correct by Murasugi min(p(q-1),q(p-1)); [9]_q and [10]_q are Laurent polynomials so the product does lie in R."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1535,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:32:37.742Z"
 }

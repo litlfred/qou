@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0006156v1
-doc_title: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE"
+doc_title: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality"
 section_id: sec-044-44-dual-liouville-equation-let-us-permute-the-fa
 section_title: "Dual Liouville equation. Let us permute the factors in the l.h.s of"
 section_number: 4.4
 pages: 12-13
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
-doc_brief: "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
+doc_brief: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well"
 ---
 the lattice Liouville equation (10)
 χj,k −1χj,k +1 =χj,k −1

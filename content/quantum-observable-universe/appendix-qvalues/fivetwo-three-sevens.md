@@ -1,8 +1,7 @@
 Three different sevens attach to the $5_2$ knot. They arise from unrelated
 constructions, they live on different layers, and identifying any two of them is
 unsupported. The corpus has already lost a claim to exactly that error, so the
-distinctions are worth recording explicitly rather than left for a reader to
-rediscover.
+distinctions are recorded explicitly here.
 
 ## The three
 
@@ -30,8 +29,7 @@ $\{1,2,4\}$ mod $7$.
 
 The invariant trace field is the cubic of discriminant $-23$
 ([`prop:fivetwo-trace-field`](#prop:fivetwo-trace-field)), which is a fourth
-object again. Two comparisons are worth making explicit because both are
-inviting and both fail.
+object again. Two comparisons are inviting, and both fail.
 
 $\mathbb{Q}(\sqrt{-7})$ **cannot** sit inside the trace field: $2 \nmid 3$, so
 the tower law forbids it. That is the exclusion the determinant-to-trace-field

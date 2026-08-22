@@ -1205,6 +1205,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.663Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proof block; all steps affirmative."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1224,6 +1239,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.702Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Preamble then argument; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1243,6 +1273,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.743Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1262,6 +1307,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.805Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1281,6 +1341,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.853Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on 'Hence D' = D_nabla', the claim."
       }
     ],
     "trap-meta-commentary": [
@@ -1300,6 +1375,23 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.893Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Fourth instance of the strategy-preamble construction in this batch, and the only one whose description does not match the proof: 'The strategy relies on a direct algebraic classification. We assume a general affine operator of the form alpha nabla + beta iota_xi nabla and apply the defining categorical constraints, demonstrating that they algebraically force the unique solution alpha = q^{-1} and beta = 1 - q^{-1}.' No constraint is applied and nothing is forced - the proof body argues only that a linear combination with the SAME coefficients is the same morphism.",
+        "notes": "Proposed (structural; not applied because the fix is a decision about what the proposition claims, not a wording change): delete the preamble, since it advertises a derivation the block does not contain. If the intended result IS the classification the preamble describes, then prop:categorical-dirac-operator-unique needs restating (which categorical constraints pin alpha and beta?) and the proof needs writing; the preamble should not stand in for it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1319,6 +1411,22 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.932Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The closing line is the QED step."
       }
     ],
     "trap-performed-warmth": [
@@ -1338,6 +1446,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:34.976Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1357,6 +1480,21 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:35.016Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'literally the same morphism' is emphatic but accurate - it is precisely why the statement is trivial (see below)."
       }
     ],
     "trap-nonspeakable": [
@@ -1376,6 +1514,22 @@
         "reviewed_at": "2026-08-15T10:30:59.906Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a65ee9a0ebc1",
+          "ts": "e9eb1e94d065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:35.056Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Short declaratives.",
+        "notes": "MATH FINDING to report (not edited): the proposition this proves is a tautology. prop:categorical-dirac-operator-unique says any morphism decomposing as alpha nabla + beta iota_xi nabla WITH alpha = q^{-1} and beta = 1 - q^{-1} equals D_nabla - i.e. the same expression equals itself, which the proof concedes ('is literally the same morphism'). A non-vacuous uniqueness statement would fix the constraints (the q = 1 and q -> infinity limits, or whatever categorical conditions are intended) and derive alpha, beta from them, which is what this proof's preamble claims to do."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1398,5 +1552,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:02:35.056Z"
 }

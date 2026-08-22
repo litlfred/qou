@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:32:44.547482+00:00",
-  "commitSha": "19966715b4d62679c3f003b15acc7256726e65fa",
+  "computedAt": "2026-08-21T16:12:04.458444+00:00",
+  "commitSha": "ae571e445d1aa4a3374baa1c0d3ce054a6ca3730",
   "assertions": [
     {
       "name": "Q_A_witness_matches_live_single_wrap",
-      "computed": 29.959070216054158,
+      "computed": 1.1065452700764615e-42,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1.0,
       "source": "single-wrap closed form recomputed at canonical q₀"
     },
@@ -17,16 +17,16 @@
       "computed": 0.3131196070973382,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1248.212283155282,
+      "tolerance": 602433.1526396247,
       "source": "σ_CAL << σ_theory (residual is framework's, not propagated)"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 4,
   "computation": "qbeta-habiro-residual",
   "scriptFile": "qbeta_habiro_residual_probe.py",
   "scriptHash": "12fe19290b4f",
-  "scriptCommitSha": "f1e71bc964b9b95d0eae41970f0a5ee5762ce1a4",
+  "scriptCommitSha": "ae571e445d1aa4a3374baa1c0d3ce054a6ca3730",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,12 +47,12 @@
   "data": {
     "q0_anchor": "m_p/m_e (proton; owner ruling 2026-08-21)",
     "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "qA_witness_vs_live_consistency_ppb": 29.959070216054158,
-    "residual_N0_ppb": 1677537.8381469732,
-    "residual_N1_ppb": 73796.88063318116,
-    "residual_N2_ppb_PRODUCTION": 1248.212283155282,
+    "qA_witness_vs_live_consistency_ppb": 1.1065452700764615e-42,
+    "residual_N0_ppb": 1677567.847474663,
+    "residual_N1_ppb": 675025.4055819606,
+    "residual_N2_ppb_PRODUCTION": 602433.1526396247,
     "dlnQ_beta_dlnq": "-2.596755082599951972907875671278499074230952510302354267955903135075887",
-    "sigma_theory_ppb": 1248.212283155282,
+    "sigma_theory_ppb": 602433.1526396247,
     "sigma_CAL_me_ppb": 0.31311218894667514,
     "sigma_CAL_q0_ppb": 0.002155337981167248,
     "sigma_CAL_total_ppb": 0.3131196070973382,
@@ -65,19 +65,19 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "0a3ce01d68d9cefc8f78e58d2c7f6b6705933b5dd87d4aa23f2ba6b7e9214302",
-        "size_bytes": 6235,
-        "commitSha": "8ba73cc915af09920d0345ede34ec1de63f65bbe",
-        "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-        "computedAt": "2026-08-21T15:01:47.273471+00:00"
+        "sha256": "0f45c31755832805ee99e5c44672819f308f1516eff63624826b04b6f3cd3265",
+        "size_bytes": 6236,
+        "commitSha": "ae93693b685de1623473709fec0e186c6d10f3e0",
+        "scriptCommitSha": "a25bfdd01be3ba8a088c8ed66c322f8d76c5b35c",
+        "computedAt": "2026-08-21T15:30:35.711869+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "895ce0f3477a26332ae4acb30c2f4ca908c38982777051290c5ee43dd5e8889c",
-        "size_bytes": 5560,
-        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
-        "scriptCommitSha": "890ee81e8fb0ad89fc0861c56a54487b5eb82353",
-        "computedAt": "2026-06-22T14:32:18.810430+00:00"
+        "sha256": "9aa21529f58d110b04f12de6a9b6941b3f8fdd7e48d9fc106c6c631b36fb18f0",
+        "size_bytes": 5678,
+        "commitSha": "ae571e445d1aa4a3374baa1c0d3ce054a6ca3730",
+        "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+        "computedAt": "2026-08-21T16:11:36.484968+00:00"
       }
     ]
   }

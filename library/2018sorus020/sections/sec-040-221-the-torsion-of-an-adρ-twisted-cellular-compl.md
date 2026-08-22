@@ -1,13 +1,13 @@
 ---
 doc_id: 2018sorus020
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Reidemeister torsion on character varieties"
 section_id: sec-040-221-the-torsion-of-an-adρ-twisted-cellular-compl
 section_title: "The torsion of an Ad◦ρ-twisted cellular complex"
 section_number: 2.2.1
 pages: 50-51
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
+doc_brief: "Reidemeister torsion on character varieties — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ"
 ---
 Here we consider the case of the torsion of the cellular complexC∗(M, Ad◦ρ) with
 coeﬃcients in sl2(k( ¯X)) twisted by a representationρ : π1(M)→ SL2(k( ¯X)). We

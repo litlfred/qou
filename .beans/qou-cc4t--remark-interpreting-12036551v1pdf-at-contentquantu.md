@@ -3,8 +3,9 @@
 title: Remark interpreting 1203.6551v1.pdf at content/quantum-observable-universe/information-theory/qua…
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:07Z
-updated_at: 2026-08-08T16:13:07Z
+updated_at: 2026-08-21T17:04:51Z
 ---
 
 The exponential growth of N_L(v) is a scope caveat on volume-as-identifier that the folio does not currently state anywhere; it belongs as a remark, not folded into an existing statement.
@@ -17,3 +18,10 @@ Source: `library/arxiv-1203.6551v1/1203.6551v1.pdf` — no `references.ts` entry
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1203.6551v1/  ->  [hodgson2012]
+  On the number of hyperbolic 3-manifolds of a given volume
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [hodgson2012] as the citation key when you do it.

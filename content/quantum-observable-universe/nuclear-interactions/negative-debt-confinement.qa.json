@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.127Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. VERIFIED against computations/confinement-operator-selection.witness.json: the proton NF vector gives |NF_-| = 0.14286545 (block: 0.2555-0.1127 = 0.1428), cancellation ratio 11.12% (block: 11.1%), net 0.99912513, and excess/net = 11.26% (block: 11.3%). Every number in this block reproduces.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.167Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. VERIFIED against computations/confinement-operator-selection.witness.json: the proton NF vector gives |NF_-| = 0.14286545 (block: 0.2555-0.1127 = 0.1428), cancellation ratio 11.12% (block: 11.1%), net 0.99912513, and excess/net = 11.26% (block: 11.3%). Every number in this block reproduces.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 167 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.208Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. VERIFIED against computations/confinement-operator-selection.witness.json: the proton NF vector gives |NF_-| = 0.14286545 (block: 0.2555-0.1127 = 0.1428), cancellation ratio 11.12% (block: 11.1%), net 0.99912513, and excess/net = 11.26% (block: 11.3%). Every number in this block reproduces.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 167 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.248Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'It flips the $L_+$ coefficient and amplifies the $\\gamma$ debt' (a pair, not a triple).",
+        "notes": "No compulsive triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.290Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. VERIFIED against computations/confinement-operator-selection.witness.json: the proton NF vector gives |NF_-| = 0.14286545 (block: 0.2555-0.1127 = 0.1428), cancellation ratio 11.12% (block: 11.1%), net 0.99912513, and excess/net = 11.26% (block: 11.3%). Every number in this block reproduces.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.332Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. VERIFIED against computations/confinement-operator-selection.witness.json: the proton NF vector gives |NF_-| = 0.14286545 (block: 0.2555-0.1127 = 0.1428), cancellation ratio 11.12% (block: 11.1%), net 0.99912513, and excess/net = 11.26% (block: 11.3%). Every number in this block reproduces.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.373Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Closing sentence 'The energy cost of holding three quarks in a color-singlet braid is larger for the neutron because...'",
+        "notes": "Adds a causal claim rather than restating; flagged for content under trap-superlative instead."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.414Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. VERIFIED against computations/confinement-operator-selection.witness.json: the proton NF vector gives |NF_-| = 0.14286545 (block: 0.2555-0.1127 = 0.1428), cancellation ratio 11.12% (block: 11.1%), net 0.99912513, and excess/net = 11.26% (block: 11.3%). Every number in this block reproduces.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.461Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Title (.ts): 'Negative coefficient debt, confinement, and the nine-strand direction'; and the closing claim 'the $d$--$d$ interaction is more confining than $u$--$u$'.",
+        "notes": "Two flags on an otherwise EXEMPLARY block -- every number in it reproduces from computations/confinement-operator-selection.witness.json (|NF_-|(p)=0.14286545 vs the stated 0.2555-0.1127=0.1428; cancellation 11.12% vs '11.1%'; net 0.99912513; excess/net 11.26% vs '11.3%'). (1) The title and the 'nine-strand' tag promise a nine-strand section the .md does not contain -- content appears to have been removed without updating the title. (2) 'the d-d interaction is more confining than u-u' is a physics claim that contradicts the flavour-independence of the strong interaction and is supported by nothing in the block; the algebra shows only that the d-d crossing carries a different Hecke coefficient, which is a statement about the typed-crossing convention, not about a force."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.305Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fa1e5174dc4f",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.509Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. VERIFIED against computations/confinement-operator-selection.witness.json: the proton NF vector gives |NF_-| = 0.14286545 (block: 0.2555-0.1127 = 0.1428), cancellation ratio 11.12% (block: 11.1%), net 0.99912513, and excess/net = 11.26% (block: 11.3%). Every number in this block reproduces.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:56.509Z"
 }

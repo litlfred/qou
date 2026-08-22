@@ -2121,6 +2121,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.480Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2140,6 +2156,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.522Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-em-dash": [
@@ -2159,6 +2191,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.575Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-triples": [
@@ -2178,6 +2226,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.632Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-closing-aphorism": [
@@ -2197,6 +2261,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.689Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-meta-commentary": [
@@ -2216,6 +2296,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.731Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-thesis-restatement": [
@@ -2235,6 +2331,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.772Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-performed-warmth": [
@@ -2254,6 +2366,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.813Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-superlative": [
@@ -2273,6 +2401,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.856Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "trap-nonspeakable": [
@@ -2292,6 +2436,22 @@
         "reviewed_at": "2026-08-15T10:31:01.211Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "08d8664f3e8d",
+          "ts": "2e553aa598e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.896Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: framing paragraph, proposition with three displays, and an archimedean-specialisation note. Judged all ten categories; the prose is plain declarative.",
+        "notes": "THREE DEFECTS reported, not fixed. (1) BUILD-FATAL LaTeX: the third display contains \\mathrm*{argmin}, which is not a valid control sequence -- \\mathrm takes no star. LaTeX errors and KaTeX rejects it. (The corpus render-QA rule also forbids \\operatorname, so the fix is \\mathrm{argmin} or a \\DeclareMathOperator in the preamble, not \\operatorname*.) (2) SYMBOL COLLISION inside one proposition: 'Let (C, A, tau) be the Descartes universe' binds A to the algebra object, and the next sentence binds A to the mass number in 'At a fixed mass number A = Z + N'; A then carries the mass-number meaning in every display. (3) The statement introduces Z and N and then uses p throughout, and the notation register reserves p for a brane point with the proton count written Z -- the sibling intro block intro-integer-stability-diophantine uses (Z, N) correctly. Mathematics verified: E(p,A) is correctly assembled (alpha(A) = a_C/A^(1/3) + a_A/A, gamma = a_A); p* = gamma/(2 alpha) = a_A A/(2(a_A + a_C A^(2/3))) is the correct minimiser and reproduces Z = 92 at A = 238 and Z = 82 at A = 208; and the integer minimiser of a strictly convex function does lie at floor or ceil of the continuous one."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2315,5 +2475,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:41:30.896Z"
 }

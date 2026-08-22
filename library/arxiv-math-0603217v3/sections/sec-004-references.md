@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0603217v3
-doc_title: "K; exp(2π √−1) would determine the simplicial volume of the knot complement S3 \ K. In [15]"
+doc_title: "A version of the volume conjecture"
 section_id: sec-004-references
 section_title: "References"
 section_number: null
 pages: 5-5
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
-doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
+doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
 ---
 [1] D. Cooper, M. Culler, H. Gillet, D. D. Long, and P. B. Shale n, Plane curves associated to
 character varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84.

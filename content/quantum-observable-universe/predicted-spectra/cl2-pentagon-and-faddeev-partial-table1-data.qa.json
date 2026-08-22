@@ -890,6 +890,186 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:34.937Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:34.989Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.029Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.074Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.119Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.165Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.206Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.248Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.288Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b9d80b785f15",
+          "ts": "5ce890584869"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.329Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 7-row theorem/closes table. Judged all ten; the descriptive cells are bookkeeping about which Lean lemma closes which numbered gap.",
+        "notes": "Two unspaced-gloss em-dashes appear inside table cells ('(2) at all-zero arguments - pentagon holds by definition'; '(3) at x = 0 - both sides identically zero'); in a two-column status table these are column glosses, not sentence-structure substitutes, so trap-em-dash passes on density and function."
+      }
     ]
   },
   "label": "tbl:cl2-pentagon-and-faddeev-partial-table1-data",
@@ -897,5 +1077,5 @@
     "md": "b9d80b785f15",
     "ts": "5ce890584869"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:35.329Z"
 }

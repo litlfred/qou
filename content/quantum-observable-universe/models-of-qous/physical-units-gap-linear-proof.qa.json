@@ -1178,6 +1178,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.389Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1197,6 +1212,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.428Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-em-dash": [
@@ -1216,6 +1246,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 88 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.469Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-triples": [
@@ -1235,6 +1280,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 88 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.525Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1254,6 +1314,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.562Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-meta-commentary": [
@@ -1273,6 +1348,23 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.752Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "severity": "major",
+        "evidence": "The block opened by narrating the significance of its own result before proving it: 'THE POINT OF THE IDENTITY IS THAT the archimedean normalisation 1/hbar_q^2 ... buys back exactly two of the three vanishing orders of Delta_q, no more - separating two rates that are easily conflated ...'. The 'the point of X is that' frame announces the emphasis instead of placing it, and the same sentence carried a load-bearing em-dash. The content underneath is correct and worth keeping.",
+        "notes": "FIXED: 'The point of the identity is that the archimedean normalisation $1/\\hbar_q^2$ in the mass formula buys back exactly two of the three vanishing orders of $\\Delta_q$, no more - separating two rates that are easily conflated and leaving a physical-units mass gap at first order in $h$.' -> 'The archimedean normalisation $1/\\hbar_q^2$ in the mass formula buys back exactly two of the three vanishing orders of $\\Delta_q$, and no more. It separates two rates that are easily conflated, and leaves a physical-units mass gap at first order in $h$.' Same content, meta frame and em-dash removed, math untouched; delimiters re-checked (even $$ count, even single-$ count, braces balanced)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1292,6 +1384,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.598Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-performed-warmth": [
@@ -1311,6 +1418,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.634Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-superlative": [
@@ -1330,6 +1452,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.673Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "trap-nonspeakable": [
@@ -1349,6 +1486,21 @@
         "reviewed_at": "2026-08-15T10:31:01.100Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.713Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~0.8kB). Verified the computation line by line; it is exact. Nine categories clean after one inline fix; trap-meta-commentary recorded separately. Two defects in the cited evidence are reported as anomalies (the witness carries zero assertions and is flagged exploratory)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1371,5 +1523,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:26:12.752Z"
 }

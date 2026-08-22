@@ -6,4 +6,4 @@ $$
   \frac{K - 3}{2}.
 $$
 
-The Tate-rational imaginary parts contribute zero dimension. The real-part orbit sum absorbs one dimension into the $\zeta(3)$-line. The remaining real parts supply exactly $(K-3)/2$ dimensions. The framework structurally isolates the genuinely new elements without relying on per-prime numerical guesses, securing the depth-3 cyclotomic picture.
+The Tate-rational imaginary parts contribute zero dimension. The real-part orbit sum absorbs one dimension into the $\zeta(3)$-line. The remaining real parts supply exactly $(K-3)/2$ dimensions. This isolation of the genuinely new elements does not rely on per-prime numerical guesses.

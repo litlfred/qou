@@ -1402,6 +1402,23 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:25.732Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "Opening sentence asserted by denial: \"is not an auxiliary construction. It is the archimedean descent of the categorical trace\". The positive clause carries the whole claim; the denial adds only emphasis.",
+        "notes": "FIXED: \"... is not an auxiliary construction. It is the archimedean descent of ...\" -> \"... is the archimedean descent of ...\". Content and the :refterm[descent] link preserved."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1421,6 +1438,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:25.773Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for setup-then-reframe constructions in which a second clause carries the claim; the block states its claims directly.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1440,6 +1473,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 121 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:25.815Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): spaced em-dash count 0; uses are ranges or true appositives, not substitutes for sentence structure.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1459,6 +1508,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 121 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:25.857Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): every enumeration checked for reflex-of-three padding; those present enumerate distinct named objects tied to the block's content.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1478,6 +1543,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:25.898Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): final sentence checked: it carries content (a cross-reference, a technical statement, or a scope note) rather than a quotable flourish placed for cadence.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1497,6 +1578,23 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:25.940Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "Final paragraph narrated its own emphasis: \"The uniqueness ([Proposition (ii)]) is the key point. Schur orthogonality leaves no freedom in the weighting.\" The second sentence already places the emphasis.",
+        "notes": "FIXED: both sentences -> \"Schur orthogonality leaves no freedom in the weighting ([Proposition (ii)](#prop:rj-canonical-inner-product)).\" Cross-reference retained."
       }
     ],
     "trap-thesis-restatement": [
@@ -1516,6 +1614,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:25.982Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): block-final sentence compared against the body; it adds content rather than restating what the text already established.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1535,6 +1649,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:26.022Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): institutional register throughout; no personal or affective language.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1554,6 +1684,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:26.062Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): maximum-strength claims checked against the block's own tables, witness and arithmetic where present; those present are quantified or qualified.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1573,6 +1719,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f33794cb268f",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:26.104Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): read aloud for noun-chain stalls; sentence length and verb placement are conventional for the register.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1595,5 +1757,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:01:26.104Z"
 }

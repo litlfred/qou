@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:19:06.788162+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-21T14:57:29.247545+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "max_dim_q_closes_rho_K_for_any_atom",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 3,
   "computation": "path4-rho-K-at-h3A",
   "scriptFile": "path4_rho_K_at_h3A.py",
   "scriptHash": "22614244913d",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,7 +28,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Path 4 hypothesis test: ρ_K = dim_q(λ*) at H_{3A}",
   "data": {
@@ -102,6 +103,6 @@
     ],
     "paper_reference": "atomic-mass-gb-nf.md line 131-142 (binding operator K in H_{3A})"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

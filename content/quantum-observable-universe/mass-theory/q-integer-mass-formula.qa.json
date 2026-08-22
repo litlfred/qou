@@ -1754,6 +1754,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not Pauli exclusion.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.355Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The pairing term reflects the Chebyshev sign alternation of iterated Hecke generators, not Pauli exclusion.' The denied alternative is the standard textbook mechanism and naming it is the claim's content, so this is substantive physical contrast, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1773,6 +1788,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.410Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1792,6 +1822,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 118 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.468Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1811,6 +1856,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 118 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.526Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1830,6 +1890,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.583Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1849,6 +1924,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.637Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1868,6 +1958,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.707Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1887,6 +1992,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.760Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1906,6 +2026,23 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.816Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two unqualified absolutes, both contradicted by the block's own list. (1) 'emerge strictly as products of quantum integers [n]_q' - the third bullet is (q-q^-1)[6]_q, and q-q^-1 is NOT a quantum integer ([2]_q = q+q^-1, and q-q^-1 is the normalising denominator, not any [n]_q). (2) 'We predict binding energies without empirical inputs.' - every one of the five coefficients is multiplied by m_e, which is CAL-1, and q0 is itself pinned on an experimental mass ratio; the coefficients are therefore m_e-scaled, not input-free.",
+        "notes": "Proposed (structural, meaning at stake - not applied): (1) 'emerge as products of quantum integers [n]_q and the normaliser (q - q^{-1})'. (2) replace the final sentence with 'The coefficients then carry no free parameter beyond the three calibrations (m_e sets the MeV scale; q0 is pinned by CAL-2).'"
       }
     ],
     "trap-nonspeakable": [
@@ -1925,6 +2062,21 @@
         "reviewed_at": "2026-08-15T10:31:00.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f712cdfc8082",
+          "ts": "650a541ff25a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:51.867Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture. RECOMPUTED all five coefficients with mpmath at the proton pin (q0=1.1099785827513808, m_e=0.51099895 MeV, [n]_q=(q^n-q^-n)/(q-q^-1)): Volume 2[2][7]m_e=15.6711 (claimed 15.67), Surface 2[4]^2 m_e=17.2610 (17.26), Coulomb (q-q^-1)[6]m_e=0.68244 (0.68), Asymmetry 3[2][7]m_e=23.5066 (23.51), Pairing [3][7]m_e=11.8599 (11.86). All five reproduce, and identically at the muon pin. Internal ratio asymmetry/volume=3/2 is exact by construction. Two substantive defects recorded separately (undelivered 'two Hecke-derived extensions'; the Coulomb term is not a product of quantum integers). No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1948,5 +2100,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:13:51.867Z"
 }

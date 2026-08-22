@@ -1158,6 +1158,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.872Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1177,6 +1192,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.922Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1196,6 +1226,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 107 words)"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.976Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1215,6 +1260,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 107 words)"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:36.084Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1234,6 +1294,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:36.133Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1253,6 +1328,22 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:36.197Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'... derives the closed form by `Finset.mul_sum` and `Finset.sum_congr` - fully verified modulo the class instance, which is exactly input (B).'",
+        "notes": "Naming the tactic and the residual assumption is required provenance under the repo's conditional-proof discipline, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1272,6 +1363,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:36.247Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1291,6 +1397,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:36.305Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1310,6 +1431,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:36.353Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1329,6 +1465,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:36.532Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, factor m_e out of the finite body-order sum); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1351,5 +1502,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:39:36.532Z"
 }

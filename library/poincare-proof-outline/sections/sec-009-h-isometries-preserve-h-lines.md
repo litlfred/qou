@@ -1,13 +1,13 @@
 ---
 doc_id: poincare-proof-outline
-doc_title: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry"
+doc_title: "Formalization of the Poincare disc model of hyperbolic geometry"
 section_id: sec-009-h-isometries-preserve-h-lines
 section_title: "H-isometries preserve h-lines"
 section_number: null
 pages: 14-16
 source_pdf: POINCARE-proof-outline.pdf
 source_sha256: 8ac25ddb38d360b4
-doc_brief: "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
+doc_brief: "Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant."
 ---
 H-isometries are deﬁned as homographies (actions of Möbius transformations) and antihomographies (compo-
 sitions of actions of Möbius transformations with conjugation) that ﬁx the unit disc (map it onto itself). They

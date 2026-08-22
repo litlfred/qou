@@ -1539,6 +1539,21 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.460Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. The opening 'Mass is not an intrinsic property of torus knots. It is created strictly by topological linking.' is a substantive mathematical contrast — bare T_{m,n} is non-hyperbolic with zero volume (correct), so the denial carries the block's actual content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1558,6 +1573,21 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.514Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1577,6 +1607,21 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 178 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.580Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1596,6 +1641,22 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 178 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.631Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'the substrate parameter q_0, the seven basic generators, and the two geometric linking operations' is a genuine enumeration, but see trap-superlative for what it claims.",
+        "notes": "Cosmetic: trailing whitespace after 'determines the hadronic mass. '."
       }
     ],
     "trap-closing-aphorism": [
@@ -1615,6 +1676,21 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.698Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the input count, which is a claim rather than a flourish (and is challenged under trap-superlative)."
       }
     ],
     "trap-meta-commentary": [
@@ -1634,6 +1710,21 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.757Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1653,6 +1744,21 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.807Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1672,6 +1778,21 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.867Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1691,6 +1812,23 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.929Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two unqualified maximum-strength claims. (a) 'The Higgs mechanism UNIVERSALLY couples this figure-eight volume to ALL particles with positive crossings' doubles the quantifier and asserts a universal coupling the block does not derive. (b) 'created STRICTLY by topological linking'.",
+        "notes": "Proposed: 'The Higgs mechanism couples this figure-eight volume to particles with positive crossings' and 'created by topological linking'. See also the calibration note under trap-nonspeakable, which is the more consequential problem in the same sentence family."
       }
     ],
     "trap-nonspeakable": [
@@ -1710,6 +1848,22 @@
         "reviewed_at": "2026-08-15T10:31:00.349Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:30.989Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "CALIBRATION-COUNT CONFLICT, reported out of criterion. The closing sentence reads 'The system derives the full chart using exactly three inputs: the substrate parameter q_0, the seven basic generators, and the two geometric linking operations.' The framework's canonical three inputs are CAL-1 = m_e, CAL-2 = D_beta (proxy m_mu/m_e), CAL-3 = D_pi; q_0 is not itself a calibration but is what CAL-2 pins. Asserting a different 'exactly three' — one real number plus seven objects plus two operations — collides with the three-calibration discipline, and in particular the MeV scale (CAL-1 = m_e) is absent from the list while 'the entire particle mass spectrum' is claimed, so the chart cannot be dimensionful on the stated inputs alone. Suggest either restricting the claim to dimensionless ratios or restating the count in CAL terms."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1733,5 +1887,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:42:30.989Z"
 }

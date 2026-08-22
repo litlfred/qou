@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.03697v5
-doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND"
+doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY"
 section_id: sec-004-22-donaldson-thomas-invariants
 section_title: "Donaldson-Thomas invariants"
 section_number: 2.2
 pages: 4-4
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 ture (Γ , Z, Ω) are deﬁned by the expression
 DT(γ) =

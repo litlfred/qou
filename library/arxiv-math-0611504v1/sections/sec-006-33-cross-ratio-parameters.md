@@ -7,7 +7,7 @@ section_number: 3.3
 pages: 16-20
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+doc_brief: "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks"
 duplicate_of: "agt-v7-n2-p13-s"
 ---
 parameters for R(g,r ) which are related to the shear-bend coordinates for pleated hyp erbolic surfaces.

@@ -1,13 +1,13 @@
 ---
 doc_id: ihpmay2025
-doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY"
+doc_title: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-006-12-a-characterization-of-convex-cocompactness-in
 section_title: "A characterization of convex cocompactness in terms of quasi-isometries"
 section_number: 1.2
 pages: 10-13
 source_pdf: IHPMay2025.pdf
 source_sha256: 0440a39721552a9e
-doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS RICHARD D. CANARY — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
+doc_brief: "IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS — These notes are designed to accompany my mini-course on hyperbolic 3-manifolds at IHP in May 2025."
 ---
 It will be useful to give another characterization of convex cocompactness. This definition
 is well-adapted to show that small deformations of convex cocompact groups remain convex

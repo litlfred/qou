@@ -2370,6 +2370,21 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.498Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Proposition: two numbered probability-distribution conditions plus one closing sentence. No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2389,6 +2404,21 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.555Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -2408,6 +2438,21 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.602Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -2427,6 +2472,21 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.667Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two numbered conditions, not a triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -2446,6 +2506,23 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.735Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final line 'The classical dimension mapping guarantees standard conservation laws inside the algebra' is a quotable-sounding closer whose referent is undefined: neither 'the classical dimension mapping' nor 'standard conservation laws' is a term used anywhere else in the block, and non-negativity plus normalisation of (dim V_lambda)^2/n! is not a conservation law.",
+        "notes": "PROPOSED (not applied - naming the intended content changes the claim): either delete the sentence, or replace with the concrete statement it gestures at, e.g. 'Because dim V_lambda is q-independent at generic q, these weights are the ordinary symmetric-group Plancherel measure.'"
       }
     ],
     "trap-meta-commentary": [
@@ -2465,6 +2542,21 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.803Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2484,6 +2576,22 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.858Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The closing sentence is vague rather than a restatement; recorded under trap-closing-aphorism."
       }
     ],
     "trap-performed-warmth": [
@@ -2503,6 +2611,21 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.908Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2522,6 +2645,22 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:53.959Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'fulfill strict probability-distribution conditions' and 'exactly in Q' are precise: the normalisation is an exact rational identity, verified on the sibling table (n=3: 1/6+4/6+1/6=1; n=4: (1+9+4+9+1)/24=1)."
       }
     ],
     "trap-nonspeakable": [
@@ -2541,6 +2680,21 @@
         "reviewed_at": "2026-08-15T10:31:00.683Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "06d582badb03",
+          "ts": "c186ff466f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:54.031Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud cleanly apart from the closing sentence noted above."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2564,5 +2718,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:03:54.031Z"
 }

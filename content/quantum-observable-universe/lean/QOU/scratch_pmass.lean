@@ -7,7 +7,7 @@ opaque F_Bor (q : ℝ) : ℝ
 
 def m_e_codata : ℝ := 0.51099895069
 def m_mu_codata : ℝ := 105.6583755
-def m_p_codata : ℝ := 938.27208816
+def m_p_codata : ℝ := 938.27208943
 
 def m_p_predicted (q_0 : ℝ) : ℝ :=
   2 * m_mu_codata * F_Bor q_0 - 12 * m_e_codata

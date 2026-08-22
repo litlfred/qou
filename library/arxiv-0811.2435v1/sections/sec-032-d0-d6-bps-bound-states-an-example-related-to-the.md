@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.2435v1
-doc_title: "Stability structures, motivic"
+doc_title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations"
 section_id: sec-032-d0-d6-bps-bound-states-an-example-related-to-the
 section_title: "D0-D6 BPS bound states: an example related to the MacMahon function"
 section_number: null
 pages: 105-109
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
 ---
 the MacMahon function
 LetX be a compact 3d Calabi-Yau manifold over k, such that H 1(X,OX) =

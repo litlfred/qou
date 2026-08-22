@@ -1,13 +1,13 @@
 ---
 doc_id: 1172-5
-doc_title: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mat"
+doc_title: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries"
 section_id: sec-003-5-volume-conjecturefor-closedthree-manifolds
 section_title: "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS"
 section_number: 5
 pages: 8-9
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
-doc_brief: "OPTIMISTIC CALCULATIONS ABOUT THE $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{H}\mathrm{I}\mat"
+doc_brief: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries — I calculate"
 ---
 Now I propose a very ambiguous conjecture.
 Conjecture 5.1 (Volume conjecture for closed three-manifolds). For any closed

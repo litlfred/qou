@@ -1190,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.324Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1225,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.368Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1260,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 32 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.413Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1295,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 32 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.458Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1330,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.505Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1365,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.548Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.591Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.634Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.677Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:31:00.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fe780f73fc9f",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:07.718Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence section intro (prose block, sec:instanton-intro). Roadmap sentence 'We define ... and read off its consequences' is section-signposting, not meta-commentary about emphasis (category 6 targets narrating one's own emphasis). No dash, no triple, no closer, no absolute claim.",
+        "notes": "No trap. Register is plain declarative throughout."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1543,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:31:07.718Z"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2604.16077v1
-doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
+doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
 section_id: sec-063-452-case-b-integral-in-from-the-formula-fz-lz-2π
 section_title: "Case (b), integral In,−. From the formula f−(z) = L−(z; −2πi, 2iπ) = Li 2(ez) +z2 −"
 section_number: 4.5.2
 pages: 45-47
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
-doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of"
 ---
 2iπz we compute
 ℑ(f−(z)) = ℑ(Li2(ez)) + 2ℜ(z)ℑ(z) − 2πℜ(z),

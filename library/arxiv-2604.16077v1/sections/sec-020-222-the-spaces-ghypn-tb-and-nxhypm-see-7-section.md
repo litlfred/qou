@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2604.16077v1
-doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
+doc_title: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT"
 section_id: sec-020-222-the-spaces-ghypn-tb-and-nxhypm-see-7-section
 section_title: "The spaces Ghyp,N (T,b ) and NXhyp(M ). (See [7, Section 4].) Let T be a geometric"
 section_number: 2.2.2
 pages: 15-16
 source_pdf: 2604.16077v1.pdf
 source_sha256: 2f1140b9d5fee38a
-doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INV ARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI)"
+doc_brief: "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT — We compute the real part of the semi-classical limit of the se quence of quantum hyperbolic invariants (QHI) of"
 ---
 triangulation of M . We saw in Section 2.1.2 that whyp is a smooth point of G(T,b ). Denote
 its irreducible component by Ghyp(T,b ). In this section we discuss some of its remarkable

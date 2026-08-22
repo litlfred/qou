@@ -1365,6 +1365,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.215Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proof block; all steps affirmative."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1384,6 +1399,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.251Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Rigid structure -> composite determined -> identification with tr(Phi); linear."
       }
     ],
     "trap-em-dash": [
@@ -1403,6 +1433,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.287Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1422,6 +1467,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.327Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1441,6 +1501,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.374Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on 'hence S_Phi = tr(Phi) is unique', the claim being proved."
       }
     ],
     "trap-meta-commentary": [
@@ -1460,6 +1535,23 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.411Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The block opened with a two-sentence strategy preamble in front of a three-sentence proof; removed.",
+        "notes": "fix applied: deleted the opening paragraph 'The proof strategy relies on the universal property of the categorical trace. By demonstrating that any morphism factoring as ev_A o (id tensor Phi) o coev_A matches the rigid trace axioms, uniqueness follows from the uniqueness of the trace operator in a rigid monoidal category.' -> (nothing; block now opens 'The rigid structure (ev_A, coev_A) is part of the QOU datum...'). It restated the proof and added a second, differently-worded appeal to trace uniqueness. Same construction as prf:categorical-action-exists, fixed the same way. Delimiters rechecked: 0 dollar-dollar, balanced."
       }
     ],
     "trap-thesis-restatement": [
@@ -1479,6 +1571,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.447Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Post-fix the argument is stated once."
       }
     ],
     "trap-performed-warmth": [
@@ -1498,6 +1605,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.486Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1517,6 +1639,21 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.525Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No intensifiers remain post-fix."
       }
     ],
     "trap-nonspeakable": [
@@ -1536,6 +1673,22 @@
         "reviewed_at": "2026-08-15T10:30:59.976Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8f8b192ce9c1",
+          "ts": "2cf8b564f80b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.586Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Short declaratives.",
+        "notes": "PROOF-QUALITY note to report (not edited): what survives is definitional unfolding rather than a uniqueness argument - 'This composite is, by definition, the categorical trace tr(Phi)' is exactly the content of the proposition's second sentence. If the intended claim is that any morphism 1 -> 1 admitting such a factorisation equals tr(Phi), the substantive step is that the factorisation is unique given Phi, which is asserted ('unique up to canonical isomorphism') but not derived."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1558,5 +1711,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:59:20.586Z"
 }

@@ -1221,6 +1221,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.803Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Four-sentence proof block read in full; no assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1240,6 +1255,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.854Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1259,6 +1289,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.921Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1278,6 +1323,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:22.057Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1297,6 +1357,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:22.101Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Final line is a claim about what the identity fixes; adjudicated under thesis-restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -1316,6 +1391,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:22.145Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1335,6 +1425,23 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:22.245Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "major",
+        "evidence": "Proof block whose final sentence, 'This formal-$q$ structural identity fixes the $SU_q(1,1)$ radial coefficient algebra', re-states the proposition's own closing sentence ('This fibre-level identity fixes the radial coefficient algebra without fixing the binding scale') almost verbatim - and drops the 'without fixing the binding scale' guard while doing so, so the restatement is also slightly wider than the statement it proves.",
+        "notes": "Proposed (not applied - the dropped scope clause makes this meaning-bearing): replace the final sentence with 'This completes the proof.', or restore the scope guard verbatim if a closer is wanted."
       }
     ],
     "trap-performed-warmth": [
@@ -1354,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:22.289Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1373,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:22.333Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "'purely algebraic' only; no inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1392,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0a9110150315",
+          "ts": "ff7e8ce91b89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:22.384Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Short sentences; no stalling noun chains."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1415,5 +1567,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:38:22.384Z"
 }

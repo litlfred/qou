@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-9605013v1
-doc_title: "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROT A TOR MODEL"
+doc_title: "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model"
 section_id: sec-004-5-conclusion
 section_title: "Conclusion"
 section_number: 5
 pages: 9-9
 source_pdf: 9605013v1.pdf
 source_sha256: cdeab7717dcb9567
-doc_brief: "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROTATOR MODEL — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei."
+doc_brief: "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective"
 ---
 In conclusion, we have demonstrated the relevance of the SU q(2) approach be-
 yond the ground state bands, namely in the excited bands of ev en-even rare earth

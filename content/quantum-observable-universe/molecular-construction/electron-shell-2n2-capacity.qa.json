@@ -1654,6 +1654,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.218Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1673,6 +1689,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.257Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1692,6 +1724,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.297Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1711,6 +1759,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.336Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1730,6 +1794,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.378Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: final prose sentence is: \"This is the open shell-capacity derivation: the photon-electron transfer matrix is $2\\times2$, so its $n$-th power fixes the shell energies (the Ch...\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1749,6 +1829,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.420Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1768,6 +1864,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.463Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: final sentence checked against the body: \"This is the open shell-capacity derivation: the photon-electron transfer matrix is $2\\times2$, so its $n$-th power fixes the shell energies (the Ch...\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1787,6 +1899,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.504Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1806,6 +1934,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.544Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "A conjecture block that says so; the gap ('supplies only a 2-fold degeneracy, not the count') is stated as the open point, not oversold.",
+        "notes": "Block checks out. Verified sum_{ell=0}^{n-1} (2 ell + 1) = n^2 so 2n^2 is exact, and the capacity table 2/8/18 against 1s(2), 2s(2)+2p(6), 3s(2)+3p(6)+3d(10)."
       }
     ],
     "trap-nonspeakable": [
@@ -1825,6 +1969,22 @@
         "reviewed_at": "2026-08-15T10:31:01.641Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7ef6d430c6c8",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.586Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the conjecture block (2n^2 = 2 sum_{ell=0}^{n-1}(2ell+1) verified; capacity table 2/8/18 verified against subshell counts). Judged on the whole text: read aloud end to end (2 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1847,5 +2007,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:19.586Z"
 }

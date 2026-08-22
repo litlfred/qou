@@ -136,6 +136,13 @@ checkable; until then it is stated as inference.
 
 - **SOURCE** (`.py` / `.lean` / `.ts`) — code that computes a wrong number.
   **447 sites.** These are the actionable set.
+  > **🛑 CORRECTED 2026-08-21 — this bullet is wrong for 87 % of its own
+  > count, and the error is mine.** "Code that computes a wrong number"
+  > describes only the **executable** sites. Classified, the 448 sites split
+  > **61 code / 381 prose / 6 adjudicated**: the large majority sit inside a
+  > comment or a docstring and compute nothing. **The actionable set is ~61,
+  > not 447.** See the second addendum below — the over-count is not merely
+  > cosmetic, it points the drain at the wrong work.
 - **RECORD** (`*.witness.json`, audit outputs, `.md` tables) — **1515 sites**,
   history. A
   committed witness records what a producer *actually computed*. Rewriting it
@@ -149,10 +156,11 @@ them. Counting those as defects would be double-counting the detector.
 ## Not done here
 
 The sweep itself. This PR delivers the **detector and the measurement**, not
-the drain. Correcting 447 source sites means re-running their producers and
+the drain. Correcting the source sites means re-running their producers and
 regenerating their witnesses, which is a large, announced tranche and needs
 its own scope — and per the standing directive, a witness is never edited to
-make a gate green.
+make a gate green. (The figure originally given here was **447**; the
+corrected actionable count is **~61**, per the addendum below.)
 
 ---
 
@@ -242,3 +250,68 @@ constants as disagreeing by ~1e-17 while their printed digits were identical.
 Now compared with a 1e-15 relative tolerance — far below any real edition
 difference (~1e-9), far above construction noise (~1e-17), so detection power
 is unchanged. Back to 8 checked, 0 disagree.
+
+---
+
+## Addendum 2 (2026-08-21) — the detector's headline was wrong for 87 % of its count
+
+Tranche **b** of the drain began by re-measuring, and the first defect it
+found was in the detector this document delivers.
+
+### The measurement
+
+Every `.py` / `.lean` / `.ts` near-miss was reported as a *"SOURCE site
+(compute a wrong number)"*. Classified by whether the literal is actually
+executable:
+
+| class | sites | can it compute anything? |
+|---|---:|---|
+| **CODE** | **61** | yes — the actionable queue |
+| **PROSE** | 381 | no — inside a comment or a string |
+| **ADJUDICATED** | 6 | executable, but marked reviewed (`noqa: P31`) |
+| *(RECORD, unchanged)* | 1501 | no — witness / audit output |
+
+So the actionable queue is **~61, not 447** — the original figure over-stated
+it by about **7×**.
+
+### Why the direction matters more than the size
+
+Tranche **a** moved this count **447 → 448**. That is not a regression. A
+drain that replaces a stale literal with a registry read and **records the
+superseded value beside it** — which is what good provenance looks like —
+lands in PROSE. Counting prose as defects therefore makes the number *rise*
+when the corpus gets better, and rewards deleting the provenance comment to
+bring it back down. Only CODE gates under `--strict` now.
+
+### Two defects in the classifier itself, both mine, both recorded
+
+1. **Line-keyed classification under-counts code.** A first, throwaway
+   measurement keyed on line number and reported **53** code sites against a
+   true **61**: `X = 938.27208816  # was 939.56542052` is executable code with
+   a comment, and a line-keyed classifier calls the whole line a comment. The
+   committed version uses `tokenize` and classifies by **column span**.
+
+2. **Untracked strings over-count code — the opposite of what I argued.** The
+   first `.lean`/`.ts` classifier handled comments only, on the reasoning that
+   an untracked string could merely let a delimiter open a comment that is not
+   there, i.e. an *under*-report. Wrong in the direction that matters: prose
+   inside a string is then classified `code`. Measured,
+   [`content/values/registry.ts:647`](../../content/values/registry.ts) is a
+   CODATA value quoted inside a `description:` string and was reported as
+   executable. The committed version runs a character-level state machine that
+   tracks strings; the docstring making the wrong claim is corrected in place
+   rather than deleted.
+
+### Self-reference, third instance in this arc
+
+Writing the docstring that explains all of the above moved `prose_sites`
+**381 → 397** — the scan counting its own explanation of the defect. The
+scanner's source now joins its witness and this document in `SELF_ARTIFACTS`,
+for the same reason: an artifact *about* a finding is not an instance of it.
+
+### Verification
+
+`codata_corpus_literal_scan.py --self-test` covers all 11 classifier shapes
+and the 4 adjudication-marker cases. Every one is a defect this file actually
+had, not a hypothetical. `scripts/precision-gates.sh`: all blocking gates
+green.

@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T02:14:22.994863+00:00",
-  "commitSha": "6940d78cc970c14db7ad135b1649af19086b48ce",
+  "computedAt": "2026-08-21T15:11:05.649139+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [
     {
       "name": "h2_coefficient_computed",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 17,
   "computation": "yekutieli-mi-h2-extraction",
   "scriptFile": "yekutieli_mi_h2_extraction.py",
   "scriptHash": "05b87a6780f6",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,9 +29,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Yekutieli MI h² extraction: 6-step categorical derivation of the linking weight's h² coefficient from the CBH expansion of Riemann products on the Borromean surface's ideal-octahedral tessellation.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
@@ -39,23 +38,23 @@
     "dps": 50
   },
   "data": {
-    "q0": 1.1099785955573347,
-    "h": 0.20906032199559366,
-    "tr_M_borromean": 0.9985621631974138,
-    "weighted_c2": -0.03289776285205834,
+    "q0": 1.1099785827513808,
+    "h": 0.20906029879563937,
+    "tr_M_borromean": 0.9985621638367883,
+    "weighted_c2": -0.032897755524634774,
     "c2_by_partition": {
-      "(3,)": 3.048233600195771e-14,
-      "(2, 1)": -0.13302888821088193,
-      "(1, 1, 1)": 5.5884282670255804e-14
+      "(3,)": 3.048234276736315e-14,
+      "(2, 1)": -0.133028858261813,
+      "(1, 1, 1)": 5.080390461227192e-14
     },
     "y_weights": {
-      "(3,)": 0.5054042276904084,
-      "(2, 1)": 0.24729788615479584,
-      "(1, 1, 1)": -2.5827774886429185e-52
+      "(3,)": 0.5054042265039308,
+      "(2, 1)": 0.2472978867480346,
+      "(1, 1, 1)": 0.0
     },
     "catalan_G": 0.915965594177219,
     "three_sixteenths": 0.1875
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

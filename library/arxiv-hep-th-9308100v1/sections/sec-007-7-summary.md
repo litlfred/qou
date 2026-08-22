@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9308100v1
-doc_title: "Department of Physics"
+doc_title: "Gedanken Experiments Involving Black Holes"
 section_id: sec-007-7-summary
 section_title: "Summary"
 section_number: 7
 pages: 20-22
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
-doc_brief: "Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles ."
+doc_brief: "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles ."
 ---
 In this paper we have analysed a number of gedanken experimen ts to illustrate the
 consistency of the following two hypotheses:

@@ -14,7 +14,7 @@ structure, and $\mathcal{H}_{\mathrm{BPS}}(T[K])$ the space of BPS states whose
 graded dimension categorifies the $3$d index.
 
 The first equality is
-[`garoufalidis-gu-marino2023peacock`] peacock Conjecture 3(d) — *"the Stokes
+[`garoufalidis-gu-marino2023peacock`] Conjecture 3(d) — *"the Stokes
 constants are integers corresponding to the Donaldson--Thomas invariants and the
 BPS degeneracies"* — proved by Garoufalidis--Gu--Mariño for the figure-eight
 $4_1$. The second is the [`gukov-pei-putrov-vafa2017`] (GPPV) realisation of the

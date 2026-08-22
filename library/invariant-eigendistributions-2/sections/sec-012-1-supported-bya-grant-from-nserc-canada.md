@@ -1,13 +1,13 @@
 ---
 doc_id: invariant-eigendistributions-2
-doc_title: "REPRESENTATIONS OF WEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMAN"
+doc_title: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups"
 section_id: sec-012-1-supported-bya-grant-from-nserc-canada
 section_title: "Supported bya grant from NSERC Canada"
 section_number: 1
 pages: 1-4
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
-doc_brief: "REPRESENTATIONSOFWEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1 — 25 sections: Intr"
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 25 sections: Introduction; Construction of Weyl group represe"
 ---
 REPRESENTATIONS OF WEYL GROUPS 2
 mistake in myproof of that theorem. The table of contents mayserve as a further guide to the topics

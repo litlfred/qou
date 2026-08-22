@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.024Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of remark 'Adjoint trace and the categorical inner product'. No assert-by-denial construction anywhere; all claims stated positively (cyclic, non-degenerate, recovers Killing form)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.067Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No setup-then-reframe. Three sentences, each advancing definition -> properties -> archimedean limit."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.115Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes in the block."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.167Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No reflex three-item list; two properties (cyclicity, non-degeneracy) then a limit statement."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.209Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Block ends on a displayed identity tr_Ad(f)=tr(ad f)=-2 tr_{C^2}(f), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.291Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narration of emphasis; 'We define' is standard mathematical register."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.338Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Final sentence introduces new content (archimedean limit), does not restate the opening."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.438Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Institutional register throughout; no personal/affective language."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.545Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No unqualified maximum-strength claims; 'canonical sesquilinear form' is a technical use of 'canonical', not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1539,37 @@
         "reviewed_at": "2026-08-15T10:30:59.981Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.588Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Sentences are long but clause-structured and read aloud cleanly; no noun-chain pileups."
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:07:56.743Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "Re-recorded to carry a math finding surfaced by recomputation after the first pass; trap verdict unchanged (sentences are clause-structured and read aloud).",
+        "notes": "MATH FINDING to report (not edited): the closing claim 'the adjoint trace recovers the Killing form on su(2): tr_Ad(f) = tr(ad(f)) = -2 tr_{C^2}(f)' does not say what it means to say. Computed symbolically (sympy, gl(2) basis): tr(ad X) = 0 for every X in su(2) - ad is traceless on any perfect Lie algebra - and tr_{C^2}(X) = 0 too, so the displayed chain is 0 = 0 = 0, vacuously true on su(2) and false off it (f = id gives tr(ad f) = 0 but -2 tr(f) = -4). The Killing form is moreover a BILINEAR form, not a linear functional: B(X,Y) = tr(ad X ad Y), and on su(2) the computed ratio B(X,X)/tr(X^2) is exactly 4 (tr(ad^2) = -8 against tr(X^2) = -2 on each of the three standard generators), so the normalisation is +4 tr(XY), not -2 tr(X). The sentence above it is fine; what should presumably be claimed is that the induced pairing <f,g>_Ad, not the trace of a single endomorphism, recovers the Killing form, with coefficient 4."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1592,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:07:56.743Z"
 }

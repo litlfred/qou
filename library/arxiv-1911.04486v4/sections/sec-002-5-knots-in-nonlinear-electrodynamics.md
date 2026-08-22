@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1911.04486v4
-doc_title: ""
+doc_title: "Knots and the Maxwell Equations"
 section_id: sec-002-5-knots-in-nonlinear-electrodynamics
 section_title: "Knots in nonlinear electrodynamics"
 section_number: 5
 pages: 19-26
 source_pdf: 1911.04486v4.pdf
 source_sha256: 53a34938c0e63bad
-doc_brief: "Knots and the Maxwell Equations Ion V. Vancea Grupo de F´ ısica Teórica e Matemática F´ ısica Departamento de F´ ısica Universidade Federal Rural do Rio de Janeiro — In this chapter, we review the"
+doc_brief: "Knots and the Maxwell Equations — In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld"
 ---
 A very important application of Bateman method to non-linear electrody-
 namical models that generalize Maxwell’s electrodynamics in the strong ﬁeld

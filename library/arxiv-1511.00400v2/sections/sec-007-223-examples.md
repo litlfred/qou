@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1511.00400v2
-doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗"
+doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties"
 section_id: sec-007-223-examples
 section_title: "Examples"
 section_number: 2.2.3
 pages: 10-14
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
-doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 The ﬁrst examples below can be found in many references, for insta nce [80,
 Chapter 2].

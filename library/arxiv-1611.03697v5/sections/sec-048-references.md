@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1611.03697v5
-doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND"
+doc_title: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY"
 section_id: sec-048-references
 section_title: "References"
 section_number: null
 pages: 50-51
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY TOM BRIDGELAND — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
 ---
 [1] A. Barbieri and J. Stoppa, Frobenius type and CV-structures for Donaldson-Thomas theory and a convergence
 property, arXiv 1512.01176.

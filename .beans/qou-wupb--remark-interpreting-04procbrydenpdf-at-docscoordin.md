@@ -3,8 +3,9 @@
 title: Remark interpreting 04procbryden.pdf at docs/coordination/s5-so3-keystone.md
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T00:10:44Z
-updated_at: 2026-08-09T00:10:44Z
+updated_at: 2026-08-21T17:05:08Z
 ---
 
 Record in the keystone ledger that the Ohtsuki series of Sigma(2,3,5) is Gevrey-1 with slope pi^2 sigma = ±30 = P = h(E8), so the h-expansion has zero radius of convergence and the bar-involution route into the disk is forced rather than merely convenient. This interprets an external result for the folio; it does not discharge any Lean hypothesis, so it is a remark and not an aid-proof.
@@ -19,3 +20,10 @@ Source: `library/04procbryden/04procbryden.pdf` — no `references.ts` entry yet
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/04procbryden/  ->  [jacoby-lawrence2004]
+  Some computations of Ohtsuki series
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [jacoby-lawrence2004] as the citation key when you do it.

@@ -2134,6 +2134,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.215Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2153,6 +2170,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.257Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2172,6 +2206,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 154 words)"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.301Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2191,6 +2242,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 154 words)"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.347Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Four-part (i)-(iv) statement.",
+        "notes": "Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -2210,6 +2278,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.402Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2229,6 +2314,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.443Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2248,6 +2350,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.487Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2267,6 +2386,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.527Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2286,6 +2422,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.567Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'renders the ground-state ordering search trivial in two of the three channels'; 'providing a $\\sim 9\\times$ reduction per ordering'.",
+        "notes": "EARNED and correctly hedged: 'two of the three channels' is exactly what the proof establishes (the two one-dimensional reps give permutation-invariant scalar products), and O(36)->O(4) is exactly 9x."
       }
     ],
     "trap-nonspeakable": [
@@ -2305,6 +2458,23 @@
         "reviewed_at": "2026-08-15T10:31:01.369Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "23b331e0a356",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.609Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the TSDoc header). Recomputed the speedup: O(36)->O(4) is exactly the stated ~9x.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2328,5 +2498,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:01.609Z"
 }

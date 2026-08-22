@@ -1565,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.481Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Definition block; all clauses positive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1584,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.523Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Definition -> structure maps -> string-diagram reading; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1603,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.565Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1622,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.605Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1641,6 +1701,23 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.649Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The block ends on a balanced two-clause summary placed as a closer: 'The rigid structure provides the integration; the Lagrangian endomorphism encodes the dynamics.' Both halves are already stated above ('Composing them with an inserted endomorphism produces the categorical trace', and Phi is introduced as 'the Lagrangian endomorphism'), so the sentence adds cadence rather than content.",
+        "notes": "Proposed (not applied - the role-assignment reading may be wanted, and this is a definition block where the author's framing matters): drop the sentence and let the string-diagram sentence close the block; or, if the point is that no spacetime measure enters, say that directly, as sec:categorical-action-intro already does ('The rigid duality supplies the trace; no spacetime measure is invoked') - as it stands the two blocks carry the same aphorism twice."
       }
     ],
     "trap-meta-commentary": [
@@ -1660,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.689Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1679,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.733Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The restatement in the final sentence is scored under closing-aphorism."
       }
     ],
     "trap-performed-warmth": [
@@ -1698,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.773Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1717,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.813Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1736,6 +1873,22 @@
         "reviewed_at": "2026-08-15T10:31:00.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "221879b28cb2",
+          "ts": "08e429e84ede"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:56.853Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Short declaratives.",
+        "notes": "MATH FINDING to report (not edited, and this block is the source of the mismatch flagged on prop/prf:categorical-action-exists): the definition composes ev_A o (id_{A^vee} tensor Phi) o coev_A while declaring, in the very next sentence, ev_A : A^vee tensor A -> 1 and coev_A : 1 -> A tensor A^vee. Those do not compose: (id_{A^vee} tensor Phi) needs a source A^vee tensor A. Fix either the coevaluation side (coev_A : 1 -> A^vee tensor A) or the composite (S = ev'_A o (Phi tensor id_{A^vee}) o coev_A with ev'_A : A tensor A^vee -> 1). The def, both propositions and the two proofs should be made to agree on one side."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1759,5 +1912,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:00:56.853Z"
 }

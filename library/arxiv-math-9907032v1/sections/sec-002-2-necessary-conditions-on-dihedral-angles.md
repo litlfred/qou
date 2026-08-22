@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "Mathematics Department, California Institute of Technolog y"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-002-2-necessary-conditions-on-dihedral-angles
 section_title: "NECESSARY CONDITIONS ON DIHEDRAL ANGLES"
 section_number: 2

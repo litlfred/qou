@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9408113v2
-doc_title: "Steklov Mathematical Institute"
+doc_title: "Dilogarithm identities"
 section_id: sec-068-1-let-µ-be-a-composition-lµ-n-consider-the-set
 section_title: "Let µ be a composition, l(µ) = n. Consider the set"
 section_number: 1
 pages: 76-77
 source_pdf: 9408113v2.pdf
 source_sha256: dadd96e1155e820f
-doc_brief: "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
+doc_brief: "Dilogarithm identities — We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view."
 ---
 M (µ) =
 {

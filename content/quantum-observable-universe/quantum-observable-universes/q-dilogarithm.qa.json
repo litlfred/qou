@@ -1761,6 +1761,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.531Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; no negation-contrast construction present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1780,6 +1796,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.566Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; sentences assert directly.",
+        "notes": "No fix needed."
       }
     ],
     "trap-em-dash": [
@@ -1799,6 +1831,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 24 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.602Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 0 in the block. Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
       }
     ],
     "trap-triples": [
@@ -1818,6 +1866,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 24 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.639Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; no three-item enumeration present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1837,6 +1901,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.675Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; the closer is mathematical content.",
+        "notes": "No fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -1856,6 +1936,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.710Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; none present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1875,6 +1971,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.746Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; it does not.",
+        "notes": "No fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -1894,6 +2006,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.784Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; register is institutional throughout.",
+        "notes": "No fix needed."
       }
     ],
     "trap-superlative": [
@@ -1913,6 +2041,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.821Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for unqualified maximum-strength claims. Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; no superlative inflation.",
+        "notes": "Pass. 'the unique level-2 primitive' is a definitional uniqueness claim discharged by prop:q-dilogarithm-unique, not inflation. Recomputed the displayed five-term relation against the Rogers pentagon L(x)+L(y) = L(xy)+L(x(1-y)/(1-xy))+L(y(1-x)/(1-xy)): it matches exactly."
       }
     ],
     "trap-nonspeakable": [
@@ -1932,6 +2076,22 @@
         "reviewed_at": "2026-08-15T10:31:00.040Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ba8deccd9cd7",
+          "ts": "ac840c305cc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:03.858Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is definition of the level-2 shuffle primitive with the five-term pentagon relation; sentences are speakable.",
+        "notes": "No fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1955,5 +2115,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:41:03.858Z"
 }

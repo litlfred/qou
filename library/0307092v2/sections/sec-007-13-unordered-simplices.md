@@ -1,13 +1,13 @@
 ---
 doc_id: 0307092v2
-doc_title: "Published: 14 February 2004"
+doc_title: "Extended Bloch group and the Cheeger-Chern-Simons class"
 section_id: sec-007-13-unordered-simplices
 section_title: "Unordered simplices"
 section_number: 13
 pages: 49-58
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
-doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
+doc_brief: "Extended Bloch group and the Cheeger-Chern-Simons class — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 As we have shown in Proposition 11.2, our complexes can be qua si-simplicial
 (closed simplices not required to embed). The triangulatio ns that arise in prac-

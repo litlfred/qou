@@ -944,6 +944,22 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.758Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 139-word remark (obligation (C), GS filtration read through jet-prefix order, novelty closer)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +979,22 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.795Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 139-word remark (obligation (C), GS filtration read through jet-prefix order, novelty closer)."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1014,22 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 141 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.835Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One appositive pair ('the exhaustiveness of the cluster decomposition -- every contribution lives in some finite cluster degree -- is the structural property')."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1049,22 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 141 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.874Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 139-word remark (obligation (C), GS filtration read through jet-prefix order, novelty closer)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1084,23 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.911Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Final sentence is the same novelty-closer template: 'Though the proof reduces to a standard jet-degree equivalence argument, projecting the structural hypothesis onto this geometric form to explicitly equate bond order with the jet-degree of the extracted S field is a mathematically novel physical framing specific to the Quantum Observable Universe.'",
+        "notes": "proposed (structural, NOT applied): delete from prose, migrate to .ts authorNotes {kind:'note'} per AGENTS.md 4d. This is the second instance of the identical template in this batch (see binding-scale-catalan-proof)."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1120,22 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.944Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 139-word remark (obligation (C), GS filtration read through jet-prefix order, novelty closer)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1155,22 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.981Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 139-word remark (obligation (C), GS filtration read through jet-prefix order, novelty closer)."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.015Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 139-word remark (obligation (C), GS filtration read through jet-prefix order, novelty closer)."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1225,23 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.050Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'a mathematically novel physical framing specific to the Quantum Observable Universe' -- unqualified novelty claim.",
+        "notes": "proposed: removed with the closer."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1261,23 @@
         "reviewed_at": "2026-08-15T10:31:00.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "13d27cbc744a",
+          "ts": "8fa3c30edee0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.084Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "The closer is one 44-word sentence of stacked gerunds and noun modifiers; it does not survive being read aloud.",
+        "notes": "proposed: removed with the closer."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1304,5 @@
     "md": "13d27cbc744a",
     "ts": "8fa3c30edee0"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:32.084Z"
 }

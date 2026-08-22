@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2305.14884v2
-doc_title: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
+doc_title: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS"
 section_id: sec-001-21-the-faddeev-quantum-dilogarithm
 section_title: "The Faddeev quantum dilogarithm"
 section_number: 2.1
 pages: 4-5
 source_pdf: 2305.14884v2.pdf
 source_sha256: ebc8e64d901c9e4f
-doc_brief: "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further"
+doc_brief: "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)"
 ---
 the choice of quad and under the 2–3 Pachner moves follows from a F ourier tranform identity
 and a pentagon identity for ψℏ; see Theorems 3.4 and 3.6 below. Although these identities

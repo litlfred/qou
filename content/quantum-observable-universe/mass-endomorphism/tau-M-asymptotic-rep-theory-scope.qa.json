@@ -948,6 +948,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.081Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -967,6 +983,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.122Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two paragraphs: what is proved vs what is conditional, then what production uses.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -986,6 +1018,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 132 words)"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.163Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1005,6 +1053,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 132 words)"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.206Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Four proved items plus parity; not a reflex list.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -1024,6 +1088,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.246Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends by identifying the open kernel with another open input (the F_Bor term-6 Habiro tail) -- a cross-reference, not a closer.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -1043,6 +1123,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.291Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -1062,6 +1158,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.335Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "The block IS a scope statement by kind; stating scope is its purpose.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -1081,6 +1193,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.379Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1100,6 +1228,23 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.421Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "'The low-order data are **proved unconditionally**: c_0 = 0, one-dimensional triviality, the N=1 coupling b, and the **bar-even seed c_2 = -1**.'",
+        "notes": "REPORT ONLY. Third occurrence in this cluster of the c_2 = -1 'proved' over-claim that AGENTS.md's 2026-08-16 correction retracts by name ('PROVED IS wrong ... structural is the defensible word'). The rest of this block is exemplary and should NOT be re-flagged -- it states the kernel R(q,xi) as open, names it the s5-so3 fibre action, restricts production to the N <= 2 truncation, and confines the higher rungs to the 1 ppQ stretch target, which is precisely the tiered reporting AGENTS.md asks for. VERIFIED: the relation m_n = m_p + Q_beta + m_e checks against CODATA (938.272088 + 0.782347 + 0.510999 = 939.565434 vs 939.565421, i.e. 13 eV, the expected residual). Same missing convention-C scope label as the parent."
       }
     ],
     "trap-nonspeakable": [
@@ -1119,6 +1264,22 @@
         "reviewed_at": "2026-08-15T10:31:01.026Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "837885e7d62e",
+          "ts": "b7faf5380b35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:42.465Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'the substrate derivation of the kernel R(q,xi) that fixes c_k for k >= 3'.",
+        "notes": "Parses."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1302,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:16:42.465Z"
 }

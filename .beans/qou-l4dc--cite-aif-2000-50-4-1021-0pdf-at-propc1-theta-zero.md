@@ -3,8 +3,9 @@
 title: Cite AIF_2000__50_4_1021_0.pdf at prop:c1-theta-zero-locus-and-pole-divisor
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:13Z
-updated_at: 2026-08-08T23:37:13Z
+updated_at: 2026-08-21T17:04:58Z
 ---
 
 prop:c1-theta-zero-locus-and-pole-divisor states that every pole of the connection matrix P = Y_0^{-1} Y_infinity is a theta zero; the theta-quotient construction of the characters and the ellipticity of P are the source for that.
@@ -17,3 +18,10 @@ Source: `library/aif-2000-50-4-1021-0/AIF_2000__50_4_1021_0.pdf` — no `referen
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/aif-2000-50-4-1021-0/  ->  [sauloy2000]
+  Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [sauloy2000] as the citation key when you do it.

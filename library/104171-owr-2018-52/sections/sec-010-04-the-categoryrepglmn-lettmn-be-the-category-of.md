@@ -1,13 +1,13 @@
 ---
 doc_id: 104171-owr-2018-52
-doc_title: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018"
+doc_title: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)"
 section_id: sec-010-04-the-categoryrepglmn-lettmn-be-the-category-of
 section_title: "The categoryRep(GL(m|n)). LetTm|n be the category of ﬁnite dimensional"
 section_number: 0.4
 pages: 30-36
 source_pdf: 10.4171-owr-2018-52.pdf
 source_sha256: b33ed36eaa470877
-doc_brief: "Mathematisches Forschungsinstitut Oberwolfach Report No. 52/2018 — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical viewpoints."
+doc_brief: "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018) — The workshop brought together experts investigating algeb raic Lie theory from the geometric and categorical"
 ---
 representations of GL(m|n). The categories Tm|n are not semisimple for m,n≥ 1.
 As above we consider only objects that are retracts of iterated t ensor products of

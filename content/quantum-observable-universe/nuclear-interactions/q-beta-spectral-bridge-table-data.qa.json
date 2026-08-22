@@ -883,7 +883,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.441Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.485Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.522Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.561Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.599Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.646Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.685Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.727Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.766Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Header: 'Quantity at $q_0 = 1.109978595557335$'; row 2 '$z = 1/(\\sqrt q + 1/\\sqrt q)$ | $0.4993203340335613$'; and the closing note 'regenerated from the canonical CAL-2 pinning q-pinning-50-digit.witness.json'.",
+        "notes": "CONVENTION C, correctly and honestly sourced. z = 0.4993203340335613 is z_C; canonical convention D gives 0.6126880505. Unlike the cos-resummation table this one is transparent about its pin -- the header q0 is the MUON value 1.10997859555733471 to 16 digits and the note names the CAL-2 witness, so the labelling is accurate; it is the convention that is superseded. VERIFIED SOUND: I recomputed all eleven rows at the printed q0 and every one reproduces -- h 0.2090603219955942, Form A 0.187207212879143, Form B 0.09929139859972801, predicted bridge 1.897907634269324, actual 1.885432328673596, residual 0.0124753, h^2 0.0437062, Q^A 0.783645803897, Q^B 0.832395283254, |Q^A-Q^B| 0.0487495, h^2 E_0 0.183. The tiny Q^A tail (...803897 vs my ...802839) is CODATA-2022 m_e rather than a defect. All five distinctive strings are present in computations/q-beta-spectral-bridge.witness.json."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "33ca8adb686d",
+          "ts": "5cf082942f6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.805Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 11-row table. Recomputed EVERY row at the q0 the table prints: h, z, Form A, Form B, predicted bridge, actual bridge, residual, h^2, Q^A, Q^B, |Q^A-Q^B| and h^2*E_0 all reproduce to the printed digits. Confirmed the numbers live in computations/q-beta-spectral-bridge.witness.json (grep hit on all five distinctive strings).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:07.805Z"
 }

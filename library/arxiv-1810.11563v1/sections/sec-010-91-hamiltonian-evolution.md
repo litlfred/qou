@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1810.11563v1
-doc_title: "Three Lectures on Complexity and Black Holes Leonard Susskind"
+doc_title: "Three Lectures on Complexity and Black Holes"
 section_id: sec-010-91-hamiltonian-evolution
 section_title: "Hamiltonian Evolution"
 section_number: 9.1
 pages: 30-32
 source_pdf: 1810.11563v1.pdf
 source_sha256: 8e17ac8b91bc3cc9
-doc_brief: "Three Lectures on Complexity and Black Holes Leonard Susskind — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to"
+doc_brief: "Three Lectures on Complexity and Black Holes — This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The"
 ---
 In the live lectures at PiTP I ran out of time before I had a chance to discuss how
 complexity evolves when a system’s dynamics is governed by a time independent k-local

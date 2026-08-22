@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2301.02038v1
-doc_title: "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Diﬀerential Equations"
+doc_title: "Vinogradov's Cohomological Geometry of Partial Differential Equations"
 section_id: sec-006-22-interpreting-horizontal-cohomologies
 section_title: "interpreting horizontal cohomologies"
 section_number: 2.2
 pages: 12-15
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
-doc_brief: "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a"
+doc_brief: "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li"
 ---
 mologies have nice interpretations, sometimes informal, s ometimes more precise. In
 this subsection we illustrate some of them. We begin with hor izontal cohomology

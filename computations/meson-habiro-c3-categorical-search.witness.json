@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:46.380774+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:57:51.456408+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "candidate_search_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "meson-habiro-c3-categorical-search",
   "scriptFile": "meson_habiro_c3_categorical_search.py",
   "scriptHash": "7da1457a6cc3",
-  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,40 +28,98 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Categorical-identification candidate scan for the meson Habiro c_3 = −0.7156 (from the REOPENED 2026-06-01 closed-route audit). Tests 30+ natural Hecke / Bring / Catalan-G / J-Hopf / b-power candidates at q_0. Records best-match candidates within 0.05% / 0.5% / 5% bands.",
   "parameters": {
-    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "c_3_target": "-0.9101781754469770368132734",
-    "best_candidates_within_05pct": [],
-    "best_candidates_within_5pct": [
+    "c_3_target": "-0.7150196297869717581779597",
+    "best_candidates_within_05pct": [
       [
-        "−G",
-        "-0.915965594177219",
-        "0.63585558"
+        "−5/7",
+        "-0.714285714285714",
+        "-0.10264271"
       ],
       [
-        "−b",
-        "-0.867584067307142",
-        "-4.6797549"
+        "−10/14 = −5/7",
+        "-0.714285714285714",
+        "-0.10264271"
       ],
       [
-        "J·b/2 = −b",
-        "-0.867584067307142",
-        "-4.6797549"
-      ],
-      [
-        "J·b/2·(1+ℏ_q)",
-        "-0.953545794526261",
-        "4.7647395"
+        "−15/21 = −5/7",
+        "-0.714285714285714",
+        "-0.10264271"
       ]
     ],
-    "verdict": "NULL — none of the 43 natural candidates lands within 0.5% of c_3 = -0.91017818. The categorical identity (if it exists) requires a wider search beyond the natural q-arithmetic / G / b-power / J-Hopf basis."
+    "best_candidates_within_5pct": [
+      [
+        "−5/7",
+        "-0.714285714285714",
+        "-0.10264271"
+      ],
+      [
+        "−10/14 = −5/7",
+        "-0.714285714285714",
+        "-0.10264271"
+      ],
+      [
+        "−15/21 = −5/7",
+        "-0.714285714285714",
+        "-0.10264271"
+      ],
+      [
+        "−(1−h²)·b²",
+        "-0.719804357727305",
+        "0.66917435"
+      ],
+      [
+        "−12/17",
+        "-0.705882352941176",
+        "-1.2779057"
+      ],
+      [
+        "−16/22 = −8/11",
+        "-0.727272727272727",
+        "1.7136729"
+      ],
+      [
+        "−7/10",
+        "-0.7",
+        "-2.1005899"
+      ],
+      [
+        "−11/15",
+        "-0.733333333333333",
+        "2.5612868"
+      ],
+      [
+        "−G·b²",
+        "-0.689449238403285",
+        "-3.5761803"
+      ],
+      [
+        "−[3]_q/[4]_q",
+        "-0.740618350515776",
+        "3.5801424"
+      ],
+      [
+        "−[5]_q/[7]_q",
+        "-0.684617326003915",
+        "-4.2519537"
+      ],
+      [
+        "−3/4",
+        "-0.75",
+        "4.8922252"
+      ]
+    ],
+    "verdict": "WEAK CANDIDATES (3 within 0.5%): ['−5/7', '−10/14 = −5/7', '−15/21 = −5/7']. Worth investigating but not yet a clean identification."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

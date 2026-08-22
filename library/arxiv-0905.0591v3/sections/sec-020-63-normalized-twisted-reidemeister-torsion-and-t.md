@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0905.0591v3
-doc_title: "A SUR VEY OF TWISTED ALEXANDER POL YNOMIALS"
+doc_title: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS"
 section_id: sec-020-63-normalized-twisted-reidemeister-torsion-and-t
 section_title: "Normalized twisted Reidemeister torsion and the free genus of a knot"
 section_number: 6.3
 pages: 23-24
 source_pdf: friedvidu1.pdf
 source_sha256: cfeaf61f759a6af8
-doc_brief: "A SUR VEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
+doc_brief: "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS — We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group."
 ---
 K ⊂S3 a knot and let γ :π1(S3 \νK ) → GL(k,R ) be a representation with R a Noetherian
 UFD. Letǫ = det(γ(µ )) whereµ denotes a meridian of K. Kitayama [Kiy08a] introduced an

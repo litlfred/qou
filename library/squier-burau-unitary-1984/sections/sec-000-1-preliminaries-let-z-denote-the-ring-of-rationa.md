@@ -1,13 +1,13 @@
 ---
 doc_id: squier-burau-unitary-1984
-doc_title: "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY"
+doc_title: "The Burau representation is unitary"
 section_id: sec-000-1-preliminaries-let-z-denote-the-ring-of-rationa
 section_title: "Preliminaries. Let Z denote the ring of (rational) integers, let t be an inde-"
 section_number: 1
 pages: 1-2
 source_pdf: squier-burau-unitary-1984.pdf
 source_sha256: 5087ee3cb48679d1
-doc_brief: "THE BURAU REPRESENTATION IS UNITARY CRAIG C. SQUIEr' — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
+doc_brief: "The Burau representation is unitary — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form."
 ---
 terminate and let Z[t, /"'] denote the ring of Laurent polynomials with coefficients
 in Z. We consider infinite-dimensional matrices A = (a¡ ) with entries in Z[f, /"']

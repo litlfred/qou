@@ -1,13 +1,13 @@
 ---
 doc_id: crmath-2011-349-19-20-1037-0
-doc_title: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect"
+doc_title: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières"
 section_id: sec-003-2-classiﬁcation-analytique-isoformelle-à-deux-pe
 section_title: "Classiﬁcation analytique isoformelle à deux pentes"
 section_number: 2
 pages: 2-2
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
-doc_brief: "C. R. Acad. Sci. Paris, Ser. I www.sciencedirect.com Équations différentielles Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put"
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put and Reversat described the form of a pure q-difference module with non"
 ---
 Dans [4], les auteurs étudient l’ensemble des classes analytiques isoformelles et les décrivent dans le cas où les pentes
 sont entières. L’une de leurs approches, que l’on reprend dans cette partie, est de donner la forme normale de Birkhoff-

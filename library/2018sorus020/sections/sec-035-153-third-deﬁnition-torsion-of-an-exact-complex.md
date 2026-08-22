@@ -1,13 +1,13 @@
 ---
 doc_id: 2018sorus020
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Reidemeister torsion on character varieties"
 section_id: sec-035-153-third-deﬁnition-torsion-of-an-exact-complex
 section_title: "Third deﬁnition : torsion of an exact complex (Cayley"
 section_number: 1.5.3
 pages: 45-48
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
-doc_brief: "HAL Id: tel-02108892 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 78 sections: Introduction"
+doc_brief: "Reidemeister torsion on character varieties — 78 sections: Introduction; (−1)i+1; ByH∗(M, Ad◦ρ) (respectivelyH∗(M,ρ"
 ---
 formula)
 If the complex is exact, one has the following alternative description : pick a system

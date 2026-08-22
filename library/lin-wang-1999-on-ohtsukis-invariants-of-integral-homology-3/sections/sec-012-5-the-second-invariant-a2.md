@@ -1,13 +1,13 @@
 ---
 doc_id: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3
-doc_title: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+doc_title: "On Ohtsuki's invariants of integral homology 3-spheres"
 section_id: sec-012-5-the-second-invariant-a2
 section_title: "The Second Invariant A2"
 section_number: 5
 pages: 10-11
 source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
 source_sha256: 3fb38d4cfd20d4fb
-doc_brief: "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants"
+doc_brief: "On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres"
 ---
 A framed ASL is said to be unit framed if the framing of each component is =kl. Given a 
 link L and a positive integer m, we use L "~ to denote the 0-framed m-parallel of L, i.e. each 

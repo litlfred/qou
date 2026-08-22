@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1511.00400v2
-doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗"
+doc_title: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties"
 section_id: sec-015-41-representations-of-sl2c
 section_title: "Representations of SL2(C)"
 section_number: 4.1
 pages: 26-27
 source_pdf: 1511.00400v2.pdf
 source_sha256: 6cb493049394ce3a
-doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti ∗ — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
+doc_brief: "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume."
 ---
 Let Vk+1 be the space of degree k homogeneous polynomials in two variables:
 Vk+1 ∶= {P ∈C[X, Y ] /divid⟩s.alt0 P is homogeneous of degree k}.

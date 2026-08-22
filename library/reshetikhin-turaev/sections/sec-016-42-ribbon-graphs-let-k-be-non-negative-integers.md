@@ -1,13 +1,13 @@
 ---
 doc_id: reshetikhin-turaev
-doc_title: "Commun. Math. Phys. 127, 1-26 (1990) Communications in Mathematical Physics 9 Springer-Verlag 1990"
+doc_title: "Ribbon graphs and their invariants derived from quantum groups"
 section_id: sec-016-42-ribbon-graphs-let-k-be-non-negative-integers
 section_title: "Ribbon Graphs. Let k, ~ be non-negative integers. A ribbon (k, ~)-graph is an"
 section_number: 4.2
 pages: 8-10
 source_pdf: Reshetikhin_Turaev.pdf
 source_sha256: 7ead97555a25d357
-doc_brief: "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics 9 Springer-Verlag 1990 — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
+doc_brief: "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented."
 ---
 oriented surface S imbedded in R 2 x [0,1] and decomposed as the union of finite 
 collection of bands and annuli, each band being provided with a "type" 1 or 2, so 

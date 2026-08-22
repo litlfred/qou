@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0206161v1
-doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1"
+doc_title: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING"
 section_id: sec-009-33-curing-non-compactness
 section_title: "Curing non-compactness"
 section_number: 3.3
 pages: 15-16
 source_pdf: 0206161v1.pdf
 source_sha256: 9530c40215baa02d
-doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1 — 26 sections: Introduction; (1 .3); (α±"
+doc_brief: "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 26 sections: Introduction; (1 .3); (α±"
 ---
 The UV problem can be solved by relaxing the condition on the s tabilizer, thus adding
 the so-called point-like instantons. A point of the hyperk¨ ahler space ˜Mk,N with orbifold

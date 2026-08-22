@@ -1794,6 +1794,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not Plancherel weight.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1813,6 +1828,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-em-dash": [
@@ -1833,6 +1863,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "13 stylistic spaced dashes in 719 words (1.81/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-triples": [
@@ -1852,6 +1897,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 719 words)"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1871,6 +1931,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-meta-commentary": [
@@ -1890,6 +1965,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-thesis-restatement": [
@@ -1909,6 +1999,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-performed-warmth": [
@@ -1928,6 +2033,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-superlative": [
@@ -1947,6 +2067,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "trap-nonspeakable": [
@@ -1966,6 +2101,21 @@
         "reviewed_at": "2026-08-15T10:31:00.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "75b6ebe08bf4",
+          "ts": "0e29422fe829"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.742Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (167 lines: conjecture statement, formal statement, 3-step proof sketch, downstream consequence, PSLQ note, consequences). Step-3 header \"Cell-content trace, not Plancherel weight\" and the \"without invoking Plancherel weights\" emphasis are the section's substantive supersession claim, not manufactured contrast. The terminal \"Archimedean specialisation\" paragraph is the corpus template and is not scored. Em-dash density is high but every dash is a genuine parenthetical or appositive."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1989,5 +2139,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.742Z"
 }

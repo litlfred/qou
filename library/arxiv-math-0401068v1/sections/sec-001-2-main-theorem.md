@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0401068v1
-doc_title: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA"
+doc_title: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS"
 section_id: sec-001-2-main-theorem
 section_title: "Main Theorem"
 section_number: 2
 pages: 2-6
 source_pdf: 0401068v1.pdf
 source_sha256: 8168d7e7f6069978
-doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA — @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s"
+doc_brief: "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS — @We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s formula of the"
 ---
 prove Theorem 2.2. In Section 4, we relate our result to the AJ conj ecture and give a result
 about recursive relations of the Jones polynomials for the knots 5 2 and 6 1.

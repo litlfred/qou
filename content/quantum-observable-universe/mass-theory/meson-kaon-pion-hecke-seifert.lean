@@ -54,6 +54,24 @@ theorem chi_21_odd (q : Rˣ) (n : ℕ) (hn : Odd n) :
 
 end HeckeCharacter
 
+/-- The number of quark constituents of a meson, which is the squaring
+    exponent appearing in `mesonMassRatio`.  A **named constant**, not a
+    theorem.
+
+    Replaced `theorem meson_squaring_exponent : (2 : ℕ) = 2 := rfl`
+    (2026-08-21; vacuity ledger, `reflexive-tautology-ascribed-literal`).
+    The docstring named an equality of two defined quantities — the
+    squaring exponent and the constituent count — but the Lean proved
+    `2 = 2`, dropping both sides; it held whatever either quantity was.
+    Per Strict Lean Discipline §8 that is notation, not a theorem.
+
+    The identification is now carried **structurally** instead of being
+    asserted: `mesonMassRatio` raises `(9/5)` to this constant, so the
+    exponent *is* the constituent count by construction rather than by a
+    tautology claiming so. -/
+-- Ref: [manuscript] prop:meson-kaon-pion-hecke-seifert §proof
+def quarkConstituentCount : ℕ := 2
+
 section SeifertEuler
 
 variable {R : Type*} [Field R]
@@ -78,12 +96,9 @@ theorem seifert_ratio_T25_T23
 /-- The meson mass ratio formula:
     m_K/m_π = χ^{(2,1)}(σ₁⁵) × (9/5)². -/
 noncomputable def mesonMassRatio (q : Rˣ) : R :=
-  chi_21 q 5 * (9 / 5) ^ 2
+  chi_21 q 5 * (9 / 5) ^ quarkConstituentCount
 
 end SeifertEuler
 
-/-- The squaring exponent equals the number of quark constituents. -/
--- Ref: [manuscript] prop:meson-kaon-pion-hecke-seifert §proof
-theorem meson_squaring_exponent : (2 : ℕ) = 2 := rfl
 
 end QOU.Mass

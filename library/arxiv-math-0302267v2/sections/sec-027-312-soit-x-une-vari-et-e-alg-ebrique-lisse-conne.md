@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-027-312-soit-x-une-vari-et-e-alg-ebrique-lisse-conne
 section_title: "Soit X une vari´ et´ e alg´ ebrique lisse connexe sur un corpsK et a, b ∈ X(K). Comme"
 section_number: 3.12
 pages: 41-42
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 dans le cas topologique 3.6, le sch´ ema cosimplicial X Hom(∆ n,∆ 1) s’envoie dans le sch´ ema
 cosimplicial constant X × X = X Hom(∆ n,∂∆ 1) et, prenant la ﬁbre en ( b, a) ∈ X × X, on

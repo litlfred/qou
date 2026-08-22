@@ -3,8 +3,9 @@
 title: Cross-check 1992EvansBerger.pdf at computations/deltalambda/mixed_multibond_mubar_integrality_pro…
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:37:06Z
-updated_at: 2026-08-08T23:37:06Z
+updated_at: 2026-08-21T17:04:39Z
 ---
 
 Evaluate Psi_ijk on the corpus's own Borromean braid word (sigma_1 sigma_2^{-1})^3 and on a mixed Hopf+Borromean multibond configuration, and compare with the mu-bar values the Magnus machinery already produces. This is a cross-check, not an adoption: any agreement is evidence about the construction, not a licence to wire a number.
@@ -17,3 +18,10 @@ Source: `library/1992evansberger/1992EvansBerger.pdf` — no `references.ts` ent
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/1992evansberger/  ->  [evans-berger1992]
+  A Hierarchy of Linking Integrals
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [evans-berger1992] as the citation key when you do it.

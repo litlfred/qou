@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.423Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.459Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 111 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.495Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 111 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.533Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,23 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.570Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Block-final line is a reframing flourish rather than a statement: 'A small sub-leading anomaly at A = 1 exposes the limits of the leading-order expansion.'",
+        "notes": "Proposed: 'The leading-order expansion has a small sub-leading anomaly at A = 1.' Not applied: A = 1 is also outside the stated domain A >= 2 while Table 2's proton row is marked matching, so the sentence needs a factual reconciliation, not just de-rhetoricising."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.607Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.646Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.682Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1505,23 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.717Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Intensifier cluster, two members of which its own tables contradict: 'speeds up ... dramatically'; 'the evaluation time drops from hours to milliseconds' (Table 3 records 13.7 s for 4He, i.e. seconds); 'enables immediate verification ... across the entire valid domain A >= 2' (Table 2 marks 5Li and 6Li '(open)' / '_pending_').",
+        "notes": "Proposed: drop 'dramatically'; 'from hours to seconds'; 'verified for A = 2..4, with 5Li and 6Li still open'. Not applied - each edit changes a factual claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:31:00.855Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2b3f377a7979",
+          "ts": "b63bacd0e520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:37.752Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 117 w: read in full, and cross-checked against its own three data tables. Table 2's shift column is internally consistent (every row satisfies shift = 7n + 1 - 3Z, including the two 'open' rows)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:56:37.752Z"
 }

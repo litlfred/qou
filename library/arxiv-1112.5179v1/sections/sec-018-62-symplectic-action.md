@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1112.5179v1
-doc_title: "Prepared for submission to JHEP 3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA "
+doc_title: "3-Manifolds and 3d Indices"
 section_id: sec-018-62-symplectic-action
 section_title: "Symplectic action"
 section_number: 6.2
 pages: 62-65
 source_pdf: 1112.5179v1.pdf
 source_sha256: b58af08336c40994
-doc_brief: "3-Manifolds and 3d Indices Tudor Dimofte1,2 Davide Gaiotto 1 Sergei Gukov 3,4 1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2Trinity College, Cambridge CB2 1TQ, UK — We"
+doc_brief: "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories."
 ---
 We would like to deﬁne an aﬃne symplectic action on the Hilbert spaceH≡H 0,s (or products
 thereof) that intertwines an obvious symplectic action in the algebra of operators (6.20). This

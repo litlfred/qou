@@ -1,13 +1,13 @@
 ---
 doc_id: zhao-standard-2010
-doc_title: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm V alues at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao"
+doc_title: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity"
 section_id: sec-001-4-jianqiang-zhao
 section_title: "Jianqiang Zhao"
 section_number: 4
 pages: 4-4
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
-doc_brief: "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao — Let N be a positive integer."
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
 MPVs of level N are automatically of level N k for every positive integer k.
 For example when i1 = · · ·= iℓ = 0 or N = 1 one gets the MZV ζ(s1, . . . , sℓ).

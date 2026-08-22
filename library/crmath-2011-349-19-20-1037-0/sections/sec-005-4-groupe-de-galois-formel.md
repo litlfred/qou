@@ -1,13 +1,13 @@
 ---
 doc_id: crmath-2011-349-19-20-1037-0
-doc_title: "C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037–1039 Contents lists available at SciVerse ScienceDirect"
+doc_title: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières"
 section_id: sec-005-4-groupe-de-galois-formel
 section_title: "Groupe de Galois formel"
 section_number: 4
 pages: 3-3
 source_pdf: CRMATH_2011__349_19-20_1037_0.pdf
 source_sha256: fd5bd0558dfe892f
-doc_brief: "C. R. Acad. Sci. Paris, Ser. I www.sciencedirect.com Équations différentielles Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put"
+doc_brief: "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put and Reversat described the form of a pure q-difference module with non"
 ---
 Van der Put et Reversat ont décrit dans [2] le groupe de Galois formel des équations auxq-différences sur ˆK du point de
 vue algébrique, en tant qu’extension de Picard–Vessiot. Nous donnons ici, une description matricielle explicite de ce groupe

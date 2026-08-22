@@ -890,6 +890,186 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.280Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. 'no -- LR-fusion shattered' is a compatibility verdict cell in a three-valued column, not assertion-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.321Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.363Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.411Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.452Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.491Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.532Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.576Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.620Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. Bolded '**never**' for the skip-shell row is the conjecture's empirical content and is checkable: cross-read against table1 of the same block family gives 5 cases at Delta i = 0, 4 at Delta i = 1, 0 at Delta i >= 2 -- the counts the adjacent rows claim. Quantified, not inflated."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5cbe07c164f4",
+          "ts": "1006a0e38f47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:03:56.662Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies).",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
     ]
   },
   "label": "tbl:double-magic-delta-i-bound-table2-data",
@@ -897,5 +1077,5 @@
     "md": "5cbe07c164f4",
     "ts": "1006a0e38f47"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:03:56.662Z"
 }

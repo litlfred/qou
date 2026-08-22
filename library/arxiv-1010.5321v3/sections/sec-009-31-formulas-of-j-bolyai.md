@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume ∗ ´A.G.Horv´ ath Department of Geometry"
+doc_title: "Formulas on hyperbolic volume"
 section_id: sec-009-31-formulas-of-j-bolyai
 section_title: "Formulas of J. Bolyai"
 section_number: 3.1
 pages: 6-8
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume ∗ Á.G.Horváth Department of Geometry — This paper collects some important formulas on hyperbolic volume."
+doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
 ---
 In this section k is a constant giving the curvature of the hyperbolic space an d the value of our
 constantvn is 1. The following formulas can be found in [2], [1] and [11]. Most of it can be easily

@@ -7,7 +7,7 @@ section_number: 5
 pages: 22-24
 source_pdf: 0611504v1.pdf
 source_sha256: a33d2771c873a97e
-doc_brief: "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI — 19 sections: Introduction; Universal QHG; Building blocks"
+doc_brief: "Quantum hyperbolic geometry — 19 sections: Introduction; Universal QHG; Building blocks"
 duplicate_of: "agt-v7-n2-p13-s"
 ---
 Consider a QHFT bordism B = ( ˜Y, ˜LF,ρ,α ±). For every odd integer N ≥ 1, we associate a ﬁnite

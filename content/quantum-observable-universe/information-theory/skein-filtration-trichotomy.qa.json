@@ -965,6 +965,22 @@
         "reviewed_at": "2026-08-15T12:04:26.659Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "'The difficulty is not algebraic -- it does not live in an ideal' is the block's substantive claim (halting set not cut by an ideal)"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:57.967Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "About ten denials in 884 words, each a scope correction that the arity-conflation discipline requires: 'The legs are coupled, not merely parallel', 'it does not identify a Navier--Stokes singularity with a q-Collatz divergence', 'Sharing the abstraction SkeinObservationSystem is sharing a type, not a state', 'one candidate excluded, the class untouched'.",
+        "notes": "Density high, every instance load-bearing."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -999,6 +1015,21 @@
         "reviewed_at": "2026-08-15T12:04:26.699Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "full-block agent read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.020Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "'it is tempting to read ... as a weaker goal ... It is not:' is a concession answered immediately by a sorry-free equivalence (the hitting time is itself a descent measure), not a reframe."
       }
     ],
     "trap-em-dash": [
@@ -1034,6 +1065,21 @@
         "reviewed_at": "2026-08-15T12:04:26.739Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "single spaced dash carries the load-bearing algebraic/filtration contrast; no density"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.090Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "8 em-dashes in 884 words, all matched appositive pairs ('A non-increasing filtration — a monotone Lyapunov complexity, the categorical form of bounded enstrophy — rules out blow-up')."
       }
     ],
     "trap-triples": [
@@ -1068,6 +1114,21 @@
         "reviewed_at": "2026-08-15T12:04:26.778Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "three problems are the block's literal subject; enumeration substantive"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.207Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "'a valuation, a degree, a contact volume' and 'computability, a closed form, and monotonicity' are illustrative but each item is distinct; the top-level triple is the three named problems."
       }
     ],
     "trap-closing-aphorism": [
@@ -1102,6 +1163,21 @@
         "reviewed_at": "2026-08-15T12:04:26.819Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "full-block agent read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.299Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "Closes on what the shared structure supplies, immediately after stating that none of the three legs is settled."
       }
     ],
     "trap-meta-commentary": [
@@ -1136,6 +1212,39 @@
         "reviewed_at": "2026-08-15T12:04:26.860Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "full-block agent read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.352Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "severity": "major",
+        "evidence": "One instance: the periodicity paragraph opened by narrating the act of stating rather than stating — 'It is worth stating why the hypothesis is periodicity rather than ...'.",
+        "notes": "FIXED (no meaning change): 'It is worth stating why the hypothesis is periodicity rather than the more obvious fixed-point condition C(alpha) = alpha: that condition ...' -> 'The hypothesis is periodicity rather than the more obvious fixed-point condition C(alpha) = alpha because that condition ...'."
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:52:06.499Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Superseding the earlier agent:r01 fail on this block: the narrating opener was rewritten in this batch, so the periodicity paragraph now states the reason directly.",
+        "notes": "FIXED: 'It is worth stating why the hypothesis is periodicity rather than ... : that condition ...' -> 'The hypothesis is periodicity rather than ... because that condition ...'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1170,6 +1279,22 @@
         "reviewed_at": "2026-08-15T12:04:26.900Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "final sentence pairs with 'none is settled here' scope and lists the open cores; bookkeeping, not manufactured restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.433Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "The final paragraph restates the shared-substrate framing, but pairs it with the new statement that none of the three legs is settled and names each open core.",
+        "notes": "Optional: the last sentence could go without loss."
       }
     ],
     "trap-performed-warmth": [
@@ -1204,6 +1329,21 @@
         "reviewed_at": "2026-08-15T12:04:26.943Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "full-block agent read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.486Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1238,6 +1378,22 @@
         "reviewed_at": "2026-08-15T12:04:26.987Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "full-block agent read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.542Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "'cleanly separated' and 'entirely in the filtration' are the only intensifiers, and the second is the block's actual claim (undecidability puts the content outside any ideal).",
+        "notes": "Rigor flag reported separately: the v_[2] witness is mis-transcribed here relative to its own Lean file."
       }
     ],
     "trap-nonspeakable": [
@@ -1272,6 +1428,21 @@
         "reviewed_at": "2026-08-15T12:04:27.027Z",
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "evidence": "full-block agent read; no such construction present"
+      },
+      {
+        "field_hash": {
+          "md": "8f33db25608a",
+          "ts": "9fad36258762"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:45:58.613Z",
+        "reviewed_sha": "69fbf34f7c60f490e9c23e5c6410395c8a77e891",
+        "evidence": "Long paragraphs but clause-structured; each reads aloud in one pass."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1298,5 +1469,5 @@
     "md": "c39ad0ea617e",
     "ts": "9fad36258762"
   },
-  "updated_at": "2026-08-15T21:50:58.305Z"
+  "updated_at": "2026-08-19T21:52:06.499Z"
 }

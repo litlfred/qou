@@ -1,11 +1,11 @@
 ---
 # qou-4tj9
 title: 'Lean: QOU.Mass.CoordinationBinding — z=A-1 graph facts + conditional BondExtensiveBinding class (needs full Lean env)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-11T17:38:10Z
-updated_at: 2026-08-19T21:30:00Z
+updated_at: 2026-08-22T15:25:00Z
 ---
 
 **2026-08-19 (PR #5346): SHIPPED + machine-verified — awaiting owner close.** The sandbox
@@ -47,3 +47,11 @@ ledger if the conditional class trips the empty-carrier detector (it has real fi
 
 Refs: audit docs/audits/2026-07-11-bk-coordination-degree-and-alpha-contact.md;
 merged rem:bk-coordination-multiplicity (#3549); this PR #3551.
+
+## 2026-08-22 — CLOSED (owner-authorised in session)
+Work merged to main in PR #5346: content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean
+verified present on main and sorry-free (lean-direct exit 0; 0 sorry/native_decide). All four specced
+items shipped — coordination_degree (z=A-1), bond_count (C(A,2)), coordination_handshake, and the
+conditional BondExtensiveBinding class carrying the OPEN extensive law. The 07-11 blocker (SimpleGraph
+olean cone unbuildable: ProofWidgets network-blocked) was cleared by the full lake-cache restore.
+Closed on explicit owner instruction this session.

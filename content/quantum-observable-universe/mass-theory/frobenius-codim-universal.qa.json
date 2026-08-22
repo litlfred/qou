@@ -2117,6 +2117,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.792Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2136,6 +2151,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.839Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-em-dash": [
@@ -2155,6 +2185,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.879Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-triples": [
@@ -2174,6 +2219,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.922Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-closing-aphorism": [
@@ -2193,6 +2253,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.964Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-meta-commentary": [
@@ -2212,6 +2287,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.005Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-thesis-restatement": [
@@ -2231,6 +2321,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.045Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-performed-warmth": [
@@ -2250,6 +2355,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.084Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-superlative": [
@@ -2269,6 +2389,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.127Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "trap-nonspeakable": [
@@ -2288,6 +2423,21 @@
         "reviewed_at": "2026-08-15T10:31:00.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.165Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2311,5 +2461,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-16T11:39:48.591Z"
+  "updated_at": "2026-08-21T15:45:48.165Z"
 }

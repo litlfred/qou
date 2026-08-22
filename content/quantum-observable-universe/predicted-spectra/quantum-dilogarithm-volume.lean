@@ -55,11 +55,16 @@ noncomputable def bindingEnergy (q : ℝ) (markovFactors : List ℝ) : ℝ :=
     creates nonzero Φ_q and the nucleus is bound. -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 -- Ref: [manuscript] §5/quantum-dilogarithm-volume
+-- Dropped the unused hypotheses `hq : 1 < q`, `parentFactors daughterFactors`
+-- and `h_parent_len` (2026-08-22; vacuity ledger,
+-- `proof-no-unused-hypothesis-rfl`).  The equation is the definitional
+-- unfolding of `bindingEnergy`, which holds for every `q` and every factor
+-- list; none of the dropped binders were consumed by the `rfl` proof, and
+-- keeping them falsely suggested the identity depended on `q > 1` or on the
+-- parent/daughter data.  The two remaining binders `q` and `markovFactors`
+-- both appear in the conclusion.
 theorem quantum_dilogarithm_volume
-    (q : ℝ) (hq : 1 < q)
-    (markovFactors : List ℝ)
-    (parentFactors daughterFactors : List ℝ)
-    (h_parent_len : parentFactors.length = markovFactors.length)
+    (q : ℝ) (markovFactors : List ℝ)
     : bindingEnergy q markovFactors =
       quantumDilogarithmVolume markovFactors / (hbar_q q) ^ 2 := by
   unfold bindingEnergy

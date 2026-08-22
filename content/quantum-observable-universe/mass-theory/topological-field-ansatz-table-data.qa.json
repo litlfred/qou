@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.622Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.665Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.709Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.753Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.817Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.865Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.936Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:42.994Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:43.054Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "765450e28d8e",
+          "ts": "7de478150bc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:43.129Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. EVERY knot identification recomputed and correct: trefoil = T_{2,3}; cinquefoil = 5_1 = T_{2,5}; septafoil = 7_1 = T_{2,7}; 4_1 is amphichiral; Borromean rings are 6^3_2 in Rolfsen link notation (6 crossings, 3 components). The generation index is consistent - T_{2,2m+1} for deg alpha_V = m = 1,2,3. TWO CROSS-BLOCK FLAGS for the report. (1) This table assigns 4_1 to the HIGGS and T_{2,5} to the MUON, while prop:three-halves-structural-factor writes 'Muon (m = 2, K_mu = 4_1)' and closes m_mu/m_e via Vol(4_1), and rem:topological-mass-trefoil computes Vol(4_1)/hbar^2 and calls the result the muon-to-electron ratio. (2) Muon and tau are assigned TORUS knots here, and two other blocks in this same batch (prop:thurston-volume-additivity, rem:torus-knot-zero-volume-via-reeb) establish that torus knots have zero hyperbolic volume - so a Vol(K)/hbar_q^2 mass for the muon is identically zero under this table's assignment. No block reconciles the two."
+      }
     ]
   },
   "source_hashes": {
     "md": "765450e28d8e",
     "ts": "7de478150bc4"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:31:43.129Z"
 }
