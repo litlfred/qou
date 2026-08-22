@@ -2101,6 +2101,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:53.818Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Single paragraph plus display; no assertion-by-denial.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2120,6 +2136,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:53.855Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No pivot.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -2139,6 +2171,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 39 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:53.895Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -2158,6 +2206,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 39 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:53.933Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No list.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -2177,6 +2241,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:53.971Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Closes on \"We prove uniqueness in [uniqueness of the mass identity]\" - a cross-reference to the sibling proposition, which is the declared false-positive class.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -2196,6 +2276,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:54.009Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "None.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -2215,6 +2311,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:54.046Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No restatement; the block states the existence claim once.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -2234,6 +2346,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:54.085Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -2253,6 +2381,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:54.125Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No inflation; \"exists as a well-defined element of R for every rho\" is the precise claim the sibling proof discharges.",
+        "notes": "No change. This block checks out, and the mass display matches the definition block def:mass-identity character for character."
       }
     ],
     "trap-nonspeakable": [
@@ -2272,6 +2416,22 @@
         "reviewed_at": "2026-08-15T10:31:00.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aeb5cc844215",
+          "ts": "1501eb46bacd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:54.163Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Short and readable.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2295,5 +2455,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:54.163Z"
 }

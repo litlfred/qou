@@ -890,6 +890,186 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.442Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.545Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.586Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.628Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.669Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.712Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.753Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.794Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.877Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.928Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      }
     ]
   },
   "label": "tbl:clausen-function-mathlib-filler-table1-data",
@@ -897,5 +1077,5 @@
     "md": "e82d6745b7a8",
     "ts": "4459a8749682"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:36.928Z"
 }
