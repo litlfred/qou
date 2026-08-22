@@ -99,8 +99,9 @@ what the table is meant to compute first — regenerate it through
 `lp_dual_solver.py` so the dual fields are real — then state the Lean against
 the regenerated numbers.
 
-Worth noting for whoever does that: `Gx[3] = 0.49932033` is `√q/(q+1)` at this
-pin — the **convention-C** Markov parameter, excised by the 2026-08-15 ruling in
-favour of D. So the witness needs a convention pass too, not only a dual-fields
-pass.
+Worth noting for whoever does that: the recurring Gram entry `0.49932033`
+(`G[0][1]`, `G[0][2]`, and six more places) is `√q/(q+1)` at this pin — the
+**convention-C** Markov parameter, excised by the 2026-08-15 ruling in favour of
+D (`z_D = q³/(q²+1) = 0.61269`). So the witness needs a convention pass too, not
+only a dual-fields pass.
 
