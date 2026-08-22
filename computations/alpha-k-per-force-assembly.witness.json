@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T19:41:18.604193+00:00",
-  "commitSha": "fbe3574983e338c76a100c8d4cd6c4f2001bd11a",
+  "computedAt": "2026-08-22T20:25:45.220007+00:00",
+  "commitSha": "aed6d4dbd94bf9b2293555cc6bd2f15aa56db7ed",
   "assertions": [
     {
       "name": "EM trace-ratio identity h^2/(q dq9 dq10) = 1/(q[9]_q[10]_q)",
@@ -37,8 +37,8 @@
   "durationMs": 4,
   "computation": "alpha-k-per-force-assembly",
   "scriptFile": "alpha_k_per_force_assembly.py",
-  "scriptHash": "fc117bbb7add",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "c559543d4635",
+  "scriptCommitSha": "aed6d4dbd94bf9b2293555cc6bd2f15aa56db7ed",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
