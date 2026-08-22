@@ -3,8 +3,9 @@
 title: precision-gates.sh --changed silently passes after a commit; full run stamps sandbox lib versions into an audit witness
 status: todo
 type: bug
+priority: normal
 created_at: 2026-08-16T13:48:36Z
-updated_at: 2026-08-16T13:48:36Z
+updated_at: 2026-08-22T20:18:26Z
 ---
 
 Both found while running the mandatory precision preflight on PR #5241 after
@@ -89,3 +90,35 @@ regenerate.
         Q0_ANCHOR_MISSING 1885 -> 1886
     Regenerate in an environment that has scipy + clarabel, or defect 2 will
     corrupt the third one again.
+
+
+## Defect 1 FIXED (PR #5474, 2026-08-22) — and it was in TWO scripts
+
+Fixed as proposed: union `git diff --name-only $(git merge-base HEAD
+origin/main)...HEAD` into the file-collection.
+
+* `scripts/precision-gates.sh` (commit a315e8af05)
+* `scripts/check-sidecars.sh:28` (commit a1f111e438) — SAME DEFECT, found
+  by running it on a branch with three commits and being told "no changed
+  files". Not in the original bean.
+
+check-sidecars is the worse of the two. AGENTS.md names it as the
+pre-commit preflight AND as the Phase-4 merge-time verification gate
+("Content blocks changed -> check-sidecars.sh clean"). At merge time the
+changes are ALWAYS committed, so as the merge gate — the one standing in
+for CI while auto-triggers are off — it was reading an empty set and
+reporting success.
+
+Fixing it immediately surfaced a P30 in the file the same PR was editing
+(the CODATA scan wrote its witness with raw json.dump, no provenance),
+which is the argument for the fix in one line.
+
+## Defect 2 STILL OPEN
+
+q0-anchor-consistency-audit.witness.json still gets its `environment`
+block rewritten to the runner's installed versions on every full run.
+Reverted by hand twice on #5474 (no count moved, so the trailer's own
+rule says drift). This bean stays open for it. Fix is still one of:
+mask `environment` the way scriptCommitSha is masked in
+_EPHEMERAL_META_FIELDS, or have the trailer name this witness
+explicitly as env-stamped.

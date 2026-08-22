@@ -1,11 +1,11 @@
 ---
 # qou-d51g
 title: 'INFRA: the CODATA gate is 87s and the cost is per-literal mpmath, not I/O'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T19:45:47Z
-updated_at: 2026-08-22T19:46:20Z
+updated_at: 2026-08-22T20:18:26Z
 ---
 
 Follow-up to qou-wn1w (#5461), which wired the CODATA stale-edition scan into
