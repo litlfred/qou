@@ -1,6 +1,6 @@
 {
  "engine": "python-stdlib",
- "computedAt": "2026-08-21T23:16:30.931198+00:00",
+ "computedAt": "2026-08-22T09:20:45.556906+00:00",
  "computation": "codata-corpus-vintage-scan",
  "scriptFile": "codata_corpus_literal_scan.py",
  "description": "Numeric literals in the corpus that are NEAR a NIST CODATA-2022 table value but not equal to it -- the signature of a stale edition. Sites are split into code_sites (executable, the only class that can compute a wrong number), prose_sites (inside a comment or string, inert -- and often the RESULT of a drain recording what it superseded), adjudicated_sites (executable but marked reviewed), and record_sites (witness/audit output). Quote code_sites as the actionable queue, never source_sites, which is their sum and over-states it ~7x. Complements codata_truncation_audit.py, which compares literals against the in-repo codata_constants module and so catches short prefixes but is structurally blind to a full-length literal from an earlier CODATA edition. Reference values are READ from library/allascii.txt, never typed here.",
@@ -9,14 +9,14 @@
  "near_threshold_relative": "1e-05",
  "min_significant_digits": 7,
  "table_entries": 293,
- "files_scanned": 25182,
- "distinct_literals": 284,
- "total_sites": 1949,
- "source_sites": 448,
+ "files_scanned": 25183,
+ "distinct_literals": 285,
+ "total_sites": 1948,
+ "source_sites": 449,
  "code_sites": 61,
- "prose_sites": 381,
+ "prose_sites": 382,
  "adjudicated_sites": 6,
- "record_sites": 1501,
+ "record_sites": 1499,
  "findings": [
   {
    "literal": "938.27208816",
@@ -319,8 +319,8 @@
    "literal": "137.035999084",
    "table_value": "137.035999177",
    "quantity": "inverse fine-structure constant",
-   "sites": 124,
-   "code_sites": 73,
+   "sites": 123,
+   "code_sites": 71,
    "files": [
     "computations/DERIVATION-STATUS.md",
     "computations/alpha-em-4pi-fixed-point-solve.witness.json",
@@ -334,6 +334,7 @@
     "computations/alpha/alpha_em_4pi_bring_cm_modular_pslq.py",
     "computations/alpha/alpha_em_4pi_q_hyperbolic_b3_pslq.py",
     "computations/alpha/alpha_em_categorical_reidentification.py",
+    "computations/alpha/alpha_em_form_comparison_probe.py",
     "computations/alpha/alpha_em_habiro_taylor_investigation.py",
     "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
     "computations/alpha/alpha_em_q_difference_fourier.py",
@@ -384,7 +385,6 @@
     "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
     "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.lean",
     "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.md",
-    "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md",
     "docs/_archive/orphan-top-level/alpha-fsc-audit.md",
     "docs/audits/2026-05-01-math-framework-deep-audit.md",
     "docs/audits/2026-05-16-compound-shift-nf-impl.md",
@@ -762,26 +762,6 @@
    ]
   },
   {
-   "literal": "137.035944",
-   "table_value": "137.035999177",
-   "quantity": "inverse fine-structure constant",
-   "sites": 17,
-   "code_sites": 9,
-   "files": [
-    "computations/DERIVATION-STATUS.md",
-    "computations/meson_em_residual_alpha_em.py",
-    "computations/meson_em_sinh_closed_form.py",
-    "computations/per_observable_100x_status.py",
-    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
-    "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md",
-    "docs/audits/2026-05-01-math-framework-deep-audit.md",
-    "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
-    "docs/audits/2026-08-02-ppq-attack-vectors-roast.md",
-    "docs/observable-sector-tracker.md",
-    "tools/pyhecke/python/pyhecke/constants.py"
-   ]
-  },
-  {
    "literal": "3727.3794066",
    "table_value": "3727.3794118",
    "quantity": "alpha particle mass energy equivalent in MeV",
@@ -814,6 +794,25 @@
     "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean",
     "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
     "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md"
+   ]
+  },
+  {
+   "literal": "137.035944",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 16,
+   "code_sites": 8,
+   "files": [
+    "computations/meson_em_residual_alpha_em.py",
+    "computations/meson_em_sinh_closed_form.py",
+    "computations/per_observable_100x_status.py",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md",
+    "docs/audits/2026-05-01-math-framework-deep-audit.md",
+    "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
+    "docs/audits/2026-08-02-ppq-attack-vectors-roast.md",
+    "docs/observable-sector-tracker.md",
+    "tools/pyhecke/python/pyhecke/constants.py"
    ]
   },
   {
@@ -864,6 +863,25 @@
     "docs/audits/2026-05-24-superseded-rho-q-purge.md",
     "docs/audits/2026-06-02-lepton-t2n-torus-tower.md",
     "docs/audits/2026-06-21-constant-consistency-axis2-clean.md"
+   ]
+  },
+  {
+   "literal": "137.0359351",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 12,
+   "code_sites": 9,
+   "files": [
+    "content/pipeline/trace-convention-audit.ts",
+    "content/pipeline/witness-substitution-audit.ts",
+    "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md",
+    "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.ts",
+    "content/quantum-observable-universe/observations/fine-structure-data.md",
+    "content/quantum-observable-universe/observations/fine-structure-observation-table2-data.md",
+    "content/quantum-observable-universe/observations/hadron-half-life-verification-table6-data.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md",
+    "docs/coordination/trace-convention-registry.md"
    ]
   },
   {
@@ -920,23 +938,6 @@
    ]
   },
   {
-   "literal": "137.0359351",
-   "table_value": "137.035999177",
-   "quantity": "inverse fine-structure constant",
-   "sites": 10,
-   "code_sites": 7,
-   "files": [
-    "content/pipeline/trace-convention-audit.ts",
-    "content/pipeline/witness-substitution-audit.ts",
-    "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md",
-    "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.ts",
-    "content/quantum-observable-universe/observations/fine-structure-data.md",
-    "content/quantum-observable-universe/observations/fine-structure-observation-table2-data.md",
-    "content/quantum-observable-universe/observations/hadron-half-life-verification-table6-data.md",
-    "docs/coordination/trace-convention-registry.md"
-   ]
-  },
-  {
    "literal": "4.0014857735613285",
    "table_value": "4.001506179129",
    "quantity": "alpha particle mass in u / alpha particle relative atomic mass",
@@ -970,24 +971,6 @@
     "computations/probes/flavor_split_geometric_closure_probe.py",
     "docs/audits/2026-06-01-e0-lambda-composite-structure.md",
     "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
-   ]
-  },
-  {
-   "literal": "137.035999",
-   "table_value": "137.035999177",
-   "quantity": "inverse fine-structure constant",
-   "sites": 9,
-   "code_sites": 7,
-   "files": [
-    "computations/alpha_em_b2_tau_w_freedom_probe.py",
-    "computations/audits/hardcoded-literal-audit.witness.json",
-    "computations/binding_color_vs_charge_tn3he.py",
-    "computations/mirror_isospin_coulomb_split.py",
-    "content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.qa.json",
-    "content/quantum-observable-universe/observations/fine-structure-observation.md",
-    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
-    "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
-    "docs/audits/2026-08-02-ppq-attack-vectors-roast.md"
    ]
   },
   {
@@ -1044,6 +1027,23 @@
     "computations/probes/em-coupling-projection-probe.witness.json",
     "computations/probes/em_coupling_projection_probe.py",
     "content/quantum-observable-universe/observations/fine-structure-data.md"
+   ]
+  },
+  {
+   "literal": "137.035999",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 8,
+   "code_sites": 6,
+   "files": [
+    "computations/alpha_em_b2_tau_w_freedom_probe.py",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/binding_color_vs_charge_tn3he.py",
+    "computations/mirror_isospin_coulomb_split.py",
+    "content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.qa.json",
+    "content/quantum-observable-universe/observations/fine-structure-observation.md",
+    "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
+    "docs/audits/2026-08-02-ppq-attack-vectors-roast.md"
    ]
   },
   {
@@ -1131,6 +1131,20 @@
    ]
   },
   {
+   "literal": "137.0359350939756",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 7,
+   "code_sites": 5,
+   "files": [
+    "computations/DERIVATION-STATUS.md",
+    "computations/meson-em-residual-alpha-em.witness.json",
+    "computations/meson-em-sinh-closed-form.witness.json",
+    "computations/meson_em_residual_alpha_em.py",
+    "computations/per_observable_100x_status.py"
+   ]
+  },
+  {
    "literal": "1.001378",
    "table_value": "1.00137841946",
    "quantity": "neutron-proton mass ratio",
@@ -1179,19 +1193,6 @@
     "computations/b-over-m-order-probe.witness.json",
     "computations/b_over_m_order_probe.py",
     "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
-   ]
-  },
-  {
-   "literal": "137.0359350939756",
-   "table_value": "137.035999177",
-   "quantity": "inverse fine-structure constant",
-   "sites": 6,
-   "code_sites": 4,
-   "files": [
-    "computations/meson-em-residual-alpha-em.witness.json",
-    "computations/meson-em-sinh-closed-form.witness.json",
-    "computations/meson_em_residual_alpha_em.py",
-    "computations/per_observable_100x_status.py"
    ]
   },
   {
@@ -1283,17 +1284,6 @@
     "computations/m-p-borromean-verification-50dps.witness.json",
     "computations/mass-table-comprehensive.witness.json",
     "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
-   ]
-  },
-  {
-   "literal": "137.035998166",
-   "table_value": "137.035999177",
-   "quantity": "inverse fine-structure constant",
-   "sites": 5,
-   "code_sites": 5,
-   "files": [
-    "computations/DERIVATION-STATUS.md",
-    "docs/audits/2026-05-01-math-framework-deep-audit.md"
    ]
   },
   {
@@ -1503,6 +1493,17 @@
    "files": [
     "computations/audits/hardcoded-literal-audit.witness.json",
     "docs/audits/2026-06-29-bean-hygiene-data-integrity-verified-resolved.md"
+   ]
+  },
+  {
+   "literal": "137.035998166",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "computations/DERIVATION-STATUS.md",
+    "docs/audits/2026-05-01-math-framework-deep-audit.md"
    ]
   },
   {
@@ -3068,6 +3069,16 @@
    "code_sites": 1,
    "files": [
     "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json"
+   ]
+  },
+  {
+   "literal": "137.0354154444",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/DERIVATION-STATUS.md"
    ]
   },
   {
