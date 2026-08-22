@@ -26,6 +26,6 @@ where $\hbar_q = 1 - q^{-1}$
 ([quantum Planck constant](#def:quantum-planck-constant)) and $J$ is
 the complex structure on $H$.
 
-This unifies bosons and fermions geometrically: $q$ controls the
+Thus $q$ controls the
 radial position in $\mathbb{P}(V)$, with the bosonic sector at the
 boundary and the fermionic sector at the origin.
