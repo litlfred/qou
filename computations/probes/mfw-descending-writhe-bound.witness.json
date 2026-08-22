@@ -1,8 +1,8 @@
 {
   "engine": "exact-braid-word-enumeration",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T16:09:36.949005+00:00",
-  "commitSha": "ad781dfc792a0a259027f7fe4c3e42edbffcf358",
+  "computedAt": "2026-08-22T19:29:53.282361+00:00",
+  "commitSha": "73ff9fd8738ebf853d16de825665e55450f30570",
   "assertions": [
     {
       "name": "descending_writhe_bound_holds",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 9,
   "computation": "mfw-descending-writhe-bound",
   "scriptFile": "mfw_descending_writhe_bound_probe.py",
-  "scriptHash": "f7002376a465",
-  "scriptCommitSha": "ad781dfc792a0a259027f7fe4c3e42edbffcf358",
+  "scriptHash": "a580771fe572",
+  "scriptCommitSha": "36b172e032502d3bf234aca494c609beb8d7b7d6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,9 +72,16 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
-  "description": "Exhaustive measurement of the MFW skein-induction base case: every totally descending braid word of length <= 6 on 2-4 strands satisfies |writhe| <= n - components, and the bound is tight for every (n,c) reached. Supports but does NOT prove QOU.Knot.MFWSkeinInduction's `DescendingWrithe` hypothesis. Scope-(a); nothing wired. Bean qou-9ttb.",
+  "invocation": {
+    "argv": [
+      "computations/probes/mfw_descending_writhe_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mfw_descending_writhe_bound_probe.py"
+  },
+  "description": "Exhaustive measurement of the MFW skein-induction base case: every totally descending braid word of length <= 6 on 2-4 strands satisfies |writhe| <= n - components, and the bound is tight for every (n,c) reached. Supports but does NOT prove QOU.Knot.MFWSkeinInduction's `DescendingWrithe` hypothesis. Scope-(a); nothing wired. Bean qou-9ttb (closed); Lean residue qou-e6db.",
   "data": {
     "max_strands": 4,
     "max_word_length": 6,

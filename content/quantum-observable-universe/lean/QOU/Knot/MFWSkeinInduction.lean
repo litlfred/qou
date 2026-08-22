@@ -1,8 +1,8 @@
 /-
-# Morton–Franks–Williams by skein induction — the propagation step (qou-9ttb)
+# Morton–Franks–Williams by skein induction — the propagation step (qou-9ttb, closed; residue qou-e6db)
 
 `QOU.Knot.MortonFranksWilliams` carries the two MFW degree bounds as
-**hypotheses** on `MFWWitness`, and `qou-9ttb` records why: proving them was
+**hypotheses** on `MFWWitness`, and `qou-9ttb` (now CLOSED) records why: proving them was
 scoped as needing Markov invariance of the Ocneanu trace plus a degree
 argument on the Hecke representation — research-scale.
 
@@ -53,7 +53,7 @@ The base case is where the remaining content is, and it is not obviously
 free: it amounts to `|e| ≤ n − c` for a descending word with `c` closure
 components, which is *false* for arbitrary words (the longest element of `S₃`
 has Coxeter length 3 against `n − c = 1`) and so depends on what "descending"
-supplies. That gap is recorded in `qou-9ttb`; do not read this file as
+supplies. That gap is closed — see the base-case section below; do not read this file as
 closing it.
 
 Measured alongside: the window holds for **180/180** random braid words on
@@ -229,7 +229,13 @@ words the number of pairs with nonzero net **exceeds** `n − c` — e.g. `n = 3
 and negative-net graphs are forests" is false: `G⁻` always is, but `G⁺` carries
 a cycle in 30 words — `n = 4`, `w = σ₁σ₂σ₁σ₃σ₂⁻¹` has the positive triangle
 `{1,2}, {1,3}, {2,3}`. Both were attempts to prove from scratch what
-`bennequin1983` already gives. Tracked in `qou-9ttb`.
+`bennequin1983` already gives.
+
+`qou-9ttb` is **closed**: the mathematics of MFW is settled (propagation proved
+here, base case classical). What remains is that no Lean file in this repo
+touches an actual knot — there is no HOMFLY in Lean, so nothing can produce an
+`MFWWitness` from a real link. That is infrastructure on the scale of a Mathlib
+contribution and is tracked separately as **`qou-e6db`**.
 -/
 
 /-- The base-case hypothesis, named so it can be discharged later rather than
