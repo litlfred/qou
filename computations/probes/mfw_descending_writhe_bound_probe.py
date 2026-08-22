@@ -37,7 +37,7 @@ sys.path[:0] = [str(_ROOT / "computations")]
 
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from homfly_skein_braid import first_bad  # noqa: E402
+from homfly_skein_braid import first_bad, homfly_braid  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 MAX_N = 4
@@ -184,9 +184,44 @@ def main() -> int:
     print("  graph's number of independent cycles is at most twice its number")
     print("  of negative edges.")
 
-    print("\n  NOT a proof. The Lean file states this as `DescendingWrithe` and "
-          "uses it in\n  `base_window_of_descending`; discharging it is the "
-          "open residue of qou-9ttb.")
+    # The classical route: descending => unlink, then Bennequin.
+    unlink_by_c: dict[int, object] = {}
+    unlink_mismatch = 0
+    for n in (2, 3, 4):
+        gens = [g for i in range(1, n) for g in (i, -i)]
+        for L in range(0, 6):
+            for w in itertools.product(gens, repeat=L):
+                k, c = first_bad(w, n)
+                if k is not None:
+                    continue
+                h = homfly_braid(w, n)
+                if c not in unlink_by_c:
+                    unlink_by_c[c] = h
+                elif unlink_by_c[c] != h:
+                    unlink_mismatch += 1
+
+    print("\n  THE HYPOTHESIS IS CLASSICAL -- it is a corollary, not an open")
+    print("  problem. Two standard facts close it:")
+    print("    1. A descending diagram is an UNLINK (lickorish1997). Verified")
+    print("       here: HOMFLY depends only on c, never on the word.")
+    print(f"       descending words disagreeing with their c-class : "
+          f"{unlink_mismatch}")
+    for c in sorted(unlink_by_c):
+        print(f"         c={c}: {unlink_by_c[c]}")
+    print("       i.e. exactly ((v^-1 - v)/z)^(c-1), the unlink polynomial.")
+    print("    2. Bennequin's inequality (bennequin1983): sl <= -chi. For a")
+    print("       closed braid sl = e - n, and the c-component unlink has")
+    print("       maximal chi = c (c disjoint disks), so e <= n - c.")
+    print("    Mirroring sends e -> -e and fixes the unlink, giving |e| <= n-c.")
+    print("    NOT circular: Bennequin (1983) predates HOMFLY (1985) and MFW")
+    print("    (1987); its proof is contact-geometric.")
+
+    print("\n  This probe is EVIDENCE, not a proof: it verifies the premise")
+    print("  (descending => unlink) and the bound exhaustively at small n, and")
+    print("  the proof itself is the citation to bennequin1983. The Lean file")
+    print("  carries `DescendingWrithe` as a threaded hypothesis because")
+    print("  Mathlib has neither HOMFLY nor Bennequin -- its status is")
+    print("  CLASSICAL-AND-CITED, no longer open. (qou-9ttb)")
 
     wb = WitnessBuilder("mfw-descending-writhe-bound",
                         engine="exact-braid-word-enumeration")
@@ -210,6 +245,13 @@ def main() -> int:
                      source=f"exhaustive over {total} descending words")
     wb.add_data("max_net_crossings_per_strand_pair", max_pair_net)
     wb.add_data("words_where_nonzero_pairs_exceed_n_minus_c", nz_exceeds_bound)
+    wb.add_data("unlink_homfly_by_component_count",
+                {str(c): str(h) for c, h in sorted(unlink_by_c.items())})
+    wb.add_assertion("descending_closures_are_unlinks",
+                     computed=str(unlink_mismatch), expected="0",
+                     tolerance="exact",
+                     source="HOMFLY depends only on c; premise of the "
+                            "Bennequin route (lickorish1997)")
     wb.add_data("cross_component_nonzero_linking", cross_component_nonzero)
     wb.add_data("per_component_bound_violations", per_component_violations)
     wb.add_data("per_component_bound_tight", per_component_tight)

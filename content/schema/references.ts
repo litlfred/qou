@@ -14780,6 +14780,18 @@ export const references: Reference[] = [
       "extracts as a single section. Registered from library intake; metadata " +
       "read off page 1.",
   }),
+  // ── Bennequin 1983 — the self-linking inequality sl <= -chi ──
+  ref({
+    id: "bennequin1983",
+    type: "article-journal",
+    title: "Entrelacements et \u00e9quations de Pfaff",
+    author: [{ family: "Bennequin", given: "Daniel" }],
+    "container-title": "Ast\u00e9risque",
+    issued: { "date-parts": [[1983]] },
+    volume: "107-108",
+    page: "87-161",
+    note: "Source of the self-linking (Bennequin) inequality sl(L) <= -chi(L). For a closed braid on n strands with exponent sum e, sl = e - n, so the c-component unlink (maximal Euler characteristic c, being c disjoint disks) gives e <= n - c. Cited by QOU.Knot.MFWSkeinInduction: together with the classical fact that a descending diagram is an unlink (lickorish1997), this discharges the DescendingWrithe base-case hypothesis of the MFW skein induction. Not circular: Bennequin (1983) predates HOMFLY (1985) and MFW (1987), and its proof is contact-geometric, independent of the skein induction it is used in here. No DOI recorded -- Asterisque 107-108 predates DOI assignment; deliberately left absent rather than guessed.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
