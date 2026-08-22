@@ -132,3 +132,54 @@ this bean is about: 55.7 % of agent entries corpus-wide carry no
 `field_hash.md`, so nothing can check whether they still certify their source.
 That made the `qou-tqr9` union filter drop them — corrected there.
 
+## 2026-08-22 — the 28 are three incidents, and they resolve from their own structure
+
+I had written that picking a winner for each of the 28 *"means deciding which
+verdict is right … not one to make in bulk"*. Measured, that is **wrong** — the
+record settles it without any re-adjudication.
+
+**They are not 28 independent calls.** By batch: `agent:e00` **23**,
+`agent:r01` 3, `agent:g01` 2. Three incidents.
+
+**They were not written as two considered judgements.** Timestamp gaps within
+each pair:
+
+```
+median gap  0.210 s      min 0.037 s      25 of 28 under 5 s
+```
+
+Sub-second means one helper invocation sequence, not a second reading. (The 3
+outliers, minutes apart, are the `r01` ones that say *"superseding"* outright.)
+
+**And the entries are not symmetric.** In every pair, exactly one side carries
+substance:
+
+```
+pass entries with NO notes (boilerplate default)  23 / 28
+fail entries WITH notes  (specific finding)       28 / 28
+```
+
+The `pass` evidence is identical boilerplate across criteria — *"Full read of
+proposition .md … Checked all ten categories over the whole text"* — with no
+notes. The `fail` beside it quotes the offending sentence and proposes a fix.
+Worked pair, 276 ms apart:
+
+```
+[1] pass  evidence: "Full read of proposition .md … all ten categories"   notes: none
+[2] fail  evidence: "Surviving final sentence '…' restates the boxed …"   notes: "proposed: delete …"
+```
+
+So the shape is **default-then-finding**: the batch wrote a blanket `pass` per
+criterion and then recorded the specific finding, and because the array is
+append-only the default survived beside it. It was never meant to stand.
+
+**Stated rule, applicable without judgement:** *where a contradictory pair is
+written under 5 seconds apart and only one entry carries `notes`, the noted
+entry is the considered verdict.* It selects the `fail` in all 28.
+
+**Still not bulk-edited here**, and that is now a scope choice rather than a
+capability limit: 28 edits to other agents' verdicts should be applied
+deliberately — by extending the checker with a `--resolve` mode that drops the
+un-noted default, or by whoever owns the axis — not as a side effect of an
+audit that happened to notice them.
+
