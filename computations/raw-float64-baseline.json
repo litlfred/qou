@@ -2,8 +2,8 @@
   "note": "Witnesses known to carry raw float64, by count. The backlog is tolerated; it must only SHRINK. Regenerate ONLY when draining. Adding a file here to silence a failure defeats the gate \u2014 fix at the producer instead.",
   "enforced_rule": "AGENTS.md: NO-FLOAT64 means none may enter a witness.",
   "drain_owner": "PR #4677 (float64 residual, producer-side)",
-  "files_count": 1413,
-  "fields_count": 487983,
+  "files_count": 1412,
+  "fields_count": 487863,
   "files": {
     "computations/4he-binding-full-pipeline.witness.json": 40,
     "computations/a-K-via-lp-dual-full.witness.json": 38,
@@ -1333,7 +1333,6 @@
     "computations/sublemma-2-1-A-operator-extract-h9-nn.witness.json": 80996,
     "computations/sublemma-2-1-A-operator-extract-h9-pn.witness.json": 80996,
     "computations/sublemma-2-1-alpha-shift-extract.witness.json": 47,
-    "computations/sublemma-2-1-deuteron-branching.witness.json": 120,
     "computations/sublemma-2-1-h12-helium-4-framework.witness.json": 3,
     "computations/sublemma-2-1-h9-he3-verify.witness.json": 122,
     "computations/sublemma-2-1-h9-tritium-branching-verify.witness.json": 121,

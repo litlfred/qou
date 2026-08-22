@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 306,
-      "proton-pin": 1230,
+      "STALE": 305,
+      "proton-pin": 1231,
       "unknown": 25,
       "canonical": 211
     },
-    "stale_total": 306,
+    "stale_total": 305,
     "new_stale": 0,
     "rows": [
       {
@@ -11565,9 +11565,9 @@
       {
         "file": "computations/sublemma-2-1-deuteron-branching.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955541805",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416943465287684
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/substrate/binding-qbeta-aw-recurrence-probe.witness.json",
