@@ -12,9 +12,9 @@ The effective-CLT workplan posed sub-result (2) as: prove `M₁(n) ≥ κ·n^{5/
 
 With `κ_n := M₁(n)/n^{5/2}` (exact `Fraction`, compared to `κ` at 60 dps):
 
-> **`κ_n < κ` for `n ≤ 12`;  `κ_n > κ` for every `13 ≤ n ≤ 46`.** Crossing at **`n₀ = 13`**.
-> The gap `κ_n − κ` is positive throughout `[13,46]`, peaking `≈ 0.001556` at `n=32`, then declining
-> gently (`≈ 0.001472` at `n=46`) — far from recrossing 0.
+> **`κ_n < κ` for `n ≤ 12`;  `κ_n > κ` for every `13 ≤ n ≤ 60`** (extended). Crossing at **`n₀ = 13`**.
+> The gap `κ_n − κ` is positive throughout `[13,60]`, peaking `≈ 0.001556` at `n=32`, then declining
+> gently (`≈ 0.001381` at `n=60`) — far from recrossing 0.
 
 Hence the proof structure:
 
@@ -42,9 +42,19 @@ Verified `κ_n > κ` exactly for `13 ≤ n ≤ 46`. **Not proved for all `n`.** 
 the second-order correction to `Cov(T,ω₃)` — a genuine (if now one-sided) second-order Kerov-CLT /
 Fulman-second-moment computation. Two honest sub-questions remain:
 
-1. **Asymptotic sign:** show the leading correction to `Cov(T,ω₃)` beyond `κn^{5/2}` is `≥ 0`
+1. **Asymptotic sign:** show the leading correction to `Cov(Σh,ω₃)` beyond `κn^{5/2}` is `≥ 0`
    (so `κ_n → κ` from above), giving `κ_n ≥ κ` for `n ≥ N₀`.
-2. **No dip in the window:** confirm `κ_n ≥ κ` on `13 ≤ n < N₀` (exact check; have it to 46).
+2. **No dip in the window:** confirm `κ_n ≥ κ` on `13 ≤ n < N₀` (exact check; have it to 60).
+
+**Sign attempt — recast, not proved.** Using the *real* decomposition `Σh = ΣD² + Σ|c|` (merged
+PR #5452, `P = Cov(Σ|c|,ω₃) ≥ 0`, `N = −Cov(ΣD²,ω₃) ≥ 0`, `M₁ = P − N`): both `P_n/n^{5/2}` and
+`N_n/n^{5/2}` rise to their limits (`P_lead = 0.169765`, `N_lead = 0.112125`) **from below**, so
+`κ_n − κ = (P_n − P_lead n^{5/2}) − (N_n − N_lead n^{5/2})` over `n^{5/2}` = `(N-deficit) − (P-deficit)`
+(both deficits positive). Measured (e.g. n=18: `N`-deficit `0.0204` > `P`-deficit `0.0193`), **`κ_n > κ`
+holds precisely because `N` (the diagonal-length-spread covariance) converges to its VKLS limit
+*slower* than `P` (the |content|-spread covariance).** So the sign (b1) is equivalent to the
+second-order *rate comparison* "`N` lags `P`" — still an open second-order-CLT statement, now with a
+concrete structural target. Not proved.
 
 Together with (a) these would give `M₁>0` for all `n`. The gap `qou-k5r5` stays **OPEN**, but its
 remaining content is now precisely (b1): the *sign* of one correction term.
