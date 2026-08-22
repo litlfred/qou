@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T17:20:09Z
+updated_at: 2026-08-22T17:33:45Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -149,3 +149,38 @@ because attributing a sibling's 13 fixes to my own commit would have been the
 error, and the record moving the WRONG way is exactly when to stop and measure.
 
 Guard test 2 pass; --check-ledger exit 0.
+
+
+## 2026-08-22 (3) — the exclusion's BOUNDARY located: tr_M is the escape
+
+Route 3's scope named 'a non-scalar normalisation' as a survivor. Pinned down.
+
+The exclusion is about the MATRIX character trace(rho(w)) in Z[q,q^-1]. The
+MARKOV trace is a different object:
+    tr_M(beta) = sum_lambda y_lambda(z) * chi_lambda(beta)
+Its Wedderburn weights carry z. Solved the three H_3(q) Markov equations
+symbolically: ALL THREE weights are genuinely z-dependent. So tr_M is NOT in
+Z[q,q^-1] and the integrality obstruction does not reach it.
+
+Two independent reproductions of corpus facts confirming this is the real
+boundary, not bookkeeping:
+  * at z_D: y_(2,1) = q^2/(q^2+1)^2 — exactly the corpus stdWeightD — and
+    y_(1^3) = 0, the two-row Temperley-Lieb forcing. Re-derived from the Markov
+    equations, not assumed.
+  * at z_C: the weights are NOT Laurent polynomials — half-integer powers of q,
+    inherited from the sqrt(q) in z_C.
+
+So a transfer matrix normalised by the Markov trace is exactly the non-scalar,
+z-dependent object route 3's scope does not cover. **This does NOT say the route
+works** — only that the proved obstruction does not close it, and where to look.
+
+## Route status
+
+1. z_D into alpha=(z-1)h/2 ................ PRUNED (23% vs 1.1e-5 rad window)
+2. exact Form-A/Form-B bridge ............. REFUTED (530%/456% vs 0.04%/23%)
+3. M = lambda*rho(braid word), matrix char  EXCLUDED scope-(b), invariant named
+4. M normalised by tr_M ................... OPEN — the live route, boundary now
+                                            located; tr_M carries z via y_lambda
+5. M outside the braid image .............. OPEN, unexplored
+
+Probe now 8/8 (assertions 7-8 added), exact symbolic Q(q).
