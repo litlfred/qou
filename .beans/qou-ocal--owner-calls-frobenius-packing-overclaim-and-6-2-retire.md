@@ -62,3 +62,21 @@ rule regardless of the +1.09% agreement.
 Re-scoped owner call: flag 6₂ as AME-inverted / not derived — do NOT retarget it to Vol=0 (that
 would swap one inadmissible assignment for another). Still owner-gated (live prediction).
 My audit 2026-08-21-deuteron-w3-knot-identity-adjudicated.md now carries the retraction banner.
+
+## 2026-08-22 — item 2 EXECUTED (owner-authorised): 6₂ flagged, NOT retargeted
+Owner authorised the flag in session. Applied to the live atlas registry
+(content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md):
+ • deuteron record: added a **Provenance ⚠** row — 6₂ is AME-inverted (producer's own admission,
+   mass_table_ppb.py L18-21) so the +1.09% is circular; and the closure claim is asserted-not-computed
+   (mass word is not a braid word; arity mismatch — closes to a 3-component link, 6₂ is a knot).
+   Cites the sibling adjudication (UNDETERMINED, all three candidates inadmissible).
+ • "Closure = K_{6_2}" qualified as **asserted, not computed**; the Prediction row marked **not a
+   prediction** (the knot was selected by matching that quantity).
+ • `manual-historical-volume-match` tier row (which already names D, T AND ³He): added the same
+   AME-inversion admission + citation, so all three entries carry the flag consistently rather than
+   leaving D flagged and its two siblings silent.
+Deliberately NOT done: retargeting 6₂ to any other knot (Vol=0 included) — no alternative assignment
+is established; the flag records undetermined status, it does not pick a winner.
+Gates: relative links verified to resolve; render-QA preflight clean (balanced $/braces, no
+\operatorname, no crash-class unicode); qa-sweep run — sidecar md+ts in sync, 0 stale criteria.
+Both items of this bean are now executed; ready for owner close.
