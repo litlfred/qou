@@ -3408,3 +3408,174 @@ which reproduces the D weights `[4]_q/[2]_q³`, `1/[2]_q²`, `0`
 `mass-identity-exists{,-proof}`; and the tower/Φ_q numerics of
 `mass-endomorphism-conjecture` (73.8875 / 94.2887 / 99.7474 / 99.9898 %;
 `Φ_q(0.989) = 671094`, `Φ_q(1) = 901389`).
+
+
+## From agent:i00 (predicted-spectra iq_00) — 2026-08-22
+
+45 blocks, 450 verdicts. Trap density is genuinely low — 22 of the 45 are
+extracted data tables with no prose — and the read paid off in the numerics.
+
+### Three build-fatal render defects — FIXED, and the obvious detector is wrong
+
+**I00-1.** Two ` ```tex ` fences opened and never closed
+(`helium-hopf-diagram` twice, `hydrogen-orbitals` once). Under CommonMark a
+**closing** fence carries no info string, so the second ` ```tex ` does not
+close the first: the block stays open and the rest of the file is raw
+passthrough, which aborts pdflatex.
+
+**Counting fences for parity does not catch this, and I wrote the parity
+check first.** It reported **zero problems corpus-wide** while both files
+were unbuildable, because `helium-hopf-diagram` had an *even* count (2
+openers, 0 closers). The correct check walks fences in order and flags an
+info-string fence seen while a block is open —
+[`content/pipeline/fence-close-check.ts`](../content/pipeline/fence-close-check.ts),
+now in the render battery. Corpus is clean under it: 3628 files, zero.
+
+**I00-2.** `integer-stability` carried `\mathrm*{argmin}`. `\mathrm` has no
+starred form; LaTeX errors and KaTeX rejects it. Fixed to `\mathrm{argmin}`
+(not `\operatorname*`, which the corpus bans).
+
+### The Λ-vs-Cl₂ swap, caught against its own Lean
+
+**I00-3. `clausen-function-mathlib-filler-table1-data` row 5** gives
+`Vol_Borromean = 8·Cl₂(π/4)`. Recomputed at 30 dps:
+`Cl₂(π/4) = 0.9818721511`, so `8·Cl₂(π/4) = 7.8549772084` — **7.20 % above**
+`Vol(Borromean) = 7.3277247534`. The correct identity is
+`8·Cl₂(π/2) = 8G = 16·Λ(π/4)`, which is **exactly what the Lean carrier
+says and proves**: `ClausenFunctionMathlibFiller.lean:139` defines
+`Vol_Borromean := 8 * Cl_2 (π/2)` and `CatalanValueBounds` proves it against
+7.3277247534. Row 3 of the *same table* gives `Catalan_constant = Cl₂(π/2)`
+correctly, so the table also contradicts itself. This is the AGENTS.md
+argument-swap class, and `qou-zdz5` tracks the corpus-wide drain.
+
+The agent's **self-retraction here is the instructive part**: its first
+recorded note asserted `8·Cl₂(π/4) = 7.3277` *without computing it* —
+i.e. it reproduced the very error it was auditing — and superseded that
+entry on all ten criteria after evaluating the Clausen function.
+
+### Three tables stale against a witness that now fails
+
+**I00-4.** `e-hartree-…-table2/3/11-data`.
+`computations/h2-molecular-binding.witness.json` currently records
+**`allPassed: false`**, `binding_Phi_diff = 0.12847273`,
+`E_bind_eV_predicted = 0.86453646`, and a failing assertion "H2 binding
+energy within 5 % of observed" (computed 0.8645 against expected 4.478 eV).
+`git show` dates the move to `4326460a4`, *"migration: batch to 116/254 at
+the proton pin"*; at `230cdd113` it read 0.687012518563036 / 4.623139099612237
+/ `allPassed: true`.
+
+The tables still carry the **pre-migration** numbers — table 3's column is
+explicitly labelled "Witness (numerical)" — and table 11's unlabelled "ratio
+to target" back-solves to a single consistent 0.1699 where the current
+witness gives 0.03177. **Everything is off by the same 5.35×**, which is what
+makes it staleness rather than arithmetic. Also: that assertion's *name* says
+5 % while its `tolerance` field is 0.25.
+
+**I00-5. A framework Hartree presented as the physical one.**
+`e-hartree-…-table2-data` prints `E_HARTREE 27.30 eV`. The table is
+internally consistent — `α_EM²/h⁴ = 0.0279636710` at the proton pin ✓,
+implying `1/α = 136.8232` and `m_e c²α² = 27.2961` ✓ — but 27.30 eV is
+**0.33 % above** the physical 27.2114 eV, unqualified, and the cited witness
+itself records `E_hartree_eV = 27.211467573` with CODATA `α_EM`.
+
+### Claims that do not follow
+
+**I00-6. A β-stability threshold formula that its parent's own model
+refutes.** `integer-stability-consequences` states
+`A_k = (a_C(2k+1)/(2a_A))^{3/2}`. Solving `p*(A) = k + ½` numerically with
+the normalisation the parent's `E(p,A)` implies gives
+**A₂₀ = 44.97, A₅₀ = 119.78, A₉₁ = 236.55** — the last correctly landing on
+uranium — against the stated **0.062, 0.240, 0.586**. The model itself is
+sound (`p*(238) = 91.98` vs Z = 92; `p*(208) = 81.98` vs Z = 82).
+
+Coefficient-free argument that the *shape* is wrong: `a_C > 0` forces
+`p* < A/2`, so `A_k > 2k+1` always, while the stated form falls **below**
+`2k+1` for any realistic `a_C/a_A`. **Second self-retraction:** the agent
+first proposed exponent 3 (the large-A limit); that fails too (0.031, 0.46,
+2.74), because `a_A` and `a_C·A^{2/3}` are comparable across the whole
+physical range (93 vs 27 at A = 238) — **neither** asymptotic limit is
+available, so no closed form of this shape is correct.
+
+**I00-7. A valley table disagreeing with its own columns in 4 of 7 rows.**
+`diophantine-valley-table-data`, n/p recomputed from its own p and n:
+Br **1.2571** (stated 1.10), Zr **1.2500** (1.20), Sn **1.4000** (1.30),
+W **1.4865** (1.40); Ca, Pb, U check. The recomputed sequence is also
+**non-monotonic** (Br 1.2571 > Zr 1.2500) although the table is ordered as a
+monotone crossing ladder, and the parent's model reproduces neither column.
+
+**I00-8. 4₁ called the Higgs boson**, in two blocks. The corpus says
+*field*: a sibling in this same chapter states "the Higgs **field** … is the
+figure-eight knot 4₁ … the Higgs **boson** excitation (≈125 GeV) is the
+torus link T(2,8)". Numerically decisive: `Vol(4₁)/ℏ_q² = 206.77 = m_μ/m_e`,
+not 125 GeV.
+
+**I00-9. An invalid link in an implication chain.**
+`hyperbolic-volume-transcendence` writes
+`irrationality ⟸ ℚ-linear independence ⟸ algebraic independence`. The right
+arrow is valid; the left is not as stated — ℚ-linear independence of a *set*
+does not make its members irrational unless 1 is adjoined (`{1/2, π, e}` is
+ℚ-linearly independent with a rational member). The sibling
+`implications-algebraic-independence` derives irrationality from *algebraic*
+independence, which **is** valid. Only the middle link needs "1 adjoined".
+
+**I00-10.** `helium-hopf-diagram` says the linking matrix `[[0,1],[1,0]]`
+"has rank 1"; `det = −1`, so rank **2**. The downstream arithmetic is
+independently correct. Not fixed — the intended claim may be about the
+linking *number*, which is 1.
+
+**I00-11. A block contradicting itself within a page.**
+`hydrogen-orbitals`: "photon absorption executes **a** Reidemeister I move …
+and increases the writhe by +2", against its own display three lines later,
+"`w → w+2` ⟺ **two** R-I moves", and against its sibling table. A single R-I
+move changes writhe by ±1, so the singular clause is the defect.
+
+### Notation and structure
+
+**I00-12.** `integer-stability` binds `A` to the algebra object in
+"(**C**, A, τ) be the Descartes universe" and then to the mass number in the
+next sentence, with every display using the second. Two blocks declare
+`(Z, N)` and then use `(p, n)` for the same quantities, where the register
+reserves `p` for a brane point — their own intro block does it correctly.
+`intro-stable-nucleus-torus-knots` writes `T(p, q)` in a sentence that also
+invokes "the substrate-parameter flow"; the sibling legend writes `T_{m,n}`
+for exactly this reason. `hyperbolic-volumes-prose` states the mass ansatz as
+`m(K) = Vol(K)/ℏ_q²`, dropping both the `m_e` scale and the per-block `ρ(K)`,
+with no note that absolute mass is excised, and names the mass functional
+`𝓜` and `𝔪(K)` two sentences apart with `𝓜` never introduced.
+
+**I00-13.** `hydrogen-shell-writhe`: `.ts` kind `conjecture` against a `.md`
+opening "**Proposition (conditional on `conj:borromean-quark`)**", with
+§3b-cond rule 4 unmet (`uses[]` holds only `def:electron-knot`), and a
+closing paragraph opening "What follows evaluates…" when nothing follows.
+The same conjecture is attributed to Milnor in one block and Borel–Zagier in
+another.
+
+**I00-14. Unadjudicated, stated rather than guessed.**
+`categorical-proton-table1/3-data` carry four-decimal coefficients with no
+producer found in any witness, and `−0.0095` appears as table 1's `σ₀`
+coefficient *and* table 3's identity coefficient — consistent with a one-row
+shift, but with no producer the agent declined to adjudicate.
+`intro-jwst-aeon-initiations` names "GLIMPSE-17775" with no `cites[]` at all,
+unverifiable offline. And "of the 254 stable nuclides, 166 have even p and
+even n" matches no published tally (the standard figure is ~148–150 of
+251–254, ≈59 % against the stated 65.4 %) — flagged as needing a source
+rather than asserted wrong.
+
+### Verified clean — recomputed, do not re-flag
+
+`hadron-q-self-correction-table-data` (every cell: all six
+`ℓ_net = C(p,2) − C(n,2)`, all six `δq = ℓ_net·A⁻²·ℏ_q²`, all six
+percentages, `A = p+n` in every row); `hydrogen-orbital-tables` (`w = 2n+1`,
+`n²`, `2n²`, the `2Σ(2ℓ+1)` identity, and all four spectral rows —
+Lyman-α 10.20 eV/121.6 nm, Balmer-α 1.889/656.3, Paschen-α 0.6611/1875.4);
+`knot-formula-table-table2-data` (all eight genus/crossing pairs from
+`g = (p−1)(q−1)/2`, `c = min(p(q−1), q(p−1))`, and the photon row's
+identity-braid closure to a 4-component unlink);
+`e-hartree-…-table12-data` (the Coxeter character table, hooks only,
+`(−1)^r q^{n−1−2r}`, reproducing table 7's χ column at q₀);
+`e-hartree-…-table7-data` (back-solved weights respect conjugation symmetry,
+an independent check the rows are not transcribed noise);
+`hyperbolic-volumes-prose` states the Λ/Cl₂ relation **correctly** to all 15
+printed digits and is *not* an instance of I00-3; and
+`hyperbolic-volume-transcendence`'s volumes, Reid 1991, and pairwise
+non-commensurability all check.
