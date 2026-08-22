@@ -192,24 +192,49 @@ clean over 2592 descending words:
   separately (0 violations, tight in 1220 components).
 
 Since `Σ (Lᵢ - 1) = n - c`, the bound **reduces to the single-component
-(`c = 1`) case**: one closure component, `L` braid strands forming a single
-cycle, descending — show `|self-writhe| ≤ L - 1`. An equivalent reformulation,
-also measured clean: the crossing graph's number of independent cycles is at
-most twice its number of negative edges. That connected case is the residue.
+(`c = 1`) case**.
 
-**Two decompositions were refuted along the way** (scope-(a), recorded so it is not re-walked):
+**That reduction is not needed, because the hypothesis is a corollary of a
+classical theorem.** Two standard facts close it outright:
+
+1. A **descending diagram is an unlink** (`lickorish1997`) — here the closure
+   is the `c`-component unlink. Verified in this codebase's own conventions:
+   over every descending word tested the HOMFLY depends only on `c`, taking
+   the value `((v⁻¹ - v)/z)^{c-1}` — the unlink polynomial — with zero
+   disagreements.
+2. **Bennequin's inequality** (`bennequin1983`): `sl(L) ≤ -χ(L)`. For a closed
+   braid on `n` strands with exponent sum `e` the self-linking number is
+   `sl = e - n`, and the `c`-component unlink has maximal Euler characteristic
+   `χ = c` (`c` disjoint disks). Hence `e - n ≤ -c`, i.e. `e ≤ n - c`.
+
+Mirroring the diagram sends `e ↦ -e` and fixes the unlink, giving `-e ≤ n - c`;
+together `|e| ≤ n - c`, which is exactly `DescendingWrithe`. Tightness observed
+in the measurement is the standard closed braid realising `sl = -c`.
+
+**Not circular**: Bennequin (1983) predates HOMFLY (1985) and MFW (1987), and
+its proof is contact-geometric — it does not use the skein induction it is
+invoked in here.
+
+The hypothesis therefore remains a `sorry`-free threaded assumption in Lean
+only because Mathlib has neither HOMFLY nor the Bennequin inequality; its
+status is **classical-and-cited**, not open.
+
+**Two self-contained decompositions were refuted before the classical route
+was found** (scope-(a), recorded so they are not re-walked):
 the per-pair bound is *necessary but not sufficient*. In **298** of the 1227
 words the number of pairs with nonzero net **exceeds** `n − c` — e.g. `n = 3`,
 `w = σ₁σ₂σ₁⁻¹` has all three pairs nonzero against `n − c = 1` — so
 `|e| ≤ #nonzero pairs` does not yield the bound. Second, "both the positive-
 and negative-net graphs are forests" is false: `G⁻` always is, but `G⁺` carries
 a cycle in 30 words — `n = 4`, `w = σ₁σ₂σ₁σ₃σ₂⁻¹` has the positive triangle
-`{1,2}, {1,3}, {2,3}`. Tracked in `qou-9ttb`.
+`{1,2}, {1,3}, {2,3}`. Both were attempts to prove from scratch what
+`bennequin1983` already gives. Tracked in `qou-9ttb`.
 -/
 
 /-- The base-case hypothesis, named so it can be discharged later rather than
 re-invented: a totally descending `n`-strand word with `c` closure components
-has `|e| ≤ n − c`. -/
+has `|e| ≤ n − c`. Classical — see the module docstring: descending ⇒ unlink
+(`lickorish1997`) plus Bennequin's inequality (`bennequin1983`). -/
 def DescendingWrithe (n c e : ℤ) : Prop := -(n - c) ≤ e ∧ e ≤ n - c
 
 /-- **The base case, given the hypothesis.** If `|e| ≤ n − c`, then every

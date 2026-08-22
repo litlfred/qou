@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T02:02:43Z
-updated_at: 2026-08-22T15:54:37Z
+updated_at: 2026-08-22T16:09:37Z
 ---
 
 ## What is open
@@ -240,3 +240,41 @@ compensates (pos = 4, neg = 1, e = 3 = L - 1, tight).
 **Still open**: the connected case. But it is strictly cleaner than the
 original -- the multi-component reduction is now understood and is exactly
 linking-number-zero.
+
+
+## RESOLVED as classical (2026-08-22, fourth pass) — it was never open
+
+The `DescendingWrithe` base-case hypothesis is a **corollary of two standard
+theorems**. I had been trying to prove from scratch something the literature
+already gives.
+
+**1. A descending diagram is an unlink** (`lickorish1997`). Verified in this
+codebase's own conventions rather than assumed: over every descending word
+tested (n <= 4, length <= 5) the HOMFLY depends only on `c` and never on the
+word -- 0 disagreements -- taking the values 1, (v^-1-v)/z, ((v^-1-v)/z)^2,
+((v^-1-v)/z)^3, i.e. exactly the c-component unlink polynomial.
+
+**2. Bennequin's inequality** (`bennequin1983`, Asterisque 107-108, 87-161):
+`sl(L) <= -chi(L)`. For a closed braid on n strands with exponent sum e the
+self-linking number is `sl = e - n`; the c-component unlink has maximal Euler
+characteristic `chi = c` (c disjoint disks). Hence `e - n <= -c`, i.e.
+`e <= n - c`. Mirroring sends `e -> -e` and fixes the unlink, giving the other
+side. Together: `|e| <= n - c` -- exactly `DescendingWrithe`. The measured
+tightness is the standard closed braid realising `sl = -c`.
+
+**Not circular**: Bennequin (1983) predates HOMFLY (1985) and MFW (1987), and
+its proof is contact-geometric -- it does not use the skein induction it is
+invoked in here.
+
+**Status change**: the hypothesis stays a threaded assumption in Lean *only*
+because Mathlib has neither HOMFLY nor the Bennequin inequality. Its epistemic
+status is **classical-and-cited**, NOT open. Added `bennequin1983` to
+references.ts (740 refs, no duplicate ids).
+
+**Retrospective on the three refuted routes** (per-pair counting; G+/G- both
+forests; the component decomposition): all three were attempts to reprove from
+scratch what Bennequin already gives. The component decomposition (A)+(C) is
+still correct and still worth keeping -- linking-number-zero between components
+is a genuine structural fact -- but it was not needed. The lesson is the
+corpus-grep discipline applied one tier out: I checked this repo for prior
+work but not the classical literature, and the literature had it.
