@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T20:33:32Z
+updated_at: 2026-08-22T21:02:46Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1258,3 +1258,89 @@ The seminormal/Ocneanu cache is created **relative to the importing module's
 directory**. Adding `qou-mass/src/qou_mass/_internal` to `sys.path` put 13 GB in
 `_internal/.cache` rather than `computations/.cache`, and filled the disk at the
 A = 4 sweep a second time. Clear both paths, not just the one you remember.
+
+
+---
+
+# Consumer audit: three live `binding_*` functions use the mass-context Φ_q
+
+Per `_li_2_q_util.py`'s rule (binding -> Li_2^q, mass -> phi_q), I traced every
+caller of the Φ_q tower and classified it by what it returns.
+
+**Correct — mass context, phi_q is right:**
+
+- `canonical_tower.py:453 calibrate_E0_tower` — runs the tower on a *free
+  proton* and calibrates E_0 against 938.272 MeV. An absolute mass. phi_q is the
+  documented choice here.
+
+**Wrong — binding context, returns `B_MeV` through phi_q:**
+
+- `canonical_tower.py:477 binding_per_irrep_tower` -> `B = E_0*(m_free_total −
+  m_atom_total)`, returned as `"B_MeV"` (line 516/522)
+- `canonical_tower.py:545 binding_canonical_tower` -> `B = E_0*(m_f["total"] −
+  m_a["total"])`, returned as `"B_MeV"` (line 569/574)
+- `mass_at_3A_proper.py:771 binding_3A_tower` -> `"B_MeV": E_0*(total_f −
+  total_a)` (line 825)
+
+All three are named `binding_*`, all three return `B_MeV`, and all three route
+through `canonical_tower_mass` / `mass_from_tower_safe`, which call
+`phi_q_safe`. So the misuse I hit in my probe is **not confined to my probe** —
+it is what these functions do. It also contradicts the Lean guard
+(`HasCorrectedMassEndomorphismTower`, which exists specifically to keep phi_q
+out of the mass formula).
+
+I am **not** patching them. The consumer swap is necessary but demonstrably not
+sufficient (Li_2^q still misses by −51%..+217%), so switching them now would
+trade a wrong answer for a differently wrong answer while looking like a fix.
+This wants a decision from whoever owns the tower.
+
+**Lower severity, deprecated path:** `mass_at_3A_proper.py:829 binding_3A` still
+computes `B = E_0*(|tr_free| − |tr_atom|)` — the double-modulus form that
+`derive_binding_chain_cooperative.py:12` and `binding_canonical.py:158` both
+document as "a non-archimedean misuse" and have already corrected. It carries a
+`[DEPRECATED]` marker, so it is on a dead path. It also has a **stray second
+docstring**: the deprecation notice was prepended without removing the original,
+leaving the old `B = E_0 · ( |tr_M(W_free)| − |tr_M(W_atom)| )` text as a no-op
+expression statement at line 841.
+
+# A defect in my own branch, found and fixed
+
+`qou-mass/src/qou_mass/_internal/` is **generated** by
+`scripts/sync-qou-mass-vendor.py`, whose own header says the copies are
+generated "and `--check` makes a drifted copy a test failure rather than a
+discovery three months later".
+
+My commit a3fc90dd3 edited `computations/mass_at_3A_proper.py` (adding the
+`QOU_H3A_MPF` path) without re-running the sync. Measured:
+
+    drift between the two copies on origin/main :  2 lines
+    drift on my branch before this fix          : 80 lines
+    QOU_H3A_MPF refs: computations/ = 4,  vendored = 0
+
+Ran `--apply` and reverted the two witness files it also touched, because
+`--check` on origin/main reports those same two as already drifted — they are
+main's, not mine. Drift is back to main's 2-line baseline and `QOU_H3A_MPF` is
+now 4/4 in both copies.
+
+## Why prepare-merge missed it
+
+I ran `scripts/precision-gates.sh` and it was green. The vendor-mirror check is
+wired into a **different** suite — `scripts/staleness-gates.sh:72` — which I did
+not run. Two separate gate arrays, and the repo's own warning ("A GATE OUTSIDE
+THIS ARRAY IS A GATE NOBODY RUNS") applies across them as well as within them.
+`staleness-gates.sh` exits 1 on my branch, but on pre-existing reds: the vendor
+mirror (main's 2 witnesses, confirmed by running `--check` at origin/main) and
+scriptHash/upstream drift (the 744 self-stale witnesses already recorded above).
+
+**For future prepare-merge on this repo: run both gate suites, not just
+`precision-gates.sh`.**
+
+# Correction: ⁶Li is not the next test
+
+I proposed ⁶Li as the out-of-sample point. It is not reachable, though not for
+the reason the bean title suggests — "infeasible past A~12" is about A, and
+p(18) = 385 is small. The real limit is the seminormal cache, whose size tracks
+the dim-sum n! : n = 12 (⁴He) produced 13 GB here, and n = 18 is 18!/12! ~ 10⁷
+times larger. So A = 4 is the last atom this measurement reaches, and the
+monotone `full` trend (+217, +112, +19) cannot be extended to a fourth point by
+this route.
