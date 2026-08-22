@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-22T22:59:28Z
+updated_at: 2026-08-22T23:52:12Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -89,3 +89,53 @@ denominator. That is a sharper and more suggestive shape than the one I wrote
 first, and it is the actual lead. It remains a **scope-(a)** negative: this
 normalisation of the full trace is not integral. Nothing here excludes full-trace
 compatibility structurally.
+
+
+## Follow-up measurement — orbit size REFUTED, extensivity in A measured
+
+Exact integer arithmetic on `v₂(denominator of Tr(full))`, 31 cells (5 atoms ×
+p ∈ {5,…,23}; p=2 excluded as the documented odd-prime exception, p=3 has no
+`frob_full`).
+
+**Refuted: `v₂` does not track the Galois orbit size.** Orbit size is `p−1` and
+rises monotonically across the row, while `v₂` does not. Deuteron, p = 7 … 23:
+
+    orbit   6  10  12  16  18  22
+    v₂      4   5   5   4   3   5
+
+Non-monotonic, and it *falls* at p=19 where the orbit is second-largest. Tritium
+and ³He behave the same way. So the natural "the trace is a sum over a
+(p−1)-element orbit, hence the 2-power" explanation is **wrong** — worth
+recording, since it is the first hypothesis anyone will reach for.
+
+**Measured: `v₂` is extensive in the constituent count A.**
+
+| A | atom | v₂ range over p |
+|---|---|---|
+| 1 | proton | 1–2 |
+| 1 | neutron | 2 (constant in p) |
+| 2 | deuteron | 3–5 |
+| 3 | tritium | 5–7 |
+| 3 | ³He | 4–7 |
+
+The A=1 and A=2 bands are **disjoint** (2 vs 3); A=2 and A=3 overlap by one.
+Increment is roughly 2 per unit of A.
+
+**I am deliberately not fitting a formula.** Three distinct A values, 31 points,
+and two of the five atoms share A=3 — that is far too little to separate `2A`,
+`2(A−1)+c`, or anything else, and fitting one here is the numerology this repo's
+discipline exists to prevent. The claim is the **shape**: extensive in A, not a
+function of the orbit.
+
+**One asymmetry worth a look.** The neutron's `v₂` is exactly **constant** (2 at
+every prime); the proton's varies (2 at p=5, 1 at p≥7). Same A, same
+`n_coeffs` to within one. p/n asymmetry is a recurring theme in this corpus, and
+this is a clean, small instance of it.
+
+**Why the extensivity is interesting rather than incidental:** `183aa45d06` landed
+on main the same day — *"the surviving binding normalisation is N(q)^{A-1},
+extensive in constituent count A"*. An extensive 2-adic valuation is the shape an
+`X^{A−1}`-style normalisation would leave behind. **Stated as a question, not a
+claim** — I have not read that derivation, and matching two things that are both
+"extensive in A" is weak evidence on its own. Whoever picks this up should read
+`183aa45d06` first and decide whether the exponents are even commensurable.
