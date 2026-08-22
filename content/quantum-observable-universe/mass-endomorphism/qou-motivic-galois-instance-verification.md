@@ -13,7 +13,7 @@ construction.
 
 ## Downstream consumers
 
-Theorems that previously required [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis can now consume the explicit QOU instance directly. In particular, the [motivic perpetual obstruction theorem](#conj:motivic-perpetual-obstruction) becomes an unconditional theorem for the QOU substrate.
+Theorems that previously required [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis can now consume the explicit QOU instance directly. In particular, the [motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction) becomes an unconditional theorem for the QOU substrate.
 
 ## Coherence
 

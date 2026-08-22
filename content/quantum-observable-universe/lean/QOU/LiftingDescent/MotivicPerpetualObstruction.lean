@@ -27,7 +27,7 @@ and `qou_deuteron_perpetual_obstruction` in
 `MotivicPerpetualObstructionFromTrace.lean`.
 
 Ref: [yekutieli2010] — obstruction theory
-LaTeX label: `conj:motivic-perpetual-obstruction`
+LaTeX label: `thm:motivic-perpetual-obstruction`
 -/
 
 namespace QOU.LiftingDescent
