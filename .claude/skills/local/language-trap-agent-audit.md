@@ -85,8 +85,9 @@ human scholarly drafting, near-universal in unedited model output);
 5. After any edit, confirm math delimiters still balance:
    `python3 -c "s=open('<file>').read(); assert s.count('\$\$')%2==0"`
    and re-read the changed sentences aloud-style for register.
-6. Record the verdict for **every category** with the helper —
-   run AFTER fixes so the entry certifies the fixed state:
+6. Record the verdict for **every category** with the helper — **once per
+   criterion, AFTER all fixes to that block**, so the entry certifies the
+   fixed state:
 
    ```bash
    bun run content/pipeline/qa-agent-entry.ts \
@@ -99,6 +100,16 @@ human scholarly drafting, near-universal in unedited model output);
 
    Entries APPEND to the criterion array; script candidates stay in
    place as provenance.
+
+   **Record once, not before-and-after.** Because the array is append-only,
+   a second entry does not replace the first — both stand, and nothing in the
+   schema says which is authoritative. Measured corpus-wide: 215 criterion
+   slots carry two entries from one batch, of which **28 hold contradictory
+   verdicts on an identical `field_hash.md`**, resolvable only by reading a
+   `superseding …` note in free-text `evidence` that no consumer parses. The
+   agents that wrote those did the right thing and said so; the record still
+   came out ambiguous. Fix the block first, then record — one entry per
+   criterion. Bean `qou-supr`.
 
    **Use these ten criterion ids verbatim** — they are the scanner's
    ids, and a paraphrase produces an orphan criterion that adjudicates
