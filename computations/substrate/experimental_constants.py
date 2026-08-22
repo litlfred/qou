@@ -115,7 +115,10 @@ G_F_MEV_ERR = 0.0000006e-11
 HBAR_MEV_S  = 6.582119569e-22 # ± 0.000000030e-22 MeV·s (exact in SI since 2019)
 HBAR_MEV_S_ERR = 0.0          # exact by definition
 
-ALPHA_EM_INV     = 137.035999084  # ± 0.000000021 (CODATA 2018, Cs recoil)
+# noqa: P31 - DELIBERATE determination choice, not a stale edition. The
+# Cs-recoil value is retained on purpose; CODATA-2022 would be a
+# different determination, not merely newer digits.
+ALPHA_EM_INV     = 137.035999084  # noqa: P31 - CODATA 2018, Cs recoil, +/- 21e-9
 ALPHA_EM_INV_ERR = 0.000000021
 
 MU_OVER_E        = float(_M_MU_OVER_M_E)      # was 206.7682830 (CODATA-2018)

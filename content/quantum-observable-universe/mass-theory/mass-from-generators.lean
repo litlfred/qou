@@ -41,11 +41,11 @@ noncomputable def codata_muon : ℝ := 105.6583755
 
 /-- Proton mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
-noncomputable def codata_proton : ℝ := 938.27208816
+noncomputable def codata_proton : ℝ := 938.27208943
 
 /-- Neutron mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
-noncomputable def codata_neutron : ℝ := 939.56542052
+noncomputable def codata_neutron : ℝ := 939.56542194
 
 /-- Deuteron mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
