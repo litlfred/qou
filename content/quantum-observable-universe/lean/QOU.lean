@@ -948,6 +948,7 @@ import QOU.Mathlib.SchenstedReinsertRow
 import QOU.Mathlib.SchenstedRecordingTrunc
 import QOU.Mathlib.SchenstedRSKSurjective
 import QOU.Mathlib.SchenstedListOfSYT
+import QOU.Mathlib.SchenstedRecordingOfSYT
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
