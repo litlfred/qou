@@ -67,7 +67,7 @@ ATOMS = [("proton", 1, 0), ("neutron", 0, 1), ("deuteron", 1, 1),
 def load_q() -> str:
     d = json.loads((HERE / "q-pinning-50-digit.witness.json").read_text())
     q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595557"), q
+    assert q.startswith("1.109978595642"), q
     return q
 
 

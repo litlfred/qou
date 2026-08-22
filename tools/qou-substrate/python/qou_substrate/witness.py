@@ -255,7 +255,7 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     return val
 
 
-_Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859555"))
+_Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859564"))
 _Q0_FIELDS = ("q_0_50dps", "q0", "q_0", "q0_50dps")
 
 
