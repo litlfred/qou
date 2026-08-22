@@ -35,18 +35,17 @@
   Mahler machinery in `QOU/Mathlib/MahlerJensen.lean` is proved and costs nothing to keep;
   what should not be kept is the claim that this particular step is blocked on it.
 
-  ═══ ALSO HERE: THE SHARED-VARIABLE EASY DIRECTION ═══
+  ═══ THE SHARED-VARIABLE CONTRAST ═══
 
-  `abs_coeff_mul_le` bounds `H(f·g)` for polynomials in the *same* variables, where the
-  monomials do mix.  It is included because it is the exact contrast that makes the point
-  above precise — and because the height bound on a generalized Wronskian, which is a
-  determinant in the derivatives of `P`, is built from it.
+  `MvPolynomial.abs_coeff_mul_le` in `QOU/Mathlib/MvPolynomialHeight.lean` is the same bound
+  without disjointness: `H(f·g) ≤ #supp(f)·H(f)·H(g)`.  The `#supp f` is exactly what
+  disjointness removes — there the antidiagonal sum collapses to one term regardless of how
+  large the supports are.
 
-  Note which direction is easy.  Going *up* — from the factors' heights to the product's — is
-  elementary in either case: at most `#supp f` terms survive the antidiagonal, each bounded by
-  `H(f)·H(g)`.  Gelfond is the direction that comes *down*, from a product's height to its
-  factors', and only in shared variables; that is the one that needs the Mahler measure, and
-  nothing here supplies it.
+  Note which direction is easy.  Going *up*, from the factors' heights to the product's, is
+  elementary in either case.  Gelfond is the direction that comes *down*, from a product's
+  height to its factors', and only in shared variables; that is the one that needs the Mahler
+  measure, and nothing in either module supplies it.
 -/
 import Mathlib.Algebra.MvPolynomial.Rename
 import Mathlib.Algebra.MvPolynomial.CommRing
@@ -194,78 +193,25 @@ example :
         * rename Sum.inr (C 5 * X () : MvPolynomial Unit ℤ)) = 0 := by
   rw [coeff_sumElim_rename_mul, coeff_C_mul, coeff_X_pow, if_neg (by simp), mul_zero, zero_mul]
 
-/-! ### The shared-variable direction
-
-⚠ Not separated — `f` and `g` here are in the *same* variables.  See the module header for
-why this sits alongside the disjoint results. -/
-
-/-- **`H(f·g) ≤ #supp(f) · H(f) · H(g)`** for polynomials in shared variables.
-
-The `#supp f` factor is what disjointness removes.  In `coeff n (f·g) = ∑ coeff a f · coeff b g`
-over the antidiagonal of `n`, a summand survives only when `a ∈ supp f`, and `b = n − a` is
-then determined — so at most `#supp f` terms survive, each bounded by `H(f)·H(g)`.  When the
-variables are disjoint exactly *one* term survives regardless of `#supp f`, which is why
-`abs_coeff_mul_separated_le` above has no such factor.
-
-⚠ This is the *easy* direction.  Gelfond's inequality goes the other way — from a product's
-height down to its factors' — and nothing here supplies that. -/
-theorem abs_coeff_mul_le {f g : MvPolynomial σ ℤ} {Bf Bg : ℤ}
-    (hf : ∀ a, |coeff a f| ≤ Bf) (hg : ∀ b, |coeff b g| ≤ Bg) (n : σ →₀ ℕ) :
-    |coeff n (f * g)| ≤ (f.support.card : ℤ) * (Bf * Bg) := by
-  classical
-  have hBf : (0 : ℤ) ≤ Bf := le_trans (abs_nonneg _) (hf 0)
-  have hBg : (0 : ℤ) ≤ Bg := le_trans (abs_nonneg _) (hg 0)
-  set S := (Finset.antidiagonal n).filter (fun p => p.1 ∈ f.support) with hS
-  rw [coeff_mul]
-  refine le_trans (Finset.abs_sum_le_sum_abs _ _) ?_
-  have hfilter : ∑ p ∈ Finset.antidiagonal n, |coeff p.1 f * coeff p.2 g|
-      = ∑ p ∈ S, |coeff p.1 f * coeff p.2 g| := by
-    refine (Finset.sum_filter_of_ne ?_).symm
-    intro p _ hne
-    rw [mem_support_iff]
-    intro h0
-    exact hne (by rw [h0, zero_mul, abs_zero])
-  rw [hfilter]
-  have hbound : ∀ p ∈ S, |coeff p.1 f * coeff p.2 g| ≤ Bf * Bg := by
-    intro p _
-    rw [abs_mul]
-    exact mul_le_mul (hf _) (hg _) (abs_nonneg _) hBf
-  refine le_trans (Finset.sum_le_card_nsmul S _ (Bf * Bg) hbound) ?_
-  rw [nsmul_eq_mul]
-  refine mul_le_mul_of_nonneg_right ?_ (mul_nonneg hBf hBg)
-  have hcard : S.card ≤ f.support.card := by
-    refine Finset.card_le_card_of_injOn (fun p => p.1) ?_ ?_
-    · intro p hp
-      exact (Finset.mem_filter.mp hp).2
-    · -- `b = n − a` is determined by `a` on the antidiagonal, so `p ↦ p.1` is injective.
-      intro p hp q hq hpq
-      have hpq' : p.1 = q.1 := hpq
-      have hp' := Finset.mem_antidiagonal.mp (Finset.mem_filter.mp hp).1
-      have hq' := Finset.mem_antidiagonal.mp (Finset.mem_filter.mp hq).1
-      have h2 : p.2 = q.2 := by
-        have hh := hp'.trans hq'.symm
-        rw [hpq'] at hh
-        exact add_left_cancel hh
-      exact Prod.ext hpq' h2
-  exact_mod_cast hcard
-
 /-! ### Next
 
 The symmetric statement `H(V) ≤ H(U · V)` for non-zero `U` is the same proof with the roles
 exchanged; it is not written here because nothing yet calls for it.  Add it when something
 does, rather than on speculation.
 
-The next real step is the **height of a generalized Wronskian**: `mvGenWronskian D f` is a
-determinant whose entries are iterated `pderiv`s of `P`.  Half of that is now grounded —
-`MvPolynomial.abs_coeff_pderiv_le` in `QOU/Mathlib/MvGenWronskian.lean` gives
-`H(∂ⱼ g) ≤ degⱼ(g)·H(g)`, so the matrix *entries* have a bound, and iterating it handles
-`pderivList`.
+The next real step is the **height of a generalized Wronskian**, and it is now assembled
+rather than open.  `mvGenWronskian D f` is a determinant whose entries are iterated `pderiv`s
+of `P`, and the three pieces line up:
 
-⚠ The **determinant** does not.  Leibniz expands it into `m!` signed products of `m` entries;
-bounding those needs `abs_coeff_mul_le` applied `m−1` times, which drags in a bound on the
-support size of each partial product, and that is not written.  Until it is,
-`abs_coeff_le_of_mul_separated` is being handed a `B` that nothing establishes for the
-Wronskian — the chain is sound but still not grounded end to end, and it is worth saying so
-rather than letting a stack of true lemmas read as a finished argument. -/
+* `MvPolynomial.abs_coeff_pderiv_le` and `card_support_pderiv_le`
+  (`QOU/Mathlib/MvGenWronskian.lean`) bound an entry's height and support size;
+* `MvPolynomial.abs_coeff_det_le` (`QOU/Mathlib/MvPolynomialHeight.lean`) turns per-entry
+  bounds into `m!·(S·B)^m` for the determinant;
+* `abs_coeff_le_of_mul_separated` above then carries that down to each separated factor.
+
+⚠ What is still *not* written is the composite: a single statement bounding
+`H(mvGenWronskian D f)` in terms of `H(f)` and the degrees, with the `pderivList` iteration
+actually performed.  Each link is proved; the chain has not been walked, and until it is,
+nothing here should be described as bounding a Wronskian's height. -/
 
 end MvPolynomial

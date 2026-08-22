@@ -521,3 +521,54 @@ Verification for this addendum: all eight arc modules (`RothIndex`, `MvGenWronsk
 `RothHeightBound`, `MahlerJensen`, `SeparatedHeight`) rebuilt with their `.olean`s deleted
 first — exit 0, no linter output. Downstream importers of `MvGenWronskian` were rebuilt
 explicitly, since a per-module build cannot see breakage in a module that imports it.
+
+---
+
+## 2026-08-22 — the determinant height bound; the links are all proved, the chain is not walked
+
+New module `QOU/Mathlib/MvPolynomialHeight.lean` (5 declarations), plus
+`card_support_pderiv_le` in `MvGenWronskian.lean`. All axiom-clean.
+
+```
+abs_coeff_mul_le            H(f·g)      ≤ #supp(f)·H(f)·H(g)      (moved here)
+abs_coeff_multiset_prod_le  H(∏ t)      ≤ (S·B)^{card t}
+abs_coeff_prod_le           H(∏_{i∈s})  ≤ (S·B)^{#s}
+abs_coeff_det_le            H(det M)    ≤ m!·(S·B)^m
+card_support_pderiv_le      #supp(∂ⱼ g) ≤ #supp(g)
+```
+
+`abs_coeff_mul_le` **moved** out of `SeparatedHeight.lean`. That module is named for the
+disjoint case; general product and determinant bounds do not belong under that name, and a
+reader looking for "height of a determinant" would not find it there. Both modules stay
+Mathlib-only and liftable.
+
+### What the bounds actually say
+
+A product costs a factor of the **support size**, not only the heights, because
+`coeff n (f·g)` is a sum over the antidiagonal and up to `#supp f` summands survive. That
+factor is precisely what disjointness removes — hence `abs_coeff_mul_separated_le` has none.
+Both `1 ≤ S` and `0 ≤ B` are needed to state the product bound as a clean `k`-th power; the
+sharp form shaves one `S`, since the recursion never puts a *partial* product in the first
+slot, but carrying `S^{k-1}` costs more than it buys.
+
+The determinant is Leibniz plus counting: `m!` signed products of `m` entries, the sign a unit
+of `ℤ` so it does not move the absolute value at all.
+
+### ⚠ Do not read this as "the Wronskian's height is bounded"
+
+Every **link** is proved. The **chain has not been walked.** There is no statement anywhere
+bounding `H(mvGenWronskian D f)` in terms of `H(f)` and the degrees: that needs the
+`pderivList` iteration actually performed — `abs_coeff_pderiv_le` and `card_support_pderiv_le`
+composed along a list — and then `abs_coeff_det_le` applied with the resulting `S` and `B`.
+Neither step is written.
+
+This is the same failure mode this bean has hit three times, in a new costume: a stack of true
+lemmas that *looks* like a finished argument. It is recorded in `SeparatedHeight.lean`'s
+`### Next` as well, so the note travels with the code rather than only with the bean.
+
+### Open, in order
+
+1. **Compose the chain** — `H(pderivList D g)` from `H(g)`, then `H(mvGenWronskian D f)`.
+   Mechanical, and the first thing that should be done.
+2. **Assemble the induction** on the number of variables. Still the real gap.
+3. Roth's lemma proper, then Roth's theorem.

@@ -1102,3 +1102,8 @@ import QOU.Mathlib.MahlerJensen
 -- which makes the height half of Roth's induction step elementary rather than a Gelfond
 -- application, correcting bean qou-4lbh's third prediction of where the cost sits.
 import QOU.Mathlib.SeparatedHeight
+-- Heights of products and determinants of multivariate polynomials over ℤ.  A product
+-- costs a factor of the SUPPORT SIZE, not only the heights, and the determinant bound
+-- m!·(S·B)^m is what turns a height bound on an auxiliary polynomial into one on its
+-- generalized Wronskian.  All of it is the easy direction; Gelfond is the other one.
+import QOU.Mathlib.MvPolynomialHeight

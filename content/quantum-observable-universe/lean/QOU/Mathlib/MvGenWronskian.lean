@@ -323,6 +323,24 @@ theorem abs_coeff_pderiv_le {g : MvPolynomial σ ℤ} {B : ℤ} (hg : ∀ m, |co
     refine mul_le_mul ?_ (hg _) (abs_nonneg _) (by positivity)
     exact_mod_cast hgj
 
+/-- **Differentiating does not enlarge the support:** `#supp(∂ⱼ g) ≤ #supp(g)`.
+
+The support-size half of what `MvPolynomial.abs_coeff_det_le` needs, alongside the height half
+above.  Same source, `coeff_pderiv`: it makes `γ ↦ γ + eⱼ` a map from `supp(∂ⱼ g)` into
+`supp(g)`, and that map is injective because addition cancels. -/
+theorem card_support_pderiv_le [DecidableEq σ] (j : σ) (g : MvPolynomial σ R) :
+    (pderiv j g).support.card ≤ g.support.card := by
+  classical
+  refine Finset.card_le_card_of_injOn (fun γ => γ + Finsupp.single j 1) ?_ ?_
+  · intro γ hγ
+    simp only [Finset.mem_coe, mem_support_iff] at hγ ⊢
+    intro h0
+    rw [coeff_pderiv, h0, mul_zero] at hγ
+    exact hγ rfl
+  · intro a _ b _ hab
+    have hab' : a + Finsupp.single j 1 = b + Finsupp.single j 1 := hab
+    exact add_right_cancel hab'
+
 /-- **A polynomial killed by every partial derivative is constant**, in characteristic zero.
 
 Mathlib has the univariate `Polynomial.eq_C_of_derivative_eq_zero`; the multivariate
