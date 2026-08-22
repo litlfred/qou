@@ -1,4 +1,5 @@
 import QOU.Mathlib.SchenstedAddable
+import QOU.Mathlib.SchenstedReadback
 
 /-!
 # QOU.Mathlib.SchenstedStandardCount — the counting bridge from column-strictness (brick 23)
@@ -167,5 +168,56 @@ theorem countLt_above_mem {Q : List (List ℕ)} (hcs : ColStrict Q)
   have hsd := hstrict _ hrowDn
   have hres := countLt_above hcs hstrict hr (countLt_lt_length hsd hk)
   rwa [getD_countLt hsd hk] at hres
+
+/-! ### `qRowOf` correctness
+
+The assembly reads a timestamp's row off `Q` with `qRowOf` (brick 5) and then feeds that row to
+`countLt_above_mem`, which needs the timestamp to actually be **in** that row.
+
+Nothing in bricks 4-6 says so. Every existing `qRowOf` lemma is about how `qAppend` and
+`qAppendSteps` move things around — `qRowOf_qAppend_self`, `qRowOf_qAppend_of_ne`,
+`qRowOf_qAppendSteps` — and none of them states that the located row is correct on its own terms.
+For a `Q` that is simply given, rather than built by appending, there was nothing to appeal to.
+
+Both facts below are short inductions on `qRowOf`'s own recursion. -/
+
+/-- **The located row contains the timestamp.** -/
+theorem mem_of_qRowOf : ∀ (Q : List (List ℕ)) (t r : ℕ), qRowOf Q t = some r → t ∈ Q.getD r []
+  | [], t, r, h => by simp at h
+  | row :: T, t, r, h => by
+      rw [qRowOf_cons] at h
+      by_cases hmem : t ∈ row
+      · rw [if_pos hmem] at h
+        have hr : r = 0 := (Option.some.inj h).symm
+        subst hr
+        simpa using hmem
+      · rw [if_neg hmem] at h
+        obtain ⟨r', hr', hEq⟩ := Option.map_eq_some_iff.mp h
+        subst hEq
+        simpa using mem_of_qRowOf T t r' hr'
+
+/-- **The located row is a row.** -/
+theorem qRowOf_lt_length : ∀ (Q : List (List ℕ)) (t r : ℕ), qRowOf Q t = some r → r < Q.length
+  | [], t, r, h => by simp at h
+  | row :: T, t, r, h => by
+      rw [qRowOf_cons] at h
+      by_cases hmem : t ∈ row
+      · rw [if_pos hmem] at h
+        have hr : r = 0 := (Option.some.inj h).symm
+        subst hr
+        simp
+      · rw [if_neg hmem] at h
+        obtain ⟨r', hr', hEq⟩ := Option.map_eq_some_iff.mp h
+        subst hEq
+        have := qRowOf_lt_length T t r' hr'
+        simpa using this
+
+/-- **The bridge fact, reached through `qRowOf`.** If `qRowOf` places `k` in row `r + 1`, then row
+`r` holds strictly more entries below `k` — which, read through brick 22's count shape, is exactly
+the addability of the cell `k` occupies. -/
+theorem countLt_above_qRowOf {Q : List (List ℕ)} (hcs : ColStrict Q)
+    (hstrict : ∀ row ∈ Q, row.Sorted (· < ·)) {r k : ℕ} (h : qRowOf Q k = some (r + 1)) :
+    countLt (Q.getD (r + 1) []) k < countLt (Q.getD r []) k :=
+  countLt_above_mem hcs hstrict (qRowOf_lt_length Q k (r + 1) h) (mem_of_qRowOf Q k (r + 1) h)
 
 end QOU.Mathlib.Schensted
