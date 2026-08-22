@@ -1,11 +1,11 @@
 ---
 # qou-e6db
 title: Formalize HOMFLY + braid closure in Lean — the sole residue of MFW (split from qou-9ttb)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-22T19:25:24Z
+updated_at: 2026-08-22T20:42:06Z
 ---
 
 ## Why this bean exists
@@ -69,3 +69,61 @@ project on the scale of a Mathlib contribution. Anyone picking it up should
 size it accordingly and should NOT represent partial progress as closing MFW.
 The mathematics of MFW is settled classically; what is missing is Lean
 infrastructure.
+
+
+## Step 1 landed (2026-08-22) — closure permutation + component count
+
+**The gap was real and specific.** `MFWSkeinInduction` states the window in terms
+of `n`, `e`, `c`. `n` and `e` existed (`BraidKnot.BraidWord.writhe`); **`c` did
+not exist anywhere in the Lean tree**, so no braid word could be connected to the
+window it is supposed to satisfy. Now supplied in
+`QOU/Knot/BraidClosure.lean` — sorry-free, zero linter warnings, all six results
+axiom-clean (`propext` / `Classical.choice` / `Quot.sound`; `writhe_append` needs
+only `propext`).
+
+- `crossingSwap` — the transposition a crossing induces. **The sign is
+  irrelevant**, which is the structural reason `c` is invariant under crossing
+  changes while `e` moves; that is exactly what the skein induction needs.
+- `closurePerm`, `closurePerm_nil/cons/append`
+- `writhe_append` — additivity over concatenation
+- `components` — orbits of `closurePerm` (nontrivial cycles + fixed points)
+- `components_nil = n` — the identity braid closes to the n-component unlink
+
+**Non-vacuity checked, not assumed.** A definition that type-checks can still
+compute the wrong number, so `components` is pinned to known answers:
+`components_two_one_crossing = 1` (one crossing on two strands closes to the
+UNKNOT, not two circles — the smallest case where an off-by-one would hide) and
+`components_two_two_crossings = 2`.
+
+## FINDING — `BraidWord` is defined NINE times; this blocks the bean
+
+Before adding anything I grepped, and the tree already defines `BraidWord` in
+nine places across six namespaces: `PhotonThreading` (structure), four separate
+`StandardModel` files (`WritheLevelParity`, `QuarkBraidChargeObstruction`,
+`WritheMarkovInvariance`, `ChiralFermionBraidWords` — each `abbrev List ℤ`),
+`Archimedean/NuclearGroebnerReduction` (`List ℕ`), `Archimedean/HeckeRep`
+(`List (Fin (n-1) × Bool)`), `BraidKnot/BraidGroupNStrand`
+(`List (BraidCrossing n)`), `BraidKnot/BraidWordBasisGram` (`List ℕ`), and
+`KnotTheory` (structure). **`writhe` is defined at least five times, four of them
+character-identical** (`(β.map Int.sign).sum`).
+
+I built on `BraidKnot.BraidGroupNStrand.BraidWord` rather than adding a tenth: it
+is the only one indexed by strand count AND carrying the crossing sign, which is
+what MFW needs.
+
+**This is a genuine obstacle to the bean, not a tidiness complaint.** HOMFLY must
+be defined on ONE braid-word type or it cannot be connected to the MFW window,
+the Markov trace (`MathlibExt/MarkovTrace` uses yet another), or the Hecke
+representation. Consolidation should be scoped before step 3.
+
+## Also checked, so it is not re-checked
+
+`Knot/HomflySkeinReference.lean` exists but is **only the 2-strand skein value**
+settling a mirror-convention dispute (bean `qou-7ue5`) — a numeric recursion
+`skein : ℕ → R`, not a general HOMFLY. It does not advance steps 2-4.
+
+## Next
+
+Step 2 (the descending predicate + reduction to a descending word by crossing
+changes, with a well-founded order). `computations/homfly_skein_braid.py`
+(`first_bad` / `traverse`) already descends that order in executable form.
