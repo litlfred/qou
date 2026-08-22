@@ -26,7 +26,7 @@ provides the **regulator** side of the Borromean structure
 **topological** side: the volume form $\in$ $H^3$ pairs with the
 fundamental class $\in$ $H_3$ to give the volume integral $8G$.
 
-The two ARE the same number ($8G = \mathrm{Vol}(\mathcal{B}_3)$),
+The two are the same number ($8G = \mathrm{Vol}(\mathcal{B}_3)$),
 but expressed through distinct dualities: Poincaré–Lefschetz is the
 topological-cohomological route, the Bloch group the K-theoretic one.
 

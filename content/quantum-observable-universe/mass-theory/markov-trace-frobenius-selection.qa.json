@@ -1821,6 +1821,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "3 negation-contrast construction(s): \", not by a general- M induction.\"; \", not settled here.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.423Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Multiple denials, all substantive: 'What fixes z is not non-degeneracy but a prescribed degeneracy' (the criterion swap IS the block's thesis); 'It is (TL_n, tr_M), not (H_n, tr_M), that is a symmetric Frobenius algebra' (a real distinction, verified: radical = TL ideal); 'the row cap is not an extra input to the weight formula but a reading of it'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1840,6 +1855,21 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.481Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe; each numbered part states its claim first."
       }
     ],
     "trap-em-dash": [
@@ -1860,6 +1890,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "21 stylistic spaced dashes in 1432 words (1.47/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.544Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "21 spaced em-dashes in 1776 words (~1 per 85), the highest density in this batch. Individually most are true parentheticals ('— the first level at which the row cap says anything —', '— every other character is annihilated —', '(not the Jacobson radical — H_n is split semisimple at generic q)'), but several append afterthoughts a comma would carry: 'singles out nothing — and in particular does not fix z'; 'the cells in position (r+2,r), the first of which is (3,1)'.",
+        "notes": "Proposed: convert the appending dashes (the '— and ...' continuations) to commas or full stops; keep the bracketing pairs. Structural, not applied."
       }
     ],
     "trap-triples": [
@@ -1879,6 +1926,21 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 1432 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.613Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "M1/M2/M3 is the definition of a Markov trace; parts (i)/(ii)/(iii) partition the result; the 'Dropping 1 / Dropping 2 / Dropping M1-M3' list enumerates the three real failure modes. No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1898,6 +1960,21 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.675Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The Discussion closes on 'Conditional-proved is not premise-established.' — aphoristic in form, but it names the repo's governing STRICT rule and discharges the block's own open antecedent (bean qou-n1dj), so it is terminology rather than manufactured punch. Block-final content is a data table."
       }
     ],
     "trap-meta-commentary": [
@@ -1917,6 +1994,21 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.726Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Emphasis is placed, not narrated; the OPEN box and Status paragraph state scope directly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1936,6 +2028,22 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.861Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No block-final restatement (the block ends on the tr_M table).",
+        "notes": "Out-of-criterion redundancy worth a consolidation pass: part (ii) and the later 'Selection theorem' section state the same result twice, and the load-bearing-hypotheses discussion appears twice near-verbatim ('Neither condition may be dropped: without the row cap z is free ... without faithfulness the trivial character y=(1,0,...,0) at z=q' vs 'Both hypotheses are load-bearing ... Dropping 1 leaves z free ... Dropping 2 admits the trivial character y=(1,0,0) at z=q'). Suggest the summary in (ii) point at the theorem rather than restate it."
       }
     ],
     "trap-performed-warmth": [
@@ -1955,6 +2063,21 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.911Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1974,6 +2097,21 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:40.967Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'neither larger nor smaller', 'on the nose', 'exactly' are each discharged by the argument. Register note: 'on the nose' is colloquial for a proposition block."
       }
     ],
     "trap-nonspeakable": [
@@ -1993,6 +2131,21 @@
         "reviewed_at": "2026-08-15T10:31:00.605Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "eebe05d357ec",
+          "ts": "f4cfe2d9d9f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:30:41.056Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Dense but speakable; the noun chains are defined objects (framing ratio, negative-crossing loop value, Temperley-Lieb ideal)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2016,5 +2169,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:30:41.056Z"
 }

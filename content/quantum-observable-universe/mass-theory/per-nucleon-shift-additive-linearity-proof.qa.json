@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:58.724Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One instance, the Reading note: 'the 18 is the per-proton additive coefficient of the full summed u-pole order of tr_M, NOT the q-pole order of any single per-irrep chi^lambda'. That is load-bearing disambiguation against a real misreading (11 vs 18 are both in the block), and it is stated directly rather than narrated. False-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:58.806Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Induction, then decomposition, then verification, then the reading note; each section opens on its own claim."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 318 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:58.864Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 318 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:58.923Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'three optimisations ... (a) ... (b) ... (c)' enumerates three actual caching steps; substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:58.971Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on what the cancellation count enumerates — technical."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:59.023Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The '**Reading note.**' heading labels a disambiguation rather than announcing emphasis; the all-caps NOT places the emphasis typographically."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:59.077Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:59.129Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:59.193Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'rigorously' is the one strength word and it is attached to a specific argument (unique maximum implies no cancellation) — see the note for whether that argument's numbers hold."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1664,22 @@
         "reviewed_at": "2026-08-15T10:31:00.570Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b39d6ca4bb49",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:59.291Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Bulleted; the prose sentences are short.",
+        "notes": "RIGOR — TWO DEFECTS, the first MAJOR. (1) THE TWO WITNESSES THIS BLOCK CITES AS 'CATEGORICAL VERIFICATION' ARE BOTH RECORDED FAILING IN THE COMMITTED TREE, and the block reports their numbers as confirmations. Checked against git show HEAD (not the working tree), so this is not a local re-run artefact. PROTON: the block says the proton witness 'reports ord_{u=0}(tr_M(B_p)) = 19, matching 18*1 + 21*0 + 1 exactly'. computations/per-irrep-pole-proton-h3.witness.json contains {'name': 'full_tr_M_u_pole_eq_shift_NF_proton', 'computed': 18, 'expected': 19, 'passed': false} and 'allPassed': false. The computed value is 18, i.e. exactly the '+1' short. DEUTERON: the block says 'The per-term maximum is uniquely 40 at lambda = (4,1,1) (next-highest 39 at (4,2)); since the maximum is unique, lower-order terms cannot cancel it, so ord_{u=0}(tr_M(beta_D)) = 40 = 18*1 + 21*1 + 1 rigorously.' computations/per-irrep-pole-deuteron-h6.witness.json contains {'name': 'deuteron_full_tr_M_u_pole_eq_shift_NF', 'computed': 38, 'expected': 40, 'passed': false}, and its data.per_term_u_pole_orders give (4,2) -> 38, (3,3) -> 34, (5,1) -> 22, (6) -> 2, (4,1,1) -> 0, (3,2,1) -> 0. So EVERY number in that sentence disagrees with the witness: the maximising partition is (4,2), not (4,1,1); the maximum is 38, not 40; the runner-up is 34 at (3,3), not 39 at (4,2); and (4,1,1) — the partition the block names as the unique maximiser — has order 0, the joint minimum. Only the uniqueness itself survives ('deuteron_per_term_max_unique' passes), so the structural argument is sound but lands on 38, which is not 18+21+1. The parent .ts nonetheless carries computation.status: 'verified'. Proposed: treat the closed form as EMPIRICAL until the symbolic route is reconciled — note that the one witness that does pass, per-nucleon-shift-derivation.witness.json, labels its own assertions 'empirical from EMPIRICAL_SHIFT table (w3-w4 audit)', so nothing currently derives 18Z + 21N + 1; then either fix the two Path-A scripts or restate the block as reporting a 1-unit (proton) and 2-unit (deuteron) discrepancy, which is itself the interesting datum. (2) SWEEP DAMAGE, four sites in this one block: 'the canonical formalism' stands in for a script name at 'Each new generator's DP-max contribution to the q=0 pole is 1 (the canonical formalism)', at 'per the D(u) convention from the canonical formalism', and twice as the sole content of the 'Proton (A = 1, H_3): the canonical formalism' and 'Deuteron (A = 2, H_6): the canonical formalism' lines — where, from the witness filenames that follow, the intended names are per_irrep_pole_proton_h3.py and per_irrep_pole_deuteron_h6.py. Same token-substitution class already logged in this chapter's sidecars. (3) MINOR, scope: the parent states the closed form 'for all A >= 2', yet this proof verifies it at the proton, A = 1."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:55:59.291Z"
 }

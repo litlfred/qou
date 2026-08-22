@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:59.857Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:59.908Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:59.960Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:00.009Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:00.059Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,22 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:00.111Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis. SWEEP DAMAGE found and repaired here instead: the evidence heading read '**canonical evidence** at $q_0 \\approx 1.110$, from the canonical formalism (witness: ...)'.",
+        "notes": "FIXED inline (pure prose, no math): '**canonical evidence**' -> '**Numerical evidence**' (the .ts authorNote still carries the undamaged wording, '**q-deformation: numerical evidence at $q_0$**'), and the empty stand-in phrase 'from the canonical formalism' deleted rather than replaced with a script name, because the cited witness does not in fact contain this table. Delimiters re-checked."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:00.163Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:00.219Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:00.271Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'confirming the q-deformed structure' on four sample points is an over-reach, but the block immediately qualifies it with the surviving O((q-1)^2) residual and calls the formal proof open, so this reads as an over-firm verb rather than manufactured superlative. Recorded as a substantive over-claim instead of a trap."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,21 @@
         "reviewed_at": "2026-08-15T10:31:00.788Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c222f0cbb24b",
+          "ts": "39972f5fbb10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:17:00.323Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof plus its 4-row evidence table. Checked the classical five-term identity against Lewin 1.6 (correct as written, but alpha and beta are never defined anywhere in this block or its proposition - in Abel's form they are (u-uv)/(1-uv) and (v-uv)/(1-uv)); Li_2(z)=sum z^n/n^2 correct; log_q(x)=sum (-1)^{n+1}(x-1)^n/[n]_q is the correct [n]_q-deformation of the log series. RECOMPUTED the table's improvement column from its own error columns: 1.6e-4/4.0e-5=4.0 (ok), 5.3e-4/3.1e-4=1.71 (ok), 3.5e-3/2.3e-3=1.52 (table says 1.6 - wrong), 1.6e-4/3.1e-5=5.16 (ok); and the residual fractions vs the bare column are 0.058%, 0.19%, 0.83%, 0.024%, not the '0.5-1%' the closing sentence asserts. Also verified the cited witness does not contain this table at all. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:17:00.323Z"
 }

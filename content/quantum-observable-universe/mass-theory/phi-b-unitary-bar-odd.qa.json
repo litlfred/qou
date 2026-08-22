@@ -1340,6 +1340,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:06.878Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'a phase beyond +-1 cannot sit on the bar-even face' is the rigidity clause restated in words; the claim IS an impossibility, so the negation is the content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1359,6 +1374,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:06.941Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement with three numbered clauses, then interpretation; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1378,6 +1408,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 213 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:06.992Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three em-dashes in 245 words, two of them a matched pair setting off 'real b, so q = e^{2 pi i b^2} is a root of unity'; the third introduces the unimodularity claim. Acceptable density and all parenthetical."
       }
     ],
     "trap-triples": [
@@ -1397,6 +1442,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 213 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:07.065Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The three numbered clauses are closure, rigidity, and its contrapositive — a genuine three-part statement, and clause 3 is explicitly labelled 'equivalently'."
       }
     ],
     "trap-closing-aphorism": [
@@ -1416,6 +1476,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:07.114Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends inside a parenthesis stating what is conditional on the complex-volume conjecture — bookkeeping, and good practice."
       }
     ],
     "trap-meta-commentary": [
@@ -1435,6 +1510,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:07.180Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1454,6 +1544,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:07.238Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The Interpretation section applies the algebra to Phi_b, which the statement does not mention."
       }
     ],
     "trap-performed-warmth": [
@@ -1473,6 +1578,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:07.316Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1492,6 +1612,21 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:07.376Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'intrinsically', 'natural' are the only strength words and both attach to specific structural claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1511,6 +1646,22 @@
         "reviewed_at": "2026-08-15T10:31:00.878Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5ec4ff0e17eb",
+          "ts": "93c07f489177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:07.426Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Numbered clauses keep the statement speakable.",
+        "notes": "RIGOR — three items, the first MAJOR. VERIFIED CORRECT FIRST: all three algebraic clauses hold as stated over a commutative ring with involution — 1 is sigma-unitary since sigma(1)*1 = 1; closure follows from sigma(uv)uv = sigma(u)u * sigma(v)v = 1 by commutativity; rigidity is immediate (sigma(u) = u and sigma(u)u = 1 give u^2 = 1); and clause 3 is its contrapositive. The unimodularity |Phi_b(z)| = 1 for real z and real b is also correct — it is the standard consequence of the Faddeev unitarity relation. (1) FALSE IMPLICATION, and it is load-bearing. The Interpretation opens: 'On the fibre saddle — real b, so q = e^{2 pi i b^2} is a root of unity —'. Real b does NOT make q a root of unity: e^{2 pi i theta} is a root of unity if and only if theta is RATIONAL, so q is a root of unity exactly when b^2 is rational, and for generic real b it is an irrational point on the unit circle. What real b does give is |q| = 1, which is all the unimodularity argument actually needs. The error matters because 'the root-of-unity (Faddeev) saddle' is the phrase this block and its sibling rem:phi-b-bar-parity-interpretation use to separate the two archimedean faces, and the block's own evidence list is precisely the RATIONAL cases (zeta_4, zeta_5^2, zeta_6, self-dual), i.e. special b^2, not general real b. Proposed: 'real b, so |q| = 1 (and q is a root of unity exactly when b^2 is rational)'. (2) THE MANIFEST CONTRADICTS THE PROSE. The .md says the unimodularity is 'witnessed on the validated evaluator at the zeta_4, zeta_5^2, zeta_6 and self-dual points', but the .ts computation block records status: 'not_run' and carries NO witness field, while naming computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py (which does exist on disk, 6505 bytes). So a computational confirmation is asserted in prose that the manifest says was never run. Proposed: run the reference script and attach a witness, or downgrade 'witnessed' to 'expected'. (3) MINOR: 'analytically this is the reflection w -> -bar w of the Faddeev contour integral' is offered as the analytic ground for clause-2's hypothesis but is neither derived nor cited."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1534,5 +1685,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:58:07.426Z"
 }
