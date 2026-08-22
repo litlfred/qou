@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-22T09:55:25.031149+00:00",
-  "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
+  "computedAt": "2026-08-22T12:22:45.432755+00:00",
+  "commitSha": "11bc6ae3c63d6831684d27d6f70b99bd99a8e766",
   "assertions": [
     {
       "name": "overdetermined_path_a_eq_path_b_machine_eps",
@@ -10,14 +10,21 @@
       "expected": 30,
       "passed": true,
       "source": "iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3"
+    },
+    {
+      "name": "h6_extract_matches_canonical_weighted_pn_interface",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "reconstruct_chi_h6_via_sublemma vs direct χ^ξ on with_interface(...) — discriminates colour-weighted (5.5e-15) from colour-blind (9.2e-05)"
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 23,
   "computation": "sublemma-2-1-h9-tritium-verify",
   "scriptFile": "sublemma_2_1_h9_tritium_verify.py",
-  "scriptHash": "6f6046f822e1",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "156d4a8574ec",
+  "scriptCommitSha": "17f1219f272b0e2290de62dd91fca4ac7ad71a28",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -294,6 +301,7 @@
     "n_overdetermined_total": 30,
     "n_underdetermined": 0,
     "max_relative_residual_overdetermined": 1.2165012426221438e-13,
-    "max_relative_residual_all": 1.2165012426221438e-13
+    "max_relative_residual_all": 1.2165012426221438e-13,
+    "h6_extract_frame_guard_max_rel": "5.5131896097107105e-15"
   }
 }
