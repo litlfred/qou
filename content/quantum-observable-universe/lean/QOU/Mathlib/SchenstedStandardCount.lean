@@ -113,4 +113,59 @@ theorem countLt_above {Q : List (List ℕ)} (hcs : ColStrict Q)
   refine lt_countLt_of_getD_lt _ (hstrict _ hrowUp) c _ (lt_of_lt_of_le hcc hlen) ?_
   exact hlt c hcc
 
+/-! ### The membership form
+
+`countLt_above` is indexed by the column, but `qRowOf` — the corpus's timestamp locator — returns
+only the **row**. Nothing in bricks 4-6 records the column, so the assembly cannot supply one.
+
+It does not have to: in a strictly increasing row the column of an entry *is* its `countLt`, so the
+column is recoverable rather than needing to be carried. `getD_countLt` below is that recovery, and
+`countLt_above_mem` is `countLt_above` restated to take membership instead of a column index — the
+form the assembly can actually reach. -/
+
+/-- Nothing below the threshold means a count of zero. -/
+theorem countLt_eq_zero {row : List ℕ} {k : ℕ} (h : ∀ b ∈ row, k ≤ b) : countLt row k = 0 := by
+  rw [countLt, List.filter_eq_nil_iff.mpr]
+  · rfl
+  · intro b hb
+    simp only [decide_eq_true_eq, Nat.not_lt]
+    exact h b hb
+
+/-- **The column of an entry is its `countLt`.** Both halves at once, since the induction is shared:
+the count is a valid index, and reading there returns the entry. -/
+theorem countLt_lt_length_and_getD : ∀ (row : List ℕ), row.Sorted (· < ·) → ∀ (k : ℕ), k ∈ row →
+    countLt row k < row.length ∧ row.getD (countLt row k) 0 = k
+  | [], _, k, hk => by simp at hk
+  | a :: t, hs, k, hk => by
+      rw [List.sorted_cons] at hs
+      rcases List.mem_cons.mp hk with rfl | hkt
+      · have h0 : countLt (k :: t) k = 0 := by
+          rw [countLt_cons, if_neg (lt_irrefl k),
+            countLt_eq_zero (fun b hb => le_of_lt (hs.1 b hb))]
+        rw [h0]
+        exact ⟨by simp, by simp⟩
+      · have hak : a < k := hs.1 k hkt
+        obtain ⟨hlen, hget⟩ := countLt_lt_length_and_getD t hs.2 k hkt
+        rw [countLt_cons, if_pos hak]
+        exact ⟨by simpa using hlen, by simpa using hget⟩
+
+theorem countLt_lt_length {row : List ℕ} (hs : row.Sorted (· < ·)) {k : ℕ} (hk : k ∈ row) :
+    countLt row k < row.length := (countLt_lt_length_and_getD row hs k hk).1
+
+theorem getD_countLt {row : List ℕ} (hs : row.Sorted (· < ·)) {k : ℕ} (hk : k ∈ row) :
+    row.getD (countLt row k) 0 = k := (countLt_lt_length_and_getD row hs k hk).2
+
+/-- **The bridge fact, keyed on membership.** If `k` occurs in row `r + 1`, row `r` holds strictly
+more entries below it. This is the form the assembly reaches: it needs only the row `qRowOf`
+returns, never a column. -/
+theorem countLt_above_mem {Q : List (List ℕ)} (hcs : ColStrict Q)
+    (hstrict : ∀ row ∈ Q, row.Sorted (· < ·)) {r k : ℕ}
+    (hr : r + 1 < Q.length) (hk : k ∈ Q.getD (r + 1) []) :
+    countLt (Q.getD (r + 1) []) k < countLt (Q.getD r []) k := by
+  have hrowDn : Q.getD (r + 1) [] ∈ Q := by
+    rw [getD_row_eq hr]; exact List.getElem_mem _
+  have hsd := hstrict _ hrowDn
+  have hres := countLt_above hcs hstrict hr (countLt_lt_length hsd hk)
+  rwa [getD_countLt hsd hk] at hres
+
 end QOU.Mathlib.Schensted
