@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T12:46:17.138454+00:00",
-  "commitSha": "a9798de71f463063e67a7e294c7b4994c8840312",
+  "computedAt": "2026-08-22T13:00:03.276094+00:00",
+  "commitSha": "bd7c371beb6324270a45b494aca276e5d3e0eb58",
   "assertions": [
     {
       "name": "1_at_risk_set_has_not_grown",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 866,
+  "durationMs": 818,
   "computation": "undeclared-muon-pin-flip-risk",
   "scriptFile": "undeclared_muon_pin_flip_risk_audit.py",
-  "scriptHash": "c74664f96104",
-  "scriptCommitSha": "99b49e8fcd05ba08cf4a78bfd9b21b35795053ec",
+  "scriptHash": "502710ffc188",
+  "scriptCommitSha": "87add43d70883c8d249c7965f65f985fcabd4851",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
