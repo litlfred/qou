@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T20:34:03Z
+updated_at: 2026-08-22T20:55:51Z
 ---
 
 
@@ -214,3 +214,18 @@ than P (|c|-spread cov). So one-sided sign <=> 2nd-order RATE comparison 'N lags
 P'. Concrete target; open 2nd-order-CLT statement.
 STATUS: M_1>0 exact n<=60; kappa>0 derived; reduced to one-sided kappa_n>=kappa
 <=> 'N lags P'. OPEN. (Sub-result 1 was a dead end, honestly retracted.)
+
+
+
+DEFICIT-RATE MECHANISM (2026-08-22, PR #5489, follow-up to merged #5466).
+Characterizes the one-sided sign: kappa_n-kappa = dN-dP, dP=P_lead-p_n>=0,
+dN=N_lead-nu_n>=0 (both P_n/n^2.5,N_n/n^2.5 -> limits 0.169765,0.112125 from
+below). kappa_n>=kappa <=> dN>=dP ('N lags P'). Verified dN>dP for ALL 13<=n<=42;
+dN/dP rises monotonically 0.82(n4)->1.0 at n=13 crossing->1.17(n42).
+HONEST: dN-dP = kappa_n-kappa IDENTICALLY => re-description of the sign, NOT new
+logical content. Genuine proof still needs 2nd-order VKLS deficit coeffs c_P,c_N
+and c_N>c_P - not done. Sign attempt ceiling reached.
+INFRA NOTE: #5466 merged (2b2f0838). Caught a scary-looking working-tree state
+(80 phantom 'changes') = stale working tree after the merge agent rebased the
+shared branch out from under the main checkout; git reset --hard HEAD synced it,
+no data lost. Deficit probe put on independent branch to avoid the collision.
