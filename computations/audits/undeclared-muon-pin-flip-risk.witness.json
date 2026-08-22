@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T23:08:17.474413+00:00",
-  "commitSha": "39f4d3ae779e7e7e39b1825753bc63b919fb9f3c",
+  "computedAt": "2026-08-22T12:46:17.138454+00:00",
+  "commitSha": "a9798de71f463063e67a7e294c7b4994c8840312",
   "assertions": [
     {
       "name": "1_at_risk_set_has_not_grown",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 801,
+  "durationMs": 866,
   "computation": "undeclared-muon-pin-flip-risk",
   "scriptFile": "undeclared_muon_pin_flip_risk_audit.py",
-  "scriptHash": "f4676ebe8ac3",
-  "scriptCommitSha": "a269c761e9831b17970bdaf183280327a858a374",
+  "scriptHash": "c74664f96104",
+  "scriptCommitSha": "99b49e8fcd05ba08cf4a78bfd9b21b35795053ec",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,6 +40,12 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
+  "invocation": {
+    "argv": [
+      "computations/audits/undeclared_muon_pin_flip_risk_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/undeclared_muon_pin_flip_risk_audit.py"
+  },
   "description": "Risk register: 49 witnesses assert q0Anchor 'muon' with the muon q0Value while their producer is absent from q0_anchor_manifest.json and would therefore resolve to the PROTON default on re-run — changing the substrate input ~11.5 ppb AND dropping the q0Anchor that would have shown it, in the same step. Nothing is wrong on disk today; each entry is a producer that cannot safely be re-run until its intended pin is declared.",
   "computation_method": "Reads q0_anchor_manifest.json for declared stems and the canonical muon pin from _q0_value_for_anchor('muon'), then scans every computations/**/*.witness.json for q0Anchor == 'muon' AND a q0Value matching the muon pin at 14 chars, with a scriptFile stem absent from the manifest. String comparison only; no float64.",
   "audit_only": true,
@@ -50,8 +56,8 @@
   "result": {
     "at_risk_count": 49,
     "baseline": 49,
-    "witnesses_scanned": 3016,
-    "declared_stems": 407,
+    "witnesses_scanned": 3025,
+    "declared_stems": 408,
     "at_risk": [
       {
         "witness": "computations/a_operator/cyclic-intertwiner-verify.witness.json",

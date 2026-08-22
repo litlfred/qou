@@ -112,6 +112,59 @@ BASELINE = 49
 
 _MATCH = 14  # same discrimination width the anchor audit uses
 
+#: Producers that match the filter but are VERIFIABLY immune to the flip.
+#:
+#: The filter (undeclared + asserts muon + carries the muon pin) is a PROXY for
+#: "would resolve proton on re-run". The proxy fails for a producer that obtains
+#: its q0 BY NAME rather than through `q_parameter`'s argv[0] resolution: such a
+#: producer emits the same value no matter how it is invoked, so it is not at
+#: risk and counting it overstates the register.
+#:
+#: An exemption here is NOT taken on trust — `_exemption_holds` re-checks it on
+#: every run, and a stem whose check fails is COUNTED despite being listed. That
+#: is deliberate: the one move this file exists to prevent is a count made to
+#: look clean, so its own escape hatch has to be the kind that rots loudly.
+_EXEMPT = {
+    "muon_pin_three_values_probe": (
+        "reads A via _q0_value_for_anchor('muon') and C via q_muon_at(), both "
+        "BY NAME; never imports q_parameter, so the argv[0] resolution never "
+        "runs for it. Verified empirically: forced QOU_Q0_ANCHOR=proton, it "
+        "still emits q0Value = the muon pin."
+    ),
+}
+
+
+def _exemption_holds(stem: str) -> bool:
+    """Re-verify an `_EXEMPT` entry against the producer's current source.
+
+    The claim being checked is narrow and mechanical: the producer must not
+    reach `q_parameter` (the argv[0] resolver). If a later edit routes it
+    through that resolver, the exemption silently stops being true — so it is
+    re-derived here rather than trusted, and a failed check counts the producer.
+    """
+    import ast as _ast
+    cands = [c for c in (HERE.parent).rglob(f"{stem}.py") if "worktrees" not in str(c)]
+    if not cands:
+        return False                     # cannot verify => do not exempt
+    try:
+        tree = _ast.parse(cands[0].read_text(encoding="utf-8", errors="replace"))
+    except Exception:                    # noqa: BLE001
+        return False
+    for n in _ast.walk(tree):
+        if isinstance(n, _ast.Import):
+            if any("q_parameter" in a.name for a in n.names):
+                return False
+        elif isinstance(n, _ast.ImportFrom):
+            if n.module and "q_parameter" in n.module:
+                return False
+    return True
+
+
+#: Floor below which the scan is presumed broken rather than clean. The tree
+#: holds ~3000 witnesses; anything near zero means the walk matched nothing,
+#: which is how the worktree-path bug reported `AT RISK: 0` with 2/2 passing.
+_MIN_EXPECTED_SCAN = 500
+
 
 def _declared_stems() -> set[str]:
     man = json.loads(
@@ -128,9 +181,23 @@ def scan() -> dict:
     if not muon:
         raise RuntimeError("cannot load the canonical muon pin to compare against")
 
-    at_risk, scanned = [], 0
-    for p in sorted((HERE.parent).rglob("*.witness.json")):
-        if "worktrees" in str(p):
+    at_risk, exempted, scanned = [], [], 0
+    root = HERE.parent
+    for p in sorted(root.rglob("*.witness.json")):
+        # Exclude nested worktrees by the path RELATIVE TO THE SCAN ROOT.
+        #
+        # This was `if "worktrees" in str(p)`, on the ABSOLUTE path. Run from
+        # inside a git worktree the script's own root is
+        # `.../.claude/worktrees/agent-XXXX/computations`, so every path matched
+        # and the scan skipped EVERYTHING: 0 witnesses examined, `AT RISK: 0`,
+        # both assertions passing, and the committed witness overwritten with
+        # the empty result. A silent false green, in the file whose whole job is
+        # to keep a count honest — found when a merge agent ran it from a
+        # worktree. Anchoring to the relative path makes the exclusion mean what
+        # it says ("skip worktrees nested UNDER the tree I am scanning") and is
+        # insensitive to where the script itself lives.
+        rel = p.relative_to(root)
+        if "worktrees" in rel.parts or ".claude" in rel.parts:
             continue
         try:
             b = json.loads(p.read_text(encoding="utf-8"))
@@ -146,12 +213,26 @@ def scan() -> dict:
             continue
         if not str(b.get("q0Value") or "").startswith(muon):
             continue
+        if stem in _EXEMPT and _exemption_holds(stem):
+            exempted.append({"producer_stem": stem, "reason": _EXEMPT[stem]})
+            continue
         at_risk.append({
             "witness": str(p.relative_to(HERE.parents[1])),
             "producer_stem": stem,
         })
+    # A scan that examined nothing is a BROKEN scan, not a clean one. Without
+    # this the failure above reported success; with it, any future variant of
+    # the same mistake is loud instead of silent. There are ~3000 witnesses
+    # under computations/, so a healthy scan is never anywhere near this floor.
+    if scanned < _MIN_EXPECTED_SCAN:
+        raise RuntimeError(
+            f"scanned only {scanned} witnesses under {root} (expected "
+            f">= {_MIN_EXPECTED_SCAN}). The scan is broken — refusing to report "
+            "a count from it. A gate that can report success without examining "
+            "anything is not a gate."
+        )
     return {"scanned": scanned, "declared_stems": len(declared),
-            "at_risk": at_risk}
+            "at_risk": at_risk, "exempted": exempted}
 
 
 def main(argv: list[str] | None = None) -> int:
