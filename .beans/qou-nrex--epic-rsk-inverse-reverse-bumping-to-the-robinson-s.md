@@ -900,3 +900,38 @@ RSKBurnsideHolds general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_l
 - partitionShape bijective onto {μ // μ.cells.card = n}  (the remaining obstacle)
 - then the Σ-card decomposition -> RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq -> general
   Wedderburn split.
+
+### Brick 41 — the INDEX bridge (same PR #5426)
+
+partitionShapeEquiv n : Nat.Partition n ≃ {μ : YoungDiagram // μ.cells.card = n}
+
+Needed because RSKBurnsideHolds is indexed by Nat.Partition while rskEquiv's codomain is indexed by
+YoungDiagram. Until the index is identified the two statements do not meet.
+
+card_cells_ofRowLens : (ofRowLens L hsort).cells.card = L.sum
+  A lemma NEITHER the corpus NOR Mathlib had (checked: YoungDiagram.card_cells_ofRowLens unknown).
+  Proved from pieces SchenstedCellsBridge already built for the CONTENT bridge — cells are the
+  disjoint union of rows (cells_biUnion + rows_pairwiseDisjoint), a row is a singleton times a range
+  (row_eq_prod). The content bridge itself is stated only for a tableauShape; the pieces are
+  general, and this is the general consequence. Worth remembering: the reusable content of that file
+  is its LEMMAS, not its headline theorem.
+
+Sorted-list round trip: a partition's shape remembers its parts (rowLens_ofRowLens_eq_self returns
+the SORTED list, and sorting is injective on multisets); a diagram is a partition's shape (its own
+rowLens is already sorted, and sorting a sorted list returns it — sort_coe_of_sorted via
+List.eq_of_perm_of_sorted).
+
+LEAN FRICTION worth recording: `(· ≥ ·)` in a goal DISPLAYS as `fun x1 x2 => x2 ≤ x1` after GE.ge
+unfolds, and `rw` matching against a hypothesis written with `(· ≥ ·)` can fail on that difference.
+Also `Multiset.sort_eq` is a SIMP lemma, so `simpa` normalises `Multiset.sum ↑(sort r s)` all the
+way to `s.sum` — past the form you wanted. Both cost a round trip; the fix in each case was to
+introduce the coercion explicitly with a `rfl`-proved `have` and `rw` with it.
+
+### ONE STEP LEFT to RSKBurnsideHolds general n
+  Nat.card (Perm (Fin n)) = n!                                (Fintype.card_perm, easy)
+  Nat.card {X // X.1.cells.card = n} = ∑ p, (dimSYT p)^2      (the Σ-card decomposition — NOT done)
+The second is now a decomposition over a KNOWN index (brick 41), so what remains is the card algebra
+itself: pull the Σ apart over the subtype of diagrams, recognise each fibre as SYT(μ)², and rewrite
+along partitionShapeEquiv. Needs finiteness instances on the Σ-subtype.
+
+### #5426 now carries bricks 16-41, seventeen files, zero sorries, axiom-clean throughout
