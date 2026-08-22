@@ -267,13 +267,79 @@ declarations to a missing `axiom` keyword; this gate scoped itself to a naming
 convention and a pre-refactor directory. Each time the check was narrower than
 its stated purpose **and said nothing about it**.
 
+---
+
+## 2026-08-22 (second) — three of the six were never missing a solve
+
+**6 → 3.** The framing "route them through the solver" was wrong for half the
+list: three of the six **already call the canonical solver** and had the duals
+in hand. They just did not put them in the witness.
+
+| producer | what was wrong | fix |
+|---|---|---|
+| `binding_sdp_bondgraph_degenerate` | computed `solve_operator_selection_lp(...).to_dict()` for three targets and emitted **one boolean** | keep the per-target duals |
+| `nucleus_operator_selection_sdp` | emitted them under `lp_`-**prefixed**, `round(..., 5)`-ed names | add the canonical names alongside |
+| `ak_lp_dual_quotient_probe` | emitted 3 of the 6 required fields | add `y_star`, `active_set`, `dual_obj` |
+
+Each is worth noticing for a different reason.
+
+`binding_sdp_bondgraph_degenerate`'s **entire claim is about the duals** — its
+witness asserts `sdp_bondgraph_degenerate = 1` and carried none of the numbers
+establishing it. That is the validator's stated failure mode exactly.
+
+`nucleus_operator_selection_sdp` shows the contract is a **naming** contract.
+`lp_y0_star` is not `y0_star`, so the recursive key search could not see it,
+and the rounded copies fall outside `LP_DUAL_F64_FIELDS` too — the prefix cost
+it both the contract check and the carve-out. `lp_confinement_nf_forcing.py`
+already emits both forms; that is the pattern followed here.
+
+`ak_lp_dual_quotient_probe` had the missing values **in the same expression
+that produced its verdict** — `chir` sums `quo.y_star` over `quo.active_set` —
+so the conclusion rested on numbers the witness did not carry.
+
+### And two of them are degenerate
+
+The point of the exercise. `nucleus-operator-selection-sdp`, now that it
+reports canonically, across D / T / ³He / ⁴He:
+
+```
+y0_star     [-0.0, -0.0, -0.0, -0.0]
+y_star      [[1,0,0,0,0,0]] x 4
+active_set  [[0], [0], [0], [0]]
+dual_obj    [-0.0, -0.0, -0.0, -0.0]
+```
+
+`binding-sdp-bondgraph-degenerate` reports `y0* = -0.000000, active_set = [0]`
+at all three of its targets and calls it DEGENERATE in its own prose.
+
+Both are the **`t = G e₀`** signature: the basis contains the identity, so
+`tⱼ = tr_M(bⱼ) = tr_M(b₀bⱼ) = G₀ⱼ`, `(0, e₀)` is dual-feasible with objective
+0, and the objective is bounded below by one of its own constraints. Four more
+nuclei plus three more targets, previously invisible to the sweep — for two
+different reasons, neither of them "the LP is fine here".
+
+### Float64: the carve-out is the right home, and it was checked
+
+Adding raw solver output to a witness that had **zero** raw float64 would
+regress the `witness_raw_float64_audit.py` ratchet, so it was run:
+`NEW dirty 0, REGRESSED 0, exit 0`, with the excused total rising 3,661 →
+3,892 across 43 witnesses. The values land inside `LP_DUAL_F64_FIELDS`
+(owner decision 2026-08-11) — f64 by construction, no mpf upstream to carry,
+and stringifying would break every consumer that does arithmetic on them.
+Counted and reported as `carved_out`, not hidden.
+
 ## Next
 
-- [ ] The six dual-less producers: route each through
-      `lp_dual_solver.solve_operator_selection_lp` /
-      `solve_psd_operator_selection_sdp` so the duals exist, then re-run the
-      `y0_star` sweep over them. Only then is the "how many are degenerate"
-      question answerable for this population.
+- [ ] The remaining **3** are genuinely different LPs, not missing emissions:
+      `benzene_assembly_spine` (a knapsack: `linprog([-b], A_ub=[[1]*n],
+      b_ub=[cap])`), `three_quark_borromean_lp_sweep` and
+      `two_quark_active_set_mahler_sweep` (own `A_ub`/`A_eq`). Their duals are
+      not `y0_star`/`y_star` in the Frobenius sense. Either report duals in
+      their own form, or decide the operator-selection contract does not apply
+      to them — **a judgement, not a mechanical fix**, and the validator
+      should learn whichever answer is given rather than keep flagging them.
+- [ ] Re-run the `y0_star` sweep once those three are settled, for a count
+      over the whole population rather than over what happened to report.
 - [ ] Consider wiring `lp_dual_witness_validator.py` into CI diff-scoped, the
       way the vacuity audit is. It is not run by anything today.
 - [ ] `confinement-lp.witness.json`: re-derive the Gram from `pyhecke.gram`,

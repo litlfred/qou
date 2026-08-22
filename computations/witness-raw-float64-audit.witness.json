@@ -4,14 +4,15 @@
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
     "dirty_witnesses": 1539,
-    "total_fields": 532306,
-    "lp_dual_carved_out_fields": 3583,
+    "total_fields": 532294,
+    "lp_dual_carved_out_fields": 3892,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 812,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 75,
       "computations/a-K-via-lp-dual.witness.json": 1,
       "computations/all-nuclides-sdp-admissibility.witness.json": 144,
       "computations/alpha/alpha-5-lp-dual-crystal.witness.json": 75,
+      "computations/binding-sdp-bondgraph-degenerate.witness.json": 78,
       "computations/borromean-axial-coupling.witness.json": 16,
       "computations/co-bond-order-active-set.witness.json": 8,
       "computations/deltalambda/he4-binding-k-stage2.witness.json": 158,
@@ -26,6 +27,7 @@
       "computations/he4-sdp-compositional-probe.witness.json": 20,
       "computations/lp-confinement-nf-forcing.witness.json": 48,
       "computations/molecular-frobenius-lp.witness.json": 16,
+      "computations/nucleus-operator-selection-sdp.witness.json": 40,
       "computations/nucleus-real-sdp-deuteron.witness.json": 12,
       "computations/nucleus-real-sdp-he3.witness.json": 24,
       "computations/nucleus-real-sdp-he4.witness.json": 45,
@@ -35,7 +37,7 @@
       "computations/onepb-status-dashboard.witness.json": 48,
       "computations/option-b-proton-mass-full-chain.witness.json": 18,
       "computations/pn-alpha-lp-dual.witness.json": 1066,
-      "computations/probes/ak-lp-dual-quotient-probe.witness.json": 36,
+      "computations/probes/ak-lp-dual-quotient-probe.witness.json": 227,
       "computations/probes/borromean-angle-structure-lp-probe.witness.json": 1,
       "computations/probes/frobenius-repose.witness.json": 278,
       "computations/probes/lpdual-active-set-vs-edge-set-negative.witness.json": 11,
@@ -73,6 +75,6 @@
     "baseline_fields": 536570,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 48
+    "drained_files": 49
   }
 }

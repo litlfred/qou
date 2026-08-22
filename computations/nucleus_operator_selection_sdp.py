@@ -99,6 +99,18 @@ def main() -> int:
            if r.get("status") == "solved"}
 
     rows = []
+    # Canonical-name duals, collected alongside the display rows below.
+    # The per-row fields are `lp_`-prefixed AND `round(..., 5)`-ed, which
+    # means (a) `lp_dual_witness_validator.py` — which searches for the
+    # unprefixed key names the LP-dual contract specifies — could not see
+    # them, so this witness read as "solves the primal, never reports the
+    # dual", and (b) the rounded copies are not solver output and so are not
+    # covered by the LP-dual float64 carve-out. Emitting the raw values under
+    # the canonical names fixes both. The prefixed rows stay for readers.
+    # Pattern taken from `lp_confinement_nf_forcing.py`, which already does
+    # exactly this. Bean `qou/augu`.
+    canonical: dict = {k: [] for k in ("y0_star", "y_star", "active_set",
+                                       "primal_obj", "dual_obj", "duality_gap")}
     for lab, (stem, (Z, N)) in CACHE.items():
         r = res.get((Z, N))
         if not r:
@@ -118,6 +130,8 @@ def main() -> int:
             "lp_duality_gap": float(f"{lp['duality_gap']:.2e}"),
             "wedderburn": wedderburn_structure(stem),
         }
+        for k in canonical:
+            canonical[k].append(lp[k])
         if _HAVE_SDP:
             try:
                 sdp = solve_psd_operator_selection_sdp(t, G, ta).to_dict()
@@ -149,6 +163,8 @@ def main() -> int:
     w.add_data("H3_gram_det", detG)
     w.add_data("NF_basis", NF_NAMES)
     w.add_data("rows", rows)
+    for _k, _v in canonical.items():
+        w.add_data(_k, _v)
     w.add_data("reading", {
         "duality_gap_is_a_proof": "duality_gap ≈ 0 across all nuclei = strong "
             "duality holds = the active set is a CERTIFIED optimum (a proof, "

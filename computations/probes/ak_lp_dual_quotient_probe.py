@@ -215,11 +215,25 @@ def main() -> int:
             "blocks_total": len(per),
             "blocks_live": len(live),
             "blocks_radical": len(per) - len(live),
+            # `y_star`, `active_set` and `dual_obj` added 2026-08-22 (bean
+            # `qou/augu`): the LP-dual contract asks for six fields and this
+            # emitted three, so `lp_dual_witness_validator.py` read the
+            # witness as reporting no dual. All three were already in hand —
+            # `chir` above sums `quo.y_star` over `quo.active_set` — so the
+            # verdict rested on numbers the witness did not carry. They are
+            # solver output under the canonical names, hence inside the same
+            # `LP_DUAL_F64_FIELDS` carve-out as their three siblings.
             "ambient": {"y0_star": amb.y0_star,
+                        "y_star": list(amb.y_star),
+                        "active_set": list(amb.active_set),
                         "primal_obj": amb.primal_obj,
+                        "dual_obj": amb.dual_obj,
                         "duality_gap": amb.duality_gap},
             "quotient": {"y0_star": y0,
+                         "y_star": list(quo.y_star),
+                         "active_set": list(quo.active_set),
                          "primal_obj": quo.primal_obj,
+                         "dual_obj": quo.dual_obj,
                          "duality_gap": quo.duality_gap},
             "y0_star_equals_min_contrib": bool(
                 abs(y0 - y0_predicted) <= 1e-9 * max(1.0, abs(y0_predicted))),
