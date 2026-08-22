@@ -156,6 +156,74 @@ ideal-layer witness itself and never asks which anchor it wants. Same
 failure, one layer down, and it bypasses every guard built into the
 accessor path.
 
+## The sweep hazard, measured: dual-purpose reads and a defaulting utility
+
+Of the 56 direct pinners, **21 read the pinning witness for more than
+q₀**. The shape matters more than the count:
+
+| co-read field | producers |
+|---|---:|
+| `hbar_q` | 12 |
+| `q_inv` | 4 |
+| `two_q` | 4 |
+| `hbar_q_sq` | 3 |
+| `z_markov` | 3 |
+| `H_A` | 1 |
+| `plancherel_weights_n3` | 1 |
+
+Only the last is a reference table. The other 20 co-read **q₀-derived
+scalars**. So a sweep that re-points the `["q"]` read to proton and leaves
+those alone produces a **straddle inside a single producer** — one leg on
+the experimental pin, the rest on the ideal one. AGENTS.md forbids exactly
+that ("Never straddle the two layers inside one quantity"), and the
+measured cost of the last such case was 11.54 ppb. This is the concrete
+form the sweep hazard takes.
+
+### `_li_2_q_util.load_q_50dps()` — a muon default with 28 live callers
+
+`computations/_li_2_q_util.py:191` falls back to the muon-anchored pinning
+witness when its `path` argument is omitted:
+
+```python
+_Q_WITNESS_DEFAULT = Path(__file__).parent / "q-pinning-50-digit.witness.json"
+
+def load_q_50dps(path: Path | None = None) -> tuple[mpf, mpf, mpf]:
+    if path is None:
+        path = _Q_WITNESS_DEFAULT        # muon-anchored
+```
+
+**Measured: 28 live no-arg call sites across 26 files**; the module has 104
+importers. This is the `y_lambda_at` trap one more time — an ideal-layer
+value reaching an experimental-layer caller with no signal — arriving via a
+**default argument** instead of a cache-hit gate.
+
+It has been found before and fixed **point-wise**:
+`delta_lambda_v_hat_z_transfer_phase5d_4.py:80` still carries the marker
+`# 🛑 Was: load_q_50dps(), which reads the MUON q-pinning-50-digit`. One
+file was patched; the default was left, and 28 call sites still take it.
+
+### A separate observation, deliberately not claimed as a defect
+
+The same function returns `z = 1/(√q + 1/√q)`. Verified at 50 dps:
+
+```
+z from load_q_50dps  0.4993203340335612717689664
+z_C = √q/(q+1)       0.4993203340335612717689664    agree to 1.3e-51
+z_D = q³/(q²+1)      0.6126880505488901570445168    differs by 18%
+```
+
+It is **convention C exactly**, and `scripts/convention-c-producer-audit.py`
+(1 actionable site) does **not** flag it — a C value returned as a *tuple
+element* is a spelling the detector does not scan, which is a further entry
+for the detector-blindness taxonomy.
+
+**What is not claimed:** that this `z` is *the* Markov parameter subject to
+owner ruling R1. `compute_t2_t3_from_vols` consumes it as `T3 = z²·Σ_{i<j}`,
+a brane-tower pair weight, and a pair weight sharing a formula with the
+Markov parameter is precisely the glyph-collision hazard AGENTS.md §"Grep
+the claim SHAPE" describes. Settling it needs a corpus read or an owner
+call, not a grep. Tracked as `qou-dkm2`.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke
