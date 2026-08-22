@@ -291,6 +291,38 @@ theorem coeff_pderiv_of_pos [DecidableEq σ] {j : σ} {s : σ →₀ ℕ} (hs : 
   have h1 : (s j - 1) + 1 = s j := by omega
   rw [← Nat.cast_one (R := R), ← Nat.cast_add, h1]
 
+/-- **A height bound for a partial derivative:** `H(∂ⱼ g) ≤ degⱼ(g) · H(g)` over `ℤ`.
+
+Immediate from `coeff_pderiv`, which is an *identity*: the coefficient of `γ` in `∂ⱼ g` is
+`(γⱼ + 1)` times the coefficient of `γ + eⱼ` in `g`.  The factor `γⱼ + 1` is unbounded in
+`γ`, but it only ever multiplies a coefficient at exponent `γⱼ + 1` in the `j`-th variable —
+so beyond `degⱼ(g)` that coefficient is zero and the product vanishes.  The two cases in the
+proof are exactly those.
+
+This grounds the height chain for the *entries* of a generalized Wronskian, whose matrix is
+built from iterated `pderiv`s of the auxiliary polynomial.  ⚠ It does **not** yet bound the
+determinant — see `QOU/Mathlib/SeparatedHeight.lean`. -/
+theorem abs_coeff_pderiv_le {g : MvPolynomial σ ℤ} {B : ℤ} (hg : ∀ m, |coeff m g| ≤ B)
+    (j : σ) (γ : σ →₀ ℕ) :
+    |coeff γ (pderiv j g)| ≤ (degreeOf j g : ℤ) * B := by
+  classical
+  have hB : (0 : ℤ) ≤ B := le_trans (abs_nonneg _) (hg 0)
+  rw [coeff_pderiv, abs_mul]
+  rcases eq_or_ne (coeff (γ + Finsupp.single j 1) g) 0 with h0 | hne
+  · -- Past the degree in `xⱼ`: the shifted coefficient is zero, so the factor cannot matter.
+    rw [h0, abs_zero, mul_zero]
+    exact mul_nonneg (by positivity) hB
+  · have hmem : (γ + Finsupp.single j 1) ∈ g.support := mem_support_iff.mpr hne
+    have hle : ((γ + Finsupp.single j 1 : σ →₀ ℕ)) j ≤ degreeOf j g := by
+      rw [degreeOf_eq_sup]
+      exact Finset.le_sup (f := fun m : σ →₀ ℕ => m j) hmem
+    have hgj : γ j + 1 ≤ degreeOf j g := by
+      simpa [Finsupp.add_apply, Finsupp.single_eq_same] using hle
+    have habs : |((γ j : ℤ) + 1)| = (γ j : ℤ) + 1 := abs_of_nonneg (by positivity)
+    rw [habs]
+    refine mul_le_mul ?_ (hg _) (abs_nonneg _) (by positivity)
+    exact_mod_cast hgj
+
 /-- **A polynomial killed by every partial derivative is constant**, in characteristic zero.
 
 Mathlib has the univariate `Polynomial.eq_C_of_derivative_eq_zero`; the multivariate

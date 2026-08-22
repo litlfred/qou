@@ -495,3 +495,29 @@ It is also the tool the next step needs: `mvGenWronskian D f` is a determinant i
 `pderiv`s of `P`, so its height follows from `abs_coeff_mul_le` along the Leibniz expansion,
 given a bound on `|coeff n (pderiv i P)|`. ⚠ Until that exists, `abs_coeff_le_of_mul_separated`
 is being fed a hypothesis nothing yet establishes — the chain is sound but not yet grounded.
+
+### Addendum 2 — the entries are grounded, the determinant is not
+
+`MvPolynomial.abs_coeff_pderiv_le` in `QOU/Mathlib/MvGenWronskian.lean`:
+`H(∂ⱼ g) ≤ degⱼ(g)·H(g)` over `ℤ`. Placed there, not in `SeparatedHeight.lean`, so that both
+modules keep the "Mathlib imports only, liftable verbatim" property — it depends on
+`coeff_pderiv`, which is itself a measured Mathlib gap (`Mathlib/Algebra/MvPolynomial/PDeriv.lean`
+has no coefficient formula for `pderiv`).
+
+It falls straight out of `coeff_pderiv` being an **identity**: `coeff γ (∂ⱼ g) = (γⱼ+1)·coeff (γ+eⱼ) g`.
+The factor `γⱼ+1` is unbounded in `γ`, but it only ever multiplies a coefficient at exponent
+`γⱼ+1` in the `j`-th variable, so past `degⱼ(g)` that coefficient is zero and the product
+vanishes. Those are the proof's two cases.
+
+⚠ **This grounds the entries of a generalized Wronskian, not the determinant.** Leibniz
+expands the determinant into `m!` signed products of `m` entries; bounding those needs
+`abs_coeff_mul_le` applied `m−1` times, which drags in a bound on the support size of each
+partial product — and that is not written. So `abs_coeff_le_of_mul_separated` is still being
+handed a `B` that nothing establishes for the Wronskian. The chain is sound but not grounded
+end to end, and a stack of true lemmas should not be allowed to read as a finished argument.
+
+Verification for this addendum: all eight arc modules (`RothIndex`, `MvGenWronskian`,
+`LineRestriction`, `DirectionalWronskian`, `BoundedOrderWronskian`, `SeparatedWronskian`,
+`RothHeightBound`, `MahlerJensen`, `SeparatedHeight`) rebuilt with their `.olean`s deleted
+first — exit 0, no linter output. Downstream importers of `MvGenWronskian` were rebuilt
+explicitly, since a per-module build cannot see breakage in a module that imports it.

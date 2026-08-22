@@ -256,9 +256,16 @@ exchanged; it is not written here because nothing yet calls for it.  Add it when
 does, rather than on speculation.
 
 The next real step is the **height of a generalized Wronskian**: `mvGenWronskian D f` is a
-determinant whose entries are iterated `pderiv`s of `P`, so its height follows from
-`abs_coeff_mul_le` along the Leibniz expansion together with a bound on `|coeff n (pderiv i P)|`
-in terms of `|coeff · P|` and the degree.  That is what feeds `abs_coeff_le_of_mul_separated`
-with a usable `B`, and until it exists the chain above starts from an unbounded hypothesis. -/
+determinant whose entries are iterated `pderiv`s of `P`.  Half of that is now grounded —
+`MvPolynomial.abs_coeff_pderiv_le` in `QOU/Mathlib/MvGenWronskian.lean` gives
+`H(∂ⱼ g) ≤ degⱼ(g)·H(g)`, so the matrix *entries* have a bound, and iterating it handles
+`pderivList`.
+
+⚠ The **determinant** does not.  Leibniz expands it into `m!` signed products of `m` entries;
+bounding those needs `abs_coeff_mul_le` applied `m−1` times, which drags in a bound on the
+support size of each partial product, and that is not written.  Until it is,
+`abs_coeff_le_of_mul_separated` is being handed a `B` that nothing establishes for the
+Wronskian — the chain is sound but still not grounded end to end, and it is worth saying so
+rather than letting a stack of true lemmas read as a finished argument. -/
 
 end MvPolynomial
