@@ -3,8 +3,9 @@
 title: 'MATH/RENDER anomalies from trap-drain obs-b1/b2/b3: FALSE self-conjugacy (5,4,4,4,3) in double-magic-Ca40-diagram; q0 muon/proton pin straddle (flavor-split-substrate-proof, g-q-closed-form vs fine-structure-observation); P_isolation 0.13 vs 0.153; V_B/hbar_q^2 749.2 vs 746.4; CFL-gap self-contradiction; ''forbids beta decay'' wrong term; broken LaTeX pid/pia/lambdaL; frac denominator 1; = vs approx; RESOLVED status leaks; higgs-t28 uniqueness unsupported'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-19T00:00:00Z
+updated_at: 2026-08-22T21:43:41Z
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19
@@ -4146,3 +4147,48 @@ across this campaign, agent **numeric** findings have survived independent
 recomputation every time they were checked, and agent claims about a file's
 **past or existence** have inverted three times out of three. The four
 corrections recorded above are all of the second kind.
+
+
+---
+
+# CORRECTION 2026-08-22 — the `definition-index.md` line-number fixes are futile as prescribed
+
+Three findings above target `index-of-definitions/definition-index.md` at
+specific lines — **L-V59** (`:717 ## Corollarys`), the `$\mathbb{F}_\pp$` pair
+at `:867,868`, and `:799` +~3 more.
+
+**That file is generated**, by `folio-assistant/content/pipeline/generate-index.ts`
+(`writeFileSync(INDEX_MD, ...)`, unconditional, no `--check` mode). It is
+tracked in git, which is what makes it look hand-editable. Any fix applied to
+it is erased on the next generate.
+
+It survived this long only because **the generator could not run in this repo
+at all**: it called `requirePaper()` with no argument, which throws in a folio
+with more than one paper, and qou has five. So the file was frozen, and
+hand-fixing it *worked* — until now.
+
+Fixed in litlfred/folio-assistant#131:
+
+- `requirePaper(process.argv[2])` — the generator runs here again.
+- It walked `ch.sections[].blocks` **one level deep**, so every block in a
+  nested `subsections` was invisible: **173** of them, including
+  `def:archimedean-realization-functor`, which is live, listed at
+  `mass-theory.ts:226`, cited by three blocks, and absent from the index.
+- `kind + "s"` -> explicit plural table. **L-V59 is closed at the source**:
+  the heading now reads `## Corollaries`.
+
+Regenerated in `a6518576e2`: **909 -> 1269** entries, +361 / -1 (the one drop
+is `rem:term6-binding-density`, a `remark`, never an indexed kind).
+
+**What this means for the remaining `definition-index.md` items here.** They
+are still real, but the fix site moved: a broken `$\mathbb{F}_\pp$` in the
+index is a broken `title:` on the block whose row that is, or a defect in how
+`generate-index.ts` emits titles. Fix upstream and regenerate; do not edit the
+index. Re-derive the line numbers after regenerating — every one above refers
+to the 909-entry file and none of them will point at the same row now.
+
+Two further criteria fire on the regenerated file, both newly computed rather
+than newly caused: `voice-ai-slop` (hedge tokens counted across 1269 index
+rows — likely a false positive on generated output) and `voice-unicode-crash`
+(`Λ`, `²`, `≡` in table cells, inherited from upstream block titles). Same
+rule: upstream or generator, not the file.
