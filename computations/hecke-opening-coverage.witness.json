@@ -1,0 +1,143 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-22T15:55:06.000123+00:00",
+  "commitSha": "c2ec9ba24c01274f60e08e2f0c87e9302d7144e1",
+  "assertions": [
+    {
+      "name": "cases_where_the_two_applications_do_not_fit",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 30,
+  "computation": "hecke-opening-coverage",
+  "scriptFile": "hecke_opening_coverage.py",
+  "scriptHash": "04a4bc7eb10a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke_opening_coverage.py"
+    ],
+    "reproduce": "python3 -u computations/hecke_opening_coverage.py"
+  },
+  "description": "Does the planned lemma set cover the a <= b opening phase? Plan: s1/s2 carry V0 to V2 (both j2-independent, already in the corpus), then loopTwoGen carries U0 at m = a-4, with k = i1 and e = jppp as hecke-prefix-loop-fit solved them. Measured against the chain: whether the first two steps really are V0's and land on V2, whether the next stretch is U0's alone, whether it ends on loopTwoGen's own target formula, and HOW MANY of the a^2-3a+9 opening steps that accounts for. The remainder is the point -- it says what else the opening needs. Measured: s1/s2 and the loop DO fit, but the contiguous U-run continues past the loop's endpoint by exactly 3 steps (a bare Bokut-Shiao, then the Yang-Baxter and quadratic pair that §4al's quadPair covers), so the loop's endpoint must be LOCATED rather than read off the end of the run -- the first version of this probe assumed the latter and reported a false negative in all six cases, the same wrong-index bug the tail's collision check had.",
+  "parameters": {
+    "m": "a - 4 (so a = 3 would need m = -1: no loop pass)",
+    "loop_levels": "k = i1 down to e = jppp"
+  },
+  "data": {
+    "cases_checked": 6,
+    "cases": [
+      {
+        "a": 4,
+        "b": 4,
+        "i": 9,
+        "n": 11,
+        "opening_phase_steps": 13,
+        "m_predicted": 0,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 5,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 2,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 4,
+        "steps_remaining_in_opening": 9
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "i": 10,
+        "n": 12,
+        "opening_phase_steps": 13,
+        "m_predicted": 0,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 5,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 2,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 4,
+        "steps_remaining_in_opening": 9
+      },
+      {
+        "a": 5,
+        "b": 5,
+        "i": 11,
+        "n": 13,
+        "opening_phase_steps": 19,
+        "m_predicted": 1,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 8,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 5,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 7,
+        "steps_remaining_in_opening": 12
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "i": 12,
+        "n": 14,
+        "opening_phase_steps": 19,
+        "m_predicted": 1,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 8,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 5,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 7,
+        "steps_remaining_in_opening": 12
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "i": 13,
+        "n": 15,
+        "opening_phase_steps": 27,
+        "m_predicted": 2,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 12,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 9,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 11,
+        "steps_remaining_in_opening": 16
+      },
+      {
+        "a": 6,
+        "b": 7,
+        "i": 14,
+        "n": 16,
+        "opening_phase_steps": 27,
+        "m_predicted": 2,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 12,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 9,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 11,
+        "steps_remaining_in_opening": 16
+      }
+    ]
+  },
+  "caveats": [
+    "a >= 4 only. a = 3 has no loop pass (m would be -1) and needs its own treatment; a = 2 is excluded throughout this arc.",
+    "The 3 steps after the loop are the bare Bokut-Shiao step plus the Y-then-Q pair; §4al's quadPair covers the latter two, so the U side needs one more named step beyond loop + quadPair.",
+    "Fitting the applications is not assembling the phase. The remainder column says how much is left, and the collision hypotheses are discharged here by head separation rather than checked lemma by lemma."
+  ]
+}
