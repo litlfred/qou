@@ -74,6 +74,11 @@ REQUIRED_FIELDS = ("engine", "scriptFile", "commitSha")
 # refresh IS the signal, not a regression. They are exempt from
 # provenance-completeness checks (though most do carry the fields
 # anyway via WitnessBuilder).
+# Verdicts returned WITHOUT examining the witness's fields.
+_EXEMPT_VERDICTS = frozenset({
+    "PROV_AUDIT_EXEMPT", "PROV_EXEMPT_NO_READER", "PROV_EXEMPT_ACKNOWLEDGED",
+})
+
 AUDIT_SUFFIXES = (
     "-audit.witness.json",
     "-scan.witness.json",
@@ -209,8 +214,16 @@ def main(argv: list[str] | None = None) -> int:
         # producer (hand-authored / legacy orphan). On the record, not a gap.
         elif verdict == "PROV_MISSING" and wp.name in acknowledged_floor:
             verdict, missing = "PROV_EXEMPT_ACKNOWLEDGED", [acknowledged_floor[wp.name]]
+        # `evaluated` distinguishes "checked and found complete" from "never
+        # checked". Without it an exempt entry — which `classify()` returns as
+        # `(verdict, [])` BEFORE reading a single field — is byte-identical to a
+        # passing one, and reads as a pass in every aggregate view. That is how
+        # `q0-consistency-audit.witness.json` reported `missing_fields: []` on
+        # 2026-08-21 while carrying no computedAt/scriptFile/scriptHash/engine
+        # at all (bean `qou-ivhc`). Additive: no verdict changes.
         by_verdict[verdict].append(
-            {"witness": wp.name, "missing_fields": missing}
+            {"witness": wp.name, "missing_fields": missing,
+             "evaluated": verdict not in _EXEMPT_VERDICTS}
         )
 
     n_total = sum(len(v) for v in by_verdict.values())
@@ -220,9 +233,17 @@ def main(argv: list[str] | None = None) -> int:
     n_no_reader = len(by_verdict["PROV_EXEMPT_NO_READER"])
     n_ack = len(by_verdict["PROV_EXEMPT_ACKNOWLEDGED"])
     n_parse_err = len(by_verdict["PROV_PARSE_ERROR"])
+    # Kept as-is for continuity with prior runs: it counts every EXEMPT class in
+    # the numerator, i.e. it answers "what share is not a known gap?".
     completeness_ratio = (
         (n_ok + n_audit + n_no_reader + n_ack) / n_total if n_total > 0 else 0.0
     )
+    # What the name suggests: of the witnesses actually CHECKED, what share has
+    # complete provenance — and what share of the corpus was checked at all.
+    n_excluded = n_audit + n_no_reader + n_ack
+    n_evaluated = n_ok + n_missing + n_parse_err
+    completeness_ratio_evaluated = (n_ok / n_evaluated) if n_evaluated else 0.0
+    evaluated_coverage = (n_evaluated / n_total) if n_total else 0.0
 
     print("=" * 70)
     print("I14 audit — witness provenance completeness")
@@ -234,7 +255,14 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  PROV_EXEMPT_ACKNOWLEDGED: {n_ack}")
     print(f"  PROV_MISSING           : {n_missing}")
     print(f"  PROV_PARSE_ERROR       : {n_parse_err}")
-    print(f"  completeness ratio     : {completeness_ratio:.3f}")
+    print(f"  excluded (NOT evaluated): {n_excluded}"
+          f"  = {n_audit} audit + {n_no_reader} no-reader + {n_ack} acknowledged")
+    print(f"  completeness ratio     : {completeness_ratio:.3f}"
+          f"   (counts all exempt classes as complete)")
+    print(f"  ├─ of those EVALUATED  : {completeness_ratio_evaluated:.3f}"
+          f"   ({n_ok}/{n_evaluated})")
+    print(f"  └─ corpus evaluated    : {evaluated_coverage:.3f}"
+          f"   ({n_evaluated}/{n_total}) — the rest was never checked")
     print(f"  legacy_removed_skipped: {len(legacy_removed)}")
     if n_missing:
         print()
@@ -269,6 +297,12 @@ def main(argv: list[str] | None = None) -> int:
             "prov_missing": n_missing,
             "prov_parse_error": n_parse_err,
             "completeness_ratio": completeness_ratio,
+            # Added 2026-08-22 (bean `qou-ivhc`): the ratio above counts every
+            # EXEMPT class as complete, so it cannot fall when coverage does.
+            # These two separate "passed" from "never checked".
+            "excluded_not_evaluated": n_excluded,
+            "completeness_ratio_evaluated": completeness_ratio_evaluated,
+            "evaluated_coverage": evaluated_coverage,
         })
         .add_data("by_verdict", by_verdict)
         .add_assertion(
