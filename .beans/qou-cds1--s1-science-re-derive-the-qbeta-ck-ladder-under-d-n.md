@@ -8,6 +8,8 @@ created_at: 2026-08-15T00:00:00Z
 updated_at: 2026-08-22T19:31:51Z
 
 updated_at: 2026-08-22T12:44:58Z
+
+updated_at: 2026-08-22T14:07:58Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -963,3 +965,42 @@ float. The locus is DERIVED from the numerator of z_C - z_D, not asserted (my fi
 draft asserted it, with a comment misstating z_C(s^2) as s/(s^4+1); it is s/(s^2+1)).
 
 STILL OPEN: the extraction path, c_4, c_5.
+
+
+## 2026-08-22 (2) — CORRECTION to my own entry above, and the real S1 residual
+
+Correcting the entry I wrote an hour ago. Found while corpus-grepping c_4/c_5
+before working them.
+
+**tail_common is the primary result, not my q=1 coincidence.**
+QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common (already in corpus,
+sorry-free) proves z reaches the ladder ONLY via the N=1 eigenphase, so the
+whole N=2..5 tail is phase-blind. markovZ' is hardcoded to z_C, so alpha is the
+C-frame phase and is the sole entry point.
+
+**My c_4/c_5 claim was WRONG.** I wrote that they 'must be re-derived, being
+evaluated at q_0 != 1'. They must not — they are in the phase-blind tail. The
+error: reasoning about where a coefficient is EVALUATED instead of whether z
+enters its rung at all.
+
+**What my result does cover (narrower, still needed).** tail_common is about the
+WRITTEN FORM; it says nothing about the PROVENANCE of the constants in it.
+c_3 = J_Hopf(q=1) is a Markov trace, and a Markov trace DOES depend on z — so a
+z-free written form does not establish that -2 survives. The q=1 coincidence
+does. Complementary; neither subsumes the other.
+
+**The -974 is NOT mine and is already known.** qbeta_ladder_required_phase_probe.py
+already records that it is the N=1 phase residual magnified by 1/u^3 (a fixed
+magnifier common to both frames), and warns it 'overstates what it measures'. I
+reconstructed it independently before checking — holding the tail fixed and
+pushing cos(alpha_D - u/2)/cos(alpha_C - u/2) into the N=3 rung gives -974.4319
+vs the recorded -974.43, 1.9e-6 relative — and record that as a cross-check of
+theirs, not as a finding.
+
+**THE REAL S1 RESIDUAL: the tail is fine; the PHASE is the job.**
+alpha = (z-1)h/2 is ASSERTED in both frames and derived in neither (a literal at
+probe_q_beta_operator_valued_N3.py:70). There is no C-frame derivation to port
+to D. Deriving alpha is what tranche S1 actually needs — not a tail re-derivation.
+
+PR #5448 body + probe docstring + Lean header all corrected (commit 16847c7f5b).
+Probe now 8/8 (new assertion 7: markovZ' = z_C exactly).
