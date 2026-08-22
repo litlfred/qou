@@ -57,7 +57,40 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
     lr_coef,
     partitions_of,
 )
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
+import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
+
+
+def _kron_mp(B1, B2):
+    """Kronecker product of two mp.matrix. mpmath has no kron, and numpy's
+    gives `dtype=object` on mp.matrix input (measured) — an object array is
+    both a float64 hazard downstream and out of BLAS."""
+    r1, c1, r2, c2 = B1.rows, B1.cols, B2.rows, B2.cols
+    K = mp.matrix(r1 * r2, c1 * c2)
+    for i1 in range(r1):
+        for j1 in range(c1):
+            v = B1[i1, j1]
+            if v == 0:
+                continue
+            for i2 in range(r2):
+                for j2 in range(c2):
+                    K[i1 * r2 + i2, j1 * c2 + j2] = v * B2[i2, j2]
+    return K
+
+
+def _trace_prod_mp(A, X):
+    """Tr(A·X) = Σ_ij A[i,j]·X[j,i], without materializing the product."""
+    tot = mp.mpc(0)
+    for i in range(A.rows):
+        for j in range(A.cols):
+            a = A[i, j]
+            if a == 0:
+                continue
+            tot += a * X[j, i]
+    return tot
 
 
 # Canonical proton / neutron braid words on H_3 (3 strands each).
@@ -119,10 +152,19 @@ def load_A_per_pair(witness_path: Path) -> dict:
             # block_key has form "(mu_tuple,nu_tuple)" e.g. "((3,),(3,))"
             parsed = ast.literal_eval(block_key)
             mu, nu = parsed[0], parsed[1]
-            d = info["d_mu"] * info["d_nu"]
-            re = np.array(info["matrix_re"], dtype=float)
-            im = np.array(info["matrix_im"], dtype=float)
-            A = re + 1j * im
+            # The extraction witness stores these as 60-digit STRINGS.
+            # `np.array(..., dtype=float)` threw all of it away and put the
+            # whole producer on a float64 floor — the same defect the
+            # upstream `evaluate_word_matrix` was already fixed for
+            # (bean qou-zck8); this consumer was the half left behind.
+            re_rows = info["matrix_re"]
+            im_rows = info["matrix_im"]
+            nr, nc = len(re_rows), len(re_rows[0]) if re_rows else 0
+            A = mp.matrix(nr, nc)
+            for i in range(nr):
+                for j in range(nc):
+                    A[i, j] = mp.mpc(mp.mpf(str(re_rows[i][j])),
+                                     mp.mpf(str(im_rows[i][j])))
             out[lam][(mu, nu)] = A
     return out
 
@@ -133,7 +175,7 @@ def operator_trace_rhs(
 ) -> tuple[complex, list[dict]]:
     """Compute Σ_{(μ,ν)} Tr_{V_μ⊗V_ν}(A^λ_{μν} · (ρ_μ(β_p) ⊗ ρ_ν(β_n)))
     and return (total, per-block contributions)."""
-    total = 0.0 + 0j
+    total = mp.mpc(0)
     per_block = []
     for mu in parts_3:
         for nu in parts_3:
@@ -142,20 +184,20 @@ def operator_trace_rhs(
                 continue
             B_mu = evaluate_word_matrix(mu, beta_p_word)
             B_nu = evaluate_word_matrix(nu, beta_n_word)
-            if B_mu.size == 0 or B_nu.size == 0:
+            if B_mu.rows == 0 or B_nu.rows == 0:
                 continue
-            X = np.kron(B_mu, B_nu)  # ρ_μ(β_p) ⊗ ρ_ν(β_n)
+            X = _kron_mp(B_mu, B_nu)  # ρ_μ(β_p) ⊗ ρ_ν(β_n)
             A = A_per_pair_for_lam.get((mu, nu))
             if A is None:
                 continue
-            block_trace = complex(np.trace(A @ X))
+            block_trace = _trace_prod_mp(A, X)
             total += block_trace
             per_block.append({
                 "mu": list(mu), "nu": list(nu), "c_lr": c,
-                "d_mu": int(B_mu.shape[0]), "d_nu": int(B_nu.shape[0]),
-                "block_trace_re": float(block_trace.real),
-                "block_trace_im": float(block_trace.imag),
-                "block_trace_abs": float(abs(block_trace)),
+                "d_mu": int(B_mu.rows), "d_nu": int(B_nu.rows),
+                "block_trace_re": fmt(mp.re(block_trace)),
+                "block_trace_im": fmt(mp.im(block_trace)),
+                "block_trace_abs": fmt(abs(block_trace)),
             })
     return total, per_block
 
@@ -171,8 +213,8 @@ def main() -> int:
         "⊢ 6, compares to direct χ^λ(β_p · I · β_n). Per-(μ,ν)-block "
         "decomposition is reported for structural analysis."
     )
-    builder.add_parameter("q0", str(float(Q0)))
-    builder.add_parameter("h_q_minus_q_inv", str(float(H)))
+    builder.add_parameter("q0", Q_50_DIGIT_STR)
+    builder.add_parameter("h_q_minus_q_inv", fmt(H))
     builder.add_parameter("interface_c", str(INTERFACE_C))
     builder.add_parameter("interface_d", str(INTERFACE_D))
     builder.add_parameter("proton_word_len", str(len(PROTON_WORD)))
@@ -217,7 +259,7 @@ def main() -> int:
         residual = abs(rhs - lhs)
         # For zero-character cases (symmetry kills χ^λ), use absolute
         # residual instead of relative — dividing by ~0 is meaningless.
-        if abs(lhs) < 1e-9:
+        if abs(lhs) < mp.mpf("1e-9"):
             rel = residual  # absolute residual proxy
             metric = "abs"
         else:
@@ -225,17 +267,17 @@ def main() -> int:
             metric = "rel"
         max_rel = max(max_rel, rel)
         status = "✓" if rel < 1e-6 else "✗"
-        print(f"  {str(lam):<14} {complex(lhs).real:>18.10f} "
-              f"{rhs.real:>18.10f} {rel:>14.2e}  {status}")
+        print(f"  {str(lam):<14} {float(mp.re(lhs)):>18.10f} "
+              f"{float(mp.re(rhs)):>18.10f} {float(rel):>14.2e}  {status}")
         results[str(lam)] = {
-            "lhs_chi_direct_re": float(lhs.real),
-            "lhs_chi_direct_im": float(lhs.imag),
-            "rhs_operator_trace_re": float(rhs.real),
-            "rhs_operator_trace_im": float(rhs.imag),
-            "residual_abs": float(residual),
-            "relative_residual": float(rel),
+            "lhs_chi_direct_re": fmt(mp.re(lhs)),
+            "lhs_chi_direct_im": fmt(mp.im(lhs)),
+            "rhs_operator_trace_re": fmt(mp.re(rhs)),
+            "rhs_operator_trace_im": fmt(mp.im(rhs)),
+            "residual_abs": fmt(residual),
+            "relative_residual": fmt(rel),
             "metric_used": metric,
-            "consistent": bool(rel < 1e-6),
+            "consistent": bool(rel < mp.mpf("1e-6")),
             "per_block": per_block,
             "dominant_block": (
                 max(per_block, key=lambda b: b["block_trace_abs"])
@@ -245,14 +287,14 @@ def main() -> int:
 
     all_consistent = all(r["consistent"] for r in results.values())
     print()
-    print(f"  Max relative residual across all λ: {max_rel:.2e}")
+    print(f"  Max relative residual across all λ: {float(max_rel):.2e}")
     print(f"  All λ consistent (forward identity holds): {all_consistent}")
 
     if all_consistent:
         verdict = (
             f"PROVED forward direction: operator-trace formula reproduces "
             f"χ^λ(β_p · I · β_n) on the canonical deuteron braid for all "
-            f"{len(results)} λ ⊢ 6 partitions to {max_rel:.2e} relative "
+            f"{len(results)} λ ⊢ 6 partitions to {float(max_rel):.2e} relative "
             f"residual. The 2-factor case of prop:mass-tower-operator-valued "
             f"is forward-validated."
         )
@@ -260,21 +302,29 @@ def main() -> int:
         verdict = (
             f"INCONSISTENT: forward operator-trace identity fails on "
             f"{sum(1 for r in results.values() if not r['consistent'])} of "
-            f"{len(results)} λ — max rel residual {max_rel:.2e}. Check the "
+            f"{len(results)} λ — max rel residual {float(max_rel):.2e}. Check the "
             f"A^λ_{{μν}}(I) extraction or the interface convention."
         )
 
     builder.add_data("per_lambda", results)
-    builder.add_data("max_relative_residual", float(max_rel))
+    builder.add_data("max_relative_residual", fmt(max_rel))
     builder.add_data("all_lambda_consistent", bool(all_consistent))
     builder.add_data("verdict", verdict)
-    builder.add_upstream("sublemma-2-1-A-operator-extract.witness.json")
+    # Full path, not a bare filename: `load_and_hash_upstream` resolves with
+    # `Path(path)` against the CWD, so the bare name only ever worked when the
+    # producer was run from `computations/`. Pre-existing, and it could not
+    # surface before because the run crashed earlier (see the `.size` note).
+    builder.add_upstream(str(A_witness))
 
     builder.add_assertion(
         "operator_trace_identity_forward",
-        computed=float(max_rel),
-        expected=0.0,
-        tolerance=1e-6,
+        # fmt, not float: the assertion payload is part of the witness and is
+        # covered by the same NO-FLOAT64 rule as the data. Tolerance stays the
+        # literal it always was -- 1e-6 is a threshold, not a measurement, and
+        # widening it to make this pass is exactly what the discipline forbids.
+        computed=fmt(max_rel),
+        expected="0",
+        tolerance="1e-6",
         unit="relative residual",
         source="prop:mass-tower-operator-valued + prop:hecke-branching-"
                "trace-decomposition",
@@ -291,7 +341,7 @@ def main() -> int:
         if dom:
             block_str = f"({dom['mu']}, {dom['nu']})"
             print(f"  {lam_str:<14} {block_str:<24} "
-                  f"{dom['block_trace_abs']:>14.6f}")
+                  f"{dom['block_trace_abs'][:14]:>14}")
 
     builder.save()
     return 0
