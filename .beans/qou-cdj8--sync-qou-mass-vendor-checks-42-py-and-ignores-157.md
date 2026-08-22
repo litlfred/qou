@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:44:29Z
-updated_at: 2026-08-21T21:54:39Z
+updated_at: 2026-08-22T09:22:04Z
 ---
 
 Split from `qou-hp3g`, whose sync-drift half turned out already fixed
@@ -129,3 +129,59 @@ and is a package-design call (the script header already tracks a separate item
 about a package-aware resolver so vendored data could live under `data/`).
 Wiring `--check` into a gate array is likewise a decision — `precision-gates.sh`
 is the NO-FLOAT64 family and this is not that.
+
+
+---
+
+## ALL THREE DONE (owner directed both decisions, 2026-08-22) — c8661cc6edd
+
+**1. Wired into `scripts/staleness-gates.sh`, BLOCKING.** That array, not
+`precision-gates.sh`: this is a copy whose source moved and was never
+regenerated, which is exactly the staleness family's stated purpose, and nothing
+about it is float64. Blocking from the start rather than advisory because it is
+GREEN on arrival — the red-on-arrival objection does not apply.
+
+**2. Re-synced the 122.** `extra_witnesses()` covers `data/` + `data/isotopes/`,
+which had no sync path at all. Synced IN PLACE, not into the package root: these
+are not resolved by the modules, so the root placement constraint does not apply
+and moving them would change import paths for nothing.
+
+**3. Deprecated the 17 shadows** to `data/_deprecated/` with a README, via
+`git mv`. Not deleted — removing a shipped file is an API decision, matching the
+script's `orphans` posture. `_deprecated` is the existing repo convention and
+the sync already skipped it.
+
+### Measured effect, BOTH directions
+
+    q0Anchor recorded    8 -> 128 of 140 witnesses
+    raw float64 fields   32,883 -> 44,937
+
+**The float64 count went UP by 12,054 and that is not a regression introduced
+here.** The three-month-old copies were *smaller than the sources they mirror*,
+so syncing to truth imports float64 those sources already carry — a backlog
+owned by the producing arcs and already tolerated at source by the corpus
+baseline. The alternative was keeping copies that looked cleaner only because
+they were stale. Recorded rather than buried: a naive reading of the ratchet
+would score this as a 12k-field regression.
+
+### Verification
+
+- Coverage: 42 modules + 18 cone + 122 package-data, **0 uncovered**.
+- **Fires through the runner, on both halves** — planted drift in a vendored
+  module → RED naming the gate; planted drift in `data/isotopes/` (the half
+  that had no coverage at all) → RED naming
+  `canonical-isotope-witness-Z01.witness.json`; clean before and after.
+- `precision-gates.sh`: all blocking gates green.
+- `staleness-gates.sh` exits 1 at baseline on **two pre-existing reds**
+  (`scriptHash + upstream drift`, `q0 constant staleness`). Verified on clean
+  `origin/main`: identical two reds, so neither is mine — in particular the
+  re-sync did NOT cause the q0 one, which was the obvious suspicion given it
+  changed 122 anchors.
+
+### One artifact caught before it landed
+
+`git add -A` swept in `witness-raw-float64--qou-mass-src-audit.witness.json`,
+a byproduct of my own before/after measurement on a scan root no gate runs. It
+had already bumped `Q0_AUDIT_EXEMPT` 75 → 76 in the anchor audit. Removed from
+the commit and the audit reverted to 75. Same class as the `docs-audits`
+byproduct caught earlier in this arc.
