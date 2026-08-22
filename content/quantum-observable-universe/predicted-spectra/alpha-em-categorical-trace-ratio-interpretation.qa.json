@@ -1400,6 +1400,21 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:08.741Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1434,21 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:08.780Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1468,21 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 182 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:08.819Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1502,36 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 182 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:08.857Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.130Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Only a two-item bulleted list ('two components') plus paired channels (3,1)/(2,1,1); no reflex three-item enumeration."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1551,36 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:08.895Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.172Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Final sentence 'Closing this algebraic identity constitutes the next step for conj:e-hartree-categorical-derivation' is a cross-reference closer (documented false-positive class), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:08.934Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:08.973Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.012Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1702,21 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.051Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1736,37 @@
         "reviewed_at": "2026-08-15T10:31:01.239Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.090Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of remark interpreting prop:alpha-em-categorical-trace-ratio; no denial-assertions, no pivot, no em-dashes, no aphoristic closer (final line is a forward cross-reference to conj:e-hartree-categorical-derivation), no first-person warmth, no maximal claims."
+      },
+      {
+        "field_hash": {
+          "md": "b8be60b5e694",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.212Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "severity": "minor",
+        "evidence": "Noun chains present ('the inverse Bring complex complexity into the ratio of h^2 over the product of force-carrier categorical traces') but each parses aloud in one pass; density below the reporting threshold."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1789,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:23:09.212Z"
 }
