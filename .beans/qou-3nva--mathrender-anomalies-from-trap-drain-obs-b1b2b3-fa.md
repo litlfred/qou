@@ -1255,3 +1255,96 @@ labelled empirical and capped at A ≤ 16, and a refusal to settle the
 downstream question. Its one flaw is an *under*-claim — if the gap factors
 as `(t−1)` times an all-positive degree-20 polynomial, it holds for every
 `q > 1`, not merely "an interval containing the anchor".
+
+---
+
+## From agent:d01 (quantum-observable-universes dq_01) — 2026-08-22
+
+45 blocks, only 4 trap fails — this chapter's prose is clean, and the yield
+is mathematical. 15 anomalies; the first three carry consequences.
+
+### The uniqueness proof proves a different operator than the definition gives
+
+`categorical-q-ext-deriv-unique-proof`. Derived rather than eyeballed: with
+`P = q⁻¹·id + (1−q⁻¹)π_V` and `π_H = id − π_V`, the **definition** gives
+
+    d_q = P ∘ d
+
+while the **proof** works with
+
+    d′ = q⁻¹ d ∘ π_H + d ∘ π_V = d ∘ P.
+
+Those agree iff `[π_V, d] = 0` — which this chapter's own `d_q² ≠ 0`
+result denies. The same hidden hypothesis sits under
+`categorical-q-ext-deriv`'s prose claim that `d_q` "acts as `q⁻¹d` on
+horizontal forms and as `d` on vertical forms": `π_V` acts on the *output*
+of `d`, so that reading needs `d` to preserve the H/V splitting.
+
+### Lichnerowicz Step 4 is off by a factor of 0.8018, and drops a term
+
+The step asserts `q⁻²∇² − ℏ_q²∇_ξ² = ∇*∇`. Its algebra is **correct** —
+`q⁻² − ℏ_q² = (2−q)/q`, since `1 − (q−1)² = 2q − q²` and `ℏ_q = 1 − q⁻¹`
+gives `qℏ_q = q−1`. But that quantity is not 1: at 30 dps it evaluates to
+**0.801836567911** at the proton pin (0.801836547123 at muon), so the
+identity is off by ~19.8 %. The same step also drops `L_ξ∇` without
+comment.
+
+### A definition whose axiom collapses its own decomposition
+
+`categorical-reeb-brings` computes `ι_ξ dΘ_A = 0` — correct, that *is* the
+classical Reeb condition, and it follows correctly from
+`ι_{e₃}(ω₊ ∧ ω₋) = 0`. But `def:categorical-reeb`'s axiom
+`π_V ∘ d = ι_ξ dΘ_A` then forces `π_V ∘ d = 0`, collapsing the
+horizontal/vertical decomposition the chapter is built on. One of the two
+is wrong, and the definition is the likelier culprit.
+
+### Naming and typing, in a chapter where both are load-bearing
+
+- **One term, two morphisms.** `def:categorical-reeb` and
+  `def:categorical-reeb-derivation` both bold "categorical Reeb
+  derivation" for different objects (`ξ` vs `ξ_q`) under different
+  normalisations (`Θ_A(ξ) = id₁` vs `ξ_q ∘ Θ = Θ`).
+- **The Dirac operator has two fonts**: `𝔇_∇` (fraktur) in
+  `prop:categorical-lichnerowicz`, `𝒟_∇` (calligraphic) in all four
+  Lagrangian blocks, both citing `def:categorical-dirac-operator`. §7aa
+  admits at most one.
+- **`Ω_q`** (Reeb period) collides with `Ω^k(A)` (forms) across the
+  chapter; `ξ` serves as both Reeb generator and Fourier spectral
+  variable.
+- **Three codomains for one formula**: `tr_M(exp_q(−s·)·f)` is declared
+  into `End_C(A)` by `def:categorical-laplace`, called an element of
+  `Hom(1, A)` by its exists-proof, and as a Markov trace lands in
+  `Hom(1,1)`. `def:categorical-fourier` repeats the mismatch.
+- **Type mismatch** in the Lagrangian's second summand: `ψ* ⊗ 𝒟_∇ψ`
+  composes to `Hom(A, Ω¹(A))`, not `End_C(A)`, unless `Ω¹(A) ≅ A` —
+  asserted away as "via the rigid pairing".
+
+### Vacuous and near-vacuous statements
+
+`prop:categorical-lagrangian-unique` reads "any endomorphism equal to *the
+formula* coincides with `L_q`" — true by substitution. Its proof's preamble
+claims uniqueness follows "by enforcing the variational equations", and the
+body enforces none; that absent variational characterisation is exactly
+what would make the proposition non-vacuous, so deleting the preamble
+should be paired with a decision on the claim itself.
+`categorical-irreducible-proof` closes on a non sequitur: `∫_A` vanishing
+on `Ad(A)` plus *global* non-degeneracy does not give `s = 0` without
+non-degeneracy of the **restricted** pairing.
+
+### A banner in the wrong chapter
+
+`categorical-q-ext-deriv-unique` is the only block in this purely
+categorical chapter carrying the "sits on the archimedean side of the
+substrate wall" note (140 files corpus-wide). It has no real, no `q₀`, no
+numeric and no transcendental; its `.ts` has no archimedean tag; its proof
+uses only `π_H + π_V = id`. It is also positioned last, so nothing follows
+what it announces.
+
+### Verified correct, so a later pass does not re-flag them
+
+The q-Lie bracket's antisymmetry and its `q = 1` limit; `∇_q → ∇` at
+`q = 1`; the q-heat resolvent `û = (s + Δ̂_q)⁻¹u₀` including sign and
+initial datum; the Bogomolny decomposition's factor 2 and topological term;
+Bring's curve `8 = 2g` with `g = 4` and `S₅`-equivariance; and the
+`q⁻² − ℏ_q² = (2−q)/q` algebra itself — it is the *use* of it that fails,
+not the identity.
