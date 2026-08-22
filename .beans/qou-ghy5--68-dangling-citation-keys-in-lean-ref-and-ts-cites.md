@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-08-21T16:58:56Z
+updated_at: 2026-08-22T12:14:01Z
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
@@ -118,3 +118,35 @@ REMAINING 66 sites / ~46 keys, in two groups:
 
 Also filed from this work: qou-3vgs (run-validate reports Valid on a
 references.ts that does not parse — confirmed by controlled test).
+
+EGRESS 2026-08-21/22: the owner opened arxiv / Google Scholar / Semantic
+Scholar, but THIS session cannot reach them. Every request returns
+'Tunnel connection failed: 403 Forbidden' and the proxy's own status endpoint
+records 'connect_rejected' for export.arxiv.org:443, api.crossref.org:443 and
+api.semanticscholar.org:443 — a policy denial, not TLS or transport. Nine
+hosts probed (apex and subdomain), all refused. /root/.ccr/README.md says the
+policy is fixed 'for this session' and to report the blocked host rather than
+route around it. A NEW session in that environment should pick it up.
+
+READY FOR THAT SESSION: scripts/enrich-dangling-citations.py. Queries arXiv,
+Crossref and Semantic Scholar, writes docs/audits/citation-candidates.json for
+adjudication, never touches references.ts. Verified end to end against the
+live proxy — tier selection, identifier extraction, request and failure
+handling all work; only the CONNECT is refused.
+
+Tiering of the 40 remaining keys, and the confidences are NOT comparable:
+
+   6  identifier  arXiv id or DOI in the citing comment -> exact lookup.
+                  Apply with light review.
+   8  title       a work named but no id. TWO are descriptions rather than
+                  titles (murakami2013 -> 'deformed 4₁ asymptotic
+                  (theorem-grade regime)'; wielenberg1978 -> 'the Whitehead
+                  complement is a single regular'), so this tier needs real
+                  review.
+  26  search      nothing in the comment, because a cites: [] array has no
+                  room for one. Only the key remains, and the key is a
+                  CONVENTION not data: 'lusztig1989' means 'something by
+                  Lusztig around 1989', and Lusztig published a great deal in
+                  1989. Read the citing block before accepting any hit.
+
+Run: scripts/enrich-dangling-citations.py --tier identifier   (start there)
