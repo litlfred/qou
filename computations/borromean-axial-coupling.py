@@ -90,9 +90,23 @@ _UPSTREAM_RECORDS: list = []
 GRAM_WITNESS_PATH = _pb.witness_path("gram-matrix-dual.witness.json", HERE)
 _gram_data = record_upstream(GRAM_WITNESS_PATH, _UPSTREAM_RECORDS)
 GRAM = np.array(_gram_data["gram_matrix"], dtype=float)
-GRAM_INV = np.array(_gram_data["gram_inverse"], dtype=float)
+# The Gram matrix is SINGULAR (eigenvalues carry one exact zero; the
+# null vector is the sign representation, `gram_radical`), so a true
+# inverse does not exist and the upstream producer stopped emitting
+# `gram_inverse` in be59f01376.  `gram_quotient_inverse` -- the inverse
+# on the quotient by the radical -- was MEASURED to be the Moore-Penrose
+# pseudo-inverse of `gram_matrix` to 3.8e-16 relative, i.e. to the
+# precision the witness is written at, and it annihilates the radical.
+# That is the standard meaning of G^{-1} for singular G.
+#
+# Safe here for a reason specific to this consumer: `dual_pairing` feeds
+# this matrix into a RATIO (`g_A` below) with the same `u_A` and the same
+# restricted matrix in numerator and denominator, so `g_A` depends on it
+# only through the direction of `u_A^T M|_A` -- overall scale cancels.
+# See bean qou-cnbm for the measurement.
+GRAM_INV = np.array(_gram_data["gram_quotient_inverse"], dtype=float)
 assert GRAM.shape == (6, 6), f"Gram matrix shape mismatch: {GRAM.shape}"
-assert GRAM_INV.shape == (6, 6), f"Gram inverse shape mismatch: {GRAM_INV.shape}"
+assert GRAM_INV.shape == (6, 6), f"Gram quotient-inverse shape mismatch: {GRAM_INV.shape}"
 
 
 # ── Step 2. Solve the operator-selection LP for the proton ───────
@@ -259,7 +273,13 @@ w.add_parameter("n_target", N_TARGET)
 
 # Bound-state-observable CI gate fields:
 w.add_data("gram_matrix", GRAM.tolist())
+# Emitted under `gram_inverse` because that is the name in
+# `bound_state_observable_validator.REQUIRED_FIELDS`, and that validator
+# documents the field by its ROLE -- "G^{-1} used for dualisation" -- which
+# the pseudo-inverse is.  `gram_inverse_kind` names the actual object so the
+# role-name does not read as a claim that G is invertible.  It is not.
 w.add_data("gram_inverse", GRAM_INV.tolist())
+w.add_data("gram_inverse_kind", "moore-penrose-pseudoinverse")
 w.add_data("lp_active_set", active_set)
 w.add_data("shadow_prices", y_star.tolist())
 w.add_data("active_basis_names", [NF_NAMES[i] for i in active_set])
