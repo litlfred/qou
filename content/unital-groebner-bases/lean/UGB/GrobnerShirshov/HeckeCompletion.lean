@@ -4994,14 +4994,71 @@ the right of `A` — so the single hypothesis "no parked term begins with `A`"
 discharges every collision obligation at once. In the corner it holds because
 the two terms start with different letters. -/
 
-/-- **A whole block carried rightwards past a run.** `X` and `W` swap, provided
-every letter of `X` is at least two above every letter of `W`, inside any
-context and at any position of the term list.
+/-- **A whole block carried rightwards past a run, with the source-only
+collision hypothesis.** `X` and `W` swap, provided every letter of `X` is at
+least two above every letter of `W`, inside any context and at any position of
+the term list.
 
 The induction peels `X` from the **right**: its last letter transports across
 `W` first and then joins `B`, so the recursion re-enters with `X` one shorter
 and `B` one longer. Peeling from the left would not compose — the head of `X`
-is separated from `W` by the rest of `X`, so no single transport applies. -/
+is separated from `W` by the rest of `X`, so no single transport applies.
+
+`hpark` below — no other term extends `A` — is *sufficient* but not necessary,
+and `hecke_prefix_head_separation.py` measures where the difference bites: at
+`2a` steps of the corner's closing phase no choice of left context satisfies
+`hpark`, while **every source in the chain is unique**, so the precise condition
+holds throughout.
+
+What the transport actually needs is that no other term equal a word it
+*rewrites*. Peeling `X` from the right, those are exactly
+
+    A ++ P ++ u ++ (x :: (v ++ (S ++ B)))    for  P ++ (x :: S) = X,
+                                                   u ++ v = W,  v ≠ []
+
+— one per letter of `X` and per interior split of `W`. The `v ≠ []` exclusion is
+`farComm_transport_right_sources`'s own (§4ah): it drops the split naming each
+transport's final word, which is produced and never rewritten. This lemma
+threads that family through the recursion instead of over-approximating it. -/
+theorem blockTransportRightSources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A W : Monomial (HeckeGen n)) :
+    ∀ (X B : Monomial (HeckeGen n)),
+      (∀ x ∈ X, ∀ y ∈ W, y.index.val + 1 < x.index.val) →
+      (∀ (P S u v : Monomial (HeckeGen n)) (x : HeckeGen n),
+          P ++ (x :: S) = X → u ++ v = W → v ≠ [] →
+          ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+            r ≠ A ++ (P ++ (u ++ (x :: (v ++ (S ++ B)))))) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms (L₁ ++ (A ++ (X ++ (W ++ B)), c) :: L₂))
+        (AlgElement.ofTerms (L₁ ++ (A ++ (W ++ (X ++ B)), c) :: L₂)) := by
+  intro X
+  induction X using List.reverseRecOn with
+  | nil =>
+      intro B _ _
+      simp only [List.nil_append]
+      exact MultiStepReduction.refl _
+  | append_singleton X' xg ih =>
+      intro B hfar hcol
+      obtain ⟨xi⟩ := xg
+      have hstep := farComm_transport_right_sources hn hp xi c hc L₁ L₂ W (A ++ X') B
+        (fun y hy => hfar ⟨xi⟩ (by simp) y hy)
+        (fun u v huv hv r hr => by
+          have := hcol X' [] u v ⟨xi⟩ (by simp) huv hv r hr
+          simpa only [List.append_assoc, List.nil_append] using this)
+      have hrec := ih ((⟨xi⟩ : HeckeGen n) :: B)
+        (fun x hx => hfar x (List.mem_append_left _ hx))
+        (fun P S u v x hPS huv hv r hr => by
+          have := hcol P (S ++ [(⟨xi⟩ : HeckeGen n)]) u v x
+            (by rw [← hPS]; simp) huv hv r hr
+          simpa only [List.append_assoc, List.cons_append,
+            List.singleton_append] using this)
+      simp only [List.append_assoc, List.cons_append] at hstep hrec ⊢
+      exact MultiStepReduction.trans hstep hrec
+
+/-- The block transport with the unrestricted hypothesis — `hpark` supplies
+every case of the source family at once. Kept because §4aj's callers already
+supply it, exactly as `farComm_transport_right` is kept for §4y's. -/
 theorem blockTransportRight {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
     (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
     (A : Monomial (HeckeGen n))
@@ -5011,25 +5068,10 @@ theorem blockTransportRight {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
       (∀ x ∈ X, ∀ y ∈ W, y.index.val + 1 < x.index.val) →
       MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
         (AlgElement.ofTerms (L₁ ++ (A ++ (X ++ (W ++ B)), c) :: L₂))
-        (AlgElement.ofTerms (L₁ ++ (A ++ (W ++ (X ++ B)), c) :: L₂)) := by
-  intro X
-  induction X using List.reverseRecOn with
-  | nil =>
-      intro B _
-      simp only [List.nil_append]
-      exact MultiStepReduction.refl _
-  | append_singleton X' xg ih =>
-      intro B hfar
-      obtain ⟨xi⟩ := xg
-      have hstep := farComm_transport_right_sources hn hp xi c hc L₁ L₂ W (A ++ X') B
-        (fun y hy => hfar ⟨xi⟩ (by simp) y hy)
-        (fun u v _ _ r hr => by
-          have := hpark r hr (X' ++ (u ++ ((⟨xi⟩ : HeckeGen n) :: (v ++ B))))
-          simpa only [List.append_assoc] using this)
-      have hrec := ih ((⟨xi⟩ : HeckeGen n) :: B)
-        (fun x hx => hfar x (List.mem_append_left _ hx))
-      simp only [List.append_assoc, List.cons_append] at hstep hrec ⊢
-      exact MultiStepReduction.trans hstep hrec
+        (AlgElement.ofTerms (L₁ ++ (A ++ (W ++ (X ++ B)), c) :: L₂)) :=
+  fun X B hfar =>
+    blockTransportRightSources hn hp c hc L₁ L₂ A W X B hfar
+      (fun _ _ _ _ _ _ _ _ r hr => hpark r hr _)
 
 /-! ### §4aj  The whole block, in three steps
 
