@@ -102,7 +102,7 @@ TRACE_XCHECK_TOL = 1e-8
 def load_canonical_q() -> str:
     d = json.loads((COMP / "q-pinning-50-digit.witness.json").read_text())
     q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595557"), q
+    assert q.startswith("1.109978595642"), q
     return q
 
 
