@@ -223,10 +223,48 @@ typos rather than a different convention:** the correct words
 counts **3, 5, 7, 9, 8, 10** matching the tables' own *Crossings* columns
 exactly, and give the component counts the tables claim.
 
-**L-V3. [q11/q13] The blowup-regularity render breakage is still there.**
+**L-V3. [q11/q13] FIXED 2026-08-22 — and the ledger had the defect
+backwards, in the direction that matters.**
 `lifting-and-descent/blowup-regularity-as-lifting.md` L6 `\foralln` and L8
-`\varepsilonq^{2k}` — undefined control sequences, both inside math. These
-abort the render, not merely mis-typeset. Highest mechanical priority.
+`\varepsilonq^{2k}` are **not** undefined and do **not** abort the render.
+`main.tex` defined both, in a block of 16 `\newcommand`s headed *"Stubs for
+compound macros (missing spaces in source content)"*. That is why nobody
+noticed them: the stub makes the page compile and prints something.
+
+What it prints is the problem. `\varepsilonq` expanded to `\varepsilon_q`,
+so `\varepsilonq^{2k}` typeset ε_q^{2k} where the asymptotic is a constant
+times q^{2k} (`[k]_q² → q^{2k}/(q−q⁻¹)²`). Two of the sixteen were worse:
+
+- **`\pic` expanded to `\pi`, deleting the `c`.** In
+  `fluid-dynamics/acoustic-horizon-thermodynamics.md`,
+  `\frac{\hbar_q\kappa_H}{2\pic_s}` printed `2\pi_s` — the sound speed
+  gone from a Hawking-temperature denominator. Line 28 of that same block
+  writes `\kappa_H/(2\pi c_s)` correctly in prose, which is what settles
+  the intended reading: the block contradicts itself on one page.
+- **`\xid` expanded to `\xi_d`**, so `\mathcal{L}_\xid\alpha` printed a
+  Lie derivative along a subscripted field with no argument. `\xiZ` is the
+  same shape: `\mathcal{L}_\xiZ = J\hbar_qZ` printed an operator equated
+  to a scalar, where the prose says the Reeb flow rotates the phase of Z —
+  i.e. `\mathcal{L}_\xi Z = J\hbar_q Z`.
+
+`\xid`, `\xiZ`, `\xiA` were commented as *"Reeb vector field variants used
+in contact/brane geometry"*. No such notation is registered anywhere under
+`content/quantum-observable-universe/notation/`. The comment documents three
+typos as though they were notation, which is how a typo acquires a citation.
+
+All 16 stubs removed (`7d1a616ae`) from the three preambles carrying them,
+and all 11 remaining source sites fixed across 6 blocks. `\pp`, `\unicode`
+and `\yng` stay — real stubs for a reserved symbol and two unloaded
+packages. A corpus scan for the whole class (rare control sequences whose
+prefix is a common one) now returns only true macros: `\coloneqq`,
+`\rightarrow`, `\rightsquigarrow`, `\dotsb`, `\texttt`, `\bigm`,
+`\inf`, `\top`.
+
+**The general lesson, since it will recur:** a missing space between a
+control sequence and the next token is *not* a render-breaking error unless
+the glued name is undefined. Defining it is the tempting fix and the wrong
+one — it silences the error and keeps the wrong mathematics. If one
+reappears, the undefined-control-sequence failure is the correct outcome.
 
 ### Numeric, re-verified
 
