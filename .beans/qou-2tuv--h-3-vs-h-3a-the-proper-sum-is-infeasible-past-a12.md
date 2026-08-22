@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T19:39:36Z
+updated_at: 2026-08-22T20:33:32Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1170,3 +1170,91 @@ question is no longer "why does the tower diverge" (it does not diverge) but
 "what is Φ_q's actual role, and what should consume V̂ instead". That is a
 question about intent in the source, not a measurement — and it is where I would
 want a human read before I go further.
+
+
+---
+
+# The consumer question is answered in the repo — and swapping it buys eight orders, but does not close it
+
+`_li_2_q_util.py`'s module docstring states the rule outright:
+
+> Li_2^q ... is **canonical for BINDING context** (B(K) = m_atom − Z·m_p − N·m_n,
+> Δm_pn, isospin differences) because the bar-symmetric form kills the
+> dimensional mass scale — exactly what is wanted when masses cancel in a
+> difference.
+>
+> For MASS context (m_p, m_n, m_e, m_atom absolutes; m_p/m_e ratio) use
+> `_phi_q_util.py` instead — its `phi_q` is the COMPACT quantum dilogarithm ...
+> the bar-asymmetric archimedean / post-τ form that carries the dimensional mass
+> scale.
+
+    T2 = − Σ_i Li_2^q(−|V̂_i|)        T3 = − z²·Σ_{i<j} Li_2^q(−|V̂_i V̂_j|)
+
+> — note the **minus signs** outside and the **negative argument** inside ... the
+> alternating series converges far from any pole, **unlike the compact q-dilog
+> phi_q which blows up near |z| = q**.
+
+I have been computing **binding energy** — the binding context — through
+`phi_q_safe`, the **mass-context** function. Every structural fact I measured
+independently is in that paragraph. There is also a Lean-level guard:
+`rewrite_2_20_21.py:573` records that `QOU.BraidKnot.QuantumDilogarithm` defines
+`towerTerm q V := -li2_q q (-|V|)` and that a type class
+`HasCorrectedMassEndomorphismTower` "ensures any instance must use `towerTerm`,
+not `phi_q`. This prevents the Φ_q pathology from re-entering the mass formula."
+**The Lean side forbids what the Python path does.**
+
+## Swapping the consumer: 5×10⁸% -> ~10¹–10²%
+
+    atom   A  #gen      phi_q      Li_2^q full   Li_2^q adjacent   B_AME
+       D   2     5   +4.858e8%        +216.6%           +123.9%   2.2245
+       T   3     8   +6.081e8%        +112.3%           +10.55%   8.4818
+     4He   4    11   +2.2e8%           +19.36%          −51.02%  28.2957
+
+Eight orders of magnitude, from one function swap. That part is unambiguous.
+
+The `+Li_2^q(+|V̂|)` form returns **inf** on this input — max|V̂| = 1.08837 > 1
+and the series needs |z| < 1. That is why the docstring insists on the negative
+argument, which routes through `li_2_q_negative_continuation`.
+
+## But my pairing choice was overfitting, and 4He says so
+
+On D and T alone, `adjacent` (the prop's original |i−j| = 1 form, which has the
+independent merit of being the documented one) looked like the winner: +123.9%
+and **+10.55%**. I flagged at the time that picking among 8 configurations on 2
+data points risks selection bias. It did.
+
+**4He is the out-of-sample point and it falsifies the choice.** `adjacent` gives
+**−51.02%** there while `full` gives **+19.36%** — and `full` was the loser at T
+(+112.3% vs +10.55%). Neither pairing is consistent across the three:
+
+    adjacent:  +123.9%,  +10.55%,  −51.02%   <- sign flips
+    full:      +216.6%, +112.3%,   +19.36%   <- monotone, converging with A
+
+So the T = +10.55% that looked like a hit is **not** evidence of a correct
+model; it is one point of a curve that crosses zero between T and 4He.
+
+## Where this leaves it
+
+**Necessary, not sufficient.** Φ_q is definitively the wrong consumer — the
+repo's own docs, its Lean guard, and an eight-order improvement all agree. But
+Li_2^q with either pairing still misses by −51% to +217%, so the consumer swap
+alone does not produce the binding energies. Something else is also wrong:
+candidates are the weight scheme feeding V̂, the free-nucleon reference the
+difference is taken against, the z² marking factor, or the energy scale (ALPHA
+≈ 3.7445 vs E_0 ≈ 4.1860 — I tested both; E_0 is uniformly worse).
+
+Worth noting `full`'s errors shrink monotonically with A (+217, +112, +19).
+If that continues past A = 4 it points at a small-A / few-generator defect
+rather than a structural one — testable at ⁶Li, and the first thing I would
+measure next.
+
+**Nothing here touches production code.** These are probes; `mass_at_3A_proper.py`
+still calls `phi_q_safe`, and whether that is a live defect depends on whether
+its callers are in binding or mass context — which I have not audited.
+
+## Container note
+
+The seminormal/Ocneanu cache is created **relative to the importing module's
+directory**. Adding `qou-mass/src/qou_mass/_internal` to `sys.path` put 13 GB in
+`_internal/.cache` rather than `computations/.cache`, and filled the disk at the
+A = 4 sweep a second time. Clear both paths, not just the one you remember.
