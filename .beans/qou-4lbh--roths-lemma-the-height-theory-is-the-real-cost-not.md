@@ -211,3 +211,41 @@ factorization itself is proved (`det_separated_wronskian`).
 So the Mahler decision — fill the bridges upstream vs. a bare-hands Gelfond inequality on
 `ℤ[X]` — is now the *single* remaining question, and it is scoped to one step rather than
 to the whole base case.
+
+---
+
+## ⚠ 2026-08-22 — the Mahler recommendation was wrong; upstream is the cheap route
+
+Last recorded recommendation: prefer a **bare-hands Gelfond inequality on `ℤ[X]`** over
+filling Mathlib's missing Mahler bridges, to avoid `ℂ[X]` and circle averages.
+
+**Measuring reversed it, on two counts:**
+
+1. **Gelfond's standard proof goes *through* the Mahler measure.** "Bare-hands" is not a
+   route around it — it is a re-derivation of it. Preferring it traded a known path for an
+   unknown one of at least equal length.
+2. **Mathlib already has the hard analytic content.**
+   `circleAverage_log_norm_sub_const_eq_posLog`
+   (`Mathlib/Analysis/SpecialFunctions/Integrals/PosLogEqCircleAverage.lean`) *is* Jensen's
+   formula for a single root. What was missing was only its connection to `mahlerMeasure`.
+
+That connection is now proved — `QOU/Mathlib/MahlerJensen.lean`:
+
+```
+M(X − a) = max(1, ‖a‖)
+```
+
+### Revised route to the last open step
+
+| piece | status |
+|---|---|
+| `M(X − a) = max(1,‖a‖)` (Jensen, one root) | **done** |
+| `mahlerMeasure_mul` (multiplicativity) | present in Mathlib |
+| factorization of `ℂ[X]` into linear factors | present in Mathlib |
+| **Jensen form** `M(P) = ‖lead‖·∏max(1,‖root‖)` | assembly of the above — *not analysis* |
+| **Landau** `M(P) ≤ √(deg+1)·H(P)` | **still absent** — the other bridge |
+| Gelfond, then factor-height control | follows from both bridges |
+
+⚠ **Do not read this as "the blocker is gone".** The Jensen form is one of *two* bridges.
+Landau's inequality — the one that turns a Mahler bound into a *coefficient* bound — is
+still absent and is untouched by the above. Gelfond needs both directions.

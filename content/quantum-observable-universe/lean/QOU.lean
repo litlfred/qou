@@ -1092,3 +1092,8 @@ import QOU.Mathlib.SeparatedWronskian
 -- measure -- that is required for bounding heights of FACTORS in the induction step, which
 -- goes the other way.
 import QOU.Mathlib.RothHeightBound
+-- qou-4lbh -- staged for upstream Mathlib: M(X - a) = max(1, |a|), Jensen's formula for a
+-- single root, connecting Mathlib's circleAverage_log_norm_sub_const_eq_posLog to
+-- mahlerMeasure.  Cornerstone of the Jensen form, and the measurement that reversed this
+-- arc's recommendation from "bare-hands Gelfond" to "fill the bridge upstream".
+import QOU.Mathlib.MahlerJensen
