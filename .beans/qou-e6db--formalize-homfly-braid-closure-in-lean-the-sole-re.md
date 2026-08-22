@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-22T20:42:06Z
+updated_at: 2026-08-22T21:20:42Z
 ---
 
 ## Why this bean exists
@@ -127,3 +127,29 @@ settling a mirror-convention dispute (bean `qou-7ue5`) — a numeric recursion
 Step 2 (the descending predicate + reduction to a descending word by crossing
 changes, with a well-founded order). `computations/homfly_skein_braid.py`
 (`first_bad` / `traverse`) already descends that order in executable form.
+
+
+## Step 2 (partial) — the skein moves, proved on actual braid words
+
+`MFWSkeinInduction.mfw_step` takes the window shifts as *arithmetic hypotheses*:
+switching moves `e ↦ e-2`, smoothing `e ↦ e-1`, both keeping `n`. Nothing proved
+a braid word actually **realises** those shifts. Now proved, sorry-free, zero
+warnings, axiom-clean (`writhe_smooth` needs only `propext`):
+
+- `crossingSwap_flipSign` / `closurePerm_switch` / `components_switch` —
+  **switching a crossing does not move the permutation, hence not `c`.** This is
+  the structural reason the induction works: `e` slides while `c` and `n` stay
+  fixed, so the window translates without changing width.
+- `writhe_switch` — switching moves the writhe by exactly `2`, signed by the
+  crossing's original sign.
+- `closurePerm_smooth` — smoothing removes exactly that transposition from the
+  permutation, which is where `c` moves.
+- `writhe_smooth` — smoothing moves the writhe by exactly `1`.
+
+**What is still missing for step 2**: that multiplying by a transposition
+changes the orbit count by exactly `±1` (so smoothing moves `c` by one), plus
+the descending predicate itself and the well-founded reduction. The `±1` fact is
+the next concrete target and is a standard permutation-combinatorics lemma —
+check Mathlib for it before proving it by hand (`#check` against the oleans; the
+cache carries no `.lean` source and the LSP is down, so name-grep does not work
+in this container).

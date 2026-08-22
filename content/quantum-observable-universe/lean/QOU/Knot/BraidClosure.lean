@@ -141,4 +141,53 @@ theorem components_two_two_crossings (c d : BraidCrossing 2) :
     simp [closurePerm, crossingSwap, hcd, Equiv.swap_mul_self]
   simp [components, hone]
 
+/-! ### The skein moves, on actual braid words
+
+`MFWSkeinInduction.mfw_step` takes the window shifts as arithmetic hypotheses:
+switching moves `e ↦ e - 2`, smoothing moves `e ↦ e - 1`, and both keep `n`.
+Nothing so far proved that a braid word *realises* those shifts, nor that `c`
+behaves as the induction needs. These lemmas supply exactly that. -/
+
+/-- Flip a crossing's sign — the skein "switch". -/
+def flipSign (c : BraidCrossing n) : BraidCrossing n :=
+  { c with positive := !c.positive }
+
+@[simp] theorem crossingSwap_flipSign (c : BraidCrossing n) :
+    crossingSwap (flipSign c) = crossingSwap c := rfl
+
+/-- **Switching a crossing does not move the permutation** — hence not `c`
+either. This is the half of the skein step that makes the induction work: `e`
+moves while `c` and `n` stay put, so the window slides without changing width. -/
+theorem closurePerm_switch (v w : BraidWord n) (c : BraidCrossing n) :
+    closurePerm (v ++ flipSign c :: w) = closurePerm (v ++ c :: w) := by
+  simp [closurePerm_append]
+
+theorem components_switch (v w : BraidWord n) (c : BraidCrossing n) :
+    components (v ++ flipSign c :: w) = components (v ++ c :: w) := by
+  simp [components, closurePerm_switch]
+
+/-- **Switching moves the writhe by exactly 2**, in the direction set by the
+crossing's original sign — the `e ↦ e - 2` of `mfw_step`. -/
+theorem writhe_switch (v w : BraidWord n) (c : BraidCrossing n) :
+    BraidWord.writhe (v ++ flipSign c :: w)
+      = BraidWord.writhe (v ++ c :: w) - 2 * (if c.positive then 1 else -1) := by
+  simp only [writhe_append, BraidWord.writhe_cons, flipSign]
+  cases hc : c.positive <;> simp <;> ring
+
+/-- **Smoothing removes the crossing**, so the permutation loses exactly that
+transposition. Since multiplying by a transposition changes the orbit count by
+one, this is where `c` moves — the other half of the skein step. -/
+theorem closurePerm_smooth (v w : BraidWord n) (c : BraidCrossing n) :
+    closurePerm (v ++ c :: w)
+      = closurePerm v * crossingSwap c * closurePerm w := by
+  simp [closurePerm_append, mul_assoc]
+
+/-- **Smoothing moves the writhe by exactly 1** — the `e ↦ e - 1` of
+`mfw_step`. -/
+theorem writhe_smooth (v w : BraidWord n) (c : BraidCrossing n) :
+    BraidWord.writhe (v ++ c :: w)
+      = BraidWord.writhe (v ++ w) + (if c.positive then 1 else -1) := by
+  simp only [writhe_append, BraidWord.writhe_cons]
+  ring
+
 end QOU.Knot.BraidClosure
