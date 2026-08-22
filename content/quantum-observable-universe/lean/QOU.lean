@@ -952,6 +952,7 @@ import QOU.Mathlib.SchenstedRecordingOfSYT
 import QOU.Mathlib.SchenstedSYTRoundTrip
 import QOU.Mathlib.SchenstedWordOfPermSurj
 import QOU.Mathlib.SchenstedShapeOfPositions
+import QOU.Mathlib.SchenstedRSKPairSurjective
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
