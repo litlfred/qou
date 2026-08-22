@@ -1,11 +1,11 @@
 ---
 # qou-kkja
 title: 'GAP: two batch rows need a §3b-cond model class, not a revert (shell_filling_lp_strong_duality, mobius limit_to_classical)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:16:32Z
-updated_at: 2026-08-21T21:17:05Z
+updated_at: 2026-08-22T15:38:44Z
 ---
 
 Opened by the sorry-closure honesty audit (PR #5411,
