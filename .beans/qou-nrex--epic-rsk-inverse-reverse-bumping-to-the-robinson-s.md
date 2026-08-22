@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T15:38:47Z
+updated_at: 2026-08-22T15:42:45Z
 ---
 
 
@@ -558,3 +558,24 @@ Third time on this arc that checking what the argument consumes shrank the machi
 Assemble: read rows off Q in timestamp order (qRowOf, brick 5) into a position list, and combine
 brick 23's count comparison with brick 22's count shape to get AddableAlong. Everything downstream
 is proved.
+
+
+### Brick 23b — the bridge fact keyed on MEMBERSHIP (same PR #5426)
+
+countLt_above_mem : ColStrict Q -> rows strictly increasing -> k in row r+1 =>
+  countLt (row r+1) k < countLt (row r) k
+
+**Answers the open question from last turn.** I flagged not knowing whether qRowOf's lemmas give the
+COLUMN as well as the row. Checked: qRowOf returns only the row, and nothing in bricks 4-6 records a
+column — so brick 23's column-indexed form was not reachable by the assembly.
+
+The fix is recovery, not a new qRowOf lemma: in a strictly increasing row the column of an entry IS
+its countLt.
+  countLt_lt_length_and_getD : k in row -> countLt row k < row.length
+                                        AND row.getD (countLt row k) 0 = k
+Both halves in one induction (shared case analysis). countLt_above then restates on membership.
+
+### #5426 carries bricks 16-23b, five files, all sorry-free and axiom-clean
+### Remaining: pure plumbing
+Build the position list from qRowOf over the timestamp range, match (is.take k).count i against
+countLt (row i) k, apply 23b. Everything else proved.
