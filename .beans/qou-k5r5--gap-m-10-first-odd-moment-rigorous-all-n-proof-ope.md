@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T15:30:24Z
+updated_at: 2026-08-22T15:57:29Z
 ---
 
 
@@ -103,3 +103,23 @@ N/P SHARPENING (2026-08-22, PR #5452). M_1 = P - N sharpened to N/P < 1:
 STATUS: M_1>0 <=> N/P<1; asymptotic N/P->0.6605<1 PROVED; exact N/P<=0.613 n<=22.
 Uniform N/P<1 still OPEN. Next: weighted bound on high-ratio (large d_a-d_r,
 small |c_r|-|c_a|) edges, or prove N/P monotone-below-limit.
+
+
+
+EDGE-RATIO ATTACK (2026-08-22, PR #5452 followup commit). Pushed on uniform N/P<1:
+ - N/P = E_omega[ratio_e], omega ~ 2s(r-a)^2(r+a), ratio_e = 2(d_a-d_r+1)/(r-a).
+ - 1-LIPSCHITZ LEMMA (verified all lam n<=16, max jump exactly 1, Lean-able):
+   |D(u+1)-D(u)|<=1 => d_a-d_r<=r-a => per-edge ratio_e <= 2+2/(r-a) <= 4
+   (explains observed max ratio 4 at r-a=1).
+ - WEIGHT-SUPPRESSION ROUTE REFUTED (scope-(a)): omega-weight concentrates on
+   DISTANT moves (|c_a-c_b|>=4 -> 0.88), ~15% weight persists on ratio_e>=1.
+   N/P<1 is NOT worst-case (per-edge ratio hits 4); it is an AVERAGING phenomenon
+   (omega up-weights large-(r-a) low-ratio edges; typical bulk diagonal profile
+   flat, d_a-d_r << r-a in the bulk).
+CONSEQUENCE: uniform N/P<1 needs EFFECTIVE error-controlled limit-shape estimates
+(Berry-Esseen-grade: M_1 >= kappa n^{5/2} - C n^2, explicit kappa>0,C, + finite
+check), NOT elementary per-edge / weight-concentration. Asymptotic N/P->0.6605<1
+already proved; only the effective error term is missing.
+STATUS: elementary/combinatorial routes to uniform N/P<1 exhausted+refuted;
+remaining path is a quantitative 2nd-order Kerov CLT (effective error). Honest
+localisation. M_1>0 exact n<=50, kappa>0 derived, all-n reduced+localised. OPEN.
