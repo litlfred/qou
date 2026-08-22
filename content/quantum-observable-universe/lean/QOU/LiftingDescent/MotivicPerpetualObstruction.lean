@@ -27,7 +27,7 @@ and `qou_deuteron_perpetual_obstruction` in
 `MotivicPerpetualObstructionFromTrace.lean`.
 
 Ref: [yekutieli2010] — obstruction theory
-LaTeX label: `conj:motivic-perpetual-obstruction`
+LaTeX label: `thm:motivic-perpetual-obstruction`
 -/
 
 namespace QOU.LiftingDescent
@@ -45,13 +45,23 @@ open QOU.AlgebraicSubstrate
     For the stronger result with S = ∅, see
     `perpetual_obstruction_from_collapse_invariant`.
 
+    **The `MotivicGaloisCharacter` binder is deliberately inert** and
+    is written `_hχ` to say so.  The conclusion quantifies over an
+    arbitrary `trace : Nat.Primes → ℤ`, so nothing here connects the
+    bound to the character's own `frobenius_at` family; the binder is
+    retained only because this declaration's name is the interface
+    cited by the 2026-05-03 and 2026-05-04 audits.  For the statement
+    that *is* about the character, see
+    `motivic_perpetual_obstruction_frobenius` below, whose conclusion
+    is about `hχ.frobenius_at` itself.
+
     Ref: [yekutieli2010] §3-4 (gerbe obstruction). -/
 theorem motivic_perpetual_obstruction
     {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
     {Target : Place → Type*} [∀ v, CommRing (Target v)]
     [MotivicSubstrate K0 Mhat Target]
     {motiveA : Mhat}
-    [hχ : MotivicGaloisCharacter K0 Mhat Target motiveA]
+    [_hχ : MotivicGaloisCharacter K0 Mhat Target motiveA]
     (trace : Nat.Primes → ℤ)
     (N : ℕ)
     (h_bound : ∀ p : Nat.Primes, (p : ℕ) ≥ N → 1 < (trace p).natAbs) :
