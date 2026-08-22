@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.077Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'the non-vanishing Delta_lambda terms' is a technical qualifier, not an assert-by-denying."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.150Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Four flat declaratives; no setup-then-reframe (the Delta==0 / non-vanishing pairing is inherited from the interpreted proposition, where it is recorded as a fail)."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.230Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.321Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.406Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "The final line is a quantitative claim rather than a flourish; its defect is provenance, recorded under trap-superlative."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.486Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.566Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Each sentence adds a distinct assertion; no terminal echo."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.649Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1503,22 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.718Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Three unqualified maximum-strength claims in a four-sentence block: 'The observed binding energy PRECISELY reflects the non-vanishing Delta_lambda terms'; 'Computing Delta_lambda across the Plancherel-dominant cone SYSTEMATICALLY reduces the residual'; and the closing 'Nine evaluation levels push the mass prediction accuracy to ONE PART PER BILLION'.",
+        "notes": "PROPOSED: hedge or remove all three. The ppb claim is UNPROVENANCED — no citation, no derivation, no witness field, and the sibling witness computations/rho-k-h3a-refinement.witness.json contains no nine levels and no ppb figure, only a single Delta fitted at one isotope 'exactly by construction (single equation, single unknown)'. It is also an ABSOLUTE-MASS accuracy claim (excised 2026-08-11) and it quotes a retired target: L1 was upgraded from 1 ppb to 1 ppQ on 2026-05-26 'because the old target was noise', and the live L2 count is 1 of 5 scoreable. The 'systematically reduces' claim has no supporting compute either."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1538,22 @@
         "reviewed_at": "2026-08-15T10:31:00.469Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "52de7f8ee83e",
+          "ts": "c4283d8c375b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:30:50.813Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Short sentences; 'The block-binding correction Delta_lambda operates locally within each partition' is the heaviest and still speakable.",
+        "notes": "NON-TRAP FINDING, PHYSICS ERROR, not fixed inline: 'This categorical separation mirrors the empirical shell structure captured by liquid-drop formulas.' Liquid-drop / semi-empirical mass formulas do NOT capture shell structure — the magic numbers are precisely the deviation from liquid drop, which is why Strutinsky shell corrections exist. PROPOSED: 'the empirical shell structure that liquid-drop formulas fail to capture', or drop the liquid-drop comparison."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1576,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:30:50.813Z"
 }
