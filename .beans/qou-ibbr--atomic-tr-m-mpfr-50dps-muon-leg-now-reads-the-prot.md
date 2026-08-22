@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-22T09:48:18Z
+updated_at: 2026-08-22T14:27:06Z
 ---
 
 
@@ -388,3 +388,15 @@ With the manifest fixed **and** the q₀-derived y_λ selection from this PR, br
 **These are a triage list, not 11 defects.** Only `atomic_tr_m` is measured. `binding_canonical` was re-run earlier in this session and came back byte-identical in every mathematical field, so its muon label is likely stale rather than live — sibling #5436's class (ii). Each needs a re-run to sort. Tracked as its own bean.
 
 The straddle is **latent** on all of them: the labels are stale, so nothing is wrong on disk until someone regenerates.
+
+
+---
+
+## Note: the new `comparison` anchor does NOT apply to this fix (checked 2026-08-22)
+
+`31d1bdf6e9` landed a producer-declared **`comparison`** q₀ anchor while this branch was in flight, for computes that read more than one pin deliberately. `atomic_tr_m_mpfr_50dps` is a two-pin comparison producer, so the obvious move is to switch its manifest entry from `ideal_muon` to `comparison`. **It is the wrong move, for two independent reasons.**
+
+1. **It is not a producer classification.** `comparison` is a value in the *witness* `q0Anchor` vocabulary. `q0_anchor_manifest.json` has no `comparison` bucket (`ideal_muon`, `physical_proton`, `ambiguous` only) and `q_parameter` does not know the string. Putting a producer there would resolve to nothing and leave the ideal leg unbound — the exact failure this bean is about.
+2. **The shape does not match.** `comparison` describes **one** witness carrying `q0Values: {anchor: value}` for several pins at once. This producer emits **two separate single-pin witnesses**, one per leg; each legitimately records one anchor. It is not a cross-anchor probe, it is two runs.
+
+So `ideal_muon` remains correct here, and the restoration stands. Recording it because "a `comparison` anchor exists now, use it" is a reasonable-looking inference that would silently re-break the ideal leg.
