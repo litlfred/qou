@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T15:34:20Z
+updated_at: 2026-08-22T15:38:47Z
 ---
 
 
@@ -534,3 +534,27 @@ what AddableAlong asserts. AddableAlong stays the primitive; the count form is i
 that is the direction that composes.
 
 This also means the Q-bridge will NOT need a qTrunc construction — counting per row is enough.
+
+
+### Brick 23 — the counting bridge (same PR #5426)
+
+countLt_above : ColStrict Q -> rows strictly increasing -> entry at column c of row r+1 =>
+  countLt (row r+1) k < countLt (row r) k
+
+Brick 22 made the built shape a COUNT shape, so IsAddable reduces to a count comparison. This is it,
+from column-strictness alone: the entry directly above is smaller, and StrictBelow's LENGTH half
+guarantees that cell exists — so row r has its first c+1 entries below the threshold against exactly
+c in row r+1.
+
+**Two constructions avoided, both of which I had queued:**
+1. qTrunc (restrict Q to entries < s, prove ColStrict survives the filter, show emptied rows form a
+   suffix) — estimated 250+ lines. Counting per row replaces it entirely.
+2. A standardness predicate on List (List N). Corpus has none; I queued writing one twice. The
+   hypotheses actually consumed are 'rows strictly increasing' + ColStrict, written inline.
+
+Third time on this arc that checking what the argument consumes shrank the machinery.
+
+### Remaining gap is now narrow
+Assemble: read rows off Q in timestamp order (qRowOf, brick 5) into a position list, and combine
+brick 23's count comparison with brick 22's count shape to get AddableAlong. Everything downstream
+is proved.
