@@ -1176,6 +1176,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.296Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 3-step proof + closing Lean note. Bib key bergman1978 present in references.ts. Opened the Lean sibling and the library file it re-exports (see trap-superlative).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1212,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.338Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 3-step proof + closing Lean note. Bib key bergman1978 present in references.ts. Opened the Lean sibling and the library file it re-exports (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1248,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 174 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.377Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Two spaced-dash parentheticals in step 1, both enclosing the three-family list.",
+        "notes": "True parentheticals."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1284,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 174 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.416Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'the Hecke quadratic ..., the braid relation ..., and far commutativity'; 'Every overlap ambiguity (sigma_i^3, the sigma_i sigma_{i+1} sigma_i sigma_{i+1} overlap, and far-commutation triples)'.",
+        "notes": "Both are substantive: the Gröbner basis genuinely has three families and the overlap set genuinely has three classes."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1320,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.458Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 3-step proof + closing Lean note. Bib key bergman1978 present in references.ts. Opened the Lean sibling and the library file it re-exports (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1356,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.497Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 3-step proof + closing Lean note. Bib key bergman1978 present in references.ts. Opened the Lean sibling and the library file it re-exports (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1392,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.536Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 3-step proof + closing Lean note. Bib key bergman1978 present in references.ts. Opened the Lean sibling and the library file it re-exports (see trap-superlative).",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1428,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.577Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 3-step proof + closing Lean note. Bib key bergman1978 present in references.ts. Opened the Lean sibling and the library file it re-exports (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1464,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.618Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Closing paragraph: 'The Lean sibling states `nuclear_groebner_reduction` and defers the confluence certificate via `sorry` (`-- Ref: [manuscript]`).'",
+        "notes": "PROVENANCE CLAIM CHECKED BY OPENING BOTH FILES -- it is wrong, and wrong in the direction that matters. The sibling nuclear-groebner-reduction.lean is a 26-line re-export shim that declares NOTHING and contains ZERO sorries (its own docstring says so). The canonical file it imports, lean/QOU/Archimedean/NuclearGroebnerReduction.lean, discharges the confluence result at line 92 as `axiom normal_form_exists_unique`, not as a cited sorry. Per AGENTS.md Sec.'Axiomatization is NOT a Proof' an axiom is a strictly weaker disposition than a stated-with-sorry proposition, so the prose reports the honest form of a defect that is in fact the laundered one. PROPOSED: '...and asserts the confluence certificate as the axiom `normal_form_exists_unique`.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1500,23 @@
         "reviewed_at": "2026-08-15T10:31:01.395Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8fdc8583a3dd",
+          "ts": "09effd01a561"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.658Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 3-step proof + closing Lean note. Bib key bergman1978 present in references.ts. Opened the Lean sibling and the library file it re-exports (see trap-superlative).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1539,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:58.658Z"
 }

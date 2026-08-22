@@ -878,7 +878,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.641Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.680Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.717Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.758Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.798Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.839Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.877Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.914Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:06.961Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Header row: 'Quantity at $q_0 = 1.109978595554181$'. Last three rows: N=0 residual +1.31 keV, N=1 residual +9.01 keV, 'Per-braid $N=1$ ceiling $\\hbar_q^4/(1-\\hbar_q^2) = 97.3$ ppm'.",
+        "notes": "TWO INDEPENDENT FINDINGS. (1) PIN-CURRENCY DEFECT: 1.109978595554181 is the OLD MUON q0. It is arithmetically self-consistent -- I recomputed every row from it and hbar_q = 0.0990817264356992, 1+hbar^2 = 1.009817188513479, E_0 = 4.185980822, E_0^{N=1} = 4.227075385, Q^{N=0} = 0.7836458028 and Q^{N=1} = 0.7913390014 all reproduce to the printed digits -- but it is neither the current muon value 1.10997859555733471 nor the compute default (proton) 1.1099785827513808 that the 2026-08-07 owner directive makes canonical. Three different q0 strings are live in this batch: proton in prop:isospin-singlet-binds-more, muon in tbl:q-beta-spectral-bridge-table-data, old-muon here. (2) THE LADDER RUNS THE WRONG WAY, AND THE TABLE SHOWS IT. Going from N=0 to N=1 moves the prediction AWAY from CODATA: +1.31 keV (1677.5 ppm) becomes +9.01 keV (11511 ppm), a 6.9x REGRESSION -- because the N=1 term multiplies E_0 by (1 + hbar_q^2), which can only increase an already-high value. That is 118x the table's own '97.3 ppm ceiling' (which I confirm computes to 97.333 ppm). And it flatly contradicts prf:q-beta-spectral-bridge, which asserts 'At $N \\geq 1$, the bound is sub-keV' and 'Finite-depth truncations recover the exact Q_beta exponentially fast in depth N'. The chapter's own N=1 number refutes the chapter's own convergence claim. GOOD PRACTICE NOTED: the .ts authorNote says the parent block prop:q-beta-form-a-n1-symbolic does not exist and that uses[] was dropped rather than re-pointed -- VERIFIED, no block in content/ carries that label."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "92628f074370",
+          "ts": "801a52aa147b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.003Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 10-row table + .ts (whose authorNote states the parent prop:q-beta-form-a-n1-symbolic does not exist — VERIFIED: 0 blocks in content/ carry that label, so the authorNote is accurate and the uses[] drop was right). Recomputed every row against the q0 the table itself prints (see trap-superlative).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:07.003Z"
 }

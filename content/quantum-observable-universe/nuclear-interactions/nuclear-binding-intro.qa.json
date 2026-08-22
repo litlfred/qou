@@ -1195,6 +1195,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.424Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph) + .ts.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.466Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph) + .ts.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1267,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 63 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.509Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (single paragraph) + .ts.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1303,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 63 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.550Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'torus-knot, Hopf-link, and post-magic regions'.",
+        "notes": "Substantive -- these are exactly the three regimes of prop:nuclear-operator-regimes."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1339,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.597Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph) + .ts.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1375,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.642Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Was: 'We conclude by asserting that the valley of stability is the deficit-minimizing locus in $(Z, N)$-space.'",
+        "notes": "FIX APPLIED: 'We conclude by asserting that the valley of stability is...' -> 'The valley of stability is...'. The announcement of the assertion is removed; the assertion itself is unchanged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1411,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.688Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (single paragraph) + .ts.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1447,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.738Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (single paragraph) + .ts.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.777Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The linear programming deficit profile **alone** dictates nuclear and atomic stability.'",
+        "notes": "Maximum-strength and unhedged, in a one-paragraph section intro that supplies no support. The chapter's own blocks contradict it: rem:periodic-table-demand records that 'The doubly magic stability of He-4 arises from action minimization, not demand closure' -- i.e. an explicit case where the deficit profile does NOT alone dictate stability. PROPOSED: 'The linear programming deficit profile is the primary determinant of nuclear and atomic stability.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1519,23 @@
         "reviewed_at": "2026-08-15T10:31:01.502Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c503cb3a1cbd",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.823Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (single paragraph) + .ts.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1558,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:57.823Z"
 }

@@ -1807,6 +1807,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.295Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the conjecture + algorithmic role + status paragraphs. Verified sigma_i^2 -> 1 at q->1 follows from the Sec.7a Hecke relation; hook-length multiplicities correct for Z[S_n]. lean.ref QOU.BraidKnot.KazhdanLusztigClassicalLimit RESOLVES (lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean). Bib keys kassel1995/khovanovlauda2009/kashiwara1991/lecouvey2007 all present in references.ts.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1826,6 +1843,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.339Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the conjecture + algorithmic role + status paragraphs. Verified sigma_i^2 -> 1 at q->1 follows from the Sec.7a Hecke relation; hook-length multiplicities correct for Z[S_n]. lean.ref QOU.BraidKnot.KazhdanLusztigClassicalLimit RESOLVES (lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean). Bib keys kassel1995/khovanovlauda2009/kashiwara1991/lecouvey2007 all present in references.ts.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1845,6 +1879,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 237 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.382Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the conjecture + algorithmic role + status paragraphs. Verified sigma_i^2 -> 1 at q->1 follows from the Sec.7a Hecke relation; hook-length multiplicities correct for Z[S_n]. lean.ref QOU.BraidKnot.KazhdanLusztigClassicalLimit RESOLVES (lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean). Bib keys kassel1995/khovanovlauda2009/kashiwara1991/lecouvey2007 all present in references.ts.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1864,6 +1915,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 237 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.426Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The Hecke matrices lose their topological braiding memory' + the Pauli/Bose split + the three-part status paragraph.",
+        "notes": "Substantive: each item is a distinct algebraic claim about the q->1 specialisation, and sigma_i^2 -> 1 was verified against the Sec.7a Hecke relation."
       }
     ],
     "trap-closing-aphorism": [
@@ -1883,6 +1951,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.475Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the conjecture + algorithmic role + status paragraphs. Verified sigma_i^2 -> 1 at q->1 follows from the Sec.7a Hecke relation; hook-length multiplicities correct for Z[S_n]. lean.ref QOU.BraidKnot.KazhdanLusztigClassicalLimit RESOLVES (lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean). Bib keys kassel1995/khovanovlauda2009/kashiwara1991/lecouvey2007 all present in references.ts.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1902,6 +1987,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.514Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the conjecture + algorithmic role + status paragraphs. Verified sigma_i^2 -> 1 at q->1 follows from the Sec.7a Hecke relation; hook-length multiplicities correct for Z[S_n]. lean.ref QOU.BraidKnot.KazhdanLusztigClassicalLimit RESOLVES (lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean). Bib keys kassel1995/khovanovlauda2009/kashiwara1991/lecouvey2007 all present in references.ts.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1921,6 +2023,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.558Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the conjecture + algorithmic role + status paragraphs. Verified sigma_i^2 -> 1 at q->1 follows from the Sec.7a Hecke relation; hook-length multiplicities correct for Z[S_n]. lean.ref QOU.BraidKnot.KazhdanLusztigClassicalLimit RESOLVES (lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean). Bib keys kassel1995/khovanovlauda2009/kashiwara1991/lecouvey2007 all present in references.ts.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1940,6 +2059,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.600Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the conjecture + algorithmic role + status paragraphs. Verified sigma_i^2 -> 1 at q->1 follows from the Sec.7a Hecke relation; hook-length multiplicities correct for Z[S_n]. lean.ref QOU.BraidKnot.KazhdanLusztigClassicalLimit RESOLVES (lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean). Bib keys kassel1995/khovanovlauda2009/kashiwara1991/lecouvey2007 all present in references.ts.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1959,6 +2095,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.644Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'exactly the +-1 permutation signs'; 'No extra selection rule is introduced'; 'are exactly the KL-image'.",
+        "notes": "Correctly scoped: the block is a CONJECTURE and says so in its own third paragraph, separating the classical part (q->1 specialisation, b_w -> C_w) from the conjectured part (compatibility with tau). The 'exactly' claims sit inside the conjectured half and are labelled as such."
       }
     ],
     "trap-nonspeakable": [
@@ -1978,6 +2131,23 @@
         "reviewed_at": "2026-08-15T10:31:01.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.684Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The cyclotomic-KLR Wedderburn decomposition specialises to the ordinary S_n Wedderburn decomposition, with multiplicities given by hook-length formulae.' and 'sending each KLR canonical basis element to its q->1 specialisation'.",
+        "notes": "Noun-chain density in the Algorithmic-role paragraph; five consecutive sentences are subject-verb-object with a four-noun subject. Math-adjacent so not fixed inline. PROPOSED: break the specialisation sentence in two ('At q->1 the cyclotomic-KLR Wedderburn decomposition becomes the ordinary one for S_n. Its multiplicities are the hook-length numbers.')."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2001,5 +2171,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:51.684Z"
 }
