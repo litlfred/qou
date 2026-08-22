@@ -422,6 +422,15 @@ first; `aK_via_lp_dual_hecke_basis` states no pin intent. Tracked in
 
 ## Root cause, traced: a direct reader **cannot** be migrated by re-running it
 
+**Attribution, stated plainly: this is my own defect.** All four commits in
+the table below — the 2026-08-15 anchor re-pin that caused `qou-m9xp`, and
+the migration batches that manufactured the contradictions — carry
+`session_011Xe8o5r85SzhndKso9hXVK`, this session. I wrote the sweep, it
+reported progress toward 254, and for the direct-reader class that progress
+was partly fictitious. The finding below is not a critique of someone else's
+mechanism; it is the bug in mine, found by the audit built to look for it.
+
+
 The five contradictions are not five independent slips. Tracing
 `a-K-via-lp-dual-hecke-basis.witness.json` and the anchor-defining witness
 side by side gives a complete causal account:
