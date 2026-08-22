@@ -2,8 +2,8 @@
   "note": "Witnesses known to carry raw float64, by count. The backlog is tolerated; it must only SHRINK. Regenerate ONLY when draining. Adding a file here to silence a failure defeats the gate \u2014 fix at the producer instead.",
   "enforced_rule": "AGENTS.md: NO-FLOAT64 means none may enter a witness.",
   "drain_owner": "PR #4677 (float64 residual, producer-side)",
-  "files_count": 1416,
-  "fields_count": 488300,
+  "files_count": 1415,
+  "fields_count": 488294,
   "files": {
     "computations/4he-binding-full-pipeline.witness.json": 40,
     "computations/a-K-via-lp-dual-full.witness.json": 38,
@@ -124,7 +124,6 @@
     "computations/aufbau-ell-penetration-hartree-pinned.witness.json": 4,
     "computations/averaged-block-swap-binding.witness.json": 17,
     "computations/b-over-a.witness.json": 42,
-    "computations/b-over-m-order-probe.witness.json": 6,
     "computations/bar-pairing-binding-observable-extension.witness.json": 5,
     "computations/bar-symmetry-three-candidates.witness.json": 4,
     "computations/basis-knot-tables.witness.json": 1299,
