@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-19T13:05:24Z
-updated_at: 2026-08-21T23:23:02Z
+updated_at: 2026-08-22T09:53:42Z
 ---
 
 
@@ -270,3 +270,27 @@ mass-theory `.lean`), `0.51099895` (truncated m_e) and
 `137.035999084` (CODATA-2018 alpha-inverse). The alpha-inverse sites
 are a deliberate determination choice per the tranche-a adjudication and
 should be marked `noqa: P31` rather than changed.
+
+## 2026-08-22 — tranche c on PR #5439: 61 -> 36 code sites
+
+Drained the m_e (5 of 8), m_p/m_n (6) and alpha^-1 (3 of 6) groups.
+Counts: CODE 61 -> 36, PROSE 381 -> 388 (rising, correctly), ADJUDICATED
+6 -> 12.
+
+**The `:leanval{precision=N}` rule added in tranche b was too permissive
+and this drain caught it.** `precision=N` declares a deliberate
+truncation; it says nothing about which EDITION the digits came from. As
+written it would have excused `partition-sum-proton-residual.lean:59`,
+where `precision=11` sits on the CODATA-2018 `938.27208816`. The
+declaration is now CHECKED against the table value truncated to N digits.
+
+Left deliberately, each with a reason in the commit: the three .lean
+alpha^-1 sites (inside the conjecture machinery #5361 just re-scoped --
+the live gap there is 468 ppb structural, not 1e-9 editions), the
+`m_AME_MeV` field-name mismatch in recursive-atom-knot-atlas (renaming
+has blast radius), and the two `electronMass_witness` proof-body mirrors
+(correct declared truncations).
+
+**Remaining: 36 code sites.** Not yet grouped -- next step is to re-run
+`--strict` and classify them the way tranche c did, one literal-group per
+commit with a per-site disposition.
