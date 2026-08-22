@@ -241,22 +241,38 @@ The `H3` realization above is `n = 3`-specific (the `Fin 6` NF basis
 general `n` — the `fun n r => ℏ_rⁿ` family — which requires two ingredients
 this file does not yet carry:
 
-1. **The H₄(q) NF basis + `mulNF` table.** The `Fin 6` basis and the σ₀/σ₁
-   action tables (`mulσ₀`, `mulσ₁`, `mulNF`) here were pinned by the symbolic
-   preflight in `computations/.../gram.py` (`hm`, `TR_M`). The H₄ analogue
-   (a larger NF basis, order fixed by the Gröbner normal forms) must come from
-   the *same* verified source — do **not** hand-write the table; generate it
-   from `gram.py`/`pyhecke` and cross-check `tr_M(u·v) = tr_M(v·u)` over
-   `ℚ(z,h)` before formalizing, exactly as the H₃ table was verified.
-   **Reducer caveat (verified 2026-07-13).** `gram.py`'s `_reduce_nf` is
-   H₃-specific: it applies only the Hecke-square and *adjacent* braid moves,
-   which suffice for H₃ (whose two generators σ₀,σ₁ are adjacent). H₄ also
-   needs the non-adjacent commuting relation `σ₀σ₂ = σ₂σ₀`, and even
-   Hecke + commute + adjacent-braid is **not confluent** — a BFS over that
-   rule set yields 60+ irreducible words, not the 24 = 4! GB normal forms.
-   Generate the H₄ table with the proper confluent reducer (hecke-engine's
-   `gb_nf_reducer.rs`, Rust), not a naive local-rewriting Python
-   reimplementation.
+1. **The H₄(q) NF basis + `mulNF` table — DONE (verified 2026-08-22).** This
+   item is **no longer open**, and the paragraph that followed it described the
+   work as still to do for roughly a month after it landed. What exists now:
+
+   - `computations/markov/hecke-regular-nf-h4.witness.json` — "H_n(q)
+     regular-rep **GB-NF** generator actions + Ocneanu/Markov trace; H3
+     validation + **H4 emission for the Lean H4 Markov-trace formalization**"
+     (bean `qou-1jrr`). Generated from the confluent Gröbner normal forms, as
+     this block required — not hand-written, not a local-rewriting Python
+     reimplementation.
+   - `QOU.Machinery.H4Cyclicity` — the `Fin 24` subscript basis (24 = 4! GB
+     normal forms, exactly the count this block predicts) with the
+     `e₄_eq_mul_*` factorizations. **Sorry-free**, as are
+     `H4GeneratorAction`, `HeckeH4RepDecomp`, `BilinearTraceRepBasis` and
+     `BilinearTraceCyclicity`: zero real `sorry` across the whole cluster.
+   - `QOU.Machinery.MarkovTraceH4` — `trM_cyclic` for `n = 4`, off
+     `gram_symm`'s 576 computed entries, reduced through
+     `BilinearTraceCyclicity.cyclic_of_gram_symm`.
+
+   The reducer caveat this block recorded was correct and was respected: the
+   H₄ table does come from the GB route, not from Hecke + commute +
+   adjacent-braid local rewriting (which is non-confluent and yields 60+
+   irreducibles rather than 24).
+   **Reducer caveat, retained for anyone extending to H₅ (verified
+   2026-07-13).** `gram.py`'s `_reduce_nf` is H₃-specific: it applies only the
+   Hecke-square and *adjacent* braid moves, which suffice for H₃ (whose two
+   generators σ₀,σ₁ are adjacent). H₄ also needs the non-adjacent commuting
+   relation `σ₀σ₂ = σ₂σ₀`, and even Hecke + commute + adjacent-braid is **not
+   confluent** — a BFS over that rule set yields 60+ irreducible words, not the
+   24 = 4! GB normal forms. Use the confluent reducer (hecke-engine's
+   `gb_nf_reducer.rs`, Rust, permutation/Coxeter-canonical and general-`n`),
+   not a naive local-rewriting Python reimplementation.
 
 2. **The `Ind_{H₃}^{H₄}` Markov stabilization.** The general-`n` trace is built
    from the H₃ trace by the Markov induction/stabilization the (M3) law
