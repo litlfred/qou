@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T20:23:46Z
+updated_at: 2026-08-22T20:34:03Z
 ---
 
 
@@ -191,3 +191,26 @@ a genuine 2nd-order Kerov-CLT sign computation - substantial standalone analysis
 no slick proof found. (b2): no dip on 13<=n<N_0 (exact, have to 46).
 STATUS: gap content now = ONE sign of ONE correction term. kappa>0 derived; M_1>0
 exact n<=46; Lambda* part proved orthogonal; reduced to one-sided sign. OPEN.
+
+
+
+RETRACTION + EXTEND + SIGN-RECAST (2026-08-22, PR #5466).
+RETRACTED sub-result (1): the 'Lambda*-peeling reduction M_1=Cov(T,omega3)' was
+VACUOUS. Exact n<=12: p2sharp_sym == 0 IDENTICALLY (transpose-antisym
+p2sharp(lam)=-p2sharp(lam')) and T == Sum_h identically. So Cov(p2sharp_sym,omega3)=0
+is the zero function's covariance, and M_1=Cov(T,omega3) is the definition - NO
+reduction. Caught before merge (PR #5466 open). Genuine residue: co-content
+identity Sum_h=Sum(i+j)-n (=PR #5366 reformulation, an identity). Lambda*-peeling
+gives NOTHING (Sum_h transpose-even _|_ Sigma_2 transpose-odd; M_1=Cov(Sum_h,Sigma_3)
+even x even unchanged).
+UNAFFECTED (stand): kappa=128/(225 pi^2) derivation; one-sided kappa_n>=kappa
+reframing (both about M_1 VALUES).
+EXTEND: kappa_n > kappa verified exactly for ALL 13<=n<=60 (crossing n_0=13),
+correction +, peak 0.001556 at n=32, 0.001381 at n=60, far from 0.
+SIGN (b1) recast, NOT proved: via real Sum_h=SumD2+Sum|c| (PR #5452),
+kappa_n-kappa=(N-deficit)-(P-deficit); both P_n/n^2.5,N_n/n^2.5 rise from below;
+kappa_n>kappa BECAUSE N (diag-length-spread cov) converges to VKLS limit SLOWER
+than P (|c|-spread cov). So one-sided sign <=> 2nd-order RATE comparison 'N lags
+P'. Concrete target; open 2nd-order-CLT statement.
+STATUS: M_1>0 exact n<=60; kappa>0 derived; reduced to one-sided kappa_n>=kappa
+<=> 'N lags P'. OPEN. (Sub-result 1 was a dead end, honestly retracted.)
