@@ -1,11 +1,11 @@
 ---
 # qou-9ttb
 title: 'PROVE(lean): the two Morton-Franks-Williams inequalities — currently hypotheses on MFWWitness'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T02:02:43Z
-updated_at: 2026-08-22T16:40:48Z
+updated_at: 2026-08-22T19:25:59Z
 ---
 
 ## What is open
@@ -308,3 +308,37 @@ closures, which is a large separate project, not a residue of this bean.
 precedence over a fresh build on LEAN_PATH, making three real declarations
 report as "Unknown constant". Harmless in that direction; the same shadowing
 would let an axiom check PASS against old code. Put the fresh build first.
+
+
+## CLOSED (2026-08-22) — mathematical content complete; residue split to `qou-e6db`
+
+Closed on owner authorisation. Both ingredients are settled:
+
+- **Ingredient 1** (Markov invariance of the Ocneanu trace) — was **already
+  proved** when this bean claimed it open. That claim came from a month-old
+  progress note on `qou-bhrx` that I repeated without a corpus-grep; corrected
+  in place earlier in this bean.
+- **Ingredient 2** (the degree argument) — closed by the skein-induction route,
+  which needs neither the Ocneanu machinery nor Markov invariance:
+  - **propagation** proved sorry-free (`mfw_step` + window arithmetic);
+  - **base case** `DescendingWrithe` is **classical**, not open — descending ⇒
+    unlink (`lickorish1997`) plus Bennequin's inequality (`bennequin1983`);
+  - **wired** to `MortonFranksWilliams.MFWWitness`, all `#print axioms` clean.
+
+**What is NOT closed, and why it is not this bean's residue.** No Lean file
+here touches an actual knot — there is no HOMFLY in Lean, so nothing can
+produce an `MFWWitness` from a real link. That is **infrastructure**, not the
+mathematics this bean was about, and it is a formalization project on the scale
+of a Mathlib contribution. Tracked as **`qou-e6db`** with the full handoff:
+what is already done (do not redo), the four steps needed, and the honest
+scoping note that it cannot be drained in a session.
+
+**Retrospective worth keeping.** Three self-contained proof routes for the base
+case were tried and refuted before the fourth pass found the classical result:
+(a) `|e| ≤ #nonzero pairs` (false, 298 words exceed it); (b) "`G⁺` and `G⁻`
+both forests" (`G⁻` always is, `G⁺` has a cycle in 30 words); (c) the component
+decomposition (correct, and kept — descending components have linking number
+zero — but not needed). All three were attempts to reprove from scratch what
+`bennequin1983` already gives. The lesson is the corpus-grep discipline applied
+one tier out: this repo was checked for prior work, the classical literature was
+not, and the literature had it.

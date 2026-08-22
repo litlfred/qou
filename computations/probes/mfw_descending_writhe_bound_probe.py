@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: exact combinatorics on braid words; no q read.
-"""Base case of the MFW skein induction: |e| <= n - c for descending words (qou-9ttb).
+"""Base case of the MFW skein induction: |e| <= n - c for descending words (qou-9ttb, closed; Lean residue qou-e6db).
 
 `QOU.Knot.MFWSkeinInduction` proves the *propagation* step of a route to
 Morton-Franks-Williams that avoids the Ocneanu trace entirely: the MFW window
@@ -221,7 +221,8 @@ def main() -> int:
     print("  the proof itself is the citation to bennequin1983. The Lean file")
     print("  carries `DescendingWrithe` as a threaded hypothesis because")
     print("  Mathlib has neither HOMFLY nor Bennequin -- its status is")
-    print("  CLASSICAL-AND-CITED, no longer open. (qou-9ttb)")
+    print("  CLASSICAL-AND-CITED, no longer open. qou-9ttb is CLOSED;")
+    print("  the Lean-infrastructure residue is tracked as qou-e6db.")
 
     wb = WitnessBuilder("mfw-descending-writhe-bound",
                         engine="exact-braid-word-enumeration")
@@ -230,7 +231,8 @@ def main() -> int:
         "totally descending braid word of length <= 6 on 2-4 strands satisfies "
         "|writhe| <= n - components, and the bound is tight for every (n,c) "
         "reached. Supports but does NOT prove QOU.Knot.MFWSkeinInduction's "
-        "`DescendingWrithe` hypothesis. Scope-(a); nothing wired. Bean qou-9ttb."
+        "`DescendingWrithe` hypothesis. Scope-(a); nothing wired. "
+        "Bean qou-9ttb (closed); Lean residue qou-e6db."
     )
     wb.add_data("max_strands", MAX_N)
     wb.add_data("max_word_length", MAX_LEN)
