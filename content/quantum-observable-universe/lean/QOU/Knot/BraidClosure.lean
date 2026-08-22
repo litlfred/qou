@@ -1,0 +1,144 @@
+import Mathlib.Tactic
+import QOU.BraidKnot.BraidGroupNStrand
+
+set_option autoImplicit false
+
+/-!
+# QOU.Knot.BraidClosure — the closure permutation and its component count
+
+Bean `qou-e6db`, step 1. `QOU.Knot.MFWSkeinInduction` states the MFW window in
+terms of three integers: the strand count `n`, the writhe `e`, and the number of
+**closure components** `c`. Of those, `n` and `e` already existed
+(`QOU.BraidKnot.BraidWord.writhe`); `c` did not exist anywhere in the tree, so
+nothing could connect a braid word to the window it is supposed to satisfy.
+
+This file supplies it. A braid word induces a permutation of the strand
+endpoints — each crossing swaps two adjacent positions, regardless of its sign —
+and the closure's components are exactly that permutation's orbits.
+
+**Built on the existing type, deliberately.** `BraidWord` is defined **nine
+times** across this Lean tree (`PhotonThreading`, four separate `StandardModel`
+files, two `Archimedean` files, `BraidKnot.BraidGroupNStrand`,
+`BraidKnot.BraidWordBasisGram`, and `KnotTheory`), with `writhe` defined at
+least five times — four of them character-identical. A tenth definition would
+make that worse. `BraidKnot.BraidGroupNStrand.BraidWord` is used here because it
+is the only one indexed by the strand count `n` and carrying the crossing sign,
+which is precisely what MFW needs. The fragmentation is recorded in `qou-e6db`;
+it is an obstacle to HOMFLY-in-Lean, not something this file fixes.
+-/
+
+namespace QOU.Knot.BraidClosure
+
+open QOU.BraidKnot
+
+variable {n : ℕ}
+
+/-- The lower of the two strand positions a generator `σ_i` acts on. -/
+def loIdx (i : Fin (n - 1)) : Fin n := ⟨i.val, by have := i.isLt; omega⟩
+
+/-- The upper of the two strand positions a generator `σ_i` acts on. -/
+def hiIdx (i : Fin (n - 1)) : Fin n := ⟨i.val + 1, by have := i.isLt; omega⟩
+
+theorem loIdx_ne_hiIdx (i : Fin (n - 1)) : loIdx i ≠ hiIdx i := by
+  simp [loIdx, hiIdx, Fin.ext_iff]
+
+/-- The transposition a crossing induces on strand positions.
+
+**The sign is irrelevant here** — `σ_i` and `σ_i⁻¹` cross the same two strands
+and so induce the same permutation. That is why the closure component count `c`
+is insensitive to crossing changes, which is exactly what makes it a usable
+invariant in the skein induction: switching a crossing moves `e` but fixes `c`.
+-/
+def crossingSwap (c : BraidCrossing n) : Equiv.Perm (Fin n) :=
+  Equiv.swap (loIdx c.gen) (hiIdx c.gen)
+
+/-- The permutation of strand endpoints induced by a braid word. Its orbits are
+the components of the Markov closure. -/
+def closurePerm : BraidWord n → Equiv.Perm (Fin n)
+  | [] => 1
+  | c :: w => crossingSwap c * closurePerm w
+
+@[simp] theorem closurePerm_nil : closurePerm ([] : BraidWord n) = 1 := rfl
+
+@[simp] theorem closurePerm_cons (c : BraidCrossing n) (w : BraidWord n) :
+    closurePerm (c :: w) = crossingSwap c * closurePerm w := rfl
+
+theorem closurePerm_append (v w : BraidWord n) :
+    closurePerm (v ++ w) = closurePerm v * closurePerm w := by
+  induction v with
+  | nil => simp
+  | cons c v ih => simp [ih, mul_assoc]
+
+/-- The writhe is additive over concatenation — the other half of what the
+skein induction needs, since stacking braids adds their crossing signs. -/
+theorem writhe_append (v w : BraidWord n) :
+    BraidWord.writhe (v ++ w) = BraidWord.writhe v + BraidWord.writhe w := by
+  induction v with
+  | nil => simp
+  | cons c v ih => simp [ih]; ring
+
+/-- **The number of closure components.** Orbits of `closurePerm`: each
+nontrivial cycle is one component, and each fixed point is a component of its
+own (a strand that closes up alone). -/
+noncomputable def components (w : BraidWord n) : ℕ :=
+  (closurePerm w).cycleType.card + (n - (closurePerm w).support.card)
+
+/-- The identity braid closes to `n` disjoint circles — the `n`-component
+unlink. This is the `c = n` corner the window arithmetic pins down. -/
+@[simp] theorem components_nil : components ([] : BraidWord n) = n := by
+  simp [components]
+
+/-- **The base corner, connected.** For the empty word the writhe is `0` and the
+component count is `n`, so `MFWSkeinInduction.DescendingWrithe n c e` holds with
+`c = n`, `e = 0` — matching `descending_trivial_perm_writhe_zero`, which
+previously had no braid word to be about. -/
+theorem descendingWrithe_nil :
+    BraidWord.writhe ([] : BraidWord n) = 0 ∧
+      components ([] : BraidWord n) = n := by
+  constructor
+  · simp
+  · simp
+
+/-! ### Non-vacuity: the definitions compute the right numbers
+
+A definition that type-checks can still be wrong. These pin `closurePerm` and
+`components` to cases whose answers are known independently. -/
+
+/-- On two strands there is only one generator, so any crossing swaps `0` and
+`1`. (`Fin (2 - 1)` needs the subtraction reduced by hand — instance search will
+not find `Subsingleton` through it.) -/
+theorem closurePerm_two (c : BraidCrossing 2) :
+    closurePerm [c] = Equiv.swap (0 : Fin 2) 1 := by
+  -- `c.gen : Fin (2 - 1)`, so `simp` already knows its value is `0`; no
+  -- separate `c.gen.val = 0` hypothesis is needed.
+  have h0 : loIdx c.gen = (0 : Fin 2) := by apply Fin.ext; simp [loIdx]
+  have h1 : hiIdx c.gen = (1 : Fin 2) := by apply Fin.ext; simp [hiIdx]
+  simp [closurePerm, crossingSwap, h0, h1]
+
+/-- **One crossing on two strands closes to the unknot: `c = 1`, not 2.** The
+two strands are joined into a single circle. This is the smallest case where
+`components` could have been off by one, and it is not. -/
+theorem components_two_one_crossing (c : BraidCrossing 2) :
+    components [c] = 1 := by
+  have hne : (0 : Fin 2) ≠ 1 := by decide
+  have hcyc : (Equiv.swap (0 : Fin 2) 1).cycleType
+      = {(Equiv.swap (0 : Fin 2) 1).support.card} :=
+    (Equiv.Perm.isCycle_swap hne).cycleType
+  simp [components, closurePerm_two c, hcyc]
+
+/-- Two crossings on two strands cancel in the *permutation* (though not in the
+writhe), so the closure has two components again — the 2-component unlink.
+Together with the previous lemma this shows `components` tracks the parity of
+the crossing count, as it must. -/
+theorem components_two_two_crossings (c d : BraidCrossing 2) :
+    components [c, d] = 2 := by
+  have hcd : c.gen = d.gen := by
+    have h1 := c.gen.isLt
+    have h2 := d.gen.isLt
+    apply Fin.ext
+    omega
+  have hone : closurePerm [c, d] = 1 := by
+    simp [closurePerm, crossingSwap, hcd, Equiv.swap_mul_self]
+  simp [components, hone]
+
+end QOU.Knot.BraidClosure
