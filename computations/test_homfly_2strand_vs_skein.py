@@ -53,10 +53,16 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+from mpmath import mp
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from homfly_skein_braid import homfly  # noqa: E402
 from homflypt_engine import homflypt_2strand  # noqa: E402
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from _precision import set_compute_dps  # noqa: E402
+from homflypt_reference_qa import _torus_homfly  # noqa: E402
 
 # |k| <= 3 is the table's whole domain; it raises above that.
 CASES = {0: [], 1: [1], -1: [-1], 2: [1, 1], -2: [-1, -1],
@@ -117,6 +123,46 @@ def main() -> int:
           "   (z to odd powers — sign flips)")
     print(f"    k = 3  naive == mirror: {'OK' if c3 else 'UNEXPECTED'}"
           "   (z only as z^2 — the coincidence)")
+
+    # [D] closes a circularity in [A]. Parts A-C check the table against
+    # *this branch's* skein engine and against itself, so a shared error in
+    # both would agree. `homflypt_reference_qa._torus_homfly` predates this
+    # work, shares no code with `homfly_skein_braid`, and derives the same
+    # family from the three-term recurrence
+    #     P(k) = v^2 P(k-2) + v z P(k-1)
+    # seeded by the 2-unlink and the unknot. Agreement with it anchors the
+    # corrected entries to a source outside the change.
+    #
+    # It is defined for k >= 0 only. The negative entries are reached
+    # instead through the mirror (v, z) -> (1/v, -z), which part B checks
+    # and `QOU.Knot.HomflySkeinReference.engine_k2_is_mirror` proves. So:
+    # reference anchors k > 0, Lean-proved mirror carries it to k < 0.
+    #
+    # Evaluated at a rational point carried as mpmath mpf at the compute
+    # dps -- NOT float64. The residuals below are ~1e-72, i.e. at the
+    # working precision, not at a float64 floor of ~1e-16.
+    #
+    # Teeth, measured the same way as parts A and B: re-run against the
+    # pre-fix (mirrored) values, this part reports |old - reference| of
+    # 20.79 at k=2 and 18.0 at k=3 against a 1e-45 tolerance, so it catches
+    # both entries that were wrong. k=1 is unaffected either way -- the
+    # unknot's HOMFLY is 1, which is its own mirror, so there was nothing
+    # wrong there and nothing for this part to catch.
+    print("\n[D] table vs the INDEPENDENT reference (predates this branch)")
+    set_compute_dps()
+    v, z = mp.mpf(3) / 7, mp.mpf(5) / 11
+    tol = mp.mpf(10) ** -45
+    for k in (1, 2, 3):
+        got = sum(c * v ** i * z ** j
+                  for (i, j), c in homflypt_2strand(tuple([1] * k)).terms.items())
+        ref = _torus_homfly(k, v, z)
+        d = abs(got - ref)
+        match = d < tol
+        ok = ok and match
+        print(f"    k = {k:>2}: |table - reference| = {mp.nstr(d, 4)}  "
+              f"{'OK' if match else 'MISMATCH'}")
+    print("    (k < 0 is anchored by the Lean-proved mirror + part B, since "
+          "the reference is defined only for k >= 0.)")
 
     print(f"\n  RESULT: {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 1
