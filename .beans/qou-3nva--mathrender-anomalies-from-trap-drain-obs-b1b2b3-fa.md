@@ -1569,3 +1569,134 @@ No §3b violation: `g-action-on-substrate` is correctly kinded `conjecture`.
 
 `operates as` for *is* occurs **22×** corpus-wide, so it is house style
 rather than this batch's defect — worth knowing before someone "fixes" it.
+
+---
+
+## From agent:e00 (predicted-spectra eq_00) — 2026-08-22
+
+37 prose blocks + 8 data tables, 35 anomalies. This is the chapter that
+states predictions, and it shows: the findings are about what the numbers
+mean, not about prose.
+
+### The α_EM headline changes sign with the pin
+
+`alpha-em-derivation-open-problems` quotes **+5.7 × 10⁻⁸** as its residual.
+Every number in the block is **muon**-pinned. At the proton compute default
+(the standing directive since 2026-08-07) the same quantity is
+**−2.142 × 10⁻⁸** — opposite sign and 2.7× smaller. The `+2/(3π)` row moves
+too: −4.180e-6 muon vs −4.259e-6 proton.
+
+`alpha-em-categorical-trace-ratio-table-data` is also muon-pinned, and here
+the table **can** distinguish the pins (they differ in the 8th digit of
+`δ₉`), so this is not a rounding-invisible case. `1.1097` is excluded.
+
+### "Both models close the 1.6 % energy gap" is false, and backwards
+
+`breit-wheeler-pair-production-derivation`. The algebra checks out
+term-by-term — five NF coefficients, `net_bare = 1 + h = 1.209060299`, both
+polarisation limits. What fails is the conclusion:
+
+- The **net → MeV conversion is never stated.** Recovering it from the
+  block's own numbers gives `0.83205114 MeV/unit`, uncited.
+- Under that constant, reaching `2mₑ` needs `φ = 0.0538675`, `s = 0.108282`.
+  The block quotes **0.0487** and **0.0978**, low by a factor 1.106.
+- Those values give `net = 1.205278 / 1.205165`, **below** the bare
+  1.209060 — so `E = 1.0029 / 1.0028 MeV`, **worse than doing nothing**.
+- And `φ`, `s` are fitted to `2mₑ` by construction.
+
+### The Λ-vs-Cl₂ guard, live in content
+
+`bring-hyperbolic-knot-bloch-decomposition` §Obs 2 writes
+**"Vol(𝓑₃) = 8G = 8·Cl₂(π/4)"**. The value `8G = 7.327724753` is right; the
+name is not. `Cl₂(π/4) = 0.9818721511`, so `8·Cl₂(π/4) = 7.854977208`, and
+`G = Cl₂(π/2) = 0.9159655942`. This is precisely the shape AGENTS.md
+describes — right number under the wrong name — so a grep for the bad name
+would flag it while a grep for a bad value would not. Its own sibling
+`bloch-wigner-mathlib-filler-table1-data` has it right (`4Cl₂(π/2) = 4G`).
+
+### The wrong-trefoil braid word, third chapter running
+
+`breit-wheeler-pair-production` gives `e⁻ = σ₀σ₁σ₀ "(trefoil)"`. Computed
+from the induced permutation: `σ₁σ₂σ₁` induces `(1 3)`, so the closure has
+**2 components** and is not a knot at all; Markov-reducing,
+`σ₁σ₂σ₁ ~ σ₁²σ₂` destabilises to `σ₁² ∈ B₂` — the **Hopf link**. The
+trefoil as a 3-braid is `(σ₁σ₂)²`. `e⁺` inherits it, and the rest of the
+chapter uses the correct `e⁻ = T_{2,3} = σ₁³`.
+
+`bring-hyperbolic-knot-bloch-decomposition`'s Markov-closure table is wrong
+in **3 of 5 rows** (`σ₁`,`σ₂` → 2 components, not "unknot"; `σ₁σ₂`,`σ₂σ₁` →
+1, not "Hopf link"; `σ₁σ₂σ₁` → 2 = Hopf link, not "trefoil"), and it cites
+`σ₁³`, which is not an H₃ basis element. The section's conclusion survives;
+the table does not. `categorical-neutron-table-data` repeats the same
+mislabels on the same six basis elements.
+
+### The Bloch-group five-term relation is inverted
+
+`bloch-group-quotient-construction`. Tested at 30 dps with
+`x = 0.3+0.7i`, `y = −0.4+1.3i`: the standard five-term residual is
+**0.0**; the block's orientation (with `e₄`, `e₅` reciprocated) gives
+**1.979625777**. `e₃ = e₂/e₁` matches the standard form, so no relabelling
+rescues `e₄`/`e₅` — and since `D(1/z) = −D(z)`, the block's version flips
+two signs.
+
+### Claims that do not follow
+
+- `borel-zagier-qou-volumes`: "**strictly stronger than irrationality**" is
+  false. ℚ-linear independence of `{V₁,V₂,V₃}` does not imply any `Vᵢ ∉ ℚ`
+  — `{1, √2, √3}` is a counterexample. The statement needs
+  `{1, V₁, V₂, V₃}`. Also `Vol(𝓑₃)/Vol(5₂) = 2.591021365`, printed 2.592.
+- `bring-hyperbolic-knot-bloch-decomposition`: the conjecture and both
+  reduction claims live in `B(ℚ(ζ₁₅))`, but the Borromean class has trace
+  field `ℚ(i)`, and **`i ∉ ℚ(ζ₁₅)`** (that needs `4 | 15`). The block's own
+  Obs 2 already concludes `ℚ(ζ₆₀)`. Its field table is otherwise fully
+  correct. Also `L6a4` **is** the Borromean rings (6³₂), listed as two
+  atlas entries, so "the shared volume identity establishes `𝓑₃ ~ L6a4`"
+  is an identity restated as a derivation; and "By the **Birman–Hilden**
+  theorem, 3-braid closures yield hyperbolic knots up to 10 crossings" is
+  misattributed and false as stated.
+- `bohr-radius-categorical`: "a₀ at `q₀ ≈ 1.11` yields `5.29 × 10⁻¹¹` m" is
+  the CODATA value. With the block's **own** `α_EM = 7.30870156e-3`,
+  `a₀ = 5.2835550e-11` m. A calibration pass-through presented as a result.
+  Its `.ts` kind is `conjecture` while the `.md` opens "Proposition."
+- `bohr-radius-round8-findings`: "three structural properties" followed by
+  **four** sections; and "identifying `n = 2k+1` exactly reproduces the Bohr
+  `1/n²`" reproduces only the **odd-n subseries** — `1/4` and `1/16` have
+  no `k`.
+- `alpha-em-categorical-trace-ratio-table-data`: the `.ts` caption calls row
+  5 "the CODATA α_EM definition", but `7.30870098e-3` is **not** CODATA
+  (`7.2973525693e-3`) — `1/α = 136.8232089`, **0.1555 % high**. Rows 4 and 5
+  are the same expression at the same `q₀`, so "exact within 10⁻¹²"
+  certifies an identity, not an experiment.
+
+### Convention C, with its dependence measured
+
+`bohr-radius-round8-findings` uses `z = √q/(q+1) = 0.4993203342`. The
+displayed `V_H`, `V[1]`, `V[2]` carry `z` **symbolically**, so the
+cross-term-cancellation headline is convention-independent; any numerical
+evaluation and the "optimal ordering" claim are not. Recording the split
+because "flag every C value" without this distinction over-reports.
+
+### Sweep damage: a new shape
+
+Flattened imperative or bulleted lists rewritten as declaratives, producing
+sentences with no subject-verb sense — *"The photon holonomy integral
+defines over the fibre."*, *"The partition functions evaluate and limits
+take k → ∞."*, *"A depth-k contribution defines 1/α_EM."* (four in one
+block), plus *"The trace ratio identity determines the substrate-flow value
+from the α_EM categorical-trace ratio"* (subject and object are the same
+object). Six blocks. Distinct from the token-substitution and synonym-swap
+classes already recorded.
+
+Two §7a generator violations in the β-decay cluster (`T² = (q−q⁻¹)T + 1`,
+and the skein written `q[L₊] − q⁻¹[L₋] = (q^{1/2}−q^{−1/2})[L₀]`), plus
+`β⁻` emitting an **unbarred** `K_{0₁}` — breaking lepton number and
+contradicting its own sibling's `L₀⁻ = T_{2,3} ⊔ T_{1,0}^σ`.
+
+### Verified clean, recorded so it is not re-run
+
+All 9 rows of the Breit–Wheeler product table; the `S₃` sign projector;
+`V₃² = Δ`; bar-transfer clauses 1 and 3; the `φ²` band and `q₀ ∈ (1, φ²)`;
+`dim Λ²ℂ¹⁰ = 45 = 9 + 36`; `α_shift(T_{2,9}) = 9`, `α_shift(T_{3,5}) = 10`;
+every cyclotomic degree and `r₂` in the field table; and all four margins in
+`bar-self-dual-confinement-band-proof`, which are pin-independent at the
+displayed precision.
