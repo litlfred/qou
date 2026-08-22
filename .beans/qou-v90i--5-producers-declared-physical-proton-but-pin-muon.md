@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:37:16Z
-updated_at: 2026-08-22T20:42:27Z
+updated_at: 2026-08-22T20:48:01Z
 ---
 
 Found while re-baselining `qou-1c4y`; measurement +
@@ -132,3 +132,43 @@ Gate now reports **4** contradictions, still exit 1. Census 640 -> 639.
   before re-pinning either.
 - `aK_via_lp_dual_hecke_basis`: states no pin intent; directive default applies,
   but it has no docstring to confirm against.
+
+
+## ROOT CAUSE TRACED (2026-08-22) — a direct reader cannot be migrated by re-running it
+
+The five are not independent slips. Tracing `a-K-via-lp-dual-hecke-basis`
+against the anchor-defining witness:
+
+| date | `q-pinning-50-digit` | the reader's witness |
+|---|---|---|
+| 08-11 `c3a7e16856` | **muon** | stamp muon, data muon — consistent |
+| 08-15 `9a9c6b31c7` | **proton** ← *re-pinned* | stamp proton, data proton — *looks migrated* |
+| 08-19 `2e4745448d` | **muon** restored | — |
+| 08-19 `da2968cc33` | muon | stamp proton, data **muon again** — contradiction |
+
+The 08-15 sweep appeared to migrate them correctly **only because it re-pinned
+`q-pinning-50-digit.witness.json` itself** — the move AGENTS.md constraint 1
+forbids, and the one that broke main for 208 producers (`qou-m9xp`). When
+`2e4745448d` restored the muon anchor, every direct reader reverted to muon
+data on its next run while the migration kept stamping `proton`.
+
+**General statement:**
+
+> A producer that reads `q-pinning-50-digit.witness.json` directly **cannot be
+> migrated by re-running it.** Its q₀ comes from the anchor-defining witness,
+> which by constraint 1 must stay muon. Re-running always yields muon data;
+> stamping it proton from the manifest always manufactures a contradiction.
+> **The only fix is to change the read.**
+
+Three of the five were flipped to `proton` **by the migration batches
+themselves** (`1fead8dd49` "batch to 172/254", `a718727acd` "batch to
+192/254") with muon data already in place. `a718727acd` moved `computedAt`,
+`durationMs`, `q0Anchor` muon->proton and `q0Value` to the proton string, while
+the producer's own `q_0_50dps` stayed muon. Label and data are written by
+independent paths.
+
+**Implication:** the migration's progress counter cannot distinguish
+"migrated" from "re-stamped while still on muon" for this class.
+`--list-contradictions` is currently the only check that catches it — the
+anchor-consistency audit exempts `-audit`/`-scan` suffixes, and the flip-risk
+audit keys on `muon`-stamped witnesses, which these are not.
