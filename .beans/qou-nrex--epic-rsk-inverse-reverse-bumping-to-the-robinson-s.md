@@ -737,3 +737,45 @@ RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHol
 - the representation bridge to Mathlib's StandardYoungTableau (check SchenstedCellsBridge first);
 - then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
   Wedderburn split.
+
+### Bricks 33-34 — the representation bridge, other direction (same PR #5426)
+
+listStandardYT (brick 10) already crossed List (List ℕ) -> StandardYoungTableau. These start back.
+
+Brick 33 (SchenstedListOfSYT.lean):
+  toListTableau S        : rows of S read off its cells, (List.range rowLens.length).map ...
+  + tableauShape_toListTableau = μ.rowLens ON THE NOSE
+  + rows_strict / rowsSorted / colStrict / noEmptyRows / nodup_flatten
+
+  Where the two notions differ is SHAPE, not content: StrictBelow BUNDLES the Young-shape length
+  condition with the entry comparison; SemistandardYoungTableau keeps them apart (lengths in the
+  diagram, entries in col_strict). rowLen_anti is the half with no counterpart in the tableau's
+  own data — the bridge has to supply it.
+
+Brick 34 (SchenstedRecordingOfSYT.lean) — the +1 convention, paid:
+  mem_flatten_toListTableau_iff_Icc : entries are exactly 1..|μ| (mapsTo one way, surjOn the other)
+  unshiftT Q := Q.map (·.map (· - 1))  -- inverse of the existing shiftT on positive entries
+  toRecordingTableau S := unshiftT (toListTableau S)
+  + the full bundle brick 32 takes: ColStrict, rows strictly increasing, flatten Nodup,
+    NoEmptyRows, shape = μ.rowLens, content EXACTLY {0..|μ|-1}.
+
+  Brick 32's Q counts from 0 (insertWordRec starts at 0); a StandardYoungTableau counts from 1
+  (bijOn onto Set.Icc 1 |μ|). insertWordSYT already pays this in the other direction via shiftT.
+  Positivity of every entry — the hypothesis the down-shift needs — FALLS OUT of the content fact,
+  so no extra input. Past the end nothing is needed: the default 0 is a fixed point of (· - 1).
+
+### SCOPE — what 33+34 are NOT
+The Q ARGUMENT of brick 32, assembled. NOT brick 32 run on it.
+
+### What is actually left before rskPair surjectivity (measured, not guessed)
+Given a target ⟨μ, S_P, S_Q⟩ one needs a PERMUTATION σ with rskPair σ = it. Brick 32 gives a WORD w
+with insertWordRec w = (P₀, Q₀) in list form. Three gaps remain, all bridge, none combinatorics:
+  1. ROUND TRIP: listStandardYT (toListTableau S) = S — needed to turn the list-level equality into
+     insertWordPSYT … = S_P and insertWordSYT w = S_Q. This is the real remaining work.
+  2. SIGMA/SHAPE COERCION: ofRowLens μ.rowLens _ = μ is ofRowLens_to_rowLens_eq_self (exists), but
+     the Sigma equality still has to be threaded through it.
+  3. w MUST COME FROM A PERMUTATION: wordOfPerm has content {1..n}; brick 32's w is whatever the
+     cascade recovered. Need w's content = {1..n} => ∃ σ, wordOfPerm σ = w.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+
+### #5426 now carries bricks 16-34, ten files, zero sorries, axiom-clean throughout
