@@ -1822,3 +1822,105 @@ characters reproduce with `χ_{(3,1)}+χ_{(2,1,1)} = −h` exactly. Table 13's
 **convention-D** parenthetical in Mechanism B is *correct* — D is exactly
 what makes `det G = 0` and forces the `H_n/rad ≅ TL_n` reading. No
 convention-C residue anywhere in this batch.
+
+---
+
+## From agent:e02 (predicted-spectra eq_02) — 2026-08-22
+
+45 blocks, **92 anomalies logged** (full list in the agent's scratch; the
+load-bearing ones follow). The trap register here is different from every
+other chapter: only 3 fails across the diagnostic five, but 16 on
+nonspeakable syntax — nominalisation density consistent with a
+de-passivisation sweep, two of whose casualties were left ungrammatical
+("The categorical structure defines over the commutative ring").
+
+### Claims that are false, with the route
+
+1. **`hadron-half-life-proof`: "in the classical limit `q→1`, `𝒲(1) = 0`"
+   is false.** Computing `tr_M((σ₀σ₁)⁵)` in `H₃(q)` symbolically gives a
+   polynomial whose value at `h = 0` is exactly **`z² = 1/4`** (`z(1) = 1/2`
+   under both C and D). Independently: at `q = 1`, `H₃(1) = ℂ[S₃]` and
+   `(s₀s₁)⁵ = (s₀s₁)² = s₁s₀`, whose trace is `z²`. Beta decay *does*
+   vanish at `q = 1` — but by the sibling block's route (`Q = 0`), not this
+   one.
+2. **`groebner-nf-computation-table2`: 4 of 5 rows wrong.** `Σ_ℓ h(ℓ) = A!`
+   at `r = 1`. The table gives 2, 4, 12, 36, 180 against the correct
+   **2, 6, 24, 120, 720**. The stated `[3]_r!` is really `[2]_r²`
+   (`S₃` has `h = 1,2,2,1`), and `[4]_r!` should have degree 6 — the
+   longest element of `S₄` — where the table's has degree 4. **The entries
+   are palindromic**, so the block's own Poincaré-duality remark does not
+   catch this; only the `r = 1` count does.
+3. **`hadron-q-self-correction-proof`: the closing bound is false as
+   stated.** "`|δq/q₀| < 0.1 %` for all nuclei" holds along the valley
+   (Fe-56 0.031 %, Pb-208 0.093 %, U-238 0.0999 %) and fails for real
+   neutron-rich nuclides: **⁴⁰Mg 0.172 %**, ⁶⁰Ca 0.145 %, ²⁴O 0.141 %.
+   The formula's supremum is 0.44 %. Its interpretation sibling
+   compounds it: `A = 3` is not the maximum — `(A−1)/A²` peaks at `A = 2` —
+   and the quoted "0.1–0.4 %" overstates the true 0.221 % maximum by 1.8×.
+4. **`francium-extremal-metal` is refuted by its own table.** "The lowest
+   ionization energy (4.07 eV)" and "decreases monotonically with `n`",
+   against a table showing **Cs 3.89 < Fr 4.07**. All six values are
+   correct against NIST; the block concedes the reversal two sentences
+   later without withdrawing the claim.
+5. **`force-knot-identification`'s skein is wrong and violates §7a.**
+   Printed `q[L₊] − q⁻¹[L₋] = (q^{1/2}−q^{−1/2})[L₀]` against §7a's
+   `L₊ − L₋ = (q−q⁻¹)L₀`. It is not a correct Jones skein under either
+   substitution: with `q = t` the LHS exponents are swapped, with
+   `q = t⁻¹` the RHS sign flips. **Load-bearing** — parity violation is
+   derived from it two sentences later. The same block says "the three
+   `S₃` subgroups of `S₅`"; there are **30** (10 supports × 3 each), so
+   the definite description does not denote.
+6. **`hadron-half-life-fermi`'s "2.1 ppm deviation from CODATA" matches
+   nothing.** The bare `q⁻¹/([9]_q[10]_q)` — the formula named in that very
+   sentence — is off by **1553 ppm**; CS-corrected is 0.399 ppm, the
+   fixed-point cubic 0.0007 ppm, PSLQ 0.003–0.006 ppm. The nearest corpus
+   quantity is the additive zero-mode residual −4.2 ppm, of which 2.1 is
+   exactly half. The sentence also attributes the *bare* formula to "the
+   Chern–Simons correction".
+
+### The α_EM cluster is not on a common pin, and one witness misdescribes itself
+
+The four routes disagree about which pin they are on: the CS route
+reproduces **muon** exactly (137.035944554, 398.6 ppb, κ 1.88804) while the
+fixed-point cubic strongly prefers **proton** (0.69 ppb vs 79.5 ppb muon),
+PSLQ's "7 ppb" is muon (2.6 ppb proton), and the additive `+5.7×10⁻⁸` is
+muon-only — **proton gives `−2.2×10⁻⁸`, opposite sign**. This is the third
+independent arrival at that sign flip (e00, e01, e02).
+
+`em-coupling-projection-probe.witness.json` **contradicts itself about its
+own pin**: it records `q0Anchor: "proton"` with the proton value, while
+`q0_source` and its assertion text both say "muon-anchored", and the
+producer says "muon-anchored" in four places. The number is right and the
+label is wrong — an inverted layer-straddle, the mirror of the hazard
+AGENTS.md documents.
+
+Its `CODATA_ALPHA_INV = "137.035999206"` is commented "CODATA 2018/2022"
+and is **neither** (2018: …084, 2022: …177) — it is the LKB/Morel-2020
+measurement. Three different unprovenanced α targets appear across this one
+block family, and Table 1's headline "399 ppb" does not follow from its own
+printed digits (those give 402.0 ppb; 399 is full-precision muon against a
+target the table never names).
+
+### Convention C, flagged with an honest limit
+
+`hadron-half-life-proof` uses `1/(q^{1/2}+q^{−1/2}) = 0.4993203 = z_C`
+exactly — a detector-blind spelling. The agent explicitly could **not**
+determine from the block whether the argument depends on it (it may be an
+independent symmetrising normalisation) and flagged it for producer
+adjudication rather than asserting dependence. Recording that limit, since
+the alternative is a confident guess.
+
+### Verified correct, recorded as negatives
+
+The two-photon normal form matches sympy term for term; all six Markov
+traces in `frobenius-gram-matrix-table1-data` including `hz²+z`; the
+golden-quartet Galois group entire, including `disc = 400 = 2⁴·5²` and the
+Möbius fixed points of `(4−q)/(4q+3)` being exactly `{1/φ, −φ}`; the
+Plancherel sums 0.98744 / 1.05056 against the quoted 0.987 / 1.051, tending
+to 1 as `q→1`; `Δq_eff = (A−1)/A²·ℏ_q²` derived exactly; crossing numbers 9
+and 10 via Murasugi; `Vol(S²)/(3Vol(S³)) = 2/(3π)` exactly.
+
+And `groebner-nf-computation` carries the batch's **only correctly-scoped
+durable negative**: "no per-generator transfer matrix can compute
+`F_Pauli`" is a scope-(b) exclusion with its licensing invariant named and
+verified — the shape the anti-overclaim rule asks for.
