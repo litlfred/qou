@@ -183,8 +183,27 @@ in its own witness: *"the optimal face is not a point, so `x*` … [is] not
 determined by the LP; the returned point is a solver choice."* Uniqueness is
 exactly what a non-singleton optimal face precludes.
 
+## Limitation of the sweep, found 2026-08-22
+
+**It can only see witnesses that carry a `y0_star` field at all.** A degenerate
+LP/SDP whose producer never extracts the dual is invisible to it, and there is
+at least one: `computations/lp_dual_witness_validator.py` reports
+`binding-sdp-bondgraph-degenerate.witness.json` missing **all six** required
+fields — `y0_star`, `y_star`, `active_set`, `primal_obj`, `dual_obj`,
+`duality_gap` — while its own name says "degenerate". So "14 of 57" is a count
+over witnesses that report duals, not over LP/SDP computes.
+
+(The validator runs warn-only and needs
+`PYTHONPATH=computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate`;
+without it, `lp_dual_solver` fails to import `pyhecke` and the whole check
+dies before scanning anything — another instance of the missing-path pattern.)
+
 ## Next
 
+- [ ] Re-run the sweep over LP/SDP witnesses **lacking** a `y0_star`, starting
+      with `binding-sdp-bondgraph-degenerate`. A dual that was never extracted
+      is a weaker signal than one extracted and found zero, but it is not no
+      signal.
 - [ ] `confinement-lp.witness.json`: re-derive the Gram from `pyhecke.gram`,
       or establish what the committed matrix is. Then re-read the "unique
       optimal B₃" claim against a degenerate optimal face. **Own bean.**

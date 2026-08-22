@@ -198,12 +198,11 @@ it questions `prop:mass-coefficient-shadow-price`, not just this block.
 
 ## Still open
 
-- [ ] Register the findings as a proper `*.witness.json` (needs an environment
-      with `mpmath`; `WitnessBuilder` imports it transitively). The
-      `.results.json` the script writes is deliberately outside the witness
-      namespace rather than a hand-forged witness.
-- [ ] File the shadow-price finding against
-      `prop:mass-coefficient-shadow-price`.
+- [x] Register the findings as a proper `*.witness.json` — **done 2026-08-22**,
+      see below.
+- [x] File the shadow-price finding against
+      `prop:mass-coefficient-shadow-price` — done 2026-08-22 as a `caveat`
+      authorNote, corrected for the wrong-LP error (`8na1`).
 
 Farkas (`qou/kl8z`) was never needed here, and now demonstrably so: the
 certificate is exhibited by hand.
@@ -257,3 +256,50 @@ fourteen committed LP/SDP witnesses carrying a `y0_star` show the `e₀`
 certificate — including `frobenius-repose`, whose Gram is **invertible**
 (`gram_rank 6`). So the identity, not the radical, is the widespread mechanism.
 See `qou/augu`.
+
+
+## 2026-08-22 — witness registered, and the block now cites it
+
+`computations/operator-selection-lp-symbolic-qq.witness.json`, 18/18
+assertions, `allPassed: true`. The `.results.json` is deleted; nothing read it
+but this script.
+
+**`q0Anchor: "independent"`.** `resolve_q0_anchor` cannot infer that from a
+manifest — a producer has to declare it — and it is the substantive claim of
+stage 2: the computation never reads `q_0`, so a result at a pinned `q_0`
+cannot be mistaken for it. Everything is exact in ℚ(q).
+
+**Zero raw float64 values in the emitted JSON**, checked. Each of the 18
+assertions carries the Lean hypothesis it discharges in its `lean` field, so
+`operator_selection_lp.lean` and the witness audit against each other — which
+is what this script was written for.
+
+The arithmetic stays stdlib-only. Only the *reporting* imports
+`WitnessBuilder`, which is a JSON writer and touches no number computed here;
+the `fractions.Fraction` path is unchanged, so `== 0` is still a decision
+rather than a threshold.
+
+**`prop:operator-selection-lp` now carries a `computation` field** pointing at
+script and witness (`status: "verified"`), plus a `status` authorNote stating
+the finding and routing the content consequence to `8na1` for an owner ruling.
+The block had no `computation` field at all before; a witness nothing points at
+is only half-registered.
+
+**Not flagged by `lp_dual_witness_validator.py`, correctly.** That validator
+requires the six LP-dual fields only of witnesses whose sibling script imports
+an actual solver (`linprog`, `cvxpy`, `lp_dual_solver`); its own comment
+excludes "SYMBOLIC certificate witnesses", which is exactly what this is. It
+does surface a pre-existing failure — `binding-sdp-bondgraph-degenerate.witness.json`
+missing all six — recorded in `qou/augu`, since a sweep keyed on `y0_star`
+cannot see a witness that omits it.
+
+### Both blockers on this bean were false
+
+Recorded 2026-08-16 as "`pyhecke` is not importable" and "needs an environment
+with `mpmath`", rechecked and reaffirmed on 2026-08-21. Neither was true:
+`numpy`, `mpmath`, `sympy` and `scipy` install from PyPI, and `pyhecke` imports
+given `PYTHONPATH=tools/pyhecke/python:tools/qou-substrate/python:computations/substrate:computations`.
+Six days on a missing path read as a missing capability, and the same pattern
+turned up a third time the same day in `lp_dual_witness_validator.py`, which
+dies on import without that path. Worth generalising: **before recording a
+capability as absent, check whether it is merely unrouted.**
