@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-22T21:30:55Z
+updated_at: 2026-08-22T21:34:36Z
 ---
 
 ## Why this bean exists
@@ -219,3 +219,44 @@ All sorry-free, zero warnings, axiom-clean. 29 results in the file.
 **Still open for step 2**: the magnitude half — that a transposition changes the
 orbit count by exactly `±1` — plus the descending predicate and the well-founded
 reduction. This is the parity half only.
+
+
+## CORRECTION — the ±1 orbit-count lemma is NOT needed
+
+An earlier entry in this bean listed "a transposition changes the orbit count by
+exactly ±1" as the next target and as a gap in step 2. **That was wrong, and I
+am recording it rather than quietly dropping it**, because it would have cost
+the next agent a session on a lemma the argument never uses.
+
+Checked against the actual statement: `mfw_step` is quantified over `n`, `e`,
+`d` only — **`c` never appears in the propagation step**. `c` enters solely in
+`base_window_of_descending`, applied to the descending word *itself*. And the
+descending word is reached from the original by **sign changes alone**, so it
+carries the same `n` and the same `c`; only `e` moves. Nothing ever needs to
+know how `c` responds to smoothing.
+
+## What that does need, now proved
+
+`components_switch` covered one crossing change. The reduction changes many, so
+the load-bearing statement is that `c` is a function of the **generator sequence
+alone**, blind to every sign at once:
+
+- `gens` — the generator sequence, signs forgotten.
+- `closurePerm_eq_of_gens_eq` — same generator sequence ⇒ same closure
+  permutation, whatever the signs.
+- `components_eq_of_gens_eq` — hence the same `c`.
+- `length_eq_of_gens_eq` — and the same crossing count, leaving `e` as the only
+  quantity the reduction moves.
+
+Sorry-free, zero warnings, axiom-clean (`length_eq_of_gens_eq` needs only
+`propext`). 33 results in the file.
+
+## Remaining for step 2 — now a single item
+
+The **descending predicate and the well-founded reduction**. That is genuinely
+the hard part: it needs the closure traversal (which strand-position follows
+which), and the termination argument that switching the first
+first-met-as-under crossing makes progress. `computations/homfly_skein_braid.py`
+(`first_bad` / `traverse`) already implements exactly this and terminates, so
+the measure exists in executable form and is worth porting rather than
+reinventing.
