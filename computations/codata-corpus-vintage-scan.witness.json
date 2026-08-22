@@ -1,6 +1,6 @@
 {
  "engine": "python-stdlib",
- "computedAt": "2026-08-22T09:49:36.730803+00:00",
+ "computedAt": "2026-08-22T10:06:48.770456+00:00",
  "computation": "codata-corpus-vintage-scan",
  "scriptFile": "codata_corpus_literal_scan.py",
  "description": "Numeric literals in the corpus that are NEAR a NIST CODATA-2022 table value but not equal to it -- the signature of a stale edition. Sites are split into code_sites (executable, the only class that can compute a wrong number), prose_sites (inside a comment or string, inert -- and often the RESULT of a drain recording what it superseded), adjudicated_sites (executable but marked reviewed), and record_sites (witness/audit output). Quote code_sites as the actionable queue, never source_sites, which is their sum and over-states it ~7x. Complements codata_truncation_audit.py, which compares literals against the in-repo codata_constants module and so catches short prefixes but is structurally blind to a full-length literal from an earlier CODATA edition. Reference values are READ from library/allascii.txt, never typed here.",
@@ -11,11 +11,11 @@
  "table_entries": 293,
  "files_scanned": 25192,
  "distinct_literals": 285,
- "total_sites": 1935,
- "source_sites": 436,
- "code_sites": 36,
+ "total_sites": 1931,
+ "source_sites": 432,
+ "code_sites": 23,
  "prose_sites": 388,
- "adjudicated_sites": 12,
+ "adjudicated_sites": 21,
  "record_sites": 1499,
  "findings": [
   {
@@ -445,8 +445,8 @@
    "literal": "206.7682830",
    "table_value": "206.7682827",
    "quantity": "muon-electron mass ratio",
-   "sites": 77,
-   "code_sites": 37,
+   "sites": 73,
+   "code_sites": 33,
    "files": [
     ".claude/skills/local/compute-audit.md",
     "AUDIT-DEEP-2026-05.md",
@@ -487,7 +487,6 @@
     "content/quantum-observable-universe/observations/knot-volumes-verification-table2-data.md",
     "content/quantum-observable-universe/observations/local-substrate-q.lean",
     "content/quantum-observable-universe/observations/local-substrate-q.qa.json",
-    "content/quantum-observable-universe/observations/skein-mass-relation.lean",
     "content/quantum-observable-universe/observations/substrate-consistency-window-table1-data.md",
     "docs/_archive/orphan-top-level/systematic-workplan.md",
     "docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md",
@@ -842,7 +841,7 @@
    "table_value": "206.7682827",
    "quantity": "muon-electron mass ratio",
    "sites": 14,
-   "code_sites": 10,
+   "code_sites": 9,
    "files": [
     "computations/probes/kaon_pion_ratio_7_8_probe.py",
     "computations/xi_ell_phi_q_probe.py",
@@ -983,7 +982,7 @@
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
    "sites": 8,
-   "code_sites": 1,
+   "code_sites": 0,
    "files": [
     "computations/codata_2022_source.py",
     "computations/substrate/experimental_constants.py",
@@ -1376,7 +1375,7 @@
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
    "sites": 4,
-   "code_sites": 4,
+   "code_sites": 3,
    "files": [
     "computations/audits/hardcoded-literal-audit.witness.json",
     "computations/codata_masses.py"
@@ -1387,7 +1386,7 @@
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
    "sites": 4,
-   "code_sites": 4,
+   "code_sites": 3,
    "files": [
     "computations/audits/hardcoded-literal-audit.witness.json",
     "computations/codata_masses.py"
@@ -1398,7 +1397,7 @@
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
    "sites": 4,
-   "code_sites": 4,
+   "code_sites": 3,
    "files": [
     "computations/audits/hardcoded-literal-audit.witness.json",
     "computations/codata_masses.py"
@@ -1409,7 +1408,7 @@
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
    "sites": 4,
-   "code_sites": 4,
+   "code_sites": 3,
    "files": [
     "computations/audits/hardcoded-literal-audit.witness.json",
     "computations/codata_masses.py"
@@ -1601,7 +1600,7 @@
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
    "sites": 2,
-   "code_sites": 2,
+   "code_sites": 1,
    "files": [
     "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
     "qou-mass/tests/test_p2_integration.py"
@@ -1612,7 +1611,7 @@
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
    "sites": 2,
-   "code_sites": 2,
+   "code_sites": 1,
    "files": [
     "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
     "qou-mass/tests/test_p2_integration.py"
@@ -1623,7 +1622,7 @@
    "table_value": "105.6583755",
    "quantity": "muon mass energy equivalent in MeV",
    "sites": 2,
-   "code_sites": 2,
+   "code_sites": 1,
    "files": [
     "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
     "qou-mass/tests/test_p2_integration.py"
