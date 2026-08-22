@@ -1,11 +1,11 @@
 ---
 # qou-mr3q
 title: 'check-sidecars §7c fires on ℕ comparisons: any generic file with ≤ is flagged archimedean'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T19:56:16Z
-updated_at: 2026-08-22T19:56:36Z
+updated_at: 2026-08-22T20:34:58Z
 ---
 
 MEASURED 2026-08-22 on
@@ -47,3 +47,32 @@ checker is the wrong direction. The fix belongs in the JUST pattern —
 require the comparison to involve ℝ, or drop the bare relational operators
 and keep the Real.* / linarith / LinearOrdered / CODATA / MeV signals which
 do indicate archimedean content.
+
+FIXED 2026-08-22 (this branch). scripts/check-sidecars.sh now splits the
+archimedean justification into two strengths:
+
+  STRONG  Real.*, linarith, positivity, nlinarith, LinearOrdered, CODATA, MeV
+          — archimedean wherever they appear
+  WEAK    0 <, < 1, <=, >=  — counted ONLY alongside RTYPE, because '0 < q'
+          is the §7c tell when q : R-real (the §7c table says so) and means
+          nothing when there is no real number in the file
+
+  MIXED is now hasGen && (hasR || hasS); base-ring-minimal keeps the
+  combined test so its behaviour is unchanged.
+
+Measured over all 2063 library .lean files:
+
+                       before   after
+    MIXED                 258     129
+    base-ring-minimal     163     163
+    total flags           421     292
+
+129 files change verdict and every one has hasR=0 — no real number anywhere.
+93 files carrying BOTH a real and a generic ring still report MIXED, so
+nothing that deserves the flag lost it.
+
+The obvious fix was measured first and REJECTED: simply deleting the
+operators from JUST trades 129 fewer MIXED for 143 MORE base-ring-minimal,
+because those files have their real justified only by a bare '0 <'. Net
+flags would have gone 421 -> 435 — worse. Keeping the operators as a WEAK
+signal is exactly what leaves that second branch untouched.
