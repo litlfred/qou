@@ -942,6 +942,8 @@ import QOU.Mathlib.SchenstedMaxCorner
 import QOU.Mathlib.SchenstedShapeRun
 -- RSK inverse, brick 20: addable-cell sequences peel back as corners.
 import QOU.Mathlib.SchenstedAddable
+-- RSK inverse, brick 23: the counting bridge from column-strictness.
+import QOU.Mathlib.SchenstedStandardCount
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
