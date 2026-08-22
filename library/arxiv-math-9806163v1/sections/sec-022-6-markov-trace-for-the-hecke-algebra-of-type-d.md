@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9806163v1
-doc_title: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana"
+doc_title: "Weights of Markov traces on Hecke algebras"
 section_id: sec-022-6-markov-trace-for-the-hecke-algebra-of-type-d
 section_title: "Markov Trace for the Hecke algebra of type D"
 section_number: 6
 pages: 21-22
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
-doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
+doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 The easiest way to study Markov traces on the Hecke algebras of t ype D is by embedding
 these algebras into those for type B, and then applying the results for type B.

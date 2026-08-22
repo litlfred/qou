@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1104.0755v2
-doc_title: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡"
+doc_title: "A connection formula between the Ramanujan function and the q-Airy function"
 section_id: sec-006-42-the-connection-formula-of-the-q-airy-function
 section_title: "The connection formula of the q-Airy function"
 section_number: 4.2
 pages: 10-12
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
-doc_brief: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ — We show a connection formula between two diﬀerent q-Airy func- tions."
+doc_brief: "A connection formula between the Ramanujan function and the q-Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 Applying the q-Borel transformation in 4.1 to the equation (7) and using
 lemma 6, we obtain the ﬁrst order q-diﬀerence equation

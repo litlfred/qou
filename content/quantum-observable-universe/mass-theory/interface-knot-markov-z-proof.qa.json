@@ -1359,6 +1359,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not phenomenologically fit.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.105Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "\"none is an independent input or a fit\" and \"determined structurally by the canonical-braid construction, not phenomenologically fit\" are substantive epistemic scoping of exactly the kind the corpus wants kept."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.139Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1428,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "12 stylistic spaced dashes in 418 words (2.87/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.179Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "Seven em-dashes but three are true parenthetical pairs (the \"topmost\" aside, the three-factor list, the constit-factor aside); only \"Max rel. err. ... ~10^{-15} -- exact at f64 precision\" appends a clause, and that clause has a separate, larger problem."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 418 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.225Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "\"all three per-interface factors -- z, z-h, z-h/2\" enumerates three factors the proof actually derives."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.269Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Closes on a display equation."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.307Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1565,22 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.341Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "The \"Structural reading\" section re-derives the two factors already proved, but it is a labelled interpretive section and adds the p_+/p_- census reading."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.393Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1634,23 @@
         "reviewed_at": "2026-08-15T10:31:00.374Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.490Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "\"Max rel. err. across all 4 atoms: ~10^{-15} -- **exact at f64 precision**.\" Agreement at 1e-15 in float64 is the FLOOR of the arithmetic, not evidence about the mathematics, and AGENTS.md forbids reporting such agreement as \"exact\" in as many words. Reinforced by \"equals the Markov parameter z exactly\" in the title and \"factor z exactly\" / \"factor z - h exactly\" in the structural reading.",
+        "notes": "NOT fixed (the phrase is a precision claim, not prose). Proposed fix: \"Max rel. err. across all 4 atoms: ~1e-15, which is the resolution floor of the float64 arithmetic used and cannot distinguish exact agreement from a discrepancy below that scale.\" The identity itself IS exact as an algebraic consequence of the Markov axiom, so the theorem survives; only the numerical wording overclaims."
       }
     ],
     "trap-nonspeakable": [
@@ -1532,6 +1671,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "ad726a9c21db",
+          "ts": "6a6a98f2db63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:01.529Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "The section heading \"### categorical verification (4 atoms, exact representation Rust kernel)\" does not parse -- \"exact representation Rust kernel\" is a four-noun chain with no head, and the lower-case \"categorical\" reads as a substituted token. The body then says \"Computed via **the canonical formalism** using pyhecke_native\", where a script name plainly belonged.",
+        "notes": "NOT fixed (the original tokens cannot be recovered from context). Proposed fix: \"### Numerical verification (4 atoms, exact-arithmetic Rust kernel)\" and name the producing script in place of \"the canonical formalism\". SEPARATE FINDINGS, all recomputed at 25 dps against the proton pin q_0 = 1.1099785827513808 (h = 0.2090602988). (1) CONVENTION C, LOAD-BEARING, THE WHOLE TABLE. The closing display states z = 1/(q^{1/2} + q^{-1/2}), an excised convention-C spelling; z_C = 0.4993203342 while canonical z_D = q^3/(q^2+1) = 0.6126880371. Every row of the verification table reproduces z_C and only z_C: D z = 0.49932033 (C) vs 0.61268804 (D); T z(z-h) = 0.14493274 (C) vs 0.24729789 (D); 3He z^2 = 0.24932080 (C) vs 0.37538663 (D); 4He z^2(z-h) = 0.07236786 (C) vs 0.15151646 (D). The table matches the block to all eight quoted digits under C and is off by 23% to 110% under D, so this is not a cosmetic z-substitution -- the \"verification\" does not survive the canonical convention and must be re-derived. (2) SWEEP DAMAGE, DELETED TOKEN: \"This locks 's interface-knot factorisation as *derivation-grade*\" -- a possessive with nothing in front of it. (3) The Markov axiom is overstated: the display asserts tr_M(alpha sigma_g) = z tr_M(alpha) \"for all alpha in H_n(q)\" for a GENERIC interface generator sigma_g, whereas the axiom holds for the topmost generator with alpha in the subalgebra below it. The prose aside (\"each one is topmost relative to the constituent sub-braid below it\") is the real hypothesis and belongs in the displayed statement. (4) VERIFIED CORRECT: the skein sigma^{-1} = sigma - h follows from sigma^2 = h sigma + 1; sigma_bar = (sigma + sigma^{-1})/2 = sigma - h/2 is right; and the per-atom interface census is consistent with the producer -- gens sigma_3, sigma_6, sigma_9 are the 1-based rendering of the 0-based \"gen 3k+2\" in mass_at_3A_proper.atom_braid_word_3A, matching prop:he4-two-row-dominance (\"pp at gen 2, pn at gen 5, nn at gen 8\"), and the p/n compositions of D, T, 3He and 4He are all correct."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1554,5 +1710,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:39:01.529Z"
 }

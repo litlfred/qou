@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2009.03688v6
-doc_title: "E8-singularity, invariant theory and modular forms Lei Yang"
+doc_title: "E8-singularity, invariant theory and modular forms"
 section_id: sec-034-5-q18-and-e20-singularities-from-cy-sl2-13-over
 section_title: "Q18 and E20-singularities from CY /SL(2, 13) over"
 section_number: 5
 pages: 42-46
 source_pdf: 2009.03688v6.pdf
 source_sha256: 8eb9b4cbe2690730
-doc_brief: "E8-singularity, invariant theory and modular forms Lei Yang — As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular"
+doc_brief: "E8-singularity, invariant theory and modular forms — As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve"
 ---
 X(13) and variations of Q18 and E20-singularity
 structures over X(13)

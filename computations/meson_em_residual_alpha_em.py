@@ -44,11 +44,17 @@ def main():
     # Framework α_em: BARE LO is q·[9]_q·[10]_q = 136.823 (0.16% off CODATA).
     # The CS-corrected form (em-coupling-chern-simons.md) is
     # α⁻¹ = q·[9]_q·[10]_q · (1 + δ_CS + δ_CS²·κ),
-    # which at q₀ with Witten κ=1.722 gives 137.035944 vs CODATA 137.035999
-    # — a 399 ppb derived prediction. We use the CS-corrected value as
-    # the framework's α_em.
+    # which at the proton-pinned q₀ with the EXACTLY RESUMMED tower gives
+    # 137.0359350939756 vs CODATA 137.035999177 — a 468 ppb derived
+    # prediction. (The long-quoted "399 ppb" belongs to the superseded
+    # muon-anchor, truncated-tower literal 137.035944; it understated the
+    # residual by 15%.) We use the derived value as the framework's α_em.
     alpha_em_inv_LO = q * q_int(9, q) * q_int(10, q)
-    alpha_em_inv = mp.mpf("137.035944")  # CS-corrected with Witten κ
+    # DERIVED, not copied -- see meson_em_sinh_closed_form.alpha_em_inv_derived.
+    # Was mp.mpf("137.035944"): the MUON-anchor, truncated-tower value from
+    # before the 2026-05-28 proton re-pin, 65.0 ppb from the current pin.
+    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
+    alpha_em_inv = alpha_em_inv_derived(q)
     alpha_em = 1 / alpha_em_inv
 
     print("=" * 70)
@@ -184,8 +190,9 @@ def main():
     full_prediction = prod_34 + alpha_em/mp.pi * (1 + hbar_q - hbar_q**2/2)
     full_miss_ppm = float((full_prediction - ratio_sq)/ratio_sq) * 1e6
 
-    print(f"  • Framework α_em (CS-corrected, Witten κ): α⁻¹ = 137.035944")
-    print(f"    vs CODATA 137.035999 — derived to 399 ppb.")
+    print(f"  • Framework α_em (CS tower, exactly resummed, Witten κ): "
+          f"α⁻¹ = {mp.nstr(alpha_em_inv, 16)}")
+    print(f"    vs CODATA 137.035999177 — derived to 468 ppb.")
     print(f"  • LO (α/π)·m_π² misses the 49.5 MeV² residual by 9%.")
     print(f"  • (α/π)·m_π²·(1+ℏ_q) [LO Planck truncation]: 0.46% miss.")
     print(f"  • (α/π)·m_π²·(1+ℏ_q − ℏ_q²/2) [next sinh-channel term, =")

@@ -38,7 +38,7 @@ This file does **not** re-prove RSZ and claims no Stokes multiplier. It fixes th
 §7c: `ℤ`-valued slopes and ranks; pure arithmetic, nothing archimedean.
 Sorry-free.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
 -- Ref: [manuscript] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

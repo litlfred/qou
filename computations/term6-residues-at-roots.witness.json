@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-22T14:50:10.110847+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-21T15:05:51.429319+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 87,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
-  "scriptHash": "7d19a23ce84b",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "2283a3b86463",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,7 @@
   "description": "Term 6 of thm:six-term-mass-formula-complete via partial-fraction polar split on the u-plane lift tr_M(u²): tr_M(u²) = entire(u) + A(u)/u^k + B(u)/Dprime(u), with Term 6 = B(u₀)/Dprime(u₀) the principal-part contribution at non-zero poles only.  This split avoids per-pole residue extraction; sp.div + one sp.series-based power-series inversion deliver the answer in seconds where sp.residue scaled polynomially in atom size and timed out at deuteron.  Evaluation enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q^{1/2}.",
   "contentBlock": "thm:six-term-mass-formula-complete",
   "parameters": {
-    "q0": "1.1099785955573347",
+    "q0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "method": "partial_fraction_split_u_plane"
   },
   "data": {
@@ -36,16 +36,16 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "tr_M_u_symbolic_ops": 60,
-        "denom_pole_order_at_zero": 19,
-        "denom_factor_no_zero": "4*(u**2 + 1)**2",
+        "tr_M_u_symbolic_ops": 61,
+        "denom_pole_order_at_zero": 18,
+        "denom_factor_no_zero": "4*(u**4 + 1)**2",
         "closed_form_pole_order": null,
         "closed_form_match": null,
-        "entire_at_u0": "(0.25648952714454054+0j)",
-        "pp_at_zero_at_u0": "(-1.1123190037334623+0j)",
-        "pp_at_roots_at_u0": "(1.9211357052020888+0j)",
-        "term6_at_q0": "(1.9211357052020888+0j)",
-        "term6_at_q0_real": 1.9211357052020888,
+        "entire_at_u0": "(2.023403942037746+0j)",
+        "pp_at_zero_at_u0": "(-0.8517941645329082+0j)",
+        "pp_at_roots_at_u0": "(-0.025850085047537143+0j)",
+        "term6_at_q0": "(-0.025850085047537143+0j)",
+        "term6_at_q0_real": -0.025850085047537143,
         "term6_at_q0_imag": 0.0,
         "atom": "proton"
       },
@@ -53,16 +53,16 @@
         "Z": 0,
         "N": 1,
         "A": 1,
-        "tr_M_u_symbolic_ops": 58,
-        "denom_pole_order_at_zero": 19,
-        "denom_factor_no_zero": "4*(u**2 + 1)**2",
+        "tr_M_u_symbolic_ops": 59,
+        "denom_pole_order_at_zero": 18,
+        "denom_factor_no_zero": "4*(u**4 + 1)**2",
         "closed_form_pole_order": null,
         "closed_form_match": null,
-        "entire_at_u0": "(-0.6094578550657522+0j)",
-        "pp_at_zero_at_u0": "(-0.8623830100063589+0j)",
-        "pp_at_roots_at_u0": "(2.3950741622582643+0j)",
-        "term6_at_q0": "(2.3950741622582643+0j)",
-        "term6_at_q0_real": 2.3950741622582643,
+        "entire_at_u0": "(1.389078710670847+0j)",
+        "pp_at_zero_at_u0": "(-0.40133502255503745+0j)",
+        "pp_at_roots_at_u0": "0j",
+        "term6_at_q0": "0j",
+        "term6_at_q0_real": 0.0,
         "term6_at_q0_imag": 0.0,
         "atom": "neutron"
       },
@@ -71,31 +71,31 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2)"
+        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(q - 1)**2/12 + 1/2)"
       },
       {
         "atom": "tritium",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2)"
+        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(q - 1)**2/12 + 1/2)"
       },
       {
         "atom": "helium-3",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2)"
+        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(q - 1)**2/12 + 1/2)"
       },
       {
         "atom": "helium-4",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(1 + (q - 1)**3/q**3)*(q - 1)**2/12 + 1/2)"
+        "error": "ValueError: LaurentQ.from_sympy: non-Laurent factor -(1 - 1/q**4)*(q - 1)**2/12 + 1/2 in (-q + 1/q)*(-(1 - 1/q**4)*(q - 1)**2/12 + 1/2)"
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0405126v1
-doc_title: "ASYMPTOTIC BEHA VIORS OF THE COLORED JONES POL YNOMIALS OF A TORUS KNOT HITOSHI MURAKAMI"
+doc_title: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT"
 section_id: sec-006-references
 section_title: "References"
 section_number: null
 pages: 6-7
 source_pdf: 0405126v1.pdf
 source_sha256: 713498dbe80f7319
-doc_brief: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT HITOSHI MURAKAMI — W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots."
+doc_brief: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots. Contrary to the works by R. Kashaev, O."
 ---
 [1] D. Bar-Natan and S. Garoufalidis, On the Melvin-Morton-Rozansky conjecture , Invent. Math.
 125 (1996), no. 1, 103–133.

@@ -96,3 +96,51 @@ The candidate space for the argument map is further narrowed **by proof**:
 - **A4 — coordinate on W2** [zero-cost]. The theta-valued Birkhoff
   connection-matrix computation (W2 lineage, qou-vkg5) may output the phase
   as connection data; watch that front, do not duplicate it.
+
+## 2026-08-19 Arc review — two premises moved under this bean (both verified here)
+
+**1. "Q_β is the bar-odd sinh partner" is MEASURED FALSE at the level of the
+object the framework computes** (`b848d0a12`, sibling `qou-cds1`; I re-read the
+commit rather than take the survey's word). For `Q_A = m_e|q²−2q−1|(q+1)/2q³`,
+at 40 dps both anchors:
+
+    Q_A/m_e at q = 1.5335566273012 ; at 1/q = 2.5868438911015
+    bar(Q_A)/Q_A = 1.686826456258      (bar-odd needs −1; bar-even +1)
+
+Neither, and not marginally. The commit names four corpus sites carrying the
+contradicted sentence — **including AGENTS.md's c_k banner**. Scope: this does
+NOT refute a bar-odd closed form for c₃; it removes the *premise* that the
+computed Q_β supplies one. **This bean may no longer cite "Q_β is bar-odd" as
+given.** Correction of the sites is `qou-cds1`'s to land (they enumerated them);
+do not duplicate.
+
+Compounding it: registry §9h Correction 2 — the ε-parity is convention-immune
+(470× reframing verified) but is **not** evidence for bar-oddness; the chain is
+Schwarz reflection, and bar-EVEN Q_A has the identical ε-parity.
+
+**2. The anchor-dependence is in the BRIDGE, and the bridge changes sign**
+(`2b9a89d96`, sibling `qou-qiw9`; verified). With `S = h·D(ũ)` as KC21's
+schematic identity, both evaluations already committed:
+
+    carrier h·D   −0.003486062405593 / −0.0034860636358261   rel. var 3.53e-7
+    empirical S   −0.0394593643      / +0.009682977798       rel. var 1.245
+    B := S/(h·D)  +11.319            / −2.778                SIGN CHANGE
+
+The ladder is anchor-blind at 1e-7 while S swings by 1.245. **Any route that
+explains the swing FROM the ladder is looking where the signal provably is
+not** — and no positive rescaling, normalisation, or scalar convention of the
+carrier reaches S at both anchors, because the factor changes sign.
+
+**Convergence with this Arc's own E1/E1b result (recorded because the two
+fronts arrived at the same shape independently).** E1 refuted the linear bridge
+`u = c·b` at order b⁴; E1b refuted the 2-term odd bridge at b⁶ with zero free
+parameters. That is the Ohtsuki-quantum ↔ NZ-geometric bridge; `qou-qiw9`'s is
+the ladder-carrier ↔ empirical-S bridge. Different bridges — but the same
+finding twice: **a hoped-for simple relation between a well-behaved
+fibre-level object and an anchor-dependent observable fails structurally, not
+by a small factor.** Both point at the fibre→observable functor content as the
+locus, consistent with the standing Im(q) fibre-vs-observable framing. Neither
+is evidence for the other; they are independent instances of one shape.
+
+**Ownership**: `qou-qiw9` (sibling, todo, 08-19) now owns the bridge question
+and overlaps this bean directly. Coordinate before any bridge-side probe here.

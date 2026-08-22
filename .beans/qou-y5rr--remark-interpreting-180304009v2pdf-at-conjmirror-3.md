@@ -3,8 +3,9 @@
 title: Remark interpreting 1803.04009v2.pdf at conj:mirror-3d-3d-correspondence
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T23:36:09Z
-updated_at: 2026-08-08T23:36:09Z
+updated_at: 2026-08-21T17:05:09Z
 ---
 
 The T^DGG-realises-only-a-subset-of-flat-connections caveat should be stated in the folio rather than left implicit, since the conjecture's whole content is an equality of partition functions. NOT proposed as aid-proof: the enhancement criterion is stated for one torus boundary and B_3 has three cusps, so its applicability to the corpus's manifold is unchecked.
@@ -21,3 +22,10 @@ Source: `library/arxiv-1803.04009v2/1803.04009v2.pdf` — no `references.ts` ent
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1803.04009v2/  ->  [arxiv-1803.04009v2]
+  Symmetry enhancement and closing of knots in 3d/3d correspondence
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [arxiv-1803.04009v2] as the citation key when you do it.

@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.937Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-negation-contrast constructions present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.984Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-rhetorical-pivot constructions present."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.030Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-em-dash constructions present."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.073Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-compulsive-triple constructions present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.113Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-closing-aphorism constructions present."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.154Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-meta-commentary constructions present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.194Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-thesis-restatement constructions present."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.234Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-performed-warmth constructions present."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1503,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.273Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-superlative-inflation constructions present."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1537,21 @@
         "reviewed_at": "2026-08-15T10:30:59.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c920c317da7e",
+          "ts": "1296f79e957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:54.316Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (remark, 4 labelled operations; 'provides a categorical model for hadron scattering' is substantive); no trap-nonspeakable-syntax constructions present."
       }
     ],
     "wall-base-ring-minimal": [

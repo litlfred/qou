@@ -3,12 +3,12 @@
   "description": "Numerical \u211a(\u221a\u22123) identification of the 4\u2081 resurgence-action saddle coefficients is entropy-blocked (divergent series + fit contamination); exact route = Ohtsuki saddle recursion.",
   "audit_only": true,
   "tier": "numerical (decisive negative)",
-  "computedAt": "2026-07-11T21:57:48.513954+00:00",
-  "commitSha": "f903c9409484ea8735b249746690b449d46804dc",
+  "computedAt": "2026-08-21T14:58:12.206182+00:00",
+  "commitSha": "8ba73cc915af09920d0345ede34ec1de63f65bbe",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_action_qsqrt3_saddle_probe.py",
-  "scriptHash": "67c4eaeec496",
+  "scriptHash": "c761b54eb480",
   "assertions": [
     {
       "name": "vol41_recovered",
@@ -34,14 +34,14 @@
       "1208656.02861"
     ],
     "c_ratios": [
-      1.3191268103516762,
-      3.630957616624255,
-      4.93299724395253,
-      6.463824211563377,
-      7.9969881190687575,
-      9.545155599717159,
-      10.528055811655332,
-      17.768776085607925
+      "1.31912681035",
+      "3.63095761662",
+      "4.93299724395",
+      "6.46382421156",
+      "7.99698811907",
+      "9.54515559972",
+      "10.5280558117",
+      "17.7687760856"
     ],
     "any_rational_identified": false,
     "verdict": "REFUTED (scope-(a)): the \u211a(\u221a\u22123) saddle arithmetic of the 4\u2081 resurgence action is NOT recoverable by PSLQ on the numerical Kashaev-ladder coefficients. No c_m (m=1..9) is a clean rational under any tested torsion normalization 3^{a\u00b7m}. Two structural reasons: (1) c_m is a divergent resurgent series with factorial growth c_m ~ m!/A^m (A \u2248 0.688, the Borel singularity of #3508) \u2014 the rescaled c_m\u00b7m!\u00b7(2\u03c0)^m explodes past PSLQ's reach; (2) high-m fit coefficients are precision-contaminated. Same entropy-block class as the c_k PSLQ (#3536 P4). \u211a(\u221a\u22123) IS the 4\u2081 invariant trace field (arithmetic home; classical, not in doubt), but the exact coefficients need the Ohtsuki state-integral saddle recursion, NOT a numerical fit. No fit; no c_k value; no wiring; no tier change."

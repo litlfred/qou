@@ -7,7 +7,7 @@ section_number: null
 pages: 23-27
 source_pdf: 0808.1533v1.pdf
 source_sha256: 85bb9732afdd70ea
-doc_brief: "The third order helicity of magnetic fields via link maps. R. Komendarczyk ∗† — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us"
+doc_brief: "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a"
 duplicate_of: "arxiv-0808.1533v3"
 ---
 In this section we indicate how the quantity H123(X; T ) invariant under frozen-in-ﬁeld defor-

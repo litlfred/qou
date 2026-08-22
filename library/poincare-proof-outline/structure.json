@@ -10,7 +10,7 @@
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry",
+  "title": "Formalization of the Poincare disc model of hyperbolic geometry",
   "authors_raw": "February 6, 2026",
   "abstract": "We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [ 6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).",
   "docinfo": {
@@ -23,7 +23,8 @@
   "title_lines": [
    "Poincaré Disc Model",
    "Danijela Simić Filip Marić Pierre Boutry"
-  ]
+  ],
+  "title_prev": "Poincaré Disc Model Danijela Simić Filip Marić Pierre Boutry"
  },
  "toc": [
   {

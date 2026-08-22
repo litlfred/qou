@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9805023v1
-doc_title: "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL"
+doc_title: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations"
 section_id: sec-003-2-unηpv-t-1
 section_title: "Un(ηp)V t− 1"
 section_number: 2
 pages: 7-10
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
-doc_brief: "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
+doc_brief: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment probl em."
 ---
 m (ηp)(−√ct− 1)Resx=η p
 1

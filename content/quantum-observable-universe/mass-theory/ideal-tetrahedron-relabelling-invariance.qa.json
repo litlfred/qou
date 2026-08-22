@@ -1,0 +1,177 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.089Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Four near-contrasts, all substantive and load-bearing: \"if it is not, the formula is measuring the labelling rather than the geometry\"; \"carries the second edge parameter of y_1, not y_1 itself\"; \"a theorem rather than a coincidence\"; \"the earlier agreement is explained rather than relied upon\". Each marks a real distinction the block exists to draw."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.129Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.169Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "One em-dash, introducing the correction about the middle tetrahedron."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.211Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No reflex list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.248Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Closes on a technical statement about a vanishing derivative."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.289Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.368Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "The \"Where this is load-bearing\" section adds the 5_2 application; the law-of-sines section adds a new identity."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.402Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.485Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No inflation; the block is candid about a prior model that \"obtained the right total for a reason it did not state\"."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e26bdfbc5ab7",
+          "ts": "12476e664d69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:39:00.517Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Reads aloud cleanly.",
+        "notes": "VERIFIED, all correct. The two composition identities check symbolically: 1/(1 - 1/(1-z)) = (1-z)/(-z) = 1 - 1/z, and 1 - (1-z) = z, so z -> 1/(1-z) does cycle the three edge parameters as claimed. The volume claim follows since vol = Lambda(theta_1) + Lambda(theta_2) + Lambda(theta_3) is cycle-symmetric -- and note the block uses Lambda correctly here (the Lobachevsky form of the ideal-tetrahedron volume), so this is not an instance of the Lambda-vs-Cl_2 guard. The 5_2 consequence also checks: D is invariant on the cyclic orbit {z, 1/(1-z), 1-1/z}, so shapes (y_1, 1/(1-y_1), y_1) sum to 3 D(y_1). The law of sines |z| = sin(theta_2)/sin(theta_3) is the standard relation. Minor notation nit: the modulus is written with a double bar, ||z||, where |z| is meant."
+      }
+    ]
+  },
+  "updated_at": "2026-08-21T16:39:00.517Z"
+}

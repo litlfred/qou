@@ -1,4 +1,4 @@
-We set out the epistemic status of the $\mathfrak{Q}_\beta$ truncation coefficients. It designates which rung is proved, near-matched, or calibration-anchored, ensuring their open status is explicit and checkable.
+The $\mathfrak{Q}_\beta$ truncation coefficients differ in epistemic status. The tiering below records, for each rung, whether it is proved, near-matched, or calibration-anchored, so that its open status is explicit and checkable.
 
 The $\mathfrak{Q}_\beta$ categorical precision ladder expresses the neutron $\beta$-decay $Q$-value substrate prediction as a convergent product of correction rungs around a Form-A baseline:
 
@@ -7,7 +7,7 @@ $$
   \qquad u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852,
 $$
 
-with $b$ the Hoefsmit off-diagonal coupling on the seminormal $V_{(2,1)}$ representation and $\hbar_q = (q-1)/q$. Because $u \approx 0.00852$, each rung adds roughly $\log_{10}(1/u) \approx 2.07$ decimal digits. The target precision fixes the truncation order $N$: $N \geq \log_{10}(1/\varepsilon)/2.07 - 1$. Target precision, not a canonicity criterion, determines $N$.
+with $b$ the Hoefsmit off-diagonal coupling on the seminormal $V_{(2,1)}$ representation and $\hbar_q = (q-1)/q$. Because $u \approx 0.00852$, each rung adds roughly $\log_{10}(1/u) \approx 2.07$ decimal digits. The target precision fixes the truncation order $N$: $N \geq \log_{10}(1/\varepsilon)/2.07 - 1$; $N$ is a precision setting rather than a criterion for whether a rung is canonical.
 
 The status of the rung coefficients $c_k$ is **tiered**:
 
@@ -17,4 +17,4 @@ The status of the rung coefficients $c_k$ is **tiered**:
 
 **Conjecture (open).** *For every $k \geq 3$ there exists a canonical, substrate-only, $q_0$-anchor-independent closed form for the truncation coefficient $c_k$ — a genuine Taylor coefficient of a single underlying $q$-series (a Habiro element) rather than a calibration-anchored near-match.*
 
-This conjecture outlines the requirement for closure. The expected mechanism mirrors the $\alpha_{\mathrm{EM}}$ next-order factor resolution: identify the $\mathfrak{Q}_\beta$ **Habiro element**, the $q$-series whose Taylor coefficients are the $c_k$. Such an element would make each $c_{k\geq 3}$ exact and anchor-independent, convert the per-rung magnitude $|c_{N+1}\,u^{N+1}|$ into a rigorous arbitrary-order truncation bound, and elevate the precision-order formula $N(\varepsilon)$ from heuristic to derivation. Until then, higher rungs serve as a calibration record, not a prediction.
+The expected mechanism mirrors the $\alpha_{\mathrm{EM}}$ next-order factor resolution: identify the $\mathfrak{Q}_\beta$ **Habiro element**, the $q$-series whose Taylor coefficients are the $c_k$. Such an element would make each $c_{k\geq 3}$ exact and anchor-independent, convert the per-rung magnitude $|c_{N+1}\,u^{N+1}|$ into a rigorous arbitrary-order truncation bound, and elevate the precision-order formula $N(\varepsilon)$ from heuristic to derivation. Until then, higher rungs serve as a calibration record, not a prediction.

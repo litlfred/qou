@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0104249v1
-doc_title: "IRRA TIONALITY OF V ALUES OF ZET A-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive pr"
+doc_title: "Irrationality of values of the zeta-function"
 section_id: sec-003-3-analytic-construction-we-ﬁx-positive-odd-param
 section_title: "Analytic construction. We ﬁx positive odd parameters a,b,c such thatc ≥ 3,"
 section_number: 3
 pages: 2-4
 source_pdf: 0104249v1.pdf
 source_sha256: c2fcdefc73b8df24
-doc_brief: "IRRATIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥ 3 is one of the most attractive problems in number theory"
+doc_brief: "Irrationality of values of the zeta-function — 21 sections: W. ZUDILIN; Introduction. The irrationality of; Main results. In this note we gene"
 ---
 a>b (c − 1), and for each positive integer n consider the rational function
 R(t) = Rn(t) :=

@@ -1,0 +1,3705 @@
+{
+ "engine": "python-stdlib",
+ "computedAt": "2026-08-22T09:20:45.556906+00:00",
+ "computation": "codata-corpus-vintage-scan",
+ "scriptFile": "codata_corpus_literal_scan.py",
+ "description": "Numeric literals in the corpus that are NEAR a NIST CODATA-2022 table value but not equal to it -- the signature of a stale edition. Sites are split into code_sites (executable, the only class that can compute a wrong number), prose_sites (inside a comment or string, inert -- and often the RESULT of a drain recording what it superseded), adjudicated_sites (executable but marked reviewed), and record_sites (witness/audit output). Quote code_sites as the actionable queue, never source_sites, which is their sum and over-states it ~7x. Complements codata_truncation_audit.py, which compares literals against the in-repo codata_constants module and so catches short prefixes but is structurally blind to a full-length literal from an earlier CODATA edition. Reference values are READ from library/allascii.txt, never typed here.",
+ "q0Anchor": "not-applicable",
+ "q0AnchorReason": "String/lexical scan of source text against the NIST table. No substrate quantity is evaluated, so no q0 pin is involved.",
+ "near_threshold_relative": "1e-05",
+ "min_significant_digits": 7,
+ "table_entries": 293,
+ "files_scanned": 25183,
+ "distinct_literals": 285,
+ "total_sites": 1948,
+ "source_sites": 449,
+ "code_sites": 61,
+ "prose_sites": 382,
+ "adjudicated_sites": 6,
+ "record_sites": 1499,
+ "findings": [
+  {
+   "literal": "938.27208816",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 343,
+   "code_sites": 295,
+   "files": [
+    "computations/alpha/three-term-wedderburn.witness.json",
+    "computations/atomic_mass_via_rho_k.py",
+    "computations/audits/canonical_a_k_magnitude_audit.py",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/audits/proton-m_e-anomaly-audit.witness.json",
+    "computations/audits/rho-k-proton-substrate-audit.witness.json",
+    "computations/binding-K-direct.witness.json",
+    "computations/build-six-term-substrate-model-b.witness.json",
+    "computations/catalan-binding.witness.json",
+    "computations/categorical-q-decay-ba-low-isotopes.witness.json",
+    "computations/codata-masses.witness.json",
+    "computations/codata-reconciliation.witness.json",
+    "computations/codata-registry-triangulation.witness.json",
+    "computations/codata_2022_source.py",
+    "computations/codata_masses.py",
+    "computations/codata_registry_triangulation_probe.py",
+    "computations/compute-audit-scan.witness.json",
+    "computations/compute_audit_scan.py",
+    "computations/delta-lambda-2row-stratum.witness.json",
+    "computations/delta_lambda_2row_stratum_analysis.py",
+    "computations/delta_lambda_empirical_tabulation.py",
+    "computations/e0-calibration-audit.witness.json",
+    "computations/e0-lambda-composite.witness.json",
+    "computations/flavor-dressed-mass-from-substrate-split.witness.json",
+    "computations/geom-leading-alt-q-locality-probe.witness.json",
+    "computations/implied-h2-coefficient-audit-50dps.witness.json",
+    "computations/implied_h2_coefficient_audit_50dps.py",
+    "computations/iterative-lp-dual-levels.witness.json",
+    "computations/lambda-scale-proof-step5-skein-anchor.witness.json",
+    "computations/lambda-scale-refinements-composed-predictions.witness.json",
+    "computations/m-p-substrate-identity-50dps.witness.json",
+    "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
+    "computations/markov/markov_trace_axiomatic_multi_atom.py",
+    "computations/markov/script-qa/markov_trace_axiomatic_multi_atom.script-qa.json",
+    "computations/me_additive_term_structure.py",
+    "computations/meson_mass_from_hecke.py",
+    "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
+    "computations/multi-layer-gap-decomposition.witness.json",
+    "computations/neutron-error-diagnostic.witness.json",
+    "computations/option-b-proton-mass-full-chain.witness.json",
+    "computations/per-knot-density-borromean-h4-probe.witness.json",
+    "computations/per-knot-density-borromean-q-locality-probe.witness.json",
+    "computations/per-knot-density-per-block-wiring.witness.json",
+    "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json",
+    "computations/probes/baseline_comparison_probe.py",
+    "computations/probes/delta-lambda-m-pi-constraint-probe.witness.json",
+    "computations/probes/delta_lambda_m_pi_constraint_probe.py",
+    "computations/probes/flavor-split-alpha-qbeta-amplification.witness.json",
+    "computations/probes/flavor-split-substrate-probe.witness.json",
+    "computations/probes/flavor_split_3strand_derivation_probe.py",
+    "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
+    "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
+    "computations/probes/flavor_split_alpha_qbeta_amplification_probe.py",
+    "computations/probes/flavor_split_geometric_closure_probe.py",
+    "computations/probes/flavor_split_partial_derivation_probe.py",
+    "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-L1-light-series-probe.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json",
+    "computations/probes/probe_mup_dressing_attribution.py",
+    "computations/probes/probe_mup_dressing_vs_even_kernel.py",
+    "computations/probes/probe_trace_convention_production_impact.py",
+    "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json",
+    "computations/probes/xq_ratio_function_probe.py",
+    "computations/proton-mass-50dps.derivation.json",
+    "computations/proton-mass-codata-50dps.witness.json",
+    "computations/proton-mass-full-tower-50dps.witness.json",
+    "computations/proton-residual-rootcause.witness.json",
+    "computations/q_dirac_linking_weight_extended_50dps.py",
+    "computations/qbeta/qbeta-1ppq-achieved.witness.json",
+    "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
+    "computations/qbeta/script-qa/qbeta_1ppq_achieved.script-qa.json",
+    "computations/reading-a-residual-at-50dps.witness.json",
+    "computations/reading_a_residual_at_50dps.py",
+    "computations/rho-k-leading-order-verification.witness.json",
+    "computations/substrate/experimental_constants.py",
+    "computations/substrate/script-qa/experimental_constants.script-qa.json",
+    "computations/three-term-wedderburn.witness.json",
+    "computations/vhat-std-vs-full-tower-compare.witness.json",
+    "computations/vol-density-borromean-h4-probe.witness.json",
+    "computations/vol-density-borromean-q-locality-probe.witness.json",
+    "computations/vol-density-per-block-wiring.witness.json",
+    "content/bib-qa-verifications.json",
+    "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
+    "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean",
+    "content/quantum-observable-universe/lean/QOU/Substrate/ProtonMassSubstrateIdentity.lean",
+    "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean",
+    "content/quantum-observable-universe/lean/QOU/scratch_pmass.lean",
+    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean",
+    "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean",
+    "content/values/registry.ts",
+    "docs/audits/2026-05-08-rho-k-mass-table-audit.md",
+    "docs/audits/2026-05-09-proton-m_e-anomaly.md",
+    "docs/audits/2026-05-17-m-p-chain-closure-gap-analysis.md",
+    "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
+    "docs/audits/2026-05-23-codata-precision-audit.md",
+    "docs/audits/2026-05-30-conjecture-closure-session-audit.md",
+    "docs/audits/2026-06-01-vhat-std-channel-fix.md",
+    "docs/audits/2026-06-16-audit-violation-triage.md",
+    "docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md",
+    "docs/audits/2026-08-09-codata-registry-vintage-straddle.md",
+    "docs/audits/scripts/qbeta_derived_ladder_tiers_probe.py",
+    "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md",
+    "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py",
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z01.witness.json",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json",
+    "tools/qou-substrate/python/qou_substrate/constants.py"
+   ]
+  },
+  {
+   "literal": "939.56542052",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 168,
+   "code_sites": 143,
+   "files": [
+    "computations/alpha/three-term-wedderburn.witness.json",
+    "computations/atomic_mass_via_rho_k.py",
+    "computations/audits/canonical_a_k_magnitude_audit.py",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/binding-K-direct.witness.json",
+    "computations/build-six-term-substrate-model-b.witness.json",
+    "computations/catalan-binding.witness.json",
+    "computations/categorical-q-decay-ba-low-isotopes.witness.json",
+    "computations/codata-masses.witness.json",
+    "computations/codata_2022_source.py",
+    "computations/codata_masses.py",
+    "computations/delta-lambda-2row-stratum.witness.json",
+    "computations/delta_lambda_2row_stratum_analysis.py",
+    "computations/delta_lambda_empirical_tabulation.py",
+    "computations/e0-calibration-audit.witness.json",
+    "computations/e0-lambda-composite.witness.json",
+    "computations/flavor-dressed-mass-from-substrate-split.witness.json",
+    "computations/iterative-lp-dual-levels.witness.json",
+    "computations/lambda-scale-proof-step5-skein-anchor.witness.json",
+    "computations/lambda-scale-refinements-composed-predictions.witness.json",
+    "computations/m-p-substrate-identity-50dps.witness.json",
+    "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
+    "computations/markov/markov_trace_axiomatic_multi_atom.py",
+    "computations/markov/script-qa/markov_trace_axiomatic_multi_atom.script-qa.json",
+    "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
+    "computations/multi-layer-gap-decomposition.witness.json",
+    "computations/neutron-error-diagnostic.witness.json",
+    "computations/per-knot-density-per-block-wiring.witness.json",
+    "computations/probes/flavor-split-substrate-probe.witness.json",
+    "computations/probes/flavor_split_3strand_derivation_probe.py",
+    "computations/probes/flavor_split_partial_derivation_probe.py",
+    "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-L1-light-series-probe.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json",
+    "computations/probes/path-b-defect-binding-probe.witness.json",
+    "computations/probes/path-b-habiro-mass-probe.witness.json",
+    "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json",
+    "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
+    "computations/rho-k-h3a-co-casimir.witness.json",
+    "computations/rho-k-h3a-crystal.witness.json",
+    "computations/rho-k-h3a-lp-dual.witness.json",
+    "computations/rho-k-h3a-refinement.witness.json",
+    "computations/rho-k-h3a-wenzl-bridge.witness.json",
+    "computations/rho-k-leading-order-verification.witness.json",
+    "computations/substrate/experimental_constants.py",
+    "computations/three-term-wedderburn.witness.json",
+    "computations/vhat-std-vs-full-tower-compare.witness.json",
+    "computations/vol-density-per-block-wiring.witness.json",
+    "computations/witness-float64-padding-audit.witness.json",
+    "content/bib-qa-verifications.json",
+    "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
+    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean",
+    "content/values/registry.ts",
+    "docs/audits/2026-05-08-rho-k-mass-table-audit.md",
+    "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
+    "docs/audits/2026-05-23-codata-precision-audit.md",
+    "docs/audits/2026-06-01-vhat-std-channel-fix.md",
+    "docs/audits/scripts/qbeta_derived_ladder_tiers_probe.py",
+    "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md",
+    "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py",
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json",
+    "tools/qou-substrate/python/qou_substrate/constants.py"
+   ]
+  },
+  {
+   "literal": "0.51099895",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 165,
+   "code_sites": 139,
+   "files": [
+    ".claude/skills/local/compute-audit.md",
+    "AUDIT-DEEP-2026-05.md",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/audits/hardcoded_literal_audit.py",
+    "computations/audits/proton-m_e-anomaly-audit.witness.json",
+    "computations/audits/script-qa/hardcoded_literal_audit.script-qa.json",
+    "computations/binding-single-pipeline-comparison.witness.json",
+    "computations/build-six-term-substrate-model-b.witness.json",
+    "computations/codata-truncation-audit.witness.json",
+    "computations/codata_2022_source.py",
+    "computations/codata_masses.py",
+    "computations/codata_truncation_audit.py",
+    "computations/compute-audit-scan.witness.json",
+    "computations/compute_audit_scan.py",
+    "computations/d-from-scratch.witness.json",
+    "computations/delta_lambda_k_star_variance_phase5d_5b.py",
+    "computations/deltalambda/eunit_counit_mu0_tracing_probe.py",
+    "computations/e-0-lp-dual-h3.witness.json",
+    "computations/gap-a1-binding-k-sdp-feasibility.witness.json",
+    "computations/gap_a3_cross_atom_overshoot_probe.py",
+    "computations/garside-irrep-qvalues.witness.json",
+    "computations/geom-leading-alt-q-locality-probe.witness.json",
+    "computations/joint-tower-sdp-rust.witness.json",
+    "computations/log_ratio_binding_prototype.py",
+    "computations/markov/markov_trace_atomic_proton_full.py",
+    "computations/markov/markov_trace_axiomatic_proton.py",
+    "computations/markov/script-qa/markov_trace_atomic_proton_full.script-qa.json",
+    "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
+    "computations/option-b-proton-mass-full-chain.witness.json",
+    "computations/per-atom-rho-deviation.witness.json",
+    "computations/per-knot-density-borromean-h4-probe.witness.json",
+    "computations/per-knot-density-borromean-q-locality-probe.witness.json",
+    "computations/phase5/phase2b2_dim_v21_categorical_bridge.py",
+    "computations/phase5/phase2b_dim_v21_bridge_derivation.py",
+    "computations/probes/he4-9-3-trace-dominant-correction-probe.witness.json",
+    "computations/probes/he4-rho-f-bar-symmetric-audit-probe.witness.json",
+    "computations/probes/he4_nu_sdp_binding_arbiter.py",
+    "computations/probes/m_pi_hecke_prediction_probe.py",
+    "computations/probes/reeb-5g-unit-anchor-scan.witness.json",
+    "computations/q-beta-complex-q-test1-phasea-v2.witness.json",
+    "computations/q-beta-predicted.witness.json",
+    "computations/q-values-derived.witness.json",
+    "computations/rho-k-leading-order-verification.witness.json",
+    "computations/sdp-gamma-gamma-to-qqbar.witness.json",
+    "computations/substrate/codata_constants.py",
+    "computations/sweeps/light-isotope-sweep.witness.json",
+    "computations/sweeps/low-isotope-binding-sweep.witness.json",
+    "computations/term6-habiro-residue-mpfr-50dps.witness.json",
+    "computations/vol-density-borromean-h4-probe.witness.json",
+    "computations/vol-density-borromean-q-locality-probe.witness.json",
+    "computations/witness-float64-padding-audit.witness.json",
+    "content/pipeline/witness-substitution-audit.ts",
+    "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
+    "content/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.lean",
+    "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean",
+    "content/quantum-observable-universe/mass-theory/mass-volume-factorization.lean",
+    "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean",
+    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
+    "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean",
+    "content/values/registry.ts",
+    "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-vs-ame.witness.json",
+    "docs/audits/2026-05-02-alpha-categorical-probe.witness.json",
+    "docs/audits/2026-05-02-per-braid-coulomb.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-jet.witness.json",
+    "docs/audits/2026-05-02-per-braid-wigner.witness.json",
+    "docs/audits/2026-05-04-per-derivation-weights-result.md",
+    "docs/audits/2026-05-05-categorical-chain-gamma-to-six-term.md",
+    "docs/audits/2026-05-08-rho-k-mass-table-audit.md",
+    "docs/audits/2026-05-09-mass-table-fitting-audit.md",
+    "docs/audits/2026-05-09-proton-m_e-anomaly.md",
+    "docs/audits/2026-05-10-non-calibrated-mass-state-of-play.md",
+    "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
+    "docs/audits/2026-05-17-hydrogen-row-provenance.md",
+    "docs/audits/2026-05-23-codata-precision-audit.md",
+    "docs/audits/2026-05-24-a5-a7-knot-census-candidates.md",
+    "docs/audits/2026-05-28-binding-endomorphism-analogy.md",
+    "docs/audits/2026-05-30-conjecture-closure-session-audit.md",
+    "docs/audits/2026-06-01-linking-weight-residual-fix.md",
+    "docs/audits/2026-06-01-vol-density-compute-vs-paper-audit.md",
+    "docs/audits/2026-06-01-yekutieli-volume-join-derivation.md",
+    "docs/audits/2026-06-16-koide-tau-forcing-assessment.md",
+    "docs/audits/2026-06-24-me3r-m-e-codata-registry-reconcile.md",
+    "docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md",
+    "docs/audits/2026-07-05-compute-integration-swarm2.md",
+    "docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md",
+    "docs/audits/2026-08-02-deuteron-symbolic-closed-form-trefoil-qinvariant.md",
+    "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md",
+    "docs/coordination/codata-constants-unify-2026-05-23.md",
+    "docs/qa/content-alignment-2026-04-25/ch11-observations.md",
+    "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
+    "qou-mass/src/qou_mass/_internal/codata_constants.py"
+   ]
+  },
+  {
+   "literal": "137.035999084",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 123,
+   "code_sites": 71,
+   "files": [
+    "computations/DERIVATION-STATUS.md",
+    "computations/alpha-em-4pi-fixed-point-solve.witness.json",
+    "computations/alpha-em-4pi-q0-sensitivity.witness.json",
+    "computations/alpha/alpha-em-4pi-bring-cm-modular-pslq.witness.json",
+    "computations/alpha/alpha-em-4pi-q-hyperbolic-b3-pslq.witness.json",
+    "computations/alpha/alpha-em-categorical-reidentification.witness.json",
+    "computations/alpha/alpha-em-habiro-torus-knot-jones.witness.json",
+    "computations/alpha/alpha-em-shift-multiplicative-chain.witness.json",
+    "computations/alpha/alpha-em-yekutieli-h2-extraction.witness.json",
+    "computations/alpha/alpha_em_4pi_bring_cm_modular_pslq.py",
+    "computations/alpha/alpha_em_4pi_q_hyperbolic_b3_pslq.py",
+    "computations/alpha/alpha_em_categorical_reidentification.py",
+    "computations/alpha/alpha_em_form_comparison_probe.py",
+    "computations/alpha/alpha_em_habiro_taylor_investigation.py",
+    "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
+    "computations/alpha/alpha_em_q_difference_fourier.py",
+    "computations/alpha/alpha_em_shift_chain.py",
+    "computations/alpha/alpha_em_yekutieli_h2_extraction.py",
+    "computations/alpha/script-qa/alpha_em_habiro_torus_knot_jones.script-qa.json",
+    "computations/alpha/script-qa/alpha_em_yekutieli_h2_extraction.script-qa.json",
+    "computations/alpha_em_4pi_fixed_point_solve.py",
+    "computations/alpha_em_anchor_preference_probe.py",
+    "computations/alpha_em_channel_split_loop_measure_probe.py",
+    "computations/alpha_em_form_ladder_probe.py",
+    "computations/alpha_em_loop_measure_consistency_probe.py",
+    "computations/alpha_em_perloop_integer_forcedness_probe.py",
+    "computations/alpha_em_rt_phase3_schwinger_derivation.py",
+    "computations/alpha_em_rt_shadow_world_symbolic_phase1.py",
+    "computations/alpha_em_schwinger_ladder_probe.py",
+    "computations/alpha_em_theta_graph_two_loop_probe.py",
+    "computations/alpha_em_two_loop_structure_probe.py",
+    "computations/audits/derived_alpha_em_usage_audit.py",
+    "computations/b_over_a_evaluator.py",
+    "computations/bring_2loop_weight3_coefficient_probe.py",
+    "computations/bring_b3_closed_form_attempt.py",
+    "computations/bring_mapping_torus_residue_weight_probe.py",
+    "computations/bring_perturbative_cs_2loop_probe.py",
+    "computations/compound-shift-nf.witness.json",
+    "computations/compound_shift_nf.py",
+    "computations/cross-branch-synthesis-2026-04-25.md",
+    "computations/crystal-alpha-shift-pole-orders.witness.json",
+    "computations/crystal_alpha_shift_pole_orders.py",
+    "computations/h4-residual-vs-fine-structure-50dps.witness.json",
+    "computations/h4_residual_vs_fine_structure_50dps.py",
+    "computations/hecke-core-symbolic-migration.witness.json",
+    "computations/probe_m_mu_correction.py",
+    "computations/probes/alpha-em-4pi-derived-form-probe.witness.json",
+    "computations/probes/alpha_em_4pi_derived_form_probe.py",
+    "computations/probes/alpha_em_coulomb_channel_probe.py",
+    "computations/probes/alpha_em_multicell_yekutieli_probe.py",
+    "computations/probes/script-qa/alpha_em_4pi_derived_form_probe.script-qa.json",
+    "computations/qbeta/qbeta_h4_em_normalization_probe.py",
+    "computations/script-qa/b_over_a_evaluator.script-qa.json",
+    "computations/script-qa/crystal_alpha_shift_pole_orders.script-qa.json",
+    "computations/substrate/experimental_constants.py",
+    "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean",
+    "content/quantum-observable-universe/observations/fine-structure-data.md",
+    "content/quantum-observable-universe/observations/fine-structure-observation-table1-data.md",
+    "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.lean",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.md",
+    "docs/_archive/orphan-top-level/alpha-fsc-audit.md",
+    "docs/audits/2026-05-01-math-framework-deep-audit.md",
+    "docs/audits/2026-05-16-compound-shift-nf-impl.md",
+    "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md",
+    "docs/audits/2026-07-11-path-to-1ppq-alpha-em-opportunity.md",
+    "docs/audits/2026-08-11-alpha-em-anchor-dominance.md",
+    "docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md",
+    "docs/coordination/2026-05-30-alpha-em-4pi-thread.md",
+    "docs/coordination/2026-06-02-yekutieli-multicell-and-coulomb-channel.md",
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py",
+    "schemas/witness-schema/tests/test_python.py",
+    "tools/qou-substrate/python/qou_substrate/constants.py"
+   ]
+  },
+  {
+   "literal": "0.51099895000",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 82,
+   "code_sites": 52,
+   "files": [
+    "computations/audits/fitted-labelled-canonical-audit.witness.json",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata_truncation_audit.py",
+    "computations/deltalambda/deltalambda_binding_a_scaling_probe.py",
+    "computations/deltalambda/deltalambda_binding_cross_isotope_probe.py",
+    "computations/deltalambda/deltalambda_o1_manybody_probe.py",
+    "computations/deltalambda/deuteron_binding_frame_independent_probe.py",
+    "computations/generation_count_t29_truncation_probe.py",
+    "computations/h4_habiro_closure.py",
+    "computations/habiro/habiro_exact_mass_endomorphism.py",
+    "computations/lepton_linear_readout_rigidity.py",
+    "computations/lepton_net_to_mass_bridge_exclusion.py",
+    "computations/lepton_tower_additive_screening.py",
+    "computations/lepton_tower_bend_screening.py",
+    "computations/nv-pslq-extended-basis.witness.json",
+    "computations/nv_pslq_extended_basis.py",
+    "computations/probe_kappa_excess_convention_resolution.py",
+    "computations/probe_kappa_mirror_split_shell_test.py",
+    "computations/probe_kappa_normaliser_index_rule.py",
+    "computations/probe_kappa_shell8_excess_convention.py",
+    "computations/probe_q_beta_wenzl_projectors.py",
+    "computations/probe_qbeta_form.py",
+    "computations/probes/bring_color_weighted_base_scale_probe.py",
+    "computations/probes/qbeta_sdeformed_leading_bound_probe.py",
+    "computations/probes/rho_f_vol_binding_dashboard.py",
+    "computations/q_beta_complex_q_test1_phaseA.py",
+    "computations/q_beta_complex_q_test1_phaseA_v2.py",
+    "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
+    "computations/qbeta_habiro_probe.py",
+    "computations/qbeta_habiro_sweep.py",
+    "computations/script-qa/beta-decay-from-q.script-qa.json",
+    "computations/substrate/experimental_constants.py",
+    "computations/substrate/script-qa/experimental_constants.script-qa.json",
+    "content/bib-qa-verifications.json",
+    "content/quantum-observable-universe/mass-theory/binding-scale-catalan-proof.qa.json",
+    "content/quantum-observable-universe/mass-theory/calibration-inputs.md",
+    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean",
+    "docs/_archive/orphan-top-level/systematic-workplan.md",
+    "docs/audits/2026-05-02-path-to-1ppb.md",
+    "docs/audits/2026-06-24-me3r-m-e-codata-registry-reconcile.md",
+    "docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md",
+    "docs/d-error-budget.md",
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py"
+   ]
+  },
+  {
+   "literal": "206.7682830",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 77,
+   "code_sites": 37,
+   "files": [
+    ".claude/skills/local/compute-audit.md",
+    "AUDIT-DEEP-2026-05.md",
+    "computations/alpha/alpha_em_pslq_uniqueness.py",
+    "computations/alpha_em_4pi_q0_sensitivity.py",
+    "computations/codata_2022_source.py",
+    "computations/codata_table_vintage_audit.py",
+    "computations/compute-audit-scan.witness.json",
+    "computations/compute_audit_scan.py",
+    "computations/derive_m_baryon_volume_form.py",
+    "computations/knot-volumes.py",
+    "computations/m_tau_complex_volume_search.py",
+    "computations/m_tau_knot_prediction.py",
+    "computations/meson-mass-from-hecke.witness.json",
+    "computations/meson_mass_from_hecke.py",
+    "computations/mmu-lepton-torus-tower-feasibility-probe.witness.json",
+    "computations/mmu_lepton_torus_tower_feasibility_probe.py",
+    "computations/probes/kaon_pion_ratio_7_8_probe.py",
+    "computations/probes/probe_mup_dressing_attribution.py",
+    "computations/probes/probe_mup_dressing_vs_even_kernel.py",
+    "computations/probes/probe_trace_convention_production_impact.py",
+    "computations/q0_provenance_audit.py",
+    "computations/q_beta_complex_q_test1_phaseA.py",
+    "computations/q_beta_complex_q_test1_phaseA_v2.py",
+    "computations/q_pinning_50_digit.py",
+    "computations/substrate/experimental_constants.py",
+    "content/pipeline/witness-substitution-audit.ts",
+    "content/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.lean",
+    "content/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.md",
+    "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean",
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MuPCarrierOrderWindow.lean",
+    "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/QSubstrate.lean",
+    "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+    "content/quantum-observable-universe/mass-theory/calibration-inputs.md",
+    "content/quantum-observable-universe/mass-theory/calibration-inputs.qa.json",
+    "content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.md",
+    "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md",
+    "content/quantum-observable-universe/observations/knot-volumes-verification-table2-data.md",
+    "content/quantum-observable-universe/observations/local-substrate-q.lean",
+    "content/quantum-observable-universe/observations/local-substrate-q.qa.json",
+    "content/quantum-observable-universe/observations/skein-mass-relation.lean",
+    "content/quantum-observable-universe/observations/substrate-consistency-window-table1-data.md",
+    "docs/_archive/orphan-top-level/systematic-workplan.md",
+    "docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md",
+    "docs/audits/2026-05-02-path-to-1ppb.md",
+    "docs/audits/2026-05-09-mass-table-fitting-audit.md",
+    "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
+    "docs/audits/2026-05-23-codata-precision-audit.md",
+    "docs/audits/2026-05-24-complex-q-historical-trajectory.md",
+    "docs/audits/2026-06-21-constant-consistency-axis2-clean.md",
+    "docs/audits/2026-06-21-q0-hardcoded-constant-census.md",
+    "docs/audits/2026-08-08-mu-p-residual-carrier-order-and-bar-parity-prune.md",
+    "docs/audits/2026-08-09-codata-registry-vintage-straddle.md",
+    "docs/audits/scripts/mu_p_carrier_order_window_probe.py",
+    "docs/coordination/2026-05-24-q-beta-pr1127-queued-work.md",
+    "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md",
+    "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py",
+    "qou-mass/src/qou_mass/data/q-pinning-50-digit.witness.json",
+    "tools/qou-substrate/python/qou_substrate/codata.py",
+    "tools/qou-substrate/python/qou_substrate/constants.py",
+    "tools/qou-substrate/tests/test_codata_table.py",
+    "tools/qou-substrate/tests/test_smoke.py"
+   ]
+  },
+  {
+   "literal": "1875.61294257",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 64,
+   "code_sites": 57,
+   "files": [
+    "computations/atomic_mass_via_rho_k.py",
+    "computations/audits/canonical_a_k_magnitude_audit.py",
+    "computations/audits/deuteron-delta-i-audit.witness.json",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/build-six-term-substrate-model-b.witness.json",
+    "computations/delta_lambda_2row_stratum_analysis.py",
+    "computations/delta_lambda_empirical_tabulation.py",
+    "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-L1-light-series-probe.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json",
+    "computations/rho-k-h3a-refinement.witness.json",
+    "computations/rho-k-leading-order-verification.witness.json",
+    "computations/rho_k_h3a_refinement.py",
+    "computations/substrate/codata_constants.py",
+    "content/bib-qa-verifications.json",
+    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean",
+    "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-coulomb.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-full-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-jet.witness.json",
+    "qou-mass/src/qou_mass/_internal/codata_constants.py"
+   ]
+  },
+  {
+   "literal": "0.510998950",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 53,
+   "code_sites": 40,
+   "files": [
+    "computations/a4_interface_trace_integration_all.py",
+    "computations/alpha/alpha_k_jones_markov_h12.py",
+    "computations/alpha/script-qa/alpha_k_jones_markov_h12.script-qa.json",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata-truncation-audit.witness.json",
+    "computations/items_1_2_3_mw_strongforce_anchor_asymmetry.py",
+    "computations/per_atom_audit_witnesses.py",
+    "computations/probes/geom_leading_alt_q_locality_probe.py",
+    "computations/probes/pentagon_rt_torus_knot_higgs_probe.py",
+    "computations/probes/per_knot_density_borromean_h4_probe.py",
+    "computations/probes/per_knot_density_borromean_q_locality_probe.py",
+    "computations/probes/rt_w_sqrt_quantum_two_probe.py",
+    "computations/probes/vol_density_borromean_h4_probe.py",
+    "computations/probes/vol_density_borromean_q_locality_probe.py",
+    "computations/rt_w_sqrt2_jet_order_validation.py",
+    "computations/run_jones_markov_atlas_all_atoms.py",
+    "computations/test_betti_binding.py",
+    "docs/audits/2026-05-24-family-a-gap-audit.md",
+    "docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md",
+    "docs/audits/2026-07-05-compute-integration-swarm2.md",
+    "docs/derivation-tracking-methodology.md"
+   ]
+  },
+  {
+   "literal": "206.768283",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 51,
+   "code_sites": 47,
+   "files": [
+    ".claude/skills/local/scientific-accuracy.md",
+    "computations/canonical-lepton-braid-words.witness.json",
+    "computations/compute_audit_scan.py",
+    "computations/derive-ms-md-torus-knot.witness.json",
+    "computations/gram-matrix-dual.py",
+    "computations/knot-operator-table.py",
+    "computations/lepton-t2n-torus-tower.witness.json",
+    "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json",
+    "computations/m-baryon-volume-form.witness.json",
+    "computations/mass-from-q-symbolic.witness.json",
+    "computations/meson-mass-from-hecke.witness.json",
+    "computations/probes/m_pi_hecke_prediction_probe.py",
+    "computations/probes/tau-amphichiral-sdp-probe.witness.json",
+    "computations/q-beta-complex-q-test1-phasea-v2.witness.json",
+    "computations/script-qa/gram-matrix-dual.script-qa.json",
+    "computations/script-qa/knot-operator-table.script-qa.json",
+    "computations/sigma-all-evaluator.witness.json",
+    "computations/substrate/knot-volumes.witness.json",
+    "computations/t6-lepton-h3-3channel-convention.witness.json",
+    "computations/t6-three-halves-factor-probes.witness.json",
+    "computations/xi-ell-phi-q-probe.witness.json",
+    "docs/audits/2026-05-02-alpha-categorical-probe.witness.json",
+    "docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md",
+    "docs/audits/2026-05-28-spectral-phase-correction-derived.md",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.39160743",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 46,
+   "code_sites": 41,
+   "files": [
+    "computations/atomic_mass_via_rho_k.py",
+    "computations/audits/canonical_a_k_magnitude_audit.py",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/build-six-term-substrate-model-b.witness.json",
+    "computations/delta_lambda_2row_stratum_analysis.py",
+    "computations/delta_lambda_empirical_tabulation.py",
+    "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-L1-light-series-probe.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json",
+    "computations/probes/gap_a4_He3_residual_probe.py",
+    "computations/rho-k-leading-order-verification.witness.json",
+    "computations/yekutieli_half_h2_observable_hunt.py",
+    "content/bib-qa-verifications.json",
+    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean"
+   ]
+  },
+  {
+   "literal": "2808.92113298",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 45,
+   "code_sites": 42,
+   "files": [
+    "computations/atomic_mass_via_rho_k.py",
+    "computations/audits/canonical_a_k_magnitude_audit.py",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/build-six-term-substrate-model-b.witness.json",
+    "computations/delta_lambda_2row_stratum_analysis.py",
+    "computations/delta_lambda_empirical_tabulation.py",
+    "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-L1-light-series-probe.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json",
+    "computations/rho-k-leading-order-verification.witness.json",
+    "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-coulomb.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-full-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-jet.witness.json"
+   ]
+  },
+  {
+   "literal": "137.0359991",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 25,
+   "code_sites": 0,
+   "files": [
+    "computations/audits/m_k_m_pi_closure_pattern_audit.py",
+    "computations/flavor_split_xq_refinement.py",
+    "computations/h4_residual_vs_fine_structure_50dps.py",
+    "computations/mn_dpn_xq_habiro_element_probe.py",
+    "computations/mn_flavor_split_h4_plancherel.py",
+    "computations/ocneanu_12_alt_knot_geometries.py",
+    "computations/ocneanu_12_bring_zero_mode_variants.py",
+    "computations/ocneanu_12_em_correction_candidate.py",
+    "computations/ocneanu_54ppb_residual_exploration.py",
+    "computations/probes/he4_9_3_trace_dominant_correction_probe.py",
+    "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
+    "computations/probes/mn_dpn_xq_habiro_element_probe.py",
+    "computations/probes/xq_habiro_2param_probe.py",
+    "computations/probes/xq_habiro_derivative_probe2.py",
+    "computations/probes/xq_habiro_multiblock_probe.py",
+    "computations/probes/xq_ratio_function_probe.py",
+    "computations/probes/yekutieli_a2_em_gauge_coupling_h2_probe.py",
+    "computations/probes/yekutieli_per_cell_qlambert_decomposition_probe.py"
+   ]
+  },
+  {
+   "literal": "931.49410242",
+   "table_value": "931.49410372",
+   "quantity": "atomic mass constant energy equivalent in MeV",
+   "sites": 23,
+   "code_sites": 13,
+   "files": [
+    "computations/atom_electron_mass.py",
+    "computations/codata_2022_source.py",
+    "computations/data/ame2020.json",
+    "computations/substrate/codata_constants.py",
+    "computations/vendor_ame2020.py",
+    "content/quantum-observable-universe/lean/QOU/AtomicMass.lean",
+    "content/quantum-observable-universe/lean/scripts/atomic_mass_data.json",
+    "docs/audits/2026-06-22-registry-reads-ame2020-json-write-once.md",
+    "docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md",
+    "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
+    "qou-mass/src/qou_mass/_internal/codata_constants.py",
+    "qou-mass/src/qou_mass/api.py",
+    "qou-mass/src/qou_mass/data/ame2020.json"
+   ]
+  },
+  {
+   "literal": "3727.379378",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 18,
+   "code_sites": 15,
+   "files": [
+    "computations/atomic_mass_via_rho_k.py",
+    "computations/audits/canonical_a_k_magnitude_audit.py",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/b-over-m-order-probe.witness.json",
+    "computations/b_over_m_order_probe.py",
+    "computations/delta_lambda_2row_stratum_analysis.py",
+    "computations/delta_lambda_empirical_tabulation.py",
+    "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
+   ]
+  },
+  {
+   "literal": "939.5654",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 17,
+   "code_sites": 16,
+   "files": [
+    "computations/cross-branch-synthesis-2026-04-25.md",
+    "computations/m_qclt_approx.py",
+    "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
+    "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.qa.json",
+    "content/quantum-observable-universe/mass-theory/six-term-per-derivation-weights-table2-data.md",
+    "content/quantum-observable-universe/mass-theory/six-term-per-derivation-weights-table3-data.md",
+    "docs/audits/2026-05-04-per-derivation-weights-result.md",
+    "docs/audits/2026-05-17-m-n-substrate-investigation-and-lit-search.md",
+    "docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md",
+    "docs/coordination/2026-05-22-cal4-lambda-scale.md",
+    "docs/coordination/2026-07-02-lambda-a-excision-consumer-lanes.md"
+   ]
+  },
+  {
+   "literal": "3727.3794066",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 17,
+   "code_sites": 17,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-L1-light-series-probe.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-S-K-additive-probe.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+    "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56542",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 16,
+   "code_sites": 10,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata-truncation-audit.witness.json",
+    "computations/compute_audit_scan.py",
+    "computations/e0-calibration-audit.witness.json",
+    "computations/free-neutron-decay.py",
+    "computations/m_p_substrate_identity_50dps.py",
+    "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.md",
+    "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean",
+    "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
+    "docs/coordination/2026-06-22-constant-discipline-remaining-backlog.md"
+   ]
+  },
+  {
+   "literal": "137.035944",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 16,
+   "code_sites": 8,
+   "files": [
+    "computations/meson_em_residual_alpha_em.py",
+    "computations/meson_em_sinh_closed_form.py",
+    "computations/per_observable_100x_status.py",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md",
+    "docs/audits/2026-05-01-math-framework-deep-audit.md",
+    "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
+    "docs/audits/2026-08-02-ppq-attack-vectors-roast.md",
+    "docs/observable-sector-tracker.md",
+    "tools/pyhecke/python/pyhecke/constants.py"
+   ]
+  },
+  {
+   "literal": "939.5654205240",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 15,
+   "code_sites": 13,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/qbeta/qbeta-1ppq-achieved.witness.json",
+    "computations/qbeta/qbeta_1ppq_achieved.py",
+    "computations/qbeta/qbeta_ck_k_gt_3_habiro_extension_scoping.py",
+    "computations/qbeta/script-qa/qbeta_1ppq_achieved.script-qa.json"
+   ]
+  },
+  {
+   "literal": "938.27209",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 14,
+   "code_sites": 10,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/e0-calibration-audit.witness.json",
+    "computations/free-neutron-decay.py",
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/m_p_substrate_identity_50dps.py",
+    "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.md",
+    "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
+    "docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "206.7683",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 14,
+   "code_sites": 10,
+   "files": [
+    "computations/probes/kaon_pion_ratio_7_8_probe.py",
+    "computations/xi_ell_phi_q_probe.py",
+    "content/quantum-observable-universe/lean/QOU/MassDerivation.lean",
+    "content/quantum-observable-universe/observations/skein-mass-relation.md",
+    "docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md",
+    "docs/audits/2026-05-24-muon-knot-id-conflict.md",
+    "docs/audits/2026-05-24-superseded-rho-q-purge.md",
+    "docs/audits/2026-06-02-lepton-t2n-torus-tower.md",
+    "docs/audits/2026-06-21-constant-consistency-axis2-clean.md"
+   ]
+  },
+  {
+   "literal": "137.0359351",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 12,
+   "code_sites": 9,
+   "files": [
+    "content/pipeline/trace-convention-audit.ts",
+    "content/pipeline/witness-substitution-audit.ts",
+    "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md",
+    "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.ts",
+    "content/quantum-observable-universe/observations/fine-structure-data.md",
+    "content/quantum-observable-universe/observations/fine-structure-observation-table2-data.md",
+    "content/quantum-observable-universe/observations/hadron-half-life-verification-table6-data.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md",
+    "docs/coordination/trace-convention-registry.md"
+   ]
+  },
+  {
+   "literal": "938.2720894273243",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 11,
+   "code_sites": 11,
+   "files": [
+    "computations/landauer-crossing-energy-probe.witness.json",
+    "computations/low-isotope-mass-table.witness.json",
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/mass-table-comprehensive.witness.json",
+    "computations/meson-per-knot-density.witness.json",
+    "computations/meson-vol-density.witness.json",
+    "computations/multi-layer-gap-decomposition.witness.json",
+    "computations/rho-k-graded-atomic-mass.witness.json",
+    "docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md",
+    "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json"
+   ]
+  },
+  {
+   "literal": "1.2933321",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 10,
+   "code_sites": 3,
+   "files": [
+    "computations/codata_2022_source.py",
+    "computations/nf-qvalues.py",
+    "computations/nf-qvalues.witness.json",
+    "computations/substrate/experimental_constants.py",
+    "content/bib-qa-verifications.json",
+    "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py"
+   ]
+  },
+  {
+   "literal": "939.5654227645324",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 10,
+   "code_sites": 10,
+   "files": [
+    "computations/canonical-isotope-witness-Z00.witness.json",
+    "computations/landauer-crossing-energy-probe.witness.json",
+    "computations/low-isotope-mass-table.witness.json",
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/mass-table-comprehensive.witness.json",
+    "computations/multi-layer-gap-decomposition.witness.json",
+    "computations/rho-k-graded-atomic-mass.witness.json",
+    "docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md",
+    "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json"
+   ]
+  },
+  {
+   "literal": "4.0014857735613285",
+   "table_value": "4.001506179129",
+   "quantity": "alpha particle mass in u / alpha particle relative atomic mass",
+   "sites": 10,
+   "code_sites": 10,
+   "files": [
+    "computations/braid-registry/ag-109.json",
+    "computations/braid-registry/cd-110.json",
+    "computations/braid-registry/cd-111.json",
+    "computations/braid-registry/in-113.json",
+    "computations/braid-registry/mo-98.json",
+    "computations/braid-registry/pd-106.json",
+    "computations/braid-registry/ru-102.json",
+    "computations/braid-registry/sn-114.json",
+    "computations/braid-registry/sn-115.json",
+    "computations/braid-registry/zr-94.json"
+   ]
+  },
+  {
+   "literal": "1.29333236",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 9,
+   "code_sites": 4,
+   "files": [
+    "computations/flavor-dressed-mass-from-substrate-split.witness.json",
+    "computations/inter-nucleon-linked-channel.witness.json",
+    "computations/inter_nucleon_linked_channel.py",
+    "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
+    "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
+    "computations/probes/flavor_split_geometric_closure_probe.py",
+    "docs/audits/2026-06-01-e0-lambda-composite-structure.md",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "938.272088",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 9,
+   "code_sites": 8,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/compute_audit_scan.py",
+    "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md",
+    "docs/audits/2026-05-18-m-p-item-b-t5-categorical-attribution.md",
+    "docs/audits/2026-06-24-fbor-q3-exact-habiro-ratio-fit.md",
+    "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
+   ]
+  },
+  {
+   "literal": "939.56542179",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 8,
+   "code_sites": 1,
+   "files": [
+    "computations/codata_2022_source.py",
+    "computations/substrate/experimental_constants.py",
+    "qou-mass/src/qou_mass/_internal/codata_2022_source.py",
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py",
+    "tools/qou-substrate/python/qou_substrate/constants.py"
+   ]
+  },
+  {
+   "literal": "938.2721",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 8,
+   "code_sites": 7,
+   "files": [
+    "computations/m_qclt_approx.py",
+    "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.qa.json",
+    "docs/audits/2026-05-09-proton-m_e-anomaly.md",
+    "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
+    "docs/coordination/2026-05-22-cal4-lambda-scale.md",
+    "docs/coordination/2026-07-02-lambda-a-excision-consumer-lanes.md"
+   ]
+  },
+  {
+   "literal": "137.035999206",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 8,
+   "code_sites": 4,
+   "files": [
+    "computations/probes/em-coupling-projection-probe.witness.json",
+    "computations/probes/em_coupling_projection_probe.py",
+    "content/quantum-observable-universe/observations/fine-structure-data.md"
+   ]
+  },
+  {
+   "literal": "137.035999",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 8,
+   "code_sites": 6,
+   "files": [
+    "computations/alpha_em_b2_tau_w_freedom_probe.py",
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/binding_color_vs_charge_tn3he.py",
+    "computations/mirror_isospin_coulomb_split.py",
+    "content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.qa.json",
+    "content/quantum-observable-universe/observations/fine-structure-observation.md",
+    "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
+    "docs/audits/2026-08-02-ppq-attack-vectors-roast.md"
+   ]
+  },
+  {
+   "literal": "2808.39148127",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 8,
+   "code_sites": 8,
+   "files": [
+    "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-coulomb.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-full-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-jet.witness.json"
+   ]
+  },
+  {
+   "literal": "3727.37909409",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 8,
+   "code_sites": 8,
+   "files": [
+    "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
+    "docs/audits/2026-05-01-per-braid-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-coulomb.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-full-vs-ame.witness.json",
+    "docs/audits/2026-05-02-per-braid-hybrid-jet.witness.json"
+   ]
+  },
+  {
+   "literal": "105.658397811",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 8,
+   "code_sites": 7,
+   "files": [
+    "computations/per-observable-100x-status.witness.json",
+    "computations/per_observable_100x_status.py",
+    "docs/audits/2026-06-02-m-mu-pr1556-superseded-by-witness.md",
+    "docs/audits/2026-06-24-me3r-m-e-codata-registry-reconcile.md",
+    "docs/audits/2026-06-26-l2-dashboard-status-and-tnjb-caveat.md",
+    "docs/audits/2026-06-28-calibration-canon-decay-width-ruling.md",
+    "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
+   ]
+  },
+  {
+   "literal": "0.51099894999999995",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 8,
+   "code_sites": 6,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/cal4-disguise-hunt.witness.json",
+    "computations/delta_lambda_full_variance_phase5e_1.py"
+   ]
+  },
+  {
+   "literal": "3727.37941",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 8,
+   "code_sites": 7,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/build-six-term-substrate-model-b.witness.json",
+    "computations/yekutieli_half_h2_observable_hunt.py"
+   ]
+  },
+  {
+   "literal": "939.565421",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 7,
+   "code_sites": 6,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata-truncation-audit.witness.json",
+    "computations/compute_audit_scan.py",
+    "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md",
+    "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
+   ]
+  },
+  {
+   "literal": "137.0359350939756",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 7,
+   "code_sites": 5,
+   "files": [
+    "computations/DERIVATION-STATUS.md",
+    "computations/meson-em-residual-alpha-em.witness.json",
+    "computations/meson-em-sinh-closed-form.witness.json",
+    "computations/meson_em_residual_alpha_em.py",
+    "computations/per_observable_100x_status.py"
+   ]
+  },
+  {
+   "literal": "1.001378",
+   "table_value": "1.00137841946",
+   "quantity": "neutron-proton mass ratio",
+   "sites": 6,
+   "code_sites": 0,
+   "files": [
+    "computations/mass_endomorphism.py",
+    "qou-mass/src/qou_mass/_internal/mass_endomorphism.py"
+   ]
+  },
+  {
+   "literal": "13.605693",
+   "table_value": "13.605693122990",
+   "quantity": "Rydberg constant times hc in eV",
+   "sites": 6,
+   "code_sites": 3,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/hydrogen_step_by_step.py",
+    "computations/substrate/codata_constants.py",
+    "qou-mass/src/qou_mass/_internal/codata_constants.py"
+   ]
+  },
+  {
+   "literal": "1836.15267343",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 6,
+   "code_sites": 4,
+   "files": [
+    "computations/derive_m_p_hecke_full_tower_50dps.py",
+    "computations/probes/proton_brane_tower_correction_probe.py",
+    "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean",
+    "docs/audits/2026-06-01-yekutieli-mp-substrate-derivation-scaffolding.md",
+    "docs/audits/2026-06-21-q0-clusterA-migration-plan.md"
+   ]
+  },
+  {
+   "literal": "2808.391607",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 6,
+   "code_sites": 6,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/b-over-m-order-probe.witness.json",
+    "computations/b_over_m_order_probe.py",
+    "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
+   ]
+  },
+  {
+   "literal": "42.57771563763444",
+   "table_value": "42.577478461",
+   "quantity": "proton gyromag. ratio in MHz/T",
+   "sites": 6,
+   "code_sites": 6,
+   "files": [
+    "computations/braid-registry/hg-200.json",
+    "computations/braid-registry/hg-201.json",
+    "computations/braid-registry/os-192.json",
+    "computations/braid-registry/pb-204.json",
+    "computations/braid-registry/pt-196.json",
+    "computations/braid-registry/tl-203.json"
+   ]
+  },
+  {
+   "literal": "1.0013784",
+   "table_value": "1.00137841946",
+   "quantity": "neutron-proton mass ratio",
+   "sites": 5,
+   "code_sites": 3,
+   "files": [
+    "content/quantum-observable-universe/lean/QOU/CODATAChain.lean",
+    "content/quantum-observable-universe/lean/QOU/HadronicMass.lean",
+    "content/quantum-observable-universe/observations/fine-structure-observation-table2-data.md"
+   ]
+  },
+  {
+   "literal": "137.035999127",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 5,
+   "code_sites": 4,
+   "files": [
+    "content/quantum-observable-universe/observations/fine-structure-observation.md",
+    "content/quantum-observable-universe/observations/fine-structure-observation.ts",
+    "docs/audits/2026-07-11-path-to-1ppq-alpha-em-opportunity.md",
+    "docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md",
+    "docs/coordination/2026-05-30-alpha-em-4pi-thread.md"
+   ]
+  },
+  {
+   "literal": "938.272089427",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 5,
+   "code_sites": 3,
+   "files": [
+    "computations/codata_registry_triangulation_probe.py",
+    "computations/m-qclt-approx.witness.json",
+    "computations/per-observable-100x-status.witness.json",
+    "content/quantum-observable-universe/lean/QOU/MassTheory/PoincareCenteringOfQ3.lean",
+    "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
+   ]
+  },
+  {
+   "literal": "137.035999313169",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 5,
+   "code_sites": 4,
+   "files": [
+    "computations/alpha-em-form-ladder.witness.json",
+    "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean",
+    "docs/audits/2026-08-11-alpha-em-anchor-dominance.md"
+   ]
+  },
+  {
+   "literal": "137.036010116763",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 5,
+   "code_sites": 4,
+   "files": [
+    "computations/alpha-em-form-ladder.witness.json",
+    "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean",
+    "docs/audits/2026-08-11-alpha-em-anchor-dominance.md"
+   ]
+  },
+  {
+   "literal": "938.272089",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 5,
+   "code_sites": 5,
+   "files": [
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/mass-table-comprehensive.witness.json",
+    "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
+   ]
+  },
+  {
+   "literal": "1875.612928",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 5,
+   "code_sites": 5,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/b-over-m-order-probe.witness.json",
+    "computations/b_over_m_order_probe.py"
+   ]
+  },
+  {
+   "literal": "3727.37940824",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "content/bib-qa-verifications.json",
+    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean"
+   ]
+  },
+  {
+   "literal": "137.0359",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "content/quantum-observable-universe/introduction/chapter-overview.md",
+    "docs/qa/content-alignment-2026-04-25/ch00-introduction.md"
+   ]
+  },
+  {
+   "literal": "1.293332",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 3,
+   "files": [
+    "computations/flavor-dependent-cusp-shape.witness.json",
+    "computations/flavor_dependent_cusp_shape.py",
+    "content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes-context.md",
+    "docs/alpha-blend-derivation.md"
+   ]
+  },
+  {
+   "literal": "938.27186",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.md",
+    "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
+    "docs/audits/2026-06-24-fbor-q3-exact-habiro-ratio-fit.md"
+   ]
+  },
+  {
+   "literal": "1875.61351137",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/lean/QOU/HadronicMass.lean"
+   ]
+  },
+  {
+   "literal": "938.2720882",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 3,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/path_c3_klr_prescreen_50dps.py",
+    "docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md"
+   ]
+  },
+  {
+   "literal": "1.2933323600000222",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "computations/categorical-q-decay-ba-low-isotopes.witness.json",
+    "computations/neutron-error-diagnostic.witness.json",
+    "computations/reeb-rotation-pn-test-reeb.witness.json",
+    "computations/witness-float64-padding-audit.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27200",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata_masses.py"
+   ]
+  },
+  {
+   "literal": "938.27220",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata_masses.py"
+   ]
+  },
+  {
+   "literal": "939.56500",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata_masses.py"
+   ]
+  },
+  {
+   "literal": "939.56600",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 4,
+   "code_sites": 4,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/codata_masses.py"
+   ]
+  },
+  {
+   "literal": "137.03593509397560466",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 3,
+   "code_sites": 2,
+   "files": [
+    "content/quantum-observable-universe/observations/fine-structure-data.md",
+    "content/quantum-observable-universe/observations/fine-structure-data.ts",
+    "docs/coordination/trace-convention-registry.md"
+   ]
+  },
+  {
+   "literal": "137.0354",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 3,
+   "code_sites": 2,
+   "files": [
+    "computations/probes/alpha_em_4pi_derived_form_probe.py",
+    "content/quantum-observable-universe/observations/fine-structure-observation.md",
+    "docs/audits/2026-06-10-alpha-em-legacy-empirical-forms.md"
+   ]
+  },
+  {
+   "literal": "939.56542276",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
+    "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
+    "docs/coordination/trace-convention-registry.json"
+   ]
+  },
+  {
+   "literal": "1836.1527",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 3,
+   "code_sites": 2,
+   "files": [
+    "computations/skein_proton_canonical.py",
+    "docs/audits/2026-05-09-proton-m_e-anomaly.md",
+    "docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md"
+   ]
+  },
+  {
+   "literal": "939.565423",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json",
+    "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
+   ]
+  },
+  {
+   "literal": "0.5109989461",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "docs/audits/2026-06-29-bean-hygiene-data-integrity-verified-resolved.md"
+   ]
+  },
+  {
+   "literal": "137.035998166",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "computations/DERIVATION-STATUS.md",
+    "docs/audits/2026-05-01-math-framework-deep-audit.md"
+   ]
+  },
+  {
+   "literal": "206.768326371",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "computations/m-tau-complex-volume-search.witness.json",
+    "computations/m-tau-knot-prediction.witness.json"
+   ]
+  },
+  {
+   "literal": "0.0072973525693",
+   "table_value": "7.2973525643e-3",
+   "quantity": "fine-structure constant",
+   "sites": 3,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha-em-b2-invariant-c.witness.json",
+    "computations/alpha_em_b2_invariant_c_probe.py",
+    "computations/per_basis_row_invariants_probe.py"
+   ]
+  },
+  {
+   "literal": "1836.1526734252586",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 3,
+   "code_sites": 3,
+   "files": [
+    "computations/audits/proton-m_e-anomaly-audit.witness.json",
+    "computations/option-b-proton-mass-full-chain.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2720439",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 3,
+   "code_sites": 2,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json",
+    "computations/path_c3_klr_prescreen_50dps.py"
+   ]
+  },
+  {
+   "literal": "105.6583978",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "AGENTS.md",
+    "docs/audits/2026-06-26-l2-dashboard-status-and-tnjb-caveat.md"
+   ]
+  },
+  {
+   "literal": "105.6583756",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "AGENTS.md",
+    "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
+   ]
+  },
+  {
+   "literal": "105.65837564897296527",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/deuteron-from-scratch-ledger.witness.json",
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2783601999998",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/canonical-isotope-witness-Z44.witness.json",
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z44.witness.json"
+   ]
+  },
+  {
+   "literal": "1.0086649159",
+   "table_value": "1.00866491606",
+   "quantity": "neutron mass in u / neutron relative atomic mass",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/canonical-isotope-witness-Z00.witness.json",
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27185264",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
+    "qou-mass/tests/test_p2_integration.py"
+   ]
+  },
+  {
+   "literal": "939.56518467",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
+    "qou-mass/tests/test_p2_integration.py"
+   ]
+  },
+  {
+   "literal": "105.65837565",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
+    "qou-mass/tests/test_p2_integration.py"
+   ]
+  },
+  {
+   "literal": "137.03593508992864",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 2,
+   "code_sites": 1,
+   "files": [
+    "computations/meson-em-sinh-closed-form.witness.json",
+    "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.ts"
+   ]
+  },
+  {
+   "literal": "1836.15267",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 2,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean",
+    "docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md"
+   ]
+  },
+  {
+   "literal": "1838.68366173",
+   "table_value": "1838.68366200",
+   "quantity": "neutron-electron mass ratio",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
+   ]
+  },
+  {
+   "literal": "1.29333378",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 0,
+   "files": [
+    "computations/probes/np_splitting_residual_probe.py",
+    "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean"
+   ]
+  },
+  {
+   "literal": "2808.921133",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/m-qclt-approx.witness.json",
+    "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
+   ]
+  },
+  {
+   "literal": "137.0359995",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 2,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
+    "docs/audits/2026-08-08-q-integer-convention-derived.md"
+   ]
+  },
+  {
+   "literal": "938.2720881603788",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "docs/coordination/2026-07-02-lambda-a-excision-consumer-lanes.md",
+    "docs/pyhecke-native-build-in-sandbox.md"
+   ]
+  },
+  {
+   "literal": "105.65837550630283",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "docs/audits/2026-05-02-alpha-analytic-attempt.witness.json",
+    "docs/audits/2026-05-02-alpha-categorical-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "105.658375644",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "docs/audits/2026-06-24-me3r-m-e-codata-registry-reconcile.md"
+   ]
+  },
+  {
+   "literal": "105.65838",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 1,
+   "files": [
+    "computations/m_p_substrate_identity_50dps.py",
+    "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md"
+   ]
+  },
+  {
+   "literal": "938.2720894273",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/probes/rho_f_vol_binding_dashboard.py",
+    "docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md"
+   ]
+  },
+  {
+   "literal": "939.5654227645",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/probes/rho_f_vol_binding_dashboard.py",
+    "docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md"
+   ]
+  },
+  {
+   "literal": "938.2725",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "docs/audits/2026-05-16-stale-witness-infra-gap.md"
+   ]
+  },
+  {
+   "literal": "939.565422765",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/m-qclt-approx.witness.json",
+    "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
+   ]
+  },
+  {
+   "literal": "1.29333333721",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/quark-mass-extraction-stage1.witness.json",
+    "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
+   ]
+  },
+  {
+   "literal": "137.03543",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 2,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
+    "docs/coordination/2026-05-30-alpha-em-fsc-closure.md"
+   ]
+  },
+  {
+   "literal": "137.03601",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 2,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
+    "docs/coordination/2026-05-30-alpha-em-fsc-closure.md"
+   ]
+  },
+  {
+   "literal": "939.565422",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/m-p-borromean-verification-50dps.witness.json",
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "3.9725645218438531408",
+   "table_value": "3.972599690252",
+   "quantity": "alpha particle-proton mass ratio",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/ground-state-ordering-argmin-sweep.witness.json"
+   ]
+  },
+  {
+   "literal": "1875.61294248",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/iterative-lp-dual-h6-deuteron.witness.json",
+    "computations/m-qclt-approx.witness.json"
+   ]
+  },
+  {
+   "literal": "27.211467573147633",
+   "table_value": "27.211386245981",
+   "quantity": "Hartree energy in eV / atomic unit of electric potential / hartree-electron volt relationship",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/aufbau-ell-penetration-hartree-pinned.witness.json",
+    "computations/h2-molecular-binding.witness.json"
+   ]
+  },
+  {
+   "literal": "137.0359444240373",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/hecke-core-symbolic-migration.witness.json"
+   ]
+  },
+  {
+   "literal": "137.035935094",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 2,
+   "code_sites": 0,
+   "files": [
+    "computations/coulomb_energy.py"
+   ]
+  },
+  {
+   "literal": "0.510998950690000009",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/m-p-substrate-identity-50dps.witness.json",
+    "computations/probes/m-pi-hecke-prediction-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "1.2933324",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/lambda-scale-derivation-probes-123.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27208942732424736",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/deuteron-from-scratch-ledger.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27186219190747573",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/deuteron-from-scratch-ledger.witness.json"
+   ]
+  },
+  {
+   "literal": "0.5110004224164797",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/a_operator/A-operator-extract-h9-pn.witness.json"
+   ]
+  },
+  {
+   "literal": "0.5110004224164806",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/a_operator/A-operator-extract-h9-pn.witness.json"
+   ]
+  },
+  {
+   "literal": "1875.612945841067",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
+    "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.921137565935",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
+    "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.3916078387315",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
+    "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "3727.3794085296267",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
+    "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "938.272088160",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json"
+   ]
+  },
+  {
+   "literal": "939.565420520",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.39155747",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json"
+   ]
+  },
+  {
+   "literal": "3727.37941020",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 2,
+   "code_sites": 2,
+   "files": [
+    "computations/audits/hardcoded-literal-audit.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2718526",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/CHANGELOG.md"
+   ]
+  },
+  {
+   "literal": "938.2720894",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/CHANGELOG.md"
+   ]
+  },
+  {
+   "literal": "939.5651847",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/CHANGELOG.md"
+   ]
+  },
+  {
+   "literal": "939.5654228",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/CHANGELOG.md"
+   ]
+  },
+  {
+   "literal": "1836.1522100385643104",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27185263683084707",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "1838.6831976837001227",
+   "table_value": "1838.68366200",
+   "quantity": "neutron-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56518466770460123",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "1.29333203087",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "1836.1522100385644",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "29.164461188862333",
+   "table_value": "29.1646935",
+   "quantity": "neutron gyromag. ratio in MHz/T",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z57.witness.json"
+   ]
+  },
+  {
+   "literal": "939.5651846677046",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json"
+   ]
+  },
+  {
+   "literal": "206.76550538987516",
+   "table_value": "206.7669881",
+   "quantity": "electron-muon mag. mom. ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z38.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2718526368309",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z01.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.933623585707",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z01.witness.json"
+   ]
+  },
+  {
+   "literal": "206.76828305",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.md"
+   ]
+  },
+  {
+   "literal": "137.035999046",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/observations/fine-structure-data.md"
+   ]
+  },
+  {
+   "literal": "0.9986307778",
+   "table_value": "0.99862347797",
+   "quantity": "proton-neutron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/mass-theory/hoefsmit-V21-cos-symmetrization.qa.json"
+   ]
+  },
+  {
+   "literal": "137.035415",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.qa.json"
+   ]
+  },
+  {
+   "literal": "1838.68366",
+   "table_value": "1838.68366200",
+   "quantity": "neutron-electron mass ratio",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
+   ]
+  },
+  {
+   "literal": "206.768326",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/mass-theory/calibration-inputs.qa.json"
+   ]
+  },
+  {
+   "literal": "206.76832637067386",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MuPCarrierOrderWindow.lean"
+   ]
+  },
+  {
+   "literal": "1875.612943",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
+   ]
+  },
+  {
+   "literal": "137.035426",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md"
+   ]
+  },
+  {
+   "literal": "137.036007",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md"
+   ]
+  },
+  {
+   "literal": "137.035426245",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md"
+   ]
+  },
+  {
+   "literal": "137.03593513",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "content/pipeline/witness-substitution-audit.ts"
+   ]
+  },
+  {
+   "literal": "137.0359350940",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "tools/pyhecke/python/pyhecke/constants.py"
+   ]
+  },
+  {
+   "literal": "0.510998946",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/derivation-tracking-methodology.md"
+   ]
+  },
+  {
+   "literal": "939.565421496897",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/pyhecke-native-build-in-sandbox.md"
+   ]
+  },
+  {
+   "literal": "137.035999998",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/_archive/orphan-top-level/alpha-fsc-audit.md"
+   ]
+  },
+  {
+   "literal": "1836.153118",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-06-21-q0-clusterA-migration-plan.md"
+   ]
+  },
+  {
+   "literal": "1836.1526732506",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-05-09-proton-m_e-anomaly.md"
+   ]
+  },
+  {
+   "literal": "938.2723",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-06-14-klr-positivity-mass-gap.md"
+   ]
+  },
+  {
+   "literal": "938.2720",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-06-14-klr-positivity-mass-gap.md"
+   ]
+  },
+  {
+   "literal": "938.27208942732424736394",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-08-09-codata-registry-vintage-straddle.md"
+   ]
+  },
+  {
+   "literal": "939.56542052069",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-08-09-codata-registry-vintage-straddle.md"
+   ]
+  },
+  {
+   "literal": "939.56542178801",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-08-09-codata-registry-vintage-straddle.md"
+   ]
+  },
+  {
+   "literal": "0.5109989500",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-06-24-me3r-m-e-codata-registry-reconcile.md"
+   ]
+  },
+  {
+   "literal": "137.035999057",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-14-alpha-em-theta-graph-two-loop-candidate.md"
+   ]
+  },
+  {
+   "literal": "938.2719",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md"
+   ]
+  },
+  {
+   "literal": "939.56354",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md"
+   ]
+  },
+  {
+   "literal": "1.293334",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-11-np-splitting-residual-not-q0-knob.md"
+   ]
+  },
+  {
+   "literal": "0.510998951",
+   "table_value": "0.51099895069",
+   "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
+   ]
+  },
+  {
+   "literal": "1.293333",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
+   ]
+  },
+  {
+   "literal": "105.658398",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
+   ]
+  },
+  {
+   "literal": "938.27187",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md"
+   ]
+  },
+  {
+   "literal": "206.76832637067386482",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-08-08-mu-p-residual-carrier-order-and-bar-parity-prune.md"
+   ]
+  },
+  {
+   "literal": "137.03542624801137",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
+   ]
+  },
+  {
+   "literal": "137.03600695",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
+   ]
+  },
+  {
+   "literal": "137.03601012",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
+   ]
+  },
+  {
+   "literal": "137.03600381",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
+   ]
+  },
+  {
+   "literal": "938.2667",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md"
+   ]
+  },
+  {
+   "literal": "105.658375649",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-06-02-m-mu-pr1556-superseded-by-witness.md"
+   ]
+  },
+  {
+   "literal": "105.658375506",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/audits/2026-05-23-1ppb-gap-closure-synthesis.md"
+   ]
+  },
+  {
+   "literal": "105.65839781",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/workplans/2026-06-09-qbeta-precision-thread-workplan.md"
+   ]
+  },
+  {
+   "literal": "137.03599912695",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/coordination/2026-06-02-yekutieli-multicell-and-coulomb-channel.md"
+   ]
+  },
+  {
+   "literal": "137.0359932",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/coordination/2026-06-02-yekutieli-multicell-and-coulomb-channel.md"
+   ]
+  },
+  {
+   "literal": "938.2774",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/coordination/2026-05-22-cal4-lambda-scale.md"
+   ]
+  },
+  {
+   "literal": "939.5710",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/coordination/2026-05-22-cal4-lambda-scale.md"
+   ]
+  },
+  {
+   "literal": "938.27185",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
+   ]
+  },
+  {
+   "literal": "939.565420",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
+   ]
+  },
+  {
+   "literal": "2808.921137",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "682.996261",
+   "table_value": "683",
+   "quantity": "luminous efficacy",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "235050.192528",
+   "table_value": "2.35051757077e5",
+   "quantity": "atomic unit of mag. flux density",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "235051.017671",
+   "table_value": "2.35051757077e5",
+   "quantity": "atomic unit of mag. flux density",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "235051.842813",
+   "table_value": "2.35051757077e5",
+   "quantity": "atomic unit of mag. flux density",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "235052.667956",
+   "table_value": "2.35051757077e5",
+   "quantity": "atomic unit of mag. flux density",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "235053.493099",
+   "table_value": "2.35051757077e5",
+   "quantity": "atomic unit of mag. flux density",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "315772.516608",
+   "table_value": "3.1577502480398e5",
+   "quantity": "hartree-kelvin relationship",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "1776.860655",
+   "table_value": "1776.86",
+   "quantity": "tau energy equivalent",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "315774.134126",
+   "table_value": "3.1577502480398e5",
+   "quantity": "hartree-kelvin relationship",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "315775.751644",
+   "table_value": "3.1577502480398e5",
+   "quantity": "hartree-kelvin relationship",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "315777.369163",
+   "table_value": "3.1577502480398e5",
+   "quantity": "hartree-kelvin relationship",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-table-comprehensive.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2720894273242637274",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/me-additive-term-structure.witness.json"
+   ]
+  },
+  {
+   "literal": "206.768283000",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-tau-knot-prediction.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65837549567328006",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/landauer-crossing-energy-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56542279096784",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "1.29333336096784014",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56542179069",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "1.29333236069",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "939.565421790687348",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "1.29333236068734849",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "46.686056",
+   "table_value": "46.686447719",
+   "quantity": "Bohr magneton in inverse meter per tesla",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/qns-phase-scramble-probe.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.934336569856",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-qclt-approx.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.39155552",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-qclt-approx.witness.json"
+   ]
+  },
+  {
+   "literal": "1.891148789285672",
+   "table_value": "1.89115",
+   "quantity": "tau-neutron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/binding-block-multiplicative.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2731924070993",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/unified-mass-molecular.witness.json"
+   ]
+  },
+  {
+   "literal": "939.5654217900798",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/canonical-isotope-witness-Z00.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27836",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/all-nuclides-wedderburn-spectral-v2.witness.json"
+   ]
+  },
+  {
+   "literal": "682.9974",
+   "table_value": "683",
+   "quantity": "luminous efficacy",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/all-nuclides-wedderburn-spectral-v2.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65840",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "computations/m_p_substrate_identity_50dps.py"
+   ]
+  },
+  {
+   "literal": "13.6057337865738165",
+   "table_value": "13.605693122990",
+   "quantity": "Rydberg constant times hc in eV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/aufbau-ell-penetration-hartree-pinned.witness.json"
+   ]
+  },
+  {
+   "literal": "2.99371321",
+   "table_value": "2.99371703403",
+   "quantity": "triton-proton mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/probe-collective-binding-residual.witness.json"
+   ]
+  },
+  {
+   "literal": "105.658375496",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/per-observable-100x-status.witness.json"
+   ]
+  },
+  {
+   "literal": "939.565422788",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/per-observable-100x-status.witness.json"
+   ]
+  },
+  {
+   "literal": "1.29333336097",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/per-observable-100x-status.witness.json"
+   ]
+  },
+  {
+   "literal": "0.007297355976840865",
+   "table_value": "7.2973525643e-3",
+   "quantity": "fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/h2-molecular-binding.witness.json"
+   ]
+  },
+  {
+   "literal": "137.03594442403733",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/hecke-core-symbolic-migration.witness.json"
+   ]
+  },
+  {
+   "literal": "1875.61294537",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/hecke-channel-binding.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.92113531",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/hecke-channel-binding.witness.json"
+   ]
+  },
+  {
+   "literal": "2808.3915578",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/hecke-channel-binding.witness.json"
+   ]
+  },
+  {
+   "literal": "3727.37934974",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/hecke-channel-binding.witness.json"
+   ]
+  },
+  {
+   "literal": "16.817037649821756",
+   "table_value": "16.8170",
+   "quantity": "tau-muon mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json"
+   ]
+  },
+  {
+   "literal": "137.0354154444",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/DERIVATION-STATUS.md"
+   ]
+  },
+  {
+   "literal": "206.76828",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/generation-count-t29-truncation.witness.json"
+   ]
+  },
+  {
+   "literal": "16.817029",
+   "table_value": "16.8170",
+   "quantity": "tau-muon mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/generation-count-t29-truncation.witness.json"
+   ]
+  },
+  {
+   "literal": "137.035426248011",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha-em-form-ladder.witness.json"
+   ]
+  },
+  {
+   "literal": "137.036006955305",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha-em-form-ladder.witness.json"
+   ]
+  },
+  {
+   "literal": "137.035415444372",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha-em-form-ladder.witness.json"
+   ]
+  },
+  {
+   "literal": "137.035996151711",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha-em-form-ladder.witness.json"
+   ]
+  },
+  {
+   "literal": "206.76828298931504382",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/murakami-deformed-vc-q0.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65839781134181577",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27208942732426373",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56542278829210389",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "8.8802415034028293832",
+   "table_value": "8.88024338",
+   "quantity": "proton-muon mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "1.0013784203703184095",
+   "table_value": "1.00137841946",
+   "quantity": "neutron-proton mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "206.76832637067389029",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65837564351300016",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2718621359253061",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56519547313347804",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "8.8802412153449704242",
+   "table_value": "8.88024338",
+   "quantity": "proton-muon mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "1.0013784206789106606",
+   "table_value": "1.00137841946",
+   "quantity": "neutron-proton mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "206.76828298931511123",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mu-p-pin-sensitivity-map.witness.json"
+   ]
+  },
+  {
+   "literal": "0.22305075",
+   "table_value": "0.22305",
+   "quantity": "weak mixing angle",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/em-linking-coth-separation.witness.json"
+   ]
+  },
+  {
+   "literal": "1.2933333372081",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/quark-mass-extraction-stage1.witness.json"
+   ]
+  },
+  {
+   "literal": "938.272089427324",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/quark-mass-extraction-stage1.witness.json"
+   ]
+  },
+  {
+   "literal": "939.565422764532",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/quark-mass-extraction-stage1.witness.json"
+   ]
+  },
+  {
+   "literal": "1.293333337",
+   "table_value": "1.29333251",
+   "quantity": "neutron-proton mass difference energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/quark-mass-extraction-stage1.witness.json"
+   ]
+  },
+  {
+   "literal": "1.0013784193053599",
+   "table_value": "1.00137841946",
+   "quantity": "neutron-proton mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/mass-from-q-symbolic.witness.json"
+   ]
+  },
+  {
+   "literal": "105.658397811341816",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-p-substrate-identity-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "206.76832637067389",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-p-substrate-identity-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "938.277360697",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/reading-a-residual-at-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "16.8170293324",
+   "table_value": "16.8170",
+   "quantity": "tau-muon mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-tau-hecke-energy-route.witness.json"
+   ]
+  },
+  {
+   "literal": "137.0359999982",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/cross-branch-synthesis-2026-04-25.md"
+   ]
+  },
+  {
+   "literal": "0.0072973525692838015",
+   "table_value": "7.2973525643e-3",
+   "quantity": "fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/b-over-a.witness.json"
+   ]
+  },
+  {
+   "literal": "206.768282989",
+   "table_value": "206.7682827",
+   "quantity": "muon-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65837564351296387",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/m-p-borromean-verification-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "938.272049444",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/borromean-volume-propagation-to-m-p.witness.json"
+   ]
+  },
+  {
+   "literal": "938.272285936",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/borromean-volume-propagation-to-m-p.witness.json"
+   ]
+  },
+  {
+   "literal": "938.2773607",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "computations/path_c3_klr_prescreen_50dps.py"
+   ]
+  },
+  {
+   "literal": "2.99314824610723",
+   "table_value": "2.993152671552",
+   "quantity": "helion-proton mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/joint-tower-sdp-rust.witness.json"
+   ]
+  },
+  {
+   "literal": "0.9986155679975527",
+   "table_value": "0.99862347797",
+   "quantity": "proton-neutron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/joint-tower-sdp-rust.witness.json"
+   ]
+  },
+  {
+   "literal": "105.65839781134181393",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/deuteron-from-scratch-ledger.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56589306798113012",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/deuteron-from-scratch-ledger.witness.json"
+   ]
+  },
+  {
+   "literal": "939.56566583256435848",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/deuteron-from-scratch-ledger.witness.json"
+   ]
+  },
+  {
+   "literal": "137.035935093976",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/meson-em-sinh-closed-form.witness.json"
+   ]
+  },
+  {
+   "literal": "137.03536721305434",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/meson-em-sinh-closed-form.witness.json"
+   ]
+  },
+  {
+   "literal": "137.03593357799554",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/meson-em-sinh-closed-form.witness.json"
+   ]
+  },
+  {
+   "literal": "0.007297352573756914",
+   "table_value": "7.2973525643e-3",
+   "quantity": "fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/binding-color-vs-charge-tn3he.witness.json"
+   ]
+  },
+  {
+   "literal": "0.0072973526",
+   "table_value": "7.2973525643e-3",
+   "quantity": "fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/h4-residual-vs-fine-structure-50dps.witness.json"
+   ]
+  },
+  {
+   "literal": "938.271890002360352",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/phase5/phase1e-neutron-cross-isotope-h-expansion.witness.json"
+   ]
+  },
+  {
+   "literal": "939.563569269930142",
+   "table_value": "939.56542194",
+   "quantity": "neutron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/phase5/phase1e-neutron-cross-isotope-h-expansion.witness.json"
+   ]
+  },
+  {
+   "literal": "1836.15267095",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json"
+   ]
+  },
+  {
+   "literal": "938.27189001064",
+   "table_value": "938.27208943",
+   "quantity": "proton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/phase5/phase2c-derive-correction-tower.witness.json"
+   ]
+  },
+  {
+   "literal": "1.0072843680887787998",
+   "table_value": "1.0072764665789",
+   "quantity": "proton mass in u / proton relative atomic mass",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/probes/qbeta-nz-even-series-fourone.witness.json"
+   ]
+  },
+  {
+   "literal": "1836.1522",
+   "table_value": "1836.152673426",
+   "quantity": "proton-electron mass ratio",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "computations/probes/proton_brane_tower_correction_probe.py"
+   ]
+  },
+  {
+   "literal": "1875.612790",
+   "table_value": "1875.61294500",
+   "quantity": "deuteron mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/probes/rho_f_vol_binding_dashboard.py"
+   ]
+  },
+  {
+   "literal": "2808.921136",
+   "table_value": "2808.92113668",
+   "quantity": "triton mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/probes/rho_f_vol_binding_dashboard.py"
+   ]
+  },
+  {
+   "literal": "2808.391611",
+   "table_value": "2808.39161112",
+   "quantity": "helion mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/probes/rho_f_vol_binding_dashboard.py"
+   ]
+  },
+  {
+   "literal": "3727.379109",
+   "table_value": "3727.3794118",
+   "quantity": "alpha particle mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/probes/rho_f_vol_binding_dashboard.py"
+   ]
+  },
+  {
+   "literal": "137.0360",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "computations/probes/alpha_em_4pi_derived_form_probe.py"
+   ]
+  },
+  {
+   "literal": "137.03541544437",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha/alpha-em-categorical-reidentification.witness.json"
+   ]
+  },
+  {
+   "literal": "137.03599614924",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha/alpha-em-categorical-reidentification.witness.json"
+   ]
+  },
+  {
+   "literal": "137.035415444",
+   "table_value": "137.035999177",
+   "quantity": "inverse fine-structure constant",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/alpha/alpha-em-habiro-torus-knot-jones.witness.json"
+   ]
+  },
+  {
+   "literal": "931.4877377060899",
+   "table_value": "931.49410372",
+   "quantity": "atomic mass constant energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 1,
+   "files": [
+    "computations/braid-registry/pt-198.json"
+   ]
+  },
+  {
+   "literal": "105.6583745",
+   "table_value": "105.6583755",
+   "quantity": "muon mass energy equivalent in MeV",
+   "sites": 1,
+   "code_sites": 0,
+   "files": [
+    "computations/qbeta/qbeta_t3_multiknot_binding_probe.py"
+   ]
+  }
+ ]
+}

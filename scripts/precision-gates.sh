@@ -70,6 +70,52 @@ GATES=(
   # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
   "witness shape guard|computations/witness_shape_guard.py||yes|yes"
   "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
+  # BLOCKING, and green on arrival because the 111-witness backlog is
+  # baselined. The mirror of `witness_hollowness_audit` (which catches
+  # `allPassed: true` with `assertions: []` — green with nothing behind it):
+  # this catches a witness committed with its failure RECORDED INSIDE IT.
+  #
+  # A recorded-but-unread failure is strictly worse than no check, because the
+  # check's existence is what stops anyone looking. Motivating case, bean
+  # qou-4e5k: `tr-m-algebraic-q.witness.json` carried
+  # `symbolic_delta_matches_li2q computed=1.338e-06 tol=1e-12 passed=false`
+  # from 2026-08-09 — naming a real δ defect numerically — and was
+  # rediscovered twelve days later by hand-measuring a deuteron trace.
+  #
+  # Baselined at 111 witnesses / 137 assertions rather than run red, because
+  # this file's own comments (see the provenance entry below) record that a
+  # gate red on arrival gets skipped, which is how a checker goes quiet.
+  # Counts shrink, never grow. Drain triage is bean qou-ad4t; the category to
+  # identify first is the probe that records an EXPECTED negative, since every
+  # such witness teaches readers that red is normal.
+  #
+  # ADVISORY ON ARRIVAL, AND THIS IS THE FLIP-TO-BLOCKING NOTE.
+  # ----------------------------------------------------------
+  # FLIP TO BLOCKING WHEN THE NEW-OFFENDER COUNT REACHES 0 — i.e. when a plain
+  # run reports no witness outside the baseline. Same terms as the
+  # audits-tree entry above, and the same precedent this file set for its
+  # red-on-arrival provenance gate.
+  #
+  # It was authored BLOCKING and green at 111. Between authoring and merge,
+  # `main` gained a 112th (`computations/probes/qbeta-habiro-residual.witness.json`,
+  # `Q_A_witness_matches_live_single_wrap computed=29.959 expected=0.0
+  # tolerance=1.0`, landed by ae571e445d). Shipping it blocking would therefore
+  # have made THIS SCRIPT exit 1 on `main` for every other agent — over a
+  # witness that has nothing to do with the branch introducing the gate.
+  #
+  # That is the failure this gate exists to prevent, arriving one level up: a
+  # preflight that is red for reasons you did not cause is a preflight you
+  # learn to skip. Advisory keeps the signal and costs nobody a red run.
+  #
+  # The two shortcuts were BOTH refused, and neither should be taken later:
+  #   * do NOT add the offender to the baseline — the ratchet drains and never
+  #     grows (AGENTS.md), and a baseline that absorbs each new arrival is not
+  #     a ratchet;
+  #   * do NOT "fix" qbeta-habiro-residual to clear this — it is a 30x
+  #     residual, not a tolerance nudge, and it belongs to the live qbeta
+  #     proton re-pin arc (#5386). Editing it steps on a sibling mid-flight.
+  # Drain owners: bean qou-6ort (the dps defect) and the qbeta re-pin arc.
+  "witness failed-assertion ratchet|computations/witness_failed_assertion_audit.py|--strict|yes|no"
   # Blocking, and GREEN as of the commit that added it (0 candidates across
   # 273 numpy-importing files) — which is exactly when a gate is safe to make
   # blocking, because it can then only ever fire on a NEW regression.
@@ -99,9 +145,23 @@ GATES=(
   # REPORTS a gap; it does not HOLD one. Verified before flipping — green at
   # exit 0, exit 1 naming a planted dirty witness, green again once removed.
   #
-  # The 6 baselined witnesses (26 fields: max_loss_digits, c_ratios, Z_at_q0,
-  # sum_classical) still belong to the arcs owning those probes. This gate
-  # holds the line; it does not drain it.
+  # WIDENED to all of docs/audits on 2026-08-21, superseding the
+  # docs/audits/scripts root. The scripts subtree was the smaller half by an
+  # order of magnitude: 6 files / 26 fields against 32 files / 1,275 fields for
+  # the tree containing it. Gating the subtree alone left the bulk of the
+  # audits tree in the same ungated state the flip was meant to end.
+  #
+  # The 26 fields the old baseline tolerated are now 0 — all six producers were
+  # fixed at source (max_loss_digits, c_ratios, Z_at_q0, sum_classical), so the
+  # wider baseline records those files at nothing and the subtree's floor is
+  # preserved exactly: new dirt there is still NEW, still blocking. The
+  # subtree baseline is deleted rather than kept beside this one, because two
+  # baselines over nested roots is two things to keep true.
+  #
+  # The 32 files / 1,275 fields now recorded are a TOLERATED backlog belonging
+  # to the arcs that own those probes, not to this one. The ratchet holds the
+  # line; it does not drain it. 32 of those fields are LP-dual carve-outs in a
+  # single witness and are excused by name, not by baseline.
   # ADVISORY, baseline 28 — the leak BETWEEN the two layers above. The
   # padding ratchet works on values and is blind once a float64 is multiplied
   # by anything exact (measured: fmt(mpf(f64)) caught, fmt(exact*mpf(f64)) not);
@@ -113,7 +173,7 @@ GATES=(
   # annotation already produced one measured false positive, since fixed);
   # flip to blocking once the 28 rows carry agent verdicts. Bean qou-gqt5.
   "mixed mpf/f64 -> serializer|computations/mpf_mixed_arithmetic_audit.py|--strict|yes|yes"
-  "audits-tree raw-float64|computations/witness_raw_float64_audit.py|--scan-root docs/audits/scripts --strict|no|yes"
+  "audits-tree raw-float64|computations/witness_raw_float64_audit.py|--scan-root docs/audits --strict|no|yes"
   # ADVISORY, and it starts red on purpose — same terms as the audits-tree
   # entry above. `witness_provenance_audit.py` was written, works (27/27
   # self-test), ships --strict/--list, and was in NO array, so nothing ran it.

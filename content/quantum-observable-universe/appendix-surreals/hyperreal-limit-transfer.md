@@ -8,7 +8,7 @@ The content, it turns out, needs none of that structure.
 *Let $a_n \to L$ in the $\varepsilon$–$N$ sense. Then, in Mathlib's hyperreals $\mathbb{R}^*$,*
 
 $$
-  \operatorname{st}\bigl(\,{}^{*}\!a\,\bigr) \;=\; L ,
+  \mathrm{st}\bigl(\,{}^{*}\!a\,\bigr) \;=\; L ,
 $$
 
 *where ${}^{*}\!a$ is the germ of the sequence at the hyperfilter. Eventual domination transfers to the hyperreal order, and the limit-comparison inequality follows from monotonicity of the standard part.*
@@ -30,10 +30,10 @@ Hyperfilter convergence is strictly weaker than convergence along `atTop`. The a
 $$
   a_n \to L \ \text{along } \mathrm{atTop}
   \quad\Longrightarrow\quad
-  \operatorname{IsSt}({}^{*}\!a, L)
+  \mathrm{IsSt}({}^{*}\!a, L)
 $$
 
-is available; **the converse is false**. Everything here therefore *pushes* real limits into $\mathbb{R}^*$. Nothing here discharges a goal of the form $\text{Tendsto} \dots \text{atTop}$ by a standard-part computation, because $\operatorname{IsSt}({}^{*}\!a, r)$ says $a(\omega) \approx r$ for one specific $\omega$, not for every infinite hypernatural — which is what a genuine nonstandard limit argument requires, and which Mathlib does not package.
+is available; **the converse is false**. Everything here therefore *pushes* real limits into $\mathbb{R}^*$. Nothing here discharges a goal of the form $\text{Tendsto} \dots \text{atTop}$ by a standard-part computation, because $\mathrm{IsSt}({}^{*}\!a, r)$ says $a(\omega) \approx r$ for one specific $\omega$, not for every infinite hypernatural — which is what a genuine nonstandard limit argument requires, and which Mathlib does not package.
 
 **So surreal and standard-part machinery does not replace this corpus's $\varepsilon$–$\delta$ arguments.** That was the hoped-for payoff, and it is not delivered.
 

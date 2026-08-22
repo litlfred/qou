@@ -33,22 +33,27 @@ Hecke normal forms, KLR modules, confinement levels — all live in
 companion files.  We import them as opaque types and supply just
 enough structure to state the conditional theorem. -/
 
-/-- The Iwahori–Hecke algebra `H_n(R, q)` (carrier; full structure
+/-- The Iwahori–Hecke algebra `H_n(R, q)` (opaque carrier; full structure
     in `hecke-algebra-from-braiding.lean`). -/
+-- Ref: [kassel2008] Kassel–Turaev, "Braid Groups," GTM 247, §4 (Iwahori–Hecke algebra of B_n)
 axiom HeckeAlgebra (n : ℕ) (q : ℝ) : Type
 
-/-- Hecke normal form of a closed braid `K` (carrier; full
+/-- Hecke normal form of a closed braid `K` (opaque carrier; full
     definition in `hecke-normal-form.lean`). -/
+-- Ref: [kassel2008] Kassel–Turaev, "Braid Groups," GTM 247, §4 (normal forms in H_n)
 axiom HeckeNormalForm (n : ℕ) (q : ℝ) : Type
 
 /-- The KLR module attached to a Hecke normal form via Brundan–
-    Kleshchev (carrier; full structure conditional on the class). -/
+    Kleshchev (opaque carrier; full structure conditional on the class). -/
+-- Ref: [brundankleshchev2009] Brundan–Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov–Lauda algebras," Invent. Math. 178
 axiom KLRModule (n : ℕ) : Type
 
-/-- Top non-zero graded degree of a KLR module. -/
+/-- Top non-zero graded degree of a KLR module (opaque accessor). -/
+-- Ref: [khovanovlauda2009] Khovanov–Lauda, "A diagrammatic approach to categorification of quantum groups I," Represent. Theory 13 (KLR grading)
 axiom KLRTopDegree {n : ℕ} (M : KLRModule n) : ℕ
 
-/-- Confinement level `ℓ(K, q)` of a normal form (def:confinement-level). -/
+/-- Confinement level `ℓ(K, q)` of a normal form (opaque accessor; def:confinement-level). -/
+-- Ref: [manuscript] def:confinement-level
 axiom confinementLevel {n : ℕ} {q : ℝ} (T : HeckeNormalForm n q) : ℕ
 
 /-! ## Conjectural class

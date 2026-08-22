@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-2006.02042v1
-doc_title: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT"
+doc_title: "The Strong AJ Conjecture for the Figure 8 Knot"
 section_id: sec-006-26-step-6-applying-initial-conditions
 section_title: "Step 6: Applying initial conditions"
 section_number: 2.6
 pages: 8-9
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
-doc_brief: "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and"
+doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
 ---
 ditions (2.4)–(2.8). Firstly, we note that equations (2.4) and (2.5) h old true since we
 chose p2(t, M) = p−2(t, M) = 1 . Secondly, by taking t = 1 in p1(t, M) = p−1(t, M−1)

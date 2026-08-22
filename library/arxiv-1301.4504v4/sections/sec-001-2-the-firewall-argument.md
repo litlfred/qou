@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1301.4504v4
-doc_title: "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center "
+doc_title: "Quantum Computation vs. Firewalls"
 section_id: sec-001-2-the-firewall-argument
 section_title: "The Firewall Argument"
 section_number: 2
 pages: 8-9
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princ"
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 We begin with a somewhat reorganized presentation of the original argument of [1].
 Their argument rests on some basic assumptions about the quantum description of

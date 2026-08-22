@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:24.869Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, 4-step y_lambda extraction + alpha_k pipeline, ~7.3 kB); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:24.918Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, 4-step y_lambda extraction + alpha_k pipeline, ~7.3 kB); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 475 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:24.964Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Five spaced dashes plus one numeric range ('$4$ - $12$'). Three append a gloss ('the chi-matrix is invertible - the system has a unique solution'; 'a q-rational element of $R((z))$ - generically of the form ...'; '{1.02, ...} - the formal derivation precedent'), one carries a real correction ('needs on the order of $n^2$ canonical evaluation points - not 5').",
+        "notes": "Density 5 in 7.3 kB with genuine content on each; kept. The '- not 5' is substantive (it corrects the five-probe precedent quoted two sentences earlier), not a cadence."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 475 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:25.007Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, 4-step y_lambda extraction + alpha_k pipeline, ~7.3 kB); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1495,23 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:25.051Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "Block-final sentence: 'Although the derivation mechanism utilizes the standard Jones-Markov linear system extraction across Wenzl bridges, employing this machinery to extract the mass-spectrum coefficients $\\alpha_k$ constitutes a mathematically novel physical framework unique to the Quantum Observable Universe.' A concessive-then-elevate closer that adds no mathematics and sits after the block's real last point ('Step (i) is the open work; step (ii) is mechanical').",
+        "notes": "NOT fixed - deleting it removes an authorial novelty claim, which is a meaning change and outside the mechanical-fix budget. proposed: delete the sentence from the .md and, if the claim is to be kept, move it to the .ts as authorNotes [{kind:'note', body:'...'}] per AGENTS.md section 4d (author-tracking / significance claims belong in authorNotes, not in scholarly prose). The block already ends correctly at 'Step (i) is the open work; step (ii) is mechanical once (i) is fixed.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:25.114Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The 4-step linear-system algorithm below remains valid as an alternative derivation, and was historically the first method used in this paper.'",
+        "notes": "Reads as provenance rather than narrated emphasis, so it passes this criterion; recorded under trap-superlative as an authorNotes-migration candidate instead."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1566,21 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:25.185Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, 4-step y_lambda extraction + alpha_k pipeline, ~7.3 kB); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:25.249Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, 4-step y_lambda extraction + alpha_k pipeline, ~7.3 kB); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1634,23 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:25.304Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "Same closing sentence: 'constitutes a mathematically novel physical framework unique to the Quantum Observable Universe' - two unqualified maximum-strength markers ('novel', 'unique to') asserted about the authors' own work, in a proof block.",
+        "notes": "NOT fixed - same sentence as the trap-closing-aphorism finding; see the proposed authorNotes migration there. Also noted: 'was historically the first method used in this paper' (line 16) is author-tracking status in prose, an AGENTS.md section 4d authorNotes candidate."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1670,22 @@
         "reviewed_at": "2026-08-15T10:31:00.364Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9f7a5cec10b9",
+          "ts": "682973ef8fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:25.348Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The closing novelty sentence is a 38-word single clause that stalls aloud; the technical paragraphs (CRT probing, witness layout) parse cleanly.",
+        "notes": "Not scored separately - the offending sentence is already recorded as fail under trap-closing-aphorism and trap-superlative, and the proposed fix (delete / move to authorNotes) removes it."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1708,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:29:25.348Z"
 }

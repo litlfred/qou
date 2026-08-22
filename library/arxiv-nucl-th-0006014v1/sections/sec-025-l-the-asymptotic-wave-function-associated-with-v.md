@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-025-l-the-asymptotic-wave-function-associated-with-v
 section_title: "The asymptotic wave function associated with VS and δS"
 section_number: L
 pages: 23-24
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
-doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗ — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . ."
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . . . . . . . . . ."
 ---
 L is
 χS

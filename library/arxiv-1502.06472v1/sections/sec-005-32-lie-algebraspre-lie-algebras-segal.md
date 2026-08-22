@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1502.06472v1
-doc_title: "Gr¨ obner-Shirshov bases and PBW theorems∗ L. A. Bokut †"
+doc_title: "Gröbner-Shirshov bases and PBW theorems"
 section_id: sec-005-32-lie-algebraspre-lie-algebras-segal
 section_title: "Lie algebras–pre-Lie algebras (Segal)"
 section_number: 3.2
 pages: 5-5
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
-doc_brief: "Gröbner-Shirshov bases and PBW theorems∗ L. A. Bokut † — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for"
+doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
 ---
 Pre-Lie algebras are deﬁned by an identity ( x, y, z ) = ( x, z, y ), where ( x, y, z ) = ( xy)z −
 x(yz).

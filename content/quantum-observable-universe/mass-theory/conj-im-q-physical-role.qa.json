@@ -1734,6 +1734,21 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.035Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The '## Exclusions for Im(q)' list is a scope statement with four items, each cross-referenced; false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1753,6 +1768,21 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.122Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 119-line conjecture (physical role of Im(q)): exclusions, three candidate roles with their tests, obstacles, cross-references and the default-value section. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1773,6 +1803,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "15 stylistic spaced dashes in 705 words (2.13/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.200Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 119-line conjecture (physical role of Im(q)): exclusions, three candidate roles with their tests, obstacles, cross-references and the default-value section. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1792,6 +1837,21 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 705 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.279Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The three candidate roles are separately developed, each with its own testable observable and its own obstacle entry; ordered 'in order of structural plausibility' in the .ts."
       }
     ],
     "trap-closing-aphorism": [
@@ -1811,6 +1871,21 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.322Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 119-line conjecture (physical role of Im(q)): exclusions, three candidate roles with their tests, obstacles, cross-references and the default-value section. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1830,6 +1905,21 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.356Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 119-line conjecture (physical role of Im(q)): exclusions, three candidate roles with their tests, obstacles, cross-references and the default-value section. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1849,6 +1939,21 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.390Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 119-line conjecture (physical role of Im(q)): exclusions, three candidate roles with their tests, obstacles, cross-references and the default-value section. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1868,6 +1973,21 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.424Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 119-line conjecture (physical role of Im(q)): exclusions, three candidate roles with their tests, obstacles, cross-references and the default-value section. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1887,6 +2007,23 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.458Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'**Empirically sufficient**: all known mass observables fit with real $q_0$ to the precision documented in `per-observable-100x-status.witness.json`.' The cited witness is what shows the opposite: on the L2 100x target, 1 of 5 scoreable predictions passes (m_K/m_pi), m_mu misses by 963.6x and m_p by ~437x.",
+        "notes": "proposed: 'Empirically adequate at the precision the framework currently reaches: no known mass observable requires a non-zero Im(q), though several miss their L2 100x targets for unrelated reasons (see per-observable-100x-status.witness.json).'"
       }
     ],
     "trap-nonspeakable": [
@@ -1906,6 +2043,23 @@
         "reviewed_at": "2026-08-15T10:31:00.458Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5cc60e4e9bd6",
+          "ts": "077f57784289"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.490Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'Most decay widths in the Standard Model have categorical interpretations open in the QOU framework.' -- 'have ... open' has no reading; the intended claim is presumably that they have no categorical interpretation yet.",
+        "notes": "proposed: 'The QOU framework does not yet supply a categorical formula for Standard-Model decay widths.' Reported separately: '(center $\\approx 1.010$, radius $\\approx 0.100$ per the formal derivation)' is a token substitution where a producer name stood."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1929,5 +2083,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:55.490Z"
 }

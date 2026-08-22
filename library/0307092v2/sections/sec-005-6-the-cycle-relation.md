@@ -1,13 +1,13 @@
 ---
 doc_id: 0307092v2
-doc_title: "Published: 14 February 2004"
+doc_title: "Extended Bloch group and the Cheeger-Chern-Simons class"
 section_id: sec-005-6-the-cycle-relation
 section_title: "The cycle relation"
 section_number: 6
 pages: 23-30
 source_pdf: 0307092v2.pdf
 source_sha256: de2f7ddec49b2ce6
-doc_brief: "Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
+doc_brief: "Extended Bloch group and the Cheeger-Chern-Simons class — We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z)."
 ---
 In this section we prove a general relation called the “cycle relation,” that holds
 in ˆP(C). We will use it repeatedly later. It is, in fact, a consequen ce of the

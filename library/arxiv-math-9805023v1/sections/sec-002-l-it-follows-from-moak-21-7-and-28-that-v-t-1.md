@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9805023v1
-doc_title: "q-LAGUERRE POL YNOMIALS AND BIG q-BESSEL"
+doc_title: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations"
 section_id: sec-002-l-it-follows-from-moak-21-7-and-28-that-v-t-1
 section_title: "It follows from Moak [21, §7] and (2.8) that V t− 1"
 section_number: L
 pages: 7-7
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
-doc_brief: "q-LAGUERRE POLYNOMIALS AND BIG q-BESSEL — The q-Laguerre polynomials correspond to an indetermined moment probl em."
+doc_brief: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment probl em."
 ---
 k (0) is not identically zero for k < −N
 for some N . The observation now follows from the asymptotic expressio n for the Jackson

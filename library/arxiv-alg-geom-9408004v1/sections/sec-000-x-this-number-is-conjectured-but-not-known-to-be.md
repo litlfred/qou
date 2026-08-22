@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-alg-geom-9408004v1
-doc_title: "Eyal Markman 2 University of Michigan"
+doc_title: "Cubics, Integrable Systems, and Calabi-Yau Threefolds"
 section_id: sec-000-x-this-number-is-conjectured-but-not-known-to-be
 section_title: "This number is conjectured, but not known, to be ﬁnite. The m ulti-"
 section_number: X
 pages: 20-26
 source_pdf: 9408004v1.pdf
 source_sha256: d3bc00265294aa02
-doc_brief: "CUBICS, INTEGRABLE SYSTEMS, AND CALABI-YAU THREEFOLDS Ron Donagi 1 University of Pennsylvania Eyal Markman 2 University of Michigan — 2 sections: This number is conjectured, but no; References"
+doc_brief: "Cubics, Integrable Systems, and Calabi-Yau Threefolds — 2 sections: This number is conjectured, but no; References"
 ---
 parameterq is deﬁned by q :=e2πit , where t is a set of linear coordinates on
 H 2(X, C). Intrinsically, we deﬁne qdk as the function given at t ∈H 2(X, C)

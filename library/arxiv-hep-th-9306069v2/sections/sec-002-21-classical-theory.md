@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "Department of Physics"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-002-21-classical-theory
 section_title: "Classical theory"
 section_number: 2.1
 pages: 7-8
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for"
 ---
 provide a microphysical description, but it helps in formul ating a kinematic framework for
 one. In section 5 we examine consequences of the postulates.

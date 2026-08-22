@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1104.0755v2
-doc_title: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡"
+doc_title: "A connection formula between the Ramanujan function and the q-Airy function"
 section_id: sec-002-31-the-ramanujan-function-aqx
 section_title: "The Ramanujan function Aq(x)"
 section_number: 3.1
 pages: 6-7
 source_pdf: 1104.0755v2.pdf
 source_sha256: d2fbbea44598e8f4
-doc_brief: "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ — We show a connection formula between two diﬀerent q-Airy func- tions."
+doc_brief: "A connection formula between the Ramanujan function and the q-Airy function — We show a connection formula between two diﬀerent q-Airy func- tions."
 ---
 The Ramanujan function appears in Ramanujan’s ”Lost notebook” [9]. Is-
 mail has pointed out that the Ramanujan function can be considere d as

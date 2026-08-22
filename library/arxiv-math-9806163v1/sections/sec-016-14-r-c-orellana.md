@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9806163v1
-doc_title: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana"
+doc_title: "Weights of Markov traces on Hecke algebras"
 section_id: sec-016-14-r-c-orellana
 section_title: "R. C. Orellana"
 section_number: 14
 pages: 14-14
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
-doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
+doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 −qr1+m on V[m+2,m r1−1] and V[m+1,m +1,m r1−2]. But ˜gf +1 acts by q on V[m+2,m r1−1] and by −1 on
 V[m+1,m +1,m r1−2]. In a similar way we can show that V[mr1 , 2] and V[mr1 , 12] are nonequivalent.

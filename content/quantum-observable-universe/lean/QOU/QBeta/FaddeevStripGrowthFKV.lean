@@ -35,7 +35,7 @@ same-divisor input, which on the `phiBProd` side is already pinned (eq 21 /
 production; the leg stays *stated*-conditional. Uses only on-`main`
 `FaddeevStripGrowthBoxReduction`. Sorry-free.
 
--- Ref: [faddeev-kashaev-volkov-2001] https://arxiv.org/abs/hep-th/0006156 (§6, eq 22)
+-- Ref: [faddeev-kashaev-volkov2000] https://arxiv.org/abs/hep-th/0006156 (§6, eq 22)
 -/
 import Mathlib.LinearAlgebra.Basis.Defs
 import Mathlib.LinearAlgebra.Basis.Basic

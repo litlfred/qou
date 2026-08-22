@@ -1,6 +1,6 @@
 ---
 doc_id: afst-2007-6-16-3-665-0
-doc_title: "ANNALES DE LA FACULTÉ DES SCIENCES Mathématiques"
+doc_title: "Galois theory of q-difference equations"
 section_id: sec-008-141-pure-diﬀerence-modules-overk-with-descent-da
 section_title: "Pure diﬀerence modules overK∞ with descent data"
 section_number: 1.4.1

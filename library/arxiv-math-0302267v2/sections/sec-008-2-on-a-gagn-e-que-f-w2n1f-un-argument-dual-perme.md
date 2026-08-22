@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ R´ esum´ e.Nous d´ eﬁnissons la cat´ egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un c"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-008-2-on-a-gagn-e-que-f-w2n1f-un-argument-dual-perme
 section_title: "On a gagn´ e que F ′ = W−2(n+1)(F ′). Un argument dual permet"
 section_number: 2
 pages: 14-15
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
-doc_brief: "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov ∗ Résumé.Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le grou"
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 ensuite de se ramener au cas o` u F = W−2(n+1)(F ) et W−2m(F ) = 0. Le Ext 2 ne peut
 donc ˆ etre non nul que si m ≥ n + 2. Puisque le Ext 2 est nul dans M T(k), il existe dans

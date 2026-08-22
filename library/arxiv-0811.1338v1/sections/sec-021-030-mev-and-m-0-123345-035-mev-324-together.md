@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-0811.1338v1
-doc_title: "Modern Theory of Nuclear Forces E. Epelbaum∗"
+doc_title: "Modern theory of nuclear forces"
 section_id: sec-021-030-mev-and-m-0-123345-035-mev-324-together
 section_title: "MeV and m∆ 0 = 1233.45 ± 0.35 MeV (324) together"
 section_number: 0.30
 pages: 29-29
 source_pdf: 0811.1338v1.pdf
 source_sha256: 9a57cb6e014d3ead
-doc_brief: "Modern Theory of Nuclear Forces E. Epelbaum∗ — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
+doc_brief: "Modern theory of nuclear forces — 36 sections: QCD and Nuclear F orces 1; Conventional approaches to the nuc; EFT for F ew-Nucleon Systems: F ou"
 ---
 with the average mass m∆ ≡ (m∆ ++ +m∆ + +m∆ 0 +
 m∆ −)/4 = 1233 MeV from Ref. (325) which leads to

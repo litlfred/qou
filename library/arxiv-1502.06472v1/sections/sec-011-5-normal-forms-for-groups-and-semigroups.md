@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1502.06472v1
-doc_title: "Gr¨ obner-Shirshov bases and PBW theorems∗ L. A. Bokut †"
+doc_title: "Gröbner-Shirshov bases and PBW theorems"
 section_id: sec-011-5-normal-forms-for-groups-and-semigroups
 section_title: "Normal forms for groups and semigroups"
 section_number: 5
 pages: 8-8
 source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
-doc_brief: "Gröbner-Shirshov bases and PBW theorems∗ L. A. Bokut † — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for"
+doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨ obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
 ---
 –Braid groups
 in Artin-Burau generators (Bokut-Chanikov-Shum [9]);

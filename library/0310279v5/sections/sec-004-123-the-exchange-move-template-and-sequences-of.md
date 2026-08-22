@@ -1,13 +1,13 @@
 ---
 doc_id: 0310279v5
-doc_title: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO"
+doc_title: "Stabilization in the braid groups I: MTWS"
 section_id: sec-004-123-the-exchange-move-template-and-sequences-of
 section_title: "The exchange move template and sequences of exchange moves"
 section_number: 1.2.3
 pages: 9-11
 source_pdf: 0310279v5.pdf
 source_sha256: a1d472d37291a333
-doc_brief: "Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO — 30 sections: Introduction; The problem; Block-strand diagrams and template"
+doc_brief: "Stabilization in the braid groups I: MTWS — 30 sections: Introduction; The problem; Block-strand diagrams and template"
 ---
 The exchange move template was deﬁned by the block-strand diagram in Figure 2. It
 was proved in our earlier paper [11] that for n≤ 3 it is equivalent to braid isotopy, and

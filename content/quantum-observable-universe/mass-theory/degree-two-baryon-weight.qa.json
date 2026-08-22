@@ -2089,6 +2089,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:55.684Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of the 6-line proposition statement (beta_2 = -2[3]_q approx -6.087). No assertion-by-denial construction anywhere; the block is a single displayed formula plus a defining clause."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2108,6 +2123,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:16.833Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Six-line proposition: one italic lead-in, one display equation, one closing 'where' clause. No setup-then-reframe structure."
       }
     ],
     "trap-em-dash": [
@@ -2127,6 +2157,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 16 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:16.874Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Zero em-dashes in the block."
       }
     ],
     "trap-triples": [
@@ -2146,6 +2191,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 16 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:16.913Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No enumeration of any kind; the only 'three' is the quantum 3-integer [3]_q, which is mathematical content."
       }
     ],
     "trap-closing-aphorism": [
@@ -2165,6 +2225,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:16.952Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Block ends on the definitional clause 'where [3]_q is the quantum 3-integer' — a notation gloss, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -2184,6 +2259,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:16.992Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No narration of emphasis; the block states the coefficient and stops."
       }
     ],
     "trap-thesis-restatement": [
@@ -2203,6 +2293,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:17.038Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No block-final restatement; the closing clause introduces new information (what [3]_q denotes)."
       }
     ],
     "trap-performed-warmth": [
@@ -2222,6 +2327,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:17.078Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Institutional register throughout; no personal or affective vocabulary."
       }
     ],
     "trap-superlative": [
@@ -2241,6 +2361,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:17.121Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No intensifiers or maximum-strength claims. The one numeric claim is hedged with the mandated 'approx' per AGENTS.md §7ab."
       }
     ],
     "trap-nonspeakable": [
@@ -2260,6 +2395,21 @@
         "reviewed_at": "2026-08-15T10:31:00.462Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:17.158Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Single short sentence wrapped around a display; reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2283,5 +2433,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:40:17.158Z"
 }

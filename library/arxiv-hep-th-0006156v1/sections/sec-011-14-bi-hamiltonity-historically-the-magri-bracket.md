@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-0006156v1
-doc_title: "STRONGL Y COUPLED QUANTUM DISCRETE LIOUVILLE"
+doc_title: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality"
 section_id: sec-011-14-bi-hamiltonity-historically-the-magri-bracket
 section_title: "Bi-hamiltonity. Historically, the Magri bracket brought about the"
 section_number: 1.4
 pages: 4-5
 source_pdf: 0006156v1.pdf
 source_sha256: b799d4ef150291cf
-doc_brief: "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with"
+doc_brief: "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well"
 ---
 notion of “raising and lowering” which soon became paramoun t for the whole
 Hamiltonian theory of soliton equation. In our case, one lif ts L0 to

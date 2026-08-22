@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0506456v1
-doc_title: "Journal of Knot Theory and Its Ramiﬁcations c© W orld Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INV ARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERS"
+doc_title: "Asymptotics of the quantum invariants for surgeries on the figure 8 knot"
 section_id: sec-007-10-asymptotics-of-the-quantum-invariants-for-the
 section_title: "Asymptotics of the quantum invariants for the ﬁgure 8 knot"
 section_number: 10

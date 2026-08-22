@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-16T12:46:47.431289+00:00",
-  "commitSha": "0504169edd19fe9e2be816b643b2377a3d895cce",
+  "computedAt": "2026-08-21T14:45:22.300743+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 8,
   "computation": "delta-lambda-extended-tower",
   "scriptFile": "delta_lambda_extended_tower.py",
   "scriptHash": "53317acca91a",
-  "scriptCommitSha": "5f21e747817256a042ef482ad1d02bb6e0fc1f82",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,8 +22,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Extended tower extracted from mass-table-ppb.witness.json.",
   "data": {
@@ -151,6 +150,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

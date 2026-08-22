@@ -25,7 +25,7 @@ the `canonical_mass` facade — so the production leading term now tracks CODATA
 to ppb and the residual below is the q-CLT approximation itself.
 
 Until 2026-08-08 they were **+2.89 % high** (m_p 965.38, m_n 966.71): that
-table's nucleon rows were read from the deprecated `m_e · vol_density_borromean`
+table's nucleon rows were read from the deprecated `m_e · per_knot_density_borromean`
 form via `canonical_mass_table_extended`, which the 2026-06-24 ruling had
 removed for absolute mass. Fixed under bean `qou-7loj`.
 

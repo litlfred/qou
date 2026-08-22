@@ -17,6 +17,15 @@ Verdicts:
                      anchor == "independent" but no q0AnchorReason — the claim
                      is unverifiable without re-deriving the producer's import
                      cone, which is the work the declaration should have saved
+  Q0_COMPARISON      anchor == "comparison" — the producer reads BOTH pins
+                     deliberately, with a q0Values mapping whose every entry
+                     was checked against its canonical pin, and a reason
+  Q0_COMPARISON_NO_REASON
+                     as above but no q0AnchorReason — cannot be told from an
+                     accidental straddle without reading the producer
+  Q0_COMPARISON_NO_VALUES
+                     anchor == "comparison" but fewer than two verifiable
+                     {anchor: value} entries — the claim is unchecked
   Q0_ANCHOR_MISSING  no q0Anchor field yet (pre-backfill; not a failure)
   Q0_VALUE_MISSING   anchor present but no q0Value to check
   Q0_AUDIT_EXEMPT    audit/scan/compliance state-tracking witnesses
@@ -149,6 +158,59 @@ def classify(path: Path) -> tuple[str, str]:
                 "without re-deriving the import cone"
             )
         return "Q0_INDEPENDENT", ""
+    if anchor == "comparison":
+        # The producer reads MORE THAN ONE anchor deliberately: the comparison
+        # IS the subject. Distinct from every other value —
+        #   muon/proton   assert ONE pin, and there is no single pin here;
+        #   ambiguous     says the pin is UNDETERMINED and queues a manual
+        #                 ruling. A deliberate comparison is not undetermined,
+        #                 and filing it there mislabels it for whoever drains
+        #                 that queue;
+        #   independent   would be a FALSE claim of layer-freedom — this
+        #                 compute reads q₀ twice.
+        # Before this value the four such probes had no honest option and sat
+        # in Q0_ANCHOR_MISSING, indistinguishable from producers that forgot
+        # (bean qou-po7i).
+        #
+        # A single `q0Value` is a contradiction here for the same reason it is
+        # under `independent`: it asserts the one pin the label denies.
+        if body.get("q0Value"):
+            return "Q0_FLIP", (
+                "anchor=comparison but a single q0Value is recorded "
+                f"({str(body['q0Value'])[:16]}…) — a comparison has no ONE pin; "
+                "record each under q0Values"
+            )
+        values = body.get("q0Values")
+        if not isinstance(values, dict) or len(values) < 2:
+            return "Q0_COMPARISON_NO_VALUES", (
+                "anchor=comparison without a q0Values mapping of at least two "
+                "{anchor: value} entries — the claim is that two or more pins "
+                "were read, so the values read are what make it checkable"
+            )
+        # This is the one label the audit can VERIFY rather than take on trust.
+        # `independent` is an assertion about an import cone; `comparison`
+        # names pins, and each named pin either matches its canonical value or
+        # does not.
+        for a, v in sorted(values.items()):
+            if a not in ("muon", "proton"):
+                return "Q0_FLIP", f"q0Values has unknown anchor {a!r}"
+            canon = _canonical(a)
+            if canon is None:
+                return "Q0_COMPARISON_NO_VALUES", (
+                    f"cannot load canonical {a} pin to check q0Values")
+            if str(v)[:_MATCH_PREFIX] != canon:
+                return "Q0_FLIP", (
+                    f"q0Values[{a}]={str(v)[:16]}… (expected {canon}…) — a "
+                    "comparison mislabelling one of its own legs is the "
+                    "flip-flop bug with extra steps"
+                )
+        if not str(body.get("q0AnchorReason") or "").strip():
+            return "Q0_COMPARISON_NO_REASON", (
+                "anchor=comparison with no q0AnchorReason — states that two "
+                "pins were read on purpose, but not what is being compared, "
+                "so a reader cannot tell it from an accidental straddle"
+            )
+        return "Q0_COMPARISON", ""
     if anchor not in ("muon", "proton"):
         return "Q0_FLIP", f"unknown anchor {anchor!r}"
     value = body.get("q0Value")
@@ -198,7 +260,9 @@ def main(argv: list[str] | None = None) -> int:
         )
 
     order = ["Q0_OK", "Q0_AMBIGUOUS", "Q0_INDEPENDENT",
-             "Q0_INDEPENDENT_NO_REASON", "Q0_ANCHOR_MISSING",
+             "Q0_INDEPENDENT_NO_REASON", "Q0_COMPARISON",
+             "Q0_COMPARISON_NO_REASON", "Q0_COMPARISON_NO_VALUES",
+             "Q0_ANCHOR_MISSING",
              "Q0_VALUE_MISSING", "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR", "Q0_FLIP"]
     n = {k: len(by_verdict.get(k, [])) for k in order}
     n_flip = n["Q0_FLIP"]

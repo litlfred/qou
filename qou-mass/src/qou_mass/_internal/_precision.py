@@ -8,6 +8,24 @@ once ``qou-substrate`` is on PyPI.
 
 See ``docs/workplans/2026-05-24-library-reuse-production-readiness.md``
 Tier-2 item 2a for the promotion rationale.
+
+
+    IMPORTING THIS MODULE DOES NOT SET `mp.dps`
+    -------------------------------------------
+    Measured: `import _precision` leaves `mpmath.mp.dps` at mpmath's default
+    **15**, i.e. float64-grade.  `set_compute_dps()` must be called explicitly
+    before any `mpf` arithmetic you intend to be high-precision.
+
+    This matters because `fmt()` will happily render a 53-bit value out to the
+    full serialization width, so the number *reads* as measured while carrying
+    ~15 significant digits.  The float64-padding ratchet is what catches it
+    (worked case: `nonet_mixing_purity.py`, PR #5023).
+
+    Note the mirror hazard in the other direction: some modules raise global
+    `mp.dps` as an import side effect (e.g. `y_lambda_su_n` sets 50 at module
+    scope, correctly — see `wedderburn_jones_markov.y_lambda_at`).  So an
+    unset dps can be silently too low, and a set one silently too high.  Both
+    present as "the number looks fine, at the wrong precision".
 """
 
 from __future__ import annotations

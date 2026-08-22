@@ -1,13 +1,13 @@
 ---
 doc_id: agt-v3-n1-p17-p
-doc_title: "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum"
+doc_title: "Skein-theoretical derivation of some formulas of Habiro"
 section_id: sec-001-2-reshetikhin-turaev-invariants-at-roots-of-unit
 section_title: "Reshetikhin-Turaev invariants at roots of unity,"
 section_number: 2
 pages: 1-2
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
-doc_brief: "Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum — We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of"
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coecients of certain power series considered by Habiro in his theory ofsl2 invariants of integral homol"
 ---
 and Ohtsuki’s power series invariants. Later, Habiro and T.Q.T. Le generalized
 this to all quantum invariants associated to simple Lie algebras.

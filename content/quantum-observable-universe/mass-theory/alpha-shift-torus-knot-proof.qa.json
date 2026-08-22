@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:26.891Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'There is no within-partition cancellation because ...'; 'the $b^2$ ... zeroing ... never fires on $V_{(1^p)}$'.",
+        "notes": "Both are substantive mathematical negatives (an absence of cancellation is the technical content). Note: the stated REASON is internally inconsistent with line 6 - see the batch anomaly list - but that is a mathematics defect, not a language trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:26.955Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, V_{(1^p)} closed form + maximality across irreps); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1427,22 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:26.997Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One paired parenthetical: 'The maximality claim - that no other $\\lambda \\vdash p$ achieves pole order $> k(p-1)$ - is verified case-by-case'.",
+        "notes": "True parenthetical restating the claim being verified; no structural load."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.052Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, V_{(1^p)} closed form + maximality across irreps); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.120Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Closes on 'We conjecture this is straightforward via the Schur-Weyl pole-counting ..., but defer the categorical argument to a separate proposition.'",
+        "notes": "An honest deferral of open work, i.e. the temporal-status false-positive class. ('conjecture this is straightforward' is an odd collocation - one defers a proof, one does not conjecture straightforwardness - but that is diction, not a trap.)"
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.175Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, V_{(1^p)} closed form + maximality across irreps); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.228Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, V_{(1^p)} closed form + maximality across irreps); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.272Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, V_{(1^p)} closed form + maximality across irreps); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.325Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, V_{(1^p)} closed form + maximality across irreps); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.821Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9a5077d8c577",
+          "ts": "2482634c83dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:27.390Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof block, V_{(1^p)} closed form + maximality across irreps); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:29:27.390Z"
 }

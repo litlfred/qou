@@ -1,13 +1,13 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Michihiko Fujii 1. Introduction"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-002-3-a-birational-map-from-the-deformation-curve-c
 section_title: "A birational map from the deformation curve C to an elliptic"
 section_number: 3
 pages: 6-6
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
-doc_brief: "J. Math. Kyoto Univ. (JMKYAZ) 45-2 (2005), 343–354 Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve Michihiko Fujii — 12 sectio"
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Introduction; Deformation of hyperbolic structur; A birational"
 ---
 curve in W eierstrass form
 Let V be the projective completion of the complex aﬃne plane curve C.

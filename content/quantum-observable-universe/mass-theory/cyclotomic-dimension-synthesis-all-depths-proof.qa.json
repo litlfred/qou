@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.167Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 580 w: read in full. Independently verified: Step 1's multiplication formula sum_{k=1..N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n) is the distribution relation minus the k=0 term; the n-even sum vanishes because zeta(n) is real; the n = 2 unconditional Bloch-Suslin carve-out is correctly scoped; the two prediction tables are arithmetically consistent with (K-3)/2 and (K-1)/2."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.203Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 580 w: read in full. Independently verified: Step 1's multiplication formula sum_{k=1..N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n) is the distribution relation minus the k=0 term; the n-even sum vanishes because zeta(n) is real; the n = 2 unconditional Bloch-Suslin carve-out is correctly scoped; the two prediction tables are arithmetically consistent with (K-3)/2 and (K-1)/2."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 stylistic spaced dashes in 325 words (1.23/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.237Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Two spaced dashes, both parenthetical ('All even n: (K-1)/2 - one MORE dimension than the odd case')."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 325 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.271Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Enumerations are the odd/even case split, two-valued not three."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.304Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 580 w: read in full. Independently verified: Step 1's multiplication formula sum_{k=1..N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n) is the distribution relation minus the k=0 term; the n-even sum vanishes because zeta(n) is real; the n = 2 unconditional Bloch-Suslin carve-out is correctly scoped; the two prediction tables are arithmetically consistent with (K-3)/2 and (K-1)/2."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1529,22 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.338Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "No narrated emphasis.",
+        "notes": "Style note for clarity-grad-style rather than the ten: 'one MORE dimension than the odd case' sets emphasis in capitals. Separately reported: the Borel ranks are labelled with the parity convention inverted (n odd is given r_2, n even r_1 + r_2; Borel gives r_1 + r_2 for odd m). Harmless numerically here because Q(zeta_K) is totally complex and r_1 = 0."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.373Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 580 w: read in full. Independently verified: Step 1's multiplication formula sum_{k=1..N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n) is the distribution relation minus the k=0 term; the n-even sum vanishes because zeta(n) is real; the n = 2 unconditional Bloch-Suslin carve-out is correctly scoped; the two prediction tables are arithmetically consistent with (K-3)/2 and (K-1)/2."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.407Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 580 w: read in full. Independently verified: Step 1's multiplication formula sum_{k=1..N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n) is the distribution relation minus the k=0 term; the n-even sum vanishes because zeta(n) is real; the n = 2 unconditional Bloch-Suslin carve-out is correctly scoped; the two prediction tables are arithmetically consistent with (K-3)/2 and (K-1)/2."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.441Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 580 w: read in full. Independently verified: Step 1's multiplication formula sum_{k=1..N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n) is the distribution relation minus the k=0 term; the n-even sum vanishes because zeta(n) is real; the n = 2 unconditional Bloch-Suslin carve-out is correctly scoped; the two prediction tables are arithmetically consistent with (K-3)/2 and (K-1)/2."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.787Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ad1496c5b88e",
+          "ts": "5979c3bf366b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:13.476Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 580 w: read in full. Independently verified: Step 1's multiplication formula sum_{k=1..N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n) is the distribution relation minus the k=0 term; the n-even sum vanishes because zeta(n) is real; the n = 2 unconditional Bloch-Suslin carve-out is correctly scoped; the two prediction tables are arithmetically consistent with (K-3)/2 and (K-1)/2."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:58:13.476Z"
 }

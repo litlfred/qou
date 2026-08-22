@@ -47,6 +47,15 @@ open QOU.AlgebraicSubstrate
     $\chi^{\mathrm{mot}}_{A, p}$ at each finite place, satisfying
     a compatibility with the realization tower of the substrate.
 
+    **Architectural note (2026-08-12):** the `almost_everywhere_nontrivial`
+    field was removed from this class.  The perpetual obstruction is now
+    a standalone theorem (`perpetual_obstruction_from_collapse_invariant`
+    in `MotivicPerpetualObstructionFromTrace.lean`) proved via the
+    prime-ideal-collapse argument: C = a₀(-1) + 2·a₁(-1), with |C| > 1
+    for all QOU atoms.  Encoding it as a class field forced every
+    instance to either prove it or launder an axiom — the Route A proof
+    shows it is a *consequence* of the Habiro structure, not an input.
+
     Ref: [yekutieli2010], [tate1967]. -/
 class MotivicGaloisCharacter
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
@@ -56,10 +65,5 @@ class MotivicGaloisCharacter
   /-- Local Frobenius eigenvalue at a finite prime `p`,
       represented as an element of the dimension-completion. -/
   frobenius_at : Nat.Primes → Mhat
-  /-- The character is non-trivial: at almost every prime, the
-      Frobenius eigenvalue is not a unit.  This encapsulates the
-      perpetual obstruction phenomenon. -/
-  almost_everywhere_nontrivial :
-    ∃ N : ℕ, ∀ p : Nat.Primes, (p : ℕ) ≥ N → ¬IsUnit (frobenius_at p)
 
 end QOU.LiftingDescent

@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9308100v1
-doc_title: "Department of Physics"
+doc_title: "Gedanken Experiments Involving Black Holes"
 section_id: sec-004-4-experiments-performed-inside-black-holes
 section_title: "Experiments Performed Inside Black Holes"
 section_number: 4
 pages: 13-16
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
-doc_brief: "Department of Physics — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles ."
+doc_brief: "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that bl ack hole complementarity cannot be ruled out on the basis of known physical principles ."
 ---
 In this section we shall consider a class of experiments whic h explore quantum corre-
 lations between events on both sides of the event horizon. In particular, we are interested

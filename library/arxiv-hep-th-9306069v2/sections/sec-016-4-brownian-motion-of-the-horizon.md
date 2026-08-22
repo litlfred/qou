@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "Department of Physics"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-016-4-brownian-motion-of-the-horizon
 section_title: "Brownian motion of the horizon ⋆"
 section_number: 4
 pages: 34-37
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for"
 ---
 Lagrangian mechanics and thermodynamics are quite diﬀeren t descriptions of a system.
 According to the usual principles of lagrangian mechanics, the motion of any system is

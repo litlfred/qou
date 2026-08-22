@@ -1747,6 +1747,21 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.059Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 120-line conjecture (three candidate geometric realisations of Cl_3(2pi/5)), including the WARNING refutation box and the consequences list; the 50-dps constant recomputed. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1766,6 +1781,21 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.096Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 120-line conjecture (three candidate geometric realisations of Cl_3(2pi/5)), including the WARNING refutation box and the consequences list; the 50-dps constant recomputed. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1785,6 +1815,23 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (7 in 636 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.135Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Five prose dashes beyond the four heading separators; at least two append independent clauses ('--- same regulator in a different basis', '--- both Candidates 1 and 2 are special evaluations of it', '--- a sharp test of conj:joint-galois-braid-action').",
+        "notes": "proposed: semicolons or full stops for the three appended clauses; keep the two true parentheticals ('--- a 2-dim complex, 4-dim real space ---')."
       }
     ],
     "trap-triples": [
@@ -1804,6 +1851,21 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 636 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.196Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 120-line conjecture (three candidate geometric realisations of Cl_3(2pi/5)), including the WARNING refutation box and the consequences list; the 50-dps constant recomputed. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1823,6 +1885,21 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.232Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 120-line conjecture (three candidate geometric realisations of Cl_3(2pi/5)), including the WARNING refutation box and the consequences list; the 50-dps constant recomputed. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1842,6 +1919,21 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.266Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 120-line conjecture (three candidate geometric realisations of Cl_3(2pi/5)), including the WARNING refutation box and the consequences list; the 50-dps constant recomputed. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1861,6 +1953,21 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.300Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 120-line conjecture (three candidate geometric realisations of Cl_3(2pi/5)), including the WARNING refutation box and the consequences list; the 50-dps constant recomputed. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1880,6 +1987,21 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.352Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 120-line conjecture (three candidate geometric realisations of Cl_3(2pi/5)), including the WARNING refutation box and the consequences list; the 50-dps constant recomputed. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1899,6 +2021,23 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.430Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2.' The computation covers a seven-item list of torus knots (six distinct -- T(2,5) and T(5,2) are the same knot); the claim generalises to all torus knots.",
+        "notes": "proposed per AGENTS 'Before declaring refuted': keep the structural exclusion but scope it -- 'rules out the seven Bring-natural torus-knot generators tested'; the rational-CS invariant argument does license a scope-(b) exclusion for knots whose CS is rational, which is the honest general form."
       }
     ],
     "trap-nonspeakable": [
@@ -1918,6 +2057,23 @@
         "reviewed_at": "2026-08-15T10:31:00.460Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3922e2fb2078",
+          "ts": "7fd94250e7a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:48.468Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'The witness formalism\\n(the canonical formalism)\\ncurrently records the algebraic value' -- the parenthetical is a token substitution occupying its own line where a script/link reference stood, leaving a sentence that cannot be read.",
+        "notes": "proposed: restore the producer reference, e.g. '(computations/cl3_zeta5_orbit_sum.py)'. Not applied: the original target is not recoverable from the text."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1941,5 +2097,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:48.468Z"
 }

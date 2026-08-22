@@ -33,7 +33,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 40
-VOL_4_1 = mp.mpf("2.029883212819307250042405108549291367")  # 2·Im Li₂(e^{iπ/3})
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 37 digits, correct to 30 (qou-ckbv)
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
 
 
 def main() -> int:

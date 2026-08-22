@@ -1,7 +1,7 @@
 **Remark (physics names are $q_0$-dependent labels for categorical knot operations).**
 Physics names (alpha particle, gluon condensate, valence shell, isospin) are labels for recurring categorical structures in the Hecke algebra $H_n(R, q)$ at the substrate parameter $q_0$. The categorical structure is fundamental. The physics naming is a derived mapping that depends on the value of $q_0$.
 
-This table records the current mapping at $q_0 = 1.109978595554181\ldots$ (50 dps). At a different substrate value, the categorical structures persist but their physics interpretations may differ. The recurring sub-blocks identified by the discovery cache acquire different macroscopic meaning when $q_0$ changes.
+This table records the current mapping at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps). At a different substrate value, the categorical structures persist but their physics interpretations may differ. The recurring sub-blocks identified by the discovery cache acquire different macroscopic meaning when $q_0$ changes.
 
 See [Table](#tbl:physics-names-knot-operations-table-data).
 

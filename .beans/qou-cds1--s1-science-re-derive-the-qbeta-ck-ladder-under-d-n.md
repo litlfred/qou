@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-19T13:36:01Z
+updated_at: 2026-08-22T11:18:14Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -836,123 +836,80 @@ zD_bar_eq_negative_loop, zD_bar_mean_eq_loop_mean. Probe now 5/5.
 Incidentally an argument FOR the 2026-08-15 D ruling on structural grounds,
 reached independently of it. Scope unchanged — still closes nothing.
 
----
+── State synthesis 2026-08-21 (session, PR #5348, branch n24484) → docs/audits/2026-08-21-cds1-d-frame-ladder-state-synthesis.md ──
+NET: structurally determined, numerically fenced. BOTH legs of the D re-derivation are already FORCED + FORMALIZED symbolically (corpus-grepped, not re-derived here):
+• Phase leg (forced): bar-odd projection α_D − h²/4, LadderPhaseMirrorCovariance.lean sorry-free (phaseTwiceD_sub_hsq_bar_odd; forced via zD_sub_bar_eq_h + loop-mean=bar-mean). This IS why it is not a z-swap: the formula re-derives to give −h²/4.
+• Weight leg (forced, exact ℚ(q)): z_D·[2]_q=q² (zD_eq_qsq_div_bracketTwo) = Jones/two-row; S2 (#5185) solved the D weights y_(3)=(q⁴+1)/(q²+1)², y_(2,1)=q²/(q²+1)², y_(1³)=0; PSD (5,0,1). Resolves the horn in decayLadder_zC_threeRow_ne_zero: under D the decay trace IS two-row TL.
+OPEN = the c_k assembly only, and it is anti-fit FENCED: forced phase closes 92.03% of the D gap, residual 41.94×C (qbeta-eigenphase-branch-and-barodd-projection.witness). Any c_k absorbing the residual is a fit until one lands with c₂=−1's standing — the same magnitude wall as C.
+CORRECTION: the sensitivity-table c₃≈−974 / c₂≈−9.299 are NAIVE-Z-SWAP artifacts (C-extractor fed z_D, which S1 proves invalid). NOT proposed D values; do not wire/quote.
+FORMALIZE-FIRST NEXT: state the invariant a forced D c₂ must satisfy (D analogue of c₂=−1=1−b²ℏ⁴) and check if exact weights + α_D−h²/4 determine it. Do NOT run the extractor on z_D and report the output.
 
-## STATE 2026-08-21 — taken over; two blockers retire, a third is new
+── Executed 2026-08-21 (part 2, new PR): convention is localised to the N=1 phase (FORCED, sorry-free) ──
+Read Q_beta_categorical factor by factor: ONLY N1_factor=cos(α−bℏ²/2) reads markovZ' (via α=(z−1)h/2). N2..N5 — carrying c₂=−1, c₃=−2, c₄, c₅ — are closed forms in q via hoefsmitB + hbarQ' ALONE (pure Kashiwara/Hopf tails b^k·ℏ^{2k}), NO z.
+Formalized: QOU/BraidKnot/LadderConventionLocalisation.lean (lean-direct EXIT=0): Q_beta_categorical_eq_ofPhase (ladder = φ=α q instance of phase-parameterised family) + Q_beta_categorical_ofPhase_tail_common (two phases differ only by cos factors, ckTail common).
+CONSEQUENCE: distinguishes CATEGORICAL c_k (structural, z-free — C→D moves ONLY the N=1 phase to α_D−h²/4, higher rungs unchanged) from EXTRACTED c_k (inverted from full Q_β, z-dependent). The S1 c₃≈−974 is EXACTLY the N=1 phase change mis-attributed to the higher rungs by the extractor — reconciled, not a categorical value.
+SCOPE: localises z-dependence + explains the −974 artifact; does NOT claim the physical D re-derivation leaves the Kashiwara tails untouched (open). Fence unchanged: closing the 41.94×C residual by adjusting N2..N5 is a fit until a rung lands with c₂=−1's standing.
 
-Picked up on owner instruction. The previous session's last commit here was
-2026-08-18 and `main` has been silent since 2026-08-19 21:20, so this is a
-takeover of a stalled item, not a race. **Nothing above is edited** except the
-`⚠ SUPERSEDED` marker on §Remaining piece; everything below is additive.
+── Explored 2026-08-21: what is Lean-provable about N2..N5 (PR #5364) ──
+Solved the three H₃ Markov eqns exactly over ℚ(q) at BOTH z_C and z_D (hoefsmit_b_vs_d_weights_probe.py, 7/7):
+• At z_D the system FORCES y_(1³)=0 (two-row TL) + y_(2,1)ᴰ=q²/(q²+1)², and b² = 1 − y_(2,1)ᴰ = y_(3)ᴰ+y_(2,1)ᴰ EXACTLY.
+• At z_C the weights are genuinely three-row (√q powers) and b² ≠ 1 − y_(2,1)ᶜ. So the identity is CONVENTION-D SPECIFIC.
+⇒ The Hoefsmit coupling b that generates ALL of N2..N5 is a D-frame object (b = √(1−y_(2,1)ᴰ)) — a POSITIVE structural reason the tails are correctly D-framed, beyond 'b is z-free'.
+PROVABLE (formalized, EXIT=0): hoefsmitB_sq_eq_one_sub_stdWeightD (b²=1−y_(2,1)ᴰ) + the c₂=−1 Taylor form. NOT provable-as-forced: c₃/c₄/c₅ VALUES (fitted near-matches; only the form J_Hopf·b^k is structural). The provable content of N2..N5 = the coupling identity + c₂; fence holds on the higher-rung values.
 
-Three corrections to this bean's own summary, in decreasing order of how much
-they change the work.
+── Lean-proved the full provable D-weight structure 2026-08-21 (PR #5364, all EXIT=0) ──
+Formalized S2 in Lean (turned the Python symbolic result into proved theorems) + characterized the D weights:
+• dWeights_normalised (y₃+2y₂₁=1), trivWeightD_eq (y₃=1−2y₂₁)
+• dWeights_markov_sigma + dWeights_markov_sigmasigma — the S2 weights SOLVE the σ and σσ Markov equations at z_D=q³/(q²+1)
+• stdWeightD_eq_jones (y₂₁ᴰ=1/[2]_q²) — matches markovWeights_eq_jones_of_threeRow_eq_zero's (q+q⁻¹)²y₂₁=1
+• hoefsmitB_sq_eq_trivWeightD_add_stdWeightD (b²=y₃+y₂₁), dWeights_at_one (q=1: y₂₁=¼,y₃=½,b²=¾)
+Combined with the prior b²=1−y₂₁ᴰ and the existing uniqueness lemma, the D weights are now FULLY characterized in Lean.
+HONEST BOUNDARY (stated in dWeights_at_one docstring): c₃=−2=J_Hopf(1) is a TOPOLOGICAL input (Jones of Hopf link), NOT derivable from these weights — no forced-c₃ lemma exists. Provable D-structure = weight/coupling algebra + c₂ Taylor form; c₃/c₄/c₅ values stay fitted.
 
-### 1. The H_3 / Gram route is CLOSED, not "blocked pending cds2"
+── J_Hopf(1)=−2 now DERIVED, not asserted 2026-08-21 (PR #5364, EXIT=0) ──
+Built the Hopf-link Jones value from the skein relation: JonesHopfSkein.lean (sorry-free).
+jonesHopf_of_skein: over any CommRing, the cleared Jones axioms (V(unknot)=1, s·V(2-unlink)=−(s²+1), cleared skein V₊−s⁴V₋=(s³−s)V₀) FORCE V(Hopf)=−(s+s⁵) at the Hopf crossing (one linear_combination).
+jonesHopf_at_one: hence V(Hopf)=−2 at s=1 (q=1).
+jonesHopfClassicalLimit_eq_jonesHopfValue_one: the ladder's c₃ constant = jonesHopfValue 1 = −2 — the wired constant is now the classical-point value of the skein-derived Hopf polynomial, no longer a bare def.
+This addresses the c₃-input provability gap flagged in dWeights_at_one: c₃'s value −2 is derived from the Jones skein axioms (the polynomial's DEFINITION applied to the Hopf link), conditional-class style. Still NOT derived: that −2 is the right coupling for the ladder's N3 rung (the c₃ near-match, 3.47%) — that remains the fitted step. What is now proved: −2 IS J_Hopf(1), from the axioms.
 
-This bean's closing line reads *"the Gram singularity (cds2) still blocks the
-H_3 route"* — which invites the reading that it reopens once cds2 lands a
-repair. It does not. `dc266e322` (2026-08-19 12:16Z) proves the obstruction is
-**universal**:
 
-```
-<v, nf(β)>  =  (-1/q)^writhe(β)        exact, v = the convention-D Gram radical
-```
+── c₂ invariant STATED and SETTLED 2026-08-22 (owner: "4 y") ──
+Executes this bean's own FORMALIZE-FIRST NEXT verbatim: *"state the invariant a
+forced D c₂ must satisfy … and check if exact weights + α_D−h²/4 determine it.
+Do NOT run the extractor on z_D."* No extractor run; no number fitted.
 
-`G` is symmetric with kernel `span(v)`, so its range is exactly `v^⊥` and
-`G x = nf` is solvable iff `<v, nf> = 0`. A `zpow` of a nonzero base never
-vanishes, hence **`G x = nf` is unsatisfiable for EVERY braid**. Verified today:
-`QOU/QBeta/RadicalPairingIsSignRep.lean`, **0 sorries**, generic `Field` per §7c
-— `signRepValue_append`, `signRepValue_inv`, `signRepValue_ne_zero`,
-`radical_pairing_ne_zero_of_sign_rep`.
+ANSWER: the PHASE LEG DOES NOT ENTER, and the WEIGHT LEG DETERMINES IT WHOLLY.
+`Q_beta_categorical_ofPhase_tail_common` already localises every z-dependence to
+the N=1 phase, so α_D−h²/4 is irrelevant to N2_factor. The weights then force
+the coupling, via a quantum-integer identity:
 
-The pairing is β's value in the one-dimensional **sign representation**, so this
-is what the radical *is*, not a property of the NF basis or of a bad anchor
-choice. "Re-solve it on the quotient" is therefore a **category error, not a
-repair** — the commit says so in those words, and this bean never absorbed it.
+    y_(2,1)^D = 1/[2]_q²        stdWeightD_eq_jones          (already proved)
+    b²        = 1 − y_(2,1)^D   hoefsmitB_sq_eq_one_sub…     (already proved)
+    [2]_q² − [3]_q = 1          NEW
+    ⇒ b²      = [3]_q/[2]_q²    NEW
 
-**Consequence for S1:** this is an entropy prune of the same kind as `qou-rwhj`.
-The H_3-via-Gram-solve avenue is not a pending dependency to wait on; it is
-removed from the search, and the re-derivation needs a route that does not go
-through `G x = nf`. Recording it as a *closure* rather than a *blocker* is the
-difference between a work item and a dead end left looking alive.
+So under D **the N=2 rung has no free parameter**: b is not an independent
+Hoefsmit input but a function of the forced D weights. Under C the same
+statement is FALSE — b² ≠ 1 − y_(2,1)^C, the C weights are genuinely three-row
+(y_(1³)^C ≠ 0, half-integer powers of q) — so there the coupling is separate
+data. That is a second positive structural reason the tails are D-framed,
+independent of the "b is z-free" argument already recorded above.
 
-Timing worth noting: this bean's `updated_at` is 2026-08-19T13:36Z — **80
-minutes after** `dc266e322` landed — so the result was on `main` and the bean
-was edited afterwards without folding it in. Not a criticism of the session that
-did the work; it is the same "fetch before you write" failure that cost me a
-public retraction on `qou-a613` four days ago, in the other direction.
+LEAN (sorry-free, lean-direct EXIT=0, axioms [propext, Classical.choice,
+Quot.sound] on all three) — QOU/BraidKnot/LadderConventionLocalisation.lean:
+  bracketTwo_sq_sub_bracketThree_eq_one
+  hoefsmitB_sq_eq_bracketThree_div_bracketTwo_sq
+  N2_factor_eq_bracketRatio      (N2 = 1 − ([3]_q/[2]_q²)·ℏ_q⁴)
 
-### 2. §Remaining piece contradicted §Progress 2026-08-18 — marked, not deleted
+PROBE: computations/qbeta/qbeta_d_frame_c2_invariant_probe.py, 6/6 exact
+symbolic ℚ(q), no float. Includes the C-side negative (assertions 4–5).
 
-Line ~103 said the two-row cap was *"NOT folded in yet"*; line ~203 records it
-as **folded in** (PR #5283). In an 832-line research log a reader hitting the
-earlier heading gets a claim the later one retires. Marked `⚠ SUPERSEDED` in
-place rather than rewritten, so the 2026-08-16 record survives.
+SCOPE — settles c₂ ONLY, closes nothing numerically. c₃/c₄/c₅ values stay
+fitted near-matches; the 41.94×C residual is UNTOUCHED. What is removed is the
+possibility that a D-frame c₂ could be *chosen*. The bean's standing fence —
+any c_k absorbing the residual is a fit until one lands with c₂=−1's standing —
+is unaffected, and this does not supply such a rung.
 
-Independently corroborated while working `qou-pvem` today: the two-row cap is
-now realised in *production*, not only in Lean.
-`computations/alpha/alpha_k_jones_markov_h12.py` snaps `ℓ(λ) ≥ 3` weights to
-exact `0` on the stated ground that under D those blocks vanish by Schur–Weyl on
-the two-dimensional fibre — *"a theorem, not an approximation"* — keeping the
-solver residue as a `dead_block_solve_residue` diagnostic. Verified in the
-committed witness: all **70** 3+-row entries read `0.0`, `max_abs_residue`
-`9.163718683397107e-18`. So the cap now has **three** independent routes: Wenzl
-(`WenzlWeightVanishing.lean`, all n), the Markov linear system at `z_D`
-(`fcffeee29`: `y_(1³) = 0` falls out), and the production witness.
-
-### 3. NEW BLOCKER — S1 has no valid formal target to discharge
-
-`qou-7hfy` (investigated and filled in today) establishes that the Lean statement
-of what a canonical `c_k` family *is* — `qbeta_ck_truncation_canonical_conjecture`
-in `appendix-qvalues/qbeta-ck-truncation-canonical.lean` — is **vacuous**:
-
-```lean
-theorem qbeta_ck_truncation_canonical_conjecture :
-    ∃ c : ℕ → ℝ → ℝ, QbetaCkTruncationCanonicalClass c
-```
-
-The existential ranges over *all* families `ℕ → ℝ → ℝ` with **nothing binding
-`c` to the Q_β ladder**, and `CanonicalCkForm c f := ∀ k q, c k q = f k` only
-says `c` does not depend on `q`. So `fun k _ => if k = 2 then -1 else if k = 3
-then -2 else 0` discharges every field. Proved sorry-free in Lean 4.24.0 +
-Mathlib; `#print axioms` → `[propext, Classical.choice, Quot.sound]`, **no
-`sorryAx`**.
-
-**Why this is S1's problem specifically.** S1's deliverable is a D-frame `c_k`
-re-derivation. The obvious formal endpoint — "and it discharges
-`qbeta_ck_truncation_canonical_conjecture`" — would certify **nothing**, because
-that statement is satisfied by a family which ignores the substrate entirely. S1
-therefore needs the conjecture *strengthened* (quantified over families
-satisfying a Q_β-reconstruction hypothesis) **before** any re-derivation can be
-certified against it. That is a prerequisite, not a nicety, and it was not
-previously tracked anywhere.
-
-Do **not** discharge that `sorry` to tidy the manifest: proving it is easy, would
-stamp "theorem" on a vacuity, and would retire the corpus's only signal that the
-statement is unfinished.
-
-### Still open — S1 does NOT close
-
-Unchanged and re-affirmed by re-reading rather than inherited:
-
-- **α is asserted in both conventions and derived in neither.** A categorical
-  derivation is not bounded by σ(Q_β) and remains the open item.
-- **The projected D phase leaves a residual 41.94× the C-frame one.** The fence
-  from `qbeta-d-frame-eigenphase-bar-parity` stands: further phase corrections
-  are fitting until one lands with the structural standing of `c_2 = -1`.
-- **No bar-odd material survives in the D weights** (`fcffeee29`): both surviving
-  weights are bar-even, so the bar-odd eigenphase the C-frame ladder uses cannot
-  be assembled from D-frame weights alone. This is a genuine narrowing, and it
-  points away from the weights, not at a harder search through them.
-
-Kept `in-progress` rather than completed, and that is the honest status: what
-remains is an open mathematical derivation, and two of the three items above are
-prunes — they remove routes rather than supply one.
-
-### Scope discipline
-
-Nothing in this entry re-derives anything or moves a number. It retires two
-stated blockers by *closing* them, adds one real prerequisite, and repairs an
-internal contradiction. Under the standing rule that `c_k` conclusions stay
-C-frame-scoped until the re-derivation lands, no value above is promoted.
+NON-OVERLAP: sibling PR #5415 works the c₃ f-map (routes A/B refuted, route C
+= analytic Φ_b open). Different rung; no duplication.

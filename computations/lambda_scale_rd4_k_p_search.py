@@ -40,32 +40,73 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder
 from q_parameter import Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, M_P_MEV
+from _precision import fmt
 
 mp.mp.dps = 80
 Q = mp.mpf(Q_50_DIGIT_STR)
 HBAR = (Q - 1) / Q
 G = mp.catalan
 
+# ---------------------------------------------------------------------------
 # Standard hyperbolic 3-manifold volumes
-V_TET = 2 * mp.im(mp.polylog(2, mp.exp(mp.mpc(0, mp.pi/3))))  # = 2·Cl_2(π/3) ≈ 1.0149
-V_OCT = 4 * G  # = 8·Λ(π/4) ≈ 3.6639 (octahedral)
-VOL_4_1 = V_OCT / 2 * (2)  # figure-8 = 2·V_tet ≈ 2.0299
-# Better: VOL_4_1 = 2.029883...
-VOL_4_1 = 2 * V_TET
+#
+# Every one of these was hand-typed, and every hand-typed one was WRONG --
+# six of seven decimal literals, plus a factor of two in the figure-eight and
+# a mislabelled Whitehead link. Checked against SnapPy's census (see
+# `tests/test_hyperbolic_volume_table.py`, which re-runs the check):
+#
+#     entry   was                    true                     rel err
+#     4_1     4.0597664256386145     2.0298832128193073       1.0     (2x)
+#     5_2     2.82812208833          2.8281220883307832       2.8e-13 (ok)
+#     6_1     3.16396322648          3.1639632288831440       7.6e-10
+#     6_2     4.40083251217          4.4008325161230461       9.0e-10
+#     6_3     5.69302109614          5.6930210912813008       8.5e-10
+#     7_4     5.13794120982          5.1379412018734178       1.5e-9
+#     8_1     3.42720252426          3.4272052462740162       7.9e-7
+#
+# The two entries that were RIGHT (V_OCT, VOL_B3) are the two that were
+# computed rather than transcribed. That is the whole lesson: a decimal
+# literal cannot be checked by reading it, so prefer the closed form, and
+# where none exists, pin the value with a test that recomputes it.
+#
+# Closed forms (exact, no transcription possible):
+V_TET = mp.im(mp.polylog(2, mp.exp(mp.mpc(0, mp.pi/3))))  # = Cl_2(π/3) ≈ 1.0149
+V_OCT = 4 * G  # = 8·Λ(π/4) ≈ 3.6639 (ideal regular octahedron)
+VOL_4_1 = 2 * V_TET  # figure-eight = 2 ideal tetrahedra ≈ 2.0299
 VOL_B3 = 2 * V_OCT  # Borromean = 2 ideal octahedra ≈ 7.3277
-VOL_5_2 = mp.mpf("2.82812208833")
-VOL_6_1 = mp.mpf("3.16396322648")
-VOL_6_2 = mp.mpf("4.40083251217")
-VOL_6_3 = mp.mpf("5.69302109614")
-VOL_7_4 = mp.mpf("5.13794120982")
-VOL_8_1 = mp.mpf("3.42720252426")  # Whitehead link
+VOL_WHITEHEAD = V_OCT  # Whitehead link = ONE ideal octahedron ≈ 3.6639
+
+# No closed form -- SnapPy census values, 30 significant digits, verified by
+# `tests/test_hyperbolic_volume_table.py` (skipped when snappy is absent).
+VOL_5_2 = mp.mpf("2.82812208833078316276389880928")
+VOL_6_1 = mp.mpf("3.16396322888314398399101471597")
+VOL_6_2 = mp.mpf("4.40083251612304610144120386564")
+VOL_6_3 = mp.mpf("5.69302109128130076511248327748")
+VOL_7_4 = mp.mpf("5.13794120187341776984134833947")
+VOL_8_1 = mp.mpf("3.42720524627401621986353959005")  # the KNOT 8_1, not Whitehead
+
+# UNVERIFIED: not in the SnapPy knot/link census under a name this script
+# knows, so the test above cannot cover it. Treat as approximate.
 VOL_BRINGS = mp.mpf("28.5783194")  # Bring's surface volume (approx, 5-cusped)
 
 # m_p / m_e target
+#
+# NOTE the precision ceiling: `M_E_MEV` and `M_P_MEV` are float64 in
+# `experimental_constants`, so `repr()` recovers ~17 digits and no more --
+# and the experimental uncertainty on m_p is ~3e-10 relative, so only ~10
+# digits mean anything physically. Serialising this at the 60-dps default
+# would print 60 digits of which 43 are the binary expansion. Hence the
+# explicit `dps=` arguments at emission below; see `_precision.fmt`'s own
+# warning about a value that "reads as measured while carrying ~15
+# significant digits".
 M_E_VAL = mp.mpf(repr(M_E_MEV))
 M_P_VAL = mp.mpf(repr(M_P_MEV))
 M_P_OVER_ME = M_P_VAL / M_E_VAL
 VOL_K_P_TARGET = M_P_OVER_ME * HBAR**2
+
+# Digits actually backed by the source, per quantity.
+DPS_FLOAT64_INPUT = 17  # anything downstream of the CODATA float64 masses
+DPS_CENSUS = 30  # the SnapPy census literals above
 
 
 def main() -> int:
@@ -93,7 +134,8 @@ def main() -> int:
         "Vol(6_2)":          VOL_6_2,
         "Vol(6_3)":          VOL_6_3,
         "Vol(7_4)":          VOL_7_4,
-        "Vol(L_Whitehead)":  VOL_8_1,
+        "Vol(8_1)":          VOL_8_1,
+        "Vol(L_Whitehead)":  VOL_WHITEHEAD,
         "Vol(B_3)":          VOL_B3,
     }
     print("Standard hyperbolic volumes:")
@@ -126,11 +168,11 @@ def main() -> int:
                     if a == 0 and b == 0: continue
                     test = a*v1 + b*v2
                     if abs(test - VOL_K_P_TARGET) < 0.1:
-                        rel = float((test - VOL_K_P_TARGET) / VOL_K_P_TARGET)
-                        pair_matches.append((f"{a}·{n1} + {b}·{n2}", float(test), rel))
+                        rel = (test - VOL_K_P_TARGET) / VOL_K_P_TARGET
+                        pair_matches.append((f"{a}·{n1} + {b}·{n2}", test, rel))
     pair_matches.sort(key=lambda x: abs(x[2]))
     for desc, val, rel in pair_matches[:8]:
-        print(f"  {desc:50s} = {val:.4f}  (rel {rel:+.4e})")
+        print(f"  {desc:50s} = {float(val):.4f}  (rel {float(rel):+.4e})")
     print()
 
     # Check q-deformed Vol candidates
@@ -167,10 +209,14 @@ def main() -> int:
     print()
 
     # Conclusion
-    w.add_data("Vol_K_p_target", float(VOL_K_P_TARGET))
-    w.add_data("standard_blocks", {k: float(v) for k, v in blocks.items()})
+    w.add_data("Vol_K_p_target", fmt(VOL_K_P_TARGET, dps=DPS_FLOAT64_INPUT))
+    w.add_data("standard_blocks",
+               {k: fmt(v, dps=DPS_CENSUS) for k, v in blocks.items()})
     w.add_data("best_pair_matches", [
-        {"combo": d, "val": v, "rel_err": r} for d, v, r in pair_matches[:5]
+        {"combo": d,
+         "val": fmt(v, dps=DPS_CENSUS),
+         "rel_err": fmt(r, dps=DPS_FLOAT64_INPUT)}
+        for d, v, r in pair_matches[:5]
     ])
     w.add_data("conclusion", (
         "No integer combination of standard small-volume hyperbolic "

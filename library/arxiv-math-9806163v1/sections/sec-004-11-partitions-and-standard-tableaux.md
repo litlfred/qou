@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-9806163v1
-doc_title: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana"
+doc_title: "Weights of Markov traces on Hecke algebras"
 section_id: sec-004-11-partitions-and-standard-tableaux
 section_title: "Partitions and Standard Tableaux"
 section_number: 1.1
 pages: 3-4
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
-doc_brief: "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
+doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 A partition of n is a sequence of positive numbers α = ( α1, . . . , αk) such that α1 ≥ α2 ≥
 . . . ≥ αk ≥ 0 and n = |α| = α1 + α2 + . . . + αk. The αi’s are called the parts of α, and the

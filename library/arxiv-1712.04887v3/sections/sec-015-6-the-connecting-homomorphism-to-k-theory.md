@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1712.04887v3
-doc_title: "BLOCH GROUPS, ALGEBRAIC K-THEORY"
+doc_title: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture"
 section_id: sec-015-6-the-connecting-homomorphism-to-k-theory
 section_title: "The connecting homomorphism to K-theory"
 section_number: 6
 pages: 31-41
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
-doc_brief: "BLOCH GROUPS, ALGEBRAICK-THEORY — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th"
+doc_brief: "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F"
 ---
 In this section, we give a proof of Theorem 1.7. Assume that F is a ﬁeld of characteristic
 prime to p which does not contain a pth root of unity. Recall that Z(F ) is the free abelian

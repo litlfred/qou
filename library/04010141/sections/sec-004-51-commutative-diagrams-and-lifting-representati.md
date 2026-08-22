@@ -1,13 +1,13 @@
 ---
 doc_id: 04010141
-doc_title: "Advanced Studies in Pure Mathematics 40, 2004"
+doc_title: "Cellular algebras and diagram algebras in representation theory"
 section_id: sec-004-51-commutative-diagrams-and-lifting-representati
 section_title: "Commutative diagrams and lifting representations"
 section_number: 5.1
 pages: 19-20
 source_pdf: 04010141.pdf
 source_sha256: b86b204b05453a5d
-doc_brief: "Advanced Studies in Pure Mathematics 40, 2004 — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to algebras"
+doc_brief: "Cellular algebras and diagram algebras in representation theory — We discuss a circle of ideas for addressing problems in repre­ sentation theory using the philosophy of cellular algebras, applied to"
 ---
 Let A and B be R-algebras and 'ljJ : A -+ B be an R-algebra homo­
 morphism. If p: B-+ EndR(M) is a representation of B (where M is a 

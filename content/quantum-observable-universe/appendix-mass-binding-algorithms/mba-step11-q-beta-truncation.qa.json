@@ -887,13 +887,185 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.333Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Five 'not X' constructions, all corpus-mandated tier distinctions ('structural ... not derived'; 'Not proved: the Lean re-reads the N=2 factor'; 'N is a truncation order, not an inclusion/exclusion criterion'). Substantive-mathematical-contrast false-positive class: the AGENTS.md c_k banner requires exactly these denials.",
+        "notes": "Defect is duplication, not construction: 'truncation order, not an inclusion/exclusion criterion' appears twice (pseudocode step 3 and the third Correctness bullet). Proposed: drop the bullet-level repeat."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.389Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No setup-then-reframe. Algorithm block moves Input -> Output -> Algorithm -> Correctness -> Complexity -> API -> Witness -> Notes without a pivot clause."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.556Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on a factual status line ('exact closure depends on the s_5-so(3) fibre action, which is unproved'), not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.605Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis. Nearest miss is the imperative 'State which series —' in the c_2 bullet, which is an authoring directive rather than narrated emphasis; flagged separately as a register/agent-instruction leak.",
+        "notes": "Proposed (register, not trap): 'State which series — the normalised series coefficient is c~_2 = -9/8' -> 'The claim is specific to that series: the normalised series has c~_2 = c_2 - 1/8 = -9/8.'"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.656Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Final paragraph reports miss factors and the open dependency; it adds status rather than restating the algorithm."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.763Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Institutional register throughout; no personal or affective vocabulary."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:57.825Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Quantities are given with explicit magnitudes (160x, 181x, 1690x) rather than unqualified maxima."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:23:17.761Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "5 em-dashes over 453 words; each separates a bolded tier label from its gloss ('structural — the exact u^2 coefficient') or introduces a genuine parenthetical. None substitutes for sentence structure."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:23:17.847Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'no fit, no CODATA and no q_0' enumerates three distinct absent inputs; the three Correctness bullets are the three tiers. No reflex triples."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1b4d4051b798",
+          "ts": "2b9cdb80a9b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:23:17.958Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Prose sentences read aloud cleanly; noun-chain density sits in the fenced pseudocode, which is code rather than prose."
+      }
     ]
   },
   "source_hashes": {
     "md": "52189332968b",
     "ts": "2b9cdb80a9b0"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-19T21:23:17.958Z",
   "$schema": "block-qa/v1",
   "label": "alg:q-beta-truncation",
   "kind": "algorithm",

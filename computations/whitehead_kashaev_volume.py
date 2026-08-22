@@ -69,7 +69,12 @@ def kashaev_4_1(N: int) -> mp.mpf:
     return total
 
 
-VOL_4_1 = mp.mpf("2.029883212819307250011597804990447526446605015756")
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)  # Vol(4_1) EXACT = 2*Cl_2(pi/3) = 6*Lambda(pi/3).
+# The literal that was here printed 49 digits and was correct to 20 --
+#   was    2.02988321281930725001 1597804990447526446605015756
+#   exact  2.02988321281930725004 2405108549040571883378615060599584
+# so 29 digits were fabricated. dps is raised above, so the closed form
+# is exact here and cannot be mis-transcribed at all (bean qou-ckbv).
 
 
 def volume_from_kashaev(kashaev_fn, Ns):

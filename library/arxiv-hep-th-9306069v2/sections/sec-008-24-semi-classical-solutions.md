@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "Department of Physics"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-008-24-semi-classical-solutions
 section_title: "Semi-classical solutions"
 section_number: 2.4
 pages: 16-18
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
-doc_brief: "Department of Physics — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for thermodyn amics are introduced as a"
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional qu antum theory, semi-classical general relativity and the statistical basis for"
 ---
 It was observed in [23] that the global causal nature of dynam ical semi-classical ge-
 ometries depends on the incoming energy ﬂux. If the ﬂux remai ns below a certain critical

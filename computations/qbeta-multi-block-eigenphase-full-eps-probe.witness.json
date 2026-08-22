@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:27:27.723160+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-21T15:00:51.988017+00:00",
+  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
   "assertions": [
     {
       "name": "full_eps_expansion_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 6,
   "computation": "qbeta-multi-block-eigenphase-full-eps-probe",
   "scriptFile": "qbeta_multi_block_eigenphase_full_eps_probe.py",
   "scriptHash": "73701b7b1a53",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,92 +28,94 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Q_β bridge experiment #4: extends exp #3 from LO ε-only to full per-block ε-expansion through ε^6 (the documented per-block character expansions from qbeta_per_block_paper_closed_forms.py). Tests THREE bridge ansätze in parallel: cos(α_eff), exp(α_eff), (1+α_eff). Each tested for q₀-stability and compute-precision residual. Order-by-order convergence shown.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "pins": {
-      "canonical_mp_pin_q0": "1.1099785955573347198997632204832250266562084087802",
+      "canonical_mp_pin_q0": "1.1099785827513808075916690956107688798744991218736",
       "stale_muon_pin_q0": "1.10997859555418057528159407960950937799328227995870"
     },
     "order_by_order_convergence_canonical": [
       {
         "order": 1,
-        "alpha_eff": "-0.164818497527434299827224759342",
-        "err_cos_ppb": "-11897045.9325",
-        "err_exp_ppb": "-150529756.329",
-        "err_lin_ppb": "-163417450.085"
+        "alpha_eff": "-0.164818478368877121962398066443",
+        "err_cos_ppb": "-11897011.847",
+        "err_exp_ppb": "-150529713.458",
+        "err_lin_ppb": "-163417404.701"
       },
       {
         "order": 2,
-        "alpha_eff": "-0.155755244087465665125445092244",
-        "err_cos_ppb": "-10448116.323",
-        "err_exp_ppb": "-142795797.748",
-        "err_lin_ppb": "-154338992.707"
+        "alpha_eff": "-0.1557552270377530118681468003",
+        "err_cos_ppb": "-10448082.6915",
+        "err_exp_ppb": "-142795756.295",
+        "err_lin_ppb": "-154338949.151"
       },
       {
         "order": 3,
-        "alpha_eff": "-0.162065672708215065876440146912",
-        "err_cos_ppb": "-11448367.7337",
-        "err_exp_ppb": "-148188091.942",
-        "err_lin_ppb": "-160660007.302"
+        "alpha_eff": "-0.162065653455930734792386747453",
+        "err_cos_ppb": "-11448333.6711",
+        "err_exp_ppb": "-148188048.873",
+        "err_lin_ppb": "-160659961.738"
       },
       {
         "order": 4,
-        "alpha_eff": "-0.161079465938663051947081849294",
-        "err_cos_ppb": "-11289450.0278",
-        "err_exp_ppb": "-147347614.898",
-        "err_lin_ppb": "-159672146.134"
+        "alpha_eff": "-0.161079447145430822033321188514",
+        "err_cos_ppb": "-11289416.0527",
+        "err_exp_ppb": "-147347572.178",
+        "err_lin_ppb": "-159672100.999"
       },
       {
         "order": 5,
-        "alpha_eff": "-0.161268221766836259067465916758",
-        "err_cos_ppb": "-11319791.801",
-        "err_exp_ppb": "-147508542.817",
-        "err_lin_ppb": "-159861218.607"
+        "alpha_eff": "-0.161268202863775146109421919087",
+        "err_cos_ppb": "-11319757.8057",
+        "err_exp_ppb": "-147508500.011",
+        "err_lin_ppb": "-159861173.368"
       },
       {
         "order": 6,
-        "alpha_eff": "-0.161235983792116254739928752442",
-        "err_cos_ppb": "-11314607.1762",
-        "err_exp_ppb": "-147481059.776",
-        "err_lin_ppb": "-159828926.552"
+        "alpha_eff": "-0.16123596491156575149274343275",
+        "err_cos_ppb": "-11314573.185",
+        "err_exp_ppb": "-147481016.988",
+        "err_lin_ppb": "-159828881.335"
       }
     ],
     "full_eps_6_canonical": {
-      "alpha_eff": "-0.161235983792116254739928752442",
-      "Q_A_MeV": "0.783645802839167434577026994115",
-      "Q_bridge_cos_MeV": "0.773481614785022007691950050799",
-      "Q_bridge_exp_MeV": "0.666954049595344059126588089712",
-      "Q_bridge_lin_MeV": "0.657293900873831503973785923494",
-      "err_cos_ppb": "-11314607.1762",
-      "err_exp_ppb": "-147481059.776",
-      "err_lin_ppb": "-159828926.552"
+      "alpha_eff": "-0.16123596491156575149274343275",
+      "Q_A_MeV": "0.783645827374621226741682415712",
+      "Q_bridge_cos_MeV": "0.773481641377511943454248906443",
+      "Q_bridge_exp_MeV": "0.666954083069713089746297359378",
+      "Q_bridge_lin_MeV": "0.657293936248951886578225380497",
+      "err_cos_ppb": "-11314573.185",
+      "err_exp_ppb": "-147481016.988",
+      "err_lin_ppb": "-159828881.335"
     },
     "q0_stability": {
       "cos": {
-        "drift_pct": 7.10879905899722e-08,
+        "drift_pct": 0.00028854988194848856,
         "stable_under_0.01_pct": true
       },
       "exp": {
-        "drift_pct": 6.9536004458281086e-09,
+        "drift_pct": 2.8224952603080964e-05,
         "stable_under_0.01_pct": true
       },
       "1+α": {
-        "drift_pct": 6.793367400254708e-09,
+        "drift_pct": 2.757455973562728e-05,
         "stable_under_0.01_pct": true
       }
     },
     "verdict": {
       "classification": "OPEN (cos: q₀-stable but residual -1.131e+7 ppb)",
       "best_ansatz": "cos",
-      "best_err_ppb_canonical": "-11314607.1762",
-      "best_q0_drift_pct": 7.10879905899722e-08,
+      "best_err_ppb_canonical": "-11314573.185",
+      "best_q0_drift_pct": 0.00028854988194848856,
       "production_action": "Q_β stays at Q_N2 (1279 ppb)"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

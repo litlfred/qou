@@ -1772,6 +1772,22 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.853Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'is z^3, not h z^2 + z' IS the proposition's claim - substantive mathematical contrast.",
+        "notes": "The claim itself is reported to the coordinator as mathematically false (independently recomputed: the correct value is h z^2 + z); that is a rigor finding, not a language trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.886Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.920Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-triples": [
@@ -1829,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.953Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.986Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:34.020Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:34.054Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:34.089Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:34.124Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:00.450Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:34.157Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 81 w: read in full (claims tr_M(sigma_0 sigma_1 sigma_0) = z^3, not h z^2 + z). No trap construction in any category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1966,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:55:34.157Z"
 }

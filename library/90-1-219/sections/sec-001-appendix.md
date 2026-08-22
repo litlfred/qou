@@ -1,13 +1,13 @@
 ---
 doc_id: 90-1-219
-doc_title: "Progress of Theoretical Physics, Vol. 90, No.1, July 1993"
+doc_title: "Quaternions and non-commutative geometry"
 section_id: sec-001-appendix
 section_title: "Appendix"
 section_number: null
 pages: 16-18
 source_pdf: 90-1-219.pdf
 source_sha256: c2e3f2f8946c6f84
-doc_brief: "Progress of Theoretical Physics, Vol. 90, No.1, July 1993 — 3 sections: Acknowledgements; Appendix; References"
+doc_brief: "Quaternions and non-commutative geometry — 3 sections: Acknowledgements; Appendix; References"
 ---
 --Dirac Operator in the Quaternionic Formulation 
 and 4 x 4 Matrix Formalism of Coquereaux et al. --

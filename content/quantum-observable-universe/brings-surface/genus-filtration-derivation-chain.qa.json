@@ -1232,6 +1232,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an input.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.123Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Closer 'Bring's surface is a consequence of the algebra, not an input.'",
+        "notes": "pass-with-note: substantive non-circularity contrast — the distinction is the block's whole content (7-step chain); kept."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1251,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.158Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1270,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.195Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); no load-bearing spaced-dash substitution; density ~0"
       }
     ],
     "trap-triples": [
@@ -1289,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.237Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); no reflex three-item lists; enumerations substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1308,6 +1369,22 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.275Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Same final line; punchy but summarises the enumerated derivation chain and echoes line 1's non-circularity claim.",
+        "notes": "pass-with-note: borderline; treated as substantive summary, not placed quotable."
       }
     ],
     "trap-meta-commentary": [
@@ -1327,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.309Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); no narration of own emphasis ('we emphasize'/'note the framing' absent)"
       }
     ],
     "trap-thesis-restatement": [
@@ -1346,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.346Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); no block-final restatement of established content"
       }
     ],
     "trap-performed-warmth": [
@@ -1365,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.383Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); no personal register in institutional prose"
       }
     ],
     "trap-superlative": [
@@ -1384,6 +1506,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.420Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); no unqualified maximum-strength claims"
       }
     ],
     "trap-nonspeakable": [
@@ -1403,6 +1540,21 @@
         "reviewed_at": "2026-08-15T10:30:58.761Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1a34c316a3db",
+          "ts": "828fd573093e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:55.460Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (remark); prose parses aloud; noun-chain density normal for technical register"
       }
     ],
     "wall-base-ring-minimal": [

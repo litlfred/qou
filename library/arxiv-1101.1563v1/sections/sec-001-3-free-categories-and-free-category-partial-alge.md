@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1101.1563v1
-doc_title: "Gr¨ obner-Shirshov bases for categories∗ L. A. Bokut †"
+doc_title: "Gröbner-Shirshov bases for categories"
 section_id: sec-001-3-free-categories-and-free-category-partial-alge
 section_title: "Free categories and free category partial algebras"
 section_number: 3
 pages: 7-8
 source_pdf: 1101.1563v1.pdf
 source_sha256: 0c45b250fc4a2a49
-doc_brief: "Gröbner-Shirshov bases for categories∗ L. A. Bokut † — In this paper we establish Composition-Diamond lemma for small categ ories."
+doc_brief: "Gröbner-Shirshov bases for categories — In this paper we establish Composition-Diamond lemma for small categ ories. We give Gr¨ obner-Shirshov bases for simplicial category and cyclic c ategory."
 ---
 Let X = ( V (X), E (X)) be an oriented (multi) graph. Then the free category on X is
 C(X) = ( Ob(X), Arr (X)), where Ob(X) = V (X), and Arr(X) is the set of all paths

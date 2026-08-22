@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1105.1998v3
-doc_title: ""
+doc_title: "A Connection Formula of the Hahn-Exton q-Bessel Function"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-2
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
+doc_brief: "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
 ---
 In this paper, we show a connection formula of the Hahn–Exton q-Bessel function J (3)
 ν (x; q). At

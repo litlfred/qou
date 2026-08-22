@@ -1,13 +1,13 @@
 ---
 doc_id: deligne-mostow-1986
-doc_title: ""
+doc_title: "Monodromy of hypergeometric functions and non-lattice integral monodromy"
 section_id: sec-020-00-oos-nearjo-we-then-have-the-following-system
 section_title: "Oo(S). Nearj/o, we then have the following system of local coordinates, depending"
 section_number: 00
 pages: 50-64
 source_pdf: deligne-mostow-1986.pdf
 source_sha256: d9850f70ab2fecbd
-doc_brief: "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
+doc_brief: "Monodromy of hypergeometric functions and non-lattice integral monodromy — 27 sections: P. DELIGNE AND G. D. MOSTOW; P. DELIGNE AND G. D. MOSTOW; Cohomology of a rank one local sys"
 ---
 on the choice of a representative d{G) in each coset G:
 a) the jy{d{C)) —^o(^(C)), for C not the coset of a, b or c\

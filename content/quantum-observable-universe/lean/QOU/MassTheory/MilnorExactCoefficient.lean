@@ -75,7 +75,7 @@ restated as local defs and cited by PR number, matching #4471/#4389 style.
 -- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/MassTheory/MilnorParitySignLaw.lean (#4389; A=3 proved, A=4 measured)
 -- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean (convention D = genuine Jones–Markov trace; A=3 closed form)
 -- Ref: [barnatan1995] https://doi.org/10.1016/0040-9383(95)93237-2
--- Ref: [habeggermasbaum2000] https://doi.org/10.1016/S0040-9383(99)00041-5
+-- Ref: [habegger-masbaum2000] https://doi.org/10.1016/S0040-9383(99)00041-5
 -/
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Module.LinearMap.Defs

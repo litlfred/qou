@@ -947,6 +947,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "4 negation-contrast construction(s): \", not two.\"; \", not a Markov-trace ingredient.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.306Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Around a dozen 'not X' constructions, but each is the substantive-mathematical-contrast class: 'stated, not assumed', 'a definitional erratum, not a production defect', 'the heat-kernel decay rate, not a Markov-trace ingredient' (symbol-collision disambiguation), 'not invariant under this automorphism' (the chirality claim itself), 'not decided by experimental match' (anti-fit discipline). Only 'There is now one trace in the framework's compute, not two' is the bare template, and it clarifies against the prior state."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -966,6 +981,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.344Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C."
       }
     ],
     "trap-em-dash": [
@@ -986,6 +1016,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "22 stylistic spaced dashes in 1228 words (1.79/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.379Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "minor",
+        "evidence": "Roughly fifteen spaced em-dashes. Four of the five section headings use one template, 'Label — gloss' (Scope, Immediate corollary, Non-uniformity of the weights, Notation note), and at least three body dashes join independent clauses rather than set off a parenthetical: 'is not invariant under this automorphism — it is chiral, weighting ...'; 'at q = 1 only — the q-deformed sum ... is not 1'; 'from this proposition — and the identity ... holds exactly for all q'.",
+        "notes": "proposed (structural, not applied): convert the four dashed headings to plain noun phrases ('Scope: which trace, in which channel' or just 'Scope'), and split the three clause-joining dashes into full stops. The appositive dashes (the 1/delta gloss, the 'which is writhe 0 with pi = id' parenthetical) should stay."
       }
     ],
     "trap-triples": [
@@ -1005,6 +1052,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 1228 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.413Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "'verified three ways: Schur orthogonality ..., the exact q-dependent closed forms above, and canonical reproduction ... at 30 digits' is a substantive enumeration of three genuinely different verification routes. Separately reported: 'canonical reproduction' in that same clause is the known canonical-for-numerical sweep substitution."
       }
     ],
     "trap-closing-aphorism": [
@@ -1024,6 +1086,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.456Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C."
       }
     ],
     "trap-meta-commentary": [
@@ -1043,6 +1120,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.500Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C."
       }
     ],
     "trap-thesis-restatement": [
@@ -1062,6 +1154,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.537Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C."
       }
     ],
     "trap-performed-warmth": [
@@ -1081,6 +1188,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.580Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C."
       }
     ],
     "trap-superlative": [
@@ -1100,6 +1222,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.617Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "'The extreme expression of this asymmetry', 'no integer fibre dimension at all' and 'exactly' are intensifiers, but each sits on a claim the block then substantiates numerically (y_(1^3) = 0 identically; N_C = 2.5995155, verified non-integer). Not maximum-strength claims left unqualified."
       }
     ],
     "trap-nonspeakable": [
@@ -1119,6 +1256,21 @@
         "reviewed_at": "2026-08-15T10:31:00.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f60f46f9728f",
+          "ts": "e6a82f102fe4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:18:45.656Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1145,5 +1297,5 @@
     "md": "d7cc38441178",
     "ts": "e6a82f102fe4"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:18:45.656Z"
 }

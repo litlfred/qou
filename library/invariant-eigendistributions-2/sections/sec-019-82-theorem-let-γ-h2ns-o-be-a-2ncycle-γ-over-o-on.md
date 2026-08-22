@@ -1,13 +1,13 @@
 ---
 doc_id: invariant-eigendistributions-2
-doc_title: "REPRESENTATIONS OF WEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMAN"
+doc_title: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups"
 section_id: sec-019-82-theorem-let-γ-h2ns-o-be-a-2ncycle-γ-over-o-on
 section_title: "Theorem. Let Γ ∈ H2n(S( ¯O)) be a 2n−cycle Γ over ¯O on the conormal variety S of the"
 section_number: 8.2
 pages: 21-21
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
-doc_brief: "REPRESENTATIONSOFWEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1 — 25 sections: Intr"
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 25 sections: Introduction; Construction of Weyl group represe"
 ---
 Go-orbits on B, cΓ ∈He(h∗) the associated harmonic polynomial on h∗ :
 θΓ(λ)= cΓ(λ)θO +o(|λ|e).

@@ -1,13 +1,13 @@
 ---
 doc_id: 0309214v3
-doc_title: "School of Mathematics, Georgia Institute of Technology"
+doc_title: "The colored Jones function is q-holonomic"
 section_id: sec-021-a1-the-case-of-a2
 section_title: "A.1 The case of A2"
 section_number: null
 pages: 37-38
 source_pdf: 0309214v3.pdf
 source_sha256: 53967ef30b0aedb9
-doc_brief: "The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q L ˆ — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its"
+doc_brief: "The colored Jones function is q-holonomic — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear"
 ---
 There are two fundamental roots denoted by α and β . The set of positive roots
 is {α, β, α+ β}. The reduced representations of the longest element of the W eyl

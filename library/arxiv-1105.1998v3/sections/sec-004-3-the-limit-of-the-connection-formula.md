@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1105.1998v3
-doc_title: ""
+doc_title: "A Connection Formula of the Hahn-Exton q-Bessel Function"
 section_id: sec-004-3-the-limit-of-the-connection-formula
 section_title: "The limit of the connection formula"
 section_number: 3
 pages: 6-11
 source_pdf: 1105.1998v3.pdf
 source_sha256: daf3bffad8eb2749
-doc_brief: "A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
+doc_brief: "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity."
 ---
 In this section, we show that the limit p → 1− of the connection formula gives a connection
 formula of the Bessel function. At first, we assume that 0 < p < 1 and 0 < √

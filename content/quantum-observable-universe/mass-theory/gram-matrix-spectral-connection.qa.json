@@ -1425,6 +1425,22 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.473Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Six denials, and in a block whose subject is a retraction they are load-bearing: 'Not \"numerically singular\" - zero', 'the D one does not exist', 'which exists on that quotient, not on H_n', 'fails on H_n itself', 'H_3 is not a Frobenius algebra under tr_M', 'no three-row partition survives Schur-Weyl'.",
+        "notes": "One is a verbatim repeat: 'Nothing structural is lost, only relocated' here and 'The Frobenius structure itself is not lost, only relocated' in rem:frobenius-gram-matrix-context. Same sentence, same correction, two blocks — worth consolidating into one place both can cite."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1444,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.530Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The corrective structure (write the old claim, then overturn it) is the block's subject rather than a device, and each overturning carries its mechanism."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1495,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "14 stylistic spaced dashes in 850 words (1.65/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.589Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "Sixteen em-dashes in 1230 words (about one per 77), the highest density in the batch. Several append corrections to sentences that were already complete: 'which exists on that quotient, not on H_n (convention D) - enters the Frobenius co-Casimir', 'the co-Casimir sum must run over the two-row stratum only - which is precisely the sense in which...', 'what survives is sum dim^2 = C_n - the Catalan numbers 5, 14, 42'.",
+        "notes": "PROPOSED (structural, not applied): the density is a symptom of layering corrections onto the original text in place. Moving the 2026-08-09 correction into authorNotes and rewriting the body under convention D would remove most of them at once."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 850 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.637Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No reflex list; the numbered list of four Gram-matrix roles and the six-row term table are both content-driven."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1565,23 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.710Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "major",
+        "evidence": "'So the Gram matrix is the **single algebraic object** whose block structure generates the entire spectral sequence and its mass-term identification.' — a grand closing claim, bolded, immediately after a paragraph whose own content is hedged ('generically') and which does not establish that the off-diagonal blocks encode the differentials.",
+        "notes": "PROPOSED (not applied - it is a claim, not just a flourish): scope it to what the block shows, e.g. 'The diagonal blocks of G are the pairings on E_0^{p,*}; identifying the differentials with its off-diagonal blocks is the remaining step.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1601,23 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.749Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "major",
+        "evidence": "The block narrates its own text repeatedly rather than stating mathematics: '**This remark already contains its own refutation.**', 'The very next line then writes down ... which for that block is a division by zero', 'is the sharpest statement in this remark', 'see the correction above'. A struck-through sentence is also left in the published prose ('~~At q = q_0, det G != 0 (generically), confirming the Frobenius property.~~ **Retracted 2026-08-09**').",
+        "notes": "AUTHORNOTES FLAG (AGENTS.md 4d, one-voice Cat. H): the whole opening blockquote plus the retraction are dated status content and belong in authorNotes (kinds 'caveat' and 'refined-framing', date 2026-08-09), with the body rewritten under convention D. Struck-through text should be deleted from the prose, not displayed. This single change would also clear the trap-em-dash fail."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1637,21 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.794Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The convention-D point is stated several times, but each occurrence is attached to a different downstream object (G^{-1}, the co-Casimir, the H_3 determinant, the Wedderburn block form), so it is application rather than restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1671,21 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.832Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1705,23 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.876Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "'the **single algebraic object** whose block structure generates the **entire** spectral sequence', 'is the sharpest statement in this remark', 'every statement above stands unchanged', and 'Computing G explicitly ... is equivalent to computing all pages E_r' — four maximal claims, none of them demonstrated in the block.",
+        "notes": "The strongest of these, 'equivalent to computing all pages', would need the differentials to be recoverable from G; the block only says they are 'encoded in the off-diagonal blocks under filtered inversion'."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1741,22 @@
         "reviewed_at": "2026-08-15T10:31:00.334Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6d9ef78b7925",
+          "ts": "2d34cd47e5ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:26:29.956Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Long, but sentence-by-sentence it reads aloud; the corrective asides are what make it heavy, not the syntax.",
+        "notes": "CHECKED, WITH FIVE DEFECTS. VERIFIED CORRECT: the rank arithmetic is exactly right - dim H_n = n!, the surviving quotient is sum over at-most-2-row partitions of dim^2 = Catalan (5, 14, 42 for n = 3,4,5), giving corank 1, 10 = 3^2 + 1^2, 78 = 6^2 + 5^2 + 4^2 + 1^2, and the killed dimensions are exactly those of the 3-or-more-row partitions. tau(sigma_i^2) = hz + 1 and tau(sigma_0 sigma_1 sigma_0) = h z^2 + z both match rem:frobenius-gram-matrix-context. a_K = G_{beta, beta*}/G_{1,1} matches def:frobenius-self-pairing-chirality. DEFECTS: (1) THE CO-CASIMIR IDENTIFICATION DOES NOT COMPUTE. With G^{-1}_{ll} = [n]_q!/(dim_q(l) dim(l)) and D_{ll} = 1/dim_q(l), tr(G^{-1} D) = [n]_q! sum 1/(dim_q^2 dim), not sum 1/dim_q. The missing factor is tau(e_l): the co-Casimir trace is sum_l c_l tau(p_l) with c_l = 1/(dim_q tau(p_l)). Either D must be delta_{ll} tau(e_l)/dim_q, or the sentence 'Summing G^{-1} diagonal times 1/dim_q gives exactly sum 1/dim_q' must go. (2) THE GRAM DEFINITION CONTRADICTS THE DISPLAYED MATRIX: the text says G_{ij} = tau(b_i b_j^{-1}), but the matrix shown has first row (1, z, z, z^2, z^2, z^3), which is tau(b_i b_j). With inverses the entries would involve tau(sigma^{-1}) = z - h = 0.4036, not z = 0.6127. Every sibling block (def:frobenius-dual-h3, prop:frobenius-gram-matrix, rem:frobenius-gram-matrix-context) defines it without the inverse. (3) THE CASIMIR IS NOT THE CO-CASIMIR: item 2 writes C_{dim_q} = sum_{ij} (G^{-1})_{ij} b_i b_j, which is the standard Casimir Omega; thm:frobenius-codim-universal defines C_{dim_q} = sum_l p_l/(dim_q(l) tau(p_l)), and the proof of that theorem explicitly distinguishes the two ('the standard Casimir Omega = sum e_i e^i corresponds to the torus with puncture; C_{dim_q} to the torus with a dim_q-labelled puncture'). (4) l(lambda) COLLISION: 'y_lambda = 0 for every lambda with l(lambda) >= 3' means three or more ROWS here, but this chapter defines l(lambda) = height(lambda) - 1 (proof of thm:frobenius-codim-universal), under which three rows is l = 2. As written the sentence keeps the three-row blocks alive, contradicting the corank numbers in the same block. (5) MALFORMED EXPONENT: 'det G = prod_l tau(e_l)^{\\,\\cdot}' has a raised-dot placeholder where the multiplicity belongs (presumably dim(l)^2). Also kappa is used here for the root-of-unity order while prop:gram-determinant-plancherel-ratio uses it for the Gram-determinant ratio and rem:geom-bridge-status for 3/16."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1779,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:26:29.956Z"
 }

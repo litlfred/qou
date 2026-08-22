@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1601.02479v5
-doc_title: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A"
+doc_title: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras"
 section_id: sec-010-21-monodromic-mixed-hodge-modules
 section_title: "Monodromic mixed Hodge modules"
 section_number: 2.1
 pages: 13-20
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
-doc_brief: "COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and the associated cohomo logical Hall alge- bra"
+doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
 ---
 we deﬁne as in [43, 44] the category MHM( X) of mixed Hodge modules on X. See
 [42] for an overview of the theory. There is an exact functor rat X : D(MHM(X)) →

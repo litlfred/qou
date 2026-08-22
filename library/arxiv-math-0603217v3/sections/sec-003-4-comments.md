@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-math-0603217v3
-doc_title: "K; exp(2π √−1) would determine the simplicial volume of the knot complement S3 \ K. In [15]"
+doc_title: "A version of the volume conjecture"
 section_id: sec-003-4-comments
 section_title: "Comments"
 section_number: 4
 pages: 4-5
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
-doc_brief: "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume"
+doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
 ---
 In [4, (5.29)], Gukov proposed the following conjecture.
 Conjecture 4.1. [4] Let K be a knot in the three-sphere. For a ∈ C \ Q, deﬁne

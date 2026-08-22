@@ -3,8 +3,9 @@
 title: Cross-check 0111022v1.pdf at prop:cl3-zeta5-orbit-sum-identity
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:34Z
-updated_at: 2026-08-08T16:12:34Z
+updated_at: 2026-08-21T17:04:43Z
 ---
 
 Test whether the orbit-sum / distribution identity used by prop:cl3-zeta5-orbit-sum-identity holds for QOU's Li_2^q = sum x^n/(n [n]_q), as Lemma 4 shows it does for Schlesinger's normalisation. This is a falsifiable numeric check, not an adoption of his result.
@@ -17,3 +18,10 @@ Source: `library/arxiv-math-0111022v1/0111022v1.pdf` — no `references.ts` entr
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0111022v1/  ->  [schlesinger2001]
+  Some remarks on q-deformed multiple polylogarithms
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [schlesinger2001] as the citation key when you do it.

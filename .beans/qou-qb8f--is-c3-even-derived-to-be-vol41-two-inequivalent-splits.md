@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T10:45:00Z
-updated_at: 2026-08-14T16:13:22Z
+updated_at: 2026-08-19T21:14:17Z
 ---
 
 Raised (not adjudicated) from PR #4724 after retracting an S_leak-based filter.
@@ -280,3 +280,10 @@ Audit: docs/audits/2026-08-14-c3-registry-glyph-collision-and-anchor-selective-s
 
 Scope-(a). No Lean edited; c_3 tier unchanged; nothing wired; no fit.
 Remaining open: the bar-parity itself -> qou-qb8g.
+
+── Verification 2026-08-19 (session qou-a6rd, branch n24484) ──
+Re-adjudicated against committed corpus. All three sub-questions ARE resolved; no remaining work — ready for owner-close (§4a).
+(a) c₃^even = −Vol(4₁): NOT derived — a near-match. Φ_b saddle motivation (vol deficit 0.0094 ≈ |S(muon)| 0.00968) is ~3% off, muon-only + anchor-selective (fails at proton pin), and convention-C-conditional (§9g). q*_S presupposes (H1); WITHDRAWN as independent q₀ determination (#5074 §9f).
+(b) rival c₃^even≈+86.66 = projection artifact / different object (same glyph). Two S's are distinct (SLeakZeroCrossing guards collision). Neither split is a genuinely derived decomposition.
+(c) registry pointer landed #5022, refined #5074 §9f. KC21 tiers only the STRUCTURAL parity (proved-lean, Im S odd) + S=h·D split / 1/u³ / Φ_b saddle (symbolic-exact) — the EQUALITY c₃^even=−Vol(4₁) stays (H1), untiered.
+Open residuals correctly tracked as qb8e (magnitude gate) + qb8g (bar-parity undetermined). NEW live thread beyond qb8f: whole c₃ ladder is C-frame, awaits convention-D re-derivation (qou-cds1).

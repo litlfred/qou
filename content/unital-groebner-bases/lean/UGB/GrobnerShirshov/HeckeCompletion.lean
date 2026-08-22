@@ -1016,14 +1016,21 @@ theorem descWord_snoc {n : ℕ} {i j j₀ : Fin n}
 
 /-! ### Leading coefficients, and membership -/
 
+/-- The two Bokut–Shiao words are distinct: they differ at their first letter,
+`σᵢ` against `σᵢ₋₁`. `bokutShiaoRelation_lc` needs this to read the leading
+coefficient off a two-term `ofTerms`, and `monicStep` needs it as `hLR`. -/
+theorem bsWord₂_ne_bsWord₁ {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    bsWord₂ i' i j ≠ bsWord₁ i j := by
+  have hii' : i' ≠ i := fun hcon => absurd (congrArg Fin.val hcon) (by omega)
+  rw [bsWord₁_cons hi hj, bsWord₂]
+  simp [hii']
+
 /-- The Bokut–Shiao rule is monic: deg-lex picks `bsWord₁`, which carries `+1`. -/
 theorem bokutShiaoRelation_lc {n : ℕ} {i' i j : Fin n}
     (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
     (bokutShiaoRelation i' i j).lc (heckeOrder n) = 1 := by
-  have hii' : i' ≠ i := fun hcon => absurd (congrArg Fin.val hcon) (by omega)
-  have hne : bsWord₂ i' i j ≠ bsWord₁ i j := by
-    rw [bsWord₁_cons hi hj, bsWord₂]
-    simp [hii']
+  have hne := bsWord₂_ne_bsWord₁ hi hj
   show (bokutShiaoRelation i' i j).relation.coeff
     ((bokutShiaoRelation i' i j).lm (heckeOrder n)) = 1
   rw [bokutShiaoRelation_lm hi hj]
@@ -3437,6 +3444,43 @@ theorem ofTerms_coeff_mid {n : ℕ} (L₁ L₂ : List (Monomial (HeckeGen n) × 
   have h₂ := hnil L₂ (fun r hr => h r (by rw [List.map_append]; exact List.mem_append_right _ hr))
   simp [AlgElement.ofTerms_coeff, List.filter_append, h₁, h₂]
 
+/-! ### §4ak  A cancelling pair drops out
+
+The `a ≤ b` chain's term list is not fixed-shape. `hecke_chain_cancellation.py`
+measures its profile: the two quadratic steps each add a term (peak four), and
+then **two** later steps remove two at once — which no rewrite can do, since a
+far-commutation takes one term to one term. Each is a pair reconverging on a
+single word with opposite coefficients and annihilating. Worked at `a = 4`,
+`b = 6`, step 24 rewrites `h · σ_i σ_{i−4} ⋯` into precisely the word already
+carried by `−h`, and the two vanish.
+
+The first such event is mid-prefix; the second **is the final step**, so the
+chain does not terminate by a separate mechanism — reaching zero is itself a
+cancellation. That is why the lemma below is needed twice, and why the second
+use is what will deliver "reduces to zero".
+
+`MultiStepReduction` is stated through `CoeffEq`, so the cancellation is *sound*
+with no help at all (§6 already carries the congruences). What is missing is the
+**shape** bridge: without it every lemma downstream of a cancellation would have
+to be stated against a list whose first two entries are dead weight. -/
+
+set_option linter.unnecessarySeqFocus false in
+/-- **Two terms on one word with opposite coefficients contribute nothing.**
+The bridge between the chain's term list before and after a cancellation. -/
+theorem ofTerms_cancel_pair {n : ℕ} (w : Monomial (HeckeGen n)) (c : ℝ)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    AlgElement.CoeffEq
+      (AlgElement.ofTerms (L₁ ++ (w, c) :: (w, -c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ L₂)) := by
+  intro m
+  simp only [AlgElement.ofTerms_coeff, List.filter_append, List.filter_cons,
+    List.map_append, List.sum_append, decide_eq_true_eq]
+  -- `linter.unnecessarySeqFocus` proposes `(simp only …; ring)` here. That is
+  -- WRONG: `simp only` already closes several of the `split_ifs` branches, so
+  -- the sequenced `ring` fails with "no goals to be solved". The option is
+  -- disabled for this declaration rather than the suggestion taken.
+  split_ifs <;> simp only [List.map_cons, List.sum_cons] <;> ring
+
 /-- **Far-commutation transport, leftwards.** If every letter of `w` is strictly
 more than one above `σ_z`, then `σ_z` may be walked from the right end of `w` to
 its left end, one far-commutation application per letter, inside any contexts
@@ -4924,6 +4968,308 @@ theorem farComm_transport_right {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : F
   fun w a b hw hcol =>
     farComm_transport_right_sources hn hp x c hc L₁ L₂ w a b hw
       (fun u v huv _ => hcol u v huv)
+
+/-! ### §4ai  A whole block transported past a run
+
+The `a ≤ b` regime's blocks are `a` levels (or `a − 1` on the diagonal), each
+one letter transported rightwards past a run of far-commutations, and
+`hecke_block_transport_shape.py` measures the level lengths as
+`min(b−a−1+k, b−a+2)` off the diagonal and `min(k, 2)` on it. The consequence
+worth acting on is that the number of *short* levels is **fixed** — two, or one
+on the diagonal — so every remaining level passes the *same* run
+`descWord (j₁+1) j₂`. The block is therefore a fixed prologue followed by a
+uniform loop, not a nested loop with a growing inner run.
+
+`blockTransportRight` is that uniform part, and stating it needs no reference to
+the block at all: it is "carry a whole word `X` rightwards past a whole word
+`W`", by induction peeling `X` from its right end. Each peel is one
+`farComm_transport_right_sources`, and the letter just moved joins `B`, which is
+exactly the transition the measurement shows between consecutive levels.
+
+**The parked-term hypothesis is `loopTwoGen`'s, and for the same reason.**
+Enumerating the intermediate words here would mean splitting `X` *and* `W`
+simultaneously, which is unusable in practice. But every word any step of this
+induction rewrites has the form `A ++ z` — the accumulator only ever grows to
+the right of `A` — so the single hypothesis "no parked term begins with `A`"
+discharges every collision obligation at once. In the corner it holds because
+the two terms start with different letters. -/
+
+/-- **A whole block carried rightwards past a run, with the source-only
+collision hypothesis.** `X` and `W` swap, provided every letter of `X` is at
+least two above every letter of `W`, inside any context and at any position of
+the term list.
+
+The induction peels `X` from the **right**: its last letter transports across
+`W` first and then joins `B`, so the recursion re-enters with `X` one shorter
+and `B` one longer. Peeling from the left would not compose — the head of `X`
+is separated from `W` by the rest of `X`, so no single transport applies.
+
+`hpark` below — no other term extends `A` — is *sufficient* but not necessary,
+and `hecke_prefix_head_separation.py` measures where the difference bites: at
+`2a` steps of the corner's closing phase no choice of left context satisfies
+`hpark`, while **every source in the chain is unique**, so the precise condition
+holds throughout.
+
+What the transport actually needs is that no other term equal a word it
+*rewrites*. Peeling `X` from the right, those are exactly
+
+    A ++ P ++ u ++ (x :: (v ++ (S ++ B)))    for  P ++ (x :: S) = X,
+                                                   u ++ v = W,  v ≠ []
+
+— one per letter of `X` and per interior split of `W`. The `v ≠ []` exclusion is
+`farComm_transport_right_sources`'s own (§4ah): it drops the split naming each
+transport's final word, which is produced and never rewritten. This lemma
+threads that family through the recursion instead of over-approximating it. -/
+theorem blockTransportRightSources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A W : Monomial (HeckeGen n)) :
+    ∀ (X B : Monomial (HeckeGen n)),
+      (∀ x ∈ X, ∀ y ∈ W, y.index.val + 1 < x.index.val) →
+      (∀ (P S u v : Monomial (HeckeGen n)) (x : HeckeGen n),
+          P ++ (x :: S) = X → u ++ v = W → v ≠ [] →
+          ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+            r ≠ A ++ (P ++ (u ++ (x :: (v ++ (S ++ B)))))) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms (L₁ ++ (A ++ (X ++ (W ++ B)), c) :: L₂))
+        (AlgElement.ofTerms (L₁ ++ (A ++ (W ++ (X ++ B)), c) :: L₂)) := by
+  intro X
+  induction X using List.reverseRecOn with
+  | nil =>
+      intro B _ _
+      simp only [List.nil_append]
+      exact MultiStepReduction.refl _
+  | append_singleton X' xg ih =>
+      intro B hfar hcol
+      obtain ⟨xi⟩ := xg
+      have hstep := farComm_transport_right_sources hn hp xi c hc L₁ L₂ W (A ++ X') B
+        (fun y hy => hfar ⟨xi⟩ (by simp) y hy)
+        (fun u v huv hv r hr => by
+          have := hcol X' [] u v ⟨xi⟩ (by simp) huv hv r hr
+          simpa only [List.append_assoc, List.nil_append] using this)
+      have hrec := ih ((⟨xi⟩ : HeckeGen n) :: B)
+        (fun x hx => hfar x (List.mem_append_left _ hx))
+        (fun P S u v x hPS huv hv r hr => by
+          have := hcol P (S ++ [(⟨xi⟩ : HeckeGen n)]) u v x
+            (by rw [← hPS]; simp) huv hv r hr
+          simpa only [List.append_assoc, List.cons_append,
+            List.singleton_append] using this)
+      simp only [List.append_assoc, List.cons_append] at hstep hrec ⊢
+      exact MultiStepReduction.trans hstep hrec
+
+/-- The block transport with the unrestricted hypothesis — `hpark` supplies
+every case of the source family at once. Kept because §4aj's callers already
+supply it, exactly as `farComm_transport_right` is kept for §4y's. -/
+theorem blockTransportRight {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ A ++ z)
+    (W : Monomial (HeckeGen n)) :
+    ∀ (X B : Monomial (HeckeGen n)),
+      (∀ x ∈ X, ∀ y ∈ W, y.index.val + 1 < x.index.val) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms (L₁ ++ (A ++ (X ++ (W ++ B)), c) :: L₂))
+        (AlgElement.ofTerms (L₁ ++ (A ++ (W ++ (X ++ B)), c) :: L₂)) :=
+  fun X B hfar =>
+    blockTransportRightSources hn hp c hc L₁ L₂ A W X B hfar
+      (fun _ _ _ _ _ _ _ _ r hr => hpark r hr _)
+
+/-! ### §4aj  The whole block, in three steps
+
+With `blockTransportRight` in hand the block closes. The per-level blueprint —
+measured over 102 levels in `hecke_block_transport_shape.py`, uniform on and off
+the diagonal — says the level with high letter `σ_h` passes
+`descWord (min(h−2, j₁+1)) j₂` and carries `descWord (h−1) (j₁+1) ++ [σ_i]` on
+its right. Only two levels sit below the cap, so the block is
+
+    h = j₁+1   one transport across `descWord (j₁−1) j₂`
+    h = j₁+2   one transport across `descWord j₁ j₂`
+    h ≥ j₁+3   one `blockTransportRight`, `X = descWord i (j₁+3)`
+
+and the two short levels need no lemma of their own — they are
+`farComm_transport_right_sources` applications, with the blueprint supplying
+their arguments.
+
+**What makes the three compose is the left contexts, and they are forced.**
+Writing `A` for the block transport's context, the earlier steps must run at
+
+    A₂ = A ++ descWord i (j₁+3) ++ [σ_{j₁+1}]
+    A₁ = A₂ ++ [σ_{j₁+2}, σ_{j₁}]
+
+and then each step's target is the next one's source *on the nose*, because
+`descWord j₁ j₂ = σ_{j₁} :: descWord (j₁−1) j₂` and
+`descWord (j₁+1) j₂ = σ_{j₁+1} :: descWord j₁ j₂` peel exactly the letters the
+contexts carry. Those two `descWord_cons` peelings and
+`descWord (j₁+2) (j₁+1) = [σ_{j₁+2}, σ_{j₁+1}]` are the whole of the gluing.
+
+**No bound relating `j₁+3` to `i` is needed.** The obvious hypothesis
+`j₁+3 ≤ i` is *not* required and is not taken: if it fails, `descWord i (j₁+3)`
+is empty and the middle step is vacuous, which is exactly the degenerate
+short-block case. Stating it would have narrowed the lemma for nothing.
+
+**Two corrections to the first version of this section, both about scope.**
+
+*The diagonal was excluded.* `blockPass` originally carried
+`hj₂ : j₂ ≤ j₁ − 1`, and `b = a` means `j₂ = j₁`, so it could not be
+instantiated there at all — yet `a ≤ b` includes the diagonal, and the diagonal
+block is real (`a − 1` levels rather than `a`, starting one level higher). The
+first level is simply absent there, so the fix is to name the rest:
+`blockPassFromTwo` asks only `j₂ ≤ j₁` and covers the diagonal, with
+`blockPass` = one leading transport + it.
+
+*The trailing word was hardcoded.* Both versions ended `… ++ [σ_i]`. That is
+right for the top-level block, but the *same* block shape occurs inside the
+prefix as `small(a)`, where what sits to the right is `descWord j₁ j₂` instead.
+Measured over 131 levels, top-level and `small(a)` obey one blueprint,
+
+    W = descWord (min(h−2, j₁+1)) j_eff        B = descWord (h−1) (j₁+1) ++ T
+
+differing only in `j_eff` and the tail `T`. Making `T` a parameter is what lets
+one lemma serve both — and `small(a)` is where the prefix's own
+`block · two steps · block` self-similarity stops being an observation and
+becomes literal reuse. -/
+
+/-- **The block from its second level on.** The two levels below the cap are
+`h = j₁+1` and `h = j₁+2`; this covers the second and everything above it, which
+is all of the block when the first level is absent.
+
+It asks only `j₂ ≤ j₁`, **not** `j₂ < j₁`, and that is the point: at `b = a` the
+two coincide, so a lemma demanding the strict inequality cannot be instantiated
+on the diagonal at all. The trailing word `T` is a parameter for the same
+reason — see §4aj. -/
+theorem blockPassFromTwo {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ j₁ jp jpp jppp : Fin n}
+    (hjp : j₁.val + 1 = jp.val) (hjpp : jp.val + 1 = jpp.val)
+    (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ A ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          ((⟨jpp⟩ : HeckeGen n) :: (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))), c)
+          :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
+  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
+    descWord_cons hjp hj₂
+  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
+    rw [descWord_cons hjpp (le_refl _), descWord_self]
+  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
+    (descWord j₁ j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
+    ([(⟨jp⟩ : HeckeGen n)] ++ T)
+    (fun y hy => by have := descWord_index_le hy; omega)
+    (fun u v _ _ r hr => by
+      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+        (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))))
+      simpa only [List.append_assoc] using this)
+  have s3 := blockTransportRight hn hp c hc L₁ L₂ A hpark
+    (descWord jp j₂) (descWord i jppp) (descWord jpp jp ++ T)
+    (fun x hx y hy => by
+      have hx' := descWord_index_ge hx
+      have hy' := descWord_index_le hy
+      omega)
+  rw [hd2, hd3] at s3 ⊢
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s2 s3 ⊢
+  exact MultiStepReduction.trans s2 s3
+
+/-- **The block, at general depth, off the diagonal.** One pass of the `a ≤ b`
+regime's far-commutation block when `j₂ < j₁`: the first level below the cap,
+then `blockPassFromTwo` for the rest.
+
+The left context `A` and the trailing word `T` are both arbitrary — the block
+never has to know what the prefix left on either side of it. -/
+theorem blockPass {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ jm j₁ jp jpp jppp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ jm.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ A ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+          ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
+  have hd1 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
+    descWord_cons hjm hj₂
+  have s1 := farComm_transport_right_sources hn hp jp c hc L₁ L₂
+    (descWord jm j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩])) T
+    (fun y hy => by have := descWord_index_le hy; omega)
+    (fun u v _ _ r hr => by
+      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+        (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ T)))))
+      simpa only [List.append_assoc] using this)
+  have hj₂' : j₂.val ≤ j₁.val := by omega
+  have s23 := blockPassFromTwo (i := i) (j₂ := j₂) (j₁ := j₁) (jp := jp)
+    (jpp := jpp) (jppp := jppp) hn hp hjp hjpp hjppp hj₂' c hc L₁ L₂ A T hpark
+  rw [hd1] at s23
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s23 ⊢
+  exact MultiStepReduction.trans s1 s23
+
+/-! ### §4al  The quadratic pair, at general depth
+
+The prefix uses the quadratic rule exactly twice, and each time the step before
+it is a Yang–Baxter. `hecke_quad_pair_shape.py` measured both occurrences and
+they differ only in their surrounding words, so one lemma covers them — but the
+mechanism is worth stating, because it is what makes the pair a *pair* rather
+than two unrelated steps:
+
+    L ++ [σ_{j₁+1}, σ_{j₁}, σ_{j₁+1}] ++ (σ_{j₁} :: R)
+      Y →   L ++ [σ_{j₁}, σ_{j₁+1}] ++ [σ_{j₁}, σ_{j₁}] ++ R
+      Q →   (L ++ [σ_{j₁}, σ_{j₁+1}, σ_{j₁}] ++ R,  c·h)
+            (L ++ [σ_{j₁}, σ_{j₁+1}] ++ R,          c)
+
+The Yang–Baxter step ends by emitting a `σ_{j₁}`, and `R` already *begins* with
+one. The two land adjacent, and that is the quadratic redex. Neither step
+creates it alone.
+
+**The Yang–Baxter step does not go through `yangBaxterRelation`.** That rule
+carries `−1` at its own leading word, so it is not monic and `monicStep` cannot
+take it. The route is `bokutShiaoRelation j₁ (j₁+1) j₁`, which is the same
+relation at `j = i − 1` (§4j) but monic and with the leading word the right way
+round — `braid_hrel` / `braid_hlm` are exactly that repackaging. -/
+
+/-- **The Yang–Baxter step and the quadratic step it sets up.** One term in, two
+out, with the `h`-weighted one first. `L` and `R` are arbitrary: the pair occurs
+twice in the prefix and the two occurrences differ only in them. -/
+theorem quadPair {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {j₁ jp : Fin n} (hjp : j₁.val + 1 = jp.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (L R : Monomial (HeckeGen n))
+    (hpark : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n), r ≠ L ++ z) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (L ++ ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: R)), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (L ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: R)),
+            c * (hp.q - hp.q⁻¹))
+          :: (L ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ R), c) :: L₂)) := by
+  have hne : (⟨j₁⟩ : HeckeGen n) ≠ ⟨jp⟩ := by
+    intro hcon
+    have := congrArg HeckeGen.rank hcon
+    simp only [HeckeGen.rank] at this
+    omega
+  -- the Yang-Baxter step, taken through the Bokut-Shiao rule at j = i-1,
+  -- which is the same relation but monic (4j)
+  have s1 := monicStep hn hp _
+    (bokutShiaoRelation_mem hn hp hjp (le_refl _))
+    (BokutShiaoBraid.braid_hrel hjp) (BokutShiaoBraid.braid_hlm hjp)
+    (by simp [hne]) L₁ L₂ L ((⟨j₁⟩ : HeckeGen n) :: R) _ _ c hc rfl rfl
+    (fun q hq => by
+      have := hpark q hq ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩, ⟨jp⟩] ++ ((⟨j₁⟩ : HeckeGen n) :: R))
+      simpa using this)
+  -- the quadratic step: Y's output puts a second σ_{j₁} against R's head
+  have s2 := quadStep hn hp j₁ L₁ L₂ (L ++ [(⟨j₁⟩ : HeckeGen n), ⟨jp⟩]) R _ c hc rfl
+    (fun q hq => by
+      have := hpark q hq ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ ([(⟨j₁⟩ : HeckeGen n), ⟨j₁⟩] ++ R))
+      simpa only [List.append_assoc, List.cons_append, List.nil_append] using this)
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s2 ⊢
+  exact MultiStepReduction.head s1 (MultiStepReduction.head s2 (MultiStepReduction.refl _))
 
 /-- **The descending run begins with its top index**, whenever it is non-empty.
 Splits on `j = i` (`descWord_self`) and `j < i` (`descWord_cons` at `i − 1`). -/
@@ -10398,7 +10744,19 @@ noncomputable def oc (i i₁ j₁ j₂ : Fin n) (h₁ : i₁.val + 1 = i.val)
 
 /-- **The S-polynomial** is `V0 − U0`. The two leading words cancel because the
 short run splits as `descWord i j₂ = σᵢ :: descWord (i−1) j₂`, which is exactly
-the overlap. -/
+the overlap.
+
+**This is regime-independent, and that is worth stating.** Neither `oc` nor this
+identity relates `j₁` to `j₂` — both ask only `j₁ ≤ i₁` and `j₂ ≤ i₁`. So the
+overlap composition and its S-polynomial are *already* established for the
+`a ≤ b` regime (`j₂ ≤ j₁`), diagonal `j₂ = j₁` included, and not only for the
+`a > b` regime this namespace's `chain` and `resolves` go on to close. What is
+regime-specific is the reduction chain from `T0` to zero, nothing before it.
+
+Recorded because the `a ≤ b` arc (bean `qou-auq3`) had been carrying
+"`OverlapComposition` + `spoly`" on its open list, which was wrong: both were in
+the corpus, generic in both depths, the whole time. Verified by instantiating
+this lemma at `j₂ ≤ j₁` and at `j₂ = j₁`. -/
 theorem oc_spoly_coeff {i i₁ j₁ j₂ : Fin n} (h₁ : i₁.val + 1 = i.val)
     (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val) (m : Monomial (HeckeGen n)) :
     (oc i i₁ j₁ j₂ h₁ hj₁ hj₂).spoly.coeff m = (T0 i i₁ j₁ j₂).coeff m := by
@@ -10436,5 +10794,440 @@ theorem resolves (hp : HeckeParams) {i i₁ i₂ j₁ j₂ ed : Fin n} (hn : 0 <
   exact oc_spoly_coeff h₁ (by omega) (by omega) m
 
 end CornerGeneral
+
+/-! ### §4am  The `a ≤ b` tail, assembled — and why the order is not the engine's
+
+Everything the tail needs has been in the file since §4al: two `blockPass`
+applications, two Bokut–Shiao steps, and the two `descWord` splittings that make
+the terms meet. What was missing is the *schedule*, and it is not the engine's.
+
+`hecke_tail_collision_check.py` measured `blockPass`'s collision hypothesis
+`hpark` — no other term is any extension of the block's left context — at both
+applications, under the order the confluence engine produces (block 1, the two
+Bokut–Shiao steps, block 2). It **holds at the first and fails at the second**,
+8/8 off the diagonal. It fails for one reason: that block's last step emits the
+bystander, and that emission is the cancellation which ends the chain.
+
+The reflex is to weaken `hpark` — to propagate down the source-only relaxation
+`farComm_transport_right_sources` already carries, since `SingleStepReduction`
+reads `f.coeff (a ++ lm ++ b)` off the **source** side and a collision on a word
+the block only ever *produces* costs nothing. That is three lemmas restated, and
+the relaxed proof would then owe an argument that a block's destination differs
+from each of its own intermediate sources.
+
+**None of it is needed.** The tail's two blocks act on *different terms*, so
+their steps commute, and `MultiStepReduction` fixes no order beyond each step's
+redex being present. Deg-lex runs block 1 first; that is the engine's scheduling
+accident, not a constraint on the Lean. Run block 2 first and its bystander is
+term 1 in its *pre*-block form, which does not extend `σ_{i−2} :: A` at all —
+and by the time term 1 moves, term 2 sits at a word beginning `σ_{i−2}`, which
+does not extend `A`. `hecke_tail_reorder_check.py` measures both, together with
+every source being unique and the chain still reaching zero, 8/8.
+
+The last step lands on the bystander, and that is legal: `monicStep` constrains
+its **source** (`hne`), never its target. The landing *is* the cancellation, and
+the two terms then differ only in sign — the `a > b` regime's own ending, where
+`chain` stops at `T6` and `T6_isZero` finishes the job.
+
+The two words meet because of two splittings of one descending run, nothing more:
+
+    descWord id j₂ = descWord id jpp ++ descWord jp j₂
+    descWord i  jp = descWord i jppp ++ descWord jpp jp
+
+both instances of `descWord_split`. -/
+
+
+theorem bsStep {n : ℕ} (hn : 0 < n) (hp : HeckeParams) {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (a b W W' : Monomial (HeckeGen n)) (c : ℝ) (hc : c ≠ 0)
+    (hW : W = a ++ bsWord₁ i j ++ b) (hW' : W' = a ++ bsWord₂ i' i j ++ b)
+    (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst, q ≠ W) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (W, c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ (W', c) :: L₂)) :=
+  monicStep hn hp (bokutShiaoRelation i' i j) (bokutShiaoRelation_mem hn hp hi hj)
+    (fun _ => rfl) (bokutShiaoRelation_lm hi hj) (bsWord₂_ne_bsWord₁ hi hj)
+    L₁ L₂ a b W W' c hc hW hW' hne
+
+theorem heckeGen_ne_of_val_ne {n : ℕ} {x y : Fin n} (h : x.val ≠ y.val) :
+    (⟨x⟩ : HeckeGen n) ≠ ⟨y⟩ := by
+  intro hcon
+  have := congrArg HeckeGen.rank hcon
+  simp only [HeckeGen.rank] at this
+  omega
+
+theorem tailChain {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i id idd j₂ jm j₁ jp jpp jppp : Fin n}
+    (hid : id.val + 1 = i.val) (hidd : idd.val + 1 = id.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ jm.val) (hjppid : jpp.val ≤ id.val)
+    (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord i jppp ++
+            ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+              ((⟨jp⟩ : HeckeGen n) :: descWord jm j₂)))), c),
+         (descWord id jpp ++ (descWord i jppp ++
+            ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+              ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))), -c)])
+      (AlgElement.ofTerms
+        [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+            (descWord i jppp ++ descWord jpp jp))), c),
+         ((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+            (descWord i jppp ++ descWord jpp jp))), -c)]) := by
+  have hcn : -c ≠ 0 := neg_ne_zero.mpr hc
+  have hAcons : descWord id jpp = (⟨id⟩ : HeckeGen n) :: descWord idd jpp :=
+    descWord_cons_le hidd hjppid
+  have hDcons : descWord id j₂ = (⟨id⟩ : HeckeGen n) :: descWord idd j₂ :=
+    descWord_cons_le hidd (by omega)
+  have hidd_ne : (⟨idd⟩ : HeckeGen n) ≠ ⟨id⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- the two splittings that make the two terms meet
+  have hsplitA : descWord id j₂ = descWord id jpp ++ descWord jp j₂ :=
+    descWord_split hjpp (by omega) hjppid
+  have hsplitI : descWord i jp = descWord i jppp ++ descWord jpp jp :=
+    descWord_split hjppp (by omega) (by omega)
+  have hicons : descWord i jp = (⟨i⟩ : HeckeGen n) :: descWord id jp :=
+    descWord_cons hid (by omega)
+  -- STEP 1 -- the block on the SECOND term, run first: its bystander is the
+  -- first term in its PRE-block form, which does not extend `⟨idd⟩ :: A`.
+  have s1 := blockPass (i := i) hn hp hjm hjp hjpp hjppp hj₂ c hc
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(descWord id jpp ++ (descWord i jppp ++
+        ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+          ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))), -c)]
+    ((⟨idd⟩ : HeckeGen n) :: descWord id jpp) []
+    (fun r hr z => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1.symm)
+  -- STEP 2 -- the block on the FIRST term, whose bystander is now term 2 at
+  -- its destination -- which starts `⟨idd⟩` and so does not extend `A`.
+  have s2 := blockPass (i := i) hn hp hjm hjp hjpp hjppp hj₂ (-c) hcn
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    (descWord id jpp) [(⟨i⟩ : HeckeGen n)]
+    (fun r hr z => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  -- STEP 3 -- the first of the two closing Bokut-Shiao steps, at bottom `jp`.
+  have s3 := bsStep (i' := id) (i := i) (j := jp) hn hp hid (by omega)
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    (descWord id j₂) []
+    (descWord id jpp ++ (descWord jp j₂ ++ (descWord i jppp ++
+      (descWord jpp jp ++ [(⟨i⟩ : HeckeGen n)]))))
+    (descWord id j₂ ++ bsWord₂ id i jp ++ [])
+    (-c) hcn
+    (by simp only [bsWord₁, hsplitA, hsplitI, List.append_assoc, List.append_nil])
+    rfl
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  -- STEP 4 -- the second, at bottom `j₂`, one level lower. Its target is the
+  -- OTHER term's word: `monicStep` constrains the source only, so landing on
+  -- the bystander is legal, and that landing IS the cancellation.
+  have s4 := bsStep (i' := idd) (i := id) (j := j₂) hn hp hidd (by omega)
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [] ((⟨i⟩ : HeckeGen n) :: descWord id jp)
+    (descWord id j₂ ++ bsWord₂ id i jp ++ [])
+    ((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+      (descWord i jppp ++ descWord jpp jp))))
+    (-c) hcn
+    (by simp only [bsWord₁, bsWord₂, List.nil_append, List.append_nil,
+      List.append_assoc, List.cons_append])
+    (by simp only [bsWord₂, List.nil_append, List.cons_append, ← hDcons,
+      ← hicons, hsplitA, hsplitI, List.append_assoc])
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      intro hcon
+      rw [hDcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  simp only [List.nil_append, List.cons_append, List.append_nil]
+    at s1 s2 s3 s4 ⊢
+  exact ((s1.trans s2).step s3).step s4
+
+/-- The tail's index hypotheses are satisfiable, so `tailChain` is not vacuous.
+These are `a = 4`, `b = 6` at `n = 13` — the case the probes measure. -/
+theorem tailChain_indices_nonvacuous :
+    ∃ (i id idd j₂ jm j₁ jp jpp jppp : Fin 13),
+      id.val + 1 = i.val ∧ idd.val + 1 = id.val ∧ jm.val + 1 = j₁.val ∧
+      j₁.val + 1 = jp.val ∧ jp.val + 1 = jpp.val ∧ jpp.val + 1 = jppp.val ∧
+      j₂.val ≤ jm.val ∧ jpp.val ≤ id.val :=
+  ⟨11, 10, 9, 5, 6, 7, 8, 9, 10, by decide⟩
+
+
+/-- **The tail from the block's second level on — the diagonal included.**
+
+`tailChain` above asks `j₂ ≤ jm`, so it is off-diagonal only. This asks
+`j₂ ≤ j₁`, and at `b = a` the two coincide: the same relation `blockPass` and
+`blockPassFromTwo` stand in, one level up.
+
+Neither statement subsumes the other, because their *sources* differ. On the
+diagonal the block is one level shorter and `blockPassFromTwo`'s source word is
+not `blockPass`'s — the trailing `σ_jp` sits on the other side of the descending
+run, one transport later. So this is not `tailChain` with a weakened hypothesis;
+it is the same four-step argument starting from the later word.
+
+Everything after the two blocks is *identical* to `tailChain`'s, and measurement
+says so rather than inspection: `hecke_tail_diagonal_check.py` finds the
+diagonal's two Bokut–Shiao steps and its endpoint word to be the same as the
+off-diagonal's, with only the block source differing — and finds the same
+collision pattern, `hpark` failing under the engine's order at the second block
+and holding under the reordered one, 4/4 at `a = b = 3..6`. -/
+theorem tailChainFromTwo {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i id idd j₂ j₁ jp jpp jppp : Fin n}
+    (hid : id.val + 1 = i.val) (hidd : idd.val + 1 = id.val)
+    (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hjppid : jpp.val ≤ id.val)
+    (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord i jppp ++
+            ([(⟨jp⟩ : HeckeGen n)] ++ ((⟨jpp⟩ : HeckeGen n) ::
+              (descWord j₁ j₂ ++ [(⟨jp⟩ : HeckeGen n)]))))), c),
+         (descWord id jpp ++ (descWord i jppp ++
+            ([(⟨jp⟩ : HeckeGen n)] ++ ((⟨jpp⟩ : HeckeGen n) ::
+              (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++
+                [(⟨i⟩ : HeckeGen n)]))))), -c)])
+      (AlgElement.ofTerms
+        [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+            (descWord i jppp ++ descWord jpp jp))), c),
+         ((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+            (descWord i jppp ++ descWord jpp jp))), -c)]) := by
+  have hcn : -c ≠ 0 := neg_ne_zero.mpr hc
+  have hAcons : descWord id jpp = (⟨id⟩ : HeckeGen n) :: descWord idd jpp :=
+    descWord_cons_le hidd hjppid
+  have hDcons : descWord id j₂ = (⟨id⟩ : HeckeGen n) :: descWord idd j₂ :=
+    descWord_cons_le hidd (by omega)
+  have hidd_ne : (⟨idd⟩ : HeckeGen n) ≠ ⟨id⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hsplitA : descWord id j₂ = descWord id jpp ++ descWord jp j₂ :=
+    descWord_split hjpp (by omega) hjppid
+  have hsplitI : descWord i jp = descWord i jppp ++ descWord jpp jp :=
+    descWord_split hjppp (by omega) (by omega)
+  have hicons : descWord i jp = (⟨i⟩ : HeckeGen n) :: descWord id jp :=
+    descWord_cons hid (by omega)
+  have s1 := blockPassFromTwo (i := i) hn hp hjp hjpp hjppp hj₂ c hc
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(descWord id jpp ++ (descWord i jppp ++
+        ([(⟨jp⟩ : HeckeGen n)] ++ ((⟨jpp⟩ : HeckeGen n) ::
+          (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++
+            [(⟨i⟩ : HeckeGen n)]))))), -c)]
+    ((⟨idd⟩ : HeckeGen n) :: descWord id jpp) []
+    (fun r hr z => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1.symm)
+  have s2 := blockPassFromTwo (i := i) hn hp hjp hjpp hjppp hj₂ (-c) hcn
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    (descWord id jpp) [(⟨i⟩ : HeckeGen n)]
+    (fun r hr z => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  have s3 := bsStep (i' := id) (i := i) (j := jp) hn hp hid (by omega)
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    (descWord id j₂) []
+    (descWord id jpp ++ (descWord jp j₂ ++ (descWord i jppp ++
+      (descWord jpp jp ++ [(⟨i⟩ : HeckeGen n)]))))
+    (descWord id j₂ ++ bsWord₂ id i jp ++ [])
+    (-c) hcn
+    (by simp only [bsWord₁, hsplitA, hsplitI, List.append_assoc, List.append_nil])
+    rfl
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      intro hcon
+      rw [hAcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  have s4 := bsStep (i' := idd) (i := id) (j := j₂) hn hp hidd (by omega)
+    [((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+        (descWord i jppp ++ (descWord jpp jp ++ [])))), c)]
+    ([] : List (Monomial (HeckeGen n) × ℝ))
+    [] ((⟨i⟩ : HeckeGen n) :: descWord id jp)
+    (descWord id j₂ ++ bsWord₂ id i jp ++ [])
+    ((⟨idd⟩ : HeckeGen n) :: (descWord id jpp ++ (descWord jp j₂ ++
+      (descWord i jppp ++ descWord jpp jp))))
+    (-c) hcn
+    (by simp only [bsWord₁, bsWord₂, List.nil_append, List.append_nil,
+      List.append_assoc, List.cons_append])
+    (by simp only [bsWord₂, List.nil_append, List.cons_append, ← hDcons,
+      ← hicons, hsplitA, hsplitI, List.append_assoc])
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      intro hcon
+      rw [hDcons] at hcon
+      simp only [List.cons_append] at hcon
+      exact hidd_ne (List.cons.inj hcon).1)
+  simp only [List.nil_append, List.cons_append, List.append_nil]
+    at s1 s2 s3 s4 ⊢
+  exact ((s1.trans s2).step s3).step s4
+
+/-- The diagonal `b = a` is inside `tailChainFromTwo`'s reach: `j₂ = j₁`. -/
+theorem tailChainFromTwo_covers_diagonal :
+    ∃ (i id idd j₂ j₁ jp jpp jppp : Fin 11),
+      id.val + 1 = i.val ∧ idd.val + 1 = id.val ∧ j₁.val + 1 = jp.val ∧
+      jp.val + 1 = jpp.val ∧ jpp.val + 1 = jppp.val ∧
+      j₂.val = j₁.val ∧ jpp.val ≤ id.val :=
+  ⟨9, 8, 7, 5, 5, 6, 7, 8, by decide⟩
+
+
+/-! ### §4an  The `a ≤ b` chain's opening — most of it was already proved
+
+Two facts about `CornerGeneral`, both established by instantiation rather than
+by reading a signature, and both of which shrink the `a ≤ b` arc's open list.
+
+**The overlap and the S-polynomial were never regime-specific.** Neither
+`CornerGeneral.oc` nor `oc_spoly_coeff` relates `j₁` to `j₂` — see the note on
+that lemma. So the `a ≤ b` corner starts from the *same* `T0`, diagonal
+included, and `hecke_prefix_loop_fit.py`'s companion measurement confirms it
+against the engine: the start element is exactly `ofTerms [(V0, 1), (U0, −1)]`.
+
+**The first two steps were not either.** `s1` and `s2` ask only `i₁+1 = i`,
+`i₂+1 = i₁` and `j₁ ≤ i₂` — Lean's unused-variable linter reports `j₂` unused
+when they are instantiated, which is the sharpest possible statement of it. So
+they carry the `a ≤ b` chain to `ofTerms [(V2, 1), (U0, −1)]` unchanged, and
+that is exactly where the engine's own replay puts it after two steps.
+
+What this namespace adds is the *second* term's head, which the `a > b` regime
+does not share: there `s3`/`s4` need `hed : ed+1 = j₂` with `j₁ ≤ ed`, i.e.
+`j₁ < j₂`, and cannot be instantiated here at all.
+
+`uHead` is that head. It is the **same two-rule motif** as `s1`/`s2` — a
+Bokut–Shiao step then a far-commutation — displaced one letter right, because
+`U0` carries a leading `σᵢ₋₁` that `V0` does not:
+
+    U0  = σᵢ₋₁ · σᵢ · (descWord i₁ j₁ ++ [σᵢ₋₁]) · descWord i₂ j₂ · σᵢ
+      B →  σᵢ₋₁ · σᵢ · (σᵢ₋₂ σᵢ₋₁ descWord i₂ j₁) · descWord i₂ j₂ · σᵢ
+      F →  σᵢ₋₁ · σᵢ₋₂ · σᵢ · σᵢ₋₁ · descWord i₂ j₁ · descWord i₂ j₂ · σᵢ
+
+The Bokut–Shiao redex straddles the two descending runs — it is
+`descWord i₁ j₁ ++ [σᵢ₋₁]`, whose last letter is `descWord i₁ j₂`'s first — and
+the far-commutation then moves `σᵢ` right past `σᵢ₋₂`, which is legal because
+`i₂ + 1 < i`. Both collision hypotheses are discharged by one letter: the
+bystander `V2` opens `σᵢ₋₂` and every word here opens `σᵢ₋₁`. That is the
+opening phase's head separation, which
+`hecke_prefix_head_separation.py` measures to hold for the first `a²−3a+9`
+steps and to fail thereafter. -/
+
+namespace CornerLe
+open CornerGeneral
+
+variable {n : ℕ}
+
+/-- The second term after its own two-step head. -/
+def U0' (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] ++
+    (descWord i j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+
+/-- After the Bokut–Shiao step at top `i−1`, before the far-commutation. -/
+def U0₁ (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (bsWord₂ i₂ i₁ j₁ ++
+    (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+
+theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0' i i₁ i₂ j₁ j₂, -1)]) := by
+  have hne2 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- U0 = σ_{i₁} σ_i · (descWord i₁ j₁ ++ [σ_{i₁}]) · (descWord i₂ j₂ ++ [σ_i])
+  have hU0 : U0 i i₁ j₁ j₂
+      = [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ bsWord₁ i₁ j₁ ++
+          (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]) := by
+    rw [U0, bsWord₁, descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
+      descWord_cons h₂ hj₂]
+    simp only [List.append_assoc, List.cons_append, List.nil_append]
+  -- step one: the Bokut–Shiao rule at top i₁, bottom j₁
+  have s := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
+    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])
+    (U0 i i₁ j₁ j₂) (U0₁ i i₁ i₂ j₁ j₂) (-1) (by norm_num) hU0 rfl
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [hU0, V2]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne2 (List.cons.inj hcon).1)
+  -- step two: far-commute σ_i rightwards past σ_{i₂}
+  have t := farComm_transport_right_sources hn hp i (-1) (by norm_num)
+    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(⟨i₂⟩ : HeckeGen n)] [(⟨i₁⟩ : HeckeGen n)]
+    ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
+      [(⟨i⟩ : HeckeGen n)])))
+    (by
+      intro y hy
+      simp only [List.mem_singleton] at hy
+      subst hy
+      show i₂.val + 1 < i.val
+      omega)
+    (fun u v _ hv r hr => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      rw [V2]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne2 (List.cons.inj hcon).1)
+  have hstart : U0₁ i i₁ i₂ j₁ j₂
+      = [(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ([(⟨i₂⟩ : HeckeGen n)] ++
+          ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
+            [(⟨i⟩ : HeckeGen n)]))))) := by
+    rw [U0₁, bsWord₂]
+    simp only [List.cons_append, List.nil_append]
+  have hend : U0' i i₁ i₂ j₁ j₂
+      = [(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₂⟩ : HeckeGen n)] ++
+          ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) ::
+            (descWord i₂ j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))))) := by
+    rw [U0', descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
+      descWord_cons h₂ hj₁]
+    simp only [List.cons_append, List.nil_append]
+  rw [hstart] at s
+  rw [hend]
+  exact (MultiStepReduction.refl _).step s |>.trans t
+
+end CornerLe
 
 end UGB.GrobnerShirshov.Hecke

@@ -159,7 +159,8 @@ def per_braid_mass_li2q(V_hats: list[float], q: mp.mpf, z: mp.mpf) -> dict:
 def main() -> int:
     mp.mp.dps = 50
 
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2_target = M_MU_OVER_M_E
     cal_tau_e   = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2_target

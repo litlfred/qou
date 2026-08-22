@@ -113,25 +113,27 @@ instance punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
   finite_slice := True
   finite_slice_holds := True.intro
 
-/-- **Substrate theorem** (S-Yekutieli-finite-slice).  At finite
-    slice depth, the multiplicative integral on a Young-diagram
-    braid surface IS a finite product of generator-actions.
-    Stated abstractly here pending Mathlib's Lie-valued-forms
-    library.
+/-! ### Substrate theorem (S-Yekutieli-finite-slice)
 
-    **Theorem** (was previously `yekutieli_finite_slice_substrate`
-    axiom). Discharged 2026-06-08: the existential is witnessed by
-    the `punitInstance` defined below; the trailing `True` clause
-    is `trivial`. The categorical content the axiom-comment claims
-    is captured by the `NonAbelianStokes` typeclass interface (and
-    its concrete instances over `M = ℝ²`, `G = SU(n)`, etc., when
-    those land), NOT by this existential claim — which as stated
-    is tautologically true given a default class instance. -/
--- Ref: [yekutieli2015] yekutieli2015 §3 (Stokes on piecewise-affine surfaces);
---      [manuscript] def:yekutieli-multiplicative-trace.
-theorem yekutieli_finite_slice_substrate (M G : Type u) [Group G] :
-    ∃ (_instance_data : NonAbelianStokes M G), True :=
-  ⟨inferInstance, trivial⟩
+    The substrate claim — at finite slice depth the multiplicative
+    integral on a Young-diagram braid surface IS a finite product
+    of generator-actions — is stated as
+    `yekutieli_finite_slice_substrate`, below the
+    `YekutieliFiniteSliceMultTrace` class it quantifies over.
+
+    **Moved + restated 2026-08-21** (vacuity ledger,
+    `proof-no-trivial-true` / `exists-true-tautology`).  It stood
+    here as `∃ (_ : NonAbelianStokes M G), True :=
+    ⟨inferInstance, trivial⟩` — an existence claim its own
+    docstring already flagged as "tautologically true given a
+    default class instance".  It is worse than tautological:
+    `NonAbelianStokes` is a **self-certifying carrier**
+    (`stokes_holds : Prop` *together with*
+    `stokes_holds_witness : stokes_holds`), so it is inhabited by
+    taking the `Prop` to be `True` — which `punitInstance` below
+    literally does.  No existence or `Nonempty` statement about
+    that class is falsifiable, so restating against real content
+    was required rather than merely dropping the `True`. -/
 
 /-! ### Substantive Yekutieli content
 
@@ -244,6 +246,30 @@ instance YekutieliFiniteSliceMultTrace_canonical (G : Type u) [Group G]
   trace := braidSurfaceMultTrace z
   trace_zero := braidSurfaceMultTrace_zero z
   trace_succ := braidSurfaceMultTrace_succ z
+
+/-- **Substrate theorem** (S-Yekutieli-finite-slice).  At finite slice
+    depth, the multiplicative integral on a Young-diagram braid surface
+    IS a finite product of generator-actions: **any** multiplicative
+    trace satisfying the two finite-slice axioms is the `n`-fold product
+    `z ^ n`.
+
+    Quantified over an arbitrary `Y`, so both class axioms are
+    load-bearing (`trace_zero` in the base case, `trace_succ` in the
+    step) and a trace differing from `z ^ n` at any `n` would refute it.
+    Contrast the canonical instance, for which `trace n = z ^ n` holds
+    by `rfl` (`finite_slice_trace_at_depth`) and therefore says nothing:
+    the content here is that the axioms *determine* the trace, not that
+    one chosen model satisfies them.
+
+    See the "Substrate theorem" note above for what this replaced. -/
+-- Ref: [yekutieli2015] yekutieli2015 §3 (Stokes on piecewise-affine surfaces);
+--      [manuscript] def:yekutieli-multiplicative-trace.
+theorem yekutieli_finite_slice_substrate {G : Type u} [Group G] {z : G}
+    (Y : YekutieliFiniteSliceMultTrace G z) (n : ℕ) :
+    Y.trace n = z ^ n := by
+  induction n with
+  | zero => simpa using Y.trace_zero
+  | succ k ih => rw [Y.trace_succ, ih, pow_succ]
 
 /-! ### Lie-valued forms (substantive — item #4)
 

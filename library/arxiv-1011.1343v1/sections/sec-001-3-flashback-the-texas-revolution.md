@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-1011.1343v1
-doc_title: "Institut für Kernphysik, Institute for Advanced Simulatio n and JCHP"
+doc_title: "Chiral symmetry, nuclear forces and all that"
 section_id: sec-001-3-flashback-the-texas-revolution
 section_title: "Flashback: The Texas revolution"
 section_number: 3
 pages: 4-7
 source_pdf: 1011.1343v1.pdf
 source_sha256: 7d50e5e28e695191
-doc_brief: "Chiral symmetry, nuclear forces and all that Ulf-G. Meißner — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
+doc_brief: "Chiral symmetry, nuclear forces and all that — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force"
 ---
 Already in the early nineties a decisive step towards a syste matic theory of the nuclear
 forces had been done. This was initiated by a series of papers by Steven Weinberg, who

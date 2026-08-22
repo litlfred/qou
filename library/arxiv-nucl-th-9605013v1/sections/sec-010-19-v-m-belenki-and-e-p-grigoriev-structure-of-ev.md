@@ -1,13 +1,13 @@
 ---
 doc_id: arxiv-nucl-th-9605013v1
-doc_title: "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROT A TOR MODEL"
+doc_title: "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model"
 section_id: sec-010-19-v-m-belenki-and-e-p-grigoriev-structure-of-ev
 section_title: "V. M. Belenki and E. P. Grigoriev, Structure of Even Nuclei (Energoatomizdat,"
 section_number: 19
 pages: 10-12
 source_pdf: 9605013v1.pdf
 source_sha256: cdeab7717dcb9567
-doc_brief: "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROTATOR MODEL — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei."
+doc_brief: "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model — The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective"
 ---
 Moscow, 1987).
 20. N. Minkov, R. P. Roussev and P. P. Raychev, J. Phys. G 20 (1994) L67.

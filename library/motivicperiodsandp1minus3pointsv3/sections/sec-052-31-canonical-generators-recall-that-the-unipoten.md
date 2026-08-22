@@ -1,13 +1,13 @@
 ---
 doc_id: motivicperiodsandp1minus3pointsv3
-doc_title: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗"
+doc_title: "Motivic periods and P^1 minus 3 points"
 section_id: sec-052-31-canonical-generators-recall-that-the-unipoten
 section_title: "Canonical generators. Recall that the unipotent zeta values ζu are"
 section_number: 3.1
 pages: 15-16
 source_pdf: MotivicPeriodsandP1minus3pointsv3.pdf
 source_sha256: 7870572b8cc316d0
-doc_brief: "Motivic periods and P1\{ 0, 1, ∞} Francis Brown∗ — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta"
+doc_brief: "Motivic periods and P^1 minus 3 points — This is a review of the theory of the motivic fundamental grou p of the projective line minus three points, and its relation to mult iple zeta values."
 ---
 elements of O(U dR). As a consequence of theorem 3.1:
 Corollary . For every n ≥ 1 there is a canonical element σ2n+1 ∈ Lie U dR(Q)

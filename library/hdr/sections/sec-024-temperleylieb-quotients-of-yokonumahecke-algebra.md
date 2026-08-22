@@ -1,13 +1,13 @@
 ---
 doc_id: hdr
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Hecke algebras, generalisations and representation theory"
 section_id: sec-024-temperleylieb-quotients-of-yokonumahecke-algebra
 section_title: "Temperley–Lieb quotients of Yokonuma–Hecke algebras"
 section_number: null
 pages: 54-57
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
+doc_brief: "Hecke algebras, generalisations and representation theory — 27 sections: Algebras of Finite Type; Blocks; Symmetrising forms and Schur eleme"
 ---
 The Temperley–Lieb algebra was introduced by Temperley and Lieb in [TeLi] for its applications in
 statistical mechanics. Jones [Jo1, Jo2, Jo3] later showed that it can be obtained as a quotient of the

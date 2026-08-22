@@ -1,6 +1,6 @@
 ---
 doc_id: cor-ma1
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Overpartitions, lattice paths and Rogers-Ramanujan identities"
 section_id: sec-012-51-a-generating-function-proof-letbkia-q
 section_title: "A generating function proof. LetBk,i(a, q) =∑"
 section_number: 5.1

@@ -1,13 +1,13 @@
 ---
 doc_id: hdr
-doc_title: "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+doc_title: "Hecke algebras, generalisations and representation theory"
 section_id: sec-018-rational-cherednik-algebras
 section_title: "Rational Cherednik Algebras"
 section_number: null
 pages: 38-41
 source_pdf: HDR.pdf
 source_sha256: 35c190fd2d2a393c
-doc_brief: "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not — 27 sections: Algebras of"
+doc_brief: "Hecke algebras, generalisations and representation theory — 27 sections: Algebras of Finite Type; Blocks; Symmetrising forms and Schur eleme"
 ---
 Let W⊂ GL(h) be a complex reﬂection group. There is a natural pairing ( , ) : h× h∗→ C given by
 (y,x ) :=x(y). LetS be the set of all pseudo-reﬂections in W and let c :S→ C be a conjugacy invariant
