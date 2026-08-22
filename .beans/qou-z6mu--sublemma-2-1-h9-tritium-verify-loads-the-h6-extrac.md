@@ -1,11 +1,11 @@
 ---
 # qou-z6mu
 title: 'sublemma_2_1_h9_tritium_verify loads the H6 extract, and provably cannot use it: reconstruct_chi_h6_via_sublemma is never called'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T10:01:37Z
-updated_at: 2026-08-22T10:02:12Z
+updated_at: 2026-08-22T12:27:12Z
 ---
 
 ## What
@@ -79,3 +79,61 @@ Decide which of these it is:
 
 Do not leave it as-is: the current state reads as option 1 while
 behaving as option 2.
+
+
+---
+
+## RESOLVED (2026-08-22, PR #5427) — revived, not removed
+
+The bean offered two dispositions. **Option 1 (revive)** was taken, because
+measurement settled it: the function was never broken.
+
+`reconstruct_chi_h6_via_sublemma` reproduces all 11 chi^xi from the
+extracted A matrices to **5.5e-15**. Wired in as a guard on the CONSUMED
+EXTRACT, it discriminates the exact defect this arc chased:
+
+    canonical (colour-weighted) extract -> 5.51e-15   assertion passes
+    colour-blind (pre-fix) extract      -> 9.17e-05   assertion FAILS
+
+Verified end to end against both extracts, not in isolation: under the
+blind one the witness goes `allPassed: false`, which the failed-assertion
+ratchet would then catch.
+
+**What it buys that the existing check cannot.** Under the blind extract
+`overdetermined_path_a_eq_path_b_machine_eps` still passes 30/30. Path A
+vs Path B is a structural identity holding for ANY word — convention-
+agnostic by construction, and structurally incapable of seeing a frame
+mismatch. This guard is the first thing in the file that can.
+
+## Correction to this bean's framing
+
+The bean implied the file's hardcoded `-H/2` inner was an off-convention
+crossing to be fixed alongside. **It is not**, and I was wrong to read it
+that way. Measured positionally against `atom_canonical_crossings`:
+
+| atom | file len | canon len | gen-index mismatches | `d` mismatches |
+|---|---|---|---|---|
+| tritium | 35 | 35 | 18 | 25 |
+| he3 | 35 | 35 | 18 | 25 |
+
+The equal lengths are coincidence. `tritium_braid()` / `he3_braid()` build
+a **different braid**, not a drifted one — `_proton_body()` carries its own
+quark/gluon structure and claims to mirror `build_atom_nf`, not
+`atom_canonical_crossings`. Since Path A = Path B is convention-agnostic,
+that divergence costs the file's verification claim nothing, and "fixing"
+the interface to weighted would have been wrong-headed.
+
+**Left open, not settled here:** whether that 18/25 divergence is an
+intentional independent test braid or drift from an older `build_atom_nf`.
+Cheap to state, not cheap to resolve. Worth its own bean if anyone intends
+this file to verify the *canonical* tritium rather than the sub-lemma.
+
+## Also fixed in passing
+
+First version serialized the guard residual as `fmt(mp.mpf(...))`, padding
+a float64 to 50 digits; `witness_float64_padding_audit` caught it verbatim
+("claims 0.0000000000000055131896... really 5.5131896097107105e-15"). The
+value is genuinely float64 — the reconstruction is numpy and
+`chi_lambda_fast` returns complex — so there is no mpf to carry from the
+source. Now `.17g`, true float64 precision. Importing mpmath for it also
+tripped the never-raises-dps ratchet; both imports removed.
