@@ -209,4 +209,77 @@ theorem shell_filling_lp_strong_duality_unconstrained_false [Nontrivial R] :
               y_0 := 0, primal_obj := 1 }
   simp at this
 
+section LPDuality
+
+/-- **LP optimality certificate for the electron-assignment LP**
+    (§3b-cond model class over `ShellFillingRuleContext`, bean
+    `qou-kkja`).
+
+    Claim (iii) — `primal_obj = Z·y₀` — is *not* derivable from
+    `ShellFillingRuleContext` alone, and that is machine-checked below
+    by `shell_filling_lp_strong_duality_unconstrained_false`: the base
+    class carries `y_0` and `primal_obj` as unrelated scalars, so a
+    context with `Z = 0`, `y_0 = 0`, `primal_obj = 1` refutes it.
+
+    This class supplies the LP structure the base class lacks — the
+    assignment variables, the per-site cost, and a **dual optimality
+    certificate** (stationarity + complementary slackness).  Claim
+    (iii) is then *derived* from those hypotheses by
+    `shell_filling_lp_strong_duality_of_certificate`, not carried as a
+    field.  Nothing here asserts the conclusion: the fields constrain
+    `x`, `cost`, `slack`, `y_0` and `primal_obj` jointly, and the
+    equality falls out of the algebra.
+
+    Generic `[CommSemiring R]` (§7c) — commutativity is used only to
+    match the `Z·y₀` orientation of the existing statement; no ordering
+    and no archimedean structure is required.  Note this is the
+    *certificate*, not a proof that one exists: exhibiting `x` and
+    `slack` for a given atom is the separate (open) optimisation
+    problem. -/
+class ShellFillingLPDuality (R : Type*) [CommSemiring R]
+    extends ShellFillingRuleContext R where
+  /-- Sites available to the `Z` electron trefoils. -/
+  Site : Type
+  /-- The site set is finite. -/
+  [siteFintype : Fintype Site]
+  /-- Primal assignment variable at each site. -/
+  x : Site → R
+  /-- Per-site `Φ₁` cost coefficient. -/
+  cost : Site → R
+  /-- Reduced cost (dual slack) at each site. -/
+  slack : Site → R
+  /-- The primal objective is the total assigned cost. -/
+  primal_obj_def : primal_obj = ∑ i, cost i * x i
+  /-- Primal feasibility: exactly `Z` electrons are assigned. -/
+  primal_feasible : ∑ i, x i = (Z : R)
+  /-- Dual stationarity: each site's cost splits into the electron
+      chemical potential `y₀` plus that site's reduced cost. -/
+  stationarity : ∀ i, cost i = y_0 + slack i
+  /-- Complementary slackness: a site carries assignment or reduced
+      cost, never both. -/
+  complementary_slackness : ∀ i, slack i * x i = 0
+
+attribute [instance] ShellFillingLPDuality.siteFintype
+
+/-- **Claim (iii), derived** from the LP optimality certificate
+    (conditional on `ShellFillingLPDuality`, Mathlib `_of_` naming).
+
+    `Σ cost_i·x_i = Σ (y₀ + slack_i)·x_i = y₀·Σ x_i + Σ slack_i·x_i
+     = y₀·Z + 0`.
+
+    Every step is genuine algebra over the certificate's hypotheses;
+    no field of the class states the conclusion. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality)
+theorem shell_filling_lp_strong_duality_of_certificate
+    {R : Type*} [CommSemiring R] [cert : ShellFillingLPDuality R] :
+    cert.primal_obj = (cert.Z : R) * cert.y_0 := by
+  rw [cert.primal_obj_def]
+  have h : ∀ i, cert.cost i * cert.x i = cert.y_0 * cert.x i := by
+    intro i
+    rw [cert.stationarity i, add_mul, cert.complementary_slackness i, add_zero]
+  rw [Finset.sum_congr rfl fun i _ => h i, ← Finset.mul_sum,
+    cert.primal_feasible, mul_comm]
+
+end LPDuality
+
 end QOU.Molecular
