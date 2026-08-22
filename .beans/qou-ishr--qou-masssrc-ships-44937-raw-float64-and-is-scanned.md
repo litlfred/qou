@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:22:10Z
-updated_at: 2026-08-22T15:28:03Z
+updated_at: 2026-08-22T16:12:19Z
 ---
 
 Follow-up to `qou-cdj8` (#5431), which surfaced the number, and to the owner's
@@ -62,3 +62,56 @@ than a rug:
 written for the audits tree and was stamping that id onto the qou-mass baseline,
 sending the next agent to the wrong arc. Now points at the per-root gate entry in
 `precision-gates.sh`.
+
+
+---
+
+## DRAIN DONE — 43,901 -> 0 (commit 921a5304f3d, PR #5453)
+
+`_as_mpf(x) = mp.mpf(str(x))` (**not** `mpf(x)`), mpmath arithmetic throughout,
+`_precision.fmt` on every emit. Removed `float(U_MEV)` / `float(M_E_MEV)` at
+four sites — those constants arrive from the registry as ~70-digit mpf and were
+being cast back to doubles.
+
+    computations/ isotope witnesses   119 / 43,901  ->  0 / 0
+    corpus ratchet                    529,087 -> 488,300 fields
+    qou-mass/src (one --apply)         44,937 -> 1,036, 129 -> 10 files
+
+The qou-mass half cost **one command** — the propagation #5431 built.
+
+### The values moved, and that IS the result
+
+52 of 54,533 fields moved beyond 1e-15, and **every one is an error/difference
+field**; **zero** primary quantities moved. Catastrophic cancellation: these
+subtract two near-equal ~940 MeV numbers, so a 1e-16 float64 input becomes
+~1e-8 in the difference. Largest correction **9.29e-08** relative. The old
+numbers were wrong.
+
+### Two corrections to my own claims
+
+1. **"Long-compute, needs a wall-time go-ahead"** — WRONG. **43 seconds** for
+   all 119 shards. I inferred cost from "Z00-Z96 re-run" without measuring.
+2. **`--max-z` defaults to 20**, so my first full-looking run silently left 98
+   shards dirty and the drain read as 7% complete. Caught by re-measuring, not
+   by the run's success message.
+
+### Method note worth keeping
+
+I compared **old code vs new code on the same data**, not against the committed
+witnesses. The committed Z01 differed from the old code's own current output at
+the 9th digit — it was already stale — so comparing against it would have
+attributed an upstream staleness to my change.
+
+### Left for its owner
+
+Upstream L1 `prediction_MeV_50dps` (`canonical-mass-table-extended`) is a
+49-place string with a **dyadic tail** — it came from binary floating point, so
+its "50dps" is nominal. Carried faithfully now instead of truncated; fixing the
+origin is that arc's.
+
+### Remaining here
+
+1,036 fields across 10 files in qou-mass, long tail:
+`adjacent_vs_full_probe` 277, `canonical_tower` 273,
+`mass_tower_operator_valued` 208, `sublemma_2_1_deuteron_branching` 120,
+`brane_tower_isospin_diagnosis` 90. Same recipe, much smaller.
