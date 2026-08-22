@@ -41,3 +41,24 @@ Render-QA: preflight battery clean (balanced $/$$/braces, no \operatorname, no c
 qa-sweep refreshed the sidecar (md+ts hashes in sync, 0 stale criteria).
 Item 2 (retire/flag the 6₂ deuteron assignment) NOT executed — it changes a live per-isotope
 prediction; still an owner call.
+
+## 2026-08-22 — item 2 RE-SCOPED: my Vol=0 premise was refuted by a sibling
+Item 2 above said "retire/flag the 6₂ deuteron assignment ... to the canonical Vol=0 closure."
+The premise is WRONG. The sibling adjudication `qou-e5jf` (PR #5350, audit
+docs/audits/2026-08-21-deuteron-knot-assignment-adjudication.md) reached UNDETERMINED — none of the
+three candidates admissible — and refutes my braid-closure argument on three measured grounds:
+(1) the canonical mass word is NOT a braid word (5 of 23 letters are averaged crossings, ℂ-linear
+combinations in H₆(q)), so "closure is a computation, not a choice" fails at the deuteron;
+(2) arity — every live construction of the mass word closes to a 3-COMPONENT link, while 6₂/trefoil
+are knots and Hopf is 2-component, and component count is permutation-fixed; (3) the trefoil σ₁³ is
+the pn-channel SUBWORD of the 6₂ word, not the atom (I mistook a part for the whole).
+
+What survives: 6₂ is inadmissible by PROVENANCE, on a stronger ground than the tier label I cited —
+`computations/mass_table_ppb.py` L18-21 states it outright (line range verified on main; note the
+phrase wraps as "AME-driven / fitting", so a one-line grep for it returns a false negative): "that IS a form of AME-driven fitting
+(we picked the knot whose volume is closest to B_AME/ρ)". Circular, inadmissible under the anti-fit
+rule regardless of the +1.09% agreement.
+
+Re-scoped owner call: flag 6₂ as AME-inverted / not derived — do NOT retarget it to Vol=0 (that
+would swap one inadmissible assignment for another). Still owner-gated (live prediction).
+My audit 2026-08-21-deuteron-w3-knot-identity-adjudicated.md now carries the retraction banner.

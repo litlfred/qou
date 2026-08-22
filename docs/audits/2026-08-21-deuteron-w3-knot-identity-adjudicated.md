@@ -33,6 +33,34 @@ Under that rule both principled readings of the deuteron are flat:
 
 ## Verdict — Vol(deuteron) = 0 is canonical; 6₂ is a non-canonical volume-match
 
+> **🛑 RETRACTED IN PART (2026-08-22).** The positive half of this verdict — *"braid-closure ⇒
+> Vol = 0 is canonical"* — is **wrong**, and is superseded by the independent sibling adjudication
+> [`2026-08-21-deuteron-knot-assignment-adjudication.md`](2026-08-21-deuteron-knot-assignment-adjudication.md)
+> (bean `qou-e5jf`, PR #5350), whose verdict is **UNDETERMINED — none of the three candidates is
+> admissible**. Three measured defects in the argument below:
+>
+> 1. **The canonical mass word is not a braid word at all.** 5 of its 23 letters are averaged
+>    crossings (`σ − h/2`, `σ − h(½ − δ/4)`) — genuine ℂ-linear combinations in `H₆(q)`, not
+>    braid-group elements. So the "closure is a computation, not a choice" rule this section rests
+>    on **fails at the deuteron**: the choice is upstream of the computation.
+> 2. **Arity mismatch.** Every live construction of the deuteron mass word closes to a
+>    **3-component link**, while `6₂` and the trefoil are knots (1 component) and Hopf is
+>    2-component. Component count is fixed by the underlying permutation, so this holds for every
+>    resolution of the averaged crossings and every crossing convention — it is not a near-miss.
+> 3. **The trefoil is the pn-channel sub-word, not the atom.** `σ₁³` sits *inside* the `6₂` word
+>    (`σ₁σ₂⁻¹ · σ₁³ · σ₂⁻¹`); this section mistook a part for the whole.
+>
+> **What survives:** the exclusion of `6₂` — but by *provenance*, not by the braid-closure rule, and
+> on a stronger ground than the tier label cited below. The production source states the inversion
+> outright ([`mass_table_ppb.py` L18–21](../../computations/mass_table_ppb.py#L18-L21)): *"that IS a form of
+> AME-driven fitting (we picked the knot whose volume is closest to `B_AME/ρ`)."* Selecting a knot
+> because its volume reproduces the measured binding, then using that volume to predict the binding,
+> is circular and inadmissible under the anti-fit rule regardless of the +1.09 % agreement.
+>
+> **Consequence for the recommendation below:** retiring `6₂` *toward the Vol = 0 closure* would have
+> been the wrong move — Vol = 0 is not established as canonical either. The honest state is
+> undetermined, all three excluded.
+
 - **6₂ has no principled-derivation basis.** Every 6₂ assignment traces to
   `manual-historical-volume-match`, which the registry itself flags as *"well-established but the
   GB-NF derivation in `H_{n₀}(q₀)` has **not been computed yet**."* Worse: it is **SDP-infeasible**
@@ -56,8 +84,13 @@ deuteron binding — that remains open on the CS/torsion leg.
 
 ## Recommendation (owner call — not executed here)
 
-The atlas registry still **ships** 6₂ with a +1.09% binding match and no block has been retired.
-Adjudication says 6₂ is non-canonical (volume-match tier, SDP-infeasible, self-contradicted).
-Recommend flagging/retiring the 6₂ deuteron assignment to the canonical Vol=0 closure — but this
-edits a live per-isotope prediction, so it is left as an explicit owner decision rather than done
-unilaterally. Bean `qou-985x` (W3, todo) is the tracker; `qou-fl4t` (in-progress) owns the CS leg.
+> **Superseded by the 2026-08-22 retraction above.** The original recommendation — retire `6₂`
+> *to the canonical Vol = 0 closure* — presumed the refuted positive half. Vol = 0 is **not**
+> established as canonical, so that retarget would replace one inadmissible assignment with another.
+
+The atlas registry still **ships** `6₂` with a +1.09 % binding match and no block has been retired.
+What the evidence supports is flagging `6₂` as **AME-inverted / not derived** (per the production
+source's own admission), **not** retargeting it to any particular knot — the assignment is
+undetermined, with all three candidates excluded (two on arity, `6₂` on provenance). Any such edit
+touches a live per-isotope prediction, so it remains an explicit owner decision. Trackers:
+`qou-e5jf` (the sibling adjudication that supersedes this one), `qou-985x` (W3), `qou-fl4t` (CS leg).
