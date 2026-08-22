@@ -1661,9 +1661,30 @@ class WitnessBuilder:
                 # dropped with it: a reason carried past a dropped anchor would
                 # explain a label that is no longer there, which is worse than
                 # no reason at all.
+                # `independent` and `comparison` FORBID a bare `q0Value`
+                # (see the vocabulary note at the top of this module): one
+                # alongside either label is a contradiction the anchor audit
+                # reports as Q0_FLIP. So when the NEW witness declares one of
+                # them, the old `q0Value` must not ride along -- carrying it
+                # forward would manufacture exactly the contradiction the
+                # declaration exists to avoid.
+                #
+                # Measured: declaring `q0Anchor: independent` on two producers
+                # that provably do not read q0 (fitted_labelled_canonical_audit,
+                # compute_audit_scan -- byte-identical output under
+                # QOU_Q0_ANCHOR=muon vs =proton, differing only in the
+                # q0Anchor/q0Value pair itself) still emitted the inherited
+                # 50-digit MUON value next to `independent`. It went unreported
+                # only because both filenames end in a suffix the anchor audit
+                # exempts, so the flip check never ran on them.
+                _forbids_value = witness.get("q0Anchor") in ("independent", "comparison")
                 for _k in ("q0Anchor", "q0Value", "q0AnchorReason"):
+                    if _k == "q0Value" and _forbids_value:
+                        continue
                     if _k not in witness and _k in existing:
                         witness[_k] = existing[_k]
+                if _forbids_value:
+                    witness.pop("q0Value", None)
 
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops
