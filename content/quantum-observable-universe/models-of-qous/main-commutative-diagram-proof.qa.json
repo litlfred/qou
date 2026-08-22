@@ -1264,6 +1264,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.872Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1283,6 +1298,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.908Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-em-dash": [
@@ -1302,6 +1332,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 229 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.947Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-triples": [
@@ -1321,6 +1366,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 229 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:10.984Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-closing-aphorism": [
@@ -1340,6 +1400,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.020Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-meta-commentary": [
@@ -1359,6 +1434,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.056Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-thesis-restatement": [
@@ -1378,6 +1468,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.092Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-performed-warmth": [
@@ -1397,6 +1502,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.129Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-superlative": [
@@ -1416,6 +1536,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.165Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "trap-nonspeakable": [
@@ -1435,6 +1570,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4c5279b67bd3",
+          "ts": "80d6e7e03e5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:11.200Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, ~2.2kB). Checked every internal reference: rem:gr-substrate-geometry, rem:schrodinger-jet-coaction, prop:variational-equations and def:frobenius-pairing all exist as labels. hbar_q = 1 - q^-1 matches the corpus definition. No rhetorical construction in any of the ten categories - all clean. Two substantive defects (a commutativity argument that assumes its conclusion, and an item-2 equation that is not the diagram's bottom edge) are reported as anomalies."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1458,5 +1608,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:26:11.200Z"
 }
