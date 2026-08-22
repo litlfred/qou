@@ -3865,3 +3865,57 @@ against git or the filesystem before they are repeated.** The numeric
 findings in the same reports have held up under recomputation every time;
 it is specifically the historical and existence claims that need the second
 look.
+
+
+## CORRECTION — the "two divergent LP solvers" are an implementation and its shim (2026-08-22)
+
+`agent:l01` reported *"two divergent copies of the canonical solver"*:
+`tools/pyhecke/python/pyhecke/lp_dual_solver.py` (md5 `5c66b818…`) against
+`computations/lp_dual_solver.py` (`ed28cd38…`), with the block pointing at
+one and AGENTS.md at the other. I repeated it in a reply and a commit
+message.
+
+**Opening the second file settles it.** It is **31 lines** against 834, and
+its own docstring says what it is:
+
+> `lp_dual_solver — back-compat re-export shim.` The canonical
+> implementation moved to `pyhecke.lp_dual_solver` per workplan v2 item 2c
+> (PR #1136). This file is a thin shim that keeps `from lp_dual_solver
+> import X` working unchanged for the existing external importers in
+> `computations/`.
+
+Its body is `from pyhecke.lp_dual_solver import *` with a `sys.path`
+fallback. So there is **one** implementation and **one** re-export of it;
+differing md5s is exactly what that looks like, and both citation paths
+resolve to the same code. Nothing diverges and nothing needs reconciling.
+
+The only residue is doc-currency: AGENTS.md calls
+`computations/lp_dual_solver.py` "the canonical entry point", which is now
+the shim rather than the implementation. Functionally harmless — the
+re-export makes the sentence true at the level of what you get — but a
+reader chasing the algorithm lands on twelve lines of import machinery.
+
+### This is the third provenance inversion in three turns
+
+| claim | reality |
+|---|---|
+| two `lean.ref`s "resolve to nothing" | both resolve, via the content-block sibling |
+| a sweep "destroyed" two tables | `--numstat`: 1 insertion, 0 deletions; never written |
+| "two divergent copies" of a solver | an implementation and its documented shim |
+
+Three for three, and each time the *observation* was real — a search
+returned nothing, a boilerplate sentence was the file's whole content, two
+md5s differed — while the *mechanism* inferred from it was wrong. The
+mechanism is what determines the fix, so each one pointed at work that
+would have found nothing: a library-tree search, a git-history recovery
+pass, a reconciliation of two files that are already one.
+
+Meanwhile **every recomputed number has survived checking** — the Cayley–
+Hamilton relations, the hyperbolic constants, `dc₃/dq`, the Riemann–Hurwitz
+count, the Jones values, the two table products confirmed against their own
+witness.
+
+The split is not about care; these are careful agents. It is that a number
+can be recomputed from what is on the page, and a file's history cannot.
+Anything about the past, or about what exists elsewhere, is an inference
+from present state unless a command was run. **Run the command.**

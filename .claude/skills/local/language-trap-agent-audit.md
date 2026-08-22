@@ -152,20 +152,30 @@ never fix math inline.
 ## Verify provenance claims before repeating them
 
 An agent's numeric findings have held up under recomputation throughout this
-campaign. Its claims about a file's **past or existence** have not, twice in
-two turns: "these `lean.ref`s resolve to nothing" (both resolved, via the
+campaign — every one. Its claims about a file's **past or existence** have
+inverted **three times out of three**: "these `lean.ref`s resolve to nothing" (both resolved, via the
 content-block sibling the search did not cover) and "the sweep destroyed
 these tables" (`git show --numstat` on the accused commit: **1 insertion, 0
 deletions**, and neither file existed in the parent — they were created as
-placeholders and cited as though populated).
+placeholders and cited as though populated), and "two divergent copies of the
+canonical solver" (one is a **31-line re-export shim** of the other, saying so
+in its own docstring; differing md5s is what that looks like).
 
 Both agents had found a real defect and got the **mechanism** wrong, and the
 mechanism is what determines the fix: one implied a recovery pass over git
 history that would have found nothing.
 
+Each time the *observation* was real — a search returned nothing, a
+boilerplate sentence was the file's whole content, two md5s differed — and
+the *mechanism* inferred from it was wrong. That is not carelessness: a
+number can be recomputed from what is on the page, and a file's history
+cannot. Anything about the past, or about what exists elsewhere, is an
+inference from present state unless a command was run.
+
 So: *"this was deleted"*, *"this used to say"*, *"this does not exist
-anywhere"* — check against git or the filesystem before writing it into a
-commit message, a ledger, or a reply. `git show --numstat <sha> -- <path>`
+anywhere"*, *"these two files diverge"* — run the command before writing it
+into a commit message, a ledger, or a reply. **Opening the second file is
+usually the whole check.** `git show --numstat <sha> -- <path>`
 and `git cat-file -e <sha>^:<path>` settle the first two; for the third,
 remember that `lean.ref` resolution checks the **sibling first**
 (AGENTS.md §0a), which a search scoped to the library tree will miss.
