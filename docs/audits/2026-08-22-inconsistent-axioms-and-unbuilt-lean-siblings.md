@@ -456,3 +456,61 @@ today because nothing compiles both at once; a live duplicate the moment
 anything does.
 
 **Standing count: 56 → 52 failing.**
+
+### 4f. The Mathlib-side batch — and an invalid experiment, discarded
+
+Four more compile (`maximal-ideal-defect`, `q-reeb-lattice-vibration`,
+`knot-particle-generation`, `categorical-q-ext-deriv`), all by adding an
+import that was simply missing. Confirmed targets:
+
+| unknown name | supplying import |
+|---|---|
+| `Algebra` | `Mathlib.Algebra.Algebra.Defs` |
+| `RingHom.ker` | `Mathlib.RingTheory.Ideal.Maps` |
+| `Real.sqrt` | `Mathlib.Analysis.SpecialFunctions.Sqrt` |
+| `CategoryTheory.Preadditive` | `Mathlib.CategoryTheory.Preadditive.Basic` |
+| `CategoryTheory.Linear` | `Mathlib.CategoryTheory.Linear.Basic` |
+
+Confirmed renames extend the list from §4b:
+`div_le_div_iff` → `div_le_div_iff₀`.
+
+**An experiment that produced a clean-looking false result.** To split the
+`RESOLVE` files into *missing-import* versus *renamed-away* cheaply, each
+was re-run with `import Mathlib` prepended: if the error count dropped, the
+name exists somewhere and the file just needs the right import. It returned
+a tidy **6 IMPORT / 2 RENAME**.
+
+**It measured nothing.** `Mathlib.olean` — the top-level aggregator module —
+is **not in the restored olean cache**, so `import Mathlib` fails with
+exactly one error and leaves every declaration below it unelaborated. Every
+file therefore lands on `after = 1`, and the "verdict" was just sorting
+files by whether they started with more than one error. The two "RENAME"
+files were the two that happened to start with exactly one.
+
+The tell was the *uniformity*: `after = 1` for all six, from starting counts
+of 2, 2, 2, 3, 5 and 9. A real signal does not converge on one value.
+Recorded because the artifact is specific to a **restored** olean tree and
+will reappear for anyone probing this population the same way — and because
+a blanket `import Mathlib` is a plausible-looking move that cannot work here
+at all.
+
+The valid probe is per-name: `import <candidate>` + `#check @<name>`, both
+of which need real oleans, and which is what produced the table above.
+
+**Two files improved but not closed**, and neither residual is a rename:
+
+- `c5-involution-leibniz-decomposition` (3 → 1): behind `div_le_div_iff` sat
+  `eq_inv_iff_mul_eq_one₀`, which does **not** exist while
+  `eq_inv_iff_mul_eq_one` does — an `₀` added where the family does not have
+  one, the opposite of the `div` case. Dropping it resolves the name and
+  then fails the `rewrite`, because the two lemmas have different shapes and
+  the `h_ne` argument has nowhere to go. Goal-state work; reverted.
+- `spectral-half-line`: `Complex.abs` is **gone** from Mathlib in favour of
+  `‖·‖`. Both `Complex.abs z` and `Complex.abs_exp` need rewriting — a real
+  edit, not a substitution.
+
+`classical-limit-functor` is the same class: `MonoidalFunctor` as a *type*
+no longer exists; the modern form is a plain functor plus a `[F.Monoidal]`
+instance, which changes the field's signature.
+
+**Standing count: 52 → 48 failing.**
