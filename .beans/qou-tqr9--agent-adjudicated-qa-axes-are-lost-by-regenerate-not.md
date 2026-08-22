@@ -124,3 +124,51 @@ the tree. Same silent-failure shape as the unloadable manifests #5367 found: if
 the queue builder cannot run, "not in the queue" and "already audited" are
 indistinguishable from outside. Not part of this bean's fix; recorded here
 because it is the same class and the same blast radius.
+
+## 2026-08-22 — CORRECTION to item 2: the filter was dropping 56% of what it protects
+
+Found while building the `qou-supr` checker. The union script's staleness test
+read:
+
+```python
+if live_md is not None and entry_md != live_md:
+    stale += 1; continue
+```
+
+When an entry carries **no** `field_hash.md`, `entry_md` is `None`, so
+`entry_md != live_md` is true and the entry was **skipped as stale** — silently,
+under a message saying the hash "no longer certifies the live `.md`", when in
+fact there was never a hash to check.
+
+Measured corpus-wide over 126,156 agent-kind entries:
+
+| producer | entries | without `field_hash.md` |
+|---|---:|---:|
+| `local/*` | 78,904 | **68,342 (87 %)** |
+| `agent:*` | 36,206 | 0 (0 %) |
+| everything else | 11,046 | 1,965 |
+| **total** | **126,156** | **70,307 (55.7 %)** |
+
+So the script recovered the `trap-*` campaign's own entries perfectly — those
+all carry hashes — and would have dropped **87 % of the `local/*` verdicts**,
+which are exactly the `da-*` / `clarity-*` / `q-usage-*` axes this bean names as
+equally exposed. The one axis it was tested on was the one axis it worked for.
+
+**Fixed**: a hash-less entry cannot be *shown* stale, so it is carried and
+counted separately (`N carried without a field_hash.md`). Verified against a
+synthetic ref — the hash-less entry is now carried where it was previously
+dropped, and a genuinely stale hash is still dropped:
+
+```
+no hash      md=None          OLD drops: True   NEW drops: False
+stale hash   md=deadbeef0000  OLD drops: True   NEW drops: True
+```
+
+This is the direction the bean already argued for and the direction I described
+to #5367 as deliberate — *stale-but-present is recoverable, deleted is not*. The
+code did not match the argument. It does now.
+
+**What was NOT wrong**: the script is still additive and still never deletes
+from the working tree, so it never *caused* a loss. It was incomplete as a
+recovery tool, which is a different failure and a quieter one.
+

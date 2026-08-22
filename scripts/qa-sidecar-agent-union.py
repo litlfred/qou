@@ -132,6 +132,7 @@ def main() -> int:
     ref = args.against
     gained = 0
     stale = 0
+    unhashed = 0
     touched: list[str] = []
 
     for rel in _sidecars_at(ref):
@@ -178,7 +179,17 @@ def main() -> int:
                 if _identity(entry) in seen:
                     continue
                 entry_md = (entry.get("field_hash") or {}).get("md")
-                if live_md is not None and entry_md != live_md:
+                # A hash-less entry cannot be SHOWN stale, so carry it. 56% of
+                # agent entries corpus-wide have no `field_hash.md` (87% of the
+                # `local/*` ones), and dropping them would silently discard the
+                # majority of the very verdicts this script exists to preserve
+                # -- on exactly the `da-*` / `clarity-*` / `q-usage-*` axes the
+                # bean names as equally exposed. Erring toward carrying is the
+                # deliberate direction: stale-but-present is recoverable,
+                # deleted is not.
+                if entry_md is None:
+                    unhashed += 1
+                elif live_md is not None and entry_md != live_md:
                     stale += 1
                     continue
                 existing.append(entry)
@@ -202,6 +213,8 @@ def main() -> int:
     print(f"{gained} agent entries {verb} across {len(touched)} sidecars (vs {ref})")
     if stale:
         print(f"{stale} skipped: field_hash.md no longer certifies the live .md")
+    if unhashed:
+        print(f"{unhashed} carried without a field_hash.md (cannot be shown stale)")
     if args.verbose:
         for rel in touched:
             print(f"  {rel}")

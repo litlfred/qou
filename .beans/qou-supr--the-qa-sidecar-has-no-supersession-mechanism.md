@@ -103,3 +103,32 @@ them visible. The checker is ~20 lines — flag any criterion slot with two
 entries from the same `reviewer.id` at the same `field_hash.md` and differing
 `result` — and drains in one pass.
 
+## 2026-08-22 — item 1 landed, and it found a second defect on the way
+
+[`scripts/qa-duplicate-verdict-check.py`](../scripts/qa-duplicate-verdict-check.py).
+Corpus-wide over 3,615 sidecars:
+
+```
+contradictory (one agent batch, same hash, differing verdict):    28
+re-audits     (skill re-run across sessions — legitimate history)  1
+undetermined  (no field_hash.md — cannot tell)                 11397
+redundant     (identical verdict recorded twice)                  185
+```
+
+The 28 reproduce the hand measurement exactly, and all of them are on the
+`trap-*` axis. Two classifier decisions are worth keeping if this is rewritten:
+
+- **A hash-less pair is `undetermined`, not a contradiction.** Two entries with
+  no `field_hash.md` are not demonstrably on the same source, so calling them
+  contradictory overstates what is known. My first draft lumped them in and
+  reported **109**; that number is wrong and should not be quoted.
+- **`agent:<batch>` and `local/<skill>` are different.** A repeat from one batch
+  means it recorded twice. A repeat from a skill id is a re-run across sessions —
+  legitimate history, and a later differing verdict there is a re-audit, not an
+  ambiguity. Only the first counts toward the exit code.
+
+**The `undetermined` count is the second defect**, and it is larger than the one
+this bean is about: 55.7 % of agent entries corpus-wide carry no
+`field_hash.md`, so nothing can check whether they still certify their source.
+That made the `qou-tqr9` union filter drop them — corrected there.
+
