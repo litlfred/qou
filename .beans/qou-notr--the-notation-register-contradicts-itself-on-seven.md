@@ -8,7 +8,7 @@ tags:
     - notation
     - convention-d
 created_at: 2026-08-22T07:40:00Z
-updated_at: 2026-08-22T07:40:00Z
+updated_at: 2026-08-22T07:55:00Z
 ---
 
 From `agent:pq_11`, the batch that closed the trap drain. These matter more than
@@ -18,7 +18,7 @@ defect here is a corpus-wide instruction, not a local error.
 
 Numbers re-derived in the coordinating session where they are arithmetic.
 
-## 1. The register contradicts itself on the z convention — the settled one
+## 1. ~~The register contradicts itself on the z convention~~ — FIXED 2026-08-22
 
 `notation-collisions.md` closes with *"(The z convention itself is unsettled and
 is not changed here…)"*. `notation-register-table3-data.md`, in the same chapter,
@@ -26,8 +26,19 @@ calls convention D *"the framework's production trace"* and says the selection i
 *"**forced, not stipulated**"*. The owner ruling R1 of 2026-08-15 settled it and
 excised C.
 
-This is the authoritative notation chapter disagreeing with itself about the
-exact question every consumer comes to it for. Everything else in that z entry
+**Sharper than "it disagrees with its sibling table": it disagreed with the very
+block it was citing.** The parenthetical's own cross-reference,
+[`def:markov-axioms-primitive`](../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md),
+states `z = q^3/(q^2+1)` as **convention D** in its axiom 3 and carries the
+selection note recording the 2026-08-09 owner ruling that excised C. So a reader
+following the pointer to settle the question found it already settled, by the
+document the pointer led to.
+
+**Fixed**: the parenthetical now reads *"The `z` convention is settled
+independently of this: convention D, `z = q^3/(q^2+1)`, is canonical and C is
+excised"*, keeping the cross-reference. The surrounding claim — that the
+bar-partner is `z - h`, not `z`, because M3 contains `sigma_n` — is separate and
+stands; `pq_11` verified `z - h = z-bar` exactly under D. Everything else in that z entry
 checks out — `1/δ = 0.4972905456`, `z_C = 0.4993203342`, the 0.408 % gap, the D
 three-strand weights `(0.5054042, 0.2472979, 0)`, and the neat fact that
 `z − h = z̄` exactly under D.
