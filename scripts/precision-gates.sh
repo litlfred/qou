@@ -376,13 +376,85 @@ newly_dirty=$(comm -13 <(printf '%s\n' "$before") <(printf '%s\n' "$after") \
 echo
 echo "======================================================================"
 if [ -n "$newly_dirty" ]; then
-  echo "STALE COMMITTED AUDIT WITNESSES — the run regenerated these:"
-  printf '%s\n' "$newly_dirty" | sed 's/^/  /'
-  echo "  Each is an audit's own output whose committed copy no longer matches"
-  echo "  the tree. If only computedAt/commitSha/durationMs/scriptHash moved it"
-  echo "  is drift — revert it. If a COUNT moved, the committed witness was"
-  echo "  stale: commit the regenerated one and say which count changed."
-  echo
+  # CLASSIFY, DON'T DELEGATE (bean qou-s2gm defect 2). This block used to
+  # print the list and ask the agent to decide "drift or count?" by eye. That
+  # is a decision a script can make, and asking a human to make it every run
+  # is how the wrong answer gets committed: the ONE witness that carries an
+  # `environment` stamp is rewritten with the RUNNER's installed library
+  # versions on every full run, so accepting it degrades the recorded
+  # toolchain provenance (measured: scipy + clarabel dropped, mpmath
+  # downgraded 1.4.1 -> 1.3.0, purely because of where the gate ran).
+  #
+  # THE BEAN'S PROPOSED FIX WAS ALREADY IN PLACE AND IS NOT THE CAUSE.
+  # `environment` is already in qou_substrate.witness._EPHEMERAL_META_FIELDS,
+  # so `save()` already masks it. The field that actually forces the rewrite
+  # is `invocation` (argv + reproduce), which is NOT masked: the committed
+  # copy was produced by a bare `python3 -u <script>` and the gate runs it
+  # with `--strict`, so the witnesses are unequal on argv alone and the
+  # env stamp rides along on the resulting write.
+  #
+  # Masked here rather than in witness.py because `invocation` is genuine
+  # provenance -- it tells a reader how to reproduce the number -- and 309
+  # in-repo importers depend on that module's comparison semantics. Widening
+  # the shared mask to fix one gate's churn is the wrong blast radius.
+  drift_only=""; content_moved=""
+  while IFS= read -r line; do
+    [ -n "$line" ] || continue
+    # `git status --porcelain` emits `XY<space>PATH`, so the entries carry a
+    # two-column status prefix. Strip it: the old block only PRINTED this
+    # list, where the prefix was cosmetic; parsing it without stripping hands
+    # the classifier " M computations/..." as a path, `git show HEAD:<that>`
+    # fails, and every witness classifies as substantive -- failing toward
+    # "leave it for a human", which is the safe direction but silently
+    # disables the classification. Caught by running it.
+    w="${line:3}"
+    [ -f "$w" ] || continue
+    if python3 - "$w" <<'MASKED_PY'
+import json, subprocess, sys
+# The ephemeral set, plus `invocation` — see the note above.
+EPH = {"commitSha", "scriptCommitSha", "computedAt", "durationMs",
+       "durationSeconds", "duration_sec", "environment",
+       "elapsed_seconds", "elapsed_sec", "invocation"}
+def strip(d):
+    if isinstance(d, dict):
+        return {k: strip(v) for k, v in d.items() if k not in EPH}
+    if isinstance(d, list):
+        return [strip(x) for x in d]
+    return d
+path = sys.argv[1]
+head = subprocess.run(["git", "show", f"HEAD:{path}"],
+                      capture_output=True, text=True)
+if head.returncode != 0:
+    sys.exit(1)                      # untracked/new: never auto-revert
+try:
+    a, b = json.loads(head.stdout), json.load(open(path))
+except (json.JSONDecodeError, OSError):
+    sys.exit(1)                      # unparseable: leave it for a human
+sys.exit(0 if strip(a) == strip(b) else 1)
+MASKED_PY
+    then
+      git checkout -- "$w" 2>/dev/null && drift_only="$drift_only  $w"$'\n'
+    else
+      content_moved="$content_moved  $w"$'\n'
+    fi
+  done <<<"$newly_dirty"
+
+  if [ -n "$drift_only" ]; then
+    echo "DRIFT ONLY — reverted automatically (no substantive field moved):"
+    printf '%s' "$drift_only"
+    echo "  Ephemeral fields only (computedAt / commitSha / durationMs /"
+    echo "  environment / invocation). Reverting protects the committed"
+    echo "  environment stamp from being replaced by this runner's versions."
+    echo
+  fi
+  if [ -n "$content_moved" ]; then
+    echo "STALE COMMITTED AUDIT WITNESSES — a substantive field moved:"
+    printf '%s' "$content_moved"
+    echo "  The committed copy was stale. Commit the regenerated one AND say"
+    echo "  which count changed — and check whether the movement is yours or"
+    echo "  main's before claiming it (git log the newly-listed entries)."
+    echo
+  fi
 fi
 if [ ${#advisory_failed[@]} -gt 0 ]; then
   echo "ADVISORY (not gating): ${advisory_failed[*]}"
