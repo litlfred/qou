@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:53:28Z
-updated_at: 2026-08-22T19:54:01Z
+updated_at: 2026-08-22T21:27:16Z
 ---
 
 Found while measuring dual-purpose reads for `qou-1c4y` / `qou-v90i`.
@@ -73,3 +73,41 @@ call, not a grep.
    through `q_parameter` and let callers opt into muon explicitly.
 2. Decide whether the returned `z` is in R1 scope before touching it.
 3. Add the tuple-element return form to the detector-blindness taxonomy.
+
+
+## The callers measured (2026-08-22) — and they are contradictions, not just risk
+
+26 files / 28 live no-arg call sites, by manifest declaration:
+
+| declared | files |
+|---|---:|
+| `physical_proton` | **9** |
+| UNDECLARED | 17 |
+| **`ideal_muon`** | **0** |
+
+**No caller legitimately wants muon.** The nine declared `physical_proton` are
+the same defect as the direct readers, one hop out — verified by sampling
+(`volume_def_reconcile`, `e0_lambda_composite`, `complex_fibre_cross_ratio`,
+`vhat_tower_im_cancellation` all carry `q0Anchor: proton` with muon data).
+
+The nine: `binding_block_multiplicative`, `binding_via_interface_knot`,
+`complex_fibre_cross_ratio`, `convergence_safe_vhat_tower`,
+`e0_lambda_composite`, `flavor_dependent_cusp_shape`,
+`probe_9b_perlambda_brane_tower`, `vhat_tower_im_cancellation`,
+`volume_def_reconcile`.
+
+`q0_muon_population_partition.py` now follows this one-hop path, so the gate
+counts them: **contradictions 2 -> 11**, producers reaching the muon pin
+**53 -> 78**.
+
+## What this settles, and what it does not
+
+**Settles:** there is no legitimate-muon caller to protect, so changing the
+default cannot break a correct consumer. That was the main unknown.
+
+**Does not settle:** whether to (a) make `path` required — loud, 28 call sites
+to touch; (b) resolve through `q_parameter` — silent, changes 28 producers'
+numbers by ~11.5 ppb in one commit; or (c) add an explicit `anchor=` parameter
+defaulting to proton. (b) is a bulk numerical change of exactly the shape that
+broke main once (`qou-m9xp`), so it wants a deliberate call rather than an
+idle-pass decision.

@@ -570,6 +570,60 @@ Two remain, neither mechanical:
   constant. That is a provenance-architecture call, on a producer that states
   no pin intent either, so it is not a change to make unilaterally.
 
+## 🛑 SECOND detector correction: the contradictions are 11, not 2
+
+My detector looked for the pin-witness filename **inside each producer**. That
+misses every producer that reaches the muon pin **transitively** — via
+`_li_2_q_util.load_q_50dps()`, whose no-arg form defaults to the muon-anchored
+witness (`qou-dkm2`).
+
+Measured over the 26 files with a live no-arg call:
+
+| declared | files |
+|---|---:|
+| `physical_proton` | **9** |
+| UNDECLARED | 17 |
+| **`ideal_muon`** | **0** |
+
+**Zero callers legitimately want muon.** The nine declared `physical_proton`
+are the same contradiction as the direct readers, one hop out. Verified by
+sampling — `volume_def_reconcile`, `e0_lambda_composite`,
+`complex_fibre_cross_ratio`, `vhat_tower_im_cancellation` all carry
+`q0Anchor: proton` with muon data.
+
+With the one-hop path added to `direct_pinners()`, the counts become:
+
+| | before | after |
+|---|---:|---:|
+| producers reaching the muon pin | 53 | **78** |
+| **contradictions** | 2 | **11** |
+
+The full list: `aK_via_lp_dual_hecke_basis`, `binding_block_multiplicative`,
+`binding_via_interface_knot`, `complex_fibre_cross_ratio`,
+`convergence_safe_vhat_tower`, `e0_lambda_composite`,
+`flavor_dependent_cusp_shape`, `probe_9b_perlambda_brane_tower`,
+`q1_mass_gap_probe`, `vhat_tower_im_cancellation`, `volume_def_reconcile`.
+
+### Two detector failures in one arc, in opposite directions
+
+This is the second time a detector in this document reported the wrong number:
+
+| defect | direction | true |
+|---|---|---|
+| dual-purpose by substring match | **over** by 7× | 21 → 3 |
+| contradictions by file-local scan | **under** by 5.5× | 2 → 11 |
+
+Both were mine, both were caught by looking at an individual case rather than
+by trusting the aggregate, and both are entries in the pattern
+[`2026-08-15-detector-blindness-taxonomy.md`](2026-08-15-detector-blindness-taxonomy.md)
+already catalogues — thirteen spellings, four of them found *by* detectors
+written to catch the previous blind spot. The practical rule that keeps
+holding: **a count from a detector is a hypothesis until one of its members
+has been opened by hand.**
+
+The `--list-contradictions` gate now covers the one-hop helper path. It does
+not follow arbitrary indirection, and no claim is made that it does.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke

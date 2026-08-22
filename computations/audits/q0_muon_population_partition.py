@@ -67,6 +67,29 @@ def witness_populations() -> dict:
     return {"tally": tally, "stamp_by_value": stamp_by_value}
 
 
+# One-hop transitive path: `_li_2_q_util.load_q_50dps(path=None)` defaults to
+# the MUON-anchored pin witness, so a caller using the no-arg form reaches the
+# ideal pin without naming it and without importing q_parameter.  A scan that
+# only looks for the witness filename inside each producer MISSES these
+# entirely -- measured 2026-08-22, that undercounted the contradictions by 9.
+_NO_ARG_LOAD = re.compile(r"(?<![\w.])load_q_50dps\s*\(\s*\)")
+
+
+def _uses_muon_default_helper(text: str) -> bool:
+    """True if the producer calls load_q_50dps() with no path argument.
+
+    Comment and docstring lines are excluded: a `# Was: load_q_50dps()` marker
+    left by an earlier fix is a record of the trap, not an instance of it.
+    """
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("#") or '"""' in stripped:
+            continue
+        if _NO_ARG_LOAD.search(line):
+            return True
+    return False
+
+
 def direct_pinners() -> list[tuple[str, str]]:
     """Producers that bind q₀ straight out of the muon-anchored pin witness.
 
@@ -85,12 +108,17 @@ def direct_pinners() -> list[tuple[str, str]]:
         if "_deprecated" in path.parts:
             continue
         text = path.read_text(errors="replace")
-        if PIN_WITNESS not in text or not READS_JSON.search(text):
+        direct = (
+            PIN_WITNESS in text
+            and READS_JSON.search(text)
+            and re.search(r'derived_50_digit"\]', text)
+            and re.search(r'\[\s*"q"\s*\]', text)
+        )
+        via_helper = _uses_muon_default_helper(text)
+        if not (direct or via_helper):
             continue
         if ROUTES_ANCHOR.search(text):
             continue  # resolves its anchor properly
-        if not (re.search(r'derived_50_digit"\]', text) and re.search(r'\[\s*"q"\s*\]', text)):
-            continue  # reads the file, but not as its pin
         rel = str(path.relative_to(COMP))
         out.append((rel, bucket.get(path.stem, "UNDECLARED"), classify_intent(text),
                     co_read_fields(text)))
