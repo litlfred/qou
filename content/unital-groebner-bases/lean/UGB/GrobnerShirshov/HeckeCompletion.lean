@@ -11068,4 +11068,124 @@ theorem tailChainFromTwo_covers_diagonal :
       j₂.val = j₁.val ∧ jpp.val ≤ id.val :=
   ⟨9, 8, 7, 5, 5, 6, 7, 8, by decide⟩
 
+
+/-! ### §4an  The `a ≤ b` chain's opening — most of it was already proved
+
+Two facts about `CornerGeneral`, both established by instantiation rather than
+by reading a signature, and both of which shrink the `a ≤ b` arc's open list.
+
+**The overlap and the S-polynomial were never regime-specific.** Neither
+`CornerGeneral.oc` nor `oc_spoly_coeff` relates `j₁` to `j₂` — see the note on
+that lemma. So the `a ≤ b` corner starts from the *same* `T0`, diagonal
+included, and `hecke_prefix_loop_fit.py`'s companion measurement confirms it
+against the engine: the start element is exactly `ofTerms [(V0, 1), (U0, −1)]`.
+
+**The first two steps were not either.** `s1` and `s2` ask only `i₁+1 = i`,
+`i₂+1 = i₁` and `j₁ ≤ i₂` — Lean's unused-variable linter reports `j₂` unused
+when they are instantiated, which is the sharpest possible statement of it. So
+they carry the `a ≤ b` chain to `ofTerms [(V2, 1), (U0, −1)]` unchanged, and
+that is exactly where the engine's own replay puts it after two steps.
+
+What this namespace adds is the *second* term's head, which the `a > b` regime
+does not share: there `s3`/`s4` need `hed : ed+1 = j₂` with `j₁ ≤ ed`, i.e.
+`j₁ < j₂`, and cannot be instantiated here at all.
+
+`uHead` is that head. It is the **same two-rule motif** as `s1`/`s2` — a
+Bokut–Shiao step then a far-commutation — displaced one letter right, because
+`U0` carries a leading `σᵢ₋₁` that `V0` does not:
+
+    U0  = σᵢ₋₁ · σᵢ · (descWord i₁ j₁ ++ [σᵢ₋₁]) · descWord i₂ j₂ · σᵢ
+      B →  σᵢ₋₁ · σᵢ · (σᵢ₋₂ σᵢ₋₁ descWord i₂ j₁) · descWord i₂ j₂ · σᵢ
+      F →  σᵢ₋₁ · σᵢ₋₂ · σᵢ · σᵢ₋₁ · descWord i₂ j₁ · descWord i₂ j₂ · σᵢ
+
+The Bokut–Shiao redex straddles the two descending runs — it is
+`descWord i₁ j₁ ++ [σᵢ₋₁]`, whose last letter is `descWord i₁ j₂`'s first — and
+the far-commutation then moves `σᵢ` right past `σᵢ₋₂`, which is legal because
+`i₂ + 1 < i`. Both collision hypotheses are discharged by one letter: the
+bystander `V2` opens `σᵢ₋₂` and every word here opens `σᵢ₋₁`. That is the
+opening phase's head separation, which
+`hecke_prefix_head_separation.py` measures to hold for the first `a²−3a+9`
+steps and to fail thereafter. -/
+
+namespace CornerLe
+open CornerGeneral
+
+variable {n : ℕ}
+
+/-- The second term after its own two-step head. -/
+def U0' (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] ++
+    (descWord i j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+
+/-- After the Bokut–Shiao step at top `i−1`, before the far-commutation. -/
+def U0₁ (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (bsWord₂ i₂ i₁ j₁ ++
+    (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+
+theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0' i i₁ i₂ j₁ j₂, -1)]) := by
+  have hne2 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- U0 = σ_{i₁} σ_i · (descWord i₁ j₁ ++ [σ_{i₁}]) · (descWord i₂ j₂ ++ [σ_i])
+  have hU0 : U0 i i₁ j₁ j₂
+      = [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ bsWord₁ i₁ j₁ ++
+          (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]) := by
+    rw [U0, bsWord₁, descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
+      descWord_cons h₂ hj₂]
+    simp only [List.append_assoc, List.cons_append, List.nil_append]
+  -- step one: the Bokut–Shiao rule at top i₁, bottom j₁
+  have s := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
+    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])
+    (U0 i i₁ j₁ j₂) (U0₁ i i₁ i₂ j₁ j₂) (-1) (by norm_num) hU0 rfl
+    (fun q hq => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hq
+      subst hq
+      rw [hU0, V2]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne2 (List.cons.inj hcon).1)
+  -- step two: far-commute σ_i rightwards past σ_{i₂}
+  have t := farComm_transport_right_sources hn hp i (-1) (by norm_num)
+    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
+    [(⟨i₂⟩ : HeckeGen n)] [(⟨i₁⟩ : HeckeGen n)]
+    ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
+      [(⟨i⟩ : HeckeGen n)])))
+    (by
+      intro y hy
+      simp only [List.mem_singleton] at hy
+      subst hy
+      show i₂.val + 1 < i.val
+      omega)
+    (fun u v _ hv r hr => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hr
+      subst hr
+      rw [V2]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne2 (List.cons.inj hcon).1)
+  have hstart : U0₁ i i₁ i₂ j₁ j₂
+      = [(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ([(⟨i₂⟩ : HeckeGen n)] ++
+          ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
+            [(⟨i⟩ : HeckeGen n)]))))) := by
+    rw [U0₁, bsWord₂]
+    simp only [List.cons_append, List.nil_append]
+  have hend : U0' i i₁ i₂ j₁ j₂
+      = [(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₂⟩ : HeckeGen n)] ++
+          ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) ::
+            (descWord i₂ j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))))) := by
+    rw [U0', descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
+      descWord_cons h₂ hj₁]
+    simp only [List.cons_append, List.nil_append]
+  rw [hstart] at s
+  rw [hend]
+  exact (MultiStepReduction.refl _).step s |>.trans t
+
+end CornerLe
+
 end UGB.GrobnerShirshov.Hecke
