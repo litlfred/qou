@@ -1,11 +1,11 @@
 ---
 # qou-oy4r
 title: 'main is RED: def:qou-motivic-galois-instance lost its .lean sibling in 73a21ac34a'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T22:06:16Z
-updated_at: 2026-08-21T22:06:43Z
+updated_at: 2026-08-22T20:26:26Z
 ---
 
 MEASURED 2026-08-21, on a CLEAN checkout of main (ffd5c5e819) with no local
@@ -49,3 +49,22 @@ Timeline note: this is NOT from PR #5384. The sibling .lean was present at
 that branch's tip 13bd56a35e, where run-validate was green at
 '✓ Valid — 27 issue(s)'; 73a21ac34a landed among the 162 commits main gained
 before the rebase-merge.
+
+CLOSED 2026-08-22. main validates green again: '✓ Valid — 27 issue(s)', 0
+errors, on a clean checkout.
+
+Disposition chosen by the owner: option A, demote def: -> rem:. The block
+asserted a formalized instance the corpus no longer carries — its .lean was
+the axiom-laundering instance 73a21ac34a deleted — so the claim was withdrawn
+rather than re-backed.
+
+NOT retargeted at MotivicPerpetualObstructionFromTrace.lean, which the
+block's own .md names as where the formalization went. Those theorems
+conclude 'not IsUnit (4 : Z)' and 'not IsUnit (-32 : Z)', whose types mention
+neither p nor S; pointing a definition at them would have recorded it as
+formalized by something saying nothing about it. Separate bean qou-lrnd,
+where p-dependent replacements have since landed.
+
+Cascade handled: 6 references across 4 files repointed, QA sidecar label and
+kind updated, foreshadows.json regenerated (514 blocks, 878 derived). All
+three blocks' interprets targets resolve; find-dangling-remarks flags none.

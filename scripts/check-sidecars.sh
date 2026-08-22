@@ -78,14 +78,36 @@ for f in "${files[@]}"; do
         body=$(sed '\#/-#,\#-/#d' "$f" | sed 's|--.*||')
         GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero|\(R\s*:=)'
         RTYPE='(:\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\))'      # ℝ used as a type
-        # Genuine archimedean JUSTIFICATION (a statement that actually needs ℝ):
-        JUST='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|0\s*<|<\s*1|≤|≥|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
-        printf '%s\n' "$body" | grep -qE "$RTYPE" && hasR=1   || hasR=0
-        printf '%s\n' "$body" | grep -qE "$JUST"  && hasJ=1   || hasJ=0
-        printf '%s\n' "$body" | grep -qE "$GEN"   && hasGen=1 || hasGen=0
-        if [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; }; then
+        # Archimedean justification, in two strengths.
+        #
+        # STRONG signals mean archimedean content wherever they appear: a
+        # `Real.*` function, a tactic that needs an ordered field, an
+        # explicit `LinearOrdered`, or a physical constant.
+        #
+        # WEAK signals are the bare relational operators. `0 < q` IS the §7c
+        # tell when `q : ℝ` — the §7c table lists it — and means nothing at
+        # all when there is no ℝ in the file, because `≤` on ℕ or ℤ is
+        # ordinary. So they count only alongside RTYPE.
+        #
+        # Lumping them together over-fired on exactly the files that COMPLY:
+        # `hasGen` is 1 only when a file uses the generic ring §7c asks for,
+        # so any compliant file that also compared two naturals was reported
+        # as "MIXED generic + archimedean" with no ℝ anywhere in it. Measured
+        # over the 2063 library files: 258 MIXED, of which 129 contained no
+        # ℝ at all. Splitting the strengths drops those 129 and changes no
+        # other verdict — base-ring-minimal stays at 163, and every one of
+        # the 129 has hasR=0 (bean qou-mr3q).
+        STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
+        WEAK='(0\s*<|<\s*1|≤|≥)'
+        printf '%s\n' "$body" | grep -qE "$RTYPE"  && hasR=1  || hasR=0
+        printf '%s\n' "$body" | grep -qE "$STRONG" && hasS=1  || hasS=0
+        printf '%s\n' "$body" | grep -qE "$WEAK"   && hasW=1  || hasW=0
+        printf '%s\n' "$body" | grep -qE "$GEN"    && hasGen=1 || hasGen=0
+        # A weak operator justifies ℝ only when ℝ is there to justify.
+        if [ "$hasS" = 1 ] || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
+        if [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasS" = 1 ]; }; then
           echo "▸ $f  [⚠ §7c MIXED generic + archimedean → split into two files per §7c]"
-          printf '%s\n' "$body" | grep -nE "$RTYPE|$JUST" | head -6 | sed 's/^/         /'
+          printf '%s\n' "$body" | grep -nE "$RTYPE|$STRONG" | head -6 | sed 's/^/         /'
           action=1
         elif [ "$hasR" = 1 ] && [ "$hasJ" = 0 ]; then
           echo "▸ $f  [⚠ §7c base-ring-minimal: ℝ in type but NO archimedean construct → likely gratuitous; generalize to {R}/[Field R]]"
