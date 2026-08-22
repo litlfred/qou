@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T19:33:59Z
+updated_at: 2026-08-22T20:23:46Z
 ---
 
 
@@ -174,3 +174,20 @@ Lambda* x Lambda* covariances (already exact).
 REMAINING (sub-result 2): effective bound Cov(T,omega3) >= kappa n^{5/2} - C n^2,
 T,omega3 both additive box statistics. Fulman 3 exact 2nd-moment / IO field 2nd
 order. Gap OPEN. Workplan: docs/workplans/2026-08-22-M1-effective-CLT-project.md
+
+
+
+SUB-RESULT (2) REFRAMED to ONE-SIDED (2026-08-22, PR #5466). Exact kappa_n vs
+kappa=128/(225 pi^2): kappa_n < kappa for n<=12, kappa_n > kappa for EVERY
+13<=n<=46 (crossing n_0=13). Gap kappa_n-kappa positive, peaks ~0.001556 at n=32,
+declines gently (~0.00147 at n=46), far from recrossing 0. So:
+  M_1>0 all-n <= (a) exact M_1>0 for n<=12 [DONE] AND (b) kappa_n>=kappa for n>=13.
+(b) is ONE-SIDED: Cov(T,omega3) >= kappa n^{5/2}, i.e. the SIGN of the leading
+correction (kappa_n -> kappa FROM ABOVE), NOT an explicit constant C. Weaker
+demand on the 2nd-order Kerov CLT than a two-sided bound.
+REMAINING NUB (b1): prove the correction Cov(T,omega3)-kappa n^{5/2} >= 0 for large
+n (its sign). Empirically correction ~ +A n^{~2.35}, A>0 (slowly-varying). This is
+a genuine 2nd-order Kerov-CLT sign computation - substantial standalone analysis;
+no slick proof found. (b2): no dip on 13<=n<N_0 (exact, have to 46).
+STATUS: gap content now = ONE sign of ONE correction term. kappa>0 derived; M_1>0
+exact n<=46; Lambda* part proved orthogonal; reduced to one-sided sign. OPEN.
