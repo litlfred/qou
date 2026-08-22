@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-21T22:17:56Z
+updated_at: 2026-08-22T09:18:46Z
 ---
 
 
@@ -188,3 +188,61 @@ Note `environment` is in `_EPHEMERAL_META_FIELDS`, so the field lands when a wit
 ### Status
 
 **Not yet proved** that the `trace_weights` flip is what moved this particular number — that needs a rebuild of the old extension to confirm, which I have not done. What is established: the mechanism exists, is live on this path, and was invisible to every check I ran. Elimination #5 is withdrawn from the table; the other six stand.
+
+
+---
+
+## 2026-08-22 — the Rust hypothesis is REFUTED by direct A/B, not by argument
+
+I named the `trace_weights` flip as the lead and said it needed an old-extension rebuild to settle. Built it and ran it. **It is not the cause.**
+
+### The experiment
+
+Worktree at `92339920ef~1` (`7fdb84a6ac`), `maturin build --release` (55 s), swapped the `.so` in (`5e0173bcd623bac2` vs the current `30fd920c241a54fa`), re-ran the producer, restored.
+
+```
+PRE-FLIP extension : tr_M = 1.145759828887891988742418   abs_diff 4.660e-08
+current extension  : tr_M = 1.145759828887891988742418   abs_diff 4.660e-08
+committed (08-11)  : tr_M = 1.14575978171993650736       abs_diff 5.678e-10
+```
+
+**Byte-identical.** The Rust extension is not what moved the number.
+
+Prediction recorded before the run was: pre-flip → the committed value. It did not.
+
+### The source audit agrees, and I should have run it first
+
+- `wenzl_lr.rs`, where χ lives, has **zero** commits between `c3a7e16856` (08-11) and today.
+- Its import cone is clean at two hops — `laurent_poly_q`, `littlewood_richardson`, `seminormal`, `seminormal_mn`, and their deps `geck_pfeiffer`, `seminormal_mpfr` — **none** appear among the 17 changed `hecke-engine` source files.
+- `92339920ef` touched only `gram.rs` and the Gram exports in `lib.rs`. `trace_weights` is a Markov-weight function on the Gram path; it never reaches the χ call the bridge makes.
+
+The provenance blindness I found is real and the `pyhecke_native_build` fix stands on its own. But it was **not** this producer's cause, and I over-read a plausible commit subject as a mechanism.
+
+### Two more candidates killed by measurement
+
+- **Crossing vocabulary.** `canonical_braid_crossings.py` changed 4× in the window, one commit titled *"repair `averaged_weighted` regression"* — the weight entering every Hecke factor. I nearly wrote that up as the cause on the title alone. Measured old vs new at the same `h`: `d_for_ctype("averaged_weighted", h) = -0.10445824776972628901783` **both**. Identical.
+- **`7d49b31add`** (skip TL_n-radical blocks before the character build) carries its own symbolic verification: diff = 0 at A=1, 2, 3 (both ³H and ³He), every skipped partition confirmed ≥ 3 rows. Value-neutral by construction — the skipped terms are `y·χ = 0`.
+
+### Running elimination table
+
+| # | candidate | how refuted |
+|---|---|---|
+| 1 | pin / layer straddle | moves tr_M 5.7e-10; regression is 4.6e-8 |
+| 2 | convention C vs D | moves it ~7.5 % |
+| 3 | y_λ table drift | tables byte-stable across the window |
+| 4 | bridge code | only commit since 08-11 is mine |
+| 5 | ~~environment~~ | **retracted** — crate versions are blind, see above |
+| 6 | Rust path / fallback | both runs `hoefsmit-python-fallback` |
+| 7 | table coverage / dps | identical |
+| 8 | **Rust extension** | **direct A/B: byte-identical** |
+| 9 | Rust χ import cone | source-stable at two hops |
+| 10 | crossing vocabulary | `d_for_ctype` output identical |
+| 11 | `7d49b31add` | author-verified diff = 0 |
+
+Determinism holds throughout: repeated local runs are byte-identical.
+
+### What is left
+
+Un-eliminated in-window Python changes: **`d53f2025ba`** (colour-weighting — changed `atom_nf_symbolic_D.py` + `tr_m_algebraic_q.py`, both on the *symbolic* path, which the bridge does not obviously import) and one commit to `canonical_tr_m_via_rust.py`. The search is now three files rather than the whole corpus.
+
+Bean stays **open**. Nothing measured supports re-pinning or rebaselining; main's witness remains untouched.
