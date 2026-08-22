@@ -3527,3 +3527,50 @@ what the `F-run, B, B, F-run` shape says and I had not carried over.
 
 **Next in Lean:** `fRun` (one `monicStep` + two transports), then the two
 `bsStep`s, then `fRun` again, then `ofTerms_cancel_pair`. Then `a = 3`.
+
+### `fRun` landed; the closing phase's remaining contexts measured
+
+`CornerLe.fRun` is in (`bb64de7aaa`), sorry-free: `2a−3` engine steps as one
+`monicStep` plus two `farComm_transport_left_sources`. Its hypotheses are in the
+**source-only** form deliberately — see below.
+
+**Why the `A`-prefix hypothesis is unavailable, confirmed at `TOpen`.**
+`quadPair` splits a word into two differing only in an interior `σ_j₁`, so the
+two terms of one lineage share their entire left context. Measured directly:
+`U1` extends `Uh`'s `A`. That is the `2a` hard core, and it is why `fRun` takes
+`monicStep`'s `hne` plus the two transports' split-indexed conditions rather
+than "no other term extends `A`". This is the payoff of the four `_sources`
+relaxations built earlier in this arc.
+
+**The closing phase's full schedule** (traced at `a = 6`, `b = 7`; identical
+shape on the diagonal):
+
+| steps | what | on |
+|---|---|---|
+| `0 … 2a−4` | `fRun` | T0 |
+| `2a−3` | `bsStep (i' := i₁) (i := i) (j := j₂)`, `a = descWord i₁ j₁`, `b = []` | T0 |
+| `2a−2` | `bsStep (i' := i₂) (i := i₁) (j := j₁)`, `a = []`, `b = σ_i :: descWord i₁ j₂` | T0 |
+| `2a−1 … 4a−5` | `fRun` again | T1 |
+| `4a−5` | …its **last step cancels** against T0's word | — |
+
+Contexts read off the trace, not derived. Note the index asymmetry, which is
+invisible on the diagonal and is exactly the kind of thing this arc keeps
+punishing: the **first** B step is at `j₂`, the **second** at `j₁`. On `b = a`
+they coincide; at `b = a+1` the first redex is `bsWord₁ i j₂`, because
+`descWord i j₁ ++ descWord jm j₂ = descWord i j₂`.
+
+**Two of the four terms never move.** Only T0 and T1 are touched; the other two
+are bystanders for the whole phase. That is what makes the source-only
+hypotheses dischargeable — the bystanders are fixed words, so each obligation is
+a word-inequality rather than a prefix claim.
+
+**Inventory, not schedule.** Every piece the closing phase needs now exists:
+`fRun`, `bsStep`, `fRun`, `ofTerms_cancel_pair`. **No new lemma *kind* is
+missing** — but `hecke_prefix_phases.py` records five structural descriptions in
+this arc that failed under measurement, including one about this very assembly,
+so treat that as an inventory result. The pieces still have to compose on the
+nose, and the cancellation has to land on the word `ofTerms_cancel_pair` expects.
+
+**Next:** assemble the closing phase (`fRun`, two `bsStep`s, `fRun`,
+`ofTerms_cancel_pair`) into `closingPhase`, then chain with `openingPhase` for
+the whole prefix. Then `a = 3`.
