@@ -1,11 +1,11 @@
 ---
 # qou-ivhc
 title: q0_consistency_audit is POLARITY-INVERTED after the proton ruling — it classifies the canonical pin as a stale-q0 bug, and has a --strict CI-gate mode
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T15:27:20Z
-updated_at: 2026-08-22T19:28:25Z
+updated_at: 2026-08-22T21:04:47Z
 ---
 
 
@@ -311,3 +311,83 @@ records `invocation` and `reproduce`, so running with the flag writes
 `… --payload-check` into the artefact. The committed witness is therefore from a
 **plain** run, so it records the canonical invocation. Worth knowing before using
 any flag on a witness-emitting audit.
+
+---
+
+## Root cause of the SURVIVAL: audit artefacts are exempt from every audit that would check them
+
+The polarity bug is fixed. This entry answers the other question — *how did a
+witness asserting the wrong canonical pin, with no provenance at all, sit
+undetected for a week in a corpus with this much audit machinery?*
+
+Three independent detectors each excluded it, **each correctly by its own rule**:
+
+| detector | verdict for `q0-consistency-audit.witness.json` | mechanism |
+|---|---|---|
+| `witness_provenance_audit.py` | `PROV_AUDIT_EXEMPT`, `missing_fields: []` | `AUDIT_SUFFIXES` = `("-audit.witness.json", "-scan…", "-compliance…")` |
+| `q0_anchor_consistency_audit.py` | `Q0_AUDIT_EXEMPT` | same audit-witness carve-out |
+| `witness_constant_staleness.py` | exempt | *"audit / state-tracking witnesses are exempt … sometimes an OLD q₀ on purpose"* |
+
+**The reporting is the trap, not the exemption.** In `witness_provenance_audit`:
+
+```python
+def classify(path):
+    if any(path.name.endswith(suf) for suf in AUDIT_SUFFIXES):
+        return "PROV_AUDIT_EXEMPT", []
+```
+
+The empty `missing_fields` is returned **before a single field is examined**. It
+means *"not checked"* and reads, in the emitted JSON and in any aggregate view,
+exactly like *"checked and complete"* — which is how this witness reported clean
+on 2026-08-21 while carrying **no `computedAt`, no `scriptFile`, no `scriptHash`,
+no `engine`** at all. **74 witnesses** currently sit in that bucket.
+
+Each exemption is defensible on its own: audit witnesses are meta-artefacts that
+legitimately record other artefacts' stale values, so applying staleness and pin
+rules to them would produce constant false positives. **The defect is in the
+union.** Nothing audits the auditors, and the carve-out is keyed on a *filename
+suffix*, so it is granted by naming rather than by content.
+
+### The pattern, and it is a taxonomy row
+
+Third instance today of one shape — a detector reporting a clean number over a
+population it never evaluated:
+
+1. `Q0_FLIP: 0` — true of the 663 witnesses that declare an anchor; **1922 declare
+   none** and are unevaluable, which the headline does not say.
+2. `missing_fields: []` — returned by early-exit for 74 audit witnesses, before
+   any field is read.
+3. And the seam this bean already recorded: `Q0_OK` compares the envelope and
+   never the payload, so 20 witnesses with `name=proton value=muon` pass.
+
+In each case the detector is **correct** and its *summary statistic* is
+misleading, because "excluded" and "passed" are rendered identically. Distinct
+from the existing taxonomy rows, which are detectors blind to a *shape*; these are
+detectors blind to their own *coverage*. Suggested row: **an exemption that emits
+an empty finding-list is indistinguishable from a pass — report exclusions as a
+separate count, never as zero findings.**
+
+Cheap general fix, not applied here (it touches three producers and one is a CI
+gate): have exempt paths emit `missing_fields: null` / a `not_evaluated` marker
+rather than `[]`, and print exclusions on their own line in the summary.
+
+## Status
+
+Closing this bean. All four items from §"What it needs" are done:
+
+1. **Polarity swapped** ✓ — stale is now the muon family; no number recomputed.
+2. **Canonical read at runtime** ✓ from `q_parameter.Q_50_DIGIT_STR`.
+3. **Provenance emitted** ✓ — `computedAt`, `scriptFile`, `scriptHash`, `engine`
+   added directly. I did **not** convert the script to `WitnessBuilder`: it would
+   nest the payload under `data` and change the artefact's shape, and while the
+   only Python reader (`witness_constant_staleness.py`) merely names it in a
+   docstring exemption, the shape change buys nothing the explicit fields do not
+   already provide. Recorded as a deliberate choice, not an omission.
+4. **`--strict` left off in CI** ✓ — it now fails correctly, on 288 real hits.
+
+Plus `--payload-check` on the anchor audit, making the 20-witness seam measurable
+without gating on it.
+
+Follow-ups left for others, all recorded above: the three-valued muon prefix map
+(`qou-khac`), the exemption-vs-pass reporting fix, and the 288 source-side
+hardcodes (`qou-cds3`'s unauthorised sweep).
