@@ -26,3 +26,49 @@ Lean 'both pieces proved': meson_qCG_3x4 = q-CG fusion decomposition (real algeb
 Honest count of UNCONDITIONAL parameter-free sub-100x predictions: 0/5, not 1/5.
 
 Doc: docs/audits/2026-08-22-mK-mpi-l2-red-team.md. Read-only audit; recommends footnoting the dashboard/AGENTS.md row as conditional+truncation-selected and marking stale meson-kaon-pion-derivation.witness.json (retracted (9/5)^2 power-scan fit).
+
+---
+
+## RESOLUTION 2026-08-22 (PR #5467) — recommendations 1–3 all actioned; the 0/5 verdict STANDS
+
+**The verdict is not retracted.** One of the three knobs is removed; the
+other two — the scan-selected `(3,4)` pair and `α_em`'s conditionality on
+the open Witten-κ `sorry` — are untouched. `m_K/m_π` remains conditional
+and is no longer labelled DERIVED anywhere.
+
+**What this audit did not know when written.** The truncation had already
+been ruled out by the owner on **2026-08-09** (`docs/precision-goals.md`
+§L2), with the same reasoning and the same cost figure. No producer was
+ever updated, so this audit red-teamed the stale formula in good faith
+and independently reached the same conclusion. Second confirmation, not
+discovery. The failure mode worth naming: a durable ruling recorded in
+prose, with no code change and no bean, is indistinguishable from no
+ruling at all.
+
+**Sharpened evidence.** The full stopping-order sweep (now emitted as
+`em_truncation_order_sweep_ppb`) is stronger than §2's two-row
+comparison: 479.11 / **23.45** / 53.55 / 51.31 / 51.49 / 51.474 / 51.4755
+ppb for ℏ¹…ℏ⁷, converging to 51.4754. Order 2 is the *unique* order below
+the limit — which selection explains and convergence cannot.
+
+**Cost:** 23.45 → 51.48 ppb against a 263.6 ppb target. Margin 11.2× →
+5.1×. Scorecard unchanged at 1/5 scoreable. The fit was never
+load-bearing.
+
+**Recommendation 3, beyond marking the stale witness:** the
+`(9/5)²` route is not merely stale on disk, it is live in the paper as
+`prf:meson-kaon-pion-hecke-seifert`, whose proof body read that a power
+scan "confirms that n_q = 2 uniquely minimises the PDG residual" and
+whose producer emitted a field named `squaring_proof` concluding "The
+data selects n_q = 2". Re-scoped as a consistency check.
+
+**One calibration on this audit's own framing.** §3 lists the truncation
+order and the `(9/5)²` power scan as the same class. They are not. The
+truncation was a unique dip in a converging series — only selection
+explains that. The exponent was named in advance by the two-body
+rationale, with only three integer candidates, two missing by 44 % and
+80 %. That is *overstated*, not *fitted*. Both needed fixing; conflating
+them would over-call the second.
+
+**Commits:** `e3ebd00a6` (de-fit), `0463a10be` (tracker + §8),
+`f711201aa` (content block), `a353ba0ed` (de-launder the power scan).
