@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T23:25:59Z
-updated_at: 2026-08-21T22:30:03Z
+updated_at: 2026-08-22T09:56:25Z
 ---
 
 Owner directive 2026-08-15: **keep these refs, bean them** — do not delete.
@@ -379,3 +379,97 @@ or under-populated index reporting every ref as unresolvable). In all three the
 artifact **passed** because the thing that should have been read was never
 reached. Any scan in this family needs the guard: assert the index is non-empty
 and that known-good probes are in it before believing a negative.
+
+
+---
+
+## The nine, re-measured with a fixed instrument — 2 were mine, 7 remain, and none of the 7 is a clean repoint
+
+Ran the label test on the nine, as this entry said should be done. Doing it
+required reading the declarations, which exposed a **fourth** bug in my
+matcher.
+
+### Fourth instrument bug: dot-blind declaration capture
+
+Lean declaration names may be **dotted** — `Foo.bar` written inside
+`namespace X` gives `X.Foo.bar`. My capture group was
+`[A-Za-z_][A-Za-z0-9_'!?]*`, no dot, so
+`noncomputable instance CanonicalMarkovWeightsH3.explicitInstance` indexed as
+`CanonicalMarkovWeightsH3` and the leaf `explicitInstance` was never found.
+
+Rebuilt as a **fully-qualified** index (`namespace` × declaration, dots
+allowed): **659,100 names** against the 166,668 bare leaves I had been matching.
+Guarded on the case that exposed it.
+
+**Two of the nine are my false positives** — the refs resolve exactly as
+written:
+
+- `qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance` ← `qbeta-canonical-markov-weights-explicit-instance`
+- `qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even` ← `phi-b-unitary-bar-odd`
+
+Running tally of my own measurement across this arc: **402 → 13 → 9 → 7**, four
+fixes, four different bugs — no `re.MULTILINE`, then indexing only `lean/`, then
+namespace-and-location-blind, now dot-blind. Every fix moved the number. The
+useful generalisation is not any one bug: it is that **a corpus scan of Lean
+names is wrong by default**, and a bare count from one should not be believed —
+mine or anyone's — without a guard probe that would fail if the index were
+empty or malformed.
+
+### The label test on the surviving 7
+
+| block | label carried by a `.lean`? |
+|---|---|
+| `cyclotomic-depth3-dimension-synthesis` | yes — `QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean` |
+| `cyclotomic-dimension-synthesis-all-depths` | yes — `QOU/BraidKnot/CyclotomicDimensionSynthesisAllDepths.lean` |
+| `confined-knot-binding` | yes — **two** files |
+| `gs-spectral-decomposition-existence` | no |
+| `dt-spectrum-bar-eigenspace` | no |
+| `qou-motivic-galois-instance` | no |
+| `type-b-folded-crystal-combinatorics` | no |
+
+### But none of the three is a one-line repoint
+
+**The two `cyclotomic-*` blocks are `proposition`s whose labelled file contains
+no theorem.** Both files declare exactly two things:
+
+```lean
+def predictedDim (…) : ℕ := …
+def dimensionSynthesisHolds (K actualDim : ℕ) : Prop := …
+```
+
+A `def … : Prop` is a **predicate**, not a proof. Repointing a `proposition`
+block at it would make the block's Lean a statement of what would have to hold,
+with nothing establishing it — the "stated, not proved" state, but recorded as
+though the ref had been repaired. That is a different disposition from a
+repoint and should not be filed as one.
+
+**`confined-knot-binding` has two files carrying the same label**, with
+different content and different namespaces:
+
+- `QOU/BraidKnot/confined_knot_binding.lean` (`namespace QOU.BraidKnot`) —
+  `confined_knot_extremal_cancellation`, `confined_knot_weighted_cancellation`
+- `QOU/Archimedean/ConfinedKnotBinding.lean`
+  (`namespace QOU.Archimedean.ConfinedKnotBinding`) — ~30 declarations including
+  `extremal_cancellation`, `weighted_extremal_cancellation`, `crossing_balance`
+
+So the label does not identify a unique target, and picking one is a claim about
+which formalisation is canonical. This is the same shape as the four stale
+labels on superseded structures noted in the label-test entry above, and it is
+the one that needs an author, not a script.
+
+Note also the file-name trap here: `confined_knot_binding.lean` **is** the path
+resolver candidate 2 would look for, so the ref looks like it should resolve —
+but no declaration *inside* is named `confined_knot_binding`. File name and
+declaration name are independent, and only the second one resolves.
+
+### Handoff
+
+The label-test drain belongs to the session working `qou-2u26` on
+`claude/q-ns-classical-gaps-9l9mj9`; I am not taking the repoints. What is ready
+for whoever does:
+
+1. Two `proposition`-with-only-predicates cases — needs a disposition, not a repoint.
+2. One duplicate-label case — needs an author call on which file is canonical.
+3. Four genuinely unformalised, of which `qou-motivic-galois-instance` is the
+   paper-wide red and is separately blocked (see `qou-lwyo`: its class has no law,
+   so an instance would be vacuous).
