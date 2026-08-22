@@ -3435,3 +3435,56 @@ metavariable. Every index is now pinned by name at those call sites.
 
 **Next:** the region after `TOpen` — far-commutations at four terms — then
 `a = 3` (no loop pass: `m` would be −1) and the closing phase.
+
+### Closing phase measured — and the `2a` core is NOT a wall (#5454)
+
+`hecke_closing_from_topen.py`, 8/8 assertions, 6/6 cases. Measured from
+`TOpen`, which is where the next lemma has to start.
+
+**`TOpen` is exact** — the four-word element the Lean names, checked against
+the engine word by word, not just by term count.
+
+**One shape, uniform in `a` and `b`:**
+
+    F-run (2a−3)  →  B(i₁,i,j₁)  →  B(i₂,i₁,j₁)  →  the SAME F-run  →  cancel
+
+Machine-checked, not eyeballed: exactly two adjacent B steps, the two F-runs
+literally equal, each `2a−3` long. The F-run is `F(i_{a−2}, j₁)` then
+`F(x, jp), F(x, j₁)` for `x = i_{a−3} … i₁, i` — a far-commutation transport,
+which §4u/§4v already carry in source-only form.
+
+Term count 4 throughout, dropping to 2 on the last step: one cancellation,
+`ofTerms_cancel_pair`. `2(2a−3) + 2 = 4(a−1)`, and **opening + closing = the
+prefix exactly**, 6/6.
+
+**The `2a` hard core: confirmed, and defused.** `hpark` — "no other term
+extends this step's left context" — fails on exactly `2a` closing steps
+(8/10/12 at `a = 4/5/6`), reproducing `hecke_prefix_head_separation.py`'s count
+at the very steps it applies to. **It is not an obstruction.** Every lemma the
+closing phase needs (`farComm_transport_*_sources`, `bsStep` via `monicStep`)
+already takes the source-only hypothesis. That is what this arc's four
+relaxations were for, and this is the measurement that says they suffice.
+
+#### The fifth vacuous check
+
+The source-uniqueness test in the first version was a **tautology**: the engine
+keys the element by word, so no word can appear twice, and `not any(u == w for
+u in gg if u is not w)` cannot be false. I wrote "dict keys are unique by
+construction" in the comment beside it and did not draw the conclusion.
+
+`monicStep`'s `hne` **cannot be measured in this model at all**. Its Lean-side
+content is that the assembled LIST repeats no word — a property of the
+assembly, under the prover's control, which `hecke_prefix_schedule_check.py`
+measures directly (`dup_sources = 0`).
+
+Also: the cancellation detector compared the term count against
+`before + |image|`, but a far-commutation is a two-word rule and a quadratic a
+three-word one, so the expected count differs per rule. It fired on step 1 of
+every case and reported a 1-step closing phase.
+
+**Pattern to watch, now with five instances:** a test whose subject is
+determined by the *data structure* rather than by the mathematics. Ask what
+would have to be true for the check to FAIL before trusting a pass.
+
+**Next:** the closing phase in Lean — F-run transport, two `bsStep`s, the
+F-run again, `ofTerms_cancel_pair`. Then `a = 3`.
