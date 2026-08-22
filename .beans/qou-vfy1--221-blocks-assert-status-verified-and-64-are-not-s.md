@@ -1,11 +1,11 @@
 ---
 # qou-vfy1
-title: '221 blocks assert status "verified"; 64 are not supported by the witness they cite, and the field is forbidden anyway'
+title: '221 blocks assert computation.status "verified"; 64 are not supported by the witness they cite'
 status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T05:20:00Z
-updated_at: 2026-08-22T05:20:00Z
+updated_at: 2026-08-22T07:15:00Z
 ---
 
 The quantified form of class **C2** in the `qou-3nva` ledger — a block and
@@ -14,10 +14,12 @@ its witness disagreeing, with the block winning. Measured corpus-wide
 
 ## Two findings, one scan
 
-**1. The `status` field should not be in a `.ts` at all.** AGENTS.md §4:
-*"Formalization status … is **not stored in `.ts` manifests**. It is derived
-at build time … Agents must **never** add a `status` field to content block
-`.ts` files."* Measured: **278** content-block `.ts` files carry one.
+**1. ~~The `status` field should not be in a `.ts` at all.~~ RETRACTED
+2026-08-22 — see the correction section at the end. The §4 count is **1**, not
+278.** What the scan actually found is **277** `.ts` carrying a `status:` key,
+of which **276 sit inside `computation: { … }`** — a field describing the
+computation, which §4 does not govern. Finding 2 below is unaffected and is
+the real content of this bean.
 
 | value | count |
 |---|---:|
@@ -163,3 +165,50 @@ evidence lives under **`_deprecated/`**. That is the same shape
 | passing with real assertions (upper bound — coverage unchecked) | 157 |
 
 So **62** of 221, not 64.
+
+---
+
+## CORRECTION (2026-08-22) — finding 1 was wrong by a factor of ~278
+
+I wrote *"**278** content-block `.ts` files carry"* a §4-forbidden `status`
+field. Re-measured by **indentation and parent key** rather than by grepping
+the token:
+
+```
+3584  .ts scanned under content/quantum-observable-universe/
+ 277  carry a `status:` key
+ 276  at 4-space indent, ALL of them inside `computation: { … }`
+   1  at block level  ->  mass-endomorphism/qbeta-toroidal-harmonics-basis.ts:13
+```
+
+**`computation.status` is not the field §4 forbids.** §4 governs *formalization
+status* — the thing derived at build time into `proof-objects.json`. Two
+independent checks agree that these are different fields:
+
+1. **Nesting.** All 276 are a key of the `computation` object, not of the block.
+2. **Vocabulary.** §4 names the formalization values explicitly:
+   `not_started`, `stated`, `has_sorry`, `proved`, `mathlib_ok`. The observed
+   values are `verified` / `experimental` / `not_run` / `pending` — a
+   **disjoint** set. These describe whether the *computation* was run, not
+   whether the *Lean* was proved.
+
+So the §4 violation is a single file — and that file is one of the three whose
+manifest does not load at all (it imports `../../ontologist`, which does not
+exist), so it is already covered by the manifest-loading work in #5367.
+
+**Finding 2 stands unchanged and is the whole value of this bean.** Whether
+`computation.status: "verified"` is *honest* is a real and separate question
+from whether the key is allowed, and the answer is that 64 of 221 are not
+supported by the witness they name. Two sibling batches hit the same class
+independently from the other end: `universal-ilp-algorithm` and the
+`lp-dual-stability` family each record `verified` against witnesses whose
+assertion arrays are empty, whose `expected` equals `computed` as the same
+literal string, or whose LP-dual fields are all `null` with a STUB note.
+
+**Why the error happened, since it is the campaign's own recurring shape.** I
+counted a *token* and reported it as a *claim*: "a `.ts` has a `status` field"
+is not "a `.ts` has the field §4 forbids". That is the `da-arity-conflation`
+failure AGENTS.md §"Grep the claim SHAPE, not only the topic" describes —
+resolve the symbol and check what object it belongs to before asserting a rule
+is violated. One `grep -c` looked like evidence; one indentation histogram was
+the actual check.

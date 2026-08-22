@@ -4132,7 +4132,7 @@ rather than left in this ledger. As of 2026-08-22:
 | `qou-jbbk` | two Jones values in `building-block-knots` are unattainable by their own polynomials for **any** real `q > 0`, and seven torus rows carry a `q^{1−g²}` shift that hid behind `J(1) = 1`. |
 | `qou-ptnp` | three vacuous decls in `p-vs-np-boundary.lean`; one (`nontorsion_full_tree`, whose `NonTorsionReal` argument is unused) is cited as the corpus warrant for the premise fixing `info(n) = 3^{3n}`. |
 | `qou-tol0` | 9 mass assertions that cannot fail — `tolerance = max(abs(delta)*2, 50)` where `delta` **is** the residual under test. |
-| `qou-vfy1` | 221 blocks record `verified`; 62 are unsupported. 278 `.ts` carry a `status` field §4 forbids. |
+| `qou-vfy1` | 221 blocks record `computation.status: "verified"`; 64 are unsupported by the witness they name. (The "278 `.ts` carry a §4-forbidden `status`" claim is **retracted** — 276 of them are `computation.status`, which §4 does not govern; the real count is **1**.) |
 | `qou-umev` | `prop:unit-modulus-eigenvalue` is false in both clauses. |
 | `qou-shdw` | a shadowing sibling stub declaring `∃ c, ∀ i, c i = f i`, inhabited by `fun i => f i`, over a library declaration of the same name with real content. |
 
