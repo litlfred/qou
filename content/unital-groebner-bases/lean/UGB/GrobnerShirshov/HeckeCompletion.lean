@@ -11700,6 +11700,108 @@ theorem openingPhase (hn : 0 < n) (hp : HeckeParams)
     one_mul, neg_one_mul] at hloops hU hV ⊢
   exact (hloops.trans hU).trans hV
 
+/-! #### The closing phase's F-run
+
+`hecke_closing_from_topen.py` measures the `4(a−1)` steps after `TOpen` as one
+shape, uniform in `a` and `b`: an F-run of `2a−3` steps, two Bokut–Shiao steps,
+the **same** F-run again, then the cancellation. Machine-checked — exactly two
+adjacent `B` steps, the two runs literally equal.
+
+The engine interleaves two letters through the run, but they are on one term, so
+the order is free and the run **sequences into three lemma calls**. The first is
+the bare far-commutation `σ_jpp σ_j₁ → σ_j₁ σ_jpp`, which makes `σ_jp` and
+`σ_j₁` adjacent; the pair then transports left past `descWord i jppp` — first
+`σ_jp`, whose every obstacle is `≥ jppp = jp + 1`… no: `≥ jppp`, and
+`jp + 1 = jpp < jppp`, so all far-commute; then `σ_j₁`, for which they are
+`≥ jppp = j₁ + 3`. That is `2(a−2)` engine steps replaced by two inductions.
+
+**The `A`-prefix collision hypothesis is unavailable here, and this is the `2a`
+hard core.** The two terms of one lineage share their whole left context —
+`quadPair` splits a word into two that differ only in an interior `σ_j₁` — so
+"no other term extends `A`" is false at exactly the `2a` steps
+`hecke_prefix_head_separation.py` counted. Measured again at `TOpen`: `U1`
+extends `Uh`'s `A`. What the steps actually need is `monicStep`'s `hne` and the
+transports' split-indexed source condition, which this arc's `_sources`
+relaxations supply — so the hypotheses below are stated in that form and not
+collapsed. -/
+
+/-- **The closing phase's F-run**, as three lemma calls rather than `2a−3`
+steps. `S` is whatever trails the block: `σ_j₁ :: R` for the `h`-weighted term
+of a lineage and `R` for the plain one, which is the only difference between
+them. -/
+theorem fRun (hn : 0 < n) (hp : HeckeParams) {i j₁ jp jpp jppp : Fin n}
+    (hjp : j₁.val + 1 = jp.val) (hjpp : jp.val + 1 = jpp.val)
+    (hjppp : jpp.val + 1 = jppp.val) (htop : jppp.val ≤ i.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A S : Monomial (HeckeGen n))
+    (hne : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩]
+        ++ S)))
+    (hcol₁ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord i jppp → u ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (u ++ ((⟨jp⟩ : HeckeGen n) ::
+          (v ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++ S)))))
+    (hcol₂ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord i jppp → u ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ (A ++ [(⟨jp⟩ : HeckeGen n)]) ++ (u ++ ((⟨j₁⟩ : HeckeGen n) ::
+          (v ++ ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++ S))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++
+          ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ ([(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] ++ (descWord i jp ++ S)), c)
+          :: L₂)) := by
+  have hjpj₁ : j₁.val + 1 < jpp.val := by omega
+  have hgen : (⟨j₁⟩ : HeckeGen n) ≠ ⟨jpp⟩ := heckeGen_ne_of_val_ne (by omega)
+  -- stage 1: the bare far-commutation, making σ_jp and σ_j₁ adjacent
+  have hswap := monicStep hn hp (farCommRelation jpp j₁)
+    (farCommRelation_mem hn hp hjpj₁)
+    (BokutShiaoBraid.far_hrel j₁ jpp)
+    (farCommRelation_lm jpp j₁ (by omega))
+    (by simp [hgen])
+    L₁ L₂ (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
+    ((⟨jp⟩ : HeckeGen n) :: S)
+    -- both words named: a bare `have` pins no implicit, and `_` here left
+    -- `monicStep`'s W and W' open (the same failure as `openingPhase`'s).
+    -- W' is written in stage 2's SOURCE shape so the two compose directly.
+    (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++ S)))
+    (A ++ (descWord i jppp ++ ((⟨jp⟩ : HeckeGen n) ::
+      ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++ S))))
+    c hc
+    (by simp only [List.append_assoc, List.cons_append, List.nil_append])
+    (by simp only [List.append_assoc, List.cons_append, List.nil_append])
+    (fun q hq => by
+      have := hne q hq
+      simpa only [List.append_assoc, List.cons_append, List.singleton_append,
+        List.nil_append] using this)
+  -- stage 2: σ_jp leftwards past the run; every obstacle is at least jppp
+  have hstep2 := farComm_transport_left_sources hn hp jp c hc L₁ L₂
+    (descWord i jppp) A ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++ S)
+    (fun y hy => by have := descWord_index_ge hy; omega) hcol₁
+  -- stage 3: σ_j₁ leftwards past the same run, now behind σ_jp
+  have hstep3 := farComm_transport_left_sources hn hp j₁ c hc L₁ L₂
+    (descWord i jppp) (A ++ [(⟨jp⟩ : HeckeGen n)])
+    ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++ S)
+    (fun y hy => by have := descWord_index_ge hy; omega) hcol₂
+  -- `descWord i jppp ++ [σ_jpp, σ_jp]` closes back up into `descWord i jp`
+  have hclose : descWord i jppp ++ [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩]
+      = descWord i jp := by
+    rw [descWord_split (k := jppp) (k' := jpp) (i := i) (j := jp) hjppp
+      (by omega) htop,
+      descWord_cons_le (i' := jp) (i := jpp) (j := jp) hjpp (by omega),
+      descWord_self]
+  -- normalise the three endpoints BEFORE composing: `MultiStepReduction.trans`
+  -- needs them equal on the nose, and the three lemmas bracket their appends
+  -- differently
+  simp only [List.append_assoc, List.cons_append,
+    List.nil_append] at hswap hstep2 hstep3
+  have hchain := (((MultiStepReduction.refl _).step hswap).trans
+    hstep2).trans hstep3
+  rw [← hclose]
+  simpa only [List.append_assoc, List.cons_append, List.singleton_append,
+    List.nil_append] using hchain
+
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
