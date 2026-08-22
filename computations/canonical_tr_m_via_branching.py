@@ -325,9 +325,31 @@ def compute_chi_lambda_via_branching(
         d_nu = pair_info["d_nu"]
         c_lr = pair_info["c_lr"]
 
-        # A matrix
-        re = np.array(pair_info["matrix_re"])
-        im = np.array(pair_info["matrix_im"])
+        # A matrix.
+        #
+        # `dtype=float` is load-bearing, not decorative. The extract witnesses
+        # are migrating off raw float64 JSON numbers onto full-precision
+        # decimal STRINGS (`_precision.fmt`) as each producer is ported —
+        # `sublemma_2_1_A_operator_extract.py` did so under bean `qou-zck8`.
+        # A bare `np.array(["0.0", ...])` builds a `<U3` string array, and the
+        # `1j * im` below then raises
+        #     UFuncNoLoopError: ufunc 'multiply' did not contain a loop with
+        #     signature matching types (complex128, <U3)
+        # which this file's caller catches and reports as a per-atom row
+        # ERROR — i.e. the deuteron silently drops out of the canonical mass
+        # table rather than failing loudly.
+        #
+        # Spelling the dtype makes numpy parse the decimal strings, and is a
+        # no-op for the extracts that still carry numbers (H_9+), so both
+        # witness generations work while the migration is in flight.
+        #
+        # This truncates to float64, which is what this path already was
+        # (np.kron / complex128 below, and `q_val=float(Q_FLOAT)` at the entry
+        # point) — so no precision is lost relative to the numeric witnesses.
+        # It does mean the extra digits in the strings are discarded here; that
+        # is a property of this branching path, not of the serialization.
+        re = np.array(pair_info["matrix_re"], dtype=float)
+        im = np.array(pair_info["matrix_im"], dtype=float)
         A_mat = re + 1j * im   # shape (d_xi*d_nu, d_xi*d_nu)
 
         # ρ_ξ ⊗ ρ_ν

@@ -1,10 +1,11 @@
 ---
 # qou-zck8
 title: sublemma_2_1_A_operator_extract is float64-by-construction — blocks the weighted H6 regeneration
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-08-21T21:46:44Z
-updated_at: 2026-08-21T21:46:44Z
+updated_at: 2026-08-22T09:44:42Z
 ---
 
 The `qou-cds4` A-operator regeneration is **correct and blocked**, and the
