@@ -11404,6 +11404,96 @@ theorem uLoop (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : 
     (by rw [descWord_cons h₁ (by omega), descWord_cons h₂ (by omega)]; simp)
   simpa [U0L, U0] using key
 
+/-- The first term after its own loop, at general depth. -/
+def V2L (i i₁ i₂ j₁ j₂ jpp : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₂⟩ : HeckeGen n)] ++ (descWord i₁ jpp ++
+    (descWord i j₁ ++ (descWord jpp j₂ ++ [])))
+
+/-- **The first term's whole loop, at general depth**, with the second parked at
+the word its own loop left it on.
+
+`V2` is already in the loop's entry shape on the nose —
+`[σᵢ₋₂] ++ (descWord i j₁ ++ (descWord i j₂ ++ []))` — so this is
+`loopTwoGenRight` at `A = [σᵢ₋₂]`, `k = i`, `S = []`, and `m = i − jppp`. That is
+one more than `uLoop`'s `m = i₁ − jppp`, which is why
+`hecke_opening_coverage.py` measures the two lineages at `L` and `L + 1` steps
+for the same bottom `jppp`.
+
+The two loops compose without any change of representation, and that is what
+`loopTwoGenRight` bought: `uLoop` runs `loopTwoGen`, which lists the parked term
+first, so it ends at `[(V2, 1), (U0L, −1)]` — V parked, U active. Here V is the
+active one and U the parked one, so the source must list V first, which is the
+same list. The collision hypothesis is one letter: `U0L` opens `σᵢ₋₁`, and every
+word this loop touches extends `[σᵢ₋₂]`. -/
+theorem vLoop (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)])
+      (AlgElement.ofTerms
+        [(V2L i i₁ i₂ j₁ j₂ jpp, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)]) := by
+  have hne1 : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i₂⟩ := heckeGen_ne_of_val_ne (by omega)
+  have key := CornerBlock.loopTwoGenRight (i := i) (j₁ := j₁) (j₂ := j₂)
+    (e := jppp) (ed := jpp)
+    hn hp hjpp hj₁ hj₂ [] (U0L i i₁ i₂ j₁ j₂ jpp)
+    1 (-1) one_ne_zero
+    (i.val - jppp.val) i i₁ [(⟨i₂⟩ : HeckeGen n)] []
+    h₁ (by omega)
+    (fun z => by
+      rw [U0L]
+      simp only [List.cons_append]
+      intro hcon
+      exact hne1 (List.cons.inj hcon).1)
+    (by simp)
+    (by rw [descWord_cons h₁ (by omega)]; simp)
+  simpa [V2, V2L] using key
+
+/-- The chain after both loops, before either trio. -/
+noncomputable def TL (i i₁ i₂ j₁ j₂ jpp : Fin n) : AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [(V2L i i₁ i₂ j₁ j₂ jpp, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)]
+
+/-- **The `a ≤ b` chain's opening phase, loops included** — the two setup steps
+and both loops, in the one order in which they compose.
+
+`hecke_opening_coverage.py` decomposes the opening's `a² − 3a + 9` steps into
+five stretches: the two setup steps, the U loop (`L` steps), a trio, the V loop
+(`L + 1` steps), and a second trio, with `L = jpp − j₁`. This lemma is the first
+four minus the trio — `2 + L + (L + 1) = 2L + 3` steps — because **both loops
+must precede both trios**, and that ordering is a constraint, not a preference.
+
+The probe measures why. `loopTwoGenRight` (like every loop lemma here) is stated
+for a *two-term* element, while `quadPair`, which the trios use, takes general
+`L₁`/`L₂`. Under the order the confluence engine itself produces, the U trio's
+quadratic step **splits U into two terms** before the V loop has run — at step
+6, 9 and 13 for `a = 4, 5, 6`, against V-loop completion at 9, 15 and 23 — so a
+V loop scheduled after the U trio would face three terms and no loop lemma
+applies. Running both loops first keeps the element at two terms throughout, and
+the trios then run against the general-list `quadPair`.
+
+That the reordering is *legal* is the same argument §4am makes for the tail: the
+two lineages act on different terms, so their steps commute, and
+`MultiStepReduction` fixes no order beyond each step's redex being present. Deg-lex
+picks one; the Lean is not obliged to. -/
+theorem openingLoops (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TL i i₁ i₂ j₁ j₂ jpp) := by
+  have hj₁i₂ : j₁.val ≤ i₂.val := by omega
+  have hsetup : MultiStepReduction (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) (T0 i i₁ j₁ j₂) (T2 i i₁ i₂ j₁ j₂) :=
+    ((MultiStepReduction.refl _).step (s1 hn hp h₁ h₂ hj₁i₂)).step
+      (s2 hn hp h₁ h₂ hj₁i₂)
+  have hU := uLoop hn hp h₁ h₂ hjpp hj₁ hj₂ htop
+  have hV := vLoop hn hp h₁ h₂ hjpp hj₁ hj₂ htop
+  rw [T0, TL] at *
+  rw [T2] at hsetup
+  exact (hsetup.trans hU).trans hV
+
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
