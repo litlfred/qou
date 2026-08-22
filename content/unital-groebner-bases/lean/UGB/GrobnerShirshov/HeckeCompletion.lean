@@ -11802,6 +11802,52 @@ theorem fRun (hn : 0 < n) (hp : HeckeParams) {i j₁ jp jpp jppp : Fin n}
   simpa only [List.append_assoc, List.cons_append, List.singleton_append,
     List.nil_append] using hchain
 
+/-- **The two Bokut–Shiao steps between the closing phase's two F-runs.**
+
+After `fRun` the moved term reads `descWord i₁ j₁ ++ bsWord₁ i j₂`, because its
+two halves close up: the left context `[σᵢ₋₁] ++ descWord i₂ jpp ++ [σ_jp, σ_j₁]`
+*is* `descWord i₁ j₁`, and `descWord i j₁ ++ descWord jm j₂` is `descWord i j₂`.
+Both are `descWord_split`, one at each end.
+
+**The two steps sit at different bottoms, and that is invisible on the
+diagonal.** The first is at `j₂`, the second at `j₁`. When `b = a` they coincide
+and any check run only there would pass; at `b = a+1` the first redex is
+`bsWord₁ i j₂`, three letters longer. Read off the trace at `a = 6, b = 7`, not
+derived. -/
+theorem closingBs (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁ : j₁.val ≤ i₂.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (hne₀ : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ descWord i₁ j₁ ++ bsWord₁ i j₂)
+    (hne₁ : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ bsWord₁ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i₁ j₁ ++ bsWord₁ i j₂, c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (bsWord₂ i₂ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂), c)
+          :: L₂)) := by
+  have hb₀ := bsStep (i' := i₁) (i := i) (j := j₂) hn hp h₁ (by omega)
+    L₁ L₂ (descWord i₁ j₁) []
+    (descWord i₁ j₁ ++ bsWord₁ i j₂)
+    -- the target is written in the SECOND step's source shape, so the two
+    -- compose with no rewriting between them
+    (bsWord₁ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂))
+    c hc
+    (by simp only [List.append_nil])
+    (by simp only [bsWord₁, bsWord₂, List.append_nil, List.append_assoc,
+      List.cons_append, List.nil_append])
+    hne₀
+  have hb₁ := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
+    L₁ L₂ [] ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)
+    (bsWord₁ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂))
+    (bsWord₂ i₂ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂))
+    c hc
+    (by simp only [List.nil_append])
+    (by simp only [List.nil_append])
+    hne₁
+  exact ((MultiStepReduction.refl _).step hb₀).step hb₁
+
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
