@@ -224,6 +224,45 @@ Markov parameter is precisely the glyph-collision hazard AGENTS.md §"Grep
 the claim SHAPE" describes. Settling it needs a corpus read or an owner
 call, not a grep. Tracked as `qou-dkm2`.
 
+## Classifying the 51 undeclared — and the retraction doing work as a rule
+
+The stated next step was to classify the 51 undeclared direct pinners.
+Triaging them by what each producer *says* it wants, reading comments and
+docstrings only:
+
+| what the producer states | count |
+|---|---:|
+| **silent on the pin** | **46** |
+| muon-pin intent | 2 |
+| both (comparison) | 2 |
+| proton-intent | 1 |
+
+**The classification is mostly not a reading task.** 46 of 51 never say
+which layer they want — so the 2026-08-07 directive already answers them:
+proton unless there is an explicit reason, and there is no stated reason.
+That collapses most of the "51 unknown" into the directive default, and
+leaves 5 that need a human look.
+
+### The CAL-2 trap, applied as a classifier
+
+A first pass counted 5 producers as muon-intent. Three of those matched
+only on phrases like *"derived from CAL-2 q_0"* (`c_k_beta_decay_witness`,
+`derive_m_e_hecke_path_a`, `q_beta_spectral_bridge_witness`) — which is
+**the same inference retracted above**: CAL-2 names the calibration, not
+the pin.
+
+The two that survive name the *pin* explicitly:
+`bring_2loop_weight3_coefficient_probe` prints `q0 (muon pin)` and is
+*about* the muon anchor's CODATA uncertainty;
+`probes/qbeta_c3_per_block_categorical_probe` states *"re-evaluating at
+**muon-pin** q_0 reproduces muon-pin c_3"*. Those are genuine ideal-layer
+producers.
+
+So the correction made earlier on this branch is not bookkeeping — encoded
+as a rule in `classify_intent()`, it reclassified three of five producers.
+The classifier carries a comment saying why CAL-2 mentions are deliberately
+not muon signals, so the next agent does not re-derive the same mistake.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke

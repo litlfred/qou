@@ -92,8 +92,43 @@ def direct_pinners() -> list[tuple[str, str]]:
         if not (re.search(r'derived_50_digit"\]', text) and re.search(r'\[\s*"q"\s*\]', text)):
             continue  # reads the file, but not as its pin
         rel = str(path.relative_to(COMP))
-        out.append((rel, bucket.get(path.stem, "UNDECLARED")))
+        out.append((rel, bucket.get(path.stem, "UNDECLARED"), classify_intent(text)))
     return out
+
+
+# Intent signals, searched in COMMENTS AND DOCSTRINGS only.
+#
+# The CAL-2 trap: a comment saying "CAL-2 q_0" names WHICH CALIBRATION, not
+# which pin to evaluate at.  AGENTS.md is explicit that the 2026-08-07
+# directive "is about which numerical evaluation code defaults to, not about
+# redefining the 3-CAL triple".  Reading a CAL-2 mention as ideal-layer intent
+# is the exact conflation the directive prevents -- it was made and retracted
+# on this branch, and applying the correction as a rule reclassified 3 of 5
+# producers.  So CAL-2 / CAL-1 mentions are deliberately NOT muon signals here.
+_PROTON_INTENT = re.compile(
+    r"proton[- ]pin|proton anchor|physical[- ]observation|experimental (pin|anchor)", re.I)
+_MUON_INTENT = re.compile(
+    r"muon[- ]pin|muon anchor|ideal (pin|anchor|layer)", re.I)
+
+
+def _prose(text: str) -> str:
+    """Comments and docstrings only -- intent is stated, not computed."""
+    comments = "\n".join(l for l in text.splitlines() if l.strip().startswith("#"))
+    docstrings = "\n".join(re.findall(r'"""(.*?)"""', text, re.S))
+    return comments + "\n" + docstrings
+
+
+def classify_intent(text: str) -> str:
+    """Which layer does this producer SAY it wants?  Most say nothing."""
+    blob = _prose(text)
+    proton, muon = bool(_PROTON_INTENT.search(blob)), bool(_MUON_INTENT.search(blob))
+    if proton and muon:
+        return "both (comparison?)"
+    if proton:
+        return "proton-intent"
+    if muon:
+        return "muon-pin intent"
+    return "silent on the pin"
 
 
 def main() -> int:
@@ -103,7 +138,7 @@ def main() -> int:
     args = ap.parse_args()
 
     pins = direct_pinners()
-    contradictions = [r for r, b in pins if b == "physical_proton"]
+    contradictions = [r for r, b, _ in pins if b == "physical_proton"]
 
     if args.list_contradictions:
         for rel in contradictions:
@@ -124,9 +159,17 @@ def main() -> int:
     print()
     print(f"producers binding q₀ direct from {PIN_WITNESS}.witness.json")
     print("  (no anchor resolution — inherits whatever that witness carries)")
-    by_bucket = Counter(b for _, b in pins)
+    by_bucket = Counter(b for _, b, _ in pins)
     for name, count in by_bucket.most_common():
         print(f"  {count:4d}  declared {name}")
+    print()
+    print("  of the UNDECLARED, what each producer SAYS it wants:")
+    by_intent = Counter(i for _, b, i in pins if b == "UNDECLARED")
+    for name, count in by_intent.most_common():
+        print(f"    {count:4d}  {name}")
+    print()
+    print("    'silent' means the directive default (proton) already answers it;")
+    print("    a 'CAL-2 q_0' mention is NOT a muon signal -- see classify_intent().")
     print()
     if contradictions:
         print(f"CONTRADICTION — declared physical_proton, pins muon: {len(contradictions)}")
