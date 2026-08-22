@@ -3270,3 +3270,39 @@ call site rather than the conclusion.
 **Next:** the opening-phase assembly (`a ≥ 4`, `loopTwoGen` measured to fit both
 lineages), then `a = 3` (no loop pass — needs its own treatment), then the
 closing phase, which now has every lemma it needs.
+
+### Opening-phase coverage, measured (#5454)
+
+`uHead` turned out to be **`loopTwoGen` at m = 0** — I hand-proved a lemma the
+file had. Same reuse failure as `descWord_split`, but with a difference worth
+keeping: there the *name* collided and the compiler stopped me; here nothing
+collided, so nothing would have. It surfaced only because `uHead`'s target
+looked like a `loopTwoGen` endpoint while setting up the opening phase.
+
+**The consequence is the useful part.** If one level is `loopTwoGen` at m = 0,
+the whole U-side loop is `loopTwoGen` at general **m = a − 4** — a single
+application, not a chain. That also *explains* two earlier findings instead of
+restating them: `a = 3` would need m = −1 (hence no loop pass), and `a = 4` is
+m = 0 (hence `uHead`).
+
+`hecke_opening_coverage.py`, 6/6 at a = 4..6:
+
+| | a=4 | a=5 | a=6 |
+|---|---|---|---|
+| opening phase | 13 | 19 | 27 |
+| `s1`/`s2` → V2 | 2 | 2 | 2 |
+| `loopTwoGen` (k = i₁, e = jppp) | 2 | 5 | 9 |
+| U-side steps after the loop | **3** | **3** | **3** |
+| covered | 4 | 7 | 11 |
+| left (the V-side loop) | 9 | 12 | 16 |
+
+Those 3 trailing U-side steps are a bare Bokut–Shiao plus the Y-then-Q pair
+that §4al's `quadPair` already covers — so the U side needs **one** named step
+beyond loop + quadPair, not a family.
+
+**Probe bug, recorded because it recurred:** the first version looked for the
+loop's endpoint at the *end* of the contiguous U run, which continues past the
+loop into those 3 steps. False negative in all six cases. Same wrong-index
+shape as the tail's collision check — twice now.
+
+**Next:** the V-side loop (9/12/16 steps), then the closing phase.
