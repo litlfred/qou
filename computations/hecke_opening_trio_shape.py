@@ -157,7 +157,57 @@ def main():
             second_trio = tail_rules[3:6] == trio
             splits_at = next((k for k, c in enumerate(tail_counts) if c > 2), None)
 
-            ok = TL_exact and TL_reached
+            # --- (3) the trio's decomposition into bsStep + quadPair, built
+            # from the LEAN-side formulas and checked against the engine's
+            # words. Deriving this by hand and writing the Lean off the
+            # derivation is exactly the move this arc keeps punishing -- and it
+            # punished it again here: the first version of this block tested a
+            # V-side formula against the FIRST trio, which is the U side's.
+            # deg-lex reaches U0L before V2L, so U's trio runs first.
+            jm = j1 - 1
+            bsw1 = dw(jpp, j1) + (jpp,)          # bsWord1 jpp j1
+            bsw2 = (jp_, jpp) + dw(jp_, j1)      # bsWord2 jp jpp j1
+
+            def trio_words_for(A_bs, B_bs):
+                """The three words one trio touches, from (A, B) alone."""
+                L_q = A_bs + (jp_, jpp)
+                R_q = dw(jm, j2) + B_bs[len(dw(jp_, j2)):]
+                return dict(
+                    pre=A_bs + bsw1 + B_bs,
+                    mid=A_bs + bsw2 + B_bs,
+                    quad_src=L_q + (jp_, j1, jp_) + (j1,) + R_q,
+                    out_h=L_q + (j1, jp_) + (j1,) + R_q,
+                    out_1=L_q + (j1, jp_) + R_q,
+                    L=L_q, R=R_q)
+
+            # U trio: A = [s_i1] ++ descWord i2 jpp ++ descWord i jppp,
+            #         B = descWord jp j2 ++ [s_i]
+            U_tr = trio_words_for((i1,) + dw(i2, jpp) + dw(i, jppp),
+                                  dw(jp_, j2) + (i,))
+            # V trio: A = [s_i2] ++ descWord i1 jpp ++ descWord i jppp,
+            #         B = descWord jp j2          (no trailing s_i)
+            V_tr = trio_words_for((i2,) + dw(i1, jpp) + dw(i, jppp),
+                                  dw(jp_, j2))
+
+            gt = dict(f4)
+            seen = []
+            for _ in range(6):
+                t = next_redex(gt)
+                if t is None:
+                    break
+                seen.append(t[0])
+                gt, _img = apply(gt, t)
+            u_pre_ok = len(seen) > 0 and seen[0] == U0L == U_tr["pre"]
+            u_mid_ok = len(seen) > 1 and seen[1] == U_tr["mid"] == U_tr["quad_src"]
+            v_pre_ok = len(seen) > 3 and seen[3] == V2L == V_tr["pre"]
+            v_mid_ok = len(seen) > 4 and seen[4] == V_tr["mid"] == V_tr["quad_src"]
+            outs_ok = all(w in gt for w in (U_tr["out_h"], U_tr["out_1"],
+                                            V_tr["out_h"], V_tr["out_1"]))
+            trio_decomposition_ok = (u_pre_ok and u_mid_ok and v_pre_ok
+                                     and v_mid_ok and outs_ok)
+            u_first = len(seen) > 3 and seen[0] == U0L and seen[3] == V2L
+
+            ok = TL_exact and TL_reached and trio_decomposition_ok
             bad += not ok
             rows.append({
                 "a": a, "b": b, "i": i, "n": n,
@@ -181,6 +231,16 @@ def main():
                 "first_trio_is_BS_Y_Q": first_trio,
                 "second_trio_is_BS_Y_Q": second_trio,
                 "term_count_first_exceeds_two_at_step": splits_at,
+                # (3) the hand decomposition, tested on BOTH trios
+                "U_trio_runs_first": u_first,
+                "U_bsStep_source_matches_engine": u_pre_ok,
+                "U_bsStep_target_is_quadPair_source": u_mid_ok,
+                "V_bsStep_source_matches_engine": v_pre_ok,
+                "V_bsStep_target_is_quadPair_source": v_mid_ok,
+                "all_four_quadPair_outputs_present": outs_ok,
+                "trio_decomposition_ok": trio_decomposition_ok,
+                "U_trio_R_rel_i": [i - x for x in U_tr["R"]],
+                "V_trio_R_rel_i": [i - x for x in V_tr["R"]],
                 "steps_left_in_opening_after_TL": opening - (s12 + uL + vL),
             })
 
@@ -207,6 +267,14 @@ def main():
     w.add_assertion("cases_where_the_first_trio_is_not_BS_Y_Q",
                     computed=str(sum(0 if r["first_trio_is_BS_Y_Q"] else 1
                                      for r in rows)), expected="0")
+    w.add_assertion(
+        "cases_where_the_U_trio_does_not_run_before_the_V_trio",
+        computed=str(sum(0 if r["U_trio_runs_first"] else 1 for r in rows)),
+        expected="0")
+    w.add_assertion(
+        "cases_where_the_hand_decomposition_of_the_trio_fails",
+        computed=str(sum(0 if r["trio_decomposition_ok"] else 1 for r in rows)),
+        expected="0")
     w.add_assertion("cases_where_the_second_trio_is_not_BS_Y_Q",
                     computed=str(sum(0 if r["second_trio_is_BS_Y_Q"] else 1
                                      for r in rows)), expected="0")
@@ -237,6 +305,12 @@ def main():
         print(f"      terms   : {r['term_count_after_each'][:8]}"
               f"  trio1={r['first_trio_is_BS_Y_Q']}"
               f" trio2={r['second_trio_is_BS_Y_Q']}")
+        print(f"      decomp  : U_first={r['U_trio_runs_first']}"
+              f" U=({r['U_bsStep_source_matches_engine']},"
+              f"{r['U_bsStep_target_is_quadPair_source']})"
+              f" V=({r['V_bsStep_source_matches_engine']},"
+              f"{r['V_bsStep_target_is_quadPair_source']})"
+              f" outs={r['all_four_quadPair_outputs_present']}")
     print(f"\n{len(rows) - bad}/{len(rows)} cases clean")
     return 0 if bad == 0 else 1
 

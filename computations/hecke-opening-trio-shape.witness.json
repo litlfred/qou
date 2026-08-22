@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-22T21:05:02.236434+00:00",
-  "commitSha": "849a5ac4f6c5be69bd164a21df6ed367d49f78e7",
+  "computedAt": "2026-08-22T21:13:40.209025+00:00",
+  "commitSha": "15f5e5b9920f1e7a30549411da743ec9c99488e5",
   "assertions": [
     {
       "name": "cases_where_TL_is_not_reached_exactly",
@@ -29,6 +29,18 @@
       "passed": true
     },
     {
+      "name": "cases_where_the_U_trio_does_not_run_before_the_V_trio",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_hand_decomposition_of_the_trio_fails",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
       "name": "cases_where_the_second_trio_is_not_BS_Y_Q",
       "computed": "0",
       "expected": "0",
@@ -36,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 246,
+  "durationMs": 67,
   "computation": "hecke-opening-trio-shape",
   "scriptFile": "hecke_opening_trio_shape.py",
-  "scriptHash": "33509bbb0f71",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4518c29ec90e",
+  "scriptCommitSha": "15f5e5b9920f1e7a30549411da743ec9c99488e5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -166,6 +178,17 @@
         "first_trio_is_BS_Y_Q": true,
         "second_trio_is_BS_Y_Q": true,
         "term_count_first_exceeds_two_at_step": 2,
+        "U_trio_runs_first": true,
+        "U_bsStep_source_matches_engine": true,
+        "U_bsStep_target_is_quadPair_source": true,
+        "V_bsStep_source_matches_engine": true,
+        "V_bsStep_target_is_quadPair_source": true,
+        "all_four_quadPair_outputs_present": true,
+        "trio_decomposition_ok": true,
+        "U_trio_R_rel_i": [
+          0
+        ],
+        "V_trio_R_rel_i": [],
         "steps_left_in_opening_after_TL": 6
       },
       {
@@ -266,6 +289,20 @@
         "first_trio_is_BS_Y_Q": true,
         "second_trio_is_BS_Y_Q": true,
         "term_count_first_exceeds_two_at_step": 2,
+        "U_trio_runs_first": true,
+        "U_bsStep_source_matches_engine": true,
+        "U_bsStep_target_is_quadPair_source": true,
+        "V_bsStep_source_matches_engine": true,
+        "V_bsStep_target_is_quadPair_source": true,
+        "all_four_quadPair_outputs_present": true,
+        "trio_decomposition_ok": true,
+        "U_trio_R_rel_i": [
+          5,
+          0
+        ],
+        "V_trio_R_rel_i": [
+          5
+        ],
         "steps_left_in_opening_after_TL": 6
       },
       {
@@ -365,6 +402,17 @@
         "first_trio_is_BS_Y_Q": true,
         "second_trio_is_BS_Y_Q": true,
         "term_count_first_exceeds_two_at_step": 2,
+        "U_trio_runs_first": true,
+        "U_bsStep_source_matches_engine": true,
+        "U_bsStep_target_is_quadPair_source": true,
+        "V_bsStep_source_matches_engine": true,
+        "V_bsStep_target_is_quadPair_source": true,
+        "all_four_quadPair_outputs_present": true,
+        "trio_decomposition_ok": true,
+        "U_trio_R_rel_i": [
+          0
+        ],
+        "V_trio_R_rel_i": [],
         "steps_left_in_opening_after_TL": 6
       },
       {
@@ -464,6 +512,20 @@
         "first_trio_is_BS_Y_Q": true,
         "second_trio_is_BS_Y_Q": true,
         "term_count_first_exceeds_two_at_step": 2,
+        "U_trio_runs_first": true,
+        "U_bsStep_source_matches_engine": true,
+        "U_bsStep_target_is_quadPair_source": true,
+        "V_bsStep_source_matches_engine": true,
+        "V_bsStep_target_is_quadPair_source": true,
+        "all_four_quadPair_outputs_present": true,
+        "trio_decomposition_ok": true,
+        "U_trio_R_rel_i": [
+          6,
+          0
+        ],
+        "V_trio_R_rel_i": [
+          6
+        ],
         "steps_left_in_opening_after_TL": 6
       },
       {
@@ -563,6 +625,17 @@
         "first_trio_is_BS_Y_Q": true,
         "second_trio_is_BS_Y_Q": true,
         "term_count_first_exceeds_two_at_step": 2,
+        "U_trio_runs_first": true,
+        "U_bsStep_source_matches_engine": true,
+        "U_bsStep_target_is_quadPair_source": true,
+        "V_bsStep_source_matches_engine": true,
+        "V_bsStep_target_is_quadPair_source": true,
+        "all_four_quadPair_outputs_present": true,
+        "trio_decomposition_ok": true,
+        "U_trio_R_rel_i": [
+          0
+        ],
+        "V_trio_R_rel_i": [],
         "steps_left_in_opening_after_TL": 6
       },
       {
@@ -662,6 +735,20 @@
         "first_trio_is_BS_Y_Q": true,
         "second_trio_is_BS_Y_Q": true,
         "term_count_first_exceeds_two_at_step": 2,
+        "U_trio_runs_first": true,
+        "U_bsStep_source_matches_engine": true,
+        "U_bsStep_target_is_quadPair_source": true,
+        "V_bsStep_source_matches_engine": true,
+        "V_bsStep_target_is_quadPair_source": true,
+        "all_four_quadPair_outputs_present": true,
+        "trio_decomposition_ok": true,
+        "U_trio_R_rel_i": [
+          7,
+          0
+        ],
+        "V_trio_R_rel_i": [
+          7
+        ],
         "steps_left_in_opening_after_TL": 6
       }
     ]
