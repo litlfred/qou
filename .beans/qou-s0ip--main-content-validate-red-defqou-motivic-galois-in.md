@@ -71,3 +71,56 @@ Creating a co-located stub to silence the validator would be the same error.
 
 Option 1 is the real fix; option 2 is the honest interim; option 3 is what is
 happening by default.
+
+## 2026-08-22 — I inspected the witness, and my own "just lift the numbers" claim was wrong
+
+I told the owner the real fix was probably *"lifting existing numbers into
+Lean"*, on the strength of the block carrying a `status: "verified"` computation
+witness. **Having actually read the witness, that was too optimistic and I am
+retracting it.**
+
+`computations/probes/habiro-frobenius-probe.witness.json` (57 KB, computed
+2026-05-03, `commitSha 610a6aa2`) contains, for **5 atoms** (p, D, T, ³He, n),
+Frobenius data at **9 primes**: 2, 3, 5, 7, 11, 13, 17, 19, 23.
+
+Three separate reasons it does not lift:
+
+**1. The class field is total; the data is finite.**
+`MotivicGaloisCharacter.frobenius_at : Nat.Primes → Mhat` is a function on
+**all** primes. The witness stops at 23. Lifting it gives a partial function;
+completing it to a total one means inventing values at every prime ≥ 29. That
+is the invention I said I would not do, just relocated.
+
+**2. The full-trace compatibility check FAILS, for every atom.** Per-prime
+entries carry `step2_full_trace_passed: false`, and every atom's
+`step2_summary` has `step2_full_trace_compatible: false`. What passes is
+`all_truncated_primes_compatible: true` — the *truncated* Pochhammer version.
+The top-level `step2_all_atoms_compatible: true` and the block's
+`status: "verified"` both summarise the **truncated** check, not the full one.
+So "verified" is narrower than it reads, and an instance built on it would
+inherit that narrowing silently.
+
+**3. The witness is flagged `auditOnly`**, pointing at
+`docs/audits/2026-05-02-m-iso-l-function-handoff.md`. It is handoff material,
+not a production artefact.
+
+**What is genuinely good about it:** the values are **exact**, not float —
+`frob_full_in_Z_zeta_str: "-2/3"` in `ℤ[ζ]`, with `frob_p_is_exact: true` and
+`exact_via: "pochhammer_truncates_inside_data"`. So the arithmetic is liftable
+in kind; it is the **coverage** and the **failing full-trace check** that block
+it, not precision. That distinction matters for whoever picks this up.
+
+### Revised options
+
+1. **Write the real instance** — now understood to need a *closed form* for
+   `frobenius_at` valid at all primes, not a table. The witness shows the
+   truncation mechanism (`(u;u)_m` vanishes once `m ≥ 2p`), which is a plausible
+   route to one, but deriving it is research, not transcription.
+2. **Reclassify the block** so the validator stops requiring Lean for something
+   genuinely unformalised. Editorial, and the honest interim.
+3. **Leave red and tracked.** Still the default, and still costly — a
+   permanently red gate trains everyone to ignore it, which is how the
+   four-month unrun Lean CI happened.
+
+My earlier framing made option 1 sound like an afternoon's transcription. It is
+not. Option 2 remains the cheapest honest move.
