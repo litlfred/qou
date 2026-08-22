@@ -1348,3 +1348,109 @@ initial datum; the Bogomolny decomposition's factor 2 and topological term;
 Bring's curve `8 = 2g` with `g = 4` and `S₅`-equivariance; and the
 `q⁻² − ℏ_q² = (2−q)/q` algebra itself — it is the *use* of it that fails,
 not the identity.
+
+---
+
+## From agent:d00 (quantum-observable-universes dq_00) — 2026-08-22
+
+45 blocks, 18 anomalies. The chapter's prose is clean; the yield is in the
+mathematics and in one structural pattern that spans six blocks.
+
+### The pattern: a proof preamble that narrates a proof that is not there
+
+Six proof blocks open with the same two-or-three-sentence "The proof
+strategy is… / We explicitly…" construction. Two were pure prose and were
+deleted inline; four carry formulas or new symbols and are flagged. **Two
+of the four describe a method the body never uses:**
+
+- `categorical-dirac-operator-unique-proof` promises "assume a general
+  affine operator `α∇ + βι_ξ∇`, apply the categorical constraints, they
+  force `α = q⁻¹`, `β = 1−q⁻¹`". No constraint is applied; the body says
+  the same combination is "literally the same morphism".
+- `categorical-fourier-transform-unique-proof` promises "the
+  representation ring structure pins down the labels"; the body is a Wick
+  rotation from Laplace uniqueness.
+
+This matters beyond style: in the Dirac case the advertised argument is
+precisely the one that would make the proposition non-vacuous (see below),
+so the preamble is standing in for missing content rather than decorating
+present content.
+
+### Statements that are vacuous or cannot hold
+
+1. **`adjoint-trace`'s Killing-form identity is vacuous where it is true
+   and false elsewhere.** The claim is `tr_Ad(f) = tr(ad f) = −2 tr_{ℂ²}(f)`.
+   Route: sympy over a `gl(2)` basis. On all three standard `su(2)`
+   generators `tr(ad X) = 0` (ad is traceless on a perfect algebra) and
+   `tr_{ℂ²}(X) = 0`, so the chain reads `0 = 0 = 0`. Off `su(2)` it fails —
+   `f = id` gives `0` against `−4`. And the normalisation is wrong
+   regardless: computing `B(X,X)/tr(X²) = −8/−2 = 4` on each generator
+   gives **`B(X,Y) = 4 tr(XY)`**, not `−2`.
+2. **`categorical-dq-squared-proof`: `ω_V` is identically zero as
+   defined.** `ω_V = d(π_V(d 1_A))`, and `d(1_A) = 0` in any first-order
+   calculus, so `ω_V = 0` — which makes the proposition's own right-hand
+   side vanish for every `α`. The same proof has a degree mismatch:
+   `[d, π_V]α = π_H(𝓛_ξ α)` puts degree `deg α + 1` on the left and
+   `deg α` on the right. Its "if and only if" also over-claims: the
+   prefactor does vanish exactly at `q = 1`, but the product also dies when
+   `ω_V = 0`, which given the above is not a hypothetical branch.
+3. **`categorical-dirac-operator-unique` is a tautology.** "Any morphism
+   decomposing as `α∇ + βι_ξ∇` **with `α = q⁻¹`, `β = 1−q⁻¹`** equals
+   `𝒟_∇`" — the same expression equalling itself, as the proof concedes.
+   The non-vacuous statement is the classification its preamble advertises.
+4. **`braiding-induced-ordering` assumes `c² ≠ id` and never uses it.**
+   The proof is a degree-lex well-ordering on words over `{1..n−1}` and
+   goes through for any braiding.
+
+### Errors of fact
+
+5. **`brings-coordinate-ring`: `S₅` is not an automorphism group of
+   `O_q(B)`.** With `x_i x_j = q x_j x_i` for `i < j`, the transposition
+   `(i j)` sends that relation to `x_j x_i = q x_i x_j`, while the ring
+   gives `q⁻¹`. Permutations act by algebra automorphisms only if
+   `q² = 1`. (Correct in the same block: `g = 4`, `2g = 8` cycles, and
+   `Aut(Bring) = S₅` classically.)
+6. **`categorical-coordinate-ring-proof`: two specialisation rows are wrong
+   as rings.** `ℂ[i]/(i²+1) ≅ ℂ × ℂ` by CRT — `i²+1` splits over `ℂ` — not
+   `ℂ`. Rows 2 and 4 are right. The displayed conjugation
+   `z → z⁻¹ → qz⁻¹ → q⁻¹z` checks out exactly.
+7. **`categorical-action`'s duality maps do not compose**, across five
+   blocks. The definition composes `ev_A ∘ (id_{A^∨} ⊗ Φ) ∘ coev_A` while
+   declaring `ev_A : A^∨ ⊗ A → 1` and `coev_A : 1 → A ⊗ A^∨`; the proof's
+   display then flips to `Φ ⊗ id` and applies `ev_A` to `A ⊗ A^∨`,
+   contradicting both propositions and its own prose. One side needs
+   fixing consistently across def + 2 props + 2 proofs.
+8. **`categorical-dirac-operator-exists-proof` types `ι_ξ` wrongly.** With
+   `ι_ξ : Ω¹(A) → A`, `ι_ξ∘∇ : A → A`, so `𝒟_∇ = q⁻¹∇ + (1−q⁻¹)ι_ξ∇` adds
+   `A → Ω¹` to `A → A`. The definition's own phrase "its projection onto
+   the Reeb direction" says `ι_ξ` should be `Ω¹ → Ω¹`.
+9. **`braiding-unit-circle-convention`'s name contradicts its content.**
+   The "inside-unit-circle convention" sets `q := λ₊`, and for real `q > 1`
+   that root lies *outside*; `|λ₋| = q⁻¹ < 1` is the one inside.
+10. **`categorical-fourier-transform-properties`**: "functions identically
+    over `𝔽_p`" is false without semisimplicity (`p ∤ |G|`, `q` not a bad
+    root of unity). The title also promises Wick rotation, which the body
+    never discusses.
+
+Smaller: a §7a violation (`(T−q)(T+q⁻¹) = 0` where the generator must be
+`σ_i`, in `braiding-eigenvalue-extraction`); `κ ∈ H²(𝒮, 𝓑)` colliding with
+`𝓑` for Bring's curve; `𝒜` for the Frobenius–Hopf object where the chapter
+uses `A`; and "intrinsic *topological* invariant" claimed for what is a
+categorical uniqueness statement, with nothing topological anywhere in the
+Fourier cluster.
+
+### Convention checks, all clean — recorded so they are not re-run
+
+The only numeric in 45 blocks is `q₀ ≈ 1.10998`, and it is **correct**:
+recomputed from CAL-2, `Vol(4₁) = 2·Cl₂(π/3) = 2.029883212819307` with
+CODATA `m_μ/m_e = 206.7682827` gives `q₀ = 1.10997859564`, whose rounding
+at that precision matches both real pins and is not the erroneous `1.1097`.
+No Markov `z` appears anywhere in the batch, so no convention-C exposure.
+Categories are bold `𝐂` throughout, the fibre functor is always `τ`, the
+tuple is always `(𝐂, Θ, G, 𝒮)`, and the deprecated 5-tuple appears
+nowhere. No §3b propagation violation, no mass claims, no braid words.
+
+New sweep-damage shape, distinct from the token-substitution class: a
+synonym swap for *is* and *ensures* — `operates as`, `acts as`, `secures
+positivity`, `securing the smoothness`, `functions identically`, plus
+`leverages` twice in proof preambles. Five instances across five blocks.
