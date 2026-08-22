@@ -137,4 +137,53 @@ theorem replacement_excludes_some_matrix (q : ℝ) :
   rw [htr]
   nlinarith [hle]
 
+/-! ## §3 — the obligation is a trichotomy, and §2 alone is not enough
+
+**Self-correction.**  §2's `TransferMatrixSpectrum` is a genuine improvement on
+the vacuous original — it constrains a *given* `M` (`replacement_excludes_some_matrix`).
+But it is still not the right obligation, because it does not force `M` to come
+from the Hecke data.  Exhibited below: for **every** `α` there is a matrix with
+`trace = 2 cos α` and `det = 1`, namely the rotation `exp(αJ)` — built *from `α`
+itself*.  So `TransferMatrixSpectrum` can be "discharged" circularly.
+
+Putting that next to the route-3 exclusion
+(`QOU.QBeta.Seminormal`, and `qbeta_eigenphase_seminormal_exclusion_probe.py`)
+gives a three-way split with only one contentful branch:
+
+1. **`M` in the braid image** — *excluded*.  Every character lies in
+   `ℤ[q,q⁻¹] ⊂ ℚ(q,z)`, and `2cos((z−1)h/2)` is transcendental over `ℚ(q,z)`,
+   so no such `M` exists as a functional identity.
+2. **`M` arbitrary** — *circular*.  `rotationOfPhase` below satisfies the
+   obligation for any `α` whatsoever, so it says nothing about the substrate.
+3. **`M` an exponential/holonomy of an independently-defined connection whose
+   monodromy reproduces the Hecke braiding** — the only remaining option, and
+   the only one that could be contentful.  It escapes (1) because a holonomy is
+   transcendental, and (2) because the connection is defined without reference
+   to `α`, which is then *derived* as its holonomy angle rather than assumed.
+
+Branch 3 is the Kohno–Drinfeld / KZ picture, and the corpus's canonical chain
+already invokes exactly that shape ("Yekutieli non-abelian Stokes").  This file
+does **not** carry out that construction; it establishes that it is the only
+place a derivation of `α` can live. -/
+
+/-- The rotation `exp(αJ)`, `J² = −I`, written out. -/
+noncomputable def rotationOfPhase (a : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![Real.cos a, -Real.sin a; Real.sin a, Real.cos a]
+
+theorem rotationOfPhase_trace (a : ℝ) :
+    (rotationOfPhase a).trace = 2 * Real.cos a := by
+  simp [rotationOfPhase, Matrix.trace_fin_two_of]; ring
+
+theorem rotationOfPhase_det (a : ℝ) : (rotationOfPhase a).det = 1 := by
+  simp [rotationOfPhase, Matrix.det_fin_two_of]
+  nlinarith [Real.sin_sq_add_cos_sq a]
+
+/-- **The circularity, stated.**  `TransferMatrixSpectrum` is satisfiable for
+every `q` — by a matrix built from the eigenphase itself.  So satisfying it is
+not evidence about the substrate; the content is entirely in *which* `M`. -/
+instance circularWitness (q : ℝ) :
+    TransferMatrixSpectrum q (rotationOfPhase (eigenphase q)) where
+  trace_eq := rotationOfPhase_trace _
+  det_eq := rotationOfPhase_det _
+
 end QOU.QBeta.EigenphaseCarrier
