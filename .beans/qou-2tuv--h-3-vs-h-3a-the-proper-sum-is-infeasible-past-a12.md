@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T12:07:03Z
+updated_at: 2026-08-22T12:14:21Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -898,3 +898,68 @@ The `jones_wenzl` trend from -30.1% (A=2) to -99.6% (A=3) is worth recording on
 its own: last week that -30.1% was briefly reported as the best canonical-form
 result. It is a near-zero artefact whose agreement degrades monotonically as A
 grows.
+
+
+---
+
+# Both open threads closed
+
+## 4He measured — the pattern holds, and max|V_hat| is A-INVARIANT
+
+The A=4 row that failed on the sparse path (dim > 500 returns scipy-sparse;
+`np.asarray` on that yields a 0-d object array) now runs, mirroring the repo's
+own dense/sparse branch:
+
+    atom   weights        sum w    max|V_hat|   in range?     B_MeV        err%
+       D   inversion    1.00000      1.28242    NO — POLE   4.09e+07     +1.8e9
+       D   norm_planch  1.00000      1.08837    NO — POLE   1.08e+07     +4.9e8
+       D   jones_wenzl  0.05466      0.06979    yes           1.5545      -30.1
+       T   inversion    1.00000      1.28242    NO — POLE   8.17e+07     +9.6e8
+       T   norm_planch  1.00000      1.08837    NO — POLE   5.16e+07     +6.1e8
+       T   jones_wenzl -0.00097      0.00123    yes           0.0360      -99.6
+     4He   inversion    1.00000      1.28242    NO — POLE   1.23e+08     +4.3e8
+     4He   norm_planch  1.00000      1.08837    NO — POLE   6.24e+07     +2.2e8
+     4He   jones_wenzl  0.00001      0.00001    yes           0.0004     -100.0
+
+Two things this adds beyond the A=2,3 result:
+
+**1. max|V_hat| is IDENTICAL at A = 2, 3, 4** — 1.28242 for inversion, 1.08837
+for normalized_plancherel, at every atom. The pole violation is A-invariant, so
+it is structural, not an accident of a light atom or of a particular braid word.
+Extrapolating to heavier A is not needed: the quantity does not move.
+
+**2. The jones_wenzl artefact converges on zero**, monotonically:
+-30.1% (A=2) -> -99.6% (A=3) -> **-100.0%** (A=4), with sum omega collapsing
+0.0547 -> -0.0010 -> 0.00001. It is not a weight family degrading gracefully; it
+is a cancellation going to zero as p(3A) grows. Whatever agreement it showed at
+the deuteron was coincidence at the one atom where the cancellation had not yet
+completed.
+
+## Blast radius: the failed guess is dead code
+
+Checked all three entry points across live (non-`_deprecated`) code:
+
+  - `weight_scheme="jones_wenzl"` — **NO live caller passes it.** The only two
+    explicit callers, `binding_via_interface_knot.py:213,216` and
+    `delta_lambda_v_hat_z_transfer_phase5d_4.py:109,111`, both pass
+    `normalized_plancherel`.
+  - `omega_lambda_formula_guess` — genuinely reference-only, as its docstring
+    claims. Only the two definitions (computations/ + the qou-mass copy) and the
+    two docstring citations I added.
+  - `jones_wenzl_weight` — reached only from `ocneanu_weights_3A`, which is
+    reached only via `weight_scheme="jones_wenzl"`, which nothing passes.
+
+**So no committed witness is built on the failed guess.** That is a relief and
+it is also the direct consequence of reverting the default: had that change
+shipped, every bare `per_generator_V_hat_3A(Z, N)` caller would have moved onto
+it silently — including the `pyhecke-h3-vs-h3a-impact-comparison` producer the
+earlier review flagged.
+
+This retires that review finding as moot rather than unaddressed.
+
+## Housekeeping
+
+The `.cache/seminormal` and `.cache/ocneanu` .npz stores filled the container
+disk during these runs (0 MB free at the end of the A=4 sweep). Cleared; 13 GB
+back. Worth knowing before anyone repeats an inversion sweep: the caches are
+keyed per (n, shape, q) and grow fast at n = 12.
