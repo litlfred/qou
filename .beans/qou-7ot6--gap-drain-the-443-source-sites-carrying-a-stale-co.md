@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-19T13:05:24Z
-updated_at: 2026-08-22T10:10:26Z
+updated_at: 2026-08-22T10:24:30Z
 ---
 
 
@@ -330,3 +330,41 @@ of its own 36 findings behind a print cap.
     `FormLadderAnchorDominance.lean:195,198` — NOT yet inspected; the
     FormLadder pair look like computed ladder values rather than
     transcriptions, which would make them false positives.
+
+## 2026-08-22 (final) — 61 -> 2 on PR #5439
+
+The executable queue is essentially drained. Full arc this session:
+**448 reported -> 61 actionable (tranche b reclassification) -> 2**.
+
+Final counts: CODE 2, PROSE 390, ADJUDICATED 28, RECORD 1496.
+
+Last tranche: the five sites I had flagged as "possibly false positives"
+without opening them all turned out to be, in three distinct ways —
+recorded witness outputs, a computed topological value, and a documented
+deliberate round. Genuine drains were mass-from-generators (4 stale-2018
+under "CODATA 2022" docstrings), AtomicMass ame_u, and the two borromean
+ratios. Three probes routed at the registry, including a float64
+round-trip (`mp.mpf(repr(float(x)))`) that discarded the registry's exact
+values at the door.
+
+**BLOCKED ON OWNER — the only 2 remaining:**
+
+    content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean:104
+    content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.lean:114
+
+Both carry `137.035999084` as the target of an alpha_EM conjecture class.
+That is the CODATA-2018 **Cs-recoil determination** — a different
+measurement, not merely older digits. The two dispositions encode
+opposite claims:
+
+  (a) MARK `noqa: P31` — the framework deliberately targets the Cs-recoil
+      determination, as `experimental_constants.ALPHA_EM_INV` does.
+  (b) DRAIN to CODATA-2022 — the 2018 value is simply stale here.
+
+Context for the decision: #5361 just re-scoped this exact machinery. The
+live gap is **468 ppb structural** (the CS tower vs CODATA), four orders
+of magnitude above the ~1e-9 edition difference — so neither choice
+changes any conclusion, which is precisely why it should be decided on
+intent rather than on numbers.
+
+Once that is answered, this bean closes.
