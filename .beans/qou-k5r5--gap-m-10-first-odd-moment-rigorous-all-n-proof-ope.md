@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T20:55:51Z
+updated_at: 2026-08-22T21:06:37Z
 ---
 
 
@@ -229,3 +229,21 @@ INFRA NOTE: #5466 merged (2b2f0838). Caught a scary-looking working-tree state
 (80 phantom 'changes') = stale working tree after the merge agent rebased the
 shared branch out from under the main checkout; git reset --hard HEAD synced it,
 no data lost. Deficit probe put on independent branch to avoid the collision.
+
+
+
+SIGN ATTEMPT -> HONEST WALL (2026-08-22, PR #5489). Tried to prove kappa_n>=kappa
+(n>=13) by pinning the 2nd-order coefficient. Three diagnostics:
+ 1. deficit 'N lags P' = re-description (dN-dP = kappa_n-kappa identically);
+ 2. fit kappa_n-kappa=sum a_j n^{-j/2} UNSTABLE (a_1: 0.010->0.65->-3.6 with J;
+    mixed signs) => NOT clean bulk n^{-1/2};
+ 3. kappa_n-kappa PEAKS at n~32 then declines slowly; local exponent unstable at
+    n<=60 => not yet asymptotic.
+CONCLUSION: empirically kappa_n>kappa for ALL 13<=n<=60 (M_1>0 not in doubt), but
+the PROOF is out of numerical reach AND not a bulk 2nd-order-CLT statement - the
+correction is likely EDGE-sensitive (Tracy-Widom ~n^{-1/6..-1/3}), needing edge
+asymptotics of Cov(Sum_h,omega3). Genuine wall for the current toolkit; honest
+negative. Established results unaffected (kappa>0, M_1=Cov(Sum_h,omega3), n<=60).
+FRONTIER (precise): prove kappa_n>=kappa (n>=13) via EDGE-sensitive 2nd-order
+asymptotics (Tracy-Widom corrections), not bulk Kerov CLT. Audit:
+docs/audits/2026-08-22-covariance-kernel-M1-sign-attempt-wall.md.
