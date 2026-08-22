@@ -42,16 +42,47 @@ export default proof({
         "constraints, so it cannot be decreased below $0$ within the " +
         "feasible set. A negative eigenvalue of $G$ is real, but it is not " +
         "what the LP exploits.\n\n" +
-        "Part (iii)'s $4^6$ enumeration cites " +
-        "`confinement-lp.witness.json`, which lives in `_deprecated/` — " +
-        "already flagged as a `da-reproducibility` warn on " +
-        "`prop:confinement-topological`. Two further defects in that file, " +
-        "not previously recorded: its `gram_matrix` is **not symmetric** " +
-        "($\\max|G-G^\\mathsf{T}| = 0.4269$; a trace form is symmetric for " +
-        "any trace, stale values included, since $\\mathrm{tr}(ab) = " +
-        "\\mathrm{tr}(ba)$), and swapping rows 3 and 4 makes it exactly " +
-        "symmetric — so its committed `gram_eigenvalues` are the spectrum " +
-        "of an asymmetric matrix, not of a Gram.",
+        "**Part (iii) has been re-run live and does not hold** — " +
+        "`computations/probes/confinement_b3_enumeration_recheck_probe.py`, " +
+        "all 5460 words of length 1–6, witness committed. Its cited " +
+        "`confinement-lp.witness.json` is in `_deprecated/` (an open " +
+        "`da-reproducibility` warn on `prop:confinement-topological`), but " +
+        "$|\\Delta\\mathrm{net}|$ is **trace-independent** — it reads only " +
+        "`HA` and sums of NF coefficients — so the stale $\\mathrm{tr}_M$ " +
+        "that caused the deprecation never affected this part. It was always " +
+        "checkable.\n\n" +
+        "- *\"All other words have $|\\Delta\\mathrm{net}| > 0.01$\"* is " +
+        "**false**: 382 proton and 167 neutron words come in at or under " +
+        "0.01. **187 and 139 of those sit inside the producer's own " +
+        "enumerated lengths $\\{2,4,6\\}$**, so its own table contradicted " +
+        "its prose.\n" +
+        "- *\"The mirror … an order of magnitude worse\"* — the mirror is " +
+        "not the runner-up. It ranks **12th of 5460** for the proton and " +
+        "**111th** for the neutron; the best non-$\\mathcal{B}_3$ words " +
+        "reach 0.00159 and 0.00202 against the mirror's 0.00354 / 0.00395.\n" +
+        "- *\"and all shorter words\"* — the producer loops " +
+        "`for length in [2, 4, 6]`. **Odd lengths were never enumerated**, " +
+        "and they matter: the proton's second-best word overall is the " +
+        "length-5 $\\sigma_0^{-1}\\sigma_1\\sigma_0^{-1}\\sigma_1\\sigma_1$.\n" +
+        "- *\"$\\mathcal{B}_3$ achieves $|\\Delta\\mathrm{net}| = 0.000$\"* is " +
+        "**circular**: the producer sets `target_net = " +
+        "float(sum(b3_confined))`, so the target *is* $\\mathcal{B}_3$'s own " +
+        "confined net. Any operator in that line scores 0.\n\n" +
+        "Every figure survives both $q_0$ anchors (re-run under " +
+        "`QOU_Q0_ANCHOR=ideal`; counts identical). **This refutes the " +
+        "enumeration, not $\\mathcal{B}_3$** — a selection argument needs a " +
+        "metric not defined from the answer.\n\n" +
+        "The deprecated witness's `gram_matrix` is also **not symmetric** " +
+        "($\\max|G-G^\\mathsf{T}| = 0.46$), and the cause is the same stale " +
+        "trace, not a separate bug: rebuilding through the producer's own " +
+        "`build_gram` with the power rule $[1,z,z,z^2,z^2,z^3]$ gives " +
+        "$\\max|G-G^\\mathsf{T}| = 0.46$ and rank 6, while the canonical " +
+        "`pyhecke.gram.TR_M` — differing in **one entry**, " +
+        "$\\mathrm{tr}_M(e^-) = hz^2+z$ rather than $z^3$ — gives exactly " +
+        "0.0 and rank 5. A Gram is symmetric for any genuine trace; the " +
+        "power rule is not a trace. (`qou/6hm4` first read the asymmetry as " +
+        "a row-ordering error because exchanging $L_+$ and $L_-$ happens to " +
+        "symmetrise it — a coincidence in the numbers, corrected there.)",
     },
   ],
 });

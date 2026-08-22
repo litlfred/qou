@@ -215,3 +215,85 @@ Recorded as a `caveat` authorNote on `prf:confinement-topological`.
 - [x] Find the producer — `computations/_deprecated/confinement-lp.py`.
 - [x] Establish whether the row swap is real — it is, and it is independent of
       the stale traces.
+
+
+---
+
+## 2026-08-22 (second) — part (iii) re-run live; it does not hold
+
+`computations/probes/confinement_b3_enumeration_recheck_probe.py`, witness
+committed, 10/10 assertions. All **5460** words of length 1–6 over
+`{σ₀, σ₁, σ₀⁻¹, σ₁⁻¹}`, using the deprecated producer's own arithmetic
+verbatim so the comparison is like-for-like.
+
+### It was never blocked on the deprecated witness
+
+`|Δnet|` is **trace-independent**: `expand_inverse`, `reduce_nf` and `crossing`
+read only `HA`, and the metric is a sum of NF coefficients. The stale `tr_M`
+that got the witness retired does not enter. So part (iii) was checkable the
+whole time, and its conclusions were wrong the whole time. The
+`da-reproducibility` warn framed this as *"not backed by a live witness"* —
+citation hygiene. The actual problem is that the claims are false.
+
+### Four claims, four problems
+
+| proof says | measured |
+|---|---|
+| "all other words have `|Δnet| > 0.01`" | **382** proton, **167** neutron at or under 0.01 |
+| "the mirror … an order of magnitude worse" | mirror ranks **12 / 5460** (proton), **111 / 5460** (neutron) |
+| "and all shorter words" | producer loops `for length in [2, 4, 6]` — **odd lengths never enumerated** |
+| "`B₃` achieves `|Δnet| = 0.000`" | **circular** — `target_net = float(sum(b3_confined))` |
+
+- **The first claim fails inside the producer's own range.** 187 proton and 139
+  neutron words at ≤ 0.01 have length ∈ {2, 4, 6}. Its own sorted table would
+  have shown them; `group_results[:12]` prints twelve rows.
+- **Odd lengths matter.** The proton's second-best word overall is the
+  **length-5** `σ₀⁻¹σ₁σ₀⁻¹σ₁σ₁` at 0.001591 — better than every length-6 word
+  except `B₃`, and better than the mirror. 195 odd-length proton words come in
+  under 0.01.
+- **`B₃` scoring 0 is a tautology.** The target is `B₃`'s own confined net, so
+  any operator written into that line scores 0. Rank 1 of 5460 is not evidence
+  of selection.
+
+Every figure survives both `q₀` anchors — re-run under `QOU_Q0_ANCHOR=ideal`,
+counts identical (382/195/187, 167/28/139), `B₃` rank 1, proton mirror rank 12;
+the neutron mirror moves 111 → 109 inside a tie cluster. Measured, not assumed.
+
+**This refutes the enumeration, not `B₃`.** A selection argument needs a metric
+that is not defined from the answer.
+
+### Correction: the asymmetry is the stale trace, not a row swap
+
+This bean diagnosed `max|G - Gᵀ| = 0.4269` as a row-ordering error because
+exchanging rows `L₊` and `L₋` symmetrises it exactly. **That was a coincidence
+in the numbers.** Running the producer's own `build_gram` with two trace
+vectors settles it:
+
+```
+stale power rule [1, z, z, z², z², z³]   max|G-Gᵀ| = 0.4612   rank 6   det -0.152
+canonical pyhecke TR_M                    max|G-Gᵀ| = 0.0      rank 5   det  4.0e-17
+                                          spec [-0.7527, 0, 0.7527, 0.7527, 0.7527, 4.2303]
+```
+
+They differ in **one entry** — `tr_M(e⁻) = z³` versus `h z² + z`. A Gram is
+symmetric for any *genuine* trace, since `tr(ab) = tr(ba)`; the power rule is
+not a trace, so the Gram it builds is not symmetric. One wrong entry turns a
+symmetric rank-5 form into an asymmetric rank-6 one.
+
+And the producer's line 41 imports the corrected `TR_M` from `pyhecke.gram`,
+then line 58 overwrites it with the power rule. The fix was present and unused.
+
+The canonical rank is **5** — the trace-form radical of `qou/k4f8`, which is
+also the unlabelled `λ₀` in the proof's own spectrum. Three views of one fact.
+
+## Next
+
+- [ ] Part (i) needs rewriting: correct `λ₋`, say `λ₀ = 0` and what it means,
+      replace the descent argument. **Authoring.**
+- [ ] Part (iii) needs a metric not defined from `B₃`, or the claim retracted.
+      **Authoring.**
+- [ ] The `da-reproducibility` warn's `severity: minor` reads as citation
+      hygiene; the claims are false, not merely unwitnessed. Owner call.
+- [x] Re-run the enumeration live — done, refuted.
+- [x] Establish the cause of the asymmetry — the stale `tr_M(e⁻)`, not a row
+      swap. This bean's earlier diagnosis corrected.
