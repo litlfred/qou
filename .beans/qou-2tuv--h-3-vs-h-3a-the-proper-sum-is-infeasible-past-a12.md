@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T12:14:21Z
+updated_at: 2026-08-22T15:33:58Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -963,3 +963,84 @@ The `.cache/seminormal` and `.cache/ocneanu` .npz stores filled the container
 disk during these runs (0 MB free at the end of the A=4 sweep). Cleared; 13 GB
 back. Worth knowing before anyone repeats an inversion sweep: the caches are
 keyed per (n, shape, q) and grow fast at n = 12.
+
+
+---
+
+# CORRECTION: normalized_plancherel never hit a pole — I tested against the guard band
+
+The `in range?` column in the table above is **wrong for `norm_planch`**. It was
+computed as `mx < CAP` with `CAP = 0.98 * q0` — the `phi_q_safe` **guard band**,
+not the radius. The radius is `q0 = 1.109979`.
+
+    max|V_hat| = 1.08837   vs   0.98*q0 = 1.087779   -> over the GUARD by 0.05%
+    max|V_hat| = 1.08837   vs        q0 = 1.109979   -> INSIDE the RADIUS by 1.9%
+
+Re-decided against the true radius, single **and** cross channel:
+
+    atom       weights    max|V|     vs q0  #sing>q0  #sing>cap | max|ViVj|    vs q0  #cross>q0
+       D     inversion   1.28242      OVER         2          2 |   1.14576     OVER          1
+       D   norm_planch   1.08837    inside         0          1 |   0.70839   inside          0
+       T     inversion   1.28242      OVER         3          3 |   1.14576     OVER          1
+       T   norm_planch   1.08837    inside         0          2 |   0.70839   inside          0
+
+**`normalized_plancherel` has no pole anywhere** — zero single-channel arguments
+and zero cross-channel arguments exceed `q0`. The cross channel, which takes
+*products* `|V_i·V_j|` and was the one place products could plausibly cross the
+radius, tops out at 0.70839 — nowhere near. Only `inversion` genuinely exceeds
+the radius (1.28242, over by 15.5%).
+
+What actually happens to `norm_planch` is that 1–2 single terms land in the 2%
+guard band and get **clamped** by `phi_q_safe` (which clips to ±0.98·q0 — it
+never returns `inf` for these).
+
+## The clamp accounts for none of the error
+
+Re-running with the clamp effectively disabled:
+
+    atom  cap_frac  #clamped   tower(atom)          B_MeV         err%
+       D      0.98         1   3.18958e+07   10807718.0113   +4.858e+08
+       D   0.99999         0   3.29906e+07   10807718.0113   +4.858e+08
+       T      0.98         2   5.85012e+07   51579622.7693   +6.081e+08
+       T   0.99999         0   6.06909e+07   53118549.4878   +6.263e+08
+                                                AME D 2.2245 / T 8.4818
+
+Zero terms clamped, every argument strictly inside the radius, and the tower is
+still wrong by **~5x10^8 percent**. D's error does not move at all; T's moves 3%
+relative inside an eight-order-of-magnitude discrepancy.
+
+## What this settles
+
+**The radius-of-convergence hypothesis is FALSIFIED.** It was one of the three I
+left open. On the correct weights the Φ_q tower is finite, fully in-radius,
+unclamped — and catastrophically wrong. Convergence is not the defect.
+
+Two hypotheses remain, and both are about the tower's *meaning*, not its
+arithmetic:
+  - the Φ_q tower is the wrong consumer for V_hat, or
+  - V_hat's normalisation differs from the one the tower expects.
+
+The 8-order gap and the fact that it *grows* with A (4.9e8 -> 6.3e8 -> 2.2e8 at
+D/T/4He on the clamped path) points at a per-generator scale factor, since the
+generator count grows as 3A−1. That is a measurement I can make next.
+
+## Precedent I walked into
+
+`_li_2_q_util.py:157` already documents this exact failure mode, from bean
+`qou-cw27`: *"`li_2_q` hard-returned `inf` for `|z| >= q`, and that GUARD — not
+the function — is what made the atom-word brane tower 'diverge for Z >= 2'."*
+Same trap, one guard over. Worth a standing rule: when a verdict says "pole",
+print the argument, the radius, and the guard as three separate numbers.
+
+## What still stands from the run above
+
+Unaffected — these are measurements on raw V_hat, taken before any tower call:
+  - max|V_hat| is A-invariant (1.28242 / 1.08837 at A = 2, 3, 4).
+  - `inversion` genuinely exceeds the radius.
+  - `jones_wenzl` collapses to zero (-30.1% -> -99.6% -> -100.0%) and is dead code.
+  - The Φ_q tower is the defect, not the weight scheme — now on much firmer
+    ground, since the surviving explanation cannot be convergence.
+
+Cross-channel maxima were measured at A = 2, 3. At A = 4 the single-channel
+conclusion follows from the already-measured max|V_hat| = 1.08837 < q0; the
+cross maximum there was not re-measured.
