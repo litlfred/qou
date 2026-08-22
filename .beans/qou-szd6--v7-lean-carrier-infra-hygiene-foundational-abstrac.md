@@ -221,3 +221,52 @@ declarations in **one file** claim it.
 The two orphan labels (`def:chiral-sector-coords`, `prop:self-dual-curvature`)
 name blocks that do not exist — either the block was deleted or never written.
 Worth a decision: drop the label, or write the block.
+
+## 2026-08-22 — correcting my own recommendation: MOVE the labels, do not remove them
+
+The previous entry recommended "removing the four stale `\label` lines so each
+label has exactly one owner". **That is wrong for three of the four**, and I
+checked before acting rather than after.
+
+For `prop:leray-profile`, `lem:volume-from-rigidity` and `prop:brane-boundary`
+the label appears **exactly once in the whole tree** — on the superseded
+structure, **not** on the theorem the block references. Removing it would delete
+the label from the corpus entirely and break the label test for those blocks.
+The correct operation is **move**: put the label on the declaration the block
+actually points at, so it has one owner *and* the right one.
+
+`prop:q-jacobiator` is different again. Its second occurrence reads
+`\label{prop:q-jacobiator}`, **conclusion at line 571** — a deliberate
+cross-reference from a hypothesis-carrier to a conclusion elsewhere, not a
+competing claim. Removing it may well be wrong too. **Left alone.**
+
+So the four "stale labels" are three moves and one probable non-defect.
+
+### Done: `prop:leray-profile` moved
+
+Best-evidenced of the three, and the only one changed here:
+
+- the block `fluid-dynamics/leray-profile.ts` references
+  `QOU.FluidDynamics.leray_profile`;
+- that theorem's docstring **already named the block in prose**
+  (`**Leray-profile reconstruction** ([prop:leray-profile])`) — it simply
+  lacked the machine-readable form;
+- the label sat on `TruncatedLerayProfile`, which is the *data the proposition
+  is stated over*, not the proposition.
+
+Moved. Verified exactly one declaring owner remains, and it is on the referenced
+theorem. Both modules compile (`lean-direct-cone -k`, 21-module cone, err=0).
+`content_validate` unchanged at the pre-existing 29 issues — no regression.
+
+**One trap worth recording:** my first draft of the explanatory note in
+`GaugeFieldFluidDynamics.lean` wrote the label out in full. That would have
+registered the docstring as a **second owner** to any label-based tool — the
+same false-positive-from-your-own-changelog mode that the `residual_eq_zero`
+census hit. Reworded to name the label indirectly.
+
+### Remaining, unchanged
+
+`lem:volume-from-rigidity` and `prop:brane-boundary` want the same move; neither
+target theorem names its block in prose, so the evidence is one step weaker than
+the leray case and each deserves its own look. `prop:q-jacobiator` left alone
+pending a read of whether the cross-reference is intentional.
