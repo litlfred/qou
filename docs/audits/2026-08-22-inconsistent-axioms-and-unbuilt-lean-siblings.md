@@ -300,8 +300,9 @@ The two large drops are the interesting ones.
 `BigOperators.Fin` and `RepresentationTheory.FDRep` — none of which supplies
 `Mathlib.Data.Real.Basic` — and did not set `autoImplicit false`. So every
 `ℝ` in the file was **auto-bound as a free type variable**, and 85 errors
-read `failed to synthesize OfNat ℝ 0`. One import line fixed all 85. This is
-the single highest-value thing to check in any file from this population.
+read `failed to synthesize OfNat ℝ 0`. One import line fixed all 85.
+
+**I then tested whether that generalises, and it does not — see §4c.**
 
 **A 22-case `match` exceeded the elaborator's heartbeat budget.**
 `heckeH8DimQ` (the q-hook-length dimensions of the 22 partitions of 8) timed
@@ -316,3 +317,42 @@ error.
 `typeclass instance problem is stuck`, one `simp` failure, one `rewrite`
 failure. That is formalisation work, not drift, and it is **not** done here.
 The file remains in the failing set.
+
+### 4c. The `ℝ`-is-not-`Real` root cause does NOT generalise (measured)
+
+§4b's one-import fix was dramatic enough that I expected it to be the
+population's dominant root cause, and wrote as much. Tested, it is not.
+
+**31** of the 73 failing files use `ℝ` without importing
+`Mathlib.Data.Real` directly. Each was given the import, re-run, and the
+import kept **only** if the error count actually dropped
+([`2026-08-22-real-import-experiment.tsv`](2026-08-22-real-import-experiment.tsv)):
+
+| outcome | files |
+|---|---:|
+| improved | **2** |
+| no change | 29 |
+
+So the hypothesis is **refuted as a general rule: 2 of 31, about 6 %**. Most
+of those files reach `Real` transitively through some `Mathlib.Analysis.*`
+import, so their `ℝ` is genuinely Mathlib's and their errors are elsewhere.
+`frobenius-codim-universal` was unusual in importing only
+`Algebra.Basic` / `BigOperators.Fin` / `RepresentationTheory.FDRep`, none of
+which pulls `Real` in.
+
+The two that improved are kept:
+
+| file | errors | note |
+|---|---|---|
+| `mass-theory/knot-factor-borromean-composite` | 6 → **0** | now compiles |
+| `mass-theory/reeb-bundle` | 3 → 1 → **0** | the import exposed `Real.exp` and `Real.pi` as unknown; adding `SpecialFunctions.Exp` and `Trigonometric.Basic` closed it |
+
+`reeb-bundle` is the pattern in miniature and the reason the *empirical*
+form of this test matters: the first import does not fix the file, it
+changes which error is visible. A sweep that added the import everywhere on
+the strength of §4b would have touched 29 files for no benefit while
+claiming a root-cause fix.
+
+**Standing count after this branch: 73 → 60 failing** (11 repaired earlier,
+3 stubs deleted, 2 here; `frobenius-codim-universal` improved 100 → 8 but
+still fails and is still counted).
