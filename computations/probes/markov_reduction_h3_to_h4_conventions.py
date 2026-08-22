@@ -70,7 +70,13 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
 
-Q = mp.mpf("1.1099785827513808")   # proton pin (experimental layer, per the
+# The proton pin, IMPORTED rather than hardcoded. The hardcoded literal this
+# replaced carried 17 digits while the probe computes at 50 dps, and a
+# hand-copied pin is exactly the failure `q0_stamp.stamp_q0_anchor` refuses to
+# stamp: a producer can silently drift from the pin its witness declares.
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+
+Q = mp.mpf(Q_50_DIGIT_STR)         # proton pin (experimental layer, per the
 H = Q - 1 / Q                      # 2026-08-07 directive)
 
 Z_C = 1 / (mp.sqrt(Q) + 1 / mp.sqrt(Q))   # sqrt(q)/(q+1)  -- excised
@@ -211,7 +217,11 @@ def main() -> int:
     wb.add_assertion("reduction_holds_convention_D",
                      computed=str(bool(okD)), expected="True",
                      tolerance="1e-30", source="over-determination, 9 words")
+    # q0Value is REQUIRED beside the anchor: `stamp_q0_anchor` is a no-op once
+    # a payload declares `q0Anchor` itself, so a hand-declared anchor with no
+    # value lands as Q0_VALUE_MISSING -- the audit cannot check the pin.
     wb.save({"q0Anchor": "proton",
+             "q0Value": Q_50_DIGIT_STR,
              "q0AnchorReason": "characters evaluated at the experimental pin "
                                "per the 2026-08-07 directive; the question is "
                                "about z, not the anchor"})
