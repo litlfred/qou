@@ -385,6 +385,69 @@ def main() -> int:
               f"(extract is full-rank — H_9 closed via the S_6×S_3 "
               f"permutation basis)")
 
+    # ── H_6 extract frame guard ───────────────────────────────────────
+    #
+    # `h6_data` was LOADED (and given its own `--h6-witness` flag) but never
+    # used: its only consumer, `reconstruct_chi_h6_via_sublemma`, was defined
+    # and never called anywhere in the repo. Measured before wiring it in:
+    # swapping the colour-blind H_6 extract for the colour-weighted one — A
+    # matrices differing by 1.2e-4 — changed ZERO leaf fields of this witness.
+    # A reader (or an agent tracing convention propagation) would reasonably
+    # conclude the H_6 interface was cross-checked here. It was not. Bean
+    # `qou-z6mu`.
+    #
+    # The function itself was never broken — it reproduces all 11 χ^ξ from the
+    # extracted A matrices to 5.5e-15. So it is wired in rather than deleted,
+    # as a guard on the CONSUMED EXTRACT: does it still describe the canonical
+    # colour-weighted p-n interface? Measured, it discriminates exactly that:
+    #
+    #     canonical (colour-weighted) extract -> 5.5e-15   PASS
+    #     colour-blind (pre-fix) extract      -> 9.2e-05   FAIL
+    #
+    # i.e. had this been live, it would have caught the frame defect this whole
+    # arc chased.
+    #
+    # SCOPE — this is deliberately NOT a claim about the braids above.
+    # `with_interface` supplies the canonical colour-weighted interface, which
+    # is what the extract encodes; `tritium_braid()` / `he3_braid()` build their
+    # own H_9 test words with a hardcoded `-H/2` inner. That is not a defect to
+    # be "fixed" here: Path A ≡ Path B is a STRUCTURAL identity that holds for
+    # any word, so it is convention-agnostic by construction. (Positionally
+    # those test braids differ from `atom_canonical_crossings` in 18 of 35
+    # generator indices and 25 of 35 `d` values — they are a different braid,
+    # not a drifted one. Whether that is intentional or drift from an older
+    # `build_atom_nf` is a separate question, filed, not settled here.)
+    #
+    # Only the `pn` inner is guarded: the H_6 extract on disk is the deuteron
+    # I_pn one, and no H_6 I_pp extract exists.
+    h6_guard_max_rel = None
+    try:
+        from sublemma_2_1_A_operator_extract import with_interface
+        _w_p, _w_n = _proton_body(), _neutron_body()
+        _pred = reconstruct_chi_h6_via_sublemma(_w_p, _w_n, "pn", h6_data)
+        _canonical_inner = with_interface(_w_p, _w_n, n1=3)
+        h6_guard_max_rel = 0.0
+        for _xi in partitions_of(6):
+            _p = _pred.get(_xi)
+            if _p is None:
+                continue
+            _d = complex(chi_lambda_fast(_xi, _canonical_inner))
+            h6_guard_max_rel = max(h6_guard_max_rel,
+                                   abs(_p - _d) / (1 + abs(_d)))
+    except Exception as _e:  # noqa: BLE001
+        print(f"  [H_6 frame guard] SKIPPED: {type(_e).__name__}: {_e}")
+
+    if h6_guard_max_rel is not None:
+        _ok = h6_guard_max_rel < 1e-9
+        print(f"  [H_6 frame guard] consumed extract vs canonical "
+              f"colour-weighted I_pn: max rel = {h6_guard_max_rel:.2e}  "
+              f"{'OK' if _ok else 'FRAME MISMATCH'}")
+        if not _ok:
+            print("      The H_6 extract on disk does not describe the "
+                  "canonical p-n interface. Regenerate it with "
+                  "`python3 sublemma_2_1_A_operator_extract.py`.")
+    print()
+
     from witness_base import WitnessBuilder
     builder = (
         WitnessBuilder(f"sublemma-2-1-h9-{args.atom}-verify",
@@ -436,6 +499,31 @@ def main() -> int:
             source="iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3",
         )
     )
+    # See the H_6 frame guard block above. Recorded as data + assertion so the
+    # check is auditable rather than only printed — the whole point of the bean
+    # is that a loaded-but-unused input left no trace either way.
+    if h6_guard_max_rel is not None:
+        # Serialized at its TRUE precision (`.17g` — float64 round-trip), not
+        # via `_precision.fmt`. The first version here wrote
+        # `fmt(mp.mpf(h6_guard_max_rel))`, which padded a float64 out to 50
+        # digits, and `witness_float64_padding_audit` caught it verbatim:
+        #     claims 0.00000000000000551318960971071053414709210922808760...
+        #     really 5.5131896097107105e-15
+        # The residual is genuinely float64 — `reconstruct_chi_h6_via_sublemma`
+        # is numpy (np.kron / np.trace) and `chi_lambda_fast` returns complex —
+        # so there is no mpf to carry from the source here, and dressing it in
+        # 50 digits would claim precision the arithmetic never had. AGENTS.md
+        # names this exact move: "do NOT stringify the float" to fake digits.
+        builder.add_data("h6_extract_frame_guard_max_rel",
+                         f"{h6_guard_max_rel:.17g}")
+        builder.add_assertion(
+            "h6_extract_matches_canonical_weighted_pn_interface",
+            computed="1" if h6_guard_max_rel < 1e-9 else "0",
+            expected="1",
+            source=("reconstruct_chi_h6_via_sublemma vs direct χ^ξ on "
+                    "with_interface(...) — discriminates colour-weighted "
+                    "(5.5e-15) from colour-blind (9.2e-05)"),
+        )
     # Caveat only applies when the consumed extract is under-determined.
     # With the full S_6×S_3 permutation-basis extract every λ ⊢ 9 is
     # over-determined (n_underdet = 0), so no caveat is emitted.
