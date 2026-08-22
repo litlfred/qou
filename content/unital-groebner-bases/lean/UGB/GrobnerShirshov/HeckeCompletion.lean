@@ -11927,20 +11927,30 @@ def WStar (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
   bsWord₂ i₂ i₁ j₁ ++ ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)
 
 /-- **The U lineage's whole closing run**: `fRun` then `closingBs`, carrying the
-three bystanders throughout.
+bystanders throughout, from a `TOpen` word to `WStar`.
 
-The collision hypotheses discharge in the two shapes the measurement predicted.
-`Vh` and `V1` open `σᵢ₋₂` while every word this run touches opens `σᵢ₋₁`, so one
-`List.cons.inj` kills both. `U1` opens `σᵢ₋₁` too — it is the *same lineage*, split
-off by `quadPair` — and is separated by **length**: it differs from the run's
-words only in carrying `descWord jm j₂ ++ [σᵢ]` where they carry
-`σ_j₁ :: (descWord jm j₂ ++ [σᵢ])`.
+**One hypothesis covers all five obligations.** Every word this run touches has
+the form `A ++ X` for the *same* left context `A = [σᵢ₋₁] ++ descWord i₂ jpp` and
+an `X` of the *same* length — because both rules involved are length-preserving.
+Far-commutation swaps two adjacent letters; Bokut–Shiao takes
+`descWord i j ++ [σᵢ]` to `σᵢ₋₁ :: σᵢ :: descWord (i−1) j`, and
+`|descWord i j| = |descWord (i−1) j| + 1`. So `hsep` — no bystander equals `A`
+followed by anything of that length — is exactly what is needed, and it is
+*discharged* differently per bystander, which is the point:
 
-No length *formula* is needed, which is why this stays inside the file's
-"no length computation" idiom: the same `descWord`s occur on both sides, so their
-lengths cancel and `omega` closes the goal treating them as opaque. The one input
-is `|u| + |v| = |descWord i jppp|`, from the split hypothesis by `congrArg
-List.length`. -/
+* a word opening `σᵢ₋₂` fails at the first letter;
+* `U1`, which opens `σᵢ₋₁` and shares the whole context, fails on **length**: it
+  is `A ++ X₀` with `|X₀|` one short, so `List.append_cancel_left` reduces the
+  question to `|X₀| ≠ |X|`.
+
+No length *formula* appears: the same `descWord`s occur on both sides, so `omega`
+closes each obligation with their lengths opaque.
+
+An earlier version of this lemma packaged the hypothesis as "every bystander
+opens `σᵢ₋₂`". That is **false at the call site** — the U run acts on `TOpen`'s
+third entry, so `U1` is a bystander and opens `σᵢ₋₁` — and the lemma, though
+true and sorry-free, could not be applied. Sorry-freeness does not check
+instantiability. -/
 theorem closingU (hn : 0 < n) (hp : HeckeParams)
     {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
@@ -11948,8 +11958,9 @@ theorem closingU (hn : 0 < n) (hp : HeckeParams)
     (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
     (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val)
     (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
-    (hV : ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
-      ∃ t : Monomial (HeckeGen n), r = (⟨i₂⟩ : HeckeGen n) :: t) :
+    (hsep : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ X : Monomial (HeckeGen n),
+      X.length = (descWord i jppp).length + (descWord jm j₂).length + 6 →
+      r ≠ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp) ++ X) :
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (AlgElement.ofTerms (L₁ ++
         (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
@@ -11957,51 +11968,79 @@ theorem closingU (hn : 0 < n) (hp : HeckeParams)
             ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))),
           c) :: L₂))
       (AlgElement.ofTerms (L₁ ++ (WStar i i₁ i₂ j₁ j₂, c) :: L₂)) := by
-  have hne : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
-  -- every word this run touches opens `σᵢ₋₁`; every bystander opens `σᵢ₋₂`
-  have hhead : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∀ z : Monomial (HeckeGen n),
-      r ≠ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp) ++ z := by
-    intro r hr z hcon
-    obtain ⟨t, ht⟩ := hV r hr
-    rw [ht] at hcon
-    simp only [List.cons_append] at hcon
-    exact hne (List.cons.inj hcon).1
-  have hfr := fRun (i := i) (j₁ := j₁) (jp := jp) (jpp := jpp) (jppp := jppp)
-    hn hp hjp hjpp hjppp (by omega) c hc L₁ L₂
-    ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp)
-    ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))
-    (fun q hq => by
-      have := hhead q hq (descWord i jppp ++
-        ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩, ⟨jp⟩] ++
-          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))))
-      simpa only [List.append_assoc] using this)
-    (fun u v _ _ r hr => by
-      have := hhead r hr (u ++ ((⟨jp⟩ : HeckeGen n) ::
-        (v ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++
-          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))))))
-      simpa only [List.append_assoc] using this)
-    (fun u v _ _ r hr => by
-      have := hhead r hr ([(⟨jp⟩ : HeckeGen n)] ++ (u ++ ((⟨j₁⟩ : HeckeGen n) ::
-        (v ++ ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++
-          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))))))
-      simpa only [List.append_assoc] using this)
-  -- `descWord i₁ j₁` is the run's left context plus two letters -- NOT the left
-  -- context itself, which is where the first version of this proof went wrong
+  -- the three `descWord` length relations the obligations need; each is
+  -- `congrArg List.length` on a split or a cons, never a closed formula
+  have hDsplit : (descWord i j₂).length
+      = (descWord i jppp).length + (descWord jpp j₂).length := by
+    have := congrArg List.length (descWord_split (k := jppp) (k' := jpp)
+      (i := i) (j := j₂) hjppp (by omega) (by omega))
+    simpa only [List.length_append] using this
+  have hDjpp : (descWord jpp j₂).length = (descWord jm j₂).length + 3 := by
+    rw [descWord_cons_le (i' := jp) (i := jpp) (j := j₂) hjpp (by omega),
+      descWord_cons_le (i' := j₁) (i := jp) (j := j₂) hjp (by omega),
+      descWord_cons_le (i' := jm) (i := j₁) (j := j₂) hjm hj₂]
+    simp
+  have hDi₁ : (descWord i j₂).length = (descWord i₁ j₂).length + 1 := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega)]
+    simp
   have hAsplit : descWord i₁ j₁
       = ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp) ++ descWord jp j₁ := by
     rw [descWord_cons_le (i' := i₂) (i := i₁) (j := j₁) h₂ (by omega),
       descWord_split (k := jpp) (k' := jp) (i := i₂) (j := j₁) hjpp
         (by omega) (by omega)]
     simp
+  have hjpj₁ : descWord jp j₁ = [(⟨jp⟩ : HeckeGen n), ⟨j₁⟩] := by
+    rw [descWord_cons_le (i' := j₁) (i := jp) (j := j₁) hjp (by omega),
+      descWord_self]
+  have hfr := fRun (i := i) (j₁ := j₁) (jp := jp) (jpp := jpp) (jppp := jppp)
+    hn hp hjp hjpp hjppp (by omega) c hc L₁ L₂
+    ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ jpp)
+    ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+    (fun q hq => by
+      refine hsep q hq _ ?_
+      simp only [List.length_append, List.length_cons, List.length_nil]
+      omega)
+    (fun u v huv _ r hr => by
+      have hl := congrArg List.length huv
+      simp only [List.length_append] at hl
+      have := hsep r hr (u ++ ((⟨jp⟩ : HeckeGen n) ::
+        (v ++ ([(⟨j₁⟩ : HeckeGen n), ⟨jpp⟩, ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))))))
+        (by
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
+      simpa only [List.append_assoc] using this)
+    (fun u v huv _ r hr => by
+      have hl := congrArg List.length huv
+      simp only [List.length_append] at hl
+      have := hsep r hr ([(⟨jp⟩ : HeckeGen n)] ++ (u ++ ((⟨j₁⟩ : HeckeGen n) ::
+        (v ++ ([(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)])))))))
+        (by
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
+      simpa only [List.append_assoc] using this)
   have hbs := closingBs (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
     hn hp h₁ h₂ hj₂ (by omega) c hc L₁ L₂
     (fun q hq => by
-      have := hhead q hq (descWord jp j₁ ++ bsWord₁ i j₂)
+      have := hsep q hq (descWord jp j₁ ++ bsWord₁ i j₂)
+        (by
+          rw [hjpj₁, bsWord₁]
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
       rw [hAsplit]
       simpa only [List.append_assoc] using this)
     (fun q hq => by
-      have := hhead q hq (descWord jp j₁ ++ ([(⟨i₁⟩ : HeckeGen n)] ++
+      have := hsep q hq (descWord jp j₁ ++ ([(⟨i₁⟩ : HeckeGen n)] ++
         ((⟨i⟩ : HeckeGen n) :: descWord i₁ j₂)))
+        (by
+          rw [hjpj₁]
+          simp only [List.length_append, List.length_cons,
+            List.length_nil]
+          omega)
       rw [bsWord₁, hAsplit]
       simpa only [List.append_assoc] using this)
   rw [trio_out_eq_fRun_source] at *
@@ -12015,6 +12054,65 @@ theorem closingU (hn : 0 < n) (hp : HeckeParams)
   rw [hUeq] at hfr
   rw [WStar]
   exact hfr.trans hbs
+
+/-- **`closingU` instantiated at `TOpen`** — the U lineage's run, in place, with
+the real three bystanders.
+
+This exists to *check that `closingU`'s hypothesis is reachable*, which the
+previous version's was not. The discharge is the measured one: `Vh` and `V1`
+open `σᵢ₋₂` and fail at the first letter; `U1` opens `σᵢ₋₁` and shares the whole
+left context, so it fails on length — it is `A ++ X₀` with `|X₀|` exactly one
+short of what `hsep` quantifies over, and taking `List.length` of both sides is
+the whole argument. -/
+theorem closingU_at_TOpen (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ jm jp jpp jppp : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val) (htop : jppp.val ≤ i₁.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (TOpen i i₁ i₂ j₁ j₂ jm jp jpp jppp (hp.q - hp.q⁻¹))
+      (AlgElement.ofTerms
+        [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+         (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1),
+         (WStar i i₁ i₂ j₁ j₂, -(hp.q - hp.q⁻¹)),
+         (trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+            ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+              (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]) := by
+  have hne : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
+  have key := closingU (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jm := jm) (jp := jp) (jpp := jpp) (jppp := jppp)
+    hn hp h₁ h₂ hjm hjp hjpp hjppp hj₂ htop
+    (-(hp.q - hp.q⁻¹)) (neg_ne_zero.mpr hp.h_ne_zero)
+    [(trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          ((⟨j₁⟩ : HeckeGen n) :: descWord jm j₂))), hp.q - hp.q⁻¹),
+     (trioLeft i i₂ i₁ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++ descWord jm j₂)), 1)]
+    [(trioLeft i i₁ i₂ jpp jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩] ++
+        ([(⟨j₁⟩ : HeckeGen n), ⟨jp⟩] ++
+          (descWord jm j₂ ++ [(⟨i⟩ : HeckeGen n)]))), -1)]
+    (by
+      intro r hr X hX hcon
+      simp only [List.map_cons, List.map_nil, List.cons_append, List.nil_append,
+        List.mem_cons, List.not_mem_nil, or_false] at hr
+      rcases hr with hr | hr | hr <;> subst hr
+      -- Vh and V1 open σᵢ₋₂; the run's words open σᵢ₋₁
+      case _ | _ =>
+        · rw [trioLeft] at hcon
+          simp only [List.cons_append] at hcon
+          exact hne (List.cons.inj hcon).1
+      -- U1 shares the context; it is one letter short
+      case _ =>
+        · have hlen := congrArg List.length hcon
+          rw [trioLeft] at hlen
+          simp only [List.length_append, List.length_cons, List.length_nil,
+            hX] at hlen
+          omega)
+  exact key
 
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
