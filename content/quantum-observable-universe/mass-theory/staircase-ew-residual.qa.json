@@ -1754,6 +1754,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.382Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1773,6 +1788,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.494Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-em-dash": [
@@ -1792,6 +1822,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 135 words)"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.550Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-triples": [
@@ -1811,6 +1856,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 135 words)"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.616Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1830,6 +1890,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.670Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-meta-commentary": [
@@ -1849,6 +1924,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.727Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1868,6 +1958,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.782Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-performed-warmth": [
@@ -1887,6 +1992,21 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.822Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (177w, conj)."
       }
     ],
     "trap-superlative": [
@@ -1906,6 +2026,22 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.870Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No maximum-strength claims; the k=2 case is explicitly reported as untestable, which is honest scoping.",
+        "notes": "NOTE: the conjecture quantifies over all k >= 2 while its own text records k=2 as degenerate and untestable and k=4 as verified only through a hand-picked index pair. Scope the statement to k >= 3, or state the k=2 convention."
       }
     ],
     "trap-nonspeakable": [
@@ -1925,6 +2061,22 @@
         "reviewed_at": "2026-08-15T10:31:00.521Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "68254bbf2dab",
+          "ts": "7503102f478a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:43.924Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Empirical bullets and Lean-status paragraph are speakable.",
+        "notes": "STRUCTURAL MATH FLAG (not a trap): the conjecture states the matrix image 'has two nonzero eigenvalues', but the block's own k=4 evidence says 'the top eigenvalue is degenerate' and cites the pair e[254]/e[188] out of a dim-768 spectrum - both incompatible with exactly two nonzero eigenvalues. See report."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1948,5 +2100,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:16:43.924Z"
 }

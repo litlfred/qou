@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.197Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'the simple convention ",
+        "notes": "V_shell| = prod |V_i| does NOT respect the Hecke-algebra structure ... while the canonical Markov trace does' - the contrast is the content (it explains why an earlier 1.326x ratio was an artifact).|False-positive class: substantive mathematical contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.237Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1428,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "11 stylistic spaced dashes in 644 words (1.71/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.286Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "12 spaced em-dashes in 854 words (1.4 pct), several appending afterthoughts rather than punctuating: 'The equality is algebraic - it follows from the Hoefsmit seminormal form ...'; 'was a product-volume artifact - the simple convention ... does NOT respect ...'; 'proton/neutron distinction enters only through the inter-nucleon crossings, which are outside ...'.",
+        "notes": "STRUCTURAL (spans 4 paragraphs). Proposed: convert the two appending dashes to full stops or colons; keep the genuine parentheticals."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 644 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.347Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.400Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.457Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1566,23 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.510Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Block-final closer restates the thesis after the substantive claim: 'This is the operator-level signature of Z=2/N=2 closed-shell structure in the substrate algebra; the spin-involution corollary gives the structural symmetry that pins it down.'",
+        "notes": "NOT FIXED (math-adjacent, and the surrounding paragraph carries sweep damage - see trap-nonspeakable). Proposed: drop the clause after the semicolon."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1602,21 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.558Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1636,22 @@
         "reviewed_at": "2026-08-15T10:31:00.320Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.629Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'to machine precision', 'EXACTLY at magic-shell atoms', 'does NOT' - claims are precise rather than inflated.",
+        "notes": "REGISTER NOTE (clarity-grad-style, not trap): two all-caps emphasis words (EXACTLY, NOT) in a proof block; lowercase with italics if kept."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1672,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "3 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.704Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Sweep damage renders a sentence ungrammatical: 'Operator-level signature. The / the canonical formalism / (per prop:operator-selection-lp) confirms that ...' reads 'The the canonical formalism confirms'. Two further standalone 'in the canonical formalism' lines stand in for a script name (3 occurrences in this block).",
+        "notes": "NOT FIXED - the original script name is unrecoverable from the block. Proposed: restore the producer name and cite its witness. See also the dead witness path in the report."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1571,5 +1729,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T20:54:17.430Z"
+  "updated_at": "2026-08-22T02:16:41.704Z"
 }
