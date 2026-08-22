@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:09.963Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.004Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.043Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.084Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.125Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Ends on the LP cost-vector application."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.166Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.207Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.247Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1698,23 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.288Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "\"converging rapidly due to the suppression factor ",
+        "notes": "h|^k approx (0.209)^k at q_0 approx 1.110\" is the one quantitative claim and it is correct: h = q - q^-1 = 0.209060299 at the proton pin, and 0.20906 also at both muon pins, so the figure is right and does not discriminate between them. Two notes rather than defects: the block uses c_k(beta) for the Vassiliev coefficients, a third distinct meaning of that glyph alongside the Q_beta precision-ladder c_k and the weak-channel c_3 - and universal-binding-architecture.md in this same batch carries an explicit glyph-collision note for exactly this reason, which this block lacks; and the AGENTS notation register forbids a specific numerical q_0 outside the introduction and Chapter 7.|Route: add the glyph-collision note, mirroring universal-binding-architecture.md; drop or reference the q_0 numeral."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1734,21 @@
         "reviewed_at": "2026-08-15T10:31:00.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2be72da7681b",
+          "ts": "da68ada341db"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:10.329Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1771,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:29:10.329Z"
 }

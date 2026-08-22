@@ -1875,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.046Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1894,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.088Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-em-dash": [
@@ -1913,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.130Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-triples": [
@@ -1932,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.172Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-closing-aphorism": [
@@ -1951,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.216Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-meta-commentary": [
@@ -1970,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.257Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-thesis-restatement": [
@@ -1989,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.299Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-performed-warmth": [
@@ -2008,6 +2113,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.340Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-superlative": [
@@ -2027,6 +2147,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.382Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "trap-nonspeakable": [
@@ -2046,6 +2181,21 @@
         "reviewed_at": "2026-08-15T10:30:59.545Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:08.423Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the definition (setup sentence, display, closing sentence). Zero em-dashes, no traps: the block is a bare definition. lean.ref qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction resolves to the sibling classical-limit-obstruction.lean:38, a five-field structure with real content (extends_iff_zero, substrate_nontrivial). CROSS-CHECK NOTE (not a defect): a DIFFERENT structure of the same base name exists at content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean:37 in namespace QOU (fields dim, eulerChar); the namespaces differ so there is no shadowing, but the two model the same object with disjoint content and a reader could conflate them. Uses the (C, A, tau) triple per AGENTS.md 7 though tau is not used in the body."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2069,5 +2219,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:29:08.423Z"
 }
