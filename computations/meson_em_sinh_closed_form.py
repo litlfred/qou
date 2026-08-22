@@ -1,24 +1,47 @@
-"""Closed form of the meson EM correction: (1+ℏ_q−ℏ_q²/2) = (3q²−1)/(2q²).
+"""Meson EM correction — the FULL series `1 + log(1+ℏ_q)`, de-fitted.
 
-The merged #1442 showed the meson m_K²/m_π² closes to 0.056 ppm via:
+  m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(1 + log(1+ℏ_q))
 
-  m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(1 + ℏ_q − ℏ_q²/2)
+🛑 **DE-FITTED 2026-08-22.** This script previously shipped the two-term
+truncation `1 + ℏ_q − ℏ_q²/2`, rewritten in closed form as
+`(3q²−1)/(2q²)`, and argued that the closed form was therefore "not a
+series truncation". That argument is wrong. The ring identity
 
-with (1 + ℏ_q − ℏ_q²/2) the leading two terms of `1 + log(1+ℏ_q)`.
-This probe identifies the CLOSED-FORM identity behind that truncation:
+  1 + ℏ_q − ℏ_q²/2  =  1 + (1 − q⁻²)/2  =  (3 − q⁻²)/2  =  (3q² − 1)/(2q²)
 
-  1 + ℏ_q − ℏ_q²/2  =  1 + (1 − q⁻²)/2  =  (3 − q⁻²)/2  =  (3q² − 1)/(2q²).
+is **exact and stays proved** (`QOU.BraidKnot.meson_EM_closed_form`) —
+what was wrong is the *identification* of that quantity as the physical
+EM factor. Re-spelling a truncation in closed form does not derive it
+(AGENTS.md §"Defined residual ≠ derived decomposition"). The owner ruled
+the full series canonical on **2026-08-09**
+(`docs/precision-goals.md` §L2); no producer was updated, so the
+truncation stayed live for 13 days and the dashboard kept scoring it.
 
-The form `(3q² − 1)/(2q²)` is a rational polynomial in q⁻² with
-coefficients (3, −1) — not a series truncation. The "3" is the
-number of quark/lepton generations (T(2,3), T(2,5), T(2,7) — three
-saturating torus knots on Bring's surface, per em-coupling-projection
-Diophantine uniqueness). The 1/q² is the substrate's squared inverse
-Planck.
+**The measurement that settles it.** Error on m_K/m_π vs PDG as a
+function of where the log series is stopped (70 dps, proton pin):
 
-This brings the meson sector to a single closed-form derived expression:
+    stop at ℏ¹ →   479.11 ppb
+    stop at ℏ² →    23.45 ppb   ← the shipped truncation
+    stop at ℏ³ →    53.55 ppb
+    stop at ℏ⁴ →    51.31 ppb
+    stop at ℏ⁵ →    51.49 ppb
+    stop at ℏ⁶ →    51.474 ppb
+    stop at ℏ⁷ →    51.4755 ppb
+    untruncated →   51.4754 ppb
 
-  m_K²/m_π² = [3]_q · [4]_q  +  (α_em / π) · (3q² − 1)/(2q²)
+The series converges to 51.475 ppb. **Order 2 is the only order below
+the limit** — a non-monotonic dip, with every further term walking away
+from the data. A stopping point that beats the series it approximates
+was chosen against the data, which is a discrete fitted knob.
+
+Removing it costs 23.45 → 51.48 ppb. The L2 target is 263.6 ppb, so the
+prediction **survives at 5.1× margin** — the fit was never load-bearing.
+
+**Still not parameter-free.** Two objections from the red-team
+(`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`) are untouched by this
+change: the `(3,4)` pair in `[3]_q[4]_q` is scan-selected, and `α_em` is
+conditional on an open Witten-κ `sorry`. This commit removes one of the
+three knobs, not all three.
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
@@ -30,7 +53,7 @@ import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
@@ -177,12 +200,16 @@ def main():
     m_pi = mp.mpf(M_PI_PM_MEV_VALIDATION)
     m_K  = mp.mpf(M_K_PM_MEV_VALIDATION)
     prod_34 = q_int(3, q) * q_int(4, q)
-    em_factor = closed_form_3  # (3q² − 1)/(2q²)
+    # DE-FITTED: the physical EM factor is the FULL series, not the
+    # two-term truncation `closed_form_3 = (3q²−1)/(2q²)`. The identity
+    # closed_form_3 == series_form is still checked above and still holds;
+    # it is simply no longer what gets used. See module docstring.
+    em_factor = 1 + mp.log(1 + hbar_q)
     prediction = prod_34 + alpha_em/mp.pi * em_factor
     measured = (m_K / m_pi)**2
     miss_ppm = float((prediction - measured)/measured) * 1e6
 
-    print(f"  m_K²/m_π² = [3]_q · [4]_q  +  (α_em / π) · (3q² − 1)/(2q²)")
+    print(f"  m_K²/m_π² = [3]_q · [4]_q  +  (α_em / π) · (1 + log(1+ℏ_q))")
     print()
     print(f"    α_em⁻¹ (DERIVED, exact resummation) = {mp.nstr(alpha_em_inv, 15)}")
     print(f"    [3]_q · [4]_q         = {float(prod_34):.6f}")
@@ -218,10 +245,15 @@ def main():
     print()
 
     # ---------------------------------------------------------------
-    # Structural reading: 3 generations + substrate inverse Planck²
+    # Structural reading of the RETIRED truncation — kept as a record of
+    # what was argued, NOT as a justification. The "3 generations" reading
+    # was applied to (3q²−1)/(2q²) after the truncation order had already
+    # been picked; it explains the closed form's coefficients but supplies
+    # no reason to stop the series at ℏ². Retained so a later reader can
+    # see the argument that was made and why it does not survive.
     # ---------------------------------------------------------------
     print("-" * 70)
-    print("  Structural reading of (3q² − 1)/(2q²)")
+    print("  Structural reading of the RETIRED (3q²−1)/(2q²) [not a justification]")
     print("-" * 70)
     print()
     print("  Numerator 3q² − 1:")
@@ -241,21 +273,58 @@ def main():
     print("    saturation on Bring's surface.")
     print()
 
+    # ---------------------------------------------------------------
+    # Truncation-order sweep — the evidence that stopping at ℏ² is a fit
+    # ---------------------------------------------------------------
+    print("-" * 70)
+    print("  Log-series truncation order vs m_K/m_π error (the fit test)")
+    print("-" * 70)
+    print()
+    trunc_sweep = []
+    _partial = mp.mpf(0)
+    for _N in range(1, 9):
+        _partial += (-1) ** (_N + 1) * hbar_q ** _N / _N
+        _pred = mp.sqrt(prod_34 + alpha_em / mp.pi * (1 + _partial))
+        _err = abs(_pred - m_K / m_pi) / (m_K / m_pi) * mp.mpf(10) ** 9
+        trunc_sweep.append((_N, _err))
+        print(f"    stop at ℏ^{_N} → {mp.nstr(_err, 8):>12s} ppb")
+    _conv = abs(mp.sqrt(prediction) - m_K / m_pi) / (m_K / m_pi) * mp.mpf(10) ** 9
+    trunc_sweep.append((None, _conv))
+    print(f"    untruncated  → {mp.nstr(_conv, 8):>12s} ppb   ← SHIPPED")
+    print()
+    print("    Order 2 is the ONLY order below the converged limit. Every")
+    print("    further term walks away from the data. That non-monotonic dip")
+    print("    is the signature of a stopping point chosen against the data.")
+    print()
+
     w = WitnessBuilder("meson-em-sinh-closed-form", engine="mpmath",
                        start_time=_t0)
     w.set_description(
-        f"Closed-form identity (1 + ℏ_q − ℏ_q²/2) = (3q² − 1)/(2q²), "
-        f"verified at q₀ to machine precision. Full meson m_K²/m_π² "
-        f"closure form: [3]_q[4]_q + (α_em/π)·(3q² − 1)/(2q²). "
-        f"At q₀: {miss_ppm:+.3f} ppm. The numerator 3q²−1 reflects 3 "
-        f"generations + substrate; denominator 2q² is the standard "
-        f"EM-self-energy halving on the substrate-natural scale."
+        f"Meson m_K²/m_π² closure: [3]_q[4]_q + (α_em/π)·(1 + log(1+ℏ_q)), "
+        f"the FULL series. At q₀: {miss_ppm:+.3f} ppm. DE-FITTED 2026-08-22 "
+        f"(owner directive 2026-08-09): the two-term truncation "
+        f"(3q²−1)/(2q²) was removed as a data-selected stopping point — it "
+        f"is the ONLY order below the series limit (23.45 ppb vs a "
+        f"converged 51.475 ppb), the signature of a fit. The ring identity "
+        f"(1+ℏ_q−ℏ_q²/2) = (3q²−1)/(2q²) remains exact and is still "
+        f"verified here; it is the identification of that truncation as the "
+        f"physical factor that was wrong. Cost 23.45 → 51.48 ppb, still "
+        f"inside the 263.6 ppb L2 target at 5.1x margin."
     )
     w.set_audit_only("docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md")
     w.add_data("series_form_at_q0", str(mp.nstr(series_form, 20)))
     w.add_data("closed_form_at_q0", str(mp.nstr(closed_form_3, 20)))
     w.add_data("ring_identity_residual", float(diff_3))
     w.add_data("full_meson_miss_ppm", miss_ppm)
+    w.add_data("em_factor_form", "1 + log(1 + hbar_q)  [FULL series, de-fitted 2026-08-22]")
+    w.add_data("em_factor_at_q0", str(mp.nstr(em_factor, 20)))
+    w.add_data("em_truncation_order_sweep_ppb",
+               [{"stop_at_hbar_power": k, "m_K_over_m_pi_err_ppb": fmt(v, 12)}
+                for k, v in trunc_sweep])
+    w.add_data("em_truncation_order_sweep_note",
+               "Order 2 is the ONLY stopping order below the converged "
+               "limit (51.4754 ppb) — a non-monotonic dip. That is why the "
+               "two-term truncation is a fit and not a derivation.")
     w.add_data("alpha_em_inv_derived_exact", str(mp.nstr(alpha_em_inv, 15)))
     w.add_data("alpha_em_source", "derived (q·[9]_q·[10]_q dressed by the CS "
                                   "tower); NOT the experimental value")
