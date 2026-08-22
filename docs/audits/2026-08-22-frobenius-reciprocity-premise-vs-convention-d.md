@@ -3,10 +3,6 @@
 **Branch** `claude/frobenius-reciprocity-premise-audit-2026-08-22` · surfaced while
 closing bean `qou-cnbm` (PR #5417)
 
-> **Two probes cited below are on #5417 and not yet on `main`.** They are linked
-> at that branch rather than relatively, so the links resolve today; re-point
-> them to `main` once #5417 merges.
-
 ## The conflict, in two lines
 
 The proposition's proof opens:
@@ -62,7 +58,7 @@ These differ by a Schur complement whenever $A^*$ is proper. Measured at 50 dps:
 $G|_{A\times A}$ is **nonsingular on all 62 proper subsets**, singular only on
 the full set, worst proper $|\lambda_{\min}| = 0.0564$ — so the subspace reading
 is well-posed even though the ambient one is not
-([`gram_restricted_nonsingularity_probe.py`](https://github.com/litlfred/qou/blob/claude/muon-fallback-drain-2026-08-21/computations/probes/gram_restricted_nonsingularity_probe.py) — lands with #5417).
+([`gram_restricted_nonsingularity_probe.py`](../../computations/probes/gram_restricted_nonsingularity_probe.py)).
 
 ## And the case that decides it is not a computability question at all
 
@@ -70,7 +66,7 @@ For the observable this producer exists to compute, neither reading helps.
 `be59f01376` states the constraint: *"Dualising against a degenerate form is
 well-defined only for vectors orthogonal to the radical, because generalized
 inverses differ precisely by radical terms."* Measured at 50 dps
-([`axial_observable_is_the_gram_radical_probe.py`](https://github.com/litlfred/qou/blob/claude/muon-fallback-drain-2026-08-21/computations/probes/axial_observable_is_the_gram_radical_probe.py) — lands with #5417):
+([`axial_observable_is_the_gram_radical_probe.py`](../../computations/probes/axial_observable_is_the_gram_radical_probe.py)):
 
 | observable | $|\cos|$ to radical |
 |---|---|
