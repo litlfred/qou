@@ -218,6 +218,43 @@ def required_witnesses(cone: list[str], idx: dict[str, Path]) -> dict[str, Path]
     return found
 
 
+def extra_witnesses(wits: dict) -> dict:
+    """Mirror witnesses OUTSIDE the runtime cone, synced where they sit.
+
+    `required_witnesses` covers what the vendored modules load on import; those
+    are forced into the package root by the resolver (see WITNESS_DEST). This
+    covers the rest of the shipped witness data -- `data/` and
+    `data/isotopes/` -- which had no sync path at all and so simply aged.
+
+    Measured before this existed (bean qou-cdj8): 122 such files, every one
+    with a same-named `computations/` twin, 120 of them 2026-05-19 copies
+    predating both the q0-anchor convention (PR #4020) and the `environment`
+    block, and one -- canonical-mass-table-extended -- recording `muon` where
+    its source had moved to `proton`.
+
+    Synced IN PLACE rather than into the root: these are not resolved by the
+    modules, so the root's placement constraint does not apply, and moving them
+    would change import paths for no reason. `_deprecated/` is excluded, matching
+    `computations/_deprecated/`.
+    """
+    src_idx: dict[str, Path] = {}
+    for q in (REPO / "computations").rglob("*.witness.json"):
+        if "_deprecated" not in q.parts:
+            src_idx.setdefault(q.name, q)
+    out: dict[Path, Path] = {}
+    for dest in sorted(WITNESS_DEST.rglob("*.witness.json")):
+        if "_deprecated" in dest.parts:
+            continue
+        if dest.parent == WITNESS_DEST:      # the cone copies, handled above
+            continue
+        if dest.name in wits:                # a shadow of a cone copy
+            continue
+        src = src_idx.get(dest.name)
+        if src is not None:
+            out[dest] = src
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -232,6 +269,7 @@ def main() -> int:
     cone = compute_cone(idx)
 
     wits = required_witnesses(cone, idx)
+    extras = extra_witnesses(wits)
 
     if args.list:
         print(f"{len(cone)} modules in the vendoring cone:")
@@ -240,6 +278,11 @@ def main() -> int:
         print(f"\n{len(wits)} witness JSON(s) they load at runtime:")
         for n, p in wits.items():
             print(f"  {n:<48} {p.stat().st_size:>8} B")
+        print(f"\n{len(extras)} further witness JSON(s) shipped as package data:")
+        for d in list(extras)[:6]:
+            print(f"  {str(d.relative_to(WITNESS_DEST)):<48}")
+        if len(extras) > 6:
+            print(f"  ... and {len(extras) - 6} more")
         return 0
 
     drifted, missing, added = [], [], []
@@ -250,6 +293,13 @@ def main() -> int:
             missing.append(f"data/{name}")
         elif dest.read_bytes() != want:
             drifted.append(f"data/{name}")
+        if args.apply:
+            dest.write_bytes(want)
+    for dest, src in extras.items():
+        rel = dest.relative_to(WITNESS_DEST)
+        want = src.read_bytes()
+        if dest.read_bytes() != want:
+            drifted.append(str(rel))
         if args.apply:
             dest.write_bytes(want)
     for mod in cone:
@@ -281,33 +331,28 @@ def main() -> int:
 
     if not drifted and not missing:
         print(f"vendored copies are in sync ({len(cone)} modules, "
-              f"{len(wits)} witness JSON)")
-        # State what was NOT examined. The old message said only
-        # "(N modules)", which reads as a whole-mirror all-clear while the
-        # comparison covers the cone plus the witnesses `required_witnesses`
-        # scrapes -- and nothing else. Everything under `data/` is package
-        # data outside the cone, never compared to a source, and a summary
-        # that does not say so invites the reader to assume it was.
+              f"{len(wits)} witness JSON, {len(extras)} package-data "
+              f"witness JSON)")
+        # State what is NOT covered -- the count that used to be 122.
         #
-        # Measured 2026-08-21 (bean qou-cdj8): 157 witness files present,
-        # 122 uncovered. Note 157 - 18 = 139, NOT 122: 17 names exist in
-        # BOTH the package root and `data/`, so matching on name alone
-        # credits the `data/` twin with the root copy's check. That
-        # collapse is itself the finding below.
-        #
-        # Of the uncovered, 120 are stale copies predating the q0-anchor
-        # convention (PR #4020) -- old and unlabelled rather than wrong --
-        # and exactly ONE actively contradicts its source:
-        # canonical-mass-table-extended records `muon` where the source
-        # records `proton`.
+        # It was 122 because the comparison reached only the cone plus the
+        # witnesses `required_witnesses` scrapes, while `data/` and
+        # `data/isotopes/` had no sync path at all. `extra_witnesses` now
+        # covers them, so this should read 0; anything left is a shipped
+        # witness with NO same-named source under `computations/`, which is
+        # a real question (renamed upstream? hand-authored?) rather than
+        # staleness. Bean qou-cdj8.
+        covered = set(wits) | {d.name for d in extras}
         uncovered = sorted(
-            q for q in WITNESS_DEST.rglob("*.witness.json")
-            if q.name not in wits
+            q.relative_to(WITNESS_DEST).as_posix()
+            for q in WITNESS_DEST.rglob("*.witness.json")
+            if "_deprecated" not in q.parts and q.name not in covered
         )
         if uncovered:
-            print(f"  note: {len(uncovered)} further *.witness.json under "
-                  f"{WITNESS_DEST.relative_to(REPO)} are NOT compared -- "
-                  f"package data outside the vendoring cone (bean qou-cdj8)")
+            print(f"  note: {len(uncovered)} witness(es) have no source under "
+                  f"computations/ and are synced by nothing: "
+                  f"{', '.join(uncovered[:4])}"
+                  + (" ..." if len(uncovered) > 4 else ""))
 
         # Duplicated names are worse than uncovered ones. The header above
         # explains that witnesses MUST sit in the package root because the
