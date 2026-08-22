@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:37:16Z
-updated_at: 2026-08-22T19:42:35Z
+updated_at: 2026-08-22T20:42:27Z
 ---
 
 Found while re-baselining `qou-1c4y`; measurement +
@@ -91,3 +91,44 @@ layer-intent conflicts.
 2. `q1_mass_gap_probe`: split the two reads before re-pinning either.
 3. `aK_via_lp_dual_hecke_basis`: apply the directive default; no author call
    needed after all.
+
+
+## FIXED 1 of 5 (2026-08-22) — `b_over_m_order_probe`
+
+The cleanest case: declared `physical_proton`, docstring says *"Computed at the
+**proton-pinned** q₀"*, single q₀ read, and **not** among the 21 dual-purpose
+readers, so no co-read scalars to straddle.
+
+Read now goes through `q_parameter.Q_MP` — the proton pin at the **same 50 dps**,
+verified not a downgrade before the swap. Witness gained `q0_anchor`.
+
+Verification:
+- `q0_50dps` 1.10997859555733471… -> 1.10997858275138080…;
+  `q0_value_drift_audit` reclassified `canonical` -> `proton-pin` at
+  `ppb_vs_canonical: -11.537117889987831` — the μ–p tension, the right magnitude.
+- **Conclusion unchanged**: `n6_family_splitting_at_q0` moved in the 9th
+  significant digit. This is an order-of-magnitude probe; the fix corrects
+  *which pin it declares*, not any finding.
+- `scripts/precision-gates.sh --changed`: **all blocking gates green**.
+- **Environment restored first.** The initial run warned this container recorded
+  LESS than the committed witness (`clarabel` dropped, `mpmath` 1.4.1 -> 1.3.0).
+  Installed both and re-ran rather than commit weaker provenance.
+- Import is clean: it imports `plancherel_weight` from `q1_mass_gap_probe`
+  (another of the five), but that module's q₀ read is inside `main()`, so the
+  import triggers nothing.
+- `q0-anchor-consistency-audit.witness.json` **reverted** — its only diff was
+  `invocation.argv` gaining `--strict` from the gates wrapper. Drift.
+  `q0-value-drift-audit` committed, because a count genuinely moved.
+
+Gate now reports **4** contradictions, still exit 1. Census 640 -> 639.
+
+### Remaining 4 — why each is NOT a one-liner
+
+- `path4_rho_K_at_h3A` + `q_beta_form_a_n1_extension`: **dual-purpose**
+  (`q_inv`, `hbar_q`). Re-pointing only the `["q"]` read leaves the derived
+  scalars on muon — a straddle inside one producer.
+- `q1_mass_gap_probe`: reads the witness as a **reference table**
+  (`plancherel_weights_n3`, `[2]_q`) *and* binds q₀ from it. Separate the two
+  before re-pinning either.
+- `aK_via_lp_dual_hecke_basis`: states no pin intent; directive default applies,
+  but it has no docstring to confirm against.

@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 306,
-      "proton-pin": 1229,
+      "proton-pin": 1230,
       "unknown": 25,
-      "canonical": 212
+      "canonical": 211
     },
     "stale_total": 306,
     "new_stale": 0,
@@ -2073,9 +2073,9 @@
       {
         "file": "computations/b-over-m-order-probe.witness.json",
         "field": "data.q0_50dps",
-        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/b-over-m-order-probe.witness.json",
