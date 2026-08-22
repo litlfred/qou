@@ -174,10 +174,49 @@ class DerivedChiCatalogue:
         if key in self._index:
             raise ValueError(
                 f"duplicate catalogue cell {key}; re-derive or update the "
-                "existing record explicitly."
+                "existing record explicitly (see `update`)."
             )
         self._index[key] = len(self.cells)
         self.cells.append(cell)
+
+    def update(self, cell: KnotPartitionAtomCell) -> None:
+        """Replace an existing cell in place, keyed by (knot, partition, atom).
+
+        The explicit update `add`'s error message tells the caller to use, and
+        which until now did not exist. Without it a committed catalogue could
+        not be brought back in line with its own producer by ANY supported
+        operation: `add` raises on the duplicate, and deleting the witness and
+        rebuilding is not equivalent — the builder emits 12 cells while the
+        committed catalogue carries 342, so a fresh build silently drops the
+        330 Phase-3 cells that exist only in the artefact (bean `qou-j47t`).
+
+        Deliberately a SEPARATE method rather than an `add(..., replace=True)`
+        flag: replacing a derived cell is a different act from recording a new
+        one, and it should not be reachable by passing an extra argument to the
+        call every producer already makes. Raises if the cell is absent, so a
+        typo in the key fails loudly instead of silently appending.
+        """
+        key = (cell.knot, cell.partition, cell.atom)
+        idx = self._index.get(key)
+        if idx is None:
+            raise KeyError(
+                f"cannot update absent catalogue cell {key}; use `add` to "
+                "record a new one."
+            )
+        self.cells[idx] = cell
+
+    def upsert(self, cell: KnotPartitionAtomCell) -> bool:
+        """`update` if the cell exists, else `add`. Returns True if it replaced.
+
+        For producers that re-run over a catalogue they own and want to be
+        idempotent, which `add` alone cannot be.
+        """
+        key = (cell.knot, cell.partition, cell.atom)
+        if key in self._index:
+            self.update(cell)
+            return True
+        self.add(cell)
+        return False
 
     # ── Lookup ──
 
