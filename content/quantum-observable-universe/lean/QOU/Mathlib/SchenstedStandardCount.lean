@@ -220,4 +220,54 @@ theorem countLt_above_qRowOf {Q : List (List ℕ)} (hcs : ColStrict Q)
     countLt (Q.getD (r + 1) []) k < countLt (Q.getD r []) k :=
   countLt_above_mem hcs hstrict (qRowOf_lt_length Q k (r + 1) h) (mem_of_qRowOf Q k (r + 1) h)
 
+/-! ### `qRowOf` is total and exact, given distinct entries
+
+Brick 24 gave one direction: the located row contains the timestamp. The counting step needs the
+converse — if `t` sits in row `i`, `qRowOf` must *return* `i` — and that is where entries being
+distinct across rows finally matters. `qRowOf` returns the **first** row containing `t`, so without
+distinctness a repeated entry would be located in the wrong row.
+
+Totality is separate and needs no distinctness. It matters because `qRowOf` returns an `Option`: a
+counting argument that reads it with `.getD 0` would silently score every absent timestamp as row
+`0`. -/
+
+/-- **Totality.** A timestamp occurring anywhere in `Q` is located. -/
+theorem qRowOf_isSome_of_mem_flatten : ∀ (Q : List (List ℕ)) (t : ℕ), t ∈ Q.flatten →
+    ∃ r, qRowOf Q t = some r
+  | [], t, h => by simp at h
+  | row :: T, t, h => by
+      by_cases hmem : t ∈ row
+      · exact ⟨0, by rw [qRowOf_cons, if_pos hmem]⟩
+      · rw [List.flatten_cons, List.mem_append] at h
+        rcases h with hrow | htail
+        · exact absurd hrow hmem
+        · obtain ⟨r', hr'⟩ := qRowOf_isSome_of_mem_flatten T t htail
+          exact ⟨r' + 1, by rw [qRowOf_cons, if_neg hmem, hr']; rfl⟩
+
+/-- **Exactness.** With entries distinct across rows, membership in row `i` forces `qRowOf` to
+return `i`. -/
+theorem qRowOf_eq_some_of_mem : ∀ (Q : List (List ℕ)), Q.flatten.Nodup → ∀ (t i : ℕ),
+    i < Q.length → t ∈ Q.getD i [] → qRowOf Q t = some i
+  | [], _, t, i, hi, _ => by simp at hi
+  | row :: T, hnd, t, i, hi, hmem => by
+      rw [List.flatten_cons, List.nodup_append] at hnd
+      cases i with
+      | zero =>
+          simp only [List.getD_cons_zero] at hmem
+          rw [qRowOf_cons, if_pos hmem]
+      | succ i' =>
+          simp only [List.getD_cons_succ] at hmem
+          have hiT : i' < T.length := by simpa using hi
+          have htf : t ∈ T.flatten :=
+            List.mem_flatten.mpr ⟨T.getD i' [], by rw [getD_row_eq hiT]; exact List.getElem_mem _,
+              hmem⟩
+          have hnot : t ∉ row := fun hc => (hnd.2.2 t hc t htf) rfl
+          rw [qRowOf_cons, if_neg hnot, qRowOf_eq_some_of_mem T hnd.2.1 t i' hiT hmem]
+          rfl
+
+/-- **`qRowOf` locates exactly.** -/
+theorem qRowOf_eq_some_iff_mem {Q : List (List ℕ)} (hnd : Q.flatten.Nodup) {t i : ℕ}
+    (hi : i < Q.length) : qRowOf Q t = some i ↔ t ∈ Q.getD i [] :=
+  ⟨mem_of_qRowOf Q t i, qRowOf_eq_some_of_mem Q hnd t i hi⟩
+
 end QOU.Mathlib.Schensted
