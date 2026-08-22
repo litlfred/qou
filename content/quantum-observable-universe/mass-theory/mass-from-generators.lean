@@ -33,7 +33,7 @@ namespace QOU.Experimental.MassData
 
 /-- Electron mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
-noncomputable def codata_electron : ℝ := 0.51099895000
+noncomputable def codata_electron : ℝ := 0.51099895069
 
 /-- Muon mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
@@ -49,15 +49,15 @@ noncomputable def codata_neutron : ℝ := 939.56542194
 
 /-- Deuteron mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
-noncomputable def codata_deuteron : ℝ := 1875.61294257
+noncomputable def codata_deuteron : ℝ := 1875.61294500
 
 /-- He-3 nuclear mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
-noncomputable def codata_he3 : ℝ := 2808.39160743
+noncomputable def codata_he3 : ℝ := 2808.39161112
 
 /-- He-4 (alpha) nuclear mass, CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022
-noncomputable def codata_he4 : ℝ := 3727.37940824
+noncomputable def codata_he4 : ℝ := 3727.3794118
 
 -- ═══════════════════════════════════════════════════════════════════
 -- AME2020 nuclear masses (MeV/c²)
