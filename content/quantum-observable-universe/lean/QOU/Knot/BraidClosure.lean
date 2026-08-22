@@ -320,4 +320,54 @@ theorem writhe_parity (w : BraidWord n) :
   push_cast at hk ⊢
   linarith
 
+/-! ### `c` depends only on the generator sequence
+
+`components_switch` handles one crossing change. The reduction to a descending
+word changes *many*, so what is actually needed is that `c` is a function of the
+**generator sequence alone**, blind to every sign at once. That is this section.
+
+It is also the precise reason the ±1 orbit-count lemma is **not needed** for the
+MFW induction, contrary to what an earlier note in `qou-e6db` claimed:
+`mfw_step` is stated purely in `n`, `e`, `d` — `c` never appears in the
+propagation — and `c` enters only in the base case, applied to the descending
+word itself. Since the descending word is reached by sign changes alone, it has
+the *same* `n` and `c` as the original and differs only in `e`. -/
+
+/-- The generator sequence of a braid word, forgetting all signs. -/
+def gens (w : BraidWord n) : List (Fin (n - 1)) := w.map BraidCrossing.gen
+
+@[simp] theorem gens_nil : gens ([] : BraidWord n) = [] := rfl
+
+@[simp] theorem gens_cons (c : BraidCrossing n) (w : BraidWord n) :
+    gens (c :: w) = c.gen :: gens w := rfl
+
+/-- **Two braid words with the same generator sequence have the same closure
+permutation**, whatever their signs — so they close to the same number of
+components. -/
+theorem closurePerm_eq_of_gens_eq :
+    ∀ {v w : BraidWord n}, gens v = gens w → closurePerm v = closurePerm w
+  | [], [], _ => rfl
+  | [], _ :: _, h => by simp [gens] at h
+  | _ :: _, [], h => by simp [gens] at h
+  | c :: v, d :: w, h => by
+      simp only [gens_cons, List.cons.injEq] at h
+      rw [closurePerm_cons, closurePerm_cons,
+          closurePerm_eq_of_gens_eq h.2]
+      congr 1
+      simp [crossingSwap, h.1]
+
+/-- **`c` is blind to every crossing sign at once.** This is what the reduction
+to a descending word preserves. -/
+theorem components_eq_of_gens_eq {v w : BraidWord n} (h : gens v = gens w) :
+    components v = components w := by
+  simp [components, closurePerm_eq_of_gens_eq h]
+
+/-- Length is likewise a function of the generator sequence — recorded because
+the reduction needs `n`, `c` **and** the crossing count to be preserved, leaving
+`e` as the only quantity that moves. -/
+theorem length_eq_of_gens_eq {v w : BraidWord n} (h : gens v = gens w) :
+    v.length = w.length := by
+  have : (gens v).length = (gens w).length := by rw [h]
+  simpa [gens] using this
+
 end QOU.Knot.BraidClosure
