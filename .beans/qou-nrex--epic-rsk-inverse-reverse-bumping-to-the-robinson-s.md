@@ -684,3 +684,56 @@ unrelated rskBurnsideHolds_le12 (no RSK in it).
 - recovered word's recording tableau is Q (the other half of bijectivity);
 - then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
   Wedderburn split.
+
+### Bricks 28-32 — THE Q SIDE CLOSES (same PR #5426)
+
+The gap named in brick 27's SCOPE note is closed. The recovered word's RECORDING tableau is Q.
+
+Brick 28-29 (SchenstedReinsertRow.lean) — the missing link:
+  addCell_removeCorner   : adding a cell back at a corner returns the shape (two-case anatomy of
+                           removeCorner: above length one the zero-filter is inert and it is a
+                           `set`; at length one the corner is the final row and the filter deletes)
+  newRowIndex_uninsert   : newRowIndex (uninsert T i).1 z = i — the re-inserted letter goes back to
+                           the row it was peeled from. Brick 10 proved the tableau is rebuilt; it
+                           never said WHERE. Argued at the level of shapes: addCell moves exactly
+                           one entry, so one index only can land back on the shape you started from.
+  rowIndices_uninsertSteps : along a run, the recovered word's row-index record IS the position
+                           list it was recovered from.
+
+Brick 30-31 (SchenstedRecordingTrunc.lean) — the replay:
+  qTrunc Q n             : the horizon truncation — timestamps below n, emptied rows dropped.
+                           The induction is stated HERE, not at Q. After n steps the replay is not
+                           Q, so the direct statement has nothing to induct on. Same move as
+                           brick 27's induct-on-the-horizon.
+  qAppend_qTrunc         : one replay step. Two facts do it, both from column strictness, NOT from
+                           the appends:
+                             - non-empty rows of a truncation are an INITIAL SEGMENT
+                               (exists_le_head: any entry has a strictly smaller entry in the top
+                               row) => a row index means the same thing in qTrunc Q t as in Q,
+                               nothing has shifted;
+                             - a timestamp joins its row at the END (filter_lt_succ_mem: the row is
+                               strictly increasing and every smaller entry is already there) =>
+                               qAppend, which only writes at a row's end, is the right operation.
+  qAppendSteps_qPositions_self : qAppendSteps [] (qPositions Q n) 0 = Q.
+
+Brick 32 (SchenstedRSKSurjective.lean) — P and Q meet:
+  insertWordRec_uninsertSteps_of_standard :
+    P row-sorted/col-strict/no-empty-rows, Q standard, SAME SHAPE
+      ->  insertWordRec (uninsertSteps P (qPositions Q n)).2 = (P, Q)
+  = brick 27 (insertion tableau is P) + brick 29 (record is the position list) + brick 31 (replay
+    rebuilds Q), tied by brick 4 (recording tableau IS the record of rowIndices).
+  Brick 29 was the load-bearing one: without it "the insertion tableau came out right" constrains
+  nothing about Q.
+
+### SCOPE — what this is NOT
+Surjectivity onto standard pairs **in the List (List ℕ) representation**. NOT rskPair bijectivity.
+rskPair lands in `Σ μ : YoungDiagram, StandardYoungTableau μ × StandardYoungTableau μ` — Mathlib's
+type — so what remains is a REPRESENTATION BRIDGE (List (List ℕ) <-> StandardYoungTableau μ, plus
+the +1 value shift wordOfPerm applies), not more combinatorics on the correspondence itself.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+
+### #5426 now carries bricks 16-32, eight files, zero sorries, axiom-clean throughout
+### Next
+- the representation bridge to Mathlib's StandardYoungTableau (check SchenstedCellsBridge first);
+- then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+  Wedderburn split.
