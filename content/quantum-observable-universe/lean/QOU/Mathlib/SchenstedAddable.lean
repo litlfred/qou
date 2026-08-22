@@ -381,4 +381,27 @@ theorem getD_addCellSteps_nil {is : List ℕ} (haa : AddableAlong [] is) (i : �
   rw [getD_addCellSteps is [] haa i]
   simp
 
+/-! ### Appending one step
+
+`AddableAlong` and `addCellSteps` recurse from the front, but a run indexed by timestamps grows at
+the **end** — `List.range (n + 1) = List.range n ++ [n]`. These two put the recursion in the form
+that induction on the horizon can use. -/
+
+theorem addCellSteps_append_singleton : ∀ (is : List ℕ) (l : List ℕ) (j : ℕ),
+    addCellSteps l (is ++ [j]) = addCell (addCellSteps l is) j
+  | [], l, j => rfl
+  | i :: rest, l, j => by
+      rw [List.cons_append, addCellSteps_cons, addCellSteps_cons,
+        addCellSteps_append_singleton rest (addCell l i) j]
+
+theorem addableAlong_append_singleton : ∀ (is : List ℕ) (l : List ℕ) (j : ℕ),
+    AddableAlong l (is ++ [j]) ↔ AddableAlong l is ∧ IsAddable (addCellSteps l is) j
+  | [], l, j => by
+      rw [List.nil_append, addableAlong_cons, addCellSteps_nil]
+      exact ⟨fun h => ⟨trivial, h.1⟩, fun h => ⟨h.2, trivial⟩⟩
+  | i :: rest, l, j => by
+      rw [List.cons_append, addableAlong_cons, addableAlong_cons, addCellSteps_cons,
+        addableAlong_append_singleton rest (addCell l i) j]
+      tauto
+
 end QOU.Mathlib.Schensted

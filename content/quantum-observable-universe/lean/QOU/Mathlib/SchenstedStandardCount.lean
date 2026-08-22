@@ -340,4 +340,88 @@ theorem count_qPositions {Q : List (List ℕ)} (hnd : Q.flatten.Nodup) {k i : �
     _ = R.toFinset.card := by rw [hset]
     _ = R.length := List.toFinset_card_of_nodup hRnd
 
+/-! ### The assembly
+
+Every ingredient is now proved. `IsAddable` at step `k` *is* a count comparison (brick 22), that
+comparison holds for a column-strict tableau (brick 23b), and the two count sides agree (brick 26).
+This threads them through the `AddableAlong` recursion, inducting on the horizon rather than on the
+list — which is why the append-at-end forms were needed. -/
+
+theorem qPositions_succ (Q : List (List ℕ)) (n : ℕ) :
+    qPositions Q (n + 1) = qPositions Q n ++ [(qRowOf Q n).getD 0] := by
+  rw [qPositions, qPositions, List.range_succ, List.map_append]
+  rfl
+
+/-- **A standard tableau gives an addable sequence.**
+
+`hnd` supplies exactness and duplicate-free rows, `hrange` supplies totality (without which an
+absent timestamp would read as row `0`), and `hcs` with `hstrict` supply the column comparison. -/
+theorem addableAlong_qPositions {Q : List (List ℕ)} (hcs : ColStrict Q)
+    (hstrict : ∀ row ∈ Q, row.Sorted (· < ·)) (hnd : Q.flatten.Nodup) :
+    ∀ (n : ℕ), (∀ t, t < n → t ∈ Q.flatten) → AddableAlong [] (qPositions Q n)
+  | 0, _ => by simp [qPositions]
+  | n + 1, hrange => by
+      have hrangeN : ∀ t, t < n → t ∈ Q.flatten := fun t ht => hrange t (by omega)
+      have hIH := addableAlong_qPositions hcs hstrict hnd n hrangeN
+      rw [qPositions_succ, addableAlong_append_singleton]
+      refine ⟨hIH, ?_⟩
+      -- the shape standing after `n` steps, read as a count
+      have hshape : ∀ i, i < Q.length →
+          (addCellSteps [] (qPositions Q n)).getD i 0 = countLt (Q.getD i []) n := by
+        intro i hi
+        rw [getD_addCellSteps_nil hIH i]
+        exact count_qPositions hnd hi hrangeN
+      -- locate timestamp `n`
+      obtain ⟨r, hr⟩ := qRowOf_isSome_of_mem_flatten Q n (hrange n (by omega))
+      rw [hr, Option.getD_some]
+      cases r with
+      | zero => exact ⟨by omega, Or.inl rfl⟩
+      | succ r0 =>
+          have hlt : countLt (Q.getD (r0 + 1) []) n < countLt (Q.getD r0 []) n :=
+            countLt_above_qRowOf hcs hstrict hr
+          have hr1 : r0 + 1 < Q.length := qRowOf_lt_length Q n (r0 + 1) hr
+          have hr0 : r0 < Q.length := by omega
+          rw [IsAddable]
+          have hpos : 0 < (addCellSteps [] (qPositions Q n)).getD r0 0 := by
+            rw [hshape r0 hr0]; omega
+          refine ⟨?_, Or.inr ?_⟩
+          · -- the row above is nonempty, so the target row index is within the shape
+            have := lt_length_of_getD_pos hpos
+            omega
+          · simp only [Nat.add_sub_cancel]
+            rw [hshape (r0 + 1) hr1, hshape r0 hr0]
+            exact hlt
+
+/-! ### The chain, closed
+
+Every link is now in place, so it is worth stating the composite rather than leaving a reader to
+assemble it:
+
+```
+Q standard ──26──▶ AddableAlong ──20──▶ ShapeCornersAlong ──18──▶ insertWord ∘ uninsertSteps = id
+```
+
+The only hypothesis tying `P` to `Q` is that they have the same shape, which is what "a pair of
+tableaux of the same shape" means. -/
+
+/-- **The recovered word rebuilds `P`, given a standard recording tableau of the same shape.**
+
+Run the reverse cascade at the positions `Q` dictates, collect what falls out, and re-inserting that
+word returns `P`.
+
+This is word-level surjectivity on the `P` side. It is **not** bijectivity of `rskPair`: nothing
+here says the recovered word's *recording* tableau is `Q`, and `RSKBurnsideHolds` for general `n`
+stays open. -/
+theorem insertWord_uninsertSteps_of_standard {P Q : List (List ℕ)}
+    (hPs : RowsSorted P) (hPc : ColStrict P) (hPn : NoEmptyRows P)
+    (hQc : ColStrict Q) (hQstrict : ∀ row ∈ Q, row.Sorted (· < ·)) (hQnd : Q.flatten.Nodup)
+    {n : ℕ} (hrange : ∀ t, t < n → t ∈ Q.flatten)
+    (hshape : tableauShape P = addCellSteps [] (qPositions Q n)) :
+    insertWord (uninsertSteps P (qPositions Q n)).2 = P := by
+  have haa : AddableAlong [] (qPositions Q n) :=
+    addableAlong_qPositions hQc hQstrict hQnd n hrange
+  obtain ⟨hsca, hempty⟩ := shapeCornersAlong_and_empty haa
+  rw [← hshape] at hsca hempty
+  exact insertWord_uninsertSteps_of_shape hPs hPc hPn hsca hempty
+
 end QOU.Mathlib.Schensted
