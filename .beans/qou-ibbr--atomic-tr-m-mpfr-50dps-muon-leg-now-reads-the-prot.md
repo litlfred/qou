@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-22T09:29:29Z
+updated_at: 2026-08-22T09:48:18Z
 ---
 
 
@@ -325,3 +325,66 @@ Good `c3a7e16856`, bad this branch's tip, ~13.6k revisions, 14 steps, ~60 s per 
 This is the right instrument and I should have reached for it several rounds ago. Every hand-audit round this session ended the same way: a plausible commit subject, a mechanism that fit, and a measurement that said no. The bisect does not care what any commit message claims.
 
 Result to follow.
+
+
+---
+
+## 2026-08-22 — SOLVED, and the cause is MY OWN migration commit
+
+Binary search over main's first-parent line (1609 commits, oracle = does the producer reproduce `1.1457597817199365073666`) converged on:
+
+```
+FIRST BAD: 3bcbbf401c  2026-08-19  q0 migration: 255 producers to the proton pin
+```
+
+That is my commit, merged this session as part of #5349. **It changes exactly one file — `q0_anchor_manifest.json`** — and it moved `atomic_tr_m_mpfr_50dps` from `ideal_muon` to `physical_proton`.
+
+### Verified single-variable, not just bisected
+
+Checked out `3bcbbf401c`, moved that **one entry** back to `ideal_muon`, changed nothing else, re-ran:
+
+```
+with my manifest : tr_M = 1.145759828319992770436796   abs_diff 4.60e-08
+entry moved back : tr_M = 1.145759781719936507366644   abs_diff 5.67e-10   <- exactly the committed value
+```
+
+### The mechanism, and it was written down all along
+
+`q_parameter` resolves its pin **at import**, from the running script's stem. `q0_for("ideal")` returns the muon string from the pinning witness — but everything in the producer's cone that reads the **module constant** instead of that returned `q_str` follows the manifest. Move the stem to `physical_proton` and those become proton while the trace stays muon: one quantity, two layers.
+
+`q0_for`'s own docstring states the dependency — *"this script's stem is in `q0_anchor_manifest.json` `ideal_muon`, so `Q_50_DIGIT_STR` is bound to the MUON value here"* — and its guard covers only the proton direction. My migration broke a documented invariant that had a one-sided guard.
+
+### I retracted the correct diagnosis
+
+My **first** entry on this bean said the internal cross-check blowing up is the straddle signature: *"a pin change moves both of a producer's methods together and leaves their agreement intact, so a fiftyfold blow-up in the INTERNAL cross-check is a straddle, not a re-pin."* **That was right.** I then retracted it on the grounds that the pin only moves `tr_M` by 5.7e-10, 80× too small — treating a *pin* measurement as decisive about a *straddle*.
+
+The 80× gap **is** the signature, not a refutation of it: 5.7e-10 is both legs moving together; 4.6e-8 is one leg moving alone. Thirteen subsequent eliminations were all downstream of that wrong retraction, and every one of them was correct in isolation.
+
+### Fix
+
+1. **Manifest** — `atomic_tr_m_mpfr_50dps` back under `ideal_muon`. It is a two-pin comparison producer, which is the owner's own named carve-out (*"unless for an explicit reason (like comparison on proton vs muon results)"*). `ideal_muon` now holds two entries: the anchor-definer and this.
+2. **Symmetric guard** — `q0_for("ideal")` now refuses when `q_parameter` resolved proton, so this cannot recur silently in either direction.
+
+### Result is better than the 08-11 baseline
+
+With the manifest fixed **and** the q₀-derived y_λ selection from this PR, bridge and peel agree at the arithmetic floor on every atom:
+
+| atom | abs_diff now | was (08-11) |
+|---|---|---|
+| proton | 2.03e-50 | 5.67e-10 |
+| neutron | 2.29e-50 | 1.85e-10 |
+| deuteron | 4.97e-51 | 1.85e-10 |
+| tritium | 4.12e-51 | 1.32e-09 |
+| helium-3 | 1.01e-50 | 1.32e-09 |
+
+~40 orders of magnitude. So the y_λ fix I described as "honestly small, 5.7e-10" is what closes the residual mismatch that existed even at 08-11 — the bridge had been selecting its table by a path constant rather than by the caller's q.
+
+### Blast radius — 11 to triage, 1 measured
+
+**11** committed witnesses carry `q0Anchor: muon` while their producer is now `physical_proton` — same signature:
+
+`binding_canonical`, `binding_via_interface_knot`, `block_swap_binding`, `borromean-axial-coupling`, `cross_check_trM_1ppb`, `derived_chi_catalogue_matrix_m_mpfr`, `hadron_knot_table`, `he3_tritium_cosh_asymmetry_diagnosis`, `markov_peel_atomic_witness`, `parabolic_cylinder_channel_mixing_probe`, `vhat_per_crossing_chain`
+
+**These are a triage list, not 11 defects.** Only `atomic_tr_m` is measured. `binding_canonical` was re-run earlier in this session and came back byte-identical in every mathematical field, so its muon label is likely stale rather than live — sibling #5436's class (ii). Each needs a re-run to sort. Tracked as its own bean.
+
+The straddle is **latent** on all of them: the labels are stale, so nothing is wrong on disk until someone regenerates.
