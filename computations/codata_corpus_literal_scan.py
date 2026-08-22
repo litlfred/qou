@@ -75,6 +75,23 @@ SCAN_EXTS = {".py", ".ts", ".md", ".lean", ".json"}
 SKIP_DIRS = {
     ".git", "node_modules", ".lake", "__pycache__", "library",
     ".beans", "build", "dist", ".pytest_cache", "_deprecated",
+    # `.claude` because agent worktrees live at `.claude/worktrees/<agent-id>/`
+    # — a FULL SECOND CHECKOUT of the repo, gitignored (.gitignore:120), 0
+    # tracked files. Without it this gate scans every file twice and reports
+    # the copy as a finding.
+    #
+    # Measured 2026-08-22 with one worktree present: **83 of 83** reported
+    # literals were under `.claude/worktrees/`, and **zero** were real. So
+    # this BLOCKING gate went red on a clean tree, for files nobody touched,
+    # purely because an agent had a worktree checked out — and it would go
+    # green again when that worktree was removed, with no code change.
+    #
+    # That environment-dependence is the serious part: a gate whose verdict
+    # depends on local checkout state cannot be trusted or reproduced, and the
+    # cost of a false red is that people learn to skip the preflight. Same
+    # root cause as the fix to `f64_into_mpmath_audit.py` (bean `qou-myk3`),
+    # which is why that bean flags every `rglob` scanner as a candidate.
+    ".claude",
 }
 
 # A literal needs enough digits to identify a constant. Below ~7 significant
