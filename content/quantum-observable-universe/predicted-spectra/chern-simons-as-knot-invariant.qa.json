@@ -1231,6 +1231,36 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.120Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.481Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Opening 'Classical Chern--Simons theory does not serve as the bulk categorical action ... That role belongs to $\\mathfrak{S}_q$' is assert-by-denial in form, but the separation IS the block's content (title: 'Classical Chern--Simons as a non-hyperbolic knot invariant'); false-positive class 'substantive mathematical contrast'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1280,21 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.161Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1314,21 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 172 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.201Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1348,36 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 172 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.240Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.519Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'recovers Einstein--Hilbert, Yang--Mills, and Dirac' is a three-item list of three actual archimedean limits, not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1397,21 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.280Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1431,21 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.320Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1465,22 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.559Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Closing paragraph opened with a standalone sentence restating the intro's 'The Chern--Simons functional enters strictly as a geometric knot invariant.' Fixed by demoting it to a dependent clause so the paragraph carries only new content (the analytic-continuation source of G_CS^q).",
+        "notes": "fix applied: 'Classical Chern--Simons is a derived geometric invariant. It is invoked only when the knot complement fails to be hyperbolic.' -> 'Classical Chern--Simons is a derived geometric invariant, invoked only when the knot complement fails to be hyperbolic.' Math delimiters re-checked, balanced."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1500,21 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.360Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1534,21 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.400Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1568,21 @@
         "reviewed_at": "2026-08-15T10:31:01.213Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7c0c8b0ccbc3",
+          "ts": "d23a666a13fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.441Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: intro paragraph, 4-item numbered mechanism with display math, closing paragraph."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1605,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:26:46.559Z"
 }

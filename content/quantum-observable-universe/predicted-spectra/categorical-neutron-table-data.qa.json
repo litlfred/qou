@@ -551,7 +551,7 @@
           "in_degree": 0,
           "cone_size": 165,
           "depth": 39,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -891,11 +891,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:22.517Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      },
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:23.212Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block. AUDIT recorded here.",
+        "notes": "CHECKS: the six rows are exactly the H_3(q) normal-form basis 1, sigma_0, sigma_1, sigma_0 sigma_1, sigma_1 sigma_0, sigma_0 sigma_1 sigma_0 (dim H_3 = 3! = 6, correct), and the coefficients sum to 0.7976. No independent value is quoted to check the coefficients against, and the block carries no witness reference - so the six numbers are unprovenanced as they stand. NOTATION FINDING: the 'Particle' column repeats this chapter's mis-identification - it labels sigma_0 sigma_1 and sigma_1 sigma_0 as L_+ and L_-, whose closures each have ONE component (computed) rather than being Hopf links, and labels sigma_0 sigma_1 sigma_0 as 'e^-', whose closure has TWO components and is the Hopf link, not the electron trefoil T(2,3) = sigma^3. Same defect as def:breit-wheeler-pair-production and the closure table in conj:bring-hyperbolic-knot-bloch-decomposition; fixing it in one place without the others will leave the chapter inconsistent. DUAL-VARIABLE NOTE: the sibling proofs appeal to 'LP-dual feasibility' and an 'LP-optimal two-gluon stabiliser', but this table reports primal coefficients only - if a witness backs it, AGENTS.md requires y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap alongside."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:22.585Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:22.661Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:22.746Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:22.818Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:22.900Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:22.949Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:23.014Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:23.089Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5793134b3d5c",
+          "ts": "111c2516accc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:23.153Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: six normal-form coefficients, no prose. Prose trap categories not applicable. Coefficients summed and basis labels cross-checked - see notes on trap-negation-contrast."
+      }
     ]
   },
   "source_hashes": {
     "md": "5793134b3d5c",
     "ts": "111c2516accc"
   },
-  "updated_at": "2026-08-22T01:20:20.343Z"
+  "updated_at": "2026-08-22T01:44:23.212Z"
 }

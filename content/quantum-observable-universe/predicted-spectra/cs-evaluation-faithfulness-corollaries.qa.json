@@ -945,6 +945,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not as a projection to zero.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:38.374Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Corollary 1: 'functions as an automorphism of the band $\\mathcal{B} = \\mathcal{O}_M^\\times$, not as a projection to zero.' The automorphism-vs-projection distinction IS the corollary's content (its title is 'No accidental cancellation'), so this is the substantive-mathematical-contrast false-positive class. Copula avoidance ('functions as' for 'is') noted but house-wide: 17 'functions as' + 54 'serves as' in content/, reported as a corpus cluster rather than a block defect."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -964,6 +979,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:37.773Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "trap-em-dash": [
@@ -983,6 +1013,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 132 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:37.822Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "trap-triples": [
@@ -1002,6 +1047,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 132 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:37.873Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "trap-closing-aphorism": [
@@ -1021,6 +1081,23 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:38.446Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The block ends on a two-clause parallel couplet of four words each: 'Rigidity ensures convergence. Faithfulness ensures non-degeneracy at each grade.' Both restate roles already assigned in the two preceding sentences (Mostow rigidity -> total volume is a topological invariant; the proposition -> non-vanishing at each grade); the parallel-short-sentence shape is placed for quotability rather than to add content.",
+        "notes": "Not fixed inline: the couplet is the paragraph's only statement of the division of labour, so deleting it loses the point and rewriting it touches the whole paragraph. Proposed: fold into the preceding sentence - 'This proposition refines that invariant into a graded series $\\{\\Phi_n(K)\\}_{n \\ge 0}$ controlled by cohomological obstructions, with rigidity supplying convergence of the series and faithfulness supplying non-degeneracy at each grade.' Separately (outside the trap axis): corollary 3's justification 'A finite polynomial cannot absorb infinitely many independent contributions.' is an assertion, not an argument, and the conclusion it supports - no polynomial relation among Vol(4_1), Vol(5_2), Vol(B_3) - is an open transcendence problem."
       }
     ],
     "trap-meta-commentary": [
@@ -1040,6 +1117,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:37.914Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "trap-thesis-restatement": [
@@ -1059,6 +1151,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:38.308Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "trap-performed-warmth": [
@@ -1078,6 +1185,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:38.037Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "trap-superlative": [
@@ -1097,6 +1219,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:38.084Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "trap-nonspeakable": [
@@ -1116,6 +1253,21 @@
         "reviewed_at": "2026-08-15T10:31:01.214Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aeffd987e5af",
+          "ts": "5bc07db39e47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:38.258Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: three numbered bold-titled corollaries plus a 'Relation to Mostow rigidity' paragraph."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1142,5 +1294,5 @@
     "md": "aeffd987e5af",
     "ts": "5bc07db39e47"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:33:38.446Z"
 }

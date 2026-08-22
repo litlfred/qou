@@ -1601,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.338Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conditional theorem statement (proposition kind, conditional banner present per 3b-cond). Short formal statement block: no negation-contrast, no pivot, no spaced em-dash, no aphoristic or restating closer (it ends on the CODATA inequality), no narrated emphasis, no warm register."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1620,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.377Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conditional theorem statement (proposition kind, conditional banner present per 3b-cond). Short formal statement block: no negation-contrast, no pivot, no spaced em-dash, no aphoristic or restating closer (it ends on the CODATA inequality), no narrated emphasis, no warm register."
       }
     ],
     "trap-em-dash": [
@@ -1639,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.418Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conditional theorem statement (proposition kind, conditional banner present per 3b-cond). Short formal statement block: no negation-contrast, no pivot, no spaced em-dash, no aphoristic or restating closer (it ends on the CODATA inequality), no narrated emphasis, no warm register."
       }
     ],
     "trap-triples": [
@@ -1658,6 +1703,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.624Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The one triple is the display defining T, H and h - three distinct quantities the cubic actually needs. Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1677,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.459Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conditional theorem statement (proposition kind, conditional banner present per 3b-cond). Short formal statement block: no negation-contrast, no pivot, no spaced em-dash, no aphoristic or restating closer (it ends on the CODATA inequality), no narrated emphasis, no warm register."
       }
     ],
     "trap-meta-commentary": [
@@ -1696,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.500Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conditional theorem statement (proposition kind, conditional banner present per 3b-cond). Short formal statement block: no negation-contrast, no pivot, no spaced em-dash, no aphoristic or restating closer (it ends on the CODATA inequality), no narrated emphasis, no warm register."
       }
     ],
     "trap-thesis-restatement": [
@@ -1715,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.541Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conditional theorem statement (proposition kind, conditional banner present per 3b-cond). Short formal statement block: no negation-contrast, no pivot, no spaced em-dash, no aphoristic or restating closer (it ends on the CODATA inequality), no narrated emphasis, no warm register."
       }
     ],
     "trap-performed-warmth": [
@@ -1734,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.583Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conditional theorem statement (proposition kind, conditional banner present per 3b-cond). Short formal statement block: no negation-contrast, no pivot, no spaced em-dash, no aphoristic or restating closer (it ends on the CODATA inequality), no narrated emphasis, no warm register."
       }
     ],
     "trap-superlative": [
@@ -1753,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.665Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No maximum-strength claims; the one quantitative claim is bounded and hedged by an explicit inequality."
       }
     ],
     "trap-nonspeakable": [
@@ -1772,6 +1907,23 @@
         "reviewed_at": "2026-08-15T10:31:01.139Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0f7667ceb2bc",
+          "ts": "8d079521a063"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.705Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Two register defects in a ~100-word statement: 'Then $\\alpha$ constitutes a root of the characteristic cubic' (verb-for-'is' swap) and 'its inverse yields CODATA-consistency' (nominalised predicate where a plain comparison is meant). Concentration in a short block is the tell.",
+        "notes": "FIX APPLIED (pure prose, no math and no meaning change): 'Then $\\alpha$ constitutes a root of the characteristic cubic:' -> 'Then $\\alpha$ is a root of the characteristic cubic:'. NOT fixed (proposed only, statement-bearing): 'and its inverse yields CODATA-consistency: $|\\alpha^{-1}-137.035999084|<10^{-3}$' -> 'and its inverse agrees with CODATA: $|\\alpha^{-1}-137.035999084|<10^{-3}$'. Math delimiters re-checked after the edit (6 x $$, balanced)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1795,5 +1947,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:26:45.705Z"
 }

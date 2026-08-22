@@ -17,7 +17,7 @@ $$
   T + \alpha\,H\,\bigl(1 - h^2\alpha\bigr).
 $$
 
-*Then $\alpha$ constitutes a root of the characteristic cubic:*
+*Then $\alpha$ is a root of the characteristic cubic:*
 
 $$
   P(\alpha)

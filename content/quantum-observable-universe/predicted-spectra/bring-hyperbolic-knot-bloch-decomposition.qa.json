@@ -1740,6 +1740,37 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.110Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.971Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'No basis element closes to a hyperbolic knot' and 'The figure-8 knot alone does not yield the required value' are substantive negative results that the argument turns on. CLOSURE-TABLE FINDING in notes.",
+        "notes": "STANDING-TRAP FINDING, report only: the Markov-closure table under 'Hyperbolic knots from normal-form closures' is wrong in three of its five rows. Computed the component count of each H_3 basis element's closure from the induced permutation on 3 strands: identity -> 3 components (table says '3 disjoint unknots', CORRECT); sigma_1 and sigma_2 -> 2 components each, i.e. a 2-component unlink, but the table says 'unknot'; sigma_1 sigma_2 and sigma_2 sigma_1 -> 1 component each, i.e. an unknot, but the table says 'Hopf link L_H'; sigma_1 sigma_2 sigma_1 -> 2 components, the Hopf link. The table's L_pm and Hopf-link rows are therefore swapped with the sixth basis element, and the last row compounds it: it labels the sixth element 'e^- = sigma_1^3, trefoil 3_1 = T(2,3)', but sigma_1^3 is a 2-braid and is not an element of the H_3 normal-form basis at all - the sixth basis element is sigma_1 sigma_2 sigma_1, whose closure is the Hopf link, as the sibling def:breit-wheeler-pair-production also gets wrong. Corrected table: 1 -> 3-unlink; sigma_1, sigma_2 -> 2-unlink; sigma_1 sigma_2, sigma_2 sigma_1 -> unknot; sigma_1 sigma_2 sigma_1 -> Hopf link. The section's conclusion ('No basis element closes to a hyperbolic knot') survives unchanged - none of the six is hyperbolic either way."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1759,6 +1790,21 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.175Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
       }
     ],
     "trap-em-dash": [
@@ -1778,6 +1824,36 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (9 in 1273 words)"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.226Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.703Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Dashes are dense but every one is structural: table-cell glosses in the field table and item separators in the Lean declaration list. None substitutes for sentence structure in running prose."
       }
     ],
     "trap-triples": [
@@ -1797,6 +1873,37 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 1273 words)"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.274Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.903Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Tier 0/1/2 and the five observations are substantive. MATH FINDINGS recorded here (see notes).",
+        "notes": "STANDING-TRAP FINDINGS, report only, never fix math inline. (1) LAMBDA-vs-Cl_2, the AGENTS.md guard, live in content/: Observation 2 writes 'Vol(B_3) = 8G = 8 Cl_2(pi/4)'. The VALUE 8G = 7.327724753 is right; the NAME is not. Recomputed: Cl_2(pi/4) = 0.9818721511, so 8 Cl_2(pi/4) = 7.854977208, which is not Vol(B_3). G = Cl_2(pi/2) = 0.9159655942. The Lobachevsky form is Vol(octahedron) = 8 Lambda(pi/4) = 4G = 3.663862377, and Vol(B_3) = 2 octahedra = 8G. This block's own sibling tbl:bloch-wigner-mathlib-filler-table1-data has it right (4 Cl_2(pi/2) = 4G), so the corpus disagrees with itself one file over. Proposed fix: 'Vol(B_3) = 8G = 8 Cl_2(pi/2)'. (2) FIELD INCONSISTENCY: the boxed conjecture and both reduction claims (C-Hyp), (C-Hodge) live in B(Q(zeta_15)) with F = Q(zeta_3, zeta_5), but the Borromean class has trace field Q(i) = Q(zeta_4), and i is NOT in Q(zeta_15) (Q(zeta_n) contains i iff 4 | n; 4 does not divide 15). So the field the conjecture is stated over cannot contain one of the two classes the argument is built on - and Observation 2 has already concluded the compositum must be Q(zeta_60). The Lean lemma two_knot_decomposition_insufficient, which combines D[Z_{4_1}] and D[Z_{B_3}], is likewise not statable in B(Q(zeta_15)). Proposed fix: state the conjecture over Q(zeta_60), r_2 = 8, and drop the '4-dimensional space' claim in the Reduction section. (3) DUPLICATE LINK: the Observation-3 atlas lists the Borromean rings as the proton/neutron knot AND L6a4 as the 3-He knot, with the same volume 7.328 and the same trace field Q(i) - because L6a4 IS the Borromean rings (6^3_2 in Rolfsen). The Reformulation then treats this as a derived fact ('The shared volume identity 8G establishes the relation B_3 ~ L6a4'), when it is an identity of the same link with itself, and the 'rank-4 atlas-spanned lattice' therefore has at most rank 4 for a different reason than the one given. (4) FORCE-SECTOR MISLABEL: Observation 4 calls T(2,9) and T(3,5) 'the strong-force pair'. This block's own Framing paragraph identifies them as the force carriers producing q[9]_q[10]_q, which is 1/alpha_EM - electromagnetic, per prop:em-coupling-projection. (5) The field table itself is CORRECT throughout: degrees 2, 2, 4, 4, 16 and r_2 = 1, 1, 2, 2, 8 all recomputed via phi(n)/2; r_2(Q(zeta_15)) = 4; the two Lean rank identities 4 = 1 + 2 + 1 and 8 = 4 + 1 + 3 check out arithmetically, though the '+1' and '+3' are bookkeeping constants rather than structure. Vol(6_2) = 4.401 and Vol(8_11) = 8.286 are correct, as is (2/(3pi))/Cl_2(pi/3) = 0.2090826, not a small rational."
       }
     ],
     "trap-closing-aphorism": [
@@ -1816,6 +1923,21 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.333Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
       }
     ],
     "trap-meta-commentary": [
@@ -1835,6 +1957,37 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.383Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:31.134Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No 'note the framing' construction. KIND-DISCIPLINE OBSERVATION in notes.",
+        "notes": "report only: this is a conjecture block, but it contains two paragraphs headed '**Theorem (cyclotomic compositum).**' and '**Theorem (field equivalence).**', neither with a proof, a Lean ref or an entry in the block's own Lean inventory. The first is elementary and true (lcm(3,4,5) = 60, verified); the second is explicitly conditional ('Assume both routes produce a Bloch class with archimedean image 2/(3pi)'), so it is a conditional statement wearing an unconditional label. Per AGENTS.md 3b a provable-kind assertion inside a conjecture cone needs either the conditional-class treatment or demotion. Separately, 'By the Birman-Hilden theorem, 3-braid closures yield hyperbolic knots up to 10 crossings' misattributes: Birman-Hilden theory concerns branched coverings and mapping class groups and says nothing of the kind, and the claim as stated is false in any case, since 3-braid closures realise knots of arbitrarily many crossings."
       }
     ],
     "trap-thesis-restatement": [
@@ -1854,6 +2007,38 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.426Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.755Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The same reduction is stated three times in three sections: 'These theorems reduce the structural alignment to the existence of an explicit normal-form decomposition for 2/(3pi).'; 'The K-theoretic identification of 2/(3pi) reduces to an integer-coefficient search.'; 'The K-theoretic search asks whether 2/(3pi) is a Z-linear combination of normal-form values.'",
+        "notes": "proposed: keep the first, delete the other two, or make the later ones explicit back-references. Not fixed inline: they sit in three different sections and removing them changes each section's closing shape."
       }
     ],
     "trap-performed-warmth": [
@@ -1873,6 +2058,21 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.541Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
       }
     ],
     "trap-superlative": [
@@ -1892,6 +2092,38 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.597Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.807Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "major",
+        "evidence": "A cluster of unproved universal quantifications asserted flatly, in a block that is a conjecture: 'Every hyperbolic knot embeddable in Bring's surface with bridge number <= 3 appears in this set'; 'Normal-form products across H_3(q) through H_8(q) reach the FULL SET of hyperbolic knots embeddable in Bring's surface'; 'Iterated composition reaches EVERY corresponding Bloch-Wigner value'; 'The Bloch group IS GENERATED BY the normal-form elements and the torus-knot operators'; 'ONLY mass-bearing knots carry Bloch-Wigner content'; 'Bring's surface ... contains ALL 3-bridge embeddings as closed 3-braids'. None carries a proof, a citation or a Lean reference, and the block's own Lean inventory formalises none of them - what it does formalise are the r_2 values and a two-knot insufficiency lemma.",
+        "notes": "proposed: convert each to an explicit sub-conjecture or hypothesis ('Assume every hyperbolic knot ... appears in this set'), since the reduction argument depends on them. Structural: this is six sentences across four sections."
       }
     ],
     "trap-nonspeakable": [
@@ -1911,6 +2143,38 @@
         "reviewed_at": "2026-08-15T10:31:01.149Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:30.655Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the 14 KB conjecture: statement, framing, field structure, five observations, normal-form closures, field equivalence, figure-8, reduction, Lean inventory. All ten categories judged; every field degree, volume, closure and named theorem checked."
+      },
+      {
+        "field_hash": {
+          "md": "98cc24a39823",
+          "ts": "a82db280369a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:31.055Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Two sentences do not parse. 'The field Q(zeta_5) contains no REAL QUADRATIC IMAGINARY subfield other than Q' - real and imaginary at once, and Q is not quadratic. What is true is that Q(zeta_5) has exactly one proper subfield, the REAL quadratic Q(sqrt 5), and no imaginary quadratic subfield, which is what Observation 1 needs. Also 'Tier 1: Closures of normal-form products in H_3(q) (APPROXIMATE 30 prime knots)' uses the adjective where the adverb belongs.",
+        "notes": "proposed: 'Q(zeta_5) has no imaginary quadratic subfield; its only proper subfield is the real quadratic Q(sqrt 5).' and 'approximately 30 prime knots'. Minor: trailing whitespace on five lines."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1934,5 +2198,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:43:31.134Z"
 }

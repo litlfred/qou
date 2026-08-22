@@ -1395,6 +1395,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:01.249Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'This labelling does not affect the product [9]_q[10]_q. It identifies which torus knot mediates which sector.' is a real scope statement - the assignment is physically meaningful but numerically inert - and is checkable: the product is symmetric in the two factors. Substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1414,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.781Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (numbered three-item list, a conclusion sentence, and a 'Strong and weak labelling' paragraph). No pivot, no spaced em-dash, no aphoristic closer (it ends on the factual 'It identifies which torus knot mediates which sector'), no narrated emphasis, no restatement closer, no warm register, no noun-pile."
       }
     ],
     "trap-em-dash": [
@@ -1433,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 114 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.865Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (numbered three-item list, a conclusion sentence, and a 'Strong and weak labelling' paragraph). No pivot, no spaced em-dash, no aphoristic closer (it ends on the factual 'It identifies which torus knot mediates which sector'), no narrated emphasis, no restatement closer, no warm register, no noun-pile."
       }
     ],
     "trap-triples": [
@@ -1452,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 114 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:01.201Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The three-item list is substantive: three genuinely distinct inputs (the existence axiom fixing genus 4; the Diophantine classification; the q-dimension assignment in Rep_q(SU_q(2))), not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1471,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.953Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (numbered three-item list, a conclusion sentence, and a 'Strong and weak labelling' paragraph). No pivot, no spaced em-dash, no aphoristic closer (it ends on the factual 'It identifies which torus knot mediates which sector'), no narrated emphasis, no restatement closer, no warm register, no noun-pile."
       }
     ],
     "trap-meta-commentary": [
@@ -1490,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:01.000Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (numbered three-item list, a conclusion sentence, and a 'Strong and weak labelling' paragraph). No pivot, no spaced em-dash, no aphoristic closer (it ends on the factual 'It identifies which torus knot mediates which sector'), no narrated emphasis, no restatement closer, no warm register, no noun-pile."
       }
     ],
     "trap-thesis-restatement": [
@@ -1509,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:01.049Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (numbered three-item list, a conclusion sentence, and a 'Strong and weak labelling' paragraph). No pivot, no spaced em-dash, no aphoristic closer (it ends on the factual 'It identifies which torus knot mediates which sector'), no narrated emphasis, no restatement closer, no warm register, no noun-pile."
       }
     ],
     "trap-performed-warmth": [
@@ -1528,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:01.088Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (numbered three-item list, a conclusion sentence, and a 'Strong and weak labelling' paragraph). No pivot, no spaced em-dash, no aphoristic closer (it ends on the factual 'It identifies which torus knot mediates which sector'), no narrated emphasis, no restatement closer, no warm register, no noun-pile."
       }
     ],
     "trap-superlative": [
@@ -1547,6 +1667,22 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:01.297Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'Three independent results force the denominator' is a bounded claim about three named results, not inflation. The title's 'no degrees of freedom' is a .ts field, out of scope for the .md verdict.",
+        "notes": "Two cross-block inconsistencies reported to the batch: (1) this block calls the genus-4 embedding 'The existence axiom', while rem:em-coupling-chern-simons calls the same thing 'The existence proof for a quantum observable universe' - axiom vs proof is a status difference, not a wording choice. (2) 'embeds the brane into a genus-4 modular curve': Bring's curve is a genus-4 curve with S_5 automorphisms but is not standardly a modular curve; low-confidence terminology flag."
       }
     ],
     "trap-nonspeakable": [
@@ -1566,6 +1702,21 @@
         "reviewed_at": "2026-08-15T10:31:01.243Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5bff89fe911e",
+          "ts": "add660df0cef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:01.127Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (numbered three-item list, a conclusion sentence, and a 'Strong and weak labelling' paragraph). No pivot, no spaced em-dash, no aphoristic closer (it ends on the factual 'It identifies which torus knot mediates which sector'), no narrated emphasis, no restatement closer, no warm register, no noun-pile."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1588,5 +1739,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:33:01.297Z"
 }
