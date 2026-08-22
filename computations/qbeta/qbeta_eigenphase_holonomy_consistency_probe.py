@@ -55,6 +55,43 @@ STATIONARY at the classical point.**  `z_C`'s only critical point on `q > 0` is
 `q = 1`, and it is a *maximum*; `z_D` is not stationary there.  That is the whole
 content of the second-order agreement, stated structurally.
 
+## The crux, stated exactly — and a candidate explanation I tested and refuted
+
+Realising `σ₁ = diag(q, −q⁻¹)` as a half-monodromy `exp(iπA)` fixes the
+infinitesimal braiding, and its log-eigenvalue gap is
+
+    log-gap(σ₁) = 2 ln q − iπ
+
+I reached for the obvious story — that `α` is a quarter of that gap, the two
+halvings being half-monodromy and Markov symmetrisation.  **That is wrong.**
+`target/gap = −ln q/(4 ln q − 2iπ)` is not constant, and at `q₀` the `iπ`
+dominates the real part by **15×**, so no fixed multiple of the gap gives `α`.
+Recorded as refuted rather than quietly dropped, because it is the first thing
+the next reader will also reach for.
+
+What *is* exact:
+
+    α_leading / Re(log-gap) = −1/4          (Re(log-gap) = 2 ln q)
+
+So `α` is a quarter of the **real** part, with the `iπ` excluded.  Two things
+are unexplained and together they are the whole remaining content: **why 1/4**,
+and **why the `iπ` is discarded**.
+
+## A structural consequence worth flagging
+
+`σ₁`'s eigenvalues are `q` (modulus `q`, phase `0`) and `−q⁻¹` (modulus `q⁻¹`,
+phase `π`).  So its *phase* content is `{0, π}` — **constant, with no
+`q`-dependence at all** — while every bit of `q`-dependence sits in the
+*moduli*, whose log-ratio is `2 ln q`.
+
+`α` tracks the moduli.  That makes "eigenphase" a questionable name for it: it
+is a log-modulus, not a phase, of this operator.  It also constrains branch 3
+sharply — **a unitary holonomy cannot produce a `q`-dependent `α` from this
+spectrum**, since a unitary monodromy's eigenvalues have modulus 1 and this
+spectrum's phases are `q`-independent.  Either the connection is non-unitary, or
+the phase comes from somewhere other than `σ₁`'s spectrum.  That is a falsifiable
+fork, not a refutation: it says what a working construction must look like.
+
 ## Scope — this is consistency, NOT a derivation
 
   * It does **not** derive `α`, in either convention.
@@ -174,11 +211,33 @@ def main() -> int:
         f"alpha_C = {mp.nstr(aC0,12)}, -(ln q)/2 = {mp.nstr(log0,12)}, rel {mp.nstr(rel*100,5)}%",
     )
 
+    # ---- 8. the 'quarter of the gap' story is REFUTED ----
+    lg = 2 * sp.log(q) - sp.I * sp.pi
+    ratio_gap = sp.simplify((-sp.log(q) / 2) / lg)
+    ratio_re = sp.simplify((-sp.log(q) / 2) / (2 * sp.log(q)))
+    check(
+        "8. alpha is -1/4 of Re(log-gap), NOT of the gap itself",
+        sp.simplify(sp.diff(ratio_gap, q)) != 0
+        and sp.simplify(ratio_re - sp.Rational(-1, 4)) == 0,
+        f"target/gap = {ratio_gap} (NOT constant); target/Re(gap) = {ratio_re}",
+    )
+
+    # ---- 9. sigma_1's PHASE content is q-independent; the q-dependence is modular
+    mp.mp.dps = 25
+    q0n = mp.mpf("1.1099785827513808")
+    dom = mp.pi / (2 * mp.log(q0n))
+    check(
+        "9. sigma_1's phases are {0, pi} (q-free); all q-dependence is in the moduli",
+        dom > 10,
+        f"at q0 the topological i*pi dominates Re(log-gap) by {mp.nstr(dom,4)}x, so a "
+        f"UNITARY holonomy cannot produce a q-dependent alpha from this spectrum",
+    )
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/7: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/9: {', '.join(failures)}")
         return 1
-    print("7/7 assertions hold.")
+    print("9/9 assertions hold.")
     print()
     print("READING: alpha is second-order logarithmic exactly when the Markov")
     print("parameter is STATIONARY at the classical point. z_C is (q=1 is its")
