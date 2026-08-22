@@ -81,6 +81,25 @@ theorem trace_pair (i j : Generator n) (h : i.idx.val < j.idx.val) :
   -- Ref: [prop:markov-pair-z2]; follows from trace_prod_gen field.
   exact MT.trace_prod_gen i j h
 
+/-- **Idempotent-sandwich collapse.** For an idempotent `e` (`e * e = e`),
+    `tr_M(e · x · e) = tr_M(e · x)`.  Derived purely from the cyclicity axiom
+    (M2) and idempotency: `tr(e·x·e) = tr(e·(e·x)) = tr((e·e)·x) = tr(e·x)`.
+
+    This is the structural simplification behind the **Pauli-full-shell** case of
+    the knot operator `F(τ, N)` in `cor:spectral-decomposition-qvalue`, whose
+    numerator is `|tr_M(e_{(1³)} · τ · T_β · e_{(1³)})|` with `e_{(1³)}` the
+    alternating Young idempotent: the outer `e` sandwich collapses, so the
+    numerator equals `|tr_M(e_{(1³)} · τ · T_β)|`.  Bean `qou-xq3f`. -/
+theorem trace_idempotent_sandwich (e x : A) (he : e * e = e) :
+    MT.trace (e * x * e) = MT.trace (e * x) := by
+  rw [MT.cyclic (e * x) e, ← mul_assoc, he]
+
+/-- The mirror form: `tr_M(e · x · e) = tr_M(x · e)` for an idempotent `e`.
+    Same derivation via cyclicity applied to the leading factor. -/
+theorem trace_idempotent_sandwich' (e x : A) (he : e * e = e) :
+    MT.trace (e * x * e) = MT.trace (x * e) := by
+  rw [MT.cyclic (e * x) e, ← mul_assoc, he, MT.cyclic e x]
+
 end MarkovTrace
 
 /- **Uniqueness of the Markov trace (target statement).**
