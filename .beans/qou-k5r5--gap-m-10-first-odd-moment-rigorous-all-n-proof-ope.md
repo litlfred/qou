@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-21T22:10:42Z
+updated_at: 2026-08-22T09:22:46Z
 ---
 
 
@@ -69,3 +69,21 @@ REMAINING for M_1>0 all-n: Fulman (arxiv-math-0305423) finite-n bound on the
 +/- n^{5/2} cancellation. kappa>0 = asymptotic positivity; + exact positivity
 n<=50; the finite-n bound is the SOLE remaining gap. Not laundered; nothing
 wired; L2 unchanged.
+
+
+
+FULMAN REDUCTION (2026-08-21, PR #5428): M_1>0 all-n reduced to P(n)>N(n).
+Up-down chain J (arxiv-math-0305423). PROVED exact:
+ - omega_3=Sum_c^2-C(n,2) is a J-eigenfunction, beta_3=(n-2)/(n+1), 1-beta_3=3/(n+1).
+ - Identity: Cov(A,omega_3)=(n+1)/6 * sum_edges 2w dA d(omega_3) => sign(M_1)=sign of
+   a LOCAL one-box-move sum.
+ - Fact A (elementary per-edge): d(Sum|c|)d(omega_3)=(|c_r|-|c_a|)^2(|c_r|+|c_a|)>=0
+   => P:=Cov(Sum|c|,omega_3)>=0.
+ - Fact B (per-edge n<=13): d(SumD2)d(omega_3)<=0 => N:=-Cov(SumD2,omega_3)>=0.
+ - M_1 = P - N, both manifest. This IS the '-0.62 cancellation' as two signed halves.
+Cross-method: matches IO leading order (P_lead=0.16977, N_lead=0.11213, P-N=kappa=
+0.05764 n^{5/2}); N/P->0.66<1 so P>N asymptotically <=> Omega_3>0 (proved).
+REMAINING GAP: finite-n domination P(n)>N(n). M_1>0 exact n<=50; asymptotic proved.
+Per-edge for Sum_h itself FAILS (~2-3% discordant from n=6). NOT closed; not laundered.
+STATUS: kappa>0 DERIVED; all-n reduced to P>N (asymptotic domination proved, finite-n
+open). Next: bound P-N>=0 at finite n (weighted edge inequality / 2nd-moment control).
