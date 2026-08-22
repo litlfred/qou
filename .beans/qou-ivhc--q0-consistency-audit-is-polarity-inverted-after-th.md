@@ -1,10 +1,11 @@
 ---
 # qou-ivhc
 title: q0_consistency_audit is POLARITY-INVERTED after the proton ruling — it classifies the canonical pin as a stale-q0 bug, and has a --strict CI-gate mode
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-22T15:27:20Z
-updated_at: 2026-08-22T15:27:20Z
+updated_at: 2026-08-22T19:28:25Z
 ---
 
 
@@ -100,3 +101,78 @@ with an equally wrong one that merely looks fresher.
 Related: `qou-cds3` (the 22 mislabelled witnesses, of which this is one),
 `qou-khac` (the muon constant this audit calls canonical is itself stale by
 8.54e-11).
+
+---
+
+## Summary of Changes (2026-08-22) — FIXED
+
+`computations/audits/q0_consistency_audit.py` inverted and re-run.
+
+### What changed
+
+1. **Polarity swapped.** `OLD_Q0_PATTERNS` now scans for the pre-ruling **muon**
+   family (`10997859555`, covering both the hand-typed `…55733…` and the
+   `…55418…` variant); it previously scanned for the proton pin.
+   `STALE_TRM_PATTERNS` swapped to the muon-anchored tr_M leaves.
+   **No number was recomputed** — both sets were already written down in this
+   file's own comments (`…062286/…332971/…864715` vs `…0614425445/…2332299/…2864240`),
+   so the swap introduces no new numeric claim.
+2. **The canonical pin is now read at runtime** from `q_parameter.Q_50_DIGIT_STR`
+   instead of being quoted. This is the point: the file already *named*
+   `q_parameter` as the canonical source at `canonical_q0_source` and then
+   hardcoded a different (muon) literal beside it. Quoting the pin is the defect
+   the audit exists to catch, and the literal went stale exactly that way.
+3. **Provenance added** — `computedAt`, `scriptFile`, `scriptHash`, `engine`. The
+   witness previously had none of these, so no staleness gate could see it.
+4. Docstring rewritten to record the inversion, its cause, and that
+   `legit-muon-xcheck` now carries more load (every muon literal matches the
+   stale pattern, so intentional cross-checks rely on that classifier).
+
+### Verified
+
+Re-run output:
+
+```
+canonical_proton_q0  = 1.1099785827513808075916690956107688798744991218736   (runtime)
+computedAt           = 2026-08-22T19:30:16Z
+scriptHash           = 1ea40576a700
+total_hits           = 488
+  production-hardcode  288
+  legit-muon-xcheck    113
+  stale-docstring       87
+```
+
+**Regression check — the whole point.** Hits firing on the canonical proton pin:
+**0**. Eight hits *mention* it, and all eight are lines carrying **both** values,
+where the match is on the muon pattern and the proton digits are incidental
+context — e.g. `_EXPECTED_PREFIX = {"muon": "1.109978595557", "proton":
+"1.109978582751"}` (classified `legit-muon-xcheck`, correctly) and
+`q₀_proton = 1.10997858275138…  q₀_muon = 1.10997859555418…` (`stale-docstring`).
+
+### The 288 are a real backlog, and it is the SOURCE-side twin of `qou-cds3`
+
+Sample: `a4_interface_kl_subpath_closure.py:27` and
+`a4_option_e_color_tube_closure.py:23` both open with
+`Q0_STR = "1.10997859555733471989976322048…"` — the stale hand-typed muon
+constant, assigned to a live constant. `qou-cds3` measured 424 **witnesses**
+carrying hand-typed muon values; this is the same migration surface in **source**,
+at 288 sites.
+
+Sharpest single instance: `tools/qou-substrate/tests/test_q0_anchor.py` **asserts**
+`payload["q0Value"].startswith("1.109978595557")` — a test in the substrate
+package that pins the stale muon value as the anchor and would fail if the
+canonical pin were emitted.
+
+### Note: the corpus already had a correct sibling audit
+
+`computations/audits/q0_anchor_consistency_audit.py` carries
+`_EXPECTED_PREFIX = {"muon": "1.109978595557", "proton": "1.109978582751"}` — the
+right polarity. So two near-identically-named audits sat side by side, one correct
+and one inverted, for a week. Worth a look at whether they should be one file;
+not merged here, since that is a scoping decision rather than a defect fix.
+
+### Still not done
+
+`--strict` must stay **off in CI**. It now fails correctly rather than
+incorrectly, but 288 real hits means enabling it gates the build on the whole
+muon→proton source migration, which is `qou-cds3`'s unauthorised bulk sweep.

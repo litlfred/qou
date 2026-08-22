@@ -1,331 +1,3439 @@
 {
   "computation": "q0-consistency-audit",
   "description": "Scans compute scripts for stale pre-habiro q\u2080 literals (10997858275 / 858275) and stale-A tr_M leaf values (tr_M evaluated at A) that the 2026-06-22 cluster-A migration replaced with the canonical C values. production-hardcode entries are real bugs (a live constant kept at the stale value); stale-docstring are cosmetic; legit-muon-xcheck are the intentional muon cross-check.",
-  "timestamp": "2026-06-22T14:18:20.621481+00:00",
-  "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin, habiro-refined)",
-  "stale_pre_habiro_q0": "1.10997858275138080759\u2026",
-  "canonical_proton_q0": "1.10997859555733471989\u2026",
+  "timestamp": "2026-08-22T19:30:16.785036+00:00",
+  "computedAt": "2026-08-22T19:30:16.785117+00:00",
+  "scriptFile": "computations/audits/q0_consistency_audit.py",
+  "scriptHash": "1ea40576a700",
+  "engine": "python-re",
+  "canonical_q0_source": "q_parameter.Q_50_DIGIT_STR (proton pin), read at runtime",
+  "canonical_proton_q0": "1.1099785827513808075916690956107688798744991218736",
+  "stale_muon_q0_hand_typed": "1.10997859555733471989\u2026",
+  "stale_muon_q0_variant": "1.10997859555418057528\u2026",
+  "polarity_inverted": "2026-08-22, bean qou-ivhc \u2014 stale is now the muon family",
   "counts_by_classification": {
-    "production-hardcode": 36,
-    "stale-docstring": 9
+    "legit-muon-xcheck": 113,
+    "production-hardcode": 288,
+    "stale-docstring": 87
   },
-  "total_hits": 45,
-  "production_hardcode_count": 36,
+  "total_hits": 488,
+  "production_hardcode_count": 288,
   "hits": [
     {
-      "file": "computations/audits/qbeta_multiblock_order_audit.py",
+      "file": "computations/a3_magnitude_berezinian_crossterm_probe.py",
+      "line": 41,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = 1.1099785955573347          # q-pinning-50-digit muon anchor (computations/ layer)"
+    },
+    {
+      "file": "computations/a4_interface_kl_subpath_closure.py",
+      "line": 27,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/a4_option_e_color_tube_closure.py",
+      "line": 23,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/alpha/alpha_em_pslq_uniqueness.py",
+      "line": 90,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "print(f\"q_0 (q_parameter.py) = 1.1099785955573347 (17 digits)\")"
+    },
+    {
+      "file": "computations/alpha/alpha_k_jones_markov_h12.py",
+      "line": 83,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# is the MUON value 1.1099785955573347..., and derived q0, h and z_mark from"
+    },
+    {
+      "file": "computations/alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py",
+      "line": 183,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "return mp.mpf(\"1.10997859555733471989976322048322502665620840878\")"
+    },
+    {
+      "file": "computations/alpha_em/alpha_em_channel_swap_involution_probe.py",
+      "line": 133,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "q0 = mpf(\"1.10997859555733471\")  # muon-q\u2080 canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/alpha_em/alpha_em_period_qdeformation_probe.py",
+      "line": 134,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1/q0\": 1 / mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/alpha_em/alpha_em_period_qdeformation_probe.py",
+      "line": 152,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "f\"(post-hoc): r(1/q0) = {mp.nstr(rf(1/mp.mpf('1.10997859555733471')), 8)}\")"
+    },
+    {
+      "file": "computations/alpha_em_anchor_preference_probe.py",
+      "line": 16,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "muon pin                     = 1.10997859555733471   ->  q_muon   - q_alpha = +11.78 ppb"
+    },
+    {
+      "file": "computations/alpha_em_anchor_preference_probe.py",
+      "line": 47,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/alpha_em_b2_invariant_c_probe.py",
+      "line": 78,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "return mp.mpf(\"1.10997859555733471989976322048322502665620840878\")"
+    },
+    {
+      "file": "computations/alpha_em_b2_scalar_c_probe.py",
+      "line": 81,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "return mp.mpf(\"1.10997859555733471\"), \"muon-q\u2080 literal (computations/ layer)\""
+    },
+    {
+      "file": "computations/alpha_em_b2_tau_intertwiner_probe.py",
+      "line": 73,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "return mp.mpf(\"1.10997859555733471989976322048322502665620840878\")"
+    },
+    {
+      "file": "computations/alpha_em_form_ladder_probe.py",
+      "line": 63,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/alpha_em_loop_measure_consistency_probe.py",
+      "line": 47,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/alpha_em_perloop_integer_forcedness_probe.py",
+      "line": 44,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/alpha_em_theta_graph_two_loop_probe.py",
+      "line": 137,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/alpha_k_four_strand_singlet_selection.py",
       "line": 82,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q0_MP_PIN = \"1.1099785827513808075916690956107688798744991218736\""
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
     },
     {
-      "file": "computations/c_3_categorical_derivation_attempt.py",
-      "line": 14,
+      "file": "computations/alpha_k_per_force_assembly.py",
+      "line": 104,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_Q0_MUON_FALLBACK = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/alpha_k_selection_rule_conditional.py",
+      "line": 100,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/alpha_k_split_pole_order_audit.py",
+      "line": 73,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/atomic_tr_m_mpfr_50dps.py",
+      "line": 110,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "if not str(_resolved).startswith(\"1.10997859555\"):"
+    },
+    {
+      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
+      "line": 81,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"D\":   mp.mpf(\"0.3882864715477132\"),"
+    },
+    {
+      "file": "computations/audits/deuteron_delta_i_audit.py",
+      "line": 24,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "Deuteron tr_M closed form at q_0: 0.3882864715477132\u2026"
+    },
+    {
+      "file": "computations/audits/deuteron_delta_i_audit.py",
+      "line": 25,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "vs canonical bridge 0.3882864715477132 \u2014 3 \u00d7 10\u207b\u00b9\u2076 (machine precision)."
+    },
+    {
+      "file": "computations/audits/deuteron_delta_i_audit.py",
+      "line": 29,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "|tr_M(\u03b2_D)| = 0.388286471547    at q_0"
+    },
+    {
+      "file": "computations/audits/deuteron_delta_i_audit.py",
+      "line": 119,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "TR_M_DEUTERON_AT_Q0 = mp.mpf(\"0.3882864715477132\")  # from categorical chain audit"
+    },
+    {
+      "file": "computations/audits/muon_pin_three_values_probe.py",
+      "line": 30,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "\u2022 m_p-pin  q\u2080 (= 1.1099785827513808):  c_3 \u2248 \u22122.062..\u22122.069 (sign"
+      "text": "Vol(4_1)/206.7682830  ->  1.10997859555418057528159407961   == B  (CODATA 2018)"
+    },
+    {
+      "file": "computations/audits/muon_pin_three_values_probe.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "\"measured 1.1099785955573347 computed vs 1.1099785955541805 stamped\""
+    },
+    {
+      "file": "computations/audits/muon_pin_three_values_probe.py",
+      "line": 216,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"passed\": B.startswith(\"1.1099785955541805\"),"
+    },
+    {
+      "file": "computations/audits/muon_pin_three_values_probe.py",
+      "line": 219,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"('1.1099785955541805 stamped'). The revert fixed the \""
+    },
+    {
+      "file": "computations/audits/q0_anchor_consistency_audit.py",
+      "line": 97,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_EXPECTED_PREFIX = {\"muon\": \"1.109978595557\", \"proton\": \"1.109978582751\"}"
+    },
+    {
+      "file": "computations/audits/q0_cross_layer_fallback_scan.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "q0 = mp.mpf(\"1.10997859555733471\")   # <- the OTHER layer"
+    },
+    {
+      "file": "computations/audits/q0_cross_layer_fallback_scan.py",
+      "line": 46,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "MUON_PREFIXES = (\"1.10997859555\", \"1.1099785955\")"
+    },
+    {
+      "file": "computations/audits/q0_hardcoded_pin_audit.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": \"1.1099785955573347\","
+    },
+    {
+      "file": "computations/audits/q0_producer_pin_classifier.py",
+      "line": 149,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "if s.startswith(\"1.10997859555\"):"
+    },
+    {
+      "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
+      "line": 25,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "(params.q0 1.10997859555733 -> 1.10997858275138), which is why PR #5436"
+    },
+    {
+      "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "canonical (A)      1.109978595557..."
+    },
+    {
+      "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
+      "line": 67,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "CODATA 2018 (B)    1.109978595554..."
+    },
+    {
+      "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
+      "line": 339,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.10997859555733 -> 1.10997858275138 on re-run, with \""
+    },
+    {
+      "file": "computations/binding_bstar_bridge.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/binding_factor_f_decomposition.py",
+      "line": 53,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"D\":   (1, 1, \"0.9835261819186453\", \"0.38828647154771295\", \"2.224566\"),"
+    },
+    {
+      "file": "computations/binding_fewbody_bondcount.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/binding_wn_derive_or_refute.py",
+      "line": 32,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/binding_wn_frobenius_dual_probe.py",
+      "line": 58,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/binding_wn_multianchor_tower_refute.py",
+      "line": 57,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/bring_perturbative_cs_2loop_probe.py",
+      "line": 106,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.1099785955573347198997632204832250266562084087801536866079\""
     },
     {
       "file": "computations/c_3_categorical_derivation_attempt.py",
-      "line": 76,
+      "line": 5,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "\"1.1099785827513808075916690956107688798744991218735787360728142402\""
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
     },
     {
-      "file": "computations/e_hartree_round24_molecular_reuse.py",
-      "line": 79,
+      "file": "computations/c_3_categorical_derivation_attempt.py",
+      "line": 6,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q0 = 1.1099785827513808075916690956107688798744991218736"
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
     },
     {
-      "file": "computations/from_scratch/derive_he3.py",
+      "file": "computations/c_3_categorical_derivation_attempt.py",
+      "line": 18,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "\u2022 muon-pin q\u2080 (= 1.1099785955541805):  c_3 \u2248 \u22122.0097"
+    },
+    {
+      "file": "computations/c_3_categorical_derivation_attempt.py",
+      "line": 84,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON_PIN_STR = \"1.1099785955541805\""
+    },
+    {
+      "file": "computations/canonical_tr_m_three_path_comparison.py",
+      "line": 104,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"proton\":  \"1.0653062286131670\",  # matches bridge to all digits"
+    },
+    {
+      "file": "computations/canonical_tr_m_three_path_comparison.py",
+      "line": 105,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"neutron\": \"0.9232332971861535\",  # matches bridge"
+    },
+    {
+      "file": "computations/canonical_tr_m_three_path_comparison.py",
+      "line": 106,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"deuteron\": \"0.3882864715477132785110659223165687998713135876719\","
+    },
+    {
+      "file": "computations/canonical_tr_m_via_chi_cache.py",
+      "line": 308,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "if _q.startswith(\"1.10997859555\"):"
+    },
+    {
+      "file": "computations/casimir_xi_2_dig_deeper.py",
+      "line": 118,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q_sweep = [\"1.05\", \"1.1099785955573347\", \"1.3\", \"1.7\", \"2.0\"]"
+    },
+    {
+      "file": "computations/chi_dual_path_xref_audit.py",
+      "line": 160,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "MUON_PREFIX = \"1.10997859555\""
+    },
+    {
+      "file": "computations/chirality_avg_content.py",
+      "line": 410,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"m_\u03bc/m_e), q_0 = 1.10997859555733471... .  This is NOT a \""
+    },
+    {
+      "file": "computations/chirality_avg_content_chiral.py",
+      "line": 454,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"built in the muon era (q_0 = 1.1099785955541805), so \""
+    },
+    {
+      "file": "computations/cross_check_trM_cw_seminormal_leg.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert q.startswith(\"1.109978595557\"), q"
+    },
+    {
+      "file": "computations/definitive_q0_shift_for_mp.py",
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "At q_exact = 1.10997859555733..., the substrate identity"
+    },
+    {
+      "file": "computations/delta_lambda_two_factor_phase2.py",
+      "line": 211,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "expected=0.3882864715477132,"
+    },
+    {
+      "file": "computations/deltalambda/b4_deformed_sspole_sector_probe.py",
+      "line": 90,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/b4_isotope_pole_approach_probe.py",
+      "line": 78,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/b4_slater_antisymmetrizer_exchange_sign.py",
+      "line": 83,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/binding_weight_markov_pinning_probe.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/deltalambda/coloring_hq0_g2_derivation_probe.py",
+      "line": 48,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"   # muon-canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/cumulant_mev_cluster_expansion_probe.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"           # muon-canonical q0 (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_additive_signchanging_term_probe.py",
+      "line": 37,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
+      "line": 52,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(str(jw[\"data\"].get(\"q0\", jw[\"parameters\"].get(\"q0\", \"1.10997859555733471\"))))"
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_demazure_subcrystal_magnitude_probe.py",
+      "line": 104,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_graded_two_anchor_nogo_probe.py",
+      "line": 51,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(str(jw[\"data\"].get(\"q0\", jw[\"parameters\"].get(\"q0\", \"1.10997859555733471\"))))"
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py",
+      "line": 96,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_kappa_interface_residual_simplex_probe.py",
+      "line": 88,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/deltalambda/deuteron_binding_frame_independent_probe.py",
+      "line": 62,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"   # muon-canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/deuteron_g2_frame_artifact_probe.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"   # muon-canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/deuteron_naive_z_physical_probe.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/deuteron_octahedral_gluing_probe.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"   # muon-canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/deuteron_r_is_binding_residual_probe.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"   # muon-canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/deuteron_trefoil_qinvariant_closed_form_probe.py",
+      "line": 33,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/deltalambda/eunit_counit_mu0_tracing_probe.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/g2_leading_exact_coloring_vs_complexvol_probe.py",
+      "line": 49,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/geometric_qdilog_amplitude_r_frontier_probe.py",
+      "line": 46,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/geometric_qdilog_lifted_amplitude_probe.py",
+      "line": 69,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"   # muon-canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/habiro_magnitude_a3_probe.py",
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf('1.10997859555733471')"
+    },
+    {
+      "file": "computations/deltalambda/he4_binding_k_averaged_interface_probe.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347117485528280749490295019743898536\")"
+    },
+    {
+      "file": "computations/deltalambda/he4_binding_k_fingerprint_stage1_probe.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.1099785955573347117485528280749490295019743898536\""
+    },
+    {
+      "file": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
+      "line": 24,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "(1.10997859555733471989976\u2026), while ad-hoc shells resolve the proton pin"
+    },
+    {
+      "file": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
+      "line": 100,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert q.startswith(\"1.109978595557\"), q"
+    },
+    {
+      "file": "computations/deltalambda/he4_binding_k_stage2_probe.py",
+      "line": 103,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert q.startswith(\"1.109978595557\"), q"
+    },
+    {
+      "file": "computations/deltalambda/he4_stage2_ranking_seminormal_xcheck.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert q.startswith(\"1.109978595557\"), q"
+    },
+    {
+      "file": "computations/deltalambda/mu3_anchor_consistency_probe.py",
+      "line": 11,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "\u2192 q\u2080 = 1.10997859555733471989...            (MUON)"
+    },
+    {
+      "file": "computations/deltalambda/mu3_anchor_consistency_probe.py",
+      "line": 78,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471989976322048322502665620840878015405145269\")"
+    },
+    {
+      "file": "computations/deltalambda/mu3_target_frame_robustness_probe.py",
+      "line": 80,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = mp.mpf(str(_jw[\"parameters\"][\"q0\"]))          # 1.10997859555733471 (muon-canonical)"
+    },
+    {
+      "file": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
+      "line": 35,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/deltalambda/octahedral_barsplit_convergence_probe.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/deltalambda/t25_cinquefoil_deltalambda_sign_probe.py",
+      "line": 207,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# Was: silently fall back to the MUON literal 1.10997859555733471."
+    },
+    {
+      "file": "computations/deltalambda/trefoil_coloring_pinned_bareven_probe.py",
+      "line": 44,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STR = \"1.10997859555733471\"   # muon-canonical (computations/ layer)"
+    },
+    {
+      "file": "computations/deltalambda/trefoil_octahedral_shape_from_rep_probe.py",
       "line": 50,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Rational(11099785827513808, 10**16)"
+      "text": "Q0_STR = \"1.10997859555733471\""
     },
     {
-      "file": "computations/from_scratch/derive_t_h5.py",
-      "line": 54,
+      "file": "computations/deltalambda/vassiliev_magnitude_a3_probe.py",
+      "line": 57,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Rational(11099785827513808, 10**16)"
+      "text": "Q0 = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
     },
     {
-      "file": "computations/from_scratch/h3_canonical_basis.py",
-      "line": 165,
+      "file": "computations/deltalambda/wlambda_nuclear_braid_connected_probe.py",
+      "line": 55,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Rational(11099785827513808, 10**16)"
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")"
     },
     {
-      "file": "computations/from_scratch/wedderburn_markov.py",
-      "line": 325,
+      "file": "computations/deltalambda/wlambda_transfer_matrix_connected_probe.py",
+      "line": 52,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Rational(11099785827513808, 10**16)"
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")"
     },
     {
-      "file": "computations/from_scratch/wenzl_y_axiomatic.py",
-      "line": 189,
+      "file": "computations/derivation_chain.py",
+      "line": 79,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864715477132"
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 79,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864715477132"
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 79,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864715477132"
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 97,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"p\": 1.0653062286131670,"
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 98,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"n\": 0.9232332971861535,"
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 99,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"D\": 0.3882864715477132,"
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 112,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"p\":  \"1.0653062286131670593652845464313725576506616741351\","
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 113,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"n\":  \"0.92323329718615355710525339599068604013866212190134\","
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 114,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"D\":  \"0.3882864715477132785110659223165687998713135876719\","
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 146,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"p\":   1.0653062286131670,  # 11-crossing typed B_3 (uud)"
+    },
+    {
+      "file": "computations/derivation_chain.py",
+      "line": 147,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"n\":   0.9232332971861535,  # 11-crossing typed B_3 (udd)"
+    },
+    {
+      "file": "computations/e_hartree_mechanism_b_probe.py",
+      "line": 67,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Rational(11099785827513808, 10**16)"
+      "text": "q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/e_hartree_round19_dressed_scalar_block.py",
+      "line": 98,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/e_hartree_round20_trace_ratio.py",
+      "line": 82,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/e_hartree_round22_arch_bridge.py",
+      "line": 80,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/e_hartree_round23_normalization.py",
+      "line": 79,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/e_hartree_round24_molecular_reuse.py",
+      "line": 81,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# MUON pin (1.10997859555733471...) sitting under a comment calling it the"
+    },
+    {
+      "file": "computations/gap_a3_cross_atom_overshoot_probe.py",
+      "line": 33,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
+      "line": 28,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
+      "line": 44,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")   # substrate q\u2080 (matches y-lambda witness hot path)"
+    },
+    {
+      "file": "computations/gap_a3_overshoot_robustness_check.py",
+      "line": 43,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#         q = 1/(1 \u2212 \u221a(Vol(4_1)/(m_\u03bc/m_e))) = 1.109978595554180575281594\u2026"
+    },
+    {
+      "file": "computations/gap_a3_overshoot_robustness_check.py",
+      "line": 45,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#         Q_MUON = 1.10997859555733\u2026: that constant is the stale one, frozen"
+    },
+    {
+      "file": "computations/gap_a3_overshoot_robustness_check.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")            # muon anchor (current) \u2014 see above"
+    },
+    {
+      "file": "computations/gen_q0_anchor_manifest.py",
+      "line": 11,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "muon  1.109978595557\u2026  \u2192 ideal   (CAL-2 = \ud835\udd07_\u03b2, m_\u03bc/m_e)"
+    },
+    {
+      "file": "computations/gen_q0_anchor_manifest.py",
+      "line": 26,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "MUON = \"1.109978595557\""
     },
     {
       "file": "computations/h4_form_AB_cross_anchor_stability.py",
-      "line": 12,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "- q_proton = 1.10997858275\u2026 (CAL-2 / m_p anchor since PR #1422)"
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/h4_form_AB_cross_anchor_stability.py",
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/habiro/habiro_coefficients_atomic.py",
+      "line": 95,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "proton:   1.0653062286131670"
+    },
+    {
+      "file": "computations/habiro/habiro_coefficients_atomic.py",
+      "line": 96,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "neutron:  0.9232332971861535"
+    },
+    {
+      "file": "computations/habiro/habiro_coefficients_atomic.py",
+      "line": 97,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "deuteron: 0.388286471547713  (`include_inter=True`)"
+    },
+    {
+      "file": "computations/habiro/habiro_correction_product_verify.py",
+      "line": 69,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M = mp.mpf(\"1.065306228613167059365284546431372557650\")"
+    },
+    {
+      "file": "computations/habiro/habiro_exact_qbeta.py",
+      "line": 83,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "at q\u2080 = 1.0653062286 matches the witness tr_M_at_q0 = 1.0653062286"
+    },
+    {
+      "file": "computations/habiro/habiro_exact_taylor_extraction.py",
+      "line": 159,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M_val = mp.mpf(\"1.065306228613167059365284546431372557650\")"
+    },
+    {
+      "file": "computations/habiro/habiro_h9_correction_series.py",
+      "line": 73,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M = mp.mpf(\"1.065306228613167059365284546431372557650\")"
+    },
+    {
+      "file": "computations/habiro/habiro_h9_spectral_decomposition.py",
+      "line": 124,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M = mp.mpf(\"1.065306228613167059365284546431372557650\")"
+    },
+    {
+      "file": "computations/habiro/habiro_interpolate_cross_validator.py",
+      "line": 124,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q_0 = mp.mpf(str(atomic.parameters.get(\"q_0\", \"1.1099785955573347\")))"
+    },
+    {
+      "file": "computations/habiro/habiro_ladder_bridge.py",
+      "line": 77,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/habiro/habiro_normalization_bridge.py",
+      "line": 55,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "direct = mp.mpf(\"1.065306228613167059365284546431372557650\")"
+    },
+    {
+      "file": "computations/habiro/habiro_sub_ppm_third_factor.py",
+      "line": 64,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M = mp.mpf(\"1.065306228613167059365284546431372557650\")"
+    },
+    {
+      "file": "computations/habiro/qbeta_h4_stagec_markov_infra.py",
+      "line": 85,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/habiro/qbeta_h4_tower_branching_preflight.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q = mp.mpf(\"1.1099785955573347198997632204832250266562084087801536866079811461\")"
+    },
+    {
+      "file": "computations/habiro_interpolation_wlambda.py",
+      "line": 370,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mpf(\"1.10997859555733471\")     # computations/ canonical muon-q\u2080 (\u221211.5 ppb)"
+    },
+    {
+      "file": "computations/habiro_interpolation_wlambda.py",
+      "line": 371,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_PROTON = mpf(\"1.1099785955541805\")    # package-layer proton-pinned q\u2080 (constants.py)"
+    },
+    {
+      "file": "computations/hadron_knot_table.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "_Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/iterative_knot_builder.py",
+      "line": 26,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     HA = 1.10997859555733471989976 - (1 / 1.10997859555733471989976)"
+    },
+    {
+      "file": "computations/iterative_lp_dual_h6_deuteron.py",
+      "line": 180,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "# 0.3882864715477132 sourced from wenzl_n6_closed_form.witness.json \u2014 now"
+    },
+    {
+      "file": "computations/lever1_binding_classical_kernel_derive.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf('1.1099785955573347')"
+    },
+    {
+      "file": "computations/lever1_borel_half_singularity_probe.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf('1.1099785955573347')"
+    },
+    {
+      "file": "computations/lever1_content_monomial_separation.py",
+      "line": 77,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471989976322048322502665620840878015368660798114614493\""
+    },
+    {
+      "file": "computations/lever1_gevrey_order_pin.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf('1.1099785955573347')"
+    },
+    {
+      "file": "computations/lever1_plancherel_content_separation.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471989976322048322502665620840878015368660798114614493\""
+    },
+    {
+      "file": "computations/lever1_sw_period_lw_rate_refine.py",
+      "line": 63,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf('1.1099785955573347')"
+    },
+    {
+      "file": "computations/lever1_transfer_operator_spectral_qgevrey.py",
+      "line": 70,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.10997859555733471989976322048322502665620840878015368660798114614493\""
     },
     {
       "file": "computations/m_p_substrate_identity_50dps.py",
-      "line": 51,
+      "line": 54,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "At q_0 = 1.1099785827513808... (50 dps, m_p-pinned re-pin #1422):"
+      "text": "At q_0 = 1.1099785955573347... (50 dps, m_p-pinned re-pin #1422):"
+    },
+    {
+      "file": "computations/markov/markov_identity_symbolic_probe.py",
+      "line": 204,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "(\"muon_q0\", \"1.109978595557334719899763\"),"
+    },
+    {
+      "file": "computations/markov/markov_trace_axiomatic_multi_atom.py",
+      "line": 40,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "gives |tr_M(\u03b2_D)| = 0.388286471547713278511065922316 (canonical)."
+    },
+    {
+      "file": "computations/markov/markov_weights_symbolic.py",
+      "line": 38,
+      "kind": "stale-trM",
+      "classification": "stale-docstring",
+      "text": "tr_M(proton) \u2248 1.0653062286 to all printed digits."
+    },
+    {
+      "file": "computations/markov/markov_weights_symbolic.py",
+      "line": 302,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "print(f\"  markov_peel ref : 1.0653062286131670\")"
+    },
+    {
+      "file": "computations/markov/markov_weights_symbolic.py",
+      "line": 313,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "print(f\"  markov_peel ref : 0.9232332971861535\")"
+    },
+    {
+      "file": "computations/markov/markov_weights_symbolic.py",
+      "line": 335,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"tr_M_proton_markov_peel_reference\": 1.0653062286131670,"
+    },
+    {
+      "file": "computations/markov/markov_weights_symbolic.py",
+      "line": 338,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"tr_M_neutron_markov_peel_reference\": 0.9232332971861535,"
+    },
+    {
+      "file": "computations/markov/peel_anchor_identification_probe.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "`1.109978595557334719899763` \u2014 the muon pin.  The witness is labelled"
+    },
+    {
+      "file": "computations/markov/peel_anchor_identification_probe.py",
+      "line": 112,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.109978595557334719899763\"),"
     },
     {
       "file": "computations/mass_theory_formalize_first_invariants_probe.py",
-      "line": 54,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/mass_theory_formalize_first_invariants_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/mass_theory_formalize_first_invariants_probe.py",
+      "line": 60,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = \"1.10997859555\""
+    },
+    {
+      "file": "computations/meson_h6_typed_trace.py",
+      "line": 45,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_PROTON = \"1.1099785827513808075916690956107688798744991218736\""
+      "text": "Q0 = 1.10997859555733"
+    },
+    {
+      "file": "computations/metallic_q_illustration.py",
+      "line": 31,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.1099785955541805"
+    },
+    {
+      "file": "computations/metallic_q_jones_sign_sweep.py",
+      "line": 58,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/metallic_q_n4_character_sweep.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/metallic_q_quark_bifurcation.py",
+      "line": 67,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/metallic_q_wenzl_sign_sweep.py",
+      "line": 61,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/mp_dk_decisive_test.py",
+      "line": 24,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "was computed at q\u2080 = 1.10997859555\u2026 \u2014 the STALE muon-pin. The canonical"
+    },
+    {
+      "file": "computations/mp_dk_decisive_test.py",
+      "line": 60,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STALE_MUON_PIN = \"1.10997859555418057528159407960950937799328227995870\""
+    },
+    {
+      "file": "computations/mpf_import_time_dps_audit.py",
+      "line": 306,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "(\"1.1099785955573347\", True),"
+    },
+    {
+      "file": "computations/mu_p_pin_sensitivity_map.py",
+      "line": 57,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mpf(\"1.1099785955573347\")     # ideal CAL-2 pin (muon ratio)"
+    },
+    {
+      "file": "computations/murakami_deformed_vc_q0.py",
+      "line": 47,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
     },
     {
       "file": "computations/option_e_probe1_derive_1plusq_over_2.py",
       "line": 72,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "These are at the CURRENT canonical proton q\u2080 = 1.1099785827513808 (50dps).\"\"\""
+      "text": "These are at the CURRENT canonical proton q\u2080 = 1.1099785955573347 (50dps).\"\"\""
+    },
+    {
+      "file": "computations/per_basis_row_invariants_probe.py",
+      "line": 67,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STALE_MUON_PIN = \"1.10997859555418057528159407960950937799328227995870\""
+    },
+    {
+      "file": "computations/probe_he4_magic_baryeven_prune.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347\")"
+    },
+    {
+      "file": "computations/probe_inter_knot_decoupling.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "w.add_data(\"q_0_50dps\", \"1.1099785955541805752815940796095093779932822799587\")"
+    },
+    {
+      "file": "computations/probe_option_e_probe4_kl_batch.py",
+      "line": 63,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/probe_q_beta_wenzl_projectors.py",
+      "line": 15,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf(\"1.1099785955573347198997632204832250266562084087801\")"
+    },
+    {
+      "file": "computations/probe_qbeta_form.py",
+      "line": 4,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf('1.1099785955573347596001309852899479366668383822292')"
+    },
+    {
+      "file": "computations/probe_qbeta_form.py",
+      "line": 8,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M_p = mp.mpf('1.06530622861316626170946619823')"
+    },
+    {
+      "file": "computations/probe_qbeta_form.py",
+      "line": 9,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M_n = mp.mpf('0.923233297186152879199028120638')"
     },
     {
       "file": "computations/probes/_gap_a4_qsafe.py",
       "line": 41,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_0_50DPS: str = \"1.1099785827513808075916690956107688798744991218736\""
+      "text": "Q_0_50DPS: str = \"1.1099785955573347198997632204832250266562084087802\""
     },
     {
-      "file": "computations/probes/gap_a4_T3_mass_pochhammer_probe.py",
+      "file": "computations/probes/aomega_6y1p_swing_reframe_not_tractable.py",
+      "line": 36,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733\")"
+    },
+    {
+      "file": "computations/probes/awzero_asymptotics_probe.py",
+      "line": 87,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = \"1.10997859555733471\"      # computations/ layer canonical q\u2080 (muon pin)"
+    },
+    {
+      "file": "computations/probes/b4_iceil_norm_ceiling_probe.py",
+      "line": 58,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/baldfn_theta_limit_probe.py",
+      "line": 677,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = \"1.10997859555733471\"      # computations/ layer canonical q0 (muon pin)"
+    },
+    {
+      "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
+      "line": 149,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "return mpf(\"1.1099785955541810\")"
+    },
+    {
+      "file": "computations/probes/brane_tower_full_channel_trace_audit.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
+    },
+    {
+      "file": "computations/probes/deltalambda_cyclotomic_sign_map_probe.py",
+      "line": 168,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = 1.10997859555733471"
+    },
+    {
+      "file": "computations/probes/difference_knot_binding_probe.py",
+      "line": 92,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "_Q0 = mp.mpf(\"1.1099785955573347\")"
+    },
+    {
+      "file": "computations/probes/elliptic_r_theta_single_tau_probe.py",
+      "line": 41,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/probes/eunit_g2_derivation_probe.py",
+      "line": 95,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON_STR = \"1.10997859555733471\"  # computations-layer canonical pin"
+    },
+    {
+      "file": "computations/probes/eunit_magnus_order2_probe.py",
+      "line": 106,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON_STR = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/probes/fivetwo_ak_state_integral.py",
+      "line": 81,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471\")  # substrate modulus (muon-q\u2080 canonical)"
+    },
+    {
+      "file": "computations/probes/fivetwo_stokes_matrix_zq.py",
+      "line": 94,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "return mpf(\"1.1099785955541810\")"
+    },
+    {
+      "file": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "The fallback here was `mpf(\"1.1099785955541810\")` \u2014 a hand-typed copy of the"
+    },
+    {
+      "file": "computations/probes/flavor_split_pair_product_half_ceiling_probe.py",
+      "line": 61,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q_proton = Fr(110997859555733471, 10 ** 17)   # 1.10997859555733471"
+    },
+    {
+      "file": "computations/probes/flavor_split_pair_product_half_ceiling_probe.py",
+      "line": 62,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "q_muon = Fr(110997859555418, 10 ** 14)         # 1.10997859555418 (audit muon pin, trunc)"
+    },
+    {
+      "file": "computations/probes/gap_a3_deuteron_mixed_plethystic_probe.py",
+      "line": 61,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a3_deuteron_p_lambda_channels_probe.py",
+      "line": 73,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a3_plambda_bar_even_admissibility_probe.py",
+      "line": 86,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a3_transpose_invariant_plambda_probe.py",
+      "line": 73,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_He3_residual_probe.py",
+      "line": 48,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_He3_residual_probe_perknot_rerun.py",
       "line": 69,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_0_50DPS = \"1.1099785827513808075916690956107688798744991218736\""
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_L1_light_series_probe.py",
+      "line": 70,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_L1_light_series_probe_perknot_rerun.py",
+      "line": 85,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_S_K_additive_probe.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_S_K_additive_probe_perknot_rerun.py",
+      "line": 78,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_T2_per_knot_vol_probe.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_T3_mass_pochhammer_probe.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/gap_a4_cross_isotope_residual_probe.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/graded_hecke_energy_probe.py",
+      "line": 68,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"proton\":   mp.mpf(\"1.0653062286131670\"),"
+    },
+    {
+      "file": "computations/probes/graded_hecke_energy_probe.py",
+      "line": 69,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"neutron\":  mp.mpf(\"0.9232332971861535\"),"
+    },
+    {
+      "file": "computations/probes/graded_hecke_energy_probe.py",
+      "line": 70,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"deuteron\": mp.mpf(\"0.3882864715477132\"),"
+    },
+    {
+      "file": "computations/probes/he3_brane_tower_structural_gap.py",
+      "line": 37,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
     },
     {
       "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 201,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 205,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "\"current production anchor is q_proton=1.10997858275\u2026 (\u0394q \u2248 1.28e-8). \""
+      "text": "\"Cache was generated at q_0=1.10997859555\u2026, which is within ~3e-12 of \""
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 206,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"the CURRENT canonical proton re-pin q_at()\u22481.1099785955573\u2026 (2026-05-28) \""
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 207,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"and of the muon anchor q_muon_at()\u22481.10997859555418\u2026. The retired \""
+    },
+    {
+      "file": "computations/probes/he_nu_sdp_barfold_h9_test.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.1099785955573347"
+    },
+    {
+      "file": "computations/probes/he_nu_sdp_psd_count_test.py",
+      "line": 57,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.1099785955573347"
+    },
+    {
+      "file": "computations/probes/he_nu_sdp_saturation_obstruction.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.1099785955573347"
+    },
+    {
+      "file": "computations/probes/hecke_channel_binding_probe.py",
+      "line": 43,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/probes/i6_trace_convention_pin.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "q\u2080 = 1.10997859555733471:"
+    },
+    {
+      "file": "computations/probes/i6_trace_convention_pin.py",
+      "line": 62,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/probes/keystone_colored_lr_modulus_s013.py",
+      "line": 79,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")           # substrate q\u2080 (s013 / mckay convention)"
+    },
+    {
+      "file": "computations/probes/keystone_colored_sigma235_wrt.py",
+      "line": 70,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# This file previously carried the muon pin 1.1099785955541805 (\u221211.5 ppb); it was moved here"
+    },
+    {
+      "file": "computations/probes/keystone_colored_wrt_perblock_vs_dq.py",
+      "line": 86,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_framing_is_phase.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_lr_modulus_d2_collapse_test.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")            # muon anchor (\u03b6-side uses 1/q\u2080)"
+    },
+    {
+      "file": "computations/probes/keystone_mckay_e8_valuemap.py",
+      "line": 57,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_q0_framing_residual.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_qbessel_latticept_search.py",
+      "line": 94,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_qbessel_tricomi_c0q_nodes.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_route1_sigma345_constancy_s013.py",
+      "line": 70,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_valuemap_genuine_smatrix_s013.py",
+      "line": 67,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_valuemap_qbessel_gate_s013.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_valuemap_screen_s013.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_valuemap_sigma345_dm6.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/keystone_valuemap_target_is_compact_hecke.py",
+      "line": 82,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/probes/ksel2id_tropical_transport_probe.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/probes/markov_stab_trace_axis_probe.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
     },
     {
       "file": "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
-      "line": 22,
+      "line": 5,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "pre-2026-05-28 anchor) AND q_proton = 1.10997858275, and tiers:"
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
     },
     {
-      "file": "computations/probes/phi_q_regularization_probe.py",
-      "line": 124,
+      "file": "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
+      "line": 26,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "verdict \u2014 re-evaluates each at q_muon = 1.109978595554 (the historic"
+    },
+    {
+      "file": "computations/probes/nastokes_surface_curvature_trefoil_probe.py",
+      "line": 58,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/option_b_h3_h4_bratteli_probe.py",
+      "line": 70,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/option_e_kashiwara_crystal_delta_lambda_probe.py",
+      "line": 69,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/path_b_defect_binding_probe.py",
+      "line": 103,
       "kind": "stale-trM",
       "classification": "production-hardcode",
-      "text": "T1 = mpf(\"1.0653061442544499036108498526519307688964161791863\")"
+      "text": "\"p\":   1.0653062286,"
+    },
+    {
+      "file": "computations/probes/path_b_defect_binding_probe.py",
+      "line": 105,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"D\":   0.3882864715,"
+    },
+    {
+      "file": "computations/probes/probe_qbeta_form.py",
+      "line": 13,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M_p = mp.mpf('1.06530622861316626170946619823')"
+    },
+    {
+      "file": "computations/probes/probe_qbeta_form.py",
+      "line": 14,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "tr_M_n = mp.mpf('0.923233297186152879199028120638')"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_capstone_carrier_falsification_probe.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_chirality_state_integral_probe.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py",
+      "line": 79,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_gk_bilinear_pairing_probe.py",
+      "line": 63,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_higher_cable_qstar_probe.py",
+      "line": 58,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_jones_barodd_probe.py",
+      "line": 48,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_median_borel_resummation_probe.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_n3_cable_arbitration_probe.py",
+      "line": 394,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q_mu = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_order3_barodd_tail_probe.py",
+      "line": 77,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_quantum_volume_probe.py",
+      "line": 44,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_reeb_trace_probe.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_sigma3_anchor_test_probe.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_stokes_barodd_index_probe.py",
+      "line": 76,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/probes/qbeta_5two_stokes_population_bridge_probe.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/qbeta_borromean_cyclotomic_probe.py",
+      "line": 78,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "muon   q\u2080 \u2014 1.1099785955573347198997632204832250266562084087802"
+    },
+    {
+      "file": "computations/probes/qbeta_borromean_cyclotomic_probe.py",
+      "line": 135,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON_STR = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py",
+      "line": 26,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "| muon   (m_\u03bc) | 1.10997859555\u2026 | -2.0097 |"
+    },
+    {
+      "file": "computations/probes/qbeta_ck_basis_constrained_pslq.py",
+      "line": 69,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_CANONICAL = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/probes/qbeta_ck_qholonomic_recurrence_test.py",
+      "line": 71,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "muon  q0 \u2014 1.10997859555733471989976322048... (computations-layer"
+    },
+    {
+      "file": "computations/probes/qbeta_ck_qholonomic_recurrence_test.py",
+      "line": 133,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/probes/qbeta_exponentiated_per_block_probe.py",
+      "line": 85,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/probes/qbeta_g3_5two_dodd_median_crosschecks.py",
+      "line": 28,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "pin (q\u2080 = 1.10997859555733471989976322048322502665620840878\u2026)."
+    },
+    {
+      "file": "computations/probes/qbeta_g3_5two_dodd_median_crosschecks.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.10997859555733471989976322048322502665620840878015368\")"
     },
     {
       "file": "computations/probes/qbeta_habiro_cyclotomic_probe.py",
       "line": 270,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Float(\"1.1099785827513808075916690956107688798744991218736\")"
+      "text": "q0 = sp.Float(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/probes/qbeta_phib_2loop_bdictionary_probe.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mp.mpf(\"1.10997859555733471\")   # muon-anchored computations/ value"
     },
     {
       "file": "computations/probes/qbeta_root_of_unity_probe.py",
       "line": 45,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q0 = mp.mpf(\"1.1099785827513808075916690956107688798744991218736\")"
+      "text": "Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
     },
     {
-      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
-      "line": 52,
+      "file": "computations/probes/qbeta_sdeformed_leading_bound_probe.py",
+      "line": 60,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/rho_binding_constancy_probe.py",
+      "line": 25,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.10997859555733471"
+    },
+    {
+      "file": "computations/probes/rho_f_categorical_probe.py",
+      "line": 98,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# from_scratch/ scripts is sp.Rational(11099785827513808, 10**16); switching to"
+      "text": "# These are the gold-standard values at q_0 = 1.1099785955573347, 50 dps."
     },
     {
-      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
+      "file": "computations/probes/rho_f_categorical_probe.py",
+      "line": 100,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "(1, 0): 1.0653062286131670,   # proton"
+    },
+    {
+      "file": "computations/probes/rho_f_categorical_probe.py",
+      "line": 101,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "(0, 1): 0.9232332971861535,   # neutron"
+    },
+    {
+      "file": "computations/probes/rho_f_categorical_probe.py",
+      "line": 102,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "(1, 1): 0.3882864715477132,   # deuteron  (D)"
+    },
+    {
+      "file": "computations/probes/rho_f_categorical_probe.py",
+      "line": 128,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.1099785955573347   # substrate parameter"
+    },
+    {
+      "file": "computations/probes/saddle_offset_zero_location_probe.py",
+      "line": 80,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.10997859555733471989976322048322502665620840878015405145269"
+    },
+    {
+      "file": "computations/probes/signed_crossing_feasibility_probe.py",
+      "line": 46,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/probes/tau_binding_hitchin_wzw_wall_probe.py",
+      "line": 80,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/probes/tau_dictionary_hauptmodul_validator.py",
+      "line": 97,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = \"1.10997859555733471989976322048322502665620840878015368660798114614493\""
+    },
+    {
+      "file": "computations/probes/test_qbeta_habiro_anchor_guard.py",
+      "line": 118,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "muon = mp.mpf(\"1.1099785955573347198997632204832250266562084087801536866079\")"
+    },
+    {
+      "file": "computations/probes/theta_jet_gb_grading_probe.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = mpf(\"1.10997859555733471989976322048322502665620840878015\")  # muon-q0 canonical"
+    },
+    {
+      "file": "computations/probes/trefoil_complex_volume_probe.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# the cheat-sheet muon value 1.10997859555733471\u2026)."
+    },
+    {
+      "file": "computations/probes/trefoil_complex_volume_probe.py",
       "line": 54,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q0 = sp.Rational(110997858275, 100000000000)            # \u2248 1.10997858275  (= #2240 heat_fmap q_0)"
+      "text": "Q0 = Decimal(\"1.1099785955573347\")"
     },
     {
-      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
-      "line": 7,
-      "kind": "old-q0",
-      "classification": "stale-docstring",
-      "text": "proton anchor q_p = 1.10997858275:  empirical c_3 = -2.0693"
-    },
-    {
-      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
-      "line": 76,
+      "file": "computations/probes/wlambda_q0_continuation.py",
+      "line": 32,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "_Q_PROTON_VALIDATION = mp.mpf(\"1.10997858275\")"
+      "text": "Q0_STR = \"1.10997859555733471989976322048322502665620840878015\""
+    },
+    {
+      "file": "computations/probes/zhabiro_phiq_production_crosscheck.py",
+      "line": 71,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733\")"
+    },
+    {
+      "file": "computations/probes/zhabiro_phiq_wiring.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# Was: fall back to the literal 1.10997859555733 -- which is the MUON"
+    },
+    {
+      "file": "computations/probes/zhabiro_physical_z_pin.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
+    },
+    {
+      "file": "computations/proton_residual_rootcause.py",
+      "line": 14,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "* q_0 drift across scripts (uniform 1.1099785955573347)"
+    },
+    {
+      "file": "computations/q0_anchor_gate_test.py",
+      "line": 40,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471989976322048322502665620840878015405145269\")"
+    },
+    {
+      "file": "computations/q0_migration_tolerance_triage.py",
+      "line": 162,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "\"computed\": 1.1099785955573347199, ...}"
+    },
+    {
+      "file": "computations/q0_muon_reproduction_sweep.py",
+      "line": 37,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_MUON_SIG  = \"1.109978595557\"   # ideal / canonical 3-CAL (CAL-2 = \ud835\udd07_\u03b2)"
+    },
+    {
+      "file": "computations/q0_provenance_audit.py",
+      "line": 44,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = 1.1099785955541805"
+    },
+    {
+      "file": "computations/q0_provenance_audit.py",
+      "line": 50,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_50 = \"1.10997859555418057528159407960950937799328227995870\""
+    },
+    {
+      "file": "computations/q0_provenance_audit.py",
+      "line": 79,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_50_WRONG = \"1.10997859555733471989976322048322502665620840878015\""
+    },
+    {
+      "file": "computations/q0_provenance_audit.py",
+      "line": 160,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "the false-precision gate keys on: `1.10997859555733470000000000` claims"
+    },
+    {
+      "file": "computations/q0_stamp.py",
+      "line": 75,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "`1.1099785955573347...` as an import fallback -- 78 of them directly under"
+    },
+    {
+      "file": "computations/q0_sweep_classify.py",
+      "line": 40,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_MUON_SIG = \"1.109978595557\"     # ideal / canonical 3-CAL (CAL-2 = \ud835\udd07_\u03b2)"
+    },
+    {
+      "file": "computations/q0_value_drift_audit.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_CANONICAL = mpf(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/qbeta/c3_even_canonical_split_contradiction.py",
+      "line": 125,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/qbeta/descartes_lambda_shape_upper_half_plane.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "(\"muon (ideal CAL-2 proxy)\", 1.10997859555733471),"
+    },
+    {
+      "file": "computations/qbeta/gap_a4_numeric_search.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf(\"1.1099785955573347198997632204832250266562084087801536866079811461\")"
+    },
+    {
+      "file": "computations/qbeta/mmu_gap_a4_h5_qdim_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q_val = mp.mpf(\"1.1099785955573347198997632204832250266562084087801536866079811461\")"
+    },
+    {
+      "file": "computations/qbeta/mmu_gap_a4_wedderburn_eval.py",
+      "line": 7,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q_val = mp.mpf(\"1.1099785955573347198997632204832250266562084087801536866079811461\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555418057528159407960950937799328227995868622546675\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_barodd_nz_deformation_probe.py",
+      "line": 50,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_barodd_pole_seed_newton_probe.py",
+      "line": 50,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471\")            # muon-canonical (computations layer)"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_candidate_audit.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_closure_piecewise_fibre_archimedean_probe.py",
+      "line": 87,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "muon   anchor q_\u03bc = 1.10997859555:  empirical c_3 = -2.0097"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+      "line": 82,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_Q_MUON_VALIDATION   = mp.mpf(\"1.10997859555\")"
     },
     {
       "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
-      "line": 50,
+      "line": 4,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_FALSIF = mp.mpf(\"1.10997859555\")     # the falsification-doc muon anchor"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_cross_anchor_exactness_probe.py",
+      "line": 45,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_PROTON = mp.mpf(\"1.10997858275138080759166909561\")"
+      "text": "\"1.10997859555733471989976322048322502665620840878015368660798114614493\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_geometry_derived_argument_probe.py",
+      "line": 84,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
     },
     {
       "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
-      "line": 82,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
+      "line": 94,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = \"1.10997859555\"       # muon anchor (\u2248 current proton re-pin too, within ~3e-12)"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_imq_decay_projection_probe.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_imq_linear_response_probe.py",
+      "line": 52,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_imq_ratio_and_entropy_probe.py",
+      "line": 48,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q0_PROTON = \"1.10997858275\"     # proton (production) anchor"
+      "text": "QM = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_mq0_nk_scan.py",
+      "line": 75,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555733471989976322048322502665620840878015368660798\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_reeb_rotation_phase_probe.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_rung2_bracket_comparison.py",
+      "line": 70,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_rung_structure_analysis.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_wall_branch_structure_probe.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q = {\"muon\": mp.mpf(\"1.10997859555733471\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
+      "line": 78,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c4even_exact_sseries_probe.py",
+      "line": 77,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c4even_ladder_reconstruction_probe.py",
+      "line": 81,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c_k_recursion_depth_sweep.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
     },
     {
       "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
-      "line": 53,
-      "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
-    },
-    {
-      "file": "computations/qbeta/qbeta_chain4_kashiwara_step2_n4.py",
-      "line": 51,
-      "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
-    },
-    {
-      "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
-      "line": 24,
-      "kind": "old-q0",
-      "classification": "stale-docstring",
-      "text": "q_proton \u2248 1.10997858275138080759166909561"
-    },
-    {
-      "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
       "line": 54,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_PROTON = mp.mpf(\"1.10997858275138080759166909561\")"
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_50 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
+      "line": 25,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "q_muon   \u2248 1.10997859555418057528159407961"
+    },
+    {
+      "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555418057528159407961\")"
     },
     {
       "file": "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py",
-      "line": 44,
+      "line": 46,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_50 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
     },
     {
       "file": "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
-      "line": 69,
+      "line": 70,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_50 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555418057528159407960950937799328227995868622546675\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_ck_from_operator_markov_trace_probe.py",
+      "line": 158,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
+      "text": "Q0_str = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_ck_k_gt_3_habiro_extension_scoping.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
     },
     {
       "file": "computations/qbeta/qbeta_ck_local_taylor_around_u0_probe.py",
       "line": 266,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q0_str = \"1.1099785827513808075916690956107688798744991218736\""
+      "text": "Q0_str = \"1.1099785955573347198997632204832250266562084087802\""
     },
     {
-      "file": "computations/qbeta/qbeta_coherent_collapse_sinh_cosh.py",
-      "line": 101,
+      "file": "computations/qbeta/qbeta_ck_wedderburn_decomposition_scope_probe.py",
+      "line": 62,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Rational(110997858275, 10 ** 11)  # 1.10997858275"
+      "text": "Q0_MP = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
     },
     {
-      "file": "computations/qbeta/qbeta_heat_fmap_symbolic_explore.py",
-      "line": 55,
+      "file": "computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py",
+      "line": 72,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "q0 = sp.Rational(110997858275, 100000000000)  # q_0 \u2248 1.10997859556"
+      "text": "Q0_STR = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
+      "line": 76,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555418057528159407960950937799328227995868622546675\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555418057528159407960950937799328227995868622546675\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_direction_sanity_gate_probe.py",
+      "line": 61,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_dladder_jackson_qborel_acceleration_probe.py",
+      "line": 188,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0sub = mp.mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_dladder_jackson_qborel_acceleration_probe.py",
+      "line": 319,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "for tag, qv in [(\"muon-q0\", mp.mpf(\"1.10997859555733471\")), (\"q_star(A2)\", QSTAR)]:"
+    },
+    {
+      "file": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
+      "line": 86,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON_PIN = \"1.1099785955541805752815940796095093779932822799587\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_fmap_modular_dual_missing_probe.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.10997859555733471989976322048322502665620840878015\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
+      "line": 162,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0n = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
+      "line": 163,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "sgn = int(mp.sign(mp.mpf(str(sp.N(dnet.subs(q, sp.Rational(11099785955573347, 10000000000000000)), 30)))))"
+    },
+    {
+      "file": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
+      "line": 214,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(str(d_wit.get(\"q0\", \"1.1099785955573347198997632204832250266562084087802\")))"
+    },
+    {
+      "file": "computations/qbeta/qbeta_habiro_f_from_shape_collapse.py",
+      "line": 107,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_hahn_exton_kernel_test.py",
+      "line": 61,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-      "line": 113,
+      "line": 5,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_PROTON = 1.1099785827513808075916690956107688798744991218736"
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
+      "line": 131,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_STR = \"1.10997859555\"  # cross-anchor (per 569bedda1, PR #1836)"
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 17,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
+      "line": 22,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "| (3,)     | +1.109978582751  | +1.109978595550  | 1.153e-8  |"
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 66,
+      "line": 72,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = 1.10997859555"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
+      "line": 101,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py",
+      "line": 72,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_PROTON = 1.1099785827513808075916690956107688798744991218736"
+      "text": "Q0 = 1.1099785955573347198997632204832250266562084087802"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hopf_cubic_shadow_bridge.py",
+      "line": 33,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = D(\"1.10997859555733471989976322048322502665620840878015368660798114614493\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555418057528159407960950937799328227995868622546675\"),"
     },
     {
       "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
-      "line": 17,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+      "line": 22,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "q\u2080_proton = 1.10997858275138\u2026      q\u2080_muon = 1.10997859555418\u2026"
     },
     {
       "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
-      "line": 85,
+      "line": 91,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q0_PROTON = mpf(\"1.10997858275138080759166909561\")"
-    },
-    {
-      "file": "computations/qbeta/qbeta_residue_followup_pslq_periods.py",
-      "line": 42,
-      "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_MUON = mpf(\"1.10997859555418057528159407961\")"
     },
     {
       "file": "computations/qbeta/qbeta_residue_followup_residual_2x.py",
-      "line": 38,
+      "line": 39,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_50 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
     },
     {
       "file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
-      "line": 44,
+      "line": 45,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON_50 = mp.mpf(\"1.1099785955541805752815940796095093779932822799587\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_rung1_div25_framing_squared_test.py",
+      "line": 64,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_rung2_hypA_markov_3strand_test.py",
+      "line": 81,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_rung2_hypB_wenzl_p3_probe.py",
+      "line": 37,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_silver_pole_subdominant_probe.py",
+      "line": 91,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
+      "line": 86,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "\"muon\": mp.mpf(\"1.10997859555418057528159407960950937799328227995868622546675\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_stage_c_per_block_chi_closed_form_probe.py",
+      "line": 84,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/qbeta/qbeta_symbolic_chain_alpha_b.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_MP_PIN = \"1.1099785955573347198997632204832250266562084087802\""
     },
     {
       "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
-      "line": 92,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# canonical proton q0 is q_at() \u2248 1.1099785955573347\u2026; the muon anchor is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+      "line": 6,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q_muon_at() \u2248 1.10997859555418\u2026. This probe is preserved as-is by design."
+    },
+    {
+      "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+      "line": 98,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mp.mpf(\"1.10997859555\")  # cross-anchor (per 569bedda1)"
+    },
+    {
+      "file": "computations/qbeta/qbeta_trm_crosscheck_convention_pin_split_probe.py",
+      "line": 140,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"Habiro\": mp.mpf(\"0.3882864715594088\"),"
+    },
+    {
+      "file": "computations/qbeta/xi_classical_limit_probe.py",
+      "line": 96,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_MUON = mpf(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STALE_MUON_PIN = \"1.10997859555418057528159407960950937799328227995870\""
+    },
+    {
+      "file": "computations/qbeta_multi_block_eigenphase_probe.py",
+      "line": 57,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0_STALE_MUON_PIN = \"1.10997859555418057528159407960950937799328227995870\""
+    },
+    {
+      "file": "computations/regenerate_y_lambda_jones_markov_conventionD.py",
+      "line": 48,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "The committed witness is pinned at the **muon** ``q\u2080 = 1.1099785955541805``, and"
+    },
+    {
+      "file": "computations/regenerate_y_lambda_jones_markov_conventionD.py",
+      "line": 76,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_PROTON = mp.mpf(\"1.1099785827513808075916690956107688798744991218736\")"
+      "text": "Q0_STR = \"1.1099785955541805\""
+    },
+    {
+      "file": "computations/regenerate_y_lambda_mpfr.py",
+      "line": 250,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     q_0_50dps  1.10997859555733471\u2026   <- the muon/ideal pin"
+    },
+    {
+      "file": "computations/regenerate_y_lambda_orphans_conventionD.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "MUON_Q0 = \"1.1099785955541805\""
+    },
+    {
+      "file": "computations/rho_w_crystal_vertex_trace.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/rt_c23_singlet_sign_core.py",
+      "line": 67,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/rt_identity_chain_consolidation.py",
+      "line": 66,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/sigma_all_evaluator.py",
+      "line": 479,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# `q_at()` moved 1.10997859555 -> 1.10997858275 while this table stayed at"
+    },
+    {
+      "file": "computations/sigma_all_evaluator.py",
+      "line": 493,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "_SELFTEST_Q0 = \"1.1099785955541805752815940796095093779932822799587\""
+    },
+    {
+      "file": "computations/skein_proton_canonical.py",
+      "line": 118,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "\"value 1.0653062286. Closes the S(p) \u2248 0 assumed-zero gap \""
+    },
+    {
+      "file": "computations/skein_proton_canonical.py",
+      "line": 184,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "atlas_value = mp.mpf(\"1.0653062286131670\")"
+    },
+    {
+      "file": "computations/subgoal_1_per_knot_mass_table_probe.py",
+      "line": 60,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "(\"p\",   1, 1, 0, mp.mpf(\"7.32772475341775\"),  M_P_MEV_VALIDATION,   mp.mpf(\"1.06530622861\")),"
+    },
+    {
+      "file": "computations/subgoal_1_per_knot_mass_table_probe.py",
+      "line": 61,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "(\"n\",   1, 0, 1, mp.mpf(\"7.32772475341775\"),  M_N_MEV_VALIDATION,   mp.mpf(\"0.92323329718\")),"
+    },
+    {
+      "file": "computations/subgoal_1_per_knot_mass_table_probe.py",
+      "line": 62,
+      "kind": "stale-trM",
+      "classification": "production-hardcode",
+      "text": "(\"D\",   2, 1, 1, mp.mpf(\"4.40083251608\"),     M_D_MEV_VALIDATION,   mp.mpf(\"0.38828647154\")),"
+    },
+    {
+      "file": "computations/substrate/lever1_binding_core_characterization.py",
+      "line": 36,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.10997859555733471\""
+    },
+    {
+      "file": "computations/substrate/lever1_binding_habiro_single_element_test.py",
+      "line": 49,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q0 = \"1.10997859555733471\"  # muon-q0 fallback (computations layer canonical)"
+    },
+    {
+      "file": "computations/substrate/lever1_color_eq_intrinsic_tau_rapidity.py",
+      "line": 26,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/substrate/lever1_color_eq_lambda_sw_rapidity.py",
+      "line": 37,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/substrate/lever1_descartes_eq_qfamily_geometry.py",
+      "line": 60,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf(\"1.1099785955573347\")"
+    },
+    {
+      "file": "computations/substrate/lever1_trB_geometric_target.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/substrate/lever1_trB_quantum_integer_form.py",
+      "line": 59,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/substrate/q_parameter.py",
+      "line": 113,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "if not _d[\"q\"].startswith(\"1.109978595557\"):"
     },
     {
       "file": "computations/substrate/unified_tau_odd_partner_solve.py",
       "line": 54,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "Q_0_50DPS = \"1.1099785827513808075916690956107688798744991218736\""
+      "text": "Q_0_50DPS = \"1.1099785955573347198997632204832250266562084087802\""
+    },
+    {
+      "file": "computations/substrate/z2bn_pf_monodromy_synthesis.py",
+      "line": 52,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q0 = mp.mpf('1.10997859555733471')"
+    },
+    {
+      "file": "computations/substrate/z2bn_tau_derivation_probe.py",
+      "line": 23,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347199\")  # substrate q\u2080 (proton-pinned), 50 dps witness"
+    },
+    {
+      "file": "computations/substrate/z2bn_tau_gauss_manin_sage_probe.py",
+      "line": 80,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955573347199\")   # substrate q\u2080 (proton-pinned), 50-dps witness"
+    },
+    {
+      "file": "computations/sw_period_growth_probe.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mp.mpf('1.1099785955573347')"
+    },
+    {
+      "file": "computations/test_betti_binding.py",
+      "line": 14,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "q = mpf(\"1.1099785955573347198997632204832250266562084087802\")"
+    },
+    {
+      "file": "computations/test_q0_migration_tolerance_triage.py",
+      "line": 64,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"computed\": 1.1099785955573347199,"
+    },
+    {
+      "file": "computations/test_q0_migration_tolerance_triage.py",
+      "line": 65,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"expected\": 1.1099785955573347199}"
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 40,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert verdict(\"1.1099785955541805\") == \"clean\""
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 42,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert verdict(\"1.1099785955573347\") == \"clean\""
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 53,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert verdict(\"1.1099785955573347198997632204832250266562084087802\") == \"stale\""
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 54,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert verdict(\"1.1099785955573347199\") == \"stale\""
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 55,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert verdict(\"1.10997859555418057528159407961\") == \"clean\""
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 56,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert verdict(\"1.1099785955541805753\") == \"clean\""
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 67,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "for s in (\"1.10997859555418057528159407960950937799328227995868622546675\","
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 68,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.109978595554180575281594079609509377993282279958686225466751689153746\"):"
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 75,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.1099785955541805169583001889887986763787613849839\","
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 76,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.109978595554180575281594079609518150067234842238\","
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 77,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"1.1099785955541805752815940796095093779667618976181\"):"
+    },
+    {
+      "file": "computations/test_q0_provenance_audit.py",
+      "line": 87,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "s = \"1.109978595557334700000000000000\""
+    },
+    {
+      "file": "computations/three_quark_borromean_lp_sweep.py",
+      "line": 44,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/toffoli-lp-stability.py",
+      "line": 49,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.1099785955573347                     # physical substrate q"
+    },
+    {
+      "file": "computations/tr_m_jones_markov_cross_check.py",
+      "line": 67,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_0 = sp.Rational(\"1.1099785955573347\")"
+    },
+    {
+      "file": "computations/tr_m_wenzl_bridge_mpfr.py",
+      "line": 71,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_MUON_PREFIX = \"1.10997859555\""
+    },
+    {
+      "file": "computations/two_quark_active_set_mahler_sweep.py",
+      "line": 71,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/two_quark_hopf_vs_borromean_sdp.py",
+      "line": 80,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = mp.mpf(\"1.1099785955541805\")"
+    },
+    {
+      "file": "computations/two_quark_volume_weighted_clean.py",
+      "line": 23,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = 1.1099785955541805"
+    },
+    {
+      "file": "computations/witness_float64_padding_audit.py",
+      "line": 196,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "(\"1.10997859555733471989976322048322502665620840878015368660798114614493\", False),"
+    },
+    {
+      "file": "computations/witness_polynomial.py",
+      "line": 49,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "return sp.Rational(\"1.10997859555733471\")"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 558,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"x\": 0.20906032199559366},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 563,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"d\": -0.10453016099779683},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 572,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"tr_M\": 0.05534834587669884},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 576,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785827513808\"}, {\"q0\": \"1.1099785955573347\"}, False, \"VALUES\"),"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 578,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"note\": \"a\"},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 583,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"engine\": \"python\", \"x\": 0.20906032199559366},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 588,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"convention\": \"averaged-crossings\"},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 598,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"q0Anchor\": \"ambiguous\","
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 603,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"q0Anchor\": \"proton\"},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 609,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\","
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 618,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\","
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 633,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"description\": \"old prose\","
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 638,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"convention\": \"averaged-crossings\"},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 642,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"q0\": \"1.1099785955573347\", \"producer\": \"p.py\", \"x\": 0.20906032199559366},"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 699,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "{\"scriptFile\": \"p.py\", \"q0\": \"1.1099785955573347\"},"
+    },
+    {
+      "file": "tools/qou-substrate/python/qou_substrate/constants.py",
+      "line": 209,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# was 1.10997859555418\u2026, \u221211.5 ppb away). See q_at()/q_muon_at() and"
+    },
+    {
+      "file": "tools/qou-substrate/python/qou_substrate/witness.py",
+      "line": 206,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "compute \u2014 measured 1.1099785955573347 computed vs 1.1099785955541805"
+    },
+    {
+      "file": "tools/qou-substrate/python/qou_substrate/witness.py",
+      "line": 216,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "producer's real argv: ``q_at(70)`` -> ``1.10997859555733471989\u2026``. The"
+    },
+    {
+      "file": "tools/qou-substrate/python/qou_substrate/witness.py",
+      "line": 228,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "with ``1.109978595557``, so substituting the canonical string there"
+    },
+    {
+      "file": "tools/qou-substrate/python/qou_substrate/witness.py",
+      "line": 248,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_Q0_PREFIXES = ((\"proton\", \"1.10997858275\"), (\"muon\", \"1.10997859555\"))"
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 16,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# to the q_muon_at() value (1.109978595554\u2026): a muon-tagged producer"
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 19,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert v is None or v.startswith(\"1.109978595557\")"
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 38,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "q0_anchor=\"muon\", q0_value=\"1.10997859555733471989976322048322502665620840878015368660798114614493\","
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 41,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert payload[\"q0Value\"].startswith(\"1.109978595557\")"
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 105,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "q0_anchor=\"muon\", q0_value=\"1.10997859555\","
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 108,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert payload[\"q0Value\"] == \"1.10997859555\""
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 133,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"q0Value\": \"1.1099785955570000000000000000000000000000000000000\","
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 142,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert got[\"q0Value\"].startswith(\"1.109978595557\")"
     }
   ]
 }
