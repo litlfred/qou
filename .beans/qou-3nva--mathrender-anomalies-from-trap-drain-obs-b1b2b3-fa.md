@@ -1454,3 +1454,118 @@ New sweep-damage shape, distinct from the token-substitution class: a
 synonym swap for *is* and *ensures* — `operates as`, `acts as`, `secures
 positivity`, `securing the smoothness`, `functions identically`, plus
 `leverages` twice in proof preambles. Five instances across five blocks.
+
+---
+
+## From agent:d02 (quantum-observable-universes dq_02) — 2026-08-22
+
+42 prose blocks plus 3 data tables. Six trap fails, four inline fixes, and
+29 anomalies. One was fixable and is already fixed; the rest are recorded.
+
+### Fixed: a macro collision that silently typeset the wrong operator
+
+`dq-squared-proof` wrote `\mathcal{L}_\xid\alpha`, intending the Lie
+derivative along `ξ` of `dα`. But `\xid` is a **real macro** —
+`main.tex:222` defines it as `\xi_d` — and LaTeX matches the longest name,
+so the PDF rendered `L_{ξ_d}α`. The key cancellation therefore typeset as
+`Θ ∧ L_{ξ_d}α = Θ ∧ dL_ξα`, which is not the identity being claimed; on the
+KaTeX path it errors instead. Two sites, both in that block, none elsewhere
+in `content/`. Rewritten with braces so the macro cannot re-collide.
+
+The agent checked whether `\xid` was a typo or a definition before
+reporting it, which is what made this actionable rather than a guess.
+
+### `g-action-on-substrate`: the headline number, and why it survives
+
+The block's result is `N_sym(q₀)` against a target `213.11`, quoted at
+`−1.81 %`. Recomputed at 50 dps with the balanced `[n]_q`:
+
+| quantity | printed | recomputed (proton pin) |
+|---|---|---|
+| `[4]_q²` | 16.892 | **16.88949** |
+| `[2]·[4]²·[6]` | ≈ 216.96 | **216.9587226** |
+| residual | −1.81 % | **−1.80598 %** |
+
+So `16.892` is a round-then-square artefact (`4.11² = 16.8921`), and the
+line that multiplies the printed values gives `216.9884`, disagreeing with
+the `216.96` on the same line. **The −1.81 % headline is nonetheless
+correct**, because it was computed from full-precision values — which the
+pin test confirms: proton and muon agree to eight figures here
+(`216.9587226` vs `216.9587285`), while the erroneous `1.1097` rounding
+would give `216.8325` and print `−1.75 %`.
+
+Three structural problems in the same block matter more than the rounding:
+
+1. **`⊕` where the derivation needs `⊗`.** The trace display takes `dim_q`
+   of a **direct sum** `A^{(W⁺)} ⊕ A^{(W⁻)} ⊕ A^{(Z)}` and the next step
+   **multiplies** `[4]·[4]·[6]`. `dim_q` is additive over `⊕`:
+   `[2]·([4]+[4]+[6]) = 29.374`, not 216.96. The derivation does not follow
+   from its own display.
+2. **An input outside the three calibrations.** (G-3) fixes
+   `tr_F(ϱ*ϱ) = v²/m_e²` with `v ≈ 246 GeV`, "the empirical Higgs VEV".
+   Mitigating, and worth stating because the authorNotes claim every factor
+   is derived: (G-4) divides by exactly that trace, so `v` cancels and
+   never reaches `N_sym`.
+3. **The target has no provenance.** "the CODATA target `N_sym(q₀) =
+   213.11`" carries no citation, no derivation and no witness field, and
+   the entire −1.81 % rests on it.
+
+Also: `e_H` is called a **rank-1** projector yet assigned trace dimension
+`[2]_q`, the value (G-2) gives to *all* of `A^{(H)}`; Table 1 assigns the
+photon a trivial `(0,0)` while giving Z the mixed weight, though both are
+W³–B mixtures, and its last row ("residual matter sector") is not an
+irrep, contradicting (G-1)'s "each `A^{(X)}` carries a unique irreducible
+representation"; Table 2 names rows for Goldstones whose `q`-dimensions the
+body assigns to the **gauge** components.
+
+### Axioms that do not constrain what they name
+
+`frobenius-hopf-substrate` axiom 3 reads "the Frobenius form `λ` satisfies
+`μ∘Δ = (Δ⊗id)∘α∘(id⊗μ)`" — **`λ` never appears in it**, and the two sides
+do not compose (`A→A` on the left; `A⊗A⊗A → A⊗A → A⊗A⊗A` on the right).
+The standard form is `Δ∘μ = (μ⊗id)∘(id⊗Δ) = (id⊗μ)∘(Δ⊗id)`. In the same
+block **the antipode `S` is unconstrained**: it sits in the sextuple and is
+named in axiom 2, but no axiom relates it to anything —
+`μ∘(S⊗id)∘Δ = η∘ε` is absent, and what axiom 2 states is counit
+multiplicativity, not a Hopf compatibility.
+
+### A citation that points at nothing, and a direction reversed
+
+`emergence-to-quantum-flat` says "quantum flatness operates as a derived
+consequence of **the instanton axiom**" — which inverts its own proof
+(Step 2 *imposes* `B = F_A`, Step 3 *derives* `F_A⁻ = 0`), and
+`grep -rn "instanton axiom" content/` returns **that line alone**
+corpus-wide. There is no such axiom.
+
+### A mis-attribution that recurs, so it is a pattern not a slip
+
+Both `frobenius-simplification` and `fiber-adjoint-involution-proof`
+credit `H⁰(Ad(A)) = 0` to non-degeneracy of the pairing — "any global
+parallel section would pair with itself", which is no contradiction. The
+corpus's own proof uses SU(2)-emergence plus **Schur**. Two blocks, same
+wrong reason.
+
+### Smaller, verified
+
+`frobenius-su2`'s `Δ_μ(f)(g,h) = ∫_G f(xg)\overline{h(x)}dx` types `h` as a
+group element on the left and a function on the right; its closer describes
+**commutativity**, not associativity (the two-function statement is false
+on non-abelian SU(2)). `fiber-adjoint-su2` gives a traceless **Hermitian**
+`σ([ℓ])` and an **anti-Hermitian** orbit representative two lines later.
+`heisenberg-commutator` equates a scalar to an operator, and `Θ(ξ) = 1`
+identically for a normalised Reeb field. `fermion-boson-decomposition` uses
+`\mathcal{H}_q^k` for harmonic forms while `notation-collisions.md`
+registers `\mathcal{H}_q` as the shuffle Hopf algebra — and
+`dilog-pentagon-is-associator`, in this same chapter, uses it that way.
+Bare `J` appears in three blocks against the register's "we never write
+bare `J`".
+
+### Clean, recorded so it is not re-run
+
+No convention-C `z` in any spelling — `z` does not appear at all. No braid
+words. No raw `q₀` literal (only `:val[q_0]{precision=6}`). No absolute-mass
+MeV claim. Categories bold `𝐂`, fibre functor `τ`, no deprecated 5-tuple.
+No §3b violation: `g-action-on-substrate` is correctly kinded `conjecture`.
+
+`operates as` for *is* occurs **22×** corpus-wide, so it is house style
+rather than this batch's defect — worth knowing before someone "fixes" it.
