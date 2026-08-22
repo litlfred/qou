@@ -1,8 +1,8 @@
 {
   "engine": "skein-recursion-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T21:04:55.329214+00:00",
-  "commitSha": "5bbaa7801570e938ace0da3460818069682e662e",
+  "computedAt": "2026-08-22T00:42:33.338157+00:00",
+  "commitSha": "16f649ac4661fcb62f986694d87ba04a0420b600",
   "assertions": [
     {
       "name": "textbook_homfly_all",
@@ -29,6 +29,14 @@
       "source": "knot table, 6_1 excluded"
     },
     {
+      "name": "mfw_pins_torus_braid_index_min_p_q",
+      "computed": "[2, 2, 3, 3, 4]",
+      "expected": "[2, 2, 3, 3, 4]",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "theorem: MFW sharp on torus knots, braid index = min(p,q); T(4,5) gives 4"
+    },
+    {
       "name": "braid_index_six_one",
       "computed": "4",
       "expected": "4",
@@ -38,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 234,
+  "durationMs": 187,
   "computation": "homfly-braid-index-mfw",
   "scriptFile": "homfly_braid_index_mfw.py",
-  "scriptHash": "11bca4d96634",
-  "scriptCommitSha": "f6dd5df1ec15aa8d6ba6b2056be03880ea355768",
+  "scriptHash": "93b38d5cb18d",
+  "scriptCommitSha": "a9fdd9076315a80dd7d4dd505f62865632f78b66",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,13 +59,129 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
-  "description": "Derives braid indices from the exact two-variable HOMFLY of braid closures (descending-diagram skein recursion, integer Laurent arithmetic) via the Morton-Franks-Williams bound spread/2+1. Settles braid index(6_1) = 4: lower bound from spread 6, upper bound from the explicit 4-strand word [1,1,2,-1,-3,2,-3] (SnapPy-identified as 6_1/m032), replacing the literature-recalled value flagged by qou-xpgq. Gated on textbook HOMFLY for 5 links, the Conway specialisation P(v=1,z) for 7 knots, and agreement with the tabulated braid index for the 6 knots not under test. Scope-(a); nothing wired. Bean qou-dr8m.",
+  "description": "Derives braid indices from the exact two-variable HOMFLY of braid closures (descending-diagram skein recursion, integer Laurent arithmetic) via the Morton-Franks-Williams bound spread/2+1. Settles braid index(6_1) = 4: lower bound from spread 6, upper bound from the explicit 4-strand word [1,1,2,-1,-3,2,-3] (SnapPy-identified as 6_1/m032), replacing the literature-recalled value flagged by qou-xpgq. Gated on textbook HOMFLY for 5 links, the Conway specialisation P(v=1,z) for 7 knots, and agreement with the tabulated braid index for the 6 knots not under test, and the torus family T(2,3)..T(4,5) against the theorem braid index = min(p,q) -- T(4,5) pins 4 on a knot that is not 6_1, supplying the 3-vs-4 discrimination the tabulated set cannot. Scope-(a); nothing wired. Bean qou-dr8m.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
+    "torus_family": {
+      "T(2,3)": {
+        "word": [
+          1,
+          1,
+          1
+        ],
+        "n_strands": 2,
+        "writhe": 3,
+        "homfly": "2v^2 + v^2z^2 - v^4",
+        "v_min": 2,
+        "v_max": 4,
+        "v_spread": 2,
+        "braid_index_lower_bound": 2,
+        "mfw_sharp_for_this_representative": true,
+        "expected_min_p_q": 2,
+        "pinned": true
+      },
+      "T(2,5)": {
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n_strands": 2,
+        "writhe": 5,
+        "homfly": "3v^4 + 4v^4z^2 + v^4z^4 - 2v^6 - v^6z^2",
+        "v_min": 4,
+        "v_max": 6,
+        "v_spread": 2,
+        "braid_index_lower_bound": 2,
+        "mfw_sharp_for_this_representative": true,
+        "expected_min_p_q": 2,
+        "pinned": true
+      },
+      "T(3,4)": {
+        "word": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "n_strands": 3,
+        "writhe": 8,
+        "homfly": "5v^6 + 10v^6z^2 + 6v^6z^4 + v^6z^6 - 5v^8 - 5v^8z^2 - v^8z^4 + v^10",
+        "v_min": 6,
+        "v_max": 10,
+        "v_spread": 4,
+        "braid_index_lower_bound": 3,
+        "mfw_sharp_for_this_representative": true,
+        "expected_min_p_q": 3,
+        "pinned": true
+      },
+      "T(3,5)": {
+        "word": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "n_strands": 3,
+        "writhe": 10,
+        "homfly": "7v^8 + 21v^8z^2 + 21v^8z^4 + 8v^8z^6 + v^8z^8 - 8v^10 - 14v^10z^2 - 7v^10z^4 - v^10z^6 + 2v^12 + v^12z^2",
+        "v_min": 8,
+        "v_max": 12,
+        "v_spread": 4,
+        "braid_index_lower_bound": 3,
+        "mfw_sharp_for_this_representative": true,
+        "expected_min_p_q": 3,
+        "pinned": true
+      },
+      "T(4,5)": {
+        "word": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3
+        ],
+        "n_strands": 4,
+        "writhe": 15,
+        "homfly": "14v^12 + 70v^12z^2 + 133v^12z^4 + 121v^12z^6 + 55v^12z^8 + 12v^12z^10 + v^12z^12 - 21v^14 - 70v^14z^2 - 84v^14z^4 - 45v^14z^6 - 11v^14z^8 - v^14z^10 + 9v^16 + 15v^16z^2 + 7v^16z^4 + v^16z^6 - v^18",
+        "v_min": 12,
+        "v_max": 18,
+        "v_spread": 6,
+        "braid_index_lower_bound": 4,
+        "mfw_sharp_for_this_representative": true,
+        "expected_min_p_q": 4,
+        "pinned": true
+      }
+    },
     "knots": {
       "3_1": {
         "word": [

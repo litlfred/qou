@@ -41,9 +41,12 @@ Neither existing corpus source can supply a `v`-degree:
    an independent invariant, not a restatement of the computation.
 3. MFW bound equals the tabulated braid index for the six knots whose
    braid index is not in question (3_1, 4_1, 5_1, 5_2, 6_2, 6_3). These
-   are the machinery gate; note 4_1 and 5_2 both have braid index 3, so
-   they do NOT by themselves test 3-vs-4 discrimination -- 6_1 is the
-   first knot here where the bound has to separate 4 from 3.
+   are the machinery gate; note every one of them has braid index 2 or 3,
+   so they do NOT by themselves test 3-vs-4 discrimination.
+4. The torus family T(2,3), T(2,5), T(3,4), T(3,5), T(4,5), whose braid
+   index is min(p, q) by a THEOREM (MFW is sharp on torus knots) rather
+   than by a table. T(4,5) is pinned at 4, which supplies the 3-vs-4
+   discrimination gate 3 lacks, on a knot that is not 6_1.
 
 Scope: this derives the braid index. It does **not** prove MFW; the two
 inequalities are carried as hypotheses in
@@ -82,6 +85,18 @@ CONWAY = {
 # from the machinery gate -- it is derived below, then compared.
 TABULATED = {"3_1": 2, "4_1": 3, "5_1": 2, "5_2": 3, "6_2": 3, "6_3": 3}
 
+# Torus knots T(p, q), as the closure of (sigma_1 ... sigma_{p-1})^q on p
+# strands. Their braid index is min(p, q) by a THEOREM (MFW is sharp on
+# torus knots -- Franks-Williams, Murasugi), not by a table, so this is an
+# independent check of the machinery rather than a lookup. With p < q the
+# word is already on min(p,q) strands, so each one is PINNED, not bounded.
+#
+# This is the gate that 3_1/4_1/5_1/5_2/6_2/6_3 could not supply: every one
+# of those has braid index 2 or 3, so none of them tests whether the bound
+# can separate 4 from 3. T(4,5) does, and it is not 6_1.
+TORUS = {(2, 3): 2, (2, 5): 2, (3, 4): 3, (3, 5): 3, (4, 5): 4}
+
+
 # The 4-strand representative of 6_1 found by exhaustive search over
 # writhe-1 words on three generators (MFW forces writhe exactly 1 when
 # the spread is 6 and n is 4), confirmed by SnapPy identify -> 6_1/m032.
@@ -112,7 +127,10 @@ def main() -> int:
         "(SnapPy-identified as 6_1/m032), replacing the literature-recalled "
         "value flagged by qou-xpgq. Gated on textbook HOMFLY for 5 links, "
         "the Conway specialisation P(v=1,z) for 7 knots, and agreement "
-        "with the tabulated braid index for the 6 knots not under test. "
+        "with the tabulated braid index for the 6 knots not under test, and "
+        "the torus family T(2,3)..T(4,5) against the theorem braid index = "
+        "min(p,q) -- T(4,5) pins 4 on a knot that is not 6_1, supplying the "
+        "3-vs-4 discrimination the tabulated set cannot. "
         "Scope-(a); nothing wired. Bean qou-dr8m."
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
@@ -171,6 +189,25 @@ def main() -> int:
     print("    NOTE SnapPy's own braid_word() for 6_1 uses 5 strands — a "
           "second instance of the non-minimality already recorded for 5_2.")
 
+    print("\n[5] torus family — braid index min(p,q) by theorem, not by table")
+    torus = {}
+    for (pp, qq), expect in TORUS.items():
+        word = tuple(g for _ in range(qq) for g in range(1, pp))
+        d = mfw_data(word, pp)
+        got = d["braid_index_lower_bound"]
+        # p < q throughout, so the word itself realises min(p,q) strands:
+        # the lower bound is MET and the braid index is pinned exactly.
+        match = got == expect and pp == expect
+        ok = ok and match
+        torus[f"T({pp},{qq})"] = {**d, "expected_min_p_q": expect,
+                                  "pinned": match}
+        print(f"    T({pp},{qq})  {len(word):2d} crossings on {pp} strands  "
+              f"spread {d['v_spread']:2d}  MFW >= {got}  = min(p,q) = "
+              f"{expect}  {'PINNED' if match else 'MISMATCH'}")
+    print("    T(4,5) pins braid index 4 on a knot that is NOT 6_1 — the "
+          "3-vs-4 discrimination the tabulated set could not test.")
+
+    wb.add_data("torus_family", torus)
     wb.add_data("knots", knots)
     wb.add_data("six_one", {
         "mfw_lower_bound": lower,
@@ -206,6 +243,14 @@ def main() -> int:
                                    for k in TABULATED]),
                      expected=str([TABULATED[k] for k in TABULATED]),
                      tolerance="exact", source="knot table, 6_1 excluded")
+    wb.add_assertion("mfw_pins_torus_braid_index_min_p_q",
+                     computed=str([torus[f"T({a},{b})"]
+                                   ["braid_index_lower_bound"]
+                                   for (a, b) in TORUS]),
+                     expected=str([TORUS[k] for k in TORUS]),
+                     tolerance="exact",
+                     source="theorem: MFW sharp on torus knots, "
+                            "braid index = min(p,q); T(4,5) gives 4")
     wb.add_assertion("braid_index_six_one",
                      computed=str(4 if upper_ok and lower == 4 else None),
                      expected="4", tolerance="exact",
