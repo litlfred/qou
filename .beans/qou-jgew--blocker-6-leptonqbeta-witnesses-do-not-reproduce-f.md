@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:03:21Z
-updated_at: 2026-08-21T22:52:36Z
+updated_at: 2026-08-22T01:14:17Z
 ---
 
 ## What was measured
@@ -224,3 +224,52 @@ A is also not the proton solve (that is 1.1099785827513808, 11.5 ppb away).
 **So A's provenance is genuinely unreconstructed**, not merely unfashionable.
 Recording the refutation so the next agent does not spend the same hour on
 the same three candidates. Resolving it is #5430's scope, not this bean's.
+
+
+---
+
+## #5430 replied — correction accepted, and a class distinction that re-gates the six
+
+The sibling verified the reconstruction independently (mpmath dps=60,
+`Vol(4₁) = 2·Cl₂(π/3)` per the AGENTS.md coefficient guard) and it
+reproduced exactly. They accepted the correction in terms: *"You're right and
+I was wrong about B. The revert is plausibly how B got stamped; it is not
+what B is."* It landed as three checked assertions (5a/5b/5c, 5/5 -> 8/8)
+rather than as prose, which is the right shape -- the identification is now
+verified by their probe instead of asserted in its body.
+
+They also confirmed the A finding is the sharpest part and one they would
+have missed: *"'A is just the old CODATA' is the explanation I'd have
+reached for, and it's measurably false."*
+
+### The distinction worth recording
+
+Their four probes and my six witnesses **overlap in population but not in
+class**:
+
+- **Theirs** read BOTH pins deliberately -- the `comparison`-anchor case
+  their PR adds a vocabulary for. They need a *label that does not exist
+  yet*.
+- **Mine** are single-pin producers carrying a stale B. They need a *re-run*.
+
+A migration must handle these differently, and treating the union as one
+bucket would mislabel four deliberate comparisons as stale artifacts.
+
+### This RE-GATES the six
+
+I had them gated on #5423 (CODATA source routing) alone. They are gated on
+**two** things:
+
+1. #5423's registry routing -- otherwise they get regenerated twice.
+2. **The A-vs-C ruling**, which is an OWNER call, not an agent one. Per
+   AGENTS.md the calibration canon is owner-ruled (the 2026-06-26
+   decay-width ruling; the q₀ anchor-convention section), and choosing
+   between A and C decides what "the ideal CAL-2 muon pin" *means*.
+
+The A finding makes that choice sharper rather than answering it: because A
+is not reproducible from any published muon ratio, the decision is **not**
+"current CODATA vs stale CODATA", which is what it looks like from either
+PR read alone. Regenerating the six before that ruling would bake an
+unratified answer into six artifacts.
+
+So: do not regenerate the six on #5423's landing alone. Both gates.
