@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T09:59:39Z
-updated_at: 2026-08-22T10:00:30Z
+updated_at: 2026-08-22T10:18:52Z
 ---
 
 ## What was found
@@ -66,3 +66,46 @@ Next honest step: re-derive under D in exact arithmetic and report whether the
 stabilization law survives. If it does, the keystone evidence is upgraded from
 float64/C to exact/D. If it does not, `MarkovTraceOnHecke.lean`'s ingredient-2
 paragraph needs rewriting, and that is the more valuable outcome.
+
+
+## ANSWERED (2026-08-22) — the conclusion is convention-robust
+
+Re-ran the same over-determination test at **50 dps under both conventions**
+(`computations/probes/markov_reduction_h3_to_h4_conventions.py`):
+
+    z_C = 0.499320334184     worst |tr4(x.s2) - z*tr3(x)| = 1.336e-51
+    z_D = 0.612688037146     worst |tr4(x.s2) - z*tr3(x)| = 4.009e-51
+                             worst |tr4(x)     - tr3(x)|  = 2.673e-51  (both)
+
+Nine over-determination words, 1e-30 tolerance. **PASS under both.**
+
+Residuals at ~1e-51 with 50-dps arithmetic are agreement *to the limit of the
+arithmetic used*, not an exactness claim — the same phrasing discipline the
+float64 rule imposes, applied one tier up.
+
+**Why it is robust, structurally.** `z` is an *input* to the weight solve: the
+`y_lambda` are fitted so `tr(sigma-word of length k) = z^k`, and the reduction
+is then checked on other words. The Ocneanu trace is a one-parameter family in
+`z`, so the Markov law is insensitive to which member is chosen. The C defect
+is real but does not touch the conclusion.
+
+**So `MarkovTraceOnHecke.lean`'s ingredient-2 paragraph does NOT need
+rewriting on convention grounds** — the outcome I had flagged as the more
+valuable one did not occur. Docstring updated to carry the three caveats and
+point at the companion probe.
+
+## Also fixed: the cited probe did not run
+
+Third defect, found while trying to reproduce it. Bootstrap omitted
+`tools/qou-substrate/python` entirely and added
+`tools/pyhecke/python/pyhecke` — the package directory — where the qou-mass
+shim's `from pyhecke.syt_prefix_cache import *` needs the parent. Neither
+package is installable (both 404 on PyPI), so this was fatal, not fragile.
+Fixed; the probe now runs unaided.
+
+## Left deliberately
+
+The original stays float64 and convention C, as the historical record of what
+the Lean docstring cites, with both facts now stated in its own docstring. New
+work should use the companion. Porting the original would rewrite cited
+evidence for no gain now that the conclusion is known to be robust.
