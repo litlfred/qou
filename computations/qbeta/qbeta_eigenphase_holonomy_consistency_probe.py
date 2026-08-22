@@ -92,6 +92,38 @@ spectrum's phases are `q`-independent.  Either the connection is non-unitary, or
 the phase comes from somewhere other than `σ₁`'s spectrum.  That is a falsifiable
 fork, not a refutation: it says what a working construction must look like.
 
+## The modular horn is EXCLUDED — `cos` cannot be re-read as `cosh`
+
+If `α` really tracks the *moduli* (previous section), the natural resummation is
+`cosh`, not `cos` — and that would be a large simplification, because
+`cosh(c·ln q) = (q^c + q^{−c})/2` is **algebraic** in `q` for rational `c`.  The
+whole rationality obstruction would dissolve and no transcendental construction
+would be needed.
+
+**It does not survive one line of arithmetic.**  The N=1 factor the ladder
+requires is
+
+    N1_req = Q_codata / (Q_A·(1 + c₂u²)) = 0.99839767…  < 1
+
+and `cosh(x) ≥ 1` for every real `x`.  So no modular resummation can supply it;
+the ladder needs a genuine oscillation.  `cosh((1/2)ln q) = 1.00136…`, on the
+wrong side of 1.
+
+**A near-miss, fenced deliberately.**  The two deviations are of comparable size
+and opposite sign — `1 − N1_req = 1.60e-3` against `cosh − 1 = 1.36e-3` — which
+invites an identity.  There is none: the closest candidates, `2 − cosh` and
+`1/cosh`, are off by `2.4e-4` relative, i.e. they part company at the 4th digit.
+Recorded so the resemblance is not chased.
+
+## A refinement of the previous section's claim
+
+"`σ₁`'s phases are `q`-free" is exact **for `σ₁`**, and must not be read as a
+statement about the representation.  *Products* do carry `q`-dependent phases —
+the route-3 enumeration found elliptic words such as `σ₁σ₂⁻¹`, whose trace
+`−q²+1−q⁻²` is manifestly `q`-dependent.  So the Hecke representation does
+supply oscillatory, `q`-dependent phases; what it never supplies is **this** one,
+and that is the rationality exclusion, not a shortage of phases.
+
 ## Scope — this is consistency, NOT a derivation
 
   * It does **not** derive `α`, in either convention.
@@ -233,11 +265,30 @@ def main() -> int:
         f"UNITARY holonomy cannot produce a q-dependent alpha from this spectrum",
     )
 
+    # ---- 10. the modular/cosh horn is excluded: the required N1 is below 1 ----
+    N1_req = mp.mpf("0.9983976687192552")
+    coshv = (mp.sqrt(q0n) + 1 / mp.sqrt(q0n)) / 2
+    check(
+        "10. required N1 < 1, but cosh >= 1 -- the modular resummation is excluded",
+        N1_req < 1 and coshv >= 1,
+        f"N1_req = {mp.nstr(N1_req,12)} < 1 <= cosh((1/2)ln q) = {mp.nstr(coshv,12)}; "
+        "a genuine oscillation is required, so cos cannot be re-read as cosh",
+    )
+
+    # ---- 11. and the tempting near-miss is not an identity ----
+    best = min(abs(v - N1_req) / N1_req for v in (2 - coshv, 1 / coshv))
+    check(
+        "11. the comparable-magnitude cosh near-miss is NOT an identity",
+        best > mp.mpf("1e-4"),
+        f"1 - N1_req = {mp.nstr(1-N1_req,6)} vs cosh - 1 = {mp.nstr(coshv-1,6)}; "
+        f"closest candidate (2-cosh, 1/cosh) still off by {mp.nstr(best,4)} relative",
+    )
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/9: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/11: {', '.join(failures)}")
         return 1
-    print("9/9 assertions hold.")
+    print("11/11 assertions hold.")
     print()
     print("READING: alpha is second-order logarithmic exactly when the Markov")
     print("parameter is STATIONARY at the classical point. z_C is (q=1 is its")
