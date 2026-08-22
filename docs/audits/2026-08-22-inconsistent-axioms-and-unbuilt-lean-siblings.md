@@ -177,11 +177,52 @@ widening (bean `qou-rc7b`, `QOU.lean` root → `QOU`/`QOU.+` globs) that
 recovered 785 unbuilt modules **inside** `lean/`; the 958 siblings are a
 separate population that widening did not reach.
 
-**Not fixed here.** Repairing 73 files, or bringing them under a build
-target, is its own tranche and is not in scope for this branch — the
-measurement is recorded so the next agent starts from a number rather than
-from a guess. The `macroscopic-stability-equivalence.lean` fix removes one
-of the 73.
+### Triage of the 73
+
+Per-file first-error and error-count data:
+[`2026-08-22-unbuilt-lean-siblings-triage.tsv`](2026-08-22-unbuilt-lean-siblings-triage.tsv)
+(columns: error count, path, first error).
+
+| first-error class | files |
+|---|---:|
+| `RESOLVE` — unknown identifier or constant | 30 |
+| `INSTANCE` — failed to synthesize / bad binder | 13 |
+| `PARSE` — unexpected token, unterminated comment | 9 |
+| `PROOF` — unsolved goals, unknown tactic, no goals | 6 |
+| `TYPE` — function expected, type mismatch, not a field | 5 |
+| `ENV` — **not a file defect** (see below) | 4 |
+| `DUPLICATE` — name already declared | 3 |
+| `NONCOMPUTABLE` — needs `noncomputable` | 2 |
+| `OTHER` | 1 |
+
+**Four of the 73 are environment artifacts, not defects.** They fail with
+`object file '…/QOU/MassEndomorphism/JetTower.olean' … does not exist` —
+an imported *library* module has no built olean in this container. Whether
+those four files are sound is **undetermined** here. So the confirmed
+file-defect count is **69 of 958 (7.2 %)**, not 73.
+
+**66 of the 73 back a block that declares a `lean:` ref** — 25
+propositions, 21 definitions, 5 lemmas, 5 corollaries, 4 theorems, 4
+conjectures, 7 remarks. Sibling resolution takes precedence over the
+library path (§0a), so for those blocks the paper's claimed formalisation
+*is* the non-compiling file. The 21 definitions matter most: a
+`definition` block requires a Lean sibling at type level.
+
+**Most are cheap.** 339 errors across 73 files, **median 2 per file**, and
+**30 files have exactly one error**. The distribution says this is
+accumulated drift in files nothing ever checked — renamed Mathlib lemmas
+(`RESOLVE`, 41 %), missing instance arguments, a stray token — not 73
+unfinished formalisations. One file dominates the total
+(`frobenius-codim-universal.lean`, 101 errors).
+
+By chapter: `mass-theory` 27, `predicted-spectra` 10,
+`quantum-observable-universes` 8, then ≤ 3 each.
+
+**Not fixed here.** Repairing the 69, or bringing the population under a
+build target, is its own tranche and is not in scope for this branch — the
+measurement and triage are recorded so the next agent starts from a number
+rather than from a guess. Bean `qou-lsib`. The
+`macroscopic-stability-equivalence.lean` fix removes one of them.
 
 ---
 

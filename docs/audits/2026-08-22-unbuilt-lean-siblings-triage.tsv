@@ -1,0 +1,73 @@
+4	content/quantum-observable-universe/climax-volume-mass/vertex-algebra-jet-relations.lean	62:26: error: Application type mismatch: The argument
+5	content/quantum-observable-universe/braids-and-knots/braid-action-tensor.lean	82:18: error(lean.unknownIdentifier): Unknown constant `CategoryTheory.MonoidalCategory.whiskerRight_comp`
+2	content/quantum-observable-universe/brings-surface/maximal-ideal-defect.lean	39:17: error(lean.unknownIdentifier): Unknown identifier `Algebra`
+1	content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean	96:8: error(lean.unknownIdentifier): Unknown identifier `one_rpow`
+1	content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.lean	98:9: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'markovZN_legacy'
+1	content/quantum-observable-universe/fluid-dynamics/bn-mtc-action.lean	29:11: error: invalid binder annotation, type is not a class instance
+1	content/quantum-observable-universe/glossary/glossary-s3-group.lean	24:18: error(lean.unknownIdentifier): Unknown identifier `Fintype.card`
+2	content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean	108:4: error: `simp` made no progress
+2	content/quantum-observable-universe/information-theory/q-reeb-lattice-vibration.lean	13:14: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`
+9	content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean	150:6: error(lean.unknownIdentifier): Unknown constant `Real.tendsto_log_mul_rpow_nhdsGT_zero`
+1	content/quantum-observable-universe/information-theory/information-theoretic-time.lean	48:8: error(lean.unknownIdentifier): Unknown identifier `inv_lt_one_iff_of_pos`
+1	content/quantum-observable-universe/climax-volume-mass/q-momentum.lean	200:8: error(lean.unknownIdentifier): Unknown identifier `abs_add`
+1	content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean	45:0: error: object file '.lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean' of module Mathlib does not exist
+2	content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean	94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`
+1	content/quantum-observable-universe/knots-particles-confinement/confinement-level-exists.lean	25:2: error(lean.unknownIdentifier): Unknown constant `QOU.BraidKnot.ConfinementLevel.exists`
+1	content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean	1:0: error: object file 'content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/MassEndomorphism/JetTower.olean' of module QOU.MassEndomorp
+4	content/quantum-observable-universe/knots-particles-confinement/up-quark.lean	67:4: error(lean.unknownIdentifier): Unknown constant `QOU.Archimedean.UpQuark.mk.crossing_number`
+1	content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights.lean	48:0: error: object file '.lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean' of module Mathlib does not exist
+2	content/quantum-observable-universe/lifting-and-descent/euler-char-stability.lean	25:18: error(lean.inferBinderTypeFailed): Failed to infer type of binder `n`
+1	content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean	38:36: error(lean.unknownIdentifier): Unknown identifier `q_param`
+13	content/quantum-observable-universe/mass-theory/categorical-transfer-matrix.lean	26:13: error: unexpected token 'section'; expected 'lemma'
+2	content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean	97:3: error: unknown tactic
+1	content/quantum-observable-universe/mass-theory/delta-q-decoration.lean	35:2: error: unexpected token '/--'; expected 'lemma'
+2	content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.lean	82:2: error: No goals to be solved
+3	content/quantum-observable-universe/mass-theory/gb-depth-period-correspondence.lean	81:0: error: failed to synthesize
+2	content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean	167:20: error: unknown tactic
+101	content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean	37:19: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier
+2	content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean	42:26: error: unexpected token '=>'; expected '[', '{', '|', '⦃' or term
+1	content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.lean	41:6: error: `QOU.BraidKnot.KnotFactorFrobeniusPairing` has already been declared
+1	content/quantum-observable-universe/mass-theory/jet-tower-uniform-delta-max.lean	49:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvM
+6	content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean	25:33: error: failed to synthesize
+6	content/quantum-observable-universe/mass-theory/knot-factor-shell-closed.lean	24:65: error: Application type mismatch: The argument
+1	content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean	25:4: error: `QOU.BraidKnot.HasFiniteLPDuality` has already been declared
+8	content/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound.lean	74:21: error(lean.unknownIdentifier): Unknown identifier `R`
+1	content/quantum-observable-universe/mass-theory/pentagon-uv-commutation.lean	15:4: error: Application type mismatch: The argument
+1	content/quantum-observable-universe/mass-theory/markov-axiom-recursive-ascent.lean	24:4: error: `QOU.Interactions.markov_peel` has already been declared
+4	content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean	40:30: error: unknown tactic
+3	content/quantum-observable-universe/mass-theory/reeb-bundle.lean	29:14: error: failed to synthesize
+4	content/quantum-observable-universe/mass-theory/residue-at-root.lean	29:37: error(lean.unknownIdentifier): Unknown constant `QOU.BraidKnot.ResidueAtRoot.residue`
+1	content/quantum-observable-universe/mass-theory/qz-bicompletion.lean	36:42: error(lean.unknownIdentifier): Unknown identifier `zPochhammer`
+1	content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.lean	65:12: error(lean.unknownIdentifier): Unknown identifier `neg_neg_of_neg`
+24	content/quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance.lean	51:10: error: Function expected at
+1	content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean	216:2: error: No goals to be solved
+2	content/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification.lean	48:3: error: unknown tactic
+7	content/quantum-observable-universe/mass-theory/vertex-operator.lean	30:13: error: unexpected token 'section'; expected 'lemma'
+8	content/quantum-observable-universe/observations/n-v-bring-action.lean	37:31: error: unexpected token 'Σ'; expected '_' or identifier
+3	content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean	50:4: error(lean.unknownIdentifier): Unknown constant `QOU.Archimedean.Antineutrino.mk.volume`
+1	content/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness.lean	29:0: error: unterminated comment
+2	content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean	247:8: error(lean.unknownIdentifier): Unknown identifier `hoefsmit_v21_b_sq_rational`
+3	content/quantum-observable-universe/predicted-spectra/neutrino-knot.lean	53:27: error(lean.unknownIdentifier): Unknown constant `QOU.Archimedean.Neutrino.mk.charge`
+4	content/quantum-observable-universe/predicted-spectra/electron-knot.lean	59:4: error(lean.unknownIdentifier): Unknown constant `QOU.Archimedean.Electron.mk.torusP`
+6	content/quantum-observable-universe/predicted-spectra/positron-knot.lean	59:4: error(lean.unknownIdentifier): Unknown constant `QOU.Archimedean.Positron.mk.torusP`
+5	content/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction.lean	368:2: error: `pentagon_subgroup_exists` is not a field of structure `HasPentagonRelation`
+1	content/quantum-observable-universe/predicted-spectra/hadron-half-life.lean	97:17: error(lean.unknownIdentifier): Unknown identifier `div_lt_iff`
+1	content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean	162:21: error(lean.unknownIdentifier): Unknown constant `Nat.pos_of_lt_of_le`
+2	content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean	64:3: error(lean.unknownIdentifier): Unknown constant `Real.log`
+1	content/quantum-observable-universe/predicted-spectra/q-value-transition.lean	198:8: error(lean.unknownIdentifier): Unknown identifier `div_lt_div_iff`
+22	content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean	37:62: error: unexpected token '/--'; expected 'lemma'
+13	content/quantum-observable-universe/q-geometric-langlands/local-q-zeta-function.lean	27:13: error: unexpected token 'section'; expected 'lemma'
+4	content/quantum-observable-universe/q-geometric-langlands/spectral-half-line.lean	47:4: error(lean.unknownIdentifier): Unknown constant `Complex.abs`
+2	content/quantum-observable-universe/quantum-observable-universes/categorical-irreducible.lean	34:11: error: failed to synthesize
+3	content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv.lean	77:5: error(lean.unknownIdentifier): Unknown identifier `CategoryTheory.Preadditive`
+2	content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean	50:9: error: failed to synthesize
+1	content/quantum-observable-universe/quantum-observable-universes/observation.lean	51:11: error: failed to synthesize
+1	content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.lean	37:34: error: failed to synthesize
+2	content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.lean	87:2: error(lean.unknownIdentifier): Unknown identifier `intervalIntegrable_log'`
+1	content/quantum-observable-universe/quantum-universes/quantum-universe-exists.lean	1:0: error: object file 'content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/QuantumObservableUniverse/TrivialWitness.olean' of module Q
+2	content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.lean	43:34: error: failed to synthesize
+2	content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean	42:34: error: failed to synthesize
+1	content/quantum-observable-universe/stochastic-mechanics/classical-limit-functor.lean	38:12: error(lean.unknownIdentifier): Unknown identifier `MonoidalFunctor`
+1	content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean	90:14: error: failed to synthesize
+1	content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean	101:35: error: failed to synthesize
+3	content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition.lean	189:8: error(lean.unknownIdentifier): Unknown identifier `div_le_div_iff`
