@@ -825,3 +825,38 @@ pair-valued analogue plus lemmas identifying pShape w and recordingShape w with 
 RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
 
 ### #5426 now carries bricks 16-37, thirteen files, zero sorries, axiom-clean throughout
+
+### Brick 38 — rskPair IS SURJECTIVE (same PR #5426). The arc from brick 10 ends here.
+
+exists_rskPair_eq : ∀ (μ : YoungDiagram) (SP SQ : StandardYoungTableau μ),
+                      ∃ σ : Equiv.Perm (Fin μ.cells.card), rskPair σ = ⟨μ, SP, SQ⟩
+
+Every ingredient was already proved. What was left was PLUMBING, and the plumbing is
+dependent-type work: rskPairWord is a Σ whose SECOND component has ALREADY been transported along
+recordingShape_eq_pShape, so comparing it with ⟨μ, SP, SQ⟩ moves three things at once.
+  sigma_pair_ext_entry : subst the diagram equality, then compare entries (the only honest route)
+  entry_cast           : the ▸ transport moves NO entry — this is what makes the second component
+                         comparable at all
+  shiftT_unshiftT      : under the transport the recording tableau is shiftT of the 0-based one, so
+                         brick 34's down-shift has to be undone; the content fact already knows the
+                         entries are positive, which is the whole hypothesis.
+
+Assembly inside exists_rskPair_eq:
+  P := toListTableau SP ; Q := toRecordingTableau SQ ; n := μ.cells.card
+  hrange/hlt  <- mem_flatten_toRecordingTableau (brick 34)
+  hshape      <- addCellSteps_qPositions (brick 37) + both shapes = μ.rowLens
+  hpair       <- insertWordRec_uninsertSteps_of_standard (brick 32)
+  word content<- insertWord_content + content_toListTableau (brick 35)
+  σ           <- exists_wordOfPerm_eq (brick 36)
+
+### SCOPE — SURJECTIVITY, NOT BIJECTIVITY
+Injectivity is SchenstedRSKInjective, stated FOR WORDS. Combining the two into an Equiv
+Perm (Fin n) ≃ Σ_{|μ|=n} SYT(μ)² is NOT done, and it is what RSKBurnsideHolds needs.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+Then SpechtWedderburnCriterion.spechtEquiv_of_sum_sq converts it to the general Wedderburn split.
+
+### #5426 now carries bricks 16-38, fourteen files, zero sorries, axiom-clean throughout
+### Next
+- assemble the Equiv from injectivity (words) + surjectivity (this): the mismatch to bridge is that
+  injectivity is stated for words and surjectivity for permutations;
+- then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq -> general Wedderburn split.
