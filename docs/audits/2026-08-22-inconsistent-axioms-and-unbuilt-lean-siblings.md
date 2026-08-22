@@ -353,6 +353,59 @@ changes which error is visible. A sweep that added the import everywhere on
 the strength of §4b would have touched 29 files for no benefit while
 claiming a root-cause fix.
 
-**Standing count after this branch: 73 → 60 failing** (11 repaired earlier,
-3 stubs deleted, 2 here; `frobenius-codim-universal` improved 100 → 8 but
-still fails and is still counted).
+### 4d. Full re-triage on the rebased tree (authoritative)
+
+The §4 classification was taken before any repairs and is stale in a way
+worth naming: parse errors mask what is behind them, and one file's count
+was the error **cap**. Everything was re-measured after rebasing onto `main`
+at `e9fd81a63`. The TSV linked above is this run, not the original.
+
+| | count |
+|---|---:|
+| population | **955** (958 − the 3 deleted stubs) |
+| pass | **899** |
+| **fail** | **56** (5.9 %) |
+| error-capped | **0** |
+
+**The counts are now real counts, not floors.** Nothing hits the 100-error
+cap any more, so unlike the original 339 the new total of **221 errors
+across 56 files** can be read as written. **16** files carry exactly one
+error.
+
+**Reconciliation — 73 → 56, and every one of the 17 is accounted for:**
+
+| | files |
+|---|---:|
+| repaired on this branch | 13 |
+| deleted as shadowing stubs | 3 |
+| **fixed on `main` by a sibling agent** | **1** |
+
+The last is `predicted-spectra/spectral-decomposition-qvalue.lean`, closed by
+`2f453c89e` (*"discharge two inactive branches of the Rosso–Jones per-shell
+cancellation"*) among the 83 commits that landed while this branch was open.
+**Zero files newly failing** — nothing regressed.
+
+**First-error class, re-measured:**
+
+| class | files |
+|---|---:|
+| `RESOLVE` — unknown identifier/constant | 22 |
+| `INSTANCE` — failed to synthesize / bad binder | 11 |
+| `PROOF/TACTIC` | 6 |
+| `PARSE` | 6 |
+| `TYPE` | 5 |
+| `ENV` — dependency olean missing, **not a defect** | 4 |
+| `OTHER` | 2 |
+
+By chapter: `mass-theory` 19, `quantum-observable-universes` 8,
+`predicted-spectra` 6, then ≤ 3 each. Excluding the 4 `ENV` cases, the
+confirmed defect count is **52**.
+
+**`RESOLVE` at 39 % is the obvious next batch, but it is two populations
+that this classification does not separate**: Mathlib renames (cheap and
+mechanical — `abs_add` → `abs_add_le`, `div_lt_iff` → `div_lt_iff₀`,
+`div_lt_div_iff` → `div_lt_div_iff₀`, `one_rpow` → `Real.one_rpow` are the
+four confirmed so far) versus unknown *project* constants, which are
+formalisation gaps and not cheap at all — `GaugeCouplingUniquenessData` and
+`heckeH8DimQ` both presented as `RESOLVE`-class and neither was a rename.
+Split that before estimating the batch.
