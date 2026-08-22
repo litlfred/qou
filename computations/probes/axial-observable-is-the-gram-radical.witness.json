@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T15:55:13.916888+00:00",
-  "commitSha": "fb04804aaac5ecc79912cbde6f3e389f37aedeec",
+  "computedAt": "2026-08-22T16:03:14.025412+00:00",
+  "commitSha": "a28f0a8ee2ac539680fa8156a8d568681e2ec42d",
   "assertions": [
     {
       "name": "sign_character_is_the_radical_direction",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2391,
+  "durationMs": 74,
   "computation": "axial-observable-is-the-gram-radical",
   "scriptFile": "axial_observable_is_the_gram_radical_probe.py",
-  "scriptHash": "fdb332fb542f",
-  "scriptCommitSha": "1e425b4d46e2b176143788da1914355a1cca7df1",
+  "scriptHash": "2bfe977e795e",
+  "scriptCommitSha": "be2d53b167c5fa560a56454b8a5aa9ae1e41ca4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,7 @@
     ],
     "reproduce": "python3 -u computations/probes/axial_observable_is_the_gram_radical_probe.py"
   },
-  "description": "Overlap of the trivial and sign characters with the convention-D Markov-Gram radical on the H_3 NF basis. The sign character IS the radical (|cos| = 1), so `borromean-axial-coupling`'s axial pairing asks for the dual of a vector the form annihilates and has no value — every generalized inverse answers differently, by exactly a radical term. The trivial channel is orthogonal to the 50-dps floor and is dualisable under quotient-by-radical. Bean qou-cnbm.",
+  "description": "Overlap of the trivial and sign characters with the convention-D Markov-Gram radical on the H_3 NF basis. The sign character IS the radical (|cos| = 1), so `borromean-axial-coupling`'s axial pairing has no canonical value TAKEN ALONE — but 641c84f8b2 showed the value enters a ratio where scale cancels exactly, so the ambiguity does not reach the computed quantity. The trivial channel is orthogonal to the 50-dps floor. Bean qou-cnbm.",
   "data": {
     "by_observable": [
       {
