@@ -84,34 +84,56 @@ Per AGENTS.md §"Before declaring refuted", the (b) classification is used
 because a proved invariant (integrality of Hecke characters, verified) forbids
 the whole class — not because a numerical search came up empty.
 
-## Where the boundary is — the Markov trace escapes, and here is why
+## The obstruction is ONE invariant, and it closes routes 2, 3 and 4 together
 
-The exclusion above is about the **matrix character** `trace ρ(w)`, which lives
-in `ℤ[q,q⁻¹]`.  The **Markov trace** is a different object,
+**Corrected 2026-08-22 — an earlier version of this section said the Markov
+trace "escapes" the obstruction and named it the live route. That was too
+generous, and it was wrong.**  `tr_M` escapes `ℤ[q,q⁻¹]`, which is what §4
+below shows; it does **not** escape the field the argument actually needs.
 
-    tr_M(β) = Σ_λ y_λ(z) · χ_λ(β)
+The Markov trace is `tr_M(β) = Σ_λ y_λ(z)·χ_λ(β)`.  Its weights are rational in
+`(q, z)` (assertion 7) and its characters are Laurent polynomials in `q`
+(assertion 4), so **`tr_M` is a rational function of `(q, z)`** — assertion 9.
+Meanwhile
 
-and its Wedderburn weights `y_λ` carry the Ocneanu parameter `z`.  Solving the
-three `H₃(q)` Markov equations symbolically (assertion 7) gives all three
-weights as explicit functions of `z`, each genuinely `z`-dependent.  So `tr_M`
-does **not** lie in `ℤ[q,q⁻¹]`, and the integrality obstruction simply does not
-reach it.
+    α = (z−1)h/2 = (q²−1)(z−1)/(2q)
 
-Two checks that this is the real boundary and not a bookkeeping artefact
-(assertion 8):
+is itself rational in `(q, z)` and **non-constant**, and the cosine of a
+non-constant rational function is transcendental over `ℚ(q, z)`: `cos f =
+(e^{if}+e^{−if})/2`, and `e^f` is transcendental over a rational function field
+unless `f` is constant (the standard Liouville/differential-algebra fact that
+makes `exp` transcendental over `ℚ(x)`).  So `2cos α ∉ ℚ(q, z)` — assertion 10.
 
-  * At `z_D` the solve returns `y_(2,1) = q²/(q²+1)²` — exactly the corpus's
-    `QOU.BraidKnot.stdWeightD` — together with `y_(1³) = 0`, the two-row
-    Temperley–Lieb forcing.  The corpus value is reproduced here from the
-    Markov equations rather than assumed.
-  * At `z_C` the weights are **not** Laurent polynomials at all: they carry
-    half-integer powers of `q` (`q^{9/2}`, `q^{7/2}`, …), inherited from the
-    `√q` in `z_C`.
+That single statement subsumes three separate routes that I had been treating
+as three separate arguments:
 
-That is the surviving route, stated sharply: **a transfer matrix normalised by
-the Markov trace is exactly the kind of non-scalar, `z`-dependent object the
-exclusion's scope carve-out names.**  Nothing here says that route works — only
-that the obstruction proved above does not close it.
+  * **route 2** — the exact Form-A/Form-B bridge `(1−h/2)/(1−zh/2)` is rational,
+    so it could never have produced the cosine.  Its 530 % numerical miss was a
+    symptom, not the reason.
+  * **route 3** — a matrix character lies in `ℤ[q,q⁻¹] ⊂ ℚ(q,z)`.
+  * **route 4** — a Markov-normalised trace lies in `ℚ(q,z)`.
+
+All three fail for the same reason: **no rational assembly of the Hecke/Markov
+data can equal `2cos α`.**
+
+## What this leaves — and it is a direction, not just a negative
+
+The obstruction is exactly a rationality obstruction, so what survives is
+precisely the transcendental constructions:
+
+  * `M` built with genuinely transcendental ingredients — a q-exponential,
+    Faddeev's `Φ_q`, a holonomy/monodromy, an actual matrix exponential.  A
+    phase `e^{iα}` arising as a *holonomy* rather than as a character value is
+    not touched by any of this.
+  * a statement at *specialised numerical* `q, z` rather than a functional
+    identity.  Everything here is about identity of functions; a numerical
+    coincidence at one anchor is not excluded, and at `q₀` the nearest
+    enumerated character sits only ≈2.7e-3 from the target.
+
+So the honest reading is not "the phase is impossible" but **"the phase cannot
+come from character algebra; it has to come from an exponential."**  That is a
+constraint on where a derivation must look, and it is consistent with `α`
+appearing in the corpus only ever inside a `cos`.
 
 ## Method
 
@@ -288,17 +310,57 @@ def main() -> int:
         "re-derived); C: half-integer powers of q, not a Laurent polynomial",
     )
 
+    # ---- 9. tr_M is RATIONAL in (q,z) -- it does not escape Q(q,z) ----
+    rational_all = True
+    for L in (2, 4):
+        for w in itertools.product(gens, repeat=L):
+            M = sp.eye(2)
+            for g in w:
+                M = M * gens[g]
+            chi = sp.simplify(sp.expand(sp.trace(M)))
+            if not sp.simplify(Ssol[y21] * chi).is_rational_function(q, zsym):
+                rational_all = False
+    check(
+        "9. every Markov contribution y_(2,1)*chi(w) is RATIONAL in (q,z)",
+        rational_all,
+        "weights rational (assertion 7) x characters Laurent (assertion 4) "
+        "=> tr_M in Q(q,z); it escapes Z[q,q^-1] but NOT Q(q,z)",
+    )
+
+    # ---- 10. the target is not rational in (q,z) -- one invariant, three routes
+    alpha_sym = (zsym - 1) * (q - 1 / q) / 2
+    alpha_nonconst = (
+        sp.simplify(sp.diff(alpha_sym, q)) != 0
+        or sp.simplify(sp.diff(alpha_sym, zsym)) != 0
+    )
+    target_sym = 2 * sp.cos(alpha_sym)
+    check(
+        "10. alpha is a NON-CONSTANT rational fn, so 2cos(alpha) is not in Q(q,z)",
+        alpha_sym.is_rational_function(q, zsym)
+        and alpha_nonconst
+        and not target_sym.is_rational_function(q, zsym),
+        f"alpha = {sp.simplify(alpha_sym)} (rational, non-constant); "
+        "cos of a non-constant rational fn is transcendental over Q(q,z), so NO "
+        "rational assembly of Hecke/Markov data equals it -- this closes routes "
+        "2, 3 and 4 by ONE invariant",
+    )
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/8: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/10: {', '.join(failures)}")
         return 1
-    print("8/8 assertions hold.")
+    print("10/10 assertions hold.")
     print()
-    print("EXCLUSION (scope-(b), invariant named): for M = lambda*rho(w) with w a")
-    print("braid word and lambda scalar, det M = 1 forces lambda = +-1, so")
-    print("trace M lies in +-Z[q,q^-1] -- while 2cos((z-1)h/2) does not. The asserted")
-    print("eigenphase is therefore not merely underived but UNDERIVABLE in that form.")
-    print("Does NOT exclude a non-scalar normalisation, or an M outside the braid image.")
+    print("EXCLUSION (scope-(b), ONE invariant, three routes):")
+    print("  tr_M and every matrix character are RATIONAL in (q,z); alpha is a")
+    print("  non-constant rational function, so 2cos(alpha) is transcendental over")
+    print("  Q(q,z). No rational assembly of the Hecke/Markov data equals it --")
+    print("  closing the exact-bridge route, the braid-character route, and the")
+    print("  Markov-normalisation route for the same reason.")
+    print("  SURVIVES: a TRANSCENDENTAL construction (q-exponential, Phi_q, a")
+    print("  holonomy, a matrix exponential), and numerical coincidence at a")
+    print("  specialised anchor. The phase cannot come from character algebra;")
+    print("  it has to come from an exponential.")
     return 0
 
 
