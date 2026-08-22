@@ -16,11 +16,11 @@ Measured over the 3030 tracked `computations/**/*.witness.json`:
 
 | population | count | what it is |
 |---|---:|---|
-| current muon `1.109978595557334…` | 211 | the live ideal/CAL-2 pin |
+| current muon `1.109978595557334…` | 210 | the live ideal/CAL-2 pin |
 | **superseded muon `1.109978595554180…`** | **374** | the *old* muon value — a pin-currency defect |
 | both values present | 24 | deliberate cross-anchor comparison, mostly |
 | rounded / low-precision variants | 31 | e.g. `1.10997859556` |
-| **loose-prefix total** | **640** | |
+| **loose-prefix total** | **639** | |
 
 The prefix sensitivity is the tell:
 
@@ -65,7 +65,7 @@ producers:
 |---|---:|
 | reference the file (152 including `_deprecated/`) | 136 |
 | … read the JSON directly **and never import `q_parameter`** | 69 |
-| … and bind q₀ from `derived_50_digit["q"]` | **56** |
+| … and bind q₀ from `derived_50_digit["q"]` | **55** (was 56; one fixed here) |
 
 Those 56 pin to muon with no anchor resolution at all — they get whatever
 that witness happens to carry, regardless of the 2026-08-07 owner
@@ -73,7 +73,7 @@ directive that compute defaults to proton. Crossed against
 `q0_anchor_manifest.json`:
 
 - **51 UNDECLARED** — nobody has classified them.
-- **5 declared `physical_proton`** — a flat contradiction.
+- **4 declared `physical_proton`** — a flat contradiction. (Was 5; `b_over_m_order_probe` is fixed in this PR — see below.)
 
 The 5:
 
@@ -368,6 +368,58 @@ check. The defect is the **label**: `independent` records the opposite of what
 the producer does, and hides it from every later pin audit. Tracked as
 `qou-324i`.
 
+## One fix landed, end to end
+
+`b_over_m_order_probe` was the cleanest of the five: declared
+`physical_proton`, docstring says *"Computed at the **proton-pinned** q₀"*,
+a single q₀ read, and **not** among the 21 dual-purpose readers — so no
+co-read scalars to straddle. Fixed here as a demonstration that the finding
+is actionable, not just measurable.
+
+The read now goes through `q_parameter.Q_MP`. That is the proton pin at the
+**same 50 dps** (`1.109978582751380807591669095610768879874499121873577636…`),
+so it is not a precision downgrade — checked before the swap. The witness
+gained a `q0_anchor` field naming the pin, per AGENTS.md's "say which pin you
+used".
+
+Verification, in order:
+
+1. **The number moved as predicted.** `q0_50dps` went
+   `1.10997859555733471…` → `1.10997858275138080…`, and every derived
+   quantity with it. `q0_value_drift_audit` reclassified the witness
+   `canonical` → `proton-pin` at `ppb_vs_canonical: −11.537117889987831` —
+   the μ–p substrate tension itself, which is the right magnitude.
+2. **The conclusion did not move.** `n6_family_splitting_at_q0` changed in
+   the 9th significant digit. This is an order-of-magnitude probe, so its
+   verdict is robust to an 11.5 ppb pin shift. The fix corrects *which pin
+   the probe declares it used*, not any finding.
+3. **`scripts/precision-gates.sh --changed`: all blocking gates green.**
+   The one advisory `UNTRACEABLE` literal (`qbeta_t4_stokes3_crux_probe.py:60`,
+   `A_omega = 3`) is pre-existing and unrelated.
+4. **Environment restored before committing the witness.** The first run
+   warned that this container recorded *less* than the committed witness —
+   `clarabel` dropped, `mpmath` 1.4.1 → 1.3.0. Rather than commit a weaker
+   provenance record, both were installed and the producer re-run; the
+   environment block now matches.
+5. **The import is clean.** `b_over_m_order_probe` imports
+   `plancherel_weight` from `q1_mass_gap_probe` — itself one of the five —
+   but that module's q₀ read is inside `main()`, not at module level, so the
+   import triggers nothing.
+6. **`q0-anchor-consistency-audit.witness.json` was reverted**, not
+   committed: its only diff was `invocation.argv` gaining `--strict` from the
+   gates wrapper. Drift, not a count change. `q0-value-drift-audit` *is*
+   committed, because a count genuinely moved.
+
+The gate now reports **4** contradictions and still exits 1, as it should
+while any remain.
+
+The other four are not fixed here. `path4_rho_K_at_h3A` and
+`q_beta_form_a_n1_extension` are dual-purpose (`q_inv`, `hbar_q`) and need
+their co-read scalars re-pointed in the same change or they straddle;
+`q1_mass_gap_probe` needs its reference-table read separated from its q₀ bind
+first; `aK_via_lp_dual_hecke_basis` states no pin intent. Tracked in
+`qou-v90i`.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke
@@ -389,6 +441,6 @@ the producer does, and hides it from every later pin audit. Tracked as
 |---|---|
 | "~840 muon witnesses" | superseded |
 | "624 fingerprint / 65 stamped" (my earlier re-baseline) | **superseded — the 624 conflates two q₀ values** |
-| 211 current-muon + 374 superseded-muon + 24 both + 31 rounded | measured 2026-08-22, post-rebase onto `238fc79f6e` |
+| 210 current-muon + 374 superseded-muon + 24 both + 31 rounded | measured 2026-08-22, post-rebase onto `238fc79f6e` |
 | 65 stamped `muon` = 3 `ideal_muon` + 11 `physical_proton` + 51 undeclared | measured; the 3 are the legitimately-muon producers |
-| 56 producers pin q₀ directly from the muon witness; 5 contradict their own manifest entry | measured, confirmed both directions |
+| 55 producers pin q₀ directly from the muon witness; 4 contradict their own manifest entry | measured, confirmed both directions; was 56 / 5 before the fix below |
