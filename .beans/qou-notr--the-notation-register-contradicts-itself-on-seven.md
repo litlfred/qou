@@ -8,7 +8,7 @@ tags:
     - notation
     - convention-d
 created_at: 2026-08-22T07:40:00Z
-updated_at: 2026-08-22T07:55:00Z
+updated_at: 2026-08-22T08:05:00Z
 ---
 
 From `agent:pq_11`, the batch that closed the trap drain. These matter more than
@@ -114,7 +114,11 @@ driven by an audit.
 
 ## Smaller, same document
 
-`\wp` labelled "fraktur cap" (it is script). Table 10 presented before Table 9;
+~~`\wp` labelled "fraktur cap"~~ — **fixed 2026-08-22** to `script`. It is not
+fraktur (`\mathfrak{P}` is a different glyph entirely), and while Unicode names
+U+2118 "SCRIPT CAPITAL P", the glyph is lowercase, so "cap" misleads a reader
+choosing a symbol. The table's own Font column already uses bare family names
+("calligraphic", "Greek") alongside cased ones. Table 10 presented before Table 9;
 no table for chapters 3, 5, 7. `\mathcal{P}` reserved for parity in one paragraph
 and for the Goncharov filtration `\mathcal{P}_n` in Table 4, uncross-referenced.
 `T_e` written for the Hecke identity against §7a's *"never `T`"*. `G` carries
