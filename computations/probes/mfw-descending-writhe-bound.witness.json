@@ -1,8 +1,8 @@
 {
   "engine": "exact-braid-word-enumeration",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T15:25:34.829852+00:00",
-  "commitSha": "46ea26c9b2c71a71813c3c9404576d3a36593811",
+  "computedAt": "2026-08-22T15:53:33.896919+00:00",
+  "commitSha": "1b647dc7397947d3a80df7f69bbf2b6ec465fac5",
   "assertions": [
     {
       "name": "descending_writhe_bound_holds",
@@ -11,6 +11,22 @@
       "passed": true,
       "tolerance": "exact",
       "source": "exhaustive over 1227 descending words"
+    },
+    {
+      "name": "distinct_components_have_linking_number_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "descending traversal orders components; earlier passes over later"
+    },
+    {
+      "name": "bound_decomposes_over_closure_components",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "reduces |e| <= n - c to the single-component case"
     },
     {
       "name": "no_strand_pair_crosses_more_than_once_net",
@@ -30,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 138,
   "computation": "mfw-descending-writhe-bound",
   "scriptFile": "mfw_descending_writhe_bound_probe.py",
-  "scriptHash": "99f33224421f",
-  "scriptCommitSha": "46ea26c9b2c71a71813c3c9404576d3a36593811",
+  "scriptHash": "572c4a898a05",
+  "scriptCommitSha": "1b647dc7397947d3a80df7f69bbf2b6ec465fac5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -95,7 +111,10 @@
       }
     },
     "max_net_crossings_per_strand_pair": 1,
-    "words_where_nonzero_pairs_exceed_n_minus_c": 298
+    "words_where_nonzero_pairs_exceed_n_minus_c": 298,
+    "cross_component_nonzero_linking": 0,
+    "per_component_bound_violations": 0,
+    "per_component_bound_tight": 1220
   },
   "q0Anchor": "independent",
   "q0AnchorReason": "pure braid-word combinatorics; reads no q_0"
