@@ -33,3 +33,12 @@ integers, whose types mention neither the prime `p` nor the exception set
 them would record it as formalized by something that says nothing about it.
 Tracked as bean `qou-lrnd`; the construction itself is unaffected and stays
 witnessed by `computations/probes/habiro_frobenius_probe.py`.
+
+**Follow-up (2026-08-22):** that same file now also carries
+`habiro_frobenius_not_unit` and its proton/deuteron instances, whose
+conclusion is `¬ IsUnit (frob p)` — the Frobenius itself, with `p` in the
+statement rather than as decoration.  They are sorry-free and take the
+mod-`𝔭` collapse `reduce p (frob p) = C` as an explicit hypothesis, because
+that identity is derived symbolically in the probe and not in Lean.  The
+block stays a `remark`: a conditional theorem is not an instance, and
+supplying the hypothesis is exactly the open step.
