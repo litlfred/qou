@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-22T15:40:49Z
+updated_at: 2026-08-22T15:59:36Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -258,3 +258,53 @@ Still needs per-producer reads; the sort is not automatable (the two available
 rules fail in opposite directions, recorded above). But the both-anchor diff
 above is a much better per-producer TEST than anything tried so far — it decides
 class (ii) membership definitively in one run, without reading the source.
+
+
+## 2026-08-22 (cont.) — 47 -> 40, and the method I recorded above is WRONG
+
+**RETRACT the both-anchor diff test recorded in the previous entry.** I called it
+"the reusable part" and "definitive in one run". It is confounded and it nearly
+landed eight false dispositions.
+
+**Why.** The LABEL always tracks QOU_Q0_ANCHOR, because the builder reads the
+env var. The PAYLOAD only tracks it if the producer reaches q0 by a route that
+env var actually controls. So a "label-only" diff conflates
+
+    (a) the producer does not depend on the pin       <- class (ii)
+    (b) the producer does not respond to the ENV VAR  <- says nothing at all
+
+Run over all 47 it returned 16 members. Eight of them changed SUBSTANTIVELY on a
+plain re-run — alpha_q0 / alpha_eff_q0 / Q_N2_q0_MeV, z_q0, the Frobenius Gram
+eigenvalues, z_markov. Physics. Those producers DO depend on the pin.
+
+**THE CORRECT TEST:** run with NO env var — the default invocation, which is what
+any future re-run does — and diff against the COMMITTED witness. Class (ii) iff
+nothing but the label fields move. This compares the real before/after instead of
+two artificial states, and it is what caught the confound.
+
+Seven survive and are dispositioned `independent` (PR #5457):
+chirality_topology_binding_probe, probe_he4_magic_baryeven_prune,
+lambda_scale_substrate_probe, qbeta_c3_rung_structure_analysis,
+qbeta_habiro_f_from_shape_collapse, qbeta_rung1_div25_framing_squared_test,
+z2bn_tau_derivation_probe.
+
+**Also retract:** lever1_binding_core_characterization is NOT class (ii) — its
+bare re-run moves computationDetail and the upstream witness hashes. Its partner
+lever1_binding_habiro_single_element_test remains a genuine flip. Still two
+different cases, just not the two I assigned them.
+
+Ratchet 47 -> 40, re-verified firing at 39.
+
+## Running tally of method errors on this bean — five now
+
+  1. blob-search over the witness JSON            over-counted 185 vs 49
+  2. file-local grep for q0 identifiers            under-counted (module alias)
+  3. one-hop AST                                   over-counted (import != use)
+  4. AST "zero q0 identifiers as code"             necessary, not sufficient
+  5. both-anchor env-var diff                      confounded (label vs payload)
+
+Every one failed in a DIFFERENT direction, and each was caught only by measuring
+the thing itself rather than a proxy for it. That is the standing lesson for the
+remaining 40: the only trustworthy test touches the real committed state under
+the real default invocation. Budget accordingly -- it is one re-run per producer,
+not a static scan.
