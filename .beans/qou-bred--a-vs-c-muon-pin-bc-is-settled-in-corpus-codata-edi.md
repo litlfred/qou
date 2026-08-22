@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:40:59Z
-updated_at: 2026-08-22T19:41:47Z
+updated_at: 2026-08-22T21:06:38Z
 ---
 
 Corpus-grep answer to "is A-vs-C already in the corpus?", run 2026-08-22 per the
@@ -83,3 +83,101 @@ Still an owner ruling -- it decides what "the ideal CAL-2 muon pin" MEANS, and
 AGENTS.md puts the calibration canon under owner sign-off. But it is a sharper
 question than the one I escalated, and the "current vs stale CODATA" framing in
 #5430's body is wrong: C is current, and A is not a vintage at all.
+
+
+---
+
+# DECISION BRIEF — A vs C (2026-08-22)
+
+Written because the escalation so far gave the question without the material to
+rule on it.
+
+## The number that decides it
+
+    |A - C|                      = 0.0769 ppb
+    sigma(q0) from the muon anchor = 1.2234 ppb
+                                     (m_mu/m_e = 206.7682827 +/- 4.6e-6, 22.25 ppb)
+    |A - C| / sigma              = 0.063 sigma
+
+**A and C are the same value to one sixteenth of a standard deviation.** For
+scale the mu-p tension is 9.4 sigma at the same anchor.
+
+So NO measurement in the framework distinguishes A from C and NO prediction can
+depend on the choice. Anyone arguing a physics reason to prefer one is
+over-reading the arithmetic. This is a governance/hygiene ruling.
+
+## Corrections to my own earlier claims
+
+1. **"A is an undocumented accident"** -- WRONG. The fixed point is deliberate
+   and documented. `q0_anchor_manifest.json::_convention` says `ideal_muon`
+   "holds the ANCHOR-DEFINING producer ... Move it and the muon anchor ceases
+   to exist -- that is what broke main for 208 producers (qou-m9xp)". The
+   witness's own description also spells it out: listed under ideal_muon,
+   q_parameter rebinds q_at, "the Newton solve described below never
+   executes", and "the m_p/m_e route is what DEFINES the quantity, not what
+   ran".
+2. **"A is not reproducible from a published muon ratio AT ALL"** -- too
+   strong. A implies m_mu/m_e = 206.768282989315, which ROUNDS to the 2018
+   published figure 206.7682830. But it is not equal to Vol/206.7682830 --
+   that is B, verified exactly (9.5e-30). A sits 0.052 ppb from the
+   2018-derived value and 11.5 ppb from the proton solve. Accurate statement:
+   **A's exact digits remain unattributed; it is near the 2018-derived value
+   without equalling it.**
+
+## Blast radius
+
+    files touching the anchor machinery (A's route)   48
+    files calling q_muon_at (C's route)              141
+    witnesses stamped muon                            56   (proton: 623)
+    manifest ideal_muon entries                        3   (proton: 406)
+
+The muon layer is small and NOT in the production path -- the 2026-08-07
+directive routes production through proton. This ruling governs the ideal/CAL-2
+layer, i.e. what the framework CLAIMS about its calibration, not what it
+predicts.
+
+## Pros / cons
+
+**A (stored constant)**
+  + stability: 56 witnesses stay valid, nothing regenerates
+  + the 208-producer break is the measured cost of disturbing this anchor
+  + a `muon` stamp means the same thing in five years
+  - it VALIDATES ITSELF: re-running returns its own input; the one label in
+    the vocabulary nothing can check
+  - its digits are unattributed
+  - it is a transcribed constant -- what "read the authority, do not
+    transcribe it" was written against
+
+**C (live derivation)**
+  + checkable and self-updating; reads the vendored drift-tested NIST table
+  + consistent with PR #5149's direction (constants moved from transcription
+    to reading)
+  + honest: CAL-2 is DEFINED by m_mu/m_e, so its pin should follow it
+  - every muon-stamped witness goes stale on the next CODATA release, with no
+    signal -- the failure mode that produced B
+  - measured downstream: mu-p tension 11.534 -> 11.614 ppb (WORSE),
+    m_mu L2 miss 963.6x -> 970.2x. Trivial, but the wrong direction.
+  - reintroduces the drift the fixed point exists to prevent
+
+## RECOMMENDATION
+
+**Rule C canonical for what the pin MEANS; keep a stored value for what the
+anchor SERVES.** Four steps:
+
+  1. C is the definition -- CAL-2 is defined by m_mu/m_e, so derive, do not
+     transcribe.
+  2. Retain the fixed-point mechanism (do NOT repeat the 208-producer break),
+     but REGENERATE the stored string from C and record in the witness which
+     table edition and which ratio produced it. That turns A from an
+     unfalsifiable constant into a CHECKABLE SNAPSHOT.
+  3. Add a staleness gate asserting stored == q_muon_at() at the current
+     table; warn when CODATA moves. Drift DETECTION without drift.
+  4. Only then start the 71-site literal migration, which is gated on this.
+
+**Alternative, defensible:** rule A and change nothing -- at 0.063 sigma
+nothing observable moves. But then record the unattributed digits as a known
+open item rather than leaving it implicit.
+
+**What to avoid:** switching the anchor to call q_muon_at() directly. Maximum
+drift exposure across 56 witnesses for a 0.063-sigma gain, via the mechanism
+whose removal already broke main once.
