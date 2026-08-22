@@ -3465,6 +3465,37 @@ with no help at all (§6 already carries the congruences). What is missing is th
 to be stated against a list whose first two entries are dead weight. -/
 
 set_option linter.unnecessarySeqFocus false in
+/-- **Two terms on one word with opposite coefficients contribute nothing, even
+with other terms between them.**
+
+The adjacent case is what §4ak's cancellations need at the top level; the
+`a ≤ b` closing phase needs the split one. There the four-term element is
+`[(Vh, h), (V1, 1), (Uh, −h), (U1, −1)]`, and the two terms that reconverge are
+the two `h`-weighted ones — with `(V1, 1)` sitting between them. That ordering
+is not a choice: `trio` emits its `h`-weighted word immediately before its plain
+one, in place, so the two lineages interleave as `V, V, U, U`.
+
+`ofTerms_cancel_pair` is this at `M = []`. -/
+theorem ofTerms_cancel_split {n : ℕ} (w : Monomial (HeckeGen n)) (c : ℝ)
+    (L₁ M L₂ : List (Monomial (HeckeGen n) × ℝ)) :
+    AlgElement.CoeffEq
+      (AlgElement.ofTerms (L₁ ++ (w, c) :: (M ++ (w, -c) :: L₂)))
+      (AlgElement.ofTerms (L₁ ++ (M ++ L₂))) := by
+  intro m
+  simp only [AlgElement.ofTerms_coeff, List.filter_append, List.filter_cons,
+    List.map_append, List.sum_append, decide_eq_true_eq]
+  -- The append normalisation has to run AGAIN after `split_ifs`: resolving the
+  -- inner `if` leaves `(w, -c) :: filter L₂` sitting inside `filter M ++ …`,
+  -- which `map_append` had already passed over. And `simp only` closes some
+  -- branches outright while making no progress on others -- "no progress" being
+  -- an ERROR rather than a no-op -- so both it and `ring` are guarded. Same
+  -- hazard the adjacent-pair proof below documents from the other side.
+  split_ifs <;>
+    (try simp only [List.map_append, List.sum_append, List.map_cons,
+      List.sum_cons]) <;>
+    (try ring)
+
+set_option linter.unnecessarySeqFocus false in
 /-- **Two terms on one word with opposite coefficients contribute nothing.**
 The bridge between the chain's term list before and after a cancellation. -/
 theorem ofTerms_cancel_pair {n : ℕ} (w : Monomial (HeckeGen n)) (c : ℝ)
