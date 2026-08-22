@@ -3235,3 +3235,38 @@ six: no `sorryAx`). Proved first attempt — the claim that this was "a known fi
 is now tested rather than asserted.
 
 Remaining to relax: `blockPassFromTwo`, `blockPass`, `loopTwoGen`.
+
+---
+
+## PR #5435 merged (`f2875e72`); relaxations complete on #5454
+
+**All four bundled lemmas now have source-only forms**, each keeping its
+original as a one-line corollary so no caller changed:
+
+| lemma | § | note |
+|---|---|---|
+| `farComm_transport_right_sources` | 4ah | already existed — the template |
+| `blockTransportRightSources` | 4ai | landed in #5435 |
+| `blockPassFromTwoSources` | 4aj | two families, one per transport |
+| `blockPassSources` | 4aj | three — those two plus the leading transport |
+| `loopTwoGenSources` | 4af | two families **per level** |
+
+`blockStep` needed nothing: its `hne` already names the redex and its `hcol`
+already carries `u ≠ []`. The over-approximation lived entirely in
+`loopTwoGen`.
+
+**Why `loopTwoGen` went through unchanged despite being the one with real
+induction structure.** Its accumulator only ever grows on the *right* of `A`, so
+quantifying over that growth `D` makes the hypothesis closed under the recursion
+for free — descending a level replaces `D` by `σ_kd :: D`, and the level's own
+obligations are the `D = []` instances. No new argument was needed.
+
+**One error, compiler-caught:** I first wrote the block transport's hypothesis
+with `W` and `X` swapped, as though the run passed were `descWord i jppp` and
+the block carried `descWord jp j₂`. It is the other way round, and the
+conclusion `A ++ (X ++ (W ++ B)) → A ++ (W ++ (X ++ B))` says so. I had read the
+call site rather than the conclusion.
+
+**Next:** the opening-phase assembly (`a ≥ 4`, `loopTwoGen` measured to fit both
+lineages), then `a = 3` (no loop pass — needs its own treatment), then the
+closing phase, which now has every lemma it needs.
