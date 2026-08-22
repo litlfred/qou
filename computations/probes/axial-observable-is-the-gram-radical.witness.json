@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T14:23:25.785409+00:00",
-  "commitSha": "1492577242185aa8daa59e7ba150e0ee74f1388e",
+  "computedAt": "2026-08-22T15:55:13.916888+00:00",
+  "commitSha": "fb04804aaac5ecc79912cbde6f3e389f37aedeec",
   "assertions": [
     {
       "name": "sign_character_is_the_radical_direction",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 59,
+  "durationMs": 2391,
   "computation": "axial-observable-is-the-gram-radical",
   "scriptFile": "axial_observable_is_the_gram_radical_probe.py",
   "scriptHash": "fdb332fb542f",
-  "scriptCommitSha": "d4f02123ef37b9bbab4549c918f484b05cc88c75",
+  "scriptCommitSha": "1e425b4d46e2b176143788da1914355a1cca7df1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,5 +62,7 @@
       "0.811653754365758058132214822141752124918532537796475184630024",
       "-0.731233707549433674041352781095106426763989809329441201839475"
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
