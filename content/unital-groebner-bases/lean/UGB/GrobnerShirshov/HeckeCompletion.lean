@@ -10702,7 +10702,19 @@ noncomputable def oc (i i₁ j₁ j₂ : Fin n) (h₁ : i₁.val + 1 = i.val)
 
 /-- **The S-polynomial** is `V0 − U0`. The two leading words cancel because the
 short run splits as `descWord i j₂ = σᵢ :: descWord (i−1) j₂`, which is exactly
-the overlap. -/
+the overlap.
+
+**This is regime-independent, and that is worth stating.** Neither `oc` nor this
+identity relates `j₁` to `j₂` — both ask only `j₁ ≤ i₁` and `j₂ ≤ i₁`. So the
+overlap composition and its S-polynomial are *already* established for the
+`a ≤ b` regime (`j₂ ≤ j₁`), diagonal `j₂ = j₁` included, and not only for the
+`a > b` regime this namespace's `chain` and `resolves` go on to close. What is
+regime-specific is the reduction chain from `T0` to zero, nothing before it.
+
+Recorded because the `a ≤ b` arc (bean `qou-auq3`) had been carrying
+"`OverlapComposition` + `spoly`" on its open list, which was wrong: both were in
+the corpus, generic in both depths, the whole time. Verified by instantiating
+this lemma at `j₂ ≤ j₁` and at `j₂ = j₁`. -/
 theorem oc_spoly_coeff {i i₁ j₁ j₂ : Fin n} (h₁ : i₁.val + 1 = i.val)
     (hj₁ : j₁.val ≤ i₁.val) (hj₂ : j₂.val ≤ i₁.val) (m : Monomial (HeckeGen n)) :
     (oc i i₁ j₁ j₂ h₁ hj₁ hj₂).spoly.coeff m = (T0 i i₁ j₁ j₂).coeff m := by
