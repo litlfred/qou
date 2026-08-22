@@ -34,6 +34,18 @@ from __future__ import annotations
 from fractions import Fraction as F
 from functools import lru_cache
 import sys
+import mpmath as mp
+
+mp.mp.dps = 40
+
+
+def mp_pow52(n):
+    return mp.power(n, mp.mpf(5) / 2)
+
+
+def _ns(fr, n):
+    v = mp.mpf(fr.numerator) / fr.denominator / mp_pow52(n)
+    return mp.nstr(v, 8)
 
 
 def partitions(n):
@@ -152,7 +164,8 @@ def build_J(n):
 def main():
     nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 12
     print(f"# Fulman up-down chain exact machinery for M_1 (nmax={nmax})")
-    print(f"# {'n':>3} {'beta_3 (eigval)':>18} {'eigfun exact?':>13} {'identity holds?':>15} {'numerator>0?':>12}")
+    print(f"# P = Cov(Sum|c|,omega3) >= 0,  N = -Cov(SumD2,omega3) >= 0,  M_1 = P - N")
+    ratios = []
     for n in range(3, nmax + 1):
         J, Yn = build_J(n)
         nfac = factorial(n)
@@ -230,13 +243,27 @@ def main():
         de_ac, dwp_ac = edge_disc(AC)
         de_d2, dwp_d2 = edge_disc(AD)
         bstr = f"{beta}" if beta is not None else "n/a"
-        print(f"  {n:>3} beta3={bstr:>7} eig={str(eig_ok):>5} id={str(identity_ok):>5} "
-              f"M1>0={str(M1>0):>5} | Cov|c|={str(cov_absc>0):>5}(disc {de_ac},{dwp_ac:.2f}%) "
-              f"CovD2={str(cov_D2>0):>5}(disc {de_d2},{dwp_d2:.2f}%)")
+        # P = Cov(Sum|c|, omega3) >= 0 ;  N = -Cov(SumD2, omega3) >= 0 ;  M1 = P - N
+        P = cov_absc
+        N = -cov_D2
+        ratio = (N / P) if P != 0 else F(0)
+        print(f"  {n:>3} beta3={bstr:>7} M1>0={str(M1>0):>5} P>0={str(P>0):>5} N>=0={str(N>=0):>5} "
+              f"N/P={float(ratio):.6f}  P/n^2.5={_ns(P, n)}  N/n^2.5={_ns(N, n)}")
         # cross-check M1 sign
         assert M1 > 0, f"M_1 must be > 0 (n={n})"
         assert cov_absc >= 0, f"Cov(Sum|c|,omega3) must be >=0 (n={n})"
+        assert N >= 0, f"N = -Cov(SumD2,omega3) must be >=0 (n={n})"
+        ratios.append((n, ratio))
 
+    print()
+    print("# N/P ratio monotonicity (asymptotic limit 0.6605 < 1):")
+    mono_inc = all(ratios[i][1] <= ratios[i + 1][1] for i in range(len(ratios) - 1))
+    mono_dec = all(ratios[i][1] >= ratios[i + 1][1] for i in range(len(ratios) - 1))
+    max_ratio = max(r for _, r in ratios)
+    n_at_max = [n for n, r in ratios if r == max_ratio][0]
+    print(f"#   N/P monotone increasing: {mono_inc};  decreasing: {mono_dec}")
+    print(f"#   max N/P over range = {float(max_ratio):.6f} at n={n_at_max}  (< 1 => P>N there)")
+    print(f"#   tail N/P = {float(ratios[-1][1]):.6f} (n={ratios[-1][0]}); limit 0.6605")
     print()
     print("# beta_3 should match a clean rational (Fulman-type eigenvalue).")
     print("# identity_ok=True validates Cov(Sum_h,omega_3)=numer/(2(1-beta_3)) exactly.")

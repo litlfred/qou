@@ -69,6 +69,42 @@ control. Verified `M₁>0` exactly to `n≤50`; asymptotic positivity is proved 
 `P(n)>N(n)` (two manifest pieces) with asymptotic domination proved; finite-n domination **open**.
 Nothing laundered: Facts A/B are proved per-edge; the residual is stated as open, not closed.
 
+## Update (2026-08-22): sharpened to `N/P < 1`, with explicit local increments
+
+The gap `P(n) > N(n)` is exactly `N(n)/P(n) < 1`. Measured (exact `Fraction`, via the same
+exchangeable-pair edge sums):
+
+| n | 7 | 10 | 13 | 16 | 18 | 22 | → ∞ |
+|---|---|---|---|---|---|---|---|
+| `N/P` | 0.5610 | 0.5674 | 0.5951 | 0.6067 | 0.6095 | 0.6131 | **0.6605** |
+
+`N/P` wobbles for `n≤6` then rises **monotonically (n≥7) toward the proved limit
+`N_lead/P_lead = 0.11213/0.16977 = 0.6605 < 1` from below**, staying `≤ 0.613` on the whole exact
+range `n≤22`. So the margin `1 − N/P ≥ 0.34` is large and the asymptotic limit is `< 1` by an explicit
+VKLS-integral computation.
+
+**Explicit local increments** (all verified exact; Lean-formalizable). For a one-box move `λ→μ`
+(remove content `c_r`, add `c_a`; `d_r = D_λ(c_r)`, `d_a = D_λ(c_a)` the diagonal lengths in `λ`):
+
+- `Δω₃ = ω₃(λ)−ω₃(μ) = c_r² − c_a²`,
+- `Σ|c|(λ)−Σ|c|(μ) = |c_r| − |c_a|`,
+- **`ΣD²(μ)−ΣD²(λ) = 2(d_a − d_r + 1)`** (verified 362 moves, n≤9) ⟹ `ΣD²(λ)−ΣD²(μ) = 2(d_r−d_a−1)`.
+
+Hence per edge (`|c_r|>|c_a|`): `P`-term `= (|c_r|−|c_a|)²(|c_r|+|c_a|)`,
+`N`-term `= 2(d_a−d_r+1)(|c_r|²−|c_a|²)`, and
+
+> **per-edge ratio `N/P|_edge = 2(d_a − d_r + 1)/(|c_r| − |c_a|)` — UNBOUNDED per edge.**
+
+This is precisely why no per-edge (Harris/FKG) argument can work: a move between two diagonals of very
+different length but nearby content has `d_a−d_r` large and `|c_r|−|c_a|` small, so that edge's ratio
+exceeds 1. The bound `N/P<1` must be **global/weighted** — the high-ratio edges carry small stationary
+weight `s(λ,μ)`. Quantifying that weight-suppression is the remaining gap.
+
+**Status:** `M₁>0` ⟺ `N/P<1`; asymptotic `N/P→0.6605<1` proved; exact `N/P≤0.613` to n≤22 (margin
+`≥0.34`); the local increment structure is fully explicit. A rigorous *uniform* `N/P<1` (e.g. via a
+weighted bound on the high-ratio edges, or a monotone-below-limit argument) is **still open**. Not
+laundered — the reduction and all increments are exact; only the uniform inequality is unproved.
+
 ## Compute
 
 - Probe: [`wlambda_covariance_epic_M1_fulman_exchangeable_pair.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_fulman_exchangeable_pair.py)
