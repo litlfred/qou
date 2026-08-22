@@ -1,0 +1,166 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.854Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.895Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.936Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.976Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.020Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.062Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.103Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.142Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.184Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "bfaad408a54d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.224Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (~6.0kB, the largest block of the group). It has NO .ts sibling and is absent from predicted-spectra.ts, so it never renders - yet it is the only file in the corpus whose prose points at tbl:spectral-decomposition-qvalue-table1-data, which IS in the manifest. Its content otherwise survives verbatim in -proof.md and -geometric.md, and its longer subordinated sentences are the pre-split originals of their choppier counterparts there. F_deg2 = 0.5904 re-derived exactly from Table 1's tr_M values and the quoted J's: (2.167*0.6048 + 5.794*0.5850)/7.961 = 0.590389, which also pins tr_M(Delta_beta) = 1.0000. J ratio 5.794/2.167 = 2.674 -> '2.67x' correct; 0.5904*0.6382 = 0.37678 -> '0.377' correct."
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T06:33:27.224Z"
+}

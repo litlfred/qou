@@ -17,4 +17,4 @@ This construction relies on the nonabelian Stokes theorem. Just as the classical
 
 Applied to a prime orbit $\varrho_\mathfrak{m}$ of the Reeb flow, the 2-dimensional integral over any bounding surface collapses to the 1-dimensional holonomy around the prime knot itself. The counting weight for the prime $\mathfrak{m}$ is the holonomy of $\mathrm{Ad}(A)$ around the closed vortex filament corresponding to $\mathfrak{m}$.
 
-The explicit formula requires $q$-integers $[\rho]_q$ rather than ordinary logarithms. The $q$-integer is the trace of the holonomy matrix in the fundamental representation. It captures the full nonabelian transport around the prime orbit. This multiplicative integral provides the precise formulation of the quantum $\mathrm{Li}(x)$.
+The explicit formula requires $q$-integers $[\rho]_q$ rather than ordinary logarithms. The $q$-integer is the trace of the holonomy matrix in the fundamental representation. It captures the nonabelian transport around the prime orbit.

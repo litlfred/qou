@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.279Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.315Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 226 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.351Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 226 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.389Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,23 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.425Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "Paragraph 3 ends on the paired epigram 'The tower never terminates. No polynomial envelope binds the resulting volumes.' - two short quotable clauses restating what the paragraph has already asserted twice ('The cosimplicial structure theorem guarantees an infinite tower', 'The algebraic independence of the volumes is the transcendence shadow ...').",
+        "notes": "proposed: delete both sentences; the paragraph's claim is complete at 'the transcendence shadow of the non-vanishing motivic Galois character'."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.460Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.497Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.533Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1505,23 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.568Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "'The classes kappa_n never vanish' (para 1), 'The obstruction classes kappa_n never simultaneously vanish' (para 3) and 'kappa_n cannot vanish at the corresponding cyclotomic levels' (para 3) are three DIFFERENT claims - universal, joint, and level-restricted - stated in the same unqualified register as if interchangeable. The strongest is asserted first and never supported.",
+        "notes": "proposed: pick the claim the corpus actually supports (the level-restricted one) and state it once. Not applied - choosing among the three is a mathematical decision, and it is also reported as an anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:31:01.237Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1247137fc0d2",
+          "ts": "3a71db4e6559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:43.607Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~2.1kB). Honest closing scope paragraph ('Rigorous proof requires controlling the arithmetic of the quantum dilogarithm at every tower level'). Two substantive problems reported as anomalies: three inequivalent non-vanishing claims about kappa_n presented interchangeably, and a probable misattribution of the E-function algebraic-independence result to Nesterenko."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:43.607Z"
 }

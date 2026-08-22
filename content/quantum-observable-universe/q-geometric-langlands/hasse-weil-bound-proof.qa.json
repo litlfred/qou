@@ -1491,6 +1491,23 @@
         "reviewed_at": "2026-08-15T10:31:00.931Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "defb9850d460",
+          "ts": "37100072fe47"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:31:07.220Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "severity": "minor",
+        "evidence": "Full read of the 5-step Weil/Castelnuovo-Severi proof; no personal register, no first-person affect.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1551,5 +1568,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:31:07.220Z"
 }
