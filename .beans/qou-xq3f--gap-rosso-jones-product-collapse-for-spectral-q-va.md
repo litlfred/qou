@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-22T21:06:34Z
+updated_at: 2026-08-22T21:17:08Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -47,3 +47,20 @@ STILL OPEN (the deep Rosso-Jones content):
 1. The ACTIVE shell value = |tr_M(e·τ·T_β·e)|/|tr_M(T_β)| — needs the weighted Markov-trace tower (QOU.Braiding.HnMarkovTrace) wired into this file.
 2. Identifying WHICH shell is active (the converting neutron's shell) and that all others are genuinely unchanged/non-embeddable — the physical shell-assignment, not yet modeled.
 3. Basis completeness/self-duality (prop:cohomological-embedding) that guarantees the torus-knot basis is complete.
+
+
+
+## PROGRESS 2026-08-22 (3) — active-shell numerator: idempotent sandwich collapse PROVED
+
+Wired into the general Hecke Markov-trace infra (QOU.Hecke.MarkovTrace, which carries trace : A →ₗ[R] R + cyclic tr(xy)=tr(yx) + normalised). Added two generic-ring lemmas (sorry-free, #print axioms [propext, Classical.choice, Quot.sound]):
+- MarkovTrace.trace_idempotent_sandwich (e x : A) (he : e*e=e) : trace (e*x*e) = trace (e*x)
+- MarkovTrace.trace_idempotent_sandwich' : trace (e*x*e) = trace (x*e)
+
+Derivation: tr(e·x·e) = tr(e·(e·x)) [cyclic] = tr((e·e)·x) = tr(e·x) [idempotency]. Pure consequence of the M2 cyclicity axiom.
+
+This formalizes the Pauli-FULL-shell branch of F(τ,N): its numerator |tr_M(e_{(1³)}·τ·T_β·e_{(1³)})| simplifies to |tr_M(e_{(1³)}·τ·T_β)| — the outer alternating-idempotent sandwich collapses. So the active-shell F numerator STRUCTURE is now derived, not opaque.
+
+STILL OPEN (remaining deep content):
+1. The VALUE tr_M(e·τ·T_β) and the denominator tr_M(T_β) as explicit closed forms — needs the weighted Wedderburn sum tr_M = Σ_λ y_λ χ^λ instantiated for the specific τ, T_β=σ_0σ_1⁻¹, e_{(1³)} (the y_λ closed forms exist in schur_principal_mpmath / WenzlSchurElement but aren't wired to a general braid-word trace in Lean).
+2. Shell-assignment (which shell active) + basis completeness (prop:cohomological-embedding).
+Progress ladder so far: collapse mechanism (1) + inactive branches (2) + active-numerator idempotent collapse (3).
