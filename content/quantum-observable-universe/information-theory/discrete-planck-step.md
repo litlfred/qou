@@ -4,7 +4,7 @@ We discretize the continuous Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-fl
 The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a state ([substrate radial coordinate](#prop:substrate-radial-coordinate)):
 
 $$
-  \mathcal{L}_\xiZ =  J\hbar_qZ.
+  \mathcal{L}_\xi Z = J\hbar_q Z.
 $$
 
 The naive period of this rotation is $T = 2\pi/\hbar_q$. The transcendental factor $2\pi$ obstructs finite-field and $p$-adic realisations ([finite field realisation](#ex:finite-field-realisation), [Witt vector lift](#rem:witt-lift-qou)). To resolve this, we define one full Reeb circuit as **one unit of time**:

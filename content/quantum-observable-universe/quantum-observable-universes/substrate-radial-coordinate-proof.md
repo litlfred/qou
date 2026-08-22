@@ -19,7 +19,7 @@ Furthermore, the $q$-deformed Reeb flow
 proportional to the quantum Planck constant:
 
 $$
-  \mathcal{L}_\xiZ =  J\hbar_qZ,
+  \mathcal{L}_\xi Z = J\hbar_q Z,
 $$
 
 where $\hbar_q = 1 - q^{-1}$
