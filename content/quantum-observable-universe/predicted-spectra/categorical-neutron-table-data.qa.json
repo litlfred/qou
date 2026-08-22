@@ -551,7 +551,7 @@
           "in_degree": 0,
           "cone_size": 165,
           "depth": 39,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -890,38 +890,6 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
-      }
-    ],
-    "trap-performed-warmth": [
-      {
-        "field_hash": {
-          "md": "5793134b3d5c",
-          "ts": "111c2516accc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:e00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T01:20:09.544Z",
-        "reviewed_sha": "3f8f03dcf27ae3ec7b43e09bdcb7c04a60b46892",
-        "evidence": "smoke test"
-      },
-      {
-        "field_hash": {
-          "md": "5793134b3d5c",
-          "ts": "111c2516accc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:e00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T01:20:20.343Z",
-        "reviewed_sha": "3f8f03dcf27ae3ec7b43e09bdcb7c04a60b46892",
-        "evidence": "smoke test"
       }
     ]
   },
