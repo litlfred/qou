@@ -4,7 +4,7 @@ export default remark({
   label: "rem:millennium-unification",
   title:
     "Millennium problems unified by the surreal squeeze $\\delta^2 / \\varepsilon > \\varepsilon^3$",
-  interprets: "thm:macroscopic-stability-equivalence",
+  interprets: "conj:macroscopic-stability-equivalence",
   uses: [
     "conj:p-vs-np-qou",
     "conj:q-birch-swinnerton-dyer",
