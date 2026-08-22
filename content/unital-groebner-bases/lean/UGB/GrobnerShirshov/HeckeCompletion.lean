@@ -11460,9 +11460,16 @@ and both loops, in the one order in which they compose.
 
 `hecke_opening_coverage.py` decomposes the opening's `a² − 3a + 9` steps into
 five stretches: the two setup steps, the U loop (`L` steps), a trio, the V loop
-(`L + 1` steps), and a second trio, with `L = jpp − j₁`. This lemma is the first
-four minus the trio — `2 + L + (L + 1) = 2L + 3` steps — because **both loops
-must precede both trios**, and that ordering is a constraint, not a preference.
+(`L + 1` steps), and a second trio. This lemma is the first three of those five —
+`2 + L + (L + 1) = 2L + 3` steps — because **both loops must precede both
+trios**, and that ordering is a constraint, not a preference.
+
+`L = (a² − 3a)/2`: measured `2, 5, 9` at `a = 4, 5, 6`, so `2L + 9` recovers the
+phase length `13, 19, 27`. It is **not** `jpp − j₁`, which this docstring said
+until `hecke_opening_trio_shape.py` measured it — that difference is `2` for
+every `a`, and agrees only at `a = 4`. The loop's *level* parameter `m = a − 4`
+is the thing that is linear in `a`; its step count is not, because each level
+descends by a pass whose own length grows.
 
 The probe measures why. `loopTwoGenRight` (like every loop lemma here) is stated
 for a *two-term* element, while `quadPair`, which the trios use, takes general
