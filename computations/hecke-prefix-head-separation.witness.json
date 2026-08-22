@@ -1,11 +1,23 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-21T23:15:00.763597+00:00",
-  "commitSha": "1386c50f86ea27bad9845648cd2e4ddca87b50f3",
+  "computedAt": "2026-08-22T02:03:56.533751+00:00",
+  "commitSha": "9983cc577b53ee5962d40926734b8fce4ab86737",
   "assertions": [
     {
       "name": "a_values_where_the_clash_counts_depend_on_b",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "hard_core_steps_whose_source_is_NOT_unique_in_the_list",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_some_step_source_is_not_unique",
       "computed": "0",
       "expected": "0",
       "passed": true
@@ -42,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 102,
+  "durationMs": 163,
   "computation": "hecke-prefix-head-separation",
   "scriptFile": "hecke_prefix_head_separation.py",
-  "scriptHash": "61cdad99aad6",
-  "scriptCommitSha": "3a7451d936e1fc752097266eb5b1e85c7471a099",
+  "scriptHash": "bbcbac2cde63",
+  "scriptCommitSha": "5c029876f44af55a2c713212947b2ca815ad3028",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,6 +77,7 @@
     "why_it_matters": "where it holds, the step needs no collision reasoning at all, for any lemma and any choice of left context",
     "head_clashing_steps": "4(a-1), independent of b",
     "steps_with_NO_satisfiable_left_context": "2a, independent of b",
+    "but_the_precise_condition_holds_at_all_of_them": "hpark is SUFFICIENT, not necessary. What a step needs is that its SOURCE be absent from the rest of the list (monicStep's hne), and a bundled lemma needs that at each of its own intermediate sources -- which is exactly the relaxation farComm_transport_right_sources already carries, excluding only the split naming the final word. Measured: every source in the chain is unique, the 2a hard-core steps included. So the 2a figure measures a LEMMA-SHAPE problem (blockTransportRight / blockPassFromTwo / blockPass / loopTwoGen do not propagate the relaxation), not a mathematical obstruction.",
     "phase_split": "the clashes are a CONTIGUOUS SUFFIX beginning at step a^2-3a+9: the prefix opens with a^2-3a+9 steps that are entirely head-separated and therefore need no collision reasoning at all, and closes with 4(a-1) steps where the two lineages have converged enough to share prefixes",
     "hpark_criterion": "a left context A is necessarily a PREFIX of the source (the lemmas read the source as A ++ redex ++ tail), so hpark -- no other term r is A ++ z -- holds exactly when lcp(source, r) < |A| for every r. |A| reaches at most the redex offset kk, so a working context exists iff kk > max_r lcp. This is the ACTUAL criterion; head separation is only a proxy for it, and overstates the difficulty by 2(a-2).",
     "head_separated_steps": "a^2 - 3a + 9",
@@ -151,6 +164,8 @@
             3
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 9
       },
@@ -231,6 +246,8 @@
             3
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 9
       },
@@ -311,6 +328,8 @@
             3
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 9
       },
@@ -405,6 +424,8 @@
             4
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 13
       },
@@ -499,6 +520,8 @@
             4
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 13
       },
@@ -593,6 +616,8 @@
             4
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 13
       },
@@ -701,6 +726,8 @@
             5
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 19
       },
@@ -809,6 +836,8 @@
             5
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 19
       },
@@ -917,6 +946,8 @@
             5
           ]
         ],
+        "hard_core_sources_all_unique": true,
+        "every_step_source_unique": true,
         "clashes_are_contiguous_suffix": true,
         "first_clash_step": 19
       }

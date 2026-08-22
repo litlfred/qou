@@ -135,11 +135,18 @@ def sweep(i, a, b, schedule):
         # term r satisfies r = A ++ z -- i.e. lcp(source, r) < |A| for every r.
         # The lemma's A reaches at most to the redex, so |A| <= kk, and the
         # condition is satisfiable at this step exactly when kk > deepest.
+        # `hpark` is only SUFFICIENT. What a single step actually needs is
+        # `monicStep`'s `hne`: the SOURCE word absent from the rest of the
+        # list, so its coefficient can be read off `L1 ++ (W, c) :: L2`. A
+        # bundled lemma needs that at each of its own intermediate sources --
+        # which is what `farComm_transport_right_sources` already asks one
+        # level down, excluding only the split naming the final word.
         out.append({"step": len(out), "rule": name, "others": len(others),
                     "heads_separate": heads_ok,
                     "longest_common_prefix": deepest,
                     "redex_offset": kk,
-                    "context_fits": kk > deepest})
+                    "context_fits": kk > deepest,
+                    "source_unique": w not in others})
         hits = [idx for idx, e in enumerate(L) if e[0] == w]
         left, right = w[:kk], w[kk + len(eng.LM[name]):]
         img = eng.context_mul(left, eng.REL[name], right)
@@ -195,6 +202,11 @@ def main():
             # shared prefix?
             rescued = [s for s in clashes if s["context_fits"]]
             genuine = [s for s in clashes if not s["context_fits"]]
+            # Do the hard-core steps satisfy the PRECISE condition even though
+            # they fail hpark? If so the 2a figure measures a lemma-shape
+            # problem, not a mathematical obstruction.
+            hard_core_hne = all(x["source_unique"] for x in genuine)
+            all_hne = all(x["source_unique"] for x in st)
             first_ok = next((s["step"] for s in st if s["heads_separate"]), None)
             # the run of leading steps that are NOT head-separated
             lead = 0
@@ -220,6 +232,8 @@ def main():
                 "context_fail_offsets": [[s["redex_offset"],
                                           s["longest_common_prefix"]]
                                          for s in genuine],
+                "hard_core_sources_all_unique": hard_core_hne,
+                "every_step_source_unique": all_hne,
                 "clashes_are_contiguous_suffix": contiguous_suffix,
                 "first_clash_step": cidx[0] if cidx else None,
             })
@@ -244,6 +258,17 @@ def main():
     w.add_parameter("head_clashing_steps", "4(a-1), independent of b")
     w.add_parameter(
         "steps_with_NO_satisfiable_left_context", "2a, independent of b")
+    w.add_parameter(
+        "but_the_precise_condition_holds_at_all_of_them",
+        "hpark is SUFFICIENT, not necessary. What a step needs is that its "
+        "SOURCE be absent from the rest of the list (monicStep's hne), and a "
+        "bundled lemma needs that at each of its own intermediate sources -- "
+        "which is exactly the relaxation farComm_transport_right_sources "
+        "already carries, excluding only the split naming the final word. "
+        "Measured: every source in the chain is unique, the 2a hard-core "
+        "steps included. So the 2a figure measures a LEMMA-SHAPE problem "
+        "(blockTransportRight / blockPassFromTwo / blockPass / loopTwoGen do "
+        "not propagate the relaxation), not a mathematical obstruction.")
     w.add_parameter(
         "phase_split",
         "the clashes are a CONTIGUOUS SUFFIX beginning at step a^2-3a+9: the "
@@ -271,6 +296,16 @@ def main():
     bad = sum(1 for a, v in by_a.items() if len(set(v)) != 1)
     w.add_assertion("a_values_where_the_clash_counts_depend_on_b",
                     computed=str(bad), expected="0")
+    w.add_assertion(
+        "hard_core_steps_whose_source_is_NOT_unique_in_the_list",
+        computed=str(sum(0 if r["hard_core_sources_all_unique"] else 1
+                         for r in rows)),
+        expected="0")
+    w.add_assertion(
+        "cases_where_some_step_source_is_not_unique",
+        computed=str(sum(0 if r["every_step_source_unique"] else 1
+                         for r in rows)),
+        expected="0")
     w.add_assertion(
         "cases_where_the_clashes_are_not_a_contiguous_suffix",
         computed=str(sum(1 for r in rows
@@ -318,7 +353,7 @@ def main():
         "clash surviving all three is not proved unavoidable.")
     path = w.save()
 
-    print("  a   b  steps  head-clash  ctx-fits  ctx-FAILS  rules  |  "
+    print("  a   b  steps  head-clash  ctx-fits  ctx-FAILS  hne-ok  |  "
           "L0-first  L1-first")
     for r in rows:
         z = r["reordered"]
@@ -328,7 +363,7 @@ def main():
         print(f" {r['a']:>2}  {r['b']:>2} {r['prefix_steps']:>6}"
               f" {r['steps_clashing']:>11} {r['clashing_but_context_fits']:>9}"
               f" {r['context_does_not_fit']:>10}"
-              f"  {','.join(r['context_fail_rules']) or '-':<5}  |"
+              f"  {str(r['hard_core_sources_all_unique']):<6}  |"
               f" {str(c0):>9} {str(c1):>9}")
     print(f"\ncases: {len(rows)}   a-values whose counts depend on b: {bad}")
     print(f"witness -> {path}")
