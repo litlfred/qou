@@ -3488,3 +3488,42 @@ would have to be true for the check to FAIL before trusting a pass.
 
 **Next:** the closing phase in Lean — F-run transport, two `bsStep`s, the
 F-run again, `ofTerms_cancel_pair`. Then `a = 3`.
+
+#### The F-run sequences into three lemma calls, not `2a−3` steps
+
+Traced at `a = 6` and checked across all six cases. The engine interleaves two
+letters, but they can be sequenced, and the net effect is small:
+
+    trioLeft ++ [σ_jp, σ_jpp, σ_j₁, σ_jp, σ_j₁] ++ T
+      →  [σ_x] ++ descWord y jpp ++ [σ_jp, σ_j₁] ++ descWord i jppp
+                                 ++ [σ_jpp, σ_jp, σ_j₁] ++ T
+
+Step 0 is the bare far-commutation `F(jpp, j₁)`, which makes `σ_jp σ_j₁`
+**adjacent**. The remaining `2(a−2)` steps then migrate that pair left through
+`descWord i jppp`, one letter at a time, alternating. Since they are on one
+term, the order is free, so:
+
+* `σ_jp` transports fully left — every letter of `descWord i jppp` is
+  `≥ jppp = jp + 2`, so all far-commute;
+* then `σ_j₁` transports fully left — every letter is `≥ jppp = j₁ + 3`.
+
+That is **one `monicStep` plus two `farComm_transport_left_sources`**, whose
+hypothesis is source-only — which is exactly why the `2a` `hpark` failures do
+not matter here.
+
+For the U lineage the target has the closed form
+`descWord i₁ j₁ ++ descWord i j₁ ++ T`; for V it does **not**, because V's left
+context is `[σ_{i₂}] ++ descWord i₁ jpp`, which jumps from `i₂` to `i₁` and is
+not a descending run. Do not state the lemma in the closed form — state it in
+the `[σ_x] ++ descWord y jpp ++ …` form both lineages share.
+
+**Measurement note.** Two wrong guesses on the way, both caught the same way.
+First `T = [σᵢ]`, which is only right on the diagonal (`descWord jm j₂` is empty
+there); off-diagonal it must be `descWord jm j₂ ++ [σᵢ]`, and the three
+diagonal cases passing while the three off-diagonal ones failed is what named
+it. Then I expected all four terms to have moved after `2a−3` steps — only
+**one** has: the engine transports a single lineage word per F-run, which is
+what the `F-run, B, B, F-run` shape says and I had not carried over.
+
+**Next in Lean:** `fRun` (one `monicStep` + two transports), then the two
+`bsStep`s, then `fRun` again, then `ofTerms_cancel_pair`. Then `a = 3`.
