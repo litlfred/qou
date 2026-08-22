@@ -1359,6 +1359,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:41.702Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of section-preamble prose block: two paragraphs, five sentences, no math beyond inline alpha_EM."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:41.777Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of section-preamble prose block: two paragraphs, five sentences, no math beyond inline alpha_EM."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:41.827Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of section-preamble prose block: two paragraphs, five sentences, no math beyond inline alpha_EM."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,23 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:42.142Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "severity": "minor",
+        "evidence": "Three consecutive parallel sentences sharing one subject and adding nothing between them: 'Five table-data blocks tabulate the iteration converging to a fixed point. They exhibit the per-iteration corrections. They isolate the substrate-level $\\alpha_{\\mathrm{EM}}$ value within the substrate-flow precision band.' The reflex-triple shape in sentence form - three predicates where one would do - in a five-sentence block.",
+        "notes": "Not fixed inline: the sentences are also factually wrong (see trap-meta-commentary), so the fix is a rewrite, not a merge. Proposed once the count is corrected: 'Thirteen table-data blocks record the intermediate symbolic computations, the automorphism check, and the closed-form characters.'"
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:41.880Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of section-preamble prose block: two paragraphs, five sentences, no math beyond inline alpha_EM."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1531,23 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:42.194Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "severity": "minor",
+        "evidence": "The block says nothing about the mathematics; it narrates the document. 'This continues the preceding sub-section.' / 'This Hartree-categorical derivation forms the structural backbone of this section.' / 'This section outputs ...' / 'The subsequent sub-section specializes to ...'. And the narration is inaccurate on both counts: it says 'Five table-data blocks', while predicted-spectra.ts lists THIRTEEN in this section (e-hartree-categorical-derivation-table1..13-data), and those tables do not 'tabulate the iteration converging to a fixed point' - they hold q-dimensions, S_4 characters, an automorphism action table, and a six-candidate closed-form menu. No iteration appears anywhere in the section.",
+        "notes": "Structural - the block would need rewriting to describe what is actually there, so not fixed inline. Proposed: replace the two middle sentences with a substantive lead, e.g. 'The Hartree scale $E_h = m_e c_q^2 \\alpha_{EM}^2$ enters the molecular-binding framework as a conversion factor. This section asks whether the $\\alpha_{EM}^2$ comes from Hecke structure, and records the four mechanisms tried and the thirteen intermediate tables they produced.' The correct table count is 13."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:41.925Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of section-preamble prose block: two paragraphs, five sentences, no math beyond inline alpha_EM."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:41.976Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of section-preamble prose block: two paragraphs, five sentences, no math beyond inline alpha_EM."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:42.093Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "'This Hartree-categorical derivation forms the structural backbone of this section.' is a self-assessing metaphor rather than a graded claim; recorded under trap-meta-commentary, where the whole sentence belongs."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:01.181Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4d6f47b251f3",
+          "ts": "6d3a75ca34cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:42.046Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of section-preamble prose block: two paragraphs, five sentences, no math beyond inline alpha_EM."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:50:42.194Z"
 }
