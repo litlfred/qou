@@ -1771,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.613Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "'It requires zero empirical parameter fits' is the repo's anti-fit discipline stated positively about the construction, not an assert-by-denying."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1790,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.654Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "Statement, formula, one interpretive sentence; nothing to pivot."
       }
     ],
     "trap-em-dash": [
@@ -1809,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.695Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1828,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.736Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "The five underbraced binding terms are the content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1847,6 +1907,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.776Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "'The scale difference separating T_1 from T_2+T_3 isolates the weak scale from the hadronic core' is a substantive reading of the two scales E_0,beta and alpha, both named in the sibling table."
       }
     ],
     "trap-meta-commentary": [
@@ -1866,6 +1941,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.818Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1885,6 +1975,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.860Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "Two sentences, no echo."
       }
     ],
     "trap-performed-warmth": [
@@ -1904,6 +2009,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.901Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1923,6 +2043,23 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.942Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "'The atomic binding energy derives directly from the SIX terms. It requires ZERO empirical parameter fits' — both absolutes are undercut by the block's own proof sibling.",
+        "notes": "PROPOSED: say how many terms actually contribute and for which atoms. THE PROOF SIBLING RECORDS: T_4's bound-free differential 'vanishes ... identically', and T_6 'currently returns 0 for A >= 5 atoms' — so for 8 of the 12 tabulated atoms only THREE of the six terms contribute. The proof's Open-questions section states this plainly; this block does not. On 'zero empirical parameter fits': the proof lists three hardcoded constants, E_0,beta = 0.78233341 MeV (CODATA beta-decay Q, i.e. the CAL-2 proxy), alpha = m_e x 8G = 3.74446989 MeV, and m_e (CAL-1). Taking calibration inputs is not fitting, so the claim is defensible in kind — but the p and n rows of the sibling tables are 0.000 BY CONSTRUCTION (they are the free-particle baseline), and the headline 0.184% mean includes them; over the 10 genuinely predicted rows it is 0.2209%. Also, alpha's hardcoded value is high by 2.73 ppm against its own definition (recomputed m_e x 8G = 3.744459660 at 25 dps with CODATA m_e = 0.51099895069 and 8G = 7.327724753417752), and Term T_3 in the sibling table carries an undefined z^2 whose convention is unstated (D, z = q^3/(q^2+1) = 0.6126880371, is canonical; C, z = sqrt q/(q+1) = 0.4993203342, is excised)."
       }
     ],
     "trap-nonspeakable": [
@@ -1942,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:00.456Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:59.982Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "Two short sentences plus a displayed formula."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1985,5 +2137,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T20:53:29.964Z"
+  "updated_at": "2026-08-22T02:49:59.982Z"
 }

@@ -2121,6 +2121,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.537Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2140,6 +2157,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.574Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-em-dash": [
@@ -2159,6 +2193,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.611Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-triples": [
@@ -2178,6 +2229,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.647Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-closing-aphorism": [
@@ -2197,6 +2265,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.682Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-meta-commentary": [
@@ -2216,6 +2301,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.716Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-thesis-restatement": [
@@ -2235,6 +2337,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.752Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-performed-warmth": [
@@ -2254,6 +2373,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.788Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-superlative": [
@@ -2273,6 +2409,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.826Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "trap-nonspeakable": [
@@ -2292,6 +2445,23 @@
         "reviewed_at": "2026-08-15T10:31:01.468Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.864Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:atomic-nf-witness (statement sentence + two numbered clauses). Verified the combinatorial claim: the orderings of A nucleons of which Z are protons number binom(A,Z), so 'the global minimum of Phi_1 over all binom(A,Z) permutations' is the right count.",
+        "notes": "No trap of this category; the block is a bare proposition statement with two clauses."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2315,5 +2485,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:49:33.864Z"
 }

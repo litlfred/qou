@@ -1755,6 +1755,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.418Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1774,6 +1790,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.455Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-em-dash": [
@@ -1793,6 +1825,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.491Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-triples": [
@@ -1812,6 +1860,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.529Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1831,6 +1895,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.567Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-meta-commentary": [
@@ -1850,6 +1930,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.603Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1869,6 +1965,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.643Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-performed-warmth": [
@@ -1888,6 +2000,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.681Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-superlative": [
@@ -1907,6 +2035,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.720Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "trap-nonspeakable": [
@@ -1926,6 +2070,22 @@
         "reviewed_at": "2026-08-15T10:31:01.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.757Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
+        "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1949,5 +2109,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:54:13.757Z"
 }
