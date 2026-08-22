@@ -32,6 +32,34 @@ passes on the same construction.
 The producer, [`computations/atom_mass_derived.py`](../computations/atom_mass_derived.py),
 is live — not under `_deprecated/`.
 
+## Root cause: the tolerance is a function of the error it bounds
+
+[`atom_mass_derived.py:470`](../computations/atom_mass_derived.py):
+
+```python
+tolerance=max(abs(r.delta_MeV) * 2, 50),
+```
+
+`delta_MeV` **is** the residual. So the check is
+`|computed − expected| = |delta| ≤ max(2|delta|, 50)`, which holds for
+every `delta`, every element, unconditionally. This is not a loose bound —
+it is a tautology generator, and no value of the mass computation can ever
+fail it. The effect I first measured (tolerance ≈ twice expected) is a
+consequence: when the computed mass is ~0, the residual is ~the expected
+value.
+
+**One sibling shares the shape.**
+[`probes/binding_energy_scale_probe.py:122–127`](../computations/probes/binding_energy_scale_probe.py)
+asserts `E0_improves_deuteron` with `computed=|err_e0|`, `expected=0`,
+`tolerance=|err_qb|` — i.e. "the E₀ error is no worse than the Q_β error".
+That one is *defensible* as a comparison written into the assertion fields,
+unlike the case above; noted so a sweep does not treat the two alike.
+
+The other two live matches of the pattern are legitimate relative
+tolerances and should not be touched: `tau-lepton-nf.py:195`
+(`abs(a[n]+b[n]) * 1e-8`) and `:206` (`abs(pdg_br_ratio) * 0.25`, with the
+25 % explained in a comment).
+
 ## Why this survived every other check
 
 Nothing here is a wrong number. Each assertion is a *true* statement:
