@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:53:13Z
-updated_at: 2026-08-22T22:54:47Z
+updated_at: 2026-08-22T22:59:28Z
 ---
 
 `bun run scripts/run-validate.ts content/quantum-observable-universe` exits
@@ -326,3 +326,10 @@ Not a repoint and not an instance. Either (a) settle which Habiro generation is
 canonical and refresh the probe, or (b) probe the uniform factor-of-2 in the full
 Galois trace, which is the one lead here with a visible pattern. The Lean
 instance stays open behind the Habiro-ring infrastructure.
+
+
+**Correction to the Defect-3 paragraph above (same session):** the "uniform factor
+of 2 / `2·Tr(full)` is an odd integer" claim is **proton-only and wrong as
+written** — the neutron is uniformly 4 and the composites run 8→128. Corrected
+measurement and the (better) replacement finding — the obstruction is 2-adic at
+every prime except p = 2 — are on `qou-iph3`.
