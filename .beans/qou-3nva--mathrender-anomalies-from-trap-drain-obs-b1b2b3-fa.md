@@ -896,27 +896,112 @@ not survive re-reading.
 
 ## What to hand the owner first
 
-1. **L-V1 — `trefoil-operator-algebra`.** A content block displays two matrix
-   products, asserts they are equal, and gives a third matrix as their common
-   value. All three statements are false, and the representation it claims to
-   exhibit cannot exist (`tr α = 1 ≠ 0 = tr β`, so the two generators are not
-   conjugate). This is the only item in the ledger where a *displayed
-   equation* is wrong rather than a *label* or a *rounding*.
-2. **L-V2 — the braid-word tables.** Three tables across two chapters give
-   words whose closures have the wrong component count, the wrong knot type,
-   or (Borromean) a topology that cannot be Brunnian. The intended words are
-   recoverable from the tables' own crossing counts, so the fix is mechanical
-   — but until it lands, `binding-knots-visual-inventory`,
-   `knot-particle-dictionary` tables 1–2, and
-   `nucleon-hecke-element-normal-form` disagree with the sibling proofs in
-   their own chapter.
-3. **R1 + L-V60 — the q₀ pin surface.** Not because the muon string is wrong
-   (it is not — see R1), but because the corpus currently carries **four**
-   distinct q₀ presentations: the correct proton pin, the correct muon pin
-   mislabelled "(50 dps)" across 33 files, a stale 1.1097 baked into at least
-   three data tables, and a genuine digit transposition (`1.10977859555`) in
-   `proton-mass-substrate-identity-derivation` — a *production identity*
-   block. A reader cannot tell which is authoritative from the text.
+**Refreshed 2026-08-22.** The three items this section previously listed are
+resolved: the `trefoil-operator-algebra` matrices were rewritten with a
+genuine conjugate pair, 18 braid-word rows were corrected across three
+tables, and the q₀ presentation pass landed. What follows is ranked against
+the ledger as it now stands (~280 items, 62 % corpus coverage), newest
+batches included. Ranking is by *how far the error propagates*, not by how
+wrong it looks.
+
+### Tier 1 — wrong mathematics with live downstream consumers
+
+1. **`figure-eight-branching-rule` computes on the wrong knot.** It defines
+   `4₁ = σ₀σ₁⁻¹σ₀⁻¹σ₁`, whose closure has Alexander polynomial 1 — the
+   **unknot**. The genuine `(σ₀σ₁⁻¹)²` gives `t − 3 + t⁻¹`. Every `b_λ·h²`
+   term in the block is therefore computed on the wrong object, and in
+   `[2,1]` the true character `q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴` agrees with the
+   block's `−1 − h²` only at q = 1. **Three independent confirmations**
+   (agents `r07`, `f00`, and a separate implementation in the coordinating
+   session). This is the ledger's strongest item.
+
+2. **`c₅` is carried at two different values across five blocks**, and only
+   one reproduces the published headline. Proposition + tables 1–2 use
+   `−(b²+½) = −1.2527`; the context block + table 3 use
+   `3c₃² + b = +12.868`. At `u⁵ = 4.4822e−11` the second gives the
+   "+0.04 ppb" result and the first does not. The proposition carries the
+   superseded coefficient — so the *statement* block is the wrong one.
+
+3. **A uniqueness proof proves a different operator than its own definition
+   gives** (`agent:d01`), and separately **`ω_V` is identically zero**,
+   which makes the proposition asserting its properties vacuous. Both are
+   structural: the Lean and the prose diverge, so neither audit catches it
+   alone.
+
+4. **Convention-C dependence hidden inside identities, not assignments.**
+   `toroidal-harmonics-delta-lambda` turns on `w = z² = 1/(2(cosh η + 1))`,
+   exact for `z_C` to 1e−31 and off by 51 % for `z_D`;
+   `frobenius-s-classification-table2` spells C as `(q^{1/2}+q^{−1/2})⁻¹` and
+   it is load-bearing — the "+1" S-eigenvalue and the parent's "exactly one
+   S-odd term" are statements about C, and switching to D moves a refuted
+   family from `m ≥ 4` to `m ≥ 5`. **No grep over `z = …` finds either.**
+   This is the class the detector-blindness taxonomy predicts, now with
+   worked instances.
+
+### Tier 2 — claims a referee would stop on
+
+5. **`three-halves-structural-factor` overstates by ~1600×**: it claims
+   `Vol(4₁)/ℏ_q²` closes `m_μ/m_e` "to 0.034 %"; the true figure is
+   **209.8 ppb**, which is exactly the documented μ–p tension, and zero at
+   the muon pin where the relation *is* the pin. Its τ sentence is
+   impossible as written (omits ξ₃; the cited witness's own ξ₃ reproduces
+   its recorded 0.79443 % exactly).
+
+6. **`topological-mass-trefoil` prints a number matching no pin.** 207.1
+   back-solves to q = 1.1098808 — not proton, not either muon value, not the
+   1.1097 error. The correct 206.7683 is 2.1e−5 % from CODATA; the printed
+   value misses by 0.160 %, understating the block's own result by four
+   orders of magnitude.
+
+7. **The excised absolute-mass double-counting is still shipping.**
+   `tower-binding-energy-table-data` reproduces its own "mass error" column
+   exactly — and that column is the artefact: the underlying binding errors
+   are +121.6 % (²D) and −31.4 % (⁴He), pressed below 0.25 % by a
+   denominator dominated by `Z·m_p + N·m_n`, i.e. by the calibration.
+
+8. **`𝒲(1) = 0` is false** (it is `z² = 1/4`), and **CODATA α appears inside
+   the derivation of α**. Two tautologies are presented as Mathlib gap
+   closures. Each is a single block, but each is the kind of thing that
+   discredits neighbouring correct work.
+
+9. **Proof steps that do not hold**: step 3(c) of the stratified proof fails
+   at λ = (2,1) (22 counterexamples to n = 7); step 3(d) equates a monomial
+   to an infinite product; step 4 needs an orthogonality its step 1 does not
+   supply.
+
+### Tier 3 — provenance and currency, cheap to fix, corrosive if left
+
+10. **Citations that do not resolve or do not say what is claimed**: a
+    witness path containing a space that matches nothing in `computations/`
+    (the space is itself sweep damage, so the *sweep created the citation*);
+    a witness reporting `allPassed: false` cited as confirming; a witness
+    sourced from `_deprecated/` at the old muon pin whose own notes say it
+    needs a further iteration; three blocks whose prose names one pin while
+    their witness records the other.
+
+11. **Sweep damage, three recurring shapes**: `canonical` substituted for
+    `numerical(ly)` ("pinned canonical by the dimensionless ratio"); script
+    names replaced by "the canonical formalism" / "the formal derivation",
+    leaving quoted percentages provenance-free; sentence-initial lowercase.
+    Mechanical, but the second shape destroys provenance rather than merely
+    reading badly.
+
+12. **The compound-macro stub class — resolved, recorded as precedent.**
+    `main.tex` carried 16 `\newcommand`s that promoted author typos to
+    macros so the page would build; two printed wrong mathematics for
+    months. Removed, all source sites fixed, and
+    `content/pipeline/glued-macro-scan.ts` added. Kept here because the
+    tempting fix recurs: **never define the glued name.**
+
+### What is NOT in this list
+
+Roughly 40 % of the ledger is verified-correct notes — blocks recomputed
+from scratch and found right, recorded so a later pass does not re-flag
+them. Those are not a backlog. Useful negatives among them include: no table
+audited so far discriminates the proton pin from the muon pin at its printed
+precision (though `1.1097` *is* excluded by several), and the Hoefsmit
+tableaux, Plancherel weights, skew-SYT counts and `Σ 1/dim_q` exact
+rationals all check to the last printed digit.
 
 ---
 
