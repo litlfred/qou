@@ -3658,3 +3658,48 @@ Sixth instance of the arc's recurring shape, in its subtlest form yet: not a
 check that *could not* fail, but a check run over a **proper subset** of its
 subject and reported as if complete. The tell was there — I wrote "F-run 1" in
 the probe and then generalised in the prose.
+
+### DEFECT in `closingU` as committed (4ac0cb67b6) — true, but not instantiable
+
+`closingU` takes one packaged collision hypothesis:
+
+    hV : ∀ r ∈ (L₁ ++ L₂).map Prod.fst, ∃ t, r = σ_{i₂} :: t
+
+and its commit message claims the length argument "lands at the caller". **That
+is wrong.** At the intended call site the U run acts on `TOpen`'s *third* entry,
+so `L₁ = [(Vh, h), (V1, 1)]` and `L₂ = [(U1, −1)]` — and `U1` is
+`trioLeft i i₁ i₂ …`, which opens **`σ_{i₁}`**, not `σ_{i₂}`. `hV` is therefore
+**false at the call site**, and `closingU` cannot be applied there at all.
+
+The lemma is *true* — everything it proves, it proves — and `lean`-direct exit 0
+plus a clean `#print axioms` say nothing about whether its hypothesis is
+reachable. That is the whole point: **sorry-freeness does not check
+instantiability.** This is the §3b-cond non-degeneracy concern in a different
+costume, and the same failure the `uLoop`/`uHead` episode produced earlier in
+this arc (a hypothesis made too strong, so the intended instance did not fit) —
+second time this session.
+
+**What it should be.** The five obligations split three ways, per the measured
+discrimination:
+
+* `Vh`, `V1` — open `σ_{i₂}`; one `List.cons.inj`.
+* `U1` — opens `σ_{i₁}`, same lineage, split off by `quadPair`; separated by
+  **length**. It differs from the run's words only in carrying
+  `descWord jm j₂ ++ [σᵢ]` where they carry `σ_j₁ :: (descWord jm j₂ ++ [σᵢ])`.
+* (V run only) `WStar` — same head *and* length; excluded from the transports by
+  `u ≠ []`, and separated from the swap's source by one `descWord_split` peel.
+
+So `closingU` should take the five hypotheses **raw**, in the shape `fRun` and
+`closingBs` state them, and let `closingPhase` discharge each against the three
+concrete bystanders with whichever of the three arguments applies. That matches
+the file's `_sources` idiom and is the only form that instantiates.
+
+A useful fact for that rewrite, worth recording: **every word in the entire
+closing run has the same length.** Far-commutation is a two-word rule swapping
+adjacent letters; Bokut–Shiao takes `descWord i j ++ [σᵢ]` to
+`σ_{i−1} :: σᵢ :: descWord (i−1) j`, and `|descWord i j| = |descWord (i−1) j| + 1`,
+so both are length-preserving. No length *formula* is needed anywhere — the same
+`descWord`s appear on both sides and `omega` closes with their lengths opaque.
+
+**Next:** restate `closingU` with raw hypotheses, then `closingV`, then
+`closingPhase`. Then `a = 3`.
