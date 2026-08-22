@@ -388,7 +388,7 @@ M_P_MEV_ERR = float(_P_MEV.uncertainty)
 # Excluded from codata_table_vintage_audit by design: AME-derived quantities
 # are not CODATA-adjustment outputs and checking them against the table is a
 # category error (AGENTS.md).
-M_N_MEV     = 939.56542179    # AME-derived, mirrors codata_2022_source.M_N_MEV
+M_N_MEV     = 939.56542179    # noqa: P31 - AME-derived, NOT CODATA; mirrors codata_2022_source.M_N_MEV
 M_N_MEV_ERR = 0.00000060
 # β-decay endpoint Q-value (n → p + e⁻ + ν̄):
 #   Q_β = m_n − m_p − m_e   (m_ν ≈ 0 in the rest mass budget)

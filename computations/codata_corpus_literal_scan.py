@@ -252,7 +252,10 @@ def _nonexec_spans_text(path: Path, text: str) -> list[tuple[int, int, int, int,
 # declared, machine-checked arrangement to satisfy a detector that could not
 # see it -- the same failure mode as counting a provenance comment as a
 # defect. 11 sites in the corpus carry a `precision=` declaration.
-_NOQA_P31 = re.compile(r"#\s*noqa:\s*[\w,\s]*\bP31\b")
+# `#` for Python/TS, `--` for Lean. Without the Lean form a `.lean` site
+# could not be adjudicated at all, and 20 of the 36 remaining sites are
+# Lean -- so the marker was unusable exactly where it was most needed.
+_NOQA_P31 = re.compile(r"(?:#|--)\s*noqa:\s*[\w,\s]*\bP31\b")
 _LEANVAL_PRECISION = re.compile(r":leanval\[[^\]]*\]\{[^}]*\bprecision=(\d+)")
 
 
@@ -368,6 +371,9 @@ def self_test() -> int:
         ("X = 938.27208816  # noqa: E501,P31", "938.27208816", MP, True),
         ("X = 938.27208816  # noqa: E501", "938.27208816", MP, False),
         ("X = 938.27208816  # P31 is discussed here", "938.27208816", MP, False),
+        # Lean comment token.
+        ("def m : R := 938.27208816  -- noqa: P31 - AME-derived, not CODATA",
+         "938.27208816", MP, True),
         # A declared truncation of the CORRECT value: adjudicated.
         ("def electronMass : R := 0.51099895  -- :leanval[m_e_MeV]{precision=8}",
          "0.51099895", ME, True),
@@ -626,10 +632,8 @@ def main() -> int:
     if args.strict and code_sites:
         print()
         print(f"STRICT: {len(code_sites)} executable site(s) carry a near-miss literal.")
-        for f, lit, ln in code_sites[:20]:
+        for f, lit, ln in code_sites:
             print(f"    {f}:{ln}  {lit}")
-        if len(code_sites) > 20:
-            print(f"    ... and {len(code_sites) - 20} more")
         return 1
     return 0
 
