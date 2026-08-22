@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-22T21:34:36Z
+updated_at: 2026-08-22T21:39:52Z
 ---
 
 ## Why this bean exists
@@ -260,3 +260,40 @@ first-met-as-under crossing makes progress. `computations/homfly_skein_braid.py`
 (`first_bad` / `traverse`) already implements exactly this and terminates, so
 the measure exists in executable form and is worth porting rather than
 reinventing.
+
+
+## Orientation pinned against the reference engine
+
+Reading `homfly_skein_braid.py::traverse` to prepare the descending predicate
+surfaced a convention mismatch worth settling **before** building on it, not
+after.
+
+`traverse` counts components by walking each strand around the closure — its
+`comps` is the orbit count of the strand map, the same quantity `components`
+defines. **But it composes crossings in the opposite order**: it applies
+`word[0], word[1], …` in turn, whereas Lean's `f * g` is `f ∘ g`, so
+`closurePerm` applies the *last* letter first.
+
+The two differ by an inversion, not by an error — and inversion preserves cycle
+type and support, so the component counts agree. Proved rather than asserted:
+
+- `closurePerm_reverse` — reversing a word inverts its closure permutation (each
+  crossing is an involution, so reversal *is* inversion).
+- `components_reverse` — hence the same component count.
+
+Worth the effort because this is exactly the class of mismatch that silently
+produces a mirror: `qou-7ue5` is a case in this very repo where two places in
+`computations/` disagreed about a HOMFLY by `v ↦ v⁻¹`. Harmless for `c`, but the
+**order** is load-bearing once the traversal itself is formalised, so it is now
+recorded in the file rather than waiting to be rediscovered.
+
+35 results in the file, all sorry-free, zero warnings, axiom-clean.
+
+## Remaining for step 2 — unchanged, and it is the hard part
+
+The descending predicate and the well-founded reduction. Formalising `traverse`
+means encoding: components taken in increasing order of least start position,
+each walked around its cycle, with the global encounter order recorded so that
+"first met as an under-crossing" is well defined. That is a substantial piece —
+larger than any single increment landed so far — and should be scoped as such
+rather than attempted as a quick follow-on.
