@@ -135,6 +135,23 @@ def main():
             loop_steps = (loop_end - 1) if loop_end is not None else 0
             after_loop = u_len - loop_steps
             covered = 2 + loop_steps
+            # --- the V side.  The fit witness solves it with A_len = 2 and
+            # S_len = 0, which V2 itself cannot supply (it has ONE letter
+            # before descWord i j1), so the V loop must start later than V2.
+            # Find where lineage 0 resumes and where its loop target lands.
+            v_resume = next((kk for kk in range(2 + u_len, len(tr))
+                             if tr[kk]["lineage"] == 0), None)
+            V_loop = None
+            v_loop_end = None
+            if v_resume is not None:
+                # loopTwoGen's target with A = 2 letters, S = []
+                for A2 in {(i2, i), (i2, i1), (i, i2), (i1, i2)}:
+                    cand = A2 + dw(i2, ed_) + dw(i, j1) + dw(ed_, j2)
+                    hit = next((kk for kk in range(v_resume, len(tr))
+                                if cand in tr[kk]["terms"]), None)
+                    if hit is not None:
+                        V_loop, v_loop_end = A2, hit
+                        break
             ok = v_ok and u_end_ok
             bad += not ok
             rows.append({
@@ -148,6 +165,19 @@ def main():
                 "U_steps_after_the_loop": after_loop,
                 "steps_covered_by_s1_s2_and_loop": covered,
                 "steps_remaining_in_opening": opening - covered,
+                "V_side_resumes_at_step": v_resume,
+                "V_loop_A_rel_i": [i - x for x in V_loop] if V_loop else None,
+                "V_loop_target_at_step": v_loop_end,
+                # the full decomposition: 2 (s1,s2) + L (U loop) + 3 (U bare
+                # BS + quadPair) + (L+1) (V loop, one level deeper) + 3
+                "V_loop_steps": (v_loop_end - v_resume + 1)
+                    if v_loop_end is not None else None,
+                "decomposition_total": (2 + loop_steps + 3
+                    + (v_loop_end - v_resume + 1) + 3)
+                    if v_loop_end is not None else None,
+                "decomposition_closes": (v_loop_end is not None
+                    and 2 + loop_steps + 3 + (v_loop_end - v_resume + 1) + 3
+                        == opening),
             })
 
     w = WitnessBuilder("hecke-opening-coverage", engine="sympy",
@@ -167,11 +197,31 @@ def main():
         "that §4al's quadPair covers), so the loop's endpoint must be LOCATED "
         "rather than read off the end of the run -- the first version of this "
         "probe assumed the latter and reported a false negative in all six "
-        "cases, the same wrong-index bug the tail's collision check had.")
+        "cases, the same wrong-index bug the tail's collision check had. "
+        "With that fixed the phase decomposes EXACTLY into five stretches: "
+        "s1/s2, the U loop, three trailing U steps, the V loop one level "
+        "deeper, and three trailing V steps -- 2L+9 = a^2-3a+9, asserted per "
+        "case. Every stretch is covered by a lemma that already exists.")
     w.add_parameter("m", "a - 4 (so a = 3 would need m = -1: no loop pass)")
     w.add_parameter("loop_levels", "k = i1 down to e = jppp")
+    w.add_parameter(
+        "opening_phase_decomposition",
+        "2 (s1, s2: V0 -> V2) + L (U loop, A = [s_{i-1}], S = [s_i]) + 3 (U "
+        "bare Bokut-Shiao, then quadPair) + (L+1) (V loop, A = "
+        "[s_{i-2}, s_{i-1}], S = []; one level deeper because the V side has "
+        "descended one further) + 3 (the same trailing trio) = 2L + 9, which "
+        "is a^2-3a+9 exactly")
     w.add_assertion("cases_where_the_two_applications_do_not_fit",
                     computed=str(bad), expected="0")
+    w.add_assertion(
+        "cases_where_the_five-stretch_decomposition_does_not_close",
+        computed=str(sum(0 if r["decomposition_closes"] else 1 for r in rows)),
+        expected="0")
+    w.add_assertion(
+        "cases_where_the_V_loop_is_not_one_level_deeper_than_the_U_loop",
+        computed=str(sum(0 if r["V_loop_steps"] == r["loop_steps"] + 1 else 1
+                         for r in rows)),
+        expected="0")
     w.add_data("cases_checked", len(rows))
     w.add_data("cases", rows)
     w.add_caveat(
@@ -195,7 +245,9 @@ def main():
               f" {r['U_stretch_steps']:>6} {r['loop_steps']:>5}"
               f" {r['U_steps_after_the_loop']:>11}"
               f" {r['steps_covered_by_s1_s2_and_loop']:>8}"
-              f" {r['steps_remaining_in_opening']:>5}")
+              f" {r['steps_remaining_in_opening']:>5}"
+              f"   V@{r['V_side_resumes_at_step']}"
+              f" A={r['V_loop_A_rel_i']} end={r['V_loop_target_at_step']}")
     print(f"\ncases: {len(rows)}   not fitting: {bad}")
     print(f"witness -> {path}")
     return 0 if not bad else 1

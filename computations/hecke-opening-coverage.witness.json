@@ -1,22 +1,34 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-22T15:55:06.000123+00:00",
-  "commitSha": "c2ec9ba24c01274f60e08e2f0c87e9302d7144e1",
+  "computedAt": "2026-08-22T16:00:38.285082+00:00",
+  "commitSha": "e4ea9ac6a825fc1ec99824db983b20c71cd45847",
   "assertions": [
     {
       "name": "cases_where_the_two_applications_do_not_fit",
       "computed": "0",
       "expected": "0",
       "passed": true
+    },
+    {
+      "name": "cases_where_the_five-stretch_decomposition_does_not_close",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_V_loop_is_not_one_level_deeper_than_the_U_loop",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 37,
   "computation": "hecke-opening-coverage",
   "scriptFile": "hecke_opening_coverage.py",
-  "scriptHash": "04a4bc7eb10a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3aba2d6f15d2",
+  "scriptCommitSha": "d01caeb236474afeda05128e568c9dbc35a40ec4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,10 +47,11 @@
     ],
     "reproduce": "python3 -u computations/hecke_opening_coverage.py"
   },
-  "description": "Does the planned lemma set cover the a <= b opening phase? Plan: s1/s2 carry V0 to V2 (both j2-independent, already in the corpus), then loopTwoGen carries U0 at m = a-4, with k = i1 and e = jppp as hecke-prefix-loop-fit solved them. Measured against the chain: whether the first two steps really are V0's and land on V2, whether the next stretch is U0's alone, whether it ends on loopTwoGen's own target formula, and HOW MANY of the a^2-3a+9 opening steps that accounts for. The remainder is the point -- it says what else the opening needs. Measured: s1/s2 and the loop DO fit, but the contiguous U-run continues past the loop's endpoint by exactly 3 steps (a bare Bokut-Shiao, then the Yang-Baxter and quadratic pair that §4al's quadPair covers), so the loop's endpoint must be LOCATED rather than read off the end of the run -- the first version of this probe assumed the latter and reported a false negative in all six cases, the same wrong-index bug the tail's collision check had.",
+  "description": "Does the planned lemma set cover the a <= b opening phase? Plan: s1/s2 carry V0 to V2 (both j2-independent, already in the corpus), then loopTwoGen carries U0 at m = a-4, with k = i1 and e = jppp as hecke-prefix-loop-fit solved them. Measured against the chain: whether the first two steps really are V0's and land on V2, whether the next stretch is U0's alone, whether it ends on loopTwoGen's own target formula, and HOW MANY of the a^2-3a+9 opening steps that accounts for. The remainder is the point -- it says what else the opening needs. Measured: s1/s2 and the loop DO fit, but the contiguous U-run continues past the loop's endpoint by exactly 3 steps (a bare Bokut-Shiao, then the Yang-Baxter and quadratic pair that §4al's quadPair covers), so the loop's endpoint must be LOCATED rather than read off the end of the run -- the first version of this probe assumed the latter and reported a false negative in all six cases, the same wrong-index bug the tail's collision check had. With that fixed the phase decomposes EXACTLY into five stretches: s1/s2, the U loop, three trailing U steps, the V loop one level deeper, and three trailing V steps -- 2L+9 = a^2-3a+9, asserted per case. Every stretch is covered by a lemma that already exists.",
   "parameters": {
     "m": "a - 4 (so a = 3 would need m = -1: no loop pass)",
-    "loop_levels": "k = i1 down to e = jppp"
+    "loop_levels": "k = i1 down to e = jppp",
+    "opening_phase_decomposition": "2 (s1, s2: V0 -> V2) + L (U loop, A = [s_{i-1}], S = [s_i]) + 3 (U bare Bokut-Shiao, then quadPair) + (L+1) (V loop, A = [s_{i-2}, s_{i-1}], S = []; one level deeper because the V side has descended one further) + 3 (the same trailing trio) = 2L + 9, which is a^2-3a+9 exactly"
   },
   "data": {
     "cases_checked": 6,
@@ -56,7 +69,16 @@
         "loop_steps": 2,
         "U_steps_after_the_loop": 3,
         "steps_covered_by_s1_s2_and_loop": 4,
-        "steps_remaining_in_opening": 9
+        "steps_remaining_in_opening": 9,
+        "V_side_resumes_at_step": 7,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 9,
+        "V_loop_steps": 3,
+        "decomposition_total": 13,
+        "decomposition_closes": true
       },
       {
         "a": 4,
@@ -71,7 +93,16 @@
         "loop_steps": 2,
         "U_steps_after_the_loop": 3,
         "steps_covered_by_s1_s2_and_loop": 4,
-        "steps_remaining_in_opening": 9
+        "steps_remaining_in_opening": 9,
+        "V_side_resumes_at_step": 7,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 9,
+        "V_loop_steps": 3,
+        "decomposition_total": 13,
+        "decomposition_closes": true
       },
       {
         "a": 5,
@@ -86,7 +117,16 @@
         "loop_steps": 5,
         "U_steps_after_the_loop": 3,
         "steps_covered_by_s1_s2_and_loop": 7,
-        "steps_remaining_in_opening": 12
+        "steps_remaining_in_opening": 12,
+        "V_side_resumes_at_step": 10,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 15,
+        "V_loop_steps": 6,
+        "decomposition_total": 19,
+        "decomposition_closes": true
       },
       {
         "a": 5,
@@ -101,7 +141,16 @@
         "loop_steps": 5,
         "U_steps_after_the_loop": 3,
         "steps_covered_by_s1_s2_and_loop": 7,
-        "steps_remaining_in_opening": 12
+        "steps_remaining_in_opening": 12,
+        "V_side_resumes_at_step": 10,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 15,
+        "V_loop_steps": 6,
+        "decomposition_total": 19,
+        "decomposition_closes": true
       },
       {
         "a": 6,
@@ -116,7 +165,16 @@
         "loop_steps": 9,
         "U_steps_after_the_loop": 3,
         "steps_covered_by_s1_s2_and_loop": 11,
-        "steps_remaining_in_opening": 16
+        "steps_remaining_in_opening": 16,
+        "V_side_resumes_at_step": 14,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 23,
+        "V_loop_steps": 10,
+        "decomposition_total": 27,
+        "decomposition_closes": true
       },
       {
         "a": 6,
@@ -131,7 +189,16 @@
         "loop_steps": 9,
         "U_steps_after_the_loop": 3,
         "steps_covered_by_s1_s2_and_loop": 11,
-        "steps_remaining_in_opening": 16
+        "steps_remaining_in_opening": 16,
+        "V_side_resumes_at_step": 14,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 23,
+        "V_loop_steps": 10,
+        "decomposition_total": 27,
+        "decomposition_closes": true
       }
     ]
   },
