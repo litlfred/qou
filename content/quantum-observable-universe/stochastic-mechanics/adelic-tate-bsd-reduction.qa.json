@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:20.917Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:20.955Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:20.993Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:21.032Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:21.070Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-meta-commentary": [
@@ -1424,5 +1499,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:16:21.070Z"
 }

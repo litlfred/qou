@@ -1359,6 +1359,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not case-by-case:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:02.972Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "\"The argument is *structural*, not case-by-case\" is the section's claim and is then itemised."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.012Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1428,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "11 stylistic spaced dashes in 307 words (3.58/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.055Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Three em-dashes in 3.0k, each attaching a short gloss to a formula."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 307 words)"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.097Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "The three numbered points under \"Generality of the proof\" are three distinct generality claims (no bound on n, computability of the bar class, binary depth)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.139Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Ends on a parenthetical classical fact (self-conjugate partitions of n are in bijection with partitions into distinct odd parts - which is correct)."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.180Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.223Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "The generality section adds scope rather than repeating the proof."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.264Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1632,23 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.305Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "severity": "major",
+        "evidence": "SWEEP DAMAGE, and it lands on the load-bearing step of the proof. The phrase \"non-by definition\" appears twice, as the verdict of two pairing computations: \"At $n = 2$: pairs with Vol (bar-fixed) --- non-by definition.\" and \"Bar-antisymmetric: $(e_\\lambda - e_{\\lambda'})/2$ --- pairs with depth-3 (CS-type) periods non-by definition.\" A third site in the same paragraph reads \"The bar-symmetric part pairs by definition with depth-2 of a chiral knot\", where \"by definition\" is doing no work and the sentence's own continuation (\"volume can be non-zero, but ...\") suggests the original said something about non-vanishing. This is the documented \"non-by definition\" garble class; at all three sites the substituted token IS the conclusion of the step - whether a pairing vanishes or not - so the proof's two key inferences currently read as nonsense.",
+        "notes": "Reported, not edited: the original wording is not recoverable from the page and guessing it would be inventing the proof step. Route: recover the pre-sweep text for these three sentences (most likely \"non-trivially\" / \"non-degenerately\" / \"trivially\") and restore; until then the Step 3 pairing analysis cannot be checked. The surrounding structure does check out - bar(e_lambda) = e_{lambda'}, Vol bar-invariant in P_2^+, CS bar-anti-invariant in P_3^-, and the two-case conclusion."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:00.538Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "33aff1e8033e",
+          "ts": "519e5c49b632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.346Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Reads aloud cleanly apart from the garbled phrase recorded above."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:15:03.346Z"
 }
