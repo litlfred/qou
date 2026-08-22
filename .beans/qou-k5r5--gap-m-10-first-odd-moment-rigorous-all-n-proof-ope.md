@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T15:57:29Z
+updated_at: 2026-08-22T19:33:59Z
 ---
 
 
@@ -157,3 +157,20 @@ already proved; only the effective error term is missing.
 STATUS: elementary/combinatorial routes to uniform N/P<1 exhausted+refuted;
 remaining path is a quantitative 2nd-order Kerov CLT (effective error). Honest
 localisation. M_1>0 exact n<=50, kappa>0 derived, all-n reduced+localised. OPEN.
+
+
+
+EFFECTIVE-CLT PROJECT (2026-08-22, PR #5466): plan persisted + sub-result (1) CLOSED.
+Sub-result (1) outcome (better than planned): the Lambda*-part of Sum_h is
+omega3-orthogonal. Sum_h = p2sharp_sym + T, p2sharp_sym in Lambda* (shifted power
+sum), T = Sum_box(i+j) - n (non-Lambda* co-content). EXACTLY (n<=11):
+  Cov(p2sharp_sym, omega3) = 0  =>  M_1 = Cov(Sum_h, omega3) = Cov(T, omega3).
+Provable reason: p2sharp_sym is Lambda*-degree 2 (Sigma_2, n^2, n) and
+Cov(Sigma_2,Sigma_3)=0 (= exact Cov(R_3,R_4)=0; omega3=Sigma_3/3). No genus
+correction. Proves PR #5366 antidiagonal reformulation M_1=Cov(Sum(i+j),Sum c^2)
+EXACT. Effective bound now needs ONLY non-Lambda* T (no Lambda* contamination).
+Sniady genus (arxiv-math-0411647 4.5) does NOT reach T - it only re-derives
+Lambda* x Lambda* covariances (already exact).
+REMAINING (sub-result 2): effective bound Cov(T,omega3) >= kappa n^{5/2} - C n^2,
+T,omega3 both additive box statistics. Fulman 3 exact 2nd-moment / IO field 2nd
+order. Gap OPEN. Workplan: docs/workplans/2026-08-22-M1-effective-CLT-project.md
