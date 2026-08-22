@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-22T21:16:44.382Z",
+  "generated": "2026-08-23T07:53:37.802Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3031,
-  "files_flagged": 141,
-  "total_defects": 130,
+  "scanned_files": 3038,
+  "files_flagged": 140,
+  "total_defects": 127,
   "total_exempt": 45,
   "total_promoted_from_exempt": 78,
   "categories": {
-    "proof-no-self-assuming-projection": 122,
+    "proof-no-self-assuming-projection": 119,
     "proof-docstring-sorry-mismatch": 1,
     "proof-no-trivial-true": 2,
     "proof-no-provable-axiom": 1,
@@ -16,7 +16,7 @@
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
-    "total": 244,
+    "total": 245,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -984,6 +984,11 @@
         "line": 105
       },
       {
+        "name": "ShellSpaceIsSelfSquare",
+        "file": "content/quantum-observable-universe/molecular-construction/shell-space-is-self-square.lean",
+        "line": 102
+      },
+      {
         "name": "ShellThreadingEnergy",
         "file": "content/quantum-observable-universe/observations/shell-threading-conjecture.lean",
         "line": 39
@@ -1887,32 +1892,6 @@
         "pattern": "field-projection",
         "snippet": "@[simp] theorem diagram_card {n : ℕ} (i : PartitionIndex n) : i.diagram.card = n := i.property",
         "decl": "diagram_card",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean": [
-      {
-        "line": 124,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "def g_eq_pi_h_substrate_hypothesis [ctx : SubstrateEWDerivations] :",
-        "decl": "g_eq_pi_h_substrate_hypothesis",
-        "severity": "critical"
-      },
-      {
-        "line": 144,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "def v_ratio_eq_log_S3_hypothesis [ctx : SubstrateEWDerivations] :",
-        "decl": "v_ratio_eq_log_S3_hypothesis",
-        "severity": "critical"
-      },
-      {
-        "line": 165,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "def scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :",
-        "decl": "scalar_gauge_ratio_eq_six_fifths_hypothesis",
         "severity": "critical"
       }
     ],
