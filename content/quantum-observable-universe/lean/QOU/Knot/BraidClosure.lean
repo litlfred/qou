@@ -190,4 +190,76 @@ theorem writhe_smooth (v w : BraidWord n) (c : BraidCrossing n) :
   simp only [writhe_append, BraidWord.writhe_cons]
   ring
 
+/-! ### Parity — why `|e| ≤ n - c` is a *same-parity* statement
+
+The exhaustive measurement behind `MFWSkeinInduction`'s base case found `|e|` and
+`n - c` always sharing a parity, with the bound tight whenever they agree. That
+is not a coincidence of small cases: it follows from the sign homomorphism,
+because each crossing contributes exactly one transposition. -/
+
+/-- **The closure permutation's sign is `(-1)` to the crossing count.** Each
+crossing is one transposition, whatever its sign — the same sign-blindness that
+makes `c` invariant under switching. -/
+theorem sign_closurePerm (w : BraidWord n) :
+    Equiv.Perm.sign (closurePerm w) = (-1) ^ w.length := by
+  induction w with
+  | nil => simp
+  | cons c w ih =>
+      rw [closurePerm_cons, map_mul, ih, crossingSwap,
+          Equiv.Perm.sign_swap (loIdx_ne_hiIdx c.gen), List.length_cons,
+          pow_succ]
+      exact (mul_comm _ _)
+
+/-- The crossing count and the cycle data agree in parity — the sign identity
+read through `Equiv.Perm.sign_of_cycleType`. Since `cycleType.sum` is the
+support size and `cycleType.card` the number of nontrivial cycles, this is the
+parity half of "one transposition changes the orbit count by one". -/
+theorem length_parity_cycleType (w : BraidWord n) :
+    (-1 : ℤˣ) ^ w.length
+      = (-1) ^ ((closurePerm w).cycleType.sum
+          + (closurePerm w).cycleType.card) := by
+  rw [← sign_closurePerm, Equiv.Perm.sign_of_cycleType]
+
+/-- **The writhe has the parity of the crossing count** — each crossing
+contributes `±1`, and both are odd. -/
+theorem writhe_sub_length_even (w : BraidWord n) :
+    Even (BraidWord.writhe w - (w.length : ℤ)) := by
+  induction w with
+  | nil => simp
+  | cons c w ih =>
+      obtain ⟨k, hk⟩ := ih
+      refine ⟨k + (if c.positive then 0 else -1), ?_⟩
+      rw [BraidWord.writhe_cons, List.length_cons]
+      push_cast
+      cases c.positive <;> simp_all <;> linarith
+
+/-- `(-1)^a = (-1)^b` in `ℤˣ` forces `a` and `b` to share a parity. -/
+private theorem neg_one_pow_parity {a b : ℕ} (h : (-1 : ℤˣ) ^ a = (-1) ^ b) :
+    a % 2 = b % 2 := by
+  rcases Nat.even_or_odd a with ha | ha <;> rcases Nat.even_or_odd b with hb | hb
+  · rw [Nat.even_iff.mp ha, Nat.even_iff.mp hb]
+  · rw [ha.neg_one_pow, hb.neg_one_pow] at h; exact absurd h (by decide)
+  · rw [ha.neg_one_pow, hb.neg_one_pow] at h; exact absurd h (by decide)
+  · rw [Nat.odd_iff.mp ha, Nat.odd_iff.mp hb]
+
+/-- **The writhe's parity is fixed by the closure permutation's cycle data.**
+
+This is the parity constraint that makes `|e| ≤ n - c` a *same-parity, smaller
+magnitude* statement rather than a bare inequality — the structure the base-case
+measurement found (tight exactly when the parities allow) and which no argument
+in the corpus had yet supplied. Stated against `cycleType` rather than `n - c`
+to avoid truncated `ℕ` subtraction; see the note below for what that costs. -/
+theorem writhe_parity_cycleType (w : BraidWord n) :
+    Even (BraidWord.writhe w
+      - (((closurePerm w).cycleType.sum + (closurePerm w).cycleType.card : ℕ) : ℤ)) := by
+  have hpar : w.length % 2
+      = ((closurePerm w).cycleType.sum + (closurePerm w).cycleType.card) % 2 :=
+    neg_one_pow_parity (length_parity_cycleType w)
+  obtain ⟨k, hk⟩ := writhe_sub_length_even w
+  have hlen : Even ((w.length : ℤ)
+      - (((closurePerm w).cycleType.sum + (closurePerm w).cycleType.card : ℕ) : ℤ)) := by
+    rw [Int.even_sub, Int.even_coe_nat, Int.even_coe_nat, Nat.even_iff, Nat.even_iff, hpar]
+  obtain ⟨m, hm⟩ := hlen
+  exact ⟨k + m, by linarith⟩
+
 end QOU.Knot.BraidClosure
