@@ -176,3 +176,81 @@ not merged here, since that is a scoping decision rather than a defect fix.
 `--strict` must stay **off in CI**. It now fails correctly rather than
 incorrectly, but 288 real hits means enabling it gates the build on the whole
 muon→proton source migration, which is `qou-cds3`'s unauthorised bulk sweep.
+
+---
+
+## Follow-up 2026-08-22 — the two q0 audits, and what "Q0_FLIP: 0" actually covers
+
+### Correcting my own note above: they are NOT duplicates
+
+I suggested `q0_anchor_consistency_audit.py` and `q0_consistency_audit.py` might
+want merging. **Wrong — they audit different layers and both are needed:**
+
+| | scans | asks |
+|---|---|---|
+| `q0_consistency_audit.py` (237 L) | **source `.py`** | is a stale q₀ *literal* hardcoded? |
+| `q0_anchor_consistency_audit.py` (310 L) | **witness JSON** | does `q0Anchor` agree with `q0Value`? |
+
+Complementary, not redundant. Merging them would be a regression.
+
+One real but minor issue there: its docstring still frames the pins as
+*"muon-anchored **canonical** vs proton-anchored physical"*, which the 2026-08-15
+ruling reversed. Its `_EXPECTED_PREFIX = {"muon": "1.109978595557", "proton":
+"1.109978582751"}` is correct and both anchors reach `Q0_OK`, so this is stale
+prose, **not** a functional inversion like the one this bean fixed. Left alone.
+
+### Ran it. `Q0_FLIP: 0` — over a 24 % denominator
+
+```
+Q0_OK             663
+Q0_ANCHOR_MISSING 1922      <- 71 % of the corpus, unevaluable
+Q0_AUDIT_EXEMPT     76
+Q0_AMBIGUOUS        18
+Q0_INDEPENDENT      35
+Q0_FLIP              0
+```
+
+"Zero flips" is a real result about the **663 witnesses that declare an anchor**.
+The other **1922 declare none**, so the detector cannot form a verdict on them —
+and nothing in the headline says so. A reader taking `Q0_FLIP: 0` as "no anchor
+defects in the corpus" is reading a number computed over less than a quarter of it.
+
+### Q0_OK does not mean the payload is right — and this is `qou-cds3`'s 22
+
+`probes/flavor-split-alpha-dilog-expansion.witness.json` is **Q0_OK**:
+
+```
+q0Anchor              = "muon"
+q0Value               = 1.10997859555733…     <- agrees with q0Anchor, hence OK
+data/proton_anchor/q0 = 1.10997859555733…     <- the SAME muon value, in a field named proton_anchor
+```
+
+The audit is **correct by its own rule**: it compares the *envelope* fields
+`q0Anchor` and `q0Value`, and those agree. It never inspects the payload, so a
+probe that computed both anchors and labelled one of them wrong passes cleanly.
+
+That is precisely the class `qou-cds3` measured at **22 witnesses** (a muon value
+in a `proton`-named field), and it is invisible **to both** q0 audits by
+construction: the source audit scans `.py` not JSON, and the anchor audit scans
+the envelope not the payload. Neither is broken; the gap is between them.
+
+`h4-form-AB-cross-anchor-stability` is the same shape, also Q0_OK.
+
+### And the two audits do not check each other
+
+`q0-consistency-audit.witness.json` — the artefact this bean just fixed, which
+until today asserted a muon value as `canonical_proton_q0` — is classified
+**`Q0_AUDIT_EXEMPT`** by the anchor audit. So the audit whose own witness carried
+the wrong canonical pin was exempt from the audit that checks pins. Not
+necessarily wrong (audit witnesses describing *other* witnesses' pins plausibly
+need an exemption), but worth stating: the exemption is why nothing caught it.
+
+### What this suggests, not done here
+
+A payload-level check — "no field whose *name* says `proton` may hold a value
+matching the muon prefix, and vice versa" — would catch all 22 and costs a few
+lines in the anchor audit, whose prefix map already has both values. I did not add
+it: the anchor audit is a **CI-failing** gate (`Q0_FLIP`), adding a new failing
+verdict to it is a scope change, and the 22 would then fail CI before anyone has
+authorised the fix (`qou-cds3`'s sweep is still ungated). Recorded as the obvious
+next step for whoever owns that gate.
