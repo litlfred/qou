@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T13:00:03.276094+00:00",
-  "commitSha": "bd7c371beb6324270a45b494aca276e5d3e0eb58",
+  "computedAt": "2026-08-22T15:37:41.895277+00:00",
+  "commitSha": "a6012d97c12ed73a7d1cd074085ec4523289ab77",
   "assertions": [
     {
       "name": "1_at_risk_set_has_not_grown",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true,
-      "detail": "49 at risk vs baseline 49. Growth means a new witness landed asserting a pin its own producer cannot reproduce; the set should only drain."
+      "passed": false,
+      "detail": "47 at risk vs baseline 46. Growth means a new witness landed asserting a pin its own producer cannot reproduce; the set should only drain."
     },
     {
       "name": "2_no_unlabelled_muon_q0value",
@@ -19,12 +19,12 @@
       "detail": "measured 0 witnesses carrying the muon q0Value with no q0Anchor — the label and the value are never separated in that direction, which is why keying on q0Value is the correct discriminator"
     }
   ],
-  "allPassed": true,
-  "durationMs": 818,
+  "allPassed": false,
+  "durationMs": 903,
   "computation": "undeclared-muon-pin-flip-risk",
   "scriptFile": "undeclared_muon_pin_flip_risk_audit.py",
-  "scriptHash": "502710ffc188",
-  "scriptCommitSha": "87add43d70883c8d249c7965f65f985fcabd4851",
+  "scriptHash": "d1d68a176a58",
+  "scriptCommitSha": "e543e96a0d53ec2081aa65689248f799c116ad3d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,8 +54,8 @@
   "q0AnchorReason": "Reads no substrate value as an input. It compares recorded q0Value STRINGS against the canonical muon pin for classification only, and computes nothing from them, so no pin is used and none is recorded.",
   "scope": "scope-(a) RISK REGISTER, not a defect list. Nothing here is incorrect on disk; it enumerates producers whose next re-run would silently flip. Fixing means declaring each producer's intended pin in the manifest BEFORE re-running — re-running first destroys the evidence, since the committed muon q0Value is the only surviving record of intent for an unlisted producer.",
   "result": {
-    "at_risk_count": 49,
-    "baseline": 49,
+    "at_risk_count": 47,
+    "baseline": 46,
     "witnesses_scanned": 3025,
     "declared_stems": 408,
     "at_risk": [
@@ -68,20 +68,12 @@
         "producer_stem": "alpha_5_lp_dual_crystal"
       },
       {
-        "witness": "computations/audits/fitted-labelled-canonical-audit.witness.json",
-        "producer_stem": "fitted_labelled_canonical_audit"
-      },
-      {
         "witness": "computations/audits/q0-anchor-consistency-audit.witness.json",
         "producer_stem": "q0_anchor_consistency_audit"
       },
       {
         "witness": "computations/chirality-topology-binding.witness.json",
         "producer_stem": "chirality_topology_binding_probe"
-      },
-      {
-        "witness": "computations/compute-audit-scan.witness.json",
-        "producer_stem": "compute_audit_scan"
       },
       {
         "witness": "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json",
