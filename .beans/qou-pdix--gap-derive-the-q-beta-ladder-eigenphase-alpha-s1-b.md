@@ -237,7 +237,7 @@ SELF-CORRECTION. TransferMatrixSpectrum (my replacement for the vacuous carrier)
 constrains a GIVEN M, but does not force M to come from the Hecke data. For EVERY
 alpha there is a matrix with trace 2cos(alpha), det 1 — the rotation exp(alpha*J),
 built FROM alpha. So it can be discharged circularly. Proved: 
-is an instance for every q (sorry-free).
+QOU.QBeta.EigenphaseCarrier.circularWitness is an instance for every q (sorry-free).
 
 With route 3, this gives three branches and only one is contentful:
 
