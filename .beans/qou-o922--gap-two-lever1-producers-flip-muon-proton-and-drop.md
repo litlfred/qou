@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-22T15:59:36Z
+updated_at: 2026-08-22T20:14:16Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -308,3 +308,50 @@ the thing itself rather than a proxy for it. That is the standing lesson for the
 remaining 40: the only trustworthy test touches the real committed state under
 the real default invocation. Budget accordingly -- it is one re-run per producer,
 not a static scan.
+
+
+## 2026-08-22 (cont.) — the drain's CHEAP PHASE IS OVER at 40
+
+Ran the corrected test (bare re-run, baseline from `git show HEAD:`) across all
+40 remaining. Result:
+
+    class (ii) label-only    1     <- and it is an AUDIT, freshness-confounded
+    depends on the pin      19
+    slow (>240s)             2
+    unresolved              14     <- witness not resolvable from emit site
+    error                    4
+
+**Essentially no more cheap wins.** The 19 that depend are genuine: their diffs
+land in `/data/proton_anchor/...` and `/data/muon_anchor/...` — producers that
+compute at both anchors on purpose and whose payload really does vary.
+
+**A SEVENTH confound, in the test I adopted as correct.** Bare-re-run-vs-committed
+cannot separate "depends on the pin" from "depends on anything else that drifted
+since the witness was committed". Corpus SCANNERS (compute_audit_scan,
+q0_anchor_consistency_audit) enumerate tree state, so 200+ commits of main make
+them differ for reasons that have nothing to do with q0. It errs CONSERVATIVE —
+over-reporting `depends`, under-claiming class (ii) — which is the safe
+direction, but it is not a verdict.
+
+So both tests are confounded, in opposite directions:
+
+    both-anchor env diff        isolates the anchor; blind when the producer
+                                gets q0 by a route the env var cannot reach
+    bare re-run vs committed    real before/after; blind to WHY it changed
+
+Neither is sound alone, which is the measured backing for "not automatable".
+
+## The 14 `unresolved` are a TOOLING gap, not producer defects
+
+My AST heuristic looks for a `wrap_legacy`/`WitnessBuilder` call with a literal
+first arg. These 14 build the name some other way. Resolving them needs the
+emit-site mapping, and that is worth building before any further drain — it is
+35 % of what remains and currently invisible to every sweep.
+
+## Recommended next step, and it is NOT more sweeping
+
+Stop trying to classify by re-running. Build the producer -> witness emit-site
+map first (fixes the 14), then read the 19 `depends` individually to separate
+"computes at the pin" (class i, needs a manifest entry) from "reads a muon
+witness for its q0" (label is TRUE, remove from the register entirely). The
+second category is invisible to both tests and may be a large share of the 19.
