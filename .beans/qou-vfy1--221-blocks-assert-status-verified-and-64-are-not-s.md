@@ -1,7 +1,7 @@
 ---
 # qou-vfy1
 title: '221 blocks assert status "verified"; 64 are not supported by the witness they cite, and the field is forbidden anyway'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T05:20:00Z
@@ -82,3 +82,84 @@ Order of work, cheapest first:
 3. The **43 vacuous** — these need the witness fixed (assertions added) or
    the block's claim withdrawn; they are not fixable from the block side.
 4. The field's removal corpus-wide, per §4.
+
+
+## The 21 non-vacuous cases, enumerated (2026-08-22)
+
+The 43 vacuous-witness blocks need the witness fixed, not the block, so
+they are left for a separate pass. These 21 are actionable from the block
+side. **Correction to the original scan:** it resolved witness paths by
+basename under `computations/` only, so it reported 5 "unresolvable" —
+**all five actually resolve**, three of them somewhere other than where the
+block says. That over-count is now fixed below.
+
+### A. Block says `verified`; witness says `allPassed: false` (8)
+
+| block | witness | failing assertions |
+|---|---|---|
+| `hadron-level-knot-table` | `hadron-knot-table` | **6** — `LP_stable(c14)`, `LP_stable(o16)`, `LP_stable(ne20)`, … |
+| `he4-two-row-dominance` | `he4-canonical-tr-m-block-fingerprint` | **9** — `tr_M_at_q0`, `top5_cumulative_pct`, `trivial_rep_pct`, … |
+| `gs-graded-markov-trace-existence` | `markov/markov-pipeline-cross-validation` | **3** — `tr_M_at_q0_archimedean[n]`, `[p]`, `no_atoms_only_in_term6` |
+| `mba-sidecar-mirror-cancellation` | `delta-lambda-z-coefficient-and-slope` | 1 — `slope_10A5_refuted_at_A_ge_5` |
+| `binding-qbeta-complex-volume` | `qbeta/qbeta-ck-sseries-operator-match` | 1 — `c2_gate` |
+| `q-beta-c-2-eq-neg-one-structural` | `qbeta/qbeta-symbolic-chain-alpha-b` | 1 — `alpha_q0_matches_probe_n3_witness` |
+| `y-lambda-cyclotomic-factorization` | `probes/y-lambda-cyclotomic-factorization-probe` | 1 — `denominator_factors_as_cyclotomic_product` |
+| `deuteron-fusion-frame` | `substrate/deuteron-tower-fusion-frame-probe` | **0** — `allPassed: false` with an empty failing set |
+
+The last is its own oddity and is already beaned separately (`D3`:
+"exits 0 while allPassed is False"). The first three are the substantive
+ones: a stability table whose witness reports six instabilities, and a
+"two-row dominance" claim whose witness fails on the very quantities the
+dominance is about.
+
+Note what the three `c_k`/`α`-related rows have in common: each fails a
+**gate** assertion — `c2_gate`, `alpha_q0_matches_probe_n3_witness`,
+`slope_…_refuted_at_A_ge_5`. The gates are doing their job and the blocks
+are ignoring them.
+
+### B. Block says `verified`; cites no witness at all (8)
+
+`mba-sidecar-delta-lambda-closure`, `mba-sidecar-lp-sdp-dual-emission`,
+`mba-sidecar-witness-json-pipeline`, `mba-step01-categorical-action`,
+`mba-step06-frobenius-pairing`, `qbeta-toroidal-harmonics-basis`,
+`frakD-energy-decomposition`, `toroidal-harmonics-delta-lambda`.
+
+Five of the eight are `mba-*` appendix blocks — the maintenance-contract
+appendix, where an unbacked `verified` is worse than elsewhere because the
+appendix exists to bind propositions to the compute. Independently,
+`agent:l01` found `mba-step06`'s cited API (`pyhecke.check_frobenius`)
+checks Frobenius *positivity*, not the pairing the block describes, and
+`agent:h00`/`i00` flagged `toroidal-harmonics-delta-lambda` as
+convention-C-dependent.
+
+### C. Block says `verified`; the cited path is wrong (5 — all resolve elsewhere)
+
+| block | cites | actually at |
+|---|---|---|
+| `per-braid-mass-tower` | `docs/audits/2026-05-01-per-braid-tower.witness.json` | **exists as cited** (`allPassed: true`, 3 assertions) |
+| `wedderburn-weight-canonical` | `docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json` | **exists as cited** (`allPassed: true`, 2 assertions) |
+| `markov-trace-recursive-reducer` | `markov-trace-axiomatic-multi-atom.witness.json` | `computations/**markov/**…` |
+| `rho-k-graded-expansion` | `rho-k-markov-multiplicativity.witness.json` | `computations/**_deprecated/**…` |
+| `he4-channel-active-set` | `magic-shell-empirical-instantiation.witness.json` | `computations/**_deprecated/**…` |
+
+The first two are **my scan's false positives** — witnesses under
+`docs/audits/` that my basename-under-`computations/` fallback could not
+see. Recorded so the count is not repeated as 5.
+
+The last two are the real finding in this group: a `verified` block whose
+evidence lives under **`_deprecated/`**. That is the same shape
+`agent:g01` found citing `confinement-lp.witness.json`, and
+`agent:k00` found citing a `_deprecated/` witness at the old muon pin.
+
+### Revised totals
+
+| | |
+|---|---:|
+| assert `verified` | 221 |
+| **contradicted by their own witness** | **8** |
+| **no witness at all** | **8** |
+| **witness path wrong; 2 of those resolve as written** | 3 real + 2 false positives |
+| witness `allPassed: true` over an empty assertions array | 43 |
+| passing with real assertions (upper bound — coverage unchecked) | 157 |
+
+So **62** of 221, not 64.
