@@ -87,3 +87,40 @@ open deliberately rather than being marked done by the existence of the
 flag: with Actions auto-triggers disabled repo-wide, wiring it into a
 workflow buys nothing today, so the honest home for it is the
 agent-side merge pipeline.
+
+## 2026-08-22 — why the filter key is `field_hash.md` and not `field_hash`
+
+Raised by the #5367 sibling on PR #5419: the standing advice as worded in the
+#5103 note — *"keep the union, drop entries whose `field_hash` no longer
+matches"* — **degenerates when a block's `.ts` is rewritten.** `field_hash`
+covers the `.ts` as well as the `.md`, so a manifest rewrite makes *both*
+sides' entries stale at the same instant and a whole-object filter deletes all
+of them. Their worked case: `mass-theory/atomic-q-reeb-universal-rho`, where
+#5367 rewrites the `.ts` and the sidecar carries 67 criteria that exist nowhere
+else.
+
+**The implemented script is not affected**, and the reason is worth keeping if
+it is ever rewritten. [`scripts/qa-sidecar-agent-union.py:180`](../scripts/qa-sidecar-agent-union.py)
+reads the **`.md` sub-key only**:
+
+```python
+entry_md = (entry.get("field_hash") or {}).get("md")
+```
+
+So a `.ts` rewrite carries every entry through; only a `.md` edit drops one.
+That is correct for `trap-*` — a trap verdict is a judgement about prose — and
+deliberately **permissive** for `clarity-*`, `q-usage-*` and `da-*`, which do
+depend on `kind` / `title` / `uses[]`. Permissive is the right direction here:
+stale-but-present is recoverable by re-running the axis; deleted is not
+recoverable at all, which is the whole reason this bean exists.
+
+**Do not "tighten" the key to the whole `field_hash` object.** It looks like a
+correctness improvement and is the failure mode described above.
+
+Separately, and one layer up from the sidecars: `content/pipeline/qa-agent-drain-queue.ts`
+— the script that *builds* the audit queue — has two unresolvable imports,
+`./qa-utils` and `./qa-criteria-registry`, neither of which exists anywhere in
+the tree. Same silent-failure shape as the unloadable manifests #5367 found: if
+the queue builder cannot run, "not in the queue" and "already audited" are
+indistinguishable from outside. Not part of this bean's fix; recorded here
+because it is the same class and the same blast radius.
