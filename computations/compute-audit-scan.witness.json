@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T15:32:57.967319+00:00",
-  "commitSha": "a6012d97c12ed73a7d1cd074085ec4523289ab77",
+  "computedAt": "2026-08-22T19:39:17.230157+00:00",
+  "commitSha": "f4254e46f3b3afb7a53672d8b3b43344345eb8dc",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "4ef22dbfca2a",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptCommitSha": "73d37515df2e5b4a817b91deca7377a403480693",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +23,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -34,7 +35,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1381,
+    "files_scanned": 1382,
     "patterns": [
       "P15",
       "P16",
@@ -48,8 +49,8 @@
       "P15": 291,
       "P16": 643,
       "P21": 25,
-      "P30": 179,
-      "P31": 8
+      "P30": 180,
+      "P31": 9
     },
     "top_files": [
       {
@@ -2009,7 +2010,14 @@
       {
         "pattern": "P31",
         "file": "codata_corpus_literal_scan.py",
-        "line": 277,
+        "line": 378,
+        "snippet": "CODATA literal \"0.51099895\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "codata_corpus_literal_scan.py",
+        "line": 272,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -7840,6 +7848,13 @@
       {
         "pattern": "P30",
         "file": "whitehead_vdv_lemma1.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "witness_assertion_slack_audit.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
