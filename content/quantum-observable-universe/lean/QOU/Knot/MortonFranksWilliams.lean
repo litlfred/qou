@@ -202,9 +202,11 @@ theorem sixOne_tight : (sixOne.dmax - sixOne.dmin) + 2 = 2 * sixOne.n := by
   norm_num [sixOne]
 
 /-- **No 3-strand braid closes to a link with `6₁`'s HOMFLY degree window.**
-This is the step that separates `4` from `3`, and it is the first knot in the
-producer's set where the bound has to do so: `4₁` and `5₂` both have braid
-index `3`, so they exercise the machinery without testing this discrimination. -/
+This is the step that separates `4` from `3`. Among the *tabulated* knots the
+producer checks, none tests that separation — `3₁`, `4₁`, `5₁`, `5₂`, `6₂`, `6₃`
+all have braid index `2` or `3` — so the discrimination is exercised
+independently by `torusFourFive` below rather than only on the knot under
+test. -/
 theorem sixOne_not_three_strand :
     ¬ ∃ w : MFWWitness, w.n = 3 ∧ w.dmin = -2 ∧ w.dmax = 4 :=
   no_representative_of_spread_gt 3 (-2) 4 (by norm_num)
@@ -216,5 +218,47 @@ theorem sixOne_four_le_strands (w : MFWWitness)
   have := w.braid_bound
   rw [hmin, hmax] at this
   linarith
+
+/-! ### An independent knot at braid index 4
+
+`6₁` is the knot under test, so a separation theorem stated only about it
+cannot show that the machinery *can* separate `4` from `3` — it could be
+reading its own input back. `T(4,5)`, the closure of `(σ₁σ₂σ₃)⁵`, supplies
+that independently: its braid index is `min(p, q) = 4` by a theorem (MFW is
+sharp on torus knots), not by a knot table, and the measured HOMFLY window is
+`[12, 18]`, again spread `6`.
+-/
+
+/-- The measured MFW input for the torus knot `T(4,5)`: HOMFLY `v`-degree
+window `[12, 18]` on the 4-strand word `(σ₁σ₂σ₃)⁵`, writhe `15`. -/
+def torusFourFive : MFWWitness where
+  n := 4
+  e := 15
+  dmin := 12
+  dmax := 18
+  one_le_n := by norm_num
+  mfw_lower := by norm_num
+  mfw_upper := by norm_num
+  dmin_le_dmax := by norm_num
+
+/-- `T(4,5)`'s window is tight on both sides, exactly as `6₁`'s is. -/
+theorem torusFourFive_tight :
+    (torusFourFive.dmax - torusFourFive.dmin) + 2 = 2 * torusFourFive.n := by
+  norm_num [torusFourFive]
+
+/-- **The separation is not special to `6₁`.** No 3-strand braid closes to a
+link with `T(4,5)`'s degree window either, so the bound genuinely distinguishes
+`4` from `3` on a knot whose braid index is fixed by a theorem rather than by
+the computation under test. -/
+theorem torusFourFive_not_three_strand :
+    ¬ ∃ w : MFWWitness, w.n = 3 ∧ w.dmin = 12 ∧ w.dmax = 18 :=
+  no_representative_of_spread_gt 3 12 18 (by norm_num)
+
+/-- The two witnesses have **equal spread but disjoint degree windows** —
+`[-2, 4]` against `[12, 18]`. MFW reads only the spread, which is why both
+give `4` while the polynomials themselves are nothing alike. -/
+theorem sixOne_torusFourFive_same_spread :
+    sixOne.dmax - sixOne.dmin = torusFourFive.dmax - torusFourFive.dmin := by
+  norm_num [sixOne, torusFourFive]
 
 end QOU.Knot.MortonFranksWilliams
