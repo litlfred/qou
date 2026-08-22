@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.431Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.470Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 227 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.510Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 227 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.551Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.593Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "block does not end on a manufactured quotable line"
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.634Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "emphasis is placed, not announced"
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.675Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "no block-final restatement of what the text established"
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.717Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "institutional register throughout"
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.760Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "no unqualified maximum-strength claim"
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1673,22 @@
         "reviewed_at": "2026-08-15T10:30:59.530Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5da9fa3cc774",
+          "ts": "9a9aad4ed9d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:15.802Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: three-step proof of (a) plus proofs of (b) and (c). d = dim SU(2) = 3, HH^2 = (HH^1)^v, and the Drinfeld uniqueness citation are all consistent; 'Poincare' accent repaired.",
+        "notes": "noun chains parse aloud"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1711,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:15.802Z"
 }
