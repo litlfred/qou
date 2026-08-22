@@ -105,10 +105,15 @@ from qou_substrate.witness import WitnessBuilder, _q0_value_for_anchor  # noqa: 
 
 _T0 = time.monotonic()
 
-#: Ratchet. The set should DRAIN as producers get manifest entries; it must
-#: never grow silently. Growth means a new witness landed asserting a pin its
-#: producer cannot reproduce.
-BASELINE = 49
+#: Ratchet. The set should DRAIN as producers are dispositioned; it must never
+#: grow silently. Growth means a new witness landed asserting a pin its producer
+#: cannot reproduce.
+#:
+#: RATCHET DOWN WITH THE DRAIN. Leaving this at a stale high number is slack the
+#: gate will not notice being taken up again -- baselines drain, never grow.
+#: 49 -> 47 on 2026-08-22, the two class-(ii) producers dispositioned as
+#: `independent` (bean qou-o922).
+BASELINE = 47
 
 _MATCH = 14  # same discrimination width the anchor audit uses
 
