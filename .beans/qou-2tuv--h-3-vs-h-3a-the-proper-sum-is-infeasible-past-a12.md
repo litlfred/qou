@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T19:36:15Z
+updated_at: 2026-08-22T19:39:36Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1086,3 +1086,87 @@ against main's own tree**, not fallout from this branch. Reverted rather than
 folded in — it belongs to the witness drain (qou-ad4t). Worth someone's
 attention: it means the committed drift audit under-reports the proton-pin
 count by 2.
+
+
+---
+
+# What Φ_q actually is — and why it cannot be this consumer
+
+Continuing from the falsified radius hypothesis. I probed Φ_q's shape directly
+rather than guessing, and it settles the remaining two hypotheses.
+
+## Φ_q(x) = 1 + |x|/(q0 − 1) + O(x²)
+
+    Phi(0) = 1.0        Phi(x) = Phi(-x)  at every x tested
+
+    (Phi(x)-1)/|x| ->  9.09267974  (x = 1e-8)
+         1/(q0 - 1)  =  9.09267946
+                        agree to ~3e-8, the O(x^2) term's size at that x
+
+One-sided slopes at 0 are +9.0926600 and −9.0926600. So Φ_q is **even with a
+corner at the origin** — C⁰, not C¹. My earlier `Φ_q'(0) = 0` was a
+central-difference artifact: the two one-sided slopes cancel. There is no linear
+regime to sit in; the function is flat-to-first-order nowhere.
+
+That also retires the linear model I tried on the way here. Calibrating
+`B = C·(Σ V_free − Σ V_atom)` on D under-predicts T by **−44.8%** — far better
+than 5×10⁸% but still not physics, and now visibly so: the premise (a linear
+regime) does not exist.
+
+## Three structural facts, each fatal on its own
+
+**1. Φ_q is even, so the tower discards the sign of V̂.** This is the sharp one.
+`binding_canonical.py` carries an explicit correction in its own docstring — the
+binding difference is a *SIGNED* categorical difference, and "the double-modulus
+form was a non-archimedean misuse". An even consumer throws away precisely the
+sign that correction was about. Whatever Φ_q is for, it cannot be the consumer
+of a quantity whose signedness was deliberately restored.
+
+**2. Φ_q(0) = 1 and Φ_q ≥ 1 everywhere.** It is a multiplicative, normalising
+object — it returns *unity* on the zero input, not zero. The tower feeds it into
+`B = ALPHA·(tower_free − tower_atom)`, i.e. treats it as an additive energy. A
+function whose neutral element is 1 does not belong in a difference.
+
+**3. The scale mismatch is the whole eight orders.**
+
+    Phi(0.0541)  =        1.65     <- max|V_hat| at the FITTED s* (D)
+    Phi(0.0891)  =        2.29     <- same, T
+    Phi(0.70839) =     3189.9      <- max cross-channel |V_i V_j|
+    Phi(1.08837) = 26604768.9      <- max|V_hat| as V_hat ACTUALLY comes out
+
+V̂'s natural scale lands where Φ_q is ~2.7×10⁷. The answer needs ~1. That gap
+*is* the 5×10⁸% error — not an accumulation of small mistakes.
+
+## Correcting the fitted-scale reading, and one earlier overstatement
+
+Solving for s with V̂ → s·V̂ so the tower reproduces B_AME exactly (to ~1e-12):
+
+    atom  A  #gen        s*     s*·#gen
+       D  2     5  0.04973646  0.248682
+       T  3     8  0.08186724  0.654938
+
+A root exists at both — but s* is **not** constant (1.65× apart) and s*·#gen is
+not either. So "normalisation mismatch" in the simple sense of one global factor
+is **also insufficient**; no single rescale of V̂ works across A. What s* does do
+is land the argument at 0.05–0.09, where Φ_q is order unity — which is the
+diagnosis restated, not a fix.
+
+**Overstatement to correct.** I called `inversion`'s 1.28242 a "real pole".
+`phi_q_safe` never returns inf — it *saturates*:
+
+    Phi(1.087779) = Phi(1.08837) = Phi(1.28242) = Phi(50.0) = 26604768.897416387
+
+Everything at or past the 0.98·q0 guard returns one identical value. So the
+failure mode is a **plateau, not a pole** — which is exactly why the tower
+produced a large finite wrong number instead of raising. `inversion` does exceed
+the radius (that stands); it just never manifests as a divergence.
+
+## Where this leaves it
+
+Of the three hypotheses I started with, the radius one is falsified and the
+plain-normalisation one is now insufficient. **Φ_q is the wrong consumer for
+V̂** — on evenness, on Φ(0)=1, and on scale, three independent grounds. The open
+question is no longer "why does the tower diverge" (it does not diverge) but
+"what is Φ_q's actual role, and what should consume V̂ instead". That is a
+question about intent in the source, not a measurement — and it is where I would
+want a human read before I go further.
