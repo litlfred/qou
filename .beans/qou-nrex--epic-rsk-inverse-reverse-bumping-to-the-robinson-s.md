@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T19:45:36Z
+updated_at: 2026-08-22T19:52:50Z
 ---
 
 
@@ -654,3 +654,33 @@ Each hypothesis does distinct work:
 All ingredients now proved. IsAddable at step k = (count comparison), which is brick 23b via
 countLt_above_qRowOf, transported across brick 26 to the position-list side, with brick 22 supplying
 the shape. What is left is threading them through the AddableAlong recursion.
+
+
+### Brick 27 — THE CHAIN CLOSES (same PR #5426)
+
+addableAlong_qPositions : Q column-strict + rows strictly increasing + flatten Nodup +
+  all t below n present  ->  AddableAlong [] (qPositions Q n)
+
+insertWord_uninsertSteps_of_standard : P row-sorted/col-strict/no-empty-rows, Q standard, SAME SHAPE
+  ->  insertWord (uninsertSteps P (qPositions Q n)).2 = P
+
+**The gap named back at brick 15 is closed.**
+  Q standard --26--> AddableAlong --20--> ShapeCornersAlong --18--> insertWord . uninsertSteps = id
+
+Each ingredient was already proved; brick 27 threads them through the AddableAlong recursion,
+inducting on the HORIZON not the list. That is why the append-at-end forms were needed:
+List.range (n+1) = List.range n ++ [n] grows at the END while the recursion consumes from the FRONT.
+
+Only hypothesis tying P to Q is EQUAL SHAPE — which is what 'a pair of tableaux of the same shape'
+means.
+
+### SCOPE — what this is NOT
+Word-level surjectivity on the P side. NOT bijectivity of rskPair: nothing says the recovered word's
+RECORDING tableau is Q. RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via the
+unrelated rskBurnsideHolds_le12 (no RSK in it).
+
+### #5426 carries bricks 16-27, five files, zero sorries, axiom-clean throughout
+### Next
+- recovered word's recording tableau is Q (the other half of bijectivity);
+- then rskPair bijective; then RSKBurnsideHolds general n -> spechtEquiv_of_sum_sq gives the general
+  Wedderburn split.
