@@ -102,7 +102,7 @@ theorem sum_toFinset_eq_sum_natPartition (k : ℕ) (g : List ℕ → ℕ) :
     rw [sort_parts_toNatPartition k l (List.mem_toFinset.mp hl)]
 
 /-- **The Plancherel normalisation**: `Σ_{λ ⊢ k} (f^λ)² = k!`. -/
-theorem sum_sytDim_sq_eq_factorial (k : ℕ) :
+theorem sum_sytDim_sq_eq_factorial (k : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] :
     ∑ l ∈ (partsOf k).toFinset, (sytDim l) ^ 2 = Nat.factorial k := by
   rw [sum_toFinset_eq_sum_natPartition k (fun l => (sytDim l) ^ 2)]
   have hsummand : ∀ p : Nat.Partition k,
@@ -116,14 +116,14 @@ theorem sum_sytDim_sq_eq_factorial (k : ℕ) :
   exact OVTopAssembly.sum_numSYT_sq_eq_factorial k
 
 /-- The list form (the enumerator is nodup, so its `Finset` sum is its list sum). -/
-theorem sum_map_sytDim_sq_eq_factorial (k : ℕ) :
+theorem sum_map_sytDim_sq_eq_factorial (k : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] :
     ((partsOf k).map (fun l => (sytDim l) ^ 2)).sum = Nat.factorial k := by
   have hnd : (partsOf k).Nodup := partsFuel_nodup k k k
   rw [← List.sum_toFinset (fun l => (sytDim l) ^ 2) hnd]
   exact sum_sytDim_sq_eq_factorial k
 
 /-- The normalisation in the ℝ form `tiltNorm` takes. -/
-theorem tiltNorm_zero_eq_factorial (k : ℕ) :
+theorem tiltNorm_zero_eq_factorial (k : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] :
     tiltNorm k 0 = (Nat.factorial k : ℝ) := by
   unfold tiltNorm
   have hcast : ((((partsOf k).map (fun l => (sytDim l) ^ 2)).sum : ℕ) : ℝ)
@@ -138,7 +138,7 @@ theorem tiltNorm_zero_eq_factorial (k : ℕ) :
 
 /-- **The (TAIL) first instance, unconditionally**:
 `ν_n = n(n−2)(n−3)·C(2n−4, n−2) / (3·n!)`. -/
-theorem nuV_top_closed_form_unconditional (r : ℕ) (hr : 1 ≤ r) (hk' : r + 2 ≤ 20) :
+theorem nuV_top_closed_form_unconditional (r : ℕ) (hr : 1 ≤ r) (hk' : r + 2 ≤ 20) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] :
     nuV (r + 2) (r + 2)
       = ((r : ℝ) + 2) * (r : ℝ) * ((r : ℝ) - 1) * (((2 * r).choose r : ℕ) : ℝ)
           / (3 * (Nat.factorial (r + 2) : ℝ)) :=
