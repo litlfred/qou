@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-22T09:22:46Z
+updated_at: 2026-08-22T15:30:24Z
 ---
 
 
@@ -87,3 +87,19 @@ REMAINING GAP: finite-n domination P(n)>N(n). M_1>0 exact n<=50; asymptotic prov
 Per-edge for Sum_h itself FAILS (~2-3% discordant from n=6). NOT closed; not laundered.
 STATUS: kappa>0 DERIVED; all-n reduced to P>N (asymptotic domination proved, finite-n
 open). Next: bound P-N>=0 at finite n (weighted edge inequality / 2nd-moment control).
+
+
+
+N/P SHARPENING (2026-08-22, PR #5452). M_1 = P - N sharpened to N/P < 1:
+ - N/P wobbles n<=6, then MONOTONE rising (n>=7) toward proved limit
+   N_lead/P_lead=0.11213/0.16977=0.6605<1 from below; N/P<=0.613 exact n<=22,
+   margin 1-N/P>=0.34.
+ - Explicit local increments (Lean-formalizable, verified exact):
+     Delta omega3 = c_r^2 - c_a^2;  Sum|c|(lam)-Sum|c|(mu) = |c_r|-|c_a|;
+     SumD2(mu)-SumD2(lam) = 2(d_a-d_r+1)  [362 moves, n<=9].
+   Per-edge ratio N/P|edge = 2(d_a-d_r+1)/(|c_r|-|c_a|), UNBOUNDED per edge =>
+   no per-edge/FKG argument possible; bound must be global/weighted (high-ratio
+   edges carry small stationary weight).
+STATUS: M_1>0 <=> N/P<1; asymptotic N/P->0.6605<1 PROVED; exact N/P<=0.613 n<=22.
+Uniform N/P<1 still OPEN. Next: weighted bound on high-ratio (large d_a-d_r,
+small |c_r|-|c_a|) edges, or prove N/P monotone-below-limit.
