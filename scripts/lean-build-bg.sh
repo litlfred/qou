@@ -195,6 +195,41 @@ else
     write_status "caching" "Cache fetch had issues (continuing)" "cache" 0
 fi
 
+# ── Guard: restored olean cache with no Lake traces ───────────────
+# A cache restored from a `lake-cache/*` orphan branch has .olean files but
+# NO .trace files. Lake treats every untraced olean as stale, so `lake build`
+# rebuilds Mathlib from source and EVICTS the restore as it goes — measured
+# 6990 -> 334 mathlib oleans, silently, with output that reads like ordinary
+# build progress (AGENTS.md, bean qou-r13s).
+#
+# This fires on EVERY SessionStart, so without this guard a restored
+# container loses its cache automatically. `lake exe cache get` above is the
+# legitimate repair path and has already had its chance by this point; if it
+# succeeded, traces exist and we fall through to a normal build. If it failed
+# (403/firewalled sandbox — the common case here), the only thing `lake build`
+# can do is rebuild from source over the top of the restore, so skip it.
+#
+# The marker is also (re)created for other tooling and for humans; it lives in
+# gitignored .lake/, so this detection — not the marker — is what is durable.
+mathlib_lib="$LEAN_DIR/.lake/packages/mathlib/.lake/build/lib/lean"
+if [ ! -d "$mathlib_lib" ]; then
+    mathlib_lib="$REPO_ROOT/.lake/packages/mathlib/.lake/build/lib/lean"
+fi
+if [ -d "$mathlib_lib" ]; then
+    n_olean=$(find "$mathlib_lib" -name '*.olean' 2>/dev/null | head -500 | wc -l)
+    n_trace=$(find "$mathlib_lib" -name '*.trace' 2>/dev/null | head -1 | wc -l)
+    if [ "$n_olean" -gt 100 ] && [ "$n_trace" -eq 0 ]; then
+        marker_dir=$(dirname "$(dirname "$(dirname "$(dirname "$mathlib_lib")")")")
+        touch "$marker_dir/RESTORED-NO-TRACES" 2>/dev/null || true
+        write_status "unavailable" \
+            "Restored olean cache detected ($n_olean oleans, 0 traces) - skipping lake build so it is not evicted. Verify changed files with lean-direct + LEAN_PATH instead (AGENTS.md)." \
+            "guard" 0
+        echo "lean-build-bg: restored olean cache ($n_olean oleans, 0 traces) - skipping lake build."
+        echo "lean-build-bg: use lean-direct + LEAN_PATH to verify; see .claude/skills/local/lean-environment-setup.md"
+        exit 0
+    fi
+fi
+
 # ── Step 3: lake build with retry + timing ───────────────────────
 MAX_RETRIES=4
 DELAYS=(10 30 90 270)
