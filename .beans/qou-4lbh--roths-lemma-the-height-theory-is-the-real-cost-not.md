@@ -479,3 +479,19 @@ useful. What should not be kept is the claim that a *named* step is blocked on i
 The next thing to measure is the assembly itself: what quantitative statement the induction
 carries, and whether every ingredient it names is present. That is a scoping task, not a
 proving one, and it should come before more Mahler work.
+
+### Addendum — the shared-variable easy direction
+
+`abs_coeff_mul_le` (same module): `H(f·g) ≤ #supp(f)·H(f)·H(g)` for `f, g` in the **same**
+variables. Six declarations in `SeparatedHeight.lean` now, all axiom-clean.
+
+It is here because it is the contrast that makes the Gelfond point precise. Going **up** —
+factors' heights to the product's — is elementary either way: at most `#supp f` antidiagonal
+terms survive, since `b = n − a` is determined by `a`. Disjointness removes even that factor,
+because exactly one term survives. Gelfond is the direction that comes **down**, and only in
+shared variables.
+
+It is also the tool the next step needs: `mvGenWronskian D f` is a determinant in iterated
+`pderiv`s of `P`, so its height follows from `abs_coeff_mul_le` along the Leibniz expansion,
+given a bound on `|coeff n (pderiv i P)|`. ⚠ Until that exists, `abs_coeff_le_of_mul_separated`
+is being fed a hypothesis nothing yet establishes — the chain is sound but not yet grounded.
