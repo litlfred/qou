@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-07T09:01:57Z
+updated_at: 2026-08-22T19:11:35Z
 ---
 
 
@@ -417,3 +417,30 @@ both rejected, because they leave a stale number on the theory nobody is
 looking. The tolerance triage is still useful — but as **ordering and
 annotation**, never as a skip. Offering it to `q0_repin_sweep.py` in that form
 is the remaining actionable item.
+
+
+---
+
+## 2026-08-22 — this bean's headline count is stale, and the shortfall is not what it looks like
+
+Measured on `main` today, over all 3030 `computations/**/*.witness.json`:
+
+| measure | count |
+|---|---|
+| muon **fingerprint** anywhere in the file (the method behind the "~840") | **624** |
+| muon **stamp** — `q0Anchor: muon` or a muon `q0Value` | **65** |
+| fingerprint present but no muon stamp | **559** |
+
+The title says *"~840 muon-q0 witnesses"*; AGENTS.md §q₀ rule 4 has carried 870. By the comparable fingerprint method it is now **624**.
+
+**The 559 are not a migration backlog, and counting them as one repeats a mistake this arc already made twice.** A fingerprint hit means the muon digit string appears *somewhere* in the file — which a deliberate two-pin comparison, a recorded pin-gap diagnostic, or a stale data field all produce without the witness claiming muon anywhere. Reading a raw grep count as a defect count is exactly what produced the retracted `qou-0hnz` claim (254/78 → measured 0) and the `qou-sccd` opening framing (11 candidates → measured 2). The stamp count, **65**, is the only figure tied to a claim the corpus actually makes.
+
+**And 65 is not automatically a work-list either.** Three of them are now *legitimately* muon by design — `q_pinning_50_digit` (the anchor definer, which must never move), `atomic_tr_m_mpfr_50dps` and `cross_check_trM_1ppb` (two-pin comparison producers restored under `qou-ibbr` / `qou-wn6d` precisely because moving them to proton broke them). Any re-baseline has to separate that class before proposing a sweep.
+
+### Suggested re-baseline, before any bulk work
+
+1. Partition the **65** stamped-muon witnesses into: (a) anchor-defining, (b) deliberate comparison producers, (c) genuine migration remainder.
+2. Sample the **559** fingerprint-only witnesses to establish what the fingerprint is actually hitting — comparison values, pin-gap diagnostics, or stale fields. Do not assume.
+3. Only then size the sweep. The four constraints recorded in AGENTS.md rule 4 still bind, and the first attempt at this migration broke `main` for 208 producers (`qou-m9xp`).
+
+Recording the numbers rather than acting on them: the sweep is the step that has gone wrong before, and it should start from a measured work-list, not from a count nobody has re-derived since the migration ran.
