@@ -85,12 +85,29 @@ structure RankOneGaugeData (k : Type*) [Field k] where
   /-- The fundamental representation V has categorical dimension 2,
       encoded as: the spin label for V is j = 1/2 (twice_j = 1). -/
   fund_dim_two : ({ twice_j := 1 : SpinLabels }).cat_dim = 2
-  /-- Volume constraint: Λ²V → 𝟙 is non-degenerate (epimorphism). -/
+  /-- Volume constraint: Λ²V → 𝟙 is non-degenerate (epimorphism).
+
+      **No longer a hypothesis** (bean `qou-n1dj`, 2026-08-22).  Condition
+      (iii) of `QuantumObservableUniverse` is now the isomorphism
+      `volumeIso : exteriorSquare ≅ (𝟙_ C)`, and an isomorphism is epi, so
+      this field carries a default value and every QOU satisfies it.
+
+      Read this together with the scope warning above.  `volume_nondeg` was
+      the *one* field of the three that constrained the QOU; with it
+      discharged, `RankOneGaugeData` adds nothing to
+      `QuantumObservableUniverse`.  The content did not disappear — it moved
+      upstream into the framework axiom, which is where the corpus states it —
+      but a reader told "one of three constrains" should now be told "none of
+      the three, because the axiom already does". -/
   volume_nondeg :
     letI := qou.catInst
     letI := qou.monInst
     ∀ (f g : (𝟙_ qou.C) ⟶ (𝟙_ qou.C)),
-      qou.volumeForm ≫ f = qou.volumeForm ≫ g → f = g
+      qou.volumeIso.hom ≫ f = qou.volumeIso.hom ≫ g → f = g := by
+    letI := qou.catInst
+    letI := qou.monInst
+    intro f g h
+    exact (CategoryTheory.cancel_epi qou.volumeIso.hom).mp h
   /-- Adjoint vanishing: Hom(𝟙, Ad(A)) is trivial. -/
   adjoint_trivial :
     letI := qou.catInst

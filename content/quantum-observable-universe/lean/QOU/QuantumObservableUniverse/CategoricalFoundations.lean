@@ -312,7 +312,8 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
           morphisms.
     (iii) categorical volume constraint: the fundamental object `V` of
           categorical dimension 2 admits a non-degenerate epimorphism
-          `ε : Λ²V → 𝟙` preserved by the rigid dualities.
+          `ε : Λ²V → 𝟙` preserved by the rigid dualities.  Formalised
+          below under the **strong (iso) reading** — see the fields.
 
     LaTeX: `\label{def:quantum-observable-universe}` -/
 structure QuantumObservableUniverse (R : Type*) [CommRing R]
@@ -363,13 +364,109 @@ structure QuantumObservableUniverse (R : Type*) [CommRing R]
   adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
   /-- The fundamental object `V` of categorical dimension 2. -/
   fundamentalObj : C
-  /-- The exterior square `Λ²V` as an object of `C`. -/
+  /-- The exterior square `Λ²V` as an object of `C`.
+
+      **This was previously a free field**, with nothing tying it to
+      `fundamentalObj` — so condition (iii) said nothing about `V` at all.  The
+      two fields below present it as a *quotient of* `V ⊗ V`, which is the
+      weakest true statement that makes it `Λ²` of something rather than an
+      arbitrary object.  Same defect and same repair as `adjointObj` above; see
+      bean `qou-n1dj` item 3. -/
   exteriorSquare : C
-  /-- **Volume constraint** (condition iii): the non-degenerate epimorphism
-      `ε : Λ²V → 𝟙` that forces `det(g_V) = 1` for all
-      `g ∈ Aut⊗(ω)`, restricting the gauge group from `GL(2)` to `SL(2)`.
+  /-- The antisymmetrisation `π : V ⊗ V ↠ Λ²V`.  The corpus writes this arrow
+      with a two-headed `↠` in `VolumeFromRigidity.projection` and in
+      `lem:volume-from-rigidity`; the next field is that `↠`. -/
+  exteriorSquareProj : (fundamentalObj ⊗ fundamentalObj) ⟶ exteriorSquare
+  /-- `Λ²V` is a **quotient** of `V ⊗ V`.
+
+      Deliberately no eigenvalue condition on the braiding.  In a braided
+      category the braiding acts on the `q`-exterior square by `-q⁻¹`, not by
+      `-1`, so demanding `β ≫ π = -π` would silently impose `q = 1` and rule
+      out the quantum group the framework is about. -/
+  exteriorSquare_epi : CategoryTheory.Epi exteriorSquareProj
+  /-- **Volume constraint** (condition iii), under the **strong (iso)
+      reading**: `ε : Λ²V ≅ 𝟙`.
+
+      `def:quantum-observable-universe` writes "non-degenerate epimorphism",
+      which admits two readings of unequal strength
+      (`VolumeConstraintForcesFibreTwo.lean`):
+
+      | reading | dimension statement | forces |
+      |---|---|---|
+      | epi onto `𝟙` | `C(N,2) ≠ 0` | `N ≥ 2` — admits the colour fibre `N = 3` |
+      | **iso** `Λ²V ≅ 𝟙` | `C(N,2) = 1` | **`N = 2`** |
+
+      The iso is taken because it is the reading under which the axiom does the
+      job the corpus proof asks of it: `det(g)` is the scalar by which `g` acts
+      on the **top** exterior power, so a constraint on `Λ²V` is a determinant
+      constraint exactly when `2 = N`.  Under the weak reading `ε` constrains
+      the second elementary symmetric function of the eigenvalues and the step
+      to `det(g_V) = 1` does not go through.
+
+      This also removes the vacuity: the previous field was a bare morphism,
+      and `QuantumUniverse` supplies `Preadditive C`, so `volumeForm := 0`
+      inhabited it for *any* `exteriorSquare`.  An iso cannot be zero unless
+      the base ring is trivial — `volumeForm_ne_zero` below.
+
       LaTeX: `\label{eq:categorical-volume-constraint}` -/
-  volumeForm : exteriorSquare ⟶ (𝟙_ C)
+  volumeIso : exteriorSquare ≅ (𝟙_ C)
+
+/-! ### What the iso reading of condition (iii) buys
+
+Three consequences, stated generically so they can be checked without a
+`QuantumObservableUniverse` — of which this tree still has none.  Bean
+`qou-n1dj` item 2 (which reading) and item 3 (the formalised condition was
+vacuous).
+-/
+
+/-- **The volume form cannot be zero.**
+
+This is the vacuity that bean `qou-n1dj` item 3 records.  With `volumeForm` a
+bare morphism `Λ²V ⟶ 𝟙` and `Preadditive C` in scope, `volumeForm := 0`
+inhabited condition (iii) for *any* `exteriorSquare`, so the formalised axiom
+constrained nothing whatever.
+
+Under the iso reading it cannot: `e.inv ≫ e.hom = 𝟙` collapses to `0` the
+moment `e.hom = 0`, so a zero volume form forces `End (𝟙_ C)` to be trivial.
+`QuantumUniverse.unitEndEquiv : R ≃+* End (𝟙_ C)` then carries that back to
+`R`, which is why `volumeForm_ne_zero_of_nontrivial` below can state it as a
+condition on the base ring rather than on the category. -/
+theorem iso_unit_hom_ne_zero {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C] {X : C}
+    (e : X ≅ (𝟙_ C)) (h : (CategoryTheory.CategoryStruct.id (𝟙_ C)) ≠ 0) :
+    e.hom ≠ 0 := by
+  intro he
+  exact h (by simpa [he] using e.inv_hom_id.symm)
+
+/-- **The volume form is epi, for free.**
+
+The co-located sibling of `def:quantum-observable-universe` carries
+`volumeForm_epi` as a *field* — "if two morphisms agree after precomposition
+with `volumeForm`, they are equal" — and `su2-emergence.lean` takes the same
+statement as an explicit hypothesis.  Under the iso reading neither is needed:
+an isomorphism is epi. -/
+theorem epi_of_iso_unit {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] {X : C} (e : X ≅ (𝟙_ C)) :
+    CategoryTheory.Epi e.hom :=
+  inferInstance
+
+/-- **`V ⊗ V` surjects onto the unit.**
+
+The composite of the antisymmetrisation `π : V ⊗ V ↠ Λ²V` with the volume
+isomorphism.  This is the whole point of pairing the iso with the two new
+`exteriorSquare` fields: the iso alone says `Λ²V ≅ 𝟙` for an object with no
+stated relation to `V`, and `π` alone lets `Λ²V` be any quotient.  Together
+they are a statement about the fundamental object.
+
+It is the categorical shadow of `exteriorSquareDim_eq_one_iff`
+(`VolumeConstraintForcesFibreTwo.lean`) and **not** a proof of it: getting from
+here to `C(N,2) = 1` needs the fibre functor to be monoidal and to send
+`exteriorSquare` to `Λ²(τ V)`, neither of which is available.  See the bean. -/
+theorem epi_proj_comp_volume {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] {V X : C}
+    (π : (V ⊗ V) ⟶ X) [CategoryTheory.Epi π] (e : X ≅ (𝟙_ C)) :
+    CategoryTheory.Epi (π ≫ e.hom) :=
+  CategoryTheory.epi_comp π e.hom
 
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)` reconstructed via
     Tannaka–Krein duality from the fibre functor.
