@@ -168,8 +168,14 @@ def reconstruct_chi_h6_via_sublemma(
                 if key not in A_per_pair:
                     continue
                 A_info = A_per_pair[key]
-                A_re = np.array(A_info["matrix_re"])
-                A_im = np.array(A_info["matrix_im"])
+                # `dtype=float` because the extract witnesses are migrating
+                # off raw float64 JSON numbers onto full-precision decimal
+                # STRINGS (`_precision.fmt`); a bare np.array would build a
+                # `<U..` array and the `1j * A_im` below would raise
+                # UFuncNoLoopError. No-op for the extracts still carrying
+                # numbers, so both generations work. See `qou-zck8`.
+                A_re = np.array(A_info["matrix_re"], dtype=float)
+                A_im = np.array(A_info["matrix_im"], dtype=float)
                 A = A_re + 1j * A_im
                 X = np.kron(rho_p[mu], rho_n[nu_p])
                 # Tr(A · X)
@@ -296,8 +302,14 @@ def main() -> int:
                 if key not in A_per_pair:
                     continue
                 A_info = A_per_pair[key]
-                A_re = np.array(A_info["matrix_re"])
-                A_im = np.array(A_info["matrix_im"])
+                # `dtype=float` because the extract witnesses are migrating
+                # off raw float64 JSON numbers onto full-precision decimal
+                # STRINGS (`_precision.fmt`); a bare np.array would build a
+                # `<U..` array and the `1j * A_im` below would raise
+                # UFuncNoLoopError. No-op for the extracts still carrying
+                # numbers, so both generations work. See `qou-zck8`.
+                A_re = np.array(A_info["matrix_re"], dtype=float)
+                A_im = np.array(A_info["matrix_im"], dtype=float)
                 A = A_re + 1j * A_im
                 X = np.kron(rho_xi_inner[xi], rho_nu_3[nu])
                 # Tr(A · X) — multiplicity c^λ_{ξν} is absorbed into A
