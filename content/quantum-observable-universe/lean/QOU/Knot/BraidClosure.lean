@@ -262,4 +262,62 @@ theorem writhe_parity_cycleType (w : BraidWord n) :
   obtain ⟨m, hm⟩ := hlen
   exact ⟨k + m, by linarith⟩
 
+/-! ### `components ≤ n`, and the parity statement in its `n - c` form
+
+The parity theorem above is stated against `cycleType` because `(n : ℤ) - c`
+needs `components ≤ n`, which needs `cycleType.card ≤ support.card`. Mathlib has
+no such lemma (checked: `Equiv.Perm.card_cycleType_le_card_support` does not
+exist), but it does have `Multiset.card_nsmul_le_sum`, which combined with
+`two_le_of_mem_cycleType` gives it in the **stronger** doubled form. -/
+
+/-- **Every cycle costs at least two points**, so twice the number of nontrivial
+cycles fits inside the support. Stronger than the `card ≤ card` needed below,
+and not in Mathlib. -/
+theorem two_mul_card_cycleType_le_card_support (σ : Equiv.Perm (Fin n)) :
+    2 * σ.cycleType.card ≤ σ.support.card := by
+  have h := Multiset.card_nsmul_le_sum (s := σ.cycleType) (a := 2)
+    (fun _ hx => Equiv.Perm.two_le_of_mem_cycleType hx)
+  rw [Equiv.Perm.sum_cycleType] at h
+  simpa [smul_eq_mul, Nat.mul_comm] using h
+
+theorem card_cycleType_le_card_support (σ : Equiv.Perm (Fin n)) :
+    σ.cycleType.card ≤ σ.support.card := by
+  have := two_mul_card_cycleType_le_card_support σ
+  omega
+
+theorem card_support_le (σ : Equiv.Perm (Fin n)) : σ.support.card ≤ n := by
+  simpa using Finset.card_le_univ σ.support
+
+/-- A braid closure has at most `n` components — one per strand. -/
+theorem components_le (w : BraidWord n) : components w ≤ n := by
+  have h1 := card_cycleType_le_card_support (closurePerm w)
+  have h2 := card_support_le (closurePerm w)
+  simp only [components]
+  omega
+
+/-- `n - c` counted the way the cycle data sees it. -/
+theorem n_sub_components (w : BraidWord n) :
+    ((n : ℤ) - components w)
+      = ((closurePerm w).support.card : ℤ) - (closurePerm w).cycleType.card := by
+  have h1 := card_cycleType_le_card_support (closurePerm w)
+  have h2 := card_support_le (closurePerm w)
+  simp only [components]
+  push_cast [Nat.cast_sub h2]
+  omega
+
+/-- **The parity constraint, in the form the MFW window uses.** `e` and `n - c`
+always share a parity — so `|e| ≤ n - c` is a same-parity, smaller-magnitude
+statement, and the tightness the base-case measurement found at `|e| = n - c` is
+the case where the parities coincide and nothing further is available. -/
+theorem writhe_parity (w : BraidWord n) :
+    Even (BraidWord.writhe w - ((n : ℤ) - components w)) := by
+  obtain ⟨k, hk⟩ := writhe_parity_cycleType w
+  -- Turn `cycleType.sum` into `support.card` while still in `ℕ`: pushing the
+  -- cast first drives it inside the `Multiset.sum` and loses the link.
+  rw [Equiv.Perm.sum_cycleType] at hk
+  refine ⟨k + (closurePerm w).cycleType.card, ?_⟩
+  rw [n_sub_components]
+  push_cast at hk ⊢
+  linarith
+
 end QOU.Knot.BraidClosure

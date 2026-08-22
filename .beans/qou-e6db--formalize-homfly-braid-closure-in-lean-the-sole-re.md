@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-22T21:26:29Z
+updated_at: 2026-08-22T21:30:55Z
 ---
 
 ## Why this bean exists
@@ -185,3 +185,37 @@ cannot be formed cleanly. That is the next concrete target.
 **Still missing for step 2 overall**: that a transposition changes the orbit
 count by exactly `±1` (the magnitude half — this parity work is only the parity
 half), the descending predicate, and the well-founded reduction.
+
+
+## The `n - c` form landed — and the Mathlib gap was fillable
+
+The previous entry recorded the parity theorem as deliberately weakened to
+`cycleType` form, blocked on `cycleType.card ≤ support.card`, which Mathlib
+does not have. **That gap is now filled, in a stronger form than needed:**
+
+- `two_mul_card_cycleType_le_card_support` — **`2 * cycleType.card ≤
+  support.card`**, i.e. every nontrivial cycle costs at least two points. Proved
+  from `Multiset.card_nsmul_le_sum` + `Equiv.Perm.two_le_of_mem_cycleType`. This
+  is a general permutation fact with nothing braid-specific in it; if it is
+  wanted upstream it would go in `Mathlib.GroupTheory.Perm.Cycle.Type`.
+- `card_cycleType_le_card_support`, `card_support_le`, `components_le`
+  (`c ≤ n` — a closure has at most one component per strand), `n_sub_components`.
+- **`writhe_parity`** — `Even (e - (n - c))`, the parity constraint in exactly
+  the form the MFW window uses.
+
+So the base-case bound `|e| ≤ n - c` is now known to be a *same-parity,
+smaller-magnitude* statement, with the parity half **proved** rather than
+measured. The tightness the probe found at `|e| = n - c` is the case where the
+parities coincide.
+
+All sorry-free, zero warnings, axiom-clean. 29 results in the file.
+
+**One tactic note worth keeping** (cost a failed proof): in `writhe_parity`,
+`Equiv.Perm.sum_cycleType` must be rewritten while still in `ℕ`. Running
+`push_cast` first drives the cast inside the `Multiset.sum`
+(`(Multiset.map Nat.cast cycleType).sum`) and severs the link to
+`support.card`, after which `linarith` cannot close it.
+
+**Still open for step 2**: the magnitude half — that a transposition changes the
+orbit count by exactly `±1` — plus the descending predicate and the well-founded
+reduction. This is the parity half only.
