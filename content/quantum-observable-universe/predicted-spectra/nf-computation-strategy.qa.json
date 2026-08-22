@@ -1422,6 +1422,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.282Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1441,6 +1457,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.321Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1460,6 +1492,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 632 words)"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.363Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1479,6 +1527,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 632 words)"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.409Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1498,6 +1562,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.455Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1517,6 +1597,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.500Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1536,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.546Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1555,6 +1667,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.587Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1574,6 +1702,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.628Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1593,6 +1737,22 @@
         "reviewed_at": "2026-08-15T10:31:01.288Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.671Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Bolded strategy headings are noun labels, each followed by finite-verb sentences; nothing stalls read aloud.",
+        "notes": "pass. THREE FINDINGS, none fixed inline. (1) UNDECLARED VARIABLE t, MIXED WITH q IN THE SAME BLOCK. Regime 2 says coefficients are 'exact Laurent polynomials in Z[t, t^{-1}]', and the chaining section uses c_w(t), tr_alt(t), net(t) and the alternating weight (-t^{-2})^{l(w)} — while the optimisation section writes the Hecke relation with q, sigma_i^2 = (q - q^{-1}) sigma_i + 1. t is never defined. It is inferable: the sibling rem:kummer-shell-closure writes the same objects over Z[qcheck^{+-1}] with qcheck = q^{1/2} and the alternating weight (-q^{-1})^{l(w)}, and -t^{-2} = -q^{-1} exactly when t = q^{1/2} — so t is qcheck. But the reader has to reconstruct that from another block, and AGENTS.md 7a reserves against t as a polynomial variable (Jones is J_K(q), never V_K(t)). Proposed: write qcheck throughout, or state 't := q^{1/2}' once. (2) FLOAT FALLBACK, against the NO-FLOAT64 directive. The block's closing sentence prescribes 'a per-length accumulation float engine' for A > 20, and the sibling kummer block likewise has 'The float engine serves as a cross-check at q_0'. AGENTS.md's precision section (STRICT, 2026-08-18) forbids computing in float in computations/ and says a float64 input poisons the whole result; a per-length accumulation over A > 20 terms is exactly the aggregate-error case it names. Whether the engine actually exists is outside what I could check from the .md, but the block prescribes it. (3) UNDEFINED PARAMETERS c and d: the bottleneck paragraph characterises neutron-neutron crossings by 'c = 1, d = -(q - q^{-1})', referring back to the transfer matrices T(c_j, d_j) of Regime 1, which are named but never given. Lesser note: the scalability table's 'Coefficients' column holds magnitudes (10^12, 10^17, 10^22, > 10^38) in four rows and a count, O(A^2), in the fifth."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1615,5 +1775,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:26:28.671Z"
 }

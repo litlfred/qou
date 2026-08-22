@@ -1178,6 +1178,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.292Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1197,6 +1213,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.342Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1216,6 +1248,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 238 words)"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.383Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1235,6 +1283,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 238 words)"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.424Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1254,6 +1318,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.465Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1273,6 +1353,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.505Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1292,6 +1388,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.673Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "The block-final sentence ('The coordinates q and i govern the structure: q generates radial motion, while i generates the sigma-rotation connecting rays') is a decomposition reading — radial versus angular — not a restatement of anything the block established, so it does not fire this criterion.",
+        "notes": "pass on the trap criterion, but that closing sentence is loose on its own terms: q and i are not coordinates on C^x, and neither 'generates' anything in the group sense — sigma and tau are the generators, and q is the point being acted on. FIVE MATH FINDINGS, none fixed inline. (1) M IS NOT IN GL_2(Z). det [[-1,4],[4,3]] = -3 - 16 = -19, and GL_2(Z) requires det = +-1. The block asserts 'M in GL_2(Z)' and later 'M, M' in GL_2(Z) as the real-axis elements'. Its Moebius action is fine (only the projective class matters) and its FIXED PAIR IS CORRECT — I solved (-z+4)/(4z+3) = z and got exactly {1/phi, -phi} — so only the group-membership claim is wrong. Proposed: GL_2(Q), or PGL_2(Z[1/19]), or drop the ambient group. (2) THE TWO i-ROTATED FIXED PAIRS ARE SWAPPED. The block says M^sigma = S^{-1} M S 'fixes the i-rotated golden pair {i/phi, -i phi}' and that its bar conjugate fixes {i phi, -i/phi}. Solving (-z-4i)/(4iz+3) = z gives iz^2 + z + i = 0, i.e. z^2 - iz + 1 = 0, whose roots are i(1 +- sqrt 5)/2 = {i phi, -i/phi} — the OTHER pair. Two independent confirmations: direct substitution, M^sigma(i phi) = (-i(phi+4))/(3-4phi) = i phi exactly; and the conjugation identity, S^{-1}MS fixes S^{-1}(fix M) = -i{1/phi, -phi} = {-i/phi, i phi}. The pair the block assigns, {i/phi, -i phi}, is S(fix M), which is fixed by S M S^{-1}, the conjugate in the other direction. Proposed: swap the two sentences, or redefine M^sigma := S M S^{-1}. (3) M' IS NEVER DEFINED. It appears only in '{M, M', M^sigma, M'^sigma}' and 'M, M' in GL_2(Z)'. (4) 'Each matrix fixes exactly one coset of G_8' does not add up: each of the four matrices fixes a PAIR, so four matrices account for 8 = |G_8| points, whereas a coset of <sigma> in G_8 has 4 elements and four cosets would be 16. Proposed: 'Each matrix fixes exactly one antipodal pair'. (5) 'FIXED LOCUS' IS THE WRONG WORD, and the sentence is self-contradicting: 'Together, G_8 union {zeta_8-orbit} form the full D_4-fixed locus on C^x' — these are orbits, not fixed points (the stabilisers are trivial for G_8 and order 2 for the zeta_8 orbit), they do not exhaust C^x (D_4 acts on every point of C^x), and the table immediately below lists two further orbit types, so the union of two of the four is not 'the full' anything. The table's last row also puts 0 and infinity in a locus the header restricts to C^x, from which 0 is excluded by definition."
       }
     ],
     "trap-performed-warmth": [
@@ -1311,6 +1423,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.543Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1330,6 +1458,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.585Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1349,6 +1493,22 @@
         "reviewed_at": "2026-08-15T10:31:01.275Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "632f30fb46c0",
+          "ts": "c02ae704cd6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:24:00.631Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proof and its four appended sections (real subgroup, Moebius lifts, unit circle, the closing sentence). Verified symbolically what is right, and much of it is: the tau-images {1/phi, -i/phi, -1/phi, i/phi} are correct term by term; the orbit-stabiliser step is correct (|D_4| = |G_8| = 8 gives trivial stabiliser); P(z/i) = z^4+3z^2+1 and the difference-of-squares factorisation to z^8-7z^4+1 are both correct; D_4^R = <sigma^2, tau> really is Klein four and really does preserve R^x; S = diag(i,1) is in GL_2(Z[i]) (det = i, a unit) and does realise q |-> iq; the conjugate S^{-1} M S = [[-1,-4i],[4i,3]] is computed correctly; the zeta_8 orbit {zeta_8, zeta_8^3, zeta_8^5, zeta_8^7} is correct with stabiliser <sigma tau> of order 2 (I checked sigma tau (zeta_8) = zeta_8); and the orbit of 1 is the four 4th roots of unity with stabiliser <tau>, also correct. No trap construction of any of the ten classes: no contrast, pivot, dash, triple, aphorism, meta-commentary, warmth, superlative or non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1371,5 +1531,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:24:00.673Z"
 }
