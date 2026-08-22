@@ -300,6 +300,57 @@ This one produced a retraction (`qou-76a6`, scrapped). It is the sharpest form
 of the pattern: **the failure the tool was built to find, arriving inside the
 tool.**
 
+### 7 — the expression wrapped in a numeric cast (added 2026-08-22)
+
+Found by walking into it, not by looking for it: I went to work the Markov
+keystone, read the probe that `MarkovTraceOnHecke.lean` cites as evidence for
+ingredient 2, and found it binding
+
+```python
+z = float(+(1.0 / (mp.sqrt(Q_MP) + 1.0 / mp.sqrt(Q_MP))))   # = 0.4993203342 = z_C
+```
+
+`computations/probes/markov_reduction_h3_to_h4_verify.py:60`. The audit reported
+**zero** sites for that file.
+
+The blindness is one `isinstance` deep. Every shape matcher opens with
+
+```python
+if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
+    return False
+```
+
+and the assigned value here is `Call(float, [UnaryOp(+, BinOp(Div, ...))])`, so
+it bailed on the first line. Not a subtle shape — the C expression is written
+out in full, in the canonical spelling the matcher was built for, one cast away
+from visible.
+
+**Fixed** by `unwrap_casts()` in `scripts/convention-c-producer-audit.py`:
+strips unary `+`/`-` and single-argument calls to a known cast name (`float`,
+`complex`, `mpf`, `mp.mpf`, `Decimal`) before matching. Deliberately
+conservative — `Fraction(a, b)` and `round(x, n)` are multi-argument and are not
+unwrapped, and `float(q**3/(q**2+1))` is still D. Eight new self-test cases
+cover the spelling and those three negatives; the battery is 50 → 58 and every
+pre-existing case still passes.
+
+**Yield: exactly one new site**, and it is worth stating precisely because the
+number is small and the temptation is to round it up. The other live site the
+audit lists, `qbeta_h_frame_rungs_probe.py:73`, was **already** detected — it is
+the plain unwrapped form and was the baseline run's "1 site". So the fix moved
+the count 1 → 2, not 0 → 2.
+
+**Why one site still matters here.** That site's conclusion is quoted in a Lean
+docstring as the evidence for a keystone ingredient. The probe is also float64
+end to end (`np.linalg.solve` for the Markov weights, `float(np.trace(M))`,
+and a `mp.workdps(100)` block whose result is immediately cast to `float` —
+the dps no-op the precision gates exist to catch). So a convention-C, float64
+probe is standing as evidence for a general-`n` structural claim, and neither
+gate saw it.
+
+This is the fourth blind spelling found **by** a detector written to catch the
+previous one, which is the pattern this document exists to record: each fix
+closes a shape and reveals that the surface was never measured, only sampled.
+
 ## The counter-move that worked, twice
 
 Numeric evaluation. R9 catches what R4/R5 cannot because a docstring and a
