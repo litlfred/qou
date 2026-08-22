@@ -3230,3 +3230,181 @@ throughout. `(σ₀σ₁⁻¹)³` confirmed Borromean by closure permutation.
 and a **useful pin-negative**: at 4 printed digits `E₀` cannot discriminate
 proton from muon (both 4.185981), while the erroneous 1.1097 would give
 4.197665, so that value is demonstrably not in use.
+
+
+## From agent:h00 (mass-endomorphism hq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 4 fixes. **`trap-superlative` was again the top
+failure (9 of 45), and again 7 of the 9 attach to a claim the block's own
+witness, sibling, or arithmetic refutes.** Three consecutive batches with
+that shape — the axis is functioning as a defect detector, not a style one,
+and that is worth knowing when reading its counts elsewhere.
+
+### A block that declares D and prints C, with a decisive independent check
+
+**H00-1. `markov-trace-axiomatic-closed-form`.** Re-derived the closed form
+in sympy from the block's own recurrence at the proton pin:
+
+| | tr_M | ρ_p |
+|---|---|---|
+| convention C | **1.63315337744905357** (printed) | **1124.2973** (printed 1124.3) |
+| convention D (canonical) | 1.88431946725497488 | 974.437 |
+
+15.38 % apart. **The denominator settles it without touching the numerics**:
+the exact denominators are `q⁸(q+1)` under C and `q⁷(q²+1)²` under D, and the
+printed `q¹⁰(q+1)³` carries a `(q+1)` power **D cannot produce**. It matches
+neither, so the printed form is not simply a C leak but a third thing.
+
+Its sibling `markov-trace-recursive-reducer` prints **1.884319** — the D
+value — for the *same* word `σ₁⁷σ₂⁴` under the *same* declared convention,
+and that sibling's `.ts` documents this exact failure mode in its own words:
+*"A block citing a witness that disowns itself is how the convention-C values
+reached this proposition's table."* The fix was applied to the reducer and
+not to this block.
+
+### Verified against a witness that refutes it
+
+**H00-2. `markov-trace-antipode-polynomial-symmetry`** is `status:
+"verified"` against `probes/poly-q-proof.witness.json`, which records
+`max_relative_diff_across_q = 7.888` and, at q₀,
+`tr_M_numeric = 1.6331533774490408` against
+`tr_M_pr546_closed_form = 0.43313389325191254` — a factor of ~3.8. The only
+field the witness confirms is `anti_self_reciprocal_proved`. The polynomial
+identity `q²⁰p(1/q) = −p(q)` **is** correct (re-derived). What the witness
+refutes is the *identification* `p(q)/(12q¹⁰) = tr_M(𝓑_p)`. A true lemma
+carrying a false attribution — the same shape as the defined-residual rule.
+
+**H00-3.** Same block: "shift(K) … equals 18Z + 21N + 1" gives 19 at (1,0),
+but the block's own denominator `12q¹⁰` and its own `deg_q p = 2·shift`
+require **shift = 10**. 19 is the *u*-coordinate pole order, from a different
+block. It also calls `H_n(q)` a Hopf algebra (it is not; `U_q(sl_n)` is) and
+places `𝓑_p` in `B₃` against the cited proposition's `n = 3A + Z = 4`.
+
+### A bolded claim beside the cell that refutes it
+
+**H00-4. `categorical-chain-convergence-mechanisms-table-data`** bolds
+"clears 1 ppb" next to its own cell reading **0.0094 ppm = 9.4 ppb**. From
+the parent's own bound `|R_N| ≤ ℏ_q^{2(N+1)}/(1−ℏ_q²)` at the proton pin (40
+dps): N=3 → **9.38065 ppb**, N=4 → 0.0921 ppb. **Every printed value
+reproduces the bound exactly** — only the annotation is wrong, and the same
+error is in the parent prose. Useful negative: this table cannot discriminate
+the pins (proton and muon both give 9914.52 ppm at N=0).
+
+**H00-5. A table row contradicts the Lean it names.**
+`chi-v3-closed-form-proof-table-data` says the polynomial part "vanishes at
+q=1"; `chi-v3-closed-form-proof.lean:172–177` computes
+`chi_V3_polynomial_part 1 = −1/4` from `−(q⁵+q³−q)/4`. The row is also
+internally impossible: the geometric part is 1/4 and the total is stated 0.
+
+**H00-6. A table contradicts its own headline equation.**
+`mass-endomorphism-conjecture` asserts `tr_M(Φ^trans) = Vol(K)/ℏ_q² − |tr_M|`.
+For the trefoil the block itself states `Vol = 0`, giving **−0.551**; the
+table prints **+111.86**, which is `Li₂(q⁻²)/ℏ_q² = 111.8955` — the vacuum
+drag. So the *row* is right and the *equation* does not cover it, unremarked.
+The 4₁ row is 0.4 % off: `Vol(4₁)/ℏ_q² = 206.7683` (206.5863 after
+subtracting `|tr_M|`) against a printed 207.40, which back-solves to
+`Vol(4₁) = 2.03787` rather than 2.0298832.
+
+### Mathematics
+
+**H00-7. A failure locus that omits the odd-order roots.**
+`hecke-baer-star-generic`'s boxed set `{q : q^{2k} = 1, k ∈ 2..n}` is right;
+its "equivalently … primitive 2k-th root … `{ζ₄, ζ₆, …, ζ_{2n}}`" is not.
+**Counterexample `q = ζ₃`**: `ζ₃⁶ = 1` puts it in the box at k = 3, and
+`[3]_{ζ₃} = 0` directly — but ζ₃ is not a primitive 2k-th root for any k.
+Correct enumeration: d even with `4 ≤ d ≤ 2n`, **together with** d odd with
+`3 ≤ d ≤ n`.
+
+**H00-8. A regime that excludes nothing.**
+`hecke-branching-trace-decomposition-proof`'s "Wenzl positivity regime" is
+`q^{1/2} + q^{−1/2} ≥ 2`, which by AM–GM holds for **every** `q > 0`, with
+equality only at q = 1. At q₀ it is 2.0027223639. Note the agent's care here:
+`1/(q^{1/2}+q^{−1/2}) = z_C` exactly, but it is used as a positivity
+inequality and **not** as a Markov parameter, so the block is **not** read as
+convention-C-dependent. That distinction is the right one.
+
+**H00-9. A step whose stated reason is checkably wrong.**
+`hecke-baer-star-generic-proof` Step 1: under `q ↦ q⁻¹`, `q ↦ q⁻¹` and
+`−q⁻¹ ↦ −q`; neither is the other member of `{q, −q⁻¹}`. The map that swaps
+them is `q ↦ −q⁻¹` — the *other* involution, and the one that induces
+`λ ↦ λ′`. Scope **(a)**: the justification fails; the conclusion may still
+hold. The same proof assumes algebraically-closed `R` against a
+characteristic-0-field hypothesis, and calls `d_λ` the isotypic dimension
+where it is `dim V_λ`.
+
+**H00-10. Another wrong braid word.** `bring-embeddable-knots-table-data`'s
+5₂ row gives `σ₁²σ₂⁻¹σ₁σ₂⁻¹`, whose closure has `Δ = −(1−t)³` with
+`Δ(1) = 0` and permutation product (13) — a **2-component link**. The correct
+word is `σ₁²σ₂²σ₁σ₂⁻¹`, `Δ = 2 − 3t + 2t²`. Verified with
+`braid-alexander.ts`. That is the third wrong braid word this campaign, all
+found by computing the closure rather than reading the label.
+
+**H00-11. A spectral sequence assembled from mismatched parts.**
+`gb-spectral-sequence` asserts `d∘d = 0` for `d = d_H + d_F + d_YB`
+(rewriting rules) and cites a classical theorem about the **Hochschild**
+differential, introduced two paragraphs later, with nothing connecting them.
+Also: "each rule lowers filtration degree" is false for `d_F` and `d_YB`
+(both preserve word length); "bounded below" and "exhaustive" are swapped
+(the second is separatedness); `tr_M` is typed `→ ℂ` against the proof's own
+"values live in R"; and `E_∞^{p,q}` uses `q` as a bidegree.
+
+**H00-12. A circular trace and an unsupported value.** `mass-identity-su2`
+defines `tr(φ) = (∫_A ⊗ id)∘Δ∘φ`, then applies `(∫_A ⊗ id)∘Δ` **twice** in
+the mass formula. "Integrating this character … yields `𝔪(ϱ) = 1`" is
+asserted with no computation, and the naive Haar integral of `χ_{1/2}` is
+**0** by orthogonality. It also reuses `\varTheta`, reserved for the QOU
+tuple, as the SU(2) rotation angle.
+
+**H00-13. One wrong factor in an otherwise exemplary block.**
+`markov-z-reconciliation` says the two parameters "differ by a factor of
+`q − 1`"; the actual ratio is `z_J/z_m = (q−1)z_m = 0.0549145`, not
+`q − 1 = 0.1099786` — out by `z_m ≈ ½`. The block's own Relation section
+gives it correctly.
+
+### Structure
+
+**H00-14.** `homological-shell-condensation` is `.ts` kind **`proposition`**
+with tag `open-problem`, `.md` headed "**Proposition (Conjecture — …)**", and
+a sibling saying "this remains conjectural" — neither the `conjecture` kind
+nor the §3b-cond exception. Everything downstream inherits the provable kind.
+Its interpretation sibling also claims magic numbers are "the only nucleon
+counts" (sub-magic 6/14/16/32/34 show observed kinks; 126 is neutron-only),
+asserts a biconditional on a one-directional argument, and omits n = 28 from
+both of its own lists.
+
+**H00-15. The dangling boilerplate banner, now ×3 in one chapter.**
+`hecke-algebra-type-scaffold`, `hecke-branching-trace-decomposition` and
+`markov-trace-operator-construction` all **end** on "**Archimedean
+specialisation.** What follows sits on the archimedean side…" with nothing
+following, and the three copies have already drifted in wording.
+(`mass-identity` has the good, block-specific version.) This is now the
+fourth and fifth instance across the campaign.
+
+**H00-16. Count mismatches (3):** "**two** partial mitigations" followed by
+three items; "**three** stages" followed by four; "M1–M4" against a sibling
+proposition's three axioms. **Sweep damage:** `mass-identity-C-proof` carries
+`\[yekutieli2015]` twice, where its sibling shows the correct `\cite{}` form.
+**A chapter-wide `is → forms/provides/constructs` substitution**: ~8 sites in
+`gb-spectral-sequence` alone plus singles across seven other blocks; three
+unambiguous ones fixed, the rest flagged as a single pass so a partial fix
+does not leave the register inconsistent.
+
+**H00-17. Retraction.** The agent first read the 4₁ transient row (207.40) as
+a plain arithmetic error; on recheck it is 0.4 % off, not grossly wrong, and
+the substantive defect in that table is the **trefoil** row (H00-6) where the
+equation genuinely does not apply. Reported that way.
+
+### Verified clean — do not re-flag
+
+`markov-trace-recursive-reducer` (both table entries re-derived exactly under
+D: proton 1.88431946725, neutron 1.46403413634; its witness carries 9 real
+all-passing assertions with `closed_form::σ_1 = z_D` exactly);
+`markov-z-reconciliation`'s `z_m`/`z_J`/`z_−` and its Ocneanu weight formula,
+which reproduces the D weights `[4]_q/[2]_q³`, `1/[2]_q²`, `0`
+**symbolically**, with `Σ dim·w = 1` under both conventions;
+`markov-trace-axiomatic-closed-form-table1-data` (all 8 recurrence rows);
+`chi-per-irrep-cyclotomic-closed-forms-table{1,2}-data`;
+`markov-trace-antipode-polynomial-symmetry-proof`; `mass-geometric-drag`;
+`mass-identity-exists{,-proof}`; and the tower/Φ_q numerics of
+`mass-endomorphism-conjecture` (73.8875 / 94.2887 / 99.7474 / 99.9898 %;
+`Φ_q(0.989) = 671094`, `Φ_q(1) = 901389`).
