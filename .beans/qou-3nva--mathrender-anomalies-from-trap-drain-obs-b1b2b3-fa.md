@@ -1700,3 +1700,125 @@ All 9 rows of the Breit–Wheeler product table; the `S₃` sign projector;
 every cyclotomic degree and `r₂` in the field table; and all four margins in
 `bar-self-dual-confinement-band-proof`, which are pin-independent at the
 displayed precision.
+
+---
+
+## From agent:e01 (predicted-spectra eq_01) — 2026-08-22
+
+23 prose blocks and 22 data tables. **The tables carried the findings** —
+which is the argument for reading them even though they take no trap
+verdicts.
+
+### A failing witness cited as confirming evidence
+
+`e-hartree-categorical-derivation` states: *"The H₂ witness gives the
+dimensionless ratio `E_bind/E_Hartree ≈ 0.170` … It matches the
+standard-physics H₂ ratio ≈ 1/6."*
+
+From `h2-molecular-binding.witness.json`:
+`0.8645364577143441 / 27.211467573147633 = 0.03177103386`. **0.170 appears
+at no key in the witness.** It is the *experimental* ratio (D₀ → 0.164563,
+D_e → 0.174434). And the witness itself records
+
+    {"name":"H2 binding energy within 5% of observed",
+     "computed":0.8645, "expected":4.478, "passed":false}
+    "allPassed": false
+
+Root cause: tables 2, 3 and 11 are pinned to a **superseded run**. Table 2's
+`Φ₁ binding 0.687` / `E_bind 4.64 eV` against the current `0.12847272688` /
+`0.86453646` are ratios **5.3474** and **5.3670**; and `4.64/27.30 =
+0.169963` is the quoted 0.170 exactly. Table 11's unstated "target" *is*
+0.16996, verified across all six rows. Against the current witness those six
+candidates score 5.246–6.029, so the mechanism Table 11 calls "a direct
+symbolic computation" now supports nothing.
+
+### The quantity to be derived is supplied experimentally in its own evidence
+
+Same block, two different `α_EM` in one place. Table 2 uses the framework
+value — recomputed `1/α = q[9]_q[10]_q = 136.823208854`, giving
+`m_e c²α² = 27.29609 eV`, **0.3113 % above** the CODATA Hartree. The
+witness cited as evidence uses `alpha_EM = 0.007297355976840865`
+(`1/α = 137.035935`, i.e. CODATA) → `E_hartree_eV = 27.211467573`.
+
+### Two tautologies presented as Mathlib gap closures
+
+`cl2-pentagon-and-faddeev-partial`.
+`Cl₂(0) − Cl₂(0) + Cl₂(0) − Cl₂(0) + Cl₂(0)` has three plus and two minus
+terms, so it collapses to a single `Cl₂(0)`; and `Φₙ(0;q) = 1` makes
+`(1−q)log Φₙ(0;q) − Li₂(0) = 0 − 0` for every `(q, n)`. The joint Lean
+statement is literally `Cl_2(0) = 0 ∧ Li_2(0) = 0`, while the `.ts`
+authorNote calls it *"closes a non-trivial portion of substantive Mathlib
+gaps (2) and (3)"*. Table 1's own gloss concedes *"pentagon holds by
+definition"*. Strict Lean Discipline item 5 / "Axiomatization is NOT a
+Proof".
+
+### The Λ-vs-Cl₂ guard, independently confirmed — and the Lean is the right side
+
+`clausen-function-mathlib-filler` writes `Vol(𝓑₃) = 8Cl₂(π/4) = 8G`, where
+`8·Cl₂(π/4) = 7.85497720840163` and `8G = 8·Cl₂(π/2) = 7.32772475341775` —
+the middle term is **7.195 %** larger than both outer terms. The correct
+form is `16Λ(π/4) = 8Cl₂(π/2)`.
+
+**The `.lean` is correct** (`ClausenFunctionMathlibFiller.lean:139`,
+`8 * Cl_2 (Real.pi / 2)`), and its docstring carries the smoking gun:
+`` `G = Cl_2(π/2)` (NOT `Cl_2(π/2)`) `` — the NOT-clause repeats the thing
+it negates, so it was written against `Cl_2(π/4)` and later half-corrected.
+Table 1 in the same block self-contradicts. A **third** site is outside this
+batch: `mass-theory/binding-scale-catalan-proof.md:4` (`G = Cl₂(π/4)`).
+
+### Tables whose rows contradict themselves
+
+- **`diophantine-valley-table-data`: 4 of 7 rows have a printed `n/p` that
+  is not the `n/p` of the same row.** Br 35/44 printed 1.10, actual
+  **1.2571**; Zr 40/50 printed 1.20, actual **1.2500**; Sn 50/70 printed
+  1.30, actual **1.4000**; W 74/110 printed 1.40, actual **1.4865**. The
+  `(p,n)` pairs are real nuclides; the first column is an unchecked
+  1.10/1.20/1.30/1.40 decade ladder, and a "threshold-crossing" reading
+  does not rescue it.
+- **`chebyshev-torus-coefficients`: four mutually inconsistent laws for one
+  `cₙ`.** The boxed `U_{n−1}(x/2)`, the block's stated recurrence, the
+  correct Hecke transfer, and the referenced table each give different
+  sequences — the boxed form needs `−c_{n−1}` and the transfer needs
+  `+c_{n−1}`, so they diverge in **sign** from n=3. No single recurrence
+  generates the whole table.
+
+### `diophantine-valley` and `elliptic-stability-locus`: right answers, wrong routes
+
+- Three mutually inconsistent normalisations of the Coulomb term appear in
+  `diophantine-valley` (coefficients `4c`, `2c`, `c`); **(ii) and (iii)
+  equated force `c = 0`**. Only the third matches the textbook SEMF
+  `Z* = A/(2 + (a_C/2a_A)A^{2/3})`.
+- **Mordell is misapplied**: Mordell–Weil gives *finitely generated*, not
+  finite, and a positive-rank curve has infinitely many rational points.
+  Finiteness of **integral** points is Siegel's theorem — and the block's
+  own points are integral, so Siegel is what it wants.
+- `elliptic-stability-locus`'s erbium result is reached by a route other
+  than the equation it is presented as following from: the block's own
+  `p² = (1−c)/(4c³)` gives **p = 270.93**, and its own match condition gives
+  **237.5**, against the stated 67.8. The 67.8 ↔ erbium pairing *is*
+  reproducible — via the **textbook** `Z = A/(2+cA^{2/3})` at A = 167,
+  giving Z = 68.05.
+- Its discriminant is printed 16× small (`−18.95` for `−303.145`), and that
+  this is a slip rather than a convention is provable from the same line:
+  the printed `j = 129.9` matches `c₄³/Δ` with the **standard** Δ, where
+  `−18.95` would give `j = 2077`.
+
+### `em-coupling-bring-zero-mode`: the residual is smaller than the pin shift
+
+The table is arithmetically exact at the **old muon** pin. But
+`tree(muon) − tree(proton)` is `1.0801e-5`, **relative 7.894e-8 — larger
+than the claimed `+5.7e-8` residual**. Under the proton compute default the
+two-term residual becomes **−2.14e-8**, flipping sign. And `+5.7e-8` is
+**372σ**, not "approaching `σ_α = 1.5e-10`". Its cited witness
+`alpha-em-correction-derivation-attempts.witness.json` **does not exist** —
+checked against all 1421 witnesses in `computations/`.
+
+### Recorded clean, including one I expected to fail
+
+`α²/h⁴ = 1/(q²(q⁹−q⁻⁹)²(q¹⁰−q⁻¹⁰)²)` is algebraically exact. Table 10
+verified row by row via `[n]_{−q^{±1}} = (−1)^{n+1}[n]_q`. Table 12's
+characters reproduce with `χ_{(3,1)}+χ_{(2,1,1)} = −h` exactly. Table 13's
+"≈[5]_q amplification" holds (5.280 vs 5.2204, 1.1 %). And the
+**convention-D** parenthetical in Mechanism B is *correct* — D is exactly
+what makes `det G = 0` and forces the `H_n/rad ≅ TL_n` reading. No
+convention-C residue anywhere in this batch.
