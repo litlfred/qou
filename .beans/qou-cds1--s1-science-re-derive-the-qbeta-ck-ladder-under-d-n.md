@@ -6,6 +6,8 @@ type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
 updated_at: 2026-08-22T19:31:51Z
+
+updated_at: 2026-08-22T12:44:58Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -931,3 +933,33 @@ the transport a D re-derivation must supply. SCOPE: locates, closes nothing; the
 legs forced+formalized, c2 settled, c3 proven un-forceable (f-map), residual
 closure forbidden as fitting. No legitimate derivation move remains that isn't
 already done or a forbidden fit.
+
+
+## 2026-08-22 — the N=3 rung is frame-invariant, and that REMOVES its evidence (PR #5448)
+
+Formalize-first step for N=3, per this bean's own fence. No extractor run, no c_k proposed.
+
+**Constraint.** `decayLadder_zC_not_jones` already proves C != D for s > 1 (the Jones
+pin z*[2]_q = q^2 IS z_D). The complementary half was never recorded: s = 1 IS a root
+of that locus, so **C and D define the same Markov parameter at q = 1**, and by the
+factorisation (s-1)(s^6+s^5+2s^4+s^3+s^2+s+1) at no other positive point.
+
+**Prunes:** c_2 = -1 (ring identity, z-free) and c_3 = J_Hopf(q=1) = -2 (evaluated at
+the one coincidence point) are UNMOVED by the ruling. The extraction, c_4, c_5 are all
+at q_0 != 1 and still need re-deriving.
+
+**This is a negative.** c_3 = -2 surviving is not evidence for it: its only support was
+the 3.47% C-frame near-match, which does not transfer (under D the same value sits
+~4.7e4% from re-extraction). The ruling does not refute the closed form, it removes its
+support. Scope-(a). -974 stays a sensitivity measurement.
+
+LEAN (sorry-free, lean-direct EXIT=0, axioms [propext, Classical.choice, Quot.sound] on
+all six) QOU/QBeta/MarkovZClassicalCoincidence.lean: coincidenceLocus_factor (generic
+CommRing), zCsub_one, zDsub_one, zCsub_eq_zDsub_one, coincidenceLocus_cofactor_pos,
+zCsub_eq_zDsub_iff (SHARPER than the existing s>1 result — also rules out 0<s<1).
+
+PROBE: computations/qbeta/qbeta_zcd_classical_coincidence_probe.py, 7/7 exact ℚ, no
+float. The locus is DERIVED from the numerator of z_C - z_D, not asserted (my first
+draft asserted it, with a comment misstating z_C(s^2) as s/(s^4+1); it is s/(s^2+1)).
+
+STILL OPEN: the extraction path, c_4, c_5.
