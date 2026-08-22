@@ -317,12 +317,40 @@ except ImportError:
 # can reach the same MeV anchors without depending on the flat-name
 # `experimental_constants` shim that only `_legacy` puts on sys.path.
 # Authoritative source is the substrate cluster file; values match.
-M_E_MEV     = 0.51099895069   # ± 0.00000000015 MeV (CODATA 2022, full 11 sig figs)
-M_E_MEV_ERR = 0.00000000015
-M_P_MEV     = 938.27208816    # ± 0.00000029   MeV (CODATA 2022)
-M_P_MEV_ERR = 0.00000029
-M_N_MEV     = 939.56542052    # ± 0.00000054   MeV (CODATA 2022)
-M_N_MEV_ERR = 0.00000054
+# READ from the NIST table, not transcribed -- same discipline as the two
+# mass ratios above (PR #5149). This block was left on literals by that pass
+# and three of the six were the CODATA-**2018** values under a "CODATA 2022"
+# comment: M_P_MEV 938.27208816 (2022: ...943), M_N_MEV 939.56542052
+# (2022: ...194), and M_N_MEV_ERR 0.00000054 (2022: 0.00000048). M_E_MEV_ERR
+# was 0.00000000015 against the table's 0.00000000016. Q_NEUTRON_MEV below is
+# DERIVED from all three, so it inherited the drift.
+_E_MEV  = _codata("electron mass energy equivalent in MeV")
+_P_MEV  = _codata("proton mass energy equivalent in MeV")
+
+M_E_MEV     = float(_E_MEV.value)
+M_E_MEV_ERR = float(_E_MEV.uncertainty)
+M_P_MEV     = float(_P_MEV.value)
+M_P_MEV_ERR = float(_P_MEV.uncertainty)
+
+# M_N is NOT read from the table, deliberately. The table's neutron entry is
+# the CODATA-DIRECT value 939.56542194; the corpus canonically uses the
+# AME-DERIVED 939.56542179 (codata_2022_source.M_N_MEV = M_N_MEV_AME_DERIVED),
+# and this block documents itself as a mirror of
+# computations/substrate/experimental_constants.py. Layer 2a cannot import
+# from computations/, so the AME value is carried as a literal here.
+#
+# The distinction is load-bearing, not cosmetic: Q_NEUTRON_MEV below is
+# m_n - m_p - m_e, and AME pins that DIFFERENCE rather than the absolute
+# masses. Reading the CODATA-direct neutron from the table while taking the
+# 2022 proton shifts Q_beta by +0.15 eV -- an artifact of mixing the two
+# determinations, not a real change. A first pass of this drain did exactly
+# that before the cancellation was noticed.
+#
+# Excluded from codata_table_vintage_audit by design: AME-derived quantities
+# are not CODATA-adjustment outputs and checking them against the table is a
+# category error (AGENTS.md).
+M_N_MEV     = 939.56542179    # AME-derived, mirrors codata_2022_source.M_N_MEV
+M_N_MEV_ERR = 0.00000060
 # β-decay endpoint Q-value (n → p + e⁻ + ν̄):
 #   Q_β = m_n − m_p − m_e   (m_ν ≈ 0 in the rest mass budget)
 Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV         # ≈ 0.78233341 MeV

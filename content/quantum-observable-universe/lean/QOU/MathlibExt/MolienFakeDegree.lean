@@ -1,4 +1,5 @@
 import QOU.MathlibExt.QPartitionCombinatorics
+import QOU.Mathlib.SYTEnumerationFintype
 
 /-!
 # QOU.MathlibExt.MolienFakeDegree — the correct q-analogue of `Σ_λ (f^λ)² = n!`
@@ -43,11 +44,18 @@ definitionally to `qFactorial / ∏_cells qBracket (hookLength …)`.
 ## Scope — read before extending
 
 These are the **concrete cases `n ≤ 4`**, kernel-checked. The general-`n` statement is
-not here. Mathlib as of `v4.24.0` has `YoungDiagram` and `Nat.Partition` but no hook
-lengths, tableaux, or hook-length formula (probed by name, all absent); this corpus
-supplies `Partition.hookLength` and `qDim` itself, so the missing pieces for a general
-proof are `f^λ` as `#SYT` (see beans `qou-8dhg`, `qou-phl4`, `qou-apqw`) and the graded
-decomposition of the coinvariant algebra. Tracked as a bean rather than faked.
+not here. Mathlib as of `v4.24.0` has `YoungDiagram` and `Nat.Partition` but no hook lengths,
+tableaux, or hook-length formula (probed by name, all absent). **The corpus supplies
+all three of the combinatorial ingredients**, which an earlier draft of this note
+wrongly listed as missing: `Partition.hookLength` and `qDim` in
+`QPartitionCombinatorics`, and `#SYT` in `QOU.Mathlib.SYTEnum` — `numSYTenum` is
+kernel-computable (the `numSYT_*` lemmas below are `by decide`) and is bridged to the
+structure-level count by `numSYTenum_eq_numStandardYoungTableaux`.
+
+So the genuinely missing piece for a general-`n` proof is narrower than "hook-length
+theory": it is the **graded decomposition of the coinvariant algebra**
+(Chevalley/Steinberg) plus an induction over `Finset`-many partitions. Tracked as
+bean `qou-3quc` rather than faked with a `sorry`.
 
 The identity is standard (Chevalley/Steinberg + fake degrees); what is corpus-new is
 the diagnosis that `Σ qDim²` is the wrong q-analogue.
@@ -58,6 +66,7 @@ Note `qDim` is `ℝ`-specialised upstream although it is purely algebraic (AGENT
 
 namespace QOU.MathlibExt.MolienFakeDegree
 open QOU.MathlibExt.QPartitionCombinatorics
+open QOU.Mathlib.SYTEnum
 
 /-! ### Bridge lemmas: `qDim` on concrete partitions, by `rfl` -/
 
@@ -91,44 +100,78 @@ open QOU.MathlibExt.QPartitionCombinatorics
 @[simp] theorem qDim_1_1_1_1 (q : ℝ) :
     qDim q [1, 1, 1, 1] = qFactorial q 4 / (1 * (1 * qBracket q 4) * (1 * qBracket q 3) * (1 * qBracket q 2) * (1 * qBracket q 1)) := rfl
 
+/-! ### The SYT counts, COMPUTED by the kernel
+
+`f^lam` is not typed in as a literal below: `numSYTenum` enumerates the standard
+Young tableaux and `decide` evaluates it, so a mis-counted `f^lam` cannot silently
+produce a true theorem about a wrong coefficient. `numSYTenum` is bridged to the
+structure-level count by `numSYTenum_eq_numStandardYoungTableaux` upstream. -/
+
+@[simp] theorem numSYT_2 : numSYTenum [2] = 1 := by decide
+
+@[simp] theorem numSYT_1_1 : numSYTenum [1, 1] = 1 := by decide
+
+@[simp] theorem numSYT_3 : numSYTenum [3] = 1 := by decide
+
+@[simp] theorem numSYT_2_1 : numSYTenum [2, 1] = 2 := by decide
+
+@[simp] theorem numSYT_1_1_1 : numSYTenum [1, 1, 1] = 1 := by decide
+
+@[simp] theorem numSYT_4 : numSYTenum [4] = 1 := by decide
+
+@[simp] theorem numSYT_3_1 : numSYTenum [3, 1] = 3 := by decide
+
+@[simp] theorem numSYT_2_2 : numSYTenum [2, 2] = 2 := by decide
+
+@[simp] theorem numSYT_2_1_1 : numSYTenum [2, 1, 1] = 3 := by decide
+
+@[simp] theorem numSYT_1_1_1_1 : numSYTenum [1, 1, 1, 1] = 1 := by decide
+
 /-! ### The identity -/
 
+/-- **Molien / fake-degree q-analogue at `n = 2`** (2 partitions).
+
+    `f^lam` is the kernel-computed `numSYTenum`, not a typed literal. -/
 theorem molien_qanalogue_n2 (q : ℝ) (hq : q ≠ 0) (h2 : q ^ 2 - 1 ≠ (0:ℝ)) (h4 : q ^ 4 - 1 ≠ (0:ℝ)) :
 
-      (1:ℝ) * (q⁻¹ ^ 1) * qDim q [2] +
-      (1:ℝ) * (q ^ 1) * qDim q [1, 1]
+      (numSYTenum [2] : ℝ) * (q⁻¹ ^ 1) * qDim q [2] +
+      (numSYTenum [1, 1] : ℝ) * (q ^ 1) * qDim q [1, 1]
       = qFactorial q 2 := by
-  simp only [qDim_2, qDim_1_1,
-             qFactorial]
+  simp only [qDim_2, qDim_1_1, numSYT_2, numSYT_1_1, qFactorial]
   norm_num [qBracket]
   field_simp
   ring
 
+/-- **Molien / fake-degree q-analogue at `n = 3`** (3 partitions).
+
+    `f^lam` is the kernel-computed `numSYTenum`, not a typed literal. -/
 theorem molien_qanalogue_n3 (q : ℝ) (hq : q ≠ 0) (h2 : q ^ 2 - 1 ≠ (0:ℝ)) (h4 : q ^ 4 - 1 ≠ (0:ℝ)) (h6 : q ^ 6 - 1 ≠ (0:ℝ)) :
 
-      (1:ℝ) * (q⁻¹ ^ 3) * qDim q [3] +
-      (2:ℝ) * (1) * qDim q [2, 1] +
-      (1:ℝ) * (q ^ 3) * qDim q [1, 1, 1]
+      (numSYTenum [3] : ℝ) * (q⁻¹ ^ 3) * qDim q [3] +
+      (numSYTenum [2, 1] : ℝ) * (1) * qDim q [2, 1] +
+      (numSYTenum [1, 1, 1] : ℝ) * (q ^ 3) * qDim q [1, 1, 1]
       = qFactorial q 3 := by
-  simp only [qDim_3, qDim_2_1, qDim_1_1_1,
-             qFactorial]
+  simp only [qDim_3, qDim_2_1, qDim_1_1_1, numSYT_3, numSYT_2_1, numSYT_1_1_1, qFactorial]
   norm_num [qBracket]
   field_simp
   ring
 
+/-- **Molien / fake-degree q-analogue at `n = 4`** (5 partitions).
+
+    `f^lam` is the kernel-computed `numSYTenum`, not a typed literal. -/
 theorem molien_qanalogue_n4 (q : ℝ) (hq : q ≠ 0) (h2 : q ^ 2 - 1 ≠ (0:ℝ)) (h4 : q ^ 4 - 1 ≠ (0:ℝ)) (h6 : q ^ 6 - 1 ≠ (0:ℝ)) (h8 : q ^ 8 - 1 ≠ (0:ℝ)) :
 
-      (1:ℝ) * (q⁻¹ ^ 6) * qDim q [4] +
-      (3:ℝ) * (q⁻¹ ^ 2) * qDim q [3, 1] +
-      (2:ℝ) * (1) * qDim q [2, 2] +
-      (3:ℝ) * (q ^ 2) * qDim q [2, 1, 1] +
-      (1:ℝ) * (q ^ 6) * qDim q [1, 1, 1, 1]
+      (numSYTenum [4] : ℝ) * (q⁻¹ ^ 6) * qDim q [4] +
+      (numSYTenum [3, 1] : ℝ) * (q⁻¹ ^ 2) * qDim q [3, 1] +
+      (numSYTenum [2, 2] : ℝ) * (1) * qDim q [2, 2] +
+      (numSYTenum [2, 1, 1] : ℝ) * (q ^ 2) * qDim q [2, 1, 1] +
+      (numSYTenum [1, 1, 1, 1] : ℝ) * (q ^ 6) * qDim q [1, 1, 1, 1]
       = qFactorial q 4 := by
-  simp only [qDim_4, qDim_3_1, qDim_2_2, qDim_2_1_1, qDim_1_1_1_1,
-             qFactorial]
+  simp only [qDim_4, qDim_3_1, qDim_2_2, qDim_2_1_1, qDim_1_1_1_1, numSYT_4, numSYT_3_1, numSYT_2_2, numSYT_2_1_1, numSYT_1_1_1_1, qFactorial]
   norm_num [qBracket]
   field_simp
   ring
+
 
 /-! ### The contrast: the corpus's `Σ qDim²` is NOT the q-factorial -/
 

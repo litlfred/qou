@@ -166,9 +166,12 @@ import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
+import QOU.Knot.MortonFranksWilliams
+import QOU.Knot.HomflySkeinReference
 import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
+import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
@@ -333,6 +336,10 @@ import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.QJucysMurphyEigen
+import QOU.SchurWeyl.AxialDistanceBound
+import QOU.SchurWeyl.SeminormalInequivalence
+import QOU.SchurWeyl.OffDiagNonvanishing
+import QOU.SchurWeyl.SeminormalRangeTop
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.SytAdmissible
 -- Umbrella gap found by the sibling PR #5282 (`claude/hoefsmit-finish-2026-08-18`):

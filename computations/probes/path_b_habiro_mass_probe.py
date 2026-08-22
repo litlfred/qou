@@ -103,7 +103,7 @@ G_CATALAN = mp.catalan
 # AME 2020 atomic masses (MeV)
 AME_ATOMIC = {
     "p": ("p (proton, A=1)", 938.78308711),  # H-1 atomic
-    "n": ("n (neutron, A=1)", 939.56542052),
+    "n": ("n (neutron, A=1)", float(M_N_MEV)),
     "D": ("D (deuteron, A=2)", 1876.12393),
     "T": ("T (tritium, A=3)", 2809.43215),
     "3He": ("3He (helium-3, A=3)", 2809.41347),

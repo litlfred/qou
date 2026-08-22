@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T21:42:36.412626+00:00",
-  "commitSha": "2f41045e3727c96029bb883b3957e0dbdf4e7768",
+  "computedAt": "2026-08-22T09:18:16.400738+00:00",
+  "commitSha": "660ef33ee45998f7adce3eacf6373caea4fd705d",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -39,9 +39,9 @@
     "counts": {
       "Q0_OK": 663,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 24,
-      "Q0_INDEPENDENT_NO_REASON": 1,
-      "Q0_ANCHOR_MISSING": 1918,
+      "Q0_INDEPENDENT": 27,
+      "Q0_INDEPENDENT_NO_REASON": 0,
+      "Q0_ANCHOR_MISSING": 1919,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
       "Q0_PARSE_ERROR": 0,
@@ -1608,6 +1608,10 @@
         },
         {
           "witness": "deuteron-wall-qborel-resummation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deuteron-wall-resummation-wrong-transform.witness.json",
           "detail": ""
         },
         {
@@ -10759,6 +10763,10 @@
           "detail": ""
         },
         {
+          "witness": "homfly-braid-index-mfw.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "markov-identity-symbolic.witness.json",
           "detail": ""
         },
@@ -10827,6 +10835,10 @@
           "detail": ""
         },
         {
+          "witness": "dt-crossknot-sixone-connection-count.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "dt-crossknot-snappy-slope-hardening.witness.json",
           "detail": ""
         },
@@ -10843,18 +10855,16 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-ohtsuki-sixone-kappa-series.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qns-phase-decorrelation-probe.witness.json",
           "detail": ""
         },
         {
           "witness": "qns-phase-scramble-probe.witness.json",
           "detail": ""
-        }
-      ],
-      "Q0_INDEPENDENT_NO_REASON": [
-        {
-          "witness": "qbeta-ohtsuki-sixone-kappa-series.witness.json",
-          "detail": "anchor=independent with no q0AnchorReason — states that q₀ is never read, but not why, so the claim cannot be checked without re-deriving the import cone"
         }
       ]
     }
