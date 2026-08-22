@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T20:32:20Z
+updated_at: 2026-08-22T20:39:44Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -269,3 +269,43 @@ corpus only ever inside a cos.
 
 Building that connection. This entry establishes WHERE a derivation can live,
 not the derivation.
+
+
+## 2026-08-22 (6) — branch 3: alpha IS holonomy-shaped to 2nd order; the discriminator is z'(1)
+
+Cheap falsifiable test before building any connection: does alpha even LOOK like
+a holonomy angle?
+
+Kohno-Drinfeld FIXES the scale rather than leaving it free. Braiding =
+P*exp(hbar*t/2), t eigenvalues +-1, matches Hecke {q, -1/q} exactly when
+q = e^{hbar/2}, so hbar = 2 ln q and a holonomy angle is a multiple of ln q.
+Test: agreement with c*ln(q) for a SINGLE c, with c pinned at O(t) so every
+higher order is a prediction.
+
+    alpha_C: c = -1/2 from t^1;  t^2 pred 1/4  actual 1/4     MATCH
+                                 t^3 pred -1/6 actual -5/16   differs
+    alpha_D: c = -1/2 from t^1;  t^2 pred 1/4  actual 5/4     differs
+
+STRUCTURAL DISCRIMINATOR (not a coincidence). Expanding alpha = (z-1)h/2 about
+q = 1+t with h = 2t - t^2 + ...:
+    t^1 coeff = z(1) - 1      -> needs z(1) = 1/2   (both)
+    t^2 coeff = 1/4 + z'(1)   -> needs z'(1) = 0    (only C)
+    z_C: z'(1)=0, z''(1)=-1/8      z_D: z'(1)=1, z''(1)=1/2
+
+**alpha is second-order logarithmic exactly when the Markov parameter is
+STATIONARY at the classical point.** z_C's only critical point on q>0 is q=1 and
+it is a MAXIMUM; z_D is not stationary there.
+
+SCOPE: consistency, NOT derivation. Does not derive alpha; does not establish
+the angle is -hbar/4 (c came from t^1); ONE predicted order; t^3 fails for C too
+so alpha_C is not a logarithm either.
+
+**Falsifiable target for branch 3:** a real KZ/Stokes holonomy should reproduce
+alpha through t^2. A construction that misses at t^2 is wrong. That is a much
+sharper acceptance test than 'derive alpha'.
+
+TENSION WITH THE RULING, plainly: on this test the decay phase looks C-shaped.
+Does not overturn the ruling (corpus-wide trace convention vs one channel's
+phase) but deepens the recorded decayLadder_zC_threeRow_ne_zero tension.
+
+PROBE: computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py (7/7).
