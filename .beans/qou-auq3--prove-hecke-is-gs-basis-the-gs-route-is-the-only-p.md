@@ -3193,8 +3193,32 @@ opens `σᵢ₋₁`.
 | tail, off-diagonal / diagonal | `tailChain` / `tailChainFromTwo` — sorry-free |
 | middle of the opening phase, `a ≥ 4` | `loopTwoGen` fits (measured); not assembled |
 | opening phase, `a = 3` | no loop; own treatment |
-| closing phase — `4(a−1)` steps, hard core `2a` | **open**; no schedule helps |
+| closing phase — `4(a−1)` steps, hard core `2a` | needs the source-only relaxation; **not** an obstruction |
 | mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
 
-The single genuine obstruction in this regime is now the closing phase's `2a`
-hard core. Everything before it is either proved or has a measured-fitting lemma.
+### Correction: the `2a` hard core is a lemma-shape problem
+
+I called it "the single genuine obstruction in this regime". That over-claims.
+
+`hpark` is **sufficient, not necessary**. What a step actually needs is
+`monicStep`'s `hne` — the *source* word absent from the rest of the list, so its
+coefficient reads off `L₁ ++ (W, c) :: L₂`. A bundled lemma needs that at each of
+its own intermediate sources, which is exactly the relaxation
+`farComm_transport_right_sources` already carries one level down (it excludes
+only the split naming the transport's final word).
+
+**Measured: every source in the chain is unique, the `2a` hard-core steps
+included** (9/9 per case, plus the chain-wide `dup_sources = 0`). So the precise
+per-step condition holds everywhere, and the `2a` figure measures that
+`blockTransportRight` / `blockPassFromTwo` / `blockPass` / `loopTwoGen` do not
+propagate the relaxation — a known fix, not a wall.
+
+**The symmetry worth keeping.** For the **tail**, scheduling made the relaxation
+unnecessary, and I recorded that ("none of it was needed"). For the **closing
+phase**, scheduling does not help — both lineage groupings measured no better or
+worse — and the relaxation is the route. Same two options at each phase; the
+answer differs.
+
+So nothing in this regime is currently known to be blocked. What remains is
+work: propagate the source-only hypothesis into the four bundled lemmas, then
+assemble.
