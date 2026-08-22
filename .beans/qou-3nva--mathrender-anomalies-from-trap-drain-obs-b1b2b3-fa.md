@@ -3015,3 +3015,218 @@ sum-rule's scale is itself CODATA-set. Not adjudicated here; attached to
 `qou-37y0`. Note also that these are **absolute nucleon masses in MeV**,
 which the 2026-08-11 excision removes as framework predictions regardless of
 how the μ are obtained.
+
+
+## From agent:g01 (nuclear-interactions gq_01) — 2026-08-22
+
+45 blocks, 450 verdicts, 7 fixes, only **8 trap fails** — the prose in this
+chapter is clean, and the batch's value is the mathematics under it.
+
+### Two typed-crossing relations, settled by the chapter's own table
+
+**G01-1/2.** `tbl:ground-state-ordering-table1-data` is self-consistent and
+gives the crossing operators' spectra. Cayley–Hamilton then forces both
+relations, and both are printed wrong. Recomputed independently:
+
+| | trace | det | forced relation | block prints |
+|---|---|---|---|---|
+| `C_nn` (eigs `{q⁻¹, −q}`) | `−h` | `−1` | **`C_nn² = 1 − h·C_nn`** | `h·C_nn + 1` |
+| `C_pn` | `0` | `−(1+h²/4)` | **`C_pn² = (1 + h²/4)·1`** | `h·C_pn + 1 − ¼h²` |
+
+`C_nn` has the sign of the linear term wrong. `C_pn` is wrong twice — there
+is **no linear term at all**, and the quadratic enters with a plus — and the
+following sentence inherits it. Two sibling blocks (`prop:demand-stability`,
+`ex:helium4-derived-nf`) already carry the correct minus form, so the
+chapter disagrees with itself.
+
+**G01-3. A proof's table violates the proposition it proves.**
+`prop:inductive-gb-reduction` bounds the normal-form count at
+`C(A−1, ⌊(A−1)/2⌋)` = 1, 3, 35, 6435 for A = 2, 4, 8, 16. The proof's table
+gives 2, 8, 32, 128 = `A²/2`, exceeding the bound at A = 2 (2 > 1) and A = 4
+(8 > 3). A *third* rate — "linear growth in the number of nucleons" — is
+asserted in `prop:demand-stability`.
+
+### A theorem and its own proof use different functionals
+
+**G01-4. `thm:groebner-shirshov-energy`.** The theorem defines
+`E = Σ|c_w|·ℓ(w)`; the proof's Part 3 computes
+`|c(q−q⁻¹)| + |c| − |c| = |c||q−q⁻¹|`, dropping `ℓ`. Carrying it,
+`ΔE = |c|[(q−q⁻¹)(ℓ−1) − 2]`, which is **negative for every ℓ < 10.5666** at
+the proton pin (`q−q⁻¹ = 0.2090602988`) — e.g. `−1.791|c|` at ℓ = 2, the
+shortest case. So "every Hecke step increases the total weight" is false
+under the theorem's own `E` and true under `Σ|c_w|`. Dropping the `ℓ(w)`
+factor makes theorem, proof and monotonicity consistent.
+
+### The Gram cluster — a dead witness, a wrong spectrum, and both conventions
+
+**G01-5.** `prf:confinement-topological` ends "**Witness:**
+`confinement-lp.witness.json`", which exists **only** under
+`computations/_deprecated/`. Worse, that witness does not reproduce the
+block's number: its `gram_eigenvalues` are six distinct nonzero values, while
+the block asserts a `{λ₊×3, λ_max, λ₀, λ₋}` structure with `λ₋ ≈ −0.855`.
+That value belongs to a **different** witness,
+`gram-h3-symbolic-regression`, whose spectrum computes to
+`{−0.85506726, 0.10179667, 0.85506726×3, 3.4769498}` — and which carries
+`q0 = 1.1099785955541805` (**old muon**) and `z = 0.4993203340335982`
+(**convention C**). Under canonical D the same spectrum is
+`{4.2303392, 0.7527021×3, 3.07e−17, −0.7527021}`: `λ₋` should read
+**−0.7527**, and **only under D is the block's own name "λ₀" literally
+correct** (it is 0.1018 under C).
+
+**G01-6.** The two witnesses a sibling block claims to have cross-verified
+"to 1e−16" are **different matrices** — `G[0][1]` is 0.4993 (C) against
+0.6127 (D), an entrywise gap of 0.113. Under D the recorded
+`gram_determinant` is 3.998e−17, i.e. numerically **zero**, which would
+refute that block's clause 3 (`det ≠ 0`) — the known D-singularity, bean
+`qou-cds2`. Also: `gram-matrix-h3-symbolic.ts`'s authorNote says "the main
+theorem is positive-definiteness for u > 1", while the Lean says
+`det(G(u)) = −(strictly positive) ≠ 0` and the theorem proved is `det ≠ 0`;
+a PD 6×6 has positive determinant, and two sibling blocks correctly state G
+is *not* positive definite. And the `.ts` `computation.script` names
+`gram_matrix_dual.py` where the file is `gram-matrix-dual.py`.
+
+**G01-7. Right value, wrong name, again.** `gram-matrix-dual.py:45` *prints*
+`z = 1/(q^½+q^{−½})` — the convention-C spelling — while *storing*
+`z_D = 0.6126880371464652`. Same shape as the `Vol(4₁)` class: the
+arithmetic is canonical, the label is not.
+
+**G01-8. RETRACTED by the agent, and the retraction is the finding.** It
+first reported a (3,4) transposition bug in both witnesses: Cauchy–Schwarz
+is violated there (`|G₃₄| = 1.2197 > √(G₃₃G₄₄) = 0.3646`) and swapping
+restores an all-positive spectrum with `det = +0.18920521914`. That reading
+is **wrong**. `gram-matrix-dual.py:151–154` builds `G[i,j] = tr_M(b_i·b_j)`
+with **no anti-involution** — the indefinite Frobenius *trace form*, not an
+inner-product Gram matrix — so a negative eigenvalue and a CS failure are
+*expected*, not defects. The corrected entry supersedes the original on all
+ten criteria. Worth keeping as a general caution: "Gram matrix" in this
+corpus does not imply an inner product.
+
+### The interface band — wrong reduction, better verdict
+
+**G01-9. `prop:interface-band-between-isospin-weights`.** The upper
+separation is stated as "equivalent to `q⁵ < q²+1` … holds for
+`q < 1.193859`". Under D, `z(q+q⁻¹) = q²` identically, so `z < μ₊` reduces
+to **`q⁵ − q⁴ + q³ − q² − 1 < 0`**, threshold **1.249851589** (both roots
+recomputed). Direct evaluation confirms the gap: at q = 1.21 and q = 1.24,
+`z < μ₊` is TRUE while `q⁵ < q²+1` is FALSE.
+
+**The conclusion is unaffected and strengthened.** Both separations still
+hold at q₀, the upper is still the tighter, and the margin is **12.601 %**
+rather than 7.56 %. What must change is the sentence claiming that "moving q
+upward past 1.193859 closes the upper separation" — it names a q at which it
+still holds.
+
+**G01-10. Everything else in that block checks exactly**, and two structural
+facts fall out that the block does not state: **`μ₋ + μ₊ = 1` exactly**
+(verified to 20 digits — it makes both separations one statement), and
+`μ₊ = 0.75270211325196540159` *is* the D-convention Gram eigenvalue
+`0.7527021132519656`.
+
+### A genus set, refuted by its own sibling
+
+**G01-11. `rem:hyperelliptic-z5-classification-interpretation` item 2** gives
+"genera `g ∈ {4,5,6,…}`". An order-5 automorphism of `ℙ¹` has exactly two
+fixed points, so `|Branch| = 5a + ε` with `ε ≤ 2`, and `|Branch| = 2g+2` is
+even. `g = 6` needs `|Branch| = 14`; none of 14, 13, 12 is divisible by 5.
+Attainable: **{2, 4, 5, 7, 9, 10, 12, …}**, so the text should read
+{4, 5, 7, …}. Derived independently, then confirmed against the chapter's
+own `prf:hyperelliptic-z5-classification`, which states
+`|Branch| ∈ {0,1,2,5,6,7,10,11,12,…}`. The remark's own g = 4 example is
+correct.
+
+### A mechanism stated backwards, and a norm that is not one
+
+**G01-12. `prop:gram-weighted-qvalue`.** With `‖δ‖_F = √|Σ λ_α c_α²|`,
+domination by the **negative** eigenspace makes the magnitude **large**, and
+*balanced* projections **cancel** to a small one. The block asserts the
+reverse in both directions, and `rem:gram-weight-eigenstructure` repeats the
+inversion. The empirical ordering may well hold; the stated explanation does
+not. Both blocks also call `‖·‖_F` "the Frobenius norm induced by the Gram
+matrix" while stating that G is indefinite — so `‖δ‖_F²` differs from the
+displayed `δ·G·δ` exactly when that is negative.
+
+### Calibration-doctrine violations
+
+**G01-13.** `energy-scale-planck`'s calibration table assigns **H⁰/H¹/H²
+degrees** to m_e, m_μ/m_e, Q_β. AGENTS.md is explicit and STRICT: the three
+calibrations are the three real DOF of the **single** `H¹(Bring) = 2W`,
+"not three distinct degrees". Same block: **Q_β is labelled CAL-3**, where
+the 2026-06-26 ruling makes CAL-3 = `𝔇_π` (proxy m_π) and Q_β the **CAL-2**
+proxy; and "CAL-2 (q₀)" is loose, since CAL-2 is `𝔇_β`, which *fixes* q₀.
+
+**G01-14. The same formula, two values, neither matching the printed
+inputs.** `Q_β/|Δnet|` is given as ≈4.155 MeV in one section and ≈4.179 in
+another; the block's own `0.782/0.188 = 4.1596`. Back-solving, 4.155 needs
+0.188207 and 4.179 needs 0.187126. The choice is **load-bearing**: the 0.74 %
+gap the block computes uses 4.155; with 4.179 it would be 0.17 %. The same
+block also reports "the 1 % residual between `E₀` and `m_e c_q² ℏ_q`" — a
+residual between a quantity and its own boxed definition.
+
+**G01-15.** `tbl:hydrogen-derived-nf-table2-data` presents an **absolute
+mass** total ≈938.8 MeV built from a Borromean-volume term — forbidden as a
+framework prediction by the 2026-08-11 excision. Its arithmetic is fine
+(`938 + 0 + 0.511 + 0.3 − 1.36e−5 = 938.811`; `Vol(𝓑₃) = 7.328` ✓;
+`Vol(T_{2,3}) = 0` ✓).
+
+**G01-16. §7a violation with an entrenched counter-convention.**
+`conj:hecke-anyonic-substrate` writes the generator `T_{s_i}` and the
+relation `(T−q)(T+1) = 0`; §7a is STRICT on `σ_i` and
+`(σ_i−q)(σ_i+q⁻¹) = 0`. Its sibling `thm:groebner-shirshov-energy` uses the
+§7a form, so the two disagree. Flagged for an owner/ontologist call rather
+than fixed: the Lean ref `QOU.IwahoriHecke.Tw.*` suggests `T_w` is
+entrenched on that side.
+
+### Self-contradiction, structure, and unresolved
+
+**G01-17.** `prop:delta-pre-archimedean` — "the choice of which order to use
+is an **expository convention**" against its own final section,
+"**Necessity** of the ordering for binding".
+`rem:confinement-topological-interpretation` — opener "Confinement is
+topological, **not** energetic" against its own closer "Confinement is
+topology **plus** action minimization", and the `.ts` title agrees with the
+closer.
+
+**G01-18.** `conj:geom-universality`'s bold lead declares it "conditional on
+hyperbolic volume transcendence" — which appears nowhere in the properties,
+the three steps, or `uses[]`. `ex:hydrogen-derived-nf` has a render defect:
+two `\xrightarrow` arrows back to back with no node between them.
+`ex:helium4-derived-nf`'s atom coefficients sum to **1.888** against a
+printed net of 1.889 (its hydrogen sibling sums exactly, so the difference is
+worth confirming), and its Markov traces "1.037 versus 1.230" appear nowhere
+else and cite no witness. `rem:e-minus-one`'s `.ts` title says `E_{−1}` while
+the `.md` writes `𝒮_{−1}` throughout, and bare `E` is deprecated (§7aa).
+`descent-mirror-intro.md` is **empty (1 byte)**.
+`intro-pair-production-anyon.ts` is a bare `export default prose();` with
+**no label**, unlike its sibling section intros.
+`conj:cpt-orbit-closure-density`'s "correctness of the fold involution" is
+four unconnected assertions followed by "Thus", and its `ρ_F`, called a
+packing *density*, takes values in mass units.
+
+**G01-19. Reported as unresolved, not as an error.**
+`prop:generator-volume-decomposition` has `V̂_i = z·a_i + b_i`, linear in the
+convention-dependent `z`, and names neither C nor D — 23 % apart at q₀. The
+agent could not determine which applies from the block and said so.
+
+**G01-20. "|Δnet| = 0.004, an order of magnitude worse"** — the comparison
+target is 0.000, so no ratio is defined, and the block's own next bullet puts
+every other word above 0.01, making 0.004 **2.5× better** than that floor.
+
+### Checked and clean — named so a later pass does not re-flag
+
+`rem:groebner-reduction-methods`'s reproducibility claim **stands**: bean
+`qou-f9th` ("certificate corpus is not reproducible") was **retracted**
+2026-08-15 — the 2-adic denominators are exactly `2^pn_count` and the
+apparent failure was catastrophic cancellation (log₁₀ cond up to 359 for
+⁶⁰Co). All four named Rust engines exist. `conj:geom-universality`
+**avoids** the §7b recurring failure mode: Bloch–Wigner is scoped to
+hyperbolic knots and torus knots handled separately with Vol = 0.
+`prop:content-keyed-interface-refuted` and the two interface blocks are
+**model (b)-scope refutations** — invariant named, non-excluded alternatives
+named, anti-fit risk on the proposed repair flagged.
+`prf:hyperelliptic-z5-classification` re-derived end to end and correct
+throughout. `(σ₀σ₁⁻¹)³` confirmed Borromean by closure permutation.
+`energy-scale-planck`'s `E₀ = m_e/(q(q−1)) = 4.185981 MeV`, amplification
+`−11.09268`, `σ = 13.533 ppb`, `ℏ_q²/(1−ℏ_q²) = 0.9915 %` all verify —
+and a **useful pin-negative**: at 4 printed digits `E₀` cannot discriminate
+proton from muon (both 4.185981), while the erroneous 1.1097 would give
+4.197665, so that value is demonstrably not in use.
