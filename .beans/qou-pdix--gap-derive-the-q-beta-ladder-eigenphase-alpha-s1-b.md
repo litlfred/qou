@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T20:44:40Z
+updated_at: 2026-08-22T20:50:04Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -353,3 +353,45 @@ The connection itself. Building it half-way and reporting a match would be the
 fitted result the discipline forbids. Delivered instead: the crux stated
 exactly, one candidate refuted, and a sharper constraint (non-unitary or
 off-spectrum) on what remains.
+
+
+## 2026-08-22 (8) — the modular/cosh horn is EXCLUDED; one horn of the fork closes
+
+If alpha tracks the MODULI (entry 7), the natural resummation is cosh not cos —
+and cosh(c*ln q) = (q^c + q^-c)/2 is ALGEBRAIC in q for rational c, so the whole
+rationality obstruction would dissolve. Worth one line of arithmetic:
+
+    required N1 = Q_codata/(Q_A(1 + c_2 u^2)) = 0.99839767  < 1
+    cosh(x) >= 1 for every real x
+    cosh((1/2) ln q) = 1.00136  -- wrong side of 1
+
+**EXCLUDED.** A genuine oscillation is required; cos cannot be re-read as cosh.
+
+NEAR-MISS, FENCED. The deviations are comparable and opposite in sign
+(1 - N1 = 1.60e-3 vs cosh - 1 = 1.36e-3), which invites an identity. There is
+none — 2-cosh and 1/cosh are both off by 2.4e-4 relative, parting at the 4th
+digit. Recorded so it is not chased.
+
+REFINEMENT of my own entry 7. 'sigma_1's phases are q-free' is exact FOR
+sigma_1 and must not be read as a claim about the representation. PRODUCTS do
+carry q-dependent phases (route 3 found elliptic words e.g. sigma_1 sigma_2^-1,
+trace -q^2+1-q^-2). The Hecke rep supplies oscillatory q-dependent phases; it
+just never supplies THIS one — that is the rationality exclusion, not a shortage
+of phases.
+
+## Fork status after this
+
+  non-unitary / modular (cosh) origin ....... CLOSED (N1 < 1)
+  phase from outside sigma_1's spectrum ..... SURVIVES, and is now the only
+                                              live description: a genuine
+                                              oscillation from a transcendental
+                                              source outside the Hecke
+                                              character ring
+
+## Acceptance test for a branch-3 construction (now three-part)
+
+  1. reproduce alpha through t^2 (entry 6: requires z'(1) = 0)
+  2. account for -1/4 of Re(log-gap) AND for discarding the i*pi (entry 7)
+  3. be genuinely oscillatory, delivering a value BELOW 1 (entry 8)
+
+PROBE: qbeta_eigenphase_holonomy_consistency_probe.py, now 11/11.
