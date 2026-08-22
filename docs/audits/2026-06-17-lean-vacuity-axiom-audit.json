@@ -1,19 +1,19 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-22T15:23:57.014Z",
+  "generated": "2026-08-22T09:39:23.127Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3030,
-  "files_flagged": 149,
-  "total_defects": 64,
+  "scanned_files": 3026,
+  "files_flagged": 145,
+  "total_defects": 59,
   "total_exempt": 122,
   "categories": {
     "proof-no-self-assuming-projection": 46,
-    "proof-no-unused-hypothesis-rfl": 6,
     "proof-docstring-sorry-mismatch": 3,
     "proof-no-trivial-true": 4,
     "proof-no-provable-axiom": 1,
     "proof-claims-unencoded": 3,
-    "proof-no-decide-masking": 1
+    "proof-no-decide-masking": 1,
+    "proof-no-unused-hypothesis-rfl": 1
   },
   "conjecture_graph": {
     "total": 244,
@@ -1508,17 +1508,6 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
-    "content/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.lean": [
-      {
-        "line": 64,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem delta_skein_eq_mass_splitting",
-        "decl": "delta_skein_eq_mass_splitting",
-        "severity": "major",
-        "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `h_me` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean": [
       {
         "line": 351,
@@ -1663,15 +1652,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `hi.eq` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      },
-      {
-        "line": 405,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem skein_from_markov_traces (config : NuclearConfig)",
-        "decl": "skein_from_markov_traces",
-        "severity": "major",
-        "detail": "proof is `by\n                                                                      \n  rfl`, which uses no hypothesis, yet the statement binds `h_len` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean": [
@@ -2985,17 +2965,6 @@
         "detail": "the projected field `dl.surjective` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
-    "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean": [
-      {
-        "line": 302,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem chi_v21_closed_form_u_coord (q : ℝ) (hq : q ≠ 0) :",
-        "decl": "chi_v21_closed_form_u_coord",
-        "severity": "major",
-        "detail": "proof is `by\n  unfold chi_V21_difference_factored\n  rfl`, which uses no hypothesis, yet the statement binds `hq` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean": [
       {
         "line": 131,
@@ -3293,17 +3262,6 @@
         "detail": "the projected field `inst.forms_agree` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
-    "content/quantum-observable-universe/observations/building-block-knots.lean": [
-      {
-        "line": 151,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem unknot_amphichiral (q : ℝ) (hq : q ≠ 0) :",
-        "decl": "unknot_amphichiral",
-        "severity": "major",
-        "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `hq` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean": [
       {
         "line": 133,
@@ -3337,17 +3295,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/quantum-dilogarithm-volume.lean": [
-      {
-        "line": 58,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem quantum_dilogarithm_volume",
-        "decl": "quantum_dilogarithm_volume",
-        "severity": "major",
-        "detail": "proof is `by\n  unfold bindingEnergy\n  rfl`, which uses no hypothesis, yet the statement binds `hq`, `h_parent_len` — absent from the conclusion, so the claim holds for every value of them"
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean": [
