@@ -3157,3 +3157,44 @@ against the engine — the `a ≤ b` start element is exactly
 **So the only regime-specific piece is the reduction chain from `T0` to zero.**
 Recorded in `oc_spoly_coeff`'s docstring, where the next reader will be
 standing.
+
+
+### §4an — the opening was mostly already proved
+
+Two `CornerGeneral` results carry the `a ≤ b` regime unchanged, both established
+by **instantiation**, not by reading a signature:
+
+- `oc` / `oc_spoly_coeff` never relate `j₁` to `j₂` → same `T0`, diagonal
+  included.
+- **`s1` and `s2` too.** They ask only `i₁+1 = i`, `i₂+1 = i₁`, `j₁ ≤ i₂`; Lean's
+  unused-variable linter reports **`j₂` unused** when they are instantiated,
+  which is the sharpest possible statement of it. They carry the chain to
+  `ofTerms [(V2, 1), (U0, −1)]` — exactly where the engine's replay lands after
+  two steps.
+
+So the regime-specific part starts *later* than this arc assumed. `s3`/`s4` are
+where it begins: they need `hed : ed+1 = j₂` with `j₁ ≤ ed`, i.e. `j₁ < j₂`, and
+cannot be instantiated at `j₂ ≤ j₁` at all.
+
+New namespace **`CornerLe`** with **`uHead`** (sorry-free): the *second* term's
+head — the same two-rule motif as `s1`/`s2` (Bokut–Shiao then far-commutation)
+displaced one letter right, because `U0` carries a leading `σᵢ₋₁` that `V0` does
+not. The Bokut–Shiao redex straddles the two descending runs. Both collision
+hypotheses fall to one letter: the bystander `V2` opens `σᵢ₋₂`, every word here
+opens `σᵢ₋₁`.
+
+**Revised state of the `a ≤ b` regime**
+
+| piece | status |
+|---|---|
+| overlap + S-polynomial | already in the corpus, both depths |
+| chain steps 1–2 (on `V0`) | `s1`/`s2` — already proved, `j₂`-independent |
+| chain steps 3–4 (on `U0`) | `CornerLe.uHead` — sorry-free |
+| tail, off-diagonal / diagonal | `tailChain` / `tailChainFromTwo` — sorry-free |
+| middle of the opening phase, `a ≥ 4` | `loopTwoGen` fits (measured); not assembled |
+| opening phase, `a = 3` | no loop; own treatment |
+| closing phase — `4(a−1)` steps, hard core `2a` | **open**; no schedule helps |
+| mid-prefix cancellation | forced; `Basic.lean` §6 has the bridge |
+
+The single genuine obstruction in this regime is now the closing phase's `2a`
+hard core. Everything before it is either proved or has a measured-fitting lemma.
