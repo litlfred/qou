@@ -3222,3 +3222,16 @@ answer differs.
 So nothing in this regime is currently known to be blocked. What remains is
 work: propagate the source-only hypothesis into the four bundled lemmas, then
 assemble.
+
+**First of the four is done (§4ai).** `blockTransportRightSources` narrows the
+hypothesis to the family the transport actually rewrites —
+`A ++ P ++ u ++ (x :: (v ++ (S ++ B)))` for `P ++ (x :: S) = X`, `u ++ v = W`,
+`v ≠ []` — one per letter of `X` and per interior split of `W`. The recursion
+threads it through: when `X` loses its last letter to `B`, a split of `X'`
+becomes a split of `X` with `S` extended by that letter. `blockTransportRight`
+keeps its exact signature and is now the one-line corollary, so `blockPass`,
+`blockPassFromTwo` and both tail chains are untouched (`#print axioms` on all
+six: no `sorryAx`). Proved first attempt — the claim that this was "a known fix"
+is now tested rather than asserted.
+
+Remaining to relax: `blockPassFromTwo`, `blockPass`, `loopTwoGen`.
