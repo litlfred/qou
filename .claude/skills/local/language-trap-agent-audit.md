@@ -147,7 +147,22 @@ never fix math inline.
   `the formal derivation` standing in for a script name, and `canonical`
   substituted for `numerical(ly)` ("is canonical hostile").
 - **Braid words.** Where a table gives one, compute the closure's
-  component count. Two tables were found carrying wrong words this way.
+  component count. Two tables were found carrying wrong words this way. The
+  labels can also be wrong at the **witness** rather than in the block —
+  `confinement-operator-selection.witness.json` calls `σ₀σ₁` the Hopf link
+  (it closes to 1 component) and `σ₀σ₁σ₀` the trefoil (2 components) — so say
+  which findings a block *inherits* rather than introduces.
+- **Range-test a printed invariant before pin-testing it.** Asking *"which q₀
+  does this reproduce?"* presumes the value is reachable at all. Substitute
+  first: `J_{4₁} = q⁻²−q⁻¹+1−q+q²` is `u²−u−1` in `u = q+q⁻¹ ≥ 2`, hence `≥ 1`
+  for **every** real `q > 0`, so a printed `0.7854` is not a pin defect and
+  must not be filed as one. The test costs one substitution, is stronger than
+  any pin comparison, and is independent of what the producer did. Same table:
+  `−q⁴+q³+q` has global maximum 1, printed as 3.5832.
+- **`J(1) = 1` is a weak check and things hide behind it.** Seven torus rows in
+  one table carry a spurious `q^{1−g²}` factor; a monomial shift does not move
+  `J(1)`, and the spans were right too (`span J = c` for an alternating link).
+  Compare exponent *ranges* against the standard invariant, not only `J(1)`.
 
 ## Verify provenance claims before repeating them
 
