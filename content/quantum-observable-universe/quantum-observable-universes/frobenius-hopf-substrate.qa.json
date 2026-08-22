@@ -1871,6 +1871,22 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.366Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Four negative constructions, all substantive scope statements: the bolded 'Duals are required of A only, not of C' is load-bearing disambiguation (it is the point of the paragraph); 'braided monoidal but not rigid' and 'rigidity of C is not required there' state the axiom level exactly; 'The formalization never assumed rigidity either' is a factual status report. False-positive classes 1 and 4.",
+        "notes": "Density is high (4 in one block) but the block's subject IS a scope boundary, so the negatives are the content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1890,6 +1906,21 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.405Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No setup-then-reframe; the two closing paragraphs state a scope fact and then a revision history (see the meta-commentary entry)."
       }
     ],
     "trap-em-dash": [
@@ -1909,6 +1940,21 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.444Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "One LaTeX em-dash ('The formalization never assumed rigidity either --- FrobeniusHopfData is stated over a bare monoidal category'), plus 'axioms 4--5' which is a numeric range. One dash in ~450 words is well below the density tell."
       }
     ],
     "trap-triples": [
@@ -1928,6 +1974,21 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.483Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Five numbered axioms, set by the structure being defined."
       }
     ],
     "trap-closing-aphorism": [
@@ -1947,6 +2008,21 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.524Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Ends on 'exactly as axiom 4 now does' - a technical cross-reference, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1966,6 +2042,23 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.564Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "major",
+        "evidence": "The final paragraph is the block narrating its own revision history rather than stating mathematics: 'An earlier version of this definition opened \"Let C be a rigid monoidal category\" and phrased axioms 4--5 as ... That notation presupposes an ambient dual A-dual, which made this definition unusable at the level that actually invokes it ... The formalization never assumed rigidity either ---'. This is document-about-document prose in a definition block; a reader of the definition needs the current axioms, not the diff against a superseded draft.",
+        "notes": "NOT FIXED (structural: a whole paragraph, and the content is worth keeping somewhere). PROPOSED: migrate verbatim into the .ts authorNotes as { kind: 'refined-framing', date: ..., body: ... } per AGENTS.md section 4d - this is exactly the one-voice Category H banner-in-prose case, whose mechanical migration is pre-authorised. The preceding paragraph ('Duals are required of A only, not of C ...') is substantive scope and stays in the .md."
       }
     ],
     "trap-thesis-restatement": [
@@ -1985,6 +2078,21 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.605Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No block-final restatement of an earlier claim."
       }
     ],
     "trap-performed-warmth": [
@@ -2004,6 +2112,21 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.650Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2023,6 +2146,21 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.693Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "'unusable', 'exactly as axiom 4 now does' are scoped and checkable."
       }
     ],
     "trap-nonspeakable": [
@@ -2042,6 +2180,22 @@
         "reviewed_at": "2026-08-15T10:30:59.997Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "591074f4440e",
+          "ts": "b5dfe8083496"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:44.735Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Axiom statements are formula-dense but each sentence parses aloud.",
+        "notes": "THREE MATH FLAGS (not traps, reported not fixed). (1) AXIOM 3 IS ILL-TYPED AND OMITS ITS OWN SUBJECT. It reads 'The Frobenius form lambda satisfies mu . Delta = (Delta tensor id) . alpha . (id tensor mu)' - lambda does not appear in the equation at all, and the two sides do not compose: the left is A -> A, while the right runs A tensor A tensor A -> A tensor A -> A tensor A tensor A. The standard Frobenius relation is Delta . mu = (mu tensor id) . (id tensor Delta) = (id tensor mu) . (Delta tensor id), all A tensor A -> A tensor A. (2) THE ANTIPODE IS UNCONSTRAINED. S appears in the sextuple and is named in axiom 2, but no axiom relates it to anything - the Hopf antipode condition mu . (S tensor id) . Delta = eta . epsilon is missing, so S is free data. What axiom 2 actually states (epsilon . mu = u . (epsilon tensor epsilon)) is multiplicativity of the counit, not a Hopf compatibility involving S. (3) Axiom 5 introduces Phi = lambda . mu, which is definitionally the same morphism axiom 4 already named ev; one of the two names should go."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2065,5 +2219,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-16T11:38:24.201Z"
+  "updated_at": "2026-08-22T01:05:44.735Z"
 }
