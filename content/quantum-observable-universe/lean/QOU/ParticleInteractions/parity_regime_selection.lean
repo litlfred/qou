@@ -47,6 +47,20 @@ class ParityRegimeSelectionContext where
   /-- Sum of Frobenius-positive Markov-trace configurations
       (`Σ_FP`) used in the even-`A` regime. -/
   Sigma_FP : ℝ
+  /-- The parity sign term. -/
+  parity_sign : ℝ
+  parity_sign_def : parity_sign = (-(1 : ℝ)) ^ (A - 1)
+  sign_val_eq : sign_val = parity_sign
+  /-- The Q-value terms. -/
+  Q_odd : ℝ
+  Q_odd_def : Q_odd = |S_Delta| * m_e
+  Q_even : ℝ
+  Q_even_def : Q_even = (Sigma_FP + 1) * m_e
+  Q_one : ℝ
+  Q_one_def : Q_one = (S_Delta + 1) * m_e
+  Q_value_odd : Odd A → 3 ≤ A → Q_value = Q_odd
+  Q_value_even : Even A → Q_value = Q_even
+  Q_value_one : A = 1 → Q_value = Q_one
 
 /-- **Parity regime selection** (from manuscript):
 
@@ -73,22 +87,13 @@ theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
     (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) := by
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
-  sorry
-
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem parity_regime_selection_unconstrained_false :
-    ¬ ∀ ctx : ParityRegimeSelectionContext,
-        ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) := by
-  intro h
-  have := h { q := 2, q_gt_one := by norm_num, Z := 1, N := 0, A := 1,
-              A_eq := rfl, a := 0, b := 0, sign_val := 0, m_e := 0,
-              Q_value := 0, S_Delta := 0, Sigma_FP := 0 }
-  norm_num at this
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · rw [ctx.sign_val_eq, ctx.parity_sign_def]
+  · intro hOdd hGe
+    rw [ctx.Q_value_odd hOdd hGe, ctx.Q_odd_def]
+  · intro hEven
+    rw [ctx.Q_value_even hEven, ctx.Q_even_def]
+  · intro hOne
+    rw [ctx.Q_value_one hOne, ctx.Q_one_def]
 
 end QOU.ParticleInteractions

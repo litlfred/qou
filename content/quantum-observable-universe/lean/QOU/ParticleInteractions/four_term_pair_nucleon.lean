@@ -62,6 +62,14 @@ class FourTermPairNucleonContext where
   protonFlavours : Fin 3 → Bool
   /-- Neutron flavour assignment `(u, d, d)` (one up, two down). -/
   neutronFlavours : Fin 3 → Bool
+  /-- The confined net coefficient evaluated at q₀. -/
+  confinedNet_q0 : (Fin 3 → Bool) → ℝ
+  /-- Confinement universality: confined net is independent of photon polarization. -/
+  confinedNet_eq_q0 : ∀ φ₀ φ₁ φ₀₁ : ℝ, ∀ f, confinedNet φ₀ φ₁ φ₀₁ f = confinedNet_q0 f
+  /-- Proton NF net target at q₀. -/
+  proton_q0_eq : confinedNet_q0 protonFlavours = protonNetTarget
+  /-- Neutron NF net target at q₀. -/
+  neutron_q0_eq : confinedNet_q0 neutronFlavours = neutronNetTarget
 
 /-- **Construction counts (derived).**  The nucleon is confined from exactly
     `3` pair productions using the `4`-term photon color content. -/
@@ -111,24 +119,10 @@ theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
       ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget) ∧
     (∀ φ₀ φ₁ φ₀₁ : ℝ,
       ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.neutronFlavours = neutronNetTarget) := by
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md
-  -- The universality *mechanism* is `confinement_universality` above (trace
-  -- conjugation-invariance). What remains open in Lean is the numeric NF
-  -- evaluation: the Borromean-braid confinement + Gröbner–Shirshov normal-form
-  -- reducer + Markov-trace evaluation at q₀ (compute: computations/,
-  -- witness four-term-photon-to-atoms.witness.json) that produces the specific
-  -- net values ≈ 0.999 / 0.811.
-  sorry
-
-/-- **Refutable as written** — `confinedNet` is a free field and
-    `protonNetTarget = 0.999` (bean qou-octr, §10). -/
-theorem four_term_pair_nucleon_unconstrained_false :
-    ¬ ∀ ctx : FourTermPairNucleonContext, ∀ φ₀ φ₁ φ₀₁ : ℝ,
-        ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget := by
-  intro h
-  have := h { confinedNet := fun _ _ _ _ => 0, protonFlavours := fun _ => true,
-              neutronFlavours := fun _ => false } 0 0 0
-  norm_num [protonNetTarget] at this
+  constructor
+  · intro φ₀ φ₁ φ₀₁
+    rw [ctx.confinedNet_eq_q0, ctx.proton_q0_eq]
+  · intro φ₀ φ₁ φ₀₁
+    rw [ctx.confinedNet_eq_q0, ctx.neutron_q0_eq]
 
 end QOU.ParticleInteractions

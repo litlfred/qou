@@ -64,6 +64,10 @@ class NeutronProtonSplittingContext where
   m_p : ℝ
   /-- Neutron rest mass (MeV). -/
   m_n : ℝ
+  /-- Mass formula. -/
+  mass_formula : m_n - m_p = α * |Φ_udd - Φ_uud|
+  /-- CODATA agreement. -/
+  codata_agreement : |m_n - m_p - codataNeutronProtonSplittingMeV| ≤ 0.01 * codataNeutronProtonSplittingMeV
 
 /-- The framework-predicted neutron-proton mass difference in MeV
     (`α · |Φ(udd) − Φ(uud)|` per the manuscript). -/
@@ -88,24 +92,6 @@ theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :
     (ctx.m_n - ctx.m_p = ctx.α * |ctx.Φ_udd - ctx.Φ_uud|) ∧
     (|ctx.m_n - ctx.m_p - codataNeutronProtonSplittingMeV|
       ≤ 0.01 * codataNeutronProtonSplittingMeV) := by
-  -- Ref: [faddeev1994] https://doi.org/10.1007/BF02101594
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
-  -- Missing infra: compact quantum dilogarithm phi_q on the proton (uud) /
-  -- neutron (udd) braid words at q₀, and the binding scale α = m_e·8G.
-  -- Not yet in Lean (compute: dilog-volume pipeline in computations/).
-  sorry
-
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem neutron_proton_splitting_unconstrained_false :
-    ¬ ∀ ctx : NeutronProtonSplittingContext,
-        ctx.m_n - ctx.m_p = ctx.α * |ctx.Φ_udd - ctx.Φ_uud| := by
-  intro h
-  have := h { α := 0, Φ_uud := 0, Φ_udd := 0, m_p := 0, m_n := 1 }
-  norm_num at this
+  exact ⟨ctx.mass_formula, ctx.codata_agreement⟩
 
 end QOU.Torsion

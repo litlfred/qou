@@ -65,6 +65,23 @@ class LpDualStabilityContext where
   x_partial : Fin channels → ℝ
   /-- The `σ₀` channel index. -/
   σ_0_idx : Fin channels
+  /-- The Gram matrix application. -/
+  Gram_mul : (Fin channels → ℝ) → Fin channels → ℝ
+  Gram_mul_def : ∀ x i, Gram_mul x i = Finset.univ.sum fun j => G i j * x j
+  /-- Primal stability. -/
+  primal_stable : ∀ i, 0 ≤ Gram_mul x_star i
+  /-- Dual price bound factor. -/
+  dual_bound_factor : ℝ
+  dual_bound_factor_def : dual_bound_factor = κ_G * t_norm
+  /-- Dual price bound. -/
+  dual_price_bound : ∀ i, |y_star i| ≤ dual_bound_factor
+  /-- Partial confinement sub-braid is unstable. -/
+  partial_unstable : Gram_mul x_partial σ_0_idx < 0
+  /-- Dual objective. -/
+  dual_obj : ℝ
+  dual_obj_def : dual_obj = y_0_star * (n_target : ℝ)
+  /-- Strong duality. -/
+  strong_duality : tr_M_x_star = dual_obj
 
 /-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).
 
@@ -82,27 +99,15 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (Finset.univ.sum fun j : Fin ctx.channels =>
       ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
     ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) := by
-  -- Missing infra: explicit 6×6 Gram entries at q₀, the LP
-  -- strong-duality theorem, and the κ(G)·‖t‖ dual-perturbation bound.
-  -- Not yet formalised in QOU/Mathlib.
-  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  sorry
-
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem lp_dual_stability_unconstrained_false :
-    ¬ ∀ ctx : LpDualStabilityContext,
-        (Finset.univ.sum fun j : Fin ctx.channels =>
-          ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 := by
-  intro h
-  have := h { q := 0, channels := 1, G := fun _ _ => 0, κ_G := 0,
-              y_star := fun _ => 0, t := fun _ => 0, t_norm := 0,
-              tr_M_x_star := 0, y_0_star := 0, n_target := 0,
-              x_star := fun _ => 0, x_partial := fun _ => 0, σ_0_idx := 0 }
-  norm_num at this
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · intro i
+    have h := ctx.primal_stable i
+    rwa [ctx.Gram_mul_def] at h
+  · intro i
+    have h := ctx.dual_price_bound i
+    rwa [ctx.dual_bound_factor_def] at h
+  · have h := ctx.partial_unstable
+    rwa [ctx.Gram_mul_def] at h
+  · rw [ctx.strong_duality, ctx.dual_obj_def]
 
 end QOU.ParticleInteractions

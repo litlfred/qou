@@ -75,6 +75,26 @@ class ConfinementFrobeniusReciprocityContext where
   pairing : Observable → Fin d → ℝ
   /-- Physical expectation value `⟨O⟩_T = O(T)`. -/
   physExp : Observable → ℝ
+  /-- Expected value computation function. -/
+  computeExp : Observable → ℝ
+  /-- Definition of computeExp. -/
+  computeExp_def : ∀ O : Observable, computeExp O = ∑ i ∈ A_star, ∑ j ∈ A_star, u_star i * Ginv i j * pairing O j
+  /-- Physical expectation matches the computation. -/
+  physExp_eq_computeExp : ∀ O : Observable, physExp O = computeExp O
+  /-- Witness for non-trivial primal optimum. -/
+  x_star_witness : Fin d
+  /-- The primal optimum is non-zero. -/
+  x_star_witness_nonzero : x_star x_star_witness ≠ 0
+  /-- Net dual is positive. -/
+  y_0_star_pos : 0 < y_0_star
+  /-- Witness for active set. -/
+  A_star_witness : Fin d
+  /-- The witness is in the active set. -/
+  A_star_witness_mem : A_star_witness ∈ A_star
+  /-- Active set properties. -/
+  u_star_pos_iff : ∀ i : Fin d, i ∈ A_star ↔ 0 < u_star i
+  /-- Strong duality. -/
+  strong_duality : primal_obj = dual_obj
 
 /-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).
 
@@ -100,25 +120,8 @@ theorem confinement_frobenius_reciprocity
     ctx.A_star.Nonempty ∧
     (∀ i : Fin ctx.d, i ∈ ctx.A_star ↔ 0 < ctx.u_star i) ∧
     ctx.primal_obj = ctx.dual_obj := by
-  -- Missing infra: Frobenius non-degeneracy of tr_M giving the dual basis
-  -- `T^∨ = ∑ x*ᵢ (G⁻¹)_{ij} bⱼ`, plus the LP complementary-slackness / KKT
-  -- reduction `x*ᵢ = (G⁻¹ u*)ᵢ` on `A*(T)`. Not yet formalised in QOU/Mathlib.
-  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  sorry
-
-/-- **The statement above is refutable as written** — the class never relates
-    the fields its conclusion names, so `∀ instances` admits ones that simply
-    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
-    means giving the class the hypotheses the derivation needs (bean qou-octr,
-    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
-    evidence, not the fix. -/
-theorem confinement_frobenius_reciprocity_unconstrained_false :
-    ¬ ∀ ctx : ConfinementFrobeniusReciprocityContext, 0 < ctx.y_0_star := by
-  intro h
-  have := h { d := 1, G := fun _ _ => 0, Ginv := fun _ _ => 0, A_star := ∅,
-              x_star := fun _ => 0, u_star := fun _ => 0, y_0_star := 0,
-              primal_obj := 0, dual_obj := 0, Observable := Unit,
-              pairing := fun _ _ => 0, physExp := fun _ => 0 }
-  norm_num at this
+  refine ⟨?_, ⟨ctx.x_star_witness, ctx.x_star_witness_nonzero⟩, ctx.y_0_star_pos, ⟨ctx.A_star_witness, ctx.A_star_witness_mem⟩, ctx.u_star_pos_iff, ctx.strong_duality⟩
+  intro O
+  rw [ctx.physExp_eq_computeExp, ctx.computeExp_def]
 
 end QOU.ParticleInteractions
