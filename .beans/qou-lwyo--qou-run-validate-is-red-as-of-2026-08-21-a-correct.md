@@ -1,11 +1,11 @@
 ---
 # qou-lwyo
 title: 'QOU run-validate is RED as of 2026-08-21: a correct de-laundering deleted a definition''s Lean sibling, and lake build cannot see it'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T22:53:13Z
-updated_at: 2026-08-22T09:11:19Z
+updated_at: 2026-08-22T21:33:30Z
 ---
 
 `bun run scripts/run-validate.ts content/quantum-observable-universe` exits
@@ -211,3 +211,55 @@ qou-janl, neither of which exists in `.beans/`). Recorded, not acted on.
 mismatches and a bare axiom that had never compiled. These are consequences it
 did not notice, and its `lake build` could not have shown either: a law-free
 class compiles, and an unused hypothesis compiles.
+
+
+## Closed 2026-08-22 — the owner picked a third option, then asked for the gap closed too
+
+This bean framed the decision as (a) formalise the instance or (b) accept the
+red. The owner answered **A** and then **D** — where A was neither of those: it
+was *reclassify the block*, and D was *close the real gap in Lean anyway*.
+
+**A — `def:qou-motivic-galois-instance` -> `rem:qou-motivic-galois-instance`**
+(`424e8667a0`). The Lean-sibling requirement is enforced on `definition` kind
+only, so demoting to `remark` with `interprets: "def:motivic-galois-character"`
+removes the enforcement rather than satisfying it with a stub. That is honest
+in a way (b) was not: the block was never really *defining* anything — it was
+asserting that a particular instance exists, which is a claim, not a naming.
+Cost, flagged at the time and accepted: the label changes, so its dependents
+had to be retargeted.
+
+**D — the gap itself** (`577266d17c`, then PR #5502). Added to
+`MotivicPerpetualObstructionFromTrace.lean`, sorry-free:
+
+```lean
+theorem not_isUnit_of_image {R} [CommRing R] (phi : R ->+* Int) (x : R)
+    (h : ¬ IsUnit (phi x)) : ¬ IsUnit x := fun hx => h (hx.map phi)
+
+theorem habiro_frobenius_not_unit {R : Nat.Primes -> Type*} [∀ p, CommRing (R p)]
+    (frob : ∀ p, R p) (reduce : ∀ p, R p ->+* Int) (C : Int) (hC : 1 < C.natAbs)
+    (h_collapse : ∀ p, reduce p (frob p) = C) : ∀ p, ¬ IsUnit (frob p)
+```
+
+plus `qou_proton_frobenius_not_unit` (C = 4) and
+`qou_deuteron_frobenius_not_unit` (C = -32). `#print axioms` is clean on all of
+them.
+
+**What D did NOT close, stated plainly:** `h_collapse` remains an explicit
+hypothesis — that the Habiro Frobenius reduces to the *same* constant at every
+prime. Proving it needs cyclotomic ring theory over Z[zeta_2p] and is tracked
+in `qou-lrnd`. So this is "conditional-proved", not "premise-established", and
+the instance this bean asked for still does not exist.
+
+**Correcting one thing this bean got right for the wrong reason.** It says
+repointing the ref is unavailable because `…FromTrace.lean` has "zero
+`instance`". True, and the conclusion held — but the deeper problem was one
+directory over: the *other* motivic block's ref was resolving to a shadowing
+stub with a superseded signature, which is why the corpus simultaneously
+carried "open conjecture" beans (`qou-a5dr`, `qou-ngac`) for a theorem proved
+ten days earlier. Both hazards are the sibling-resolution rule; this bean named
+the deletion half, `qou-2u26` named the masking half, and the stub was the
+third face of it.
+
+**Validate now.** 52 issues / 11 errors on clean `main` -> 32 / 4 on PR #5502.
+The 4 that remain are unrelated `.md`-only blocks from `52c68267f2` that never
+had a `.ts`.
