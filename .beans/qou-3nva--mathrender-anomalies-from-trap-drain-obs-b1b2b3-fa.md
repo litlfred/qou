@@ -2784,3 +2784,234 @@ own "0.4–0.9"); and the `skein-polynomial-transfer-matrix` degree table, all
 6 rows, `A²−1` and `C(A,2)` both correct at A = 2, 3, 4, 14, 56, 210.
 Checked and found **not** a defect: "north foundry" is established corpus
 terminology (`def:q-reeb-flow-on-color-coords`).
+
+
+## From agent:g00 (nuclear-interactions gq_00) — 2026-08-22
+
+45 blocks, 450 verdicts, 4 inline fixes, 15 trap fails.
+
+### An impossibility, proved from a standard formula
+
+**G00-1. `bring-z5-descent`: the quotient cannot be a genus-2 hyperelliptic
+curve.** The block states that `𝓑_Br/⟨τ⟩` is one. Riemann–Hurwitz,
+`2g_X − 2 = n(2g_Y − 2) + Σ_P(e_P − 1)` with `g_X = 4`, `n = 5`, and every
+ramification index 5 (the order is prime, so a fixed point is totally
+ramified):
+
+| `g_Y` | required `Σ(e−1)` | fixed points | |
+|---|---|---|---|
+| **0** | 16 | **4** | the unique solution |
+| 1 | 6 | 3/2 | impossible |
+| 2 | −4 | −1 | impossible |
+| 3 | −14 | −7/2 | impossible |
+
+**The quotient is `ℙ¹` with four branch points.** Recomputed independently
+in the coordinating session. The block's other two claims — six Sylow
+5-subgroups, and `y² = x⁵ − 1` having genus 2 with a `ℤ₅` automorphism —
+are both **correct**; only the descent between them is impossible.
+
+### A non-degeneracy claim its own sibling refutes
+
+**G00-2. `confinement-frobenius-reciprocity`** asserts "the Markov trace
+`tr_M` is a non-degenerate Frobenius form on `H_n(q)`". Its own
+interpretation sibling and `MarkovGramDegenerate.lean` say `det G = 0`
+exactly under the canonical convention D. Route: solving the three Markov
+conditions for `H₃` at `z_D = q³/(q²+1)` gives `y_(1³) = 0` **identically**,
+so the `(1³)` block *is* the radical. Consistency check: `6 − 1 = 5 =
+Catalan(3) = dim TL₃`, which is exactly the expected quotient
+`H_n/rad ≅ TL_n`.
+
+### Withdrawn numbers still in circulation
+
+**G00-3.** Three blocks carry figures formally withdrawn on 2026-08-09 as
+convention-C artifacts at a superseded pin. `b3-local-minimum` keeps
+"a negative eigenvalue ≈ −0.956", which `toffoli-lp-stability-proof`
+withdraws **by value**. `confinement-operator-selection.witness.json` is
+`z = 0.4993203340335982` (convention C) at `q0 = 1.1099785955541805` (old
+muon) with `gram_det = −0.1892052530713217` — the determinant
+`confinement-nucleon-unit` withdraws by value on both counts. Two tables and
+an interpretation block's normal forms are all generated from it.
+
+**G00-4. A block that contradicts itself within one page.**
+`confinement-lp`'s Caveat says "the Gram matrix acquires a negative
+eigenvalue"; its Quadratic-extension section, updated 2026-08-09, withdraws
+that indefinite reading and states the form is **positive semidefinite,
+signature (5,0,1)**. The 2026-08-09 pass fixed one section and left the
+other. The (5,0,1) signature was confirmed independently.
+
+### Witnesses that pass while missing
+
+**G00-5. `borromean-axial-coupling.witness.json` reports `allPassed: true`
+while missing by 21.6 %.** Its `g_A` assertion computes **1.0** against an
+expected **1.2754** (PDG 2024) — admitted by `tolerance: 0.5`. It is also
+`q0Anchor: "muon"`, undisclosed in the prose. Its LP-dual field set is
+complete and correct (gap 1.4e−15).
+
+**G00-6. A number sourced to a witness that does not contain it.**
+`beta-decay-energy-scale` says "From the witness: `Δ(net) = −0.188291`". The
+string occurs nowhere in `computations/`, and neither cited witness carries
+it. It exists only in this block.
+
+**G00-7. A table column with no source.** `confinement-operator-selection`
+Table 1's `tr_M` column has no corresponding witness field — the witness
+carries `crossing_energy`, `n_demand`, `demand_magnitude` and no Markov
+trace — and the column does not scale from `crossing_energy`. **Table 2
+breaks its rank-2/3 tie on that unsourced column.** Table 2's `.ts` also
+carries no `computation` field.
+
+**G00-8. A witness that under-covers a 3-clause proposition.**
+`bar-involution-invariance` is `status: "verified"` against
+`brundan-kleshchev-audit.witness.json`, which is `allPassed: true` but whose
+assertions cover **clause (1) only**, plus generic Burnside/centre/JM
+checks. Nothing tests clause (2) or (3).
+
+**G00-9. A solver claimed but deprecated.** `confinement-misdp`: "We solve
+this MISDP via continuous SDP relaxation combined with branch-and-cut." The
+only such code is under `computations/_deprecated/`, and the block has no
+`computation` field.
+
+### Mathematics
+
+**G00-10. The SEMF factor 4, dropped in two displays whose conclusion is
+right.** `beta-stability-interpretation`'s final formula
+`p = A/(2 + a_C A^{2/3}/(2a_A))` is the standard, correct
+valley-of-stability result. But `∂/∂Z` of `−a_A(A−2Z)²/A` is
+`4a_A(A−2Z)/A`, and as printed the stationarity condition and the "Solving
+for p" line carry `a_A` — yielding four times the wrong correction. Restore
+the 4 in both intermediate displays; the conclusion needs no change.
+
+**G00-11. An LP/SDP bound stated backwards, twice.**
+`confinement-sdp-vs-lp`: "the LP provides a lower bound on the SDP". The SDP
+is `min_{Φ⪰0}⟨T,Φ⟩`, and restricting Φ to diagonal *shrinks* the feasible
+set, so LP ≥ SDP — an **upper** bound. The `.ts` tag `lp-relaxation` inverts
+it the same way: diagonal restriction is a restriction, not a relaxation.
+Same block: "the rank-1 restriction `Φ = diag(x)`" — `diag(x)` has rank equal
+to its nonzero count; and "for most baryonic configurations the Wedderburn
+decomposition has 1-dimensional blocks" is false for the baryon case itself,
+where `H₃` has dims 1, **2**, 1 and the 2-dimensional `(2,1)` block carries
+the isospin singlet's entire weight.
+
+**G00-12. The wrong Borromean word.** `atomic-lp-stability-dressing` writes
+"the Borromean braid `(σ₁σ₂)³`". That is the **full twist**, which is the
+identity in the 2-dimensional irrep and closes to the (3,3)-torus link. The
+corpus-canonical word — used by four blocks in this same batch — is
+`(σ₁σ₂⁻¹)³`, which is **not** scalar in that representation. So the
+algebraic fact holds only of the wrong word, and the dressed ratio's stated
+mechanism rests on the mis-identification.
+
+**G00-13. An underived literal, with an arithmetic theorem on top of it.**
+`bareAnnihilationRatio := 0.537` appears in two blocks and
+`atomic_lp_stability.lean`, and **nowhere else in the corpus**. Nearest
+closed form is `q⁻⁶ = 0.53470` (−0.43 %); `q^{−x} = 0.537` needs
+`x = 5.959`. Under the Lean's own stated `(q,−q⁻¹)` vs `(q⁵,−q⁻⁵)` channels
+the bare ratio should be `q⁻² = 0.81165` — and the *dressed* `q⁻¹⁰ =
+0.352252` **does** follow that rule and matches to 3 dp (and discriminates
+the pins: 1.1097 would give 0.3531). The sorry-free
+`annihilation_ratios_distinct` proves `0.537 ≠ q₀⁻¹⁰`: arithmetic on a
+literal with no derivation. Same file carries the **old muon pin**
+`(1.109978595554181 : ℝ)`.
+
+**G00-14. A minimality claim with an unstated restriction.**
+`box-braid-irreducibility-proof` §(iii): "no alternative mediator with fewer
+crossings exists on the Bring's surface", while placing `T_{3,4}` on that
+same surface — and `c(T_{3,4}) = min(8,9) = 8 < 10`. True only under the
+flavour-changing restriction asserted one sentence earlier, which the claim
+does not carry.
+
+### Structure and notation
+
+**G00-15.** `atomic-braid-mass-crossing-locality-cpt-intro` roadmaps a
+section that moved: 4 of 8 named items are not in §8, three now live in
+`mass-theory/`, and "crossing-graded mass expansion" exists nowhere.
+`atomic-braid-mass-intro` has the same over-scope. By contrast
+`branching-qvalue-intro`'s "§8" citation **checks out** — a §3b insertion
+makes the manifest's §7 render eighth.
+
+**G00-16.** `color-pairing-binding` cites "the degree-2 amplification ratio
+`A₂/A₃`" while its table names its integrals `I₃, I₂, I₁, I₀`; no `A_k` is
+defined. `beta-stability` uses `p` for the proton count, which the notation
+register reserves for the brane point (`Z` is the proton count) — and writes
+`L = Z𝔭 ⊕ N𝔫` correctly one line earlier. `confinement-frobenius-
+reciprocity-interpretation` item 1 ends `))**.**`, a bolded full stop.
+`bar-involution-invariance-proof`'s section headed "Worked example: n = 3"
+contains no n = 3 data, and part (3) has no closing `□`.
+
+**G00-17. Flagged, not asserted.** `anyon-observation-collapse` assigns
+*abelian* anyons to generic q and *non-abelian* to `q = e^{2πi/k}`. The
+standard reading is the reverse for genericity, while non-abelian anyons
+proper do require a root of unity. The agent could not adjudicate from the
+block and said so rather than guessing — the right call, recorded as such.
+
+### Verified clean — recomputed, do not re-flag
+
+`archimedean-remainder-exponential-decay`: every numeric reproduces,
+including the **exact** identity `Ce^{−cN} = ℏ^{2(N+1)}/(1−ℏ²)` with
+`c = −2 ln ℏ_q`. `branching-identity-isospin-weights`: every claim
+re-derived from scratch — and its 20-digit `0.24729788674803459841`
+back-solves to `q₀ = 1.10997858275138080751`, **the proton pin carried
+beyond its own 17-digit float64 literal** (not muon 0.24729788615, not
+1.1097's 0.24731078). `box-braid-irreducibility[-proof]`: `c(T_{3,5}) = 10`,
+braid index 3, `dim H₃ = 6`, `ℓ(w₀^{S₃}) = 3`, Bring genus 4, Borromean
+Brunnian minimality all correct. `confinement-sdp-spectral-gap`:
+`q + q⁻¹ = 0 ⟺ q = ±i`, exactly where the eigenvalues `q, −q⁻¹` collide —
+the deconfinement claim is right. `wigner-su4-alpha-cluster-probe`:
+`4⊗4 = 6⊕10`, `4^{⊗3} = 4⊕20^{⊕3}` (64), p-shell holds exactly 12, and
+`8G = 7.32772475341775 = 2V_oct = Vol(𝓑₃)` exactly.
+`beta-stability-interpretation`'s accuracy claim is if anything
+**pessimistic**: over a 30-nuclide stable sample (C-12 → Bi-209) the formula
+gives mean `|Δn| = 0.62`, max 1.92, against a quoted 1.4.
+
+**G00-18. Recorded as a positive.** `colour-tube-floor-overshoots-deuteron`
+declares its figures provisional and uncomputed in its own prose and `.ts`,
+and grep confirms `2.29580` appears nowhere in `computations/`. The
+declaration is accurate. This is the model of the discipline, and is
+recorded so it is not mistaken for a missing-witness defect by a later pass.
+
+## A Lean nucleon-mass definition built on convention C, at a fifth q₀
+
+Found in the coordinating session while chasing the skein-convention
+question into the Lean tree (`qou-hey2`), and **not** a new open item — the
+μ_u/μ_d provenance question is already `qou-37y0`, and
+`observations/dressed-quark-numerology-at-q0` names the concern in its own
+title. What follows is measurement to attach to those.
+
+[`knots-particles-confinement/knot-particle-generation.lean`](../content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean)
+defines
+
+```lean
+noncomputable def q_substrate : ℝ := 1.10997        -- line 34
+noncomputable def mu_up   : ℝ := 311.10             -- "from CODATA nucleon masses"
+noncomputable def mu_down : ℝ := 312.39             -- "from CODATA nucleon masses"
+noncomputable def pairSkeinMass (mu_a mu_b : ℝ) : ℝ :=
+  (q_substrate * mu_a + (1 / q_substrate) * mu_b) /
+  (Real.sqrt q_substrate + 1 / Real.sqrt q_substrate)
+noncomputable def mass_proton_qou  : ℝ := skein_uu + 2 * skein_ud
+noncomputable def mass_neutron_qou : ℝ := 2 * skein_ud + skein_dd
+```
+
+Four measurements:
+
+1. **`q_substrate = 1.10997` is a fifth q₀ spelling** — a 6-digit truncation,
+   distinct from the proton pin, both muon values, and the `1.1097` error.
+2. **The denominator is exactly convention C.**
+   `1/(√q + 1/√q) = 0.4993203342 = z_C`. The excised Markov convention sits
+   inside a nucleon-mass definition in Lean.
+3. **Code and docstrings disagree on q.** The docstring values 312.370 /
+   312.950 / 313.665 reproduce at the **proton pin** (312.369815 /
+   312.950118 / 313.665081); at the file's own `q_substrate = 1.10997` they
+   are 312.3637 / 312.9442 / 313.6590.
+4. **The two μ values coincide with an exact inversion of CODATA to 5
+   significant figures.** Solving `(m_p, m_n)_CODATA → (μ_u, μ_d)` through
+   this same formula at the proton pin gives **(311.1012512,
+   312.3893261)**, against the file's (311.10, 312.39). Whatever their
+   provenance, `mass_proton_qou` cannot be read as a test of anything.
+
+On provenance the corpus is not silent, and the two accounts differ:
+`flavor-dressed-mass-from-substrate-split` derives the *difference*
+`μ_d − μ_u` from q₀ and `M_N` and says the individual masses "are then
+pinned by the baryon-content sum-rule", while this Lean file's docstrings
+say both come "from CODATA nucleon masses". Those are compatible only if the
+sum-rule's scale is itself CODATA-set. Not adjudicated here; attached to
+`qou-37y0`. Note also that these are **absolute nucleon masses in MeV**,
+which the 2026-08-11 excision removes as framework predictions regardless of
+how the μ are obtained.
