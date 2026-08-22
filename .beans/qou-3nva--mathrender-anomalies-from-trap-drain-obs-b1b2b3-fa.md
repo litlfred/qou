@@ -3661,11 +3661,44 @@ q₀".
 
 ### Two `definition` blocks whose Lean does not exist
 
-**J00-9.** `maximal-torus` and `maximal-torus-su2` name
-`qou:QOU.MaximalTorus` and `qou:QOU.Examples.su2MaximalTorus`. **Neither
-exists**: no sibling `.lean`, no `lean/QOU/MaximalTorus.lean`, and all 310
-`Torus` hits under `lean/QOU` are torus *knots*. `def:maximal-torus` is a
-`definition` block, for which a Lean sibling is **type-level required**.
+**J00-9. RETRACTED 2026-08-22 — both refs resolve.** The agent reported
+that `maximal-torus` and `maximal-torus-su2` name Lean declarations that
+exist nowhere, having searched `lean/QOU/` and found all 310 `Torus` hits to
+be torus *knots*. That search missed resolution candidate **(1)**, the
+content-block sibling, which AGENTS.md §0a checks **first**. Both siblings
+exist and carry the declarations:
+
+- `quantum-observable-universes/maximal-torus.lean:35` — `structure MaximalTorus`
+- `quantum-observable-universes/maximal-torus-su2.lean:108` — `def su2MaximalTorus`
+
+I repeated the finding in a commit message before checking it, so the
+correction is recorded here rather than left implicit.
+
+**What the check did find**, run corpus-wide afterwards: of **1,271** blocks
+carrying a `lean.ref`, **10** resolve to nothing under all three candidates
+(sibling, `<lakeRoot>/<Decl/Path>.lean`, declaration-name grep) — 0.8 %.
+That count is a **lower bound**: candidate 3 accepts a matching leaf name in
+any namespace, so a ref pointing at the wrong namespace still resolves. The
+ten:
+
+```
+qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection
+qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance
+qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar
+qou:QOU.BraidKnot.CyclotomicCl3OrbitSum.orbit_sum_general
+qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound
+qou:QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths.dimension_synthesis_all_depths
+qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds
+qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition
+qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even
+qou:QOU.Archimedean.TypeBFoldedCrystalCombinatorics.content_sum_plus_transpose_content_sum_eq_zero
+```
+
+**A separate observation from the same scan**: `structure MaximalTorus` is
+declared in **three** content-block siblings —
+`maximal-torus.lean`, `weight-decomposition-exists.lean` and
+`categorical-reeb-exists.lean` — three copies of the same structure rather
+than one import. Minor, but it is how two of them drift.
 
 **J00-10.** `observation`'s `lean.ref` names the wrong structure.
 `qou:QOU.Intent` formalises the *two-observer commutator* — i.e. the
