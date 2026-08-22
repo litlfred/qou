@@ -3342,3 +3342,96 @@ un-instantiable. And the earlier fit search's two-letter V context was a
 
 **Next:** compose the five stretches into one `openingPhase` lemma under the
 loops-first schedule. Then `a = 3` (no loop) and the closing phase.
+
+### Opening phase CLOSED — `T0 →* TOpen`, sorry-free (#5454)
+
+`CornerLe.openingPhase` proves the whole `a²−3a+9` opening for `a ≥ 4`, from
+the S-polynomial to a four-term element. Five stretches, four lemma calls:
+
+    s1, s2  →  uLoop  →  vLoop  →  trio (U)  →  trio (V)
+
+Three things had to be built; all three turned out smaller than expected.
+
+**1. `loopListSources` — the loop against an arbitrary term list.** `loopTwo`
+and its descendants fixed `blockStep`'s list to `[(P, c')]` and `[]`, parking
+the bystander in the FIRST slot. `blockStep` had taken general `L₁`/`L₂` all
+along, so the restriction was in the *statement*, never in the mathematics.
+
+It bites because `ofTerms` is a **representation, not a normal form** — the
+same element with its terms in the other order is a different *value*. `uLoop`
+runs `loopTwoGen` (parked first) and ends at `[(V2L, 1), (U0L, −1)]`; the V loop
+has V active and U parked, so its source must list V first. Those two do not
+compose syntactically.
+
+I first tried a `CoeffEq` congruence (`MultiStepReduction.congr_target` beside
+the existing `congr_source`). **Wrong tool, reverted.** `congr_source` returns a
+*disjunction* because `refl` is a syntactic constructor and an empty chain
+leaves only the source available; discharging the degenerate branch needs a
+refutation of `CoeffEq` between the two words the loop exists to separate.
+`loopTwoGenRightSources` — the same induction against the other slot — is both
+smaller and exact.
+
+**2. `vLoop`.** `V2` is already the loop's entry shape on the nose, so this is
+`loopTwoGenRight` at `A = [σᵢ₋₂]`, `k = i`, `S = []`, `m = i − jppp` — one more
+than `uLoop`'s. Measured: U and V take `2/5/9` and `3/6/10` steps at
+`a = 4/5/6`, i.e. `V = U + 1`, 6/6. It went through first try.
+
+**3. `trio` — ONE lemma, both lineages.** The six steps after `TL` are
+`B(jp,jpp,j₁)`, `Y(j₁,jp)`, `Q(j₁)` twice, and the two occurrences differ only
+in `A` and a trailing `T`:
+
+| | `A` | `T` |
+|---|---|---|
+| U | `[σᵢ₋₁] ++ descWord i₂ jpp ++ descWord i jppp` | `[σᵢ]` |
+| V | `[σᵢ₋₂] ++ descWord i₁ jpp ++ descWord i jppp` | `[]` |
+
+`hj₂ : j₂ ≤ j₁` **is the regime** (`b ≥ a`) and is what makes `descWord jp j₂`
+open `σ_jp, σ_j₁` — so `trio` does not instantiate in the `a > b` corner at all.
+The diagonal `b = a` is included (`descWord jm j₂` empty).
+
+#### What the new probe measured — `hecke_opening_trio_shape.py`, 7/7, 6/6
+
+`hecke_opening_coverage.py` replays under deg-lex; `openingPhase` uses the other
+(legal) order, so the continuation could not be read off that trace.
+
+* **`TL` is reached exactly** — the element after the forced loops-first
+  schedule is precisely `{V2L, U0L}`. Confirms no logic, but checks the Lean's
+  *words* against the engine's, which sorry-freeness does not.
+* **Term count `2,2,3,3,3,4`.** The QUADRATIC step splits, at the END of each
+  trio. So the first trio runs at two terms and the second at three — both fine
+  (`bsStep` and `quadPair` take general lists), and it confirms from the other
+  side why the loops must come first: they are the only two-term-only lemmas.
+* **Exactly 6 steps left after `TL`**, in all six cases. `opening = 2L + 9`.
+* **After the trios: far-commutations** (`F(jpp,j₁)`, `F(jppp,jp)`) at four
+  terms. That is where the next tranche starts.
+
+#### Four errors this tranche, all mine, all the same two shapes
+
+*A check that finds nothing reads as a measurement* (now **three** instances):
+
+1. `importlib.util.spec_from_file_location` returns a **fresh** module, so
+   loading the engine a second time left the probe reading an untuned (empty)
+   rule table. No redex was ever found; every stretch measured 0 steps and the
+   run reported `0/6` rather than erroring.
+2. Then the *same bug* in my ad-hoc inspection script, one level up — the probe
+   module loads its own copy of the sibling, so `cov.retune` there tuned a third
+   instance. It made `TL` look unreachable when the probe had just proved it was.
+
+*A structural claim not measured is usually wrong* (**two** more):
+
+3. I derived the trio's words for the **V** lineage and tested them against the
+   **first** trio, which is the **U** side's — deg-lex reaches `U0L` before
+   `V2L`. Six clean `False`s rather than a near miss is what made it findable.
+   `U_trio_runs_first` is now its own assertion.
+4. `openingLoops`' docstring gave `L = jpp − j₁`. That is `2` for every `a` and
+   agrees with the measured `2, 5, 9` only at `a = 4`. Right figure
+   `L = (a²−3a)/2`; it is the loop's *level* `m = a−4` that is linear in `a`,
+   not its step count. Corrected in place.
+
+Plus three Lean metavariable failures with one cause worth naming: a bare
+`have` has no expected type, so an implicit the hypotheses do not *determine*
+stays open and the `by omega` beside it is asked to prove something about a
+metavariable. Every index is now pinned by name at those call sites.
+
+**Next:** the region after `TOpen` — far-commutations at four terms — then
+`a = 3` (no loop pass: `m` would be −1) and the closing phase.
