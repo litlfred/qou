@@ -940,6 +940,8 @@ import QOU.Mathlib.SchenstedCornersAlong
 import QOU.Mathlib.SchenstedMaxCorner
 -- RSK inverse, brick 18: CornersAlong reduces to a condition on shapes alone.
 import QOU.Mathlib.SchenstedShapeRun
+-- RSK inverse, brick 20: addable-cell sequences peel back as corners.
+import QOU.Mathlib.SchenstedAddable
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
