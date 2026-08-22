@@ -16,11 +16,11 @@ Measured over the 3030 tracked `computations/**/*.witness.json`:
 
 | population | count | what it is |
 |---|---:|---|
-| current muon `1.109978595557334…` | 212 | the live ideal/CAL-2 pin |
-| **superseded muon `1.109978595554180…`** | **375** | the *old* muon value — a pin-currency defect |
+| current muon `1.109978595557334…` | 211 | the live ideal/CAL-2 pin |
+| **superseded muon `1.109978595554180…`** | **374** | the *old* muon value — a pin-currency defect |
 | both values present | 24 | deliberate cross-anchor comparison, mostly |
 | rounded / low-precision variants | 31 | e.g. `1.10997859556` |
-| **loose-prefix total** | **642** | |
+| **loose-prefix total** | **640** | |
 
 The prefix sensitivity is the tell:
 
@@ -307,6 +307,67 @@ The four in both populations are
 Together the two audits cover 101 producers (49 + 56 − 4), and neither sees
 the other's set.
 
+## Re-measured after #5457 merged — and the `independent` test has a blind spot
+
+A sibling asked on this PR to *"rebase and re-measure before trusting a
+pre-merge q₀ census"*, since #5457 (`238fc79f6e`) dispositioned nine
+producers as `q0Anchor: independent`. Done — and the two metrics move by
+different amounts, which turns out to be the interesting part.
+
+| metric | delta |
+|---|---|
+| their `canonical` count | 221 → 212 (−9) |
+| **my muon-value census** | 642 → 640 (**−2**) |
+
+Both are right; they measure different things. Theirs asks *does this
+witness **assert** a muon pin?* — the `q0Anchor`/`q0Value` pair. Mine asks
+*does this witness **carry** a muon-derived number anywhere?* Of the 10
+witnesses stamped `independent` in that range, **8 still contain muon digits
+elsewhere in the file**, which is exactly why my delta is 2.
+
+### Where those digits come from
+
+The `independent` disposition is assigned when a producer's output is
+byte-identical under `QOU_Q0_ANCHOR=muon` vs `=proton`, taken as proof it
+never reads q₀. But that variable only reaches q₀ resolution **routed through
+`q_parameter`**. So the test measures *override-sensitivity*, and that
+coincides with q₀-independence only when q₀ arrives by that path. Two routes
+defeat it — a **hardcoded q₀ literal** (an env var cannot change a string
+constant), and a **direct read of the pinning witness** (never consults
+`q_parameter`). Both yield byte-identical output under either anchor while
+being hard-pinned to muon.
+
+Measured across all 37 `independent`-stamped witnesses on `main`:
+
+| | count |
+|---|---:|
+| stamped `independent` | 37 |
+| … still carrying muon digits | 9 |
+| … … producer hardcodes a muon q₀ literal | **6** |
+| … … producer reads the pinning witness directly | **1** |
+| … … value inherited from an upstream input | 2 |
+
+**7 of 9 are provably not q₀-independent.** Worked example —
+`qbeta/qbeta_c3_rung_structure_analysis.py:74`:
+
+```python
+Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"   # muon
+...
+q0_mp = mp.mpf(Q0_MP_PIN)          # "Numerical check at q_0"
+```
+
+Its witness records `q_0 = 1.1099785955573347198997` under the primary pin key
+while asserting `independent`. The label says the producer does not use q₀;
+the data block says it evaluated at the muon one.
+
+**Scope.** The drain is good work and the `save()` carry-forward fix is
+correct; this is a blind spot in one criterion, not a reason to revert
+anything. 28 of the 37 labels are untouched by this. And a hardcoded literal
+is not automatically wrong — a probe may legitimately pin a q₀ for a stability
+check. The defect is the **label**: `independent` records the opposite of what
+the producer does, and hides it from every later pin audit. Tracked as
+`qou-324i`.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke
@@ -328,6 +389,6 @@ the other's set.
 |---|---|
 | "~840 muon witnesses" | superseded |
 | "624 fingerprint / 65 stamped" (my earlier re-baseline) | **superseded — the 624 conflates two q₀ values** |
-| 212 current-muon + 375 superseded-muon + 24 both + 31 rounded | measured 2026-08-22 |
+| 211 current-muon + 374 superseded-muon + 24 both + 31 rounded | measured 2026-08-22, post-rebase onto `238fc79f6e` |
 | 65 stamped `muon` = 3 `ideal_muon` + 11 `physical_proton` + 51 undeclared | measured; the 3 are the legitimately-muon producers |
 | 56 producers pin q₀ directly from the muon witness; 5 contradict their own manifest entry | measured, confirmed both directions |
