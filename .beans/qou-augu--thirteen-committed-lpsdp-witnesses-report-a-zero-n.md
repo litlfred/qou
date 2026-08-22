@@ -1,11 +1,11 @@
 ---
 # qou-augu
-title: Thirteen committed LP/SDP witnesses report a zero net-constraint dual — mechanism confirmed for none of them
+title: Fourteen of 57 committed LP/SDP witnesses report a zero net-constraint dual — the cause is t = G e0, not the radical
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T12:19:51Z
-updated_at: 2026-08-22T12:20:18Z
+updated_at: 2026-08-22T15:33:12Z
 ---
 
 
@@ -16,28 +16,34 @@ guarded. The sweep that answered that question turned up something wider.
 ## The sweep
 
 Every `computations/**/*.witness.json` carrying a `y0_star` field, flagged when
-`max|y₀*| ≤ 1e-12`. **Thirteen** hit, of which `8na1` knew about two:
+`max|y₀*| ≤ 1e-12`. **Fourteen of the 57** distinct witnesses carrying a
+numeric `y0_star` hit — about a quarter — of which `8na1` knew about two:
 
 ```
-confinement-lp                              lp-duality-check
 a-K-via-lp-dual-full            (known)     a-K-via-lp-dual-hecke-basis  (known)
 all-nuclides-sdp-admissibility              co-bond-order-active-set
-he3-pairknot-composite-lp                   molecular-frobenius-lp
-pn-alpha-lp-dual                            frobenius-repose
-qbeta-confinement-sdp-offset-homogeneity    qbeta-c3-barodd-binding-sdp-dual
+confinement-lp                              frobenius-repose
+he3-pairknot-composite-lp                   lp-duality-check
+molecular-frobenius-lp                      pn-alpha-lp-dual
+qbeta-c3-barodd-binding-sdp-dual            qbeta-confinement-sdp-offset-homogeneity
 qbeta-symbolic-sdp-strict-complementarity   wedderburn-pair-volumes
 ```
+
+**Count correction 2026-08-22.** This filing said "thirteen" throughout. It is
+**fourteen** — miscounted off the sweep output, not off the sweep. Re-derived
+programmatically over distinct witness filenames, with the denominator this
+time: 57 witnesses carry a numeric `y0_star`, 14 of them zero.
 
 ## What is NOT claimed
 
 That these share `8na1`'s mechanism. `y_0_eq_zero_of_radical` needs three
 things — a radical `v` with `Gv = 0`, a cost vector with `⟨t,v⟩ = 0`, and
-`Σⱼvⱼ ≠ 0`. None of the thirteen has been checked against them.
+`Σⱼvⱼ ≠ 0`. None of the fourteen has been checked against them.
 
 Nine of the eleven producing scripts build a trace-form / Gram object, which is
 where the mechanism lives. Two — `all_nuclides_sdp_admissibility.py`,
 `co_bond_order_active_set.py` — mention neither `tr_M` nor a Gram, so **at
-least two of the thirteen have a different cause**, whatever it is.
+least two of the fourteen have a different cause**, whatever it is.
 
 `qou/pin3` is the standing reason to be careful: it was filed as the same
 degeneracy seen from the numerics, and it was not — `alpha_5_lp_dual_crystal.py`
@@ -112,7 +118,7 @@ inherited that framing and went looking for radicals.
 `t = G e₀` holds whenever the basis contains the identity and the cost is
 `tr_M(bⱼ)`: `tⱼ = tr_M(bⱼ) = tr_M(b₀bⱼ) = G₀ⱼ`. Nothing about `det G`.
 
-**The signature confirms it. Twelve of the thirteen report `y* = e₀`:**
+**The signature confirms it. Twelve of the fourteen report `y* = e₀`:**
 
 ```
 e₀ only   confinement-lp · lp-duality-check · a-K-via-lp-dual-hecke-basis
@@ -131,7 +137,7 @@ enough to rule the radical out as the cause.
 ### Correction to this bean's own filing
 
 It said two of the eleven producing scripts "mention neither `tr_M` nor a Gram,
-so at least two of the thirteen have a different cause". **One of the two does.**
+so at least two of the fourteen have a different cause". **One of the two does.**
 `all_nuclides_sdp_admissibility.py`'s header reads
 
 > `t = TR_M (H_3 Markov-trace cost vector), G = gram_matrix() (6x6), from

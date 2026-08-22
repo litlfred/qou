@@ -253,7 +253,7 @@ from the other direction.
 Worth noting which of the two does the work downstream. `dualCertificateExists_of_cost_eq_gram_row`
 needs only `t = G e₀`, and that alone produces `y₀ = 0`, `y = e₀` and optimal
 value `0`. The radical is what upgrades "attained" to "forced". Twelve of the
-thirteen committed LP/SDP witnesses carrying a `y0_star` show the `e₀`
+fourteen committed LP/SDP witnesses carrying a `y0_star` show the `e₀`
 certificate — including `frobenius-repose`, whose Gram is **invertible**
 (`gram_rank 6`). So the identity, not the radical, is the widespread mechanism.
 See `qou/augu`.

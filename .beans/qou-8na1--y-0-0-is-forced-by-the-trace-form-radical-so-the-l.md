@@ -243,7 +243,7 @@ qbeta-confinement-sdp-offset-homogeneity    qbeta-c3-barodd-binding-sdp-dual
 qbeta-symbolic-sdp-strict-complementarity   wedderburn-pair-volumes
 ```
 
-**Not claimed: that all thirteen share this bean's mechanism.** Nine of the
+**Not claimed: that all fourteen share this bean's mechanism.** Nine of the
 eleven producing scripts build a trace-form/Gram object, which is where the
 mechanism lives; `all_nuclides_sdp_admissibility` and `co_bond_order_active_set`
 mention neither, so at least two zero duals have a different cause. Whether
@@ -354,7 +354,7 @@ sorry-free consequences, and nothing above shows the class uninhabited.
 
 ## 2026-08-22 (second) — lead with the identity, not the radical
 
-`qou/augu` tested the thirteen zero-dual witnesses against
+`qou/augu` tested the fourteen zero-dual witnesses against
 `y_0_eq_zero_of_radical`'s actual hypotheses. The radical is **not** the
 operative one, and this bean's framing sent that search the wrong way.
 
@@ -370,7 +370,9 @@ is the uniqueness refinement, not the cause.
 
 The discriminating datum: `frobenius-repose` reports `gram_rank = 6`,
 `gram_invertible = true`, **and** `y* = e₀`. An invertible Gram with the same
-certificate. Twelve of thirteen witnesses show `e₀`.
+certificate. Twelve of fourteen witnesses show `e₀` (14 of the 57 witnesses
+carrying a numeric `y0_star` report it zero; the count was filed as 13 and
+corrected in `augu`).
 
 This bean's title stays accurate for `H₃` — `y₀* = 0` *is* forced there by the
 radical. But anyone reading it as the explanation of a zero dual elsewhere will
