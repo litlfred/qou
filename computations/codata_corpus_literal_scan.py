@@ -719,13 +719,25 @@ def main() -> int:
     # opposite of a defect, because a drain that replaces a stale literal
     # with a registry read and records the superseded value beside it lands
     # exactly there. Only CODE sites gate.
+    # ONE definition of "is this a source site", used by both the top-level
+    # buckets below and the per-finding counts in the witness. They disagreed:
+    # the top-level filtered on suffix first and the per-finding field did
+    # not, so a finding reported `code_sites: 292` for a literal whose true
+    # executable count was 0, and the per-finding field summed to 1645 against
+    # a top-level 0. The gate was never affected -- it reads the top-level --
+    # but anything consuming findings[].code_sites read a number that was
+    # wrong by its entire magnitude. Caught by noticing the two numbers in the
+    # same file could not both be true.
+    def _is_source(f: str) -> bool:
+        return f.endswith((".py", ".lean", ".ts")) and "/audits/" not in f
+
     code_sites: list[tuple[str, str, int]] = []
     prose_sites: list[tuple[str, str, int]] = []
     adjudicated_sites: list[tuple[str, str, int]] = []
     record_sites = 0
     for (lit, _q, _w), sites in ranked:
         for f, ln, kind in sites:
-            if f.endswith((".py", ".lean", ".ts")) and "/audits/" not in f:
+            if _is_source(f):
                 if kind == "code":
                     code_sites.append((f, lit, ln))
                 elif kind == "adjudicated":
@@ -801,12 +813,44 @@ def main() -> int:
                     "table_value": want,
                     "quantity": quantity,
                     "sites": len(sites),
-                    "code_sites": sum(1 for _f, _l, k in sites if k == "code"),
+                    "code_sites": sum(
+                        1 for f, _l, k in sites if k == "code" and _is_source(f)
+                    ),
+                    "prose_sites": sum(
+                        1 for f, _l, k in sites
+                        if k not in ("code", "adjudicated") and _is_source(f)
+                    ),
+                    "adjudicated_sites": sum(
+                        1 for f, _l, k in sites
+                        if k == "adjudicated" and _is_source(f)
+                    ),
+                    "record_sites": sum(1 for f, _l, _k in sites if not _is_source(f)),
                     "files": sorted({f for f, _, _ in sites}),
                 }
                 for (lit, quantity, want), sites in ranked
             ],
         }
+        # A WITNESS MUST NOT CONTRADICT ITSELF. The per-finding counts are a
+        # partition of the same sites the top-level counts partition, so they
+        # must sum to it. This invariant is what turns the class of bug fixed
+        # above (two counts of one thing, computed by two predicates that
+        # drifted apart) from "spotted by eye, once" into "cannot be
+        # committed". Checked for every bucket, not just the gating one.
+        for _field, _total in (
+            ("code_sites", len(code_sites)),
+            ("prose_sites", len(prose_sites)),
+            ("adjudicated_sites", len(adjudicated_sites)),
+            ("record_sites", record_sites),
+        ):
+            _sum = sum(f[_field] for f in payload["findings"])
+            if _sum != _total:
+                raise SystemExit(
+                    f"internal inconsistency: per-finding {_field} sums to "
+                    f"{_sum} but the top-level count is {_total}. The two are "
+                    "partitions of the same sites and must agree; fix the "
+                    "predicate, do not adjust the number."
+                )
+
         # P30: a raw json.dump emits a witness with NO scriptHash /
         # scriptCommitSha / engineVersion, so run_pipeline.py cannot tell
         # whether it is stale -- the witness is PROV_MISSING. `wrap_legacy`
