@@ -1,11 +1,11 @@
 ---
 # qou-9ttb
 title: 'PROVE(lean): the two Morton-Franks-Williams inequalities — currently hypotheses on MFWWitness'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T02:02:43Z
-updated_at: 2026-08-22T09:34:22Z
+updated_at: 2026-08-22T12:14:45Z
 ---
 
 ## What is open
@@ -120,3 +120,58 @@ the corpus. Re-checked today:
 3. **Ingredient 2 of this bean — the degree argument — is untouched and remains
    the part with no in-corpus precedent.** That is the real content of this
    bean, and it was true before this correction and after it.
+
+
+## PROGRESS (2026-08-22) — ingredient 2 has a second route, and its step is proved
+
+**The scoping in this bean named one route and treated it as the only one.**
+It said proving MFW needs Markov invariance of the Ocneanu trace plus a degree
+argument. There is a second route that needs **neither**: induct along the
+skein recursion itself, on the same well-founded order the corpus's own HOMFLY
+engine already descends (`computations/homfly_skein_braid.py`).
+
+Lickorish's relation rearranges to `P₊ = v²·P₋ + v·z·P₀`. On braid words both
+children are again `n`-strand closures — switching moves `e ↦ e−2`, smoothing
+moves `e ↦ e−1` — so the MFW window propagates by pure interval arithmetic.
+
+**Proved, sorry-free**: `QOU.Knot.MFWSkeinInduction` — `mfw_step`,
+`switch_shift` / `smooth_shift` and their converses, `switch_shift_eq` /
+`smooth_shift_eq`, `spread_le_of_window`. Axioms on every one:
+`propext, Classical.choice, Quot.sound`; no `sorryAx`.
+
+**Measured first**: the window holds for **180/180** random braid words on 2–4
+strands under the engine, zero violations.
+
+**Lean corrected me mid-proof, and the correction is the interesting part.** I
+wrote the step as an inclusion with slack at the top — two units on the switch
+branch, one on the smoothing — and inferred that the upper bound must
+therefore be driven by the base case. Both slack lemmas are **false**;
+`ring` rejected them. `2 + ((e−2) + n − 1) = e + n − 1`, not `e + n − 3`. Each
+shifted child window *equals* the parent window at both edges. The recursion
+neither widens nor narrows — it only translates. That is a stronger result
+than I set out to prove, and the inference I had drawn from the imagined slack
+was unfounded.
+
+An earlier draft also packaged this as an induction "concluding" MFW whose
+base-case hypothesis went **unused** — near-circular. Deleted rather than
+patched; the file now proves the step and nothing more.
+
+## What remains — narrower than before, and NOT closed
+
+The **base case**: a descending braid diagram closes to an unlink of `c`
+components with `P = δ^{c−1}`, `δ = (v⁻¹ − v)/z`, so its degrees span
+`[−(c−1), c−1]`. Fitting that inside `[e−n+1, e+n−1]` requires
+
+    |e| ≤ n − c
+
+for descending words. This is **not free**, and I checked rather than assumed:
+it is false for arbitrary words — the longest element of `S₃` has Coxeter
+length 3 against `n − c = 1` — so it depends on what "descending" actually
+supplies, and that is where the remaining content of this route sits.
+
+Also still open, unchanged: HOMFLY's invariance and the termination of the
+recursion are built into the engine's construction, not proved in Lean.
+
+So ingredient 2 is **not closed**. What changed is that it no longer requires
+the Ocneanu/Markov machinery — the residue is one combinatorial statement
+about descending braid words.
