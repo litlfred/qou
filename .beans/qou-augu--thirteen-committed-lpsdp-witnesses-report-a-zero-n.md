@@ -198,12 +198,84 @@ over witnesses that report duals, not over LP/SDP computes.
 without it, `lp_dual_solver` fails to import `pyhecke` and the whole check
 dies before scanning anything — another instance of the missing-path pattern.)
 
+---
+
+## 2026-08-22 — the dual-less sweep, and the gate that was meant to catch them
+
+Started from the scripts rather than the witnesses, which is the right way
+round: **71 scripts under `computations/` import a real LP/SDP solver**
+(`linprog`, `cvxpy`, `lp_dual_solver`); 19 are deprecated. Of the 52 live ones,
+**6 emit a same-stem witness carrying none of the required dual fields**:
+
+```
+ak-lp-dual-quotient-probe          benzene-assembly-spine
+binding-sdp-bondgraph-degenerate   nucleus-operator-selection-sdp
+three-quark-borromean-lp-sweep     two-quark-active-set-mahler-sweep
+```
+
+**Nothing is claimed about their duals.** They report none, so whether any is
+degenerate is unknown — which is the point. The "14 of 57" figure earlier in
+this bean counts witnesses that *report* a `y0_star`; the population that
+should report one is larger, and the difference is invisible by construction.
+
+### `lp_dual_witness_validator.py` found one of the six, for two reasons
+
+Its docstring states the failure mode exactly: *"scripts that solve the primal
+LP but never extract / report the dual, losing the principled binding-energy
+interpretation."* It was catching **1 of 6**.
+
+**(a) It gated on the witness's name before consulting the script.** A witness
+had to contain one of ten literal strings in `LP_SDP_HINTS` before its sibling
+was even looked at. `nucleus-operator-selection-sdp` — an *operator-selection*
+witness — misses because the hint is `operator-selection-lp` and this one ends
+`-sdp`. `three-quark-borromean-lp-sweep`, `two-quark-active-set-mahler-sweep`
+and `benzene-assembly-spine` carry no hint substring at all. The property being
+tested — does this script solve an LP? — is a property of the *script*, and the
+solver-import test was already the guard doing the real work. Inverted: flag on
+the script, keep the hint to enrich the reason.
+
+**(b) The walk was not recursive.** `root.glob("*.witness.json")` over
+`computations/` only. The Phase 6 subdirectory refactor (2026-06-02,
+`computations/_path_bridge.py`) moved compute scripts and witnesses into
+cluster directories, and this walk was never updated:
+
+```
+scanned by the validator : 1410
+live witnesses in tree   : 2697
+INVISIBLE                : 1287   (516 probes/, 362 qbeta/, 169 deltalambda/, …)
+```
+
+**48% of the live corpus.** `ak-lp-dual-quotient-probe` sits in `probes/` and
+was unreachable. A check written before a refactor kept passing by seeing less.
+
+Both fixed. `_deprecated/` stays excluded — deliberate now rather than
+incidental.
+
+```
+before  scanned 1410   flagged 12   missing 1
+after   scanned 2697   flagged 27   missing 6
+```
+
+Still warn-only (exit 0; `--strict` exits 1), and nothing in CI runs it —
+`scripts/check-sidecars.sh` only mentions it as advice. So widening it turns
+nothing red.
+
+### Third instance of the same shape in this bean
+
+`y_0_eq_zero_of_radical` looked for the wrong hypothesis; the Python sweep lost
+declarations to a missing `axiom` keyword; this gate scoped itself to a naming
+convention and a pre-refactor directory. Each time the check was narrower than
+its stated purpose **and said nothing about it**.
+
 ## Next
 
-- [ ] Re-run the sweep over LP/SDP witnesses **lacking** a `y0_star`, starting
-      with `binding-sdp-bondgraph-degenerate`. A dual that was never extracted
-      is a weaker signal than one extracted and found zero, but it is not no
-      signal.
+- [ ] The six dual-less producers: route each through
+      `lp_dual_solver.solve_operator_selection_lp` /
+      `solve_psd_operator_selection_sdp` so the duals exist, then re-run the
+      `y0_star` sweep over them. Only then is the "how many are degenerate"
+      question answerable for this population.
+- [ ] Consider wiring `lp_dual_witness_validator.py` into CI diff-scoped, the
+      way the vacuity audit is. It is not run by anything today.
 - [ ] `confinement-lp.witness.json`: re-derive the Gram from `pyhecke.gram`,
       or establish what the committed matrix is. Then re-read the "unique
       optimal B₃" claim against a degenerate optimal face. **Own bean.**

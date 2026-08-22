@@ -100,54 +100,74 @@ def _script_imports_solver(script_path: Path) -> tuple[bool, str]:
     return False, ""
 
 
+def _name_or_description_hint(path: Path) -> tuple[str, str] | None:
+    """`(field, hint)` if the witness's name or text advertises an LP/SDP
+    compute, else None. **Annotation only** — see `is_lp_sdp_witness`."""
+    name = path.name.lower()
+    for hint in LP_SDP_HINTS:
+        if hint in name:
+            return ("filename", hint)
+    try:
+        data = json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return None
+    # A witness whose top-level JSON is a list (or scalar) has no hint fields.
+    if not isinstance(data, dict):
+        return None
+    for field in ("description", "computation", "audit", "name"):
+        v = data.get(field)
+        if isinstance(v, str):
+            v_low = v.lower()
+            for hint in LP_SDP_HINTS:
+                if hint in v_low:
+                    return (field, hint)
+    return None
+
+
 def is_lp_sdp_witness(path: Path) -> tuple[bool, str]:
     """Returns (is_lp_sdp, reason).
 
-    A witness is flagged iff:
-    1. Its filename or description/computation field contains an
-       LP/SDP/operator-selection hint, AND
-    2. Its sibling .py script actually imports an LP/SDP solver
-       (linprog / cvxpy / lp_dual_solver). This eliminates the
-       false-positive case where a script's name or description
-       contains 'shadow'/'lp'/'dual' but the script doesn't solve
-       any optimization problem (e.g., precomputed shadow prices).
-    """
-    # Step 1: name/description hint
-    name = path.name.lower()
-    hint_match: tuple[str, str] | None = None
-    for hint in LP_SDP_HINTS:
-        if hint in name:
-            hint_match = ("filename", hint)
-            break
-    if hint_match is None:
-        try:
-            data = json.loads(path.read_text())
-        except (json.JSONDecodeError, OSError):
-            return False, ""
-        # A witness whose top-level JSON is a list (or scalar) has no hint
-        # fields and is not an LP/SDP witness — skip without crashing.
-        if not isinstance(data, dict):
-            return False, ""
-        for field in ("description", "computation", "audit", "name"):
-            v = data.get(field)
-            if isinstance(v, str):
-                v_low = v.lower()
-                for hint in LP_SDP_HINTS:
-                    if hint in v_low:
-                        hint_match = (field, hint)
-                        break
-                if hint_match:
-                    break
-    if hint_match is None:
-        return False, ""
+    A witness is flagged iff **its sibling `.py` actually imports an LP/SDP
+    solver** (linprog / cvxpy / lp_dual_solver). That is the signal this
+    script exists for: its own docstring says the failure mode is "scripts
+    that solve the primal LP but never extract / report the dual", and
+    whether a script solves is a property of the script.
 
-    # Step 2: sibling script must import an actual LP/SDP solver
+    **The name/description hint used to GATE this, and that made the check
+    miss most of what it was written to catch.** `LP_SDP_HINTS` is ten
+    literal strings, and a witness had to contain one of them before its
+    sibling was even consulted. Measured 2026-08-22: 71 scripts under
+    `computations/` import a real solver; 13 of them emit a same-stem
+    witness carrying none of the required dual fields. **The gate flagged
+    one.** The twelve it missed include
+
+      - `nucleus-operator-selection-sdp` — an *operator-selection* witness,
+        missed because the hint is `operator-selection-lp` and this one ends
+        `-sdp`;
+      - `three-quark-borromean-lp-sweep`, `two-quark-active-set-mahler-sweep`,
+        `benzene-assembly-spine` — no hint substring anywhere in the name;
+      - six more in `_deprecated/`.
+
+    So the check was keyed on a naming convention while the property it
+    tests is knowable directly. The hint is kept, but only to enrich the
+    reason string. A sibling that cannot be resolved is still not flagged —
+    unchanged, and deliberate: without the script there is nothing to
+    confirm.
+
+    The false positive the old step 1 guarded against — a script whose
+    *name* says "dual" without solving anything — is already excluded by
+    the solver-import test, which is the guard that was doing the work.
+    """
     sibling = _sibling_script(path)
     if sibling is None:
-        return False, ""  # no sibling — can't confirm; don't flag
+        return False, ""  # no sibling — nothing to confirm against
     has_solver, marker = _script_imports_solver(sibling)
     if not has_solver:
-        return False, ""  # name match but no actual solver — false positive
+        return False, ""
+    hint_match = _name_or_description_hint(path)
+    if hint_match is None:
+        return True, (f"script imports '{marker}' (no LP/SDP hint in the "
+                      f"witness name or description — flagged on the script)")
     field, hint = hint_match
     return True, f"{field} matches '{hint}' + script imports '{marker}'"
 
@@ -177,8 +197,22 @@ def main(argv: list[str]) -> int:
     root = Path(__file__).parent
     repo_root = root.parent.parent
     wired = collect_wired_witnesses(repo_root) if (strict_wired or list_wired) else set()
-    witnesses = sorted(root.glob("*.witness.json")) + sorted(
-        root.glob("*-witness.json"))
+    # RECURSIVE. This was `root.glob(...)` — non-recursive — and so scanned
+    # only the witnesses sitting directly in `computations/`. The Phase 6
+    # subdirectory refactor (2026-06-02, see `computations/_path_bridge.py`)
+    # moved compute scripts and their witnesses into cluster directories,
+    # and this walk was never updated: measured 2026-08-22, it saw 1410 of
+    # the 2697 live witnesses and **1287 were invisible** — 516 in `probes/`,
+    # 362 in `qbeta/`, 169 in `deltalambda/`, and so on. A check written
+    # before a refactor kept passing by seeing less.
+    #
+    # `_deprecated/` stays out: those witnesses are retired by design and
+    # flagging them would be noise, which is also what the non-recursive
+    # walk happened to achieve for that one directory.
+    witnesses = sorted(
+        w for w in list(root.rglob("*.witness.json")) + list(root.rglob("*-witness.json"))
+        if "_deprecated" not in w.parts
+    )
     flagged = []
     for w in witnesses:
         is_lp, reason = is_lp_sdp_witness(w)
