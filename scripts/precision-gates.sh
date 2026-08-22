@@ -70,6 +70,25 @@ GATES=(
   # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
   "witness shape guard|computations/witness_shape_guard.py||yes|yes"
   "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
+  # BLOCKING and green on arrival (CODE sites 0, measured on main at
+  # 74c00bb0). Guards the queue #5439 drained from 61 to 0: an executable
+  # literal that is NEAR a NIST CODATA-2022 table value but not equal to it
+  # -- the signature of a stale edition.
+  #
+  # This is the file's own "A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS"
+  # rule applied to a second detector. The scan was written 2026-08-19,
+  # worked from the start, drained 61 sites, and was in no array -- so the
+  # day after the drain, nothing stopped site 62 from landing.
+  #
+  # SLOWEST GATE IN THE ARRAY: ~100s, against ~40s for all the others
+  # combined. Accepted rather than trimmed, because the alternative on offer
+  # was leaving it unwired. If it ever needs to be cheaper, the cost is in
+  # the per-literal mpmath comparison across ~25k files, not in the I/O.
+  #
+  # Only CODE gates. Prose, adjudicated (`noqa: P31`) and record sites are
+  # counted and reported but never fail the run -- see the scan's own
+  # docstring for why prose RISING is the metric working correctly.
+  "CODATA stale-edition|computations/codata_corpus_literal_scan.py|--strict --quiet --no-witness|yes|yes"
   # BLOCKING, and green on arrival because the 111-witness backlog is
   # baselined. The mirror of `witness_hollowness_audit` (which catches
   # `allPassed: true` with `assertions: []` — green with nothing behind it):
@@ -222,11 +241,25 @@ fi
 if [ "${1:-}" = "--changed" ]; then
   # Cheap short-circuit. The ratchets are corpus-wide, not per-file, so there is
   # nothing to scope down — but if this change cannot have moved any of them,
-  # skip the ~40s entirely.
+  # skip the run entirely.
+  #
+  # `content/**/*.{lean,ts}` was ADDED to this predicate on 2026-08-22, with
+  # the CODATA stale-edition gate. Every other gate here examines witnesses
+  # and `computations/` Python, so the old two-pattern predicate was exactly
+  # right for them. The CODATA gate is the first with a wider domain: of the
+  # 30 executable sites remaining when #5439 reached its last tranche, TWENTY
+  # were `.lean`. Leaving the predicate alone would have shipped a gate that
+  # short-circuits precisely on the file type carrying two thirds of its
+  # defect class -- wired, and still never run.
+  #
+  # The cost is real and falls on other agents: a Lean-only commit now runs
+  # the full ~140s preflight where it previously ran nothing. If that proves
+  # too heavy, the fix is to scope THIS gate to changed paths, not to narrow
+  # the predicate back and re-open the hole.
   relevant=$( { git diff --name-only HEAD 2>/dev/null
                 git diff --cached --name-only 2>/dev/null
                 git ls-files --others --exclude-standard 2>/dev/null; } \
-              | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$)' || true)
+              | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
   if [ -z "$relevant" ]; then
     echo "precision-gates: no witness or computations/ script touched — skipped."
     exit 0
