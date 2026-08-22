@@ -64,7 +64,8 @@ G = mp.catalan
 # (CAL-4 audit, 2026-05-22).
 VOL_B3_FROM_G = 8 * G
 VOL_B3_LIT = VOL_B3_FROM_G
-VOL_41 = mp.mpf("2.02988321281930725004240510854658")
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 33 digits, correct to 29 (qou-ckbv)
+VOL_41 = 2 * mp.clsin(2, mp.pi / 3)
 
 # CODATA validation (CAL-1: m_e MeV; comparison only)
 from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
