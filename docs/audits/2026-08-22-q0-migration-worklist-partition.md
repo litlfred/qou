@@ -156,6 +156,51 @@ ideal-layer witness itself and never asks which anchor it wants. Same
 failure, one layer down, and it bypasses every guard built into the
 accessor path.
 
+## 🛑 CORRECTION 2026-08-22 (post-merge): the dual-purpose count is 3, not 21
+
+The section below reports **21** of the direct pinners as reading the pin
+witness for more than q₀, and builds a "straddle-by-partial-repin" hazard on
+20 of them co-reading q₀-derived scalars. **The 21 is wrong — measured
+correctly it is 3.**
+
+The detector matched the bare field name **anywhere in the file**. That also
+catches locally-computed variables (`hbar_q_num = (q_0 - 1) / q_0`,
+`hbar_q_sym`) and the producer's own *output* keys (`hbar_q_50dps`), none of
+which are reads of the witness. The correct test is dict-key use — a
+subscript or `.get()` against the loaded witness — and it is now
+`co_read_fields()` in
+[`q0_muon_population_partition.py`](../../computations/audits/q0_muon_population_partition.py),
+so the number is re-derivable rather than hand-scanned.
+
+Substring: **21**. Dict-key: **3**. A 7× over-report.
+
+The three that genuinely co-read:
+
+| producer | field | evidence |
+|---|---|---|
+| `nuclide_braid_pipeline` | `hbar_q` | `_QPIN["derived_50_digit"].get("hbar_q")` at `:66` |
+| `qbeta/qbeta_decay_sdp_extended_ck` | `hbar_q_sq` | `mpf(str(data["hbar_q_sq"]))` at `:168` |
+| `q1_mass_gap_probe` | `plancherel_weights_n3`, `two_q` | the reference-table case |
+
+**What this changes.** The straddle hazard is real but **narrow**: 3 producers,
+of which 2 co-read a q₀-derived scalar and 1 co-reads a reference table. It is
+not the dominant shape of the migration's remaining work, and the earlier
+framing ("only one is a reference table; the other 20 co-read q₀-derived
+scalars") overstated it substantially.
+
+**What this does not change.** The root-cause finding below — that a direct
+reader cannot be migrated by re-running it, because its q₀ comes from the
+anchor-defining witness, which must stay muon — is independent of this count
+and stands. So do the census (210/374/24/31), the 55 direct pinners, the 4
+remaining contradictions, and the `load_q_50dps` default.
+
+**Consequence for two of the four remaining contradictions.** I had recorded
+`path4_rho_K_at_h3A` and `q_beta_form_a_n1_extension` as dual-purpose and
+therefore complicated. They are not: `path4_rho_K_at_h3A:46` computes
+`q_inv = mpf(1) / q` locally, and `q_beta_form_a_n1_extension:163` computes
+`hbar_q_num = (q_0 - 1) / q_0` locally. Both are simple single-read fixes of
+the same shape as `b_over_m_order_probe`.
+
 ## The sweep hazard, measured: dual-purpose reads and a defaulting utility
 
 Of the 56 direct pinners, **21 read the pinning witness for more than
