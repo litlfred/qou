@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 307,
-      "proton-pin": 1227,
+      "STALE": 306,
+      "proton-pin": 1229,
       "unknown": 25,
       "canonical": 212
     },
-    "stale_total": 307,
+    "stale_total": 306,
     "new_stale": 0,
     "rows": [
       {
@@ -11536,10 +11536,17 @@
       },
       {
         "file": "computations/sublemma-2-1-A-operator-extract.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/sublemma-2-1-A-operator-extract.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955541805",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416943465287684
+        "value": "1.10997858275138080759166909561076887987449912187360000000000",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/sublemma-2-1-alpha-shift-extract.witness.json",
