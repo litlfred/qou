@@ -1,4 +1,5 @@
 import QOU.Mathlib.SchenstedShapeRun
+import QOU.Mathlib.SchenstedTableau
 
 /-!
 # QOU.Mathlib.SchenstedAddable — addable-cell sequences peel back as corners (brick 20)
@@ -253,5 +254,91 @@ builds is the shape of `P`. -/
 theorem shapeCornersAlong_and_empty {is : List ℕ} (haa : AddableAlong [] is) :
     ShapeCornersAlong (addCellSteps [] is) is ∧ removeCornerSteps (addCellSteps [] is) is = [] :=
   shapeCornersAlong_addCellSteps is [] youngShape_nil haa
+
+/-! ### The forward shape law
+
+Brick 17 said the reverse cascade acts on shapes as `removeCorner`. The mirror — that Schensted
+insertion acts on shapes as `addCell` — was not in the corpus, and it is what connects this file's
+machinery to the insertion side. -/
+
+/-- Adding below the top row leaves the top row alone. -/
+theorem addCell_cons_succ (a : ℕ) (l : List ℕ) (j : ℕ) :
+    addCell (a :: l) (j + 1) = a :: addCell l j := by
+  rw [addCell, addCell]
+  by_cases h : j < l.length
+  · rw [if_pos (by simpa using h), if_pos h, List.set_cons_succ, List.getD_cons_succ]
+  · rw [if_neg (by simpa using h), if_neg h]
+    simp
+
+/-- **Insertion acts on shapes as `addCell`** — the mirror of brick 17's `tableauShape_uninsert`. -/
+theorem tableauShape_insert : ∀ (T : List (List ℕ)) (x : ℕ),
+    tableauShape (insert T x) = addCell (tableauShape T) (newRowIndex T x)
+  | [], x => by simp [insert, newRowIndex, addCell]
+  | r :: T, x => by
+      rw [insert, newRowIndex]
+      cases hb : (rowInsert r x).2 with
+      | none =>
+          simp only [tableauShape_cons, rowInsert_length_none hb]
+          rw [addCell, if_pos (by simp)]
+          simp
+      | some y =>
+          simp only [tableauShape_cons, rowInsert_length_some hb]
+          rw [addCell_cons_succ, tableauShape_insert T y]
+
+/-- The row insertion appends to is within the shape. -/
+theorem newRowIndex_le : ∀ (T : List (List ℕ)) (x : ℕ),
+    newRowIndex T x ≤ (tableauShape T).length
+  | [], _ => by simp [newRowIndex]
+  | r :: T, x => by
+      rw [newRowIndex]
+      cases hb : (rowInsert r x).2 with
+      | none => simp
+      | some y =>
+          simp only [tableauShape_cons, List.length_cons]
+          have := newRowIndex_le T y
+          omega
+
+/-- **Insertion adds an addable cell.**
+
+Not proved from the bumping-column argument directly — it is read off the fact that `insert`
+preserves `ColStrict` (`insert_colStrict`, already in the corpus), whose shape is therefore weakly
+decreasing. Spelling that out at the added index *is* addability. -/
+theorem isAddable_newRowIndex {T : List (List ℕ)} (hc : ColStrict T) (x : ℕ) :
+    IsAddable (tableauShape T) (newRowIndex T x) := by
+  refine ⟨newRowIndex_le T x, ?_⟩
+  rcases Nat.eq_zero_or_pos (newRowIndex T x) with h0 | hpos
+  · exact Or.inl h0
+  · refine Or.inr ?_
+    -- the inserted tableau is column-strict, so its shape is weakly decreasing
+    have hsorted : (tableauShape (insert T x)).Sorted (· ≥ ·) :=
+      tableauShape_sorted (insert_colStrict hc x)
+    rw [tableauShape_insert] at hsorted
+    have hstep := getD_succ_le_of_sorted _ hsorted (newRowIndex T x - 1)
+    have hidx : newRowIndex T x - 1 + 1 = newRowIndex T x := by omega
+    rw [hidx, getD_addCell_self _ (newRowIndex_le T x),
+      getD_addCell_ne _ (newRowIndex_le T x) (by omega)] at hstep
+    omega
+
+/-- **A whole insertion run is an addable sequence, and it builds the shape.** -/
+theorem addableAlong_rowIndices : ∀ (w : List ℕ) (T : List (List ℕ)),
+    ColStrict T →
+    AddableAlong (tableauShape T) (rowIndices T w) ∧
+      addCellSteps (tableauShape T) (rowIndices T w) = tableauShape (w.foldl insert T)
+  | [], T, _ => ⟨trivial, rfl⟩
+  | x :: rest, T, hc => by
+      obtain ⟨haa, hbuild⟩ := addableAlong_rowIndices rest (insert T x) (insert_colStrict hc x)
+      rw [rowIndices_cons, List.foldl_cons, addableAlong_cons, addCellSteps_cons,
+        ← tableauShape_insert]
+      exact ⟨⟨isAddable_newRowIndex hc x, haa⟩, hbuild⟩
+
+/-- **The insertion-built case, closed.** Both of brick 18's hypotheses now come from brick 20's
+machinery rather than from brick 19's iff — an independent route to the same conclusion, which is
+what makes the two shape-level pictures agree. -/
+theorem addableAlong_insertWord (w : List ℕ) : AddableAlong [] (rowIndices [] w) :=
+  (addableAlong_rowIndices w [] colStrict_nil).1
+
+theorem addCellSteps_insertWord (w : List ℕ) :
+    addCellSteps [] (rowIndices [] w) = tableauShape (insertWord w) :=
+  (addableAlong_rowIndices w [] colStrict_nil).2
 
 end QOU.Mathlib.Schensted
