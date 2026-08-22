@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T12:31:06.871924+00:00",
-  "commitSha": "77558b2d3ad7a2952ef3601d5f0f9131b8270d88",
+  "computedAt": "2026-08-22T13:03:39.595915+00:00",
+  "commitSha": "bd7c371beb6324270a45b494aca276e5d3e0eb58",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -43,14 +43,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 665,
+      "Q0_OK": 666,
       "Q0_AMBIGUOUS": 18,
-      "Q0_INDEPENDENT": 27,
+      "Q0_INDEPENDENT": 28,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 0,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1924,
+      "Q0_ANCHOR_MISSING": 1923,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
       "Q0_PARSE_ERROR": 0,
@@ -5436,10 +5436,6 @@
           "detail": ""
         },
         {
-          "witness": "q-beta-operator-valued-N3.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "q-beta-predicted.witness.json",
           "detail": ""
         },
@@ -9870,6 +9866,10 @@
           "detail": ""
         },
         {
+          "witness": "q-beta-operator-valued-N3.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "q-beta-substrate-prediction.witness.json",
           "detail": ""
         },
@@ -10795,6 +10795,10 @@
         }
       ],
       "Q0_INDEPENDENT": [
+        {
+          "witness": "undeclared-muon-pin-flip-risk.witness.json",
+          "detail": ""
+        },
         {
           "witness": "habiro-witness-convention-adjudication.witness.json",
           "detail": ""
