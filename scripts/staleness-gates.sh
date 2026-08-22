@@ -81,10 +81,42 @@ if [ "${1:-}" = "--list" ]; then
   exit 0
 fi
 
+# 🛑 THIS SCRIPT IS RED ON `main` — MEASURED, NOT INHERITED FROM YOUR BRANCH.
+#
+# A full run on a pristine origin/main worktree (2026-08-22) exits 1 on three
+# gates: `scriptHash + upstream drift`, `q0 constant staleness`, and `qou-mass
+# vendor mirror`. If you see those three, they are almost certainly not yours —
+# check a clean worktree before spending time on them:
+#
+#   git worktree add --detach /tmp/mainwt origin/main
+#   (cd /tmp/mainwt && bash scripts/staleness-gates.sh)
+#
+# WHY NOBODY KNEW. Until 2026-08-22 the `--changed` predicate below read the
+# working tree only, so it printed "nothing touched — skipped" for any change
+# that had been COMMITTED, which is most of them. The gate has been red for an
+# unknown length of time with nothing reporting it. Tracked as bean qou-p8lx.
+#
+# This is the failure this file's sibling (precision-gates.sh) warns about at
+# its top — "a gate that is red on arrival gets skipped, which is how a checker
+# goes quiet" — reached by a different route: not red-on-arrival, but
+# never-actually-run. Do NOT respond by narrowing the predicate again, and do
+# NOT baseline the offenders. Drain them at the producers.
+
 if [ "${1:-}" = "--changed" ]; then
+  # THE MERGE-BASE DIFF IS NOT OPTIONAL -- third instance of the qou-s2gm
+  # defect-1 shape, after precision-gates.sh and check-sidecars.sh. All three
+  # working-tree sources see only UNCOMMITTED work, so once a change is
+  # committed the set goes empty, this prints "nothing touched -- skipped" and
+  # exits 0, and that is indistinguishable from a real pass. AGENTS.md tells
+  # every agent to commit early and often, so verifying after committing is
+  # the natural order.
+  #
+  # On `main` the merge-base IS HEAD, so this adds nothing on a clean checkout.
+  base=$(git merge-base HEAD origin/main 2>/dev/null || true)
   relevant=$( { git diff --name-only HEAD 2>/dev/null
                 git diff --cached --name-only 2>/dev/null
-                git ls-files --others --exclude-standard 2>/dev/null; } \
+                git ls-files --others --exclude-standard 2>/dev/null
+                [ -n "$base" ] && git diff --name-only "$base"...HEAD 2>/dev/null; } \
               | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$)' || true)
   if [ -z "$relevant" ]; then
     echo "staleness-gates: no witness or computations/ script touched — skipped."

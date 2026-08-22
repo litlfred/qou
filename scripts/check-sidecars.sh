@@ -25,7 +25,23 @@ cd "$ROOT"
 if [ "$#" -gt 0 ]; then
   files=("$@")
 else
-  mapfile -t files < <( { git diff --name-only HEAD 2>/dev/null; git diff --cached --name-only 2>/dev/null; } | sort -u )
+  # THE MERGE-BASE DIFF IS NOT OPTIONAL -- same defect as precision-gates.sh
+  # --changed (bean qou-s2gm, defect 1), found here by running this script on
+  # a branch with three commits and being told "no changed files".
+  #
+  # Both `git diff HEAD` and `--cached` see only UNCOMMITTED work, so once a
+  # change is committed this exits 0 having examined nothing. It is worse here
+  # than there: AGENTS.md names this script the pre-commit preflight AND the
+  # merge-time verification gate for content blocks ("Content blocks changed ->
+  # check-sidecars.sh clean"), and at merge time the changes are ALWAYS
+  # committed -- so as the merge gate it has been reading an empty set and
+  # reporting success.
+  #
+  # On `main` the merge-base IS HEAD, so this adds nothing on a clean checkout.
+  base=$(git merge-base HEAD origin/main 2>/dev/null || true)
+  mapfile -t files < <( { git diff --name-only HEAD 2>/dev/null
+                          git diff --cached --name-only 2>/dev/null
+                          [ -n "$base" ] && git diff --name-only "$base"...HEAD 2>/dev/null; } | sort -u )
 fi
 mapfile -t files < <(printf '%s\n' "${files[@]:-}" | sort -u | grep -v '^$' || true)
 [ "${#files[@]}" -eq 0 ] && { echo "check-sidecars: no changed files."; exit 0; }

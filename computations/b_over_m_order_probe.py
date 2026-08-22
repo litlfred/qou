@@ -31,11 +31,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _pb  # noqa: F401, E402 — substrate module bridge
-import json  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — experimental/proton pin, 50 dps
 from q1_mass_gap_probe import plancherel_weight  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
@@ -68,8 +68,13 @@ EMPIRICAL = {
 
 
 def main() -> int:
-    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open(encoding="utf-8") as fh:
-        q0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
+    # Experimental/proton pin per the 2026-08-07 owner directive, matching this
+    # probe's own docstring ("Computed at the proton-pinned q₀") and its
+    # `physical_proton` entry in q0_anchor_manifest.json.  Was a direct read of
+    # q-pinning-50-digit.witness.json, which is MUON-anchored -- so the probe
+    # silently computed at the ideal pin while declaring the experimental one.
+    # Q_MP is the proton pin at the same 50 dps, so this is not a downgrade.
+    q0 = Q_MP
     h = q0 - 1
 
     split_q0 = plancherel_weight((3, 3), q0) - plancherel_weight((5, 1), q0)
@@ -123,6 +128,7 @@ def main() -> int:
             "exploratory": True,
             "data": {
                 "q0_50dps": str(q0),
+                "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
                 "h": str(h),
                 "h_squared": str(h ** 2),
                 "five_over_18_h2": str(five18_h2),

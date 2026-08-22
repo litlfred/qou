@@ -1,11 +1,11 @@
 ---
 # qou-ibbr
 title: 'atomic_tr_m_mpfr_50dps muon leg now reads the PROTON y_lambda table: a straddle created by cbc8237daa'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T16:31:51Z
-updated_at: 2026-08-22T14:27:06Z
+updated_at: 2026-08-22T19:08:55Z
 ---
 
 
