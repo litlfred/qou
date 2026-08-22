@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-22T21:02:46Z
+updated_at: 2026-08-22T21:35:32Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1344,3 +1344,72 @@ the dim-sum n! : n = 12 (⁴He) produced 13 GB here, and n = 18 is 18!/12! ~ 10�
 times larger. So A = 4 is the last atom this measurement reaches, and the
 monotone `full` trend (+217, +112, +19) cannot be extended to a fourth point by
 this route.
+
+
+---
+
+# Swapped the production tower to the Lean-mandated term
+
+Decision from the user: **if Lean proves it, swap — even if the numbers do not
+improve.** That rule is right and my earlier reasoning for deferring was not.
+Using a function the formal development proves is the wrong one is a defect
+whatever number falls out; keeping it because its wrongness happens to be
+differently sized is how a real error stays hidden.
+
+## What Lean actually proves (stated exactly, not overstated)
+
+`QOU/BraidKnot/QuantumDilogarithm.lean`, **no `sorry`** anywhere:
+
+- `phi_q_ne_li2_q` refutes the historical identity claim
+  `Phi_q(z) = -Li_2^q(-z)` by counter-example at z = 0 — Phi_q is the empty
+  PRODUCT (1), the other is the empty SUM (0), and 1 != 0.
+- `towerTerm q V := -li2_q q (-|V|)` is the corrected per-generator term.
+- class `HasCorrectedMassEndomorphismTower` documents the discipline: a consumer
+  "should assert `f = towerTerm`, not `f = phi_q`. The latter is the historical
+  pathological form preserved only as a diagnostic."
+
+What it does **not** prove: that this makes the physics right. The field
+`saddle_phi_q_eq_towerTerm` is labelled conjectural and open in that same file.
+Two axioms (`phi_q_residual`, `li2_q_residual`) stand in for everything past the
+leading term, so the proved statement is about leading behaviour — and is
+genuinely proved.
+
+## The change
+
+- New `tower_term_li2q` in `mass_at_3A_proper.py` implementing `-Li_2^q(-|V|)`.
+- `mass_from_tower_safe`, `canonical_tower_mass`, `binding_3A_tower`,
+  `binding_per_irrep_tower`, `binding_canonical_tower` take `term=`, defaulting
+  to **`"tower_term"`**.
+- The two energy-scale calibrations pin `term="phi_q"` explicitly, with comments:
+  they compute the proton ABSOLUTE mass against 938.272 MeV / `M_P_MEV`, the mass
+  context where Phi_q is the documented correct choice per `_li_2_q_util`. Note
+  `_calibrate_E0_per_irrep` reaches that through `binding_per_irrep_tower`, so the
+  argument is threaded rather than left to change silently.
+
+## Measured
+
+    atom   term          B_MeV          B_AME       err
+       D   tower_term    1.80422       2.2245     -18.9%
+       D   phi_q         1.00718e+07   2.2245     +4.5276e+08%
+
+Deuterium lands at **−18.9%**, far better than my standalone probe suggested
+(+124% to +217%) — because the production path carries its own calibration
+(E_0 = Q_beta = 0.78233341 MeV, not the 3.7445 MeV my probe used), its own
+weight scheme, and the `desc` term. The `phi_q` opt-in still reproduces the
+historical wrong number exactly, so the diagnostic path is intact.
+
+Tritium was still computing on a cold cache when this was committed.
+
+## Gates
+
+`precision-gates.sh` exit 0, "All blocking precision gates green".
+`sync-qou-mass-vendor.py --check` back to main's 2 pre-existing witness drifts.
+`probe-float64-guard.py` — **21 hits on main's copies of these two files and 21
+on mine**, so the swap adds none; the one new `float()` carries a `float64-ok:`
+annotation, which the guard honours.
+
+## Still open, and now visible as itself
+
+The remaining error is real and unexplained. It is no longer buried under a
+function that was wrong by eight orders of magnitude, which is the point of
+making the swap independent of whether it helped.

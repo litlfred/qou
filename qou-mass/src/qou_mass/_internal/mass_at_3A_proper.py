@@ -717,8 +717,58 @@ def log_phi_q(z_val: float, *, q: float = Q0,
     return total
 
 
+#: Cached (q, q^-1) for the Li_2^q tower term, loaded once from the canonical
+#: pinning witness.
+_LI2Q_Q_CACHE: tuple | None = None
+
+
+def tower_term_li2q(v_abs: float) -> float:
+    """Lean-mandated per-generator tower term: ``towerTerm q V = -Li_2^q(-|V|)``.
+
+    This is `QOU.BraidKnot.QuantumDilogarithm.towerTerm`, the form the Lean
+    class `HasCorrectedMassEndomorphismTower` requires of any consumer of the
+    mass-endomorphism tower ("should assert `f = towerTerm`, not `f = phi_q`.
+    The latter is the historical pathological form preserved only as a
+    diagnostic").
+
+    Lean proves these are genuinely different functions, not two spellings of
+    one: `phi_q_ne_li2_q` refutes the historical identity claim
+    `Phi_q(z) = -Li_2^q(-z)` by counter-example at z = 0, where Phi_q is the
+    empty PRODUCT (1) and -Li_2^q(-0) is the empty SUM (0). No `sorry`.
+
+    Note the minus signs: outside AND on the argument. The negative argument is
+    what makes the series alternate and converge; the positive-argument form
+    diverges here because |V_hat| can exceed 1.
+    """
+    global _LI2Q_Q_CACHE
+    if _LI2Q_Q_CACHE is None:
+        from _li_2_q_util import load_q_50dps
+        q, q_inv, _z = load_q_50dps()
+        _LI2Q_Q_CACHE = (q, q_inv)
+    q, q_inv = _LI2Q_Q_CACHE
+    from _li_2_q_util import li_2_q
+    import mpmath as _mp
+    return float(-li_2_q(-abs(_mp.mpf(str(v_abs))), q, q_inv))  # float64-ok: tower arithmetic is float64 throughout this module; mpf is carried inside li_2_q
+
+
+def _tower_spec(term: str, cap_frac: float):
+    """Resolve the archimedean specialisation function by name.
+
+    ``"tower_term"`` -> `tower_term_li2q`  (Lean-mandated, DEFAULT)
+    ``"phi_q"``      -> `phi_q_safe`       (historical; MASS context only --
+                        absolute masses and ratios, per `_li_2_q_util`'s rule
+                        that Li_2^q is canonical for BINDING context)
+    """
+    if term == "tower_term":
+        return tower_term_li2q
+    if term == "phi_q":
+        return lambda x: phi_q_safe(x, cap_frac=cap_frac)
+    raise ValueError(f"unknown term: {term!r} (want 'tower_term' or 'phi_q')")
+
+
 def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
-                            cross_mode: str = "adjacent"):
+                            cross_mode: str = "adjacent",
+                            term: str = "tower_term"):
     """Tower mass using phi_q_safe — Φ_q evaluations clipped at cap_frac·q₀.
 
     Mirrors mass_endomorphism.mass_from_tower but regularizes the
@@ -737,31 +787,28 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
     Returns (desc, single, cross, total).
     """
     from mass_endomorphism import z_mark as _zm
+    _spec = _tower_spec(term, cap_frac)
     n = len(vols)
     desc = 1.0
     for v in vols:
         desc *= v["full"]
     desc = abs(desc)
-    single = sum(phi_q_safe(abs(v["full"]), cap_frac=cap_frac)
-                  for v in vols)
+    single = sum(_spec(abs(v["full"])) for v in vols)
     cross = 0.0
     if cross_mode == "adjacent":
         for i in range(n - 1):
-            cross += _zm * _zm * phi_q_safe(
-                abs(vols[i]["full"] * vols[i + 1]["full"]),
-                cap_frac=cap_frac)
+            cross += _zm * _zm * _spec(
+                abs(vols[i]["full"] * vols[i + 1]["full"]))
     elif cross_mode == "full":
         for i in range(n):
             for j in range(i + 1, n):
-                cross += _zm * _zm * phi_q_safe(
-                    abs(vols[i]["full"] * vols[j]["full"]),
-                    cap_frac=cap_frac)
+                cross += _zm * _zm * _spec(
+                    abs(vols[i]["full"] * vols[j]["full"]))
     elif cross_mode == "full_z2pow":
         for i in range(n):
             for j in range(i + 1, n):
-                cross += (_zm ** (2 * (j - i))) * phi_q_safe(
-                    abs(vols[i]["full"] * vols[j]["full"]),
-                    cap_frac=cap_frac)
+                cross += (_zm ** (2 * (j - i))) * _spec(
+                    abs(vols[i]["full"] * vols[j]["full"]))
     else:
         raise ValueError(f"unknown cross_mode: {cross_mode}")
     return desc, single, cross, desc + single + cross
@@ -773,7 +820,8 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",
-                       verbose: bool = False) -> dict:
+                       verbose: bool = False,
+                       term: str = "tower_term") -> dict:
     """FULL-TOWER + H_{3A} binding.
 
     Combines the Φ_q tower formula (prop:mass-endomorphism-tower)
@@ -802,9 +850,11 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         return {"status": "trivial", "Z": Z, "N": N}
     if use_safe_phi_q:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower_safe(
-            vols_atom, cap_frac=cap_frac, cross_mode=cross_mode)
+            vols_atom, cap_frac=cap_frac, cross_mode=cross_mode,
+            term=term)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower_safe(
-            vols_free, cap_frac=cap_frac, cross_mode=cross_mode)
+            vols_free, cap_frac=cap_frac, cross_mode=cross_mode,
+            term=term)
     else:
         desc_a, sgl_a, cross_a, total_a = mass_from_tower(vols_atom)
         desc_f, sgl_f, cross_f, total_f = mass_from_tower(vols_free)

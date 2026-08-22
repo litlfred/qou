@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 307,
-      "proton-pin": 1225,
+      "proton-pin": 1227,
       "unknown": 25,
       "canonical": 221
     },
@@ -8777,6 +8777,13 @@
         "ppb_vs_canonical": 4.172458118041393e-41
       },
       {
+        "file": "computations/probes/axial-observable-is-the-gram-radical.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/b4-1four-complete-graph-writhe-signs.witness.json",
         "field": "result.constants.q0",
         "value": "1.10997859556",
@@ -9433,6 +9440,13 @@
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/probes/gram-restricted-nonsingularity.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/probes/h4-categorical-drivers-probe.witness.json",
