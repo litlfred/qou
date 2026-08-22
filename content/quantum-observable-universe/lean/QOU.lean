@@ -1107,3 +1107,8 @@ import QOU.Mathlib.SeparatedHeight
 -- m!·(S·B)^m is what turns a height bound on an auxiliary polynomial into one on its
 -- generalized Wronskian.  All of it is the easy direction; Gelfond is the other one.
 import QOU.Mathlib.MvPolynomialHeight
+-- The height of a generalized Wronskian, composed end to end:
+--   H(mvGenWronskian D f) ≤ m!·(S·(d^L·B))^m.
+-- Not Mathlib-only: it needs mvGenWronskian.  Its two dependencies are, so the three
+-- lift together.
+import QOU.Mathlib.WronskianHeight

@@ -572,3 +572,59 @@ lemmas that *looks* like a finished argument. It is recorded in `SeparatedHeight
    Mechanical, and the first thing that should be done.
 2. **Assemble the induction** on the number of variables. Still the real gap.
 3. Roth's lemma proper, then Roth's theorem.
+
+---
+
+## 2026-08-22 — the chain is walked: H(mvGenWronskian D f) ≤ m!·(S·(d^L·B))^m
+
+New module `QOU/Mathlib/WronskianHeight.lean`, three declarations plus a non-vacuity guard,
+all `[propext, Classical.choice, Quot.sound]`:
+
+```
+card_support_pderivList_le    #supp(pderivList l g) ≤ #supp(g)
+abs_coeff_pderivList_le       H(pderivList l g)     ≤ d^{|l|}·H(g)
+abs_coeff_mvGenWronskian_le   H(mvGenWronskian D f) ≤ m!·(S·(d^L·B))^m
+```
+
+**This closes the gap the previous entry flagged.** That entry warned the arc had become "a
+stack of true lemmas that *looks* like a finished argument" — every link proved, no statement
+anywhere actually bounding a Wronskian. There is one now, and `SeparatedHeight.lean`'s note
+saying otherwise has been corrected in place rather than left to rot.
+
+Where each factor comes from:
+
+* `d^L` — each `pderiv` multiplies a coefficient by an exponent bounded by the degree. The
+  *same* `d` works at every step, because `degreeOf` does not grow under differentiation
+  (`degreeOf_pderivList_le`, already in the corpus). Without that the bound would degrade
+  along the list.
+* `S` — the antidiagonal cost of each Leibniz multiplication. Support does not grow under
+  differentiation either, so entries inherit `S` from `f` unchanged.
+* `m!` — the permutation count.
+
+⚠ **Not Mathlib-liftable on its own.** It imports `MvGenWronskian` and `MvPolynomialHeight`;
+both of those are Mathlib-only, so the three lift together, but `mvGenWronskian` is not a
+Mathlib notion. Recorded in the module header.
+
+The theorem carries eight hypotheses, so a worked instance (`m=1`, `f=X`, `D=![[]]`,
+`S=d=B=1`, `L=0`) is landed with it as an `example`: the premises are jointly satisfiable and
+the statement is not vacuously true.
+
+### The height side of Roth's lemma is closed end to end
+
+| link | where |
+|---|---|
+| `H(f)`, degrees, supports → `H(∂ⱼ f)`, `#supp(∂ⱼ f)` | `MvGenWronskian.lean` |
+| → `H(pderivList l f)` | `WronskianHeight.lean` |
+| → `H(mvGenWronskian D f)` | `WronskianHeight.lean` |
+| → `H(U)`, `H(V)` for the separated factors | `SeparatedHeight.lean` |
+| Mahler bridges (Jensen form, `M ≤ ‖·‖₁`, `H ≤ 2^d·M`) | `MahlerJensen.lean` — proved, not needed by the above |
+
+### ⚠ What is open
+
+**Only the assembly**: the statement of Roth's lemma and the induction from `m` variables to
+`1` and `m−1`. That is structural, not quantitative.
+
+I predict no further height machinery is needed. **Treat that as a claim to be measured.**
+This bean has now mis-predicted the location of the remaining cost three times — onto the
+`m=1` base case, onto bare-hands-vs-upstream Mahler, and onto Gelfond for the induction step —
+and each time the prediction was confident and wrong.

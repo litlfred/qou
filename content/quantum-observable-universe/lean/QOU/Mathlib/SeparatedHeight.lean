@@ -209,9 +209,13 @@ of `P`, and the three pieces line up:
   bounds into `m!·(S·B)^m` for the determinant;
 * `abs_coeff_le_of_mul_separated` above then carries that down to each separated factor.
 
-⚠ What is still *not* written is the composite: a single statement bounding
-`H(mvGenWronskian D f)` in terms of `H(f)` and the degrees, with the `pderivList` iteration
-actually performed.  Each link is proved; the chain has not been walked, and until it is,
-nothing here should be described as bounding a Wronskian's height. -/
+The composite is now written too — `abs_coeff_mvGenWronskian_le` in
+`QOU/Mathlib/WronskianHeight.lean` gives `H(mvGenWronskian D f) ≤ m!·(S·(d^L·B))^m`, with the
+`pderivList` iteration actually performed.  An earlier version of this note said the chain had
+not been walked; it has.
+
+⚠ What remains is **structural**: assembling the induction on the number of variables. No
+further height machinery is known to be needed, but that is a prediction, not a measurement —
+see bean `qou-4lbh` for why predictions from this arc deserve suspicion. -/
 
 end MvPolynomial
