@@ -80,10 +80,14 @@ GATES=(
   # worked from the start, drained 61 sites, and was in no array -- so the
   # day after the drain, nothing stopped site 62 from landing.
   #
-  # SLOWEST GATE IN THE ARRAY: ~100s, against ~40s for all the others
-  # combined. Accepted rather than trimmed, because the alternative on offer
-  # was leaving it unwired. If it ever needs to be cheaper, the cost is in
-  # the per-literal mpmath comparison across ~25k files, not in the I/O.
+  # COST, MEASURED TWICE. It arrived as the slowest gate in the array (~86s
+  # against ~40s for all the others combined) and was accepted rather than
+  # trimmed, because the alternative on offer was leaving it unwired. It is
+  # now ~19s (bean qou-d51g): the read+regex floor is 15.2s and the rest was
+  # per-literal mpmath -- one mp.log10 each, then ~17 mpf subtractions
+  # against every table row sharing the exponent. A digit-prefix prefilter
+  # computed from the literal's characters drops both for everything that
+  # cannot be near a table value; output is byte-identical over the corpus.
   #
   # Only CODE gates. Prose, adjudicated (`noqa: P31`) and record sites are
   # counted and reported but never fail the run -- see the scan's own
@@ -252,13 +256,30 @@ if [ "${1:-}" = "--changed" ]; then
   # short-circuits precisely on the file type carrying two thirds of its
   # defect class -- wired, and still never run.
   #
-  # The cost is real and falls on other agents: a Lean-only commit now runs
-  # the full ~140s preflight where it previously ran nothing. If that proves
-  # too heavy, the fix is to scope THIS gate to changed paths, not to narrow
-  # the predicate back and re-open the hole.
+  # The cost was real and fell on other agents: a Lean-only commit ran the
+  # full preflight where it previously ran nothing. PAID DOWN rather than
+  # narrowed -- the CODATA scan itself went 86s -> 19s (digit-prefix
+  # prefilter + lazy span computation, byte-identical output, bean qou-d51g),
+  # so the predicate stays wide and the hole stays closed.
+  #
+  # THE MERGE-BASE DIFF IS NOT OPTIONAL (bean qou-s2gm, defect 1). The three
+  # working-tree sources below see only UNCOMMITTED work, so once a change is
+  # committed the set goes empty and this prints "nothing touched -- skipped"
+  # and exits 0: a false all-clear, indistinguishable from a real pass. That
+  # matters because AGENTS.md tells every agent to commit early and commit
+  # often, so verifying AFTER committing is the natural order and the one the
+  # microcommit rule encourages. Measured on PR #5241: an edit to
+  # computations/wedderburn_jones_markov.py had just been committed and
+  # --changed reported nothing relevant. Diffing the merge-base makes the
+  # answer independent of whether the agent has committed yet.
+  #
+  # On `main` the merge-base IS HEAD, so this contributes nothing there and
+  # cannot make a clean checkout run the suite for no reason.
+  base=$(git merge-base HEAD origin/main 2>/dev/null || true)
   relevant=$( { git diff --name-only HEAD 2>/dev/null
                 git diff --cached --name-only 2>/dev/null
-                git ls-files --others --exclude-standard 2>/dev/null; } \
+                git ls-files --others --exclude-standard 2>/dev/null
+                [ -n "$base" ] && git diff --name-only "$base"...HEAD 2>/dev/null; } \
               | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
   if [ -z "$relevant" ]; then
     echo "precision-gates: no witness or computations/ script touched — skipped."
