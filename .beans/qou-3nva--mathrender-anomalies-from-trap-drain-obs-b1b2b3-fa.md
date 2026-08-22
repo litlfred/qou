@@ -2445,3 +2445,43 @@ the proton pin from the muon pin at its printed precision. The erroneous
 `1.1097` *is* excluded by `tr_pure` (41.56 vs 41.69), by `Φ_q(0.989)`
 (7.0e5 vs 6.7e5) and by the parity-blind figures (6.7143e−1 vs 6.7145e−1) —
 but **not** by `partition-sum-table1`, where all three pins print 1.2761.
+
+
+## Independent re-verification of Tier-1 item 3 — 2026-08-22
+
+Both halves were promoted into the owner brief on one agent's report, so I
+re-derived them in the coordinating session before leaving them there. Both
+hold, and the Killing-form one is worse than recorded.
+
+**`ω_V` is identically zero — one line, no computation.**
+`categorical-dq-squared-proof.md:37` defines
+`ω_V = d(π_V(d 1_A)) ∈ Ω²(A)`. In any first-order calculus `d` is a
+derivation, so `d(1_A) = d(1_A·1_A) = d(1_A)·1_A + 1_A·d(1_A) = 2 d(1_A)`,
+hence `d(1_A) = 0`; `π_V` is linear, so `π_V(0) = 0` and `ω_V = d(0) = 0`.
+This needs nothing about the calculus beyond `d` being a derivation. The
+middle term the block simplifies to `ω_V ∧_q [ξ, α]` therefore vanishes for
+**every** α, which is not what a curvature term is for.
+
+**`adjoint-trace`'s Killing identity — confirmed, plus a type error the
+numbers obscure.** Recomputed over the `sl(2)` basis `{H, E, F}` with
+sympy:
+
+| check | value |
+|---|---|
+| `tr(ad X)` for X ∈ {H, E, F} | **0, 0, 0** (perfect algebra) |
+| `B(H,H) / tr(H²)` | 8/2 = **4** |
+| `B(E,F) / tr(EF)` | 4/1 = **4** |
+| `B(F,E) / tr(FE)` | 4/1 = **4** |
+| `f = id`: `tr(ad id)` vs `−2 tr_{ℂ²}(id)` | **0 vs −4** |
+
+So on `su(2)` the block's chain `tr_Ad(f) = tr(ad f) = −2 tr_{ℂ²}(f)` reads
+`0 = 0 = 0` (su(2) elements are traceless), it fails off `su(2)`, and the
+correct normalisation is `B(X,Y) = 4 tr(XY)` — the general `sl(n)` value
+`2n·tr(XY)` at n = 2. Both sign and magnitude are wrong.
+
+**And the coefficient is not the real defect.** `tr(ad f)` is a *linear
+functional* on the algebra; the Killing form `B(X,Y) = tr(ad X ∘ ad Y)` is
+*bilinear*. No linear functional "recovers" a bilinear form, at any
+normalisation. Fixing `−2` to `4` would leave the sentence just as wrong,
+which is why this is worth stating separately from the arithmetic: the
+repair is to write the pairing, not to correct the constant.
