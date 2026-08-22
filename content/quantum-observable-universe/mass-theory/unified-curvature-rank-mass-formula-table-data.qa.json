@@ -891,11 +891,183 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.451Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Table only; no prose constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.492Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.533Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.573Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Seven rows, one per legacy term."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.614Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.656Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.693Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.735Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.772Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "The table is presented as a stratum-to-legacy-term identification, but its strata are not disjoint, so it cannot be the decomposition the parent block claims: Term 4 is \"all k\", Term 5 is \"k >= 2\", Term 6 is \"k = 3\" and Term 7 is \"k >= 4\", so Term 5 overlaps Terms 6 and 7 entirely and Term 4 overlaps everything. The proof block's own reading - \"Term 6 = m^(3) and Term 7 = m^{>=4} are two adjacent strata of the same tower\" - holds only for those two rows.",
+        "notes": "Reported, not edited. Route: mark which rows are strata and which are partial sums or projections (Term 4 and Term 5 read as the latter), so the table stops reading as a partition of k. VERIFIED CORRECT: the Term 4 entry \"sum_lambda w_lambda(1) = 1 (classical Plancherel)\" is right - the Plancherel weights (f^lambda)^2/n! sum to 1 exactly, which I confirmed while recomputing the tower weights for conj:tower-geometric-lower-bound."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cb2350e8ca3d",
+          "ts": "96709fb72344"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.815Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Table only."
+      }
     ]
   },
   "source_hashes": {
     "md": "7915df074dad",
     "ts": "96709fb72344"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:46.815Z"
 }

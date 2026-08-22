@@ -1401,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:21.111Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-thesis-restatement": [
@@ -1420,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:21.159Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-performed-warmth": [
@@ -1439,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:21.197Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "trap-superlative": [
@@ -1458,6 +1503,22 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:21.236Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "'gives the explicit formula for c in terms of local eps_p-adic integrals' - definite article on a formula the block does not exhibit.",
+        "notes": "Not a superlative construction, so pass under this criterion; but recorded as a structural finding: neither this block nor its cited source rem:adelic-tate-squeeze contains any such formula, so 'the explicit formula' promises content absent from the cone. Proposed: 'would give an explicit formula' or exhibit it."
       }
     ],
     "trap-nonspeakable": [
@@ -1477,6 +1538,21 @@
         "reviewed_at": "2026-08-15T10:30:59.544Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b36b9563ccaf",
+          "ts": "9c53a3e86a3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:16:21.274Z",
+        "reviewed_sha": "5caca2b0c1266e2883ef411a41a42e0c11faeb0f",
+        "evidence": "Full read: one bold-run-in remark of two sentences. No em-dash, no triple, no closer, no meta-narration, no warmth, no negation-contrast, no pivot; syntax speaks aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1499,5 +1575,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:16:21.070Z"
+  "updated_at": "2026-08-22T05:16:21.274Z"
 }
