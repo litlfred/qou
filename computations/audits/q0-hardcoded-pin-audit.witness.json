@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T21:21:15.430991+00:00",
-  "commitSha": "85abd2daf00e4b6efdb8c0f98bb8307cfcb07e7b",
+  "computedAt": "2026-08-22T14:23:25.559430+00:00",
+  "commitSha": "1492577242185aa8daa59e7ba150e0ee74f1388e",
   "assertions": [
     {
       "name": "no_declared_producer_reaches_a_contradicting_pin_literal",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1971,
+  "durationMs": 1428,
   "computation": "q0-hardcoded-pin-audit",
   "scriptFile": "q0_hardcoded_pin_audit.py",
   "scriptHash": "c01e599095aa",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "499d1284902e24388fb66e718c4113daca4b50a7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,14 +31,21 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/q0_hardcoded_pin_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/q0_hardcoded_pin_audit.py"
   },
   "description": "Producers hardcoding a q₀ pin literal, split three ways: CONTRADICTS (declared anchor disagrees with a literal the producer actually reaches — the only defect class), UNDECLARED (no manifest entry, so Q0_ANCHOR_MISSING; migration scope qou-1c4y), and PROSE_ONLY (literal appears only in a comment/docstring — frequently a note recording a FIX, which a raw grep misreads as a finding).",
   "data": {
     "counts": {
-      "files_mentioning_literal": 353,
-      "prose_only": 36,
-      "undeclared": 300,
+      "files_mentioning_literal": 355,
+      "prose_only": 37,
+      "undeclared": 301,
       "consistent_or_unreached": 17,
       "contradicts": 0
     },
@@ -343,11 +350,13 @@
       "computations/y_lambda_su_n.py",
       "tools/hecke-engine/scripts/reanchor_certificates.py",
       "tools/qou-substrate/tests/test_codata_table.py",
-      "tools/qou-substrate/tests/test_q0_anchor.py"
+      "tools/qou-substrate/tests/test_q0_anchor.py",
+      "tools/qou-substrate/tests/test_vol_4_1_exact.py"
     ],
     "prose_only": [
       "computations/_habiro_coefficient_extract.py",
       "computations/alpha/alpha_k_jones_markov_h12.py",
+      "computations/audits/muon_pin_three_values_probe.py",
       "computations/audits/q0_cross_layer_fallback_scan.py",
       "computations/c_3_categorical_derivation_attempt.py",
       "computations/charm_frobenius_block_projection_probe.py",

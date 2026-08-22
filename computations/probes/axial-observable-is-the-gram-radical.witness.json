@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T12:10:10.517688+00:00",
-  "commitSha": "6bfc4abfec47e3ae968d3f982aa41a6de38e83fb",
+  "computedAt": "2026-08-22T14:23:25.785409+00:00",
+  "commitSha": "1492577242185aa8daa59e7ba150e0ee74f1388e",
   "assertions": [
     {
       "name": "sign_character_is_the_radical_direction",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 58,
+  "durationMs": 59,
   "computation": "axial-observable-is-the-gram-radical",
   "scriptFile": "axial_observable_is_the_gram_radical_probe.py",
   "scriptHash": "fdb332fb542f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d4f02123ef37b9bbab4549c918f484b05cc88c75",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,6 +33,12 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/axial_observable_is_the_gram_radical_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/axial_observable_is_the_gram_radical_probe.py"
   },
   "description": "Overlap of the trivial and sign characters with the convention-D Markov-Gram radical on the H_3 NF basis. The sign character IS the radical (|cos| = 1), so `borromean-axial-coupling`'s axial pairing asks for the dual of a vector the form annihilates and has no value — every generalized inverse answers differently, by exactly a radical term. The trivial channel is orthogonal to the 50-dps floor and is dualisable under quotient-by-radical. Bean qou-cnbm.",
   "data": {
