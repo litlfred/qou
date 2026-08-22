@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T15:42:45Z
+updated_at: 2026-08-22T19:36:38Z
 ---
 
 
@@ -579,3 +579,28 @@ Both halves in one induction (shared case analysis). countLt_above then restates
 ### Remaining: pure plumbing
 Build the position list from qRowOf over the timestamp range, match (is.take k).count i against
 countLt (row i) k, apply 23b. Everything else proved.
+
+
+### Brick 24 — qRowOf correctness (same PR #5426)
+
+mem_of_qRowOf    : qRowOf Q t = some r -> t in Q.getD r []
+qRowOf_lt_length : qRowOf Q t = some r -> r < Q.length
+countLt_above_qRowOf : qRowOf Q k = some (r+1) -> countLt (row r+1) k < countLt (row r) k
+
+**Answers the question I flagged last turn, and it was a real gap.** Every existing qRowOf lemma is
+about how qAppend / qAppendSteps MOVE things (qRowOf_qAppend_self, qRowOf_qAppend_of_ne,
+qRowOf_qAppendSteps). None says the located row is correct on its own terms. For a Q that is simply
+GIVEN rather than built by appending, there was nothing to appeal to. Two short inductions.
+
+That is now three flagged-then-confirmed gaps in a row (qRowOf gives no column; no standardness
+predicate needed; no qRowOf correctness lemma). Checking the input before building on it has been
+worth the minutes each time.
+
+### #5426 carries bricks 16-24, five files, all sorry-free and axiom-clean
+
+### The ONE remaining step, and it is a counting bijection not plumbing
+  (is.take k).count i  =  countLt (Q.getD i []) k
+LHS counts timestamps t < k whose qRowOf row is i; RHS counts entries of row i below k. Equal when
+Q's entries are exactly 0..n-1 with no repeats. That needs a 'Q holds exactly the range' hypothesis
+(corpus has insertWordRec_snd_content / _nodup for the built case) plus the counting argument.
+Everything else in the chain is proved.
