@@ -4074,3 +4074,38 @@ test -f .git/shallow && echo shallow
 At a graft boundary both commands are silent about history and loud in a way
 that looks like an answer. A shallow clone cannot tell you what a file used
 to contain; it can only tell you what it contains now.
+
+
+## CORRECTION — the "Archimedean specialisation." banner is a template, not damage (2026-08-22)
+
+I reported a dangling **"Archimedean specialisation.** What follows sits on
+the archimedean side…" banner as a defect across five batches, with a
+running count that reached "ten instances, three wordings", listed under
+sweep damage and structural findings.
+
+`agent:p01` reframed it after measuring, and I re-measured independently:
+
+```
+files under content/ containing the banner:      132
+...where it is the FINAL paragraph:              129
+```
+
+**That is systematic template placement, not damage.** A construct in 132
+files, terminal in 129 of them, is how the corpus is written — the two or
+three where it is *not* terminal are the anomalies, not the 129.
+
+The narrower observation survives and is worth keeping: where the banner is
+terminal, its own phrase *"What follows"* refers to nothing, and several
+sit on blocks their `.ts` tags `pre-archimedean`, which the banner
+contradicts. But that is a **template-design** question — AGENTS.md §4d's
+disposition for status-ish prose is `authorNotes` — and not a per-block
+finding to be counted five times.
+
+**Withdrawn**: every per-batch instance count for this item. The batches
+that reported it were each correct about their own block and wrong about
+what it meant, and I compounded that by adding the counts together.
+
+This is the same error shape as the three provenance inversions, in a
+different register: a real observation, generalised without measuring the
+base rate. The check that would have caught it — *"how often does this
+appear corpus-wide?"* — costs one command.
