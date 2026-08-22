@@ -1,11 +1,11 @@
 ---
 # qou-7ot6
 title: 'GAP: drain the 443 source sites carrying a stale CODATA edition'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T13:05:24Z
-updated_at: 2026-08-22T10:24:30Z
+updated_at: 2026-08-22T12:21:39Z
 ---
 
 
@@ -368,3 +368,33 @@ changes any conclusion, which is precisely why it should be decided on
 intent rather than on numbers.
 
 Once that is answered, this bean closes.
+
+## CLOSED 2026-08-22 — CODE sites 0
+
+Owner ruled: drain the alpha_EM sites to CODATA-2022 (not mark). Applied
+to both `.lean` conjecture-class targets plus three `.md` siblings
+#5361 had left on the 2018 value — one of which was the narrative for a
+`.lean` I changed, so leaving it would have made the block contradict
+its own sibling.
+
+**Final: CODE 0, PROSE 391, ADJUDICATED 28, RECORD 1492.**
+`codata_corpus_literal_scan.py --strict` exits 0.
+
+Arc: 448 reported -> 61 actionable (tranche b reclassification: the
+scan's headline was wrong for 87% of what it counted) -> 0.
+
+Five false-positive classes are now marked and documented in-place:
+canonical Hecke energies, AME-derived values, sanity window bounds,
+recorded witness outputs, and the framework's own predictions (that last
+one gets *worse* as the framework improves — a good prediction looks
+exactly like a stale CODATA value to this detector).
+
+Three defects in the scan itself, each found by using it: the
+`precision=N` marker was a blanket exemption (now checked against the
+table truncated to N digits), `noqa: P31` required `#` so was unusable
+in `.lean`, and `--strict` hid 16 of its own 36 findings behind a print
+cap.
+
+**Follow-up worth its own bean, not done here:** `--strict` is not wired
+to anything. Nothing stops a new stale literal landing in executable
+code tomorrow. The gate exists and passes; it is not enforced.
