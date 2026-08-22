@@ -212,3 +212,53 @@ failure AGENTS.md §"Grep the claim SHAPE, not only the topic" describes —
 resolve the symbol and check what object it belongs to before asserting a rule
 is violated. One `grep -c` looked like evidence; one indentation histogram was
 the actual check.
+
+## 2026-08-22 — group A verified at the source; two of the eight opened
+
+Opened the witnesses rather than re-reading the scan. Both substantive rows
+hold, and one is worse than the table says.
+
+**`hadron-level-knot-table`.** Confirmed exactly:
+`computations/hadron-knot-table.witness.json` is `allPassed: false`, 23
+assertions, **6 failing** — `LP_stable(c14)`, `(o16)`, `(ne20)`, `(si28)`,
+`(ca40)`, `(fe56)`, each `computed=0 expected=1 tolerance=0`. Boolean gates at
+zero tolerance, so there is no rounding story: the witness states that six
+nuclei are **not** LP-stable while the block records `verified`.
+
+**`he4-two-row-dominance` — the number the block calls witness-verified is the
+number the witness refutes.** 12 assertions, **9 failing**:
+
+| assertion | witness computed | block/expected |
+|---|---:|---:|
+| `top5_cumulative_pct` | **91.13** | 86.5 |
+| `tr_M_at_q0` | **0.16097415** | 0.05534835 |
+| `trivial_rep_pct` | 5.96 | 2.9 |
+| `pct_block_11_1` | 14.24 | 10.2 |
+| `pct_block_10_2` | 15.41 | 13.5 |
+
+The `.ts` says *"Empirically (witness): the ratio is **86.6 %**"* and *"the
+witness-verified 86.6 % figure"*. 86.6 is the **expected** value of a failing
+assertion; the witness's own computed value is 91.13. And `tr_M_at_q0` is off by
+a factor of 2.9 — that is a different quantity, not drift.
+
+**Why this one is load-bearing rather than a stale number.** The block's
+authorNote records that the Lean follows §3b-cond: the 86.6 % figure is encoded
+as a class `HasHe4TwoRowDominance` whose only `sorry` is the empirical instance,
+and downstream propositions take it as a `[HasHe4TwoRowDominance]` hypothesis.
+So a conditional-class chain is anchored on a premise its own witness marks
+failed. Per AGENTS.md §"Conditional-proved ≠ premise-established", the
+implication is fine and the premise is not established — here it is actively
+contradicted.
+
+**A hazard for anyone re-running this scan.** Two witnesses share the basename
+`he4-canonical-tr-m-block-fingerprint.witness.json` — one live, one under
+`computations/_deprecated/`. The deprecated copy is `allPassed: true` with
+**zero** assertions. A basename-resolving scan that takes the first match can
+therefore report this block as *vacuously verified* instead of *nine failures*,
+which is the opposite conclusion. I hit exactly that and caught it only by
+checking for a second copy; the live path is the one the block cites.
+
+**Not fixed here.** Both need a decision that is not the block's to make: re-run
+the producer and see whether the new numbers stand, or withdraw the claim. For
+`he4` the choice also governs whether the Lean class keeps its instance.
+
