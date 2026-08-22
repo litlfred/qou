@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T12:26:05Z
+updated_at: 2026-08-22T12:30:51Z
 ---
 
 
@@ -488,3 +488,30 @@ adjacent step is, which is the form the addCell case analysis actually produces.
     --brick 14--> insertWord (uninsertSteps P is).2 = P
 Brick 21 = the only gap: standard Q gives an AddableAlong sequence whose addCellSteps [] is the
 shape of P. Everything downstream of that is proved.
+
+
+### Brick 21 — insertion acts on shapes as addCell (same PR #5426)
+
+tableauShape_insert : tableauShape (insert T x) = addCell (tableauShape T) (newRowIndex T x)
+
+The MIRROR of brick 17 (tableauShape_uninsert = removeCorner). Corpus had neither this nor any
+newRowIndex lemma.
+
+isAddable_newRowIndex — NOT from the bumping-column argument. Read off insert_colStrict (already in
+corpus): the inserted tableau is column-strict, so its shape is weakly decreasing, and spelling that
+out at the added index IS addability. I expected to need bump_findIdx_mono; I did not.
+
+addableAlong_rowIndices closes the insertion-built case by a route INDEPENDENT of brick 19's iff —
+brick 20's machinery reaches the same conclusion brick 15 + 19 did. The forward and reverse shape
+pictures AGREE, not merely compose.
+
+### #5426 now carries bricks 16-21, four files, all sorry-free and axiom-clean
+16 isCorner_of_max_in_row | 17 tableauShape_uninsert | 18 the reduction | 19 the iff
+20 addable sequences peel as corners | 21 the forward shape law
+
+### The ONE remaining gap for surjectivity
+An ARBITRARY standard Q gives an AddableAlong sequence. Everything else is proved:
+  Q standard --GAP--> AddableAlong --20--> ShapeCornersAlong --18/19--> CornersAlong
+    --14--> insertWord (uninsertSteps P is).2 = P
+The gap needs a standardness predicate on List (List N) (corpus has none) plus the fact that reading
+positions off Q in timestamp order yields addable cells. Brick 16 already supplies the corner half.
