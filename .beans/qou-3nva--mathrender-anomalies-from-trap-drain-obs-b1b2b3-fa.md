@@ -4109,3 +4109,40 @@ This is the same error shape as the three provenance inversions, in a
 different register: a real observation, generalised without measuring the
 base rate. The check that would have caught it — *"how often does this
 appear corpus-wide?"* — costs one command.
+
+## Navigation — where the findings after batch `j00` live (2026-08-22)
+
+Per-batch sections in this file stop at `j00`. That is a real gap and it is
+not going to be back-filled from memory, because the sessions that produced
+`k00`–`p02` have been compacted. What exists instead, and is authoritative:
+
+**Each batch's commit message names its own load-bearing findings.** The
+drain commits are `qa(trap-drain): <chapter> <batch> — N blocks, N fixes, N
+anomalies [qou-ujp8]`, and from `p02` onward every numeric claim quoted in
+one was re-derived in the coordinating session before it was written down.
+`git log --oneline --grep='qa(trap-drain)'` is the index.
+
+**The findings severe enough to act on were promoted to their own beans**
+rather than left in this ledger. As of 2026-08-22:
+
+| bean | finding |
+|---|---|
+| `qou-rhax` | **high** — `rh_iff_persistence_axiom` proves `False`. `SpectralPersistence f` is inhabited by `fun h i => h 0 i` for every `f`, and the axiom quantifies over both arguments, so `RiemannHypothesis ζ` follows for every `ζ`; take `ζ ≡ 0`, `s = 1/4`. Blast radius is one file. |
+| `qou-etfq` | the `lp-dual-stability` table does not follow from its witness. `Gx` is strictly positive for all four sub-units; the `−0.11` that is the chapter's only negative number sits where `+0.32` is. Three of four rows are reproduced *exactly* by one deterministic map from the true `Gx`; the load-bearing fourth is not. |
+| `qou-jbbk` | two Jones values in `building-block-knots` are unattainable by their own polynomials for **any** real `q > 0`, and seven torus rows carry a `q^{1−g²}` shift that hid behind `J(1) = 1`. |
+| `qou-ptnp` | three vacuous decls in `p-vs-np-boundary.lean`; one (`nontorsion_full_tree`, whose `NonTorsionReal` argument is unused) is cited as the corpus warrant for the premise fixing `info(n) = 3^{3n}`. |
+| `qou-tol0` | 9 mass assertions that cannot fail — `tolerance = max(abs(delta)*2, 50)` where `delta` **is** the residual under test. |
+| `qou-vfy1` | 221 blocks record `verified`; 62 are unsupported. 278 `.ts` carry a `status` field §4 forbids. |
+| `qou-umev` | `prop:unit-modulus-eigenvalue` is false in both clauses. |
+| `qou-shdw` | a shadowing sibling stub declaring `∃ c, ∀ i, c i = f i`, inhabited by `fun i => f i`, over a library declaration of the same name with real content. |
+
+**This ledger's remaining job** is the recurring-class taxonomy (§"Recurring
+classes", C1–C7) and the corrections section, both of which are
+cross-batch and do not decay the way a per-batch list does. Read those two
+first; use the commit log for anything batch-specific.
+
+One measured note on why the corrections section is the more valuable half:
+across this campaign, agent **numeric** findings have survived independent
+recomputation every time they were checked, and agent claims about a file's
+**past or existence** have inverted three times out of three. The four
+corrections recorded above are all of the second kind.
