@@ -527,6 +527,49 @@ and it is currently the only one: the anchor-consistency audit exempts
 `-audit`/`-scan` suffixes, and the flip-risk audit keys on witnesses stamped
 `muon`, which these are not.
 
+## Two more fixed (2026-08-22), and why the drift audit only saw one
+
+`path4_rho_K_at_h3A` and `q_beta_form_a_n1_extension` both re-pointed to
+`q_parameter.Q_MP`. Neither is dual-purpose (see the correction above), so
+both were single-read fixes of the same shape as `b_over_m_order_probe`.
+
+- `q_beta_form_a_n1_extension`: the comment being replaced said *"Load CAL-2
+  q_0"* — the exact conflation this document already corrects. Its
+  replacement says why. 3 assertions still pass; float64 at the baselined 12.
+- `path4_rho_K_at_h3A`: `json` and the `_pb` alias became unused and were
+  removed (the bare `_path_bridge` import stays — it is the path bridge).
+  float64 at the baselined 7.
+
+`scripts/precision-gates.sh` (full run): **all blocking gates green.**
+Contradictions **4 → 2**; census 639 → 637.
+
+### The count only moved by 1, and the reason matters
+
+`q0_value_drift_audit` went `canonical` 211 → 210, not 211 → 209. Traced to a
+single entry: only `q-beta-form-a-n1-extension`'s `parameters.q_0_50dps`
+changed class. `path4`'s fix is invisible to that audit because **it scans
+`q0Value` — the stamp — and not `q_pinned`, the field carrying the data.**
+
+That is the same blind spot as the contradiction itself, one level up. A
+witness whose *stamp* says proton and whose *data* says muon is counted
+`proton-pin` by the drift audit, so the audit structurally cannot see the
+contradiction, and its `canonical` count understates the muon population by
+however many such witnesses exist. This is why `--list-contradictions`
+compares the manifest against the **read**, not against any recorded field.
+
+### Stopping point
+
+Two remain, neither mechanical:
+
+- **`q1_mass_gap_probe`** — genuinely dual-purpose, one of the 3. It reads
+  `plancherel_weights_n3` and `two_q` as a reference table *and* binds q₀.
+  Separate the two before re-pinning either.
+- **`aK_via_lp_dual_hecke_basis`** — registers the pin witness as a **declared
+  upstream** (`record_upstream` → `add_upstream_records`). Re-pointing to
+  `Q_MP` would replace a file-hash-backed provenance record with a package
+  constant. That is a provenance-architecture call, on a producer that states
+  no pin intent either, so it is not a change to make unilaterally.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke
