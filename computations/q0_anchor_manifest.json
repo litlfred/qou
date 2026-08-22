@@ -3,6 +3,7 @@
   "_convention": "PROTON EVERYWHERE (owner directive 2026-08-15, recorded in AGENTS.md q0-anchor-convention rule 4 on 2026-08-19). Every producer takes the experimental pin m_p/m_e unless there is an EXPLICIT reason to differ. `ideal_muon` is NOT empty and must not be emptied: it holds the ANCHOR-DEFINING producer. q_pinning_50_digit's listing here is what makes q_parameter rebind q_at to the witness string, i.e. it is what gives the muon layer a value at all; qou_substrate.witness._q0_value_for_anchor resolves 'muon' by READING the witness it emits. Move it and the muon anchor ceases to exist -- that is what broke main for 208 producers (qou-m9xp). A p-vs-mu COMPARISON producer is also not served by this manifest: it needs both pins in one process, so it reads q_at()/q_muon_at() by name and belongs under physical_proton. QOU_Q0_ANCHOR still overrides for a deliberate one-off run.",
   "ideal_muon": [
     "atomic_tr_m_mpfr_50dps",
+    "cross_check_trM_1ppb",
     "q_pinning_50_digit"
   ],
   "physical_proton": [
@@ -102,7 +103,6 @@
     "constit_factor_and_volhyp_test",
     "constit_factor_residual_phase5k",
     "convergence_safe_vhat_tower",
-    "cross_check_trM_1ppb",
     "crystal_keystone_selector",
     "d_density_derivation",
     "defect_info_a_trend_probe",
