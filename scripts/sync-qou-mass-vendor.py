@@ -289,10 +289,17 @@ def main() -> int:
     for name, src in wits.items():
         dest = WITNESS_DEST / name
         want = src.read_bytes()
+        # Report the path this actually writes. It was `f"data/{name}"`, but
+        # `dest` is `WITNESS_DEST / name` -- the package ROOT, which is where
+        # the resolver looks and where the header says these are forced to
+        # live. No `data/q-pinning-50-digit.witness.json` exists; the label
+        # pointed at a file that was never there. Harmless while `data/` held
+        # nothing synced, and actively misleading now that it does.
+        rel = dest.relative_to(WITNESS_DEST).as_posix()
         if not dest.exists():
-            missing.append(f"data/{name}")
+            missing.append(rel)
         elif dest.read_bytes() != want:
-            drifted.append(f"data/{name}")
+            drifted.append(rel)
         if args.apply:
             dest.write_bytes(want)
     for dest, src in extras.items():
