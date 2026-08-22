@@ -111,9 +111,9 @@ _T0 = time.monotonic()
 #:
 #: RATCHET DOWN WITH THE DRAIN. Leaving this at a stale high number is slack the
 #: gate will not notice being taken up again -- baselines drain, never grow.
-#: 49 -> 47 on 2026-08-22, the two class-(ii) producers dispositioned as
-#: `independent` (bean qou-o922).
-BASELINE = 47
+#: 49 -> 47 -> 40 on 2026-08-22 (bean qou-o922): first the two class-(ii)
+#: producers dispositioned as `independent`, then seven more.
+BASELINE = 40
 
 _MATCH = 14  # same discrimination width the anchor audit uses
 
