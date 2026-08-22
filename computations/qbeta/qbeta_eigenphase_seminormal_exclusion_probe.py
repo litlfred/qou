@@ -84,6 +84,35 @@ Per AGENTS.md §"Before declaring refuted", the (b) classification is used
 because a proved invariant (integrality of Hecke characters, verified) forbids
 the whole class — not because a numerical search came up empty.
 
+## Where the boundary is — the Markov trace escapes, and here is why
+
+The exclusion above is about the **matrix character** `trace ρ(w)`, which lives
+in `ℤ[q,q⁻¹]`.  The **Markov trace** is a different object,
+
+    tr_M(β) = Σ_λ y_λ(z) · χ_λ(β)
+
+and its Wedderburn weights `y_λ` carry the Ocneanu parameter `z`.  Solving the
+three `H₃(q)` Markov equations symbolically (assertion 7) gives all three
+weights as explicit functions of `z`, each genuinely `z`-dependent.  So `tr_M`
+does **not** lie in `ℤ[q,q⁻¹]`, and the integrality obstruction simply does not
+reach it.
+
+Two checks that this is the real boundary and not a bookkeeping artefact
+(assertion 8):
+
+  * At `z_D` the solve returns `y_(2,1) = q²/(q²+1)²` — exactly the corpus's
+    `QOU.BraidKnot.stdWeightD` — together with `y_(1³) = 0`, the two-row
+    Temperley–Lieb forcing.  The corpus value is reproduced here from the
+    Markov equations rather than assumed.
+  * At `z_C` the weights are **not** Laurent polynomials at all: they carry
+    half-integer powers of `q` (`q^{9/2}`, `q^{7/2}`, …), inherited from the
+    `√q` in `z_C`.
+
+That is the surviving route, stated sharply: **a transfer matrix normalised by
+the Markov trace is exactly the kind of non-scalar, `z`-dependent object the
+exclusion's scope carve-out names.**  Nothing here says that route works — only
+that the obstruction proved above does not close it.
+
 ## Method
 
 Exact symbolic ℚ(q) via sympy throughout; the single numerical evaluation
@@ -219,11 +248,51 @@ def main() -> int:
         "det(rho(sigma_i^{+-1})) = -1, so det(rho(w)) = (-1)^L; det = 1 pins lambda^2 = 1",
     )
 
+    # ---- 7. the Markov weights carry z, so tr_M escapes Z[q,q^-1] ----
+    zsym = sp.symbols("z", positive=True)
+    y3, y21, y13 = sp.symbols("y3 y21 y13")
+    msol = sp.solve(
+        [
+            sp.Eq(y3 + 2 * y21 + y13, 1),
+            sp.Eq(q * y3 + (q - 1 / q) * y21 - (1 / q) * y13, zsym),
+            sp.Eq(q ** 2 * y3 - y21 + (1 / q ** 2) * y13, zsym ** 2),
+        ],
+        [y3, y21, y13],
+        dict=True,
+    )
+    z_dep = (
+        len(msol) == 1
+        and all(sp.simplify(sp.diff(msol[0][v], zsym)) != 0 for v in (y3, y21, y13))
+    )
+    check(
+        "7. all three Wedderburn weights depend on z (so tr_M is not in Z[q,q^-1])",
+        z_dep,
+        f"{len(msol)} solution; y_(3), y_(2,1), y_(1^3) all z-dependent",
+    )
+
+    # ---- 8. the boundary is real: D reproduces the corpus, C is non-Laurent ----
+    Ssol = msol[0]
+    zD = q ** 3 / (q ** 2 + 1)
+    zC = sp.sqrt(q) / (1 + q)
+    d_matches = (
+        sp.simplify(Ssol[y21].subs(zsym, zD) - q ** 2 / (q ** 2 + 1) ** 2) == 0
+        and sp.simplify(Ssol[y13].subs(zsym, zD)) == 0
+    )
+    c_nonlaurent = not sp.simplify(
+        sp.simplify(Ssol[y21].subs(zsym, zC)) * q ** 12
+    ).is_polynomial(q)
+    check(
+        "8. at z_D the solve reproduces stdWeightD and y_(1^3)=0; at z_C it is non-Laurent",
+        d_matches and c_nonlaurent,
+        "D: y_(2,1)=q^2/(q^2+1)^2, y_(1^3)=0 (two-row TL forcing, corpus value "
+        "re-derived); C: half-integer powers of q, not a Laurent polynomial",
+    )
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/6: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/8: {', '.join(failures)}")
         return 1
-    print("6/6 assertions hold.")
+    print("8/8 assertions hold.")
     print()
     print("EXCLUSION (scope-(b), invariant named): for M = lambda*rho(w) with w a")
     print("braid word and lambda scalar, det M = 1 forces lambda = +-1, so")
