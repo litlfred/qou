@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:13:38Z
-updated_at: 2026-08-21T22:58:10Z
+updated_at: 2026-08-22T15:40:49Z
 ---
 
 Measured 2026-08-21 while fixing the wrap_legacy `computation` clobber (PR #5436).
@@ -210,3 +210,51 @@ adjudicated rather than trusted.
 Budget it as hand work, not a sweep. The audit script remains the right
 artifact: it holds the register and ratchets it, and makes no claim about which
 class an entry is in.
+
+
+## DRAIN STARTED 2026-08-22 — 49 -> 47 (PR #5457)
+
+Two class-(ii) producers dispositioned `independent`:
+`fitted_labelled_canonical_audit`, `compute_audit_scan`.
+
+**The disposition is the OPPOSITE of this bean's blanket rule, and that is the
+point.** "Declare the manifest entry FIRST, then re-run" is right for class (i);
+for class (ii) a manifest entry would promote a FALSE claim into a declared one.
+The honest label is `independent` + reason.
+
+**Proved empirically, superseding the AST method.** Static "zero q0 identifiers
+as code" is necessary but not sufficient — a module alias defeats it (that is
+how `aoa.q0_mp(dps)` slipped past). The decisive test: run under BOTH anchors
+and diff. For both producers the ONLY differing non-ephemeral leaves are
+`q0Anchor` and `q0Value` themselves; every substantive field is byte-identical.
+Use this test for the remaining 47, not the AST heuristic.
+
+**A library bug was in the way, found by the first step.** `save()` carried the
+old muon `q0Value` forward onto the new `independent` label — manufacturing the
+exact Q0_FLIP contradiction the declaration exists to avoid. Corpus blast radius
+0 today, but it would have fired on EVERY subsequent class-(ii) disposition.
+Fixed in the same PR.
+
+**Gap between the two audits, recorded.** Both these witnesses end in a suffix
+`q0_anchor_consistency_audit` exempts (`-audit.`, `-scan.`), so its flip check
+never ran on them — `Q0_FLIP` read 0 while two live contradictions sat on disk.
+The risk register scans them; the anchor audit does not. Not reconciled here.
+
+**Ratchet lowered 49 -> 47.** Baselines drain, never grow — a stale-high
+baseline is slack the gate will not notice being taken back up. Re-verified it
+still fires at 46.
+
+## The three NOT dispositioned, each a different case
+
+  derivation_chain_validator          EXITS 2 under the proton anchor — it DOES
+                                      depend on the pin, indirectly. Not (ii).
+  habiro_interpolate_cross_validator  byte-identical INCLUDING q0Anchor, so it
+                                      is already declared. Different state.
+  qbeta_fsc_g_pattern_comparison      witness not resolvable from its emit site.
+
+## Remaining: 47
+
+Still needs per-producer reads; the sort is not automatable (the two available
+rules fail in opposite directions, recorded above). But the both-anchor diff
+above is a much better per-producer TEST than anything tried so far — it decides
+class (ii) membership definitively in one run, without reading the source.
