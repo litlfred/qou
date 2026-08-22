@@ -2884,6 +2884,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.603Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2903,6 +2919,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.644Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-em-dash": [
@@ -2922,6 +2954,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.686Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-triples": [
@@ -2941,6 +2989,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.726Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-closing-aphorism": [
@@ -2960,6 +3024,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.767Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-meta-commentary": [
@@ -2979,6 +3059,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.810Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-thesis-restatement": [
@@ -2998,6 +3094,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.862Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-performed-warmth": [
@@ -3017,6 +3129,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.904Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-superlative": [
@@ -3036,6 +3164,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.951Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "trap-nonspeakable": [
@@ -3055,6 +3199,22 @@
         "reviewed_at": "2026-08-15T10:31:01.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ce02401f0769",
+          "ts": "a08fce7917e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:12.994Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Full read of 2-sentence block: one lead sentence plus a Proposition italic statement bounding the inductive NF at C(A-1,floor((A-1)/2)) terms. No negation-contrast, no pivot, no em-dash, no triple, no closer, no meta-narration, no warmth, no superlative; syntax is speakable.",
+        "notes": "Clean. Numeric note: the bound is the central binomial coefficient of A-1; not independently verifiable from this block (no witness cited)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3078,5 +3238,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:54:12.994Z"
 }

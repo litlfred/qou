@@ -1,11 +1,11 @@
 ---
 # qou-7ot6
 title: 'GAP: drain the 443 source sites carrying a stale CODATA edition'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T13:05:24Z
-updated_at: 2026-08-21T23:23:02Z
+updated_at: 2026-08-22T12:21:39Z
 ---
 
 
@@ -270,3 +270,131 @@ mass-theory `.lean`), `0.51099895` (truncated m_e) and
 `137.035999084` (CODATA-2018 alpha-inverse). The alpha-inverse sites
 are a deliberate determination choice per the tranche-a adjudication and
 should be marked `noqa: P31` rather than changed.
+
+## 2026-08-22 — tranche c on PR #5439: 61 -> 36 code sites
+
+Drained the m_e (5 of 8), m_p/m_n (6) and alpha^-1 (3 of 6) groups.
+Counts: CODE 61 -> 36, PROSE 381 -> 388 (rising, correctly), ADJUDICATED
+6 -> 12.
+
+**The `:leanval{precision=N}` rule added in tranche b was too permissive
+and this drain caught it.** `precision=N` declares a deliberate
+truncation; it says nothing about which EDITION the digits came from. As
+written it would have excused `partition-sum-proton-residual.lean:59`,
+where `precision=11` sits on the CODATA-2018 `938.27208816`. The
+declaration is now CHECKED against the table value truncated to N digits.
+
+Left deliberately, each with a reason in the commit: the three .lean
+alpha^-1 sites (inside the conjecture machinery #5361 just re-scoped --
+the live gap there is 468 ppb structural, not 1e-9 editions), the
+`m_AME_MeV` field-name mismatch in recursive-atom-knot-atlas (renaming
+has blast radius), and the two `electronMass_witness` proof-body mirrors
+(correct declared truncations).
+
+**Remaining: 36 code sites.** Not yet grouped -- next step is to re-run
+`--strict` and classify them the way tranche c did, one literal-group per
+commit with a per-site disposition.
+
+## 2026-08-22 (cont.) — 36 -> 23 on PR #5439
+
+Drained the `206.7682830` muon-ratio group (3 Lean sites, the ORIGINAL
+defect of this whole arc, still live where #5149 never reached), and
+marked four deliberate-exception classes that #5423 had adjudicated in
+prose but never in a form the scan could read:
+
+  - `qou_substrate/constants.py:352` AME-derived m_n (the +0.15 eV Q_beta
+    trap site)
+  - `MassDerivation.lean:164` deliberate 7-digit round, 1e-4 tolerance
+  - `codata_masses.py:55-56` sanity WINDOW BOUNDS (1-keV bands)
+  - `qou-mass/tests/test_p2_integration.py` the framework's own
+    PREDICTIONS — an intrinsic false-positive class: the better a
+    prediction gets, the more it looks like stale CODATA to this scan
+
+Two scan defects this forced: the `noqa: P31` marker required `#` and so
+was unusable in `.lean` (20 of 30 remaining sites), and `--strict` hid 16
+of its own 36 findings behind a print cap.
+
+**Remaining: 23.** Groups, with my read on each:
+
+  - `137.035999084` x4 (3 .lean + crystal_alpha_shift_pole_orders.py) —
+    the Cs-recoil determination choice. OWNER CALL pending; I left the
+    .lean ones in tranche c on the grounds that the live gap there is
+    468 ppb structural.
+  - `mass-from-generators.lean:36,52,56,60` — 2018 m_e/deuteron/helion/
+    alpha in one file; a clean single-file drain.
+  - `borromean-baryon-mass-formula.lean:146,150` — truncated m_p/m_e and
+    m_n/m_e ratios.
+  - `AtomicMass.lean:65` 931.49410242 — 2018 atomic mass unit.
+  - `b_over_m_order_probe.py:47-49` — rounded nuclear masses.
+  - `HadronicMass.lean:282,492`, `CODATAChain.lean:195`,
+    `FormLadderAnchorDominance.lean:195,198` — NOT yet inspected; the
+    FormLadder pair look like computed ladder values rather than
+    transcriptions, which would make them false positives.
+
+## 2026-08-22 (final) — 61 -> 2 on PR #5439
+
+The executable queue is essentially drained. Full arc this session:
+**448 reported -> 61 actionable (tranche b reclassification) -> 2**.
+
+Final counts: CODE 2, PROSE 390, ADJUDICATED 28, RECORD 1496.
+
+Last tranche: the five sites I had flagged as "possibly false positives"
+without opening them all turned out to be, in three distinct ways —
+recorded witness outputs, a computed topological value, and a documented
+deliberate round. Genuine drains were mass-from-generators (4 stale-2018
+under "CODATA 2022" docstrings), AtomicMass ame_u, and the two borromean
+ratios. Three probes routed at the registry, including a float64
+round-trip (`mp.mpf(repr(float(x)))`) that discarded the registry's exact
+values at the door.
+
+**BLOCKED ON OWNER — the only 2 remaining:**
+
+    content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean:104
+    content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.lean:114
+
+Both carry `137.035999084` as the target of an alpha_EM conjecture class.
+That is the CODATA-2018 **Cs-recoil determination** — a different
+measurement, not merely older digits. The two dispositions encode
+opposite claims:
+
+  (a) MARK `noqa: P31` — the framework deliberately targets the Cs-recoil
+      determination, as `experimental_constants.ALPHA_EM_INV` does.
+  (b) DRAIN to CODATA-2022 — the 2018 value is simply stale here.
+
+Context for the decision: #5361 just re-scoped this exact machinery. The
+live gap is **468 ppb structural** (the CS tower vs CODATA), four orders
+of magnitude above the ~1e-9 edition difference — so neither choice
+changes any conclusion, which is precisely why it should be decided on
+intent rather than on numbers.
+
+Once that is answered, this bean closes.
+
+## CLOSED 2026-08-22 — CODE sites 0
+
+Owner ruled: drain the alpha_EM sites to CODATA-2022 (not mark). Applied
+to both `.lean` conjecture-class targets plus three `.md` siblings
+#5361 had left on the 2018 value — one of which was the narrative for a
+`.lean` I changed, so leaving it would have made the block contradict
+its own sibling.
+
+**Final: CODE 0, PROSE 391, ADJUDICATED 28, RECORD 1492.**
+`codata_corpus_literal_scan.py --strict` exits 0.
+
+Arc: 448 reported -> 61 actionable (tranche b reclassification: the
+scan's headline was wrong for 87% of what it counted) -> 0.
+
+Five false-positive classes are now marked and documented in-place:
+canonical Hecke energies, AME-derived values, sanity window bounds,
+recorded witness outputs, and the framework's own predictions (that last
+one gets *worse* as the framework improves — a good prediction looks
+exactly like a stale CODATA value to this detector).
+
+Three defects in the scan itself, each found by using it: the
+`precision=N` marker was a blanket exemption (now checked against the
+table truncated to N digits), `noqa: P31` required `#` so was unusable
+in `.lean`, and `--strict` hid 16 of its own 36 findings behind a print
+cap.
+
+**Follow-up worth its own bean, not done here:** `--strict` is not wired
+to anything. Nothing stops a new stale literal landing in executable
+code tomorrow. The gate exists and passes; it is not enforced.

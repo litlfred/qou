@@ -890,6 +890,186 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.637Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. 'absolute mass in MeV is not a framework prediction' is the mandated absolute-mass-excision scope statement (AGENTS.md 2026-08-11), a substantive limitation on the column's reading -- not manufactured contrast. Keep as written."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.677Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.717Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.756Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.798Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.838Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.877Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.917Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.956Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "14e85694f81c",
+          "ts": "dcadcfba2d5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:04:04.996Z",
+        "reviewed_sha": "c82c96ab048ab938b1ec476c8312365afd364574",
+        "evidence": "Full read of the whole block: a rendered markdown data table with no connected prose beyond header/cell text, plus title+kind from the .ts sibling. All ten categories judged over the entire text, not only scanner candidates. Numerics recomputed separately (see anomalies). Block opens with the mandated absolute-mass-excision caveat line.",
+        "notes": "Pass. No instance of this construction found on a full read; no fix required and none applied."
+      }
     ]
   },
   "label": "tbl:mass-comparison-table-table2-data",
@@ -897,5 +1077,5 @@
     "md": "14e85694f81c",
     "ts": "dcadcfba2d5b"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:04:04.996Z"
 }

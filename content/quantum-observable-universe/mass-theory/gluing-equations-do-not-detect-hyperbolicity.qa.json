@@ -18,6 +18,21 @@
         "severity": "minor",
         "evidence": "Most denials here are the block's actual subject and pass under the substantive-contrast carve-out ('What fails is not solvability but positivity', 'They are not shape fields in the sense of Neumann-Reid', 'the equations are indifferent to it'). One was not mathematical: the section header 'The separation is structural, not incidental' asserts importance by denying triviality.",
         "notes": "FIXED: '## The separation is structural, not incidental' -> '## Why the separation is structural'."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:45.866Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Three contrasts (\"They are not that test\", \"What fails is not solvability but positivity\", \"They are not shape fields in the sense of Neumann-Reid\") - each is the block's actual claim, and the cited witness gate G5 states the same separation in the same shape (\"It is NOT the case that the gluing equations have no solution for it ... What fails is POSITIVITY\"). False-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -35,6 +50,21 @@
         "reviewed_at": "2026-08-21T16:17:59.080Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "'It is tempting to treat the equations themselves as the test ... They are not that test.' has the pivot shape, but the first sentence names a real and common misreading that the entire block exists to refute, and the refutation is then given as an explicit counterexample. Argument, not staging."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:45.905Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"It is tempting to treat the equations themselves as the test ... They are not that test.\" is a setup-then-correct, but the correction is the theorem, and the following theorem statement supplies the witness immediately."
       }
     ],
     "trap-em-dash": [
@@ -52,6 +82,21 @@
         "reviewed_at": "2026-08-21T16:17:59.116Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "Four em-dashes in 486 words, each introducing a genuine qualification or apposition."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:45.946Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "One spaced em-dash in 3.0k."
       }
     ],
     "trap-triples": [
@@ -69,6 +114,21 @@
         "reviewed_at": "2026-08-21T16:17:59.164Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "No reflex list; 'a genuine angle triple summing to pi' is the geometric object itself."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:45.985Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No reflex triples; the torus-knot table has four rows."
       }
     ],
     "trap-closing-aphorism": [
@@ -87,6 +147,21 @@
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "'Without one, the pipeline cannot distinguish \"detected geometry\" from \"solved a system of equations\"' reads as a crafted closer but states the actionable methodological consequence exactly, and it is the payload of the section it ends.",
         "notes": "Kept deliberately: it is the sentence a reader of a volume pipeline needs, and it names a concrete required artefact (a non-hyperbolic control)."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:46.025Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Final line (\"the pipeline cannot distinguish detected geometry from solved a system of equations\") is an operational consequence with a concrete prescription (add a positivity gate plus a non-hyperbolic control) in the sentence before it."
       }
     ],
     "trap-meta-commentary": [
@@ -106,6 +181,21 @@
         "severity": "major",
         "evidence": "Two sentences narrate the block's own significance rather than stating mathematics: 'The two halves of the gluing data behave differently, and the difference is exactly the point:' and 'They are the fields of a degenerate solution, and the distinction is the content of this block.'",
         "notes": "FIXED (both clauses removed, nothing else changed): '...behave differently, and the difference is exactly the point:' -> '...behave differently:'; 'They are the fields of a degenerate solution, and the distinction is the content of this block.' -> 'They are the fields of a degenerate solution.'"
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:46.065Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"Methodological remark\" is a section label, not emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -123,6 +213,21 @@
         "reviewed_at": "2026-08-21T16:17:59.386Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "The bolded 'Positivity is what detects hyperbolicity; the equations are indifferent to it.' summarises the table and the paragraph, but it is the first place the conclusion is stated in that form — the preceding text gives only the mechanism."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:46.105Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"Positivity is what detects hyperbolicity; the equations are indifferent to it.\" closes the section by naming the mechanism the preceding table established; it sharpens rather than repeats."
       }
     ],
     "trap-performed-warmth": [
@@ -140,6 +245,21 @@
         "reviewed_at": "2026-08-21T16:17:59.435Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "No personal register."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:46.145Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -157,6 +277,21 @@
         "reviewed_at": "2026-08-21T16:17:59.473Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "'entirely satisfied', 'perfectly good number' are precise and slightly dry rather than inflated; the strong claims (rational, every equation, volume 0) are exhibited."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:46.186Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Claims are exact and all check out. Verified against witness gate G5: trefoil flat shapes (-1, 2) rational, satisfy all four gluing equations exactly, volume 0, not positively oriented - all recorded. Torus-knot table reproduced: 5_1 -> Q(sqrt5) with the three listed shapes, 8_19 -> Q(sqrt2) with the three listed shapes, 7_1 -> x^3+3x^2-4x+1, whose discriminant I computed as 49, so it is the cyclic cubic of conductor 7 = the real subfield of Q(zeta_7), exactly as the \"real cyclotomic subfields the torus type predicts\" claim requires."
       }
     ],
     "trap-nonspeakable": [
@@ -175,8 +310,23 @@
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "Short sentences, concrete subjects; the two tables carry the technical load.",
         "notes": "CHECKS, one genuine discrepancy. (1) VERIFIED: the trefoil complement is Seifert fibred, hence not hyperbolic; the shapes z_0 = -1, z_1 = 2 are the standard degenerate triple {-1, 1/2, 2} closed under z -> 1/(1-z) -> (z-1)/z, all real, and the Bloch-Wigner dilogarithm vanishes on reals, so total volume 0 is right. (2) VERIFIED: the 7_1 row is exactly correct — disc(x^3 + 3x^2 - 4x + 1) = 49, the same discriminant as the cyclotomic cubic x^3 + x^2 - 2x - 1, so it does generate the real cyclotomic field of conductor 7, and all three roots are real. (3) DISCREPANCY in the field pattern the block claims ('the fields are the real cyclotomic subfields the torus type predicts'). Three of four rows fit conductor = mn: T(2,3) -> Q(zeta_6)+ = Q; T(2,5) -> Q(zeta_10)+ = Q(sqrt 5); T(2,7) -> Q(zeta_14)+ = the conductor-7 cubic. The fourth does not: T(3,4) has conductor 12 and Q(zeta_12)+ = Q(sqrt 3), but the row lists Q(sqrt 2), which is Q(zeta_8)+. Either the 8_19 shapes (1 + sqrt 2, -1 + sqrt 2, -1) are from a different triangulation than the pattern assumes, or the 'the torus type predicts' claim needs the (3,4) case excepted. Worth one check before the sentence is relied on. (4) 8_19 is indeed the (3,4) torus knot, and the Neumann-Reid caveat is correct and carefully put. (5) RENDER ADVISORY: the table uses \\operatorname{Im}; see the chapter-wide note on gluing-certification-mechanical-reach."
+      },
+      {
+        "field_hash": {
+          "md": "c3a1ef5ecbe1",
+          "ts": "2706c80cb5ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:46.225Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Reads aloud cleanly."
       }
     ]
   },
-  "updated_at": "2026-08-21T16:17:59.516Z"
+  "updated_at": "2026-08-22T05:01:46.225Z"
 }

@@ -45,15 +45,14 @@ structure of $(\mathbb{Z}/7)^{\times}$ acting on the three real conjugates.
 
 ## Why the cleared form, and not the divided one
 
-The statement multiplies through by $7$ rather than dividing. This is not
-timidity about $7^{-1}$; the divided form is genuinely unavailable, and for a
+The statement multiplies through by $7$ rather than dividing. The divided form is genuinely unavailable, and for a
 sharper reason. In characteristic $7$ the same hypotheses **force** $3L_1 = 0$,
 hence $L_1 = 0$ since $3$ is invertible mod $7$, and every target degenerates to
 $0 = 0$.
 
 So the cleared form is true everywhere and carries content exactly where $7$ is
 invertible, while the divided form would be vacuous precisely where it could not
-be stated. Clearing the denominator is the honest choice, not a convenience.
+be stated.
 
 ## Scope
 

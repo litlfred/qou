@@ -1176,6 +1176,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:57.654Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "Clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1211,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:57.714Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "Clean."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1246,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:57.774Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1281,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:57.821Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "The 3-bullet enumeration reports three distinct measured cases."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1316,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:57.878Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "Block ends on a witness citation."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1351,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:57.933Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "'The LP exploits this.' places the point rather than announcing it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1386,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:57.974Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "No restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1421,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:58.021Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1456,22 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:58.066Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "See trap-nonspeakable notes for the one unsupported comparative, recorded there as a math finding rather than as style inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1491,38 @@
         "reviewed_at": "2026-08-15T10:31:01.405Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:58.110Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both proof sections. Recomputed/traced every quoted figure against the corpus: 4^6 = 4096 is correct; the braid word sigma_0 sigma_1^{-1} repeated three times is exactly (sigma_0 sigma_1^{-1})^3 from the parent proposition and its closure permutation is the identity, giving the 3 components of the Borromean rings; the mirror word is its correct generator-inverse. Ten trap categories are clean - section headers are noun-phrase academic, there are no em-dashes, no aphorism, no meta-narration and no reflex triple.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "0c278901987a",
+          "ts": "f9c2f0318852"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:04:58.186Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Numeric and provenance recheck of the proof block's quoted values against every candidate witness in the tree.",
+        "notes": "MATH/PROVENANCE FINDINGS (report, not fixed), four items. (1) DEAD-AND-DEPRECATED WITNESS: the block ends '**Witness:** confinement-lp.witness.json'. No such file exists under computations/; the only copy in the tree is computations/_deprecated/confinement-lp.witness.json (last touched by 230cdd113, 'decorating the Gram cannot break the confinement-LP degeneracy'). (2) THE DEPRECATED WITNESS DOES NOT REPRODUCE THE BLOCK'S NUMBER: its gram_eigenvalues are {-0.7408452101064132, 0.4139987135224257, 0.4281147970398734, 0.7408452101064141, 1.2820197506195954, 2.8930702013515126} - all six distinct, none zero - whereas the block asserts spec(G) = {lambda_+ x3, lambda_max, lambda_0, lambda_-} with lambda_- approx -0.855. The -0.855 and the triple-lambda_+ structure come from a DIFFERENT witness, computations/gram-h3-symbolic-regression.witness.json, whose spectrum I recomputed as {-0.85506726, 0.10179667, 0.85506726, 0.85506726, 0.85506726, 3.4769498}. (3) PIN AND CONVENTION: that deprecated witness records q0 = 1.1099785955541805, the OLD MUON value (a pin-currency defect, not a corrupt number), and z = 0.4993203340335982 = z_C = sqrt(q)/(q+1), the EXCISED convention C. The regression witness is also convention C (G[0][1] = 0.4993203341836944) but at the proton pin. Under the CANONICAL convention D the same object (computations/gram-matrix-dual.witness.json, z = 0.6126880371464652, proton pin) has spectrum {4.2303392, 0.7527021132519656 x3, 3.07e-17, -0.7527021132519656}: the block's lambda_- should read -0.7527, not -0.855, and only under D is the name 'lambda_0' literally correct (it is 0.1018, not zero, under C). (4) UNSUPPORTED COMPARATIVE: the mirror word's |Delta net| = 0.004 is called 'an order of magnitude worse', but the comparison target is 0.000 (against which no ratio is defined) and the block's own next bullet puts all other words above 0.01, i.e. 0.004 is 2.5x BETTER than that floor, not an order of magnitude worse. State what it is worse than, or drop the comparative."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1545,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:04:58.186Z"
 }

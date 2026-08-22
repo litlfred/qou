@@ -890,6 +890,186 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.994Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.037Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.077Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.119Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.200Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.243Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.349Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.453Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.495Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b8064f2a2a00",
+          "ts": "e78f8b447861"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.554Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 4-row missing-piece/used-by/work-needed table. Judged all ten; no construction present.",
+        "notes": "Table-only block. One gloss em-dash in a cell ('substantial - quotient of free abelian group on F^x x F^x by 5-term pentagon'); a single column gloss is not load-bearing dash density. Number-field content checked: the Bloch group over F as a quotient by the five-term relation is stated correctly."
+      }
     ]
   },
   "label": "tbl:clausen-function-mathlib-filler-table2-data",
@@ -897,5 +1077,5 @@
     "md": "b8064f2a2a00",
     "ts": "e78f8b447861"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:37.554Z"
 }

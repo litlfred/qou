@@ -1,1 +1,1 @@
-We now test the Option E isospin convention. We verify its substrate-level behavior, tabulate the crystal-basis paths, and prove the chirality dual-space derivation. The evaluated mass predictions directly target the resolution of the empirical discrepancies.
+We now test the Option E isospin convention. We verify its substrate-level behavior, tabulate the crystal-basis paths, and prove the chirality dual-space derivation. The evaluated mass predictions aim directly to resolve the empirical discrepancies.

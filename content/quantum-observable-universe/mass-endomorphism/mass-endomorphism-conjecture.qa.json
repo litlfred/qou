@@ -1751,6 +1751,22 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.369Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Many negations, all substantive scoping: \"not load-bearing\", \"It does not depend on the closed-form conjecture below\", \"not required for the structural derivations\", \"It is not a finite element of H_n(R,q) for any n\", \"without any complex-analytic limit\", \"not single-nucleon absolute masses\". Every one marks a real limitation the block imposes on itself, which is this block's central virtue.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1770,6 +1786,22 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.411Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No setup-then-reframe; the block is organised as labelled sections and worked cases.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1789,6 +1821,23 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 1605 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.454Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "Nine em-dashes in one block, eight of them UNSPACED and all in the identical noun-then-appositive shape: \"explicitly-expressing its NF decomposition\", \"in H_n(R,q)-a finite-rank Hecke element\", \"the Jones polynomial J(K;q)-a Laurent polynomial\", \"in [0.85, 1.0]-at the boundary\", \"z-Habiro completion-analogous to\", \"a brane tower effect-the accumulated quantum dilogarithm\", \"growing with N-a categorically defined object\", \"the same decomposition-using weights that produce Vol(K)\". The repetition of one construction eight times is the density tell the category is for; individually each is defensible.",
+        "notes": "STRUCTURAL (eight sites spread across the block; a partial fix leaves the punctuation inconsistent), not edited. Proposed: convert the appositives to commas or relative clauses (\"the Jones polynomial J(K;q), a Laurent polynomial in q^{1/2}\") and keep at most the two that are genuinely parenthetical."
       }
     ],
     "trap-triples": [
@@ -1808,6 +1857,23 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 1605 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.498Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "\"*Two partial mitigations are documented, though neither universally closes the gap:*\" is followed by a numbered list of THREE items - (1) the z-Habiro completion, (2) the magic-shell structural term, (3) the Markov-trace audit on 3-He. The announced count does not match the list. Item 3 is also not a mitigation but a verification task (\"Verify ",
+        "notes": "tr_M| ... to confirm the structural gap is real\"), which is what makes it read as an appended third.|STRUCTURAL (deciding whether item 3 is a mitigation or a check is a content judgement), not edited. Proposed: either restore \"Two\" by moving item 3 out as a separate verification note, or change \"Two\" to \"Three\" and drop \"though neither\" (which also assumes two)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1827,6 +1893,22 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.539Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "The block ends on a three-item consequence list under \"If the conjecture holds\", which is content. The section-final \"The mass is almost entirely a brane tower effect-the accumulated quantum dilogarithm across exceptional divisors\" is the closest thing to a flourish, but it names a mechanism.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1846,6 +1928,22 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.582Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"The scope of this conjecture is as follows\" is a structural announcement in a section whose job is scoping; no narration of emphasis.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1865,6 +1963,23 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.624Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "major",
+        "evidence": "\"The scope of a failure is therefore exactly this: the tower formula remains correct as an infinite series, and the closed form is a convenience.\" This is a block-final restatement of the paragraph immediately above it, which already said \"If this conjecture fails ..., the algebraic mass formula remains valid as the infinite series\" and, one bullet earlier, \"It serves symbolic computation but is not required for the structural derivations in this paper\". The sentence adds nothing and the \"therefore\" points at no new inference.",
+        "notes": "FIX IS SAFE BUT NOT APPLIED - the sentence sits between two math-bearing paragraphs and its removal is a judgement about how much scoping repetition the author wants, which the batch rules put on the structural side. Proposed: delete the sentence outright; the two preceding statements carry it."
       }
     ],
     "trap-performed-warmth": [
@@ -1884,6 +1999,22 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.665Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1903,6 +2034,22 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.708Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No superlative wording, and the absolute-mass paragraph is explicitly compliant (\"the absolute scale is calibrated - consistent with absolute mass in MeV not being a framework prediction\"). Substantive findings are in the notes.",
+        "notes": "MOST NUMBERS IN THIS BLOCK VERIFY - recorded so a later pass need not redo them. Tower-convergence table, recomputed as partial sums of Li_2(q^{-2}) = sum x^n/n^2 at x = q_0^{-2} = 0.811653754 (mpmath 40 dps): N=1 -> 73.8875%, N=3 -> 94.2887%, N=10 -> 99.7474%, N=20 -> 99.9898%, against printed 73.9 / 94.3 / 99.75 / 99.99. All four correct. 1/hbar_q = 10.0927, printed \"approx 10\", correct. Phi_q(0.989) = 671094 and Phi_q(1) = 901389 from the block's own product formula, printed \"6.7e5\" and \"9e5\", both correct. Jones polynomial of the trefoil -q^{-4}+q^{-3}+q^{-1} and Vol(trefoil) = 0, correct. All three ratio columns of the single-level table are internally consistent (0.911/1.165 = 0.782; -125.2/-89.8 = 1.394; 1.184/0.852 = 1.390) and CODATA n/p = 939.56542/938.27209 = 1.001378, printed 1.001, correct. TWO GENUINE DISCREPANCIES, both flagged not fixed: (1) The \"Descended vs transient\" table CONTRADICTS the block's own Statement display for its first row. The Statement asserts tr_M(Phi^trans) = Vol(K_beta)/hbar_q^2 - |tr_M(rho(beta))|. For the trefoil the block itself states Vol = 0, so that formula gives -0.551 - yet the table reports +111.86. The table value is instead Li_2(q^{-2})/hbar_q^2 = 111.8955 (the vacuum-drag mechanism the corpus uses for the volume-zero trefoil), so the row is right and the headline equation simply does not cover it. The block never says so. (2) The 4_1 row is off by 0.4%: Vol(4_1)/hbar_q^2 = 206.7683 and minus |tr_M| = 206.5863, against the printed 207.40; back-solving 207.40 + 0.182 implies Vol(4_1) = 2.03787 rather than 2.0298832. Minor third item: the ratio column reads 1137x where 207.40/0.182 = 1139.6 - consistent with the desc column being a rounding of ~0.18241, but not reproducible from the printed digits. Also note the tower table cannot discriminate the q_0 pins: proton and muon agree to well beyond the four printed figures."
       }
     ],
     "trap-nonspeakable": [
@@ -1922,6 +2069,23 @@
         "reviewed_at": "2026-08-15T10:31:01.033Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3eb154d47241",
+          "ts": "9483045ba9e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:02.748Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "\"the accumulated quantum dilogarithm across exceptional divisors\" and \"cyclotomic-denominator structure\" are dense but parse aloud.",
+        "notes": "Separate symbol-collision note for the coordinating session, not a trap: Phi_q carries two incompatible meanings in this one block - defined as the infinite product Phi_q(z) = prod_k (1 - q^{-k} z)^{-1} in the \"Encoding requirements\" section, then used as \"The quantum dilogarithm Phi_q = sum log|hat V_i|\" in the single-level table paragraph. A sum of logs and an infinite product of that form are different objects; one of the two needs renaming."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1945,5 +2109,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:34:02.748Z"
 }

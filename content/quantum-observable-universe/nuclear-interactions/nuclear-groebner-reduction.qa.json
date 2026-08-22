@@ -1981,6 +1981,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a free parameter.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.696Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'with $q$ a categorical invariant, not a free parameter'.",
+        "notes": "Substantive: this is the corpus's anti-fit discipline stated where it constrains the reading of R = Z[q,q^{-1}]."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2000,6 +2017,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.734Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2019,6 +2053,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 121 words)"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.772Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2038,6 +2089,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 121 words)"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.814Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -2057,6 +2125,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.854Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2076,6 +2161,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.896Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2095,6 +2197,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.938Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2114,6 +2233,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:58.978Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2133,6 +2269,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.020Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Opening line: 'Gröbner--Shirshov reduction in $H_A(q)$ produces a unique normal form representing the lowest-energy state.' And 'The nuclear braid word ... $\\mathcal{N}(Z, N) = \\prod_{1 \\leq i < j \\leq A}\\sigma_{i}^{\\epsilon(i, j)}$'.",
+        "notes": "Two defects. (1) A Gröbner-Shirshov normal form is a canonical representative under a term order; nothing in the block or its proof connects it to an energy minimum, so 'representing the lowest-energy state' is unsupported. (2) SYMBOL COLLISION WITHIN THE BLOCK: the display two paragraphs earlier DEFINES N(Z,N) := r(N_raw(Z,N), G) as the REDUCED form and says 'By convention, N(Z,N) denotes the reduced normal form unless explicitly stated' -- then the next section says 'The unreduced braid word is N(Z,N) = prod...'. The same symbol is given both meanings, and the product itself is malformed: it ranges over pairs (i,j) but its generator index uses only i. Also minor: the prose calls the second Gröbner element 'the Yang--Baxter relation' where prf:nuclear-groebner-reduction calls the same element 'the braid relation'."
       }
     ],
     "trap-nonspeakable": [
@@ -2152,6 +2305,23 @@
         "reviewed_at": "2026-08-15T10:31:01.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "01595ffad9dc",
+          "ts": "cc5a3e015b3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.060Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Hecke relation sigma_i^2-(q-q^{-1})sigma_i-1 matches AGENTS.md Sec.7a exactly; generator is sigma_i throughout (no T).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2174,5 +2344,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:59.060Z"
 }

@@ -1903,6 +1903,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.350Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1922,6 +1937,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.411Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1941,6 +1971,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 159 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.490Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1960,6 +2005,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 159 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.555Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The three colour sectors r/g/b and the three k^(s) cases (0, +1, -1) are forced by the subject matter, not by a rhythm reflex."
       }
     ],
     "trap-closing-aphorism": [
@@ -1979,6 +2039,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.622Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1998,6 +2073,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.676Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -2017,6 +2107,23 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.747Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "Block-final sentence was 'The signed-rate machine links the algebraic Hecke generator $\\sigma_i$ to the explicit ODE on color-sector coordinates.' - a summary closer restating the earlier 'The braid generator determines the signed rate multiplier $k^{(s)}$', and over-claiming en route: the block presents a flow map, never an ODE.",
+        "notes": "FIXED inline (1 sentence, pure prose, no math): sentence deleted. The paragraph now ends on 'Uniform-vortex 3-cycle generators apply $k = +1$ or $k = -1$ to all sectors simultaneously.' Delimiters re-checked ($$ count even)."
       }
     ],
     "trap-performed-warmth": [
@@ -2036,6 +2143,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.791Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -2055,6 +2177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.850Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -2074,6 +2211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.900Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2097,5 +2249,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:16:31.900Z"
 }

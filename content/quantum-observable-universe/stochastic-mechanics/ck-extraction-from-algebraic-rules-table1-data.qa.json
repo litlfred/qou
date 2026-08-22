@@ -893,9 +893,180 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.039Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.077Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.115Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.155Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.194Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.234Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.272Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.309Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.348Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No claim language; used as the defect channel.",
+        "notes": "STRUCTURAL FINDING (not a trap). Row 1 states the Yang-Baxter cubic 'at n=3 on V_(2,1), follows from hoefsmit_sigma{0,1} matrix identities'. The Lean file this table documents says the opposite for the current conventions: ck-extraction-from-algebraic-rules.lean records that 'the chapter hoefsmit_sigma1 conventions FAIL the YB cubic with sigma_0 = diag(q, -q^{-1}) - the (0,0)-entry constraint gives an impossible b^2 = -q^6/(q^2+1)^2', and DELIBERATELY OMITS the YangBaxterRule instance because supplying it 'would falsely assert YB holds'. Row 3 (Hecke quadratic via hoefsmit_sigma{0,1}_hecke_quadratic) does resolve and is fine. Proposed: qualify row 1 as pending the documented d_1<->d_2 swap fix, or drop 'follows from'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "515ab67371aa",
+          "ts": "8507265e57f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:28.386Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 4-row data table (the four algebraic rules), no prose sentences. All four Lean class names resolve in content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean: YangBaxterRule:71, QYoungSymmetrizers:95, HeckeQuadraticAllGenerators:112, GBJetReduction:132. Hecke quadratic printed AGENTS.md 7a-correctly."
+      }
     ]
   },
   "label": "tbl:ck-extraction-from-algebraic-rules-table1-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:21:28.386Z"
 }

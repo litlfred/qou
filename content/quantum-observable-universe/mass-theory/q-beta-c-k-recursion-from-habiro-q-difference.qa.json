@@ -1775,6 +1775,22 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.064Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The scalar S = Q_beta/E_0 is not the ladder normalization' and 'This identification applies at the fibre level only ... Archimedean closure of c_3 via a substrate-fixed q-Bessel is refuted' are substantive scope statements, and the second is the corpus's fibre-vs-archimedean discipline."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1794,6 +1810,21 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.125Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Six short paragraphs, each introducing new structure; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1813,6 +1844,21 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 287 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.175Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes in the body."
       }
     ],
     "trap-triples": [
@@ -1832,6 +1878,22 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 287 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.245Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'Phi_d for d in {2,3,6} and for all primes p' is a list of the special cases proved in the sibling Lean file (cyclotomic_two/three/six_bar_stable, cyclotomic_prime_bar_stable) - real objects, not a rhetorical triple. See trap-superlative for why the list is nonetheless misleading."
       }
     ],
     "trap-closing-aphorism": [
@@ -1851,6 +1913,21 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.336Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a scope limitation ('The q-Bessel object lives in the brane-tower limit')."
       }
     ],
     "trap-meta-commentary": [
@@ -1870,6 +1947,22 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.419Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'We formally prove that a_j alternates bar-parity' is a claim about what was done, and I confirmed it is true: QOU.QBeta.CKRecursion.esymm_bar_parity exists in the sibling .lean with corollaries esymm_bar_odd / esymm_bar_even."
       }
     ],
     "trap-thesis-restatement": [
@@ -1889,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.482Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1908,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.667Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1927,6 +2050,23 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.574Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'The sequence c_2, ..., c_8 collapses to the PROVED seed c_2 = -1 and a kernel R(q_0, xi) of bounded degree d. The recursion generates c_3, ..., c_8 automatically.' Three problems. (1) 'proved' contradicts a STRICT AGENTS.md correction of 2026-08-16, which rules that 'PROVED IS wrong' for c_2 = -1 and that 'structural' is the defensible word - and the upstream block this one depends on (prop:q-beta-c-2-eq-neg-one-structural) correctly says 'structural identity'. This block silently upgrades its own premise. (2) 'generates c_3, ..., c_8 automatically' is asserted while the block's own computation.status is 'experimental' and neither d nor the a_j is exhibited anywhere in the block. (3) The cyclotomic paragraph names Phi_d for d in {2,3,6} and the primes as self-reciprocal, then the very next sentence states the general fact for every n > 1 - and the sibling .lean now carries the general theorem (cyclotomic_self_reverse), so the special-case list is stale scaffolding that implies the property is special to those n when it is not.",
+        "notes": "PROPOSED (not applied - each is a claim-level change): (1) 'the structural seed c_2 = -1'; (2) either exhibit d and the a_j or downgrade to 'is intended to generate', matching the experimental status; (3) drop the special-case list and keep the general statement, citing cyclotomic_self_reverse. ALSO unexplained: 'The identity Phi_n(1/q) q^{phi(n)} = Phi_n(q) guarantees period-3 closure.' The identity is correct for every n > 1 (I checked Phi_2, Phi_3, Phi_6), but nothing in the block defines 'period-3 closure' or connects self-reciprocality to a period, so the inference does not follow as written."
       }
     ],
     "trap-nonspeakable": [
@@ -1946,6 +2086,22 @@
         "reviewed_at": "2026-08-15T10:31:00.541Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7fae0bcf2bb3",
+          "ts": "c04fa321f353"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.766Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "FIXED inline while reading (spelling only, no math and no meaning change): 'Archimedian closure' -> 'Archimedean closure'; it was the only occurrence in the chapter. $$ count re-checked even."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1969,5 +2125,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:20:44.766Z"
 }

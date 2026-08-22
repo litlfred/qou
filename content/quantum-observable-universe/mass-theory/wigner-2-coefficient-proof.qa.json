@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 217 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1279,23 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 217 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "The opening announces a decorative triple that does not match the proof: \"The argument has three steps: a pairing identity, a counting argument, and an algebraic simplification.\" The actual steps are labelled Paired sum identity, Conjugation pairing, Trace computation - only the first matches, and Step 3 is a trace computation rather than an algebraic simplification.",
+        "notes": "proposed: delete the sentence (the three bold Step headers already announce the structure), or make the three names the step names."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1315,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1349,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1383,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1417,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1451,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1485,21 @@
         "reviewed_at": "2026-08-15T10:31:00.421Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f8e616f23926",
+          "ts": "30ef66a093f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.756Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (3 steps + corollary). Algebra verified independently."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1522,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.756Z"
 }

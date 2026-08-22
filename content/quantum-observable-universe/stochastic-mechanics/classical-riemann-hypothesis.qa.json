@@ -1810,6 +1810,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.465Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1829,6 +1844,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.510Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-em-dash": [
@@ -1848,6 +1878,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.556Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-triples": [
@@ -1867,6 +1912,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.598Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-closing-aphorism": [
@@ -1886,6 +1946,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.649Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-meta-commentary": [
@@ -1905,6 +1980,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.692Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1924,6 +2014,22 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.734Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Closing sentence 'The Riemann hypothesis asserts that this alignment survives the adelic assembly into the global zeta function.'",
+        "notes": "Not a restatement: it adds the adelic-assembly scoping that the opening conjecture statement does not carry."
       }
     ],
     "trap-performed-warmth": [
@@ -1943,6 +2049,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.777Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-superlative": [
@@ -1962,6 +2083,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.819Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "trap-nonspeakable": [
@@ -1981,6 +2117,21 @@
         "reviewed_at": "2026-08-15T10:30:59.559Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:32.863Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: the conjecture statement plus one interpretive paragraph. Zero em-dashes, no traps. Statement verified correct as the classical RH ('All non-trivial zeros of zeta(s) satisfy Re(s) = 1/2'). Lean sibling QOU/BraidKnot/ClassicalRiemannHypothesis.lean is exemplary for AGENTS.md 3b-tax: a content-bearing 'class ClassicalRiemannHypothesis : Prop where rh : forall s, riemannZeta s = 0 -> (forall n, s != -2((n:C)+1)) -> s.re = 1/2' (the excluded set -2, -4, -6, ... is the correct trivial-zero set) with NO instance provided, and a comment recording that a previous 'axiom ... ; instance ...' pair was removed rather than completed. The .ts marks validation 'stub' honestly. The interpretive paragraph hedges correctly ('The Riemann hypothesis ASSERTS that ...'), which is the phrasing classical-limit-intro.md over-states as 'is exactly the statement that ...'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2004,5 +2155,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:29:32.863Z"
 }

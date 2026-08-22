@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.774Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.834Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.885Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.939Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.999Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:37.067Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:37.126Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:37.177Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:37.231Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8da707498c62",
+          "ts": "cc36081ffe41"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:37.285Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows. TRACED TO PRODUCER AND RECOMPUTED. All four distinct numeric values reproduce computations/_deprecated/schur-weyl-mn.witness.json exactly at the printed precision: p/n 0.671453179676007 -> 6.7145e-1; 2H 0.01558575990731854 -> 1.5586e-2; 3H/3He 0.0008828689329881071 -> 8.8287e-4; 4He 4.425191012271545e-06 -> 4.4252e-6. Cycle types follow (3^{A-1},2,1) |- 3A in every row, correct. PIN DISCRIMINATION: the p/n closed form is (q^4+1)/(q^4+q^2+1); it gives 0.671453178629 at the proton pin and 0.671453179676 at the muon pin -- indistinguishable at the printed 5 figures -- while 1.1097 gives 0.671430 (6.7143e-1), so 1.1097 is excluded but the two live pins are not separated.",
+        "notes": "THREE FINDINGS. (1) COLUMN HEADER IS FALSE. 'Nonzero chi^lambda partitions' -- I computed the S_n characters by Murnaghan-Nakayama at each row's cycle type: the number of lambda with chi^lambda(mu) != 0 is 2, 6, 18 and 40 for n = 3, 6, 9, 12, not the 1, 2, 3, 5 listed. For the proton alone, chi^{[1^3]}((2,1)) = -1 != 0, so even that row's set is incomplete as labelled. What the table actually lists is exactly the partitions of n into parts all divisible by 3 (counts p(A) = 1,2,3,5). The witness propagates the same mislabel in its field n_partitions_nonzero_chi. (2) THE SUPPORT DISAGREES WITH THE CANONICAL WEIGHTS FROM n=9 ON. If the intended meaning is 'nonzero contribution w_lambda*chi^lambda', then intersecting nonzero-chi with the nonzero support of the canonical y-lambda-at-q0.witness.json (which is exactly the lambda with at most two rows) gives {(3)} and {(6),(3,3)} -- matching rows 1-3 -- but {(9),(6,3),(5,4)} at n=9 and {(12),(9,3),(8,4),(6,6)} at n=12, whereas the table lists (3,3,3) and (6,3,3),(3,3,3,3), which have y_lambda(q_0) = 0, and omits (5,4) and (8,4), which do not. So the parent remark's claim that the classical computation 'identifies the exact sparse partition support' is not supported by these rows beyond 4He's predecessors. (3) PROVENANCE: the sole producer is under computations/_deprecated/, its parameters.q_0 is '1.1099785955541805' -- the OLD MUON value, neither the canonical proton pin (owner directive 2026-08-07) nor the current muon pin -- and its own method_notes state 'Full q-deformed Hecke character requires ribbon q-weights (next iteration)'. Proposed fix: re-run against a non-deprecated producer at the proton pin and correct the column header to 'partitions in the support of w_lambda chi^lambda'."
+      }
     ]
   },
   "source_hashes": {
     "md": "8da707498c62",
     "ts": "cc36081ffe41"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:23:37.285Z"
 }

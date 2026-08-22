@@ -891,11 +891,351 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:06.781Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:45.650Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:06.862Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:45.730Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:06.929Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:45.797Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:06.996Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:45.861Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.085Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:45.934Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.150Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:45.997Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.229Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:46.058Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.278Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:46.105Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.356Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:46.174Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.449Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH: (a) '+3.92%' is CORRECT -- the deuteron gap is 1.229314 MeV (the bare float literal recorded in computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) 'within 0.1% of each other' is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent's 'within 0.1%' recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1's first cell reads 'Deuteron gap (the formal derivation)'. The parallel cell in row 2 is 'q-variants ()' -- a backticked SCRIPT NAME in the same slot. 'the formal derivation' is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which script name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header 'canonical evaluation' is a second, lower-confidence instance of the same sweep class ('canonical' substituted for 'numerical'); 'numerical evaluation' is the reading that makes the column parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the very number this table depends on -- 'bare float literal 1.229314' -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      },
+      {
+        "field_hash": {
+          "md": "d24122771a63",
+          "ts": "d0794f1f1e83"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:46.242Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED BOTH. (a) \"+3.92%\" is CORRECT: the deuteron gap is 1.229314 MeV (the bare float literal at computations/_deprecated/q_variant_partition_sum.py line 70) and (5/2)*m_e = 1.2774974 MeV, giving +3.9195%, which prints as +3.92%. (b) \"within 0.1% of each other\" is FALSE: classical 5/2 = 2.5 against the q-analogue 2 + 1/[2]_q = 2.497290546 is a relative difference of 0.10838%, i.e. just OVER 0.1%. Same over-claim as the parent block \"within 0.1%\" recorded on table 1.",
+        "notes": "THREE FINDINGS. (1) SWEEP DAMAGE, high confidence: row 1 first cell reads \"Deuteron gap (the formal derivation)\". The parallel cell in row 2 is \"q-variants (`q-variant-partition-sum`)\" -- a backticked SCRIPT NAME in the same slot. \"the formal derivation\" is the known token-substitution artefact standing in for a script name. Not fixed inline because I cannot recover which name was overwritten; proposed fix: restore the original backticked producer name. (2) The column header \"canonical evaluation\" is a second, lower-confidence instance of the same sweep class (canonical substituted for numerical); \"numerical evaluation\" is the reading that makes the header parallel to its contents. (3) PROVENANCE: the one producer this table names, q-variant-partition-sum, lives in computations/_deprecated/, and its script-qa sidecar flags the exact number this table depends on -- bare float literal 1.229314 -- as a precision violation. So the +3.92% is arithmetically right but rests on a deprecated, float64-tainted input."
+      }
     ]
   },
   "source_hashes": {
     "md": "d24122771a63",
     "ts": "d0794f1f1e83"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:46.242Z"
 }

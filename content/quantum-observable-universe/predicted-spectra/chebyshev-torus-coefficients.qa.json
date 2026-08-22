@@ -1541,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.723Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1560,6 +1575,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.764Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-em-dash": [
@@ -1579,6 +1609,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.803Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-triples": [
@@ -1598,6 +1643,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.842Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-closing-aphorism": [
@@ -1617,6 +1677,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.882Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-meta-commentary": [
@@ -1636,6 +1711,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.921Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1655,6 +1745,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:45.961Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-performed-warmth": [
@@ -1674,6 +1779,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.000Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-superlative": [
@@ -1693,6 +1813,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.040Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "trap-nonspeakable": [
@@ -1712,6 +1847,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b046f2f6af52",
+          "ts": "3388ef07d45b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:26:46.079Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of definition block (3 short prose spans + 3 display-math groups + a cross-reference closer). None of the ten constructions present: no negation-contrast, no pivot, no em-dash, no triple, no aphorism (closer is 'See Table 1', a cross-reference), no meta-commentary, no restatement, no warmth, no superlative; syntax speakable. NOTE: the block's mathematics is defective (three mutually inconsistent laws for c_n) and a dangling colon precedes the extracted table - reported separately, outside the trap axis."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1735,5 +1885,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:26:46.079Z"
 }

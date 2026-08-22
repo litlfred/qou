@@ -2100,6 +2100,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.205Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2119,6 +2136,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.246Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-em-dash": [
@@ -2138,6 +2172,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.293Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-triples": [
@@ -2157,6 +2208,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.335Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-closing-aphorism": [
@@ -2176,6 +2244,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.378Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-meta-commentary": [
@@ -2195,6 +2280,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.417Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-thesis-restatement": [
@@ -2214,6 +2316,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.457Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-performed-warmth": [
@@ -2233,6 +2352,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.499Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-superlative": [
@@ -2252,6 +2388,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.542Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "trap-nonspeakable": [
@@ -2271,6 +2424,23 @@
         "reviewed_at": "2026-08-15T10:31:01.388Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "331ff060c63b",
+          "ts": "ba69cd1b61d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:08.583Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:beta-stability (lead sentence + italic statement + two displays). Verified the algebra: A* = p(2 + (a_C/2a_A) A*^{2/3}) is the exact inversion of p* = A/(2 + a_C A^{2/3}/(2a_A)), and the latter is the standard SEMF valley-of-stability formula. Two content notes reported separately: (i) the block uses p for the PROTON COUNT while the notation register reserves p for the brane point and assigns Z to the proton count - and the same statement writes L = Z frak-p (+) N frak-n correctly one line earlier, so the two conventions collide inside one sentence; (ii) the extremisation is stated as dL_bind/dn = 0 at fixed p, whereas its interpretation sibling minimises the full mass M at fixed A over p - these differ by the (m_p - m_n) term, which that sibling also drops.",
+        "notes": "No trap of this category; the block is a lead sentence plus a bare proposition statement."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2294,5 +2464,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:57:08.583Z"
 }

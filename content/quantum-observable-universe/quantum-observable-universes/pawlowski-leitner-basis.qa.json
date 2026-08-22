@@ -2026,6 +2026,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.828Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2045,6 +2061,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.873Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-em-dash": [
@@ -2064,6 +2096,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 96 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.916Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-triples": [
@@ -2083,6 +2131,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 96 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.961Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2102,6 +2166,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.020Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-meta-commentary": [
@@ -2121,6 +2201,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.064Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-thesis-restatement": [
@@ -2140,6 +2236,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.124Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-performed-warmth": [
@@ -2159,6 +2271,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.169Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-superlative": [
@@ -2178,6 +2306,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.210Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "trap-nonspeakable": [
@@ -2197,6 +2341,22 @@
         "reviewed_at": "2026-08-15T10:30:59.887Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.253Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2220,5 +2380,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:41:48.253Z"
 }

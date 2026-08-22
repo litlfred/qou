@@ -1776,6 +1776,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.125Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Definition block read in full including the archimedean-specialisation paragraph. \"cannot be made R-free or generic-only\" is a factual statement about the realisation map, not manufactured emphasis.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1795,6 +1811,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.163Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1814,6 +1846,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.199Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1833,6 +1881,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 184 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.236Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No list.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1852,6 +1916,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.273Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Closes on \"We acknowledge it here rather than splitting it off\" - an authoring decision stated plainly, not a quotable line.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1871,6 +1951,23 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.310Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "severity": "minor",
+        "evidence": "\"We acknowledge it here rather than splitting it off\" is a sentence about the document's own organisation, which is the shape of category 6. Judged a pass because it is a substrate-wall scope declaration - it tells the reader that this block deliberately spans the wall - and it is the honest form of a claim that would otherwise be silent.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1890,6 +1987,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.346Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No closing restatement.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1909,6 +2022,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.383Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1928,6 +2057,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.420Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "No inflation. The trace diagram 1 -> A tensor A^v -> A tensor A^v -> 1 via coev, f tensor id, ev is the standard rigid categorical trace and is correct as written; the archimedean-specialisation paragraph is the GOOD version of that banner - specific to this block, naming frobeniusMass, scalarMass and the R -> R realisation - as against the boilerplate \"What follows sits on the archimedean side ...\" copies flagged on hecke-algebra-type-scaffold.md, hecke-branching-trace-decomposition.md and markov-trace-operator-construction.md, none of which has anything following.",
+        "notes": "Two items flagged for the coordinating session, not edited: (1) the Frobenius norm is written ||x||_F = <x, x>_F, i.e. the norm is set equal to the pairing rather than to its square root; as printed ||.||_F is the SQUARED norm under a norm's name, which matters because the mass identity takes ||.|| of a trace. (2) The final sentence of the definition proper - \"The mass measures the resistance of the Frobenius-Hopf structure to transporting the cycle rho through the comultiplication\" - is interpretation inside a `definition` block; the chapter already carries rem:mass-geometric-drag, which says exactly this and is the block interpretation belongs in (definition-clarity criterion clarity-stmt-pure / clarity-defn-tight)."
       }
     ],
     "trap-nonspeakable": [
@@ -1947,6 +2092,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e53859df16ef",
+          "ts": "4ff8a213d887"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:47.458Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "\"the norm on R induced by the Frobenius pairing\" and the coev/ev composition read aloud.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1970,5 +2131,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:36:47.458Z"
 }

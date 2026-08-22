@@ -1,22 +1,22 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-21T21:30:07.209Z",
+  "generated": "2026-08-22T16:36:42.111Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3015,
-  "files_flagged": 162,
-  "total_defects": 81,
-  "total_exempt": 122,
+  "scanned_files": 3031,
+  "files_flagged": 142,
+  "total_defects": 53,
+  "total_exempt": 123,
   "categories": {
-    "proof-no-self-assuming-projection": 47,
-    "proof-no-trivial-true": 17,
-    "proof-no-unused-hypothesis-rfl": 7,
-    "proof-docstring-sorry-mismatch": 5,
+    "proof-no-self-assuming-projection": 44,
+    "proof-docstring-sorry-mismatch": 1,
+    "proof-no-trivial-true": 2,
     "proof-no-provable-axiom": 1,
     "proof-claims-unencoded": 3,
-    "proof-no-decide-masking": 1
+    "proof-no-decide-masking": 1,
+    "proof-no-unused-hypothesis-rfl": 1
   },
   "conjecture_graph": {
-    "total": 242,
+    "total": 244,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -292,6 +292,11 @@
         "name": "CrystalGraphRealization",
         "file": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
         "line": 120
+      },
+      {
+        "name": "CumulativeErrorHarmonic",
+        "file": "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean",
+        "line": 1122
       },
       {
         "name": "DeltaCouplingSubstrateForm",
@@ -999,6 +1004,11 @@
         "line": 27
       },
       {
+        "name": "SquaredToLinearTransition",
+        "file": "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean",
+        "line": 1174
+      },
+      {
         "name": "SurrealField",
         "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Basic.lean",
         "line": 54
@@ -1300,16 +1310,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean": [
-      {
-        "line": 69,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem colour_sector_count : (3 : ℕ) = 3 := rfl",
-        "decl": "colour_sector_count",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/brings-surface/levi-form-defect.lean": [
       {
         "line": 51,
@@ -1508,66 +1508,6 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
-    "content/quantum-observable-universe/knots-particles-confinement/c-equals-bar-iff-all-1dim.lean": [
-      {
-        "line": 37,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem exactly_two_one_dim_irreps : (2 : ℕ) = 2 := rfl",
-        "decl": "exactly_two_one_dim_irreps",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.lean": [
-      {
-        "line": 64,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem delta_skein_eq_mass_splitting",
-        "decl": "delta_skein_eq_mass_splitting",
-        "severity": "major",
-        "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `h_me` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean": [
-      {
-        "line": 120,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem kappa_vanishes_iff_chi [ctx : QouObstructionReductionContext] (n : ℕ) :",
-        "decl": "kappa_vanishes_iff_chi",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean": [
-      {
-        "line": 9,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem delta_max_numerical_scale [ctx : DeltaMaxNumericalScaleContext] : (1 : ℝ) = 1 :=",
-        "decl": "delta_max_numerical_scale",
-        "severity": "critical"
-      },
-      {
-        "line": 9,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem delta_max_numerical_scale [ctx : DeltaMaxNumericalScaleContext] : (1 : ℝ) = 1 :=",
-        "decl": "delta_max_numerical_scale",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean": [
-      {
-        "line": 655,
-        "category": "proof-no-trivial-true",
-        "pattern": "exists-true-tautology",
-        "snippet": "theorem exists_knot [JonesBirthday K] :",
-        "decl": "exists_knot",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean": [
       {
         "line": 351,
@@ -1712,15 +1652,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `hi.eq` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      },
-      {
-        "line": 405,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem skein_from_markov_traces (config : NuclearConfig)",
-        "decl": "skein_from_markov_traces",
-        "severity": "major",
-        "detail": "proof is `by\n                                                                      \n  rfl`, which uses no hypothesis, yet the statement binds `h_len` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean": [
@@ -1756,26 +1687,6 @@
         "pattern": "field-projection",
         "snippet": "def pslq_independence [ctx : Cl3Zeta5PslqIndependenceContext] :",
         "decl": "pslq_independence",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicCl3OrbitSum.lean": [
-      {
-        "line": 18,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology",
-        "snippet": "theorem orbit_sum_general (zeta3 : ℝ) : ∀ N : ℕ, 2 ≤ N →",
-        "decl": "orbit_sum_general",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean": [
-      {
-        "line": 27,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology",
-        "snippet": "theorem closed_form_holds : ∀ n : ℕ, 2 ≤ n →",
-        "decl": "closed_form_holds",
         "severity": "critical"
       }
     ],
@@ -1872,15 +1783,6 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (markov_trace_origin, cinquefoil_framing_t25_origin) — honestly framed; tracked not counted"
-      },
-      {
-        "line": 480,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-witness-with-unused-hypothesis",
-        "snippet": "theorem universal_habiro_closure",
-        "decl": "universal_habiro_closure",
-        "severity": "major",
-        "detail": "proof is `by\n  exact ⟨rfl, rfl⟩`, which uses no hypothesis, yet the statement binds `hq` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean": [
@@ -2222,24 +2124,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean": [
-      {
-        "line": 10,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem plancherel_via_recipe [ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 :=",
-        "decl": "plancherel_via_recipe",
-        "severity": "critical"
-      },
-      {
-        "line": 10,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem plancherel_via_recipe [ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 :=",
-        "decl": "plancherel_via_recipe",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean": [
       {
         "line": 877,
@@ -2316,17 +2200,6 @@
         "detail": "the projected field `inst.factorization_identity` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean": [
-      {
-        "line": 171,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]",
-        "decl": "nsi_q_kernel_identification",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean": [
       {
         "line": 110,
@@ -2338,14 +2211,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `jgcs.adjoint_vanishing` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      },
-      {
-        "line": 222,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem kahler_differentials_no_sym_component :",
-        "decl": "kahler_differentials_no_sym_component",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean": [
@@ -2490,16 +2355,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/GradedFrobeniusHopf.lean": [
-      {
-        "line": 186,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem degree_zero_dim_one :",
-        "decl": "degree_zero_dim_one",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean": [
@@ -2674,32 +2529,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Machinery/H4Cyclicity.lean": [
-      {
-        "line": 194,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology",
-        "snippet": "theorem trM4_cyc_1_1 (z h : R) :",
-        "decl": "trM4_cyc_1_1",
-        "severity": "critical"
-      },
-      {
-        "line": 373,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology",
-        "snippet": "theorem trM4_cyc_2_2 (z h : R) :",
-        "decl": "trM4_cyc_2_2",
-        "severity": "critical"
-      },
-      {
-        "line": 572,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology",
-        "snippet": "theorem trM4_cyc_6_6 (z h : R) :",
-        "decl": "trM4_cyc_6_6",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Machinery/KLRAlgebraBasic.lean": [
       {
         "line": 47,
@@ -2798,26 +2627,6 @@
         "detail": "the projected field `h.extensive` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean": [
-      {
-        "line": 132,
-        "category": "proof-no-trivial-true",
-        "pattern": "exists-true-tautology",
-        "snippet": "theorem yekutieli_finite_slice_substrate (M G : Type u) [Group G] :",
-        "decl": "yekutieli_finite_slice_substrate",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean": [
-      {
-        "line": 128,
-        "category": "proof-no-trivial-true",
-        "pattern": "placeholder-true",
-        "snippet": "theorem primitive_KS_is_pentagon :",
-        "decl": "primitive_KS_is_pentagon",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean": [
       {
         "line": 126,
@@ -2857,13 +2666,14 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
       {
-        "line": 164,
+        "line": 150,
         "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
+        "pattern": "doc-delegates-sorry",
         "snippet": "theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :",
         "decl": "shell_filling_rule",
         "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
+        "exempt": true,
+        "exempt_reason": "docstring attributes the `sorry` to another declaration and this file has one"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/MotivesArchimedean.lean": [
@@ -2913,17 +2723,6 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (su4_action, alpha_cluster_from_su4_quadruplets) — honestly framed; tracked not counted"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean": [
-      {
-        "line": 115,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :",
-        "decl": "four_term_pair_nucleon",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean": [
@@ -3072,7 +2871,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean": [
       {
-        "line": 88,
+        "line": 89,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem topological_mass_decomposition {M : Type*}",
@@ -3081,16 +2880,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `tmd.decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean": [
-      {
-        "line": 108,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "tuple-projection",
-        "snippet": "theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :",
-        "decl": "neutron_proton_splitting",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean": [
@@ -3128,17 +2917,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `dl.surjective` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean": [
-      {
-        "line": 302,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem chi_v21_closed_form_u_coord (q : ℝ) (hq : q ≠ 0) :",
-        "decl": "chi_v21_closed_form_u_coord",
-        "severity": "major",
-        "detail": "proof is `by\n  unfold chi_V21_difference_factored\n  rfl`, which uses no hypothesis, yet the statement binds `hq` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean": [
@@ -3273,16 +3051,6 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (bloch_quotient_exists, borel_regulator_iso) — honestly framed; tracked not counted"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.lean": [
-      {
-        "line": 87,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem meson_squaring_exponent : (2 : ℕ) = 2 := rfl",
-        "decl": "meson_squaring_exponent",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean": [
@@ -3448,17 +3216,6 @@
         "detail": "the projected field `inst.forms_agree` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
-    "content/quantum-observable-universe/observations/building-block-knots.lean": [
-      {
-        "line": 151,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem unknot_amphichiral (q : ℝ) (hq : q ≠ 0) :",
-        "decl": "unknot_amphichiral",
-        "severity": "major",
-        "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `hq` — absent from the conclusion, so the claim holds for every value of it"
-      }
-    ],
     "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean": [
       {
         "line": 133,
@@ -3492,17 +3249,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/quantum-dilogarithm-volume.lean": [
-      {
-        "line": 58,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem quantum_dilogarithm_volume",
-        "decl": "quantum_dilogarithm_volume",
-        "severity": "major",
-        "detail": "proof is `by\n  unfold bindingEnergy\n  rfl`, which uses no hypothesis, yet the statement binds `hq`, `h_parent_len` — absent from the conclusion, so the claim holds for every value of them"
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean": [

@@ -129,7 +129,13 @@ from q_parameter import Q as Q0  # noqa: E402
 
 # --- Physical constants --------------------------------------------
 from codata_constants import M_E_MEV  # CODATA-2022 full precision
-ALPHA_EM = 1.0 / 137.035999084  # CODATA 2022 fine-structure constant
+# alpha_EM is NOT CODATA-2022: 137.035999084 is the CODATA-2018 Cs-recoil
+# determination, and this line claimed 2022 while carrying it. The value
+# is a deliberate determination choice (see experimental_constants), so
+# the fix is to read it from there rather than to bump the digits.
+from experimental_constants import ALPHA_EM_INV  # noqa: E402
+
+ALPHA_EM = 1.0 / ALPHA_EM_INV
 HBARC_MEV_FM = 197.3269804  # ℏc in MeV·fm (CODATA 2022)
 R_0_FM = 1.2  # nuclear radius constant: R = r_0 · A^{1/3}
 

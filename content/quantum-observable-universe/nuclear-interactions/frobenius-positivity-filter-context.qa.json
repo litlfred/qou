@@ -936,6 +936,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.012Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -955,6 +971,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.051Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-em-dash": [
@@ -974,6 +1006,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.090Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-triples": [
@@ -993,6 +1041,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.130Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-closing-aphorism": [
@@ -1012,6 +1076,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.173Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-meta-commentary": [
@@ -1031,6 +1111,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.211Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-thesis-restatement": [
@@ -1050,6 +1146,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.249Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-performed-warmth": [
@@ -1069,6 +1181,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.287Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-superlative": [
@@ -1088,6 +1216,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.325Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "trap-nonspeakable": [
@@ -1107,6 +1251,22 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "09bad7bfbcaa",
+          "ts": "e35c65e0e543"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.365Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of all three sections. Recomputed both numerics: (i) A=6 gives 2^6=64 sign-patterns, half odd-parity = 32, matching 'the 32 patterns with odd parity are excluded'; (ii) error (3.637-3.508)/3.508 = 3.678%, matching the stated +3.68%. Headers are noun-phrase academic. No trap constructions.",
+        "notes": "Clean; both numerics verified. Minor note: the quoted experimental 6He beta-decay Q of 3.508 MeV is the older value; AME2020 gives 3.5051 MeV, which would move the error to +3.76%."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1129,5 +1289,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:58:55.365Z"
 }

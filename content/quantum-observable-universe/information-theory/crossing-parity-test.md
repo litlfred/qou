@@ -6,7 +6,7 @@ See [Table](#tbl:crossing-parity-test-table-data).
 **Score: 11/12 (92%).**
 The representation-theoretic criterion cleanly resolves all three counterexamples where the crude parity rule fails:
 
-- **H** ($\ell_v = 1$ of $\ell_{\max} = 2$): The shell rests near-closed. The extension splits via the trivializing section. Liquid H securely exists at 20 K. $\checkmark$
+- **H** ($\ell_v = 1$ of $\ell_{\max} = 2$): The shell rests near-closed. The extension splits via the trivializing section. Liquid H exists at 20 K. $\checkmark$
 - **Na** ($\ell_v = 1$ of $\ell_{\max} = 2$): The shell rests near-closed and explicitly exhibits metallic band delocalization. It melts normally. $\checkmark$
 - **Cu** ($3d^{10}4s^1$): The $3d$ subshell closes perfectly. The single $4s$ valence electron rests near-closed and acts metallic. It melts normally. $\checkmark$
 

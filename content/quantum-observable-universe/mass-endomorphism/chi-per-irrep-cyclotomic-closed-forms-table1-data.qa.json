@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.662Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Three-row algebra table, no prose; no assertion-by-denial.",
+        "notes": "No change."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.704Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "No connective prose.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.745Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.785Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Three rows because H_3 has exactly three irreps, V_(3), V_(2,1), V_(1,1,1) - a complete enumeration, not a reflex triple.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.825Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Ends on the V_(1,1,1) data row.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.867Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "None.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.907Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "No prose sentences.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.948Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "None.",
+        "notes": "No change."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:33.990Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "No unqualified maximum-strength claims. Cyclotomic column independently verified: q^2-1 = Phi_1 Phi_2, q^2+1 = Phi_4 so (q^2+1)^2 = Phi_4^2, q^4+1 = Phi_8. All three rows factor correctly.",
+        "notes": "No change."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "316614058621",
+          "ts": "d63ec50d2f24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:13:34.031Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Column entries are formulas; headers are plain nouns.",
+        "notes": "No change."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:13:34.031Z"
 }

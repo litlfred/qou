@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.226Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.288Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.342Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.390Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.438Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.487Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.553Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.602Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.663Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5cb7b7a8a614",
+          "ts": "0f2d72f03959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.715Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 5-step SDP roadmap. RECOMPUTED the strand arithmetic: step 4's H_18/H_21 correspond to 6Li (6 nucleons x 3 = 18) and 7Li (7 x 3 = 21), both correct; step 3's H_6/H_9/H_12 match 2H/3H,3He/4He, correct; step 5's alpha-cluster range 8Be to 40Ca is coherent (40Ca = 10 alpha). Step ordering is monotone in scale. No q_0 values, no braid words, no convention-C z.",
+        "notes": "Two notes, neither a language trap. (1) The cells carry status/roadmap register ('known answer; unit test', 'research-grade', 'needs SDP-decomposition tricks') and step 4 says 'replaces deprecated volume-match' -- that is a status leak of the kind voice-status-leak targets, but it is the declared content of a roadmap table rather than a trap construction, so n/a here and better handled under the voice criteria. (2) Step 3 verifies against 'mass-table-ppb' with no path given; a reader cannot locate it from the table."
+      }
     ]
   },
   "source_hashes": {
     "md": "5cb7b7a8a614",
     "ts": "0f2d72f03959"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:23:36.715Z"
 }

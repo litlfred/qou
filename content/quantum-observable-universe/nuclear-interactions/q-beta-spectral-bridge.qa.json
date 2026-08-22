@@ -2210,6 +2210,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.848Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2229,6 +2246,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.888Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2248,6 +2282,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 87 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.928Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2267,6 +2318,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 87 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:07.971Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -2286,6 +2354,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.011Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2305,6 +2390,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.051Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -2324,6 +2426,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.091Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2343,6 +2462,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.133Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the proposition + .ts (incl. the status authorNote).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2362,6 +2498,23 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.173Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'Both forms are finite-depth truncations of the same spectral decomposition'; 'The remainder at depth $N$ in the brane-tower truncation decays exponentially.' Block kind: `proposition`; uses[] = ['prop:neutron-qvalue-symbolic'] only.",
+        "notes": "CONJECTURAL-PROPAGATION DEFECT. The final displayed sentence of this PROPOSITION -- 'The remainder ... decays exponentially' -- IS conj:archimedean-remainder-exponential-decay (label verified to exist), and the .ts status note concedes it: 'The exponential-remainder bound is the open conjectural input'. But uses[] lists only prop:neutron-qvalue-symbolic, so the conjecture is nowhere in the manifest cone. AGENTS.md Sec.3b requires a provable kind downstream of a conjecture either to be demoted or to satisfy Sec.3b-cond, whose rule 4 is that 'uses[] includes the conjecture explicitly' and rule 3 an explicit conditional banner. The banner names only the Borromean quark conjecture. PROPOSED: add conj:archimedean-remainder-exponential-decay to uses[] and to the conditional banner, or move that sentence out of the proposition statement."
       }
     ],
     "trap-nonspeakable": [
@@ -2381,6 +2534,22 @@
         "reviewed_at": "2026-08-15T10:31:01.479Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "55ffcd31ae25",
+          "ts": "060bdf70f453"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.214Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Standard italic-statement register with displayed definitions."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2404,5 +2573,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:08.214Z"
 }

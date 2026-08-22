@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.241Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.280Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.318Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.356Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.395Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.434Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.471Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.510Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.549Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a17ceb272d03",
+          "ts": "c9c72c6f5d43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.585Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (10-row cohomology/knot-basis table). Dimension bookkeeping checked against genus 4: 4 rows of H^{1,0} and 4 of H^{0,1} sum to dim H^1 = 8, matching the parent block's decomposition. One defect found - the last two H^{0,1} rows name the SAME knot (4_1 and '4_1^{-1} = 4_1', by the table's own equality), so a 4-dimensional space is given only 3 distinct basis elements. Reported as ANOMALY 34. No prose trap constructions in the cells."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:59.585Z"
 }

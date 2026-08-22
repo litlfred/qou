@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.577Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.616Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.653Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.690Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.728Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.765Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.802Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.843Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.882Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9e9f6777f9a7",
+          "ts": "febb10528c1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.921Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row generator table). Both computed columns verified: g(T_{m,n}) = (m-1)(n-1)/2 gives 1,2,3,4,3,4; crossing numbers 3,5,7,9,8,10 are correct for 3_1, 5_1, 7_1, 9_1, 8_19, 10_124. No prose trap constructions."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:01.921Z"
 }

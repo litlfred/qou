@@ -1090,6 +1090,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.021Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1109,6 +1125,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.062Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-em-dash": [
@@ -1128,6 +1160,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 67 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.101Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-triples": [
@@ -1147,6 +1195,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 67 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.140Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-closing-aphorism": [
@@ -1166,6 +1230,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.180Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-meta-commentary": [
@@ -1185,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.219Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-thesis-restatement": [
@@ -1204,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.258Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-performed-warmth": [
@@ -1223,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.296Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-superlative": [
@@ -1242,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.336Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1261,8 +1405,24 @@
         "reviewed_at": "2026-08-15T10:31:01.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1a941eabf326",
+          "ts": "c82d968ea5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.375Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:grobner-shirshov-basis. Checked against the resolved Lean structure Fred2005.GrobnerShirshovBasis (normalForms, reduce, embed, composition_lemma) - the retraction identity in the .md matches the Lean field. No constructions from the ten categories.",
+        "notes": "Cat.9: 'The key property is confluence' identifies which property is technically load-bearing, standard mathematical register - pass. NOT A TRAP, reported separately: the .md equates confluence with the retraction identity reduce . embed . reduce = reduce and says it ensures 'all S-polynomials of leading monomials reduce to zero'; the retraction identity is a consequence of confluence, not equivalent to it, so the Lean field is strictly weaker than the sentence claims."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.648Z"
+  "updated_at": "2026-08-22T04:07:41.375Z"
 }

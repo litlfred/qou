@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.400Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.479Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 117 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.538Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 117 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.590Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.640Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.693Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1437,23 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.743Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "The block's final two sentences restate the 'Inner chain' paragraph in fresh wording and add nothing: that paragraph already says 'The Bozejko-Speicher noncommutative $q$-Gaussian fails at the substrate value $q_0 \\approx 1.11 > 1$. The required substitute is the Perron-Frobenius dominant eigenvalue proxy'; the closer says 'Invoking a \"$q$-Gaussian limit\" at the physical substrate is incorrect. The Perron-Frobenius estimate is the required inner-chain convergence mechanism.'",
+        "notes": "proposed: delete both closing sentences — the caveat is fully stated where it belongs, under 'Inner chain'. Flagged rather than deleted because the block is tagged 'caveat' and the closer is where a reader skimming for the caveat will look; moving versus deleting is an author call."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.797Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1507,23 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.845Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "The opening line 'The two-chain decomposition exhibits PRECISE error bounds' claims precision the block does not deliver: the outer bound is an asymptotic rate O(k^-1/2), the inner one is an unquantified 'proxy', and the operational rate $C \\cdot r^{-(k-3)}$ names neither $C$ nor $r$.",
+        "notes": "proposed: 'The two-chain decomposition has a separate error bound on each chain.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1543,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "12af45830e9b",
+          "ts": "80d1da077524"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:07.904Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-layer remark read in full. Content checks out: the Feray-Meliot q-Plancherel CLT rate O(k^-1/2) is the standard CLT rate, and the Bozejko-Speicher q-Gaussian genuinely requires |q| < 1, so it does fail at a substrate q_0 > 1 as claimed. Eight of ten categories clean."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1580,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:20:07.904Z"
 }

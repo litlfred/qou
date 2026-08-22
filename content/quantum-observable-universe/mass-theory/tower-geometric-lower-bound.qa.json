@@ -1072,6 +1072,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.433Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1091,6 +1106,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.475Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1110,6 +1140,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 72 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.516Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "One spaced em-dash pair in 700 chars, a true parenthetical carrying the measured ratios."
       }
     ],
     "trap-triples": [
@@ -1129,6 +1174,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 72 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.557Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1148,6 +1208,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.600Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Ends on a technical scope statement about the carried parameters r and c."
       }
     ],
     "trap-meta-commentary": [
@@ -1167,6 +1242,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.642Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1186,6 +1276,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.684Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1205,6 +1310,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.724Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1224,6 +1344,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.766Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "\"super-exponential\" is hedged as \"observed\" and the numbers reproduce. I reimplemented w_std(k) = E_Planch[f^{lambda/(2,1)}] independently in pure Python (the corpus probe would not run here - no numpy) and got ratios 1.375, 1.855, 2.265, 2.281, 2.414, 2.620, 2.875 for k = 4..10, strictly increasing, so the block's \"(1.38 -> 2.88)\" is exact to the printed precision and the strictly-increasing claim holds over the checked range. The block is also correctly scoped as a conjecture with no fabricated Lean instance (authorNotes record k <= 10 verification only)."
       }
     ],
     "trap-nonspeakable": [
@@ -1243,6 +1378,21 @@
         "reviewed_at": "2026-08-15T10:31:00.714Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c977a40e9a2c",
+          "ts": "bd435dc16537"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:07:58.806Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1272,5 +1422,5 @@
     "lean": "94c0b926724f",
     "lean_statement": "9e12f6db9a01"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:07:58.806Z"
 }

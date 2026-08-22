@@ -890,6 +890,21 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.625Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~5.2kB, 4 sections). Recomputed Table 4 at the proton pin q0=1.1099785827513808: [A-1]_q! = 1.0/2.0109/6.1206/25.154/131.31 and [2]_q^(A-1) = 2.0109/4.0437/8.1315/16.352/32.881 - every cell exact; eps^2 = (ln q0)^2 = 0.01089 -> '0.011' correct; crossover at A=5 verified for all q>1 (at A=4, [2]^3 - [3]! = q+q^-1 > 0 identically). Table 3 cancellation percentages reproduce from their own |P| and Sigma|c_w| columns. Table 1 eigenvalue ratios and det T < 0 all check."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -909,6 +924,21 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.661Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~5.2kB, 4 sections). Recomputed Table 4 at the proton pin q0=1.1099785827513808: [A-1]_q! = 1.0/2.0109/6.1206/25.154/131.31 and [2]_q^(A-1) = 2.0109/4.0437/8.1315/16.352/32.881 - every cell exact; eps^2 = (ln q0)^2 = 0.01089 -> '0.011' correct; crossover at A=5 verified for all q>1 (at A=4, [2]^3 - [3]! = q+q^-1 > 0 identically). Table 3 cancellation percentages reproduce from their own |P| and Sigma|c_w| columns. Table 1 eigenvalue ratios and det T < 0 all check."
       }
     ],
     "trap-em-dash": [
@@ -928,6 +958,23 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 566 words)"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.697Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "One spaced dash, now removed; remaining dashes are ranges/true parentheticals. No density.",
+        "notes": "fix applied: 'forcing $A > 4$ - the same.' -> 'forcing $A > 4$, the same crossover.' (em-dash fragment substituting for sentence structure)"
       }
     ],
     "trap-triples": [
@@ -947,6 +994,23 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 566 words)"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.736Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "'depends on three factors' with a 3-item numbered list (sign of c_+, parity of k_i, ratio |c_-/c_+|) and 'all three crossing types' matching Table 1's three rows.",
+        "notes": "substantive enumeration, not a reflex list"
       }
     ],
     "trap-closing-aphorism": [
@@ -966,6 +1030,21 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.776Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~5.2kB, 4 sections). Recomputed Table 4 at the proton pin q0=1.1099785827513808: [A-1]_q! = 1.0/2.0109/6.1206/25.154/131.31 and [2]_q^(A-1) = 2.0109/4.0437/8.1315/16.352/32.881 - every cell exact; eps^2 = (ln q0)^2 = 0.01089 -> '0.011' correct; crossover at A=5 verified for all q>1 (at A=4, [2]^3 - [3]! = q+q^-1 > 0 identically). Table 3 cancellation percentages reproduce from their own |P| and Sigma|c_w| columns. Table 1 eigenvalue ratios and det T < 0 all check."
       }
     ],
     "trap-meta-commentary": [
@@ -985,6 +1064,22 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.816Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "'**Note.**' as a labelled scope paragraph is standard mathematical prose, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1004,6 +1099,21 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.855Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~5.2kB, 4 sections). Recomputed Table 4 at the proton pin q0=1.1099785827513808: [A-1]_q! = 1.0/2.0109/6.1206/25.154/131.31 and [2]_q^(A-1) = 2.0109/4.0437/8.1315/16.352/32.881 - every cell exact; eps^2 = (ln q0)^2 = 0.01089 -> '0.011' correct; crossover at A=5 verified for all q>1 (at A=4, [2]^3 - [3]! = q+q^-1 > 0 identically). Table 3 cancellation percentages reproduce from their own |P| and Sigma|c_w| columns. Table 1 eigenvalue ratios and det T < 0 all check."
       }
     ],
     "trap-performed-warmth": [
@@ -1023,6 +1133,21 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.895Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~5.2kB, 4 sections). Recomputed Table 4 at the proton pin q0=1.1099785827513808: [A-1]_q! = 1.0/2.0109/6.1206/25.154/131.31 and [2]_q^(A-1) = 2.0109/4.0437/8.1315/16.352/32.881 - every cell exact; eps^2 = (ln q0)^2 = 0.01089 -> '0.011' correct; crossover at A=5 verified for all q>1 (at A=4, [2]^3 - [3]! = q+q^-1 > 0 identically). Table 3 cancellation percentages reproduce from their own |P| and Sigma|c_w| columns. Table 1 eigenvalue ratios and det T < 0 all check."
       }
     ],
     "trap-superlative": [
@@ -1042,6 +1167,21 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.934Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~5.2kB, 4 sections). Recomputed Table 4 at the proton pin q0=1.1099785827513808: [A-1]_q! = 1.0/2.0109/6.1206/25.154/131.31 and [2]_q^(A-1) = 2.0109/4.0437/8.1315/16.352/32.881 - every cell exact; eps^2 = (ln q0)^2 = 0.01089 -> '0.011' correct; crossover at A=5 verified for all q>1 (at A=4, [2]^3 - [3]! = q+q^-1 > 0 identically). Table 3 cancellation percentages reproduce from their own |P| and Sigma|c_w| columns. Table 1 eigenvalue ratios and det T < 0 all check."
       }
     ],
     "trap-nonspeakable": [
@@ -1061,6 +1201,21 @@
         "reviewed_at": "2026-08-15T10:31:01.164Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "01097447235b",
+          "ts": "dbe1d6a548c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:22.975Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~5.2kB, 4 sections). Recomputed Table 4 at the proton pin q0=1.1099785827513808: [A-1]_q! = 1.0/2.0109/6.1206/25.154/131.31 and [2]_q^(A-1) = 2.0109/4.0437/8.1315/16.352/32.881 - every cell exact; eps^2 = (ln q0)^2 = 0.01089 -> '0.011' correct; crossover at A=5 verified for all q>1 (at A=4, [2]^3 - [3]! = q+q^-1 > 0 identically). Table 3 cancellation percentages reproduce from their own |P| and Sigma|c_w| columns. Table 1 eigenvalue ratios and det T < 0 all check."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1087,5 +1242,5 @@
     "md": "e3ccc76c8a43",
     "ts": "dbe1d6a548c7"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:22.975Z"
 }

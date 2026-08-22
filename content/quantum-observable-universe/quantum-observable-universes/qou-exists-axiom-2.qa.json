@@ -2112,6 +2112,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.682Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no assertion-by-denial; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2131,6 +2147,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.722Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no setup-then-reframe construction; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -2150,6 +2182,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 10 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.764Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). em-dash count 0 in the block; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -2169,6 +2217,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 10 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.807Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no reflex three-item list; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -2188,6 +2252,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.848Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). final sentence is substantive, not a quotable placed for closure; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -2207,6 +2287,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.890Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no narration of the author's own emphasis; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -2226,6 +2322,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.933Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no block-final restatement of what the text established; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -2245,6 +2357,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.975Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no personal or institutional-warmth register; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -2264,6 +2392,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.016Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no unqualified maximum-strength claim; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -2283,6 +2427,22 @@
         "reviewed_at": "2026-08-15T10:30:59.934Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f634e4aa3a7f",
+          "ts": "20fadbba99c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.056Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). reads aloud without stalling; lemma statement, one sentence.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2306,5 +2466,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:33.056Z"
 }

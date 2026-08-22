@@ -2146,6 +2146,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:33.830Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'whose support does not necessarily factor through a finite brane-tower extension' -- a scope restriction, not an assert-by-denying.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2165,6 +2181,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:33.873Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Statement then a section relating it to the proved theorem.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -2184,6 +2216,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 223 words)"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:33.916Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -2203,6 +2251,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 223 words)"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:33.960Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No list.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -2222,6 +2286,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.001Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "n/a -- see trap-thesis-restatement.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -2241,6 +2321,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.045Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'We proved the analogous decomposition ... as [Topological Decomposition of Mass]' -- an attribution, and the target thm:topological-mass resolves.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -2260,6 +2356,23 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.086Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "Block-final dangling boilerplate banner with nothing after it: '**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0. ...'",
+        "notes": "PROPOSED (not applied -- reported per the audit brief): delete. TENTH recorded instance of this class and the FIFTH in this batch. This is a THIRD distinct wording (colon-list variant) alongside the short form and the tau-M long form, so no single fixed string finds them all -- the stable anchor is the bold lead '**Archimedean specialisation.**' as a block's last paragraph."
       }
     ],
     "trap-performed-warmth": [
@@ -2279,6 +2392,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.128Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -2298,6 +2427,23 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.172Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "The boxed statement asserts m(rho) = ||Hol|| + sum_i ||Phi_q(z_i)|| -- an unqualified LINEAR additivity of norms.",
+        "notes": "REPORT ONLY, not fixed (math). This contradicts the corpus's own corrected lemma. lem:topological-mass-cat-eigenspace states m(rho)^2 = ||tr(tau_n(alpha))||^2 + ||tr(alpha - tau_n(alpha))||^2 and carries an explicit italic warning: '(Orthogonal components add **in quadrature**, not linearly. The descended and transient traces are orthogonal, so the masses combine by the Pythagorean law, not additively.)' Orthogonality gives Pythagoras; additivity of norms is the equality case of the triangle inequality and needs alignment, which is a different and stronger hypothesis. The same linear form appears in two more blocks of this cluster -- topological-mass-categorical-proof.md and the last line of topological-mass-cat-transient-proof.md -- so the eigenspace lemma was corrected and its three consumers were not. SEPARATE STRUCTURAL FINDING: this block is declared kind 'proposition' with label 'prop:topological-decomposition-mass', but its .ts title is 'Conjectural Topological Decomposition of Mass', its authorNotes call the holonomy form 'the main gap' and 'the core proof obligation', and its sibling proof block contains only a numbered list of PROOF OBLIGATIONS. Under AGENTS.md sec 3b an unproved statement of this kind is a 'conjecture' with a conj: label; as it stands a conjecture is carrying a provable block kind. VERIFIED CLEAN: the lean.ref QOU.TopologicalMass.TopologicalDecompositionMass resolves, thm:topological-mass resolves, and def:brane-boundary / cor:quantum-dilogarithm / def:recursive-brane-tower all exist."
       }
     ],
     "trap-nonspeakable": [
@@ -2317,6 +2463,22 @@
         "reviewed_at": "2026-08-15T10:31:00.991Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "95258e1b521d",
+          "ts": "8077656e4dff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.214Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'finitely many transient contributions localised at the exceptional divisors of the brane boundary'.",
+        "notes": "Parses. Minor: 'varrho_0 **forms** the unknot core', 'varrho **forms** a closed cycle', 'Phi_q(z_i) **gives** the quantum dilogarithm' are the copula substitution recurring across this chapter."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2340,5 +2502,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:18:34.214Z"
 }

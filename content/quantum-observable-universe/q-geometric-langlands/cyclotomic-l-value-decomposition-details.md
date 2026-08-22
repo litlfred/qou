@@ -24,7 +24,7 @@ Corresponds, via the Hurwitz–Lerch decomposition, to the 2 odd
 Dirichlet characters $\chi_5$, $\chi_5^3$ mod 5 (complex-conjugate
 pair).  Modulo bar-conjugation: 1 real dimension. Matches Theorem G.
 
-### Significance — Bridge to analytic number theory
+### Bridge to analytic number theory
 
 The graded-Mikusiński framework's depth-$n$ cyclotomic content
 **IS** the Dirichlet $L$-value content at integer $n$, up to

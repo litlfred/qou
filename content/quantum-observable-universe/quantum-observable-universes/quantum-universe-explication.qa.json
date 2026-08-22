@@ -1197,6 +1197,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.593Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). no assertion-by-denial; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1216,6 +1232,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.637Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). no setup-then-reframe construction; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1235,6 +1267,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.676Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). em-dash count 2 in the block; section prose, three sentences.",
+        "notes": "2 unspaced em-dashes forming one parenthetical; passes."
       }
     ],
     "trap-triples": [
@@ -1254,6 +1302,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.715Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). no reflex three-item list; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1273,6 +1337,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.752Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). final sentence is substantive, not a quotable placed for closure; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1292,6 +1372,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.788Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). no narration of the author's own emphasis; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1311,6 +1407,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.824Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). no block-final restatement of what the text established; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1330,6 +1442,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.860Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). no personal or institutional-warmth register; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1349,6 +1477,23 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.895Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "'Every subsequent physical feature - commutators, Reeb derivations, and action traces - is governed strictly by this single categorical parameter.'",
+        "notes": "FLAGGED, not fixed. Refuted by the three-calibration discipline in AGENTS.md: CAL-1 (m_e) fixes the MeV unit and CAL-3's proxy m_pi is recorded as SDP-validated independent of (m_e, q_0). q alone therefore does not govern every subsequent feature. proposed: '... by this single categorical parameter together with the three calibration inputs'."
       }
     ],
     "trap-nonspeakable": [
@@ -1368,6 +1513,22 @@
         "reviewed_at": "2026-08-15T10:30:59.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8cd4d0524cce",
+          "ts": "8ae0f1c62103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.933Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (section prose, three sentences). reads aloud without stalling; section prose, three sentences.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1390,5 +1551,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:38.933Z"
 }

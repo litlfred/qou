@@ -891,11 +891,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:17.862Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.299Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.346Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.394Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.470Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.546Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.622Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.703Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.780Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "385ba47413cc",
+          "ts": "f7fb58907b01"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:42.837Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "table( pure-data block: no prose to judge. Recomputation recorded in notes.",
+        "notes": "RECOMPUTED EVERY ROW AGAINST THE PRODUCING WITNESS computations/sigma-shell-from-beta-chain.witness.json (row A_magic = 2). THE TABLE IS STALE IN 4 OF 6 NUMERIC ROWS. C_(3,2,1): table 0.0374882414 vs witness 0.0374882414474320101048710548 MATCH. y_(3,2,1): table 0.00731845 vs witness 0.0 STALE. chi^(3,2,1)(beta_D): table -1.88451 vs witness -1.97227244615154968904823488 STALE by 4.7 pct. |tr_M(beta_D)|: table 0.388286 vs witness 0.575172395398020063703615096 STALE by 48 pct — and 0.388 to 0.575 is EXACTLY the import-cone drift AGENTS.md documents for tr_M_atom, with the witness naming abs_tr_M_source = atomic-tr-m-mpfr-50dps.witness.json. y_target: table 0.001331 vs witness 0.0 STALE. Benchmark B(D)/(2 m_p): table 0.001186 vs witness 0.001185459007605897809808413 MATCH. Ratio: table 1.122 within 12 pct vs witness ratio 0.0 and ratio_pct -100.0 STALE. The witness reports allPassed true while its own y_target_computed is 0.0 and its ratio_pct is -100.0. THE TABLE IS INTERNALLY SELF-CONSISTENT, so this is staleness and not an arithmetic error: I recomputed 0.0374882414 x 0.00731845 x 1.88451 / 0.388286 = 0.0013315605, matching the printed 0.001331, and B(D)/(2 m_p) = 2.224566/1876.54418 = 0.0011854589, matching 0.001186. ONE ARITHMETIC SLIP SURVIVES ANYWAY: the ratio is 0.0013315605/0.0011854589 = 1.12324, a 12.32 pct deviation, so within 12 pct is false on the table's own numbers (13 pct, or 12.3 pct). The witness agreement_note repeats the same 12 pct. Substituting the live |tr_M| = 0.575172 into the table's other figures gives y_target = 0.00089918 and ratio 0.7585, a 24 pct miss on the OTHER side of the benchmark. FINALLY, the benchmark divides by 2 m_p, an absolute proton mass, excised as a framework quantity on 2026-08-11."
+      }
     ]
   },
   "source_hashes": {
     "md": "385ba47413cc",
     "ts": "f7fb58907b01"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:39:42.837Z"
 }

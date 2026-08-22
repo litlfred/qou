@@ -75,7 +75,7 @@ near-matches** — their empirical value swings with the $q_0$ anchor
 (e.g. $c_3$: $-2.010$ at the muon-pin $q_0$, $-2.069$ at the $m_p$-pin
 $q_0$), so they are not yet Taylor-exact derivations. A near-match that
 beats the experimental target is a genuine result *and* not a
-derivation; both facts are reported, neither suppressed. The permanent
+derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
 coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
 next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact

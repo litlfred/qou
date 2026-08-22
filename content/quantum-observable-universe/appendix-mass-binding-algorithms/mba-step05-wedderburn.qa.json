@@ -893,13 +893,193 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.963Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.006Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.046Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.086Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.126Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.163Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.209Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.252Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.297Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9578409f3b88",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:44.340Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:wedderburn-decomposition. No constructions from the ten categories. VERIFIED: the Frame-Robinson-Thrall formula d_lambda = n!/prod_c h_lambda(c) is stated correctly; 'at most 30 partitions' for n <= 9 is exactly p(9) = 30; and correctness condition 4's Lean citation checks out - QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct in HookLengthFormula.lean carries a real proof term with no sorry (the three 'sorry' grep hits in that file are the words 'sorry-free' in docstrings).",
+        "notes": "NOT A TRAP, reported separately, two items. (1) Algorithm step 2a and correctness condition 4 contradict each other inside this one block. Step 2a says to compute d_lambda by the hook-length formula at q = 1 and 'then q-deform via [hook]_q'; condition 4 says the block dimensions are 'exact integers'. Condition 4 is the correct one - by the Tits deformation argument H_n(q) is isomorphic to the group algebra for generic q, so the Wedderburn block dimensions are the undeformed integers; the q-deformed hook product is the quantum dimension, a different quantity. (2) The Notes call Wedderburn 'the most expensive step in the chain for n > 6', while alg:markov-trace states 'the dominant cost is the GS reduction in step 1'. Both are in this appendix; at most one is right."
+      }
     ]
   },
   "source_hashes": {
     "md": "9578409f3b88",
     "ts": "5dcd405f7868"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:26:44.340Z",
   "label": "alg:wedderburn-decomposition",
   "kind": "algorithm",
   "paths": {

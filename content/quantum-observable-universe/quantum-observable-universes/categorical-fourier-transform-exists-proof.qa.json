@@ -1345,6 +1345,21 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.033Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proof block; all steps affirmative."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1364,6 +1379,21 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.074Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Preamble then the reduction to the Laplace case; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1383,6 +1413,21 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.114Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1402,6 +1447,21 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.156Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1421,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.195Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on the Wick-rotation identity F[f](xi) = L[f](-i xi), i.e. content."
       }
     ],
     "trap-meta-commentary": [
@@ -1440,6 +1515,23 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.234Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Fifth strategy-preamble in this batch and the second whose description does not match the proof. The preamble is three sentences ('The proof strategy is constructive. We explicitly form the operator ... We then verify that this explicit construction satisfies the monoidal functor properties ...'), announcing a direct verification; the proof body then proves nothing of the kind, arguing instead by reduction - 'Identical to prop:categorical-laplace-exists with the substitution s -> -i xi'.",
+        "notes": "Proposed (structural - three sentences, carries a formula, and the mismatch is with the argument rather than the wording; not applied): delete the preamble. If a lead-in is wanted it should describe what the proof does: 'The transform is the Laplace transform Wick-rotated, so existence is inherited.' Same construction as prf:categorical-action-exists, prf:categorical-action-unique (both fixed inline), prf:categorical-dirac-operator-exists and prf:categorical-dirac-operator-unique (both flagged)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1459,6 +1551,22 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.273Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The final sentence gives the Wick-rotation identity, which is the reduction's content."
       }
     ],
     "trap-performed-warmth": [
@@ -1478,6 +1586,21 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.312Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1497,6 +1620,21 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.351Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'explicitly' twice, both inside the flagged preamble."
       }
     ],
     "trap-nonspeakable": [
@@ -1516,6 +1654,22 @@
         "reviewed_at": "2026-08-15T10:30:59.955Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "70748cd64dfc",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:04:41.389Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Body is two clause-structured sentences.",
+        "notes": "Consistency check: the preamble's trace is tr_M and the body's 'pairing against the Markov trace' agree; the Hecke/Markov-trace naming follows AGENTS.md 7a. The proof is a citation of prop:categorical-laplace-exists, which is correctly listed in the proposition's uses[]."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1538,5 +1692,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:04:41.389Z"
 }

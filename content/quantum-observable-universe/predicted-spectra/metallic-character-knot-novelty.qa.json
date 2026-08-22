@@ -1413,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:56.836Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:56.877Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:56.919Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1470,6 +1518,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 27 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:56.961Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1553,23 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:57.176Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'A rigid topological invariant replaces qualitative chemical models.' Block-final, subject-verb-object, no hedge, no reference, quotable — and it names neither the invariant nor the models it replaces. It is placed as a closing line rather than as a claim the block supports: the two preceding sentences say only that lambda(R) 'provides a knot-theoretic metric' and 'formalizes conductivity via Reidemeister transport', neither of which establishes anything being replaced. The block is the same three-sentence shape as rem:lepton-continuant-recurrence-novelty, whose closer I also flagged.",
+        "notes": "flagged, not fixed: the block is three sentences, so deleting the closer leaves a two-sentence stub, and what should replace it depends on the lambda(R) definition, which is currently self-contradictory (see the finding on rem:metallic-character-knot-interpretation). Proposed: state what the classification buys that the qualitative account does not, e.g. that lambda(R) orders alkalis, transition metals and halogens on one integer scale — and fix lambda's definition first, because as it stands the block asserts novelty for a quantity the corpus defines two incompatible ways."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1589,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:57.003Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1624,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:57.048Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1659,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:57.092Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1694,23 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:57.221Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "Two unqualified maximum-strength claims in three sentences. 'A rigid topological invariant REPLACES qualitative chemical models' asserts displacement of the whole qualitative literature. And 'rigid topological invariant' is not established: lambda(R) is introduced in the interpretation block as a count of residual linking sites, with no proof of invariance under any move — indeed the interpretation block's own conductivity mechanism is Reidemeister II transport, so whether lambda is invariant under the moves it is transported by is precisely the open question, not a settled premise.",
+        "notes": "flagged, not fixed (same sentence as the aphorism entry; one edit resolves both). Proposed: 'lambda(R) gives an integer classification where the standard account is qualitative' — a comparison the block can support, without the invariance claim or the displacement claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1730,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e937c275978a",
+          "ts": "916d3b32f885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:57.134Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-sentence novelty remark. No negation-contrast, no pivot, no dash, no triple, no meta-commentary, no warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1768,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:20:57.221Z"
 }

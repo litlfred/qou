@@ -235,7 +235,54 @@ def _nonexec_spans_text(path: Path, text: str) -> list[tuple[int, int, int, int,
 # site every run is how a candidate list stops being read. Measured: the
 # `markov_trace_axiomatic_multi_atom` proton/neutron rows carry the marker AND
 # a comment naming the live value they defer to, and were still being counted.
-_ADJUDICATED = re.compile(r"#\s*noqa:\s*[\w,\s]*\bP31\b")
+# Two markers, from two different subsystems, both meaning "an agent looked
+# at this literal and it is correct as written":
+#
+#   `# noqa: P31`                     the corpus-wide reviewed-literal marker
+#   `:leanval[sym]{precision=N}`      the witnessed-values system's DECLARED
+#                                     truncation -- the literal is pinned to a
+#                                     witness and deliberately carried to N
+#                                     digits, which is machine-checked
+#                                     elsewhere (see local/witnessed-values)
+#
+# The second was found the hard way: `partition-sum-proton-residual.lean:66`
+# carries `precision=8` on an m_e truncated to exactly 8 digits, and two
+# further sites in the same file mirror that value inside the proof of
+# `electronMass_witness`. "Draining" any of the three would have broken a
+# declared, machine-checked arrangement to satisfy a detector that could not
+# see it -- the same failure mode as counting a provenance comment as a
+# defect. 11 sites in the corpus carry a `precision=` declaration.
+# `#` for Python/TS, `--` for Lean. Without the Lean form a `.lean` site
+# could not be adjudicated at all, and 20 of the 36 remaining sites are
+# Lean -- so the marker was unusable exactly where it was most needed.
+_NOQA_P31 = re.compile(r"(?:#|--)\s*noqa:\s*[\w,\s]*\bP31\b")
+_LEANVAL_PRECISION = re.compile(r":leanval\[[^\]]*\]\{[^}]*\bprecision=(\d+)")
+
+
+def _adjudicated(line: str, lit: str, want: str) -> bool:
+    """Is this literal already reviewed, or declaredly truncated *and correct*?
+
+    `noqa: P31` is an agent's flat assertion and is taken at face value.
+
+    `precision=N` is NOT, and the difference matters. It declares only that
+    the literal is deliberately carried to N significant digits -- it says
+    nothing about which CODATA edition those digits came from. Treating it as
+    a blanket exemption would have silently excused
+    `partition-sum-proton-residual.lean:59`, where `precision=11` sits on
+    `938.27208816`: the truncation is declared and fine, and the value is
+    CODATA-2018. So the declaration is *checked*: the literal is adjudicated
+    only if it equals the table value truncated to those N digits. A declared
+    truncation of the right number is fine; a declared truncation of the wrong
+    number is still a defect, and now still reported.
+    """
+    if _NOQA_P31.search(line):
+        return True
+    m = _LEANVAL_PRECISION.search(line)
+    if not m:
+        return False
+    n = int(m.group(1))
+    digits = lambda x: x.replace(".", "").replace("-", "").lstrip("0")[:n]  # noqa: E731
+    return digits(lit) == digits(want)
 
 
 def _classify(spans, lineno: int, col: int) -> str:
@@ -316,17 +363,32 @@ def self_test() -> int:
         finally:
             path.unlink(missing_ok=True)
 
-    # The adjudication marker must fire only on a real `P31` token.
-    for line, want in [
-        ("X = 938.27208816  # noqa: P31 - reviewed", True),
-        ("X = 938.27208816  # noqa: E501,P31", True),
-        ("X = 938.27208816  # noqa: E501", False),
-        ("X = 938.27208816  # P31 is discussed here", False),
+    # `lit` and the table value the site is scored against, then the verdict.
+    ME = "0.51099895069"
+    MP = "938.27208943"
+    for line, lit, want, expect in [
+        ("X = 938.27208816  # noqa: P31 - reviewed", "938.27208816", MP, True),
+        ("X = 938.27208816  # noqa: E501,P31", "938.27208816", MP, True),
+        ("X = 938.27208816  # noqa: E501", "938.27208816", MP, False),
+        ("X = 938.27208816  # P31 is discussed here", "938.27208816", MP, False),
+        # Lean comment token.
+        ("def m : R := 938.27208816  -- noqa: P31 - AME-derived, not CODATA",
+         "938.27208816", MP, True),
+        # A declared truncation of the CORRECT value: adjudicated.
+        ("def electronMass : R := 0.51099895  -- :leanval[m_e_MeV]{precision=8}",
+         "0.51099895", ME, True),
+        # A declared truncation of a STALE-EDITION value: still a defect.
+        # This is the real site partition-sum-proton-residual.lean:59.
+        ("def protonCodata : R := 938.27208816  -- :leanval[m_p_MeV]{precision=11}",
+         "938.27208816", MP, False),
+        # A leanval reference with no precision claim is NOT an adjudication.
+        ("def v : R := 0.51099895  -- :leanval[m_e_MeV]", "0.51099895", ME, False),
     ]:
-        got = bool(_ADJUDICATED.search(line))
-        if got != want:
+        got = _adjudicated(line, lit, want)
+        flag = "ok  " if got == expect else "FAIL"
+        if got != expect:
             failures += 1
-            print(f"  [FAIL] marker {line!r} -> {got} (want {want})")
+        print(f"  [{flag}] marker {line[:58]!r:<62} -> {got} (want {expect})")
 
     print()
     print("self-test FAILED" if failures else "self-test passed")
@@ -431,7 +493,7 @@ def main() -> int:
                 )
                 rel_path = str(path.relative_to(REPO))
                 kind = _classify(spans, lineno, m.start(1))
-                if kind == "code" and _ADJUDICATED.search(line):
+                if kind == "code" and _adjudicated(line, lit, best.value_str):
                     kind = "adjudicated"
                 findings[(lit, " / ".join(aliases), best.value_str)].append(
                     (rel_path, lineno, kind)
@@ -570,10 +632,8 @@ def main() -> int:
     if args.strict and code_sites:
         print()
         print(f"STRICT: {len(code_sites)} executable site(s) carry a near-miss literal.")
-        for f, lit, ln in code_sites[:20]:
+        for f, lit, ln in code_sites:
             print(f"    {f}:{ln}  {lit}")
-        if len(code_sites) > 20:
-            print(f"    ... and {len(code_sites) - 20} more")
         return 1
     return 0
 

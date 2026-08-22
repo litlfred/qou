@@ -826,6 +826,196 @@
         "reviewed_sha": "6f1455d0ab9615f49c05a0c7dbb4a77df86747d1",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.712Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.748Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.783Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.820Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "All three-item groups are content-driven: the three sentences after the display explain the display's own three factors (2, 4, 8G); the three closure bullets name s-, p- and s-d-shell; the Open R&D list is a work queue."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.860Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.899Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.935Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:50.972Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:51.009Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "Open-R&D item 1 asserts an unverified result at maximum strength in the same sentence that asks for its verification: 'the dynamic capacity E_gate = E_0 ln(1/W_lambda) ... precisely dictates the binding gap' and 'This formally supersedes the empirical A.8G approximation'. NOT applied - de-hedging these changes the epistemic force, so it is a structural fix. Proposed: 'would dictate the binding gap' and 'would supersede the empirical A.8G approximation', consistent with the item's own heading 'Verify ... numerically'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b580b6b0c104",
+          "ts": "47f8356b77ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:51.045Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of the SU(4) alpha-cluster probe (table + display + 3 sections). Verified the SU(4) representation theory independently: 4 (x) 4 = 6 (+) 10 (16=6+10 OK); 4^{(x)3} = 4 (+) 20 (+) 20 (+) 20 = 64, so 'Lambda^3(C^4) = 4' is right; 4^{(x)4} contains the singlet Lambda^4(C^4) first (OK); A=16 p-shell holds exactly 12 nucleons (3 orbitals x 2 spin x 2 isospin) matching '12 p-shell nucleons'; 40Ca 20p+20n (OK). Verified with mpmath that 8G = 7.32772475341775 = 2*V_oct = Vol(Borromean) exactly, so the display's '2*4*8G' = 58.6218 is internally consistent with tr = 8. Both cited scripts (prototype_gs_nf_shell_binding.py, mass_table_ppb.py) exist.",
+        "notes": "No trap of this category."
+      }
     ]
   },
   "updated_at": "2026-08-21T21:30:48.929Z"

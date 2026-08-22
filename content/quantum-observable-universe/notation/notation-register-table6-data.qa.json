@@ -890,7 +890,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.981Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.024Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.065Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.107Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.146Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.186Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.226Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.268Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.309Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e6d3cd7b3bff",
+          "ts": "522f19edbaee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.352Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 4-row Descartes register. The Weierstrass row is labelled 'fraktur cap' for a script glyph (reported); G_q collides with Catalan's G used elsewhere in the corpus.",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:25.352Z"
 }

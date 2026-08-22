@@ -1719,6 +1719,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "6 negation-contrast construction(s): \", not a free parameter.\"; \", not the Markov layer.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:18.556Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Seven assert-by-denial constructions counted: 'rather than as an empirical input'; 'the EM-block Plancherel-square, not a free parameter'; 'lives in the q-dimension layer, not the Markov layer'; 'a virial/scaling argument, not a parity argument'; 'J^1-vanishing is not a theorem to prove. It is a consequence of ...'; 'operator-parity, not coupling-parity'; 'from Hecke structure, not transported dimensional analysis'. Each names a distinction that IS the block's content (which layer carries alpha^2, which route survives), so all fall in the substantive-mathematical-contrast class. Density noted for the author: seven in ~1800 words is high even when each is earned."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1738,6 +1753,21 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:18.607Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Two setup-then-reframe candidates: the Status section's 'Every mechanism question is resolved. ... The statement is not closed.' and Mechanism D's 'Thus J^1-vanishing is not a theorem to prove. It is a consequence of the LP/SDP being quadratic in the bound-state scale.' Both second clauses carry real content (the three-item residual; the quadratic structure), so neither is a manufactured pivot."
       }
     ],
     "trap-em-dash": [
@@ -1757,6 +1787,21 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (6 in 1595 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:18.677Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "All spaced em-dashes are section-heading separators ('Mechanism A - Pauli / two-electron combinatorial counting', 'Companion remark - physical translation'). One in-sentence dash, inside the Mechanism B convention-D parenthetical, is a true parenthetical. No dash substituting for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1776,6 +1821,21 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 1595 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:18.725Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Three-item lists are counted rather than reflexive: 'exactly three named items' (3 listed), 'three concrete items' (3 listed), 'pi, transcendentals, or PSLQ-fitted constants'. The one uncounted triple is in the trailing post-rule line ('the distilled conditional theorem, the rigorous results, and the open closure programme'), adjudicated under trap-thesis-restatement."
       }
     ],
     "trap-closing-aphorism": [
@@ -1795,6 +1855,21 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:18.776Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The final line is a misplaced editorial forward-reference rather than a quotable closer; recorded under trap-thesis-restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -1814,6 +1889,23 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:50.712Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "major",
+        "evidence": "The '## Honest reporting' section narrates the document's own method instead of doing it: 'Three derivation mechanisms are recorded above. Each has an explicit identified gap. ... Reporting the partial chain is deliberate. Post-hoc numerical identifications are avoided.' Sentences 1-2 describe the block's structure, and 3-4 announce the author's virtue. Announcing that one is reporting honestly is the announced-emphasis pattern; the honesty is already carried by the per-mechanism '**Gap.**' paragraphs and by '## Non-claims', which state scope substantively and pass. Sentence 1 is also miscounted: FOUR mechanisms (A, B, C, D) are recorded above, and the very next sentence refers to 'Mechanism D'.",
+        "notes": "Structural - four sentences and the section heading, so not fixed inline. Proposed: delete '## Honest reporting' entirely; the '**Gap.**' paragraphs and '## Non-claims' already carry its content. If a surviving-routes pointer is wanted, keep one sentence and correct the count: 'Of the four mechanisms recorded above, the operator-parity sharpening of C and the virial-scaling D are the two surviving lines of attack.'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1833,6 +1925,23 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:50.757Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "major",
+        "evidence": "The block ends, after a horizontal rule, with 'What follows carries the distilled conditional theorem, the rigorous results, and the open closure programme; the intermediate candidate mechanisms, and how each was ruled out or sharpened, are not reproduced here.' Nothing follows - it is the last line - so the sentence describes the block that has just ended, in the future tense, and its three-item list restates the block's own section headings. It reads as an editing note that was left in place. '## Honest reporting' compounds this by re-asserting the per-mechanism gaps a second time.",
+        "notes": "Structural - the line is an editorial artefact whose removal is an authorial call, so not fixed inline. Proposed: delete the horizontal rule and the sentence. If the scope note is wanted it belongs at the TOP, as an authorNotes entry (AGENTS.md 4d) rather than as prose, since it is author-tracking about what was pruned rather than content."
       }
     ],
     "trap-performed-warmth": [
@@ -1852,6 +1961,21 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:18.839Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No personal register. The '## Honest reporting' heading performs method-virtue rather than warmth; recorded under trap-meta-commentary."
       }
     ],
     "trap-superlative": [
@@ -1871,6 +1995,23 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:50.803Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Three unqualified maximum-strength claims. (i) 'Every mechanism question is resolved.' opens the Status section and is contradicted five sentences later by 'The statement is not closed.' and by the block's own '## Items still missing for closure'. (ii) 'The result is a **clean conditional theorem**.' - 'clean' is self-assessment, not content. (iii) 'No such involution exists.' generalises from the four automorphisms actually checked ($q \\mapsto \\pm q^{\\pm 1}$, See Table 10) to all involutions; the positivity argument two sentences later does support a genuine exclusion, but the headline sentence 'Direct calculation rules out any involution $\\iota$ of $R$' claims for a four-case calculation what only the positivity invariant earns.",
+        "notes": "Structural. Proposed: (i) 'Each of the four mechanism routes has been carried to an explicit gap or refutation.'; (ii) drop 'clean'; (iii) split the two arguments and label the scope per AGENTS 'Before declaring refuted (STRICT)' - the four-automorphism check is scope-(a) (this construction, alone, does not flip the sign), while the positivity argument is the scope-(b) structural exclusion and should cite positivity by name as the invariant."
       }
     ],
     "trap-nonspeakable": [
@@ -1890,6 +2031,23 @@
         "reviewed_at": "2026-08-15T10:31:01.282Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2ce3b0cc1730",
+          "ts": "0e2281e82959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:50.848Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Mechanism B's opening sentence nests a colon-parenthetical containing a semicolon, an em-dash and a file link inside one parenthesis, then closes with a second parenthesis holding a cross-reference: 'The molecular SDP is a quadratic program over the Frobenius Gram matrix (**convention D**: read on the quotient $H_n/\\mathrm{rad}\\,\\mathrm{tr}_M \\cong \\mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\\det G = 0$ exactly, the $(1^3)$ block being the radical - MarkovGramDegenerate.lean) (prop:operator-selection-lp para dual program).' Two consecutive close-parens carrying different kinds of reference; the sentence cannot be read aloud without losing the thread.",
+        "notes": "Structural - splitting requires two sentences. Proposed: 'The molecular SDP is a quadratic program over the Frobenius Gram matrix (prop:operator-selection-lp, dual program). Under convention D the pairing must be read on the quotient $H_n/\\mathrm{rad}\\,\\mathrm{tr}_M \\cong \\mathrm{TL}_n$, where it is non-degenerate; on $H_n$ itself $\\det G = 0$ exactly, the $(1^3)$ block being the radical (MarkovGramDegenerate.lean).' NOTE: the convention-D usage here was checked against the corpus and is CORRECT - convention D (z = q^3/(q^2+1)) is exactly what produces the radical and the TL_n quotient (jones-markov-trace.md). No convention-C residue in this block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1913,5 +2071,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:37:50.848Z"
 }

@@ -885,13 +885,193 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:42.745Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:42.784Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:42.823Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:42.862Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:42.901Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:42.941Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:42.982Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.021Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.059Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a95fe3d02251",
+          "ts": "e50bc1b740ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.098Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:gs-reduce-to-hecke-nf. No constructions from the ten categories; zero spaced em-dashes in the block. VERIFIED the rewrite rules: the Hecke relation sigma_i^2 = (q - q^-1) sigma_i + 1 and the inverse rule sigma_i^-1 = sigma_i - (q - q^-1) are both correct and match the section 7a convention, and I re-derived the inverse rule independently while checking the knot-operations tables. build_atom_nf(Z=2, N=2) is indeed 4He.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) 'Worst case: exponential in n (the partition count for H_n(q))' misidentifies the quantity: dim H_n(q) = n! is what is exponential; the partition count p(n) is subexponential (p(9) = 30, as this appendix's own step-3 and step-5 blocks correctly say). (2) Step 2a cites only the braid relation for |i-j| = 1 but says it canonicalises 'commuting / braided pairs'; the commuting relation sigma_i sigma_j = sigma_j sigma_i for |i-j| >= 2 is never stated. (3) The confluence sentence rests on the relations being 'linear quadratic and mutually compatible'; the Diamond Lemma requires that the overlap ambiguities RESOLVE, which is a stronger and checkable condition than compatibility."
+      }
     ]
   },
   "source_hashes": {
     "md": "a95fe3d02251",
     "ts": "e50bc1b740ac"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:26:43.098Z",
   "$schema": "block-qa/v1",
   "label": "alg:gs-reduce-to-hecke-nf",
   "kind": "algorithm",

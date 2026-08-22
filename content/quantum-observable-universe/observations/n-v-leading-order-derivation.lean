@@ -27,7 +27,7 @@ namespace QOU.Observations
 def q_0_real : ℝ := 1.10998
 
 /-- The electron rest mass m_e (CODATA 2022, in MeV). -/
-def m_e_real : ℝ := 0.51099895
+def m_e_real : ℝ := 0.51099895069
 
 /-- The electroweak scale v ≈ 246 GeV (= 246220 MeV).  PDG vacuum
     expectation value `v ≈ 246.220 GeV`. -/

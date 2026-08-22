@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.163Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.200Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 178 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.240Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 178 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.278Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.317Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1346,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.355Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1380,37 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.394Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.548Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'The bar-transfer principle establishes that a one-sided substrate bound ... yields the bar-conjugate bound.' sits AFTER the QED box and opens the application discussion, so it functions as a lead-in rather than a closing restatement; the block ends on a four-item list of eligible predicates. MATH FINDINGS recorded here (see notes).",
+        "notes": "STANDING-TRAP FINDINGS, report only, do not fix inline. (1) The clause-(2) argument is not a proof: 'Under continuity, every limit point of {q : P(q)} is bar-conjugate to a limit point of not-P, forcing the symmetric extension.' P is Prop-valued, so 'continuous' can only mean locally constant, and on the connected R_{>0} that makes P constant - the conclusion is then vacuous rather than derived. The counterexample in the same clause is correct and does the real work; only the continuity half is unsupported. (2) The counterexample is described as 'bar-invariant on (a, a^{-1}) but false outside'; the indicator of a bar-symmetric interval is bar-invariant on ALL of R_{>0}, which is what makes it a valid instance of the hypothesis - as written it reads as if the hypothesis were only locally satisfied. (3) The worked application transfers 'q_0 > 1/phi^2 => E_{q_0} non-degenerate' to 'q_0 < phi^2 => E_{1/q_0} non-degenerate'. Clause (1) literally outputs E_{q_0}, not E_{1/q_0}; the two agree by bar-invariance, but the displayed step is not the clause being applied. (4) Band checked: phi^2 = 2.618033988750, 1/phi^2 = 0.381966011250, and q_0 = 1.1099785827513808 lies in the super-classical wing (1, phi^2) as the text says. Section 7a generator convention respected (sigma_i, never T). (5) Two trailing spaces at line ends in the clause block."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.433Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.472Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:01.187Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1c781921ac0c",
+          "ts": "fcde2bf646b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:56.510Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block: three clause proofs, worked bar-application, and the eligible-predicate list. All ten categories judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1535,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:30:56.548Z"
 }

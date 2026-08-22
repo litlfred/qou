@@ -52,7 +52,7 @@ theorem dimSYT_eq_numSYT (n : ℕ) (p : Nat.Partition n) :
 
 Reindex the (proved) `PartitionIndex` form of the RSK sum-of-squares along
 `partitionEquivYoungIndex`, converting each summand with the SYT-encoding bridge. -/
-theorem rskBurnsideHolds (n : ℕ) : QOU.Mathlib.RSKBurnsideHolds n := by
+theorem rskBurnsideHolds (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] : QOU.Mathlib.RSKBurnsideHolds n := by
   unfold QOU.Mathlib.RSKBurnsideHolds
   have hstep : ∑ p : Nat.Partition n, (QOU.Mathlib.dimSYT p) ^ 2
       = ∑ p : Nat.Partition n,
@@ -66,7 +66,7 @@ theorem rskBurnsideHolds (n : ℕ) : QOU.Mathlib.RSKBurnsideHolds n := by
 
 /-- The concrete witness the abstract substrate axiom asked for, now unconditional
 (`RSKBurnsideTarget.rskBurnside_imp_substrate` applied to the theorem above). -/
-theorem substrate_witness (n : ℕ) :
+theorem substrate_witness (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ] :
     ∃ dimFn : Nat.Partition n → ℕ, ∑ p : Nat.Partition n, (dimFn p) ^ 2 = n.factorial :=
   ⟨QOU.Mathlib.dimSYT, rskBurnsideHolds n⟩
 

@@ -1174,6 +1174,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.306Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1193,6 +1208,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.354Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "trap-em-dash": [
@@ -1212,6 +1242,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 300 words)"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.434Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "trap-triples": [
@@ -1231,6 +1276,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 300 words)"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.522Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "trap-closing-aphorism": [
@@ -1250,6 +1310,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.988Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The final sentence names the parameter (the filling fraction |R|/2n^2) rather than delivering a flourish, so it is content and not an aphorism - but its 'the entire ... spectrum' scope is recorded under trap-superlative."
       }
     ],
     "trap-meta-commentary": [
@@ -1269,6 +1344,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.622Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1288,6 +1378,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.706Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "trap-performed-warmth": [
@@ -1307,6 +1412,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.809Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "trap-superlative": [
@@ -1326,6 +1446,23 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:06.077Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Three consecutive maximum-strength bullets with no qualification - 'The lowest ionization energy ($E_{ion}\\approx 4.07$ eV)', 'The highest electropositive character', 'The strongest metallic bonding tendency' - followed later by 'the most electronegative element' and a closing 'parametrises the entire metallic-nonmetallic spectrum'. The first is not merely unqualified but FALSE against the block's own table (Cs 3.89 eV < Fr 4.07 eV), and the block concedes the reversal two sentences afterwards, so the superlative register is what carried an unchecked claim into the text. 'The entire spectrum' generalises from six alkalis plus fluorine to all elements.",
+        "notes": "Structural (factual correction required, not a register fix), not edited. Proposed fix for the falsified bullet: 'The lowest ionization energy among the alkali metals except caesium ($E_{ion} \\approx 4.07$ eV; Cs is 3.89 eV, the minimum, because relativistic contraction of the $7s$ orbital raises Fr back above it).' Then delete the later 'slight ionization-energy uptick' sentence, which currently reads as a concession to a claim the block has already made. Also drop 'monotonically' from 'The crossing energy decreases monotonically with n', which the same table falsifies. And bound the closer: 'parametrises the metallic-nonmetallic trend across the alkali and halogen series'."
       }
     ],
     "trap-nonspeakable": [
@@ -1345,6 +1482,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.901Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1367,5 +1519,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:37:06.077Z"
 }

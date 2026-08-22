@@ -890,7 +890,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.396Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.436Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.475Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.514Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.554Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.593Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.632Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.672Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.712Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "253c87ffde1e",
+          "ts": "cd88ac43391c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.750Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 10-row Lean theorem index, no prose. Every stated identity is correct for the bar map; uses p,q as polynomial variables (register collision, reported).",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:11.750Z"
 }

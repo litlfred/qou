@@ -1,4 +1,4 @@
-The energy scale $E_0$ is derived from CAL-1 ($m_e$) and CAL-2 ($q_0$) alone. It consumes no $\beta$-decay calibration. It holds a natural interpretation in terms of the $q$-deformed Planck scale: it represents the energy of one Hecke reduction step. This is the physical cost of resolving a single $\sigma_i^2 \to h\sigma_i + \mathbf{1}$.
+The energy scale $E_0$ is derived from CAL-1 ($m_e$) and CAL-2 ($q_0$) alone. It consumes no $\beta$-decay calibration. It has a natural interpretation in terms of the $q$-deformed Planck scale: it represents the energy of one Hecke reduction step. This is the physical cost of resolving a single $\sigma_i^2 \to h\sigma_i + \mathbf{1}$.
 
 ## Derived form
 

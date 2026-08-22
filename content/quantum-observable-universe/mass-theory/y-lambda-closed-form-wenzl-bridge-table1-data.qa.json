@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.759Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.760Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1ae0c998a9a8",
+          "ts": "6585e2f36c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.760Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Convention-comparison table, 3 rows. No running prose. The parenthetical \"(the excised convention C was $1/(q^{1/2}+q^{-1/2})$)\" is a factual scope note, not manufactured contrast. Arithmetic independently verified."
+      }
     ]
   },
   "source_hashes": {
     "md": "1ae0c998a9a8",
     "ts": "6585e2f36c51"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.760Z"
 }

@@ -891,11 +891,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:00.761Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Pure-data table, read in full. No prose constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:00.819Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:00.891Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:00.939Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Seven data rows."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:01.002Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:01.048Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:01.100Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:01.147Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:01.196Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "302c4a3da666",
+          "ts": "a41ecd6671cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:01.246Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table only.",
+        "notes": "RECOMPUTED all seven rows at the proton pin q0 = 1.1099785827513808 (30 dps), with [n]_q the symmetric q-integer, h = q - 1/q = 0.2090603, m_e = 0.51099895 MeV. [2]=2.0108969, [3]=3.0437062, [4]=4.1096824, [6]=6.3880866, [7]=7.6253420. Results, against the textbook semi-empirical mass formula: lambda_V = 2[2][7] m_e = 15.6711 MeV vs a_V ~ 15.75 (-0.50%); lambda_S = 2[4]^2 m_e = 17.2610 vs a_S ~ 17.8 (-3.0%); lambda_C = h[6] m_e = 0.68244 vs a_C ~ 0.711 (-4.0%); a_asym = 3[2][7] m_e = 23.5066 vs a_A ~ 23.7 (-0.82%); delta_P = [3][7] m_e = 11.8599 vs delta ~ 11.18 (+6.1%); lambda_ex = [3]/[2] m_e = 0.77345; delta_S = [2]^2[3] m_e = 6.2893. So every LDM-comparable row lands within 6% and four within 4%, which is the table's implicit claim and it holds. Two observations for the reviewer. (1) a_asym = 3[2][7] is exactly 1.5x lambda_V = 2[2][7]; the crossing-interpretation cell reads 'same as lambda_V with prefactor 3', which is only correct if the reader supplies that lambda_V's own prefactor is 2. (2) Under the critical-distance license: seven coefficients each written as a short product of q-integers drawn from a large menu, agreeing with known LDM values at the 1-6% level, is the shape a fit takes; nothing in the table or its parent derives which product goes with which coefficient, and the crossing counts (7 crossings on gen 0, 4 on gen 1, 6 in B_3) are asserted rather than referenced."
+      }
     ]
   },
   "source_hashes": {
     "md": "302c4a3da666",
     "ts": "a41ecd6671cb"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:41:01.246Z"
 }

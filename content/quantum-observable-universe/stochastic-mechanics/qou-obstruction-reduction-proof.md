@@ -15,7 +15,7 @@ vectors (equivalently: $\mathfrak{g}$ has trivial center).
 The Frobenius--Hopf self-duality $A \cong A^\vee$
 (the non-degenerate pairing from
 [Frobenius--Hopf data](#def:frobenius-hopf-substrate)) induces a
-Poincare duality on Hochschild cohomology
+Poincaré duality on Hochschild cohomology
 \cite{yekutieli2010}:
 
 $$

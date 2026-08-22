@@ -2113,6 +2113,22 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.881Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'Absolute nucleon mass in MeV is not itself a framework prediction'; 'neither is derived here'; 'The two routes are not shown here to agree.'",
+        "notes": "False-positive class: all three are scope/temporal status statements, and the first is the required implementation of the 2026-08-11 absolute-mass excision. This block handles the excision correctly - the strongest disclosure in the batch."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2132,6 +2148,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.925Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated '-0.53 pct residual - about 6.9 keV'; 2.225 - 2.224 = 1 keV matches 'the binding row sits 1 keV from CODATA'. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly."
       }
     ],
     "trap-em-dash": [
@@ -2151,6 +2182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.968Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "1 spaced em-dash in 238 words, a true parenthetical."
       }
     ],
     "trap-triples": [
@@ -2170,6 +2216,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.008Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated '-0.53 pct residual - about 6.9 keV'; 2.225 - 2.224 = 1 keV matches 'the binding row sits 1 keV from CODATA'. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly."
       }
     ],
     "trap-closing-aphorism": [
@@ -2189,6 +2250,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.048Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated '-0.53 pct residual - about 6.9 keV'; 2.225 - 2.224 = 1 keV matches 'the binding row sits 1 keV from CODATA'. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly."
       }
     ],
     "trap-meta-commentary": [
@@ -2208,6 +2284,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.090Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated '-0.53 pct residual - about 6.9 keV'; 2.225 - 2.224 = 1 keV matches 'the binding row sits 1 keV from CODATA'. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly."
       }
     ],
     "trap-thesis-restatement": [
@@ -2227,6 +2318,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.129Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated '-0.53 pct residual - about 6.9 keV'; 2.225 - 2.224 = 1 keV matches 'the binding row sits 1 keV from CODATA'. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly."
       }
     ],
     "trap-performed-warmth": [
@@ -2246,6 +2352,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.185Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated '-0.53 pct residual - about 6.9 keV'; 2.225 - 2.224 = 1 keV matches 'the binding row sits 1 keV from CODATA'. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly."
       }
     ],
     "trap-superlative": [
@@ -2265,6 +2386,22 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.226Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No inflated accuracy claims; the table's CODATA-matching rows are explicitly disclaimed as m_e-scaled renderings rather than predictions.",
+        "notes": "FLAG for the report: the opening term 'neutrino vacuum drag' is used with no definition, citation or cross-reference anywhere in the block, and 'pure strong-force binding energy' is unqualified. The dressed quark masses mu_u = 311.10 and mu_d = 312.39 MeV likewise carry no witness."
       }
     ],
     "trap-nonspeakable": [
@@ -2284,6 +2421,21 @@
         "reviewed_at": "2026-08-15T10:31:00.633Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "739c7c17635e",
+          "ts": "3e692178b44f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.269Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated '-0.53 pct residual - about 6.9 keV'; 2.225 - 2.224 = 1 keV matches 'the binding row sits 1 keV from CODATA'. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2307,5 +2459,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:26:18.269Z"
 }

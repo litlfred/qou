@@ -2306,6 +2306,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.065Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2325,6 +2341,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.107Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "trap-em-dash": [
@@ -2344,6 +2376,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 126 words)"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.149Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Two spaced dashes, both appositive glosses ('the Reeb eigenvalues - each eigenvalue rho contributes...'; 'the spectral trace - the Tannaka-Krein self-duality...'). Both carry content; density low for the length."
       }
     ],
     "trap-triples": [
@@ -2363,6 +2411,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 126 words)"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.192Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "trap-closing-aphorism": [
@@ -2382,6 +2446,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.233Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "trap-meta-commentary": [
@@ -2401,6 +2481,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.275Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "trap-thesis-restatement": [
@@ -2420,6 +2516,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.318Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'Assembled, this expansion equates the geometric sum to the spectral trace' partly restates the display, but adds the Tannaka-Krein / discrete-Fourier identification, so it is not bare restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2439,6 +2551,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.361Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "trap-superlative": [
@@ -2458,6 +2586,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.404Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "trap-nonspeakable": [
@@ -2477,6 +2621,22 @@
         "reviewed_at": "2026-08-15T10:31:00.904Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "430efbc93010",
+          "ts": "48a1b02b7da9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:39.446Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (theorem, one display + 4 explanatory sentences); all ten judged in context. q-analogue of the classical explicit formula checked term-by-term against psi(X) = X - sum X^rho/rho - ln 2pi - (1/2)ln(1-X^-2)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2500,5 +2660,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:39.446Z"
 }

@@ -1231,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.263Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1267,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.303Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1303,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.343Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1288,6 +1339,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.384Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1375,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.425Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). Block ends 'Once chosen, the gauge symmetries lock it in place. The volume $\\epsilon$ is a structural morphism intrinsic to the observable universe.' - the final sentence is a placed quotable closer; 'structural morphism intrinsic to' asserts nothing the block derived, and 'the gauge symmetries lock it in place' names no gauge symmetry.",
+        "notes": "PROPOSED (not applied - deleting would remove an asserted claim about the status of $\\epsilon$, which needs the author): either drop both sentences, or replace with a concrete statement, e.g. 'Any two choices of $\\epsilon$ therefore differ by a unit, so no observable depends on the choice.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1411,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.465Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1447,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.504Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). final sentence is \"The volume $\\epsilon$ is a structural morphism intrinsic to the observable universe.\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.546Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1519,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.584Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1555,23 @@
         "reviewed_at": "2026-08-15T10:31:00.154Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d206e37656b8",
+          "ts": "0991bce84efe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:18.623Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/unit-simplicity.md (5 lines, kind=remark, title=\"Simplicity of the unit object and uniqueness of epsilon\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1594,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:18.623Z"
 }

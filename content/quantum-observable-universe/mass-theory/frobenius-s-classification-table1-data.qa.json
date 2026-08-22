@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.010Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.061Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.125Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.181Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.229Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.289Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.351Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.419Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.486Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "58cf47480a74",
+          "ts": "2f22e55dc59f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.542Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows classifying Phi_1,Phi_2,Phi_3 by S-eigenvalue under the Hopf antipode S: sigma <-> sigma^{-1} (parent prop:frobenius-s-classification), which on coefficients is the bar involution q <-> q^{-1}. Checked the sign logic: Phi_3 = sum log|chi^sym/chi^alt| is the ratio of the two 1-dim characters, which S exchanges (sym eigenvalue q <-> alt eigenvalue -q^{-1}), so the log ratio flips sign -> -1, correct; Phi_2 = sum log|det M_i| is S-even because det is antipode-invariant on each block. No numerics to recompute in this table.",
+        "notes": "Dependency flagged on table2: Phi_1 = sum log|z a_i + b_i| contains z, and the table2 row gives z in CONVENTION C. Under canonical convention D that row's +1 fails, so the Phi_1 = +1 entry here inherits a convention-C dependence. See the table2 verdict."
+      }
     ]
   },
   "source_hashes": {
     "md": "58cf47480a74",
     "ts": "2f22e55dc59f"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:16:29.542Z"
 }

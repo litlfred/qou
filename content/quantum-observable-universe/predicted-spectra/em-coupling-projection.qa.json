@@ -2132,6 +2132,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.092Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2151,6 +2166,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.131Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-em-dash": [
@@ -2170,6 +2200,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.174Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-triples": [
@@ -2189,6 +2234,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.215Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-closing-aphorism": [
@@ -2208,6 +2268,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.256Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-meta-commentary": [
@@ -2227,6 +2302,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.298Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-thesis-restatement": [
@@ -2246,6 +2336,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.338Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-performed-warmth": [
@@ -2265,6 +2370,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.378Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-superlative": [
@@ -2284,6 +2404,21 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.420Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the Setup plus Proposition statement. Terse formal prose: no negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the cleared-denominator identity), no narrated emphasis, no restatement, no warm register, no superlative. Content recomputed and CORRECT: crossing number of T(2,9) is min(2*8,9*1)=9 and of T(3,5) is min(3*4,5*2)=10 (Murasugi), so c_s=9, c_w=10 are right; [n]_q=(q^n-q^-n)/(q-q^-1) is a Laurent polynomial, so [9]_q[10]_q lies in Z[q,q^-1] and the cleared-denominator claim is correct; [9]_q[10]_q * alpha = q^-1 is algebraically equivalent to the displayed alpha."
       }
     ],
     "trap-nonspeakable": [
@@ -2303,6 +2438,23 @@
         "reviewed_at": "2026-08-15T10:31:01.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9b89f86b868d",
+          "ts": "26c099b3f4bd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:57.461Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Opening sentence is ungrammatical, not merely hard to say aloud: 'The categorical structure defines over the commutative ring $R = ...$' - 'defines' is transitive here with no object. This is the de-passivisation sweep-damage pattern ('is defined over' -> 'defines over'); the sentence cannot be read aloud at all.",
+        "notes": "FIX APPLIED (pure prose, no math and no meaning change): 'The categorical structure defines over the commutative ring' -> 'The categorical structure is defined over the commutative ring'. Math delimiters re-checked after the edit (6 x $$, balanced)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2326,5 +2478,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:30:57.461Z"
 }

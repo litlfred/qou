@@ -895,7 +895,177 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.559Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.600Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.640Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.681Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.721Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.767Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.807Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.849Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.890Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c72b787e3b1f",
+          "ts": "fa3f7a8799d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.933Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 18-row data table (bar-ANTI-symmetric objects), no prose sentences. Math spot-checked: h=q-q^{-1} is bar-odd; h_{1/2}=q^{1/2}-q^{-1/2} bar-odd; q^n-q^{-n} bar-odd; sinh(h) bar-odd since h is; sigma-sigma^{-1}=h under the Hecke relation (sigma^2=(q-q^{-1})sigma+1 times sigma^{-1}); writhe/signed-linking/self-linking are sign-carrying and flip under mirror. All consistent with def:bar-involution (bar q = q^{-1}, bar sigma_i = sigma_i^{-1}). Notation follows AGENTS.md 7a (sigma_i, not T)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:02.933Z"
 }

@@ -2127,6 +2127,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.455Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2146,6 +2163,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.495Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -2165,6 +2199,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 116 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.538Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -2184,6 +2235,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 116 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.577Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -2203,6 +2271,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.615Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -2222,6 +2307,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.655Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'> **Open Issue:** We currently rely on this parity-dependent $\\delta_A$ to align the categorical evaluation with the kinematic Q-value.'",
+        "notes": "A status banner in scholarly prose -- the Sec.4d 'Banner-in-prose' class, whose prescribed home is `authorNotes: [{kind: \"caveat\", ...}]`. The content is exactly right and must be kept; only its location is wrong. Structural (a .ts migration, not a .md edit), so flagged."
       }
     ],
     "trap-thesis-restatement": [
@@ -2241,6 +2343,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.694Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -2260,6 +2379,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.734Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -2279,6 +2415,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.775Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The $+1$ additive term ... is a parity-dependent offset $\\delta_A$, **required to match** the evaluated character sum to the observed kinematics.' Block kind: `proposition`.",
+        "notes": "AN ADMITTED FIT CARRIED AS A PROPOSITION. The block states its own status honestly ('We lack a formal justification for why delta_A is absorbed for odd A but required for even A'), which is the right disposition -- but a parameter set by matching to observed kinematics, with no derivation, is not a proposition, and AGENTS.md's anti-fit discipline asks that it be labelled as a fit rather than typed as a proved claim. Also: the block is labelled `prop:positron-correction` and tagged 'positron', 'pair-production', yet the .md never mentions a positron or pair production -- title and content have separated. PROPOSED: retype as a conjecture or a remark, and migrate the '> **Open Issue:**' blockquote into `authorNotes` per AGENTS.md Sec.4d (status banners belong in metadata, not prose)."
       }
     ],
     "trap-nonspeakable": [
@@ -2298,6 +2451,23 @@
         "reviewed_at": "2026-08-15T10:31:01.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "5f9a98f70c29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:05.815Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the Sec.7c authorNote). The block states its own open gap explicitly.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2321,5 +2491,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:05.815Z"
 }

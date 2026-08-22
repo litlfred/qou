@@ -56,8 +56,7 @@ the branch point.
 What dies is the per-root labelling, and only the argument used labels. This is
 why the envelope statement
 ([`prop:fivetwo-envelope-transport`](#prop:fivetwo-envelope-transport)) is phrased
-to tolerate exactly one exceptional point: that point is this collision, and the
-tolerance is not a hedge but the honest shape of the situation.
+to tolerate exactly one exceptional point: that point is this collision.
 
 ## Two appearances of $-23$, one meaningful and one not
 

@@ -1806,6 +1806,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.148Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1825,6 +1841,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.185Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1844,6 +1876,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 117 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.223Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1863,6 +1911,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 117 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.259Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1882,6 +1946,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.298Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1901,6 +1981,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.337Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1920,6 +2016,23 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.375Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Block-final: 'This uniqueness is the Tannakian rigidity of tau ... doing its work: any two equivalences ... are connected by a unique natural isomorphism.' Restates the opening ('the Tannakian rigidity of tau pins the correspondence: it forces tau to determine the equivalence L_q uniquely'), with a colloquial flourish ('doing its work') carrying the restatement.",
+        "notes": "fix applied: '...rigidity of tau ([fibre-functor rigidity]) doing its work: any two...' -> '...rigidity of tau ([fibre-functor rigidity]): any two...'. NOTE the framing defect, reported as ANOMALY 3: this conjecture block states its own content in the indicative ('pins', 'forces'), and rem:fibre-functor-rigidity, which it leans on, is an unproved Lean CLASS (FibreFunctorRigidity, docstring: 'axiomatized ... the full proof requires Tannaka-Krein reconstruction for quantum groups, which is not in Mathlib')."
       }
     ],
     "trap-performed-warmth": [
@@ -1939,6 +2052,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.413Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1958,6 +2087,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.452Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "trap-nonspeakable": [
@@ -1977,6 +2122,22 @@
         "reviewed_at": "2026-08-15T10:31:00.919Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ecfe38c30bb9",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:47.489Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + display + Hom-set gloss); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2000,5 +2161,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:47.489Z"
 }
