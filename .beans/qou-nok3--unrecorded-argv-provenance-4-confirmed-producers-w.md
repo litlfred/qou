@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T23:15:31Z
-updated_at: 2026-08-22T00:13:38Z
+updated_at: 2026-08-22T00:16:53Z
 ---
 
 ## The class
@@ -146,3 +146,62 @@ captures `["...", "--nmax", "28"]` and therefore the value too; a checker
 modelling flags as booleans would record that the flag was present and lose
 which depth was run. That is the second concrete argument for the raw-argv
 design `provenance.rs` chose, alongside the one its own note gives.
+
+
+---
+
+## Complete picture: where the severity actually is
+
+Checked all ten committed witnesses for evidence of whether the flag was
+used. The population is NOT uniform, and lumping it together over-states
+part of it while under-stating the rest.
+
+### Confirmed the flag WAS used (5 of 10)
+
+| producer | flag | evidence in the witness |
+|---|---|---|
+| `whitehead_c0_mpmath` | `--n12` | `"12"` key present; also re-run both ways |
+| `whitehead_c0_tower` | `--hi` | `"Ns": [6,8,10,12,14]` |
+| `whitehead_recurrence_hunt_fast` | `--nmax` | `Nmax: 30` (default 28) |
+| `whitehead_diagonal_recurrence_hunt` | `--nmax` | `Nmax: 10` (default 12) |
+| `takata_fig8_recurrence_hunt` | `--nmax` | `Nmax: 60` (default 26) |
+
+### But 3 of those 5 are SELF-DOCUMENTING, and that matters
+
+The three `--nmax` producers record `Nmax` at the top level of their own
+witness. So the *value* is recoverable without any invocation block -- a
+reader sees `Nmax: 30` and knows to run `--nmax 30`. The invocation block
+makes them uniform; it does not rescue them.
+
+**The two that are genuinely dangerous are `--n12` and `--hi`.** Neither
+records its parameter anywhere. `whitehead_c0_mpmath` gives no hint that
+N=12 was opt-in, and `whitehead_c0_tower`'s `Ns` list is only decodable if
+you already know the default. Both are Whitehead c_0 siblings dated
+2026-07-25 -- one authoring session.
+
+### Undeterminable (5 of 10)
+
+`derived_chi_catalogue_matrix_m_mpfr --use-mu-n-blocks`,
+`em_linking_cusp_geometry_probe --live`,
+`he4_link_volume_braid_closure --live`,
+`probes/borromean_nz_adjoint_torsion --recompute`,
+`probes/borromean_cusp_framing_factor --recompute`.
+
+No distinguishing evidence in the witness at all. These are the worst case
+-- not because a flag is known to have been used, but because it CANNOT BE
+DETERMINED either way, and no amount of reading the artifact will settle it.
+That is precisely the state the invocation block ends for future runs, and
+cannot repair for these.
+
+### Revised severity summary
+
+    2   dangerous and confirmed  (--n12, --hi: flag used, value unrecoverable)
+    3   confirmed but self-documenting (--nmax family: value recoverable)
+    5   undeterminable
+    ---
+    10  payload-affecting, unrecorded invocation
+
+The fix in PR #5438 prevents all ten going forward. For the existing
+artifacts it repairs nothing: the three self-documenting ones are already
+readable, and the other seven need a human who remembers, or a re-run
+that establishes a new baseline rather than reproducing the old one.
