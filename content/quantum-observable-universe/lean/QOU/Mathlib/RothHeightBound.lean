@@ -42,6 +42,8 @@
 import Mathlib.RingTheory.Polynomial.GaussLemma
 import Mathlib.Algebra.Polynomial.Degree.Operations
 import Mathlib.RingTheory.Localization.FractionRing
+import Mathlib.Algebra.Polynomial.Taylor
+import Mathlib.Algebra.Polynomial.Div
 
 namespace Polynomial
 
@@ -147,16 +149,90 @@ theorem pow_le_abs_leadingCoeff_of_map_dvd {p q : ℤ} (hq : 0 < q) (hco : IsCop
   pow_le_abs_leadingCoeff_of_linear_pow_dvd hq hP k
     (dvd_of_isPrimitive_of_map_dvd_map ((isPrimitive_qX_sub_C hco).pow k) hP h)
 
+/-! ### Vanishing to order `k` is divisibility
+
+The last step of the base case: what the index gives is that the low coefficients of the
+*translate* vanish, and that must become divisibility by `(X − a)^k`. -/
+
+section Translate
+
+variable {R : Type*} [CommRing R]
+
+theorem taylor_sub_C_pow (a : R) (k : ℕ) :
+    taylor a ((X - C a) ^ k) = (X : R[X]) ^ k := by
+  rw [taylor_apply, pow_comp]
+  congr 1
+  simp [sub_comp]
+
+theorem taylor_neg_X_pow (a : R) (k : ℕ) :
+    taylor (-a) ((X : R[X]) ^ k) = (X - C a) ^ k := by
+  rw [taylor_apply, pow_comp, X_comp]
+  congr 1
+  simp [sub_eq_add_neg]
+
+/-- **Vanishing to order `k` at `a` is divisibility by `(X − a)^k`**, read off the translate.
+
+`taylor a P` is `P(X + a)`, so its low coefficients are exactly the derivatives at `a`. -/
+theorem sub_C_pow_dvd_iff_X_pow_dvd_taylor {a : R} {k : ℕ} {P : R[X]} :
+    (X - C a) ^ k ∣ P ↔ (X : R[X]) ^ k ∣ taylor a P := by
+  constructor
+  · rintro ⟨Q, rfl⟩
+    exact ⟨taylor a Q, by rw [taylor_mul, taylor_sub_C_pow]⟩
+  · rintro ⟨Q, hQ⟩
+    refine ⟨taylor (-a) Q, ?_⟩
+    have h := congrArg (taylor (-a)) hQ
+    rw [taylor_taylor, neg_add_cancel, taylor_zero] at h
+    rw [h, taylor_mul, taylor_neg_X_pow]
+
+/-- **The `m = 1` base case of Roth's lemma, complete.**
+
+If `P ∈ ℤ[X]` vanishes to order `k` at `p/q` — every coefficient of the translate below `k`
+is zero — with `p, q` coprime and `q > 0`, then `q^k ≤ |lead P|`.
+
+With Roth's hypothesis `H(P) ≤ q^{εd}` this gives `q^{θd} ≤ q^{εd}`, i.e. the index `θ ≤ ε`.
+No Mahler measure anywhere. -/
+theorem pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero {p q : ℤ} (hq : 0 < q)
+    (hco : IsCoprime p q) {P : ℤ[X]} (hP : P ≠ 0) (k : ℕ)
+    (h : ∀ d < k, (taylor ((p : ℚ) / (q : ℚ)) (P.map (algebraMap ℤ ℚ))).coeff d = 0) :
+    q ^ k ≤ |P.leadingCoeff| := by
+  have hqQ : ((q : ℚ)) ≠ 0 := Int.cast_ne_zero.mpr hq.ne'
+  -- vanishing ⟹ divisibility by `(X − p/q)^k` over ℚ
+  have hdvdQ : ((X : ℚ[X]) - C ((p : ℚ) / (q : ℚ))) ^ k ∣ P.map (algebraMap ℤ ℚ) :=
+    sub_C_pow_dvd_iff_X_pow_dvd_taylor.mpr (X_pow_dvd_iff.mpr h)
+  -- `qX − p` is `q · (X − p/q)`, and `C q` is a unit downstairs
+  have hfactor : ((C q * X - C p : ℤ[X]) ^ k).map (algebraMap ℤ ℚ)
+      = C ((q : ℚ)) ^ k * ((X : ℚ[X]) - C ((p : ℚ) / (q : ℚ))) ^ k := by
+    rw [Polynomial.map_pow, ← mul_pow]
+    congr 1
+    simp only [Polynomial.map_sub, Polynomial.map_mul, map_X, algebraMap_int_eq,
+      eq_intCast, mul_sub, ← C_mul]
+    rw [mul_div_cancel₀ _ hqQ]
+    simp
+  have hunit : IsUnit ((C ((q : ℚ)) : ℚ[X]) ^ k) :=
+    (isUnit_C.mpr (isUnit_iff_ne_zero.mpr hqQ)).pow k
+  have hmapdvd : ((C q * X - C p : ℤ[X]) ^ k).map (algebraMap ℤ ℚ)
+      ∣ P.map (algebraMap ℤ ℚ) := by
+    rw [hfactor, mul_comm]
+    exact hunit.mul_right_dvd.mpr hdvdQ
+  exact pow_le_abs_leadingCoeff_of_map_dvd hq hco hP k hmapdvd
+
+end Translate
+
 /-! ### Next
 
-1. ~~Gauss into `ℤ[X]`~~ — **done**, `pow_le_abs_leadingCoeff_of_map_dvd` above.
-2. **Index to divisibility in one variable** — `index ≥ θ ⟹ (X − p/q)^{θd} ∣ P` over
-   `ℚ[X]`, and `(qX − p)` differs from `q·(X − p/q)` by the unit `q`.  Mathlib has
-   `Polynomial.le_rootMultiplicity_iff` for the divisibility side.  This is the last piece of
-   the base case, and it is ordinary algebra.
-3. **The induction step** — and *this* is where Gelfond / Mahler is genuinely needed, to
-   bound the heights of the factors `φₖ, ψₖ` in terms of `H(P)`.  The factorization itself is
-   proved (`QOU.Mathlib.SeparatedWronskian`, `det_separated_wronskian`); it is the height
-   control on the factors that is missing. -/
+1. ~~Gauss into `ℤ[X]`~~ — **done**.
+2. ~~Vanishing to order `k` ⟹ divisibility~~ — **done**.  The `m = 1` base case of Roth's
+   lemma is `pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero` above, **complete and with no
+   analysis in it**.
+3. **The induction step** — the remaining work, and where Gelfond / Mahler is genuinely
+   needed: bounding the heights of the factors `φₖ, ψₖ` in terms of `H(P)`.  The
+   factorization itself is proved (`QOU.Mathlib.SeparatedWronskian`,
+   `det_separated_wronskian`); it is the height control on the factors that is missing.
+
+⚠ The `index`-side hypothesis of (2) is stated as "every coefficient of the translate below
+`k` vanishes", which is what `QOU.Mathlib.RothIndex`'s `index`/`translate` machinery produces
+in one variable.  Wiring the two together is bookkeeping, not new mathematics, and is
+deliberately left until the multivariate statement of Roth's lemma fixes the shape it should
+take. -/
 
 end Polynomial

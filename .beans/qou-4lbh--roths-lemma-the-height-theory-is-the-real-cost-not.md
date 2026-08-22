@@ -172,3 +172,42 @@ inventory in this bean is still accurate; what was wrong is *which step needs it
 So the analytic blocker is real but sits one level up from where this bean placed it. The
 title ("the height theory is the real cost") is still roughly right; "not the Wronskians" is
 right; but the base case is not the expensive part.
+
+---
+
+## 2026-08-22 — the `m = 1` base case is COMPLETE
+
+`QOU/Mathlib/RothHeightBound.lean`, `pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero`:
+
+> `P ∈ ℤ[X]` vanishes to order `k` at `p/q` (every coefficient of the translate below `k` is
+> zero), `p, q` coprime, `q > 0`, `P ≠ 0`  ⟹  `q^k ≤ |lead P|`.
+
+With Roth's hypothesis `H(P) ≤ q^{εd}` this gives `q^{θd} ≤ q^{εd}`, i.e. index `θ ≤ ε` —
+which **is** the base case. **There is no analysis anywhere in it.**
+
+Three steps, each landed:
+
+1. `pow_le_abs_leadingCoeff_of_linear_pow_dvd` — `lead((qX−p)^k) = q^k` and a divisor's
+   leading coefficient divides.
+2. `dvd_of_isPrimitive_of_map_dvd_map` — one-sided Gauss. Mathlib's version wants *both*
+   polynomials primitive; splitting off the content removes that.
+3. `sub_C_pow_dvd_iff_X_pow_dvd_taylor` — vanishing to order `k` at `a` is exactly `X^k`
+   dividing `taylor a P`, hence `(X − a)^k ∣ P`.
+
+### This bean's founding premise is now fully corrected
+
+It was opened on "the `m = 1` base case is the analytic half, blocked on two absent
+Mahler bridges". The base case is **done, elementary, and needed neither bridge**. The
+correction and its cause (confusing the divisor→dividend direction with the
+product→factor direction) are recorded in the module header.
+
+### What actually remains
+
+**Only the induction step**, and only its height half: bounding `H(φₖ)`, `H(ψₖ)` in terms of
+`H(P)` for a separated `P = ∑ₖ φₖ(x)ψₖ(y)`. That is the product→factor direction, and it is
+where Gelfond's inequality / Mahler multiplicativity is genuinely required. The
+factorization itself is proved (`det_separated_wronskian`).
+
+So the Mahler decision — fill the bridges upstream vs. a bare-hands Gelfond inequality on
+`ℤ[X]` — is now the *single* remaining question, and it is scoped to one step rather than
+to the whole base case.
