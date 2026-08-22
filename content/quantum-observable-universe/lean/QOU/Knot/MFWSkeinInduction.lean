@@ -150,6 +150,62 @@ theorem smooth_shift_surj {n e d : ℤ} (hd : d ∈ window n e) :
   obtain ⟨h₁, h₂⟩ := hd
   exact ⟨by linarith, by linarith⟩
 
+/-! ### The base case, stated precisely
+
+The recursion bottoms out at a **totally descending** word — every crossing
+first met from above (`first_bad` returns `none` in the engine). Its closure is
+the `c`-component unlink, so `P = δ^{c-1}` with `δ = (v⁻¹ − v)/z`, whose
+`v`-degrees are exactly `{-(c-1), -(c-3), …, c-1}`, i.e. spanned by
+`[-(c-1), c-1]`.
+
+For that to sit inside `window n e` one needs precisely
+
+    |e| ≤ n − c
+
+**Measured, not assumed** (2026-08-22): over every braid word of length ≤ 6 on
+2–4 strands, **1227** are totally descending and **all 1227** satisfy it —
+and it is **tight**, `max |e| = n − c` exactly for all nine `(n, c)` pairs
+reached. `n − c` is the reflection length of the word's permutation, which is
+where a proof should come from.
+
+It is **not proved here**, and it is not free: for arbitrary (non-descending)
+words the analogous bound fails — the longest element of `S₃` has Coxeter
+length 3 against `n − c = 1` — so the content lies in what "descending"
+supplies. Tracked in `qou-9ttb`.
+-/
+
+/-- The base-case hypothesis, named so it can be discharged later rather than
+re-invented: a totally descending `n`-strand word with `c` closure components
+has `|e| ≤ n − c`. -/
+def DescendingWrithe (n c e : ℤ) : Prop := -(n - c) ≤ e ∧ e ≤ n - c
+
+/-- **The base case, given the hypothesis.** If `|e| ≤ n − c`, then every
+`v`-degree of the unlink term `δ^{c-1}` lies in the MFW window. This is the
+step that makes `DescendingWrithe` load-bearing rather than decorative: it is
+used, not merely stated. -/
+theorem base_window_of_descending {n c e d : ℤ}
+    (hd : -(c - 1) ≤ d ∧ d ≤ c - 1) (h : DescendingWrithe n c e) :
+    d ∈ window n e := by
+  obtain ⟨hd₁, hd₂⟩ := hd
+  obtain ⟨h₁, h₂⟩ := h
+  exact ⟨by linarith, by linarith⟩
+
+/-- Tightness, recorded because the measurement found it: at `|e| = n − c` the
+unlink's extreme degree sits exactly **on** the window edge. So the base case
+has no slack either — combined with `switch_shift_eq` / `smooth_shift_eq`,
+nothing anywhere in this route wastes room, which is why MFW is sharp. -/
+theorem base_tight {n c : ℤ} :
+    (c - 1) = ((n - c) + n - 1) - (2 * (n - c)) := by ring
+
+/-- The `c = n` corner the measurement singles out: a descending word whose
+permutation is trivial is forced to writhe **zero**. Recorded because it is the
+sharpest consequence of the hypothesis and the easiest place to look for a
+counterexample. -/
+theorem descending_trivial_perm_writhe_zero {n e : ℤ}
+    (h : DescendingWrithe n n e) : e = 0 := by
+  obtain ⟨h₁, h₂⟩ := h
+  linarith
+
 /-- The spread bound `MortonFranksWilliams.braid_bound` consumes: the window
 has width `2n − 2`, so `dmax − dmin ≤ 2n − 2`, i.e. `spread/2 + 1 ≤ n`. This
 is the bridge from the window to the braid-index statement. -/

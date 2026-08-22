@@ -1,0 +1,92 @@
+{
+  "engine": "exact-braid-word-enumeration",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-22T12:20:38.694426+00:00",
+  "commitSha": "593dac279aefa72fb0cd2bc868079150d4ffafbb",
+  "assertions": [
+    {
+      "name": "descending_writhe_bound_holds",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "exhaustive over 1227 descending words"
+    },
+    {
+      "name": "bound_is_tight_for_every_n_c",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "max|e| == n-c in every cell"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 67,
+  "computation": "mfw-descending-writhe-bound",
+  "scriptFile": "mfw_descending_writhe_bound_probe.py",
+  "scriptHash": "d44b0f6dee8a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Exhaustive measurement of the MFW skein-induction base case: every totally descending braid word of length <= 6 on 2-4 strands satisfies |writhe| <= n - components, and the bound is tight for every (n,c) reached. Supports but does NOT prove QOU.Knot.MFWSkeinInduction's `DescendingWrithe` hypothesis. Scope-(a); nothing wired. Bean qou-9ttb.",
+  "data": {
+    "max_strands": 4,
+    "max_word_length": 6,
+    "descending_words": 1227,
+    "violations": [],
+    "max_abs_writhe_by_n_c": {
+      "n=2,c=1": {
+        "max_abs_e": 1,
+        "n_minus_c": 1
+      },
+      "n=2,c=2": {
+        "max_abs_e": 0,
+        "n_minus_c": 0
+      },
+      "n=3,c=1": {
+        "max_abs_e": 2,
+        "n_minus_c": 2
+      },
+      "n=3,c=2": {
+        "max_abs_e": 1,
+        "n_minus_c": 1
+      },
+      "n=3,c=3": {
+        "max_abs_e": 0,
+        "n_minus_c": 0
+      },
+      "n=4,c=1": {
+        "max_abs_e": 3,
+        "n_minus_c": 3
+      },
+      "n=4,c=2": {
+        "max_abs_e": 2,
+        "n_minus_c": 2
+      },
+      "n=4,c=3": {
+        "max_abs_e": 1,
+        "n_minus_c": 1
+      },
+      "n=4,c=4": {
+        "max_abs_e": 0,
+        "n_minus_c": 0
+      }
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure braid-word combinatorics; reads no q_0"
+}
