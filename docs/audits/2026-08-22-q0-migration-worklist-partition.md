@@ -420,6 +420,59 @@ their co-read scalars re-pointed in the same change or they straddle;
 first; `aK_via_lp_dual_hecke_basis` states no pin intent. Tracked in
 `qou-v90i`.
 
+## Root cause, traced: a direct reader **cannot** be migrated by re-running it
+
+The five contradictions are not five independent slips. Tracing
+`a-K-via-lp-dual-hecke-basis.witness.json` and the anchor-defining witness
+side by side gives a complete causal account:
+
+| date | `q-pinning-50-digit` | the direct reader's witness |
+|---|---|---|
+| 2026-08-11 `c3a7e16856` | **muon** | stamp `muon`, data muon — consistent |
+| 2026-08-15 `9a9c6b31c7` | **proton** ← *re-pinned* | stamp `proton`, data proton — *looks migrated* |
+| 2026-08-19 `2e4745448d` | **muon** restored | — |
+| 2026-08-19 `da2968cc33` | muon | stamp `proton`, data **muon again** — contradiction |
+
+The 2026-08-15 sweep appeared to migrate these producers correctly. It did
+so by re-pinning **`q-pinning-50-digit.witness.json` itself** — the one move
+AGENTS.md constraint 1 forbids, and the one that broke `main` for 208
+producers (`qou-m9xp`). When `2e4745448d` restored the muon anchor, every
+direct reader silently reverted to muon data on its next run, while the
+migration kept stamping it `proton` from the manifest.
+
+So the general statement is stronger than "5 producers contradict their
+manifest entry":
+
+> **A producer that reads `q-pinning-50-digit.witness.json` directly cannot
+> be migrated by re-running it.** Its q₀ comes from the anchor-defining
+> witness, which by constraint 1 must remain muon. Re-running therefore
+> always yields muon data; stamping it `proton` from the manifest always
+> manufactures a contradiction. The only fix is to change the **read**.
+
+This also explains the shape of the earlier count. `path4_rho_K_at_h3A`,
+`q1_mass_gap_probe` and `q_beta_form_a_n1_extension` were flipped to
+`proton` by the migration batches themselves (`1fead8dd49` "batch to
+172/254", `a718727acd` "batch to 192/254") with muon data already in place —
+the contradiction was manufactured *by the migration*, in the commits that
+report progress toward 254.
+
+`a718727acd` is explicit about what it re-ran: `computedAt` and `durationMs`
+moved, `q0Anchor` went `muon` → `proton` and `q0Value` to the proton string,
+while the producer's own `q_0_50dps` data field stayed
+`1.10997859555733471989976322048322502665620840878015368660798114614493`.
+The label and the data are written by independent paths, so re-running moves
+one and not the other.
+
+### What this implies for the sweep
+
+The migration's own progress counter cannot distinguish "migrated" from
+"re-stamped while still on muon" for this class. Any producer in the 55 that
+the sweep marks done is done **only** if its read was changed — and the sweep
+does not change reads. `--list-contradictions` is the check that catches it,
+and it is currently the only one: the anchor-consistency audit exempts
+`-audit`/`-scan` suffixes, and the flip-risk audit keys on witnesses stamped
+`muon`, which these are not.
+
 ## What this does and does not license
 
 - **It does not authorise the bulk sweep.** The first attempt broke
