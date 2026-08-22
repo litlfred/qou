@@ -163,6 +163,17 @@ the claim is that a factor already present in the pipeline is being divided out,
 that its logarithm is the extensive term. Whether the resulting coefficient matches
 `a_V` is then a *prediction*, free to fail.
 
+> **Structure formalized (2026-08-22).** The extensivity itself — the part that is
+> purely algebraic and independent of the magnitude — is now Lean-proved sorry-free
+> in `QOU/Mass/MarkovStabFactorExtensive.lean`: the stabilisation factor
+> `markovStabFactor Nq n = N(q)^{n-1}` accrues one constant factor of `N(q)` per
+> strand (`markovStabFactor_succ`), the merge law
+> `stab(m)·stab(n)·N(q) = stab(m+n)` (`markovStabFactor_merge`), and it is
+> extensive-not-intensive for `N(q) ≠ 1` (`markovStabFactor_not_intensive`;
+> exponent affine with unit slope). This proves *only* that the discarded
+> normalisation is extensive — the coefficient/`a_V` question and the strand↔`A`
+> identification are deliberately left as the open prediction below.
+
 **Honest caveat.** `E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV` and `log[2]_q ≈ 0.6945`, so the
 naive `N = 2` reading gives `≈ 2.91 MeV` per strand against `a_V ≈ 15.6 MeV` —
 **5.4× short.** So the *structure* is right and the *magnitude* is not, in the Jones
