@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T16:24:17Z
+updated_at: 2026-08-22T17:20:09Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -108,3 +108,44 @@ Laurent-polynomial character outside Z[q,q^-1].
 
 LEAN: QOU/QBeta/SeminormalV21Trace.lean (9 decls, sorry-free, axioms clean).
 PROBE: computations/qbeta/qbeta_eigenphase_seminormal_exclusion_probe.py (6/6).
+
+
+## 2026-08-22 (2) — a THIRD detector-blindness class, found because a QA sweep missed this
+
+A trap-drain swept nuclear-interactions this window (11d039dc9d) and passed over
+the vacuous carrier. Ran the vacuity audit on that file: 0 candidates, '0
+carrier(s)' — not flagged, not even seen.
+
+ISOLATED with a controlled comparison in ONE file: an empty carrier and a
+':True'-field carrier were both caught; a carrier whose fields are real-looking
+Props that happen to be Mathlib theorems for every argument was not. Genuine
+third shape, not a parsing/scoping artifact.
+
+  proof-no-empty-prop-carrier  -> zero fields          (existing)
+  true-class-field             -> a field literally ': True'  (existing)
+  tautological-field           -> neither, but holds for an arbitrary
+                                  substitution of the subject   (NEW)
+
+Why both existing detectors structurally miss it: the carrier HAS fields (so the
+zero-field detector is silent) and the docstring's claim count does not exceed
+the field count (so the bullet-counting detector cannot fire). It looks
+populated and is inert.
+
+DETECTOR ADDED, deliberately narrow — matches only shapes unconditionally true
+of the FUNCTION applied (bounds on a bounded function; even-symmetry
+identities), and fires only when EVERY field is tautological. Verified on 4
+controls: catches the real defect; does NOT flag TransferMatrixSpectrum (the
+content-bearing replacement) nor a mixed carrier. Corpus-wide: exactly 2 hits —
+the real one (ledger 'genuine') and my own verbatim reproduction in
+EigenphaseCarrierVacuity.lean section 1 (ledger 'legit'; must NOT be repaired,
+that would destroy the demonstration).
+
+ATTRIBUTION TRAP AVOIDED: regenerating the record took total_defects 81 -> 67, a
+DROP of 14 while my detector adds 2. Reverted the detector and re-ran — baseline
+65, so my effect is exactly +2 and the drop is pre-existing tree state (13
+trivial-true + 3 others fixed by siblings after the record was generated
+2026-08-21T21:30Z at 3015 files; tree now 3033). Not my change. Worth recording
+because attributing a sibling's 13 fixes to my own commit would have been the
+error, and the record moving the WRONG way is exactly when to stop and measure.
+
+Guard test 2 pass; --check-ledger exit 0.
