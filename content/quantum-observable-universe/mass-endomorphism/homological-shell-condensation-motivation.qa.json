@@ -936,6 +936,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.509Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Single paragraph; no assertion-by-denial.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -955,6 +971,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.549Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No pivot.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -974,6 +1006,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 60 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.589Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -993,6 +1041,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 60 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.630Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No list.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1012,6 +1076,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.670Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Closes on \"encoding shell closure as an algebraic-geometry condition on the brane-tower stratification\", a content clause.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1031,6 +1111,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.711Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "\"The proposition names the homological condensation at saturated n\" points at the sibling block; a cross-reference, not emphasis narration.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1050,6 +1146,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.755Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Motivation block; nothing prior to restate.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1069,6 +1181,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.798Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1088,6 +1216,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.841Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No inflation; the claims are hedged appropriately for a motivation block.",
+        "notes": "No change."
       }
     ],
     "trap-nonspeakable": [
@@ -1107,6 +1251,22 @@
         "reviewed_at": "2026-08-15T10:31:00.995Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "65ae60eb3789",
+          "ts": "5ce603aa8c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:23:28.882Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "One long sentence with three parenthetical cross-references, but the spine (\"The BB stratification ... yields a spectral sequence whose E_infty page records the failure of categorical neutrality at each level\") reads aloud.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1129,5 +1289,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:23:28.882Z"
 }
