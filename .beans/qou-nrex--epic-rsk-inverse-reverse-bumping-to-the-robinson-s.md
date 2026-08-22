@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T19:40:47Z
+updated_at: 2026-08-22T19:45:36Z
 ---
 
 
@@ -627,3 +627,30 @@ count, not after.
 Both sides now have their ingredients: exactness turns 'row of t is i' into 't in row i', totality
 rules out the none-trap, and the two sides then count the same set. Needs a 'Q holds exactly
 0..n-1' hypothesis to know every t < k is present.
+
+
+### Brick 26 — THE COUNT EQUALITY (same PR #5426)
+
+count_qPositions : Q.flatten.Nodup -> i < Q.length -> (all t below k are in Q) ->
+  (qPositions Q k).count i = countLt (Q.getD i []) k
+
+The step the whole Q-side reduces to. Brick 22 phrased the built shape as a count over the POSITION
+LIST; countLt counts over the ROWS of Q. Same number.
+
+Genuinely a bijection, not a rewrite — timestamps on the left, entries on the right. Both filtered
+lists are duplicate-free with the same members; proof goes through toFinset rather than building the
+bijection by hand.
+
+Each hypothesis does distinct work:
+- Nodup -> exactness (brick 25); without it qRowOf locates a repeated entry in the WRONG row, and
+  rows are not duplicate-free either.
+- i < Q.length -> the row exists.
+- all t below k present -> totality (brick 25). qPositions reads qRowOf with .getD 0, so an ABSENT
+  timestamp reads as row 0 and is counted there. This is exactly the none-trap totality was stated
+  to block. Predicting it one brick early is what made this one compile first try.
+
+### #5426 carries bricks 16-26, five files, all sorry-free and axiom-clean
+### Remaining: assemble AddableAlong from the pieces
+All ingredients now proved. IsAddable at step k = (count comparison), which is brick 23b via
+countLt_above_qRowOf, transported across brick 26 to the position-list side, with brick 22 supplying
+the shape. What is left is threading them through the AddableAlong recursion.
