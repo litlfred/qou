@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T12:16:53.933385+00:00",
-  "commitSha": "bffd39704b91ca0319d3b5a4a9a5b3f14a063ca1",
+  "computedAt": "2026-08-22T12:23:46.554876+00:00",
+  "commitSha": "899b52c4612075f436c0aa9414d03f1b5ed753c6",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -18,7 +18,7 @@
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
-  "scriptCommitSha": "08992e2ab592b547cc357939429eb61ab8ac77ea",
+  "scriptCommitSha": "250bf85872ab4d3070f275fd8082fc36b6947697",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
       "Q0_COMPARISON": 0,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1919,
+      "Q0_ANCHOR_MISSING": 1925,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 75,
       "Q0_PARSE_ERROR": 0,
@@ -2486,7 +2486,19 @@
           "detail": ""
         },
         {
+          "witness": "hecke-prefix-head-separation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-prefix-loop-fit.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "hecke-prefix-phases.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-prefix-schedule-check.witness.json",
           "detail": ""
         },
         {
@@ -2495,6 +2507,18 @@
         },
         {
           "witness": "hecke-tail-assembly-fit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-tail-collision-check.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-tail-diagonal-check.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "hecke-tail-reorder-check.witness.json",
           "detail": ""
         },
         {
