@@ -52,6 +52,10 @@ set -uo pipefail
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
 cd "$ROOT"
 
+# Shared changed-file collection. ONE definition, so the fifth gate script
+# cannot repeat the defect the first four shared (bean qou-pt9b).
+. "$ROOT/scripts/lib/changed-files.sh"
+
 # name|script|args|self-test?|blocking?
 GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
@@ -306,12 +310,8 @@ if [ "${1:-}" = "--changed" ]; then
   #
   # On `main` the merge-base IS HEAD, so this contributes nothing there and
   # cannot make a clean checkout run the suite for no reason.
-  base=$(git merge-base HEAD origin/main 2>/dev/null || true)
-  relevant=$( { git diff --name-only HEAD 2>/dev/null
-                git diff --cached --name-only 2>/dev/null
-                git ls-files --others --exclude-standard 2>/dev/null
-                [ -n "$base" ] && git diff --name-only "$base"...HEAD 2>/dev/null; } \
-              | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
+  relevant=$(changed_files \
+             | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
   if [ -z "$relevant" ]; then
     echo "precision-gates: no witness or computations/ script touched — skipped."
     exit 0

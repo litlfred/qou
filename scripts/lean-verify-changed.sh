@@ -42,6 +42,10 @@
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Shared changed-file collection. ONE definition, so the fifth gate script
+# cannot repeat the defect the first four shared (bean qou-pt9b).
+. "$ROOT/scripts/lib/changed-files.sh"
 LEAN_ROOT="$ROOT/content/quantum-observable-universe/lean"
 export PATH="$HOME/.elan/bin:$PATH"
 
@@ -125,7 +129,11 @@ if [ "${#files[@]}" -eq 0 ]; then
   #
   # REF= still overrides, so `REF=HEAD~1 scripts/lean-verify-changed.sh` is
   # the old behaviour when you deliberately want just the last commit.
-  ref="${REF:-$(git merge-base HEAD origin/main 2>/dev/null || echo HEAD~1)}"
+  ref="${REF:-$(changed_files_base)}"
+  # An unresolvable base already warned on stderr from the helper. HEAD~1 is
+  # the last-resort fallback and is DELIBERATELY the old, narrow behaviour --
+  # better one commit verified than zero, and the warning says which happened.
+  [ -n "$ref" ] || ref="HEAD~1"
   while IFS= read -r f; do
     [ -n "$f" ] && files+=("$ROOT/$f")
   done < <(cd "$ROOT" && git diff --name-only "$ref" -- '*.lean')
