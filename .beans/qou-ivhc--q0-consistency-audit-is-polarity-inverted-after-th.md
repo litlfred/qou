@@ -254,3 +254,60 @@ it: the anchor audit is a **CI-failing** gate (`Q0_FLIP`), adding a new failing
 verdict to it is a scope change, and the 22 would then fail CI before anyone has
 authorised the fix (`qou-cds3`'s sweep is still ungated). Recorded as the obvious
 next step for whoever owns that gate.
+
+---
+
+## `--payload-check` added 2026-08-22 — the seam is now visible without gating on it
+
+Added an **opt-in, diagnostic-only** payload check to
+`computations/audits/q0_anchor_consistency_audit.py`. It reports fields whose
+*name* says one anchor while the *value* carries the other's pin — the class
+`Q0_OK`/`Q0_FLIP` cannot see, because they compare only the envelope
+(`q0Anchor` vs `q0Value`).
+
+```
+  fields whose NAME and VALUE disagree on the anchor: 20
+  witnesses affected: 20
+    h4-form-AB-cross-anchor-stability     /parameters/q_proton    name=proton value=muon
+    flavor-split-alpha-dilog-expansion    /data/proton_anchor/q0  name=proton value=muon
+    qbeta-c6-c10-crossanchor-falsification /data/q_proton         name=proton value=muon
+    … 17 more, every one name=proton value=muon
+```
+
+**Findings are printed, never written to the witness, and cannot change the exit
+code.** `Q0_FLIP` stays the only gate — the 20 known hits would otherwise fail CI
+before `qou-cds3`'s migration is authorised.
+
+### One bug of mine, caught by reconciling against the earlier count
+
+My first version keyed on the **immediate** JSON key and found 16. That misses
+`/data/proton_anchor/q0`, where the anchor is named on the *parent* and the key is
+just `q0`. Fixed to use the **innermost anchor-bearing path segment**, which reads
+`/data/proton_anchor/q0` as proton and `/q0_pins/muon` as muon. 16 → **20**.
+
+### 20 vs the 22 in `qou-cds3` — reconciled exactly, not hand-waved
+
+- **−1**: `audits/q0-consistency-audit.witness.json` was one of the 22; this bean
+  fixed it earlier today, so its `canonical_proton_q0` now holds the real proton
+  pin and it is correctly no longer a hit.
+- **−1**: `habiro-interpolation-wlambda.witness.json`
+  (`/data/archimedean_F_lambda/proton_q0/q0 = 1.1099785955541805`) is
+  **structurally invisible to this audit**. Its 14-char prefix is
+  `1.109978595554`, and `_EXPECTED_PREFIX["muon"]` is `1.109978595557` — so the
+  audit's prefix map recognises only **one** of the muon values. `qou-khac`
+  established there are **three**.
+
+That second one is a finding, not an oversight in my check: **the anchor audit is
+built on a two-pin model** (`{muon, proton}`), and the muon side has since
+fragmented. I did **not** widen `_EXPECTED_PREFIX` — it feeds the CI-failing
+`Q0_FLIP` verdict, and changing what that constant matches changes gate behaviour
+for every witness, which is not a diagnostic-flag-sized decision.
+
+### Correcting a claim I made while building it
+
+I wrote that the check is "not written to the witness and the artefact stays
+byte-stable". The first half is true; the second is **not** — `WitnessBuilder`
+records `invocation` and `reproduce`, so running with the flag writes
+`… --payload-check` into the artefact. The committed witness is therefore from a
+**plain** run, so it records the canonical invocation. Worth knowing before using
+any flag on a witness-emitting audit.

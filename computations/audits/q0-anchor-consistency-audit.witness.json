@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T19:46:15.019449+00:00",
-  "commitSha": "b2b953f4dbb93c046163db0683a810518ede85c3",
+  "computedAt": "2026-08-22T20:47:36.608506+00:00",
+  "commitSha": "c8822e15727e720d8f8cc60f59ecc10ec75c7a2b",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
-  "scriptHash": "d4f4409e5d3b",
+  "scriptHash": "8e59b9d91d76",
   "scriptCommitSha": "31d1bdf6e98c398512f7b5fe095471cfb976f600",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
