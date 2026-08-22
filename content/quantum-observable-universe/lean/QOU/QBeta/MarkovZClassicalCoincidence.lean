@@ -17,11 +17,27 @@ That is the point at which the ladder's N=3 rung is evaluated
 ruling leaves that proposed coefficient untouched while moving everything
 evaluated at the substrate `q₀ ≈ 1.11`.
 
-**Scope.** This is a statement about *which rungs the C→D ruling can move*, and
-it is a pruning result, not a positive one.  `c₃ = −2` surviving the frame
+**Read `QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common` first.**  That
+theorem (already in the corpus, sorry-free) is the primary result: the
+convention enters the ladder at exactly one place, the N=1 eigenphase, so the
+entire N=2..5 tail — `c₂`, `c₃`, `c₄`, `c₅` — is phase-blind, hence
+convention-blind *as written*.
+
+This file closes a narrower, complementary gap.  `tail_common` is about the
+ladder's **written form**; it says nothing about the **provenance** of the
+constants appearing in that form.  `c₃ = J_Hopf(q = 1)` is a Markov trace of the
+Hopf link, and a Markov trace does depend on `z`, so a z-free written form does
+not by itself establish that the constant `−2` survives the frame change.  The
+coincidence at `q = 1` is what establishes that.  Neither result subsumes the
+other.
+
+**Scope.** A pruning result, not a positive one.  `c₃ = −2` surviving the frame
 change is not evidence for it: its only empirical support was the 3.47 %
-near-match to the C-frame extraction, and that support does not transfer.  See
-`computations/qbeta/qbeta_zcd_classical_coincidence_probe.py` (7/7, exact ℚ).
+near-match to the C-frame extraction, and that support does not transfer.  What
+genuinely remains open is the N=1 phase — `alpha = (z−1)h/2` is *asserted* in
+both frames and derived in neither, so there is no C-frame derivation to port.
+See `computations/qbeta/qbeta_zcd_classical_coincidence_probe.py` (8/8, exact ℚ)
+and `qbeta_ladder_required_phase_probe.py`.
 
 Working in the substrate variable `s` with `q = s²`, so that `z_C = s/(s²+1)`
 and `z_D = s⁶/(s⁴+1)` are both rational and no `Real.sqrt` is needed.

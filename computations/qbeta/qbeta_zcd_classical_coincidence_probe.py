@@ -31,6 +31,23 @@ second factor has all-positive coefficients and so has no positive root at all.
 So: **C and D define the same Markov parameter at `q = 1`, and at no other
 point of the substrate branch.**
 
+## Where this sits relative to what is already proved
+
+**Read `QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common` first** — it is
+the primary result here and it is already in the corpus, sorry-free.  It proves
+the convention enters the ladder at exactly one place, the N=1 eigenphase, so
+the whole N=2..5 tail (`c₂`, `c₃`, `c₄`, `c₅`) is phase-blind and therefore
+convention-blind *as written*.  `markovZ'` is hard-coded to `z_C` (assertion 7
+below), so `alpha` is the C-frame phase and it is the only thing `z_D` touches.
+
+This probe closes a different, narrower gap: `tail_common` is about the ladder's
+**written form**, and says nothing about the **provenance** of the constants in
+that form.  `c₃ = J_Hopf(q=1)` is a Markov trace of the Hopf link, and a Markov
+trace *does* depend on `z` — so the written form being z-free does not by itself
+establish that the constant `−2` survives the frame change.  The coincidence at
+`q = 1` is what establishes that.  The two results are complementary; neither
+subsumes the other.
+
 ## What it prunes, and what it does NOT
 
 The ladder's N=3 rung is `1 + J_Hopf(q=1)·u³`, i.e. `c₃ = J_Hopf(q=1) = −2`.
@@ -45,9 +62,23 @@ where the two conventions agree, so:
   * `c₂ = −1` is likewise untouched, for a different and weaker reason: it is a
     `ring` identity (`1 − b²ℏ⁴ = 1 − (bℏ²)²`), independent of `z` altogether.
 
-  * **Everything evaluated at the substrate `q₀ ≈ 1.11` must still be
-    re-derived**, because `q₀ ≠ 1` is precisely where the conventions diverge.
-    That is the whole extraction path.
+  * `c₄` and `c₅` are **also** unmoved — but by `tail_common`, not by anything
+    here.  They sit in the phase-blind tail.  An earlier draft of this probe
+    claimed they "must be re-derived because they are evaluated at `q₀ ≠ 1`";
+    **that was wrong**, and it was wrong because it reasoned about where a
+    coefficient is *evaluated* instead of whether `z` enters its rung at all.
+
+  * What genuinely remains is the **N=1 phase itself**.  `alpha = (z−1)h/2` is
+    *asserted* in both frames — a literal, derived in neither — so there is no
+    C-frame derivation to port to D.  See
+    `qbeta_ladder_required_phase_probe.py`, which already establishes that the
+    reported `c₃ ≈ −974` under `z_D` is the N=1 phase residual magnified by the
+    fixed `1/u³`, common to both frames, and not a statement about `c₃`.
+    Reconstruction cross-check (this session, not committed as a claim): holding
+    the tail fixed and pushing the N=1 phase ratio `cos(α_D − u/2)/cos(α_C − u/2)`
+    into the N=3 rung reproduces `−974.4319` against the recorded `−974.43`, a
+    relative agreement of 1.9e-6 — i.e. the recorded number is that phase
+    residual, to the precision it is quoted at.
 
 **This is a scope-(a) negative about the near-match, not a positive result.**
 The proposed `c₃ = −2` surviving the ruling is *not* good news for it: the bean
@@ -175,11 +206,22 @@ def main() -> int:
         f"gap = {gap} = {sp.nsimplify(gap)} > 1/100",
     )
 
+    # ---- 7. The ladder's own markovZ' is z_C, so `alpha` is the C-frame phase.
+    # QOU.BraidKnot.markovZ' q = 1/(sqrt q + (sqrt q)^-1). This is the reason the
+    # convention question reaches the ladder at all -- and, with tail_common, the
+    # reason it reaches ONLY the N=1 rung.
+    markovZ_prime = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    check(
+        "7. the ladder's markovZ' equals z_C exactly (so alpha is C-frame)",
+        sp.simplify(markovZ_prime - z_C(q)) == 0,
+        f"1/(sqrt q + 1/sqrt q) = {sp.simplify(markovZ_prime)} = z_C",
+    )
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/7: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/8: {', '.join(failures)}")
         return 1
-    print("7/7 assertions hold (exact symbolic).")
+    print("8/8 assertions hold (exact symbolic).")
     print()
     print("CONSEQUENCE (scope-(a)): the C->D ruling leaves the PROPOSED c_3 = -2")
     print("unchanged, because J_Hopf is evaluated at q = 1 -- the single point")
