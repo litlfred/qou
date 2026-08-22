@@ -53,7 +53,14 @@ the non-`Λ*` co-content statistic), **`Cov(p₂^#_sym, ω₃) = 0` exactly** �
 > covariances (already exact here); it does not reach the non-`Λ*` `T`. So the effort moves directly
 > to sub-result (2), now the *sole* remaining piece.
 
-### Sub-result (2) — the non-`Λ*` piece (`Σh`'s deviation from `n∫Ω dΔ`).
+> **REFRAMED 2026-08-22 → one-sided; no explicit `C` needed**
+> ([audit](../audits/2026-08-22-covariance-kernel-M1-onesided-reframing.md)). Exact `κ_n = M₁/n^{5/2}`
+> satisfies `κ_n < κ` for `n ≤ 12` and **`κ_n > κ` for every `13 ≤ n ≤ 46`** (crossing `n₀ = 13`). So
+> `M₁>0` all-n ⟸ **(a)** exact `M₁>0` for `n ≤ 12` (done) **∧ (b)** `κ_n ≥ κ` for `n ≥ 13`, i.e.
+> `Cov(T,ω₃) ≥ κn^{5/2}` — the **sign** of the correction (`κ_n → κ` from above), not an explicit
+> `C`. Sub-result (2) below is now exactly part (b): the one-sided sign.
+
+### Sub-result (2) — the non-`Λ*` piece (`Σh`'s deviation from `n∫Ω dΔ`); now the ONE-SIDED sign of part (b).
 `Σh = Σ_uD(u)² + Σ|c| ∉ Λ*`. Need the `O(n²)` variance/covariance corrections beyond the leading
 profile-field term.
 - **Source: Fulman `arxiv-math-0305423` §3** (exact finite-n moments via the exchangeable pair —
