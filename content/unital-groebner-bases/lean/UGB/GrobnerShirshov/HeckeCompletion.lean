@@ -11273,22 +11273,32 @@ def U0' (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
   [(⟨i₁⟩ : HeckeGen n), ⟨i₂⟩] ++
     (descWord i j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
 
-/-- After the Bokut–Shiao step at top `i−1`, before the far-commutation. -/
-def U0₁ (i i₁ i₂ j₁ j₂ : Fin n) : Monomial (HeckeGen n) :=
-  [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (bsWord₂ i₂ i₁ j₁ ++
-    (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))
+/-- The second term after its whole loop, at general depth. -/
+def U0L (i i₁ i₂ j₁ j₂ jpp : Fin n) : Monomial (HeckeGen n) :=
+  [(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ jpp ++
+    (descWord i j₁ ++ (descWord jpp j₂ ++ [(⟨i⟩ : HeckeGen n)])))
 
-theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+/-- **The second term's whole loop, at general depth.** `loopTwoGen` at
+`m = i₁ − jppp`, which `hecke_opening_coverage.py` measures as the U side's
+entire contribution to the opening phase — `2`, `5`, `9` steps at `a = 4, 5, 6`.
+
+`uHead` below is this at `jppp = i₁`, i.e. `m = 0`, i.e. `a = 4`. That the
+general case is the same lemma at a larger `m` is why the opening phase's second
+lineage is one application rather than a chain of levels. -/
+theorem uLoop (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ jpp jppp : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
-    (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
+    (hjpp : jpp.val + 1 = jppp.val) (hj₁ : j₁.val ≤ jpp.val)
+    (hj₂ : j₂.val ≤ jppp.val) (htop : jppp.val ≤ i₁.val) :
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
-      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0' i i₁ i₂ j₁ j₂, -1)]) := by
+      (AlgElement.ofTerms
+        [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0L i i₁ i₂ j₁ j₂ jpp, -1)]) := by
   have hne2 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
-  have key := CornerBlock.loopTwoGen (i := i) (j₁ := j₁) (j₂ := j₂) (e := i₁)
-    (ed := i₂) hn hp h₂ hj₁ (by omega) [(⟨i⟩ : HeckeGen n)] (V2 i i₂ j₁ j₂)
+  have key := CornerBlock.loopTwoGen (i := i) (j₁ := j₁) (j₂ := j₂)
+    (e := jppp) (ed := jpp)
+    hn hp hjpp hj₁ hj₂ [(⟨i⟩ : HeckeGen n)] (V2 i i₂ j₁ j₂)
     (-1) 1 (by norm_num)
-    0 i₁ i₂ [(⟨i₁⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
+    (i₁.val - jppp.val) i₁ i₂ [(⟨i₁⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
     h₂ (by omega)
     (fun z => by
       rw [V2]
@@ -11301,8 +11311,18 @@ theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
       subst hy
       show i₂.val + 1 < i.val
       omega)
-    (by rw [descWord_cons h₁ (by omega), descWord_cons h₂ hj₁]; simp)
-  simpa [U0', U0, descWord_self] using key
+    (by rw [descWord_cons h₁ (by omega), descWord_cons h₂ (by omega)]; simp)
+  simpa [U0L, U0] using key
+
+theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
+      (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0' i i₁ i₂ j₁ j₂, -1)]) := by
+  have h := uLoop (i := i) (i₁ := i₁) (i₂ := i₂) (j₁ := j₁) (j₂ := j₂)
+    (jpp := i₂) (jppp := i₁) hn hp h₁ h₂ h₂ (by omega) (by omega) (le_refl _)
+  simpa [U0L, U0', descWord_self] using h
 
 end CornerLe
 
