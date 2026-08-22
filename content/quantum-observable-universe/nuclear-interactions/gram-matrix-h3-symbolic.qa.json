@@ -1771,6 +1771,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:26.820Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1806,6 +1822,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:26.936Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-em-dash": [
@@ -1841,6 +1873,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.043Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-triples": [
@@ -1876,6 +1924,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.101Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1911,6 +1975,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.140Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-meta-commentary": [
@@ -1946,6 +2026,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.178Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1981,6 +2077,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.215Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-performed-warmth": [
@@ -2016,6 +2128,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.256Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-superlative": [
@@ -2051,6 +2179,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.296Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "trap-nonspeakable": [
@@ -2086,6 +2230,22 @@
         "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
         "evidence": "Full read: italic proposition, a setup line (u=sqrt q, u>0) and a 3-item numbered list (symmetry, G[0,0]=1, det!=0 for q>0,q!=1). The triple is a substantive enumeration of three distinct claims, not a reflex list. No other trap constructions in the .md.",
         "notes": "Clean on all ten. SEPARATE MATH FINDINGS reported to the coordinator (not fixed here): (i) the cited witness gram-h3-symbolic-regression.witness.json prints a matrix violating Cauchy-Schwarz at (3,4)/(4,3) and its det_at_q_0=-0.18920521914 is negative, contradicting the .ts authorNote claim of positive-definiteness for u>1 (u_0=1.0536); transposing the 3-4 diagonal/off-diagonal pair gives det=+0.18920521914 and an all-positive spectrum. (ii) G[0][1]=0.499320334183694452 is exactly z_C=sqrt(q)/(q+1), the EXCISED convention-C Markov parameter (D gives 0.612688037146)."
+      },
+      {
+        "field_hash": {
+          "md": "3eb286b488c4",
+          "ts": "d05675e1eb65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:27.336Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "RETRACTION + corrected finding. Full read of the italic proposition (u=sqrt q setup, 3-item claim list). Ten trap categories clean; the triple is a substantive enumeration.",
+        "notes": "RETRACTED my earlier note on this block claiming the witness matrix carries a (3,4) transposition bug: the producer computations/gram-matrix-dual.py:151-154 builds G[i,j]=tr_M(b_i*b_j) with NO anti-involution, i.e. the indefinite Frobenius TRACE form, so a negative eigenvalue and Cauchy-Schwarz failure are expected, not defects. STANDING FINDINGS (report, not fixed): (1) the .ts authorNote of 2026-08-08 says 'the main theorem is positive-definiteness for u>1', which is FALSE - the Lean GramMatrixH3Symbolic.lean:189 docstring states 'det(G(u)) = -(strictly positive) != 0 for u > 1', i.e. NEGATIVE determinant, and the theorem proved is det!=0, not PosDef; a PD 6x6 cannot have det=-0.189. (2) CONVENTION: the cited gram-h3-symbolic-regression witness has G[0][1]=0.4993203341836944 = z_C=sqrt(q)/(q+1) (EXCISED convention C), while the co-cited gram-matrix-dual witness has G[0][1]=0.6126880371464652 = z_D (canonical). The two cited witnesses are therefore NOT the same matrix, so the authorNote's 'Sympy-verified against gram-matrix-dual.witness.json to 1e-16' cannot hold as written (entrywise gap 0.113). Under canonical D the recorded gram_determinant is 3.998e-17 (numerically ZERO), which would refute clause 3 (det != 0) - the known D-singularity, bean qou-cds2. (3) .ts computation.script points at 'computations/gram_matrix_dual.py' (underscores) which DOES NOT EXIST; the real producer is 'computations/gram-matrix-dual.py' (hyphens)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2109,5 +2269,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:54:13.757Z"
+  "updated_at": "2026-08-22T02:58:27.336Z"
 }

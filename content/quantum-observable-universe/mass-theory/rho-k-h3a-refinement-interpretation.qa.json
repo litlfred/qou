@@ -1013,7 +1013,7 @@
           "in_degree": 0,
           "cone_size": 243,
           "depth": 55,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 610,
           "edge_span_mean": 305.5,
           "worst_target": ""
@@ -1518,7 +1518,8 @@
         "reviewed_at": "2026-08-22T02:30:50.718Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "Three unqualified maximum-strength claims in a four-sentence block: 'The observed binding energy PRECISELY reflects the non-vanishing Delta_lambda terms'; 'Computing Delta_lambda across the Plancherel-dominant cone SYSTEMATICALLY reduces the residual'; and the closing 'Nine evaluation levels push the mass prediction accuracy to ONE PART PER BILLION'.",
-        "notes": "PROPOSED: hedge or remove all three. The ppb claim is UNPROVENANCED — no citation, no derivation, no witness field, and the sibling witness computations/rho-k-h3a-refinement.witness.json contains no nine levels and no ppb figure, only a single Delta fitted at one isotope 'exactly by construction (single equation, single unknown)'. It is also an ABSOLUTE-MASS accuracy claim (excised 2026-08-11) and it quotes a retired target: L1 was upgraded from 1 ppb to 1 ppQ on 2026-05-26 'because the old target was noise', and the live L2 count is 1 of 5 scoreable. The 'systematically reduces' claim has no supporting compute either."
+        "notes": "PROPOSED: hedge or remove all three. The ppb claim is UNPROVENANCED \u2014 no citation, no derivation, no witness field, and the sibling witness computations/rho-k-h3a-refinement.witness.json contains no nine levels and no ppb figure, only a single Delta fitted at one isotope 'exactly by construction (single equation, single unknown)'. It is also an ABSOLUTE-MASS accuracy claim (excised 2026-08-11) and it quotes a retired target: L1 was upgraded from 1 ppb to 1 ppQ on 2026-05-26 'because the old target was noise', and the live L2 count is 1 of 5 scoreable. The 'systematically reduces' claim has no supporting compute either.",
+        "severity": "minor"
       }
     ],
     "trap-nonspeakable": [
@@ -1553,7 +1554,7 @@
         "reviewed_at": "2026-08-22T02:30:50.813Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "Short sentences; 'The block-binding correction Delta_lambda operates locally within each partition' is the heaviest and still speakable.",
-        "notes": "NON-TRAP FINDING, PHYSICS ERROR, not fixed inline: 'This categorical separation mirrors the empirical shell structure captured by liquid-drop formulas.' Liquid-drop / semi-empirical mass formulas do NOT capture shell structure — the magic numbers are precisely the deviation from liquid drop, which is why Strutinsky shell corrections exist. PROPOSED: 'the empirical shell structure that liquid-drop formulas fail to capture', or drop the liquid-drop comparison."
+        "notes": "NON-TRAP FINDING, PHYSICS ERROR, not fixed inline: 'This categorical separation mirrors the empirical shell structure captured by liquid-drop formulas.' Liquid-drop / semi-empirical mass formulas do NOT capture shell structure \u2014 the magic numbers are precisely the deviation from liquid drop, which is why Strutinsky shell corrections exist. PROPOSED: 'the empirical shell structure that liquid-drop formulas fail to capture', or drop the liquid-drop comparison."
       }
     ],
     "wall-base-ring-minimal": [
