@@ -1,15 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-22T09:39:23.127Z",
+  "generated": "2026-08-22T16:36:42.111Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3026,
-  "files_flagged": 145,
-  "total_defects": 59,
-  "total_exempt": 122,
+  "scanned_files": 3031,
+  "files_flagged": 142,
+  "total_defects": 53,
+  "total_exempt": 123,
   "categories": {
-    "proof-no-self-assuming-projection": 46,
-    "proof-docstring-sorry-mismatch": 3,
-    "proof-no-trivial-true": 4,
+    "proof-no-self-assuming-projection": 44,
+    "proof-docstring-sorry-mismatch": 1,
+    "proof-no-trivial-true": 2,
     "proof-no-provable-axiom": 1,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1,
@@ -2124,24 +2124,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean": [
-      {
-        "line": 10,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem plancherel_via_recipe [ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 :=",
-        "decl": "plancherel_via_recipe",
-        "severity": "critical"
-      },
-      {
-        "line": 10,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem plancherel_via_recipe [ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 :=",
-        "decl": "plancherel_via_recipe",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean": [
       {
         "line": 877,
@@ -2229,14 +2211,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `jgcs.adjoint_vanishing` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      },
-      {
-        "line": 222,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem kahler_differentials_no_sym_component :",
-        "decl": "kahler_differentials_no_sym_component",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean": [
@@ -2692,13 +2666,14 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
       {
-        "line": 164,
+        "line": 150,
         "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
+        "pattern": "doc-delegates-sorry",
         "snippet": "theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :",
         "decl": "shell_filling_rule",
         "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
+        "exempt": true,
+        "exempt_reason": "docstring attributes the `sorry` to another declaration and this file has one"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/MotivesArchimedean.lean": [
@@ -2748,17 +2723,6 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (su4_action, alpha_cluster_from_su4_quadruplets) — honestly framed; tracked not counted"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean": [
-      {
-        "line": 115,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :",
-        "decl": "four_term_pair_nucleon",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean": [
@@ -2907,7 +2871,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean": [
       {
-        "line": 88,
+        "line": 89,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem topological_mass_decomposition {M : Type*}",
@@ -2916,16 +2880,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `tmd.decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean": [
-      {
-        "line": 108,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "tuple-projection",
-        "snippet": "theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :",
-        "decl": "neutron_proton_splitting",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean": [
