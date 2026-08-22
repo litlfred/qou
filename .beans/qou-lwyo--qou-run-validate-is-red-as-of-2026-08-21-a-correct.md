@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:53:13Z
-updated_at: 2026-08-21T22:55:49Z
+updated_at: 2026-08-22T09:11:19Z
 ---
 
 `bun run scripts/run-validate.ts content/quantum-observable-universe` exits
@@ -113,3 +113,101 @@ the declaration genuinely does not exist rather than merely being misnamed.
 That closes the three cheap dispositions: no resolvable ref target (the named
 decl was deleted), no label-carrying decl to repoint to, and no relief from
 dropping the field. Writing the instance is what is left.
+
+
+---
+
+## The disposition above is wrong — writing the instance would be laundering
+
+I recorded "what is left is writing `frobenius_at : Nat.Primes → Mhat`" as the
+remaining work. **That is the third wrong disposition I have given this block,
+and this one would have made things worse rather than merely wasting time.**
+Read the class:
+
+```lean
+class MotivicGaloisCharacter
+    (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
+    (Target : Place → Type*) [∀ v, CommRing (Target v)]
+    [MotivicSubstrate K0 Mhat Target]
+    (motiveA : Mhat) where
+  frobenius_at : Nat.Primes → Mhat
+```
+
+**One data field. Zero Prop fields. No law of any kind.** So
+`⟨fun _ => 0⟩` inhabits it, and *any* instance is vacuous by construction —
+nothing constrains `frobenius_at` to be a Habiro evaluation, a Frobenius
+eigenvalue, or anything at all. Writing the instance the block asks for is
+exactly the move `73a21ac34a` set out to eliminate.
+
+It was not always so. At `73a21ac34a^` the class carried a second field:
+
+```lean
+  almost_everywhere_nontrivial :
+    ∃ N : ℕ, ∀ p : Nat.Primes, (p : ℕ) ≥ N → ¬IsUnit (frobenius_at p)
+```
+
+That was its **only** law, and removing it was right on its own terms — the
+perpetual obstruction is now a theorem (`perpetual_obstruction_from_collapse_invariant`,
+Route A, sorry-free), not an axiom instances must fill. The side effect went
+unnoticed: the class it left behind asserts nothing.
+
+The docstring has not caught up either. It still says the fields encode local
+Frobenius characters *"satisfying a compatibility with the realization tower of
+the substrate"* — a property that is **not encoded**, which is the
+`proof-claims-unencoded` shape in AGENTS.md §3b-tax.
+
+## A second consequence, in the downstream theorem
+
+`motivic_perpetual_obstruction`
+([`MotivicPerpetualObstruction.lean:47`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicPerpetualObstruction.lean))
+takes the class as a hypothesis and **never uses it**:
+
+```lean
+theorem motivic_perpetual_obstruction
+    … [hχ : MotivicGaloisCharacter K0 Mhat Target motiveA]
+    (trace : Nat.Primes → ℤ) (N : ℕ)
+    (h_bound : ∀ p, (p : ℕ) ≥ N → 1 < (trace p).natAbs) :
+    ∃ S : Finset ℕ, ∀ p, (p : ℕ) ∉ S → ¬IsUnit (trace p) :=
+  perpetual_obstruction_from_trace trace N h_bound
+```
+
+`hχ` appears in the binder and nowhere else. `perpetual_obstruction_from_trace`
+takes no instance argument — checked. And the conclusion is about the free
+variable `trace : Nat.Primes → ℤ`, which is **never linked** to
+`hχ.frobenius_at : Nat.Primes → Mhat`: different types, no map between them, no
+hypothesis relating them.
+
+So the docstring's claim — *"For a substrate carrying a `MotivicGaloisCharacter`
+whose Frobenius eigenvalues satisfy a trace-growth bound … the Frobenius
+eigenvalue is not a unit"* — is not what is proved. What is proved is that an
+integer-valued function eventually exceeding 1 in absolute value is eventually
+not a unit, which holds for **any** integer function and mentions no motivic
+structure. `K0`, `Mhat`, `Target`, `MotivicSubstrate`, `motiveA` and
+`MotivicGaloisCharacter` are all decoration on that statement.
+
+This may be deliberate — the class as a context marker rather than an
+assumption. But a theorem whose prose says it is *about* a structure, while its
+statement is independent of that structure, is the mismatch, not the binder.
+
+## Revised disposition
+
+Not "write the instance". In order:
+
+1. **Give the class a law, or stop calling it a carrier.** Either encode the
+   realization-tower compatibility the docstring already promises, or drop the
+   promise from the docstring and accept that this is a data bundle, not an
+   axiomatisation. Until then no instance can mean anything, and the `definition`
+   block's paper-wide red is the corpus correctly refusing to accept a claim
+   nothing backs.
+2. **Decide what `motivic_perpetual_obstruction` is for.** Either link `trace`
+   to `hχ.frobenius_at` through a hypothesis so the theorem earns its name, or
+   drop the inert binders and let it be the arithmetic lemma it is.
+3. Only then does an instance become the remaining work.
+
+Both are design calls on another session's file (`73a21ac34a`, beans qou-f7na /
+qou-janl, neither of which exists in `.beans/`). Recorded, not acted on.
+
+`73a21ac34a` remains a good commit — it removed a file with three type
+mismatches and a bare axiom that had never compiled. These are consequences it
+did not notice, and its `lake build` could not have shown either: a law-free
+class compiles, and an unused hypothesis compiles.
