@@ -3574,3 +3574,48 @@ nose, and the cancellation has to land on the word `ofTerms_cancel_pair` expects
 **Next:** assemble the closing phase (`fRun`, two `bsStep`s, `fRun`,
 `ofTerms_cancel_pair`) into `closingPhase`, then chain with `openingPhase` for
 the whole prefix. Then `a = 3`.
+
+### Every closing-phase piece now exists; the assembly's hard part is cheap
+
+Landed this tranche, all sorry-free, `#print axioms` clean:
+
+| lemma | what |
+|---|---|
+| `CornerLe.fRun` | the `2a−3`-step F-run as one `monicStep` + two `farComm_transport_left_sources` |
+| `CornerLe.closingBs` | the two B steps — first at `j₂`, second at `j₁` |
+| `ofTerms_cancel_split` | cancellation with terms in between; `ofTerms_cancel_pair` is its `M = []` case |
+
+**The cancellation is not adjacent, and that is forced.** `trio` emits its
+h-weighted word immediately before its plain one, in place, so `TOpen` reads
+`[(Vh, h), (V1, 1), (Uh, −h), (U1, −1)]` and the two terms that reconverge are
+the two h-weighted ones — with `(V1, 1)` between them. `ofTerms` is a
+representation, not a normal form, so reordering the list is not available
+either. Hence `ofTerms_cancel_split`. Cancelling the two h-terms leaves
+`[(V1, 1), (U1, −1)]`, which is the measured 4 → 2 drop.
+
+**The closing phase's endpoint is `closingBs`'s target, exactly.** Traced: T0's
+`fRun` + `closingBs` lands on `bsWord₂ i₂ i₁ j₁ ++ (σ_i :: descWord i₁ j₂)`, and
+T1's `fRun` lands on the *same word* — its target
+`[σ_{i₂}] ++ descWord i₁ j₁ ++ descWord i j₂` is that word letter for letter.
+So the cancellation needs no bridging lemma beyond the split one.
+
+#### The source-only hypotheses discharge on two cheap facts
+
+This was the part I expected to be hard, since one bystander shares the moving
+term's entire left context (that *is* the `2a` core). Measured across all six
+cases, **zero unresolved**:
+
+* **two bystanders by first letter** — the V words open `σ_{i₂}`, the moving U
+  word opens `σ_{i₁}`;
+* **one bystander by length** — the other U term shares the prefix but is one
+  letter shorter.
+
+And the load-bearing detail: **every intermediate word of an F-run has the same
+length** (measured as a singleton set in all six cases), because both the swap
+and the two transports are length-preserving. So "length ≠ |U1|" is a *single*
+fact that discharges every split at once, rather than a per-split argument. In
+Lean that is `congrArg List.length` on the word equation, then
+`simp [List.length_append]` and `omega`.
+
+**Next:** assemble `closingPhase : TOpen →* [(V1, 1), (U1, −1)]` from the four
+pieces, then chain with `openingPhase` for the whole prefix. Then `a = 3`.
