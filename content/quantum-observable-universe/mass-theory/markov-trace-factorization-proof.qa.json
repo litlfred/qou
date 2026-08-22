@@ -1359,6 +1359,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an approximation:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:38.906Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:38.990Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 222 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.181Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 222 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.255Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.314Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.360Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.451Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.567Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof + verification table read in full. The peel argument is correct and the binomial column checks (A=2,3,4,6 give 1,3,6,15). Eight of ten categories clean. The table's numbers do NOT check out — see the notes; recomputed at 30 dps."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1631,22 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.634Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "'exact by construction' is literally true here — the product formula and the direct trace are the same algebraic object — and the block says so rather than inflating it.",
+        "notes": "note for the arithmetic axis, not a trap: the verification table is convention-C AND carries a rounded q_0. The deuteron row's 0.49932008 is a single-generator trace, i.e. z itself. Recomputed at 30 dps: z_D = q^3/(q^2+1) = 0.6126880371 at the proton pin, nowhere near the cell; z_C = sqrt(q)/(q+1) = 0.4993203342 at ANY of the three live pins (proton, muon, old muon), which is 2.5e-7 away and would round to 0.49932033. The cell instead matches z_C evaluated at q = 1.11 exactly: z_C(1.11) = 0.499320083074, residual 3.1e-9. Solving z_C(q) = 0.49932008 gives q = 1.11000026. So the table was produced under the excised convention C at a q_0 rounded to 1.11 — two independent defects in the one cell I can derive in closed form, and the remaining four rows are presumably the same frame."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1666,23 @@
         "reviewed_at": "2026-08-15T10:31:00.739Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a00d47f86d2d",
+          "ts": "6a49a305b206"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:39.692Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "severity": "major",
+        "evidence": "'The CANONICAL verification confirms code correctness, not an approximation' carries the corpus's documented substitution of 'canonical' for 'numerical'. The sentence is about a floating-point cross-check against a symbolic identity, i.e. precisely a NUMERICAL verification; 'canonical verification' names nothing, and the .ts wires the producer (computations/markov/markov_peel_atomic_witness.py) that the sentence should be naming.",
+        "notes": "proposed: 'The numerical verification confirms code correctness, not an approximation.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:22:39.692Z"
 }

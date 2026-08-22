@@ -1385,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:14.714Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. No denials."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:14.806Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:14.855Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1487,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:14.919Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'the categorical linking operation, the crossed-module Euler characteristic ..., and the master pentagon dimension identity' is a real three-block enumeration; the second list has four items."
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1521,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:15.015Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on where the Geom(K) thread leads (the mass application chapter)."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1555,23 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:15.089Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "Opening sentence narrates the document's own editorial history rather than its mathematics: 'This section reconnects blocks separated during the restructuring of the mass derivation and q-hyperbolic geometry chapters.' A reader of the published paper has no restructuring to reconnect from; this is process commentary of the same family as one-voice Category H status leaks (the label sec:mass-bridge-orphan-reconnect-intro carries the same editorial jargon).",
+        "notes": "Proposed (structural — it is the block's opening and sets the section's frame): replace with a content-first sentence, e.g. 'This section bridges the mass-derivation and q-hyperbolic-geometry layers, resolving the structural conjectures at their interface.' and migrate the restructuring provenance to authorNotes in the .ts."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1591,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:15.159Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No terminal restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1625,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:15.221Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1659,21 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:15.302Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'master pentagon dimension identity' is a named object, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1693,22 @@
         "reviewed_at": "2026-08-15T10:31:00.897Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6e8760e4852b",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:35:15.379Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The four-clause 'the X it rests on, the Y that define it, the Z that reads it, and the W that consumes it' chain is parallel and reads aloud, though it is at the edge of the register.",
+        "notes": "Out-of-criterion: 'the Geom(K) thread' — check against the 2026-06-06 purge of the opaque Geom_full(K) wrapper (AGENTS.md requires the explicit Vol(K) rho(K)/hbar_q^2). Geom(K) is a different token from the purged Geom_full, so this is flagged for checking, not asserted as a violation."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1731,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:35:15.379Z"
 }

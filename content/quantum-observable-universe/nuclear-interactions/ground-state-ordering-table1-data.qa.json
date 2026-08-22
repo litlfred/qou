@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.047Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.083Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.119Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.156Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.192Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.227Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.262Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.296Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.333Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1e891ba8d3ed",
+          "ts": "f1e7e2e74dd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:13.370Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (4-column matrix/eigenvalue/det/tr table, no prose sentences). Recomputed every cell: T_pp eig {+q,-q^-1} => det=-1, tr=q-q^-1=+h; T_nn eig {+q^-1,-q} => det=-1, tr=-h; T_pn eig +-sqrt(1+h^2/4) => det=-(1+h^2/4), tr=0. All four columns self-consistent under h=q-q^-1.",
+        "notes": "Clean; table verified arithmetically. No prose to carry a trap."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:54:13.370Z"
 }

@@ -1,4 +1,4 @@
-We securely anchor the critical temperatures using the $S^3$-boundary action $\mathfrak{S}_q^{(\partial)}$. For a molecular liquid, this boundary action explicitly embodies a braid realization: it rigorously represents the hydrogen-bond network cohesion. This cohesion is strictly gated by the discrete $\mathrm{sp}^3 \leftrightarrow \mathrm{pure}\text{-}p$ flip dictating the bond angle.
+We anchor the critical temperatures using the $S^3$-boundary action $\mathfrak{S}_q^{(\partial)}$. For a molecular liquid, this boundary action explicitly embodies a braid realization: it rigorously represents the hydrogen-bond network cohesion. This cohesion is strictly gated by the discrete $\mathrm{sp}^3 \leftrightarrow \mathrm{pure}\text{-}p$ flip dictating the bond angle.
 
 **The hydrogen bond as an $h^2$-suppressed crossing.** 
 A covalent $X$–$H$ bond constitutes a $\sigma$-crossing (the shared trefoil). A hydrogen bond $X\!-\!H\cdots Y$ acts as the weak inter-molecular crossing between the donor $\sigma$ and the acceptor lone pair. It sits suppressed by the square of the substrate $q$-deformation parameter $h = q_0 - q_0^{-1}$:

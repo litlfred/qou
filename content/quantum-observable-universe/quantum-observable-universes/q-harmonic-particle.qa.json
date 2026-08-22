@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.074Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; no negation-contrast construction present.",
+        "notes": "Pass. 'Bosons are purely horizontal; fermions have non-trivial vertical part' is a genuine two-way classification, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.112Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; sentences assert directly.",
+        "notes": "No fix needed."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.149Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 0 in the block. Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.185Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; no three-item enumeration present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.221Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; the closer is mathematical content.",
+        "notes": "No fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1575,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.255Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; none present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1610,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.291Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; it does not.",
+        "notes": "Pass. The closing 'The logical chain is: QOU -> ... -> boson (+) fermion' is the block's titled content ('Particles as q-harmonic forms: the logical chain'), not a restatement appended to it."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1645,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.327Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; register is institutional throughout.",
+        "notes": "No fix needed."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1680,23 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.364Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "severity": "minor",
+        "evidence": "'A particle is a field configuration in perfect equilibrium with respect to the $q$-deformed geometry.' The equilibrium is the exact condition Delta_q alpha = 0; 'perfect' is an unqualified intensifier that adds no content. The identical intensifier appears in rem:q-laplacian-interpretation ('in perfect $q$-equilibrium'), so the two blocks together carry a duplicated superlative gloss on the same definition.",
+        "notes": "NOT FIXED. PROPOSED: 'A particle is a field configuration in equilibrium with respect to the $q$-deformed geometry.' Deferred so it lands together with the identical phrase in rem:q-laplacian-interpretation. Separately and more seriously, this block's opening hypothesis is mathematically wrong - see the batch anomaly report on 'positive-definiteness'."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1716,22 @@
         "reviewed_at": "2026-08-15T10:30:59.876Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5fc7f65462f1",
+          "ts": "321c69db4670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.402Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is interpretive remark: harmonic = closed + coclosed, boson/fermion split, logical chain; sentences are speakable.",
+        "notes": "No fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1754,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:41:09.402Z"
 }

@@ -51,7 +51,7 @@ statement above; witness
 This gives the framework an **explicit categorical handle** on the
 small-$q_0$ $\leftrightarrow$ root-of-unity duality.
 
-## Relationship to 's complex-q lift
+## Relationship to the complex-$q$ lift
 
 The complex-$q$ extension
 ([`prop:q-zero-complex-extension`](#prop:q-zero-complex-extension)
@@ -112,7 +112,7 @@ parameter manifold:
 
 ## Cross-references
 
-  blocks `prop:q-zero-complex-extension` +
+- The complex-$q$ lift: blocks `prop:q-zero-complex-extension` +
   `prop:lusztig-vs-hermitian-bar`
 - Volume Conjecture: [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)
 - The Bloch-group route: [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)

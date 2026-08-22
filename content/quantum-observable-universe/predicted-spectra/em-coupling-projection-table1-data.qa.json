@@ -890,6 +890,186 @@
         "reviewed_sha": "75cc404b84269bfad6a62df663491d6b279254c3",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.084Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.124Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.162Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.200Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.239Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.277Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.317Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.357Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.398Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1783eeb00b43",
+          "ts": "052a9c5d746c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:16.437Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); per the batch spec no trap verdict applies, but the block was read and every row recomputed at 40 dps. Rows CORRECT: base q[9]_q[10]_q = 136.8232 (136.823); CS(T_2,9) = pi^2*10/9 = 10.96623 (10.966); CS(T_3,5) = pi^2*16/15 = 10.52758 (10.528); hbar_q^2 = 0.0098172 (0.009817); [2]_q/2 = 1.0054484 (1.00545); delta_CS = 0.0015506 (0.001551); CODATA 2018 = 137.035999084(21) correct. Rows WRONG or pin-stale: see notes.",
+        "notes": "TWO ARITHMETIC/PIN DEFECTS. (1) The Residual row does not follow from the table's own rows: 137.035999084 vs the displayed 137.035944 is 402.0 ppb, not the stated 399 ppb. 399 is a full-precision figure taken against a CODATA-2022-or-later target (398.6 ppb vs 137.035999177; 398.8 vs the producer's 137.035999206), while the table's CODATA row is 2018, which gives 397.9 -> 398. The printed chain and the headline disagree three ways. (2) alpha^-1_CS = 137.035944 is a MUON-pin value (muon 1.10997859555733471 -> 137.035944554). Under the owner-default proton pin (1.1099785827513808, 2026-08-07) the same formula gives 137.035933705 and the residual is 477 ppb, not 399. The parent proposition's own witness (computations/probes/em-coupling-projection-probe.witness.json) records q0Anchor='proton', so the table disagrees with the block family's production pin. Proposed fix: recompute the table at the proton pin and state the target used, or label the table explicitly as ideal-CAL-2/muon-layer."
+      }
     ]
   },
   "label": "tbl:em-coupling-projection-table1-data",

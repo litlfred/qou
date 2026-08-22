@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.671Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.712Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.753Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.792Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.833Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.874Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.913Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.953Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:38.993Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b73023308de0",
+          "ts": "6d9c9cfe0871"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.034Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: embeddable knots with r x s capacities. Genus and r x s arithmetic all correct; the Degree column marks T_{3,5} as degree 2, contradicting both the sibling proof's prose and spectral-decomposition-qvalue-table1-data - reported as an anomaly."
+      }
     ]
   },
   "source_hashes": {
     "md": "b73023308de0",
     "ts": "6d9c9cfe0871"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:39.034Z"
 }

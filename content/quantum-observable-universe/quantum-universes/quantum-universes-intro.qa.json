@@ -1384,6 +1384,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.330Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). L3-4 'they *force* $\\mathrm{SU}_2(R)$ as the physical gauge group rather than assuming it' and L14 'Duals are not part of this definition.' - both substantive: the first is the framework's central derive-not-assume claim, the second a real scope boundary between Ch 2 and Ch 3.",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1403,6 +1420,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.370Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1457,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 241 words (2.49/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.408Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). Six em-dash characters forming four constructions across 33 lines: two closed parentheticals (L17-19, L30-32) and two appositives (L9, L23). All grammatically load-bearing; density is not a flood for a chapter opening.",
+        "notes": "no fix needed. Marginal: L9 '-- worked concretely in its classical symmetric ($q \\to 1$) limit SU(2)' appends an afterthought that a comma would carry."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1493,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 241 words)"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.447Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). Two three-item lists, both content-determined: the QU data (Frobenius-Hopf object, fibre functor, differential calculus) and the three named consequences sections.",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1529,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.487Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). final sentence is \"[Chapter 3](#chap:qou).\" - a substantive statement, not a placed quotable closer",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1565,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.524Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1601,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.562Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). final sentence is \"[Chapter 3](#chap:qou).\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1637,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.600Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1673,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.642Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1709,23 @@
         "reviewed_at": "2026-08-15T10:31:00.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "46cb5be8a294",
+          "ts": "6d40e4283016"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:14.684Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universes-intro.md (33 lines, kind=prose, title=\"Chapter opening - Quantum Universes\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1748,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:14.684Z"
 }

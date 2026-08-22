@@ -23,7 +23,7 @@ $$
   \Lambda''(t) \;=\; -\cot t .
 $$
 
-So along the line the second derivative is $-(u^2\cot\alpha + v^2\cot\beta + w^2\cot\gamma)$, and strict negativity is a statement about that quadratic form. This matters for the epistemic status of the result: the quadratic form **is** the Hessian, derived, rather than a form asserted to be one. With $\alpha + \beta + \gamma = \pi$ and all three angles in $(0,\pi)$, at most one cotangent is negative, and the constraint $u+v+w=0$ is what forces the combination negative.
+So along the line the second derivative is $-(u^2\cot\alpha + v^2\cot\beta + w^2\cot\gamma)$, and strict negativity is a statement about that quadratic form. The quadratic form **is** the Hessian, derived, rather than a form asserted to be one. With $\alpha + \beta + \gamma = \pi$ and all three angles in $(0,\pi)$, at most one cotangent is negative, and the constraint $u+v+w=0$ is what forces the combination negative.
 
 ## What is not claimed
 

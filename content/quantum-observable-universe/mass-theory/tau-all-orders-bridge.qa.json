@@ -1756,6 +1756,21 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.974Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (196w, conj)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1775,6 +1790,22 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.022Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'Furthermore, simple per-row linear fitting trivially solves any target sequence ... To be meaningful, an order-mixing relation must follow a single, rigidly banded convolution kernel.' reads as setup-then-reframe but the second clause is a genuine methodological constraint, not a reframing device.",
+        "notes": "Borderline; recorded as pass."
       }
     ],
     "trap-em-dash": [
@@ -1794,6 +1825,21 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 194 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.073Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (196w, conj)."
       }
     ],
     "trap-triples": [
@@ -1813,6 +1859,21 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 194 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.117Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (196w, conj)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1832,6 +1893,21 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.178Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (196w, conj)."
       }
     ],
     "trap-meta-commentary": [
@@ -1851,6 +1927,21 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.226Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (196w, conj)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1870,6 +1961,21 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.292Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (196w, conj)."
       }
     ],
     "trap-performed-warmth": [
@@ -1889,6 +1995,21 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.338Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (196w, conj)."
       }
     ],
     "trap-superlative": [
@@ -1908,6 +2029,23 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.383Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "De-hedged claim stack in a conjecture block: 'Computations up to h^8 resolve the structure', 'truncates precisely at h^4', 'whereas the Markov series continues infinitely', 'This abrupt asymmetry strongly supports hypothesis 2', 'simple per-row linear fitting trivially solves any target sequence', 'does a wider, fixed-band finite convolution successfully bridge the complete series'.",
+        "notes": "STRUCTURAL (spans the whole Empirical sharpening section). Proposed: state the computed alpha_k values with a witness path and let them carry the weight; replace 'resolve the structure' with what was computed and 'strongly supports' with the actual discriminating evidence."
       }
     ],
     "trap-nonspeakable": [
@@ -1927,6 +2065,22 @@
         "reviewed_at": "2026-08-15T10:31:00.858Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2db14fa9d7d0",
+          "ts": "073c7ad16fd5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.431Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Prose is speakable.",
+        "notes": "FLAGS for the report: (1) LOGIC - 'Exactly one of the following holds' is not satisfied by the two alternatives as written, since option 2 adds 'coincidentally share only their h^2 coefficient' beyond the negation of option 1, so the pair is not exhaustive; (2) the 'Computations up to h^8' result and alpha_6 = alpha_8 = 0 carry no witness path or script name; (3) DANGLING FORWARD REFERENCE - the block's final paragraph opens 'What follows sits on the archimedean side of the substrate wall' and nothing follows it."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1950,5 +2104,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:20:40.431Z"
 }

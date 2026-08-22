@@ -1429,6 +1429,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not the absolute count of strands.\"; \", not a derivation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.172Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "\"a **boundary condition** of the framework, not a derivation\" and \"the *excess* topological complexity ..., not the absolute count of strands\" are both load-bearing - the first is the block's honesty about calibration, the second distinguishes two quantities."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1448,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.213Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1467,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 480 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.254Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Three spaced em-dashes in 4.4k, two in section headers and one appositive."
       }
     ],
     "trap-triples": [
@@ -1486,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 480 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.292Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The three anchors are a real table with three named alternatives, each with a setting."
       }
     ],
     "trap-closing-aphorism": [
@@ -1505,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.330Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The Summary section restates the two tiers and names the alternatives - recorded under thesis-restatement below rather than as an aphorism."
       }
     ],
     "trap-meta-commentary": [
@@ -1524,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.371Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "\"We separate topological constants from dimensional constants\" states what the block does; it does not narrate emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1543,6 +1633,22 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.412Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "The \"## Summary\" section repeats the two-tier split and the anchor discussion in compressed form, adding nothing. Recorded pass because a named Summary section in a long remark is a legitimate structure, with the redundancy noted."
       }
     ],
     "trap-performed-warmth": [
@@ -1562,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.452Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1581,6 +1702,23 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.491Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "Three findings, two of them checkable errors. (1) PIN CURRENCY: the block prints \"q_0 = 1.109978595554181... (muon pin, 16 dps)\". That is the OLD muon value - the current muon pin is 1.10997859555733471, and the two diverge at the 13th significant figure. The old value is arithmetically correct rather than corrupt, so this is a currency defect; and per the 2026-08-07 owner directive the default for compute is now the proton pin 1.1099785827513808. Separately, the AGENTS notation register forbids a specific numerical q_0 outside the introduction and Chapter 7, and this is a mass-theory remark. (2) NOT DIMENSIONLESS: \"dimensionless ratios such as m_mu/m_e and m_n - m_p\" - a mass difference is not a ratio and is not dimensionless; it is exactly the kind of quantity whose value depends on the anchor the sentence claims it is independent of. (3) \"m_e is the most precisely measured particle mass in the Standard Model\" is an unsourced superlative. VERIFIED CORRECT: m_e(natural) = Li_2(q^-2)/hbar_q^2 computes to 111.8955 at the proton pin and 111.8955 at the muon pin, matching the \"approximately 112\" recorded in observations/epistemic-status-of-calibrations.md; [N]_q as written is the standard quantum integer; the anchor values 0.511 MeV, 246 GeV and 1.22e19 GeV are right; and CAL-1 = m_e agrees with the AGENTS calibration doctrine.",
+        "notes": "Reported, not edited. Route: re-pin the quoted q_0 to the proton value or drop the numeral entirely per the notation register; replace \"m_n - m_p\" with an actual dimensionless quantity (m_n/m_p) or move it to a separate clause about splittings; source or soften the precision claim. NOTE also: \"m(K) = Vol(K) * rho_q with rho_q = 1/hbar_q^2\" drops the per-block density rho(K) from the AGENTS canonical shape m(K) = m_e * Vol(K) * rho(K) / hbar_q^2 - possibly a different (Kashaev) convention, worth confirming against rem:kashaev-volume-density."
       }
     ],
     "trap-nonspeakable": [
@@ -1600,6 +1738,22 @@
         "reviewed_at": "2026-08-15T10:31:00.558Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2c83802185fc",
+          "ts": "7dad4579267b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:18:40.532Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "\"The two tiers commute with disjoint operations\" is opaque - tiers do not commute with operations - but the two bullets under it are clear."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1622,5 +1776,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:18:40.532Z"
 }

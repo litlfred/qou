@@ -1232,6 +1232,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not by reaching a numerical threshold.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.590Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "'A shell fills by exhausting available linking sites at its writhe level, not by reaching a numerical threshold.' The distinction is the block's actual content — topological saturation versus counting — so it falls in the substantive-mathematical-contrast class.",
+        "notes": "pass on the trap criterion, but the claim contradicts the proposition it interprets: prop:noble-gas-characterization's condition 1 is literally 'Each S_i = 2 n_i^2 . T_{2,3}', which IS a numerical threshold, and its data table lists the thresholds row by row. So the interpretation denies the form its parent's statement takes. Related, not fixed: 'No Reidemeister I move can add or remove a crossing without breaking the sub-link' is false for R1 as normally defined — R1 is available on any diagram and changes the crossing number by one while preserving the link type. The intended claim is presumably about a framed or site-constrained structure, but the block does not say so. Structural note: this single remark block contains two separately headed remarks, '**Remark (why full curls)**' and '**Remark (mathematical novelty)**', and the .ts title names only the second."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1251,6 +1267,22 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.235Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of both halves of the block (the 'why full curls' explanation and the 'mathematical novelty' remark). T_{2,3} does wind twice around one axis and three times around the other, as stated. No pivot, no em-dash, no triple, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1270,6 +1302,22 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.276Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of both halves of the block (the 'why full curls' explanation and the 'mathematical novelty' remark). T_{2,3} does wind twice around one axis and three times around the other, as stated. No pivot, no em-dash, no triple, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1289,6 +1337,22 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.313Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of both halves of the block (the 'why full curls' explanation and the 'mathematical novelty' remark). T_{2,3} does wind twice around one axis and three times around the other, as stated. No pivot, no em-dash, no triple, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1308,6 +1372,23 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.509Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "severity": "major",
+        "evidence": "Two aphorism devices in a short block. The first is set off deliberately: 'This yields:' followed by a blockquote containing only the bolded slogan 'Full shell = full curls.' — a pull-quote whose only function is quotability; it states nothing the surrounding sentences do not. The second closes the block: 'This topological characterization replaces heuristic chemistry with a rigid sub-Hopf link invariant.' It is near-identical in construction to the closer I flagged on rem:metallic-character-knot-novelty ('A rigid topological invariant replaces qualitative chemical models'), which suggests a template rather than two independent conclusions.",
+        "notes": "flagged, not fixed (the closing sentence's factual content is also in dispute — see below — so it cannot be repunctuated without deciding what it should say). Proposed: drop the blockquote, since the sentence before it already says a closed sub-link is one where every curl fully interlocks; and replace the closer with what the block can support. FINDING that the closer's companion sentence is contradicted by its own parent: 'It formally binds empirical ionization energy peaks to crossing-energy maxima.' The parent prop:noble-gas-characterization carries a dated authorNotes caveat (2026-06-16) saying the opposite — that an exploratory 50-dps computation of sigma_F along the electron-dressing chain 'does not support the Relation to ionization energy mechanism as written: sigma_F(k) decays monotonically along the chain rather than peaking at closed shells', and that 'the ionization-energy and shell-closure claims are interpretations pending a categorical derivation, not results'. 'Formally binds' asserts precisely the derivation the caveat records as absent. Proposed: 'It suggests a correspondence between ionization-energy peaks and crossing-energy maxima, not yet derived (see the caveat on the parent proposition).'"
       }
     ],
     "trap-meta-commentary": [
@@ -1327,6 +1408,22 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.350Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of both halves of the block (the 'why full curls' explanation and the 'mathematical novelty' remark). T_{2,3} does wind twice around one axis and three times around the other, as stated. No pivot, no em-dash, no triple, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1346,6 +1443,22 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.390Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of both halves of the block (the 'why full curls' explanation and the 'mathematical novelty' remark). T_{2,3} does wind twice around one axis and three times around the other, as stated. No pivot, no em-dash, no triple, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1365,6 +1478,22 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.427Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of both halves of the block (the 'why full curls' explanation and the 'mathematical novelty' remark). T_{2,3} does wind twice around one axis and three times around the other, as stated. No pivot, no em-dash, no triple, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1384,6 +1513,23 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.548Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "severity": "minor",
+        "evidence": "'replaces heuristic chemistry with a rigid sub-Hopf link invariant' and 'formally binds empirical ionization energy peaks to crossing-energy maxima' are both maximum-strength and both unqualified — displacement of the standard account, and a formal binding — in a two-sentence remark that derives neither. 'Rigid ... invariant' is also unestablished: nothing in the block or its parent shows the sub-Hopf link decomposition is invariant under anything.",
+        "notes": "flagged, not fixed (same two sentences as the aphorism entry; one edit resolves both)."
       }
     ],
     "trap-nonspeakable": [
@@ -1403,6 +1549,22 @@
         "reviewed_at": "2026-08-15T10:31:01.140Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c8100578f00e",
+          "ts": "0b389352eb15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:28:28.469Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of both halves of the block (the 'why full curls' explanation and the 'mathematical novelty' remark). T_{2,3} does wind twice around one axis and three times around the other, as stated. No pivot, no em-dash, no triple, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1425,5 +1587,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:28:28.590Z"
 }

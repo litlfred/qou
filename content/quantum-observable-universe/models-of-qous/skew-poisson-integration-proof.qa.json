@@ -1203,6 +1203,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.793Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1222,6 +1237,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.833Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-em-dash": [
@@ -1241,6 +1271,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.871Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-triples": [
@@ -1260,6 +1305,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.908Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-closing-aphorism": [
@@ -1279,6 +1339,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.943Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-meta-commentary": [
@@ -1298,6 +1373,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.981Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-thesis-restatement": [
@@ -1317,6 +1407,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:13.018Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-performed-warmth": [
@@ -1336,6 +1441,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:13.054Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-superlative": [
@@ -1355,6 +1475,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:13.089Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "trap-nonspeakable": [
@@ -1374,6 +1509,21 @@
         "reviewed_at": "2026-08-15T10:31:01.067Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:13.127Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (proof, 7 lines, ~0.3kB). Checked $\\pp$ against the preamble before flagging it: main.tex line 237 defines \\newcommand{\\pp}{p} for p-adic content and it is used this way in eight other blocks, so '$\\pp$-adic filtration' is correct usage and NOT sweep damage. No rhetorical construction in any of the ten categories - all clean. Three substantive defects (an item (3) that does not exist in the proposition, a stripped accent, and an uncitable attribution) are reported as anomalies."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1396,5 +1546,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:26:13.127Z"
 }

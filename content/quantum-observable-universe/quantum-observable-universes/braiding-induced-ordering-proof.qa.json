@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.600Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Technical negations only ('non-empty', 'non-zero', 'no infinite descending chains'). The closer's concessive 'Although the machinery is standard, its interpretation is novel' is contrast-shaped but its defect is the novelty claim itself, scored under closing-aphorism and meta-commentary."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.638Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Proof steps (a)-(c) then admissibility then interpretation; the transitions are structural headers, not setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,23 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 355 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.677Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "Four dash constructions in one proof block: 'such words - a finite set'; 'bounded degree - the Hecke relation is quadratic'; 'with time reversed - precisely the opposite braiding'; and the unspaced pair in the closing sentence 'its physical interpretation-formally linking ... arrow of time-is a novel conceptual contribution'. Density is the tell here, and three of the four append an afterthought where a full stop or colon is what is meant.",
+        "notes": "Proposed: 'such words, a finite set.'; 'bounded degree; the Hecke relation is quadratic.'; 'with time reversed: the opposite braiding.'; the fourth disappears with the closing-sentence fix below. Not applied because the closer is being flagged structurally and the four should move together."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 355 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.713Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The C/P/T triple is the actual content of CPT symmetry (three named involutions with explicit formulas); the two-item 'two faces' list is a genuine pair."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,23 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.758Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The block ends on a placed evaluative closer: 'Although the underlying mathematical machinery is a standard degree-lexicographic well-foundedness construction, its physical interpretation ... is a novel conceptual contribution introduced by the Quantum Observable Universe.' A proof block ends with the proof (the QED box is four paragraphs earlier); this is a self-assessment of significance, not mathematics.",
+        "notes": "Proposed (structural, .ts edit needed, not applied): delete the sentence from the .md and migrate it to authorNotes per AGENTS.md 4d, e.g. { kind: 'note', body: 'The degree-lex well-foundedness construction is standard; what is new here is the identification of the braid over/under structure with the thermodynamic arrow of time.' } Keeps the author's claim, removes it from the scholarly voice."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1534,23 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.796Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Same closing sentence narrates the significance of the author's own result ('is a novel conceptual contribution introduced by the Quantum Observable Universe'), naming the framework in the third person as the contributor. Category 6: place the contribution, do not announce it.",
+        "notes": "Same proposed fix as the closing-aphorism entry: migrate to authorNotes."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1570,22 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.836Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The closer evaluates rather than restates; the interpretive content (two faces, CPT) is genuinely new relative to the proof. Scored under closing-aphorism/meta-commentary instead."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1605,21 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.874Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1639,22 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.912Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "'novel conceptual contribution' is self-promotion rather than an unqualified maximum-strength claim, and is scored under meta-commentary; 'precisely the opposite braiding' is exactness."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1674,23 @@
         "reviewed_at": "2026-08-15T10:30:59.868Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c6ffc0e2f64b",
+          "ts": "a23bf771cd88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:55:25.950Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "The closing sentence is a 45-word single clause with an embedded unspaced-dash appositive ('its physical interpretation-formally linking the categorical braid-over-under structure to the macroscopic thermodynamic arrow of time-is a novel conceptual contribution'); it parses on the page and stalls aloud.",
+        "notes": "Resolved by the same structural fix (migrate to authorNotes). If kept in prose: 'The machinery is a standard degree-lexicographic well-foundedness argument. The interpretation is new: it links the braid over/under structure to the thermodynamic arrow of time.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1713,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:55:25.950Z"
 }

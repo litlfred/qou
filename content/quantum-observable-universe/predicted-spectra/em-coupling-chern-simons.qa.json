@@ -1499,6 +1499,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the hyperbolic volume:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.618Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read. Three negation constructions, all substantive: 'k is not an independent input' (the block's whole claim); 'their tau-image invariant is the CS functional, not the hyperbolic volume' (T_2,9 and T_3,5 are non-hyperbolic - technically load-bearing); and the '**not** of the 6x6 Markov-Gram' aside, which is explicit disambiguation against a real symbol collision with prop:frobenius-gram-matrix."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1518,6 +1533,21 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.659Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "No setup-then-reframe. The 'Either the Gram-determinant identification is wrong, or the truncation omits higher-order contributions' sentence is a genuine disjunction of two open hypotheses, not a pivot whose second clause carries everything."
       }
     ],
     "trap-em-dash": [
@@ -1537,6 +1567,22 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 462 words)"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.698Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "One spaced em-dash pair in the whole block (the '--- of the 2x2 CS pairing ... --- is conjectured' aside). It is a true parenthetical performing load-bearing disambiguation; the remaining '--' occurrences are the LaTeX en-dash inside the proper name Chern--Simons. Density is not the tell here.",
+        "notes": "The same construction is recorded as a fail under trap-nonspeakable (40-word interruption between subject and verb); not double-counted here."
       }
     ],
     "trap-triples": [
@@ -1556,6 +1602,21 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 462 words)"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.737Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "No reflex triple. The one three-item list ('the choice of basis ... and the explicit form of s_i, ell, c_i') enumerates three actual undetermined quantities in the ansatz."
       }
     ],
     "trap-closing-aphorism": [
@@ -1575,6 +1636,21 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.778Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Block ends 'Closing kappa structurally remains an open problem. See [open problems](#rem:alpha-em-derivation-open-problems).$\\square$' - a factual status statement plus a cross-reference closer, which the skill lists as a false-positive class."
       }
     ],
     "trap-meta-commentary": [
@@ -1594,6 +1670,21 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.820Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "No narration of emphasis. The bolded '**not**' places emphasis directly rather than announcing it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1613,6 +1704,21 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.860Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "The repeated 'this identification is unproved' / 'closing kappa remains open' are distributed status facts (conjecture banner, then proof sketch), not a block-final restatement of an established result."
       }
     ],
     "trap-performed-warmth": [
@@ -1632,6 +1738,21 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.903Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Institutional register throughout; no personal or warm register."
       }
     ],
     "trap-superlative": [
@@ -1651,6 +1772,21 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.942Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "No maximum-strength claims. Hedges are present and calibrated ('is conjectured to', 'suggests', 'not fixed')."
       }
     ],
     "trap-nonspeakable": [
@@ -1670,6 +1806,23 @@
         "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "84da32157a68",
+          "ts": "abadb3b00f1d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:17.983Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "severity": "minor",
+        "evidence": "The kappa sentence is 63 words with a 41-word em-dash interruption between subject and verb: 'The determinant ratio $\\kappa = \\det G^{cl}/\\det G^{q}$ --- of the 2x2 Chern--Simons pairing displayed above, **not** of the 6x6 Markov--Gram tr_M(b_i b_j) of [Frobenius Gram matrix], which is a different matrix and is singular under the production trace convention --- is conjectured to capture the self-dual damping at the J^2 level, with numerical value kappa approx 1.722.' It parses on the page and stalls aloud. Sole instance; severity minor.",
+        "notes": "Structural (math-adjacent), not edited. Proposed fix: split into two sentences - 'The determinant ratio $\\kappa = \\det G^{cl}_{CS}/\\det G^{q}_{CS}$ of the $2\\times2$ Chern--Simons pairing displayed above is conjectured to capture the self-dual damping at the $J^2$ level, with numerical value $\\kappa \\approx 1.722$.' then 'This is not the $6\\times6$ Markov--Gram $\\mathrm{tr}_M(b_i b_j)$ of [Frobenius Gram matrix](#prop:frobenius-gram-matrix), which is a different matrix and is singular under the production trace convention.' Keeps the disambiguation, drops the interruption."
       }
     ],
     "wall-base-ring-minimal": [

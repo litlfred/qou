@@ -28,7 +28,7 @@ defined and continuous across $\varphi_0$, precisely where the individual
 branches collide and swap. The labelling is required only to differentiate term
 by term, which is a local operation, so it is needed only away from $\varphi_0$.
 
-This is the general shape of the situation and worth stating as such: a
+In general, a
 symmetric function of a family of roots is insensitive to the monodromy that
 permutes them, and an obstruction to labelling the branches is not an
 obstruction to the symmetric total.
@@ -36,7 +36,7 @@ obstruction to the symmetric total.
 ## Non-vacuity is proved, not assumed
 
 A conditional statement is worthless if its hypotheses are unsatisfiable, and
-the corpus checks this rather than leaving it to the reader: a companion result
+that is checked here: a companion result
 exhibits $S(\varphi) = \varphi^{2}$ satisfying both hypotheses, with the
 conclusion reading $\pi^{2} = 0 + \pi^{2}$.
 

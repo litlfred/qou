@@ -1070,6 +1070,188 @@
         "reviewed_sha": "6f1455d0ab9615f49c05a0c7dbb4a77df86747d1",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.941Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'The order-gap observed in the continuum limit (the vanishing of c_1 linear terms in the u-ladder) **is not an algebraic coincidence, but a geometric projection**.' Textbook assert-by-denying-the-opposite, and NOT the substantive-contrast false-positive class: no argument distinguishes the two alternatives, the sentence simply denies the deflationary reading and asserts the block's thesis in its place.",
+        "notes": "PROPOSED (not applied -- this block is structurally broken, see trap-superlative; the coordinating session should decide the block's fate before its prose is edited): 'The order-gap observed in the continuum limit is a geometric projection: ...' followed by the argument that currently does not appear."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:10.983Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Three numbered strategy steps; no setup-then-reframe.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.026Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.067Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Three proof-strategy steps, each a distinct claim (topology, projection, WKB limit).",
+        "notes": "Substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.108Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends on 'The topological normalization fixes the K-level parameter c_4 = 2, enforcing C = -22.' -- a claim, not a closer.",
+        "notes": "Its content is refuted; see trap-superlative."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.165Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.209Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No recapitulation.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.253Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.296Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'corresponds **exactly** to the mode-selective projection'; 'the **pristine** 1 + c_2 u^2 + ... sequence'; 'must span the Toroidal Harmonic basis'; and 'The topological normalization **fixes** the K-level parameter c_4 = 2, **enforcing** C = -22'. Four unqualified claims, none derived in the block, on a statement whose only support is a 'Proof Strategy'.",
+        "notes": "REPORT ONLY. Four independent findings, none fixed. (1) THE STATED ODE IS WRONG. The block gives F''(eta) - (n^2 - 1/4 + (m^2-1/4)/sinh^2 eta) F = 0 for toroidal harmonics P^m_(n-1/2). Deriving the normal form: the associated Legendre equation in eta (x = cosh eta) is y_ee + coth(eta) y_e - [nu(nu+1) + m^2/sinh^2] y = 0; removing the first-derivative term with y = F/sqrt(sinh eta) contributes -p^2/4 - p'/2 = -1/4 + 1/(4 sinh^2) with p = coth, giving F'' - (nu(nu+1) + 1/4 + (m^2-1/4)/sinh^2) F = 0, and nu(nu+1) + 1/4 = n^2 for nu = n-1/2. So the constant is n^2, NOT n^2 - 1/4. Confirmed numerically with mpmath.legenp at three points -- (n,m,eta) = (2,1,0.8), (3,0,1.3), (1,2,0.6) -- the implied constant is 4.0, 9.0, 1.0 exactly, i.e. n^2, against n^2-1/4 = 3.75, 8.75, 0.75. (2) c_4 = 2 is a THIRD unsourced value for c_4: the sibling multi-link-jones-q1-extension.md gives c_4 = b^2 + 1/2 = 1.2527 at the Hoefsmit b = 0.86758, and AGENTS.md records that the canonical producer never computes c_4 at all (QOU.QBeta.greedy_later_rungs_vanish). 'enforcing C = -22' is asserted with no derivation. (3) The block is CONVENTION-C-frame throughout (the whole c_k u-ladder is, per the 2026-08-15 ruling) and carries no scope label. (4) STRUCTURAL, and already catalogued elsewhere: this block's .ts imports 'Proposition' from '../../ontologist', a module that HAS NEVER EXISTED -- content/pipeline/block-manifest-audit.ts names this exact block as one of five whose manifest the pipeline cannot load, so it is invisible to the paper and to every per-block checker. It also carries status: 'verified' on a .ts manifest, which AGENTS.md sec 4 forbids outright ('Agents must never add a status field to content block .ts files'), and it is a 'proposition' whose entire body is a proof STRATEGY, so under sec 3b it should be a conjecture."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "46a24aaecc28",
+          "ts": "ca4fefed4e1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:11.340Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Heaviest: 'inheriting the half-integer degree representations of sl_2'; 'the local Liouville-Green limit of the Toroidal Harmonic ODE near its vacuum turning points'.",
+        "notes": "Dense but parses aloud."
+      }
     ]
   },
   "updated_at": "2026-08-21T21:30:21.942Z"

@@ -2141,6 +2141,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.194Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2160,6 +2175,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.250Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -2179,6 +2209,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.335Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -2198,6 +2243,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.399Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -2217,6 +2277,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.453Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -2236,6 +2311,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.505Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -2255,6 +2345,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.555Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -2274,6 +2379,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.637Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -2293,6 +2413,23 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.694Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Three unbacked intensifiers in three sentences: 'reduces storage requirements DRASTICALLY', 'This optimization is ESSENTIAL for atom-knot identification at high n', 'enabling EFFICIENT evaluation of MANY hyperbolic knots'. None is quantified and the .ts carries no computation or witness field, so nothing in the block or its manifest measures any of them. Compounding it, the one number that IS given contradicts the manifest: the .md says '$10\\times$ speedup' while the .ts title says '$50\\times$ speedup'.",
+        "notes": "Proposed (needs a measurement, so not fixable inline): resolve 10x vs 50x against an actual benchmark, add a computation/witness to the .ts recording it, and replace 'drastically'/'essential'/'efficient' with the measured figures - or state the speedup as approximate and drop the unquantified adjectives."
       }
     ],
     "trap-nonspeakable": [
@@ -2312,6 +2449,21 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a274e9abbd1f",
+          "ts": "07987c140bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.757Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the three-paragraph proposition. The mathematical content is correct as far as it goes: the classical Murnaghan-Nakayama rule does compute chi^lambda_rho by border-strip removal, and the Halverson-Ram broken-strip rule is the q-analogue replacing the sign by a q-weight. But the block is a PERFORMANCE claim carrying no benchmark: its .ts declares no computation/witness, and its own headline number contradicts its manifest - see below. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2335,5 +2487,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:23:11.757Z"
 }

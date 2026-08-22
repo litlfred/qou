@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.925Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.978Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.025Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.090Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.154Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.214Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.266Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.318Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.382Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4a57814a307d",
+          "ts": "ee17593de8e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:34.443Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 10-row algebraic-object <-> Markov-chain dictionary. Checked SS7a compliance: generator written sigma_i (never T), Jones polynomial J_L(q) (never V_K(t)), eigenvalues q and -q^{-1} matching (sigma-q)(sigma+q^{-1})=0 -- all correct. The 'Markov trace weights w_lambda | probability measure' row is substantively right: I verified independently that the n=3 Wedderburn weights q^2/D, (q^2+1)^2/D, q^2/D with D=q^4+4q^2+1 sum to exactly 1 and are positive for q>1, so 'probability measure' is earned rather than decorative. No numerics, no q_0 values.",
+        "notes": "CONVENTION NOTE (cannot be resolved from this block): the Markov-property row writes tr(x sigma_n) = z tr(x) and the vertex-volume row writes V_i = z a_i + b_i, but z is never given a closed form here, so the table is convention-neutral as written. The SIBLING table tbl:frobenius-s-classification-table2-data supplies z = (q^{1/2}+q^{-1/2})^{-1}, which is convention C (excised); if that is the z meant here, both rows inherit the C dependence. Flagging rather than guessing."
+      }
     ]
   },
   "source_hashes": {
     "md": "4a57814a307d",
     "ts": "ee17593de8e9"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:23:34.443Z"
 }

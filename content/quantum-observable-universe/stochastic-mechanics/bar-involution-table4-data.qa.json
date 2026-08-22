@@ -895,7 +895,177 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.976Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.015Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.055Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.096Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.134Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.176Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.216Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.256Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.295Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e0c9553b12cd",
+          "ts": "17b74fdb6ca6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:03.334Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar-neutral rationals), no prose sentences. Rationals are bar-fixed since bar is a ring map fixing Q; the Q(sqrt2) 'silver' row lists -11/8, -49/32, 7/2, all in Q, so the row's header is wider than its examples (noted, not a defect)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:03.334Z"
 }

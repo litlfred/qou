@@ -218,26 +218,23 @@
 % Some recent TeX Live distributions predefine \varTheta; redefine safely.
 \providecommand{\varTheta}{}
 \renewcommand{\varTheta}{\mathrm{\Theta}}
-% Reeb vector field variants used in contact/brane geometry
-\newcommand{\xid}{{\xi_{d}}}   % ξ_d — Reeb field (d-component)
-\newcommand{\xiZ}{{\xi_{Z}}}   % ξ_Z — Reeb field (Z-component)
-\newcommand{\xiA}{{\xi_{A}}}   % ξ_A — Reeb field (A-component)
-% ── Stubs for compound macros (missing spaces in source content) ──────────────
-% These arise from LaTeX commands written without a separating space/brace.
+% ── Reeb / compound-macro stubs: REMOVED 2026-08-22 ───────────────────────────
+% This block defined 16 macros whose names are author typos — a control
+% sequence written without the space that separates it from the next token
+% (\pi c_s -> \pic_s, \xi Z -> \xiZ, \lambda L -> \lambdaL). Defining the
+% glued name makes the page compile, and that is the problem: it converts a
+% loud failure into silently-wrong printed mathematics. Two did exactly that.
+% \pic expanded to \pi, so `2\pic_s` printed 2\pi_s and the sound speed
+% vanished from a Hawking-temperature denominator that the same block's prose
+% writes correctly as 2\pi c_s. \xid expanded to \xi_d, so
+% `\mathcal{L}_\xid\alpha` printed the Lie derivative along a subscripted
+% field with no argument instead of \mathcal{L}_\xi d\alpha. \xid, \xiZ and
+% \xiA were commented here as "Reeb vector field variants"; no such notation
+% is registered in content/quantum-observable-universe/notation/, so the
+% comment documents three typos as though they were notation.
+% Every source site is fixed; do not restore these. If one reappears, the
+% undefined-control-sequence error is the correct outcome — fix the .md.
 \newcommand{\pp}{p}             % prime p — used in p-adic content (\mathbb{Q}_\pp, \mathbb{F}_\pp, v_\pp). Italic per math-mode convention; not \mathfrak{p} which is reserved for the proton (CLAUDE.md §7aa).
-\newcommand{\pid}{\pi d}
-\newcommand{\nuk}{\nu_{k}}
-\newcommand{\varepsilonk}{\varepsilon_{k}}
-\newcommand{\varepsilonq}{\varepsilon_{q}}
-\newcommand{\foralln}{\forall n}
-\newcommand{\omegadV}{\omega\,dV}
-\newcommand{\omegads}{\omega\,ds}
-\newcommand{\Gammat}{\Gamma t}
-\newcommand{\psiK}{\psi_{K}}
-\newcommand{\pic}{\pi}
-\newcommand{\pia}{\pi a}
-\newcommand{\lambdaL}{\lambda L}
-\newcommand{\inftydt}{\infty\,dt}
 % \unicode{codepoint} — ConTeXt-style; used in appendix-surreals for ☉ (U+2609)
 \newcommand{\unicode}[1]{\ensuremath{\odot}}
 % Young-diagram macro stub (ytableau not loaded; renders partition as list)

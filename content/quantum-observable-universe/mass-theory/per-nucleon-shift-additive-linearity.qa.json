@@ -1768,6 +1768,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:24.464Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1787,6 +1802,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:24.547Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Recurrence, closed form, four-sentence gloss; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1806,6 +1836,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:24.652Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1825,6 +1870,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:24.750Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1844,6 +1904,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:24.860Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the computational payoff (no NF tables needed for heavier isotopes)."
       }
     ],
     "trap-meta-commentary": [
@@ -1863,6 +1938,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:24.957Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1882,6 +1972,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:25.056Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This verifies the closed-form shift exponent' points at the evidence rather than restating the formula — though see the note: the cited evidence does not verify it."
       }
     ],
     "trap-performed-warmth": [
@@ -1901,6 +2006,21 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:25.150Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1920,6 +2040,23 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:25.231Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Five intensifiers in a four-sentence gloss plus the italic statement: 'strictly obeys', 'injects precisely 12', 'verify perfectly', 'evaluates exactly', 'the exact closed form'. 'Verify perfectly' is also not idiomatic (verify is being used intransitively). The density matters more than usual here because, per the rigor note, the two symbolic checks the block leans on do not in fact pass.",
+        "notes": "FIXED INLINE (prose only, two sentences, no math and no numeric change): 'strictly obeys an additive-linearity recurrence' -> 'obeys an additive-linearity recurrence'; 'The linear additive shifts verify perfectly across the full evaluated nucleus table.' -> 'The linear additive shifts hold across the full evaluated nucleus table.' Left untouched: 'precisely 12' and 'exactly to -1/12', which quantify rather than intensify, and 'the exact closed form', which is a real claim to be adjudicated on the mathematics (see the note). Delimiter balance re-checked: 4 display delimiters, even."
       }
     ],
     "trap-nonspeakable": [
@@ -1939,6 +2076,22 @@
         "reviewed_at": "2026-08-15T10:31:00.453Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e2403e81aba0",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:55:25.318Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short declaratives.",
+        "notes": "RIGOR. VERIFIED CORRECT: shift(Z,N) = 18Z + 21N + 1 reproduces every row of Table 1 exactly — D(1,1) 40, T(1,2) 61, 3He(2,1) 58, 4He(2,2) 79, 5Li(3,2) 97, 6Li(3,3) 118 — and Table 2's generator budget is internally consistent (proton 7+3+2 = 12, neutron 5+5+2 = 12, matching 'each new nucleon injects precisely 12 new generators'). SEE THE SIBLING prf: BLOCK'S NOTE for the major defect: both symbolic witnesses this proposition's proof cites as 'categorical verification' are recorded FAILING in the committed tree. SEPARATE MINOR ITEM, here: 'The leading coefficient at u=0 evaluates exactly to -1/12 for the proton standalone' is unsourced — the .ts computation field names computations/per_nucleon_shift_derivation.py, whose witness contains no leading-coefficient assertion, and the proton witness the proof cites reports only pole ORDERS, not the leading coefficient. Given that -1/12 is a value a reader will recognise from elsewhere, it needs a witness field or it should go."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1962,5 +2115,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:55:25.318Z"
 }

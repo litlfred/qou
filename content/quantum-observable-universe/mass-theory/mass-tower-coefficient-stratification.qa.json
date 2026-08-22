@@ -1777,6 +1777,23 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.493Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'No prefactor is a free fit.' asserts by denying, and the sentence that immediately follows describes the very thing denied: 'Each is the unique scalar making the depth-k stratum reproduce its Bethe--Weizsaecker counterpart.' A scalar defined as the one that makes a stratum reproduce an empirical Bethe--Weizsaecker coefficient is obtained by inverting against that coefficient — which is what a fit is. The denial does not survive contact with its own next sentence, and the block's own Table 2 lists four of the seven coefficients as 'open'.",
+        "notes": "Proposed (structural — this is a claim, not a wording choice): either state the positive derivation ('alpha_k is the Plancherel weight w_{Lambda_k}(1), computed from the stratum alone') and drop the comparison-to-BW framing, or keep the framing and label the prefactors 'matched to' rather than 'derived'. As written the block trips the AGENTS.md anti-laundering rule: 'derive, then check - never fit'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1813,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.545Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1847,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.609Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1881,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.662Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1915,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.732Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The final line is a restatement rather than a fresh aphorism; recorded under trap-thesis-restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1949,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.807Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1983,23 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.856Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The block closes on 'We require neither truncation nor fitting.' — a four-word restatement of 'No prefactor is a free fit' from the opening, adding nothing and placed as a terminal flourish. It also does not follow from the sentence before it: 'The sum of w_lambda(1) over Lambda_k is <= 1. Thus each coefficient is automatically bounded.' Boundedness of a weight sum says nothing about whether the coefficient was fitted; a fitted coefficient can be bounded.",
+        "notes": "Proposed: delete the closing sentence, or replace it with what the boundedness argument actually gives ('so no truncation is needed to make the stratum sum converge')."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2019,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.907Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2053,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:15.967Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'the unique scalar' and 'automatically bounded' are technical, though the inference they sit in is a non sequitur (recorded under trap-thesis-restatement)."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2087,21 @@
         "reviewed_at": "2026-08-15T10:31:00.414Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ca8a517a9a32",
+          "ts": "ade2ff4089f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:16.025Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2125,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:46:16.025Z"
 }

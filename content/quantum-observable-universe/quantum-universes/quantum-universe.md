@@ -23,6 +23,6 @@ satisfying the following four axioms:
 
 Rigidity of $\mathbf{C}$ is not required here. It is imposed on a [quantum observable universe](#def:quantum-observable-universe), where duals carry the antiparticles.
 
-**On the ground ring.** $R$ is a commutative ring, not a field: the framework's own ground ring $R_q = \mathbb{Z}[q, q^{-1}]$ is not one, and "invertible in $R$" in axiom 4 is strictly stronger than "nonzero" once $R$ has non-units. The two clauses coincide only over a field, which is what allowed the weaker reading to pass unnoticed.
+**On the ground ring.** $R$ is a commutative ring, not a field: the framework's own ground ring $R_q = \mathbb{Z}[q, q^{-1}]$ is not one, and "invertible in $R$" in axiom 4 is strictly stronger than "nonzero" once $R$ has non-units. The two clauses coincide only over a field.
 
 The identification $R \cong \mathrm{End}_{\mathbf{C}}(\mathbf{1})$ in item 1 is a genuine hypothesis and not a consequence of $R$-linearity. Linearity supplies only the ring map $r \mapsto r \cdot \mathrm{id}_{\mathbf{1}}$; its bijectivity is the statement that $\mathbf{1}$ is simple, and it is what licenses reading the block data $\int_A p_\lambda$ and $\dim_q(\lambda)$ as elements of $R$ rather than as endomorphisms of the unit. It is stated here because the rest of the paper uses it silently — for instance in taking the substrate parameter $q \in \mathrm{End}(\mathbf{1})$.

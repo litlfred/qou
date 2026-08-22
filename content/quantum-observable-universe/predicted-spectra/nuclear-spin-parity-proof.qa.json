@@ -1176,6 +1176,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.164Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "'Knots carry half-integral spin; links carry integral spin' is a stated dichotomy, not an assert-by-denying construction; no negation-contrast anywhere in the block.",
+        "notes": "pass on the trap criterion. THE BATCH'S PRINCIPAL FINDING, not fixed inline: the proof's opening sentence is false in the framework's own terms, and it is load-bearing. It reads 'Each nucleon — proton p = B_3(u,u,d) or neutron n = B_3(u,d,d) — is a knot (a single-component link closure of the Borromean braid)'. I computed the closure: B_3 = (sigma_0 sigma_1^{-1})^3, whose underlying permutation on 3 strands is ((01)(12))^3 = the identity, giving THREE fixed points and therefore THREE components. That is exactly what makes it the Borromean rings, and the corpus says so elsewhere — rem:meson-to-proton-via-borromean has B_3 'confining three quarks', and rem:linking-relations-table-table1-data gives p (+) n = 6 components, i.e. 3 per nucleon. Why it is load-bearing rather than a slip of wording: the very next sentence is the proof's engine, 'Knots carry half-integral spin; links carry integral spin.' Under that dictionary a 3-component nucleon has INTEGRAL spin, which contradicts the spin-1/2 nucleon the whole proposition rests on and would give every nucleus integral spin regardless of A. Either the dictionary or the identification has to change; the two cannot both stand. The same false 'single-component knot' appears in the proposition block. Note also that the dictionary itself is an external postulate — component count does not determine spin as a matter of topology — which contradicts rem:nuclear-spin-parity-novelty's claim that the framework reproduces spin-statistics 'without external postulates'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1211,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.201Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "The candidate is the braid-group section's closer: 'However, the q-deformed spin-statistics theorem follows directly from representation theory, independent of writhe.' It has the setup-then-reframe shape, but it is a substantive logical retreat — the block is withdrawing reliance on the writhe route — not manufactured emphasis, so it does not fire this criterion.",
+        "notes": "pass on the trap criterion. SECOND MATH FINDING, not fixed inline: that 'However' sentence dismisses a contradiction rather than resolving it, and leaves the contradiction on the page. The section states w(beta) = C(A,2) mod 2 and then 'w even <=> bosonic <=> J in Z'. Since C(A,2) is even exactly when A = 0 or 1 mod 4 — which the block itself derives — that chain yields J in Z iff A = 0,1 mod 4, whereas the proposition says J in Z iff A is even. They disagree for every A = 1 or 2 mod 4, and the table one block over refutes the writhe version outright: 1H has A = 1 (C(1,2) = 0, even, so 'bosonic') yet J = 1/2, and 2H has A = 2 (C(2,2) = 1, odd, so 'fermionic') yet J = 1. Proposed: either drop the writhe-parity equivalences, or state the writhe criterion as a separate claim that is refuted by the data, with the (a)/(b) scope classification. Two lesser notes. (a) The Jones--Wenzl paragraph does no work as written: it says p_14 projects onto V_7 while 14N has J = 1, then asserts 'the nuclear link's embedding selects the J = 1 subrepresentation via the coupling pattern of 7 protons and 7 neutrons' with no mechanism — the projector gives the wrong answer and the correction is unspecified. (b) On the convention question, which I checked rather than assumed: delta = -(q^{1/2} + q^{-1/2}) is the STANDARD Temperley--Lieb loop parameter, and its use here is not a convention-C dependence. Its reciprocal is numerically z_C — at the proton pin 1/(q^{1/2}+q^{-1/2}) = 0.499320334184 and sqrt(q)/(q+1) = 0.499320334184, identical because the two expressions are algebraically equal — but delta appears here as the TL loop value, not as a Markov parameter, so the 2026-08-15 convention-D ruling does not bite on this block. Recording it because the numeral 0.4993 is otherwise the convention-C fingerprint."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1246,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 330 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:28.848Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1233,6 +1281,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 330 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:28.888Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1316,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:28.928Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1351,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:28.967Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1386,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.007Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1421,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.046Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1456,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.086Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1491,22 @@
         "reviewed_at": "2026-08-15T10:31:01.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8fb6938d69f0",
+          "ts": "962df73a7006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:31:29.126Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Full read of the proof and its three appended sections (braid-group perspective, Jones--Wenzl projector, key examples). Verified what is right, and much of it is: the SU_q(2) tensor decomposition with J_min = 0 for even A and 1/2 for odd A is standard and correct; the q-Clebsch--Gordan rule V_{1/2} tensor V_J = V_{J+1/2} + V_{J-1/2} for J >= 1/2 is correct; 'Every summand V_J shares the parity of A/2 mod 1' is correct; the Jones--Wenzl projector p_A does project onto the highest-weight V_{A/2}; and the historical claim is accurate — the pre-1932 proton-electron model of 14N gave 14 protons + 7 electrons = 21 fermions and hence half-integer spin, contradicted by the observed J = 1 (the nitrogen catastrophe). I also checked the writhe-parity arithmetic: C(A,2) is even exactly when A = 0 or 1 mod 4, as the block says. Em-dashes are the parenthetical pair around 'proton ... or neutron' plus the compounds Temperley--Lieb, Clebsch--Gordan, Jones--Wenzl; no triple, no aphorism, no warmth, no meta-commentary beyond a plain 'In our framework'.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1529,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:31:29.201Z"
 }

@@ -890,6 +890,176 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.838Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.873Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.907Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.942Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.978Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.014Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.051Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.086Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.123Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "702677313416",
+          "ts": "649afdf808ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:42.159Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the three unconditional additions. The complexLiTwo series is written Sum_{k>=1} z^{k+1}/(k+1)^2, which omits the linear term and equals Li_2(z) - z - reported as an anomaly. blochWigner's formula is correct."
+      }
     ]
   },
   "label": "tbl:upstream-mathlib-additions-table1-data",
@@ -897,5 +1067,5 @@
     "md": "702677313416",
     "ts": "649afdf808ec"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:42.159Z"
 }

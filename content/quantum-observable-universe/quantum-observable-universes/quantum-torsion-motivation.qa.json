@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.222Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). no assertion-by-denial; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.260Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). no setup-then-reframe construction; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 114 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.298Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). em-dash count 0 in the block; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 114 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.336Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). no reflex three-item list; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.373Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). final sentence is substantive, not a quotable placed for closure; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.410Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). no narration of the author's own emphasis; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.446Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). no block-final restatement of what the text established; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.482Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). no personal or institutional-warmth register; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.520Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, three paragraphs). no unqualified maximum-strength claim; remark, three paragraphs.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1546,23 @@
         "reviewed_at": "2026-08-15T10:30:59.850Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a74795e19349",
+          "ts": "d2fb13a5bba6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:38.556Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "'The first $360^\\circ$ rotation addresses the physical state in space' - 'addresses' has no reading here.",
+        "notes": "FLAGGED, NOT fixed: meaning is at stake and the intended verb is not recoverable from the block. Separately FIXED in the same block: 'Quantum torsion identifies the failure of the algebra of states to commute' -> 'measures the failure ...', restoring the parallel with the preceding sentence 'Classical torsion measures the failure ...'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1585,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:38.556Z"
 }

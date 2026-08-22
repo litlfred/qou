@@ -1223,6 +1223,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a rational function;\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.589Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the ladder kernel is a q-Bessel object, not a rational function' and 'never for the genuine q-Bessel ratio r_k' are the block's actual dichotomy (q-holonomic vs C-finite); substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1242,6 +1258,21 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.646Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Four labelled steps, each advancing the derivation."
       }
     ],
     "trap-em-dash": [
@@ -1261,6 +1292,22 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 421 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.701Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Four em-dashes, all step-header separators ('**Step 1 -- the closed-form coefficients ...**'), which is this chapter's heading convention, not prose structure."
       }
     ],
     "trap-triples": [
@@ -1280,6 +1327,21 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 421 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.750Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No rhetorical triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1299,6 +1361,21 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.809Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on an honest scope limitation ('the production c_k ladder remains calibration-anchored'), the opposite of a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1318,6 +1395,21 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.871Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1337,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.937Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing paragraph narrows the claim rather than restating it."
       }
     ],
     "trap-performed-warmth": [
@@ -1356,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:10.999Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1375,6 +1497,22 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.060Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'exactly one factor' and 'exactly this pair of signatures' are both earned. RECOMPUTED, all correct: c_{k+1}/c_k = -q^k/((1-q^{k+1})(1-q^{nu+k+1})) - the Gaussian exponent difference k(k+1)/2 - k(k-1)/2 = k is right, so (star) is right; the q->1 limit (1-q)^2 c_{k+1}/c_k -> -1/((k+1)(nu+k+1)) is right; and 1/u = 1/0.00852 = 117.37, matching the quoted 117.4 and the witness's inv_u_substrate = 117.40898."
       }
     ],
     "trap-nonspeakable": [
@@ -1394,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.428Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5487e5764a4c",
+          "ts": "6df5fdb586c6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:11.116Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Dense but speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1417,5 +1570,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:13:11.116Z"
 }

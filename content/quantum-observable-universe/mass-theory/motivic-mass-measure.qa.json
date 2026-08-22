@@ -1561,6 +1561,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.166Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial. 'independently of n once A is stable at level n' is the well-definedness clause of the motivic measure."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1580,6 +1595,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.224Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Definition + two displays + a 'Mass from blow-ups' construction paragraph; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1599,6 +1629,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 182 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.290Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One em-dash, appositive: 'over the base field k — the free abelian group on isomorphism classes ...'. A true parenthetical gloss of K_0(Var_k); density 1 in a long block."
       }
     ],
     "trap-triples": [
@@ -1618,6 +1663,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 182 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.351Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No reflex triple; 'E_1, ..., E_r' and 'd_1, ..., d_r' are indexed families."
       }
     ],
     "trap-closing-aphorism": [
@@ -1637,6 +1697,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.412Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a symbol gloss ('where [E_i^o] is the class of the smooth open part'), the least quotable possible ending."
       }
     ],
     "trap-meta-commentary": [
@@ -1656,6 +1731,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.480Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis anywhere."
       }
     ],
     "trap-thesis-restatement": [
@@ -1675,6 +1765,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.545Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No block-final restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1694,6 +1799,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.605Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Pure definitional register."
       }
     ],
     "trap-superlative": [
@@ -1713,6 +1833,21 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.661Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No maximum-strength claims; 'purely' does not appear in this block."
       }
     ],
     "trap-nonspeakable": [
@@ -1732,6 +1867,23 @@
         "reviewed_at": "2026-08-15T10:31:00.809Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3a8514018a45",
+          "ts": "933f52f81e50"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.741Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Longest chain 'valued in the dimension-completion \\widehat{M} of M' and 'the Kontsevich--Denef--Loeser motivic measure on cylindrical (Borel) subsets of the arc space' are noun-heavy, but this is standard definitional syntax for the object being introduced; no separate speakability defect beyond the genre.",
+        "notes": "No fix proposed — the density is inherent to naming a K_0(Var_k)-valued measure."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1755,5 +1907,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:36:34.741Z"
 }

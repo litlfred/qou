@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.544Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.587Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 42 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.630Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 42 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.674Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.722Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.764Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.811Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.859Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.900Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "Block-final 'This strictly matches the confinement framework at every level of the hierarchy.' - 'strictly' plus 'at every level' is a maximum-strength claim, and nothing in this four-sentence block (or in any live producer) supports it. NOT applied: it is an assertion, not a construction, so removing it changes the claim. Proposed: state which levels were checked and by what, or drop the sentence."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f6584d54d4a2",
+          "ts": "f5eb0998ef9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:48.942Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-misdp (one display + three sentences). Checked the implementation claim against the tree: the only MISDP / branch-and-cut code in the repo is computations/_deprecated/misdp_cross_channel.py and computations/_deprecated/multi_level_sdp.py, both deprecated, and the block carries no computation field - so 'We solve this ... via continuous SDP relaxation combined with branch-and-cut' describes a capability with no live producer. Reported.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:07:48.942Z"
 }

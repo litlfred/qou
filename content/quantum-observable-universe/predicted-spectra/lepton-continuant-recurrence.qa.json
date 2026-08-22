@@ -1774,6 +1774,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.557Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "One contrast construction: 'This three-term recurrence features a positive sign on b_{n-1}. It contrasts with the Chebyshev polynomials of the second kind U_n(cos Theta), which follow b_{n+1} = 2 cos Theta b_n - b_{n-1}.' The sign IS the mathematical content being asserted, and the contrasting family is named with its own recurrence rather than gestured at — substantive-mathematical-contrast false-positive class.",
+        "notes": "pass on the trap criterion. TWO MATH FINDINGS, not fixed inline (they are attribution/identification claims, not prose). (1) MISATTRIBUTION: the recurrence b_{n+1} = h b_n + b_{n-1}, b_0=0, b_1=1 is the FIBONACCI-POLYNOMIAL recurrence (equivalently the continuant K_n(h,...,h)), not Morgan--Voyce. Morgan--Voyce B_n and b_n both satisfy the MINUS-sign three-term recurrence B_n = (x+2)B_{n-1} - B_{n-2}, i.e. B_n(x) = U_n(1 + x/2) — the very Chebyshev shape this block contrasts itself against. Computed b_3 = h^2+1, b_4 = h^3+2h, b_5 = h^4+3h^2+1, b_6 = h^5+4h^3+3h, b_7 = h^6+5h^4+6h^2+1, which are sympy's fibonacci(n, h) exactly. Likely origin of the slip: Morgan--Voyce evaluated at x=1 gives the odd-index Fibonacci NUMBERS, b_n(1)=F_{2n+1}. Proposed: name the family 'Fibonacci polynomials F_n(h)' or 'the continuant K_n(h,...,h)' throughout (this block, its proof, and rem:lepton-continuant-recurrence-novelty). (2) The stated contrast with Chebyshev is a change of variable, not a structural distinction: verified symbolically for n=1..7 that F_n(x) = (-i)^{n-1} U_{n-1}(i x / 2). The plus-sign family is Chebyshev U at imaginary argument. See the fail recorded on rem:lepton-continuant-recurrence-novelty, whose entire content is that contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1793,6 +1809,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.174Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1812,6 +1844,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.229Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1831,6 +1879,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.279Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1850,6 +1914,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.319Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1869,6 +1949,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.365Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1888,6 +1984,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.403Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1907,6 +2019,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.441Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1926,6 +2054,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.479Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1945,6 +2089,22 @@
         "reviewed_at": "2026-08-15T10:31:01.206Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "715f334ea5c6",
+          "ts": "4806465ab264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:27.518Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics: T_{2,n} = sigma_0^n in B_2 is the correct braid presentation of the (2,n) torus knot; the Hecke relation sigma^2=(q-q^{-1})sigma+1 and h=q-q^{-1} match the 7a convention; the coupled recurrence a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1} with b_0=0,b_1=1 generates b_3=h^2+1, b_5=h^4+3h^2+1, b_7=h^6+5h^4+6h^2+1, which reproduce the proof block's table exactly. No aphorism, pivot, warmth, meta-commentary, superlative or non-speakable construction; the only dashes are the compound names Morgan--Voyce and Groebner--Shirshov.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1968,5 +2128,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:06:27.557Z"
 }

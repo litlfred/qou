@@ -1231,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.595Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "major",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "Concessive assert-by-denial 'loses information at each step, yet it never abandons the categorical algebraic substrate'. FIXED -> 'loses information at each step, while the categorical algebraic substrate persists throughout.' Same claim, no 'never'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1267,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.635Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "major",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1303,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.674Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1339,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.713Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "Two three-item lists (generic-Hecke / MTC_k / Z[S_n]; generic q / root of unity / q->1) both enumerate the table's three rungs one-for-one - substantive, not reflex."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1375,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.750Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "major",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "Final pair 'The same canonical-basis machinery applies at every rung. Only the specialization map changes.' is an implementation claim (what varies between rungs), not a manufactured quotable."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1411,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.789Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "major",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1447,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.828Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "major",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.867Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1519,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.906Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1555,23 @@
         "reviewed_at": "2026-08-15T10:31:01.475Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "97b640c8e3f5",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:04.945Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:anyon-observation-collapse (3-row ladder table + two prose paras). Judged all ten categories over the whole text including the table rows.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1594,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:44:04.945Z"
 }

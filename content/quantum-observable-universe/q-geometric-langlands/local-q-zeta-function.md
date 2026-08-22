@@ -1,6 +1,6 @@
-The Frobenius eigenvalues of Bring's curve are the arithmetic invariants
-whose absolute values the geometric Riemann hypothesis constrains; the
-local $q$-zeta function packages them as a single generating function.
+The geometric Riemann hypothesis constrains the absolute values of the
+Frobenius eigenvalues of Bring's curve; the local $q$-zeta function
+packages those eigenvalues as a single generating function.
 Define the :defterm[local $q$-zeta function]{#local-q-zeta-function} of Bring's curve $\mathcal{B}$ as
 the generating function for point counts over finite extensions:
 

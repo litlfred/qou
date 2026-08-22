@@ -1855,6 +1855,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.060Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1874,6 +1890,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.102Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-em-dash": [
@@ -1893,6 +1925,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 72 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.143Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-triples": [
@@ -1912,6 +1960,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 72 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.185Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-closing-aphorism": [
@@ -1931,6 +1995,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.229Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-meta-commentary": [
@@ -1950,6 +2030,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.270Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-thesis-restatement": [
@@ -1969,6 +2065,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.316Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-performed-warmth": [
@@ -1988,6 +2100,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.358Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-superlative": [
@@ -2007,6 +2135,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.403Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "trap-nonspeakable": [
@@ -2026,6 +2170,22 @@
         "reviewed_at": "2026-08-15T10:31:00.621Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1ba505550324",
+          "ts": "46fcede5a33a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.445Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean -- almost no discursive prose (a display, one unifying sentence, and the standard archimedean banner), no dashes, triples, closers or meta-commentary. The block is honestly labelled 'Definition (proposed; conjectural utility)', which is the right tier for an object whose existence proof the sibling remark lists as open.",
+        "notes": "TWO FINDINGS. (1) THE DEFINITION IS INCOMPLETE AS STATED: the bigraded ideal is given as I_{m,n} := ((q;q)_m * P_n(q,z)), but P_n(q,z) is never defined in the block, and it is the only thing carrying the z-direction of the bicompletion. (q;q)_m is the standard cyclotomic generator, so the q-side is determined and the z-side is not; a reader cannot reconstruct the inverse limit. Proposed fix: define P_n (presumably the z-Habiro cyclotomic generator from def:z-habiro-ring) or cite it. (2) WALL-SIDE MISMATCH: the block closes with the boilerplate 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall ... specializes them to real-valued observables at q_0.' Nothing follows -- it is the last paragraph -- and the object defined is an inverse limit of quotients of Z[q^{+-1}, z], manifestly pre-archimedean with no real-valued observable anywhere in the block. The banner appears to have been applied mechanically. Proposed fix: remove it, or move it to whichever downstream block does the q_0 evaluation."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2049,5 +2209,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:45:22.445Z"
 }

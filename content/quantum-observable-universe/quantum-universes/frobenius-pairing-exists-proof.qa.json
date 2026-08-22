@@ -1599,6 +1599,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.553Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). Dense negation-contrast (L10 'is **not** rigid', L11 'no ambient $A^\\vee$ ... no ambient snake identities', L17 'they are not consequences of a rigid structure', L22 'rather than an instance of a duality every object enjoys'). Substantive-mathematical-contrast class: the proof's whole point is that $\\mathbf{C}$ lacks duality, so non-degeneracy cannot be imported from rigidity.",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1618,6 +1635,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.601Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). 'Non-degeneracy is where the provenance matters.' is proof signposting separating the trivial half (existence) from the substantive half, not a setup-then-reframe whose second clause silently carries the claim.",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1637,6 +1671,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.644Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). One em-dash (L10), a genuine appositive expanding 'not rigid'.",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1656,6 +1707,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.692Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1675,6 +1743,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.740Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). final sentence is \"[quantum observable universe](#def:quantum-observable-universe).\" - a substantive statement, not a placed quotable closer",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1694,6 +1779,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.781Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). L20 opened 'So the correct reading is: the pairing is non-degenerate **because the Frobenius-Hopf data says so** ...' - narrating how the reader should interpret the preceding paragraph instead of stating the conclusion.",
+        "notes": "FIX APPLIED: 'So the correct reading is: the pairing is non-degenerate **because the Frobenius-Hopf data says so**' -> 'The pairing is therefore non-degenerate **because the Frobenius-Hopf data says so**'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1713,6 +1815,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.823Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). final sentence is \"[quantum observable universe](#def:quantum-observable-universe).\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1732,6 +1851,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.864Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1751,6 +1887,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.905Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1770,6 +1923,23 @@
         "reviewed_at": "2026-08-15T10:31:00.189Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e7d8e08d305a",
+          "ts": "32ed4bfdc610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:01.946Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md (24 lines, kind=proof, title=\"Proof of existence of the Frobenius pairing\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1810,5 +1980,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T21:36:47.871Z"
+  "updated_at": "2026-08-22T06:08:01.946Z"
 }

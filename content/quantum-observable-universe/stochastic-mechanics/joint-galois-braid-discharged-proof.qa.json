@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.122Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.163Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.205Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.245Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.285Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.324Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.366Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.408Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,22 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.450Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "'The argument is structural' / 'The braid-group action is trivial on H_q^{(n,K)}'.",
+        "notes": "Not superlative constructions, so pass here; but THREE STRUCTURAL FINDINGS (report only, do not fix - this is math). (1) The proof proves the braid action is TRIVIAL on every stratum, and derives commutativity from that. That is far stronger than the proposition and is left unremarked: if B_{n_K} really acted trivially on every H_q^{(n,K)}, the braid structure on these strata would carry no information. (2) NOTATION SLIP, visible on the page: the proposition states commutation for the LEFT action, g_mot(beta . alpha) = beta . g_mot(alpha), but Step 1 computes CONJUGATION, beta . alpha . beta^{-1} = alpha, and Step 3 writes the second composite as 'beta . g_mot(alpha) = beta . e_{lambda'} . g(...) . beta^{-1}' - left action on the left of the equals sign, conjugation on the right. The two are different actions and the proof silently swaps between them. (3) The narrative route is NOT the Lean route. The Lean sibling assumes a disjoint tensor split Cell -> A x B with galois moving only A and braid moving only B, and never claims the braid action is trivial; this .md claims triviality and never mentions a tensor decomposition. Both reach the same conclusion, but a narrative-vs-Lean equivalence audit would not match them."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,21 @@
         "reviewed_at": "2026-08-15T10:30:59.560Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6653a2e89675",
+          "ts": "d2a5ff5a37fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.493Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the three-step proof (233 words, 1 em-dash used as an appositive after a bold run-in). No closer, no warmth, no triple, no pivot, no meta-narration. The aligned environment sits inside $$...$$, i.e. already math mode, so no render-math-mode-envelope issue; the \\\\[4pt] hits are LaTeX line spacing, not escaped-bracket citations."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:35:58.493Z"
 }

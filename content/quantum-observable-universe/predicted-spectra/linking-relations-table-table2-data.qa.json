@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:29.780Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:29.824Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:29.868Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:29.912Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:29.955Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:29.997Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:30.039Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:30.078Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:30.117Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (7 mirror/Skein rows); no prose. Checked every row against the corpus dictionary: T_{2,3}=(e^-,u) -> T_{2,3}^sigma=(e^+,d); T_{2,5}=(mu,c) -> T_{2,5}^sigma=(mu^+,s); T_{2,7}=(tau,b^sigma) -> T_{2,7}^sigma=(tau^+,b); T_{1,0}=(nu) -> mirror antineutrino; 4_1 self-mirror, correct since the figure-eight is amphichiral; and n=[u,d,d]_p -> p=[u,u,d]_p under a local sigma at one d, matching rem:knot-formula-table's nucleon shorthand. This table is internally consistent with the knot-formula-table dictionary throughout, which is what makes the table-1 rows above identifiable as the outlier.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1847006bcef1",
+          "ts": "1e1864042dbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:30.156Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No prose in the block.",
+        "notes": "pass on all ten (table only). One row I could NOT adjudicate and am recording as unresolved rather than guessing: the last row, 'T_{2,3} (+) T_{2,3} | Skein at crossing | 4_1 | u-u Hopf -> figure-eight (Higgs)'. A crossing change on a 2-component link can certainly fuse it into a knot, and a Hopf-linked pair of trefoils carries at least 8 crossings against the figure-eight's 4, so nothing is arithmetically impossible here — but I have no derivation in the corpus for this particular resolution and did not verify it. Flagging for someone who can compute the resolution rather than asserting it either way."
+      }
     ]
   },
   "source_hashes": {
     "md": "1847006bcef1",
     "ts": "1e1864042dbc"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:13:30.156Z"
 }

@@ -2349,6 +2349,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.630Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2368,6 +2383,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.671Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -2387,6 +2417,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 39 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.712Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "One spaced em-dash pair in 485 chars, a true parenthetical naming the two corollaries."
       }
     ],
     "trap-triples": [
@@ -2406,6 +2451,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 39 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.753Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "\"The three typed transfer matrices\" is a count of objects, not a rhetorical list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2425,6 +2485,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.792Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Ends on a cross-reference to the corollary block - false-positive class."
       }
     ],
     "trap-meta-commentary": [
@@ -2444,6 +2519,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.832Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2463,6 +2553,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.873Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -2482,6 +2587,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.914Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -2501,6 +2621,22 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:50.956Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Both identities are correct as stated - I verified them symbolically. (i) [[h,1],[1,0]]*[[0,1],[1,-h]] = I and the reverse product [[0,1],[1,-h]]*[[h,1],[1,0]] = I as well. (ii) [[h/2,1],[1,-h/2]]^2 = (1 + h^2/4) I, and 1 + h^2/4 = (4 + q^2 - 2 + q^-2)/4 = (q+q^-1)^2/4 = [2]_q^2/4. DEFECT (reported, not edited): the ambient ring is wrong. T_pp and T_nn do lie in M_2(Z[q^{+-1}]), but T_pn = [[h/2,1],[1,-h/2]] has half-integer entries and the scalar [2]_q^2/4 is not in Z[q^{+-1}], so identity (ii) does not live in the stated ring.",
+        "notes": "Route: state the ring as M_2(Z[1/2][q^{+-1}]) (or M_2(Q[q^{+-1}])), or split the sentence so (i) is over Z[q^{+-1}] and (ii) over the 2-inverted ring."
       }
     ],
     "trap-nonspeakable": [
@@ -2520,6 +2656,21 @@
         "reviewed_at": "2026-08-15T10:31:00.593Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0eebc654a728",
+          "ts": "0c17f4d6e405"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.000Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2543,5 +2694,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:08:51.000Z"
 }

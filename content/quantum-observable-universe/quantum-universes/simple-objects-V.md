@@ -4,5 +4,3 @@ The faithful, exact functor $\tau$ reflects simplicity: $X$ is simple if and onl
 
 1. **Categorical dimension $2$**: $\tau(V)$ is a rank-$2$ free module.
 2. **Tensor generation**: Every simple object appears as a direct summand of some tensor power $V^{\otimes n}$.
-
-These properties make $V$ the natural carrier for vectors.

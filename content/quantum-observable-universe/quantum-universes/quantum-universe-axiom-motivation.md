@@ -20,6 +20,6 @@ This axiom is what earlier drafts asserted, less directly, as a numerical identi
 $$
   \mathrm{tr}_M(C_{\dim_q}) \;=\; \sum_{\lambda \in \widehat{A}} \frac{1}{\dim_q(\lambda)}
 $$
-follows by linearity of the trace over the central idempotents; it is proved as [Frobenius co-Casimir universal](#thm:frobenius-codim-universal) and is not assumed here. The reading is that the total trace distributes over the channels with each contributing in inverse proportion to its quantum dimension — wide channels cheap, narrow ones expensive. That is the bookkeeping which later lets a mass be attached to a knot rather than to a diagram of one.
+follows by linearity of the trace over the central idempotents; it is proved as [Frobenius co-Casimir universal](#thm:frobenius-codim-universal) and is not assumed here. The total trace distributes over the channels, each contributing in inverse proportion to its quantum dimension — wide channels cheap, narrow ones expensive. That is the bookkeeping which later lets a mass be attached to a knot rather than to a diagram of one.
 
 **What is deliberately absent.** Rigidity. A quantum universe need not have duals. Duals are what allow a strand to bend backwards, which is what an antiparticle is and what closing a knot requires, and they are imposed one level up, on a quantum observable universe.

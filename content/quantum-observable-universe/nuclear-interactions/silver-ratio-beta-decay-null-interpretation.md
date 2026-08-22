@@ -14,4 +14,4 @@ The $c_5 = -(b^2 + 1/2)$ outlier has a clean categorical interpretation combinin
 
 $c_3, c_4, c_6, c_7$ have dominant contributions from positions in the braid that are pure $\sigma$ or pure $\sigma^{-1}$. $c_5$ is uniquely sensitive to the averaged-crossing structure because the cross-term combinatorics amplify the $h/2$ contribution relative to the pure-$\sigma$ contributions at this specific order.
 
-The $c_5$ Pell-Lucas outlier is not a sign of categorical incompleteness — it is the fingerprint of the typed-$\mathbf{B}_3$ averaged-crossing recipe. The categorical chain IS complete; $c_5$ just lives in the involution-fixed-point sector.
+The $c_5$ Pell-Lucas outlier is the fingerprint of the typed-$\mathbf{B}_3$ averaged-crossing recipe: $c_5$ lives in the involution-fixed-point sector.

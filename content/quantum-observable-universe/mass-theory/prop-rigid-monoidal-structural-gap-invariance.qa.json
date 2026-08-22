@@ -1780,6 +1780,22 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:59.863Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'Operator-volume conventions vary only the non-categorical regularizer' is the block's substantive separation claim, not assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1799,6 +1815,21 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:59.921Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1818,6 +1849,21 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 156 words)"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:10:59.976Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1837,6 +1883,23 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 156 words)"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:00.036Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The closing sentence is a reflex triple: 'This rigidly unifies pair-knot selection at magic shells, substrate-binding symmetry, and convention independence.' The three items are not parallel (a selection rule, a symmetry, and a meta-property of the formula), and only the third is what the proposition proves.",
+        "notes": "PROPOSED (not applied - the sentence makes a scope claim about what the proposition covers, so trimming it changes the claim): drop the sentence, or keep only what is established: 'The Markov trace and the LP-dual operator selection are spin-invariant.'"
       }
     ],
     "trap-closing-aphorism": [
@@ -1856,6 +1919,23 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:00.092Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'This rigidly unifies ...' is a summarising flourish placed at the end of the paragraph; 'rigidly unifies' is not a mathematical relation and no unification is exhibited in the block.",
+        "notes": "PROPOSED (not applied - same sentence as the trap-triples finding; fix once)."
       }
     ],
     "trap-meta-commentary": [
@@ -1875,6 +1955,21 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:00.143Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis. The 'Archimedean specialisation' paragraph is a wall-placement note, which is required discipline in this corpus."
       }
     ],
     "trap-thesis-restatement": [
@@ -1894,6 +1989,22 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:00.204Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Recorded under trap-closing-aphorism to avoid double-counting the same closing sentence."
       }
     ],
     "trap-performed-warmth": [
@@ -1913,6 +2024,21 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:00.264Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1932,6 +2058,23 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:00.316Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Three unearned intensifiers, one of which is a scope over-claim the block's own proof does not support: 'It is strictly invariant under any choice of operator-volume convention' - the proof block establishes agreement only across the SIX probed convention families ('Let c and c' be any two probed conventions'), not over all conventions. Also 'strictly spin-invariant' and 'rigidly unifies'.",
+        "notes": "PROPOSED (not applied - narrowing 'any choice' to 'the probed conventions' is a change to the proposition's claim and needs author sign-off): '...is invariant across the six probed operator-volume conventions.' Convention D is correctly labelled in the proof (z = q^3/(q^2+1)); no convention-C leakage found in either block."
       }
     ],
     "trap-nonspeakable": [
@@ -1951,6 +2094,22 @@
         "reviewed_at": "2026-08-15T10:31:00.519Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "23f50ee01841",
+          "ts": "a91390d9a2e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:00.378Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the categorical-trace invariant' and 'operator-volume convention' are defined terms; sentences are short."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1974,5 +2133,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:11:00.378Z"
 }

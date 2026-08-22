@@ -1427,6 +1427,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not input parameters.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.488Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1446,6 +1462,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.530Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1465,6 +1497,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.572Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1484,6 +1532,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.614Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1503,6 +1567,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.656Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: final prose sentence is: \"Bond angles emerge as properties of the optimal strand ordering, not input parameters.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1522,6 +1602,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.697Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1541,6 +1637,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.738Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: final sentence checked against the body: \"Bond angles emerge as properties of the optimal strand ordering, not input parameters.\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1560,6 +1672,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.779Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1579,6 +1707,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.819Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: no unqualified maximum-strength claim; comparative and bounding claims carry their conditions.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-nonspeakable": [
@@ -1598,6 +1742,22 @@
         "reviewed_at": "2026-08-15T10:31:01.539Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c506c3c02dc5",
+          "ts": "6fe52e9483a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:15.861Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (VSEPR correspondence table + CO2 and H2O cases; 104.5 deg checked). Judged on the whole text: read aloud end to end (3 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1620,5 +1780,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:15.861Z"
 }

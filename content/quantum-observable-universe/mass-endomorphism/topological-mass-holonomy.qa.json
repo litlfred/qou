@@ -2116,6 +2116,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:44.772Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2135,6 +2150,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:44.812Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-em-dash": [
@@ -2154,6 +2184,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:44.852Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-triples": [
@@ -2173,6 +2218,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:44.892Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-closing-aphorism": [
@@ -2192,6 +2252,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:44.933Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-meta-commentary": [
@@ -2211,6 +2286,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:44.974Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-thesis-restatement": [
@@ -2230,6 +2320,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:45.015Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-performed-warmth": [
@@ -2249,6 +2354,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:45.055Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-superlative": [
@@ -2268,6 +2388,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:45.095Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "trap-nonspeakable": [
@@ -2287,6 +2422,21 @@
         "reviewed_at": "2026-08-15T10:31:01.039Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "87d6288db886",
+          "ts": "37ad67e53970"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:45.135Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.43kB, one sentence plus display). Lean ref qou:QOU.LiftingDescent.tm_descended_is_holonomy; cites yekutieli2015, which exists. The statement says 'Sigma_0 forms a disc' where its own proof sibling says 'Sigma_0 IS a disc' - one instance of the is->forms copula substitution reported as an anomaly class."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2310,5 +2460,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:45.135Z"
 }

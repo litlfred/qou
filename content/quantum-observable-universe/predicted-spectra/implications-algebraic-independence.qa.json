@@ -1420,6 +1420,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.432Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1439,6 +1455,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.471Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-em-dash": [
@@ -1458,6 +1490,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 189 words)"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.510Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-triples": [
@@ -1477,6 +1525,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 189 words)"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.549Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-closing-aphorism": [
@@ -1496,6 +1560,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.587Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-meta-commentary": [
@@ -1515,6 +1595,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.625Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-thesis-restatement": [
@@ -1534,6 +1630,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.663Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-performed-warmth": [
@@ -1553,6 +1665,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.703Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-superlative": [
@@ -1572,6 +1700,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.743Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "trap-nonspeakable": [
@@ -1591,6 +1735,22 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.783Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1613,5 +1773,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:54.783Z"
 }

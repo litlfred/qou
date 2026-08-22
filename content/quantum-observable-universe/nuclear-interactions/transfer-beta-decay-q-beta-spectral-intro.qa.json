@@ -1195,6 +1195,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.569Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1229,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.640Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1263,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.681Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1297,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.732Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1331,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.805Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1365,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.858Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1399,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.901Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1433,21 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.946Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (prose preamble, 4 sentences, ~0.4kB). Eight categories clean; trap-superlative and trap-nonspeakable recorded separately."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1467,23 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:09.999Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "severity": "major",
+        "evidence": "'This substrate-level prediction closes the silver-ratio falsifiability test.' Nothing is closed: the silver ratio is q = 1 + sqrt(2) = 2.4142, more than twice the substrate q0 = 1.10998, so the null at h = 2 is not reachable at the substrate and is not a substrate-level prediction. prop:silver-ratio-beta-decay-null's own .ts authorNotes call it 'a structural identification, not a derivation of c_k from first principles' providing 'a clean test point'. 'Closes the falsifiability test' inverts that into a settled result.",
+        "notes": "PROPOSED (not applied - the correction is substantive): 'We compute the silver-ratio beta-decay null, which fixes a clean off-substrate test point for the c_k closed forms.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1503,23 @@
         "reviewed_at": "2026-08-15T10:31:01.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2911fde7308b",
+          "ts": "94a80ed49368"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:10.049Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "severity": "minor",
+        "evidence": "Final sentence is a four-member chain of nominalised noun-stacks with no verb between them: 'the nucleon normal form observability, the beta-decay energy scale, the topological-deficit confinement, and the visualiser-anchored braid presentation'. 'Normal form observability' and 'visualiser-anchored braid presentation' each stack three modifiers before the head noun; the sentence parses on the page and stalls read aloud.",
+        "notes": "PROPOSED (not applied - rewriting the list requires knowing which four blocks are meant, and the labels are not in the .ts): re-verb the members, e.g. 'We support this construction by showing the nucleon normal form is observable, fixing the beta-decay energy scale, deriving confinement from the topological deficit, and anchoring the braid presentation in the visualiser.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1542,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:11:10.049Z"
 }

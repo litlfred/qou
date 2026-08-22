@@ -1146,6 +1146,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:43.818Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1165,6 +1180,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:43.875Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-em-dash": [
@@ -1184,6 +1214,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 124 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:43.942Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-triples": [
@@ -1203,6 +1248,22 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 124 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:44.020Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Three numbered observations (descended piece / singleton tower / pair tower).",
+        "notes": "Substantive: they are the three summands of the formula."
       }
     ],
     "trap-closing-aphorism": [
@@ -1222,6 +1283,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:44.061Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-meta-commentary": [
@@ -1241,6 +1317,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:44.120Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1260,6 +1351,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:44.170Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-performed-warmth": [
@@ -1279,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:44.229Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-superlative": [
@@ -1298,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:44.285Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (137w, prf). Jones notation J_K(q) in Z[q^{+-1/2}] follows AGENTS.md section 7a correctly."
       }
     ],
     "trap-nonspeakable": [
@@ -1317,6 +1453,22 @@
         "reviewed_at": "2026-08-15T10:31:00.480Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2c0ca6d86ec1",
+          "ts": "5346f92a09a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:31:44.341Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Prose is speakable.",
+        "notes": "THREE FLAGS for the report. (1) FALSE INCLUSION: 'The full sum is therefore an element of Habiro-hat(Z[q]) SUBSET Q(q)'. The Habiro ring is a completion of Z[q] with respect to the ideals ((q;q)_n); it is strictly larger than and not contained in Q(q) - that non-containment is the point of the construction. The inclusion is stated backwards. (2) The proof's final step invokes 'the volume conjecture' while the block it proves, prop:topological-mass-formula-algebraic, claims in its own text to bypass 'hyperbolic volume conjectures'. (3) That same proposition writes the quantity as ln|Vol_{q_0}(beta)| while this proof identifies it with Vol(K)/hbar_{q_0}^2 - a logarithm in one and not the other."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1339,5 +1491,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:31:44.341Z"
 }

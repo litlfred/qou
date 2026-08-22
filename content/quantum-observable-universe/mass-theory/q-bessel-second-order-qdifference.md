@@ -27,7 +27,7 @@ q^{\nu+2k} - \bigl(1 + q^{\nu}\bigr) q^{k} + 1
 \;=\; \bigl(1 - q^{k}\bigr)\bigl(1 - q^{\nu+k}\bigr),
 $$
 
-as one checks by expanding the right-hand side. This factorisation into the $(\star)$ denominator is the algebraic heart of the argument: it is the reason the second-order operator collapses onto the first-order recurrence.
+as one checks by expanding the right-hand side. This factorisation into the $(\star)$ denominator is the reason the second-order operator collapses onto the first-order recurrence.
 
 **Step 2 — the source term.** Re-indexing a single $q$-shift multiplied by $w$,
 

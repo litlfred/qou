@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:44.977Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.014Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.052Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.091Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.131Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1575,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.171Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1610,23 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:44.940Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Block closed on 'Tannaka--Krein reconstruction pins the functor uniquely up to natural isomorphism, stripping it of non-trivial first-order deformations.' The trailing participle restates the immediately preceding sentence ('This kills all infinitesimal automorphisms of tau') - an infinitesimal automorphism IS a first-order deformation of the identity - and additionally credits that first-order statement to Tannaka-Krein when the block derived it from H^0_G(Ad(A)) = 0. Fixed inline; this verdict certifies the fixed state.",
+        "notes": "FIX APPLIED: '...pins the functor uniquely up to natural isomorphism, stripping it of non-trivial first-order deformations.' -> '...pins the functor uniquely up to natural isomorphism.' Math delimiters re-checked (balanced)."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1646,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.208Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1681,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.246Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1716,22 @@
         "reviewed_at": "2026-08-15T10:30:59.960Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a313f7fa367f",
+          "ts": "f2781dc26120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:45.288Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 4-sentence remark after the thesis-restatement fix. No negation-contrast (the vanishing statements are the mathematics), no pivot, no dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative ('precisely because' marks a strict dependency), no non-speakable chain.",
+        "notes": "Register note (not a trap): 'This kills all infinitesimal automorphisms' is colloquial for a remark block; clarity-grad-style would prefer 'annihilates' or 'forces to vanish'. Left as-is - it is outside the trap categories."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1754,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:03:45.288Z"
 }

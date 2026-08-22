@@ -1535,6 +1535,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.247Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Block is a published correction of a conflation, so its negations ARE its content: 'Im(q) is not the EM / P_skew channel', 'A natural-but-incorrect claim is ...', 'set to zero ..., not discarded by a projection'. Substantive-mathematical-contrast false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1554,6 +1569,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.302Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'They are often conflated, yet **must be kept separate**' is the thesis of a correction remark, not a reframe that empties the first clause."
       }
     ],
     "trap-em-dash": [
@@ -1574,6 +1604,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "8 stylistic spaced dashes in 400 words (2.00/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.359Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Dashes are section-header separators ('Mechanism 1 - bar projection') and cross-reference list separators; one prose dash ('(a) is open - accessible via the explicit Q_m P_skew content'). Low density for the block length."
       }
     ],
     "trap-triples": [
@@ -1593,6 +1638,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 400 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.418Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Three table rows and three Significance items are each substantively distinct; the 'sin/sinh/Phi_q' and 'cos/cosh/Li_2^q' triples name three notations for one content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1612,6 +1672,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.470Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Block ends on a cross-reference list."
       }
     ],
     "trap-meta-commentary": [
@@ -1631,6 +1706,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.531Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'must be kept separate' places the emphasis directly rather than narrating it (load-bearing-disambiguation false-positive class); no 'we emphasize'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1650,6 +1740,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.601Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "The 'So:' bullets after the table do restate rows 1-2 in prose, but the third bullet ('These are independent') is the payload and the section is mid-block, not a terminal closer. Consolidation candidate, not a trap."
       }
     ],
     "trap-performed-warmth": [
@@ -1669,6 +1774,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.664Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1688,6 +1808,21 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.735Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No maximum-strength claims. Bold density is high (20+ spans) but the emphasis marks technical terms and table verdicts, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1707,6 +1842,22 @@
         "reviewed_at": "2026-08-15T10:31:00.359Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ec327587dabf",
+          "ts": "b58c988bab66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:21:28.799Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "FIX APPLIED: 'not directly physical until tied to an observable Im observable, which the framework does not currently provide' -> 'not directly physical until tied to an Im-sensitive observable, which ...'. The duplicated noun was a garble that stalled both aloud and on the page. Rest of the block reads in short clauses.",
+        "notes": "NON-TRAP FINDING (structural, math - not fixed inline): Mechanism 2's displayed formula omits the modulus it is entirely about. '$$\\mathfrak{m}_{q,\\mathcal{K}} = \\mathrm{tr}_M(\\rho(\\beta_\\mathcal{K})).$$' is followed immediately by 'The $|\\cdot|$ is the modulus.' — but no bars appear in the display, and the block's own authorNotes give the mechanism as 'm = |tr_M|'. PROPOSED: '$$\\mathfrak{m}_{q,\\mathcal{K}} = \\bigl|\\mathrm{tr}_M(\\rho(\\beta_\\mathcal{K}))\\bigr|.$$'. Second item: '(b) is ruled out under the current ansatz' is a durable refutation carrying its scope only in the trailing qualifier; it reads as scope-(a) and is defensible, but the bare 'ruled out' invites the scope-(b) misreading."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1730,5 +1881,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:21:28.799Z"
 }

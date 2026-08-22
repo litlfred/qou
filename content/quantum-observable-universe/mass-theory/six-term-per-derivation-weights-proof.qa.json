@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:26.748Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "'No additional scaling needed' and 'contributes no binding at this stage' are factual scope statements about the computation."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:26.788Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "Baseline, five per-term readings, total, empirical check, open questions; a conventional proof shape."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 481 words)"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:26.826Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "One prose dash, appending the attribution clause after the 76x claim ('(14.7% mean) - the improvement is entirely from honouring the per-term derivation weights')."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 481 words)"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:26.863Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "The five per-term bullets and the three open questions both track real content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:26.904Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "Ends on open question 3, a request for a focused look at the 4He outlier."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:26.945Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "'isolating the physical scale of each contribution is exactly the per-derivation reading above' points at the construction rather than narrating emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:26.985Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "No terminal echo; the Open-questions section adds three items not stated earlier."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:27.023Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "No personal register; 'Worth a focused look' is terse working register, not warmth."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,23 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:27.062Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Two comparative claims that are arithmetically wrong, both in the flattering direction, plus 'the improvement is ENTIRELY from honouring the per-term derivation weights'.",
+        "notes": "RECOMPUTED. (a) '76x improves on the proton-fitted single-E_0 assembly (14.7% mean)': 14.7 / 0.18406 = 79.86x, not 76x — the sentence's own two figures are mutually inconsistent by 5%, and 76x would require the old mean to be 13.99% or the new to be 0.1934%. (b) 'This MATCHES the standalone ... formula's empirical fit (0.13-0.16% mean across the same spectrum)': 0.184% lies OUTSIDE [0.13, 0.16], so the per-derivation assembly is 15% to 42% WORSE than the fit it is compared with; PROPOSED wording, 'is within a factor 1.2 to 1.4 of'. (c) The headline 'Mean = 0.184%' is right — I recomputed all twelve error rows and the mean from the table and every figure matches — but it averages in the p and n rows, which are 0.000 BY CONSTRUCTION as the free-particle baseline; over the 10 genuinely predicted rows the mean is 0.2209%. (d) alpha = m_e x 8G = 3.74446989 MeV is high by 2.73 ppm against its own definition: recomputed at 25 dps with CODATA m_e = 0.51099895069 and 8G = 7.327724753417752, m_e x 8G = 3.744459660. Catalan itself is handled CORRECTLY here (G approx 0.9160), unlike the s4-s3 proof block in this batch. (e) 'The total B(Z,N) ... is positive for bound systems. QED' asserts positivity without deriving it, under a QED box."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,23 @@
         "reviewed_at": "2026-08-15T10:31:00.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "440fdeb676c8",
+          "ts": "594e137be307"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:27.099Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Three sweep-damage sites leave broken syntax: 'implemented in / the formal derivation / as assemble_per_derivation_weights(Z, N)' (a script name replaced by the placeholder phrase); 'per / the *atomic-braid mass formula* in the Particles chapter, the binding correction is ...'; and 'This matches the standalone the *atomic-braid mass formula* in the Particles chapter formula's empirical fit', which stacks two determiners and two nouns and does not parse.",
+        "notes": "NOT FIXED INLINE because repairing them requires the original script name and link text, which the substitution destroyed. Measured spread of this class: the phrase 'the formal derivation' occurs 38 times across 27 .md files in mass-theory alone, and 'the canonical formalism' appears in 56 files corpus-wide. SEPARATELY, the proof REFUTES ITS OWN PARENT'S 'six terms': it records that T_4's bound-free differential 'vanishes ... identically' and that T_6 'currently returns 0 for A >= 5 atoms', so for 8 of the 12 tabulated atoms only three of the six terms contribute, while the parent proposition says the binding energy 'derives directly from the six terms'. The Open-questions section states this plainly and is exemplary; the parent does not."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:50:27.099Z"
 }

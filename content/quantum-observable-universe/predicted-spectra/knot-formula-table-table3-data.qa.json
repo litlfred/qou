@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.645Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.686Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.726Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.766Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.805Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.843Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.881Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.921Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.960Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f233364d76a3",
+          "ts": "0ccb5b1c1e15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:38.996Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (4 rows: gluon T(2,2), W T(2,4), Z T(2,6), Higgs T(2,8)); no prose sentences, so no construction of any trap class can occur. Verified component/crossing columns: T(2,n) with n even has gcd(2,n)=2 components and n crossings — all four rows correct.",
+        "notes": "no trap of this class; full-context read"
+      }
     ]
   },
   "source_hashes": {
     "md": "f233364d76a3",
     "ts": "0ccb5b1c1e15"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:58:38.996Z"
 }

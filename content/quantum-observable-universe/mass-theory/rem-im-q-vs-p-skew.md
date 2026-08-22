@@ -76,7 +76,7 @@ Quantitative consequences differ between the two mechanisms:
 3. **Physical interpretation**: $P_{\mathrm{skew}} = $ EM/charge-distinguishing
    channel (explicit for torus knots, as above).
    $\mathrm{Im}(q) = $ a substrate moduli parameter (not directly
-   physical until tied to an observable Im observable, which the
+   physical until tied to an Im-sensitive observable, which the
    framework does not currently provide).
 
 ## Cross-references

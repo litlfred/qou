@@ -1353,6 +1353,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.628Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1372,6 +1387,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.667Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "trap-em-dash": [
@@ -1391,6 +1421,22 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 867 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.706Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "2 spaced em-dashes in 1304 words (1.5/1000): 'Jones x Kashiwara multiplicative mixing' is not here; the two are 'dominant — at all other rungs in [3,7]' and one in the rung table.",
+        "notes": "Well below any density threshold and both appositive; kept."
       }
     ],
     "trap-triples": [
@@ -1410,6 +1456,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 867 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.747Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "trap-closing-aphorism": [
@@ -1429,6 +1490,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.786Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "trap-meta-commentary": [
@@ -1448,6 +1524,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.826Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "trap-thesis-restatement": [
@@ -1467,6 +1558,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.866Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "trap-performed-warmth": [
@@ -1486,6 +1592,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.904Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "trap-superlative": [
@@ -1505,6 +1626,23 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.946Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "'All 24 substantive Lean theorems / definitions in the sibling have narrative proofs above.'",
+        "notes": "STRUCTURAL - count drift plus THREE mathematical defects found in this block (do not fix inline). (a) The count '24' matches neither the sibling's 22 theorems nor its 31 total declarations; the universal claim itself holds for the 22 theorems, so only the number is wrong. (b) Step 2 says 'The typed neutron braid uses TWO averaged crossings (one at sigma_0, one at sigma_1)' and then writes B_n = (sigma_0 - (h/2)1)(sigma_1 - h 1) = sigma_{0,avg} sigma_1^{-1} - i.e. ONE averaged crossing and ONE INVERTED crossing, since sigma - h = sigma^{-1} by the block's own Step 1. (c) Step 3's 'The h^2/2 term is the product of TWO averaged-crossing h/2 contributions' is arithmetically impossible: (h/2)(h/2) = h^2/4. I expanded the two braids: B_p = s0 s1 - (h/2) s0, B_n = s0 s1 - h s0 - (h/2) s1 + h^2/2, so B_n - B_p = -(h/2)s0 - (h/2)s1 + h^2/2, which under tr_M(s_i) = tr_M(1) = 1 gives exactly the stated -h + h^2/2 = h(h-2)/2. The FORMULA is right; the h^2/2 comes from (h/2) x h, averaged times inverted - so the prose in (b) and (c) contradicts the algebra it is explaining. (d) 'Each averaged crossing contributes a factor of h/2 = 1/2' is false: h = q - q^{-1} equals 2 at the silver ratio this block works at (so h/2 = 1), equals 1 only at the GOLDEN ratio, and is 0.2090602988 at q_0 (h/2 = 0.1045301494). Proposed: 'contributes a factor of 1/2 relative to the un-averaged h'."
       }
     ],
     "trap-nonspeakable": [
@@ -1524,6 +1662,21 @@
         "reviewed_at": "2026-08-15T10:30:59.555Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "12cdea38aa29",
+          "ts": "7f8d6296d663"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.986Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the whole proof block (Steps 1-4, the rung table, and the 20-item Lean-bridge section; 1304 words, 2 em-dashes = 1.5/1000, both appositive). Verified against the Lean sibling c5-involution-leibniz-decomposition.lean: 22 theorems + 9 defs, and the file IS sorry-free (the single 'sorry' hit is the docstring phrase 'no sorry'). Every one of the 22 theorems is named and given a narrative proof in this block, so the 'Every substantive Lean theorem ... has both' claim holds. Numerics all recomputed at 30 dps and CORRECT: sigma^{-1} = sigma - h from sigma^2 = h sigma + 1; P_avg(sigma) = sigma - h/2; [2]_q^2 = h^2+4; c_5 = -3/2 + 1/(h^2+4); c_5(h=0) = -5/4, c_5(h=2) = -11/8 (silver, h=2), c_5(h=1) = -13/10 (golden, h=1, matching bar-involution-table6); silver row values c_4 = -2 b^4 = -49/32, c_6 = 4 b^2 = 7/2, c_7 = -8 all confirm; S_3 irrep dims 1,2,1 so the non-sign half is 3/2."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1546,5 +1699,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:25:14.986Z"
 }

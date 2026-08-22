@@ -1772,6 +1772,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:41.744Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "No assert-by-denying constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1806,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:41.790Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Formula, then a three-sentence assessment, then a term-by-term gloss; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1840,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:41.837Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1829,6 +1874,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:41.894Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "The six-term breakdown is the content; no reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1908,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:41.942Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Closes on the Term 6 gloss."
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1942,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:41.988Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1976,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:42.031Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "The final paragraph glosses each term individually rather than restating the whole."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2010,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:42.076Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2044,23 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:42.130Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Four unqualified maxima in three consecutive sentences: the mass 'breaks CLEANLY into six derived terms'; 'EVERY term evaluates UNIQUELY from the canonical braid word and substrate parameter'; 'The formulation STRICTLY enforces the Markov trace invariance across ALL observables'; 'The breakdown identifies EXACTLY the origin of isospin and parity violations'.",
+        "notes": "REFUTED BY THE BLOCK'S OWN SIBLING TABLE, which marks Terms 2 and 3 'PATHOLOGICAL at q_0 archimedean' — two of the six do not evaluate at the substrate, so 'cleanly' and 'every term evaluates uniquely' are false as written; the table also qualifies Term 5 as Markov-invariant only 'within sign list', against 'strictly ... across all observables'. The .ts nonetheless sets computation.status = verified. PROPOSED: state the six-term split and say which terms are archimedean-pathological, rather than claiming uniform evaluation. THREE FURTHER NON-TRAP FINDINGS. (i) DIMENSIONS: only Term 4 carries an explicit m_e; if m(rho) is in MeV then Terms 1, 2, 3 and 6 are dimensionless traces being added to an MeV quantity, and if every term is implicitly in m_e units then Term 4's explicit m_e is redundant. No unit convention is stated. (ii) UNDEFINED z AND UNSTATED CONVENTION: Term 3 carries a factor z^2 with z never defined in the block. If it is the Markov parameter, the block does not say which convention, and convention D (z = q^3/(q^2+1) = 0.6126880371) is canonical while C (z = sqrt q/(q+1) = 0.4993203342) is excised. I cannot tell from the block which is meant and am reporting it as unstated rather than guessing; z^2 differs by a factor 1.506 between them (0.37536 vs 0.24932). (iii) With the explicit m_e, m(rho) reads as an absolute MeV mass, excised as a framework prediction on 2026-08-11. Also: the sibling table's computation column is sweep-damaged in 3 of 6 rows and cites a witness file that does not exist — see the verdict recorded there."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2080,21 @@
         "reviewed_at": "2026-08-15T10:31:00.677Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cf3bed5d2c45",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:42.175Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Sentences are short; 'Terms 2 and 3 evaluate the specific knot's processing cost on the substrate' is the heaviest phrase and still parses."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1986,5 +2138,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-18T22:02:50.428Z"
+  "updated_at": "2026-08-22T02:47:42.175Z"
 }

@@ -1360,6 +1360,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:24.615Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'that conjecture interprets the algebraic stratification on the 3-manifold side; the algebraic stratification itself is unconditional' and the three closing bullets separating statement / interpretation / proof are the substrate-archimedean wall discipline the corpus mandates. Load-bearing disambiguation, and the block states it directly rather than narrating it."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1379,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:24.702Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Four numbered steps then a wall-discipline section; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 311 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:24.781Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 311 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:24.867Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The three closing bullets (statement / interpretation / proof) are the corpus's standard three-way wall classification, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:24.945Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the third bullet, a scope statement about what no proof invokes."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:25.031Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The bolded 'statement' / 'interpretation' / 'proof' place emphasis on the three roles rather than announcing it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:25.118Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The JSJ section adds the wall classification, which the four steps do not state."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:25.281Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1632,23 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:25.199Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'No proof ANYWHERE in the algebraic engine invokes JSJ / hyperbolic-volume / Mostow / Thurston as a derivation input.' — a universal claim over the entire engine, asserted in a proof block with nothing cited. It is the kind of claim a sweep can check; as written the reader has to take it.",
+        "notes": "Proposed: cite the audit or checker that establishes it, or narrow to 'No proof in this chapter's algebraic engine ...'. Not applied inline: narrowing the scope changes the claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1668,22 @@
         "reviewed_at": "2026-08-15T10:31:00.472Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:03:25.370Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Numbered steps, short sentences.",
+        "notes": "RIGOR — Phi_q CONVENTION DRIFT, three incompatible definitions inside one chapter, two of them in this batch. Step 4 of this block writes 'the quantum dilogarithm Phi_q is given as a formal product prod_{n>=0} (1 - q^n . x) in Z[q][[x]]'. The sibling rem:phi-q-resums-trace-series displays Phi_q(z) = prod_{k>=1} (1 - q^{-k} z)^{-1}, and prf:phi-q-categorical-truncation uses Phi_q^{[<=k]}(z) = prod_{j=1}^{k} (1 - q^{-j} z)^{-1}. Those differ from this one in THREE independent ways: the reciprocal (this block has no exponent -1, so it is the Pochhammer (x;q)_infinity, which is the INVERSE of the other two), the sign of the exponent (q^{+n} here, q^{-k} there — and with q_0 = 1.10998 > 1 the two have opposite convergence behaviour, since only q^{-k} -> 0), and the starting index (n >= 0 here, k >= 1 there, a factor of (1 - x)). The discrepancy is not cosmetic for this step's own argument: Step 4's conclusion that Phi_q 'reduces to a polynomial when truncated' is TRUE for the Pochhammer written here and FALSE for the reciprocal written in the two sibling blocks, where a truncation is a rational function — which is exactly why prf:phi-q-categorical-truncation calls its truncation 'a finite product' rather than a polynomial. Proposed: fix one convention chapter-wide and state it once at the definition (def:quantum-bloch-group or def:phi-q-piece), then have every block cite it. VERIFIED OK in this block: Step 4's claim that no convergence condition on |q| is needed is correct for the formal-power-series reading; Step 3's pentagon reduction of order-3 to order-<=2 plus a level-(n+1) residual matches prop:pentagon-uv-commutation exactly. MINOR: the JSJ section calls rem:phi-q-tower-jsj-bridge 'The conjecture', but that label is a rem:, not a conj:."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:03:25.370Z"
 }

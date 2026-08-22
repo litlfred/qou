@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.513Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.551Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.590Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.629Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.668Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.708Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.783Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.820Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d47088052a77",
+          "ts": "f4f0d472fc7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.859Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row channel-summary table). All six channel coefficients re-derived by expanding the full product of the two 4-term photon states and collecting: gamma = 1 + phi_0 psi_0 + phi_1 psi_1; sigma_0 = phi_0 + psi_0 + phi_0 psi_0 h + phi_01 psi_1; sigma_1 = phi_1 + psi_1 + phi_1 psi_1 h + phi_0 psi_01; L_+ = phi_01 + psi_01 + phi_0 psi_1 + h(phi_0 psi_01 + phi_01 psi_1); L_- = phi_1 psi_0 + phi_01 psi_01; e^- = phi_01 psi_0 + phi_1 psi_01 + phi_01 psi_01 h. Every coefficient AND every contributing-term list matches. No prose trap constructions."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:03.859Z"
 }

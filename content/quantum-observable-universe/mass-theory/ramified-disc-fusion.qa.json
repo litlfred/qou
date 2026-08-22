@@ -2180,6 +2180,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.308Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2199,6 +2215,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.347Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-em-dash": [
@@ -2218,6 +2250,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 188 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.387Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-triples": [
@@ -2237,6 +2285,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 188 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.428Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-closing-aphorism": [
@@ -2256,6 +2320,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.468Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-meta-commentary": [
@@ -2275,6 +2355,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.508Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-thesis-restatement": [
@@ -2294,6 +2390,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.549Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-performed-warmth": [
@@ -2313,6 +2425,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.589Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-superlative": [
@@ -2332,6 +2460,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.629Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "trap-nonspeakable": [
@@ -2351,6 +2495,22 @@
         "reviewed_at": "2026-08-15T10:31:00.679Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.671Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2374,5 +2534,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:46:10.671Z"
 }

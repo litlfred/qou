@@ -1428,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.313Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"The trace itself does **not** satisfy a two-sided rule ... for any parameter c\" and \"it is neither z_m nor z_m^{-1}\" are both load-bearing disambiguation, each immediately backed by the algebra that forces it. False-positive class.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1447,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.355Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Bolded-lead paragraph structure throughout; no setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1466,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 301 words)"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.397Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Two em-dashes, both true parentheticals: \"with c(x) the content and h(x) the hook length of the cell x - the Ocneanu weight formula at framing ratio a^2 = z_m/z_-\" and the \"frame-general\" gloss.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1485,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 301 words)"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.440Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No reflex list; the convention-D weight triple w_(3), w_(2,1), w_(1^3) is the complete set of partitions of 3.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1504,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.481Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Closes on the normalisation identity holding under both conventions - a checkable fact, and it checks out.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1523,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.521Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "None.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1542,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.561Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Each paragraph adds content.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1561,6 +1673,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.601Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1580,6 +1708,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.641Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No inflation, and the convention scoping is exemplary - the block says outright that its own quoted numbers \"are therefore **convention-C values**, and do not describe the parameter the mass tables use\". EXTENSIVELY VERIFIED, so a later pass need not re-check: at q_0 = 1.1099785827513808 I recomputed z_m = 1/(q^{1/2}+q^{-1/2}) = 0.499320334184 (printed ~0.499), z_J = (q-1)/(q^{1/2}+q^{-1/2})^2 = 0.0274199478 (printed ~0.027), z_- = z_m - (q-q^{-1}) = 0.290260035 (printed ~0.290). The relation z_J = (q-1) z_m^2 and the identity z_m = sqrt(q)/(1+q) hold symbolically. The quadratic c(c-(q-q^{-1})) = 1 does force c in {q, -q^{-1}} (product of roots -1, sum q-q^{-1}). tr_M(1) = (z_m - z_-)/(q-q^{-1}) = 1 exactly. And the frame-general claim is exactly right: feeding z_D = q^3/(q^2+1) into the printed Ocneanu product with z_- = z - (q-q^{-1}) gives w_(3) - [4]_q/[2]_q^3 = 0, w_(2,1) - 1/[2]_q^2 = 0 and w_(1^3) = 0 SYMBOLICALLY, and sum over lambda of dim(V_lambda) w_lambda = 1 identically under both C and D.",
+        "notes": "One numeric defect flagged, not edited (math): the opening sentence says the two conventions \"differ by a factor of $q - 1$\", but the block's own Relation section gives z_J = (q-1) z_m^2, so the ratio is z_J/z_m = (q-1) z_m = 0.0549145 at q_0, not q-1 = 0.1099786 - out by a factor of z_m, i.e. very nearly 2. Proposed: \"They differ by a factor of $(q-1)z_{\\mathrm{m}}$\" (or simply \"by the relation $z_J = (q-1)z_m^2$ below\"). Second item: two markdown links in this block are written root-relative and will not resolve from content/quantum-observable-universe/mass-endomorphism/ - \"[witness](computations/markov-trace-weights-wenzl.witness.json)\" and \"[trace-convention registry](docs/coordination/trace-convention-registry.md)\". Both target files DO exist at the repo root, so the fix is the \"../../../\" prefix, not a re-target."
       }
     ],
     "trap-nonspeakable": [
@@ -1599,6 +1743,22 @@
         "reviewed_at": "2026-08-15T10:31:01.034Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "56f52a799332",
+          "ts": "c64b007aab50"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:46.681Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"the Ocneanu weight formula at framing ratio a^2 = z_m/z_-\" is compact but a named object; prose reads aloud.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1621,5 +1781,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:33:50.140Z"
+  "updated_at": "2026-08-22T03:31:46.681Z"
 }

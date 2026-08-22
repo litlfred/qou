@@ -1543,6 +1543,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.664Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1562,6 +1577,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.702Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "trap-em-dash": [
@@ -1581,6 +1611,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.738Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "trap-triples": [
@@ -1600,6 +1645,22 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.777Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "'Three free consequences follow if discharged' followed by a 3-item numbered list.",
+        "notes": "Substantive: the three consequences are logically distinct (period witnesses, Mikusinski localisation, equivariant period theory) and each is tied to a different object, so this is enumeration and not a reflex triple. 'free' is a mild strength word but is scoped by 'if discharged'."
       }
     ],
     "trap-closing-aphorism": [
@@ -1619,6 +1680,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.813Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "trap-meta-commentary": [
@@ -1638,6 +1714,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.848Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "trap-thesis-restatement": [
@@ -1657,6 +1748,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.884Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "trap-performed-warmth": [
@@ -1676,6 +1782,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.919Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "trap-superlative": [
@@ -1695,6 +1816,22 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.956Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "'Three FREE consequences follow if discharged.'",
+        "notes": "Scoped by the conditional, so not an unqualified maximum-strength claim. STRUCTURAL FINDINGS recorded here instead. (1) MARKDOWN RENDER HAZARD: unescaped '*' inside emphasis spans. Line 1 is '**Conjecture (graded Baer-* on ...).**' and line 10 is '*Each ... is a Baer-*-ring ... are **Baer-*-morphisms**: ... with*'. The bare '*' in 'Baer-*' will pair with the surrounding emphasis markers, so the intended italic statement and the bold term both mis-render (on line 10 the first italic span closes at 'Baer-' instead of at the end of the paragraph). Same hazard on lines 20 and 25 ('Baer-* structure', 'Baer-* is trivial'). Proposed: escape as 'Baer-\\\\*'. This is a render-QA item, not a trap, and I did not fix it inline because it is notation. (2) Minor math: the third bulleted axiom reads 'sum_i p_n^{(i)} . id_{G^{(n)}} = id_{G^{(n)}}', where the '. id' is redundant - the completeness relation is sum_i p_n^{(i)} = id_{G^{(n)}}."
       }
     ],
     "trap-nonspeakable": [
@@ -1714,6 +1851,21 @@
         "reviewed_at": "2026-08-15T10:30:59.573Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7c245d8cacf1",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:47.994Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read of the conjecture (statement, three bulleted projection axioms, Structural justification, Reduction to known structure). Zero em-dashes, no closer, no warmth, no meta-narration. Lean sibling QOU/BraidKnot/GradedBaerStarHq.lean checked and is exemplary for AGENTS.md 3b-tax: a content-bearing class (depth, IsProjection, proj_selfadjoint : forall p, IsProjection p -> star p = p) with NO instance provided, the commented-out sorry instance left visible as the open state. The depth-1 attribution to Baker (linear independence of logarithms of multiplicatively independent algebraics) is correct."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1737,5 +1889,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:32:47.994Z"
 }

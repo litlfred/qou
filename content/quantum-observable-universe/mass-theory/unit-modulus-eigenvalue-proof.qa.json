@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.581Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "\"carries phase information but no amplitude growth\" is a substantive contrast between channels."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.622Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.663Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Two spaced em-dashes in 2.7k, both appositive."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.705Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The three Wedderburn channels of H_3(q) are forced by the algebra."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.748Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Ends on a structural statement about where mass ratios come from."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.796Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.837Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The duality section draws consequences rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.879Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,23 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.924Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "critical",
+        "evidence": "The proof rests on a false parenthetical, and two table entries disagree with the corpus's own closed form. (1) FALSE PARENTHETICAL: \"Combined with ",
+        "notes": "tr| <= 2 (which holds for real traces of 2x2 matrices with unit determinant)\". It does not hold - diag(2, 1/2) is a real 2x2 matrix of determinant 1 and trace 2.5 - and the failure is realised inside this very setting: sigma_1^2 has determinant 1 and trace q^2 + q^-2 = 2.043706209 at the proton pin. |tr| <= 2 is exactly the hypothesis the argument needs and the one it does not establish. (2) SIGN ERROR ON THE BORROMEAN CHARACTER: the proof asserts chi_{(2,1)}(beta_Bor) = -2 and concludes lambda^2 + 2 lambda + 1 = 0, lambda = -1 degenerate. The corpus's own canonical closed form, in borromean-markov-trace-closed-form.md and cross-checked by computations/borromean_chi_independent_crosscheck.py, is chi^{(2,1)}(beta_Bor) = 2 - 3h^4 - h^6 = (-q^12 + 3q^10 - 3q^8 + 4q^6 - 3q^4 + 3q^2 - 1)/q^6. I built the 2-dimensional H_3(q) representation independently and it reproduces that closed form to 20 digits at q = 1.0, 1.07, 1.1099785827513808 and 1.5. Its value at the proton pin is +1.9941858130, so the characteristic polynomial is lambda^2 - 1.99419 lambda + 1, the eigenvalues are exp(+-i * 4.36991 degrees), and there is no degenerate -1. A sanity check confirms the sign: at q = 1 the word (sigma_1 sigma_2^-1)^3 is the identity permutation in S_3, whose standard character is +2, and 2 - 3h^4 - h^6 -> 2 as q -> 1. (3) THETA_L IS 120 DEGREES, NOT 59: the table's row \"L_+ = sigma_1 sigma_2\" gives theta_L approx 59 deg, but tr_{(2,1)}(sigma_1 sigma_2) = -1 EXACTLY, independent of q (I checked at all four q above), so theta_L = 120 deg exactly. That row also calls sigma_1 sigma_2 \"the Hopf link\"; its closure in B_3 is a one-component link, since the underlying permutation is a 3-cycle, whereas the Hopf link has two components and is the closure of sigma_1^2 in B_2. (4) The meson row cannot be checked at all: the operator M_+ is never defined in the block. I tried the two natural 6-crossing positive candidates - (sigma_1 sigma_2)^3 gives trace exactly 2 and the degenerate real eigenvalue 1, and sigma_1^3 sigma_2^3 gives 117.087 deg - and neither is the stated 54 deg. (5) CONSEQUENCE: the whole \"baryon-meson duality\" section is built on theta = pi for baryons, i.e. on finding (2). And the Lean sibling's theorem borromean_eigenvalue_neg_one takes tr = -2 as an explicit HYPOTHESIS - its docstring says the rep-theory input is \"carried as a hypothesis, not asserted here\" - so the Lean is a valid conditional whose antecedent this finding contradicts. That is the conditional-proved-is-not-premise-established pattern, with the premise now measurably false.|Reported, not edited (all mathematical, and (2) needs a decision the author should make). Route: prove or hypothesise |tr| <= 2 rather than asserting it; reconcile the Borromean character against borromean-markov-trace-closed-form.md and its cross-check script, which agree with each other and with an independent build; recompute theta_L and theta_M and define M_+; then revisit the duality section, which currently reads cos(theta) = -1 for baryons where the corpus's closed form gives cos(theta) = +0.997."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:13.966Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:25:13.966Z"
 }

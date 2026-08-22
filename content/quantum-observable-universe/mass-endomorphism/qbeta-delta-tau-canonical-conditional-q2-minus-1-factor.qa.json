@@ -2146,6 +2146,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:12.726Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2165,6 +2181,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:12.770Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Assume-define-conclude; no reframe.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -2184,6 +2216,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 144 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:12.813Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero em-dashes.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -2203,6 +2251,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 144 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:12.857Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "The three-term sums are the three partitions of 3, exhaustive.",
+        "notes": "n/a"
       }
     ],
     "trap-closing-aphorism": [
@@ -2222,6 +2286,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:12.900Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No aphoristic closer; see trap-thesis-restatement for what is actually at the end.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -2241,6 +2321,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:12.946Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None in prose.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -2260,6 +2356,23 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:12.990Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "The block's FINAL paragraph, after the cross-reference list, is the dangling boilerplate banner: '**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, physical observables, and numerical evaluation at the substrate parameter q_0. ...' Nothing follows it. It is also FALSE here and contradicted by the block's own metadata: the .ts carries the tag 'pre-archimedean', the .md content is a pure ring identity (chi_lambda = (q^2-1)P_lambda summed against weights), and q_0 never appears in the block.",
+        "notes": "PROPOSED (not applied -- REPORTED per the audit brief, which asks for this class): delete the trailing banner. SEVENTH recorded instance of the dangling 'Archimedean specialisation.' banner; the second in this batch (see phi-d-syt-count-conjecture.md), and like that one it is not merely orphaned but contradicts its own block. Math checked and CORRECT: substituting chi_lambda = (q^2-1)P_lambda into the weighted sum and factoring gives Delta = (q^2-1)P^can with P^can = sum y_lambda P_lambda, hence Delta(1) = 0. Minor: 'Here P_lambda(q) **form** the per-block witnesses' is the same forms-for-are verb substitution seen across this chapter; trailing whitespace after 'for q > 0.'"
       }
     ],
     "trap-performed-warmth": [
@@ -2279,6 +2392,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:13.033Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -2298,6 +2427,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:13.075Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No maximum-strength claim; the block is explicitly and correctly hedged as conditional on an instance of CanonicalMarkovWeightsH3.",
+        "notes": "Good sec 3b-cond hygiene: class hypothesis on the Lean side, conditional wording on the narrative side."
       }
     ],
     "trap-nonspeakable": [
@@ -2317,6 +2462,22 @@
         "reviewed_at": "2026-08-15T10:31:01.020Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "11258ebebf62",
+          "ts": "6763e55b9b84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:13.117Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Short declarative sentences around displayed math.",
+        "notes": "n/a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2340,5 +2501,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:02:13.117Z"
 }

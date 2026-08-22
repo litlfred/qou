@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.671Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.714Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.755Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.794Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.835Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.876Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.917Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.958Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.997Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "35035c572ea8",
+          "ts": "7636a3f7b312"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:05.036Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row force-carrier/strands/partition table. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. Cross-checked against table9 of the same parent: T_(2,9) -> (2,1,1) and T_(3,5) -> (3,1) here, and table9's Interpretation column assigns exactly the same two partitions. Strand counts '2 of 4' and '3 of 4' match the T(2,n) and T(3,n) indices."
+      }
     ]
   },
   "source_hashes": {
     "md": "35035c572ea8",
     "ts": "7636a3f7b312"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:05.036Z"
 }

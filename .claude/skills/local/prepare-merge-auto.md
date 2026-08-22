@@ -39,6 +39,20 @@ Execute the full `/prepare-merge` skill (rebase, integrate, one-voice,
 Lean build, final rebase, request reviews). All steps must succeed
 before proceeding.
 
+**Sidecar conflicts during the rebase.** Resolve `content/**/*.qa.json`
+to either side as usual for the **script** entries, then restore the
+other side's **agent** entries mechanically:
+
+```bash
+python3 scripts/qa-sidecar-agent-union.py --against <pre-rebase-ref> --apply
+```
+
+An agent verdict has no producer — `qa-sweep` regenerates script
+candidates and never a judgement — so "let the pipeline re-run it" loses
+those entries silently. The #5103 takeover dropped 7381 of them that
+way (`qou-tqr9`). The script is additive and skips any entry whose
+`field_hash.md` no longer certifies the merged `.md`.
+
 ### Phase 1b: Wait for reviews + status briefing
 
 **Wait for the Copilot review to land** before proceeding.
@@ -176,3 +190,6 @@ After merge:
 - Do NOT ask trivial questions in Phase 3 — only genuinely ambiguous
   decisions warrant user input.
 - **Do NOT delete the branch after merging.**
+- Do NOT resolve a `.qa.json` conflict to one side and rely on
+  `qa-sweep` to regenerate it — that is correct for script entries and
+  drops agent verdicts (see Phase 1).

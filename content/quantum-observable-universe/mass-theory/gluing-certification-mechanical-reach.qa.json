@@ -18,6 +18,23 @@
         "severity": "major",
         "evidence": "Eight assert-by-denial constructions in 613 words, two of them in section headers: 'Cusp equations were expected to be harder and are not', 'Two predicted ceilings, neither of which exists', 'Both were expected to bite; both were measured, and neither did.', 'It is a limit on the *named lemmas*, not on the argument', 'not merely a pile of separate equations', 'Nothing is guessed'. The genuinely substantive ones are the closing scope statements ('hyperbolicity is not established anywhere', 'None of the underlying mathematics is new'), which are exactly the honest-limits kind the corpus wants and are kept.",
         "notes": "PROPOSED (structural, header-level — not applied): '## Cusp equations were expected to be harder and are not' -> '## Cusp equations reduce to the edge case'; '## Two predicted ceilings, neither of which exists' -> '## Certificate growth and tetrahedron count'; 'Both were expected to bite; both were measured, and neither did.' -> 'Both were measured; neither binds.' One instance was removed as part of the trap-thesis-restatement fix."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.632Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "Six negation-contrast constructions in 4.1k chars, most of them framing rather than content: header \"Two predicted ceilings, neither of which exists\"; header \"Cusp equations were expected to be harder and are not\"; \"Both were expected to bite; both were measured, and neither did.\"; \"It is a limit on the named lemmas, not on the argument\"; \"... a certificate that the triangulation satisfies its gluing system - not merely a pile of separate equations.\"; and the block-final \"None of the underlying mathematics is new. What is contributed is ...\". The named-lemmas one is substantive; the rest assert by denying.",
+        "notes": "Structural (headers + math-adjacent), not edited. Proposed: retitle to \"The reach of the exact gluing verification\" and \"Cusp equations reduce to the edge case\"; replace \"Both were expected to bite; both were measured, and neither did.\" with the measured statement (\"Both were measured: certificates grow with degree but cost tracks call count, and the tetrahedron bound is on the named lemmas only.\"); state the net-reach sentence positively."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -37,6 +54,21 @@
         "severity": "major",
         "evidence": "Three setup-then-reframe constructions, the block's dominant rhetorical device. (i) 'Cusp equations carry **negative** exponents, which suggests they need each parameter's inverse as an explicit polynomial plus integer-power bookkeeping threaded through every statement. They do not.' (ii) 'The obvious worries about scaling this up are that ... Both were expected to bite; both were measured, and neither did.' (iii) 'The finite-product lemmas available off the shelf stop at eight, which reads like a hard limit at nine tetrahedra. It is a limit on the *named lemmas*, not on the argument'. In each case the second clause carries the whole content and the first exists only to be overturned.",
         "notes": "PROPOSED (structural, multi-sentence — not applied): state each result directly and keep the expectation only where it is genuinely informative, e.g. (i) 'Cusp equations carry negative exponents, but every edge parameter is a unit, so the negative side moves across and both sides carry natural exponents; no integer-power machinery is needed.' The measurements themselves are the block's value and are unaffected."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.671Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"The obvious worries ... are that X and that Y\" names two concrete, checkable predictions that the two following paragraphs then measure. The structure carries content rather than deferring it to a second clause."
       }
     ],
     "trap-em-dash": [
@@ -54,6 +86,21 @@
         "reviewed_at": "2026-08-21T16:16:14.270Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "Four em-dashes in 613 words after the fixes, each introducing a genuine qualification ('removes the root-selection problem entirely — otherwise one would have to prove...'; 'hyperbolicity is not established anywhere — that needs Im z > 0')."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.712Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Three spaced em-dashes in 4.1k (~0.7/1k), below the density at which the dash is substituting for sentence structure; two are true parentheticals."
       }
     ],
     "trap-triples": [
@@ -71,6 +118,21 @@
         "reviewed_at": "2026-08-21T16:16:14.303Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "No three-item list; the block is organised in pairs (two consequences, two ceilings)."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.757Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "No reflex three-item lists; enumerations are two-part (two consequences, two ceilings) and match the content."
       }
     ],
     "trap-closing-aphorism": [
@@ -90,6 +152,23 @@
         "severity": "major",
         "evidence": "The block ends on a contribution-statement pair written for quotability: '**None of the underlying mathematics is new.** What is contributed is the exact, mechanically checked form, and the measurement of how far it reaches before anything breaks.' The first sentence is a genuine and valuable scope disclaimer; the second is a self-assessment of the work's contribution, which belongs in a PR description or authorNotes rather than in a theorem block.",
         "notes": "PROPOSED (not applied — the disclaimer is substantive and must survive): keep 'None of the underlying mathematics is new.' in prose, and move 'What is contributed is ...' to authorNotes kind 'note'. Also coined mid-block: 'Wide-but-few is cheap.' — kept, because it states the measured cost model compactly and is immediately preceded by the quantitative version."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.796Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "Block ends \"None of the underlying mathematics is new. What is contributed is the exact, mechanically checked form, and the measurement of how far it reaches before anything breaks.\" - a quotable two-beat closer. Mid-block \"Wide-but-few is cheap.\" is the same construction closing the Degree paragraph.",
+        "notes": "Structural (the first sentence is a real novelty disclaimer matching the witness field not_established; meaning is at stake). Proposed: \"The underlying mathematics is standard; the contribution is its exact, mechanically checked form and the measured reach of that form.\" Delete \"Wide-but-few is cheap.\" - the preceding sentence already states the finding."
       }
     ],
     "trap-meta-commentary": [
@@ -109,6 +188,21 @@
         "severity": "major",
         "evidence": "'The reason the naive extrapolation overshoots is worth recording:' — announces that what follows deserves attention instead of simply stating it.",
         "notes": "FIXED: 'The reason the naive extrapolation overshoots is worth recording: **cost tracks ...**' -> 'The naive extrapolation overshoots because **cost tracks ...**'."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.834Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"Two consequences make the whole thing mechanical.\" announces structure but does not narrate emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -128,6 +222,21 @@
         "severity": "major",
         "evidence": "The cost finding was stated three times consecutively: the bolded 'cost tracks the number of ring-normalisation calls far more than the size of any one of them', then 'Wide-but-few is cheap.', then 'So certificate size — the quantity that visibly grows — is not the quantity that predicts cost.'",
         "notes": "FIXED: the third sentence deleted ('So certificate size — the quantity that visibly grows — is not the quantity that predicts cost.'). The quantitative statement and its one-line summary are kept."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.874Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "The \"Net reach:\" sentence carries concrete new numbers (degrees 2-14, 2-14 tetrahedra) rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -145,6 +254,21 @@
         "reviewed_at": "2026-08-21T16:16:14.461Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "No personal register; the first person never appears."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.913Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -162,6 +286,23 @@
         "reviewed_at": "2026-08-21T16:16:14.518Z",
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "'entirely', 'exactly', 'anywhere', 'Nothing is guessed' are all precise in context — the ring-quotient argument really does hold at every root, and the scope disclaimers really are absolute."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.950Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "Absolutes throughout - \"no numerics enter at any step\", \"removes the root-selection problem entirely\", \"Nothing is guessed\", \"no integer-power machinery appears anywhere\", \"neither of which exists\" - and they sit beside three quantitative claims the cited witness does not record. Checked computations/qbeta-route75-multiknot-gluing-symbolic.witness.json: it has no certificate sizes and no Lean timings. Of the four numbers: \"single largest certificate is over thirty thousand characters\" CONFIRMED (K10100.edge_7 in GeneratedGluingHigh.lean is 30569 chars); degrees 2-14 and 2-14 tetrahedra CONFIRMED (G8.scaled, 27 entries); \"verifies in about two minutes\" NOT SUPPORTED - the witness records 10_100 at 7.2s total / 0.12s verify; \"emitted size grows fivefold from degree 4 to degree 9\" NOT REPRODUCED - 7_7 (deg 4) 10022 chars -> 7_6 (deg 9) 23094 chars = 2.3x by namespace, 642 -> 2363 = 3.7x by largest single certificate.",
+        "notes": "Reported, not edited (numeric). Route: if \"two minutes\" is Lean elaboration time it is recorded nowhere in the cited witness - either cite the source or drop it; recheck \"fivefold\" against whatever quantity was measured."
       }
     ],
     "trap-nonspeakable": [
@@ -180,8 +321,23 @@
         "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
         "evidence": "This block reads aloud better than most in the batch: short sentences, concrete subjects, no noun-stacking.",
         "notes": "CHECKS. (1) THE CENTRAL IDENTITY IS CORRECT: with Thurston's shape relations z' = 1/(1-z) and z'' = (z-1)/z, the gluing condition prod z^a (z')^b (z'')^c = 1 clears to prod z^a prod (z-1)^c = prod (1-z)^b prod z^c, exactly as displayed — I re-derived it. (2) CONSISTENT with the sibling thm:gluing-equations-do-not-detect-hyperbolicity: both say the trefoil's flat shapes satisfy the edge equations exactly and that Im z > 0 is the separate condition. (3) UNWITNESSED NUMBERS: 'cofactor degree roughly quadruples', 'emitted size grows fivefold from degree 4 to degree 9', 'over thirty thousand characters', 'about two minutes', 'degrees 2 through 14' — none is tied to a field of the witness the .ts names (qbeta-route75-multiknot-gluing-symbolic.witness.json); a reader cannot check any of them. (4) KIND: the .ts declares theorem() with label thm:..., but the .md contains no theorem statement — it is an essay about the certification's reach, with one displayed identity. Either state the theorem, or make the block a remark. (5) ONE-VOICE: two section headers carry a warning sign glyph ('## warning-sign Two predicted ceilings ...', '## warning-sign What this does not establish'); the one-voice audit strips such glyphs from scholarly prose. (6) RENDER ADVISORY: '$\\operatorname{Im} z > 0$' uses \\operatorname, which AGENTS.md's render-QA gate says KaTeX rejects in favour of \\mathrm. Not block-specific — 11 files in this chapter use it — so either the corpus has a latent render defect or that rule is stale; worth one decision rather than 11 edits."
+      },
+      {
+        "field_hash": {
+          "md": "ed3754707847",
+          "ts": "c58ca2b8a748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:27.988Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "\"cost tracks the number of ring-normalisation calls far more than the size of any one of them\" is dense but speakable."
       }
     ]
   },
-  "updated_at": "2026-08-21T16:16:14.560Z"
+  "updated_at": "2026-08-22T05:01:27.988Z"
 }

@@ -1420,6 +1420,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:35:59.608Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. The governing negation - 'Electromagnetism is not a knot. It is the involutive structure of the category itself.' - is the block's actual thesis (EM has no dedicated torus-knot generator, unlike the strong and weak sectors), so it is substantive per the false-positive class. Restated twice more ('requires no dedicated torus knot generator'; 'is not carried by a knot'), but each occurrence opens a different section and each is load-bearing there."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1439,6 +1454,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:35:59.714Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No setup-then-reframe. 'Unlike the massless T_2,9, T_3,5 gives nonzero mass to the weak bosons' is an ordinary comparative introducing a real asymmetry (crossing energy cancels for one and not the other), not a pivot."
       }
     ],
     "trap-em-dash": [
@@ -1458,6 +1488,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 638 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:35:59.809Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No spaced em-dashes anywhere in this long block."
       }
     ],
     "trap-triples": [
@@ -1477,6 +1522,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 638 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:35:59.881Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Four counted triples (three SM forces; three interlocking structures dagger/J/omega; three consequences; three color copies of T_2,3), but each is content-forced: the SM has three gauge forces, the three structures are separately used and reappear in the summary table row, the three consequences are logically distinct, and three is the colour count. No reflex padding."
       }
     ],
     "trap-closing-aphorism": [
@@ -1496,6 +1556,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:35:59.954Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The final line 'The genus-4 constraint chi(A) = -6 specifies all three forces.' is a technical claim (chi = 2-2g = -6 verified correct for genus 4), not a quotable-sounding flourish. Recorded as a restatement issue under trap-thesis-restatement instead."
       }
     ],
     "trap-meta-commentary": [
@@ -1515,6 +1590,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:00.047Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1534,6 +1624,23 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:00.121Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Block-final sentence 'The genus-4 constraint $\\chi(A) = -6$ specifies all three forces.' restates the opening claim ('The three Standard Model forces arise from three distinct layers of the torus knot architecture on Bring's surface') after a summary table has already restated it a second time. Genus 4 has been the operative constraint throughout; re-expressing it as chi = -6 in the last line adds a symbol but no argument, and the sentence sits after the summary table with nothing following it.",
+        "notes": "Structural, not edited. Proposed fix: either drop the sentence (the summary table already closes the block) or make it do work by naming the mechanism, e.g. 'Genus 4 - equivalently $\\chi(A) = -6$ - fixes the saturating pair $\\{T_{2,9}, T_{3,5}\\}$, and the remaining force is carried by the involutive structure rather than by a knot.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1553,6 +1660,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:00.227Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1572,6 +1694,21 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:00.281Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'Maximal topological complexity' (genus 4 is the saturating value on Sigma_4), 'the highest crossing count (10) among generators' (a true comparison over the two-element generator set, 9 vs 10) and 'maximizes this asymmetry' are all bounded by named comparison classes. Not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1591,6 +1728,23 @@
         "reviewed_at": "2026-08-15T10:31:01.179Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "afb831bdec9e",
+          "ts": "7e0d742f9fed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:00.350Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Two sentences that stall aloud, one of them structurally misleading: 'The three $S_3$ subgroups of the automorphism group $S_5$ of Bring's surface are the subgroups that leave one of the three $T_{2,3}$ periods of $T_{2,9}$ invariant.' (30 words, four stacked of-genitives, and the definite description presupposes a count that is false - see notes), and 'The positive-definite contravariant endofunctor $f \\mapsto f^{\\dagger}$ defines observability.' (three stacked pre-modifiers on the subject).",
+        "notes": "Structural (math-adjacent), not edited. Proposed fix for the first: 'Each of the three $T_{2,3}$ periods of $T_{2,9}$ is left invariant by an $S_3$ subgroup of $\\mathrm{Aut}(\\Sigma_4) = S_5$.' This also removes the false presupposition: $S_5$ has 30 subgroups isomorphic to $S_3$ (10 three-element supports x 3 order-6 subgroups of the order-12 normaliser of each $A_3$), not three, so 'the three $S_3$ subgroups of $S_5$' does not denote."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1613,5 +1767,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:36:00.350Z"
 }

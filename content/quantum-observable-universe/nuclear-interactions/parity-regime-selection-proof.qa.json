@@ -1176,6 +1176,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.887Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1212,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.926Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1248,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.966Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1284,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 66 words)"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.001Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1320,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.038Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1356,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.075Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1392,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.114Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1428,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.153Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the sign argument + the 3-row numerical table. Verified (-1)^Z(-1)^{N-1}=(-1)^{A-1} given Z+N=A. Recomputed all three error columns (see trap-superlative). Q_exp values are right: tritium 18.59 keV, He-6 3.505 MeV.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1464,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.192Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Numerical-verification table, row 1: '$n \\to p$ | 1 (odd) | $Q_{calc} \\approx 0.7816$ | $Q_{exp}$ 0.7823 | $-0.10\\%$'.",
+        "notes": "CROSS-BLOCK DISAGREEMENT ON THE SAME OBSERVABLE. prop:neutron-qvalue-symbolic gives Q_calc = 0.7836 MeV (+0.17%) for n->p, and tbl:q-beta-spectral-bridge-table-data gives 0.783645803897 MeV; this table gives 0.7816 MeV (-0.10%). The two predictions are 0.25% apart with OPPOSITE error signs, and AGENTS.md's cheat sheet quotes ~0.784 MeV / 0.17%, so 0.7816 is the outlier. Reported, not resolved. Two smaller arithmetic slips in the same table: from the printed inputs the n->p error is -0.0895% (rounds to -0.09%, not -0.10%) and the 3H error is -3.76% (not -3.64%; -3.64% would need Q_calc = 0.017923). The 6He row checks out at +3.68%, and both Q_exp values are right (tritium 18.59 keV, 6He 3.505 MeV)."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1500,23 @@
         "reviewed_at": "2026-08-15T10:31:01.431Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "657940c71963",
+          "ts": "3062f45945b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.229Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'This constraint ensures that both parent and daughter exhibit non-negative Markov traces.'",
+        "notes": "Clear."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1539,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:03.229Z"
 }
