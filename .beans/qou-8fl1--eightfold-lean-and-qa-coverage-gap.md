@@ -3,8 +3,9 @@
 title: 'Eightfold chapter: Lean + QA coverage gap after the honesty pass'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-06T00:00:00Z
+updated_at: 2026-08-22T19:39:22Z
 ---
 
 ## Context
@@ -89,3 +90,23 @@ alone. The `.md`/`.ts` over-claims were corrected to say the q-independence is
 Item 3 (`Sym2Gate.lean` vacuous) still stands — it compiles, and the chapter
 prose already labels it honestly, so it is correctly-labelled rather than
 misleading. The generalised sweep is bean `qou-k448`.
+
+
+
+## Item 3 detail (added 2026-08-22, folded from redundant qou-v4ns)
+
+WHY Sym2Gate.lean item 3 stays a gap rather than 'just not done': the real
+claim (SU(3) fundamental 𝟑 is complex type, 𝟑̄≠𝟑 ⇒ Sym²(𝟑)=𝟔 irreducible ⇒
+passes the gate) is currently UNSTATABLE faithfully — Mathlib has no
+SU(3)/Frobenius-Schur-indicator/complex-type machinery to phrase it over
+genuine rep objects. So su3_sym2_irreducible : True is not laziness; it is a
+Mathlib gap. The SU(2) side IS formalized next door (Sym2GateParity.lean:
+zero_mem_sym2Indices_iff, adjoint_fails_gate) and carries the load-bearing
+physics; Sym2Gate's decls are the SU(3) complement.
+
+Resolution options: (a) build minimal SU(3)-fundamental + FS-indicator infra to
+state+prove Sym²(𝟑) irreducible; or (b) if never needed downstream, remove the
+content-free axiom su3_sym2_irreducible and restate octonion_3_passes_sym2_gate
+(6=6∧0=0) to a real dim claim tied to sym2_dim_3. Ref: [fulton-harris1991] §11;
+FS indicator (-1)^{2j}. (Both decls are advisory in the vacuity ledger; the
+file docstring already documents the vacuity honestly.)
