@@ -1,10 +1,10 @@
 ---
 # qou-4lbh
 title: 'Roth''s lemma: the height theory is the real cost, not the Wronskians'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-21T16:31:55Z
-updated_at: 2026-08-21T16:31:55Z
+updated_at: 2026-08-22T00:00:00Z
 ---
 
 The index and Wronskian machinery for Roth's lemma is done. What remains is the m=1 base case, which is blocked on height theory Mathlib has only partially. See body for the measured inventory.
@@ -249,3 +249,58 @@ M(X − a) = max(1, ‖a‖)
 ⚠ **Do not read this as "the blocker is gone".** The Jensen form is one of *two* bridges.
 Landau's inequality — the one that turns a Mahler bound into a *coefficient* bound — is
 still absent and is untouched by the above. Gelfond needs both directions.
+
+---
+
+## 2026-08-22 — the coefficient bridge, and ⚠ it is NOT Landau
+
+`QOU/Mathlib/MahlerJensen.lean` gained five declarations giving
+
+```
+M(p) ≤ max(1, ‖p‖₁)      for p ∈ ℂ[X]
+M(q) ≤ ‖q‖₁             for 0 ≠ q ∈ ℤ[X]   (mahlerMeasure_le_sum_int)
+```
+
+`norm_eval_le_sum_norm_coeff`, `mahlerMeasure_le_max_one_sum_norm_coeff`,
+`mahlerMeasure_le_sum_norm_coeff`, `one_le_sum_norm_coeff_map_int`,
+`mahlerMeasure_le_sum_int`. All six declarations in the module axiom-check to
+`[propext, Classical.choice, Quot.sound]`.
+
+### ⚠ Do not record this as "Landau: done"
+
+The row above in the 2026-08-22 table says **Landau** `M(P) ≤ √(deg+1)·H(P)`. What is proved
+is **weaker**, on purpose:
+
+* proved: `M(p) ≤ sup_{|z|=1}‖p(z)‖ ≤ ‖p‖₁`, the crude sup bound on the circle.
+* Landau: `M(p) ≤ ‖p‖₂`, which needs Parseval plus Jensen's inequality for `exp`.
+* Since `‖p‖₁ ≤ (deg+1)·H(p)` and `‖p‖₂ ≤ √(deg+1)·H(p)`, the bound proved loses a factor
+  `√(deg+1)` against Landau.
+
+**It is nevertheless enough for the use downstream.** Gelfond then reads
+`∏ H(pᵢ) ≤ 2^{deg}(deg+1)·H(p)` instead of `2^{deg}√(deg+1)·H(p)`, and that extra polynomial
+factor is invisible beside the exponential constants Roth's lemma already carries. Sharpening
+to Landau proper is worth doing only as an upstream contribution, not to unblock this arc.
+
+### The `max 1` is forced, not slack
+
+The pointwise step `log‖p(z)‖ ≤ log ‖p‖₁` **fails** at a zero of `p` on the unit circle when
+`‖p‖₁ < 1`, because Mathlib's `Real.log 0 = 0`, which exceeds `log ‖p‖₁ < 0`. Bounding by
+`max(1, ‖p‖₁)` makes the inequality hold at *every* point of the circle, so
+`circleAverage_mono_on_of_le_circle` applies directly and no a.e. argument is needed. Over
+`ℤ` the `max` costs nothing: the leading coefficient of a non-zero integer polynomial already
+contributes at least one to the sum.
+
+### ⚠ What is still missing is the OTHER direction
+
+| bridge | status |
+|---|---|
+| `M(X − a) = max(1,‖a‖)` (Jensen, one root) | done |
+| `M(p) ≤ ‖p‖₁` over `ℤ` (coefficient bound) | **done — this entry** |
+| **Jensen form** `M(P) = ‖lead‖·∏max(1,‖root‖)` | assembly; not started |
+| **`H(p) ≤ 2^{deg p}·M(p)`** (Vieta, from the Jensen form) | **ABSENT — the real gap now** |
+| Gelfond, then factor-height control | needs the two rows above |
+
+Gelfond bounds `∏H(pᵢ)` by `H(p)`, so it consumes both directions: `H(pᵢ) ≤ 2^{deg}M(pᵢ)`
+going up from each factor's Mahler measure, and `M(p) ≤ ‖p‖₁` coming down from the product's
+height. Only the second is now in hand. `H(p) ≤ 2^{deg}·M(p)` follows from the Jensen form by
+Vieta and is the next thing to prove — it is not analysis, but it is not yet written.
