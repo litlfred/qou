@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T12:30:51Z
+updated_at: 2026-08-22T15:34:20Z
 ---
 
 
@@ -515,3 +515,22 @@ An ARBITRARY standard Q gives an AddableAlong sequence. Everything else is prove
     --14--> insertWord (uninsertSteps P is).2 = P
 The gap needs a standardness predicate on List (List N) (corpus has none) plus the fact that reading
 positions off Q in timestamp order yields addable cells. Brick 16 already supplies the corner half.
+
+
+### Brick 22 — the built shape is the COUNT shape (same PR #5426)
+
+getD_addCellSteps : AddableAlong l is -> (addCellSteps l is).getD i 0 = l.getD i 0 + is.count i
+
+addCell increments one entry, so row i of the built shape holds exactly the cells whose position was
+i. No tableau appears. This is the tool the Q-bridge needs: it identifies addCellSteps [] is with
+tableauShape Q by COUNTING entries per row, rather than by constructing a truncation of Q.
+
+**A design attempt that failed, recorded so it is not retried.** I tried to state the remaining gap
+as a self-contained counting condition on the position list —
+  forall k, is[k] = 0 or (is.take k).count is[k] < (is.take k).count (is[k] - 1)
+— hoping to prove AddableAlong from it and drop AddableAlong entirely. Circular: the count
+characterisation itself needs each step's index to be within the CURRENT shape, which is part of
+what AddableAlong asserts. AddableAlong stays the primitive; the count form is its consequence, and
+that is the direction that composes.
+
+This also means the Q-bridge will NOT need a qTrunc construction — counting per row is enough.
