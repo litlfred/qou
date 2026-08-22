@@ -282,7 +282,29 @@ this file does not yet carry:
    constraints (over-determination test, float64) by
    `computations/probes/markov_reduction_h3_to_h4_verify.py`, via the same
    seminormal machinery as `alpha_k_jones_markov_h4.py`. That is evidence for
-   ingredient (2); the Lean-grade proof still awaits ingredient (1).
+   ingredient (2); the Lean-grade proof still awaits a symbolic-exact
+   cyclicity argument over `ℚ(z,h)` (ingredient (1)'s table is now in hand —
+   see item 1 above).
+
+   **Read that citation with three caveats (measured 2026-08-22, bean
+   `qou-ze9n`).** The cited probe (a) is written in convention **C**,
+   `z = 1/(√q + 1/√q) = 0.4993…`, which the 2026-08-15 ruling excised in
+   favour of D's `q³/(q²+1) = 0.6127…`, a 23 % difference; (b) computes in
+   float64 throughout, which was never necessary — the seminormal machinery
+   accepts and returns `mpf`; and (c) **did not run as committed**, its
+   bootstrap omitting `qou-substrate` and pointing at the `pyhecke` package
+   directory rather than its parent. (c) is fixed; (a) and (b) are left in
+   place as the historical record of what this docstring cites.
+
+   **The conclusion survives all three**, which is why item 2 still stands.
+   `computations/probes/markov_reduction_h3_to_h4_conventions.py` re-runs the
+   same over-determination test at 50 dps under **both** conventions and finds
+   the reduction holds either way, worst residuals ~1e-51 against a 1e-30
+   tolerance — agreement to the limit of the arithmetic used, not an
+   exactness claim. The reason is structural: `z` is an *input* to the weight
+   solve, not an output, so the Ocneanu trace is a one-parameter family and
+   the Markov law is insensitive to which member is chosen. Prefer the
+   companion probe for new work.
 
 Separately, `markov_trace_origin` also needs **Step 4** — naming the specific
 Wenzl–Hoefsmit operator whose trace is `ℏ_rⁿ` (an *identification*, not a
