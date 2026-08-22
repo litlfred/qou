@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:37:16Z
-updated_at: 2026-08-22T20:48:01Z
+updated_at: 2026-08-22T20:50:22Z
 ---
 
 Found while re-baselining `qou-1c4y`; measurement +
@@ -172,3 +172,11 @@ independent paths.
 `--list-contradictions` is currently the only check that catches it — the
 anchor-consistency audit exempts `-audit`/`-scan` suffixes, and the flip-risk
 audit keys on `muon`-stamped witnesses, which these are not.
+
+
+**Attribution.** All four commits in the trace above — the 08-15 anchor re-pin
+(`9a9c6b31c7`, the `qou-m9xp` cause), `da2968cc33`, `1fead8dd49`,
+`a718727acd` — carry `session_011Xe8o5r85SzhndKso9hXVK`, **this session**. I
+wrote the sweep; it reported progress toward 254; for the direct-reader class
+that progress was partly fictitious. Recording it as mine, not as a critique of
+someone else's mechanism.
