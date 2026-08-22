@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T20:50:04Z
+updated_at: 2026-08-22T22:30:01Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -395,3 +395,49 @@ of phases.
   3. be genuinely oscillatory, delivering a value BELOW 1 (entry 8)
 
 PROBE: qbeta_eigenphase_holonomy_consistency_probe.py, now 11/11.
+
+
+## 2026-08-22 (9) — SUPERSESSION + a synthesis, from sibling work landed on main
+
+Two cds1 commits landed on main while #5448 was open, both on this territory.
+
+### My q=1 coincidence motivation is SUPERSEDED (a0caca71cb)
+
+QOU/BraidKnot/JonesHopfSkein.lean, jonesHopf_at_one, sorry-free over any
+CommRing, derives V_Hopf = -2 from the Jones SKEIN axioms. No z, no Markov
+trace, no anchor.
+
+So c_3's provenance never needed my argument. I had reasoned: J_Hopf is a Markov
+trace, a Markov trace depends on z, therefore the written-form result
+(tail_common) leaves a provenance gap that the q=1 coincidence closes. The skein
+route closes it better -- the constant does not come from a trace evaluation at
+all.
+
+SURVIVES: the theorem zCsub_eq_zDsub_iff itself (conventions agree at q=1 and
+nowhere else on the positive branch; sharper than decayLadder_zC_not_jones,
+which only rules out s>1). RETRACTED: its stated purpose. #5448 §3 re-scoped.
+
+### The other landing STRENGTHENS the rationality result (93d211598f)
+
+2*alpha = eps(Delta) - tr_M(Delta) -- the ladder phase IS the counit-minus-trace
+gap. Their own note says 'locates, closes nothing'. This bean explains why that
+is correct:
+
+  eps(Delta) and tr_M(Delta) are both RATIONAL in (q,z) => alpha is ALGEBRAIC
+  (consistent with alpha = (q^2-1)(z-1)/(2q), no conflict)
+  but 2cos(alpha) is TRANSCENDENTAL over Q(q,z)  [entry 4]
+
+**The phase ANGLE is an algebraic counit-minus-trace gap; the ladder needs its
+COSINE, and that is where the rational world is left.** Locating alpha
+algebraically therefore cannot close the ladder -- the transcendence enters at
+EXPONENTIATION, not at alpha. Same conclusion as entry 4 from the other side,
+and neither PR states the synthesis.
+
+Sharpens branch 3: a holonomy construction must exponentiate THAT SPECIFIC gap,
+eps(Delta) - tr_M(Delta), not an arbitrary connection.
+
+### Checked, not assumed
+
+Entries 1-8 otherwise unaffected: the rationality invariant, the carrier
+vacuity, the -1/4 crux, the two refuted candidates, and the detector were each
+checked against these landings.
