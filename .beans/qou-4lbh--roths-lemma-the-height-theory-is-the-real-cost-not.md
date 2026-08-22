@@ -351,3 +351,64 @@ Two details worth keeping:
 and `∑ⱼ C(n,j) = 2ⁿ`. Mathlib has Vieta (`Polynomial.coeff_eq_esymm_roots_of_card`), so this
 is bookkeeping over it rather than analysis — but it is not yet written, and until it is,
 Gelfond has only one of its two directions.
+
+---
+
+## 2026-08-22 — the last bridge is closed; every Mahler prerequisite is now in hand
+
+`QOU/Mathlib/MahlerJensen.lean`, four more declarations:
+
+```
+Multiset.norm_prod            ‖t.prod‖ = ∏ ‖a‖                    (any NormedField)
+Multiset.norm_esymm_le        ‖esymm s j‖ ≤ C(card s, j) · ∏ max(1,‖a‖)
+norm_coeff_le_choose_mul_mahlerMeasure   ‖coeff k p‖ ≤ C(n, n−k) · M(p)
+norm_coeff_le_two_pow_mul_mahlerMeasure  ‖coeff k p‖ ≤ 2^{deg p} · M(p)
+```
+
+Twelve declarations in the module, all `[propext, Classical.choice, Quot.sound]`, module
+built by name with the `.olean` deleted first, no linter output.
+
+The last row **is** `H(p) ≤ 2^{deg p}·M(p)`: `H` is the supremum of `‖coeff k p‖` over `k`,
+so the per-coefficient statement is the height bound. It is stated per coefficient on
+purpose — that avoids committing to a definition of `H` in this module and is the form
+Gelfond consumes. It carries **no hypothesis on `k`**: above the degree the coefficient is
+zero and the bound is free.
+
+It was bookkeeping over Mathlib's Vieta, as predicted. `coeff_eq_esymm_roots_of_card` writes
+`coeff k p` as `lead p · (−1)^{n−k} · esymm (roots p) (n−k)`, and the Jensen form writes
+`M(p)` as `‖lead p‖ · ∏max(1,‖root‖)`. The two share `‖lead p‖`, so the whole content is
+`Multiset.norm_esymm_le`, whose two slacknesses are both deliberate: bound each subset
+product termwise by `∏max(1,‖a‖)`, then *extend* the product from the subset to the whole
+multiset — legal exactly because every extra factor is `≥ 1`. With every summand bounded by
+the same quantity, the sum over `powersetCard j` costs `card = C(card s, j)`, and
+`Nat.choose_le_two_pow` finishes.
+
+### The measured inventory is now complete
+
+| bridge | status |
+|---|---|
+| `M(X − a) = max(1,‖a‖)` | done |
+| Jensen form `M(p) = ‖lead‖·∏max(1,‖root‖)` | done |
+| `M(qX − a) = max(‖q‖,‖a‖)` | done |
+| `M(p) ≤ ‖p‖₁` over `ℤ` | done (⚠ weaker than Landau) |
+| `H(p) ≤ 2^{deg p}·M(p)` | **done — this entry** |
+| `mahlerMeasure_mul` | present in Mathlib |
+
+⚠ **This does not mean Roth's lemma is done, or even that Gelfond is done.** What is done is
+the *inventory*: every Mahler-measure fact the height argument was blocked on is now proved.
+Two things remain, and neither is analysis:
+
+1. **Gelfond itself** — `∏ₖ H(pₖ) ≤ 2^{deg}(deg+1)·H(p)`. Multiplicativity of `M` carries
+   `∏ₖ M(pₖ) = M(p)` exactly (heights are not multiplicative; Mahler measures are), the
+   reverse bridge takes each factor up, the coefficient bound brings the product down.
+   The real cost is **moving between `ℤ[X]` and `ℂ[X]`** along `map (Int.castRingHom ℂ)`
+   while tracking `natDegree` and `coeff`. `natDegree_map_eq_of_injective` makes it routine;
+   `one_le_sum_norm_coeff_map_int` is a worked example of the pattern.
+2. **The induction step of Roth's lemma** — applying Gelfond to the factors `φₖ, ψₖ` of a
+   separated `P = ∑ₖ φₖ(x)ψₖ(y)`. The factorization itself is proved
+   (`det_separated_wronskian`); this is the height half.
+
+Recording the prediction so it can be checked: (1) is a day of `ℤ`-to-`ℂ` bookkeeping, (2) is
+where the remaining difficulty actually sits. This bean has mis-placed the difficulty twice
+already — once onto the `m = 1` base case, once onto "bare-hands vs upstream" — so treat
+that prediction as a claim to be measured, not a plan.
