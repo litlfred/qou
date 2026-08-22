@@ -50,21 +50,21 @@ structure Neutrino where
 
 /-- The neutrino is electrically neutral (zero crossing chirality). -/
 -- Ref: [manuscript] Ch. 5, §neutrino-knot
-theorem neutrino_neutral : Neutrino.mk.charge = 0 := rfl
+theorem neutrino_neutral : ({} : Neutrino).charge = 0 := rfl
 
 /-- The unknot has trivial genus. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem neutrino_genus_zero : Neutrino.mk.genus = 0 := rfl
+theorem neutrino_genus_zero : ({} : Neutrino).genus = 0 := rfl
 
 /-- The unknot has zero crossings. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem neutrino_crossing_zero : Neutrino.mk.crossing_number = 0 := rfl
+theorem neutrino_crossing_zero : ({} : Neutrino).crossing_number = 0 := rfl
 
 end
 

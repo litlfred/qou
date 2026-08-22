@@ -64,17 +64,17 @@ structure UpQuark where
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem up_quark_is_unknot :
-    UpQuark.mk.crossing_number = 0 ∧
-    UpQuark.mk.genus = 0 := ⟨rfl, rfl⟩
+    ({} : UpQuark).crossing_number = 0 ∧
+    ({} : UpQuark).genus = 0 := ⟨rfl, rfl⟩
 
 /-- The up quark has positive crossing orientation. -/
 -- Ref: [manuscript] Ch. 5, §up-quark
 theorem up_quark_positive_orientation :
-    UpQuark.mk.crossing_orientation = 1 := rfl
+    ({} : UpQuark).crossing_orientation = 1 := rfl
 
 /-- The up quark is color-confined. -/
 -- Ref: [manuscript] Ch. 5, §up-quark
-theorem up_quark_confined : UpQuark.mk.confined = true := rfl
+theorem up_quark_confined : ({} : UpQuark).confined = true := rfl
 
 end
 

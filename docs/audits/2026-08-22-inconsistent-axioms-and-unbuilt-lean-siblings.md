@@ -409,3 +409,50 @@ four confirmed so far) versus unknown *project* constants, which are
 formalisation gaps and not cheap at all — `GaugeCouplingUniquenessData` and
 `heckeH8DimQ` both presented as `RESOLVE`-class and neither was a rename.
 Split that before estimating the batch.
+
+### 4e. The `RESOLVE` split, and the `Foo.mk.field` batch
+
+§4d flagged that `RESOLVE` (22 files, 39 %) is two populations. Splitting
+them by hand on the unknown name:
+
+- **Mathlib-side** (renames or missing imports — cheap): `Complex.abs`,
+  `Real.sqrt` ×2, `MonoidalFunctor`, `div_le_div_iff`,
+  `Nat.pos_of_lt_of_le`, `intervalIntegrable_log'`,
+  `CategoryTheory.Preadditive`,
+  `CategoryTheory.MonoidalCategory.whiskerRight_comp`,
+  `Real.tendsto_log_mul_rpow_nhdsGT_zero`, `Algebra`.
+- **Project-side** (formalisation gaps — not cheap): `q_param`,
+  `zPochhammer`, `hoefsmit_v21_b_sq_rational`, `R`,
+  `QOU.BraidKnot.ConfinementLevel.exists`,
+  `QOU.BraidKnot.ResidueAtRoot.residue`, and **five**
+  `QOU.Archimedean.<Particle>.mk.<field>`.
+
+**The five are one bug, not five.** `up-quark`, `electron-knot`,
+`neutrino-knot`, `antineutrino-knot` and `positron-knot` all write
+`Foo.mk.field` — projecting a field off the *constructor*. Every field of
+these structures has a default, which is presumably what made the form look
+plausible, but `Foo.mk` is still a function and Lean reports the whole thing
+as an unknown constant. The idiom is `({} : Foo).field`, which fills the
+defaults. 20 sites rewritten; four of the five now compile.
+
+**`positron-knot` is blocked on something structural** (6 → 2 errors). Its
+two genuine cross-particle theorems — charge opposite, orientation reversed —
+reference `Electron`, which is declared in `electron-knot.lean`. That is a
+*sibling* content-block file, not a library module, so it cannot be
+imported. Both files sit in namespace `QOU.Archimedean` and would see each
+other inside a Lake library; standalone they cannot. Two honest options:
+
+1. **Move the particle structures into `content/<paper>/lean/QOU/Archimedean/`**
+   so siblings can import them. Correct architecture, and it is what
+   `lean.ref` candidate-2 resolution assumes — but a refactor across several
+   blocks.
+2. Leave the two theorems failing and say so.
+
+**Not option 3: duplicating `Electron` into `positron-knot.lean`.** That
+manufactures exactly the defect three stubs were deleted for earlier on this
+branch — and the corpus already has an instance of it: **`structure UpQuark`
+is declared twice**, in `up-quark.lean:40` and `down-quark.lean:48`. Latent
+today because nothing compiles both at once; a live duplicate the moment
+anything does.
+
+**Standing count: 56 → 52 failing.**

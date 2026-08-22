@@ -56,18 +56,18 @@ structure Electron where
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem electron_is_torus_knot :
-    Electron.mk.torusP = 2 ∧ Electron.mk.torusN = 3 := ⟨rfl, rfl⟩
+    ({} : Electron).torusP = 2 ∧ ({} : Electron).torusN = 3 := ⟨rfl, rfl⟩
 
 /-- The trefoil has crossing number 3. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem electron_crossing_number : Electron.mk.crossing_number = 3 := rfl
+theorem electron_crossing_number : ({} : Electron).crossing_number = 3 := rfl
 
 /-- Torus knots are non-hyperbolic: Vol(T_{2,3}) = 0. -/
 -- Ref: [manuscript] Ch. 5, §electron-knot
-theorem electron_nonhyperbolic : Electron.mk.volume = (0 : R_q) := rfl
+theorem electron_nonhyperbolic : ({} : Electron).volume = (0 : R_q) := rfl
 
 end
 

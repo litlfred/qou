@@ -56,17 +56,17 @@ structure Positron where
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem positron_is_mirror_torus_knot :
-    Positron.mk.torusP = 2 ∧ Positron.mk.torusN = 3 := ⟨rfl, rfl⟩
+    ({} : Positron).torusP = 2 ∧ ({} : Positron).torusN = 3 := ⟨rfl, rfl⟩
 
 /-- The positron has opposite charge to the electron. -/
 -- Ref: [manuscript] Ch. 5, §positron-knot
 theorem positron_charge_opposite_electron :
-    Positron.mk.charge + Electron.mk.charge = 0 := by decide
+    ({} : Positron).charge + ({} : Electron).charge = 0 := by decide
 
 /-- The positron has reversed orientation (antiparticle). -/
 -- Ref: [manuscript] Ch. 5, §positron-knot
 theorem positron_reversed_orientation :
-    Positron.mk.orientation = -Electron.mk.orientation := by decide
+    ({} : Positron).orientation = -({} : Electron).orientation := by decide
 
 end
 

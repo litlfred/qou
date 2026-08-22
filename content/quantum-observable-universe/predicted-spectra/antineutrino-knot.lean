@@ -47,9 +47,9 @@ structure Antineutrino where
 /-- The unknot is amphichiral: mirror ≅ original as unoriented knots. -/
 -- Ref: [manuscript] §6/antineutrino-knot
 theorem unknot_amphichiral :
-    Antineutrino.mk.volume = (0 : R_q) ∧
-    Antineutrino.mk.crossing_number = 0 ∧
-    Antineutrino.mk.genus = 0 := by
+    ({} : Antineutrino).volume = (0 : R_q) ∧
+    ({} : Antineutrino).crossing_number = 0 ∧
+    ({} : Antineutrino).genus = 0 := by
   exact ⟨rfl, rfl, rfl⟩
 
 end
