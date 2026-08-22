@@ -10403,6 +10403,108 @@ theorem loopTwoFromTop (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed idd : F
   loopTwo hn hp hed hj₁ hj₂ (by omega) S c c' hc m i idd A [] hid hm (le_refl _)
     (by simp) (by rw [descWord_cons_le hid (by omega)]; simp)
 
+/-- **The loop with a parked term, with the source-only collision hypothesis.**
+
+`loopTwoGen` below asks that the parked word `P` be no extension of `A` at all.
+That is sufficient — every word any pass rewrites does have the form `A ++ z` —
+but not necessary, and `hecke_prefix_head_separation.py` measures where the
+difference bites: at `2a` steps of the corner's closing phase no choice of left
+context satisfies it, while **every source in the chain is unique**, so the
+precise condition holds throughout.
+
+What the loop actually needs is that `P` differ from the two families
+`blockStep` asks about, at every level. The accumulator only ever grows on the
+right of `A`, so quantifying over that growth `D` makes the hypothesis closed
+under the recursion: descending a level replaces `D` by `σ_kd :: D`. -/
+theorem loopTwoGenSources (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
+    (hed : ed.val + 1 = e.val) (hj₁ : j₁.val ≤ ed.val) (hj₂ : j₂.val ≤ e.val)
+    (S P : Monomial (HeckeGen n)) (c c' : ℝ) (hc : c ≠ 0) :
+    ∀ (m : ℕ) (k kd : Fin n) (A Y : Monomial (HeckeGen n)),
+      kd.val + 1 = k.val → k.val = e.val + m →
+      (∀ (D Y' : Monomial (HeckeGen n)) (k' kd' : Fin n),
+        (P ≠ A ++ (D ++ (descWord i j₁ ++ (descWord k' j₂ ++ S)))) ∧
+        (∀ u v : Monomial (HeckeGen n), u ++ v = Y' → u ≠ [] →
+          P ≠ A ++ (D ++ (u ++ ((⟨kd'⟩ : HeckeGen n) ::
+            (v ++ (((⟨k'⟩ : HeckeGen n) :: descWord kd' j₁) ++
+              (descWord kd' j₂ ++ S)))))))) →
+      (∀ y ∈ Y, kd.val + 1 < y.index.val) →
+      descWord i j₁ = Y ++ ((⟨k⟩ : HeckeGen n) :: descWord kd j₁) →
+      MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+        (AlgElement.ofTerms
+          [(P, c'), (A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c)])
+        (AlgElement.ofTerms
+          [(P, c'),
+           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) := by
+  intro m
+  induction m with
+  | zero =>
+    intro k kd A Y hk hke hP hY hD
+    have hj₂k : j₂.val ≤ k.val := by omega
+    have hkde : kd = ed := Fin.ext (by omega)
+    subst hkde
+    have hstep := blockStep hn hp hk hj₁ hj₂k Y A S hY hD c hc [(P, c')] []
+      (by
+        intro q hq
+        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hq
+        subst hq
+        simpa only [List.nil_append] using (hP [] Y k kd).1)
+      (by
+        intro u v huv hu q hq
+        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+          List.not_mem_nil, or_false] at hq
+        subst hq
+        simpa only [List.nil_append] using (hP [] Y k kd).2 u v huv hu)
+    simpa [descWord_self] using hstep
+  | succ m ih =>
+    intro k kd A Y hk hke hP hY hD
+    have hkdlt : kd.val < n := kd.isLt
+    have hkdlow : ed.val ≤ kd.val := by omega
+    have hkdpos : 0 < kd.val := by omega
+    have hj₁kd : j₁.val ≤ kd.val := by omega
+    have hj₂k : j₂.val ≤ k.val := by omega
+    refine MultiStepReduction.trans
+      (blockStep hn hp hk hj₁kd hj₂k Y A S hY hD c hc [(P, c')] []
+        (by
+          intro q hq
+          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+            List.not_mem_nil, or_false] at hq
+          subst hq
+          simpa only [List.nil_append] using (hP [] Y k kd).1)
+        (by
+          intro u v huv hu q hq
+          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+            List.not_mem_nil, or_false] at hq
+          subst hq
+          simpa only [List.nil_append] using (hP [] Y k kd).2 u v huv hu)) ?_
+    obtain ⟨kdd, hkdd⟩ : ∃ kdd : Fin n, kdd.val + 1 = kd.val :=
+      ⟨⟨kd.val - 1, by omega⟩, by show kd.val - 1 + 1 = kd.val; omega⟩
+    have hsplit : descWord kd j₁ = (⟨kd⟩ : HeckeGen n) :: descWord kdd j₁ :=
+      descWord_cons_le hkdd (by omega)
+    have hrun : descWord kd ed = (⟨kd⟩ : HeckeGen n) :: descWord kdd ed :=
+      descWord_cons_le hkdd (by omega)
+    have hnext := ih kd kdd (A ++ [(⟨kd⟩ : HeckeGen n)]) (Y ++ [(⟨k⟩ : HeckeGen n)])
+      hkdd (by omega)
+      (fun D Y' k' kd' => by
+        constructor
+        · have := (hP ([(⟨kd⟩ : HeckeGen n)] ++ D) Y' k' kd').1
+          simpa only [List.append_assoc] using this
+        · intro u v huv hu
+          have := (hP ([(⟨kd⟩ : HeckeGen n)] ++ D) Y' k' kd').2 u v huv hu
+          simpa only [List.append_assoc] using this)
+      (by
+        intro y hy
+        rcases List.mem_append.mp hy with hy | hy
+        · have := hY y hy
+          omega
+        · have hyk : y = (⟨k⟩ : HeckeGen n) := by simpa using hy
+          subst hyk
+          show kdd.val + 1 < k.val
+          omega)
+      (by rw [hD, hsplit]; simp)
+    rw [hrun]
+    simpa using hnext
+
 /-- **The loop with a parked term that is not its endpoint.**
 
 `loopTwo` carries the word the loop is heading for. The corner needs the other
@@ -10425,70 +10527,10 @@ theorem loopTwoGen (hn : 0 < n) (hp : HeckeParams) {i j₁ j₂ e ed : Fin n}
           [(P, c'), (A ++ (descWord i j₁ ++ (descWord k j₂ ++ S)), c)])
         (AlgElement.ofTerms
           [(P, c'),
-           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) := by
-  intro m
-  induction m with
-  | zero =>
-    intro k kd A Y hk hke hP hY hD
-    have hj₂k : j₂.val ≤ k.val := by omega
-    have hkde : kd = ed := Fin.ext (by omega)
-    subst hkde
-    have hstep := blockStep hn hp hk hj₁ hj₂k Y A S hY hD c hc [(P, c')] []
-      (by
-        intro q hq
-        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-          List.not_mem_nil, or_false] at hq
-        subst hq
-        exact hP _)
-      (by
-        intro u v _ _ q hq
-        simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-          List.not_mem_nil, or_false] at hq
-        subst hq
-        exact hP _)
-    simpa [descWord_self] using hstep
-  | succ m ih =>
-    intro k kd A Y hk hke hP hY hD
-    have hkdlt : kd.val < n := kd.isLt
-    have hkdlow : ed.val ≤ kd.val := by omega
-    have hkdpos : 0 < kd.val := by omega
-    have hj₁kd : j₁.val ≤ kd.val := by omega
-    have hj₂k : j₂.val ≤ k.val := by omega
-    refine MultiStepReduction.trans
-      (blockStep hn hp hk hj₁kd hj₂k Y A S hY hD c hc [(P, c')] []
-        (by
-          intro q hq
-          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-            List.not_mem_nil, or_false] at hq
-          subst hq
-          exact hP _)
-        (by
-          intro u v _ _ q hq
-          simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-            List.not_mem_nil, or_false] at hq
-          subst hq
-          exact hP _)) ?_
-    obtain ⟨kdd, hkdd⟩ : ∃ kdd : Fin n, kdd.val + 1 = kd.val :=
-      ⟨⟨kd.val - 1, by omega⟩, by show kd.val - 1 + 1 = kd.val; omega⟩
-    have hsplit : descWord kd j₁ = (⟨kd⟩ : HeckeGen n) :: descWord kdd j₁ :=
-      descWord_cons_le hkdd (by omega)
-    have hrun : descWord kd ed = (⟨kd⟩ : HeckeGen n) :: descWord kdd ed :=
-      descWord_cons_le hkdd (by omega)
-    have hnext := ih kd kdd (A ++ [(⟨kd⟩ : HeckeGen n)]) (Y ++ [(⟨k⟩ : HeckeGen n)])
-      hkdd (by omega)
-      (fun z => by rw [List.append_assoc]; exact hP _)
-      (by
-        intro y hy
-        rcases List.mem_append.mp hy with hy | hy
-        · have := hY y hy
-          omega
-        · have hyk : y = (⟨k⟩ : HeckeGen n) := by simpa using hy
-          subst hyk
-          show kdd.val + 1 < k.val
-          omega)
-      (by rw [hD, hsplit]; simp)
-    rw [hrun]
-    simpa using hnext
+           (A ++ (descWord kd ed ++ (descWord i j₁ ++ (descWord ed j₂ ++ S))), c)]) :=
+  fun m k kd A Y hk hke hpark hY hD =>
+    loopTwoGenSources hn hp hed hj₁ hj₂ S P c c' hc m k kd A Y hk hke
+      (fun _ _ _ _ => ⟨hpark _, fun _ _ _ _ => hpark _⟩) hY hD
 
 end CornerBlock
 
