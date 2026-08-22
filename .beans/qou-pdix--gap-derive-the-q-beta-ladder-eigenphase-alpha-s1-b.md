@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-22T15:35:57Z
+updated_at: 2026-08-22T16:24:17Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -56,3 +56,55 @@ The content-block class itself is untouched here; repairing it has QA-sidecar
 implications (nuclear-interactions/q-beta-cos-resummation.{ts,md,lean}) and any
 downstream [TransferMatrixEigenphase]-conditional statement would need its
 banner re-checked, since those results are unconditional as written.
+
+
+## 2026-08-22 — ROUTE 3 CLOSED, scope-(b): no braid word supplies M
+
+Attempted the derivation. The seminormal rep on V_(2,1) CANNOT supply the M that
+TransferMatrixSpectrum demands.
+
+**Rep derived, not assumed.** sigma_1 = diag(q, -1/q) on the two standard
+tableaux of shape (2,1); sigma_2 is then FORCED by Hecke + braid to
+d_2 = -1/(q(q^2+1)), d_1 = q^3/(q^2+1), with only b*c fixed. That product is
+exactly hoefsmitB(q)^2 = (q^4+q^2+1)/(q^2+1)^2 — so hoefsmitB, d_1 and d_2 are
+RECOVERED here rather than imported (they appear as asserted inputs in
+qbeta_alpha_required_c_vs_d_probe).
+
+**The invariant.** Every character lies in Z[q,q^-1]: b enters a trace only via
+b*c, which is rational, so the sqrt never survives. Verified on ALL words of
+length 2,4,6 — 17 distinct traces, 0 exceptions. And (z_C-1)h/2 is a
+non-constant ALGEBRAIC function of q, whose cosine is not algebraic. So
+2cos((z-1)h/2) is not a Laurent polynomial and the two cannot agree AS FUNCTIONS.
+
+**Scalar normalisation does not rescue it:** det rho(sigma_i^{+-1}) = -1, so
+det rho(w) = (-1)^L; det M = 1 forces L even and lambda = +-1, leaving the trace
+in +-Z[q,q^-1].
+
+**Sharpest instance:** trace(sigma_1 sigma_2) = -1 IDENTICALLY in q (proved in
+Lean) with det = 1 — so if it were M, cos(alpha) = -1/2, i.e. alpha = 2*pi/3, a
+CONSTANT. The asserted alpha is non-constant. It meets the det half and fails
+the trace half.
+
+SCOPE — this is about identity of FUNCTIONS. Does NOT exclude: a non-scalar
+(q-dependent, non-rational) normalisation; an M outside the braid image (a
+general element of H_3(q), or an operator on a larger space restricted to
+V_(2,1)); or numerical coincidence at one anchor — at q0 the nearest non-trivial
+character is only 2.7e-3 away. That gap is NOT the basis of the exclusion.
+
+## Routes now closed (do not re-run)
+
+1. Substitute z_D into alpha = (z-1)h/2 — PRUNED (23% vs a 1.1e-5 rad window).
+2. Exact Form-A/Form-B bridge instead of the O(h) truncation — REFUTED
+   (530%/456% vs 0.04%/23%).
+3. **M = lambda*rho(braid word) in the seminormal rep — EXCLUDED, scope-(b),
+   invariant named.**
+
+## What is left
+
+The two survivors named in the scope above. The non-scalar-normalisation route
+is the more promising: the Markov trace itself carries a q-dependent
+normalisation, and that is precisely the kind of factor that could take a
+Laurent-polynomial character outside Z[q,q^-1].
+
+LEAN: QOU/QBeta/SeminormalV21Trace.lean (9 decls, sorry-free, axioms clean).
+PROBE: computations/qbeta/qbeta_eigenphase_seminormal_exclusion_probe.py (6/6).
