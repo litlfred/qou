@@ -514,3 +514,40 @@ no longer exists; the modern form is a plain functor plus a `[F.Monoidal]`
 instance, which changes the field's signature.
 
 **Standing count: 52 → 48 failing.**
+
+### 4g. The cross-sibling blocker is a class, not a one-off — and a revert
+
+`positron-knot` was recorded in §4e as blocked because it references
+`Electron`, declared in a sibling content-block file that cannot be
+imported. **`spectral-half-line` has the identical blocker**: it references
+`LocalQZetaFunction`, declared in `local-q-zeta-function.lean`, a sibling.
+A third file, `hasse-weil-bound.lean`, references the same structure.
+
+So this is a **class**. Content-block siblings in one chapter routinely
+refer to each other's structures — which works inside a Lake library and
+cannot work for standalone files. The architectural fix named in §4e (move
+shared structures into `content/<paper>/lean/QOU/…`) is worth more than the
+per-file repairs, because it closes several files at once and stops the
+pattern recurring. It is not attempted here: it reshapes the tree and is an
+owner decision.
+
+**A migration begun and reverted.** `spectral-half-line` also needs a real
+Mathlib migration — `Complex.abs` is **gone** in favour of `‖·‖`:
+
+| old | new |
+|---|---|
+| `Complex.abs z` | `‖z‖` |
+| `Complex.abs_exp` | `Complex.norm_exp` |
+| `Complex.abs_ofReal` | `Complex.norm_real` (to a **real** norm, not to `|·|`) |
+
+The last is the trap: `Complex.norm_real : ‖(r : ℂ)‖ = ‖r‖` lands on
+`Real.norm_eq_abs`, so a proof that previously went straight to
+`abs_of_pos` now needs both lemmas in sequence. Two attempts at that chain
+still failed on goal shape.
+
+**The whole edit was reverted rather than landed**, because the file cannot
+compile either way while `LocalQZetaFunction` is unreachable — so a partial,
+unverifiable migration would sit in the tree looking like progress and
+misleading the next reader. The table above is recorded so the discovery
+does not have to be repeated; the migration should land together with
+whatever resolves the structural blocker.
