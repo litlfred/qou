@@ -99,25 +99,51 @@ contradicts itself.
 
 directly above a read that returns the muon value.
 
-## The disposition of the 5 is not uniform — and one would break under a sweep
+## The disposition of the 5 is not uniform — but not for the reason I first wrote
 
-Reading each of the five for *intent* (bean `qou-v90i`):
+**Corrected in the same session.** My first pass read
+`q_beta_form_a_n1_extension`'s comment *"Load **CAL-2** q_0 from canonical
+pinning witness"* as evidence that the producer deliberately wants the
+ideal muon layer, and concluded the *manifest* was the bug. That was
+wrong, and it inverted the argument I built on it.
+
+AGENTS.md §"q₀ anchor convention" is explicit that the 2026-08-07
+directive *"is about which **numerical evaluation** code defaults to, not
+about redefining the 3-CAL triple"* — the ideal CAL-2 definition
+(`𝔇_β`, proxy `m_μ/m_e`) is untouched, while **compute evaluates at the
+proton pin**. So naming CAL-2 identifies *which calibration*, not *which
+pin*. Treating it as a pin choice is exactly the conflation the directive
+exists to prevent. The manifest entry is right; the read is the bug.
+
+Corrected dispositions:
 
 | producer | evidence | disposition |
 |---|---|---|
 | `b_over_m_order_probe` | docstring: *"Computed at the **proton-pinned** q₀"* | **read is the bug** |
 | `path4_rho_K_at_h3A` | compares against proton/neutron `ρ_K_CODATA` | **read is the bug** |
-| `q_beta_form_a_n1_extension` | comment: *"Load **CAL-2** q_0 from canonical pinning witness"* | **manifest is the bug** — CAL-2 *is* the ideal muon layer; the code is right |
-| `q1_mass_gap_probe` | reads the witness as a reference table (`plancherel_weights_n3`) *and* binds q₀ from it | **mixed** — table read legitimate, q₀ bind is not |
-| `aK_via_lp_dual_hecke_basis` | "H_3 (proton, neutron)" names the *particle*, not the pin | **ambiguous** — needs a call |
+| `q_beta_form_a_n1_extension` | *"Load CAL-2 q_0"* names the calibration, not the pin | **read is the bug** |
+| `q1_mass_gap_probe` | reads the witness for **two** purposes — binds q₀ from it *and* uses its `plancherel_weights_n3` / `[2]_q` as a reference table | **dual-purpose read** |
+| `aK_via_lp_dual_hecke_basis` | "H_3 (proton, neutron)" names the *particle*, not the pin | no stated intent — directive default applies |
 
-This is the load-bearing observation. A mechanical *"re-pin everything
-declared `physical_proton`"* would have **broken**
-`q_beta_form_a_n1_extension`, which deliberately wants the ideal CAL-2
-pin — the same class of failure as `qou-m9xp`, where the first sweep
-attempt broke `main` for 208 producers. Two of five need the *manifest*
-changed or a human call rather than the code. Per-file reading is not
-ceremony here; it is what separates the fix from the regression.
+### What survives, and what does not
+
+**Does not survive:** my claim that a mechanical re-pin would have broken
+`q_beta_form_a_n1_extension` by overriding a deliberate ideal-layer
+choice. Under the directive, re-pinning it to proton is the *correct*
+action. Three of the five are now plain read-bugs.
+
+**Survives, but narrower:** `q1_mass_gap_probe` still resists a mechanical
+sweep, for a different reason. It reads
+`q-pinning-50-digit.witness.json` for two things at once — its q₀ bind
+*and* its recorded Plancherel weights, used as a cross-check reference
+table. A naive re-pin that redirects the whole read to the proton source
+fixes the first and breaks the second. The hazard is a **dual-purpose
+read**, not a layer-intent conflict.
+
+That is a weaker argument than the one I first made, and it is the one
+the evidence actually supports. The sweep still needs per-file reading —
+but to find dual-purpose reads, not to adjudicate which layer each
+producer wants.
 
 ## Relation to the trap `qou-1c4y` already names
 
