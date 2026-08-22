@@ -3306,3 +3306,39 @@ loop into those 3 steps. False negative in all six cases. Same wrong-index
 shape as the tail's collision check — twice now.
 
 **Next:** the V-side loop (9/12/16 steps), then the closing phase.
+
+### Opening phase fully specified (#5454)
+
+**All five stretches have named lemmas; none is new.**
+
+| stretch | lemma | note |
+|---|---|---|
+| V0 → V2 | `s1`, `s2` | already proved, `j₂`-independent |
+| U loop | `CornerLe.uLoop` | `loopTwoGen`, `A = [σ_{i−1}]`, `k = i₁`, `S = [σᵢ]`, **m = a−4** |
+| U trio | `bsStep` + `quadPair` | `BS(jp, jpp, j₁)`, then `Y(j₁, jp)`, then `Q(j₁)` |
+| V loop | `loopTwoGen` | `A = [σ_{i−2}]`, **k = i**, `S = []`, **m = a−3** |
+| V trio | same as U trio | identified by rule, uniform in a and b |
+
+`uLoop` landed; `uHead` is its `m = 0` case; the dead `U0₁` is gone.
+
+**Scheduling constraint (new).** `loopTwoGen` is stated for a **two-term**
+element; `quadPair` takes general `L₁`/`L₂` and tolerates any number. Under the
+engine's order the U trio — whose quadratic step **splits U in two** — runs
+*before* the V loop, so the V loop would face three terms and `loopTwoGen`
+could not be applied at all. Measured: U splits at step 6/9/13, V loop completes
+at 9/15/23. **Both loops must precede both trios**, which is legal because steps
+on different terms commute.
+
+That is the **third** time in this arc the engine's schedule proved an accident
+rather than a constraint: the tail's two blocks, the closing phase (where
+reordering did *not* help), and now the opening phase. Worth treating the
+schedule as a free parameter by default and asking what the lemmas need.
+
+**Two hypothesis lessons.** `uLoop` first asked `j₂ ≤ j₁` — the regime's fact —
+when `loopTwoGen` needs only `j₂ ≤ jppp`; the strong form made `uHead`
+un-instantiable. And the earlier fit search's two-letter V context was a
+*different parse* of the same word, not the natural one (`A = [σ_{i−2}]`,
+`k = i`).
+
+**Next:** compose the five stretches into one `openingPhase` lemma under the
+loops-first schedule. Then `a = 3` (no loop) and the closing phase.
