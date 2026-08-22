@@ -129,6 +129,73 @@ theorem spectral_decomposition_qvalue
       = bareQValue q (daughterPoly / parentPoly) m_e * F active := by
   rw [knot_operator_product_collapse E F active hActive hInactive]
 
+/-! ## §2  Discharging the per-shell cancellation (the `hInactive` hypothesis)
+
+`knot_operator_product_collapse` reduces step (iv) to the per-shell input
+`hInactive : ∀ inactive shell, F τ = 1`.  This section *discharges* that input
+for the two inactive branches of the corollary's `F(τ,N)` — non-embeddable and
+unchanged shells — at the ratio level, so those branches are no longer assumed.
+
+What stays open (bean `qou-xq3f`) is the **active** shell's value
+`|tr_M(e·τ·T_β·e)| / |tr_M(T_β)|` and the identification of *which* shell is
+active — the genuine Rosso–Jones / Markov-trace content, needing the weighted
+trace tower (`QOU.Braiding.HnMarkovTrace`) not wired into this file. -/
+
+/-- Per-shell decay data at the ratio level: the shell's Markov-trace weight
+    before (parent) and after (daughter) the decay, and whether the shell's knot
+    is embeddable on `Σ_g`. -/
+structure ShellState where
+  /-- Markov-trace weight of the shell in the parent nucleus. -/
+  parentTrace : ℝ
+  /-- Markov-trace weight of the shell in the daughter nucleus. -/
+  daughterTrace : ℝ
+  /-- Whether the shell's torus knot is embeddable on `Σ_g` (else `F = 1`). -/
+  embeddable : Bool
+
+/-- The knot-operator factor `F(τ,N)` for one shell, at the ratio level (the
+    corollary's four cases collapsed to two):
+    * non-embeddable → `1` (null: zero action on `Σ_g`);
+    * embeddable → the trace ratio `daughterTrace / parentTrace` (which is the
+      active shell's `tr_M` ratio, and equals `1` on an unchanged shell). -/
+noncomputable def shellFactor (s : ShellState) : ℝ :=
+  if s.embeddable then s.daughterTrace / s.parentTrace else 1
+
+/-- **Non-embeddable branch.** A non-embeddable shell contributes `F = 1`
+    (definitional: it has zero action on `Σ_g`). -/
+theorem shellFactor_nonembeddable (s : ShellState) (h : s.embeddable = false) :
+    shellFactor s = 1 := by
+  simp [shellFactor, h]
+
+/-- **Unchanged branch.** An embeddable shell left untouched by the decay
+    (`daughterTrace = parentTrace`, nonzero) cancels in the ratio: `F = 1`.
+    This is the genuine "cancels in ratio" mechanism — `div_self`, not an
+    assumption. -/
+theorem shellFactor_unchanged (s : ShellState)
+    (hchg : s.daughterTrace = s.parentTrace) (hne : s.parentTrace ≠ 0) :
+    shellFactor s = 1 := by
+  unfold shellFactor
+  split
+  · rw [hchg]; exact div_self hne
+  · rfl
+
+/-- **Per-shell cancellation discharged.** If every shell other than `active`
+    is inactive — non-embeddable, or unchanged with nonzero parent trace — the
+    shell-factor product collapses to the active shell's factor, with the
+    `hInactive` hypothesis of `knot_operator_product_collapse` now *proved* for
+    this model rather than assumed. -/
+theorem shell_product_collapse
+    {ι : Type*} (E : Finset ι) (S : ι → ShellState) (active : ι)
+    (hActive : active ∈ E)
+    (hInactive : ∀ τ ∈ E, τ ≠ active →
+        (S τ).embeddable = false ∨
+        ((S τ).daughterTrace = (S τ).parentTrace ∧ (S τ).parentTrace ≠ 0)) :
+    ∏ τ ∈ E, shellFactor (S τ) = shellFactor (S active) := by
+  refine knot_operator_product_collapse E (fun τ => shellFactor (S τ)) active hActive ?_
+  intro τ hτ hne
+  rcases hInactive τ hτ hne with h | ⟨hchg, hne0⟩
+  · exact shellFactor_nonembeddable (S τ) h
+  · exact shellFactor_unchanged (S τ) hchg hne0
+
 /-- The jet bundle over Σ₄ has exactly three non-zero levels (k = 0, 1, 2).
     Degree 3 requires genus ≥ 13, exceeding the genus-4 bound. -/
 -- Ref: [manuscript] §5/spectral-decomposition-qvalue
