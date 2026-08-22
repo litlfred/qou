@@ -262,3 +262,75 @@ checking for a second copy; the live path is the one the block cites.
 the producer and see whether the new numbers stand, or withdraw the claim. For
 `he4` the choice also governs whether the Lean class keeps its instance.
 
+## 2026-08-22 — all 8 of group A opened. They are three different problems, not one.
+
+The table above reads as eight instances of *"the block ignores a failing
+gate"*. Opening each witness at **the path the block actually cites**, they
+split three ways, and the disposition differs per class.
+
+### (a) A boolean gate genuinely failed — 6 blocks, substantive
+
+| block | failing assertion | computed → expected |
+|---|---|---|
+| `hadron-level-knot-table` | `LP_stable(c14 / o16 / ne20 / si28 / ca40 / fe56)` | `0 → 1`, tol **0** |
+| `gs-graded-markov-trace-existence` | `no_atoms_only_in_term6` | `1 → 0` |
+| `binding-qbeta-complex-volume` | `c2_gate` | `0 → 1`, tol **0** |
+| `mba-sidecar-mirror-cancellation` | `slope_10A5_refuted_at_A_ge_5` | `False → True` |
+| `y-lambda-cyclotomic-factorization` | `denominator_factors_as_cyclotomic_product` | `3.0 → 0.0` |
+| `deuteron-fusion-frame` | `z_canonical_equals_pyhecke_gram_z` | `false → true` |
+
+Zero tolerance on booleans, so there is no rounding story for any of them.
+
+`deuteron-fusion-frame` is the sharpest: the witness's own `verdict` string reads
+*"the bond factor z **IS** the corpus Markov-trace parameter (pyhecke.gram z =
+1/[2]_v at v = sqrt(q0), **checked live**)"* while the assertion beside it says
+that equality is **false**. Prose and assertion in the same file, opposite
+directions. Plausibly the convention-C/D Gram question already tracked in
+`qou-cds2` — worth joining up rather than triaging alone.
+
+### (b) Tight-tolerance precision failures — not wrong numbers
+
+`gs-graded-markov-trace-existence`, the other two of its three:
+
+```
+tr_M_at_q0_archimedean[n]  computed 0.9232332971861534  expected 0.9232332299116376
+tr_M_at_q0_archimedean[p]  computed 1.0653062286131670  expected 1.0653061442544502
+                           relative tolerance 1e-9
+```
+
+These agree to **8 significant figures** and fail a 9-digit gate. That is *"the
+pipeline agrees to 8 digits and the gate wanted 9"*, which is a different
+finding from a claim being unsupported and needs a different fix — tighten the
+pipeline or loosen a gate that was set past what the method delivers. Do not
+lump these with (a).
+
+### (c) A gate that may be mis-specified rather than failed
+
+`q-beta-c-2-eq-neg-one-structural`:
+
+```
+alpha_q0_matches_probe_n3_witness  computed 5.8235661443920095e-09
+                                   expected 0.0   tolerance 1e-30
+```
+
+A `1e-30` tolerance on a quantity that lands at `5.8e-9`: nothing short of exact
+symbolic agreement passes that gate. Before recording this block as making an
+unsupported claim, someone has to say whether `1e-30` was intended — the honest
+reading may be that the **gate** is wrong, not the block.
+
+### Schema note for anyone re-running this
+
+`assertions` is **not one shape**. Most witnesses carry a *list of objects*
+(`{name, computed, expected, passed, tolerance}`); `deuteron-tower-fusion-frame-probe`
+carries a *dict of name → bool*. The original scan assumed the list form, which
+is why the table above recorded that block as *"`allPassed: false` with an empty
+failing set"* — it is actually **1 of 7 failing**. Any tool reading assertions
+must handle both shapes.
+
+### Net
+
+Group A is **6 substantive**, **2 precision-gate**, **1 possible gate defect**
+(overlapping: `gs-graded` appears in both (a) and (b)). Still nothing fixed —
+every one ends at the same question, *is the witness stale or is the claim
+wrong*, and that is a math call.
+
