@@ -3619,3 +3619,42 @@ Lean that is `congrArg List.length` on the word equation, then
 
 **Next:** assemble `closingPhase : TOpen →* [(V1, 1), (U1, −1)]` from the four
 pieces, then chain with `openingPhase` for the whole prefix. Then `a = 3`.
+
+### CORRECTION — "the assembly's hard part is cheap" was measured on ONE run
+
+The previous entry reported **zero unresolved bystanders across all six cases**
+and concluded the discharge is "head letter × 2, length × 1". That measurement
+covered **F-run 1 only**. Completing it to F-run 2 gives `(1, 1, 1)` — one
+bystander separated by head, one by length, and **one unresolved** in every
+case.
+
+**The unresolved one is `W*` itself** — the word F-run 2 is heading for, i.e.
+the word the cancellation happens on. It shares the mover's head *and* its
+length, because the transports are length-preserving and `W*` is where they
+land.
+
+**It is not an obstruction, and the file already anticipated it.**
+`farComm_transport_left_sources` carries `u ≠ []` precisely to exclude the
+transport's final word, and its docstring says so in as many words: *"In the
+corner chain of §4af the bystanding term IS the final word, so the unrestricted
+hypothesis is false exactly where the transport is needed."* Measured
+`inSources = False`: `W*` is never the source of any step in the run, so neither
+`hcol₁` nor `hcol₂` constrains it.
+
+**What does remain is one interior-letter argument.** `fRun`'s `hne` — the
+swap's `monicStep` obligation — compares the bystanders against the run's
+*source*, and there `W*` is not excluded by anything. The two words share the
+prefix `σ_{i₂} :: σ_{i₁} :: descWord i₂ jpp`; after it the mover continues
+`descWord i jppp` (head `σ_i`) and `W*` continues `descWord jp j₁` (head
+`σ_jp`), because `descWord i₂ j₁ = descWord i₂ jpp ++ descWord jp j₁`. So the
+discriminator is `σ_jp ≠ σ_i`, after one peel. Measured uniform: the first
+differing index is exactly `|A_V|` in all six cases.
+
+**Corrected summary of the discharge:** head letter, or length, or — for `W*`
+against the swap's source alone — one `descWord_split` peel then a head
+comparison. Still bounded; not the two-fact story the previous entry told.
+
+Sixth instance of the arc's recurring shape, in its subtlest form yet: not a
+check that *could not* fail, but a check run over a **proper subset** of its
+subject and reported as if complete. The tell was there — I wrote "F-run 1" in
+the probe and then generalised in the prose.
