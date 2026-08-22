@@ -12,7 +12,7 @@ normal form. The conclusion is a concrete `isNormalForm` /
 `ReducesToNF` claim over real `SU2Gen` types — not a bare `Prop`.
 
 Content block
-[`cor:pbw-corollary`](../../../unital-groebner-bases/buchberger-and-pbw/pbw-corollary.md):
+[`cor:ugb-pbw`](../../../unital-groebner-bases/buchberger-and-pbw/ugb-pbw-corollary.md):
 *Poincaré–Birkhoff–Witt theorem over a commutative ring*.
 
 ## Manuscript statement
@@ -82,7 +82,7 @@ variable {k : Type v} [Field k]
     `NormalForms.pbw_monomials_are_not_all_normal_forms`. What survives is a
     statement about `ReducesToNF` over real `SU2Gen` types, and it no longer
     depends on any refuted claim. -/
--- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts
+-- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/ugb-pbw-corollary.ts
 theorem ugb_pbw_corollary (qs : QSerreRelations k) :
     (∀ f : AlgElement SU2Gen k,
        (∃ nf : AlgElement SU2Gen k,
