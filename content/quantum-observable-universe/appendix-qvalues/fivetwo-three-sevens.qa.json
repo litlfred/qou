@@ -824,7 +824,197 @@
         "reviewed_sha": "81d0e53ac6dd69d44d8e6be1454df16aa38b3cf7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.118Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.161Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.201Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.241Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.280Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "block-final 'They coincide for no general reason, and a shared numeral is not a shared structure.' - kept: the section is titled 'The reusable form' and this IS its stated content",
+        "notes": "no fix; noted that the near-identical closer 'They coincide for no general reason.' also ends rem:fivetwo-bar-odd-arithmetic-home - cross-block repetition flagged for the author"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.318Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "two narrations: 'the distinctions are worth recording explicitly rather than left for a reader to rediscover' and 'Two comparisons are worth making explicit because both are inviting and both fail.'",
+        "notes": "fixes applied: -> 'the distinctions are recorded explicitly here.'; -> 'Two comparisons are inviting, and both fail.'"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.358Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.399Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.438Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d615d07b9175",
+          "ts": "bd55963805bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:48.476Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
     ]
   },
-  "updated_at": "2026-08-19T12:36:33.298Z"
+  "updated_at": "2026-08-22T07:03:48.476Z"
 }

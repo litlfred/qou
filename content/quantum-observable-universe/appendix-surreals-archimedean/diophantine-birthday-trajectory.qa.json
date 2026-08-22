@@ -1,0 +1,281 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.472Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "e1887582eda4",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:07:37.968Z",
+        "reviewed_sha": "9c1703f679593b54f11f03b2688828ccbd210fb1",
+        "severity": "major",
+        "evidence": "'for a reason that is a theorem rather than a hope' and 'the redirection is not a change of wording; it moves to...' were manufactured; 'a *formalisation*, not a proof' and 'not open - it is **impossible**' ARE the block's thesis and are kept",
+        "notes": "fixes applied: -> 'and for a reason that is a theorem:'; -> 'So the redirection moves to a criterion that survives...'"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.511Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "e1887582eda4",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:07:37.889Z",
+        "reviewed_sha": "9c1703f679593b54f11f03b2688828ccbd210fb1",
+        "severity": "major",
+        "evidence": "section header was a setup-then-reframe: 'The obstruction does not transfer, and it nearly did' - the second clause carried the drama, not the content",
+        "notes": "fix applied: header -> 'The obstruction does not transfer'"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.550Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "e1887582eda4",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:07:38.048Z",
+        "reviewed_sha": "9c1703f679593b54f11f03b2688828ccbd210fb1",
+        "severity": "minor",
+        "evidence": "16 spaced em-dashes in ~940 words (~1 per 59) - the highest density in this batch; many append clauses a comma or full stop would carry ('- the path -', '- and *every* real is approximable to order 1 for free', '- and returns the **additive-combinatorics** result')",
+        "notes": "proposed: the appositive glosses can stay; recast the appending dashes. Not applied: it is a whole-block pass, beyond the 2-sentence inline limit"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.589Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.627Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "e1887582eda4",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:07:37.929Z",
+        "reviewed_sha": "9c1703f679593b54f11f03b2688828ccbd210fb1",
+        "severity": "major",
+        "evidence": "two quotable closers: 'The bracket rate is the denominator, not the discriminator.' (wordplay) and '...is a proved implication, not a slogan.'",
+        "notes": "fixes applied: first sentence deleted (the preceding sentence already states the point); second trimmed to '...is a proved implication.'"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.666Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "e1887582eda4",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:07:38.008Z",
+        "reviewed_sha": "9c1703f679593b54f11f03b2688828ccbd210fb1",
+        "severity": "major",
+        "evidence": "'the distinction matters more than usual here' narrates the emphasis rather than placing it",
+        "notes": "fix applied: -> 'the distinction matters here, because ...' (the three mislabelings that justify it are retained)"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.706Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.745Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.786Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "25ff9ee9e6af",
+          "ts": "d8c4c20b14e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_12",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:03:50.826Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "full-text read of the block (plus title/kind from the .ts sibling); all ten trap categories judged in context, not only scanner candidates",
+        "notes": "no manufactured construction of this class found; no fix needed"
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T07:07:38.048Z"
+}

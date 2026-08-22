@@ -893,9 +893,27 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c478685e18a2",
+          "ts": "aebac87015f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:07:47.422Z",
+        "reviewed_sha": "9c1703f679593b54f11f03b2688828ccbd210fb1",
+        "evidence": "Full read: 3-line table only (crossing (2,3), n-n type, T_nn); no prose sentences at all.",
+        "notes": "no construction present"
+      }
     ]
   },
   "label": "tbl:tm-worked-examples-table5-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:07:47.422Z"
 }
