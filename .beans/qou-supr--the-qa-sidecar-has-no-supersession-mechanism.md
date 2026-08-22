@@ -8,7 +8,7 @@ tags:
     - qa-sidecar
     - block-qa
 created_at: 2026-08-22T07:30:00Z
-updated_at: 2026-08-22T07:30:00Z
+updated_at: 2026-08-22T07:50:00Z
 ---
 
 Found while validating a batch whose sidecars carried exactly two `agent:pq_12`
@@ -88,3 +88,18 @@ one that makes the existing 28 resolvable by machine rather than by reading.
 **Not attempted here.** Picking a winner for each of the 28 means deciding which
 verdict is right, which is a re-adjudication of the block — an agent's judgement
 call on someone else's judgement call, and not one to make in bulk.
+
+## 2026-08-22 — item 3 is done
+
+[`local/language-trap-agent-audit`](../.claude/skills/local/language-trap-agent-audit.md)
+§per-block procedure now says **record once per criterion, after all fixes to
+that block**, with the reason (the array is append-only, so a second entry does
+not supersede the first) and the measured cost. That stops the 157 redundant
+slots and most of the 28 contradictory ones at source.
+
+**Items 1 and 2 remain open**, and item 1 is still the one worth doing: the 28
+existing contradictions are not fixed by a skill change, and nothing today makes
+them visible. The checker is ~20 lines — flag any criterion slot with two
+entries from the same `reviewer.id` at the same `field_hash.md` and differing
+`result` — and drains in one pass.
+
