@@ -7,7 +7,7 @@ $$
   \;\approx\; 136.823 \quad \text{at}\;\; q = q_0.
 $$
 
-This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
+This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
 
 | Form | Statement | Residual at $q_0$ | Status |
 |------|-----------|-------------------|--------|
@@ -82,7 +82,7 @@ $$
 | Bare $q[9]_q[10]_q$ | 136.823220 | $-1.55 \times 10^{-3}$ |
 | $+ 2/(3\pi)$ | 137.035426 | $-4.2 \times 10^{-6}$ |
 | $+ \alpha/(4\pi)$ | 137.036007 | $+5.7 \times 10^{-8}$ |
-| CODATA | $137.035999084(21)$ | — |
+| CODATA 2022 | $137.035999177(21)$ | — |
 
 The first correction is derived ([`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)). It is the photon infrared zero-mode on the 2-surface $M_{\text{Bring}}$. The harmonic $1$-form sector $b_1(M_g) = 2g$ normalises by the Gauss–Bonnet area $4\pi(g-1)$:
 

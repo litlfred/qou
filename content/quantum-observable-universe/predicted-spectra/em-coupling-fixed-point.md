@@ -26,4 +26,4 @@ $$
   \;=\; 0,
 $$
 
-*and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} - 137.035999084\rvert < 10^{-3}$.*
+*and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} - 137.035999177\rvert < 10^{-3}$.*
