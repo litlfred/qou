@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-21T22:03:38Z
+updated_at: 2026-08-22T12:26:05Z
 ---
 
 
@@ -462,3 +462,29 @@ a condition nothing satisfies is no reduction.
 
 ### #5426 now carries bricks 16-19, all sorry-free and axiom-clean
 16 isCorner_of_max_in_row | 17 tableauShape_uninsert | 18 the reduction | 19 the iff + inhabitation
+
+
+### Brick 20 — addable-cell sequences peel back as corners (same PR #5426)
+
+shapeCornersAlong_addCellSteps : YoungShape l -> AddableAlong l is ->
+  ShapeCornersAlong (addCellSteps l is) is  AND  removeCornerSteps (addCellSteps l is) is = l
+
+A standard tableau IS a sequence of addable cells. This proves such a sequence, peeled in reverse,
+is exactly a corner sequence — and lands back on the starting shape.
+
+Purely shape-level: no tableau, no Q, no insertion. Isolates the combinatorial content so brick 21
+only has to supply the bridge 'standard Q -> addable sequence'.
+
+Three single-step facts: youngShape_addCell, isCorner_addCell (shape mirror of brick 15's
+insert_isCorner, same reason), removeCorner_addCell (the exact-inverse half — why
+removeCornerSteps ... = l falls out of the same induction).
+
+Slip worth recording: I first routed sortedness through an invented List.sorted_ge_iff_getD_le.
+Replaced with sorted_of_getD_step, proved here — a shape is weakly decreasing as soon as each
+adjacent step is, which is the form the addCell case analysis actually produces.
+
+### The chain is now complete except one bridge
+  addable sequence --brick 20--> ShapeCornersAlong --brick 18/19--> CornersAlong
+    --brick 14--> insertWord (uninsertSteps P is).2 = P
+Brick 21 = the only gap: standard Q gives an AddableAlong sequence whose addCellSteps [] is the
+shape of P. Everything downstream of that is proved.
