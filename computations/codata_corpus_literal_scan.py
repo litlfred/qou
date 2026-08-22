@@ -53,6 +53,7 @@ import argparse
 import json
 import re
 import sys
+import time
 import tokenize
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -579,6 +580,7 @@ def main() -> int:
     ap.add_argument("--self-test", action="store_true",
                     help="check the code/comment/string classifier and exit")
     args = ap.parse_args()
+    started = time.time()
 
     if args.self_test:
         return self_test()
@@ -805,7 +807,33 @@ def main() -> int:
                 for (lit, quantity, want), sites in ranked
             ],
         }
-        out.write_text(json.dumps(payload, indent=1) + "\n")
+        # P30: a raw json.dump emits a witness with NO scriptHash /
+        # scriptCommitSha / engineVersion, so run_pipeline.py cannot tell
+        # whether it is stale -- the witness is PROV_MISSING. `wrap_legacy`
+        # preserves every key above verbatim and adds the staleness fields, so
+        # this is a provenance change and not a payload change.
+        #
+        # Found by scripts/check-sidecars.sh once the same commit that fixed
+        # its file-collection made it examine this file at all. It had been
+        # reporting "no changed files" on a branch with three commits.
+        try:
+            from qou_substrate.witness import WitnessBuilder
+
+            WitnessBuilder.wrap_legacy(
+                "codata-corpus-vintage-scan",
+                payload,
+                script_path=__file__,
+                engine="python-stdlib",
+                output_dir=out.parent,
+                start_time=started,
+            ).save()
+        except ImportError:
+            # qou-substrate is not installed in every sandbox, and a scan that
+            # cannot import it must still produce its witness rather than
+            # crash -- the gate itself runs with --no-witness and is unaffected
+            # either way.
+            out.write_text(json.dumps(payload, indent=1) + "\n")
+            print("  (qou_substrate unavailable — wrote without provenance)")
         print(f"wrote {out.relative_to(REPO)}")
 
     if args.strict and code_sites:
