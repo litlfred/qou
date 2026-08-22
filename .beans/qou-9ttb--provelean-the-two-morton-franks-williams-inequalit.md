@@ -49,10 +49,24 @@ independent of it and is the part with no in-corpus precedent I could find.
 
 ## Corpus-grep done (2026-08-22)
 
-- `.beans/` for morton / franks / ocneanu / markov-invariance -> only `qou-bhrx`
-  (adjacent, ingredient 1) and `qou-dr8m` (mine, completed, the *derivation*
-  that consumes these as hypotheses).
+- `.beans/` for morton / franks / ocneanu / markov-invariance -> **5 files
+  matched**, assessed as follows (corrected 2026-08-22; an earlier version of
+  this bean said "only qou-bhrx and qou-dr8m", which overstated what had
+  actually been checked):
+  - `qou-bhrx` — **relevant**, ingredient 1, in-progress. See above.
+  - `qou-dr8m` — mine, completed; the *derivation* consuming these as
+    hypotheses, not a proof of them.
+  - `qou-qb8e`, `46ke`, `qou-b3nk` — matched on the string **"Ocneanu" only**,
+    not on Morton / Franks / Markov-invariance. They concern other uses of the
+    trace (hh1 carrier magnitude; canonical-watcher CODATA literals; the
+    qbeta trace-convention registry). Not MFW; no overlap.
 - No `PROVE` bean for the inequalities themselves existed.
+- `grep -rli "morton-franks\|morton_franks" content/ computations/ docs/` -> only
+  files this PR adds or edits. In particular `computations/homflypt_engine.py`
+  matches **only** on a comment added by this PR; `origin/main`'s copy has zero
+  mentions of Morton / Franks / braid index. So there was no pre-existing MFW
+  machinery in the corpus, which is what #5380's "neither existing source can
+  supply a v-degree" rests on.
 
 ## Possibly-related downstream consumers
 
