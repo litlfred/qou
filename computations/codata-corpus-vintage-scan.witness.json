@@ -1,6 +1,6 @@
 {
  "engine": "python-stdlib",
- "computedAt": "2026-08-22T09:20:45.556906+00:00",
+ "computedAt": "2026-08-22T09:49:36.730803+00:00",
  "computation": "codata-corpus-vintage-scan",
  "scriptFile": "codata_corpus_literal_scan.py",
  "description": "Numeric literals in the corpus that are NEAR a NIST CODATA-2022 table value but not equal to it -- the signature of a stale edition. Sites are split into code_sites (executable, the only class that can compute a wrong number), prose_sites (inside a comment or string, inert -- and often the RESULT of a drain recording what it superseded), adjudicated_sites (executable but marked reviewed), and record_sites (witness/audit output). Quote code_sites as the actionable queue, never source_sites, which is their sum and over-states it ~7x. Complements codata_truncation_audit.py, which compares literals against the in-repo codata_constants module and so catches short prefixes but is structurally blind to a full-length literal from an earlier CODATA edition. Reference values are READ from library/allascii.txt, never typed here.",
@@ -9,21 +9,21 @@
  "near_threshold_relative": "1e-05",
  "min_significant_digits": 7,
  "table_entries": 293,
- "files_scanned": 25183,
+ "files_scanned": 25192,
  "distinct_literals": 285,
- "total_sites": 1948,
- "source_sites": 449,
- "code_sites": 61,
- "prose_sites": 382,
- "adjudicated_sites": 6,
+ "total_sites": 1935,
+ "source_sites": 436,
+ "code_sites": 36,
+ "prose_sites": 388,
+ "adjudicated_sites": 12,
  "record_sites": 1499,
  "findings": [
   {
    "literal": "938.27208816",
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
-   "sites": 343,
-   "code_sites": 295,
+   "sites": 337,
+   "code_sites": 290,
    "files": [
     "computations/alpha/three-term-wedderburn.witness.json",
     "computations/atomic_mass_via_rho_k.py",
@@ -111,12 +111,7 @@
     "computations/vol-density-per-block-wiring.witness.json",
     "content/bib-qa-verifications.json",
     "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
-    "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean",
-    "content/quantum-observable-universe/lean/QOU/Substrate/ProtonMassSubstrateIdentity.lean",
     "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean",
-    "content/quantum-observable-universe/lean/QOU/scratch_pmass.lean",
-    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean",
-    "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean",
     "content/values/registry.ts",
     "docs/audits/2026-05-08-rho-k-mass-table-audit.md",
     "docs/audits/2026-05-09-proton-m_e-anomaly.md",
@@ -141,8 +136,8 @@
    "literal": "939.56542052",
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
-   "sites": 168,
-   "code_sites": 143,
+   "sites": 167,
+   "code_sites": 142,
    "files": [
     "computations/alpha/three-term-wedderburn.witness.json",
     "computations/atomic_mass_via_rho_k.py",
@@ -198,7 +193,6 @@
     "computations/witness-float64-padding-audit.witness.json",
     "content/bib-qa-verifications.json",
     "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
-    "content/quantum-observable-universe/mass-theory/mass-from-generators.lean",
     "content/values/registry.ts",
     "docs/audits/2026-05-08-rho-k-mass-table-audit.md",
     "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
@@ -217,8 +211,8 @@
    "literal": "0.51099895",
    "table_value": "0.51099895069",
    "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
-   "sites": 165,
-   "code_sites": 139,
+   "sites": 160,
+   "code_sites": 131,
    "files": [
     ".claude/skills/local/compute-audit.md",
     "AUDIT-DEEP-2026-05.md",
@@ -274,11 +268,8 @@
     "content/pipeline/witness-substitution-audit.ts",
     "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
     "content/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.lean",
-    "content/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.lean",
     "content/quantum-observable-universe/mass-theory/mass-volume-factorization.lean",
     "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean",
-    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
-    "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean",
     "content/values/registry.ts",
     "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
     "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
@@ -320,7 +311,7 @@
    "table_value": "137.035999177",
    "quantity": "inverse fine-structure constant",
    "sites": 123,
-   "code_sites": 71,
+   "code_sites": 67,
    "files": [
     "computations/DERIVATION-STATUS.md",
     "computations/alpha-em-4pi-fixed-point-solve.witness.json",
@@ -403,8 +394,8 @@
    "literal": "0.51099895000",
    "table_value": "0.51099895069",
    "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
-   "sites": 82,
-   "code_sites": 52,
+   "sites": 81,
+   "code_sites": 51,
    "files": [
     "computations/audits/fitted-labelled-canonical-audit.witness.json",
     "computations/audits/hardcoded-literal-audit.witness.json",
@@ -430,7 +421,6 @@
     "computations/probe_qbeta_form.py",
     "computations/probes/bring_color_weighted_base_scale_probe.py",
     "computations/probes/qbeta_sdeformed_leading_bound_probe.py",
-    "computations/probes/rho_f_vol_binding_dashboard.py",
     "computations/q_beta_complex_q_test1_phaseA.py",
     "computations/q_beta_complex_q_test1_phaseA_v2.py",
     "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
@@ -1752,7 +1742,7 @@
    "table_value": "938.27208943",
    "quantity": "proton mass energy equivalent in MeV",
    "sites": 2,
-   "code_sites": 2,
+   "code_sites": 1,
    "files": [
     "computations/probes/rho_f_vol_binding_dashboard.py",
     "docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md"
@@ -1763,7 +1753,7 @@
    "table_value": "939.56542194",
    "quantity": "neutron mass energy equivalent in MeV",
    "sites": 2,
-   "code_sites": 2,
+   "code_sites": 1,
    "files": [
     "computations/probes/rho_f_vol_binding_dashboard.py",
     "docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md"
@@ -3606,7 +3596,7 @@
    "table_value": "1875.61294500",
    "quantity": "deuteron mass energy equivalent in MeV",
    "sites": 1,
-   "code_sites": 1,
+   "code_sites": 0,
    "files": [
     "computations/probes/rho_f_vol_binding_dashboard.py"
    ]
@@ -3616,7 +3606,7 @@
    "table_value": "2808.92113668",
    "quantity": "triton mass energy equivalent in MeV",
    "sites": 1,
-   "code_sites": 1,
+   "code_sites": 0,
    "files": [
     "computations/probes/rho_f_vol_binding_dashboard.py"
    ]
@@ -3626,7 +3616,7 @@
    "table_value": "2808.39161112",
    "quantity": "helion mass energy equivalent in MeV",
    "sites": 1,
-   "code_sites": 1,
+   "code_sites": 0,
    "files": [
     "computations/probes/rho_f_vol_binding_dashboard.py"
    ]
@@ -3636,7 +3626,7 @@
    "table_value": "3727.3794118",
    "quantity": "alpha particle mass energy equivalent in MeV",
    "sites": 1,
-   "code_sites": 1,
+   "code_sites": 0,
    "files": [
     "computations/probes/rho_f_vol_binding_dashboard.py"
    ]
