@@ -1,11 +1,11 @@
 ---
 # qou-s2gm
 title: precision-gates.sh --changed silently passes after a commit; full run stamps sandbox lib versions into an audit witness
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-16T13:48:36Z
-updated_at: 2026-08-22T20:18:26Z
+updated_at: 2026-08-22T20:49:54Z
 ---
 
 Both found while running the mandatory precision preflight on PR #5241 after
