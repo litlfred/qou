@@ -1,15 +1,15 @@
 {
   "engine": "python-stdlib",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T20:12:10.512942+00:00",
-  "commitSha": "6399b7e28b63a880c5c84ef161ec61d6074dbcbd",
+  "computedAt": "2026-08-22T20:48:23.899879+00:00",
+  "commitSha": "190e099a2820688ac6161a95a1c4259e8d4b42e0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 21237,
+  "durationMs": 18601,
   "computation": "codata-corpus-vintage-scan",
   "scriptFile": "codata_corpus_literal_scan.py",
-  "scriptHash": "f59bb30bb149",
-  "scriptCommitSha": "9d713edfd0a2cb92d14f1605ae13d2ed7df89245",
+  "scriptHash": "ecb6fe2f8808",
+  "scriptCommitSha": "e8525f0c8464a3d39678152aad5bebc7583e5da2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,21 +39,24 @@
   "near_threshold_relative": "1e-05",
   "min_significant_digits": 7,
   "table_entries": 293,
-  "files_scanned": 25233,
+  "files_scanned": 25234,
   "distinct_literals": 290,
-  "total_sites": 2080,
+  "total_sites": 2082,
   "source_sites": 419,
   "code_sites": 0,
   "prose_sites": 391,
   "adjudicated_sites": 28,
-  "record_sites": 1661,
+  "record_sites": 1663,
   "findings": [
     {
       "literal": "938.27208816",
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
-      "sites": 338,
-      "code_sites": 291,
+      "sites": 339,
+      "code_sites": 0,
+      "prose_sites": 44,
+      "adjudicated_sites": 1,
+      "record_sites": 294,
       "files": [
         "computations/alpha/three-term-wedderburn.witness.json",
         "computations/atomic_mass_via_rho_k.py",
@@ -167,8 +170,11 @@
       "literal": "0.51099895",
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
-      "sites": 180,
-      "code_sites": 151,
+      "sites": 181,
+      "code_sites": 0,
+      "prose_sites": 22,
+      "adjudicated_sites": 6,
+      "record_sites": 153,
       "files": [
         ".claude/skills/local/compute-audit.md",
         "AUDIT-DEEP-2026-05.md",
@@ -272,7 +278,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 166,
-      "code_sites": 141,
+      "code_sites": 0,
+      "prose_sites": 22,
+      "adjudicated_sites": 1,
+      "record_sites": 143,
       "files": [
         "computations/alpha/three-term-wedderburn.witness.json",
         "computations/atomic_mass_via_rho_k.py",
@@ -346,7 +355,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 143,
-      "code_sites": 84,
+      "code_sites": 0,
+      "prose_sites": 51,
+      "adjudicated_sites": 5,
+      "record_sites": 87,
       "files": [
         "computations/DERIVATION-STATUS.md",
         "computations/alpha-em-4pi-fixed-point-solve.witness.json",
@@ -431,7 +443,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 80,
-      "code_sites": 50,
+      "code_sites": 0,
+      "prose_sites": 30,
+      "adjudicated_sites": 0,
+      "record_sites": 50,
       "files": [
         "computations/audits/fitted-labelled-canonical-audit.witness.json",
         "computations/audits/hardcoded-literal-audit.witness.json",
@@ -481,7 +496,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 79,
-      "code_sites": 35,
+      "code_sites": 0,
+      "prose_sites": 37,
+      "adjudicated_sites": 1,
+      "record_sites": 41,
       "files": [
         ".claude/skills/local/compute-audit.md",
         "AUDIT-DEEP-2026-05.md",
@@ -555,7 +573,10 @@
       "table_value": "1875.61294500",
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 66,
-      "code_sites": 59,
+      "code_sites": 0,
+      "prose_sites": 7,
+      "adjudicated_sites": 0,
+      "record_sites": 59,
       "files": [
         "computations/atomic_mass_via_rho_k.py",
         "computations/audits/canonical_a_k_magnitude_audit.py",
@@ -591,7 +612,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 53,
-      "code_sites": 49,
+      "code_sites": 0,
+      "prose_sites": 4,
+      "adjudicated_sites": 0,
+      "record_sites": 49,
       "files": [
         ".claude/skills/local/scientific-accuracy.md",
         "computations/canonical-lepton-braid-words.witness.json",
@@ -626,7 +650,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 53,
-      "code_sites": 39,
+      "code_sites": 0,
+      "prose_sites": 14,
+      "adjudicated_sites": 0,
+      "record_sites": 39,
       "files": [
         "computations/a4_interface_trace_integration_all.py",
         "computations/alpha/alpha_k_jones_markov_h12.py",
@@ -656,7 +683,10 @@
       "table_value": "2808.39161112",
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 46,
-      "code_sites": 41,
+      "code_sites": 0,
+      "prose_sites": 5,
+      "adjudicated_sites": 0,
+      "record_sites": 41,
       "files": [
         "computations/atomic_mass_via_rho_k.py",
         "computations/audits/canonical_a_k_magnitude_audit.py",
@@ -682,7 +712,10 @@
       "table_value": "2808.92113668",
       "quantity": "triton mass energy equivalent in MeV",
       "sites": 46,
-      "code_sites": 43,
+      "code_sites": 0,
+      "prose_sites": 3,
+      "adjudicated_sites": 0,
+      "record_sites": 43,
       "files": [
         "computations/atomic_mass_via_rho_k.py",
         "computations/audits/canonical_a_k_magnitude_audit.py",
@@ -711,7 +744,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 36,
-      "code_sites": 28,
+      "code_sites": 0,
+      "prose_sites": 8,
+      "adjudicated_sites": 0,
+      "record_sites": 28,
       "files": [
         "computations/meson_em_residual_alpha_em.py",
         "computations/meson_em_sinh_closed_form.py",
@@ -732,6 +768,9 @@
       "quantity": "inverse fine-structure constant",
       "sites": 25,
       "code_sites": 0,
+      "prose_sites": 24,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/audits/m_k_m_pi_closure_pattern_audit.py",
         "computations/flavor_split_xq_refinement.py",
@@ -758,7 +797,10 @@
       "table_value": "931.49410372",
       "quantity": "atomic mass constant energy equivalent in MeV",
       "sites": 21,
-      "code_sites": 12,
+      "code_sites": 0,
+      "prose_sites": 9,
+      "adjudicated_sites": 0,
+      "record_sites": 12,
       "files": [
         "computations/atom_electron_mass.py",
         "computations/codata_2022_source.py",
@@ -779,7 +821,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 18,
-      "code_sites": 14,
+      "code_sites": 0,
+      "prose_sites": 4,
+      "adjudicated_sites": 0,
+      "record_sites": 14,
       "files": [
         "computations/probes/em-coupling-projection-probe.witness.json",
         "computations/probes/em_coupling_projection_probe.py",
@@ -792,7 +837,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 18,
-      "code_sites": 18,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 18,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
@@ -809,7 +857,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 17,
-      "code_sites": 11,
+      "code_sites": 0,
+      "prose_sites": 5,
+      "adjudicated_sites": 0,
+      "record_sites": 12,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/codata-truncation-audit.witness.json",
@@ -829,7 +880,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 16,
-      "code_sites": 11,
+      "code_sites": 0,
+      "prose_sites": 4,
+      "adjudicated_sites": 1,
+      "record_sites": 11,
       "files": [
         "computations/probes/kaon_pion_ratio_7_8_probe.py",
         "computations/xi_ell_phi_q_probe.py",
@@ -849,7 +903,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 16,
-      "code_sites": 13,
+      "code_sites": 0,
+      "prose_sites": 3,
+      "adjudicated_sites": 0,
+      "record_sites": 13,
       "files": [
         "computations/atomic_mass_via_rho_k.py",
         "computations/audits/canonical_a_k_magnitude_audit.py",
@@ -864,7 +921,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 15,
-      "code_sites": 11,
+      "code_sites": 0,
+      "prose_sites": 3,
+      "adjudicated_sites": 0,
+      "record_sites": 12,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/e0-calibration-audit.witness.json",
@@ -883,7 +943,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 15,
-      "code_sites": 14,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 14,
       "files": [
         "computations/cross-branch-synthesis-2026-04-25.md",
         "computations/m_qclt_approx.py",
@@ -902,7 +965,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 15,
-      "code_sites": 13,
+      "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 13,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/qbeta/qbeta-1ppq-achieved.witness.json",
@@ -916,7 +982,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 12,
-      "code_sites": 9,
+      "code_sites": 0,
+      "prose_sites": 3,
+      "adjudicated_sites": 0,
+      "record_sites": 9,
       "files": [
         "content/pipeline/trace-convention-audit.ts",
         "content/pipeline/witness-substitution-audit.ts",
@@ -935,7 +1004,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 12,
-      "code_sites": 11,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 11,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/compute_audit_scan.py",
@@ -953,7 +1025,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 11,
-      "code_sites": 11,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 11,
       "files": [
         "computations/landauer-crossing-energy-probe.witness.json",
         "computations/low-isotope-mass-table.witness.json",
@@ -972,7 +1047,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 11,
-      "code_sites": 11,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 11,
       "files": [
         "computations/canonical-isotope-witness-Z00.witness.json",
         "computations/landauer-crossing-energy-probe.witness.json",
@@ -991,7 +1069,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 10,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 7,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/codata_2022_source.py",
         "computations/nf-qvalues.py",
@@ -1007,7 +1088,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 10,
-      "code_sites": 9,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 9,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/codata-truncation-audit.witness.json",
@@ -1024,7 +1108,10 @@
       "table_value": "27.211386245981",
       "quantity": "Hartree energy in eV / atomic unit of electric potential / hartree-electron volt relationship",
       "sites": 10,
-      "code_sites": 10,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 10,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation-table2-data.qa.json"
       ]
@@ -1034,7 +1121,10 @@
       "table_value": "7.2973525643e-3",
       "quantity": "fine-structure constant",
       "sites": 10,
-      "code_sites": 10,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 10,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation-table2-data.qa.json"
       ]
@@ -1044,7 +1134,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 10,
-      "code_sites": 10,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 10,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.qa.json"
       ]
@@ -1054,7 +1147,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 10,
-      "code_sites": 10,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 10,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.qa.json"
       ]
@@ -1064,7 +1160,10 @@
       "table_value": "27.211386245981",
       "quantity": "Hartree energy in eV / atomic unit of electric potential / hartree-electron volt relationship",
       "sites": 10,
-      "code_sites": 10,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 10,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation-table11-data.qa.json"
       ]
@@ -1074,7 +1173,10 @@
       "table_value": "4.001506179129",
       "quantity": "alpha particle mass in u / alpha particle relative atomic mass",
       "sites": 10,
-      "code_sites": 10,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 10,
       "files": [
         "computations/braid-registry/ag-109.json",
         "computations/braid-registry/cd-110.json",
@@ -1094,6 +1196,9 @@
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 8,
       "code_sites": 0,
+      "prose_sites": 7,
+      "adjudicated_sites": 1,
+      "record_sites": 0,
       "files": [
         "computations/codata_2022_source.py",
         "computations/substrate/experimental_constants.py",
@@ -1107,7 +1212,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 8,
-      "code_sites": 7,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 7,
       "files": [
         "computations/m_qclt_approx.py",
         "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.qa.json",
@@ -1122,7 +1230,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 8,
-      "code_sites": 5,
+      "code_sites": 0,
+      "prose_sites": 3,
+      "adjudicated_sites": 0,
+      "record_sites": 5,
       "files": [
         "computations/alpha_em_b2_tau_w_freedom_probe.py",
         "computations/audits/hardcoded-literal-audit.witness.json",
@@ -1139,7 +1250,10 @@
       "table_value": "2808.39161112",
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 8,
-      "code_sites": 8,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 8,
       "files": [
         "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
         "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
@@ -1154,7 +1268,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 8,
-      "code_sites": 8,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 8,
       "files": [
         "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json",
         "docs/audits/2026-05-01-per-braid-q-hecke-vs-ame.witness.json",
@@ -1169,7 +1286,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 8,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 5,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/flavor-dressed-mass-from-substrate-split.witness.json",
         "computations/inter-nucleon-linked-channel.witness.json",
@@ -1185,7 +1305,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 8,
-      "code_sites": 7,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 7,
       "files": [
         "computations/per-observable-100x-status.witness.json",
         "computations/per_observable_100x_status.py",
@@ -1201,7 +1324,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 8,
-      "code_sites": 6,
+      "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 6,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/cal4-disguise-hunt.witness.json",
@@ -1213,7 +1339,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 8,
-      "code_sites": 7,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 7,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/build-six-term-substrate-model-b.witness.json",
@@ -1225,7 +1354,10 @@
       "table_value": "1.00137841946",
       "quantity": "neutron-proton mass ratio",
       "sites": 7,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 6,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass_endomorphism.py",
         "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.qa.json",
@@ -1237,7 +1369,10 @@
       "table_value": "1875.61294500",
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 7,
-      "code_sites": 7,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 7,
       "files": [
         "content/quantum-observable-universe/mass-theory/terminal-resolution.qa.json"
       ]
@@ -1247,7 +1382,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 7,
-      "code_sites": 5,
+      "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 5,
       "files": [
         "computations/DERIVATION-STATUS.md",
         "computations/meson-em-residual-alpha-em.witness.json",
@@ -1261,7 +1399,10 @@
       "table_value": "13.605693122990",
       "quantity": "Rydberg constant times hc in eV",
       "sites": 6,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 3,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/hydrogen_step_by_step.py",
@@ -1274,7 +1415,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 6,
-      "code_sites": 6,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 6,
       "files": [
         "computations/m-p-borromean-verification-50dps.witness.json",
         "computations/mass-table-comprehensive.witness.json",
@@ -1287,7 +1431,10 @@
       "table_value": "42.577478461",
       "quantity": "proton gyromag. ratio in MHz/T",
       "sites": 6,
-      "code_sites": 6,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 6,
       "files": [
         "computations/braid-registry/hg-200.json",
         "computations/braid-registry/hg-201.json",
@@ -1302,7 +1449,10 @@
       "table_value": "1.00137841946",
       "quantity": "neutron-proton mass ratio",
       "sites": 5,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 2,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/lean/QOU/CODATAChain.lean",
         "content/quantum-observable-universe/lean/QOU/HadronicMass.lean",
@@ -1314,7 +1464,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 5,
-      "code_sites": 4,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 4,
       "files": [
         "content/quantum-observable-universe/observations/fine-structure-observation.md",
         "content/quantum-observable-universe/observations/fine-structure-observation.ts",
@@ -1328,7 +1481,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 5,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/codata_registry_triangulation_probe.py",
         "computations/m-qclt-approx.witness.json",
@@ -1342,7 +1498,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 5,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 1,
+      "record_sites": 3,
       "files": [
         "computations/alpha-em-form-ladder.witness.json",
         "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean",
@@ -1354,7 +1513,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 5,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 1,
+      "record_sites": 3,
       "files": [
         "computations/alpha-em-form-ladder.witness.json",
         "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean",
@@ -1366,7 +1528,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 4,
-      "code_sites": 4,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 4,
       "files": [
         "content/quantum-observable-universe/introduction/chapter-overview.md",
         "docs/qa/content-alignment-2026-04-25/ch00-introduction.md"
@@ -1377,7 +1542,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/flavor-dependent-cusp-shape.witness.json",
         "computations/flavor_dependent_cusp_shape.py",
@@ -1390,7 +1558,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 4,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 4,
       "files": [
         "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.md",
         "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
@@ -1403,6 +1574,9 @@
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 4,
       "code_sites": 0,
+      "prose_sites": 3,
+      "adjudicated_sites": 1,
+      "record_sites": 0,
       "files": [
         "content/quantum-observable-universe/lean/QOU/HadronicMass.lean"
       ]
@@ -1412,7 +1586,10 @@
       "table_value": "2808.39161112",
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 4,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 4,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
@@ -1423,7 +1600,10 @@
       "table_value": "1836.152673426",
       "quantity": "proton-electron mass ratio",
       "sites": 4,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/derive_m_p_hecke_full_tower_50dps.py",
         "computations/probes/proton_brane_tower_correction_probe.py",
@@ -1436,7 +1616,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/path_c3_klr_prescreen_50dps.py",
@@ -1448,7 +1631,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 4,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 4,
       "files": [
         "computations/categorical-q-decay-ba-low-isotopes.witness.json",
         "computations/neutron-error-diagnostic.witness.json",
@@ -1461,7 +1647,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 1,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/codata_masses.py"
@@ -1472,7 +1661,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 1,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/codata_masses.py"
@@ -1483,7 +1675,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 1,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/codata_masses.py"
@@ -1494,7 +1689,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 4,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 1,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/codata_masses.py"
@@ -1505,7 +1703,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/m-p-borromean-verification-50dps.witness.json",
         "computations/mass-table-comprehensive.witness.json",
@@ -1517,7 +1718,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "content/bib-qa-verifications.json"
@@ -1528,7 +1732,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 3,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "content/quantum-observable-universe/observations/fine-structure-data.md",
         "content/quantum-observable-universe/observations/fine-structure-data.ts",
@@ -1540,7 +1747,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 3,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/probes/alpha_em_4pi_derived_form_probe.py",
         "content/quantum-observable-universe/observations/fine-structure-observation.md",
@@ -1552,7 +1762,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "content/quantum-observable-universe/mass-theory/calibration-inputs.qa.json",
         "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.qa.json"
@@ -1563,7 +1776,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
         "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
@@ -1575,7 +1791,10 @@
       "table_value": "0.99862347797",
       "quantity": "proton-neutron mass ratio",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation-table-data.qa.json",
         "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.qa.json"
@@ -1586,7 +1805,10 @@
       "table_value": "1836.152673426",
       "quantity": "proton-electron mass ratio",
       "sites": 3,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/skein_proton_canonical.py",
         "docs/audits/2026-05-09-proton-m_e-anomaly.md",
@@ -1598,7 +1820,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/mass-table-comprehensive.witness.json",
         "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
@@ -1609,7 +1834,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "docs/audits/2026-06-29-bean-hygiene-data-integrity-verified-resolved.md"
@@ -1620,7 +1848,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/DERIVATION-STATUS.md",
         "docs/audits/2026-05-01-math-framework-deep-audit.md"
@@ -1631,7 +1862,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/m-tau-complex-volume-search.witness.json",
         "computations/m-tau-knot-prediction.witness.json"
@@ -1642,7 +1876,10 @@
       "table_value": "7.2973525643e-3",
       "quantity": "fine-structure constant",
       "sites": 3,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/alpha-em-b2-invariant-c.witness.json",
         "computations/alpha_em_b2_invariant_c_probe.py",
@@ -1654,7 +1891,10 @@
       "table_value": "1836.152673426",
       "quantity": "proton-electron mass ratio",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/audits/proton-m_e-anomaly-audit.witness.json",
         "computations/option-b-proton-mass-full-chain.witness.json"
@@ -1665,7 +1905,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 3,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/path_c3_klr_prescreen_50dps.py"
@@ -1676,7 +1919,10 @@
       "table_value": "1875.61294500",
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 3,
-      "code_sites": 3,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json"
       ]
@@ -1686,7 +1932,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 3,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
       "files": [
         "computations/audits/muon-pin-three-values.witness.json",
         "computations/audits/muon_pin_three_values_probe.py"
@@ -1697,7 +1946,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "AGENTS.md",
         "docs/audits/2026-06-26-l2-dashboard-status-and-tnjb-caveat.md"
@@ -1708,7 +1960,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "AGENTS.md",
         "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
@@ -1719,7 +1974,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/m-p-borromean-verification-50dps.witness.json",
         "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
@@ -1730,7 +1988,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/m-p-borromean-verification-50dps.witness.json",
         "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json"
@@ -1741,7 +2002,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/canonical-isotope-witness-Z44.witness.json",
         "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z44.witness.json"
@@ -1752,7 +2016,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/canonical-isotope-witness-Z00.witness.json",
         "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json"
@@ -1763,7 +2030,10 @@
       "table_value": "1.00866491606",
       "quantity": "neutron mass in u / neutron relative atomic mass",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/canonical-isotope-witness-Z00.witness.json",
         "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z00.witness.json"
@@ -1774,7 +2044,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 1,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
         "qou-mass/tests/test_p2_integration.py"
@@ -1785,7 +2058,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 1,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
         "qou-mass/tests/test_p2_integration.py"
@@ -1796,7 +2072,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 1,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-18-m-p-scale-gap-investigation.md",
         "qou-mass/tests/test_p2_integration.py"
@@ -1807,7 +2086,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/meson-em-sinh-closed-form.witness.json",
         "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.ts"
@@ -1818,7 +2100,10 @@
       "table_value": "1836.152673426",
       "quantity": "proton-electron mass ratio",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean",
         "docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md"
@@ -1830,6 +2115,9 @@
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 2,
       "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/probes/np_splitting_residual_probe.py",
         "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean"
@@ -1840,7 +2128,10 @@
       "table_value": "2808.92113668",
       "quantity": "triton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/m-qclt-approx.witness.json",
         "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
@@ -1851,7 +2142,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
         "docs/audits/2026-08-08-q-integer-convention-derived.md"
@@ -1862,7 +2156,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md",
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.qa.json"
@@ -1873,7 +2170,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md",
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.qa.json"
@@ -1884,7 +2184,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/alpha/alpha-em-habiro-torus-knot-jones.witness.json",
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.qa.json"
@@ -1895,7 +2198,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/alpha-em-form-ladder.witness.json",
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-exploration-options.qa.json"
@@ -1906,7 +2212,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/alpha-em-form-ladder.witness.json",
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-exploration-options.qa.json"
@@ -1917,7 +2226,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "docs/coordination/2026-07-02-lambda-a-excision-consumer-lanes.md",
         "docs/pyhecke-native-build-in-sandbox.md"
@@ -1928,7 +2240,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "docs/audits/2026-05-02-alpha-analytic-attempt.witness.json",
         "docs/audits/2026-05-02-alpha-categorical-probe.witness.json"
@@ -1939,7 +2254,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "docs/audits/2026-06-24-me3r-m-e-codata-registry-reconcile.md"
       ]
@@ -1949,7 +2267,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/m_p_substrate_identity_50dps.py",
         "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md"
@@ -1960,7 +2281,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/probes/rho_f_vol_binding_dashboard.py",
         "docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md"
@@ -1971,7 +2295,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/probes/rho_f_vol_binding_dashboard.py",
         "docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md"
@@ -1982,7 +2309,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "docs/audits/2026-05-16-stale-witness-infra-gap.md"
       ]
@@ -1992,7 +2322,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/m-qclt-approx.witness.json",
         "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
@@ -2003,7 +2336,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/quark-mass-extraction-stage1.witness.json",
         "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
@@ -2014,7 +2350,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
         "docs/coordination/2026-05-30-alpha-em-fsc-closure.md"
@@ -2025,7 +2364,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
         "docs/coordination/2026-05-30-alpha-em-fsc-closure.md"
@@ -2036,7 +2378,10 @@
       "table_value": "3.972599690252",
       "quantity": "alpha particle-proton mass ratio",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/ground-state-ordering-argmin-sweep.witness.json"
       ]
@@ -2046,7 +2391,10 @@
       "table_value": "1875.61294500",
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/iterative-lp-dual-h6-deuteron.witness.json",
         "computations/m-qclt-approx.witness.json"
@@ -2057,7 +2405,10 @@
       "table_value": "27.211386245981",
       "quantity": "Hartree energy in eV / atomic unit of electric potential / hartree-electron volt relationship",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/aufbau-ell-penetration-hartree-pinned.witness.json",
         "computations/h2-molecular-binding.witness.json"
@@ -2068,7 +2419,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/hecke-core-symbolic-migration.witness.json"
       ]
@@ -2079,6 +2433,9 @@
       "quantity": "inverse fine-structure constant",
       "sites": 2,
       "code_sites": 0,
+      "prose_sites": 2,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/coulomb_energy.py"
       ]
@@ -2088,7 +2445,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/m-p-substrate-identity-50dps.witness.json",
         "computations/probes/m-pi-hecke-prediction-probe.witness.json"
@@ -2099,7 +2459,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/lambda-scale-derivation-probes-123.witness.json"
       ]
@@ -2109,7 +2472,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/deuteron-from-scratch-ledger.witness.json"
       ]
@@ -2119,7 +2485,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/deuteron-from-scratch-ledger.witness.json"
       ]
@@ -2129,7 +2498,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/a_operator/A-operator-extract-h9-pn.witness.json"
       ]
@@ -2139,7 +2511,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/a_operator/A-operator-extract-h9-pn.witness.json"
       ]
@@ -2149,7 +2524,10 @@
       "table_value": "1875.61294500",
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
         "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
@@ -2160,7 +2538,10 @@
       "table_value": "2808.92113668",
       "quantity": "triton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
         "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
@@ -2171,7 +2552,10 @@
       "table_value": "2808.39161112",
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
         "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
@@ -2182,7 +2566,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/probes/su4-occupancy-binding-mass-probe.witness.json",
         "computations/probes/su4-occupancy-binding-sweep-probe.witness.json"
@@ -2193,7 +2580,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json"
       ]
@@ -2203,7 +2593,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json"
       ]
@@ -2213,7 +2606,10 @@
       "table_value": "2808.39161112",
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json"
       ]
@@ -2223,7 +2619,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 2,
-      "code_sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
       "files": [
         "computations/audits/hardcoded-literal-audit.witness.json"
       ]
@@ -2233,7 +2632,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "qou-mass/CHANGELOG.md"
       ]
@@ -2243,7 +2645,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "qou-mass/CHANGELOG.md"
       ]
@@ -2253,7 +2658,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "qou-mass/CHANGELOG.md"
       ]
@@ -2263,7 +2671,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "qou-mass/CHANGELOG.md"
       ]
@@ -2273,7 +2684,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.md"
       ]
@@ -2283,7 +2697,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/observations/fine-structure-data.md"
       ]
@@ -2293,7 +2710,10 @@
       "table_value": "0.99862347797",
       "quantity": "proton-neutron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/mass-theory/hoefsmit-V21-cos-symmetrization.qa.json"
       ]
@@ -2303,7 +2723,10 @@
       "table_value": "27.211386245981",
       "quantity": "Hartree energy in eV / atomic unit of electric potential / hartree-electron volt relationship",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/mass-theory/molecular-bond-binding-from-trefoil-insertion.qa.json"
       ]
@@ -2313,7 +2736,10 @@
       "table_value": "13.605693122990",
       "quantity": "Rydberg constant times hc in eV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/mass-theory/molecular-bond-binding-from-trefoil-insertion.qa.json"
       ]
@@ -2323,7 +2749,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.qa.json"
       ]
@@ -2334,6 +2763,9 @@
       "quantity": "neutron-electron mass ratio",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
       ]
@@ -2344,6 +2776,9 @@
       "quantity": "neutron-proton mass ratio",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "content/quantum-observable-universe/lean/QOU/HadronicMass.lean"
       ]
@@ -2354,6 +2789,9 @@
       "quantity": "muon-electron mass ratio",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "content/quantum-observable-universe/lean/QOU/BraidKnot/MuPCarrierOrderWindow.lean"
       ]
@@ -2363,7 +2801,10 @@
       "table_value": "1875.61294500",
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md"
       ]
@@ -2373,7 +2814,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory-scope.qa.json"
       ]
@@ -2383,7 +2827,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.qa.json"
       ]
@@ -2393,7 +2840,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.qa.json"
       ]
@@ -2403,7 +2853,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.qa.json"
       ]
@@ -2413,7 +2866,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md"
       ]
@@ -2424,6 +2880,9 @@
       "quantity": "inverse fine-structure constant",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "content/pipeline/witness-substitution-audit.ts"
       ]
@@ -2434,6 +2893,9 @@
       "quantity": "inverse fine-structure constant",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "tools/pyhecke/python/pyhecke/constants.py"
       ]
@@ -2443,7 +2905,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/derivation-tracking-methodology.md"
       ]
@@ -2453,7 +2918,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/pyhecke-native-build-in-sandbox.md"
       ]
@@ -2463,7 +2931,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/_archive/orphan-top-level/alpha-fsc-audit.md"
       ]
@@ -2473,7 +2944,10 @@
       "table_value": "1836.152673426",
       "quantity": "proton-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-06-21-q0-clusterA-migration-plan.md"
       ]
@@ -2483,7 +2957,10 @@
       "table_value": "1836.152673426",
       "quantity": "proton-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-09-proton-m_e-anomaly.md"
       ]
@@ -2493,7 +2970,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-08-22-mK-mpi-l2-red-team.md"
       ]
@@ -2503,7 +2983,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-08-22-mK-mpi-l2-red-team.md"
       ]
@@ -2513,7 +2996,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-06-14-klr-positivity-mass-gap.md"
       ]
@@ -2523,7 +3009,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-06-14-klr-positivity-mass-gap.md"
       ]
@@ -2533,7 +3022,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-08-09-codata-registry-vintage-straddle.md"
       ]
@@ -2543,7 +3035,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-08-09-codata-registry-vintage-straddle.md"
       ]
@@ -2553,7 +3048,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-08-09-codata-registry-vintage-straddle.md"
       ]
@@ -2563,7 +3061,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-06-24-me3r-m-e-codata-registry-reconcile.md"
       ]
@@ -2573,7 +3074,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-14-alpha-em-theta-graph-two-loop-candidate.md"
       ]
@@ -2583,7 +3087,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md"
       ]
@@ -2593,7 +3100,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md"
       ]
@@ -2603,7 +3113,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-11-np-splitting-residual-not-q0-knob.md"
       ]
@@ -2613,7 +3126,10 @@
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
       ]
@@ -2623,7 +3139,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
       ]
@@ -2633,7 +3152,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-11-precision-status-and-vacuity-sweep-followup.md"
       ]
@@ -2643,7 +3165,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md"
       ]
@@ -2653,7 +3178,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-08-08-mu-p-residual-carrier-order-and-bar-parity-prune.md"
       ]
@@ -2663,7 +3191,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
       ]
@@ -2673,7 +3204,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
       ]
@@ -2683,7 +3217,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
       ]
@@ -2693,7 +3230,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
       ]
@@ -2703,7 +3243,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md"
       ]
@@ -2713,7 +3256,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-06-02-m-mu-pr1556-superseded-by-witness.md"
       ]
@@ -2723,7 +3269,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/audits/2026-05-23-1ppb-gap-closure-synthesis.md"
       ]
@@ -2733,7 +3282,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/workplans/2026-06-09-qbeta-precision-thread-workplan.md"
       ]
@@ -2743,7 +3295,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/coordination/2026-06-02-yekutieli-multicell-and-coulomb-channel.md"
       ]
@@ -2753,7 +3308,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/coordination/2026-06-02-yekutieli-multicell-and-coulomb-channel.md"
       ]
@@ -2763,7 +3321,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/coordination/2026-05-22-cal4-lambda-scale.md"
       ]
@@ -2773,7 +3334,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/coordination/2026-05-22-cal4-lambda-scale.md"
       ]
@@ -2783,7 +3347,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
       ]
@@ -2793,7 +3360,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
       ]
@@ -2803,7 +3373,10 @@
       "table_value": "2808.92113668",
       "quantity": "triton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2813,7 +3386,10 @@
       "table_value": "683",
       "quantity": "luminous efficacy",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2823,7 +3399,10 @@
       "table_value": "2.35051757077e5",
       "quantity": "atomic unit of mag. flux density",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2833,7 +3412,10 @@
       "table_value": "2.35051757077e5",
       "quantity": "atomic unit of mag. flux density",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2843,7 +3425,10 @@
       "table_value": "2.35051757077e5",
       "quantity": "atomic unit of mag. flux density",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2853,7 +3438,10 @@
       "table_value": "2.35051757077e5",
       "quantity": "atomic unit of mag. flux density",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2863,7 +3451,10 @@
       "table_value": "2.35051757077e5",
       "quantity": "atomic unit of mag. flux density",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2873,7 +3464,10 @@
       "table_value": "3.1577502480398e5",
       "quantity": "hartree-kelvin relationship",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2883,7 +3477,10 @@
       "table_value": "1776.86",
       "quantity": "tau energy equivalent",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2893,7 +3490,10 @@
       "table_value": "3.1577502480398e5",
       "quantity": "hartree-kelvin relationship",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2903,7 +3503,10 @@
       "table_value": "3.1577502480398e5",
       "quantity": "hartree-kelvin relationship",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2913,7 +3516,10 @@
       "table_value": "3.1577502480398e5",
       "quantity": "hartree-kelvin relationship",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-table-comprehensive.witness.json"
       ]
@@ -2923,7 +3529,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/me-additive-term-structure.witness.json"
       ]
@@ -2933,7 +3542,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/m-tau-knot-prediction.witness.json"
       ]
@@ -2943,7 +3555,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/landauer-crossing-energy-probe.witness.json"
       ]
@@ -2953,7 +3568,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
       ]
@@ -2963,7 +3581,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
       ]
@@ -2973,7 +3594,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
       ]
@@ -2983,7 +3607,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
       ]
@@ -2993,7 +3620,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
       ]
@@ -3003,7 +3633,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json"
       ]
@@ -3013,7 +3646,10 @@
       "table_value": "46.686447719",
       "quantity": "Bohr magneton in inverse meter per tesla",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/qns-phase-scramble-probe.witness.json"
       ]
@@ -3023,7 +3659,10 @@
       "table_value": "2808.92113668",
       "quantity": "triton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/m-qclt-approx.witness.json"
       ]
@@ -3033,7 +3672,10 @@
       "table_value": "2808.39161112",
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/m-qclt-approx.witness.json"
       ]
@@ -3043,7 +3685,10 @@
       "table_value": "1.89115",
       "quantity": "tau-neutron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/binding-block-multiplicative.witness.json"
       ]
@@ -3053,7 +3698,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/unified-mass-molecular.witness.json"
       ]
@@ -3063,7 +3711,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/all-nuclides-wedderburn-spectral-v2.witness.json"
       ]
@@ -3073,7 +3724,10 @@
       "table_value": "683",
       "quantity": "luminous efficacy",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/all-nuclides-wedderburn-spectral-v2.witness.json"
       ]
@@ -3084,6 +3738,9 @@
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/m_p_substrate_identity_50dps.py"
       ]
@@ -3093,7 +3750,10 @@
       "table_value": "13.605693122990",
       "quantity": "Rydberg constant times hc in eV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/aufbau-ell-penetration-hartree-pinned.witness.json"
       ]
@@ -3103,7 +3763,10 @@
       "table_value": "2.99371703403",
       "quantity": "triton-proton mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/probe-collective-binding-residual.witness.json"
       ]
@@ -3113,7 +3776,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/per-observable-100x-status.witness.json"
       ]
@@ -3123,7 +3789,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/per-observable-100x-status.witness.json"
       ]
@@ -3133,7 +3802,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/per-observable-100x-status.witness.json"
       ]
@@ -3143,7 +3815,10 @@
       "table_value": "7.2973525643e-3",
       "quantity": "fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/h2-molecular-binding.witness.json"
       ]
@@ -3153,7 +3828,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/hecke-core-symbolic-migration.witness.json"
       ]
@@ -3163,7 +3841,10 @@
       "table_value": "1875.61294500",
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/hecke-channel-binding.witness.json"
       ]
@@ -3173,7 +3854,10 @@
       "table_value": "2808.92113668",
       "quantity": "triton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/hecke-channel-binding.witness.json"
       ]
@@ -3183,7 +3867,10 @@
       "table_value": "2808.39161112",
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/hecke-channel-binding.witness.json"
       ]
@@ -3193,7 +3880,10 @@
       "table_value": "3727.3794118",
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/hecke-channel-binding.witness.json"
       ]
@@ -3203,7 +3893,10 @@
       "table_value": "16.8170",
       "quantity": "tau-muon mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json"
       ]
@@ -3213,7 +3906,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/DERIVATION-STATUS.md"
       ]
@@ -3223,7 +3919,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/generation-count-t29-truncation.witness.json"
       ]
@@ -3233,7 +3932,10 @@
       "table_value": "16.8170",
       "quantity": "tau-muon mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/generation-count-t29-truncation.witness.json"
       ]
@@ -3243,7 +3945,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/alpha-em-form-ladder.witness.json"
       ]
@@ -3253,7 +3958,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/alpha-em-form-ladder.witness.json"
       ]
@@ -3263,7 +3971,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/murakami-deformed-vc-q0.witness.json"
       ]
@@ -3273,7 +3984,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3283,7 +3997,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3293,7 +4010,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3303,7 +4023,10 @@
       "table_value": "8.88024338",
       "quantity": "proton-muon mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3313,7 +4036,10 @@
       "table_value": "1.00137841946",
       "quantity": "neutron-proton mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3323,7 +4049,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3333,7 +4062,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3343,7 +4075,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3353,7 +4088,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3363,7 +4101,10 @@
       "table_value": "8.88024338",
       "quantity": "proton-muon mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3373,7 +4114,10 @@
       "table_value": "1.00137841946",
       "quantity": "neutron-proton mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3383,7 +4127,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mu-p-pin-sensitivity-map.witness.json"
       ]
@@ -3393,7 +4140,10 @@
       "table_value": "0.22305",
       "quantity": "weak mixing angle",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/em-linking-coth-separation.witness.json"
       ]
@@ -3403,7 +4153,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/quark-mass-extraction-stage1.witness.json"
       ]
@@ -3413,7 +4166,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/quark-mass-extraction-stage1.witness.json"
       ]
@@ -3423,7 +4179,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/quark-mass-extraction-stage1.witness.json"
       ]
@@ -3433,7 +4192,10 @@
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/quark-mass-extraction-stage1.witness.json"
       ]
@@ -3443,7 +4205,10 @@
       "table_value": "1.00137841946",
       "quantity": "neutron-proton mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/mass-from-q-symbolic.witness.json"
       ]
@@ -3453,7 +4218,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/m-p-substrate-identity-50dps.witness.json"
       ]
@@ -3463,7 +4231,10 @@
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/m-p-substrate-identity-50dps.witness.json"
       ]
@@ -3473,7 +4244,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/reading-a-residual-at-50dps.witness.json"
       ]
@@ -3483,7 +4257,10 @@
       "table_value": "16.8170",
       "quantity": "tau-muon mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/m-tau-hecke-energy-route.witness.json"
       ]
@@ -3493,7 +4270,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/cross-branch-synthesis-2026-04-25.md"
       ]
@@ -3503,7 +4283,10 @@
       "table_value": "7.2973525643e-3",
       "quantity": "fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/b-over-a.witness.json"
       ]
@@ -3513,7 +4296,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/borromean-volume-propagation-to-m-p.witness.json"
       ]
@@ -3523,7 +4309,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/borromean-volume-propagation-to-m-p.witness.json"
       ]
@@ -3534,6 +4323,9 @@
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/path_c3_klr_prescreen_50dps.py"
       ]
@@ -3543,7 +4335,10 @@
       "table_value": "2.993152671552",
       "quantity": "helion-proton mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/joint-tower-sdp-rust.witness.json"
       ]
@@ -3553,7 +4348,10 @@
       "table_value": "0.99862347797",
       "quantity": "proton-neutron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/joint-tower-sdp-rust.witness.json"
       ]
@@ -3563,7 +4361,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/deuteron-from-scratch-ledger.witness.json"
       ]
@@ -3573,7 +4374,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/deuteron-from-scratch-ledger.witness.json"
       ]
@@ -3583,7 +4387,10 @@
       "table_value": "105.6583755",
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/deuteron-from-scratch-ledger.witness.json"
       ]
@@ -3593,7 +4400,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/deuteron-from-scratch-ledger.witness.json"
       ]
@@ -3603,7 +4413,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/meson-em-sinh-closed-form.witness.json"
       ]
@@ -3613,7 +4426,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/meson-em-sinh-closed-form.witness.json"
       ]
@@ -3623,7 +4439,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/meson-em-sinh-closed-form.witness.json"
       ]
@@ -3633,7 +4452,10 @@
       "table_value": "7.2973525643e-3",
       "quantity": "fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/binding-color-vs-charge-tn3he.witness.json"
       ]
@@ -3643,7 +4465,10 @@
       "table_value": "7.2973525643e-3",
       "quantity": "fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/h4-residual-vs-fine-structure-50dps.witness.json"
       ]
@@ -3653,7 +4478,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/phase5/phase1e-neutron-cross-isotope-h-expansion.witness.json"
       ]
@@ -3663,7 +4491,10 @@
       "table_value": "939.56542194",
       "quantity": "neutron mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/phase5/phase1e-neutron-cross-isotope-h-expansion.witness.json"
       ]
@@ -3673,7 +4504,10 @@
       "table_value": "1836.152673426",
       "quantity": "proton-electron mass ratio",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json"
       ]
@@ -3683,7 +4517,10 @@
       "table_value": "938.27208943",
       "quantity": "proton mass energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/phase5/phase2c-derive-correction-tower.witness.json"
       ]
@@ -3693,7 +4530,10 @@
       "table_value": "1.0072764665789",
       "quantity": "proton mass in u / proton relative atomic mass",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/probes/qbeta-nz-even-series-fourone.witness.json"
       ]
@@ -3704,6 +4544,9 @@
       "quantity": "proton-electron mass ratio",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/probes/proton_brane_tower_correction_probe.py"
       ]
@@ -3714,6 +4557,9 @@
       "quantity": "deuteron mass energy equivalent in MeV",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/probes/rho_f_vol_binding_dashboard.py"
       ]
@@ -3724,6 +4570,9 @@
       "quantity": "triton mass energy equivalent in MeV",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/probes/rho_f_vol_binding_dashboard.py"
       ]
@@ -3734,6 +4583,9 @@
       "quantity": "helion mass energy equivalent in MeV",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/probes/rho_f_vol_binding_dashboard.py"
       ]
@@ -3744,6 +4596,9 @@
       "quantity": "alpha particle mass energy equivalent in MeV",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/probes/rho_f_vol_binding_dashboard.py"
       ]
@@ -3754,6 +4609,9 @@
       "quantity": "inverse fine-structure constant",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/probes/alpha_em_4pi_derived_form_probe.py"
       ]
@@ -3763,7 +4621,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/alpha/alpha-em-categorical-reidentification.witness.json"
       ]
@@ -3773,7 +4634,10 @@
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/alpha/alpha-em-categorical-reidentification.witness.json"
       ]
@@ -3783,7 +4647,10 @@
       "table_value": "931.49410372",
       "quantity": "atomic mass constant energy equivalent in MeV",
       "sites": 1,
-      "code_sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
       "files": [
         "computations/braid-registry/pt-198.json"
       ]
@@ -3794,6 +4661,9 @@
       "quantity": "muon mass energy equivalent in MeV",
       "sites": 1,
       "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 0,
       "files": [
         "computations/qbeta/qbeta_t3_multiknot_binding_probe.py"
       ]
