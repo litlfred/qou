@@ -62,6 +62,7 @@ Measured alongside: the window holds for **180/180** random braid words on
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 import Mathlib.Order.Basic
+import QOU.Knot.MortonFranksWilliams
 
 namespace QOU.Knot.MFWSkeinInduction
 
@@ -273,5 +274,49 @@ theorem spread_le_of_window {n e dmin dmax : ℤ}
   obtain ⟨h₁, _⟩ := hmin
   obtain ⟨_, h₄⟩ := hmax
   linarith
+
+/-! ### Wiring to `MortonFranksWilliams`
+
+Until now this module was **orphaned**: nothing imported it, so its window
+arithmetic fed nothing. `MortonFranksWilliams.MFWWitness` carries the two MFW
+inequalities as the fields `mfw_lower` / `mfw_upper`, and those are *exactly*
+`window` membership for `dmin` and `dmax`. So the induction's output type and
+that file's input type are the same object, and the bridge below is definitional
+rather than a re-proof. -/
+
+/-- Build the witness `MortonFranksWilliams` consumes from two window
+memberships — the shape the skein induction actually produces. -/
+def toWitness {n e dmin dmax : ℤ} (hn : 1 ≤ n)
+    (hmin : dmin ∈ window n e) (hmax : dmax ∈ window n e)
+    (hle : dmin ≤ dmax) : MortonFranksWilliams.MFWWitness where
+  n := n
+  e := e
+  dmin := dmin
+  dmax := dmax
+  one_le_n := hn
+  mfw_lower := hmin.1
+  mfw_upper := hmax.2
+  dmin_le_dmax := hle
+
+/-- The wiring is load-bearing: the braid-index bound now follows for anything
+the induction produces, by `MortonFranksWilliams.braid_bound` rather than by a
+second copy of the argument. -/
+theorem braid_bound_of_window {n e dmin dmax : ℤ} (hn : 1 ≤ n)
+    (hmin : dmin ∈ window n e) (hmax : dmax ∈ window n e)
+    (hle : dmin ≤ dmax) : (dmax - dmin) + 2 ≤ 2 * n :=
+  MortonFranksWilliams.MFWWitness.braid_bound (toWitness hn hmin hmax hle)
+
+/-- **The base case produces a witness.** For a descending `n`-strand word with
+`c` closure components the closure is the `c`-component unlink, whose HOMFLY
+`v`-degrees span `[-(c-1), c-1]`; with `DescendingWrithe` those endpoints lie in
+the window, so the base case of the induction lands in the type the consequences
+file consumes. -/
+theorem descending_witness {n c e : ℤ} (hn : 1 ≤ n) (hc : 1 ≤ c)
+    (h : DescendingWrithe n c e) :
+    (c - 1) - (-(c - 1)) + 2 ≤ 2 * n :=
+  braid_bound_of_window hn
+    (base_window_of_descending ⟨le_refl _, by linarith⟩ h)
+    (base_window_of_descending ⟨by linarith, le_refl _⟩ h)
+    (by linarith)
 
 end QOU.Knot.MFWSkeinInduction
