@@ -5128,6 +5128,55 @@ one lemma serve both — and `small(a)` is where the prefix's own
 `block · two steps · block` self-similarity stops being an observation and
 becomes literal reuse. -/
 
+/-- **The block from its second level on, with the source-only collision
+hypothesis.** Two families, one per underlying transport: the `σ_jpp` step
+across `descWord j₁ j₂`, and the block carried across `descWord jp j₂`. See
+`blockTransportRightSources` (§4ai) for why `hpark` is stronger than needed. -/
+theorem blockPassFromTwoSources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ j₁ jp jpp jppp : Fin n}
+    (hjp : j₁.val + 1 = jp.val) (hjpp : jp.val + 1 = jpp.val)
+    (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ j₁.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hcol₁ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord j₁ j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T)))))))
+    (hcol₂ : ∀ (P S u v : Monomial (HeckeGen n)) (x : HeckeGen n),
+      P ++ (x :: S) = descWord i jppp → u ++ v = descWord jp j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (P ++ (u ++ (x :: (v ++ (S ++ (descWord jpp jp ++ T))))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          ((⟨jpp⟩ : HeckeGen n) :: (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))), c)
+          :: L₂))
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
+  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
+    descWord_cons hjp hj₂
+  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
+    rw [descWord_cons hjpp (le_refl _), descWord_self]
+  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
+    (descWord j₁ j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
+    ([(⟨jp⟩ : HeckeGen n)] ++ T)
+    (fun y hy => by have := descWord_index_le hy; omega)
+    (fun u v huv hv r hr => by
+      have := hcol₁ u v huv hv r hr
+      simpa only [List.append_assoc] using this)
+  have s3 := blockTransportRightSources hn hp c hc L₁ L₂ A (descWord jp j₂)
+    (descWord i jppp) (descWord jpp jp ++ T)
+    (fun x hx y hy => by
+      have hx' := descWord_index_ge hx
+      have hy' := descWord_index_le hy
+      omega)
+    hcol₂
+  rw [hd2, hd3] at s3 ⊢
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s2 s3 ⊢
+  exact MultiStepReduction.trans s2 s3
+
 /-- **The block from its second level on.** The two levels below the cap are
 `h = j₁+1` and `h = j₁+2`; this covers the second and everything above it, which
 is all of the block when the first level is absent.
@@ -5150,29 +5199,55 @@ theorem blockPassFromTwo {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
           ((⟨jpp⟩ : HeckeGen n) :: (descWord j₁ j₂ ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))), c)
           :: L₂))
       (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) :=
+  blockPassFromTwoSources hn hp hjp hjpp hjppp hj₂ c hc L₁ L₂ A T
+    (fun _ _ _ _ r hr => hpark r hr _)
+    (fun _ _ _ _ _ _ _ _ r hr => hpark r hr _)
+
+/-- **The block off the diagonal, with the source-only collision hypothesis.**
+Three families: the leading `σ_jp` transport across `descWord jm j₂`, plus the
+two `blockPassFromTwoSources` asks. -/
+theorem blockPassSources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {i j₂ jm j₁ jp jpp jppp : Fin n}
+    (hjm : jm.val + 1 = j₁.val) (hjp : j₁.val + 1 = jp.val)
+    (hjpp : jp.val + 1 = jpp.val) (hjppp : jpp.val + 1 = jppp.val)
+    (hj₂ : j₂.val ≤ jm.val)
+    (c : ℝ) (hc : c ≠ 0) (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (A T : Monomial (HeckeGen n))
+    (hcol₀ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord jm j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+          (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ T))))))
+    (hcol₁ : ∀ u v : Monomial (HeckeGen n), u ++ v = descWord j₁ j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
+          (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T)))))))
+    (hcol₂ : ∀ (P S u v : Monomial (HeckeGen n)) (x : HeckeGen n),
+      P ++ (x :: S) = descWord i jppp → u ++ v = descWord jp j₂ → v ≠ [] →
+      ∀ r ∈ (L₁ ++ L₂).map Prod.fst,
+        r ≠ A ++ (P ++ (u ++ (x :: (v ++ (S ++ (descWord jpp jp ++ T))))))) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++
+        (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
+          ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))), c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++
         (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
-  have hd2 : descWord jp j₂ = (⟨jp⟩ : HeckeGen n) :: descWord j₁ j₂ :=
-    descWord_cons hjp hj₂
-  have hd3 : descWord jpp jp = [(⟨jpp⟩ : HeckeGen n), ⟨jp⟩] := by
-    rw [descWord_cons hjpp (le_refl _), descWord_self]
-  have s2 := farComm_transport_right_sources hn hp jpp c hc L₁ L₂
-    (descWord j₁ j₂)
-    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n)]))
-    ([(⟨jp⟩ : HeckeGen n)] ++ T)
+  have hd1 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
+    descWord_cons hjm hj₂
+  have s1 := farComm_transport_right_sources hn hp jp c hc L₁ L₂
+    (descWord jm j₂)
+    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩])) T
     (fun y hy => by have := descWord_index_le hy; omega)
-    (fun u v _ _ r hr => by
-      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n)] ++
-        (u ++ ((⟨jpp⟩ : HeckeGen n) :: (v ++ ([(⟨jp⟩ : HeckeGen n)] ++ T))))))
+    (fun u v huv hv r hr => by
+      have := hcol₀ u v huv hv r hr
       simpa only [List.append_assoc] using this)
-  have s3 := blockTransportRight hn hp c hc L₁ L₂ A hpark
-    (descWord jp j₂) (descWord i jppp) (descWord jpp jp ++ T)
-    (fun x hx y hy => by
-      have hx' := descWord_index_ge hx
-      have hy' := descWord_index_le hy
-      omega)
-  rw [hd2, hd3] at s3 ⊢
-  simp only [List.append_assoc, List.cons_append, List.nil_append] at s2 s3 ⊢
-  exact MultiStepReduction.trans s2 s3
+  have hj₂' : j₂.val ≤ j₁.val := by omega
+  have s23 := blockPassFromTwoSources (i := i) (j₂ := j₂) (j₁ := j₁) (jp := jp)
+    (jpp := jpp) (jppp := jppp) hn hp hjp hjpp hjppp hj₂' c hc L₁ L₂ A T
+    hcol₁ hcol₂
+  rw [hd1] at s23
+  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s23 ⊢
+  exact MultiStepReduction.trans s1 s23
 
 /-- **The block, at general depth, off the diagonal.** One pass of the `a ≤ b`
 regime's far-commutation block when `j₂ < j₁`: the first level below the cap,
@@ -5193,23 +5268,11 @@ theorem blockPass {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
         (A ++ (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
           ((⟨jp⟩ : HeckeGen n) :: (descWord jm j₂ ++ T)))), c) :: L₂))
       (AlgElement.ofTerms (L₁ ++
-        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) := by
-  have hd1 : descWord j₁ j₂ = (⟨j₁⟩ : HeckeGen n) :: descWord jm j₂ :=
-    descWord_cons hjm hj₂
-  have s1 := farComm_transport_right_sources hn hp jp c hc L₁ L₂
-    (descWord jm j₂)
-    (A ++ (descWord i jppp ++ [(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩])) T
-    (fun y hy => by have := descWord_index_le hy; omega)
-    (fun u v _ _ r hr => by
-      have := hpark r hr (descWord i jppp ++ ([(⟨jp⟩ : HeckeGen n), ⟨jpp⟩, ⟨j₁⟩] ++
-        (u ++ ((⟨jp⟩ : HeckeGen n) :: (v ++ T)))))
-      simpa only [List.append_assoc] using this)
-  have hj₂' : j₂.val ≤ j₁.val := by omega
-  have s23 := blockPassFromTwo (i := i) (j₂ := j₂) (j₁ := j₁) (jp := jp)
-    (jpp := jpp) (jppp := jppp) hn hp hjp hjpp hjppp hj₂' c hc L₁ L₂ A T hpark
-  rw [hd1] at s23
-  simp only [List.append_assoc, List.cons_append, List.nil_append] at s1 s23 ⊢
-  exact MultiStepReduction.trans s1 s23
+        (A ++ (descWord jp j₂ ++ (descWord i jppp ++ (descWord jpp jp ++ T))), c) :: L₂)) :=
+  blockPassSources hn hp hjm hjp hjpp hjppp hj₂ c hc L₁ L₂ A T
+    (fun _ _ _ _ r hr => hpark r hr _)
+    (fun _ _ _ _ r hr => hpark r hr _)
+    (fun _ _ _ _ _ _ _ _ r hr => hpark r hr _)
 
 /-! ### §4al  The quadratic pair, at general depth
 
