@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-22T19:36:38Z
+updated_at: 2026-08-22T19:40:47Z
 ---
 
 
@@ -604,3 +604,26 @@ LHS counts timestamps t < k whose qRowOf row is i; RHS counts entries of row i b
 Q's entries are exactly 0..n-1 with no repeats. That needs a 'Q holds exactly the range' hypothesis
 (corpus has insertWordRec_snd_content / _nodup for the built case) plus the counting argument.
 Everything else in the chain is proved.
+
+
+### Brick 25 — qRowOf total and exact (same PR #5426)
+
+qRowOf_isSome_of_mem_flatten : t in Q.flatten -> exists r, qRowOf Q t = some r
+qRowOf_eq_some_iff_mem : Q.flatten.Nodup -> i < Q.length -> (qRowOf Q t = some i <-> t in row i)
+
+Brick 24 gave one direction; this is the converse, and it is where cross-row DISTINCTNESS finally
+matters — qRowOf returns the FIRST row containing t, so a repeated entry would be located in the
+wrong row. Nodup on the flattened tableau is the weakest hypothesis ruling that out, and the corpus
+already tracks it for the built case (insertWordRec_snd_content_nodup).
+
+**Totality is separate and needs no distinctness — and it is a trap-blocker.** qRowOf returns an
+Option; a counting argument reading it with  would silently score every ABSENT timestamp as
+row 0. Stating totality makes that visible instead of latent. Worth having found before writing the
+count, not after.
+
+### #5426 carries bricks 16-25, five files, all sorry-free and axiom-clean
+### Remaining: the count equality itself
+  (is.take k).count i = countLt (Q.getD i []) k
+Both sides now have their ingredients: exactness turns 'row of t is i' into 't in row i', totality
+rules out the none-trap, and the two sides then count the same set. Needs a 'Q holds exactly
+0..n-1' hypothesis to know every t < k is present.
