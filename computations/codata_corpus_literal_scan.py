@@ -91,6 +91,17 @@ SKIP_DIRS = {
     # cost of a false red is that people learn to skip the preflight. Same
     # root cause as the fix to `f64_into_mpmath_audit.py` (bean `qou-myk3`),
     # which is why that bean flags every `rglob` scanner as a candidate.
+    # Scoped to all of `.claude`, not just `.claude/worktrees`, for two
+    # reasons — and checked rather than assumed, since over-excluding a gate is
+    # its own defect. (a) `SKIP_DIRS` matches a single path COMPONENT, so
+    # `.claude/worktrees` is not expressible; `"worktrees"` alone would match
+    # any directory of that name anywhere. (b) The rest of `.claude` is agent
+    # configuration and skills — the same category as `.beans`, already listed
+    # above — not paper or compute source. Measured: of the 150 non-worktree
+    # `.claude` files with a scanned extension, **zero** contain a literal this
+    # scan would consider (7+ significant digits). So nothing is lost today,
+    # and a skill doc that later quotes a constant is not what this gate is
+    # for.
     ".claude",
 }
 
