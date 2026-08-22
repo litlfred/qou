@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-22T15:29:23Z
-updated_at: 2026-08-22T15:30:45Z
+updated_at: 2026-08-22T16:01:05Z
 ---
 
 ## What
@@ -107,3 +107,57 @@ Decide what the wrapper should be. Candidates, roughly increasing cost:
 3. **Reconcile method.** Decide whether the canonical table should be
    `auto` (covers `p`/`n`) or `branching` (errors on them), and make both
    producers agree, so a projection cannot be wider than its source.
+
+
+---
+
+## PARTIALLY RESOLVED (2026-08-22, PR #5460) — the silent downgrade is closed
+
+Landed the narrow half: `canonical_mass_table_extended.py` now **refuses**
+to overwrite the canonical witness at a lower `--target-dps`, with
+`--allow-precision-downgrade` as the deliberate escape hatch. Sibling to the
+existing `--allow-partial-canonical` guard, same idiom, same place.
+
+Verified end to end (5/5):
+
+| # | scenario | result |
+|---|---|---|
+| 1 | `--target-dps 11` over committed 60 | REFUSED, exit 2 |
+| 2 | canonical after the refusal | untouched |
+| 3 | bare default (60 == 60) | exit 0, writes |
+| 4 | `--allow-precision-downgrade` | exit 0, downgrades to 11 / 9 rows |
+| 5 | `low_isotope_mass_table.py` defaults | exit 2, canonical untouched |
+
+## Why the qou-xwet guard could not catch this
+
+Worth recording, because it is the generalisable part. `qou-xwet` guards
+the ROW axis — it refuses a row-SUBSET write. The precision downgrade
+arrives with the row count moving the **other way**: `--method auto`
+computes `p`/`n`, which `branching` errors on, so the coarser replacement
+is **wider** in coverage. A guard phrased as "is the new table smaller" is
+structurally blind to it. Any future fixed-output-path guard should ask
+which axis it protects, and whether a caller moving a different axis can
+push the guarded one favourably.
+
+## Still open — NOT done, by design
+
+Options 1 and 3 above remain: making `--no-rerun-canonical` the default,
+and reconciling `auto` vs `branching` so a projection cannot be wider than
+its source.
+
+I originally recommended option 1 as "small and clearly right". **That was
+wrong, and the corpus already said so.** The 2026-06-14 audit
+`docs/audits/2026-06-14-qclt-delta-lambda-lowisotope-triage.md` hit this
+exact tension and recorded it as *"an architecturally significant change to
+shared state ... for an explicit decision rather than done unilaterally"*,
+and it measured that a light reproject **drops the p/n rows**. So flipping
+the default does not remove the problem — it trades silent precision loss
+for silently missing atoms. Neither default is clean while `auto` and
+`branching` disagree about whether `p`/`n` are computable; that
+reconciliation (option 3) is the real fix and needs an owner decision.
+
+Related, still standing: the projection's `derived_from` names a canonical
+computed 2026-08-15 (`b6c20f1b6e02`) while the tree holds `dfcd6d57966b`
+from 2026-08-22, and the two disagree on their face (`auto/11dps/5 atoms`
+vs `branching/60dps/7 rows`). The anchor-declaration fix for that witness
+is on PR #5427, landed inert (not regenerated) for the same reason.
