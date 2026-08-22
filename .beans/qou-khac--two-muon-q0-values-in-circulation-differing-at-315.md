@@ -1,11 +1,11 @@
 ---
 # qou-khac
 title: Two muon q0 values in circulation, differing at 3.15e-12
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T21:19:10Z
-updated_at: 2026-08-16T12:45:42Z
+updated_at: 2026-08-22T12:11:22Z
 ---
 
 
@@ -184,3 +184,84 @@ Give the muon pin a canonical home and convert the three `Q_MUON` copies to
 imports. That is a substrate change (`q_parameter`), it moves values by 3.15e-12
 in whatever consumes them, and it wants its own scope — not folded into a
 labelling pass.
+
+---
+
+## MEASURED 2026-08-22 — there are THREE values, and neither of this bean's two is canonical
+
+The bean asks *"which muon value is canonical?"* and offers two candidates. The
+question is malformed on both counts: there is a **third**, and the muon anchor is
+**superseded** as a pin.
+
+### The live derivation gives a value neither candidate matches
+
+`qou_substrate.constants.q_muon_at()` computes
+`q = 1/(1 − √(Vol(4₁)/(m_μ/m_e)))` from **live** `vol_4_1_at()` and
+`MASS_RATIO_MU_E_STR`. Evaluated at 30 dps today:
+
+```
+q_muon_at(30)               1.109978595642739046681795129
+this bean's "canonical"     1.10997859555733471989976322    ->  8.540e-11 below
+this bean's "variant"       1.10997859555418057528159408    ->  8.856e-11 below
+"canonical" − "variant"     3.154e-12                        (this bean's figure, confirmed)
+```
+
+So the 3.15e-12 gap this bean is about is real — and **both** its values are
+stale against the live derivation by **~8.5e-11, twenty-seven times larger** than
+the discrepancy being adjudicated. Ruling that either one is "canonical" would
+pick between two numbers that are both wrong by more than the amount separating
+them.
+
+### This bean's own thesis, harder than it states it
+
+The bean says the variant *"is not a truncation … it is a second muon value"* and
+asks for a ruling. The measurement says the failure mode is not "two values needing
+adjudication" but **"a hand-typed copy of a derived quantity cannot stay correct"**
+— now demonstrated three times over, because the derivation's *inputs*
+(`Vol(4₁)`, `m_μ/m_e`) have been refined since each copy was taken. A ruling that
+blesses one literal produces a fourth stale value the next time either input moves.
+
+### The witness layer is almost entirely hand-typed
+
+Measured over `computations/**/*.witness.json` (excluding `_deprecated/`):
+
+| value | witnesses |
+|---|---|
+| stale hand-typed `…55733…` | **236** |
+| other hand-typed `…55418…` | **188** |
+| **live `q_muon_at()` `…5642739…`** | **2** |
+
+424 witnesses carry a hand-typed muon constant; **two** carry what the derivation
+actually produces. And all three source files this bean names still hold their
+literals today (`gap_a3_overshoot_robustness_check.py`,
+`per_basis_row_invariants_probe.py`,
+`probes/flavor_split_alpha_dilog_expansion_probe.py`) — unchanged since filing.
+
+### And the muon anchor is superseded anyway
+
+`q_muon_at`'s own docstring: *"This was the pin until 2026-05-28; now superseded by
+`q_at()` (m_p anchor). Differs from `q_at()` by ~11.5 ppb — that gap is the μ-p
+tension (9.5σ)."* Confirmed by the 2026-08-15 ruling making the proton pin
+canonical.
+
+So no muon value is *the* pin. The muon quantity survives as a **cross-check**, and
+a cross-check evaluated from a stale literal is not a cross-check — it silently
+compares against a number the framework no longer derives.
+
+### What this bean should now ask
+
+1. **Not** "which literal is canonical" — none is. **Import `q_muon_at()`**, or
+   record a frozen value with the `Vol(4₁)`/`m_μ/m_e` it was frozen against, so a
+   later input refinement makes the staleness visible instead of silent.
+2. The 424 hand-typed witnesses are `qou-cds3`'s migration population. Note the
+   interaction recorded there: **22 witnesses carry a muon value in a field named
+   `proton`**, and those are invisible to a fingerprint-based migration metric.
+   Fixing them after relabelling is impossible — the evidence of which muon value
+   they came from is destroyed by the relabel.
+
+### Not done
+
+No literal changed and no witness regenerated. Replacing a hand-typed pin with an
+import moves numbers in the 11th figure across 424 witnesses and three producers;
+that is a scoped migration, not a hygiene edit, and it needs the same
+authorisation `qou-cds3` is waiting on.
