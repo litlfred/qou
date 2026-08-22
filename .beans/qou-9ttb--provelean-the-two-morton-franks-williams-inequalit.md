@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T02:02:43Z
-updated_at: 2026-08-22T15:27:06Z
+updated_at: 2026-08-22T15:54:37Z
 ---
 
 ## What is open
@@ -204,3 +204,39 @@ permutation, and the crossings' transpositions generate that permutation, so
 the shape of the answer is probably "the word's transposition sequence is a
 reduced-ish factorization once cancellation is applied" — but that is a
 sketch, not an argument.
+
+
+## Base case REDUCED to the connected case (2026-08-22, third pass)
+
+The bound decomposes over closure components. Measured over 2592 descending
+words, zero failures on both halves:
+
+**(A) Any two closure components have LINKING NUMBER ZERO** — their signed
+crossings cancel exactly (0 pairs of components with nonzero sum). This one is
+*provable*, not merely measured: descending means every crossing is first met
+as an over-crossing, so traversal totally orders the components; every crossing
+between two of them is first met while traversing the EARLIER component, hence
+the earlier passes entirely OVER the later, lifts off it, and lk = 0. Since
+lk = (1/2) * (signed crossings between them), the sum vanishes.
+
+**(C) Each component then satisfies |sum of inner nets| <= L - 1 separately**
+(0 violations; tight in 1220 components).
+
+Since sum over components of (L - 1) = n - c exactly, **the whole base case
+reduces to the single-component (c = 1) case**: one closure component, L braid
+strands forming a single cycle, descending, show |self-writhe| <= L - 1.
+
+Equivalent reformulation, also measured clean (0 failures): the crossing
+graph's number of independent cycles is at most twice its number of negative
+edges.
+
+**Second decomposition refuted.** "G+ and G- are both forests within a
+component" would have finished it (each <= L-1 edges, so |pos - neg| <= L-1).
+G- always IS a forest, but G+ carries a cycle in 30 words: n = 4,
+w = sigma_1 sigma_2 sigma_1 sigma_3 sigma_2^{-1} has the positive triangle
+{1,2}, {1,3}, {2,3}. The bound survives there only because a negative edge
+compensates (pos = 4, neg = 1, e = 3 = L - 1, tight).
+
+**Still open**: the connected case. But it is strictly cleaner than the
+original -- the multi-component reduction is now understood and is exactly
+linking-number-zero.

@@ -54,6 +54,30 @@ def main() -> int:
     total = 0
     max_pair_net = 0          # mechanism: how much can one strand pair carry?
     nz_exceeds_bound = 0      # refutes "|e| <= #nonzero pairs" as the route
+    cross_component_nonzero = 0   # (A) linking number zero between components
+    per_component_violations = 0  # (C) does the bound decompose over components?
+    per_component_tight = 0
+
+    def strand_perm(w, n):
+        p = list(range(1, n + 1))
+        for x in w:
+            i = abs(x)
+            p[i - 1], p[i] = p[i], p[i - 1]
+        return p
+
+    def perm_cycles(p, n):
+        seen = [False] * (n + 1)
+        out = []
+        for s in range(1, n + 1):
+            if seen[s]:
+                continue
+            cyc, x = [], s
+            while not seen[x]:
+                seen[x] = True
+                cyc.append(x)
+                x = p[x - 1]
+            out.append(set(cyc))
+        return out
 
     def pair_nets(w, n):
         """Net signed crossings per unordered pair of strand LABELS."""
@@ -87,6 +111,25 @@ def main() -> int:
                 if sum(1 for v in net.values() if v) > n - c:
                     nz_exceeds_bound += 1
 
+                comps = perm_cycles(strand_perm(w, n), n)
+                idx = {s_: j for j, C in enumerate(comps) for s_ in C}
+                # (A) signed crossings BETWEEN two closure components must cancel
+                between: dict[tuple[int, int], int] = {}
+                for (a, b), v in net.items():
+                    if idx[a] != idx[b]:
+                        kk = (min(idx[a], idx[b]), max(idx[a], idx[b]))
+                        between[kk] = between.get(kk, 0) + v
+                if any(v != 0 for v in between.values()):
+                    cross_component_nonzero += 1
+                # (C) and the bound must then decompose over components
+                for C in comps:
+                    inner = sum(v for (a, b), v in net.items()
+                                if v and a in C and b in C)
+                    if abs(inner) > len(C) - 1:
+                        per_component_violations += 1
+                    elif abs(inner) == len(C) - 1 and len(C) > 1:
+                        per_component_tight += 1
+
     print(f"\n  totally descending words (len <= {MAX_LEN}, n <= {MAX_N}): {total}")
     print(f"  violations of |e| <= n - c: {len(violations)}")
 
@@ -119,6 +162,28 @@ def main() -> int:
     print("    pair bound is necessary but not sufficient; the SIGNS must also")
     print("    arrange, and that is the part still missing.")
 
+    print("\n  THE BOUND DECOMPOSES OVER CLOSURE COMPONENTS:")
+    print(f"    pairs of components with nonzero net crossing sum : "
+          f"{cross_component_nonzero}")
+    print("    i.e. every two components have LINKING NUMBER ZERO. This is not")
+    print("    a coincidence and it is provable: a descending traversal totally")
+    print("    orders the components, and every crossing between two of them is")
+    print("    first met while traversing the EARLIER one -- so the earlier")
+    print("    component passes entirely OVER the later, lifts off it, and their")
+    print("    signed crossings cancel.")
+    print(f"    components violating |sum of inner nets| <= L-1   : "
+          f"{per_component_violations}")
+    print(f"    components where that is tight                     : "
+          f"{per_component_tight}")
+    print("    Since sum over components of (L-1) is exactly n - c, the whole")
+    print("    bound REDUCES to the single-component (c = 1) case.")
+
+    print("\n  WHAT REMAINS OPEN, precisely: one closure component, L braid")
+    print("  strands forming a single cycle, descending. Show |self-writhe| <=")
+    print("  L - 1. Equivalent reformulation, also measured clean: the crossing")
+    print("  graph's number of independent cycles is at most twice its number")
+    print("  of negative edges.")
+
     print("\n  NOT a proof. The Lean file states this as `DescendingWrithe` and "
           "uses it in\n  `base_window_of_descending`; discharging it is the "
           "open residue of qou-9ttb.")
@@ -145,6 +210,18 @@ def main() -> int:
                      source=f"exhaustive over {total} descending words")
     wb.add_data("max_net_crossings_per_strand_pair", max_pair_net)
     wb.add_data("words_where_nonzero_pairs_exceed_n_minus_c", nz_exceeds_bound)
+    wb.add_data("cross_component_nonzero_linking", cross_component_nonzero)
+    wb.add_data("per_component_bound_violations", per_component_violations)
+    wb.add_data("per_component_bound_tight", per_component_tight)
+    wb.add_assertion("distinct_components_have_linking_number_zero",
+                     computed=str(cross_component_nonzero), expected="0",
+                     tolerance="exact",
+                     source="descending traversal orders components; earlier "
+                            "passes over later")
+    wb.add_assertion("bound_decomposes_over_closure_components",
+                     computed=str(per_component_violations), expected="0",
+                     tolerance="exact",
+                     source="reduces |e| <= n - c to the single-component case")
     wb.add_assertion("no_strand_pair_crosses_more_than_once_net",
                      computed=str(max_pair_net), expected="1",
                      tolerance="exact",

@@ -179,12 +179,32 @@ pair is exactly `1`, across all 1227 words. That is the cancellation which
 keeps `|e|` small while the letter count stays large, and it is the natural
 next lemma.
 
-**One decomposition is refuted** (scope-(a), recorded so it is not re-walked):
+**The bound decomposes over closure components.** Two facts, each measured
+clean over 2592 descending words:
+
+* *(A)* any two closure components have **linking number zero**, so their
+  signed crossings cancel exactly. This is provable, not a coincidence: a
+  descending traversal totally orders the components, and every crossing
+  between two of them is first met while traversing the **earlier** one — so
+  the earlier component passes entirely over the later, lifts off it, and the
+  crossing signs between them sum to `0`.
+* *(C)* consequently each component satisfies `|Σ inner nets| ≤ L - 1`
+  separately (0 violations, tight in 1220 components).
+
+Since `Σ (Lᵢ - 1) = n - c`, the bound **reduces to the single-component
+(`c = 1`) case**: one closure component, `L` braid strands forming a single
+cycle, descending — show `|self-writhe| ≤ L - 1`. An equivalent reformulation,
+also measured clean: the crossing graph's number of independent cycles is at
+most twice its number of negative edges. That connected case is the residue.
+
+**Two decompositions were refuted along the way** (scope-(a), recorded so it is not re-walked):
 the per-pair bound is *necessary but not sufficient*. In **298** of the 1227
 words the number of pairs with nonzero net **exceeds** `n − c` — e.g. `n = 3`,
 `w = σ₁σ₂σ₁⁻¹` has all three pairs nonzero against `n − c = 1` — so
-`|e| ≤ #nonzero pairs` does not yield the bound. The **signs** must arrange as
-well, and that is the piece still missing. Tracked in `qou-9ttb`.
+`|e| ≤ #nonzero pairs` does not yield the bound. Second, "both the positive-
+and negative-net graphs are forests" is false: `G⁻` always is, but `G⁺` carries
+a cycle in 30 words — `n = 4`, `w = σ₁σ₂σ₁σ₃σ₂⁻¹` has the positive triangle
+`{1,2}, {1,3}, {2,3}`. Tracked in `qou-9ttb`.
 -/
 
 /-- The base-case hypothesis, named so it can be discharged later rather than
