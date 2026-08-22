@@ -1141,12 +1141,28 @@ ask whether a **formalizable structural claim prunes the class first**:
 This is the **forward** complement to the corpus-grep checklist above
 (which prunes *backward* against already-known results). Worked
 precedents where one structural argument killed an entire numerical
-family this session: `dc_3/dq ≈ 4.6e6` impossible for smooth real `f`
+family this session: `dc_3/dq ≈ 3.84e6` impossible for smooth real `f`
 (kills the real-q c_3 family, [PR #1821](https://github.com/litlfred/qou/pull/1821));
 the PSLQ entropy bound `precision > n_terms·log10(2·height)` (kills the
 12-constant basis, [PR #1805](https://github.com/litlfred/qou/pull/1805));
 A is ~4 sig figs from `c_2..c_10` (no high-precision identification
 possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
+
+> **Figure corrected 2026-08-22 — the conclusion is untouched.** This read
+> `≈ 4.6e6` here and in five other places. That value is the **stale-c₃
+> twin** of the "≈ 3 %" swing this document already corrects two sections
+> up: both were computed from the pre-#1422 muon `c_3 = -2.0097` and its
+> 2.88 % swing, and both should have been re-derived at the same time.
+> With the live anchors (`c_3(p) = -2.0693425728`, `c_3(μ) =
+> -2.0202002328`, `Δq = 1.28e-8`) three independent routes agree:
+> **3.8375e6** by secant, **3.8320e6** from `2.37/u³` at `u = 0.00852`,
+> and `3838404.458` recorded in `rem-qstar`'s own witness as
+> `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
+> 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
+> **prune stands and the real-q c₃ family stays killed** — only the
+> quoted magnitude was wrong. The five other sites are audit docs and
+> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets
 wide/expensive searches, not every one-off check. Full protocol +
