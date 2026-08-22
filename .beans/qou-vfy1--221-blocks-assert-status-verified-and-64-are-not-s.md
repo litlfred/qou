@@ -334,3 +334,71 @@ Group A is **6 substantive**, **2 precision-gate**, **1 possible gate defect**
 every one ends at the same question, *is the witness stale or is the claim
 wrong*, and that is a math call.
 
+## 2026-08-22 — the vacuous class re-measured, and it is not a block problem
+
+Re-scanned with both assertion shapes handled. Of blocks that carry
+`status: "verified"` **and** cite a witness:
+
+```
+96  witness allPassed true, WITH assertions
+36  witness allPassed true, ZERO assertions   <- the vacuous class
+ 8  witness allPassed FALSE                   <- group A, opened above
+```
+
+**36, not the 43 recorded earlier.** I expected the difference to be the
+dict-shape bug that cost us the `deuteron` row — it is not: all 36 are
+list-shaped and genuinely empty. The gap is scan scope, and the 36 is the
+figure to use.
+
+**They are 36 blocks over 29 witnesses**, so not 36 independent problems;
+`gram-matrix-dual.witness.json` alone backs three.
+
+### The reframing: assertion-free is the corpus baseline, not an anomaly
+
+Measured over every live witness under `computations/` (2,700, excluding
+`_deprecated`):
+
+| assertions field | count | share |
+|---|---:|---:|
+| non-empty list | 1749 | 64.8 % |
+| **no `assertions` field** | **521** | **19.3 %** |
+| **empty list** | **386** | **14.3 %** |
+| dict | 44 | 1.6 % |
+
+**907 of 2,700 (33.6 %) carry no assertions at all.** So "the cited witness
+asserts nothing" is not a property of 36 bad blocks — a third of the witness
+corpus is *descriptive*, recording computed values rather than checking them.
+That is a legitimate thing for a witness to be. The defect is reading
+`allPassed` as verification.
+
+### The actual defect, and the corpus already contains its fix
+
+Split those 907 by what they claim:
+
+```
+515  allPassed = null   <- honest: no assertions, so no verdict
+392  allPassed = true   <- vacuously true over an empty set
+```
+
+**Both behaviours ship from the same corpus.** 515 producers decline to claim a
+pass when they have nothing to check; 392 emit `true`, which is logically
+correct (everything holds of the empty set) and is a false signal to every
+consumer that reads `allPassed` as "verified". The 515 are the evidence that
+`true` here is a defect rather than a convention — the honest encoding is
+already the majority behaviour.
+
+### What this changes about the disposition
+
+The earlier note said the 43 *"need the witness fixed (assertions added) or the
+block's claim withdrawn; they are not fixable from the block side"*. Adding
+assertions to 29 producers is real work and may not be wanted at all — a
+descriptive witness is fine. The cheaper and more general fix is upstream:
+
+**`WitnessBuilder` should emit `allPassed: null`, not `true`, when the assertion
+set is empty.** That is a one-line producer-side change matching what 515
+witnesses already do, and it converts 392 silent false-positives into an honest
+absence of verdict — including the 36 blocks here, without touching any of them.
+
+Only after that is it worth asking, per block, whether a `verified` status
+pointing at a deliberately-descriptive witness should say something else.
+
