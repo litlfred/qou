@@ -2,7 +2,7 @@
 
 This remark records the finite-place coherence checks, the Lean
 instance, the downstream consumers, and the cross-prime coherence of
-the [`def:qou-motivic-galois-instance`](#def:qou-motivic-galois-instance)
+the [`conj:qou-motivic-galois-instance`](#conj:qou-motivic-galois-instance)
 construction.
 
 ## Construction and verification

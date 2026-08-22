@@ -1,10 +1,11 @@
 ---
 # qou-s0ip
 title: 'main content_validate RED: def:qou-motivic-galois-instance requires Lean and its ref names a module that does not exist'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-22T12:24:51Z
-updated_at: 2026-08-22T12:24:51Z
+updated_at: 2026-08-22T20:59:03Z
 ---
 
 
@@ -71,3 +72,46 @@ Creating a co-located stub to silence the validator would be the same error.
 
 Option 1 is the real fix; option 2 is the honest interim; option 3 is what is
 happening by default.
+
+## Resolved 2026-08-22 — option 2 (reclassify), branch `claude/s0ip-motivic-galois-reclassify-2026-08-22`
+
+Owner picked option 2. `definition()` → `conjecture()`, label
+`def:qou-motivic-galois-instance` → `conj:`, dangling `lean.ref` dropped.
+
+**Measured, unpiped:** `main @ 4e34404aab` → `✗ Invalid — 52 issue(s)`, exit 1,
+**11** `✗`. After → `✗ Invalid — 51 issue(s)`, exit 1, **10** `✗`. Set-diff of the
+error lines: exactly one removed (this bean's), **none introduced**.
+
+`main` is still red, for reasons that have nothing to do with this bean — see
+the mpo finding below. The bean's own claim ("29 issues, exactly one ✗") was
+true on `cc6a0b09`; main has degraded to 52/11 since.
+
+### Two corrections to this bean's own diagnosis
+
+1. **"The class has one field, so an instance is *writable* with no proof
+   burden" — right fact, and it argues harder than the bean realised.** Any
+   total `Nat.Primes → Mhat` inhabits `MotivicGaloisCharacter`, so an instance
+   would *assert nothing*. Writing one is not merely under-motivated, it is the
+   placeholder-carrier defect `qou-ffwk` spent this batch removing, one level up.
+   That is now the recorded reason option 1 is not the "real fix".
+2. **The witness cannot be "lifted", and not for the reason I gave earlier.**
+   The block's formula `Frob_p = f(u)|_{u=ζ_{2p}}` *is* total in `p`, so
+   "9 primes vs a total function" was the wrong objection. The real gap is that
+   `f(u)` — the Habiro cyclotomic expansion — is not formalised. Separately, the
+   witness's per-atom `step2_full_trace_compatible: false` with
+   `n_primes_data_exhausted: 0` means full-trace compatibility was **never
+   reached**, not reached-and-failed. Compatible where checked; open beyond.
+   Recorded verbatim in the block's `caveat` authorNote.
+
+### Incidental finding — `motivic-perpetual-obstruction` is the real reason main is red
+
+Not this bean; filed separately. `lifting-and-descent/motivic-perpetual-obstruction.ts`
+calls `theorem()` with label `conj:motivic-perpetual-obstruction`. The schema
+requires `thm:` for `theorem()`, so the **block fails to import**, its label
+never registers, and every consumer of `conj:motivic-perpetual-obstruction`
+goes unresolved — 7 of main's 10 remaining `✗`. Introduced by
+`1d3988bc31 docs(motivic): rewire 15 downstream blocks — conjecture → theorem`,
+which promoted the builder and left the label behind. Both Lean files
+(`MotivicPerpetualObstruction.lean`, `MotivicPerpetualObstructionFromTrace.lean`)
+are **sorry-free**, so the promotion is mathematically justified and the fix is
+to finish the rename, not revert it: 9 label sites across 7 authored files.
