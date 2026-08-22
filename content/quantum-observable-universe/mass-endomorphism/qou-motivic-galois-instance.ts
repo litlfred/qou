@@ -1,7 +1,7 @@
-import { definition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default definition({
-  label: "def:qou-motivic-galois-instance",
+export default remark({
+  label: "rem:qou-motivic-galois-instance",
   title:
     "QOU $\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\to \\mathrm{Frob}_p$",
   tags: [
@@ -12,6 +12,7 @@ export default definition({
     "instance",
     "axiom",
   ],
+  interprets: "def:motivic-galois-character",
   uses: [
     "def:motivic-galois-character",
   ],
@@ -22,9 +23,5 @@ export default definition({
     witness:
       "computations/probes/habiro-frobenius-probe.witness.json",
     status: "verified",
-  },
-  lean: {
-    ref: "qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar",
-    validation: "not_checked",
   },
 });

@@ -21,3 +21,15 @@ contained a bare `axiom` laundering the perpetual obstruction into the
 now lives in
 `lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`
 (Route A: prime-ideal-collapse proof, C = a₀(−1) + 2·a₁(−1), sorry-free).
+
+**Block kind (2026-08-22):** demoted from `definition` to `remark`.  A
+`definition` requires a Lean sibling, and the one this block had was the
+axiom-laundering instance deleted above — so the block asserted a
+formalized instance the corpus no longer carries.  It is not retargeted at
+the theorems in `MotivicPerpetualObstructionFromTrace.lean`, because those
+conclude `¬IsUnit (4 : ℤ)` and `¬IsUnit (−32 : ℤ)`: statements about two
+integers, whose types mention neither the prime `p` nor the exception set
+`S`, and whose proof terms discard both binders.  Pointing a definition at
+them would record it as formalized by something that says nothing about it.
+Tracked as bean `qou-lrnd`; the construction itself is unaffected and stays
+witnessed by `computations/probes/habiro_frobenius_probe.py`.

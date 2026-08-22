@@ -1,7 +1,7 @@
 # Per-cell $\mathrm{Frob}_p$ data for the QOU instance
 
 The following table records the extracted Frobenius data for the
-[`def:qou-motivic-galois-instance`](#def:qou-motivic-galois-instance)
+[`rem:qou-motivic-galois-instance`](#rem:qou-motivic-galois-instance)
 construction, per atom and per prime.
 
 | Atom | $p=2$ | $p=3$ | $p=5$ | $p=7$ | $p=11$ | $p=13$ |
