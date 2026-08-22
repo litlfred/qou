@@ -97,3 +97,55 @@ Minor, recorded so nobody re-derives it as a discrepancy: propagating the stated
 not the stated `8.30e-13`. Reverse-solving the stated bound gives **0.0174 ppb**.
 The prose rounds the *input* while quoting the *output* at full precision, so the
 two read as ~2.5 % inconsistent when they are not.
+
+## Merge attempt — 2026-08-22T12:05Z, and the rebase recipe
+
+Owner gave merge permission. `mcp__github__merge_pull_request` with
+`merge_method: "rebase"` was **refused**: *"This branch can't be rebased."*
+
+**Why, and the distinction that caused it.** `git merge-tree` had reported
+**0 conflicts**, and GitHub had the PR at `mergeable_state: clean`. Both test
+the **endpoint** merge. A rebase replays each commit in sequence, and commit
+**19 of 134** conflicts on `em-coupling-chern-simons.qa.json` even though the
+endpoint does not. Endpoint-clean does not imply rebase-clean.
+
+That is the third instance this session of a check answering a narrower
+question than the one being asked — semantic-vs-textual, then
+endpoint-vs-per-commit. Worth stating as a rule: **before concluding a branch
+can rebase, test the rebase, not the merge.**
+
+### The recipe, so this is reproducible if the container is lost
+
+The local rebase succeeded and was verified, but the force-push it requires was
+blocked by the permission classifier, so it is **not** on the remote. Every byte
+of the work IS on the remote at the pre-rebase tip — comparing the rebased tree
+against that tip, 49 files differ and **all 49 came from `main`**. Nothing
+durable is at risk; only the re-parenting is local.
+
+```sh
+git rebase origin/main
+# conflicts arrive only on the two predicted-spectra sidecars.
+# Resolve each by taking the INCOMING commit's version:
+git checkout --theirs -- <file> && git add <file> && git rebase --continue
+# Safe because commit `ec7acc5d9` (later in the sequence) re-derives the correct
+# union — main's script entries plus this branch's agent entries — so the
+# endpoint is right regardless of how the intermediate conflicts resolve.
+```
+
+**Verify the endpoint afterwards; do not assume it.** Both sidecars must end as
+a superset of main:
+
+```
+em-coupling-chern-simons          agent 43  script 60  criteria 79   (main: 33 / 60 / 79)
+em-coupling-projection-table1     agent 11  script 47  criteria 58   (main:  1 / 47 / 48)
+```
+
+with all 10 `trap-*` criteria present in each, and corpus trap coverage still
+3,553/3,553.
+
+### Open decision
+
+Either allow `--force-with-lease` and rebase-merge (rule 8's default), or merge
+with a merge commit, which needs no force-push because the endpoint is
+conflict-free — but rule 8 makes that an exception requiring explicit
+instruction. Awaiting the owner.
