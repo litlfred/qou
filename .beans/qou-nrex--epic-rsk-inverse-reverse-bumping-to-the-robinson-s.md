@@ -779,3 +779,49 @@ with insertWordRec w = (P₀, Q₀) in list form. Three gaps remain, all bridge,
 RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
 
 ### #5426 now carries bricks 16-34, ten files, zero sorries, axiom-clean throughout
+
+### Bricks 35-37 — two of the three remaining gaps closed (same PR #5426)
+
+Brick 35 (SchenstedSYTRoundTrip.lean) — THE ROUND TRIP, which I had flagged as the one gap whose
+proof shape I did not know:
+  sigma_listStandardYT_toListTableau : ⟨_, listStandardYT (toListTableau S) …⟩ = ⟨μ, S⟩
+
+  The statement MUST be a Sigma: listStandardYT lands on ofRowLens (tableauShape T) _, only
+  PROPOSITIONALLY equal to μ, so the two tableaux do not share a type. Packing the diagram with the
+  tableau is what makes the equation statable — and is the form rskPair's codomain already takes.
+
+  I expected the dependent-type work to be the hard part. It is TWO LEMMAS:
+    ofRowLens_congr  (equal row-length lists -> equal diagrams, by subst; sortedness proofs are
+                      irrelevant)
+    sigma_ext_entry  (subst the diagram, then compare entries)
+  Everything else is entrywise on ℕ with NO cast. getD_getD_toListTableau_all is load-bearing: the
+  list tableau reads back every entry, ON the diagram and OFF it — off it both sides are 0, one
+  because the list runs out, the other by the SSYT's own `zeros`.
+
+  Also added StandardYoungTableau.ext_entry — a genuine gap in that type's API (bijOn is a proof, so
+  entries determine the tableau). content_toListTableau supplies listStandardYT's content argument
+  in the multiset form it wants (both sides nodup, same members).
+
+Brick 36 (SchenstedWordOfPermSurj.lean):
+  exists_wordOfPerm_eq : content w = {1..n}  ->  ∃ σ : Equiv.Perm (Fin n), wordOfPerm σ = w
+  σ i = w[i] - 1; nodup gives injective; injective = bijective on a finite type, which is the only
+  reason no inverse has to be built by hand.
+
+Brick 37 (SchenstedShapeOfPositions.lean):
+  addCellSteps_qPositions : addCellSteps [] (qPositions Q n) = tableauShape Q
+  Brick 32 relates P and Q by "P's shape is what Q's positions BUILD"; what one has about a pair is
+  that they SHARE a shape. This identifies the two. Row i gains one cell per position = i (brick 22)
+  = the count of row-i entries below the horizon (brick 26) = the row's length once the horizon
+  clears everything. eq_of_getD_eq closes it: lists of POSITIVE naturals agreeing at every index are
+  equal — positivity is what supplies the LENGTHS (past the shorter list getD reads 0, which the
+  longer cannot).
+
+### ONE gap left before rskPair surjectivity
+Thread brick 35's Σ-equality through rskPair's DEFINITION:
+  rskPairWord hw = ⟨pShape w, insertWordPSYT hw, recordingShape_eq_pShape w ▸ insertWordSYT w⟩
+The `▸` transport plus the PAIR-valued sigma make this messier than the single-tableau case of
+brick 35 — sigma_ext_entry handles one tableau, not two under a shared diagram cast. Expect a
+pair-valued analogue plus lemmas identifying pShape w and recordingShape w with μ.
+RSKBurnsideHolds for general n STILL OPEN, still only n <= 12 via rskBurnsideHolds_le12 (no RSK).
+
+### #5426 now carries bricks 16-37, thirteen files, zero sorries, axiom-clean throughout
