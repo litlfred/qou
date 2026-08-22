@@ -1855,6 +1855,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.620Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1874,6 +1889,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.661Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1893,6 +1923,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.701Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1912,6 +1957,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.742Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "\"the three nuclear crossing types\" is a count of table rows."
       }
     ],
     "trap-closing-aphorism": [
@@ -1931,6 +1991,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.786Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "Ends on the specialisation table."
       }
     ],
     "trap-meta-commentary": [
@@ -1950,6 +2025,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.829Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1969,6 +2059,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.873Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1988,6 +2093,21 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.916Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -2007,6 +2127,23 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.958Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "severity": "major",
+        "evidence": "\"Every particle interaction in the Descartes universe encodes as a transfer matrix ... with entries that are polynomials in q\" - and the block's own general formula does not produce the table it is specialised to. Findings, all recomputed: (1) The three table rows ARE mutually consistent and match the identities block - (c,d) = (1,0) gives [[h,1],[1,0]] = T_pp, (1,-h) gives [[0,1],[1,-h]] = T_nn, (1,-h/2) gives [[h/2,1],[1,-h/2]] = T_pn, and via the Hecke relation these are exactly the Hecke elements in the last column (sigma, sigma - h = sigma^-1, sigma - h/2 = (sigma + sigma^-1)/2). So the table is right. (2) c = J_{K1}J_{K2}/J_{K1#K2} is identically 1, since the Jones polynomial is multiplicative under connected sum - consistent with the table but carrying no information. (3) The d formula does NOT reproduce any row. All three rows take unknot inputs (\"quarks as Borromean unknot components\"), so J_{K1} = J_{K2} = 1 in every row and d = -c q s/(1 + J_{K1}J_{K2}) returns the single value -q(q^{1/2} - q^{-1/2})/2 for all three, while the table lists three distinct values 0, -(q - q^-1) and -(q - q^-1)/2 - none of which it equals. (4) The ring is wrong for the mixed row: d = -(q - q^-1)/2 is not in Z[q^{+-1/2}], which has no 1/2. (5) s = q^{1/2} - q^{-1/2} is called \"the Skein amplitude\", but AGENTS 7a is STRICT that the skein relation is L+ - L- = (q - q^-1) L0.",
+        "notes": "Reported, not edited (all five are mathematical). Route: the table is the reliable object - derive (c,d) from the Hecke element column, or state the general formula only for the case it was derived in and say so; widen the ring to Z[1/2][q^{+-1/2}]; reconcile s with the 7a skein amplitude. Note the same 1/2-not-in-the-ring defect appears independently in transfer-matrix-identities.md (\"M_2(Z[q^{+-1}])\")."
       }
     ],
     "trap-nonspeakable": [
@@ -2026,6 +2163,22 @@
         "reviewed_at": "2026-08-15T10:31:00.807Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e9dd0ff199f2",
+          "ts": "187eb45538f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:12:04.997Z",
+        "reviewed_sha": "cf1aab09f3bbcdd0edfa58fd99545ffc4b4a184b",
+        "severity": "minor",
+        "evidence": "\"Every particle interaction ... encodes as a transfer matrix\" uses \"encodes\" intransitively where \"is encoded as\" is meant - the verb-substitution shape of the sweep-damage class."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2049,5 +2202,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:12:04.997Z"
 }

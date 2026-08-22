@@ -2095,6 +2095,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.550Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "\"does not affect the result --- only the equivalence class of the final configuration matters\" is the proposition's content (path independence), not manufactured emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2114,6 +2129,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.591Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -2133,6 +2163,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 154 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.631Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Two \"---\" (rendered em-dash) in 1.7k, both parenthetical or clause-joining; density fine."
       }
     ],
     "trap-triples": [
@@ -2152,6 +2197,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 154 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.671Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "The three-bullet independence list under \"Well-definedness\" enumerates three genuinely distinct choices (braid representative, PawLei embedding, crossing order), each discharged separately in the proof block."
       }
     ],
     "trap-closing-aphorism": [
@@ -2171,6 +2231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.711Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Ends on the third bullet of a technical list."
       }
     ],
     "trap-meta-commentary": [
@@ -2190,6 +2265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.751Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2209,6 +2299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.791Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -2228,6 +2333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.832Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -2247,6 +2367,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.873Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Notation and conditionality both check out: the block carries the AGENTS 3b-cond banner naming conj:crystal-graph-realization in its first line, and the Jones polynomial is written J_K(q) per 7a. The constituent-composite identity is stated with the product running i = 0..n-2, consistent with the n-1 insertion points of an n-constituent hadron."
       }
     ],
     "trap-nonspeakable": [
@@ -2266,6 +2401,21 @@
         "reviewed_at": "2026-08-15T10:31:00.840Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "c0c15a80471c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.913Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2289,5 +2439,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:11:24.913Z"
 }
