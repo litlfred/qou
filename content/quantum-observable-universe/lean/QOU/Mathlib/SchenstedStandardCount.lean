@@ -270,4 +270,74 @@ theorem qRowOf_eq_some_iff_mem {Q : List (List ℕ)} (hnd : Q.flatten.Nodup) {t 
     (hi : i < Q.length) : qRowOf Q t = some i ↔ t ∈ Q.getD i [] :=
   ⟨mem_of_qRowOf Q t i, qRowOf_eq_some_of_mem Q hnd t i hi⟩
 
+/-! ### The count equality
+
+The step the whole Q-side reduces to. Brick 22 phrased the shape an addable sequence builds as a
+count over the **position list**; `countLt` counts over the **rows of `Q`**. These are the same
+number, and this is where that is proved.
+
+The two sides genuinely count different things — timestamps on the left, entries on the right — so
+the argument is a bijection, not a rewrite. Both filtered lists are duplicate-free and have the same
+members, which is enough. -/
+
+/-- A row of a tableau with distinct entries is itself duplicate-free. -/
+theorem nodup_of_mem_of_flatten_nodup : ∀ (Q : List (List ℕ)), Q.flatten.Nodup →
+    ∀ (row : List ℕ), row ∈ Q → row.Nodup
+  | [], _, row, hr => by simp at hr
+  | r :: T, hnd, row, hr => by
+      rw [List.flatten_cons, List.nodup_append] at hnd
+      rcases List.mem_cons.mp hr with rfl | hr'
+      · exact hnd.1
+      · exact nodup_of_mem_of_flatten_nodup T hnd.2.1 row hr'
+
+/-- **The position list** of the timestamps `0, …, n-1`: for each, the row of `Q` that holds it. -/
+def qPositions (Q : List (List ℕ)) (n : ℕ) : List ℕ :=
+  (List.range n).map (fun t => (qRowOf Q t).getD 0)
+
+/-- Locating a timestamp below the horizon returns its row, as a plain `ℕ`.
+
+The `.getD 0` in `qPositions` is why totality had to be proved: without `hrange`, an absent timestamp
+would read as row `0` and be counted there. -/
+theorem getD_qRowOf_eq_iff {Q : List (List ℕ)} (hnd : Q.flatten.Nodup) {t i : ℕ}
+    (hi : i < Q.length) (ht : t ∈ Q.flatten) :
+    (qRowOf Q t).getD 0 = i ↔ t ∈ Q.getD i [] := by
+  obtain ⟨r, hr⟩ := qRowOf_isSome_of_mem_flatten Q t ht
+  rw [hr, Option.getD_some]
+  constructor
+  · intro hri
+    subst hri
+    exact mem_of_qRowOf Q t r hr
+  · intro hmem
+    have := qRowOf_eq_some_of_mem Q hnd t i hi hmem
+    rw [hr] at this
+    exact Option.some.inj this
+
+/-- **The count equality.** The number of steps landing in row `i` equals the number of entries of
+row `i` below the horizon. -/
+theorem count_qPositions {Q : List (List ℕ)} (hnd : Q.flatten.Nodup) {k i : ℕ}
+    (hi : i < Q.length) (hrange : ∀ t, t < k → t ∈ Q.flatten) :
+    (qPositions Q k).count i = countLt (Q.getD i []) k := by
+  classical
+  have hrow : Q.getD i [] ∈ Q := by rw [getD_row_eq hi]; exact List.getElem_mem _
+  have hrowNodup : (Q.getD i []).Nodup := nodup_of_mem_of_flatten_nodup Q hnd _ hrow
+  -- rewrite both sides as lengths of filters
+  rw [qPositions, List.count_eq_countP, List.countP_map, List.countP_eq_length_filter, countLt]
+  -- the two filters are duplicate-free with the same members
+  set L := List.filter ((fun x => x == i) ∘ fun t => (qRowOf Q t).getD 0) (List.range k) with hLdef
+  set R := List.filter (fun x => decide (x < k)) (Q.getD i []) with hRdef
+  have hLnd : L.Nodup := List.Nodup.filter _ List.nodup_range
+  have hRnd : R.Nodup := List.Nodup.filter _ hrowNodup
+  have hset : L.toFinset = R.toFinset := by
+    ext x
+    simp only [hLdef, hRdef, List.mem_toFinset, List.mem_filter, List.mem_range,
+      Function.comp_apply, beq_iff_eq, decide_eq_true_eq]
+    constructor
+    · rintro ⟨hxk, hxi⟩
+      exact ⟨(getD_qRowOf_eq_iff hnd hi (hrange x hxk)).mp hxi, hxk⟩
+    · rintro ⟨hxrow, hxk⟩
+      exact ⟨hxk, (getD_qRowOf_eq_iff hnd hi (hrange x hxk)).mpr hxrow⟩
+  calc L.length = L.toFinset.card := (List.toFinset_card_of_nodup hLnd).symm
+    _ = R.toFinset.card := by rw [hset]
+    _ = R.length := List.toFinset_card_of_nodup hRnd
+
 end QOU.Mathlib.Schensted
