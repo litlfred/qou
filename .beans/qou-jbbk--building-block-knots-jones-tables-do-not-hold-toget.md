@@ -114,3 +114,39 @@ The cheap general lesson, worth carrying into other numeric passes: **before
 checking a printed invariant against a `q₀` pin, check whether the polynomial
 can take that value at all.** The range test is stronger, costs one
 substitution, and is independent of which producer wrote the number.
+
+## 2026-08-22 — main landed a mirror fix in the knot-polynomial engine. It does NOT cover this.
+
+46 commits reached `main` while this branch was open, three of them on
+knot-polynomial correctness and all naming the same class:
+
+```
+03ced1383  fix(homflypt): correct the 2-strand table — it was the mirror, plus a sign
+b26356283  lean(qou-7ue5): validate the skein reference — the engine is a MIRROR
+01d4fab3d  fix(homflypt): remove the silent spread-0 trap; flag a mirror discrepancy
+```
+
+A chirality defect in a knot-invariant engine is close enough to this bean that
+someone will reasonably assume it is the same root cause. **Checked: it is not.**
+
+```
+J(3_1)(q0)   = 0.97337017
+J(3_1)(1/q0) = 0.95957717   <- the mirror
+printed pair = 0.8168 / 3.5832
+```
+
+Mirroring maps between the two computed values, and neither is a printed one.
+For `4_1` it cannot even do that: the figure-eight is **amphichiral**, so its
+mirror is identical (`1.0328093` either way) — and the range argument stands
+regardless, since `J_{4_1} = u^2 - u - 1 >= 1` for every real `q > 0` while the
+table prints `0.7854`. No chirality convention reaches a value the function does
+not take.
+
+So the homflypt fix and this bean are **adjacent, not overlapping**. Worth
+saying explicitly, because "the engine was returning mirrors" is exactly the
+kind of upstream fix that gets assumed to have swept a downstream table, and
+these six values would still be wrong afterwards.
+
+`main` touched none of this bean's files (`building-block-knots-table{1,3,5}-data`),
+so nothing here is stale.
+
