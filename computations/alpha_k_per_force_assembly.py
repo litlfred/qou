@@ -105,8 +105,18 @@ except Exception:
 #     50-digit proton pin to 1.9e-50 while differing from the muon pin by
 #     1.16e-8 (the known mu-p substrate tension), so the VALUE agrees with the
 #     label rather than merely being tagged.
-# Nothing to decide here. The muon fallback below is retained only for the
-# no-`qou_substrate` environment, and taking it is warned about and recorded.
+# The muon fallback below is retained only for the no-`qou_substrate`
+# environment, and taking it is warned about and recorded.
+#
+# STILL LIVE, but now LATENT rather than active: this module imports
+# `qou_substrate.constants.q_at` directly instead of routing through
+# `q_parameter`, and it is `q_parameter` that reads the manifest and honours an
+# `ideal_muon` tag. So the tag still cannot fire here. That is harmless while
+# the tag says `physical_proton` (the direct import gives the same pin), but if
+# this producer were ever re-tagged to `ideal_muon` the tag would silently fail
+# and this code would keep using proton -- the original defect, re-armed. Any
+# such re-tag must also switch this import to `q_parameter`. Tracked in
+# qou-7vm4, which stays OPEN for that reason.
 def _manifest_tag() -> str:
     """This producer's anchor group, read from `q0_anchor_manifest.json`.
 

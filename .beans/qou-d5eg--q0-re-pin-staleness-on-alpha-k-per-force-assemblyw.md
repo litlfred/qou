@@ -39,3 +39,8 @@ Witness regenerated: 4/4 assertions pass, ZERO mathematical values moved (only i
 and the environment block is a strict SUPERSET of the committed one (numpy/sympy/mpmath/
 pyhecke_native all matched after installing them, plus a new pyhecke_native_build fingerprint) — so
 this avoids the provenance-degradation trap recorded in bean qou-5380. Blocking precision gates green.
+
+## 2026-08-22 — scope note
+This bean's specific claim (committed witness is MUON-pinned) is resolved — measured proton to
+1.9e-50. The sibling bean qou-7vm4 stays OPEN for the remaining q_parameter BYPASS, which is latent
+rather than active; see its correction note.
