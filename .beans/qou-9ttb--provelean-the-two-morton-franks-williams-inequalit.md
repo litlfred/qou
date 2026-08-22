@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T02:02:43Z
-updated_at: 2026-08-22T02:03:17Z
+updated_at: 2026-08-22T09:34:22Z
 ---
 
 ## What is open
@@ -87,3 +87,36 @@ Nothing is blocked on this. The braid indices derived in #5380 are correct as
 computed facts; MFW is a cited theorem there, exactly as a textbook result would
 be. This bean exists so the assumption is visible and attributable rather than
 silently inherited.
+
+
+## CORRECTION (2026-08-22) — my dependency claim above was wrong
+
+The section "Dependency — do NOT duplicate" says ingredient 1 (Markov
+invariance / Ocneanu cyclicity) is open under `qou-bhrx`, and calls that bean's
+remaining item "the OPEN keystone". **I took that from `qou-bhrx`'s own progress
+note, dated 2026-07-19, and did not check the corpus.** That is exactly the
+failure this repo documents (PRs #1515/#1532/#1543): trusting a status note over
+the corpus. Re-checked today:
+
+- **H₄ cyclicity is PROVED and unconditional** — `QOU.Machinery.MarkovTraceH4`
+  carries `trM_cyclic` for `n = 4` off the 576-entry Gram closure, reduced via
+  `BilinearTraceCyclicity.cyclic_of_gram_symm`. Six-file cluster, **0 real
+  `sorry`**.
+- **The H₄ NF basis + `mulNF` table exists** —
+  `computations/markov/hecke-regular-nf-h4.witness.json`, GB-NF generated
+  (bean `qou-1jrr`), `Fin 24` = 4! normal forms, which is what
+  `MarkovTraceOnHecke.lean`'s "open keystone infra" block asked for. That block
+  described the work as still-to-do for about a month after it landed; corrected
+  in the same commit as this note.
+
+**So ingredient 1 is NOT the blocker for this bean.** What remains, precisely:
+
+1. **The Wedderburn route is still conditional.**
+   `HeckeH4RepDecomp.trM4_gram_symm_of_markov_basis` needs `hbasis` (24
+   basis-level Markov identities). Tracked as `qou-x64l` step 4 — not here, and
+   not needed for MFW.
+2. **General-`n`, not just `n = 4`.** MFW's degree argument is over `H_n` for
+   arbitrary `n`; H₃ and H₄ are done, the general case is not.
+3. **Ingredient 2 of this bean — the degree argument — is untouched and remains
+   the part with no in-corpus precedent.** That is the real content of this
+   bean, and it was true before this correction and after it.

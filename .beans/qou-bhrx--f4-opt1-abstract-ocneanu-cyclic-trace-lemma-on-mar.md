@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-19T17:13:51Z
-updated_at: 2026-07-19T17:28:19Z
+updated_at: 2026-08-22T09:35:16Z
 ---
 
 
@@ -21,3 +21,32 @@ the full "light permanent closure" still needs the abstract Ocneanu word-length
 induction OR the character/Wedderburn decomposition (tr_M = Σ_λ w_λ χ_λ, each χ_λ
 cyclic by trace_mul_comm). That is the OPEN keystone (MarkovTraceOnHecke.lean
 "open keystone infra"); next step under this bean.
+
+
+## Progress note is superseded for H₄ (verified 2026-08-22, by another session)
+
+The 2026-07-19 note above ends: *"the full 'light permanent closure' still needs
+the abstract Ocneanu word-length induction OR the character/Wedderburn
+decomposition ... That is the OPEN keystone ... next step under this bean."*
+
+**For `n = 4` that is done, by the second of the two routes named.** Recording
+it here because this bean is still `in-progress` and its note is the thing other
+agents read — I wrote a dependency claim into `qou-9ttb` off this note without
+checking the corpus, which is the cost. Evidence:
+
+- `QOU.Machinery.MarkovTraceH4` — `trM_cyclic` at `n = 4`, off `gram_symm`'s
+  576 computed entries, reduced through the `cyclic_of_gram_symm` this bean
+  delivered. **Unconditional.**
+- `QOU.Machinery.HeckeH4RepDecomp` — the Wedderburn/character route as
+  `trM4_gram_symm_of_markov_basis`, **conditional** on `hbasis` (24 basis-level
+  Markov identities), which that file states explicitly and assigns to
+  `qou-x64l` step 4.
+- Zero real `sorry` across `MarkovTraceH4`, `H4Cyclicity`, `H4GeneratorAction`,
+  `HeckeH4RepDecomp`, `BilinearTraceRepBasis`, `BilinearTraceCyclicity`.
+- The H₄ NF table this needed exists:
+  `computations/markov/hecke-regular-nf-h4.witness.json`, GB-NF generated
+  (`qou-1jrr`), `Fin 24` = 4! normal forms.
+
+**Not closing this bean** — it is scoped "all-n", and general `n` is not done;
+only H₃ and H₄ are. Left `in-progress` for its owner. If the intent was H₄
+closure, it is closeable on the evidence above.
