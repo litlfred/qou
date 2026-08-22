@@ -139,10 +139,18 @@ def main():
         if c_h != c_T:
             m1_eq_T = False
         print(f"  {n:>3} {str(c_ls):>24} {str(c_h):>22} {str(c_T):>16}")
+    # RETRACTION check: p2sharp_sym is IDENTICALLY 0 (transpose-antisymmetry
+    # p2sharp(lam) = -p2sharp(lam')), and T = Sum_h identically. So the "reduction"
+    # is VACUOUS -- Cov(p2sharp_sym,omega3)=0 is the covariance of the zero function.
+    p2sh_identically_zero = all(p2sharp_sym(lam) == 0 for n in range(1, min(nmax, 12) + 1) for lam in partitions(n))
+    T_eq_sumh = all(Tstat(lam) == sumh(lam) for n in range(1, min(nmax, 12) + 1) for lam in partitions(n))
     print()
-    print(f"RESULT: Cov(p2sharp_sym, omega3) = 0 exactly (Lambda*-degree-2 _|_ Sigma_3): {lam_star_zero}")
-    print(f"RESULT: M_1 = Cov(Sum_h, omega3) = Cov(T, omega3) exactly (T = Sum(i+j)-n): {m1_eq_T}")
-    print("RESULT: sub-result (1) CLOSED -- no genus correction; leader is purely non-Lambda* T.")
+    print(f"RETRACTION: p2sharp_sym == 0 IDENTICALLY (transpose-antisym p2sharp(lam)=-p2sharp(lam')): {p2sh_identically_zero}")
+    print(f"RETRACTION: T == Sum_h identically (T=Sum(i+j)-n): {T_eq_sumh}")
+    print("RETRACTION: hence Cov(p2sharp_sym,omega3)=0 is VACUOUS (zero function); M_1=Cov(T,omega3)")
+    print("            is the definition M_1=Cov(Sum_h,omega3), NOT a reduction. Sub-result (1)")
+    print("            reduces NOTHING (honest negative). See audit ...-lambda-star-orthogonality.md.")
+    print(f"           (numeric: Cov(p2sharp_sym,omega3)=0 held: {lam_star_zero}; M1=Cov(T,omega3): {m1_eq_T})")
     print("EXIT: 0")
     return 0
 

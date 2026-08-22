@@ -39,19 +39,17 @@ Equivalent `N/P` form: prove `N/P ≤ 1 − ε` uniformly, i.e. bound the `O(n²
 
 ## 2. Sub-results and corpus sources
 
-### Sub-result (1) — the `Λ*` side. **CLOSED 2026-08-22 — vanishes exactly.**
-Outcome (better than planned; [audit](../audits/2026-08-22-covariance-kernel-M1-lambda-star-orthogonality.md)):
-decomposing `Σh = p₂^#_sym + T` (with `p₂^#_sym ∈ Λ*` the shifted-power part and `T = Σ□(i+j)−n`
-the non-`Λ*` co-content statistic), **`Cov(p₂^#_sym, ω₃) = 0` exactly** — because `p₂^#_sym` is
-`Λ*`-degree 2 and `Cov(Σ₂, Σ₃) = 0` (= the exact `Cov(R₃,R₄)=0`; `ω₃ = Σ₃/3`). Hence
-**`M₁ = Cov(T, ω₃)` exactly** (n≤11), proving the PR #5366 antidiagonal reformulation exact. **No
-Śniady genus computation is needed** — there is no integer-power `Λ*` contamination term; the whole
-`n^{5/2}` leader lives in the single non-`Λ*` statistic `T`. Probe:
-`computations/deltalambda/wlambda_covariance_epic_M1_sniady_lambda_star_orthogonality.py`.
+### Sub-result (1) — the `Λ*` side. **RETRACTED 2026-08-22 — vacuous (reduces nothing).**
+An earlier note claimed a reduction `M₁ = Cov(T,ω₃)` via `Cov(p₂^#_sym, ω₃)=0`. **Withdrawn**
+([audit](../audits/2026-08-22-covariance-kernel-M1-lambda-star-orthogonality.md)): exactly (n≤12)
+`p₂^#_sym ≡ 0` (transpose-antisymmetry `p₂^#(λ)=−p₂^#(λ')`) and `T = Σh` identically — so the
+"orthogonality" is the covariance of the **zero function** and "`M₁=Cov(T,ω₃)`" is just the definition.
+The shifted-power / `Λ*`-peeling approach yields **no reduction** of `M₁` (honest negative): `Σh` is
+transpose-even and its only degree-2 `Λ*` partner `Σ₂` is transpose-odd, so nothing peels off; `M₁`
+pairs `Σh` with the transpose-even `Σ₃` and is unchanged. Śniady genus has nothing to act on here.
 
-> Note: Śniady `arxiv-math-0411647` §4.5 (genus expansion) would only have re-derived `Λ*`×`Λ*`
-> covariances (already exact here); it does not reach the non-`Λ*` `T`. So the effort moves directly
-> to sub-result (2), now the *sole* remaining piece.
+> Genuine residue: the co-content identity `Σh = Σ□(i+j) − n` (= the PR #5366 reformulation, an
+> identity) holds. But it does not reduce `M₁`. The effort rests entirely on sub-result (2).
 
 > **REFRAMED 2026-08-22 → one-sided; no explicit `C` needed**
 > ([audit](../audits/2026-08-22-covariance-kernel-M1-onesided-reframing.md)). Exact `κ_n = M₁/n^{5/2}`
