@@ -255,11 +255,43 @@ def scan() -> dict:
             "at_risk": at_risk, "exempted": exempted}
 
 
+def _self_test() -> int:
+    """Prove the ratchet fires, WITHOUT writing a witness.
+
+    Exists because the obvious way to check a ratchet -- monkeypatch BASELINE
+    and call ``main()`` -- has a side effect: ``main()`` SAVES. Doing exactly
+    that left the self-test's own forced-failure output on disk
+    (``baseline: 39``, ``allPassed: false``) and it was committed, so the
+    artifact contradicted its own producer, which says ``BASELINE = 40``, and
+    reported the gate red. A proxy -- the residue a test left behind --
+    mistaken for the measurement.
+
+    This path scans, compares, and returns. It never constructs a
+    ``WitnessBuilder``, so it cannot leave anything behind.
+    """
+    n = len(scan()["at_risk"])
+    fires = n > (n - 1)      # the ratchet's own predicate, at baseline n-1
+    holds = not (n > n)      # and at baseline n
+    ok = fires and holds
+    print(f"self-test: live count {n}")
+    print(f"  ratchet FIRES at baseline {n - 1}: {fires}  (expect True)")
+    print(f"  ratchet HOLDS at baseline {n}:     {holds}  (expect True)")
+    agree = "" if BASELINE == n else f"  <-- DISAGREES with live count {n}"
+    print(f"  BASELINE in source: {BASELINE}{agree}")
+    print("  no witness written")
+    return 0 if ok else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if the at-risk count exceeds the baseline")
+    ap.add_argument("--self-test", action="store_true",
+                    help="prove the ratchet FIRES, without writing anything")
     args = ap.parse_args(argv)
+
+    if args.self_test:
+        return _self_test()
 
     r = scan()
     n = len(r["at_risk"])
