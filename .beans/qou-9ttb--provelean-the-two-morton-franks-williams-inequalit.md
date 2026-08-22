@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T02:02:43Z
-updated_at: 2026-08-22T16:09:37Z
+updated_at: 2026-08-22T16:40:48Z
 ---
 
 ## What is open
@@ -278,3 +278,33 @@ still correct and still worth keeping -- linking-number-zero between components
 is a genuine structural fact -- but it was not needed. The lesson is the
 corpus-grep discipline applied one tier out: I checked this repo for prior
 work but not the classical literature, and the literature had it.
+
+
+## Wiring (2026-08-22, fifth pass) — the induction file was ORPHANED
+
+`MFWSkeinInduction` was imported by nothing. Its window arithmetic fed no
+consumer. Meanwhile `MortonFranksWilliams.MFWWitness` carries the two MFW
+inequalities as fields `mfw_lower` / `mfw_upper` — which are *exactly* `window`
+membership for `dmin` and `dmax`. Same object, two files, no connection.
+
+Wired with three declarations, all `#print axioms` clean (propext /
+Classical.choice / Quot.sound only, no sorryAx; `toWitness` depends on none):
+
+- `toWitness` — builds the witness from two window memberships. `mem_window` is
+  `Iff.rfl`, so the fields are `hmin.1` / `hmax.2`; definitional, not a re-proof.
+- `braid_bound_of_window` — makes the wiring load-bearing: the braid-index bound
+  now follows via `MortonFranksWilliams.braid_bound` rather than a second copy.
+- `descending_witness` — carries the base case through (unlink v-degrees span
+  [-(c-1), c-1]; DescendingWrithe puts both endpoints in the window).
+
+**What this does NOT do.** Neither file touches an actual HOMFLY polynomial or
+an actual braid — `MortonFranksWilliams` says so itself ("asserts nothing about
+any actual knot"). There is no Lean HOMFLY in this repo, so nothing can produce
+an `MFWWitness` from a real link. This connects two arithmetic layers; it does
+not close MFW. The remaining Lean work is a formalization of HOMFLY/braid
+closures, which is a large separate project, not a residue of this bean.
+
+**Verification hazard recorded**: a stale olean in `.lake/build/lib/lean` took
+precedence over a fresh build on LEAN_PATH, making three real declarations
+report as "Unknown constant". Harmless in that direction; the same shadowing
+would let an axiom check PASS against old code. Put the fresh build first.
