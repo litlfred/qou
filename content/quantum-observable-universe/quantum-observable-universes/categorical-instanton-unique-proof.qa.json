@@ -1365,6 +1365,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.286Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1384,6 +1399,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.325Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-em-dash": [
@@ -1403,6 +1433,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.366Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-triples": [
@@ -1422,6 +1467,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.407Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-closing-aphorism": [
@@ -1441,6 +1501,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.444Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-meta-commentary": [
@@ -1460,6 +1535,40 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.481Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Opens with the same templated proof-strategy preamble as the sibling exists-proof: 'The proof strategy uses characteristic classes and gauge equivalence. We demonstrate that the second Chern class $c_2$ completely classifies the solutions up to gauge transformations. Consequently, any two instantons with the same $c_2$ coincide, and the moduli space of solutions is faithfully parameterized by $H^4$.' Sentences 2-3 restate the proposition verbatim before any argument is given; the body never mentions characteristic classes beyond re-using $c_2$ as a hypothesis. Spelling gives the preamble away as separately generated: 'parameterized' here vs 'parameterised' in the proposition .md it is attached to.",
+        "notes": "Proposed (structural, paragraph removal, uniform across the chapter): delete the preamble; the body is the proof. If retained, cut to the single non-redundant clause and match the chapter's -ise spelling."
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:48.775Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Templated proof-strategy preamble narrating an absent argument: 'The proof strategy uses characteristic classes and gauge equivalence. We demonstrate that the second Chern class $c_2$ completely classifies the solutions up to gauge transformations. Consequently, any two instantons with the same $c_2$ coincide, and the moduli space of solutions is faithfully parameterized by $H^4$.' Sentences 2-3 restate the proposition before any argument; the body never uses characteristic classes beyond re-using $c_2$ as a hypothesis. 'parameterized' here vs 'parameterised' in the proposition it proves.",
+        "notes": "NOT fixed inline: 3 sentences, which exceeds the small-trap threshold of 2. Proposed: delete the preamble paragraph, exactly as applied to categorical-instanton-exists-proof.md in this batch and to categorical-action-{exists,unique}-proof.md by a sibling agent -- the campaign is already treating this preamble class as an inline deletion, so leaving this one is a consistency gap the coordinating session should close."
       }
     ],
     "trap-thesis-restatement": [
@@ -1479,6 +1588,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.517Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-performed-warmth": [
@@ -1498,6 +1622,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.556Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-superlative": [
@@ -1517,6 +1656,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.594Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "trap-nonspeakable": [
@@ -1536,6 +1690,21 @@
         "reviewed_at": "2026-08-15T10:31:00.053Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e0f3a4676958",
+          "ts": "305e8a0eec35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:05.637Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 3-sentence templated preamble plus a 9-line body arguing via \\ker(d_{\\nabla_1}) and the categorical gauge group. Checked all ten categories on the whole text; one spaced em-dash ('acting on the fibre -- i.e. by an automorphism') is a true apposition, density 1, pass."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1558,5 +1727,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:03:48.775Z"
 }

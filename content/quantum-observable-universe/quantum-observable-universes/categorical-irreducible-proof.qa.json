@@ -1437,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.286Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1456,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.393Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-em-dash": [
@@ -1475,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.505Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-triples": [
@@ -1494,6 +1539,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.557Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-closing-aphorism": [
@@ -1513,6 +1573,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.593Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-meta-commentary": [
@@ -1532,6 +1607,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.629Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-thesis-restatement": [
@@ -1551,6 +1641,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.669Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-performed-warmth": [
@@ -1570,6 +1675,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.717Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-superlative": [
@@ -1589,6 +1709,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.756Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "trap-nonspeakable": [
@@ -1608,6 +1743,21 @@
         "reviewed_at": "2026-08-15T10:30:59.970Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.795Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1630,5 +1780,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:53:12.795Z"
 }

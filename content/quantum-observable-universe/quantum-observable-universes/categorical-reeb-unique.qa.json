@@ -2129,6 +2129,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.562Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2148,6 +2163,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.598Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-em-dash": [
@@ -2167,6 +2197,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.635Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-triples": [
@@ -2186,6 +2231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 43 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.671Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-closing-aphorism": [
@@ -2205,6 +2265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.708Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-meta-commentary": [
@@ -2224,6 +2299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.745Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-thesis-restatement": [
@@ -2243,6 +2333,23 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.781Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The block-final sentence 'Therefore, the categorical Reeb derivation is unique.' restates what the two preceding sentences have just argued, and duplicates the block's own .ts title ('Uniqueness of the categorical Reeb derivation'). It is not exempt under either false-positive class: it is not a cross-reference closer and not a QED line. The underlying cause is that this PROPOSITION block is written as a miniature proof (premise, premise, therefore-conclusion) whose two premises are the same argument the sibling prf:categorical-reeb-unique gives at greater length, so the claim arrives last as a conclusion instead of first as a statement.",
+        "notes": "Proposed (structural: reordering plus a block-boundary decision between the proposition and its proof, so not applied): state the claim first -- 'For any quantum observable universe, the categorical Reeb derivation (\\xi, \\varTheta_A) satisfying the vertical-generator and normalisation axioms is unique.' -- and move the two premise sentences into prf:categorical-reeb-unique, where the free-T-action and Maurer-Cartan steps are already spelled out. That removes the restating closer and the proposition/proof duplication in one edit."
       }
     ],
     "trap-performed-warmth": [
@@ -2262,6 +2369,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.818Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-superlative": [
@@ -2281,6 +2403,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.856Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "trap-nonspeakable": [
@@ -2300,6 +2437,21 @@
         "reviewed_at": "2026-08-15T10:31:00.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2449edadde66",
+          "ts": "115610e2c416"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.894Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three sentences: two axiom-fixing premises followed by 'Therefore, the categorical Reeb derivation is unique.' All ten categories checked."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2323,5 +2475,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:01:58.894Z"
 }
