@@ -11237,9 +11237,18 @@ What this namespace adds is the *second* term's head, which the `a > b` regime
 does not share: there `s3`/`s4` need `hed : ed+1 = j₂` with `j₁ ≤ ed`, i.e.
 `j₁ < j₂`, and cannot be instantiated here at all.
 
-`uHead` is that head. It is the **same two-rule motif** as `s1`/`s2` — a
-Bokut–Shiao step then a far-commutation — displaced one letter right, because
-`U0` carries a leading `σᵢ₋₁` that `V0` does not:
+`uHead` is that head — and it is **`loopTwoGen` at `m = 0`**, not new work.
+I first proved it by hand before checking; the instantiation is `k = i₁`,
+`kd = ed = i₂`, `A = [σᵢ₋₁]`, `S = [σᵢ]`, `Y = [σᵢ]`, and the hypothesis
+`descWord i j₁ = Y ++ (σ_k :: descWord kd j₁)` is just the run's first two
+letters peeled off. Recorded because the consequence matters for the assembly:
+if one level is `loopTwoGen` at `m = 0`, the **whole** U-side loop is
+`loopTwoGen` at general `m`, so the opening phase's second lineage is a single
+application rather than a chain.
+
+It is the **same two-rule motif** as `s1`/`s2` — a Bokut–Shiao step then a
+far-commutation — displaced one letter right, because `U0` carries a leading
+`σᵢ₋₁` that `V0` does not:
 
     U0  = σᵢ₋₁ · σᵢ · (descWord i₁ j₁ ++ [σᵢ₋₁]) · descWord i₂ j₂ · σᵢ
       B →  σᵢ₋₁ · σᵢ · (σᵢ₋₂ σᵢ₋₁ descWord i₂ j₁) · descWord i₂ j₂ · σᵢ
@@ -11276,62 +11285,24 @@ theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
       (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0 i i₁ j₁ j₂, -1)])
       (AlgElement.ofTerms [(V2 i i₂ j₁ j₂, (1 : ℝ)), (U0' i i₁ i₂ j₁ j₂, -1)]) := by
   have hne2 : (⟨i₂⟩ : HeckeGen n) ≠ ⟨i₁⟩ := heckeGen_ne_of_val_ne (by omega)
-  -- U0 = σ_{i₁} σ_i · (descWord i₁ j₁ ++ [σ_{i₁}]) · (descWord i₂ j₂ ++ [σ_i])
-  have hU0 : U0 i i₁ j₁ j₂
-      = [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ bsWord₁ i₁ j₁ ++
-          (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]) := by
-    rw [U0, bsWord₁, descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
-      descWord_cons h₂ hj₂]
-    simp only [List.append_assoc, List.cons_append, List.nil_append]
-  -- step one: the Bokut–Shiao rule at top i₁, bottom j₁
-  have s := bsStep (i' := i₂) (i := i₁) (j := j₁) hn hp h₂ hj₁
-    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
-    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])
-    (U0 i i₁ j₁ j₂) (U0₁ i i₁ i₂ j₁ j₂) (-1) (by norm_num) hU0 rfl
-    (fun q hq => by
-      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-        List.not_mem_nil, or_false] at hq
-      subst hq
-      rw [hU0, V2]
+  have key := CornerBlock.loopTwoGen (i := i) (j₁ := j₁) (j₂ := j₂) (e := i₁)
+    (ed := i₂) hn hp h₂ hj₁ (by omega) [(⟨i⟩ : HeckeGen n)] (V2 i i₂ j₁ j₂)
+    (-1) 1 (by norm_num)
+    0 i₁ i₂ [(⟨i₁⟩ : HeckeGen n)] [(⟨i⟩ : HeckeGen n)]
+    h₂ (by omega)
+    (fun z => by
+      rw [V2]
       simp only [List.cons_append]
       intro hcon
       exact hne2 (List.cons.inj hcon).1)
-  -- step two: far-commute σ_i rightwards past σ_{i₂}
-  have t := farComm_transport_right_sources hn hp i (-1) (by norm_num)
-    [(V2 i i₂ j₁ j₂, (1 : ℝ))] ([] : List (Monomial (HeckeGen n) × ℝ))
-    [(⟨i₂⟩ : HeckeGen n)] [(⟨i₁⟩ : HeckeGen n)]
-    ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
-      [(⟨i⟩ : HeckeGen n)])))
     (by
       intro y hy
       simp only [List.mem_singleton] at hy
       subst hy
       show i₂.val + 1 < i.val
       omega)
-    (fun u v _ hv r hr => by
-      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
-        List.not_mem_nil, or_false] at hr
-      subst hr
-      rw [V2]
-      simp only [List.cons_append]
-      intro hcon
-      exact hne2 (List.cons.inj hcon).1)
-  have hstart : U0₁ i i₁ i₂ j₁ j₂
-      = [(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ([(⟨i₂⟩ : HeckeGen n)] ++
-          ((⟨i₁⟩ : HeckeGen n) :: (descWord i₂ j₁ ++ (descWord i₂ j₂ ++
-            [(⟨i⟩ : HeckeGen n)]))))) := by
-    rw [U0₁, bsWord₂]
-    simp only [List.cons_append, List.nil_append]
-  have hend : U0' i i₁ i₂ j₁ j₂
-      = [(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₂⟩ : HeckeGen n)] ++
-          ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) ::
-            (descWord i₂ j₁ ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))))) := by
-    rw [U0', descWord_cons h₁ (by omega : j₁.val ≤ i₁.val),
-      descWord_cons h₂ hj₁]
-    simp only [List.cons_append, List.nil_append]
-  rw [hstart] at s
-  rw [hend]
-  exact (MultiStepReduction.refl _).step s |>.trans t
+    (by rw [descWord_cons h₁ (by omega), descWord_cons h₂ hj₁]; simp)
+  simpa [U0', U0, descWord_self] using key
 
 end CornerLe
 
