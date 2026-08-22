@@ -1,15 +1,15 @@
 {
   "engine": "python-stdlib",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T20:48:23.899879+00:00",
-  "commitSha": "190e099a2820688ac6161a95a1c4259e8d4b42e0",
+  "computedAt": "2026-08-22T21:22:48.582114+00:00",
+  "commitSha": "673127861c2e273e42783616ea3892042942ab97",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 18601,
+  "durationMs": 18382,
   "computation": "codata-corpus-vintage-scan",
   "scriptFile": "codata_corpus_literal_scan.py",
-  "scriptHash": "ecb6fe2f8808",
-  "scriptCommitSha": "e8525f0c8464a3d39678152aad5bebc7583e5da2",
+  "scriptHash": "6008856d11c2",
+  "scriptCommitSha": "030eb307c8f712382bb2590e0c4cad41e91237f6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -39,14 +39,14 @@
   "near_threshold_relative": "1e-05",
   "min_significant_digits": 7,
   "table_entries": 293,
-  "files_scanned": 25234,
-  "distinct_literals": 290,
-  "total_sites": 2082,
+  "files_scanned": 25145,
+  "distinct_literals": 291,
+  "total_sites": 2086,
   "source_sites": 419,
   "code_sites": 0,
   "prose_sites": 391,
   "adjudicated_sites": 28,
-  "record_sites": 1663,
+  "record_sites": 1667,
   "findings": [
     {
       "literal": "938.27208816",
@@ -170,13 +170,12 @@
       "literal": "0.51099895",
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
-      "sites": 181,
+      "sites": 180,
       "code_sites": 0,
       "prose_sites": 22,
       "adjudicated_sites": 6,
-      "record_sites": 153,
+      "record_sites": 152,
       "files": [
-        ".claude/skills/local/compute-audit.md",
         "AUDIT-DEEP-2026-05.md",
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/audits/hardcoded_literal_audit.py",
@@ -495,13 +494,12 @@
       "literal": "206.7682830",
       "table_value": "206.7682827",
       "quantity": "muon-electron mass ratio",
-      "sites": 79,
+      "sites": 78,
       "code_sites": 0,
       "prose_sites": 37,
       "adjudicated_sites": 1,
-      "record_sites": 41,
+      "record_sites": 40,
       "files": [
-        ".claude/skills/local/compute-audit.md",
         "AUDIT-DEEP-2026-05.md",
         "computations/alpha/alpha_em_pslq_uniqueness.py",
         "computations/alpha_em_4pi_q0_sensitivity.py",
@@ -608,44 +606,6 @@
       ]
     },
     {
-      "literal": "206.768283",
-      "table_value": "206.7682827",
-      "quantity": "muon-electron mass ratio",
-      "sites": 53,
-      "code_sites": 0,
-      "prose_sites": 4,
-      "adjudicated_sites": 0,
-      "record_sites": 49,
-      "files": [
-        ".claude/skills/local/scientific-accuracy.md",
-        "computations/canonical-lepton-braid-words.witness.json",
-        "computations/compute_audit_scan.py",
-        "computations/derive-ms-md-torus-knot.witness.json",
-        "computations/gram-matrix-dual.py",
-        "computations/knot-operator-table.py",
-        "computations/lepton-t2n-torus-tower.witness.json",
-        "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json",
-        "computations/m-baryon-volume-form.witness.json",
-        "computations/mass-from-q-symbolic.witness.json",
-        "computations/meson-mass-from-hecke.witness.json",
-        "computations/probes/m_pi_hecke_prediction_probe.py",
-        "computations/probes/tau-amphichiral-sdp-probe.witness.json",
-        "computations/q-beta-complex-q-test1-phasea-v2.witness.json",
-        "computations/script-qa/gram-matrix-dual.script-qa.json",
-        "computations/script-qa/knot-operator-table.script-qa.json",
-        "computations/sigma-all-evaluator.witness.json",
-        "computations/substrate/knot-volumes.witness.json",
-        "computations/t6-lepton-h3-3channel-convention.witness.json",
-        "computations/t6-three-halves-factor-probes.witness.json",
-        "computations/xi-ell-phi-q-probe.witness.json",
-        "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.qa.json",
-        "content/quantum-observable-universe/mass-theory/topological-mass-trefoil.qa.json",
-        "docs/audits/2026-05-02-alpha-categorical-probe.witness.json",
-        "docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md",
-        "docs/audits/2026-05-28-spectral-phase-correction-derived.md"
-      ]
-    },
-    {
       "literal": "0.510998950",
       "table_value": "0.51099895069",
       "quantity": "electron mass energy equivalent in MeV / natural unit of energy in MeV / natural unit of momentum in MeV/c",
@@ -676,6 +636,43 @@
         "docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md",
         "docs/audits/2026-07-05-compute-integration-swarm2.md",
         "docs/derivation-tracking-methodology.md"
+      ]
+    },
+    {
+      "literal": "206.768283",
+      "table_value": "206.7682827",
+      "quantity": "muon-electron mass ratio",
+      "sites": 52,
+      "code_sites": 0,
+      "prose_sites": 4,
+      "adjudicated_sites": 0,
+      "record_sites": 48,
+      "files": [
+        "computations/canonical-lepton-braid-words.witness.json",
+        "computations/compute_audit_scan.py",
+        "computations/derive-ms-md-torus-knot.witness.json",
+        "computations/gram-matrix-dual.py",
+        "computations/knot-operator-table.py",
+        "computations/lepton-t2n-torus-tower.witness.json",
+        "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json",
+        "computations/m-baryon-volume-form.witness.json",
+        "computations/mass-from-q-symbolic.witness.json",
+        "computations/meson-mass-from-hecke.witness.json",
+        "computations/probes/m_pi_hecke_prediction_probe.py",
+        "computations/probes/tau-amphichiral-sdp-probe.witness.json",
+        "computations/q-beta-complex-q-test1-phasea-v2.witness.json",
+        "computations/script-qa/gram-matrix-dual.script-qa.json",
+        "computations/script-qa/knot-operator-table.script-qa.json",
+        "computations/sigma-all-evaluator.witness.json",
+        "computations/substrate/knot-volumes.witness.json",
+        "computations/t6-lepton-h3-3channel-convention.witness.json",
+        "computations/t6-three-halves-factor-probes.witness.json",
+        "computations/xi-ell-phi-q-probe.witness.json",
+        "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.qa.json",
+        "content/quantum-observable-universe/mass-theory/topological-mass-trefoil.qa.json",
+        "docs/audits/2026-05-02-alpha-categorical-probe.witness.json",
+        "docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md",
+        "docs/audits/2026-05-28-spectral-phase-correction-derived.md"
       ]
     },
     {
@@ -743,11 +740,11 @@
       "literal": "137.035944",
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
-      "sites": 36,
+      "sites": 37,
       "code_sites": 0,
       "prose_sites": 8,
       "adjudicated_sites": 0,
-      "record_sites": 28,
+      "record_sites": 29,
       "files": [
         "computations/meson_em_residual_alpha_em.py",
         "computations/meson_em_sinh_closed_form.py",
@@ -758,6 +755,7 @@
         "docs/audits/2026-05-01-math-framework-deep-audit.md",
         "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
         "docs/audits/2026-08-02-ppq-attack-vectors-roast.md",
+        "docs/audits/2026-08-22-alpha-em-derivation-redteam.md",
         "docs/observable-sector-tracker.md",
         "tools/pyhecke/python/pyhecke/constants.py"
       ]
@@ -981,11 +979,11 @@
       "literal": "137.0359351",
       "table_value": "137.035999177",
       "quantity": "inverse fine-structure constant",
-      "sites": 12,
+      "sites": 13,
       "code_sites": 0,
       "prose_sites": 3,
       "adjudicated_sites": 0,
-      "record_sites": 9,
+      "record_sites": 10,
       "files": [
         "content/pipeline/trace-convention-audit.ts",
         "content/pipeline/witness-substitution-audit.ts",
@@ -996,6 +994,7 @@
         "content/quantum-observable-universe/observations/hadron-half-life-verification-table6-data.md",
         "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
         "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md",
+        "docs/audits/2026-08-22-alpha-em-derivation-redteam.md",
         "docs/coordination/trace-convention-registry.md"
       ]
     },
@@ -1427,6 +1426,21 @@
       ]
     },
     {
+      "literal": "137.0359",
+      "table_value": "137.035999177",
+      "quantity": "inverse fine-structure constant",
+      "sites": 6,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 6,
+      "files": [
+        "content/quantum-observable-universe/introduction/chapter-overview.md",
+        "docs/audits/2026-08-22-alpha-em-derivation-redteam.md",
+        "docs/qa/content-alignment-2026-04-25/ch00-introduction.md"
+      ]
+    },
+    {
       "literal": "42.57771563763444",
       "table_value": "42.577478461",
       "quantity": "proton gyromag. ratio in MHz/T",
@@ -1524,20 +1538,6 @@
       ]
     },
     {
-      "literal": "137.0359",
-      "table_value": "137.035999177",
-      "quantity": "inverse fine-structure constant",
-      "sites": 4,
-      "code_sites": 0,
-      "prose_sites": 0,
-      "adjudicated_sites": 0,
-      "record_sites": 4,
-      "files": [
-        "content/quantum-observable-universe/introduction/chapter-overview.md",
-        "docs/qa/content-alignment-2026-04-25/ch00-introduction.md"
-      ]
-    },
-    {
       "literal": "1.293332",
       "table_value": "1.29333251",
       "quantity": "neutron-proton mass difference energy equivalent in MeV",
@@ -1609,6 +1609,22 @@
         "computations/probes/proton_brane_tower_correction_probe.py",
         "docs/audits/2026-06-01-yekutieli-mp-substrate-derivation-scaffolding.md",
         "docs/audits/2026-06-21-q0-clusterA-migration-plan.md"
+      ]
+    },
+    {
+      "literal": "1836.1527",
+      "table_value": "1836.152673426",
+      "quantity": "proton-electron mass ratio",
+      "sites": 4,
+      "code_sites": 0,
+      "prose_sites": 1,
+      "adjudicated_sites": 0,
+      "record_sites": 3,
+      "files": [
+        "computations/skein_proton_canonical.py",
+        "docs/audits/2026-05-09-proton-m_e-anomaly.md",
+        "docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md",
+        "docs/audits/2026-08-22-mp-fbor-massformula-redteam.md"
       ]
     },
     {
@@ -1798,21 +1814,6 @@
       "files": [
         "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation-table-data.qa.json",
         "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.qa.json"
-      ]
-    },
-    {
-      "literal": "1836.1527",
-      "table_value": "1836.152673426",
-      "quantity": "proton-electron mass ratio",
-      "sites": 3,
-      "code_sites": 0,
-      "prose_sites": 1,
-      "adjudicated_sites": 0,
-      "record_sites": 2,
-      "files": [
-        "computations/skein_proton_canonical.py",
-        "docs/audits/2026-05-09-proton-m_e-anomaly.md",
-        "docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md"
       ]
     },
     {
@@ -2343,6 +2344,20 @@
       "files": [
         "computations/quark-mass-extraction-stage1.witness.json",
         "docs/audits/2026-07-27-l2-100x-precision-scope-chip.md"
+      ]
+    },
+    {
+      "literal": "137.035935093976",
+      "table_value": "137.035999177",
+      "quantity": "inverse fine-structure constant",
+      "sites": 2,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 2,
+      "files": [
+        "computations/meson-em-sinh-closed-form.witness.json",
+        "docs/audits/2026-08-22-alpha-em-derivation-redteam.md"
       ]
     },
     {
@@ -3236,6 +3251,19 @@
       "record_sites": 1,
       "files": [
         "docs/audits/2026-07-05-alpha4pi-coefficient-derivation-attempt.md"
+      ]
+    },
+    {
+      "literal": "137.0353",
+      "table_value": "137.035999177",
+      "quantity": "inverse fine-structure constant",
+      "sites": 1,
+      "code_sites": 0,
+      "prose_sites": 0,
+      "adjudicated_sites": 0,
+      "record_sites": 1,
+      "files": [
+        "docs/audits/2026-08-22-alpha-em-derivation-redteam.md"
       ]
     },
     {
@@ -4406,19 +4434,6 @@
       "record_sites": 1,
       "files": [
         "computations/deuteron-from-scratch-ledger.witness.json"
-      ]
-    },
-    {
-      "literal": "137.035935093976",
-      "table_value": "137.035999177",
-      "quantity": "inverse fine-structure constant",
-      "sites": 1,
-      "code_sites": 0,
-      "prose_sites": 0,
-      "adjudicated_sites": 0,
-      "record_sites": 1,
-      "files": [
-        "computations/meson-em-sinh-closed-form.witness.json"
       ]
     },
     {
