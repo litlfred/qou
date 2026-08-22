@@ -2221,6 +2221,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.238Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "Clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2240,6 +2256,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.278Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "Clean."
       }
     ],
     "trap-em-dash": [
@@ -2259,6 +2291,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 297 words)"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.321Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2278,6 +2326,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 297 words)"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.360Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "The three-sentence lead summarises three distinct steps of the decomposition, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2297,6 +2361,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.401Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "Ends on a technical Reeb-flow statement."
       }
     ],
     "trap-meta-commentary": [
@@ -2316,6 +2396,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.442Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2335,6 +2431,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.482Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "No restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -2354,6 +2466,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.525Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2373,6 +2501,22 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.568Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -2392,6 +2536,38 @@
         "reviewed_at": "2026-08-15T10:31:01.432Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.608Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Full read of the proposition lead, the display identity and all seven follow-on sections. Verified the one checkable count: the total step count across generators is stated as C(A,2), which matches the proof block's sum(A-i-1, i=0..A-2) = A(A-1)/2. No em-dashes, no aphorism (the block ends on the Reeb connection), no meta-narration, no warmth, no superlative.",
+        "notes": "Speakable throughout; the section headers are noun-phrase academic."
+      },
+      {
+        "field_hash": {
+          "md": "75f68416a42d",
+          "ts": "e96257a9059d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:06.659Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Convention and block-kind check beyond the ten categories.",
+        "notes": "NOTES (report, not fixed). (1) CONVENTION UNSTATED - and I cannot tell from the block which one applies. The generator volume profile is given as V_i = z a_i + b_i, i.e. it is linear in the Markov parameter z, so its value differs between the excised convention C (z = sqrt(q)/(q+1) = 0.4993203342) and the canonical convention D (z = q^3/(q^2+1) = 0.6126880371) - a 23% difference in the z-coefficient at the proton pin. The block names neither, and nothing in it fixes the convention, so this is reported as unresolved rather than as an error. Its sibling sec:garside-gram-intro does name convention D explicitly; if that is the chapter's frame, say so here too. (2) BLOCK KIND: this is kind 'proposition' but carries seven interpretive sections (jet bundle structure, beta and double-beta decay readings, Reeb connection) after the statement. Per clarity-stmt-pure the interpretation belongs in a follow-on remark; the statement itself is the display identity plus the recurrence sentence."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2415,5 +2591,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:12:06.659Z"
 }

@@ -2162,6 +2162,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.901Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2181,6 +2197,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.944Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-em-dash": [
@@ -2200,6 +2232,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.987Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-triples": [
@@ -2219,6 +2267,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 91 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.042Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-closing-aphorism": [
@@ -2238,6 +2302,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.084Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-meta-commentary": [
@@ -2257,6 +2337,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.126Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-thesis-restatement": [
@@ -2276,6 +2372,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.169Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-performed-warmth": [
@@ -2295,6 +2407,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.211Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-superlative": [
@@ -2314,6 +2442,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.253Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "trap-nonspeakable": [
@@ -2333,6 +2477,22 @@
         "reviewed_at": "2026-08-15T10:31:01.308Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.296Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2356,5 +2516,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:01:34.296Z"
 }
