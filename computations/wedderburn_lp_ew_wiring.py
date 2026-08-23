@@ -41,12 +41,23 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 import mpmath as mp  # noqa: E402
-from _precision import fmt  # noqa: E402
+from _precision import COMPUTE_DPS, fmt  # noqa: E402
 
-#: Working precision for the whole pipeline. 50 dps matches the substrate
-#: constant `Q_50_DIGIT_STR`; anything less would throw away digits the
-#: constant carries, which is the defect this port exists to remove.
-_MP_DPS = 50
+#: Working precision for the whole pipeline: the package's COMPUTE_DPS.
+#:
+#: WAS a hardcoded 50, reasoning that 50 dps "matches the substrate constant
+#: `Q_50_DIGIT_STR`". That is true of the INPUT and wrong about the output:
+#: `_precision` serializes at OUTPUT_DPS = 60 with 10 guard digits, so a
+#: 50-dps computation wrote 10 unbacked digits into every value in the
+#: witness. Harmless to any consumer reading 50 digits, but it is precisely
+#: the tail that made the sparse rewrite below look like it changed answers —
+#: reassociating a sum moves the first unbacked digit, and there were ten of
+#: them on display.
+#:
+#: Computing at COMPUTE_DPS (70) backs every serialized digit. It was not a
+#: realistic option while the producer took 46 min; the sparse assembly makes
+#: it free (21 s), which is the useful kind of thing a speed-up buys.
+_MP_DPS = COMPUTE_DPS
 
 
 def _as_strings(x):
@@ -75,6 +86,51 @@ def _mpf_or(v, default):
     return mp.mpf(str(v))
 
 
+def _nonzeros(M, dim: int) -> dict:
+    """``{(i, j): value}`` for the nonzero entries of an ``mp.matrix``.
+
+    mpmath already stores a matrix as a dict of its nonzeros, so the fast path
+    reads that directly. It is a name-mangled private attribute, hence the
+    O(dim^2) fallback: if a future mpmath renames it the result stays correct
+    and only the speed regresses, which is the right way round for a private
+    attribute this useful.
+    """
+    data = getattr(M, "_matrix__data", None)
+    if data is None:
+        return {(i, j): M[i, j] for i in range(dim) for j in range(dim)
+                if M[i, j] != 0}
+    return {k: v for k, v in data.items() if v != 0}
+
+
+def _sparse_product(A_nz: dict, B_nz: dict) -> dict:
+    """Nonzeros of ``A.B`` from the nonzeros of A and B.
+
+    The pair matrices ``M_k = sigma_i . sigma_j`` were built with mpmath's
+    ``*``, which is a DENSE O(dim^3) matmul — 840 of them per atom (30
+    partitions x 28 pairs), at dim up to 216. Sparse contraction of the outer
+    trace alone therefore fixed the smaller half: the products are ~420M mpf
+    operations against the traces' ~147M.
+
+    At 1.13% density the product costs ``sum_j nnz(A[:,j]) * nnz(B[j,:])``
+    instead of dim^3. Same construction as the trace: seminormal form is
+    sparse, and nothing here is an approximation — the arithmetic is
+    identical, only the zeros are skipped.
+    """
+    brow: dict = {}
+    for (j, k), v in B_nz.items():
+        brow.setdefault(j, []).append((k, v))
+    out: dict = {}
+    for (i, j), a in A_nz.items():
+        row = brow.get(j)
+        if not row:
+            continue
+        for k, b in row:
+            key = (i, k)
+            prev = out.get(key)
+            out[key] = a * b if prev is None else prev + a * b
+    return {k: v for k, v in out.items() if v != 0}
+
+
 def _mp_trace_of_product(A, B, dim: int):
     """tr(A.B) as ``sum_ij A[i,j]*B[j,i]`` -- O(dim^2), never forming A.B.
 
@@ -91,11 +147,31 @@ def _mp_trace_of_product(A, B, dim: int):
     a 14.2x reduction. The 28 pair matrices M_k = sigma_i.sigma_j are still
     formed, because G contracts them against each other; only the outer trace
     is contracted rather than multiplied.
+
+    SPARSE. The two bounds above are both O(dim^2) in the contraction, and
+    that is 128x more work than the matrices contain. Measured over the
+    partitions of 9: the Hoefsmit generator matrices are 1.13% dense (1.56
+    nonzeros per ROW), and a pair product sigma_i.sigma_j is 0.78% dense --
+    366 nonzeros in the 216x216 block, against 46656 index pairs the dense
+    loop walks. Seminormal form is sparse by construction; nothing here
+    needed to be discovered, only used.
+
+    So iterate the nonzeros instead. tr(A.B) = tr(B.A), so it is valid to
+    walk whichever side has fewer.
+
+    Accepts an ``mp.matrix`` or an already-extracted ``{(i, j): value}``
+    dict, which lets `_full_wedderburn_gram` extract each pair matrix ONCE
+    and reuse it across every pair-pair combination rather than per trace.
     """
+    a = A if isinstance(A, dict) else _nonzeros(A, dim)
+    b = B if isinstance(B, dict) else _nonzeros(B, dim)
+    if len(b) < len(a):
+        a, b = b, a          # tr(A.B) = tr(B.A)
     acc = mp.mpf(0)
-    for i in range(dim):
-        for j in range(dim):
-            acc += A[i, j] * B[j, i]
+    for (i, j), v in a.items():
+        w = b.get((j, i))
+        if w is not None:
+            acc += v * w
     return acc
 
 
@@ -142,15 +218,27 @@ def _hoefsmit_mp_matrices(n: int, q_str: str) -> dict:
     which is where the duplication was. Pure function of its arguments,
     and callers only read traces, so nothing mutates the cached matrices.
 
-    MEASURED: 55.7 min -> 46.3 min, saving 9.4 min (17%). I first claimed
-    this "dominated the wall clock" and would halve the runtime; both
-    were wrong, and the correction is the useful part. One H_9 Hoefsmit
-    build is ~9 min, so the remaining ~46 min is dominated by the GRAM
-    ASSEMBLY — 406 unique pair-pair traces at n=9, each summing
-    tr(M_ij . M_i'j') over every partition of 9 — not by the build the
-    progress line names. Anyone optimising this further should start
-    there, not here. The lesson is the ordinary one: I inferred the
-    bottleneck from which step the log narrates rather than timing it.
+    MEASURED IN ISOLATION: the H_9 build is 2.77 s cold, 0.003 ms memoised.
+    So this saves ~2.8 s. Keep it — it is free and correct — but it is not
+    a performance fix.
+
+    TWO WRONG CLAIMS PRECEDED THAT NUMBER, both mine, and the second is the
+    instructive one. First I said the duplicated build "dominated the wall
+    clock: 28 min becomes ~14", inferred from which step the progress line
+    narrates. Then I "corrected" that to "55.7 min -> 46.3 min, saving 9.4
+    min (17%)" from a before/after of two full runs — but those ran with
+    different background load (I had crosschecks and audits going during
+    the first), so 9.4 min of it was noise and ~3 s was the change. A
+    before/after wall-clock comparison is not a measurement unless the load
+    is controlled; timing the function directly is.
+
+    WHERE THE TIME ACTUALLY GOES, per atom at n=9 (one process, so the
+    ratio holds even if absolute numbers carry load):
+
+        build   2.9 s     supply  19.9 s     gram  1390.9 s  (98.4%)
+
+    i.e. 406 pair-pair traces at 3.43 s each. That is the only thing worth
+    optimising here, and `_mp_trace_of_product` below now does it sparsely.
 
     The caller then evaluates Markov traces of arbitrary 4-letter
     words via three matrix multiplications + one trace + sum over
@@ -310,8 +398,16 @@ def _full_wedderburn_gram(
         pair_mats_per_lambda: dict[tuple, list] = {}
         for shape, info in hoefsmit_cache.items():
             mats = info["matrices"]
+            # Extract the nonzeros once per (lambda, pair). The dense loop
+            # this replaces re-walked dim^2 index pairs for every one of the
+            # n_pairs*(n_pairs+1)/2 combinations; there are only n_pairs
+            # matrices to extract.
+            # Sparse throughout: extract each GENERATOR's nonzeros once, then
+            # build every pair product sparsely. The dense `mats[i] * mats[j]`
+            # this replaces was O(dim^3) and ran 840 times per atom.
+            gen_nz = [_nonzeros(M, info["dim"]) for M in mats]
             pair_mats_per_lambda[shape] = [
-                mats[p["i"]] * mats[p["j"]] for p in pairs
+                _sparse_product(gen_nz[p["i"]], gen_nz[p["j"]]) for p in pairs
             ]
 
         G = [[mp.mpf(0)] * n_pairs for _ in range(n_pairs)]
