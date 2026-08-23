@@ -32,22 +32,29 @@ makes the directional asymmetry explicit; the original name is
 preserved here to keep the content-block URI
 `qou:QOU.categorical_dq_squared` resolvable.
 
-**Categorical layer, and where the `ℝ` actually sits (§7c).** The
+**Categorical layer, and where the `ℝ` no longer sits (§7c).** The
 vanishing argument is scalar-generic: it is `dq_sq_eq_zero_of_scalar_one`
 below, stated over an arbitrary `R`-linear preadditive category with
 `R` any ring — in particular over the Laurent ground ring
-`R_q = ℤ[q, q⁻¹]` recorded here.  The `ℝ` that remains in
-`categorical_dq_squared` is inherited from the *shared* structure
-`CategoricalQExtDeriv` of `QOU.QuantumObservableUniverse.Instanton`,
-whose deformation parameter is a field `q : ℝ` and whose `dq` is
-therefore `ℝ`-linear (`[CategoryTheory.Linear ℝ C]`).  That `ℝ` is
-carried by the structure, not by the mathematics: `categorical_dq_squared`
-is now literally the generic lemma instantiated at `R := ℝ`.  Moving the
-structure itself to a generic ground ring needs `q⁻¹` replaced by a
-carried inverse field (`Ring` has no `⁻¹`), which is a change to
-`Instanton.lean` and its four other consumers.  The substrate
-specialisation `ι : R_q → ℝ, q ↦ q₀` is used for numerical evaluation
-downstream.
+`R_q = ℤ[q, q⁻¹]` recorded here.
+
+Until bean `qou-u87j` this file *also* carried an `ℝ`, inherited from the
+shared structure `CategoricalQExtDeriv` of
+`QOU.QuantumObservableUniverse.Instanton`, whose deformation parameter was
+a field `q : ℝ` and whose `dq` was therefore `ℝ`-linear
+(`[CategoryTheory.Linear ℝ C]`).  That was the last §7c wall-crossing in
+the library, and this docstring used to record it as blocked: moving the
+structure to a generic ground ring needs `q⁻¹` replaced by a carried
+inverse, because `Ring` has no `⁻¹`.
+
+`QOU/GroundRingCore.lean` (bean `qou-kfcl`) unblocked it.
+`CategoricalQExtDeriv` now carries `q qinv : R_q` with
+`q_mul_qinv : q * qinv = 1`, which is *strictly stronger* than the `q ≠ 0`
+an `ℝ`-valued field gave us — over a ring, invertible is not implied by
+nonzero — and `categorical_dq_squared` is the generic lemma instantiated
+at `R := R_q` rather than at `R := ℝ`.  The substrate specialisation
+`ι : R_q → ℝ, q ↦ q₀` is used for numerical evaluation downstream, and is
+the only place `ℝ` enters.
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -102,16 +109,22 @@ theorem dq_sq_eq_zero_of_scalar_one {R : Type*} [Ring R] {C : Type u}
     LaTeX: `\label{prop:categorical-dq-squared}` -/
 theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q = 1)
     (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0) :
     cqd.dq ≫ cqd.dq = 0 := by
-  -- The `ℝ` realisation of `dq_sq_eq_zero_of_scalar_one` at `R := ℝ`:
-  -- `dq`'s scalar is `a = q⁻¹`, which is `1` when `q = 1`.
+  -- The `R_q` realisation of `dq_sq_eq_zero_of_scalar_one`: `dq`'s scalar is
+  -- `qinv`, which the defining relation forces to `1` when `q = 1`.  This
+  -- used to run over `ℝ` and reach `1` by `inv_one`; `R_q` has no `Inv`
+  -- instance, so the relation does the work instead (bean `qou-u87j`).
+  have hqinv : cqd.qinv = 1 := by
+    have h := cqd.q_mul_qinv
+    rw [hq, one_mul] at h
+    exact h
   unfold CategoricalQExtDeriv.dq
-  exact dq_sq_eq_zero_of_scalar_one cqd.d_classical cqd.proj_V cqd.q⁻¹
-    (by rw [hq, inv_one]) hd_sq
+  exact dq_sq_eq_zero_of_scalar_one cqd.d_classical cqd.proj_V cqd.qinv
+    hqinv hd_sq
 
 end
 
