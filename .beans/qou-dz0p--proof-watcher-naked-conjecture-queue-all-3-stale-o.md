@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T02:19:21Z
-updated_at: 2026-08-23T02:20:01Z
+updated_at: 2026-08-23T02:34:28Z
 ---
 
 The proof-integration-watcher queue's **only** three genuinely open items were all
@@ -82,3 +82,45 @@ The three entries should be marked resolved (rho-k: already correct; casimir:
 fixed here; lqg: re-scoped to the real work). Not edited here — the queue is the
 watcher's artifact and rewriting it from outside a watcher run is how it drifted
 in the first place.
+
+
+## LQG carrier: WRITTEN (the item left open above is now closed)
+
+`lqg-entropy-qdim-partition-pole.lean` no longer holds the empty stub. It now
+carries a §3b-cond axiomatisation, sorry-free, 13 declarations, `lean`-direct
+**exit 0**.
+
+**Structure — the class carries HYPOTHESES, the theorems DERIVE the conjecture.**
+
+    Z1 qdim casimir s = ∑' n, qdim n * exp(-s * casimir n)      -- the actual sum
+
+    class LQGEntropyQDimPartitionPole (qdim casimir : ℕ → ℝ) (lo hi : ℝ) : Prop
+      lo_lt_hi, Z1_continuous, Z1_strictAnti, Z1_super (1 < Z1 lo), Z1_sub (Z1 hi < 1)
+
+    theorem exists_unique_critical : ∃! s, s ∈ Icc lo hi ∧ Z1 s = 1
+
+The class does **not** state the pole. `exists_critical` derives it by IVT;
+`critical_unique` by injectivity of a strictly antitone function. That is
+§3b-cond item 5 satisfied — the carrier holds analytic inputs, the theorem
+concludes. Claim (3) is covered by `immirzi sStar = sStar / 2π` with
+`immirzi_pos` and `immirzi_eq_iff`.
+
+**A flaw caught before it landed.** The first draft hardcoded the window to
+`[0,1]`. It compiled cleanly — and silently excluded the conjecture's own
+expected answer: the standard Immirzi value `γ ≈ 0.237` gives
+`s⋆ = 2πγ ≈ 1.49 > 1`. A carrier that compiles while ruling out the physical
+solution is worse than no carrier. `lo`/`hi` are now class **parameters**, so an
+instance must state its own window.
+
+**Satisfiability witness included, and it is not decoration.** An *unsatisfiable*
+carrier is as dangerous as a vacuous one — it makes every `[C] → …` downstream
+vacuously true. `witness_pole` instantiates the class on
+`qdim = (2,0,0,…)`, `casimir ≡ 1`, where `Z₁(s) = 2e^{-s}`, crossing 1 inside
+`[0,1]` because `2 < e`. Labelled as a satisfiability check, **not** as the LQG
+data — the established pattern from `MotivicGaloisCharacterTrivial.lean`. The
+conjecture's real content — that the actual `q`-dimension data satisfies these
+hypotheses — remains open with no instance.
+
+Verified: `lean`-direct exit 0, 0 sorry, 0 axiom; QOU validate 21 issues = main's
+own `1d3988bc31` baseline exactly, with zero gravity-spacetime / lqg / casimir
+entries. No repoint needed — the block's existing ref already names this class.
