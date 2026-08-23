@@ -1112,6 +1112,20 @@
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "evidence": "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ada4987d844",
+          "ts": "495205969170"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "The sibling it cites is not in the tree. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1213,6 +1227,20 @@
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "evidence": "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:1",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "4ada4987d844",
+          "ts": "495205969170"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "The sibling it cites is not in the tree. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1235,6 +1263,20 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "4ada4987d844",
+          "ts": "495205969170"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "The sibling it cites is not in the tree. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "bib-cite-resolves": [
