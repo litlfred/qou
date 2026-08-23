@@ -1,11 +1,11 @@
 ---
 # qou-h4ab
 title: 'wedderburn-lp-ew-wiring is stale on main: t_legacy_matrix_entries moves ~13% on re-run'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-17T01:44:20Z
-updated_at: 2026-08-19T17:41:35Z
+updated_at: 2026-08-23T18:06:46Z
 ---
 
 ## Evidence (PR #5260)
