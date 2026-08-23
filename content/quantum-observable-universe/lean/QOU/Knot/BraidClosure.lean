@@ -406,4 +406,67 @@ theorem components_reverse (w : BraidWord n) :
   simp [components, closurePerm_reverse, Equiv.Perm.cycleType_inv,
         Equiv.Perm.support_inv]
 
+/-! ### Over/under at a crossing — the atom of the traversal
+
+The descending predicate is about which strand is met *over* and which *under*.
+`closurePerm` already carries where a strand goes; this carries which of the two
+passes over. Together they are the Lean analogue of the reference engine's
+`_step`, whose convention is fixed here: **for `σ_i` (positive) the strand
+entering at the lower position `i` passes OVER.**
+
+Sign conventions in this area are not free — `qou-7ue5` records two places in
+`computations/` disagreeing about a HOMFLY by a mirror — so the convention is
+stated, and the two defining properties below are proved rather than left
+implicit. -/
+
+/-- Which strand passes over, as seen from position `p`. `none` when `p` is not
+one of the two strands involved. -/
+def stepOver (c : BraidCrossing n) (p : Fin n) : Option Bool :=
+  if p = loIdx c.gen then some c.positive
+  else if p = hiIdx c.gen then some (!c.positive)
+  else none
+
+@[simp] theorem stepOver_lo (c : BraidCrossing n) :
+    stepOver c (loIdx c.gen) = some c.positive := by
+  simp [stepOver]
+
+@[simp] theorem stepOver_hi (c : BraidCrossing n) :
+    stepOver c (hiIdx c.gen) = some (!c.positive) := by
+  simp [stepOver, (loIdx_ne_hiIdx c.gen).symm]
+
+/-- **The two strands of a crossing get opposite verdicts.** One passes over,
+the other under — the defining property of a crossing, and the reason each
+crossing contributes exactly one `over` and one `under` to the traversal. -/
+theorem stepOver_lo_ne_hi (c : BraidCrossing n) :
+    stepOver c (loIdx c.gen) ≠ stepOver c (hiIdx c.gen) := by
+  simp [stepOver, (loIdx_ne_hiIdx c.gen).symm]
+
+/-- **A strand is involved in a crossing exactly when the crossing moves it.**
+This is what ties the over/under data to `closurePerm`: the traversal records an
+encounter precisely at the positions the permutation does not fix. -/
+theorem stepOver_isSome_iff (c : BraidCrossing n) (p : Fin n) :
+    (stepOver c p).isSome ↔ crossingSwap c p ≠ p := by
+  unfold stepOver crossingSwap
+  by_cases h0 : p = loIdx c.gen
+  · subst h0
+    simp [Equiv.swap_apply_left]
+    exact (loIdx_ne_hiIdx c.gen).symm
+  · by_cases h1 : p = hiIdx c.gen
+    · subst h1
+      simp [Equiv.swap_apply_right, h0]
+      exact loIdx_ne_hiIdx c.gen
+    · simp [h0, h1, Equiv.swap_apply_of_ne_of_ne h0 h1]
+
+/-- Switching a crossing flips both verdicts — the over/under counterpart of
+`closurePerm_switch`, which said the *positions* are untouched. Together: a
+crossing change is exactly an exchange of over for under. -/
+theorem stepOver_flipSign (c : BraidCrossing n) (p : Fin n) :
+    stepOver (flipSign c) p = (stepOver c p).map (!·) := by
+  unfold stepOver flipSign
+  by_cases h0 : p = loIdx c.gen
+  · subst h0; simp
+  · by_cases h1 : p = hiIdx c.gen
+    · subst h1; simp [h0]
+    · simp [h0, h1]
+
 end QOU.Knot.BraidClosure

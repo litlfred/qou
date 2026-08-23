@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-22T21:39:52Z
+updated_at: 2026-08-23T00:24:02Z
 ---
 
 ## Why this bean exists
@@ -297,3 +297,40 @@ each walked around its cycle, with the global encounter order recorded so that
 "first met as an under-crossing" is well defined. That is a substantial piece —
 larger than any single increment landed so far — and should be scoped as such
 rather than attempted as a quick follow-on.
+
+
+## `stepOver` — the over/under atom of the traversal
+
+The descending predicate is about which strand is met **over** and which
+**under**. `closurePerm` already carried *where* a strand goes; this carries
+*which of the two passes over*. Together they are the Lean analogue of the
+reference engine's `_step`.
+
+The convention is now **stated in the Lean rather than left implicit**: for
+`σ_i` (positive) the strand entering at the lower position passes OVER. Sign
+conventions here are not free — `qou-7ue5` is a case in this repo of two
+`computations/` sites disagreeing about a HOMFLY by a mirror, and sections 2-3
+of PR #5440 are its cleanup — so the two defining properties are proved:
+
+- `stepOver_lo_ne_hi` — **the two strands of a crossing get opposite verdicts.**
+  This is the defining property of a crossing and the reason each crossing
+  contributes exactly one `over` and one `under` to the traversal, which is what
+  makes "first met as an under-crossing" well posed.
+- `stepOver_isSome_iff` — **a strand is involved exactly when the crossing moves
+  it** (`crossingSwap c p ≠ p`). This ties the over/under data to `closurePerm`:
+  encounters are recorded precisely at the positions the permutation does not
+  fix.
+- `stepOver_flipSign` — switching flips both verdicts. The counterpart of
+  `closurePerm_switch`, which said the *positions* are untouched; together, a
+  crossing change is exactly an exchange of over for under.
+
+39 results in the file, sorry-free, zero warnings, axiom-clean.
+
+## What remains, unchanged in size
+
+The traversal proper: components taken in increasing order of least start
+position, each walked around its cycle, with the **global encounter order**
+recorded so "first met as an under-crossing" is well defined — then the
+well-founded reduction. `stepOver` and `closurePerm` are its two atoms and are
+now in place; the ordering and the termination argument are not, and that is
+still the substantial piece.
