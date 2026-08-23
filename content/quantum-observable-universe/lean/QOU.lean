@@ -1121,3 +1121,8 @@ import QOU.Mathlib.SeparatedIndex
 -- coefficients; nothing connected the two, because index lives on MvPolynomial and the
 -- height bound on Polynomial.  This module is that connection.
 import QOU.Mathlib.RothBaseCase
+-- The index of a generalized Wronskian, composed end to end:
+--   ∑ᵢ index (f i) ≤ index (mvGenWronskian D f) + m·C.
+-- The index counterpart of WronskianHeight.  index_det_ge alone does NOT give this —
+-- it bounds a determinant by its entries, not by the f.
+import QOU.Mathlib.WronskianIndex

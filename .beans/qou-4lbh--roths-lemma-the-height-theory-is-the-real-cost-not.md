@@ -796,3 +796,79 @@ What is not written is the recursion itself.
 piece was missing rather than merely unassembled. Before budgeting from that claim again,
 someone should write the statement of Roth's lemma down in Lean and check each hypothesis
 against an existing theorem — not against a bean entry.
+
+---
+
+## ⚠ 2026-08-23 — FIFTH CORRECTION, found by the audit this bean asked for
+
+Last entry's closing instruction was: *before budgeting from "only the assembly remains"
+again, check each claim against a named theorem rather than a bean entry.* Doing that
+immediately found a false claim — **one I had written in the same commit as the warning.**
+
+`RothBaseCase.lean` said, in prose:
+
+> `abs_coeff_mvGenWronskian_le` and `index_det_ge` bound it
+
+**The index half was false.** `index_det_ge` bounds `index (det M)` by the indices of the
+matrix *entries*. For a generalized Wronskian the entries are `pderivList (D i) (f j)`, and
+nothing related those back to `index (f j)`. The height side had exactly that composite
+(`abs_coeff_mvGenWronskian_le` in `WronskianHeight.lean`); the index side had no counterpart
+module at all, and the asymmetry went unnoticed because each half looked complete from its own
+end.
+
+New module `QOU/Mathlib/WronskianIndex.lean`, four declarations, all axiom-clean, built by
+name with the `.olean` deleted, no linter output:
+
+```
+nsmul_coe_withTop                     WithTop ℚ is not a semiring; nsmul_eq_mul does not apply
+index_le_index_pderivList_add         index P ≤ index (pderivList l P) + ∑_{j∈l} 1/dⱼ
+sum_index_le_index_mvGenWronskian_add ∑ᵢ index (f i) ≤ index (mvGenWronskian D f) + m·C
+sum_index_mvGenWronskian_bound_tight  the bound is attained
+```
+
+Read the main result as "differentiating `m` times costs at most `m·C` of index". It is stated
+additively because `WithTop ℚ` has no subtraction, and `⊤` must survive — a zero `f i`
+contributes `⊤` on the left and the statement stays true.
+
+⚠ **Note the direction, opposite to the height file:** heights are bounded from *above* by
+their parts, indices from *below*.
+
+### The validation is tight, and that is the point
+
+The risk here is not the shape of the bound but the **cost factor**: a version with `2·m·C`,
+or with the cost dropped, would still be true in many instances and would still typecheck.
+`sum_index_mvGenWronskian_bound_tight` pins it — `m = 1`, `f = X`, one derivative, unit weight
+at the origin: `index X = 1` on the left; the Wronskian is `∂₀X = 1` with index `0`, so the
+right side is `0 + 1·1 = 1`. Both sides are `1`, so a smaller cost factor makes the theorem
+false at this very instance.
+
+### What this says about the arc
+
+That is **five** instances of the same failure: a stack of true lemmas reading as a finished
+argument. The list is now:
+
+1. the `m = 1` base case is "the analytic half" — wrong;
+2. bare-hands Gelfond beats filling Mathlib upstream — wrong;
+3. Gelfond is needed for the induction step's height half — wrong;
+4. the `m = 1` base case is "COMPLETE" — it was a Taylor-coefficient statement, not an index one;
+5. `index_det_ge` "bounds" the Wronskian — it bounds a determinant by its entries.
+
+Note that (5) was written in the same commit that warned about exactly this pattern. **The
+warning is not self-executing; only the audit is.** The lesson is procedural, not
+mathematical: prose in a module docstring or a bean entry is not evidence, and the cheap check
+— naming the theorem that supplies each claim — finds these in minutes.
+
+### Open
+
+Only the **recursion**: Roth's lemma's statement with its parameter conditions
+(`dⱼ/dⱼ₊₁` growth, `ε`, the `qⱼ` hypotheses) and the step feeding `RothBaseCase` and the `m−1`
+case back into the `m` case.
+
+Both halves of what that step needs from a Wronskian are now composites rather than fragments:
+`abs_coeff_mvGenWronskian_le` bounds its height, `sum_index_le_index_mvGenWronskian_add` its
+index, and `index_separated` / `abs_coeff_le_of_mul_separated` carry both across the separated
+factorization.
+
+⚠ The next person to claim the remaining work is "just assembly" should write the statement of
+Roth's lemma in Lean and match every hypothesis to a named theorem. That is what found this
+one.

@@ -219,7 +219,14 @@ step that feeds this theorem and the `m−1` case back into the `m` case.
 
 Everything that step needs from the index and height calculus is now proved —
 `index_separated` and `abs_coeff_le_of_mul_separated` split the separated Wronskian,
-`abs_coeff_mvGenWronskian_le` and `index_det_ge` bound it, and this theorem terminates the
-recursion.  What is not written is the recursion itself. -/
+`abs_coeff_mvGenWronskian_le` and `sum_index_le_index_mvGenWronskian_add` bound it, and this
+theorem terminates the recursion.  What is not written is the recursion itself.
+
+⚠ An earlier version of this paragraph named `index_det_ge` as the index bound.  **That was
+false when written:** `index_det_ge` bounds a determinant by the indices of its *entries*, and
+for a Wronskian the entries are `pderivList (D i) (f j)`, which nothing related back to
+`index (f j)`.  The composite that actually does is
+`sum_index_le_index_mvGenWronskian_add` in `QOU/Mathlib/WronskianIndex.lean`, written after
+this module and because of this error. -/
 
 end MvPolynomial
