@@ -139,8 +139,27 @@ def main() -> int:
                 if aset is not None:
                     row["sdp_active_set_idx"] = aset
                     row["sdp_active_ops"] = [NF_NAMES[i] for i in aset]
-                row["sdp_duality_gap"] = float(f"{sdp.get('duality_gap', 0.0):.2e}")
-                row["sdp_primal_obj"] = round(sdp.get("primal_obj", 0.0), 6)
+                # NOT `round(..., 6)`. These quantities are ~1e-44 on the
+                # MPFR backend, and rounding to six decimals wrote `0.0` into
+                # the witness — the value destroyed outright, not merely
+                # truncated. Pairing that with a full-precision companion is
+                # worse than either alone: the shadow rule would excuse an
+                # f64 that CONTRADICTS its own companion. Emit the solver's
+                # value so the pair agrees. Bean `qou/ftuv`.
+                row["sdp_duality_gap"] = float(sdp.get("duality_gap", 0.0))
+                row["sdp_primal_obj"] = float(sdp.get("primal_obj", 0.0))
+                # Full-precision companions when the MPFR backend served the
+                # solve. `backend="auto"` picks clarabel-MPFR whenever the
+                # binary is on disk, so these appear without a backend
+                # argument — but the two display fields above are `.2e` and
+                # `round(…, 6)`, so without carrying the companions a 167-bit
+                # solve reached this witness as six decimal places. Bean
+                # `qou/ftuv`.
+                for _k in ("primal_obj_str", "dual_obj_str",
+                           "duality_gap_str", "eigenvalues_str",
+                           "X_star_str", "Z_star_str"):
+                    if sdp.get(_k) is not None:
+                        row[f"sdp_{_k}"] = sdp[_k]
             except Exception as e:  # noqa: BLE001
                 row["sdp_error"] = f"{type(e).__name__}: {e}"
         rows.append(row)

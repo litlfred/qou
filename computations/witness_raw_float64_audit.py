@@ -290,16 +290,51 @@ def _is_full_precision_shadow(value, companion) -> bool:
 
     So a companion counts only when it demonstrably carries digits the double
     could not hold.
+
+    **AND when it agrees with the float it shadows** (added 2026-08-23, bean
+    `qou/ftuv`). The digit-count guard alone leaves a second laundering hole,
+    a sibling of the one above: a companion carrying 50 digits of a DIFFERENT
+    number excuses its f64 just as well. Found by walking into it — a producer
+    wrote `round(primal_obj, 6)` beside a full-precision companion, and since
+    the value was ~4.2e-44 the rounding wrote **`0.0`**. The pair then read as
+    "f64 convenience copy + exact value" while the f64 was not a lossy copy of
+    the value but a different number entirely, and a consumer doing arithmetic
+    on it — the very consumers this rule exists to keep served — would get
+    zero.
+
+    Measured before landing: of 236 shadow pairs in the live corpus, **236
+    agree and 0 disagree**, so this rejects nothing that was already honest.
+
+    The tolerance is deliberately LOOSE — 1e-9 relative, not f64 epsilon. The
+    defect being guarded against is a companion describing a *different
+    number*, which is a total mismatch (`0.0` against `4.2e-44` is a relative
+    error of 1). Demanding correct rounding would also reject hand-written
+    fixtures and any producer that truncated its float for display, which is
+    sloppy but not laundering, and would make the rule brittle for no gain.
     """
+    _AGREE_REL_TOL = 1e-9
+
+    def _agrees(v: float, c: str) -> bool:
+        try:
+            cv = float(c)
+        except ValueError:
+            return False
+        if cv == v:
+            return True
+        scale = max(abs(v), abs(cv))
+        return scale > 0 and abs(cv - v) <= _AGREE_REL_TOL * scale
+
     if isinstance(value, float) and isinstance(companion, str):
-        return _sig_digits(companion) > _F64_SIG_DIGITS
+        return _sig_digits(companion) > _F64_SIG_DIGITS and _agrees(value, companion)
     if isinstance(value, list) and isinstance(companion, list):
         if not value or len(value) != len(companion):
             return False
         pairs = list(zip(value, companion))
         if not all(isinstance(v, float) and isinstance(c, str) for v, c in pairs):
             return False
-        return all(_sig_digits(c) > _F64_SIG_DIGITS for _, c in pairs)
+        return all(
+            _sig_digits(c) > _F64_SIG_DIGITS and _agrees(v, c) for v, c in pairs
+        )
     return False
 
 
@@ -440,6 +475,26 @@ def self_test() -> int:
         ({"y_star": [0.5, 0.25],
           "y_star_str": ["5.000000000000000000000000000000e-1",
                          "2.500000000000000000000000000000e-1"]}, 0),
+
+        # ── the SECOND laundering guard (2026-08-23) ─────────────────
+        # A companion with plenty of digits, describing a DIFFERENT number,
+        # excused its f64 just as effectively as one with too few. Walked
+        # into it: a producer wrote `round(primal_obj, 6)` beside a
+        # full-precision companion and, the value being ~4.2e-44, the
+        # rounding wrote 0.0. The pair read as "convenience copy + exact
+        # value" while the copy was zero — and a consumer doing arithmetic
+        # on it, the reader this rule exists to keep served, would get zero.
+        ({"primal_obj_x": 0.0,
+          "primal_obj_x_str":
+              "4.203895392974451212771188749869748393840785825629547e-44"}, 1),
+        # The repaired pair: the f64 IS the companion as a double.
+        ({"primal_obj_x": 4.203895392974451e-44,
+          "primal_obj_x_str":
+              "4.203895392974451212771188749869748393840785825629547e-44"}, 0),
+        # List form, one element disagreeing, still counts all of them.
+        ({"v": [1.5, 0.0],
+          "v_str": ["1.500000000000000000000000000001",
+                    "9.999999999999999999999999999999e-30"]}, 2),
 
         # ── the laundering guard, which is the point ──────────────────
         # A *_str that is merely the f64 spelled as text proves nothing and

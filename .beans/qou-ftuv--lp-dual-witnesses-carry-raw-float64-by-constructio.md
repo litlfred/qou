@@ -599,3 +599,94 @@ audit that concluded "not implementable"
       upstream Clarabel rather than this fork.
 - [ ] Re-run the SDP producers so the committed witnesses pick up the
       companions, then re-measure `qou/f7af`'s excused count.
+
+## 2026-08-23 (third) — producers pick it up automatically; and a SECOND laundering hole
+
+### `backend="auto"` now serves MPFR, with no producer change
+
+With `clarabel-operator-selection-lp` on disk, `solve_psd_operator_selection_sdp`'s
+default `backend="auto"` selects it and returns all six `*_str` companions.
+Every producer calling the default gets 50-dps results the moment the binary
+is built — **the build IS the switch.** Worth knowing for CI and fresh
+containers, where an unbuilt binary silently falls back to cvxpy/SCS f64.
+
+### The rounding was destroying the value, not truncating it
+
+`nucleus_operator_selection_sdp.py` recorded
+
+```python
+row["sdp_primal_obj"] = round(sdp.get("primal_obj", 0.0), 6)
+```
+
+On the MPFR backend that quantity is ~4.2e-44, so `round(…, 6)` wrote **`0.0`**
+into the witness. Not a lossy copy — the value gone. Fixed to emit the solver's
+value; the witness now carries
+
+```
+sdp_primal_obj       4.203895392974451e-44
+sdp_primal_obj_str   4.203895392974451212771188749869748393840785825629547e-44
+```
+
+### That exposed a second hole in the shadow rule
+
+`_is_full_precision_shadow` checked only that the companion carries **more than
+17 significant digits**. It never checked that the companion describes the
+**same number**. So the pair
+
+```
+sdp_primal_obj = 0.0     sdp_primal_obj_str = "4.2038…e-44"   (52 digits)
+```
+
+would have been excused as "f64 convenience copy + exact value", while the copy
+was zero — and a consumer doing arithmetic on it, the reader the whole rule
+exists to keep served, would get zero.
+
+Sibling of the hole the rule already guarded (`qou-t0rf`: `x_str = str(x)`,
+too *few* digits). Same shape, opposite direction, and I walked into it by
+adding a companion to a rounded field.
+
+**Closed**, with the tolerance chosen deliberately: **1e-9 relative, not f64
+epsilon.** The defect is a companion describing a different number — a relative
+error of 1 in the case above. Demanding correct rounding would also reject
+hand-written fixtures and producers that truncated a float for display, which
+is sloppy but not laundering, and would make the rule brittle for no gain.
+
+**Measured before landing: 236 shadow pairs in the live corpus, 236 agree, 0
+disagree.** Rejects nothing that was already honest.
+
+### Correction: the self-test DID exist
+
+I wrote above that `ftuv`'s claimed self-test "was never committed — grepped
+2026-08-23", and started writing a second one. Wrong: `self_test()` is at
+`witness_raw_float64_audit.py:490` and is thorough. I grepped `_selftest` /
+`def test_` / `selftest` and missed `self_test`. My duplicate was removed and
+the three new cases went into the existing suite instead — **25 cases, all
+passing**, including both directions of the laundering guard.
+
+### Verification
+
+```
+witness_raw_float64_audit --self-test   25/25 PASSED
+witness_raw_float64_audit --strict      NEW 0, REGRESSED 0, exit 0
+lp_dual_witness_validator --strict-wired  3/3 wired OK
+pytest tools/pyhecke                    193 passed, 44 skipped, 0 failed
+```
+
+### `qou/f7af`'s 4,052 is unchanged, and why
+
+The carve-out count moves only when an **LP** producer switches to
+`backend="clarabel"`, and none has — that is the owner call this bean parked.
+The SDP work above adds companions on a path whose field names
+(`sdp_*`, `X_star`, `eigenvalues`) were never in `LP_DUAL_F64_FIELDS` anyway.
+The mechanism is now proven end-to-end on committed data; what remains is the
+decision, not the machinery.
+
+## Next
+
+- [x] Re-run an SDP producer so a committed witness carries the companions.
+- [x] Close the agreement hole in the shadow rule, with a self-test case.
+- [ ] **Owner: switch the LP producers to `backend="clarabel"`?** That, and
+      only that, moves `f7af`'s 4,052.
+- [ ] CI/fresh containers fall back to f64 silently when the Rust binary is
+      unbuilt. If the MPFR path is meant to be the norm, that fallback should
+      be loud — or the binary should be built in the gate.
