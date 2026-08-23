@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T13:49:02.516115+00:00",
-  "commitSha": "e20525c71ba8618bfc133d45dfad4918843d988d",
+  "computedAt": "2026-08-23T23:18:19.977339+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [
     {
       "name": "diagonal_only_refuted",
@@ -14,16 +14,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 168,
   "computation": "phase1b-two-row-transfer-matrix",
   "scriptFile": "phase1b_two_row_closed_form_character.py",
-  "scriptHash": "4b0310ac64aa",
-  "scriptCommitSha": "f352308a5f74de18d2ed812ed20de23d54b95b36",
+  "scriptHash": "0a72242e3976",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/phase5/phase1b_two_row_closed_form_character.py"
+    ],
+    "reproduce": "python3 -u computations/phase5/phase1b_two_row_closed_form_character.py"
   },
   "description": "Tests whether the diagonal-only transfer-matrix formula gives the exact Hecke character for 2-row partitions of ⁴He's braid word. If exact, replaces O(d_λ²) matrix product with O(d_λ) sum — massive speedup for d_λ=297.",
   "contentBlock": "conj:psd-trace-orthogonality",
@@ -36,9 +52,9 @@
           1
         ],
         "d_lambda": 11,
-        "chi_full": 7.390200966330934,
-        "chi_diag_only": 0.13997716650773734,
-        "rel_error": 0.9810590852474161,
+        "chi_full": 7.390199346502315,
+        "chi_diag_only": 0.13997712240709875,
+        "rel_error": 0.9810590870632809,
         "diagonal_exact": false
       },
       {
@@ -47,9 +63,9 @@
           2
         ],
         "d_lambda": 54,
-        "chi_full": 10.461121094404168,
-        "chi_diag_only": 0.004636694857599115,
-        "rel_error": 0.9995567688380858,
+        "chi_full": 10.461118039526953,
+        "chi_diag_only": 0.004636692177761004,
+        "rel_error": 0.9995567689648236,
         "diagonal_exact": false
       },
       {
@@ -58,9 +74,9 @@
           3
         ],
         "d_lambda": 154,
-        "chi_full": 27.331191373309558,
-        "chi_diag_only": -0.979157932130924,
-        "rel_error": 1.0358256586314465,
+        "chi_full": 27.33118390932372,
+        "chi_diag_only": -0.979157790383675,
+        "rel_error": 1.0358256632289407,
         "diagonal_exact": false
       },
       {
@@ -69,9 +85,9 @@
           4
         ],
         "d_lambda": 275,
-        "chi_full": 30.262869451455778,
-        "chi_diag_only": -0.041209016146256314,
-        "rel_error": 1.001361702207795,
+        "chi_full": 30.262858756171408,
+        "chi_diag_only": -0.04120900339759222,
+        "rel_error": 1.0013617022677737,
         "diagonal_exact": false
       },
       {
@@ -80,9 +96,9 @@
           5
         ],
         "d_lambda": 297,
-        "chi_full": 21.773345101891422,
-        "chi_diag_only": -0.003289212740384916,
-        "rel_error": 1.0001510660270616,
+        "chi_full": 21.773336677043673,
+        "chi_diag_only": -0.003289212069132372,
+        "rel_error": 1.000151066054685,
         "diagonal_exact": false
       },
       {
@@ -91,9 +107,9 @@
           6
         ],
         "d_lambda": 132,
-        "chi_full": 20.470386787186825,
-        "chi_diag_only": -0.3256566507554619,
-        "rel_error": 1.0159086711033376,
+        "chi_full": 20.470380034462448,
+        "chi_diag_only": -0.3256566048548471,
+        "rel_error": 1.0159086741089611,
         "diagonal_exact": false
       }
     ]

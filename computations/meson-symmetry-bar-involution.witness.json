@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:15:32.644068+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-23T23:17:02.319868+00:00",
+  "commitSha": "7b27cf41344a7db87665650bf2990dc6f5e7c491",
   "assertions": [
     {
       "name": "charge_conj_neq_bar",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 41,
   "computation": "meson-symmetry-bar-involution",
   "scriptFile": "meson_symmetry_and_bar_involution.py",
   "scriptHash": "53ce0046d1f1",
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [

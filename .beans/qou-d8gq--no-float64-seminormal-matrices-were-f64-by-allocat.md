@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-16T13:45:22Z
-updated_at: 2026-08-23T22:59:31Z
+updated_at: 2026-08-23T23:16:09Z
 ---
 
 ## The defect
@@ -194,3 +194,65 @@ The generalisable rule: **every float64 kernel that ends in `float(...)` and
 does a numpy matmul should carry this one-line dtype assert.**
 `chi_lambda_of_word` is the first; a sweep for that signature would find the
 rest, and it is a far better use of effort than another approximate scan.
+
+
+---
+
+## MEASURED: no second instance in the tree. Do NOT do the 19-kernel migration.
+
+A sweep for the rule this bean proposes — *a function that returns `float(...)`
+and does a numpy matmul* — found **27 such kernels, 19 unguarded**, and the
+signature validates against its own motivating case (it finds
+`chi_lambda_of_word` and correctly shows it as guarded).
+
+The obvious next step was to add the one-line assert to all 19. **I measured
+first, and the measurement says don't.**
+
+### How
+
+19 unguarded narrowed to **12** by asking which modules can even reach an
+object scalar (import `mpmath` or `sympy`); the other 7 are pure-float64
+modules where the promotion cannot arise. The 12 have a strikingly uniform
+shape — `return float(np.trace(X))` — so a temporary PRINTING probe on `X`'s
+dtype was inserted mechanically before each return, the producers were run,
+and the probes were reverted (`git checkout --`, tree verified clean).
+
+### Result
+
+    total observations                  1388
+    distinct dtypes observed            ['float64']
+    object dtype                        0
+
+    meson_character_shortcut_l1              float64   1003
+    probes/markov_reduction_h3_to_h4_verify  float64    167
+    ocneanu_weights                          float64     87
+    alpha/alpha_k_jones_markov_h3            float64     39
+    alpha/alpha_k_jones_markov_h4            float64     39
+    phase5/phase1a_symbolic_trace_dominant   float64     35
+    meson_symmetry_and_bar_involution        float64     12
+    phase5/phase1b_two_row_closed_form       float64      6
+
+**Adding a raising guard to those 8 would be dead weight** — it would defend
+against something measured not to occur, in code nobody has studied, with a
+non-zero chance of breaking a producer that legitimately does something else.
+The guard belongs where the bug was found, and it is there (`6ed921b93`).
+
+### The honest limit of this measurement
+
+Two of the ten probed files ran rc=0 but **never reached the probed return**,
+so they are **UNMEASURED, not clean**:
+
+    computations/from_scratch/hoefsmit_general.py    chi_lambda_braid_numeric
+    computations/hecke/hecke_characters.py           nuclear_braid_character
+
+`nuclear_braid_character` is the more interesting of the two: it is the only
+kernel in the 27 whose return is `np.trace(product)` with **no `float(...)`
+wrapper**, so unlike the rest it can hand an object scalar straight to its
+caller. If anyone extends this, those two are where to start — driven by a
+caller that actually exercises them.
+
+### What the sweep was actually worth
+
+Not a migration — a **negative result**, obtained in about ten minutes, that
+prevents one. The rule stays correct and worth applying to any NEW float64
+kernel; it just has no backlog behind it today.
