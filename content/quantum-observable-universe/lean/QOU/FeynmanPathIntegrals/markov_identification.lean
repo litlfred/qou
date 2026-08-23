@@ -74,9 +74,9 @@ opaque markovTrace : ℝ
 
 The substantive content of `lem:feynman-markov-identification`: the
 Jones–Markov trace decomposes as the Markov-weighted sum of
-Specht-module partial traces.  Rests on the branching / Wenzl-bridge
-decomposition, which Mathlib does not have — so the body is `sorry`
-with the manuscript citation. -/
+Specht-module partial traces. This requires massive infrastructure
+(the Wenzl-bridge decomposition) that cannot be added as a simple class
+field, so the body is `sorry` with the manuscript citation. -/
 -- Ref: [manuscript] lem:feynman-markov-identification (Wenzl-bridge branching of tr_M)
 theorem markovTrace_branching :
     markovTrace
