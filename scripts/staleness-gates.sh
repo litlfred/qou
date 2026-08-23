@@ -127,6 +127,35 @@ GATES=(
   # 5-case self-test pins both quiet cases (unchanged backlog, never-had-
   # provenance) for exactly that reason.
   "witness drain audit|computations/witness_drain_audit.py|--strict|yes"
+  # ADVISORY, red on arrival at 90 — and filed HERE deliberately, with the
+  # misfit stated rather than hidden. Its SUBJECT is content-block labels,
+  # which belongs to neither existing family. The DEFECT it now guards against
+  # is this family's own signature: an audit whose scope silently narrowed and
+  # went on reporting yesterday's answer with today's authority.
+  #
+  # It globbed its own directory, non-recursively — 43 of 2717 witnesses, 1.6%,
+  # reported as a clean bill of health. Correct when written: `HERE` was
+  # `computations/` until the Phase-6 refactor (2026-06-02) moved the module
+  # into `audits/` while the witnesses stayed put. Its committed witness is
+  # stamped 2026-06-01, the day before.
+  #
+  #     2026-06-01, corpus-wide   rows 305   ok 248 | missing_label 43
+  #     blind, after the move     rows  20   ok   8 | missing_label  1
+  #     repointed, now            rows 738   ok 626 | missing_label 90
+  #
+  # missing_label 43 -> 1 was a FALSE improvement; the true backlog is 90, more
+  # than double what was last honestly measured. That is why it is advisory:
+  # red on arrival, and this file's preamble says a gate red on arrival gets
+  # skipped.
+  #
+  # FLIP TO BLOCKING WHEN missing_label REACHES 0. `--strict` already exits 1
+  # on any, so the flip is a one-word edit here and nothing else.
+  #
+  # Fifth instance of this shape in one branch, after `_load_chi_witness`,
+  # `witness.py`'s check-all, and the lowercase-only vendor scraper. The rule
+  # is witness_shape_guard's own: A CHECK WHOSE SUCCESS CONDITION IS SATISFIED
+  # BY THE EMPTY STATE IS NOT A CHECK.
+  "content-block labels|computations/audits/content_block_label_audit.py|--strict|no"
 )
 
 if [ "${1:-}" = "--list" ]; then

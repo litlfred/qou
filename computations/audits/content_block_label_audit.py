@@ -47,6 +47,14 @@ from pathlib import Path
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
+
+#: The live computations corpus, LOCATED rather than derived by counting
+#: `.parent` levels — that count was wrong in both layouts it was written for
+#: (bean qou-rug0) and is exactly what breaks when a module moves.
+COMPUTATIONS = next(
+    (a / "computations" for a in HERE.parents if (a / "computations").is_dir()),
+    HERE,
+)
 sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -129,8 +137,36 @@ def main() -> int:
     print(f"Registered labels (across content/**/*.ts): {len(registered)}")
 
     all_rows: list[dict[str, Any]] = []
-    witness_dir = HERE
-    for w in sorted(witness_dir.glob("*.witness.json")):
+    # `HERE.glob(...)` — non-recursive, over this module's OWN directory — was
+    # auditing 43 of the corpus's 2717 witnesses: 1.6%, reported as a clean
+    # bill of health.
+    #
+    # It was correct when written. `HERE` was `computations/` until the Phase-6
+    # subdirectory refactor (2026-06-02) moved this module into `audits/` while
+    # the witnesses it audits stayed where they were. The committed witness is
+    # stamped 2026-06-01 — the day before — and its 305 rows are what the
+    # corpus-wide scan actually saw. Everything since has been a near-empty
+    # scan whose output only ever got SMALLER, which read as progress:
+    #
+    #     2026-06-01   rows=305   ok 248 | missing_label 43 | informational 14
+    #     blind        rows= 20   ok   8 | missing_label  1 | informational 11
+    #
+    # `missing_label` 43 -> 1 is a false improvement, not a drain.
+    #
+    # Fourth instance of this exact shape in one branch — `_load_chi_witness`
+    # globbing its own directory after the same refactor, `witness.py`'s
+    # check-all globbing the installed package directory, the lowercase-only
+    # vendor scraper matching a truncated fragment — and it is the rule
+    # `witness_shape_guard`'s own preamble states: A CHECK WHOSE SUCCESS
+    # CONDITION IS SATISFIED BY THE EMPTY STATE IS NOT A CHECK.
+    #
+    # `COMPUTATIONS`, located rather than assumed, and `rglob` so a future move
+    # of either this module or the witnesses cannot silently narrow it again.
+    # `_deprecated` excluded, matching every other consumer in the family.
+    witness_dir = COMPUTATIONS
+    for w in sorted(witness_dir.rglob("*.witness.json")):
+        if "_deprecated" in w.parts:
+            continue
         if w.name == "content-block-label-audit.witness.json":
             continue  # don't audit ourselves
         all_rows.extend(_audit_witness(w, registered))
