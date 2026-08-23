@@ -154,9 +154,38 @@ def main() -> int:
     results = []
     t0 = time.time()
     for i, prod in enumerate(producers, 1):
-        src = comp / prod
-        if not src.exists():
-            hits = list(comp.rglob(prod))
+        # `prod` is a bare `scriptFile` basename lifted out of a witness, so
+        # resolve it BESIDE THE WITNESS THAT NAMES IT before falling back.
+        # Producers live next to the witnesses they emit, and preferring the
+        # root instead picks the wrong script whenever a basename is
+        # duplicated: `witness_provenance_audit.py` exists at both
+        # `computations/` and `computations/audits/`, and the witness naming it
+        # is `audits/witness-provenance-audit.witness.json` — so the old
+        # `comp / prod` ran the ROOT copy, which per bean qou-2r42 is a
+        # DIFFERENT audit (correctness vs I14 completeness), not another copy
+        # of the same one.
+        #
+        # The rglob fallback is sorted and refuses ambiguity: `rglob` yields in
+        # os.scandir order, so `hits[0]` could pick a different script per
+        # machine with nothing in the output saying which ran. Bean qou-kcii.
+        src = None
+        for _w in sorted(prod_map.get(prod, ())):
+            cand = (wt / _w).parent / prod
+            if cand.exists():
+                src = cand
+                break
+        if src is None and (comp / prod).exists():
+            src = comp / prod
+        if src is None:
+            hits = sorted(p for p in comp.rglob(prod)
+                          if "_deprecated" not in p.parts)
+            if len(hits) > 1:
+                rels = [p.relative_to(wt).as_posix() for p in hits]
+                print(f"[{i:3}/{len(producers)}] {prod:<58} AMBIGUOUS — "
+                      + " | ".join(rels), flush=True)
+                results.append({"producer": prod, "verdict": "AMBIGUOUS_BASENAME",
+                                "candidates": rels})
+                continue
             src = hits[0] if hits else None
         el = time.time() - t0
         eta = (el / max(i - 1, 1)) * (len(producers) - i + 1) if i > 1 else 0.0
