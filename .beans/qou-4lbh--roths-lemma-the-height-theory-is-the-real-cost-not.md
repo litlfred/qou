@@ -1240,3 +1240,57 @@ this arc's record is that a list of available pieces is not evidence that they a
 
 Verification: all eighteen arc modules rebuilt with `.olean`s deleted — exit 0, no linter
 output.
+
+---
+
+## ⚠ 2026-08-23 — SIXTH CORRECTION: "the inequality the recursion runs on" was an overclaim
+
+Last entry landed `sum_index_le_index_sepW_add` and called it "the inequality the recursion
+runs on". Making the cost **concrete** this turn showed that claim is not established.
+
+### The new lemmas
+
+```
+sum_map_inv_le_length_div        ∑_{k∈l} 1/dₖ ≤ |l| / D   when D ≤ dₖ
+sum_map_inv_append_sumElim       cost splits across the two variable groups
+cost_bound_of_bounded_order      per-entry cost ≤ r/D₁ + r/D₂
+sum_index_le_index_sepW_concrete r·index P ≤ index U + index V + r²(1/D₁ + 1/D₂)
+```
+
+All axiom-clean; eighteen arc modules rebuilt with `.olean`s deleted, exit 0, no linter output.
+
+### ⚠ What the concrete form exposes
+
+`r` is the length of a **minimal** separated representation, so `r ≤ (number of distinct
+x-monomials of P) ≤ d₁ + 1`. Then `r²/D₁ ≈ d₁`, and the error term is of the same order as the
+trivial bound on the index itself. **In that regime the inequality is true but useless.**
+
+The classical proof does not have this problem, and the reason is specific: it measures the
+Wronskian's index against the **Wronskian's own** degree vector. `W` has degree `≤ r·d₁` in
+`x`, so `index W` is taken with weights `r·d`, not `d`. **Every statement in this arc uses one
+degree vector `d` throughout** — `index_sepW`, `sum_index_le_index_sepW_add`, and the concrete
+form all inherit that.
+
+So the honest status: the inequality is **proved and correct**, and it is **not established**
+that it is the form Roth's lemma needs. Supplying the rescaling — an `index (r • d) …` variant,
+or a lemma relating `index d` to `index (r • d)` — is unfinished work the recursion will force.
+
+### Why this one is different from the previous five
+
+The first five corrections were all *missing pieces* found by asking "what supplies this?".
+This one is a **wrong constant regime** in a piece that exists and is correct. No audit of
+names or shapes would have caught it: `sum_index_le_index_sepW_add` typechecks, composes by
+`rfl`, and has a tight validation instance. What caught it was **instantiating the abstract
+parameter** — replacing `C` by an actual formula and then reading the magnitude.
+
+That suggests a sixth habit alongside the others: when a statement carries an abstract
+constant, compute it before believing the statement is usable. A hypothesis named `C` hides
+whether the theorem says anything.
+
+### Open
+
+* The **degree rescaling** — newly identified, and a prerequisite rather than a detail.
+* The **recursion**: `ω(m, ε)`, the choice of bounded-order `Dx`, `Dy`, and the arithmetic.
+
+⚠ Nothing here should be read as "the index side of the induction step is done". The module
+docstrings now say so at the two places the claim was made.

@@ -38,6 +38,7 @@
 -/
 import QOU.Mathlib.MvGenWronskian
 import QOU.Mathlib.RothIndex
+import Mathlib.Algebra.Order.Field.Basic
 
 namespace MvPolynomial
 
@@ -122,6 +123,26 @@ theorem sum_index_le_index_mvGenWronskian_add [DecidableEq σ] {m : ℕ}
           nsmul_coe_withTop]
     _ ≤ index d α (mvGenWronskian D f) + (((m : ℚ) * C : ℚ) : WithTop ℚ) :=
         add_le_add_right hdet _
+
+/-- **The differentiation cost of a list is at most its length over the smallest degree.**
+
+`∑_{k ∈ l} 1/dₖ ≤ |l| / D` when `D ≤ dₖ` for every `k`.  This is what turns the abstract cost
+hypothesis of the bounds below into something concrete. -/
+theorem sum_map_inv_le_length_div {D : ℕ} (hD : D ≠ 0) (d : σ → ℕ) (hd : ∀ k, D ≤ d k)
+    (l : List σ) :
+    (l.map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ (l.length : ℚ) / (D : ℚ) := by
+  have hDQ : (0 : ℚ) < (D : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+      rw [List.map_cons, List.sum_cons, List.length_cons]
+      have h1 : (1 : ℚ) / (d a : ℚ) ≤ 1 / (D : ℚ) :=
+        one_div_le_one_div_of_le hDQ (by exact_mod_cast hd a)
+      have hsplit : ((t.length + 1 : ℕ) : ℚ) / (D : ℚ)
+          = (1 : ℚ) / (D : ℚ) + (t.length : ℚ) / (D : ℚ) := by
+        push_cast; ring
+      rw [hsplit]
+      exact add_le_add h1 ih
 
 /-- **The index of a determinant of operators applied to a single polynomial.**
 

@@ -99,12 +99,16 @@ theorem abs_coeff_le_of_sepW_right {r : ℕ}
 
 /-! ### The key inequality of the step -/
 
-/-- **`r · index P ≤ index U + index V + r·C`** — the inequality the recursion runs on.
+/-- **`r · index P ≤ index U + index V + r·C`** — the induction step's central inequality.
 
 Read: differentiating `P` into its separated Wronskian costs at most `C` of index per entry,
 and the Wronskian's index then splits exactly between the two factors.  So a *large* index for
 `P` forces a large index for one of `U`, `V`, which is what the induction hypothesis
 contradicts.
+
+⚠ **An earlier version of this docstring called this "the inequality the recursion runs on."
+That was an overclaim** — see `sum_index_le_index_sepW_concrete` below, which makes the cost
+concrete and thereby exposes a reason to doubt that this is the form Roth's lemma needs.
 
 Additive rather than `r·index P − r·C ≤ …` because `WithTop ℚ` has no subtraction, and `⊤`
 must survive: a zero `P` gives `⊤` on the left and the statement stays true.
@@ -134,6 +138,69 @@ theorem sum_index_le_index_sepW_add {K : Type*} [CommRing K] [IsDomain K]
   rw [hsep, index_sepW] at h
   exact h
 
+/-! ### Making the cost concrete -/
+
+/-- The cost of a mixed operator list splits across the two variable groups. -/
+theorem sum_map_inv_append_sumElim (d₁ : σ → ℕ) (d₂ : τ → ℕ) (l1 : List σ) (l2 : List τ) :
+    ((l1.map Sum.inl ++ l2.map Sum.inr).map
+        (fun k => (1 : ℚ) / ((Sum.elim d₁ d₂ k : ℕ) : ℚ))).sum
+      = (l1.map (fun a => (1 : ℚ) / (d₁ a : ℚ))).sum
+        + (l2.map (fun b => (1 : ℚ) / (d₂ b : ℚ))).sum := by
+  rw [List.map_append, List.sum_append, List.map_map, List.map_map]
+  rfl
+
+/-- A concrete bound on the per-entry cost, given operator lists of bounded length and a floor
+`D₁`, `D₂` on the two degree vectors. -/
+theorem cost_bound_of_bounded_order {r : ℕ} {D₁ D₂ : ℕ} (hD₁ : D₁ ≠ 0) (hD₂ : D₂ ≠ 0)
+    (d₁ : σ → ℕ) (d₂ : τ → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (hx : ∀ i, (Dx i).length ≤ r) (hy : ∀ j, (Dy j).length ≤ r) (i j : Fin r) :
+    (((Dx i).map Sum.inl ++ (Dy j).map Sum.inr).map
+        (fun k => (1 : ℚ) / ((Sum.elim d₁ d₂ k : ℕ) : ℚ))).sum
+      ≤ (r : ℚ) / (D₁ : ℚ) + (r : ℚ) / (D₂ : ℚ) := by
+  have hD₁Q : (0 : ℚ) < (D₁ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₁
+  have hD₂Q : (0 : ℚ) < (D₂ : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hD₂
+  rw [sum_map_inv_append_sumElim]
+  refine add_le_add (le_trans (sum_map_inv_le_length_div hD₁ d₁ hd₁ _) ?_)
+    (le_trans (sum_map_inv_le_length_div hD₂ d₂ hd₂ _) ?_)
+  · exact div_le_div_of_nonneg_right (by exact_mod_cast hx i) hD₁Q.le
+  · exact div_le_div_of_nonneg_right (by exact_mod_cast hy j) hD₂Q.le
+
+/-- **The central inequality with the cost made concrete:**
+
+    r · index P  ≤  index U + index V + r²·(1/D₁ + 1/D₂).
+
+⚠⚠ **This is where a problem with the previous docstring's claim becomes visible, and it is
+worth stating rather than hiding.**
+
+`r` is the length of a minimal separated representation, so `r ≤ (number of distinct
+`x`-monomials of `P`) ≤ d₁ + 1`.  Then `r²/D₁ ≈ d₁`, and the error term is of the same order
+as the trivial bound on the index itself.  In that regime the inequality is **true but
+useless**.
+
+The classical proof does not have this problem, because it measures the Wronskian's index
+against the **Wronskian's own** degree vector — `W` has degree `≤ r·d₁` in `x`, so the weights
+used for `index W` are `r·d` rather than `d`.  Every statement in this arc uses one degree
+vector `d` throughout, `index_sepW` included.
+
+⚠ So: this inequality is **proved and correct**, and it is **not established** that it is the
+form Roth's lemma needs.  Supplying the rescaling — an `index (r • d) …` variant, or a lemma
+relating `index d` to `index (r • d)` — is unfinished work that the recursion will force.
+Nothing here should be read as "the index side of the induction step is done". -/
+theorem sum_index_le_index_sepW_concrete {K : Type*} [CommRing K] [IsDomain K]
+    [DecidableEq σ] [DecidableEq τ] {r D₁ D₂ : ℕ} (hD₁ : D₁ ≠ 0) (hD₂ : D₂ ≠ 0)
+    (d₁ : σ → ℕ) (d₂ : τ → ℕ) (hd₁ : ∀ k, D₁ ≤ d₁ k) (hd₂ : ∀ k, D₂ ≤ d₂ k)
+    (α : σ → K) (β : τ → K)
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (hx : ∀ i, (Dx i).length ≤ r) (hy : ∀ j, (Dy j).length ≤ r)
+    (φ : Fin r → MvPolynomial σ K) (ψ : Fin r → MvPolynomial τ K) :
+    ∑ _i : Fin r, index (Sum.elim d₁ d₂) (Sum.elim α β)
+        (∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) K) * rename Sum.inr (ψ k))
+      ≤ (index d₁ α (mvGenWronskian Dx φ) + index d₂ β (mvGenWronskian Dy ψ))
+        + ((((r : ℚ) * ((r : ℚ) / (D₁ : ℚ) + (r : ℚ) / (D₂ : ℚ))) : ℚ) : WithTop ℚ) :=
+  sum_index_le_index_sepW_add d₁ d₂ α β Dx Dy φ ψ _
+    (cost_bound_of_bounded_order hD₁ hD₂ d₁ d₂ hd₁ hd₂ Dx Dy hx hy)
+
 /-! ### Next
 
 The statement is now written (`QOU/Mathlib/RothLemmaStatement.lean`), its `m = 1` case proved,
@@ -141,8 +208,12 @@ and the step's inputs are all constructible (`SeparatedRepresentation`).  With
 `sum_index_le_index_sepW_add` above, the step's key *inequality* is proved too.
 
 ⚠ What remains is the **recursion**: choosing `ω(m, ε)`, choosing the operator families `Dx`,
-`Dy` with bounded order, and doing the arithmetic that turns this inequality plus the
-induction hypothesis into a contradiction.  The pieces exist; the argument that assembles them
-does not. -/
+`Dy` with bounded order, and doing the arithmetic that turns the inequality plus the induction
+hypothesis into a contradiction.
+
+⚠ And, newly visible from `sum_index_le_index_sepW_concrete`: the **degree rescaling**.  The
+classical argument measures the Wronskian's index against the Wronskian's own degree vector
+`r·d`, while every statement here uses a single `d` throughout.  That is not a detail the
+recursion can paper over — it is what makes the error term small — and it is not written. -/
 
 end MvPolynomial
