@@ -464,28 +464,6 @@
    "n_fields": 14,
    "err": ""
   },
-  "block_swap_binding": {
-   "rc": -9,
-   "sec": 1200.1,
-   "witnesses": [
-    "block-swap-binding.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 16,
-   "err": "TIMEOUT >1200s"
-  },
-  "borromean-axial-coupling": {
-   "rc": 1,
-   "sec": 0.5,
-   "witnesses": [
-    "borromean-axial-coupling.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 125,
-   "err": "KeyError: 'gram_inverse'"
-  },
   "branching-qvalue-chain": {
    "rc": 0,
    "sec": 1.0,
@@ -1255,17 +1233,6 @@
    "n_fields": 95,
    "err": ""
   },
-  "hadron_knot_table": {
-   "rc": 1,
-   "sec": 33.5,
-   "witnesses": [
-    "hadron-knot-table.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 693,
-   "err": "TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))"
-  },
   "hbond_vdw_energy_ladder": {
    "rc": 0,
    "sec": 0.4,
@@ -1298,17 +1265,6 @@
    "median_rel_move": 0.0,
    "n_fields": 118,
    "err": ""
-  },
-  "he3_tritium_cosh_asymmetry_diagnosis": {
-   "rc": -9,
-   "sec": 1200.1,
-   "witnesses": [
-    "he3-tritium-cosh-asymmetry-diagnosis.witness.json"
-   ],
-   "max_rel_move": 0.0,
-   "median_rel_move": 0.0,
-   "n_fields": 14,
-   "err": "TIMEOUT >1200s"
   },
   "hh-trefoil-corrected": {
    "rc": 0,
@@ -1582,6 +1538,81 @@
    "median_rel_move": 0.0,
    "n_fields": 112,
    "err": ""
+  },
+  "alpha_5_lp_dual_crystal": {
+   "rc": -9,
+   "sec": 1800.1,
+   "witnesses": [
+    "alpha-5-lp-dual-crystal.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 229,
+   "err": "TIMEOUT >1800s"
+  },
+  "alpha_em_coulomb_channel_probe": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "alpha-em-coulomb-channel-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 7,
+   "err": ""
+  },
+  "alpha_em_multicell_yekutieli_probe": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "alpha-em-multicell-yekutieli-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "alpha_high_precision": {
+   "rc": 1,
+   "sec": 0.5,
+   "witnesses": [
+    "alpha-high-precision.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 28,
+   "err": ""
+  },
+  "aoperator_a5_crosscheck": {
+   "rc": 1,
+   "sec": 0.7,
+   "witnesses": [],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 0,
+   "err": "TypeError: unsupported format string passed to mpf.__format__"
+  },
+  "archimedean_knot_eigenbasis_probe": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "archimedean-knot-eigenbasis-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 62,
+   "err": "\u26a0 raw-float64: archimedean-knot-eigenbasis-probe.witness.json: 11 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions"
+  },
+  "binding_qgaussian_ell1_ceiling_measurement": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "binding-qgaussian-ell1-ceiling-measurement.witness.json"
+   ],
+   "max_rel_move": 21.176236985476713,
+   "median_rel_move": 0.005787695338812625,
+   "n_fields": 99,
+   "err": "\u26a0 raw-float64: binding-qgaussian-ell1-ceiling-measurement.witness.json: 8 raw float64 field(s) would enter the witness \u2014 .data.proton_anchor.rows[0].B_AME_MeV, .data.proton_anchor.rows[1].B_AME_MeV, ."
   }
  }
 }
