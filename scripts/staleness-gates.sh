@@ -93,13 +93,20 @@ fi
 #   scriptHash + upstream drift   RED   dominated by sha256_mismatch against
 #                                       q-pinning-50-digit.witness.json
 #   q0 constant staleness         RED   6 witnesses in the muon basin
-#   qou-mass vendor mirror        GREEN — was RED on 2026-08-22 and is NOT a
-#                                       backlog. It was a TRANSIENT mid-arc
-#                                       state: the qou-ishr float64 drain
-#                                       (945b2edf2f, e005856e18) rewrote source
-#                                       witnesses, drifting the vendored mirror,
-#                                       and that arc's own follow-ups re-synced
-#                                       it (09571f1b3f, c1c8f34bfa).
+#   qou-mass vendor mirror        green as of this commit, and it has now gone
+#                                       red TWICE from two unrelated causes:
+#
+#     2026-08-22, TRANSIENT: the qou-ishr float64 drain (945b2edf2f,
+#     e005856e18) rewrote source witnesses, drifting the mirror; that arc's own
+#     follow-ups re-synced it (09571f1b3f, c1c8f34bfa). Nothing to fix.
+#
+#     2026-08-23, STANDING: `char_fast` moved to computations/substrate/ and
+#     then gained a q-pinning guard in 6a8d41bf89; the mirror stayed 8 days
+#     stale against it, so the packaged `qou-mass` shipped a char_fast WITHOUT
+#     that guard. Re-synced here with `--apply`. This one was real.
+#
+#   The two look identical from a single `--check`. Only the git history
+#   separates them, which is why the rule below is re-measure, not re-run.
 #
 # THE LESSON, because it cost a bean an over-claim: A RED MEASURED ONCE ON MAIN
 # MAY BE MID-ARC, NOT PERSISTENT. A sibling that lands a source change in one
