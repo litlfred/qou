@@ -119,13 +119,6 @@ class TransferMatrixSpectrum (q : ℝ) (M : Matrix (Fin 2) (Fin 2) ℝ) : Prop w
   /-- Unimodular spectrum: `e^{+iα}·e^{−iα} = 1`. -/
   det_eq : M.det = 1
 
-/-- The replacement carrier is **not** vacuous: it pins the trace, so a matrix
-whose trace differs from `2 cos α` cannot satisfy it.  Contrast
-`carrier_is_trivial`. -/
-theorem replacement_constrains_trace (q : ℝ) (M : Matrix (Fin 2) (Fin 2) ℝ)
-    [h : TransferMatrixSpectrum q M] : M.trace = 2 * Real.cos (eigenphase q) :=
-  h.trace_eq
-
 /-- Concrete non-vacuity witness: a matrix violating the trace condition admits
 no instance.  Since `2 cos α ≤ 2 < 3`, the matrix `!![3, 0; 0, 0]` (trace `3`)
 is excluded for every `q` — so the class is not satisfied by everything. -/
