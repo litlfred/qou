@@ -193,3 +193,75 @@ packages upward and weakened the wall.
 Finding #2 (`producer_importability_audit.py`, 0.868 evaluated) is untouched: it
 needs a decision about what to do with 359 unresolvable witnesses, which is
 `qou-cds3`-adjacent.
+
+---
+
+## Finding #4 VERIFIED, and NARROWED — the "authorises a float64 carve-out" framing was too strong
+
+I relayed #4 as: a search-tool failure *"produces the verdict that authorizes a
+float64 carve-out."* Reading `classify_production_reach.py` in full, **the
+mechanism is real but the consequence is overstated**, and the correction matters
+because the file is unusually disciplined.
+
+### What is true
+
+```python
+def _rg(pattern, *, fixed=False) -> set[str]:
+    for cmd in (["rg", "-l", ...], ["grep", "-rl", ...]):
+        try:
+            out = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        except (FileNotFoundError, subprocess.TimeoutExpired):
+            continue
+        if out.returncode in (0, 1):
+            return {...}
+    return set()          # ← "no matches" and "never searched" are the same value
+```
+
+Confirmed: if both tools are absent, both time out, or both exit non-0/1, `_rg`
+returns an empty set and **nothing in the output distinguishes that from a clean
+search**. The frontier in `classify()` then never expands, so the walk finds no
+`PRODUCTION_STEMS` hit. That is a genuine instance of this bean's pattern.
+
+### What is NOT true
+
+**1. It does not flip the verdict on its own.** The fall-through is
+`{"production": defines_const, …}`, and `defines_const` comes from reading the
+producer's source for `LAMBDA_*` / `ALPHA_*` / `Q_*` (`:124-127`) — **independent
+of `_rg`**. So a producer that defines a production constant is still classified
+`production: True` even with the search fully broken. The blast radius is limited
+to producers that define no such constant.
+
+**2. It does not authorise anything.** The file's header has an explicit
+*"## What it does NOT do"* section:
+
+> It does not decide. A `NOT-PRODUCTION` verdict here is **necessary** evidence
+> for the deprecate-with-tier route, **not sufficient authority** for it … Read
+> the printed evidence; do not paste the verdict into a witness unread.
+
+That is precisely the misuse I described it as enabling, disclaimed in advance by
+the script itself.
+
+### The residual finding, stated at its real size
+
+`_rg`'s silent fallback degrades the *evidence* — `direct_readers` comes back
+empty and looks like a measured result — while the header's mitigation is a
+**human-discipline instruction, not a mechanism**. Cheap fix, same as everywhere
+else in this bean: distinguish the two, e.g. return `None` on total tool failure
+and print `search unavailable — evidence incomplete` rather than an empty reader
+list.
+
+Worth saying plainly: this script is one of the **better-behaved** files I have
+read in this corpus. It states its own limits, prints its evidence, and refuses to
+be treated as authority. The `_rg` fallback is the one place where it silently
+does the thing it warns readers not to do.
+
+### Status of the other relayed findings
+
+- **#5 `guard_check.py`** — verified by reading both files. Both content guards sit
+  in bare `except: pass` then `return True`, and the sole consumer
+  (`auto_commit_batches.py:7`) filters on the stdout prefix `"Reverting"`, so
+  *guard passed* and *guard crashed* are byte-identical and both get committed.
+  Stands as reported.
+- **#3 `witness_failed_assertion_audit.py`** — not independently re-measured. The
+  mechanism (only a non-empty `assertions[]` or explicit `allPassed: False` can be
+  counted) is visible in the source; the 519/2715 figure is relayed.
