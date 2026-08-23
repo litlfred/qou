@@ -68,11 +68,35 @@ structure ClassicalLimit extends CategoricalMobiusEnergy where
   /-- Classical limit relation. -/
   classical_limit : energy_cat = (1 / 4 : ℝ) * energy_classical + normConst
 
-/-- Möbius energy is non-negative for embedded curves. -/
--- Ref: [freedman1994]
-theorem mobius_energy_nonneg (cme : CategoricalMobiusEnergy) :
-    0 ≤ cme.energy_classical :=
-  cme.energy_classical_nonneg
+/- **`mobius_energy_nonneg` was removed 2026-08-23.**
+
+   It read
+
+       theorem mobius_energy_nonneg (cme : CategoricalMobiusEnergy) :
+           0 ≤ cme.energy_classical :=
+         cme.energy_classical_nonneg
+
+   — the conclusion is character-identical to the `energy_classical_nonneg`
+   field, so the "theorem" re-exported a hypothesis as though it were derived.
+   The vacuity audit flags it `proof-no-self-assuming-projection`
+   (type-matched projection) and the review ledger carries an agent verdict of
+   **genuine** with disposition `construct-witness-or-drop-pseudo-theorem`
+   (2026-08-09, file_sha 2fbb52aa1f54 — still current). Nothing referenced it,
+   so dropping it loses no content: consumers use the field
+   `cme.energy_classical_nonneg` directly, which is honest about being an
+   assumption.
+
+   The `construct-witness` branch was not taken here. It needs
+   `energy_classical` to be *defined* as the Möbius integral rather than
+   carried as an opaque `ℝ`, which requires integration theory; a witness
+   supplying a convenient value would be the `qou-6dzi` / `PUnit` defect.
+
+   The genuine content now lives in
+   [`QOU.Geometry.mobiusKernel_nonneg`](../lean/QOU/Geometry/MobiusKernel.lean):
+   the Möbius integrand is pointwise non-negative, **derived** from chord ≤ arc
+   (sorry-free; `#print axioms` = `[propext, Classical.choice, Quot.sound]`).
+   Once `energy_classical` is defined as the integral of that kernel, its
+   non-negativity follows and the field can be dropped too. -/
 
 end
 
