@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T14:55:00Z
+updated_at: 2026-08-23T17:00:00Z
 ---
 
 
@@ -690,3 +690,80 @@ Four independent rediscoveries in three days is itself evidence the shape is
 fifth sweep has low marginal value, whereas `qou-pt9b` has already built a shared
 "what did this change touch, and how much of it did we compare" helper for the
 shell gates, and the Python audits have no equivalent. Full triage: `qou-k3wq`.
+
+---
+
+## Tier-2 item FIXED 2026-08-23 — `witness_dependency_coverage_audit.py:168`, the empty set that reported 100%
+
+The bean's Tier-2 list is *"same mechanism, 0 instances today"*. I went in
+expecting to find that entry mislabelled, because the bean also records
+`agg_total = 6 of 2639` and that looked like a live instance. **The bean was
+right and I was wrong**: 6 is not 0, so the `100.0` fallback does not fire today.
+It is latent, exactly as filed. Fixed anyway, because the latency is the
+dangerous part.
+
+### Why a latent one was worth closing
+
+```python
+agg_pct = (
+    100.0 * results["aggregator_with_upstream"] / agg_total
+    if agg_total else 100.0          # :168
+)
+```
+
+"Aggregator" is a **9-pattern filename substring heuristic**. If it ever stops
+matching — a naming-convention change, a pattern list edited, a scan root moved —
+`agg_total` goes to 0 and two things happen at once:
+
+1. the percentage prints **`0 (100.0%)`**, and
+2. `--strict` passes, because there are no untracked aggregators left to fail on.
+
+So the failure mode is a **clean 100% gate over nothing**, and this script is
+gate-wired (`scripts/staleness-gates.sh:57`, advisory). Demonstrated by forcing
+the heuristic to match nothing:
+
+*Old:*
+
+```
+  aggregator witnesses: 0
+  aggregator with upstream tracking: 0 (100.0%)
+  aggregator WITHOUT tracking: 0
+OK                                     --strict exit code = 0
+```
+
+*New:*
+
+```
+  aggregator witnesses: 0   (of 2643 scanned, by a 0-pattern name heuristic)
+  aggregator with upstream tracking: n/a — NO witness matched the
+    aggregator heuristic, so nothing was measured. This is NOT
+    100% coverage, and --strict below passes vacuously.
+OK                                     --strict exit code = 0
+```
+
+### Changes
+
+1. `else 100.0` → `else None`, and the percentage line is skipped entirely
+   rather than printed with a flattering number. **No percentage beats a wrong
+   one.**
+2. The aggregator count now states its own denominator and its method inline:
+   `6   (of 2643 scanned, by a 9-pattern name heuristic)`.
+3. The vacuous `--strict` pass is **named in the output** rather than left for a
+   reader to infer.
+
+### Deliberately NOT changed
+
+The exit code. `--strict` still passes when the set is empty — the same
+visible-not-fatal criterion applied to `MISSING` (#1), coverage (#2, #3) and
+`SKIP` (#5). Making an empty heuristic fatal is a policy call for the gate's
+owner; this bean's criterion is that the emptiness be legible, and now it says
+so in words.
+
+### Checked, live figures unchanged
+
+Normal run is behaviourally identical: `scanned 2643 (76 audit-exempt)`,
+`with upstream_witness_hashes: 2 (0.1%)`, `aggregator witnesses: 6`,
+`aggregator with upstream tracking: 0 (0.0%)`, `WARN: 6 untracked aggregator(s)`.
+Note this audit was already honest about its main denominators — it prints
+`scanned`, `with`, and `without` — which is why only the empty-set branch needed
+work.
