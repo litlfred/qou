@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T03:40:35Z
+updated_at: 2026-08-23T05:07:32Z
 ---
 
 ## Why this bean exists
@@ -440,3 +440,35 @@ well-founded reduction, which is a separate argument.
 The "exactly twice" lemma is the natural next target: it is what makes "first
 of the two" well posed, and it is the traversal-level counterpart of
 `stepOver_lo_ne_hi` (which gave opposite verdicts at a single crossing).
+
+
+## "Exactly two strands meet each crossing" — PROVED
+
+This was named as the next target last entry, and it is the fact that makes *the
+first of a crossing's two encounters* well posed, hence what makes the
+descending predicate definable at all.
+
+- `lapVerdicts_getElem` — the indexing step: the `k`-th entry of a lap is the
+  `k`-th crossing's verdict, evaluated at wherever the strand had reached after
+  the first `k` crossings.
+- `stepOver_isSome_iff_mem` — a strand is involved exactly when it sits at one
+  of the two positions the crossing acts on.
+- **`card_involved`** — for each crossing, exactly **2** starting positions are
+  involved. The argument: the position a strand occupies just before crossing
+  `k` is a *permutation* of its start (`lapStep_eq`), so the involved starts are
+  the preimage of a two-element set, and injectivity plus `loIdx_ne_hiIdx` gives
+  the two are distinct.
+
+It is the traversal-level counterpart of `stepOver_lo_ne_hi`, which gave the two
+strands *opposite* verdicts at a single crossing. Together: each crossing
+contributes exactly one `over` and one `under` to the whole traversal.
+
+56 results in the file, sorry-free, zero warnings, axiom-clean.
+
+## What is left
+
+`Descending w` itself — "for every crossing, the earlier of its two entries in
+`traversalVerdicts` is `over`" — which is now a *definition* rather than a
+research question, since both the ordering and the exactly-two fact are in
+place. Then the well-founded reduction, which remains a separate argument and is
+the last genuinely open piece of step 2.
