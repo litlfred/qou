@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T13:42:04Z
-updated_at: 2026-08-23T13:50:49Z
+updated_at: 2026-08-23T15:45:43Z
 ---
 
 The one thing left from qou-kgsx, and much smaller than what that bean started with.
@@ -49,3 +49,7 @@ STATUS: mechanism, NOT a Lean proof. This reduces the bean from "why does an une
 LIT, narrowly: worth ONE look at whether Orellana / Geck-Lambropoulou / Birman / Webster-Williamson state the factorisation across an unused generator in this form, before deriving from scratch.
 
 Audit section 4g.
+
+BLOCKER FOR THE LEAN ROUTE (found 2026-08-19): QOU/Braiding/HnMarkovTrace.lean MarkovTraceTower carries z := 1/(Real.sqrt q + 1/Real.sqrt q) -- CONVENTION C, in a docstring calling it "the canonical Wenzl Markov parameter". My (z+d) bond rule is CONVENTION D (z = q^3/(q^2+1), matched to 4.45e-31 over 16 nuclei). Formalising the rule on top of MarkovTraceTower would silently make it a C-frame statement about a D-frame result.
+
+Use QOU/MathlibExt/MarkovNormalisation.lean instead -- it carries D and argues D is DERIVED (Wenzl r=2), not chosen -- or state z abstractly and instantiate. Lean C-surface measurement tracked as qou-um5h.
