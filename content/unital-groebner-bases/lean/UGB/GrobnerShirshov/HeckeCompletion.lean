@@ -13031,6 +13031,203 @@ theorem TCancel₂_coeffEq {n : ℕ} (i i₁ i₂ j₁ j₂ jm : Fin n) (h : ℝ
   rw [TCancel₂]
   simpa using this
 
+/-! ##### `a = 1`: two bare quadratic steps, and nothing transfers
+
+At `a = 1` the corner is `j₁ = i₁`, so `descWord i j₁` is two letters and
+**both** `V0` and `U0` carry a bare `σᵢ₋₁σᵢ₋₁` from the start. The chain opens
+with a quadratic step on each term, where `a ≥ 2` opens with a Bokut–Shiao or a
+Yang–Baxter. Measured: six steps, not `a² + a + 5 = 7`, and the cancellation
+word is `bsWord₂ i₁ i j₂`, not `WStar`. So unlike `a = 2` this case shares
+neither the count formula nor the target; it is built, not transferred.
+
+Every word is written over `D = descWord i₂ j₂`, which is **empty on the
+diagonal** `b = 1` (there `j₂ = i₁ > i₂`). Writing them this way makes the
+bystander arguments uniform in `b`: the words have lengths `|D| + 2 … |D| + 5`,
+and at the three places where two collide they differ in their first letter.
+
+**The order below is not deg-lex's,** which interleaves the lineages and at
+`b = 1` takes a U step before the V one. `MultiStepReduction` fixes no order
+beyond each step's redex being present, so this runs the U lineage to its end
+first — and that is not cosmetic. Under the deg-lex order the U word after its
+`bsStep` and the V word after its braid are both `|D| + 4` long *and* agree in
+their first three letters, so separating them would need a case split on
+whether `D` is empty. Running U first means the V words are only ever compared
+against words of a different length. -/
+
+/-- **`V0` at `a = 1`.** Two descending runs collapse: `descWord i j₁` is
+`[σᵢ, σᵢ₋₁]`, and the `σᵢ₋₁` the S-polynomial inserts lands against the second
+of them — that adjacency is the quadratic redex. -/
+theorem V0_eq₁ {n : ℕ} {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁i₁ : j₁ = i₁) :
+    V0 i i₁ j₁ j₂ = [(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))) := by
+  -- `subst` rewrites i₁ -> j₁ (that direction), uniformly on both sides;
+  -- `rw [← hj₁i₁]` would hit the RHS's own `⟨i₁⟩`s and leave one behind
+  subst hj₁i₁
+  rw [V0,
+    descWord_cons_le (i' := j₁) (i := i) (j := j₁) h₁ (by omega),
+    descWord_self,
+    descWord_cons_le (i' := j₁) (i := i) (j := j₂) h₁ (by omega),
+    descWord_cons_le (i' := i₂) (i := j₁) (j := j₂) h₂ (by omega)]
+  simp only [List.cons_append, List.nil_append]
+
+/-- **`U0` at `a = 1`.** The same collapse on the other term: `descWord i₁ j₂`
+opens `σᵢ₋₁`, and it meets the `σᵢ₋₁` ending `descWord i j₁`. -/
+theorem U0_eq₁ {n : ℕ} {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁i₁ : j₁ = i₁) :
+    U0 i i₁ j₁ j₂ = [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])) := by
+  subst hj₁i₁
+  rw [U0,
+    descWord_cons_le (i' := j₁) (i := i) (j := j₁) h₁ (by omega),
+    descWord_self,
+    descWord_cons_le (i' := i₂) (i := j₁) (j := j₂) h₂ (by omega)]
+  simp only [List.cons_append, List.nil_append]
+
+/-- The `a = 1` chain at its first cancellation: `bsWord₂ i₁ i j₂` twice, with
+`h²` and `−h²`, separated by the two plain V words. -/
+noncomputable def TCancel₁ (i i₁ i₂ j₂ : Fin n) (h : ℝ) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), h * h), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ descWord i₂ j₂, h), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), -(h * h)), ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -h), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+
+/-- **The whole `a = 1` prefix**, six steps: a quadratic step on each term,
+then the U lineage's `bsStep` and its second quadratic step, then the V
+lineage's braid step and its second quadratic step. The two `h²`-weighted
+copies of `bsWord₂ i₁ i j₂` are what cancel.
+
+The V lineage's braid step is `bsStep` at `j = i₁` — the degenerate
+Bokut–Shiao rule that shares a leading word with Yang–Baxter — and on the
+diagonal `b = 1` so is the U lineage's. The engine's trace names both `Y`. -/
+theorem prefixChain₁ (hn : 0 < n) (hp : HeckeParams)
+    {i i₁ i₂ j₁ j₂ : Fin n}
+    (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
+    (hj₂ : j₂.val ≤ j₁.val) (hj₁i₁ : j₁ = i₁) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (T0 i i₁ j₁ j₂) (TCancel₁ i i₁ i₂ j₂ (hp.q - hp.q⁻¹)) := by
+  have hj₁v : j₁.val = i₁.val := congrArg Fin.val hj₁i₁
+  have hne1i : (⟨i₁⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hlen : ∀ u v : Monomial (HeckeGen n), u.length ≠ v.length → u ≠ v :=
+    fun _ _ hL hc => hL (congrArg List.length hc)
+  -- the two runs the Bokut-Shiao steps ask for
+  have hdij₂ : descWord i j₂ = (⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂) := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := j₂) h₁ (by omega),
+      descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega)]
+  have hdii₁ : descWord i i₁ = [(⟨i⟩ : HeckeGen n), ⟨i₁⟩] := by
+    rw [descWord_cons_le (i' := i₁) (i := i) (j := i₁) h₁ (by omega),
+      descWord_self]
+  have hd1j₂ : descWord i₁ j₂ = (⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂ :=
+    descWord_cons_le (i' := i₂) (i := i₁) (j := j₂) h₂ (by omega)
+  -- 1. the quadratic redex inside `V0`
+  have s1 := quadStep hn hp i₁ [] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)])), (-1 : ℝ))]
+    [(⟨i⟩ : HeckeGen n)] ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)) ([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)))) 1 one_ne_zero rfl
+    (fun w hw => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      subst hw
+      simp only [List.cons_append, List.nil_append]
+      intro hcon
+      exact hne1i (List.cons.inj hcon).1)
+  -- 2. the same redex inside `U0`
+  have s2 := quadStep hn hp i₁
+    [([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))), 1 * (hp.q - hp.q⁻¹)), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1)] []
+    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]) ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))) (-1) (by norm_num) rfl
+    (fun w hw => by
+      simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw <;> subst hw <;>
+        exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 3. the U lineage's Bokut-Shiao step, at the general bottom `j₂`
+  have s3 := bsStep (i' := i₁) (i := i) (j := j₂) hn hp h₁ (by omega)
+    [([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))), 1 * (hp.q - hp.q⁻¹)), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1)] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), (-1 : ℝ))]
+    [(⟨i₁⟩ : HeckeGen n)] [] ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]))) ([(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))) (-1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero)
+    (by rw [bsWord₁, hdij₂]; simp only [List.cons_append, List.nil_append,
+      List.append_nil])
+    (by rw [bsWord₂, hd1j₂]; simp only [List.cons_append, List.nil_append,
+      List.append_nil])
+    (fun w hw => by
+      simp only [List.map_cons, List.map_nil, List.cons_append,
+        List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw <;> subst hw
+      · simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega)
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 4. its second quadratic step, which lands on the cancellation word
+  have s4 := quadStep hn hp i₁
+    [([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))), 1 * (hp.q - hp.q⁻¹)), ([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), 1)] [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), (-1 : ℝ))]
+    [] ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)) ([(⟨i₁⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂))) (-1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero)
+    (by simp only [List.cons_append, List.nil_append])
+    (fun w hw => by
+      simp only [List.map_cons, List.map_nil, List.cons_append,
+        List.nil_append, List.mem_cons, List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw <;> subst hw
+      · simp only [List.cons_append, List.nil_append]
+        intro hcon
+        exact hne1i (List.cons.inj hcon).1.symm
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega)
+      · exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 5. the V lineage's braid step -- `bsStep` at the bottom `i₁`, where the
+  --    Bokut-Shiao rule degenerates into Yang-Baxter
+  have s5 := bsStep (i' := i₁) (i := i) (j := i₁) hn hp h₁ (le_refl _)
+    [] [([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹) * (hp.q - hp.q⁻¹)),
+        ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+    [] ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂) ([(⟨i⟩ : HeckeGen n)] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)))) ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord i₂ j₂)) (1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero)
+    (by rw [bsWord₁, hdii₁]; simp only [List.cons_append, List.nil_append])
+    (by rw [bsWord₂, descWord_self]; simp only [List.cons_append,
+      List.nil_append])
+    (fun w hw => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw | hw <;> subst hw <;>
+        exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  -- 6. its second quadratic step, landing on the same word as step 4
+  have s6 := quadStep hn hp i₁
+    [] [([(⟨i⟩ : HeckeGen n)] ++ ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)), (1 : ℝ)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹) * (hp.q - hp.q⁻¹)),
+        ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -1 * (hp.q - hp.q⁻¹)), ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+    [(⟨i₁⟩ : HeckeGen n), ⟨i⟩] (descWord i₂ j₂) ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n), ⟨i₁⟩] ++ descWord i₂ j₂)) (1 * (hp.q - hp.q⁻¹)) (mul_ne_zero (by norm_num) hp.h_ne_zero) rfl
+    (fun w hw => by
+      simp only [List.nil_append, List.map_cons, List.map_nil, List.mem_cons,
+        List.not_mem_nil, or_false] at hw
+      rcases hw with hw | hw | hw | hw <;> subst hw <;>
+        exact hlen _ _ (by simp only [List.length_append, List.length_cons, List.length_nil]; omega))
+  rw [T0, V0_eq₁ h₁ h₂ hj₂ hj₁i₁, U0_eq₁ h₁ h₂ hj₂ hj₁i₁, TCancel₁]
+  simp only [List.cons_append, List.nil_append, one_mul,
+    neg_mul] at s1 s2 s3 s4 s5 s6 ⊢
+  exact ((((((MultiStepReduction.refl _).step s1).step s2).step s3).step
+    s4).step s5).step s6
+
+/-- **The `a = 1` cancellation.** Same shape as `TCancel_coeffEq` and
+`TCancel₂_coeffEq`: the two `bsWord₂ i₁ i j₂` entries carry `h²` and `−h²` and
+are not adjacent, so this is `ofTerms_cancel_split`. What survives is the two
+plain V words and the two plain U words. -/
+theorem TCancel₁_coeffEq {n : ℕ} (i i₁ i₂ j₂ : Fin n) (h : ℝ) :
+    AlgElement.CoeffEq (TCancel₁ i i₁ i₂ j₂ h)
+      (AlgElement.ofTerms
+        [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ descWord i₂ j₂, h),
+         ([(⟨i⟩ : HeckeGen n)] ++
+            ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)),
+            (1 : ℝ)),
+         ((⟨i⟩ : HeckeGen n) ::
+            ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -h),
+         ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+            (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]) := by
+  have := ofTerms_cancel_split
+    ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ ([(⟨i₁⟩ : HeckeGen n)] ++ descWord i₂ j₂))
+    (h * h) ([] : List (Monomial (HeckeGen n) × ℝ))
+    [([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++ descWord i₂ j₂, h),
+     ([(⟨i⟩ : HeckeGen n)] ++
+        ((⟨i⟩ : HeckeGen n) :: ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂)),
+        (1 : ℝ))]
+    [((⟨i⟩ : HeckeGen n) ::
+        ((⟨i₁⟩ : HeckeGen n) :: descWord i₂ j₂), -h),
+     ([(⟨i₁⟩ : HeckeGen n), ⟨i⟩] ++
+        (descWord i₂ j₂ ++ [(⟨i⟩ : HeckeGen n)]), -1)]
+  rw [TCancel₁]
+  simpa using this
+
 theorem uHead (hn : 0 < n) (hp : HeckeParams) {i i₁ i₂ j₁ j₂ : Fin n}
     (h₁ : i₁.val + 1 = i.val) (h₂ : i₂.val + 1 = i₁.val)
     (hj₁ : j₁.val ≤ i₂.val) (hj₂ : j₂.val ≤ i₂.val) :
