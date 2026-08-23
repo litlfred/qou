@@ -1139,3 +1139,43 @@ item that is genuinely mathematical rather than mechanical, and it is why
 
 Verification: all **eighteen** arc modules rebuilt with `.olean`s deleted — exit 0, no linter
 output.
+
+### Both gaps in `SeparatedRepresentation` are closed
+
+The module was landed with two recorded gaps. Both are now shut, in the same module:
+
+```
+exists_separated_representation_fin    Fin r-indexed, φ independent
+exists_shorter_of_psi_dep              a dependence among ψ shortens the representation
+exists_shorter_of_phi_dep              the mirror, for φ
+exists_indep_representation            structural induction on r
+exists_separated_representation_indep  BOTH families independent   ← the goal
+```
+
+**The `Fin r` reindexing** is `Finset.equivFin`; independence transports because
+`equivFin.symm` is injective.
+
+**Minimality** is the rank argument. From `∑ₖ cₖψₖ = 0` with `c j ≠ 0`, solve for `ψⱼ` and
+substitute: the `j`-th term is absorbed into the others by replacing `φₖ` with
+`φₖ − (cₖ/cⱼ)·φⱼ`, giving a representation of length `r−1`. Same argument mirrored for `φ`.
+`Fin.sum_univ_succAbove` does all the index surgery — it splits `∑_{k : Fin (n+1)}` as
+`f j + ∑_{i : Fin n} f (j.succAbove i)`, which is exactly "the `j`-th term plus the rest".
+
+⚠ **The minimal version needs a field**, because the reduction divides by `cⱼ`. The crude and
+grouped versions hold over any `CommRing`; this one does not. Roth's lemma works over `ℚ`, so
+it costs nothing there — but it is a real hypothesis change and the module says so.
+
+A note on structure worth keeping: the first plan was `Nat.find` over achievable lengths, which
+drags in dependent rewriting (`φ`'s *type* mentions the length). Restructuring as a plain
+induction on `r` — "given any representation of length `r`, produce an independent one" —
+removes the dependent `subst` entirely. Six lines instead of a fight.
+
+### The induction step can now be fed end to end
+
+`exists_separated_representation_indep` produces the representation,
+`det_separated_wronskian` factors its Wronskian, `BoundedOrderWronskian` turns the two
+independences into non-vanishing Wronskians, and `RothInductionStep` splits the index and the
+height.
+
+⚠ That is the *step's inputs*, not the recursion. `ω(m, ε)` remains the one open item, and it
+cannot be settled until the recursion is written.
