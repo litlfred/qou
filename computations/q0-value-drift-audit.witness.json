@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 292,
+      "STALE": 291,
       "proton-pin": 1311,
       "unknown": 25,
-      "canonical": 185
+      "canonical": 186
     },
-    "stale_total": 292,
+    "stale_total": 291,
     "new_stale": 0,
     "rows": [
       {
@@ -7204,9 +7204,9 @@
       {
         "file": "computations/inter-knot-decoupling.witness.json",
         "field": "data.q_0_50dps",
-        "value": "1.1099785955541805752815940796095093779932822799587",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416265239649993
+        "value": "1.10997859555733471989976322048322502665620840878015368660798",
+        "class": "canonical",
+        "ppb_vs_canonical": -1.0325837742239404e-51
       },
       {
         "file": "computations/inter-nucleon-linked-channel.witness.json",

@@ -1,14 +1,14 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:11:47.712553+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T20:53:07.507104+00:00",
+  "commitSha": "dda6147096dfc140280de3eb57d44810d5404cc1",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 12,
   "computation": "inter-knot-decoupling",
   "scriptFile": "probe_inter_knot_decoupling.py",
-  "scriptHash": "071c89a4939a",
+  "scriptHash": "0acb734316e3",
   "scriptCommitSha": "17c9d83431fb4c20c36d1b97a4f4e6b9827e1a3d",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -23,31 +23,41 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_inter_knot_decoupling.py"
+    ],
+    "reproduce": "python3 -u computations/probe_inter_knot_decoupling.py"
   },
   "description": "Tests Mechanism 2 of prop:categorical-chain-convergence-mechanisms: the joint Markov trace of two unlinked braids factorises as τ_M(K_1) · τ_M(K_2) · z^k by Markov axiom M3 (disconnected-strand stabilisation). Confirms that the infinite product Q_β^cat over the base space converges because most inter-atomic-knot pairs are unlinked.",
   "parameters": {
-    "auditOnly": "PR #657 follow-up. Provides theoretical justification for the convergence-via-locality argument; full empirical verification at H_6 awaits y_λ for n=6 in wenzl_y_lambda."
+    "auditOnly": "PR #657 follow-up. Provides theoretical justification for the convergence-via-locality argument; full empirical verification at H_6 awaits y_λ for n=6 in wenzl_y_lambda.",
+    "markov_convention": "D (z = q^3/(q^2+1)) via closed_form_tau_M.markov_z"
   },
   "data": {
-    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
-    "z_markov_norm": "0.49932033403359825002066908467672150636931636263446",
+    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798",
+    "z_markov_norm": "0.612688050548890157044516774581866149005964144342327566400904",
     "K_1_braid": "σ_0 in B_3",
     "K_2_braid": "σ_0 · σ_1 in B_3",
-    "tau_M_K1": "0.49932033403359825002066908467672150636931636263445",
-    "tau_M_K2": "-1.498185508551815418311580192395458384246144137308",
-    "predicted_joint_via_M3_factorisation": "-0.093128498614094617969884554982395707414295262041364",
+    "tau_M_K1": "0.612688050548890157044516774581866149005964144342327566400904",
+    "tau_M_K2": "0.375386647285399380268877896122060560171677202914949208533359",
+    "predicted_joint_via_M3_factorisation": "0.0528976600644688538537489918465343095435699564515918147682543",
+    "strands_added_by_disjoint_stabilisation": 3,
     "factorisation_formula": "τ_M(K_1 ⊔ K_2 in B_{n_1 + n_2}) = τ_M(K_1) · τ_M(K_2) · z^k where k = strands added by disjoint stabilisation",
     "structural_origin": "Markov axiom M3 (Jones 1985)",
+    "superseded_transcription": "Before 2026-08-23 every value here was hand-transcribed. tau_M_K2 read -1.498185508551815418311580192395458384246144137308 and the joint read -0.093128498614094617969884554982395707414295262041364; recomputed at the same q_0 under convention C those are +0.2493207959793872068594165 and +0.01549799492138220432434304, so the transcribed pair was wrong in sign and magnitude, not merely off-convention.",
     "empirical_verification_status": "Direct B_6 verification awaits y_λ for n=6 in wedderburn_markov.wenzl_y_lambda. The factorisation property is THEORETICALLY axiomatic from Markov M3.",
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }
