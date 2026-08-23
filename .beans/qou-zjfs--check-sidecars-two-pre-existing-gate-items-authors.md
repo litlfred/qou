@@ -79,3 +79,47 @@ guard is matching the `m_p/(m_e·Vol(𝓑₃))` shape.
 Per the guard's own message this wants an `ALLOWLIST_SUBSTR` entry. Left alone
 on #5538: unrelated domain (mass/binding vs Specht/RSK), someone else's file,
 and a one-line allowlist edit belongs with whoever owns that guard's tuning.
+
+
+## 3. A per-block `qa-sweep` in this environment is LOSSY — do not drain sidecars here
+
+Attempted the ≤ 10-sidecar idle drain against the 51 (from §1's corrected count).
+It worked mechanically — 10 blocks swept, all criterion-fresh afterwards, and
+`source_hashes.md` refreshed too — **and the diff was not safe to commit.**
+Discarded; nothing pushed.
+
+Diffed all 9 changed sidecars against `origin/main`: **39 verdict changes**, none
+of them the harmless hash/timestamp refresh the policy contemplates.
+
+| change | count | why it matters |
+|---|---|---|
+| `detangler-*` `pass` → **`n/a`** | 36 (4 criteria × 9 blocks) | the detangler checkers produce **no verdict** in this container — a single-block sweep evidently cannot supply the graph/chapter context they need |
+| `detangler-no-forward-ref` **`fail`/major → `n/a`** | 1 (`physics-names-knot-operations`) | **erases a recorded major finding** and replaces it with "not applicable" |
+| `q-usage-narrative-chapter-mismatch` `pass` → `warn` | 3 | new warnings, uninvestigated |
+
+The middle row is the stopper. A `chore(qa-sweep)` commit that reads as routine
+would have quietly turned a red into a non-verdict — the audit-dodging shape
+AGENTS.md §1a forbids, arrived at by tooling rather than intent.
+
+**Consequence for the idle policy.** AGENTS.md §0b tells an idle agent to refresh
+≤ 10 stale sidecars per pass. In *this* environment that instruction is unsafe:
+the refresh degrades every `detangler-*` criterion to `n/a` and can drop findings.
+Either the drain needs an environment where the detangler checkers run, or the
+sweep needs to preserve a criterion it cannot evaluate instead of overwriting it
+with `n/a`.
+
+This also retroactively explains why reverting the incidental `intro.qa.json`
+rewrite earlier was right — same 556-line diff, same degradation, undiagnosed at
+the time.
+
+**Bonus correction to §1.** The pilot showed `qa-sweep` *does* rewrite
+`source_hashes.md` when it actually runs on a block. So §1's "the top-level hash
+is never refreshed" is too strong — what is measured is the *state* (376 top-stale
+vs 51 criterion-stale, 325 false positives); the mechanism is not established, and
+I am not going to guess at it a fourth time.
+
+**Also measured, and it partly un-retracts §1's second retraction:** direct
+per-block targeting **is** a no-op for label-less `prose()` blocks — confirmed on
+two (`blocks: 0`), against `blocks: 1` for a labelled sibling. Of the 51, **45 are
+labelled** (directly targetable) and **5 are label-less**. So the enumeration gap
+is real; what was wrong was calling it the cause of the 325.
