@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T20:42:42.899039+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "computedAt": "2026-08-23T21:18:28.493853+00:00",
+  "commitSha": "e63080f4957c474fbae4f4bdf957b99dfdaf16c2",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "categorical_linking_reeb_flow_attack",
   "scriptFile": "categorical_linking_reeb_flow_probe.py",
-  "scriptHash": "957032ae493e",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "27b450924642",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +23,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/categorical_linking_reeb_flow_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/categorical_linking_reeb_flow_probe.py"
   },
   "description": "Cross-validation of the pn-bond sub-ceiling magnitude via Reeb-flow helicity (Routes A, B, C).",
   "inputs": {
@@ -31,7 +38,7 @@
   },
   "data": {
     "ceiling": "0.4472136",
-    "z_naive": "0.49932033",
+    "z_naive": "0.61268804",
     "g_derived": "0.44672707"
   }
 }
