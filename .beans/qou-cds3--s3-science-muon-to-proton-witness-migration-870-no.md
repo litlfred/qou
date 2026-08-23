@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-21T17:05:15Z
+updated_at: 2026-08-23T20:45:00Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -326,3 +326,87 @@ which a self-correcting producer acquires a real bug.
 *"This probe is preserved as-is by design"*, so rewriting its banner is a call for
 whoever owns that preservation, not a hygiene edit. Recorded with the line numbers
 so it is actionable.
+
+---
+
+## RE-MEASURED 2026-08-23 — still 21 live, and the sibling 563-witness sweep did NOT cover them
+
+The queue file `scratchpad/proton_mislabel.txt` did not survive a container
+reset, so the population was re-derived from the artefacts rather than recovered
+from the note: **every field anywhere in a witness whose key path contains
+`proton` and whose value starts with the muon prefix `1.109978595`**.
+
+```
+witnesses with a PROTON-named field holding a MUON value: 21
+```
+
+Worth checking explicitly, because it could have been fixed by someone else:
+`claude/mass-table-comprehensive-triage` regenerated **563 witnesses** on
+2026-08-23 (`qou-fl9i`). **None of these 21 were among them.** The item is live.
+
+A narrower test — top-level `q0Anchor` vs `q0Value` — reports **0 mislabelled**
+across 620 proton-labelled witnesses. That is not a contradiction: only 676 of
+~2700 witnesses carry those two fields at all, and this defect lives in
+producer-specific payload keys (`data.q_proton`, `parameters.q_proton`,
+`data.proton_anchor.q0`), not in the anchor stamp. **The anchor-stamp layer is
+clean; the payload layer is not** — which is exactly why the migration metric
+could not see these.
+
+### Split by whether regeneration moves a published conclusion
+
+| class | n | note |
+|---|---|---|
+| **qbeta-channel** | **11** | `qbeta_c3_habiro_3rung_crossanchor_rigidity`, `qbeta_c6_c10_crossanchor_falsification`, `qbeta_singularity_cross_anchor_probe`, … — cross-anchor probes whose *result* is a comparison between pins |
+| **non-qbeta** | **10** | `h4_form_AB_cross_anchor_stability`, `flavor_split_alpha_*`, `yekutieli_*`, `he4_rho_f_bar_symmetric_audit_probe`, … |
+
+All 21 carry a `scriptFile`; none had to be guessed. All were computed
+**2026-06-18 → 2026-07-17**, i.e. before the 2026-08-15 ruling.
+
+### One anomaly, and it ties to `qou-khac`
+
+`habiro-interpolation-wlambda.witness.json` carries
+`data.archimedean_F_lambda.proton_q0.q0 = 1.1099785955541805…` — that is **value
+B** (the CODATA-2018 evaluation), where the other 20 all carry **value A** (the
+frozen canonical muon pin). So this queue is not uniform in *which* muon value it
+mislabels. Per the `qou-khac` correction of the same date, B and A are different
+objects — B is the live derivation at an older CODATA vintage, A is not
+reproducible from any published muon ratio. **Regenerating this one changes a B
+to a proton value and destroys the only remaining evidence that it was ever B**,
+which is precisely the "hardest to fix after the sweep" hazard this bean warned
+about. Do it last, and record the old value in the commit.
+
+### ONE REGENERATED — the inference is now a measurement
+
+The previous section concluded *from reading source* that these need
+regeneration, not repair. Verified on `he4_rho_f_bar_symmetric_audit_probe.py`:
+
+```
+q_proton  before  1.1099785955573347198997…   (muon)
+q_proton  after   1.1099785827513808075916…   (proton)
+```
+
+- The probe's **conclusion is unchanged** — *"BAR-SYMMETRIC ρ_F CANDIDATES ALL
+  FAIL — best is C1 at +5.87% vs the current production at +5.87%"* — so for this
+  one, regeneration is genuinely hygiene.
+- The **environment record improved** rather than degraded: `scipy None → 1.17.1`,
+  `mpmath 1.3.0 → 1.4.1`, python/numpy unchanged. No environment warning fired.
+  (Checked because the `guarded-off-audit` refresh in `qou-i5jy` had to be
+  abandoned for the opposite reason.)
+- The 28 raw-float64 fields the guard warns about **pre-existed** —
+  `candidates[].value_numeric` and friends were already `float` in the committed
+  witness. Not introduced here, and not fixed here either.
+- Ran in well under 9 minutes.
+
+**20 remain.** Not batched in this session: the container has reset four times
+today, and a long serial regeneration would be lost mid-run. Each is now a
+one-file job with a known producer, so they can be drained individually and
+pushed as they land.
+
+### Still the owner's call, unchanged
+
+The **bulk** muon→proton migration. R2 states an end state, not a sweep. These 21
+are a different argument — a field named `proton` holding a muon value is wrong
+under either reading — but the 11 qbeta cross-anchor probes are the overlap: a
+probe whose *purpose* is to compare two pins may be recording the pins it
+actually used, in which case the label is right and the value is right and only
+the name reads oddly. **Check that per-probe before regenerating any of the 11.**
