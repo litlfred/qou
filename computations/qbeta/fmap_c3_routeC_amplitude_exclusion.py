@@ -20,17 +20,46 @@ state-integral ℏ) but TWO forced targets `c₂=−1, c₃=−2`. Writing the a
 as the ladder product and matching log-cumulants `λ_n`:
 `σ²·λ₂ = −1` and `σ³·λ₃ = −2`. A single σ forces both **iff**
 `4λ₂³ + λ₃² = 0`. It does not — and cannot: `λ₂,λ₃ > 0`, so `4λ₂³` and `λ₃²` are
-both positive. Deeper: the odd cumulants carry `√3` and the even do not, while
-`c₂,c₃` are `√3`-free rationals, so no single scale reconciles the two parities.
+both positive.
 
-## Verdict — REFUTED, scope-(a)
+## CORRECTION (2026-08-23) — two scope fixes
 
-The forced (single-scale) amplitude→c_k map fails; any working map needs
-per-rung free parameters, i.e. a fit — forbidden by the anti-fit fence. Combined
-with A/B/redirect, `c₃ = J_Hopf(1) = −2` is not forceable from any tried f-map
-route. No fit; no wiring; the value −2 stays the skein-derived `J_Hopf(1)`.
+1. **The `√3`-parity "deeper reason" was OVER-STATED.** An earlier version of
+   this docstring added: *"the odd cumulants carry √3 and the even do not, while
+   c₂,c₃ are √3-free rationals, so no single scale reconciles the two parities."*
+   That over-reads. The substrate **legitimately carries √3** — the ζ₃/[3]_q
+   hexagonal (Eisenstein) constant sits inside `c₃^even`'s ℚ(√3) ũ-ladder
+   (`2026-07-07-c3-even-solved-s-complex-volume-rigidity.md`). The full `c₃`
+   being `√3`-free is achieved by the bar-parity split routing `√3` into the
+   *categorical even* channel — that is **consistency, not a fit-signature**. So
+   the valid single-scale prune is the arithmetic gate `4λ₂³+λ₃²≠0` alone; do not
+   lean on `√3`-parity as an independent obstruction.
+
+2. **The genuine scope-(b) obstruction is ANALYTIC TYPE, and it excludes the
+   MULTI-scale case too.** The Q_β ladder `∏(1+c_k u^k)` is **regular** at `q=1`
+   (→1); the Ohtsuki κ-tower has an **essential singularity** there (divergent
+   Gevrey-1). A regular function and an essential-singularity function are not
+   related by an analytic change of variables — so the f-map cannot be a
+   coefficient re-basing **at any scale count** (adding scales does not change
+   analytic type). This holds for every hyperbolic knot. See
+   `2026-07-07-...c-volume-rigidity.md` §"Structural reason (scope-(b))" and
+   registry §9d's standing resurgence bar. The bridge, if any, is the *resurgence
+   Stokes data* (Garoufalidis–Gu–Mariño) on the `A_ω` observable — a different
+   quantity — not a variable substitution into this ladder.
+
+## Verdict — single-scale REFUTED (arithmetic gate, this probe); multi-scale
+## EXCLUDED scope-(b) (analytic type, cited)
+
+The forced single-scale amplitude→c_k map fails by the exact gate computed here;
+the multi-scale/categorical amplitude class is excluded structurally (analytic
+type). Any working coefficient map needs per-rung free parameters — a fit,
+forbidden. Combined with A/B/redirect, `c₃ = J_Hopf(1) = −2` is not forceable
+from any tried f-map route. No fit; no wiring; the value −2 stays the
+skein-derived `J_Hopf(1)` (its q→1 longitude shadow).
 
 -- Ref: docs/audits/2026-08-21-fmap-c3-parity-genericity-exclusion.md
+-- Ref: docs/audits/2026-07-07-c3-even-solved-s-complex-volume-rigidity.md §scope-(b)
+-- Ref: docs/coordination/ck-dk-canonical-registry.md §9d (resurgence bar)
 """
 from __future__ import annotations
 
@@ -60,9 +89,12 @@ def main() -> int:
     print(f"  λ₃ = {sp.nsimplify(lam[3])} ~ {float(lam[3]):.6f}")
     print(f"  4λ₂³ + λ₃² = {float(consistency):.6f}  (==0 iff single-scale forced; it is NOT)")
     allok = all(bool(v) for v in checks.values())
-    print(f"\nVERDICT: Route C (Φ_b amplitude) REFUTED scope-(a) — no single substrate "
-          f"scale forces c₂=−1 AND c₃=−2 (4λ₂³+λ₃²>0 structurally); √3-parity "
-          f"mismatch. {'ALL PASS' if allok else 'FAILURE'}")
+    print(f"\nVERDICT: Route C (Φ_b amplitude) single-scale REFUTED — no single substrate "
+          f"scale forces c₂=−1 AND c₃=−2 (4λ₂³+λ₃²>0 structurally). The MULTI-scale/"
+          f"categorical class is excluded scope-(b) by ANALYTIC TYPE (regular ladder "
+          f"vs essential-singularity κ-tower; c-volume-rigidity §scope-b) — not by "
+          f"√3-parity, which is substrate consistency, not a fit-signature (see "
+          f"CORRECTION). {'ALL PASS' if allok else 'FAILURE'}")
     return 0 if allok else 1
 
 
