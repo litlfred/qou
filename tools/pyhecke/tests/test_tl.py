@@ -107,8 +107,10 @@ def test_TL_gram_is_nonsingular_exactly(n: int, q: Fraction) -> None:
 def test_TL_gram_inverse_is_exact(n: int) -> None:
     """A genuine inverse: `G · G⁻¹ = I` entry-by-entry with exact 1s and 0s.
 
-    The object it replaces is `gram.G_PINV`, whose residual on the singular
-    6×6 form is `‖G · G_INV − I‖ = 1.64` (measured, `qou-cds2`).
+    The object it replaces is `gram.G_PINV`, which on the singular 6×6 form
+    satisfies `G · G_PINV = ` the rank-5 projector, so `‖G · G_PINV − I‖_F = 1`
+    — an identity on the quotient only.  (The `1.64` in the corpus belongs to
+    the deleted float64 `G_INV`, not to `G_PINV`.)
     """
     G = tl.tl_gram_exact(n)
     Gi = tl.tl_gram_inverse_exact(n)

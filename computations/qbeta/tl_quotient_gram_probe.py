@@ -33,10 +33,14 @@ would give.
 * `det G_TL(n) ≠ 0` exactly at `n = 4, 5` and at two distinct rational `q`.
 * `G_TL · G_TL⁻¹ = I` **entry-by-entry, exactly**, at `n = 3, 4, 5`. The
   workaround it replaces is `pyhecke.gram.G_PINV`, whose residual on the
-  singular form is `‖G · G_INV − I‖ = 1.64` (measured, `qou-cds2`).
-* Inverting the *full* form raises rather than returning noise — the behaviour
-  `np.linalg.inv` does not have, which is why `gram.py` had to add
-  `safe_inverse` at all.
+  singular form is `‖G · G_PINV − I‖_F = 1` — exactly right, and not a
+  failure: `G · G_PINV` is the projector onto the rank-5 range (eigenvalues
+  `1,1,1,1,1,0`), so the defect is precisely the corank-1 kernel. The `1.64`
+  figure recorded elsewhere is the *deleted* float64 `G_INV`
+  (`np.linalg.inv`), a different object; do not attribute it to `G_PINV`.
+* Inverting the *full* form **in exact arithmetic** raises. The float64
+  `np.linalg.inv` on the same matrix does *not* raise — it returns noise —
+  which is why `gram.py` had to add `safe_inverse` rather than a `try`/`except`.
 
 ## Scope, stated precisely
 
@@ -182,17 +186,53 @@ def main() -> int:
         )
     check("TL_gram_times_its_inverse_is_exactly_the_identity",
           all(inv_ok.values()),
-          "entry-by-entry exact 1s and 0s at n=3,4,5; the pinv residual on the "
-          "singular form is ||G G_INV - I|| = 1.64")
+          "entry-by-entry exact 1s and 0s at n=3,4,5; G_PINV on the singular "
+          "form gives only ||G G_PINV - I||_F = 1, the rank-5 projector defect")
+
+    # ── 7b. what G_PINV's residual actually is ─────────────────────────────
+    # The corpus records `||G G_INV - I|| = 1.64` for the DELETED float64
+    # `np.linalg.inv`.  That figure is routinely re-cited as though it were
+    # `G_PINV`'s residual, which understates the surviving workaround: a
+    # Moore-Penrose pseudoinverse gives `G @ G_PINV` = the orthogonal projector
+    # onto range(G), so the residual is the projector onto the kernel and
+    #     ||G G_PINV - I||_F = sqrt(corank) = sqrt(1) = 1,
+    # exactly.  The EXACT leg is check 5's corank (rational arithmetic, no
+    # float64); the float64 leg below only confirms numpy agrees, and is
+    # reported as a float64 confirmation, never as an exactness claim.
+    corank3 = 6 - tl.gram_rank_exact(3)
+    pinv_fro_exact = sp.sqrt(sp.Integer(corank3))
+    f64_note = "not measured (numpy/pyhecke.gram unavailable)"
+    f64_ok = True
+    try:
+        import numpy as _np
+        from pyhecke import gram as _gram
+        _G = _np.asarray(_gram.G, dtype=float)
+        _P = _np.asarray(_gram.G_PINV, dtype=float)
+        _R = _G @ _P - _np.eye(6)
+        _fro = float(_np.linalg.norm(_R, "fro"))
+        _eig = sorted(round(float(e.real), 9) for e in _np.linalg.eigvals(_G @ _P))
+        f64_ok = abs(_fro - 1.0) < 1e-9 and _eig == [0.0] + [1.0] * 5
+        f64_note = (f"float64 confirmation: ||G G_PINV - I||_F = {_fro:.6f}, "
+                    f"eigs(G G_PINV) = {_eig}")
+    except ImportError as _e:
+        f64_note = f"not measured ({_e})"
+    check("G_PINV_residual_is_sqrt_corank_eq_1_NOT_the_deleted_G_INV_1.64",
+          pinv_fro_exact == 1 and f64_ok,
+          f"exact: corank {corank3} => ||G G_PINV - I||_F = 1; {f64_note}")
 
     raised = False
     try:
         tl._inverse_exact(tl.full_hecke_gram_exact(3))
     except ZeroDivisionError:
         raised = True
-    check("inverting_the_full_form_raises_instead_of_returning_noise",
+    # Name the arithmetic: this is _inverse_exact (exact Q(q)), which divides by
+    # a pivot that is identically zero and so raises.  numpy's float64
+    # np.linalg.inv on the SAME matrix does not raise -- it returns ~1e16-scale
+    # noise -- which is why gram.py needed safe_inverse rather than a try/except.
+    check("inverting_the_full_form_IN_EXACT_ARITHMETIC_raises",
           raised,
-          "np.linalg.inv does NOT raise here -- that is why gram.py needed safe_inverse")
+          "_inverse_exact raises ZeroDivisionError; np.linalg.inv on the same "
+          "matrix does NOT raise -- that is why gram.py needed safe_inverse")
 
     # ── 8. the mpmath path at the substrate q_0 ────────────────────────────
     # Numeric, so this is a consistency check and is NOT reported as exact.
