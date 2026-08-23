@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-23T12:40:27Z
+updated_at: 2026-08-23T12:48:09Z
 ---
 
 
@@ -1201,3 +1201,24 @@ instantiation past the old `decide` frontier.
 **Explicitly NOT touched: the kernel conjecture.** `kernelValue k ≤ 0` is the
 `dim³`-weighted total, outside the polynomial-function algebra, and stays open.
 This is the `dim²` total, which was never conjectural — only uncertified past 20.
+
+
+### The keystone defect cubic, uncapped (same branch)
+
+`IdentityIPlancherelInstances` grounds `n144C` in the genuine Plancherel
+squared-hook sum rather than the carried `def twoM` — but only *"at the
+registered `n = 2..12`"*. `KeystoneDefectGeneral` restates both
+(`n144C_eq_twelve_plancherel`, `defect_closedform_plancherel`) with no
+hypothesis and no bound, on `plancherelSnDataGeneral`. `n = 20` included as an
+instantiation past the old registered range.
+
+**Scope, written into the file:** this grounds the defect *coefficient*.
+`n144C_closed_form` is an identity about `n144C`; what these add is that the
+`twoM` inside it is the real Plancherel sum rather than a `def`. Whether the
+keystone's physical claim holds is a separate question and is untouched. The
+`n = 7` sign flip sits inside the old range and is unaffected.
+
+Also corrected `IdentityIPlancherelConditional`'s framing — it calls its class's
+two fields the "only unproved input", axiomatising facts "the pinned Mathlib
+lacks". The corpus has those facts now (the OV tower) and the class is inhabited
+at every `n` by a proof. Signatures and the per-`n` `decide` instances unchanged.
