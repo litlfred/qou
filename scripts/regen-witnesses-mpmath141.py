@@ -171,6 +171,15 @@ def main() -> int:
             status, code, tail = "timeout", None, ""
         dt = time.time() - t0
 
+        # A producer killed at the timeout, or exiting nonzero, may have
+        # rewritten SOME of its witnesses and not others. Committing that
+        # half-state is exactly the unattributed value change this ledger
+        # exists to prevent, so restore before measuring. Only a clean exit
+        # is allowed to leave its output on disk.
+        if status != "ok":
+            subprocess.run(["git", "checkout", "--", *wits], cwd=REPO,
+                           capture_output=True)
+
         moved_total, per = 0, {}
         for w in wits:
             try:
