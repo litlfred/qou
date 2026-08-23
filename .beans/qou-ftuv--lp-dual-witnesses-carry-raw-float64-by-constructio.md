@@ -1961,3 +1961,125 @@ he4 probe self-check                      worst χ xcheck 1.4e-14 vs tol 1e-8
 - [ ] `rho-k-h3a-lp-dual` (67) — the last direct-`linprog` producer.
 - [ ] `onepb-status-dashboard` (48), `habiro-correction-shadow-price-test`
       (34, producer broken on an mpf format error).
+
+
+---
+
+## alpha-5 was not hanging — the character kernel was doing object-dtype matmul (2026-08-23)
+
+`alpha_5_lp_dual_crystal.py` appeared to hang at "computing Wedderburn sum…"
+for tritium. Profiled it the same way as he4, and the cause was different from
+what the symptom suggested — as expected, since it is a different kernel.
+
+### The bottleneck: numpy object arrays
+
+`chi_lambda_of_word` computes `tr(Π_k (c_k·σ_{g_k} + d_k·I))` as a dense
+matrix product per letter. The braid word's coefficients are a **mix of `int`
+and `mpmath.mpf`** — 11 of the 23 letters in the A=2 word carry an mpf `d`. So
+`c * sigmas[g] + d * I` promoted a float64 seminormal matrix to **object
+dtype**, and every `product @ M` ran as a Python-level object matmul.
+
+That is why a 27×27 matrix took 0.025 s per letter. Not dim³ float work —
+interpreter overhead per element.
+
+### The fix: the same structural insight as he4, and it transfers
+
+A Hoefsmit seminormal generator is diagonal plus off-diagonal entries with at
+most **two nonzeros per column**, one of which is the diagonal — verified
+across 48 generators spanning six partitions, and re-checked per generator at
+runtime rather than assumed. So each column of the product needs its own
+scaling plus one other column: an O(dim²) update instead of O(dim³), with
+float64 arithmetic instead of object.
+
+Coercing `c`/`d` to float is consistent with what this path already declares
+itself to be — `global_wedderburn_sum_q_hecke_seminormal`'s own docstring says
+"χ^λ_q via Hoefsmit seminormal matrices at q_val (numerical, float64)", and
+`build_seminormal_matrices` returns float64. The mpf coefficients were adding
+digits to an accumulator fed by f64 inputs.
+
+Measured, old vs new, in one process:
+
+```
+λ=(1..)  d=  16    0.289 s ->  0.178 s        1.6x     reldiff 1.2e-15
+λ=(3,3,3) d= 42    2.897 s ->  0.200 s       14.5x     reldiff 1.9e-16
+λ=(4,3,2) d=168  189.077 s ->  0.006 s   31,800x       reldiff 6.3e-16
+```
+
+The speedup grows with dimension because the change is asymptotic. Whole-atom
+Wedderburn sums:
+
+```
+D    n= 6   11 partitions  max dim    16     0.2 s
+T    n= 9   30 partitions  max dim   216     0.2 s
+3He  n= 9   30 partitions  max dim   216     0.2 s
+4He  n=12   77 partitions  max dim  7700   292.4 s
+```
+
+The original could not finish D + T + 3He inside a 10-minute bound.
+
+### ⁴He was never hanging — it was crashing, silently
+
+For large `n` the builder returns **scipy sparse** matrices, and the sparse
+branch did `d * I` with an mpf `d`:
+
+```
+ValueError: scipy.sparse does not support dtype object.
+```
+
+`alpha_5` wraps `per_atom_lp` in `except Exception: continue`, so the heaviest
+atom was dropped without a word. Both storage formats now go through the
+structured path, which reads the generators' nonzeros rather than their
+container. `per_atom_lp('4He')` now returns OK in 301 s, feasible, 6 active
+channels — the first time it has produced anything.
+
+⁴He remains behind its deliberate `INCLUDE_4HE=1` opt-in, so the default run
+and the committed witness are unchanged in scope; what changed is that the
+toggle now works.
+
+### A flag the sweep raised, and what it was
+
+The NaN/feasibility sweep reported `alpha-5` going 17 feasible/0 -> 13/1.
+Investigated rather than accepted: the `ht6` stratum lost its three per-atom
+entries.
+
+**Not caused by this change.** `n_target = Σ|weight_λ|` over the stratum and
+`per_atom_lp` returns `None` when that is exactly 0. Measured: `y_lambda_at`
+returns **exactly 0** for every height-6 partition, and the characters are
+*identical* old vs new. `y_lambda_at` lives in `wedderburn_jones_markov.py`,
+which this change does not touch. The committed witness is from **2026-06-22**
+with ht6 `n_target ~ 1e-5` and `y0_star: None` — it had no shadow price even
+then. The stratum emptied at some point in the two months since; regenerating
+the witness for the first time since June is what surfaced it.
+
+### Carve-out
+
+```
+4,052  start of arc
+  723  previous commit
+  650  alpha-5-lp-dual-crystal
+```
+
+### Verification
+
+```
+witness_raw_float64_audit --strict        exit 0, NEW 0, REGRESSED 0
+witness_raw_float64_audit --self-test     25/25 PASSED
+lp_dual_witness_validator --strict-wired  exit 0
+pytest tools/pyhecke                      240 passed, 13 skipped, 0 failed
+bun run scripts/run-validate.ts           ✓ Valid — 27 issue(s)  (unchanged)
+alpha_5 own assertions                    3/3 passed
+```
+
+`chi_lambda_of_word` is shared by ten-plus scripts, so the dense fallback is
+kept and taken automatically for any generator that violates the structure —
+correctness never depends on the assumption holding.
+
+## Next
+
+- [ ] **Owner: the `ht6` stratum is empty.** `y_lambda_at` gives exactly 0 for
+      every height-6 partition, so `alpha_5`'s ht6 arm computes nothing. It
+      carried `y0_star: None` in June too, so it may have been vestigial — but
+      it is now visibly dead rather than quietly thin.
+- [ ] `rho-k-h3a-lp-dual` (67) — the last direct-`linprog` producer.
+- [ ] `onepb-status-dashboard` (48), `habiro-correction-shadow-price-test`
+      (34, producer broken on an mpf format error).
