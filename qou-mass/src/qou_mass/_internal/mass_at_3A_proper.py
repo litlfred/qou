@@ -743,7 +743,7 @@ def tower_term_li2q(v_abs: float) -> "mpmath.mpf":
     global _LI2Q_Q_CACHE
     import mpmath as _mp
     from _li_2_q_util import li_2_q, load_q_50dps
-    # Built at >= 60 dps regardless of the caller's ambient precision, for the
+    # Built at >= COMPUTE_DPS regardless of the caller's ambient precision, for the
     # reason `_q_h_at_precision` gives above: an mpf keeps the precision it was
     # CREATED at, so loading q under the mpmath default (dps = 15) would bake in
     # a 15-digit q and silently undo everything below. It matters twice here --
@@ -752,7 +752,8 @@ def tower_term_li2q(v_abs: float) -> "mpmath.mpf":
     # 1e-10 and hand back an mpf-typed, float64-valued answer. That is the exact
     # "precision theatre" this module already carries a warning about.
     # Callers already inside a higher workdps keep theirs.
-    with _mp.workdps(max(_mp.mp.dps, 60)):
+    from _precision import COMPUTE_DPS
+    with _mp.workdps(max(_mp.mp.dps, COMPUTE_DPS)):
         dps = _mp.mp.dps
         if _LI2Q_Q_CACHE is None or _LI2Q_Q_CACHE[0] != dps:
             q, q_inv, _z = load_q_50dps()

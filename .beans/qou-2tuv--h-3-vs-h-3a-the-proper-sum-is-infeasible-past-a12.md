@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-23T07:39:35Z
+updated_at: 2026-08-23T07:57:44Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1489,3 +1489,68 @@ not a change to make silently on behalf of ~20 consumers.
 So: no float64 downcast in the code I wrote, and the term itself is now correct
 to 60 digits rather than 10. The remaining float64 is upstream, pre-existing, and
 flagged rather than papered over.
+
+
+
+---
+
+# Un-hardcoded the precision, and scanned for the dps=15 hazard
+
+## My `60` was wrong twice
+
+```python
+with _mp.workdps(max(_mp.mp.dps, 60)):        # before
+with _mp.workdps(max(_mp.mp.dps, COMPUTE_DPS)):  # after
+```
+
+Not just hardcoded — **the wrong number**. `qou_substrate.precision` defines the
+convention as *COMPUTE at OUTPUT_DPS + GUARD, SERIALIZE at OUTPUT_DPS*, with
+`OUTPUT_DPS_DEFAULT = 60`, `PRECISION_GUARD_DEFAULT = 10`, and
+`COMPUTE_DPS_DEFAULT = 70`. I had picked the **serialization** precision for a
+**compute** context, so I was running 10 digits under the guard. Now imports
+`COMPUTE_DPS` from `_precision`, which is env-overridable via
+`QOU_COMPUTE_DPS` and resolves to 70.
+
+**Rust needs no separate constant.** The crates take `prec: u32` and `dps` as
+call parameters (`tl_cable_mpfr.rs:305` `new(q_dec: &str, prec: u32)`,
+`jp(&self, word, q_dec, prec)`), so the Python constant is already the single
+source of truth — the fix is for callers to pass `COMPUTE_DPS` rather than a
+literal, not to mirror a value into Rust.
+
+## The dps=15 scan — already gated, and my number was worse
+
+I scanned for entry points building mpf without ever raising dps and reported 23.
+**The repo already has a blocking ratchet for this**, wired into
+`precision-gates.sh:60`, and it is green:
+
+    runnable producers never raising dps : 10
+    baseline files / constructions       : 46 / 206
+    drained since baseline               : 36 file(s), +164
+    NEW (not baselined)                  : 0
+    REGRESSED                            : 0
+
+The audit's 10 is authoritative — it *runs* the producers, where my scan matched
+text — so my 23 was false-positive inflated. There are three such ratchets
+(`import-time dps`, `never-raises-dps`, `float64-padding`), all blocking, plus
+`module_const_precision_audit.py` whose docstring opens *"Owner directive: NO
+FLOAT64."* This ground is covered and actively draining; I re-derived it.
+
+## What the scan did find that is NOT gated
+
+952 sites set precision **below** the canonical `OUTPUT_DPS = 60` — 610 at
+dps=50, 213 at 40, 92 at 30 — against 447 at or above, with only 145 files
+importing the constants at all. The 50s look like leftovers from before the
+2026-05-31 bump (50→60 / 65→70, PR #1595) that never followed.
+
+That is a different defect from never-raises-dps: these DO raise dps, to a value
+that stopped being canonical, so no existing ratchet sees them. Filed as
+**qou-zo4i** rather than bulk-edited — raising precision changes every value those
+producers emit, and whether the 50s are deliberate is an owner call.
+
+## Verified
+
+`precision-gates.sh` exit 0, all blocking green (so all three dps ratchets pass
+with this change). Vendored copy re-synced and carries `COMPUTE_DPS`;
+`import qou_mass` works. Term now
+`0.448622537258032831723547046137130408215229049`, carrying digits beyond
+float64.
