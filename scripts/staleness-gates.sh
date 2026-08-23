@@ -102,6 +102,31 @@ GATES=(
   # optional in several environments, and a gate should not redden on something
   # it cannot evaluate.
   "pyhecke-native wheel|scripts/check-pyhecke-native-staleness.py|--check|yes"
+  # BLOCKING. Asks the question the headline staleness number cannot answer:
+  # did staleness FALL, or did the denominator?
+  #
+  # Re-running certain producers STRIPS `scriptHash` instead of refreshing it,
+  # because 29 raw-JSON writers stamped no envelope at all. The witness then
+  # leaves the self-staleness audit rather than becoming fresh — and the count
+  # drops, which reads as progress. Measured over one sweep before the 29 were
+  # converted: 35 genuine drains against 4 false.
+  #
+  # Classifies every witness against HEAD into DRAINED / STILL_STALE / FRESH /
+  # LOST_PROV / NO_PROV / UNRESOLVABLE, computing "stale at HEAD" honestly —
+  # HEAD's recorded scriptHash against the hash of HEAD's version of the
+  # producer, not today's. `--strict` gates ONLY on LOST_PROV; the NO_PROV
+  # backlog (421 witnesses outside the audit: 397 with no scriptHash, 24 with
+  # no scriptFile) is reported and not gated, since a gate red on arrival gets
+  # skipped.
+  #
+  # The failure mode here is OVER-firing, and the first draft did: a rule of
+  # "HEAD had either field and now lacks a complete pair" flagged every
+  # UNCHANGED witness in the backlog carrying a scriptFile but no scriptHash —
+  # about 200 of them — which would have buried the four real cases. The
+  # shipped rule fires only on a field PRESENT at HEAD and ABSENT now, and the
+  # 5-case self-test pins both quiet cases (unchanged backlog, never-had-
+  # provenance) for exactly that reason.
+  "witness drain audit|computations/witness_drain_audit.py|--strict|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then

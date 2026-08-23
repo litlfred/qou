@@ -308,7 +308,7 @@ def main(argv: list[str]) -> int:
               f"{r['growth_channels_free']:>5d}/{r['growth_channels_atom']:<4d}",
               flush=True)
     out = HERE / "bar-pairing-binding-observable-extension.witness.json"
-    out.write_text(json.dumps({
+    witness = {
         "computation": "bar-pairing-binding-observable-extension",
         "description": (
             "Extension of PR #1742's bar-pairing observable to T, ³He, "
@@ -317,7 +317,36 @@ def main(argv: list[str]) -> int:
             "finding across the light series."
         ),
         "results": results,
-    }, indent=2))
+    }
+    # Provenance envelope. This producer writes its witness as raw JSON, so
+    # nothing stamps `scriptHash` — and a witness without one cannot be
+    # compared against its producer, so it drops OUT of the self-staleness
+    # audit and reads as "not stale" forever. Regenerating it then looks
+    # like progress while removing it from the count: a false drain.
+    # Full rationale and the detector: computations/witness_drain_audit.py.
+    #
+    # The dict was inlined into the `json.dumps` call; it is bound to a name
+    # here so the stamp has something to mutate. NOTE: the OTHER raw write in
+    # this file (the `legacy.write_text` at ~L152) is deliberately left alone
+    # — that one rewrites three COMMITTED chi witnesses as this script's own
+    # cache records, which is a separate defect (a producer and a cache must
+    # not share a path) and is being tracked separately.
+    #
+    # `stamp_staleness_metadata`, not `wrap_legacy().save()`: it adds the
+    # fields in place and leaves the on-disk shape untouched.
+    try:
+        from witness_base import WitnessBuilder  # noqa: E402
+    except ImportError:  # cluster subdir without the _path_bridge bootstrap
+        import sys as _sys
+        from pathlib import Path as _Path
+        _sys.path.insert(0, str(next(
+            _a / "substrate" for _a in _Path(__file__).resolve().parents
+            if (_a / "substrate" / "witness_base.py").is_file())))
+        from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__,
+        engine=witness.get("engine", "rust+mpmath"))
+    out.write_text(json.dumps(witness, indent=2))
     print(f"\nWitness: {out.name}", flush=True)
     return 0
 

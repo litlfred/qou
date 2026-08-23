@@ -609,10 +609,18 @@ def main() -> int:
 
     losses, absent_file, absent_hash, absent_both = provenance_loss()
     print("\nprovenance coverage (live computations corpus)")
-    print(f"  no scriptFile            {absent_file}")
+    # The union is what "outside the audit" means, and the two halves fail
+    # differently: no `scriptHash` means there is no recorded value to compare
+    # against; no `scriptFile` means the producer cannot be located to re-hash.
+    # Labelling only the scriptHash count as "outside the audit" understates it.
+    outside = absent_file + absent_hash - absent_both
     print(f"  no scriptHash            {absent_hash}   "
-          f"<- outside the self-staleness audit entirely")
-    print(f"  neither (unresolvable)   {absent_both}")
+          f"(no recorded value to compare)")
+    print(f"  no scriptFile            {absent_file}   "
+          f"(producer cannot be located to re-hash)")
+    print(f"  neither                  {absent_both}")
+    print(f"  -> outside the audit     {outside}   "
+          f"<- every drain figure is computed over the rest")
     if losses:
         print(f"\n  ✗ {len(losses)} witness(es) LOST provenance vs HEAD:")
         for r in losses:

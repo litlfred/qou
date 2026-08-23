@@ -650,5 +650,30 @@ if __name__ == "__main__":
         "results": results,
     }
     out = Path(__file__).parent / "canonical-with-proper-tower.witness.json"
+    # Provenance envelope. This producer writes its witness as raw JSON, so
+    # nothing stamps `scriptHash` — and a witness without one cannot be
+    # compared against its producer, so it drops OUT of the self-staleness
+    # audit and reads as "not stale" forever. Regenerating it then looks
+    # like progress while removing it from the count: a false drain.
+    # Full rationale and the detector: computations/witness_drain_audit.py.
+    #
+    # `stamp_staleness_metadata`, not `wrap_legacy().save()`: it adds the
+    # fields in place and leaves the on-disk shape untouched, so consumers
+    # of legacy `assertions` records (which key on `label`, not `name`) do
+    # not have to change. `engine` is passed back from the payload because
+    # the helper overwrites it, and a descriptive engine string is worth
+    # keeping.
+    try:
+        from witness_base import WitnessBuilder  # noqa: E402
+    except ImportError:  # cluster subdir without the _path_bridge bootstrap
+        import sys as _sys
+        from pathlib import Path as _Path
+        _sys.path.insert(0, str(next(
+            _a / "substrate" for _a in _Path(__file__).resolve().parents
+            if (_a / "substrate" / "witness_base.py").is_file())))
+        from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__,
+        engine=witness.get("engine", 'sympy'))
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

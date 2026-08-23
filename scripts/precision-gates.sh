@@ -292,11 +292,17 @@ GATES=(
   # measured 35 genuine drains against 4 false.
   #
   # Two numbers, and deliberately only one of them gates:
-  #   REPORTED   259 live witnesses carry neither scriptFile nor scriptHash;
-  #              397 carry no scriptHash and are outside the self-staleness
-  #              audit entirely, so every drain figure is computed over the
-  #              rest. A standing backlog — gating on it would be red on
-  #              arrival, which this file's own preamble says gets skipped.
+  #   REPORTED   421 live witnesses are outside the self-staleness audit, so
+  #              every drain figure is computed over the remaining 2296. The
+  #              breakdown matters because the two halves fail differently:
+  #                397  no scriptHash — no recorded value to compare against
+  #                 24  no scriptFile — producer cannot be located to re-hash
+  #                     (259 of the 421 have neither)
+  #              An earlier draft of this comment said "397 ... outside the
+  #              audit entirely", which understated it: a witness can carry a
+  #              hash and still be uncheckable if nothing says whose hash it
+  #              is. A standing backlog either way — gating on it would be red
+  #              on arrival, which this file's own preamble says gets skipped.
   #   BLOCKING   a witness that HAD scriptFile or scriptHash at HEAD and lacks
   #              it now. Nothing legitimately drops its own provenance, so
   #              there is no judgement call and no tolerance to tune. Green on
