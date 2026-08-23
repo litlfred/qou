@@ -646,4 +646,67 @@ noncomputable def traversalVerdicts (w : BraidWord n) : List (Option Bool) :=
   ((List.finRange n).filter (fun p => decide (IsLeader (closurePerm w) p))).flatMap
     (fun p => walkVerdicts w p (cycleLen (closurePerm w) p))
 
+/-! ### Reading a lap at a given crossing
+
+"Each crossing appears exactly twice in the traversal" is what makes *the first
+of its two encounters* well posed, and hence what makes the descending predicate
+definable. The lemma below is the indexing step it rests on: it says the `k`-th
+entry of a lap is the verdict at the `k`-th crossing, evaluated at wherever the
+strand had got to by then. -/
+
+/-- **The `k`-th entry of a lap is the `k`-th crossing's verdict**, evaluated at
+the position the strand has reached after the first `k` crossings. -/
+theorem lapVerdicts_getElem :
+    ∀ (w : BraidWord n) (p : Fin n) (k : ℕ) (hk : k < w.length),
+      (lapVerdicts w p)[k]'(by simpa using hk)
+        = stepOver w[k] (lapStep (w.take k) p)
+  | [], _, _, hk => absurd hk (by simp)
+  | c :: w, p, 0, _ => rfl
+  | c :: w, p, k + 1, hk => by
+      have hk' : k < w.length := by simpa using hk
+      simpa [lapVerdicts, lapStep] using
+        lapVerdicts_getElem w (crossingSwap c p) k hk'
+
+/-- A strand is involved in a crossing exactly when it is at one of the two
+positions the crossing acts on. -/
+theorem stepOver_isSome_iff_mem (c : BraidCrossing n) (q : Fin n) :
+    (stepOver c q).isSome ↔ q = loIdx c.gen ∨ q = hiIdx c.gen := by
+  unfold stepOver
+  by_cases h0 : q = loIdx c.gen
+  · simp [h0]
+  · by_cases h1 : q = hiIdx c.gen
+    · subst h1
+      constructor
+      · intro _; exact Or.inr rfl
+      · intro _; split <;> simp
+    · simp [h0, h1]
+
+/-- **Exactly two strands meet each crossing.** The position a strand occupies
+just before crossing `k` is a *permutation* of its starting position, so the
+starts that are involved form the preimage of a two-element set.
+
+This is what makes "the first of a crossing's two encounters" well posed, and
+hence what makes the descending predicate definable at all. It is the
+traversal-level counterpart of `stepOver_lo_ne_hi`, which gave the two strands
+*opposite* verdicts at a single crossing. -/
+theorem card_involved (w : BraidWord n) (k : ℕ) (hk : k < w.length) :
+    (Finset.univ.filter
+      (fun p : Fin n => (stepOver w[k] (lapStep (w.take k) p)).isSome)).card = 2 := by
+  classical
+  set σ := closurePerm (w.take k) with hσ
+  have hset : (Finset.univ.filter
+      (fun p : Fin n => (stepOver w[k] (lapStep (w.take k) p)).isSome))
+      = {σ (loIdx w[k].gen), σ (hiIdx w[k].gen)} := by
+    ext p
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert,
+               Finset.mem_singleton, stepOver_isSome_iff_mem, lapStep_eq, ← hσ]
+    constructor
+    · rintro (h | h)
+      · left;  exact (Equiv.eq_symm_apply _).mp h.symm |>.symm
+      · right; exact (Equiv.eq_symm_apply _).mp h.symm |>.symm
+    · rintro (rfl | rfl) <;> simp
+  rw [hset, Finset.card_insert_of_notMem, Finset.card_singleton]
+  simp only [Finset.mem_singleton]
+  exact fun h => loIdx_ne_hiIdx w[k].gen (σ.injective h)
+
 end QOU.Knot.BraidClosure
