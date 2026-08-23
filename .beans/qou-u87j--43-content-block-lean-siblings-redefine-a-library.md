@@ -11,11 +11,12 @@ updated_at: 2026-08-23T08:05:53Z
 
 ## Measured 2026-08-23, branch `claude/n1dj-volume-iso-reading-2026-08-22`
 
-> **Every count in this section is superseded** — see §Correction below. The
-> real figures are 148 / 102 / 46 / 39, from `check-mirror-drift.ts`. The
-> filename still carries the old `43-` slug because a beans title change does
-> not rename the file; resolve this bean by `ls .beans/ | grep u87j`, never by
-> slugifying the title.
+> **Every count in this section is superseded.** Read §Final figures at the
+> bottom, not this one: on `main` it is 147 / 101 / **46** / 39, and on the
+> `qou-n1dj` branch 148 / 103 / **45** / 38. The middle §Correction section is
+> also one revision behind. The filename still carries the old `43-` slug
+> because a beans title change does not rename the file; resolve this bean by
+> `ls .beans/ | grep u87j`, never by slugifying the title.
 
 Found while doing `qou-n1dj` item 3, where **one** instance of this appeared:
 `quantum-observable-universes/quantum-observable-universe.lean` turned out to be
