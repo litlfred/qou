@@ -56,6 +56,105 @@
     ]
    },
    "tail": ""
+  },
+  "computations/delta_lambda_v_hat_z_transfer_phase5d_4.py": {
+   "status": "timeout",
+   "exit": null,
+   "wall_s": 240.1,
+   "witnesses": [
+    "computations/v-hat-z-transfer-phase5d-4.witness.json"
+   ],
+   "fields_moved": 0,
+   "moved_sample": {},
+   "tail": ""
+  },
+  "computations/f_ell_derivation_via_per_braid_mass_tower.py": {
+   "status": "ok",
+   "exit": 0,
+   "wall_s": 0.3,
+   "witnesses": [
+    "computations/f-ell-derivation-via-per-braid-mass-tower.witness.json"
+   ],
+   "fields_moved": 12,
+   "moved_sample": {
+    "computations/f-ell-derivation-via-per-braid-mass-tower.witness.json": [
+     "/constants/cal2_target_codata",
+     "/constants/h",
+     "/constants/hbar_q_sq",
+     "/constants/q_0",
+     "/constants/z_markov",
+     "/cross_check_proton/ratio_m_p_over_m_e_computed",
+     "/electron/li2q_neg_Ve",
+     "/electron/m_electron_dimensionless"
+    ]
+   },
+   "tail": ""
+  },
+  "computations/hydrogen_qshuffle_compound.py": {
+   "status": "ok",
+   "exit": 0,
+   "wall_s": 1.1,
+   "witnesses": [
+    "computations/hydrogen-qshuffle-compound.witness.json"
+   ],
+   "fields_moved": 17,
+   "moved_sample": {
+    "computations/hydrogen-qshuffle-compound.witness.json": [
+     "/data/compound_braid/gens[0]/V_hat_full",
+     "/data/compound_braid/gens[1]/V_hat_full",
+     "/data/compound_braid/gens[3]/V_hat_full",
+     "/data/compound_terms_cat/T1",
+     "/data/compound_terms_cat/T2",
+     "/data/compound_terms_cat/T3",
+     "/data/compound_terms_cat/T4",
+     "/data/compound_terms_cat/T5"
+    ]
+   },
+   "tail": ""
+  },
+  "computations/lepton_tower_probe_1_cinquefoil_muon.py": {
+   "status": "nonzero",
+   "exit": 1,
+   "wall_s": 0.2,
+   "witnesses": [
+    "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json"
+   ],
+   "fields_moved": 0,
+   "moved_sample": {},
+   "tail": "unks\n  File \"/usr/lib/python3.11/json/encoder.py\", line 439, in _iterencode\n    o = _default(o)\n        ^^^^^^^^^^^\n  File \"/usr/lib/python3.11/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type mpf is not JSON serializable\n"
+  },
+  "computations/probes/borromean_per_lambda_fr_probe.py": {
+   "status": "ok",
+   "exit": 0,
+   "wall_s": 2.5,
+   "witnesses": [
+    "computations/probes/borromean-per-lambda-fr-probe.witness.json"
+   ],
+   "fields_moved": 187,
+   "moved_sample": {
+    "computations/probes/borromean-per-lambda-fr-probe.witness.json": [
+     "/assertions[0]/computed",
+     "/assertions[1]/computed",
+     "/data/results/baseline/rows/12C/B_tower",
+     "/data/results/baseline/rows/12C/net_over_target",
+     "/data/results/baseline/rows/16O/B_tower",
+     "/data/results/baseline/rows/16O/net_over_target",
+     "/data/results/baseline/rows/2H/B_tower",
+     "/data/results/baseline/rows/2H/net_over_target"
+    ]
+   },
+   "tail": ""
+  },
+  "computations/probes/pentagon_to_borromean_h4_probe.py": {
+   "status": "ok",
+   "exit": 0,
+   "wall_s": 0.6,
+   "witnesses": [
+    "computations/pentagon-to-borromean-h4-probe.witness.json"
+   ],
+   "fields_moved": 0,
+   "moved_sample": {},
+   "tail": ""
   }
  }
 }
