@@ -211,7 +211,16 @@ set_option maxHeartbeats 8000000 in
 conjectural — it is `k!·E_Planch[ω₃] = 0`, exact for every `k` (the identity coefficient of
 `Σ_i X_i²` in the Jucys–Murphy calculus is `C(k,2)`); what the `decide` supplies is a certified
 floor pending the general character-orthogonality proof, which needs the JM-eigenvalue ⇒
-Plancherel-mean bridge (Sₙ representation-theory infrastructure, not yet in the corpus). -/
+Plancherel-mean bridge (Sₙ representation-theory infrastructure, not yet in the corpus).
+
+**Superseded 2026-08-23 — the general-`k` proof exists.**
+`SecondMomentKernelVanishes.secondMomentKernel_eq_zero` proves this for **every** `k`, with no
+bound and no `decide`.  The sentence above — *"pending the general character-orthogonality proof,
+which needs the JM-eigenvalue ⇒ Plancherel-mean bridge (Sₙ representation-theory infrastructure,
+not yet in the corpus)"* — named exactly what was missing, and it has since landed: that bridge is
+Identity (ii) (`OVTopAssembly.identityB_general`, transported to the list model by
+`PlancherelSnDataGeneral`), built from the three inputs the `k ≤ 7` docstring lists.  This lemma
+remains the cheaper route inside its range. -/
 theorem secondMomentKernel_eq_zero_of_le_twenty (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 20) :
     secondMomentKernel k = 0 := by
   rcases le_or_gt k 7 with h7 | h7

@@ -66,8 +66,11 @@ theorem numSYT_diagram_eq_sytDim (k : ℕ) (p : Nat.Partition k) :
         (Multiset.sort_sorted _ _) (SpechtClassification.sorted_parts_pos k p)]
 
 /-- **The reindexing**, over Mathlib's `Nat.Partition` (no dependency on the red custom-`Partition`
-file): the enumerator's `Finset` sums like `Finset.univ`. -/
-theorem sum_toFinset_eq_sum_natPartition (k : ℕ) (g : List ℕ → ℕ) :
+file): the enumerator's `Finset` sums like `Finset.univ`.
+
+Generic in the codomain (2026-08-23): the `Finset.sum_bij` argument never looked at `ℕ`, and the
+`ℤ`-valued instance is what the content-square total `secondMomentKernel` needs. -/
+theorem sum_toFinset_eq_sum_natPartition {M : Type*} [AddCommMonoid M] (k : ℕ) (g : List ℕ → M) :
     ∑ l ∈ (partsOf k).toFinset, g l = ∑ p : Nat.Partition k, g (p.parts.sort (· ≥ ·)) := by
   refine Finset.sum_bij (fun l hl => toNatPartition k l (List.mem_toFinset.mp hl))
     (fun l hl => Finset.mem_univ _) ?_ ?_ ?_
