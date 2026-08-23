@@ -34,6 +34,18 @@ Once this lands, the Wedderburn isomorphism follows by counting: surjective, wit
 forces bijectivity — and yields `dim H_{n+1}(q) = (n+1)!` as a corollary, the Iwahori–Hecke basis
 theorem's lower bound, without the Gröbner–Shirshov route.
 
+## Base ring (§7c) — the `ℝ` is inherited, not gratuitous
+
+`scripts/check-sidecars.sh` flags this file as *"ℝ in type but NO archimedean construct → likely
+gratuitous"*.  That is a false positive of a kind the checker cannot see: the archimedean construct
+is **one import away**, not absent.  `seminormalRep` is `ℝ`-only for a real reason — the
+non-vanishing of `offDiag` at admissible distances (`OffDiagNonvanishing.sq_geom_lt`) is an
+inequality in an *ordered* field, `0 < y` and all — so nothing built on top of `seminormalRep` can be
+generalised to a bare `[Field R]`.  Every `ℝ` below is forced by that.
+
+Recorded rather than suppressed: the checker keys on archimedean constructs appearing *in the file*,
+and has no notion of one inherited through an import.
+
 LaTeX label: `thm:hecke-product-surjective`
 -/
 
