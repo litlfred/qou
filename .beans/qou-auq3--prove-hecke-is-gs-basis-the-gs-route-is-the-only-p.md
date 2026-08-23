@@ -3893,3 +3893,79 @@ exactly that.
 throughout this arc"* still records no reason, and now has a measured one — the
 U-side script differs. Whoever next edits those probes should replace the bare
 caveat with this.
+
+---
+
+## RETRACTION + `a = 2` PROVED (2026-08-23)
+
+**The section immediately above is wrong and is retracted.** It reports the
+`a = 2` U lineage's endpoint as `bsWord₂ i₂ i₁ j₂ ++ [σᵢ, σᵢ₋₁]`, concludes
+that "neither the target nor the route transfers", and revises the scope to
+"a construction, not a substitution". All three are wrong about the **prefix**.
+
+The error: `hecke_small_a_decomposition.py` ran the U lineage to its **normal
+form**. The prefix ends at the **first cancellation**, which is far earlier —
+and the branch that measurement followed is *never touched* before the prefix
+ends. It just sits there as a bystander, which is why the prefix's step count
+is independent of `b` while that branch's length is not.
+
+Re-measured to the first cancellation (9/9 assertions, 8 cases):
+
+| | `a = 1` | `a = 2` | `a ≥ 3` |
+|---|---|---|---|
+| prefix steps | 6 | **11** | `a²+a+5` |
+| matches `a²+a+5` | ✗ (7) | ✓ | ✓ |
+| opening / closing | — | 7 / 4 ✓ | `a²−3a+9` / `4(a−1)` |
+| cancellation word | `bsWord₂ i₁ i j₂` | **`WStar`** ✓ | `WStar` |
+| source-only at every step | ✓ | ✓ | ✓ |
+
+So `a = 2` obeys **every** general formula and lands on the **same word**. It is
+a substitution after all, in three of five stretches.
+
+`CornerLe.prefixChain₂` proves it — lean-direct exit 0, 0 sorries, `#print
+axioms` clean on all six new declarations. What actually degenerates, all from
+`j₁ = i₂` forcing `jp = i₁`, `jpp = i`:
+
+* **U loop absent** (not the identity): `descWord i j₁` is three letters, so
+  `U0` already carries `quadPair`'s redex and needs neither the loop nor the
+  trio's `bsStep`. `uQuad₂` is `trio` minus its first step. At `a = 3` the loop
+  is *present and is the identity* — the two small cases degenerate in
+  **opposite** directions.
+* **V loop trivial** (`descWord i₁ jpp` empty, `V2L = V2`).
+* **both F-runs one step** (`descWord i jppp` empty) — hence `fRun_gen`, which
+  takes the run as a parameter and the close-up as a hypothesis, leaving `fRun`
+  as its `descWord_split` supplier so the `a ≥ 3` chain is untouched.
+
+The V trio, `closingBs`, and the cancellation transfer unchanged. `closingBs`
+transfers because its `hj₁ : j₁ ≤ i₂` holds with **equality** here.
+
+**Why the trace's step 9 reads `Y` and not `B`.** Measured, not assumed: at
+`j = i′` the Bokut–Shiao rule and Yang–Baxter share a leading word on 8/8 pairs
+at `n = 9` and have the same relation on 0/8 — they differ by a **sign**, `Y`
+carrying `−1` at its own leading word. The engine names whichever its rule
+table reaches first; the Lean takes the monic Bokut–Shiao form, for the reason
+§4al already gives for `quadPair`.
+
+**Standing caveat, now discharged for `a = 2`.** The three sibling probes'
+bare "a = 2 is excluded throughout this arc" is replaced with the measured
+reason. All four Hecke GS probes now declare `q0Anchor: "independent"` with a
+reason (verified: the whole import cone reads no q₀; the engine's only symbol
+is a formal `sp.Symbol("h")`). Audit: `Q0_INDEPENDENT` 35 → 39,
+`Q0_ANCHOR_MISSING` 1924 → 1922.
+
+### Method note — the fourth instance in this arc
+
+This is the **fourth** structural claim in this arc to reach a durable artifact
+having been measured against the wrong question (after: V-lineage words tested
+against the U trio; `L = jpp − j₁`; `T` hardcoded to `[σᵢ]`). The pattern is
+not "insufficient measurement" — each had a measurement — it is a measurement
+answering a *neighbouring* question. The probe now states its question in its
+own docstring: **run to the first cancellation, not to a normal form.**
+
+### `a = 1` — measured, open
+
+6 steps, not 7. Schedule `QQYQBQ` for `b ≥ 2`, `QQYYQQ` on the diagonal
+`b = 1`. Cancellation word `bsWord₂ i₁ i j₂` = `σᵢ₋₁ :: σᵢ :: descWord i₁ j₂`,
+uniform in `b`. Nothing transfers: at `a = 1`, `j₁ = i₁`, so **both** `V0` and
+`U0` carry a bare quadratic redex `σᵢ₋₁σᵢ₋₁` from the start and the chain opens
+with two `Q` steps, one per term. Not yet proved.
