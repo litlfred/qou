@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:43:29.578638+00:00",
-  "commitSha": "4fca46340a2f4d4dd50ba8ec2f028e657b18c6a1",
+  "computedAt": "2026-08-23T21:18:34.059571+00:00",
+  "commitSha": "0fa29c3c04f5fce8f2984ae7a2c1ca456e48bf2d",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
-  "scriptCommitSha": "077de45482ae40751a201ea56648ba7d0710b32b",
+  "scriptCommitSha": "797db0ebf7ca818e095cd9a9585ebd06063987f0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2722,
-      "prov_ok": 2346,
+      "total_scanned": 2723,
+      "prov_ok": 2347,
       "prov_audit_exempt": 78,
       "prov_exempt_no_reader": 221,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 74,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.972814107274063188831741366642174871418074944893460690668626"
+      "completeness_ratio": "0.972824091076019096584649283878075651854572163055453543885420"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -5567,6 +5567,10 @@
         },
         {
           "witness": "graded-hecke-energy-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gram-h3-convention-frame-probe.witness.json",
           "missing_fields": []
         },
         {
