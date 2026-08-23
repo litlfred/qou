@@ -366,7 +366,7 @@ surface the duplicates in step 6) saves a full review cycle.
 ## 4a. Mirror-drift gate (BLOCKING on growth)
 
 ```sh
-bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 37
+bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 35
 ```
 
 A green Lean build does not mean the checkers looked at the code it compiled.
@@ -377,30 +377,35 @@ wins **candidate 1** of `lean.ref` resolution, before any Lake-tree candidate,
 so every checker aimed at that block audits the sibling's copy and never sees
 the declaration `lake build` just compiled.
 
-Measured 2026-08-23 (bean `qou-u87j`), both columns with the current parser:
+Measured 2026-08-23 (bean `qou-u87j`), all columns with the current parser:
 
-| | `main` @797db0ebf7 | after `qou-u87j` |
-|---|---|---|
-| same-FQN pairs | 141 | 148 |
-| faithful mirrors | 91 | 111 |
-| **drifted** | **43** | **37** |
-| drifted **and** crossing the §7c wall | 7 | **0** |
-| §7c regime-only | 7 | **0** |
+| | `main` @797db0ebf7 | `qou-u87j` branch | after merging `main` |
+|---|---|---|---|
+| same-FQN pairs | 141 | 148 | 141 |
+| faithful mirrors | 91 | 111 | 106 |
+| **drifted** | **43** | **37** | **35** |
+| drifted **and** crossing the §7c wall | 7 | **0** | **0** |
+| §7c regime-only | 7 | **0** | **0** |
 
-Every drifted pair masks a `lean.ref`, in both columns. `pairs = faithful +
-regime-only + drifted`; the two 7s on `main` are different sets — `regimeOnly`
-is same-fields-opposite-wall and is *excluded* from `drifted`, while
-`driftedRegime` is the subset of `drifted` that also crosses. Easy to
-double-count.
+The middle column is the branch *before* it took `main`; the right column is
+what is on disk. Pair count drops back to 141 because the merge brought in
+`main`'s deletion of 11 content siblings that had shadowed the library —
+`main` had been draining this same population from the other end.
 
-- **`--baseline 37` fires on growth only** (exit 3). A gate that failed on the
+Every drifted pair masks a `lean.ref`, in all three columns. `pairs = faithful
++ regime-only + drifted`; the two 7s on `main` are different sets —
+`regimeOnly` is same-fields-opposite-wall and is *excluded* from `drifted`,
+while `driftedRegime` is the subset of `drifted` that also crosses. Equal by
+coincidence, and easy to double-count.
+
+- **`--baseline 35` fires on growth only** (exit 3). A gate that failed on the
   whole backlog would just teach everyone to pass `--warn-only`; this one stops
-  the 111 faithful mirrors becoming the next 37.
+  the 106 faithful mirrors becoming the next 35.
 - **If you touched a mirrored declaration, resync both copies in the same
   change.** The checker names the file and line on each side and prints the
   field-level diff; `--tsv` gives one row per pair.
 - **Lower the baseline when you drain some.** It is a ratchet, like the
-  float64 ones in §4b — leaving it at 37 after fixing five means the next five
+  float64 ones in §4b — leaving it at 35 after fixing five means the next five
   regressions go unnoticed.
 - **The two §7c counters are at 0 and should stay there.** They are the reason
   this gate was built; what is left under `qou-u87j` is plain field drift with
@@ -450,7 +455,7 @@ the CI copy does not run.
 ### Duplicate declarations — run it in the same breath
 
 ```sh
-bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou --baseline 56
+bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou --baseline 57
 ```
 
 Same family of defect — the library disagreeing with itself — and the same kind
@@ -466,17 +471,26 @@ error: import QOU.CategoricalDqSquared failed, environment already contains
 Measured 2026-08-23 (bean `qou-kfcl`) — the earlier text labelled the
 right-hand column "main", which it never was:
 
-| | `main` @797db0ebf7 | after `qou-kfcl` |
-|---|---|---|
-| declarations scanned | 34 138 | 33 793 |
-| **duplicated FQNs** | **66** | **56** |
-| un-importable module pairs | 65 | 61 |
-| modules involved | 72 | 64 |
+| | `main` @797db0ebf7 | `qou-kfcl` branch | after merging `main` |
+|---|---|---|---|
+| declarations scanned | 34 138 | 33 793 | 34 136 |
+| **duplicated FQNs** | **66** | **56** | **57** |
+| un-importable module pairs | 65 | 61 | 62 |
+| modules involved | 72 | 64 | 66 |
 
 The worst was `QOU.R_q` — `RatFunc ℚ` in one module and `LaurentPolynomial ℤ`
 in the other, the same name for two different rings. That one is resolved:
 `QOU/GroundRingCore.lean` is the canonical minimal module (one Mathlib import),
 and no `R_q`, `q_param` or `q_inv_param` appears in the report any more.
+
+**The baseline went 56 → 57, which is a ratchet loosening and needs its
+reason.** The merge brought in exactly one new duplicate and nothing was lost:
+`QOU.Mathlib.Schensted.wordOfPerm_injective`, a `theorem` declared at both
+`QOU/Mathlib/SchenstedPermInjective.lean:42` and
+`QOU/Mathlib/SchenstedRSKPairInjective.lean:68`, which arrived with `main`'s
+RSK–Burnside work. Set-differenced against the pre-merge list rather than
+inferred from the totals — 57 new, 0 gone. Lower it back to 56 when that pair
+is resolved.
 
 - **A green Lean build says nothing about this.** `lean-direct-cone.sh --all`
   compiles each module against its own cone, and no *existing* module imports
