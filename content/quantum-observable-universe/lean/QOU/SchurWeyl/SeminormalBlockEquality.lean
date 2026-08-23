@@ -1,5 +1,7 @@
 import QOU.SchurWeyl.SytInsertMaxTransport
 import QOU.SchurWeyl.SeminormalRep
+import QOU.SchurWeyl.SeminormalBlockTrace
+import QOU.SchurWeyl.HeckeInclusion
 
 /-!
 # QOU.SchurWeyl.SeminormalBlockEquality — a generator's matrix on a corner block
@@ -22,13 +24,15 @@ Also here, and needed next: the block of `c` is **exactly** the image of `insert
 Step 1 of the three the Markov assembly needs (bean `qou-uer7`):
 
 1. **this file** — the block equality at a generator;
-2. lifting it from generators to all of `H_{|μ|-1}(q)`, then the outer reindexing
-   `{(λ, corner)} ↔ {(μ, addable corner)}`;
-3. the `λ`-sum with weights, where `OcneanuWeightMarkovCorner`'s corner identities are consumed.
+2. lifting it from generators to all of `H_{|μ|-1}(q)` — **also here**,
+   `compress_seminormalRep_heckeIncl` — then the outer reindexing
+   `{(λ, corner)} ↔ {(μ, addable corner)}`, which is **not** written;
+3. the `λ`-sum with weights, where `OcneanuWeightMarkovCorner`'s corner identities are consumed —
+   **not** written.
 
-Step 2's first half is the reason the image characterisation is here: lifting to a product needs the
-matrix-multiplication sum over the block to be a sum over `SYT (μ ∖ c)`, which needs the block and
-that image to coincide.  Neither half of step 2 is written.
+The image characterisation is what makes step 2's first half work: lifting to a product needs the
+matrix-multiplication sum over the block to be a sum over `SYT (μ ∖ c)`, which is exactly the block
+and that image coinciding.
 
 ## Base ring (§7c)
 
@@ -40,7 +44,7 @@ LaTeX label: `thm:seminormal-block-equality`
 namespace QOU.SchurWeyl
 namespace SeminormalRep
 
-open QOU.Mathlib QOU.SchurWeyl.TableauCells
+open QOU.Mathlib QOU.SchurWeyl.TableauCells QOU.SchurWeyl.HeckeInclusion
 
 variable {μ : YoungDiagram}
 
@@ -99,6 +103,93 @@ theorem exists_insertMax_of_cellOf_top (c : ℕ × ℕ) (hc : IsCornerCell μ c)
   have hmax : T.entry c.1 c.2 = μ.cells.card := by
     rw [← h]; exact entry_cellOf T ⟨hcard, le_rfl⟩
   exact ⟨eraseMax T c hc hmax, insertMax_eraseMax T c hc hmax⟩
+
+/-! ### From a generator to every element
+
+Compression to the block is multiplicative on block-preserving matrices — the sum over `SYT μ`
+collapses to the block, and the block is exactly `insertMax`'s image.  With `genMat_insertMax` for
+the generators and `seminormalRep_heckeIncl_mem_blockSubalgebra` for the block-preservation, an
+adjoin-induction lifts the block equality to every element of `H_{m+1}(q)`.
+-/
+
+/-- Restriction of a matrix to the block of the corner `c`. -/
+def compress (c : ℕ × ℕ) (hc : IsCornerCell μ c)
+    (X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) :
+    Matrix (StandardYoungTableau (eraseCorner μ c hc))
+      (StandardYoungTableau (eraseCorner μ c hc)) ℝ :=
+  Matrix.of fun S'' S' => X (insertMax c hc S'') (insertMax c hc S')
+
+theorem compress_one (c : ℕ × ℕ) (hc : IsCornerCell μ c) :
+    compress c hc (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) = 1 := by
+  ext S'' S'
+  show (1 : Matrix _ _ ℝ) (insertMax c hc S'') (insertMax c hc S') = _
+  by_cases h : S'' = S'
+  · subst h; simp
+  · rw [Matrix.one_apply_ne (fun hh => h (insertMax_injective c hc hh)),
+      Matrix.one_apply_ne h]
+
+theorem compress_smul (c : ℕ × ℕ) (hc : IsCornerCell μ c) (r : ℝ)
+    (X : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) :
+    compress c hc (r • X) = r • compress c hc X := rfl
+
+/-- **Compression is multiplicative on block-preserving matrices.**  The sum over `SYT μ` collapses
+to a sum over the block, and the block is exactly `insertMax`'s image. -/
+theorem compress_mul (c : ℕ × ℕ) (hc : IsCornerCell μ c)
+    {X Y : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ}
+    (hX : BlockPreserving μ.cells.card X) :
+    compress c hc (X * Y) = compress c hc X * compress c hc Y := by
+  classical
+  ext S'' S'
+  show (X * Y) (insertMax c hc S'') (insertMax c hc S') = _
+  rw [Matrix.mul_apply]
+  have hzero : ∀ R : StandardYoungTableau μ,
+      R ∉ Finset.univ.image (insertMax c hc) →
+      X (insertMax c hc S'') R * Y R (insertMax c hc S') = 0 := by
+    intro R hR
+    have hne : cellOf (insertMax c hc S'') μ.cells.card ≠ cellOf R μ.cells.card := by
+      rw [cellOf_insertMax_top]
+      intro h
+      exact hR (Finset.mem_image.mpr
+        (by obtain ⟨S, hS⟩ := exists_insertMax_of_cellOf_top c hc R h.symm
+            exact ⟨S, Finset.mem_univ S, hS⟩))
+    rw [hX _ _ hne, zero_mul]
+  rw [← Finset.sum_subset (Finset.subset_univ (Finset.univ.image (insertMax c hc)))
+      (fun R _ hR => hzero R hR)]
+  rw [Finset.sum_image (fun a _ b _ h => insertMax_injective c hc h)]
+  rfl
+
+/-- **Step 2, first half.**  The compression of the big seminormal representation, along the
+inclusion, IS the small seminormal representation — for every element, not just the generators. -/
+theorem compress_seminormalRep_heckeIncl {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (m : ℕ) (hN : μ.cells.card = m + 2) (c : ℕ × ℕ) (hc : IsCornerCell μ c)
+    (hNs : (eraseCorner μ c hc).cells.card = m + 1) (y : Hecke ℝ q q⁻¹ m) :
+    compress c hc (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y))
+      = seminormalRep q hq0 hq2 m hNs y := by
+  have hy : y ∈ Algebra.adjoin ℝ (Set.range (Hecke.σ ℝ q q⁻¹ m)) := by
+    rw [HeckeInclusion.adjoin_range_σ_eq_top]; trivial
+  induction hy using Algebra.adjoin_induction with
+  | mem x hx =>
+      obtain ⟨i, rfl⟩ := hx
+      rw [heckeIncl_σ, seminormalRep_σ, seminormalRep_σ]
+      show compress c hc (seminormalGen q (m + 1) hN i.castSucc) = seminormalGen q m hNs i
+      have hi := i.isLt
+      have hcc : ((i.castSucc : Fin (m + 1)) : ℕ) = (i : ℕ) := rfl
+      rw [seminormalGen, seminormalGen]
+      ext S'' S'
+      exact genMat_insertMax q c hc (by omega) (by omega) (by omega) S' S''
+  | algebraMap r =>
+      rw [AlgHom.commutes, AlgHom.commutes, Algebra.algebraMap_eq_smul_one,
+        Algebra.algebraMap_eq_smul_one, compress_smul, compress_one, map_smul, map_one]
+  | add x z hx hz ihx ihz =>
+      rw [map_add, map_add, map_add, ← ihx, ← ihz]
+      ext S'' S'; rfl
+  | mul x z hx hz ihx ihz =>
+      have hbp : BlockPreserving μ.cells.card
+          (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m x)) := by
+        rw [hN]
+        exact seminormalRep_heckeIncl_mem_blockSubalgebra hq0 hq2 m hN x
+      rw [map_mul, map_mul, map_mul, compress_mul c hc hbp, ihx, ihz]
+
 
 end SeminormalRep
 end QOU.SchurWeyl
