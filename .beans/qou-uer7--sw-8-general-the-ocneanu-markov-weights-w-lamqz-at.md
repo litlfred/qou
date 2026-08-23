@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T21:29:10Z
+updated_at: 2026-08-23T21:39:56Z
 parent: qou-59vq
 ---
 
@@ -523,3 +523,35 @@ via `partitionShapeEquiv`, to turn `cornerAddEquiv` into a sum reindexing.
 
 I have said "only one gap left" twice this session and been wrong once. This time the remaining
 item is a single named theorem rather than a category of work, but I have not attempted it.
+
+
+## Update — the sum reindexing is landed
+
+`QOU/Mathlib/YoungDiagramCornerReindex.lean`, sorry-free, axiom-clean:
+
+- `fintypeDiagramsOfCard n` — diagrams of size `n`, transported from `Nat.Partition n`
+  via `partitionShapeEquiv`.
+- `fintypeCornerPair n` — via `cornerPairEquivSigma`, an all-`rfl` repackaging into the
+  Sigma form. The Sigma spelling is painful for the *bijection* (HEq, see above) but
+  harmless for this, because nothing moves.
+- `fintypeAddPair n` — transported along `cornerAddEquiv` itself. This is the part worth
+  keeping: nothing ever has to bound the addable cells of a diagram directly; the
+  removable side already did that work.
+- `sum_cornerPair_eq_sum_addPair` — the exchange under a sum.
+
+One correction to my own note above: I suggested `Finset.sum_nbij'` might beat an `Equiv`
+here. It doesn't — once the phrasing is subtype-of-a-product the `Equiv` is three `rfl`s
+and the reindexing is one `Fintype.sum_equiv`. The `Equiv` was the painful form only in
+the Sigma spelling.
+
+Separate file rather than appended to `YoungDiagramAddCell`: finiteness is the one part
+of this that is not pure ℕ × ℕ combinatorics (it comes off the RSK/Schensted cone, and
+the corner-set `Fintype` comes from `SYTBranchingRule`), so `AddCell` stays importable by
+callers that only want `addCell` and the round-trips.
+
+| step | status |
+|---|---|
+| 1. block equality at a generator | **Lean** |
+| 2a. lift to every Hecke element | **Lean** |
+| 2b. the exchange + its sum reindexing | **Lean** |
+| 3. the λ-sum with weights | **OPEN — the only gap** |
