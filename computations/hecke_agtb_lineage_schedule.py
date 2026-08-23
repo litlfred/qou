@@ -206,6 +206,39 @@ def main():
                                            [w for w in f1 if w != U0])
 
             meet = vend if vend == uend else None
+            # Block structure: each lineage is a run of (one bsStep, then a
+            # run of far-commutations).  If every such F-run moves ONE letter
+            # past contiguously-descending obstacles, the whole run is a SINGLE
+            # `farComm_transport_left_sources` call -- so each block costs the
+            # Lean two lemma applications regardless of its length.
+            def _blocks(rules):
+                out, cur = [], None
+                for ru in map(_norm, rules):
+                    o = (ru[0],) + tuple(i - x for x in ru[1:])
+                    if o[0] == "B":
+                        if cur: out.append(cur)
+                        cur = [o]
+                    elif cur is not None:
+                        cur.append(o)
+                if cur: out.append(cur)
+                return out
+
+            def _single_transport(blk):
+                fs = [x for x in blk if x[0] == "F"]
+                if not fs:
+                    return None            # a B with no F-run: not counted
+                moved = {x[2] for x in fs}
+                obst = [x[1] for x in fs]
+                return (len(moved) == 1
+                        and obst == list(range(obst[0], obst[0] - len(obst), -1)))
+
+            blk_tot = blk_single = 0
+            for _lin in (vsteps, usteps):
+                for _b in _blocks([s["rule"] for s in _lin]):
+                    v = _single_transport(_b)
+                    if v is None: continue
+                    blk_tot += 1; blk_single += int(v)
+
             vsteps_rules_head = [s["rule"] for s in vsteps[:5]]
             usteps_rules_head = [s["rule"] for s in usteps[:3]]
             rows.append({
@@ -227,6 +260,9 @@ def main():
                 "y_labelled_steps": y_tot,
                 "y_steps_matching_bsStep_leading_word": y_same_lm,
                 "y_steps_giving_identical_element": y_same_result,
+                "blocks_with_an_F_run": blk_tot,
+                "blocks_whose_F_run_is_a_single_transport": blk_single,
+                "a_eq_b_plus_1": a == b + 1,
                 "V_opening_matches_template":
                     [_norm(ru) for ru in vsteps_rules_head] == v_tmpl,
                 "U_opening_matches_template":
@@ -295,6 +331,23 @@ def main():
         computed=str(sum(1 if r["U_opening_matches_template"] else 0
                          for r in rows)),
         expected=str(sum(1 for r in rows if r["b"] == 1)))
+    # Each block is one bsStep plus one transport -- EXCEPT on a = b+1, where
+    # the last block interleaves two moved letters.  Asserted as the measured
+    # split, so a later change that blurs it fails here.
+    w.add_assertion(
+        "blocks_whose_F_run_is_NOT_a_single_transport",
+        computed=str(sum(r["blocks_with_an_F_run"]
+                         - r["blocks_whose_F_run_is_a_single_transport"]
+                         for r in rows)),
+        expected=str(sum(r["blocks_with_an_F_run"]
+                         - r["blocks_whose_F_run_is_a_single_transport"]
+                         for r in rows if r["a_eq_b_plus_1"])))
+    w.add_assertion(
+        "non_single_transport_blocks_OUTSIDE_the_a_eq_b_plus_1_cases",
+        computed=str(sum(r["blocks_with_an_F_run"]
+                         - r["blocks_whose_F_run_is_a_single_transport"]
+                         for r in rows if not r["a_eq_b_plus_1"])),
+        expected="0")
     w.add_assertion(
         "cases_that_do_NOT_reduce_to_zero",
         computed=str(sum(0 if r["reduces_to_zero"] else 1 for r in rows)),
@@ -308,6 +361,17 @@ def main():
         "chain both had to reorder for the same reason, and in the a = 1 case "
         "the deg-lex order was actively worse -- it made two words collide in "
         "both length and prefix.")
+    w.add_caveat(
+        "BLOCK STRUCTURE, which is what a Lean chain should follow. Both "
+        "lineages are a sequence of blocks, each ONE bsStep followed by a run "
+        "of far-commutations, and 69/77 of those runs move a single letter "
+        "past contiguously-descending obstacles -- i.e. each is ONE "
+        "`farComm_transport_left_sources` call. So a block costs two lemma "
+        "applications no matter how long it is. The 8 exceptions are EXACTLY "
+        "the a = b+1 cases (4 of them, both lineages): there the last block "
+        "interleaves two moved letters. That is where the general "
+        "construction stops and a special case begins -- the same shape as "
+        "the a <= b arc's a = 3 and a = 2 specials.")
     w.add_caveat(
         "The two openings do NOT generalise the same way, which is the point "
         "of measuring them separately. The V opening is b-INDEPENDENT: same "
