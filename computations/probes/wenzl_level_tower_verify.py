@@ -155,9 +155,15 @@ def solve_level(z_target, q, guess=2.5):
 
 
 def main():
-    from qou_substrate.constants import Q as Q_PROTON  # noqa: E402
+    from qou_substrate.constants import Q_MP as Q_PROTON  # noqa: E402
 
-    q = mp.mpf(str(Q_PROTON))
+    # Q_MP, not mpf(str(Q)): the f64 constant carries ~16 significant digits,
+
+    # so mpf(str(...)) LAUNDERS it — the value looks 50-digit and is accurate
+
+    # to 16. Read the high-precision name instead.
+
+    q = Q_PROTON
 
     sym = symbolic_leg()
 

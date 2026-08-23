@@ -62,6 +62,13 @@ def _q0() -> tuple[mpf, str]:
         try:
             from qou_substrate.constants import Q  # type: ignore
 
+            # LAUNDERS the f64 Q, and is kept deliberately: this is the
+            # middle rung of a graceful-degradation ladder that only runs if
+            # the package exposes `Q` but not `Q_50_DIGIT_STR` (an older
+            # version), and it RETURNS ITS OWN PROVENANCE alongside the value
+            # so a reader can see which rung fired. Unreachable against any
+            # current package. comparison only — do not "fix" it to Q_MP,
+            # which would defeat the compatibility it exists for.
             return mpf(str(Q)), "qou_substrate.constants.Q"
         except Exception:
             # Never an mpf(<float>) -- the literal is carried as a string.

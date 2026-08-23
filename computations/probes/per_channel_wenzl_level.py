@@ -75,9 +75,15 @@ def level_of(z_target, q, guess=2.0):
 
 
 def main() -> int:
-    from qou_substrate.constants import Q as Q_PROTON
+    from qou_substrate.constants import Q_MP as Q_PROTON
 
-    q = mp.mpf(str(Q_PROTON))
+    # Q_MP, not mpf(str(Q)): the f64 constant carries ~16 significant digits,
+
+    # so mpf(str(...)) LAUNDERS it — the value looks 50-digit and is accurate
+
+    # to 16. Read the high-precision name instead.
+
+    q = Q_PROTON
 
     # Each entry: (channel, production site, literal z as run, callable).
     # Sites confirmed by reading the files, not by trusting the registry --
