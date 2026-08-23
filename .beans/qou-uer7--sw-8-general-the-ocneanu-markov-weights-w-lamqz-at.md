@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:51:49Z
-updated_at: 2026-08-23T22:27:28Z
+updated_at: 2026-08-23T22:49:06Z
 parent: qou-59vq
 ---
 
@@ -637,3 +637,38 @@ is about the *removable* side but is the kind of edge the enumeration will hit.
 This supersedes my previous "next step" note, which said to attack the corner identity at
 general `n` directly from `schurPrincipal`'s hook-content form. That is the right move for
 **arbitrary** `z`; at convention D specifically, the vanishing may do the work.
+
+
+## The convention-D shortcut WORKED — the Markov condition is unconditional at every `n`
+
+`QOU/SchurWeyl/MarkovConventionD.lean`, `SeminormalRep.markov_conventionD`, sorry-free,
+axioms `[propext, Classical.choice, Quot.sound]`:
+
+    ∑_{|λ|=m+2} W_λ · tr(ρ_λ(ι y) · σ_{m+1}) = z_D · ∑_{|ν|=m+1} W_ν · tr(ρ_ν(y))
+
+for every `y ∈ H_{m+1}(q)`, `W = ocneanuWeight q z_D`, `z_D = q³/(q²+1)`. The per-corner
+identity that `MarkovAssembly` took as a hypothesis is **discharged**, for every diagram and
+every removable corner, with no general-`n` arithmetic — exactly as the sketch predicted:
+
+- **≥3 rows**: both sides zero, no corner arithmetic at all.
+- **≤2 rows**: the diagram *is* a `twoRow`; of its ≤3 addable cells, `(2,0)` makes three rows
+  and drops out; what survives is the two-term statement already proved.
+
+The two pieces the sketch said had to be built are `TwoRowCorners.lean` (addable/removable
+characterisations, the addable-cell sum as ≤3 explicit terms, and the `addCell` identities) and
+`eq_twoRow_of_rowLen_two_eq_zero`. The `k = 0` edge I flagged did not bite: `markov_corner_row0`
+covers it as `k < m`, and the `k = m` diagonal is `markov_corner_row1_diag`.
+
+**What this closes, stated exactly.** Wenzl's theorem — this tranche's one external input — says
+these *are* the Ocneanu/Markov weights, which is **two** legs: the Markov property and the
+normalisation `tr(1) = 1`.
+
+- **Markov property: proved** at convention D, every `n`.
+- **Normalisation: NOT proved** at general `n`. Lean has `∑_λ f^λ W_λ = 1` at `n = 3` and
+  `n = 4` only; it is verified numerically through `n = 9`, which is not a proof.
+- **Arbitrary `z`**: the per-corner identity remains open;
+  `ocneanu_markov_corner_reduction.py` tests it symbolically through `n = 6`.
+
+So do **not** write "Wenzl's theorem is discharged". Write "the Markov-property leg is discharged
+at convention D; the normalisation leg at general `n` is open." That second leg is the next item,
+and it is a different shape — an identity in `f^λ` and the weights, not a corner recursion.
