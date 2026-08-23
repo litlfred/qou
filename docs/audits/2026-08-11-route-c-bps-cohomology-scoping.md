@@ -545,3 +545,49 @@ ways to miss here rather than 4.
 Census identification requires SnapPy (absent in this sandbox) and no `(−2,3,9)`
 saddle data is in the corpus, so neither the census route nor the gluing-quartic
 route is available for it. `9₁₂` does **not** substitute for that check.
+
+### A fourth route, and one correction to what this section said was impossible
+
+Landed on `main` after the above was written (sibling `qou-btvl`, PR #5380,
+merged `cc6a0b0`): the boundary-parabolic connection count for `6₁` computed
+directly from SnapPy's **Ptolemy variety** by Gröbner basis over `ℚ`. Class 1
+is a single Galois orbit with minimal polynomial
+
+```
+c⁴ − 2c³ + c² + 3c + 1        disc = 257
+```
+
+— character-for-character the DG §6 field. This route touches neither the
+A-polynomial, the Newton polygon, nor the ki6c asymptotic; it goes through the
+gluing-variety ideal itself. Validated on the two knots whose counts were
+already certified: `4₁ → c² − c + 1` (disc −3), `5₂ → c³ + 2c² + 3c + 1`
+(disc −23).
+
+So **four** constructions with nothing in common but the knot — a number field,
+a Newton polygon, a stationary-phase analysis, and a gluing-variety ideal — all
+give `r(6₁) = 4`.
+
+**Two corrections this forces on the text above.**
+
+1. **"SnapPy is absent in this sandbox" was wrong.** `pip install snappy` works
+   (3.3.2); what is firewalled is the *ptolemy database host*, not the package.
+   And `Manifold.ptolemy_variety()` builds the ideal **offline** — only
+   `retrieve_solutions()` needs the network. The blocker was about the data, not
+   the requirement. `(−2,3,9)` remains open for a different reason: SnapPy does
+   not parse pretzel notation, so it needs a PD/braid construction.
+2. **A trap that yields the plausible wrong answer.** SnapPy's
+   `equations_with_non_zero_condition` appends the Rabinowitsch polynomial
+   `1 = c₁c₂c₃c₄t`. Without it, `6₁`'s obstruction class 0 contributes a spurious
+   rational point at `c_0011_2 = 0`, giving **5** irreducible instead of 4 —
+   which would have *refuted* R1. The sibling ran it that way first and reported
+   5. This is the same shape as the `braid_word()` trap and the dropped-overline
+   trap recorded elsewhere in this arc: a method that returns a wrong number
+   that looks computed.
+
+**Also now derived rather than recalled:** `braid index(6₁) = 4`, via MFW on an
+exact HOMFLY spread of 6 met by the explicit 4-strand word `[1,1,2,-1,-3,2,-3]`,
+with an independent check on the torus family where `min(p,q)` is a *theorem*.
+That matters here only as a warning: it is numerically equal to `r(6₁) = 4` and
+is a **different object**. Two of the sibling's own assumptions died in the
+process (6₂/6₃ are braid index 3, not 4), which is the reason to keep them apart
+in any write-up.
