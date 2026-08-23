@@ -150,6 +150,29 @@ def _artifact_pin(name: str) -> str:
 # 12-digit prefix silently drops every producer still on the superseded value.
 MUON_LITERAL = "1.10997859555"
 PROTON_LITERAL = "1.109978582751"
+
+# The two pins first differ at the 9th digit after the point
+# (1.10997859… vs 1.10997858…), so a literal shorter than that cannot be
+# attributed to either. Anything at or beyond it can.
+_PIN_DISCRIMINATING_LEN = len("1.10997859")
+
+
+def _pin_of_literal(s: str) -> str:
+    """Which pin a decimal literal denotes, matching in BOTH directions.
+
+    `s.startswith(PIN)` alone is wrong for a TRUNCATED pin: the corpus writes
+    the proton value as `1.10997858275` in 12 places, which is a prefix OF the
+    canonical string rather than the other way round, so a one-directional test
+    misses every one of them. Requiring `_PIN_DISCRIMINATING_LEN` is what keeps
+    the reverse direction from matching coarse values like `1.10998`, which
+    genuinely denote neither pin.
+    """
+    if len(s) < _PIN_DISCRIMINATING_LEN:
+        return ""
+    for pin, lit in (("muon", MUON_LITERAL), ("proton", PROTON_LITERAL)):
+        if s.startswith(lit) or lit.startswith(s):
+            return pin
+    return ""
 MUON_ENV = ("ideal", "muon", "canonical")
 # Explicit muon ACCESSORS. A producer importing one of these is reaching for the
 # ideal layer on purpose -- typically a cross-anchor comparison probe -- so its
@@ -242,6 +265,18 @@ def classify(path: Path) -> tuple[str, list[str]]:
 
 
         def visit_Constant(self, n):  # noqa: N802
+            # FLOAT literals were invisible (fixed 2026-08-23). This visitor
+            # inspected only `str` constants, so a producer writing the pin as a
+            # bare float — `q0 = 1.1099785955573347`, which is also a NO-FLOAT64
+            # violation in its own right — reached the `none` verdict.
+            # Found by following the residual of an 887-producer adjudication:
+            # `deltalambda_cyclotomic_sign_map_probe.py:168` is exactly this.
+            if isinstance(n.value, float):
+                fp = _pin_of_literal(repr(n.value))
+                if fp == "muon":
+                    muon.append(f"hardcoded muon FLOAT literal {n.value!r}")
+                elif fp == "proton":
+                    proton.append(f"hardcoded proton FLOAT literal {n.value!r}")
             if isinstance(n.value, str):
                 s = n.value
                 is_prose = s in docs
@@ -267,7 +302,7 @@ def classify(path: Path) -> tuple[str, list[str]]:
                                 f'"{s[:48]}"')
                 if s.strip().lower() in MUON_ENV and "ANCHOR" in src:
                     muon.append(f'env-like "{s}"')
-                if s.startswith(MUON_LITERAL):
+                if _pin_of_literal(s) == "muon":
                     muon.append("hardcoded muon 50-digit")
                 # SYMMETRIC PROTON CHECK (added 2026-08-23).
                 # This branch did not exist. A producer hardcoding the PROTON
@@ -287,7 +322,7 @@ def classify(path: Path) -> tuple[str, list[str]]:
                 # into `proton` (or `muon` into `BOTH`, which is never
                 # auto-proposed). It cannot manufacture an `ideal_muon` entry,
                 # which is the only behaviourally live direction.
-                if s.startswith(PROTON_LITERAL):
+                if _pin_of_literal(s) == "proton":
                     proton.append("hardcoded proton 50-digit")
             self.generic_visit(n)
 
