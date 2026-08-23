@@ -1118,6 +1118,16 @@ def _identity(dim):
 def _crossing_in_partition(c, d, gen_index, sigmas, dim):
     """Matrix of c·σ_{gen} + d·I  in YSN representation of a partition."""
     sig = sigmas[gen_index]
+    # Densify a scipy sparse sigma FIRST.  `np.asarray(csr_matrix)` does NOT
+    # densify -- it returns a 0-d object array wrapping the matrix -- so the
+    # old `np.asarray(sig)` produced an object scalar, `c * sig_np` stayed
+    # object, and `+ d * np.eye(dim)` dispatched back into scipy and raised
+    # "no supported conversion for types: (dtype('float64'), dtype('O'))".
+    # The `dim < 8` branch below is worse: `sig[i][j]` is not valid indexing
+    # on a csr_matrix at all.  Latent until an exact (mpf) chain routed a
+    # sparse-sigma state down this path.
+    if hasattr(sig, "toarray"):
+        sig = sig.toarray()
     if dim >= 8:
         # Work in numpy for large dims
         sig_np = sig if isinstance(sig, np.ndarray) else np.asarray(sig)
@@ -1421,7 +1431,22 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             sigmas = entry['ysn']
             n_gens = entry['n_gens']
             chain = _step_chain_generic(nuc, prev_types, n_gens)
-            if s['sparse']:
+            # The sparse path dispatches to scipy's compiled kernels, which
+            # are float64-only: `sig_sparse.dot(M)` raises "no supported
+            # conversion for types: (dtype('float64'), dtype('O'))" the moment
+            # M carries mpf.  scipy is RIGHT to refuse -- the only way to
+            # satisfy it is to throw the exact coefficients away.  numpy's `@`
+            # (the dense path below) DOES support object dtype, since it falls
+            # back to elementwise Python arithmetic rather than BLAS, so an
+            # exact chain routes there and keeps its precision.
+            #
+            # Decided BEFORE the loop, deliberately: M starts float64 and only
+            # becomes object after the first crossing multiplies it by an mpf
+            # coefficient, so a per-iteration dtype test would take the sparse
+            # path once and then crash on the second crossing.
+            exact_chain = any(not isinstance(c, float) or not isinstance(d, float)
+                              for c, d, _g in chain)
+            if s['sparse'] and not exact_chain:
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
                 # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
                 # the dense (c·σ + d·I) matrix at every crossing.
