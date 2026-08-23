@@ -35,8 +35,12 @@ This harness now builds the CORRECT object and reproduces 6.8% at n=3:
     solve x from W_3/W_1 = J_3(x)/J_1(x); over-determine on W_5/W_1.
 
 `reconcile_n3()` asserts the resulting residual equals the physical-weight script's
-0.0684 at BOTH anchors — the general harness and `qbeta_reeb_tower_jacobi_anger_
-physical_weight.py` now compute the same object.
+at BOTH anchors — the general harness and `qbeta_reeb_tower_jacobi_anger_
+physical_weight.py` compute the same object. The reference is read from that
+script LIVE, not copied: it was 0.0684 under convention C and is 0.142709 under
+the convention D the registry has used since the 2026-08-09 owner ruling, and the
+two harnesses agree on the new value exactly as they did on the old one. See
+`reference_residual_at` for why the literal was removed.
 
 ## Tower extension (n ≥ 6) — the real, corrected blocker
 
@@ -90,9 +94,58 @@ except Exception:  # pragma: no cover
 
 set_compute_dps()
 
-# Physical-weight reference value to reconcile against (n=3, both anchors).
-# Source: qbeta_reeb_tower_jacobi_anger_physical_weight.py / PR #2453.
-PHYSICAL_WEIGHT_RESIDUAL_N3 = mpf("0.0683508")
+# Physical-weight reference to reconcile against (n=3, both anchors).
+#
+# COMPUTED LIVE, not frozen. This used to be `mpf("0.0683508")`, copied from
+# qbeta_reeb_tower_jacobi_anger_physical_weight.py / PR #2453 — and it rotted,
+# silently, for the reason a copied number always does.
+#
+# What happened: the owner ruling of 2026-08-09 excised convention C from the
+# binding channel (`wedderburn_jones_markov.y_lambda_at` docstring; commits
+# 33a6c7aa4, 36844baad). Under C, y_λ(3,q₀) = (0.4153958, 0.2809296, 0.0227449);
+# under D it is (0.5054042, 0.2472979, 0) — the defining difference being the row
+# cap y_λ = 0 for ℓ(λ) > 2. W_3 is unchanged at −1/4, but the weight redistributes
+# between W_1 and W_5 (0.1404648 / −0.1095352 under C, 0.1236489 / −0.1263511
+# under D, both still summing to 1/4), which moves x* from 4.5249 to 4.4316 and
+# the over-determination residual from 0.0683508 to 0.142709.
+#
+# The frozen literal made that look like a broken reconciliation. It is not: the
+# two harnesses still agree exactly. Re-running the reference script today under
+# convention D gives 0.142709 at BOTH anchors, which is precisely what this one
+# now computes. Verified by running it, not by reading it.
+#
+# So the check is wired to the source rather than to a copy of the source's
+# output. `physical_W` / `solve_single_x` are imported from the reference script
+# itself and evaluated at the SAME anchor as the value under test — strictly
+# stronger than the old single shared constant, since it compares per anchor, and
+# no convention change can ever make this stale again.
+#
+# What this assertion does and does not claim: it is an AGREEMENT check between
+# two independent implementations of the same §4a object, exactly as the module
+# docstring says ("the general harness and qbeta_reeb_tower_jacobi_anger_
+# physical_weight.py now compute the same object"). It is NOT a claim that the
+# physics succeeds. The reference script's own verdict is and remains a
+# refutation: "physical weights do NOT collapse to a single-x q-Bessel at <1% —
+# refutation, quantified".
+from qbeta_reeb_tower_jacobi_anger_physical_weight import (  # noqa: E402
+    physical_W as _reference_physical_W,
+    solve_single_x as _reference_solve_single_x,
+)
+
+#: Convention-C value, retained ONLY as the historical record of what the frozen
+#: literal was and when it stopped being true. Never compared against.
+PHYSICAL_WEIGHT_RESIDUAL_N3_CONVENTION_C_HISTORICAL = mpf("0.0683508")
+
+
+def reference_residual_at(q0):
+    """The physical-weight script's own over-determination residual at `q0`.
+
+    Calls into `qbeta_reeb_tower_jacobi_anger_physical_weight` rather than
+    reproducing it: if the two ever diverge, this test is the thing that is
+    supposed to notice.
+    """
+    _x_ref, resid_ref = _reference_solve_single_x(_reference_physical_W(q0))
+    return resid_ref
 
 # Hardcoded n=3 bar-odd coeffs from the physical-weight script — cross-check target.
 HARDCODED_BAR_ODD_N3 = {
@@ -196,7 +249,8 @@ def cross_check_coeffs(derived):
 
 
 def reconcile_n3():
-    """Build the CORRECT §4a object (χ_λ(𝓑_n−𝓑_p), y-frozen) and reproduce 6.8%."""
+    """Build the CORRECT §4a object (χ_λ(𝓑_n−𝓑_p), y-frozen) and reproduce the
+    physical-weight script's residual — 0.142709 under convention D."""
     q = sp.Symbol("q", positive=True)
     chi = chi_diff_closed_forms(q)
     derived = bar_odd_coeffs(chi)
@@ -216,21 +270,27 @@ def reconcile_n3():
         q0 = mpf(str(qf))
         W = physical_W(q0, derived)
         x, resid = single_x_residual(W)
-        match = resid is not None and abs(resid - PHYSICAL_WEIGHT_RESIDUAL_N3) < mpf("1e-4")
+        resid_ref = reference_residual_at(q0)
+        match = (resid is not None and resid_ref is not None
+                 and abs(resid - resid_ref) < mpf("1e-4"))
         reconcile_ok = reconcile_ok and match
         results[label] = {
             "q": mp.nstr(q0, 20),
             "W1": mp.nstr(W[1], 12), "W3": mp.nstr(W[3], 12), "W5": mp.nstr(W[5], 12),
             "single_x": (mp.nstr(x, 12) if x is not None else None),
             "overdet_rel_residual": (mp.nstr(resid, 6) if resid is not None else None),
-            "matches_physical_weight_6_8pct": bool(match),
+            "physical_weight_reference_residual": (
+                mp.nstr(resid_ref, 6) if resid_ref is not None else None),
+            "matches_physical_weight_reference": bool(match),
         }
         print(f"  {label:7s} q={mp.nstr(q0, 18)}")
         print(f"          W_1={mp.nstr(W[1], 10)}  W_3={mp.nstr(W[3], 10)}  "
               f"W_5={mp.nstr(W[5], 10)}")
         print(f"          single x*={mp.nstr(x, 10) if x else 'NO ROOT'}  "
               f"over-det residual={mp.nstr(resid, 6) if resid is not None else 'n/a'}  "
-              f"[reproduces 6.8% physical-weight: {'YES' if match else 'NO'}]")
+              f"[matches physical-weight reference "
+              f"{mp.nstr(resid_ref, 6) if resid_ref is not None else 'n/a'}: "
+              f"{'YES' if match else 'NO'}]")
 
     if results["proton"]["single_x"] and results["muon"]["single_x"]:
         xp = mpf(results["proton"]["single_x"])
@@ -305,7 +365,13 @@ def main():
         "reconciled": bool(reconcile_ok),
         "bar_odd_coeffs_match_hardcoded": bool(coeffs_ok),
         "markov_infra_n3_ok": (None if infra_ok is None else bool(infra_ok)),
-        "physical_weight_reference_residual_n3": mp.nstr(PHYSICAL_WEIGHT_RESIDUAL_N3, 6),
+        # Per-anchor now (see each row in `n3`); this key keeps the proton
+        # anchor for continuity with readers of the old witness, and is the
+        # LIVE reference rather than the frozen convention-C literal.
+        "physical_weight_reference_residual_n3": (
+            results["proton"].get("physical_weight_reference_residual")),
+        "physical_weight_reference_residual_n3_convention_C_historical":
+            mp.nstr(PHYSICAL_WEIGHT_RESIDUAL_N3_CONVENTION_C_HISTORICAL, 6),
         "n3": results,
     }
     print(json.dumps(out, indent=2))
@@ -335,9 +401,17 @@ def main():
             source="symbolic barodd[χ_λ(𝓑_n−𝓑_p)] vs physical-weight BAR_ODD_COEFFS",
         )
         w.add_assertion(
-            "reconciles_physical_weight_6_8pct_both_anchors",
+            # RENAMED from `reconciles_physical_weight_6_8pct_both_anchors`.
+            # The old name baked a convention-C number into the identity of the
+            # check, so the name itself went stale with the 2026-08-09 excision;
+            # under D the same agreement holds at 0.142709. An assertion diff
+            # will read this as one removed + one added — it is a rename, and
+            # the predicate is unchanged apart from being computed live.
+            "reconciles_physical_weight_reference_both_anchors",
             computed=bool(reconcile_ok), expected=True, tolerance=0,
-            source="single-x over-det residual vs 0.0683508 (proton + muon)",
+            source="single-x over-det residual vs "
+                   "qbeta_reeb_tower_jacobi_anger_physical_weight.solve_single_x "
+                   "at the same anchor (proton + muon)",
         )
         saved = w.save()
         print(f"  Witness: {getattr(saved, 'name', saved)}")
