@@ -3804,3 +3804,55 @@ assuming anything.
 
 **Next:** `openingPhase₃` — the same five stretches with `refl` for the U loop —
 then `prefixChain₃`. Then measure `a = 1` and `a = 2` properly.
+
+### `a = 3` PROVED — `prefixChain₃`. And what `a = 1`, `a = 2` actually need
+
+`prefixChain₃ : T0 →* TCancel`, all 17 steps, same `TCancel` and same five
+stretches. **So the `a ≤ b` prefix is proved for `a ≥ 3`, diagonal included:**
+
+    prefixChain    a ≥ 4
+    prefixChain₃   a = 3
+
+What unblocked it was one hypothesis that was never a bound. `fRun_target_eq`
+asked `hy : jpp ≤ y`, used *only* to prove
+`descWord y j₁ = descWord y jpp ++ [σ_jp, σ_j₁]`. `fRun_target_eq_of_left` takes
+that identity as a **hypothesis**; `fRun_target_eq` is its `descWord_split`
+supplier and keeps its signature. At `a = 3` the U lineage has `y = i₂` and
+`jpp = i₁ > i₂`, so `descWord_split` does not apply — and the identity is still
+true, because `descWord i₂ jpp` is empty and `jp = i₂`. **A different proof, not
+a weaker bound, is exactly when a side condition should become a hypothesis.**
+Fifth use of the `_sources` idiom here.
+
+Two further splits were genuinely over-strong and are now routed through
+`descWord i₁ j₁` instead of `descWord i₂ j₁` (`WStar_split`, `closingU.hAsplit`):
+`[σᵢ₋₁] ++ descWord i₂ jpp` **is** `descWord i₁ jpp`, so the `i₂` bound was never
+load-bearing. The whole closing chain now asks `jpp ≤ i₁` (true at `a = 3` with
+equality) rather than `jppp ≤ i₁` (false there).
+
+#### `a = 1` and `a = 2`, measured
+
+| | `s1`,`s2` reach `V2`? | `U0L` reached? | `V2L` reached? |
+|---|---|---|---|
+| `a = 1` | **no** | no | no |
+| `a = 2` | **yes** (2 steps) | **no** | yes, in **0** steps |
+
+* **`a = 2` is PARTIALLY the same.** `s1` and `s2` do apply — the engine names
+  the first step `Y(j₁,jp)` (Yang–Baxter) rather than a Bokut–Shiao step, but at
+  `a = 2` we have `j₁ = i₂`, and `bokutShiaoRelation i₂ i₁ i₂` **is** the braid
+  relation (§4j). `s1`'s hypothesis `j₁ ≤ i₂` holds with equality. The V loop is
+  trivial: at `a = 2`, `jpp = i`, so `descWord i₁ jpp` is empty and
+  **`V2L = V2`**.
+  What fails is the **U** side: `U0L ≠ U0` there (they differ by one letter —
+  `descWord i j₂` against `descWord i₁ j₂`), and the chain never produces `U0L`.
+  So `U0L` is simply the wrong U-side target at `a = 2`; the U lineage goes
+  somewhere else and needs its endpoint measured.
+* **`a = 1` differs from step one** — `s1`,`s2` do not reach `V2` at all. It also
+  does not satisfy `a² + a + 5` (measured 6 steps to first cancellation, not 7).
+  Its own construction.
+
+**The `a = 2` exclusion still has no recorded reason**, and this measurement
+weakens the case for one: two of the five stretches transfer unchanged. Do not
+carry that caveat forward as if it were justified.
+
+**Next:** measure the U-side endpoint at `a = 2` (the only stretch that does not
+transfer), then `a = 1` from scratch.
