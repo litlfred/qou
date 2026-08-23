@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T05:07:32Z
+updated_at: 2026-08-23T05:11:38Z
 ---
 
 ## Why this bean exists
@@ -472,3 +472,37 @@ contributes exactly one `over` and one `under` to the whole traversal.
 research question, since both the ordering and the exactly-two fact are in
 place. Then the well-founded reduction, which remains a separate argument and is
 the last genuinely open piece of step 2.
+
+
+## `Descending` is now a definition
+
+- `lapsOf` — the traversal as a **list of laps** rather than pre-flattened.
+  Every lap has one slot per crossing, so crossing `k`'s verdicts are the `k`-th
+  *column*; flattening first would turn that projection into modular arithmetic
+  on a global index for no gain.
+- `length_of_mem_lapsOf` — every lap has length `w.length`, which is what makes
+  the column well defined.
+- `verdictsFor w k` — the `k`-th column with uninvolved strands dropped.
+- **`Descending w`** — every crossing is first met as an over-crossing. This is
+  the hypothesis the MFW base case is about, now a definition.
+- `descending_nil` — the identity braid is descending (vacuously); the extreme
+  case of the reduction.
+
+58 results, sorry-free, zero warnings, axiom-clean.
+
+## HONEST LIMIT — the two-entry structure is not yet discharged
+
+`card_involved` counts the **starting positions** involved in crossing `k`:
+exactly two. `verdictsFor` collects verdicts from the laps in `lapsOf`. To get
+`(verdictsFor w k).length = 2` — which is what actually pins down "the first of
+the two" — those must be identified: the laps in `lapsOf w` are exactly the `n`
+laps `lapVerdicts w p`, one per `p : Fin n`.
+
+That is the **partition fact**: the cycles of `closurePerm w`, each represented
+once by its leader and walked its full length, cover `Fin n` exactly. True, and
+the natural next lemma, but **not proved**. So `Descending` is at present a
+well-formed definition whose two-entry structure rests on a fact still to be
+discharged, and the file says so rather than leaving it implicit.
+
+Next: the partition fact, then `(verdictsFor w k).length = 2`, then the
+well-founded reduction.
