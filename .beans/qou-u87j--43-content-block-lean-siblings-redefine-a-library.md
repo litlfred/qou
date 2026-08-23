@@ -1,14 +1,21 @@
 ---
 # qou-u87j
-title: 43 content-block .lean siblings redefine a library structure with a different field set, and mask it via lean.ref candidate 1
+title: 46 content-block .lean siblings mirror a library structure with a different field set, and all 46 mask its lean.ref
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-23T07:55:37Z
+updated_at: 2026-08-23T08:05:53Z
 ---
 
 
 ## Measured 2026-08-23, branch `claude/n1dj-volume-iso-reading-2026-08-22`
+
+> **Every count in this section is superseded** — see §Correction below. The
+> real figures are 148 / 102 / 46 / 39, from `check-mirror-drift.ts`. The
+> filename still carries the old `43-` slug because a beans title change does
+> not rename the file; resolve this bean by `ls .beans/ | grep u87j`, never by
+> slugifying the title.
 
 Found while doing `qou-n1dj` item 3, where **one** instance of this appeared:
 `quantum-observable-universes/quantum-observable-universe.lean` turned out to be
@@ -121,34 +128,42 @@ supersede them:
 |---|---|---|
 | declarations, Lake trees / block siblings | — | 1214 / 841 |
 | same-FQN pairs | 167 | **148** |
-| identical (faithful mirrors) | 117 | **103** |
-| **drifted** | 50 | **45** |
-| distinct sibling files carrying drift | 43 | **38** |
-| drifted pairs that mask a block's `lean.ref` | 43 (= all) | **45 (= all)** |
+| identical (faithful mirrors) | 117 | **102** |
+| **drifted** | 50 | **46** |
+| distinct sibling files carrying drift | 43 | **39** |
+| drifted pairs that mask a block's `lean.ref` | 43 (= all) | **46 (= all)** |
 | duplicate FQNs inside the Lake tree | not measured | **0** |
 
-Four reasons the checker is lower, all of them the ad-hoc scan being wrong:
+Four mistakes the ad-hoc scan made, each now a test case in
+`scripts/tests/check-mirror-drift.test.ts`:
 
 1. **Named sections.** `section Foo … end Foo` is indistinguishable from a
    namespace at the regex level. The old scan only popped on `end <name>` and
    kept one stack for namespaces alone, so every declaration after the first
    named section got the wrong namespace — inventing collisions and hiding real
-   ones. The checker keeps namespaces and sections on one stack and pops
-   whichever is on top.
+   ones. An anonymous `section` did the same damage through a bare `end`. The
+   checker keeps namespaces and sections on one stack and pops whichever is on
+   top.
 2. **Docstrings and comments.** The old scan read `field :` lines inside `/-- … -/`
    as fields. The checker tracks docstring state.
 3. **`extends`.** Not parsed before, so a pair differing only in whether it
-   inherits or inlines a parent looked like field drift. Now compared
-   separately and reported as `extends differs` (1 case).
-4. **Duplicates inside the library.** The old scan silently compared against
-   whichever library copy it hit first. The checker reports those as their own
-   finding and excludes them from the drift count. There are none here, so this
-   changed nothing for qou — but it would have, silently, on a tree that had any.
+   inherits or inlines a parent looked like field drift; a clause wrapped onto
+   its own line was dropped entirely. Now compared separately and reported as
+   `extends differs` (1 case).
+4. **A lowercase-only field pattern.** `M : Type*`, `C : Type u` and
+   `Target : Place → Type*` are all real fields here, and both scans dropped
+   them at first — so a pair differing *only* in such a field read as
+   "identical". This one moved the count **up**, 45 → 46, and it is the reason
+   the first run of the checker was still slightly wrong.
 
-**What does not change** is the finding. `45 / 45` of the drifted pairs sit in a
+Three of those four surfaced only because the tests were written; the checker's
+first run reported 45 / 103 / 38. Numbers from a parser nobody tested are worth
+about what the ad-hoc scan's were.
+
+**What does not change** is the finding. `46 / 46` of the drifted pairs sit in a
 file that is a content-block sibling, so every one of them masks a `lean.ref`.
-The faithful-mirror rate is 70 %, unchanged, and that ratio remains the parser's
-control. The `QOU.CRManifoldData` example is reproduced verbatim by the checker,
+The faithful-mirror rate is 69 %, essentially unchanged, and that ratio remains
+the parser's control. The `QOU.CRManifoldData` example is reproduced verbatim by the checker,
 including both anti-vacuity fields.
 
 **Reproduce:** `bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou`
@@ -158,9 +173,9 @@ from the qou repo root. `--tsv` for one row per pair, `--json` for the totals.
 
 `check-mirror-drift.ts` exists on folio-assistant branch
 `claude/gracious-dijkstra-0ijp2l`. It exits 0 by default — a gate that fails CI
-on a 45-item backlog only teaches people to pass `--warn-only`. Wire it as
-`--baseline 45` so it fires on *growth*, which is what keeps the 103 faithful
-mirrors from becoming the next 45. `--max 0` is the end state once the backlog
+on a 46-item backlog only teaches people to pass `--warn-only`. Wire it as
+`--baseline 46` so it fires on *growth*, which is what keeps the 102 faithful
+mirrors from becoming the next 46. `--max 0` is the end state once the backlog
 is drained.
 
 Verified: exit 2 over `--max`, exit 3 over `--baseline`, 0 with `--warn-only`,
