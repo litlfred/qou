@@ -86,6 +86,24 @@ except Exception:
 # `scriptHash` and `engineVersion` -- a changed producer or engine is signal.
 EPH = frozenset(_SHARED | {"invocation"})
 
+# Producers whose witness DEFINES an anchor rather than consuming one.  Single
+# source of truth is `computations/q0_repin_sweep.py`; mirrored only if that
+# import fails, never re-derived.
+#
+# This matters because a verdict here reads as a drain instruction.
+# `q-pinning-50-digit.witness.json` is what `_q0_value_for_anchor("muon")`
+# READS, so regenerating it does not migrate a consumer -- it redefines what
+# "muon" MEANS, and every muon-stamped witness in the corpus then disagrees
+# with its own anchor (AGENTS.md records 262 Q0_FLIPs and a hard-fail of every
+# `ideal_muon` producer, including the one that would regenerate the anchor).
+# Listing it beside 18 ordinary staleness rows, indistinguishable, is how that
+# gets done by accident.
+try:
+    sys.path.insert(0, str(ROOT / "computations"))
+    from q0_repin_sweep import ANCHOR_DEFINING          # type: ignore
+except Exception:
+    ANCHOR_DEFINING = frozenset({"q_pinning_50_digit"})
+
 
 def strip_eph(o):
     if isinstance(o, dict):
@@ -243,6 +261,10 @@ def main() -> int:
         if not args.out:
             return
         tmp = args.out + ".tmp"
+        for r in rs:            # annotate on every write, resumed rows included
+            r["anchor_defining"] = (
+                os.path.splitext(os.path.basename(r["producer"]))[0]
+                in ANCHOR_DEFINING)
         json.dump({"results": rs, "tally": dict(collections.Counter(
                        r["verdict"] for r in rs)),
                    "partial": partial, "measured": len(rs),
@@ -343,6 +365,12 @@ def main() -> int:
     tally = collections.Counter(r["verdict"] for r in results)
     print("\n" + "=" * 66)
     print("TALLY:", dict(tally))
+    ad = [r for r in results if r.get("anchor_defining")]
+    if ad:
+        print("\nANCHOR-DEFINING — DO NOT DRAIN (regenerating redefines the "
+              "anchor itself):")
+        for r in ad:
+            print(f"  {r['producer']}  [{r['verdict']}]")
     for v in ("SUBSTANTIVE", "CRASH", "TIMEOUT"):
         rs = [r for r in results if r["verdict"] == v]
         if rs:
