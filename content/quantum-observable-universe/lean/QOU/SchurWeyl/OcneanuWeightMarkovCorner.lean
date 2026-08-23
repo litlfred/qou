@@ -20,6 +20,13 @@ entry, its cell is a **removable corner** of `μ`.  The condition collapses to
 > for every `μ ⊢ n` and every removable corner `r` of `μ`:
 > `∑_{s addable corner of μ} w_{μ+s} · a(c(s) − c(r)) = z · w_μ`.
 
+**Update — the structural half of that reduction IS now formalised**, in
+`SeminormalBlockTrace`, and by a much shorter route than the one described above: `genMat` has
+exactly two nonzero entries per column, so `σ_k`'s off-diagonal crossing blocks is immediate and
+needs no Okounkov–Vershik argument at all.  Read the justification below as the heavier route it
+is; `SeminormalBlockTrace`'s docstring records the correction.  What is still missing is the
+*assembly* — the λ-indexed sum with weights — so the caveat below still stands as written.
+
 **🛑 That reduction is NOT formalised, and this file does not formalise it.**  It is derived on
 paper (`computations/schurweyl/ocneanu_markov_corner_reduction.py`, which also tests the resulting
 identity exactly at symbolic `z` for every partition of `n ≤ 6`).  Steps (i) and (ii) —
