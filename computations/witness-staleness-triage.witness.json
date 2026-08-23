@@ -2,17 +2,17 @@
  "computation": "witness-staleness-triage",
  "scriptFile": "witness_staleness_triage.py",
  "scriptHash": "a8333db18d04",
- "commitSha": "70ad04a4400aee102a2a7031eb33c501af807d48",
+ "commitSha": "4836669cb6aa0100d838253f7205f53dd084b076",
  "description": "Splits self-stale witnesses by whether re-running the producer could change the payload. Normalisation drops comments, docstrings and formatting via ast.unparse; equality of the normalised sources means a re-run is bookkeeping only.",
  "scope": "scope-(a): decides only whether a re-run can move the payload. Says nothing about whether a witness is numerically correct, and ignores scriptCommitSha, which rebase-merge rewrites.",
  "counts": {
   "cosmetic": 0,
   "cosmetic_env_differs": 0,
-  "cosmetic_import_cone_drift": 2,
-  "cosmetic_import_infra_only": 6,
+  "cosmetic_import_cone_drift": 7,
+  "cosmetic_import_infra_only": 0,
   "cosmetic_strips_provenance": 0,
-  "substantive": 268,
-  "rewritten": 376,
+  "substantive": 160,
+  "rewritten": 348,
   "unresolvable": 113,
   "unparseable": 0
  },
@@ -26,16 +26,77 @@
     "recorded": "7ce68c29ed54",
     "current": "e51bf27bddd3",
     "import_drift": [
+     "computations/_path_bridge.py (depth 1)",
      "computations/substrate/_precision.py (depth 1)",
      "computations/substrate/codata_constants.py (depth 1)",
      "computations/substrate/hecke_core.py (depth 1)",
      "computations/tr_m_wenzl_bridge_mpfr.py (depth 1)",
      "computations/substrate/witness_base.py (depth 1)",
      "computations/codata_2022_source.py (depth 2)",
+     "computations/substrate/experimental_constants.py (depth 3)",
+     "computations/mass_endomorphism.py (depth 3)",
      "computations/markov/markov_peel.py (depth 4)",
      "computations/_li_2_q_util.py (depth 5)",
      "computations/canonical_braid_crossings.py (depth 5)",
-     "computations/markov/markov_trace_canonical.py (depth 5)"
+     "computations/markov/markov_trace_canonical.py (depth 5)",
+     "computations/mass_tower_operator_valued.py (depth 6)"
+    ],
+    "drift_kind": "numeric-bearing"
+   },
+   {
+    "witness": "computations/habiro/habiro-taylor-extraction.witness.json",
+    "producer": "computations/habiro/habiro_exact_taylor_extraction.py",
+    "recorded": "67d063ec3310",
+    "current": "376be8da9282",
+    "import_drift": [
+     "computations/_path_bridge.py (depth 1)",
+     "computations/substrate/_precision.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)"
+    ],
+    "drift_kind": "numeric-bearing"
+   },
+   {
+    "witness": "computations/probes/one-loop-cusp-normalisation-tension.witness.json",
+    "producer": "computations/probes/one_loop_cusp_normalisation_tension_probe.py",
+    "recorded": "a13c2ded717e",
+    "current": "c07628897e6c",
+    "import_drift": [
+     "computations/substrate/_precision.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)",
+     "computations/_path_bridge.py (depth 2)"
+    ],
+    "drift_kind": "numeric-bearing"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c4-qhermite-entry-gate.witness.json",
+    "producer": "computations/qbeta/qbeta_c4_qhermite_entry_gate_probe.py",
+    "recorded": "4235f4e36d8d",
+    "current": "dcfe9ac029ce",
+    "import_drift": [
+     "computations/_path_bridge.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)"
+    ],
+    "drift_kind": "numeric-bearing"
+   },
+   {
+    "witness": "computations/s5-so3-su2-u1-fiber-action.witness.json",
+    "producer": "computations/s5_so3_su2_u1_fiber_action.py",
+    "recorded": "ebf04365abfd",
+    "current": "d62058fdfbee",
+    "import_drift": [
+     "computations/_path_bridge.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)"
+    ],
+    "drift_kind": "numeric-bearing"
+   },
+   {
+    "witness": "computations/y-lambda-macdonald-telescope.witness.json",
+    "producer": "computations/y_lambda_macdonald_telescope.py",
+    "recorded": "97e35a240ddc",
+    "current": "c3ac558daace",
+    "import_drift": [
+     "computations/_path_bridge.py (depth 1)",
+     "computations/substrate/witness_base.py (depth 1)"
     ],
     "drift_kind": "numeric-bearing"
    },
@@ -45,75 +106,13 @@
     "recorded": "9d4761a97964",
     "current": "b39bd1c51f13",
     "import_drift": [
+     "computations/_path_bridge.py (depth 1)",
      "computations/y_lambda_wenzl_bridge.py (depth 1)"
     ],
     "drift_kind": "numeric-bearing"
    }
   ],
-  "cosmetic_import_infra_only": [
-   {
-    "witness": "computations/casimir-d6-qcorrection-structure.witness.json",
-    "producer": "computations/casimir_d6_qcorrection_structure.py",
-    "recorded": "072fb5ed3c8b",
-    "current": "5c168b4ff8f9",
-    "import_drift": [
-     "computations/substrate/witness_base.py (depth 1)"
-    ],
-    "drift_kind": "infra-only"
-   },
-   {
-    "witness": "computations/habiro/habiro-taylor-extraction.witness.json",
-    "producer": "computations/habiro/habiro_exact_taylor_extraction.py",
-    "recorded": "67d063ec3310",
-    "current": "376be8da9282",
-    "import_drift": [
-     "computations/substrate/_precision.py (depth 1)",
-     "computations/substrate/witness_base.py (depth 1)"
-    ],
-    "drift_kind": "infra-only"
-   },
-   {
-    "witness": "computations/probes/one-loop-cusp-normalisation-tension.witness.json",
-    "producer": "computations/probes/one_loop_cusp_normalisation_tension_probe.py",
-    "recorded": "a13c2ded717e",
-    "current": "c07628897e6c",
-    "import_drift": [
-     "computations/substrate/_precision.py (depth 1)",
-     "computations/substrate/witness_base.py (depth 1)"
-    ],
-    "drift_kind": "infra-only"
-   },
-   {
-    "witness": "computations/qbeta/qbeta-c4-qhermite-entry-gate.witness.json",
-    "producer": "computations/qbeta/qbeta_c4_qhermite_entry_gate_probe.py",
-    "recorded": "4235f4e36d8d",
-    "current": "dcfe9ac029ce",
-    "import_drift": [
-     "computations/substrate/witness_base.py (depth 1)"
-    ],
-    "drift_kind": "infra-only"
-   },
-   {
-    "witness": "computations/s5-so3-su2-u1-fiber-action.witness.json",
-    "producer": "computations/s5_so3_su2_u1_fiber_action.py",
-    "recorded": "ebf04365abfd",
-    "current": "d62058fdfbee",
-    "import_drift": [
-     "computations/substrate/witness_base.py (depth 1)"
-    ],
-    "drift_kind": "infra-only"
-   },
-   {
-    "witness": "computations/y-lambda-macdonald-telescope.witness.json",
-    "producer": "computations/y_lambda_macdonald_telescope.py",
-    "recorded": "97e35a240ddc",
-    "current": "c3ac558daace",
-    "import_drift": [
-     "computations/substrate/witness_base.py (depth 1)"
-    ],
-    "drift_kind": "infra-only"
-   }
-  ],
+  "cosmetic_import_infra_only": [],
   "cosmetic_strips_provenance": [],
   "substantive": [
    {
@@ -175,12 +174,6 @@
     "producer": "computations/binding_canonical.py",
     "recorded": "6a6dd187656d",
     "current": "55d683d8c551"
-   },
-   {
-    "witness": "computations/atom-level-wedderburn-tower.witness.json",
-    "producer": "computations/atom_level_wedderburn_tower.py",
-    "recorded": "33fabd4442c9",
-    "current": "7c52c6c0b8de"
    },
    {
     "witness": "computations/atom-mass-derived.witness.json",
@@ -255,12 +248,6 @@
     "current": "bffacadcc257"
    },
    {
-    "witness": "computations/branching-qvalue-chain.witness.json",
-    "producer": "computations/branching-qvalue-chain.py",
-    "recorded": "ec89188a8f3f",
-    "current": "7fcef80adc9b"
-   },
-   {
     "witness": "computations/brane-tower-full-channel-trace-audit.witness.json",
     "producer": "computations/probes/brane_tower_full_channel_trace_audit.py",
     "recorded": "de7ade9da349",
@@ -273,730 +260,10 @@
     "current": "7810cf928df1"
    },
    {
-    "witness": "computations/canonical-isotope-witness-Z00.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z01.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z03.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z04.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z05.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z06.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z07.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z08.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z09.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z10.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z100.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z101.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z102.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z103.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z104.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z105.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z106.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z107.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z108.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z109.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z11.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z110.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z111.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z112.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z113.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z114.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z115.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z116.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z117.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z118.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z12.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z13.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z14.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z15.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z16.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z17.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z18.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z19.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z20.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z21.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z22.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z23.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z24.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z25.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z26.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z27.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z28.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z29.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z30.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z31.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z32.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z33.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z34.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z35.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z36.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z37.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z38.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z39.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z40.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z41.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z42.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z43.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z44.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z45.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z46.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z47.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z48.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z49.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z50.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z51.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z52.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z53.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z54.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z55.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z56.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z57.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z58.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z59.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z60.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z61.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z62.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z63.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z64.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z65.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z66.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z67.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z68.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z69.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z70.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z71.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z72.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z73.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z74.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z75.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z76.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z77.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z78.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z79.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z80.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z81.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z82.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z83.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z84.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z85.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z86.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z87.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z88.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z89.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z90.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z91.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z92.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z93.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z94.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z95.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z96.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z97.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z98.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-Z99.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
-    "witness": "computations/canonical-isotope-witness-index.witness.json",
-    "producer": "computations/canonical_isotope_witness.py",
-    "recorded": "46eb131fcd57",
-    "current": "141099554ad6"
-   },
-   {
     "witness": "computations/canonical-lepton-braid-words.witness.json",
     "producer": "computations/canonical_lepton_braid_words.py",
     "recorded": "8a8361b90667",
-    "current": "15935ae47e84"
-   },
-   {
-    "witness": "computations/canonical-tr-m-via-chi-cache.witness.json",
-    "producer": "computations/canonical_tr_m_via_chi_cache.py",
-    "recorded": "039783b86297",
-    "current": "eb10fdea2659"
+    "current": "eee176111423"
    },
    {
     "witness": "computations/catalan-binding.witness.json",
@@ -1047,16 +314,10 @@
     "current": "d591c25d1cc9"
    },
    {
-    "witness": "computations/co-bond-order-active-set.witness.json",
-    "producer": "computations/co_bond_order_active_set.py",
-    "recorded": "da2e215cdaad",
-    "current": "93db996b65a6"
-   },
-   {
     "witness": "computations/codata-masses.witness.json",
     "producer": "computations/codata_masses.py",
     "recorded": "5f933d9c905b",
-    "current": "b2406a6ced97"
+    "current": "272e6aa65c8e"
    },
    {
     "witness": "computations/codata-registry-triangulation.witness.json",
@@ -1071,12 +332,6 @@
     "current": "33f64f7297e5"
    },
    {
-    "witness": "computations/d-u-closed-form-proof.witness.json",
-    "producer": "computations/d_u_closed_form_proof.py",
-    "recorded": "b82e67ad7cf7",
-    "current": "1e7bcb5853a2"
-   },
-   {
     "witness": "computations/delta-lambda-borromean-ascaling.witness.json",
     "producer": "computations/delta_lambda_borromean_ascaling.py",
     "recorded": "11ebf6581efb",
@@ -1087,12 +342,6 @@
     "producer": "computations/delta_lambda_categorical_verification.py",
     "recorded": "3e6ed56a1412",
     "current": "56f597242ec4"
-   },
-   {
-    "witness": "computations/delta-lambda-full-variance-phase5e-1.witness.json",
-    "producer": "computations/delta_lambda_full_variance_phase5e_1.py",
-    "recorded": "6d093b3266ff",
-    "current": "3dc5136c43fc"
    },
    {
     "witness": "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json",
@@ -1131,10 +380,10 @@
     "current": "3acd037b2fb1"
    },
    {
-    "witness": "computations/figure-eight-kashaev-volume.witness.json",
-    "producer": "computations/figure_eight_kashaev_volume.py",
-    "recorded": "90187ff2659e",
-    "current": "3a8eb61e4b99"
+    "witness": "computations/f-ell-derivation-via-per-braid-mass-tower.witness.json",
+    "producer": "computations/f_ell_derivation_via_per_braid_mass_tower.py",
+    "recorded": "57d1665f2a96",
+    "current": "c20a72f337f1"
    },
    {
     "witness": "computations/fr-pullback-cosh-h.witness.json",
@@ -1161,22 +410,28 @@
     "current": "43cbad1d0d66"
    },
    {
-    "witness": "computations/h2-integer-lp.witness.json",
-    "producer": "computations/h2-integer-lp.py",
-    "recorded": "a747ab3a0377",
-    "current": "f0d2b7ca011b"
-   },
-   {
     "witness": "computations/h6-deuteron-free-word-chi-lambda.witness.json",
     "producer": "computations/probes/h6_deuteron_free_word_chi_lambda_probe.py",
     "recorded": "56c807ccf9fc",
     "current": "47a5bbb64dab"
    },
    {
+    "witness": "computations/habiro/habiro-coefficients-extended.witness.json",
+    "producer": "computations/habiro/habiro_coefficients_extended.py",
+    "recorded": "6fdad0d63cff",
+    "current": "779e6e887903"
+   },
+   {
     "witness": "computations/habiro/habiro-coefficients-interpolate.witness.json",
     "producer": "computations/habiro/habiro_coefficients_interpolate.py",
     "recorded": "1714e7d2d762",
     "current": "0238d3b24dd7"
+   },
+   {
+    "witness": "computations/habiro-coefficients-extended.witness.json",
+    "producer": "computations/habiro/habiro_coefficients_extended.py",
+    "recorded": "6fdad0d63cff",
+    "current": "779e6e887903"
    },
    {
     "witness": "computations/hadron-knot-table.witness.json",
@@ -1227,6 +482,12 @@
     "current": "252b3383d760"
    },
    {
+    "witness": "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json",
+    "producer": "computations/lepton_tower_probe_1_cinquefoil_muon.py",
+    "recorded": "e48305e3737e",
+    "current": "b3902b9d87c4"
+   },
+   {
     "witness": "computations/lever1-binding-classical-kernel-derive.witness.json",
     "producer": "computations/lever1_binding_classical_kernel_derive.py",
     "recorded": "f2d1ec8db5de",
@@ -1242,7 +503,19 @@
     "witness": "computations/low-isotope-mass-table.witness.json",
     "producer": "computations/low_isotope_mass_table.py",
     "recorded": "fe01308fbd59",
-    "current": "0f0dc10eed5a"
+    "current": "ce539ae1fcb2"
+   },
+   {
+    "witness": "computations/low-isotopes-binding-sweep.witness.json",
+    "producer": "computations/low_isotopes_binding_sweep.py",
+    "recorded": "99981358a52b",
+    "current": "69f79ac8fcca"
+   },
+   {
+    "witness": "computations/m-qclt-approx.witness.json",
+    "producer": "computations/m_qclt_approx.py",
+    "recorded": "538c0ca90ba7",
+    "current": "af1d3297c99c"
    },
    {
     "witness": "computations/m-tau-knot-prediction.witness.json",
@@ -1257,22 +530,10 @@
     "current": "877447ec0bd7"
    },
    {
-    "witness": "computations/markov/markov_weights_symbolic.witness.json",
-    "producer": "computations/markov/markov_weights_symbolic.py",
-    "recorded": "23861b203a83",
-    "current": "1793d29585d0"
-   },
-   {
-    "witness": "computations/mass-table-comprehensive.witness.json",
-    "producer": "computations/mass_table_comprehensive.py",
-    "recorded": "6feba4c3f142",
-    "current": "ea24a1286ec6"
-   },
-   {
-    "witness": "computations/meson-gen3-eta-phi.witness.json",
-    "producer": "computations/meson_gen3_eta_phi.py",
-    "recorded": "b0c8b8cc8ea2",
-    "current": "658019648c22"
+    "witness": "computations/mass-endomorphism.witness.json",
+    "producer": "computations/mass_endomorphism.py",
+    "recorded": "28266c000178",
+    "current": "08c8eeec1809"
    },
    {
     "witness": "computations/meson-mass-from-hecke.witness.json",
@@ -1285,6 +546,42 @@
     "producer": "computations/mu_p_pin_sensitivity_map.py",
     "recorded": "98ab2ae9a14e",
     "current": "b231de8cca2a"
+   },
+   {
+    "witness": "computations/nucleus-real-sdp-deuteron.witness.json",
+    "producer": "computations/nucleus_real_sdp.py",
+    "recorded": "e376dec214d2",
+    "current": "3955b2c59723"
+   },
+   {
+    "witness": "computations/nucleus-real-sdp-he3.witness.json",
+    "producer": "computations/nucleus_real_sdp.py",
+    "recorded": "e376dec214d2",
+    "current": "3955b2c59723"
+   },
+   {
+    "witness": "computations/nucleus-real-sdp-he4.witness.json",
+    "producer": "computations/nucleus_real_sdp.py",
+    "recorded": "e376dec214d2",
+    "current": "3955b2c59723"
+   },
+   {
+    "witness": "computations/nucleus-real-sdp-neutron.witness.json",
+    "producer": "computations/nucleus_real_sdp.py",
+    "recorded": "e376dec214d2",
+    "current": "3955b2c59723"
+   },
+   {
+    "witness": "computations/nucleus-real-sdp-proton.witness.json",
+    "producer": "computations/nucleus_real_sdp.py",
+    "recorded": "e376dec214d2",
+    "current": "3955b2c59723"
+   },
+   {
+    "witness": "computations/nucleus-real-sdp-tritium.witness.json",
+    "producer": "computations/nucleus_real_sdp.py",
+    "recorded": "e376dec214d2",
+    "current": "3955b2c59723"
    },
    {
     "witness": "computations/option-e-canonical-reeb-v5.witness.json",
@@ -1353,13 +650,13 @@
     "current": "b88bccc668dc"
    },
    {
-    "witness": "computations/per-irrep-pole-deuteron-h6.witness.json",
-    "producer": "computations/per_irrep_pole_atom.py",
-    "recorded": "e1b63069c0fd",
-    "current": "12c9329bd5a0"
+    "witness": "computations/per-generator-V-hat-general.witness.json",
+    "producer": "computations/per_generator_V_hat_general.py",
+    "recorded": "a19b7d1d9094",
+    "current": "da0157c5bb13"
    },
    {
-    "witness": "computations/per-irrep-pole-proton-h3.witness.json",
+    "witness": "computations/per-irrep-pole-deuteron-h6.witness.json",
     "producer": "computations/per_irrep_pole_atom.py",
     "recorded": "e1b63069c0fd",
     "current": "12c9329bd5a0"
@@ -1377,22 +674,10 @@
     "current": "9ca3cd1fa542"
    },
    {
-    "witness": "computations/probe-9b-perlambda-brane-tower.witness.json",
-    "producer": "computations/probe_9b_perlambda_brane_tower.py",
-    "recorded": "a9914c5b1270",
-    "current": "fdff391037a7"
-   },
-   {
     "witness": "computations/probe-isospin-mirror-v9-generalization.witness.json",
     "producer": "computations/probe_isospin_mirror_v9_generalization.py",
     "recorded": "47332b33ac09",
     "current": "aa8ebac91b64"
-   },
-   {
-    "witness": "computations/probe-markov-trace-ratio-exact.witness.json",
-    "producer": "computations/probe_markov_trace_ratio_exact.py",
-    "recorded": "6734885e32d8",
-    "current": "e32df6c2814c"
    },
    {
     "witness": "computations/probe-theta-carry-binding.witness.json",
@@ -1401,16 +686,10 @@
     "current": "edbd25b7b49d"
    },
    {
-    "witness": "computations/probe-topological-mass-formula-algebraic.witness.json",
-    "producer": "computations/probe_topological_mass_formula.py",
-    "recorded": "40b71481b09f",
-    "current": "158b68540461"
-   },
-   {
-    "witness": "computations/probe-topological-mass-formula.witness.json",
-    "producer": "computations/probe_topological_mass_formula.py",
-    "recorded": "40b71481b09f",
-    "current": "158b68540461"
+    "witness": "computations/probes/binding-color-vs-charge-tn3he-perknot-rerun.witness.json",
+    "producer": "computations/probes/binding_color_vs_charge_tn3he_perknot_rerun.py",
+    "recorded": "8c5a8ad4a75f",
+    "current": "c152a3ff5328"
    },
    {
     "witness": "computations/probes/bring-golden-jones.witness.json",
@@ -1452,7 +731,7 @@
     "witness": "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json",
     "producer": "computations/probes/gap_a4_T2_per_knot_vol_probe.py",
     "recorded": "6542dd9898ff",
-    "current": "e6ccb76b4dee"
+    "current": "ead64882b9f4"
    },
    {
     "witness": "computations/probes/ground-state-ordering-a3.witness.json",
@@ -1539,16 +818,22 @@
     "current": "32f2b0b1b621"
    },
    {
-    "witness": "computations/probes/qbeta-g3-5two-saddle-exact-predictions.witness.json",
-    "producer": "computations/probes/qbeta_g3_5two_saddle_exact_predictions.py",
-    "recorded": "e05e36312b0c",
-    "current": "d30d5b7edf93"
+    "witness": "computations/probes/qbeta-braid-nf-sdp-offset.witness.json",
+    "producer": "computations/probes/qbeta_braid_nf_sdp_offset_probe.py",
+    "recorded": "d4bdd964d1d8",
+    "current": "0a2c46c6818f"
    },
    {
     "witness": "computations/probes/qbeta-habiro-element-probe.witness.json",
     "producer": "computations/probes/qbeta_habiro_element_probe.py",
     "recorded": "6cd682db7cbe",
     "current": "d9336f5c4c04"
+   },
+   {
+    "witness": "computations/probes/qbeta-lorentzian-gram-offset.witness.json",
+    "producer": "computations/probes/qbeta_lorentzian_gram_offset_probe.py",
+    "recorded": "bffe6a5c61a8",
+    "current": "b85654a49a69"
    },
    {
     "witness": "computations/probes/qborel-confluence-pos.witness.json",
@@ -1575,10 +860,22 @@
     "current": "49b9d33e06b7"
    },
    {
+    "witness": "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json",
+    "producer": "computations/probes/rho_k_h3a_co_casimir_perknot_rerun.py",
+    "recorded": "47d78c2134b1",
+    "current": "5401d4ff5275"
+   },
+   {
     "witness": "computations/probes/su4-1111-markov-trace.witness.json",
     "producer": "computations/probes/su4_1111_markov_trace_probe.py",
     "recorded": "bfab7b14bf9c",
     "current": "01c5284cf51c"
+   },
+   {
+    "witness": "computations/proton-mass-codata-50dps.witness.json",
+    "producer": "computations/build_proton_mass_50dps_chain.py",
+    "recorded": "ed2eda3a4ea3",
+    "current": "20c951713b24"
    },
    {
     "witness": "computations/q-beta-c3-wenzl-decomposition.witness.json",
@@ -1590,19 +887,31 @@
     "witness": "computations/q-beta-complex-q-test1-phasea-v2.witness.json",
     "producer": "computations/q_beta_complex_q_test1_phaseA_v2.py",
     "recorded": "54effc787e8c",
-    "current": "6be0b3301f56"
+    "current": "0d69be48869b"
+   },
+   {
+    "witness": "computations/q-pinning-50-digit.witness.json",
+    "producer": "computations/q_pinning_50_digit.py",
+    "recorded": "f5d3c032618e",
+    "current": "79beef331c1e"
    },
    {
     "witness": "computations/qbeta/qbeta-c3-barodd-tetraplectic-reduction.witness.json",
     "producer": "computations/qbeta/qbeta_c3_barodd_tetraplectic_reduction_probe.py",
     "recorded": "c96da3239bbc",
-    "current": "b7df829c7936"
+    "current": "a1c9b1b6872a"
    },
    {
     "witness": "computations/qbeta/qbeta-c3-faddeev-rogers-transformation.witness.json",
     "producer": "computations/qbeta/qbeta_c3_faddeev_rogers_probe.py",
     "recorded": "7fa824f3edea",
     "current": "94c38a842bdb"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c3-hopf-habiro-profile.witness.json",
+    "producer": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
+    "recorded": "e1330da928b2",
+    "current": "b3a5029c6e46"
    },
    {
     "witness": "computations/qbeta/qbeta-c4even-exact-sseries.witness.json",
@@ -1695,22 +1004,64 @@
     "current": "36f36f2fd269"
    },
    {
+    "witness": "computations/substrate/frakV-zeta4-fibre-vs-observable-probe.witness.json",
+    "producer": "computations/substrate/frakV_zeta4_fibre_vs_observable_probe.py",
+    "recorded": "38ae6ad0b3eb",
+    "current": "2d7bb2eaad1c"
+   },
+   {
+    "witness": "computations/substrate/lever1-binding-habiro-qexponential.witness.json",
+    "producer": "computations/substrate/lever1_binding_habiro_qexponential.py",
+    "recorded": "b43478c979b5",
+    "current": "8009edc42108"
+   },
+   {
+    "witness": "computations/substrate/lever1-habiro-element-fit.witness.json",
+    "producer": "computations/substrate/lever1_habiro_element_fit.py",
+    "recorded": "c3377253d2be",
+    "current": "dc837d7b3797"
+   },
+   {
+    "witness": "computations/substrate/lever1-lambda-sw-no-shortcut.witness.json",
+    "producer": "computations/substrate/lever1_lambda_sw_no_shortcut.py",
+    "recorded": "02f2c8a84449",
+    "current": "538d5d1d282c"
+   },
+   {
+    "witness": "computations/substrate/lever1-lw-depth2-recurrence-test.witness.json",
+    "producer": "computations/substrate/lever1_lw_depth2_recurrence_test.py",
+    "recorded": "3d3851f3890e",
+    "current": "6ca725d0d29d"
+   },
+   {
+    "witness": "computations/substrate/lever1-qinvolution-kernel-test.witness.json",
+    "producer": "computations/substrate/lever1_qinvolution_kernel_test.py",
+    "recorded": "6d33852778db",
+    "current": "ff91e74c5ec5"
+   },
+   {
+    "witness": "computations/t6-lepton-h3-3channel-convention.witness.json",
+    "producer": "computations/t6_lepton_h3_3channel_convention.py",
+    "recorded": "884723a57e91",
+    "current": "0ed288ed2c8c"
+   },
+   {
+    "witness": "computations/t6-three-halves-factor-probes.witness.json",
+    "producer": "computations/t6_three_halves_factor_probes.py",
+    "recorded": "7c74262e8c11",
+    "current": "b615ee20116b"
+   },
+   {
     "witness": "computations/v-hat-z-transfer-phase5d-4.witness.json",
     "producer": "computations/delta_lambda_v_hat_z_transfer_phase5d_4.py",
     "recorded": "e389632b77e0",
     "current": "ba4383ceb7e8"
    },
    {
-    "witness": "computations/witness-staleness-triage.witness.json",
-    "producer": "computations/witness_staleness_triage.py",
-    "recorded": "4e2d1f936b00",
-    "current": "a8333db18d04"
-   },
-   {
     "witness": "computations/xi-ell-phi-q-probe.witness.json",
     "producer": "computations/xi_ell_phi_q_probe.py",
     "recorded": "39b942183c2d",
-    "current": "4395a7f8d746"
+    "current": "45fabf5331f7"
    },
    {
     "witness": "computations/y-lambda-at-q0.witness.json",
@@ -1762,7 +1113,7 @@
     "witness": "computations/_deprecated/q-beta-operator-valued-N3.witness.json",
     "producer": "computations/probe_q_beta_operator_valued_N3.py",
     "recorded": "3a6962ad798e",
-    "current": "520148a7cf6c",
+    "current": "ef649191dd96",
     "reason": "commit 99ecb186f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
@@ -1770,7 +1121,7 @@
     "witness": "computations/a_operator/A-operator-extract-h9-pn.witness.json",
     "producer": "computations/a_operator/A_operator_extract_at_level.py",
     "recorded": "35f8a8f58506",
-    "current": "59a3b51b5694",
+    "current": "6682387b66c6",
     "reason": "commit 9ff4d4976 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
@@ -1778,7 +1129,7 @@
     "witness": "computations/a_operator/A-operator-extract-h9-pp.witness.json",
     "producer": "computations/a_operator/A_operator_extract_at_level.py",
     "recorded": "35f8a8f58506",
-    "current": "59a3b51b5694",
+    "current": "6682387b66c6",
     "reason": "commit d7d7862f9 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
@@ -1789,6 +1140,16 @@
     "current": "3ae7bfa7af21",
     "reason": "commit bbc410b27 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
+   },
+   {
+    "witness": "computations/active-set-truncation-prototype.witness.json",
+    "producer": "computations/active_set_truncation_prototype.py",
+    "recorded": "1a66900746ef",
+    "current": "ed112f07268b",
+    "reason": "commit fb39f0437 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "5608139ed",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/alpha/alpha-star-dominant-partitions.witness.json",
@@ -1807,12 +1168,42 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
+    "witness": "computations/atom-vhyp-closure-matrix-m.witness.json",
+    "producer": "computations/atom_vhyp_closure_matrix_m.py",
+    "recorded": "67fd94dc7edb",
+    "current": "2fb31fe96329",
+    "reason": "commit 07fd41c51 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
+    "approx_anchor": "2320a95ec",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/atomic-chirality-residue.witness.json",
     "producer": "computations/atomic_chirality_residue.py",
     "recorded": "94184bd90523",
     "current": "122cfe91a00b",
     "reason": "commit b181e43f2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
+   },
+   {
+    "witness": "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+    "producer": "computations/atomic_tr_m_mpfr_50dps.py",
+    "recorded": "7c63fadfb8d0",
+    "current": "03cfe9f077ba",
+    "reason": "commit c98b2d81d not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "491fca3f2",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/atomic-tr-m-mpfr-50dps.witness.json",
+    "producer": "computations/atomic_tr_m_mpfr_50dps.py",
+    "recorded": "c4cdc753dd6d",
+    "current": "03cfe9f077ba",
+    "reason": "commit f1ea930a6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "cc6a0b095",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/audits/canonical-a-k-magnitude-audit.witness.json",
@@ -1847,6 +1238,24 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
+    "witness": "computations/audits/noncanonical-reentry-audit.witness.json",
+    "producer": "computations/audits/noncanonical_reentry_audit.py",
+    "recorded": "4634ffde05a0",
+    "current": "216708c30e52",
+    "reason": "commit b35c11e43 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
+    "approx_anchor": "c5217e10e",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/audits/producer-importability-audit.witness.json",
+    "producer": "computations/audits/producer_importability_audit.py",
+    "recorded": "8647028753f6",
+    "current": "99b745d38bc1",
+    "reason": "commit 6d56f7feb not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)"
+   },
+   {
     "witness": "computations/audits/proton-m_e-anomaly-audit.witness.json",
     "producer": "computations/audits/proton_m_e_anomaly_audit.py",
     "recorded": "9b70aa04b632",
@@ -1859,8 +1268,10 @@
     "producer": "computations/witness_provenance_audit.py",
     "recorded": "78954454e283",
     "current": "30de8676bd82",
-    "reason": "commit 65d2418d1 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
+    "reason": "commit d4762e565 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "ae1d692cc",
+    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/averaged-block-swap-binding.witness.json",
@@ -1869,6 +1280,16 @@
     "current": "2458c2e7bd05",
     "reason": "commit c48f3a75e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
+   },
+   {
+    "witness": "computations/b-over-a.witness.json",
+    "producer": "computations/b_over_a_evaluator.py",
+    "recorded": "17199f80a20a",
+    "current": "637cf3956815",
+    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
+    "approx_anchor": "fe3a83d6b",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/binding-depth-stratified-knot-weighted.witness.json",
@@ -1986,7 +1407,7 @@
     "witness": "computations/borromean-axial-coupling.witness.json",
     "producer": "computations/borromean-axial-coupling.py",
     "recorded": "909b6880c58d",
-    "current": "fae28dc770c4",
+    "current": "83245408ab1e",
     "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "fe3a83d6b",
@@ -2035,6 +1456,26 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
+    "witness": "computations/canonical-mass-table-extended.witness.json",
+    "producer": "computations/canonical_mass_table_extended.py",
+    "recorded": "dfcd6d57966b",
+    "current": "b2a81e17dbae",
+    "reason": "commit cf6bbe87b not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "cc6a0b095",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/canonical-tr-m-via-chi-cache.witness.json",
+    "producer": "computations/canonical_tr_m_via_chi_cache.py",
+    "recorded": "eb10fdea2659",
+    "current": "f024ad1573c4",
+    "reason": "commit c6866be76 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "9c6e9834c",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/canonical-tr-m-via-rust.witness.json",
     "producer": "computations/canonical_tr_m_via_rust.py",
     "recorded": "d2c349f5d06c",
@@ -2042,16 +1483,6 @@
     "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/ch-bond-writhe-lp.witness.json",
-    "producer": "computations/ch-bond-writhe-lp.py",
-    "recorded": "aa1c88aa5fac",
-    "current": "b1683895b8f9",
-    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
@@ -2105,13 +1536,13 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/confined-knot-binding.witness.json",
-    "producer": "computations/confined_knot_binding.py",
-    "recorded": "00043dba54e8",
-    "current": "4c8ec0b1224b",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
+    "witness": "computations/codata-corpus-vintage-scan.witness.json",
+    "producer": "computations/codata_corpus_literal_scan.py",
+    "recorded": "3551a1fb118a",
+    "current": "cc071c545931",
+    "reason": "commit d28b8daf6 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "310db9352",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
@@ -2121,6 +1552,26 @@
     "current": "ddf116510b1f",
     "reason": "commit 77f2b68af not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
+   },
+   {
+    "witness": "computations/cross-check-trM-1ppb.witness.json",
+    "producer": "computations/cross_check_trM_1ppb.py",
+    "recorded": "c384baaf7323",
+    "current": "6f2e22f3b468",
+    "reason": "commit fbde310b0 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "e162c74c3",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/crystal-alpha-shift-pole-orders.witness.json",
+    "producer": "computations/crystal_alpha_shift_pole_orders.py",
+    "recorded": "c560b8ead4d3",
+    "current": "1e42289d11de",
+    "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
+    "approx_anchor": "039539602",
+    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/crystal-shift-nf-atomic.witness.json",
@@ -2149,16 +1600,6 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/delta-lambda-canonical-residual.witness.json",
-    "producer": "computations/delta_lambda_canonical_residual.py",
-    "recorded": "c8493283280b",
-    "current": "116120d8b9cf",
-    "reason": "commit a04c07079 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "426a40fb5",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/delta-lambda-empirical-tabulation.witness.json",
     "producer": "computations/delta_lambda_empirical_tabulation.py",
     "recorded": "8d24819408d1",
@@ -2176,32 +1617,6 @@
     "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/delta-lambda-imme-quartet.witness.json",
-    "producer": "computations/delta_lambda_imme_quartet.py",
-    "recorded": "36259da08bbb",
-    "current": "f70b03d2e642",
-    "reason": "commit dbe953a9e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/delta-lambda-z-coefficient-and-slope.witness.json",
-    "producer": "computations/delta_lambda_z_coefficient_and_slope.py",
-    "recorded": "16aa6892a75c",
-    "current": "6f02ce3a10cb",
-    "reason": "commit a04c07079 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/delta-n2-lp-dual-extraction.witness.json",
-    "producer": "computations/delta_n2_lp_dual_extraction.py",
-    "recorded": "33bee9a1bc5b",
-    "current": "dc776d2b437e",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
@@ -2359,56 +1774,6 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/e-hartree-mechanism-b-probe.witness.json",
-    "producer": "computations/e_hartree_mechanism_b_probe.py",
-    "recorded": "22c5dd6ae383",
-    "current": "969926cd611a",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/e-hartree-round19-dressed-scalar-block.witness.json",
-    "producer": "computations/e_hartree_round19_dressed_scalar_block.py",
-    "recorded": "aa3c61a18f12",
-    "current": "e893b0b3f77a",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/e-hartree-round20-trace-ratio.witness.json",
-    "producer": "computations/e_hartree_round20_trace_ratio.py",
-    "recorded": "d99a23fcaad0",
-    "current": "007c0c130077",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/e-hartree-round22-arch-bridge.witness.json",
-    "producer": "computations/e_hartree_round22_arch_bridge.py",
-    "recorded": "b3067a869865",
-    "current": "fb4516a00068",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/e-hartree-round23-normalization.witness.json",
-    "producer": "computations/e_hartree_round23_normalization.py",
-    "recorded": "d36fda8b85d6",
-    "current": "81f30ae10678",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/electron-m_e-derivation.witness.json",
     "producer": "computations/derive_m_e_hecke_path_a.py",
     "recorded": "3b28bbb82880",
@@ -2427,14 +1792,14 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/fr-pullback-k3-test.witness.json",
-    "producer": "computations/fr_pullback_k3_test.py",
-    "recorded": "222d5adb2c12",
-    "current": "0bda260b59b2",
-    "reason": "commit 531dfeb68 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "bed609a63",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+    "witness": "computations/gamma-gamma-pair-production-decomposition.witness.json",
+    "producer": "computations/gamma_gamma_pair_production_decomposition.py",
+    "recorded": "1ffa7dac1b3b",
+    "current": "166ee4199100",
+    "reason": "commit 355e43a0a not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "8ba73cc91",
+    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/gb-depth-period-bring-fig8.witness.json",
@@ -2453,26 +1818,6 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/h2-molecular-binding.witness.json",
-    "producer": "computations/h2-molecular-binding.py",
-    "recorded": "2fc11de57c37",
-    "current": "4de8c9313d11",
-    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/h2s-chiral-residue-bar-antisymmetric.witness.json",
-    "producer": "computations/h2s_chiral_residue_bar_antisymmetric.py",
-    "recorded": "9b2ffd9d1805",
-    "current": "c2d285d0abcb",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/h4-form-AB-cross-anchor-stability.witness.json",
     "producer": "computations/h4_form_AB_cross_anchor_stability.py",
     "recorded": "e94ea69d1407",
@@ -2481,16 +1826,6 @@
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/h5-h3-functor-keystone.witness.json",
-    "producer": "computations/h5_h3_functor_keystone.py",
-    "recorded": "1ad9c683756c",
-    "current": "9a39ef1c0bfb",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/habiro/habiro-coefficients-atomic.witness.json",
@@ -2829,24 +2164,6 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/hbond-vdw-energy-ladder.witness.json",
-    "producer": "computations/hbond_vdw_energy_ladder.py",
-    "recorded": "a802a8c88121",
-    "current": "c605b0c695eb",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/he3-pairknot-clambda-coulomb-probe.witness.json",
-    "producer": "computations/he3_pairknot_clambda_coulomb_probe.py",
-    "recorded": "4505afe355fc",
-    "current": "c3e01b320fa4",
-    "reason": "commit c55192aa2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
     "witness": "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json",
     "producer": "computations/he3_tritium_cosh_asymmetry_diagnosis.py",
     "recorded": "c75b2dca14e0",
@@ -2855,34 +2172,12 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/hh-trefoil-corrected.witness.json",
-    "producer": "computations/hh-trefoil-corrected.py",
-    "recorded": "2b1449c83351",
-    "current": "5465667a4159",
-    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/hh-vertex-volume.witness.json",
-    "producer": "computations/hh-vertex-volume.py",
-    "recorded": "626962872bb8",
-    "current": "32eb2b8513da",
-    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/homflypt-reference-qa.witness.json",
-    "producer": "computations/homflypt_reference_qa.py",
-    "recorded": "f4642850e085",
-    "current": "d29123b9f9b1",
-    "reason": "commit 56e0d96d0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+    "witness": "computations/i6-trace-convention-pin.witness.json",
+    "producer": "computations/probes/i6_trace_convention_pin.py",
+    "recorded": "63832968650a",
+    "current": "2602f3e95351",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/implied-h2-coefficient-audit-50dps.witness.json",
@@ -2893,20 +2188,28 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/iterative-lp-dual-levels.witness.json",
-    "producer": "computations/iterative_lp_dual_levels.py",
-    "recorded": "9613fd589e3d",
-    "current": "ee30fbcfc6c2",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
+    "witness": "computations/iterative-knot-builder.witness.json",
+    "producer": "computations/iterative_knot_builder.py",
+    "recorded": "42ee8a5a9e5b",
+    "current": "f2ee91f12b9e",
+    "reason": "commit 2a422c9bb not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "309df7b70",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/jet-order-pivots.witness.json",
+    "producer": "computations/jet_order_pivots.py",
+    "recorded": "380671554d5b",
+    "current": "1eadd3f17d76",
+    "reason": "commit 78ce3174e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/jones-markov-atlas-all-atoms.witness.json",
     "producer": "computations/run_jones_markov_atlas_all_atoms.py",
     "recorded": "a9d7f5de749a",
-    "current": "7ddea9f45dae",
+    "current": "10f8fcb2c16f",
     "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
@@ -2961,14 +2264,6 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/landauer-crossing-energy-probe.witness.json",
-    "producer": "computations/landauer_crossing_energy_probe.py",
-    "recorded": "56c55fab33ae",
-    "current": "93031c9c20b6",
-    "reason": "commit b90733420 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
     "witness": "computations/laurentq-a5-ceiling-measure.witness.json",
     "producer": "computations/laurentq_a5_ceiling_measure.py",
     "recorded": "e64ff2ec7cb1",
@@ -2983,14 +2278,6 @@
     "current": "016d3c6c2f87",
     "reason": "commit c867ef123 not in the repository",
     "rewritten_cause": "confirmed (sha was in the fetched window)"
-   },
-   {
-    "witness": "computations/li2q-fbor-expansion-probe.witness.json",
-    "producer": "computations/li2q_fbor_expansion_probe.py",
-    "recorded": "489a68ace842",
-    "current": "7d3b072c18ce",
-    "reason": "commit db820b522 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/li2q-phiq-bar-symmetry.witness.json",
@@ -3083,14 +2370,6 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/markov-identity-symbolic.witness.json",
-    "producer": "computations/markov/markov_identity_symbolic_probe.py",
-    "recorded": "8c762139e330",
-    "current": "84e17f3dbe66",
-    "reason": "commit 847c4435e not in the repository",
-    "rewritten_cause": "confirmed (sha was in the fetched window)"
-   },
-   {
     "witness": "computations/markov-z-fibre-rank-bar-covariance.witness.json",
     "producer": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
     "recorded": "47cacb3d249e",
@@ -3109,6 +2388,16 @@
     "rewritten_cause": "confirmed (sha was in the fetched window)"
    },
    {
+    "witness": "computations/mass-per-knot-density.witness.json",
+    "producer": "computations/mass_per_knot_density.py",
+    "recorded": "2cbb5a40ed88",
+    "current": "a6b755400c5b",
+    "reason": "commit 27470cbcf not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "fdb14d19f",
+    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/mass-sweep-bar-sym-h2-coefficient.witness.json",
     "producer": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
     "recorded": "62ceb262cb8d",
@@ -3119,84 +2408,34 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
+    "witness": "computations/mass-table-comprehensive.witness.json",
+    "producer": "computations/mass_table_comprehensive.py",
+    "recorded": "ea24a1286ec6",
+    "current": "79a477c1007f",
+    "reason": "commit 7504e5e08 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "ae1d692cc",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/mass-vol-density.witness.json",
     "producer": "computations/mass_vol_density.py",
     "recorded": "7cd88839cff5",
-    "current": "19c95569d5dc",
+    "current": "72d39d730c01",
     "reason": "commit ce39b659e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "039539602",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/meson-vol-density.witness.json",
+    "producer": "computations/meson_vol_density.py",
+    "recorded": "d66a5499d99a",
+    "current": "b751d57a20fd",
+    "reason": "commit c6866be76 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "9c6e9834c",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/mmu-kashiwara-cos-factor-probe.witness.json",
-    "producer": "computations/mmu_kashiwara_cos_factor_probe.py",
-    "recorded": "ed8c9efc26b8",
-    "current": "b66f38990861",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/mmu-lepton-torus-tower-feasibility-probe.witness.json",
-    "producer": "computations/mmu_lepton_torus_tower_feasibility_probe.py",
-    "recorded": "5e9ffac860f4",
-    "current": "c0b53dcdc894",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/mmu-simpler-form-search-probe.witness.json",
-    "producer": "computations/mmu_simpler_form_search_probe.py",
-    "recorded": "f78b81f5c82e",
-    "current": "3d1b4321a918",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json",
-    "producer": "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
-    "recorded": "02866d94263d",
-    "current": "33f60046a0e4",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/molecular-frobenius-lp.witness.json",
-    "producer": "computations/molecular-frobenius-lp.py",
-    "recorded": "569eacbb1559",
-    "current": "90faf543267e",
-    "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "656edfaeb",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/molecular-trefoil-scan.witness.json",
-    "producer": "computations/molecular-trefoil-scan.py",
-    "recorded": "0bf20659e12f",
-    "current": "aff731465625",
-    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/native-5-strand-baryon.witness.json",
-    "producer": "computations/native_5_strand_baryon.py",
-    "recorded": "430f9aca3896",
-    "current": "c34eb2dfda91",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/nucleus-operator-selection-sdp.witness.json",
@@ -3244,10 +2483,20 @@
     "witness": "computations/per-atom-audit-witnesses.witness.json",
     "producer": "computations/per_atom_audit_witnesses.py",
     "recorded": "5f11b91fcf88",
-    "current": "aab55f1a469f",
+    "current": "d795b72091ec",
     "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/per-atom-hyperbolic-volume.witness.json",
+    "producer": "computations/per_atom_hyperbolic_volume_witness.py",
+    "recorded": "79eeeb72e18d",
+    "current": "7a8b2e49eeb4",
+    "reason": "commit fc9819f75 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "c3ae96eb7",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
@@ -3257,26 +2506,6 @@
     "current": "37e8b480c986",
     "reason": "commit 9cea308a2 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/per-basis-row-invariants-probe.witness.json",
-    "producer": "computations/per_basis_row_invariants_probe.py",
-    "recorded": "0f565d299d0c",
-    "current": "028e67002df2",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/per-bond-growth-a3.witness.json",
-    "producer": "computations/per_bond_growth_a3.py",
-    "recorded": "cce2d55e0482",
-    "current": "4f49cc327812",
-    "reason": "commit 56e0d96d0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/per-irrep-pole-atom-crystal.witness.json",
@@ -3299,19 +2528,21 @@
    {
     "witness": "computations/per-knot-density-per-block-wiring.witness.json",
     "producer": "computations/per_knot_density_per_block_wiring.py",
-    "recorded": "ff10560725ae",
+    "recorded": "906d51dcfaa9",
     "current": "47d5250ab415",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
+    "reason": "commit 27470cbcf not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "fdb14d19f",
+    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/per-knot-mass-table-demonstration.witness.json",
     "producer": "computations/per_knot_mass_table_demonstration.py",
-    "recorded": "cf81c650e944",
-    "current": "ec78b68c1ebc",
-    "reason": "commit 56e0d96d0 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
+    "recorded": "ec78b68c1ebc",
+    "current": "fa069e8edab0",
+    "reason": "commit c6866be76 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "9c6e9834c",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
@@ -3346,14 +2577,6 @@
     "recorded": "e648bb8d965a",
     "current": "506d7f00006a",
     "reason": "commit 417e511ad not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/phase5/phase2b-dim-v21-bridge.witness.json",
-    "producer": "computations/phase5/phase2b_dim_v21_bridge_derivation.py",
-    "recorded": "6e2c45fd8b0e",
-    "current": "7714193344c0",
-    "reason": "commit b2db0a426 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
@@ -3399,16 +2622,6 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/photon-operator-table.witness.json",
-    "producer": "computations/photon_operator_table.py",
-    "recorded": "912ac3bd013d",
-    "current": "7e0be1143fdb",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/probe-4-li6-rectangular-python-targeted.witness.json",
     "producer": "computations/probe_4_li6_rectangular_python.py",
     "recorded": "34d94c2b8cdb",
@@ -3433,35 +2646,11 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/probe-9b-alphak-structure.witness.json",
-    "producer": "computations/probe_9b_alphak_structure.py",
-    "recorded": "6b2e7dfd70bc",
-    "current": "ade7fe590b72",
-    "reason": "commit 1d3cf6278 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
     "witness": "computations/probe-9b-gate-interface-algebra.witness.json",
     "producer": "computations/probe_9b_gate_interface_algebra.py",
     "recorded": "d43e04543f1a",
     "current": "2c3eecce6a29",
     "reason": "commit 55eeb01ba not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/probe-9b-laurent-degree-10a5.witness.json",
-    "producer": "computations/probe_9b_laurent_degree_10a5.py",
-    "recorded": "ed66027ddebc",
-    "current": "49ecf3394d0a",
-    "reason": "commit ba99d5562 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/probe-9b-manybody-expansion.witness.json",
-    "producer": "computations/probe_9b_manybody_expansion.py",
-    "recorded": "fbbe2b122555",
-    "current": "b8273c2acdda",
-    "reason": "commit 49a93a93b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
@@ -3485,31 +2674,11 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/probe-k-ud-bring-color-tube-empirical-baseline.witness.json",
-    "producer": "computations/probe_k_ud_bring_color_tube_empirical_baseline.py",
-    "recorded": "3c83143d8e5e",
-    "current": "80a93e02fb32",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/probe-k-ud-fractional-and-alt-ansatz.witness.json",
-    "producer": "computations/probe_k_ud_fractional_and_alt_ansatz.py",
-    "recorded": "2a6fb4e19367",
-    "current": "ac579efd42f5",
-    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/probes/A-operator-per-interface.witness.json",
-    "producer": "computations/probes/A_operator_per_interface_probe.py",
-    "recorded": "88af2494619d",
-    "current": "dc0e52474727",
-    "reason": "commit 7676454f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "witness": "computations/probe-q6j-jm-spectral-delta-lambda.witness.json",
+    "producer": "computations/probe_q6j_jm_spectral_delta_lambda.py",
+    "recorded": "3a03b7d26eee",
+    "current": "e3c844160d6e",
+    "reason": "commit f1872de58 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
@@ -3567,6 +2736,16 @@
     "current": "6a2f67d50ea6",
     "reason": "commit dbe953a9e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
+   },
+   {
+    "witness": "computations/probes/casimir-hoefsmit-additivity-probe.witness.json",
+    "producer": "computations/probes/casimir_hoefsmit_additivity_probe.py",
+    "recorded": "2025dfe1cb02",
+    "current": "2927c19b6b7c",
+    "reason": "commit d7a30bb9a not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
+    "approx_anchor": "10f2199e2",
+    "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/probes/casimir-phi-q-markov-probe.witness.json",
@@ -3913,20 +3092,10 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/probes/lambda-scale-substrate-probe.witness.json",
-    "producer": "computations/probes/lambda_scale_substrate_probe.py",
-    "recorded": "e660aadc9cec",
-    "current": "7ab1e0648d71",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/probes/option-a-vol-per-knot-light-series.witness.json",
     "producer": "computations/probes/option_a_vol_per_knot_light_series.py",
     "recorded": "5a5f3fe58e2b",
-    "current": "deba4db8d032",
+    "current": "98268cd4e53e",
     "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "656edfaeb",
@@ -4255,32 +3424,22 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
+    "witness": "computations/probes/vol-density-borromean-q-locality-probe.witness.json",
+    "producer": "computations/probes/vol_density_borromean_q_locality_probe.py",
+    "recorded": "6027becaf6d8",
+    "current": "3780465836f5",
+    "reason": "commit b38623866 not in the repository",
+    "rewritten_cause": "confirmed (sha was in the fetched window)",
+    "approx_anchor": "63b5049e5",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
     "witness": "computations/probes/x050-50a-hecke-gate-probe.witness.json",
     "producer": "computations/probes/x050_50a_hecke_gate_probe.py",
     "recorded": "864cbaee2de3",
     "current": "2e46c8d047d8",
     "reason": "commit df6e09d84 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/proton-mass-full-tower-50dps.witness.json",
-    "producer": "computations/derive_m_p_hecke_full_tower_50dps.py",
-    "recorded": "b32f4b5c69c7",
-    "current": "f597b2ee422e",
-    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "78a296287",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/q-beta-operator-valued-N3.witness.json",
-    "producer": "computations/probe_q_beta_operator_valued_N3.py",
-    "recorded": "8ce74e846c64",
-    "current": "520148a7cf6c",
-    "reason": "commit 75362d0bd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "fe3a83d6b",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/q-beta-spectral-bridge.witness.json",
@@ -4333,14 +3492,6 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/qbeta/apoly-census-ldegree-certification.witness.json",
-    "producer": "computations/qbeta/apoly_census_ldegree_certification_probe.py",
-    "recorded": "72c79ce3ccc8",
-    "current": "3c8b12039ad5",
-    "reason": "commit b113c12d8 not in the repository",
-    "rewritten_cause": "confirmed (sha was in the fetched window)"
-   },
-   {
     "witness": "computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",
     "producer": "computations/qbeta/qbeta_alpha_eff_hoefsmit_symbolic_probe.py",
     "recorded": "c36f9c0d878e",
@@ -4367,6 +3518,24 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
+    "witness": "computations/qbeta/qbeta-c3-barodd-gluing-newton-solve.witness.json",
+    "producer": "computations/qbeta/qbeta_c3_barodd_gluing_newton_solve.py",
+    "recorded": "0c536728086c",
+    "current": "4ea916a7fc9a",
+    "reason": "commit b354fbaa8 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)",
+    "approx_anchor": "b6e23b9e5",
+    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c3-barodd-pole-cusp-phase.witness.json",
+    "producer": "computations/qbeta/qbeta_c3_barodd_pole_cusp_phase_probe.py",
+    "recorded": "9deeea4189ff",
+    "current": "43847d44c4f4",
+    "reason": "commit a7a0cc4dd not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
+   },
+   {
     "witness": "computations/qbeta/qbeta-c3-candidate-audit.witness.json",
     "producer": "computations/qbeta/qbeta_c3_candidate_audit.py",
     "recorded": "2e92944895e4",
@@ -4383,6 +3552,14 @@
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "10f2199e2",
     "approx_verdict": "cosmetic (ADVISORY \u2014 anchor is approximate)"
+   },
+   {
+    "witness": "computations/qbeta/qbeta-c3-kashaev-invariant-grounding.witness.json",
+    "producer": "computations/qbeta/qbeta_c3_kashaev_invariant_grounding.py",
+    "recorded": "d5dca5d4f0d0",
+    "current": "6489e5cca185",
+    "reason": "commit 5d644a9ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
     "witness": "computations/qbeta/qbeta-c3-phib-quantum-saddle.witness.json",
@@ -4749,36 +3926,6 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/reeb-flow-garside-closed-form-verification.witness.json",
-    "producer": "computations/reeb_flow_garside_closed_form_verification.py",
-    "recorded": "b57646ade4be",
-    "current": "03a14bec2210",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/rt-c23-singlet-sign-core.witness.json",
-    "producer": "computations/rt_c23_singlet_sign_core.py",
-    "recorded": "48fd0799ec50",
-    "current": "e564ccf0de0a",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/rt-identity-chain-consolidation.witness.json",
-    "producer": "computations/rt_identity_chain_consolidation.py",
-    "recorded": "6bcf2cf6da78",
-    "current": "297763194963",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/shell-binding-transfer-matrix.witness.json",
     "producer": "computations/shell_binding_transfer_matrix.py",
     "recorded": "5e2f53305739",
@@ -4786,16 +3933,6 @@
     "reason": "commit dd7f0ed7b not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
     "approx_anchor": "bffd475d4",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
-    "witness": "computations/skein-proton-canonical.witness.json",
-    "producer": "computations/skein_proton_canonical.py",
-    "recorded": "ea21a6ba8571",
-    "current": "37c41677f2af",
-    "reason": "commit 131f4165e not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "1ce51e058",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
@@ -4807,20 +3944,10 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/su2-spinor-multiplicity-resolution.witness.json",
-    "producer": "computations/su2_spinor_multiplicity_resolution.py",
-    "recorded": "1b4c4c3aa674",
-    "current": "8df21bac3d2f",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/subgoal-1-frobenius-co-casimir-validation.witness.json",
     "producer": "computations/subgoal_1_frobenius_co_casimir_validation.py",
     "recorded": "014872cf81c3",
-    "current": "b908522e378f",
+    "current": "b39342550236",
     "reason": "commit 055637512 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
@@ -4844,15 +3971,7 @@
     "witness": "computations/sublemma-2-1-h9-he3-verify.witness.json",
     "producer": "computations/sublemma_2_1_h9_tritium_verify.py",
     "recorded": "4ad6ca2b6bfa",
-    "current": "41f771e387bb",
-    "reason": "commit 9c327c7d3 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/sublemma-2-1-h9-tritium-verify.witness.json",
-    "producer": "computations/sublemma_2_1_h9_tritium_verify.py",
-    "recorded": "4ad6ca2b6bfa",
-    "current": "41f771e387bb",
+    "current": "156d4a8574ec",
     "reason": "commit 9c327c7d3 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
    },
@@ -4881,16 +4000,6 @@
     "rewritten_cause": "ambiguous (shallow clone)"
    },
    {
-    "witness": "computations/term6-residues-at-roots.witness.json",
-    "producer": "computations/term6_residues_at_roots.py",
-    "recorded": "7d19a23ce84b",
-    "current": "2283a3b86463",
-    "reason": "commit 073cc38ed not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "d195cb3c5",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
-   },
-   {
     "witness": "computations/theta-wn-jetfilt-linkvolume.witness.json",
     "producer": "computations/theta_wn_jetfilt_linkvolume.py",
     "recorded": "1b07282503b8",
@@ -4905,16 +4014,6 @@
     "current": "dd686e8508fd",
     "reason": "commit 8e4cc4f32 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/three-body-joint-trace-a3.witness.json",
-    "producer": "computations/three_body_joint_trace_a3.py",
-    "recorded": "7ac3273c213e",
-    "current": "eeb3aed99cf8",
-    "reason": "commit 7e159709f not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "f00fd3a98",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/tier-1b-orbit-reduction-crosscheck.witness.json",
@@ -4946,19 +4045,9 @@
     "witness": "computations/tritium-h5-psd-feasibility.witness.json",
     "producer": "computations/tritium_h5_psd_feasibility_witness.py",
     "recorded": "323b41beade7",
-    "current": "7d2901109036",
+    "current": "c144fa0ac462",
     "reason": "commit 078d896bb not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)"
-   },
-   {
-    "witness": "computations/u1-hypercharge-assignment.witness.json",
-    "producer": "computations/u1_hypercharge_assignment.py",
-    "recorded": "c39c2af77b8e",
-    "current": "72352830e062",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
-    "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
-    "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
     "witness": "computations/unified-low-isotope-predictor.witness.json",
@@ -5001,13 +4090,13 @@
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
-    "witness": "computations/vdw-pskew-sinh-probe.witness.json",
-    "producer": "computations/vdw_pskew_sinh_probe.py",
-    "recorded": "e3dbb4103394",
-    "current": "1bf55601cde7",
-    "reason": "commit 58d7abe89 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
+    "witness": "computations/vol-density-per-block-wiring.witness.json",
+    "producer": "computations/vol_density_per_block_wiring.py",
+    "recorded": "5d82a19045ef",
+    "current": "f3e0f62ec300",
+    "reason": "commit 6949424f7 not in THIS clone; witness predates the shallow boundary 2026-08-07 \u2014 cause undetermined",
     "rewritten_cause": "ambiguous (shallow clone)",
-    "approx_anchor": "10f2199e2",
+    "approx_anchor": "78a296287",
     "approx_verdict": "substantive (ADVISORY \u2014 anchor is approximate)"
    },
    {
@@ -5132,6 +4221,13 @@
     "reason": "producer not at this path in 8fa41bb06 (renamed/moved)"
    },
    {
+    "witness": "computations/alpha-em-rt-phase4-bring-measure.witness.json",
+    "producer": "computations/alpha_em_rt_phase4_bring_measure.py",
+    "recorded": "23dfd076a569",
+    "current": "a5cc9468edc5",
+    "reason": "producer not at this path in 061d47ead (renamed/moved)"
+   },
+   {
     "witness": "computations/alpha_em/alpha-em-b2-canonical-scale-ratio.witness.json",
     "producer": "computations/alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py",
     "recorded": "b22a98ccfb9b",
@@ -5202,6 +4298,13 @@
     "reason": "producer not at this path in a79a8e9d2 (renamed/moved)"
    },
    {
+    "witness": "computations/chi-convention-trM-ratio-probe.witness.json",
+    "producer": "computations/chi_convention_trM_ratio_probe.py",
+    "recorded": "adee784af513",
+    "current": "5a2c0bc4cb68",
+    "reason": "producer not at this path in 86f19c09a (renamed/moved)"
+   },
+   {
     "witness": "computations/closed-form-tau-M-verification-phase5q.witness.json",
     "producer": "computations/closed_form_tau_M_verification_phase5q.py",
     "recorded": "880897369499",
@@ -5214,13 +4317,6 @@
     "recorded": "9715ae351d66",
     "current": "84759ecf3bfd",
     "reason": "producer not at this path in 7ed5bd92a (renamed/moved)"
-   },
-   {
-    "witness": "computations/compound-shift-nf.witness.json",
-    "producer": "computations/compound_shift_nf.py",
-    "recorded": "e4e2d68a67bd",
-    "current": "7a6424893116",
-    "reason": "producer not at this path in 0fb976fd7 (renamed/moved)"
    },
    {
     "witness": "computations/crystal-basis-primitives.witness.json",
@@ -5261,7 +4357,7 @@
     "witness": "computations/deltalambda/mu3-anchor-consistency.witness.json",
     "producer": "computations/deltalambda/mu3_anchor_consistency_probe.py",
     "recorded": "6275124a25ad",
-    "current": "8cb05a18a959",
+    "current": "bbfe47d657cb",
     "reason": "producer not at this path in df5a49f95 (renamed/moved)"
    },
    {
@@ -5288,8 +4384,8 @@
    {
     "witness": "computations/e-hartree-round24-molecular-reuse.witness.json",
     "producer": "computations/e_hartree_round24_molecular_reuse.py",
-    "recorded": "1f826c5882b0",
-    "current": "2271423605c5",
+    "recorded": "c853c04ecf76",
+    "current": "6f4e952027e9",
     "reason": "no commitSha recorded"
    },
    {
@@ -5370,20 +4466,6 @@
     "reason": "producer not at this path in a37c160f1 (renamed/moved)"
    },
    {
-    "witness": "computations/mass-per-knot-density.witness.json",
-    "producer": "computations/mass_per_knot_density.py",
-    "recorded": "fb0dac23c711",
-    "current": "a6b755400c5b",
-    "reason": "producer not at this path in e0f59cdea (renamed/moved)"
-   },
-   {
-    "witness": "computations/mp-habiro-c4-keystone-probe.witness.json",
-    "producer": "computations/mp_habiro_c4_keystone_probe.py",
-    "recorded": "6324ffda805a",
-    "current": "7b8ebb89a9e9",
-    "reason": "producer not at this path in c9a3de1c0 (renamed/moved)"
-   },
-   {
     "witness": "computations/multiterm-cost-he3-l6a4-probe.witness.json",
     "producer": "computations/multiterm_cost_he3_l6a4_probe.py",
     "recorded": "3ccc82f8aca8",
@@ -5412,18 +4494,18 @@
     "reason": "producer not at this path in a565201b8 (renamed/moved)"
    },
    {
-    "witness": "computations/probe-markov-trace-factorization.witness.json",
-    "producer": "computations/probe_markov_trace_factorization.py",
-    "recorded": "76a4084ce51a",
-    "current": "769eb96a185d",
-    "reason": "producer not at this path in 5c29d9238 (renamed/moved)"
-   },
-   {
     "witness": "computations/probe-volume-wedderburn-delta-lambda.witness.json",
     "producer": "computations/probe_volume_wedderburn_delta_lambda.py",
     "recorded": "471067b3528f",
-    "current": "0d711ba72caa",
+    "current": "b5f503294a53",
     "reason": "producer not at this path in b7d13950a (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/binding-qgaussian-ell1-ceiling-measurement.witness.json",
+    "producer": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
+    "recorded": "7545c35fea06",
+    "current": "eb0f99170abd",
+    "reason": "producer not at this path in d9d511e32 (renamed/moved)"
    },
    {
     "witness": "computations/probes/delta-coupling-closed-form-probe.witness.json",
@@ -5464,7 +4546,7 @@
     "witness": "computations/probes/flavor-split-alpha-bond-dilog.witness.json",
     "producer": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
     "recorded": "6c75bc21d181",
-    "current": "c19dc7c1d5c0",
+    "current": "f8f77ee92365",
     "reason": "producer not at this path in 08f9d5c42 (renamed/moved)"
    },
    {
@@ -5494,6 +4576,20 @@
     "recorded": "becb0dfbbdf1",
     "current": "f5eaae350770",
     "reason": "producer not at this path in c4dffb015 (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+    "producer": "computations/probes/gap_a4_S_K_additive_probe_perknot_rerun.py",
+    "recorded": "f41344999511",
+    "current": "4f723d9b53b6",
+    "reason": "producer not at this path in 074dfccb4 (renamed/moved)"
+   },
+   {
+    "witness": "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+    "producer": "computations/probes/gap_a4_T2_per_knot_vol_probe_perknot_rerun.py",
+    "recorded": "dbd57916cbc8",
+    "current": "c2b0acb9fe24",
+    "reason": "producer not at this path in 074dfccb4 (renamed/moved)"
    },
    {
     "witness": "computations/probes/h1-exponent-location.witness.json",
@@ -5590,7 +4686,7 @@
     "witness": "computations/qbeta/qbeta-c3-mq0-nk-scan.witness.json",
     "producer": "computations/qbeta/qbeta_c3_mq0_nk_scan.py",
     "recorded": "7f168a5c8bb0",
-    "current": "982641b275d7",
+    "current": "2611abbfdb49",
     "reason": "producer not at this path in cbd5de37b (renamed/moved)"
    },
    {
@@ -5788,13 +4884,6 @@
     "recorded": "23554fa21ac4",
     "current": "989c91b974c7",
     "reason": "producer not at this path in 78e889115 (renamed/moved)"
-   },
-   {
-    "witness": "computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-    "producer": "computations/terms_2_3_atom_per_gen_mpfr_50dps.py",
-    "recorded": "dfe6b983d000",
-    "current": "24a3dfbdf61b",
-    "reason": "producer not at this path in 83b19a2f8 (renamed/moved)"
    },
    {
     "witness": "computations/theta-mn-linearchain-vs-allpairs.witness.json",
