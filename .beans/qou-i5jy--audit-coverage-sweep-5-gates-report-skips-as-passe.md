@@ -4,7 +4,7 @@ title: 'Audit coverage sweep: 5 gates report skips as passes — a deleted packa
 status: todo
 type: task
 created_at: 2026-08-23T07:54:52Z
-updated_at: 2026-08-23T14:35:00Z
+updated_at: 2026-08-23T14:55:00Z
 ---
 
 
@@ -664,3 +664,29 @@ q₀-migration campaign's own subject matter (last touched by *"migration: batch
 116/254 at the proton pin"*), not an audit-coverage question. **Flagged so it is
 not mistaken for something this bean's commits caused, and so nothing downstream
 reads this gate as green.**
+
+---
+
+## PRIOR / PARALLEL ART — four siblings found this shape independently (2026-08-23)
+
+Surfaced only after fixing finding #6; the blind coord sweep is why it was not
+known while findings #1–#5 were being fixed. Recorded here so this bean is not
+read as sole authorship, per the lesson in `qou-a613`.
+
+- **`changed-files-helper-2026-08-22`** (`qou-pt9b`) — *"a skip is not a pass —
+  say what was compared, and how much"*, on four **shell** gates. Verbatim this
+  bean's thesis, different surface.
+- **`codata-gate-cost-2026-08-22`** (`qou-s2gm`, `qou-p8lx`) — *"precision-gates.sh
+  changed silently passes"*; *"main is RED on this script — say so, before someone
+  reads it as theirs"* — independently the same move as #3's pre-existing-red
+  disclosure, same day.
+- **`ratchet-selftest-tautology-fix-2026-08-23`** (`qou-1brv`) — *"the ratchet
+  self-test could not fail — one shared predicate"*.
+- **`wrap-legacy-computation-clobber-2026-08-21`** — *"the register could report AT
+  RISK 0 without examining anything"*.
+
+Four independent rediscoveries in three days is itself evidence the shape is
+**systemic rather than incidental**. It also changes what is worth doing next: a
+fifth sweep has low marginal value, whereas `qou-pt9b` has already built a shared
+"what did this change touch, and how much of it did we compare" helper for the
+shell gates, and the Python audits have no equivalent. Full triage: `qou-k3wq`.
