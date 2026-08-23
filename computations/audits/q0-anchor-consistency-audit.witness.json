@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:17:18.278534+00:00",
-  "commitSha": "1fa7140209fd2ad81d59cf1f0d315a4a934e4b05",
+  "computedAt": "2026-08-23T19:34:20.151722+00:00",
+  "commitSha": "8be6473f25f4202f5a5ddcaa28b9a0ff2a8dcc27",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "d4f4409e5d3b",
@@ -44,14 +44,14 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 701,
-      "Q0_AMBIGUOUS": 17,
+      "Q0_OK": 702,
+      "Q0_AMBIGUOUS": 16,
       "Q0_INDEPENDENT": 45,
       "Q0_INDEPENDENT_NO_REASON": 0,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1881,
+      "Q0_ANCHOR_MISSING": 1880,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 78,
       "Q0_PARSE_ERROR": 0,
@@ -2250,10 +2250,6 @@
         },
         {
           "witness": "du-law-reparametrisation.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-extended.witness.json",
           "detail": ""
         },
         {
@@ -8951,6 +8947,10 @@
           "detail": ""
         },
         {
+          "witness": "habiro-coefficients-extended.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "habiro-coefficients-helium-3.witness.json",
           "detail": ""
         },
@@ -10414,10 +10414,6 @@
         },
         {
           "witness": "deuteron-real-sdp.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-extended.witness.json",
           "detail": ""
         },
         {
