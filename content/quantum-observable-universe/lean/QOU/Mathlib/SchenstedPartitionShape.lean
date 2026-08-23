@@ -112,4 +112,8 @@ noncomputable def partitionShapeEquiv (n : ℕ) :
       obtain ⟨p, hp⟩ := exists_partitionShape_eq μ hμ
       exact ⟨p, Subtype.ext hp⟩⟩
 
+@[simp] theorem partitionShapeEquiv_apply (n : ℕ) (p : Nat.Partition n) :
+    ((partitionShapeEquiv n p : {μ : YoungDiagram // μ.cells.card = n}) : YoungDiagram)
+      = partitionShape p := rfl
+
 end QOU.Mathlib

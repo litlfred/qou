@@ -956,6 +956,7 @@ import QOU.Mathlib.SchenstedRSKPairSurjective
 import QOU.Mathlib.SchenstedRSKPairInjective
 import QOU.Mathlib.SchenstedRSKEquiv
 import QOU.Mathlib.SchenstedPartitionShape
+import QOU.Mathlib.SchenstedRSKBurnside
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
