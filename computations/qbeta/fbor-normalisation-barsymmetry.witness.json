@@ -1,0 +1,69 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-19T12:27:00.587105+00:00",
+  "commitSha": "15013e878650810d5e5ff2b85a5be87cb91362c4",
+  "assertions": [
+    {
+      "name": "current_beats_barsym_on_muon_crosscheck",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "barsym_reproduces_proton_pin",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "fbor-normalisation-barsymmetry",
+  "scriptFile": "fbor_normalisation_barsymmetry_probe.py",
+  "scriptHash": "93c0b4ace3dd",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Tests whether F_Bor's bar-asymmetric /q^3 is a misplaced factor that a bar-symmetric hbar convention would repair. Re-solves q from the proton pin under each convention and scores the untouched muon ratio.",
+  "contentBlock": "conj:kashaev-density-equals-sdp-multiplicity",
+  "parameters": {
+    "q_0_repo": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "vol_4_1": "2.029883212819307250042405108549040571883378615060599584034978213553195"
+  },
+  "data": {
+    "target_m_mu_over_m_e": "206.7682827084671796902080640552322774868514476087915663034803090115911",
+    "current": {
+      "hbar": "1 - 1/q",
+      "extra_factor": "1/q^3",
+      "bar_symmetric": false,
+      "q": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+      "m_p": "938.2720894273242473639400000000000000000000000000195240622968614024537",
+      "m_mu_over_m_e_pred": "206.7683263706738902896095864099026759384582045510337124926232606064713",
+      "m_mu_err_ppb": "211.1649143604916647508481251600312107159171646514529804647185139985131"
+    },
+    "bar_symmetric_alternative": {
+      "hbar_sq": "q - 2 + 1/q",
+      "extra_factor": "none",
+      "bar_symmetric": true,
+      "q": "1.123030529374768046116476436587627373792460545333465476494085814179735",
+      "m_p": "938.2720894299999999999999999998583055518010681996829081149120981051961",
+      "m_mu_over_m_e_pred": "150.6041118214415509912592402251808179589589569900379342167928251473664",
+      "m_mu_err_ppb": "-271628560.0060540662041543396923224766734755021225342881778796549126873"
+    },
+    "verdict": "REFUTED. The bar-symmetric convention re-solves the proton pin fine but misses the untouched muon ratio by -27.16 % (2.7e8 ppb) where the current convention misses by 211 ppb -- a factor ~1.3e6 worse. The /q^3 is therefore NOT a misplaced q-power that symmetry would repair: it is non-derivable AND empirically load-bearing on two independent observables."
+  }
+}

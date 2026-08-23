@@ -75,3 +75,46 @@ residual). Six ledger entries pruned, 133 → 127.
 and neither is fixable by derivation — the universality content is not in
 the corpus. `TannakaKreinRigidity` is a self-certifying carrier (default
 field values make `⟨⟩` an instance), which is `qou-ewc4`.
+
+## Handover 2026-08-23 — the two `MobiusEnergy` defects are a SHADOW PAIR (delete-the-sibling variant)
+
+Not fixed here: this is your drain and it is mechanical work with one owner.
+Recording the specifics so the pair is not triaged twice.
+
+Both entries are the same declaration, in a shadowing pair:
+
+| file | line | what it declares |
+|---|---|---|
+| `climax-volume-mass/mobius-energy-proof.lean` | 105 | `theorem MobiusEnergy ... := cme.classicalLimit` (content SIBLING) |
+| `lean/QOU/MobiusEnergy.lean` | 148 | `theorem MobiusEnergy ... := cme.classicalLimit` (LIBRARY) |
+
+Both `promoted_from_exempt`, severity critical, `exempt: false`, same detail
+(`cme.classicalLimit` type-identical to the conclusion).
+
+**`mobius-energy-proof.ts` carries `lean: { ref: "qou:QOU.MobiusEnergy" }`.**
+Per AGENTS.md §0a the sibling resolves FIRST, so the ref lands on the sibling
+and the library declaration is shadowed.
+
+**Which is stronger — this is the delete-the-sibling case, unlike `qou-w61k`.**
+
+- LIBRARY (`QOU/MobiusEnergy.lean`) is stronger: the coefficient is the
+  explicit `(1 / 4)`, and it carries a companion `MobiusEnergy_nonneg` with a
+  real proof body (`rw [cme.classicalLimit]; have := cme.classicalEnergy.nonneg`).
+- SIBLING (`mobius-energy-proof.lean`) is weaker: a generic
+  `cme.classicalLimitCoeff` instead of `1/4`, and its non-negativity is
+  commented out (the docstring explains `R_q = Z[q,q^-1]` carries no order).
+
+So this is the SAME shape as the three fixed in PR #5533 (library better ->
+delete the shadowing sibling), and the OPPOSITE of `qou-w61k`
+(`prop:volume-from-rigidity`, where the library holds the worse one and w61k
+warns it must not be fixed the same way). Worth keeping the two apart when
+draining.
+
+Note the projection defect survives either way: deleting the sibling leaves
+the library's `theorem MobiusEnergy := cme.classicalLimit`, which is still a
+self-assuming projection. Un-shadowing and de-vacuifying are two steps here,
+not one.
+
+Found while executing the ledger disposition on `mobius_energy_nonneg` (a
+different declaration, in `mobius-energy.lean`, which `8dd1881a57` deleted
+outright — my PR #5541 was superseded by that and is closed).
